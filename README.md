@@ -27,6 +27,9 @@ The package declares its dependencies so `apt` installs the required Qt and
 PipeWire tools. Releases include a `.sha256` checksum file. The app currently
 targets 64-bit Ubuntu 24.04 LTS and newer with PipeWire audio.
 
+If you download the checksum file alongside the package, verify it with
+`sha256sum -c soundcurrent-eq_*.deb.sha256` before installing.
+
 For a user-only install when the runtime dependencies are already present:
 
 ```bash

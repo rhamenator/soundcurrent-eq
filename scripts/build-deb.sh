@@ -31,5 +31,5 @@ find "$package_dir" -type d -exec chmod 755 {} +
 
 deb="$project_dir/dist/soundcurrent-eq_${version}_${architecture}.deb"
 dpkg-deb --build --root-owner-group "$package_dir" "$deb"
-sha256sum "$deb" > "$deb.sha256"
+(cd "$project_dir/dist" && sha256sum "$(basename "$deb")" > "$(basename "$deb").sha256")
 printf 'Built %s\n' "$deb"
