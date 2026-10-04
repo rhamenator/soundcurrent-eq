@@ -1,5 +1,6 @@
 #include <QApplication>
 #include <QCheckBox>
+#include <QCloseEvent>
 #include <QComboBox>
 #include <QCoreApplication>
 #include <QDir>
@@ -17,7 +18,11 @@
 #include <QJsonObject>
 #include <QLabel>
 #include <QLineEdit>
+#include <QLocalServer>
+#include <QLocalSocket>
+#include <QLockFile>
 #include <QMainWindow>
+#include <QMenu>
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
@@ -29,8 +34,11 @@
 #include <QSlider>
 #include <QSpinBox>
 #include <QStandardPaths>
+#include <QStandardItemModel>
+#include <QSystemTrayIcon>
 #include <QTemporaryDir>
 #include <QThread>
+#include <QTextStream>
 #include <QTimer>
 #include <QVBoxLayout>
 #include <QVector>
@@ -358,16 +366,43 @@ private:
     Device target_;
 };
 
-QMap<QString, std::array<double, 9>> builtinShapes() {
-    return {
+const QMap<QString, std::array<double, 9>> &builtinShapes() {
+    static const QMap<QString, std::array<double, 9>> shapes = {
         {"Flat", {0, 0, 0, 0, 0, 0, 0, 0, 0}},
         {"Balanced", {1, 1, 0.5, 0, -0.5, 0, 0.5, 1, 1}},
         {"Bass Boost", {5, 4, 3, 1.5, 0, 0, 0, 0, 0}},
+        {"Deep Bass", {7, 6, 4, 2, 0, -1, -1, -1, -1}},
+        {"Punchy Bass", {2, 3, 5, 4, 1, -1, 0, 1, 1}},
+        {"Bass Cut", {-6, -5, -4, -2, 0, 0, 0, 0, 0}},
         {"Clear Voice", {-3, -2, -1, 0, 1, 2.5, 3, 1.5, 0}},
+        {"Podcast", {-4, -3, -1, 0, 2, 3, 2.5, 0, -1}},
+        {"TV Dialogue", {-4, -3, -2, 0, 1.5, 3.5, 4, 1, -1}},
+        {"Vocal Focus", {-2, -1, 0, 1, 2, 3, 3, 1, 0}},
         {"Warm", {2.5, 2, 1.5, 0.5, 0, -0.5, -1, -1, -1.5}},
         {"Bright", {-1, -1, -0.5, 0, 0.5, 1, 2, 2.5, 2.5}},
+        {"Soft Treble", {0, 0, 0, 0, 0, -0.5, -1.5, -3, -4}},
+        {"Treble Detail", {-1, -1, -1, 0, 0, 1, 2.5, 4, 3}},
         {"Movies", {3, 2.5, 1.5, 0, -1, 0, 1, 2, 2}},
+        {"Gaming", {3, 2, 0, -2, -1, 1, 3, 2, 0}},
+        {"FPS Footsteps", {-5, -4, -3, -2, 0, 2, 4, 3, 1}},
+        {"Night Listening", {-3, -2, -1, 0, 1, 2, 1, -1, -2}},
+        {"Small Speakers", {-4, -2, 0, 2, 2, 1, 1, 0, -1}},
+        {"Headphones", {1, 1, 0, -1, -1.5, 0, 1.5, 2, 1}},
+        {"Rock", {3, 2, 1, -1, -2, 0, 2, 3, 2}},
+        {"Pop", {2, 2, 1, 0, 1, 2, 2, 2, 1}},
+        {"Jazz", {2, 1.5, 1, 0, -1, 0, 1.5, 2, 1}},
+        {"Classical", {1, 1, 0, -1, -1, 0, 1, 2, 2}},
+        {"Electronic", {4, 4, 3, 0, -2, 0, 2, 3, 3}},
+        {"Dance", {4, 4, 2, 0, -1, 0, 2, 3, 2}},
+        {"Hip-Hop", {5, 5, 3, 1, -1, 0, 1, 1, 0}},
+        {"R&B", {3, 3, 2, 1, 0, 1, 2, 1, 0}},
+        {"Acoustic", {1, 1, 0, 1, 2, 2, 1, 1, 0}},
+        {"Piano", {0, 0, 0, 1, 2, 2, 1, 0, -1}},
+        {"Metal", {4, 3, 1, -2, -2, 1, 3, 2, 1}},
+        {"Lo-Fi", {2, 2, 1, 0, -1, -2, -3, -5, -6}},
+        {"Live", {2, 1, 0, -1, -1, 1, 2, 2, 1}},
     };
+    return shapes;
 }
 
 Bands builtinProfile(const QString &name, int count) {
@@ -524,7 +559,7 @@ private:
 
 class MainWindow : public QMainWindow {
 public:
-    MainWindow() : bands_(builtinProfile("Balanced", kDefaultBands)) {
+    explicit MainWindow(bool startEnabled = true) : bands_(builtinProfile("Balanced", kDefaultBands)) {
         setWindowTitle("SoundCurrent EQ");
         setWindowIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ"));
         setMinimumSize(760, 620);
@@ -538,11 +573,6 @@ public:
         root->setContentsMargins(26, 22, 26, 24);
         root->setSpacing(16);
         scroll->setWidget(container);
-
-        auto *title = new QLabel("SoundCurrent EQ");
-        title->setObjectName("title");
-        root->addWidget(title);
-        root->addWidget(new QLabel("Shape your sound with an adjustable parametric equalizer."));
 
         auto *outputBox = new QGroupBox("Playback");
         auto *outputLayout = new QVBoxLayout(outputBox);
@@ -668,11 +698,54 @@ public:
         monitor_.setInterval(1500);
         connect(&monitor_, &QTimer::timeout, this, [this] { refreshDevices(); });
         monitor_.start();
+        if (startEnabled) setupTray();
+        if (startEnabled && power_->isEnabled()) power_->setChecked(true);
     }
 
     ~MainWindow() override { audio_.stop(); }
 
+    void reopen() {
+        showNormal();
+        raise();
+        activateWindow();
+    }
+
+protected:
+    void closeEvent(QCloseEvent *event) override {
+        if (tray_ && QSystemTrayIcon::isSystemTrayAvailable()) {
+            hide();
+            event->ignore();
+            if (!backgroundNoticeShown_) {
+                tray_->showMessage("SoundCurrent EQ", "Equalizer is still running. Use the tray icon to reopen or quit.");
+                backgroundNoticeShown_ = true;
+            }
+            return;
+        }
+        QMainWindow::closeEvent(event);
+    }
+
 private:
+    void setupTray() {
+        if (!QSystemTrayIcon::isSystemTrayAvailable()) return;
+        tray_ = new QSystemTrayIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ"), this);
+        tray_->setToolTip("SoundCurrent EQ");
+        auto *menu = new QMenu(this);
+        menu->addAction("Open SoundCurrent EQ", this, [this] { reopen(); });
+        trayToggle_ = menu->addAction("Turn equalizer off", this, [this] { power_->setChecked(!power_->isChecked()); });
+        connect(power_, &QCheckBox::toggled, this, [this](bool on) {
+            trayToggle_->setText(on ? "Turn equalizer off" : "Turn equalizer on");
+            tray_->setToolTip(on ? "SoundCurrent EQ · On" : "SoundCurrent EQ · Off");
+        });
+        menu->addSeparator();
+        menu->addAction("Quit SoundCurrent EQ", qApp, [] { qApp->quit(); });
+        tray_->setContextMenu(menu);
+        connect(tray_, &QSystemTrayIcon::activated, this, [this](QSystemTrayIcon::ActivationReason reason) {
+            if (reason == QSystemTrayIcon::Trigger || reason == QSystemTrayIcon::DoubleClick) reopen();
+        });
+        tray_->show();
+        qApp->setQuitOnLastWindowClosed(false);
+    }
+
     static QString frequencyLabel(double frequency) {
         return frequency >= 1000 ? QString::number(frequency / 1000.0, 'g', 3) + "k"
                                  : QString::number(frequency, 'g', 4);
@@ -809,8 +882,23 @@ private:
     void rebuildPresetList(const QString &selected) {
         const QSignalBlocker blocker(presetCombo_);
         presetCombo_->clear();
-        for (const auto &name : {"Balanced", "Bass Boost", "Clear Voice", "Warm", "Bright", "Movies", "Flat"})
-            presetCombo_->addItem(name);
+        auto addSection = [this](const QString &title, const QStringList &names) {
+            presetCombo_->addItem(title);
+            if (auto *model = qobject_cast<QStandardItemModel *>(presetCombo_->model())) {
+                auto *heading = model->item(presetCombo_->count() - 1);
+                heading->setEnabled(false);
+                heading->setForeground(QColor("#90d9ce"));
+            }
+            for (const auto &name : names) presetCombo_->addItem(name);
+        };
+        addSection("Everyday", {"Balanced", "Flat", "Warm", "Bright", "Soft Treble", "Treble Detail",
+                                 "Headphones", "Small Speakers", "Night Listening"});
+        addSection("Bass and speech", {"Bass Boost", "Deep Bass", "Punchy Bass", "Bass Cut",
+                                        "Clear Voice", "Podcast", "TV Dialogue", "Vocal Focus"});
+        addSection("Entertainment", {"Movies", "Gaming", "FPS Footsteps", "Live"});
+        addSection("Music", {"Rock", "Pop", "Jazz", "Classical", "Electronic", "Dance", "Hip-Hop",
+                             "R&B", "Acoustic", "Piano", "Metal", "Lo-Fi"});
+        if (!custom_.isEmpty()) addSection("Saved presets", {});
         for (auto it = custom_.begin(); it != custom_.end(); ++it) presetCombo_->addItem(it.key());
         presetCombo_->addItem("Custom");
         presetCombo_->setCurrentText(selected);
@@ -969,8 +1057,11 @@ private:
     QVector<QPushButton *> frequencyButtons_;
     QTimer applyTimer_;
     QTimer monitor_;
+    QSystemTrayIcon *tray_ = nullptr;
+    QAction *trayToggle_ = nullptr;
     int selected_ = 0;
     bool changing_ = false;
+    bool backgroundNoticeShown_ = false;
 };
 
 } // namespace
@@ -981,6 +1072,10 @@ int main(int argc, char **argv) {
     QCoreApplication::setApplicationName("soundcurrent-eq");
     QGuiApplication::setDesktopFileName("io.github.rhamenator.SoundCurrentEQ");
     app.setWindowIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ"));
+    if (app.arguments().size() == 3 && app.arguments()[1] == "--dump-filter-config") {
+        QTextStream(stdout) << filterConfig(app.arguments()[2], defaultBands(kDefaultBands));
+        return 0;
+    }
     if (app.arguments().contains("--self-test")) {
         try {
             const auto standard = defaultBands(kDefaultBands);
@@ -1023,7 +1118,6 @@ int main(int argc, char **argv) {
         QGroupBox::title { subcontrol-origin: margin; left: 14px; padding: 0 5px; }
         QLabel { background: transparent; }
         QCheckBox { background: transparent; }
-        QLabel#title { font-size: 28px; font-weight: 800; }
         QLabel#value { color: #90d9ce; font-weight: 700; }
         QLabel#status { color: #90d9ce; }
         QPushButton, QComboBox { background: #2d405a; border: 1px solid #4a5d77;
@@ -1035,7 +1129,14 @@ int main(int argc, char **argv) {
         QScrollArea { border: none; }
     )");
     if (app.arguments().contains("--ui-self-test")) {
-        MainWindow testWindow;
+        MainWindow testWindow(false);
+        if (builtinShapes().size() < 30) qFatal("Preset library is incomplete");
+        if (testWindow.windowTitle() != "SoundCurrent EQ") qFatal("Window title is missing");
+        for (const auto *label : testWindow.findChildren<QLabel *>()) {
+            if (label->text() == "SoundCurrent EQ" ||
+                label->text() == "Shape your sound with an adjustable parametric equalizer.")
+                qFatal("Removed in-window heading is still visible");
+        }
         auto findSpin = [&testWindow](const QString &name) {
             for (auto *spin : testWindow.findChildren<QSpinBox *>())
                 if (spin->accessibleName() == name) return spin;
@@ -1051,6 +1152,16 @@ int main(int argc, char **argv) {
         auto *gain = findDouble("Selected band gain");
         auto *q = findDouble("Selected band filter Q");
         if (!count || !frequency || !gain || !q) qFatal("UI controls missing");
+        QComboBox *presets = nullptr;
+        for (auto *combo : testWindow.findChildren<QComboBox *>())
+            if (combo->accessibleName() == "Listening preset") presets = combo;
+        if (!presets) qFatal("Preset menu is missing");
+        for (auto it = builtinShapes().begin(); it != builtinShapes().end(); ++it)
+            if (presets->findText(it.key()) < 0) qFatal("A built-in preset is missing from the menu");
+        presets->setCurrentText("Deep Bass");
+        if (gain->value() < 6.0) qFatal("Deep Bass preset did not change the bands");
+        presets->setCurrentText("Flat");
+        if (gain->value() != 0.0) qFatal("Flat preset did not reset the bands");
         count->setValue(31);
         if (testWindow.findChildren<QSlider *>().size() != 31) qFatal("31-band layout failed");
         frequency->setValue(22);
@@ -1060,10 +1171,59 @@ int main(int argc, char **argv) {
             qFatal("Selected-band editing failed");
         count->setValue(15);
         if (testWindow.findChildren<QSlider *>().size() != 15) qFatal("Band-count change failed");
-        qInfo("UI self-test passed with editable 5–31 band layout");
+        qInfo("UI self-test passed with %lld presets and editable 5–31 band layout",
+              static_cast<long long>(builtinShapes().size()));
         return 0;
     }
+    const auto runtime = QStandardPaths::writableLocation(QStandardPaths::RuntimeLocation);
+    if (runtime.isEmpty() || !QFileInfo(runtime).isDir()) {
+        qCritical("A private user runtime directory is required");
+        return 1;
+    }
+    const auto socketPath = QDir(runtime).filePath("soundcurrent-eq.sock");
+    QLockFile instanceLock(QDir(runtime).filePath("soundcurrent-eq.lock"));
+    instanceLock.setStaleLockTime(0);
+    if (!instanceLock.tryLock(200)) {
+        if (instanceLock.error() == QLockFile::LockFailedError) {
+            QElapsedTimer timer;
+            timer.start();
+            while (timer.elapsed() < 2000) {
+                QLocalSocket client;
+                client.connectToServer(socketPath);
+                if (client.waitForConnected(200)) {
+                    client.write(app.arguments().contains("--quit") ? "Q" : "S");
+                    client.waitForBytesWritten(500);
+                    client.disconnectFromServer();
+                    return 0;
+                }
+                QThread::msleep(50);
+            }
+        }
+        qCritical("SoundCurrent EQ is already running or its instance lock is unavailable");
+        return 1;
+    }
+    if (app.arguments().contains("--quit")) return 0;
+    QLocalServer instanceServer;
+    instanceServer.setSocketOptions(QLocalServer::UserAccessOption);
+    QLocalServer::removeServer(socketPath);
+    if (!instanceServer.listen(socketPath)) {
+        qCritical("Could not create SoundCurrent EQ's local activation socket: %s", qPrintable(instanceServer.errorString()));
+        return 1;
+    }
     MainWindow window;
+    QObject::connect(&instanceServer, &QLocalServer::newConnection, &window, [&] {
+        while (instanceServer.hasPendingConnections()) {
+            auto *client = instanceServer.nextPendingConnection();
+            QObject::connect(client, &QLocalSocket::readyRead, &window, [client, &window] {
+                const auto request = client->readAll();
+                if (request.startsWith('Q')) qApp->quit();
+                else if (request.startsWith('H')) window.close();
+                else if (request.startsWith('S')) window.reopen();
+                client->disconnectFromServer();
+            });
+            QObject::connect(client, &QLocalSocket::disconnected, client, &QLocalSocket::deleteLater);
+        }
+    });
     window.show();
     return app.exec();
 }

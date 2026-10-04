@@ -39,7 +39,7 @@ cat > "$data_dir/applications/io.github.rhamenator.SoundCurrentEQ.desktop" <<EOF
 [Desktop Entry]
 Type=Application
 Name=SoundCurrent EQ
-Comment=Nine-band system-wide equalizer for PipeWire
+Comment=Adjustable system-wide equalizer for PipeWire
 Exec="$bin_dir/soundcurrent-eq"
 Icon=io.github.rhamenator.SoundCurrentEQ
 StartupWMClass=soundcurrent-eq

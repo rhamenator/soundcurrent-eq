@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.20)
-project(soundcurrent-eq VERSION 0.2.0 LANGUAGES CXX)
+project(soundcurrent-eq VERSION 0.3.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOMOC ON)
 
-find_package(Qt6 6.4 REQUIRED COMPONENTS Core Widgets)
+find_package(Qt6 6.4 REQUIRED COMPONENTS Core Network Widgets)
 
 add_executable(soundcurrent-eq src/main.cpp)
-target_link_libraries(soundcurrent-eq PRIVATE Qt6::Core Qt6::Widgets)
+target_link_libraries(soundcurrent-eq PRIVATE Qt6::Core Qt6::Network Qt6::Widgets)
 target_compile_options(soundcurrent-eq PRIVATE -Wall -Wextra -Wpedantic)
 
 include(GNUInstallDirs)

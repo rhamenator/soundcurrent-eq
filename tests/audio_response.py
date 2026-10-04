@@ -1,0 +1,123 @@
+#!/usr/bin/env python3
+"""Measure a live PipeWire band change without using the speakers."""
+
+import array
+import json
+import math
+import os
+import pathlib
+import subprocess
+import sys
+import tempfile
+import time
+import wave
+
+
+def run(*args, **kwargs):
+    return subprocess.run(args, check=True, **kwargs)
+
+
+def node_id(name):
+    for item in json.loads(run("pw-dump", capture_output=True, text=True).stdout):
+        if item.get("info", {}).get("props", {}).get("node.name") == name:
+            return item["id"]
+    return None
+
+
+def capture(tone, destination, sink):
+    with destination.open("wb") as output:
+        recorder = subprocess.Popen(
+            ["parec", "-d", sink + ".monitor", "--format=s16le", "--rate=48000", "--channels=2"],
+            stdout=output,
+            stderr=subprocess.DEVNULL,
+        )
+        try:
+            time.sleep(0.3)
+            run("paplay", "-d", "soundcurrent_eq", str(tone))
+            time.sleep(0.1)
+        finally:
+            recorder.terminate()
+            recorder.wait(timeout=5)
+    samples = array.array("h")
+    samples.frombytes(destination.read_bytes())
+    audible = [value for value in samples if abs(value) > 4]
+    if len(audible) < 1000:
+        raise RuntimeError("The test signal did not reach the silent output")
+    return math.sqrt(sum(value * value for value in audible) / len(audible))
+
+
+def main():
+    binary = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "build/soundcurrent-eq").resolve()
+    if node_id("soundcurrent_eq") is not None:
+        raise RuntimeError("Turn off SoundCurrent EQ before running the audio test")
+    sink = f"soundcurrent_test_{os.getpid()}"
+    module = None
+    pipewire = None
+    with tempfile.TemporaryDirectory(prefix="soundcurrent-audio-test-") as directory:
+        directory = pathlib.Path(directory)
+        try:
+            module = run("pactl", "load-module", "module-null-sink", f"sink_name={sink}",
+                         "sink_properties=device.description=SoundCurrent_Test_Output",
+                         capture_output=True, text=True).stdout.strip()
+            config = run(str(binary), "--dump-filter-config", sink,
+                         capture_output=True, text=True,
+                         env={**os.environ, "QT_QPA_PLATFORM": "offscreen"}).stdout
+            (directory / "filter.conf").write_text(config)
+            pipewire = subprocess.Popen(["pipewire", "-c", str(directory / "filter.conf")],
+                                        stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+            for _ in range(40):
+                eq_id = node_id("soundcurrent_eq")
+                if eq_id is not None:
+                    break
+                if pipewire.poll() is not None:
+                    raise RuntimeError("PipeWire filter exited before creating the EQ sink")
+                time.sleep(0.1)
+            else:
+                raise RuntimeError("PipeWire did not create the EQ sink")
+
+            tone = directory / "tone.wav"
+            with wave.open(str(tone), "wb") as wav:
+                wav.setnchannels(2)
+                wav.setsampwidth(2)
+                wav.setframerate(48000)
+                frame = array.array("h")
+                for n in range(96000):
+                    value = round(3000 * math.sin(2 * math.pi * 1000 * n / 48000))
+                    frame.extend((value, value))
+                wav.writeframes(frame.tobytes())
+
+            flat = capture(tone, directory / "flat.raw", sink)
+            frequencies = (25, 40, 63, 100, 160, 250, 400, 630, 1000, 1600, 2500, 4000, 6300,
+                           10000, 16000)
+            controls = ['"preamp:Mult" 1.0']
+            for index in range(1, 32):
+                frequency = frequencies[index - 1] if index <= len(frequencies) else 1000
+                gain = -12.0 if index == 9 else 0.0
+                controls.extend((f'"band_{index}:Freq" {frequency}',
+                                 f'"band_{index}:Q" 1.0',
+                                 f'"band_{index}:Gain" {gain}'))
+            run("pw-cli", "set-param", str(eq_id), "Props", "{ params = [ " + " ".join(controls) + " ] }",
+                stdout=subprocess.DEVNULL)
+            cut = capture(tone, directory / "cut.raw", sink)
+            change = 20 * math.log10(cut / flat)
+            print(f"1 kHz band response: {change:.1f} dB (expected about -12 dB)")
+            if not -14.0 < change < -10.0:
+                raise RuntimeError("Equalizer control did not change the audio signal as expected")
+        finally:
+            if pipewire is not None:
+                pipewire.terminate()
+                try:
+                    pipewire.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    pipewire.kill()
+                    pipewire.wait()
+            if module is not None:
+                run("pactl", "unload-module", module)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (RuntimeError, subprocess.CalledProcessError) as error:
+        print(f"Audio response test failed: {error}", file=sys.stderr)
+        sys.exit(1)

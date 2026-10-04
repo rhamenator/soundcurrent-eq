@@ -20,9 +20,9 @@ Section: sound
 Priority: optional
 Architecture: $architecture
 Maintainer: rhamenator <rhamenator@gmail.com>
-Depends: libqt6widgets6 (>= 6.4), pipewire, pipewire-pulse, pipewire-bin, wireplumber, pulseaudio-utils
+Depends: libqt6widgets6 (>= 6.4), libqt6network6 (>= 6.4), pipewire, pipewire-pulse, pipewire-bin, wireplumber, pulseaudio-utils
 Homepage: https://github.com/rhamenator/soundcurrent-eq
-Description: Simple nine-band desktop equalizer for PipeWire
+Description: Adjustable desktop equalizer for PipeWire
  SoundCurrent EQ provides listening presets, custom profiles, and automatic
  output-device selection in a native C++ desktop application.
 EOF
