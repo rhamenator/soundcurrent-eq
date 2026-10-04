@@ -1,6 +1,6 @@
 Name:           soundcurrent-eq
 %global debug_package %{nil}
-Version:        0.3.1
+Version:        0.3.2
 Release:        1%{?dist}
 Summary:        Adjustable desktop equalizer for PipeWire
 License:        MIT
@@ -37,5 +37,7 @@ DESTDIR=%{buildroot} cmake --install build
 %{_datadir}/icons/hicolor/scalable/apps/io.github.rhamenator.SoundCurrentEQ.svg
 
 %changelog
+* Sun Oct 04 2026 rhamenator <rhamenator@gmail.com> - 0.3.2-1
+- Make the preset list scrollable, clarify group separators, and default to Flat
 * Sun Oct 04 2026 rhamenator <rhamenator@gmail.com> - 0.3.1-1
 - Add Fedora and RHEL-compatible RPM packaging

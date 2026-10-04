@@ -5,6 +5,7 @@ starts with 15 frequency bands and lets you choose any count from 5 to 31.
 Each band has adjustable gain, center frequency, and width (Q). It also has a
 response curve, 33 listening presets, saved custom presets, and an output dropdown
 with an **Automatic** option that follows connected devices.
+It opens with the **Flat** preset selected.
 
 ![SoundCurrent EQ desktop window](docs/screenshot.png)
 
@@ -75,9 +76,9 @@ or install missing dependencies.
 - Pick a built-in preset or save your own. Custom presets live in your user
   configuration directory. Saved nine-band presets from earlier releases can
   still be loaded.
-- Built-in presets are grouped by everyday listening, bass and speech,
-  entertainment, and music. They include Deep Bass, Podcast, TV Dialogue,
-  FPS Footsteps, Rock, Jazz, Electronic, Hip-Hop, and more.
+- The scrollable preset list includes Deep Bass, Podcast, TV Dialogue,
+  FPS Footsteps, Rock, Jazz, Electronic, Hip-Hop, Night Listening, and more.
+  Separators divide the list; every named entry is a working preset.
 - Closing the window keeps the equalizer running. Use its indicator icon to
   reopen it, turn processing on or off, or quit. Launching the app again also
   reopens the existing window. If the desktop has no tray, closing the window
@@ -121,8 +122,9 @@ The first command briefly creates the EQ sink, changes its band count and
 controls, and checks that the original default output is restored. It uses the
 currently selected physical output and does not play a test sound. The second
 checks the 31-band interface, preset library, and selected-band controls without using audio.
-The third command sends a 1 kHz tone through a temporary silent sink and
-verifies that a 12 dB band cut changes the measured output by about 12 dB.
+The third command sends tones through a temporary silent sink and verifies
+that a 12 dB band cut changes the measured output by about 12 dB and that
+Night Listening reduces low-frequency output.
 It requires `paplay` and `parec`, and leaves the normal default output alone.
 
 ## Privacy and safety

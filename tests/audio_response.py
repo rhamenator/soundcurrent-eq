@@ -75,18 +75,19 @@ def main():
             else:
                 raise RuntimeError("PipeWire did not create the EQ sink")
 
-            tone = directory / "tone.wav"
-            with wave.open(str(tone), "wb") as wav:
-                wav.setnchannels(2)
-                wav.setsampwidth(2)
-                wav.setframerate(48000)
-                frame = array.array("h")
-                for n in range(96000):
-                    value = round(3000 * math.sin(2 * math.pi * 1000 * n / 48000))
-                    frame.extend((value, value))
-                wav.writeframes(frame.tobytes())
+            for frequency in (100, 1000):
+                with wave.open(str(directory / f"tone-{frequency}.wav"), "wb") as wav:
+                    wav.setnchannels(2)
+                    wav.setsampwidth(2)
+                    wav.setframerate(48000)
+                    frame = array.array("h")
+                    for n in range(96000):
+                        value = round(3000 * math.sin(2 * math.pi * frequency * n / 48000))
+                        frame.extend((value, value))
+                    wav.writeframes(frame.tobytes())
 
-            flat = capture(tone, directory / "flat.raw", sink)
+            flat_100 = capture(directory / "tone-100.wav", directory / "flat-100.raw", sink)
+            flat = capture(directory / "tone-1000.wav", directory / "flat.raw", sink)
             frequencies = (25, 40, 63, 100, 160, 250, 400, 630, 1000, 1600, 2500, 4000, 6300,
                            10000, 16000)
             controls = ['"preamp:Mult" 1.0']
@@ -98,11 +99,21 @@ def main():
                                  f'"band_{index}:Gain" {gain}'))
             run("pw-cli", "set-param", str(eq_id), "Props", "{ params = [ " + " ".join(controls) + " ] }",
                 stdout=subprocess.DEVNULL)
-            cut = capture(tone, directory / "cut.raw", sink)
+            cut = capture(directory / "tone-1000.wav", directory / "cut.raw", sink)
             change = 20 * math.log10(cut / flat)
             print(f"1 kHz band response: {change:.1f} dB (expected about -12 dB)")
             if not -14.0 < change < -10.0:
                 raise RuntimeError("Equalizer control did not change the audio signal as expected")
+
+            night_controls = run(str(binary), "--dump-preset-controls", "Night Listening",
+                                 capture_output=True, text=True,
+                                 env={**os.environ, "QT_QPA_PLATFORM": "offscreen"}).stdout
+            run("pw-cli", "set-param", str(eq_id), "Props", night_controls, stdout=subprocess.DEVNULL)
+            night_100 = capture(directory / "tone-100.wav", directory / "night-100.raw", sink)
+            night_change = 20 * math.log10(night_100 / flat_100)
+            print(f"Night Listening response at 100 Hz: {night_change:.1f} dB relative to Flat")
+            if night_change > -8.0:
+                raise RuntimeError("Night Listening did not sufficiently reduce low frequencies")
         finally:
             if pipewire is not None:
                 pipewire.terminate()

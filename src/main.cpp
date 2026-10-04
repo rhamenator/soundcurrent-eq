@@ -18,6 +18,7 @@
 #include <QJsonObject>
 #include <QLabel>
 #include <QLineEdit>
+#include <QListView>
 #include <QLocalServer>
 #include <QLocalSocket>
 #include <QLockFile>
@@ -29,12 +30,12 @@
 #include <QProcess>
 #include <QPushButton>
 #include <QScrollArea>
+#include <QScrollBar>
 #include <QSaveFile>
 #include <QSignalBlocker>
 #include <QSlider>
 #include <QSpinBox>
 #include <QStandardPaths>
-#include <QStandardItemModel>
 #include <QSystemTrayIcon>
 #include <QTemporaryDir>
 #include <QThread>
@@ -262,6 +263,17 @@ int nodeId(const QString &name) {
     return -1;
 }
 
+QString filterControls(const Bands &bands) {
+    QStringList controls = {quote("preamp:Mult"), QString::number(std::pow(10.0, headroom(bands) / 20.0), 'f', 8)};
+    for (int i = 0; i < kMaxBands; ++i) {
+        const auto band = i < bands.size() ? bands[i] : Band{};
+        controls << quote(QString("band_%1:Freq").arg(i + 1)) << QString::number(band.frequency, 'f', 1)
+                 << quote(QString("band_%1:Q").arg(i + 1)) << QString::number(band.q, 'f', 2)
+                 << quote(QString("band_%1:Gain").arg(i + 1)) << QString::number(band.gain, 'f', 2);
+    }
+    return "{ params = [ " + controls.join(' ') + " ] }";
+}
+
 class AudioEngine {
 public:
     bool active() const { return process_.state() != QProcess::NotRunning; }
@@ -313,15 +325,7 @@ public:
         if (!active()) return;
         const auto id = nodeId(kSink);
         if (id < 0) throw std::runtime_error("Equalizer sink disappeared");
-        QStringList controls = {quote("preamp:Mult"), QString::number(std::pow(10.0, headroom(bands) / 20.0), 'f', 8)};
-        for (int i = 0; i < kMaxBands; ++i) {
-            const auto band = i < bands.size() ? bands[i] : Band{};
-            controls << quote(QString("band_%1:Freq").arg(i + 1)) << QString::number(band.frequency, 'f', 1)
-                     << quote(QString("band_%1:Q").arg(i + 1)) << QString::number(band.q, 'f', 2)
-                     << quote(QString("band_%1:Gain").arg(i + 1)) << QString::number(band.gain, 'f', 2);
-        }
-        command("pw-cli", {"set-param", QString::number(id), "Props",
-                            "{ params = [ " + controls.join(' ') + " ] }"});
+        command("pw-cli", {"set-param", QString::number(id), "Props", filterControls(bands)});
     }
 
     void stop() {
@@ -385,7 +389,7 @@ const QMap<QString, std::array<double, 9>> &builtinShapes() {
         {"Movies", {3, 2.5, 1.5, 0, -1, 0, 1, 2, 2}},
         {"Gaming", {3, 2, 0, -2, -1, 1, 3, 2, 0}},
         {"FPS Footsteps", {-5, -4, -3, -2, 0, 2, 4, 3, 1}},
-        {"Night Listening", {-3, -2, -1, 0, 1, 2, 1, -1, -2}},
+        {"Night Listening", {-6, -5, -3, 0, 2, 3, 1, -3, -5}},
         {"Small Speakers", {-4, -2, 0, 2, 2, 1, 1, 0, -1}},
         {"Headphones", {1, 1, 0, -1, -1.5, 0, 1.5, 2, 1}},
         {"Rock", {3, 2, 1, -1, -2, 0, 2, 3, 2}},
@@ -557,9 +561,28 @@ private:
     int dragging_ = -1;
 };
 
+class PresetComboBox : public QComboBox {
+protected:
+    void showPopup() override {
+        QComboBox::showPopup();
+        auto *popup = view()->window();
+        const auto rowHeight = std::max(18, view()->sizeHintForRow(0));
+        const auto height = std::min(count(), maxVisibleItems()) * rowHeight + 16;
+        popup->setFixedHeight(height);
+        if (auto *screen = QGuiApplication::screenAt(mapToGlobal(rect().center()))) {
+            const auto area = screen->availableGeometry();
+            auto position = mapToGlobal(rect().bottomLeft());
+            if (position.y() + height > area.bottom())
+                position.setY(mapToGlobal(rect().topLeft()).y() - height);
+            popup->move(std::clamp(position.x(), area.left(), area.right() - popup->width()),
+                        std::clamp(position.y(), area.top(), area.bottom() - height));
+        }
+    }
+};
+
 class MainWindow : public QMainWindow {
 public:
-    explicit MainWindow(bool startEnabled = true) : bands_(builtinProfile("Balanced", kDefaultBands)) {
+    explicit MainWindow(bool startEnabled = true) : bands_(builtinProfile("Flat", kDefaultBands)) {
         setWindowTitle("SoundCurrent EQ");
         setWindowIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ"));
         setMinimumSize(760, 620);
@@ -594,8 +617,11 @@ public:
 
         auto *presetBox = new QGroupBox("Listening preset");
         auto *presetRow = new QHBoxLayout(presetBox);
-        presetCombo_ = new QComboBox;
+        presetCombo_ = new PresetComboBox;
         presetCombo_->setAccessibleName("Listening preset");
+        presetCombo_->setView(new QListView(presetCombo_));
+        presetCombo_->setMaxVisibleItems(12);
+        presetCombo_->view()->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         presetRow->addWidget(presetCombo_, 1);
         auto *save = new QPushButton("Save preset");
         presetRow->addWidget(save);
@@ -665,7 +691,7 @@ public:
         root->addWidget(eqBox, 1);
 
         loadCustomPresets();
-        rebuildPresetList("Balanced");
+        rebuildPresetList("Flat");
         rebuildBandControls();
         syncBandControls();
         refreshDevices();
@@ -882,24 +908,21 @@ private:
     void rebuildPresetList(const QString &selected) {
         const QSignalBlocker blocker(presetCombo_);
         presetCombo_->clear();
-        auto addSection = [this](const QString &title, const QStringList &names) {
-            presetCombo_->addItem(title);
-            if (auto *model = qobject_cast<QStandardItemModel *>(presetCombo_->model())) {
-                auto *heading = model->item(presetCombo_->count() - 1);
-                heading->setEnabled(false);
-                heading->setForeground(QColor("#90d9ce"));
-            }
+        auto addGroup = [this](const QStringList &names) {
+            if (presetCombo_->count()) presetCombo_->insertSeparator(presetCombo_->count());
             for (const auto &name : names) presetCombo_->addItem(name);
         };
-        addSection("Everyday", {"Balanced", "Flat", "Warm", "Bright", "Soft Treble", "Treble Detail",
-                                 "Headphones", "Small Speakers", "Night Listening"});
-        addSection("Bass and speech", {"Bass Boost", "Deep Bass", "Punchy Bass", "Bass Cut",
-                                        "Clear Voice", "Podcast", "TV Dialogue", "Vocal Focus"});
-        addSection("Entertainment", {"Movies", "Gaming", "FPS Footsteps", "Live"});
-        addSection("Music", {"Rock", "Pop", "Jazz", "Classical", "Electronic", "Dance", "Hip-Hop",
-                             "R&B", "Acoustic", "Piano", "Metal", "Lo-Fi"});
-        if (!custom_.isEmpty()) addSection("Saved presets", {});
-        for (auto it = custom_.begin(); it != custom_.end(); ++it) presetCombo_->addItem(it.key());
+        addGroup({"Balanced", "Flat", "Warm", "Bright", "Soft Treble", "Treble Detail",
+                  "Headphones", "Small Speakers", "Night Listening"});
+        addGroup({"Bass Boost", "Deep Bass", "Punchy Bass", "Bass Cut",
+                  "Clear Voice", "Podcast", "TV Dialogue", "Vocal Focus"});
+        addGroup({"Movies", "Gaming", "FPS Footsteps", "Live"});
+        addGroup({"Rock", "Pop", "Jazz", "Classical", "Electronic", "Dance", "Hip-Hop",
+                  "R&B", "Acoustic", "Piano", "Metal", "Lo-Fi"});
+        if (!custom_.isEmpty()) {
+            presetCombo_->insertSeparator(presetCombo_->count());
+            for (auto it = custom_.begin(); it != custom_.end(); ++it) presetCombo_->addItem(it.key());
+        }
         presetCombo_->addItem("Custom");
         presetCombo_->setCurrentText(selected);
     }
@@ -1076,6 +1099,12 @@ int main(int argc, char **argv) {
         QTextStream(stdout) << filterConfig(app.arguments()[2], defaultBands(kDefaultBands));
         return 0;
     }
+    if (app.arguments().size() == 3 && app.arguments()[1] == "--dump-preset-controls") {
+        const auto name = app.arguments()[2];
+        if (!builtinShapes().contains(name)) return 2;
+        QTextStream(stdout) << filterControls(builtinProfile(name, kDefaultBands));
+        return 0;
+    }
     if (app.arguments().contains("--self-test")) {
         try {
             const auto standard = defaultBands(kDefaultBands);
@@ -1156,8 +1185,23 @@ int main(int argc, char **argv) {
         for (auto *combo : testWindow.findChildren<QComboBox *>())
             if (combo->accessibleName() == "Listening preset") presets = combo;
         if (!presets) qFatal("Preset menu is missing");
-        for (auto it = builtinShapes().begin(); it != builtinShapes().end(); ++it)
+        if (presets->currentText() != "Flat") qFatal("Flat is not the default preset");
+        if (presets->findText("Entertainment") >= 0) qFatal("Category title appears as a preset");
+        for (auto it = builtinShapes().begin(); it != builtinShapes().end(); ++it) {
             if (presets->findText(it.key()) < 0) qFatal("A built-in preset is missing from the menu");
+            presets->setCurrentText(it.key());
+            if (std::abs(gain->value() - builtinProfile(it.key(), kDefaultBands).first().gain) > 0.11)
+                qFatal("A built-in preset did not update the band controls");
+        }
+        testWindow.show();
+        app.processEvents();
+        presets->showPopup();
+        app.processEvents();
+        if (presets->maxVisibleItems() != 12 ||
+            presets->view()->verticalScrollBar()->maximum() <= 0)
+            qFatal("Preset menu does not scroll");
+        presets->hidePopup();
+        testWindow.hide();
         presets->setCurrentText("Deep Bass");
         if (gain->value() < 6.0) qFatal("Deep Bass preset did not change the bands");
         presets->setCurrentText("Flat");
