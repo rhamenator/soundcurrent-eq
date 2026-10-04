@@ -113,6 +113,12 @@ or install missing dependencies.
 - Pick a built-in preset or save your own. Custom presets live in your user
   configuration directory. Saved nine-band presets from earlier releases can
   still be loaded.
+- Use **Lock EQ** to protect playback presets, bands, post gain, and balance
+  from accidental edits. The lock is remembered when the app restarts. **Undo**
+  or Ctrl+Z restores the previous playback setting; repeated changes while
+  dragging one control count as one step. The last 50 steps are available while
+  the app is open. Rolling the mouse wheel over EQ sliders or number fields
+  scrolls the window toward the level indicators instead of changing sound.
 - The scrollable preset list includes Deep Bass, Podcast, TV Dialogue,
   FPS Footsteps, Rock, Jazz, Electronic, Hip-Hop, Night Listening, Loudness, and more.
   Separators divide the list; every named entry is a working preset.
@@ -150,6 +156,8 @@ mono webcam cannot provide left/right position information for room-following
 balance. On current WirePlumber systems, the microphone filter is transparent
 to recording apps. Older systems use a virtual default microphone while the
 filter is active and restore the prior input when it stops.
+The status line reports when the selected microphone disconnects. If only an
+onboard input remains, it also says that no USB microphone is detected.
 
 ### Speaker and room check
 
@@ -214,8 +222,8 @@ The first command briefly creates the EQ sink, changes its band count and
 controls, and checks that the original default output and volume are restored.
 It uses the
 currently selected physical output and does not play a test sound. The second
-checks the 31-band interface, preset library, selected-band controls, window
-fit, and calibration analysis without using audio.
+checks the 31-band interface, preset library, lock and Undo, wheel scrolling,
+selected-band controls, window fit, and calibration analysis without using audio.
 The third command sends tones through a temporary silent sink and verifies
 that a 12 dB band cut changes the measured output by about 12 dB and that
 Night Listening reduces low-frequency output, Loudness emphasizes bass over

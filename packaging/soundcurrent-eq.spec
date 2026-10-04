@@ -1,6 +1,6 @@
 Name:           soundcurrent-eq
 %global debug_package %{nil}
-Version:        0.5.0
+Version:        0.5.1
 Release:        1%{?dist}
 Summary:        Adjustable desktop equalizer for PipeWire
 License:        GPL-3.0-only
@@ -39,6 +39,8 @@ DESTDIR=%{buildroot} cmake --install build
 %{_datadir}/doc/soundcurrent-eq/LICENSE
 
 %changelog
+* Sun Oct 04 2026 rhamenator <rhamenator@gmail.com> - 0.5.1-1
+- Add persistent EQ lock, grouped Undo, safe wheel scrolling, and mic disconnect status
 * Sun Oct 04 2026 rhamenator <rhamenator@gmail.com> - 0.5.0-1
 - Add speaker and room measurement with 20 Hz to 25 kHz sweep and EQ preview
 - Fit the desktop window to the available display area

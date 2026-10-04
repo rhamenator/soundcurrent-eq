@@ -2,6 +2,7 @@
 // Copyright (C) 2026 rhamenator
 
 #include <QApplication>
+#include <QAbstractSpinBox>
 #include <QCheckBox>
 #include <QCloseEvent>
 #include <QComboBox>
@@ -38,6 +39,7 @@
 #include <QRegularExpression>
 #include <QScrollArea>
 #include <QScrollBar>
+#include <QShortcut>
 #include <QSaveFile>
 #include <QScreen>
 #include <QSettings>
@@ -53,6 +55,7 @@
 #include <QTimer>
 #include <QVBoxLayout>
 #include <QVector>
+#include <QWheelEvent>
 
 #include <algorithm>
 #include <array>
@@ -1181,6 +1184,8 @@ public:
         update();
     }
 
+    void setLocked(bool locked) { locked_ = locked; dragging_ = -1; }
+
 protected:
     void paintEvent(QPaintEvent *) override {
         QPainter painter(this);
@@ -1240,7 +1245,7 @@ protected:
     }
 
     void mouseMoveEvent(QMouseEvent *event) override {
-        if (dragging_ < 0 || !onMove) return;
+        if (locked_ || dragging_ < 0 || !onMove) return;
         const QRectF plot(38, 12, width() - 54, height() - 31);
         auto frequency = frequencyForX(event->position().x(), plot);
         const auto minimum = dragging_ > 0 ? bands_[dragging_ - 1].frequency * 1.02 : 20.0;
@@ -1268,6 +1273,7 @@ private:
     Bands bands_;
     int selected_ = 0;
     int dragging_ = -1;
+    bool locked_ = false;
 };
 
 class BandLevelMeter : public QWidget {
@@ -1558,14 +1564,14 @@ public:
                    std::min(1060, std::max(320, available.height() - 48)));
         } else resize(1050, 920);
 
-        auto *scroll = new QScrollArea;
-        scroll->setWidgetResizable(true);
-        setCentralWidget(scroll);
+        scroll_ = new QScrollArea;
+        scroll_->setWidgetResizable(true);
+        setCentralWidget(scroll_);
         auto *container = new QWidget;
         auto *root = new QVBoxLayout(container);
         root->setContentsMargins(26, 22, 26, 24);
         root->setSpacing(16);
-        scroll->setWidget(container);
+        scroll_->setWidget(container);
 
         auto *outputBox = new QGroupBox("Playback");
         auto *outputLayout = new QVBoxLayout(outputBox);
@@ -1749,6 +1755,19 @@ public:
         presetRow->addWidget(save);
         auto *reset = new QPushButton("Reset to flat");
         presetRow->addWidget(reset);
+        savePresetButton_ = save;
+        resetButton_ = reset;
+        lockButton_ = new QPushButton("Lock EQ");
+        lockButton_->setCheckable(true);
+        lockButton_->setChecked(startEnabled && QSettings().value("eqLocked", false).toBool());
+        lockButton_->setAccessibleName("Lock equalizer settings");
+        lockButton_->setToolTip("Prevent changes to presets, EQ bands, post gain, and balance");
+        presetRow->addWidget(lockButton_);
+        undoButton_ = new QPushButton("Undo");
+        undoButton_->setAccessibleName("Undo last equalizer change");
+        undoButton_->setToolTip("Restore the previous EQ setting (Ctrl+Z)");
+        undoButton_->setEnabled(false);
+        presetRow->addWidget(undoButton_);
         root->addWidget(presetBox);
 
         auto *eqBox = new QGroupBox("Equalizer");
@@ -1875,7 +1894,15 @@ public:
         connect(presetCombo_, &QComboBox::currentIndexChanged, this, [this] { presetChanged(); });
         connect(save, &QPushButton::clicked, this, [this] { savePreset(); });
         connect(reset, &QPushButton::clicked, this, [this] { presetCombo_->setCurrentText("Flat"); });
+        connect(lockButton_, &QPushButton::toggled, this, [this, startEnabled](bool locked) {
+            if (startEnabled) QSettings().setValue("eqLocked", locked);
+            updateControlsLock();
+        });
+        connect(undoButton_, &QPushButton::clicked, this, [this] { undoChange(); });
+        auto *undoShortcut = new QShortcut(QKeySequence::Undo, this);
+        connect(undoShortcut, &QShortcut::activated, this, [this] { undoChange(); });
         connect(outputGain_, &QSlider::valueChanged, this, [this](int) {
+            recordChange(outputGain_);
             const double value = outputGainDb();
             QSettings().setValue("outputGainDb", value);
             outputGainValue_->setText(QString("%1%2 dB").arg(value > 0 ? "+" : "")
@@ -1883,14 +1910,17 @@ public:
             meter_.setProfile(bands_, value, balance_->value());
             try { audio_.updateGain(value, balance_->value()); }
             catch (const std::exception &error) { showError(error.what()); }
+            commitChange();
         });
         connect(balance_, &QSlider::valueChanged, this, [this](int value) {
+            recordChange(balance_);
             QSettings().setValue("balancePercent", value);
             balanceValue_->setText(value == 0 ? "Center"
                                    : QString("%1 %2%").arg(value < 0 ? "L" : "R").arg(std::abs(value)));
             meter_.setProfile(bands_, outputGainDb(), value);
             try { audio_.updateGain(outputGainDb(), value); }
             catch (const std::exception &error) { showError(error.what()); }
+            commitChange();
         });
         connect(levelRefresh_, &QSpinBox::valueChanged, this, [this](int milliseconds) {
             QSettings().setValue("levelRefreshMs", milliseconds);
@@ -1908,12 +1938,14 @@ public:
         curve_->onSelect = [this](int index) { selectBand(index); };
         curve_->onMove = [this](int index, double frequency, double gain) {
             if (index < 0 || index >= bands_.size()) return;
+            recordChange(curve_);
             bands_[index].frequency = frequency;
             bands_[index].gain = gain;
             selectBand(index);
             markCustom();
             syncBandControls();
             applyChanges();
+            commitChange();
         };
         meter_.onLevels = [this](const QVector<double> &levels, double peak) { showLevels(levels, peak); };
         meter_.setProfile(bands_, outputGainDb(), balance_->value());
@@ -1938,6 +1970,11 @@ public:
             }
         });
         volumeEvents_.start();
+        for (auto *widget : findChildren<QWidget *>())
+            if (qobject_cast<QComboBox *>(widget) || qobject_cast<QAbstractSpinBox *>(widget) ||
+                qobject_cast<QSlider *>(widget)) widget->installEventFilter(this);
+        currentSnapshot_ = snapshot();
+        snapshotReady_ = true;
         if (startEnabled) setupTray();
         if (startEnabled && power_->isEnabled()) power_->setChecked(true);
     }
@@ -1964,6 +2001,22 @@ public:
     }
 
 protected:
+    bool eventFilter(QObject *watched, QEvent *event) override {
+        if (event->type() == QEvent::Wheel && scroll_) {
+            auto *wheel = static_cast<QWheelEvent *>(event);
+            if (wheel->angleDelta().y() || wheel->pixelDelta().y()) {
+                auto *bar = scroll_->verticalScrollBar();
+                QWheelEvent forwarded(QPointF(bar->rect().center()), wheel->globalPosition(),
+                                      wheel->pixelDelta(), wheel->angleDelta(), wheel->buttons(),
+                                      wheel->modifiers(), wheel->phase(), wheel->inverted(),
+                                      wheel->source());
+                QCoreApplication::sendEvent(bar, &forwarded);
+                return true;
+            }
+        }
+        return QMainWindow::eventFilter(watched, event);
+    }
+
     void showEvent(QShowEvent *event) override {
         QMainWindow::showEvent(event);
         QTimer::singleShot(0, this, [this] {
@@ -1992,6 +2045,83 @@ protected:
     }
 
 private:
+    struct EqSnapshot {
+        Bands bands;
+        QString preset;
+        int selected = 0;
+        int gain = 0;
+        int balance = 0;
+    };
+
+    EqSnapshot snapshot() const {
+        return {bands_, presetCombo_->currentText(), selected_, outputGain_->value(), balance_->value()};
+    }
+
+    void recordChange(QObject *source) {
+        if (!snapshotReady_ || restoring_) return;
+        if (source != lastChangeSource_ || !changeClock_.isValid() || changeClock_.elapsed() > 450) {
+            undoStack_.append(currentSnapshot_);
+            if (undoStack_.size() > 50) undoStack_.removeFirst();
+        }
+        lastChangeSource_ = source;
+        changeClock_.restart();
+        undoButton_->setEnabled(true);
+    }
+
+    void commitChange() {
+        if (snapshotReady_ && !restoring_) currentSnapshot_ = snapshot();
+    }
+
+    void undoChange() {
+        if (undoStack_.isEmpty()) return;
+        const auto previous = undoStack_.takeLast();
+        restoring_ = true;
+        {
+            const QSignalBlocker presetBlock(presetCombo_);
+            const QSignalBlocker countBlock(countBox_);
+            const QSignalBlocker gainBlock(outputGain_);
+            const QSignalBlocker balanceBlock(balance_);
+            bands_ = previous.bands;
+            selected_ = std::clamp(previous.selected, 0, int(bands_.size()) - 1);
+            countBox_->setValue(int(bands_.size()));
+            presetCombo_->setCurrentText(previous.preset);
+            outputGain_->setValue(previous.gain);
+            balance_->setValue(previous.balance);
+            rebuildBandControls();
+            syncBandControls();
+        }
+        outputGainValue_->setText(QString("%1%2 dB").arg(outputGainDb() > 0 ? "+" : "")
+                                      .arg(outputGainDb(), 0, 'f', 1));
+        balanceValue_->setText(balance_->value() == 0 ? "Center"
+                               : QString("%1 %2%").arg(balance_->value() < 0 ? "L" : "R")
+                                     .arg(std::abs(balance_->value())));
+        QSettings().setValue("outputGainDb", outputGainDb());
+        QSettings().setValue("balancePercent", balance_->value());
+        applyChanges();
+        restoring_ = false;
+        currentSnapshot_ = snapshot();
+        lastChangeSource_ = nullptr;
+        changeClock_.invalidate();
+        undoButton_->setEnabled(!undoStack_.isEmpty());
+    }
+
+    void updateControlsLock() {
+        const bool editable = !lockButton_->isChecked();
+        lockButton_->setText(editable ? "Lock EQ" : "Unlock EQ");
+        outputGain_->setEnabled(editable);
+        balance_->setEnabled(editable);
+        presetCombo_->setEnabled(editable);
+        savePresetButton_->setEnabled(editable);
+        resetButton_->setEnabled(editable);
+        countBox_->setEnabled(editable);
+        frequencyBox_->setEnabled(editable);
+        gainBox_->setEnabled(editable);
+        qBox_->setEnabled(editable);
+        curve_->setLocked(!editable);
+        if (!calibrating_) calibrationStart_->setEnabled(editable);
+        for (auto *slider : sliders_) slider->setEnabled(editable);
+    }
+
     void fitToDisplay() {
         auto *display = screen() ? screen() : QGuiApplication::primaryScreen();
         if (!display) return;
@@ -2052,7 +2182,7 @@ private:
         calibration_.start();
         if (!calibration_.waitForStarted(2000)) {
             calibrating_ = false;
-            calibrationStart_->setEnabled(true);
+            calibrationStart_->setEnabled(!lockButton_->isChecked());
             calibrationStop_->setEnabled(false);
             calibrationLevel_->setEnabled(true);
             calibrationMode_->setEnabled(true);
@@ -2069,7 +2199,7 @@ private:
         calibrationOutput_.append(calibration_.readAllStandardOutput());
         const bool cancelled = calibrationCancelled_;
         calibrating_ = false;
-        calibrationStart_->setEnabled(true);
+        calibrationStart_->setEnabled(!lockButton_->isChecked());
         calibrationStop_->setEnabled(false);
         calibrationLevel_->setEnabled(true);
         calibrationMode_->setEnabled(true);
@@ -2097,10 +2227,12 @@ private:
         preview.addButton("Keep current EQ", QMessageBox::RejectRole);
         preview.exec();
         if (preview.clickedButton() == apply && suggestion->changed > 0) {
+            recordChange(calibrationStart_);
             bands_ = suggestion->bands;
             markCustom();
             syncBandControls();
             applyChanges();
+            commitChange();
             calibrationStatus_->setText("Suggested EQ applied. Use Save preset to keep it.");
         } else calibrationStatus_->setText("Current EQ kept.");
     }
@@ -2110,8 +2242,18 @@ private:
         try {
             const auto latest = inputDevices();
             const auto manual = inputCombo_->currentData().toString();
+            const auto previousTarget = microphone_.target();
+            QString disconnected;
+            for (const auto &old : inputs_)
+                if (std::none_of(latest.begin(), latest.end(), [&](const InputDevice &now) {
+                        return now.name == old.name;
+                    }) && (old.name == previousTarget || old.name == manual))
+                    disconnected = old.description;
             QList<InputDevice> added;
             for (const auto &device : latest) if (!knownInputNames_.contains(device.name)) added.append(device);
+            if (std::any_of(added.begin(), added.end(), [](const InputDevice &device) {
+                    return device.name.contains(".usb-");
+                })) micDisconnectNotice_.clear();
             const bool changed = latest.size() != inputs_.size() ||
                 !std::equal(latest.begin(), latest.end(), inputs_.begin(), [](const InputDevice &a, const InputDevice &b) {
                     return a.name == b.name && a.description == b.description && a.channels == b.channels;
@@ -2130,10 +2272,15 @@ private:
                 inputCombo_->blockSignals(false);
             }
             micPower_->setEnabled(!inputs_.isEmpty());
-            if (!micPower_->isChecked()) return;
+            if (!disconnected.isEmpty()) micDisconnectNotice_ = disconnected + " disconnected. ";
+            if (!micPower_->isChecked()) {
+                if (!micDisconnectNotice_.isEmpty()) micStatus_->setText(micDisconnectNotice_ + "Microphone EQ is off.");
+                return;
+            }
             if (inputs_.isEmpty()) {
                 microphone_.stop();
-                micStatus_->setText("Waiting for a microphone.");
+                micStatus_->setText(micDisconnectNotice_.isEmpty() ? "No microphone connected."
+                                                               : micDisconnectNotice_ + "No microphone connected.");
                 return;
             }
             InputDevice desired;
@@ -2155,8 +2302,12 @@ private:
                 });
             if (!microphone_.active() || microphone_.target() != desired.name) {
                 microphone_.start(desired, micAdjustments(), micGain_->value() / 2.0);
-                micStatus_->setText("Natural mic EQ on · " + desired.description);
             }
+            const bool usbConnected = std::any_of(inputs_.begin(), inputs_.end(), [](const InputDevice &device) {
+                return device.name.contains(".usb-");
+            });
+            micStatus_->setText(micDisconnectNotice_ + "Natural mic EQ on · " + desired.description +
+                                (!usbConnected ? " · no USB microphone detected" : ""));
         } catch (const std::exception &error) { micStatus_->setText("Microphone error: " + QString::fromUtf8(error.what())); }
     }
 
@@ -2213,6 +2364,7 @@ private:
             slider->setPageStep(2);
             slider->setMinimumHeight(140);
             slider->setAccessibleName(QString("Band %1 gain").arg(i + 1));
+            slider->installEventFilter(this);
             sliders_.append(slider);
             auto *sliderRow = new QHBoxLayout;
             sliderRow->setSpacing(3);
@@ -2232,16 +2384,20 @@ private:
             row->addLayout(column);
             connect(slider, &QSlider::valueChanged, this, [this, i](int value) {
                 if (changing_) return;
+                recordChange(sliders_[i]);
                 bands_[i].gain = value / 2.0;
                 selectBand(int(i));
                 markCustom();
                 applyChanges();
+                commitChange();
             });
             connect(frequency, &QPushButton::clicked, this, [this, i] { selectBand(int(i)); });
         }
         container->setFixedWidth(std::max(760, int(bands_.size()) * 63));
         container->setMinimumHeight(210);
         bandScroll_->setWidget(container);
+        lastChangeSource_ = nullptr;
+        if (lockButton_->isChecked()) updateControlsLock();
     }
 
     void showLevels(const QVector<double> &levels, double peak) {
@@ -2302,6 +2458,7 @@ private:
         if (index < 0 || index >= bands_.size()) return;
         selected_ = index;
         syncBandControls();
+        commitChange();
     }
 
     void markCustom() {
@@ -2318,6 +2475,7 @@ private:
 
     void detailChanged() {
         if (changing_ || bands_.isEmpty()) return;
+        recordChange(sender());
         auto &band = bands_[selected_];
         band.frequency = frequencyBox_->value();
         band.gain = gainBox_->value();
@@ -2325,30 +2483,35 @@ private:
         markCustom();
         syncBandControls();
         applyChanges();
+        commitChange();
     }
 
     void changeBandCount(int count) {
         if (changing_ || count == bands_.size()) return;
+        recordChange(countBox_);
         bands_ = remapBands(bands_, count);
         selected_ = std::min(selected_, count - 1);
         rebuildBandControls();
         markCustom();
         syncBandControls();
         applyChanges();
+        commitChange();
     }
 
     void presetChanged() {
         if (changing_) return;
         const auto name = presetCombo_->currentText();
+        if (!builtinShapes().contains(name) && !custom_.contains(name)) return;
+        recordChange(presetCombo_);
         if (builtinShapes().contains(name)) bands_ = builtinProfile(name, countBox_->value());
-        else if (custom_.contains(name)) bands_ = custom_[name];
-        else return;
+        else bands_ = custom_[name];
         selected_ = std::min(selected_, int(bands_.size()) - 1);
         const QSignalBlocker blocker(countBox_);
         countBox_->setValue(int(bands_.size()));
         rebuildBandControls();
         syncBandControls();
         applyChanges();
+        commitChange();
     }
 
     void loadCustomPresets() {
@@ -2404,6 +2567,7 @@ private:
         file.write(QJsonDocument(object).toJson());
         if (!file.commit()) { showError("Could not finish saving preset."); return; }
         rebuildPresetList(name);
+        commitChange();
         status_->setText("Saved preset “" + name + "”.");
     }
 
@@ -2542,7 +2706,9 @@ private:
     QStringList knownNames_;
     QList<InputDevice> inputs_;
     QStringList knownInputNames_;
+    QString micDisconnectNotice_;
     QMap<QString, Bands> custom_;
+    QScrollArea *scroll_ = nullptr;
     QComboBox *outputCombo_ = nullptr;
     QComboBox *inputCombo_ = nullptr;
     QCheckBox *micPower_ = nullptr;
@@ -2557,6 +2723,10 @@ private:
     QSpinBox *calibrationLevel_ = nullptr;
     QLabel *calibrationStatus_ = nullptr;
     QComboBox *presetCombo_ = nullptr;
+    QPushButton *savePresetButton_ = nullptr;
+    QPushButton *resetButton_ = nullptr;
+    QPushButton *lockButton_ = nullptr;
+    QPushButton *undoButton_ = nullptr;
     QCheckBox *power_ = nullptr;
     QSlider *outputGain_ = nullptr;
     QLabel *outputGainValue_ = nullptr;
@@ -2584,6 +2754,12 @@ private:
     QSystemTrayIcon *tray_ = nullptr;
     QAction *trayToggle_ = nullptr;
     int selected_ = 0;
+    EqSnapshot currentSnapshot_;
+    QVector<EqSnapshot> undoStack_;
+    QElapsedTimer changeClock_;
+    QObject *lastChangeSource_ = nullptr;
+    bool snapshotReady_ = false;
+    bool restoring_ = false;
     bool changing_ = false;
     bool backgroundNoticeShown_ = false;
 };
@@ -2987,6 +3163,64 @@ int main(int argc, char **argv) {
             qFatal("Selected-band editing failed");
         count->setValue(15);
         if (bandSliderCount() != 15) qFatal("Band-count change failed");
+        QPushButton *lock = nullptr, *undo = nullptr;
+        for (auto *button : testWindow.findChildren<QPushButton *>()) {
+            if (button->accessibleName() == "Lock equalizer settings") lock = button;
+            if (button->accessibleName() == "Undo last equalizer change") undo = button;
+        }
+        if (!lock || !undo) qFatal("Lock or Undo control is missing");
+        auto firstBandSlider = [&testWindow] {
+            for (auto *slider : testWindow.findChildren<QSlider *>())
+                if (slider->accessibleName() == "Band 1 gain") return slider;
+            return static_cast<QSlider *>(nullptr);
+        };
+        presets->setCurrentText("Flat");
+        auto *band = firstBandSlider();
+        if (!band) qFatal("First band slider is missing");
+        band->setValue(2);
+        band->setValue(4);
+        band->setValue(6);
+        if (!undo->isEnabled() || gain->value() != 3.0) qFatal("EQ change was not recorded for Undo");
+        undo->click();
+        band = firstBandSlider();
+        if (!band || band->value() != 0 || presets->currentText() != "Flat")
+            qFatal("Undo did not restore the previous band and preset");
+        presets->setCurrentText("Deep Bass");
+        undo->click();
+        if (presets->currentText() != "Flat" || firstBandSlider()->value() != 0)
+            qFatal("Undo did not restore the previous preset");
+        const int originalOutputGain = outputGain->value();
+        outputGain->setValue(originalOutputGain == outputGain->maximum()
+                                 ? originalOutputGain - 1 : originalOutputGain + 1);
+        undo->click();
+        if (outputGain->value() != originalOutputGain)
+            qFatal("Undo did not restore post gain");
+        const int originalBalance = balance->value();
+        balance->setValue(originalBalance == balance->maximum()
+                              ? originalBalance - 1 : originalBalance + 1);
+        undo->click();
+        if (balance->value() != originalBalance)
+            qFatal("Undo did not restore balance");
+        lock->click();
+        if (!lock->isChecked() || firstBandSlider()->isEnabled() || presets->isEnabled() ||
+            outputGain->isEnabled() || balance->isEnabled())
+            qFatal("Lock did not protect playback EQ controls");
+        lock->click();
+        if (!firstBandSlider()->isEnabled()) qFatal("Unlock did not restore editing");
+        testWindow.show();
+        app.processEvents();
+        auto *outer = qobject_cast<QScrollArea *>(testWindow.centralWidget());
+        if (!outer || outer->verticalScrollBar()->maximum() <= 0)
+            qFatal("Window cannot scroll to the level indicators");
+        outer->verticalScrollBar()->setValue(0);
+        band = firstBandSlider();
+        const int beforeWheel = band->value();
+        QWheelEvent wheel(QPointF(5, 5), QPointF(band->mapToGlobal(QPoint(5, 5))),
+                          QPoint(), QPoint(0, -120), Qt::NoButton, Qt::NoModifier,
+                          Qt::NoScrollPhase, false);
+        QCoreApplication::sendEvent(band, &wheel);
+        if (band->value() != beforeWheel || outer->verticalScrollBar()->value() <= 0)
+            qFatal("Mouse wheel changed an EQ band instead of scrolling the window");
         bool quitRequested = false;
         QObject::connect(&app, &QCoreApplication::aboutToQuit, &testWindow,
                          [&quitRequested] { quitRequested = true; });
