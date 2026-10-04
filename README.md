@@ -18,7 +18,10 @@ physical output you selected. The **Automatic** device setting follows newly
 connected outputs, while the dropdown lets you pin a specific device.
 
 The EQ curve shows what the frequency settings do. Colored indicators next to
-the sliders show a live estimate of the sound level near each frequency. The
+the sliders show a live estimate of the sound level near each frequency. Set
+**Level refresh** from 25 to 250 ms (50 ms by default), and turn on **Peak
+markers** to see a falling peak hold line on each indicator. Peak markers start
+off; both choices are remembered. The
 peak readout turns amber or red as the estimated output approaches clipping.
 Boosting bands can lower overall loudness because the app makes room for those
 boosts; **Output gain** lets you bring the level back up. It starts at 0 dB and
@@ -100,8 +103,9 @@ or install missing dependencies.
 - **Loudness** applies a fixed bass and treble contour for quiet listening, like
   the loudness controls on older receivers. It does not change with the volume.
 - Colored bars beside the band sliders show estimated post-EQ levels from a
-  live, local spectrum sample. A 4096-point FFT updates ten times per second
-  while the window is open. Teal means ordinary activity, amber approaches
+  live, local spectrum sample. A 4096-point FFT uses overlapping audio windows
+  and checks for new audio at the chosen refresh interval while the window is
+  open. Teal means ordinary activity, amber approaches
   full scale, and red suggests clipping risk. The peak text uses the same
   colors. These are estimates based on the EQ input and current settings; they
   do not measure the DAC or guarantee that every transient is caught.

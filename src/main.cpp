@@ -16,6 +16,7 @@
 #include <QHBoxLayout>
 #include <QInputDialog>
 #include <QIcon>
+#include <QImage>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -32,7 +33,6 @@
 #include <QPainterPath>
 #include <QProcess>
 #include <QPushButton>
-#include <QProgressBar>
 #include <QScrollArea>
 #include <QScrollBar>
 #include <QSaveFile>
@@ -573,22 +573,74 @@ private:
     int dragging_ = -1;
 };
 
+class BandLevelMeter : public QWidget {
+public:
+    explicit BandLevelMeter(QWidget *parent = nullptr) : QWidget(parent) {
+        setFixedWidth(11);
+        setMinimumHeight(140);
+    }
+
+    void setLevel(double db) {
+        const double elapsed = peakClock_.isValid() ? peakClock_.restart() / 1000.0 : 0.0;
+        if (!peakClock_.isValid()) peakClock_.start();
+        levelDb_ = std::clamp(db, -60.0, 12.0);
+        peakDb_ = std::max(levelDb_, peakDb_ - 24.0 * elapsed);
+        update();
+    }
+
+    void setPeakMarkersEnabled(bool enabled) {
+        peakMarkersEnabled_ = enabled;
+        update();
+    }
+
+    void reset() {
+        levelDb_ = -60.0;
+        peakDb_ = -60.0;
+        peakClock_.invalidate();
+        update();
+    }
+
+protected:
+    void paintEvent(QPaintEvent *) override {
+        QPainter painter(this);
+        painter.fillRect(rect(), QColor("#30425c"));
+        const auto colorFor = [](double db) {
+            return QColor(db >= -3.0 ? "#f16b76" : db >= -12.0 ? "#e6b450" : "#50d1ba");
+        };
+        const auto heightFor = [this](double db) {
+            return std::clamp(int(std::lround((db + 60.0) * height() / 60.0)), 0, height());
+        };
+        const int filled = heightFor(levelDb_);
+        if (filled > 0) painter.fillRect(0, height() - filled, width(), filled, colorFor(levelDb_));
+        if (peakMarkersEnabled_ && peakDb_ > -60.0) {
+            const int y = std::clamp(height() - heightFor(peakDb_), 1, height() - 1);
+            painter.setPen(QPen(QColor("#f4f8ff"), 2));
+            painter.drawLine(0, y, width() - 1, y);
+        }
+    }
+
+private:
+    QElapsedTimer peakClock_;
+    double levelDb_ = -60.0;
+    double peakDb_ = -60.0;
+    bool peakMarkersEnabled_ = false;
+};
+
 class SpectrumMonitor : public QObject {
 public:
     std::function<void(const QVector<double> &, double)> onLevels;
     bool active() const { return process_.state() != QProcess::NotRunning; }
 
     SpectrumMonitor() {
-        timer_.setInterval(100);
+        timer_.setInterval(50);
         connect(&process_, &QProcess::readyReadStandardOutput, this, [this] {
-            pcm_.append(process_.readAllStandardOutput());
-            if (pcm_.size() > 131072) {
-                const auto excess = pcm_.size() - 131072;
-                pcm_.remove(0, (excess + 3) & ~3);
-            }
+            appendPcm(process_.readAllStandardOutput());
         });
         connect(&timer_, &QTimer::timeout, this, [this] { analyze(); });
     }
+
+    void setInterval(int milliseconds) { timer_.setInterval(std::clamp(milliseconds, 25, 250)); }
+    int interval() const { return timer_.interval(); }
 
     void setProfile(const Bands &bands, double outputGainDb) {
         bands_ = bands;
@@ -597,7 +649,7 @@ public:
     }
 
     void analyzePcmForTest(const QByteArray &pcm) {
-        pcm_ = pcm;
+        appendPcm(pcm);
         analyze();
     }
 
@@ -617,14 +669,24 @@ public:
             if (!process_.waitForFinished(500)) process_.kill();
         }
         pcm_.clear();
+        bytesSinceAnalysis_ = 0;
         if (onLevels) onLevels(QVector<double>(bands_.size(), 0.0), 0.0);
     }
 
 private:
+    void appendPcm(const QByteArray &pcm) {
+        pcm_.append(pcm);
+        bytesSinceAnalysis_ += pcm.size();
+        if (pcm_.size() > 131072) {
+            const auto excess = pcm_.size() - 131072;
+            pcm_.remove(0, (excess + 3) & ~3);
+        }
+    }
+
     void analyze() {
         constexpr int n = 4096;
         constexpr int frameBytes = 4;
-        if (pcm_.size() < n * frameBytes) return;
+        if (pcm_.size() < n * frameBytes || bytesSinceAnalysis_ < frameBytes) return;
         const auto *data = reinterpret_cast<const unsigned char *>(pcm_.constData());
         const int frameCount = pcm_.size() / frameBytes;
         double peak = 0.0;
@@ -645,7 +707,9 @@ private:
             const double window = 0.5 - 0.5 * std::cos(2.0 * std::numbers::pi * i / (n - 1));
             spectrum[i] = (double(left) + double(right)) / 65536.0 * window;
         }
-        pcm_.clear();
+        if (pcm_.size() > n * frameBytes)
+            pcm_.remove(0, (pcm_.size() - n * frameBytes) & ~qsizetype(3));
+        bytesSinceAnalysis_ = 0;
         for (int i = 1, j = 0; i < n; ++i) {
             int bit = n >> 1;
             for (; j & bit; bit >>= 1) j ^= bit;
@@ -687,6 +751,7 @@ private:
     QProcess process_;
     QTimer timer_;
     QByteArray pcm_;
+    qsizetype bytesSinceAnalysis_ = 0;
     Bands bands_;
     double headroomDb_ = 0.0;
     double outputGainDb_ = 0.0;
@@ -765,6 +830,20 @@ public:
         peakStatus_->setObjectName("peakStatus");
         gainRow->addWidget(peakStatus_);
         gainRow->addStretch();
+        gainRow->addWidget(new QLabel("Level refresh"));
+        levelRefresh_ = new QSpinBox;
+        levelRefresh_->setRange(25, 250);
+        levelRefresh_->setSingleStep(25);
+        levelRefresh_->setSuffix(" ms");
+        levelRefresh_->setAccessibleName("Level indicator refresh interval");
+        levelRefresh_->setToolTip("Shorter intervals update levels more often and use more CPU");
+        levelRefresh_->setValue(std::clamp(QSettings().value("levelRefreshMs", 50).toInt(), 25, 250));
+        gainRow->addWidget(levelRefresh_);
+        peakMarkers_ = new QCheckBox("Peak markers");
+        peakMarkers_->setAccessibleName("Show peak markers on frequency levels");
+        peakMarkers_->setToolTip("Show a falling peak hold line on each frequency level");
+        peakMarkers_->setChecked(QSettings().value("showPeakMarkers", false).toBool());
+        gainRow->addWidget(peakMarkers_);
         outputLayout->addLayout(gainRow);
         status_ = new QLabel("Equalizer is off. Your audio uses its normal output.");
         status_->setWordWrap(true);
@@ -865,6 +944,14 @@ public:
             meter_.setProfile(bands_, value);
             scheduleApply();
         });
+        connect(levelRefresh_, &QSpinBox::valueChanged, this, [this](int milliseconds) {
+            QSettings().setValue("levelRefreshMs", milliseconds);
+            meter_.setInterval(milliseconds);
+        });
+        connect(peakMarkers_, &QCheckBox::toggled, this, [this](bool enabled) {
+            QSettings().setValue("showPeakMarkers", enabled);
+            for (auto *level : levelBars_) level->setPeakMarkersEnabled(enabled);
+        });
         connect(countBox_, &QSpinBox::valueChanged, this, [this](int count) { changeBandCount(count); });
         connect(frequencyBox_, &QDoubleSpinBox::valueChanged, this, [this] { detailChanged(); });
         connect(gainBox_, &QDoubleSpinBox::valueChanged, this, [this] { detailChanged(); });
@@ -887,6 +974,7 @@ public:
         });
         meter_.onLevels = [this](const QVector<double> &levels, double peak) { showLevels(levels, peak); };
         meter_.setProfile(bands_, outputGain_->value());
+        meter_.setInterval(levelRefresh_->value());
         monitor_.setInterval(1500);
         connect(&monitor_, &QTimer::timeout, this, [this] { refreshDevices(); });
         monitor_.start();
@@ -961,7 +1049,6 @@ private:
         gainLabels_.clear();
         frequencyButtons_.clear();
         levelBars_.clear();
-        levelZones_.clear();
         auto *container = new QWidget;
         auto *row = new QHBoxLayout(container);
         row->setContentsMargins(8, 4, 8, 8);
@@ -983,18 +1070,11 @@ private:
             auto *sliderRow = new QHBoxLayout;
             sliderRow->setSpacing(3);
             sliderRow->addWidget(slider, 1, Qt::AlignHCenter);
-            auto *level = new QProgressBar;
-            level->setOrientation(Qt::Vertical);
-            level->setRange(0, 100);
-            level->setValue(0);
-            level->setTextVisible(false);
-            level->setFixedWidth(8);
-            level->setMinimumHeight(140);
-            level->setObjectName("bandLevel");
+            auto *level = new BandLevelMeter;
+            level->setPeakMarkersEnabled(peakMarkers_->isChecked());
             level->setAccessibleName(QString("Estimated output level near band %1").arg(i + 1));
             level->setToolTip("Estimated post-EQ level near this frequency");
             levelBars_.append(level);
-            levelZones_.append(-1);
             sliderRow->addWidget(level);
             column->addLayout(sliderRow, 1);
             auto *frequency = new QPushButton;
@@ -1021,14 +1101,8 @@ private:
         const auto count = std::min(levels.size(), levelBars_.size());
         for (qsizetype i = 0; i < count; ++i) {
             const double db = 20.0 * std::log10(std::max(levels[i], 0.000001));
-            levelBars_[i]->setValue(std::clamp(int(std::lround((db + 60.0) * 100.0 / 60.0)), 0, 100));
-            const int zone = db >= -3.0 ? 2 : db >= -12.0 ? 1 : 0;
-            if (levelZones_[i] != zone) {
-                const auto color = zone == 2 ? "#f16b76" : zone == 1 ? "#e6b450" : "#50d1ba";
-                levelBars_[i]->setStyleSheet(QString("QProgressBar#bandLevel { border: none; background: #30425c; border-radius: 3px; } "
-                                                     "QProgressBar#bandLevel::chunk { background: %1; border-radius: 3px; }").arg(color));
-                levelZones_[i] = zone;
-            }
+            if (power_->isChecked()) levelBars_[i]->setLevel(db);
+            else levelBars_[i]->reset();
             levelBars_[i]->setToolTip(QString("Estimated output near %1: %2 dBFS")
                                      .arg(frequencyLabel(bands_[i].frequency)).arg(db, 0, 'f', 1));
         }
@@ -1304,6 +1378,8 @@ private:
     QComboBox *presetCombo_ = nullptr;
     QCheckBox *power_ = nullptr;
     QDoubleSpinBox *outputGain_ = nullptr;
+    QSpinBox *levelRefresh_ = nullptr;
+    QCheckBox *peakMarkers_ = nullptr;
     QLabel *peakStatus_ = nullptr;
     QLabel *status_ = nullptr;
     QLabel *headroom_ = nullptr;
@@ -1316,8 +1392,7 @@ private:
     QVector<QSlider *> sliders_;
     QVector<QLabel *> gainLabels_;
     QVector<QPushButton *> frequencyButtons_;
-    QVector<QProgressBar *> levelBars_;
-    QVector<int> levelZones_;
+    QVector<BandLevelMeter *> levelBars_;
     QTimer applyTimer_;
     QTimer monitor_;
     QSystemTrayIcon *tray_ = nullptr;
@@ -1410,12 +1485,17 @@ int main(int argc, char **argv) {
     if (app.arguments().contains("--ui-self-test")) {
         MainWindow testWindow(false);
         SpectrumMonitor spectrumTest;
+        if (spectrumTest.interval() != 50) qFatal("Default level interval is not 50 ms");
+        spectrumTest.setInterval(25);
+        if (spectrumTest.interval() != 25) qFatal("Level interval is not adjustable");
         spectrumTest.setProfile(defaultBands(kDefaultBands), 0.0);
         QVector<double> testLevels;
         double testPeak = 0.0;
+        int levelUpdates = 0;
         spectrumTest.onLevels = [&](const QVector<double> &levels, double peak) {
             testLevels = levels;
             testPeak = peak;
+            ++levelUpdates;
         };
         QByteArray tone(4096 * 4, '\0');
         for (int i = 0; i < 4096; ++i) {
@@ -1430,10 +1510,31 @@ int main(int argc, char **argv) {
         if (testLevels.size() != kDefaultBands || testLevels[3] < 0.15 ||
             std::abs(testPeak - 0.25) > 0.01)
             qFatal("FFT level analysis failed");
+        spectrumTest.analyzePcmForTest(tone.left(2048 * 4));
+        if (levelUpdates != 2) qFatal("Overlapping FFT window did not refresh");
+        spectrumTest.analyzePcmForTest(QByteArray{});
+        if (levelUpdates != 2) qFatal("Level display refreshed without new audio");
         spectrumTest.setProfile(defaultBands(kDefaultBands), 6.0);
-        spectrumTest.analyzePcmForTest(tone);
+        spectrumTest.analyzePcmForTest(tone.left(2048 * 4));
         if (std::abs(testPeak - 0.5) > 0.03 || testLevels[3] < 0.3)
             qFatal("Output gain was not reflected in the level estimate");
+        BandLevelMeter peakTest;
+        peakTest.resize(11, 140);
+        peakTest.setPeakMarkersEnabled(true);
+        peakTest.setLevel(-3.0);
+        peakTest.setLevel(-20.0);
+        const auto withMarker = peakTest.grab().toImage();
+        peakTest.setPeakMarkersEnabled(false);
+        const auto withoutMarker = peakTest.grab().toImage();
+        bool markerVisible = false;
+        for (int y = 0; y < withMarker.height(); ++y)
+            for (int x = 0; x < withMarker.width(); ++x) {
+                const auto color = withMarker.pixelColor(x, y);
+                if (color != withoutMarker.pixelColor(x, y) &&
+                    color.red() > 200 && color.green() > 200 && color.blue() > 200)
+                    markerVisible = true;
+            }
+        if (!markerVisible) qFatal("Peak marker did not follow its toggle");
         if (builtinShapes().size() < 30) qFatal("Preset library is incomplete");
         if (testWindow.windowTitle() != "SoundCurrent EQ") qFatal("Window title is missing");
         for (const auto *label : testWindow.findChildren<QLabel *>()) {
@@ -1471,6 +1572,14 @@ int main(int argc, char **argv) {
         auto *outputGain = findDouble("Output gain after equalization");
         if (!outputGain || outputGain->minimum() != -12.0 || outputGain->maximum() != 12.0)
             qFatal("Output gain control is missing");
+        auto *levelRefresh = findSpin("Level indicator refresh interval");
+        if (!levelRefresh || levelRefresh->minimum() != 25 || levelRefresh->maximum() != 250 ||
+            levelRefresh->singleStep() != 25)
+            qFatal("Level refresh control is missing");
+        QCheckBox *peakMarkers = nullptr;
+        for (auto *check : testWindow.findChildren<QCheckBox *>())
+            if (check->accessibleName() == "Show peak markers on frequency levels") peakMarkers = check;
+        if (!peakMarkers) qFatal("Peak marker toggle is missing");
         if (presets->currentText() != "Flat") qFatal("Flat is not the default preset");
         if (presets->findText("Loudness") < 0) qFatal("Loudness preset is missing");
         if (presets->findText("Entertainment") >= 0) qFatal("Category title appears as a preset");
@@ -1498,7 +1607,10 @@ int main(int argc, char **argv) {
         if (gain->value() != 0.0) qFatal("Flat preset did not reset the bands");
         count->setValue(31);
         if (testWindow.findChildren<QSlider *>().size() != 31) qFatal("31-band layout failed");
-        if (testWindow.findChildren<QProgressBar *>().size() != 31) qFatal("Level indicators are missing");
+        int levelCount = 0;
+        for (auto *widget : testWindow.findChildren<QWidget *>())
+            if (dynamic_cast<BandLevelMeter *>(widget)) ++levelCount;
+        if (levelCount != 31) qFatal("Level indicators are missing");
         frequency->setValue(22);
         gain->setValue(4);
         q->setValue(1.8);
