@@ -8,6 +8,8 @@ gain, center frequency, and width (Q). The app also has 34 listening presets,
 saved custom profiles, a post-gain slider, stereo balance, and live level
 indicators. A connected mono or stereo microphone can use a separate natural
 voice EQ with editable tone and gain controls.
+The window fits within the available desktop area. A speaker and room check can
+play a logarithmic sweep and preview conservative playback EQ adjustments.
 
 ![SoundCurrent EQ desktop window](docs/screenshot.png)
 
@@ -149,6 +151,31 @@ balance. On current WirePlumber systems, the microphone filter is transparent
 to recording apps. Older systems use a virtual default microphone while the
 filter is active and restore the prior input when it stops.
 
+### Speaker and room check
+
+Place the microphone near your usual listening position and use **Measure** in
+the Microphone section. The default test starts with a short 20 Hz hold, then
+sweeps logarithmically from 20 Hz to 25 kHz over ten seconds. It analyzes 20,
+40, 63, 125, 250, 500, 1000, 2000, 4000, 8000, 16000, and 20000 Hz. You
+can choose separate tones instead. Both test signals fade in and out. The test
+level starts at -24 dBFS and can be adjusted from -54 to -5 dBFS. Start at a
+comfortable level and use **Stop tones** if needed. The microphone filter
+pauses during the check and resumes afterward.
+
+The app samples room noise before playback and ignores frequencies it cannot
+hear clearly above that noise. A quiet room gives a more useful result; pause
+other audio while measuring. The preview shows each measured frequency and
+limits its suggested change to 3 dB. **Apply suggested EQ** makes the changes
+immediately; **Keep current EQ** discards them. Use **Save preset** to retain
+an applied result. The measurement includes the combined response of the
+speaker, amplifier, room, and microphone. It cannot separate the microphone's
+own frequency response, so listen and adjust the result to taste. The generated
+signal and capture stream use 96 kHz, but hardware running at 48 kHz may filter
+out the end of the sweep near 25 kHz. The EQ itself has no 25 kHz band, and the
+app makes no adjustment above its 20 kHz limit. Very low or high frequencies
+may also be unmeasurable with a small speaker or webcam microphone; the app
+leaves those frequencies unchanged.
+
 **Hardware note:** An equalizer changes the audio signal. It will not repair a
 physical output that pops when its amplifier powers up. Select a different
 output in the dropdown if one device has that behavior.
@@ -187,7 +214,8 @@ The first command briefly creates the EQ sink, changes its band count and
 controls, and checks that the original default output and volume are restored.
 It uses the
 currently selected physical output and does not play a test sound. The second
-checks the 31-band interface, preset library, and selected-band controls without using audio.
+checks the 31-band interface, preset library, selected-band controls, window
+fit, and calibration analysis without using audio.
 The third command sends tones through a temporary silent sink and verifies
 that a 12 dB band cut changes the measured output by about 12 dB and that
 Night Listening reduces low-frequency output, Loudness emphasizes bass over
@@ -201,7 +229,9 @@ that its filter connects and accepts live changes. It restores the prior input.
 The app has no account, network service, or telemetry. It runs without root and
 keeps temporary audio configuration in a private directory. The level display
 reads the local EQ sink and does not save audio. The microphone filter processes
-capture audio locally and does not record it to disk. The `.deb` installs the binary,
+capture audio locally and does not record it to disk. Speaker measurement holds
+microphone samples in memory; the generated sweep or tones are temporary files
+deleted after the test. The `.deb` installs the binary,
 launcher, icon, and license files. See [SECURITY.md](SECURITY.md) for
 vulnerability reporting.
 

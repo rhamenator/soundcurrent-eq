@@ -6,6 +6,7 @@
 #include <QCloseEvent>
 #include <QComboBox>
 #include <QCoreApplication>
+#include <QDataStream>
 #include <QDir>
 #include <QDoubleSpinBox>
 #include <QElapsedTimer>
@@ -27,6 +28,7 @@
 #include <QLocalSocket>
 #include <QLockFile>
 #include <QMainWindow>
+#include <QMessageBox>
 #include <QMenu>
 #include <QMouseEvent>
 #include <QPainter>
@@ -37,6 +39,7 @@
 #include <QScrollArea>
 #include <QScrollBar>
 #include <QSaveFile>
+#include <QScreen>
 #include <QSettings>
 #include <QShowEvent>
 #include <QSignalBlocker>
@@ -58,6 +61,7 @@
 #include <cerrno>
 #include <cstdint>
 #include <functional>
+#include <limits>
 #include <numbers>
 #include <optional>
 #include <stdexcept>
@@ -780,6 +784,300 @@ private:
     bool smart_ = false;
 };
 
+constexpr int kCalibrationRate = 96000;
+constexpr std::array<int, 12> kCalibrationFrequencies = {
+    20, 40, 63, 125, 250, 500, 1000, 2000, 4000, 8000, 16000, 20000
+};
+constexpr double kSweepFirstFrequency = 20.0;
+constexpr double kSweepLastFrequency = 25000.0;
+constexpr double kSweepHoldSeconds = 0.5;
+constexpr double kSweepDurationSeconds = 10.0;
+
+double toneAmplitude(const QByteArray &pcm, int frequency) {
+    constexpr int sampleRate = kCalibrationRate;
+    constexpr int window = kCalibrationRate / 4;
+    const int samples = int(pcm.size() / 2);
+    double maximum = 0.0;
+    const double coefficient = 2.0 * std::cos(2.0 * std::numbers::pi * frequency / sampleRate);
+    for (int start = 0; start + window <= samples; start += window / 2) {
+        double previous = 0.0, beforePrevious = 0.0;
+        for (int i = 0; i < window; ++i) {
+            const int offset = 2 * (start + i);
+            const auto low = static_cast<unsigned char>(pcm[offset]);
+            const auto high = static_cast<unsigned char>(pcm[offset + 1]);
+            const auto sample = static_cast<int16_t>(uint16_t(low | (high << 8)));
+            const double current = sample + coefficient * previous - beforePrevious;
+            beforePrevious = previous;
+            previous = current;
+        }
+        const double power = previous * previous + beforePrevious * beforePrevious -
+                             coefficient * previous * beforePrevious;
+        maximum = std::max(maximum, 2.0 * std::sqrt(std::max(0.0, power)) / window);
+    }
+    return maximum;
+}
+
+void writeCalibrationTone(const QString &path, int frequency, int levelDb) {
+    constexpr int rate = kCalibrationRate;
+    constexpr int frames = rate;
+    QFile file(path);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate))
+        throw std::runtime_error("Could not create test tone");
+    QDataStream out(&file);
+    out.setByteOrder(QDataStream::LittleEndian);
+    out.writeRawData("RIFF", 4);
+    out << quint32(36 + frames * 4);
+    out.writeRawData("WAVEfmt ", 8);
+    out << quint32(16) << quint16(1) << quint16(2) << quint32(rate)
+        << quint32(rate * 4) << quint16(4) << quint16(16);
+    out.writeRawData("data", 4);
+    out << quint32(frames * 4);
+    const double amplitude = 32767.0 * std::pow(10.0, levelDb / 20.0);
+    for (int i = 0; i < frames; ++i) {
+        const double envelope = std::min({1.0, i / 2400.0, (frames - i - 1) / 2400.0});
+        const auto value = qint16(std::lround(amplitude * envelope *
+                              std::sin(2.0 * std::numbers::pi * frequency * i / rate)));
+        out << value << value;
+    }
+    if (out.status() != QDataStream::Ok) throw std::runtime_error("Could not write test tone");
+}
+
+QVector<int16_t> writeCalibrationSweep(const QString &path, int levelDb) {
+    constexpr int rate = kCalibrationRate;
+    constexpr int frames = int(rate * (kSweepHoldSeconds + kSweepDurationSeconds));
+    const double logarithm = std::log(kSweepLastFrequency / kSweepFirstFrequency);
+    QFile file(path);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate))
+        throw std::runtime_error("Could not create quiet frequency sweep");
+    QDataStream out(&file);
+    out.setByteOrder(QDataStream::LittleEndian);
+    out.writeRawData("RIFF", 4);
+    out << quint32(36 + frames * 4);
+    out.writeRawData("WAVEfmt ", 8);
+    out << quint32(16) << quint16(1) << quint16(2) << quint32(rate)
+        << quint32(rate * 4) << quint16(4) << quint16(16);
+    out.writeRawData("data", 4);
+    out << quint32(frames * 4);
+    const double amplitude = 32767.0 * std::pow(10.0, levelDb / 20.0);
+    QVector<int16_t> reference;
+    reference.reserve(frames);
+    for (int i = 0; i < frames; ++i) {
+        const double time = double(i) / rate;
+        const double sweepTime = std::max(0.0, time - kSweepHoldSeconds);
+        const double phase = 2.0 * std::numbers::pi * kSweepFirstFrequency *
+                             (time < kSweepHoldSeconds ? time :
+                              kSweepHoldSeconds + kSweepDurationSeconds / logarithm *
+                              (std::exp(sweepTime * logarithm / kSweepDurationSeconds) - 1.0));
+        const double envelope = std::min({1.0, i / double(rate / 10),
+                                         (frames - i - 1) / double(rate / 10)});
+        const auto value = int16_t(std::lround(amplitude * envelope * std::sin(phase)));
+        reference.append(value);
+        out << qint16(value) << qint16(value);
+    }
+    if (out.status() != QDataStream::Ok) throw std::runtime_error("Could not write frequency sweep");
+    return reference;
+}
+
+QVector<int16_t> pcmSamples(const QByteArray &pcm) {
+    QVector<int16_t> samples;
+    samples.reserve(pcm.size() / 2);
+    for (int i = 0; i + 1 < pcm.size(); i += 2) {
+        const auto low = static_cast<unsigned char>(pcm[i]);
+        const auto high = static_cast<unsigned char>(pcm[i + 1]);
+        samples.append(static_cast<int16_t>(uint16_t(low | (high << 8))));
+    }
+    return samples;
+}
+
+double sweepFrequencyAmplitude(const QVector<int16_t> &samples, int frequency,
+                               int firstAllowed = 0, int lastAllowed = std::numeric_limits<int>::max()) {
+    const int window = std::clamp(kCalibrationRate * 10 / frequency,
+                                  kCalibrationRate / 100, kCalibrationRate * 8 / 100);
+    const double coefficient = 2.0 * std::cos(2.0 * std::numbers::pi * frequency / kCalibrationRate);
+    double maximum = 0.0;
+    for (int start = std::max(0, firstAllowed);
+         start + window <= samples.size() && start <= lastAllowed; start += window / 2) {
+        double previous = 0.0, beforePrevious = 0.0;
+        for (int i = 0; i < window; ++i) {
+            const double current = samples[start + i] + coefficient * previous - beforePrevious;
+            beforePrevious = previous;
+            previous = current;
+        }
+        const double power = previous * previous + beforePrevious * beforePrevious -
+                             coefficient * previous * beforePrevious;
+        maximum = std::max(maximum, 2.0 * std::sqrt(std::max(0.0, power)) / window);
+    }
+    return maximum;
+}
+
+QJsonArray analyzeSweep(const QByteArray &pcm, const QByteArray &noise,
+                        const QVector<int16_t> &reference) {
+    const auto recorded = pcmSamples(pcm);
+    const auto backgroundSamples = pcmSamples(noise);
+    QJsonArray levels;
+    for (const int frequency : kCalibrationFrequencies) {
+        const double expectedSeconds = kSweepHoldSeconds +
+            kSweepDurationSeconds * std::log(frequency / kSweepFirstFrequency) /
+            std::log(kSweepLastFrequency / kSweepFirstFrequency);
+        const int first = frequency == 20 ? int(0.12 * kCalibrationRate)
+                                          : int((expectedSeconds - 0.15) * kCalibrationRate);
+        const int last = frequency == 20 ? int(0.35 * kCalibrationRate)
+                                         : int((expectedSeconds + 0.8) * kCalibrationRate);
+        const double heard = sweepFrequencyAmplitude(recorded, frequency, first, last);
+        const double background = sweepFrequencyAmplitude(backgroundSamples, frequency);
+        const double expected = sweepFrequencyAmplitude(reference, frequency, first, last);
+        if (qEnvironmentVariableIsSet("SOUNDCURRENT_CALIBRATION_DEBUG"))
+            QTextStream(stderr) << frequency << " Hz: signal " << heard
+                                << ", background " << background << Qt::endl;
+        if (heard >= std::max(1.0, background * 3.2) && expected > 0.0)
+            levels.append(std::sqrt(std::max(0.0, heard * heard - background * background)) / expected);
+        else levels.append(QJsonValue::Null);
+    }
+    return levels;
+}
+
+int runCalibration(const QString &output, const QString &input, int levelDb, bool sweep) {
+    try {
+        if (levelDb < -54 || levelDb > -5) throw std::runtime_error("Test level is outside the allowed range");
+        bool outputFound = false, inputFound = false;
+        for (const auto &device : devices()) if (device.name == output) outputFound = true;
+        if (output == kSink && nodeId(kSink) >= 0) outputFound = true;
+        for (const auto &device : inputDevices()) if (device.name == input) inputFound = true;
+        if (!outputFound || !inputFound) throw std::runtime_error("Selected audio device is unavailable");
+        QTemporaryDir directory(QDir::tempPath() + "/soundcurrent-calibration-XXXXXX");
+        if (!directory.isValid()) throw std::runtime_error("Could not create a private test folder");
+        QProcess recorder;
+        recorder.setProgram("parec");
+        recorder.setArguments({"--raw", "-d", input, "--format=s16le", "--rate=96000",
+                               "--channels=1", "--latency-msec=10", "--process-time-msec=5"});
+        recorder.setChildProcessModifier([] { prctl(PR_SET_PDEATHSIG, SIGTERM); });
+        recorder.start();
+        if (!recorder.waitForStarted(2000)) throw std::runtime_error("Could not start microphone capture");
+        auto collect = [&recorder](int milliseconds) {
+            QByteArray pcm;
+            QElapsedTimer timer;
+            timer.start();
+            while (timer.elapsed() < milliseconds) {
+                recorder.waitForReadyRead(20);
+                pcm.append(recorder.readAllStandardOutput());
+                if (recorder.state() == QProcess::NotRunning)
+                    throw std::runtime_error("Microphone capture stopped during the test");
+            }
+            return pcm;
+        };
+        collect(350);
+        auto playAndRecord = [&](const QString &path) {
+            QProcess player;
+            player.setProgram("paplay");
+            player.setArguments({"-d", output, path});
+            player.setChildProcessModifier([] { prctl(PR_SET_PDEATHSIG, SIGTERM); });
+            player.start();
+            if (!player.waitForStarted(2000)) throw std::runtime_error("Could not play quiet test audio");
+            QByteArray recorded;
+            while (player.state() != QProcess::NotRunning) {
+                player.waitForFinished(20);
+                recorded.append(recorder.readAllStandardOutput());
+                if (recorder.state() == QProcess::NotRunning)
+                    throw std::runtime_error("Microphone capture stopped during playback");
+            }
+            recorded.append(collect(180));
+            if (player.exitStatus() != QProcess::NormalExit || player.exitCode() != 0)
+                throw std::runtime_error("Could not play test audio through the selected output");
+            return recorded;
+        };
+        QJsonArray levels;
+        int valid = 0;
+        if (sweep) {
+            QTextStream(stderr) << "Playing a logarithmic sweep from 20 Hz to 25 kHz" << Qt::endl;
+            const auto noise = collect(1500);
+            const auto path = directory.filePath("quiet-sweep.wav");
+            const auto reference = writeCalibrationSweep(path, levelDb);
+            const auto recorded = playAndRecord(path);
+            if (qEnvironmentVariableIsSet("SOUNDCURRENT_CALIBRATION_DEBUG"))
+                QTextStream(stderr) << "Sweep capture bytes: " << recorded.size()
+                                    << ", noise bytes: " << noise.size() << Qt::endl;
+            levels = analyzeSweep(recorded, noise, reference);
+            for (const auto &value : levels) if (value.isDouble()) ++valid;
+        } else {
+            for (const auto frequency : kCalibrationFrequencies) {
+                QTextStream(stderr) << "Checking " << frequency << " Hz" << Qt::endl;
+                const auto noise = collect(500);
+                const auto path = directory.filePath(QString("tone-%1.wav").arg(frequency));
+                writeCalibrationTone(path, frequency, levelDb);
+                const auto recorded = playAndRecord(path);
+                if (qEnvironmentVariableIsSet("SOUNDCURRENT_CALIBRATION_DEBUG"))
+                    QTextStream(stderr) << "Capture bytes: " << recorded.size()
+                                        << ", noise bytes: " << noise.size() << Qt::endl;
+                const double heard = toneAmplitude(recorded, frequency);
+                const double background = toneAmplitude(noise, frequency);
+                if (qEnvironmentVariableIsSet("SOUNDCURRENT_CALIBRATION_DEBUG"))
+                    QTextStream(stderr) << frequency << " Hz: signal " << heard
+                                        << ", background " << background << Qt::endl;
+                if (heard >= std::max(1.0, background * 3.2)) {
+                    levels.append(std::sqrt(std::max(0.0, heard * heard - background * background)));
+                    ++valid;
+                } else levels.append(QJsonValue::Null);
+            }
+        }
+        recorder.terminate();
+        recorder.waitForFinished(1000);
+        if (valid < 4) throw std::runtime_error("Too little test audio reached the microphone. Move it closer or raise the test level slightly.");
+        QJsonObject result{{"levels", levels}, {"testLevelDb", levelDb},
+                           {"mode", sweep ? "sweep" : "tones"}};
+        QTextStream(stdout) << QJsonDocument(result).toJson(QJsonDocument::Compact) << Qt::endl;
+        return 0;
+    } catch (const std::exception &error) {
+        QTextStream(stderr) << "Measurement failed: " << error.what() << Qt::endl;
+        return 1;
+    }
+}
+
+struct CalibrationSuggestion {
+    Bands bands;
+    QString preview;
+    int changed = 0;
+};
+
+std::optional<CalibrationSuggestion> calibrationSuggestion(const QJsonObject &result,
+                                                            const Bands &current) {
+    const auto levels = result.value("levels").toArray();
+    if (levels.size() != int(kCalibrationFrequencies.size()) || current.isEmpty()) return std::nullopt;
+    QVector<double> db;
+    for (const auto &value : levels)
+        if (value.isDouble() && value.toDouble() > 0.0)
+            db.append(20.0 * std::log10(value.toDouble()));
+    if (db.size() < 4) return std::nullopt;
+    std::sort(db.begin(), db.end());
+    const double reference = db[db.size() / 2];
+    CalibrationSuggestion suggestion{current, QString(), 0};
+    QStringList rows;
+    for (int i = 0; i < levels.size(); ++i) {
+        if (!levels[i].isDouble() || levels[i].toDouble() <= 0.0) {
+            rows << QString("%1 Hz: too quiet to measure").arg(kCalibrationFrequencies[i]);
+            continue;
+        }
+        const double relative = 20.0 * std::log10(levels[i].toDouble()) - reference;
+        const double rawChange = std::clamp(-relative * 0.4, -3.0, 3.0);
+        const double change = std::round(rawChange * 2.0) / 2.0;
+        int nearest = 0;
+        double distance = std::numeric_limits<double>::infinity();
+        for (int band = 0; band < suggestion.bands.size(); ++band) {
+            const double candidate = std::abs(std::log(suggestion.bands[band].frequency /
+                                                        kCalibrationFrequencies[i]));
+            if (candidate < distance) { distance = candidate; nearest = band; }
+        }
+        const double before = suggestion.bands[nearest].gain;
+        suggestion.bands[nearest].gain = std::clamp(before + change, -12.0, 12.0);
+        if (std::abs(suggestion.bands[nearest].gain - before) > 0.01) ++suggestion.changed;
+        rows << QString("%1 Hz: measured %2%3 dB; suggested %4%5 dB")
+                    .arg(kCalibrationFrequencies[i])
+                    .arg(relative > 0 ? "+" : "").arg(relative, 0, 'f', 1)
+                    .arg(change > 0 ? "+" : "").arg(change, 0, 'f', 1);
+    }
+    suggestion.preview = rows.join('\n');
+    return suggestion;
+}
+
 const QMap<QString, std::array<double, 9>> &builtinShapes() {
     static const QMap<QString, std::array<double, 9>> shapes = {
         {"Flat", {0, 0, 0, 0, 0, 0, 0, 0, 0}},
@@ -1253,8 +1551,12 @@ public:
     explicit MainWindow(bool startEnabled = true) : bands_(builtinProfile("Flat", kDefaultBands)) {
         setWindowTitle("SoundCurrent EQ");
         setWindowIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ"));
-        setMinimumSize(760, 620);
-        resize(1050, 920);
+        setMinimumSize(480, 320);
+        if (auto *display = QGuiApplication::primaryScreen()) {
+            const auto available = display->availableGeometry();
+            resize(std::min(1050, std::max(480, available.width() - 48)),
+                   std::min(1060, std::max(320, available.height() - 48)));
+        } else resize(1050, 920);
 
         auto *scroll = new QScrollArea;
         scroll->setWidgetResizable(true);
@@ -1406,6 +1708,33 @@ public:
         micStatus_ = new QLabel("Waiting for a microphone.");
         micStatus_->setWordWrap(true);
         inputLayout->addWidget(micStatus_);
+        auto *calibrationRow = new QHBoxLayout;
+        calibrationRow->addWidget(new QLabel("Speaker + room check"));
+        calibrationMode_ = new QComboBox;
+        calibrationMode_->addItem("Quiet logarithmic sweep", "sweep");
+        calibrationMode_->addItem("Separate quiet tones", "tones");
+        calibrationMode_->setAccessibleName("Calibration test signal");
+        calibrationRow->addWidget(calibrationMode_);
+        calibrationStart_ = new QPushButton("Measure");
+        calibrationStart_->setAccessibleName("Measure speaker room and microphone response");
+        calibrationStart_->setToolTip("Play quiet test audio and preview suggested playback EQ changes");
+        calibrationRow->addWidget(calibrationStart_);
+        calibrationStop_ = new QPushButton("Stop tones");
+        calibrationStop_->setEnabled(false);
+        calibrationRow->addWidget(calibrationStop_);
+        calibrationRow->addWidget(new QLabel("Test level"));
+        calibrationLevel_ = new QSpinBox;
+        calibrationLevel_->setRange(-54, -5);
+        calibrationLevel_->setValue(-24);
+        calibrationLevel_->setSuffix(" dBFS");
+        calibrationLevel_->setToolTip("Start quiet. Raise only if the microphone cannot hear the tones.");
+        calibrationLevel_->setAccessibleName("Calibration tone level");
+        calibrationRow->addWidget(calibrationLevel_);
+        calibrationRow->addStretch();
+        inputLayout->addLayout(calibrationRow);
+        calibrationStatus_ = new QLabel("Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.");
+        calibrationStatus_->setWordWrap(true);
+        inputLayout->addWidget(calibrationStatus_);
         root->addWidget(inputBox);
 
         auto *presetBox = new QGroupBox("Listening preset");
@@ -1527,6 +1856,21 @@ public:
             for (auto *slider : micSliders_) slider->setValue(0);
             micGain_->setValue(0);
         });
+        connect(calibrationStart_, &QPushButton::clicked, this, [this] { startCalibration(); });
+        connect(calibrationStop_, &QPushButton::clicked, this, [this] {
+            calibrationCancelled_ = true;
+            calibration_.kill();
+        });
+        calibration_.setChildProcessModifier([] { prctl(PR_SET_PDEATHSIG, SIGTERM); });
+        connect(&calibration_, &QProcess::readyReadStandardError, this, [this] {
+            const auto message = QString::fromUtf8(calibration_.readAllStandardError()).trimmed();
+            if (!message.isEmpty()) calibrationStatus_->setText(message.section('\n', -1));
+        });
+        connect(&calibration_, &QProcess::readyReadStandardOutput, this, [this] {
+            calibrationOutput_.append(calibration_.readAllStandardOutput());
+        });
+        connect(&calibration_, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this,
+                [this](int code, QProcess::ExitStatus status) { finishCalibration(code, status); });
         connect(outputCombo_, &QComboBox::currentIndexChanged, this, [this] { outputChanged(); });
         connect(presetCombo_, &QComboBox::currentIndexChanged, this, [this] { presetChanged(); });
         connect(save, &QPushButton::clicked, this, [this] { savePreset(); });
@@ -1599,6 +1943,10 @@ public:
     }
 
     ~MainWindow() override {
+        if (calibration_.state() != QProcess::NotRunning) {
+            calibration_.kill();
+            calibration_.waitForFinished(1000);
+        }
         if (volumeEvents_.state() != QProcess::NotRunning) {
             volumeEvents_.terminate();
             if (!volumeEvents_.waitForFinished(500)) volumeEvents_.kill();
@@ -1610,6 +1958,7 @@ public:
 
     void reopen() {
         showNormal();
+        fitToDisplay();
         raise();
         activateWindow();
     }
@@ -1618,11 +1967,17 @@ protected:
     void showEvent(QShowEvent *event) override {
         QMainWindow::showEvent(event);
         QTimer::singleShot(0, this, [this] {
+            fitToDisplay();
             if (isVisible() && power_->isChecked() && !meter_.active()) meter_.start();
         });
     }
 
     void closeEvent(QCloseEvent *event) override {
+        if (calibrating_) {
+            calibrationCancelled_ = true;
+            calibration_.kill();
+            calibration_.waitForFinished(1000);
+        }
         if (tray_ && QSystemTrayIcon::isSystemTrayAvailable()) {
             meter_.stop();
             hide();
@@ -1637,6 +1992,22 @@ protected:
     }
 
 private:
+    void fitToDisplay() {
+        auto *display = screen() ? screen() : QGuiApplication::primaryScreen();
+        if (!display) return;
+        const auto area = display->availableGeometry().adjusted(24, 24, -24, -24);
+        if (!area.isValid()) return;
+        setMinimumSize(std::min(480, area.width()), std::min(320, area.height()));
+        resize(std::min(width(), area.width()), std::min(height(), area.height()));
+        if (!area.contains(frameGeometry())) {
+            const auto maxX = std::max(area.left(), area.right() - frameGeometry().width() + 1);
+            const auto maxY = std::max(area.top(), area.bottom() - frameGeometry().height() + 1);
+            const auto x = std::clamp(frameGeometry().x(), area.left(), maxX);
+            const auto y = std::clamp(frameGeometry().y(), area.top(), maxY);
+            move(x, y);
+        }
+    }
+
     double outputGainDb() const { return outputGain_->value() / 2.0; }
 
     MicTuning micAdjustments() const {
@@ -1645,7 +2016,97 @@ private:
         return tuning;
     }
 
+    void startCalibration() {
+        if (calibrating_) return;
+        QString output, input;
+        bool found = false;
+        try {
+            output = audio_.active() ? (audio_.smart() ? audio_.target() : QString(kSink))
+                                     : selectedDevice().name;
+            input = microphone_.active() ? microphone_.target() : defaultSource();
+            for (const auto &device : inputDevices()) if (device.name == input) found = true;
+        } catch (const std::exception &error) {
+            calibrationStatus_->setText("Cannot start measurement: " + QString::fromUtf8(error.what()));
+            return;
+        }
+        if (output.isEmpty() || !found) {
+            calibrationStatus_->setText("Connect an output and a microphone before measuring.");
+            return;
+        }
+        calibrating_ = true;
+        calibrationCancelled_ = false;
+        calibrationOutput_.clear();
+        calibrationStart_->setEnabled(false);
+        calibrationStop_->setEnabled(true);
+        calibrationLevel_->setEnabled(false);
+        calibrationMode_->setEnabled(false);
+        inputCombo_->setEnabled(false);
+        outputCombo_->setEnabled(false);
+        micPower_->setEnabled(false);
+        microphone_.stop();
+        calibrationStatus_->setText("Playing quiet test audio. Stop if it is uncomfortable.");
+        calibration_.setProgram(QCoreApplication::applicationFilePath());
+        calibration_.setArguments({"--calibration-worker", output, input,
+                                   QString::number(calibrationLevel_->value()),
+                                   calibrationMode_->currentData().toString()});
+        calibration_.start();
+        if (!calibration_.waitForStarted(2000)) {
+            calibrating_ = false;
+            calibrationStart_->setEnabled(true);
+            calibrationStop_->setEnabled(false);
+            calibrationLevel_->setEnabled(true);
+            calibrationMode_->setEnabled(true);
+            inputCombo_->setEnabled(true);
+            outputCombo_->setEnabled(true);
+            micPower_->setEnabled(true);
+            refreshInputs();
+            calibrationStatus_->setText("Could not start the measurement.");
+        }
+    }
+
+    void finishCalibration(int code, QProcess::ExitStatus exitStatus) {
+        if (!calibrating_) return;
+        calibrationOutput_.append(calibration_.readAllStandardOutput());
+        const bool cancelled = calibrationCancelled_;
+        calibrating_ = false;
+        calibrationStart_->setEnabled(true);
+        calibrationStop_->setEnabled(false);
+        calibrationLevel_->setEnabled(true);
+        calibrationMode_->setEnabled(true);
+        inputCombo_->setEnabled(true);
+        outputCombo_->setEnabled(true);
+        micPower_->setEnabled(true);
+        refreshInputs();
+        if (cancelled) { calibrationStatus_->setText("Measurement stopped."); return; }
+        if (exitStatus != QProcess::NormalExit || code != 0) {
+            if (!calibrationStatus_->text().startsWith("Measurement failed"))
+                calibrationStatus_->setText("Measurement failed. Try a higher test level or move the mic closer.");
+            return;
+        }
+        const auto result = QJsonDocument::fromJson(calibrationOutput_).object();
+        const auto suggestion = calibrationSuggestion(result, bands_);
+        if (!suggestion) { calibrationStatus_->setText("Measurement data was incomplete."); return; }
+        QMessageBox preview(this);
+        preview.setWindowTitle("Speaker and room measurement");
+        preview.setIcon(QMessageBox::Information);
+        preview.setText("Suggested changes to the playback EQ");
+        preview.setInformativeText("Relative measurements include the speaker, room, and microphone response. "
+                                   "The proposed changes are limited to 3 dB per measured frequency.\n\n" +
+                                   suggestion->preview);
+        auto *apply = preview.addButton("Apply suggested EQ", QMessageBox::AcceptRole);
+        preview.addButton("Keep current EQ", QMessageBox::RejectRole);
+        preview.exec();
+        if (preview.clickedButton() == apply && suggestion->changed > 0) {
+            bands_ = suggestion->bands;
+            markCustom();
+            syncBandControls();
+            applyChanges();
+            calibrationStatus_->setText("Suggested EQ applied. Use Save preset to keep it.");
+        } else calibrationStatus_->setText("Current EQ kept.");
+    }
+
     void refreshInputs() {
+        if (calibrating_) return;
         try {
             const auto latest = inputDevices();
             const auto manual = inputCombo_->currentData().toString();
@@ -2071,6 +2532,10 @@ private:
 
     AudioEngine audio_;
     MicrophoneEngine microphone_;
+    QProcess calibration_;
+    QByteArray calibrationOutput_;
+    bool calibrating_ = false;
+    bool calibrationCancelled_ = false;
     SpectrumMonitor meter_;
     Bands bands_;
     QList<Device> devices_;
@@ -2086,6 +2551,11 @@ private:
     QSlider *micGain_ = nullptr;
     QLabel *micGainValue_ = nullptr;
     QLabel *micStatus_ = nullptr;
+    QPushButton *calibrationStart_ = nullptr;
+    QPushButton *calibrationStop_ = nullptr;
+    QComboBox *calibrationMode_ = nullptr;
+    QSpinBox *calibrationLevel_ = nullptr;
+    QLabel *calibrationStatus_ = nullptr;
     QComboBox *presetCombo_ = nullptr;
     QCheckBox *power_ = nullptr;
     QSlider *outputGain_ = nullptr;
@@ -2121,6 +2591,15 @@ private:
 } // namespace
 
 int main(int argc, char **argv) {
+    if (argc == 6 && QString::fromLocal8Bit(argv[1]) == "--calibration-worker") {
+        QCoreApplication workerApp(argc, argv);
+        bool valid = false;
+        const int level = QString::fromLocal8Bit(argv[4]).toInt(&valid);
+        const auto mode = QString::fromLocal8Bit(argv[5]);
+        if (!valid || (mode != "sweep" && mode != "tones")) return 2;
+        return runCalibration(QString::fromLocal8Bit(argv[2]), QString::fromLocal8Bit(argv[3]), level,
+                              mode == "sweep");
+    }
     if (argc == 5 && QString::fromLocal8Bit(argv[1]) == "--volume-guardian") {
         QCoreApplication guardianApp(argc, argv);
         return guardOutputVolume(QString::fromLocal8Bit(argv[2]), QString::fromLocal8Bit(argv[3]),
@@ -2273,6 +2752,41 @@ int main(int argc, char **argv) {
             !micStereo.contains("audio.position = [ FL FR ]") ||
             !micStereo.contains("right_mic_4:Out"))
             qFatal("Microphone filter layouts are invalid");
+        QByteArray calibrationPcm(kCalibrationRate / 4 * 2, '\0');
+        for (int i = 0; i < kCalibrationRate / 4; ++i) {
+            const auto sample = int16_t(std::lround(3000.0 *
+                std::sin(2.0 * std::numbers::pi * 1000.0 * i / kCalibrationRate)));
+            calibrationPcm[2 * i] = char(uint16_t(sample) & 0xff);
+            calibrationPcm[2 * i + 1] = char(uint16_t(sample) >> 8);
+        }
+        if (std::abs(toneAmplitude(calibrationPcm, 1000) - 3000.0) > 5.0 ||
+            toneAmplitude(calibrationPcm, 2000) > 10.0)
+            qFatal("Calibration tone analysis is inaccurate");
+        QTemporaryDir sweepTestDir;
+        const auto sweepReference = writeCalibrationSweep(sweepTestDir.filePath("sweep.wav"), -48);
+        QByteArray sweepRecording((sweepReference.size() + kCalibrationRate / 10) * 2, '\0');
+        for (int i = 0; i < sweepReference.size(); ++i) {
+            const auto sample = int16_t(std::lround(sweepReference[i] * 0.5));
+            sweepRecording[2 * (i + kCalibrationRate / 10)] = char(uint16_t(sample) & 0xff);
+            sweepRecording[2 * (i + kCalibrationRate / 10) + 1] = char(uint16_t(sample) >> 8);
+        }
+        const auto sweptLevels = analyzeSweep(sweepRecording, QByteArray(24000, '\0'), sweepReference);
+        if (sweptLevels.size() != int(kCalibrationFrequencies.size()))
+            qFatal("Sweep analysis returned the wrong band count");
+        for (const auto &level : sweptLevels)
+            if (!level.isDouble() || std::abs(level.toDouble() - 0.5) > 0.12) {
+                qWarning("Unexpected synthetic sweep level: %s", qPrintable(QString::fromUtf8(QJsonDocument(sweptLevels).toJson(QJsonDocument::Compact))));
+                qFatal("Sweep analysis did not recover a delayed quiet signal");
+            }
+        const auto rejectedLevels = analyzeSweep(sweepRecording, sweepRecording, sweepReference);
+        for (const auto &level : rejectedLevels)
+            if (!level.isNull()) qFatal("Background noise was mistaken for a calibration signal");
+        QJsonArray trialLevels{50.0, 80.0, 100.0, 150.0, 200.0, 300.0, 400.0, 500.0,
+                               600.0, 700.0, 800.0, 900.0};
+        auto trialSuggestion = calibrationSuggestion(QJsonObject{{"levels", trialLevels}}, defaultBands(15));
+        if (!trialSuggestion || trialSuggestion->changed < 2 ||
+            trialSuggestion->bands[3].gain <= 0.0)
+            qFatal("Calibration suggestion was not generated");
         QVector<double> testLevels;
         double testPeak = 0.0;
         int levelUpdates = 0;
@@ -2379,6 +2893,25 @@ int main(int argc, char **argv) {
         for (auto *combo : testWindow.findChildren<QComboBox *>())
             if (combo->accessibleName() == "Microphone input device") microphoneInput = combo;
         if (!microphoneInput) qFatal("Microphone device selection is missing");
+        QPushButton *calibrationStart = nullptr, *calibrationStop = nullptr;
+        for (auto *button : testWindow.findChildren<QPushButton *>()) {
+            if (button->accessibleName() == "Measure speaker room and microphone response") calibrationStart = button;
+            if (button->text() == "Stop tones") calibrationStop = button;
+        }
+        if (!calibrationStart || !calibrationStop || calibrationStop->isEnabled())
+            qFatal("Calibration start or stop control is invalid");
+        QComboBox *calibrationMode = nullptr;
+        for (auto *combo : testWindow.findChildren<QComboBox *>())
+            if (combo->accessibleName() == "Calibration test signal") calibrationMode = combo;
+        if (!calibrationMode || calibrationMode->currentData().toString() != "sweep" ||
+            calibrationMode->findData("tones") < 0)
+            qFatal("Quiet sweep is not the default calibration signal");
+        QSpinBox *calibrationLevel = nullptr;
+        for (auto *spin : testWindow.findChildren<QSpinBox *>())
+            if (spin->accessibleName() == "Calibration tone level") calibrationLevel = spin;
+        if (!calibrationLevel || calibrationLevel->minimum() != -54 ||
+            calibrationLevel->maximum() != -5 || calibrationLevel->value() != -24)
+            qFatal("Calibration level limits or default are invalid");
         int micControlsFound = 0;
         for (auto *slider : testWindow.findChildren<QSlider *>())
             if (slider->accessibleName().startsWith("Microphone ")) ++micControlsFound;
@@ -2416,6 +2949,11 @@ int main(int argc, char **argv) {
         presets->setCurrentText("Flat");
         testWindow.show();
         app.processEvents();
+        if (auto *display = testWindow.screen()) {
+            const auto available = display->availableGeometry();
+            if (testWindow.width() > available.width() || testWindow.height() > available.height())
+                qFatal("Window exceeds the display size");
+        }
         if (qEnvironmentVariableIsSet("SOUNDCURRENT_SCREENSHOT"))
             testWindow.grab().save(qEnvironmentVariable("SOUNDCURRENT_SCREENSHOT"));
         presets->showPopup();
