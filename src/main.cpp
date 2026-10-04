@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 rhamenator
+
 #include <QApplication>
 #include <QCheckBox>
 #include <QCloseEvent>
@@ -29,9 +32,12 @@
 #include <QPainterPath>
 #include <QProcess>
 #include <QPushButton>
+#include <QProgressBar>
 #include <QScrollArea>
 #include <QScrollBar>
 #include <QSaveFile>
+#include <QSettings>
+#include <QShowEvent>
 #include <QSignalBlocker>
 #include <QSlider>
 #include <QSpinBox>
@@ -48,6 +54,7 @@
 #include <array>
 #include <cmath>
 #include <complex>
+#include <cstdint>
 #include <functional>
 #include <numbers>
 #include <optional>
@@ -210,7 +217,7 @@ QString quote(const QString &value) {
     return QString::fromUtf8(encoded.mid(1, encoded.size() - 2));
 }
 
-QString filterConfig(const QString &target, const Bands &bands) {
+QString filterConfig(const QString &target, const Bands &bands, double outputGainDb = 0.0) {
     QStringList nodes;
     QStringList links;
     nodes << QString("{ type = builtin name = preamp label = linear control = { \"Mult\" = %1 \"Add\" = 0.0 } }")
@@ -222,6 +229,9 @@ QString filterConfig(const QString &target, const Bands &bands) {
                      .arg(i + 1).arg(band.frequency, 0, 'f', 1).arg(band.q, 0, 'f', 2).arg(band.gain, 0, 'f', 2);
         if (i > 0) links << QString("{ output = \"band_%1:Out\" input = \"band_%2:In\" }").arg(i).arg(i + 1);
     }
+    nodes << QString("{ type = builtin name = output_gain label = linear control = { \"Mult\" = %1 \"Add\" = 0.0 } }")
+                 .arg(QString::number(std::pow(10.0, outputGainDb / 20.0), 'f', 8));
+    links << QString("{ output = \"band_%1:Out\" input = \"output_gain:In\" }").arg(kMaxBands);
     return QString(R"(
 context.spa-libs = {
   audio.convert.* = audioconvert/libspa-audioconvert
@@ -263,7 +273,7 @@ int nodeId(const QString &name) {
     return -1;
 }
 
-QString filterControls(const Bands &bands) {
+QString filterControls(const Bands &bands, double outputGainDb = 0.0) {
     QStringList controls = {quote("preamp:Mult"), QString::number(std::pow(10.0, headroom(bands) / 20.0), 'f', 8)};
     for (int i = 0; i < kMaxBands; ++i) {
         const auto band = i < bands.size() ? bands[i] : Band{};
@@ -271,6 +281,7 @@ QString filterControls(const Bands &bands) {
                  << quote(QString("band_%1:Q").arg(i + 1)) << QString::number(band.q, 'f', 2)
                  << quote(QString("band_%1:Gain").arg(i + 1)) << QString::number(band.gain, 'f', 2);
     }
+    controls << quote("output_gain:Mult") << QString::number(std::pow(10.0, outputGainDb / 20.0), 'f', 8);
     return "{ params = [ " + controls.join(' ') + " ] }";
 }
 
@@ -279,7 +290,7 @@ public:
     bool active() const { return process_.state() != QProcess::NotRunning; }
     QString target() const { return target_.name; }
 
-    void start(const Device &device, const Bands &bands) {
+    void start(const Device &device, const Bands &bands, double outputGainDb = 0.0) {
         stop();
         bool found = false;
         for (const auto &available : devices()) if (available.name == device.name) found = true;
@@ -290,7 +301,7 @@ public:
         QFile config(path);
         if (!config.open(QIODevice::WriteOnly | QIODevice::Truncate))
             throw std::runtime_error("Could not write temporary audio configuration");
-        config.write(filterConfig(device.name, bands).toUtf8());
+        config.write(filterConfig(device.name, bands, outputGainDb).toUtf8());
         config.close();
         process_.setProgram("pipewire");
         process_.setArguments({"-c", path});
@@ -321,11 +332,11 @@ public:
         }
     }
 
-    void update(const Bands &bands) {
+    void update(const Bands &bands, double outputGainDb = 0.0) {
         if (!active()) return;
         const auto id = nodeId(kSink);
         if (id < 0) throw std::runtime_error("Equalizer sink disappeared");
-        command("pw-cli", {"set-param", QString::number(id), "Props", filterControls(bands)});
+        command("pw-cli", {"set-param", QString::number(id), "Props", filterControls(bands, outputGainDb)});
     }
 
     void stop() {
@@ -374,6 +385,7 @@ const QMap<QString, std::array<double, 9>> &builtinShapes() {
     static const QMap<QString, std::array<double, 9>> shapes = {
         {"Flat", {0, 0, 0, 0, 0, 0, 0, 0, 0}},
         {"Balanced", {1, 1, 0.5, 0, -0.5, 0, 0.5, 1, 1}},
+        {"Loudness", {5, 5, 3, 1, 0, -1, 0, 2, 3}},
         {"Bass Boost", {5, 4, 3, 1.5, 0, 0, 0, 0, 0}},
         {"Deep Bass", {7, 6, 4, 2, 0, -1, -1, -1, -1}},
         {"Punchy Bass", {2, 3, 5, 4, 1, -1, 0, 1, 1}},
@@ -561,6 +573,125 @@ private:
     int dragging_ = -1;
 };
 
+class SpectrumMonitor : public QObject {
+public:
+    std::function<void(const QVector<double> &, double)> onLevels;
+    bool active() const { return process_.state() != QProcess::NotRunning; }
+
+    SpectrumMonitor() {
+        timer_.setInterval(100);
+        connect(&process_, &QProcess::readyReadStandardOutput, this, [this] {
+            pcm_.append(process_.readAllStandardOutput());
+            if (pcm_.size() > 131072) {
+                const auto excess = pcm_.size() - 131072;
+                pcm_.remove(0, (excess + 3) & ~3);
+            }
+        });
+        connect(&timer_, &QTimer::timeout, this, [this] { analyze(); });
+    }
+
+    void setProfile(const Bands &bands, double outputGainDb) {
+        bands_ = bands;
+        outputGainDb_ = outputGainDb;
+        headroomDb_ = headroom(bands_);
+    }
+
+    void analyzePcmForTest(const QByteArray &pcm) {
+        pcm_ = pcm;
+        analyze();
+    }
+
+    void start() {
+        stop();
+        process_.setProgram("parec");
+        process_.setArguments({"--raw", "-d", QString(kSink) + ".monitor", "--format=s16le",
+                               "--rate=48000", "--channels=2"});
+        process_.start();
+        timer_.start();
+    }
+
+    void stop() {
+        timer_.stop();
+        if (process_.state() != QProcess::NotRunning) {
+            process_.terminate();
+            if (!process_.waitForFinished(500)) process_.kill();
+        }
+        pcm_.clear();
+        if (onLevels) onLevels(QVector<double>(bands_.size(), 0.0), 0.0);
+    }
+
+private:
+    void analyze() {
+        constexpr int n = 4096;
+        constexpr int frameBytes = 4;
+        if (pcm_.size() < n * frameBytes) return;
+        const auto *data = reinterpret_cast<const unsigned char *>(pcm_.constData());
+        const int frameCount = pcm_.size() / frameBytes;
+        double peak = 0.0;
+        for (int i = 0; i < frameCount; ++i) {
+            for (int channel = 0; channel < 2; ++channel) {
+                const auto offset = frameBytes * i + 2 * channel;
+                const auto raw = uint16_t(data[offset]) | (uint16_t(data[offset + 1]) << 8);
+                const auto sample = int16_t(raw) / 32768.0;
+                peak = std::max(peak, std::abs(sample));
+            }
+        }
+        const int first = (frameCount - n) * frameBytes;
+        std::array<std::complex<double>, n> spectrum;
+        for (int i = 0; i < n; ++i) {
+            const int offset = first + i * frameBytes;
+            const auto left = int16_t(uint16_t(data[offset]) | (uint16_t(data[offset + 1]) << 8));
+            const auto right = int16_t(uint16_t(data[offset + 2]) | (uint16_t(data[offset + 3]) << 8));
+            const double window = 0.5 - 0.5 * std::cos(2.0 * std::numbers::pi * i / (n - 1));
+            spectrum[i] = (double(left) + double(right)) / 65536.0 * window;
+        }
+        pcm_.clear();
+        for (int i = 1, j = 0; i < n; ++i) {
+            int bit = n >> 1;
+            for (; j & bit; bit >>= 1) j ^= bit;
+            j ^= bit;
+            if (i < j) std::swap(spectrum[i], spectrum[j]);
+        }
+        for (int length = 2; length <= n; length <<= 1) {
+            const auto step = std::polar(1.0, -2.0 * std::numbers::pi / length);
+            for (int start = 0; start < n; start += length) {
+                std::complex<double> factor{1.0, 0.0};
+                for (int j = 0; j < length / 2; ++j) {
+                    const auto even = spectrum[start + j];
+                    const auto odd = spectrum[start + j + length / 2] * factor;
+                    spectrum[start + j] = even + odd;
+                    spectrum[start + j + length / 2] = even - odd;
+                    factor *= step;
+                }
+            }
+        }
+        QVector<double> levels(bands_.size(), 0.0);
+        if (!bands_.isEmpty()) {
+            int band = 0;
+            for (int bin = 1; bin < n / 2; ++bin) {
+                const auto frequency = 48000.0 * bin / n;
+                while (band + 1 < bands_.size() &&
+                       frequency > std::sqrt(bands_[band].frequency * bands_[band + 1].frequency))
+                    ++band;
+                levels[band] = std::max(levels[band], std::abs(spectrum[bin]) * 4.0 / n);
+            }
+            for (qsizetype i = 0; i < bands_.size(); ++i)
+                levels[i] *= std::pow(10.0, (responseDb(bands_, bands_[i].frequency) +
+                                              headroomDb_ + outputGainDb_) / 20.0);
+        }
+        const auto maxEqBoost = headroomDb_ < 0.0 ? -headroomDb_ - 1.0 : 0.0;
+        const auto estimatedPeak = peak * std::pow(10.0, (maxEqBoost + headroomDb_ + outputGainDb_) / 20.0);
+        if (onLevels) onLevels(levels, estimatedPeak);
+    }
+
+    QProcess process_;
+    QTimer timer_;
+    QByteArray pcm_;
+    Bands bands_;
+    double headroomDb_ = 0.0;
+    double outputGainDb_ = 0.0;
+};
+
 class PresetComboBox : public QComboBox {
 protected:
     void showPopup() override {
@@ -606,13 +737,35 @@ public:
         outputRow->addWidget(outputCombo_, 1);
         auto *refresh = new QPushButton("Refresh devices");
         outputRow->addWidget(refresh);
-        power_ = new QCheckBox("Equalizer on");
+        power_ = new QCheckBox("Equalizer off");
+        power_->setObjectName("powerToggle");
+        power_->setAccessibleName("Equalizer on or off");
+        power_->setToolTip("Click to turn the equalizer on or off");
         outputRow->addWidget(power_);
         auto *quit = new QPushButton("Quit app");
         quit->setAccessibleName("Quit SoundCurrent EQ");
         quit->setToolTip("Exit SoundCurrent EQ and restore normal audio");
         outputRow->addWidget(quit);
         outputLayout->addLayout(outputRow);
+        auto *gainRow = new QHBoxLayout;
+        gainRow->addWidget(new QLabel("Output gain"));
+        outputGain_ = new QDoubleSpinBox;
+        outputGain_->setRange(-12.0, 12.0);
+        outputGain_->setDecimals(1);
+        outputGain_->setSingleStep(0.5);
+        outputGain_->setSuffix(" dB");
+        outputGain_->setAccessibleName("Output gain after equalization");
+        outputGain_->setToolTip("Raise the level after the EQ. Higher gain can cause clipping.");
+        const double savedGain = QSettings().value("outputGainDb", 0.0).toDouble();
+        outputGain_->setValue(std::isfinite(savedGain) ? std::clamp(savedGain, -12.0, 12.0) : 0.0);
+        gainRow->addWidget(outputGain_);
+        gainRow->addSpacing(18);
+        peakStatus_ = new QLabel("Estimated peak: waiting for audio");
+        peakStatus_->setAccessibleName("Estimated output peak and clipping risk");
+        peakStatus_->setObjectName("peakStatus");
+        gainRow->addWidget(peakStatus_);
+        gainRow->addStretch();
+        outputLayout->addLayout(gainRow);
         status_ = new QLabel("Equalizer is off. Your audio uses its normal output.");
         status_->setWordWrap(true);
         status_->setObjectName("status");
@@ -631,12 +784,6 @@ public:
         presetRow->addWidget(save);
         auto *reset = new QPushButton("Reset to flat");
         presetRow->addWidget(reset);
-        bypass_ = new QPushButton("Bypass EQ");
-        bypass_->setAccessibleName("Bypass equalizer");
-        bypass_->setToolTip("Compare the selected preset with unprocessed sound");
-        bypass_->setCheckable(true);
-        bypass_->setEnabled(false);
-        presetRow->addWidget(bypass_);
         root->addWidget(presetBox);
 
         auto *eqBox = new QGroupBox("Equalizer");
@@ -697,7 +844,7 @@ public:
         bandScroll_->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         bandScroll_->setFixedHeight(235);
         eqLayout->addWidget(bandScroll_);
-        eqLayout->addWidget(new QLabel("The graph shows the combined EQ response. Boosts lower the preamp to leave headroom."));
+        eqLayout->addWidget(new QLabel("Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping."));
         root->addWidget(eqBox, 1);
 
         loadCustomPresets();
@@ -713,7 +860,11 @@ public:
         connect(presetCombo_, &QComboBox::currentIndexChanged, this, [this] { presetChanged(); });
         connect(save, &QPushButton::clicked, this, [this] { savePreset(); });
         connect(reset, &QPushButton::clicked, this, [this] { presetCombo_->setCurrentText("Flat"); });
-        connect(bypass_, &QPushButton::toggled, this, [this](bool on) { toggleBypass(on); });
+        connect(outputGain_, &QDoubleSpinBox::valueChanged, this, [this](double value) {
+            QSettings().setValue("outputGainDb", value);
+            meter_.setProfile(bands_, value);
+            scheduleApply();
+        });
         connect(countBox_, &QSpinBox::valueChanged, this, [this](int count) { changeBandCount(count); });
         connect(frequencyBox_, &QDoubleSpinBox::valueChanged, this, [this] { detailChanged(); });
         connect(gainBox_, &QDoubleSpinBox::valueChanged, this, [this] { detailChanged(); });
@@ -731,8 +882,11 @@ public:
         applyTimer_.setSingleShot(true);
         applyTimer_.setInterval(80);
         connect(&applyTimer_, &QTimer::timeout, this, [this] {
-            try { audio_.update(effectiveBands()); } catch (const std::exception &error) { showError(error.what()); }
+            meter_.setProfile(bands_, outputGain_->value());
+            try { audio_.update(bands_, outputGain_->value()); } catch (const std::exception &error) { showError(error.what()); }
         });
+        meter_.onLevels = [this](const QVector<double> &levels, double peak) { showLevels(levels, peak); };
+        meter_.setProfile(bands_, outputGain_->value());
         monitor_.setInterval(1500);
         connect(&monitor_, &QTimer::timeout, this, [this] { refreshDevices(); });
         monitor_.start();
@@ -740,7 +894,7 @@ public:
         if (startEnabled && power_->isEnabled()) power_->setChecked(true);
     }
 
-    ~MainWindow() override { audio_.stop(); }
+    ~MainWindow() override { meter_.stop(); audio_.stop(); }
 
     void reopen() {
         showNormal();
@@ -749,8 +903,16 @@ public:
     }
 
 protected:
+    void showEvent(QShowEvent *event) override {
+        QMainWindow::showEvent(event);
+        QTimer::singleShot(0, this, [this] {
+            if (isVisible() && power_->isChecked() && !meter_.active()) meter_.start();
+        });
+    }
+
     void closeEvent(QCloseEvent *event) override {
         if (tray_ && QSystemTrayIcon::isSystemTrayAvailable()) {
+            meter_.stop();
             hide();
             event->ignore();
             if (!backgroundNoticeShown_) {
@@ -763,28 +925,8 @@ protected:
     }
 
 private:
-    Bands effectiveBands() const {
-        return bypass_ && bypass_->isChecked() ? defaultBands(int(bands_.size())) : bands_;
-    }
-
     void showPlaybackStatus(const Device &device) {
-        status_->setText(QString(bypass_->isChecked() ? "Bypassed" : "On") +
-                         " · Playing through " + device.description);
-    }
-
-    void toggleBypass(bool on) {
-        bypass_->setText(on ? "Resume EQ" : "Bypass EQ");
-        if (!power_->isChecked()) return;
-        applyTimer_.stop();
-        try {
-            audio_.update(effectiveBands());
-            showPlaybackStatus(findDevice(audio_.target()));
-        } catch (const std::exception &error) {
-            const QSignalBlocker blocker(bypass_);
-            bypass_->setChecked(!on);
-            bypass_->setText(on ? "Bypass EQ" : "Resume EQ");
-            showError(error.what());
-        }
+        status_->setText("On · Playing through " + device.description);
     }
 
     void setupTray() {
@@ -818,6 +960,8 @@ private:
         sliders_.clear();
         gainLabels_.clear();
         frequencyButtons_.clear();
+        levelBars_.clear();
+        levelZones_.clear();
         auto *container = new QWidget;
         auto *row = new QHBoxLayout(container);
         row->setContentsMargins(8, 4, 8, 8);
@@ -836,7 +980,23 @@ private:
             slider->setMinimumHeight(140);
             slider->setAccessibleName(QString("Band %1 gain").arg(i + 1));
             sliders_.append(slider);
-            column->addWidget(slider, 1, Qt::AlignHCenter);
+            auto *sliderRow = new QHBoxLayout;
+            sliderRow->setSpacing(3);
+            sliderRow->addWidget(slider, 1, Qt::AlignHCenter);
+            auto *level = new QProgressBar;
+            level->setOrientation(Qt::Vertical);
+            level->setRange(0, 100);
+            level->setValue(0);
+            level->setTextVisible(false);
+            level->setFixedWidth(8);
+            level->setMinimumHeight(140);
+            level->setObjectName("bandLevel");
+            level->setAccessibleName(QString("Estimated output level near band %1").arg(i + 1));
+            level->setToolTip("Estimated post-EQ level near this frequency");
+            levelBars_.append(level);
+            levelZones_.append(-1);
+            sliderRow->addWidget(level);
+            column->addLayout(sliderRow, 1);
             auto *frequency = new QPushButton;
             frequency->setToolTip("Select this band to edit frequency, gain, and Q");
             frequency->setAccessibleName(QString("Select band %1").arg(i + 1));
@@ -855,6 +1015,37 @@ private:
         container->setFixedWidth(std::max(760, int(bands_.size()) * 63));
         container->setMinimumHeight(210);
         bandScroll_->setWidget(container);
+    }
+
+    void showLevels(const QVector<double> &levels, double peak) {
+        const auto count = std::min(levels.size(), levelBars_.size());
+        for (qsizetype i = 0; i < count; ++i) {
+            const double db = 20.0 * std::log10(std::max(levels[i], 0.000001));
+            levelBars_[i]->setValue(std::clamp(int(std::lround((db + 60.0) * 100.0 / 60.0)), 0, 100));
+            const int zone = db >= -3.0 ? 2 : db >= -12.0 ? 1 : 0;
+            if (levelZones_[i] != zone) {
+                const auto color = zone == 2 ? "#f16b76" : zone == 1 ? "#e6b450" : "#50d1ba";
+                levelBars_[i]->setStyleSheet(QString("QProgressBar#bandLevel { border: none; background: #30425c; border-radius: 3px; } "
+                                                     "QProgressBar#bandLevel::chunk { background: %1; border-radius: 3px; }").arg(color));
+                levelZones_[i] = zone;
+            }
+            levelBars_[i]->setToolTip(QString("Estimated output near %1: %2 dBFS")
+                                     .arg(frequencyLabel(bands_[i].frequency)).arg(db, 0, 'f', 1));
+        }
+        if (!power_->isChecked()) {
+            peakStatus_->setText("Estimated peak: EQ off");
+            peakStatus_->setStyleSheet("color:#8fa2bb;");
+        } else if (peak <= 0.000001) {
+            peakStatus_->setText("Estimated peak: waiting for audio");
+            peakStatus_->setStyleSheet("color:#8fa2bb;");
+        } else {
+            const double db = 20.0 * std::log10(peak);
+            peakStatus_->setText(db >= -1.0
+                                     ? QString("Clipping risk · estimated peak %1 dBFS").arg(db, 0, 'f', 1)
+                                     : QString("Estimated peak %1 dBFS").arg(db, 0, 'f', 1));
+            peakStatus_->setStyleSheet(db >= -1.0 ? "color:#f16b76;font-weight:700;"
+                                                    : db >= -6.0 ? "color:#e6b450;" : "color:#50d1ba;");
+        }
     }
 
     void syncBandControls() {
@@ -877,7 +1068,7 @@ private:
         frequencyBox_->setValue(band.frequency);
         gainBox_->setValue(band.gain);
         qBox_->setValue(band.q);
-        headroom_->setText("Preamp " + QString::number(headroom(bands_), 'f', 1) + " dB");
+        headroom_->setText("Auto headroom " + QString::number(headroom(bands_), 'f', 1) + " dB");
         curve_->setBands(bands_, selected_);
     }
 
@@ -948,7 +1139,7 @@ private:
             if (presetCombo_->count()) presetCombo_->insertSeparator(presetCombo_->count());
             for (const auto &name : names) presetCombo_->addItem(name);
         };
-        addGroup({"Balanced", "Flat", "Warm", "Bright", "Soft Treble", "Treble Detail",
+        addGroup({"Balanced", "Flat", "Loudness", "Warm", "Bright", "Soft Treble", "Treble Detail",
                   "Headphones", "Small Speakers", "Night Listening"});
         addGroup({"Bass Boost", "Deep Bass", "Punchy Bass", "Bass Cut",
                   "Clear Voice", "Podcast", "TV Dialogue", "Vocal Focus"});
@@ -1055,11 +1246,14 @@ private:
             } else desired = bestDevice(devices_);
             if (desired.name != audio_.target()) {
                 if (desired.name.isEmpty()) {
+                    meter_.stop();
                     audio_.stop();
                     power_->setChecked(false);
                     status_->setText("No output device is connected.");
                 } else {
-                    audio_.start(desired, effectiveBands());
+                    meter_.stop();
+                    audio_.start(desired, bands_, outputGain_->value());
+                    if (isVisible()) meter_.start();
                     showPlaybackStatus(desired);
                 }
             }
@@ -1071,31 +1265,29 @@ private:
         const auto desired = selectedDevice();
         if (desired.name.isEmpty() || desired.name == audio_.target()) return;
         try {
-            audio_.start(desired, effectiveBands());
+            meter_.stop();
+            audio_.start(desired, bands_, outputGain_->value());
+            if (isVisible()) meter_.start();
             showPlaybackStatus(desired);
         } catch (const std::exception &error) { showError(error.what()); }
     }
 
     void togglePower(bool on) {
+        power_->setText(on ? "Equalizer on" : "Equalizer off");
         if (on) {
             const auto device = selectedDevice();
             if (device.name.isEmpty()) { power_->setChecked(false); showError("No output device is available."); return; }
             try {
-                audio_.start(device, effectiveBands());
-                bypass_->setEnabled(true);
+                audio_.start(device, bands_, outputGain_->value());
+                if (isVisible()) meter_.start();
                 showPlaybackStatus(device);
             } catch (const std::exception &error) {
                 power_->setChecked(false);
                 showError(error.what());
             }
         } else {
+            meter_.stop();
             audio_.stop();
-            bypass_->setEnabled(false);
-            if (bypass_->isChecked()) {
-                const QSignalBlocker blocker(bypass_);
-                bypass_->setChecked(false);
-                bypass_->setText("Bypass EQ");
-            }
             status_->setText("Equalizer is off. Your audio uses its normal output.");
         }
     }
@@ -1103,6 +1295,7 @@ private:
     void showError(const QString &message) { status_->setText("Audio error: " + message); }
 
     AudioEngine audio_;
+    SpectrumMonitor meter_;
     Bands bands_;
     QList<Device> devices_;
     QStringList knownNames_;
@@ -1110,7 +1303,8 @@ private:
     QComboBox *outputCombo_ = nullptr;
     QComboBox *presetCombo_ = nullptr;
     QCheckBox *power_ = nullptr;
-    QPushButton *bypass_ = nullptr;
+    QDoubleSpinBox *outputGain_ = nullptr;
+    QLabel *peakStatus_ = nullptr;
     QLabel *status_ = nullptr;
     QLabel *headroom_ = nullptr;
     QSpinBox *countBox_ = nullptr;
@@ -1122,6 +1316,8 @@ private:
     QVector<QSlider *> sliders_;
     QVector<QLabel *> gainLabels_;
     QVector<QPushButton *> frequencyButtons_;
+    QVector<QProgressBar *> levelBars_;
+    QVector<int> levelZones_;
     QTimer applyTimer_;
     QTimer monitor_;
     QSystemTrayIcon *tray_ = nullptr;
@@ -1143,10 +1339,14 @@ int main(int argc, char **argv) {
         QTextStream(stdout) << filterConfig(app.arguments()[2], defaultBands(kDefaultBands));
         return 0;
     }
-    if (app.arguments().size() == 3 && app.arguments()[1] == "--dump-preset-controls") {
+    if ((app.arguments().size() == 3 || app.arguments().size() == 4) &&
+        app.arguments()[1] == "--dump-preset-controls") {
         const auto name = app.arguments()[2];
         if (!builtinShapes().contains(name)) return 2;
-        QTextStream(stdout) << filterControls(builtinProfile(name, kDefaultBands));
+        bool valid = true;
+        const double gain = app.arguments().size() == 4 ? app.arguments()[3].toDouble(&valid) : 0.0;
+        if (!valid || !std::isfinite(gain) || gain < -12.0 || gain > 12.0) return 2;
+        QTextStream(stdout) << filterControls(builtinProfile(name, kDefaultBands), gain);
         return 0;
     }
     if (app.arguments().contains("--self-test")) {
@@ -1191,6 +1391,11 @@ int main(int argc, char **argv) {
         QGroupBox::title { subcontrol-origin: margin; left: 14px; padding: 0 5px; }
         QLabel { background: transparent; }
         QCheckBox { background: transparent; }
+        QCheckBox#powerToggle { background: #2d405a; border: 1px solid #4a5d77;
+                                border-radius: 7px; padding: 7px 10px; }
+        QCheckBox#powerToggle:hover { background: #385572; }
+        QCheckBox#powerToggle:checked { background: #1f746e; border-color: #55d7c3; }
+        QCheckBox#powerToggle::indicator { width: 16px; height: 16px; margin-right: 4px; }
         QLabel#value { color: #90d9ce; font-weight: 700; }
         QLabel#status { color: #90d9ce; }
         QPushButton, QComboBox { background: #2d405a; border: 1px solid #4a5d77;
@@ -1204,6 +1409,31 @@ int main(int argc, char **argv) {
     )");
     if (app.arguments().contains("--ui-self-test")) {
         MainWindow testWindow(false);
+        SpectrumMonitor spectrumTest;
+        spectrumTest.setProfile(defaultBands(kDefaultBands), 0.0);
+        QVector<double> testLevels;
+        double testPeak = 0.0;
+        spectrumTest.onLevels = [&](const QVector<double> &levels, double peak) {
+            testLevels = levels;
+            testPeak = peak;
+        };
+        QByteArray tone(4096 * 4, '\0');
+        for (int i = 0; i < 4096; ++i) {
+            const auto sample = int16_t(std::lround(8192.0 *
+                std::sin(2.0 * std::numbers::pi * 100.0 * i / 48000.0)));
+            for (int channel = 0; channel < 2; ++channel) {
+                tone[i * 4 + channel * 2] = char(uint16_t(sample) & 0xff);
+                tone[i * 4 + channel * 2 + 1] = char(uint16_t(sample) >> 8);
+            }
+        }
+        spectrumTest.analyzePcmForTest(tone);
+        if (testLevels.size() != kDefaultBands || testLevels[3] < 0.15 ||
+            std::abs(testPeak - 0.25) > 0.01)
+            qFatal("FFT level analysis failed");
+        spectrumTest.setProfile(defaultBands(kDefaultBands), 6.0);
+        spectrumTest.analyzePcmForTest(tone);
+        if (std::abs(testPeak - 0.5) > 0.03 || testLevels[3] < 0.3)
+            qFatal("Output gain was not reflected in the level estimate");
         if (builtinShapes().size() < 30) qFatal("Preset library is incomplete");
         if (testWindow.windowTitle() != "SoundCurrent EQ") qFatal("Window title is missing");
         for (const auto *label : testWindow.findChildren<QLabel *>()) {
@@ -1230,14 +1460,19 @@ int main(int argc, char **argv) {
         for (auto *combo : testWindow.findChildren<QComboBox *>())
             if (combo->accessibleName() == "Listening preset") presets = combo;
         if (!presets) qFatal("Preset menu is missing");
-        QPushButton *bypass = nullptr;
         QPushButton *quit = nullptr;
         for (auto *button : testWindow.findChildren<QPushButton *>())
-            if (button->accessibleName() == "Bypass equalizer") bypass = button;
-            else if (button->accessibleName() == "Quit SoundCurrent EQ") quit = button;
-        if (!bypass || !bypass->isCheckable()) qFatal("Bypass button is missing");
+            if (button->accessibleName() == "Quit SoundCurrent EQ") quit = button;
         if (!quit) qFatal("Quit button is missing");
+        QCheckBox *power = nullptr;
+        for (auto *check : testWindow.findChildren<QCheckBox *>())
+            if (check->accessibleName() == "Equalizer on or off") power = check;
+        if (!power || power->objectName() != "powerToggle") qFatal("Power cartouche is missing");
+        auto *outputGain = findDouble("Output gain after equalization");
+        if (!outputGain || outputGain->minimum() != -12.0 || outputGain->maximum() != 12.0)
+            qFatal("Output gain control is missing");
         if (presets->currentText() != "Flat") qFatal("Flat is not the default preset");
+        if (presets->findText("Loudness") < 0) qFatal("Loudness preset is missing");
         if (presets->findText("Entertainment") >= 0) qFatal("Category title appears as a preset");
         for (auto it = builtinShapes().begin(); it != builtinShapes().end(); ++it) {
             if (presets->findText(it.key()) < 0) qFatal("A built-in preset is missing from the menu");
@@ -1245,8 +1480,11 @@ int main(int argc, char **argv) {
             if (std::abs(gain->value() - builtinProfile(it.key(), kDefaultBands).first().gain) > 0.11)
                 qFatal("A built-in preset did not update the band controls");
         }
+        presets->setCurrentText("Flat");
         testWindow.show();
         app.processEvents();
+        if (qEnvironmentVariableIsSet("SOUNDCURRENT_SCREENSHOT"))
+            testWindow.grab().save(qEnvironmentVariable("SOUNDCURRENT_SCREENSHOT"));
         presets->showPopup();
         app.processEvents();
         if (presets->maxVisibleItems() != 12 ||
@@ -1256,15 +1494,11 @@ int main(int argc, char **argv) {
         testWindow.hide();
         presets->setCurrentText("Deep Bass");
         if (gain->value() < 6.0) qFatal("Deep Bass preset did not change the bands");
-        bypass->setChecked(true);
-        if (bypass->text() != "Resume EQ" || presets->currentText() != "Deep Bass")
-            qFatal("Bypass did not preserve the selected preset");
-        bypass->setChecked(false);
-        if (bypass->text() != "Bypass EQ") qFatal("Bypass did not resume the selected preset");
         presets->setCurrentText("Flat");
         if (gain->value() != 0.0) qFatal("Flat preset did not reset the bands");
         count->setValue(31);
         if (testWindow.findChildren<QSlider *>().size() != 31) qFatal("31-band layout failed");
+        if (testWindow.findChildren<QProgressBar *>().size() != 31) qFatal("Level indicators are missing");
         frequency->setValue(22);
         gain->setValue(4);
         q->setValue(1.8);

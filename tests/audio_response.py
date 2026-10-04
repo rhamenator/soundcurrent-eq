@@ -86,6 +86,11 @@ def main():
                         frame.extend((value, value))
                     wav.writeframes(frame.tobytes())
 
+            monitor_input = capture(directory / "tone-1000.wav", directory / "monitor-input.raw",
+                                    "soundcurrent_eq")
+            if monitor_input < 100:
+                raise RuntimeError("The live level monitor did not receive the EQ input")
+
             flat_100 = capture(directory / "tone-100.wav", directory / "flat-100.raw", sink)
             flat = capture(directory / "tone-1000.wav", directory / "flat.raw", sink)
             frequencies = (25, 40, 63, 100, 160, 250, 400, 630, 1000, 1600, 2500, 4000, 6300,
@@ -119,11 +124,32 @@ def main():
                                 capture_output=True, text=True,
                                 env={**os.environ, "QT_QPA_PLATFORM": "offscreen"}).stdout
             run("pw-cli", "set-param", str(eq_id), "Props", flat_controls, stdout=subprocess.DEVNULL)
-            bypass_100 = capture(directory / "tone-100.wav", directory / "bypass-100.raw", sink)
-            bypass_change = 20 * math.log10(bypass_100 / flat_100)
-            print(f"Bypass response at 100 Hz: {bypass_change:+.1f} dB relative to Flat")
-            if abs(bypass_change) > 1.0:
-                raise RuntimeError("Bypass did not restore the unprocessed signal")
+            restored_100 = capture(directory / "tone-100.wav", directory / "restored-100.raw", sink)
+            restored_change = 20 * math.log10(restored_100 / flat_100)
+            if abs(restored_change) > 1.0:
+                raise RuntimeError("Flat did not restore the unprocessed signal")
+
+            loudness_controls = run(str(binary), "--dump-preset-controls", "Loudness",
+                                    capture_output=True, text=True,
+                                    env={**os.environ, "QT_QPA_PLATFORM": "offscreen"}).stdout
+            run("pw-cli", "set-param", str(eq_id), "Props", loudness_controls, stdout=subprocess.DEVNULL)
+            loudness_100 = capture(directory / "tone-100.wav", directory / "loudness-100.raw", sink)
+            loudness_1000 = capture(directory / "tone-1000.wav", directory / "loudness-1000.raw", sink)
+            low_relative = 20 * math.log10(loudness_100 / flat_100)
+            mid_relative = 20 * math.log10(loudness_1000 / flat)
+            print(f"Loudness bass contour: {low_relative - mid_relative:+.1f} dB versus midrange")
+            if low_relative - mid_relative < 3.0:
+                raise RuntimeError("Loudness did not emphasize bass over midrange")
+
+            gain_controls = run(str(binary), "--dump-preset-controls", "Flat", "6.0",
+                                capture_output=True, text=True,
+                                env={**os.environ, "QT_QPA_PLATFORM": "offscreen"}).stdout
+            run("pw-cli", "set-param", str(eq_id), "Props", gain_controls, stdout=subprocess.DEVNULL)
+            gained = capture(directory / "tone-1000.wav", directory / "gained.raw", sink)
+            gain_change = 20 * math.log10(gained / flat)
+            print(f"Post-EQ output gain: {gain_change:+.1f} dB (expected +6 dB)")
+            if not 5.0 < gain_change < 7.0:
+                raise RuntimeError("Output gain did not raise the processed signal")
         finally:
             if pipewire is not None:
                 pipewire.terminate()

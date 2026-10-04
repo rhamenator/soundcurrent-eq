@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(soundcurrent-eq VERSION 0.3.2 LANGUAGES CXX)
+project(soundcurrent-eq VERSION 0.3.3 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -15,3 +15,5 @@ include(GNUInstallDirs)
 install(TARGETS soundcurrent-eq RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES data/io.github.rhamenator.SoundCurrentEQ.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
 install(FILES data/io.github.rhamenator.SoundCurrentEQ.svg DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps)
+install(FILES COPYRIGHT DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/soundcurrent-eq RENAME copyright)
+install(FILES LICENSE DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/soundcurrent-eq)

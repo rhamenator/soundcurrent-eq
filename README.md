@@ -3,7 +3,7 @@
 A simple, native C++ desktop equalizer for Ubuntu's PipeWire audio stack. It
 starts with 15 frequency bands and lets you choose any count from 5 to 31.
 Each band has adjustable gain, center frequency, and width (Q). It also has a
-response curve, 33 listening presets, saved custom presets, and an output dropdown
+response curve, 34 listening presets, saved custom presets, and an output dropdown
 with an **Automatic** option that follows connected devices.
 It opens with the **Flat** preset selected.
 
@@ -12,8 +12,7 @@ It opens with the **Flat** preset selected.
 SoundCurrent EQ turns on when you open it and creates a PipeWire virtual sink. It routes that
 sink to the selected physical output. Closing the window leaves it running in
 the background; **Quit app** or the tray's Quit action unloads the equalizer and
-restores the normal output. The
-actual audio processing is performed by PipeWire's built-in filters.
+restores the normal output. PipeWire's built-in filters process the audio.
 
 ## Install
 
@@ -73,20 +72,29 @@ or install missing dependencies.
   navigation works on the sliders and fields. Changes apply live without
   restarting the filter.
 - Boosts automatically lower the preamp using the calculated combined response
-  to leave headroom.
+  to leave headroom. If playback is too quiet, raise **Output gain** in 0.5 dB
+  steps. It acts after the EQ and is saved for the next launch. The default is
+  0 dB; raising it can clip loud source material.
 - Pick a built-in preset or save your own. Custom presets live in your user
   configuration directory. Saved nine-band presets from earlier releases can
   still be loaded.
 - The scrollable preset list includes Deep Bass, Podcast, TV Dialogue,
-  FPS Footsteps, Rock, Jazz, Electronic, Hip-Hop, Night Listening, and more.
+  FPS Footsteps, Rock, Jazz, Electronic, Hip-Hop, Night Listening, Loudness, and more.
   Separators divide the list; every named entry is a working preset.
+- **Loudness** applies a fixed bass and treble contour for quiet listening, like
+  the loudness controls on older receivers. It does not change with the volume.
+- Colored bars beside the band sliders show estimated post-EQ levels from a
+  live, local spectrum sample. A 4096-point FFT updates ten times per second
+  while the window is open. Teal means ordinary activity, amber approaches
+  full scale, and red suggests clipping risk. The peak text uses the same
+  colors. These are estimates based on the EQ input and current settings; they
+  do not measure the DAC or guarantee that every transient is caught.
 - Closing the window keeps the equalizer running. Use its indicator icon to
   reopen it or turn processing on or off. **Quit app** unloads it and restores
   normal output. Launching the app again reopens the existing window. If the
   desktop has no tray, closing the window exits and restores normal output.
-- Use **Equalizer on** to compare the processed sound with the normal output.
-- Use **Bypass EQ** to compare the selected preset with Flat sound while keeping
-  the same audio route. Press **Resume EQ** to restore the selected preset.
+- Click the framed **Equalizer on/off** control to compare the processed sound
+  with the normal output.
 
 **Hardware note:** An equalizer changes the audio signal. It will not repair a
 physical output that pops when its amplifier powers up. Select a different
@@ -127,14 +135,16 @@ currently selected physical output and does not play a test sound. The second
 checks the 31-band interface, preset library, and selected-band controls without using audio.
 The third command sends tones through a temporary silent sink and verifies
 that a 12 dB band cut changes the measured output by about 12 dB and that
-Night Listening reduces low-frequency output.
+Night Listening reduces low-frequency output, Loudness emphasizes bass over
+midrange, and +6 dB output gain raises the measured output by about 6 dB.
 It requires `paplay` and `parec`, and leaves the normal default output alone.
 
 ## Privacy and safety
 
 The app has no account, network service, or telemetry. It runs without root and
-keeps temporary audio configuration in a private directory. The `.deb` only
-installs the binary, launcher, and icon. See [SECURITY.md](SECURITY.md) for
+keeps temporary audio configuration in a private directory. The level display
+reads the local EQ sink and does not save audio. The `.deb` installs the binary,
+launcher, icon, and license files. See [SECURITY.md](SECURITY.md) for
 vulnerability reporting.
 
 ## How it works
@@ -145,7 +155,8 @@ PulseAudio compatibility tools. [Easy Effects](https://github.com/wwmm/easyeffec
 is a more advanced alternative if you need compression, convolution, or a large
 plugin collection.
 
-Licensed under MIT. SoundCurrent EQ is an independent project and is not
-affiliated with FxSound. Its adjustable EQ workflow was informed by
+Licensed under [GNU GPL version 3 only](LICENSE). SoundCurrent EQ is an
+independent project and is not affiliated with FxSound. Its adjustable EQ
+workflow was informed by
 [FxSound's public documentation](https://github.com/fxsound2/fxsound-app/blob/main/docs/COMMAND_LINE_OPTIONS.md);
 no FxSound code or artwork is included.

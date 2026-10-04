@@ -14,7 +14,7 @@ mkdir -p "$topdir"/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS} "$project_dir/dist
 tar -C "$project_dir" \
     --transform="s,^,soundcurrent-eq-$version/," \
     -czf "$topdir/SOURCES/soundcurrent-eq-$version.tar.gz" \
-    CMakeLists.txt LICENSE README.md src data
+    CMakeLists.txt COPYRIGHT LICENSE README.md src data
 
 rpmbuild -bb "$@" --define "_topdir $topdir" \
     --define "_rpmdir $project_dir/dist" \
