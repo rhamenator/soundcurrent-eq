@@ -69,6 +69,8 @@ namespace {
 
 constexpr auto kSink = "soundcurrent_eq";
 constexpr auto kOutput = "soundcurrent_eq_output";
+constexpr auto kMicSource = "soundcurrent_mic";
+constexpr auto kMicInput = "soundcurrent_mic_input";
 constexpr int kMinBands = 5;
 constexpr int kDefaultBands = 15;
 constexpr int kMaxBands = 31;
@@ -151,6 +153,7 @@ QJsonArray pactlList(const QString &kind) {
 }
 
 QString defaultSink() { return command("pactl", {"get-default-sink"}).trimmed(); }
+QString defaultSource() { return command("pactl", {"get-default-source"}).trimmed(); }
 
 struct SinkState {
     QStringList volumes;
@@ -219,6 +222,39 @@ QList<Device> devices() {
         result.append(device);
     }
     return result;
+}
+
+struct InputDevice : Device { int channels = 1; };
+
+QList<InputDevice> inputDevices() {
+    QList<InputDevice> result;
+    for (const auto &item : pactlList("sources")) {
+        const auto source = item.toObject();
+        const auto name = source.value("name").toString();
+        if (name == kMicSource || name.endsWith(".monitor")) continue;
+        const auto channels = source.value("channel_map").toString().split(',', Qt::SkipEmptyParts).size();
+        if (channels < 1 || channels > 2) continue;
+        const auto properties = source.value("properties").toObject();
+        if (properties.value("node.virtual").toVariant().toString() == "true") continue;
+        InputDevice device;
+        device.name = name;
+        device.description = source.value("description").toString(name);
+        device.index = source.value("index").toInt(-1);
+        device.priority = properties.value("priority.session").toVariant().toString().toInt();
+        device.channels = channels;
+        result.append(device);
+    }
+    return result;
+}
+
+void moveCaptureStreams(int fromIndex, const QString &toName) {
+    for (const auto &item : pactlList("source-outputs")) {
+        const auto stream = item.toObject();
+        if (stream.value("source").toInt(-1) != fromIndex ||
+            stream.value("properties").toObject().value("node.name").toString() == kMicInput) continue;
+        try { command("pactl", {"move-source-output", QString::number(stream.value("index").toInt()), toName}); }
+        catch (const std::exception &) {}
+    }
 }
 
 void moveStreams(int fromIndex, const QString &toName) {
@@ -340,6 +376,92 @@ context.modules = [
   }
 ]
 )").arg(nodes.join('\n'), links.join('\n'), kSink, kOutput, quote(target), smartProperties);
+}
+
+using MicTuning = std::array<double, 4>;
+constexpr MicTuning kNaturalMic = {-1.5, -1.0, 1.5, -1.0};
+constexpr std::array<int, 4> kMicFrequencies = {180, 350, 2800, 10000};
+constexpr std::array<const char *, 4> kMicLabels = {"bq_lowshelf", "bq_peaking", "bq_peaking", "bq_highshelf"};
+
+QString micControls(const MicTuning &adjustments, double gainDb, int channels) {
+    QStringList controls;
+    for (int channel = 0; channel < channels; ++channel) {
+        const QString prefix = channel ? "right" : "left";
+        for (int band = 0; band < 4; ++band)
+            controls << QString("\"%1_mic_%2:Gain\" %3").arg(prefix).arg(band + 1)
+                            .arg(kNaturalMic[band] + adjustments[band], 0, 'f', 2);
+        controls << QString("\"%1_mic_gain:Mult\" %2").arg(prefix)
+                        .arg(std::pow(10.0, gainDb / 20.0), 0, 'f', 8);
+    }
+    return "{ params = [ " + controls.join(' ') + " ] }";
+}
+
+QString micConfig(const QString &target, int channels, const MicTuning &adjustments,
+                  double gainDb, bool smart) {
+    QStringList nodes, links, inputs, outputs;
+    for (int channel = 0; channel < channels; ++channel) {
+        const QString prefix = channel ? "right" : "left";
+        nodes << QString("{ type = builtin name = %1_mic_highpass label = bq_highpass control = { \"Freq\" = 80 \"Q\" = 0.707 } }")
+                     .arg(prefix);
+        inputs << QString("\"%1_mic_highpass:In\"").arg(prefix);
+        for (int band = 0; band < 4; ++band) {
+            nodes << QString("{ type = builtin name = %1_mic_%2 label = %3 control = { \"Freq\" = %4 \"Q\" = 0.8 \"Gain\" = %5 } }")
+                         .arg(prefix).arg(band + 1).arg(kMicLabels[band]).arg(kMicFrequencies[band])
+                         .arg(kNaturalMic[band] + adjustments[band], 0, 'f', 2);
+            links << QString("{ output = \"%1_mic_%2:Out\" input = \"%1_mic_%3:In\" }")
+                         .arg(prefix).arg(band == 0 ? "highpass" : QString::number(band)).arg(band + 1);
+        }
+        nodes << QString("{ type = builtin name = %1_mic_gain label = linear control = { \"Mult\" = %2 \"Add\" = 0.0 } }")
+                     .arg(prefix).arg(std::pow(10.0, gainDb / 20.0), 0, 'f', 8);
+        links << QString("{ output = \"%1_mic_4:Out\" input = \"%1_mic_gain:In\" }").arg(prefix);
+        outputs << QString("\"%1_mic_gain:Out\"").arg(prefix);
+    }
+    const auto positions = channels == 1 ? "[ MONO ]" : "[ FL FR ]";
+    const auto smartProperties = smart
+        ? QString("filter.smart = true filter.smart.target = { node.name = %1 }").arg(quote(target))
+        : QString();
+    return QString(R"(
+context.spa-libs = {
+  audio.convert.* = audioconvert/libspa-audioconvert
+  support.* = support/libspa-support
+}
+context.modules = [
+  { name = libpipewire-module-protocol-native }
+  { name = libpipewire-module-client-node }
+  { name = libpipewire-module-adapter }
+  { name = libpipewire-module-filter-chain
+    args = {
+      node.description = "SoundCurrent Natural Microphone"
+      media.name = "SoundCurrent Natural Microphone"
+      audio.channels = %1
+      audio.position = %2
+      filter.graph = {
+        nodes = [ %3 ]
+        links = [ %4 ]
+        inputs = [ %5 ]
+        outputs = [ %6 ]
+      }
+      capture.props = {
+        node.name = "%7"
+        audio.channels = %1
+        audio.position = %2
+        target.object = %9
+        node.passive = true
+      }
+      playback.props = {
+        node.name = "%8"
+        media.class = Audio/Source
+        audio.channels = %1
+        audio.position = %2
+        state.restore-props = false
+        state.default-volume = 1.0
+        %10
+      }
+    }
+  }
+]
+)").arg(QString::number(channels), positions, nodes.join('\n'), links.join('\n'),
+           inputs.join(' '), outputs.join(' '), kMicInput, kMicSource, quote(target), smartProperties);
 }
 
 bool smartFiltersAvailable() {
@@ -551,6 +673,111 @@ private:
     int sinkId_ = -1;
     bool smart_ = false;
     bool legacyVolumeManaged_ = false;
+};
+
+class MicrophoneEngine {
+public:
+    bool active() const { return process_.state() != QProcess::NotRunning; }
+    QString target() const { return target_.name; }
+
+    void start(const InputDevice &device, const MicTuning &adjustments, double gainDb) {
+        stop();
+        if (device.name.isEmpty() || device.channels < 1 || device.channels > 2)
+            throw std::runtime_error("Unsupported microphone channel layout");
+        if (nodeId(kMicSource) >= 0) throw std::runtime_error("Another SoundCurrent microphone filter is running");
+        if (!directory_.isValid()) throw std::runtime_error("Could not create microphone configuration folder");
+        originalDefault_ = defaultSource();
+        const bool smart = smartFiltersAvailable();
+        QFile config(directory_.filePath("microphone.conf"));
+        if (!config.open(QIODevice::WriteOnly | QIODevice::Truncate))
+            throw std::runtime_error("Could not write microphone configuration");
+        config.write(micConfig(device.name, device.channels, adjustments, gainDb, smart).toUtf8());
+        config.close();
+        process_.setProgram("pipewire");
+        process_.setArguments({"-c", config.fileName()});
+        process_.setProcessChannelMode(QProcess::MergedChannels);
+        process_.setChildProcessModifier([] { prctl(PR_SET_PDEATHSIG, SIGTERM); });
+        process_.start();
+        if (!process_.waitForStarted(2000)) throw std::runtime_error("Could not start microphone filter");
+        QElapsedTimer clock;
+        clock.start();
+        while (clock.elapsed() < 3000) {
+            if (process_.state() == QProcess::NotRunning)
+                throw std::runtime_error(QString::fromUtf8(process_.readAll()).trimmed().toStdString());
+            try { if (nodeId(kMicSource) >= 0) break; } catch (const std::exception &) {}
+            QThread::msleep(100);
+        }
+        const int id = nodeId(kMicSource);
+        if (id < 0) { stop(); throw std::runtime_error("Microphone filter did not appear"); }
+        try {
+            command("pactl", {"set-source-volume", kMicSource, "100%"});
+            command("pactl", {"set-source-mute", kMicSource, "0"});
+            target_ = device;
+            smart_ = smart;
+            sourceId_ = id;
+            if (!smart) {
+                command("pactl", {"set-default-source", kMicSource});
+                if (originalDefault_ == device.name) moveCaptureStreams(device.index, kMicSource);
+            } else if (originalDefault_ != device.name) {
+                command("pactl", {"set-default-source", device.name});
+                for (const auto &available : inputDevices())
+                    if (available.name == originalDefault_)
+                        moveCaptureStreams(available.index, device.name);
+            }
+        } catch (const std::exception &) { stop(); throw; }
+    }
+
+    void update(const MicTuning &adjustments, double gainDb) {
+        if (!active()) return;
+        if (sourceId_ < 0) throw std::runtime_error("Microphone filter disappeared");
+        command("pw-cli", {"set-param", QString::number(sourceId_), "Props",
+                           micControls(adjustments, gainDb, target_.channels)});
+    }
+
+    void stop() {
+        if (!target_.name.isEmpty()) {
+            try {
+                if (!smart_ && defaultSource() == kMicSource) {
+                    auto restore = target_.name;
+                    for (const auto &device : inputDevices())
+                        if (device.name == originalDefault_) restore = device.name;
+                    command("pactl", {"set-default-source", restore});
+                    for (const auto &source : pactlList("sources")) {
+                        const auto object = source.toObject();
+                        if (object.value("name").toString() == kMicSource)
+                            moveCaptureStreams(object.value("index").toInt(-1), restore);
+                    }
+                } else if (smart_ && defaultSource() == target_.name && originalDefault_ != target_.name) {
+                    for (const auto &device : inputDevices())
+                        if (device.name == originalDefault_) {
+                            command("pactl", {"set-default-source", originalDefault_});
+                            moveCaptureStreams(target_.index, originalDefault_);
+                        }
+                }
+            } catch (const std::exception &) {}
+        }
+        if (active()) {
+            process_.terminate();
+            if (!process_.waitForFinished(2000)) {
+                process_.kill();
+                process_.waitForFinished(2000);
+            }
+        }
+        target_ = {};
+        smart_ = false;
+        sourceId_ = -1;
+        originalDefault_.clear();
+    }
+
+    ~MicrophoneEngine() { stop(); }
+
+private:
+    QTemporaryDir directory_{QDir::tempPath() + "/soundcurrent-mic-XXXXXX"};
+    QProcess process_;
+    InputDevice target_;
+    QString originalDefault_;
+    int sourceId_ = -1;
+    bool smart_ = false;
 };
 
 const QMap<QString, std::array<double, 9>> &builtinShapes() {
@@ -1134,6 +1361,53 @@ public:
         outputLayout->addWidget(status_);
         root->addWidget(outputBox);
 
+        auto *inputBox = new QGroupBox("Microphone");
+        auto *inputLayout = new QVBoxLayout(inputBox);
+        auto *inputRow = new QHBoxLayout;
+        inputCombo_ = new QComboBox;
+        inputCombo_->setAccessibleName("Microphone input device");
+        inputRow->addWidget(inputCombo_, 1);
+        micPower_ = new QCheckBox("Natural mic EQ");
+        micPower_->setAccessibleName("Natural microphone equalizer on or off");
+        micPower_->setToolTip("Automatically shape a connected microphone; click to bypass the microphone EQ");
+        micPower_->setChecked(QSettings().value("microphoneEnabled", true).toBool());
+        inputRow->addWidget(micPower_);
+        inputLayout->addLayout(inputRow);
+        auto *toneRow = new QHBoxLayout;
+        const QStringList micNames = {"Warmth", "Boxiness", "Clarity", "Air"};
+        for (int i = 0; i < 4; ++i) {
+            micLabels_[i] = new QLabel(micNames[i]);
+            toneRow->addWidget(micLabels_[i]);
+            micSliders_[i] = new QSlider(Qt::Horizontal);
+            micSliders_[i]->setRange(-24, 24);
+            micSliders_[i]->setValue(std::clamp(QSettings().value(QString("micBand%1").arg(i), 0).toInt(), -24, 24));
+            micSliders_[i]->setAccessibleName("Microphone " + micNames[i] + " adjustment");
+            micSliders_[i]->setToolTip("Adjust this tone band around the natural voice profile");
+            toneRow->addWidget(micSliders_[i], 1);
+            micLabels_[i]->setText(QString("%1 %2%3 dB").arg(micNames[i])
+                                      .arg(micSliders_[i]->value() > 0 ? "+" : "")
+                                      .arg(micSliders_[i]->value() / 2.0, 0, 'f', 1));
+        }
+        inputLayout->addLayout(toneRow);
+        auto *micGainRow = new QHBoxLayout;
+        micGainRow->addWidget(new QLabel("Mic gain"));
+        micGain_ = new QSlider(Qt::Horizontal);
+        micGain_->setRange(-24, 24);
+        micGain_->setValue(std::clamp(QSettings().value("micGain", 0).toInt(), -24, 24));
+        micGain_->setAccessibleName("Microphone gain adjustment");
+        micGainRow->addWidget(micGain_, 1);
+        micGainValue_ = new QLabel;
+        micGainValue_->setText(QString("%1%2 dB").arg(micGain_->value() > 0 ? "+" : "")
+                                   .arg(micGain_->value() / 2.0, 0, 'f', 1));
+        micGainRow->addWidget(micGainValue_);
+        auto *micReset = new QPushButton("Reset mic tone");
+        micGainRow->addWidget(micReset);
+        inputLayout->addLayout(micGainRow);
+        micStatus_ = new QLabel("Waiting for a microphone.");
+        micStatus_->setWordWrap(true);
+        inputLayout->addWidget(micStatus_);
+        root->addWidget(inputBox);
+
         auto *presetBox = new QGroupBox("Listening preset");
         auto *presetRow = new QHBoxLayout(presetBox);
         presetCombo_ = new PresetComboBox;
@@ -1214,10 +1488,45 @@ public:
         rebuildBandControls();
         syncBandControls();
         refreshDevices();
+        if (startEnabled) refreshInputs();
+        else {
+            inputCombo_->addItem("Automatic (follow connected microphones)", QString());
+            try {
+                for (const auto &device : inputDevices())
+                    inputCombo_->addItem(device.description + (device.channels == 1 ? " · mono" : " · stereo"), device.name);
+            } catch (const std::exception &) {}
+        }
 
         connect(refresh, &QPushButton::clicked, this, [this] { refreshDevices(); });
         connect(quit, &QPushButton::clicked, qApp, [] { qApp->quit(); });
         connect(power_, &QCheckBox::toggled, this, [this](bool on) { togglePower(on); });
+        connect(micPower_, &QCheckBox::toggled, this, [this](bool on) {
+            QSettings().setValue("microphoneEnabled", on);
+            if (on) refreshInputs();
+            else { microphone_.stop(); micStatus_->setText("Microphone EQ is off."); }
+        });
+        connect(inputCombo_, &QComboBox::currentIndexChanged, this, [this] { refreshInputs(); });
+        for (int i = 0; i < 4; ++i) {
+            connect(micSliders_[i], &QSlider::valueChanged, this, [this, i](int value) {
+                QSettings().setValue(QString("micBand%1").arg(i), value);
+                const QStringList names = {"Warmth", "Boxiness", "Clarity", "Air"};
+                micLabels_[i]->setText(QString("%1 %2%3 dB").arg(names[i])
+                                           .arg(value > 0 ? "+" : "").arg(value / 2.0, 0, 'f', 1));
+                try { microphone_.update(micAdjustments(), micGain_->value() / 2.0); }
+                catch (const std::exception &error) { micStatus_->setText(error.what()); }
+            });
+        }
+        connect(micGain_, &QSlider::valueChanged, this, [this](int value) {
+            QSettings().setValue("micGain", value);
+            micGainValue_->setText(QString("%1%2 dB").arg(value > 0 ? "+" : "")
+                                       .arg(value / 2.0, 0, 'f', 1));
+            try { microphone_.update(micAdjustments(), value / 2.0); }
+            catch (const std::exception &error) { micStatus_->setText(error.what()); }
+        });
+        connect(micReset, &QPushButton::clicked, this, [this] {
+            for (auto *slider : micSliders_) slider->setValue(0);
+            micGain_->setValue(0);
+        });
         connect(outputCombo_, &QComboBox::currentIndexChanged, this, [this] { outputChanged(); });
         connect(presetCombo_, &QComboBox::currentIndexChanged, this, [this] { presetChanged(); });
         connect(save, &QPushButton::clicked, this, [this] { savePreset(); });
@@ -1266,7 +1575,7 @@ public:
         meter_.setProfile(bands_, outputGainDb(), balance_->value());
         meter_.setInterval(levelRefresh_->value());
         monitor_.setInterval(1500);
-        connect(&monitor_, &QTimer::timeout, this, [this] { refreshDevices(); });
+        connect(&monitor_, &QTimer::timeout, this, [this] { refreshDevices(); refreshInputs(); });
         monitor_.start();
         volumeEvents_.setProgram("pactl");
         volumeEvents_.setArguments({"subscribe"});
@@ -1296,6 +1605,7 @@ public:
         }
         meter_.stop();
         audio_.stop();
+        microphone_.stop();
     }
 
     void reopen() {
@@ -1328,6 +1638,66 @@ protected:
 
 private:
     double outputGainDb() const { return outputGain_->value() / 2.0; }
+
+    MicTuning micAdjustments() const {
+        MicTuning tuning{};
+        for (int i = 0; i < 4; ++i) tuning[i] = micSliders_[i]->value() / 2.0;
+        return tuning;
+    }
+
+    void refreshInputs() {
+        try {
+            const auto latest = inputDevices();
+            const auto manual = inputCombo_->currentData().toString();
+            QList<InputDevice> added;
+            for (const auto &device : latest) if (!knownInputNames_.contains(device.name)) added.append(device);
+            const bool changed = latest.size() != inputs_.size() ||
+                !std::equal(latest.begin(), latest.end(), inputs_.begin(), [](const InputDevice &a, const InputDevice &b) {
+                    return a.name == b.name && a.description == b.description && a.channels == b.channels;
+                });
+            inputs_ = latest;
+            knownInputNames_.clear();
+            for (const auto &device : inputs_) knownInputNames_.append(device.name);
+            if (changed) {
+                inputCombo_->blockSignals(true);
+                inputCombo_->clear();
+                inputCombo_->addItem("Automatic (follow connected microphones)", QString());
+                for (const auto &device : inputs_)
+                    inputCombo_->addItem(device.description + (device.channels == 1 ? " · mono" : " · stereo"), device.name);
+                const int index = inputCombo_->findData(manual);
+                inputCombo_->setCurrentIndex(index < 0 ? 0 : index);
+                inputCombo_->blockSignals(false);
+            }
+            micPower_->setEnabled(!inputs_.isEmpty());
+            if (!micPower_->isChecked()) return;
+            if (inputs_.isEmpty()) {
+                microphone_.stop();
+                micStatus_->setText("Waiting for a microphone.");
+                return;
+            }
+            InputDevice desired;
+            if (!manual.isEmpty())
+                for (const auto &device : inputs_) if (device.name == manual) desired = device;
+            if (desired.name.isEmpty() && !added.isEmpty())
+                desired = *std::max_element(added.begin(), added.end(), [](const InputDevice &a, const InputDevice &b) {
+                    return a.priority < b.priority;
+                });
+            if (desired.name.isEmpty()) {
+                const auto current = defaultSource();
+                for (const auto &device : inputs_) if (device.name == current) desired = device;
+            }
+            if (desired.name.isEmpty() && !microphone_.target().isEmpty())
+                for (const auto &device : inputs_) if (device.name == microphone_.target()) desired = device;
+            if (desired.name.isEmpty())
+                desired = *std::max_element(inputs_.begin(), inputs_.end(), [](const InputDevice &a, const InputDevice &b) {
+                    return a.priority < b.priority;
+                });
+            if (!microphone_.active() || microphone_.target() != desired.name) {
+                microphone_.start(desired, micAdjustments(), micGain_->value() / 2.0);
+                micStatus_->setText("Natural mic EQ on · " + desired.description);
+            }
+        } catch (const std::exception &error) { micStatus_->setText("Microphone error: " + QString::fromUtf8(error.what())); }
+    }
 
     void showPlaybackStatus(const Device &device) {
         status_->setText("On · Playing through " + device.description);
@@ -1700,12 +2070,22 @@ private:
     void showError(const QString &message) { status_->setText("Audio error: " + message); }
 
     AudioEngine audio_;
+    MicrophoneEngine microphone_;
     SpectrumMonitor meter_;
     Bands bands_;
     QList<Device> devices_;
     QStringList knownNames_;
+    QList<InputDevice> inputs_;
+    QStringList knownInputNames_;
     QMap<QString, Bands> custom_;
     QComboBox *outputCombo_ = nullptr;
+    QComboBox *inputCombo_ = nullptr;
+    QCheckBox *micPower_ = nullptr;
+    std::array<QSlider *, 4> micSliders_{};
+    std::array<QLabel *, 4> micLabels_{};
+    QSlider *micGain_ = nullptr;
+    QLabel *micGainValue_ = nullptr;
+    QLabel *micStatus_ = nullptr;
     QComboBox *presetCombo_ = nullptr;
     QCheckBox *power_ = nullptr;
     QSlider *outputGain_ = nullptr;
@@ -1754,6 +2134,35 @@ int main(int argc, char **argv) {
     if (app.arguments().size() == 3 && app.arguments()[1] == "--dump-filter-config") {
         QTextStream(stdout) << filterConfig(app.arguments()[2], defaultBands(kDefaultBands));
         return 0;
+    }
+    if (app.arguments().size() == 4 && app.arguments()[1] == "--dump-mic-config") {
+        bool valid = false;
+        const int channels = app.arguments()[3].toInt(&valid);
+        if (!valid || channels < 1 || channels > 2) return 2;
+        QTextStream(stdout) << micConfig(app.arguments()[2], channels, {}, 0.0, false);
+        return 0;
+    }
+    if (app.arguments().contains("--mic-self-test")) {
+        try {
+            const auto available = inputDevices();
+            if (available.isEmpty()) throw std::runtime_error("No microphone is connected");
+            const auto before = defaultSource();
+            auto selected = available.front();
+            for (const auto &device : available) if (device.name == before) selected = device;
+            MicrophoneEngine test;
+            test.start(selected, {}, 0.0);
+            if (nodeId(kMicSource) < 0) throw std::runtime_error("Microphone filter is missing");
+            if (!command("pw-link", {"-l"}).contains(selected.name + ":capture_"))
+                throw std::runtime_error("Microphone filter did not connect to the selected device");
+            test.update({0.0, 0.0, 3.0, 0.0}, 2.0);
+            test.stop();
+            if (defaultSource() != before) throw std::runtime_error("Original microphone was not restored");
+            qInfo("Microphone routing self-test passed using %s", qPrintable(selected.description));
+            return 0;
+        } catch (const std::exception &error) {
+            qCritical("Microphone routing self-test failed: %s", error.what());
+            return 1;
+        }
     }
     if (app.arguments().size() >= 3 && app.arguments().size() <= 5 &&
         app.arguments()[1] == "--dump-preset-controls") {
@@ -1856,6 +2265,14 @@ int main(int argc, char **argv) {
         if (!config.contains("inputs = [ \"left_preamp:In\" \"right_preamp:In\" ]") ||
             !config.contains("outputs = [ \"left_output_gain:Out\" \"right_output_gain:Out\" ]"))
             qFatal("Filter graph channels are not mapped separately");
+        const auto micMono = micConfig("test_microphone", 1, {}, 0.0, true);
+        const auto micStereo = micConfig("test_microphone", 2, {}, 0.0, true);
+        if (!micMono.contains("audio.position = [ MONO ]") ||
+            !micMono.contains("label = bq_highpass") ||
+            !micMono.contains("filter.smart = true") ||
+            !micStereo.contains("audio.position = [ FL FR ]") ||
+            !micStereo.contains("right_mic_4:Out"))
+            qFatal("Microphone filter layouts are invalid");
         QVector<double> testLevels;
         double testPeak = 0.0;
         int levelUpdates = 0;
@@ -1958,6 +2375,14 @@ int main(int argc, char **argv) {
         for (auto *check : testWindow.findChildren<QCheckBox *>())
             if (check->accessibleName() == "Equalizer on or off") power = check;
         if (!power || power->objectName() != "powerToggle") qFatal("Power cartouche is missing");
+        QComboBox *microphoneInput = nullptr;
+        for (auto *combo : testWindow.findChildren<QComboBox *>())
+            if (combo->accessibleName() == "Microphone input device") microphoneInput = combo;
+        if (!microphoneInput) qFatal("Microphone device selection is missing");
+        int micControlsFound = 0;
+        for (auto *slider : testWindow.findChildren<QSlider *>())
+            if (slider->accessibleName().startsWith("Microphone ")) ++micControlsFound;
+        if (micControlsFound != 5) qFatal("Microphone tone and gain controls are missing");
         QSlider *outputGain = nullptr;
         QSlider *balance = nullptr;
         for (auto *slider : testWindow.findChildren<QSlider *>()) {

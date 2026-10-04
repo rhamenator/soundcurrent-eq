@@ -6,7 +6,8 @@ adjustable sound profile. It starts with 15 frequency bands, lets you choose
 any count from 5 to 31, and opens with **Flat** selected. Each band has its own
 gain, center frequency, and width (Q). The app also has 34 listening presets,
 saved custom profiles, a post-gain slider, stereo balance, and live level
-indicators.
+indicators. A connected mono or stereo microphone can use a separate natural
+voice EQ with editable tone and gain controls.
 
 ![SoundCurrent EQ desktop window](docs/screenshot.png)
 
@@ -129,6 +130,25 @@ or install missing dependencies.
 - Click the framed **Equalizer on/off** control to compare the processed sound
   with the normal output.
 
+### Microphone
+
+The **Microphone** section selects a connected input automatically, including
+USB webcams with microphones. Its **Natural mic EQ** switch starts on when an
+input is present. You can pin a specific input from the dropdown or turn the
+mic EQ off without changing the playback EQ. A gentle 80 Hz high pass filter
+reduces rumble; warmth, boxiness, clarity, and air have modest starting values.
+Each slider adds or removes up to 12 dB from that starting value, in 0.5 dB
+steps. **Mic gain** also ranges from -12 to +12 dB. Changes take effect while
+the mic is in use, and **Reset mic tone** returns to the starting profile.
+
+The starting profile is a voice-oriented suggestion, not an automatic acoustic
+measurement of your microphone or room. Listen to a recording or call test and
+adjust the controls for your mic. The app handles mono and stereo capture; a
+mono webcam cannot provide left/right position information for room-following
+balance. On current WirePlumber systems, the microphone filter is transparent
+to recording apps. Older systems use a virtual default microphone while the
+filter is active and restore the prior input when it stops.
+
 **Hardware note:** An equalizer changes the audio signal. It will not repair a
 physical output that pops when its amplifier powers up. Select a different
 output in the dropdown if one device has that behavior.
@@ -160,6 +180,7 @@ RHEL 10 compatible packages for each `v*` tag.
 ./build/soundcurrent-eq --self-test
 QT_QPA_PLATFORM=offscreen ./build/soundcurrent-eq --ui-self-test
 python3 tests/audio_response.py ./build/soundcurrent-eq
+./build/soundcurrent-eq --mic-self-test
 ```
 
 The first command briefly creates the EQ sink, changes its band count and
@@ -172,12 +193,15 @@ that a 12 dB band cut changes the measured output by about 12 dB and that
 Night Listening reduces low-frequency output, Loudness emphasizes bass over
 midrange, and +6 dB output gain raises the measured output by about 6 dB.
 It requires `paplay` and `parec`, and leaves the normal default output alone.
+The microphone check uses the selected input without saving audio and verifies
+that its filter connects and accepts live changes. It restores the prior input.
 
 ## Privacy and safety
 
 The app has no account, network service, or telemetry. It runs without root and
 keeps temporary audio configuration in a private directory. The level display
-reads the local EQ sink and does not save audio. The `.deb` installs the binary,
+reads the local EQ sink and does not save audio. The microphone filter processes
+capture audio locally and does not record it to disk. The `.deb` installs the binary,
 launcher, icon, and license files. See [SECURITY.md](SECURITY.md) for
 vulnerability reporting.
 
