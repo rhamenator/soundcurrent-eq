@@ -12,5 +12,5 @@ vulnerability** button under the repository's Security tab. Include the Ubuntu
 version, PipeWire version, and steps to reproduce. Do not post an exploit in a
 public issue before a fix is available.
 
-Supported release line: the latest `0.1.x` release. Security fixes will be
+Supported release line: the latest `0.2.x` release. Security fixes will be
 published as a new release with an updated `.deb` and SHA-256 checksum.

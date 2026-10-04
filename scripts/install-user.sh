@@ -42,6 +42,7 @@ Name=SoundCurrent EQ
 Comment=Nine-band system-wide equalizer for PipeWire
 Exec="$bin_dir/soundcurrent-eq"
 Icon=io.github.rhamenator.SoundCurrentEQ
+StartupWMClass=soundcurrent-eq
 Categories=Audio;AudioVideo;
 Terminal=false
 EOF

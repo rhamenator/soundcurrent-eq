@@ -1,8 +1,10 @@
 # SoundCurrent EQ
 
 A simple, native C++ desktop equalizer for Ubuntu's PipeWire audio stack. It
-provides nine frequency bands, listening presets, saved custom presets, and an
-output dropdown with an **Automatic** option that follows connected devices.
+starts with 15 frequency bands and lets you choose any count from 5 to 31.
+Each band has adjustable gain, center frequency, and width (Q). It also has a
+response curve, listening presets, saved custom presets, and an output dropdown
+with an **Automatic** option that follows connected devices.
 
 ![SoundCurrent EQ desktop window](docs/screenshot.png)
 
@@ -45,10 +47,17 @@ or install missing dependencies.
 - **Automatic** starts with the current default output. When a new output is
   connected, it switches to that device. If it disappears, it falls back to an
   available output. Choose a named device to keep the EQ on that device.
-- Move the nine sliders from −12 to +12 dB. Positive boosts automatically lower
-  the preamp to leave headroom. Changes apply without restarting the filter.
+- Set **Bands** anywhere from 5 to 31. The current EQ shape is interpolated
+  when the count changes, so your tuning is retained. The default is 15 bands.
+- Move a slider or drag a point on the curve to adjust gain. Select a band and
+  edit its center frequency, gain, or Q in the fields above the curve. Keyboard
+  navigation works on the sliders and fields. Changes apply live without
+  restarting the filter.
+- Boosts automatically lower the preamp using the calculated combined response
+  to leave headroom.
 - Pick a built-in preset or save your own. Custom presets live in your user
-  configuration directory.
+  configuration directory. Saved nine-band presets from earlier releases can
+  still be loaded.
 - Closing the window turns off processing and restores normal output. The app
   does not need to remain installed as an audio service.
 
@@ -74,15 +83,17 @@ Build an installable package:
 The package and checksum appear in `dist/`. The GitHub release workflow builds
 on Ubuntu 24.04 and attaches these files to each `v*` tag.
 
-## Verify audio routing
+## Verify the interface and audio routing
 
 ```bash
 ./build/soundcurrent-eq --self-test
+QT_QPA_PLATFORM=offscreen ./build/soundcurrent-eq --ui-self-test
 ```
 
-This briefly creates the EQ sink, changes its controls, and checks that the
-original default output is restored. It uses the currently selected physical
-output and does not play a test sound.
+The first command briefly creates the EQ sink, changes its band count and
+controls, and checks that the original default output is restored. It uses the
+currently selected physical output and does not play a test sound. The second
+checks the 31-band interface and selected-band controls without using audio.
 
 ## Privacy and safety
 
@@ -100,4 +111,6 @@ is a more advanced alternative if you need compression, convolution, or a large
 plugin collection.
 
 Licensed under MIT. SoundCurrent EQ is an independent project and is not
-affiliated with FxSound.
+affiliated with FxSound. Its adjustable EQ workflow was informed by
+[FxSound's public documentation](https://github.com/fxsound2/fxsound-app/blob/main/docs/COMMAND_LINE_OPTIONS.md);
+no FxSound code or artwork is included.
