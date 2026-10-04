@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=SoundCurrent EQ
+Comment=Nine-band system-wide equalizer for PipeWire
+Exec=soundcurrent-eq
+Icon=io.github.rhamenator.SoundCurrentEQ
+Categories=Audio;AudioVideo;
+Terminal=false
