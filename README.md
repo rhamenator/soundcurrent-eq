@@ -1,18 +1,34 @@
 # SoundCurrent EQ
 
-A simple, native C++ desktop equalizer for Ubuntu's PipeWire audio stack. It
-starts with 15 frequency bands and lets you choose any count from 5 to 31.
-Each band has adjustable gain, center frequency, and width (Q). It also has a
-response curve, 34 listening presets, saved custom presets, and an output dropdown
-with an **Automatic** option that follows connected devices.
-It opens with the **Flat** preset selected.
+SoundCurrent EQ is a native C++ desktop equalizer for Linux systems using
+PipeWire. It gives every app that plays through the default output the same
+adjustable sound profile. It starts with 15 frequency bands, lets you choose
+any count from 5 to 31, and opens with **Flat** selected. Each band has its own
+gain, center frequency, and width (Q). The app also has 34 listening presets,
+saved custom profiles, an output gain control, and live level indicators.
 
 ![SoundCurrent EQ desktop window](docs/screenshot.png)
 
-SoundCurrent EQ turns on when you open it and creates a PipeWire virtual sink. It routes that
-sink to the selected physical output. Closing the window leaves it running in
-the background; **Quit app** or the tray's Quit action unloads the equalizer and
-restores the normal output. PipeWire's built-in filters process the audio.
+## How listening works
+
+When the equalizer is on, SoundCurrent EQ creates a PipeWire virtual output and
+makes it the system default. Audio then passes through automatic headroom, the
+adjustable EQ bands, and your separate output gain setting before reaching the
+physical output you selected. The **Automatic** device setting follows newly
+connected outputs, while the dropdown lets you pin a specific device.
+
+The EQ curve shows what the frequency settings do. Colored indicators next to
+the sliders show a live estimate of the sound level near each frequency. The
+peak readout turns amber or red as the estimated output approaches clipping.
+Boosting bands can lower overall loudness because the app makes room for those
+boosts; **Output gain** lets you bring the level back up. It starts at 0 dB and
+remembers your adjustment. The indicators are estimates, so listen for audible
+distortion as well as watching the display.
+
+Click the framed **Equalizer on/off** control to compare with normal audio.
+Closing the window keeps the EQ running in the background. **Quit app** unloads
+it and restores the normal output. PipeWire's built-in filters perform the
+audio processing; the C++ app manages the controls, devices, and level display.
 
 ## Install
 
