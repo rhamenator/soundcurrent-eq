@@ -114,6 +114,16 @@ def main():
             print(f"Night Listening response at 100 Hz: {night_change:.1f} dB relative to Flat")
             if night_change > -8.0:
                 raise RuntimeError("Night Listening did not sufficiently reduce low frequencies")
+
+            flat_controls = run(str(binary), "--dump-preset-controls", "Flat",
+                                capture_output=True, text=True,
+                                env={**os.environ, "QT_QPA_PLATFORM": "offscreen"}).stdout
+            run("pw-cli", "set-param", str(eq_id), "Props", flat_controls, stdout=subprocess.DEVNULL)
+            bypass_100 = capture(directory / "tone-100.wav", directory / "bypass-100.raw", sink)
+            bypass_change = 20 * math.log10(bypass_100 / flat_100)
+            print(f"Bypass response at 100 Hz: {bypass_change:+.1f} dB relative to Flat")
+            if abs(bypass_change) > 1.0:
+                raise RuntimeError("Bypass did not restore the unprocessed signal")
         finally:
             if pipewire is not None:
                 pipewire.terminate()

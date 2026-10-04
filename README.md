@@ -11,7 +11,8 @@ It opens with the **Flat** preset selected.
 
 SoundCurrent EQ turns on when you open it and creates a PipeWire virtual sink. It routes that
 sink to the selected physical output. Closing the window leaves it running in
-the background; quitting from the tray icon restores the normal output. The
+the background; **Quit app** or the tray's Quit action unloads the equalizer and
+restores the normal output. The
 actual audio processing is performed by PipeWire's built-in filters.
 
 ## Install
@@ -80,10 +81,12 @@ or install missing dependencies.
   FPS Footsteps, Rock, Jazz, Electronic, Hip-Hop, Night Listening, and more.
   Separators divide the list; every named entry is a working preset.
 - Closing the window keeps the equalizer running. Use its indicator icon to
-  reopen it, turn processing on or off, or quit. Launching the app again also
-  reopens the existing window. If the desktop has no tray, closing the window
-  exits and restores the normal output.
+  reopen it or turn processing on or off. **Quit app** unloads it and restores
+  normal output. Launching the app again reopens the existing window. If the
+  desktop has no tray, closing the window exits and restores normal output.
 - Use **Equalizer on** to compare the processed sound with the normal output.
+- Use **Bypass EQ** to compare the selected preset with Flat sound while keeping
+  the same audio route. Press **Resume EQ** to restore the selected preset.
 
 **Hardware note:** An equalizer changes the audio signal. It will not repair a
 physical output that pops when its amplifier powers up. Select a different

@@ -608,6 +608,10 @@ public:
         outputRow->addWidget(refresh);
         power_ = new QCheckBox("Equalizer on");
         outputRow->addWidget(power_);
+        auto *quit = new QPushButton("Quit app");
+        quit->setAccessibleName("Quit SoundCurrent EQ");
+        quit->setToolTip("Exit SoundCurrent EQ and restore normal audio");
+        outputRow->addWidget(quit);
         outputLayout->addLayout(outputRow);
         status_ = new QLabel("Equalizer is off. Your audio uses its normal output.");
         status_->setWordWrap(true);
@@ -627,6 +631,12 @@ public:
         presetRow->addWidget(save);
         auto *reset = new QPushButton("Reset to flat");
         presetRow->addWidget(reset);
+        bypass_ = new QPushButton("Bypass EQ");
+        bypass_->setAccessibleName("Bypass equalizer");
+        bypass_->setToolTip("Compare the selected preset with unprocessed sound");
+        bypass_->setCheckable(true);
+        bypass_->setEnabled(false);
+        presetRow->addWidget(bypass_);
         root->addWidget(presetBox);
 
         auto *eqBox = new QGroupBox("Equalizer");
@@ -697,11 +707,13 @@ public:
         refreshDevices();
 
         connect(refresh, &QPushButton::clicked, this, [this] { refreshDevices(); });
+        connect(quit, &QPushButton::clicked, qApp, [] { qApp->quit(); });
         connect(power_, &QCheckBox::toggled, this, [this](bool on) { togglePower(on); });
         connect(outputCombo_, &QComboBox::currentIndexChanged, this, [this] { outputChanged(); });
         connect(presetCombo_, &QComboBox::currentIndexChanged, this, [this] { presetChanged(); });
         connect(save, &QPushButton::clicked, this, [this] { savePreset(); });
         connect(reset, &QPushButton::clicked, this, [this] { presetCombo_->setCurrentText("Flat"); });
+        connect(bypass_, &QPushButton::toggled, this, [this](bool on) { toggleBypass(on); });
         connect(countBox_, &QSpinBox::valueChanged, this, [this](int count) { changeBandCount(count); });
         connect(frequencyBox_, &QDoubleSpinBox::valueChanged, this, [this] { detailChanged(); });
         connect(gainBox_, &QDoubleSpinBox::valueChanged, this, [this] { detailChanged(); });
@@ -719,7 +731,7 @@ public:
         applyTimer_.setSingleShot(true);
         applyTimer_.setInterval(80);
         connect(&applyTimer_, &QTimer::timeout, this, [this] {
-            try { audio_.update(bands_); } catch (const std::exception &error) { showError(error.what()); }
+            try { audio_.update(effectiveBands()); } catch (const std::exception &error) { showError(error.what()); }
         });
         monitor_.setInterval(1500);
         connect(&monitor_, &QTimer::timeout, this, [this] { refreshDevices(); });
@@ -751,6 +763,30 @@ protected:
     }
 
 private:
+    Bands effectiveBands() const {
+        return bypass_ && bypass_->isChecked() ? defaultBands(int(bands_.size())) : bands_;
+    }
+
+    void showPlaybackStatus(const Device &device) {
+        status_->setText(QString(bypass_->isChecked() ? "Bypassed" : "On") +
+                         " · Playing through " + device.description);
+    }
+
+    void toggleBypass(bool on) {
+        bypass_->setText(on ? "Resume EQ" : "Bypass EQ");
+        if (!power_->isChecked()) return;
+        applyTimer_.stop();
+        try {
+            audio_.update(effectiveBands());
+            showPlaybackStatus(findDevice(audio_.target()));
+        } catch (const std::exception &error) {
+            const QSignalBlocker blocker(bypass_);
+            bypass_->setChecked(!on);
+            bypass_->setText(on ? "Bypass EQ" : "Resume EQ");
+            showError(error.what());
+        }
+    }
+
     void setupTray() {
         if (!QSystemTrayIcon::isSystemTrayAvailable()) return;
         tray_ = new QSystemTrayIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ"), this);
@@ -1023,8 +1059,8 @@ private:
                     power_->setChecked(false);
                     status_->setText("No output device is connected.");
                 } else {
-                    audio_.start(desired, bands_);
-                    status_->setText("On · Playing through " + desired.description);
+                    audio_.start(desired, effectiveBands());
+                    showPlaybackStatus(desired);
                 }
             }
         } catch (const std::exception &error) { showError(error.what()); }
@@ -1035,8 +1071,8 @@ private:
         const auto desired = selectedDevice();
         if (desired.name.isEmpty() || desired.name == audio_.target()) return;
         try {
-            audio_.start(desired, bands_);
-            status_->setText("On · Playing through " + desired.description);
+            audio_.start(desired, effectiveBands());
+            showPlaybackStatus(desired);
         } catch (const std::exception &error) { showError(error.what()); }
     }
 
@@ -1045,14 +1081,21 @@ private:
             const auto device = selectedDevice();
             if (device.name.isEmpty()) { power_->setChecked(false); showError("No output device is available."); return; }
             try {
-                audio_.start(device, bands_);
-                status_->setText("On · Playing through " + device.description);
+                audio_.start(device, effectiveBands());
+                bypass_->setEnabled(true);
+                showPlaybackStatus(device);
             } catch (const std::exception &error) {
                 power_->setChecked(false);
                 showError(error.what());
             }
         } else {
             audio_.stop();
+            bypass_->setEnabled(false);
+            if (bypass_->isChecked()) {
+                const QSignalBlocker blocker(bypass_);
+                bypass_->setChecked(false);
+                bypass_->setText("Bypass EQ");
+            }
             status_->setText("Equalizer is off. Your audio uses its normal output.");
         }
     }
@@ -1067,6 +1110,7 @@ private:
     QComboBox *outputCombo_ = nullptr;
     QComboBox *presetCombo_ = nullptr;
     QCheckBox *power_ = nullptr;
+    QPushButton *bypass_ = nullptr;
     QLabel *status_ = nullptr;
     QLabel *headroom_ = nullptr;
     QSpinBox *countBox_ = nullptr;
@@ -1152,6 +1196,7 @@ int main(int argc, char **argv) {
         QPushButton, QComboBox { background: #2d405a; border: 1px solid #4a5d77;
                                 border-radius: 7px; padding: 7px 10px; }
         QPushButton:hover, QComboBox:hover { background: #385572; }
+        QPushButton:checked { background: #1f746e; border-color: #55d7c3; }
         QComboBox QAbstractItemView { background: #26374d; selection-background-color: #2c9d91; }
         QSlider::groove:vertical { background: #344762; width: 7px; border-radius: 3px; }
         QSlider::handle:vertical { background: #eafbf7; height: 16px; margin: 0 -6px; border-radius: 8px; }
@@ -1185,6 +1230,13 @@ int main(int argc, char **argv) {
         for (auto *combo : testWindow.findChildren<QComboBox *>())
             if (combo->accessibleName() == "Listening preset") presets = combo;
         if (!presets) qFatal("Preset menu is missing");
+        QPushButton *bypass = nullptr;
+        QPushButton *quit = nullptr;
+        for (auto *button : testWindow.findChildren<QPushButton *>())
+            if (button->accessibleName() == "Bypass equalizer") bypass = button;
+            else if (button->accessibleName() == "Quit SoundCurrent EQ") quit = button;
+        if (!bypass || !bypass->isCheckable()) qFatal("Bypass button is missing");
+        if (!quit) qFatal("Quit button is missing");
         if (presets->currentText() != "Flat") qFatal("Flat is not the default preset");
         if (presets->findText("Entertainment") >= 0) qFatal("Category title appears as a preset");
         for (auto it = builtinShapes().begin(); it != builtinShapes().end(); ++it) {
@@ -1204,6 +1256,11 @@ int main(int argc, char **argv) {
         testWindow.hide();
         presets->setCurrentText("Deep Bass");
         if (gain->value() < 6.0) qFatal("Deep Bass preset did not change the bands");
+        bypass->setChecked(true);
+        if (bypass->text() != "Resume EQ" || presets->currentText() != "Deep Bass")
+            qFatal("Bypass did not preserve the selected preset");
+        bypass->setChecked(false);
+        if (bypass->text() != "Bypass EQ") qFatal("Bypass did not resume the selected preset");
         presets->setCurrentText("Flat");
         if (gain->value() != 0.0) qFatal("Flat preset did not reset the bands");
         count->setValue(31);
@@ -1215,6 +1272,12 @@ int main(int argc, char **argv) {
             qFatal("Selected-band editing failed");
         count->setValue(15);
         if (testWindow.findChildren<QSlider *>().size() != 15) qFatal("Band-count change failed");
+        bool quitRequested = false;
+        QObject::connect(&app, &QCoreApplication::aboutToQuit, &testWindow,
+                         [&quitRequested] { quitRequested = true; });
+        testWindow.show();
+        QTimer::singleShot(0, quit, &QPushButton::click);
+        if (app.exec() != 0 || !quitRequested) qFatal("Quit button did not exit the application");
         qInfo("UI self-test passed with %lld presets and editable 5–31 band layout",
               static_cast<long long>(builtinShapes().size()));
         return 0;

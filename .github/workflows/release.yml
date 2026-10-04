@@ -29,7 +29,7 @@ jobs:
             set -euo pipefail
             dnf install -y cmake gcc-c++ qt6-qtbase-devel rpm-build tar gzip
             ./scripts/build-rpm.sh
-            dnf install -y dist/x86_64/*fc44*.rpm
+            dnf install -y --allowerasing dist/x86_64/*fc44*.rpm
             QT_QPA_PLATFORM=offscreen /usr/bin/soundcurrent-eq --ui-self-test
           '
       - name: Build and check RHEL 10 compatible RPM
@@ -38,7 +38,7 @@ jobs:
             set -euo pipefail
             dnf install -y cmake gcc-c++ qt6-qtbase-devel rpm-build tar gzip
             ./scripts/build-rpm.sh
-            dnf install -y dist/x86_64/*el10*.rpm
+            dnf install -y --allowerasing dist/x86_64/*el10*.rpm
             QT_QPA_PLATFORM=offscreen /usr/bin/soundcurrent-eq --ui-self-test
           '
       - name: Verify package checksums
