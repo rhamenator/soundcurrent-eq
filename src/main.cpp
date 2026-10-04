@@ -212,26 +212,43 @@ double headroom(const Bands &bands) {
     return peak > 0.01 ? -(peak + 1.0) : 0.0;
 }
 
+std::array<double, 2> balanceFactors(int balancePercent) {
+    const double balance = std::clamp(balancePercent, -100, 100) / 100.0;
+    return {std::min(1.0, 1.0 - balance), std::min(1.0, 1.0 + balance)};
+}
+
 QString quote(const QString &value) {
     const auto encoded = QJsonDocument(QJsonArray{value}).toJson(QJsonDocument::Compact);
     return QString::fromUtf8(encoded.mid(1, encoded.size() - 2));
 }
 
-QString filterConfig(const QString &target, const Bands &bands, double outputGainDb = 0.0) {
+QString filterConfig(const QString &target, const Bands &bands, double outputGainDb = 0.0,
+                     int balancePercent = 0) {
     QStringList nodes;
     QStringList links;
-    nodes << QString("{ type = builtin name = preamp label = linear control = { \"Mult\" = %1 \"Add\" = 0.0 } }")
-                 .arg(QString::number(std::pow(10.0, headroom(bands) / 20.0), 'f', 8));
-    links << "{ output = \"preamp:Out\" input = \"band_1:In\" }";
-    for (int i = 0; i < kMaxBands; ++i) {
-        const auto band = i < bands.size() ? bands[i] : Band{};
-        nodes << QString("{ type = builtin name = band_%1 label = bq_peaking control = { \"Freq\" = %2 \"Q\" = %3 \"Gain\" = %4 } }")
-                     .arg(i + 1).arg(band.frequency, 0, 'f', 1).arg(band.q, 0, 'f', 2).arg(band.gain, 0, 'f', 2);
-        if (i > 0) links << QString("{ output = \"band_%1:Out\" input = \"band_%2:In\" }").arg(i).arg(i + 1);
+    const auto factors = balanceFactors(balancePercent);
+    const auto preamp = QString::number(std::pow(10.0, headroom(bands) / 20.0), 'f', 8);
+    const double postGain = std::pow(10.0, outputGainDb / 20.0);
+    constexpr std::array<const char *, 2> channels = {"left", "right"};
+    for (size_t channelIndex = 0; channelIndex < channels.size(); ++channelIndex) {
+        const QString channel = channels[channelIndex];
+        nodes << QString("{ type = builtin name = %1_preamp label = linear control = { \"Mult\" = %2 \"Add\" = 0.0 } }")
+                     .arg(channel, preamp);
+        links << QString("{ output = \"%1_preamp:Out\" input = \"%1_band_1:In\" }").arg(channel);
+        for (int i = 0; i < kMaxBands; ++i) {
+            const auto band = i < bands.size() ? bands[i] : Band{};
+            nodes << QString("{ type = builtin name = %1_band_%2 label = bq_peaking control = { \"Freq\" = %3 \"Q\" = %4 \"Gain\" = %5 } }")
+                         .arg(channel).arg(i + 1).arg(band.frequency, 0, 'f', 1)
+                         .arg(band.q, 0, 'f', 2).arg(band.gain, 0, 'f', 2);
+            if (i > 0)
+                links << QString("{ output = \"%1_band_%2:Out\" input = \"%1_band_%3:In\" }")
+                             .arg(channel).arg(i).arg(i + 1);
+        }
+        nodes << QString("{ type = builtin name = %1_output_gain label = linear control = { \"Mult\" = %2 \"Add\" = 0.0 } }")
+                     .arg(channel, QString::number(postGain * factors[channelIndex], 'f', 8));
+        links << QString("{ output = \"%1_band_%2:Out\" input = \"%1_output_gain:In\" }")
+                     .arg(channel).arg(kMaxBands);
     }
-    nodes << QString("{ type = builtin name = output_gain label = linear control = { \"Mult\" = %1 \"Add\" = 0.0 } }")
-                 .arg(QString::number(std::pow(10.0, outputGainDb / 20.0), 'f', 8));
-    links << QString("{ output = \"band_%1:Out\" input = \"output_gain:In\" }").arg(kMaxBands);
     return QString(R"(
 context.spa-libs = {
   audio.convert.* = audioconvert/libspa-audioconvert
@@ -250,6 +267,8 @@ context.modules = [
       filter.graph = {
         nodes = [ %1 ]
         links = [ %2 ]
+        inputs = [ "left_preamp:In" "right_preamp:In" ]
+        outputs = [ "left_output_gain:Out" "right_output_gain:Out" ]
       }
       capture.props = { node.name = "%3" media.class = Audio/Sink }
       playback.props = {
@@ -273,15 +292,25 @@ int nodeId(const QString &name) {
     return -1;
 }
 
-QString filterControls(const Bands &bands, double outputGainDb = 0.0) {
-    QStringList controls = {quote("preamp:Mult"), QString::number(std::pow(10.0, headroom(bands) / 20.0), 'f', 8)};
-    for (int i = 0; i < kMaxBands; ++i) {
-        const auto band = i < bands.size() ? bands[i] : Band{};
-        controls << quote(QString("band_%1:Freq").arg(i + 1)) << QString::number(band.frequency, 'f', 1)
-                 << quote(QString("band_%1:Q").arg(i + 1)) << QString::number(band.q, 'f', 2)
-                 << quote(QString("band_%1:Gain").arg(i + 1)) << QString::number(band.gain, 'f', 2);
+QString filterControls(const Bands &bands, double outputGainDb = 0.0, int balancePercent = 0) {
+    QStringList controls;
+    const auto factors = balanceFactors(balancePercent);
+    const auto preamp = QString::number(std::pow(10.0, headroom(bands) / 20.0), 'f', 8);
+    const double postGain = std::pow(10.0, outputGainDb / 20.0);
+    constexpr std::array<const char *, 2> channels = {"left", "right"};
+    for (size_t channelIndex = 0; channelIndex < channels.size(); ++channelIndex) {
+        const QString channel = channels[channelIndex];
+        controls << quote(channel + "_preamp:Mult") << preamp;
+        for (int i = 0; i < kMaxBands; ++i) {
+            const auto band = i < bands.size() ? bands[i] : Band{};
+            const auto name = channel + QString("_band_%1:").arg(i + 1);
+            controls << quote(name + "Freq") << QString::number(band.frequency, 'f', 1)
+                     << quote(name + "Q") << QString::number(band.q, 'f', 2)
+                     << quote(name + "Gain") << QString::number(band.gain, 'f', 2);
+        }
+        controls << quote(channel + "_output_gain:Mult")
+                 << QString::number(postGain * factors[channelIndex], 'f', 8);
     }
-    controls << quote("output_gain:Mult") << QString::number(std::pow(10.0, outputGainDb / 20.0), 'f', 8);
     return "{ params = [ " + controls.join(' ') + " ] }";
 }
 
@@ -290,7 +319,8 @@ public:
     bool active() const { return process_.state() != QProcess::NotRunning; }
     QString target() const { return target_.name; }
 
-    void start(const Device &device, const Bands &bands, double outputGainDb = 0.0) {
+    void start(const Device &device, const Bands &bands, double outputGainDb = 0.0,
+               int balancePercent = 0) {
         stop();
         bool found = false;
         for (const auto &available : devices()) if (available.name == device.name) found = true;
@@ -301,7 +331,7 @@ public:
         QFile config(path);
         if (!config.open(QIODevice::WriteOnly | QIODevice::Truncate))
             throw std::runtime_error("Could not write temporary audio configuration");
-        config.write(filterConfig(device.name, bands, outputGainDb).toUtf8());
+        config.write(filterConfig(device.name, bands, outputGainDb, balancePercent).toUtf8());
         config.close();
         process_.setProgram("pipewire");
         process_.setArguments({"-c", path});
@@ -332,11 +362,11 @@ public:
         }
     }
 
-    void update(const Bands &bands, double outputGainDb = 0.0) {
+    void update(const Bands &bands, double outputGainDb = 0.0, int balancePercent = 0) {
         if (!active()) return;
         const auto id = nodeId(kSink);
         if (id < 0) throw std::runtime_error("Equalizer sink disappeared");
-        command("pw-cli", {"set-param", QString::number(id), "Props", filterControls(bands, outputGainDb)});
+        command("pw-cli", {"set-param", QString::number(id), "Props", filterControls(bands, outputGainDb, balancePercent)});
     }
 
     void stop() {
@@ -626,6 +656,58 @@ private:
     bool peakMarkersEnabled_ = false;
 };
 
+class OverallLevelMeter : public QWidget {
+public:
+    explicit OverallLevelMeter(QWidget *parent = nullptr) : QWidget(parent) {
+        setMinimumSize(180, 16);
+        setMaximumHeight(16);
+    }
+
+    void setLevel(double db) {
+        const double elapsed = peakClock_.isValid() ? peakClock_.restart() / 1000.0 : 0.0;
+        if (!peakClock_.isValid()) peakClock_.start();
+        levelDb_ = std::clamp(db, -60.0, 12.0);
+        peakDb_ = std::max(levelDb_, peakDb_ - 24.0 * elapsed);
+        update();
+    }
+
+    void setPeakMarkersEnabled(bool enabled) { peakMarkersEnabled_ = enabled; update(); }
+
+    void reset() {
+        levelDb_ = peakDb_ = -60.0;
+        peakClock_.invalidate();
+        update();
+    }
+
+protected:
+    void paintEvent(QPaintEvent *) override {
+        QPainter painter(this);
+        painter.fillRect(rect(), QColor("#30425c"));
+        const auto xFor = [this](double db) {
+            return std::clamp(int(std::lround((db + 60.0) * width() / 60.0)), 0, width());
+        };
+        const int filled = xFor(levelDb_);
+        const int normalEnd = std::min(filled, xFor(-12.0));
+        const int warningEnd = std::min(filled, xFor(-3.0));
+        if (normalEnd > 0) painter.fillRect(0, 0, normalEnd, height(), QColor("#50d1ba"));
+        if (warningEnd > normalEnd)
+            painter.fillRect(normalEnd, 0, warningEnd - normalEnd, height(), QColor("#e6b450"));
+        if (filled > warningEnd)
+            painter.fillRect(warningEnd, 0, filled - warningEnd, height(), QColor("#f16b76"));
+        if (peakMarkersEnabled_ && peakDb_ > -60.0) {
+            const int x = std::clamp(xFor(peakDb_), 1, width() - 1);
+            painter.setPen(QPen(QColor("#f4f8ff"), 2));
+            painter.drawLine(x, 0, x, height() - 1);
+        }
+    }
+
+private:
+    QElapsedTimer peakClock_;
+    double levelDb_ = -60.0;
+    double peakDb_ = -60.0;
+    bool peakMarkersEnabled_ = false;
+};
+
 class SpectrumMonitor : public QObject {
 public:
     std::function<void(const QVector<double> &, double)> onLevels;
@@ -643,10 +725,11 @@ public:
     void setInterval(int milliseconds) { timer_.setInterval(std::clamp(milliseconds, 1, 100)); }
     int interval() const { return timer_.interval(); }
 
-    void setProfile(const Bands &bands, double outputGainDb) {
+    void setProfile(const Bands &bands, double outputGainDb, int balancePercent = 0) {
         bands_ = bands;
         outputGainDb_ = outputGainDb;
         headroomDb_ = headroom(bands_);
+        balanceFactors_ = balanceFactors(balancePercent);
         bandEdges_.clear();
         bandGains_.clear();
         for (qsizetype i = 0; i < bands_.size(); ++i) {
@@ -701,14 +784,14 @@ private:
         if (pcm_.size() < n * frameBytes || bytesSinceAnalysis_ < frameBytes) return;
         const auto *data = reinterpret_cast<const unsigned char *>(pcm_.constData());
         const int frameCount = pcm_.size() / frameBytes;
-        double peak = 0.0;
+        std::array<double, 2> peak = {0.0, 0.0};
         const int firstNewFrame = std::max(0, frameCount - int(bytesSinceAnalysis_ / frameBytes));
         for (int i = firstNewFrame; i < frameCount; ++i) {
             for (int channel = 0; channel < 2; ++channel) {
                 const auto offset = frameBytes * i + 2 * channel;
                 const auto raw = uint16_t(data[offset]) | (uint16_t(data[offset + 1]) << 8);
                 const auto sample = int16_t(raw) / 32768.0;
-                peak = std::max(peak, std::abs(sample));
+                peak[channel] = std::max(peak[channel], std::abs(sample));
             }
         }
         const int first = (frameCount - n) * frameBytes;
@@ -758,7 +841,8 @@ private:
             }
             for (qsizetype i = 0; i < bands_.size(); ++i) levels[i] *= bandGains_[i];
         }
-        const auto estimatedPeak = peak * peakGain_;
+        const auto estimatedPeak = std::max(peak[0] * balanceFactors_[0],
+                                            peak[1] * balanceFactors_[1]) * peakGain_;
         if (onLevels) onLevels(levels, estimatedPeak);
     }
 
@@ -772,6 +856,7 @@ private:
     double headroomDb_ = 0.0;
     double outputGainDb_ = 0.0;
     double peakGain_ = 1.0;
+    std::array<double, 2> balanceFactors_ = {1.0, 1.0};
 };
 
 class PresetComboBox : public QComboBox {
@@ -830,24 +915,61 @@ public:
         outputRow->addWidget(quit);
         outputLayout->addLayout(outputRow);
         auto *gainRow = new QHBoxLayout;
-        gainRow->addWidget(new QLabel("Output gain"));
-        outputGain_ = new QDoubleSpinBox;
-        outputGain_->setRange(-12.0, 12.0);
-        outputGain_->setDecimals(1);
-        outputGain_->setSingleStep(0.5);
-        outputGain_->setSuffix(" dB");
-        outputGain_->setAccessibleName("Output gain after equalization");
+        gainRow->addWidget(new QLabel("Post gain"));
+        outputGain_ = new QSlider(Qt::Horizontal);
+        outputGain_->setRange(-24, 24);
+        outputGain_->setSingleStep(1);
+        outputGain_->setPageStep(2);
+        outputGain_->setTickPosition(QSlider::TicksBelow);
+        outputGain_->setTickInterval(12);
+        outputGain_->setAccessibleName("Post gain after equalization");
         outputGain_->setToolTip("Raise the level after the EQ. Higher gain can cause clipping.");
         const double savedGain = QSettings().value("outputGainDb", 0.0).toDouble();
-        outputGain_->setValue(std::isfinite(savedGain) ? std::clamp(savedGain, -12.0, 12.0) : 0.0);
-        gainRow->addWidget(outputGain_);
+        outputGain_->setValue(std::isfinite(savedGain)
+                                  ? std::lround(std::clamp(savedGain, -12.0, 12.0) * 2.0) : 0);
+        gainRow->addWidget(outputGain_, 1);
+        outputGainValue_ = new QLabel;
+        outputGainValue_->setMinimumWidth(58);
+        outputGainValue_->setAccessibleName("Post gain value in decibels");
+        outputGainValue_->setText(QString("%1%2 dB").arg(outputGainDb() > 0 ? "+" : "")
+                                      .arg(outputGainDb(), 0, 'f', 1));
+        gainRow->addWidget(outputGainValue_);
         gainRow->addSpacing(18);
+        gainRow->addWidget(new QLabel("Balance"));
+        gainRow->addWidget(new QLabel("L"));
+        balance_ = new QSlider(Qt::Horizontal);
+        balance_->setRange(-100, 100);
+        balance_->setSingleStep(1);
+        balance_->setPageStep(10);
+        balance_->setTickPosition(QSlider::TicksBelow);
+        balance_->setTickInterval(50);
+        balance_->setAccessibleName("Left right balance");
+        balance_->setToolTip("Move toward L or R to reduce the opposite channel; center keeps both at full level");
+        balance_->setValue(std::clamp(QSettings().value("balancePercent", 0).toInt(), -100, 100));
+        gainRow->addWidget(balance_, 1);
+        gainRow->addWidget(new QLabel("R"));
+        balanceValue_ = new QLabel;
+        balanceValue_->setMinimumWidth(62);
+        balanceValue_->setAccessibleName("Balance position");
+        balanceValue_->setText(balance_->value() == 0 ? "Center"
+                               : QString("%1 %2%").arg(balance_->value() < 0 ? "L" : "R")
+                                     .arg(std::abs(balance_->value())));
+        gainRow->addWidget(balanceValue_);
+        outputLayout->addLayout(gainRow);
+        auto *meterRow = new QHBoxLayout;
+        meterRow->addWidget(new QLabel("Overall output"));
+        overallLevel_ = new OverallLevelMeter;
+        overallLevel_->setAccessibleName("Estimated overall output level");
+        overallLevel_->setToolTip("Estimated post-EQ output peak, including post gain and balance");
+        meterRow->addWidget(overallLevel_, 1);
+        meterRow->addSpacing(8);
         peakStatus_ = new QLabel("Estimated peak: waiting for audio");
         peakStatus_->setAccessibleName("Estimated output peak and clipping risk");
         peakStatus_->setObjectName("peakStatus");
-        gainRow->addWidget(peakStatus_);
-        gainRow->addStretch();
-        gainRow->addWidget(new QLabel("Level refresh"));
+        meterRow->addWidget(peakStatus_);
+        meterRow->addSpacing(8);
+        meterRow->addStretch();
+        meterRow->addWidget(new QLabel("Level refresh"));
         levelRefresh_ = new QSpinBox;
         levelRefresh_->setRange(1, 100);
         levelRefresh_->setSingleStep(1);
@@ -855,13 +977,14 @@ public:
         levelRefresh_->setAccessibleName("Level indicator refresh interval");
         levelRefresh_->setToolTip("Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate");
         levelRefresh_->setValue(std::clamp(QSettings().value("levelRefreshMs", 16).toInt(), 1, 100));
-        gainRow->addWidget(levelRefresh_);
+        meterRow->addWidget(levelRefresh_);
         peakMarkers_ = new QCheckBox("Peak markers");
         peakMarkers_->setAccessibleName("Show peak markers on frequency levels");
         peakMarkers_->setToolTip("Show a falling peak hold line on each frequency level");
         peakMarkers_->setChecked(QSettings().value("showPeakMarkers", false).toBool());
-        gainRow->addWidget(peakMarkers_);
-        outputLayout->addLayout(gainRow);
+        meterRow->addWidget(peakMarkers_);
+        overallLevel_->setPeakMarkersEnabled(peakMarkers_->isChecked());
+        outputLayout->addLayout(meterRow);
         status_ = new QLabel("Equalizer is off. Your audio uses its normal output.");
         status_->setWordWrap(true);
         status_->setObjectName("status");
@@ -956,9 +1079,19 @@ public:
         connect(presetCombo_, &QComboBox::currentIndexChanged, this, [this] { presetChanged(); });
         connect(save, &QPushButton::clicked, this, [this] { savePreset(); });
         connect(reset, &QPushButton::clicked, this, [this] { presetCombo_->setCurrentText("Flat"); });
-        connect(outputGain_, &QDoubleSpinBox::valueChanged, this, [this](double value) {
+        connect(outputGain_, &QSlider::valueChanged, this, [this](int) {
+            const double value = outputGainDb();
             QSettings().setValue("outputGainDb", value);
-            meter_.setProfile(bands_, value);
+            outputGainValue_->setText(QString("%1%2 dB").arg(value > 0 ? "+" : "")
+                                          .arg(value, 0, 'f', 1));
+            meter_.setProfile(bands_, value, balance_->value());
+            scheduleApply();
+        });
+        connect(balance_, &QSlider::valueChanged, this, [this](int value) {
+            QSettings().setValue("balancePercent", value);
+            balanceValue_->setText(value == 0 ? "Center"
+                                   : QString("%1 %2%").arg(value < 0 ? "L" : "R").arg(std::abs(value)));
+            meter_.setProfile(bands_, outputGainDb(), value);
             scheduleApply();
         });
         connect(levelRefresh_, &QSpinBox::valueChanged, this, [this](int milliseconds) {
@@ -968,6 +1101,7 @@ public:
         connect(peakMarkers_, &QCheckBox::toggled, this, [this](bool enabled) {
             QSettings().setValue("showPeakMarkers", enabled);
             for (auto *level : levelBars_) level->setPeakMarkersEnabled(enabled);
+            overallLevel_->setPeakMarkersEnabled(enabled);
         });
         connect(countBox_, &QSpinBox::valueChanged, this, [this](int count) { changeBandCount(count); });
         connect(frequencyBox_, &QDoubleSpinBox::valueChanged, this, [this] { detailChanged(); });
@@ -986,11 +1120,12 @@ public:
         applyTimer_.setSingleShot(true);
         applyTimer_.setInterval(80);
         connect(&applyTimer_, &QTimer::timeout, this, [this] {
-            meter_.setProfile(bands_, outputGain_->value());
-            try { audio_.update(bands_, outputGain_->value()); } catch (const std::exception &error) { showError(error.what()); }
+            meter_.setProfile(bands_, outputGainDb(), balance_->value());
+            try { audio_.update(bands_, outputGainDb(), balance_->value()); }
+            catch (const std::exception &error) { showError(error.what()); }
         });
         meter_.onLevels = [this](const QVector<double> &levels, double peak) { showLevels(levels, peak); };
-        meter_.setProfile(bands_, outputGain_->value());
+        meter_.setProfile(bands_, outputGainDb(), balance_->value());
         meter_.setInterval(levelRefresh_->value());
         monitor_.setInterval(1500);
         connect(&monitor_, &QTimer::timeout, this, [this] { refreshDevices(); });
@@ -1030,6 +1165,8 @@ protected:
     }
 
 private:
+    double outputGainDb() const { return outputGain_->value() / 2.0; }
+
     void showPlaybackStatus(const Device &device) {
         status_->setText("On · Playing through " + device.description);
     }
@@ -1124,13 +1261,18 @@ private:
                                      .arg(frequencyLabel(bands_[i].frequency)).arg(db, 0, 'f', 1));
         }
         if (!power_->isChecked()) {
+            overallLevel_->reset();
             peakStatus_->setText("Estimated peak: EQ off");
             peakStatus_->setStyleSheet("color:#8fa2bb;");
         } else if (peak <= 0.000001) {
+            overallLevel_->setLevel(-60.0);
             peakStatus_->setText("Estimated peak: waiting for audio");
             peakStatus_->setStyleSheet("color:#8fa2bb;");
         } else {
             const double db = 20.0 * std::log10(peak);
+            overallLevel_->setLevel(db);
+            overallLevel_->setToolTip(QString("Estimated overall output peak: %1 dBFS")
+                                          .arg(db, 0, 'f', 1));
             peakStatus_->setText(db >= -1.0
                                      ? QString("Clipping risk · estimated peak %1 dBFS").arg(db, 0, 'f', 1)
                                      : QString("Estimated peak %1 dBFS").arg(db, 0, 'f', 1));
@@ -1343,7 +1485,7 @@ private:
                     status_->setText("No output device is connected.");
                 } else {
                     meter_.stop();
-                    audio_.start(desired, bands_, outputGain_->value());
+                    audio_.start(desired, bands_, outputGainDb(), balance_->value());
                     if (isVisible()) meter_.start();
                     showPlaybackStatus(desired);
                 }
@@ -1357,7 +1499,7 @@ private:
         if (desired.name.isEmpty() || desired.name == audio_.target()) return;
         try {
             meter_.stop();
-            audio_.start(desired, bands_, outputGain_->value());
+            audio_.start(desired, bands_, outputGainDb(), balance_->value());
             if (isVisible()) meter_.start();
             showPlaybackStatus(desired);
         } catch (const std::exception &error) { showError(error.what()); }
@@ -1369,7 +1511,7 @@ private:
             const auto device = selectedDevice();
             if (device.name.isEmpty()) { power_->setChecked(false); showError("No output device is available."); return; }
             try {
-                audio_.start(device, bands_, outputGain_->value());
+                audio_.start(device, bands_, outputGainDb(), balance_->value());
                 if (isVisible()) meter_.start();
                 showPlaybackStatus(device);
             } catch (const std::exception &error) {
@@ -1394,7 +1536,11 @@ private:
     QComboBox *outputCombo_ = nullptr;
     QComboBox *presetCombo_ = nullptr;
     QCheckBox *power_ = nullptr;
-    QDoubleSpinBox *outputGain_ = nullptr;
+    QSlider *outputGain_ = nullptr;
+    QLabel *outputGainValue_ = nullptr;
+    QSlider *balance_ = nullptr;
+    QLabel *balanceValue_ = nullptr;
+    OverallLevelMeter *overallLevel_ = nullptr;
     QSpinBox *levelRefresh_ = nullptr;
     QCheckBox *peakMarkers_ = nullptr;
     QLabel *peakStatus_ = nullptr;
@@ -1431,14 +1577,16 @@ int main(int argc, char **argv) {
         QTextStream(stdout) << filterConfig(app.arguments()[2], defaultBands(kDefaultBands));
         return 0;
     }
-    if ((app.arguments().size() == 3 || app.arguments().size() == 4) &&
+    if (app.arguments().size() >= 3 && app.arguments().size() <= 5 &&
         app.arguments()[1] == "--dump-preset-controls") {
         const auto name = app.arguments()[2];
         if (!builtinShapes().contains(name)) return 2;
         bool valid = true;
-        const double gain = app.arguments().size() == 4 ? app.arguments()[3].toDouble(&valid) : 0.0;
+        const double gain = app.arguments().size() >= 4 ? app.arguments()[3].toDouble(&valid) : 0.0;
         if (!valid || !std::isfinite(gain) || gain < -12.0 || gain > 12.0) return 2;
-        QTextStream(stdout) << filterControls(builtinProfile(name, kDefaultBands), gain);
+        const int balance = app.arguments().size() == 5 ? app.arguments()[4].toInt(&valid) : 0;
+        if (!valid || balance < -100 || balance > 100) return 2;
+        QTextStream(stdout) << filterControls(builtinProfile(name, kDefaultBands), gain, balance);
         return 0;
     }
     if (app.arguments().contains("--self-test")) {
@@ -1512,6 +1660,14 @@ int main(int argc, char **argv) {
         spectrumTest.setInterval(500);
         if (spectrumTest.interval() != 100) qFatal("Level interval maximum is not enforced");
         spectrumTest.setProfile(defaultBands(kDefaultBands), 0.0);
+        if (balanceFactors(0) != std::array<double, 2>{1.0, 1.0} ||
+            balanceFactors(-100) != std::array<double, 2>{1.0, 0.0} ||
+            balanceFactors(100) != std::array<double, 2>{0.0, 1.0})
+            qFatal("Balance must attenuate only the opposite channel");
+        const auto config = filterConfig("test_output", defaultBands(kDefaultBands));
+        if (!config.contains("inputs = [ \"left_preamp:In\" \"right_preamp:In\" ]") ||
+            !config.contains("outputs = [ \"left_output_gain:Out\" \"right_output_gain:Out\" ]"))
+            qFatal("Filter graph channels are not mapped separately");
         QVector<double> testLevels;
         double testPeak = 0.0;
         int levelUpdates = 0;
@@ -1541,6 +1697,18 @@ int main(int argc, char **argv) {
         spectrumTest.analyzePcmForTest(tone.left(2048 * 4));
         if (std::abs(testPeak - 0.5) > 0.03 || testLevels[3] < 0.3)
             qFatal("Output gain was not reflected in the level estimate");
+        QByteArray leftOnly = tone;
+        for (int i = 0; i < 4096; ++i) {
+            leftOnly[i * 4 + 2] = '\0';
+            leftOnly[i * 4 + 3] = '\0';
+        }
+        spectrumTest.setProfile(defaultBands(kDefaultBands), 0.0, 100);
+        spectrumTest.analyzePcmForTest(leftOnly);
+        if (testPeak > 0.001) qFatal("Muted left channel still raises the overall level");
+        spectrumTest.setProfile(defaultBands(kDefaultBands), 0.0, -100);
+        spectrumTest.analyzePcmForTest(leftOnly);
+        if (std::abs(testPeak - 0.25) > 0.01)
+            qFatal("Balance is missing from the overall level estimate");
         BandLevelMeter peakTest;
         peakTest.resize(11, 140);
         peakTest.setPeakMarkersEnabled(true);
@@ -1558,6 +1726,16 @@ int main(int argc, char **argv) {
                     markerVisible = true;
             }
         if (!markerVisible) qFatal("Peak marker did not follow its toggle");
+        OverallLevelMeter overallTest;
+        overallTest.resize(200, 16);
+        overallTest.setPeakMarkersEnabled(true);
+        overallTest.setLevel(-3.0);
+        overallTest.setLevel(-20.0);
+        const auto overallWithMarker = overallTest.grab().toImage();
+        overallTest.setPeakMarkersEnabled(false);
+        const auto overallWithoutMarker = overallTest.grab().toImage();
+        if (overallWithMarker == overallWithoutMarker)
+            qFatal("Overall meter peak marker did not follow its toggle");
         if (builtinShapes().size() < 30) qFatal("Preset library is incomplete");
         if (testWindow.windowTitle() != "SoundCurrent EQ") qFatal("Window title is missing");
         for (const auto *label : testWindow.findChildren<QLabel *>()) {
@@ -1592,9 +1770,19 @@ int main(int argc, char **argv) {
         for (auto *check : testWindow.findChildren<QCheckBox *>())
             if (check->accessibleName() == "Equalizer on or off") power = check;
         if (!power || power->objectName() != "powerToggle") qFatal("Power cartouche is missing");
-        auto *outputGain = findDouble("Output gain after equalization");
-        if (!outputGain || outputGain->minimum() != -12.0 || outputGain->maximum() != 12.0)
-            qFatal("Output gain control is missing");
+        QSlider *outputGain = nullptr;
+        QSlider *balance = nullptr;
+        for (auto *slider : testWindow.findChildren<QSlider *>()) {
+            if (slider->accessibleName() == "Post gain after equalization") outputGain = slider;
+            if (slider->accessibleName() == "Left right balance") balance = slider;
+        }
+        if (!outputGain || outputGain->minimum() != -24 || outputGain->maximum() != 24 ||
+            !balance || balance->minimum() != -100 || balance->maximum() != 100)
+            qFatal("Post gain or balance slider is missing");
+        bool overallMeter = false;
+        for (auto *widget : testWindow.findChildren<QWidget *>())
+            if (dynamic_cast<OverallLevelMeter *>(widget)) overallMeter = true;
+        if (!overallMeter) qFatal("Overall level indicator is missing");
         auto *levelRefresh = findSpin("Level indicator refresh interval");
         if (!levelRefresh || levelRefresh->minimum() != 1 || levelRefresh->maximum() != 100 ||
             levelRefresh->singleStep() != 1)
@@ -1628,8 +1816,15 @@ int main(int argc, char **argv) {
         if (gain->value() < 6.0) qFatal("Deep Bass preset did not change the bands");
         presets->setCurrentText("Flat");
         if (gain->value() != 0.0) qFatal("Flat preset did not reset the bands");
+        auto bandSliderCount = [&testWindow] {
+            int total = 0;
+            for (auto *slider : testWindow.findChildren<QSlider *>())
+                if (slider->accessibleName().startsWith("Band ") &&
+                    slider->accessibleName().endsWith(" gain")) ++total;
+            return total;
+        };
         count->setValue(31);
-        if (testWindow.findChildren<QSlider *>().size() != 31) qFatal("31-band layout failed");
+        if (bandSliderCount() != 31) qFatal("31-band layout failed");
         int levelCount = 0;
         for (auto *widget : testWindow.findChildren<QWidget *>())
             if (dynamic_cast<BandLevelMeter *>(widget)) ++levelCount;
@@ -1640,7 +1835,7 @@ int main(int argc, char **argv) {
         if (frequency->value() != 22 || gain->value() != 4 || q->value() != 1.8)
             qFatal("Selected-band editing failed");
         count->setValue(15);
-        if (testWindow.findChildren<QSlider *>().size() != 15) qFatal("Band-count change failed");
+        if (bandSliderCount() != 15) qFatal("Band-count change failed");
         bool quitRequested = false;
         QObject::connect(&app, &QCoreApplication::aboutToQuit, &testWindow,
                          [&quitRequested] { quitRequested = true; });

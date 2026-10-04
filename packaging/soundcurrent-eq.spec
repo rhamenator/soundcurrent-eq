@@ -1,6 +1,6 @@
 Name:           soundcurrent-eq
 %global debug_package %{nil}
-Version:        0.3.5
+Version:        0.3.6
 Release:        1%{?dist}
 Summary:        Adjustable desktop equalizer for PipeWire
 License:        GPL-3.0-only
@@ -39,6 +39,8 @@ DESTDIR=%{buildroot} cmake --install build
 %{_datadir}/doc/soundcurrent-eq/LICENSE
 
 %changelog
+* Sun Oct 04 2026 rhamenator <rhamenator@gmail.com> - 0.3.6-1
+- Add post-gain slider, stereo balance, and overall output level indicator
 * Sun Oct 04 2026 rhamenator <rhamenator@gmail.com> - 0.3.5-1
 - Allow precise 1-100 ms level refresh with faster audio monitor chunks
 * Sun Oct 04 2026 rhamenator <rhamenator@gmail.com> - 0.3.4-1

@@ -5,7 +5,8 @@ PipeWire. It gives every app that plays through the default output the same
 adjustable sound profile. It starts with 15 frequency bands, lets you choose
 any count from 5 to 31, and opens with **Flat** selected. Each band has its own
 gain, center frequency, and width (Q). The app also has 34 listening presets,
-saved custom profiles, an output gain control, and live level indicators.
+saved custom profiles, a post-gain slider, stereo balance, and live level
+indicators.
 
 ![SoundCurrent EQ desktop window](docs/screenshot.png)
 
@@ -13,22 +14,28 @@ saved custom profiles, an output gain control, and live level indicators.
 
 When the equalizer is on, SoundCurrent EQ creates a PipeWire virtual output and
 makes it the system default. Audio then passes through automatic headroom, the
-adjustable EQ bands, and your separate output gain setting before reaching the
-physical output you selected. The **Automatic** device setting follows newly
+adjustable EQ bands, your post-gain setting, and left/right balance before
+reaching the physical output you selected. The **Automatic** device setting follows newly
 connected outputs, while the dropdown lets you pin a specific device.
 
 The EQ curve shows what the frequency settings do. Colored indicators next to
-the sliders show a live estimate of the sound level near each frequency. Set
-**Level refresh** from 1 to 100 ms (16 ms by default), and turn on **Peak
-markers** to see a falling peak hold line on each indicator. Peak markers start
-off; both choices are remembered. The timer uses precise scheduling, but
+the sliders show a live estimate of the sound level near each frequency. The
+**Overall output** bar shows the estimated peak after post gain and balance;
+teal, amber, and red show increasing clipping risk. Set **Level refresh** from
+1 to 100 ms (16 ms by default), and turn on **Peak
+markers** to see a falling peak hold line on each indicator, including the
+overall bar. Peak markers start off; both choices are remembered. The timer
+uses precise scheduling, but
 actual display updates depend on when PipeWire supplies new audio. Very short
-intervals use more CPU. The
-peak readout turns amber or red as the estimated output approaches clipping.
+intervals use more CPU. The peak readout turns amber or red as the estimated
+output approaches clipping.
 Boosting bands can lower overall loudness because the app makes room for those
-boosts; **Output gain** lets you bring the level back up. It starts at 0 dB and
-remembers your adjustment. The indicators are estimates, so listen for audible
-distortion as well as watching the display.
+boosts; **Post gain** lets you bring the level back up. Its slider runs from
+-12 to +12 dB in 0.5 dB steps, starts at 0 dB, and remembers your adjustment.
+The **Balance** slider moves toward L or R by reducing the opposite channel.
+Center preserves both channels at full level, and either end mutes the opposite
+channel. It also remembers your setting. The indicators are estimates, so listen
+for audible distortion as well as watching the display.
 
 Click the framed **Equalizer on/off** control to compare with normal audio.
 Closing the window keeps the EQ running in the background. **Quit app** unloads
@@ -93,7 +100,7 @@ or install missing dependencies.
   navigation works on the sliders and fields. Changes apply live without
   restarting the filter.
 - Boosts automatically lower the preamp using the calculated combined response
-  to leave headroom. If playback is too quiet, raise **Output gain** in 0.5 dB
+  to leave headroom. If playback is too quiet, move **Post gain** right in 0.5 dB
   steps. It acts after the EQ and is saved for the next launch. The default is
   0 dB; raising it can clip loud source material.
 - Pick a built-in preset or save your own. Custom presets live in your user

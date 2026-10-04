@@ -46,6 +46,15 @@ def capture(tone, destination, sink):
     return math.sqrt(sum(value * value for value in audible) / len(audible))
 
 
+def channel_levels(destination):
+    samples = array.array("h")
+    samples.frombytes(destination.read_bytes())
+    if len(samples) < 2000:
+        raise RuntimeError("The stereo level recording is too short")
+    return tuple(math.sqrt(sum(value * value for value in samples[channel::2]) /
+                           len(samples[channel::2])) for channel in (0, 1))
+
+
 def main():
     binary = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "build/soundcurrent-eq").resolve()
     if node_id("soundcurrent_eq") is not None:
@@ -95,13 +104,15 @@ def main():
             flat = capture(directory / "tone-1000.wav", directory / "flat.raw", sink)
             frequencies = (25, 40, 63, 100, 160, 250, 400, 630, 1000, 1600, 2500, 4000, 6300,
                            10000, 16000)
-            controls = ['"preamp:Mult" 1.0']
-            for index in range(1, 32):
-                frequency = frequencies[index - 1] if index <= len(frequencies) else 1000
-                gain = -12.0 if index == 9 else 0.0
-                controls.extend((f'"band_{index}:Freq" {frequency}',
-                                 f'"band_{index}:Q" 1.0',
-                                 f'"band_{index}:Gain" {gain}'))
+            controls = []
+            for channel in ("left", "right"):
+                controls.append(f'"{channel}_preamp:Mult" 1.0')
+                for index in range(1, 32):
+                    frequency = frequencies[index - 1] if index <= len(frequencies) else 1000
+                    gain = -12.0 if index == 9 else 0.0
+                    controls.extend((f'"{channel}_band_{index}:Freq" {frequency}',
+                                     f'"{channel}_band_{index}:Q" 1.0',
+                                     f'"{channel}_band_{index}:Gain" {gain}'))
             run("pw-cli", "set-param", str(eq_id), "Props", "{ params = [ " + " ".join(controls) + " ] }",
                 stdout=subprocess.DEVNULL)
             cut = capture(directory / "tone-1000.wav", directory / "cut.raw", sink)
@@ -150,6 +161,21 @@ def main():
             print(f"Post-EQ output gain: {gain_change:+.1f} dB (expected +6 dB)")
             if not 5.0 < gain_change < 7.0:
                 raise RuntimeError("Output gain did not raise the processed signal")
+
+            for position in (-100, -50, 100):
+                balance_controls = run(str(binary), "--dump-preset-controls", "Flat", "0", str(position),
+                                       capture_output=True, text=True,
+                                       env={**os.environ, "QT_QPA_PLATFORM": "offscreen"}).stdout
+                run("pw-cli", "set-param", str(eq_id), "Props", balance_controls,
+                    stdout=subprocess.DEVNULL)
+                recording = directory / f"balance-{position}.raw"
+                capture(directory / "tone-1000.wav", recording, sink)
+                left, right = channel_levels(recording)
+                expected_ratio = 0.0 if abs(position) == 100 else 0.5
+                actual_ratio = right / left if position < 0 else left / right
+                if abs(actual_ratio - expected_ratio) > 0.05:
+                    raise RuntimeError(f"Balance {position} changed channels by the wrong amount")
+                print(f"Balance {position:+d}: left {left:.0f}, right {right:.0f} RMS")
         finally:
             if pipewire is not None:
                 pipewire.terminate()
