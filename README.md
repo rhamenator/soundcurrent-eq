@@ -13,24 +13,41 @@ sink to the selected physical output. Closing the window leaves it running in
 the background; quitting from the tray icon restores the normal output. The
 actual audio processing is performed by PipeWire's built-in filters.
 
-## Install on Ubuntu
+## Install
 
-1. Download the `.deb` from the [latest release](https://github.com/rhamenator/soundcurrent-eq/releases/latest).
-2. Open it in Ubuntu's package installer, or run:
+Download the package for your system from the [latest release](https://github.com/rhamenator/soundcurrent-eq/releases/latest).
+
+### Ubuntu 24.04 and newer
+
+1. Open the `.deb` in Ubuntu's package installer, or run:
 
    ```bash
    sudo apt install ./soundcurrent-eq_*.deb
    ```
 
-3. Launch **SoundCurrent EQ** from the app menu. The equalizer starts on using
+2. Launch **SoundCurrent EQ** from the app menu. The equalizer starts on using
    the current output device. Choose **Automatic** or a specific output device.
 
 The package declares its dependencies so `apt` installs the required Qt and
-PipeWire tools. Releases include a `.sha256` checksum file. The app currently
-targets 64-bit Ubuntu 24.04 LTS and newer with PipeWire audio.
+PipeWire tools. The Ubuntu package targets 64-bit Ubuntu 24.04 LTS and newer
+with PipeWire audio.
 
-If you download the checksum file alongside the package, verify it with
-`sha256sum -c soundcurrent-eq_*.deb.sha256` before installing.
+### Fedora 44 and RHEL 10
+
+Choose the `.fc44.x86_64.rpm` file for Fedora 44, or the `.el10.x86_64.rpm`
+file for RHEL 10. Install it with the desktop package manager or run:
+
+```bash
+sudo dnf install ./soundcurrent-eq-*.rpm
+```
+
+The RHEL 10 package is built in AlmaLinux 10, which targets RHEL 10 binary
+compatibility. It has been checked for package dependency resolution and the
+Qt interface in that environment; the live audio test still requires a desktop
+PipeWire session. RHEL 9 is not a target for this package.
+
+Each package has a `.sha256` checksum file. Download it alongside the package
+and run `sha256sum -c <package-name>.sha256` before installing.
 
 For a user-only install when the runtime dependencies are already present:
 
@@ -86,8 +103,11 @@ Build an installable package:
 ./scripts/build-deb.sh
 ```
 
-The package and checksum appear in `dist/`. The GitHub release workflow builds
-on Ubuntu 24.04 and attaches these files to each `v*` tag.
+The Ubuntu package and checksum appear in `dist/`. To build an RPM on Fedora or
+RHEL, install `cmake`, `gcc-c++`, `qt6-qtbase-devel`, `rpm-build`, `tar`, and
+`gzip`, then run `./scripts/build-rpm.sh`. RPM files and checksums appear in
+`dist/x86_64/`. The GitHub release workflow builds Ubuntu, Fedora 44, and
+RHEL 10 compatible packages for each `v*` tag.
 
 ## Verify the interface and audio routing
 

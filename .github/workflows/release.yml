@@ -1,4 +1,4 @@
-name: Release Ubuntu package
+name: Release Linux packages
 
 on:
   push:
@@ -22,7 +22,30 @@ jobs:
           sudo apt-get install -y cmake ninja-build g++ qt6-base-dev
       - name: Build package
         run: ./scripts/build-deb.sh
+      - name: Build and check Fedora 44 RPM
+        run: |
+          docker run --rm -v "$PWD:/src" -w /src fedora:44 bash -lc '
+            set -euo pipefail
+            dnf install -y cmake gcc-c++ qt6-qtbase-devel rpm-build tar gzip
+            ./scripts/build-rpm.sh
+            dnf install -y dist/x86_64/*fc44*.rpm
+            QT_QPA_PLATFORM=offscreen /usr/bin/soundcurrent-eq --ui-self-test
+          '
+      - name: Build and check RHEL 10 compatible RPM
+        run: |
+          docker run --rm -v "$PWD:/src" -w /src almalinux:10 bash -lc '
+            set -euo pipefail
+            dnf install -y cmake gcc-c++ qt6-qtbase-devel rpm-build tar gzip
+            ./scripts/build-rpm.sh
+            dnf install -y dist/x86_64/*el10*.rpm
+            QT_QPA_PLATFORM=offscreen /usr/bin/soundcurrent-eq --ui-self-test
+          '
+      - name: Verify package checksums
+        run: |
+          for checksum in dist/*.sha256 dist/x86_64/*.sha256; do
+            (cd "$(dirname "$checksum")" && sha256sum -c "$(basename "$checksum")")
+          done
       - name: Publish release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "$GITHUB_REF_NAME" dist/*.deb dist/*.sha256 --title "SoundCurrent EQ $GITHUB_REF_NAME" --generate-notes
+        run: gh release create "$GITHUB_REF_NAME" dist/*.deb dist/*.sha256 dist/x86_64/*.rpm dist/x86_64/*.sha256 --title "SoundCurrent EQ $GITHUB_REF_NAME" --generate-notes
