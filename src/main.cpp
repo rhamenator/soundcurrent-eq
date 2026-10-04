@@ -632,20 +632,31 @@ public:
     bool active() const { return process_.state() != QProcess::NotRunning; }
 
     SpectrumMonitor() {
-        timer_.setInterval(50);
+        timer_.setTimerType(Qt::PreciseTimer);
+        timer_.setInterval(16);
         connect(&process_, &QProcess::readyReadStandardOutput, this, [this] {
             appendPcm(process_.readAllStandardOutput());
         });
         connect(&timer_, &QTimer::timeout, this, [this] { analyze(); });
     }
 
-    void setInterval(int milliseconds) { timer_.setInterval(std::clamp(milliseconds, 25, 250)); }
+    void setInterval(int milliseconds) { timer_.setInterval(std::clamp(milliseconds, 1, 100)); }
     int interval() const { return timer_.interval(); }
 
     void setProfile(const Bands &bands, double outputGainDb) {
         bands_ = bands;
         outputGainDb_ = outputGainDb;
         headroomDb_ = headroom(bands_);
+        bandEdges_.clear();
+        bandGains_.clear();
+        for (qsizetype i = 0; i < bands_.size(); ++i) {
+            if (i + 1 < bands_.size())
+                bandEdges_.append(std::sqrt(bands_[i].frequency * bands_[i + 1].frequency));
+            bandGains_.append(std::pow(10.0, (responseDb(bands_, bands_[i].frequency) +
+                                                   headroomDb_ + outputGainDb_) / 20.0));
+        }
+        const auto maxEqBoost = headroomDb_ < 0.0 ? -headroomDb_ - 1.0 : 0.0;
+        peakGain_ = std::pow(10.0, (maxEqBoost + headroomDb_ + outputGainDb_) / 20.0);
     }
 
     void analyzePcmForTest(const QByteArray &pcm) {
@@ -657,7 +668,8 @@ public:
         stop();
         process_.setProgram("parec");
         process_.setArguments({"--raw", "-d", QString(kSink) + ".monitor", "--format=s16le",
-                               "--rate=48000", "--channels=2"});
+                               "--rate=48000", "--channels=2", "--latency-msec=10",
+                               "--process-time-msec=5"});
         process_.start();
         timer_.start();
     }
@@ -690,7 +702,8 @@ private:
         const auto *data = reinterpret_cast<const unsigned char *>(pcm_.constData());
         const int frameCount = pcm_.size() / frameBytes;
         double peak = 0.0;
-        for (int i = 0; i < frameCount; ++i) {
+        const int firstNewFrame = std::max(0, frameCount - int(bytesSinceAnalysis_ / frameBytes));
+        for (int i = firstNewFrame; i < frameCount; ++i) {
             for (int channel = 0; channel < 2; ++channel) {
                 const auto offset = frameBytes * i + 2 * channel;
                 const auto raw = uint16_t(data[offset]) | (uint16_t(data[offset + 1]) << 8);
@@ -699,13 +712,18 @@ private:
             }
         }
         const int first = (frameCount - n) * frameBytes;
+        static const auto window = [] {
+            std::array<double, n> values{};
+            for (int i = 0; i < n; ++i)
+                values[i] = 0.5 - 0.5 * std::cos(2.0 * std::numbers::pi * i / (n - 1));
+            return values;
+        }();
         std::array<std::complex<double>, n> spectrum;
         for (int i = 0; i < n; ++i) {
             const int offset = first + i * frameBytes;
             const auto left = int16_t(uint16_t(data[offset]) | (uint16_t(data[offset + 1]) << 8));
             const auto right = int16_t(uint16_t(data[offset + 2]) | (uint16_t(data[offset + 3]) << 8));
-            const double window = 0.5 - 0.5 * std::cos(2.0 * std::numbers::pi * i / (n - 1));
-            spectrum[i] = (double(left) + double(right)) / 65536.0 * window;
+            spectrum[i] = (double(left) + double(right)) / 65536.0 * window[i];
         }
         if (pcm_.size() > n * frameBytes)
             pcm_.remove(0, (pcm_.size() - n * frameBytes) & ~qsizetype(3));
@@ -734,17 +752,13 @@ private:
             int band = 0;
             for (int bin = 1; bin < n / 2; ++bin) {
                 const auto frequency = 48000.0 * bin / n;
-                while (band + 1 < bands_.size() &&
-                       frequency > std::sqrt(bands_[band].frequency * bands_[band + 1].frequency))
+                while (band < bandEdges_.size() && frequency > bandEdges_[band])
                     ++band;
                 levels[band] = std::max(levels[band], std::abs(spectrum[bin]) * 4.0 / n);
             }
-            for (qsizetype i = 0; i < bands_.size(); ++i)
-                levels[i] *= std::pow(10.0, (responseDb(bands_, bands_[i].frequency) +
-                                              headroomDb_ + outputGainDb_) / 20.0);
+            for (qsizetype i = 0; i < bands_.size(); ++i) levels[i] *= bandGains_[i];
         }
-        const auto maxEqBoost = headroomDb_ < 0.0 ? -headroomDb_ - 1.0 : 0.0;
-        const auto estimatedPeak = peak * std::pow(10.0, (maxEqBoost + headroomDb_ + outputGainDb_) / 20.0);
+        const auto estimatedPeak = peak * peakGain_;
         if (onLevels) onLevels(levels, estimatedPeak);
     }
 
@@ -753,8 +767,11 @@ private:
     QByteArray pcm_;
     qsizetype bytesSinceAnalysis_ = 0;
     Bands bands_;
+    QVector<double> bandEdges_;
+    QVector<double> bandGains_;
     double headroomDb_ = 0.0;
     double outputGainDb_ = 0.0;
+    double peakGain_ = 1.0;
 };
 
 class PresetComboBox : public QComboBox {
@@ -832,12 +849,12 @@ public:
         gainRow->addStretch();
         gainRow->addWidget(new QLabel("Level refresh"));
         levelRefresh_ = new QSpinBox;
-        levelRefresh_->setRange(25, 250);
-        levelRefresh_->setSingleStep(25);
+        levelRefresh_->setRange(1, 100);
+        levelRefresh_->setSingleStep(1);
         levelRefresh_->setSuffix(" ms");
         levelRefresh_->setAccessibleName("Level indicator refresh interval");
-        levelRefresh_->setToolTip("Shorter intervals update levels more often and use more CPU");
-        levelRefresh_->setValue(std::clamp(QSettings().value("levelRefreshMs", 50).toInt(), 25, 250));
+        levelRefresh_->setToolTip("Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate");
+        levelRefresh_->setValue(std::clamp(QSettings().value("levelRefreshMs", 16).toInt(), 1, 100));
         gainRow->addWidget(levelRefresh_);
         peakMarkers_ = new QCheckBox("Peak markers");
         peakMarkers_->setAccessibleName("Show peak markers on frequency levels");
@@ -1485,9 +1502,15 @@ int main(int argc, char **argv) {
     if (app.arguments().contains("--ui-self-test")) {
         MainWindow testWindow(false);
         SpectrumMonitor spectrumTest;
-        if (spectrumTest.interval() != 50) qFatal("Default level interval is not 50 ms");
-        spectrumTest.setInterval(25);
-        if (spectrumTest.interval() != 25) qFatal("Level interval is not adjustable");
+        if (spectrumTest.interval() != 16) qFatal("Default level interval is not 16 ms");
+        spectrumTest.setInterval(5);
+        if (spectrumTest.interval() != 5) qFatal("Five millisecond level interval is unavailable");
+        spectrumTest.setInterval(1);
+        if (spectrumTest.interval() != 1) qFatal("One millisecond level interval is unavailable");
+        spectrumTest.setInterval(0);
+        if (spectrumTest.interval() != 1) qFatal("Level interval minimum is not enforced");
+        spectrumTest.setInterval(500);
+        if (spectrumTest.interval() != 100) qFatal("Level interval maximum is not enforced");
         spectrumTest.setProfile(defaultBands(kDefaultBands), 0.0);
         QVector<double> testLevels;
         double testPeak = 0.0;
@@ -1573,8 +1596,8 @@ int main(int argc, char **argv) {
         if (!outputGain || outputGain->minimum() != -12.0 || outputGain->maximum() != 12.0)
             qFatal("Output gain control is missing");
         auto *levelRefresh = findSpin("Level indicator refresh interval");
-        if (!levelRefresh || levelRefresh->minimum() != 25 || levelRefresh->maximum() != 250 ||
-            levelRefresh->singleStep() != 25)
+        if (!levelRefresh || levelRefresh->minimum() != 1 || levelRefresh->maximum() != 100 ||
+            levelRefresh->singleStep() != 1)
             qFatal("Level refresh control is missing");
         QCheckBox *peakMarkers = nullptr;
         for (auto *check : testWindow.findChildren<QCheckBox *>())

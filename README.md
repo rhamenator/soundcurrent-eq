@@ -19,9 +19,11 @@ connected outputs, while the dropdown lets you pin a specific device.
 
 The EQ curve shows what the frequency settings do. Colored indicators next to
 the sliders show a live estimate of the sound level near each frequency. Set
-**Level refresh** from 25 to 250 ms (50 ms by default), and turn on **Peak
+**Level refresh** from 1 to 100 ms (16 ms by default), and turn on **Peak
 markers** to see a falling peak hold line on each indicator. Peak markers start
-off; both choices are remembered. The
+off; both choices are remembered. The timer uses precise scheduling, but
+actual display updates depend on when PipeWire supplies new audio. Very short
+intervals use more CPU. The
 peak readout turns amber or red as the estimated output approaches clipping.
 Boosting bands can lower overall loudness because the app makes room for those
 boosts; **Output gain** lets you bring the level back up. It starts at 0 dB and
