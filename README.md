@@ -12,11 +12,15 @@ indicators.
 
 ## How listening works
 
-When the equalizer is on, SoundCurrent EQ creates a PipeWire virtual output and
-makes it the system default. Audio then passes through automatic headroom, the
-adjustable EQ bands, your post-gain setting, and left/right balance before
-reaching the physical output you selected. The **Automatic** device setting follows newly
-connected outputs, while the dropdown lets you pin a specific device.
+When the equalizer is on, SoundCurrent EQ creates a PipeWire filter. On current
+WirePlumber systems, audio to the selected physical output passes through the
+filter while that output remains the system default. The system volume then
+applies once, at the physical output. On older WirePlumber systems, the app uses
+a virtual default output and keeps its volume in sync with the physical output
+so the two do not reduce the signal twice. Audio passes through automatic
+headroom, the adjustable EQ bands, post gain, and left/right balance. The
+**Automatic** device setting follows newly connected outputs, while the dropdown
+lets you pin a specific device.
 
 The EQ curve shows what the frequency settings do. Colored indicators next to
 the sliders show a live estimate of the sound level near each frequency. The
@@ -97,8 +101,8 @@ or install missing dependencies.
   when the count changes, so your tuning is retained. The default is 15 bands.
 - Move a slider or drag a point on the curve to adjust gain. Select a band and
   edit its center frequency, gain, or Q in the fields above the curve. Keyboard
-  navigation works on the sliders and fields. Changes apply live without
-  restarting the filter.
+  navigation works on the sliders and fields. Changes apply immediately without
+  restarting the filter. Post gain and balance update immediately too.
 - Boosts automatically lower the preamp using the calculated combined response
   to leave headroom. If playback is too quiet, move **Post gain** right in 0.5 dB
   steps. It acts after the EQ and is saved for the next launch. The default is
@@ -159,7 +163,8 @@ python3 tests/audio_response.py ./build/soundcurrent-eq
 ```
 
 The first command briefly creates the EQ sink, changes its band count and
-controls, and checks that the original default output is restored. It uses the
+controls, and checks that the original default output and volume are restored.
+It uses the
 currently selected physical output and does not play a test sound. The second
 checks the 31-band interface, preset library, and selected-band controls without using audio.
 The third command sends tones through a temporary silent sink and verifies

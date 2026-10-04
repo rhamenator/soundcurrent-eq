@@ -33,6 +33,7 @@
 #include <QPainterPath>
 #include <QProcess>
 #include <QPushButton>
+#include <QRegularExpression>
 #include <QScrollArea>
 #include <QScrollBar>
 #include <QSaveFile>
@@ -54,6 +55,7 @@
 #include <array>
 #include <cmath>
 #include <complex>
+#include <cerrno>
 #include <cstdint>
 #include <functional>
 #include <numbers>
@@ -61,6 +63,7 @@
 #include <stdexcept>
 #include <csignal>
 #include <sys/prctl.h>
+#include <unistd.h>
 
 namespace {
 
@@ -149,6 +152,58 @@ QJsonArray pactlList(const QString &kind) {
 
 QString defaultSink() { return command("pactl", {"get-default-sink"}).trimmed(); }
 
+struct SinkState {
+    QStringList volumes;
+    bool muted = false;
+};
+
+SinkState sinkState(const QString &name) {
+    for (const auto &item : pactlList("sinks")) {
+        const auto sink = item.toObject();
+        if (sink.value("name").toString() != name) continue;
+        const auto channels = sink.value("channel_map").toString().split(',', Qt::SkipEmptyParts);
+        const auto volume = sink.value("volume").toObject();
+        SinkState state;
+        for (const auto &channel : channels) {
+            const int raw = volume.value(channel).toObject().value("value").toInt(-1);
+            if (raw < 0) throw std::runtime_error("Could not read output volume");
+            state.volumes << QString::number(raw);
+        }
+        if (state.volumes.isEmpty()) throw std::runtime_error("Output has no volume channels");
+        state.muted = sink.value("mute").toBool();
+        return state;
+    }
+    throw std::runtime_error("Output device is no longer available");
+}
+
+void setSinkState(const QString &name, const SinkState &state) {
+    command("pactl", QStringList{"set-sink-volume", name} + state.volumes);
+    command("pactl", {"set-sink-mute", name, state.muted ? "1" : "0"});
+}
+
+int guardOutputVolume(const QString &target, const QString &rawVolumes, const QString &rawMute) {
+    if (target.isEmpty() || target == kSink || (rawMute != "0" && rawMute != "1")) return 2;
+    SinkState original;
+    original.muted = rawMute == "1";
+    for (const auto &value : rawVolumes.split(',', Qt::SkipEmptyParts)) {
+        bool valid = false;
+        const int raw = value.toInt(&valid);
+        if (!valid || raw < 0 || raw > 131072) return 2;
+        original.volumes << value;
+    }
+    if (original.volumes.isEmpty() || original.volumes.size() > 8) return 2;
+    char message = 0;
+    while (true) {
+        const auto received = ::read(STDIN_FILENO, &message, 1);
+        if (received == 1 && message == 'Q') return 0;
+        if (received == 0) break;
+        if (received < 0 && errno != EINTR) return 1;
+    }
+    try { setSinkState(target, original); }
+    catch (const std::exception &) { return 1; }
+    return 0;
+}
+
 QList<Device> devices() {
     QList<Device> result;
     for (const auto &item : pactlList("sinks")) {
@@ -223,7 +278,7 @@ QString quote(const QString &value) {
 }
 
 QString filterConfig(const QString &target, const Bands &bands, double outputGainDb = 0.0,
-                     int balancePercent = 0) {
+                     int balancePercent = 0, bool smartFilter = false) {
     QStringList nodes;
     QStringList links;
     const auto factors = balanceFactors(balancePercent);
@@ -249,6 +304,9 @@ QString filterConfig(const QString &target, const Bands &bands, double outputGai
         links << QString("{ output = \"%1_band_%2:Out\" input = \"%1_output_gain:In\" }")
                      .arg(channel).arg(kMaxBands);
     }
+    const auto smartProperties = smartFilter
+        ? QString("filter.smart = true filter.smart.target = { node.name = %1 }").arg(quote(target))
+        : QString();
     return QString(R"(
 context.spa-libs = {
   audio.convert.* = audioconvert/libspa-audioconvert
@@ -270,16 +328,30 @@ context.modules = [
         inputs = [ "left_preamp:In" "right_preamp:In" ]
         outputs = [ "left_output_gain:Out" "right_output_gain:Out" ]
       }
-      capture.props = { node.name = "%3" media.class = Audio/Sink }
+      capture.props = { node.name = "%3" media.class = Audio/Sink %6 }
       playback.props = {
         node.name = "%4"
         target.object = %5
         node.passive = true
+        state.restore-props = false
+        state.default-volume = 1.0
       }
     }
   }
 ]
-)").arg(nodes.join('\n'), links.join('\n'), kSink, kOutput, quote(target));
+)").arg(nodes.join('\n'), links.join('\n'), kSink, kOutput, quote(target), smartProperties);
+}
+
+bool smartFiltersAvailable() {
+    if (qEnvironmentVariableIsSet("SOUNDCURRENT_FORCE_LEGACY_FILTER")) return false;
+    try {
+        const auto version = command("wireplumber", {"--version"}, 2000);
+        const auto match = QRegularExpression(R"(libwireplumber\s+(\d+)\.(\d+))").match(version);
+        if (!match.hasMatch()) return false;
+        const int major = match.captured(1).toInt();
+        const int minor = match.captured(2).toInt();
+        return major > 0 || minor >= 5;
+    } catch (const std::exception &) { return false; }
 }
 
 int nodeId(const QString &name) {
@@ -314,14 +386,25 @@ QString filterControls(const Bands &bands, double outputGainDb = 0.0, int balanc
     return "{ params = [ " + controls.join(' ') + " ] }";
 }
 
+QString gainControls(double outputGainDb, int balancePercent) {
+    const auto factors = balanceFactors(balancePercent);
+    const double postGain = std::pow(10.0, outputGainDb / 20.0);
+    return QString("{ params = [ \"left_output_gain:Mult\" %1 \"right_output_gain:Mult\" %2 ] }")
+        .arg(QString::number(postGain * factors[0], 'f', 8),
+             QString::number(postGain * factors[1], 'f', 8));
+}
+
 class AudioEngine {
 public:
     bool active() const { return process_.state() != QProcess::NotRunning; }
     QString target() const { return target_.name; }
+    bool smart() const { return smart_; }
+    bool legacyVolumeManaged() const { return legacyVolumeManaged_; }
 
     void start(const Device &device, const Bands &bands, double outputGainDb = 0.0,
                int balancePercent = 0) {
         stop();
+        const auto previousDefault = defaultSink();
         bool found = false;
         for (const auto &available : devices()) if (available.name == device.name) found = true;
         if (!found) throw std::runtime_error("Selected output device is no longer available");
@@ -331,7 +414,8 @@ public:
         QFile config(path);
         if (!config.open(QIODevice::WriteOnly | QIODevice::Truncate))
             throw std::runtime_error("Could not write temporary audio configuration");
-        config.write(filterConfig(device.name, bands, outputGainDb, balancePercent).toUtf8());
+        const bool smart = smartFiltersAvailable();
+        config.write(filterConfig(device.name, bands, outputGainDb, balancePercent, smart).toUtf8());
         config.close();
         process_.setProgram("pipewire");
         process_.setArguments({"-c", path});
@@ -347,14 +431,40 @@ public:
             try { if (nodeId(kSink) >= 0) break; } catch (const std::exception &) {}
             QThread::msleep(100);
         }
-        if (nodeId(kSink) < 0) {
+        const int id = nodeId(kSink);
+        if (id < 0) {
             const auto details = QString::fromUtf8(process_.readAll()).trimmed();
             stop();
             throw std::runtime_error(("Timed out waiting for the equalizer sink: " + details).toStdString());
         }
         try {
-            command("pactl", {"set-default-sink", kSink});
-            moveStreams(device.index, kSink);
+            if (smart) {
+                command("pactl", {"set-sink-volume", kSink, "100%"});
+                command("pactl", {"set-sink-mute", kSink, "0"});
+                if (previousDefault != device.name) {
+                    command("pactl", {"set-default-sink", device.name});
+                    for (const auto &available : devices())
+                        if (available.name == previousDefault)
+                            moveStreams(available.index, device.name);
+                }
+            } else {
+                originalState_ = sinkState(device.name);
+                guardian_.setProgram(QCoreApplication::applicationFilePath());
+                guardian_.setArguments({"--volume-guardian", device.name,
+                                        originalState_.volumes.join(','), originalState_.muted ? "1" : "0"});
+                guardian_.start();
+                if (!guardian_.waitForStarted(2000))
+                    throw std::runtime_error("Could not start output volume safety guard");
+                target_ = device;
+                legacyVolumeManaged_ = true;
+                setSinkState(kSink, originalState_);
+                command("pactl", {"set-sink-volume", device.name, "100%"});
+                command("pactl", {"set-sink-mute", device.name, "0"});
+                command("pactl", {"set-default-sink", kSink});
+                moveStreams(device.index, kSink);
+            }
+            sinkId_ = id;
+            smart_ = smart;
             target_ = device;
         } catch (const std::exception &) {
             stop();
@@ -364,12 +474,30 @@ public:
 
     void update(const Bands &bands, double outputGainDb = 0.0, int balancePercent = 0) {
         if (!active()) return;
-        const auto id = nodeId(kSink);
-        if (id < 0) throw std::runtime_error("Equalizer sink disappeared");
-        command("pw-cli", {"set-param", QString::number(id), "Props", filterControls(bands, outputGainDb, balancePercent)});
+        if (sinkId_ < 0) throw std::runtime_error("Equalizer sink disappeared");
+        command("pw-cli", {"set-param", QString::number(sinkId_), "Props", filterControls(bands, outputGainDb, balancePercent)});
+    }
+
+    void updateGain(double outputGainDb, int balancePercent) {
+        if (!active()) return;
+        if (sinkId_ < 0) throw std::runtime_error("Equalizer sink disappeared");
+        command("pw-cli", {"set-param", QString::number(sinkId_), "Props", gainControls(outputGainDb, balancePercent)});
     }
 
     void stop() {
+        bool volumeRestored = !legacyVolumeManaged_;
+        if (legacyVolumeManaged_ && !target_.name.isEmpty()) {
+            try {
+                const auto current = nodeId(kSink) >= 0 ? sinkState(kSink) : originalState_;
+                setSinkState(target_.name, current);
+                volumeRestored = true;
+            } catch (const std::exception &) {
+                try {
+                    setSinkState(target_.name, originalState_);
+                    volumeRestored = true;
+                } catch (const std::exception &) {}
+            }
+        }
         if (!target_.name.isEmpty()) {
             try {
                 auto restore = target_.name;
@@ -400,7 +528,16 @@ public:
                 process_.waitForFinished(2000);
             }
         }
+        if (guardian_.state() != QProcess::NotRunning) {
+            if (volumeRestored) guardian_.write("Q", 1);
+            guardian_.closeWriteChannel();
+            if (!guardian_.waitForFinished(2000)) guardian_.kill();
+        }
         target_ = {};
+        sinkId_ = -1;
+        smart_ = false;
+        legacyVolumeManaged_ = false;
+        originalState_ = {};
     }
 
     ~AudioEngine() { stop(); }
@@ -408,7 +545,12 @@ public:
 private:
     QTemporaryDir directory_{QDir::tempPath() + "/soundcurrent-eq-XXXXXX"};
     QProcess process_;
+    QProcess guardian_;
     Device target_;
+    SinkState originalState_;
+    int sinkId_ = -1;
+    bool smart_ = false;
+    bool legacyVolumeManaged_ = false;
 };
 
 const QMap<QString, std::array<double, 9>> &builtinShapes() {
@@ -753,6 +895,7 @@ public:
         process_.setArguments({"--raw", "-d", QString(kSink) + ".monitor", "--format=s16le",
                                "--rate=48000", "--channels=2", "--latency-msec=10",
                                "--process-time-msec=5"});
+        process_.setChildProcessModifier([] { prctl(PR_SET_PDEATHSIG, SIGTERM); });
         process_.start();
         timer_.start();
     }
@@ -1085,14 +1228,16 @@ public:
             outputGainValue_->setText(QString("%1%2 dB").arg(value > 0 ? "+" : "")
                                           .arg(value, 0, 'f', 1));
             meter_.setProfile(bands_, value, balance_->value());
-            scheduleApply();
+            try { audio_.updateGain(value, balance_->value()); }
+            catch (const std::exception &error) { showError(error.what()); }
         });
         connect(balance_, &QSlider::valueChanged, this, [this](int value) {
             QSettings().setValue("balancePercent", value);
             balanceValue_->setText(value == 0 ? "Center"
                                    : QString("%1 %2%").arg(value < 0 ? "L" : "R").arg(std::abs(value)));
             meter_.setProfile(bands_, outputGainDb(), value);
-            scheduleApply();
+            try { audio_.updateGain(outputGainDb(), value); }
+            catch (const std::exception &error) { showError(error.what()); }
         });
         connect(levelRefresh_, &QSpinBox::valueChanged, this, [this](int milliseconds) {
             QSettings().setValue("levelRefreshMs", milliseconds);
@@ -1115,26 +1260,43 @@ public:
             selectBand(index);
             markCustom();
             syncBandControls();
-            scheduleApply();
+            applyChanges();
         };
-        applyTimer_.setSingleShot(true);
-        applyTimer_.setInterval(80);
-        connect(&applyTimer_, &QTimer::timeout, this, [this] {
-            meter_.setProfile(bands_, outputGainDb(), balance_->value());
-            try { audio_.update(bands_, outputGainDb(), balance_->value()); }
-            catch (const std::exception &error) { showError(error.what()); }
-        });
         meter_.onLevels = [this](const QVector<double> &levels, double peak) { showLevels(levels, peak); };
         meter_.setProfile(bands_, outputGainDb(), balance_->value());
         meter_.setInterval(levelRefresh_->value());
         monitor_.setInterval(1500);
         connect(&monitor_, &QTimer::timeout, this, [this] { refreshDevices(); });
         monitor_.start();
+        volumeEvents_.setProgram("pactl");
+        volumeEvents_.setArguments({"subscribe"});
+        volumeEvents_.setChildProcessModifier([] { prctl(PR_SET_PDEATHSIG, SIGTERM); });
+        connect(&volumeEvents_, &QProcess::readyReadStandardOutput, this, [this] {
+            volumeEventBuffer_.append(volumeEvents_.readAllStandardOutput());
+            if (volumeEventBuffer_.size() > 4096) volumeEventBuffer_.remove(0, volumeEventBuffer_.size() - 4096);
+            int newline = 0;
+            while ((newline = volumeEventBuffer_.indexOf('\n')) >= 0) {
+                const auto event = volumeEventBuffer_.left(newline);
+                volumeEventBuffer_.remove(0, newline + 1);
+                if (event.contains("on server") && power_->isChecked() && audio_.legacyVolumeManaged()) {
+                    try { if (defaultSink() != kSink) power_->setChecked(false); }
+                    catch (const std::exception &) {}
+                }
+            }
+        });
+        volumeEvents_.start();
         if (startEnabled) setupTray();
         if (startEnabled && power_->isEnabled()) power_->setChecked(true);
     }
 
-    ~MainWindow() override { meter_.stop(); audio_.stop(); }
+    ~MainWindow() override {
+        if (volumeEvents_.state() != QProcess::NotRunning) {
+            volumeEvents_.terminate();
+            if (!volumeEvents_.waitForFinished(500)) volumeEvents_.kill();
+        }
+        meter_.stop();
+        audio_.stop();
+    }
 
     void reopen() {
         showNormal();
@@ -1242,7 +1404,7 @@ private:
                 bands_[i].gain = value / 2.0;
                 selectBand(int(i));
                 markCustom();
-                scheduleApply();
+                applyChanges();
             });
             connect(frequency, &QPushButton::clicked, this, [this, i] { selectBand(int(i)); });
         }
@@ -1317,7 +1479,11 @@ private:
         changing_ = false;
     }
 
-    void scheduleApply() { applyTimer_.start(); }
+    void applyChanges() {
+        meter_.setProfile(bands_, outputGainDb(), balance_->value());
+        try { audio_.update(bands_, outputGainDb(), balance_->value()); }
+        catch (const std::exception &error) { showError(error.what()); }
+    }
 
     void detailChanged() {
         if (changing_ || bands_.isEmpty()) return;
@@ -1327,7 +1493,7 @@ private:
         band.q = qBox_->value();
         markCustom();
         syncBandControls();
-        scheduleApply();
+        applyChanges();
     }
 
     void changeBandCount(int count) {
@@ -1337,7 +1503,7 @@ private:
         rebuildBandControls();
         markCustom();
         syncBandControls();
-        scheduleApply();
+        applyChanges();
     }
 
     void presetChanged() {
@@ -1351,7 +1517,7 @@ private:
         countBox_->setValue(int(bands_.size()));
         rebuildBandControls();
         syncBandControls();
-        scheduleApply();
+        applyChanges();
     }
 
     void loadCustomPresets() {
@@ -1466,6 +1632,12 @@ private:
                 showError("The PipeWire filter stopped unexpectedly.");
                 return;
             }
+            if (audio_.legacyVolumeManaged() && defaultSink() != kSink) {
+                power_->setChecked(false);
+                return;
+            }
+            if (audio_.smart() && defaultSink() == kSink)
+                command("pactl", {"set-default-sink", audio_.target()});
             Device desired;
             if (!selectedName.isEmpty() && index >= 0) desired = findDevice(selectedName);
             else if (!selectedName.isEmpty() && index < 0) {
@@ -1556,8 +1728,9 @@ private:
     QVector<QLabel *> gainLabels_;
     QVector<QPushButton *> frequencyButtons_;
     QVector<BandLevelMeter *> levelBars_;
-    QTimer applyTimer_;
     QTimer monitor_;
+    QProcess volumeEvents_;
+    QByteArray volumeEventBuffer_;
     QSystemTrayIcon *tray_ = nullptr;
     QAction *trayToggle_ = nullptr;
     int selected_ = 0;
@@ -1568,6 +1741,11 @@ private:
 } // namespace
 
 int main(int argc, char **argv) {
+    if (argc == 5 && QString::fromLocal8Bit(argv[1]) == "--volume-guardian") {
+        QCoreApplication guardianApp(argc, argv);
+        return guardOutputVolume(QString::fromLocal8Bit(argv[2]), QString::fromLocal8Bit(argv[3]),
+                                 QString::fromLocal8Bit(argv[4]));
+    }
     QApplication app(argc, argv);
     QCoreApplication::setOrganizationName("SoundCurrent");
     QCoreApplication::setApplicationName("soundcurrent-eq");
@@ -1608,15 +1786,25 @@ int main(int argc, char **argv) {
             auto selected = available.front();
             for (const auto &device : available) if (device.name == current) selected = device;
             const auto before = defaultSink();
+            const auto volumeBefore = sinkState(selected.name);
             AudioEngine test;
             test.start(selected, builtinProfile("Bass Boost", kDefaultBands));
             auto adjusted = builtinProfile("Clear Voice", kMaxBands);
             adjusted[12].frequency = 320.0;
             adjusted[12].q = 2.0;
             test.update(adjusted);
-            if (defaultSink() != kSink) throw std::runtime_error("Equalizer did not become the default sink");
+            test.updateGain(3.0, -20);
+            if (defaultSink() != (test.smart() ? selected.name : kSink))
+                throw std::runtime_error("Equalizer chose the wrong system output");
+            if (test.smart() && sinkState(kSink).volumes.first() != "65536")
+                throw std::runtime_error("Transparent filter applies a second volume reduction");
+            if (test.legacyVolumeManaged() && sinkState(selected.name).volumes.first() != "65536")
+                throw std::runtime_error("Legacy filter still applies a second volume reduction");
             test.stop();
             if (defaultSink() != before) throw std::runtime_error("Original output was not restored");
+            const auto volumeAfter = sinkState(selected.name);
+            if (volumeAfter.volumes != volumeBefore.volumes || volumeAfter.muted != volumeBefore.muted)
+                throw std::runtime_error("Original output volume was not restored");
             qInfo("Audio routing self-test passed using %s", qPrintable(selected.description));
             return 0;
         } catch (const std::exception &error) {

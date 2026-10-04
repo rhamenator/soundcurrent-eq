@@ -24,6 +24,16 @@ def node_id(name):
     return None
 
 
+def sink_volume(name):
+    sinks = json.loads(run("pactl", "--format=json", "list", "sinks",
+                           capture_output=True, text=True).stdout)
+    for sink in sinks:
+        if sink["name"] == name:
+            return [sink["volume"][channel]["value"]
+                    for channel in sink["channel_map"].split(",")]
+    raise RuntimeError(f"Missing output device {name}")
+
+
 def capture(tone, destination, sink):
     with destination.open("wb") as output:
         recorder = subprocess.Popen(
@@ -162,6 +172,18 @@ def main():
             if not 5.0 < gain_change < 7.0:
                 raise RuntimeError("Output gain did not raise the processed signal")
 
+            for multiplier, expected_db in ((1.0, 0.0), (10 ** (6 / 20), 6.0)):
+                controls = (f'{{ params = [ "left_output_gain:Mult" {multiplier:.8f} '
+                            f'"right_output_gain:Mult" {multiplier:.8f} ] }}')
+                run("pw-cli", "set-param", str(eq_id), "Props", controls,
+                    stdout=subprocess.DEVNULL)
+                measured = capture(directory / "tone-1000.wav",
+                                   directory / f"live-gain-{expected_db}.raw", sink)
+                change = 20 * math.log10(measured / flat)
+                if abs(change - expected_db) > 1.0:
+                    raise RuntimeError("A direct post-gain change did not take effect")
+                print(f"Immediate post gain: {change:+.1f} dB")
+
             for position in (-100, -50, 100):
                 balance_controls = run(str(binary), "--dump-preset-controls", "Flat", "0", str(position),
                                        capture_output=True, text=True,
@@ -176,6 +198,19 @@ def main():
                 if abs(actual_ratio - expected_ratio) > 0.05:
                     raise RuntimeError(f"Balance {position} changed channels by the wrong amount")
                 print(f"Balance {position:+d}: left {left:.0f}, right {right:.0f} RMS")
+
+            run("pactl", "set-sink-volume", sink, "44%")
+            original_volume = sink_volume(sink)
+            guardian = subprocess.Popen(
+                [str(binary), "--volume-guardian", sink,
+                 ",".join(map(str, original_volume)), "0"],
+                stdin=subprocess.PIPE,
+            )
+            run("pactl", "set-sink-volume", sink, "100%")
+            guardian.stdin.close()
+            if guardian.wait(timeout=5) != 0 or sink_volume(sink) != original_volume:
+                raise RuntimeError("Unexpected-exit volume guard did not restore the output")
+            print("Unexpected-exit volume guard restored the output")
         finally:
             if pipewire is not None:
                 pipewire.terminate()
