@@ -50,7 +50,15 @@ try {
     & "$stage\soundcurrent-dsp-test.exe"
     if ($LASTEXITCODE -ne 0) { throw 'DSP test failed' }
     $env:QT_QPA_PLATFORM = 'offscreen'
-    $ui = Start-Process "$stage\soundcurrent-eq.exe" -ArgumentList '--ui-self-test' -PassThru -Wait
+    $uiLog = Join-Path $root 'build-windows-native\ui-self-test.log'
+    $ui = Start-Process "$stage\soundcurrent-eq.exe" -ArgumentList '--ui-self-test' -PassThru -RedirectStandardError $uiLog
+    if (!$ui.WaitForExit(90000)) {
+        Stop-Process -Id $ui.Id -Force
+        Get-Content $uiLog -ErrorAction SilentlyContinue
+        throw 'Shared UI test timed out'
+    }
+    $ui.Refresh()
+    Get-Content $uiLog -ErrorAction SilentlyContinue
     Remove-Item Env:\QT_QPA_PLATFORM
     if ($ui.ExitCode -ne 0) { throw "Shared UI test failed: $($ui.ExitCode)" }
     Remove-Item "$stage\soundcurrent-dsp-test.exe"

@@ -18,6 +18,8 @@
 #include <QDoubleSpinBox>
 #include <QElapsedTimer>
 #include <QFile>
+#include <QFileDialog>
+#include <QCryptographicHash>
 #include <QFileInfo>
 #include <QFont>
 #include <QGroupBox>
@@ -144,7 +146,7 @@ const QVector<SpeakerProfile> &speakerProfiles() {
                     throw std::runtime_error("Speaker filter is outside conservative bounds");
                 profile.filters.append(band);
             }
-            if (profile.filters.isEmpty() || profile.filters.size() > kProcessingBands - kMaxBands)
+            if (profile.filters.isEmpty() || profile.filters.size() > 16)
                 throw std::runtime_error("Invalid speaker correction filter count");
             result.append(profile);
         }
@@ -1289,6 +1291,44 @@ QString presetsPath() {
     return QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation) + "/presets.json";
 }
 
+struct AmplifierProfile {
+    QString id, name, source, conditions;
+    Bands filters;
+    QJsonObject json;
+};
+std::optional<AmplifierProfile> parseAmplifierProfile(const QJsonObject &json) {
+    if (json.value("schema").toInt() != 1) return std::nullopt;
+    AmplifierProfile profile;
+    profile.name = json.value("model").toString().trimmed();
+    profile.source = json.value("measurementSource").toString();
+    profile.conditions = json.value("conditions").toString().trimmed();
+    const QUrl source(profile.source);
+    if (profile.name.isEmpty() || profile.name.size() > 120 || profile.conditions.isEmpty() ||
+        profile.conditions.size() > 500 || profile.source.size() > 2048 ||
+        !source.isValid() || source.scheme() != "https" || source.host().isEmpty()) return std::nullopt;
+    for (const auto &value : json.value("filters").toArray()) {
+        const auto f = value.toObject();
+        const auto type = f.value("type").toString();
+        using T = soundcurrent::FilterType;
+        if (type != "PK" && type != "LS" && type != "HS") return std::nullopt;
+        Band band{f.value("frequency").toDouble(-1), f.value("gain").toDouble(999), f.value("q").toDouble(-1),
+                  type == "LS" ? T::LowShelf : type == "HS" ? T::HighShelf : T::Peaking};
+        if (!std::isfinite(band.frequency) || !std::isfinite(band.gain) || !std::isfinite(band.q) ||
+            band.frequency < 20 || band.frequency > 20000 || std::abs(band.gain) > 6 || band.q < 0.1 || band.q > 6)
+            return std::nullopt;
+        profile.filters.append(band);
+    }
+    if (profile.filters.isEmpty() || profile.filters.size() > 16) return std::nullopt;
+    profile.json = json;
+    profile.id = QString::fromLatin1(QCryptographicHash::hash(QJsonDocument(json).toJson(QJsonDocument::Compact),
+                                                            QCryptographicHash::Sha256).toHex());
+    return profile;
+}
+QString amplifierProfilesPath() {
+    if (qApp->arguments().contains("--ui-self-test")) return QFileInfo(QSettings().fileName()).absolutePath() + "/amplifiers.json";
+    return QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation) + "/amplifiers.json";
+}
+
 class CurveWidget : public QWidget {
 public:
     std::function<void(int)> onSelect;
@@ -1850,6 +1890,26 @@ public:
         speakerLayout->addWidget(speakerHelp);
         connect(speakerDetails, &QPushButton::clicked, this, [this] { showSpeakerDetails(); });
         root->addWidget(speakerBox);
+        auto *ampRow = new QHBoxLayout;
+        ampRow->addWidget(new QLabel("Amplifier / receiver"));
+        ampCombo_ = new PresetComboBox;
+        ampCombo_->setAccessibleName("Amplifier model profile");
+        ampCombo_->addItem("None — use my own EQ", QString());
+        loadAmplifierProfiles();
+        for (const auto &profile : amplifierProfiles_) ampCombo_->addItem(profile.name, profile.id);
+        ampCombo_->setCurrentIndex(std::max(0, ampCombo_->findData(QSettings().value("amplifierModelId").toString())));
+        ampRow->addWidget(ampCombo_, 1);
+        ampImport_ = new QPushButton("Import measured profile");
+        ampRow->addWidget(ampImport_);
+        auto *ampDetails = new QPushButton("Amp details");
+        ampRow->addWidget(ampDetails);
+        speakerLayout->addLayout(ampRow);
+        auto *ampHelp = new QLabel("Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.");
+        ampHelp->setWordWrap(true);
+        speakerLayout->addWidget(ampHelp);
+        connect(ampImport_, &QPushButton::clicked, this, [this] { importAmplifierProfile(); });
+        connect(ampDetails, &QPushButton::clicked, this, [this] { showAmplifierDetails(); });
+
 
 
         auto *inputBox = new QGroupBox("Microphone");
@@ -2101,6 +2161,11 @@ public:
             QSettings().setValue("speakerModelId", speakerCombo_->currentData());
             syncBandControls(); applyChanges(); commitChange();
         });
+        connect(ampCombo_, &QComboBox::currentIndexChanged, this, [this] {
+            recordChange(ampCombo_);
+            QSettings().setValue("amplifierModelId", ampCombo_->currentData());
+            syncBandControls(); applyChanges(); commitChange();
+        });
         connect(save, &QPushButton::clicked, this, [this] { savePreset(); });
         connect(reset, &QPushButton::clicked, this, [this] { presetCombo_->setCurrentText("Flat"); });
         connect(lockButton_, &QPushButton::toggled, this, [this, startEnabled](bool locked) {
@@ -2259,14 +2324,14 @@ private:
     struct EqSnapshot {
         Bands bands;
         QString preset;
-        QString speaker;
+        QString speaker, amplifier;
         int selected = 0;
         int gain = 0;
         int balance = 0;
     };
 
     EqSnapshot snapshot() const {
-        return {bands_, presetCombo_->currentText(), speakerCombo_->currentData().toString(), selected_, outputGain_->value(), balance_->value()};
+        return {bands_, presetCombo_->currentText(), speakerCombo_->currentData().toString(), ampCombo_->currentData().toString(), selected_, outputGain_->value(), balance_->value()};
     }
 
     void recordChange(QObject *source) {
@@ -2291,6 +2356,7 @@ private:
         {
             const QSignalBlocker presetBlock(presetCombo_);
             const QSignalBlocker speakerBlock(speakerCombo_);
+            const QSignalBlocker amplifierBlock(ampCombo_);
             const QSignalBlocker countBlock(countBox_);
             const QSignalBlocker gainBlock(outputGain_);
             const QSignalBlocker balanceBlock(balance_);
@@ -2300,6 +2366,8 @@ private:
             presetCombo_->setCurrentText(previous.preset);
             speakerCombo_->setCurrentIndex(std::max(0, speakerCombo_->findData(previous.speaker)));
             QSettings().setValue("speakerModelId", previous.speaker);
+            ampCombo_->setCurrentIndex(std::max(0, ampCombo_->findData(previous.amplifier)));
+            QSettings().setValue("amplifierModelId", previous.amplifier);
             outputGain_->setValue(previous.gain);
             balance_->setValue(previous.balance);
             rebuildBandControls();
@@ -2327,6 +2395,8 @@ private:
         balance_->setEnabled(editable);
         presetCombo_->setEnabled(editable);
         speakerCombo_->setEnabled(editable);
+        ampCombo_->setEnabled(editable);
+        ampImport_->setEnabled(editable);
         savePresetButton_->setEnabled(editable);
         resetButton_->setEnabled(editable);
         countBox_->setEnabled(editable);
@@ -2696,8 +2766,11 @@ private:
     }
     Bands speakerCorrection() const {
         const auto id = speakerCombo_->currentData().toString();
-        for (const auto &p : speakerProfiles()) if (p.id == id) return p.filters;
-        return {};
+        Bands correction;
+        for (const auto &p : speakerProfiles()) if (p.id == id) correction = p.filters;
+        const auto amplifier = ampCombo_->currentData().toString();
+        for (const auto &p : amplifierProfiles_) if (p.id == amplifier) correction.append(p.filters);
+        return correction;
     }
     Bands processingBands() const {
         auto result = bands_;
@@ -2705,6 +2778,62 @@ private:
         result.append(speakerCorrection());
         return result;
     }
+    void loadAmplifierProfiles() {
+        QFile file(amplifierProfilesPath());
+        if (!file.open(QIODevice::ReadOnly) || file.size() > 2 * 1024 * 1024) return;
+        const auto profiles = QJsonDocument::fromJson(file.readAll()).array();
+        for (const auto &value : profiles) {
+            if (amplifierProfiles_.size() >= 32) break;
+            const auto parsed = parseAmplifierProfile(value.toObject());
+            if (parsed) amplifierProfiles_.append(*parsed);
+        }
+    }
+    void importAmplifierProfile() {
+        const auto path = QFileDialog::getOpenFileName(this, "Import measured amplifier correction", {}, "Correction profile (*.json)");
+        if (path.isEmpty()) return;
+        QFile file(path);
+        if (!file.open(QIODevice::ReadOnly) || file.size() > 65536) { showError("Profile must be readable and smaller than 64 KiB."); return; }
+        const auto profile = parseAmplifierProfile(QJsonDocument::fromJson(file.readAll()).object());
+        if (!profile) { showError("Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README."); return; }
+        QMessageBox preview(QMessageBox::Question, "Apply amplifier correction?",
+                            profile->name + "\n\nMeasurement conditions: " + profile->conditions +
+                            "\nSource: " + profile->source + "\n\nApply only if these conditions match your system.",
+                            QMessageBox::Apply | QMessageBox::Cancel, this);
+        preview.setTextFormat(Qt::PlainText);
+        if (preview.exec() != QMessageBox::Apply) return;
+        int index = ampCombo_->findData(profile->id);
+        if (index < 0) {
+            if (amplifierProfiles_.size() >= 32) { showError("Maximum of 32 amplifier profiles reached."); return; }
+            auto proposed = amplifierProfiles_; proposed.append(*profile);
+            QJsonArray array; for (const auto &p : proposed) array.append(p.json);
+            const auto destination = amplifierProfilesPath();
+            if (!QDir().mkpath(QFileInfo(destination).absolutePath())) { showError("Cannot create amplifier profile folder."); return; }
+            QSaveFile save(destination);
+            if (!save.open(QIODevice::WriteOnly)) { showError("Cannot save amplifier profile."); return; }
+            save.setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner);
+            save.write(QJsonDocument(array).toJson());
+            if (!save.commit()) { showError("Cannot finish saving amplifier profile."); return; }
+            amplifierProfiles_ = proposed;
+            ampCombo_->addItem(profile->name, profile->id);
+            index = ampCombo_->count() - 1;
+        }
+        ampCombo_->setCurrentIndex(index);
+    }
+    void showAmplifierDetails() {
+        const auto id = ampCombo_->currentData().toString();
+        for (const auto &p : amplifierProfiles_) if (p.id == id) {
+            QMessageBox details(QMessageBox::Information, "Amplifier profile details",
+                p.name + "\nConditions: " + p.conditions + "\nSource: " + p.source +
+                "\n\nCorrection filters:\n" + QString::fromUtf8(QJsonDocument(p.json.value("filters").toArray()).toJson()),
+                QMessageBox::Ok, this);
+            details.setTextFormat(Qt::PlainText); details.exec(); return;
+        }
+        QMessageBox::information(this, "Amplifier profile details", "No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.");
+    }
+    QVector<AmplifierProfile> amplifierProfiles_;
+    QComboBox *ampCombo_ = nullptr;
+    QPushButton *ampImport_ = nullptr;
+
     void showSpeakerDetails() {
         const auto id = speakerCombo_->currentData().toString();
         for (const auto &p : speakerProfiles()) if (p.id == id) {
@@ -3071,6 +3200,11 @@ int main(int argc, char **argv) {
     }
     QGuiApplication::setDesktopFileName("io.github.rhamenator.SoundCurrentEQ");
     app.setWindowIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ", QIcon(":/app.ico")));
+    if (app.arguments().size() == 3 && app.arguments()[1] == "--check-amplifier-profile") {
+        QFile file(app.arguments()[2]);
+        if (!file.open(QIODevice::ReadOnly) || file.size() > 65536) return 2;
+        return parseAmplifierProfile(QJsonDocument::fromJson(file.readAll()).object()) ? 0 : 2;
+    }
     if ((app.arguments().size() == 4 && app.arguments()[1] == "--dump-speaker-controls") ||
         (app.arguments().size() == 5 && app.arguments()[1] == "--dump-speaker-filter")) {
         const bool graph = app.arguments()[1] == "--dump-speaker-filter";
@@ -3201,6 +3335,14 @@ int main(int argc, char **argv) {
         QScrollArea { border: none; }
     )");
     if (app.arguments().contains("--ui-self-test")) {
+        QJsonObject ampTest{{"schema", 1}, {"model", "Test fixture"},
+            {"measurementSource", "https://example.invalid/test"}, {"conditions", "8 ohms; analog input; controls flat"},
+            {"filters", QJsonArray{QJsonObject{{"type", "HS"}, {"frequency", 8000}, {"gain", -1.0}, {"q", 0.707}}}}};
+        if (!parseAmplifierProfile(ampTest)) qFatal("Valid measured amplifier profile rejected");
+        ampTest.insert("conditions", "");
+        if (parseAmplifierProfile(ampTest)) qFatal("Amplifier profile without measurement conditions accepted");
+        ampTest.insert("conditions", "8 ohms"); ampTest.insert("filters", QJsonArray{});
+        if (parseAmplifierProfile(ampTest)) qFatal("Empty amplifier profile accepted");
         MainWindow testWindow(false);
         SpectrumMonitor spectrumTest(true);
         if (spectrumTest.interval() != 16) qFatal("Default level interval is not 16 ms");

@@ -34,6 +34,7 @@ jobs:
         shell: pwsh
         run: ./scripts/build-windows.ps1 -QtPrefix 'C:\Qt\6.12.0\msvc2022_64'
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
         with:
           name: windows-build
           path: |
@@ -42,3 +43,4 @@ jobs:
             dist/qtbase*.tar.xz
             build-windows-native/package/**
             build-windows-native/Release/*smoke.exe
+            build-windows-native/ui-self-test.log

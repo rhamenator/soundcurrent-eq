@@ -3,13 +3,14 @@
 SoundCurrent EQ is a native C++ desktop equalizer for Linux and Windows. It
 gives every app that plays through the default output the same adjustable sound
 profile. Both versions open with **Flat** selected and offer 34 listening
-presets, post gain, stereo balance, and background operation. The Windows
-preview currently has 15 fixed frequency bands and an overall output meter.
-The Linux version lets you choose 5 to 31 bands with editable gain, center
-frequency, and width (Q), save custom profiles, and display per-band levels.
-Linux also provides microphone tone controls and a speaker and room check
-that previews conservative playback EQ adjustments. Those additional features
-are still being ported to Windows.
+presets, post gain, stereo balance, and background operation. Both versions offer 5 to 31 bands with editable gain, center frequency and
+width (Q), saved custom profiles, colored per-band FFT meters, configurable
+refresh and peak markers, microphone tone controls, and speaker/room
+measurement with a preview before applying changes. Windows microphone EQ
+uses a separate second virtual cable so speaker processing can keep running.
+The shared interface also offers 18 measured speaker-model profiles and
+imported amplifier correction profiles. Hardware workflows are tested
+separately from the shared UI and DSP. See the testing notes for coverage.
 
 ![SoundCurrent EQ desktop window](docs/screenshot.png)
 
@@ -33,7 +34,7 @@ teal, amber, and red show increasing clipping risk. Set **Level refresh** from
 markers** to see a falling peak hold line on each indicator, including the
 overall bar. Peak markers start off; both choices are remembered. The timer
 uses precise scheduling, but
-actual display updates depend on when PipeWire supplies new audio. Very short
+actual display updates depend on when the audio backend supplies new audio. Very short
 intervals use more CPU. The peak readout turns amber or red as the estimated
 output approaches clipping.
 Boosting bands can lower overall loudness because the app makes room for those
@@ -46,8 +47,7 @@ for audible distortion as well as watching the display.
 
 Click the framed **Equalizer on/off** control to compare with normal audio.
 Closing the window keeps the EQ running in the background. **Quit app** unloads
-it and restores the normal output. PipeWire's built-in filters perform the
-audio processing; the C++ app manages the controls, devices, and level display.
+it and restores the normal output. Linux uses PipeWire filters; Windows uses the shared C++ DSP through WASAPI.
 
 ## Install
 
@@ -55,14 +55,9 @@ Download the package for your system from the [latest release](https://github.co
 
 ### Windows 10 and 11 (64-bit)
 
-The Windows build is a preview. Its current features are stereo playback EQ,
-34 presets, physical output selection and automatic output following, post
-gain, balance, bypass, lock/undo, wheel protection, an overall output meter,
-and closing to the notification area. It saves the current settings between
-launches. Adjustable band count/frequency/Q, named custom profiles, per-band
-meters with configurable refresh and peak markers, microphone EQ, and speaker
-calibration are currently Linux features; Windows does not yet have full
-feature parity.
+The Windows build is a preview using the same interface and controls as
+Linux. The installer bundles Qt and the C++ runtime; users do not need to
+install a development environment.
 
 The Windows installer installs the app for your user and adds shortcuts to
 the Start menu and desktop. The first Windows
@@ -77,16 +72,22 @@ step requires administrator approval; the equalizer itself runs as your user.
    setup. An existing standard VB-CABLE installation is detected and skipped.
 2. Restart Windows after installing the driver. If you skipped or cancelled
    that step, retry using **Install VB-CABLE** in the SoundCurrent EQ Start
-   menu folder or **Set up audio driver** in the app. Silent app installations
+   menu folder or **Audio driver setup** in the app. Silent app installations
    do not install or elevate the driver.
-3. In Windows sound settings, set **CABLE Input (VB-Audio Virtual Cable)** as
-   the default output. Keep your speakers or headphones selected as the app's
-   physical output. The **Automatic** choice follows newly connected output
-   devices; choose a named output to pin it.
-4. Launch SoundCurrent EQ and play audio. Use the framed **Equalizer on/off**
-   control to compare with unprocessed playback. **Quit app** unloads the EQ;
-   Windows must stop sending audio to CABLE Input before the app can quit, so
-   the app guides you to select your speakers in sound settings if needed.
+3. Launch SoundCurrent EQ. It routes default playback through the standard
+   cable while processing audio to the selected physical speakers or headphones.
+   The **Automatic** output choice follows newly connected output devices;
+   choose a named output to pin it.
+4. Click the framed **Equalizer on/off** control to compare with normal playback.
+   **Quit app** restores the default output and unloads the EQ. Closing the
+   window keeps processing in the notification area. Later changes you make
+   to Windows defaults are preserved when quitting.
+5. For simultaneous microphone EQ, install a separate second signed cable
+   yourself, such as VB-CABLE A/B. These paid packages are not bundled. Select
+   its input in **Microphone cable**; recording applications use the matching
+   cable output, which the app selects as the default recording endpoint while
+   microphone EQ is enabled. The standard playback cable cannot be reused for
+   microphone processing. Disable mic EQ or quit to restore the physical mic.
 
 The equalizer works with stereo playback. The Windows build currently uses
 the Windows shared-mode audio path and adapts to the selected endpoint's mix
@@ -98,13 +99,19 @@ If useful, donate/pay for a license; professional deployments may require
 paid licenses. The bundled archive retains the vendor's original readme and
 license. Uninstalling the EQ keeps this shared driver installed.
 
-For source builds on Ubuntu 24.04 or newer, install `cmake`, `ninja-build`,
-`mingw-w64`, `curl`, and `nsis`, then run `./scripts/build-windows.sh`. The
-build downloads the official standard driver archive over HTTPS and checks
-its pinned SHA-256. At installation, the archive hash and the vendor setup's
-Windows signature are checked before requesting elevation. Driver setup
-works offline when Windows can validate the signature. The installer and
-its SHA-256 file appear in `dist/`.
+For source builds, use Windows with Visual Studio 2022 C++ tools, CMake,
+7-Zip, and NSIS. In PowerShell, run:
+
+```powershell
+./scripts/install-windows-qt.ps1
+./scripts/build-windows.ps1 -QtPrefix C:\Qt\6.12.0\msvc2022_64
+```
+
+SDK, source and driver archives are fetched from their official HTTPS hosts
+and checked against pinned SHA-256 values. The driver setup's Windows
+signature is checked before requesting elevation. Setup works offline when
+Windows can validate the signature. The app installer, Qt corresponding source,
+and checksum files are written to `dist/`.
 
 For the Windows integration checks, see [Windows testing](docs/windows-testing.md).
 
@@ -149,6 +156,64 @@ For a user-only install when the runtime dependencies are already present:
 This extracts the package under `~/.local/share/soundcurrent-eq` and creates a
 launcher in `~/.local/share/applications`. It does not use administrator access
 or install missing dependencies.
+
+## Speaker and amplifier profiles
+
+**Speaker model correction** is an independent layer added to the listening
+preset and manual bands. Selecting **Flat** resets the listening bands;
+selecting **None** removes the model correction. You can add **Bass Boost**,
+**Loudness**, or your own low-frequency adjustments after choosing a model.
+Speaker and amplifier selections participate in Undo and Lock EQ. The curve
+and automatic headroom reflect the complete set of filters.
+
+The offline catalog includes JBL 305P/306P/308P Mark II, Kali LP-6v2/LP-8v2,
+ADAM T5V/T7V, Yamaha HS5/HS7/HS8, Edifier MR4, KRK RoKit 5 G4, KEF Q150/Q350,
+ELAC Debut 2.0 B6.2 and Debut Reference DBR-62, Wharfedale Diamond 12.1, and
+the **original Sony SS-CS5**. The Sony entry explicitly excludes **SS-CS5M2**:
+no unverified substitute curve is supplied for that newer model.
+
+These are conservative adaptations of [Spinorama AutoEQ](https://github.com/pierreaubert/spinorama)
+with attribution to the original measurements. Positive filters below 80 Hz
+are omitted, individual gains are capped at ±6 dB, and Q is capped at 6.
+**Profile details** shows the applied filters and source links. They correct
+published model response, without assuming the same room, positioning,
+amplifier, unit variation, or microphone response as the original measurement.
+Source files, provenance and exact upstream revision are in `data/speakers/`.
+
+### Imported amplifier measurements
+
+**Amplifier / receiver** defaults to None. No amplifier response is inferred
+from a marketing frequency range. In particular, the Pyle PDA29BU specification
+of 20 Hz–20 kHz is not a numerical correction curve. An electrical response
+measurement can avoid microphone bias for amplifier correction, but its
+speaker load, input path and tone settings must match the intended use.
+
+Use **Import measured profile** to load a JSON file containing correction
+filters derived from a published electrical measurement. The preview shows
+the claimed source and conditions before applying it. The app validates file
+size and numeric limits; it does not authenticate the source or measurement.
+Imported profiles are stored locally. No network access or microphone recording
+is needed to apply them.
+
+Profile schema (illustrative values only; not a measured model):
+
+```json
+{
+  "schema": 1,
+  "model": "Exact amplifier model and revision",
+  "measurementSource": "https://publisher.example/exact-measurement",
+  "conditions": "8-ohm resistive load; RCA input; tone controls centered; 1 W",
+  "filters": [
+    {"type": "HS", "frequency": 8000, "gain": -1.0, "q": 0.707}
+  ]
+}
+```
+
+Use 1–16 `PK` (peaking), `LS` (low shelf), or `HS` (high shelf) filters,
+frequencies from 20–20000 Hz, gain within ±6 dB, and Q from 0.1–6.
+Files must be smaller than 64 KiB; at most 32 imported profiles are retained.
+Gain is a **correction**, not the measured response itself. This EQ addresses
+frequency response; it cannot remove amplifier noise, clipping or distortion.
 
 ## Use
 
