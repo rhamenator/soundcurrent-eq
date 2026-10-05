@@ -17,6 +17,7 @@
 #include <wrl/client.h>
 
 #include <algorithm>
+#include <chrono>
 #include <cmath>
 #include <cstdint>
 #include <cstring>
@@ -174,16 +175,33 @@ std::vector<AudioEndpoint> windowsAudioEndpoints(bool capture) {
         check(properties->GetValue(PKEY_Device_FriendlyName, &name), "Read audio endpoint name");
         endpoint.name = name.vt == VT_LPWSTR ? name.pwszVal : L"Unnamed audio endpoint";
         PropVariantClear(&name);
+        PROPVARIANT interfaceName;
+        PropVariantInit(&interfaceName);
+        if (SUCCEEDED(properties->GetValue(PKEY_DeviceInterface_FriendlyName, &interfaceName)) &&
+            interfaceName.vt == VT_LPWSTR) {
+            const std::wstring interfaceText = interfaceName.pwszVal;
+            endpoint.virtualCable = interfaceText.find(L"VB-Audio") != std::wstring::npos;
+        }
+        PropVariantClear(&interfaceName);
+        ComPtr<IAudioClient> audio;
+        if (SUCCEEDED(device->Activate(__uuidof(IAudioClient), CLSCTX_ALL, nullptr,
+                                       reinterpret_cast<void **>(audio.GetAddressOf())))) {
+            WAVEFORMATEX *mix = nullptr;
+            if (SUCCEEDED(audio->GetMixFormat(&mix))) {
+                endpoint.channels = mix->nChannels;
+                CoTaskMemFree(mix);
+            }
+        }
         result.push_back(std::move(endpoint));
     }
     return result;
 }
 
-std::wstring windowsDefaultOutputId() {
+std::wstring windowsDefaultEndpointId(bool capture, int role) {
     Apartment apartment;
     const auto devices = enumerator();
     ComPtr<IMMDevice> device;
-    check(devices->GetDefaultAudioEndpoint(eRender, eMultimedia, device.GetAddressOf()),
+    check(devices->GetDefaultAudioEndpoint(capture ? eCapture : eRender, static_cast<ERole>(role), device.GetAddressOf()),
           "Read default output endpoint");
     LPWSTR id = nullptr;
     check(device->GetId(&id), "Read default output ID");
@@ -192,17 +210,38 @@ std::wstring windowsDefaultOutputId() {
     return result;
 }
 
+std::wstring windowsDefaultOutputId() { return windowsDefaultEndpointId(false); }
+std::wstring windowsDefaultInputId() { return windowsDefaultEndpointId(true); }
+
+std::string WindowsBridge::error() const {
+    std::lock_guard lock(stateMutex_);
+    return error_;
+}
+std::vector<std::int16_t> WindowsBridge::takeMeterPcm() {
+    std::lock_guard lock(meterMutex_);
+    std::vector<std::int16_t> result;
+    result.swap(meterPcm_);
+    return result;
+}
+
 WindowsBridge::~WindowsBridge() { stop(); }
 
-bool WindowsBridge::start(std::wstring captureId, std::wstring outputId) {
+bool WindowsBridge::start(std::wstring captureId, std::wstring outputId, bool microphone) {
     if (captureId.empty() || outputId.empty() || worker_.joinable()) return false;
+    { std::lock_guard lock(stateMutex_); ready_ = false; error_.clear(); }
     stopRequested_ = false;
-    running_ = true;
+    running_ = false;
     worker_ = std::thread([this, captureId = std::move(captureId),
-                           outputId = std::move(outputId)]() mutable {
-        run(std::move(captureId), std::move(outputId));
+                           outputId = std::move(outputId), microphone]() mutable {
+        run(std::move(captureId), std::move(outputId), microphone);
     });
-    return true;
+    std::unique_lock lock(stateMutex_);
+    const bool ready = initialized_.wait_for(lock, std::chrono::seconds(5), [this] {
+        return ready_ || !error_.empty();
+    }) && ready_;
+    lock.unlock();
+    if (!ready) stop();
+    return ready;
 }
 
 void WindowsBridge::stop() {
@@ -214,7 +253,8 @@ void WindowsBridge::stop() {
 
 bool WindowsBridge::setProfile(std::span<const EqBand> bands, double postGainDb,
                                int balancePercent, bool enabled) {
-    if (bands.size() > 31) return false;
+    StereoEqualizer validator(48000);
+    if (!validator.setProfile(bands, postGainDb, balancePercent, enabled)) return false;
     Profile proposed;
     proposed.count = bands.size();
     std::copy(bands.begin(), bands.end(), proposed.bands.begin());
@@ -227,7 +267,7 @@ bool WindowsBridge::setProfile(std::span<const EqBand> bands, double postGainDb,
     return true;
 }
 
-void WindowsBridge::run(std::wstring captureId, std::wstring outputId) {
+void WindowsBridge::run(std::wstring captureId, std::wstring outputId, bool microphone) {
     try {
         Apartment apartment;
         const auto devices = enumerator();
@@ -244,7 +284,16 @@ void WindowsBridge::run(std::wstring captureId, std::wstring outputId) {
                                      reinterpret_cast<void **>(outputAudio.GetAddressOf())),
               "Open speaker render stream");
         auto captureFormat = stereoFloat48k();
-        checkFormat(captureAudio.Get(), &captureFormat, "Cable recording endpoint");
+        if (microphone) {
+            WAVEFORMATEX *mix = nullptr;
+            check(captureAudio->GetMixFormat(&mix), "Read microphone mix format");
+            if (mix->nChannels == 1) {
+                captureFormat.nChannels = 1;
+                captureFormat.nBlockAlign = 4;
+                captureFormat.nAvgBytesPerSec = 48000 * 4;
+            }
+            CoTaskMemFree(mix);
+        } else checkFormat(captureAudio.Get(), &captureFormat, "Cable recording endpoint");
         WAVEFORMATEX *mixFormatRaw = nullptr;
         check(outputAudio->GetMixFormat(&mixFormatRaw), "Read speaker mix format");
         std::unique_ptr<WAVEFORMATEX, decltype(&CoTaskMemFree)> outputFormat(mixFormatRaw, CoTaskMemFree);
@@ -255,8 +304,9 @@ void WindowsBridge::run(std::wstring captureId, std::wstring outputId) {
         const auto sampleType = outputSampleType(outputFormat.get());
         OutputVolumeLease volume(outputDevice.Get());
         constexpr REFERENCE_TIME bufferTime = 2000000; // 200 ms, in 100 ns units
-        check(captureAudio->Initialize(AUDCLNT_SHAREMODE_SHARED, 0, bufferTime, 0,
-                                        &captureFormat, nullptr), "Initialize cable capture");
+        check(captureAudio->Initialize(AUDCLNT_SHAREMODE_SHARED,
+                                        microphone ? AUDCLNT_STREAMFLAGS_AUTOCONVERTPCM | AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY : 0,
+                                        bufferTime, 0, &captureFormat, nullptr), "Initialize cable capture");
         check(outputAudio->Initialize(AUDCLNT_SHAREMODE_SHARED, 0, bufferTime, 0,
                                        outputFormat.get(), nullptr), "Initialize speaker output");
         UINT32 captureBufferFrames = 0, outputBufferFrames = 0;
@@ -280,7 +330,9 @@ void WindowsBridge::run(std::wstring captureId, std::wstring outputId) {
         HANDLE mmcss = AvSetMmThreadCharacteristicsW(L"Pro Audio", &mmcssTask);
         check(outputAudio->Start(), "Start speaker output");
         check(captureAudio->Start(), "Start cable capture");
-        if (status_) status_(L"Processing cable audio through the selected speakers");
+        { std::lock_guard lock(stateMutex_); ready_ = true; running_ = true; }
+        initialized_.notify_all();
+        if (status_) status_(L"Processing audio through the selected output");
         while (!stopRequested_) {
             Profile pending;
             bool changed = false;
@@ -308,8 +360,21 @@ void WindowsBridge::run(std::wstring captureId, std::wstring outputId) {
                     throw std::runtime_error("Cable packet exceeds its capture buffer");
                 const std::size_t samples = static_cast<std::size_t>(packetFrames) * 2;
                 if (flags & AUDCLNT_BUFFERFLAGS_SILENT) std::fill_n(scratch.data(), samples, 0.0f);
-                else std::memcpy(scratch.data(), data, samples * sizeof(float));
+                else if (captureFormat.nChannels == 1) {
+                    const auto *mono = reinterpret_cast<const float *>(data);
+                    for (UINT32 i = 0; i < packetFrames; ++i)
+                        scratch[i * 2] = scratch[i * 2 + 1] = mono[i];
+                } else std::memcpy(scratch.data(), data, samples * sizeof(float));
                 peak_ = eq.process(scratch.data(), packetFrames);
+                if (!microphone && meterMutex_.try_lock()) {
+                    // Only the visible UI consumes this bounded tap. Never block audio.
+                    constexpr std::size_t limit = 32768;
+                    if (meterPcm_.size() + samples > limit) meterPcm_.clear();
+                    if (samples <= limit) for (std::size_t i = 0; i < samples; ++i)
+                        meterPcm_.push_back(static_cast<std::int16_t>(std::lround(
+                            std::clamp(scratch[i], -1.0f, 1.0f) * 32767.0f)));
+                    meterMutex_.unlock();
+                }
                 for (UINT32 frame = 0; frame < packetFrames; ++frame) {
                     if (queued == ringCapacity) {
                         readPosition = (readPosition + 1) % ringCapacity;
@@ -360,6 +425,8 @@ void WindowsBridge::run(std::wstring captureId, std::wstring outputId) {
         if (mmcss) AvRevertMmThreadCharacteristics(mmcss);
         if (status_) status_(L"Equalizer stopped; normal output is available");
     } catch (const std::exception &error) {
+        { std::lock_guard lock(stateMutex_); error_ = error.what(); }
+        initialized_.notify_all();
         if (status_) status_(L"Audio bridge error: " + widen(error.what()));
     }
     running_ = false;

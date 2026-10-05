@@ -7,11 +7,19 @@
 
 namespace soundcurrent {
 
+enum class FilterType { Peaking, LowShelf, HighShelf, HighPass };
+
 struct EqBand {
     double frequency;
     double gainDb;
     double q;
+    FilterType type = FilterType::Peaking;
 };
+
+inline constexpr std::size_t kMaxProcessingBands = 64;
+struct FilterCoefficients { double b0, b1, b2, a1, a2; };
+FilterCoefficients filterCoefficients(const EqBand &band, int sampleRate);
+double filterResponseDb(const EqBand &band, int sampleRate, double frequency);
 
 // Call setProfile and process from the same audio thread. A UI thread should
 // pass profile updates to that thread between blocks.
@@ -32,7 +40,7 @@ private:
         void reset() { z1 = z2 = 0.0; }
     };
 
-    static constexpr std::size_t kMaxBands = 31;
+    static constexpr std::size_t kMaxBands = kMaxProcessingBands;
     int sampleRate_;
     std::array<std::array<Biquad, kMaxBands>, 2> filters_{};
     std::size_t count_ = 0;

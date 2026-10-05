@@ -1,7 +1,13 @@
 // SPDX-License-Identifier: GPL-3.0-only
 // Copyright (C) 2026 rhamenator
 
+#include "dsp.h"
+#ifdef _WIN32
+#include "windows_audio.h"
+#endif
 #include <QApplication>
+#include <QDesktopServices>
+#include <QUrl>
 #include <QAbstractSpinBox>
 #include <QCheckBox>
 #include <QCloseEvent>
@@ -69,8 +75,12 @@
 #include <optional>
 #include <stdexcept>
 #include <csignal>
+#include <future>
+#include <cstring>
+#ifndef Q_OS_WIN
 #include <sys/prctl.h>
 #include <unistd.h>
+#endif
 
 namespace {
 
@@ -81,6 +91,7 @@ constexpr auto kMicInput = "soundcurrent_mic_input";
 constexpr int kMinBands = 5;
 constexpr int kDefaultBands = 15;
 constexpr int kMaxBands = 31;
+constexpr int kProcessingBands = int(soundcurrent::kMaxProcessingBands);
 constexpr std::array<int, 31> kIsoFrequencies = {
     20, 25, 31, 40, 50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630,
     800, 1000, 1250, 1600, 2000, 2500, 3150, 4000, 5000, 6300, 8000, 10000,
@@ -92,8 +103,55 @@ struct Band {
     double frequency = 1000.0;
     double gain = 0.0;
     double q = 1.0;
+    soundcurrent::FilterType type = soundcurrent::FilterType::Peaking;
 };
 using Bands = QVector<Band>;
+
+struct SpeakerProfile {
+    QString id, name, attribution;
+    QStringList links;
+    Bands filters;
+};
+const QVector<SpeakerProfile> &speakerProfiles() {
+    static const QVector<SpeakerProfile> profiles = [] {
+        QFile file(":/speakers/profiles.json");
+        if (!file.open(QIODevice::ReadOnly)) throw std::runtime_error("Speaker profile resource is missing");
+        const auto root = QJsonDocument::fromJson(file.readAll()).object();
+        if (root.value("schema").toInt() != 1) throw std::runtime_error("Unsupported speaker profile schema");
+        QVector<SpeakerProfile> result;
+        QStringList ids;
+        for (const auto &value : root.value("profiles").toArray()) {
+            const auto item = value.toObject();
+            SpeakerProfile profile;
+            profile.id = item.value("id").toString();
+            profile.name = item.value("name").toString();
+            if (profile.id == "Sony SS-CS5") profile.name += " (original; not SS-CS5M2)";
+            if (profile.id.isEmpty() || ids.contains(profile.id)) throw std::runtime_error("Invalid speaker identity");
+            ids.append(profile.id);
+            profile.attribution = item.value("measurement").toString() + " · " + item.value("measurementDate").toString();
+            profile.links.append(item.value("sourceUrl").toString());
+            for (const auto &link : item.value("measurementUrls").toArray()) profile.links.append(link.toString());
+            for (const auto &filter : item.value("filters").toArray()) {
+                const auto f = filter.toObject();
+                const auto type = f.value("type").toString();
+                using T = soundcurrent::FilterType;
+                if (type != "PK" && type != "LS" && type != "HS") throw std::runtime_error("Invalid speaker filter type");
+                Band band{f.value("frequency").toDouble(-1), f.value("gain").toDouble(999), f.value("q").toDouble(-1),
+                          type == "LS" ? T::LowShelf : type == "HS" ? T::HighShelf : T::Peaking};
+                if (!std::isfinite(band.frequency) || !std::isfinite(band.gain) || !std::isfinite(band.q) ||
+                    band.frequency < 20 || band.frequency > 20000 || std::abs(band.gain) > 6 ||
+                    band.q < 0.1 || band.q > 6 || (band.frequency < 80 && band.gain > 0))
+                    throw std::runtime_error("Speaker filter is outside conservative bounds");
+                profile.filters.append(band);
+            }
+            if (profile.filters.isEmpty() || profile.filters.size() > kProcessingBands - kMaxBands)
+                throw std::runtime_error("Invalid speaker correction filter count");
+            result.append(profile);
+        }
+        return result;
+    }();
+    return profiles;
+}
 
 double interpolate(const Bands &source, double frequency, bool forQ = false) {
     if (source.isEmpty()) return forQ ? 1.0 : 0.0;
@@ -142,6 +200,9 @@ struct Device {
     int priority = 0;
 };
 
+struct InputDevice : Device { int channels = 1; };
+
+#ifndef Q_OS_WIN
 QString command(const QString &program, const QStringList &arguments, int timeout = 5000) {
     QProcess process;
     process.start(program, arguments);
@@ -231,8 +292,6 @@ QList<Device> devices() {
     return result;
 }
 
-struct InputDevice : Device { int channels = 1; };
-
 QList<InputDevice> inputDevices() {
     QList<InputDevice> result;
     for (const auto &item : pactlList("sources")) {
@@ -277,27 +336,17 @@ void moveStreams(int fromIndex, const QString &toName) {
     }
 }
 
+#else
+QList<Device> devices();
+QList<InputDevice> inputDevices();
+QString defaultSink();
+QString defaultSource();
+#endif
+
 double responseDb(const Bands &bands, double frequency) {
-    constexpr double sampleRate = 48000.0;
-    const auto sampleAngle = 2.0 * std::numbers::pi * frequency / sampleRate;
-    const std::complex<double> z = std::polar(1.0, -sampleAngle);
-    double total = 0.0;
-    for (const auto &band : bands) {
-        if (band.gain == 0) continue;
-        const auto angle = 2.0 * std::numbers::pi * band.frequency / sampleRate;
-        const auto cosine = std::cos(angle);
-        const auto alpha = std::sin(angle) / (2.0 * band.q);
-        const auto amplitude = std::pow(10.0, band.gain / 40.0);
-        const auto b0 = 1.0 + alpha * amplitude;
-        const auto b1 = -2.0 * cosine;
-        const auto b2 = 1.0 - alpha * amplitude;
-        const auto a0 = 1.0 + alpha / amplitude;
-        const auto a1 = -2.0 * cosine;
-        const auto a2 = 1.0 - alpha / amplitude;
-        const auto numerator = b0 + b1 * z + b2 * z * z;
-        const auto denominator = a0 + a1 * z + a2 * z * z;
-        total += 20.0 * std::log10(std::abs(numerator / denominator));
-    }
+    double total = 0;
+    for (const auto &b : bands)
+        total += soundcurrent::filterResponseDb({b.frequency, b.gain, b.q, b.type}, 48000, frequency);
     return total;
 }
 
@@ -333,11 +382,18 @@ QString filterConfig(const QString &target, const Bands &bands, double outputGai
         nodes << QString("{ type = builtin name = %1_preamp label = linear control = { \"Mult\" = %2 \"Add\" = 0.0 } }")
                      .arg(channel, preamp);
         links << QString("{ output = \"%1_preamp:Out\" input = \"%1_band_1:In\" }").arg(channel);
-        for (int i = 0; i < kMaxBands; ++i) {
+        for (int i = 0; i < kProcessingBands; ++i) {
             const auto band = i < bands.size() ? bands[i] : Band{};
+            if (i < kMaxBands) {
             nodes << QString("{ type = builtin name = %1_band_%2 label = bq_peaking control = { \"Freq\" = %3 \"Q\" = %4 \"Gain\" = %5 } }")
                          .arg(channel).arg(i + 1).arg(band.frequency, 0, 'f', 1)
                          .arg(band.q, 0, 'f', 2).arg(band.gain, 0, 'f', 2);
+            } else {
+                const auto c = soundcurrent::filterCoefficients({band.frequency, band.gain, band.q, band.type}, 48000);
+                nodes << QString("{ type = builtin name = %1_band_%2 label = bq_raw control = { \"b0\" = %3 \"b1\" = %4 \"b2\" = %5 \"a0\" = 1 \"a1\" = %6 \"a2\" = %7 } }")
+                    .arg(channel).arg(i + 1).arg(c.b0, 0, 'g', 16).arg(c.b1, 0, 'g', 16)
+                    .arg(c.b2, 0, 'g', 16).arg(c.a1, 0, 'g', 16).arg(c.a2, 0, 'g', 16);
+            }
             if (i > 0)
                 links << QString("{ output = \"%1_band_%2:Out\" input = \"%1_band_%3:In\" }")
                              .arg(channel).arg(i).arg(i + 1);
@@ -345,7 +401,7 @@ QString filterConfig(const QString &target, const Bands &bands, double outputGai
         nodes << QString("{ type = builtin name = %1_output_gain label = linear control = { \"Mult\" = %2 \"Add\" = 0.0 } }")
                      .arg(channel, QString::number(postGain * factors[channelIndex], 'f', 8));
         links << QString("{ output = \"%1_band_%2:Out\" input = \"%1_output_gain:In\" }")
-                     .arg(channel).arg(kMaxBands);
+                     .arg(channel).arg(kProcessingBands);
     }
     const auto smartProperties = smartFilter
         ? QString("filter.smart = true filter.smart.target = { node.name = %1 }").arg(quote(target))
@@ -363,6 +419,7 @@ context.modules = [
     args = {
       node.description = "SoundCurrent EQ"
       media.name = "SoundCurrent EQ"
+      audio.rate = 48000
       audio.channels = 2
       audio.position = [ FL FR ]
       filter.graph = {
@@ -471,6 +528,7 @@ context.modules = [
            inputs.join(' '), outputs.join(' '), kMicInput, kMicSource, quote(target), smartProperties);
 }
 
+#ifndef Q_OS_WIN
 bool smartFiltersAvailable() {
     if (qEnvironmentVariableIsSet("SOUNDCURRENT_FORCE_LEGACY_FILTER")) return false;
     try {
@@ -493,6 +551,8 @@ int nodeId(const QString &name) {
     return -1;
 }
 
+#endif
+
 QString filterControls(const Bands &bands, double outputGainDb = 0.0, int balancePercent = 0) {
     QStringList controls;
     const auto factors = balanceFactors(balancePercent);
@@ -502,12 +562,22 @@ QString filterControls(const Bands &bands, double outputGainDb = 0.0, int balanc
     for (size_t channelIndex = 0; channelIndex < channels.size(); ++channelIndex) {
         const QString channel = channels[channelIndex];
         controls << quote(channel + "_preamp:Mult") << preamp;
-        for (int i = 0; i < kMaxBands; ++i) {
+        for (int i = 0; i < kProcessingBands; ++i) {
             const auto band = i < bands.size() ? bands[i] : Band{};
             const auto name = channel + QString("_band_%1:").arg(i + 1);
+            if (i < kMaxBands) {
             controls << quote(name + "Freq") << QString::number(band.frequency, 'f', 1)
                      << quote(name + "Q") << QString::number(band.q, 'f', 2)
                      << quote(name + "Gain") << QString::number(band.gain, 'f', 2);
+            } else {
+                const auto c = soundcurrent::filterCoefficients({band.frequency, band.gain, band.q, band.type}, 48000);
+                controls << quote(name + "b0") << QString::number(c.b0, 'g', 16)
+                         << quote(name + "b1") << QString::number(c.b1, 'g', 16)
+                         << quote(name + "b2") << QString::number(c.b2, 'g', 16)
+                         << quote(name + "a0") << "1"
+                         << quote(name + "a1") << QString::number(c.a1, 'g', 16)
+                         << quote(name + "a2") << QString::number(c.a2, 'g', 16);
+            }
         }
         controls << quote(channel + "_output_gain:Mult")
                  << QString::number(postGain * factors[channelIndex], 'f', 8);
@@ -523,6 +593,7 @@ QString gainControls(double outputGainDb, int balancePercent) {
              QString::number(postGain * factors[1], 'f', 8));
 }
 
+#ifndef Q_OS_WIN
 class AudioEngine {
 public:
     bool active() const { return process_.state() != QProcess::NotRunning; }
@@ -787,6 +858,10 @@ private:
     bool smart_ = false;
 };
 
+#else
+#include "windows_platform.inc"
+#endif
+
 constexpr int kCalibrationRate = 96000;
 constexpr std::array<int, 12> kCalibrationFrequencies = {
     20, 40, 63, 125, 250, 500, 1000, 2000, 4000, 8000, 16000, 20000
@@ -944,11 +1019,16 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
         if (levelDb < -54 || levelDb > -5) throw std::runtime_error("Test level is outside the allowed range");
         bool outputFound = false, inputFound = false;
         for (const auto &device : devices()) if (device.name == output) outputFound = true;
+#ifndef Q_OS_WIN
         if (output == kSink && nodeId(kSink) >= 0) outputFound = true;
+#else
+        if (output == kSink) { standardCable(false); outputFound = true; }
+#endif
         for (const auto &device : inputDevices()) if (device.name == input) inputFound = true;
         if (!outputFound || !inputFound) throw std::runtime_error("Selected audio device is unavailable");
         QTemporaryDir directory(QDir::tempPath() + "/soundcurrent-calibration-XXXXXX");
         if (!directory.isValid()) throw std::runtime_error("Could not create a private test folder");
+#ifndef Q_OS_WIN
         QProcess recorder;
         recorder.setProgram("parec");
         recorder.setArguments({"--raw", "-d", input, "--format=s16le", "--rate=96000",
@@ -988,6 +1068,44 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
                 throw std::runtime_error("Could not play test audio through the selected output");
             return recorded;
         };
+#else
+        soundcurrent::WindowsRecorder recorder;
+        recorder.start(input.toStdWString(), kCalibrationRate, 1);
+        auto take = [&recorder]() {
+            const auto pcm = recorder.take();
+            return QByteArray(reinterpret_cast<const char *>(pcm.data()), qsizetype(pcm.size() * sizeof(std::int16_t)));
+        };
+        auto collect = [&](int milliseconds) {
+            QByteArray pcm;
+            QElapsedTimer clock; clock.start();
+            while (clock.elapsed() < milliseconds) {
+                QThread::msleep(10); pcm.append(take());
+                if (!recorder.running()) throw std::runtime_error(recorder.error());
+            }
+            return pcm;
+        };
+        collect(350);
+        auto playAndRecord = [&](const QString &path) {
+            QFile wav(path);
+            if (!wav.open(QIODevice::ReadOnly)) throw std::runtime_error("Could not open test waveform");
+            const auto bytes = wav.readAll().mid(44); // our own mono PCM16 WAV writer
+            std::vector<std::int16_t> signal(bytes.size() / 2);
+            std::memcpy(signal.data(), bytes.constData(), signal.size() * 2);
+            recorder.take();
+            const auto endpoint = output == kSink ? standardCable(false) : output;
+            auto player = std::async(std::launch::async, [endpoint, signal = std::move(signal)] {
+                soundcurrent::windowsPlayPcm(endpoint.toStdWString(), signal, kCalibrationRate);
+            });
+            QByteArray pcm;
+            while (player.wait_for(std::chrono::milliseconds(10)) != std::future_status::ready) {
+                pcm.append(take());
+                if (!recorder.running()) throw std::runtime_error(recorder.error());
+            }
+            player.get();
+            pcm.append(take()); pcm.append(collect(180));
+            return pcm;
+        };
+#endif
         QJsonArray levels;
         int valid = 0;
         if (sweep) {
@@ -1022,8 +1140,12 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
                 } else levels.append(QJsonValue::Null);
             }
         }
+#ifndef Q_OS_WIN
         recorder.terminate();
         recorder.waitForFinished(1000);
+#else
+        recorder.stop();
+#endif
         if (valid < 4) throw std::runtime_error("Too little test audio reached the microphone. Move it closer or raise the test level slightly.");
         QJsonObject result{{"levels", levels}, {"testLevelDb", levelDb},
                            {"mode", sweep ? "sweep" : "tones"}};
@@ -1184,6 +1306,8 @@ public:
         update();
     }
 
+    void setCorrection(const Bands &bands) { correction_ = bands; update(); }
+
     void setLocked(bool locked) { locked_ = locked; dragging_ = -1; }
 
 protected:
@@ -1214,7 +1338,7 @@ protected:
         QPainterPath curve;
         for (int x = 0; x <= int(plot.width()); x += 3) {
             const auto frequency = frequencyForX(plot.left() + x, plot);
-            const auto y = yForGain(std::clamp(responseDb(bands_, frequency), -12.0, 12.0), plot);
+            const auto y = yForGain(std::clamp(responseDb(bands_, frequency) + responseDb(correction_, frequency), -12.0, 12.0), plot);
             if (x == 0) curve.moveTo(plot.left(), y);
             else curve.lineTo(plot.left() + x, y);
         }
@@ -1271,6 +1395,7 @@ private:
         return (plot.center().y() - y) / (plot.height() / 2.0) * 12.0;
     }
     Bands bands_;
+    Bands correction_;
     int selected_ = 0;
     int dragging_ = -1;
     bool locked_ = false;
@@ -1384,35 +1509,56 @@ private:
 class SpectrumMonitor : public QObject {
 public:
     std::function<void(const QVector<double> &, double)> onLevels;
-    bool active() const { return process_.state() != QProcess::NotRunning; }
+    bool active() const {
+#ifdef Q_OS_WIN
+        return timer_.isActive();
+#else
+        return process_.state() != QProcess::NotRunning;
+#endif
+    }
 
-    SpectrumMonitor() {
+    explicit SpectrumMonitor(bool testing = false) : testing_(testing) {
         timer_.setTimerType(Qt::PreciseTimer);
         timer_.setInterval(16);
         connect(&process_, &QProcess::readyReadStandardOutput, this, [this] {
             appendPcm(process_.readAllStandardOutput());
         });
-        connect(&timer_, &QTimer::timeout, this, [this] { analyze(); });
+        connect(&timer_, &QTimer::timeout, this, [this] {
+#ifdef Q_OS_WIN
+            if (playbackMeterSource) {
+                const auto pcm = playbackMeterSource->takeMeterPcm();
+                appendPcm(QByteArray(reinterpret_cast<const char *>(pcm.data()), qsizetype(pcm.size() * 2)));
+            }
+#endif
+            analyze();
+        });
     }
 
     void setInterval(int milliseconds) { timer_.setInterval(std::clamp(milliseconds, 1, 100)); }
     int interval() const { return timer_.interval(); }
 
-    void setProfile(const Bands &bands, double outputGainDb, int balancePercent = 0) {
+    void setProfile(const Bands &bands, double outputGainDb, int balancePercent = 0, const Bands &correction = {}) {
         bands_ = bands;
+        Bands effective = bands; effective.append(correction);
         outputGainDb_ = outputGainDb;
-        headroomDb_ = headroom(bands_);
+        headroomDb_ = headroom(effective);
         balanceFactors_ = balanceFactors(balancePercent);
         bandEdges_.clear();
         bandGains_.clear();
         for (qsizetype i = 0; i < bands_.size(); ++i) {
             if (i + 1 < bands_.size())
                 bandEdges_.append(std::sqrt(bands_[i].frequency * bands_[i + 1].frequency));
-            bandGains_.append(std::pow(10.0, (responseDb(bands_, bands_[i].frequency) +
+            bandGains_.append(std::pow(10.0, (responseDb(effective, bands_[i].frequency) +
                                                    headroomDb_ + outputGainDb_) / 20.0));
         }
         const auto maxEqBoost = headroomDb_ < 0.0 ? -headroomDb_ - 1.0 : 0.0;
         peakGain_ = std::pow(10.0, (maxEqBoost + headroomDb_ + outputGainDb_) / 20.0);
+#ifdef Q_OS_WIN
+        if (!testing_) {
+            std::fill(bandGains_.begin(), bandGains_.end(), 1.0);
+            balanceFactors_ = {1.0, 1.0}; peakGain_ = 1.0;
+        }
+#endif
     }
 
     void analyzePcmForTest(const QByteArray &pcm) {
@@ -1422,12 +1568,14 @@ public:
 
     void start() {
         stop();
+#ifndef Q_OS_WIN
         process_.setProgram("parec");
         process_.setArguments({"--raw", "-d", QString(kSink) + ".monitor", "--format=s16le",
                                "--rate=48000", "--channels=2", "--latency-msec=10",
                                "--process-time-msec=5"});
         process_.setChildProcessModifier([] { prctl(PR_SET_PDEATHSIG, SIGTERM); });
         process_.start();
+#endif
         timer_.start();
     }
 
@@ -1443,6 +1591,7 @@ public:
     }
 
 private:
+    bool testing_ = false;
     void appendPcm(const QByteArray &pcm) {
         pcm_.append(pcm);
         bytesSinceAnalysis_ += pcm.size();
@@ -1556,7 +1705,7 @@ class MainWindow : public QMainWindow {
 public:
     explicit MainWindow(bool startEnabled = true) : bands_(builtinProfile("Flat", kDefaultBands)) {
         setWindowTitle("SoundCurrent EQ");
-        setWindowIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ"));
+        setWindowIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ", QIcon(":/app.ico")));
         setMinimumSize(480, 320);
         if (auto *display = QGuiApplication::primaryScreen()) {
             const auto available = display->availableGeometry();
@@ -1668,6 +1817,36 @@ public:
         status_->setObjectName("status");
         outputLayout->addWidget(status_);
         root->addWidget(outputBox);
+#ifdef Q_OS_WIN
+        auto *driverSetup = new QPushButton("Audio driver setup");
+        outputLayout->addWidget(driverSetup);
+        connect(driverSetup, &QPushButton::clicked, this, [] {
+            const auto script = QDir(QCoreApplication::applicationDirPath()).filePath("audio-setup.ps1");
+            if (QFileInfo::exists(script))
+                QProcess::startDetached("powershell.exe", {"-NoProfile", "-ExecutionPolicy", "RemoteSigned", "-File", script, "-Install"});
+            else QDesktopServices::openUrl(QUrl("https://www.vb-cable.com/"));
+        });
+#endif
+        auto *speakerBox = new QGroupBox("Speaker model correction");
+        auto *speakerLayout = new QVBoxLayout(speakerBox);
+        auto *speakerRow = new QHBoxLayout;
+        speakerCombo_ = new PresetComboBox;
+        speakerCombo_->setAccessibleName("Speaker model profile");
+        speakerCombo_->setMaxVisibleItems(12);
+        speakerCombo_->addItem("None — use my own EQ", QString());
+        for (const auto &profile : speakerProfiles()) speakerCombo_->addItem(profile.name, profile.id);
+        const int savedSpeaker = speakerCombo_->findData(QSettings().value("speakerModelId").toString());
+        speakerCombo_->setCurrentIndex(std::max(0, savedSpeaker));
+        speakerRow->addWidget(speakerCombo_, 1);
+        auto *speakerDetails = new QPushButton("Profile details");
+        speakerRow->addWidget(speakerDetails);
+        speakerLayout->addLayout(speakerRow);
+        auto *speakerHelp = new QLabel("Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.");
+        speakerHelp->setWordWrap(true);
+        speakerLayout->addWidget(speakerHelp);
+        connect(speakerDetails, &QPushButton::clicked, this, [this] { showSpeakerDetails(); });
+        root->addWidget(speakerBox);
+
 
         auto *inputBox = new QGroupBox("Microphone");
         auto *inputLayout = new QVBoxLayout(inputBox);
@@ -1714,6 +1893,25 @@ public:
         micStatus_ = new QLabel("Waiting for a microphone.");
         micStatus_->setWordWrap(true);
         inputLayout->addWidget(micStatus_);
+#ifdef Q_OS_WIN
+        auto *cableRow = new QHBoxLayout;
+        cableRow->addWidget(new QLabel("Microphone cable"));
+        micCableCombo_ = new QComboBox;
+        micCableCombo_->setAccessibleName("Second virtual cable for microphone EQ");
+        cableRow->addWidget(micCableCombo_, 1);
+        inputLayout->addLayout(cableRow);
+        auto *cableHelp = new QLabel("Simultaneous speaker and microphone EQ needs a separately installed second cable. Select its input here; recording apps use its matching output. The standard playback cable cannot be reused for the microphone.");
+        cableHelp->setWordWrap(true);
+        inputLayout->addWidget(cableHelp);
+        refreshMicCables();
+        connect(micCableCombo_, &QComboBox::currentIndexChanged, this, [this] {
+            const auto id = micCableCombo_->currentData().toString();
+            QSettings().setValue("micCableId", id);
+            microphone_.setCable(id);
+            refreshInputs();
+        });
+#endif
+
         auto *calibrationRow = new QHBoxLayout;
         calibrationRow->addWidget(new QLabel("Speaker + room check"));
         calibrationMode_ = new QComboBox;
@@ -1880,7 +2078,9 @@ public:
             calibrationCancelled_ = true;
             calibration_.kill();
         });
+#ifndef Q_OS_WIN
         calibration_.setChildProcessModifier([] { prctl(PR_SET_PDEATHSIG, SIGTERM); });
+#endif
         connect(&calibration_, &QProcess::readyReadStandardError, this, [this] {
             const auto message = QString::fromUtf8(calibration_.readAllStandardError()).trimmed();
             if (!message.isEmpty()) calibrationStatus_->setText(message.section('\n', -1));
@@ -1892,6 +2092,11 @@ public:
                 [this](int code, QProcess::ExitStatus status) { finishCalibration(code, status); });
         connect(outputCombo_, &QComboBox::currentIndexChanged, this, [this] { outputChanged(); });
         connect(presetCombo_, &QComboBox::currentIndexChanged, this, [this] { presetChanged(); });
+        connect(speakerCombo_, &QComboBox::currentIndexChanged, this, [this] {
+            recordChange(speakerCombo_);
+            QSettings().setValue("speakerModelId", speakerCombo_->currentData());
+            syncBandControls(); applyChanges(); commitChange();
+        });
         connect(save, &QPushButton::clicked, this, [this] { savePreset(); });
         connect(reset, &QPushButton::clicked, this, [this] { presetCombo_->setCurrentText("Flat"); });
         connect(lockButton_, &QPushButton::toggled, this, [this, startEnabled](bool locked) {
@@ -1907,7 +2112,7 @@ public:
             QSettings().setValue("outputGainDb", value);
             outputGainValue_->setText(QString("%1%2 dB").arg(value > 0 ? "+" : "")
                                           .arg(value, 0, 'f', 1));
-            meter_.setProfile(bands_, value, balance_->value());
+            meter_.setProfile(bands_, value, balance_->value(), speakerCorrection());
             try { audio_.updateGain(value, balance_->value()); }
             catch (const std::exception &error) { showError(error.what()); }
             commitChange();
@@ -1917,7 +2122,7 @@ public:
             QSettings().setValue("balancePercent", value);
             balanceValue_->setText(value == 0 ? "Center"
                                    : QString("%1 %2%").arg(value < 0 ? "L" : "R").arg(std::abs(value)));
-            meter_.setProfile(bands_, outputGainDb(), value);
+            meter_.setProfile(bands_, outputGainDb(), value, speakerCorrection());
             try { audio_.updateGain(outputGainDb(), value); }
             catch (const std::exception &error) { showError(error.what()); }
             commitChange();
@@ -1948,11 +2153,12 @@ public:
             commitChange();
         };
         meter_.onLevels = [this](const QVector<double> &levels, double peak) { showLevels(levels, peak); };
-        meter_.setProfile(bands_, outputGainDb(), balance_->value());
+        meter_.setProfile(bands_, outputGainDb(), balance_->value(), speakerCorrection());
         meter_.setInterval(levelRefresh_->value());
         monitor_.setInterval(1500);
         connect(&monitor_, &QTimer::timeout, this, [this] { refreshDevices(); refreshInputs(); });
         monitor_.start();
+#ifndef Q_OS_WIN
         volumeEvents_.setProgram("pactl");
         volumeEvents_.setArguments({"subscribe"});
         volumeEvents_.setChildProcessModifier([] { prctl(PR_SET_PDEATHSIG, SIGTERM); });
@@ -1970,6 +2176,7 @@ public:
             }
         });
         volumeEvents_.start();
+#endif
         for (auto *widget : findChildren<QWidget *>())
             if (qobject_cast<QComboBox *>(widget) || qobject_cast<QAbstractSpinBox *>(widget) ||
                 qobject_cast<QSlider *>(widget)) widget->installEventFilter(this);
@@ -2048,13 +2255,14 @@ private:
     struct EqSnapshot {
         Bands bands;
         QString preset;
+        QString speaker;
         int selected = 0;
         int gain = 0;
         int balance = 0;
     };
 
     EqSnapshot snapshot() const {
-        return {bands_, presetCombo_->currentText(), selected_, outputGain_->value(), balance_->value()};
+        return {bands_, presetCombo_->currentText(), speakerCombo_->currentData().toString(), selected_, outputGain_->value(), balance_->value()};
     }
 
     void recordChange(QObject *source) {
@@ -2078,6 +2286,7 @@ private:
         restoring_ = true;
         {
             const QSignalBlocker presetBlock(presetCombo_);
+            const QSignalBlocker speakerBlock(speakerCombo_);
             const QSignalBlocker countBlock(countBox_);
             const QSignalBlocker gainBlock(outputGain_);
             const QSignalBlocker balanceBlock(balance_);
@@ -2085,6 +2294,8 @@ private:
             selected_ = std::clamp(previous.selected, 0, int(bands_.size()) - 1);
             countBox_->setValue(int(bands_.size()));
             presetCombo_->setCurrentText(previous.preset);
+            speakerCombo_->setCurrentIndex(std::max(0, speakerCombo_->findData(previous.speaker)));
+            QSettings().setValue("speakerModelId", previous.speaker);
             outputGain_->setValue(previous.gain);
             balance_->setValue(previous.balance);
             rebuildBandControls();
@@ -2111,6 +2322,7 @@ private:
         outputGain_->setEnabled(editable);
         balance_->setEnabled(editable);
         presetCombo_->setEnabled(editable);
+        speakerCombo_->setEnabled(editable);
         savePresetButton_->setEnabled(editable);
         resetButton_->setEnabled(editable);
         countBox_->setEnabled(editable);
@@ -2239,6 +2451,9 @@ private:
 
     void refreshInputs() {
         if (calibrating_) return;
+#ifdef Q_OS_WIN
+        refreshMicCables();
+#endif
         try {
             const auto latest = inputDevices();
             const auto manual = inputCombo_->currentData().toString();
@@ -2307,7 +2522,7 @@ private:
                 return device.name.contains(".usb-");
             });
             micStatus_->setText(micDisconnectNotice_ + "Natural mic EQ on · " + desired.description +
-                                (!usbConnected ? " · no USB microphone detected" : ""));
+                                (!usbConnected ? usbMicrophoneHint() : ""));
         } catch (const std::exception &error) { micStatus_->setText("Microphone error: " + QString::fromUtf8(error.what())); }
     }
 
@@ -2317,7 +2532,7 @@ private:
 
     void setupTray() {
         if (!QSystemTrayIcon::isSystemTrayAvailable()) return;
-        tray_ = new QSystemTrayIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ"), this);
+        tray_ = new QSystemTrayIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ", QIcon(":/app.ico")), this);
         tray_->setToolTip("SoundCurrent EQ");
         auto *menu = new QMenu(this);
         menu->addAction("Open SoundCurrent EQ", this, [this] { reopen(); });
@@ -2450,8 +2665,9 @@ private:
         frequencyBox_->setValue(band.frequency);
         gainBox_->setValue(band.gain);
         qBox_->setValue(band.q);
-        headroom_->setText("Auto headroom " + QString::number(headroom(bands_), 'f', 1) + " dB");
+        headroom_->setText("Auto headroom " + QString::number(headroom(processingBands()), 'f', 1) + " dB");
         curve_->setBands(bands_, selected_);
+        curve_->setCorrection(speakerCorrection());
     }
 
     void selectBand(int index) {
@@ -2467,9 +2683,65 @@ private:
         changing_ = false;
     }
 
+    static QString usbMicrophoneHint() {
+#ifdef Q_OS_WIN
+        return {};
+#else
+        return " · no USB microphone detected";
+#endif
+    }
+    Bands speakerCorrection() const {
+        const auto id = speakerCombo_->currentData().toString();
+        for (const auto &p : speakerProfiles()) if (p.id == id) return p.filters;
+        return {};
+    }
+    Bands processingBands() const {
+        auto result = bands_;
+        result.resize(kMaxBands);
+        result.append(speakerCorrection());
+        return result;
+    }
+    void showSpeakerDetails() {
+        const auto id = speakerCombo_->currentData().toString();
+        for (const auto &p : speakerProfiles()) if (p.id == id) {
+            QString text = p.name + "\nMeasurement: " + p.attribution +
+                "\n\nSpinorama AutoEQ adapted with gain capped at ±6 dB, Q capped at 6, and positive filters below 80 Hz omitted. Your listening preset is added separately.\n\n";
+            for (const auto &b : p.filters) {
+                using T = soundcurrent::FilterType;
+                text += QString("%1 Hz · %2 dB · Q %3 · %4\n").arg(b.frequency).arg(b.gain).arg(b.q)
+                    .arg(b.type == T::LowShelf ? "low shelf" : b.type == T::HighShelf ? "high shelf" : "peak");
+            }
+            text += "\nSources:\n" + p.links.join('\n');
+            QMessageBox::information(this, "Speaker profile details", text);
+            return;
+        }
+        QMessageBox::information(this, "Speaker profile details", "No model correction selected. Your listening EQ works normally.");
+    }
+#ifdef Q_OS_WIN
+    void refreshMicCables() {
+        const auto current = micCableCombo_->count() ? micCableCombo_->currentData().toString()
+                                                   : QSettings().value("micCableId").toString();
+        const auto cables = microphoneCables();
+        QStringList ids;
+        for (const auto &c : cables) ids.append(c.render);
+        if (ids != micCableIds_ || !micCableCombo_->count()) {
+            const QSignalBlocker block(micCableCombo_);
+            micCableCombo_->clear();
+            micCableCombo_->addItem("Automatic (separate second cable)", QString());
+            for (const auto &c : cables) micCableCombo_->addItem(c.description, c.render);
+            micCableCombo_->setCurrentIndex(std::max(0, micCableCombo_->findData(current)));
+            micCableIds_ = ids;
+        }
+        microphone_.setCable(micCableCombo_->currentData().toString());
+    }
+    QComboBox *micCableCombo_ = nullptr;
+    QStringList micCableIds_;
+#endif
+    QComboBox *speakerCombo_ = nullptr;
+
     void applyChanges() {
-        meter_.setProfile(bands_, outputGainDb(), balance_->value());
-        try { audio_.update(bands_, outputGainDb(), balance_->value()); }
+        meter_.setProfile(bands_, outputGainDb(), balance_->value(), speakerCorrection());
+        try { audio_.update(processingBands(), outputGainDb(), balance_->value()); }
         catch (const std::exception &error) { showError(error.what()); }
     }
 
@@ -2624,15 +2896,17 @@ private:
             if (!power_->isChecked()) return;
             if (!audio_.active()) {
                 power_->setChecked(false);
-                showError("The PipeWire filter stopped unexpectedly.");
+                showError("The audio processor stopped unexpectedly.");
                 return;
             }
             if (audio_.legacyVolumeManaged() && defaultSink() != kSink) {
                 power_->setChecked(false);
                 return;
             }
+#ifndef Q_OS_WIN
             if (audio_.smart() && defaultSink() == kSink)
                 command("pactl", {"set-default-sink", audio_.target()});
+#endif
             Device desired;
             if (!selectedName.isEmpty() && index >= 0) desired = findDevice(selectedName);
             else if (!selectedName.isEmpty() && index < 0) {
@@ -2652,7 +2926,7 @@ private:
                     status_->setText("No output device is connected.");
                 } else {
                     meter_.stop();
-                    audio_.start(desired, bands_, outputGainDb(), balance_->value());
+                    audio_.start(desired, processingBands(), outputGainDb(), balance_->value());
                     if (isVisible()) meter_.start();
                     showPlaybackStatus(desired);
                 }
@@ -2666,7 +2940,7 @@ private:
         if (desired.name.isEmpty() || desired.name == audio_.target()) return;
         try {
             meter_.stop();
-            audio_.start(desired, bands_, outputGainDb(), balance_->value());
+            audio_.start(desired, processingBands(), outputGainDb(), balance_->value());
             if (isVisible()) meter_.start();
             showPlaybackStatus(desired);
         } catch (const std::exception &error) { showError(error.what()); }
@@ -2678,7 +2952,7 @@ private:
             const auto device = selectedDevice();
             if (device.name.isEmpty()) { power_->setChecked(false); showError("No output device is available."); return; }
             try {
-                audio_.start(device, bands_, outputGainDb(), balance_->value());
+                audio_.start(device, processingBands(), outputGainDb(), balance_->value());
                 if (isVisible()) meter_.start();
                 showPlaybackStatus(device);
             } catch (const std::exception &error) {
@@ -2776,16 +3050,35 @@ int main(int argc, char **argv) {
         return runCalibration(QString::fromLocal8Bit(argv[2]), QString::fromLocal8Bit(argv[3]), level,
                               mode == "sweep");
     }
+#ifndef Q_OS_WIN
     if (argc == 5 && QString::fromLocal8Bit(argv[1]) == "--volume-guardian") {
         QCoreApplication guardianApp(argc, argv);
         return guardOutputVolume(QString::fromLocal8Bit(argv[2]), QString::fromLocal8Bit(argv[3]),
                                  QString::fromLocal8Bit(argv[4]));
     }
+#endif
     QApplication app(argc, argv);
     QCoreApplication::setOrganizationName("SoundCurrent");
     QCoreApplication::setApplicationName("soundcurrent-eq");
+    QTemporaryDir testSettings;
+    if (app.arguments().contains("--ui-self-test")) {
+        QSettings::setDefaultFormat(QSettings::IniFormat);
+        QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, testSettings.path());
+    }
     QGuiApplication::setDesktopFileName("io.github.rhamenator.SoundCurrentEQ");
-    app.setWindowIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ"));
+    app.setWindowIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ", QIcon(":/app.ico")));
+    if ((app.arguments().size() == 4 && app.arguments()[1] == "--dump-speaker-controls") ||
+        (app.arguments().size() == 5 && app.arguments()[1] == "--dump-speaker-filter")) {
+        const bool graph = app.arguments()[1] == "--dump-speaker-filter";
+        const auto model = app.arguments()[graph ? 3 : 2], preset = app.arguments()[graph ? 4 : 3];
+        if (!builtinShapes().contains(preset)) return 2;
+        auto bands = builtinProfile(preset, kDefaultBands); bands.resize(kMaxBands);
+        bool found = model == "None";
+        for (const auto &profile : speakerProfiles()) if (profile.id == model) { bands.append(profile.filters); found = true; }
+        if (!found) return 2;
+        QTextStream(stdout) << (graph ? filterConfig(app.arguments()[2], bands) : filterControls(bands));
+        return 0;
+    }
     if (app.arguments().size() == 3 && app.arguments()[1] == "--dump-filter-config") {
         QTextStream(stdout) << filterConfig(app.arguments()[2], defaultBands(kDefaultBands));
         return 0;
@@ -2797,6 +3090,7 @@ int main(int argc, char **argv) {
         QTextStream(stdout) << micConfig(app.arguments()[2], channels, {}, 0.0, false);
         return 0;
     }
+#ifndef Q_OS_WIN
     if (app.arguments().contains("--mic-self-test")) {
         try {
             const auto available = inputDevices();
@@ -2819,6 +3113,7 @@ int main(int argc, char **argv) {
             return 1;
         }
     }
+#endif
     if (app.arguments().size() >= 3 && app.arguments().size() <= 5 &&
         app.arguments()[1] == "--dump-preset-controls") {
         const auto name = app.arguments()[2];
@@ -2831,6 +3126,7 @@ int main(int argc, char **argv) {
         QTextStream(stdout) << filterControls(builtinProfile(name, kDefaultBands), gain, balance);
         return 0;
     }
+#ifndef Q_OS_WIN
     if (app.arguments().contains("--self-test")) {
         try {
             const auto standard = defaultBands(kDefaultBands);
@@ -2876,6 +3172,7 @@ int main(int argc, char **argv) {
             return 1;
         }
     }
+#endif
     app.setStyleSheet(R"(
         QWidget { background: #111827; color: #e8edf6; font-size: 13px; }
         QGroupBox { background: #1c293c; border: 1px solid #33445e; border-radius: 12px;
@@ -2901,7 +3198,7 @@ int main(int argc, char **argv) {
     )");
     if (app.arguments().contains("--ui-self-test")) {
         MainWindow testWindow(false);
-        SpectrumMonitor spectrumTest;
+        SpectrumMonitor spectrumTest(true);
         if (spectrumTest.interval() != 16) qFatal("Default level interval is not 16 ms");
         spectrumTest.setInterval(5);
         if (spectrumTest.interval() != 5) qFatal("Five millisecond level interval is unavailable");
@@ -3201,9 +3498,22 @@ int main(int argc, char **argv) {
         undo->click();
         if (balance->value() != originalBalance)
             qFatal("Undo did not restore balance");
+        QComboBox *speakers = nullptr;
+        for (auto *combo : testWindow.findChildren<QComboBox *>())
+            if (combo->accessibleName() == "Speaker model profile") speakers = combo;
+        if (!speakers || speakers->count() != speakerProfiles().size() + 1 || speakers->currentData().toString() != "")
+            qFatal("Speaker profiles are missing or correction is enabled by default");
+        const int kali = speakers->findData("Kali LP-6v2");
+        speakers->setCurrentIndex(kali);
+        presets->setCurrentText("Bass Boost");
+        if (speakers->currentIndex() != kali) qFatal("Listening preset removed speaker correction");
+        undo->click();
+        if (speakers->currentIndex() != kali) qFatal("Undo preset removed speaker correction");
+        undo->click();
+        if (!speakers->currentData().toString().isEmpty()) qFatal("Undo did not restore speaker selection");
         lock->click();
         if (!lock->isChecked() || firstBandSlider()->isEnabled() || presets->isEnabled() ||
-            outputGain->isEnabled() || balance->isEnabled())
+            outputGain->isEnabled() || balance->isEnabled() || speakers->isEnabled())
             qFatal("Lock did not protect playback EQ controls");
         lock->click();
         if (!firstBandSlider()->isEnabled()) qFatal("Unlock did not restore editing");
@@ -3231,12 +3541,21 @@ int main(int argc, char **argv) {
               static_cast<long long>(builtinShapes().size()));
         return 0;
     }
+#ifdef Q_OS_WIN
+    const auto runtime = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
+    if (!QDir().mkpath(runtime)) { qCritical("Cannot create user settings directory"); return 1; }
+#else
     const auto runtime = QStandardPaths::writableLocation(QStandardPaths::RuntimeLocation);
+#endif
     if (runtime.isEmpty() || !QFileInfo(runtime).isDir()) {
         qCritical("A private user runtime directory is required");
         return 1;
     }
+    #ifdef Q_OS_WIN
+    const auto socketPath = QString("SoundCurrentEQ-%1").arg(QString::number(qHash(runtime), 16));
+#else
     const auto socketPath = QDir(runtime).filePath("soundcurrent-eq.sock");
+#endif
     QLockFile instanceLock(QDir(runtime).filePath("soundcurrent-eq.lock"));
     instanceLock.setStaleLockTime(0);
     if (!instanceLock.tryLock(200)) {

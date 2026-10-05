@@ -6,6 +6,9 @@ on:
       - 'src/**'
       - 'tests/**'
       - 'data/**'
+      - 'scripts/**'
+      - 'packaging/windows/**'
+      - 'THIRD-PARTY-NOTICES.md'
       - 'CMakeLists.txt'
       - '.github/workflows/windows-check.yml'
   workflow_dispatch:
@@ -20,11 +23,18 @@ jobs:
       - uses: actions/checkout@9f698171ed81b15d1823a05fc7211befd50c8ae0 # v6.0.3
         with:
           persist-credentials: false
-      - name: Configure with the installed Visual Studio compiler
-        run: cmake -S . -B build
-      - name: Build Windows application and diagnostics
-        run: cmake --build build --config Release --parallel
-      - name: Check DSP response
-        run: ctest --test-dir build -C Release --output-on-failure
-      # The opt-in audio and UI checks require a signed-in desktop and cable
-      # driver, so they run in the local test clone rather than on this runner.
+      - name: Install verified Qt SDK
+        shell: pwsh
+        run: ./scripts/install-windows-qt.ps1
+      - name: Build, test and package the shared application
+        shell: pwsh
+        run: ./scripts/build-windows.ps1 -QtPrefix 'C:\Qt\6.12.0\msvc2022_64'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-build
+          path: |
+            dist/*.exe
+            dist/*.sha256
+            dist/qtbase*.tar.xz
+            build-windows-native/package/**
+            build-windows-native/Release/*smoke.exe

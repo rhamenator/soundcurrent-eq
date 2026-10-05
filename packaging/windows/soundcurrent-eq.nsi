@@ -17,6 +17,10 @@ Unicode true
   !error "Pass /DCABLE_ZIP=path-to-verified-VBCABLE_Driver_Pack45.zip"
 !endif
 
+!ifndef APP_VERSION
+  !define APP_VERSION "0.7.0"
+!endif
+
 Var CableCheck
 Var CableChoice
 Var InstallCable
@@ -98,12 +102,16 @@ Function AudioPageLeave
 FunctionEnd
 
 Section "SoundCurrent EQ" main
-  FindWindow $0 "SoundCurrentEQWindow"
+  FindWindow $0 "" "SoundCurrent EQ"
   StrCmp $0 0 +3
     MessageBox MB_ICONEXCLAMATION "Quit SoundCurrent EQ before installing this version."
     Abort
   SetOutPath "$INSTDIR"
+!ifdef DLL_DIR
+  File /r "${DLL_DIR}/*"
+!else
   File "/oname=soundcurrent-eq.exe" "${APP_EXE}"
+!endif
   File "${SOURCE_ROOT}/LICENSE"
   File "${SOURCE_ROOT}/COPYRIGHT"
   File "${SOURCE_ROOT}/README.md"
@@ -120,7 +128,7 @@ Section "SoundCurrent EQ" main
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "UninstallString" '"$INSTDIR\uninstall.exe"'
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "DisplayIcon" "$INSTDIR\soundcurrent-eq.exe"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "Publisher" "SoundCurrent EQ contributors"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "DisplayVersion" "0.6.0"
+  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "DisplayVersion" "${APP_VERSION}"
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "NoModify" 1
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "NoRepair" 1
   ${If} $InstallCable == ${BST_CHECKED}
@@ -139,7 +147,7 @@ Section "SoundCurrent EQ" main
 SectionEnd
 
 Section "Uninstall"
-  FindWindow $0 "SoundCurrentEQWindow"
+  FindWindow $0 "" "SoundCurrent EQ"
   StrCmp $0 0 +3
     MessageBox MB_ICONEXCLAMATION "Quit SoundCurrent EQ before uninstalling it."
     Abort
@@ -148,7 +156,11 @@ Section "Uninstall"
   Delete "$SMPROGRAMS\SoundCurrent EQ\Uninstall.lnk"
   Delete "$SMPROGRAMS\SoundCurrent EQ\Install VB-CABLE.lnk"
   RMDir "$SMPROGRAMS\SoundCurrent EQ"
+!ifdef UNINSTALL_PAYLOAD
+  !include "${UNINSTALL_PAYLOAD}"
+!else
   Delete "$INSTDIR\soundcurrent-eq.exe"
+!endif
   Delete "$INSTDIR\LICENSE"
   Delete "$INSTDIR\COPYRIGHT"
   Delete "$INSTDIR\README.md"

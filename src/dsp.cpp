@@ -12,20 +12,7 @@ namespace soundcurrent {
 namespace {
 constexpr double pi = std::numbers::pi;
 
-struct Coefficients { double b0, b1, b2, a1, a2; };
-
-Coefficients peaking(const EqBand &band, int sampleRate) {
-    const double omega = 2.0 * pi * band.frequency / sampleRate;
-    const double alpha = std::sin(omega) / (2.0 * band.q);
-    const double a = std::pow(10.0, band.gainDb / 40.0);
-    const double cosine = std::cos(omega);
-    const double denominator = 1.0 + alpha / a;
-    return {(1.0 + alpha * a) / denominator, -2.0 * cosine / denominator,
-            (1.0 - alpha * a) / denominator, -2.0 * cosine / denominator,
-            (1.0 - alpha / a) / denominator};
-}
-
-double responseDb(const std::array<Coefficients, 31> &coefficients,
+double responseDb(const std::array<FilterCoefficients, kMaxProcessingBands> &coefficients,
                   std::size_t count, int sampleRate, double frequency) {
     const auto z = std::polar(1.0, -2.0 * pi * frequency / sampleRate);
     double sum = 0.0;
@@ -38,6 +25,52 @@ double responseDb(const std::array<Coefficients, 31> &coefficients,
     return sum;
 }
 } // namespace
+
+FilterCoefficients filterCoefficients(const EqBand &band, int sampleRate) {
+    const double omega = 2.0 * pi * band.frequency / sampleRate;
+    const double cosine = std::cos(omega);
+    const double alpha = std::sin(omega) / (2.0 * band.q);
+    const double a = std::pow(10.0, band.gainDb / 40.0);
+    double b0, b1, b2, a0, a1, a2;
+    switch (band.type) {
+    case FilterType::LowShelf: {
+        const double t = 2.0 * std::sqrt(a) * alpha;
+        b0 = a * ((a + 1) - (a - 1) * cosine + t);
+        b1 = 2 * a * ((a - 1) - (a + 1) * cosine);
+        b2 = a * ((a + 1) - (a - 1) * cosine - t);
+        a0 = (a + 1) + (a - 1) * cosine + t;
+        a1 = -2 * ((a - 1) + (a + 1) * cosine);
+        a2 = (a + 1) + (a - 1) * cosine - t;
+        break;
+    }
+    case FilterType::HighShelf: {
+        const double t = 2.0 * std::sqrt(a) * alpha;
+        b0 = a * ((a + 1) + (a - 1) * cosine + t);
+        b1 = -2 * a * ((a - 1) + (a + 1) * cosine);
+        b2 = a * ((a + 1) + (a - 1) * cosine - t);
+        a0 = (a + 1) - (a - 1) * cosine + t;
+        a1 = 2 * ((a - 1) - (a + 1) * cosine);
+        a2 = (a + 1) - (a - 1) * cosine - t;
+        break;
+    }
+    case FilterType::HighPass:
+        b0 = (1 + cosine) / 2; b1 = -(1 + cosine); b2 = b0;
+        a0 = 1 + alpha; a1 = -2 * cosine; a2 = 1 - alpha;
+        break;
+    default:
+        b0 = 1 + alpha * a; b1 = -2 * cosine; b2 = 1 - alpha * a;
+        a0 = 1 + alpha / a; a1 = -2 * cosine; a2 = 1 - alpha / a;
+        break;
+    }
+    return {b0 / a0, b1 / a0, b2 / a0, a1 / a0, a2 / a0};
+}
+
+double filterResponseDb(const EqBand &band, int sampleRate, double frequency) {
+    const auto c = filterCoefficients(band, sampleRate);
+    const auto z = std::polar(1.0, -2.0 * pi * frequency / sampleRate);
+    return 20.0 * std::log10(std::max(1e-15, std::abs(
+        (c.b0 + c.b1 * z + c.b2 * z * z) / (1.0 + c.a1 * z + c.a2 * z * z))));
+}
 
 StereoEqualizer::StereoEqualizer(int sampleRate) : sampleRate_(sampleRate) {
     if (sampleRate < 8000 || sampleRate > 384000)
@@ -58,18 +91,17 @@ bool StereoEqualizer::setProfile(std::span<const EqBand> bands, double postGainD
     if (bands.size() > kMaxBands || !std::isfinite(postGainDb) ||
         postGainDb < -12.0 || postGainDb > 12.0 ||
         balancePercent < -100 || balancePercent > 100) return false;
-    double previousFrequency = 0.0;
-    std::array<Coefficients, kMaxBands> coefficients{};
+
+    std::array<FilterCoefficients, kMaxBands> coefficients{};
     for (std::size_t i = 0; i < bands.size(); ++i) {
         const auto &band = bands[i];
         if (!std::isfinite(band.frequency) || !std::isfinite(band.gainDb) ||
-            !std::isfinite(band.q) || band.frequency <= previousFrequency ||
+            !std::isfinite(band.q) ||
             band.frequency < 20.0 || band.frequency > 20000.0 ||
             band.frequency >= sampleRate_ * 0.45 ||
             band.gainDb < -12.0 || band.gainDb > 12.0 ||
-            band.q < 0.3 || band.q > 10.0) return false;
-        coefficients[i] = peaking(band, sampleRate_);
-        previousFrequency = band.frequency;
+            band.q < 0.1 || band.q > 20.0) return false;
+        coefficients[i] = filterCoefficients(band, sampleRate_);
     }
 
     double peakDb = 0.0;

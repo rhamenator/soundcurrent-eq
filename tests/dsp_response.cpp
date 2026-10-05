@@ -40,6 +40,25 @@ int main() {
     if (std::abs(stereo[0] - 0.2f) > 1e-5 || std::abs(stereo[1]) > 1e-5) return 7;
     const std::array invalidBand{soundcurrent::EqBand{1000.0, 20.0, 1.0}};
     if (eq.setProfile(invalidBand, 0.0, 0)) return 8;
+    using T = soundcurrent::FilterType;
+    for (auto type : {T::LowShelf, T::HighShelf}) {
+        const double center = type == T::LowShelf ? 400.0 : 4000.0;
+        const double frequency = type == T::LowShelf ? 40.0 : 18000.0;
+        const std::array shelf{soundcurrent::EqBand{center, -6.0, 0.707, type}};
+        if (!eq.setProfile(shelf, 0, 0)) return 9;
+        const double expected = soundcurrent::filterResponseDb(shelf[0], 48000, frequency);
+        const double ratio = 20 * std::log10(measure(eq, frequency) / flat);
+        if (std::abs(ratio - expected) > 0.2 || std::abs(expected + 6.0) > 0.3) return 10;
+    }
+    const std::array highpass{soundcurrent::EqBand{80, 0, 0.707, T::HighPass}};
+    if (!eq.setProfile(highpass, 0, 0)) return 11;
+    if (20 * std::log10(measure(eq, 20) / flat) > -22.0) return 12;
+    std::vector<soundcurrent::EqBand> combined(31, {1000, 0, 1});
+    combined.push_back({12246, -1.48, 0.29}); // published JBL correction Q
+    combined.push_back({1000, -3, 1});
+    if (!eq.setProfile(combined, 0, 0)) return 13;
+    combined.resize(soundcurrent::kMaxProcessingBands + 1, {1000, 0, 1});
+    if (eq.setProfile(combined, 0, 0)) return 14;
     std::printf("Windows DSP core: 1 kHz cut %.1f dB, post gain %.1f dB, balance passed\n",
                 cutDb, gainDb);
     return 0;
