@@ -6,7 +6,7 @@ $ProgressPreference = 'SilentlyContinue'
 $root = Split-Path $PSScriptRoot -Parent
 Push-Location $root
 try {
-    $version = [regex]::Match((Get-Content CMakeLists.txt -Raw), 'VERSION ([0-9.]+)').Groups[1].Value
+    $version = [regex]::Match((Get-Content CMakeLists.txt -Raw), '(?m)^project\(soundcurrent-eq VERSION ([0-9.]+)').Groups[1].Value
     $stage = Join-Path $root 'build-windows-native\package'
     & cmake -S . -B build-windows-native -G 'Visual Studio 17 2022' -A x64 -T v143 "-DCMAKE_PREFIX_PATH=$QtPrefix"
     if ($LASTEXITCODE -ne 0) { throw 'Windows configure failed' }

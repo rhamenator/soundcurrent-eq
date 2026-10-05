@@ -31,11 +31,11 @@ InstallDir "$LOCALAPPDATA\Programs\SoundCurrent EQ"
 RequestExecutionLevel user
 SetCompressor /SOLID lzma
 BrandingText "SoundCurrent EQ • GPL-3.0-only"
-Icon "${SOURCE_ROOT}/data/soundcurrent-eq.ico"
-UninstallIcon "${SOURCE_ROOT}/data/soundcurrent-eq.ico"
+Icon "${SOURCE_ROOT}\data\soundcurrent-eq.ico"
+UninstallIcon "${SOURCE_ROOT}\data\soundcurrent-eq.ico"
 
 !insertmacro MUI_PAGE_WELCOME
-!insertmacro MUI_PAGE_LICENSE "${SOURCE_ROOT}/LICENSE"
+!insertmacro MUI_PAGE_LICENSE "${SOURCE_ROOT}\LICENSE"
 !insertmacro MUI_PAGE_DIRECTORY
 Page custom AudioPage AudioPageLeave
 !insertmacro MUI_PAGE_INSTFILES
@@ -50,7 +50,7 @@ Function .onInit
   StrCpy $InstallCable 0 ; Silent app updates never install/elevate a driver.
   InitPluginsDir
   SetOutPath "$PLUGINSDIR"
-  File "/oname=audio-setup.ps1" "${SOURCE_ROOT}/packaging/windows/audio-setup.ps1"
+  File "/oname=audio-setup.ps1" "${SOURCE_ROOT}\packaging\windows\audio-setup.ps1"
   nsExec::ExecToStack /TIMEOUT=20000 '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -NonInteractive -ExecutionPolicy RemoteSigned -File "$PLUGINSDIR\audio-setup.ps1" -Check'
   Pop $CableCheck
   Pop $0
@@ -108,16 +108,16 @@ Section "SoundCurrent EQ" main
     Abort
   SetOutPath "$INSTDIR"
 !ifdef DLL_DIR
-  File /r "${DLL_DIR}/*"
+  File /r "${DLL_DIR}\*"
 !else
   File "/oname=soundcurrent-eq.exe" "${APP_EXE}"
 !endif
-  File "${SOURCE_ROOT}/LICENSE"
-  File "${SOURCE_ROOT}/COPYRIGHT"
-  File "${SOURCE_ROOT}/README.md"
-  File "${SOURCE_ROOT}/packaging/windows/audio-setup.ps1"
+  File "${SOURCE_ROOT}\LICENSE"
+  File "${SOURCE_ROOT}\COPYRIGHT"
+  File "${SOURCE_ROOT}\README.md"
+  File "${SOURCE_ROOT}\packaging\windows\audio-setup.ps1"
   File "/oname=VBCABLE_Driver_Pack45.zip" "${CABLE_ZIP}"
-  File "${SOURCE_ROOT}/packaging/windows/VB-CABLE-NOTICE.txt"
+  File "${SOURCE_ROOT}\packaging\windows\VB-CABLE-NOTICE.txt"
   WriteUninstaller "$INSTDIR\uninstall.exe"
   CreateDirectory "$SMPROGRAMS\SoundCurrent EQ"
   CreateShortcut "$SMPROGRAMS\SoundCurrent EQ\SoundCurrent EQ.lnk" "$INSTDIR\soundcurrent-eq.exe"
