@@ -1,8 +1,8 @@
 # SoundCurrent EQ
 
-SoundCurrent EQ is a native C++ desktop equalizer for Linux systems using
-PipeWire. It gives every app that plays through the default output the same
-adjustable sound profile. It starts with 15 frequency bands, lets you choose
+SoundCurrent EQ is a native C++ desktop equalizer for Linux and Windows. It
+gives every app that plays through the default output the same adjustable sound
+profile. It starts with 15 frequency bands, lets you choose
 any count from 5 to 31, and opens with **Flat** selected. Each band has its own
 gain, center frequency, and width (Q). The app also has 34 listening presets,
 saved custom profiles, a post-gain slider, stereo balance, and live level
@@ -52,6 +52,37 @@ audio processing; the C++ app manages the controls, devices, and level display.
 ## Install
 
 Download the package for your system from the [latest release](https://github.com/rhamenator/soundcurrent-eq/releases/latest).
+
+### Windows 10 and 11 (64-bit)
+
+The Windows installer is a per-user install. It does not need administrator
+access and adds shortcuts to the Start menu and desktop. The first Windows
+release uses WASAPI shared audio and the signed [VB-CABLE virtual audio driver](https://vb-audio.com/Cable/)
+to route system playback through the equalizer. The driver is a separate
+download and is not bundled with SoundCurrent EQ.
+
+1. Download and install VB-CABLE from the official site. Run its signed setup
+   as administrator and restart Windows when it asks.
+2. Install `SoundCurrent-EQ-<version>-windows-x64-setup.exe`. The app installer
+   runs as your user and creates the shortcuts.
+3. In Windows sound settings, set **CABLE Input (VB-Audio Virtual Cable)** as
+   the default output. Keep your speakers or headphones selected as the app's
+   physical output. The **Automatic** choice follows newly connected output
+   devices; choose a named output to pin it.
+4. Launch SoundCurrent EQ and play audio. Use the framed **Equalizer on/off**
+   control to compare with unprocessed playback. **Quit app** unloads the EQ;
+   Windows must stop sending audio to CABLE Input before the app can quit, so
+   the app guides you to select your speakers in sound settings if needed.
+
+The equalizer works with stereo playback. The Windows build currently uses
+the Windows shared-mode audio path and adapts to the selected endpoint's mix
+format and sample rate. SoundCurrent EQ does not install VB-CABLE or change
+Windows' default playback assignment. VB-CABLE is third-party software with
+its own license and donation terms; review those terms on the vendor's site.
+
+For source builds on Ubuntu 24.04 or newer, install `cmake`, `ninja-build`,
+`mingw-w64`, and `nsis`, then run `./scripts/build-windows.sh`. The installer
+and its SHA-256 file appear in `dist/`.
 
 ### Ubuntu 24.04 and newer
 
@@ -206,8 +237,8 @@ Build an installable package:
 The Ubuntu package and checksum appear in `dist/`. To build an RPM on Fedora or
 RHEL, install `cmake`, `gcc-c++`, `qt6-qtbase-devel`, `rpm-build`, `tar`, and
 `gzip`, then run `./scripts/build-rpm.sh`. RPM files and checksums appear in
-`dist/x86_64/`. The GitHub release workflow builds Ubuntu, Fedora 44, and
-RHEL 10 compatible packages for each `v*` tag.
+`dist/x86_64/`. The GitHub release workflow builds Ubuntu, Fedora 44, RHEL 10
+compatible, and Windows x64 packages for each `v*` tag.
 
 ## Verify the interface and audio routing
 
@@ -245,11 +276,11 @@ vulnerability reporting.
 
 ## How it works
 
-The filter uses PipeWire's [filter-chain module](https://docs.pipewire.org/page_module_filter_chain.html)
+On Linux, the filter uses PipeWire's [filter-chain module](https://docs.pipewire.org/page_module_filter_chain.html)
 with built-in biquad filters. Device routing is controlled through PipeWire's
-PulseAudio compatibility tools. [Easy Effects](https://github.com/wwmm/easyeffects)
-is a more advanced alternative if you need compression, convolution, or a large
-plugin collection.
+PulseAudio compatibility tools. On Windows, WASAPI shared-mode capture and
+render streams use VB-CABLE to connect the system output to the selected
+physical playback device.
 
 Licensed under [GNU GPL version 3 only](LICENSE). SoundCurrent EQ is an
 independent project and is not affiliated with FxSound. Its adjustable EQ

@@ -1,4 +1,5 @@
 /build/
+/build-windows/
 /dist/
 /.cache/
 *.swp

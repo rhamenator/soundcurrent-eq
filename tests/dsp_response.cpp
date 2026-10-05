@@ -1,0 +1,46 @@
+// SPDX-License-Identifier: GPL-3.0-only
+#include "dsp.h"
+
+#include <cmath>
+#include <cstdio>
+#include <numbers>
+#include <array>
+#include <vector>
+
+namespace {
+double measure(soundcurrent::StereoEqualizer &eq, double frequency) {
+    constexpr int rate = 48000;
+    std::vector<float> samples(rate * 2);
+    for (int i = 0; i < rate; ++i)
+        samples[i * 2] = samples[i * 2 + 1] =
+            static_cast<float>(0.1 * std::sin(2.0 * std::numbers::pi * frequency * i / rate));
+    eq.reset();
+    eq.process(samples.data(), rate);
+    double sum = 0.0;
+    for (int i = rate / 2; i < rate; ++i) sum += samples[i * 2] * samples[i * 2];
+    return std::sqrt(sum / (rate / 2));
+}
+}
+
+int main() {
+    soundcurrent::StereoEqualizer eq(48000);
+    if (!eq.setProfile({}, 0.0, 0)) return 1;
+    const double flat = measure(eq, 1000.0);
+    const std::array cutBand{soundcurrent::EqBand{1000.0, -12.0, 1.0}};
+    if (!eq.setProfile(cutBand, 0.0, 0)) return 2;
+    const double cut = measure(eq, 1000.0);
+    const double cutDb = 20.0 * std::log10(cut / flat);
+    if (std::abs(cutDb + 12.0) > 0.5) return 3;
+    if (!eq.setProfile({}, 6.0, 0)) return 4;
+    const double gainDb = 20.0 * std::log10(measure(eq, 1000.0) / flat);
+    if (std::abs(gainDb - 6.0) > 0.2) return 5;
+    if (!eq.setProfile({}, 0.0, -100)) return 6;
+    float stereo[2] = {0.2f, 0.2f};
+    eq.process(stereo, 1);
+    if (std::abs(stereo[0] - 0.2f) > 1e-5 || std::abs(stereo[1]) > 1e-5) return 7;
+    const std::array invalidBand{soundcurrent::EqBand{1000.0, 20.0, 1.0}};
+    if (eq.setProfile(invalidBand, 0.0, 0)) return 8;
+    std::printf("Windows DSP core: 1 kHz cut %.1f dB, post gain %.1f dB, balance passed\n",
+                cutDb, gainDb);
+    return 0;
+}
