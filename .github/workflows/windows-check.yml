@@ -1,16 +1,6 @@
 name: Windows build and DSP
 
 on:
-  pull_request:
-    paths:
-      - 'src/**'
-      - 'tests/**'
-      - 'data/**'
-      - 'scripts/**'
-      - 'packaging/windows/**'
-      - 'THIRD-PARTY-NOTICES.md'
-      - 'CMakeLists.txt'
-      - '.github/workflows/windows-check.yml'
   workflow_dispatch:
   workflow_call:
 

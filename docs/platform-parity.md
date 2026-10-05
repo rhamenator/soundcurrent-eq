@@ -10,7 +10,7 @@ Windows no longer depends on a separate reduced interface. The older
 | Flat default and 34 listening presets, including Loudness/Night Listening | Shared UI | Shared UI |
 | 5–31 bands with editable frequency, gain and Q; saved presets | Shared UI | Shared UI |
 | Immediate post-gain slider and stereo balance | PipeWire parameters | Shared C++ DSP through WASAPI |
-| Colorized frequency/overall meters, optional peak markers, 1–500 ms refresh | PipeWire monitor tap | WASAPI processing tap |
+| Colorized frequency/overall meters, optional peak markers, 1–100 ms refresh | PipeWire monitor tap | WASAPI processing tap |
 | Output dropdown and automatic connected-device selection | PipeWire device list | Windows endpoint list |
 | Speaker model profiles and measured amplifier-profile imports | Shared parser/filters | Shared parser/filters |
 | Microphone natural-voice EQ and input gain | Separate virtual microphone | Separate virtual microphone cable |
