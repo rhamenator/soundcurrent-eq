@@ -1,5 +1,19 @@
 # SoundCurrent EQ
 
+## Download the current preview — 0.7.1
+
+[Release notes and all downloads](https://github.com/rhamenator/soundcurrent-eq/releases/tag/parity-preview-0.7.1)
+
+- [Windows installer (64-bit)](https://github.com/rhamenator/soundcurrent-eq/releases/download/parity-preview-0.7.1/SoundCurrent-EQ-0.7.1-windows-x64-setup.exe)
+- [Ubuntu / Debian package (64-bit)](https://github.com/rhamenator/soundcurrent-eq/releases/download/parity-preview-0.7.1/soundcurrent-eq_0.7.1_amd64.deb)
+- [Fedora 44 RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/parity-preview-0.7.1/soundcurrent-eq-0.7.1-1.fc44.x86_64.rpm)
+- [RHEL 10 compatible RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/parity-preview-0.7.1/soundcurrent-eq-0.7.1-1.el10.x86_64.rpm)
+
+Version 0.7.1 is a **pre-release**. GitHub's “Latest” link currently points to the
+older 0.5.1 stable release; use the links above for the current Linux/Windows preview.
+
+## About SoundCurrent EQ
+
 SoundCurrent EQ is a native C++ desktop equalizer for Linux and Windows. It
 gives every app that plays through the default output the same adjustable sound
 profile. Both versions open with **Flat** selected and offer 34 listening
@@ -55,7 +69,7 @@ it and restores the normal output. Linux uses PipeWire filters; Windows uses the
 
 ## Install
 
-Download the package for your system from the [latest release](https://github.com/rhamenator/soundcurrent-eq/releases/latest).
+Download the package for your system from the [current 0.7.1 preview](https://github.com/rhamenator/soundcurrent-eq/releases/tag/parity-preview-0.7.1).
 
 ### Windows 10 and 11 (64-bit)
 
