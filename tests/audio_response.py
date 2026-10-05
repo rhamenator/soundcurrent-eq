@@ -45,7 +45,7 @@ def capture(tone, destination, sink):
         )
         try:
             time.sleep(0.3)
-            run("paplay", "-d", "soundcurrent_eq", str(tone))
+            run("paplay", "-d", EQ_SINK, str(tone))
             time.sleep(0.1)
         finally:
             recorder.terminate()

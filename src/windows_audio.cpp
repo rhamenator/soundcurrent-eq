@@ -219,8 +219,8 @@ std::string WindowsBridge::error() const {
 }
 std::vector<std::int16_t> WindowsBridge::takeMeterPcm() {
     std::lock_guard lock(meterMutex_);
-    std::vector<std::int16_t> result;
-    result.swap(meterPcm_);
+    std::vector<std::int16_t> result(meterPcm_.begin(), meterPcm_.begin() + meterSamples_);
+    meterSamples_ = 0;
     return result;
 }
 
@@ -249,18 +249,20 @@ void WindowsBridge::stop() {
     if (worker_.joinable()) worker_.join();
     running_ = false;
     peak_ = 0.0f;
+    { std::lock_guard lock(meterMutex_); meterSamples_ = 0; }
 }
 
 bool WindowsBridge::setProfile(std::span<const EqBand> bands, double postGainDb,
-                               int balancePercent, bool enabled) {
+                               int balancePercent, bool enabled, bool automaticHeadroom) {
     StereoEqualizer validator(48000);
-    if (!validator.setProfile(bands, postGainDb, balancePercent, enabled)) return false;
+    if (!validator.setProfile(bands, postGainDb, balancePercent, enabled, automaticHeadroom)) return false;
     Profile proposed;
     proposed.count = bands.size();
     std::copy(bands.begin(), bands.end(), proposed.bands.begin());
     proposed.postGainDb = postGainDb;
     proposed.balancePercent = balancePercent;
     proposed.enabled = enabled;
+    proposed.automaticHeadroom = automaticHeadroom;
     std::lock_guard guard(profileMutex_);
     profile_ = proposed;
     ++profileVersion_;
@@ -346,7 +348,7 @@ void WindowsBridge::run(std::wstring captureId, std::wstring outputId, bool micr
             }
             if (changed && !eq.setProfile(std::span(pending.bands.data(), pending.count),
                                           pending.postGainDb, pending.balancePercent,
-                                          pending.enabled))
+                                          pending.enabled, pending.automaticHeadroom))
                 throw std::runtime_error("The selected EQ settings are invalid");
 
             UINT32 packetFrames = 0;
@@ -369,10 +371,10 @@ void WindowsBridge::run(std::wstring captureId, std::wstring outputId, bool micr
                 if (!microphone && meterMutex_.try_lock()) {
                     // Only the visible UI consumes this bounded tap. Never block audio.
                     constexpr std::size_t limit = 32768;
-                    if (meterPcm_.size() + samples > limit) meterPcm_.clear();
+                    if (meterSamples_ + samples > limit) meterSamples_ = 0;
                     if (samples <= limit) for (std::size_t i = 0; i < samples; ++i)
-                        meterPcm_.push_back(static_cast<std::int16_t>(std::lround(
-                            std::clamp(scratch[i], -1.0f, 1.0f) * 32767.0f)));
+                        meterPcm_[meterSamples_++] = static_cast<std::int16_t>(std::lround(
+                            std::clamp(scratch[i], -1.0f, 1.0f) * 32767.0f));
                     meterMutex_.unlock();
                 }
                 for (UINT32 frame = 0; frame < packetFrames; ++frame) {

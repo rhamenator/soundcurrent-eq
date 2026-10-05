@@ -140,8 +140,8 @@ public:
         Bands bands{{80, 0, 0.707, T::HighPass}};
         constexpr std::array<T, 4> types{T::LowShelf, T::Peaking, T::Peaking, T::HighShelf};
         for (int i = 0; i < 4; ++i)
-            bands.append({double(kMicFrequencies[i]), std::clamp(kNaturalMic[i] + adjustments[i], -12.0, 12.0), 0.8, types[i]});
-        if (!bridge_.setProfile(nativeBands(bands), gain, 0, true))
+            bands.append({double(kMicFrequencies[i]), kNaturalMic[i] + adjustments[i], 0.8, types[i]});
+        if (!bridge_.setProfile(nativeBands(bands), gain, 0, true, false))
             throw std::runtime_error("Invalid microphone tuning");
     }
     void stop() { bridge_.stop(); route_.reset(); target_ = {}; }

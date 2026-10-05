@@ -1666,7 +1666,11 @@ private:
         }
         const auto estimatedPeak = std::max(peak[0] * balanceFactors_[0],
                                             peak[1] * balanceFactors_[1]) * peakGain_;
+#ifdef Q_OS_WIN
+        if (onLevels) onLevels(levels, playbackMeterSource ? std::max(estimatedPeak, double(playbackMeterSource->peak())) : estimatedPeak);
+#else
         if (onLevels) onLevels(levels, estimatedPeak);
+#endif
     }
 
     QProcess process_;

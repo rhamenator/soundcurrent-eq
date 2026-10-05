@@ -27,7 +27,7 @@ class StereoEqualizer {
 public:
     explicit StereoEqualizer(int sampleRate);
     bool setProfile(std::span<const EqBand> bands, double postGainDb,
-                    int balancePercent, bool enabled = true);
+                    int balancePercent, bool enabled = true, bool automaticHeadroom = true);
     float process(float *interleavedStereo, std::size_t frames);
     void reset();
     double headroomDb() const { return headroomDb_; }

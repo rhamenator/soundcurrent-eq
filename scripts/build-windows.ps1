@@ -21,7 +21,7 @@ try {
     # part of supported Windows versions. Refresh these with each app release.
     $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
     $vs = & $vswhere -latest -version '[17.0,18.0)' -products '*' -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
-    $redist = Get-ChildItem "$vs\VC\Redist\MSVC" -Directory | Sort-Object { [version]$_.Name } -Descending |
+    $redist = Get-ChildItem "$vs\VC\Redist\MSVC" -Directory | Where-Object { $_.Name -match '^\d+\.\d+\.\d+$' } | Sort-Object { [version]$_.Name } -Descending |
         ForEach-Object { Join-Path $_.FullName 'x64\Microsoft.VC143.CRT' } | Where-Object { Test-Path $_ } | Select-Object -First 1
     if (!$redist) { throw 'Visual Studio 2022 redistributable CRT not found' }
     Copy-Item "$redist\*.dll" $stage

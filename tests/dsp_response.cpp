@@ -38,7 +38,7 @@ int main() {
     float stereo[2] = {0.2f, 0.2f};
     eq.process(stereo, 1);
     if (std::abs(stereo[0] - 0.2f) > 1e-5 || std::abs(stereo[1]) > 1e-5) return 7;
-    const std::array invalidBand{soundcurrent::EqBand{1000.0, 20.0, 1.0}};
+    const std::array invalidBand{soundcurrent::EqBand{1000.0, 99.0, 1.0}};
     if (eq.setProfile(invalidBand, 0.0, 0)) return 8;
     using T = soundcurrent::FilterType;
     for (auto type : {T::LowShelf, T::HighShelf}) {

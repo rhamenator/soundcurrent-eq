@@ -79,7 +79,7 @@ public:
     float peak() const { return peak_.load(); }
     void setStatusCallback(StatusCallback callback) { status_ = std::move(callback); }
     bool setProfile(std::span<const EqBand> bands, double postGainDb,
-                    int balancePercent, bool enabled);
+                    int balancePercent, bool enabled, bool automaticHeadroom = true);
 
 private:
     struct Profile {
@@ -88,6 +88,7 @@ private:
         double postGainDb = 0.0;
         int balancePercent = 0;
         bool enabled = true;
+        bool automaticHeadroom = true;
     };
 
     void run(std::wstring captureId, std::wstring outputId, bool microphone);
@@ -104,7 +105,8 @@ private:
     bool ready_ = false;
     std::string error_;
     std::mutex meterMutex_;
-    std::vector<std::int16_t> meterPcm_;
+    std::array<std::int16_t, 32768> meterPcm_{};
+    std::size_t meterSamples_ = 0;
 };
 
 } // namespace soundcurrent

@@ -87,7 +87,7 @@ double StereoEqualizer::Biquad::process(double input) {
 }
 
 bool StereoEqualizer::setProfile(std::span<const EqBand> bands, double postGainDb,
-                                 int balancePercent, bool enabled) {
+                                 int balancePercent, bool enabled, bool automaticHeadroom) {
     if (bands.size() > kMaxBands || !std::isfinite(postGainDb) ||
         postGainDb < -12.0 || postGainDb > 12.0 ||
         balancePercent < -100 || balancePercent > 100) return false;
@@ -99,7 +99,7 @@ bool StereoEqualizer::setProfile(std::span<const EqBand> bands, double postGainD
             !std::isfinite(band.q) ||
             band.frequency < 20.0 || band.frequency > 20000.0 ||
             band.frequency >= sampleRate_ * 0.45 ||
-            band.gainDb < -12.0 || band.gainDb > 12.0 ||
+            band.gainDb < -24.0 || band.gainDb > 24.0 ||
             band.q < 0.1 || band.q > 20.0) return false;
         coefficients[i] = filterCoefficients(band, sampleRate_);
     }
@@ -110,11 +110,13 @@ bool StereoEqualizer::setProfile(std::span<const EqBand> bands, double postGainD
                                           sampleRate_ * 0.45);
         peakDb = std::max(peakDb, responseDb(coefficients, bands.size(), sampleRate_, frequency));
     }
-    headroomDb_ = peakDb > 0.01 ? -(peakDb + 1.0) : 0.0;
+    headroomDb_ = automaticHeadroom && peakDb > 0.01 ? -(peakDb + 1.0) : 0.0;
     const double balance = balancePercent / 100.0;
     const double gain = std::pow(10.0, (headroomDb_ + postGainDb) / 20.0);
     outputFactors_ = {gain * std::min(1.0, 1.0 - balance),
                       gain * std::min(1.0, 1.0 + balance)};
+    const auto oldCount = count_;
+    const bool changedPower = enabled_ != enabled;
     count_ = bands.size();
     enabled_ = enabled;
     for (auto &channel : filters_)
@@ -123,7 +125,7 @@ bool StereoEqualizer::setProfile(std::span<const EqBand> bands, double postGainD
             const auto &c = coefficients[i];
             filter.b0 = c.b0; filter.b1 = c.b1; filter.b2 = c.b2;
             filter.a1 = c.a1; filter.a2 = c.a2;
-            filter.reset();
+            if (i >= oldCount || changedPower) filter.reset();
         }
     return true;
 }
@@ -134,6 +136,7 @@ float StereoEqualizer::process(float *interleavedStereo, std::size_t frames) {
     for (std::size_t frame = 0; frame < frames; ++frame)
         for (int channel = 0; channel < 2; ++channel) {
             double value = interleavedStereo[frame * 2 + channel];
+            if (!std::isfinite(value)) value = 0.0;
             if (enabled_) {
                 for (std::size_t i = 0; i < count_; ++i)
                     value = filters_[channel][i].process(value);
