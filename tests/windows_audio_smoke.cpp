@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <array>
 #include <cmath>
+#include <chrono>
 #include <cstdio>
 #include <cstring>
 #include <memory>
@@ -130,6 +131,7 @@ double decibels(double value, double reference) { return 20 * std::log10(value /
 }
 
 int main(int argc, char **argv) {
+    std::setvbuf(stdout, nullptr, _IONBF, 0);
     try {
         check(CoInitializeEx(nullptr, COINIT_MULTITHREADED), "COM");
         std::wstring cableInput, cableOutput, speakers;
@@ -149,6 +151,18 @@ int main(int argc, char **argv) {
         }
         if (cableInput.empty() || cableOutput.empty() || speakers.empty())
             throw std::runtime_error("VB-CABLE and a physical stereo output are required");
+        std::array<std::wstring, 3> originalDefaults;
+        for (int i = 0; i < 3; ++i) originalDefaults[i] = soundcurrent::windowsDefaultEndpointId(false, i);
+        {
+            soundcurrent::WindowsRouteLease route(false, cableInput, speakers, true);
+            for (int i = 0; i < 3; ++i)
+                if (soundcurrent::windowsDefaultEndpointId(false, i) != cableInput)
+                    throw std::runtime_error("Automatic default routing failed");
+        }
+        for (int i = 0; i < 3; ++i)
+            if (soundcurrent::windowsDefaultEndpointId(false, i) !=
+                (originalDefaults[i] == cableInput ? speakers : originalDefaults[i]))
+                throw std::runtime_error("Default route was not restored");
         soundcurrent::WindowsBridge bridge;
         bridge.setStatusCallback([](const std::wstring &message) {
             std::printf("Bridge: %s\n", std::string(message.begin(), message.end()).c_str());
@@ -189,6 +203,18 @@ int main(int argc, char **argv) {
         if (!bridge.running() || std::abs(decibels(restarted.left, flat.left)) > 0.5)
             throw std::runtime_error("Restarted audio is silent or changed level");
         bridge.stop();
+        constexpr int calibrationRate = 96000;
+        std::vector<std::int16_t> stereo(calibrationRate * 2);
+        for (int i = 0; i < calibrationRate; ++i) {
+            const auto value = std::int16_t(std::lround(100 * std::sin(2 * std::numbers::pi * 1000 * i / calibrationRate)));
+            stereo[i * 2] = value; stereo[i * 2 + 1] = value;
+        }
+        const auto started = std::chrono::steady_clock::now();
+        soundcurrent::windowsPlayPcm(speakers, stereo, calibrationRate, 2);
+        const auto seconds = std::chrono::duration<double>(std::chrono::steady_clock::now() - started).count();
+        std::printf("Stereo calibration duration: %.3f seconds (expected 1)\n", seconds);
+        if (seconds < 0.85 || seconds > 1.5)
+            throw std::runtime_error("Stereo calibration frame timing failed");
         std::puts("PASS: live route, post gain, EQ, bypass, balance, and restart");
         return 0;
     } catch (const std::exception &error) {

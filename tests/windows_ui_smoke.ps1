@@ -46,8 +46,8 @@ try {
     if ($hadSettings) { & reg delete $key /f | Out-Null }
     $settingsIsolated=$true
     $app=Start-Process $exe -PassThru
-    WaitUntil { $script:window=[EqUi]::FindWindow($null,'SoundCurrent EQ'); $script:window -ne [IntPtr]::Zero } 'App window missing'
-    Assert ([EqUi]::IsWindowVisible($script:window)) 'App window is hidden'
+    WaitUntil { $script:window=[EqUi]::FindWindow([NullString]::Value,'SoundCurrent EQ'); $script:window -ne [IntPtr]::Zero } 'App window missing'
+    WaitUntil { [EqUi]::IsWindowVisible($script:window) } 'App window is hidden'
     [void][EqUi]::PostMessage($script:window,0x10,[IntPtr]::Zero,[IntPtr]::Zero)
     WaitUntil { -not [EqUi]::IsWindowVisible($script:window) } 'Closing the window did not hide it'
     Assert (-not $app.HasExited) 'Closing the window unloaded the app'
