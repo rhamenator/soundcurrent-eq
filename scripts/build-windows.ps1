@@ -52,15 +52,13 @@ try {
     # published alongside the installer. Avoid unpacking thousands of unused
     # source files on the Windows runner.
     Write-Output 'Extracting Qt license and attribution notices'
-    $entries = & tar -tf $sourceArchive
-    if ($LASTEXITCODE -ne 0) { throw 'Qt source listing failed' }
-    $notices = @($entries | Where-Object { $_ -match '(^|/)(LICENSE[^/]*|LICENCE[^/]*|COPYING[^/]*|COPYRIGHT[^/]*|qt_attribution\.json)(/|$)' })
-    if (!$notices.Count) { throw 'Qt license notices missing' }
-    $noticeList = Join-Path $sourceDir 'notices.txt'
-    [IO.File]::WriteAllLines($noticeList, $notices, [Text.UTF8Encoding]::new($false))
-    & tar -xf $sourceArchive -C $sourceDir -T $noticeList
+    & 7z x -y "-o$sourceDir" $sourceArchive | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw 'Qt source decompression failed' }
+    $sourceTar = Join-Path $sourceDir ([IO.Path]::GetFileNameWithoutExtension($sourceArchive))
+    & 7z x -y "-o$sourceDir" $sourceTar '-ir!LICENSE*' '-ir!LICENCE*' '-ir!COPYING*' '-ir!COPYRIGHT*' '-ir!qt_attribution.json' '-ir!*/LICENSES/*' | Out-Null
     if ($LASTEXITCODE -ne 0) { throw 'Qt source extraction failed' }
     $qtSource = Join-Path $sourceDir 'qtbase-everywhere-src-6.12.0'
+    if (!(Test-Path "$qtSource\LICENSES")) { throw 'Qt license notices missing' }
     Get-ChildItem $qtSource -Recurse -File | Where-Object { $_.Name -match '^(LICENSE|LICENCE|COPYING|COPYRIGHT)' -or $_.Name -eq 'qt_attribution.json' } | ForEach-Object {
         $relative = $_.FullName.Substring($qtSource.Length + 1)
         $dest = Join-Path "$stage\licenses\Qt" $relative
