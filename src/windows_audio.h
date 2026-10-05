@@ -60,7 +60,7 @@ private:
     std::unique_ptr<Impl> impl_;
 };
 void windowsPlayPcm(const std::wstring &endpoint, std::span<const std::int16_t> pcm,
-                    int sampleRate = 96000);
+                    int sampleRate = 96000, int channels = 1);
 
 class WindowsBridge {
 public:

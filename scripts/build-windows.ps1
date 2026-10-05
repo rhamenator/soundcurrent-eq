@@ -17,6 +17,7 @@ try {
     Copy-Item build-windows-native\Release\soundcurrent-eq.exe $stage
     & "$QtPrefix\bin\windeployqt.exe" --release --no-translations --no-opengl-sw --no-compiler-runtime "$stage\soundcurrent-eq.exe"
     if ($LASTEXITCODE -ne 0) { throw 'Qt runtime deployment failed' }
+    Copy-Item "$QtPrefix\plugins\platforms\qoffscreen.dll" "$stage\platforms"
     # App-local redistributable DLLs avoid another privileged installer. UCRT is
     # part of supported Windows versions. Refresh these with each app release.
     $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
@@ -31,13 +32,17 @@ try {
     New-Item -ItemType Directory -Force (Split-Path $sourceArchive -Parent) | Out-Null
     if (!(Test-Path $sourceArchive)) {
         Write-Output 'Downloading the corresponding Qt source archive'
+        $downloaded = $false
         try {
-            Invoke-WebRequest -Uri 'https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtbase-everywhere-src-6.12.0.tar.xz' -OutFile $sourceArchive -TimeoutSec 60
-        } catch {
+            & curl.exe --fail --silent --show-error --location --connect-timeout 15 --max-time 90 --output $sourceArchive 'https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtbase-everywhere-src-6.12.0.tar.xz'
+            $downloaded = $LASTEXITCODE -eq 0
+        } catch { $downloaded = $false }
+        if (!$downloaded) {
             # This mirror is advertised by Qt's download service. The same
             # pinned checksum applies, regardless of which host supplied it.
             Remove-Item $sourceArchive -ErrorAction SilentlyContinue
-            Invoke-WebRequest -Uri 'https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtbase-everywhere-src-6.12.0.tar.xz' -OutFile $sourceArchive -TimeoutSec 180
+            & curl.exe --fail --silent --show-error --location --connect-timeout 15 --max-time 180 --output $sourceArchive 'https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtbase-everywhere-src-6.12.0.tar.xz'
+            if ($LASTEXITCODE -ne 0) { throw 'Qt source download failed' }
         }
     }
     if ((Get-FileHash $sourceArchive).Hash.ToLowerInvariant() -ne 'a951bd163c7b80fc6b8c88d7668fb56abf91c152373e13c10666763238131307') { throw 'Qt source checksum mismatch' }
@@ -67,12 +72,14 @@ try {
     Copy-Item build-windows-native\Release\soundcurrent-dsp-test.exe $stage
     Write-Output 'Checking shared DSP and Qt controls'
     $dsp = Start-Process "$stage\soundcurrent-dsp-test.exe" -PassThru -NoNewWindow
+    $null = $dsp.Handle
     if (!$dsp.WaitForExit(60000)) { Stop-Process -Id $dsp.Id -Force; throw 'DSP test timed out' }
     $dsp.Refresh()
     if ($dsp.ExitCode -ne 0) { throw "DSP test failed: $($dsp.ExitCode)" }
     $env:QT_QPA_PLATFORM = 'offscreen'
     $uiLog = Join-Path $root 'build-windows-native\ui-self-test.log'
     $ui = Start-Process "$stage\soundcurrent-eq.exe" -ArgumentList '--ui-self-test' -PassThru -RedirectStandardError $uiLog
+    $null = $ui.Handle
     if (!$ui.WaitForExit(90000)) {
         Stop-Process -Id $ui.Id -Force
         Get-Content $uiLog -ErrorAction SilentlyContinue

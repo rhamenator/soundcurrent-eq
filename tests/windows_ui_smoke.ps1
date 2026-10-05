@@ -37,6 +37,7 @@ try {
     $log=Join-Path $env:TEMP 'soundcurrent-ui-self-test.log'
     $env:QT_QPA_PLATFORM='offscreen'
     $test=Start-Process $exe -ArgumentList '--ui-self-test' -PassThru -RedirectStandardError $log
+    $null=$test.Handle
     if (!$test.WaitForExit(90000)) { Stop-Process -Id $test.Id -Force; throw 'Shared UI test timed out' }
     $test.Refresh()
     Assert ($test.ExitCode -eq 0) "Shared UI test failed; see $log"

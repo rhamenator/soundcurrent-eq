@@ -1,6 +1,6 @@
 Name:           soundcurrent-eq
 %global debug_package %{nil}
-Version:        0.5.1
+Version:        0.7.0
 Release:        1%{?dist}
 Summary:        Adjustable desktop equalizer for PipeWire
 License:        GPL-3.0-only
@@ -37,8 +37,13 @@ DESTDIR=%{buildroot} cmake --install build
 %{_datadir}/icons/hicolor/scalable/apps/io.github.rhamenator.SoundCurrentEQ.svg
 %{_datadir}/doc/soundcurrent-eq/copyright
 %{_datadir}/doc/soundcurrent-eq/LICENSE
+%{_datadir}/doc/soundcurrent-eq/THIRD-PARTY-NOTICES.md
+%{_datadir}/doc/soundcurrent-eq/speakers
 
 %changelog
+* Mon Oct 05 2026 rhamenator <rhamenator@gmail.com> - 0.7.0-1
+- Add measured speaker profiles and amplifier imports with source attribution
+- Hide disconnected microphone jacks and reject clipped calibration capture
 * Sun Oct 04 2026 rhamenator <rhamenator@gmail.com> - 0.5.1-1
 - Add persistent EQ lock, grouped Undo, safe wheel scrolling, and mic disconnect status
 * Sun Oct 04 2026 rhamenator <rhamenator@gmail.com> - 0.5.0-1

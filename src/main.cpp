@@ -71,6 +71,7 @@
 #include <complex>
 #include <cerrno>
 #include <cstdint>
+#include <cstdio>
 #include <functional>
 #include <limits>
 #include <numbers>
@@ -1114,13 +1115,13 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
         auto playAndRecord = [&](const QString &path) {
             QFile wav(path);
             if (!wav.open(QIODevice::ReadOnly)) throw std::runtime_error("Could not open test waveform");
-            const auto bytes = wav.readAll().mid(44); // our own mono PCM16 WAV writer
+            const auto bytes = wav.readAll().mid(44); // our own stereo PCM16 WAV writers
             std::vector<std::int16_t> signal(bytes.size() / 2);
             std::memcpy(signal.data(), bytes.constData(), signal.size() * 2);
             recorder.take();
             const auto endpoint = output == kSink ? standardCable(false) : output;
             auto player = std::async(std::launch::async, [endpoint, signal = std::move(signal)] {
-                soundcurrent::windowsPlayPcm(endpoint.toStdWString(), signal, kCalibrationRate);
+                soundcurrent::windowsPlayPcm(endpoint.toStdWString(), signal, kCalibrationRate, 2);
             });
             QByteArray pcm;
             while (player.wait_for(std::chrono::milliseconds(10)) != std::future_status::ready) {
@@ -3200,6 +3201,15 @@ private:
 } // namespace
 
 int main(int argc, char **argv) {
+    for (int i = 1; i < argc; ++i) {
+        if (std::strcmp(argv[i], "--ui-self-test") == 0) {
+            qInstallMessageHandler([](QtMsgType, const QMessageLogContext &, const QString &message) {
+                const auto utf8 = message.toUtf8();
+                std::fprintf(stderr, "%s\n", utf8.constData());
+                std::fflush(stderr);
+            });
+        }
+    }
     if (argc == 6 && QString::fromLocal8Bit(argv[1]) == "--calibration-worker") {
         QCoreApplication workerApp(argc, argv);
         bool valid = false;

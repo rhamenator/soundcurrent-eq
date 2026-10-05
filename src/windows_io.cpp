@@ -204,10 +204,11 @@ std::vector<std::int16_t> WindowsRecorder::take() {
     result.swap(impl_->pcm); return result;
 }
 
-void windowsPlayPcm(const std::wstring &id, std::span<const std::int16_t> pcm, int sampleRate) {
-    if (pcm.empty() || sampleRate < 8000 || sampleRate > 192000)
+void windowsPlayPcm(const std::wstring &id, std::span<const std::int16_t> pcm, int sampleRate, int channels) {
+    if (pcm.empty() || sampleRate < 8000 || sampleRate > 192000 ||
+        channels < 1 || channels > 2 || pcm.size() % channels)
         throw std::runtime_error("Invalid calibration audio");
-    Apartment apartment; auto audio = stream(id); auto format = floatFormat(sampleRate, 1);
+    Apartment apartment; auto audio = stream(id); auto format = floatFormat(sampleRate, channels);
     checked(audio->Initialize(AUDCLNT_SHAREMODE_SHARED,
         AUDCLNT_STREAMFLAGS_AUTOCONVERTPCM | AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY,
         1000000, 0, &format, nullptr), "Initialize test playback");
@@ -216,13 +217,15 @@ void windowsPlayPcm(const std::wstring &id, std::span<const std::int16_t> pcm, i
     UINT32 capacity = 0; checked(audio->GetBufferSize(&capacity), "Size test playback buffer");
     std::size_t offset = 0;
     checked(audio->Start(), "Start test playback");
-    while (offset < pcm.size()) {
+    const auto totalFrames = pcm.size() / channels;
+    while (offset < totalFrames) {
         UINT32 padding = 0; checked(audio->GetCurrentPadding(&padding), "Read test playback padding");
-        const auto frames = static_cast<UINT32>(std::min<std::size_t>(capacity - padding, pcm.size() - offset));
+        const auto frames = static_cast<UINT32>(std::min<std::size_t>(capacity - padding, totalFrames - offset));
         if (frames) {
             BYTE *raw = nullptr; checked(writer->GetBuffer(frames, &raw), "Write test playback");
             auto *samples = reinterpret_cast<float *>(raw);
-            for (UINT32 i = 0; i < frames; ++i) samples[i] = pcm[offset + i] / 32768.0f;
+            for (UINT32 i = 0; i < frames * channels; ++i)
+                samples[i] = pcm[offset * channels + i] / 32768.0f;
             checked(writer->ReleaseBuffer(frames, 0), "Release test playback"); offset += frames;
         }
         Sleep(2);
