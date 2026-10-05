@@ -55,6 +55,8 @@ Download the package for your system from the [latest release](https://github.co
 
 ### Windows 10 and 11 (64-bit)
 
+Download the [0.7.0 shared-interface preview](https://github.com/rhamenator/soundcurrent-eq/releases/tag/parity-preview-0.7.0)
+for the current Windows installer and matching Ubuntu, Fedora and RHEL-compatible packages.
 The Windows build is a preview using the same interface and controls as
 Linux. The installer bundles Qt and the C++ runtime; users do not need to
 install a development environment.

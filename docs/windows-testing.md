@@ -7,9 +7,15 @@ uses its own WASAPI backend and requires a separately installed second cable
 for simultaneous microphone processing. A build or UI test does not establish
 that room calibration or hotplug works with every physical device.
 
-The earlier 0.6 playback preview was verified in an independent Windows 11
-26H2 clone with the signed VB-CABLE driver and a virtual High Definition Audio
-output. Hardware verification on a physical Windows system remains useful.
+Version 0.7.0 was checked in an independent Windows 11 26H2 clone with the
+signed VB-CABLE driver and a virtual High Definition Audio output. The native
+Microsoft compiler build measured +6.05 dB live post gain, -11.95 dB EQ cut,
+0.05 dB bypass difference, full-left balance, successful stop/restart, restoration
+of all three playback roles, and a 1.007-second stereo calibration signal.
+The installed UI check passed for tabs, controls, shortcuts, background
+close/reopen, a single running instance and graceful quit. Real output hotplug,
+a second microphone cable and room measurements still need physical-hardware
+verification.
 
 The bundled-driver installer has also been checked in that clone with the
 driver present and absent: default selection, opting out, cancelling UAC,
@@ -28,9 +34,11 @@ check lists endpoints by default. Run it with `--run` only in an isolated,
 signed-in Windows test system with VB-CABLE installed and a physical output
 available. Quit other copies of SoundCurrent EQ first. It plays a quiet
 1 kHz tone at approximately -34 dBFS into CABLE Input and measures the
-physical output through WASAPI loopback. It does not change Windows' default
-output. It checks Flat playback, a live +6 dB post-gain change, a -12 dB EQ
-cut, bypass, full-left balance, and stopping/restarting the bridge. An
+physical output through WASAPI loopback. It temporarily changes all three
+Windows default playback roles to the cable and verifies their restoration
+before testing the bridge. It checks Flat playback, a live +6 dB post-gain
+change, a -12 dB EQ cut, bypass, full-left balance, stopping/restarting the
+bridge, and the duration of a one-second stereo calibration signal. An
 unsigned-in Windows VM returned silence from the cable; signing into its
 desktop restored normal audio.
 
@@ -42,6 +50,9 @@ preview silently as the current user before the check. An optional
 and Start menu shortcuts, runs the shared Qt control checks with isolated INI
 settings, then verifies closing to the notification area, restoring the
 existing instance and gracefully quitting through the app's activation channel.
+The shared UI check also verifies that the Equalizer tab opens first with the
+bands at the top, that device and sweep controls belong to Settings & calibration,
+and that wheel movement scrolls the active page without changing a control.
 It backs up the Windows registry settings before the desktop check and
 restores them after successful exit. Use only disposable test settings; on failure it leaves
 the app running so its state can be inspected.
