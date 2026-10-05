@@ -217,6 +217,10 @@ frequency response; it cannot remove amplifier noise, clipping or distortion.
 
 ## Use
 
+- The **Equalizer** tab opens first, with the frequency sliders and response
+  graph at the top, followed by listening presets, post gain, balance and meters.
+  **Settings & calibration** contains device selection, speaker and amplifier
+  profiles, microphone controls, and sweep settings. Each page scrolls as needed.
 - **Automatic** starts with the current default output. When a new output is
   connected, it switches to that device. If it disappears, it falls back to an
   available output. Choose a named device to keep the EQ on that device.

@@ -57,6 +57,7 @@
 #include <QSpinBox>
 #include <QStandardPaths>
 #include <QSystemTrayIcon>
+#include <QTabWidget>
 #include <QTemporaryDir>
 #include <QThread>
 #include <QTextStream>
@@ -1786,27 +1787,45 @@ public:
 
         scroll_ = new QScrollArea;
         scroll_->setWidgetResizable(true);
-        setCentralWidget(scroll_);
+        tabs_ = new QTabWidget;
+        tabs_->setAccessibleName("Equalizer and configuration pages");
+        tabs_->addTab(scroll_, "Equalizer");
+        setCentralWidget(tabs_);
         auto *container = new QWidget;
         auto *root = new QVBoxLayout(container);
         root->setContentsMargins(26, 22, 26, 24);
         root->setSpacing(16);
         scroll_->setWidget(container);
+        auto *settingsScroll = new QScrollArea;
+        settingsScroll->setWidgetResizable(true);
+        auto *settingsContainer = new QWidget;
+        auto *settingsRoot = new QVBoxLayout(settingsContainer);
+        settingsRoot->setContentsMargins(26, 22, 26, 24);
+        settingsRoot->setSpacing(16);
+        settingsScroll->setWidget(settingsContainer);
+        tabs_->addTab(settingsScroll, "Settings && calibration");
+        tabs_->setCurrentIndex(0);
 
+        auto *deviceBox = new QGroupBox("Output device");
+        auto *deviceLayout = new QVBoxLayout(deviceBox);
+        settingsRoot->addWidget(deviceBox);
         auto *outputBox = new QGroupBox("Playback");
         auto *outputLayout = new QVBoxLayout(outputBox);
         auto *outputRow = new QHBoxLayout;
         outputCombo_ = new QComboBox;
         outputCombo_->setAccessibleName("Output device");
         outputCombo_->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-        outputRow->addWidget(outputCombo_, 1);
+        auto *deviceRow = new QHBoxLayout;
+        deviceRow->addWidget(outputCombo_, 1);
         auto *refresh = new QPushButton("Refresh devices");
-        outputRow->addWidget(refresh);
+        deviceRow->addWidget(refresh);
+        deviceLayout->addLayout(deviceRow);
         power_ = new QCheckBox("Equalizer off");
         power_->setObjectName("powerToggle");
         power_->setAccessibleName("Equalizer on or off");
         power_->setToolTip("Click to turn the equalizer on or off");
         outputRow->addWidget(power_);
+        outputRow->addStretch();
         auto *quit = new QPushButton("Quit app");
         quit->setAccessibleName("Quit SoundCurrent EQ");
         quit->setToolTip("Exit SoundCurrent EQ and restore normal audio");
@@ -1887,10 +1906,9 @@ public:
         status_->setWordWrap(true);
         status_->setObjectName("status");
         outputLayout->addWidget(status_);
-        root->addWidget(outputBox);
 #ifdef Q_OS_WIN
         auto *driverSetup = new QPushButton("Audio driver setup");
-        outputLayout->addWidget(driverSetup);
+        deviceLayout->addWidget(driverSetup);
         connect(driverSetup, &QPushButton::clicked, this, [] {
             const auto script = QDir(QCoreApplication::applicationDirPath()).filePath("audio-setup.ps1");
             if (QFileInfo::exists(script))
@@ -1916,7 +1934,7 @@ public:
         speakerHelp->setWordWrap(true);
         speakerLayout->addWidget(speakerHelp);
         connect(speakerDetails, &QPushButton::clicked, this, [this] { showSpeakerDetails(); });
-        root->addWidget(speakerBox);
+        settingsRoot->addWidget(speakerBox);
         auto *ampRow = new QHBoxLayout;
         ampRow->addWidget(new QLabel("Amplifier / receiver"));
         ampCombo_ = new PresetComboBox;
@@ -2003,6 +2021,9 @@ public:
         });
 #endif
 
+        settingsRoot->addWidget(inputBox);
+        auto *calibrationBox = new QGroupBox("Speaker && room calibration");
+        auto *calibrationLayout = new QVBoxLayout(calibrationBox);
         auto *calibrationRow = new QHBoxLayout;
         calibrationRow->addWidget(new QLabel("Speaker + room check"));
         calibrationMode_ = new QComboBox;
@@ -2026,11 +2047,12 @@ public:
         calibrationLevel_->setAccessibleName("Calibration tone level");
         calibrationRow->addWidget(calibrationLevel_);
         calibrationRow->addStretch();
-        inputLayout->addLayout(calibrationRow);
+        calibrationLayout->addLayout(calibrationRow);
         calibrationStatus_ = new QLabel("Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.");
         calibrationStatus_->setWordWrap(true);
-        inputLayout->addWidget(calibrationStatus_);
-        root->addWidget(inputBox);
+        calibrationLayout->addWidget(calibrationStatus_);
+        settingsRoot->addWidget(calibrationBox);
+        settingsRoot->addStretch();
 
         auto *presetBox = new QGroupBox("Listening preset");
         auto *presetRow = new QHBoxLayout(presetBox);
@@ -2118,7 +2140,9 @@ public:
         bandScroll_->setFixedHeight(235);
         eqLayout->addWidget(bandScroll_);
         eqLayout->addWidget(new QLabel("Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping."));
-        root->addWidget(eqBox, 1);
+        root->insertWidget(0, eqBox);
+        root->addWidget(outputBox);
+        root->addStretch();
 
         loadCustomPresets();
         rebuildPresetList("Flat");
@@ -2308,7 +2332,8 @@ protected:
         if (event->type() == QEvent::Wheel && scroll_) {
             auto *wheel = static_cast<QWheelEvent *>(event);
             if (wheel->angleDelta().y() || wheel->pixelDelta().y()) {
-                auto *bar = scroll_->verticalScrollBar();
+                auto *page = qobject_cast<QScrollArea *>(tabs_->currentWidget());
+                auto *bar = (page ? page : scroll_)->verticalScrollBar();
                 QWheelEvent forwarded(QPointF(bar->rect().center()), wheel->globalPosition(),
                                       wheel->pixelDelta(), wheel->angleDelta(), wheel->buttons(),
                                       wheel->modifiers(), wheel->phase(), wheel->inverted(),
@@ -3142,6 +3167,7 @@ private:
     QStringList knownInputNames_;
     QString micDisconnectNotice_;
     QMap<QString, Bands> custom_;
+    QTabWidget *tabs_ = nullptr;
     QScrollArea *scroll_ = nullptr;
     QComboBox *outputCombo_ = nullptr;
     QComboBox *inputCombo_ = nullptr;
@@ -3377,6 +3403,11 @@ int main(int argc, char **argv) {
         QSlider::groove:vertical { background: #344762; width: 7px; border-radius: 3px; }
         QSlider::handle:vertical { background: #eafbf7; height: 16px; margin: 0 -6px; border-radius: 8px; }
         QScrollArea { border: none; }
+        QTabWidget::pane { border: none; }
+        QTabBar::tab { background: #1c293c; border: 1px solid #33445e;
+                      padding: 10px 20px; margin-right: 4px; }
+        QTabBar::tab:selected { background: #1f746e; border-color: #55d7c3; }
+        QTabBar::tab:hover { background: #385572; }
     )");
     if (app.arguments().contains("--ui-self-test")) {
         QJsonObject ampTest{{"schema", 1}, {"model", "Test fixture"},
@@ -3716,8 +3747,42 @@ int main(int argc, char **argv) {
         if (!firstBandSlider()->isEnabled()) qFatal("Unlock did not restore editing");
         testWindow.show();
         app.processEvents();
-        auto *outer = qobject_cast<QScrollArea *>(testWindow.centralWidget());
-        if (!outer || outer->verticalScrollBar()->maximum() <= 0)
+        auto *tabs = qobject_cast<QTabWidget *>(testWindow.centralWidget());
+        if (!tabs || tabs->count() != 2 || tabs->currentIndex() != 0 || tabs->tabText(0) != "Equalizer")
+            qFatal("Equalizer must be the first and initially selected tab");
+        auto *outer = qobject_cast<QScrollArea *>(tabs->widget(0));
+        auto *settingsPage = qobject_cast<QScrollArea *>(tabs->widget(1));
+        if (!outer || !settingsPage || !outer->isAncestorOf(firstBandSlider()) ||
+            !outer->isAncestorOf(presets) || !outer->isAncestorOf(outputGain) ||
+            !settingsPage->isAncestorOf(speakers))
+            qFatal("Equalizer and configuration controls are on the wrong tabs");
+        auto *firstGroup = qobject_cast<QGroupBox *>(outer->widget()->layout()->itemAt(0)->widget());
+        if (!firstGroup || firstGroup->title() != "Equalizer")
+            qFatal("Equalizer must be at the top of the first page");
+        for (auto *combo : testWindow.findChildren<QComboBox *>()) {
+            if ((combo->accessibleName() == "Output device" ||
+                 combo->accessibleName() == "Calibration test signal") &&
+                !settingsPage->isAncestorOf(combo))
+                qFatal("Device or sweep configuration is outside the settings tab");
+        }
+        const auto screenshotDirectory = qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
+        if (!screenshotDirectory.isEmpty()) {
+            testWindow.resize(1050, 920);
+            app.processEvents();
+            if (!QDir().mkpath(screenshotDirectory) ||
+                !testWindow.grab().save(QDir(screenshotDirectory).filePath("equalizer.png")))
+                qFatal("Cannot save equalizer UI test screenshot");
+        }
+        tabs->setCurrentIndex(1);
+        app.processEvents();
+        if (!screenshotDirectory.isEmpty() &&
+            !testWindow.grab().save(QDir(screenshotDirectory).filePath("settings.png")))
+            qFatal("Cannot save settings UI test screenshot");
+        if (!speakers->isVisible()) qFatal("Settings tab does not display its controls");
+        tabs->setCurrentIndex(0);
+        testWindow.resize(testWindow.width(), 400);
+        app.processEvents();
+        if (outer->verticalScrollBar()->maximum() <= 0)
             qFatal("Window cannot scroll to the level indicators");
         outer->verticalScrollBar()->setValue(0);
         band = firstBandSlider();
@@ -3728,6 +3793,19 @@ int main(int argc, char **argv) {
         QCoreApplication::sendEvent(band, &wheel);
         if (band->value() != beforeWheel || outer->verticalScrollBar()->value() <= 0)
             qFatal("Mouse wheel changed an EQ band instead of scrolling the window");
+        tabs->setCurrentIndex(1);
+        app.processEvents();
+        settingsPage->verticalScrollBar()->setValue(0);
+        const int beforeCalibrationWheel = calibrationLevel->value();
+        QWheelEvent settingsWheel(QPointF(5, 5),
+                                 QPointF(calibrationLevel->mapToGlobal(QPoint(5, 5))),
+                                 QPoint(), QPoint(0, -120), Qt::NoButton, Qt::NoModifier,
+                                 Qt::NoScrollPhase, false);
+        QCoreApplication::sendEvent(calibrationLevel, &settingsWheel);
+        if (calibrationLevel->value() != beforeCalibrationWheel ||
+            settingsPage->verticalScrollBar()->value() <= 0)
+            qFatal("Mouse wheel changed sweep level instead of scrolling the settings tab");
+        tabs->setCurrentIndex(0);
         bool quitRequested = false;
         QObject::connect(&app, &QCoreApplication::aboutToQuit, &testWindow,
                          [&quitRequested] { quitRequested = true; });
