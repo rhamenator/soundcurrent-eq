@@ -7,11 +7,12 @@
 #include <audioclient.h>
 #include <avrt.h>
 #include <endpointvolume.h>
-#include <functiondiscoverykeys_devpkey.h>
 #include <mmdeviceapi.h>
 #include <mmreg.h>
 #include <propvarutil.h>
 #include <initguid.h>
+#include <propkeydef.h>
+#include <functiondiscoverykeys_devpkey.h>
 #include <ksmedia.h>
 #include <wrl/client.h>
 
