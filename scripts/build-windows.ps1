@@ -30,12 +30,30 @@ try {
     $sourceArchive = Join-Path $root '.cache\qtbase-everywhere-src-6.12.0.tar.xz'
     New-Item -ItemType Directory -Force (Split-Path $sourceArchive -Parent) | Out-Null
     if (!(Test-Path $sourceArchive)) {
-        Invoke-WebRequest -Uri 'https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtbase-everywhere-src-6.12.0.tar.xz' -OutFile $sourceArchive
+        Write-Output 'Downloading the corresponding Qt source archive'
+        try {
+            Invoke-WebRequest -Uri 'https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtbase-everywhere-src-6.12.0.tar.xz' -OutFile $sourceArchive -TimeoutSec 60
+        } catch {
+            # This mirror is advertised by Qt's download service. The same
+            # pinned checksum applies, regardless of which host supplied it.
+            Remove-Item $sourceArchive -ErrorAction SilentlyContinue
+            Invoke-WebRequest -Uri 'https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtbase-everywhere-src-6.12.0.tar.xz' -OutFile $sourceArchive -TimeoutSec 180
+        }
     }
     if ((Get-FileHash $sourceArchive).Hash.ToLowerInvariant() -ne 'a951bd163c7b80fc6b8c88d7668fb56abf91c152373e13c10666763238131307') { throw 'Qt source checksum mismatch' }
     $sourceDir = Join-Path $root 'build-windows-native\qt-source'
     New-Item -ItemType Directory -Force $sourceDir | Out-Null
-    & tar -xf $sourceArchive -C $sourceDir
+    # Only unpack notices here; the complete corresponding source archive is
+    # published alongside the installer. Avoid unpacking thousands of unused
+    # source files on the Windows runner.
+    Write-Output 'Extracting Qt license and attribution notices'
+    $entries = & tar -tf $sourceArchive
+    if ($LASTEXITCODE -ne 0) { throw 'Qt source listing failed' }
+    $notices = @($entries | Where-Object { $_ -match '(^|/)(LICENSE[^/]*|LICENCE[^/]*|COPYING[^/]*|COPYRIGHT[^/]*|qt_attribution\.json)(/|$)' })
+    if (!$notices.Count) { throw 'Qt license notices missing' }
+    $noticeList = Join-Path $sourceDir 'notices.txt'
+    [IO.File]::WriteAllLines($noticeList, $notices, [Text.UTF8Encoding]::new($false))
+    & tar -xf $sourceArchive -C $sourceDir -T $noticeList
     if ($LASTEXITCODE -ne 0) { throw 'Qt source extraction failed' }
     $qtSource = Join-Path $sourceDir 'qtbase-everywhere-src-6.12.0'
     Get-ChildItem $qtSource -Recurse -File | Where-Object { $_.Name -match '^(LICENSE|LICENCE|COPYING|COPYRIGHT)' -or $_.Name -eq 'qt_attribution.json' } | ForEach-Object {
@@ -47,8 +65,11 @@ try {
     Copy-Item THIRD-PARTY-NOTICES.md "$stage\licenses"
     # Tests use the same private DLLs and Qt plugins shipped to users.
     Copy-Item build-windows-native\Release\soundcurrent-dsp-test.exe $stage
-    & "$stage\soundcurrent-dsp-test.exe"
-    if ($LASTEXITCODE -ne 0) { throw 'DSP test failed' }
+    Write-Output 'Checking shared DSP and Qt controls'
+    $dsp = Start-Process "$stage\soundcurrent-dsp-test.exe" -PassThru -NoNewWindow
+    if (!$dsp.WaitForExit(60000)) { Stop-Process -Id $dsp.Id -Force; throw 'DSP test timed out' }
+    $dsp.Refresh()
+    if ($dsp.ExitCode -ne 0) { throw "DSP test failed: $($dsp.ExitCode)" }
     $env:QT_QPA_PLATFORM = 'offscreen'
     $uiLog = Join-Path $root 'build-windows-native\ui-self-test.log'
     $ui = Start-Process "$stage\soundcurrent-eq.exe" -ArgumentList '--ui-self-test' -PassThru -RedirectStandardError $uiLog
@@ -65,7 +86,7 @@ try {
     $cache = Join-Path $root '.cache'
     New-Item -ItemType Directory -Force $cache | Out-Null
     $cable = Join-Path $cache 'VBCABLE_Driver_Pack45.zip'
-    if (!(Test-Path $cable)) { Invoke-WebRequest -Uri 'https://download.vb-audio.com/Download_CABLE/VBCABLE_Driver_Pack45.zip' -OutFile $cable }
+    if (!(Test-Path $cable)) { Invoke-WebRequest -Uri 'https://download.vb-audio.com/Download_CABLE/VBCABLE_Driver_Pack45.zip' -OutFile $cable -TimeoutSec 180 }
     if ((Get-FileHash $cable).Hash.ToLowerInvariant() -ne 'b950e39f01af1d04ea623c8f6d8eb9b6ea5c477c637295fabf20631c85116bfb') { throw 'VB-CABLE checksum mismatch' }
     # Generate an exact payload deletion manifest, retaining unknown user files.
     $delete = @()

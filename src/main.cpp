@@ -294,12 +294,27 @@ QList<Device> devices() {
     return result;
 }
 
+bool inputPortAvailable(const QJsonObject &source) {
+    const auto active = source.value("active_port").toString();
+    const auto ports = source.value("ports").toArray();
+    for (const auto &value : ports) {
+        const auto port = value.toObject();
+        if (port.value("name").toString() == active)
+            return port.value("availability").toString() != "not available";
+    }
+    // USB adapters often cannot detect whether a microphone is plugged into them.
+    return ports.isEmpty() || std::any_of(ports.begin(), ports.end(), [](const auto &value) {
+        return value.toObject().value("availability").toString() != "not available";
+    });
+}
+
 QList<InputDevice> inputDevices() {
     QList<InputDevice> result;
     for (const auto &item : pactlList("sources")) {
         const auto source = item.toObject();
         const auto name = source.value("name").toString();
         if (name == kMicSource || name.endsWith(".monitor")) continue;
+        if (!inputPortAvailable(source)) continue;
         const auto channels = source.value("channel_map").toString().split(',', Qt::SkipEmptyParts).size();
         if (channels < 1 || channels > 2) continue;
         const auto properties = source.value("properties").toObject();
@@ -969,6 +984,15 @@ QVector<int16_t> pcmSamples(const QByteArray &pcm) {
     return samples;
 }
 
+void checkCalibrationClipping(const QByteArray &pcm) {
+    const auto samples = pcmSamples(pcm);
+    const auto clipped = std::count_if(samples.begin(), samples.end(), [](int16_t value) {
+        return std::abs(int(value)) >= 32760;
+    });
+    if (!samples.isEmpty() && double(clipped) / samples.size() >= 0.001)
+        throw std::runtime_error("Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.");
+}
+
 double sweepFrequencyAmplitude(const QVector<int16_t> &samples, int frequency,
                                int firstAllowed = 0, int lastAllowed = std::numeric_limits<int>::max()) {
     const int window = std::clamp(kCalibrationRate * 10 / frequency,
@@ -1116,6 +1140,7 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
             const auto path = directory.filePath("quiet-sweep.wav");
             const auto reference = writeCalibrationSweep(path, levelDb);
             const auto recorded = playAndRecord(path);
+            checkCalibrationClipping(recorded);
             if (qEnvironmentVariableIsSet("SOUNDCURRENT_CALIBRATION_DEBUG"))
                 QTextStream(stderr) << "Sweep capture bytes: " << recorded.size()
                                     << ", noise bytes: " << noise.size() << Qt::endl;
@@ -1128,6 +1153,7 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
                 const auto path = directory.filePath(QString("tone-%1.wav").arg(frequency));
                 writeCalibrationTone(path, frequency, levelDb);
                 const auto recorded = playAndRecord(path);
+                checkCalibrationClipping(recorded);
                 if (qEnvironmentVariableIsSet("SOUNDCURRENT_CALIBRATION_DEBUG"))
                     QTextStream(stderr) << "Capture bytes: " << recorded.size()
                                         << ", noise bytes: " << noise.size() << Qt::endl;
@@ -3195,6 +3221,14 @@ int main(int argc, char **argv) {
     QCoreApplication::setApplicationName("soundcurrent-eq");
     QTemporaryDir testSettings;
     if (app.arguments().contains("--ui-self-test")) {
+#ifndef Q_OS_WIN
+        const QJsonArray unpluggedPorts{QJsonObject{{"name", "rear-mic"}, {"availability", "not available"}}};
+        if (inputPortAvailable(QJsonObject{{"active_port", "rear-mic"}, {"ports", unpluggedPorts}}))
+            qFatal("Disconnected microphone jack remains selectable");
+        const QJsonArray usbPorts{QJsonObject{{"name", "mic"}, {"availability", "availability unknown"}}};
+        if (!inputPortAvailable(QJsonObject{{"active_port", "mic"}, {"ports", usbPorts}}))
+            qFatal("USB microphone without jack detection was hidden");
+#endif
         QSettings::setDefaultFormat(QSettings::IniFormat);
         QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, testSettings.path());
     }
@@ -3381,6 +3415,13 @@ int main(int argc, char **argv) {
         if (std::abs(toneAmplitude(calibrationPcm, 1000) - 3000.0) > 5.0 ||
             toneAmplitude(calibrationPcm, 2000) > 10.0)
             qFatal("Calibration tone analysis is inaccurate");
+        checkCalibrationClipping(calibrationPcm);
+        QByteArray clippedCapture(4096, '\x7f');
+        for (int i = 0; i < clippedCapture.size(); i += 2) clippedCapture[i] = '\xff';
+        bool rejectedClipping = false;
+        try { checkCalibrationClipping(clippedCapture); }
+        catch (const std::runtime_error &) { rejectedClipping = true; }
+        if (!rejectedClipping) qFatal("Clipped microphone capture was accepted for calibration");
         QTemporaryDir sweepTestDir;
         const auto sweepReference = writeCalibrationSweep(sweepTestDir.filePath("sweep.wav"), -48);
         QByteArray sweepRecording((sweepReference.size() + kCalibrationRate / 10) * 2, '\0');

@@ -1,10 +1,15 @@
 # Windows preview verification
 
-The Windows preview has been checked in an independent Windows 11 26H2
-clone with the signed VB-CABLE driver and a virtual High Definition Audio
-output. Real speaker hardware, device hotplug, microphone EQ, and room
-calibration require further work. The additional Linux features listed in
-the README are not yet available on Windows.
+Version 0.7.0 builds the shared Qt interface on Windows. Speaker and
+amplifier profile selection, adjustable frequency/Q controls, level meters,
+microphone EQ and the calibration preview use the same UI as Linux. Windows
+uses its own WASAPI backend and requires a separately installed second cable
+for simultaneous microphone processing. A build or UI test does not establish
+that room calibration or hotplug works with every physical device.
+
+The earlier 0.6 playback preview was verified in an independent Windows 11
+26H2 clone with the signed VB-CABLE driver and a virtual High Definition Audio
+output. Hardware verification on a physical Windows system remains useful.
 
 The bundled-driver installer has also been checked in that clone with the
 driver present and absent: default selection, opting out, cancelling UAC,
@@ -13,11 +18,12 @@ deferred. No original Copperfin VM was modified for these installer checks.
 
 ## Automated checks
 
-Build with `./scripts/build-windows.sh`. CTest's `dsp-response` check verifies
-the DSP without needing an audio device. The cross-built test executables
-include the MinGW runtime and can run directly on Windows.
+Build on Windows with `scripts/build-windows.ps1 -QtPrefix <Qt SDK path>`.
+The script tests the shared DSP and the Qt UI, with bounded process waits.
+The packaged application includes Qt and the Microsoft app-local runtime.
+CTest also provides `dsp-response` and `shared-ui` checks.
 
-The opt-in `build-windows/soundcurrent-windows-audio-smoke.exe` integration
+The opt-in `build-windows-native/Release/soundcurrent-windows-audio-smoke.exe` integration
 check lists endpoints by default. Run it with `--run` only in an isolated,
 signed-in Windows test system with VB-CABLE installed and a physical output
 available. Quit other copies of SoundCurrent EQ first. It plays a quiet
@@ -33,11 +39,11 @@ Windows test system. Set the Windows default output to the physical speakers
 first and quit the app. An optional `-InstallerPath` argument installs the
 preview silently as the current user before the check. An optional
 `-ResultPath` chooses where to save the result. The test verifies desktop
-and Start menu shortcuts, all 34 presets, gain direction and labels,
-lock/undo, bypass labels, wheel protection, the preset popup, closing to the
-notification area, restoring the existing instance, and quitting. It
-temporarily resets the app's current settings and restores them after a
-successful check. Use only disposable test settings; on failure it leaves
+and Start menu shortcuts, runs the shared Qt control checks with isolated INI
+settings, then verifies closing to the notification area, restoring the
+existing instance and gracefully quitting through the app's activation channel.
+It backs up the Windows registry settings before the desktop check and
+restores them after successful exit. Use only disposable test settings; on failure it leaves
 the app running so its state can be inspected.
 
 `tests/windows_installer_smoke.ps1 -InstallerPath <setup.exe>` checks the
@@ -57,9 +63,10 @@ check cancelling elevation and restarting after a successful install.
    driver option checked, approve Windows' administrator prompt, and click
    Install Driver in VB-Audio's setup. Restart Windows when requested. On an
    existing installation, check that setup detects and skips the driver.
-2. Set CABLE Input as Windows' default output. Select your speakers or
+2. Start with your physical speakers as Windows' default output. Select your speakers or
    headphones in SoundCurrent EQ and start with Flat, 0 dB post gain, and
-   centered balance. Play ordinary music at a comfortable volume.
+   centered balance. The app selects the cable while running. Play ordinary
+   music at a comfortable volume.
 3. Confirm that Flat sounds normal, that each named preset changes the
    sound, and that dragging post gain changes the level during playback.
    Check both ends of balance and restore it to center.
@@ -68,8 +75,15 @@ check cancelling elevation and restarting after a successful install.
    confirm accidental wheel movement does not change a band.
 5. Try a second physical output if available, including connecting and
    disconnecting it. Confirm the app's device list and Automatic behavior.
-6. Restore your physical speakers as Windows' default output, then use
-   Quit. Confirm normal playback continues and the app process exits.
+6. Use Quit. Confirm the prior Windows default output is restored and the
+   app process exits. Also change Windows' default yourself before quitting
+   and confirm that your subsequent choice is preserved.
+7. With a separate cable installed, select a mono/stereo microphone and the
+   microphone cable, then enable mic EQ. Check both routes together. Without
+   a second cable the app should report that one is required.
+8. Put the microphone at the listening position, stop music and use a quiet
+   sweep. Reject measurements that are clipped or too close to background
+   noise. Review the proposed changes before applying them.
 
 The app installer is currently unsigned. The audio driver is separately
 signed by its vendor. The installer and checksum should be obtained from

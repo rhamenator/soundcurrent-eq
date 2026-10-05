@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  package:
+  linux:
     runs-on: ubuntu-24.04
     steps:
       - name: Check out source
@@ -20,11 +20,11 @@ jobs:
       - name: Install build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y cmake ninja-build g++ qt6-base-dev mingw-w64 nsis
+          sudo apt-get install -y cmake ninja-build g++ qt6-base-dev
       - name: Build package
         run: ./scripts/build-deb.sh
-      - name: Build Windows installer
-        run: ./scripts/build-windows.sh
+      - name: Check DSP and shared UI
+        run: ctest --test-dir build --output-on-failure
       - name: Build and check Fedora 44 RPM
         run: |
           docker run --rm -v "$PWD:/src" -w /src fedora:44 bash -lc '
@@ -48,8 +48,30 @@ jobs:
           for checksum in dist/*.sha256 dist/x86_64/*.sha256; do
             (cd "$(dirname "$checksum")" && sha256sum -c "$(basename "$checksum")")
           done
-      - name: Publish release
-        if: startsWith(github.ref, 'refs/tags/v')
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: linux-packages
+          path: |
+            dist/*.deb
+            dist/*.sha256
+            dist/x86_64/*.rpm
+            dist/x86_64/*.sha256
+  windows:
+    uses: ./.github/workflows/windows-check.yml
+    permissions:
+      contents: read
+  publish:
+    needs: [linux, windows]
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          path: packages
+          merge-multiple: true
+      - name: Publish verified packages
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "$GITHUB_REF_NAME" dist/*.deb dist/*.exe dist/*.sha256 dist/x86_64/*.rpm dist/x86_64/*.sha256 --title "SoundCurrent EQ $GITHUB_REF_NAME" --generate-notes
+        run: |
+          mapfile -d '' assets < <(find packages -type f \( -name '*.deb' -o -name '*.rpm' -o -name '*-setup.exe' -o -name '*.sha256' -o -name 'qtbase*.tar.xz' \) -print0)
+          gh release create "$GITHUB_REF_NAME" "${assets[@]}" --repo "$GITHUB_REPOSITORY" --title "SoundCurrent EQ $GITHUB_REF_NAME" --generate-notes
