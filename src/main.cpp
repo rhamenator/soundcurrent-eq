@@ -390,7 +390,7 @@ QString filterConfig(const QString &target, const Bands &bands, double outputGai
                          .arg(band.q, 0, 'f', 2).arg(band.gain, 0, 'f', 2);
             } else {
                 const auto c = soundcurrent::filterCoefficients({band.frequency, band.gain, band.q, band.type}, 48000);
-                nodes << QString("{ type = builtin name = %1_band_%2 label = bq_raw control = { \"b0\" = %3 \"b1\" = %4 \"b2\" = %5 \"a0\" = 1 \"a1\" = %6 \"a2\" = %7 } }")
+                nodes << QString("{ type = builtin name = %1_band_%2 label = bq_raw config = { coefficients = [ { rate = 48000 b0 = 1 b1 = 0 b2 = 0 a0 = 1 a1 = 0 a2 = 0 } ] } control = { \"b0\" = %3 \"b1\" = %4 \"b2\" = %5 \"a0\" = 1 \"a1\" = %6 \"a2\" = %7 } }")
                     .arg(channel).arg(i + 1).arg(c.b0, 0, 'g', 16).arg(c.b1, 0, 'g', 16)
                     .arg(c.b2, 0, 'g', 16).arg(c.a1, 0, 'g', 16).arg(c.a2, 0, 'g', 16);
             }

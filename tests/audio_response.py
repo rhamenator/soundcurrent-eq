@@ -34,6 +34,8 @@ def sink_volume(name):
     raise RuntimeError(f"Missing output device {name}")
 
 
+EQ_SINK = f"soundcurrent_test_eq_{os.getpid()}"
+
 def capture(tone, destination, sink):
     with destination.open("wb") as output:
         recorder = subprocess.Popen(
@@ -67,8 +69,6 @@ def channel_levels(destination):
 
 def main():
     binary = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "build/soundcurrent-eq").resolve()
-    if node_id("soundcurrent_eq") is not None:
-        raise RuntimeError("Turn off SoundCurrent EQ before running the audio test")
     sink = f"soundcurrent_test_{os.getpid()}"
     module = None
     pipewire = None
@@ -81,11 +81,11 @@ def main():
             config = run(str(binary), "--dump-filter-config", sink,
                          capture_output=True, text=True,
                          env={**os.environ, "QT_QPA_PLATFORM": "offscreen"}).stdout
-            (directory / "filter.conf").write_text(config)
+            (directory / "filter.conf").write_text(config.replace("soundcurrent_eq", EQ_SINK))
             pipewire = subprocess.Popen(["pipewire", "-c", str(directory / "filter.conf")],
                                         stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
             for _ in range(40):
-                eq_id = node_id("soundcurrent_eq")
+                eq_id = node_id(EQ_SINK)
                 if eq_id is not None:
                     break
                 if pipewire.poll() is not None:
@@ -106,7 +106,7 @@ def main():
                     wav.writeframes(frame.tobytes())
 
             monitor_input = capture(directory / "tone-1000.wav", directory / "monitor-input.raw",
-                                    "soundcurrent_eq")
+                                    EQ_SINK)
             if monitor_input < 100:
                 raise RuntimeError("The live level monitor did not receive the EQ input")
 
@@ -199,6 +199,26 @@ def main():
                     raise RuntimeError(f"Balance {position} changed channels by the wrong amount")
                 print(f"Balance {position:+d}: left {left:.0f}, right {right:.0f} RMS")
 
+            # Exercise live raw correction slots without changing the user's
+            # active equalizer or routing applications to our silent sink.
+            flat_controls = run(str(binary), "--dump-speaker-controls", "None", "Flat",
+                                capture_output=True, text=True,
+                                env={**os.environ, "QT_QPA_PLATFORM": "offscreen"}).stdout
+            run("pw-cli", "set-param", str(eq_id), "Props", flat_controls, stdout=subprocess.DEVNULL)
+            reference = capture(directory / "tone-1000.wav", directory / "speaker-reference.raw", sink)
+            for model in ("Kali LP-6v2", "Yamaha HS5", "KEF Q150"):
+                controls = run(str(binary), "--dump-speaker-controls", model, "Flat",
+                               capture_output=True, text=True,
+                               env={**os.environ, "QT_QPA_PLATFORM": "offscreen"}).stdout
+                run("pw-cli", "set-param", str(eq_id), "Props", controls, stdout=subprocess.DEVNULL)
+                level = capture(directory / "tone-1000.wav", directory / "speaker-model.raw", sink)
+                delta = 20 * math.log10(level / reference)
+                if abs(delta) < 0.3: raise RuntimeError(f"{model} correction had no measurable effect")
+                print(f"Speaker correction {model}: {delta:+.1f} dB at 1 kHz")
+            run("pw-cli", "set-param", str(eq_id), "Props", flat_controls, stdout=subprocess.DEVNULL)
+            restored = capture(directory / "tone-1000.wav", directory / "speaker-none.raw", sink)
+            if abs(20 * math.log10(restored / reference)) > 0.5:
+                raise RuntimeError("Removing speaker profile left correction filters active")
             run("pactl", "set-sink-volume", sink, "44%")
             original_volume = sink_volume(sink)
             guardian = subprocess.Popen(
