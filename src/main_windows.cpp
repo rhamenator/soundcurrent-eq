@@ -189,7 +189,7 @@ void App::create() {
         }
         labels_[i] = label(frequency.c_str());
     }
-    setup_ = control(L"BUTTON", L"Get signed cable", BS_PUSHBUTTON | WS_TABSTOP, idSetup);
+    setup_ = control(L"BUTTON", L"Set up audio driver", BS_PUSHBUTTON | WS_TABSTOP, idSetup);
     sound_ = control(L"BUTTON", L"Windows sound settings", BS_PUSHBUTTON | WS_TABSTOP, idSound);
     quit_ = control(L"BUTTON", L"Quit", BS_PUSHBUTTON | WS_TABSTOP, idQuit);
     status_ = label(L"Looking for Windows audio devices...");
@@ -368,6 +368,21 @@ void App::onCommand(int id, int event) {
     }
     if (id == idQuit) { close(); return; }
     if (id == idSetup) {
+        std::vector<wchar_t> module(32768);
+        const DWORD length = GetModuleFileNameW(nullptr, module.data(), static_cast<DWORD>(module.size()));
+        if (length && length < module.size()) {
+            const std::wstring executable(module.data(), length);
+            const auto separator = executable.find_last_of(L"\\/");
+            const auto helper = executable.substr(0, separator + 1) + L"audio-setup.ps1";
+            wchar_t system[MAX_PATH]{};
+            if (separator != std::wstring::npos && GetFileAttributesW(helper.c_str()) != INVALID_FILE_ATTRIBUTES &&
+                GetSystemDirectoryW(system, MAX_PATH)) {
+                const auto shell = std::wstring(system) + L"\\WindowsPowerShell\\v1.0\\powershell.exe";
+                const auto arguments = L"-NoProfile -ExecutionPolicy RemoteSigned -File \"" + helper + L"\" -Install";
+                const auto result = ShellExecuteW(window_, L"open", shell.c_str(), arguments.c_str(), nullptr, SW_SHOWNORMAL);
+                if (reinterpret_cast<INT_PTR>(result) > 32) return;
+            }
+        }
         ShellExecuteW(window_, L"open", L"https://vb-audio.com/Cable/", nullptr, nullptr, SW_SHOWNORMAL);
         return;
     }

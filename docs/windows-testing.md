@@ -6,6 +6,11 @@ output. Real speaker hardware, device hotplug, microphone EQ, and room
 calibration require further work. The additional Linux features listed in
 the README are not yet available on Windows.
 
+The bundled-driver installer has also been checked in that clone with the
+driver present and absent: default selection, opting out, cancelling UAC,
+approving the vendor install, retry shortcuts, and finishing with restart
+deferred. No original Copperfin VM was modified for these installer checks.
+
 ## Automated checks
 
 Build with `./scripts/build-windows.sh`. CTest's `dsp-response` check verifies
@@ -35,10 +40,23 @@ temporarily resets the app's current settings and restores them after a
 successful check. Use only disposable test settings; on failure it leaves
 the app running so its state can be inspected.
 
+`tests/windows_installer_smoke.ps1 -InstallerPath <setup.exe>` checks the
+interactive installer in a signed-in independent clone. With the default
+`-CableState Present`, it verifies detection and skipping of an existing
+standard cable. After explicitly removing the driver and rebooting that
+clone, use `-CableState Missing` to verify the default offer and opting out.
+It checks visible vendor notices and the retry shortcut. By default, it opts
+out without installing or removing any driver. On the independent clone,
+`-CableState Missing -InstallDriver` exercises the real install step: manually
+approve UAC, click Install Driver, and acknowledge the restart notices. Also
+check cancelling elevation and restarting after a successful install.
+
 ## Check on real Windows hardware
 
-1. Install the signed VB-CABLE driver from its official site and restart
-   Windows when requested. Install the SoundCurrent EQ preview.
+1. Install the SoundCurrent EQ preview. When VB-CABLE is missing, keep the
+   driver option checked, approve Windows' administrator prompt, and click
+   Install Driver in VB-Audio's setup. Restart Windows when requested. On an
+   existing installation, check that setup detects and skips the driver.
 2. Set CABLE Input as Windows' default output. Select your speakers or
    headphones in SoundCurrent EQ and start with Flat, 0 dB post gain, and
    centered balance. Play ordinary music at a comfortable volume.

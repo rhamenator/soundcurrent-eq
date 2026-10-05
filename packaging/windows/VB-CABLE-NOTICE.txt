@@ -1,0 +1,18 @@
+VB-CABLE is a separate product by VB-Audio Software / Vincent Burel.
+Origin: https://www.vb-cable.com/
+Licensing and donations: https://vb-audio.com/Services/licensing.htm
+
+The standard VB-CABLE Driver Pack 45 is included AS IS, with its original
+readme and license, in VBCABLE_Driver_Pack45.zip. VB-CABLE is donationware:
+users can try it, then donate/pay for a license if they find it useful.
+Professional deployments where users cannot see VB-CABLE and pay for their
+licenses require the appropriate number of paid licenses from VB-Audio.
+
+The author's published "VB-CABLE Distribution with other product" permission
+at the licensing URL above permits embedding the standard package when its
+donationware model remains applicable. Checked 2026-10-04. The additional
+VB-CABLE A+B and C+D products are not included.
+
+VB-CABLE is not covered by SoundCurrent EQ's GPL-3.0-only license. Its driver
+is installed only by the vendor's signed installer, with Windows approval.
+Uninstalling SoundCurrent EQ does not uninstall this shared audio driver.

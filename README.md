@@ -64,16 +64,21 @@ meters with configurable refresh and peak markers, microphone EQ, and speaker
 calibration are currently Linux features; Windows does not yet have full
 feature parity.
 
-The Windows installer is a per-user install. It does not need administrator
-access and adds shortcuts to the Start menu and desktop. The first Windows
+The Windows installer installs the app for your user and adds shortcuts to
+the Start menu and desktop. The first Windows
 release uses WASAPI shared audio and the signed [VB-CABLE virtual audio driver](https://vb-audio.com/Cable/)
-to route system playback through the equalizer. The driver is a separate
-download and is not bundled with SoundCurrent EQ.
+to route system playback through the equalizer. Setup includes the unmodified
+standard driver package and offers to install it if it is missing. The driver
+step requires administrator approval; the equalizer itself runs as your user.
 
-1. Download and install VB-CABLE from the official site. Run its signed setup
-   as administrator and restart Windows when it asks.
-2. Install `SoundCurrent-EQ-<version>-windows-x64-setup.exe`. The app installer
-   runs as your user and creates the shortcuts.
+1. Run `SoundCurrent-EQ-<version>-windows-x64-setup.exe`. Leave **Install the
+   standard VB-CABLE driver** checked if the driver is missing. Approve
+   Windows' administrator prompt, then click **Install Driver** in VB-Audio's
+   setup. An existing standard VB-CABLE installation is detected and skipped.
+2. Restart Windows after installing the driver. If you skipped or cancelled
+   that step, retry using **Install VB-CABLE** in the SoundCurrent EQ Start
+   menu folder or **Set up audio driver** in the app. Silent app installations
+   do not install or elevate the driver.
 3. In Windows sound settings, set **CABLE Input (VB-Audio Virtual Cable)** as
    the default output. Keep your speakers or headphones selected as the app's
    physical output. The **Automatic** choice follows newly connected output
@@ -85,13 +90,21 @@ download and is not bundled with SoundCurrent EQ.
 
 The equalizer works with stereo playback. The Windows build currently uses
 the Windows shared-mode audio path and adapts to the selected endpoint's mix
-format and sample rate. SoundCurrent EQ does not install VB-CABLE or change
-Windows' default playback assignment. VB-CABLE is third-party software with
-its own license and donation terms; review those terms on the vendor's site.
+format and sample rate. Select the Windows default output after setup;
+VB-Audio's installer may change playback and recording defaults, so also
+check your preferred microphone. VB-CABLE is separate third-party software,
+with its own [license and donation terms](https://vb-audio.com/Services/licensing.htm).
+If useful, donate/pay for a license; professional deployments may require
+paid licenses. The bundled archive retains the vendor's original readme and
+license. Uninstalling the EQ keeps this shared driver installed.
 
 For source builds on Ubuntu 24.04 or newer, install `cmake`, `ninja-build`,
-`mingw-w64`, and `nsis`, then run `./scripts/build-windows.sh`. The installer
-and its SHA-256 file appear in `dist/`.
+`mingw-w64`, `curl`, and `nsis`, then run `./scripts/build-windows.sh`. The
+build downloads the official standard driver archive over HTTPS and checks
+its pinned SHA-256. At installation, the archive hash and the vendor setup's
+Windows signature are checked before requesting elevation. Driver setup
+works offline when Windows can validate the signature. The installer and
+its SHA-256 file appear in `dist/`.
 
 For the Windows integration checks, see [Windows testing](docs/windows-testing.md).
 
