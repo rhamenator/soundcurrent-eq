@@ -12,12 +12,16 @@ DSP/shared UI checks in release workflow `37273415167`. Ubuntu, Fedora 44 and
 RHEL 10 compatible packages passed their checks as well. Workflow `37273600119`
 verified the new automatic Linux/Windows checks on `main`.
 
-A fresh installed-app/audio check was attempted in the independent local test
-clone, but the guest remained in its boot animation before sign-in. No new guest
-installer or audio result is claimed for 0.7.1. The Windows audio/DSP adapter
-sources are unchanged from the previously VM-verified 0.7.0 baseline below.
-Real device hotplug, microphone cables and room response still require hardware
-verification.
+After a slow boot, the fresh 0.7.1 installer and audio checks passed in the
+signed-in independent Windows 11 26H2 clone. Desktop/Start menu shortcuts, shared
+Qt controls, the full frame fitting the working area, background close/reopen,
+single-instance activation and graceful Quit passed. Live measurements gave
++6.00 dB post gain, −12.00 dB EQ cut, 0.00 dB bypass difference, full-left balance,
+stop/restart, restoration of all three default playback roles and a 1.018-second
+stereo calibration signal. The test used VB-CABLE and the VM's virtual High
+Definition Audio output. The Windows audio/DSP adapter sources remain unchanged
+from the 0.7.0 baseline. Real device hotplug, microphone cables and room response
+still require hardware verification.
 
 ## Previous 0.7.0 VM verification
 
