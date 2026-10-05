@@ -1,5 +1,26 @@
 # Windows preview verification
 
+## Free 0.7.1 on the default branch
+
+The public `main` branch now includes the full shared Linux/Windows interface,
+Windows audio adapters and installer. It retains the free controls and fixes
+initial device startup blocking the first window, plus native window frame
+sizing. The platform feature mapping is in [feature parity](platform-parity.md).
+
+Source commit `2339b3f` passed Linux DSP/shared UI checks and native Windows
+DSP/shared UI checks in release workflow `37273415167`. Ubuntu, Fedora 44 and
+RHEL 10 compatible packages passed their checks as well. Workflow `37273600119`
+verified the new automatic Linux/Windows checks on `main`.
+
+A fresh installed-app/audio check was attempted in the independent local test
+clone, but the guest remained in its boot animation before sign-in. No new guest
+installer or audio result is claimed for 0.7.1. The Windows audio/DSP adapter
+sources are unchanged from the previously VM-verified 0.7.0 baseline below.
+Real device hotplug, microphone cables and room response still require hardware
+verification.
+
+## Previous 0.7.0 VM verification
+
 Version 0.7.0 builds the shared Qt interface on Windows. Speaker and
 amplifier profile selection, adjustable frequency/Q controls, level meters,
 microphone EQ and the calibration preview use the same UI as Linux. Windows
