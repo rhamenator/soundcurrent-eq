@@ -1,0 +1,30 @@
+name: Windows build and DSP
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'data/**'
+      - 'CMakeLists.txt'
+      - '.github/workflows/windows-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@9f698171ed81b15d1823a05fc7211befd50c8ae0 # v6.0.3
+        with:
+          persist-credentials: false
+      - name: Configure with the installed Visual Studio compiler
+        run: cmake -S . -B build
+      - name: Build Windows application and diagnostics
+        run: cmake --build build --config Release --parallel
+      - name: Check DSP response
+        run: ctest --test-dir build -C Release --output-on-failure
+      # The opt-in audio and UI checks require a signed-in desktop and cable
+      # driver, so they run in the local test clone rather than on this runner.

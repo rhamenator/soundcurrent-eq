@@ -162,7 +162,7 @@ void App::create() {
     outputLabel_ = label(L"Speakers / headphones");
     output_ = control(L"COMBOBOX", L"", CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP, idOutput);
     automatic_ = control(L"BUTTON", L"Follow active output", BS_AUTOCHECKBOX | WS_TABSTOP, idAuto);
-    enable_ = control(L"BUTTON", L"Equalizer on", BS_AUTOCHECKBOX | WS_TABSTOP, idEnable);
+    enable_ = control(L"BUTTON", L"Equalizer on", BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP, idEnable);
     lock_ = control(L"BUTTON", L"Lock EQ", BS_AUTOCHECKBOX | WS_TABSTOP, idLock);
     undo_ = control(L"BUTTON", L"Undo  (Ctrl+Z)", BS_PUSHBUTTON | WS_TABSTOP, idUndo);
     gainText_ = label(L"Post gain  +0.0 dB");
@@ -309,7 +309,9 @@ void App::applySnapshot(const Snapshot &value) {
     SendMessageW(enable_, BM_SETCHECK, state_.enabled ? BST_CHECKED : BST_UNCHECKED, 0);
     SendMessageW(gain_, TBM_SETPOS, TRUE, state_.gain);
     SendMessageW(balance_, TBM_SETPOS, TRUE, state_.balance);
-    for (int i = 0; i < kBands; ++i) SendMessageW(sliders_[i], TBM_SETPOS, TRUE, state_.band[i]);
+    // Vertical trackbars put their minimum at the top: invert the UI position
+    // so upward movement increases the band's gain.
+    for (int i = 0; i < kBands; ++i) SendMessageW(sliders_[i], TBM_SETPOS, TRUE, -state_.band[i]);
     controls();
     profile();
 }
@@ -320,8 +322,9 @@ void App::controls() {
     EnableWindow(balance_, !locked_);
     for (auto slider : sliders_) EnableWindow(slider, !locked_);
     EnableWindow(undo_, !locked_ && !history_.empty());
-    std::wstring gain = L"Post gain  " + std::wstring(state_.gain >= 0 ? L"+" : L"") +
-                        std::to_wstring(state_.gain / 10) + L"." +
+    SetWindowTextW(enable_, state_.enabled ? L"Equalizer on" : L"Equalizer off");
+    std::wstring gain = L"Post gain  " + std::wstring(state_.gain >= 0 ? L"+" : L"-") +
+                        std::to_wstring(std::abs(state_.gain) / 10) + L"." +
                         std::to_wstring(std::abs(state_.gain % 10)) + L" dB";
     SetWindowTextW(gainText_, gain.c_str());
     std::wstring balance = state_.balance == 0 ? L"Balance  center" :
@@ -346,7 +349,7 @@ void App::onSlider(HWND item, int event) {
     if (item == gain_) state_.gain = value;
     else if (item == balance_) state_.balance = value;
     else for (int i = 0; i < kBands; ++i) if (item == sliders_[i]) {
-        state_.band[i] = value;
+        state_.band[i] = -value;
         state_.preset = presetCount;
         SendMessageW(preset_, CB_SETCURSEL, state_.preset, 0);
         break;
@@ -360,6 +363,7 @@ void App::onCommand(int id, int event) {
     if (id == idTrayEnable && !locked_) {
         pushUndo(); state_.enabled = !state_.enabled;
         SendMessageW(enable_, BM_SETCHECK, state_.enabled ? BST_CHECKED : BST_UNCHECKED, 0);
+        controls();
         profile(); return;
     }
     if (id == idQuit) { close(); return; }
@@ -389,6 +393,7 @@ void App::onCommand(int id, int event) {
     if (locked_) return;
     if (id == idEnable) {
         pushUndo(); state_.enabled = SendMessageW(enable_, BM_GETCHECK, 0, 0) == BST_CHECKED;
+        controls();
         profile(); return;
     }
     if (id == idPreset && event == CBN_SELCHANGE) {

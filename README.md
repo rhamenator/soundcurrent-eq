@@ -2,14 +2,14 @@
 
 SoundCurrent EQ is a native C++ desktop equalizer for Linux and Windows. It
 gives every app that plays through the default output the same adjustable sound
-profile. It starts with 15 frequency bands, lets you choose
-any count from 5 to 31, and opens with **Flat** selected. Each band has its own
-gain, center frequency, and width (Q). The app also has 34 listening presets,
-saved custom profiles, a post-gain slider, stereo balance, and live level
-indicators. A connected mono or stereo microphone can use a separate natural
-voice EQ with editable tone and gain controls.
-The window fits within the available desktop area. A speaker and room check can
-play a logarithmic sweep and preview conservative playback EQ adjustments.
+profile. Both versions open with **Flat** selected and offer 34 listening
+presets, post gain, stereo balance, and background operation. The Windows
+preview currently has 15 fixed frequency bands and an overall output meter.
+The Linux version lets you choose 5 to 31 bands with editable gain, center
+frequency, and width (Q), save custom profiles, and display per-band levels.
+Linux also provides microphone tone controls and a speaker and room check
+that previews conservative playback EQ adjustments. Those additional features
+are still being ported to Windows.
 
 ![SoundCurrent EQ desktop window](docs/screenshot.png)
 
@@ -55,6 +55,15 @@ Download the package for your system from the [latest release](https://github.co
 
 ### Windows 10 and 11 (64-bit)
 
+The Windows build is a preview. Its current features are stereo playback EQ,
+34 presets, physical output selection and automatic output following, post
+gain, balance, bypass, lock/undo, wheel protection, an overall output meter,
+and closing to the notification area. It saves the current settings between
+launches. Adjustable band count/frequency/Q, named custom profiles, per-band
+meters with configurable refresh and peak markers, microphone EQ, and speaker
+calibration are currently Linux features; Windows does not yet have full
+feature parity.
+
 The Windows installer is a per-user install. It does not need administrator
 access and adds shortcuts to the Start menu and desktop. The first Windows
 release uses WASAPI shared audio and the signed [VB-CABLE virtual audio driver](https://vb-audio.com/Cable/)
@@ -83,6 +92,8 @@ its own license and donation terms; review those terms on the vendor's site.
 For source builds on Ubuntu 24.04 or newer, install `cmake`, `ninja-build`,
 `mingw-w64`, and `nsis`, then run `./scripts/build-windows.sh`. The installer
 and its SHA-256 file appear in `dist/`.
+
+For the Windows integration checks, see [Windows testing](docs/windows-testing.md).
 
 ### Ubuntu 24.04 and newer
 
