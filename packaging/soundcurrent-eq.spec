@@ -1,6 +1,6 @@
 Name:           soundcurrent-eq
 %global debug_package %{nil}
-Version:        0.7.0
+Version:        0.7.1
 Release:        1%{?dist}
 Summary:        Adjustable desktop equalizer for PipeWire
 License:        GPL-3.0-only
@@ -41,6 +41,9 @@ DESTDIR=%{buildroot} cmake --install build
 %{_datadir}/doc/soundcurrent-eq/speakers
 
 %changelog
+* Mon Oct 05 2026 rhamenator <rhamenator@gmail.com> - 0.7.1-1
+- Unify Linux and Windows feature parity on the default branch
+- Fit native window frames and defer initial device startup until visible
 * Mon Oct 05 2026 rhamenator <rhamenator@gmail.com> - 0.7.0-1
 - Add measured speaker profiles and amplifier imports with source attribution
 - Hide disconnected microphone jacks and reject clipped calibration capture

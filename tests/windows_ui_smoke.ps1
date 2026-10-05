@@ -7,14 +7,16 @@ Add-Type -TypeDefinition @'
 using System;
 using System.Runtime.InteropServices;
 public static class EqUi {
+ [StructLayout(LayoutKind.Sequential)] public struct Rect { public int Left,Top,Right,Bottom; }
  [DllImport("user32.dll", CharSet=CharSet.Unicode)] public static extern IntPtr FindWindow(string c,string n);
  [DllImport("user32.dll")] public static extern bool PostMessage(IntPtr w,int m,IntPtr p,IntPtr l);
  [DllImport("user32.dll")] public static extern bool IsWindowVisible(IntPtr w);
+ [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr w,out Rect r);
 }
 '@
 function Assert($Condition, $Message) { if (-not $Condition) { throw $Message } }
 function WaitUntil([scriptblock]$Condition, [string]$Message) {
-    $deadline=[DateTime]::UtcNow.AddSeconds(15)
+    $deadline=[DateTime]::UtcNow.AddSeconds(60)
     do { if (& $Condition) { return }; Start-Sleep -Milliseconds 100 } while ([DateTime]::UtcNow -lt $deadline)
     throw $Message
 }
@@ -48,6 +50,13 @@ try {
     $app=Start-Process $exe -PassThru
     WaitUntil { $script:window=[EqUi]::FindWindow([NullString]::Value,'SoundCurrent EQ'); $script:window -ne [IntPtr]::Zero } 'App window missing'
     WaitUntil { [EqUi]::IsWindowVisible($script:window) } 'App window is hidden'
+    Add-Type -AssemblyName System.Windows.Forms
+    WaitUntil {
+        $rect=New-Object EqUi+Rect
+        $ok=[EqUi]::GetWindowRect($script:window,[ref]$rect)
+        $area=[System.Windows.Forms.Screen]::FromHandle($script:window).WorkingArea
+        $ok -and $rect.Left -ge $area.Left -and $rect.Top -ge $area.Top -and $rect.Right -le $area.Right -and $rect.Bottom -le $area.Bottom
+    } 'Decorated app window exceeds the desktop working area'
     [void][EqUi]::PostMessage($script:window,0x10,[IntPtr]::Zero,[IntPtr]::Zero)
     WaitUntil { -not [EqUi]::IsWindowVisible($script:window) } 'Closing the window did not hide it'
     Assert (-not $app.HasExited) 'Closing the window unloaded the app'
@@ -58,7 +67,7 @@ try {
     Assert ($quit.WaitForExit(5000)) 'Quit request failed'
     Assert ($app.WaitForExit(10000)) 'Quit did not unload the app'
     Assert (-not (Get-Process soundcurrent-eq -ErrorAction SilentlyContinue)) 'An equalizer process remains after quit'
-    'PASS: installer shortcuts, shared Qt controls, background close/reopen, single instance, and graceful quit' | Set-Content $ResultPath
+    'PASS: installer shortcuts, shared Qt controls, window fit, background close/reopen, single instance, and graceful quit' | Set-Content $ResultPath
 } catch {
     "FAIL: $_" | Set-Content $ResultPath
     throw
