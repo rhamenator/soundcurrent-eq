@@ -75,6 +75,18 @@ try {
     $dsp.Refresh()
     if ($dsp.ExitCode -ne 0) { throw "DSP test failed: $($dsp.ExitCode)" }
     $env:QT_QPA_PLATFORM = 'offscreen'
+    foreach ($testName in @('soundcurrent-equipment-test', 'soundcurrent-processing-guard-test')) {
+        Copy-Item "build-windows-native\Release\$testName.exe" $stage
+        $testArgs = @()
+        if ($testName -eq 'soundcurrent-equipment-test') { $testArgs = @('--ui-self-test') }
+        if ($testArgs.Count) { $test = Start-Process "$stage\$testName.exe" -ArgumentList $testArgs -PassThru -NoNewWindow }
+        else { $test = Start-Process "$stage\$testName.exe" -PassThru -NoNewWindow }
+        $null = $test.Handle
+        if (!$test.WaitForExit(90000)) { Stop-Process -Id $test.Id -Force; throw "$testName timed out" }
+        $test.Refresh()
+        if ($test.ExitCode -ne 0) { throw "$testName failed: $($test.ExitCode)" }
+        Remove-Item "$stage\$testName.exe"
+    }
     $uiLog = Join-Path $root 'build-windows-native\ui-self-test.log'
     $ui = Start-Process "$stage\soundcurrent-eq.exe" -ArgumentList '--ui-self-test' -PassThru -RedirectStandardError $uiLog
     $null = $ui.Handle
