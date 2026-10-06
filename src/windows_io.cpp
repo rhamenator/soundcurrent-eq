@@ -95,7 +95,8 @@ ComPtr<IAudioClient> stream(const std::wstring &id) {
 } // namespace
 
 WindowsRouteLease::WindowsRouteLease(bool capture, const std::wstring &cableId,
-                                     const std::wstring &fallbackId, bool copyPlaybackVolume)
+                                     const std::wstring &fallbackId, bool copyPlaybackVolume,
+                                     std::function<void(const std::array<std::wstring, 3> &)> prepareRecovery)
     : capture_(capture), volume_(copyPlaybackVolume), cable_(cableId), fallback_(fallbackId) {
     Apartment apartment;
     for (int i = 0; i < 3; ++i) {
@@ -103,6 +104,7 @@ WindowsRouteLease::WindowsRouteLease(bool capture, const std::wstring &cableId,
         catch (...) { originals_[i] = fallback_; }
         if (originals_[i] == cable_) originals_[i] = fallback_;
     }
+    if (prepareRecovery) prepareRecovery(originals_);
     if (volume_) copyVolume(fallback_, cable_);
     int changed = 0;
     try { for (; changed < 3; ++changed) setDefault(cable_, changed); }
@@ -111,22 +113,26 @@ WindowsRouteLease::WindowsRouteLease(bool capture, const std::wstring &cableId,
         throw;
     }
 }
-WindowsRouteLease::~WindowsRouteLease() {
+bool windowsRestoreOwnedRoute(bool capture, const std::wstring &owned,
+        const std::wstring &fallback, const std::array<std::wstring,3> &originals,
+        bool copyPlaybackVolume) {
+    bool restored = true;
     try {
         Apartment apartment;
-        if (volume_ && windowsDefaultEndpointId(false) == cable_) {
-            // Transfer volume adjustments made on the system's EQ endpoint back
-            // to the selected speakers when quitting or bypassing.
-            try { copyVolume(cable_, fallback_); } catch (...) {}
-        }
+        if (copyPlaybackVolume && !capture && windowsDefaultEndpointId(false) == owned)
+            try { copyVolume(owned, fallback); } catch (...) { restored = false; }
         for (int i = 0; i < 3; ++i) {
             try {
-                if (windowsDefaultEndpointId(capture_, i) != cable_) continue;
-                try { setDefault(originals_[i], i); }
-                catch (...) { setDefault(fallback_, i); }
-            } catch (...) {}
+                if (windowsDefaultEndpointId(capture, i) != owned) continue;
+                try { setDefault(originals[i], i); }
+                catch (...) { setDefault(fallback, i); }
+            } catch (...) { restored = false; }
         }
-    } catch (...) {}
+    } catch (...) { restored = false; }
+    return restored;
+}
+WindowsRouteLease::~WindowsRouteLease() {
+    windowsRestoreOwnedRoute(capture_, cable_, fallback_, originals_, volume_);
 }
 
 struct WindowsRecorder::Impl {

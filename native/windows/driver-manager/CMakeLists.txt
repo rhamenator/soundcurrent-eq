@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.20)
+project(soundcurrent-driver-manager LANGUAGES CXX)
+if(NOT WIN32)
+  message(FATAL_ERROR "The driver manager requires Windows")
+endif()
+add_executable(soundcurrent-driver-manager main.cpp)
+target_compile_features(soundcurrent-driver-manager PRIVATE cxx_std_20)
+target_link_libraries(soundcurrent-driver-manager PRIVATE setupapi newdev shell32 ole32 advapi32 wintrust crypt32 uuid)
+if(MSVC)
+  # The elevated helper must not load an app-local CRT or other DLL imports
+  # from the per-user installation directory.
+  set_property(TARGET soundcurrent-driver-manager PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+  target_link_options(soundcurrent-driver-manager PRIVATE /DEPENDENTLOADFLAG:0x800 /guard:cf)
+  target_compile_options(soundcurrent-driver-manager PRIVATE /guard:cf)
+endif()
+if(MINGW)
+  target_link_options(soundcurrent-driver-manager PRIVATE -static)
+endif()

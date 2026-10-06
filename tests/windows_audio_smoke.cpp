@@ -4,6 +4,7 @@
 #include "windows_audio.h"
 #include <windows.h>
 #include <audioclient.h>
+#include <endpointvolume.h>
 #include <mmdeviceapi.h>
 #include <mmreg.h>
 #include <ksmedia.h>
@@ -29,6 +30,31 @@ void check(HRESULT result, const char *action) {
         throw std::runtime_error(message);
     }
 }
+// Isolated-VM diagnostic only. A muted source otherwise makes software
+// loopback correctly report silence; restore the source after the test.
+class TestSourceVolume {
+    ComPtr<IAudioEndpointVolume> volume_;
+    float level_ = 1; BOOL mute_ = FALSE;
+public:
+    explicit TestSourceVolume(const std::wstring &id) {
+        ComPtr<IMMDeviceEnumerator> devices; ComPtr<IMMDevice> device;
+        check(CoCreateInstance(__uuidof(MMDeviceEnumerator), nullptr, CLSCTX_ALL,
+            IID_PPV_ARGS(devices.GetAddressOf())), "Volume enumerator");
+        check(devices->GetDevice(id.c_str(), device.GetAddressOf()), "Volume source");
+        check(device->Activate(__uuidof(IAudioEndpointVolume), CLSCTX_ALL, nullptr,
+            reinterpret_cast<void**>(volume_.GetAddressOf())), "Source volume");
+        check(volume_->GetMasterVolumeLevelScalar(&level_), "Read source volume");
+        check(volume_->GetMute(&mute_), "Read source mute");
+        std::printf("Test source original volume %.3f, mute %d\n", level_, int(mute_));
+        check(volume_->SetMasterVolumeLevelScalar(1, nullptr), "Set test source volume");
+        const auto unmute = volume_->SetMute(FALSE, nullptr);
+        if (FAILED(unmute)) {
+            volume_->SetMasterVolumeLevelScalar(level_, nullptr);
+            check(unmute, "Unmute test source");
+        }
+    }
+    ~TestSourceVolume() { if(volume_) { volume_->SetMasterVolumeLevelScalar(level_, nullptr); volume_->SetMute(mute_, nullptr); } }
+};
 struct Measurement { double left = 0, right = 0; std::size_t frames = 0; };
 class Probe {
 public:
@@ -145,12 +171,16 @@ int main(int argc, char **argv) {
                 else if (!capture && device.name.find(L"VB-Audio") == std::wstring::npos && speakers.empty()) speakers = device.id;
             }
         }
-        if (argc != 2 || std::string(argv[1]) != "--run") {
-            std::puts("Use --run in an isolated Windows test system to play a -34 dBFS test tone.");
+        const bool physicalLoopback = argc == 2 && std::string(argv[1]) == "--run-loopback-physical";
+        const bool loopback = physicalLoopback || (argc == 2 && std::string(argv[1]) == "--run-loopback");
+        if (argc != 2 || (std::string(argv[1]) != "--run" && !loopback)) {
+            std::puts("Use --run or --run-loopback in an isolated Windows test system to play a -34 dBFS test tone.");
             return 0;
         }
         if (cableInput.empty() || cableOutput.empty() || speakers.empty())
             throw std::runtime_error("VB-CABLE and a physical stereo output are required");
+        if (physicalLoopback) std::swap(cableInput, speakers);
+        if (!physicalLoopback) {
         std::array<std::wstring, 3> originalDefaults;
         for (int i = 0; i < 3; ++i) originalDefaults[i] = soundcurrent::windowsDefaultEndpointId(false, i);
         {
@@ -163,14 +193,17 @@ int main(int argc, char **argv) {
             if (soundcurrent::windowsDefaultEndpointId(false, i) !=
                 (originalDefaults[i] == cableInput ? speakers : originalDefaults[i]))
                 throw std::runtime_error("Default route was not restored");
+        }
+        TestSourceVolume sourceVolume(cableInput);
         soundcurrent::WindowsBridge bridge;
         bridge.setStatusCallback([](const std::wstring &message) {
             std::printf("Bridge: %s\n", std::string(message.begin(), message.end()).c_str());
         });
         bridge.setProfile({}, 0, 0, true);
-        if (!bridge.start(cableOutput, speakers)) throw std::runtime_error("Bridge did not start");
+        if (!bridge.start(loopback ? cableInput : cableOutput, speakers, false, loopback)) throw std::runtime_error(bridge.error());
         Probe probe(cableInput, speakers);
         const auto flat = probe.measure(1000);
+        std::printf("Captured meter samples: %zu\n", bridge.takeMeterPcm().size());
         std::printf("Flat frames: %zu, bridge peak: %.6f, RMS: %.6f / %.6f\n", flat.frames, bridge.peak(), flat.left, flat.right);
         if (!bridge.running() || flat.left < 0.0001 || flat.right < 0.0001)
             throw std::runtime_error("Flat route is silent");
@@ -198,7 +231,7 @@ int main(int argc, char **argv) {
             throw std::runtime_error("Live balance change failed");
         bridge.stop();
         bridge.setProfile({}, 0, 0, true);
-        if (!bridge.start(cableOutput, speakers)) throw std::runtime_error("Bridge restart failed");
+        if (!bridge.start(loopback ? cableInput : cableOutput, speakers, false, loopback)) throw std::runtime_error("Bridge restart failed");
         const auto restarted = probe.measure(1000);
         if (!bridge.running() || std::abs(decibels(restarted.left, flat.left)) > 0.5)
             throw std::runtime_error("Restarted audio is silent or changed level");

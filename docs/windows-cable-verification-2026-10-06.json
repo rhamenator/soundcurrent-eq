@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-06",
+  "scope": "Interim signed VB-CABLE route; ordinary app and installer unsigned. Local review only; no publication or push.",
+  "installer": {
+    "file": ".cache/cable-installer/SoundCurrent-EQ-0.7.5-windows-x64-VBCABLE-preview.exe",
+    "sha256": "bf3167b4e87f979cad41643e38691020c5960ad8ee41db7761f096dcc0b03856",
+    "bytes": 11677778
+  },
+  "native_bookmark": {
+    "branch": "bookmark/windows-native-driver-2026-10-06",
+    "commit": "97885ab907512e0f6851704792911f7da192fbe5",
+    "source_archive": ".cache/windows-review-source/soundcurrent-eq-source-review-2026-10-06.tar.gz",
+    "unchanged_native_code_license_build_files": 207
+  },
+  "verification": {
+    "windows_ctest": "10/10 passed",
+    "powershell_parser": "Both setup/build scripts parsed successfully (initial cable adaptation).",
+    "packaged_lifecycle": "Silent install, in-place update, installed shared UI, real VB-CABLE control-panel window open/close and helper exit 0, silent uninstall preserving shared driver and unknown user file. Final rerun passed after vendor driver reinstall/reboot.",
+    "vendor_authenticode": "Original primary package setup x86/x64 and control panel verified Valid by Windows. SHA-256 matches fresh official HTTPS download.",
+    "removal": "EQ shipped setup wrapper confirmed removal and launched signed official remover. Observed vendor success dialog; primary MEDIA device absent; original HDA status OK. This was helper-driven, not a full automated NSIS interactive-uninstall workflow.",
+    "reinstall": "Final EQ package wrapper installed signed original cable in independent clone; helper exited 3010, all three prior playback roles restored. Reboot completed; HDA and VB-Audio MEDIA devices Status OK; final packaged lifecycle rerun passed.",
+    "physical_device_identity": "Final silent application lifecycle preserved physical and third-party MEDIA device identities.",
+    "security": "No own unsigned kernel installed, no test signing/trust/Secure Boot changes, no certificate purchase, originals untouched, Linux playback untouched.",
+    "clone": "soundcurrent-win11-dev, full independent clone; temporary scheduled tasks removed and clone shut down."
+  },
+  "limitations": [
+    "Ordinary app/installer are unsigned; Windows security policies may warn or block them.",
+    "VB-CABLE settings use the official separate control panel; no undocumented driver registry edits.",
+    "Removal needs administrator approval, the official Remove Driver action, and possibly reboot. Other software/users may need the cable; shared dependency retention is prompted. Silent uninstall retains drivers.",
+    "Cross-user dependency use cannot be inferred completely; last-app removal checks the current user and warns about other users/software.",
+    "A/B and C/D are not bundled.",
+    "Actual in-app Qt button interaction was not separately automated; the exact shipped settings helper and its real control panel were exercised.",
+    "Native own-driver runtime/signing remains deferred."
+  ]
+}

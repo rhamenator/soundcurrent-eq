@@ -1,18 +1,6 @@
-VB-CABLE is a separate product by VB-Audio Software / Vincent Burel.
-Origin: https://www.vb-cable.com/
-Licensing and donations: https://vb-audio.com/Services/licensing.htm
-
-The standard VB-CABLE Driver Pack 45 is included AS IS, with its original
-readme and license, in VBCABLE_Driver_Pack45.zip. VB-CABLE is donationware:
-users can try it, then donate/pay for a license if they find it useful.
-Professional deployments where users cannot see VB-CABLE and pay for their
-licenses require the appropriate number of paid licenses from VB-Audio.
-
-The author's published "VB-CABLE Distribution with other product" permission
-at the licensing URL above permits embedding the standard package when its
-donationware model remains applicable. Checked 2026-10-04. The additional
-VB-CABLE A+B and C+D products are not included.
-
-VB-CABLE is not covered by SoundCurrent EQ's GPL-3.0-only license. Its driver
-is installed only by the vendor's signed installer, with Windows approval.
-Uninstalling SoundCurrent EQ does not uninstall this shared audio driver.
+VB-CABLE is a separate proprietary driver by VB-Audio Software (Vincent Burel).
+Origin and donation/license information: https://vb-cable.com and https://vb-audio.com/Services/licensing.htm
+VB-CABLE is donationware; donations are welcome. It is not part of SoundCurrent's GPL license.
+The original primary cable package is included unchanged under VB-Audio's published distribution rules. Professional deployments must observe VB-Audio's licensing terms. A+B and C+D are not bundled.
+The official setup needs administrator approval. Reboot after installation/removal.
+SoundCurrent's last-app uninstaller offers removal; other software/users may need the shared cable. Silent app removal keeps it. Open Audio driver setup to retry driver setup, and VB-CABLE settings for latency/sample rate.

@@ -12,6 +12,7 @@
 #include "processing_guard.h"
 #ifdef _WIN32
 #include "windows_audio.h"
+#include "windows_managed_route.h"
 #endif
 #include <QApplication>
 #include <QDesktopServices>
@@ -1979,11 +1980,26 @@ public:
 #ifdef Q_OS_WIN
         auto *driverSetup = new QPushButton("Audio driver setup");
         deviceLayout->addWidget(driverSetup);
-        connect(driverSetup, &QPushButton::clicked, this, [] {
+        auto *cableSettings = new QPushButton("VB-CABLE settings");
+        cableSettings->setEnabled(QFileInfo::exists(QDir(QCoreApplication::applicationDirPath()).filePath("cable-setup.ps1")));
+        cableSettings->setAccessibleName("Open VB-CABLE control panel");
+        cableSettings->setToolTip("Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.");
+        deviceLayout->addWidget(cableSettings);
+        connect(cableSettings, &QPushButton::clicked, this, [this] {
+            const auto script = QDir(QCoreApplication::applicationDirPath()).filePath("cable-setup.ps1");
+            if (!QFileInfo::exists(script)) { showError("VB-CABLE settings helper is missing. Repair or reinstall SoundCurrent."); return; }
+            if (!QProcess::startDetached("powershell.exe", {"-NoProfile", "-ExecutionPolicy", "RemoteSigned", "-File", script, "-Settings"}))
+                showError("Could not open VB-CABLE settings.");
+        });
+        driverSetup->setToolTip("Close the app and set up the Windows audio route. Windows may request administrator approval.");
+        connect(driverSetup, &QPushButton::clicked, this, [this] {
             const auto script = QDir(QCoreApplication::applicationDirPath()).filePath("audio-setup.ps1");
-            if (QFileInfo::exists(script))
-                QProcess::startDetached("powershell.exe", {"-NoProfile", "-ExecutionPolicy", "RemoteSigned", "-File", script, "-Install"});
-            else QDesktopServices::openUrl(QUrl("https://www.vb-cable.com/"));
+            if (!QFileInfo::exists(script)) { showError("Audio setup is missing. Repair or reinstall SoundCurrent."); return; }
+            if (!QProcess::startDetached("powershell.exe", {"-NoProfile", "-ExecutionPolicy", "RemoteSigned", "-File", script, "-Install"})) {
+                showError("Could not start SoundCurrent audio setup."); return;
+            }
+            // Quit releases audio routes, guardians and mutual-exclusion locks.
+            qApp->quit();
         });
 #endif
         auto *speakerBox = new QGroupBox("Speaker model correction");
@@ -2102,12 +2118,12 @@ public:
         inputLayout->addWidget(micStatus_);
 #ifdef Q_OS_WIN
         auto *cableRow = new QHBoxLayout;
-        cableRow->addWidget(new QLabel("Microphone cable"));
+        cableRow->addWidget(new QLabel("Microphone route"));
         micCableCombo_ = new QComboBox;
         micCableCombo_->setAccessibleName("Second virtual cable for microphone EQ");
         cableRow->addWidget(micCableCombo_, 1);
         inputLayout->addLayout(cableRow);
-        auto *cableHelp = new QLabel("Simultaneous speaker and microphone EQ needs a separately installed second cable. Select its input here; recording apps use its matching output. The standard playback cable cannot be reused for the microphone.");
+        auto *cableHelp = new QLabel("SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.");
         cableHelp->setWordWrap(true);
         inputLayout->addWidget(cableHelp);
         refreshMicCables();
@@ -3098,7 +3114,7 @@ private:
         if (ids != micCableIds_ || !micCableCombo_->count()) {
             const QSignalBlocker block(micCableCombo_);
             micCableCombo_->clear();
-            micCableCombo_->addItem("Automatic (separate second cable)", QString());
+            micCableCombo_->addItem("Automatic (SoundCurrent Microphone)", QString());
             for (const auto &c : cables) micCableCombo_->addItem(c.description, c.render);
             micCableCombo_->setCurrentIndex(std::max(0, micCableCombo_->findData(current)));
             micCableIds_ = ids;
@@ -3278,11 +3294,33 @@ private:
             }
             power_->setEnabled(!devices_.isEmpty());
             if (!power_->isChecked()) return;
-            if (!audio_.active()) {
+            bool reconnectDisconnectedOutput = false;
+#ifdef Q_OS_WIN
+            // Device invalidation may stop WASAPI before this refresh observes
+            // the unplug. Keep the user's enabled state while choosing a new
+            // physical output, provided crash recovery is still available.
+            reconnectDisconnectedOutput = audio_.routeHealthy() &&
+                !audio_.target().isEmpty() && findDevice(audio_.target()).name.isEmpty();
+#endif
+            if (!audio_.active() && !reconnectDisconnectedOutput) {
                 power_->setChecked(false);
                 showError("The audio processor stopped unexpectedly.");
                 return;
             }
+#ifdef Q_OS_WIN
+            // A direct Windows choice bypasses the managed route. A pinned
+            // output must show Off even when Windows selects another device.
+            // Leave unplug recovery and automatic-follow switching available.
+            const auto windowsOutput = defaultSink();
+            const bool pinnedOutputBypassed = !selectedName.isEmpty() && index >= 0 &&
+                !findDevice(audio_.target()).name.isEmpty() &&
+                !findDevice(windowsOutput).name.isEmpty();
+            if (windowsOutput == audio_.target() || pinnedOutputBypassed) {
+                power_->setChecked(false);
+                status_->setText("Equalizer is off. Windows selected the physical output directly.");
+                return;
+            }
+#endif
             if (audio_.legacyVolumeManaged() && defaultSink() != kSink) {
                 power_->setChecked(false);
                 return;
@@ -3427,7 +3465,7 @@ private:
 
 int main(int argc, char **argv) {
     for (int i = 1; i < argc; ++i) {
-        if (std::strcmp(argv[i], "--ui-self-test") == 0) {
+        if (std::strcmp(argv[i], "--ui-self-test") == 0 || std::strcmp(argv[i], "--windows-live-manual-route-test") == 0 || std::strcmp(argv[i], "--windows-live-conflict-test") == 0) {
             qInstallMessageHandler([](QtMsgType, const QMessageLogContext &, const QString &message) {
                 const auto utf8 = message.toUtf8();
                 std::fprintf(stderr, "%s\n", utf8.constData());
@@ -3455,7 +3493,7 @@ int main(int argc, char **argv) {
     QCoreApplication::setOrganizationName("SoundCurrent");
     QCoreApplication::setApplicationName("soundcurrent-eq");
     QTemporaryDir testSettings;
-    if (app.arguments().contains("--ui-self-test")) {
+    if (app.arguments().contains("--windows-live-conflict-test") || app.arguments().contains("--windows-live-manual-route-test") || app.arguments().contains("--windows-live-hotplug-test") || app.arguments().contains("--windows-live-ui-test") || app.arguments().contains("--ui-self-test")) {
 #ifndef Q_OS_WIN
         const QJsonArray unpluggedPorts{QJsonObject{{"name", "rear-mic"}, {"availability", "not available"}}};
         if (inputPortAvailable(QJsonObject{{"active_port", "rear-mic"}, {"ports", unpluggedPorts}}))
@@ -3608,6 +3646,9 @@ int main(int argc, char **argv) {
         QTabBar::tab:selected { background: #1f746e; border-color: #55d7c3; }
         QTabBar::tab:hover { background: #385572; }
     )");
+#ifdef Q_OS_WIN
+#include "windows_live_ui_test.inc"
+#endif
     if (app.arguments().contains("--ui-self-test")) {
         QJsonObject ampTest{{"schema", 1}, {"model", "Test fixture"},
             {"measurementSource", "https://example.invalid/test"}, {"conditions", "8 ohms; analog input; controls flat"},
@@ -3617,7 +3658,9 @@ int main(int argc, char **argv) {
         if (parseAmplifierProfile(ampTest)) qFatal("Amplifier profile without measurement conditions accepted");
         ampTest.insert("conditions", "8 ohms"); ampTest.insert("filters", QJsonArray{});
         if (parseAmplifierProfile(ampTest)) qFatal("Empty amplifier profile accepted");
+        qInfo("UI self-test: constructing window");
         MainWindow testWindow(false);
+        qInfo("UI self-test: window constructed");
         SpectrumMonitor spectrumTest(true);
         if (spectrumTest.interval() != 16) qFatal("Default level interval is not 16 ms");
         spectrumTest.setInterval(5);
@@ -4076,11 +4119,39 @@ int main(int argc, char **argv) {
         return 1;
     }
     soundcurrent::ProcessingGuard processingGuard;
-    auto showConflict=[&](const QString &reason){QMessageBox box(QMessageBox::Warning,"Equalizer conflict",reason,QMessageBox::Ok);box.setTextFormat(Qt::PlainText);box.exec();};
+    auto showConflict=[&](const QString &reason){
+        QMessageBox box(QMessageBox::Warning,"Equalizer conflict",reason,QMessageBox::Ok);
+        box.setTextFormat(Qt::PlainText);
+#ifdef Q_OS_WIN
+        if(app.arguments().contains("--windows-live-conflict-test")) {
+            bool foundPower=false;
+            for(auto *widget:app.topLevelWidgets()) {
+                if(auto *power=widget->findChild<QCheckBox *>("powerToggle")) {
+                    foundPower=true;
+                    if(power->isChecked()) qFatal("Conflict left processing enabled before warning");
+                }
+            }
+            if(!foundPower) qFatal("Conflict test did not reach live window");
+            const auto owned=standardCable(false).toStdWString();
+            for(int role=0;role<3;++role)
+                if(soundcurrent::windowsDefaultEndpointId(false,role)==owned)
+                    qFatal("Conflict retained managed route before warning");
+            qCritical("Live conflict: %s",qPrintable(reason));
+            qInfo("PASS: processing off and route released before conflict dialog");
+            // Dismiss only the opt-in fixture dialog; retain the production
+            // conflict detection, processor shutdown and event-loop flow.
+            QTimer::singleShot(0,&box,&QDialog::accept);
+        }
+#endif
+        box.exec();
+    };
     if (!processingGuard.acquire(soundcurrent::processingGuardDirectory())) { showConflict(processingGuard.error()); return 1; }
     const auto conflict=soundcurrent::otherEqualizerConflict(kSink);
     if (!conflict.isEmpty()) { showConflict(conflict); return 1; }
     MainWindow window;
+#ifdef Q_OS_WIN
+#include "windows_live_conflict_test.inc"
+#endif
     QTimer conflictMonitor;
     conflictMonitor.setInterval(2000);
     QObject::connect(&conflictMonitor,&QTimer::timeout,&window,[&]{

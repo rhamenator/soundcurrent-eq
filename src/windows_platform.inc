@@ -6,13 +6,22 @@ std::vector<soundcurrent::AudioEndpoint> cableEndpoints(bool capture) {
     std::erase_if(all, [](const auto &d) { return !d.virtualCable; });
     return all;
 }
+QString soundCurrentOutput() {
+    for (const auto &d : soundcurrent::windowsAudioEndpoints(false))
+        if (d.soundCurrent) return QString::fromStdWString(d.id);
+    return {};
+}
 QString standardCable(bool capture) {
+    if (!capture) {
+        const auto own = soundCurrentOutput();
+        if (!own.isEmpty()) return own;
+    }
     for (const auto &d : cableEndpoints(capture)) {
         const auto name = QString::fromStdWString(d.name);
         if (name.startsWith(capture ? "CABLE Output (" : "CABLE Input (", Qt::CaseInsensitive))
             return QString::fromStdWString(d.id);
     }
-    throw std::runtime_error("Install VB-CABLE using Audio driver setup, then refresh devices.");
+    throw std::runtime_error("Install the Windows audio route using Audio driver setup, then reopen the app.");
 }
 QString defaultSink() {
     const auto id = QString::fromStdWString(soundcurrent::windowsDefaultOutputId());
@@ -50,11 +59,14 @@ std::vector<soundcurrent::EqBand> nativeBands(const Bands &bands) {
     for (const auto &b : bands) result.push_back({b.frequency, b.gain, b.q, b.type});
     return result;
 }
+using ManagedWindowsRoute = soundcurrent::ManagedWindowsRoute;
+
 soundcurrent::WindowsBridge *playbackMeterSource = nullptr;
 class AudioEngine {
 public:
     void setEnhancements(const soundcurrent::EnhancementSettings &s) { effects_=s; }
-    bool active() const { return bridge_.running(); }
+    bool active() const { return bridge_.running() && route_ && route_->healthy(); }
+    bool routeHealthy() const { return route_ && route_->healthy(); }
     QString target() const { return target_.name; }
     bool smart() const { return false; }
     bool legacyVolumeManaged() const { return false; }
@@ -63,12 +75,15 @@ public:
         const auto available = devices();
         if (std::none_of(available.begin(), available.end(), [&](const Device &d) { return d.name == device.name; }))
             throw std::runtime_error("Selected speakers are disconnected");
-        const auto capture = standardCable(true), render = standardCable(false);
+        const auto own = soundCurrentOutput();
+        const bool loopback = !own.isEmpty();
+        const auto render = loopback ? own : standardCable(false);
+        const auto capture = loopback ? own : standardCable(true);
         update(bands, gain, balance);
         try {
-            route_ = std::make_unique<soundcurrent::WindowsRouteLease>(false, render.toStdWString(),
-                                                                       device.name.toStdWString(), true);
-            if (!bridge_.start(capture.toStdWString(), device.name.toStdWString()))
+            route_ = std::make_unique<ManagedWindowsRoute>(false, render.toStdWString(),
+                                                                       device.name.toStdWString(), true, [this] { bridge_.stop(); });
+            if (!bridge_.start(capture.toStdWString(), device.name.toStdWString(), false, loopback))
                 throw std::runtime_error(bridge_.error().empty() ? "Audio bridge did not start" : bridge_.error());
             target_ = device;
             playbackMeterSource = &bridge_;
@@ -90,7 +105,7 @@ public:
     ~AudioEngine() { stop(); }
 private:
     soundcurrent::WindowsBridge bridge_;
-    std::unique_ptr<soundcurrent::WindowsRouteLease> route_;
+    std::unique_ptr<ManagedWindowsRoute> route_;
     Device target_;
     Bands bands_;
     soundcurrent::EnhancementSettings effects_;
@@ -100,11 +115,22 @@ struct MicCable { QString render, capture, description; };
 QList<MicCable> microphoneCables() {
     QList<MicCable> result;
     const auto renders = cableEndpoints(false), captures = cableEndpoints(true);
+    // The managed driver supplies a dedicated mic route alongside playback.
+    // Prefer it before any legacy cable pairs persisted from older releases.
+    for (const auto &render : renders) {
+        if (!render.soundCurrentMicFeed) continue;
+        for (const auto &capture : captures) {
+            if (!capture.soundCurrentMicCapture) continue;
+            result.append({QString::fromStdWString(render.id), QString::fromStdWString(capture.id),
+                           QStringLiteral("SoundCurrent Microphone")});
+            break;
+        }
+    }
     QString primary;
     try { primary = standardCable(false); } catch (...) {}
     for (const auto &render : renders) {
         const auto id = QString::fromStdWString(render.id);
-        if (id == primary) continue;
+        if (id == primary || render.soundCurrentMicFeed || render.soundCurrentMicCapture) continue;
         auto expected = QString::fromStdWString(render.name);
         expected.replace("Input", "Output", Qt::CaseInsensitive);
         for (const auto &capture : captures)
@@ -117,7 +143,7 @@ QList<MicCable> microphoneCables() {
 }
 class MicrophoneEngine {
 public:
-    bool active() const { return bridge_.running(); }
+    bool active() const { return bridge_.running() && route_ && route_->healthy(); }
     QString target() const { return target_.name; }
     void setCable(const QString &id) { if (requested_ != id) { stop(); requested_ = id; } }
     void start(const InputDevice &device, const MicTuning &adjustments, double gain) {
@@ -127,13 +153,13 @@ public:
         if (requested_.isEmpty() && !cables.isEmpty()) selected = cables.first();
         else for (const auto &cable : cables) if (cable.render == requested_) selected = cable;
         if (selected.render.isEmpty())
-            throw std::runtime_error("Install a separate second cable (for example VB-CABLE A/B) and select it here. Playback uses the bundled standard cable.");
+            throw std::runtime_error("Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.");
         update(adjustments, gain);
         if (!bridge_.start(device.name.toStdWString(), selected.render.toStdWString(), true))
             throw std::runtime_error(bridge_.error().empty() ? "Microphone audio bridge did not start" : bridge_.error());
         try {
-            route_ = std::make_unique<soundcurrent::WindowsRouteLease>(true, selected.capture.toStdWString(),
-                                                                       device.name.toStdWString());
+            route_ = std::make_unique<ManagedWindowsRoute>(true, selected.capture.toStdWString(),
+                                                                       device.name.toStdWString(), false, [this] { bridge_.stop(); });
             target_ = device;
         } catch (...) { stop(); throw; }
     }
@@ -151,7 +177,7 @@ public:
     ~MicrophoneEngine() { stop(); }
 private:
     soundcurrent::WindowsBridge bridge_;
-    std::unique_ptr<soundcurrent::WindowsRouteLease> route_;
+    std::unique_ptr<ManagedWindowsRoute> route_;
     InputDevice target_;
     QString requested_;
 };

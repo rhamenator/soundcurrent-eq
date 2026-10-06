@@ -61,3 +61,15 @@ microphone/amplifier source links are research metadata, not bundled curves.
 ## LADSPA API header (Linux enhancement module)
 
 `src/vendor/ladspa.h`: LADSPA 1.1 header from Ubuntu ladspa-sdk 1.17-2; Richard W.E. Furse, Paul Barton-Davis and Stefan Westerfeld, LGPL-2.1-or-later. Original notices retained; license in `src/vendor/LGPL-2.1`. https://www.ladspa.org/
+
+## Microsoft SYSVAD driver source (development dependency)
+
+`native/windows/virtual-driver/vendor/sysvad` derives from Microsoft's
+Windows-driver-samples at commit
+`2dc3fd3a0cc84a2933f2194e7ec0871584979071`. Copyright Microsoft Corporation.
+This independently built kernel driver source, including SoundCurrent
+modifications within that directory, retains the Microsoft Public License
+(MS-PL); see `native/windows/virtual-driver/vendor/LICENSE-MS-PL.txt`.
+It is not linked into the GPL application binary. No demonstration Microsoft
+APOs or proprietary FxSound processing code are bundled by this work.
+SDK/WDK tools are build dependencies and are not application payloads.

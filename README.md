@@ -1,4 +1,12 @@
+> **Interim Windows route:** current local installer builds use VB-CABLE, with an in-app control-panel button and a cable removal option in the last-app uninstaller. Our native driver is preserved for later signing. See [interim setup](docs/windows-cable-interim.md) and [native bookmark](docs/windows-native-driver-bookmark.md).
+
 # SoundCurrent EQ
+
+> **Unreleased Windows driver work:** the source now includes integrated
+> SoundCurrent Audio installer/setup plumbing. Public releases still use the
+> previously shipped audio route. The new driver and privileged manager must be
+> production-signed before this becomes an installable release. See
+> [implementation status](native/windows/virtual-driver/IMPLEMENTATION-STATUS.md).
 
 Local development build: **0.7.5** (not yet published).
 
@@ -93,7 +101,7 @@ step requires administrator approval; the equalizer itself runs as your user.
    Windows' administrator prompt, then click **Install Driver** in VB-Audio's
    setup. An existing standard VB-CABLE installation is detected and skipped.
 2. Restart Windows after installing the driver. If you skipped or cancelled
-   that step, retry using **Install VB-CABLE** in the SoundCurrent EQ Start
+   that step, retry using **Audio driver setup** in the SoundCurrent EQ Start
    menu folder or **Audio driver setup** in the app. Silent app installations
    do not install or elevate the driver.
 3. Launch SoundCurrent EQ. It routes default playback through the standard
@@ -119,7 +127,7 @@ check your preferred microphone. VB-CABLE is separate third-party software,
 with its own [license and donation terms](https://vb-audio.com/Services/licensing.htm).
 If useful, donate/pay for a license; professional deployments may require
 paid licenses. The bundled archive retains the vendor's original readme and
-license. Uninstalling the EQ keeps this shared driver installed.
+license. The last-app uninstaller offers shared VB-CABLE removal through the official vendor setup; keep it if another program or user needs it.
 
 For source builds, use Windows with Visual Studio 2022 C++ tools, CMake,
 7-Zip, and NSIS. In PowerShell, run:
