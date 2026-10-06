@@ -1,14 +1,16 @@
 {
   "date": "2026-10-05",
-  "version": "0.7.4",
-  "linuxCtestGroups": 6,
+  "version": "0.7.5",
+  "linuxCtestGroups": 7,
   "linuxResult": "passed",
-  "nativeWindows": "MSVC x64 build and DSP/effect/profile/guard/update-policy/UI tests passed; Studio engine tests passed. No interactive installer or physical Windows audio test.",
+  "nativeWindows": "MSVC x64 app build and DSP/effect/profile/guard/update-policy/spinner/UI tests passed; Studio engine tests passed. No interactive installer or physical Windows audio test.",
   "physicalAudio": "Not tested; host music and device routes preserved",
   "linuxPipeWire": "EQ full graph + live controls tested in private server; installed plugin path verified",
   "published": false,
   "speakerProfiles": 1092,
   "manufacturers": 255,
   "speakerTypeFilters": "UI tested: browse preserves correction; discrete undo restores hidden selection",
-  "linuxInPlaceUpdate": "Installed over prior version; executable hashes match; saved user configuration unchanged"
+  "linuxInPlaceUpdate": "Installed over prior version; executable hashes match; saved user configuration unchanged",
+  "spinner": "Half-Gaussian keyboard and mouse-arrow acceleration tests passed on Linux and native MSVC x64 Windows",
+  "nativeApo": "MSVC x64 standalone processor and COM/APO tests passed; unregistered stereo prototype only; unsigned DLL trust check rejected deployment as expected"
 }

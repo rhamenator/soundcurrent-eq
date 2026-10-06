@@ -1,6 +1,28 @@
 # Native Windows endpoint processing
 
-Status: planned; not available in 0.7.4 EQ / 0.8.3 Studio.
+Status: first implementation gate completed; native device attachment is not yet
+available in EQ 0.7.5 / Studio 0.8.4. The Windows installers still use VB-CABLE.
+
+## Implemented prototype
+
+`native/windows` builds a Qt-free COM/APO DLL, local configuration interface,
+processing harness and read-only endpoint/trust audit. Both repositories passed
+MSVC x64 native tests for COM identity/unload, initialization, float32 stereo format
+negotiation, capacity/connection bounds, silent input, aliased buffers, exact bypass,
+immediate gain and bounded profiles. Portable tests also exercise shared-DSP parity,
+effect tails, mailbox concurrency and no allocation/free in the processing call.
+Existing Linux suites passed (EQ 7/7, Studio 9/9, including spinner acceleration).
+
+Coefficient/headroom preparation now runs outside processing, with fixed snapshots
+applied between blocks. Studio retains its existing LowPass filter support; this
+first APO adapter deliberately accepts only front stereo float32. Studio's full
+multichannel graph, microphone routing and UI cross-process control are subsequent
+gates, not claimed by this prototype. The local control interface is not an IPC
+mechanism. No DLL registration, endpoint association or device changes were performed.
+
+Build: `powershell -File scripts/build-native-apo.ps1` on a VS2022/MSVC x64 machine.
+On Linux, build `native/windows` directly to run the portable processor test.
+The unregistered DLL has no Qt dependency and is not included in production setup.
 
 ## Product requirement
 
@@ -51,9 +73,11 @@ shared backend, including background processes and multiple Windows sessions.
 5. Ship signed installation/removal with per-device status, diagnostics and repair.
    Cable-free mode is offered only after these gates pass.
 
-Next implementation task: an unregistered APO DLL plus offline host harness using
-existing stereo EQ/enhancement DSP. Establish Windows format negotiation and exact
-bypass before touching device configuration.
+Next implementation task: implement authenticated endpoint control and transactional
+per-device enrollment/rollback on an independent VM clone, followed by full Studio
+graph support. Signed deployment is required before production enrollment is offered.
+The read-only trust preflight rejects the present unsigned DLL; Authenticode trust
+alone does not establish protected-audio eligibility. See windows-signing.md.
 
 ## Sources checked 2026-10-05
 

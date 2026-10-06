@@ -1,6 +1,6 @@
 # SoundCurrent EQ
 
-Local development build: **0.7.4** (not yet published).
+Local development build: **0.7.5** (not yet published).
 
 ## Download the published preview — 0.7.1
 

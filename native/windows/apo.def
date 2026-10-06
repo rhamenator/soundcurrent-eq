@@ -1,0 +1,4 @@
+LIBRARY soundcurrent-native-apo
+EXPORTS
+    DllGetClassObject PRIVATE
+    DllCanUnloadNow PRIVATE

@@ -4,3 +4,5 @@
 /dist/
 /.cache/
 *.swp
+
+/build-native-apo/

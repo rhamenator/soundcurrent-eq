@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-only
+#include "accelerating_spinbox.h"
 #include "equipment_profiles.h"
 #include <QApplication>
 #include <QComboBox>
@@ -243,7 +244,7 @@ class Editor : public QDialog {
         table->setCellWidget(r, 0, type);
         QObject::connect(type, &QComboBox::currentIndexChanged, this, [this] { changed(); });
         for (int c = 1; c < 4; ++c) {
-            auto *spin = new QDoubleSpinBox;
+            auto *spin = new soundcurrent::AcceleratingDoubleSpinBox;
             spin->setDecimals(c == 1 ? 1 : 2);
             spin->setRange(c == 1 ? 20 : c == 2 ? -6 : .1, c == 1 ? 20000 : c == 2 ? 6 : 6);
             spin->setValue(c == 1 ? b.frequency : c == 2 ? b.gainDb : b.q);

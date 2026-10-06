@@ -22,6 +22,18 @@ struct FilterCoefficients { double b0, b1, b2, a1, a2; };
 FilterCoefficients filterCoefficients(const EqBand &band, int sampleRate);
 double filterResponseDb(const EqBand &band, int sampleRate, double frequency);
 
+struct PreparedEqProfile {
+    std::array<FilterCoefficients, kMaxProcessingBands> coefficients{};
+    std::size_t count = 0;
+    std::array<double, 2> outputFactors{1.0, 1.0};
+    double headroomDb = 0.0;
+    bool enabled = false;
+};
+// Non-realtime coefficient/response calculation. Invalid profiles leave output unchanged.
+bool prepareEqProfile(std::span<const EqBand> bands, int sampleRate, double postGainDb,
+                      int balancePercent, bool enabled, bool automaticHeadroom,
+                      PreparedEqProfile &output);
+
 // Call setProfile and process from the same audio thread. A UI thread should
 // pass profile updates to that thread between blocks.
 class StereoEqualizer {
@@ -30,6 +42,7 @@ public:
     bool setProfile(std::span<const EqBand> bands, double postGainDb,
                     int balancePercent, bool enabled = true, bool automaticHeadroom = true);
     bool setEnhancements(const EnhancementSettings &s) { return enhancer_.configure(s); }
+    void applyPreparedProfile(const PreparedEqProfile &profile);
     float process(float *interleavedStereo, std::size_t frames);
     void reset();
     double headroomDb() const { return headroomDb_; }

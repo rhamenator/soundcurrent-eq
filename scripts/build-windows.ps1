@@ -75,7 +75,7 @@ try {
     $dsp.Refresh()
     if ($dsp.ExitCode -ne 0) { throw "DSP test failed: $($dsp.ExitCode)" }
     $env:QT_QPA_PLATFORM = 'offscreen'
-    foreach ($testName in @('soundcurrent-equipment-test', 'soundcurrent-processing-guard-test', 'soundcurrent-enhancement-test', 'soundcurrent-update-test')) {
+    foreach ($testName in @('soundcurrent-equipment-test', 'soundcurrent-processing-guard-test', 'soundcurrent-enhancement-test', 'soundcurrent-update-test','soundcurrent-spin-test')) {
         Copy-Item "build-windows-native\Release\$testName.exe" $stage
         $testArgs = @()
         if ($testName -eq 'soundcurrent-equipment-test') { $testArgs = @('--ui-self-test') }

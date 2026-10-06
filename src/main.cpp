@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-only
+#include "accelerating_spinbox.h"
 // Copyright (C) 2026 rhamenator
 
 #include "dsp.h"
@@ -1956,7 +1957,7 @@ public:
         meterRow->addSpacing(8);
         meterRow->addStretch();
         meterRow->addWidget(new QLabel("Level refresh"));
-        levelRefresh_ = new QSpinBox;
+        levelRefresh_ = new soundcurrent::AcceleratingSpinBox;
         levelRefresh_->setRange(1, 100);
         levelRefresh_->setSingleStep(1);
         levelRefresh_->setSuffix(" ms");
@@ -2136,7 +2137,7 @@ public:
         calibrationStop_->setEnabled(false);
         calibrationRow->addWidget(calibrationStop_);
         calibrationRow->addWidget(new QLabel("Test level"));
-        calibrationLevel_ = new QSpinBox;
+        calibrationLevel_ = new soundcurrent::AcceleratingSpinBox;
         calibrationLevel_->setRange(-54, -5);
         calibrationLevel_->setValue(-24);
         calibrationLevel_->setSuffix(" dBFS");
@@ -2185,7 +2186,7 @@ public:
         auto *eqLayout = new QVBoxLayout(eqBox);
         auto *toolbar = new QHBoxLayout;
         toolbar->addWidget(new QLabel("Bands"));
-        countBox_ = new QSpinBox;
+        countBox_ = new soundcurrent::AcceleratingSpinBox;
         countBox_->setRange(kMinBands, kMaxBands);
         countBox_->setValue(kDefaultBands);
         countBox_->setAccessibleName("Number of equalizer bands");
@@ -2203,7 +2204,7 @@ public:
         detailsRow->addWidget(new QLabel("Selected band"));
         detailsRow->addSpacing(8);
         detailsRow->addWidget(new QLabel("Frequency"));
-        frequencyBox_ = new QDoubleSpinBox;
+        frequencyBox_ = new soundcurrent::AcceleratingDoubleSpinBox;
         frequencyBox_->setRange(20, 20000);
         frequencyBox_->setDecimals(0);
         frequencyBox_->setSingleStep(1);
@@ -2212,7 +2213,7 @@ public:
         detailsRow->addWidget(frequencyBox_);
         detailsRow->addSpacing(12);
         detailsRow->addWidget(new QLabel("Gain"));
-        gainBox_ = new QDoubleSpinBox;
+        gainBox_ = new soundcurrent::AcceleratingDoubleSpinBox;
         gainBox_->setRange(-12, 12);
         gainBox_->setDecimals(1);
         gainBox_->setSingleStep(0.5);
@@ -2221,7 +2222,7 @@ public:
         detailsRow->addWidget(gainBox_);
         detailsRow->addSpacing(12);
         detailsRow->addWidget(new QLabel("Width (Q)"));
-        qBox_ = new QDoubleSpinBox;
+        qBox_ = new soundcurrent::AcceleratingDoubleSpinBox;
         qBox_->setRange(0.3, 10.0);
         qBox_->setDecimals(2);
         qBox_->setSingleStep(0.1);

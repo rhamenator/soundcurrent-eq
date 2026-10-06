@@ -19,7 +19,7 @@ Unicode true
 !endif
 
 !ifndef APP_VERSION
-  !define APP_VERSION "0.7.4"
+  !define APP_VERSION "0.7.5"
 !endif
 
 Var CableCheck
