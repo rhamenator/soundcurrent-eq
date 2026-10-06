@@ -1,26 +1,30 @@
-> **Interim Windows route:** current local installer builds use VB-CABLE, with an in-app control-panel button and a cable removal option in the last-app uninstaller. Our native driver is preserved for later signing. See [interim setup](docs/windows-cable-interim.md) and [native bookmark](docs/windows-native-driver-bookmark.md).
+> **Interim Windows route:** the current Windows preview uses VB-CABLE, with an in-app control-panel button and a cable removal option in the last-app uninstaller. Our native driver is preserved for later signing. See [interim setup](docs/windows-cable-interim.md) and [native bookmark](docs/windows-native-driver-bookmark.md).
 
 # SoundCurrent EQ
 
 > **Unreleased Windows driver work:** the source now includes integrated
 > SoundCurrent Audio installer/setup plumbing. Public releases still use the
 > previously shipped audio route. The new driver and privileged manager must be
-> production-signed before this becomes an installable release. See
+> production-signed before the native-driver variant can be distributed. See
 > [implementation status](native/windows/virtual-driver/IMPLEMENTATION-STATUS.md).
 
-Local development build: **0.7.5** (not yet published).
+## Download the Windows preview — 0.7.5
 
-## Download the published preview — 0.7.1
+- [Windows x64 installer](https://github.com/rhamenator/soundcurrent-eq/releases/download/windows-preview-0.7.5/SoundCurrent-EQ-0.7.5-windows-x64-VBCABLE-preview.exe)
+- [Release notes, checksums and corresponding source](https://github.com/rhamenator/soundcurrent-eq/releases/tag/windows-preview-0.7.5)
+
+This is a Windows testing preview using the signed VB-CABLE route. The SoundCurrent app/installer remain unsigned; Windows security policies may warn or block them. Quit the running app before updating. Our native-driver code remains preserved for later signing.
+
+## Linux packages — 0.7.1
 
 [Release notes and all downloads](https://github.com/rhamenator/soundcurrent-eq/releases/tag/parity-preview-0.7.1)
 
-- [Windows installer (64-bit)](https://github.com/rhamenator/soundcurrent-eq/releases/download/parity-preview-0.7.1/SoundCurrent-EQ-0.7.1-windows-x64-setup.exe)
 - [Ubuntu / Debian package (64-bit)](https://github.com/rhamenator/soundcurrent-eq/releases/download/parity-preview-0.7.1/soundcurrent-eq_0.7.1_amd64.deb)
 - [Fedora 44 RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/parity-preview-0.7.1/soundcurrent-eq-0.7.1-1.fc44.x86_64.rpm)
 - [RHEL 10 compatible RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/parity-preview-0.7.1/soundcurrent-eq-0.7.1-1.el10.x86_64.rpm)
 
 Version 0.7.1 is a **pre-release**. GitHub's “Latest” link currently points to the
-older 0.5.1 stable release; use the links above for the current Linux/Windows preview.
+older 0.5.1 stable release; use the explicit preview links above. The newer Windows preview is a separate release; these Linux packages remain at 0.7.1.
 
 ## About SoundCurrent EQ
 
