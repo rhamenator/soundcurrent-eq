@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 #pragma once
 
+#include "enhancement.h"
 #include <array>
 #include <cstddef>
 #include <span>
@@ -28,6 +29,7 @@ public:
     explicit StereoEqualizer(int sampleRate);
     bool setProfile(std::span<const EqBand> bands, double postGainDb,
                     int balancePercent, bool enabled = true, bool automaticHeadroom = true);
+    bool setEnhancements(const EnhancementSettings &s) { return enhancer_.configure(s); }
     float process(float *interleavedStereo, std::size_t frames);
     void reset();
     double headroomDb() const { return headroomDb_; }
@@ -42,6 +44,7 @@ private:
 
     static constexpr std::size_t kMaxBands = kMaxProcessingBands;
     int sampleRate_;
+    StereoEnhancer enhancer_;
     std::array<std::array<Biquad, kMaxBands>, 2> filters_{};
     std::size_t count_ = 0;
     std::array<double, 2> outputFactors_{1.0, 1.0};

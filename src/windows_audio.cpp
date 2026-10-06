@@ -253,9 +253,10 @@ void WindowsBridge::stop() {
 }
 
 bool WindowsBridge::setProfile(std::span<const EqBand> bands, double postGainDb,
-                               int balancePercent, bool enabled, bool automaticHeadroom) {
+                               int balancePercent, bool enabled, bool automaticHeadroom, const EnhancementSettings &effects) {
     StereoEqualizer validator(48000);
     if (!validator.setProfile(bands, postGainDb, balancePercent, enabled, automaticHeadroom)) return false;
+    if(!effects.valid())return false;
     Profile proposed;
     proposed.count = bands.size();
     std::copy(bands.begin(), bands.end(), proposed.bands.begin());
@@ -263,6 +264,7 @@ bool WindowsBridge::setProfile(std::span<const EqBand> bands, double postGainDb,
     proposed.balancePercent = balancePercent;
     proposed.enabled = enabled;
     proposed.automaticHeadroom = automaticHeadroom;
+    proposed.effects = effects;
     std::lock_guard guard(profileMutex_);
     profile_ = proposed;
     ++profileVersion_;
@@ -350,6 +352,8 @@ void WindowsBridge::run(std::wstring captureId, std::wstring outputId, bool micr
                                           pending.postGainDb, pending.balancePercent,
                                           pending.enabled, pending.automaticHeadroom))
                 throw std::runtime_error("The selected EQ settings are invalid");
+
+            if(changed && !eq.setEnhancements(pending.effects))throw std::runtime_error("Invalid enhancements");
 
             UINT32 packetFrames = 0;
             check(reader->GetNextPacketSize(&packetFrames), "Read cable packet size");

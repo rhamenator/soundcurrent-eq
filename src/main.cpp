@@ -2,6 +2,10 @@
 // Copyright (C) 2026 rhamenator
 
 #include "dsp.h"
+#include "enhancement_controls.h"
+#ifndef SOUNDCURRENT_EFFECTS_DIR
+#define SOUNDCURRENT_EFFECTS_DIR "/usr/lib/soundcurrent-eq"
+#endif
 #include "equipment_profiles.h"
 #include "processing_guard.h"
 #ifdef _WIN32
@@ -424,6 +428,15 @@ QString filterConfig(const QString &target, const Bands &bands, double outputGai
         links << QString("{ output = \"%1_band_%2:Out\" input = \"%1_output_gain:In\" }")
                      .arg(channel).arg(kProcessingBands);
     }
+    const auto buildPlugin=QCoreApplication::applicationDirPath()+"/effects/soundcurrent-enhancements.so";
+    const auto plugin=QFileInfo::exists(buildPlugin)?buildPlugin:QStringLiteral(SOUNDCURRENT_EFFECTS_DIR "/soundcurrent-enhancements.so");
+    nodes << QString("{ type = ladspa name = enhancements plugin = %1 label = soundcurrent_enhancements control = { Clarity = 0 Ambience = 0 Surround = 0 Dynamic = 0 Bass = 0 } }").arg(quote(plugin));
+    for(const QString &channel:{QString("left"),QString("right")}) {
+        const QString side=channel=="left"?"Left":"Right";
+        links.removeAll(QString("{ output = \"%1_band_%2:Out\" input = \"%1_output_gain:In\" }").arg(channel).arg(kProcessingBands));
+        links << QString("{ output = \"%1_band_%2:Out\" input = \"enhancements:%3 input\" }").arg(channel).arg(kProcessingBands).arg(side);
+        links << QString("{ output = \"enhancements:%2 output\" input = \"%1_output_gain:In\" }").arg(channel,side);
+    }
     const auto smartProperties = smartFilter
         ? QString("filter.smart = true filter.smart.target = { node.name = %1 }").arg(quote(target))
         : QString();
@@ -642,6 +655,7 @@ QString gainControls(double outputGainDb, int balancePercent) {
 #ifndef Q_OS_WIN
 class AudioEngine {
 public:
+    void setEnhancements(const soundcurrent::EnhancementSettings &s) { effects_=s; }
     bool active() const { return process_.state() != QProcess::NotRunning; }
     QString target() const { return target_.name; }
     bool smart() const { return smart_; }
@@ -712,6 +726,7 @@ public:
             sinkId_ = id;
             smart_ = smart;
             target_ = device;
+            update(bands,outputGainDb,balancePercent);
         } catch (const std::exception &) {
             stop();
             throw;
@@ -721,7 +736,7 @@ public:
     void update(const Bands &bands, double outputGainDb = 0.0, int balancePercent = 0) {
         if (!active()) return;
         if (sinkId_ < 0) throw std::runtime_error("Equalizer sink disappeared");
-        command("pw-cli", {"set-param", QString::number(sinkId_), "Props", filterControls(bands, outputGainDb, balancePercent)});
+        command("pw-cli", {"set-param", QString::number(sinkId_), "Props", effectControls(filterControls(bands, outputGainDb, balancePercent))});
     }
 
     void updateGain(double outputGainDb, int balancePercent) {
@@ -789,6 +804,13 @@ public:
     ~AudioEngine() { stop(); }
 
 private:
+    QString effectControls(QString controls) const {
+        QStringList values;constexpr const char *names[]{"Clarity","Ambience","Surround","Dynamic","Bass"};
+        for(std::size_t i=0;i<5;++i)values << quote(QString("enhancements:")+names[i]) << QString::number(effects_.values[i],'g',8);
+        controls.replace(" ] }"," "+values.join(' ')+" ] }");return controls;
+    }
+    soundcurrent::EnhancementSettings effects_;
+
     QTemporaryDir directory_{QDir::tempPath() + "/soundcurrent-eq-XXXXXX"};
     QProcess process_;
     QProcess guardian_;
@@ -2190,6 +2212,14 @@ public:
         eqLayout->addWidget(new QLabel("Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping."));
         root->insertWidget(0, eqBox);
         root->addWidget(outputBox);
+        enhancements_=new soundcurrent::EnhancementControls(false);
+        soundcurrent::EnhancementSettings savedEffects;
+        for(std::size_t i=0;i<5;++i)savedEffects.values[i]=std::clamp(QSettings().value(QString("enhancements/%1").arg(i),0).toDouble(),0.,1.);
+        if(!savedEffects.valid())savedEffects={};
+        enhancements_->setSettings(savedEffects);audio_.setEnhancements(savedEffects);
+        root->addWidget(enhancements_);
+        enhancements_->onEdited=[this]{recordChange(enhancements_);markCustom();saveEnhancements();applyChanges();commitChange();};
+
         root->addStretch();
 
         loadCustomPresets();
@@ -2439,10 +2469,11 @@ private:
         int gain = 0;
         int balance = 0;
         std::array<QByteArray,3> equipment;
+        soundcurrent::EnhancementSettings enhancements;
     };
 
     EqSnapshot snapshot() const {
-        return {bands_, presetCombo_->currentText(), speakerCombo_->currentData().toString(), ampCombo_->currentData().toString(), selected_, outputGain_->value(), balance_->value(), {QSettings().value("equipment/speaker").toByteArray(), QSettings().value("equipment/amplifier").toByteArray(), QSettings().value("equipment/microphone").toByteArray()}};
+        return {bands_, presetCombo_->currentText(), speakerCombo_->currentData().toString(), ampCombo_->currentData().toString(), selected_, outputGain_->value(), balance_->value(), {QSettings().value("equipment/speaker").toByteArray(), QSettings().value("equipment/amplifier").toByteArray(), QSettings().value("equipment/microphone").toByteArray()}, enhancements_->settings()};
     }
 
     void recordChange(QObject *source) {
@@ -2482,6 +2513,7 @@ private:
             const QStringList kinds={"speaker","amplifier","microphone"};
             for(int i=0;i<3;++i) { if(previous.equipment[i].isEmpty())QSettings().remove("equipment/"+kinds[i]);else QSettings().setValue("equipment/"+kinds[i],previous.equipment[i]); }
             refreshEquipmentStatus();
+            enhancements_->setSettings(previous.enhancements);saveEnhancements();
             outputGain_->setValue(previous.gain);
             balance_->setValue(previous.balance);
             rebuildBandControls();
@@ -2506,6 +2538,7 @@ private:
     void updateControlsLock() {
         const bool editable = !lockButton_->isChecked();
         lockButton_->setText(editable ? "Lock EQ" : "Unlock EQ");
+        enhancements_->setEnabled(editable);
         outputGain_->setEnabled(editable);
         balance_->setEnabled(editable);
         presetCombo_->setEnabled(editable);
@@ -3030,7 +3063,11 @@ private:
 #endif
     QComboBox *speakerCombo_ = nullptr;
 
+    soundcurrent::EnhancementControls *enhancements_ = nullptr;
+    QMap<QString,soundcurrent::EnhancementSettings> customEnhancements_;
+    void saveEnhancements(){for(std::size_t i=0;i<5;++i)QSettings().setValue(QString("enhancements/%1").arg(i),enhancements_->settings().values[i]);}
     void applyChanges() {
+        audio_.setEnhancements(enhancements_->settings());
         meter_.setProfile(bands_, outputGainDb(), balance_->value(), speakerCorrection());
         try { audio_.update(processingBands(), outputGainDb(), balance_->value()); }
         catch (const std::exception &error) { showError(error.what()); }
@@ -3066,6 +3103,7 @@ private:
         const auto name = presetCombo_->currentText();
         if (!builtinShapes().contains(name) && !custom_.contains(name)) return;
         recordChange(presetCombo_);
+        enhancements_->setSettings(customEnhancements_.value(name,{}));saveEnhancements();
         if (builtinShapes().contains(name)) bands_ = builtinProfile(name, countBox_->value());
         else bands_ = custom_[name];
         selected_ = std::min(selected_, int(bands_.size()) - 1);
@@ -3084,7 +3122,12 @@ private:
         for (auto it = object.begin(); it != object.end(); ++it) {
             if (it.key().trimmed().isEmpty() || it.key() == "Custom" || builtinShapes().contains(it.key())) continue;
             const auto parsed = parseBands(it.value());
-            if (parsed) custom_.insert(it.key(), *parsed);
+            if (parsed) {
+                custom_.insert(it.key(), *parsed);soundcurrent::EnhancementSettings s;
+                const auto values=it.value().toObject().value("enhancements").toArray();
+                if(values.size()==5)for(int i=0;i<5;++i)s.values[std::size_t(i)]=values[i].toDouble(-1);
+                if(s.valid())customEnhancements_.insert(it.key(),s);
+            }
         }
     }
 
@@ -3119,9 +3162,12 @@ private:
             return;
         }
         custom_[name] = bands_;
+        customEnhancements_[name]=enhancements_->settings();
         QJsonObject object;
-        for (auto it = custom_.begin(); it != custom_.end(); ++it)
-            object.insert(it.key(), QJsonObject{{"bands", serializeBands(it.value())}});
+        for (auto it = custom_.begin(); it != custom_.end(); ++it) {
+            QJsonArray values;const auto settings=customEnhancements_.value(it.key(),{});for(std::size_t i=0;i<5;++i)values.append(settings.values[i]);
+            object.insert(it.key(), QJsonObject{{"bands", serializeBands(it.value())},{"enhancements",values}});
+        }
         const auto path = presetsPath();
         if (!QDir().mkpath(QFileInfo(path).absolutePath())) { showError("Could not create preset folder."); return; }
         QSaveFile file(path);
@@ -3820,6 +3866,11 @@ int main(int argc, char **argv) {
         undo->click();
         if (presets->currentText() != "Flat" || firstBandSlider()->value() != 0)
             qFatal("Undo did not restore the previous preset");
+        soundcurrent::EnhancementControls *effects=nullptr;
+        for(auto *widget:testWindow.findChildren<QWidget *>())if(auto *controls=dynamic_cast<soundcurrent::EnhancementControls *>(widget))effects=controls;
+        if(!effects)qFatal("Enhancement controls missing");
+        auto *bassEffect=effects->findChildren<QSlider *>().at(4);const int originalBass=bassEffect->value();
+        bassEffect->setValue(50);undo->click();if(bassEffect->value()!=originalBass)qFatal("Enhancement undo failed");
         const int originalOutputGain = outputGain->value();
         outputGain->setValue(originalOutputGain == outputGain->maximum()
                                  ? originalOutputGain - 1 : originalOutputGain + 1);
@@ -3847,7 +3898,7 @@ int main(int argc, char **argv) {
         if (!speakers->currentData().toString().isEmpty()) qFatal("Undo did not restore speaker selection");
         lock->click();
         if (!lock->isChecked() || firstBandSlider()->isEnabled() || presets->isEnabled() ||
-            outputGain->isEnabled() || balance->isEnabled() || speakers->isEnabled())
+            outputGain->isEnabled() || balance->isEnabled() || speakers->isEnabled() || bassEffect->isEnabled())
             qFatal("Lock did not protect playback EQ controls");
         lock->click();
         if (!firstBandSlider()->isEnabled()) qFatal("Unlock did not restore editing");

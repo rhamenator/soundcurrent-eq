@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-05",
+  "version": "0.7.3",
+  "linuxCtestGroups": 5,
+  "linuxResult": "passed",
+  "nativeWindows": "MSVC x64 build and DSP/effect/profile/guard/UI tests passed; Studio engine tests passed. No interactive installer or physical Windows audio test.",
+  "physicalAudio": "Not tested; host music and device routes preserved",
+  "linuxPipeWire": "EQ full graph + live controls tested in private server; installed plugin path verified",
+  "published": false
+}

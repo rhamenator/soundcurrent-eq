@@ -1,7 +1,7 @@
 {
   "date": "2026-10-05",
-  "version": "0.7.2",
-  "linuxCtestGroups": 4,
+  "version": "0.7.3",
+  "linuxCtestGroups": 5,
   "result": "passed",
   "bundledSpeakerCorrections": 1087,
   "speakerBrands": 255,
@@ -21,8 +21,9 @@
   ],
   "windows": "Native MSVC x64 build passed DSP, equipment editor, processing guard and shared UI tests; Studio engine tests passed. Physical Windows audio and interactive installer not tested.",
   "hardware": "No tones, microphone capture or physical route changes in this task",
-  "installedUserBuild": true,
+  "installedUserBuild": false,
   "runningAppRestarted": false,
   "published": false,
-  "packageSha256": "6db079fe391bfd5a958a154e26b91cf4703c752f40df60b045fe192302172dd5"
+  "packageSha256": "bb62186d93f62300eea1d28fe07be9353067096bb137066974989cdbab6addbc",
+  "installedDebPackage": true
 }

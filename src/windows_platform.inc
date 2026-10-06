@@ -53,6 +53,7 @@ std::vector<soundcurrent::EqBand> nativeBands(const Bands &bands) {
 soundcurrent::WindowsBridge *playbackMeterSource = nullptr;
 class AudioEngine {
 public:
+    void setEnhancements(const soundcurrent::EnhancementSettings &s) { effects_=s; }
     bool active() const { return bridge_.running(); }
     QString target() const { return target_.name; }
     bool smart() const { return false; }
@@ -75,7 +76,7 @@ public:
     }
     void update(const Bands &bands, double gain = 0, int balance = 0) {
         auto filters = nativeBands(bands);
-        if (!bridge_.setProfile(filters, gain, balance, true))
+        if (!bridge_.setProfile(filters, gain, balance, true, true, effects_))
             throw std::runtime_error("Invalid equalizer settings");
         bands_ = bands;
     }
@@ -92,6 +93,7 @@ private:
     std::unique_ptr<soundcurrent::WindowsRouteLease> route_;
     Device target_;
     Bands bands_;
+    soundcurrent::EnhancementSettings effects_;
 };
 
 struct MicCable { QString render, capture, description; };

@@ -1,6 +1,8 @@
 # SoundCurrent EQ
 
-## Download the current preview — 0.7.1
+Local development build: **0.7.3** (not yet published).
+
+## Download the published preview — 0.7.1
 
 [Release notes and all downloads](https://github.com/rhamenator/soundcurrent-eq/releases/tag/parity-preview-0.7.1)
 
@@ -22,8 +24,8 @@ width (Q), saved custom profiles, colored per-band FFT meters, configurable
 refresh and peak markers, microphone tone controls, and speaker/room
 measurement with a preview before applying changes. Windows microphone EQ
 uses a separate second virtual cable so speaker processing can keep running.
-The shared interface also offers 18 measured speaker-model profiles and
-imported amplifier correction profiles. Hardware workflows are tested
+The equipment library offers 1087 source-linked speaker correction profiles and
+qualified amplifier references, with profile imports and an editor. Hardware workflows are tested
 separately from the shared UI and DSP. See the testing notes for coverage.
 
 The default `main` branch builds the same free feature set for Linux and Windows.
@@ -413,3 +415,7 @@ Successful sweep checks can also save a whole-system response profile.
 See [equipment profiles](docs/equipment-profiles.md) for importing measured data,
 creating your own profiles, provenance, limits, verification and source coverage.
 This work is not yet published in the linked GitHub release.
+
+## Listening enhancements
+
+Clarity, Ambience, stereo Surround Sound, Dynamic Boost and Bass Boost are now available. EQ provides simple amount sliders; Studio also provides advanced parameters alongside its multichannel effects. See [Listening enhancements](docs/listening-enhancements.md) for controls, signal order and limits.

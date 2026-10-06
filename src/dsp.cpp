@@ -72,7 +72,7 @@ double filterResponseDb(const EqBand &band, int sampleRate, double frequency) {
         (c.b0 + c.b1 * z + c.b2 * z * z) / (1.0 + c.a1 * z + c.a2 * z * z))));
 }
 
-StereoEqualizer::StereoEqualizer(int sampleRate) : sampleRate_(sampleRate) {
+StereoEqualizer::StereoEqualizer(int sampleRate) : sampleRate_(sampleRate), enhancer_(sampleRate) {
     if (sampleRate < 8000 || sampleRate > 384000)
         throw std::invalid_argument("Unsupported sample rate");
 }
@@ -133,23 +133,25 @@ bool StereoEqualizer::setProfile(std::span<const EqBand> bands, double postGainD
 float StereoEqualizer::process(float *interleavedStereo, std::size_t frames) {
     if (!interleavedStereo) return 0.0f;
     double peak = 0.0;
-    for (std::size_t frame = 0; frame < frames; ++frame)
-        for (int channel = 0; channel < 2; ++channel) {
-            double value = interleavedStereo[frame * 2 + channel];
-            if (!std::isfinite(value)) value = 0.0;
-            if (enabled_) {
-                for (std::size_t i = 0; i < count_; ++i)
-                    value = filters_[channel][i].process(value);
-                value *= outputFactors_[channel];
-            }
-            peak = std::max(peak, std::abs(value));
-            interleavedStereo[frame * 2 + channel] =
-                static_cast<float>(std::clamp(value, -1.0, 1.0));
+    for (std::size_t frame = 0; frame < frames; ++frame) {
+        double values[2]{};
+        for (int channel=0;channel<2;++channel) {
+            values[channel]=interleavedStereo[frame*2+channel];
+            if(!std::isfinite(values[channel]))values[channel]=0;
+            if(enabled_)for(std::size_t i=0;i<count_;++i)values[channel]=filters_[channel][i].process(values[channel]);
         }
+        if(enabled_)enhancer_.process(values[0],values[1]);
+        for(int channel=0;channel<2;++channel) {
+            const double value=enabled_?values[channel]*outputFactors_[channel]:values[channel];
+            peak=std::max(peak,std::abs(value));
+            interleavedStereo[frame*2+channel]=static_cast<float>(std::clamp(value,-1.,1.));
+        }
+    }
     return static_cast<float>(peak);
 }
 
 void StereoEqualizer::reset() {
+    enhancer_.reset();
     for (auto &channel : filters_)
         for (auto &filter : channel) filter.reset();
 }

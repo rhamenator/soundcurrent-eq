@@ -59,6 +59,11 @@ int main() {
     if (!eq.setProfile(combined, 0, 0)) return 13;
     combined.resize(soundcurrent::kMaxProcessingBands + 1, {1000, 0, 1});
     if (eq.setProfile(combined, 0, 0)) return 14;
+    if(!eq.setProfile({},0,0))return 15;
+    soundcurrent::EnhancementSettings effects;effects.values[soundcurrent::BassBoost]=1;
+    if(!eq.setEnhancements(effects))return 16;
+    if(measure(eq,40)<flat*2)return 17;
+    if(!eq.setProfile({},0,0,false) || std::abs(measure(eq,40)-flat)>1e-5)return 18;
     std::printf("Windows DSP core: 1 kHz cut %.1f dB, post gain %.1f dB, balance passed\n",
                 cutDb, gainDb);
     return 0;

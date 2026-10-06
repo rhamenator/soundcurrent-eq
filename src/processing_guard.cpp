@@ -104,6 +104,17 @@ QString otherEqualizerConflict(const QString &ownPrefix) {
         if (!valid || pid == own)
             continue;
         const auto path = QFileInfo("/proc/" + id + "/exe").symLinkTarget();
+        // The volume-restoration helper is our direct child, not a second EQ.
+        QFile status("/proc/" + id + "/status"), args("/proc/" + id + "/cmdline");
+        bool ourHelper = false;
+        if (status.open(QIODevice::ReadOnly) && args.open(QIODevice::ReadOnly)) {
+            const auto command = args.readAll().split('\0');
+            for (const auto &line : status.readAll().split('\n'))
+                if (line.startsWith("PPid:") && line.mid(5).trimmed().toLongLong() == own &&
+                    command.size() >= 2 && command[1] == "--volume-guardian" &&
+                    path == QCoreApplication::applicationFilePath()) ourHelper = true;
+        }
+        if (ourHelper) continue;
         if (recognizedEqualizerProcess(path))
             return QFileInfo(path).fileName() + " is running. Quit it before using SoundCurrent.";
     }

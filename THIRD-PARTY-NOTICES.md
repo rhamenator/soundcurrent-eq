@@ -57,3 +57,7 @@ Stash's January 29, 2025 Parts Express forum post, supplied by the user as a PDF
 It retains source attribution, PDF hash, measurement conditions and uncertainty.
 No original PDF pages, photographs or forum prose are redistributed. Other
 microphone/amplifier source links are research metadata, not bundled curves.
+
+## LADSPA API header (Linux enhancement module)
+
+`src/vendor/ladspa.h`: LADSPA 1.1 header from Ubuntu ladspa-sdk 1.17-2; Richard W.E. Furse, Paul Barton-Davis and Stefan Westerfeld, LGPL-2.1-or-later. Original notices retained; license in `src/vendor/LGPL-2.1`. https://www.ladspa.org/

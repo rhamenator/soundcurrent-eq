@@ -1,6 +1,6 @@
 Name:           soundcurrent-eq
 %global debug_package %{nil}
-Version:        0.7.2
+Version:        0.7.3
 Release:        1%{?dist}
 Summary:        Adjustable desktop equalizer for PipeWire
 License:        GPL-3.0-only
@@ -33,14 +33,21 @@ DESTDIR=%{buildroot} cmake --install build
 %license LICENSE
 %doc README.md
 %{_bindir}/soundcurrent-eq
+%{_libdir}/soundcurrent-eq
+%{_datadir}/doc/soundcurrent-eq/LGPL-2.1
 %{_datadir}/applications/io.github.rhamenator.SoundCurrentEQ.desktop
 %{_datadir}/icons/hicolor/scalable/apps/io.github.rhamenator.SoundCurrentEQ.svg
 %{_datadir}/doc/soundcurrent-eq/copyright
 %{_datadir}/doc/soundcurrent-eq/LICENSE
 %{_datadir}/doc/soundcurrent-eq/THIRD-PARTY-NOTICES.md
 %{_datadir}/doc/soundcurrent-eq/speakers
+%{_datadir}/doc/soundcurrent-eq/equipment
+%{_datadir}/doc/soundcurrent-eq/equipment-profiles.md
 
 %changelog
+* Mon Oct 05 2026 rhamenator <rhamenator@gmail.com> - 0.7.3-1
+- Add listening enhancements and controls, with advanced Studio parameters
+
 * Mon Oct 05 2026 rhamenator <rhamenator@gmail.com> - 0.7.1-1
 - Unify Linux and Windows feature parity on the default branch
 - Fit native window frames and defer initial device startup until visible

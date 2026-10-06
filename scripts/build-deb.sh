@@ -8,7 +8,7 @@ build_dir="$project_dir/build"
 package_dir=$(mktemp -d)
 trap 'rm -rf "$package_dir"' EXIT
 
-cmake -S "$project_dir" -B "$build_dir" -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake -S "$project_dir" -B "$build_dir" -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
 cmake --build "$build_dir" --parallel
 DESTDIR="$package_dir" cmake --install "$build_dir" --prefix /usr
 

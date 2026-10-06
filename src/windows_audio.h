@@ -79,7 +79,7 @@ public:
     float peak() const { return peak_.load(); }
     void setStatusCallback(StatusCallback callback) { status_ = std::move(callback); }
     bool setProfile(std::span<const EqBand> bands, double postGainDb,
-                    int balancePercent, bool enabled, bool automaticHeadroom = true);
+                    int balancePercent, bool enabled, bool automaticHeadroom = true, const EnhancementSettings &effects = {});
 
 private:
     struct Profile {
@@ -89,6 +89,7 @@ private:
         int balancePercent = 0;
         bool enabled = true;
         bool automaticHeadroom = true;
+        EnhancementSettings effects;
     };
 
     void run(std::wstring captureId, std::wstring outputId, bool microphone);
