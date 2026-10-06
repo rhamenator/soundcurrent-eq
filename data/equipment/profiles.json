@@ -1,0 +1,88 @@
+[
+  {
+    "schema": 2,
+    "id": "pyle-pda29bu-stash-electrical-2025",
+    "kind": "amplifier",
+    "brand": "Pyle",
+    "family": "PDA compact amplifiers",
+    "model": "PDA29BU — 12 V DC / 8 ohm reference",
+    "measurementSource": "https://techtalk.parts-express.com/forum/tech-talk-forum/1506906-pyle-audio-products-pda29bu-and-audio-specs",
+    "conditions": "Community electrical measurements, 12 V DC / 5 A supply, nominal 8 ohm load, 1 kHz reference. Hand-written rounded dB readings, approximate transcription; tone controls and complete apparatus uncertain. Not your unit or Sony speaker load. This is NOT the room / homemade Mach One speaker curve. Approximate conservative correction requires preview.",
+    "provenance": "Stash, forum post 2025-01-29; user-provided PDF page 4; SHA256 74cf6c338e3b39b2e5767d07b382afb1ea24e669ba30826d9e6cfc10f88c6d73; transcription uncertainty retained; sub-80 Hz boost omitted.",
+    "custom": false,
+    "filters": [
+      {
+        "type": "HS",
+        "frequency": 2500,
+        "gain": -0.6,
+        "q": 0.7
+      }
+    ],
+    "response": [
+      [
+        20,
+        -5.55
+      ],
+      [
+        30,
+        -4.0
+      ],
+      [
+        40,
+        -2.27
+      ],
+      [
+        50,
+        -1.33
+      ],
+      [
+        60,
+        -0.75
+      ],
+      [
+        70,
+        -0.26
+      ],
+      [
+        100,
+        0
+      ],
+      [
+        500,
+        -0.5
+      ],
+      [
+        1000,
+        0
+      ],
+      [
+        2000,
+        0.5
+      ],
+      [
+        4000,
+        0.8
+      ],
+      [
+        6000,
+        0.9
+      ],
+      [
+        10000,
+        0.9
+      ],
+      [
+        15000,
+        0.3
+      ],
+      [
+        18000,
+        0.39
+      ],
+      [
+        20000,
+        0.3
+      ]
+    ]
+  }
+]

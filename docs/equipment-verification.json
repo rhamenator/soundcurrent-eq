@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-05",
+  "version": "0.7.2",
+  "linuxCtestGroups": 3,
+  "result": "passed",
+  "bundledSpeakerCorrections": 1087,
+  "speakerBrands": 255,
+  "qualifiedAmplifierReferences": 1,
+  "checks": [
+    "parser limits and invalid input",
+    "inverse-fit sign / error reduction",
+    "complete bundled catalog validation",
+    "atomic library save / reopen",
+    "modal dirty editor Save creates copy and preserves reference",
+    "existing shared UI and DSP; premium engine and WAVE where applicable"
+  ],
+  "visualInspection": [
+    "library taxonomy, sources and curve",
+    "editor correction points, filter table and save controls"
+  ],
+  "windows": "Shared source updated; new Windows build and live audio not verified",
+  "hardware": "No tones, microphone capture or physical route changes in this task",
+  "installedUserBuild": true,
+  "runningAppRestarted": false,
+  "published": false,
+  "packageSha256": "6f2fbfc518c08b98cd52c14dc2b81a699547fa06fcc5b058fd8f3794bafe9351"
+}

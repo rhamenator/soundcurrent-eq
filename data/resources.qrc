@@ -2,5 +2,7 @@
   <qresource prefix="/">
     <file alias="app.ico">soundcurrent-eq.ico</file>
     <file alias="speakers/profiles.json">speakers/profiles.json</file>
+    <file alias="equipment/profiles.json">equipment/profiles.json</file>
+    <file alias="equipment/spinorama.json">equipment/spinorama.json</file>
   </qresource>
 </RCC>

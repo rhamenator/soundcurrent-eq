@@ -400,3 +400,16 @@ independent project and is not affiliated with FxSound. Its adjustable EQ
 workflow was informed by
 [FxSound's public documentation](https://github.com/fxsound2/fxsound-app/blob/main/docs/COMMAND_LINE_OPTIONS.md);
 no FxSound code or artwork is included.
+
+## Equipment profile development
+
+The current local development build adds a searchable equipment library organized
+by brand, family and model, microphone/speaker/amplifier imports, a response-curve
+editor, and Save/Discard/Cancel for modified profiles. Published references stay
+intact; edits save custom copies. The catalog contains 1,087 adapted speaker EQ
+profiles across 255 brands and a qualified Pyle PDA29BU electrical reference.
+Successful sweep checks can also save a whole-system response profile.
+
+See [equipment profiles](docs/equipment-profiles.md) for importing measured data,
+creating your own profiles, provenance, limits, verification and source coverage.
+This work is not yet published in the linked GitHub release.

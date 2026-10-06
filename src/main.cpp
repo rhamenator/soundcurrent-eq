@@ -2,6 +2,7 @@
 // Copyright (C) 2026 rhamenator
 
 #include "dsp.h"
+#include "equipment_profiles.h"
 #ifdef _WIN32
 #include "windows_audio.h"
 #endif
@@ -461,8 +462,11 @@ context.modules = [
 )").arg(nodes.join('\n'), links.join('\n'), kSink, kOutput, quote(target), smartProperties);
 }
 
-using MicTuning = std::array<double, 4>;
-constexpr MicTuning kNaturalMic = {-1.5, -1.0, 1.5, -1.0};
+struct MicTuning : std::array<double, 4> {
+    MicTuning(double a=0, double b=0, double c=0, double d=0) : std::array<double,4>{a,b,c,d} {}
+    Bands correction;
+};
+constexpr std::array<double, 4> kNaturalMic = {-1.5, -1.0, 1.5, -1.0};
 constexpr std::array<int, 4> kMicFrequencies = {180, 350, 2800, 10000};
 constexpr std::array<const char *, 4> kMicLabels = {"bq_lowshelf", "bq_peaking", "bq_peaking", "bq_highshelf"};
 
@@ -472,7 +476,18 @@ QString micControls(const MicTuning &adjustments, double gainDb, int channels) {
         const QString prefix = channel ? "right" : "left";
         for (int band = 0; band < 4; ++band)
             controls << QString("\"%1_mic_%2:Gain\" %3").arg(prefix).arg(band + 1)
-                            .arg(kNaturalMic[band] + adjustments[band], 0, 'f', 2);
+                            .arg((adjustments.correction.isEmpty() ? kNaturalMic[band] : 0.0) + adjustments[band], 0, 'f', 2);
+        for (int i = 0; i < 16; ++i) {
+            const auto band = i < adjustments.correction.size() ? adjustments.correction[i] : Band{};
+            const auto c = soundcurrent::filterCoefficients({band.frequency, band.gain, band.q, band.type}, 48000);
+            const auto name = prefix + QString("_profile_%1:").arg(i);
+            controls << quote(name + "b0") << QString::number(c.b0, 'g', 16)
+                     << quote(name + "b1") << QString::number(c.b1, 'g', 16)
+                     << quote(name + "b2") << QString::number(c.b2, 'g', 16)
+                     << quote(name + "a0") << "1"
+                     << quote(name + "a1") << QString::number(c.a1, 'g', 16)
+                     << quote(name + "a2") << QString::number(c.a2, 'g', 16);
+        }
         controls << QString("\"%1_mic_gain:Mult\" %2").arg(prefix)
                         .arg(std::pow(10.0, gainDb / 20.0), 0, 'f', 8);
     }
@@ -490,13 +505,23 @@ QString micConfig(const QString &target, int channels, const MicTuning &adjustme
         for (int band = 0; band < 4; ++band) {
             nodes << QString("{ type = builtin name = %1_mic_%2 label = %3 control = { \"Freq\" = %4 \"Q\" = 0.8 \"Gain\" = %5 } }")
                          .arg(prefix).arg(band + 1).arg(kMicLabels[band]).arg(kMicFrequencies[band])
-                         .arg(kNaturalMic[band] + adjustments[band], 0, 'f', 2);
+                         .arg((adjustments.correction.isEmpty() ? kNaturalMic[band] : 0.0) + adjustments[band], 0, 'f', 2);
             links << QString("{ output = \"%1_mic_%2:Out\" input = \"%1_mic_%3:In\" }")
                          .arg(prefix).arg(band == 0 ? "highpass" : QString::number(band)).arg(band + 1);
         }
         nodes << QString("{ type = builtin name = %1_mic_gain label = linear control = { \"Mult\" = %2 \"Add\" = 0.0 } }")
                      .arg(prefix).arg(std::pow(10.0, gainDb / 20.0), 0, 'f', 8);
-        links << QString("{ output = \"%1_mic_4:Out\" input = \"%1_mic_gain:In\" }").arg(prefix);
+        QString previous = prefix + "_mic_4";
+        for (int i = 0; i < 16; ++i) {
+            const auto band = i < adjustments.correction.size() ? adjustments.correction[i] : Band{};
+            const auto c = soundcurrent::filterCoefficients({band.frequency, band.gain, band.q, band.type}, 48000);
+            const auto name = prefix + QString("_profile_%1").arg(i);
+            nodes << QString("{ type = builtin name = %1 label = bq_raw control = { b0 = %2 b1 = %3 b2 = %4 a0 = 1 a1 = %5 a2 = %6 } }")
+                .arg(name).arg(c.b0,0,'g',16).arg(c.b1,0,'g',16).arg(c.b2,0,'g',16).arg(c.a1,0,'g',16).arg(c.a2,0,'g',16);
+            links << QString("{ output = \"%1:Out\" input = \"%2:In\" }").arg(previous,name);
+            previous = name;
+        }
+        links << QString("{ output = \"%1:Out\" input = \"%2_mic_gain:In\" }").arg(previous,prefix);
         outputs << QString("\"%1_mic_gain:Out\"").arg(prefix);
     }
     const auto positions = channels == 1 ? "[ MONO ]" : "[ FL FR ]";
@@ -514,6 +539,7 @@ context.modules = [
   { name = libpipewire-module-adapter }
   { name = libpipewire-module-filter-chain
     args = {
+      audio.rate = 48000
       node.description = "SoundCurrent Natural Microphone"
       media.name = "SoundCurrent Natural Microphone"
       audio.channels = %1
@@ -1934,6 +1960,27 @@ public:
         speakerHelp->setWordWrap(true);
         speakerLayout->addWidget(speakerHelp);
         connect(speakerDetails, &QPushButton::clicked, this, [this] { showSpeakerDetails(); });
+        auto *equipmentButton = new QPushButton("Equipment profile library / editor");
+        equipmentButton->setAccessibleName("Import create and edit equipment profiles");
+        speakerLayout->addWidget(equipmentButton);
+        equipmentStatus_ = new QLabel;
+        equipmentStatus_->setWordWrap(true);
+        speakerLayout->addWidget(equipmentStatus_);
+        auto *clearEquipment = new QPushButton("Clear imported equipment corrections");
+        speakerLayout->addWidget(clearEquipment);
+        connect(equipmentButton, &QPushButton::clicked, this, [this] {
+            if (lockButton_->isChecked() || calibrating_) { showError("Unlock controls and finish measurement before editing profiles."); return; }
+            try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }); }
+            catch (const std::exception &e) { showError(QString::fromUtf8(e.what())); }
+        });
+        connect(clearEquipment, &QPushButton::clicked, this, [this] {
+            if (lockButton_->isChecked() || calibrating_) return;
+            recordChange(equipmentStatus_);
+            for (const auto &kind : {"speaker", "amplifier", "microphone"}) QSettings().remove(QString("equipment/") + kind);
+            refreshEquipmentStatus(); syncBandControls(); applyChanges(); commitChange();
+            try { microphone_.update(micAdjustments(), micGain_->value() / 2.0); } catch (const std::exception &e) { showError(e.what()); }
+        });
+        refreshEquipmentStatus();
         settingsRoot->addWidget(speakerBox);
         auto *ampRow = new QHBoxLayout;
         ampRow->addWidget(new QLabel("Amplifier / receiver"));
@@ -2208,11 +2255,13 @@ public:
         connect(presetCombo_, &QComboBox::currentIndexChanged, this, [this] { presetChanged(); });
         connect(speakerCombo_, &QComboBox::currentIndexChanged, this, [this] {
             recordChange(speakerCombo_);
+            QSettings().remove("equipment/speaker"); refreshEquipmentStatus();
             QSettings().setValue("speakerModelId", speakerCombo_->currentData());
             syncBandControls(); applyChanges(); commitChange();
         });
         connect(ampCombo_, &QComboBox::currentIndexChanged, this, [this] {
             recordChange(ampCombo_);
+            QSettings().remove("equipment/amplifier"); refreshEquipmentStatus();
             QSettings().setValue("amplifierModelId", ampCombo_->currentData());
             syncBandControls(); applyChanges(); commitChange();
         });
@@ -2383,10 +2432,11 @@ private:
         int selected = 0;
         int gain = 0;
         int balance = 0;
+        std::array<QByteArray,3> equipment;
     };
 
     EqSnapshot snapshot() const {
-        return {bands_, presetCombo_->currentText(), speakerCombo_->currentData().toString(), ampCombo_->currentData().toString(), selected_, outputGain_->value(), balance_->value()};
+        return {bands_, presetCombo_->currentText(), speakerCombo_->currentData().toString(), ampCombo_->currentData().toString(), selected_, outputGain_->value(), balance_->value(), {QSettings().value("equipment/speaker").toByteArray(), QSettings().value("equipment/amplifier").toByteArray(), QSettings().value("equipment/microphone").toByteArray()}};
     }
 
     void recordChange(QObject *source) {
@@ -2423,6 +2473,9 @@ private:
             QSettings().setValue("speakerModelId", previous.speaker);
             ampCombo_->setCurrentIndex(std::max(0, ampCombo_->findData(previous.amplifier)));
             QSettings().setValue("amplifierModelId", previous.amplifier);
+            const QStringList kinds={"speaker","amplifier","microphone"};
+            for(int i=0;i<3;++i) { if(previous.equipment[i].isEmpty())QSettings().remove("equipment/"+kinds[i]);else QSettings().setValue("equipment/"+kinds[i],previous.equipment[i]); }
+            refreshEquipmentStatus();
             outputGain_->setValue(previous.gain);
             balance_->setValue(previous.balance);
             rebuildBandControls();
@@ -2436,6 +2489,7 @@ private:
         QSettings().setValue("outputGainDb", outputGainDb());
         QSettings().setValue("balancePercent", balance_->value());
         applyChanges();
+        try { microphone_.update(micAdjustments(), micGain_->value() / 2.0); } catch (const std::exception &e) { showError(e.what()); }
         restoring_ = false;
         currentSnapshot_ = snapshot();
         lastChangeSource_ = nullptr;
@@ -2487,6 +2541,7 @@ private:
     MicTuning micAdjustments() const {
         MicTuning tuning{};
         for (int i = 0; i < 4; ++i) tuning[i] = micSliders_[i]->value() / 2.0;
+        tuning.correction = equipmentBands("microphone");
         return tuning;
     }
 
@@ -2567,9 +2622,23 @@ private:
         preview.setInformativeText("Relative measurements include the speaker, room, and microphone response. "
                                    "The proposed changes are limited to 3 dB per measured frequency.\n\n" +
                                    suggestion->preview);
+        auto *saveMeasured = preview.addButton("Save system response profile", QMessageBox::ActionRole);
         auto *apply = preview.addButton("Apply suggested EQ", QMessageBox::AcceptRole);
         preview.addButton("Keep current EQ", QMessageBox::RejectRole);
         preview.exec();
+        if (preview.clickedButton() == saveMeasured) {
+            soundcurrent::equipment::Profile p;
+            p.kind = "speaker"; p.brand = "Custom"; p.family = "Whole listening system"; p.model = "Measured listening position"; p.custom = true;
+            p.conditions = "Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. " + inputCombo_->currentText() + " / " + outputCombo_->currentText();
+            p.provenance = "SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.";
+            const auto levels = result.value("levels").toArray(); QVector<double> db;
+            for (const auto &v : levels) if (v.isDouble() && v.toDouble() > 0) db.append(20 * std::log10(v.toDouble()));
+            std::sort(db.begin(),db.end()); const double reference = db[db.size()/2];
+            for (int i=0;i<levels.size();++i) if (levels[i].isDouble() && levels[i].toDouble()>0) p.response.append({double(kCalibrationFrequencies[i]),20*std::log10(levels[i].toDouble())-reference});
+            try { p.filters = soundcurrent::equipment::fitResponse(p.response); soundcurrent::equipment::saveNewProfile(this,p); calibrationStatus_->setText("System response profile editor opened. Saved profiles are available in the equipment library."); }
+            catch (const std::exception &e) { showError(e.what()); }
+            return;
+        }
         if (preview.clickedButton() == apply && suggestion->changed > 0) {
             recordChange(calibrationStart_);
             bands_ = suggestion->bands;
@@ -2822,12 +2891,37 @@ private:
         return " · no USB microphone detected";
 #endif
     }
+    QLabel *equipmentStatus_ = nullptr;
+    std::optional<soundcurrent::equipment::Profile> equipmentProfile(const QString &kind) const {
+        const auto bytes = QSettings().value("equipment/" + kind).toByteArray();
+        if (bytes.isEmpty()) return {};
+        try { return soundcurrent::equipment::parse(bytes); } catch (const std::exception &) { return {}; }
+    }
+    Bands equipmentBands(const QString &kind) const {
+        Bands result;
+        if (const auto p = equipmentProfile(kind)) for (const auto &b : p->filters) result.append({b.frequency,b.gainDb,b.q,b.type});
+        return result;
+    }
+    void refreshEquipmentStatus() {
+        QStringList names;
+        for (const auto &kind : {"speaker","amplifier","microphone"}) if (const auto p = equipmentProfile(kind)) names << QString(kind) + ": " + p->brand + " / " + p->family + " / " + p->model;
+        equipmentStatus_->setText(names.isEmpty() ? "No imported equipment correction selected." : names.join("\n"));
+    }
+    void setEquipment(const soundcurrent::equipment::Profile &profile) {
+        if (lockButton_->isChecked() || calibrating_) return;
+        recordChange(equipmentStatus_);
+        QSettings().setValue("equipment/" + profile.kind, QJsonDocument(soundcurrent::equipment::serialize(profile)).toJson(QJsonDocument::Compact));
+        refreshEquipmentStatus(); syncBandControls(); applyChanges(); commitChange();
+        try { microphone_.update(micAdjustments(), micGain_->value() / 2.0); } catch (const std::exception &e) { showError(e.what()); }
+    }
     Bands speakerCorrection() const {
         const auto id = speakerCombo_->currentData().toString();
         Bands correction;
         for (const auto &p : speakerProfiles()) if (p.id == id) correction = p.filters;
+        if (equipmentProfile("speaker")) correction = equipmentBands("speaker");
         const auto amplifier = ampCombo_->currentData().toString();
-        for (const auto &p : amplifierProfiles_) if (p.id == amplifier) correction.append(p.filters);
+        if (equipmentProfile("amplifier")) correction.append(equipmentBands("amplifier"));
+        else for (const auto &p : amplifierProfiles_) if (p.id == amplifier) correction.append(p.filters);
         return correction;
     }
     Bands processingBands() const {

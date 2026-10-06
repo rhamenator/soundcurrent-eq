@@ -41,3 +41,19 @@ https://learn.microsoft.com/en-us/cpp/windows/redistributing-visual-cpp-files
 The optional standard signed VB-CABLE driver retains VB-Audio's separate
 license. See `packaging/windows/VB-CABLE-NOTICE.txt`. Paid second-cable packages
 are not bundled and must be obtained and installed separately by the user.
+
+## Expanded equipment profile catalog
+
+`data/equipment/spinorama.json` adapts 1,087 generated AutoEQ profiles from
+pierreaubert/spinorama commit acc757bb98d63327092ee537bde25d9c227811f3, GPL-3.0.
+The upstream license is included in `data/equipment/LICENSE`. Every profile
+records its exact source URL/hash, measurement origin when provided, and gain/Q
+adaptation. The collector is `scripts/collect-equipment-profiles.py`. Original
+review articles and plots are not included. Family references and gaps are
+explained in `docs/equipment-profiles.md`.
+
+The Pyle reference transcribes approximate factual electrical readings from
+Stash's January 29, 2025 Parts Express forum post, supplied by the user as a PDF.
+It retains source attribution, PDF hash, measurement conditions and uncertainty.
+No original PDF pages, photographs or forum prose are redistributed. Other
+microphone/amplifier source links are research metadata, not bundled curves.
