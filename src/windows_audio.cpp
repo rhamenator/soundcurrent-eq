@@ -1,3 +1,4 @@
+#include "windows_endpoint_identity.h"
 // SPDX-License-Identifier: GPL-3.0-only
 #ifdef _WIN32
 #define NOMINMAX
@@ -128,17 +129,27 @@ public:
               "Read speaker volume");
         check(volume_->GetMasterVolumeLevelScalar(&original_), "Read speaker level");
         check(volume_->GetMute(&wasMuted_), "Read speaker mute");
-        if (original_ < 0.999f)
-            check(volume_->SetMasterVolumeLevelScalar(1.0f, nullptr), "Set full speaker level for EQ");
-        if (wasMuted_) check(volume_->SetMute(FALSE, nullptr), "Unmute speaker for EQ");
+        try {
+            if (original_ < 0.999f)
+                check(volume_->SetMasterVolumeLevelScalar(1.0f, nullptr), "Set full speaker level for EQ");
+            if (wasMuted_) check(volume_->SetMute(FALSE, nullptr), "Unmute speaker for EQ");
+        } catch (...) {
+            // A failed constructor has no destructor: undo any partial change.
+            // Best effort if the endpoint was disconnected during startup.
+            volume_->SetMasterVolumeLevelScalar(original_, nullptr);
+            volume_->SetMute(wasMuted_, nullptr);
+            throw;
+        }
     }
     ~OutputVolumeLease() {
         if (!volume_) return;
         float current = 0.0f;
-        if (SUCCEEDED(volume_->GetMasterVolumeLevelScalar(&current)) && current > 0.999f)
-            volume_->SetMasterVolumeLevelScalar(original_, nullptr);
+        const bool levelStillOwned = SUCCEEDED(volume_->GetMasterVolumeLevelScalar(&current)) && current > 0.999f;
+        if (levelStillOwned) volume_->SetMasterVolumeLevelScalar(original_, nullptr);
         BOOL muted = FALSE;
-        if (wasMuted_ && SUCCEEDED(volume_->GetMute(&muted)) && !muted)
+        // A changed physical level means the user has taken control of this
+        // endpoint. Preserve its current mute state along with that level.
+        if (levelStillOwned && wasMuted_ && SUCCEEDED(volume_->GetMute(&muted)) && !muted)
             volume_->SetMute(TRUE, nullptr);
     }
 private:
@@ -180,7 +191,11 @@ std::vector<AudioEndpoint> windowsAudioEndpoints(bool capture) {
         if (SUCCEEDED(properties->GetValue(PKEY_DeviceInterface_FriendlyName, &interfaceName)) &&
             interfaceName.vt == VT_LPWSTR) {
             const std::wstring interfaceText = interfaceName.pwszVal;
-            endpoint.virtualCable = interfaceText.find(L"VB-Audio") != std::wstring::npos;
+            const auto kind = managedEndpointKind(interfaceText);
+            endpoint.soundCurrent = kind == ManagedEndpointKind::Playback;
+            endpoint.soundCurrentMicFeed = kind == ManagedEndpointKind::MicrophoneFeed;
+            endpoint.soundCurrentMicCapture = kind == ManagedEndpointKind::MicrophoneCapture;
+            endpoint.virtualCable = kind != ManagedEndpointKind::Other || interfaceText.find(L"VB-Audio") != std::wstring::npos;
         }
         PropVariantClear(&interfaceName);
         ComPtr<IAudioClient> audio;
@@ -226,14 +241,20 @@ std::vector<std::int16_t> WindowsBridge::takeMeterPcm() {
 
 WindowsBridge::~WindowsBridge() { stop(); }
 
-bool WindowsBridge::start(std::wstring captureId, std::wstring outputId, bool microphone) {
+bool WindowsBridge::start(std::wstring captureId, std::wstring outputId, bool microphone, bool renderLoopback) {
     if (captureId.empty() || outputId.empty() || worker_.joinable()) return false;
+    // Capturing the destination's mix would feed processed audio back into itself.
+    if ((renderLoopback && microphone) || captureId == outputId) {
+        std::lock_guard lock(stateMutex_);
+        error_ = "Invalid audio route: loopback requires a separate render source";
+        return false;
+    }
     { std::lock_guard lock(stateMutex_); ready_ = false; error_.clear(); }
     stopRequested_ = false;
     running_ = false;
     worker_ = std::thread([this, captureId = std::move(captureId),
-                           outputId = std::move(outputId), microphone]() mutable {
-        run(std::move(captureId), std::move(outputId), microphone);
+                           outputId = std::move(outputId), microphone, renderLoopback]() mutable {
+        run(std::move(captureId), std::move(outputId), microphone, renderLoopback);
     });
     std::unique_lock lock(stateMutex_);
     const bool ready = initialized_.wait_for(lock, std::chrono::seconds(5), [this] {
@@ -271,7 +292,7 @@ bool WindowsBridge::setProfile(std::span<const EqBand> bands, double postGainDb,
     return true;
 }
 
-void WindowsBridge::run(std::wstring captureId, std::wstring outputId, bool microphone) {
+void WindowsBridge::run(std::wstring captureId, std::wstring outputId, bool microphone, bool renderLoopback) {
     try {
         Apartment apartment;
         const auto devices = enumerator();
@@ -288,6 +309,7 @@ void WindowsBridge::run(std::wstring captureId, std::wstring outputId, bool micr
                                      reinterpret_cast<void **>(outputAudio.GetAddressOf())),
               "Open speaker render stream");
         auto captureFormat = stereoFloat48k();
+        std::unique_ptr<WAVEFORMATEX, decltype(&CoTaskMemFree)> loopbackFormat(nullptr, CoTaskMemFree);
         if (microphone) {
             WAVEFORMATEX *mix = nullptr;
             check(captureAudio->GetMixFormat(&mix), "Read microphone mix format");
@@ -297,6 +319,16 @@ void WindowsBridge::run(std::wstring captureId, std::wstring outputId, bool micr
                 captureFormat.nAvgBytesPerSec = 48000 * 4;
             }
             CoTaskMemFree(mix);
+        } else if (renderLoopback) {
+            // Loopback must use the endpoint mix format, not a guessed PCM format.
+            // The SoundCurrent driver contract is 48 kHz stereo float. Reject an
+            // incompatible configuration until a general input converter exists.
+            WAVEFORMATEX *mix = nullptr;
+            check(captureAudio->GetMixFormat(&mix), "Read virtual output mix format");
+            loopbackFormat.reset(mix);
+            if (!mix || mix->nChannels != 2 || mix->nSamplesPerSec != 48000 ||
+                mix->nBlockAlign != 8 || outputSampleType(mix) != SampleType::Float32)
+                throw std::runtime_error("SoundCurrent virtual output requires 48 kHz stereo float audio");
         } else checkFormat(captureAudio.Get(), &captureFormat, "Cable recording endpoint");
         WAVEFORMATEX *mixFormatRaw = nullptr;
         check(outputAudio->GetMixFormat(&mixFormatRaw), "Read speaker mix format");
@@ -309,8 +341,9 @@ void WindowsBridge::run(std::wstring captureId, std::wstring outputId, bool micr
         OutputVolumeLease volume(outputDevice.Get());
         constexpr REFERENCE_TIME bufferTime = 2000000; // 200 ms, in 100 ns units
         check(captureAudio->Initialize(AUDCLNT_SHAREMODE_SHARED,
-                                        microphone ? AUDCLNT_STREAMFLAGS_AUTOCONVERTPCM | AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY : 0,
-                                        bufferTime, 0, &captureFormat, nullptr), "Initialize cable capture");
+                                        renderLoopback ? AUDCLNT_STREAMFLAGS_LOOPBACK :
+                                        (microphone ? AUDCLNT_STREAMFLAGS_AUTOCONVERTPCM | AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY : 0),
+                                        bufferTime, 0, renderLoopback ? loopbackFormat.get() : &captureFormat, nullptr), "Initialize audio capture");
         check(outputAudio->Initialize(AUDCLNT_SHAREMODE_SHARED, 0, bufferTime, 0,
                                        outputFormat.get(), nullptr), "Initialize speaker output");
         UINT32 captureBufferFrames = 0, outputBufferFrames = 0;

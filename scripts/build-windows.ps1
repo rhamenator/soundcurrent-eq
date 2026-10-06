@@ -1,30 +1,47 @@
 # SPDX-License-Identifier: GPL-3.0-only
 param([Parameter(Mandatory=$true)][string]$QtPrefix,
+      [Parameter(Mandatory=$true)][string]$SignedDriverPackage,
+      [Parameter(Mandatory=$true)][string]$SignedDriverManager,
       [string]$Nsis = 'C:\Program Files (x86)\NSIS\makensis.exe')
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 $root = Split-Path $PSScriptRoot -Parent
 Push-Location $root
 try {
+    $SignedDriverPackage = (Resolve-Path -LiteralPath $SignedDriverPackage).Path
+    $SignedDriverManager = (Resolve-Path -LiteralPath $SignedDriverManager).Path
+    if ((Get-AuthenticodeSignature -LiteralPath $SignedDriverManager).Status -ne 'Valid') {
+        throw 'A signed build of the SoundCurrent driver manager is required for a release installer.'
+    }
+    & $SignedDriverManager --verify $SignedDriverPackage
+    if ($LASTEXITCODE -ne 0) { throw 'The driver package is incomplete or its signature cannot be verified.' }
     $version = [regex]::Match((Get-Content CMakeLists.txt -Raw), '(?m)^project\(soundcurrent-eq VERSION ([0-9.]+)').Groups[1].Value
     $stage = Join-Path $root 'build-windows-native\package'
-    & cmake -S . -B build-windows-native -G 'Visual Studio 17 2022' -A x64 -T v143 "-DCMAKE_PREFIX_PATH=$QtPrefix"
+    $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+    $vs = & $vswhere -latest -products '*' -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+    $major = (& $vswhere -latest -products '*' -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationVersion).Split('.')[0]
+    if ($major -eq '18') { $generator = 'Visual Studio 18 2026' }
+    elseif ($major -eq '17') { $generator = 'Visual Studio 17 2022' }
+    else { throw 'Visual Studio 2022 or 2026 C++ tools are required.' }
+    & cmake -S . -B build-windows-native -G $generator -A x64 "-DCMAKE_PREFIX_PATH=$QtPrefix"
     if ($LASTEXITCODE -ne 0) { throw 'Windows configure failed' }
     & cmake --build build-windows-native --config Release --parallel 4
     if ($LASTEXITCODE -ne 0) { throw 'Windows build failed' }
     if (Test-Path $stage) { Remove-Item -Recurse -Force $stage }
     New-Item -ItemType Directory -Force $stage | Out-Null
     Copy-Item build-windows-native\Release\soundcurrent-eq.exe $stage
+    Copy-Item build-windows-native\Release\soundcurrent-route-guardian.exe $stage
+    # This must be the signed manager built from this release source.
+    Copy-Item -LiteralPath $SignedDriverManager -Destination "$stage\soundcurrent-driver-manager.exe"
     & "$QtPrefix\bin\windeployqt.exe" --release --no-translations --no-opengl-sw --no-compiler-runtime "$stage\soundcurrent-eq.exe"
     if ($LASTEXITCODE -ne 0) { throw 'Qt runtime deployment failed' }
     Copy-Item "$QtPrefix\plugins\platforms\qoffscreen.dll" "$stage\platforms"
     # App-local redistributable DLLs avoid another privileged installer. UCRT is
     # part of supported Windows versions. Refresh these with each app release.
     $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
-    $vs = & $vswhere -latest -version '[17.0,18.0)' -products '*' -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
     $redist = Get-ChildItem "$vs\VC\Redist\MSVC" -Directory | Where-Object { $_.Name -match '^\d+\.\d+\.\d+$' } | Sort-Object { [version]$_.Name } -Descending |
-        ForEach-Object { Join-Path $_.FullName 'x64\Microsoft.VC143.CRT' } | Where-Object { Test-Path $_ } | Select-Object -First 1
-    if (!$redist) { throw 'Visual Studio 2022 redistributable CRT not found' }
+        ForEach-Object { Get-ChildItem (Join-Path $_.FullName 'x64') -Directory -Filter 'Microsoft.VC*.CRT' } | Select-Object -ExpandProperty FullName -First 1
+    if (!$redist) { throw 'Visual Studio redistributable CRT not found' }
     Copy-Item "$redist\*.dll" $stage
     @('[Paths]', 'Prefix=.', 'Plugins=.') | Set-Content -Encoding ascii "$stage\qt.conf"
     New-Item -ItemType Directory -Force "$stage\licenses" | Out-Null
@@ -59,7 +76,7 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'Qt source extraction failed' }
     $qtSource = Join-Path $sourceDir 'qtbase-everywhere-src-6.12.0'
     if (!(Test-Path "$qtSource\LICENSES")) { throw 'Qt license notices missing' }
-    Get-ChildItem $qtSource -Recurse -File | Where-Object { $_.Name -match '^(LICENSE|LICENCE|COPYING|COPYRIGHT)' -or $_.Name -eq 'qt_attribution.json' } | ForEach-Object {
+    Get-ChildItem $qtSource -Recurse -File | Where-Object { $_.Name -match '^(LICENSE|LICENCE|COPYING|COPYRIGHT)' -or $_.Name -eq 'qt_attribution.json' -or $_.FullName.Contains('\LICENSES\') } | ForEach-Object {
         $relative = $_.FullName.Substring($qtSource.Length + 1)
         $dest = Join-Path "$stage\licenses\Qt" $relative
         New-Item -ItemType Directory -Force (Split-Path $dest -Parent) | Out-Null
@@ -100,11 +117,6 @@ try {
     Remove-Item Env:\QT_QPA_PLATFORM
     if ($ui.ExitCode -ne 0) { throw "Shared UI test failed: $($ui.ExitCode)" }
     Remove-Item "$stage\soundcurrent-dsp-test.exe"
-    $cache = Join-Path $root '.cache'
-    New-Item -ItemType Directory -Force $cache | Out-Null
-    $cable = Join-Path $cache 'VBCABLE_Driver_Pack45.zip'
-    if (!(Test-Path $cable)) { Invoke-WebRequest -Uri 'https://download.vb-audio.com/Download_CABLE/VBCABLE_Driver_Pack45.zip' -OutFile $cable -TimeoutSec 180 }
-    if ((Get-FileHash $cable).Hash.ToLowerInvariant() -ne 'b950e39f01af1d04ea623c8f6d8eb9b6ea5c477c637295fabf20631c85116bfb') { throw 'VB-CABLE checksum mismatch' }
     # Generate an exact payload deletion manifest, retaining unknown user files.
     $delete = @()
     Get-ChildItem $stage -Recurse -File | ForEach-Object {
@@ -117,7 +129,7 @@ try {
     $delete | Set-Content -Encoding utf8 build-windows-native\uninstall-payload.nsh
     New-Item -ItemType Directory -Force dist | Out-Null
     $installer = Join-Path $root "dist\SoundCurrent-EQ-$version-windows-x64-setup.exe"
-    & $Nsis "/DAPP_EXE=$stage\soundcurrent-eq.exe" "/DDLL_DIR=$stage" "/DAPP_VERSION=$version" "/DOUTPUT=$installer" "/DCABLE_ZIP=$cable" "/DSOURCE_ROOT=$root" "/DUNINSTALL_PAYLOAD=$root\build-windows-native\uninstall-payload.nsh" packaging\windows\soundcurrent-eq.nsi
+    & $Nsis "/DAPP_EXE=$stage\soundcurrent-eq.exe" "/DDLL_DIR=$stage" "/DAPP_VERSION=$version" "/DOUTPUT=$installer" "/DDRIVER_DIR=$SignedDriverPackage" "/DSOURCE_ROOT=$root" "/DUNINSTALL_PAYLOAD=$root\build-windows-native\uninstall-payload.nsh" packaging\windows\soundcurrent-eq.nsi
     if ($LASTEXITCODE -ne 0) { throw 'Windows installer build failed' }
     Copy-Item $sourceArchive dist
     $sourceHash = (Get-FileHash $sourceArchive).Hash.ToLowerInvariant()

@@ -1,5 +1,11 @@
 # SoundCurrent EQ
 
+> **Unreleased Windows driver work:** the source now includes integrated
+> SoundCurrent Audio installer/setup plumbing. Public releases still use the
+> previously shipped audio route. The new driver and privileged manager must be
+> production-signed before this becomes an installable release. See
+> [implementation status](native/windows/virtual-driver/IMPLEMENTATION-STATUS.md).
+
 Local development build: **0.7.5** (not yet published).
 
 ## Download the published preview — 0.7.1
@@ -126,7 +132,9 @@ For source builds, use Windows with Visual Studio 2022 C++ tools, CMake,
 
 ```powershell
 ./scripts/install-windows-qt.ps1
-./scripts/build-windows.ps1 -QtPrefix C:\Qt\6.12.0\msvc2022_64
+./scripts/build-windows.ps1 -QtPrefix C:\Qt\6.12.0\msvc2022_64 `
+    -SignedDriverPackage C:\SoundCurrent-Signed\driver `
+    -SignedDriverManager C:\SoundCurrent-Signed\soundcurrent-driver-manager.exe
 ```
 
 SDK, source and driver archives are fetched from their official HTTPS hosts

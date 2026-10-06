@@ -3,6 +3,9 @@
 #include <QLockFile>
 #include <QString>
 #include <memory>
+#ifdef Q_OS_WIN
+#include "windows_audio_session_gate.h"
+#endif
 namespace soundcurrent {
 class ProcessingGuard {
   public:
@@ -10,6 +13,9 @@ class ProcessingGuard {
     QString error() const { return error_; }
 
   private:
+#ifdef Q_OS_WIN
+    WindowsAudioSessionGate sessionGate_;
+#endif
     std::unique_ptr<QLockFile> lock_;
     QString error_;
 };

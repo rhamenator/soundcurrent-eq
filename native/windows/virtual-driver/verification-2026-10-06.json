@@ -1,0 +1,611 @@
+{
+  "date": "2026-10-06",
+  "vm": "soundcurrent-win11-dev",
+  "independent_clone": true,
+  "driver": {
+    "build": "passed, zero warnings/errors",
+    "universal_api_validator": "passed",
+    "inf2cat": "passed, zero warnings/errors; Windows 11 22H2/24H2/25H2",
+    "catalog": "unsigned",
+    "installed": false
+  },
+  "applications": {
+    "eq_ctest": "8/8 passed after native setup UI integration",
+    "studio_ctest": "10/10 passed after native setup UI integration",
+    "note": "Both MSVC builds include current native setup UI and hardened static-runtime driver manager."
+  },
+  "guardian": {
+    "both_protocol_tests": "passed",
+    "full_crash_restore": "Production managed-route fixture passed; full interactive desktop-app crash remains to be exercised",
+    "managed_route_integration": "Both EQ and Studio fixtures passed normal exit and forced owner termination for playback and microphone, checking restoration of all three default roles",
+    "fixture": "Existing virtual cable and physical endpoints on the independent clone; exact production ManagedWindowsRoute class. No SoundCurrent kernel driver installed.",
+    "guardian_health": "GUI adapters detect an exited guardian as inactive; watchdog behavior needs a dedicated failure test"
+  },
+  "driver_manager": {
+    "absent_status": "passed",
+    "unsigned_catalog_rejection": "passed",
+    "installation_ownership_lifecycle": "pending",
+    "transaction_lock": "implemented; concurrent mutation needs lifecycle verification",
+    "driver_store_cleanup": "implemented using protected OEM INF journal, identity checks, and non-forced removal; signed-package lifecycle pending",
+    "negative_checks": "Native MSVC helper passed status plus unsigned catalog, incomplete package, and malformed command rejection; no mutations",
+    "original_user_sid": "Implemented optional validated SID argument, resolved before UAC by native setup wrapper; malformed SID rejected by both native managers. Alternate-admin UAC remains untested.",
+    "setup_wrapper": "Integrated NSIS/UI path; PowerShell scripts parsed and installer-context 32-bit driver absence check passed. Native wrapper uses HKLM64 ownership across PowerShell architectures.",
+    "binary_hardening": "MSVC manager imports only Windows DLLs; dumpbin reports 0800 Dependent Load Flag and Guard Flags. No MSVCP/VCRUNTIME imports."
+  },
+  "loopback": {
+    "before_console_login": "silent, including legacy paired-capture diagnostic",
+    "after_console_login": {
+      "flat_rms": 0.014142,
+      "post_gain_db": 6.0,
+      "eq_cut_expected_db": -12.0,
+      "eq_cut_measured_db": 13.27,
+      "result": "FAILED EQ-cut assertion; cause unresolved",
+      "note": "Initial failure did not reproduce. Broadband RMS can include other desktop audio; do not infer a DSP defect from this single run."
+    },
+    "fixture": "existing VB-CABLE render endpoint; SoundCurrent kernel driver not installed",
+    "repeat_after_console_login": {
+      "flat_rms": 0.014142,
+      "post_gain_db": 5.95,
+      "eq_cut_measured_db": -12.0,
+      "bypass_relative_db": 0.0,
+      "full_left_rms": 0.014142,
+      "full_right_rms": 0.0,
+      "calibration_seconds": 1.054,
+      "result": "PASSED flat, live post-gain, EQ cut, bypass, balance, restart, and 96 kHz calibration timing",
+      "application": "EQ WindowsBridge diagnostic; Studio live processing not yet rechecked"
+    },
+    "native_refreshed_builds": {
+      "eq": "PASS: flat, +6 dB live gain, -12 dB live EQ, bypass, balance, restart; calibration 1.026 seconds",
+      "studio": "PASS after correcting missing loopback stream flag: stereo compatibility and Studio engine paths, +6 dB gain, independent -12 dB channel EQ, mute, effects, bypass, rejected-layout preservation; calibration 1.016 seconds",
+      "own_kernel_driver_runtime": "not tested; existing VB-CABLE render endpoint used as loopback source",
+      "earlier_studio_failure": "IAudioCaptureClient unavailable (0x88890003); capture initialized without loopback flag. Fixed."
+    }
+  },
+  "installer_fixture": {
+    "label": "unsigned prototype; no kernel driver installation possible",
+    "both_products": "PASS install, in-place update preserving user file, installed UI self-test, unsigned-package refusal and unowned-driver uninstall",
+    "driver_preservation": "physical and third-party MEDIA device IDs/service/status/error-code snapshot unchanged",
+    "cleanup_followup": "Both apps passed license-directory cleanup check after NSIS deletion-order fix",
+    "artifact": ".cache/integrated-installer-prototype/SoundCurrent-EQ-integrated-unsigned-prototype.exe",
+    "sha256": "8e006c3d0a2f0c34772c852e189e623ae8eda0e6aa9cddcc2e2b481b81d27e3a",
+    "not_verified": "Signed installation, shared-owner lifecycle, alternate-admin UAC, real driver update/removal, interactive installer page automation and in-app button end-to-end"
+  },
+  "microphoneTransportPortableTest": {
+    "platform": "Linux host; no audio routes changed",
+    "source": "tests/windows_mic_transport.cpp",
+    "result": "passed",
+    "sanitizers": [
+      "AddressSanitizer",
+      "UndefinedBehaviorSanitizer",
+      "ThreadSanitizer"
+    ],
+    "concurrentFrames": 200000,
+    "kernelEndpointIntegration": "pending",
+    "signedDriverRuntime": "unproven"
+  },
+  "microphoneEndpointBuild": {
+    "vm": "soundcurrent-win11-dev",
+    "independentClone": true,
+    "wdk": "10.0.28000.2526",
+    "build": "passed",
+    "warnings": 0,
+    "errors": 0,
+    "universalApiValidation": "passed",
+    "inf2cat": "passed; no warnings or errors",
+    "sysBytes": 129024,
+    "installed": false,
+    "signed": false,
+    "runtimeAudio": "unproven",
+    "applicationEndpointIntegration": "pending"
+  },
+  "managedMicrophoneAppIntegration": {
+    "nativeBuild": "passed",
+    "ctestPassed": 10,
+    "ctestTotal": 10,
+    "vm": "soundcurrent-win11-dev",
+    "managedEndpoints": "classified and preferred in code",
+    "signedKernelRuntime": "unproven"
+  },
+  "microphoneStreamTeardown": {
+    "code": "quiesce timer and DPC callbacks before resources are released; stop producer",
+    "stalledCallback": "bounded to latest DMA buffer",
+    "wdkBuild": "passed; zero warnings/errors",
+    "runtime": "unproven"
+  },
+  "guardianFailureRecovery": {
+    "vm": "soundcurrent-win11-dev",
+    "test": "tests/windows_route_smoke.cpp --run",
+    "nativeSmokeBuild": "passed",
+    "casesPassed": 6,
+    "directions": [
+      "playback",
+      "microphone"
+    ],
+    "faults": [
+      "normal owner exit",
+      "forced owner termination",
+      "forced own guardian termination with owner alive"
+    ],
+    "rolesRestored": 3,
+    "fixture": "existing virtual and physical endpoints; new kernel driver not installed",
+    "fullGuiBridgeShutdown": "pending"
+  },
+  "preMutationOwnership": {
+    "nativeBuild": "passed for both products",
+    "ownership": "persisted before import/bind",
+    "packageJournal": "flushed before bind",
+    "signedFaultInjection": "pending",
+    "importBeforeJournalRecovery": "pending"
+  },
+  "driverImportRetry": {
+    "strategy": "SP_COPY_NOOVERWRITE accepts ERROR_FILE_EXISTS with existing OEM name",
+    "nativeBuild": "passed for both products",
+    "signedRuntime": "pending",
+    "durableImportIntent": "pending",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/api/setupapi/nf-setupapi-setupcopyoeminfw"
+  },
+  "durableImportRecovery": {
+    "implementation": "HKLM64 flushed intent; protected staging retention; trust revalidation and NOOVERWRITE retry; flushed OEM journal",
+    "nativeBuild": "passed for both products",
+    "signedFaultInjection": "pending",
+    "postRetirementOrphanStageCleanup": "pending"
+  },
+  "stagingCleanupRecovery": {
+    "nativeBuild": "passed both products",
+    "vm": "soundcurrent-win11-dev",
+    "test": "tests/windows_driver_cleanup_recovery.ps1 -Run",
+    "cases": [
+      "partial file deletion retry",
+      "unknown file preservation with intent/owner retained",
+      "directory absent before intent retirement"
+    ],
+    "result": "passed both products",
+    "mediaDeviceInventory": "unchanged",
+    "driverImportPerformed": false,
+    "signedLifecycle": "pending"
+  },
+  "sharedOwnerSyntheticChecks": {
+    "vm": "soundcurrent-win11-dev",
+    "test": "tests/windows_driver_shared_owners.ps1 -Run",
+    "result": "passed",
+    "cases": [
+      "different app/SID owner preserved",
+      "repeated unowned removal",
+      "transaction contention timed out without mutation",
+      "last owner retired"
+    ],
+    "mediaInventory": "unchanged",
+    "signedDriverLifecycle": "pending"
+  },
+  "globalAudioSessionGate": {
+    "nativeTargetsBuilt": [
+      "driver manager",
+      "processing guard test"
+    ],
+    "test": "tests/windows_audio_session_gate.ps1 -Run",
+    "vm": "soundcurrent-win11-dev",
+    "result": "passed both products",
+    "coverage": [
+      "distinct runtime directories excluded",
+      "crashed owner lock reclaimed",
+      "normal lifetime release",
+      "setup refused while app gate held"
+    ],
+    "actualSeparateLoginSessions": "pending",
+    "fullDesktopRebuild": "pending"
+  },
+  "actualCrossUserExperiment": {
+    "vm": "soundcurrent-win11-dev",
+    "result": "inconclusive; alternate-credential SSH-session launch failed to provide result",
+    "temporaryAccount": "removed after attempts",
+    "temporaryPayload": "removed",
+    "securitySettingsChanged": false,
+    "next": "scheduled batch task under temporary standard-user identity"
+  },
+  "actualCrossUserScheduledTask": {
+    "vm": "soundcurrent-win11-dev",
+    "result": "inconclusive; task registered but never ran",
+    "lastTaskResult": 267011,
+    "taskState": "Ready",
+    "methods": [
+      "CIM run request",
+      "COM run request"
+    ],
+    "temporaryResources": "removed",
+    "securitySettingsChanged": false
+  },
+  "latestDesktopRebuild": {
+    "eqCompile": "passed",
+    "eqCTest": "9/10; shared-ui timed out; isolated rerun also timed out",
+    "studioRebuild": "not reached",
+    "uiTimeoutSeconds": 45,
+    "ramPressure": "not established; ~13 GiB guest free",
+    "unownedDefaultCases": "coded; unverified",
+    "fontDirectoryDiagnostic": "also timed out at 45 seconds",
+    "next": "rebuild test-only construction progress markers and locate stall"
+  },
+  "currentDesktopFullVerification": {
+    "nativeBuild": "passed",
+    "ctestPassed": 10,
+    "ctestTotal": 10,
+    "vm": "soundcurrent-win11-dev",
+    "uiTestSeconds": 5.01,
+    "previousUiTimeouts": "recorded; cause unproven; subsequent current builds passed",
+    "signedKernelInstalled": false
+  },
+  "expandedRouteRecovery": {
+    "test": "tests/windows_route_smoke.cpp --run",
+    "vm": "soundcurrent-win11-dev",
+    "casesPassed": 8,
+    "casesTotal": 8,
+    "directions": [
+      "playback",
+      "microphone"
+    ],
+    "unownedDefaults": "preserved despite conflicting restore IDs",
+    "fixture": "existing virtual/physical endpoints",
+    "fullWindowsSettingsInteraction": "pending",
+    "signedDriverAudio": "pending"
+  },
+  "refreshedUnsignedArtifacts": {
+    ".cache/integrated-installer-prototype/SoundCurrent-EQ-integrated-unsigned-prototype.exe": {
+      "sha256": "c2712c919837bd35885c4ec8baa3738a27d3574fe097faca2d1640857f64840d",
+      "bytes": 10991169,
+      "signed": false,
+      "revision": "manual physical level/mute preservation and ordinary live conflict test hooks; 2026-10-06"
+    },
+    ".cache/virtual-driver-artifacts/soundcurrent-driver-unsigned-package.tar": {
+      "sha256": "8b34f1965359edf8d0b89a5e5100e7e0b162916c3d09a81e3cccdb313205e991",
+      "bytes": 143360,
+      "signed": false
+    },
+    ".cache/virtual-driver-artifacts/soundcurrent-eq-integrated-payload.tar": {
+      "sha256": "7eadd128ca2063d40c57394ff228ca42aa9d4c8b5bf1d5561a170490010131b2",
+      "bytes": 36171264,
+      "signed": false,
+      "revision": "manual physical level/mute preservation and ordinary live conflict test hooks; 2026-10-06"
+    }
+  },
+  "refreshedInstallerLifecycle": {
+    "test": "tests/windows_integrated_installer_smoke.ps1 -Run",
+    "vm": "soundcurrent-win11-dev",
+    "result": "passed both current refreshed products with retained native process exit gates",
+    "cases": [
+      "silent app install",
+      "in-place update preserves unknown file",
+      "installed UI self-test",
+      "unsigned package refusal",
+      "unowned driver uninstall",
+      "known payload cleanup",
+      "installed GPL/LGPL/BSD Qt license texts verified"
+    ],
+    "mediaDeviceInventory": "unchanged",
+    "signedDriverInstallUpdateRemoval": "pending",
+    "revision": "manual physical level/mute preservation refresh; 2026-10-06"
+  },
+  "windowsVolumeHandoff": {
+    "target": "soundcurrent-windows-volume-smoke --run",
+    "source": "tests/windows_volume_route_smoke.cpp",
+    "nativeBuild": "passed both products",
+    "vm": "soundcurrent-win11-dev",
+    "result": "passed both products",
+    "checks": [
+      "physical .71 copied to owned endpoint",
+      "physical scalar 1.0 while bridge active",
+      "owned .53/mute transferred to physical on normal stop",
+      "owned .42/unmuted transferred to physical after forced owner termination; all three output defaults restored"
+    ],
+    "fixture": "existing virtual and physical endpoints",
+    "generatedTestSignal": false,
+    "newKernelAudio": "unverified",
+    "crashVolumeRecovery": "passed both products; forced owner termination recovered .42/unmuted and all three output roles",
+    "guardianFailureWithLiveBridge": {
+      "result": "passed both products",
+      "cases": [
+        "initial physical .71/muted; owned changed to .46/muted",
+        "initial physical .71/muted; owned changed to 1.0/unmuted"
+      ],
+      "checks": [
+        "bridge stopped",
+        "route unhealthy",
+        "all three defaults restored",
+        "latest scalar/mute preserved before and after route destruction"
+      ],
+      "generatedTestSignal": false,
+      "fixture": "existing virtual/physical endpoints; SoundCurrent kernel remains uninstalled"
+    }
+  },
+  "removalPersistenceAndRestart": {
+    "nativeBuild": "passed both products",
+    "implementation": [
+      "RegFlushKey after owner release",
+      "RegFlushKey after each package journal retirement",
+      "inspect DI_NEEDREBOOT/DI_NEEDRESTART after own-device DIF_REMOVE; report 3010"
+    ],
+    "vm": "soundcurrent-win11-dev",
+    "tests": [
+      "windows_driver_shared_owners.ps1 -Run (includes absent INF journal retry)",
+      "windows_driver_cleanup_recovery.ps1 -Run",
+      "windows_driver_manager_checks.ps1"
+    ],
+    "result": "passed; MEDIA inventory unchanged; no driver imported",
+    "powerLossDurability": "unverified; explicit flush calls implemented",
+    "actualSignedDriverRemovalReboot": "pending",
+    "prototypeInstallers": "previous builds; do not include this manager revision",
+    "restartFlagsSource": "https://learn.microsoft.com/en-us/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_w"
+  },
+  "hotUnplugRecoveryRevision": {
+    "implementation": "when target disappears, permit fallback despite stopped bridge only if route guardian remains healthy",
+    "nativeBuild": "passed both products",
+    "actualPnPReconnection": "pending",
+    "signedKernelAudio": "pending",
+    "uiVerification": {
+      "result": "passed CTest shared-ui",
+      "seconds": 5.29,
+      "initialHarnessFailure": "missing offscreen plugin search path; corrected environment and reran",
+      "actualPnPReconnection": "pending"
+    }
+  },
+  "guardianBridgeStopOrdering": {
+    "implementation": "both playback/microphone engines stop bridge synchronously on guardian finished before route restoration",
+    "test": "windows_route_smoke.cpp --run asserts callback before default restoration",
+    "nativeBuild": "passed both desktop apps and route smoke targets",
+    "fixture": "existing virtual/physical endpoints; own unsigned kernel not installed",
+    "actualBridgeGuardianFaultVolume": "passed both products: live bridge stopped; all roles restored; latest .46/muted and 1.0/unmuted preserved after helper termination with owner alive",
+    "result": "8/8 cases passed per product; callback verified before restoration for playback and microphone guardian failure",
+    "vm": "soundcurrent-win11-dev"
+  },
+  "volumeLeaseStartupRollback": {
+    "implementation": "catch failed partial construction; best-effort restore original scalar and mute before rethrow",
+    "nativeBuildAndVolumeRegression": "passed both Windows audio libraries and linked volume smoke tests; normal stop, owner crash and two live guardian-failure cases",
+    "forcedSetMuteFailure": "not tested",
+    "endpointDisconnectionRollback": "best effort; physical endpoint may be unavailable",
+    "existingInstallers": "precede this change",
+    "desktopRelink": "passed both products with full CTest"
+  },
+  "currentRecoveryBuildRefresh": {
+    "desktopBuild": "passed",
+    "ctestPassed": 10,
+    "ctestTotal": 10,
+    "vm": "soundcurrent-win11-dev",
+    "includes": [
+      "hot-unplug fallback",
+      "guardian bridge-stop ordering",
+      "partial volume constructor rollback",
+      "manager removal persistence/restart flags"
+    ],
+    "installerLifecycle": "passed both: app install, in-place update/unknown-file preservation, installed UI, unsigned-driver refusal, unowned removal; physical/third-party audio inventory unchanged",
+    "driverSignature": "unsigned; not installed"
+  },
+  "liveWindowRouteControls": {
+    "test": "desktop --windows-live-ui-test",
+    "scope": [
+      "On enables managed output in all roles",
+      "Off restores original roles",
+      "re-enable reacquires route",
+      "actual Quit app button exits then destruction restores roles"
+    ],
+    "settings": "temporary INI directory",
+    "exclusion": "actual ProcessingGuard acquired",
+    "nativeBuildAndRun": "passed both current desktop applications on soundcurrent-win11-dev",
+    "fixture": "existing virtual/physical endpoints; no signed kernel installed",
+    "actualHotplug": "pending",
+    "installedPrototypeCoverage": "prior prototype UI self-test passed; this new live test ran current deployed desktop build",
+    "exitCodeGateReview": "revalidated both actual On/Off/Quit test modes using native System.Diagnostics.Process and non-null exit 0"
+  },
+  "usbHotplugFixture": {
+    "vm": "soundcurrent-win11-dev",
+    "attachment": "runtime-only QMP usb-audio, id sc-usb-audio-fixture, audiodev audio1, bus usb.0 port 10",
+    "libvirtLiveSoundAttach": "unsupported; no change from rejected attach",
+    "windowsDriver": "native usbaudio; device status OK",
+    "activeOutputs": [
+      "Speakers (High Definition Audio Device)",
+      "Speakers (Audio Device)"
+    ],
+    "uiControlRegression": "passed both products with two-output fixture present; selected endpoint not separately asserted",
+    "fixtureState": "removed again; absent qtree/present endpoints; original MEDIA devices OK",
+    "cleanup": "QMP device_del id sc-usb-audio-fixture; verify gone from qtree and active endpoint inventory",
+    "actualUnplugFallbackAndReplugSelection": "passed EQ and Studio userspace UI/bridge tests; SoundCurrent kernel remains uninstalled",
+    "signedSoundCurrentKernel": "uninstalled"
+  },
+  "actualUsbHotplugExperiment": {
+    "vm": "soundcurrent-win11-dev",
+    "test": "--windows-live-hotplug-test status-file; QMP temporary USB remove/add",
+    "firstCoordinatorAttempt": "failed on absent status file; no device mutation; wrapper terminated normally through bounded test timeout",
+    "secondAttempt": "EQ USB start and unplug-to-onboard fallback passed; immediate role assertion failed during reconnection",
+    "testRevision": "hotplug test now constructs normal live MainWindow(true); diagnostics retained",
+    "currentBuild": "current desktops include direct-physical-output disable fix; hotplug regression passed",
+    "actualReconnection": "passed both products (EQ earlier run; Studio corrected live-monitor run)",
+    "StudioHotplug": "passed with normal live MainWindow(true): USB selection, actual removal, onboard fallback, actual reconnect, automatic USB return, completed-switch role verification and disable",
+    "kernel": "SoundCurrent unsigned driver remains uninstalled",
+    "EQActualHotplug": "passed: explicit USB selection, actual USB removal, automatic onboard fallback, actual USB re-add, automatic USB selection, all three owned roles after switches, disable releases owned roles",
+    "next": "signed own-driver runtime and remaining lifecycle verification",
+    "fixtureState": "removed again; absent qtree/present endpoints; original MEDIA devices OK",
+    "StudioFailureCause": "test used MainWindow(false); Studio intentionally does not start its device monitor in offline preview mode",
+    "strictFinalExitVerification": "passed both: native Process exit 0 plus reconnected state after final owned-route release check"
+  },
+  "packageIdentityPreflight": {
+    "implementation": "SetupAPI parsed identity before trust/import: MEDIA class/GUID, own catalog, single own manufacturer/model with exact Root hardware ID, own service section",
+    "nativeBuild": "passed both managers",
+    "test": "windows_driver_manager_checks.ps1",
+    "result": "passed both: valid identity reaches unsigned catalog rejection; wrong Root hardware/catalog/service and extra model rejected by identity gate",
+    "driverMutations": false,
+    "signedValidPackage": "pending",
+    "existingPrototypeManagers": "current unsigned prototypes include this gate and passed app-only lifecycle verification"
+  },
+  "identityAndHotplugReviewRefresh": {
+    "desktopBuild": "passed",
+    "ctestPassed": 10,
+    "ctestTotal": 10,
+    "installer": "rebuilt unsigned fixture with current manager/desktop",
+    "installerLifecycle": "passed both: app install/update, installed UI, unsigned-driver refusal and unowned removal; physical/third-party inventory unchanged",
+    "kernelInstalled": false
+  },
+  "manualDirectPhysicalRoute": {
+    "reproduction": "both apps logged UI still on after direct physical Windows default selection",
+    "initialWrapper": "misreported PASS due permissive/null exit-code check; rejected as gate",
+    "fix": "same physical destination chosen directly in Windows disables processing and releases bridge/volume lease",
+    "verification": "passed both rebuilt desktop apps with native Process exit 0 and explicit PASS marker; actual all-role Windows default change preserved and checkbox off",
+    "fixture": "actual endpoint default API change in clone; no generated signal; SoundCurrent kernel uninstalled"
+  },
+  "strictLiveUiRunner": {
+    "source": "tests/windows_live_ui_routes.ps1 -Run",
+    "result": "four cases passed: On/Off/Quit and direct physical selection for each product",
+    "nativeExitCodes": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "previousWrapperFalsePass": "recorded and superseded for these cases",
+    "hotplugOldWrapper": "superseded: full sequence rerun with native Process; final reconnected marker and native exit 0 confirmed for both",
+    "ownKernelInstalled": false
+  },
+  "strictHotplugGuestRunner": {
+    "source": "tests/windows_live_hotplug.ps1",
+    "purpose": "reviewable guest-side native Process launcher for host-coordinated device removal/re-add",
+    "verification": "equivalent strict coordinator run passed both apps; standalone parameterized script not separately executed"
+  },
+  "wholeDesktopCrashRecovery": {
+    "test": "tests/windows_desktop_crash.ps1 -Run",
+    "vm": "soundcurrent-win11-dev",
+    "utility": "windows-route-smoke --snapshot / --verify-defaults rebuilt both",
+    "result": "passed both desktop apps",
+    "forcedNativeExit": -1,
+    "checks": [
+      "actual desktop MainWindow live mode acquired route",
+      "actual guardian child identified by parent PID",
+      "complete desktop process forcibly terminated",
+      "all three original output roles restored",
+      "own recovery guardian exited"
+    ],
+    "uiMode": "offscreen Qt window with normal live monitoring and actual userspace bridge; no visible Windows Settings interaction",
+    "generatedSignal": false,
+    "volumeAfterWholeAppCrash": "not separately measured in this test; existing volume fixture tests cover owner crash",
+    "kernel": "SoundCurrent unsigned kernel uninstalled",
+    "fixtureCleanup": "temporary USB removed; qtree/present endpoints absent; original MEDIA devices OK"
+  },
+  "actualDesktopExclusion": {
+    "test": "tests/windows_desktop_exclusion.ps1 -Run",
+    "vm": "soundcurrent-win11-dev",
+    "result": "passed both directions",
+    "owner": "complete desktop live MainWindow with actual bridge/route and ProcessingGuard",
+    "contender": "other desktop executable in live manual-route mode; native exit 1 and explicit Audio session busy diagnostic required",
+    "recovery": "after forced owner termination and guardian exit, contender completes live route test with native exit 0 and explicit PASS marker",
+    "scope": "same Windows user/session; different actual login identities not yet verified",
+    "fixtureCleanup": "temporary USB absent qtree/present endpoints; original MEDIA devices OK",
+    "kernelInstalled": false
+  },
+  "nativeCrossUserLaunchExperiment": {
+    "vm": "soundcurrent-win11-dev",
+    "launcher": "native System.Diagnostics.Process with temporary standard-user credential/profile; no secrets in source/logs",
+    "QtGuardResult": "alternate process initialization failed with -1073741502 before gate check",
+    "qtFreeGateHelper": "both native targets built; uses exact production WindowsAudioSessionGate with static CRT and no Qt",
+    "qtFreeLaunchResult": "same -1073741502 initialization failure; no cross-user gate claim",
+    "cleanup": "verified no temporary accounts, profiles, fixture directories or guard processes remain",
+    "securityPolicyChanged": false,
+    "next": "test actual standard-user token access to the production mutex through impersonation; full alternate-user process/session remains unverified"
+  },
+  "actualStandardUserTokenGate": {
+    "test": "tests/windows_gate_token_access.ps1 -Run",
+    "vm": "soundcurrent-win11-dev",
+    "result": "passed both native production-gate builds",
+    "checks": [
+      "effective impersonated SID equals newly created standard-user SID",
+      "open existing production mutex with synchronize/modify rights",
+      "active owner causes WAIT_TIMEOUT",
+      "owner termination permits acquisition including abandonment",
+      "original-user native process excluded while standard-user token holds mutex",
+      "standard-user release permits original-user recovery"
+    ],
+    "nativeOwner": "Qt-free helper uses exact production WindowsAudioSessionGate",
+    "scope": "actual Windows standard-user token/production-object ACL and contention; not alternate-user GUI process or separate interactive login session",
+    "firstHarnessAttempt": "reverse process creation under impersonated token denied; revised to revert token before launching original-user executable and re-impersonate for release",
+    "cleanup": "temporary account removed; separate cleanup audit confirms no test accounts/profiles/folders/processes",
+    "securityPermissionsChanged": false
+  },
+  "differentPhysicalOutputSelection": {
+    "scope": "Independent Windows clone; actual offscreen MainWindow/bridge and endpoint default APIs, existing cable fixture. No own kernel installed.",
+    "before_fix": "EQ reproduced stale On after selecting another physical output in Windows while app output was pinned.",
+    "after_fix": "Both MSVC desktops passed different-output route checks with native exit 0 and explicit completion markers.",
+    "saved_runner": "tests/windows_live_ui_routes.ps1 -Run -TwoPhysicalOutputs: six cases passed, all native exit 0.",
+    "hotplug_regression": "Both desktops passed USB removal, onboard fallback and USB return, native exit 0 and final reconnected marker.",
+    "installer_status": "Current unsigned prototypes refreshed and app-only lifecycle verified; signed driver runtime still pending.",
+    "source_sha256": {
+      "src/main.cpp": "2da0b332f57b2628fda5328951bcfe0a2165e3b11b5ffdaeab858aec267b25a4",
+      "src/windows_live_ui_test.inc": "9f3df878b1943f118355a2b003d2510e880a00c68518e689b8bc801825265b18",
+      "tests/windows_live_ui_routes.ps1": "92fa298a0bd7a8ce87ea7bf059b9ac8a15054ae6851e905634cd74c273458e9d"
+    }
+  },
+  "latestReviewRefresh": {
+    "ctest": {
+      "eq": "10/10 passed",
+      "studio": "12/12 passed"
+    },
+    "qt_source_sha256": "a951bd163c7b80fc6b8c88d7668fb56abf91c152373e13c10666763238131307",
+    "qt_license_texts": 38,
+    "scope": "Current desktops built on independent clone. Exact checked Qt archive LICENSES texts added to deployed review payloads. Production copy rule corrected; full signed production release script not run. Unsigned catalog refusal and original MEDIA inventory preservation passed.",
+    "source_sha256": {
+      "scripts/build-windows.ps1": "2f9f5ee2121815956f831696c999ed06221979187cc0187012832b1e3e0359e6",
+      "tests/windows_integrated_installer_smoke.ps1": "49dbd06b3f5bffd6de55d9acfdbb4ef81f0e5c5f9c5c9b1d8ff2ae0774b929d3"
+    }
+  },
+  "liveProcessConflictDiscovery": {
+    "test": "tests/windows_live_process_conflict.ps1 -Run",
+    "result": "passed eight strict native process probes across both builds",
+    "fixture": "Harmless renamed Windows cmd processes: FxSound.exe, Peace.exe and SoundCurrent-unrelated.exe; no third-party software installed/executed. Fixtures removed after test.",
+    "scope": "Exact production Toolhelp process enumeration; names detected case-insensitively, unrelated process allowed, post-cleanup no-conflict state verified.",
+    "enumeration_error": "Production guard now refuses processing when enumeration ends with an error other than ERROR_NO_MORE_FILES; failure branch not injected.",
+    "remaining": "Real third-party audio behavior remains unverified; full ordinary live-window monitor shutdown now passed with named process fixtures.",
+    "source_sha256": {
+      "src/processing_guard.cpp": "4045579262d7da2bc14719f1e3d1fbe173e37f90b25e0e4c30d3ae2a5f28e319",
+      "tests/processing_guard.cpp": "a8aa09ef31b7286df14f5bb958bd842ef42dce4c8ba861b9b86339fbcc31635d",
+      "tests/windows_live_process_conflict.ps1": "fcd16a491db5003f76e0a65dbb020b1152c50d80d5260ac7f008b08fda3a369f"
+    },
+    "desktop_build": "Both current MSVC desktops rebuilt; EQ CTest 10/10 and Studio CTest 12/12; refreshed unsigned installers passed current app-only lifecycle tests."
+  },
+  "liveWindowConflictShutdown": {
+    "test": "tests/windows_live_window_conflict.ps1 -Run",
+    "result": "passed four cases: both apps with FxSound.exe and Peace.exe fixtures",
+    "scope": "Ordinary application startup, instance/processing guards and production two-second monitor, actual offscreen MainWindow and existing userspace cable bridge. Test hooks isolate settings, report readiness, assert power Off and managed route release before warning, and dismiss the warning unattended.",
+    "gates": "All three output roles acquired before fixture launch; matching conflict diagnostic, pre-dialog Off/release marker and native exit 0; original three roles restored; own guardian exited.",
+    "fixture": "Harmless renamed Windows cmd processes; no third-party equalizer or SoundCurrent unsigned kernel installed.",
+    "artifacts": "Current unsigned installer prototypes now include these hooks and the physical level/mute preservation fix; app-only lifecycle passed.",
+    "source_sha256": {
+      "src/main.cpp": "78782d9289d9e04c6beaf857bf2d477e6adb42c9b456d5c8dab136dc8d0076fb",
+      "src/windows_live_conflict_test.inc": "0889ea7d4f4b7c8b701c9765636ca247d1576d44b9aa53a15a6c35564a756c94",
+      "tests/windows_live_window_conflict.ps1": "228eb661ecbd6726044cab9596dc833326dcae962148fab9e828abe6a2b5747c"
+    }
+  },
+  "signingHandoffAudit": {
+    "date": "2026-10-06",
+    "current_architecture": "SYSVAD-derived own kernel virtual audio driver; historical APO experiments do not satisfy this route.",
+    "official_sources": [
+      "https://learn.microsoft.com/en-us/windows-hardware/drivers/dashboard/code-signing-reqs",
+      "https://learn.microsoft.com/en-us/windows-hardware/drivers/dashboard/driver-signing-offerings"
+    ],
+    "official_page_updated": "2026-04-14",
+    "external_inputs_missing": [
+      "verified Hardware program enrollment/publisher identity and eligible signing credentials",
+      "Windows-trusted returned SoundCurrent driver package",
+      "Authenticode-signed manager from matching release source"
+    ],
+    "release_script_inspected": "Requires trusted manager and successful manager package verification before configure/build; does not automatically perform signing.",
+    "performed": "Corrected both signing guides to current architecture and concrete handoff; no account enrollment, purchase, submission or trust/security change.",
+    "document_sha256": "d6db73eb583c236747d7cacd505d6ca7bc2c4cb55bda320712eaf821ec576c89"
+  },
+  "manualPhysicalVolumePreservation": {
+    "test": "tests/windows_manual_output_volume.ps1 -Run",
+    "before_fix": "EQ reproduced preservation of the new 0.58 scalar but overwrote the new unmuted state with the old mute.",
+    "fix": "Restore the original mute only while the physical level still matches the lease unity setting; preserve mute alongside a changed physical level.",
+    "after_fix": "Both actual desktop builds passed same/different physical selection, new 58% unmuted setting, untouched previous-output lease restoration, explicit UI route completion and native exit 0.",
+    "native_regression": "Both passed normal stop, forced owner termination and guardian-failure volume/mute/all-role recovery after the fix.",
+    "scope": "Independent clone, actual endpoint scalar/mute APIs and existing cable source. No signal generated; fixture volume states restored. Acoustic/sample gain and own-kernel runtime remain unverified.",
+    "source_sha256": {
+      "src/windows_audio.cpp": "6499a93ccc8429a6a257fc9c1cd52cdfae11f2045c40b6c5a037c4c614b1d0bd",
+      "tests/windows_volume_route_smoke.cpp": "5ddf58534f095a4eef8790dadd75b4811440388b937c96330ae5ac346637bd92",
+      "tests/windows_manual_output_volume.ps1": "c03dc09a7b0fe49a143d97f67fb25b420168bcd9ef9446d7cc8472062129dc33"
+    },
+    "artifacts": "Current MSVC builds and payloads refreshed; EQ CTest 10/10, Studio CTest 12/12. Both unsigned prototypes passed app-only lifecycle; original MEDIA inventory unchanged. Temporary USB fixture removed."
+  }
+}

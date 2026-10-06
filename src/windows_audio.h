@@ -22,6 +22,9 @@ struct AudioEndpoint {
     std::wstring name;
     unsigned channels = 2;
     bool virtualCable = false;
+    bool soundCurrent = false;
+    bool soundCurrentMicFeed = false;
+    bool soundCurrentMicCapture = false;
 };
 
 std::vector<AudioEndpoint> windowsAudioEndpoints(bool capture);
@@ -29,11 +32,17 @@ std::wstring windowsDefaultOutputId();
 std::wstring windowsDefaultInputId();
 std::wstring windowsDefaultEndpointId(bool capture, int role = 1);
 
+// Best-effort recovery, including a helper surviving abnormal app termination.
+bool windowsRestoreOwnedRoute(bool capture, const std::wstring &owned,
+    const std::wstring &fallback, const std::array<std::wstring, 3> &originals,
+    bool copyPlaybackVolume = false);
+
 // Reversible route ownership. Restore only roles that still point to our cable.
 class WindowsRouteLease {
 public:
     WindowsRouteLease(bool capture, const std::wstring &cableId,
-                      const std::wstring &fallbackId, bool copyPlaybackVolume = false);
+                      const std::wstring &fallbackId, bool copyPlaybackVolume = false,
+                      std::function<void(const std::array<std::wstring, 3> &)> prepareRecovery = {});
     ~WindowsRouteLease();
     WindowsRouteLease(const WindowsRouteLease &) = delete;
     WindowsRouteLease &operator=(const WindowsRouteLease &) = delete;
@@ -71,7 +80,7 @@ public:
     WindowsBridge(const WindowsBridge &) = delete;
     WindowsBridge &operator=(const WindowsBridge &) = delete;
 
-    bool start(std::wstring captureId, std::wstring outputId, bool microphone = false);
+    bool start(std::wstring captureId, std::wstring outputId, bool microphone = false, bool renderLoopback = false);
     std::vector<std::int16_t> takeMeterPcm();
     std::string error() const;
     void stop();
@@ -92,7 +101,7 @@ private:
         EnhancementSettings effects;
     };
 
-    void run(std::wstring captureId, std::wstring outputId, bool microphone);
+    void run(std::wstring captureId, std::wstring outputId, bool microphone, bool renderLoopback);
     std::atomic<bool> stopRequested_{false};
     std::atomic<bool> running_{false};
     std::atomic<float> peak_{0.0f};

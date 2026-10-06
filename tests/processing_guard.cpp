@@ -26,6 +26,21 @@ int main(int argc, char **argv) {
         return app.exec();
     }
     try {
+#ifdef Q_OS_WIN
+        if (app.arguments().size() == 3 && app.arguments()[1] == "--expect-process-conflict") {
+            const auto reason = otherEqualizerConflict("soundcurrent_test");
+            check(reason.contains(app.arguments()[2], Qt::CaseInsensitive),
+                  "live Windows process conflict diagnostic missing");
+            std::cout << "PASS: live Windows process conflict detected\n";
+            return 0;
+        }
+        if (app.arguments().size() == 2 && app.arguments()[1] == "--expect-no-process-conflict") {
+            check(otherEqualizerConflict("soundcurrent_test").isEmpty(),
+                  "unexpected Windows equalizer process conflict");
+            std::cout << "PASS: no live Windows process conflict\n";
+            return 0;
+        }
+#endif
         check(recognizedEqualizerProcess("FxSound.EXE") &&
                   recognizedEqualizerProcess("soundcurrent-eq (deleted)") &&
                   recognizedEqualizerProcess("easyeffects"),
@@ -56,6 +71,14 @@ int main(int argc, char **argv) {
             ProcessingGuard contender;
             check(!contender.acquire(directory.path()) && !contender.error().isEmpty(), "second app refused");
         }
+#ifdef Q_OS_WIN
+        {
+            QTemporaryDir otherUserDirectory;
+            ProcessingGuard otherUser;
+            check(otherUserDirectory.isValid() && !otherUser.acquire(otherUserDirectory.path()),
+                  "different per-user directory still refused by global session gate");
+        }
+#endif
         owner.kill();
         check(owner.waitForFinished(30000), "owner crash completes");
         {

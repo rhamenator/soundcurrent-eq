@@ -19,6 +19,12 @@
 #endif
 namespace soundcurrent {
 bool ProcessingGuard::acquire(const QString &directory) {
+#ifdef Q_OS_WIN
+    if (!sessionGate_.acquire()) {
+        error_ = "Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.";
+        return false;
+    }
+#endif
     if (directory.isEmpty() || !QDir().mkpath(directory)) {
         error_ = "Cannot create the shared SoundCurrent session guard.";
         return false;
@@ -94,7 +100,10 @@ QString otherEqualizerConflict(const QString &ownPrefix) {
                 return name + " is running. Quit it before using SoundCurrent.";
             }
         } while (Process32NextW(snapshot, &entry));
+    const DWORD enumerationError = GetLastError();
     CloseHandle(snapshot);
+    if (enumerationError != ERROR_NO_MORE_FILES)
+        return "Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.";
     Q_UNUSED(ownPrefix);
 #else
     const QDir proc("/proc");

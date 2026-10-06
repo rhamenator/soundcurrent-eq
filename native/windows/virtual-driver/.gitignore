@@ -1,0 +1,9 @@
+vendor/packages/
+vendor/.tools/
+**/x64/
+**/ARM64/
+**/Debug/
+**/Release/
+*.log
+*.binlog
+vendor/driver-package/

@@ -124,3 +124,84 @@ check cancelling elevation and restarting after a successful install.
 The app installer is currently unsigned. The audio driver is separately
 signed by its vendor. The installer and checksum should be obtained from
 the project's GitHub release page.
+
+## Unreleased integrated SoundCurrent driver checks (2026-10-06)
+
+Release installer builds now require `-SignedDriverPackage` and
+`-SignedDriverManager` in addition to `-QtPrefix`. See `windows-signing.md`.
+The privileged manager has a static CRT and System32-only dependency lookup.
+
+`tests/windows_integrated_installer_smoke.ps1 -Run` is an opt-in test for an
+independent clone. It expects both explicitly named unsigned prototype fixtures
+in the selected `-PrototypeDirectory`. It checks application installation,
+in-place updating and user-file preservation, installed UI, unsigned-driver
+refusal, unowned-driver uninstall and unchanged physical/third-party audio
+identities. These checks passed on `soundcurrent-win11-dev`. They do not prove
+successful installation or removal of a signed SoundCurrent kernel driver.
+
+The older `windows_installer_smoke.ps1` covers the previously shipped VB-CABLE
+installer. The detailed current evidence and remaining gates are in
+`native/windows/virtual-driver/verification-2026-10-06.json` and
+`IMPLEMENTATION-STATUS.md`.
+
+### Endpoint volume handoff
+
+On an independent Windows clone, build `soundcurrent-windows-volume-smoke`
+and place it beside the route guardian and Qt runtime. Run it with `--run`.
+It temporarily changes guest default routes and endpoint levels, verifies
+71%/unity/changed-volume-and-mute handoff using the production bridge, then
+restores fixture levels. It needs existing virtual capture/render and physical
+endpoints, emits no test signal, and stays outside CTest. This is userspace
+control-state verification; signed SoundCurrent kernel audio remains a
+separate required acceptance check.
+
+### Live Windows output-choice checks
+
+On an independent clone, run `tests/windows_live_ui_routes.ps1 -Run` against
+the deployed builds. Add `-TwoPhysicalOutputs` when two physical render
+endpoints are present. The extra case pins one output in the app, then changes
+all three actual Windows default roles to the other physical output. It requires
+processing to show Off and the user's Windows defaults to remain selected.
+The runner rejects missing/nonzero native exit codes and requires the explicit
+manual-choice completion marker. These are offscreen Qt window tests using
+endpoint APIs, not Windows Settings interaction or own-kernel verification.
+
+### Live process-conflict discovery
+
+On an independent clone, build/deploy `soundcurrent-processing-guard-test`
+and run `tests/windows_live_process_conflict.ps1 -Run`. Harmless copies of
+Windows cmd hold open under FxSound.exe and Peace.exe names; the exact
+production Toolhelp discovery must return the matching conflict. An unrelated
+process and the state after fixture cleanup must remain allowed. Retained native
+process handles enforce exit codes. No third-party equalizer is installed or
+executed; this verifies Windows process discovery rather than third-party audio
+behavior or the complete live-window conflict shutdown workflow.
+
+### Conflict introduced after desktop startup
+
+`tests/windows_live_window_conflict.ps1 -Run` starts each ordinary desktop
+with isolated settings and an offscreen Qt window. The opt-in
+`--windows-live-conflict-test` hooks report readiness only after processing
+acquires all three output roles and dismiss the warning dialog unattended.
+The production startup guard and two-second conflict monitor remain in use.
+A harmless FxSound.exe or Peace.exe process starts after readiness. Before
+the dialog is dismissed, hooks require the power control to show Off and the
+managed route to be released. The coordinator requires the matching diagnostic,
+native exit zero, original output-role restoration and guardian exit.
+No third-party audio software or unsigned kernel driver is installed.
+
+### Physical volume after direct Windows selection
+
+On an independent clone with the documented USB/onboard fixtures, run
+`tests/windows_manual_output_volume.ps1 -Run`. It saves endpoint scalar/mute
+states, starts the actual desktop route test, observes owned roles followed by
+the direct physical choice, and adjusts that output to 58% unmuted. The chosen
+state must survive processor shutdown; the previous output lease must restore
+its untouched state. Both same-output and different-output cases are exercised.
+Fixture endpoint levels are restored in `finally`; no test signal is generated.
+
+The opt-in volume helper supports `--read-volume ID` and
+`--set-volume ID SCALAR MUTE` for this coordinator. The setter intentionally
+persists a guest-only fixture change; callers must save and restore its state.
+This proves endpoint control-state behavior, not acoustic gain or own-kernel
+frequency response.
