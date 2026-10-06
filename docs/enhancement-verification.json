@@ -1,10 +1,14 @@
 {
   "date": "2026-10-05",
-  "version": "0.7.3",
-  "linuxCtestGroups": 5,
+  "version": "0.7.4",
+  "linuxCtestGroups": 6,
   "linuxResult": "passed",
-  "nativeWindows": "MSVC x64 build and DSP/effect/profile/guard/UI tests passed; Studio engine tests passed. No interactive installer or physical Windows audio test.",
+  "nativeWindows": "MSVC x64 build and DSP/effect/profile/guard/update-policy/UI tests passed; Studio engine tests passed. No interactive installer or physical Windows audio test.",
   "physicalAudio": "Not tested; host music and device routes preserved",
   "linuxPipeWire": "EQ full graph + live controls tested in private server; installed plugin path verified",
-  "published": false
+  "published": false,
+  "speakerProfiles": 1092,
+  "manufacturers": 255,
+  "speakerTypeFilters": "UI tested: browse preserves correction; discrete undo restores hidden selection",
+  "linuxInPlaceUpdate": "Installed over prior version; executable hashes match; saved user configuration unchanged"
 }

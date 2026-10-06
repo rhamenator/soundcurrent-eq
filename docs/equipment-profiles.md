@@ -2,7 +2,7 @@
 
 Development builds add **Settings & calibration → Equipment profile library / editor**.
 The library filters by equipment type, brand and family, then displays individual models.
-Search also matches measurement conditions. There are 1,087 adapted published speaker EQ
+Search also matches measurement conditions. There are 1,092 adapted published speaker EQ
 profiles from 255 brands, plus a qualified Pyle PDA29BU electrical reference.
 
 ## Create, import, adjust and save
@@ -81,8 +81,9 @@ a curve cannot create amplifier headroom or speaker extension.
 
 The collector pins Spinorama commit `acc757bb98d63327092ee537bde25d9c227811f3`:
 [upstream repository](https://github.com/pierreaubert/spinorama).
-It visits 1,088 generated `iir-autoeq.txt` profiles; 1,087 meet our 1–16-filter
-admission rules. Vanatoo Transparent Zero Plus is recorded as a gap. Metadata is parsed
+It examines 1,100 model directories and admits 1,092 profiles under our 1–16-filter
+rules, including bounded resolution of alternate generated IIR files. Eight models
+remain explicit gaps; their responses are not invented. Metadata is parsed
 as Python AST literals; downloaded code is never executed. Downloads are bounded,
 four concurrent requests, cached locally, and SHA256-attributed. Collection is a
 manual development operation, not a background network task in the app.

@@ -1,6 +1,6 @@
 # SoundCurrent EQ
 
-Local development build: **0.7.3** (not yet published).
+Local development build: **0.7.4** (not yet published).
 
 ## Download the published preview — 0.7.1
 
@@ -24,7 +24,7 @@ width (Q), saved custom profiles, colored per-band FFT meters, configurable
 refresh and peak markers, microphone tone controls, and speaker/room
 measurement with a preview before applying changes. Windows microphone EQ
 uses a separate second virtual cable so speaker processing can keep running.
-The equipment library offers 1087 source-linked speaker correction profiles and
+The equipment library offers 1092 source-linked speaker correction profiles and
 qualified amplifier references, with profile imports and an editor. Hardware workflows are tested
 separately from the shared UI and DSP. See the testing notes for coverage.
 
@@ -408,7 +408,7 @@ no FxSound code or artwork is included.
 The current local development build adds a searchable equipment library organized
 by brand, family and model, microphone/speaker/amplifier imports, a response-curve
 editor, and Save/Discard/Cancel for modified profiles. Published references stay
-intact; edits save custom copies. The catalog contains 1,087 adapted speaker EQ
+intact; edits save custom copies. The catalog contains 1,092 adapted speaker EQ
 profiles across 255 brands and a qualified Pyle PDA29BU electrical reference.
 Successful sweep checks can also save a whole-system response profile.
 
@@ -419,3 +419,11 @@ This work is not yet published in the linked GitHub release.
 ## Listening enhancements
 
 Clarity, Ambience, stereo Surround Sound, Dynamic Boost and Bass Boost are now available. EQ provides simple amount sliders; Studio also provides advanced parameters alongside its multichannel effects. See [Listening enhancements](docs/listening-enhancements.md) for controls, signal order and limits.
+
+## Updates and equipment filters
+
+Speaker profiles can be narrowed with separate Manufacturer and Type selectors.
+The complete library also supports equipment kind and family. Install newer
+packages over the existing version; settings and custom profiles remain. Settings
+includes update-available and Quit/reopen reminders. See
+[application updates](docs/application-updates.md).
