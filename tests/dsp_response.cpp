@@ -64,6 +64,14 @@ int main() {
     if(!eq.setEnhancements(effects))return 16;
     if(measure(eq,40)<flat*2)return 17;
     if(!eq.setProfile({},0,0,false) || std::abs(measure(eq,40)-flat)>1e-5)return 18;
+    if (!eq.setEnhancements({})) return 22;
+    // Updating gain alone must attenuate the next audio block without a preset change.
+    for (const double db : {-60.0, -30.0, -12.0}) {
+        if (!eq.setProfile({}, db, 0, true, false)) return 19;
+        const double actual = 20 * std::log10(measure(eq, 1000) / flat);
+        if (std::abs(actual - db) > 0.02) return 20;
+    }
+    if (eq.setProfile({}, -60.5, 0) || eq.setProfile({}, 12.5, 0)) return 21;
     std::printf("Windows DSP core: 1 kHz cut %.1f dB, post gain %.1f dB, balance passed\n",
                 cutDb, gainDb);
     return 0;

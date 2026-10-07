@@ -78,6 +78,7 @@
 #include <algorithm>
 #include <array>
 #include <cmath>
+#include <memory>
 #include <complex>
 #include <cerrno>
 #include <cstdint>
@@ -1905,16 +1906,16 @@ public:
         auto *gainRow = new QHBoxLayout;
         gainRow->addWidget(new QLabel("Post gain"));
         outputGain_ = new QSlider(Qt::Horizontal);
-        outputGain_->setRange(-24, 24);
+        outputGain_->setRange(int(soundcurrent::kMinPostGainDb * 2), 24);
         outputGain_->setSingleStep(1);
         outputGain_->setPageStep(2);
         outputGain_->setTickPosition(QSlider::TicksBelow);
         outputGain_->setTickInterval(12);
         outputGain_->setAccessibleName("Post gain after equalization");
-        outputGain_->setToolTip("Raise the level after the EQ. Higher gain can cause clipping.");
+        outputGain_->setToolTip("Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.");
         const double savedGain = QSettings().value("outputGainDb", 0.0).toDouble();
         outputGain_->setValue(std::isfinite(savedGain)
-                                  ? std::lround(std::clamp(savedGain, -12.0, 12.0) * 2.0) : 0);
+                                  ? std::lround(std::clamp(savedGain, soundcurrent::kMinPostGainDb, 12.0) * 2.0) : 0);
         gainRow->addWidget(outputGain_, 1);
         outputGainValue_ = new QLabel;
         outputGainValue_->setMinimumWidth(58);
@@ -2118,6 +2119,7 @@ public:
         auto *inputRow = new QHBoxLayout;
         inputCombo_ = new QComboBox;
         inputCombo_->setAccessibleName("Microphone input device");
+        inputCombo_->addItem("Plug in your microphone to select a microphone profile", QString());
         inputRow->addWidget(inputCombo_, 1);
         micPower_ = new QCheckBox("Natural mic EQ");
         micPower_->setAccessibleName("Natural microphone equalizer on or off");
@@ -2317,11 +2319,11 @@ public:
         syncBandControls();
         if (!startEnabled) {
             refreshDevices();
-            inputCombo_->addItem("Automatic (follow connected microphones)", QString());
             try {
                 for (const auto &device : inputDevices())
                     inputCombo_->addItem(device.description + (device.channels == 1 ? " · mono" : " · stereo"), device.name);
             } catch (const std::exception &) {}
+            if (inputCombo_->count() > 1) inputCombo_->setItemText(0, "Automatic (follow connected microphones)");
         }
 
         connect(refresh, &QPushButton::clicked, this, [this] { refreshDevices(); });
@@ -2810,7 +2812,8 @@ private:
             if (changed) {
                 inputCombo_->blockSignals(true);
                 inputCombo_->clear();
-                inputCombo_->addItem("Automatic (follow connected microphones)", QString());
+                inputCombo_->addItem(inputs_.isEmpty() ? "Plug in your microphone to select a microphone profile"
+                                                     : "Automatic (follow connected microphones)", QString());
                 for (const auto &device : inputs_)
                     inputCombo_->addItem(device.description + (device.channels == 1 ? " · mono" : " · stereo"), device.name);
                 const int index = inputCombo_->findData(manual);
@@ -3607,7 +3610,7 @@ int main(int argc, char **argv) {
         if (!builtinShapes().contains(name)) return 2;
         bool valid = true;
         const double gain = app.arguments().size() >= 4 ? app.arguments()[3].toDouble(&valid) : 0.0;
-        if (!valid || !std::isfinite(gain) || gain < -12.0 || gain > 12.0) return 2;
+        if (!valid || !std::isfinite(gain) || gain < soundcurrent::kMinPostGainDb || gain > 12.0) return 2;
         const int balance = app.arguments().size() == 5 ? app.arguments()[4].toInt(&valid) : 0;
         if (!valid || balance < -100 || balance > 100) return 2;
         QTextStream(stdout) << filterControls(builtinProfile(name, kDefaultBands), gain, balance);
@@ -3879,6 +3882,8 @@ int main(int argc, char **argv) {
         for (auto *combo : testWindow.findChildren<QComboBox *>())
             if (combo->accessibleName() == "Microphone input device") microphoneInput = combo;
         if (!microphoneInput) qFatal("Microphone device selection is missing");
+        if (microphoneInput->count() == 1 && microphoneInput->itemText(0) != "Plug in your microphone to select a microphone profile")
+            qFatal("Missing microphone connection prompt");
         QPushButton *calibrationStart = nullptr, *calibrationStop = nullptr;
         for (auto *button : testWindow.findChildren<QPushButton *>()) {
             if (button->accessibleName() == "Measure speaker room and microphone response") calibrationStart = button;
@@ -3908,7 +3913,7 @@ int main(int argc, char **argv) {
             if (slider->accessibleName() == "Post gain after equalization") outputGain = slider;
             if (slider->accessibleName() == "Left right balance") balance = slider;
         }
-        if (!outputGain || outputGain->minimum() != -24 || outputGain->maximum() != 24 ||
+        if (!outputGain || outputGain->minimum() != -120 || outputGain->maximum() != 24 ||
             !balance || balance->minimum() != -100 || balance->maximum() != 100)
             qFatal("Post gain or balance slider is missing");
         bool overallMeter = false;
@@ -4005,8 +4010,17 @@ int main(int argc, char **argv) {
         auto *bassEffect=effects->findChildren<QSlider *>().at(4);const int originalBass=bassEffect->value();
         bassEffect->setValue(50);undo->click();if(bassEffect->value()!=originalBass)qFatal("Enhancement undo failed");
         const int originalOutputGain = outputGain->value();
-        outputGain->setValue(originalOutputGain == outputGain->maximum()
-                                 ? originalOutputGain - 1 : originalOutputGain + 1);
+        outputGain->setValue(-120);
+        if (QSettings().value("outputGainDb").toDouble() != -60.0)
+            qFatal("Low post gain was not saved immediately");
+        {
+            auto reopened = std::make_unique<MainWindow>(false);
+            QSlider *restored = nullptr;
+            for (auto *slider : reopened->findChildren<QSlider *>())
+                if (slider->accessibleName() == "Post gain after equalization") restored = slider;
+            if (!restored || restored->value() != -120)
+                qFatal("Low post gain did not survive reopening");
+        }
         undo->click();
         if (outputGain->value() != originalOutputGain)
             qFatal("Undo did not restore post gain");
