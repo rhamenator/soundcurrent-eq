@@ -1,0 +1,40 @@
+name: Package lifecycle and UI validation
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  packages:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        image: ['ubuntu:24.04', 'fedora:44', 'almalinux:10']
+    steps:
+      - uses: actions/checkout@9f698171ed81b15d1823a05fc7211befd50c8ae0
+        with:
+          persist-credentials: false
+      - name: Build, install, exercise, update, uninstall, and reinstall
+        env:
+          TEST_IMAGE: ${{ matrix.image }}
+        run: |
+          mkdir -p validation-output
+          docker run --rm -v "$PWD:/input:ro" -v "$PWD/validation-output:/output" "$TEST_IMAGE" bash -lc '
+            set -euo pipefail
+            if command -v apt-get >/dev/null; then
+              apt-get update
+              apt-get install -y cmake ninja-build g++ qt6-base-dev libpipewire-0.3-dev pkg-config curl procps xvfb xauth
+            else
+              dnf install -y cmake ninja-build gcc-c++ qt6-qtbase-devel pipewire-devel pkgconf-pkg-config rpm-build tar gzip curl procps-ng
+            fi
+            cp -a /input /work
+            cd /work
+            if command -v apt-get >/dev/null; then ./scripts/build-deb.sh; else ./scripts/build-rpm.sh; fi
+            bash tests/linux_package_lifecycle.sh /output
+          '
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: package-validation-${{ strategy.job-index }}
+          path: validation-output/
