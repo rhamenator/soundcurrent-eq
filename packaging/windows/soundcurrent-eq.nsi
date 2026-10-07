@@ -183,7 +183,7 @@ Section "Uninstall"
   ${If} $0 == 3010
     SetRebootFlag true
   ${ElseIf} $0 != 0
-    MessageBox MB_ICONEXCLAMATION "VB-CABLE removal did not finish. This app was kept so you can retry. Quit any running equalizer, then retry uninstalling."
+    MessageBox MB_ICONEXCLAMATION "VB-CABLE removal did not finish. This app was kept so you can retry.$\r$\n$1"
     Abort
   ${EndIf}
   cable_keep:

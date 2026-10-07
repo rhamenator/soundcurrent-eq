@@ -2017,7 +2017,7 @@ public:
                 if (message.isEmpty()) message = "Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.";
                 finish(message + "\nThe app remains open; your settings have been kept.", true);
             } else if (code == 3010) {
-                finish("Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.", false);
+                finish(message.isEmpty() ? "Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart." : message, false);
             } else if (*action && !message.isEmpty()) finish(message, false);
             else finish({}, false);
         });
