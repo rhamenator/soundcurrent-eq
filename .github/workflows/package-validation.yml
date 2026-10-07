@@ -26,6 +26,9 @@ jobs:
               apt-get update
               apt-get install -y cmake ninja-build g++ qt6-base-dev libpipewire-0.3-dev pkg-config curl procps xvfb xauth
             else
+              # Desktop audio needs systemd. Fedora's minimal container ships
+              # mutually exclusive standalone tmpfiles; replace only that fixture.
+              dnf install -y --allowerasing systemd
               dnf install -y cmake ninja-build gcc-c++ qt6-qtbase-devel pipewire-devel pkgconf-pkg-config rpm-build tar gzip curl procps-ng
             fi
             cp -a /input /work
