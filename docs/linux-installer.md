@@ -1,6 +1,6 @@
 ## Easy Linux installer
 
-[Download the Linux installer](https://github.com/rhamenator/soundcurrent-eq/releases/download/windows-preview-0.7.6/SoundCurrent-EQ-Linux-Installer.run). Save it, then run:
+[Download the Linux installer](https://github.com/rhamenator/soundcurrent-eq/releases/download/preview-0.7.6/SoundCurrent-EQ-Linux-Installer.run). Save it, then run:
 
 ```bash
 bash ~/Downloads/SoundCurrent-EQ-Linux-Installer.run
