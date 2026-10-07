@@ -17,14 +17,14 @@ def sources():
     for name in ['main.cpp','equipment_profiles.cpp','enhancement_controls.h','update_panel.h','localization.h','processing_guard.cpp','studio_panel.cpp']:
         p=ROOT/'src'/name
         if not p.exists():continue
-        code=p.read_text()
+        code=p.read_text(encoding="utf-8")
         for m in MESSAGE.finditer(code):out.add(''.join(ast.literal_eval(s) for s in re.findall(LITERAL,m[1])))
     # Data-driven UI labels are translated at the view boundary, keeping IDs fixed.
-    out.update(json.loads((DATA/'seed-translations.json').read_text())['sources'])
+    out.update(json.loads((DATA/'seed-translations.json').read_text(encoding="utf-8"))['sources'])
     out.update(['Warmth','Boxiness','Clarity','Air'])
-    code=(ROOT/'src/enhancement.h').read_text()
+    code=(ROOT/'src/enhancement.h').read_text(encoding="utf-8")
     out.update(re.findall(r'\{\s*"([^"]+)"\s*,',code))
-    code=(ROOT/'src/main.cpp').read_text()
+    code=(ROOT/'src/main.cpp').read_text(encoding="utf-8")
     start=code.index('void rebuildPresetList(');end=code.index('void savePreset(',start)
     for m in re.finditer(r'addGroup\(\{([^}]+)\}',code[start:end]):out.update(re.findall('"([^"]+)"',m[1]))
     return sorted(out)
@@ -37,7 +37,7 @@ def read(path):
     return result
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def update():
-    strings=sources();seeds=json.loads((DATA/'seed-translations.json').read_text());meta=[]
+    strings=sources();seeds=json.loads((DATA/'seed-translations.json').read_text(encoding="utf-8"));meta=[]
     tool=shutil.which('lrelease6')
     if not tool and Path('/usr/lib/qt6/bin/lrelease').exists():tool='/usr/lib/qt6/bin/lrelease'
     if not tool:tool=shutil.which('lrelease')
@@ -58,13 +58,13 @@ def update():
         qm=path.with_suffix('.qm');subprocess.run([tool,'-silent','-nounfinished',str(path),'-qm',str(qm)],check=True)
         done=sum(bool(old.get(s)) for s in strings)
         meta.append({'tag':tag,'name':row[0],'translated':done,'total':len(strings),'status':'source' if tag=='en' else 'draft','nativeReviewed':False,'tsSha256':digest(path),'qmSha256':digest(qm)})
-    (DATA/'catalogs.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n')
+    (DATA/'catalogs.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n', encoding='utf-8', newline='\n')
     r=ET.Element('RCC');q=ET.SubElement(r,'qresource',prefix='/i18n')
     ET.SubElement(q,'file',alias='catalogs.json').text='catalogs.json'
     for m in meta:ET.SubElement(q,'file',alias='soundcurrent_'+m['tag']+'.qm').text='soundcurrent_'+m['tag']+'.qm'
     ET.indent(r);ET.ElementTree(r).write(DATA/'resources.qrc',encoding='utf-8',xml_declaration=True)
 def check():
-    strings=set(sources());meta=json.loads((DATA/'catalogs.json').read_text())
+    strings=set(sources());meta=json.loads((DATA/'catalogs.json').read_text(encoding="utf-8"))
     for item in meta:
         ts=DATA/('soundcurrent_'+item['tag']+'.ts');qm=ts.with_suffix('.qm')
         assert digest(ts)==item['tsSha256'] and digest(qm)==item['qmSha256'],f'Stale QM/TS: {ts}'

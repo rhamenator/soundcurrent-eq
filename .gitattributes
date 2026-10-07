@@ -1,0 +1,5 @@
+
+# Keep catalog provenance identical across Linux and Windows checkouts.
+data/localization/*.ts text eol=lf
+data/localization/*.json text eol=lf
+data/localization/*.qm -text
