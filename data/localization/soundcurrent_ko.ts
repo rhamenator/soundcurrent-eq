@@ -194,6 +194,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Balance</source>
+      <extracomment>Left/right audio channel balance. Not bank balance or physical equilibrium.</extracomment>
       <translation>균형</translation>
     </message>
     <message>
@@ -210,6 +211,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bands</source>
+      <extracomment>Frequency bands in an audio equalizer. Not music groups, belts or radio stations.</extracomment>
       <translation>밴드</translation>
     </message>
     <message>
@@ -430,6 +432,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Equalizer</source>
+      <extracomment>Audio frequency-response processor, not social equality.</extracomment>
       <translation>이퀄라이저</translation>
     </message>
     <message>
@@ -558,6 +561,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Flat</source>
+      <extracomment>Preset with zero equalizer gain at every frequency. Not an apartment; does not imply muted audio.</extracomment>
       <translation>평탄</translation>
     </message>
     <message>
@@ -574,6 +578,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Gain</source>
+      <extracomment>Audio signal level adjustment in dB, positive or negative. Not financial profit.</extracomment>
       <translation>게인</translation>
     </message>
     <message>
@@ -670,6 +675,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Listening preset</source>
+      <extracomment>Saved equalizer settings for playback. Not a listening device.</extracomment>
       <translation>청취 프리셋</translation>
     </message>
     <message>
@@ -682,6 +688,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Lock EQ</source>
+      <extracomment>Prevent accidental editing of EQ controls; not encryption or a security lock.</extracomment>
       <translation>EQ 잠금</translation>
     </message>
     <message>
@@ -778,6 +785,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Natural mic EQ</source>
+      <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>자연스러운 마이크 EQ</translation>
     </message>
     <message>
@@ -902,6 +910,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Post gain</source>
+      <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
       <translation>출력 게인</translation>
     </message>
     <message>
@@ -962,6 +971,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Quit app</source>
+      <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>앱 종료</translation>
     </message>
     <message>
@@ -994,6 +1004,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Reset to flat</source>
+      <extracomment>Restore zero gain in all EQ bands. Does not mute playback.</extracomment>
       <translation>평탄하게 초기화</translation>
     </message>
     <message>
@@ -1054,6 +1065,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Selected band</source>
+      <extracomment>Currently selected frequency band in the equalizer.</extracomment>
       <translation>선택한 밴드</translation>
     </message>
     <message>
@@ -1214,6 +1226,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Undo</source>
+      <extracomment>Reverse the previous editable setting change.</extracomment>
       <translation>실행 취소</translation>
     </message>
     <message>
@@ -1246,6 +1259,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Use system locale</source>
+      <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>시스템 지역 사용</translation>
     </message>
     <message>

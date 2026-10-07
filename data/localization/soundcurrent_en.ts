@@ -196,6 +196,7 @@ Import into your library?</translation>
     </message>
     <message>
       <source>Balance</source>
+      <extracomment>Left/right audio channel balance. Not bank balance or physical equilibrium.</extracomment>
       <translation>Balance</translation>
     </message>
     <message>
@@ -212,6 +213,7 @@ Import into your library?</translation>
     </message>
     <message>
       <source>Bands</source>
+      <extracomment>Frequency bands in an audio equalizer. Not music groups, belts or radio stations.</extracomment>
       <translation>Bands</translation>
     </message>
     <message>
@@ -432,6 +434,7 @@ Import into your library?</translation>
     </message>
     <message>
       <source>Equalizer</source>
+      <extracomment>Audio frequency-response processor, not social equality.</extracomment>
       <translation>Equalizer</translation>
     </message>
     <message>
@@ -560,6 +563,7 @@ Import into your library?</translation>
     </message>
     <message>
       <source>Flat</source>
+      <extracomment>Preset with zero equalizer gain at every frequency. Not an apartment; does not imply muted audio.</extracomment>
       <translation>Flat</translation>
     </message>
     <message>
@@ -576,6 +580,7 @@ Import into your library?</translation>
     </message>
     <message>
       <source>Gain</source>
+      <extracomment>Audio signal level adjustment in dB, positive or negative. Not financial profit.</extracomment>
       <translation>Gain</translation>
     </message>
     <message>
@@ -672,6 +677,7 @@ Import into your library?</translation>
     </message>
     <message>
       <source>Listening preset</source>
+      <extracomment>Saved equalizer settings for playback. Not a listening device.</extracomment>
       <translation>Listening preset</translation>
     </message>
     <message>
@@ -684,6 +690,7 @@ Import into your library?</translation>
     </message>
     <message>
       <source>Lock EQ</source>
+      <extracomment>Prevent accidental editing of EQ controls; not encryption or a security lock.</extracomment>
       <translation>Lock EQ</translation>
     </message>
     <message>
@@ -780,6 +787,7 @@ Import into your library?</translation>
     </message>
     <message>
       <source>Natural mic EQ</source>
+      <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>Natural mic EQ</translation>
     </message>
     <message>
@@ -904,6 +912,7 @@ Import into your library?</translation>
     </message>
     <message>
       <source>Post gain</source>
+      <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
       <translation>Post gain</translation>
     </message>
     <message>
@@ -964,6 +973,7 @@ Import into your library?</translation>
     </message>
     <message>
       <source>Quit app</source>
+      <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Quit app</translation>
     </message>
     <message>
@@ -996,6 +1006,7 @@ Import into your library?</translation>
     </message>
     <message>
       <source>Reset to flat</source>
+      <extracomment>Restore zero gain in all EQ bands. Does not mute playback.</extracomment>
       <translation>Reset to flat</translation>
     </message>
     <message>
@@ -1056,6 +1067,7 @@ Import into your library?</translation>
     </message>
     <message>
       <source>Selected band</source>
+      <extracomment>Currently selected frequency band in the equalizer.</extracomment>
       <translation>Selected band</translation>
     </message>
     <message>
@@ -1216,6 +1228,7 @@ Import into your library?</translation>
     </message>
     <message>
       <source>Undo</source>
+      <extracomment>Reverse the previous editable setting change.</extracomment>
       <translation>Undo</translation>
     </message>
     <message>
@@ -1248,6 +1261,7 @@ Import into your library?</translation>
     </message>
     <message>
       <source>Use system locale</source>
+      <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Use system locale</translation>
     </message>
     <message>

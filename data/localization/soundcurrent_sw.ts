@@ -194,7 +194,8 @@ Import into your library?</source>
     </message>
     <message>
       <source>Balance</source>
-      <translation>Usawaziko</translation>
+      <extracomment>Left/right audio channel balance. Not bank balance or physical equilibrium.</extracomment>
+      <translation>Uwiano wa sauti</translation>
     </message>
     <message>
       <source>Balance position</source>
@@ -210,7 +211,8 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bands</source>
-      <translation>Mikanda</translation>
+      <extracomment>Frequency bands in an audio equalizer. Not music groups, belts or radio stations.</extracomment>
+      <translation>Bendi za masafa</translation>
     </message>
     <message>
       <source>Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.</source>
@@ -430,6 +432,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Equalizer</source>
+      <extracomment>Audio frequency-response processor, not social equality.</extracomment>
       <translation>Kisawazisha</translation>
     </message>
     <message>
@@ -558,6 +561,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Flat</source>
+      <extracomment>Preset with zero equalizer gain at every frequency. Not an apartment; does not imply muted audio.</extracomment>
       <translation>Tambarare</translation>
     </message>
     <message>
@@ -574,7 +578,8 @@ Import into your library?</source>
     </message>
     <message>
       <source>Gain</source>
-      <translation>Faida</translation>
+      <extracomment>Audio signal level adjustment in dB, positive or negative. Not financial profit.</extracomment>
+      <translation>Ukuzaji wa sauti</translation>
     </message>
     <message>
       <source>Gain dB</source>
@@ -670,6 +675,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Listening preset</source>
+      <extracomment>Saved equalizer settings for playback. Not a listening device.</extracomment>
       <translation>Mpangilio wa kusikiliza</translation>
     </message>
     <message>
@@ -682,6 +688,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Lock EQ</source>
+      <extracomment>Prevent accidental editing of EQ controls; not encryption or a security lock.</extracomment>
       <translation>Funga EQ</translation>
     </message>
     <message>
@@ -778,6 +785,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Natural mic EQ</source>
+      <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>EQ ya asili ya maikrofoni</translation>
     </message>
     <message>
@@ -902,7 +910,8 @@ Import into your library?</source>
     </message>
     <message>
       <source>Post gain</source>
-      <translation>Faida ya sauti ya mwisho</translation>
+      <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
+      <translation>Ukuzaji wa sauti baada ya uchakataji</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
@@ -962,6 +971,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Quit app</source>
+      <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Funga programu</translation>
     </message>
     <message>
@@ -994,6 +1004,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Reset to flat</source>
+      <extracomment>Restore zero gain in all EQ bands. Does not mute playback.</extracomment>
       <translation>Rejesha mwitikio tambarare</translation>
     </message>
     <message>
@@ -1054,7 +1065,8 @@ Import into your library?</source>
     </message>
     <message>
       <source>Selected band</source>
-      <translation>Mkanda uliochaguliwa</translation>
+      <extracomment>Currently selected frequency band in the equalizer.</extracomment>
+      <translation>Bendi ya masafa iliyochaguliwa</translation>
     </message>
     <message>
       <source>Selected band filter Q</source>
@@ -1214,6 +1226,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Undo</source>
+      <extracomment>Reverse the previous editable setting change.</extracomment>
       <translation>Tendua</translation>
     </message>
     <message>
@@ -1246,6 +1259,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Use system locale</source>
+      <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Tumia eneo la mfumo</translation>
     </message>
     <message>

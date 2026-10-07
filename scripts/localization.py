@@ -37,6 +37,7 @@ def read(path):
     return result
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def update():
+    contexts=json.loads((DATA/'translation-context.json').read_text(encoding='utf-8'))
     strings=sources();seeds=json.loads((DATA/'seed-translations.json').read_text(encoding="utf-8"));meta=[]
     tool=shutil.which('lrelease6')
     if not tool and Path('/usr/lib/qt6/bin/lrelease').exists():tool='/usr/lib/qt6/bin/lrelease'
@@ -52,6 +53,7 @@ def update():
         ctx=ET.SubElement(root,'context');ET.SubElement(ctx,'name').text='SoundCurrent'
         for source in strings:
             msg=ET.SubElement(ctx,'message');ET.SubElement(msg,'source').text=source
+            if source in contexts:ET.SubElement(msg,'extracomment').text=contexts[source]
             t=ET.SubElement(msg,'translation');t.text=old.get(source,'')
             if not t.text:t.set('type','unfinished')
         ET.indent(root);ET.ElementTree(root).write(path,encoding='utf-8',xml_declaration=True)
@@ -77,6 +79,8 @@ def check():
             if t.get('type')=='unfinished':continue
             translated=t.text or '';assert translated.strip(),(ts,source)
             assert sorted(PLACEHOLDER.findall(source))==sorted(PLACEHOLDER.findall(translated)),(ts,source,'placeholder mismatch')
+            assert source.count('&&')==translated.count('&&'),(ts,source,'literal ampersand mismatch')
+            assert not any(c in translated for c in '\u202a\u202b\u202c\u202d\u202e\u2066\u2067\u2068\u2069'),(ts,source,'invisible direction control; use runtime layout')
             done+=1
         assert done==item['translated'] and item['total']==len(strings)
     print(f'PASS: {len(meta)} catalogs, {len(strings)} source messages; placeholders, coverage and compiled catalog hashes')
