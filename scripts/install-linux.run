@@ -42,9 +42,18 @@ confirm() {
     fi
 }
 main() {
-    local mode=${1:-install}
+    local mode=install package_file=''
+    while (($#)); do
+        case "$1" in
+            install|--dry-run|--download-only|--help) mode=$1; shift ;;
+            --package-file)
+                [[ $# -ge 2 && -f $2 ]] || { echo 'Provide an existing package after --package-file.' >&2; return 2; }
+                package_file=$(realpath -- "$2"); shift 2 ;;
+            *) echo 'Unknown option.' >&2; return 2 ;;
+        esac
+    done
     case "$mode" in install|--dry-run|--download-only) ;; --help)
-        echo "Usage: bash $0 [--dry-run|--download-only]"; return;; *) echo 'Unknown option.' >&2; return 2;; esac
+        echo "Usage: bash $0 [--dry-run|--download-only] [--package-file PATH]"; return;; *) echo 'Unknown option.' >&2; return 2;; esac
     [[ $(uname -m) == x86_64 ]] || { echo 'These reviewed packages require an x86-64 computer.' >&2; return 1; }
     [[ -r /etc/os-release ]] || { echo 'Cannot identify this distribution.' >&2; return 1; }
     # shellcheck source=/dev/null
@@ -77,7 +86,8 @@ main() {
     trap 'rm -rf -- "$install_work"' EXIT
     local work=$install_work
     local package="$work/$filename"
-    if command -v curl >/dev/null; then curl --fail --location --proto '=https' --proto-redir '=https' --tlsv1.2 --retry 2 --output "$package" "$url"
+    if [[ -n $package_file ]]; then cp -- "$package_file" "$package"
+    elif command -v curl >/dev/null; then curl --fail --location --proto '=https' --proto-redir '=https' --tlsv1.2 --retry 2 --output "$package" "$url"
     elif command -v wget >/dev/null; then wget --https-only -O "$package" "$url"
     else echo 'Install curl or wget first.' >&2; return 1; fi
     printf '%s  %s\n' "$expected" "$package" | sha256sum --check --status || { message 'Package verification failed. Nothing was installed.'; return 1; }
@@ -98,9 +108,9 @@ main() {
             message "This package needs glibc $required or newer; this system has $actual. Nothing was installed."; return 1
         fi
     fi
-    local -a install_command=("$manager" install --yes "$package")
+    local -a install_command=("$manager" install -y "$package")
     if ((EUID == 0)); then "${install_command[@]}"
-    elif [[ ! -t 0 ]] && command -v pkexec >/dev/null; then pkexec "$(command -v "$manager")" install --yes "$package"
+    elif [[ ! -t 0 ]] && command -v pkexec >/dev/null; then pkexec "$(command -v "$manager")" install -y "$package"
     else sudo "${install_command[@]}"; fi
     message "Installed $product $version. Open it from the applications menu. Use Quit and reopen after an update. No uninstall or reboot is needed for the app update."
 }

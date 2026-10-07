@@ -14,10 +14,10 @@ if command -v apt-get >/dev/null; then
     build_dir=build
 else
     package=$(find "$PWD/dist" -name '*.rpm' | head -1)
-    install_package(){ dnf install --yes "$package"; }
-    update_package(){ dnf reinstall --yes "$package"; }
-    remove_package(){ dnf remove --yes "$product"; }
-    build_dir=$(dirname "$(find build/rpm/BUILD -name CTestTestfile.cmake | head -1)")
+    install_package(){ dnf install -y "$package"; }
+    update_package(){ dnf reinstall -y "$package"; }
+    remove_package(){ dnf remove -y "$product"; }
+    build_dir='' # RPM %check runs CTest before rpmbuild retires its build tree.
 fi
 run_ui(){
     if command -v xvfb-run >/dev/null; then xvfb-run -a -s '-screen 0 1280x800x24' "/usr/bin/$product" --ui-self-test
@@ -26,7 +26,8 @@ run_ui(){
 [[ -f $package ]]
 cp "$package" "$package.sha256" "$out/"
 (cd "$(dirname "$package")" && sha256sum --check "$(basename "$package").sha256")
-ctest --test-dir "$build_dir" --output-on-failure | tee "$out/ctest.log"
+if [[ -n $build_dir ]]; then ctest --test-dir "$build_dir" --output-on-failure --no-tests=error | tee "$out/ctest.log"
+else printf 'CTest executed by RPM %%check; see build.log.\n' > "$out/ctest.log"; fi
 install_package > "$out/install.log" 2>&1
 [[ -x /usr/bin/$product && -f /usr/share/applications/$desktop ]]
 grep -q "Exec=$product" "/usr/share/applications/$desktop"

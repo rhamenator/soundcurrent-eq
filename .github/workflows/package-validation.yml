@@ -30,7 +30,7 @@ jobs:
             fi
             cp -a /input /work
             cd /work
-            if command -v apt-get >/dev/null; then ./scripts/build-deb.sh; else ./scripts/build-rpm.sh; fi
+            if command -v apt-get >/dev/null; then ./scripts/build-deb.sh 2>&1 | tee /output/build.log; else ./scripts/build-rpm.sh 2>&1 | tee /output/build.log; fi
             bash tests/linux_package_lifecycle.sh /output
           '
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
