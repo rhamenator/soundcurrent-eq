@@ -78,6 +78,7 @@
 #include <algorithm>
 #include <array>
 #include <cmath>
+#include <memory>
 #include <complex>
 #include <cerrno>
 #include <cstdint>
@@ -4013,9 +4014,9 @@ int main(int argc, char **argv) {
         if (QSettings().value("outputGainDb").toDouble() != -60.0)
             qFatal("Low post gain was not saved immediately");
         {
-            MainWindow reopened(false);
+            auto reopened = std::make_unique<MainWindow>(false);
             QSlider *restored = nullptr;
-            for (auto *slider : reopened.findChildren<QSlider *>())
+            for (auto *slider : reopened->findChildren<QSlider *>())
                 if (slider->accessibleName() == "Post gain after equalization") restored = slider;
             if (!restored || restored->value() != -120)
                 qFatal("Low post gain did not survive reopening");
