@@ -475,3 +475,7 @@ The complete library also supports equipment kind and family. Install newer
 packages over the existing version; settings and custom profiles remain. Settings
 includes update-available and Quit/reopen reminders. See
 [application updates](docs/application-updates.md).
+
+## Localization development
+
+Interface language and regional number/date formatting are independent settings. The development branch embeds 32 partial draft translations plus English, with explicit coverage and English fallback. These are not finished or native-reviewed language packs. See [localization and contributor instructions](docs/localization.md). Published 1.0.0 installers predate this work.

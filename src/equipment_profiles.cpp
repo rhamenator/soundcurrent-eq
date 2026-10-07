@@ -1,3 +1,4 @@
+#include "localization.h"
 // SPDX-License-Identifier: GPL-3.0-only
 #include "accelerating_spinbox.h"
 #include "equipment_profiles.h"
@@ -79,7 +80,7 @@ class Plot : public QWidget {
     }
     Plot() {
         setMinimumHeight(180);
-        setAccessibleName("Published response and editable correction curves");
+        setAccessibleName(SC_TR("Published response and editable correction curves"));
     }
     void mousePressEvent(QMouseEvent *e) override {
         if (!onDrag || e->button() != Qt::LeftButton)
@@ -181,24 +182,24 @@ class Editor : public QDialog {
             QObject::connect(e, &QLineEdit::textEdited, this, [this] { dirty = true; });
             return e;
         };
-        brand = field("Brand", draft.brand);
-        family = field("Family", draft.family);
-        equipmentType = field("Equipment subtype", draft.equipmentType);
-        powerType = field("Active / passive / unknown", draft.powerType);
-        model = field("Model", draft.model);
-        source = field("Source", draft.source);
-        conditions = field("Conditions", draft.conditions);
+        brand = field(SC_TR("Brand"), draft.brand);
+        family = field(SC_TR("Family"), draft.family);
+        equipmentType = field(SC_TR("Equipment subtype"), draft.equipmentType);
+        powerType = field(SC_TR("Active / passive / unknown"), draft.powerType);
+        model = field(SC_TR("Model"), draft.model);
+        source = field(SC_TR("Source"), draft.source);
+        conditions = field(SC_TR("Conditions"), draft.conditions);
         layout->addLayout(form);
         auto *legend = new QLabel(
-            "Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points "
-            "or edit the table. Saving preserves the reference and creates a custom copy.");
+            SC_TR("Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points "
+            "or edit the table. Saving preserves the reference and creates a custom copy."));
         legend->setWordWrap(true);
         layout->addWidget(legend);
         plot = new Plot;
         plot->profile = draft;
         layout->addWidget(plot);
         table = new QTableWidget(draft.filters.size(), 4);
-        table->setHorizontalHeaderLabels({"Type", "Frequency Hz", "Gain dB", "Q"});
+        table->setHorizontalHeaderLabels({SC_TR("Type"), SC_TR("Frequency Hz"), SC_TR("Gain dB"), "Q"});
         table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         layout->addWidget(table);
         for (int i = 0; i < draft.filters.size(); ++i)
@@ -210,8 +211,8 @@ class Editor : public QDialog {
             qobject_cast<QDoubleSpinBox *>(table->cellWidget(r, 2))->setValue(g);
         };
         auto *row = new QHBoxLayout;
-        auto *add = new QPushButton("Add filter");
-        auto *remove = new QPushButton("Remove selected filter");
+        auto *add = new QPushButton(SC_TR("Add filter"));
+        auto *remove = new QPushButton(SC_TR("Remove selected filter"));
         row->addWidget(add);
         row->addWidget(remove);
         layout->addLayout(row);
@@ -290,8 +291,8 @@ class Editor : public QDialog {
     void reject() override {
         if (dirty) {
             const auto answer =
-                ask(this, "Save modified profile?",
-                    "This profile has changed. Save a custom copy before leaving?",
+                ask(this, SC_TR("Save modified profile?"),
+                    SC_TR("This profile has changed. Save a custom copy before leaving?"),
                     QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel, QMessageBox::Save);
             if (answer == QMessageBox::Cancel)
                 return;
@@ -479,7 +480,7 @@ void saveNewProfile(QWidget *parent, Profile p) {
             saveLibrary(profiles);
             return true;
         } catch (const std::exception &e) {
-            QMessageBox::warning(parent, "Save profile", e.what());
+            QMessageBox::warning(parent, SC_TR("Save profile"), e.what());
             return false;
         }
     });
@@ -492,34 +493,34 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     dialog.resize(800, 650);
     auto *layout = new QVBoxLayout(&dialog);
     auto *search = new QLineEdit;
-    search->setPlaceholderText("Search brand, family, model or measurement conditions");
+    search->setPlaceholderText(SC_TR("Search brand, family, model or measurement conditions"));
     layout->addWidget(search);
     auto *list = new QComboBox;
     list->setMaxVisibleItems(15);
-    list->setAccessibleName("Equipment profiles by brand family and model");
+    list->setAccessibleName(SC_TR("Equipment profiles by brand family and model"));
     layout->addWidget(list);
     auto *details = new QLabel;
     details->setWordWrap(true);
     details->setTextFormat(Qt::PlainText);
     layout->addWidget(details);
     layout->addWidget(new QLabel(
-        "Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB."));
+        SC_TR("Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.")));
     auto *plot = new Plot;
     layout->addWidget(plot);
     QVector<Profile> custom = loadLibrary(), profiles = bundledProfiles();
     profiles += custom;
     auto *taxonomy = new QHBoxLayout;
     auto *kindFilter = new QComboBox;
-    kindFilter->addItems({"All equipment", "speaker", "microphone", "amplifier"});
-    kindFilter->setAccessibleName("Equipment type");
+    kindFilter->addItems({SC_TR("All equipment"), "speaker", "microphone", "amplifier"});
+    kindFilter->setAccessibleName(SC_TR("Equipment type"));
     auto *brandFilter = new QComboBox;
-    brandFilter->setAccessibleName("Equipment brand");
+    brandFilter->setAccessibleName(SC_TR("Equipment brand"));
     auto *familyFilter = new QComboBox;
-    familyFilter->setAccessibleName("Equipment family");
+    familyFilter->setAccessibleName(SC_TR("Equipment family"));
     taxonomy->addWidget(kindFilter);
     taxonomy->addWidget(brandFilter);
     taxonomy->addWidget(familyFilter);
-    auto *subtypeFilter=new QComboBox;subtypeFilter->setAccessibleName("Equipment subtype");taxonomy->addWidget(subtypeFilter);
+    auto *subtypeFilter=new QComboBox;subtypeFilter->setAccessibleName(SC_TR("Equipment subtype"));taxonomy->addWidget(subtypeFilter);
     layout->insertLayout(0, taxonomy);
     auto taxonomyRefresh = [&] {
         const QSignalBlocker b(brandFilter), f(familyFilter), st(subtypeFilter);
@@ -534,15 +535,15 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
                     !families.contains(p.family))
                     families.append(p.family);
             }
-        const auto subtype=subtypeFilter->currentText();subtypes.sort(Qt::CaseInsensitive);subtypeFilter->clear();subtypeFilter->addItem("All subtypes");subtypeFilter->addItems(subtypes);subtypeFilter->setCurrentIndex(std::max(0,subtypeFilter->findText(subtype)));
+        const auto subtype=subtypeFilter->currentText();subtypes.sort(Qt::CaseInsensitive);subtypeFilter->clear();subtypeFilter->addItem(SC_TR("All subtypes"));subtypeFilter->addItems(subtypes);subtypeFilter->setCurrentIndex(std::max(0,subtypeFilter->findText(subtype)));
         brands.sort(Qt::CaseInsensitive);
         families.sort(Qt::CaseInsensitive);
         brandFilter->clear();
-        brandFilter->addItem("All brands");
+        brandFilter->addItem(SC_TR("All brands"));
         brandFilter->addItems(brands);
         brandFilter->setCurrentIndex(std::max(0, brandFilter->findText(brand)));
         familyFilter->clear();
-        familyFilter->addItem("All families");
+        familyFilter->addItem(SC_TR("All families"));
         familyFilter->addItems(families);
         familyFilter->setCurrentIndex(std::max(0, familyFilter->findText(family)));
     };
@@ -612,7 +613,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
                 }
             return true;
         } catch (const std::exception &e) {
-            QMessageBox::warning(&dialog, "Profile", QString::fromUtf8(e.what()));
+            QMessageBox::warning(&dialog, SC_TR("Profile"), QString::fromUtf8(e.what()));
             return false;
         }
     };
@@ -630,8 +631,8 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     auto *exportButton = button("Export JSON");
     auto *use = button("Apply profile");
     QObject::connect(import, &QPushButton::clicked, &dialog, [&] {
-        const auto path = QFileDialog::getOpenFileName(&dialog, "Import equipment profile", {},
-                                                       "Equipment profiles (*.json)");
+        const auto path = QFileDialog::getOpenFileName(&dialog, SC_TR("Import equipment profile"), {},
+                                                       SC_TR("Equipment profiles (*.json)"));
         if (path.isEmpty())
             return;
         try {
@@ -639,17 +640,17 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             require(f.open(QIODevice::ReadOnly) && f.size() <= 1024 * 1024,
                     "Cannot read profile or file exceeds 1 MiB.");
             auto p = parse(f.readAll());
-            if (ask(&dialog, "Import profile?",
-                    p.brand + " / " + p.model + "\n" + p.conditions + "\nImport into your library?",
+            if (ask(&dialog, SC_TR("Import profile?"),
+                    p.brand + " / " + p.model + "\n" + p.conditions + SC_TR("\nImport into your library?"),
                     QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes)
                 save(p);
         } catch (const std::exception &e) {
-            QMessageBox::warning(&dialog, "Import", e.what());
+            QMessageBox::warning(&dialog, SC_TR("Import"), e.what());
         }
     });
     QObject::connect(text, &QPushButton::clicked, &dialog, [&] {
-        const auto path = QFileDialog::getOpenFileName(&dialog, "Import relative measured response", {},
-                                                       "Response data (*.txt *.csv *.frd *.cal)");
+        const auto path = QFileDialog::getOpenFileName(&dialog, SC_TR("Import relative measured response"), {},
+                                                       SC_TR("Response data (*.txt *.csv *.frd *.cal)"));
         if (path.isEmpty())
             return;
         try {
@@ -688,8 +689,8 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             p.filters = fitResponse(p.response);
             QDialog kindDialog(&dialog);
             auto *kl = new QVBoxLayout(&kindDialog);
-            kl->addWidget(new QLabel("This imports measured RESPONSE, not already-inverted EQ gains. Confirm "
-                                     "equipment type. Absolute SPL needs normalization before import."));
+            kl->addWidget(new QLabel(SC_TR("This imports measured RESPONSE, not already-inverted EQ gains. Confirm "
+                                     "equipment type. Absolute SPL needs normalization before import.")));
             auto *k = new QComboBox;
             k->addItems({"microphone", "speaker", "amplifier"});
             kl->addWidget(k);
@@ -704,7 +705,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             editor.dirty = true;
             editor.exec();
         } catch (const std::exception &e) {
-            QMessageBox::warning(&dialog, "Response import", e.what());
+            QMessageBox::warning(&dialog, SC_TR("Response import"), e.what());
         }
     });
     QObject::connect(create, &QPushButton::clicked, &dialog, [&] {
@@ -742,27 +743,27 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         if (list->currentIndex() < 0)
             return;
         const auto path =
-            QFileDialog::getSaveFileName(&dialog, "Export profile", {}, "Equipment profile (*.json)");
+            QFileDialog::getSaveFileName(&dialog, SC_TR("Export profile"), {}, SC_TR("Equipment profile (*.json)"));
         if (path.isEmpty())
             return;
         QSaveFile f(path);
         const auto bytes = QJsonDocument(serialize(profiles[list->currentData().toInt()])).toJson();
         if (!f.open(QIODevice::WriteOnly) || f.write(bytes) != bytes.size() || !f.commit())
-            QMessageBox::warning(&dialog, "Export", "Cannot save profile.");
+            QMessageBox::warning(&dialog, SC_TR("Export"), SC_TR("Cannot save profile."));
     });
     QObject::connect(use, &QPushButton::clicked, &dialog, [&] {
         if (list->currentIndex() < 0)
             return;
         const auto p = profiles[list->currentData().toInt()];
-        if (ask(&dialog, "Apply correction?",
-                p.brand + " / " + p.model + "\n" + p.conditions + "\nApply this correction to the " + p.kind +
-                    " route?",
+        if (ask(&dialog, SC_TR("Apply correction?"),
+                p.brand + " / " + p.model + "\n" + p.conditions + SC_TR("\nApply this correction to the ") + p.kind +
+                    SC_TR(" route?"),
                 QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
             apply(p);
         }
     });
     auto *sources = new QLabel(
-        "Published measurement sources: <a href=\"https://www.spinorama.org/\">Speaker measurements / EQ</a> "
+        SC_TR("Published measurement sources: <a href=\"https://www.spinorama.org/\">Speaker measurements / EQ</a> "
         "· <a href=\"https://support.daytonaudio.com/microphonecalibrationtool\">Dayton serial "
         "calibration</a> · <a href=\"https://www.minidsp.com/products/acoustic-measurement/umik-1\">miniDSP "
         "serial calibration</a> · <a href=\"https://www.neumann.com/de-de/downloads/\">Neumann microphone "
@@ -770,7 +771,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         "graph</a> · <a "
         "href=\"https://www.soundstagenetwork.com/"
         "index.php?Itemid=154&amp;id=97&amp;option=com_content&amp;view=category\">Amplifier "
-        "measurements</a>");
+        "measurements</a>"));
     sources->setWordWrap(true);
     sources->setOpenExternalLinks(true);
     layout->addWidget(sources);

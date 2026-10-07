@@ -1,0 +1,332 @@
+[
+  {
+    "tag": "en",
+    "name": "English",
+    "translated": 318,
+    "total": 318,
+    "status": "source",
+    "nativeReviewed": false,
+    "tsSha256": "c07bf77ddacf5c451fc3b1996cb8aa8e53ca2eb5e8fa22b7c56fa15b2bf85395",
+    "qmSha256": "40b376bb56102c2dd4fd118d99b3abe07ad7b566b7f98d0ba870e222938860cc"
+  },
+  {
+    "tag": "de",
+    "name": "Deutsch",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "2a0bd9776004fecb91b5c285c503d60d019164b84ac050f80efbd42052ddeae7",
+    "qmSha256": "47ea7e2ddb33264fd621822ce7d5a2ca5aaef2b3e33da589c7cbde69e779ceff"
+  },
+  {
+    "tag": "fr",
+    "name": "Français",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "77fd0580bdbb70a14d34fe1bb3656f83e49c8e98364828cea74ae99dc0a3e6a8",
+    "qmSha256": "9c935d7aeac4df843d7bbecf9d8b845adfeeff3aa70ec132de5223d12b6209eb"
+  },
+  {
+    "tag": "es",
+    "name": "Español",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "70143fd1bc0195bbf59775a8db15962d951af87a98ac794d3ef56a5e34e9eb3d",
+    "qmSha256": "d0c98d3a22e8035444cbaa2e26b90260107fc87d1127c47263739f08f66e8f07"
+  },
+  {
+    "tag": "it",
+    "name": "Italiano",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "e4cf450e9724ecea8e304a079599942b2de191df78f955e14afbe9b80dd58e3b",
+    "qmSha256": "f8fa176a8d52c8f4ff16fbc53c930f50fa36e56332b2eb3504b69536c324f96c"
+  },
+  {
+    "tag": "pt-PT",
+    "name": "Português (Portugal)",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "5d4e5eeba8743eba235738fffac71d429de30ceef1a37c3842b92343ff8998d0",
+    "qmSha256": "f0ca6ee03cf7f74d44194d9e5599172058da39e37f0ca54d1614c9fb5b97b34d"
+  },
+  {
+    "tag": "pt-BR",
+    "name": "Português (Brasil)",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "632c203d5fab4d2a0041d8f71ad8537ddbe3e82c3b683b73bfd90fbc917f054c",
+    "qmSha256": "3db305be31d91e3921c27a3adf71b9ec509f411de749d69a5ec890ca3a83f7ba"
+  },
+  {
+    "tag": "nl",
+    "name": "Nederlands",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "0d9f28d7507dae9aab2398c9aafd597610d55f860ffcba5ae6c432271c6f20ff",
+    "qmSha256": "619414303547a2fe2fa63b3ddaf2fd3526d7975a29b079649cdf55de1b38c964"
+  },
+  {
+    "tag": "pl",
+    "name": "Polski",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "944be793ef48487bd32b02c9260b9d8889b648dba725326df1916866f03a2f5e",
+    "qmSha256": "c8b6d872226c14b08cf2f4a1ca8909f18e3f0884ad147ea2e1779e147ce2f9a7"
+  },
+  {
+    "tag": "cs",
+    "name": "Čeština",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "f43f29d4cded9cb8660cff7b72d7427acae5226e9342159dfc01e83c55e28237",
+    "qmSha256": "b8c45b5b5309a0072b9916a141b1172a07c9b29ba369b9a2248fba048d313b33"
+  },
+  {
+    "tag": "sk",
+    "name": "Slovenčina",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "22cb13bcd1ca932f7696c237a7ab77f46c919a0953fb981d8ed5c7bde55a99e4",
+    "qmSha256": "4c9063ec70362e9aaa7923cbc9b4ec649236bc52aa5a7d3bf353a5a8506d0eeb"
+  },
+  {
+    "tag": "uk",
+    "name": "Українська",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "61fb6fc303af2ec6d1f1d411223e15583d108dcb65d9f705020d08b5b14a51d1",
+    "qmSha256": "f5de85454ebc86add2b47807bf015e41f3bb6cfd63075a90ffb453356b97ec74"
+  },
+  {
+    "tag": "ru",
+    "name": "Русский",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "a76b3ab6c12da38f44170ffa06c08b9535496aff91c78d3b2a56e1443bb60834",
+    "qmSha256": "c32ac4f6ad306f956d59e204d91ed430eb5d8f283b1a91d01711d4adda54f476"
+  },
+  {
+    "tag": "el",
+    "name": "Ελληνικά",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "de7cdbecfe52d9a1dbf5e8d073454204a4ef172aca3f03ea4d9aa581274299ca",
+    "qmSha256": "f8338760c1b24f0380bacfa1b801ebf41f0b23e8d9a5b2bc02114a5b434113f0"
+  },
+  {
+    "tag": "tr",
+    "name": "Türkçe",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "ee12adee70d3629a5c5a18dba2ffeb854b712eb2913ec084a5b9ae42b22e8ce1",
+    "qmSha256": "72b99301fa40ea3ddd59242b1069352943e22d2a8862be92e3f0f32120be3a4a"
+  },
+  {
+    "tag": "sv",
+    "name": "Svenska",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "8e6d7a202841e6ed31746a45219816f1c8e83187f3c22277b46b2c2cd99fc989",
+    "qmSha256": "71bbe0cd1def32009d36b1c0bcbf1faf3575b58ecba5b2704a9013960ba56968"
+  },
+  {
+    "tag": "da",
+    "name": "Dansk",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "e0527de8eac818b5a331783de40d0c9fc9bedcee4f3184a0f997fd8c9163fa8c",
+    "qmSha256": "edb3e711ccd2519ae400718767967be93d1d212bb844be3020a8ffb996a3bca3"
+  },
+  {
+    "tag": "nb",
+    "name": "Norsk bokmål",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "6fb092465640c39fe1a69190b464a0b82fe689bc38083a384d3c87c3d894e6f5",
+    "qmSha256": "2e947f912c17af9b172cf62f83e4edf1122ce545099f4f4d2a0414cbf1b5baf3"
+  },
+  {
+    "tag": "fi",
+    "name": "Suomi",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "3e026abd16aadf739c1a575bc881216a9a75aae8306aa01854af0bae331bf760",
+    "qmSha256": "b04604280a6649ba1c7ecad89a01de71d995916e14ec40fe22e1f7bfea3382af"
+  },
+  {
+    "tag": "ro",
+    "name": "Română",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "660922e7ba6df3689d88be385719b7242387b64e0c7c082e0b8745e2a941bda6",
+    "qmSha256": "8cfd0f403462451f65548ca4424d902fe5af82354d078d919b20cfe298e3c9a2"
+  },
+  {
+    "tag": "hu",
+    "name": "Magyar",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "a0d97d449840fd360364d63b191d5d0bf27e128e69cd75cfe085fc635c0c2274",
+    "qmSha256": "0114186d78ccf2a286a27c3a89c3abebdf16995b2d6bc3860801e25f22cd511e"
+  },
+  {
+    "tag": "ar",
+    "name": "العربية",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "8f4c9cdea32475696d961b629750ec2d19029bbfaf42aae2505cd96e0c2b29ed",
+    "qmSha256": "fbc595bdac6a278a8a452e57fa9fe250a1ec1282e027717dc7ddd745e5731a94"
+  },
+  {
+    "tag": "he",
+    "name": "עברית",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "bb219f03c94ca79a15b300577d4fe14a7dde4a8dc658d1313412def523684523",
+    "qmSha256": "877f01aa00dcf9f6ca1c5169ff9afe8bb92b57dac6aba525c2b0b6bf66010e4a"
+  },
+  {
+    "tag": "fa",
+    "name": "فارسی",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "f87facad13451ce19f505c89584ab939feea83f5a59baf49b2addf8fbfa3e17d",
+    "qmSha256": "9b2b696b1027ec6a0813216f503afadd1b4905e5276e78f9a47e6043de3c327b"
+  },
+  {
+    "tag": "zh-Hans",
+    "name": "简体中文",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "8c36cce8a1a5b642fff1f1ac12de3b85628bc8fef75b621b05e24ff41650d363",
+    "qmSha256": "58ba5bab6f92eb1dd00c1282e5ccdc800cbe0b839e39916bdafea40e5eccc1e7"
+  },
+  {
+    "tag": "zh-Hant",
+    "name": "繁體中文",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "8f6dcf446fa59c2a3b68f654cb13cbb40db818d11bed5a3069d508235de91ad1",
+    "qmSha256": "712065a712866ed7750481e45d75cf70b7b8cc8ac0c21e9838812d4242ea2f5b"
+  },
+  {
+    "tag": "ja",
+    "name": "日本語",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "86fed1e424fa7d153a958286a67f77b9d074c356de8f23fac329b52ddba41f24",
+    "qmSha256": "abf1f86b8c67ed2f5639221e55583e352e46162e554931900b991808402502eb"
+  },
+  {
+    "tag": "ko",
+    "name": "한국어",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "1c9593b7e729e7c915e9aefdc5308e02f754ef44d4f93aabe323cb8a51c4044d",
+    "qmSha256": "3186d8fc14685bc801f57acb95b6264573f9b7cdeb667d79b89db341495f9341"
+  },
+  {
+    "tag": "hi",
+    "name": "हिन्दी",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "1f8a2362e3316933154a199cc429be4cb7acd86caf5e3fededd779497c7b1641",
+    "qmSha256": "b4169ed888e495f28c12a63c0eba8939a532b1c54c1ad7cfe1cbcd7e21bf16cb"
+  },
+  {
+    "tag": "id",
+    "name": "Bahasa Indonesia",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "649624d375b7808afa791f026678c9c61a7102dc468333ce09c39cdeb27d36ab",
+    "qmSha256": "0ac0d696ee94fe86177a85198cfca2cd3b2029905c134a716dfb527ad61bda9e"
+  },
+  {
+    "tag": "vi",
+    "name": "Tiếng Việt",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "d25090be02d8a7b5b546fb86f8eb9d6095575d99fc09cfdfe099442a21199265",
+    "qmSha256": "ca1941a3eb73e5eae5dd9e7e3e80ce0d1008fd14b6b3fed495daa7a6af1b834c"
+  },
+  {
+    "tag": "th",
+    "name": "ไทย",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "82770fbcc2747575e08408eb1c9aa7301e82d2284a7b482dbf3df1d790a870d8",
+    "qmSha256": "d371060c1f4c2a61cc2db6aa4c90d2700aa7b75efdd0e51ac37f548606d2846b"
+  },
+  {
+    "tag": "sw",
+    "name": "Kiswahili",
+    "translated": 30,
+    "total": 318,
+    "status": "draft",
+    "nativeReviewed": false,
+    "tsSha256": "019bf6daa8ab8fd330aaeb1fdcd293e129e4bae3ab288cb83a06f57c8e353554",
+    "qmSha256": "6297de94249e458dfdebe0f26cbe0dd61e3b01db5f404afd71234320af7a8398"
+  }
+]
