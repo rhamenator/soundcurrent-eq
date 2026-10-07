@@ -92,7 +92,7 @@ bool prepareEqProfile(std::span<const EqBand> bands, int sampleRate, double post
     PreparedEqProfile prepared;
     if (sampleRate < 8000 || sampleRate > 384000) return false;
     if (bands.size() > kMaxProcessingBands || !std::isfinite(postGainDb) ||
-        postGainDb < -12.0 || postGainDb > 12.0 ||
+        postGainDb < kMinPostGainDb || postGainDb > 12.0 ||
         balancePercent < -100 || balancePercent > 100) return false;
 
     std::array<FilterCoefficients, kMaxProcessingBands> coefficients{};

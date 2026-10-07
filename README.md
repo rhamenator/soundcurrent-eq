@@ -93,7 +93,7 @@ intervals use more CPU. The peak readout turns amber or red as the estimated
 output approaches clipping.
 Boosting bands can lower overall loudness because the app makes room for those
 boosts; **Post gain** lets you bring the level back up. Its slider runs from
--12 to +12 dB in 0.5 dB steps, starts at 0 dB, and remembers your adjustment.
+-60 to +12 dB in 0.5 dB steps, starts at 0 dB, and remembers your adjustment.
 The **Balance** slider moves toward L or R by reducing the opposite channel.
 Center preserves both channels at full level, and either end mutes the opposite
 channel. It also remembers your setting. The indicators are estimates, so listen
