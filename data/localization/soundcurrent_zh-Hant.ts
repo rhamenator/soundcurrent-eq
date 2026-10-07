@@ -1205,7 +1205,7 @@ Import into your library?</source>
       <translation type="unfinished" />
     </message>
     <message>
-      <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are drafts awaiting native-speaker review. Use Quit and reopen to apply changes.</source>
+      <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
       <translation type="unfinished" />
     </message>
     <message>

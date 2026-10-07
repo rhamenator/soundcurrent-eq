@@ -59,7 +59,7 @@ def update():
         ET.indent(root);ET.ElementTree(root).write(path,encoding='utf-8',xml_declaration=True)
         qm=path.with_suffix('.qm');subprocess.run([tool,'-silent','-nounfinished',str(path),'-qm',str(qm)],check=True)
         done=sum(bool(old.get(s)) for s in strings)
-        meta.append({'tag':tag,'name':row[0],'translated':done,'total':len(strings),'status':'source' if tag=='en' else 'draft','nativeReviewed':False,'tsSha256':digest(path),'qmSha256':digest(qm)})
+        meta.append({'tag':tag,'name':row[0],'translated':done,'total':len(strings),'status':'source' if tag=='en' else 'unverified','nativeReviewed':False,'tsSha256':digest(path),'qmSha256':digest(qm)})
     (DATA/'catalogs.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n', encoding='utf-8', newline='\n')
     r=ET.Element('RCC');q=ET.SubElement(r,'qresource',prefix='/i18n')
     ET.SubElement(q,'file',alias='catalogs.json').text='catalogs.json'

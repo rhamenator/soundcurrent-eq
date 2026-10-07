@@ -67,13 +67,18 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-24.04
     steps:
+      - uses: actions/checkout@9f698171ed81b15d1823a05fc7211befd50c8ae0
+        with:
+          persist-credentials: false
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           path: packages
           merge-multiple: true
+      - name: Assemble installer, source, guides and checksums
+        run: python3 scripts/assemble-release.py packages
       - name: Publish verified packages
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mapfile -d '' assets < <(find packages -type f \( -name '*.deb' -o -name '*.rpm' -o -name '*-setup.exe' -o -name '*.sha256' -o -name 'qtbase*.tar.xz' \) -print0)
-          gh release create "$GITHUB_REF_NAME" "${assets[@]}" --repo "$GITHUB_REPOSITORY" --title "SoundCurrent EQ $GITHUB_REF_NAME" --generate-notes
+          mapfile -d '' assets < <(find packages -type f -print0)
+          gh release create "$GITHUB_REF_NAME" "${assets[@]}" --repo "$GITHUB_REPOSITORY" --title "SoundCurrent EQ $GITHUB_REF_NAME" --notes-file packages/Release-notes.md

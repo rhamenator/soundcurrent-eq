@@ -1207,8 +1207,8 @@ Import into your library?</translation>
       <translation>This profile has changed. Save a custom copy before leaving?</translation>
     </message>
     <message>
-      <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are drafts awaiting native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are drafts awaiting native-speaker review. Use Quit and reopen to apply changes.</translation>
+      <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
+      <translation>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</translation>
     </message>
     <message>
       <source>Treble Detail</source>

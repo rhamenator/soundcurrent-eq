@@ -4,7 +4,7 @@ EQ and Studio share the same Qt translation/runtime interface. It is reusable by
 
 ## Current coverage
 
-English is the source language. **32 other catalogs are partial drafts, not complete or native-reviewed language packs.** Core controls have draft translations; detailed instructions/errors and unreviewed terms fall back to English. `data/localization/catalogs.json` records exact message counts and review status for each app. A catalog is never called complete just because it loads.
+English is the source language. **32 other catalogs are partial, unverifieds, not complete or native-reviewed language packs.** Core controls have unverified translations; detailed instructions/errors and unreviewed terms fall back to English. `data/localization/catalogs.json` records exact message counts and review status for each app. A catalog is never called complete just because it loads.
 
 Coverage is global: European languages, Arabic, Hebrew, Persian, simplified/traditional Chinese, Japanese, Korean, Hindi, Indonesian, Vietnamese, Thai and Swahili. Portuguese for Portugal and Brazil and the two Chinese scripts are separate catalogs. Regional fallback reuses a base-language catalog only where one is explicitly available; explicit script variants are not collapsed into another script. The prior 143-item Europe inventory is retained as **planned** work in `language-inventory.json`, including minority languages. The inventory is extensible and is not a claim of full global coverage.
 
@@ -36,7 +36,7 @@ Updating requires Qt Linguist `lrelease` (Qt 6 preferred). Compiled QM files are
 
 Developer-only test languages `qps-ploc` and `qps-rtl` expand text and exercise RTL layout. `--localization-ui-test --language TAG` constructs the real views without starting audio/network processing. `--ui-self-test` remains deterministic English regardless of the user's preferences.
 
-Before qualifying a language: translate **all** messages, obtain native-speaker review of audio terminology and regional usage, check dialogs/accessibility/mnemonics, decimal input, Unicode paths, RTL channel/frequency ordering, 1280×720 and HiDPI layouts on both Linux and Windows. Installer text and native driver/vendor interfaces are separate translation work; current installers remain English. The native driver and system routing contracts stay unchanged.
+Before qualifying a language: translate **all** messages, obtain native-speaker review of audio terminology and regional usage, check dialogs/accessibility/mnemonics, decimal input, Unicode paths, RTL channel/frequency ordering, 1280×720 and HiDPI layouts on both Linux and Windows. Installer text and native driver/vendor interfaces are separate translation work; 1.1.0 installers remain English. The native driver and system routing contracts stay unchanged.
 
 References: [Qt internationalization](https://doc.qt.io/qt-6/internationalization.html), [QTranslator](https://doc.qt.io/qt-6/qtranslator.html).
 
