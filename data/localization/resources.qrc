@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RCC>
+  <qresource prefix="/i18n">
+    <file alias="catalogs.json">catalogs.json</file>
+    <file alias="soundcurrent_en.qm">soundcurrent_en.qm</file>
+    <file alias="soundcurrent_de.qm">soundcurrent_de.qm</file>
+    <file alias="soundcurrent_fr.qm">soundcurrent_fr.qm</file>
+    <file alias="soundcurrent_es.qm">soundcurrent_es.qm</file>
+    <file alias="soundcurrent_it.qm">soundcurrent_it.qm</file>
+    <file alias="soundcurrent_pt-PT.qm">soundcurrent_pt-PT.qm</file>
+    <file alias="soundcurrent_pt-BR.qm">soundcurrent_pt-BR.qm</file>
+    <file alias="soundcurrent_nl.qm">soundcurrent_nl.qm</file>
+    <file alias="soundcurrent_pl.qm">soundcurrent_pl.qm</file>
+    <file alias="soundcurrent_cs.qm">soundcurrent_cs.qm</file>
+    <file alias="soundcurrent_sk.qm">soundcurrent_sk.qm</file>
+    <file alias="soundcurrent_uk.qm">soundcurrent_uk.qm</file>
+    <file alias="soundcurrent_ru.qm">soundcurrent_ru.qm</file>
+    <file alias="soundcurrent_el.qm">soundcurrent_el.qm</file>
+    <file alias="soundcurrent_tr.qm">soundcurrent_tr.qm</file>
+    <file alias="soundcurrent_sv.qm">soundcurrent_sv.qm</file>
+    <file alias="soundcurrent_da.qm">soundcurrent_da.qm</file>
+    <file alias="soundcurrent_nb.qm">soundcurrent_nb.qm</file>
+    <file alias="soundcurrent_fi.qm">soundcurrent_fi.qm</file>
+    <file alias="soundcurrent_ro.qm">soundcurrent_ro.qm</file>
+    <file alias="soundcurrent_hu.qm">soundcurrent_hu.qm</file>
+    <file alias="soundcurrent_ar.qm">soundcurrent_ar.qm</file>
+    <file alias="soundcurrent_he.qm">soundcurrent_he.qm</file>
+    <file alias="soundcurrent_fa.qm">soundcurrent_fa.qm</file>
+    <file alias="soundcurrent_zh-Hans.qm">soundcurrent_zh-Hans.qm</file>
+    <file alias="soundcurrent_zh-Hant.qm">soundcurrent_zh-Hant.qm</file>
+    <file alias="soundcurrent_ja.qm">soundcurrent_ja.qm</file>
+    <file alias="soundcurrent_ko.qm">soundcurrent_ko.qm</file>
+    <file alias="soundcurrent_hi.qm">soundcurrent_hi.qm</file>
+    <file alias="soundcurrent_id.qm">soundcurrent_id.qm</file>
+    <file alias="soundcurrent_vi.qm">soundcurrent_vi.qm</file>
+    <file alias="soundcurrent_th.qm">soundcurrent_th.qm</file>
+    <file alias="soundcurrent_sw.qm">soundcurrent_sw.qm</file>
+  </qresource>
+</RCC>

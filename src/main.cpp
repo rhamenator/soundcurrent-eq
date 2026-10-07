@@ -1,3 +1,4 @@
+#include "localization.h"
 // SPDX-License-Identifier: GPL-3.0-only
 #include "accelerating_spinbox.h"
 // Copyright (C) 2026 rhamenator
@@ -1436,7 +1437,7 @@ public:
 
     explicit CurveWidget(QWidget *parent = nullptr) : QWidget(parent) {
         setMinimumHeight(150);
-        setAccessibleName("Equalizer curve. Select a point or drag it to adjust frequency and gain.");
+        setAccessibleName(SC_TR("Equalizer curve. Select a point or drag it to adjust frequency and gain."));
         setMouseTracking(true);
     }
 
@@ -1453,6 +1454,7 @@ public:
 protected:
     void paintEvent(QPaintEvent *) override {
         QPainter painter(this);
+        painter.setLayoutDirection(Qt::LeftToRight);
         painter.setRenderHint(QPainter::Antialiasing);
         painter.fillRect(rect(), QColor("#172337"));
         const QRectF plot(38, 12, width() - 54, height() - 31);
@@ -1571,6 +1573,7 @@ public:
 protected:
     void paintEvent(QPaintEvent *) override {
         QPainter painter(this);
+        painter.setLayoutDirection(Qt::LeftToRight);
         painter.fillRect(rect(), QColor("#30425c"));
         const auto colorFor = [](double db) {
             return QColor(db >= -3.0 ? "#f16b76" : db >= -12.0 ? "#e6b450" : "#50d1ba");
@@ -1620,6 +1623,7 @@ public:
 protected:
     void paintEvent(QPaintEvent *) override {
         QPainter painter(this);
+        painter.setLayoutDirection(Qt::LeftToRight);
         painter.fillRect(rect(), QColor("#30425c"));
         const auto xFor = [this](double db) {
             return std::clamp(int(std::lround((db + 60.0) * width() / 60.0)), 0, width());
@@ -1858,10 +1862,11 @@ public:
         } else resize(1050, 920);
 
         scroll_ = new QScrollArea;
+        scroll_->setLayoutDirection(Qt::LeftToRight);
         scroll_->setWidgetResizable(true);
         tabs_ = new QTabWidget;
-        tabs_->setAccessibleName("Equalizer and configuration pages");
-        tabs_->addTab(scroll_, "Equalizer");
+        tabs_->setAccessibleName(SC_TR("Equalizer and configuration pages"));
+        tabs_->addTab(scroll_, SC_TR("Equalizer"));
         setCentralWidget(tabs_);
         auto *container = new QWidget;
         auto *root = new QVBoxLayout(container);
@@ -1875,120 +1880,124 @@ public:
         settingsRoot->setContentsMargins(26, 22, 26, 24);
         settingsRoot->setSpacing(16);
         settingsScroll->setWidget(settingsContainer);
-        tabs_->addTab(settingsScroll, "Settings && calibration");
+        tabs_->addTab(settingsScroll, SC_TR("Settings && calibration"));
         tabs_->setCurrentIndex(0);
+        settingsRoot->addWidget(soundcurrent::i18n::settingsPanel());
 
-        auto *deviceBox = new QGroupBox("Output device");
+        auto *deviceBox = new QGroupBox(SC_TR("Output device"));
         auto *deviceLayout = new QVBoxLayout(deviceBox);
         settingsRoot->addWidget(deviceBox);
-        auto *outputBox = new QGroupBox("Playback");
+        auto *outputBox = new QGroupBox(SC_TR("Playback"));
         auto *outputLayout = new QVBoxLayout(outputBox);
         auto *outputRow = new QHBoxLayout;
         outputCombo_ = new QComboBox;
-        outputCombo_->setAccessibleName("Output device");
+        outputCombo_->setAccessibleName(SC_TR("Output device"));
         outputCombo_->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
         auto *deviceRow = new QHBoxLayout;
         deviceRow->addWidget(outputCombo_, 1);
-        auto *refresh = new QPushButton("Refresh devices");
+        auto *refresh = new QPushButton(SC_TR("Refresh devices"));
         deviceRow->addWidget(refresh);
         deviceLayout->addLayout(deviceRow);
-        power_ = new QCheckBox("Equalizer off");
+        power_ = new QCheckBox(SC_TR("Equalizer off"));
         power_->setObjectName("powerToggle");
-        power_->setAccessibleName("Equalizer on or off");
-        power_->setToolTip("Click to turn the equalizer on or off");
+        power_->setAccessibleName(SC_TR("Equalizer on or off"));
+        power_->setToolTip(SC_TR("Click to turn the equalizer on or off"));
         outputRow->addWidget(power_);
         outputRow->addStretch();
-        auto *quit = new QPushButton("Quit app");
-        quit->setAccessibleName("Quit SoundCurrent EQ");
-        quit->setToolTip("Exit SoundCurrent EQ and restore normal audio");
+        auto *quit = new QPushButton(SC_TR("Quit app"));
+        quit->setAccessibleName(SC_TR("Quit SoundCurrent EQ"));
+        quit->setToolTip(SC_TR("Exit SoundCurrent EQ and restore normal audio"));
         outputRow->addWidget(quit);
         outputLayout->addLayout(outputRow);
+        outputCombo_->setLayoutDirection(Qt::LeftToRight);
         auto *gainRow = new QHBoxLayout;
-        gainRow->addWidget(new QLabel("Post gain"));
+        gainRow->addWidget(new QLabel(SC_TR("Post gain")));
         outputGain_ = new QSlider(Qt::Horizontal);
+        outputGain_->setLayoutDirection(Qt::LeftToRight);
         outputGain_->setRange(int(soundcurrent::kMinPostGainDb * 2), 24);
         outputGain_->setSingleStep(1);
         outputGain_->setPageStep(2);
         outputGain_->setTickPosition(QSlider::TicksBelow);
         outputGain_->setTickInterval(12);
-        outputGain_->setAccessibleName("Post gain after equalization");
-        outputGain_->setToolTip("Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.");
+        outputGain_->setAccessibleName(SC_TR("Post gain after equalization"));
+        outputGain_->setToolTip(SC_TR("Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping."));
         const double savedGain = QSettings().value("outputGainDb", 0.0).toDouble();
         outputGain_->setValue(std::isfinite(savedGain)
                                   ? std::lround(std::clamp(savedGain, soundcurrent::kMinPostGainDb, 12.0) * 2.0) : 0);
         gainRow->addWidget(outputGain_, 1);
         outputGainValue_ = new QLabel;
         outputGainValue_->setMinimumWidth(58);
-        outputGainValue_->setAccessibleName("Post gain value in decibels");
-        outputGainValue_->setText(QString("%1%2 dB").arg(outputGainDb() > 0 ? "+" : "")
-                                      .arg(outputGainDb(), 0, 'f', 1));
+        outputGainValue_->setAccessibleName(SC_TR("Post gain value in decibels"));
+        outputGainValue_->setText(QString(SC_TR("%1%2 dB")).arg(outputGainDb() > 0 ? "+" : "")
+                                      .arg(QLocale().toString(outputGainDb(), 'f', 1)));
         gainRow->addWidget(outputGainValue_);
         gainRow->addSpacing(18);
-        gainRow->addWidget(new QLabel("Balance"));
-        gainRow->addWidget(new QLabel("L"));
+        gainRow->addWidget(new QLabel(SC_TR("Balance")));
+        gainRow->addWidget(new QLabel(SC_TR("L")));
         balance_ = new QSlider(Qt::Horizontal);
+        balance_->setLayoutDirection(Qt::LeftToRight);
         balance_->setRange(-100, 100);
         balance_->setSingleStep(1);
         balance_->setPageStep(10);
         balance_->setTickPosition(QSlider::TicksBelow);
         balance_->setTickInterval(50);
-        balance_->setAccessibleName("Left right balance");
-        balance_->setToolTip("Move toward L or R to reduce the opposite channel; center keeps both at full level");
+        balance_->setAccessibleName(SC_TR("Left right balance"));
+        balance_->setToolTip(SC_TR("Move toward L or R to reduce the opposite channel; center keeps both at full level"));
         balance_->setValue(std::clamp(QSettings().value("balancePercent", 0).toInt(), -100, 100));
         gainRow->addWidget(balance_, 1);
-        gainRow->addWidget(new QLabel("R"));
+        gainRow->addWidget(new QLabel(SC_TR("R")));
         balanceValue_ = new QLabel;
         balanceValue_->setMinimumWidth(62);
-        balanceValue_->setAccessibleName("Balance position");
-        balanceValue_->setText(balance_->value() == 0 ? "Center"
-                               : QString("%1 %2%").arg(balance_->value() < 0 ? "L" : "R")
+        balanceValue_->setAccessibleName(SC_TR("Balance position"));
+        balanceValue_->setText(balance_->value() == 0 ? SC_TR("Center")
+                               : QString("%1 %2%").arg(balance_->value() < 0 ? SC_TR("L") : SC_TR("R"))
                                      .arg(std::abs(balance_->value())));
         gainRow->addWidget(balanceValue_);
         outputLayout->addLayout(gainRow);
         auto *meterRow = new QHBoxLayout;
-        meterRow->addWidget(new QLabel("Overall output"));
+        meterRow->addWidget(new QLabel(SC_TR("Overall output")));
         overallLevel_ = new OverallLevelMeter;
-        overallLevel_->setAccessibleName("Estimated overall output level");
-        overallLevel_->setToolTip("Estimated post-EQ output peak, including post gain and balance");
+        overallLevel_->setAccessibleName(SC_TR("Estimated overall output level"));
+        overallLevel_->setToolTip(SC_TR("Estimated post-EQ output peak, including post gain and balance"));
         meterRow->addWidget(overallLevel_, 1);
         meterRow->addSpacing(8);
-        peakStatus_ = new QLabel("Estimated peak: waiting for audio");
-        peakStatus_->setAccessibleName("Estimated output peak and clipping risk");
+        peakStatus_ = new QLabel(SC_TR("Estimated peak: waiting for audio"));
+        peakStatus_->setAccessibleName(SC_TR("Estimated output peak and clipping risk"));
         peakStatus_->setObjectName("peakStatus");
         meterRow->addWidget(peakStatus_);
         meterRow->addSpacing(8);
         meterRow->addStretch();
-        meterRow->addWidget(new QLabel("Level refresh"));
+        meterRow->addWidget(new QLabel(SC_TR("Level refresh")));
         levelRefresh_ = new soundcurrent::AcceleratingSpinBox;
         levelRefresh_->setRange(1, 100);
         levelRefresh_->setSingleStep(1);
         levelRefresh_->setSuffix(" ms");
-        levelRefresh_->setAccessibleName("Level indicator refresh interval");
-        levelRefresh_->setToolTip("Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate");
+        levelRefresh_->setAccessibleName(SC_TR("Level indicator refresh interval"));
+        levelRefresh_->setToolTip(SC_TR("Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate"));
         levelRefresh_->setValue(std::clamp(QSettings().value("levelRefreshMs", 16).toInt(), 1, 100));
         meterRow->addWidget(levelRefresh_);
-        peakMarkers_ = new QCheckBox("Peak markers");
-        peakMarkers_->setAccessibleName("Show peak markers on frequency levels");
-        peakMarkers_->setToolTip("Show a falling peak hold line on each frequency level");
+        peakMarkers_ = new QCheckBox(SC_TR("Peak markers"));
+        peakMarkers_->setAccessibleName(SC_TR("Show peak markers on frequency levels"));
+        peakMarkers_->setToolTip(SC_TR("Show a falling peak hold line on each frequency level"));
         peakMarkers_->setChecked(QSettings().value("showPeakMarkers", false).toBool());
         meterRow->addWidget(peakMarkers_);
         overallLevel_->setPeakMarkersEnabled(peakMarkers_->isChecked());
         outputLayout->addLayout(meterRow);
-        status_ = new QLabel("Equalizer is off. Your audio uses its normal output.");
+        status_ = new QLabel(SC_TR("Equalizer is off. Your audio uses its normal output."));
         status_->setWordWrap(true);
         status_->setObjectName("status");
         outputLayout->addWidget(status_);
 #ifdef Q_OS_WIN
-        auto *driverSetup = new QPushButton("Audio driver setup");
+        auto *driverSetup = new QPushButton(SC_TR("Audio driver setup"));
         driverSetup->setObjectName("audioDriverSetup");
         deviceLayout->addWidget(driverSetup);
-        auto *cableSettings = new QPushButton("VB-CABLE settings");
+        auto *cableSettings = new QPushButton(SC_TR("VB-CABLE settings"));
         cableSettings->setObjectName("cableSettings");
         cableSettings->setEnabled(QFileInfo::exists(QDir(QCoreApplication::applicationDirPath()).filePath("cable-setup.ps1")));
-        cableSettings->setAccessibleName("Open VB-CABLE control panel");
-        cableSettings->setToolTip("Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.");
+        cableSettings->setAccessibleName(SC_TR("Open VB-CABLE control panel"));
+        cableSettings->setToolTip(SC_TR("Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback."));
         deviceLayout->addWidget(cableSettings);
-        driverSetup->setToolTip("Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.");
+        driverSetup->setToolTip(SC_TR("Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver."));
         auto *audioSetup = new QProcess(this);
         audioSetup->setProcessChannelMode(QProcess::MergedChannels);
         auto output = std::make_shared<QByteArray>();
@@ -1999,8 +2008,8 @@ public:
             driverSetup->setEnabled(true); cableSettings->setEnabled(true);
             if (message.isEmpty()) return;
             status_->setText(message);
-            if (error) QMessageBox::warning(this, "Audio setup could not finish", message);
-            else QMessageBox::information(this, "Audio setup", message);
+            if (error) QMessageBox::warning(this, SC_TR("Audio setup could not finish"), message);
+            else QMessageBox::information(this, SC_TR("Audio setup"), message);
             output->clear();
         };
         connect(audioSetup, &QProcess::readyReadStandardOutput, this, [audioSetup, output] {
@@ -2031,7 +2040,7 @@ public:
                 if (calibrating_) { finish("Stop the microphone calibration before changing the audio driver.", true); return; }
                 power_->setChecked(false); micPower_->setChecked(false);
                 meter_.stop(); audio_.stop(); microphone_.stop();
-                status_->setText("Audio setup is running. Processing is paused; the app remains open.");
+                status_->setText(SC_TR("Audio setup is running. Processing is paused; the app remains open."));
             }
             output->clear(); *action = install;
             centralWidget()->setEnabled(false);
@@ -2045,41 +2054,41 @@ public:
         connect(driverSetup, &QPushButton::clicked, this, [launch] { launch(true); });
         connect(cableSettings, &QPushButton::clicked, this, [launch] { launch(false); });
 #endif
-        auto *speakerBox = new QGroupBox("Speaker model correction");
+        auto *speakerBox = new QGroupBox(SC_TR("Speaker model correction"));
         auto *speakerLayout = new QVBoxLayout(speakerBox);
         auto *speakerRow = new QHBoxLayout;
         speakerCombo_ = new PresetComboBox;
-        speakerCombo_->setAccessibleName("Speaker model profile");
+        speakerCombo_->setAccessibleName(SC_TR("Speaker model profile"));
         speakerCombo_->setMaxVisibleItems(12);
-        speakerCombo_->addItem("None — use my own EQ", QString());
+        speakerCombo_->addItem(SC_TR("None — use my own EQ"), QString());
         for (const auto &profile : speakerProfiles()) speakerCombo_->addItem(profile.name, profile.id);
         const int savedSpeaker = speakerCombo_->findData(QSettings().value("speakerModelId").toString());
         speakerCombo_->setCurrentIndex(std::max(0, savedSpeaker));
         speakerRow->addWidget(speakerCombo_, 1);
-        auto *speakerDetails = new QPushButton("Profile details");
+        auto *speakerDetails = new QPushButton(SC_TR("Profile details"));
         speakerRow->addWidget(speakerDetails);
         auto *taxonomy=new QHBoxLayout;
-        taxonomy->addWidget(new QLabel("Manufacturer"));speakerBrand_=new PresetComboBox;speakerBrand_->setAccessibleName("Speaker manufacturer");speakerBrand_->addItem("All manufacturers");
-        taxonomy->addWidget(speakerBrand_,1);taxonomy->addWidget(new QLabel("Type"));speakerType_=new PresetComboBox;speakerType_->setAccessibleName("Speaker type");speakerType_->addItem("All speaker types");taxonomy->addWidget(speakerType_,1);
+        taxonomy->addWidget(new QLabel(SC_TR("Manufacturer")));speakerBrand_=new PresetComboBox;speakerBrand_->setAccessibleName(SC_TR("Speaker manufacturer"));speakerBrand_->addItem(SC_TR("All manufacturers"));
+        taxonomy->addWidget(speakerBrand_,1);taxonomy->addWidget(new QLabel(SC_TR("Type")));speakerType_=new PresetComboBox;speakerType_->setAccessibleName(SC_TR("Speaker type"));speakerType_->addItem(SC_TR("All speaker types"));taxonomy->addWidget(speakerType_,1);
         QStringList brands,types;for(const auto &p:speakerProfiles()){if(!brands.contains(p.brand))brands<<p.brand;if(!types.contains(p.equipmentType))types<<p.equipmentType;}
         brands.sort(Qt::CaseInsensitive);types.sort(Qt::CaseInsensitive);speakerBrand_->addItems(brands);speakerType_->addItems(types);
         speakerLayout->addLayout(taxonomy);speakerLayout->addLayout(speakerRow);
         connect(speakerBrand_,&QComboBox::currentIndexChanged,this,[this]{filterSpeakers();});
         connect(speakerType_,&QComboBox::currentIndexChanged,this,[this]{filterSpeakers();});
-        auto *speakerHelp = new QLabel("Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.");
+        auto *speakerHelp = new QLabel(SC_TR("Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement."));
         speakerHelp->setWordWrap(true);
         speakerLayout->addWidget(speakerHelp);
         connect(speakerDetails, &QPushButton::clicked, this, [this] { showSpeakerDetails(); });
-        auto *equipmentButton = new QPushButton("Browse all equipment profiles / editor");
-        equipmentButton->setAccessibleName("Import create and edit equipment profiles");
+        auto *equipmentButton = new QPushButton(SC_TR("Browse all equipment profiles / editor"));
+        equipmentButton->setAccessibleName(SC_TR("Import create and edit equipment profiles"));
         speakerLayout->addWidget(equipmentButton);
         equipmentStatus_ = new QLabel;
         equipmentStatus_->setWordWrap(true);
         speakerLayout->addWidget(equipmentStatus_);
-        auto *clearEquipment = new QPushButton("Clear imported equipment corrections");
+        auto *clearEquipment = new QPushButton(SC_TR("Clear imported equipment corrections"));
         speakerLayout->addWidget(clearEquipment);
         connect(equipmentButton, &QPushButton::clicked, this, [this] {
-            if (lockButton_->isChecked() || calibrating_) { showError("Unlock controls and finish measurement before editing profiles."); return; }
+            if (lockButton_->isChecked() || calibrating_) { showError(SC_TR("Unlock controls and finish measurement before editing profiles.")); return; }
             try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }); }
             catch (const std::exception &e) { showError(QString::fromUtf8(e.what())); }
         });
@@ -2093,20 +2102,20 @@ public:
         refreshEquipmentStatus();
         settingsRoot->addWidget(speakerBox);
         auto *ampRow = new QHBoxLayout;
-        ampRow->addWidget(new QLabel("Amplifier / receiver"));
+        ampRow->addWidget(new QLabel(SC_TR("Amplifier / receiver")));
         ampCombo_ = new PresetComboBox;
-        ampCombo_->setAccessibleName("Amplifier model profile");
-        ampCombo_->addItem("None — use my own EQ", QString());
+        ampCombo_->setAccessibleName(SC_TR("Amplifier model profile"));
+        ampCombo_->addItem(SC_TR("None — use my own EQ"), QString());
         loadAmplifierProfiles();
         for (const auto &profile : amplifierProfiles_) ampCombo_->addItem(profile.name, profile.id);
         ampCombo_->setCurrentIndex(std::max(0, ampCombo_->findData(QSettings().value("amplifierModelId").toString())));
         ampRow->addWidget(ampCombo_, 1);
-        ampImport_ = new QPushButton("Import measured profile");
+        ampImport_ = new QPushButton(SC_TR("Import measured profile"));
         ampRow->addWidget(ampImport_);
-        auto *ampDetails = new QPushButton("Amp details");
+        auto *ampDetails = new QPushButton(SC_TR("Amp details"));
         ampRow->addWidget(ampDetails);
         speakerLayout->addLayout(ampRow);
-        auto *ampHelp = new QLabel("Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.");
+        auto *ampHelp = new QLabel(SC_TR("Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications."));
         ampHelp->setWordWrap(true);
         speakerLayout->addWidget(ampHelp);
         connect(ampImport_, &QPushButton::clicked, this, [this] { importAmplifierProfile(); });
@@ -2114,16 +2123,16 @@ public:
 
 
 
-        auto *inputBox = new QGroupBox("Microphone");
+        auto *inputBox = new QGroupBox(SC_TR("Microphone"));
         auto *inputLayout = new QVBoxLayout(inputBox);
         auto *inputRow = new QHBoxLayout;
         inputCombo_ = new QComboBox;
-        inputCombo_->setAccessibleName("Microphone input device");
-        inputCombo_->addItem("Plug in your microphone to select a microphone profile", QString());
+        inputCombo_->setAccessibleName(SC_TR("Microphone input device"));
+        inputCombo_->addItem(SC_TR("Plug in your microphone to select a microphone profile"), QString());
         inputRow->addWidget(inputCombo_, 1);
-        micPower_ = new QCheckBox("Natural mic EQ");
-        micPower_->setAccessibleName("Natural microphone equalizer on or off");
-        micPower_->setToolTip("Automatically shape a connected microphone; click to bypass the microphone EQ");
+        micPower_ = new QCheckBox(SC_TR("Natural mic EQ"));
+        micPower_->setAccessibleName(SC_TR("Natural microphone equalizer on or off"));
+        micPower_->setToolTip(SC_TR("Automatically shape a connected microphone; click to bypass the microphone EQ"));
         micPower_->setChecked(QSettings().value("microphoneEnabled", true).toBool());
         inputRow->addWidget(micPower_);
         inputLayout->addLayout(inputRow);
@@ -2135,36 +2144,36 @@ public:
             micSliders_[i] = new QSlider(Qt::Horizontal);
             micSliders_[i]->setRange(-24, 24);
             micSliders_[i]->setValue(std::clamp(QSettings().value(QString("micBand%1").arg(i), 0).toInt(), -24, 24));
-            micSliders_[i]->setAccessibleName("Microphone " + micNames[i] + " adjustment");
-            micSliders_[i]->setToolTip("Adjust this tone band around the natural voice profile");
+            micSliders_[i]->setAccessibleName(SC_TR("Microphone %1 adjustment").arg(soundcurrent::i18n::text(micNames[i].toUtf8().constData())));
+            micSliders_[i]->setToolTip(SC_TR("Adjust this tone band around the natural voice profile"));
             toneRow->addWidget(micSliders_[i], 1);
-            micLabels_[i]->setText(QString("%1 %2%3 dB").arg(micNames[i])
+            micLabels_[i]->setText(QString(SC_TR("%1 %2%3 dB")).arg(micNames[i])
                                       .arg(micSliders_[i]->value() > 0 ? "+" : "")
                                       .arg(micSliders_[i]->value() / 2.0, 0, 'f', 1));
         }
         inputLayout->addLayout(toneRow);
         auto *micGainRow = new QHBoxLayout;
-        micGainRow->addWidget(new QLabel("Mic gain"));
+        micGainRow->addWidget(new QLabel(SC_TR("Mic gain")));
         micGain_ = new QSlider(Qt::Horizontal);
         micGain_->setRange(-24, 24);
         micGain_->setValue(std::clamp(QSettings().value("micGain", 0).toInt(), -24, 24));
-        micGain_->setAccessibleName("Microphone gain adjustment");
+        micGain_->setAccessibleName(SC_TR("Microphone gain adjustment"));
         micGainRow->addWidget(micGain_, 1);
         micGainValue_ = new QLabel;
-        micGainValue_->setText(QString("%1%2 dB").arg(micGain_->value() > 0 ? "+" : "")
-                                   .arg(micGain_->value() / 2.0, 0, 'f', 1));
+        micGainValue_->setText(QString(SC_TR("%1%2 dB")).arg(micGain_->value() > 0 ? "+" : "")
+                                   .arg(QLocale().toString(micGain_->value() / 2.0, 'f', 1)));
         micGainRow->addWidget(micGainValue_);
-        auto *micReset = new QPushButton("Reset mic tone");
+        auto *micReset = new QPushButton(SC_TR("Reset mic tone"));
         micGainRow->addWidget(micReset);
         inputLayout->addLayout(micGainRow);
-        micStatus_ = new QLabel("Waiting for a microphone.");
+        micStatus_ = new QLabel(SC_TR("Waiting for a microphone."));
         micStatus_->setWordWrap(true);
         inputLayout->addWidget(micStatus_);
 #ifdef Q_OS_WIN
         auto *cableRow = new QHBoxLayout;
-        cableRow->addWidget(new QLabel("Microphone route"));
+        cableRow->addWidget(new QLabel(SC_TR("Microphone route")));
         micCableCombo_ = new QComboBox;
-        micCableCombo_->setAccessibleName("Second virtual cable for microphone EQ");
+        micCableCombo_->setAccessibleName(SC_TR("Second virtual cable for microphone EQ"));
         cableRow->addWidget(micCableCombo_, 1);
         inputLayout->addLayout(cableRow);
         auto *cableHelp = new QLabel("SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.");
@@ -2180,79 +2189,81 @@ public:
 #endif
 
         settingsRoot->addWidget(inputBox);
-        auto *calibrationBox = new QGroupBox("Speaker && room calibration");
+        auto *calibrationBox = new QGroupBox(SC_TR("Speaker && room calibration"));
         auto *calibrationLayout = new QVBoxLayout(calibrationBox);
         auto *calibrationRow = new QHBoxLayout;
-        calibrationRow->addWidget(new QLabel("Speaker + room check"));
+        calibrationRow->addWidget(new QLabel(SC_TR("Speaker + room check")));
         calibrationMode_ = new QComboBox;
-        calibrationMode_->addItem("Quiet logarithmic sweep", "sweep");
-        calibrationMode_->addItem("Separate quiet tones", "tones");
-        calibrationMode_->setAccessibleName("Calibration test signal");
+        calibrationMode_->addItem(SC_TR("Quiet logarithmic sweep"), "sweep");
+        calibrationMode_->addItem(SC_TR("Separate quiet tones"), "tones");
+        calibrationMode_->setAccessibleName(SC_TR("Calibration test signal"));
         calibrationRow->addWidget(calibrationMode_);
-        calibrationStart_ = new QPushButton("Measure");
-        calibrationStart_->setAccessibleName("Measure speaker room and microphone response");
-        calibrationStart_->setToolTip("Play quiet test audio and preview suggested playback EQ changes");
+        calibrationStart_ = new QPushButton(SC_TR("Measure"));
+        calibrationStart_->setAccessibleName(SC_TR("Measure speaker room and microphone response"));
+        calibrationStart_->setToolTip(SC_TR("Play quiet test audio and preview suggested playback EQ changes"));
         calibrationRow->addWidget(calibrationStart_);
-        calibrationStop_ = new QPushButton("Stop tones");
+        calibrationStop_ = new QPushButton(SC_TR("Stop tones"));
         calibrationStop_->setEnabled(false);
         calibrationRow->addWidget(calibrationStop_);
-        calibrationRow->addWidget(new QLabel("Test level"));
+        calibrationRow->addWidget(new QLabel(SC_TR("Test level")));
         calibrationLevel_ = new soundcurrent::AcceleratingSpinBox;
         calibrationLevel_->setRange(-54, -5);
         calibrationLevel_->setValue(-24);
         calibrationLevel_->setSuffix(" dBFS");
-        calibrationLevel_->setToolTip("Start quiet. Raise only if the microphone cannot hear the tones.");
-        calibrationLevel_->setAccessibleName("Calibration tone level");
+        calibrationLevel_->setToolTip(SC_TR("Start quiet. Raise only if the microphone cannot hear the tones."));
+        calibrationLevel_->setAccessibleName(SC_TR("Calibration tone level"));
         calibrationRow->addWidget(calibrationLevel_);
         calibrationRow->addStretch();
         calibrationLayout->addLayout(calibrationRow);
-        calibrationStatus_ = new QLabel("Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.");
+        calibrationStatus_ = new QLabel(SC_TR("Use a quiet room. Measures speakers, room, and microphone together; results include the mic response."));
         calibrationStatus_->setWordWrap(true);
         calibrationLayout->addWidget(calibrationStatus_);
         settingsRoot->addWidget(calibrationBox);
         auto *updates=new soundcurrent::UpdatePanel("soundcurrent-eq","SoundCurrent EQ",SOUNDCURRENT_VERSION,startEnabled);
-        updates->onReminder=[this](const QString &message){if(tray_)tray_->showMessage("Application update",message,QSystemTrayIcon::Information,10000);};
+        updates->onReminder=[this](const QString &message){if(tray_)tray_->showMessage(SC_TR("Application update"),message,QSystemTrayIcon::Information,10000);};
         settingsRoot->addWidget(updates);
         settingsRoot->addStretch();
 
-        auto *presetBox = new QGroupBox("Listening preset");
+        auto *presetBox = new QGroupBox(SC_TR("Listening preset"));
         auto *presetRow = new QHBoxLayout(presetBox);
         presetCombo_ = new PresetComboBox;
-        presetCombo_->setAccessibleName("Listening preset");
+        presetCombo_->setObjectName("localizedPresetSelector");
+        presetCombo_->setAccessibleName(SC_TR("Listening preset"));
         presetCombo_->setView(new QListView(presetCombo_));
         presetCombo_->setMaxVisibleItems(12);
         presetCombo_->view()->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         presetRow->addWidget(presetCombo_, 1);
-        auto *save = new QPushButton("Save preset");
+        auto *save = new QPushButton(SC_TR("Save preset"));
         presetRow->addWidget(save);
-        auto *reset = new QPushButton("Reset to flat");
+        auto *reset = new QPushButton(SC_TR("Reset to flat"));
         presetRow->addWidget(reset);
         savePresetButton_ = save;
         resetButton_ = reset;
-        lockButton_ = new QPushButton("Lock EQ");
+        lockButton_ = new QPushButton(SC_TR("Lock EQ"));
         lockButton_->setCheckable(true);
         lockButton_->setChecked(startEnabled && QSettings().value("eqLocked", false).toBool());
-        lockButton_->setAccessibleName("Lock equalizer settings");
-        lockButton_->setToolTip("Prevent changes to presets, EQ bands, post gain, and balance");
+        lockButton_->setAccessibleName(SC_TR("Lock equalizer settings"));
+        lockButton_->setToolTip(SC_TR("Prevent changes to presets, EQ bands, post gain, and balance"));
         presetRow->addWidget(lockButton_);
-        undoButton_ = new QPushButton("Undo");
-        undoButton_->setAccessibleName("Undo last equalizer change");
-        undoButton_->setToolTip("Restore the previous EQ setting (Ctrl+Z)");
+        undoButton_ = new QPushButton(SC_TR("Undo"));
+        undoButton_->setAccessibleName(SC_TR("Undo last equalizer change"));
+        undoButton_->setToolTip(SC_TR("Restore the previous EQ setting (Ctrl+Z)"));
         undoButton_->setEnabled(false);
         presetRow->addWidget(undoButton_);
         root->addWidget(presetBox);
 
-        auto *eqBox = new QGroupBox("Equalizer");
+        auto *eqBox = new QGroupBox(SC_TR("Equalizer"));
+        eqBox->setLayoutDirection(Qt::LeftToRight);
         auto *eqLayout = new QVBoxLayout(eqBox);
         auto *toolbar = new QHBoxLayout;
-        toolbar->addWidget(new QLabel("Bands"));
+        toolbar->addWidget(new QLabel(SC_TR("Bands")));
         countBox_ = new soundcurrent::AcceleratingSpinBox;
         countBox_->setRange(kMinBands, kMaxBands);
         countBox_->setValue(kDefaultBands);
-        countBox_->setAccessibleName("Number of equalizer bands");
+        countBox_->setAccessibleName(SC_TR("Number of equalizer bands"));
         toolbar->addWidget(countBox_);
         toolbar->addSpacing(14);
-        toolbar->addWidget(new QLabel("Drag curve points or tune the selected band below."));
+        toolbar->addWidget(new QLabel(SC_TR("Drag curve points or tune the selected band below.")));
         toolbar->addStretch();
         headroom_ = new QLabel;
         toolbar->addWidget(headroom_);
@@ -2261,32 +2272,32 @@ public:
         auto *details = new QWidget;
         auto *detailsRow = new QHBoxLayout(details);
         detailsRow->setContentsMargins(0, 2, 0, 2);
-        detailsRow->addWidget(new QLabel("Selected band"));
+        detailsRow->addWidget(new QLabel(SC_TR("Selected band")));
         detailsRow->addSpacing(8);
-        detailsRow->addWidget(new QLabel("Frequency"));
+        detailsRow->addWidget(new QLabel(SC_TR("Frequency")));
         frequencyBox_ = new soundcurrent::AcceleratingDoubleSpinBox;
         frequencyBox_->setRange(20, 20000);
         frequencyBox_->setDecimals(0);
         frequencyBox_->setSingleStep(1);
         frequencyBox_->setSuffix(" Hz");
-        frequencyBox_->setAccessibleName("Selected band frequency");
+        frequencyBox_->setAccessibleName(SC_TR("Selected band frequency"));
         detailsRow->addWidget(frequencyBox_);
         detailsRow->addSpacing(12);
-        detailsRow->addWidget(new QLabel("Gain"));
+        detailsRow->addWidget(new QLabel(SC_TR("Gain")));
         gainBox_ = new soundcurrent::AcceleratingDoubleSpinBox;
         gainBox_->setRange(-12, 12);
         gainBox_->setDecimals(1);
         gainBox_->setSingleStep(0.5);
         gainBox_->setSuffix(" dB");
-        gainBox_->setAccessibleName("Selected band gain");
+        gainBox_->setAccessibleName(SC_TR("Selected band gain"));
         detailsRow->addWidget(gainBox_);
         detailsRow->addSpacing(12);
-        detailsRow->addWidget(new QLabel("Width (Q)"));
+        detailsRow->addWidget(new QLabel(SC_TR("Width (Q)")));
         qBox_ = new soundcurrent::AcceleratingDoubleSpinBox;
         qBox_->setRange(0.3, 10.0);
         qBox_->setDecimals(2);
         qBox_->setSingleStep(0.1);
-        qBox_->setAccessibleName("Selected band filter Q");
+        qBox_->setAccessibleName(SC_TR("Selected band filter Q"));
         detailsRow->addWidget(qBox_);
         detailsRow->addStretch();
         eqLayout->addWidget(details);
@@ -2295,12 +2306,13 @@ public:
         eqLayout->addWidget(curve_);
 
         bandScroll_ = new QScrollArea;
+        bandScroll_->setLayoutDirection(Qt::LeftToRight);
         bandScroll_->setWidgetResizable(false);
         bandScroll_->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         bandScroll_->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         bandScroll_->setFixedHeight(235);
         eqLayout->addWidget(bandScroll_);
-        eqLayout->addWidget(new QLabel("Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping."));
+        eqLayout->addWidget(new QLabel(SC_TR("Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.")));
         root->insertWidget(0, eqBox);
         root->addWidget(outputBox);
         enhancements_=new soundcurrent::EnhancementControls(false);
@@ -2321,7 +2333,7 @@ public:
             refreshDevices();
             try {
                 for (const auto &device : inputDevices())
-                    inputCombo_->addItem(device.description + (device.channels == 1 ? " · mono" : " · stereo"), device.name);
+                    inputCombo_->addItem(device.description + (device.channels == 1 ? SC_TR(" · mono") : SC_TR(" · stereo")), device.name);
             } catch (const std::exception &) {}
             if (inputCombo_->count() > 1) inputCombo_->setItemText(0, "Automatic (follow connected microphones)");
         }
@@ -2332,23 +2344,23 @@ public:
         connect(micPower_, &QCheckBox::toggled, this, [this](bool on) {
             QSettings().setValue("microphoneEnabled", on);
             if (on) refreshInputs();
-            else { microphone_.stop(); micStatus_->setText("Microphone EQ is off."); }
+            else { microphone_.stop(); micStatus_->setText(SC_TR("Microphone EQ is off.")); }
         });
         connect(inputCombo_, &QComboBox::currentIndexChanged, this, [this] { refreshInputs(); });
         for (int i = 0; i < 4; ++i) {
             connect(micSliders_[i], &QSlider::valueChanged, this, [this, i](int value) {
                 QSettings().setValue(QString("micBand%1").arg(i), value);
                 const QStringList names = {"Warmth", "Boxiness", "Clarity", "Air"};
-                micLabels_[i]->setText(QString("%1 %2%3 dB").arg(names[i])
-                                           .arg(value > 0 ? "+" : "").arg(value / 2.0, 0, 'f', 1));
+                micLabels_[i]->setText(QString(SC_TR("%1 %2%3 dB")).arg(names[i])
+                                           .arg(value > 0 ? "+" : "").arg(QLocale().toString(value / 2.0, 'f', 1)));
                 try { microphone_.update(micAdjustments(), micGain_->value() / 2.0); }
                 catch (const std::exception &error) { micStatus_->setText(error.what()); }
             });
         }
         connect(micGain_, &QSlider::valueChanged, this, [this](int value) {
             QSettings().setValue("micGain", value);
-            micGainValue_->setText(QString("%1%2 dB").arg(value > 0 ? "+" : "")
-                                       .arg(value / 2.0, 0, 'f', 1));
+            micGainValue_->setText(QString(SC_TR("%1%2 dB")).arg(value > 0 ? "+" : "")
+                                       .arg(QLocale().toString(value / 2.0, 'f', 1)));
             try { microphone_.update(micAdjustments(), value / 2.0); }
             catch (const std::exception &error) { micStatus_->setText(error.what()); }
         });
@@ -2388,7 +2400,7 @@ public:
             syncBandControls(); applyChanges(); commitChange();
         });
         connect(save, &QPushButton::clicked, this, [this] { savePreset(); });
-        connect(reset, &QPushButton::clicked, this, [this] { presetCombo_->setCurrentText("Flat"); });
+        connect(reset, &QPushButton::clicked, this, [this] { presetCombo_->setCurrentIndex(presetCombo_->findData("Flat")); });
         connect(lockButton_, &QPushButton::toggled, this, [this, startEnabled](bool locked) {
             if (startEnabled) QSettings().setValue("eqLocked", locked);
             updateControlsLock();
@@ -2400,7 +2412,7 @@ public:
             recordChange(outputGain_);
             const double value = outputGainDb();
             QSettings().setValue("outputGainDb", value);
-            outputGainValue_->setText(QString("%1%2 dB").arg(value > 0 ? "+" : "")
+            outputGainValue_->setText(QString(SC_TR("%1%2 dB")).arg(value > 0 ? "+" : "")
                                           .arg(value, 0, 'f', 1));
             meter_.setProfile(bands_, value, balance_->value(), speakerCorrection());
             try { audio_.updateGain(value, balance_->value()); }
@@ -2410,8 +2422,8 @@ public:
         connect(balance_, &QSlider::valueChanged, this, [this](int value) {
             recordChange(balance_);
             QSettings().setValue("balancePercent", value);
-            balanceValue_->setText(value == 0 ? "Center"
-                                   : QString("%1 %2%").arg(value < 0 ? "L" : "R").arg(std::abs(value)));
+            balanceValue_->setText(value == 0 ? SC_TR("Center")
+                                   : QString("%1 %2%").arg(value < 0 ? SC_TR("L") : SC_TR("R")).arg(std::abs(value)));
             meter_.setProfile(bands_, outputGainDb(), value, speakerCorrection());
             try { audio_.updateGain(outputGainDb(), value); }
             catch (const std::exception &error) { showError(error.what()); }
@@ -2543,7 +2555,7 @@ protected:
             hide();
             event->ignore();
             if (!backgroundNoticeShown_) {
-                tray_->showMessage("SoundCurrent EQ", "Equalizer is still running. Use the tray icon to reopen or quit.");
+                tray_->showMessage("SoundCurrent EQ", SC_TR("Equalizer is still running. Use the tray icon to reopen or quit."));
                 backgroundNoticeShown_ = true;
             }
             return;
@@ -2564,7 +2576,7 @@ private:
     };
 
     EqSnapshot snapshot() const {
-        return {bands_, presetCombo_->currentText(), speakerCombo_->currentData().toString(), ampCombo_->currentData().toString(), selected_, outputGain_->value(), balance_->value(), {QSettings().value("equipment/speaker").toByteArray(), QSettings().value("equipment/amplifier").toByteArray(), QSettings().value("equipment/microphone").toByteArray()}, enhancements_->settings()};
+        return {bands_, presetCombo_->currentData().toString(), speakerCombo_->currentData().toString(), ampCombo_->currentData().toString(), selected_, outputGain_->value(), balance_->value(), {QSettings().value("equipment/speaker").toByteArray(), QSettings().value("equipment/amplifier").toByteArray(), QSettings().value("equipment/microphone").toByteArray()}, enhancements_->settings()};
     }
 
     void recordChange(QObject *source) {
@@ -2596,7 +2608,7 @@ private:
             bands_ = previous.bands;
             selected_ = std::clamp(previous.selected, 0, int(bands_.size()) - 1);
             countBox_->setValue(int(bands_.size()));
-            presetCombo_->setCurrentText(previous.preset);
+            presetCombo_->setCurrentIndex(presetCombo_->findData(previous.preset));
             ensureSpeakerChoice(previous.speaker);
             speakerCombo_->setCurrentIndex(std::max(0, speakerCombo_->findData(previous.speaker)));
             QSettings().setValue("speakerModelId", previous.speaker);
@@ -2611,10 +2623,10 @@ private:
             rebuildBandControls();
             syncBandControls();
         }
-        outputGainValue_->setText(QString("%1%2 dB").arg(outputGainDb() > 0 ? "+" : "")
-                                      .arg(outputGainDb(), 0, 'f', 1));
-        balanceValue_->setText(balance_->value() == 0 ? "Center"
-                               : QString("%1 %2%").arg(balance_->value() < 0 ? "L" : "R")
+        outputGainValue_->setText(QString(SC_TR("%1%2 dB")).arg(outputGainDb() > 0 ? "+" : "")
+                                      .arg(QLocale().toString(outputGainDb(), 'f', 1)));
+        balanceValue_->setText(balance_->value() == 0 ? SC_TR("Center")
+                               : QString("%1 %2%").arg(balance_->value() < 0 ? SC_TR("L") : SC_TR("R"))
                                      .arg(std::abs(balance_->value())));
         QSettings().setValue("outputGainDb", outputGainDb());
         QSettings().setValue("balancePercent", balance_->value());
@@ -2629,7 +2641,7 @@ private:
 
     void updateControlsLock() {
         const bool editable = !lockButton_->isChecked();
-        lockButton_->setText(editable ? "Lock EQ" : "Unlock EQ");
+        lockButton_->setText(editable ? SC_TR("Lock EQ") : SC_TR("Unlock EQ"));
         enhancements_->setEnabled(editable);
         outputGain_->setEnabled(editable);
         balance_->setEnabled(editable);
@@ -2687,11 +2699,11 @@ private:
             input = microphone_.active() ? microphone_.target() : defaultSource();
             for (const auto &device : inputDevices()) if (device.name == input) found = true;
         } catch (const std::exception &error) {
-            calibrationStatus_->setText("Cannot start measurement: " + QString::fromUtf8(error.what()));
+            calibrationStatus_->setText(SC_TR("Cannot start measurement: %1").arg(QString::fromUtf8(error.what())));
             return;
         }
         if (output.isEmpty() || !found) {
-            calibrationStatus_->setText("Connect an output and a microphone before measuring.");
+            calibrationStatus_->setText(SC_TR("Connect an output and a microphone before measuring."));
             return;
         }
         calibrating_ = true;
@@ -2705,7 +2717,7 @@ private:
         outputCombo_->setEnabled(false);
         micPower_->setEnabled(false);
         microphone_.stop();
-        calibrationStatus_->setText("Playing quiet test audio. Stop if it is uncomfortable.");
+        calibrationStatus_->setText(SC_TR("Playing quiet test audio. Stop if it is uncomfortable."));
         calibration_.setProgram(QCoreApplication::applicationFilePath());
         calibration_.setArguments({"--calibration-worker", output, input,
                                    QString::number(calibrationLevel_->value()),
@@ -2721,7 +2733,7 @@ private:
             outputCombo_->setEnabled(true);
             micPower_->setEnabled(true);
             refreshInputs();
-            calibrationStatus_->setText("Could not start the measurement.");
+            calibrationStatus_->setText(SC_TR("Could not start the measurement."));
         }
     }
 
@@ -2738,19 +2750,19 @@ private:
         outputCombo_->setEnabled(true);
         micPower_->setEnabled(true);
         refreshInputs();
-        if (cancelled) { calibrationStatus_->setText("Measurement stopped."); return; }
+        if (cancelled) { calibrationStatus_->setText(SC_TR("Measurement stopped.")); return; }
         if (exitStatus != QProcess::NormalExit || code != 0) {
             if (!calibrationStatus_->text().startsWith("Measurement failed"))
-                calibrationStatus_->setText("Measurement failed. Try a higher test level or move the mic closer.");
+                calibrationStatus_->setText(SC_TR("Measurement failed. Try a higher test level or move the mic closer."));
             return;
         }
         const auto result = QJsonDocument::fromJson(calibrationOutput_).object();
         const auto suggestion = calibrationSuggestion(result, bands_);
-        if (!suggestion) { calibrationStatus_->setText("Measurement data was incomplete."); return; }
+        if (!suggestion) { calibrationStatus_->setText(SC_TR("Measurement data was incomplete.")); return; }
         QMessageBox preview(this);
         preview.setWindowTitle("Speaker and room measurement");
         preview.setIcon(QMessageBox::Information);
-        preview.setText("Suggested changes to the playback EQ");
+        preview.setText(SC_TR("Suggested changes to the playback EQ"));
         preview.setInformativeText("Relative measurements include the speaker, room, and microphone response. "
                                    "The proposed changes are limited to 3 dB per measured frequency.\n\n" +
                                    suggestion->preview);
@@ -2767,7 +2779,7 @@ private:
             for (const auto &v : levels) if (v.isDouble() && v.toDouble() > 0) db.append(20 * std::log10(v.toDouble()));
             std::sort(db.begin(),db.end()); const double reference = db[db.size()/2];
             for (int i=0;i<levels.size();++i) if (levels[i].isDouble() && levels[i].toDouble()>0) p.response.append({double(kCalibrationFrequencies[i]),20*std::log10(levels[i].toDouble())-reference});
-            try { p.filters = soundcurrent::equipment::fitResponse(p.response); soundcurrent::equipment::saveNewProfile(this,p); calibrationStatus_->setText("System response profile editor opened. Saved profiles are available in the equipment library."); }
+            try { p.filters = soundcurrent::equipment::fitResponse(p.response); soundcurrent::equipment::saveNewProfile(this,p); calibrationStatus_->setText(SC_TR("System response profile editor opened. Saved profiles are available in the equipment library.")); }
             catch (const std::exception &e) { showError(e.what()); }
             return;
         }
@@ -2778,8 +2790,8 @@ private:
             syncBandControls();
             applyChanges();
             commitChange();
-            calibrationStatus_->setText("Suggested EQ applied. Use Save preset to keep it.");
-        } else calibrationStatus_->setText("Current EQ kept.");
+            calibrationStatus_->setText(SC_TR("Suggested EQ applied. Use Save preset to keep it."));
+        } else calibrationStatus_->setText(SC_TR("Current EQ kept."));
     }
 
     void refreshInputs() {
@@ -2812,10 +2824,10 @@ private:
             if (changed) {
                 inputCombo_->blockSignals(true);
                 inputCombo_->clear();
-                inputCombo_->addItem(inputs_.isEmpty() ? "Plug in your microphone to select a microphone profile"
-                                                     : "Automatic (follow connected microphones)", QString());
+                inputCombo_->addItem(inputs_.isEmpty() ? SC_TR("Plug in your microphone to select a microphone profile")
+                                                     : SC_TR("Automatic (follow connected microphones)"), QString());
                 for (const auto &device : inputs_)
-                    inputCombo_->addItem(device.description + (device.channels == 1 ? " · mono" : " · stereo"), device.name);
+                    inputCombo_->addItem(device.description + (device.channels == 1 ? SC_TR(" · mono") : SC_TR(" · stereo")), device.name);
                 const int index = inputCombo_->findData(manual);
                 inputCombo_->setCurrentIndex(index < 0 ? 0 : index);
                 inputCombo_->blockSignals(false);
@@ -2823,13 +2835,13 @@ private:
             micPower_->setEnabled(!inputs_.isEmpty());
             if (!disconnected.isEmpty()) micDisconnectNotice_ = disconnected + " disconnected. ";
             if (!micPower_->isChecked()) {
-                if (!micDisconnectNotice_.isEmpty()) micStatus_->setText(micDisconnectNotice_ + "Microphone EQ is off.");
+                if (!micDisconnectNotice_.isEmpty()) micStatus_->setText(micDisconnectNotice_ + SC_TR("Microphone EQ is off."));
                 return;
             }
             if (inputs_.isEmpty()) {
                 microphone_.stop();
-                micStatus_->setText(micDisconnectNotice_.isEmpty() ? "No microphone connected."
-                                                               : micDisconnectNotice_ + "No microphone connected.");
+                micStatus_->setText(micDisconnectNotice_.isEmpty() ? SC_TR("No microphone connected.")
+                                                               : micDisconnectNotice_ + SC_TR("No microphone connected."));
                 return;
             }
             InputDevice desired;
@@ -2855,13 +2867,13 @@ private:
             const bool usbConnected = std::any_of(inputs_.begin(), inputs_.end(), [](const InputDevice &device) {
                 return device.name.contains(".usb-");
             });
-            micStatus_->setText(micDisconnectNotice_ + "Natural mic EQ on · " + desired.description +
+            micStatus_->setText(micDisconnectNotice_ + SC_TR("Natural mic EQ on · ") + desired.description +
                                 (!usbConnected ? usbMicrophoneHint() : ""));
-        } catch (const std::exception &error) { micStatus_->setText("Microphone error: " + QString::fromUtf8(error.what())); }
+        } catch (const std::exception &error) { micStatus_->setText(SC_TR("Microphone error: %1").arg(QString::fromUtf8(error.what()))); }
     }
 
     void showPlaybackStatus(const Device &device) {
-        status_->setText("On · Playing through " + device.description);
+        status_->setText(SC_TR("On · Playing through %1").arg(device.description));
     }
 
     void setupTray() {
@@ -2872,7 +2884,7 @@ private:
         menu->addAction("Open SoundCurrent EQ", this, [this] { reopen(); });
         trayToggle_ = menu->addAction("Turn equalizer off", this, [this] { power_->setChecked(!power_->isChecked()); });
         connect(power_, &QCheckBox::toggled, this, [this](bool on) {
-            trayToggle_->setText(on ? "Turn equalizer off" : "Turn equalizer on");
+            trayToggle_->setText(on ? SC_TR("Turn equalizer off") : SC_TR("Turn equalizer on"));
             tray_->setToolTip(on ? "SoundCurrent EQ · On" : "SoundCurrent EQ · Off");
         });
         menu->addSeparator();
@@ -2886,8 +2898,8 @@ private:
     }
 
     static QString frequencyLabel(double frequency) {
-        return frequency >= 1000 ? QString::number(frequency / 1000.0, 'g', 3) + "k"
-                                 : QString::number(frequency, 'g', 4);
+        return frequency >= 1000 ? QLocale().toString(frequency / 1000.0, 'g', 3) + "k"
+                                 : QLocale().toString(frequency, 'g', 4);
     }
 
     void rebuildBandControls() {
@@ -2897,6 +2909,7 @@ private:
         frequencyButtons_.clear();
         levelBars_.clear();
         auto *container = new QWidget;
+        container->setLayoutDirection(Qt::LeftToRight);
         auto *row = new QHBoxLayout(container);
         row->setContentsMargins(8, 4, 8, 8);
         row->setSpacing(4);
@@ -2912,7 +2925,7 @@ private:
             slider->setSingleStep(1);
             slider->setPageStep(2);
             slider->setMinimumHeight(140);
-            slider->setAccessibleName(QString("Band %1 gain").arg(i + 1));
+            slider->setAccessibleName(QString(SC_TR("Band %1 gain")).arg(i + 1));
             slider->installEventFilter(this);
             sliders_.append(slider);
             auto *sliderRow = new QHBoxLayout;
@@ -2920,14 +2933,14 @@ private:
             sliderRow->addWidget(slider, 1, Qt::AlignHCenter);
             auto *level = new BandLevelMeter;
             level->setPeakMarkersEnabled(peakMarkers_->isChecked());
-            level->setAccessibleName(QString("Estimated output level near band %1").arg(i + 1));
-            level->setToolTip("Estimated post-EQ level near this frequency");
+            level->setAccessibleName(QString(SC_TR("Estimated output level near band %1")).arg(i + 1));
+            level->setToolTip(SC_TR("Estimated post-EQ level near this frequency"));
             levelBars_.append(level);
             sliderRow->addWidget(level);
             column->addLayout(sliderRow, 1);
             auto *frequency = new QPushButton;
-            frequency->setToolTip("Select this band to edit frequency, gain, and Q");
-            frequency->setAccessibleName(QString("Select band %1").arg(i + 1));
+            frequency->setToolTip(SC_TR("Select this band to edit frequency, gain, and Q"));
+            frequency->setAccessibleName(QString(SC_TR("Select band %1")).arg(i + 1));
             frequencyButtons_.append(frequency);
             column->addWidget(frequency);
             row->addLayout(column);
@@ -2955,25 +2968,25 @@ private:
             const double db = 20.0 * std::log10(std::max(levels[i], 0.000001));
             if (power_->isChecked()) levelBars_[i]->setLevel(db);
             else levelBars_[i]->reset();
-            levelBars_[i]->setToolTip(QString("Estimated output near %1: %2 dBFS")
+            levelBars_[i]->setToolTip(QString(SC_TR("Estimated output near %1: %2 dBFS"))
                                      .arg(frequencyLabel(bands_[i].frequency)).arg(db, 0, 'f', 1));
         }
         if (!power_->isChecked()) {
             overallLevel_->reset();
-            peakStatus_->setText("Estimated peak: EQ off");
+            peakStatus_->setText(SC_TR("Estimated peak: EQ off"));
             peakStatus_->setStyleSheet("color:#8fa2bb;");
         } else if (peak <= 0.000001) {
             overallLevel_->setLevel(-60.0);
-            peakStatus_->setText("Estimated peak: waiting for audio");
+            peakStatus_->setText(SC_TR("Estimated peak: waiting for audio"));
             peakStatus_->setStyleSheet("color:#8fa2bb;");
         } else {
             const double db = 20.0 * std::log10(peak);
             overallLevel_->setLevel(db);
-            overallLevel_->setToolTip(QString("Estimated overall output peak: %1 dBFS")
+            overallLevel_->setToolTip(QString(SC_TR("Estimated overall output peak: %1 dBFS"))
                                           .arg(db, 0, 'f', 1));
             peakStatus_->setText(db >= -1.0
-                                     ? QString("Clipping risk · estimated peak %1 dBFS").arg(db, 0, 'f', 1)
-                                     : QString("Estimated peak %1 dBFS").arg(db, 0, 'f', 1));
+                                     ? QString(SC_TR("Clipping risk · estimated peak %1 dBFS")).arg(db, 0, 'f', 1)
+                                     : QString(SC_TR("Estimated peak %1 dBFS")).arg(db, 0, 'f', 1));
             peakStatus_->setStyleSheet(db >= -1.0 ? "color:#f16b76;font-weight:700;"
                                                     : db >= -6.0 ? "color:#e6b450;" : "color:#50d1ba;");
         }
@@ -2984,7 +2997,7 @@ private:
         for (qsizetype i = 0; i < bands_.size(); ++i) {
             const auto &band = bands_[i];
             sliders_[i]->setValue(std::lround(band.gain * 2));
-            gainLabels_[i]->setText((band.gain > 0 ? "+" : "") + QString::number(band.gain, 'g', 3));
+            gainLabels_[i]->setText((band.gain > 0 ? "+" : "") + QLocale().toString(band.gain, 'g', 3));
             frequencyButtons_[i]->setText(frequencyLabel(band.frequency));
             frequencyButtons_[i]->setStyleSheet(i == selected_ ? "background:#268f84;color:white;" : "");
         }
@@ -2999,7 +3012,7 @@ private:
         frequencyBox_->setValue(band.frequency);
         gainBox_->setValue(band.gain);
         qBox_->setValue(band.q);
-        headroom_->setText("Auto headroom " + QString::number(headroom(processingBands()), 'f', 1) + " dB");
+        headroom_->setText(SC_TR("Auto headroom %1 dB").arg(QLocale().toString(headroom(processingBands()), 'f', 1)));
         curve_->setBands(bands_, selected_);
         curve_->setCorrection(speakerCorrection());
     }
@@ -3013,7 +3026,7 @@ private:
 
     void markCustom() {
         changing_ = true;
-        presetCombo_->setCurrentText("Custom");
+        presetCombo_->setCurrentIndex(presetCombo_->findData("Custom"));
         changing_ = false;
     }
 
@@ -3038,7 +3051,7 @@ private:
     void refreshEquipmentStatus() {
         QStringList names;
         for (const auto &kind : {"speaker","amplifier","microphone"}) if (const auto p = equipmentProfile(kind)) names << QString(kind) + ": " + p->brand + " / " + p->family + " / " + p->model;
-        equipmentStatus_->setText(names.isEmpty() ? "No imported equipment correction selected." : names.join("\n"));
+        equipmentStatus_->setText(names.isEmpty() ? SC_TR("No imported equipment correction selected.") : names.join("\n"));
     }
     void setEquipment(const soundcurrent::equipment::Profile &profile) {
         if (lockButton_->isChecked() || calibrating_) return;
@@ -3074,12 +3087,12 @@ private:
         }
     }
     void importAmplifierProfile() {
-        const auto path = QFileDialog::getOpenFileName(this, "Import measured amplifier correction", {}, "Correction profile (*.json)");
+        const auto path = QFileDialog::getOpenFileName(this, SC_TR("Import measured amplifier correction"), {}, SC_TR("Correction profile (*.json)"));
         if (path.isEmpty()) return;
         QFile file(path);
-        if (!file.open(QIODevice::ReadOnly) || file.size() > 65536) { showError("Profile must be readable and smaller than 64 KiB."); return; }
+        if (!file.open(QIODevice::ReadOnly) || file.size() > 65536) { showError(SC_TR("Profile must be readable and smaller than 64 KiB.")); return; }
         const auto profile = parseAmplifierProfile(QJsonDocument::fromJson(file.readAll()).object());
-        if (!profile) { showError("Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README."); return; }
+        if (!profile) { showError(SC_TR("Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.")); return; }
         QMessageBox preview(QMessageBox::Question, "Apply amplifier correction?",
                             profile->name + "\n\nMeasurement conditions: " + profile->conditions +
                             "\nSource: " + profile->source + "\n\nApply only if these conditions match your system.",
@@ -3088,16 +3101,16 @@ private:
         if (preview.exec() != QMessageBox::Apply) return;
         int index = ampCombo_->findData(profile->id);
         if (index < 0) {
-            if (amplifierProfiles_.size() >= 32) { showError("Maximum of 32 amplifier profiles reached."); return; }
+            if (amplifierProfiles_.size() >= 32) { showError(SC_TR("Maximum of 32 amplifier profiles reached.")); return; }
             auto proposed = amplifierProfiles_; proposed.append(*profile);
             QJsonArray array; for (const auto &p : proposed) array.append(p.json);
             const auto destination = amplifierProfilesPath();
-            if (!QDir().mkpath(QFileInfo(destination).absolutePath())) { showError("Cannot create amplifier profile folder."); return; }
+            if (!QDir().mkpath(QFileInfo(destination).absolutePath())) { showError(SC_TR("Cannot create amplifier profile folder.")); return; }
             QSaveFile save(destination);
-            if (!save.open(QIODevice::WriteOnly)) { showError("Cannot save amplifier profile."); return; }
+            if (!save.open(QIODevice::WriteOnly)) { showError(SC_TR("Cannot save amplifier profile.")); return; }
             save.setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner);
             save.write(QJsonDocument(array).toJson());
-            if (!save.commit()) { showError("Cannot finish saving amplifier profile."); return; }
+            if (!save.commit()) { showError(SC_TR("Cannot finish saving amplifier profile.")); return; }
             amplifierProfiles_ = proposed;
             ampCombo_->addItem(profile->name, profile->id);
             index = ampCombo_->count() - 1;
@@ -3113,7 +3126,7 @@ private:
                 QMessageBox::Ok, this);
             details.setTextFormat(Qt::PlainText); details.exec(); return;
         }
-        QMessageBox::information(this, "Amplifier profile details", "No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.");
+        QMessageBox::information(this, SC_TR("Amplifier profile details"), SC_TR("No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve."));
     }
     QVector<AmplifierProfile> amplifierProfiles_;
     QComboBox *ampCombo_ = nullptr;
@@ -3122,14 +3135,14 @@ private:
     QComboBox *speakerBrand_=nullptr,*speakerType_=nullptr;
     void ensureSpeakerChoice(const QString &id){
         if(id.isEmpty() || speakerCombo_->findData(id)>=0)return;
-        for(const auto &p:speakerProfiles())if(p.id==id){speakerCombo_->addItem(p.name+" (restored selection)",p.id);return;}
+        for(const auto &p:speakerProfiles())if(p.id==id){speakerCombo_->addItem(p.name+SC_TR(" (restored selection)"),p.id);return;}
     }
     void filterSpeakers(){
         const auto selected=speakerCombo_->currentData().toString();const QSignalBlocker block(speakerCombo_);
-        speakerCombo_->clear();speakerCombo_->addItem("None — use my own EQ",QString());
+        speakerCombo_->clear();speakerCombo_->addItem(SC_TR("None — use my own EQ"),QString());
         for(const auto &p:speakerProfiles()){
             const bool matches=(speakerBrand_->currentIndex()==0 || p.brand==speakerBrand_->currentText()) && (speakerType_->currentIndex()==0 || p.equipmentType==speakerType_->currentText());
-            if(matches || p.id==selected)speakerCombo_->addItem(p.name+(matches?QString():" (currently selected)"),p.id);
+            if(matches || p.id==selected)speakerCombo_->addItem(p.name+(matches?QString():SC_TR(" (currently selected)")),p.id);
         }
         speakerCombo_->setCurrentIndex(std::max(0,speakerCombo_->findData(selected)));
     }
@@ -3144,10 +3157,10 @@ private:
                     .arg(b.type == T::LowShelf ? "low shelf" : b.type == T::HighShelf ? "high shelf" : "peak");
             }
             text += "\nSources:\n" + p.links.join('\n');
-            QMessageBox::information(this, "Speaker profile details", text);
+            QMessageBox::information(this, SC_TR("Speaker profile details"), text);
             return;
         }
-        QMessageBox::information(this, "Speaker profile details", "No model correction selected. Your listening EQ works normally.");
+        QMessageBox::information(this, SC_TR("Speaker profile details"), SC_TR("No model correction selected. Your listening EQ works normally."));
     }
 #ifdef Q_OS_WIN
     void refreshMicCables() {
@@ -3159,7 +3172,7 @@ private:
         if (ids != micCableIds_ || !micCableCombo_->count()) {
             const QSignalBlocker block(micCableCombo_);
             micCableCombo_->clear();
-            micCableCombo_->addItem("Automatic (SoundCurrent Microphone)", QString());
+            micCableCombo_->addItem(SC_TR("Automatic (SoundCurrent Microphone)"), QString());
             for (const auto &c : cables) micCableCombo_->addItem(c.description, c.render);
             micCableCombo_->setCurrentIndex(std::max(0, micCableCombo_->findData(current)));
             micCableIds_ = ids;
@@ -3208,7 +3221,7 @@ private:
 
     void presetChanged() {
         if (changing_) return;
-        const auto name = presetCombo_->currentText();
+        const auto name = presetCombo_->currentData().toString();
         if (!builtinShapes().contains(name) && !custom_.contains(name)) return;
         recordChange(presetCombo_);
         enhancements_->setSettings(customEnhancements_.value(name,{}));saveEnhancements();
@@ -3244,7 +3257,7 @@ private:
         presetCombo_->clear();
         auto addGroup = [this](const QStringList &names) {
             if (presetCombo_->count()) presetCombo_->insertSeparator(presetCombo_->count());
-            for (const auto &name : names) presetCombo_->addItem(name);
+            for (const auto &name : names) presetCombo_->addItem(soundcurrent::i18n::text(name.toUtf8().constData()),name);
         };
         addGroup({"Balanced", "Flat", "Loudness", "Warm", "Bright", "Soft Treble", "Treble Detail",
                   "Headphones", "Small Speakers", "Night Listening"});
@@ -3255,18 +3268,18 @@ private:
                   "R&B", "Acoustic", "Piano", "Metal", "Lo-Fi"});
         if (!custom_.isEmpty()) {
             presetCombo_->insertSeparator(presetCombo_->count());
-            for (auto it = custom_.begin(); it != custom_.end(); ++it) presetCombo_->addItem(it.key());
+            for (auto it = custom_.begin(); it != custom_.end(); ++it) presetCombo_->addItem(it.key(),it.key());
         }
-        presetCombo_->addItem("Custom");
-        presetCombo_->setCurrentText(selected);
+        presetCombo_->addItem(SC_TR("Custom"));
+        presetCombo_->setCurrentIndex(presetCombo_->findData(selected));
     }
 
     void savePreset() {
         bool ok = false;
-        const auto name = QInputDialog::getText(this, "Save EQ preset", "Preset name:", QLineEdit::Normal, {}, &ok).trimmed();
+        const auto name = QInputDialog::getText(this, SC_TR("Save EQ preset"), SC_TR("Preset name:"), QLineEdit::Normal, {}, &ok).trimmed();
         if (!ok) return;
         if (name.isEmpty() || name == "Custom" || builtinShapes().contains(name)) {
-            showError("Choose a name that is not a built-in preset.");
+            showError(SC_TR("Choose a name that is not a built-in preset."));
             return;
         }
         custom_[name] = bands_;
@@ -3277,15 +3290,15 @@ private:
             object.insert(it.key(), QJsonObject{{"bands", serializeBands(it.value())},{"enhancements",values}});
         }
         const auto path = presetsPath();
-        if (!QDir().mkpath(QFileInfo(path).absolutePath())) { showError("Could not create preset folder."); return; }
+        if (!QDir().mkpath(QFileInfo(path).absolutePath())) { showError(SC_TR("Could not create preset folder.")); return; }
         QSaveFile file(path);
-        if (!file.open(QIODevice::WriteOnly)) { showError("Could not save preset."); return; }
+        if (!file.open(QIODevice::WriteOnly)) { showError(SC_TR("Could not save preset.")); return; }
         file.setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner);
         file.write(QJsonDocument(object).toJson());
-        if (!file.commit()) { showError("Could not finish saving preset."); return; }
+        if (!file.commit()) { showError(SC_TR("Could not finish saving preset.")); return; }
         rebuildPresetList(name);
         commitChange();
-        status_->setText("Saved preset “" + name + "”.");
+        status_->setText(SC_TR("Saved preset “%1”.").arg(name));
     }
 
     Device bestDevice(const QList<Device> &candidates) const {
@@ -3331,7 +3344,7 @@ private:
             if (changed) {
                 outputCombo_->blockSignals(true);
                 outputCombo_->clear();
-                outputCombo_->addItem("Automatic (follow connected devices)", QString());
+                outputCombo_->addItem(SC_TR("Automatic (follow connected devices)"), QString());
                 for (const auto &device : devices_) outputCombo_->addItem(device.description, device.name);
                 index = outputCombo_->findData(selectedName);
                 outputCombo_->setCurrentIndex(index >= 0 ? index : 0);
@@ -3349,7 +3362,7 @@ private:
 #endif
             if (!audio_.active() && !reconnectDisconnectedOutput) {
                 power_->setChecked(false);
-                showError("The audio processor stopped unexpectedly.");
+                showError(SC_TR("The audio processor stopped unexpectedly."));
                 return;
             }
 #ifdef Q_OS_WIN
@@ -3362,7 +3375,7 @@ private:
                 !findDevice(windowsOutput).name.isEmpty();
             if (windowsOutput == audio_.target() || pinnedOutputBypassed) {
                 power_->setChecked(false);
-                status_->setText("Equalizer is off. Windows selected the physical output directly.");
+                status_->setText(SC_TR("Equalizer is off. Windows selected the physical output directly."));
                 return;
             }
 #endif
@@ -3378,7 +3391,7 @@ private:
             if (!selectedName.isEmpty() && index >= 0) desired = findDevice(selectedName);
             else if (!selectedName.isEmpty() && index < 0) {
                 desired = bestDevice(devices_);
-                status_->setText("Selected output was unplugged. Switched to automatic output.");
+                status_->setText(SC_TR("Selected output was unplugged. Switched to automatic output."));
             } else if (!initial && !added.isEmpty()) desired = bestDevice(added);
             else if (!findDevice(audio_.target()).name.isEmpty()) {
                 desired = findDevice(audio_.target());
@@ -3390,7 +3403,7 @@ private:
                     meter_.stop();
                     audio_.stop();
                     power_->setChecked(false);
-                    status_->setText("No output device is connected.");
+                    status_->setText(SC_TR("No output device is connected."));
                 } else {
                     meter_.stop();
                     audio_.start(desired, processingBands(), outputGainDb(), balance_->value());
@@ -3414,10 +3427,10 @@ private:
     }
 
     void togglePower(bool on) {
-        power_->setText(on ? "Equalizer on" : "Equalizer off");
+        power_->setText(on ? SC_TR("Equalizer on") : SC_TR("Equalizer off"));
         if (on) {
             const auto device = selectedDevice();
-            if (device.name.isEmpty()) { power_->setChecked(false); showError("No output device is available."); return; }
+            if (device.name.isEmpty()) { power_->setChecked(false); showError(SC_TR("No output device is available.")); return; }
             try {
                 audio_.start(device, processingBands(), outputGainDb(), balance_->value());
                 if (isVisible()) meter_.start();
@@ -3429,11 +3442,11 @@ private:
         } else {
             meter_.stop();
             audio_.stop();
-            status_->setText("Equalizer is off. Your audio uses its normal output.");
+            status_->setText(SC_TR("Equalizer is off. Your audio uses its normal output."));
         }
     }
 
-    void showError(const QString &message) { status_->setText("Audio error: " + message); }
+    void showError(const QString &message) { status_->setText(SC_TR("Audio error: %1").arg(message)); }
 
     AudioEngine audio_;
     MicrophoneEngine microphone_;
@@ -3538,7 +3551,7 @@ int main(int argc, char **argv) {
     QCoreApplication::setOrganizationName("SoundCurrent");
     QCoreApplication::setApplicationName("soundcurrent-eq");
     QTemporaryDir testSettings;
-    if (app.arguments().contains("--windows-audio-setup-test") || app.arguments().contains("--windows-live-conflict-test") || app.arguments().contains("--windows-live-manual-route-test") || app.arguments().contains("--windows-live-hotplug-test") || app.arguments().contains("--windows-live-ui-test") || app.arguments().contains("--ui-self-test")) {
+    if (app.arguments().contains("--windows-audio-setup-test") || app.arguments().contains("--windows-live-conflict-test") || app.arguments().contains("--windows-live-manual-route-test") || app.arguments().contains("--windows-live-hotplug-test") || app.arguments().contains("--windows-live-ui-test") || app.arguments().contains("--ui-self-test") || app.arguments().contains("--localization-ui-test")) {
 #ifndef Q_OS_WIN
         const QJsonArray unpluggedPorts{QJsonObject{{"name", "rear-mic"}, {"availability", "not available"}}};
         if (inputPortAvailable(QJsonObject{{"active_port", "rear-mic"}, {"ports", unpluggedPorts}}))
@@ -3550,6 +3563,8 @@ int main(int argc, char **argv) {
         QSettings::setDefaultFormat(QSettings::IniFormat);
         QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, testSettings.path());
     }
+    soundcurrent::i18n::Runtime localization;
+    localization.initialize(app.arguments().contains("--ui-self-test"));
     QGuiApplication::setDesktopFileName("io.github.rhamenator.SoundCurrentEQ");
     app.setWindowIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ", QIcon(":/app.ico")));
     if (app.arguments().size() == 3 && app.arguments()[1] == "--check-amplifier-profile") {
@@ -4130,6 +4145,33 @@ int main(int argc, char **argv) {
         qInfo("UI self-test passed with %lld presets and editable 5–31 band layout",
               static_cast<long long>(builtinShapes().size()));
         return 0;
+    }
+    if (app.arguments().contains("--localization-ui-test")) {
+        auto ownedWindow=std::make_unique<MainWindow>(false);
+        auto &window=*ownedWindow;
+        auto *preset=window.findChild<QComboBox *>("localizedPresetSelector");
+        if(!preset || preset->currentData().toString()!="Flat") qFatal("Localized preset lost its stable ID");
+        QDoubleSpinBox *selectedGain=nullptr;
+        for(auto *spin:window.findChildren<QDoubleSpinBox *>())
+            if(spin->accessibleName()==SC_TR("Selected band gain"))selectedGain=spin;
+        if(!selectedGain || selectedGain->value()!=0)qFatal("Localized Flat preset has nonzero gain");
+        preset->setCurrentIndex(preset->findData("Night Listening"));
+        if(preset->currentData().toString()!="Night Listening") qFatal("Localized preset selection changed its ID");
+        const auto expected=builtinProfile("Night Listening",kDefaultBands).front().gain;
+        if(std::abs(selectedGain->value()-expected)>0.1)qFatal("Translated preset name blocked its EQ change");
+        preset->setCurrentIndex(preset->findData("Flat"));
+        if(selectedGain->value()!=0) qFatal("Localized Flat reset failed");
+        auto *language=window.findChild<QComboBox *>("uiLanguage");
+        auto *format=window.findChild<QComboBox *>("formatLocale");
+        if(!language || !format || format->count()<100) qFatal("Locale selection is missing");
+        window.show();
+        QTimer::singleShot(100, &app, [&] {
+            const auto dir=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
+            if(!dir.isEmpty()){QDir().mkpath(dir);window.grab().save(dir+"/localized.png");}
+            qInfo("Localization UI: %s -> %s",qPrintable(localization.requested()),qPrintable(localization.loaded()));
+            app.quit();
+        });
+        return app.exec();
     }
 #ifdef Q_OS_WIN
     const auto runtime = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);

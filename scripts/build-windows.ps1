@@ -106,7 +106,7 @@ try {
     $dsp.Refresh()
     if ($null -eq $dsp.ExitCode -or $dsp.ExitCode -ne 0) { throw "DSP test failed: $($dsp.ExitCode)" }
     $env:QT_QPA_PLATFORM = 'offscreen'
-    foreach ($testName in @('soundcurrent-equipment-test', 'soundcurrent-processing-guard-test', 'soundcurrent-enhancement-test', 'soundcurrent-update-test','soundcurrent-spin-test')) {
+    foreach ($testName in @('soundcurrent-equipment-test', 'soundcurrent-processing-guard-test', 'soundcurrent-enhancement-test', 'soundcurrent-update-test','soundcurrent-spin-test','soundcurrent-localization-test')) {
         Copy-Item "build-windows-native\Release\$testName.exe" $stage
         $testArgs = @()
         if ($testName -eq 'soundcurrent-equipment-test') { $testArgs = @('--ui-self-test') }
@@ -128,6 +128,16 @@ try {
     }
     $ui.Refresh()
     Get-Content $uiLog -ErrorAction SilentlyContinue
+    foreach ($locale in @('fr','de','ar','qps-ploc','qps-rtl')) {
+        $localizedLog = Join-Path $root "build-windows-native\localized-$locale.log"
+        $localized = Start-Process "$stage\soundcurrent-eq.exe" -ArgumentList @('--localization-ui-test','--language',$locale) -PassThru -RedirectStandardError $localizedLog
+        $null = $localized.Handle
+        if (!$localized.WaitForExit(60000)) { Stop-Process -Id $localized.Id -Force; throw "Localized UI timed out: $locale" }
+        $localized.Refresh()
+        if ($localized.ExitCode -ne 0) { Get-Content $localizedLog; throw "Localized UI failed: $locale" }
+    }
+    & python scripts/localization.py --check
+    if ($LASTEXITCODE -ne 0) { throw 'Translation catalog audit failed' }
     Remove-Item Env:\QT_QPA_PLATFORM
     if ($null -eq $ui.ExitCode -or $ui.ExitCode -ne 0) { throw "Shared UI test failed: $($ui.ExitCode)" }
     Remove-Item "$stage\soundcurrent-dsp-test.exe"
