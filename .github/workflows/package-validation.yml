@@ -1,6 +1,11 @@
 name: Package lifecycle and UI validation
 on:
   workflow_dispatch:
+    inputs:
+      image:
+        type: choice
+        default: all
+        options: [all, 'ubuntu:24.04', 'fedora:44', 'almalinux:10']
 permissions:
   contents: read
 jobs:
@@ -10,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image: ['ubuntu:24.04', 'fedora:44', 'almalinux:10']
+        image: ${{ fromJSON(inputs.image == 'all' && '["ubuntu:24.04","fedora:44","almalinux:10"]' || format('["{0}"]', inputs.image)) }}
     steps:
       - uses: actions/checkout@9f698171ed81b15d1823a05fc7211befd50c8ae0
         with:
@@ -20,7 +25,7 @@ jobs:
           TEST_IMAGE: ${{ matrix.image }}
         run: |
           mkdir -p validation-output
-          docker run --rm -v "$PWD:/input:ro" -v "$PWD/validation-output:/output" "$TEST_IMAGE" bash -lc '
+          docker run --rm -e DEBIAN_FRONTEND=noninteractive -v "$PWD:/input:ro" -v "$PWD/validation-output:/output" "$TEST_IMAGE" bash -lc '
             set -euo pipefail
             if command -v apt-get >/dev/null; then
               apt-get update
