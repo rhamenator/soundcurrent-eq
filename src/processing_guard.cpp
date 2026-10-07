@@ -95,7 +95,13 @@ QString otherEqualizerConflict(const QString &ownPrefix) {
     if (Process32FirstW(snapshot, &entry))
         do {
             const auto name = QString::fromWCharArray(entry.szExeFile);
-            if (entry.th32ProcessID != own && recognizedEqualizerProcess(name)) {
+            // A same-product activation/quit client can briefly overlap the
+            // running process. The shared session gate and instance lock already
+            // prevent it from processing audio; do not flag that client as an EQ.
+            const auto ownName = QFileInfo(QCoreApplication::applicationFilePath()).fileName();
+            if (entry.th32ProcessID != own &&
+                name.compare(ownName, Qt::CaseInsensitive) != 0 &&
+                recognizedEqualizerProcess(name)) {
                 CloseHandle(snapshot);
                 return name + " is running. Quit it before using SoundCurrent.";
             }

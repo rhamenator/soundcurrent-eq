@@ -10,7 +10,7 @@
 
 ## Easy Linux installer
 
-[Download the Linux installer](https://github.com/rhamenator/soundcurrent-eq/releases/download/preview-0.7.6/SoundCurrent-EQ-Linux-Installer.run). Save it, then run:
+[Download the Linux installer](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.0.0/SoundCurrent-EQ-Linux-Installer.run). Save it, then run:
 
 ```bash
 bash ~/Downloads/SoundCurrent-EQ-Linux-Installer.run
@@ -18,7 +18,7 @@ bash ~/Downloads/SoundCurrent-EQ-Linux-Installer.run
 
 It identifies your distribution, verifies the selected package against a pinned SHA-256, and installs or updates through APT or DNF with administrator approval. Presets and profiles are retained; an application-menu icon is included. Use Quit before updating. GTK/KDE confirmation dialogs are used when Zenity or KDialog is available.
 
-The installer installs EQ 0.7.6, including the current profile library and editor. It supports Debian/Ubuntu derivatives with compatible Qt 6.4+ and glibc, Fedora 44+, and RHEL 10-compatible systems including Rocky/AlmaLinux 10. Dependency availability still depends on enabled distribution repositories. Unsupported distributions or architectures are reported; Arch and openSUSE packages are not provided yet. Use `--dry-run` to see its selection, or `--download-only` to save a verified package.
+The installer installs EQ 1.0.0, including the current profile library and editor. It supports Debian/Ubuntu derivatives with compatible Qt 6.4+ and glibc, Fedora 44+, and RHEL 10-compatible systems including Rocky/AlmaLinux 10. Dependency availability still depends on enabled distribution repositories. Unsupported distributions or architectures are reported; Arch and openSUSE packages are not provided yet. Use `--dry-run` to see its selection, or `--download-only` to save a verified package.
 
 
 For an offline installation, download the matching DEB or RPM from the same release and run:
@@ -31,20 +31,20 @@ The local package must match the same pinned SHA-256 as the online package. Depe
 
 To uninstall, Quit the app and remove its package with `sudo apt remove soundcurrent-eq` or `sudo dnf remove soundcurrent-eq`. Your personal presets and profiles are retained for reinstallation.
 
-## Download the Windows preview — 0.7.6
+## Download for Windows — 1.0.0
 
-- [Windows x64 installer](https://github.com/rhamenator/soundcurrent-eq/releases/download/preview-0.7.6/SoundCurrent-EQ-0.7.6-windows-x64-VBCABLE-preview.exe)
-- [Release notes, checksums and corresponding source](https://github.com/rhamenator/soundcurrent-eq/releases/tag/preview-0.7.6)
+- [Windows x64 installer](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.0.0/SoundCurrent-EQ-1.0.0-windows-x64-setup.exe)
+- [Release notes, checksums and corresponding source](https://github.com/rhamenator/soundcurrent-eq/releases/tag/v1.0.0)
 
-This is a Windows testing preview using the signed VB-CABLE route. The SoundCurrent app/installer remain unsigned; Windows security policies may warn or block them. Quit the running app before updating. Our native-driver code remains preserved for later signing.
+This Windows release uses the signed VB-CABLE route. The SoundCurrent app/installer remain unsigned; Windows security policies may warn or block them. Quit the running app before updating. Our native-driver code remains preserved for later signing.
 
-## Linux packages — 0.7.6
+## Linux packages — 1.0.0
 
-[Release notes and all downloads](https://github.com/rhamenator/soundcurrent-eq/releases/tag/preview-0.7.6)
+[Release notes and all downloads](https://github.com/rhamenator/soundcurrent-eq/releases/tag/v1.0.0)
 
-- [Ubuntu / Debian package (64-bit)](https://github.com/rhamenator/soundcurrent-eq/releases/download/preview-0.7.6/soundcurrent-eq_0.7.6_amd64.deb)
-- [Fedora 44 RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/preview-0.7.6/soundcurrent-eq-0.7.6-1.fc44.x86_64.rpm)
-- [RHEL 10 compatible RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/preview-0.7.6/soundcurrent-eq-0.7.6-1.el10.x86_64.rpm)
+- [Ubuntu / Debian package (64-bit)](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.0.0/soundcurrent-eq_1.0.0_amd64.deb)
+- [Fedora 44 RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.0.0/soundcurrent-eq-1.0.0-1.fc44.x86_64.rpm)
+- [RHEL 10 compatible RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.0.0/soundcurrent-eq-1.0.0-1.el10.x86_64.rpm)
 
 These are testing previews. Use the explicit preview links above.
 
@@ -105,11 +105,11 @@ it and restores the normal output. Linux uses PipeWire filters; Windows uses the
 
 ## Install
 
-Download the package for your system from the [current 0.7.6 preview](https://github.com/rhamenator/soundcurrent-eq/releases/tag/preview-0.7.6).
+Download the package for your system from the [current 1.0.0 release](https://github.com/rhamenator/soundcurrent-eq/releases/tag/v1.0.0).
 
 ### Windows 10 and 11 (64-bit)
 
-Download the [0.7.6 preview](https://github.com/rhamenator/soundcurrent-eq/releases/tag/preview-0.7.6)
+Download the [1.0.0 release](https://github.com/rhamenator/soundcurrent-eq/releases/tag/v1.0.0)
 for the current Windows installer and matching Ubuntu, Fedora and RHEL-compatible packages.
 The Windows build is a preview using the same interface and controls as
 Linux. The installer bundles Qt and the C++ runtime; users do not need to
