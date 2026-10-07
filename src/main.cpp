@@ -4148,11 +4148,16 @@ int main(int argc, char **argv) {
         auto &window=*ownedWindow;
         auto *preset=window.findChild<QComboBox *>("localizedPresetSelector");
         if(!preset || preset->currentData().toString()!="Flat") qFatal("Localized preset lost its stable ID");
-        const auto before=builtinProfile("Flat",kDefaultBands);
+        QDoubleSpinBox *selectedGain=nullptr;
+        for(auto *spin:window.findChildren<QDoubleSpinBox *>())
+            if(spin->accessibleName()==SC_TR("Selected band gain"))selectedGain=spin;
+        if(!selectedGain || selectedGain->value()!=0)qFatal("Localized Flat preset has nonzero gain");
         preset->setCurrentIndex(preset->findData("Night Listening"));
         if(preset->currentData().toString()!="Night Listening") qFatal("Localized preset selection changed its ID");
+        const auto expected=builtinProfile("Night Listening",kDefaultBands).front().gain;
+        if(std::abs(selectedGain->value()-expected)>0.1)qFatal("Translated preset name blocked its EQ change");
         preset->setCurrentIndex(preset->findData("Flat"));
-        if(builtinProfile("Flat",kDefaultBands).size()!=before.size()) qFatal("Localization changed preset processing");
+        if(selectedGain->value()!=0) qFatal("Localized Flat reset failed");
         auto *language=window.findChild<QComboBox *>("uiLanguage");
         auto *format=window.findChild<QComboBox *>("formatLocale");
         if(!language || !format || format->count()<100) qFatal("Locale selection is missing");
