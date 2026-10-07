@@ -25,9 +25,11 @@ jobs:
           TEST_IMAGE: ${{ matrix.image }}
         run: |
           mkdir -p validation-output
-          docker run --rm -e DEBIAN_FRONTEND=noninteractive -v "$PWD:/input:ro" -v "$PWD/validation-output:/output" "$TEST_IMAGE" bash -lc '
+          docker run --rm -e DEBIAN_FRONTEND=noninteractive -v /etc/ssl/certs/ca-certificates.crt:/runner-ca.crt:ro -v "$PWD:/input:ro" -v "$PWD/validation-output:/output" "$TEST_IMAGE" bash -lc '
             set -euo pipefail
             if command -v apt-get >/dev/null; then
+              mkdir -p /etc/ssl/certs
+              cp /runner-ca.crt /etc/ssl/certs/ca-certificates.crt
               sed -i "s|http://archive.ubuntu.com|https://archive.ubuntu.com|g; s|http://security.ubuntu.com|https://security.ubuntu.com|g" /etc/apt/sources.list.d/ubuntu.sources
               apt-get update
               apt-get install -y cmake ninja-build g++ qt6-base-dev libpipewire-0.3-dev pkg-config curl procps xvfb xauth
