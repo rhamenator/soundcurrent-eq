@@ -14,7 +14,7 @@ mkdir -p "$topdir"/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS} "$project_dir/dist
 tar -C "$project_dir" \
     --transform="s,^,soundcurrent-eq-$version/," \
     -czf "$topdir/SOURCES/soundcurrent-eq-$version.tar.gz" \
-    CMakeLists.txt COPYRIGHT LICENSE README.md THIRD-PARTY-NOTICES.md src data tests
+    CMakeLists.txt COPYRIGHT LICENSE README.md THIRD-PARTY-NOTICES.md src data tests native/windows/virtual-driver/vendor/sysvad/soundcurrent_mic_transport.h
 
 rpmbuild -bb "$@" --define "_topdir $topdir" \
     --define "_rpmdir $project_dir/dist" \

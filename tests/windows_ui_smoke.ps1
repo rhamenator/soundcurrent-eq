@@ -14,6 +14,17 @@ public static class EqUi {
  [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr w,out Rect r);
 }
 '@
+function RunRegistry([string]$Arguments) {
+    $info=New-Object Diagnostics.ProcessStartInfo
+    $info.FileName="$env:SystemRoot\System32\reg.exe";$info.Arguments=$Arguments
+    $info.UseShellExecute=$false;$info.RedirectStandardOutput=$true;$info.RedirectStandardError=$true
+    $p=New-Object Diagnostics.Process;$p.StartInfo=$info
+    try {
+        [void]$p.Start();$o=$p.StandardOutput.ReadToEndAsync();$e=$p.StandardError.ReadToEndAsync()
+        if(!$p.WaitForExit(10000)){$p.Kill();throw 'Registry test helper timed out'}
+        if($p.ExitCode -ne 0){throw "Registry test helper failed: $($o.Result) $($e.Result)"}
+    } finally {$p.Dispose()}
+}
 function Assert($Condition, $Message) { if (-not $Condition) { throw $Message } }
 function WaitUntil([scriptblock]$Condition, [string]$Message) {
     $deadline=[DateTime]::UtcNow.AddSeconds(60)
@@ -37,15 +48,15 @@ try {
     Assert (Test-Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\SoundCurrent EQ\SoundCurrent EQ.lnk") 'Start menu shortcut missing'
     # Exercise the shared Qt controls using isolated temporary INI settings.
     $log=Join-Path $env:TEMP 'soundcurrent-ui-self-test.log'
-    $env:QT_QPA_PLATFORM='offscreen'
+    $env:QT_QPA_PLATFORM='windows'
     $test=Start-Process $exe -ArgumentList '--ui-self-test' -PassThru -RedirectStandardError $log
     $null=$test.Handle
     if (!$test.WaitForExit(90000)) { Stop-Process -Id $test.Id -Force; throw 'Shared UI test timed out' }
     $test.Refresh()
     Assert ($test.ExitCode -eq 0) "Shared UI test failed; see $log"
     Remove-Item Env:\QT_QPA_PLATFORM
-    if ($hadSettings) { & reg export $key $backup /y | Out-Null; Assert ($LASTEXITCODE -eq 0) 'Settings backup failed' }
-    if ($hadSettings) { & reg delete $key /f | Out-Null }
+    if ($hadSettings) { RunRegistry ('export "'+$key+'" "'+$backup+'" /y') }
+    if ($hadSettings) { RunRegistry ('delete "'+$key+'" /f') }
     $settingsIsolated=$true
     $app=Start-Process $exe -PassThru
     WaitUntil { $script:window=[EqUi]::FindWindow([NullString]::Value,'SoundCurrent EQ'); $script:window -ne [IntPtr]::Zero } 'App window missing'
@@ -74,8 +85,8 @@ try {
 } finally {
     Remove-Item Env:\QT_QPA_PLATFORM -ErrorAction SilentlyContinue
     if ($settingsIsolated -and (!$app -or $app.HasExited)) {
-        if (Test-Path 'HKCU:\Software\SoundCurrent\soundcurrent-eq') { & reg delete $key /f | Out-Null }
-        if (Test-Path $backup) { & reg import $backup | Out-Null; Remove-Item $backup }
+        if (Test-Path 'HKCU:\Software\SoundCurrent\soundcurrent-eq') { RunRegistry ('delete "'+$key+'" /f') }
+        if (Test-Path $backup) { RunRegistry ('import "'+$backup+'"'); Remove-Item $backup }
     }
     # Leave a failed desktop check running for inspection and graceful recovery.
 }
