@@ -21,6 +21,6 @@ subprocess.run(['bash','-n',str(p)],check=True)
 subprocess.run(['git','archive','--format=tar.gz',f'--prefix={name}-{version}/',f'--output={out/name}-{version}-source.tar.gz','HEAD'],cwd=root,check=True)
 for source,dest in [('docs/linux-installer.md','Linux-installation.md'),('docs/windows-cable-interim.md','Windows-audio-driver-help.md'),(f'docs/release-{version}.md','Release-notes.md')]:
  (out/dest).write_bytes((root/source).read_bytes())
-assets=sorted(p for p in out.rglob('*') if p.is_file() and p.suffix!='.sha256' and p.name!='SHA256SUMS')
+assets=sorted(p for p in out.rglob('*') if p.is_file() and p.name!='SHA256SUMS' and (p.suffix in ('.deb','.rpm','.run') or p.name.endswith(('-setup.exe','-source.tar.gz')) or p.name.startswith('qtbase') and p.name.endswith('.tar.xz') or p.name in ('Release-notes.md','Linux-installation.md','Windows-audio-driver-help.md')))
 (out/'SHA256SUMS').write_text(''.join(f'{sha(p)}  {p.name}\n' for p in assets))
 print(f'Prepared {name} {version} companions and checksums')

@@ -80,5 +80,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mapfile -d '' assets < <(find packages -type f -print0)
+          mapfile -d '' assets < <(find packages -type f \( -name '*.deb' -o -name '*.rpm' -o -name '*-setup.exe' -o -name '*.sha256' -o -name 'qtbase*.tar.xz' -o -name '*.run' -o -name '*-source.tar.gz' -o -name 'SHA256SUMS' -o -name 'Release-notes.md' -o -name 'Linux-installation.md' -o -name 'Windows-audio-driver-help.md' \) -print0)
           gh release create "$GITHUB_REF_NAME" "${assets[@]}" --repo "$GITHUB_REPOSITORY" --title "SoundCurrent EQ $GITHUB_REF_NAME" --notes-file packages/Release-notes.md
