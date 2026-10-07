@@ -6,9 +6,9 @@ version='1.0.0'
 release='v1.0.0'
 repo="rhamenator/$product"
 # Published, reviewed package hashes; never execute an unverified download.
-deb_hash='b3125d4fb4260f3d2720cabd8e5a4e7e0dc671242d9e1816564abd219390675d'
-fedora_hash='144eb48c794253fc21adb2c645bfba4a42104976812c9bfc00a64ac59f7be776'
-rhel_hash='a742696342c23b07bff8406d4ed52192ce12573bc316d1344e44487b4c63baba'
+deb_hash='cd02a665e53cb28c21e1f37dd0b8a3c02804e0a6dcab8d30a063303e1d64e04f'
+fedora_hash='1c43544ff97a66c7191b5ce5f80a9775d2ce751fb410fa81b79e025901112cf6'
+rhel_hash='fabb86c8c6c7a7dcc266259f31fe342346b608f7c9f2afdeab80d05d6591b41c'
 select_package() {
     local id=$1 like=$2 major=${3%%.*}
     case " $id $like " in
@@ -70,7 +70,7 @@ main() {
         else installed=$(rpm -q --qf '%{VERSION}' "$product" 2>/dev/null || true); fi
         [[ $installed =~ ^[0-9] ]] || installed=''
         if [[ -n $installed && $installed != "$version" && $(printf '%s\n%s\n' "$installed" "$version" | sort -V | tail -1) == "$installed" ]]; then
-            message "A newer $product ($installed) is already installed. It was kept; this Linux preview installer provides $version."; return 0
+            message "A newer $product ($installed) is already installed. It was kept; this Linux installer provides $version."; return 0
         fi
     fi
     command -v sha256sum >/dev/null || { echo 'sha256sum is required.' >&2; return 1; }

@@ -1,4 +1,4 @@
-> **Interim Windows route:** the current Windows preview uses VB-CABLE, with an in-app control-panel button and a cable removal option in the last-app uninstaller. Our native driver is preserved for later signing. See [interim setup](docs/windows-cable-interim.md) and [native bookmark](docs/windows-native-driver-bookmark.md).
+> **Interim Windows route:** the current Windows release uses VB-CABLE, with an in-app control-panel button and a cable removal option in the last-app uninstaller. Our native driver is preserved for later signing. See [interim setup](docs/windows-cable-interim.md) and [native bookmark](docs/windows-native-driver-bookmark.md).
 
 # SoundCurrent EQ
 
@@ -37,6 +37,20 @@ To uninstall, Quit the app and remove its package with `sudo apt remove soundcur
 - [Release notes, checksums and corresponding source](https://github.com/rhamenator/soundcurrent-eq/releases/tag/v1.0.0)
 
 This Windows release uses the signed VB-CABLE route. The SoundCurrent app/installer remain unsigned; Windows security policies may warn or block them. Quit the running app before updating. Our native-driver code remains preserved for later signing.
+
+## Manually remove or reinstall VB-CABLE on Windows
+
+If setup says the cable is installed but Windows has no usable cable devices, or the automatic install/uninstall fails:
+
+1. Use **Quit** to exit the running SoundCurrent app. Close other audio apps using the cable. In Windows Sound settings, select your physical speakers/headphones so ordinary audio can work while the cable is removed.
+2. Download the standard **VB-CABLE Driver Pack** from [VB-Audio's official download page](https://vb-audio.com/Cable/) and **extract all files** to a folder. On Windows x64, right-click `VBCABLE_Setup_x64.exe` and choose **Run as administrator**; approve the Windows prompt. Run it from the extracted folder, not inside the ZIP.
+3. Click **Remove Driver** if offered. **Restart Windows after removal.** This removes the shared standard cable for other apps too; it does not uninstall SoundCurrent. For removal only, stop here.
+4. To reinstall, run the same extracted setup as administrator again and click **Install Driver**. **Restart Windows again after installation.**
+5. Open Windows Sound settings → **More sound settings**, or run `mmsys.cpl`. Check **CABLE Input** on the **Playback** tab and **CABLE Output** on the **Recording** tab. Right-click the lists to show disabled devices, and enable the cable endpoints if needed. CABLE Input receives playback; CABLE Output provides its recording stream.
+6. Open one SoundCurrent app, select your physical speaker/headphone device in its output selector, and enable processing. The app manages its cable route; do not leave a silent cable as your only output when the app is off.
+
+If the devices are still missing after both restarts, save the vendor setup error and contact [VB-Audio support](https://vb-audio.com/Cable/) rather than repeatedly reinstalling SoundCurrent. The standard cable and optional A/B cables are separate installations. Avoid manually deleting driver files or unrelated audio devices.
+
 
 ## Linux packages — 1.0.0
 
@@ -111,7 +125,7 @@ Download the package for your system from the [current 1.0.0 release](https://gi
 
 Download the [1.0.0 release](https://github.com/rhamenator/soundcurrent-eq/releases/tag/v1.0.0)
 for the current Windows installer and matching Ubuntu, Fedora and RHEL-compatible packages.
-The Windows build is a preview using the same interface and controls as
+The Windows build uses the same interface and controls as
 Linux. The installer bundles Qt and the C++ runtime; users do not need to
 install a development environment.
 

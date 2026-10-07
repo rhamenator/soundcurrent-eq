@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "binarySourceCommit": "0238dd88dc99b2dc71a4a85be525bd09fa6ab396",
+  "buildWorkflow": "https://github.com/rhamenator/soundcurrent-eq/actions/runs/37676273439",
+  "publishedLinuxPackageWorkflow": "https://github.com/rhamenator/soundcurrent-eq/actions/runs/37676281438",
+  "linuxTargets": [
+    "Ubuntu 24.04",
+    "Fedora 44",
+    "AlmaLinux 10 (RHEL 10 compatible)"
+  ],
+  "linuxPackageLifecycle": "PASS: install, installed UI, update/reinstall, removal, settings preservation, reinstallation",
+  "windowsClone": "soundcurrent-win11-dev (independent clone; shut down after tests)",
+  "windowsResult": "Testing soundcurrent-eq\nPASS: installer shortcuts, shared Qt controls, window fit, background close/reopen, single instance, and graceful quit\nPASS: soundcurrent-eq 1.0.0 upgrade, native UI, reinstall, uninstall, preserved settings, final reinstall\nTesting soundcurrent-studio\nPASS: installer shortcuts, shared Qt controls, window fit, background close/reopen, single instance, and graceful quit\nPASS: soundcurrent-studio 1.0.0 upgrade, native UI, reinstall, uninstall, preserved settings, final reinstall\nALL WINDOWS 1.0.0 CHECKS PASSED\n",
+  "publishedPackageSha256": {
+    "soundcurrent-eq_1.0.0_amd64.deb": "cd02a665e53cb28c21e1f37dd0b8a3c02804e0a6dcab8d30a063303e1d64e04f",
+    "soundcurrent-eq-1.0.0-1.fc44.x86_64.rpm": "1c43544ff97a66c7191b5ce5f80a9775d2ce751fb410fa81b79e025901112cf6",
+    "soundcurrent-eq-1.0.0-1.el10.x86_64.rpm": "fabb86c8c6c7a7dcc266259f31fe342346b608f7c9f2afdeab80d05d6591b41c",
+    "SoundCurrent-EQ-1.0.0-windows-x64-setup.exe": "549e4a0c4f4f5d8407684ab790ab2e8d4f3a9faf37adc655f0edb2391fc08119"
+  },
+  "limits": [
+    "No physical Optiplex cable-repair certification",
+    "No physical microphone or multichannel hardware certification",
+    "Windows app/installer unsigned; native driver signing remains deferred"
+  ]
+}
