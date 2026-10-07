@@ -2,13 +2,13 @@
 # SPDX-License-Identifier: GPL-3.0-only
 set -euo pipefail
 product='soundcurrent-eq'
-version='0.7.1'
-release='parity-preview-0.7.1'
+version='0.7.6'
+release='windows-preview-0.7.6'
 repo="rhamenator/$product"
 # Published, reviewed package hashes; never execute an unverified download.
-deb_hash='4aaf28b3d4b9d2bd892d6dd9a9ee609fca9bfa550be563eb97175f467a88023f'
-fedora_hash='a8d34e73dadce98f032a4a7571abea14ea7ba789abcd8ff7269e574cdc6e0aa9'
-rhel_hash='9004712bd7c6bb3f68a076a0e0cc8d41b167a33ecee79e596d862bff89b1c997'
+deb_hash='6d5408f5efb44bfdc390c41c8484ebe3004c335ef49783ccaff5b61ad1512a63'
+fedora_hash='023cc229fa1d5f07e62c74e0730de40b28bd275abff7fddbc2afd9e74130bc03'
+rhel_hash='d2033ce34b5b202016500cab3485e6b2b880a0640ef72fbcf5459f249276f409'
 select_package() {
     local id=$1 like=$2 major=${3%%.*}
     case " $id $like " in

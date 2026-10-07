@@ -18,7 +18,18 @@ bash ~/Downloads/SoundCurrent-EQ-Linux-Installer.run
 
 It identifies your distribution, verifies the selected package against a pinned SHA-256, and installs or updates through APT or DNF with administrator approval. Presets and profiles are retained; an application-menu icon is included. Use Quit before updating. GTK/KDE confirmation dialogs are used when Zenity or KDialog is available.
 
-The installer uses the published Linux preview (EQ 0.7.1), separate from the newer Windows build. It supports Debian/Ubuntu derivatives with compatible Qt 6.4+ and glibc, Fedora 44+, and RHEL 10-compatible systems including Rocky/AlmaLinux 10. Dependency availability still depends on enabled distribution repositories. Unsupported distributions or architectures are reported; Arch and openSUSE packages are not provided yet. Use `--dry-run` to see its selection, or `--download-only` to save a verified package.
+The installer installs EQ 0.7.6, including the current profile library and editor. It supports Debian/Ubuntu derivatives with compatible Qt 6.4+ and glibc, Fedora 44+, and RHEL 10-compatible systems including Rocky/AlmaLinux 10. Dependency availability still depends on enabled distribution repositories. Unsupported distributions or architectures are reported; Arch and openSUSE packages are not provided yet. Use `--dry-run` to see its selection, or `--download-only` to save a verified package.
+
+
+For an offline installation, download the matching DEB or RPM from the same release and run:
+
+```bash
+bash SoundCurrent-EQ-Linux-Installer.run --package-file /path/to/package
+```
+
+The local package must match the same pinned SHA-256 as the online package. Dependencies still require distribution repositories unless they are already installed.
+
+To uninstall, Quit the app and remove its package with `sudo apt remove soundcurrent-eq` or `sudo dnf remove soundcurrent-eq`. Your personal presets and profiles are retained for reinstallation.
 
 ## Download the Windows preview — 0.7.6
 
@@ -27,16 +38,15 @@ The installer uses the published Linux preview (EQ 0.7.1), separate from the new
 
 This is a Windows testing preview using the signed VB-CABLE route. The SoundCurrent app/installer remain unsigned; Windows security policies may warn or block them. Quit the running app before updating. Our native-driver code remains preserved for later signing.
 
-## Linux packages — 0.7.1
+## Linux packages — 0.7.6
 
-[Release notes and all downloads](https://github.com/rhamenator/soundcurrent-eq/releases/tag/parity-preview-0.7.1)
+[Release notes and all downloads](https://github.com/rhamenator/soundcurrent-eq/releases/tag/windows-preview-0.7.6)
 
-- [Ubuntu / Debian package (64-bit)](https://github.com/rhamenator/soundcurrent-eq/releases/download/parity-preview-0.7.1/soundcurrent-eq_0.7.1_amd64.deb)
-- [Fedora 44 RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/parity-preview-0.7.1/soundcurrent-eq-0.7.1-1.fc44.x86_64.rpm)
-- [RHEL 10 compatible RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/parity-preview-0.7.1/soundcurrent-eq-0.7.1-1.el10.x86_64.rpm)
+- [Ubuntu / Debian package (64-bit)](https://github.com/rhamenator/soundcurrent-eq/releases/download/windows-preview-0.7.6/soundcurrent-eq_0.7.6_amd64.deb)
+- [Fedora 44 RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/windows-preview-0.7.6/soundcurrent-eq-0.7.6-1.fc44.x86_64.rpm)
+- [RHEL 10 compatible RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/windows-preview-0.7.6/soundcurrent-eq-0.7.6-1.el10.x86_64.rpm)
 
-Version 0.7.1 is a **pre-release**. GitHub's “Latest” link currently points to the
-older 0.5.1 stable release; use the explicit preview links above. The newer Windows preview is a separate release; these Linux packages remain at 0.7.1.
+These are testing previews. Use the explicit preview links above.
 
 ## About SoundCurrent EQ
 
@@ -95,11 +105,11 @@ it and restores the normal output. Linux uses PipeWire filters; Windows uses the
 
 ## Install
 
-Download the package for your system from the [current 0.7.1 preview](https://github.com/rhamenator/soundcurrent-eq/releases/tag/parity-preview-0.7.1).
+Download the package for your system from the [current 0.7.6 preview](https://github.com/rhamenator/soundcurrent-eq/releases/tag/windows-preview-0.7.6).
 
 ### Windows 10 and 11 (64-bit)
 
-Download the [0.7.1 shared-interface preview](https://github.com/rhamenator/soundcurrent-eq/releases/tag/parity-preview-0.7.1)
+Download the [0.7.6 preview](https://github.com/rhamenator/soundcurrent-eq/releases/tag/windows-preview-0.7.6)
 for the current Windows installer and matching Ubuntu, Fedora and RHEL-compatible packages.
 The Windows build is a preview using the same interface and controls as
 Linux. The installer bundles Qt and the C++ runtime; users do not need to

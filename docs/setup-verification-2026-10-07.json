@@ -1,21 +1,41 @@
 {
   "date": "2026-10-07",
   "windows_version": "0.7.6",
-  "installer_sha256": "83e41635d327382b4e7e76b19ea8692ea4273096c7d310c6c82c97563bb786cd",
+  "installer_sha256": "3c28d286a278fc6decc676359b9998f60e8e7165d26c08119db83aedea5f51ea",
   "verification": {
-    "windows_build": "Full Windows build and 10/10 CTest passed; final UI update rebuilt and shared-ui passed.",
+    "windows_build": "Final payload full Windows build and 11/11 CTest passed, including real profile editor/import dialogs.",
     "real_buttons": "Both apps: pending-restart install/settings dialogs; cleared stale marker; requester exclusion; corrupt archive; missing setup script. Window remained alive and controls usable. Single running-client error named only that app.",
     "incomplete_driver": "Independent clone primary MEDIA device temporarily disabled, retaining its driver record. Readiness returned 10, wrapper Check returned 11, EQ actual settings button showed repair guidance and stayed open. Device reenabled and readiness restored.",
     "installed_lifecycle": "Final installer hashes matched guest copies. Both final installers passed silent install, in-place update, installed UI, real signed control panel open/close, and silent uninstall preserving shared driver and unknown user file.",
     "audio": "Both live cable-to-HDA tests passed in the interactive Windows desktop. EQ gain +6 dB, cut -12 dB, bypass and balance; Studio gain +6 dB, independent channel EQ, mute, effects and bypass. An initial Studio gain failure during overlapping installer activity was followed by a passing separate run. SSH Session 0 produced silence; it was not used as audio evidence.",
-    "linux_installer": "ShellCheck and Bash parsing passed; Debian derivative selection, RHEL Fedora-ancestry mapping, minimum RPM version gates and unsupported-distro rejection passed. Both published DEB packages downloaded and matched embedded hashes. No host installation or audio routing changes.",
-    "vm": "soundcurrent-win11-dev, full independent clone; original VMs and pristine template untouched."
+    "linux_installer": "Exact hash-pinned 0.7.6/0.8.5 .run installers tested in independent Ubuntu 26.04 desktop clone: install, in-place update, uninstall, reinstall, settings preservation, native Wayland shared UI and inspected screenshots. Actual old-preview upgrades EQ 0.7.1\u21920.7.6 and Studio 0.8.0\u21920.8.5 preserved settings. Deliberately corrupt offline package rejected before package-manager execution. ShellCheck and distro mapping tests passed. EQ graphical Zenity confirmation and success dialogs verified on Ubuntu desktop with terminal-based sudo approval.",
+    "vm": "Independent Windows and Ubuntu full clones only; no original VM or host audio routing changes.",
+    "native_ui": "Both installed final payloads passed real Windows rendering, decorated window fit, desktop/Start menu shortcuts, shared controls, background close/reopen, second-instance reuse and Quit. Saved equalizer/settings/Studio screenshots reviewed.",
+    "interactive_uninstall": "Final NSIS packages: EQ removal retained cable while Studio installed; last-app Studio removal declined cable removal and retained driver; Studio reinstalled, then last-app removal accepted official signed Remove Driver. Vendor success dialog observed; app payload/registry removed and cable MEDIA device absent. Test clone rebooted.",
+    "reinstallation": "Both apps reinstalled from final packages. Final shipped EQ audio-setup helper installed official signed cable and returned 3010; all three prior playback defaults preserved. Actual installed settings buttons in both apps displayed restart guidance before reboot and stayed alive. After reboot guard confirmed endpoints ready, HDA and cable devices OK, both interactive cable-to-HDA audio tests passed.",
+    "linux_packages": "Current Ubuntu 24.04 DEB, Fedora 44 RPM and AlmaLinux 10 RPM: full CTest (EQ 10, Studio 12), installed UI self-test, package-manager install/reinstall/remove, app-menu entry removal, settings preservation and reinstall passed in disposable CI containers. Fedora/RHEL UI is offscreen; Ubuntu CI uses native X11 via Xvfb. Actual Wayland tested separately in Ubuntu VM.",
+    "profile_dialogs": "Both builds: Cancel leaves edited dialog open; Discard preserves original; Save stores custom curve; malformed import rejected without mutation; valid import and Apply confirmations work; existing library preserved."
   },
   "limitations": [
-    "Optiplex incomplete-installation report is addressed by detection and a guided vendor repair flow; successful repair on that physical machine remains unverified.",
-    "The new incomplete-installation vendor remove/reinstall interaction was not automated end-to-end. Earlier vendor removal/reinstall tests are documented separately.",
-    "Ordinary SoundCurrent Windows apps/installers remain unsigned. Native driver signing and runtime verification remain deferred; source/bookmark preserved.",
-    "Linux installer uses existing published EQ 0.7.1 / Studio 0.8.0 packages. It does not rebuild them or silently downgrade newer installed versions.",
-    "Linux distribution selection and verified downloads tested; a fresh installer-driven installation on every derivative was not performed. Arch/openSUSE/ARM packages are not provided."
-  ]
+    "Optiplex repair on the physical machine remains unverified. A disabled primary MEDIA device reproduces the incomplete-driver status; a naturally broken vendor installation may fail differently.",
+    "The disabled-device repair dialog is verified; normal full uninstall/reinstall/reboot is verified. Guided incomplete-installation removal/reinstallation was not separately exercised end-to-end.",
+    "Windows apps/installers remain unsigned. Native own-driver signing/runtime verification remains deferred; source and bookmark preserved.",
+    "Fedora and AlmaLinux lifecycle checks use disposable containers and offscreen UI, not full desktop/audio hardware verification. Ubuntu VM native UI was tested separately. No physical multichannel/microphone hardware coverage is claimed.",
+    "Other Debian/Fedora/RHEL derivatives depend on compatible libraries and repositories; Arch, openSUSE and ARM packages are not provided.",
+    "Silent uninstall retains the shared driver. Interactive last-app removal asks before opening the official remover; other users/software may need the shared cable."
+  ],
+  "linux_version": "0.7.6",
+  "ci_jobs": {
+    "ubuntu": {
+      "run": 37665952490
+    },
+    "fedora": {
+      "run": 37665117969,
+      "job": 112942261588
+    },
+    "almalinux": {
+      "run": 37664622620,
+      "job": 112940566908
+    }
+  }
 }
