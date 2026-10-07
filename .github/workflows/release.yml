@@ -29,6 +29,7 @@ jobs:
         run: |
           docker run --rm -v "$PWD:/src" -w /src fedora:44 bash -lc '
             set -euo pipefail
+            dnf install -y --allowerasing systemd
             dnf install -y cmake gcc-c++ qt6-qtbase-devel rpm-build tar gzip
             ./scripts/build-rpm.sh
             dnf install -y --allowerasing dist/x86_64/*fc44*.rpm
@@ -38,6 +39,7 @@ jobs:
         run: |
           docker run --rm -v "$PWD:/src" -w /src almalinux:10 bash -lc '
             set -euo pipefail
+            dnf install -y --allowerasing systemd
             dnf install -y cmake gcc-c++ qt6-qtbase-devel rpm-build tar gzip
             ./scripts/build-rpm.sh
             dnf install -y --allowerasing dist/x86_64/*el10*.rpm

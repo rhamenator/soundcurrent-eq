@@ -25,7 +25,7 @@ Unicode true
 !endif
 
 !ifndef APP_VERSION
-  !define APP_VERSION "0.7.6"
+  !define APP_VERSION "1.0.0"
 !endif
 
 Var DriverCheck

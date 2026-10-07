@@ -2,8 +2,8 @@
 # SPDX-License-Identifier: GPL-3.0-only
 set -euo pipefail
 product='soundcurrent-eq'
-version='0.7.6'
-release='preview-0.7.6'
+version='1.0.0'
+release='v1.0.0'
 repo="rhamenator/$product"
 # Published, reviewed package hashes; never execute an unverified download.
 deb_hash='6d5408f5efb44bfdc390c41c8484ebe3004c335ef49783ccaff5b61ad1512a63'
