@@ -8,10 +8,22 @@
 > production-signed before the native-driver variant can be distributed. See
 > [implementation status](native/windows/virtual-driver/IMPLEMENTATION-STATUS.md).
 
-## Download the Windows preview — 0.7.5
+## Easy Linux installer
 
-- [Windows x64 installer](https://github.com/rhamenator/soundcurrent-eq/releases/download/windows-preview-0.7.5/SoundCurrent-EQ-0.7.5-windows-x64-VBCABLE-preview.exe)
-- [Release notes, checksums and corresponding source](https://github.com/rhamenator/soundcurrent-eq/releases/tag/windows-preview-0.7.5)
+[Download the Linux installer](https://github.com/rhamenator/soundcurrent-eq/releases/download/windows-preview-0.7.6/SoundCurrent-EQ-Linux-Installer.run). Save it, then run:
+
+```bash
+bash ~/Downloads/SoundCurrent-EQ-Linux-Installer.run
+```
+
+It identifies your distribution, verifies the selected package against a pinned SHA-256, and installs or updates through APT or DNF with administrator approval. Presets and profiles are retained; an application-menu icon is included. Use Quit before updating. GTK/KDE confirmation dialogs are used when Zenity or KDialog is available.
+
+The installer uses the published Linux preview (EQ 0.7.1), separate from the newer Windows build. It supports Debian/Ubuntu derivatives with compatible Qt 6.4+ and glibc, Fedora 44+, and RHEL 10-compatible systems including Rocky/AlmaLinux 10. Dependency availability still depends on enabled distribution repositories. Unsupported distributions or architectures are reported; Arch and openSUSE packages are not provided yet. Use `--dry-run` to see its selection, or `--download-only` to save a verified package.
+
+## Download the Windows preview — 0.7.6
+
+- [Windows x64 installer](https://github.com/rhamenator/soundcurrent-eq/releases/download/windows-preview-0.7.6/SoundCurrent-EQ-0.7.6-windows-x64-VBCABLE-preview.exe)
+- [Release notes, checksums and corresponding source](https://github.com/rhamenator/soundcurrent-eq/releases/tag/windows-preview-0.7.6)
 
 This is a Windows testing preview using the signed VB-CABLE route. The SoundCurrent app/installer remain unsigned; Windows security policies may warn or block them. Quit the running app before updating. Our native-driver code remains preserved for later signing.
 

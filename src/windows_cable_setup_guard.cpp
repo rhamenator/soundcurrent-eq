@@ -9,6 +9,16 @@
 int main(int argc, char **argv) {
     QCoreApplication app(argc, argv);
     const auto args = app.arguments();
+    if (args.size() == 2 && args[1] == "--check-ready") {
+        try {
+            bool render = false, capture = false;
+            for (const auto &d : soundcurrent::windowsAudioEndpoints(false))
+                render |= d.virtualCable && d.name.rfind(L"CABLE Input (", 0) == 0;
+            for (const auto &d : soundcurrent::windowsAudioEndpoints(true))
+                capture |= d.virtualCable && d.name.rfind(L"CABLE Output (", 0) == 0;
+            return render && capture ? 0 : 10;
+        } catch (...) { return 10; }
+    }
     if (args.size() != 3 || (args[1] != "--install" && args[1] != "--remove")) return 2;
     const bool install = args[1] == "--install";
     std::array<std::wstring, 3> output, input;

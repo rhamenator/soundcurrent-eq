@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-07",
+  "windows_version": "0.7.6",
+  "installer_sha256": "83e41635d327382b4e7e76b19ea8692ea4273096c7d310c6c82c97563bb786cd",
+  "verification": {
+    "windows_build": "Full Windows build and 10/10 CTest passed; final UI update rebuilt and shared-ui passed.",
+    "real_buttons": "Both apps: pending-restart install/settings dialogs; cleared stale marker; requester exclusion; corrupt archive; missing setup script. Window remained alive and controls usable. Single running-client error named only that app.",
+    "incomplete_driver": "Independent clone primary MEDIA device temporarily disabled, retaining its driver record. Readiness returned 10, wrapper Check returned 11, EQ actual settings button showed repair guidance and stayed open. Device reenabled and readiness restored.",
+    "installed_lifecycle": "Final installer hashes matched guest copies. Both final installers passed silent install, in-place update, installed UI, real signed control panel open/close, and silent uninstall preserving shared driver and unknown user file.",
+    "audio": "Both live cable-to-HDA tests passed in the interactive Windows desktop. EQ gain +6 dB, cut -12 dB, bypass and balance; Studio gain +6 dB, independent channel EQ, mute, effects and bypass. An initial Studio gain failure during overlapping installer activity was followed by a passing separate run. SSH Session 0 produced silence; it was not used as audio evidence.",
+    "linux_installer": "ShellCheck and Bash parsing passed; Debian derivative selection, RHEL Fedora-ancestry mapping, minimum RPM version gates and unsupported-distro rejection passed. Both published DEB packages downloaded and matched embedded hashes. No host installation or audio routing changes.",
+    "vm": "soundcurrent-win11-dev, full independent clone; original VMs and pristine template untouched."
+  },
+  "limitations": [
+    "Optiplex incomplete-installation report is addressed by detection and a guided vendor repair flow; successful repair on that physical machine remains unverified.",
+    "The new incomplete-installation vendor remove/reinstall interaction was not automated end-to-end. Earlier vendor removal/reinstall tests are documented separately.",
+    "Ordinary SoundCurrent Windows apps/installers remain unsigned. Native driver signing and runtime verification remain deferred; source/bookmark preserved.",
+    "Linux installer uses existing published EQ 0.7.1 / Studio 0.8.0 packages. It does not rebuild them or silently downgrade newer installed versions.",
+    "Linux distribution selection and verified downloads tested; a fresh installer-driven installation on every derivative was not performed. Arch/openSUSE/ARM packages are not provided."
+  ]
+}

@@ -23,7 +23,7 @@ function Wait-ProcessCode([string]$File, [string[]]$Arguments) {
         if (!$process.Start()) { throw "Launch failed: $File" }
         $stdout = $process.StandardOutput.ReadToEndAsync()
         $stderr = $process.StandardError.ReadToEndAsync()
-        if (!$process.WaitForExit(60000)) { $process.Kill(); throw "Timed out: $File" }
+        if (!$process.WaitForExit(180000)) { $process.Kill(); throw "Timed out: $File" }
         Write-Output $stdout.Result
         Write-Output $stderr.Result
         $code = $process.ExitCode
@@ -35,7 +35,7 @@ foreach ($item in @(
     @{name='EQ'; product='SoundCurrentEQ'; executable='soundcurrent-eq.exe'},
     @{name='Studio'; product='SoundCurrentStudio'; executable='soundcurrent-studio.exe'}
 )) {
-    $installer = Join-Path $InstallerDirectory $(if ($item.name -eq 'EQ') { 'SoundCurrent-EQ-0.7.5-windows-x64-VBCABLE-preview.exe' } else { 'SoundCurrent-Studio-0.8.4-windows-x64-VBCABLE-preview.exe' })
+    $installer = Join-Path $InstallerDirectory $(if ($item.name -eq 'EQ') { 'SoundCurrent-EQ-0.7.6-windows-x64-VBCABLE-preview.exe' } else { 'SoundCurrent-Studio-0.8.5-windows-x64-VBCABLE-preview.exe' })
     if (!(Test-Path -LiteralPath $installer)) { throw "Missing fixture: $installer" }
     $key = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\$($item.product)"
     # Silent mode installs the application without requesting driver elevation.

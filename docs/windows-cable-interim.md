@@ -4,7 +4,8 @@ The default Windows installer uses VB-Audio's signed primary cable until SoundCu
 
 ## User experience
 
-- **Audio driver setup** opens VB-Audio's signed setup if the primary cable is missing. Approve Windows UAC and click Install Driver. Restart Windows when requested.
+- **Audio driver setup** opens VB-Audio's signed setup if the primary cable is missing. Approve Windows UAC and click Install Driver. Restart Windows before using either equalizer or opening VB-CABLE settings. Setup records a pending restart for both apps and displays an explicit reminder.
+- **Audio driver setup from the app** pauses processing and keeps the window open. Helper failures and restart requirements appear in a dialog; closing the UI is unnecessary.
 - **VB-CABLE settings** opens the official control panel from either application's device settings or its Start menu folder. Adjust internal sample rate and latency there. These settings are shared by every cable client; changes can interrupt playback. The app does not rewrite undocumented driver settings.
 - Choose physical speakers/headphones inside SoundCurrent. Output selection, automatic switching, gain, On/Off, crash recovery, and app exclusion use the existing WASAPI implementation.
 - Simultaneous speaker and microphone processing requires a separately installed second cable. A/B and C/D packages are not bundled.
@@ -20,3 +21,9 @@ Native builds require explicit `-AudioRoute Native -SignedDriverPackage ... -Sig
 ## Licensing
 
 VB-CABLE remains proprietary donationware, separate from GPL SoundCurrent. Its notice, origin, and donation link ship with the package. [VB-Audio's distribution rules](https://vb-audio.com/Services/licensing.htm) allow the primary package with an application when the donation model remains visible/applicable; professional deployments have additional licensing requirements. [Official manual](https://vb-audio.com/Cable/VBCABLE_ReferenceManual.pdf) documents the control panel, elevated install/removal, and reboot requirements. No purchase or enrollment was performed.
+
+## Incomplete installation after restart
+
+A retained VB-CABLE PnP driver record does not prove that playback and recording work. Setup checks for active CABLE Input and CABLE Output endpoints. A driver record with missing endpoints is reported as incomplete, not already installed.
+
+Check that both endpoints are enabled in Windows Sound settings. If they remain missing after restarting, Audio driver setup opens the signed official installer with repair instructions: Remove Driver, restart Windows, run Audio driver setup and Install Driver, then restart again. Removing the shared cable affects other applications that use it. SoundCurrent does not remove it silently. The settings button reports the missing endpoints and keeps the app open.

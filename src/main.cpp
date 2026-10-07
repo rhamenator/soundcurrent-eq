@@ -1979,28 +1979,70 @@ public:
         outputLayout->addWidget(status_);
 #ifdef Q_OS_WIN
         auto *driverSetup = new QPushButton("Audio driver setup");
+        driverSetup->setObjectName("audioDriverSetup");
         deviceLayout->addWidget(driverSetup);
         auto *cableSettings = new QPushButton("VB-CABLE settings");
+        cableSettings->setObjectName("cableSettings");
         cableSettings->setEnabled(QFileInfo::exists(QDir(QCoreApplication::applicationDirPath()).filePath("cable-setup.ps1")));
         cableSettings->setAccessibleName("Open VB-CABLE control panel");
         cableSettings->setToolTip("Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.");
         deviceLayout->addWidget(cableSettings);
-        connect(cableSettings, &QPushButton::clicked, this, [this] {
-            const auto script = QDir(QCoreApplication::applicationDirPath()).filePath("cable-setup.ps1");
-            if (!QFileInfo::exists(script)) { showError("VB-CABLE settings helper is missing. Repair or reinstall SoundCurrent."); return; }
-            if (!QProcess::startDetached("powershell.exe", {"-NoProfile", "-ExecutionPolicy", "RemoteSigned", "-File", script, "-Settings"}))
-                showError("Could not open VB-CABLE settings.");
+        driverSetup->setToolTip("Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.");
+        auto *audioSetup = new QProcess(this);
+        audioSetup->setProcessChannelMode(QProcess::MergedChannels);
+        auto output = std::make_shared<QByteArray>();
+        auto action = std::make_shared<bool>(false);
+        auto finish = [this, driverSetup, cableSettings, output](const QString &message, bool error) {
+            centralWidget()->setEnabled(true);
+            if (trayToggle_) trayToggle_->setEnabled(true);
+            driverSetup->setEnabled(true); cableSettings->setEnabled(true);
+            if (message.isEmpty()) return;
+            status_->setText(message);
+            if (error) QMessageBox::warning(this, "Audio setup could not finish", message);
+            else QMessageBox::information(this, "Audio setup", message);
+            output->clear();
+        };
+        connect(audioSetup, &QProcess::readyReadStandardOutput, this, [audioSetup, output] {
+            output->append(audioSetup->readAllStandardOutput());
+            if (output->size() > 65536) output->remove(0, output->size() - 65536);
         });
-        driverSetup->setToolTip("Close the app and set up the Windows audio route. Windows may request administrator approval.");
-        connect(driverSetup, &QPushButton::clicked, this, [this] {
-            const auto script = QDir(QCoreApplication::applicationDirPath()).filePath("audio-setup.ps1");
-            if (!QFileInfo::exists(script)) { showError("Audio setup is missing. Repair or reinstall SoundCurrent."); return; }
-            if (!QProcess::startDetached("powershell.exe", {"-NoProfile", "-ExecutionPolicy", "RemoteSigned", "-File", script, "-Install"})) {
-                showError("Could not start SoundCurrent audio setup."); return;
+        connect(audioSetup, &QProcess::errorOccurred, this, [audioSetup, finish](QProcess::ProcessError error) {
+            if (error == QProcess::FailedToStart)
+                finish("Could not start audio setup: " + audioSetup->errorString() + ". The app remains open.", true);
+        });
+        connect(audioSetup, &QProcess::finished, this, [audioSetup, output, action, finish](int code, QProcess::ExitStatus exitStatus) {
+            output->append(audioSetup->readAllStandardOutput());
+            auto message = QString::fromLocal8Bit(*output).trimmed();
+            if (exitStatus != QProcess::NormalExit || (code != 0 && code != 3010)) {
+                if (message.isEmpty()) message = "Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.";
+                finish(message + "\nThe app remains open; your settings have been kept.", true);
+            } else if (code == 3010) {
+                finish("Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.", false);
+            } else if (*action && !message.isEmpty()) finish(message, false);
+            else finish({}, false);
+        });
+        auto launch = [this, audioSetup, output, action, finish, driverSetup, cableSettings](bool install) {
+            if (audioSetup->state() != QProcess::NotRunning) return;
+            const auto script = QDir(QCoreApplication::applicationDirPath()).filePath(install ? "audio-setup.ps1" : "cable-setup.ps1");
+            if (!QFileInfo::exists(script)) { finish("Audio setup is missing. Repair or reinstall SoundCurrent.", true); return; }
+            if (install) {
+                // Release our processing/guardians while retaining the UI.
+                if (calibrating_) { finish("Stop the microphone calibration before changing the audio driver.", true); return; }
+                power_->setChecked(false); micPower_->setChecked(false);
+                meter_.stop(); audio_.stop(); microphone_.stop();
+                status_->setText("Audio setup is running. Processing is paused; the app remains open.");
             }
-            // Quit releases audio routes, guardians and mutual-exclusion locks.
-            qApp->quit();
-        });
+            output->clear(); *action = install;
+            centralWidget()->setEnabled(false);
+            if (trayToggle_) trayToggle_->setEnabled(false);
+            driverSetup->setEnabled(false); cableSettings->setEnabled(false);
+            audioSetup->setProgram("powershell.exe");
+            audioSetup->setArguments({"-NoProfile", "-ExecutionPolicy", "RemoteSigned", "-File", script,
+                install ? "-Install" : "-Settings", "-Quiet", "-RequestingProcessId", QString::number(QCoreApplication::applicationPid())});
+            audioSetup->start();
+        };
+        connect(driverSetup, &QPushButton::clicked, this, [launch] { launch(true); });
+        connect(cableSettings, &QPushButton::clicked, this, [launch] { launch(false); });
 #endif
         auto *speakerBox = new QGroupBox("Speaker model correction");
         auto *speakerLayout = new QVBoxLayout(speakerBox);
@@ -3465,7 +3507,7 @@ private:
 
 int main(int argc, char **argv) {
     for (int i = 1; i < argc; ++i) {
-        if (std::strcmp(argv[i], "--ui-self-test") == 0 || std::strcmp(argv[i], "--windows-live-manual-route-test") == 0 || std::strcmp(argv[i], "--windows-live-conflict-test") == 0) {
+        if (std::strcmp(argv[i], "--windows-audio-setup-test") == 0 || std::strcmp(argv[i], "--ui-self-test") == 0 || std::strcmp(argv[i], "--windows-live-manual-route-test") == 0 || std::strcmp(argv[i], "--windows-live-conflict-test") == 0) {
             qInstallMessageHandler([](QtMsgType, const QMessageLogContext &, const QString &message) {
                 const auto utf8 = message.toUtf8();
                 std::fprintf(stderr, "%s\n", utf8.constData());
@@ -3493,7 +3535,7 @@ int main(int argc, char **argv) {
     QCoreApplication::setOrganizationName("SoundCurrent");
     QCoreApplication::setApplicationName("soundcurrent-eq");
     QTemporaryDir testSettings;
-    if (app.arguments().contains("--windows-live-conflict-test") || app.arguments().contains("--windows-live-manual-route-test") || app.arguments().contains("--windows-live-hotplug-test") || app.arguments().contains("--windows-live-ui-test") || app.arguments().contains("--ui-self-test")) {
+    if (app.arguments().contains("--windows-audio-setup-test") || app.arguments().contains("--windows-live-conflict-test") || app.arguments().contains("--windows-live-manual-route-test") || app.arguments().contains("--windows-live-hotplug-test") || app.arguments().contains("--windows-live-ui-test") || app.arguments().contains("--ui-self-test")) {
 #ifndef Q_OS_WIN
         const QJsonArray unpluggedPorts{QJsonObject{{"name", "rear-mic"}, {"availability", "not available"}}};
         if (inputPortAvailable(QJsonObject{{"active_port", "rear-mic"}, {"ports", unpluggedPorts}}))
@@ -3647,6 +3689,7 @@ int main(int argc, char **argv) {
         QTabBar::tab:hover { background: #385572; }
     )");
 #ifdef Q_OS_WIN
+#include "windows_audio_setup_test.inc"
 #include "windows_live_ui_test.inc"
 #endif
     if (app.arguments().contains("--ui-self-test")) {

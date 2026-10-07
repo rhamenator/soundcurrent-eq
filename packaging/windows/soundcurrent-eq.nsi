@@ -25,7 +25,7 @@ Unicode true
 !endif
 
 !ifndef APP_VERSION
-  !define APP_VERSION "0.7.5"
+  !define APP_VERSION "0.7.6"
 !endif
 
 Var DriverCheck
@@ -66,10 +66,19 @@ Function .onInit
   StrCpy $InstallDriver 0 ; Silent app updates never install/elevate a driver.
   InitPluginsDir
   SetOutPath "$PLUGINSDIR"
+  ; Readiness detection needs the helper and its runtime before installation.
+  File "${DLL_DIR}\soundcurrent-cable-setup-guard.exe"
+  File "${DLL_DIR}\Qt6Core.dll"
+  File "${DLL_DIR}\msvcp140*.dll"
+  File "${DLL_DIR}\vcruntime140*.dll"
+  File "${DLL_DIR}\concrt140.dll"
   File "/oname=audio-setup.ps1" "${SOURCE_ROOT}\packaging\windows\cable-setup.ps1"
   nsExec::ExecToStack /TIMEOUT=20000 '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -NonInteractive -ExecutionPolicy RemoteSigned -File "$PLUGINSDIR\audio-setup.ps1" -Check'
   Pop $DriverCheck
   Pop $0
+  ${If} $DriverCheck == 3010
+    SetRebootFlag true
+  ${EndIf}
 FunctionEnd
 
 Function AudioPage
@@ -86,14 +95,19 @@ Function AudioPage
   ${If} $DriverCheck == 0
     ${NSD_Check} $DriverChoice
     ${NSD_CreateLabel} 0 65u 100% 35u "VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or Quit."
+  ${ElseIf} $DriverCheck == 3010
+    ${NSD_CreateLabel} 0 65u 100% 35u "VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings."
+  ${ElseIf} $DriverCheck == 11
+    ${NSD_Check} $DriverChoice
+    ${NSD_CreateLabel} 0 65u 100% 35u "VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again."
   ${ElseIf} $DriverCheck == 10
     ${NSD_Check} $DriverChoice
-    ${NSD_CreateLabel} 0 65u 100% 35u "Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows if requested."
+    ${NSD_CreateLabel} 0 65u 100% 35u "Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings."
   ${Else}
     ${NSD_CreateLabel} 0 65u 100% 35u "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu."
   ${EndIf}
   Pop $0
-  ${NSD_CreateLabel} 0 108u 100% 40u "Quit EQ and Studio before driver setup. The last app’s uninstaller offers VB-CABLE removal. Other software may also need it. Extra A/B cables are not bundled."
+  ${NSD_CreateLabel} 0 108u 100% 40u "Quit any running equalizer before driver setup. The last app’s uninstaller offers VB-CABLE removal. Other software may also need it. Extra A/B cables are not bundled."
   Pop $0
   nsDialogs::Show
 FunctionEnd
@@ -145,6 +159,7 @@ Section "SoundCurrent EQ" main
     DetailPrint $1
     ${If} $0 == 3010
       SetRebootFlag true
+      MessageBox MB_OK|MB_ICONINFORMATION "Restart Windows before using SoundCurrent or VB-CABLE settings. The audio driver installation needs a system restart." /SD IDOK
     ${ElseIf} $0 != 0
       DetailPrint "VB-CABLE setup did not finish. Retry using the Start menu shortcut."
       MessageBox MB_OK|MB_ICONINFORMATION "VB-CABLE setup did not finish. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason."
@@ -168,7 +183,7 @@ Section "Uninstall"
   ${If} $0 == 3010
     SetRebootFlag true
   ${ElseIf} $0 != 0
-    MessageBox MB_ICONEXCLAMATION "VB-CABLE removal did not finish. This app was kept so you can retry. Quit EQ and Studio, then retry uninstalling."
+    MessageBox MB_ICONEXCLAMATION "VB-CABLE removal did not finish. This app was kept so you can retry. Quit any running equalizer, then retry uninstalling."
     Abort
   ${EndIf}
   cable_keep:
