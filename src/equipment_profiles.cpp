@@ -112,6 +112,7 @@ class Plot : public QWidget {
     void mouseReleaseEvent(QMouseEvent *) override { dragging = -1; }
     void paintEvent(QPaintEvent *) override {
         QPainter p(this);
+        p.setLayoutDirection(Qt::LeftToRight);
         p.setRenderHint(QPainter::Antialiasing);
         p.fillRect(rect(), QColor("#172337"));
         const QRectF area(45, 15, width() - 90, height() - 40);

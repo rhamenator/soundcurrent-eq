@@ -118,7 +118,8 @@ inline QGroupBox *settingsPanel() {
         if(locale.language()==QLocale::C)continue;
         auto tag=locale.bcp47Name();const auto region=QLocale::territoryToCode(locale.territory());
         if(!region.isEmpty() && !tag.endsWith("-"+region))tag+="-"+region;
-        if(seen.contains(tag))continue;seen.append(tag);
+        if(seen.contains(tag))continue;
+        seen.append(tag);
         format->addItem(locale.nativeLanguageName()+" — "+locale.nativeTerritoryName()+" ("+tag+")",tag);
     }
     index=format->findData(QSettings().value("i18n/formatLocale","system").toString());format->setCurrentIndex(index>=0?index:0);
