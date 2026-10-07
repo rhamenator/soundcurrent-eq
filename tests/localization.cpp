@@ -25,6 +25,9 @@ int main(int argc,char **argv){
   {
    Runtime runtime;runtime.initialize();require(text("Output device")==QString::fromUtf8("Ausgabegerät"),"German catalog not active");
    require(text("Untranslated sample")=="Untranslated sample","English fallback failed");
+   std::unique_ptr<QGroupBox> panel(settingsPanel());
+   auto *format=panel->findChild<QComboBox *>("formatLocale");
+   require(format->findData("de-DE")>=0 && format->findData("fr-CA")>=0,"Explicit formatting regions missing");
    QDoubleSpinBox spin;spin.setRange(-60,12);spin.setDecimals(1);spin.setValue(1.5);
    require(spin.text().contains(','),"Decimal comma missing");
    spin.findChild<QLineEdit *>()->setText("-12,5");spin.interpretText();require(spin.value()==-12.5,"Localized numeric input changed value");

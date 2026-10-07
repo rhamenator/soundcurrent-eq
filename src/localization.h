@@ -114,7 +114,13 @@ inline QGroupBox *settingsPanel() {
     auto locales=QLocale::matchingLocales(QLocale::AnyLanguage,QLocale::AnyScript,QLocale::AnyTerritory);
     std::sort(locales.begin(),locales.end(),[](const QLocale&a,const QLocale&b){return a.name()<b.name();});
     QStringList seen;
-    for(const auto &locale:locales){auto tag=locale.bcp47Name();if(seen.contains(tag))continue;seen.append(tag);format->addItem(locale.nativeLanguageName()+" — "+locale.nativeTerritoryName()+" ("+tag+")",tag);}
+    for(const auto &locale:locales){
+        if(locale.language()==QLocale::C)continue;
+        auto tag=locale.bcp47Name();const auto region=QLocale::territoryToCode(locale.territory());
+        if(!region.isEmpty() && !tag.endsWith("-"+region))tag+="-"+region;
+        if(seen.contains(tag))continue;seen.append(tag);
+        format->addItem(locale.nativeLanguageName()+" — "+locale.nativeTerritoryName()+" ("+tag+")",tag);
+    }
     index=format->findData(QSettings().value("i18n/formatLocale","system").toString());format->setCurrentIndex(index>=0?index:0);
     form->addRow(text("Number and date format"),format);
     auto *help=new QLabel;help->setWordWrap(true);help->setTextFormat(Qt::PlainText);form->addRow(help);
