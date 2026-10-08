@@ -50,6 +50,53 @@ foreach ($pack in $data.languages.PSObject.Properties) {
         } elseif ($actual.Count) { throw 'Removal incorrectly emitted ready notice' }
     }
 }
+
+# Run trusted helper functions only, with synthetic process metadata and no executables.
+$cableTokens=$null;$cableErrors=$null
+$cableAst=[Management.Automation.Language.Parser]::ParseFile((Join-Path $root 'packaging/windows/cable-setup.ps1'),[ref]$cableTokens,[ref]$cableErrors)
+$quitDefinition=$cableAst.Find({param($node) $node -is [Management.Automation.Language.FunctionDefinitionAst] -and $node.Name -eq 'QuitMessage'},$true)
+$readyDefinition=$cableAst.Find({param($node) $node -is [Management.Automation.Language.FunctionDefinitionAst] -and $node.Name -eq 'Ready'},$true)
+if (!$quitDefinition -or !$readyDefinition) { throw 'Cable helper function fixture missing' }
+$emptyPayload=Join-Path ([IO.Path]::GetTempPath()) ('missing-ready-'+[guid]::NewGuid().ToString('N'))
+try {
+    $null=New-Item -ItemType Directory -Path $emptyPayload
+    foreach ($pack in $data.languages.PSObject.Properties) {
+        $helperName=$pack.Value.PSObject.Properties['Audio recovery helper'].Value
+        $cases=@(
+            [pscustomobject]@{clients=@('soundcurrent-eq');names=@('SoundCurrent EQ')},
+            [pscustomobject]@{clients=@('soundcurrent-studio');names=@('SoundCurrent Studio')},
+            [pscustomobject]@{clients=@('soundcurrent-route-guardian');names=@($helperName)},
+            [pscustomobject]@{clients=@('soundcurrent-eq','soundcurrent-studio');names=@('SoundCurrent EQ','SoundCurrent Studio')},
+            [pscustomobject]@{clients=@('soundcurrent-eq','soundcurrent-route-guardian');names=@('SoundCurrent EQ',$helperName)},
+            [pscustomobject]@{clients=@('soundcurrent-studio','soundcurrent-route-guardian');names=@('SoundCurrent Studio',$helperName)},
+            [pscustomobject]@{clients=@('soundcurrent-eq','soundcurrent-studio','soundcurrent-route-guardian');names=@('SoundCurrent EQ','SoundCurrent Studio',$helperName)},
+            [pscustomobject]@{clients=@('soundcurrent-eq','soundcurrent-studio','soundcurrent-eq');names=@('SoundCurrent EQ','SoundCurrent Studio')}
+        )
+        foreach ($case in $cases) {
+            $clients=@($case.clients | ForEach-Object {[pscustomobject]@{Name=$_}})
+            $actual=& {
+                $App='eq';$Language=$pack.Name
+                . ([scriptblock]::Create($quitDefinition.Extent.Text))
+                QuitMessage $clients
+            }
+            $expectedNames=$case.names
+            $joiner=$pack.Value.PSObject.Properties[' and '].Value
+            $expected=$pack.Value.PSObject.Properties['Quit the following before changing VB-CABLE: %1.'].Value.Replace('%1',($expectedNames -join $joiner))
+            if ($actual -cne $expected) { throw ('Cable quit message mismatch: '+$pack.Name) }
+        }
+        $actual=& {
+            $App='eq';$Language=$pack.Name;$PSScriptRoot=$emptyPayload
+            # Bind only the isolated function's payload-root reference. Created
+            # scriptblocks do not carry the original file's PSScriptRoot.
+            . ([scriptblock]::Create($readyDefinition.Extent.Text.Replace('$PSScriptRoot','$emptyPayload')))
+            try { $null=Ready; throw 'Missing readiness executable unexpectedly succeeded' }
+            catch { $_.Exception.Message }
+        }
+        if ($actual -cne $pack.Value.PSObject.Properties['The audio readiness helper is missing. Repair the SoundCurrent installation.'].Value) {
+            throw ('Cable missing readiness helper mismatch: '+$pack.Name)
+        }
+    }
+} finally { Remove-Item -LiteralPath $emptyPayload -Recurse -Force -ErrorAction SilentlyContinue }
 $available = @($data.languages.PSObject.Properties.Name)
 foreach ($case in @(@('FR_ca','fr'),@('NN_no','nn'),@('zh-HK','zh-Hant'),@('zh-CN','zh-Hans'),@('pt-AO','en'),@('fr-Xxxx','en'),@('not-a-language','en'))) {
     if ((Resolve-SCSetupLanguage $case[0] $available) -ne $case[1]) { throw "Helper language resolution failed: $($case[0])" }

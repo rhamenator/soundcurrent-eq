@@ -20,6 +20,10 @@
       <translation> [自定义]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation>和</translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · 单声道</translation>
     </message>
@@ -256,6 +260,10 @@ Import into your library?</source>
     <message>
       <source>Audio error: %1</source>
       <translation>音频错误：%1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>音频恢复助手</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Import into your library?</source>
       <translation>更改共享音频驱动程序前，请退出正在运行的 SoundCurrent 应用，并等待音频恢复完成。</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>更改 VB-CABLE 前，请退出以下程序：%1。</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2204,6 +2216,10 @@ Import into your library?</source>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>音频处理器意外停止。</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>音频就绪检查助手缺失。请修复 SoundCurrent 安装。</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

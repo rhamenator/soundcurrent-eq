@@ -20,6 +20,10 @@
       <translation> [사용자 지정]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> 및 </translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · 모노</translation>
     </message>
@@ -256,6 +260,10 @@ Import into your library?</source>
     <message>
       <source>Audio error: %1</source>
       <translation>오디오 오류: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>오디오 복구 도우미</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Import into your library?</source>
       <translation>공유 오디오 드라이버를 변경하기 전에 실행 중인 SoundCurrent 앱을 종료하고 오디오 복구가 완료될 때까지 기다리세요.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>VB-CABLE을 변경하기 전에 다음을 종료하세요: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2204,6 +2216,10 @@ Import into your library?</source>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>오디오 프로세서가 예기치 않게 중지되었습니다.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>오디오 준비 상태 확인 도우미가 없습니다. SoundCurrent 설치를 복구하세요.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

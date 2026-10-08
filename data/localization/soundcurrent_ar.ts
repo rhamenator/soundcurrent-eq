@@ -20,6 +20,10 @@
       <translation> [مخصص]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> و</translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · أحادي</translation>
     </message>
@@ -256,6 +260,10 @@ Import into your library?</source>
     <message>
       <source>Audio error: %1</source>
       <translation>خطأ صوتي: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>مساعد استرداد الصوت</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Import into your library?</source>
       <translation>أغلق تطبيقات SoundCurrent قيد التشغيل وانتظر حتى يكتمل استرداد الصوت قبل تغيير برنامج تشغيل الصوت المشترك.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>قبل تغيير VB-CABLE، أغلق ما يلي: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2204,6 +2216,10 @@ Import into your library?</source>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>توقف معالج الصوت بشكل غير متوقع.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>مساعد التحقق من جاهزية الصوت مفقود. أصلح تثبيت SoundCurrent.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

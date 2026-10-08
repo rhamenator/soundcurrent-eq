@@ -20,6 +20,10 @@
       <translation> [собственный]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> и </translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · моно</translation>
     </message>
@@ -256,6 +260,10 @@ Import into your library?</source>
     <message>
       <source>Audio error: %1</source>
       <translation>Ошибка аудио: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Помощник восстановления аудио</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Import into your library?</source>
       <translation>Закройте запущенные приложения SoundCurrent и дождитесь завершения восстановления аудио перед изменением общего аудиодрайвера.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Перед изменением VB-CABLE закройте следующие компоненты: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2204,6 +2216,10 @@ Import into your library?</source>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Аудиопроцессор неожиданно остановился.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Помощник проверки готовности аудио отсутствует. Восстановите установку SoundCurrent.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

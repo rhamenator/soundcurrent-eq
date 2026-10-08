@@ -20,6 +20,10 @@
       <translation> [מותאם אישית]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> ו</translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · מונו</translation>
     </message>
@@ -256,6 +260,10 @@ Import into your library?</source>
     <message>
       <source>Audio error: %1</source>
       <translation>שגיאת שמע: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>כלי עזר לשחזור שמע</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Import into your library?</source>
       <translation>צאו מאפליקציות SoundCurrent שפועלות והמתינו לסיום שחזור השמע לפני שינוי מנהל התקן השמע המשותף.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>לפני שינוי VB-CABLE, סגרו את הבאים: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2204,6 +2216,10 @@ Import into your library?</source>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>מעבד השמע נעצר באופן בלתי צפוי.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>כלי העזר לבדיקת מוכנות השמע חסר. תקנו את התקנת SoundCurrent.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

@@ -20,6 +20,10 @@
       <translation> [tùy chỉnh]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> và </translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · mono</translation>
     </message>
@@ -256,6 +260,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Audio error: %1</source>
       <translation>Lỗi âm thanh: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Trợ giúp khôi phục âm thanh</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Đóng các ứng dụng SoundCurrent đang chạy và đợi quá trình khôi phục âm thanh hoàn tất trước khi thay đổi trình điều khiển âm thanh dùng chung.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Trước khi thay đổi VB-CABLE, hãy đóng các thành phần sau: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2204,6 +2216,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Bộ xử lý âm thanh đã dừng đột ngột.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Thiếu trợ giúp kiểm tra trạng thái sẵn sàng của âm thanh. Hãy sửa chữa bản cài đặt SoundCurrent.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

@@ -20,6 +20,10 @@
       <translation> [egen]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> og </translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · mono</translation>
     </message>
@@ -256,6 +260,10 @@ Importér til dit bibliotek?</translation>
     <message>
       <source>Audio error: %1</source>
       <translation>Lydfejl: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Lydgendannelseshjælper</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Importér til dit bibliotek?</translation>
       <translation>Luk kørende SoundCurrent-apps, og vent på, at lydgendannelsen er færdig, før du ændrer den delte lyddriver.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Luk følgende, før du ændrer VB-CABLE: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2204,6 +2216,10 @@ Importér til dit bibliotek?</translation>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Lydprocessoren stoppede uventet.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Hjælperen til kontrol af lydberedskab mangler. Reparer SoundCurrent-installationen.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

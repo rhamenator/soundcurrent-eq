@@ -20,6 +20,10 @@
       <translation> [kustom]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> dan </translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · mono</translation>
     </message>
@@ -256,6 +260,10 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Audio error: %1</source>
       <translation>Kesalahan audio: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Pembantu pemulihan audio</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Tutup aplikasi SoundCurrent yang sedang berjalan dan tunggu pemulihan audio selesai sebelum mengubah driver audio bersama.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Sebelum mengubah VB-CABLE, tutup yang berikut ini: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2204,6 +2216,10 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Prosesor audio berhenti secara tak terduga.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Pembantu pemeriksaan kesiapan audio tidak ditemukan. Perbaiki instalasi SoundCurrent.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

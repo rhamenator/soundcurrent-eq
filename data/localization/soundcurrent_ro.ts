@@ -20,6 +20,10 @@
       <translation> [personalizat]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> și </translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · mono</translation>
     </message>
@@ -256,6 +260,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Audio error: %1</source>
       <translation>Eroare audio: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Asistent de recuperare audio</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Importați în bibliotecă?</translation>
       <translation>Închideți aplicațiile SoundCurrent care rulează și așteptați finalizarea recuperării audio înainte de a modifica driverul audio partajat.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Înainte de a modifica VB-CABLE, închideți următoarele: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>D</translation>
     </message>
@@ -2204,6 +2216,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Procesorul audio s-a oprit neașteptat.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Lipsește asistentul de verificare a disponibilității audio. Reparați instalarea SoundCurrent.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

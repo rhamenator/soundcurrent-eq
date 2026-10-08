@@ -32,7 +32,7 @@ function Present {
 }
 function Ready {
     $probe = Join-Path $PSScriptRoot 'soundcurrent-cable-setup-guard.exe'
-    if (!(Test-Path -LiteralPath $probe)) { throw 'The audio readiness helper is missing. Repair the SoundCurrent installation.' }
+    if (!(Test-Path -LiteralPath $probe)) { throw (Get-SCSetupText 'The audio readiness helper is missing. Repair the SoundCurrent installation.' -Language $Language -Application ('soundcurrent-' + $App)) }
     & $probe --check-ready
     return $LASTEXITCODE -eq 0
 }
@@ -59,9 +59,10 @@ function QuitMessage($Clients) {
     $names = @($Clients | ForEach-Object {
         if ($_.Name -eq 'soundcurrent-eq') { 'SoundCurrent EQ' }
         elseif ($_.Name -eq 'soundcurrent-studio') { 'SoundCurrent Studio' }
-        else { 'the audio recovery helper' }
+        else { Get-SCSetupText 'Audio recovery helper' -Language $Language -Application ('soundcurrent-' + $App) }
     } | Select-Object -Unique)
-    return 'Quit ' + ($names -join ' and ') + ' before changing VB-CABLE.'
+    $joiner = Get-SCSetupText ' and ' -Language $Language -Application ('soundcurrent-' + $App)
+    return (Format-SCSetupText 'Quit the following before changing VB-CABLE: %1.' -Values @(($names -join $joiner)) -Language $Language -Application ('soundcurrent-' + $App))
 }
 try {
     if (@($Check,$Install,$Remove,$Settings).Where({$_}).Count -ne 1) { throw (Get-SCSetupText 'Choose one audio setup action.' -Language $Language -Application ('soundcurrent-' + $App)) }

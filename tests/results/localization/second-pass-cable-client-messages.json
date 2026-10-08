@@ -1,0 +1,69 @@
+{
+  "scope": "Cable quit process-list text and missing readiness helper diagnostic",
+  "sourceMessagesPerLocale": 587,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "notes": [
+      "Invariant product names distinct from localized recovery helper label",
+      "Colon list avoids requiring grammatical inflection of inserted names",
+      "Conjunction spacing comes from the catalog rather than fixed English",
+      "Readiness checker executable distinct from recovery process"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "runtimeQualification": {
+    "platform": "Linux Qt offscreen and host PowerShell 7.6.6",
+    "targetedQtTestsPassed": 40,
+    "catalogUnitTestsPassed": 16,
+    "catalogUnitTestsSkipped": 1,
+    "requiredHelperLookupsPassed": 680,
+    "isolatedQuitMessageCases": {
+      "passed": 272,
+      "catalogs": 34,
+      "processCombinationsPerCatalog": 8,
+      "oracle": "explicit expected name lists, including deduplicated result; no duplicated production mapping algorithm"
+    },
+    "isolatedReadyMissingExecutableCases": {
+      "passed": 34,
+      "adaptation": "PSScriptRoot reference bound to empty fixture directory; production path logic unchanged",
+      "guardExecutableRun": false
+    },
+    "initialFixtureFailure": "missing script directory in created scriptblock; corrected fixture binding, initial log retained",
+    "actualQuietNoActionAndMissingManagerFaults": "passed fr/ar/nn",
+    "mutationGate": "passed",
+    "realProcessWaitTimeoutExecuted": false
+  },
+  "remainingHelperProseCandidates": {
+    "untranslatedCable": 15,
+    "invariantProductNames": 2,
+    "nativeCandidates": 0,
+    "scope": "current AST literal heuristic"
+  },
+  "invariants": [
+    "Process identifiers and client filtering unchanged",
+    "Product names, name order and duplicate elimination unchanged",
+    "Readiness path and predicate unchanged",
+    "Driver actions and exit statuses unchanged",
+    "Numerical processing and saved state unchanged"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "WindowsCurrentChangesQualified": false,
+  "newPackagesQualified": false,
+  "VMUsed": false,
+  "remainingScope": [
+    "Cable lifecycle and repair notices",
+    "NSIS installer/uninstaller text",
+    "Windows current runtime, dialogs and package lifecycle qualification"
+  ],
+  "evidenceSha256": {
+    "packaging/windows/cable-setup.ps1": "f3aebc274e5f32779d7ec1cd33368456fe4f84017f159fb0fd5d8ed125f74917",
+    "tests/windows_setup_localization.ps1": "ae017fc78ced52499893655daee1c187e4dd79d4d65dd52f23910e1791ff0859",
+    "data/localization/setup-prose-backlog.json": "8b4c46a2374effa33ebda1a61f79170f7ad43a9c933c4bbb6a8c6b5a76de378e",
+    "tests/results/localization/cable-client-messages-runtime.log": "4b55056ceb71e9f6f9f65781006e4c9b2b1f79bcad357f7bf981aae0bc361511",
+    "tests/results/localization/cable-client-messages-initial.log": "ddc955bb00b1a8ea09b83483e9618ebd61b813941a3fece82ad4d18623af88f5",
+    "tests/results/localization/cable-client-messages-qt.log": "199c3f517c4a72c1f37e8cc6cc6d9e77aaee3cbbaf9fdac2ea57ab22581d4cdb",
+    "build/soundcurrent-eq": "fa276acf36eac91d4291112e5e8e5461f6986560dfaa585216a07e4fbf81c7f1"
+  }
+}

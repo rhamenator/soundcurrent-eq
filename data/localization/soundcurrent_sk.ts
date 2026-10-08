@@ -20,6 +20,10 @@
       <translation> [vlastné]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> a </translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · mono</translation>
     </message>
@@ -256,6 +260,10 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>Audio error: %1</source>
       <translation>Chyba zvuku: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Pomocník obnovy zvuku</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Importovať do vašej knižnice?</translation>
       <translation>Ukončite spustené aplikácie SoundCurrent a pred zmenou zdieľaného zvukového ovládača počkajte na dokončenie obnovy zvuku.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Pred zmenou VB-CABLE ukončite nasledujúce: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2204,6 +2216,10 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Zvukový procesor sa neočakávane zastavil.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Pomocník kontroly pripravenosti zvuku chýba. Opravte inštaláciu SoundCurrent.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

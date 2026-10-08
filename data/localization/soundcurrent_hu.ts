@@ -20,6 +20,10 @@
       <translation> [egyéni]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> és </translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · monó</translation>
     </message>
@@ -256,6 +260,10 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Audio error: %1</source>
       <translation>Hanghiba: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Hanghelyreállítási segédprogram</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Importálja a könyvtárba?</translation>
       <translation>Lépjen ki a futó SoundCurrent alkalmazásokból, és várja meg a hang helyreállítását a közösen használt hangillesztőprogram módosítása előtt.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>A VB-CABLE módosítása előtt zárja be a következőket: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>J</translation>
     </message>
@@ -2204,6 +2216,10 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>A hangfeldolgozó váratlanul leállt.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Hiányzik a hang készenlétét ellenőrző segédprogram. Javítsa a SoundCurrent telepítését.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

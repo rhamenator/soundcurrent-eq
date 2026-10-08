@@ -162,5 +162,9 @@
   "secondPassNativeNotices": {
     "status": "three notices translated; isolated native success conditional tested on host; Windows timeout/dialogs and lifecycle pending",
     "evidence": "tests/results/localization/second-pass-native-notices.json"
+  },
+  "secondPassCableClientMessages": {
+    "status": "owned quit/readiness text translated; host isolated functions tested; Windows dialogs, waits and packages pending",
+    "evidence": "tests/results/localization/second-pass-cable-client-messages.json"
   }
 }

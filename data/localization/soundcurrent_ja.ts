@@ -20,6 +20,10 @@
       <translation> [カスタム]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> と </translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · モノラル</translation>
     </message>
@@ -256,6 +260,10 @@ Import into your library?</source>
     <message>
       <source>Audio error: %1</source>
       <translation>オーディオエラー: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>オーディオ復旧ヘルパー</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Import into your library?</source>
       <translation>共有オーディオドライバーを変更する前に、実行中の SoundCurrent アプリを終了し、オーディオの復旧が完了するまでお待ちください。</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>VB-CABLE を変更する前に、次を終了してください：%1。</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2204,6 +2216,10 @@ Import into your library?</source>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>オーディオプロセッサーが予期せず停止しました。</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>オーディオ準備状態の確認ヘルパーが見つかりません。SoundCurrent のインストールを修復してください。</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

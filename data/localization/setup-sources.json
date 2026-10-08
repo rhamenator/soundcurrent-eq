@@ -14,5 +14,9 @@
   "The driver manager is not signed. Install a signed SoundCurrent release.",
   "Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.",
   "Audio driver setup completed. Restart Windows before using SoundCurrent.",
-  "SoundCurrent Audio is ready. Open the app and choose your speakers or headphones."
+  "SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.",
+  "Audio recovery helper",
+  "Quit the following before changing VB-CABLE: %1.",
+  " and ",
+  "The audio readiness helper is missing. Repair the SoundCurrent installation."
 ]

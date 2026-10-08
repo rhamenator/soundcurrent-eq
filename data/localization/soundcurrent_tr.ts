@@ -20,6 +20,10 @@
       <translation> [özel]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> ve </translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · mono</translation>
     </message>
@@ -256,6 +260,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Audio error: %1</source>
       <translation>Ses hatası: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Ses kurtarma yardımcısı</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Paylaşılan ses sürücüsünü değiştirmeden önce çalışan SoundCurrent uygulamalarını kapatın ve ses kurtarmanın tamamlanmasını bekleyin.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>VB-CABLE’ı değiştirmeden önce şunları kapatın: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2204,6 +2216,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Ses işlemcisi beklenmedik şekilde durdu.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Ses hazırlık denetimi yardımcısı eksik. SoundCurrent kurulumunu onarın.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

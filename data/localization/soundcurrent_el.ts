@@ -20,6 +20,10 @@
       <translation> [προσαρμοσμένο]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> και </translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · μονοφωνικό</translation>
     </message>
@@ -256,6 +260,10 @@ Import into your library?</source>
     <message>
       <source>Audio error: %1</source>
       <translation>Σφάλμα ήχου: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Βοηθός ανάκτησης ήχου</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Import into your library?</source>
       <translation>Κλείστε τις εφαρμογές SoundCurrent που εκτελούνται και περιμένετε να ολοκληρωθεί η ανάκτηση ήχου πριν αλλάξετε το κοινόχρηστο πρόγραμμα οδήγησης ήχου.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Πριν αλλάξετε το VB-CABLE, κλείστε τα εξής: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2204,6 +2216,10 @@ Import into your library?</source>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Ο επεξεργαστής ήχου σταμάτησε απρόσμενα.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Λείπει ο βοηθός ελέγχου ετοιμότητας ήχου. Επιδιορθώστε την εγκατάσταση του SoundCurrent.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

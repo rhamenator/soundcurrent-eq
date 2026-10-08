@@ -20,6 +20,10 @@
       <translation> [oma]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> ja </translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · mono</translation>
     </message>
@@ -256,6 +260,10 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Audio error: %1</source>
       <translation>Äänivirhe: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Äänen palautuksen apuohjelma</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>Sulje käynnissä olevat SoundCurrent-sovellukset ja odota äänen palautuksen valmistumista ennen jaetun ääniohjaimen muuttamista.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Sulje seuraavat ennen VB-CABLEn muuttamista: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>O</translation>
     </message>
@@ -2204,6 +2216,10 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Ääniprosessori pysähtyi odottamatta.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Äänen valmiuden tarkistuksen apuohjelma puuttuu. Korjaa SoundCurrentin asennus.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

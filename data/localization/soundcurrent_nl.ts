@@ -20,6 +20,10 @@
       <translation> [aangepast]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> en </translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · mono</translation>
     </message>
@@ -256,6 +260,10 @@ Importeren in uw bibliotheek?</translation>
     <message>
       <source>Audio error: %1</source>
       <translation>Audiofout: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Audioherstelhulp</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Importeren in uw bibliotheek?</translation>
       <translation>Sluit actieve SoundCurrent-apps en wacht tot het audioherstel is voltooid voordat u het gedeelde audiostuurprogramma wijzigt.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Sluit het volgende voordat u VB-CABLE wijzigt: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2204,6 +2216,10 @@ Importeren in uw bibliotheek?</translation>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>De audioprocessor is onverwacht gestopt.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>De hulp voor het controleren van de audiogereedheid ontbreekt. Herstel de installatie van SoundCurrent.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

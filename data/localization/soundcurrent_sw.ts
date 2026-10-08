@@ -20,6 +20,10 @@
       <translation> [maalumu]</translation>
     </message>
     <message>
+      <source> and </source>
+      <translation> na </translation>
+    </message>
+    <message>
       <source> · mono</source>
       <translation> · mono</translation>
     </message>
@@ -256,6 +260,10 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Audio error: %1</source>
       <translation>Hitilafu ya sauti: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Msaidizi wa urejeshaji wa sauti</translation>
     </message>
     <message>
       <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
@@ -1688,6 +1696,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Funga programu za SoundCurrent zinazoendeshwa na usubiri urejeshaji wa sauti ukamilike kabla ya kubadilisha kiendeshi cha sauti kinachotumiwa kwa pamoja.</translation>
     </message>
     <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Funga vifuatavyo kabla ya kubadilisha VB-CABLE: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2204,6 +2216,10 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Kichakataji cha sauti kimesimama bila kutarajiwa.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Msaidizi wa ukaguzi wa utayari wa sauti hayupo. Rekebisha usakinishaji wa SoundCurrent.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>

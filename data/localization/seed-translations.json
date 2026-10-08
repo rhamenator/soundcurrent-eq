@@ -88,7 +88,11 @@
     "The driver manager is not signed. Install a signed SoundCurrent release.",
     "Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.",
     "Audio driver setup completed. Restart Windows before using SoundCurrent.",
-    "SoundCurrent Audio is ready. Open the app and choose your speakers or headphones."
+    "SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.",
+    "Audio recovery helper",
+    "Quit the following before changing VB-CABLE: %1.",
+    " and ",
+    "The audio readiness helper is missing. Repair the SoundCurrent installation."
   ],
   "languages": {
     "de": [
@@ -181,7 +185,11 @@
       "Der Treibermanager ist nicht signiert. Installieren Sie eine signierte SoundCurrent-Version.",
       "Beenden Sie laufende SoundCurrent-Apps und warten Sie, bis die Audiowiederherstellung abgeschlossen ist, bevor Sie den gemeinsamen Audiotreiber ändern.",
       "Die Audiotreibereinrichtung ist abgeschlossen. Starten Sie Windows neu, bevor Sie SoundCurrent verwenden.",
-      "SoundCurrent Audio ist bereit. Öffnen Sie die App und wählen Sie Ihre Lautsprecher oder Kopfhörer."
+      "SoundCurrent Audio ist bereit. Öffnen Sie die App und wählen Sie Ihre Lautsprecher oder Kopfhörer.",
+      "Audiowiederherstellungshilfe",
+      "Beenden Sie vor dem Ändern von VB-CABLE Folgendes: %1.",
+      " und ",
+      "Die Hilfe zur Prüfung der Audiobereitschaft fehlt. Reparieren Sie die SoundCurrent-Installation."
     ],
     "fr": [
       "Français",
@@ -273,7 +281,11 @@
       "Le gestionnaire de pilotes n’est pas signé. Installez une version signée de SoundCurrent.",
       "Quittez les applications SoundCurrent en cours et attendez la fin de la récupération audio avant de modifier le pilote audio partagé.",
       "La configuration du pilote audio est terminée. Redémarrez Windows avant d’utiliser SoundCurrent.",
-      "SoundCurrent Audio est prêt. Ouvrez l’application et choisissez vos haut-parleurs ou votre casque."
+      "SoundCurrent Audio est prêt. Ouvrez l’application et choisissez vos haut-parleurs ou votre casque.",
+      "Assistant de récupération audio",
+      "Avant de modifier VB-CABLE, quittez les éléments suivants : %1.",
+      " et ",
+      "L’assistant de vérification de disponibilité audio est manquant. Réparez l’installation de SoundCurrent."
     ],
     "es": [
       "Español",
@@ -365,7 +377,11 @@
       "El gestor de controladores no está firmado. Instale una versión firmada de SoundCurrent.",
       "Cierre las aplicaciones SoundCurrent en ejecución y espere a que termine la recuperación del audio antes de cambiar el controlador de audio compartido.",
       "La configuración del controlador de audio ha finalizado. Reinicie Windows antes de usar SoundCurrent.",
-      "SoundCurrent Audio está listo. Abra la aplicación y elija sus altavoces o auriculares."
+      "SoundCurrent Audio está listo. Abra la aplicación y elija sus altavoces o auriculares.",
+      "Asistente de recuperación del audio",
+      "Antes de cambiar VB-CABLE, cierre lo siguiente: %1.",
+      " y ",
+      "Falta el asistente de comprobación de disponibilidad de audio. Repare la instalación de SoundCurrent."
     ],
     "it": [
       "Italiano",
@@ -457,7 +473,11 @@
       "Il gestore dei driver non è firmato. Installare una versione firmata di SoundCurrent.",
       "Chiudere le app SoundCurrent in esecuzione e attendere il completamento del ripristino audio prima di modificare il driver audio condiviso.",
       "La configurazione del driver audio è completata. Riavviare Windows prima di usare SoundCurrent.",
-      "SoundCurrent Audio è pronto. Aprire l’app e scegliere gli altoparlanti o le cuffie."
+      "SoundCurrent Audio è pronto. Aprire l’app e scegliere gli altoparlanti o le cuffie.",
+      "Assistente di ripristino audio",
+      "Prima di modificare VB-CABLE, chiudere quanto segue: %1.",
+      " e ",
+      "Manca l’assistente per la verifica della disponibilità audio. Riparare l’installazione di SoundCurrent."
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -549,7 +569,11 @@
       "O gestor de controladores não está assinado. Instale uma versão assinada do SoundCurrent.",
       "Feche as aplicações SoundCurrent em execução e aguarde a conclusão da recuperação do áudio antes de alterar o controlador de áudio partilhado.",
       "A configuração do controlador de áudio foi concluída. Reinicie o Windows antes de utilizar o SoundCurrent.",
-      "O SoundCurrent Audio está pronto. Abra a aplicação e escolha as suas colunas ou auscultadores."
+      "O SoundCurrent Audio está pronto. Abra a aplicação e escolha as suas colunas ou auscultadores.",
+      "Assistente de recuperação do áudio",
+      "Antes de alterar o VB-CABLE, feche o seguinte: %1.",
+      " e ",
+      "O assistente de verificação de disponibilidade do áudio está em falta. Repare a instalação do SoundCurrent."
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -641,7 +665,11 @@
       "O gerenciador de drivers não está assinado. Instale uma versão assinada do SoundCurrent.",
       "Feche os aplicativos SoundCurrent em execução e aguarde a conclusão da recuperação do áudio antes de alterar o driver de áudio compartilhado.",
       "A configuração do driver de áudio foi concluída. Reinicie o Windows antes de usar o SoundCurrent.",
-      "O SoundCurrent Audio está pronto. Abra o aplicativo e escolha seus alto-falantes ou fones de ouvido."
+      "O SoundCurrent Audio está pronto. Abra o aplicativo e escolha seus alto-falantes ou fones de ouvido.",
+      "Assistente de recuperação do áudio",
+      "Antes de alterar o VB-CABLE, feche o seguinte: %1.",
+      " e ",
+      "O assistente de verificação de disponibilidade do áudio está ausente. Repare a instalação do SoundCurrent."
     ],
     "nl": [
       "Nederlands",
@@ -733,7 +761,11 @@
       "De stuurprogrammabeheerder is niet ondertekend. Installeer een ondertekende versie van SoundCurrent.",
       "Sluit actieve SoundCurrent-apps en wacht tot het audioherstel is voltooid voordat u het gedeelde audiostuurprogramma wijzigt.",
       "Het instellen van het audiostuurprogramma is voltooid. Start Windows opnieuw op voordat u SoundCurrent gebruikt.",
-      "SoundCurrent Audio is gereed. Open de app en kies uw luidsprekers of hoofdtelefoon."
+      "SoundCurrent Audio is gereed. Open de app en kies uw luidsprekers of hoofdtelefoon.",
+      "Audioherstelhulp",
+      "Sluit het volgende voordat u VB-CABLE wijzigt: %1.",
+      " en ",
+      "De hulp voor het controleren van de audiogereedheid ontbreekt. Herstel de installatie van SoundCurrent."
     ],
     "pl": [
       "Polski",
@@ -825,7 +857,11 @@
       "Menedżer sterowników nie jest podpisany. Zainstaluj podpisaną wersję SoundCurrent.",
       "Zamknij uruchomione aplikacje SoundCurrent i poczekaj na zakończenie przywracania dźwięku przed zmianą współdzielonego sterownika audio.",
       "Konfiguracja sterownika audio została ukończona. Uruchom ponownie system Windows przed użyciem SoundCurrent.",
-      "SoundCurrent Audio jest gotowy. Otwórz aplikację i wybierz głośniki lub słuchawki."
+      "SoundCurrent Audio jest gotowy. Otwórz aplikację i wybierz głośniki lub słuchawki.",
+      "Pomocnik przywracania dźwięku",
+      "Przed zmianą VB-CABLE zamknij następujące elementy: %1.",
+      " i ",
+      "Brakuje pomocnika sprawdzania gotowości dźwięku. Napraw instalację SoundCurrent."
     ],
     "cs": [
       "Čeština",
@@ -917,7 +953,11 @@
       "Správce ovladačů není podepsán. Nainstalujte podepsané vydání SoundCurrent.",
       "Ukončete spuštěné aplikace SoundCurrent a před změnou sdíleného zvukového ovladače počkejte na dokončení obnovy zvuku.",
       "Nastavení zvukového ovladače je dokončeno. Před použitím SoundCurrent restartujte systém Windows.",
-      "SoundCurrent Audio je připraven. Otevřete aplikaci a vyberte reproduktory nebo sluchátka."
+      "SoundCurrent Audio je připraven. Otevřete aplikaci a vyberte reproduktory nebo sluchátka.",
+      "Pomocník obnovy zvuku",
+      "Před změnou VB-CABLE ukončete následující: %1.",
+      " a ",
+      "Pomocník kontroly připravenosti zvuku chybí. Opravte instalaci SoundCurrent."
     ],
     "sk": [
       "Slovenčina",
@@ -1009,7 +1049,11 @@
       "Správca ovládačov nie je podpísaný. Nainštalujte podpísané vydanie SoundCurrent.",
       "Ukončite spustené aplikácie SoundCurrent a pred zmenou zdieľaného zvukového ovládača počkajte na dokončenie obnovy zvuku.",
       "Nastavenie zvukového ovládača je dokončené. Pred použitím SoundCurrent reštartujte systém Windows.",
-      "SoundCurrent Audio je pripravený. Otvorte aplikáciu a vyberte reproduktory alebo slúchadlá."
+      "SoundCurrent Audio je pripravený. Otvorte aplikáciu a vyberte reproduktory alebo slúchadlá.",
+      "Pomocník obnovy zvuku",
+      "Pred zmenou VB-CABLE ukončite nasledujúce: %1.",
+      " a ",
+      "Pomocník kontroly pripravenosti zvuku chýba. Opravte inštaláciu SoundCurrent."
     ],
     "uk": [
       "Українська",
@@ -1101,7 +1145,11 @@
       "Диспетчер драйверів не підписаний. Установіть підписаний випуск SoundCurrent.",
       "Закрийте запущені застосунки SoundCurrent і дочекайтеся завершення відновлення аудіо перед зміною спільного аудіодрайвера.",
       "Налаштування аудіодрайвера завершено. Перезапустіть Windows перед використанням SoundCurrent.",
-      "SoundCurrent Audio готовий. Відкрийте застосунок і виберіть динаміки або навушники."
+      "SoundCurrent Audio готовий. Відкрийте застосунок і виберіть динаміки або навушники.",
+      "Помічник відновлення аудіо",
+      "Перед зміною VB-CABLE закрийте такі компоненти: %1.",
+      " і ",
+      "Помічник перевірки готовності аудіо відсутній. Відновіть інсталяцію SoundCurrent."
     ],
     "ru": [
       "Русский",
@@ -1193,7 +1241,11 @@
       "Диспетчер драйверов не подписан. Установите подписанную версию SoundCurrent.",
       "Закройте запущенные приложения SoundCurrent и дождитесь завершения восстановления аудио перед изменением общего аудиодрайвера.",
       "Настройка аудиодрайвера завершена. Перезапустите Windows перед использованием SoundCurrent.",
-      "SoundCurrent Audio готов. Откройте приложение и выберите динамики или наушники."
+      "SoundCurrent Audio готов. Откройте приложение и выберите динамики или наушники.",
+      "Помощник восстановления аудио",
+      "Перед изменением VB-CABLE закройте следующие компоненты: %1.",
+      " и ",
+      "Помощник проверки готовности аудио отсутствует. Восстановите установку SoundCurrent."
     ],
     "el": [
       "Ελληνικά",
@@ -1285,7 +1337,11 @@
       "Ο διαχειριστής προγραμμάτων οδήγησης δεν είναι υπογεγραμμένος. Εγκαταστήστε μια υπογεγραμμένη έκδοση του SoundCurrent.",
       "Κλείστε τις εφαρμογές SoundCurrent που εκτελούνται και περιμένετε να ολοκληρωθεί η ανάκτηση ήχου πριν αλλάξετε το κοινόχρηστο πρόγραμμα οδήγησης ήχου.",
       "Η ρύθμιση του προγράμματος οδήγησης ήχου ολοκληρώθηκε. Επανεκκινήστε τα Windows πριν χρησιμοποιήσετε το SoundCurrent.",
-      "Το SoundCurrent Audio είναι έτοιμο. Ανοίξτε την εφαρμογή και επιλέξτε τα ηχεία ή τα ακουστικά σας."
+      "Το SoundCurrent Audio είναι έτοιμο. Ανοίξτε την εφαρμογή και επιλέξτε τα ηχεία ή τα ακουστικά σας.",
+      "Βοηθός ανάκτησης ήχου",
+      "Πριν αλλάξετε το VB-CABLE, κλείστε τα εξής: %1.",
+      " και ",
+      "Λείπει ο βοηθός ελέγχου ετοιμότητας ήχου. Επιδιορθώστε την εγκατάσταση του SoundCurrent."
     ],
     "tr": [
       "Türkçe",
@@ -1377,7 +1433,11 @@
       "Sürücü yöneticisi imzalı değil. İmzalı bir SoundCurrent sürümü yükleyin.",
       "Paylaşılan ses sürücüsünü değiştirmeden önce çalışan SoundCurrent uygulamalarını kapatın ve ses kurtarmanın tamamlanmasını bekleyin.",
       "Ses sürücüsü kurulumu tamamlandı. SoundCurrent kullanmadan önce Windows’u yeniden başlatın.",
-      "SoundCurrent Audio hazır. Uygulamayı açıp hoparlörlerinizi veya kulaklığınızı seçin."
+      "SoundCurrent Audio hazır. Uygulamayı açıp hoparlörlerinizi veya kulaklığınızı seçin.",
+      "Ses kurtarma yardımcısı",
+      "VB-CABLE’ı değiştirmeden önce şunları kapatın: %1.",
+      " ve ",
+      "Ses hazırlık denetimi yardımcısı eksik. SoundCurrent kurulumunu onarın."
     ],
     "sv": [
       "Svenska",
@@ -1469,7 +1529,11 @@
       "Drivrutinshanteraren är inte signerad. Installera en signerad version av SoundCurrent.",
       "Avsluta SoundCurrent-appar som körs och vänta tills ljudåterställningen är klar innan du ändrar den delade ljuddrivrutinen.",
       "Ljuddrivrutinsinstallationen är klar. Starta om Windows innan du använder SoundCurrent.",
-      "SoundCurrent Audio är redo. Öppna appen och välj dina högtalare eller hörlurar."
+      "SoundCurrent Audio är redo. Öppna appen och välj dina högtalare eller hörlurar.",
+      "Ljudåterställningshjälp",
+      "Avsluta följande innan du ändrar VB-CABLE: %1.",
+      " och ",
+      "Hjälpen för kontroll av ljudberedskap saknas. Reparera SoundCurrent-installationen."
     ],
     "da": [
       "Dansk",
@@ -1561,7 +1625,11 @@
       "Driveradministratoren er ikke signeret. Installer en signeret version af SoundCurrent.",
       "Luk kørende SoundCurrent-apps, og vent på, at lydgendannelsen er færdig, før du ændrer den delte lyddriver.",
       "Opsætningen af lyddriveren er fuldført. Genstart Windows, før du bruger SoundCurrent.",
-      "SoundCurrent Audio er klar. Åbn appen, og vælg dine højttalere eller hovedtelefoner."
+      "SoundCurrent Audio er klar. Åbn appen, og vælg dine højttalere eller hovedtelefoner.",
+      "Lydgendannelseshjælper",
+      "Luk følgende, før du ændrer VB-CABLE: %1.",
+      " og ",
+      "Hjælperen til kontrol af lydberedskab mangler. Reparer SoundCurrent-installationen."
     ],
     "nb": [
       "Norsk bokmål",
@@ -1653,7 +1721,11 @@
       "Driverbehandleren er ikke signert. Installer en signert versjon av SoundCurrent.",
       "Avslutt SoundCurrent-apper som kjører, og vent til lydgjenopprettingen er ferdig før du endrer den delte lyddriveren.",
       "Oppsettet av lyddriveren er fullført. Start Windows på nytt før du bruker SoundCurrent.",
-      "SoundCurrent Audio er klart. Åpne appen og velg høyttalere eller hodetelefoner."
+      "SoundCurrent Audio er klart. Åpne appen og velg høyttalere eller hodetelefoner.",
+      "Lydgjenopprettingshjelper",
+      "Avslutt følgende før du endrer VB-CABLE: %1.",
+      " og ",
+      "Hjelperen for kontroll av lydberedskap mangler. Reparer SoundCurrent-installasjonen."
     ],
     "fi": [
       "Suomi",
@@ -1745,7 +1817,11 @@
       "Ohjainten hallintaohjelmaa ei ole allekirjoitettu. Asenna allekirjoitettu SoundCurrent-julkaisu.",
       "Sulje käynnissä olevat SoundCurrent-sovellukset ja odota äänen palautuksen valmistumista ennen jaetun ääniohjaimen muuttamista.",
       "Ääniohjaimen asennus on valmis. Käynnistä Windows uudelleen ennen SoundCurrentin käyttöä.",
-      "SoundCurrent Audio on valmis. Avaa sovellus ja valitse kaiuttimet tai kuulokkeet."
+      "SoundCurrent Audio on valmis. Avaa sovellus ja valitse kaiuttimet tai kuulokkeet.",
+      "Äänen palautuksen apuohjelma",
+      "Sulje seuraavat ennen VB-CABLEn muuttamista: %1.",
+      " ja ",
+      "Äänen valmiuden tarkistuksen apuohjelma puuttuu. Korjaa SoundCurrentin asennus."
     ],
     "ro": [
       "Română",
@@ -1837,7 +1913,11 @@
       "Managerul de drivere nu este semnat. Instalați o versiune semnată de SoundCurrent.",
       "Închideți aplicațiile SoundCurrent care rulează și așteptați finalizarea recuperării audio înainte de a modifica driverul audio partajat.",
       "Configurarea driverului audio s-a încheiat. Reporniți Windows înainte de a utiliza SoundCurrent.",
-      "SoundCurrent Audio este pregătit. Deschideți aplicația și alegeți difuzoarele sau căștile."
+      "SoundCurrent Audio este pregătit. Deschideți aplicația și alegeți difuzoarele sau căștile.",
+      "Asistent de recuperare audio",
+      "Înainte de a modifica VB-CABLE, închideți următoarele: %1.",
+      " și ",
+      "Lipsește asistentul de verificare a disponibilității audio. Reparați instalarea SoundCurrent."
     ],
     "hu": [
       "Magyar",
@@ -1929,7 +2009,11 @@
       "Az illesztőprogram-kezelő nincs aláírva. Telepítse a SoundCurrent aláírt kiadását.",
       "Lépjen ki a futó SoundCurrent alkalmazásokból, és várja meg a hang helyreállítását a közösen használt hangillesztőprogram módosítása előtt.",
       "A hangillesztőprogram beállítása befejeződött. A SoundCurrent használata előtt indítsa újra a Windowst.",
-      "A SoundCurrent Audio készen áll. Nyissa meg az alkalmazást, és válassza ki a hangszórókat vagy a fejhallgatót."
+      "A SoundCurrent Audio készen áll. Nyissa meg az alkalmazást, és válassza ki a hangszórókat vagy a fejhallgatót.",
+      "Hanghelyreállítási segédprogram",
+      "A VB-CABLE módosítása előtt zárja be a következőket: %1.",
+      " és ",
+      "Hiányzik a hang készenlétét ellenőrző segédprogram. Javítsa a SoundCurrent telepítését."
     ],
     "ar": [
       "العربية",
@@ -2021,7 +2105,11 @@
       "مدير برامج التشغيل غير موقّع. ثبّت إصدارًا موقّعًا من SoundCurrent.",
       "أغلق تطبيقات SoundCurrent قيد التشغيل وانتظر حتى يكتمل استرداد الصوت قبل تغيير برنامج تشغيل الصوت المشترك.",
       "اكتمل إعداد برنامج تشغيل الصوت. أعد تشغيل Windows قبل استخدام SoundCurrent.",
-      "SoundCurrent Audio جاهز. افتح التطبيق واختر مكبرات الصوت أو سماعات الرأس."
+      "SoundCurrent Audio جاهز. افتح التطبيق واختر مكبرات الصوت أو سماعات الرأس.",
+      "مساعد استرداد الصوت",
+      "قبل تغيير VB-CABLE، أغلق ما يلي: %1.",
+      " و",
+      "مساعد التحقق من جاهزية الصوت مفقود. أصلح تثبيت SoundCurrent."
     ],
     "he": [
       "עברית",
@@ -2113,7 +2201,11 @@
       "כלי ניהול מנהלי ההתקנים אינו חתום. התקינו גרסה חתומה של SoundCurrent.",
       "צאו מאפליקציות SoundCurrent שפועלות והמתינו לסיום שחזור השמע לפני שינוי מנהל התקן השמע המשותף.",
       "הגדרת מנהל התקן השמע הושלמה. הפעילו מחדש את Windows לפני השימוש ב-SoundCurrent.",
-      "SoundCurrent Audio מוכן. פתחו את האפליקציה ובחרו ברמקולים או באוזניות."
+      "SoundCurrent Audio מוכן. פתחו את האפליקציה ובחרו ברמקולים או באוזניות.",
+      "כלי עזר לשחזור שמע",
+      "לפני שינוי VB-CABLE, סגרו את הבאים: %1.",
+      " ו",
+      "כלי העזר לבדיקת מוכנות השמע חסר. תקנו את התקנת SoundCurrent."
     ],
     "fa": [
       "فارسی",
@@ -2205,7 +2297,11 @@
       "مدیر درایورها امضا نشده است. یک نسخهٔ امضاشدهٔ SoundCurrent نصب کنید.",
       "پیش از تغییر درایور مشترک صدا، از برنامه‌های در حال اجرای SoundCurrent خارج شوید و منتظر پایان بازیابی صدا بمانید.",
       "راه‌اندازی درایور صدا پایان یافت. پیش از استفاده از SoundCurrent، Windows را دوباره راه‌اندازی کنید.",
-      "SoundCurrent Audio آماده است. برنامه را باز کنید و بلندگوها یا هدفون خود را انتخاب کنید."
+      "SoundCurrent Audio آماده است. برنامه را باز کنید و بلندگوها یا هدفون خود را انتخاب کنید.",
+      "ابزار کمکی بازیابی صدا",
+      "پیش از تغییر VB-CABLE، موارد زیر را ببندید: %1.",
+      " و ",
+      "ابزار کمکی بررسی آمادگی صدا موجود نیست. نصب SoundCurrent را تعمیر کنید."
     ],
     "zh-Hans": [
       "简体中文",
@@ -2297,7 +2393,11 @@
       "驱动程序管理器未签名。请安装已签名的 SoundCurrent 版本。",
       "更改共享音频驱动程序前，请退出正在运行的 SoundCurrent 应用，并等待音频恢复完成。",
       "音频驱动程序设置已完成。使用 SoundCurrent 前请重启 Windows。",
-      "SoundCurrent Audio 已就绪。请打开应用并选择扬声器或耳机。"
+      "SoundCurrent Audio 已就绪。请打开应用并选择扬声器或耳机。",
+      "音频恢复助手",
+      "更改 VB-CABLE 前，请退出以下程序：%1。",
+      "和",
+      "音频就绪检查助手缺失。请修复 SoundCurrent 安装。"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -2389,7 +2489,11 @@
       "驅動程式管理器未簽章。請安裝已簽章的 SoundCurrent 版本。",
       "變更共用音訊驅動程式前，請結束正在執行的 SoundCurrent 應用程式，並等待音訊復原完成。",
       "音訊驅動程式設定已完成。使用 SoundCurrent 前請重新啟動 Windows。",
-      "SoundCurrent Audio 已就緒。請開啟應用程式並選擇喇叭或耳機。"
+      "SoundCurrent Audio 已就緒。請開啟應用程式並選擇喇叭或耳機。",
+      "音訊復原助手",
+      "變更 VB-CABLE 前，請結束以下程式：%1。",
+      "和",
+      "音訊就緒檢查助手缺失。請修復 SoundCurrent 安裝。"
     ],
     "ja": [
       "日本語",
@@ -2481,7 +2585,11 @@
       "ドライバーマネージャーが署名されていません。署名済みの SoundCurrent リリースをインストールしてください。",
       "共有オーディオドライバーを変更する前に、実行中の SoundCurrent アプリを終了し、オーディオの復旧が完了するまでお待ちください。",
       "オーディオドライバーのセットアップが完了しました。SoundCurrent を使用する前に Windows を再起動してください。",
-      "SoundCurrent Audio の準備ができました。アプリを開いてスピーカーまたはヘッドホンを選択してください。"
+      "SoundCurrent Audio の準備ができました。アプリを開いてスピーカーまたはヘッドホンを選択してください。",
+      "オーディオ復旧ヘルパー",
+      "VB-CABLE を変更する前に、次を終了してください：%1。",
+      " と ",
+      "オーディオ準備状態の確認ヘルパーが見つかりません。SoundCurrent のインストールを修復してください。"
     ],
     "ko": [
       "한국어",
@@ -2573,7 +2681,11 @@
       "드라이버 관리자가 서명되지 않았습니다. 서명된 SoundCurrent 릴리스를 설치하세요.",
       "공유 오디오 드라이버를 변경하기 전에 실행 중인 SoundCurrent 앱을 종료하고 오디오 복구가 완료될 때까지 기다리세요.",
       "오디오 드라이버 설정이 완료되었습니다. SoundCurrent를 사용하기 전에 Windows를 다시 시작하세요.",
-      "SoundCurrent Audio가 준비되었습니다. 앱을 열고 스피커나 헤드폰을 선택하세요."
+      "SoundCurrent Audio가 준비되었습니다. 앱을 열고 스피커나 헤드폰을 선택하세요.",
+      "오디오 복구 도우미",
+      "VB-CABLE을 변경하기 전에 다음을 종료하세요: %1.",
+      " 및 ",
+      "오디오 준비 상태 확인 도우미가 없습니다. SoundCurrent 설치를 복구하세요."
     ],
     "hi": [
       "हिन्दी",
@@ -2665,7 +2777,11 @@
       "ड्राइवर प्रबंधक पर हस्ताक्षर नहीं हैं। SoundCurrent का हस्ताक्षरित संस्करण स्थापित करें।",
       "साझा ऑडियो ड्राइवर बदलने से पहले चल रहे SoundCurrent ऐप बंद करें और ऑडियो बहाली पूरी होने की प्रतीक्षा करें।",
       "ऑडियो ड्राइवर सेटअप पूरा हुआ। SoundCurrent का उपयोग करने से पहले Windows को पुनरारंभ करें।",
-      "SoundCurrent Audio तैयार है। ऐप खोलें और अपने स्पीकर या हेडफ़ोन चुनें।"
+      "SoundCurrent Audio तैयार है। ऐप खोलें और अपने स्पीकर या हेडफ़ोन चुनें।",
+      "ऑडियो बहाली सहायक",
+      "VB-CABLE बदलने से पहले इन्हें बंद करें: %1।",
+      " और ",
+      "ऑडियो तत्परता जाँच सहायक मौजूद नहीं है। SoundCurrent की स्थापना की मरम्मत करें।"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -2757,7 +2873,11 @@
       "Pengelola driver tidak ditandatangani. Pasang rilis SoundCurrent yang ditandatangani.",
       "Tutup aplikasi SoundCurrent yang sedang berjalan dan tunggu pemulihan audio selesai sebelum mengubah driver audio bersama.",
       "Penyiapan driver audio selesai. Mulai ulang Windows sebelum menggunakan SoundCurrent.",
-      "SoundCurrent Audio siap. Buka aplikasi dan pilih speaker atau headphone Anda."
+      "SoundCurrent Audio siap. Buka aplikasi dan pilih speaker atau headphone Anda.",
+      "Pembantu pemulihan audio",
+      "Sebelum mengubah VB-CABLE, tutup yang berikut ini: %1.",
+      " dan ",
+      "Pembantu pemeriksaan kesiapan audio tidak ditemukan. Perbaiki instalasi SoundCurrent."
     ],
     "vi": [
       "Tiếng Việt",
@@ -2849,7 +2969,11 @@
       "Trình quản lý trình điều khiển chưa được ký. Hãy cài đặt bản phát hành SoundCurrent đã được ký.",
       "Đóng các ứng dụng SoundCurrent đang chạy và đợi quá trình khôi phục âm thanh hoàn tất trước khi thay đổi trình điều khiển âm thanh dùng chung.",
       "Thiết lập trình điều khiển âm thanh đã hoàn tất. Khởi động lại Windows trước khi sử dụng SoundCurrent.",
-      "SoundCurrent Audio đã sẵn sàng. Mở ứng dụng và chọn loa hoặc tai nghe."
+      "SoundCurrent Audio đã sẵn sàng. Mở ứng dụng và chọn loa hoặc tai nghe.",
+      "Trợ giúp khôi phục âm thanh",
+      "Trước khi thay đổi VB-CABLE, hãy đóng các thành phần sau: %1.",
+      " và ",
+      "Thiếu trợ giúp kiểm tra trạng thái sẵn sàng của âm thanh. Hãy sửa chữa bản cài đặt SoundCurrent."
     ],
     "th": [
       "ไทย",
@@ -2941,7 +3065,11 @@
       "ตัวจัดการไดรเวอร์ไม่ได้ลงลายเซ็น โปรดติดตั้ง SoundCurrent รุ่นที่ลงลายเซ็นแล้ว",
       "ปิดแอป SoundCurrent ที่กำลังทำงาน และรอให้การกู้คืนเสียงเสร็จสิ้นก่อนเปลี่ยนไดรเวอร์เสียงที่ใช้ร่วมกัน",
       "การตั้งค่าไดรเวอร์เสียงเสร็จสมบูรณ์แล้ว โปรดเริ่ม Windows ใหม่ก่อนใช้ SoundCurrent",
-      "SoundCurrent Audio พร้อมแล้ว เปิดแอปแล้วเลือกลำโพงหรือหูฟังของคุณ"
+      "SoundCurrent Audio พร้อมแล้ว เปิดแอปแล้วเลือกลำโพงหรือหูฟังของคุณ",
+      "ตัวช่วยกู้คืนเสียง",
+      "ก่อนเปลี่ยน VB-CABLE ให้ปิดรายการต่อไปนี้: %1",
+      " และ ",
+      "ไม่พบตัวช่วยตรวจสอบความพร้อมของเสียง โปรดซ่อมแซมการติดตั้ง SoundCurrent"
     ],
     "sw": [
       "Kiswahili",
@@ -3033,7 +3161,11 @@
       "Kidhibiti cha viendeshi hakijatiwa sahihi. Sakinisha toleo la SoundCurrent lililotiwa sahihi.",
       "Funga programu za SoundCurrent zinazoendeshwa na usubiri urejeshaji wa sauti ukamilike kabla ya kubadilisha kiendeshi cha sauti kinachotumiwa kwa pamoja.",
       "Usanidi wa kiendeshi cha sauti umekamilika. Anzisha Windows upya kabla ya kutumia SoundCurrent.",
-      "SoundCurrent Audio iko tayari. Fungua programu na uchague spika au vipokea sauti vya kichwani."
+      "SoundCurrent Audio iko tayari. Fungua programu na uchague spika au vipokea sauti vya kichwani.",
+      "Msaidizi wa urejeshaji wa sauti",
+      "Funga vifuatavyo kabla ya kubadilisha VB-CABLE: %1.",
+      " na ",
+      "Msaidizi wa ukaguzi wa utayari wa sauti hayupo. Rekebisha usakinishaji wa SoundCurrent."
     ],
     "nn": [
       "Norsk nynorsk",
@@ -3125,7 +3257,11 @@
       "Drivarhandsamaren er ikkje signert. Installer ein signert versjon av SoundCurrent.",
       "Avslutt SoundCurrent-appar som køyrer, og vent til lydgjenopprettinga er ferdig før du endrar den delte lyddrivaren.",
       "Oppsettet av lyddrivaren er fullført. Start Windows på nytt før du brukar SoundCurrent.",
-      "SoundCurrent Audio er klart. Opne appen og vel høgtalarar eller hovudtelefonar."
+      "SoundCurrent Audio er klart. Opne appen og vel høgtalarar eller hovudtelefonar.",
+      "Lydgjenopprettingshjelpar",
+      "Avslutt følgjande før du endrar VB-CABLE: %1.",
+      " og ",
+      "Hjelparen for kontroll av lydberedskap manglar. Reparer SoundCurrent-installasjonen."
     ]
   },
   "requiredCompleteLocales": [
