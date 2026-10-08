@@ -81,3 +81,5 @@ Swedish/Danish recovery and effects batch: sv: 166/441, da: 166/441. Four focuse
 Swedish/Danish filter and editor batch: sv: 230/441, da: 230/441. Four focused Linux checks passed per app. Q, shelving/pass filters, compressor controls, equipment editing and estimated meters reviewed contextually; catalogs remain incomplete and unverified. EQ completed Greek/Turkish catalog commit now also passed Windows CI.
 
 Swedish/Danish microphone and measurement batch: sv: 291/441, da: 291/441. Four focused Linux checks passed per app. Whole-system limits, microphone clipping, additive correction, polarity and balance reviewed contextually. Both catalogs remain incomplete and unverified.
+
+Swedish/Danish startup and rendering batch: sv: 349/441, da: 349/441. Four focused Linux checks passed per app. Includes shared startup registration, preserved reference profiles, translated calibration links and neutral render counts. Both catalogs remain incomplete and unverified.
