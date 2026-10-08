@@ -163,3 +163,7 @@ Nynorsk import and speaker-profile review: frekvensrespons describes measured re
 ## Nynorsk completed extracted catalogs
 
 All currently extracted messages populated (441 EQ / 527 Studio). Q remains dimensionless quality, headroom is level margin, compressor makeup differs from post gain, and wet mix is effect contribution. Low-volume loudness compensation differs from output volume. Relative measurements include the microphone; measured response differs from inverted correction. Rendering summaries use labels for arbitrary counts. URLs, file filters, placeholders, machine IDs and numerical settings are preserved. Catalogs remain unverified; native-speaker review is not claimed.
+
+## Arabic initial batch
+
+الكسب describes gain; هامش المستوى describes headroom, distinct from channel balance. قص قمم الإشارة describes clipped signal peaks. Room-effect damping differs from decay duration. Amplifier curves require electrical measurements with known load and settings; marketing specifications are insufficient. Processing pauses during setup and recovery keeps the app open. Placeholders, units and file/character limits remain unchanged. Arabic EQ was sampled at 1280×720; full bidi and native-speaker review remain unverified.
