@@ -1,24 +1,24 @@
 {
-  "stage": "Hebrew equipment, filters and metering batch",
+  "stage": "Hebrew microphone and measurement batch",
   "catalogs": [
     {
       "tag": "he",
       "name": "עברית",
-      "translated": 230,
+      "translated": 291,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "4d153ef4329a10a5b3bad15392190b2d5c96c16699b6ccd82c27a97b7f7b874f",
-      "qmSha256": "9b0dfd669ea4c1c96f63681a19edee7d601903abc08f949ca94aa4a423975516"
+      "tsSha256": "bbfc31b14f7516078f0ab2833ab13d37799abd1f126314822c0e9a54b4c5519b",
+      "qmSha256": "3650c5d8944ef0c6e0fd8dd2a33de79cb67f51150ca46851e768838c5eb8a1b0"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "compiled localization, Hebrew main window and catalog validation",
-    "log": "/tmp/soundcurrent-eq-he-third-tests.log"
+    "log": "/tmp/soundcurrent-eq-he-fourth-tests.log"
   },
-  "review": "Contextual AI review; unverified. Estimated versus measured levels, filter Q/high-pass/high-shelf, dynamics makeup gain, equipment kinds and quit behavior reviewed.",
+  "review": "Contextual AI review; unverified. Additive model correction versus whole-system measurement, microphone clipping, balance endpoints, signed routing gain and update instructions reviewed.",
   "nativeReviewed": false,
   "windows": "Pending CI",
   "remaining": "Hebrew catalog incomplete. 11 original target catalogs remain incomplete; omitted messages scheduled for second pass. Full bidi and platform qualification remain open."
