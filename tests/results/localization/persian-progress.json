@@ -1,24 +1,24 @@
 {
-  "stage": "Persian equipment, filters and metering batch",
+  "stage": "Persian microphone and measurement batch",
   "catalogs": [
     {
       "tag": "fa",
       "name": "فارسی",
-      "translated": 230,
+      "translated": 291,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "427b939b636da523cf44073be01d41ca579895a62fa87d7931a71650a9773525",
-      "qmSha256": "6ea201427387985d5c396ae4312ec7225c19432d112c2b016d933af55d4868f1"
+      "tsSha256": "e3026c303eea011342cec49c580b26837a04aee903a0789fe2d2ab9e65df438a",
+      "qmSha256": "f1dfb335de28332d510c605de269c895dd6617030aa7b34aad0c9017fdc142da"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "compiled localization, Persian main window and catalog validation",
-    "log": "/tmp/soundcurrent-eq-fa-third-tests.log"
+    "log": "/tmp/soundcurrent-eq-fa-fourth-tests.log"
   },
-  "review": "Contextual AI review; unverified. Estimated versus measured levels, filter Q/high-pass/high-shelf, dynamics makeup gain, equipment kinds and quit behavior reviewed.",
+  "review": "Contextual AI review; unverified. Additive model correction versus whole-system measurement, microphone clipping, balance endpoints, signed routing gain and update instructions reviewed.",
   "nativeReviewed": false,
   "windows": "Pending CI",
   "remaining": "Persian catalog incomplete. 10 original target catalogs remain incomplete; omitted messages scheduled for second pass. Full bidi and platform qualification remain open."

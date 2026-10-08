@@ -866,43 +866,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
-      <translation type="unfinished" />
+      <translation>وارد کردن، ایجاد و ویرایش پروفایل تجهیزات</translation>
     </message>
     <message>
       <source>Import equipment profile</source>
-      <translation type="unfinished" />
+      <translation>وارد کردن پروفایل تجهیزات</translation>
     </message>
     <message>
       <source>Import measured amplifier correction</source>
-      <translation type="unfinished" />
+      <translation>وارد کردن اصلاح اندازه‌گیری‌شده تقویت‌کننده</translation>
     </message>
     <message>
       <source>Import measured profile</source>
-      <translation type="unfinished" />
+      <translation>وارد کردن پروفایل اندازه‌گیری‌شده</translation>
     </message>
     <message>
       <source>Import profile?</source>
-      <translation type="unfinished" />
+      <translation>پروفایل وارد شود؟</translation>
     </message>
     <message>
       <source>Import relative measured response</source>
-      <translation type="unfinished" />
+      <translation>وارد کردن پاسخ نسبی اندازه‌گیری‌شده</translation>
     </message>
     <message>
       <source>Import response text</source>
-      <translation type="unfinished" />
+      <translation>وارد کردن متن پاسخ</translation>
     </message>
     <message>
       <source>Include preview releases</source>
-      <translation type="unfinished" />
+      <translation>شامل نسخه‌های پیش‌نمایش</translation>
     </message>
     <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>بسته‌های جدید را روی این نسخه نصب کنید — نیازی به حذف نصب نیست. پیش‌تنظیم‌ها و پروفایل‌ها حفظ می‌شوند. کار خود را ذخیره کنید، از خروج استفاده کنید (بستن پنجره برنامه را در حال اجرا نگه می‌دارد)، به‌روزرسانی را نصب کنید و دوباره باز کنید.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
-      <translation type="unfinished" />
+      <translation>نسخه نصب‌شده: %1</translation>
     </message>
     <message>
       <source>Interface language</source>
@@ -910,79 +910,79 @@ Import into your library?</source>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
-      <translation type="unfinished" />
+      <translation>زیرنوع تجهیزات یا نوع تغذیه نامعتبر است</translation>
     </message>
     <message>
       <source>Invalid filter.</source>
-      <translation type="unfinished" />
+      <translation>فیلتر نامعتبر است.</translation>
     </message>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
-      <translation type="unfinished" />
+      <translation>پروفایل اندازه‌گیری‌شده تقویت‌کننده نامعتبر است. مدل، منبع اندازه‌گیری HTTPS، شرایط و 1–16 فیلتر PK/LS/HS در محدوده مجاز لازم است. قالب پروفایل را در README ببینید.</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
-      <translation type="unfinished" />
+      <translation>پاسخ اندازه‌گیری‌شده نامعتبر یا نامرتب است.</translation>
     </message>
     <message>
       <source>Invalid or unordered response data.</source>
-      <translation type="unfinished" />
+      <translation>داده‌های پاسخ نامعتبر یا نامرتب هستند.</translation>
     </message>
     <message>
       <source>Invalid profile library.</source>
-      <translation type="unfinished" />
+      <translation>کتابخانه پروفایل‌ها نامعتبر است.</translation>
     </message>
     <message>
       <source>Invalid response from pactl</source>
-      <translation type="unfinished" />
+      <translation>پاسخ نامعتبر از pactl</translation>
     </message>
     <message>
       <source>Invalid response point.</source>
-      <translation type="unfinished" />
+      <translation>نقطه پاسخ نامعتبر است.</translation>
     </message>
     <message>
       <source>Invalid speaker correction filter count</source>
-      <translation type="unfinished" />
+      <translation>تعداد فیلترهای اصلاح بلندگو نامعتبر است</translation>
     </message>
     <message>
       <source>Invalid speaker filter type</source>
-      <translation type="unfinished" />
+      <translation>نوع فیلتر بلندگو نامعتبر است</translation>
     </message>
     <message>
       <source>Invalid speaker identity</source>
-      <translation type="unfinished" />
+      <translation>شناسه بلندگو نامعتبر است</translation>
     </message>
     <message>
       <source>Jazz</source>
-      <translation type="unfinished" />
+      <translation>جاز</translation>
     </message>
     <message>
       <source>Keep current EQ</source>
-      <translation type="unfinished" />
+      <translation>حفظ تنظیمات فعلی اکولایزر</translation>
     </message>
     <message>
       <source>L</source>
-      <translation type="unfinished" />
+      <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
-      <translation>زبان و منطقه</translation>
+      <translation>زبان و تنظیمات منطقه‌ای</translation>
     </message>
     <message>
       <source>Left right balance</source>
-      <translation type="unfinished" />
+      <translation>توازن چپ و راست</translation>
     </message>
     <message>
       <source>Level indicator refresh interval</source>
-      <translation type="unfinished" />
+      <translation>فاصله زمانی تازه‌سازی نشانگر سطح</translation>
     </message>
     <message>
       <source>Level refresh</source>
-      <translation type="unfinished" />
+      <translation>تازه‌سازی سطح</translation>
     </message>
     <message>
       <source>Library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>اندازه کتابخانه بیش از 16 MiB است.</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -991,11 +991,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Live</source>
-      <translation type="unfinished" />
+      <translation>زنده</translation>
     </message>
     <message>
       <source>Lo-Fi</source>
-      <translation type="unfinished" />
+      <translation>لوفای</translation>
     </message>
     <message>
       <source>Lock EQ</source>
@@ -1004,59 +1004,59 @@ Import into your library?</source>
     </message>
     <message>
       <source>Lock equalizer settings</source>
-      <translation type="unfinished" />
+      <translation>قفل تنظیمات اکولایزر</translation>
     </message>
     <message>
       <source>Loudness</source>
-      <translation type="unfinished" />
+      <translation>جبران بلندی ادراک‌شده صدا</translation>
     </message>
     <message>
       <source>Manufacturer</source>
-      <translation type="unfinished" />
+      <translation>سازنده</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
-      <translation type="unfinished" />
+      <translation>حداکثر تعداد 32 پروفایل تقویت‌کننده پر شده است.</translation>
     </message>
     <message>
       <source>Maximum stereo width</source>
-      <translation type="unfinished" />
+      <translation>حداکثر پهنای استریو</translation>
     </message>
     <message>
       <source>Measure</source>
-      <translation type="unfinished" />
+      <translation>اندازه‌گیری</translation>
     </message>
     <message>
       <source>Measure speaker room and microphone response</source>
-      <translation type="unfinished" />
+      <translation>اندازه‌گیری پاسخ بلندگو، اتاق و میکروفون</translation>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
-      <translation type="unfinished" />
+      <translation>اصلاح مدل اندازه‌گیری‌شده به اکولایزر شنیدن شما اضافه می‌شود. همچنان می‌توانید باس اضافه کنید یا هر باند را تنظیم کنید. شامل محدودیت‌های محافظه‌کارانه بهره است؛ اثرات اتاق و تقویت‌کننده به اندازه‌گیری کل سیستم نیاز دارند.</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
-      <translation type="unfinished" />
+      <translation>شرایط اندازه‌گیری الزامی است.</translation>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
-      <translation type="unfinished" />
+      <translation>داده‌های اندازه‌گیری کامل نبودند.</translation>
     </message>
     <message>
       <source>Measurement failed. Try a higher test level or move the mic closer.</source>
-      <translation type="unfinished" />
+      <translation>اندازه‌گیری ناموفق بود. سطح آزمون را بالاتر ببرید یا میکروفون را نزدیک‌تر کنید.</translation>
     </message>
     <message>
       <source>Measurement stopped.</source>
-      <translation type="unfinished" />
+      <translation>اندازه‌گیری متوقف شد.</translation>
     </message>
     <message>
       <source>Metal</source>
-      <translation type="unfinished" />
+      <translation>متال</translation>
     </message>
     <message>
       <source>Mic gain</source>
-      <translation type="unfinished" />
+      <translation>بهره میکروفون</translation>
     </message>
     <message>
       <source>Microphone</source>
@@ -1064,59 +1064,59 @@ Import into your library?</source>
     </message>
     <message>
       <source>Microphone %1 adjustment</source>
-      <translation type="unfinished" />
+      <translation>تنظیم %1 میکروفون</translation>
     </message>
     <message>
       <source>Microphone EQ is off.</source>
-      <translation type="unfinished" />
+      <translation>اکولایزر میکروفون خاموش است.</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
-      <translation type="unfinished" />
+      <translation>ضبط میکروفون هنگام پخش متوقف شد</translation>
     </message>
     <message>
       <source>Microphone capture stopped during the test</source>
-      <translation type="unfinished" />
+      <translation>ضبط میکروفون هنگام آزمون متوقف شد</translation>
     </message>
     <message>
       <source>Microphone error: %1</source>
-      <translation type="unfinished" />
+      <translation>خطای میکروفون: %1</translation>
     </message>
     <message>
       <source>Microphone filter did not appear</source>
-      <translation type="unfinished" />
+      <translation>فیلتر میکروفون ظاهر نشد</translation>
     </message>
     <message>
       <source>Microphone filter disappeared</source>
-      <translation type="unfinished" />
+      <translation>فیلتر میکروفون ناپدید شد</translation>
     </message>
     <message>
       <source>Microphone gain adjustment</source>
-      <translation type="unfinished" />
+      <translation>تنظیم بهره میکروفون</translation>
     </message>
     <message>
       <source>Microphone input device</source>
-      <translation type="unfinished" />
+      <translation>دستگاه ورودی میکروفون</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
-      <translation type="unfinished" />
+      <translation>قله‌های سیگنال ضبط میکروفون بریده می‌شوند. بهره یا تقویت میکروفون را کاهش دهید و اندازه‌گیری را تکرار کنید.</translation>
     </message>
     <message>
       <source>Microphone route</source>
-      <translation type="unfinished" />
+      <translation>مسیر میکروفون</translation>
     </message>
     <message>
       <source>Model</source>
-      <translation type="unfinished" />
+      <translation>مدل</translation>
     </message>
     <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
-      <translation type="unfinished" />
+      <translation>به سمت L یا R حرکت دهید تا سطح کانال مقابل کاهش یابد؛ مرکز هر دو کانال را در سطح کامل نگه می‌دارد</translation>
     </message>
     <message>
       <source>Movies</source>
-      <translation type="unfinished" />
+      <translation>فیلم‌ها</translation>
     </message>
     <message>
       <source>Natural mic EQ</source>
@@ -1125,15 +1125,15 @@ Import into your library?</source>
     </message>
     <message>
       <source>Natural mic EQ on · %1</source>
-      <translation type="unfinished" />
+      <translation>اکولایزر طبیعی میکروفون روشن · %1</translation>
     </message>
     <message>
       <source>Natural microphone equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>روشن یا خاموش کردن اکولایزر طبیعی میکروفون</translation>
     </message>
     <message>
       <source>Night Listening</source>
-      <translation type="unfinished" />
+      <translation>شنیدن شبانه</translation>
     </message>
     <message>
       <source>No</source>
