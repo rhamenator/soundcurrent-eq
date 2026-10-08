@@ -322,87 +322,87 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Bright</source>
-      <translation type="unfinished" />
+      <translation>Angavu</translation>
     </message>
     <message>
       <source>Browse all equipment profiles / editor</source>
-      <translation type="unfinished" />
+      <translation>Vinjari wasifu wote wa vifaa / kihariri</translation>
     </message>
     <message>
       <source>Calibration test signal</source>
-      <translation type="unfinished" />
+      <translation>Ishara ya kujaribu urekebishaji</translation>
     </message>
     <message>
       <source>Calibration tone level</source>
-      <translation type="unfinished" />
+      <translation>Kiwango cha toni ya urekebishaji</translation>
     </message>
     <message>
       <source>Cancel</source>
-      <translation type="unfinished" />
+      <translation>Ghairi</translation>
     </message>
     <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Haiwezekani kupata kilinzi cha pamoja cha kipindi cha SoundCurrent.</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
-      <translation type="unfinished" />
+      <translation>Haiwezekani kuunda folda ya wasifu wa amplifaya.</translation>
     </message>
     <message>
       <source>Cannot create profile folder.</source>
-      <translation type="unfinished" />
+      <translation>Haiwezekani kuunda folda ya wasifu.</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Haiwezekani kuunda kilinzi cha pamoja cha kipindi cha SoundCurrent.</translation>
     </message>
     <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Ukaguzi wa visawazishi vinavyofanya kazi hauwezi kukamilika; SoundCurrent haitawasha uchakataji.</translation>
     </message>
     <message>
       <source>Cannot finish saving amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Uhifadhi wa wasifu wa amplifaya hauwezi kukamilika.</translation>
     </message>
     <message>
       <source>Cannot finish saving profile library.</source>
-      <translation type="unfinished" />
+      <translation>Uhifadhi wa maktaba ya wasifu hauwezi kukamilika.</translation>
     </message>
     <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Haiwezekani kukagua visawazishi vinavyofanya kazi; SoundCurrent haitawasha uchakataji.</translation>
     </message>
     <message>
       <source>Cannot read profile library.</source>
-      <translation type="unfinished" />
+      <translation>Haiwezekani kusoma maktaba ya wasifu.</translation>
     </message>
     <message>
       <source>Cannot read profile or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Haiwezekani kusoma wasifu au faili inazidi 1 MiB.</translation>
     </message>
     <message>
       <source>Cannot read response or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Haiwezekani kusoma mwitikio au faili inazidi 1 MiB.</translation>
     </message>
     <message>
       <source>Cannot save amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Haiwezekani kuhifadhi wasifu wa amplifaya.</translation>
     </message>
     <message>
       <source>Cannot save profile library.</source>
-      <translation type="unfinished" />
+      <translation>Haiwezekani kuhifadhi maktaba ya wasifu.</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
-      <translation type="unfinished" />
+      <translation>Haiwezekani kuhifadhi wasifu.</translation>
     </message>
     <message>
       <source>Cannot start measurement: %1</source>
-      <translation type="unfinished" />
+      <translation>Haiwezekani kuanza kipimo: %1</translation>
     </message>
     <message>
       <source>Center</source>
-      <translation type="unfinished" />
+      <translation>Katikati</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -410,179 +410,179 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Checking for published updates…</source>
-      <translation type="unfinished" />
+      <translation>Inatafuta masasisho yaliyochapishwa…</translation>
     </message>
     <message>
       <source>Checks published releases and downloaded installers. No update is installed automatically.</source>
-      <translation type="unfinished" />
+      <translation>Hukagua matoleo yaliyochapishwa na visakinishi vilivyopakuliwa. Hakuna sasisho linalosakinishwa kiotomatiki.</translation>
     </message>
     <message>
       <source>Choose a name that is not a built-in preset.</source>
-      <translation type="unfinished" />
+      <translation>Chagua jina ambalo si la mpangilio uliowekwa tayari ndani ya programu.</translation>
     </message>
     <message>
       <source>Choose update folder…</source>
-      <translation type="unfinished" />
+      <translation>Chagua folda ya masasisho…</translation>
     </message>
     <message>
       <source>Clarity</source>
-      <translation type="unfinished" />
+      <translation>Uwazi</translation>
     </message>
     <message>
       <source>Clarity frequency</source>
-      <translation type="unfinished" />
+      <translation>Masafa ya uwazi</translation>
     </message>
     <message>
       <source>Classical</source>
-      <translation type="unfinished" />
+      <translation>Muziki wa klasiki</translation>
     </message>
     <message>
       <source>Clear Voice</source>
-      <translation type="unfinished" />
+      <translation>Sauti wazi</translation>
     </message>
     <message>
       <source>Clear imported equipment corrections</source>
-      <translation type="unfinished" />
+      <translation>Ondoa usahihishaji wa vifaa ulioingizwa</translation>
     </message>
     <message>
       <source>Click to turn the equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Bofya kuwasha au kuzima kisawazishi</translation>
     </message>
     <message>
       <source>Clipping risk · estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Hatari ya clipping · kilele kinachokadiriwa %1 dBFS</translation>
     </message>
     <message>
       <source>Close</source>
-      <translation type="unfinished" />
+      <translation>Funga</translation>
     </message>
     <message>
       <source>Conditions</source>
-      <translation type="unfinished" />
+      <translation>Masharti</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
-      <translation type="unfinished" />
+      <translation>Unganisha tokeo na maikrofoni kabla ya kupima.</translation>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Wasifu wa usahihishaji (*.json)</translation>
     </message>
     <message>
       <source>Could not create a private test folder</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuunda folda ya majaribio ya faragha</translation>
     </message>
     <message>
       <source>Could not create microphone configuration folder</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuunda folda ya usanidi wa maikrofoni</translation>
     </message>
     <message>
       <source>Could not create preset folder.</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuunda folda ya mipangilio iliyowekwa tayari.</translation>
     </message>
     <message>
       <source>Could not create quiet frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuunda ishara hafifu ya kufagia masafa</translation>
     </message>
     <message>
       <source>Could not create temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuunda usanidi wa muda wa sauti</translation>
     </message>
     <message>
       <source>Could not create test tone</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuunda toni ya majaribio</translation>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
-      <translation type="unfinished" />
+      <translation>Uhifadhi wa mpangilio uliowekwa tayari haukukamilika.</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kufungua faili ya wimbi la majaribio</translation>
     </message>
     <message>
       <source>Could not play quiet test audio</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kucheza sauti hafifu ya majaribio</translation>
     </message>
     <message>
       <source>Could not play test audio through the selected output</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kucheza sauti ya majaribio kupitia tokeo lililochaguliwa</translation>
     </message>
     <message>
       <source>Could not read output volume</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kusoma kiwango cha sauti ya tokeo</translation>
     </message>
     <message>
       <source>Could not run %1</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuendesha %1</translation>
     </message>
     <message>
       <source>Could not save preset.</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuhifadhi mpangilio uliowekwa tayari.</translation>
     </message>
     <message>
       <source>Could not start PipeWire filter</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuanzisha kichujio cha PipeWire</translation>
     </message>
     <message>
       <source>Could not start audio setup: %1. The app remains open.</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuanzisha usanidi wa sauti: %1. Programu bado iko wazi.</translation>
     </message>
     <message>
       <source>Could not start microphone capture</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuanza kunasa sauti ya maikrofoni</translation>
     </message>
     <message>
       <source>Could not start microphone filter</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuanzisha kichujio cha maikrofoni</translation>
     </message>
     <message>
       <source>Could not start output volume safety guard</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuanzisha kilinzi cha usalama wa kiwango cha sauti ya tokeo</translation>
     </message>
     <message>
       <source>Could not start the measurement.</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuanza kipimo.</translation>
     </message>
     <message>
       <source>Could not update startup settings.</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kusasisha mipangilio ya kuanza programu.</translation>
     </message>
     <message>
       <source>Could not write frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuandika ishara ya kufagia masafa</translation>
     </message>
     <message>
       <source>Could not write microphone configuration</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuandika usanidi wa maikrofoni</translation>
     </message>
     <message>
       <source>Could not write temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuandika usanidi wa muda wa sauti</translation>
     </message>
     <message>
       <source>Could not write test tone</source>
-      <translation type="unfinished" />
+      <translation>Haikuwezekana kuandika toni ya majaribio</translation>
     </message>
     <message>
       <source>Create profile</source>
-      <translation type="unfinished" />
+      <translation>Unda wasifu</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
-      <translation type="unfinished" />
+      <translation>EQ ya sasa imehifadhiwa bila kubadilishwa.</translation>
     </message>
     <message>
       <source>Custom</source>
-      <translation>Maalum</translation>
+      <translation>Maalumu</translation>
     </message>
     <message>
       <source>Dance</source>
-      <translation type="unfinished" />
+      <translation>Muziki wa dansi</translation>
     </message>
     <message>
       <source>Deep Bass</source>
-      <translation type="unfinished" />
+      <translation>Besi nzito</translation>
     </message>
     <message>
       <source>Discard</source>
