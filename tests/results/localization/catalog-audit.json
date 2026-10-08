@@ -3,7 +3,7 @@
   "tool_version": "0.1.0",
   "inputs": {
     "data/localization/soundcurrent_en.ts": "e4b4b609330f1f47cec0f01d80366d65e2d095552bd313ccc8bf880a8518deba",
-    "data/localization/soundcurrent_ar.ts": "8a24e64592c72c9d9711a820756c8e16cac0711532ee4c6ab8b929e0f1aed60e",
+    "data/localization/soundcurrent_ar.ts": "adc219e388ddd42eacaa0b68ce106b60120e919a815dde058ada5a8a1716179f",
     "data/localization/soundcurrent_cs.ts": "da39ed37ee0f2523774d4bb4debd71e8d5982f807f0f518aaccb51127a3c0217",
     "data/localization/soundcurrent_da.ts": "8435592cb6006b9393e64e330ef110baf8ee8c5f55d243338837bb7d5dc1f6be",
     "data/localization/soundcurrent_de.ts": "d3ce9ddd7fe923c060b06b8a4b4839428f264542d4fc081e06986852fa72be9a",
@@ -44,7 +44,7 @@
       "commit": "unknown",
       "file": "data/localization/soundcurrent_ar.ts",
       "locale": "ar",
-      "key": "[\"SoundCurrent\",null,\"No imported equipment correction selected.\",\"\"]",
+      "key": "[\"SoundCurrent\",null,\"Response data (*.txt *.csv *.frd *.cal)\",\"\"]",
       "category": "untranslated",
       "severity": "error",
       "confidence": 1.0,
@@ -52,14 +52,14 @@
       "recommended_action": "Review and correct catalog; rerun audit.",
       "verification_status": "deterministic",
       "kind": "deterministic",
-      "fingerprint": "be0229d7dc6e9936c9386c0c72d3f9b1566d517c6e114008db253b3364f49ac5"
+      "fingerprint": "e9ff3bae5d0437d686459903632993abbeec5b4464b10c6f2b10cf4f0f319d39"
     },
     {
       "repository": "soundcurrent-eq",
       "commit": "unknown",
       "file": "data/localization/soundcurrent_ar.ts",
       "locale": "ar",
-      "key": "[\"SoundCurrent\",null,\"No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.\",\"\"]",
+      "key": "[\"SoundCurrent\",null,\"Response exceeds 4096 points.\",\"\"]",
       "category": "untranslated",
       "severity": "error",
       "confidence": 1.0,
@@ -67,14 +67,14 @@
       "recommended_action": "Review and correct catalog; rerun audit.",
       "verification_status": "deterministic",
       "kind": "deterministic",
-      "fingerprint": "c0debccfbe8ec51725dd07125ba30d9f7180fcafdc452d883e109c8427b7095e"
+      "fingerprint": "8e5e276bc5f762125ae1328d2eaf2f242bc73dfd2ca1266d8e0be97ad3a40fff"
     },
     {
       "repository": "soundcurrent-eq",
       "commit": "unknown",
       "file": "data/localization/soundcurrent_ar.ts",
       "locale": "ar",
-      "key": "[\"SoundCurrent\",null,\"No microphone connected.\",\"\"]",
+      "key": "[\"SoundCurrent\",null,\"Response frequencies must increase, with finite bounded values.\",\"\"]",
       "category": "untranslated",
       "severity": "error",
       "confidence": 1.0,
@@ -82,7 +82,7 @@
       "recommended_action": "Review and correct catalog; rerun audit.",
       "verification_status": "deterministic",
       "kind": "deterministic",
-      "fingerprint": "20df6c5a670a2b9b18cf318b06ade32789f10bf7f42bfa5de988b8533b09c1d8"
+      "fingerprint": "bdb23a10ddbb0758dd61fc46e9db81b4013f1e011221f2ff872cbc2e13f5b2ca"
     }
   ],
   "metrics": [
@@ -90,7 +90,7 @@
       "file": "data/localization/soundcurrent_ar.ts",
       "locale": "ar",
       "total": 441,
-      "translated": 291,
+      "translated": 349,
       "linguistic_verification": "unknown",
       "runtime_ui_qualification": "unknown"
     },
@@ -352,7 +352,7 @@
     }
   ],
   "findingCounts": {
-    "untranslated": 4671
+    "untranslated": 4613
   },
   "reportNote": "Compact structural report: input hashes and metrics retained, three sample findings. Linguistic review and runtime qualification remain separate."
 }

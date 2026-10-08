@@ -1137,43 +1137,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>No</source>
-      <translation type="unfinished" />
+      <translation>لا</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>لم يتم تحديد تصحيح مستورد للمعدات.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>لم يتم تحديد تصحيح مقاس لمضخم الصوت. مواصفات نطاق التردد التسويقية غير كافية لاشتقاق منحنى تصحيح.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>لا يوجد ميكروفون متصل.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>لم يتم تحديد تصحيح للطراز. تعمل إعدادات معادل الصوت للاستماع كالمعتاد.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>لم يُعثر على إصدار منشور أحدث. يجري التحقق أيضًا من برامج التثبيت التي تم تنزيلها.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>لا يتوفر جهاز إخراج.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>لا يوجد جهاز إخراج متصل.</translation>
     </message>
     <message>
       <source>No to All</source>
-      <translation type="unfinished" />
+      <translation>لا للكل</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>بدون — استخدام إعدادات معادل الصوت الخاصة بي</translation>
     </message>
     <message>
       <source>Number and date format</source>
@@ -1181,43 +1181,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>عدد نطاقات معادل الصوت</translation>
     </message>
     <message>
       <source>OK</source>
-      <translation type="unfinished" />
+      <translation>موافق</translation>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>يعمل · تشغيل عبر %1</translation>
     </message>
     <message>
       <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
-      <translation type="unfinished" />
+      <translation>يبدأ تطبيق SoundCurrent واحد فقط عند تسجيل الدخول. يؤدي تفعيل هذا الخيار إلى استبدال إعداد بدء التشغيل للتطبيق الآخر. يبدأ في الخلفية عند توفر أيقونة علبة النظام.</translation>
     </message>
     <message>
       <source>Open</source>
-      <translation type="unfinished" />
+      <translation>فتح</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>فتح لوحة تحكم VB-Audio لضبط زمن استجابة الكابل ومعدل العينات الداخلي. قد يؤدي تغييرهما أثناء تشغيل الصوت إلى مقاطعة التشغيل.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>فتح لوحة تحكم VB-CABLE</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>فتح تنزيلات الإصدارات</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>فتح مجلد التحديث</translation>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>البرتقالي: الاستجابة المقاسة عند توفرها. الأزرق المخضر: التصحيح عند 48 kHz. اسحب نقاط التحكم الزرقاء المخضرة أو حرر الجدول. يحافظ الحفظ على المرجع وينشئ نسخة مخصصة.</translation>
     </message>
     <message>
       <source>Output device</source>
@@ -1225,31 +1225,31 @@ Import into your library?</source>
     </message>
     <message>
       <source>Output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>جهاز الإخراج لم يعد متاحًا</translation>
     </message>
     <message>
       <source>Output has no volume channels</source>
-      <translation type="unfinished" />
+      <translation>المخرج لا يتضمن قنوات للتحكم في مستوى الصوت</translation>
     </message>
     <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>المخرج العام</translation>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>إيقاف المعالجة مؤقتًا وفتح إعداد الصوت. يبقى التطبيق مفتوحًا ويعرض النتيجة. أعد تشغيل Windows بعد تثبيت برنامج التشغيل.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>علامات القمم</translation>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>بيانو</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>تشغيل صوت اختبار منخفض المستوى ومعاينة التغييرات المقترحة لمعادل صوت التشغيل</translation>
     </message>
     <message>
       <source>Playback</source>
@@ -1257,100 +1257,100 @@ Import into your library?</source>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>يجري تشغيل صوت اختبار منخفض المستوى. أوقفه إذا كان مزعجًا.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>وصّل الميكروفون لاختيار ملف تعريف له</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>بودكاست</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>بوب</translation>
     </message>
     <message>
       <source>Post gain</source>
       <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
-      <translation>كسب الإخراج</translation>
+      <translation>الكسب اللاحق</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>الكسب اللاحق بعد المعادلة</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>قيمة الكسب اللاحق بالديسيبل</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>اسم الإعداد المسبق:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>منع تغيير الإعدادات المسبقة ونطاقات المعادل والكسب اللاحق والتوازن</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>ملف التعريف</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>تفاصيل ملف التعريف</translation>
     </message>
     <message>
       <source>Profile exceeds the 1 MiB limit.</source>
-      <translation type="unfinished" />
+      <translation>يتجاوز ملف التعريف الحد البالغ 1 MiB.</translation>
     </message>
     <message>
       <source>Profile library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>تتجاوز مكتبة ملفات التعريف 16 MiB.</translation>
     </message>
     <message>
       <source>Profile metadata is too long.</source>
-      <translation type="unfinished" />
+      <translation>البيانات الوصفية لملف التعريف طويلة جدًا.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>يجب أن يكون ملف التعريف قابلًا للقراءة وأصغر من 64 KiB.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>
-      <translation type="unfinished" />
+      <translation>تتطلب ملفات التعريف 1–16 مرشح تصحيح.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>مصادر القياسات المنشورة: &lt;a href="https://www.spinorama.org/"&gt;قياسات مكبرات الصوت / المعادلة&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;معايرة Dayton حسب الرقم التسلسلي&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;معايرة miniDSP حسب الرقم التسلسلي&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;رسوم استجابة ميكروفونات Neumann&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;رسم استجابة AT2020&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;قياسات مضخمات الصوت&lt;/a&gt;</translation>
     </message>
     <message>
       <source>Published profiles need an HTTPS measurement source.</source>
-      <translation type="unfinished" />
+      <translation>تتطلب ملفات التعريف المنشورة مصدر قياس عبر HTTPS.</translation>
     </message>
     <message>
       <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <translation>تعذر التحقق من الإصدارات المنشورة. تتطلب إصدارات Studio الخاصة صلاحية الوصول إلى GitHub. استخدم فتح تنزيلات الإصدارات؛ لا يزال اكتشاف برامج التثبيت المنزلة محليًا متاحًا.</translation>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>الاستجابة المنشورة ومنحنيات التصحيح القابلة للتحرير</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>يتوفر التحديث المنشور %1. افتح تنزيلات الإصدارات، ثم ثبّته فوق هذا الإصدار وأعد فتح التطبيق.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>جهير قوي</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>مسح لوغاريتمي منخفض الصوت</translation>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>إنهاء SoundCurrent EQ</translation>
     </message>
     <message>
       <source>Quit app</source>
@@ -1359,11 +1359,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>R</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>آر أند بي</translation>
     </message>
     <message>
       <source>Refresh devices</source>
@@ -1373,27 +1373,29 @@ Import into your library?</source>
       <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
 
 %1</source>
-      <translation type="unfinished" />
+      <translation>تشمل القياسات النسبية استجابة مكبر الصوت والغرفة والميكروفون. تقتصر التغييرات المقترحة على 3 dB لكل تردد مقاس.
+
+%1</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>تذكيري عند توفر تحديثات أو الحاجة إلى إعادة التشغيل</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>إزالة المرشح المحدد</translation>
     </message>
     <message>
       <source>Reset</source>
-      <translation type="unfinished" />
+      <translation>إعادة الضبط</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>إعادة ضبط التحسينات</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>إعادة ضبط النبرة الصوتية للميكروفون</translation>
     </message>
     <message>
       <source>Reset to flat</source>
