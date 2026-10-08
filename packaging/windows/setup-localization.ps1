@@ -42,3 +42,29 @@ function Get-SCSetupText([string]$Source, [string]$Language = '', [string]$Appli
         return $entry.Value
     } catch { return $Source } # Missing/corrupt/older package data keeps readable English.
 }
+
+function Format-SCSetupText([string]$Source, [string[]]$Values,
+                            [string]$Language = '', [string]$Application = '') {
+    # This API is for owned templates, never arbitrary caught external errors.
+    # Only Qt's numbered %1..%99 form is supported. Numbers/codes are supplied
+    # as invariant data; localized %L or numerus semantics require a separate API.
+    $unsupported = '%L[0-9]+|%Ln|%n'
+    if ($Source -match $unsupported) { throw 'Unsupported setup template placeholder.' }
+    $pattern = '%[1-9][0-9]*'
+    $sourceTokens = @([regex]::Matches($Source,$pattern) | ForEach-Object {$_.Value})
+    foreach ($token in $sourceTokens) {
+        $number = [int]::Parse($token.Substring(1),[Globalization.CultureInfo]::InvariantCulture)
+        if ($number -gt 99 -or $number -gt $Values.Count) { throw 'Missing setup template value.' }
+    }
+    $template = Get-SCSetupText $Source -Language $Language -Application $Application
+    $targetTokens = @([regex]::Matches($template,$pattern) | ForEach-Object {$_.Value})
+    if ($template -match $unsupported -or
+        [string]::Join('|',@($sourceTokens | Sort-Object)) -cne [string]::Join('|',@($targetTokens | Sort-Object))) {
+        $template = $Source # Corrupt/stale translated placeholders must not lose data.
+    }
+    $replacement = {param($match)
+        $index = [int]::Parse($match.Value.Substring(1),[Globalization.CultureInfo]::InvariantCulture) - 1
+        return [string]$Values[$index]
+    }.GetNewClosure()
+    return [regex]::Replace($template,$pattern,[Text.RegularExpressions.MatchEvaluator]$replacement)
+}

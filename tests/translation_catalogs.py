@@ -137,7 +137,7 @@ class CatalogTests(unittest.TestCase):
         calls = set()
         for file in ('cable-setup.ps1', 'native-audio-setup.ps1'):
             code = (root / 'packaging/windows' / file).read_text()
-            calls.update(re.findall(r"Get-SCSetupText\s+'([^']+)'", code))
+            calls.update(re.findall(r"(?:Get|Format)-SCSetupText\s+'([^']+)'", code))
         self.assertEqual(calls, set(required), 'New literal helper lookups must be declared and translated')
         self.assertTrue(set(required).issubset(catalog.sources()))
 

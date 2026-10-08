@@ -138,5 +138,9 @@
   "setupPackageErrorProgress": {
     "report": "tests/results/localization/second-pass-setup-package-errors.json",
     "status": "Three integrity captions translated in 33 non-English locales; 238 declared lookup checks passed; production Windows paths and remaining messages pending"
+  },
+  "secondPassSetupFormatting": {
+    "status": "host fixtures passed; production dynamic-message conversion and Windows qualification pending",
+    "evidence": "tests/results/localization/second-pass-setup-formatting.json"
   }
 }

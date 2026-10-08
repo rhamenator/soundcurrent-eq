@@ -28,6 +28,22 @@ $script:SCSetupCatalogPath = Join-Path ([IO.Path]::GetTempPath()) ('missing-' + 
 if ((Get-SCSetupText 'Audio driver setup' -Language fr) -cne 'Audio driver setup') { throw 'Missing package data fallback failed' }
 $script:SCSetupLanguages = [pscustomobject]@{fr=[pscustomobject]@{'Audio driver setup'=42}}
 if ((Get-SCSetupText 'Audio driver setup' -Language fr) -cne 'Audio driver setup') { throw 'Non-string translation fallback failed' }
+# Formatting fixtures are isolated data, not production driver operations.
+$script:SCSetupLanguages = [pscustomobject]@{fr=[pscustomobject]@{
+    '%1 / %2 / %10'='%10 / %2 / %1'; '%1 + %1'='%1 + %1';
+    '%1 / %2'='%1'; 'Code %1'='Code %L1'
+}}
+$values=@($external,'%1 literal / $1 / C:\Users\Name', '3','4','5','6','7','8','9','TEN')
+$formatted=Format-SCSetupText '%1 / %2 / %10' -Values $values -Language fr
+if ($formatted -cne ('TEN / ' + $values[1] + ' / ' + $external)) { throw 'Reordered/multidigit setup formatting altered data' }
+if ((Format-SCSetupText '%1 + %1' -Values @($external) -Language fr) -cne ($external + ' + ' + $external)) { throw 'Repeated placeholder formatting failed' }
+if ((Format-SCSetupText '%1 / %2' -Values @('A','B') -Language fr) -cne 'A / B') { throw 'Corrupt placeholder fallback failed' }
+if ((Format-SCSetupText 'Code %1' -Values @('0x80004005') -Language fr) -cne 'Code 0x80004005') { throw 'Localized-number placeholder corruption lost error code' }
+foreach ($invalid in @('%n tracks','%L1 dB','%100','%2')) {
+    $rejected=$false
+    try { $null=Format-SCSetupText $invalid -Values @('A') -Language fr } catch { $rejected=$true }
+    if (!$rejected) { throw "Invalid/missing template value accepted: $invalid" }
+}
 $badData = Join-Path ([IO.Path]::GetTempPath()) ('bad-setup-data-' + [guid]::NewGuid().ToString('N') + '.json')
 try {
     foreach ($content in @('{not json', '{"schema":2,"languages":{}}')) {
@@ -46,7 +62,7 @@ foreach ($file in Get-ChildItem (Join-Path $root 'packaging/windows') -Filter '*
         $parameters=@($ast.ParamBlock.Parameters | ForEach-Object {$_.Name.VariablePath.UserPath})
         if ($parameters -notcontains 'Language') { throw "Helper language argument missing: $($file.Name)" }
         foreach ($command in $ast.FindAll({param($node)
-            $node -is [Management.Automation.Language.CommandAst] -and $node.GetCommandName() -ieq 'Get-SCSetupText'
+            $node -is [Management.Automation.Language.CommandAst] -and $node.GetCommandName() -in @('Get-SCSetupText','Format-SCSetupText')
         },$true)) {
             if ($command.CommandElements[1] -isnot [Management.Automation.Language.StringConstantExpressionAst]) {
                 throw "Dynamic helper source needs explicit coverage review: $($file.Name)"

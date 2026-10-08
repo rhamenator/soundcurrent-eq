@@ -74,3 +74,7 @@ that child process output and checks the exact decoded value. Windows package
 builds run it explicitly with powershell.exe and a process-only RemoteSigned
 policy; no machine execution policy, audio endpoints or driver state is changed.
 Host PowerShell qualification does not prove Windows PowerShell 5.1 behavior.
+
+### Owned setup template formatting
+
+Use Format-SCSetupText with a literal owned Source and a separate Values array. It supports numbered %1 through %99, including repeated tokens and reordered translations. Values are inserted once as literal data. A translated token mismatch falls back to the source template; missing values or unsupported %L/numerus placeholders reject the template. Do not pass arbitrary caught external diagnostics as owned templates. Production lookup sources must be declared in setup-sources.json and pass the AST inventory check.
