@@ -1400,71 +1400,71 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Reset to flat</source>
       <extracomment>Restore zero gain in all EQ bands. Does not mute playback.</extracomment>
-      <translation>Palauta tasainen vaste</translation>
+      <translation>Palauta tasaiseksi</translation>
     </message>
     <message>
       <source>Response data (*.txt *.csv *.frd *.cal)</source>
-      <translation type="unfinished" />
+      <translation>Taajuusvastetiedot (*.txt *.csv *.frd *.cal)</translation>
     </message>
     <message>
       <source>Response exceeds 4096 points.</source>
-      <translation type="unfinished" />
+      <translation>Taajuusvaste ylittää 4096 pistettä.</translation>
     </message>
     <message>
       <source>Response frequencies must increase, with finite bounded values.</source>
-      <translation type="unfinished" />
+      <translation>Taajuuksien on oltava kasvavia ja arvojen äärellisiä sekä rajojen sisällä.</translation>
     </message>
     <message>
       <source>Response has no usable audio range.</source>
-      <translation type="unfinished" />
+      <translation>Taajuusvasteessa ei ole käyttökelpoista äänitaajuusaluetta.</translation>
     </message>
     <message>
       <source>Response import</source>
-      <translation type="unfinished" />
+      <translation>Taajuusvasteen tuonti</translation>
     </message>
     <message>
       <source>Response needs 2–4096 measured points.</source>
-      <translation type="unfinished" />
+      <translation>Taajuusvaste tarvitsee 2–4096 mitattua pistettä.</translation>
     </message>
     <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
-      <translation type="unfinished" />
+      <translation>Käynnistä Windows uudelleen ennen taajuuskorjaimen tai VB-CABLE-asetusten käyttöä. Ääniajurien muutokset edellyttävät järjestelmän uudelleenkäynnistystä.</translation>
     </message>
     <message>
       <source>Restore Defaults</source>
-      <translation type="unfinished" />
+      <translation>Palauta oletukset</translation>
     </message>
     <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
-      <translation type="unfinished" />
+      <translation>Palauta edellinen taajuuskorjausasetus (Ctrl+Z)</translation>
     </message>
     <message>
       <source>Retry</source>
-      <translation type="unfinished" />
+      <translation>Yritä uudelleen</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
-      <translation type="unfinished" />
+      <translation>Oikealta vasemmalle kirjoitettavan kielen testi</translation>
     </message>
     <message>
       <source>Rock</source>
-      <translation type="unfinished" />
+      <translation>Rock</translation>
     </message>
     <message>
       <source>Save</source>
-      <translation type="unfinished" />
+      <translation>Tallenna</translation>
     </message>
     <message>
       <source>Save All</source>
-      <translation type="unfinished" />
+      <translation>Tallenna kaikki</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
-      <translation type="unfinished" />
+      <translation>Tallenna taajuuskorjausesiasetus</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
-      <translation type="unfinished" />
+      <translation>Tallennetaanko muutettu profiili?</translation>
     </message>
     <message>
       <source>Save preset</source>
@@ -1472,35 +1472,35 @@ Tuodaanko kirjastoon?</translation>
     </message>
     <message>
       <source>Save profile</source>
-      <translation type="unfinished" />
+      <translation>Tallenna profiili</translation>
     </message>
     <message>
       <source>Save system response profile</source>
-      <translation type="unfinished" />
+      <translation>Tallenna järjestelmän taajuusvasteprofiili</translation>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
-      <translation type="unfinished" />
+      <translation>Esiasetus ”%1” tallennettiin.</translation>
     </message>
     <message>
       <source>Search brand, family, model or measurement conditions</source>
-      <translation type="unfinished" />
+      <translation>Hae tuotemerkkiä, tuoteperhettä, mallia tai mittausolosuhteita</translation>
     </message>
     <message>
       <source>Second virtual cable for microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Toinen virtuaalikaapeli mikrofonin taajuuskorjaukseen</translation>
     </message>
     <message>
       <source>Select band %1</source>
-      <translation type="unfinished" />
+      <translation>Valitse kaista %1</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
-      <translation type="unfinished" />
+      <translation>Valitse tämä kaista muokataksesi taajuutta, vahvistusta ja Q:ta</translation>
     </message>
     <message>
       <source>Selected audio device is unavailable</source>
-      <translation type="unfinished" />
+      <translation>Valittu äänilaite ei ole saatavilla</translation>
     </message>
     <message>
       <source>Selected band</source>
@@ -1509,27 +1509,27 @@ Tuodaanko kirjastoon?</translation>
     </message>
     <message>
       <source>Selected band filter Q</source>
-      <translation type="unfinished" />
+      <translation>Valitun kaistan suodattimen Q</translation>
     </message>
     <message>
       <source>Selected band frequency</source>
-      <translation type="unfinished" />
+      <translation>Valitun kaistan taajuus</translation>
     </message>
     <message>
       <source>Selected band gain</source>
-      <translation type="unfinished" />
+      <translation>Valitun kaistan vahvistus</translation>
     </message>
     <message>
       <source>Selected output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>Valittu lähtölaite ei ole enää saatavilla</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
-      <translation type="unfinished" />
+      <translation>Valittu lähtölaite irrotettiin. Vaihdettiin automaattiseen lähtöön.</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
-      <translation type="unfinished" />
+      <translation>Erilliset hiljaiset äänet</translation>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
@@ -1537,27 +1537,27 @@ Tuodaanko kirjastoon?</translation>
     </message>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
-      <translation type="unfinished" />
+      <translation>Lyhyemmät välit päivittävät tasoja useammin ja käyttävät enemmän CPU:ta; äänen toimitus voi rajoittaa todellista päivitysnopeutta</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
-      <translation type="unfinished" />
+      <translation>Näytä laskeva huipputasoa säilyttävä viiva jokaisella taajuustasolla</translation>
     </message>
     <message>
       <source>Show advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Näytä lisäsäätimet</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>
-      <translation type="unfinished" />
+      <translation>Näytä huippumerkit taajuustasoilla</translation>
     </message>
     <message>
       <source>Small Speakers</source>
-      <translation type="unfinished" />
+      <translation>Pienet kaiuttimet</translation>
     </message>
     <message>
       <source>Soft Treble</source>
-      <translation type="unfinished" />
+      <translation>Pehmeä diskantti</translation>
     </message>
     <message>
       <source>Sound enhancements</source>
@@ -1565,55 +1565,55 @@ Tuodaanko kirjastoon?</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
-      <translation type="unfinished" />
+      <translation>SoundCurrent Audio tarjoaa oman mikrofonireitin, kun se on asennettu. VB-CABLE edellyttää erikseen asennettua toista kaapelia (A tai B) mikrofonin ja kaiuttimien samanaikaiseen taajuuskorjaukseen. Valitse tämä kaapeli tallennussovelluksissa. Automaattinen tila suosii SoundCurrent-reittiä, kun se on saatavilla.</translation>
     </message>
     <message>
       <source>Source</source>
-      <translation type="unfinished" />
+      <translation>Lähde</translation>
     </message>
     <message>
       <source>Speaker</source>
-      <translation type="unfinished" />
+      <translation>Kaiutin</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
-      <translation type="unfinished" />
+      <translation>Kaiuttimen &amp;&amp; huoneen kalibrointi</translation>
     </message>
     <message>
       <source>Speaker + room check</source>
-      <translation type="unfinished" />
+      <translation>Kaiuttimen ja huoneen tarkistus</translation>
     </message>
     <message>
       <source>Speaker and room measurement</source>
-      <translation type="unfinished" />
+      <translation>Kaiuttimen ja huoneen mittaus</translation>
     </message>
     <message>
       <source>Speaker filter is outside conservative bounds</source>
-      <translation type="unfinished" />
+      <translation>Kaiutinsuodatin on varovaisten rajojen ulkopuolella</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Kaiutinvalmistaja</translation>
     </message>
     <message>
       <source>Speaker model correction</source>
-      <translation type="unfinished" />
+      <translation>Kaiutinmallin korjaus</translation>
     </message>
     <message>
       <source>Speaker model profile</source>
-      <translation type="unfinished" />
+      <translation>Kaiutinmallin profiili</translation>
     </message>
     <message>
       <source>Speaker profile details</source>
-      <translation type="unfinished" />
+      <translation>Kaiutinprofiilin tiedot</translation>
     </message>
     <message>
       <source>Speaker profile resource is missing</source>
-      <translation type="unfinished" />
+      <translation>Kaiutinprofiilin resurssi puuttuu</translation>
     </message>
     <message>
       <source>Speaker type</source>
-      <translation type="unfinished" />
+      <translation>Kaiutintyyppi</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>

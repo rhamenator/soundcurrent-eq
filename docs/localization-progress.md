@@ -97,3 +97,5 @@ Norwegian Bokmål/Finnish filter and editor batch: 230/441 messages each. Four f
 Norwegian Bokmål/Finnish microphone and measurement batch: 292/441 messages each. Four focused Linux checks passed per app. Additive correction, system measurement limits, clipping, polarity and balance reviewed contextually. Both balance endpoint captions match their instructions. Catalogs remain incomplete and unverified.
 
 Norwegian Bokmål/Finnish startup and rendering batch: 349/441 messages each. Four focused Linux checks passed per app. Shared startup registration, saved-profile reference preservation, calibration links and neutral render counts reviewed contextually. Catalogs remain incomplete and unverified.
+
+Norwegian Bokmål/Finnish import and speaker-profile batch: 398/441 messages each. Four focused Linux checks passed per app. Import constraints, saving, disconnected-device recovery and Windows restart guidance reviewed contextually. Catalogs remain incomplete and unverified.
