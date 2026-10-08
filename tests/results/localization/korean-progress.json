@@ -1,24 +1,24 @@
 {
-  "stage": "Korean fourth existing-catalog batch",
+  "stage": "Korean fifth existing-catalog batch",
   "catalogs": [
     {
       "tag": "ko",
       "name": "한국어",
-      "translated": 291,
+      "translated": 349,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "d2343e005cf4e838cab255a0dd9a63481d52ceea7c32b60412ea458c213d69b3",
-      "qmSha256": "77400236fb30b7fe3148e49cd0cc334feea0e60fd47fd23ad27bd9f1299aa09d"
+      "tsSha256": "5994f6c8d0e8a14977fed596304c517141f8db1d77a873e8ef8408f9d6bac7bc",
+      "qmSha256": "b48e2414d7e0a55976d978a5b7b53d9a9db3b54622edc59d686eda1d5792259f"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "Embedded localization assertions, Korean MainWindow offscreen smoke test and structural catalog validation",
-    "log": "/tmp/soundcurrent-eq-ko-fourth-tests.log"
+    "log": "/tmp/soundcurrent-eq-ko-fifth-tests.log"
   },
-  "review": "Contextual AI review of shared source entries 0–319: measured amplifier profile requirements, microphone clipping, balance attenuation, live channel constraints, listening correction and import validation. File patterns, identifiers, placeholders and numerical limits preserved. Linguistic accuracy unverified.",
+  "review": "Contextual AI review of shared source entries 0–399: output/post gain, exclusive startup, reference response versus editable correction, measurement limits, update/quit behavior and render counts. Hyperlink destinations, file patterns, placeholders and numerical limits preserved. Linguistic accuracy unverified.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
   "remaining": "Korean incomplete. Six target catalogs still incomplete; omitted source messages reserved for second pass."
