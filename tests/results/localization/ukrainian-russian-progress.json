@@ -1,0 +1,35 @@
+{
+  "stage": "Ukrainian and Russian initial two batches",
+  "catalogs": [
+    {
+      "tag": "uk",
+      "name": "Українська",
+      "translated": 166,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "a647f371e09f046d8e3ee587b4b09e4311428329b80c51c5384da1046763c5e4",
+      "qmSha256": "7b2840b119314eab3b01712c5373e8cd80014735a2fd20acbc23aa7265566657"
+    },
+    {
+      "tag": "ru",
+      "name": "Русский",
+      "translated": 166,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "eaccf72da0528d74dd9d91b2b90a71199f855f6174e7f4356753d499e4a38c8f",
+      "qmSha256": "04638da19c2cdf77f7e97c7ee671eb6efd7465f5ba3841a41ac7020baafa9a02"
+    }
+  ],
+  "linuxTests": {
+    "passed": 4,
+    "total": 4,
+    "scope": "compiled localization, Ukrainian/Russian main windows and catalog regressions",
+    "log": "/tmp/soundcurrent-eq-uk-ru-second-tests.log"
+  },
+  "review": "Contextual AI review; unverified. DSP confirms ambience damping filters high frequencies in feedback; decay controls duration. Error prompts preserve paused/disabled processing and kept settings.",
+  "nativeReviewed": false,
+  "windows": "Pending CI",
+  "remaining": "Ukrainian, Russian and 20 other target catalogs incomplete."
+}

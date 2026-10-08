@@ -63,3 +63,7 @@ Czech/Slovak filter and measurement review: Q is a dimensionless quality factor,
 ## Czech and Slovak completed extracted catalogs
 
 All current extracted entries populated (441 EQ / 527 Studio). The review distinguishes compressor makeup from post gain, pass filters from shelving, measured response from inverted EQ correction and effects from microphone correction. Render summary uses a label form for arbitrary counts. Calibration warnings retain the microphone contribution and bounded suggested gain. File filters, markup URLs, placeholders, IDs and saved numeric parameters are unchanged. Catalogs remain unverified; no native-speaker review is claimed.
+
+## Ukrainian and Russian initial batches
+
+Translated independently with Ukrainian підсилення/чіткість and Russian усиление/чёткость. Dynamic equipment names use neutral constructions to avoid forcing noun declension. Inspection of enhancement.cpp confirms ambience damping reduces high-frequency content in the feedback path; decay describes duration. Estimated-meter qualifiers, clipping warnings and safe failure/paused-state messages remain explicit. This is contextual AI review; both catalogs are incomplete and native-speaker verification remains unverified.
