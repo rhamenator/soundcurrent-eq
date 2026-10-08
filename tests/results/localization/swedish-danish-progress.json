@@ -1,35 +1,41 @@
 {
-  "stage": "Swedish/Danish import, saving and speaker-profile batch",
+  "stage": "Swedish and Danish complete extracted catalogs",
   "catalogs": [
     {
       "tag": "sv",
       "name": "Svenska",
-      "translated": 398,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "d0e70b2d18cbaf48c70739ba0d2adc6eaa5750323e09b51dc27107c968465c46",
-      "qmSha256": "8b7231f8f437450046cc6819a70572e6aa4537f73ba2edaf58025cb1fda3622c"
+      "tsSha256": "7a8e3512bf6b723038ae6e044f94f0c9f550e6cca25945199920616271c27557",
+      "qmSha256": "4730c56673b4835d913ac8d2b18bd936ebad0945fc294774293e586f626f2152"
     },
     {
       "tag": "da",
       "name": "Dansk",
-      "translated": 398,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "abe0378c0720794cb32dc72f8d8130679b487026e904ac29c5a9b8965bb353a4",
-      "qmSha256": "bfde71343a535371ae411f4907ef41b3afb754232675da93ded808d0a8bfb5f3"
+      "tsSha256": "8435592cb6006b9393e64e330ef110baf8ee8c5f55d243338837bb7d5dc1f6be",
+      "qmSha256": "56b4007e1418a721e6ac58daf2c3f72aae4093de7ba84b309b1853def4c16641"
     }
   ],
   "linuxTests": {
-    "passed": 4,
-    "total": 4,
-    "scope": "compiled localization, Swedish/Danish main windows and catalog regressions",
-    "log": "/tmp/soundcurrent-eq-sv-da-sixth-tests.log"
+    "passed": 64,
+    "total": 64,
+    "scope": "Full CTest including Swedish/Danish equipment workflows and all configured main windows",
+    "log": "/tmp/soundcurrent-eq-sv-da-complete-tests.log"
   },
-  "review": "Contextual AI review; unverified. Measured response, increasing frequency constraints, restart guidance, device-disconnection recovery and processed-effect contribution reviewed.",
+  "visualInspection": {
+    "platform": "xcb/Xvfb",
+    "display": "1280x720",
+    "sample": "Swedish EQ equalizer",
+    "screenshots": "/tmp/soundcurrent-eq-sv-complete-xcb"
+  },
+  "review": "Contextual AI review, unverified. Q, gain/headroom, wet mixes, loudness compensation and measured-response limits reviewed. Render counts use neutral labels.",
   "nativeReviewed": false,
-  "windows": "Pending CI",
-  "remaining": "Swedish, Danish and 16 other target catalogs incomplete."
+  "windows": "Pending CI on completed catalogs",
+  "remaining": "16 target catalogs incomplete; backend/installer extraction, small-screen Polish layout and platform lifecycle/sign-in qualification remain open."
 }

@@ -105,3 +105,7 @@ Swedish/Danish measurement review: loudnesskompensation describes low-volume ton
 Swedish/Danish startup/render review: sign-in remains a per-user registration; selecting one SoundCurrent app replaces the other registration. Saving an edited equipment response creates a custom copy and preserves the reference. Offline rendering remains distinct from live processing. Render summaries use neutral count labels. Calibration links retain their exact destinations. Native review remains unverified.
 
 Swedish/Danish import and speaker-profile review: frekvensgång/frekvensgang describes frequency response. Imported points require increasing frequencies and finite bounded values; numeric limits and file globs are unchanged. Efterklang/rumklang describes reverb, with effect contribution distinct from output gain. Restart guidance and automatic-output fallback remain explicit. Native review remains unverified.
+
+## Swedish and Danish completed extracted catalogs
+
+All currently extracted messages populated (441 EQ / 527 Studio). Q remains dimensionless quality, headroom is level margin, compressor makeup differs from post gain, and wet mix is effect contribution. Low-volume loudness compensation differs from output volume. Relative measurements include the microphone; measured response differs from inverted correction. Rendering summaries use labels for arbitrary counts. URLs, file filters, placeholders, machine IDs and numerical settings are preserved. Catalogs remain unverified; native-speaker review is not claimed.

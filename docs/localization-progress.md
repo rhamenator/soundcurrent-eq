@@ -14,8 +14,8 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 ## Current checkpoint
 
-- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr; 441 extracted messages each. These are unverified translations; nativeReviewed remains false.
-- Other 18 target locales remain incomplete. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
+- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr, sv, da; 441 extracted messages each. These are unverified translations; nativeReviewed remains false.
+- Other 16 target locales remain incomplete. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
 - Coverage is distinct from contextual AI review, native-speaker verification and runtime qualification. Checkpoint reports in tests/results/localization identify tested catalogs, platforms and scopes.
 - Runtime supports separate UI language and number/date locale selection, regional/script fallback, pseudo localization and RTL. Maintenance preserves unfinished edits/comments and rejects unsupported numerus before rewriting.
 - Shared interface layout now wraps meter guidance; the curve instruction also wraps for longer translated text.
@@ -24,7 +24,7 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 Populate all current messages for every existing locale, pass structural and compiled/live UI checks on Linux/Windows, validate changed packages, and record evidence/known limitations. Full populated coverage must never be labeled native-speaker verification without an identified reviewer and catalog-specific evidence. The global --require-complete gate will remain failing until all missing entries are filled. No arbitrary English copies should be inserted merely to pass coverage.
 
-Next translation batch: Swedish and Danish. French, German, Spanish and Italian are required to stay populated as sources evolve. The Filter Q caption now describes the dimensionless filter quality parameter; saved processing IDs and numeric values are unchanged.
+Next translation batch: Norwegian Bokmål and Finnish. French, German, Spanish and Italian are required to stay populated as sources evolve. The Filter Q caption now describes the dimensionless filter quality parameter; saved processing IDs and numeric values are unchanged.
 
 Windows audio setup now translates application-owned failure, repair, calibration and restart instructions. Restart-required results always retain the translated reboot instruction alongside original helper diagnostics. The source guard also rejects unmarked literal messages passed to the setup completion helper.
 
@@ -85,3 +85,5 @@ Swedish/Danish microphone and measurement batch: sv: 291/441, da: 291/441. Four 
 Swedish/Danish startup and rendering batch: sv: 349/441, da: 349/441. Four focused Linux checks passed per app. Includes shared startup registration, preserved reference profiles, translated calibration links and neutral render counts. Both catalogs remain incomplete and unverified.
 
 Swedish/Danish import and speaker-profile batch: 398/441 messages each. Four focused Linux checks passed per app. Import constraints, saving, disconnected-device recovery and Windows restart guidance reviewed contextually. Catalogs remain incomplete and unverified.
+
+Swedish/Danish complete extracted catalogs: 441 messages each. Full Linux CTest passed 64/64 including equipment workflows. Swedish EQ and Danish Studio effects inspected at 1280×720. Contextual review remains unverified, with no native-speaker claim. Windows qualification pending for these catalogs.
