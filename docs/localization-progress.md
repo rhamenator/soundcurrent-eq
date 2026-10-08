@@ -117,3 +117,5 @@ Romanian/Hungarian startup and rendering batch: 349/441 messages each. Four focu
 Romanian/Hungarian import and speaker-profile batch: 398/441 messages each. Four focused Linux checks passed per app. Import constraints, saving, disconnected-device recovery and Windows restart guidance reviewed contextually. Catalogs remain incomplete and unverified; Nynorsk follows completion.
 
 Romanian/Hungarian complete extracted catalogs: 441 messages each. Full Linux CTest passed 68/68 including equipment workflows. Romanian EQ and Hungarian Studio effects inspected at 1280×720. Contextual review remains unverified, with no native-speaker claim. Windows qualification pending for these catalogs.
+
+Nynorsk added as a separate nn catalog, with 102/441 messages populated. Three focused Linux checks passed per app, including distinct Nynorsk/Bokmål regional selection. It remains incomplete and unverified. The target scope is now 33 non-English locales; 20 original catalogs are populated and 13 catalogs remain incomplete.

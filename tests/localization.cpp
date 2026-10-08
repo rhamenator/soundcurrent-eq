@@ -14,6 +14,7 @@ int main(int argc,char **argv){
  QTemporaryDir dir;QSettings::setDefaultFormat(QSettings::IniFormat);QSettings::setPath(QSettings::IniFormat,QSettings::UserScope,dir.path());
  try{
   require(languages().size()>=30,"Global language catalogs missing");
+  require(resolve("nn-NO")=="nn" && resolve("nb-NO")=="nb","Norwegian written standards collapsed");
   require(resolve("fr_CA")=="fr","Regional fallback failed");
   require(resolve("zh-TW")=="zh-Hant" && resolve("zh-CN")=="zh-Hans","Chinese region aliases fell back to English");
   require(resolve("pt-Latn-BR")=="pt-BR" && resolve("pt-Latn-PT")=="pt-PT","Explicit Latin script lost Portuguese regions");
@@ -26,7 +27,7 @@ int main(int argc,char **argv){
   require(resolve("../bad")=="en","Unsupported language should fall back safely");
   for(const auto &l:languages()) {
    QTranslator translator;require(translator.load(":/i18n/soundcurrent_"+l.tag+".qm"),"Embedded catalog failed to load");
-   require(!translator.translate("SoundCurrent","Equalizer").isEmpty(),"Draft language is empty");
+   require(!translator.translate("SoundCurrent","Equalizer").isEmpty(),"Language catalog is empty");
   }
   QSettings().setValue("i18n/language","de");QSettings().setValue("i18n/formatLocale","de-DE");
   {
