@@ -1,6 +1,6 @@
 {
   "date": "2026-10-08",
-  "status": "Cross-version numeric-input regression unresolved",
+  "status": "Numeric presentation-mark workaround implemented; Qt 6.4/Windows verification pending",
   "evidence": {
     "linux": "EQ run 37742826892 failed localization on Ubuntu 24.04: RTL localized negative numeric input changed gain",
     "windows": "Studio run 37742826938 failed soundcurrent-localization-test, but Qt diagnostic text was not visible"
@@ -9,11 +9,30 @@
     "Include Qt version, region, controlled input codepoints, spin value and QLocale parse outcome in failing numeric-input assertion",
     "Enable QT_FORCE_STDERR_LOGGING in Windows build test stage"
   ],
-  "localVerification": "Localization test rebuilt and passed on host Qt 6.10.2 in both repositories",
+  "localVerification": "Applications rebuilt; 8/8 focused Linux CTests passed, including RTL native numeric input, normalization/caret checks, actual slider-format regression and acceleration",
   "remaining": [
-    "Obtain exact CI region/input failure and repair numeric behavior across supported Qt versions",
-    "Updated Windows installer qualification and RPM lifecycle pending"
+    "Confirm negative native-digit input on Qt 6.4 and Windows",
+    "Updated package lifecycle/visual qualification pending",
+    "RPM lifecycle remains pending"
   ],
   "nativeReviewed": false,
-  "productionCodeChanged": false
+  "productionCodeChanged": true,
+  "confirmedFailure": {
+    "ciRun": 37743704588,
+    "qtVersion": "6.4.2",
+    "region": "ar-EG",
+    "inputCodepoints": [
+      "061c",
+      "002d",
+      "0661",
+      "0662",
+      "066b",
+      "0665"
+    ],
+    "controlValue": 1.5,
+    "expectedValue": -12.5,
+    "localeParserAccepted": false
+  },
+  "fix": "Shared integer/decimal spin controls remove only U+061C/U+200E/U+200F before Qt validation/conversion; preserve signs, digits, separators and adjust caret. No catalog or persisted-value conversion.",
+  "windowsDiagnostics": "Test stderr now redirected to a retained log and printed on failure; pending updated CI execution"
 }

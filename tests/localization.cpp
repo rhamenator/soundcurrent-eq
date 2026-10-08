@@ -17,6 +17,15 @@ int main(int argc,char **argv){
  QTemporaryDir dir;QSettings::setDefaultFormat(QSettings::IniFormat);QSettings::setPath(QSettings::IniFormat,QSettings::UserScope,dir.path());
  try{
   require(languages().size()>=30,"Global language catalogs missing");
+  {
+   auto marked=QString(QChar(0x061c))+"-12.5"+QChar(0x200e)+QChar(0x200f);
+   int cursor=marked.size();soundcurrent::normalizeNumericDirectionMarks(marked,&cursor);
+   require(marked=="-12.5" && cursor==5,"Numeric presentation-mark normalization changed value or caret");
+   auto overrideText=QString(QChar(0x202e))+"-12.5";
+   soundcurrent::normalizeNumericDirectionMarks(overrideText);
+   require(overrideText.startsWith(QChar(0x202e)),"Numeric normalization silently accepted an unrelated bidi override");
+  }
+
   for (const auto &tag : {QStringLiteral("ar"), QStringLiteral("he"), QStringLiteral("fa")}) {
    QTranslator translator;require(translator.load(":/i18n/soundcurrent_"+tag+".qm"),"RTL catalog missing");
    for (const auto *source : {"Auto headroom %1 dB", "Estimated overall output peak: %1 dBFS",

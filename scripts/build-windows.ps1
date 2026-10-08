@@ -111,12 +111,17 @@ try {
         Copy-Item "build-windows-native\Release\$testName.exe" $stage
         $testArgs = @()
         if ($testName -eq 'soundcurrent-equipment-test') { $testArgs = @('--ui-self-test') }
-        if ($testArgs.Count) { $test = Start-Process "$stage\$testName.exe" -ArgumentList $testArgs -PassThru -NoNewWindow }
-        else { $test = Start-Process "$stage\$testName.exe" -PassThru -NoNewWindow }
+        $testLog = Join-Path $stage "$testName.stderr.log"
+        if ($testArgs.Count) { $test = Start-Process "$stage\$testName.exe" -ArgumentList $testArgs -PassThru -NoNewWindow -RedirectStandardError $testLog }
+        else { $test = Start-Process "$stage\$testName.exe" -PassThru -NoNewWindow -RedirectStandardError $testLog }
         $null = $test.Handle
         if (!$test.WaitForExit(90000)) { Stop-Process -Id $test.Id -Force; throw "$testName timed out" }
         $test.Refresh()
-        if ($null -eq $test.ExitCode -or $test.ExitCode -ne 0) { throw "$testName failed: $($test.ExitCode)" }
+        if ($null -eq $test.ExitCode -or $test.ExitCode -ne 0) {
+            Get-Content $testLog -ErrorAction SilentlyContinue | Write-Output
+            throw "$testName failed: $($test.ExitCode)"
+        }
+        Remove-Item $testLog
         Remove-Item "$stage\$testName.exe"
     }
     $uiLog = Join-Path $root 'build-windows-native\ui-self-test.log'
