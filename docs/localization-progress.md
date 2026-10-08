@@ -583,3 +583,7 @@ Calibration and update actions now use two rows; amplifier controls are stacked,
 ### Exact installed preview identity
 
 APT can skip a local preview whose version equals the installed package. The independent-VM localization harness now forces reinstall and compares /usr/bin executables byte-for-byte with their package contents before testing. Both current application builds passed all 33 installed locale fixtures and mixed Arabic/German formatting. Update/remove/reinstall and preservation fixtures passed. These runs supersede earlier equal-version locale checks that did not establish current executable identity; their lifecycle reinstall evidence remains separately scoped. No processing or catalogs changed.
+
+### Current Windows installed qualification
+
+Both current application builds passed all 33 installed native-backend locale fixtures, installer/executable identity checks, update/uninstall/reinstall, fixture preservation, unchanged audio-device state, and Arabic/German formatting. Defender antivirus and real-time protection were enabled. Current Linux package CI passed full suites (84 EQ / 86 Studio) and lifecycle checks on Ubuntu, Fedora and AlmaLinux. A selected native Windows viewport per app was inspected; screenshots and exact source/package hashes are recorded separately. The older EQ detection remains unresolved; no exclusion or disabled protection was introduced. Native review, interactive installer and signed-in startup remain unqualified. No release published.

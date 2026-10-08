@@ -16,5 +16,6 @@
     "No Defender exclusions or disabled protection",
     "Older unrelated threat history not attributed to this package"
   ],
-  "nextAction": "Investigate reproducible detection and obtain an authoritative clean classification before qualifying the installer"
+  "nextAction": "Investigate reproducible detection and obtain an authoritative clean classification before qualifying the installer",
+  "currentQualificationSupersededBy": "windows-current-installed.json for eca144a; previous 88b4337 detection remains unresolved, not established as a false positive"
 }

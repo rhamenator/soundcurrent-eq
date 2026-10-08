@@ -1,7 +1,7 @@
 {
   "date": "2026-10-08",
-  "sourceCommit": "88b4337",
-  "ciRun": 37745016671,
+  "sourceCommit": "eca144a",
+  "ciRun": 37747399036,
   "status": "passed",
   "environments": [
     "Ubuntu 24.04 container",
@@ -13,32 +13,31 @@
       "artifactDirectory": "package-validation-0",
       "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
       "package": "soundcurrent-eq_1.1.0_amd64.deb",
-      "sha256": "a9866e1726e3118d3c269f39ffedc2c8af31765a7178988e85578732a0eda73d",
-      "evidenceDirectory": "/home/rich/Downloads/SoundCurrent-localization-qa/soundcurrent-eq-linux-ci-88b4337/package-validation-0"
+      "sha256": "bdac804e2ad17014c3b5cf011ebd279b843909258ffe7ee59d5373c7c6125bcd",
+      "fullSuitePassed": 84,
+      "evidenceDirectory": "/home/rich/Downloads/SoundCurrent-localization-qa/soundcurrent-eq-linux-ci-eca144a/package-validation-0"
     },
     {
       "artifactDirectory": "package-validation-1",
       "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
       "package": "soundcurrent-eq-1.1.0-1.fc44.x86_64.rpm",
-      "sha256": "3d9bb8e5dc7cff9f6268d5dc9976c8c5fde8f5769db87ecfa503ab9398546646",
-      "evidenceDirectory": "/home/rich/Downloads/SoundCurrent-localization-qa/soundcurrent-eq-linux-ci-88b4337/package-validation-1"
+      "sha256": "d881217f65f8386d8f3ca68f4624c9c37370860bb1ed544ba7b721adf82f6ba9",
+      "fullSuitePassed": 84,
+      "evidenceDirectory": "/home/rich/Downloads/SoundCurrent-localization-qa/soundcurrent-eq-linux-ci-eca144a/package-validation-1"
     },
     {
       "artifactDirectory": "package-validation-2",
       "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
       "package": "soundcurrent-eq-1.1.0-1.el10.x86_64.rpm",
-      "sha256": "32ff164745fabfa761387c8e0b791df8aef8fee037434f767064584a50346cff",
-      "evidenceDirectory": "/home/rich/Downloads/SoundCurrent-localization-qa/soundcurrent-eq-linux-ci-88b4337/package-validation-2"
+      "sha256": "7dc774a0f1e097125b245918099507e288fb1348170db87f8aad17f79f59436f",
+      "fullSuitePassed": 84,
+      "evidenceDirectory": "/home/rich/Downloads/SoundCurrent-localization-qa/soundcurrent-eq-linux-ci-eca144a/package-validation-2"
     }
   ],
-  "hostCTest": {
-    "passed": 84,
-    "failed": 0
-  },
   "nativeReviewed": false,
   "limitations": [
-    "AlmaLinux is a RHEL-compatible environment, not an actual RHEL installation",
-    "Container checks do not prove interactive desktop installation or live audio",
-    "Catalog coverage differs from whole-interface coverage; missing strings deferred to second pass"
+    "AlmaLinux evidence is not an actual RHEL desktop installation",
+    "Containers test lifecycle and fixtures, not live audio or interactive desktop sign-in",
+    "Source revision is explicit; later test-harness/report commits are not new application code"
   ]
 }
