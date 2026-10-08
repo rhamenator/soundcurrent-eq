@@ -1,25 +1,25 @@
 {
-  "stage": "Traditional Chinese saving, speaker profiles and device recovery batch",
+  "stage": "Traditional Chinese current catalogs complete",
   "catalogs": [
     {
       "tag": "zh-Hant",
       "name": "繁體中文",
-      "translated": 398,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "9621928bdebcafcd28e05393f800d1bf3f8da826f4efc69e0882b17a03bf7604",
-      "qmSha256": "7e235ce96c7c078e0b57f31c97a48661b4d6b4e8cafb44cdc3eba225518a5b93"
+      "tsSha256": "c62d1104cf18f7c79e3285a751dfb9f505ad45efd0c14ea292f869769e35fd64",
+      "qmSha256": "d133d1078930e6457ddea8b0f3cc069874e6c057b8608f7dd36f6896d1f288ee"
     }
   ],
   "linuxTests": {
-    "passed": 3,
-    "total": 3,
-    "scope": "compiled localization, Traditional Chinese main window and catalog validation",
-    "log": "/tmp/soundcurrent-eq-zh-Hant-sixth-tests.log"
+    "passed": 75,
+    "total": 75,
+    "scope": "Full Linux CTest including Traditional Chinese equipment workflows, standard actions and script selection assertions",
+    "log": "/tmp/soundcurrent-eq-zh-Hant-complete-tests.log"
   },
-  "review": "Contextual AI review; unverified. Save versus discard, speaker correction bounds, peak hold, device recovery, separate cable routing and reverb versus echo reviewed.",
+  "review": "Contextual AI review; unverified. Current catalogs populated; contextual AI review remains unverified. Calibration limitations, microphone versus playback effects, save/quit behavior and neutral render counts reviewed.",
   "nativeReviewed": false,
   "windows": "Pending CI",
-  "remaining": "Traditional Chinese catalog incomplete. 8 original target catalogs remain incomplete; omitted messages scheduled for second pass. Real UI and platform qualification remain open."
+  "remaining": "7 original target catalogs incomplete. Second-pass backend/helper/installer coverage, visual and platform lifecycle qualification remain open."
 }
