@@ -13,5 +13,7 @@
   "Listening preset": "Saved equalizer settings for playback. Not a listening device.",
   "Lock EQ": "Prevent accidental editing of EQ controls; not encryption or a security lock.",
   "Undo": "Reverse the previous editable setting change.",
-  "Filter Q": "Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q."
+  "Filter Q": "Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.",
+  "Apply amplifier correction?": "Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.",
+  "Equalizer conflict": "Warning title when another equalizer or processing owner conflicts with this app. It is a software routing/ownership conflict, not clipping or a bad acoustic measurement."
 }

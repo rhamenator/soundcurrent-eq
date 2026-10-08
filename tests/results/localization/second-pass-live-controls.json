@@ -11,7 +11,7 @@
   ],
   "regression": "Every localized UI fixture moves all four microphone tone sliders and checks translated labels plus regional gain formatting, then restores fixture values",
   "linuxTests": {
-    "command": "ctest -R localized-ui-|localized-number-format|translation-catalog --output-on-failure -j 2",
+    "command": "ctest -R 'localized-ui-|localized-number-format|translation-catalog' --output-on-failure -j 2",
     "passed": 37,
     "failed": 0,
     "scope": "33 non-English locales, two pseudo-locales, regional-format fixture, catalog validation; no native-speaker review"

@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-08",
+  "stage": "second-pass tray, dialog titles and enhancement percentage formatting",
+  "nativeReviewed": false,
+  "linguisticReview": "Contextual AI review only; new titles distinguish amplifier response correction from hardware gain, and equalizer ownership conflicts from clipping. Arabic wording explicitly refers to audio-equalization software.",
+  "newSourceMessages": [
+    "Apply amplifier correction?",
+    "Equalizer conflict"
+  ],
+  "nonEnglishLocales": 33,
+  "sourceMessagesPerLocale": 526,
+  "unfinished": 0,
+  "changes": [
+    "Tray Open uses the existing localized Open action",
+    "Tray on/off tooltip uses localized equalizer state without changing the application identity",
+    "Initial tray toggle reflects the current power state",
+    "Amplifier profile details uses its existing localized title",
+    "Amplifier-confirmation and conflict titles marked and translated",
+    "Initial, live and restored enhancement percentages use regional digits and percent symbol"
+  ],
+  "extractionTests": {
+    "passed": 9,
+    "scope": "Source/catalog preservation and structural validation, including rejection of raw tray actions, combo captions and named QMessageBox titles"
+  },
+  "linuxTests": {
+    "passed": 38,
+    "failed": 0,
+    "command": "ctest -R 'shared-ui|localized-ui-|localized-number-format|translation-catalog' --output-on-failure -j 2",
+    "scope": "Real Qt fixture controls, all 33 non-English locale fixtures, two pseudo-locales, regional-format fixture, shared UI and catalogs; offscreen tray availability is not a native tray-menu test"
+  },
+  "remaining": [
+    "Dynamic amplifier details/preview prose",
+    "Provenance-aware default Studio channel names",
+    "Additional dynamic display expressions and backend diagnostics",
+    "Installer/helper localization",
+    "Changed Linux/Windows package qualification after second pass"
+  ],
+  "sourceSha256": {
+    "src/main.cpp": "6be48ffcb97e0786b802580d1ad167ecb91a9d4a8476bae6fe7c116ce0d13d33",
+    "src/enhancement_controls.h": "a5c3e8358fa8235b9625567e152dc3eb73ba54f13fba8b4fba2202a272262b52",
+    "scripts/localization.py": "e9c296adee61c1574ccfd974fb7c73dc39d13970655ff3e119a9b21b78d3174f",
+    "scripts/ui_string_audit.py": "3cba1afe2759cb0c00f7eadbc602032818a29e0b0457da63adfe0fe6f4f2a911"
+  }
+}

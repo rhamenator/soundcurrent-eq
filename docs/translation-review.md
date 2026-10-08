@@ -173,3 +173,23 @@ All currently extracted messages populated (441 EQ / 527 Studio). Q remains dime
 ## Arabic initial batch
 
 الكسب describes gain; هامش المستوى describes headroom, distinct from channel balance. قص قمم الإشارة describes clipped signal peaks. Room-effect damping differs from decay duration. Amplifier curves require electrical measurements with known load and settings; marketing specifications are insufficient. Processing pauses during setup and recovery keeps the app open. Placeholders, units and file/character limits remain unchanged. Arabic EQ was sampled at 1280×720; full bidi and native-speaker review remain unverified.
+
+## Second-pass dialog titles and percentages (2026-10-08)
+
+The amplifier confirmation title refers to applying measured response correction
+through EQ, not adjusting the hardware gain or changing firmware. The conflict
+title refers to competing software processing/routing ownership, not distortion
+or an acoustic measurement failure. Both titles received contextual AI review
+and translations in all 33 non-English catalogs. Arabic wording explicitly
+identifies audio-equalization software. Native-speaker verification remains
+unverified for these additions.
+
+Tray Open and equalizer state captions reuse existing translations. Enhancement
+amount labels now use the selected regional digits and percent symbol at
+initialization, live edits and settings restoration; numerical processing is
+unchanged. Per-locale Qt fixtures exercise all five percentage controls.
+
+The literal Qt inventory does not cover every dynamic expression, saved/user
+name, backend diagnostic or installer message. Its remaining language-picker
+caption `English (en)` is an intentional native autonym plus stable locale tag.
+Whole-interface coverage remains incomplete.

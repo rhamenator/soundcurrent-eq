@@ -36,6 +36,24 @@ class CatalogTests(unittest.TestCase):
             with patch.object(catalog, 'ROOT', root), self.assertRaisesRegex(ValueError, 'Unmarked UI literal'):
                 catalog.sources()
 
+    def test_tray_and_combo_captions_require_markers(self):
+        for code in ['menu->addAction("English only", callback);',
+                     'combo->setItemText(0, "English only");']:
+            with self.subTest(code=code), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                (root / 'src').mkdir()
+                (root / 'src/main.cpp').write_text(code, encoding='utf-8')
+                with patch.object(catalog, 'ROOT', root), self.assertRaisesRegex(ValueError, 'Unmarked UI literal'):
+                    catalog.sources()
+
+    def test_named_dialog_title_requires_marker(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'src').mkdir()
+            (root / 'src/main.cpp').write_text('QMessageBox preview(QMessageBox::Warning, "Untranslated title", message);', encoding='utf-8')
+            with patch.object(catalog, 'ROOT', root), self.assertRaisesRegex(ValueError, 'dialog title'):
+                catalog.sources()
+
     def test_windows_adapter_errors_require_translation_markers(self):
         with self.assertRaisesRegex(ValueError, 'Unmarked Windows adapter error'):
             catalog.check_platform_errors('throw std::runtime_error("Route unavailable");')

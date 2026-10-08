@@ -211,6 +211,11 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Appliquer</translation>
     </message>
     <message>
+      <source>Apply amplifier correction?</source>
+      <translation>Appliquer la correction de l’amplificateur ?</translation>
+      <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
+    </message>
+    <message>
       <source>Apply correction?</source>
       <translation>Appliquer la correction ?</translation>
     </message>
@@ -688,6 +693,11 @@ Importer dans votre bibliothèque ?</translation>
     <message>
       <source>Equalizer and configuration pages</source>
       <translation>Pages d’égalisation et de configuration</translation>
+    </message>
+    <message>
+      <source>Equalizer conflict</source>
+      <translation>Conflit entre égaliseurs</translation>
+      <extracomment>Warning title when another equalizer or processing owner conflicts with this app. It is a software routing/ownership conflict, not clipping or a bad acoustic measurement.</extracomment>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>

@@ -29,7 +29,9 @@
     "Use system language",
     "Use system locale",
     "Language and regional settings",
-    "Effects"
+    "Effects",
+    "Apply amplifier correction?",
+    "Equalizer conflict"
   ],
   "languages": {
     "de": [
@@ -63,7 +65,9 @@
       "Systemsprache verwenden",
       "Systemregion verwenden",
       "Sprache und Region",
-      "Effekte"
+      "Effekte",
+      "Verstärkerkorrektur anwenden?",
+      "Konflikt zwischen Equalizern"
     ],
     "fr": [
       "Français",
@@ -96,7 +100,9 @@
       "Utiliser la langue du système",
       "Utiliser les paramètres régionaux du système",
       "Langue et région",
-      "Effets"
+      "Effets",
+      "Appliquer la correction de l’amplificateur ?",
+      "Conflit entre égaliseurs"
     ],
     "es": [
       "Español",
@@ -129,7 +135,9 @@
       "Usar el idioma del sistema",
       "Usar la configuración regional del sistema",
       "Idioma y región",
-      "Efectos"
+      "Efectos",
+      "¿Aplicar la corrección del amplificador?",
+      "Conflicto entre ecualizadores"
     ],
     "it": [
       "Italiano",
@@ -162,7 +170,9 @@
       "Usa lingua di sistema",
       "Usa impostazioni locali di sistema",
       "Lingua e regione",
-      "Effetti"
+      "Effetti",
+      "Applicare la correzione dell’amplificatore?",
+      "Conflitto tra equalizzatori"
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -195,7 +205,9 @@
       "Usar idioma do sistema",
       "Usar região do sistema",
       "Idioma e região",
-      "Efeitos"
+      "Efeitos",
+      "Aplicar a correção do amplificador?",
+      "Conflito entre equalizadores"
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -228,7 +240,9 @@
       "Usar idioma do sistema",
       "Usar região do sistema",
       "Idioma e região",
-      "Efeitos"
+      "Efeitos",
+      "Aplicar a correção do amplificador?",
+      "Conflito entre equalizadores"
     ],
     "nl": [
       "Nederlands",
@@ -261,7 +275,9 @@
       "Systeemtaal gebruiken",
       "Systeemregio gebruiken",
       "Taal en regio",
-      "Effecten"
+      "Effecten",
+      "Versterkercorrectie toepassen?",
+      "Conflict tussen equalizers"
     ],
     "pl": [
       "Polski",
@@ -294,7 +310,9 @@
       "Użyj języka systemu",
       "Użyj regionu systemu",
       "Język i region",
-      "Efekty"
+      "Efekty",
+      "Zastosować korekcję wzmacniacza?",
+      "Konflikt między korektorami"
     ],
     "cs": [
       "Čeština",
@@ -327,7 +345,9 @@
       "Použít jazyk systému",
       "Použít oblast systému",
       "Jazyk a oblast",
-      "Efekty"
+      "Efekty",
+      "Použít korekci zesilovače?",
+      "Konflikt mezi ekvalizéry"
     ],
     "sk": [
       "Slovenčina",
@@ -360,7 +380,9 @@
       "Použiť jazyk systému",
       "Použiť oblasť systému",
       "Jazyk a oblasť",
-      "Efekty"
+      "Efekty",
+      "Použiť korekciu zosilňovača?",
+      "Konflikt medzi ekvalizérmi"
     ],
     "uk": [
       "Українська",
@@ -393,7 +415,9 @@
       "Використовувати мову системи",
       "Використовувати регіон системи",
       "Мова та регіон",
-      "Ефекти"
+      "Ефекти",
+      "Застосувати корекцію підсилювача?",
+      "Конфлікт між еквалайзерами"
     ],
     "ru": [
       "Русский",
@@ -426,7 +450,9 @@
       "Использовать язык системы",
       "Использовать регион системы",
       "Язык и регион",
-      "Эффекты"
+      "Эффекты",
+      "Применить коррекцию усилителя?",
+      "Конфликт между эквалайзерами"
     ],
     "el": [
       "Ελληνικά",
@@ -459,7 +485,9 @@
       "Χρήση γλώσσας συστήματος",
       "Χρήση περιοχής συστήματος",
       "Γλώσσα και περιοχή",
-      "Εφέ"
+      "Εφέ",
+      "Εφαρμογή διόρθωσης ενισχυτή;",
+      "Διένεξη μεταξύ ισοσταθμιστών"
     ],
     "tr": [
       "Türkçe",
@@ -492,7 +520,9 @@
       "Sistem dilini kullan",
       "Sistem bölgesini kullan",
       "Dil ve bölge",
-      "Efektler"
+      "Efektler",
+      "Amplifikatör düzeltmesi uygulansın mı?",
+      "Ekolayzırlar arasında çakışma"
     ],
     "sv": [
       "Svenska",
@@ -525,7 +555,9 @@
       "Använd systemspråk",
       "Använd systemregion",
       "Språk och region",
-      "Effekter"
+      "Effekter",
+      "Tillämpa förstärkarkorrigering?",
+      "Konflikt mellan equalizrar"
     ],
     "da": [
       "Dansk",
@@ -558,7 +590,9 @@
       "Brug systemsprog",
       "Brug systemregion",
       "Sprog og region",
-      "Effekter"
+      "Effekter",
+      "Anvend forstærkerkorrektion?",
+      "Konflikt mellem equalizere"
     ],
     "nb": [
       "Norsk bokmål",
@@ -591,7 +625,9 @@
       "Bruk systemspråk",
       "Bruk systemregion",
       "Språk og region",
-      "Effekter"
+      "Effekter",
+      "Bruke forsterkerkorreksjon?",
+      "Konflikt mellom equalizere"
     ],
     "fi": [
       "Suomi",
@@ -624,7 +660,9 @@
       "Käytä järjestelmän kieltä",
       "Käytä järjestelmän aluetta",
       "Kieli ja alue",
-      "Tehosteet"
+      "Tehosteet",
+      "Otetaanko vahvistimen korjaus käyttöön?",
+      "Taajuuskorjainten ristiriita"
     ],
     "ro": [
       "Română",
@@ -657,7 +695,9 @@
       "Folosește limba sistemului",
       "Folosește regiunea sistemului",
       "Limbă și regiune",
-      "Efecte"
+      "Efecte",
+      "Aplicați corecția amplificatorului?",
+      "Conflict între egalizatoare"
     ],
     "hu": [
       "Magyar",
@@ -690,7 +730,9 @@
       "Rendszernyelv használata",
       "A rendszer területi beállításainak használata",
       "Nyelv és terület",
-      "Effektek"
+      "Effektek",
+      "Alkalmazza az erősítő korrekcióját?",
+      "Ütközés a hangszínszabályozók között"
     ],
     "ar": [
       "العربية",
@@ -723,7 +765,9 @@
       "استخدام لغة النظام",
       "استخدام منطقة النظام",
       "اللغة والمنطقة",
-      "المؤثرات"
+      "المؤثرات",
+      "هل تريد تطبيق تصحيح مضخّم الصوت؟",
+      "تعارض بين برامج معادلة الصوت"
     ],
     "he": [
       "עברית",
@@ -756,7 +800,9 @@
       "שימוש בשפת המערכת",
       "שימוש באזור המערכת",
       "שפה ואזור",
-      "אפקטים"
+      "אפקטים",
+      "להחיל תיקון למגבר?",
+      "התנגשות בין אקולייזרים"
     ],
     "fa": [
       "فارسی",
@@ -789,7 +835,9 @@
       "استفاده از زبان سیستم",
       "استفاده از منطقهٔ سیستم",
       "زبان و منطقه",
-      "افکت‌ها"
+      "افکت‌ها",
+      "اصلاح پاسخ تقویت‌کننده اعمال شود؟",
+      "تداخل بین اکولایزرها"
     ],
     "zh-Hans": [
       "简体中文",
@@ -822,7 +870,9 @@
       "使用系统语言",
       "使用系统区域设置",
       "语言和区域设置",
-      "效果"
+      "效果",
+      "应用功放校正？",
+      "均衡器冲突"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -855,7 +905,9 @@
       "使用系統語言",
       "使用系統地區設定",
       "語言和地區設定",
-      "效果"
+      "效果",
+      "套用擴大機校正？",
+      "等化器衝突"
     ],
     "ja": [
       "日本語",
@@ -888,7 +940,9 @@
       "システムの言語を使用",
       "システムの地域設定を使用",
       "言語と地域設定",
-      "エフェクト"
+      "エフェクト",
+      "アンプの補正を適用しますか？",
+      "イコライザーの競合"
     ],
     "ko": [
       "한국어",
@@ -921,7 +975,9 @@
       "시스템 언어 사용",
       "시스템 지역 사용",
       "언어 및 지역 설정",
-      "효과"
+      "효과",
+      "앰프 보정을 적용할까요?",
+      "이퀄라이저 간 충돌"
     ],
     "hi": [
       "हिन्दी",
@@ -954,7 +1010,9 @@
       "सिस्टम की भाषा उपयोग करें",
       "सिस्टम का क्षेत्र उपयोग करें",
       "भाषा और क्षेत्र",
-      "प्रभाव"
+      "प्रभाव",
+      "एम्प्लीफायर का सुधार लागू करें?",
+      "इक्वलाइज़रों के बीच टकराव"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -987,7 +1045,9 @@
       "Gunakan bahasa sistem",
       "Gunakan lokal sistem",
       "Bahasa dan wilayah",
-      "Efek"
+      "Efek",
+      "Terapkan koreksi amplifier?",
+      "Konflik antar-equalizer"
     ],
     "vi": [
       "Tiếng Việt",
@@ -1020,7 +1080,9 @@
       "Dùng ngôn ngữ hệ thống",
       "Dùng vùng hệ thống",
       "Ngôn ngữ và vùng",
-      "Hiệu ứng"
+      "Hiệu ứng",
+      "Áp dụng hiệu chỉnh bộ khuếch đại?",
+      "Xung đột giữa các bộ cân bằng âm thanh"
     ],
     "th": [
       "ไทย",
@@ -1053,7 +1115,9 @@
       "ใช้ภาษาของระบบ",
       "ใช้ภูมิภาคของระบบ",
       "ภาษาและภูมิภาค",
-      "เอฟเฟกต์"
+      "เอฟเฟกต์",
+      "ใช้การแก้ไขการตอบสนองของเครื่องขยายเสียงหรือไม่?",
+      "ข้อขัดแย้งระหว่างอีควอไลเซอร์"
     ],
     "sw": [
       "Kiswahili",
@@ -1086,7 +1150,9 @@
       "Tumia lugha ya mfumo",
       "Tumia eneo la mfumo",
       "Lugha na eneo",
-      "Athari"
+      "Athari",
+      "Utumie marekebisho ya amplifaya?",
+      "Mgongano kati ya visawazishi vya sauti"
     ],
     "nn": [
       "Norsk nynorsk",
@@ -1119,7 +1185,9 @@
       "Bruk systemspråk",
       "Bruk regionale systeminnstillingar",
       "Språk og regionale innstillingar",
-      "Effektar"
+      "Effektar",
+      "Bruke forsterkarkorreksjon?",
+      "Konflikt mellom equalizerar"
     ]
   },
   "requiredCompleteLocales": [

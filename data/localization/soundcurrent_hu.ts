@@ -211,6 +211,11 @@ Importálja a könyvtárba?</translation>
       <translation>Alkalmaz</translation>
     </message>
     <message>
+      <source>Apply amplifier correction?</source>
+      <translation>Alkalmazza az erősítő korrekcióját?</translation>
+      <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
+    </message>
+    <message>
       <source>Apply correction?</source>
       <translation>Alkalmazza a korrekciót?</translation>
     </message>
@@ -688,6 +693,11 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Equalizer and configuration pages</source>
       <translation>Hangszínszabályzó- és konfigurációs oldalak</translation>
+    </message>
+    <message>
+      <source>Equalizer conflict</source>
+      <translation>Ütközés a hangszínszabályozók között</translation>
+      <extracomment>Warning title when another equalizer or processing owner conflicts with this app. It is a software routing/ownership conflict, not clipping or a bad acoustic measurement.</extracomment>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>

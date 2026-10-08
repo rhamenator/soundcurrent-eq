@@ -2891,11 +2891,11 @@ private:
         tray_ = new QSystemTrayIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ", QIcon(":/app.ico")), this);
         tray_->setToolTip("SoundCurrent EQ");
         auto *menu = new QMenu(this);
-        menu->addAction("Open SoundCurrent EQ", this, [this] { reopen(); });
-        trayToggle_ = menu->addAction(SC_TR("Turn equalizer off"), this, [this] { power_->setChecked(!power_->isChecked()); });
+        menu->addAction(SC_TR("Open"), this, [this] { reopen(); });
+        trayToggle_ = menu->addAction(power_->isChecked() ? SC_TR("Turn equalizer off") : SC_TR("Turn equalizer on"), this, [this] { power_->setChecked(!power_->isChecked()); });
         connect(power_, &QCheckBox::toggled, this, [this](bool on) {
             trayToggle_->setText(on ? SC_TR("Turn equalizer off") : SC_TR("Turn equalizer on"));
-            tray_->setToolTip(on ? "SoundCurrent EQ · On" : "SoundCurrent EQ · Off");
+            tray_->setToolTip(QStringLiteral("SoundCurrent EQ · ") + (on ? SC_TR("Equalizer on") : SC_TR("Equalizer off")));
         });
         menu->addSeparator();
         menu->addAction(SC_TR("Quit SoundCurrent EQ"), qApp, [] { qApp->quit(); });
@@ -3107,7 +3107,7 @@ private:
         if (!file.open(QIODevice::ReadOnly) || file.size() > 65536) { showError(SC_TR("Profile must be readable and smaller than 64 KiB.")); return; }
         const auto profile = parseAmplifierProfile(QJsonDocument::fromJson(file.readAll()).object());
         if (!profile) { showError(SC_TR("Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.")); return; }
-        QMessageBox preview(QMessageBox::Question, "Apply amplifier correction?",
+        QMessageBox preview(QMessageBox::Question, SC_TR("Apply amplifier correction?"),
                             profile->name + "\n\nMeasurement conditions: " + profile->conditions +
                             "\nSource: " + profile->source + "\n\nApply only if these conditions match your system.",
                             QMessageBox::Apply | QMessageBox::Cancel, this);
@@ -3134,7 +3134,7 @@ private:
     void showAmplifierDetails() {
         const auto id = ampCombo_->currentData().toString();
         for (const auto &p : amplifierProfiles_) if (p.id == id) {
-            QMessageBox details(QMessageBox::Information, "Amplifier profile details",
+            QMessageBox details(QMessageBox::Information, SC_TR("Amplifier profile details"),
                 p.name + "\nConditions: " + p.conditions + "\nSource: " + p.source +
                 "\n\nCorrection filters:\n" + QString::fromUtf8(QJsonDocument(p.json.value("filters").toArray()).toJson()),
                 QMessageBox::Ok, this);
@@ -4193,6 +4193,16 @@ int main(int argc, char **argv) {
             qFatal("Moving post gain lost the selected regional number format");
         postGain->setValue(originalPostGain);
 
+        for(int i=0;i<5;++i) {
+            auto *slider=window.findChild<QSlider *>(QString("enhancementAmount%1").arg(i));
+            auto *label=window.findChild<QLabel *>(QString("enhancementValue%1").arg(i));
+            if(!slider || !label) qFatal("Enhancement amount controls are missing");
+            const int previous=slider->value();
+            slider->setValue(previous==41 ? 42 : 41);
+            if(label->text()!=QLocale().toString(slider->value())+QLocale().percent())
+                qFatal("Enhancement amount lost regional digits or percent symbol");
+            slider->setValue(previous);
+        }
         const QStringList microphoneToneNames={"Warmth","Boxiness","Clarity","Air"};
         for(int i=0;i<4;++i) {
             auto *slider=window.findChild<QSlider *>(QString("micTone%1").arg(i));
@@ -4295,7 +4305,7 @@ int main(int argc, char **argv) {
     }
     soundcurrent::ProcessingGuard processingGuard;
     auto showConflict=[&](const QString &reason){
-        QMessageBox box(QMessageBox::Warning,"Equalizer conflict",reason,QMessageBox::Ok);
+        QMessageBox box(QMessageBox::Warning,SC_TR("Equalizer conflict"),reason,QMessageBox::Ok);
         box.setTextFormat(Qt::PlainText);
 #ifdef Q_OS_WIN
         if(app.arguments().contains("--windows-live-conflict-test")) {

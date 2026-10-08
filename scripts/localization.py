@@ -93,13 +93,20 @@ def sources():
         # Obvious view literals must be wrapped; machine names/units are explicit exceptions.
         for method, argument in [('setWindowTitle', 0), ('setAccessibleName', 0), ('setToolTip', 0),
                                  ('setPlaceholderText', 0), ('setInformativeText', 0),
-                                 ('finish', 0), ('addButton', 0), ('addTab', 1), ('insertTab', 2), ('button', 0)]:
+                                 ('finish', 0), ('addButton', 0), ('addAction', 0), ('setItemText', 1), ('addTab', 1), ('insertTab', 2), ('button', 0)]:
             for args in calls(code, method):
                 if len(args) <= argument:
                     continue
                 value = literal(args[argument])
                 if value is not None and value not in ('', 'Q', 'Hz', 'dB', 'SoundCurrent EQ', 'SoundCurrent Studio'):
                     raise ValueError(f'Unmarked UI literal in {name}: {method}: {value}')
+        # Named QMessageBox constructors use icon, title, then body.
+        # Explicit titles must be marked; dynamic bodies need separate review.
+        for match in re.finditer(r'^\s*QMessageBox\s+(\w+)\s*\(', code, re.M):
+            for args in calls(code, match.group(1)):
+                value = literal(args[1]) if len(args) > 1 else None
+                if value:
+                    raise ValueError(f'Unmarked UI literal in {name}: dialog title: {value}')
         for method in ('SC_TR', 'text'):
             for args in calls(code, method):
                 value = literal(args[0]) if args else None
