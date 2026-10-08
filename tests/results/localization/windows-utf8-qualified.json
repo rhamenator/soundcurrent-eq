@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-08",
+  "product": "EQ",
+  "applicationSourceCommit": "a191c625708ba87d2b6c652ed537c9c4258f2ae5",
+  "windowsCiRun": 37809336754,
+  "windowsCiConclusion": "success",
+  "vm": "soundcurrent-win11-dev, full independent disk",
+  "installerSha256": "a23bfb13056fd10b09b1f4cae692364f74495175e9d8930d213be168494fc057",
+  "installedExecutableSha256": "a163ab2726693e3474e9a27aa0dd190512106a97c9383dd2298d25175ba55316",
+  "interactiveInstaller": {
+    "desktopSession": 1,
+    "pages": [
+      "welcome",
+      "GPL license",
+      "directory",
+      "audio setup",
+      "finish"
+    ],
+    "exitCode": 0,
+    "driverInstallUnchecked": true,
+    "finishRunUnchecked": true,
+    "unicodePunctuationVerified": true,
+    "audioPageScreenshotInspected": true
+  },
+  "startup": {
+    "observedCommand": "\"C:\\Users\\claude\\AppData\\Local\\Programs\\SoundCurrent EQ\\soundcurrent-eq.exe\" --background",
+    "exclusiveApp": true,
+    "appSession": 3,
+    "backgroundWindowHidden": true,
+    "exeSha256": "A163AB2726693E3474E9A27AA0DD190512106A97C9383DD2298D25175BA55316",
+    "actualSignIn": true,
+    "interactiveObserverSession": 3,
+    "registrationScope": "Actual HKCU Run invocation; registration command mirrors compiled StartupRegistration. GUI checkbox activation is not tested by this script.",
+    "nativeReviewed": false,
+    "product": "EQ",
+    "reopenedSameProcess": true,
+    "quitExited": true
+  },
+  "silentLifecycle": {
+    "scope": "Silent per-user app lifecycle on independent clone; no driver installation/removal or visual qualification",
+    "settingsMarkerPreserved": true,
+    "uninstall": "passed",
+    "unknownFilePreserved": true,
+    "installerSha256": "A23BFB13056FD10B09B1F4CAE692364F74495175E9D8930D213BE168494FC057",
+    "audioDeviceStateUnchanged": true,
+    "nativeReviewed": false,
+    "product": "EQ",
+    "update": "passed"
+  },
+  "reinstalled": {
+    "reinstalled": true,
+    "exeSha256": "A163AB2726693E3474E9A27AA0DD190512106A97C9383DD2298D25175BA55316",
+    "product": "EQ"
+  },
+  "defender": {
+    "AMServiceEnabled": true,
+    "AntivirusEnabled": true,
+    "RealTimeProtectionEnabled": true,
+    "AntivirusSignatureVersion": "1.459.601.0",
+    "priorDetectionDisposition": "Older EQ candidate detection remains unadjudicated; this test does not establish a false positive"
+  },
+  "cleanup": {
+    "priorRunEntryRestored": true,
+    "ownedScheduledTasksRemoved": true
+  },
+  "nativeSpeakerReviewed": false,
+  "limits": [
+    "Installer remains English-only; translation extraction gaps are deferred to second pass.",
+    "GUI startup-checkbox interaction is not claimed by this sign-in observer; per-user registration is separately unit-tested.",
+    "Silent lifecycle preservation checks owned fixtures, not every user file.",
+    "The initial SSH window-handle check was insufficient and is superseded by desktop-session observer evidence."
+  ],
+  "localEvidenceDirectory": "/home/rich/Downloads/SoundCurrent-localization-qa/windows-utf8-final"
+}

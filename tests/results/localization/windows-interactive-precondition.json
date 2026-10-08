@@ -26,6 +26,6 @@
     "furtherLoginAttempts": 0,
     "desktopSession": "quser still reports no signed-in user"
   },
-  "supersededBy": "windows-interactive-installed.json",
-  "currentPrecondition": "resolved: active console session 1 observed; saved credential also validated through Windows LogonUser and saved privately in Login keyring"
+  "supersededBy": "windows-utf8-qualified.json",
+  "currentPrecondition": "resolved: actual console sign-ins and desktop observer tests passed; private Login keyring credential validated"
 }

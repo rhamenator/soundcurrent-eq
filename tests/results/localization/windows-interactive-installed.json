@@ -30,5 +30,6 @@
     "Rebuilt installer visual verification",
     "Actual Windows sign-in startup invocation"
   ],
-  "scope": "Interactive in-place per-user update only. Prior silent lifecycle tests cover uninstall/reinstall; no interactive driver removal or native linguistic certification claimed."
+  "scope": "Interactive in-place per-user update only. Prior silent lifecycle tests cover uninstall/reinstall; no interactive driver removal or native linguistic certification claimed.",
+  "supersededBy": "windows-utf8-qualified.json"
 }

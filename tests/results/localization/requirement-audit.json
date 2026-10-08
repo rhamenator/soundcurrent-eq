@@ -1,6 +1,6 @@
 {
   "date": "2026-10-08",
-  "auditedHead": "6081fd4a25d19b8fd15121e67c5852f9af1f1ac5",
+  "auditedHead": "ee462caa36be105c671d5932e1e5992a38a78638",
   "overallStatus": "incomplete; do not mark full localization goal achieved",
   "firstPassCatalogs": {
     "nonEnglishLocales": 33,
@@ -40,7 +40,8 @@
       "evidence": [
         "tests/results/localization/linux-package/report.json",
         "tests/results/localization/linux-package/current-ci.json",
-        "tests/results/localization/windows-current-installed.json"
+        "tests/results/localization/windows-current-installed.json",
+        "tests/results/localization/windows-utf8-qualified.json"
       ]
     },
     {
@@ -49,7 +50,13 @@
     },
     {
       "requirement": "Interactive installer and actual sign-in startup",
-      "status": "unverified; unit registration and silent installer evidence do not establish these workflows"
+      "status": "verified rebuilt installer text and update; actual sign-in/background/reopen/quit qualified in desktop session; direct GUI checkbox interaction not claimed",
+      "evidence": [
+        "tests/results/localization/windows-utf8-qualified.json",
+        "tests/windows_interactive_localization.ps1",
+        "tests/windows_startup_desktop_observer.ps1",
+        "tests/startup_registration.cpp"
+      ]
     },
     {
       "requirement": "Preserve virtual-driver work",
@@ -85,6 +92,9 @@
     "tests/localization.cpp": "67ea8c54cfba2994483a4240d7c94367f2926c4639b6b9b84ac402ff16551d75",
     "tests/translation_catalogs.py": "b56234843f46f9aa7064fa865c8729289349cfda282586eda6fad12957369355",
     "tests/startup_registration.cpp": "ea1a51cdfc141bd53e3ee631ed061bcf8f9eeb654c9173f38eb0dad099c91578",
-    "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd"
+    "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
+    "tests/results/localization/windows-utf8-qualified.json": "1abaf6ee3fcfbf21ddfa415c2d94ad5f3daba0f98f09f1c9eca4844a4a1d0085",
+    "tests/windows_interactive_localization.ps1": "e5d29e2692db4899c98167f7bee2be1724b1d0495351a9c1dc9a5b976e6f2edd",
+    "tests/windows_startup_desktop_observer.ps1": "f59c6dc395b0a16429ad0fb3bc52cf8f4eb44cb41b2d5598dfe4cf7fac41fc79"
   }
 }
