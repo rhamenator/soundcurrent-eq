@@ -1091,6 +1091,7 @@
   },
   "requiredCompleteLocales": [
     "fr",
-    "de"
+    "de",
+    "es"
   ]
 }

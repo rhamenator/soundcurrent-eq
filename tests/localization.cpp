@@ -56,6 +56,14 @@ int main(int argc,char **argv){
    for(const auto &language:languages())if(language.tag=="fr")require(language.translated==language.total,"French catalog has missing messages");
   }
   {
+   QSettings().setValue("i18n/language","es");Runtime runtime;runtime.initialize();
+   require(text("Filter Q")==QString::fromUtf8("Factor Q del filtro"),"Spanish filter quality caption incorrect");
+   require(text("Flat")==QString::fromUtf8("Plano"),"Spanish flat preset caption incorrect");
+   QDialogButtonBox actions(QDialogButtonBox::Close|QDialogButtonBox::Save);
+   require(actions.button(QDialogButtonBox::Close)->text()==QString::fromUtf8("Cerrar"),"Spanish standard actions stayed English");
+   for(const auto &language:languages())if(language.tag=="es")require(language.translated==language.total,"Spanish catalog has missing messages");
+  }
+  {
    QSettings().setValue("i18n/language","qps-rtl");Runtime runtime;runtime.initialize();
    auto pattern=text("Value %1 / %2");require(pattern.contains("%1")&&pattern.contains("%2"),"Pseudo locale damaged placeholders");
    require(QApplication::layoutDirection()==Qt::RightToLeft,"RTL layout missing");
