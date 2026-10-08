@@ -2103,6 +2103,10 @@ Importați în bibliotecă?</translation>
       <translation>SoundCurrent Audio oferă propria rută de microfon când este instalat. Cu VB-CABLE, EQ-ul simultan pentru microfon și boxe necesită un al doilea cablu instalat separat (A sau B). Selectați acel cablu în aplicațiile de înregistrare. Modul Automat preferă ruta SoundCurrent când este disponibilă.</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio direcționează redarea prin aplicație. Alegeți boxele sau căștile fizice în aplicație. Driverele lor hardware sunt păstrate.</translation>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>Ieșirea virtuală SoundCurrent necesită sunet stereo la 48 kHz în virgulă mobilă</translation>
     </message>

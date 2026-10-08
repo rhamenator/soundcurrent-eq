@@ -2103,6 +2103,10 @@ Zaimportować do biblioteki?</translation>
       <translation>SoundCurrent Audio po instalacji udostępnia własny tor mikrofonu. Z VB-CABLE jednoczesna korekcja mikrofonu i głośników wymaga osobno zainstalowanego drugiego kabla (A lub B). Wybierz ten kabel w aplikacjach nagrywających. Tryb automatyczny preferuje tor SoundCurrent, gdy jest dostępny.</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio kieruje odtwarzany dźwięk przez aplikację. Wybierz fizyczne głośniki lub słuchawki w aplikacji. Ich sterowniki sprzętowe zostają zachowane.</translation>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>Wirtualne wyjście SoundCurrent wymaga dźwięku stereo 48 kHz w formacie zmiennoprzecinkowym</translation>
     </message>

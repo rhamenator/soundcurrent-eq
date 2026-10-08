@@ -2103,6 +2103,10 @@ Import into your library?</source>
       <translation>SoundCurrent Audio proporciona su propia ruta de micrófono cuando está instalado. Con VB-CABLE, la ecualización simultánea de micrófono y altavoces requiere un segundo cable instalado por separado (A o B). Seleccione ese cable en las aplicaciones de grabación. El modo automático prefiere la ruta de SoundCurrent cuando está disponible.</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio dirige la reproducción a través de la aplicación. Elija sus altavoces o auriculares físicos dentro de la aplicación. Sus controladores de hardware se conservan.</translation>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>La salida virtual de SoundCurrent requiere audio estéreo de 48 kHz en coma flotante</translation>
     </message>

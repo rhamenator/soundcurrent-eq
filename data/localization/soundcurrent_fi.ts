@@ -2103,6 +2103,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>SoundCurrent Audio tarjoaa oman mikrofonireitin, kun se on asennettu. VB-CABLE edellyttää erikseen asennettua toista kaapelia (A tai B) mikrofonin ja kaiuttimien samanaikaiseen taajuuskorjaukseen. Valitse tämä kaapeli tallennussovelluksissa. Automaattinen tila suosii SoundCurrent-reittiä, kun se on saatavilla.</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio reitittää toiston sovelluksen kautta. Valitse fyysiset kaiuttimet tai kuulokkeet sovelluksessa. Niiden laiteajurit säilytetään.</translation>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>SoundCurrentin virtuaalilähtö vaatii 48 kHz:n stereoääntä liukulukumuodossa</translation>
     </message>

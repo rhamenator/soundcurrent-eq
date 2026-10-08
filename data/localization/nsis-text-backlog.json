@@ -38,9 +38,9 @@
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 82,
       "kind": "control-caption",
-      "literal": "SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCNativeRouting)",
+      "marked": true,
+      "reviewStatus": "all locale translations exported; language activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",

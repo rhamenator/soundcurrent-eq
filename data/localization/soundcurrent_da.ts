@@ -2103,6 +2103,10 @@ Importér til dit bibliotek?</translation>
       <translation>SoundCurrent Audio leverer sin egen mikrofonroutning, når det er installeret. Med VB-CABLE kræver samtidig mikrofon- og højttaler-EQ et separat installeret andet kabel (A eller B). Vælg dette kabel i optageapps. Automatisk tilstand foretrækker SoundCurrent-routningen, når den er tilgængelig.</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio sender afspilningen gennem appen. Vælg dine fysiske højttalere eller hovedtelefoner i appen. Deres hardwaredrivere bevares.</translation>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>SoundCurrents virtuelle udgang kræver stereolyd ved 48 kHz i flydende komma-format</translation>
     </message>

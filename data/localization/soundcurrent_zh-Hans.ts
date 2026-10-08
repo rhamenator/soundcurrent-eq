@@ -2103,6 +2103,10 @@ Import into your library?</source>
       <translation>安装后，SoundCurrent Audio 会提供自己的麦克风路由。使用 VB-CABLE 时，同时处理麦克风和扬声器均衡需要另行安装第二条线缆（A 或 B）。请在录音应用中选择该线缆。自动模式会优先使用可用的 SoundCurrent 路由。</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio 将播放的音频经由此应用传送。请在应用内选择实际的扬声器或耳机。它们的硬件驱动程序会被保留。</translation>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>SoundCurrent 虚拟输出需要 48 kHz 立体声浮点音频</translation>
     </message>

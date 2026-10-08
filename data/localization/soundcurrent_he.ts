@@ -2103,6 +2103,10 @@ Import into your library?</source>
       <translation>SoundCurrent Audio מספק נתיב מיקרופון משלו כשהוא מותקן. עם VB-CABLE, שימוש בו־זמני באקולייזר למיקרופון ולרמקולים דורש כבל שני המותקן בנפרד (A או B). יש לבחור כבל זה באפליקציות הקלטה. מצב אוטומטי מעדיף את נתיב SoundCurrent כשהוא זמין.</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio מנתב את ההשמעה דרך היישום. בחרו את הרמקולים או האוזניות הפיזיים בתוך היישום. מנהלי ההתקנים של החומרה נשמרים.</translation>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>הפלט הווירטואלי של SoundCurrent דורש שמע סטריאו של 48 kHz בתבנית נקודה צפה</translation>
     </message>

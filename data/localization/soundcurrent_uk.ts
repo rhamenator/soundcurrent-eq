@@ -2103,6 +2103,10 @@ Import into your library?</source>
       <translation>SoundCurrent Audio після встановлення надає власний мікрофонний аудіотракт. Із VB-CABLE одночасний мікрофонний і акустичний EQ потребує окремо встановленого другого кабелю (A або B). Виберіть цей кабель у програмах запису. Автоматичний вибір надає перевагу аудіотракту SoundCurrent, якщо він доступний.</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio спрямовує відтворення через програму. Виберіть у програмі свої фізичні динаміки або навушники. Їхні апаратні драйвери зберігаються.</translation>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>Віртуальний вихід SoundCurrent потребує стереоаудіо 48 kHz у форматі з рухомою комою</translation>
     </message>

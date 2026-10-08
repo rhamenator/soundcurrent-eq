@@ -2103,6 +2103,10 @@ Import into your library?</source>
       <translation>SoundCurrent Audio इंस्टॉल होने पर अपना माइक्रोफ़ोन रूट प्रदान करता है। VB-CABLE में माइक्रोफ़ोन और स्पीकर EQ साथ चलाने के लिए अलग से इंस्टॉल की गई दूसरी केबल (A या B) आवश्यक है। रिकॉर्डिंग ऐप में वह केबल चुनें। स्वचालित विकल्प उपलब्ध होने पर SoundCurrent रूट को प्राथमिकता देता है।</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio प्लेबैक को ऐप के ज़रिए भेजता है। ऐप में अपने वास्तविक स्पीकर या हेडफ़ोन चुनें। उनके हार्डवेयर ड्राइवर सुरक्षित रखे जाते हैं।</translation>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>SoundCurrent वर्चुअल आउटपुट के लिए 48 kHz स्टीरियो फ़्लोटिंग-पॉइंट ऑडियो चाहिए</translation>
     </message>

@@ -2103,6 +2103,10 @@ Import into your library?</source>
       <translation>يوفر SoundCurrent Audio مسار الميكروفون الخاص به عند تثبيته. مع VB-CABLE، تتطلب معادلة صوت الميكروفون ومكبرات الصوت في الوقت نفسه كابلًا ثانيًا مثبتًا بشكل منفصل (A أو B). اختر ذلك الكابل في تطبيقات التسجيل. يفضّل الوضع التلقائي مسار SoundCurrent عند توفره.</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>يوجّه SoundCurrent Audio تشغيل الصوت عبر التطبيق. اختر مكبرات الصوت أو سماعات الرأس الفعلية داخل التطبيق. تبقى برامج تشغيل أجهزتها محفوظة.</translation>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>يتطلب خرج SoundCurrent الافتراضي صوتًا ستيريو بتردد 48 kHz وتنسيق الفاصلة العائمة</translation>
     </message>

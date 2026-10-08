@@ -2103,6 +2103,10 @@ In Ihre Bibliothek importieren?</translation>
       <translation>SoundCurrent Audio stellt nach der Installation einen eigenen Mikrofon-Audioweg bereit. Bei VB-CABLE erfordert der gleichzeitige Mikrofon- und Lautsprecher-EQ ein separat installiertes zweites Kabel (A oder B). Wählen Sie dieses Kabel in Aufnahme-Apps aus. Automatisch bevorzugt den SoundCurrent-Audioweg, wenn er verfügbar ist.</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio leitet die Wiedergabe durch die App. Wählen Sie Ihre physischen Lautsprecher oder Kopfhörer in der App aus. Deren Hardwaretreiber bleiben erhalten.</translation>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>Die virtuelle SoundCurrent-Ausgabe benötigt 48-kHz-Stereo-Audio im Gleitkommaformat</translation>
     </message>

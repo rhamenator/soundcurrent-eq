@@ -15,6 +15,25 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_native_routing_notice_is_native_only_and_name_preserved(self):
+        root = Path(__file__).resolve().parents[1]
+        source = 'SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.'
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text()
+            if 'native' not in installer.stem:
+                self.assertNotIn('SCNativeRouting', code)
+            else:
+                self.assertRegex(code, r'\$\{NSD_CreateLabel\}[^\n]+"\$\(SCNativeRouting\)"')
+                self.assertEqual(re.findall(r'^LangString SCNativeRouting \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+            message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
+            self.assertTrue(catalog.finished(message), row['tag'])
+            translated = message.findtext('translation')
+            catalog.validate_text(source, translated)
+            for name in ('Other driver', 'soundcurrent audio', 'SoundCurrent Audio SoundCurrent Audio'):
+                with self.assertRaisesRegex(ValueError, 'External installer label changed'):
+                    catalog.validate_text(source, translated.replace('SoundCurrent Audio', name))
+
     def test_native_existing_driver_notice_preserves_names(self):
         root = Path(__file__).resolve().parents[1]
         source = 'SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.'
@@ -156,7 +175,7 @@ class CatalogTests(unittest.TestCase):
             for variants in result['languages'].values():
                 self.assertEqual(set(variants), {'cable', 'native'})
                 for routeName, route in variants.items():
-                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed'} | ({'SCCableRestart'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent'}))
+                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed'} | ({'SCCableRestart'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting'}))
                     self.assertEqual(set(route['nsisEscaped']), set(route['captions']))
 
     def test_installer_checkbox_catalog_sources_and_names(self):

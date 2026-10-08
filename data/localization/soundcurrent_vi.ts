@@ -2103,6 +2103,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>SoundCurrent Audio cung cấp tuyến micrô riêng khi được cài đặt. Với VB-CABLE, EQ micrô và loa đồng thời cần một cáp thứ hai (A hoặc B) được cài đặt riêng. Chọn cáp đó trong ứng dụng ghi âm. Chế độ tự động ưu tiên tuyến SoundCurrent khi có sẵn.</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio định tuyến âm thanh phát qua ứng dụng. Chọn loa hoặc tai nghe vật lý của bạn trong ứng dụng. Trình điều khiển phần cứng của chúng được giữ nguyên.</translation>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>Đầu ra ảo SoundCurrent yêu cầu âm thanh stereo 48 kHz ở định dạng dấu phẩy động</translation>
     </message>

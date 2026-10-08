@@ -2103,6 +2103,10 @@ Import into your library?</source>
       <translation>SoundCurrent Audio มีเส้นทางไมโครโฟนของตนเองเมื่อติดตั้งแล้ว สำหรับ VB-CABLE การใช้ EQ ไมโครโฟนและลำโพงพร้อมกันต้องมีสายตัวที่สอง (A หรือ B) ที่ติดตั้งแยกต่างหาก เลือกสายนั้นในแอปบันทึกเสียง โหมดอัตโนมัติจะเลือกเส้นทาง SoundCurrent ก่อนเมื่อมีให้ใช้</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio ส่งเสียงที่เล่นผ่านแอป เลือกลำโพงหรือหูฟังจริงของคุณภายในแอป ไดรเวอร์ฮาร์ดแวร์ของอุปกรณ์เหล่านั้นจะยังคงอยู่</translation>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>เอาต์พุตเสมือน SoundCurrent ต้องใช้เสียงสเตอริโอ 48 kHz แบบทศนิยมลอยตัว</translation>
     </message>

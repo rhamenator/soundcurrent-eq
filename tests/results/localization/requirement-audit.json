@@ -246,5 +246,9 @@
   "secondPassInstallerNativePresent": {
     "report": "tests/results/localization/second-pass-installer-native-present.json",
     "status": "native registration notice made conditional and translated; language activation and runtime qualification pending"
+  },
+  "secondPassInstallerNativeRouting": {
+    "report": "tests/results/localization/second-pass-installer-native-routing.json",
+    "status": "native output/routing explanation translated; locale activation and runtime qualification pending"
   }
 }
