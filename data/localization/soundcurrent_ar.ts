@@ -219,6 +219,10 @@ Import into your library?</source>
       <translation>تطبيق معادلة الصوت المقترحة</translation>
     </message>
     <message>
+      <source>Audio bridge did not start</source>
+      <translation>لم يبدأ جسر الصوت</translation>
+    </message>
+    <message>
       <source>Audio driver setup</source>
       <translation>إعداد برنامج تشغيل الصوت</translation>
     </message>
@@ -897,8 +901,16 @@ Import into your library?</source>
       <translation>تضمين الإصدارات التجريبية</translation>
     </message>
     <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>ثبّت SoundCurrent Audio باستخدام إعداد برنامج تشغيل الصوت، ثم أعد فتح التطبيق لتفعيل مسار الميكروفون.</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>ثبّت الحزم الجديدة فوق هذا الإصدار — لا حاجة لإلغاء التثبيت. تُحفظ الإعدادات المسبقة وملفات التعريف. احفظ عملك، واستخدم إنهاء (إغلاق النافذة يُبقي التطبيق قيد التشغيل)، وثبّت التحديث، ثم أعد فتح التطبيق.</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>ثبّت مسار الصوت في Windows باستخدام إعداد برنامج تشغيل الصوت، ثم أعد فتح التطبيق.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
@@ -907,6 +919,10 @@ Import into your library?</source>
     <message>
       <source>Interface language</source>
       <translation>لغة الواجهة</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>إعدادات معادل الصوت غير صالحة</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
@@ -919,6 +935,10 @@ Import into your library?</source>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>ملف تعريف مضخم الصوت المقاس غير صالح. يتطلب طرازًا ومصدر قياس عبر HTTPS وظروف القياس و1–16 مرشحًا من أنواع PK/LS/HS ضمن الحدود. راجع تنسيق ملف التعريف في README.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>ضبط الميكروفون غير صالح</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
@@ -1069,6 +1089,10 @@ Import into your library?</source>
     <message>
       <source>Microphone EQ is off.</source>
       <translation>معادل صوت الميكروفون متوقف.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>لم يبدأ جسر صوت الميكروفون</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
@@ -1526,6 +1550,10 @@ Import into your library?</source>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
       <translation>تم فصل المخرج المحدد. تم التحويل إلى اختيار المخرج تلقائيًا.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>مكبرات الصوت المحددة غير متصلة</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>

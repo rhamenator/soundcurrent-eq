@@ -1,7 +1,7 @@
 {
   "scope": "Literal C++ exceptions and selected view calls across src, NSIS UI candidates, Python script diagnostics. Dynamic/composed strings, shell/PowerShell messages, native dialogs and data-driven names require further review. Not whole-application coverage.",
-  "catalogSourceCount": 441,
-  "candidateCount": 87,
+  "catalogSourceCount": 448,
+  "candidateCount": 82,
   "candidates": [
     {
       "file": "src/dsp.cpp",
@@ -434,41 +434,6 @@
       "file": "src/windows_managed_route.h",
       "call": "runtime_error",
       "source": "Audio route recovery helper could not start. Repair or reinstall SoundCurrent.",
-      "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
-    },
-    {
-      "file": "src/windows_platform.inc",
-      "call": "runtime_error",
-      "source": "Install the Windows audio route using Audio driver setup, then reopen the app.",
-      "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
-    },
-    {
-      "file": "src/windows_platform.inc",
-      "call": "runtime_error",
-      "source": "Selected speakers are disconnected",
-      "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
-    },
-    {
-      "file": "src/windows_platform.inc",
-      "call": "runtime_error",
-      "source": "Invalid equalizer settings",
-      "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
-    },
-    {
-      "file": "src/windows_platform.inc",
-      "call": "runtime_error",
-      "source": "Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.",
-      "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
-    },
-    {
-      "file": "src/windows_platform.inc",
-      "call": "runtime_error",
-      "source": "Invalid microphone tuning",
       "inCatalog": false,
       "classification": "needs reachability and runtime translation review"
     },

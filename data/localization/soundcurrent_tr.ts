@@ -219,6 +219,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Önerilen EQ'yu uygula</translation>
     </message>
     <message>
+      <source>Audio bridge did not start</source>
+      <translation>Ses köprüsü başlatılamadı</translation>
+    </message>
+    <message>
       <source>Audio driver setup</source>
       <translation>Ses sürücüsü kurulumu</translation>
     </message>
@@ -897,8 +901,16 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Önizleme sürümlerini dâhil et</translation>
     </message>
     <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Ses sürücüsü kurulumu üzerinden SoundCurrent Audio’yu yükleyin, ardından mikrofon yolunu etkinleştirmek için uygulamayı yeniden açın.</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Yeni paketleri bu sürümün üzerine yükleyin — kaldırmanız gerekmez. Hazır ayarlar ve profiller korunur. Çalışmanızı kaydedin, uygulamadan çıkın (pencereyi kapatmak uygulamayı çalışır durumda bırakır), güncellemeyi yükleyip yeniden açın.</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Ses sürücüsü kurulumu üzerinden Windows ses yolunu yükleyin, ardından uygulamayı yeniden açın.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
@@ -907,6 +919,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Interface language</source>
       <translation>Arayüz dili</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Geçersiz ekolayzır ayarları</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
@@ -919,6 +935,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>Geçersiz ölçülmüş amplifikatör profili. Model, HTTPS ölçüm kaynağı, koşullar ve sınırlar içinde 1–16 PK/LS/HS filtresi gerekir. README'deki profil biçimine bakın.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Geçersiz mikrofon ayarı</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
@@ -1069,6 +1089,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Microphone EQ is off.</source>
       <translation>Mikrofon EQ'su kapalı.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>Mikrofon ses köprüsü başlatılamadı</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
@@ -1526,6 +1550,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
       <translation>Seçili çıkışın bağlantısı kesildi. Otomatik çıkışa geçildi.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>Seçilen hoparlörlerin bağlantısı kesildi</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>

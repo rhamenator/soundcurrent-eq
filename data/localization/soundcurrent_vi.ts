@@ -219,6 +219,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Áp dụng EQ đề xuất</translation>
     </message>
     <message>
+      <source>Audio bridge did not start</source>
+      <translation>Cầu nối âm thanh không khởi động được</translation>
+    </message>
+    <message>
       <source>Audio driver setup</source>
       <translation>Thiết lập driver âm thanh</translation>
     </message>
@@ -897,8 +901,16 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Bao gồm bản phát hành xem trước</translation>
     </message>
     <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Cài đặt SoundCurrent Audio bằng chức năng thiết lập trình điều khiển âm thanh, rồi mở lại ứng dụng để bật tuyến micrô.</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Cài gói mới đè lên phiên bản này — không cần gỡ cài đặt. Các thiết lập sẵn và cấu hình được giữ nguyên. Lưu công việc, chọn Thoát (chỉ đóng cửa sổ thì ứng dụng vẫn chạy), cài bản cập nhật rồi mở lại.</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Cài đặt tuyến âm thanh Windows bằng chức năng thiết lập trình điều khiển âm thanh, rồi mở lại ứng dụng.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
@@ -907,6 +919,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Interface language</source>
       <translation>Ngôn ngữ giao diện</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Thiết lập bộ cân bằng âm không hợp lệ</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
@@ -919,6 +935,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>Cấu hình ampli từ phép đo không hợp lệ. Cần có mẫu, nguồn đo HTTPS, điều kiện đo và 1–16 bộ lọc PK/LS/HS trong giới hạn. Xem định dạng cấu hình trong README.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Điều chỉnh micrô không hợp lệ</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
@@ -1069,6 +1089,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Microphone EQ is off.</source>
       <translation>EQ micrô đã tắt.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>Cầu nối âm thanh micrô không khởi động được</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
@@ -1526,6 +1550,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
       <translation>Đầu ra đã chọn đã bị rút. Đã chuyển sang chọn đầu ra tự động.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>Loa đã chọn bị ngắt kết nối</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>

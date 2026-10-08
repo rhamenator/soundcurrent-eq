@@ -219,6 +219,10 @@ Import into your library?</source>
       <translation>ใช้ EQ ที่แนะนำ</translation>
     </message>
     <message>
+      <source>Audio bridge did not start</source>
+      <translation>ไม่สามารถเริ่มสะพานเสียงได้</translation>
+    </message>
+    <message>
       <source>Audio driver setup</source>
       <translation>ตั้งค่าไดรเวอร์เสียง</translation>
     </message>
@@ -897,8 +901,16 @@ Import into your library?</source>
       <translation>รวมรุ่นพรีวิว</translation>
     </message>
     <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>ติดตั้ง SoundCurrent Audio ผ่านการตั้งค่าไดรเวอร์เสียง แล้วเปิดแอปใหม่เพื่อเปิดใช้เส้นทางไมโครโฟน</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>ติดตั้งแพ็กเกจใหม่ทับเวอร์ชันนี้ได้โดยไม่ต้องถอนการติดตั้ง พรีเซ็ตและโปรไฟล์จะคงอยู่ บันทึกงาน ใช้ ออกจากแอป (การปิดหน้าต่างจะทำให้แอปยังทำงานอยู่) ติดตั้งอัปเดต แล้วเปิดใหม่</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>ติดตั้งเส้นทางเสียง Windows ผ่านการตั้งค่าไดรเวอร์เสียง แล้วเปิดแอปใหม่</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
@@ -907,6 +919,10 @@ Import into your library?</source>
     <message>
       <source>Interface language</source>
       <translation>ภาษาของส่วนติดต่อ</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>การตั้งค่าอีควอไลเซอร์ไม่ถูกต้อง</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
@@ -919,6 +935,10 @@ Import into your library?</source>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>โปรไฟล์เครื่องขยายเสียงที่วัดได้ไม่ถูกต้อง ต้องมีรุ่น แหล่งข้อมูลการวัด HTTPS เงื่อนไข และฟิลเตอร์ PK/LS/HS จำนวน 1–16 ตัวที่มีค่าอยู่ในขอบเขต ดูรูปแบบโปรไฟล์ใน README</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>การปรับไมโครโฟนไม่ถูกต้อง</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
@@ -1069,6 +1089,10 @@ Import into your library?</source>
     <message>
       <source>Microphone EQ is off.</source>
       <translation>EQ ไมโครโฟนปิดอยู่</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>ไม่สามารถเริ่มสะพานเสียงไมโครโฟนได้</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
@@ -1526,6 +1550,10 @@ Import into your library?</source>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
       <translation>เอาต์พุตที่เลือกถูกถอดออกแล้ว เปลี่ยนเป็นเอาต์พุตอัตโนมัติ</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>ลำโพงที่เลือกถูกตัดการเชื่อมต่อ</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>

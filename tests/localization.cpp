@@ -246,6 +246,16 @@ int main(int argc,char **argv){
    require(resolve("sw-TZ")=="sw","Swahili regional fallback incorrect");
    for(const auto &language:languages())if(language.tag=="sw")require(language.translated==language.total,"Swahili catalog has missing messages");
   }
+  for(const auto &language:languages()) {
+   if(language.tag=="en")continue;
+   QSettings().setValue("i18n/language",language.tag);Runtime runtime;runtime.initialize();
+   for(const char *source:{"Selected speakers are disconnected","Audio bridge did not start","Install the Windows audio route using Audio driver setup, then reopen the app."}) {
+    const auto translated=text(source);
+    require(!translated.isEmpty()&&translated!=QString::fromUtf8(source),"Windows adapter message fell back to English in a populated locale");
+    try {throw std::runtime_error(translated.toStdString());}
+    catch(const std::runtime_error &error) {require(QString::fromUtf8(error.what())==translated,"Translated adapter exception lost Unicode text");}
+   }
+  }
   {
    QSettings().setValue("i18n/language","qps-rtl");Runtime runtime;runtime.initialize();
    auto pattern=text("Value %1 / %2");require(pattern.contains("%1")&&pattern.contains("%2"),"Pseudo locale damaged placeholders");

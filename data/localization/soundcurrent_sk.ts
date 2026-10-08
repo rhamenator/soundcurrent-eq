@@ -219,6 +219,10 @@ Importovať do vašej knižnice?</translation>
       <translation>Použiť odporúčané nastavenie EQ</translation>
     </message>
     <message>
+      <source>Audio bridge did not start</source>
+      <translation>Zvukový most sa nespustil</translation>
+    </message>
+    <message>
       <source>Audio driver setup</source>
       <translation>Inštalácia zvukového ovládača</translation>
     </message>
@@ -897,8 +901,16 @@ Importovať do vašej knižnice?</translation>
       <translation>Zahrnúť predbežné verzie</translation>
     </message>
     <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Nainštalujte SoundCurrent Audio pomocou nastavenia zvukového ovládača a potom aplikáciu znovu otvorte, aby sa aktivovala mikrofónová cesta.</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Nové balíky nainštalujte cez túto verziu — odinštalovanie nie je potrebné. Predvoľby a profily sa zachovajú. Uložte svoju prácu, použite Ukončiť (zatvorením okna aplikácia zostane spustená), nainštalujte aktualizáciu a znovu ju otvorte.</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Nainštalujte zvukovú cestu Windows pomocou nastavenia zvukového ovládača a potom aplikáciu znovu otvorte.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
@@ -907,6 +919,10 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>Interface language</source>
       <translation>Jazyk rozhrania</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Neplatné nastavenia ekvalizéra</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
@@ -919,6 +935,10 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>Neplatný nameraný profil zosilňovača. Vyžaduje model, zdroj merania cez HTTPS, podmienky a 1–16 filtrov PK/LS/HS v povolených rozsahoch. Formát profilu je uvedený v README.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Neplatné nastavenie mikrofónu</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
@@ -1069,6 +1089,10 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>Microphone EQ is off.</source>
       <translation>Mikrofónový EQ je vypnutý.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>Zvukový most mikrofónu sa nespustil</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
@@ -1526,6 +1550,10 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
       <translation>Vybraný výstup bol odpojený. Prepnuté na automatický výstup.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>Vybrané reproduktory sú odpojené</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>

@@ -219,6 +219,10 @@ Importați în bibliotecă?</translation>
       <translation>Aplicați EQ-ul sugerat</translation>
     </message>
     <message>
+      <source>Audio bridge did not start</source>
+      <translation>Puntea audio nu a pornit</translation>
+    </message>
+    <message>
       <source>Audio driver setup</source>
       <translation>Configurare driver audio</translation>
     </message>
@@ -897,8 +901,16 @@ Importați în bibliotecă?</translation>
       <translation>Includeți versiuni preliminare</translation>
     </message>
     <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Instalează SoundCurrent Audio prin configurarea driverului audio, apoi redeschide aplicația pentru a activa ruta microfonului.</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Instalați pachetele noi peste această versiune — dezinstalarea nu este necesară. Presetările și profilurile sunt păstrate. Salvați lucrul, folosiți Ieșire (închiderea ferestrei o păstrează în funcțiune), instalați actualizarea, apoi redeschideți.</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Instalează ruta audio Windows prin configurarea driverului audio, apoi redeschide aplicația.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
@@ -907,6 +919,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Interface language</source>
       <translation>Limba interfeței</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Setări ale egalizatorului nevalide</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
@@ -919,6 +935,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>Profil măsurat de amplificator nevalid. Necesită model, sursă de măsurare HTTPS, condiții și 1–16 filtre PK/LS/HS în limite. Consultați formatul profilului în README.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Reglaj al microfonului nevalid</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
@@ -1069,6 +1089,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Microphone EQ is off.</source>
       <translation>EQ-ul microfonului este oprit.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>Puntea audio a microfonului nu a pornit</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
@@ -1526,6 +1550,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
       <translation>Ieșirea selectată a fost deconectată. S-a trecut la ieșire automată.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>Difuzoarele selectate sunt deconectate</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>

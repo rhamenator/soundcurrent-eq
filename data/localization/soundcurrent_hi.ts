@@ -219,6 +219,10 @@ Import into your library?</source>
       <translation>सुझाया गया EQ लागू करें</translation>
     </message>
     <message>
+      <source>Audio bridge did not start</source>
+      <translation>ऑडियो ब्रिज शुरू नहीं हुआ</translation>
+    </message>
+    <message>
       <source>Audio driver setup</source>
       <translation>ऑडियो ड्राइवर सेटअप</translation>
     </message>
@@ -897,8 +901,16 @@ Import into your library?</source>
       <translation>प्रीव्यू रिलीज़ शामिल करें</translation>
     </message>
     <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>ऑडियो ड्राइवर सेटअप से SoundCurrent Audio इंस्टॉल करें, फिर माइक्रोफ़ोन रूट चालू करने के लिए ऐप दोबारा खोलें।</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>इस संस्करण के ऊपर नए पैकेज इंस्टॉल करें — अनइंस्टॉल करने की आवश्यकता नहीं है। प्रीसेट और प्रोफ़ाइल सुरक्षित रहते हैं। अपना काम सहेजें, ऐप से बाहर निकलें (केवल विंडो बंद करने से ऐप चलता रहता है), अपडेट इंस्टॉल करें और फिर दोबारा खोलें।</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>ऑडियो ड्राइवर सेटअप से Windows ऑडियो रूट इंस्टॉल करें, फिर ऐप दोबारा खोलें।</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
@@ -907,6 +919,10 @@ Import into your library?</source>
     <message>
       <source>Interface language</source>
       <translation>इंटरफ़ेस की भाषा</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>अमान्य इक्वलाइज़र सेटिंग्स</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
@@ -919,6 +935,10 @@ Import into your library?</source>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>मापी गई ऐम्प्लिफ़ायर प्रोफ़ाइल अमान्य है। मॉडल, HTTPS माप स्रोत, माप की स्थितियाँ और सीमा के भीतर 1–16 PK/LS/HS फ़िल्टर आवश्यक हैं। README में प्रोफ़ाइल प्रारूप देखें।</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>अमान्य माइक्रोफ़ोन समायोजन</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
@@ -1069,6 +1089,10 @@ Import into your library?</source>
     <message>
       <source>Microphone EQ is off.</source>
       <translation>माइक्रोफ़ोन EQ बंद है।</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>माइक्रोफ़ोन ऑडियो ब्रिज शुरू नहीं हुआ</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
@@ -1526,6 +1550,10 @@ Import into your library?</source>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
       <translation>चयनित आउटपुट डिस्कनेक्ट हो गया। स्वचालित आउटपुट पर स्विच किया गया।</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>चुने गए स्पीकर डिस्कनेक्ट हैं</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>

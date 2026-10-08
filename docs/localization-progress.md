@@ -14,7 +14,7 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 ## Current checkpoint
 
-- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr, sv, da, nb, fi, ro, hu, nn, ar, he, fa, zh-Hans, zh-Hant, ja, ko, hi, id, vi, th, sw; 441 extracted messages each. These are unverified translations; nativeReviewed remains false.
+- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr, sv, da, nb, fi, ro, hu, nn, ar, he, fa, zh-Hans, zh-Hant, ja, ko, hi, id, vi, th, sw; 448 extracted messages each. These are unverified translations; nativeReviewed remains false.
 - All original target locales and added Nynorsk have populated current catalogs; omitted application messages still require the second pass. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
 - Coverage is distinct from contextual AI review, native-speaker verification and runtime qualification. Checkpoint reports in tests/results/localization identify tested catalogs, platforms and scopes.
 - Runtime supports separate UI language and number/date locale selection, regional/script fallback, pseudo localization and RTL. Maintenance preserves unfinished edits/comments and rejects unsupported numerus before rewriting.
@@ -421,3 +421,19 @@ All 441/441 current Swahili catalog entries are populated. Required-complete and
 Added `scripts/localization_inventory.py` and its generated `tests/results/localization/source-inventory.json`. This read-only discovery aid scans literal C++ exceptions and selected view calls across all source files, NSIS candidates and Python diagnostics. Counts are candidates, not confirmed untranslated user messages. Dynamic/composed strings, shell/PowerShell helpers, native dialogs and data-driven names still require review. Current catalog completeness checks continue to pass.
 
 Confirmed first adapter targets: missing Windows audio-route instructions, disconnected speakers, invalid equalizer/microphone settings; Studio also has live-layout and invalid Studio-setting messages. Translate at the Qt adapter/view boundary while preserving backend identifiers and numeric processing. Installer strings require their own language selection and catalog workflow. The existing full Linux 82/82 (EQ) and 84/84 (Studio) results predate this informational tooling change; no new runtime qualification is claimed.
+
+### Second-pass Windows adapter errors in progress
+
+Qt adapter errors now use translation markers; a regression guard rejects direct untranslated exception literals. Seven new EQ / nine new Studio source messages entered the catalogs, including bridge-start fallback errors. German and French translations have been supplied; other locales remain unfinished and fall back to English. The required-complete gate is intentionally failing until the new translations are filled. Seven catalog-maintenance regressions passed in each repository. No Windows runtime qualification or new full-suite pass is claimed.
+
+Second-pass adapter translation checkpoint: German, French, Spanish, Italian, European/Brazilian Portuguese, Dutch and Polish now populate all newly exposed adapter messages. Structural checks passed for these eight locales; seven catalog-maintenance regression tests passed in each repository. Other locales still need the seven EQ / nine Studio new messages, so the global completeness gate remains failing. Work remains local until that batch is complete; translations remain unverified.
+
+Second-pass adapter translation checkpoint: added Czech, Slovak, Ukrainian, Russian, Greek and Turkish. Fourteen locales now populate all newly exposed adapter messages and pass structural checks. Seven catalog-maintenance regressions passed in each repository. The other nineteen non-English locales still need these messages, so the global completeness gate remains failing. Changes remain local; runtime qualification for this batch is pending and translations are unverified.
+
+Second-pass adapter translation checkpoint: added Swedish, Danish, Norwegian Bokmål/Nynorsk, Finnish, Romanian and Hungarian. Twenty-one locales now populate all newly exposed adapter messages and pass structural checks. Seven catalog-maintenance regressions passed in each repository. Twelve non-English locales still need these messages; the global completeness gate remains failing. Work remains local, translations unverified and runtime qualification pending.
+
+Second-pass adapter translation checkpoint: added Arabic, Hebrew, Persian, Simplified/Traditional Chinese, Japanese and Korean. Twenty-eight locales now populate all newly exposed adapter messages and pass structural checks. Seven catalog-maintenance regressions passed in each repository. Hindi, Indonesian, Vietnamese, Thai and Swahili still need these messages; the global completeness gate remains failing. Work remains local, translations unverified and runtime qualification pending.
+
+### Second-pass Qt Windows adapter messages complete
+
+All 33 non-English locales now cover the new seven EQ / nine Studio messages. Global required-complete and structural checks pass. Both apps rebuilt and passed two focused Linux checks; compiled message loading and Unicode exception round-trip run across non-English locales. The adapter rejects unmarked literal exception messages in source regression checks. Backend diagnostics and installers remain separate second-pass work. Translations are unverified; Windows/device/installer qualification is pending. Earlier in-progress checkpoints describe historical states.

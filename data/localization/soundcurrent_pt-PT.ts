@@ -219,6 +219,10 @@ Importar para a sua biblioteca?</translation>
       <translation>Aplicar equalização sugerida</translation>
     </message>
     <message>
+      <source>Audio bridge did not start</source>
+      <translation>A ponte de áudio não iniciou</translation>
+    </message>
+    <message>
       <source>Audio driver setup</source>
       <translation>Configuração do controlador de áudio</translation>
     </message>
@@ -897,8 +901,16 @@ Importar para a sua biblioteca?</translation>
       <translation>Incluir versões de pré-lançamento</translation>
     </message>
     <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Instale o SoundCurrent Audio através da configuração do controlador de áudio e reabra a aplicação para ativar o encaminhamento do microfone.</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Instale os novos pacotes sobre esta versão; não é necessário desinstalar. Os predefinidos e perfis são mantidos. Guarde o trabalho, use Sair (fechar a janela mantém a aplicação em execução), instale a atualização e volte a abrir.</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Instale o encaminhamento de áudio do Windows através da configuração do controlador de áudio e reabra a aplicação.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
@@ -907,6 +919,10 @@ Importar para a sua biblioteca?</translation>
     <message>
       <source>Interface language</source>
       <translation>Idioma da interface</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Definições do equalizador inválidas</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
@@ -919,6 +935,10 @@ Importar para a sua biblioteca?</translation>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>Perfil medido do amplificador inválido. Requer modelo, fonte de medição HTTPS, condições e 1–16 filtros PK/LS/HS dentro dos limites. Consulte o formato do perfil no README.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Ajuste do microfone inválido</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
@@ -1069,6 +1089,10 @@ Importar para a sua biblioteca?</translation>
     <message>
       <source>Microphone EQ is off.</source>
       <translation>A equalização do microfone está desativada.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>A ponte de áudio do microfone não iniciou</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
@@ -1526,6 +1550,10 @@ Importar para a sua biblioteca?</translation>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
       <translation>A saída selecionada foi desligada. Mudou para a saída automática.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>As colunas selecionadas estão desligadas</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>

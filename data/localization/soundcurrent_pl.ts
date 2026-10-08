@@ -219,6 +219,10 @@ Zaimportować do biblioteki?</translation>
       <translation>Zastosuj zalecaną korekcję</translation>
     </message>
     <message>
+      <source>Audio bridge did not start</source>
+      <translation>Most audio nie został uruchomiony</translation>
+    </message>
+    <message>
       <source>Audio driver setup</source>
       <translation>Konfiguracja sterownika audio</translation>
     </message>
@@ -897,8 +901,16 @@ Zaimportować do biblioteki?</translation>
       <translation>Uwzględniaj wersje przedpremierowe</translation>
     </message>
     <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Zainstaluj SoundCurrent Audio za pomocą konfiguracji sterownika audio, a następnie ponownie otwórz aplikację, aby włączyć tor mikrofonu.</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Zainstaluj nowe pakiety na tej wersji — odinstalowanie nie jest potrzebne. Ustawienia i profile są zachowane. Zapisz pracę, wybierz Zakończ (zamknięcie okna pozostawia aplikację uruchomioną), zainstaluj aktualizację i otwórz ponownie.</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Zainstaluj tor audio systemu Windows za pomocą konfiguracji sterownika audio, a następnie ponownie otwórz aplikację.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
@@ -907,6 +919,10 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Interface language</source>
       <translation>Język interfejsu</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Nieprawidłowe ustawienia korektora</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
@@ -919,6 +935,10 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>Nieprawidłowy zmierzony profil wzmacniacza. Wymaga modelu, źródła pomiaru HTTPS, warunków oraz 1–16 filtrów PK/LS/HS w dozwolonych granicach. Zobacz format profilu w README.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Nieprawidłowe dostrojenie mikrofonu</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
@@ -1069,6 +1089,10 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Microphone EQ is off.</source>
       <translation>Korekcja mikrofonu jest wyłączona.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>Most audio mikrofonu nie został uruchomiony</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
@@ -1526,6 +1550,10 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
       <translation>Wybrane wyjście zostało odłączone. Przełączono na wyjście automatyczne.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>Wybrane głośniki są odłączone</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>

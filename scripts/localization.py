@@ -73,7 +73,17 @@ def marked_sources(directory):
     return out
 
 
+def check_platform_errors(code):
+    """Qt adapter errors are user-facing; backend diagnostics are separate."""
+    for args in calls(code, 'runtime_error'):
+        if args and literal(args[0]) is not None:
+            raise ValueError('Unmarked Windows adapter error: ' + literal(args[0]))
+
+
 def sources():
+    adapter = ROOT / 'src/windows_platform.inc'
+    if adapter.exists():
+        check_platform_errors(adapter.read_text(encoding='utf-8'))
     out = marked_sources(ROOT / 'src')
     for name in UI_SOURCES:
         path = ROOT / 'src' / name

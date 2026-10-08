@@ -219,6 +219,10 @@ Importere til biblioteket ditt?</translation>
       <translation>Bruk føreslått EQ</translation>
     </message>
     <message>
+      <source>Audio bridge did not start</source>
+      <translation>Lydbrua starta ikkje</translation>
+    </message>
+    <message>
       <source>Audio driver setup</source>
       <translation>Lyddrivaroppsett</translation>
     </message>
@@ -897,8 +901,16 @@ Importere til biblioteket ditt?</translation>
       <translation>Ta med førehandsutgåver</translation>
     </message>
     <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Installer SoundCurrent Audio via oppsettet av lyddrivaren, og opne deretter appen på nytt for å aktivere lydruta til mikrofonen.</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Installer nye pakkar over denne versjonen — avinstallering er ikkje naudsynt. Førehandsinnstillingar og profilar vert tekne vare på. Lagre arbeidet, bruk Avslutt (lukking av vindauget lèt appen køyre vidare), installer oppdateringa og opne att.</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Installer Windows-lydruta via oppsettet av lyddrivaren, og opne deretter appen på nytt.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
@@ -907,6 +919,10 @@ Importere til biblioteket ditt?</translation>
     <message>
       <source>Interface language</source>
       <translation>Grensesnittspråk</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Ugyldige equalizerinnstillingar</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
@@ -919,6 +935,10 @@ Importere til biblioteket ditt?</translation>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>Ugyldig målt forsterkarprofil. Krev modell, HTTPS-målekjelde, tilhøve og 1–16 PK/LS/HS-filter innanfor grensene. Sjå profilformatet i README.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Ugyldig mikrofonjustering</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
@@ -1069,6 +1089,10 @@ Importere til biblioteket ditt?</translation>
     <message>
       <source>Microphone EQ is off.</source>
       <translation>Mikrofon-EQ er av.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>Lydbrua til mikrofonen starta ikkje</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
@@ -1526,6 +1550,10 @@ Importere til biblioteket ditt?</translation>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
       <translation>Den valde utgangen vart fråkopla. Bytte til automatisk utgang.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>Dei valde høgtalarane er fråkopla</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>

@@ -36,6 +36,12 @@ class CatalogTests(unittest.TestCase):
             with patch.object(catalog, 'ROOT', root), self.assertRaisesRegex(ValueError, 'Unmarked UI literal'):
                 catalog.sources()
 
+    def test_windows_adapter_errors_require_translation_markers(self):
+        with self.assertRaisesRegex(ValueError, 'Unmarked Windows adapter error'):
+            catalog.check_platform_errors('throw std::runtime_error("Route unavailable");')
+        catalog.check_platform_errors('throw std::runtime_error(SC_TR("Route unavailable").toStdString());')
+        catalog.check_platform_errors('throw std::runtime_error(backend.error());')
+
     def test_structural_translation_checks(self):
         valid = [('%1 / %2', '%2 / %1'), ('%L1 / %n', '%n / %L1'),
                  ('Settings && calibration', 'Réglages && étalonnage'),

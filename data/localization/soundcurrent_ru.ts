@@ -219,6 +219,10 @@ Import into your library?</source>
       <translation>Применить предложенные настройки EQ</translation>
     </message>
     <message>
+      <source>Audio bridge did not start</source>
+      <translation>Аудиомост не запустился</translation>
+    </message>
+    <message>
       <source>Audio driver setup</source>
       <translation>Установка аудиодрайвера</translation>
     </message>
@@ -897,8 +901,16 @@ Import into your library?</source>
       <translation>Включать предварительные версии</translation>
     </message>
     <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Установите SoundCurrent Audio через настройку аудиодрайвера, затем снова откройте приложение, чтобы включить маршрут микрофона.</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Устанавливайте новые пакеты поверх этой версии — удаление не требуется. Пресеты и профили сохраняются. Сохраните свою работу, завершите работу приложения (закрытие окна оставляет его запущенным), установите обновление и откройте снова.</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Установите аудиомаршрут Windows через настройку аудиодрайвера, затем снова откройте приложение.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
@@ -907,6 +919,10 @@ Import into your library?</source>
     <message>
       <source>Interface language</source>
       <translation>Язык интерфейса</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Недопустимые настройки эквалайзера</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
@@ -919,6 +935,10 @@ Import into your library?</source>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>Недопустимый измеренный профиль усилителя. Требуются модель, источник измерения через HTTPS, условия и 1–16 фильтров PK/LS/HS в допустимых пределах. Формат профиля смотрите в README.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Недопустимая настройка микрофона</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
@@ -1069,6 +1089,10 @@ Import into your library?</source>
     <message>
       <source>Microphone EQ is off.</source>
       <translation>Микрофонный EQ выключен.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>Аудиомост микрофона не запустился</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
@@ -1526,6 +1550,10 @@ Import into your library?</source>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
       <translation>Выбранный выход отключён. Выполнено переключение на автоматический выход.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>Выбранные динамики отключены</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>

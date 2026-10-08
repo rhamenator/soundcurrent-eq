@@ -219,6 +219,10 @@ Import into your library?</source>
       <translation>권장 EQ 적용</translation>
     </message>
     <message>
+      <source>Audio bridge did not start</source>
+      <translation>오디오 브리지를 시작하지 못했습니다</translation>
+    </message>
+    <message>
       <source>Audio driver setup</source>
       <translation>오디오 드라이버 설정</translation>
     </message>
@@ -897,8 +901,16 @@ Import into your library?</source>
       <translation>프리뷰 릴리스 포함</translation>
     </message>
     <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>오디오 드라이버 설정을 통해 SoundCurrent Audio를 설치한 다음 앱을 다시 열어 마이크 오디오 경로를 활성화하세요.</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>이 버전에 새 패키지를 덮어 설치하세요. 제거할 필요가 없으며 프리셋과 프로파일은 유지됩니다. 작업을 저장하고 종료한 다음 (창만 닫으면 계속 실행됩니다), 업데이트를 설치한 후 다시 여세요.</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>오디오 드라이버 설정을 통해 Windows 오디오 경로를 설치한 다음 앱을 다시 여세요.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
@@ -907,6 +919,10 @@ Import into your library?</source>
     <message>
       <source>Interface language</source>
       <translation>인터페이스 언어</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>잘못된 이퀄라이저 설정</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
@@ -919,6 +935,10 @@ Import into your library?</source>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>측정된 앰프 프로파일이 잘못되었습니다. 모델, HTTPS 측정 출처, 측정 조건 및 제한 범위 내의 PK/LS/HS 필터 1~16개가 필요합니다. README의 프로파일 형식을 참조하세요.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>잘못된 마이크 조정 설정</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
@@ -1069,6 +1089,10 @@ Import into your library?</source>
     <message>
       <source>Microphone EQ is off.</source>
       <translation>마이크 EQ가 꺼져 있습니다.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>마이크 오디오 브리지를 시작하지 못했습니다</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
@@ -1526,6 +1550,10 @@ Import into your library?</source>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
       <translation>선택한 출력 장치가 분리되었습니다. 자동 출력으로 전환했습니다.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>선택한 스피커의 연결이 끊어졌습니다</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>

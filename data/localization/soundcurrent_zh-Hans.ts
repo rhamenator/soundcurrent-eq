@@ -219,6 +219,10 @@ Import into your library?</source>
       <translation>应用建议的均衡设置</translation>
     </message>
     <message>
+      <source>Audio bridge did not start</source>
+      <translation>音频桥接未能启动</translation>
+    </message>
+    <message>
       <source>Audio driver setup</source>
       <translation>音频驱动安装</translation>
     </message>
@@ -897,8 +901,16 @@ Import into your library?</source>
       <translation>包含预览版本</translation>
     </message>
     <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>请通过音频驱动设置安装 SoundCurrent Audio，然后重新打开应用以启用麦克风音频路径。</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>在此版本上直接安装新软件包 — 无需卸载。预设和配置会保留。请保存工作，使用“退出”（关闭窗口会让应用继续运行），安装更新，然后重新打开。</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>请通过音频驱动设置安装 Windows 音频路径，然后重新打开应用。</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
@@ -907,6 +919,10 @@ Import into your library?</source>
     <message>
       <source>Interface language</source>
       <translation>界面语言</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>均衡器设置无效</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
@@ -919,6 +935,10 @@ Import into your library?</source>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>实测功放配置无效。需要型号、HTTPS 测量来源、测量条件以及 1–16 个在范围内的 PK/LS/HS 滤波器。请参阅 README 中的配置格式。</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>麦克风调节设置无效</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
@@ -1069,6 +1089,10 @@ Import into your library?</source>
     <message>
       <source>Microphone EQ is off.</source>
       <translation>麦克风均衡器已关闭。</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>麦克风音频桥接未能启动</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
@@ -1526,6 +1550,10 @@ Import into your library?</source>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
       <translation>所选输出已断开。已切换为自动选择输出。</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>所选扬声器已断开连接</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>

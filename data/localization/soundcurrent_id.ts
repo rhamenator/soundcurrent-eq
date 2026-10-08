@@ -219,6 +219,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Terapkan EQ yang disarankan</translation>
     </message>
     <message>
+      <source>Audio bridge did not start</source>
+      <translation>Jembatan audio tidak berhasil dimulai</translation>
+    </message>
+    <message>
       <source>Audio driver setup</source>
       <translation>Penyiapan driver audio</translation>
     </message>
@@ -897,8 +901,16 @@ Impor ke pustaka Anda?</translation>
       <translation>Sertakan rilis pratinjau</translation>
     </message>
     <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Instal SoundCurrent Audio melalui pengaturan driver audio, lalu buka kembali aplikasi untuk mengaktifkan rute mikrofon.</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Instal paket baru di atas versi ini — tidak perlu menghapus instalasi. Preset dan profil dipertahankan. Simpan pekerjaan Anda, gunakan Keluar (menutup jendela membuat aplikasi tetap berjalan), instal pembaruan, lalu buka kembali.</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Instal rute audio Windows melalui pengaturan driver audio, lalu buka kembali aplikasi.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
@@ -907,6 +919,10 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Interface language</source>
       <translation>Bahasa antarmuka</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Pengaturan equalizer tidak valid</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
@@ -919,6 +935,10 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>Profil amplifier hasil pengukuran tidak valid. Diperlukan model, sumber pengukuran HTTPS, kondisi pengukuran, dan 1–16 filter PK/LS/HS dalam batas yang ditentukan. Lihat format profil di README.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Penyesuaian mikrofon tidak valid</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
@@ -1069,6 +1089,10 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Microphone EQ is off.</source>
       <translation>EQ mikrofon nonaktif.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>Jembatan audio mikrofon tidak berhasil dimulai</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
@@ -1526,6 +1550,10 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
       <translation>Keluaran yang dipilih dicabut. Beralih ke keluaran otomatis.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>Speaker yang dipilih terputus</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
