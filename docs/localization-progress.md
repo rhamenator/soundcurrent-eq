@@ -14,12 +14,17 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 ## Current checkpoint
 
-- French: all 430 extracted EQ messages and all 516 extracted Studio messages populated, including standard actions, help and errors. Contextual AI translation/review only; nativeReviewed remains false.
-- Other 31 locales: 30 core entries populated each; the remaining messages must be translated and reviewed in subsequent batches.
+- French: all 437 extracted EQ messages and all 523 extracted Studio messages populated, including standard actions, help and errors. Contextual AI translation/review only; nativeReviewed remains false.
+- German: all 437 extracted EQ messages and all 523 extracted Studio messages populated. Contextual AI review covers audio terminology, safe calibration/update instructions, and standard actions; nativeReviewed remains false.
+- Other 30 locales: 30 core entries populated each; the remaining messages must be translated and reviewed in subsequent batches.
 - Locale selection: region-only Chinese and explicit Latin-script Portuguese aliases resolve to available catalogs; formatting extensions do not block fallback; unsupported explicit scripts remain rejected.
 - Maintenance: preserve unfinished translator work/comments; reject unsupported numerus before rewriting; validate placeholders, markup/hyperlinks, glob filters, resource inventory and compiled hashes; prevent regressions in previously populated locales.
-- Qualification: run real main-window fixtures for all 32 languages plus pseudo locales; test French equipment import/edit/save and field limits; inspect translated tabs at small-screen size. Windows checks and package validation are tracked on the review PRs.
+- Qualification: run real main-window fixtures for all 32 languages plus pseudo locales; test French and German equipment import/edit/save and field limits; inspect translated tabs at small-screen size. Windows checks and package validation are tracked on the review PRs.
 
 ## Completion criteria
 
 Populate all current messages for every existing locale, pass structural and compiled/live UI checks on Linux/Windows, validate changed packages, and record evidence/known limitations. Full populated coverage must never be labeled native-speaker verification without an identified reviewer and catalog-specific evidence. The global --require-complete gate will remain failing until all missing entries are filled. No arbitrary English copies should be inserted merely to pass coverage.
+
+Next translation batch: Spanish. French and German are required to stay populated as sources evolve. The Filter Q caption now describes the dimensionless filter quality parameter; saved processing IDs and numeric values are unchanged.
+
+Windows audio setup now translates application-owned failure, repair, calibration and restart instructions. Restart-required results always retain the translated reboot instruction alongside original helper diagnostics. The source guard also rejects unmarked literal messages passed to the setup completion helper.

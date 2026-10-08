@@ -27,6 +27,22 @@
       <translation> · stéréo</translation>
     </message>
     <message>
+      <source>%1
+
+Technical details:
+%2</source>
+      <translation>%1
+
+Détails techniques :
+%2</translation>
+    </message>
+    <message>
+      <source>%1
+The app remains open; your settings have been kept.</source>
+      <translation>%1
+L’application reste ouverte ; vos réglages ont été conservés.</translation>
+    </message>
+    <message>
       <source>%1 %2%3 dB</source>
       <translation>%1 %2%3 dB</translation>
     </message>
@@ -217,6 +233,14 @@ Importer dans votre bibliothèque ?</translation>
     <message>
       <source>Audio setup could not finish</source>
       <translation>La configuration audio n’a pas pu se terminer</translation>
+    </message>
+    <message>
+      <source>Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.</source>
+      <translation>La configuration audio a échoué. Si VB-CABLE vient d’être installé, redémarrez Windows, puis réessayez.</translation>
+    </message>
+    <message>
+      <source>Audio setup is missing. Repair or reinstall SoundCurrent.</source>
+      <translation>Le programme de configuration audio est introuvable. Réparez ou réinstallez SoundCurrent.</translation>
     </message>
     <message>
       <source>Audio setup is running. Processing is paused; the app remains open.</source>
@@ -501,6 +525,10 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Impossible de démarrer le filtre PipeWire</translation>
     </message>
     <message>
+      <source>Could not start audio setup: %1. The app remains open.</source>
+      <translation>Impossible de démarrer la configuration audio : %1. L’application reste ouverte.</translation>
+    </message>
+    <message>
       <source>Could not start microphone capture</source>
       <translation>Impossible de démarrer la capture du microphone</translation>
     </message>
@@ -760,6 +788,11 @@ Importer dans votre bibliothèque ?</translation>
     <message>
       <source>Family</source>
       <translation>Gamme</translation>
+    </message>
+    <message>
+      <source>Filter Q</source>
+      <translation>Facteur Q</translation>
+      <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
     </message>
     <message>
       <source>Filter values must be numbers.</source>
@@ -1386,6 +1419,10 @@ Importer dans votre bibliothèque ?</translation>
       <translation>La réponse nécessite de 2 à 4096 points mesurés.</translation>
     </message>
     <message>
+      <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
+      <translation>Redémarrez Windows avant d’utiliser l’égaliseur ou les réglages de VB-CABLE. Les modifications du pilote audio nécessitent un redémarrage du système.</translation>
+    </message>
+    <message>
       <source>Restore Defaults</source>
       <translation>Rétablir les valeurs par défaut</translation>
     </message>
@@ -1575,6 +1612,10 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Commencez à faible niveau. Augmentez seulement si le microphone ne détecte pas les tonalités.</translation>
     </message>
     <message>
+      <source>Stop the microphone calibration before changing the audio driver.</source>
+      <translation>Arrêtez l’étalonnage du microphone avant de modifier le pilote audio.</translation>
+    </message>
+    <message>
       <source>Stop tones</source>
       <translation>Arrêter les tonalités</translation>
     </message>
@@ -1731,10 +1772,6 @@ Importer dans votre bibliothèque ?</translation>
     <message>
       <source>Warmth</source>
       <translation>Chaleur</translation>
-    </message>
-    <message>
-      <source>Width (Q)</source>
-      <translation>Largeur (Q)</translation>
     </message>
     <message>
       <source>Yes</source>

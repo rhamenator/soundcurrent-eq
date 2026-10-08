@@ -1090,6 +1090,7 @@
     ]
   },
   "requiredCompleteLocales": [
-    "fr"
+    "fr",
+    "de"
   ]
 }

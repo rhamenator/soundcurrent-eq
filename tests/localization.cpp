@@ -32,6 +32,10 @@ int main(int argc,char **argv){
   {
    Runtime runtime;runtime.initialize();require(text("Output device")==QString::fromUtf8("Ausgabegerät"),"German catalog not active");
    require(text("Untranslated sample")=="Untranslated sample","English fallback failed");
+   require(text("Filter Q")==QString::fromUtf8("Filtergüte Q"),"Filter quality factor was mislabeled as bandwidth");
+   QDialogButtonBox germanActions(QDialogButtonBox::Close|QDialogButtonBox::Save);
+   require(germanActions.button(QDialogButtonBox::Close)->text()==QString::fromUtf8("Schließen"),"German standard actions stayed English");
+   for(const auto &language:languages())if(language.tag=="de")require(language.translated==language.total,"German catalog has missing messages");
    std::unique_ptr<QGroupBox> panel(settingsPanel());
    auto *format=panel->findChild<QComboBox *>("formatLocale");
    require(format->findData("de-DE")>=0 && format->findData("fr-CA")>=0,"Explicit formatting regions missing");

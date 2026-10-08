@@ -23,7 +23,7 @@ class CatalogTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / 'src').mkdir()
-            (root / 'src/main.cpp').write_text('widget.setToolTip("English only");', encoding='utf-8')
+            (root / 'src/main.cpp').write_text('finish("English only", true);', encoding='utf-8')
             with patch.object(catalog, 'ROOT', root), self.assertRaisesRegex(ValueError, 'Unmarked UI literal'):
                 catalog.sources()
 

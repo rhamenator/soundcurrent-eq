@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 // Opt-in regression through actual buttons, helper processes and error dialogs.
 if (app.arguments().contains("--windows-audio-setup-test")) {
-    if (app.arguments().size() != 4) return 2;
+    if (app.arguments().size() != 4 && app.arguments().size() != 6) return 2;
     MainWindow window(false);
     window.show();
     const auto action = app.arguments()[2];

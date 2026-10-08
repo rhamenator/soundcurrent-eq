@@ -2018,26 +2018,27 @@ public:
         });
         connect(audioSetup, &QProcess::errorOccurred, this, [audioSetup, finish](QProcess::ProcessError error) {
             if (error == QProcess::FailedToStart)
-                finish("Could not start audio setup: " + audioSetup->errorString() + ". The app remains open.", true);
+                finish(SC_TR("Could not start audio setup: %1. The app remains open.").arg(audioSetup->errorString()), true);
         });
         connect(audioSetup, &QProcess::finished, this, [audioSetup, output, action, finish](int code, QProcess::ExitStatus exitStatus) {
             output->append(audioSetup->readAllStandardOutput());
             auto message = QString::fromLocal8Bit(*output).trimmed();
             if (exitStatus != QProcess::NormalExit || (code != 0 && code != 3010)) {
-                if (message.isEmpty()) message = "Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.";
-                finish(message + "\nThe app remains open; your settings have been kept.", true);
+                if (message.isEmpty()) message = SC_TR("Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.");
+                finish(SC_TR("%1\nThe app remains open; your settings have been kept.").arg(message), true);
             } else if (code == 3010) {
-                finish(message.isEmpty() ? "Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart." : message, false);
+                const auto restart = SC_TR("Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.");
+                finish(message.isEmpty() ? restart : SC_TR("%1\n\nTechnical details:\n%2").arg(restart, message), false);
             } else if (*action && !message.isEmpty()) finish(message, false);
             else finish({}, false);
         });
         auto launch = [this, audioSetup, output, action, finish, driverSetup, cableSettings](bool install) {
             if (audioSetup->state() != QProcess::NotRunning) return;
             const auto script = QDir(QCoreApplication::applicationDirPath()).filePath(install ? "audio-setup.ps1" : "cable-setup.ps1");
-            if (!QFileInfo::exists(script)) { finish("Audio setup is missing. Repair or reinstall SoundCurrent.", true); return; }
+            if (!QFileInfo::exists(script)) { finish(SC_TR("Audio setup is missing. Repair or reinstall SoundCurrent."), true); return; }
             if (install) {
                 // Release our processing/guardians while retaining the UI.
-                if (calibrating_) { finish("Stop the microphone calibration before changing the audio driver.", true); return; }
+                if (calibrating_) { finish(SC_TR("Stop the microphone calibration before changing the audio driver."), true); return; }
                 power_->setChecked(false); micPower_->setChecked(false);
                 meter_.stop(); audio_.stop(); microphone_.stop();
                 status_->setText(SC_TR("Audio setup is running. Processing is paused; the app remains open."));
@@ -2292,7 +2293,7 @@ public:
         gainBox_->setAccessibleName(SC_TR("Selected band gain"));
         detailsRow->addWidget(gainBox_);
         detailsRow->addSpacing(12);
-        detailsRow->addWidget(new QLabel(SC_TR("Width (Q)")));
+        detailsRow->addWidget(new QLabel(SC_TR("Filter Q")));
         qBox_ = new soundcurrent::AcceleratingDoubleSpinBox;
         qBox_->setRange(0.3, 10.0);
         qBox_->setDecimals(2);

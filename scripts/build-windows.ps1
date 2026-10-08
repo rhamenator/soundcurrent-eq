@@ -137,7 +137,7 @@ try {
         if ($localized.ExitCode -ne 0) { Get-Content $localizedLog; throw "Localized UI failed: $locale" }
     }
     Copy-Item 'build-windows-native\Release\soundcurrent-equipment-ui-test.exe' $stage
-    foreach ($locale in @('en','fr')) {
+    foreach ($locale in @('en','fr','de')) {
         $equipmentLog = Join-Path $root "build-windows-native\equipment-ui-$locale.log"
         $equipment = Start-Process "$stage\soundcurrent-equipment-ui-test.exe" -ArgumentList @('--language',$locale) -PassThru -RedirectStandardError $equipmentLog
         $null = $equipment.Handle
@@ -146,6 +146,32 @@ try {
         if ($equipment.ExitCode -ne 0) { Get-Content $equipmentLog; throw "Equipment UI failed: $locale" }
     }
     Remove-Item "$stage\soundcurrent-equipment-ui-test.exe"
+    # Exercise only inert setup fixtures: no driver installation or endpoint changes.
+    $setupScript = Join-Path $stage 'audio-setup.ps1'
+    $setupBackup = Join-Path $stage 'audio-setup.saved.ps1'
+    Move-Item $setupScript $setupBackup
+    try {
+        foreach ($locale in @('fr','de')) {
+            $expected = if ($locale -eq 'fr') { 'introuvable' } else { 'fehlt' }
+            $setup = Start-Process "$stage\soundcurrent-eq.exe" -ArgumentList @('--windows-audio-setup-test','install',$expected,'--language',$locale) -PassThru -NoNewWindow
+            $null = $setup.Handle
+            if (!$setup.WaitForExit(45000)) { Stop-Process -Id $setup.Id -Force; throw "Missing setup test timed out: $locale" }
+            $setup.Refresh()
+            if ($setup.ExitCode -ne 0) { throw "Missing setup translation failed: $locale" }
+        }
+        'Write-Output "Fixture technical diagnostic"; exit 3010' | Set-Content -Encoding ascii $setupScript
+        foreach ($locale in @('fr','de')) {
+            $expected = if ($locale -eq 'fr') { 'Redémarrez' } else { 'Starten' }
+            $setup = Start-Process "$stage\soundcurrent-eq.exe" -ArgumentList @('--windows-audio-setup-test','install',$expected,'--language',$locale) -PassThru -NoNewWindow
+            $null = $setup.Handle
+            if (!$setup.WaitForExit(45000)) { Stop-Process -Id $setup.Id -Force; throw "Restart setup test timed out: $locale" }
+            $setup.Refresh()
+            if ($setup.ExitCode -ne 0) { throw "Restart instruction translation failed: $locale" }
+        }
+    } finally {
+        Remove-Item $setupScript -ErrorAction SilentlyContinue
+        Move-Item $setupBackup $setupScript
+    }
     & python tests/translation_catalogs.py
     if ($LASTEXITCODE -ne 0) { throw 'Translation-maintenance regression tests failed' }
     & python scripts/localization.py --check
