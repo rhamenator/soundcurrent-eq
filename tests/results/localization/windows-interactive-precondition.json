@@ -1,7 +1,7 @@
 {
   "date": "2026-10-08",
   "workflow": "Interactive Windows installer and actual desktop sign-in startup",
-  "status": "pending user console sign-in or corrected saved credential",
+  "status": "blocked pending user console sign-in or corrected saved credential",
   "independentVm": "soundcurrent-win11-dev",
   "identityVerified": {
     "disk": "/var/lib/libvirt/images/soundcurrent-win11-dev.qcow2",
@@ -17,5 +17,13 @@
   "credentialsChanged": false,
   "originalVmsModified": false,
   "qualificationClaim": "Not qualified; prior SSH-launched UI fixtures and silent lifecycle results remain separately valid",
-  "nextAction": "After console sign-in, exercise visible NSIS pages with driver setup and launch-after-install disabled, then qualify sign-in startup on this clone and restore owned test registration"
+  "nextAction": "After console sign-in, exercise visible NSIS pages with driver setup and launch-after-install disabled, then qualify sign-in startup on this clone and restore owned test registration",
+  "followupObservation": {
+    "keyringApi": "SecretStorage available; secret-tool executable unavailable",
+    "authorizedAccountMatch": "one unlocked credential for the documented VM account",
+    "credentialComparison": "keyring matches the file credential rejected by the console",
+    "credentialValuesLogged": false,
+    "furtherLoginAttempts": 0,
+    "desktopSession": "quser still reports no signed-in user"
+  }
 }
