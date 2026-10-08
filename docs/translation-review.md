@@ -131,3 +131,5 @@ All currently extracted messages populated (441 EQ / 527 Studio). Q remains dime
 ## Romanian and Hungarian initial batch
 
 Câștig/erősítés describes gain; rezervă de nivel/szinttartalék describes headroom, distinct from balance. Clipping warnings retain potential distortion, while dynamic boost retains its peak ceiling. Ambience damping and decay remain separate controls. Amplifier profiles require electrical measurements with known load and settings; marketing specifications are insufficient. Setup recovery keeps processing paused and the app open. Placeholders, units and character limits remain unchanged. Native review remains unverified.
+
+Romanian/Hungarian recovery review: failures to inspect active equalizers explicitly prevent processing. Setup recovery preserves an open app. File-size limits and half-dB steps retain their values. Timp de stingere/lecsengési idő describes duration; proporția efectului/effekt aránya describes processed contribution. Romanian clipping warnings describe cut-off peaks, distinct from an intentional limiter. Native review remains unverified.
