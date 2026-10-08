@@ -4208,6 +4208,18 @@ int main(int argc, char **argv) {
                 for(int page=0;tabs && page<tabs->count();++page){
                     tabs->setCurrentIndex(page);QApplication::processEvents();
                     window.grab().save(dir+"/localized-tab-"+QString::number(page)+".png");
+                    if(qEnvironmentVariableIsSet("SOUNDCURRENT_UI_CAPTURE_SCROLL")) {
+                        if(auto *scroll=qobject_cast<QScrollArea *>(tabs->widget(page))) {
+                            auto *bar=scroll->verticalScrollBar();
+                            for(int step=1;step<=2;++step) {
+                                bar->setValue(bar->maximum()*step/2);
+                                QApplication::processEvents();
+                                if(!window.grab().save(dir+"/localized-tab-"+QString::number(page)+"-scroll-"+QString::number(step)+".png"))
+                                    qFatal("Cannot capture scrolled localization fixture");
+                            }
+                            bar->setValue(0);
+                        }
+                    }
                 }
             }
             qInfo("Localization UI: %s -> %s",qPrintable(localization.requested()),qPrintable(localization.loaded()));

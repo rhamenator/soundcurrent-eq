@@ -571,3 +571,7 @@ Selected-band labels now sit above their frequency/gain/Q controls, and the pres
 ### All-locale first-page scaling measurement
 
 At 200% scale on Xvfb 1920×1080 (effective 960×540), all 33 translated locale/control fixtures passed and every first-page outer horizontal scroll maximum was zero. Measurements are recorded in tests/results/localization/hidpi/all-locales.json. This is automated geometry evidence, not visual or native-speaker review, and does not qualify lower scrolled content or Windows display scaling. Current package CI remains pending.
+
+### Scrolled high-scaling interface inspection
+
+The localization fixture can optionally capture middle and bottom scroll positions with SOUNDCURRENT_UI_CAPTURE_SCROLL. Inspected lower-page results are recorded in tests/results/localization/hidpi/scrolled/report.json. Polish Studio settings still show horizontal overflow around calibration/update controls. Default English channel names are recorded for the deferred second pass; no saved names or IDs were modified. This evidence is partial visual inspection, not native review.

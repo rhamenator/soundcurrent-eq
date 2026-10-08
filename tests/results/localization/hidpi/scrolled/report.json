@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-08",
+  "locale": "ar",
+  "environment": "Host Linux xcb/Xvfb 1920x1080 at 200%; effective 960x540",
+  "fixtureExitCode": 0,
+  "screenshotsInspected": [
+    "localized-tab-0-scroll-2.png",
+    "localized-tab-1-scroll-2.png"
+  ],
+  "findings": [
+    "Inspected playback, enhancements, calibration and update captions readable in these viewports"
+  ],
+  "nativeReviewed": false,
+  "scope": "Two inspected lower-page viewports; not whole-interface or native review"
+}
