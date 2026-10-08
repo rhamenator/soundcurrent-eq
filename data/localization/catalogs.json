@@ -312,12 +312,12 @@
   {
     "tag": "th",
     "name": "ไทย",
-    "translated": 102,
+    "translated": 166,
     "total": 441,
     "status": "unverified",
     "nativeReviewed": false,
-    "tsSha256": "7acf41789a1d19e623ea55899cbcc385db223fcfac3878f6bf5778143b876802",
-    "qmSha256": "6c6484839e76b5f6106f8158a0a713d1912350efdd2a36c625cbfd92944aed37"
+    "tsSha256": "2f36b6fe4544d08ac7ff764151fd071395f8b533af0632b379719953710d1e5c",
+    "qmSha256": "562c2dea7d4228c67f0d9c9be1e12a8ed453dcbf32918ff3fb7e6d3ebc69e4db"
   },
   {
     "tag": "sw",

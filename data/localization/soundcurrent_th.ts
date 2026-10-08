@@ -322,255 +322,255 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bright</source>
-      <translation type="unfinished" />
+      <translation>เสียงสว่าง</translation>
     </message>
     <message>
       <source>Browse all equipment profiles / editor</source>
-      <translation type="unfinished" />
+      <translation>เรียกดูโปรไฟล์อุปกรณ์ทั้งหมด / ตัวแก้ไข</translation>
     </message>
     <message>
       <source>Calibration test signal</source>
-      <translation type="unfinished" />
+      <translation>สัญญาณทดสอบสำหรับปรับเทียบ</translation>
     </message>
     <message>
       <source>Calibration tone level</source>
-      <translation type="unfinished" />
+      <translation>ระดับเสียงทดสอบสำหรับปรับเทียบ</translation>
     </message>
     <message>
       <source>Cancel</source>
-      <translation type="unfinished" />
+      <translation>ยกเลิก</translation>
     </message>
     <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถล็อกตัวป้องกันเซสชันร่วมของ SoundCurrent ได้</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถสร้างโฟลเดอร์โปรไฟล์เครื่องขยายเสียงได้</translation>
     </message>
     <message>
       <source>Cannot create profile folder.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถสร้างโฟลเดอร์โปรไฟล์ได้</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถสร้างตัวป้องกันเซสชันร่วมของ SoundCurrent ได้</translation>
     </message>
     <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>ตรวจสอบอีควอไลเซอร์ที่กำลังทำงานไม่สำเร็จ SoundCurrent จะไม่เปิดการประมวลผล</translation>
     </message>
     <message>
       <source>Cannot finish saving amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>บันทึกโปรไฟล์เครื่องขยายเสียงไม่สำเร็จ</translation>
     </message>
     <message>
       <source>Cannot finish saving profile library.</source>
-      <translation type="unfinished" />
+      <translation>บันทึกคลังโปรไฟล์ไม่สำเร็จ</translation>
     </message>
     <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถตรวจสอบอีควอไลเซอร์ที่กำลังทำงานได้ SoundCurrent จะไม่เปิดการประมวลผล</translation>
     </message>
     <message>
       <source>Cannot read profile library.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถอ่านคลังโปรไฟล์ได้</translation>
     </message>
     <message>
       <source>Cannot read profile or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถอ่านโปรไฟล์ได้ หรือไฟล์มีขนาดเกิน 1 MiB</translation>
     </message>
     <message>
       <source>Cannot read response or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถอ่านข้อมูลการตอบสนองได้ หรือไฟล์มีขนาดเกิน 1 MiB</translation>
     </message>
     <message>
       <source>Cannot save amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถบันทึกโปรไฟล์เครื่องขยายเสียงได้</translation>
     </message>
     <message>
       <source>Cannot save profile library.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถบันทึกคลังโปรไฟล์ได้</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถบันทึกโปรไฟล์ได้</translation>
     </message>
     <message>
       <source>Cannot start measurement: %1</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเริ่มการวัดได้: %1</translation>
     </message>
     <message>
       <source>Center</source>
-      <translation type="unfinished" />
+      <translation>กึ่งกลาง</translation>
     </message>
     <message>
       <source>Check for updates</source>
-      <translation>ตรวจสอบการอัปเดต</translation>
+      <translation>ตรวจหาอัปเดต</translation>
     </message>
     <message>
       <source>Checking for published updates…</source>
-      <translation type="unfinished" />
+      <translation>กำลังตรวจหาอัปเดตที่เผยแพร่…</translation>
     </message>
     <message>
       <source>Checks published releases and downloaded installers. No update is installed automatically.</source>
-      <translation type="unfinished" />
+      <translation>ตรวจสอบรุ่นที่เผยแพร่และตัวติดตั้งที่ดาวน์โหลด จะไม่ติดตั้งอัปเดตโดยอัตโนมัติ</translation>
     </message>
     <message>
       <source>Choose a name that is not a built-in preset.</source>
-      <translation type="unfinished" />
+      <translation>เลือกชื่อที่ไม่ซ้ำกับพรีเซ็ตที่มีมาให้</translation>
     </message>
     <message>
       <source>Choose update folder…</source>
-      <translation type="unfinished" />
+      <translation>เลือกโฟลเดอร์อัปเดต…</translation>
     </message>
     <message>
       <source>Clarity</source>
-      <translation type="unfinished" />
+      <translation>ความชัด</translation>
     </message>
     <message>
       <source>Clarity frequency</source>
-      <translation type="unfinished" />
+      <translation>ความถี่สำหรับความชัด</translation>
     </message>
     <message>
       <source>Classical</source>
-      <translation type="unfinished" />
+      <translation>คลาสสิก</translation>
     </message>
     <message>
       <source>Clear Voice</source>
-      <translation type="unfinished" />
+      <translation>เสียงพูดชัด</translation>
     </message>
     <message>
       <source>Clear imported equipment corrections</source>
-      <translation type="unfinished" />
+      <translation>ล้างการชดเชยอุปกรณ์ที่นำเข้า</translation>
     </message>
     <message>
       <source>Click to turn the equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>คลิกเพื่อเปิดหรือปิดอีควอไลเซอร์</translation>
     </message>
     <message>
       <source>Clipping risk · estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>เสี่ยงต่อสัญญาณคลิป · พีกโดยประมาณ %1 dBFS</translation>
     </message>
     <message>
       <source>Close</source>
-      <translation type="unfinished" />
+      <translation>ปิด</translation>
     </message>
     <message>
       <source>Conditions</source>
-      <translation type="unfinished" />
+      <translation>เงื่อนไข</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
-      <translation type="unfinished" />
+      <translation>เชื่อมต่อเอาต์พุตและไมโครโฟนก่อนวัด</translation>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>โปรไฟล์ชดเชย (*.json)</translation>
     </message>
     <message>
       <source>Could not create a private test folder</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถสร้างโฟลเดอร์ทดสอบส่วนตัวได้</translation>
     </message>
     <message>
       <source>Could not create microphone configuration folder</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถสร้างโฟลเดอร์การตั้งค่าไมโครโฟนได้</translation>
     </message>
     <message>
       <source>Could not create preset folder.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถสร้างโฟลเดอร์พรีเซ็ตได้</translation>
     </message>
     <message>
       <source>Could not create quiet frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถสร้างสัญญาณกวาดความถี่ระดับเบาได้</translation>
     </message>
     <message>
       <source>Could not create temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถสร้างการตั้งค่าเสียงชั่วคราวได้</translation>
     </message>
     <message>
       <source>Could not create test tone</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถสร้างเสียงทดสอบได้</translation>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
-      <translation type="unfinished" />
+      <translation>บันทึกพรีเซ็ตไม่สำเร็จ</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเปิดไฟล์คลื่นเสียงทดสอบได้</translation>
     </message>
     <message>
       <source>Could not play quiet test audio</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเล่นเสียงทดสอบระดับเบาได้</translation>
     </message>
     <message>
       <source>Could not play test audio through the selected output</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเล่นเสียงทดสอบผ่านเอาต์พุตที่เลือกได้</translation>
     </message>
     <message>
       <source>Could not read output volume</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถอ่านระดับเสียงเอาต์พุตได้</translation>
     </message>
     <message>
       <source>Could not run %1</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเรียกใช้ %1 ได้</translation>
     </message>
     <message>
       <source>Could not save preset.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถบันทึกพรีเซ็ตได้</translation>
     </message>
     <message>
       <source>Could not start PipeWire filter</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเริ่มฟิลเตอร์ PipeWire ได้</translation>
     </message>
     <message>
       <source>Could not start audio setup: %1. The app remains open.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเริ่มการตั้งค่าเสียงได้: %1 แอปยังเปิดอยู่</translation>
     </message>
     <message>
       <source>Could not start microphone capture</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเริ่มรับเสียงจากไมโครโฟนได้</translation>
     </message>
     <message>
       <source>Could not start microphone filter</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเริ่มฟิลเตอร์ไมโครโฟนได้</translation>
     </message>
     <message>
       <source>Could not start output volume safety guard</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเริ่มตัวป้องกันความปลอดภัยของระดับเสียงเอาต์พุตได้</translation>
     </message>
     <message>
       <source>Could not start the measurement.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเริ่มการวัดได้</translation>
     </message>
     <message>
       <source>Could not update startup settings.</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถอัปเดตการตั้งค่าการเริ่มต้นได้</translation>
     </message>
     <message>
       <source>Could not write frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเขียนสัญญาณกวาดความถี่ได้</translation>
     </message>
     <message>
       <source>Could not write microphone configuration</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเขียนการตั้งค่าไมโครโฟนได้</translation>
     </message>
     <message>
       <source>Could not write temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเขียนการตั้งค่าเสียงชั่วคราวได้</translation>
     </message>
     <message>
       <source>Could not write test tone</source>
-      <translation type="unfinished" />
+      <translation>ไม่สามารถเขียนเสียงทดสอบได้</translation>
     </message>
     <message>
       <source>Create profile</source>
-      <translation type="unfinished" />
+      <translation>สร้างโปรไฟล์</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
-      <translation type="unfinished" />
+      <translation>คง EQ ปัจจุบันไว้แล้ว</translation>
     </message>
     <message>
       <source>Custom</source>
@@ -578,11 +578,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Dance</source>
-      <translation type="unfinished" />
+      <translation>แดนซ์</translation>
     </message>
     <message>
       <source>Deep Bass</source>
-      <translation type="unfinished" />
+      <translation>เบสลึก</translation>
     </message>
     <message>
       <source>Discard</source>
