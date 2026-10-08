@@ -1,0 +1,25 @@
+{
+  "stage": "Indonesian first existing-catalog batch",
+  "catalogs": [
+    {
+      "tag": "id",
+      "name": "Bahasa Indonesia",
+      "translated": 102,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "473bc4b8799b66ba65258daec85e614feda7c7945014e8fe6f3dc722ec6632c2",
+      "qmSha256": "2767218465f9cd1e7a8cb7f0046b628d038398a890f340f77e0840a30f838fe6"
+    }
+  ],
+  "linuxTests": {
+    "passed": 3,
+    "total": 3,
+    "scope": "Embedded localization assertions, Indonesian MainWindow offscreen smoke test and structural catalog checks",
+    "log": "/tmp/soundcurrent-eq-id-first-tests.log"
+  },
+  "review": "Contextual AI review of shared source entries 0–79: routing, electrical measurement requirements, calibration, gain/clipping, enhancement behavior and quit versus close. Linguistic accuracy unverified.",
+  "nativeReviewed": false,
+  "windows": "Pending CI; no Windows runtime qualification for this batch",
+  "remaining": "Indonesian incomplete. Four target catalogs still incomplete; omitted source messages reserved for second pass."
+}

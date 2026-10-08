@@ -292,12 +292,12 @@
   {
     "tag": "id",
     "name": "Bahasa Indonesia",
-    "translated": 30,
+    "translated": 102,
     "total": 441,
     "status": "unverified",
     "nativeReviewed": false,
-    "tsSha256": "96b1819ca8b78e90ff7ef158f759fb7f07552263a01ed4cf08f756d7f48f49f3",
-    "qmSha256": "876e071d153e1ead6859db517fa59299778d795893e53230125ff28b79fa818c"
+    "tsSha256": "473bc4b8799b66ba65258daec85e614feda7c7945014e8fe6f3dc722ec6632c2",
+    "qmSha256": "2767218465f9cd1e7a8cb7f0046b628d038398a890f340f77e0840a30f838fe6"
   },
   {
     "tag": "vi",
