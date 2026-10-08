@@ -14,8 +14,8 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 ## Current checkpoint
 
-- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr, sv, da, nb, fi, ro, hu, nn, ar, he, fa; 441 extracted messages each. These are unverified translations; nativeReviewed remains false.
-- Other 9 original target locales remain incomplete. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
+- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr, sv, da, nb, fi, ro, hu, nn, ar, he, fa, zh-Hans; 441 extracted messages each. These are unverified translations; nativeReviewed remains false.
+- Other 8 original target locales remain incomplete. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
 - Coverage is distinct from contextual AI review, native-speaker verification and runtime qualification. Checkpoint reports in tests/results/localization identify tested catalogs, platforms and scopes.
 - Runtime supports separate UI language and number/date locale selection, regional/script fallback, pseudo localization and RTL. Maintenance preserves unfinished edits/comments and rejects unsupported numerus before rewriting.
 - Shared interface layout now wraps meter guidance; the curve instruction also wraps for longer translated text.
@@ -187,3 +187,5 @@ Simplified Chinese microphone and measurement batch: 291/441 messages populated.
 Simplified Chinese startup, output and rendering batch: 349/441 messages populated. Three focused Linux checks passed. Startup registration, reference-preserving edits, calibration links, post gain and render counts reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
 
 Simplified Chinese saving, speaker profiles and device recovery batch: 398/441 messages populated. Three focused Linux checks passed. Saving, speaker correction bounds, peak hold, device recovery and reverb versus echo reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Simplified Chinese current catalogs complete: 441/441 messages populated. Full Linux CTest passed 74/74, including equipment workflows and script selection assertions. Calibration limits and operational controls reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.

@@ -1617,103 +1617,103 @@ Import into your library?</source>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>从低音量开始。仅在麦克风无法听到音调时提高音量。</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
-      <translation type="unfinished" />
+      <translation>登录时启动</translation>
     </message>
     <message>
       <source>Startup</source>
-      <translation type="unfinished" />
+      <translation>启动</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
-      <translation type="unfinished" />
+      <translation>更改音频驱动前请停止麦克风校准。</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>停止音调</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>已应用建议的均衡设置。使用“保存预设”可保留它。</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>建议的播放均衡调整</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>环绕声</translation>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>已打开系统响应配置编辑器。保存的配置可在设备资料库中找到。</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>电视对白</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>青绿色：校正均衡曲线。橙色：实测响应（如有）。纵轴为相对 dB。</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>测试电平</translation>
     </message>
     <message>
       <source>Test level is outside the allowed range</source>
-      <translation type="unfinished" />
+      <translation>测试电平超出允许范围</translation>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>音频处理器意外停止。</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
-      <translation type="unfinished" />
+      <translation>自定义资料库最多可保存 256 个配置。</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>更新响应无效。未打开任何安装程序。</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>这里导入的是实测响应，而不是已经反向转换的均衡器增益。请确认设备类型。绝对声压级 SPL 需要在导入前归一化。</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>此配置已更改。离开前保存自定义副本？</translation>
     </message>
     <message>
       <source>Timed out waiting for the equalizer sink: %1</source>
-      <translation type="unfinished" />
+      <translation>等待均衡器输出节点超时：%1</translation>
     </message>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
-      <translation type="unfinished" />
+      <translation>到达麦克风的测试音频太弱。请将麦克风移近或稍微提高测试电平。</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>翻译覆盖率：%1 / %2 条消息。缺少翻译的消息使用英语。语言包未经验证，等待母语使用者审阅。请退出并重新打开以应用更改。</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>高音细节</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>关闭均衡器</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>开启均衡器</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>类型</translation>
     </message>
     <message>
       <source>Undo</source>
@@ -1722,43 +1722,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>撤销上一次均衡器更改</translation>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>解锁均衡器</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>编辑配置前请解锁控制并完成测量。</translation>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation type="unfinished" />
+      <translation>不支持的设备配置格式版本（应为 2）。</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
-      <translation type="unfinished" />
+      <translation>不支持的滤波器类型。</translation>
     </message>
     <message>
       <source>Unsupported microphone channel layout</source>
-      <translation type="unfinished" />
+      <translation>不支持的麦克风声道布局</translation>
     </message>
     <message>
       <source>Unsupported speaker profile schema</source>
-      <translation type="unfinished" />
+      <translation>不支持的扬声器配置格式版本</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>更新 %1 已下载：%2。请退出，在现有应用上直接安装，然后重新打开。</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>更新下载文件夹</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>请使用安静的房间。同时测量扬声器、房间和麦克风；结果包含麦克风响应。</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1771,35 +1771,35 @@ Import into your library?</source>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>VB-CABLE 设置</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>人声突出</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>等待麦克风。</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>温暖</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>温暖感</translation>
     </message>
     <message>
       <source>Yes</source>
-      <translation type="unfinished" />
+      <translation>是</translation>
     </message>
     <message>
       <source>Yes to All</source>
-      <translation type="unfinished" />
+      <translation>全部是</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>零值会关闭各项音效。这些聆听音效应用于扬声器播放，不用于麦克风校正。</translation>
     </message>
   </context>
 </TS>
