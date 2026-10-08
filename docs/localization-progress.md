@@ -343,3 +343,7 @@ Vietnamese now has 166/441 populated current catalog entries. Added profile-savi
 ### Vietnamese: third existing-catalog batch
 
 Vietnamese now has 230/441 populated current catalog entries. Added effects, metering and profile-editor controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Vietnamese: fourth existing-catalog batch
+
+Vietnamese now has 291/441 populated current catalog entries. Added import validation, microphone calibration, channel limits and balance guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
