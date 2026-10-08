@@ -193,3 +193,5 @@ Simplified Chinese current catalogs complete: 441/441 messages populated. Full L
 Traditional Chinese initial audio controls and profile guidance: 102/441 messages populated. Three focused Linux checks passed. Gain/headroom, clipping and measured amplifier correction requirements reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
 
 Traditional Chinese calibration, recovery and delay batch: 166/441 messages populated. Three focused Linux checks passed. Calibration recovery, file limits, cancel versus close and delay wet mix reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Traditional Chinese equipment, filters and metering batch: 230/441 messages populated. Three focused Linux checks passed. Estimated levels, filter Q/high-pass/high-shelf and equipment kinds reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
