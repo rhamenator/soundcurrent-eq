@@ -1,4 +1,5 @@
 #include "localization.h"
+#include "audio_error_text.h"
 // SPDX-License-Identifier: GPL-3.0-only
 #include "accelerating_spinbox.h"
 // Copyright (C) 2026 rhamenator
@@ -3450,7 +3451,7 @@ private:
         }
     }
 
-    void showError(const QString &message) { status_->setText(SC_TR("Audio error: %1").arg(message)); }
+    void showError(const QString &message) { status_->setText(SC_TR("Audio error: %1").arg(soundcurrent::i18n::audioErrorText(message))); }
 
     AudioEngine audio_;
     MicrophoneEngine microphone_;

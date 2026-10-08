@@ -437,3 +437,7 @@ Second-pass adapter translation checkpoint: added Arabic, Hebrew, Persian, Simpl
 ### Second-pass Qt Windows adapter messages complete
 
 All 33 non-English locales now cover the new seven EQ / nine Studio messages. Global required-complete and structural checks pass. Both apps rebuilt and passed two focused Linux checks; compiled message loading and Unicode exception round-trip run across non-English locales. The adapter rejects unmarked literal exception messages in source regression checks. Backend diagnostics and installers remain separate second-pass work. Translations are unverified; Windows/device/installer qualification is pending. Earlier in-progress checkpoints describe historical states.
+
+### Backend diagnostic translation boundary
+
+Added a shared Qt desktop-only audio-error mapper. The invariant Windows backend diagnostic “The selected EQ settings are invalid” now displays the existing translated equalizer-settings message. Unknown driver diagnostics retain their exact text and Unicode details. The backend remains Qt-independent and its diagnostics/processing identifiers are unchanged. Both builds passed catalog completeness and two focused Linux checks, including mapping across non-English locales. Other backend diagnostics still require cataloging; Windows runtime and package qualification remain pending.

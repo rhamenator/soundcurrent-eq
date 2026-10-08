@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 #include "localization.h"
+#include "audio_error_text.h"
 #include <QDoubleSpinBox>
 #include <QDialogButtonBox>
 #include <QPushButton>
@@ -249,6 +250,8 @@ int main(int argc,char **argv){
   for(const auto &language:languages()) {
    if(language.tag=="en")continue;
    QSettings().setValue("i18n/language",language.tag);Runtime runtime;runtime.initialize();
+   require(audioErrorText(QStringLiteral("The selected EQ settings are invalid"))==text("Invalid equalizer settings"),"Backend EQ error did not use translated view text");
+   require(audioErrorText(QString::fromUtf8("Driver diagnostic 0x80070005 / Ω"))==QString::fromUtf8("Driver diagnostic 0x80070005 / Ω"),"Unknown backend detail changed");
    for(const char *source:{"Selected speakers are disconnected","Audio bridge did not start","Install the Windows audio route using Audio driver setup, then reopen the app."}) {
     const auto translated=text(source);
     require(!translated.isEmpty()&&translated!=QString::fromUtf8(source),"Windows adapter message fell back to English in a populated locale");
