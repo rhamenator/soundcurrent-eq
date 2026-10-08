@@ -1844,6 +1844,10 @@ Import into your library?</source>
       <translation>Видалити вибраний фільтр</translation>
     </message>
     <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>Видалити також спільний драйвер VB-CABLE? Іншим користувачам, застосункам запису або голосовим інструментам він може бути потрібен. Підтвердьте, щоб відкрити офіційну програму видалення, а потім натисніть Remove Driver. Відмовтеся, щоб зберегти кабель і видалити лише SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Відновити неповну інсталяцію VB-CABLE</translation>
     </message>
@@ -2404,6 +2408,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE відсутній. Перезапустіть Windows, якщо це було запропоновано, і повторіть налаштування аудіо.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>VB-CABLE досі присутній. Якщо видалення вимагало перезапуску, перезапустіть Windows і повторіть видалення SoundCurrent; інакше завершіть Remove Driver в офіційній програмі встановлення.</translation>
     </message>
     <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>

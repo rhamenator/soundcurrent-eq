@@ -78,7 +78,7 @@ try {
         }
         Add-Type -AssemblyName System.Windows.Forms
         $answer = [System.Windows.Forms.MessageBox]::Show(
-            'Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Choose Yes to open the official remover, then click Remove Driver. Choose No to keep the cable and uninstall only SoundCurrent.',
+            (Get-SCSetupText 'Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.' -Language $Language -Application ('soundcurrent-' + $App)),
             (Get-SCSetupText 'Remove VB-CABLE?' -Language $Language -Application ('soundcurrent-' + $App)), 'YesNo', 'Question')
         if ($answer -ne 'Yes') { exit 0 }
     }
@@ -128,7 +128,7 @@ try {
             if ($Install) { MarkReboot } # Persist before mutation, even if the UI closes.
             & $guard $(if ($Install) { '--install' } else { '--remove' }) $exe
             if ($LASTEXITCODE -ne 0) { throw (Format-SCSetupText 'VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.' -Values @([string]$LASTEXITCODE) -Language $Language -Application ('soundcurrent-' + $App)) }
-            if ($Remove -and (Present)) { throw 'VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.' }
+            if ($Remove -and (Present)) { throw (Get-SCSetupText 'VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.' -Language $Language -Application ('soundcurrent-' + $App)) }
             if ($repair -and !(Present)) {
                 MarkReboot
                 Notice (Format-SCSetupText 'The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.' -Values @((Get-SCSetupText 'Audio driver setup' -Language $Language -Application ('soundcurrent-' + $App))) -Language $Language -Application ('soundcurrent-' + $App))

@@ -1844,6 +1844,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>Poista valittu suodatin</translation>
     </message>
     <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>Poistetaanko myös jaettu VB-CABLE-ohjain? Muut käyttäjät, tallennussovellukset tai puhetyökalut saattavat tarvita sitä. Vahvista avataksesi virallisen poisto-ohjelman ja napsauta sitten Remove Driver. Kieltäydy säilyttääksesi kaapelin ja poistaaksesi vain SoundCurrentin.</translation>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Korjaa puutteellinen VB-CABLE-asennus</translation>
     </message>
@@ -2404,6 +2408,10 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE puuttuu. Käynnistä Windows uudelleen, jos sitä pyydettiin, ja yritä ääniasetusten tekemistä uudelleen.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>VB-CABLE on edelleen olemassa. Jos poistaminen pyysi uudelleenkäynnistystä, käynnistä Windows uudelleen ja yritä SoundCurrentin poistamista uudelleen; muussa tapauksessa suorita Remove Driver loppuun virallisessa asennusohjelmassa.</translation>
     </message>
     <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>

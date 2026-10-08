@@ -168,6 +168,14 @@ class CatalogTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Unaudited installer language reference'):
                 audit.check_backlog(audit.inventory(fixture), baseline)
 
+    def test_remove_driver_label_survives_instruction_translation(self):
+        sources = ['Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.', 'VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.']
+        for source in sources:
+            catalog.validate_text(source, 'Cliquez sur Remove Driver.')
+            for target in ('Supprimer le pilote', 'remove driver', 'Remove Driver Remove Driver'):
+                with self.assertRaisesRegex(ValueError, 'External installer label changed'):
+                    catalog.validate_text(source, target)
+
     def test_setup_lookup_keys_have_required_catalog_entries(self):
         root = Path(__file__).resolve().parents[1]
         required = json.loads((root / 'data/localization/setup-sources.json').read_text())

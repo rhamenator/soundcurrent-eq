@@ -1844,6 +1844,10 @@ Importálja a könyvtárba?</translation>
       <translation>Kiválasztott szűrő eltávolítása</translation>
     </message>
     <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>Eltávolítja a közösen használt VB-CABLE illesztőprogramot is? Más felhasználóknak, felvevőalkalmazásoknak vagy hangkommunikációs eszközöknek szükségük lehet rá. Erősítse meg a hivatalos eltávolító megnyitását, majd kattintson a Remove Driver gombra. Az elutasítással megtarthatja a kábelt, és csak a SoundCurrentet távolítja el.</translation>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Hiányos VB-CABLE-telepítés javítása</translation>
     </message>
@@ -2404,6 +2408,10 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>A VB-CABLE nincs jelen. Ha erre felszólítást kapott, indítsa újra a Windowst, majd próbálja újra a hang beállítását.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>A VB-CABLE még jelen van. Ha az eltávolítás újraindítást kért, indítsa újra a Windowst, és próbálja újra eltávolítani a SoundCurrentet; ellenkező esetben fejezze be a Remove Driver műveletet a hivatalos telepítőben.</translation>
     </message>
     <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>

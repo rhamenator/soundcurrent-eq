@@ -1844,6 +1844,10 @@ Importér til dit bibliotek?</translation>
       <translation>Fjern valgt filter</translation>
     </message>
     <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>Fjern også den delte VB-CABLE-driver? Andre brugere, optagelsesapps eller stemmeværktøjer kan have brug for den. Bekræft for at åbne det officielle fjernelsesprogram, og klik derefter på Remove Driver. Afvis for at beholde kablet og kun afinstallere SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Reparer ufuldstændig VB-CABLE-installation</translation>
     </message>
@@ -2404,6 +2408,10 @@ Importér til dit bibliotek?</translation>
     <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE er ikke til stede. Genstart Windows, hvis du blev bedt om det, og prøv lydopsætningen igen.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>VB-CABLE er stadig til stede. Hvis fjernelsen krævede en genstart, skal du genstarte Windows og prøve at afinstallere SoundCurrent igen; ellers skal du fuldføre Remove Driver i det officielle installationsprogram.</translation>
     </message>
     <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>

@@ -1844,6 +1844,10 @@ Import into your library?</source>
       <translation>선택한 필터 제거</translation>
     </message>
     <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>공유 VB-CABLE 드라이버도 제거할까요? 다른 사용자, 녹음 앱 또는 음성 도구에서 필요할 수 있습니다. 승인하면 공식 제거 프로그램이 열립니다. 그런 다음 Remove Driver를 클릭하세요. 거부하면 케이블을 유지하고 SoundCurrent만 제거합니다.</translation>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>불완전한 VB-CABLE 설치 복구</translation>
     </message>
@@ -2404,6 +2408,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE이 없습니다. 다시 시작하라는 안내가 있었다면 Windows를 다시 시작한 후 오디오 설정을 다시 시도하세요.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>VB-CABLE이 아직 남아 있습니다. 제거 시 다시 시작을 요청했다면 Windows를 다시 시작하고 SoundCurrent 제거를 다시 시도하세요. 그렇지 않다면 공식 설치 프로그램에서 Remove Driver를 완료하세요.</translation>
     </message>
     <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>

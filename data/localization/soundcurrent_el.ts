@@ -1844,6 +1844,10 @@ Import into your library?</source>
       <translation>Αφαίρεση επιλεγμένου φίλτρου</translation>
     </message>
     <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>Να αφαιρεθεί και το κοινόχρηστο πρόγραμμα οδήγησης VB-CABLE; Άλλοι χρήστες, εφαρμογές εγγραφής ή εργαλεία φωνής μπορεί να το χρειάζονται. Επιβεβαιώστε για να ανοίξετε το επίσημο πρόγραμμα αφαίρεσης και κάντε κλικ στο Remove Driver. Αρνηθείτε για να διατηρήσετε το καλώδιο και να απεγκαταστήσετε μόνο το SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Επιδιόρθωση ελλιπούς εγκατάστασης του VB-CABLE</translation>
     </message>
@@ -2404,6 +2408,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>Το VB-CABLE δεν υπάρχει. Επανεκκινήστε τα Windows αν σας ζητήθηκε και δοκιμάστε ξανά τη ρύθμιση ήχου.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>Το VB-CABLE εξακολουθεί να υπάρχει. Αν η αφαίρεση ζήτησε επανεκκίνηση, επανεκκινήστε τα Windows και δοκιμάστε ξανά την απεγκατάσταση του SoundCurrent· διαφορετικά, ολοκληρώστε το Remove Driver στο επίσημο πρόγραμμα εγκατάστασης.</translation>
     </message>
     <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>

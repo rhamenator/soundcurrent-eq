@@ -1844,6 +1844,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Xóa bộ lọc đã chọn</translation>
     </message>
     <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>Gỡ cả trình điều khiển VB-CABLE dùng chung? Người dùng khác, ứng dụng ghi âm hoặc công cụ giọng nói có thể cần nó. Xác nhận để mở chương trình gỡ chính thức, rồi nhấp vào Remove Driver. Từ chối để giữ cáp và chỉ gỡ SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Sửa chữa bản cài đặt VB-CABLE không đầy đủ</translation>
     </message>
@@ -2404,6 +2408,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>Không có VB-CABLE. Khởi động lại Windows nếu được yêu cầu, rồi thử thiết lập âm thanh lại.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>VB-CABLE vẫn còn. Nếu quá trình gỡ yêu cầu khởi động lại, hãy khởi động lại Windows và thử gỡ SoundCurrent lần nữa; nếu không, hãy hoàn tất Remove Driver trong chương trình thiết lập chính thức.</translation>
     </message>
     <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>

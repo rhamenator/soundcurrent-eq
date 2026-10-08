@@ -1844,6 +1844,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Seçili filtreyi kaldır</translation>
     </message>
     <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>Paylaşılan VB-CABLE sürücüsü de kaldırılsın mı? Diğer kullanıcılar, kayıt uygulamaları veya sesli iletişim araçları buna ihtiyaç duyabilir. Resmî kaldırıcıyı açmak için onaylayın, ardından Remove Driver düğmesine tıklayın. Kabloyu koruyup yalnızca SoundCurrent’ı kaldırmak için reddedin.</translation>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Eksik VB-CABLE kurulumunu onar</translation>
     </message>
@@ -2404,6 +2408,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE mevcut değil. İstendiyse Windows’u yeniden başlatın ve ses kurulumunu tekrar deneyin.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>VB-CABLE hâlâ mevcut. Kaldırma işlemi yeniden başlatma istediyse Windows’u yeniden başlatıp SoundCurrent’ı kaldırmayı tekrar deneyin; aksi takdirde resmî kurulumdaki Remove Driver işlemini tamamlayın.</translation>
     </message>
     <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>

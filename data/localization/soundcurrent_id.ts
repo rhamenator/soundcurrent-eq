@@ -1844,6 +1844,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Hapus filter yang dipilih</translation>
     </message>
     <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>Hapus juga driver VB-CABLE bersama? Pengguna lain, aplikasi perekaman atau alat suara mungkin membutuhkannya. Konfirmasikan untuk membuka penghapus resmi, lalu klik Remove Driver. Tolak untuk mempertahankan kabel dan hanya menghapus SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Perbaiki instalasi VB-CABLE yang tidak lengkap</translation>
     </message>
@@ -2404,6 +2408,10 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE tidak ditemukan. Mulai ulang Windows jika diminta, lalu coba penyiapan audio lagi.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>VB-CABLE masih ada. Jika penghapusan meminta mulai ulang, mulai ulang Windows dan coba hapus SoundCurrent lagi; jika tidak, selesaikan Remove Driver di penyiapan resmi.</translation>
     </message>
     <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
