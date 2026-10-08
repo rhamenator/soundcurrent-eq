@@ -22,5 +22,11 @@
   "review": "Contextual AI review across current Japanese catalogs: device routing, calibration limitations, DSP controls, save/quit behavior and neutral rendering counts. Unverified; no native-speaker review.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
-  "remaining": "Six target catalogs incomplete. Second-pass omitted source strings, visual and Windows lifecycle qualification remain open."
+  "remaining": "Six target catalogs incomplete. Second-pass omitted source strings, visual and Windows lifecycle qualification remain open.",
+  "focusedWorkflowTests": {
+    "passed": 4,
+    "total": 4,
+    "scope": "Japanese profile editor workflow, embedded catalog completeness, standard Save, regional resolution, LTR, MainWindow offscreen and structural checks",
+    "log": "/tmp/soundcurrent-eq-ja-workflows-tests.log"
+  }
 }

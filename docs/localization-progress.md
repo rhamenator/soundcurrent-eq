@@ -14,8 +14,8 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 ## Current checkpoint
 
-- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr, sv, da, nb, fi, ro, hu, nn, ar, he, fa, zh-Hans, zh-Hant; 441 extracted messages each. These are unverified translations; nativeReviewed remains false.
-- Other 7 original target locales remain incomplete. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
+- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr, sv, da, nb, fi, ro, hu, nn, ar, he, fa, zh-Hans, zh-Hant, ja; 441 extracted messages each. These are unverified translations; nativeReviewed remains false.
+- Other 6 original target locales remain incomplete. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
 - Coverage is distinct from contextual AI review, native-speaker verification and runtime qualification. Checkpoint reports in tests/results/localization identify tested catalogs, platforms and scopes.
 - Runtime supports separate UI language and number/date locale selection, regional/script fallback, pseudo localization and RTL. Maintenance preserves unfinished edits/comments and rejects unsupported numerus before rewriting.
 - Shared interface layout now wraps meter guidance; the curve instruction also wraps for longer translated text.
@@ -231,3 +231,7 @@ Japanese now has 398/441 populated current catalog entries. Added save/reset act
 ### Japanese: current catalogs populated
 
 All current Japanese catalog entries are populated (441 EQ, 527 Studio). Contextual AI review remains unverified; native-speaker and Windows qualification are pending. Six target languages still have incomplete existing catalogs. Omitted source strings remain scheduled for the second pass. The Japanese checkpoint report records Linux test evidence.
+
+### Japanese: completeness and profile-editor gates
+
+Japanese is now required to stay fully populated by the source/catalog validator. Runtime assertions verify its regional fallback, LTR layout and standard Save action. The actual profile editor now runs its import/edit/save/cancel/discard/apply workflow in Japanese; all four focused Linux checks passed in both apps. The preceding full-suite results remain 75/75 EQ and 77/77 Studio before this additional workflow test. Translations remain unverified.
