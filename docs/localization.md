@@ -4,7 +4,7 @@ EQ and Studio share the same Qt translation/runtime interface. It is reusable by
 
 ## Current coverage
 
-English is the source language. **32 other catalogs are partial, unverifieds, not complete or native-reviewed language packs.** Core controls have unverified translations; detailed instructions/errors and unreviewed terms fall back to English. `data/localization/catalogs.json` records exact message counts and review status for each app. A catalog is never called complete just because it loads.
+English is the source language. **32 non-English catalogs have unverified translations. French is populated for every currently extracted app message; the other 31 remain partial. No language pack is native-reviewed.** Core controls have unverified translations; missing instructions/errors fall back to English; populated but unverified translations are displayed. `data/localization/catalogs.json` records exact message counts and review status for each app. A catalog is never called complete just because it loads.
 
 Coverage is global: European languages, Arabic, Hebrew, Persian, simplified/traditional Chinese, Japanese, Korean, Hindi, Indonesian, Vietnamese, Thai and Swahili. Portuguese for Portugal and Brazil and the two Chinese scripts are separate catalogs. Regional fallback reuses a base-language catalog only where one is explicitly available; explicit script variants are not collapsed into another script. The prior 143-item Europe inventory is retained as **planned** work in `language-inventory.json`, including minority languages. The inventory is extensible and is not a claim of full global coverage.
 
@@ -25,14 +25,14 @@ Language selection uses embedded resources; it never downloads catalogs or execu
 
 ## Translators and maintenance
 
-Edit `data/localization/soundcurrent_TAG.ts` with Qt Linguist. The shared context is `SoundCurrent`; user-facing literals use `SC_TR(...)`, or `soundcurrent::i18n::text(...)` at a data-driven view boundary. Keep `%1`, `%2`, `%n` and `%L1` placeholders intact. Use full sentences with placeholders instead of concatenated translated fragments. Current UI messages are not numerus messages; extend the maintenance script to preserve Qt TS numerus entries and add plural regression tests when plural sentences are introduced.
+Edit `data/localization/soundcurrent_TAG.ts` with Qt Linguist. The shared context is `SoundCurrent`; user-facing literals use `SC_TR(...)`, or `soundcurrent::i18n::text(...)` at a data-driven view boundary. Keep `%1`, `%2`, `%n` and `%L1` placeholders intact. Use full sentences with placeholders instead of concatenated translated fragments. Current UI messages are not numerus messages. The maintenance script rejects numerus entries before rewriting any catalog, until explicit Qt language-specific plural rules and regression tests are implemented. Unfinished translated text and translator comments are preserved during updates.
 
 ```sh
 python3 scripts/localization.py --update
 python3 scripts/localization.py --check
 ```
 
-Updating requires Qt Linguist `lrelease` (Qt 6 preferred). Compiled QM files are committed with SHA-256 provenance in `catalogs.json` and embedded in every Linux/Windows build; ordinary builds need only Qt Core/Widgets. The audit requires only Python and checks extraction freshness, blanks, duplicate keys, placeholders, coverage and TS/QM hashes. Add a locale and its native name to `seed-translations.json` before the first update; subsequent updates preserve existing translator edits. Use proper language/script/region tags; do not copy a regional label to imply a reviewed regional translation.
+Updating requires Qt Linguist `lrelease` (Qt 6 preferred). Compiled QM files are committed with SHA-256 provenance in `catalogs.json` and embedded in every Linux/Windows build; ordinary builds need only Qt Core/Widgets. The audit requires only Python and checks extraction freshness, blanks, duplicate keys, placeholders, literal ampersands, rich-text link/tag integrity, file-dialog extension patterns, embedded resource inventory, coverage and TS/QM hashes. `--require-complete` rejects any unfinished translation across all languages. `requiredCompleteLocales` in the seed inventory prevents already-populated languages from silently acquiring blanks when UI text changes. Add a locale and its native name to `seed-translations.json` before the first update; subsequent updates preserve existing translator edits. Standard Qt action captions use the embedded application catalog; OS-native dialogs may retain the operating system language. Use proper language/script/region tags; do not copy a regional label to imply a reviewed regional translation.
 
 Developer-only test languages `qps-ploc` and `qps-rtl` expand text and exercise RTL layout. `--localization-ui-test --language TAG` constructs the real views without starting audio/network processing. `--ui-self-test` remains deterministic English regardless of the user's preferences.
 

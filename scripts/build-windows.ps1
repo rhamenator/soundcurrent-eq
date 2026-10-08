@@ -128,7 +128,7 @@ try {
     }
     $ui.Refresh()
     Get-Content $uiLog -ErrorAction SilentlyContinue
-    foreach ($locale in @('fr','de','ar','qps-ploc','qps-rtl')) {
+    foreach ($locale in @('de','fr','es','it','pt-PT','pt-BR','nl','pl','cs','sk','uk','ru','el','tr','sv','da','nb','fi','ro','hu','ar','he','fa','zh-Hans','zh-Hant','ja','ko','hi','id','vi','th','sw','qps-ploc','qps-rtl')) {
         $localizedLog = Join-Path $root "build-windows-native\localized-$locale.log"
         $localized = Start-Process "$stage\soundcurrent-eq.exe" -ArgumentList @('--localization-ui-test','--language',$locale) -PassThru -RedirectStandardError $localizedLog
         $null = $localized.Handle
@@ -136,6 +136,18 @@ try {
         $localized.Refresh()
         if ($localized.ExitCode -ne 0) { Get-Content $localizedLog; throw "Localized UI failed: $locale" }
     }
+    Copy-Item 'build-windows-native\Release\soundcurrent-equipment-ui-test.exe' $stage
+    foreach ($locale in @('en','fr')) {
+        $equipmentLog = Join-Path $root "build-windows-native\equipment-ui-$locale.log"
+        $equipment = Start-Process "$stage\soundcurrent-equipment-ui-test.exe" -ArgumentList @('--language',$locale) -PassThru -RedirectStandardError $equipmentLog
+        $null = $equipment.Handle
+        if (!$equipment.WaitForExit(60000)) { Stop-Process -Id $equipment.Id -Force; throw "Equipment UI timed out: $locale" }
+        $equipment.Refresh()
+        if ($equipment.ExitCode -ne 0) { Get-Content $equipmentLog; throw "Equipment UI failed: $locale" }
+    }
+    Remove-Item "$stage\soundcurrent-equipment-ui-test.exe"
+    & python tests/translation_catalogs.py
+    if ($LASTEXITCODE -ne 0) { throw 'Translation-maintenance regression tests failed' }
     & python scripts/localization.py --check
     if ($LASTEXITCODE -ne 0) { throw 'Translation catalog audit failed' }
     Remove-Item Env:\QT_QPA_PLATFORM

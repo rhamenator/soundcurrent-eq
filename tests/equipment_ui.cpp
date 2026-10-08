@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 #include "equipment_profiles.h"
+#include "localization.h"
 #include <QApplication>
 #include <QComboBox>
 #include <QDialogButtonBox>
@@ -21,11 +22,11 @@ namespace {
 void require(bool ok, const char *message) { if (!ok) qFatal("%s", message); }
 QDialog *dialog(const QString &title) {
     for (auto *w: QApplication::topLevelWidgets())
-        if (w->isVisible() && w->windowTitle()==title) return qobject_cast<QDialog *>(w);
+        if (w->isVisible() && w->windowTitle()==soundcurrent::i18n::text(title.toUtf8().constData())) return qobject_cast<QDialog *>(w);
     return nullptr;
 }
 QPushButton *button(QWidget *w, const QString &text) {
-    for (auto *b:w->findChildren<QPushButton *>()) if(b->text()==text)return b;
+    for (auto *b:w->findChildren<QPushButton *>()) if(b->text()==soundcurrent::i18n::text(text.toUtf8().constData()))return b;
     qFatal("Missing button: %s",qPrintable(text));return nullptr;
 }
 void clickLater(QAbstractButton *b) { require(b,"Missing dialog action"); QTimer::singleShot(0,b,&QAbstractButton::click); }
@@ -41,6 +42,8 @@ int main(int argc,char **argv) {
     QTemporaryDir temp;require(temp.isValid(),"No isolated profile folder");
     app.setOrganizationName("SoundCurrentUITests");app.setApplicationName(QUuid::createUuid().toString(QUuid::WithoutBraces));
     QStandardPaths::setTestModeEnabled(true);
+    soundcurrent::i18n::Runtime localization;
+    localization.initialize(!app.arguments().contains("--language"));
     // A unique application name keeps every read/write away from real profiles.
     const auto path=libraryPath();require(loadLibrary().isEmpty(),"Test library not isolated");
     Profile fixture;fixture.kind="speaker";fixture.brand="UI fixture";fixture.family="Test";fixture.model="Saved profile";
@@ -53,7 +56,10 @@ int main(int argc,char **argv) {
             return;
         }
         if(auto *editor=dialog("Equipment profile editor")) {
-            if(phase==0){setGain(editor,3);phase=1;closeLater(editor);}
+            if(phase==0){
+                require(editor->findChild<QLineEdit *>("profileSource")->maxLength()==2048,"Translated source label changed its field limit");
+                require(editor->findChild<QLineEdit *>("profileConditions")->maxLength()==2000,"Translated conditions label changed its field limit");
+                setGain(editor,3);phase=1;closeLater(editor);}
             else if(phase==2){checkedCancel=true;phase=3;closeLater(editor);}
         }
     });
@@ -89,7 +95,10 @@ int main(int argc,char **argv) {
             }
         }
         auto *library=dialog("Equipment profiles — brand / family / model");if(!library)return;
-        if(phase==0){require(bundledProfiles().size()>1000,"Bundled equipment missing");phase=1;clickLater(button(library,"Import JSON"));}
+        if(phase==0){require(bundledProfiles().size()>1000,"Bundled equipment missing");
+            auto *kind=library->findChild<QComboBox *>("equipmentKindFilter");require(kind,"No equipment kind selector");
+            require(kind->itemData(1).toString()=="speaker" && kind->itemData(2).toString()=="microphone" && kind->itemData(3).toString()=="amplifier","Localized kinds changed profile IDs");
+            kind->setCurrentIndex(2);kind->setCurrentIndex(0);phase=1;clickLater(button(library,"Import JSON"));}
         else if(phase==3){phase=4;clickLater(button(library,"Import JSON"));}
         else if(phase==6){auto profiles=loadLibrary();require(profiles.size()==2 && profiles[0].id==originalId,"Valid import overwrote existing profile");phase=7;clickLater(button(library,"Apply profile"));}
         else if(phase==8){require(applied,"Apply callback missing");phase=9;closeLater(library);}

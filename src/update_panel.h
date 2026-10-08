@@ -63,7 +63,7 @@ class UpdatePanel : public QGroupBox {
 public:
     UpdatePanel(QString repo,QString title,QString version,bool active,QWidget *parent=nullptr)
         :QGroupBox(SC_TR("Application updates"),parent),repo_(std::move(repo)),title_(std::move(title)),version_(std::move(version)),network_(this) {
-        auto *layout=new QVBoxLayout(this);layout->addWidget(new QLabel(SC_TR("Installed version: ")+version_));
+        auto *layout=new QVBoxLayout(this);layout->addWidget(new QLabel(SC_TR("Installed version: %1").arg(version_)));
         auto *help=new QLabel(SC_TR("Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen."));help->setWordWrap(true);layout->addWidget(help);
         enabled_=new QCheckBox(SC_TR("Remind me when updates are available or a restart is needed"));enabled_->setChecked(QSettings().value("updates/reminders",true).toBool());layout->addWidget(enabled_);
         preview_=new QCheckBox(SC_TR("Include preview releases"));preview_->setChecked(QSettings().value("updates/previews",true).toBool());layout->addWidget(preview_);

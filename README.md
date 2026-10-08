@@ -479,3 +479,5 @@ includes update-available and Quit/reopen reminders. See
 ## Localization development
 
 Interface language and regional number/date formatting are independent settings. Version 1.1.0 embeds 32 partial, unverified translations plus English, with explicit coverage and English fallback. These are not finished or native-reviewed language packs. See [localization and contributor instructions](docs/localization.md). Version 1.1.0 introduces this support.
+
+Current localization completion work is described in [the progress record](docs/localization-progress.md). Published 1.1.0 packages are unchanged by these development commits.

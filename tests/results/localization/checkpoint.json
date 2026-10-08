@@ -1,0 +1,260 @@
+{
+  "stage": "French catalog and localization correctness checkpoint",
+  "releasePublished": false,
+  "coverage": {
+    "de": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "cbb46fbf6ec5826ee58fd66d71bd22d8b0a6c09cb0fb0326ac4c875b51f462a2",
+      "qmSha256": "b9f9bb2a323a3b3dce8a3df6806070d16dff68d9a80669b33243e093695728a3"
+    },
+    "fr": {
+      "populated": 430,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "761589eabac6c55be16d7e616f3552c1d4744e95494713a2c90ba8168f4db678",
+      "qmSha256": "8ee52dae686c2d05c6428163266100aae5746d02e2412f920d124724222adfd4"
+    },
+    "es": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "2394cb5fe08cde73d35e36d7215cb1083cb79bade677d345674b8c51ffc15436",
+      "qmSha256": "7fa86fc8a30726060f100464bced65390a0434afd4d408a8a9af05fbf4f1a320"
+    },
+    "it": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "6b84f7488e0465d6249dc5785301a9e6217c7fb522d7611def58f45ef0c436b3",
+      "qmSha256": "3289bf2d3adee8b0fa8ee2cf540f5b2883fa34b29468fdfc020912489e43f2bd"
+    },
+    "pt-PT": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "cfcb0b67aaa41f0e19df8674df085dcfa23f47667448814d6d0c10e77e83d3f2",
+      "qmSha256": "701c7d7c3e31023a41e45bf66096a281068c350aee637df625b9cce7ad3949d9"
+    },
+    "pt-BR": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "3b4d1a2d31eb14e3ab59c52455ce45387a64ca66a269c28200e64a8a118d1d6b",
+      "qmSha256": "3db305be31d91e3921c27a3adf71b9ec509f411de749d69a5ec890ca3a83f7ba"
+    },
+    "nl": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "d395785eab0fadc4042855f48cf0c8db7e027333e6533c8039d55130d4ff4f21",
+      "qmSha256": "619414303547a2fe2fa63b3ddaf2fd3526d7975a29b079649cdf55de1b38c964"
+    },
+    "pl": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "b5931bc9d0669ccca0f01a1ca8c086f75d5051073a78caad20310c8001a92073",
+      "qmSha256": "c8b6d872226c14b08cf2f4a1ca8909f18e3f0884ad147ea2e1779e147ce2f9a7"
+    },
+    "cs": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "a9b74a8e435f347c6d22a6e853357756600b329752ab881b6af1a105a4e9b80a",
+      "qmSha256": "b8c45b5b5309a0072b9916a141b1172a07c9b29ba369b9a2248fba048d313b33"
+    },
+    "sk": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "4902ba0fe9386ebd9184f5b8deb27362dc5efae9cb2b77ba50da85f9fe18cfe1",
+      "qmSha256": "4c9063ec70362e9aaa7923cbc9b4ec649236bc52aa5a7d3bf353a5a8506d0eeb"
+    },
+    "uk": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "0e7f78fd4e4727c7591fc5169cd356c3d38cd26da9543f0ae5eebab74539779a",
+      "qmSha256": "f5de85454ebc86add2b47807bf015e41f3bb6cfd63075a90ffb453356b97ec74"
+    },
+    "ru": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "c3d78e66675406bf3300987abcb7c254a805013d04481d86ca47b82d36368388",
+      "qmSha256": "c32ac4f6ad306f956d59e204d91ed430eb5d8f283b1a91d01711d4adda54f476"
+    },
+    "el": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "edaf9971bc620325749204fbcd4a1d29520d602681f474f291d5a20eafa8a072",
+      "qmSha256": "f8338760c1b24f0380bacfa1b801ebf41f0b23e8d9a5b2bc02114a5b434113f0"
+    },
+    "tr": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "fe9b38aa5df0e6b04a45f85db715b87c223e8b720ec68542e768168c78143605",
+      "qmSha256": "72b99301fa40ea3ddd59242b1069352943e22d2a8862be92e3f0f32120be3a4a"
+    },
+    "sv": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "73e5d1b0b4fe1dad212a144109336ca3d03477d38b5e7624872647d80d94d53c",
+      "qmSha256": "71bbe0cd1def32009d36b1c0bcbf1faf3575b58ecba5b2704a9013960ba56968"
+    },
+    "da": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "4e3d7f8636d60fc10a40edfd73197abaf0cbcc2c71860527cdb32d6d57064297",
+      "qmSha256": "edb3e711ccd2519ae400718767967be93d1d212bb844be3020a8ffb996a3bca3"
+    },
+    "nb": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "73aeb195057be8901bba7ca94b79c0428c33743dda32c6d5f51e185171f84135",
+      "qmSha256": "2e947f912c17af9b172cf62f83e4edf1122ce545099f4f4d2a0414cbf1b5baf3"
+    },
+    "fi": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "e475400c33818a0eb1736c14000f1a5c5fc13e43e4bde962569d6390523f2b8b",
+      "qmSha256": "b04604280a6649ba1c7ecad89a01de71d995916e14ec40fe22e1f7bfea3382af"
+    },
+    "ro": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "211f7107a7f3f59da9fe43bd10f1af98a72a9fbfd5cafe521dcc5e151ff383ab",
+      "qmSha256": "8cfd0f403462451f65548ca4424d902fe5af82354d078d919b20cfe298e3c9a2"
+    },
+    "hu": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "271876043af19de03ee68962810c13f18113577b4ae3f9f589b6f972928a7f51",
+      "qmSha256": "85ed30936b83ef2fc6490783dc4f7bd8216b49688ab93a22fc76329372e3ac94"
+    },
+    "ar": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "33691ed92381bc5d01bc27efa5dc4432825ff8423555016b19718ddb01086e88",
+      "qmSha256": "fbc595bdac6a278a8a452e57fa9fe250a1ec1282e027717dc7ddd745e5731a94"
+    },
+    "he": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "cda33f8a0d0ad0f94f160890ca3462ca9a3b67c77034fa4b9694c1ff725df9b1",
+      "qmSha256": "5ffe688ad0d3f5cc0e36c90ef93c3241c1f49d205c53b1925131b21539022d37"
+    },
+    "fa": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "5bae0fc24645ed396a2bcd34745b170bb5bc3e63bf23bc370fafbd94a7eda453",
+      "qmSha256": "9b2b696b1027ec6a0813216f503afadd1b4905e5276e78f9a47e6043de3c327b"
+    },
+    "zh-Hans": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "fafb251896f459533084acb6515f60285c82f05212b8721afd8affb559ead6ff",
+      "qmSha256": "58ba5bab6f92eb1dd00c1282e5ccdc800cbe0b839e39916bdafea40e5eccc1e7"
+    },
+    "zh-Hant": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "6e8e453d60db4f5cd29b72298be2e54e482bfd20ffc7f2735ebc58b1d02b2b05",
+      "qmSha256": "712065a712866ed7750481e45d75cf70b7b8cc8ac0c21e9838812d4242ea2f5b"
+    },
+    "ja": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "5bdb92f09168eb5cfdd4d8a39a3505877942960bccc934849c401d1f0fb2994d",
+      "qmSha256": "abf1f86b8c67ed2f5639221e55583e352e46162e554931900b991808402502eb"
+    },
+    "ko": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "b4551e68dc3a90caf193272853e4ee4426e04d619c90b48bbb4569d1cf6b20e2",
+      "qmSha256": "3186d8fc14685bc801f57acb95b6264573f9b7cdeb667d79b89db341495f9341"
+    },
+    "hi": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "b72dfe32aa33580f90dc16707b80b0095b1991ad3cc3adb39ff8aec2bee62082",
+      "qmSha256": "a5390959737efe93e9bfdc11fc7f6faf4d697ebc87fd4a249f72e7d02c05ad2b"
+    },
+    "id": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "b58c1fb35c5211cb1d93313718ba6ce1ad96e4be6b0206a1b83ed7cb5599b746",
+      "qmSha256": "876e071d153e1ead6859db517fa59299778d795893e53230125ff28b79fa818c"
+    },
+    "vi": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "b1f035888b092e84028b3ec159feb50e1c81681d1334abe361107a365e7618fc",
+      "qmSha256": "78250b47a602af75b590f7b9b69e15015e4490657e2e471acb44f2cc4c943858"
+    },
+    "th": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "e8ecef0cd58e505dd767fdda48ebb73d642cb776c9cc9ce6c0d9e6a4cfa33717",
+      "qmSha256": "d371060c1f4c2a61cc2db6aa4c90d2700aa7b75efdd0e51ac37f548606d2846b"
+    },
+    "sw": {
+      "populated": 30,
+      "total": 430,
+      "nativeReviewed": false,
+      "tsSha256": "a26795988fa1229183d0d3260e1ed62a61f23390ead3e832bfd00e90f36feae1",
+      "qmSha256": "8e0c36937098d7d6d068b3e645eff78d8255048230b2b94a8384ab307eabc821"
+    }
+  },
+  "validation": {
+    "linuxCtest": {
+      "passed": 48,
+      "total": 48,
+      "log": "/tmp/sc-l10n-checkpoint-eq-tests.log"
+    },
+    "linuxViews": {
+      "testedLanguages": 32,
+      "pseudoLocales": 2,
+      "equipmentWorkflow": [
+        "en",
+        "fr"
+      ],
+      "visualReview": {
+        "locale": "fr",
+        "screen": "1280x720",
+        "platform": "xcb/Xvfb",
+        "tabsCaptured": 2
+      }
+    },
+    "windows": "pending CI",
+    "packageLifecycle": "pending CI",
+    "nativeSpeakerReview": "unverified"
+  },
+  "limitations": [
+    "Source extraction guard covers the designated app UI files; it is not a proof that every external diagnostic or imported metadata field is localized.",
+    "OS-native dialogs and external backend diagnostics may retain their own language.",
+    "Numerus messages are not used; maintenance rejects them until explicit Qt plural support is added.",
+    "Other 31 target locales still have missing messages."
+  ]
+}

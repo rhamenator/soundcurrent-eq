@@ -74,6 +74,36 @@ public:
     }
 private: bool rtl_;
 };
+// Translate Qt's standard action captions through the same embedded app catalog.
+// Native operating-system dialogs keep the operating system language.
+class StandardActionTranslator final : public QTranslator {
+public:
+    bool isEmpty() const override { return false; }
+    QString translate(const char *context, const char *source, const char *, int) const override {
+        const QByteArray name(context);
+        if (name != "QPlatformTheme" && name != "QDialogButtonBox") return {};
+        const QByteArray action(source);
+        if (action == "OK") return text("OK");
+        if (action == "&Yes") return text("Yes");
+        if (action == "&No") return text("No");
+        if (action == "Yes to &All") return text("Yes to All");
+        if (action == "N&o to All") return text("No to All");
+        if (action == "Open") return text("Open");
+        if (action == "Save") return text("Save");
+        if (action == "Save All") return text("Save All");
+        if (action == "Close") return text("Close");
+        if (action == "Cancel") return text("Cancel");
+        if (action == "Discard") return text("Discard");
+        if (action == "Apply") return text("Apply");
+        if (action == "Reset") return text("Reset");
+        if (action == "Restore Defaults") return text("Restore Defaults");
+        if (action == "Retry") return text("Retry");
+        if (action == "Abort") return text("Abort");
+        if (action == "Ignore") return text("Ignore");
+        if (action == "Help") return text("Help");
+        return {};
+    }
+};
 class Runtime {
 public:
     void initialize(bool englishTest=false) {
@@ -87,13 +117,14 @@ public:
             if(t->load(":/i18n/soundcurrent_"+loaded_+".qm"))translator_=std::move(t);
             else loaded_="en";
         }
+        QCoreApplication::installTranslator(&standardActions_);
         if(translator_)QCoreApplication::installTranslator(translator_.get());
         const auto direction=loaded_=="qps-rtl"?Qt::RightToLeft:QLocale(loaded_).textDirection();
         QApplication::setLayoutDirection(direction);
     }
-    ~Runtime(){if(translator_)QCoreApplication::removeTranslator(translator_.get());}
+    ~Runtime(){if(translator_)QCoreApplication::removeTranslator(translator_.get());QCoreApplication::removeTranslator(&standardActions_);}
     QString requested() const{return requested_;} QString loaded() const{return loaded_;}
-private: QString requested_,loaded_;std::unique_ptr<QTranslator> translator_;
+private: QString requested_,loaded_;StandardActionTranslator standardActions_;std::unique_ptr<QTranslator> translator_;
 };
 inline QGroupBox *settingsPanel() {
     auto *box=new QGroupBox(text("Language and regional settings"));

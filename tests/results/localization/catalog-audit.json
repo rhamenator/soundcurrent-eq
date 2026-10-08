@@ -1,0 +1,349 @@
+{
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "inputs": {
+    "data/localization/soundcurrent_en.ts": "db117c3c42ece0a8dea8d73b8035a05f1445a70bc1775af8f6deebfb37febd88",
+    "data/localization/soundcurrent_ar.ts": "33691ed92381bc5d01bc27efa5dc4432825ff8423555016b19718ddb01086e88",
+    "data/localization/soundcurrent_cs.ts": "a9b74a8e435f347c6d22a6e853357756600b329752ab881b6af1a105a4e9b80a",
+    "data/localization/soundcurrent_da.ts": "4e3d7f8636d60fc10a40edfd73197abaf0cbcc2c71860527cdb32d6d57064297",
+    "data/localization/soundcurrent_de.ts": "cbb46fbf6ec5826ee58fd66d71bd22d8b0a6c09cb0fb0326ac4c875b51f462a2",
+    "data/localization/soundcurrent_el.ts": "edaf9971bc620325749204fbcd4a1d29520d602681f474f291d5a20eafa8a072",
+    "data/localization/soundcurrent_es.ts": "2394cb5fe08cde73d35e36d7215cb1083cb79bade677d345674b8c51ffc15436",
+    "data/localization/soundcurrent_fa.ts": "5bae0fc24645ed396a2bcd34745b170bb5bc3e63bf23bc370fafbd94a7eda453",
+    "data/localization/soundcurrent_fi.ts": "e475400c33818a0eb1736c14000f1a5c5fc13e43e4bde962569d6390523f2b8b",
+    "data/localization/soundcurrent_fr.ts": "761589eabac6c55be16d7e616f3552c1d4744e95494713a2c90ba8168f4db678",
+    "data/localization/soundcurrent_he.ts": "cda33f8a0d0ad0f94f160890ca3462ca9a3b67c77034fa4b9694c1ff725df9b1",
+    "data/localization/soundcurrent_hi.ts": "b72dfe32aa33580f90dc16707b80b0095b1991ad3cc3adb39ff8aec2bee62082",
+    "data/localization/soundcurrent_hu.ts": "271876043af19de03ee68962810c13f18113577b4ae3f9f589b6f972928a7f51",
+    "data/localization/soundcurrent_id.ts": "b58c1fb35c5211cb1d93313718ba6ce1ad96e4be6b0206a1b83ed7cb5599b746",
+    "data/localization/soundcurrent_it.ts": "6b84f7488e0465d6249dc5785301a9e6217c7fb522d7611def58f45ef0c436b3",
+    "data/localization/soundcurrent_ja.ts": "5bdb92f09168eb5cfdd4d8a39a3505877942960bccc934849c401d1f0fb2994d",
+    "data/localization/soundcurrent_ko.ts": "b4551e68dc3a90caf193272853e4ee4426e04d619c90b48bbb4569d1cf6b20e2",
+    "data/localization/soundcurrent_nb.ts": "73aeb195057be8901bba7ca94b79c0428c33743dda32c6d5f51e185171f84135",
+    "data/localization/soundcurrent_nl.ts": "d395785eab0fadc4042855f48cf0c8db7e027333e6533c8039d55130d4ff4f21",
+    "data/localization/soundcurrent_pl.ts": "b5931bc9d0669ccca0f01a1ca8c086f75d5051073a78caad20310c8001a92073",
+    "data/localization/soundcurrent_pt-BR.ts": "3b4d1a2d31eb14e3ab59c52455ce45387a64ca66a269c28200e64a8a118d1d6b",
+    "data/localization/soundcurrent_pt-PT.ts": "cfcb0b67aaa41f0e19df8674df085dcfa23f47667448814d6d0c10e77e83d3f2",
+    "data/localization/soundcurrent_ro.ts": "211f7107a7f3f59da9fe43bd10f1af98a72a9fbfd5cafe521dcc5e151ff383ab",
+    "data/localization/soundcurrent_ru.ts": "c3d78e66675406bf3300987abcb7c254a805013d04481d86ca47b82d36368388",
+    "data/localization/soundcurrent_sk.ts": "4902ba0fe9386ebd9184f5b8deb27362dc5efae9cb2b77ba50da85f9fe18cfe1",
+    "data/localization/soundcurrent_sv.ts": "73e5d1b0b4fe1dad212a144109336ca3d03477d38b5e7624872647d80d94d53c",
+    "data/localization/soundcurrent_sw.ts": "a26795988fa1229183d0d3260e1ed62a61f23390ead3e832bfd00e90f36feae1",
+    "data/localization/soundcurrent_th.ts": "e8ecef0cd58e505dd767fdda48ebb73d642cb776c9cc9ce6c0d9e6a4cfa33717",
+    "data/localization/soundcurrent_tr.ts": "fe9b38aa5df0e6b04a45f85db715b87c223e8b720ec68542e768168c78143605",
+    "data/localization/soundcurrent_uk.ts": "0e7f78fd4e4727c7591fc5169cd356c3d38cd26da9543f0ae5eebab74539779a",
+    "data/localization/soundcurrent_vi.ts": "b1f035888b092e84028b3ec159feb50e1c81681d1334abe361107a365e7618fc",
+    "data/localization/soundcurrent_zh-Hans.ts": "fafb251896f459533084acb6515f60285c82f05212b8721afd8affb559ead6ff",
+    "data/localization/soundcurrent_zh-Hant.ts": "6e8e453d60db4f5cd29b72298be2e54e482bfd20ffc7f2735ebc58b1d02b2b05"
+  },
+  "config_sha256": "3a1df51a456958e8df53bac68d7c68f4483822e7b9c5d5efc1b3c5164176cc2d",
+  "findings": [
+    {
+      "repository": "soundcurrent-eq",
+      "commit": "unknown",
+      "file": "data/localization/soundcurrent_ar.ts",
+      "locale": "ar",
+      "key": "[\"SoundCurrent\",null,\" (currently selected)\",\"\"]",
+      "category": "untranslated",
+      "severity": "error",
+      "confidence": 1.0,
+      "evidence": {},
+      "recommended_action": "Review and correct catalog; rerun audit.",
+      "verification_status": "deterministic",
+      "kind": "deterministic",
+      "fingerprint": "816e57a7068a8e440ae17f5f39507ba02bd58a47f7a3ba637312d3d2a1ae7574"
+    },
+    {
+      "repository": "soundcurrent-eq",
+      "commit": "unknown",
+      "file": "data/localization/soundcurrent_ar.ts",
+      "locale": "ar",
+      "key": "[\"SoundCurrent\",null,\" (restored selection)\",\"\"]",
+      "category": "untranslated",
+      "severity": "error",
+      "confidence": 1.0,
+      "evidence": {},
+      "recommended_action": "Review and correct catalog; rerun audit.",
+      "verification_status": "deterministic",
+      "kind": "deterministic",
+      "fingerprint": "5db2c7204bbad851beb096af09939f786e7c028d206127330e1f26b164acc3c3"
+    },
+    {
+      "repository": "soundcurrent-eq",
+      "commit": "unknown",
+      "file": "data/localization/soundcurrent_ar.ts",
+      "locale": "ar",
+      "key": "[\"SoundCurrent\",null,\" [custom]\",\"\"]",
+      "category": "untranslated",
+      "severity": "error",
+      "confidence": 1.0,
+      "evidence": {},
+      "recommended_action": "Review and correct catalog; rerun audit.",
+      "verification_status": "deterministic",
+      "kind": "deterministic",
+      "fingerprint": "c2246bc1ae5761ba07a1b29948e259b0afcdc6da23e725d33ec1b02602ff734f"
+    }
+  ],
+  "metrics": [
+    {
+      "file": "data/localization/soundcurrent_ar.ts",
+      "locale": "ar",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_cs.ts",
+      "locale": "cs",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_da.ts",
+      "locale": "da",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_de.ts",
+      "locale": "de",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_el.ts",
+      "locale": "el",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_es.ts",
+      "locale": "es",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_fa.ts",
+      "locale": "fa",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_fi.ts",
+      "locale": "fi",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_fr.ts",
+      "locale": "fr",
+      "total": 430,
+      "translated": 430,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_he.ts",
+      "locale": "he",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_hi.ts",
+      "locale": "hi",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_hu.ts",
+      "locale": "hu",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_id.ts",
+      "locale": "id",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_it.ts",
+      "locale": "it",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_ja.ts",
+      "locale": "ja",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_ko.ts",
+      "locale": "ko",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_nb.ts",
+      "locale": "nb",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_nl.ts",
+      "locale": "nl",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_pl.ts",
+      "locale": "pl",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_pt-BR.ts",
+      "locale": "pt-BR",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_pt-PT.ts",
+      "locale": "pt-PT",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_ro.ts",
+      "locale": "ro",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_ru.ts",
+      "locale": "ru",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_sk.ts",
+      "locale": "sk",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_sv.ts",
+      "locale": "sv",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_sw.ts",
+      "locale": "sw",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_th.ts",
+      "locale": "th",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_tr.ts",
+      "locale": "tr",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_uk.ts",
+      "locale": "uk",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_vi.ts",
+      "locale": "vi",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_zh-Hans.ts",
+      "locale": "zh-Hans",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    },
+    {
+      "file": "data/localization/soundcurrent_zh-Hant.ts",
+      "locale": "zh-Hant",
+      "total": 430,
+      "translated": 30,
+      "linguistic_verification": "unknown",
+      "runtime_ui_qualification": "unknown"
+    }
+  ],
+  "findingCounts": {
+    "untranslated": 12400
+  },
+  "reportNote": "Compact report: all metrics and input hashes retained; findings contain three samples. Counts include every finding. The guard does not assess linguistic accuracy or compiled/runtime behavior."
+}

@@ -3,18 +3,6 @@
   <context>
     <name>SoundCurrent</name>
     <message>
-      <source>
-Apply this correction to the </source>
-      <translation>
-Apply this correction to the </translation>
-    </message>
-    <message>
-      <source>
-Import into your library?</source>
-      <translation>
-Import into your library?</translation>
-    </message>
-    <message>
       <source> (currently selected)</source>
       <translation> (currently selected)</translation>
     </message>
@@ -23,12 +11,16 @@ Import into your library?</translation>
       <translation> (restored selection)</translation>
     </message>
     <message>
-      <source> route?</source>
-      <translation> route?</translation>
+      <source> [custom]</source>
+      <translation> [custom]</translation>
     </message>
     <message>
       <source> · mono</source>
       <translation> · mono</translation>
+    </message>
+    <message>
+      <source> · no USB microphone detected</source>
+      <translation> · no USB microphone detected</translation>
     </message>
     <message>
       <source> · stereo</source>
@@ -39,8 +31,40 @@ Import into your library?</translation>
       <translation>%1 %2%3 dB</translation>
     </message>
     <message>
+      <source>%1 / %2
+%3
+Apply this correction to the %4 route?</source>
+      <translation>%1 / %2
+%3
+Apply this correction to the %4 route?</translation>
+    </message>
+    <message>
+      <source>%1 / %2
+%3
+Import into your library?</source>
+      <translation>%1 / %2
+%3
+Import into your library?</translation>
+    </message>
+    <message>
+      <source>%1 Hz: measured %2%3 dB; suggested %4%5 dB</source>
+      <translation>%1 Hz: measured %2%3 dB; suggested %4%5 dB</translation>
+    </message>
+    <message>
+      <source>%1 Hz: too quiet to measure</source>
+      <translation>%1 Hz: too quiet to measure</translation>
+    </message>
+    <message>
+      <source>%1 disconnected. </source>
+      <translation>%1 disconnected. </translation>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
+    </message>
+    <message>
+      <source>Abort</source>
+      <translation>Abort</translation>
     </message>
     <message>
       <source>Acoustic</source>
@@ -111,6 +135,10 @@ Import into your library?</translation>
       <translation>Amp details</translation>
     </message>
     <message>
+      <source>Amplifier</source>
+      <translation>Amplifier</translation>
+    </message>
+    <message>
       <source>Amplifier / receiver</source>
       <translation>Amplifier / receiver</translation>
     </message>
@@ -131,6 +159,10 @@ Import into your library?</translation>
       <translation>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</translation>
     </message>
     <message>
+      <source>Another SoundCurrent EQ sink is already running</source>
+      <translation>Another SoundCurrent EQ sink is already running</translation>
+    </message>
+    <message>
       <source>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</source>
       <translation>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</translation>
     </message>
@@ -139,8 +171,12 @@ Import into your library?</translation>
       <translation>Another SoundCurrent equalizer is running. Quit EQ or Studio before opening the other app.</translation>
     </message>
     <message>
-      <source>Another equalizer route is present: </source>
-      <translation>Another equalizer route is present: </translation>
+      <source>Another SoundCurrent microphone filter is running</source>
+      <translation>Another SoundCurrent microphone filter is running</translation>
+    </message>
+    <message>
+      <source>Another equalizer route is present: %1. Quit it before using SoundCurrent.</source>
+      <translation>Another equalizer route is present: %1. Quit it before using SoundCurrent.</translation>
     </message>
     <message>
       <source>Application update</source>
@@ -151,8 +187,20 @@ Import into your library?</translation>
       <translation>Application updates</translation>
     </message>
     <message>
+      <source>Apply</source>
+      <translation>Apply</translation>
+    </message>
+    <message>
       <source>Apply correction?</source>
       <translation>Apply correction?</translation>
+    </message>
+    <message>
+      <source>Apply profile</source>
+      <translation>Apply profile</translation>
+    </message>
+    <message>
+      <source>Apply suggested EQ</source>
+      <translation>Apply suggested EQ</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -245,6 +293,10 @@ Import into your library?</translation>
       <translation>Brand</translation>
     </message>
     <message>
+      <source>Brand, family and model are required (maximum 120 characters each).</source>
+      <translation>Brand, family and model are required (maximum 120 characters each).</translation>
+    </message>
+    <message>
       <source>Bright</source>
       <translation>Bright</translation>
     </message>
@@ -261,12 +313,20 @@ Import into your library?</translation>
       <translation>Calibration tone level</translation>
     </message>
     <message>
+      <source>Cancel</source>
+      <translation>Cancel</translation>
+    </message>
+    <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
       <translation>Cannot acquire the shared SoundCurrent session guard.</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
       <translation>Cannot create amplifier profile folder.</translation>
+    </message>
+    <message>
+      <source>Cannot create profile folder.</source>
+      <translation>Cannot create profile folder.</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
@@ -281,12 +341,32 @@ Import into your library?</translation>
       <translation>Cannot finish saving amplifier profile.</translation>
     </message>
     <message>
+      <source>Cannot finish saving profile library.</source>
+      <translation>Cannot finish saving profile library.</translation>
+    </message>
+    <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
       <translation>Cannot inspect running equalizers; SoundCurrent will not enable processing.</translation>
     </message>
     <message>
+      <source>Cannot read profile library.</source>
+      <translation>Cannot read profile library.</translation>
+    </message>
+    <message>
+      <source>Cannot read profile or file exceeds 1 MiB.</source>
+      <translation>Cannot read profile or file exceeds 1 MiB.</translation>
+    </message>
+    <message>
+      <source>Cannot read response or file exceeds 1 MiB.</source>
+      <translation>Cannot read response or file exceeds 1 MiB.</translation>
+    </message>
+    <message>
       <source>Cannot save amplifier profile.</source>
       <translation>Cannot save amplifier profile.</translation>
+    </message>
+    <message>
+      <source>Cannot save profile library.</source>
+      <translation>Cannot save profile library.</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
@@ -349,6 +429,10 @@ Import into your library?</translation>
       <translation>Clipping risk · estimated peak %1 dBFS</translation>
     </message>
     <message>
+      <source>Close</source>
+      <translation>Close</translation>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>Conditions</translation>
     </message>
@@ -361,20 +445,96 @@ Import into your library?</translation>
       <translation>Correction profile (*.json)</translation>
     </message>
     <message>
+      <source>Could not create a private test folder</source>
+      <translation>Could not create a private test folder</translation>
+    </message>
+    <message>
+      <source>Could not create microphone configuration folder</source>
+      <translation>Could not create microphone configuration folder</translation>
+    </message>
+    <message>
       <source>Could not create preset folder.</source>
       <translation>Could not create preset folder.</translation>
+    </message>
+    <message>
+      <source>Could not create quiet frequency sweep</source>
+      <translation>Could not create quiet frequency sweep</translation>
+    </message>
+    <message>
+      <source>Could not create temporary audio configuration</source>
+      <translation>Could not create temporary audio configuration</translation>
+    </message>
+    <message>
+      <source>Could not create test tone</source>
+      <translation>Could not create test tone</translation>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>Could not finish saving preset.</translation>
     </message>
     <message>
+      <source>Could not open test waveform</source>
+      <translation>Could not open test waveform</translation>
+    </message>
+    <message>
+      <source>Could not play quiet test audio</source>
+      <translation>Could not play quiet test audio</translation>
+    </message>
+    <message>
+      <source>Could not play test audio through the selected output</source>
+      <translation>Could not play test audio through the selected output</translation>
+    </message>
+    <message>
+      <source>Could not read output volume</source>
+      <translation>Could not read output volume</translation>
+    </message>
+    <message>
+      <source>Could not run %1</source>
+      <translation>Could not run %1</translation>
+    </message>
+    <message>
       <source>Could not save preset.</source>
       <translation>Could not save preset.</translation>
     </message>
     <message>
+      <source>Could not start PipeWire filter</source>
+      <translation>Could not start PipeWire filter</translation>
+    </message>
+    <message>
+      <source>Could not start microphone capture</source>
+      <translation>Could not start microphone capture</translation>
+    </message>
+    <message>
+      <source>Could not start microphone filter</source>
+      <translation>Could not start microphone filter</translation>
+    </message>
+    <message>
+      <source>Could not start output volume safety guard</source>
+      <translation>Could not start output volume safety guard</translation>
+    </message>
+    <message>
       <source>Could not start the measurement.</source>
       <translation>Could not start the measurement.</translation>
+    </message>
+    <message>
+      <source>Could not write frequency sweep</source>
+      <translation>Could not write frequency sweep</translation>
+    </message>
+    <message>
+      <source>Could not write microphone configuration</source>
+      <translation>Could not write microphone configuration</translation>
+    </message>
+    <message>
+      <source>Could not write temporary audio configuration</source>
+      <translation>Could not write temporary audio configuration</translation>
+    </message>
+    <message>
+      <source>Could not write test tone</source>
+      <translation>Could not write test tone</translation>
+    </message>
+    <message>
+      <source>Create profile</source>
+      <translation>Create profile</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
@@ -391,6 +551,10 @@ Import into your library?</translation>
     <message>
       <source>Deep Bass</source>
       <translation>Deep Bass</translation>
+    </message>
+    <message>
+      <source>Discard</source>
+      <translation>Discard</translation>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
@@ -423,6 +587,10 @@ Import into your library?</translation>
     <message>
       <source>Dynamics threshold</source>
       <translation>Dynamics threshold</translation>
+    </message>
+    <message>
+      <source>Edit / save copy</source>
+      <translation>Edit / save copy</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -470,6 +638,10 @@ Import into your library?</translation>
       <translation>Equalizer on or off</translation>
     </message>
     <message>
+      <source>Equalizer sink disappeared</source>
+      <translation>Equalizer sink disappeared</translation>
+    </message>
+    <message>
       <source>Equipment brand</source>
       <translation>Equipment brand</translation>
     </message>
@@ -478,8 +650,16 @@ Import into your library?</translation>
       <translation>Equipment family</translation>
     </message>
     <message>
+      <source>Equipment kind must be speaker, microphone or amplifier.</source>
+      <translation>Equipment kind must be speaker, microphone or amplifier.</translation>
+    </message>
+    <message>
       <source>Equipment profile (*.json)</source>
       <translation>Equipment profile (*.json)</translation>
+    </message>
+    <message>
+      <source>Equipment profile editor</source>
+      <translation>Equipment profile editor</translation>
     </message>
     <message>
       <source>Equipment profiles (*.json)</source>
@@ -488,6 +668,14 @@ Import into your library?</translation>
     <message>
       <source>Equipment profiles by brand family and model</source>
       <translation>Equipment profiles by brand family and model</translation>
+    </message>
+    <message>
+      <source>Equipment profiles — brand / family / model</source>
+      <translation>Equipment profiles — brand / family / model</translation>
+    </message>
+    <message>
+      <source>Equipment resource missing.</source>
+      <translation>Equipment resource missing.</translation>
     </message>
     <message>
       <source>Equipment subtype</source>
@@ -546,8 +734,20 @@ Import into your library?</translation>
       <translation>Expanded test language</translation>
     </message>
     <message>
+      <source>Expected a JSON equipment profile. Import response text using the response import button.</source>
+      <translation>Expected a JSON equipment profile. Import response text using the response import button.</translation>
+    </message>
+    <message>
+      <source>Expected frequency Hz and relative measured response dB on every data line.</source>
+      <translation>Expected frequency Hz and relative measured response dB on every data line.</translation>
+    </message>
+    <message>
       <source>Export</source>
       <translation>Export</translation>
+    </message>
+    <message>
+      <source>Export JSON</source>
+      <translation>Export JSON</translation>
     </message>
     <message>
       <source>Export profile</source>
@@ -560,6 +760,14 @@ Import into your library?</translation>
     <message>
       <source>Family</source>
       <translation>Family</translation>
+    </message>
+    <message>
+      <source>Filter values must be numbers.</source>
+      <translation>Filter values must be numbers.</translation>
+    </message>
+    <message>
+      <source>Filters exceed frequency, gain or Q limits.</source>
+      <translation>Filters exceed frequency, gain or Q limits.</translation>
     </message>
     <message>
       <source>Flat</source>
@@ -596,6 +804,10 @@ Import into your library?</translation>
       <translation>Headphones</translation>
     </message>
     <message>
+      <source>Help</source>
+      <translation>Help</translation>
+    </message>
+    <message>
       <source>Hide advanced controls</source>
       <translation>Hide advanced controls</translation>
     </message>
@@ -604,8 +816,16 @@ Import into your library?</translation>
       <translation>Hip-Hop</translation>
     </message>
     <message>
+      <source>Ignore</source>
+      <translation>Ignore</translation>
+    </message>
+    <message>
       <source>Import</source>
       <translation>Import</translation>
+    </message>
+    <message>
+      <source>Import JSON</source>
+      <translation>Import JSON</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
@@ -632,6 +852,10 @@ Import into your library?</translation>
       <translation>Import relative measured response</translation>
     </message>
     <message>
+      <source>Import response text</source>
+      <translation>Import response text</translation>
+    </message>
+    <message>
       <source>Include preview releases</source>
       <translation>Include preview releases</translation>
     </message>
@@ -640,20 +864,64 @@ Import into your library?</translation>
       <translation>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</translation>
     </message>
     <message>
-      <source>Installed version: </source>
-      <translation>Installed version: </translation>
+      <source>Installed version: %1</source>
+      <translation>Installed version: %1</translation>
     </message>
     <message>
       <source>Interface language</source>
       <translation>Interface language</translation>
     </message>
     <message>
+      <source>Invalid equipment subtype or power type</source>
+      <translation>Invalid equipment subtype or power type</translation>
+    </message>
+    <message>
+      <source>Invalid filter.</source>
+      <translation>Invalid filter.</translation>
+    </message>
+    <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
       <translation>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</translation>
     </message>
     <message>
+      <source>Invalid or unordered measured response.</source>
+      <translation>Invalid or unordered measured response.</translation>
+    </message>
+    <message>
+      <source>Invalid or unordered response data.</source>
+      <translation>Invalid or unordered response data.</translation>
+    </message>
+    <message>
+      <source>Invalid profile library.</source>
+      <translation>Invalid profile library.</translation>
+    </message>
+    <message>
+      <source>Invalid response from pactl</source>
+      <translation>Invalid response from pactl</translation>
+    </message>
+    <message>
+      <source>Invalid response point.</source>
+      <translation>Invalid response point.</translation>
+    </message>
+    <message>
+      <source>Invalid speaker correction filter count</source>
+      <translation>Invalid speaker correction filter count</translation>
+    </message>
+    <message>
+      <source>Invalid speaker filter type</source>
+      <translation>Invalid speaker filter type</translation>
+    </message>
+    <message>
+      <source>Invalid speaker identity</source>
+      <translation>Invalid speaker identity</translation>
+    </message>
+    <message>
       <source>Jazz</source>
       <translation>Jazz</translation>
+    </message>
+    <message>
+      <source>Keep current EQ</source>
+      <translation>Keep current EQ</translation>
     </message>
     <message>
       <source>L</source>
@@ -674,6 +942,10 @@ Import into your library?</translation>
     <message>
       <source>Level refresh</source>
       <translation>Level refresh</translation>
+    </message>
+    <message>
+      <source>Library exceeds 16 MiB.</source>
+      <translation>Library exceeds 16 MiB.</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -726,6 +998,10 @@ Import into your library?</translation>
       <translation>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</translation>
     </message>
     <message>
+      <source>Measurement conditions are required.</source>
+      <translation>Measurement conditions are required.</translation>
+    </message>
+    <message>
       <source>Measurement data was incomplete.</source>
       <translation>Measurement data was incomplete.</translation>
     </message>
@@ -758,8 +1034,24 @@ Import into your library?</translation>
       <translation>Microphone EQ is off.</translation>
     </message>
     <message>
+      <source>Microphone capture stopped during playback</source>
+      <translation>Microphone capture stopped during playback</translation>
+    </message>
+    <message>
+      <source>Microphone capture stopped during the test</source>
+      <translation>Microphone capture stopped during the test</translation>
+    </message>
+    <message>
       <source>Microphone error: %1</source>
       <translation>Microphone error: %1</translation>
+    </message>
+    <message>
+      <source>Microphone filter did not appear</source>
+      <translation>Microphone filter did not appear</translation>
+    </message>
+    <message>
+      <source>Microphone filter disappeared</source>
+      <translation>Microphone filter disappeared</translation>
     </message>
     <message>
       <source>Microphone gain adjustment</source>
@@ -768,6 +1060,10 @@ Import into your library?</translation>
     <message>
       <source>Microphone input device</source>
       <translation>Microphone input device</translation>
+    </message>
+    <message>
+      <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
+      <translation>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</translation>
     </message>
     <message>
       <source>Microphone route</source>
@@ -791,8 +1087,8 @@ Import into your library?</translation>
       <translation>Natural mic EQ</translation>
     </message>
     <message>
-      <source>Natural mic EQ on · </source>
-      <translation>Natural mic EQ on · </translation>
+      <source>Natural mic EQ on · %1</source>
+      <translation>Natural mic EQ on · %1</translation>
     </message>
     <message>
       <source>Natural microphone equalizer on or off</source>
@@ -801,6 +1097,10 @@ Import into your library?</translation>
     <message>
       <source>Night Listening</source>
       <translation>Night Listening</translation>
+    </message>
+    <message>
+      <source>No</source>
+      <translation>No</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
@@ -831,6 +1131,10 @@ Import into your library?</translation>
       <translation>No output device is connected.</translation>
     </message>
     <message>
+      <source>No to All</source>
+      <translation>No to All</translation>
+    </message>
+    <message>
       <source>None — use my own EQ</source>
       <translation>None — use my own EQ</translation>
     </message>
@@ -843,8 +1147,16 @@ Import into your library?</translation>
       <translation>Number of equalizer bands</translation>
     </message>
     <message>
+      <source>OK</source>
+      <translation>OK</translation>
+    </message>
+    <message>
       <source>On · Playing through %1</source>
       <translation>On · Playing through %1</translation>
+    </message>
+    <message>
+      <source>Open</source>
+      <translation>Open</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
@@ -869,6 +1181,14 @@ Import into your library?</translation>
     <message>
       <source>Output device</source>
       <translation>Output device</translation>
+    </message>
+    <message>
+      <source>Output device is no longer available</source>
+      <translation>Output device is no longer available</translation>
+    </message>
+    <message>
+      <source>Output has no volume channels</source>
+      <translation>Output has no volume channels</translation>
     </message>
     <message>
       <source>Overall output</source>
@@ -940,12 +1260,32 @@ Import into your library?</translation>
       <translation>Profile details</translation>
     </message>
     <message>
+      <source>Profile exceeds the 1 MiB limit.</source>
+      <translation>Profile exceeds the 1 MiB limit.</translation>
+    </message>
+    <message>
+      <source>Profile library exceeds 16 MiB.</source>
+      <translation>Profile library exceeds 16 MiB.</translation>
+    </message>
+    <message>
+      <source>Profile metadata is too long.</source>
+      <translation>Profile metadata is too long.</translation>
+    </message>
+    <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
       <translation>Profile must be readable and smaller than 64 KiB.</translation>
     </message>
     <message>
+      <source>Profiles need 1–16 correction filters.</source>
+      <translation>Profiles need 1–16 correction filters.</translation>
+    </message>
+    <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
       <translation>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</translation>
+    </message>
+    <message>
+      <source>Published profiles need an HTTPS measurement source.</source>
+      <translation>Published profiles need an HTTPS measurement source.</translation>
     </message>
     <message>
       <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
@@ -989,12 +1329,24 @@ Import into your library?</translation>
       <translation>Refresh devices</translation>
     </message>
     <message>
+      <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
+
+%1</source>
+      <translation>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
+
+%1</translation>
+    </message>
+    <message>
       <source>Remind me when updates are available or a restart is needed</source>
       <translation>Remind me when updates are available or a restart is needed</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
       <translation>Remove selected filter</translation>
+    </message>
+    <message>
+      <source>Reset</source>
+      <translation>Reset</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
@@ -1014,12 +1366,36 @@ Import into your library?</translation>
       <translation>Response data (*.txt *.csv *.frd *.cal)</translation>
     </message>
     <message>
+      <source>Response exceeds 4096 points.</source>
+      <translation>Response exceeds 4096 points.</translation>
+    </message>
+    <message>
+      <source>Response frequencies must increase, with finite bounded values.</source>
+      <translation>Response frequencies must increase, with finite bounded values.</translation>
+    </message>
+    <message>
+      <source>Response has no usable audio range.</source>
+      <translation>Response has no usable audio range.</translation>
+    </message>
+    <message>
       <source>Response import</source>
       <translation>Response import</translation>
     </message>
     <message>
+      <source>Response needs 2–4096 measured points.</source>
+      <translation>Response needs 2–4096 measured points.</translation>
+    </message>
+    <message>
+      <source>Restore Defaults</source>
+      <translation>Restore Defaults</translation>
+    </message>
+    <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
       <translation>Restore the previous EQ setting (Ctrl+Z)</translation>
+    </message>
+    <message>
+      <source>Retry</source>
+      <translation>Retry</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
@@ -1028,6 +1404,14 @@ Import into your library?</translation>
     <message>
       <source>Rock</source>
       <translation>Rock</translation>
+    </message>
+    <message>
+      <source>Save</source>
+      <translation>Save</translation>
+    </message>
+    <message>
+      <source>Save All</source>
+      <translation>Save All</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
@@ -1044,6 +1428,10 @@ Import into your library?</translation>
     <message>
       <source>Save profile</source>
       <translation>Save profile</translation>
+    </message>
+    <message>
+      <source>Save system response profile</source>
+      <translation>Save system response profile</translation>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
@@ -1066,6 +1454,10 @@ Import into your library?</translation>
       <translation>Select this band to edit frequency, gain, and Q</translation>
     </message>
     <message>
+      <source>Selected audio device is unavailable</source>
+      <translation>Selected audio device is unavailable</translation>
+    </message>
+    <message>
       <source>Selected band</source>
       <extracomment>Currently selected frequency band in the equalizer.</extracomment>
       <translation>Selected band</translation>
@@ -1081,6 +1473,10 @@ Import into your library?</translation>
     <message>
       <source>Selected band gain</source>
       <translation>Selected band gain</translation>
+    </message>
+    <message>
+      <source>Selected output device is no longer available</source>
+      <translation>Selected output device is no longer available</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
@@ -1123,8 +1519,16 @@ Import into your library?</translation>
       <translation>Sound enhancements</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
+      <translation>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Source</translation>
+    </message>
+    <message>
+      <source>Speaker</source>
+      <translation>Speaker</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
@@ -1133,6 +1537,14 @@ Import into your library?</translation>
     <message>
       <source>Speaker + room check</source>
       <translation>Speaker + room check</translation>
+    </message>
+    <message>
+      <source>Speaker and room measurement</source>
+      <translation>Speaker and room measurement</translation>
+    </message>
+    <message>
+      <source>Speaker filter is outside conservative bounds</source>
+      <translation>Speaker filter is outside conservative bounds</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
@@ -1149,6 +1561,10 @@ Import into your library?</translation>
     <message>
       <source>Speaker profile details</source>
       <translation>Speaker profile details</translation>
+    </message>
+    <message>
+      <source>Speaker profile resource is missing</source>
+      <translation>Speaker profile resource is missing</translation>
     </message>
     <message>
       <source>Speaker type</source>
@@ -1191,8 +1607,16 @@ Import into your library?</translation>
       <translation>Test level</translation>
     </message>
     <message>
+      <source>Test level is outside the allowed range</source>
+      <translation>Test level is outside the allowed range</translation>
+    </message>
+    <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>The audio processor stopped unexpectedly.</translation>
+    </message>
+    <message>
+      <source>The custom library holds up to 256 profiles.</source>
+      <translation>The custom library holds up to 256 profiles.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
@@ -1205,6 +1629,14 @@ Import into your library?</translation>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
       <translation>This profile has changed. Save a custom copy before leaving?</translation>
+    </message>
+    <message>
+      <source>Timed out waiting for the equalizer sink: %1</source>
+      <translation>Timed out waiting for the equalizer sink: %1</translation>
+    </message>
+    <message>
+      <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
+      <translation>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
@@ -1242,6 +1674,22 @@ Import into your library?</translation>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
       <translation>Unlock controls and finish measurement before editing profiles.</translation>
+    </message>
+    <message>
+      <source>Unsupported equipment profile schema (expected 2).</source>
+      <translation>Unsupported equipment profile schema (expected 2).</translation>
+    </message>
+    <message>
+      <source>Unsupported filter type.</source>
+      <translation>Unsupported filter type.</translation>
+    </message>
+    <message>
+      <source>Unsupported microphone channel layout</source>
+      <translation>Unsupported microphone channel layout</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker profile schema</source>
+      <translation>Unsupported speaker profile schema</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
@@ -1287,6 +1735,14 @@ Import into your library?</translation>
     <message>
       <source>Width (Q)</source>
       <translation>Width (Q)</translation>
+    </message>
+    <message>
+      <source>Yes</source>
+      <translation>Yes</translation>
+    </message>
+    <message>
+      <source>Yes to All</source>
+      <translation>Yes to All</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>

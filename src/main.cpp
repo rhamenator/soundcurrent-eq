@@ -131,9 +131,9 @@ struct SpeakerProfile {
 const QVector<SpeakerProfile> &speakerProfiles() {
     static const QVector<SpeakerProfile> profiles = [] {
         QFile file(":/speakers/profiles.json");
-        if (!file.open(QIODevice::ReadOnly)) throw std::runtime_error("Speaker profile resource is missing");
+        if (!file.open(QIODevice::ReadOnly)) throw std::runtime_error(SC_TR("Speaker profile resource is missing").toStdString());
         const auto root = QJsonDocument::fromJson(file.readAll()).object();
-        if (root.value("schema").toInt() != 1) throw std::runtime_error("Unsupported speaker profile schema");
+        if (root.value("schema").toInt() != 1) throw std::runtime_error(SC_TR("Unsupported speaker profile schema").toStdString());
         QVector<SpeakerProfile> result;
         QStringList ids;
         for (const auto &value : root.value("profiles").toArray()) {
@@ -142,7 +142,7 @@ const QVector<SpeakerProfile> &speakerProfiles() {
             profile.id = item.value("id").toString();
             profile.name = item.value("name").toString();
             if (profile.id == "Sony SS-CS5") profile.name += " (original; not SS-CS5M2)";
-            if (profile.id.isEmpty() || ids.contains(profile.id)) throw std::runtime_error("Invalid speaker identity");
+            if (profile.id.isEmpty() || ids.contains(profile.id)) throw std::runtime_error(SC_TR("Invalid speaker identity").toStdString());
             ids.append(profile.id);
             profile.attribution = item.value("measurement").toString() + " · " + item.value("measurementDate").toString();
             profile.links.append(item.value("sourceUrl").toString());
@@ -151,17 +151,17 @@ const QVector<SpeakerProfile> &speakerProfiles() {
                 const auto f = filter.toObject();
                 const auto type = f.value("type").toString();
                 using T = soundcurrent::FilterType;
-                if (type != "PK" && type != "LS" && type != "HS") throw std::runtime_error("Invalid speaker filter type");
+                if (type != "PK" && type != "LS" && type != "HS") throw std::runtime_error(SC_TR("Invalid speaker filter type").toStdString());
                 Band band{f.value("frequency").toDouble(-1), f.value("gain").toDouble(999), f.value("q").toDouble(-1),
                           type == "LS" ? T::LowShelf : type == "HS" ? T::HighShelf : T::Peaking};
                 if (!std::isfinite(band.frequency) || !std::isfinite(band.gain) || !std::isfinite(band.q) ||
                     band.frequency < 20 || band.frequency > 20000 || std::abs(band.gain) > 6 ||
                     band.q < 0.1 || band.q > 6 || (band.frequency < 80 && band.gain > 0))
-                    throw std::runtime_error("Speaker filter is outside conservative bounds");
+                    throw std::runtime_error(SC_TR("Speaker filter is outside conservative bounds").toStdString());
                 profile.filters.append(band);
             }
             if (profile.filters.isEmpty() || profile.filters.size() > 16)
-                throw std::runtime_error("Invalid speaker correction filter count");
+                throw std::runtime_error(SC_TR("Invalid speaker correction filter count").toStdString());
             result.append(profile);
         }
         for(const auto &p:soundcurrent::equipment::bundledProfiles()) {
@@ -238,14 +238,14 @@ QString command(const QString &program, const QStringList &arguments, int timeou
     if (!process.waitForStarted(timeout) || !process.waitForFinished(timeout) ||
         process.exitStatus() != QProcess::NormalExit || process.exitCode() != 0) {
         const auto error = QString::fromUtf8(process.readAllStandardError()).trimmed();
-        throw std::runtime_error((error.isEmpty() ? QStringLiteral("Could not run %1").arg(program) : error).toStdString());
+        throw std::runtime_error((error.isEmpty() ? SC_TR("Could not run %1").arg(program) : error).toStdString());
     }
     return QString::fromUtf8(process.readAllStandardOutput());
 }
 
 QJsonArray pactlList(const QString &kind) {
     const auto document = QJsonDocument::fromJson(command("pactl", {"--format=json", "list", kind}).toUtf8());
-    if (!document.isArray()) throw std::runtime_error("Invalid response from pactl");
+    if (!document.isArray()) throw std::runtime_error(SC_TR("Invalid response from pactl").toStdString());
     return document.array();
 }
 
@@ -266,14 +266,14 @@ SinkState sinkState(const QString &name) {
         SinkState state;
         for (const auto &channel : channels) {
             const int raw = volume.value(channel).toObject().value("value").toInt(-1);
-            if (raw < 0) throw std::runtime_error("Could not read output volume");
+            if (raw < 0) throw std::runtime_error(SC_TR("Could not read output volume").toStdString());
             state.volumes << QString::number(raw);
         }
-        if (state.volumes.isEmpty()) throw std::runtime_error("Output has no volume channels");
+        if (state.volumes.isEmpty()) throw std::runtime_error(SC_TR("Output has no volume channels").toStdString());
         state.muted = sink.value("mute").toBool();
         return state;
     }
-    throw std::runtime_error("Output device is no longer available");
+    throw std::runtime_error(SC_TR("Output device is no longer available").toStdString());
 }
 
 void setSinkState(const QString &name, const SinkState &state) {
@@ -691,13 +691,13 @@ public:
         const auto previousDefault = defaultSink();
         bool found = false;
         for (const auto &available : devices()) if (available.name == device.name) found = true;
-        if (!found) throw std::runtime_error("Selected output device is no longer available");
-        if (nodeId(kSink) >= 0) throw std::runtime_error("Another SoundCurrent EQ sink is already running");
-        if (!directory_.isValid()) throw std::runtime_error("Could not create temporary audio configuration");
+        if (!found) throw std::runtime_error(SC_TR("Selected output device is no longer available").toStdString());
+        if (nodeId(kSink) >= 0) throw std::runtime_error(SC_TR("Another SoundCurrent EQ sink is already running").toStdString());
+        if (!directory_.isValid()) throw std::runtime_error(SC_TR("Could not create temporary audio configuration").toStdString());
         const auto path = directory_.filePath("filter.conf");
         QFile config(path);
         if (!config.open(QIODevice::WriteOnly | QIODevice::Truncate))
-            throw std::runtime_error("Could not write temporary audio configuration");
+            throw std::runtime_error(SC_TR("Could not write temporary audio configuration").toStdString());
         const bool smart = smartFiltersAvailable();
         config.write(filterConfig(device.name, bands, outputGainDb, balancePercent, smart).toUtf8());
         config.close();
@@ -706,7 +706,7 @@ public:
         process_.setProcessChannelMode(QProcess::MergedChannels);
         process_.setChildProcessModifier([] { prctl(PR_SET_PDEATHSIG, SIGTERM); });
         process_.start();
-        if (!process_.waitForStarted(2000)) throw std::runtime_error("Could not start PipeWire filter");
+        if (!process_.waitForStarted(2000)) throw std::runtime_error(SC_TR("Could not start PipeWire filter").toStdString());
         QElapsedTimer clock;
         clock.start();
         while (clock.elapsed() < 3000) {
@@ -719,7 +719,7 @@ public:
         if (id < 0) {
             const auto details = QString::fromUtf8(process_.readAll()).trimmed();
             stop();
-            throw std::runtime_error(("Timed out waiting for the equalizer sink: " + details).toStdString());
+            throw std::runtime_error(SC_TR("Timed out waiting for the equalizer sink: %1").arg(details).toStdString());
         }
         try {
             if (smart) {
@@ -738,7 +738,7 @@ public:
                                         originalState_.volumes.join(','), originalState_.muted ? "1" : "0"});
                 guardian_.start();
                 if (!guardian_.waitForStarted(2000))
-                    throw std::runtime_error("Could not start output volume safety guard");
+                    throw std::runtime_error(SC_TR("Could not start output volume safety guard").toStdString());
                 target_ = device;
                 legacyVolumeManaged_ = true;
                 setSinkState(kSink, originalState_);
@@ -759,13 +759,13 @@ public:
 
     void update(const Bands &bands, double outputGainDb = 0.0, int balancePercent = 0) {
         if (!active()) return;
-        if (sinkId_ < 0) throw std::runtime_error("Equalizer sink disappeared");
+        if (sinkId_ < 0) throw std::runtime_error(SC_TR("Equalizer sink disappeared").toStdString());
         command("pw-cli", {"set-param", QString::number(sinkId_), "Props", effectControls(filterControls(bands, outputGainDb, balancePercent))});
     }
 
     void updateGain(double outputGainDb, int balancePercent) {
         if (!active()) return;
-        if (sinkId_ < 0) throw std::runtime_error("Equalizer sink disappeared");
+        if (sinkId_ < 0) throw std::runtime_error(SC_TR("Equalizer sink disappeared").toStdString());
         command("pw-cli", {"set-param", QString::number(sinkId_), "Props", gainControls(outputGainDb, balancePercent)});
     }
 
@@ -853,14 +853,14 @@ public:
     void start(const InputDevice &device, const MicTuning &adjustments, double gainDb) {
         stop();
         if (device.name.isEmpty() || device.channels < 1 || device.channels > 2)
-            throw std::runtime_error("Unsupported microphone channel layout");
-        if (nodeId(kMicSource) >= 0) throw std::runtime_error("Another SoundCurrent microphone filter is running");
-        if (!directory_.isValid()) throw std::runtime_error("Could not create microphone configuration folder");
+            throw std::runtime_error(SC_TR("Unsupported microphone channel layout").toStdString());
+        if (nodeId(kMicSource) >= 0) throw std::runtime_error(SC_TR("Another SoundCurrent microphone filter is running").toStdString());
+        if (!directory_.isValid()) throw std::runtime_error(SC_TR("Could not create microphone configuration folder").toStdString());
         originalDefault_ = defaultSource();
         const bool smart = smartFiltersAvailable();
         QFile config(directory_.filePath("microphone.conf"));
         if (!config.open(QIODevice::WriteOnly | QIODevice::Truncate))
-            throw std::runtime_error("Could not write microphone configuration");
+            throw std::runtime_error(SC_TR("Could not write microphone configuration").toStdString());
         config.write(micConfig(device.name, device.channels, adjustments, gainDb, smart).toUtf8());
         config.close();
         process_.setProgram("pipewire");
@@ -868,7 +868,7 @@ public:
         process_.setProcessChannelMode(QProcess::MergedChannels);
         process_.setChildProcessModifier([] { prctl(PR_SET_PDEATHSIG, SIGTERM); });
         process_.start();
-        if (!process_.waitForStarted(2000)) throw std::runtime_error("Could not start microphone filter");
+        if (!process_.waitForStarted(2000)) throw std::runtime_error(SC_TR("Could not start microphone filter").toStdString());
         QElapsedTimer clock;
         clock.start();
         while (clock.elapsed() < 3000) {
@@ -878,7 +878,7 @@ public:
             QThread::msleep(100);
         }
         const int id = nodeId(kMicSource);
-        if (id < 0) { stop(); throw std::runtime_error("Microphone filter did not appear"); }
+        if (id < 0) { stop(); throw std::runtime_error(SC_TR("Microphone filter did not appear").toStdString()); }
         try {
             command("pactl", {"set-source-volume", kMicSource, "100%"});
             command("pactl", {"set-source-mute", kMicSource, "0"});
@@ -899,7 +899,7 @@ public:
 
     void update(const MicTuning &adjustments, double gainDb) {
         if (!active()) return;
-        if (sourceId_ < 0) throw std::runtime_error("Microphone filter disappeared");
+        if (sourceId_ < 0) throw std::runtime_error(SC_TR("Microphone filter disappeared").toStdString());
         command("pw-cli", {"set-param", QString::number(sourceId_), "Props",
                            micControls(adjustments, gainDb, target_.channels)});
     }
@@ -992,7 +992,7 @@ void writeCalibrationTone(const QString &path, int frequency, int levelDb) {
     constexpr int frames = rate;
     QFile file(path);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate))
-        throw std::runtime_error("Could not create test tone");
+        throw std::runtime_error(SC_TR("Could not create test tone").toStdString());
     QDataStream out(&file);
     out.setByteOrder(QDataStream::LittleEndian);
     out.writeRawData("RIFF", 4);
@@ -1009,7 +1009,7 @@ void writeCalibrationTone(const QString &path, int frequency, int levelDb) {
                               std::sin(2.0 * std::numbers::pi * frequency * i / rate)));
         out << value << value;
     }
-    if (out.status() != QDataStream::Ok) throw std::runtime_error("Could not write test tone");
+    if (out.status() != QDataStream::Ok) throw std::runtime_error(SC_TR("Could not write test tone").toStdString());
 }
 
 QVector<int16_t> writeCalibrationSweep(const QString &path, int levelDb) {
@@ -1018,7 +1018,7 @@ QVector<int16_t> writeCalibrationSweep(const QString &path, int levelDb) {
     const double logarithm = std::log(kSweepLastFrequency / kSweepFirstFrequency);
     QFile file(path);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate))
-        throw std::runtime_error("Could not create quiet frequency sweep");
+        throw std::runtime_error(SC_TR("Could not create quiet frequency sweep").toStdString());
     QDataStream out(&file);
     out.setByteOrder(QDataStream::LittleEndian);
     out.writeRawData("RIFF", 4);
@@ -1044,7 +1044,7 @@ QVector<int16_t> writeCalibrationSweep(const QString &path, int levelDb) {
         reference.append(value);
         out << qint16(value) << qint16(value);
     }
-    if (out.status() != QDataStream::Ok) throw std::runtime_error("Could not write frequency sweep");
+    if (out.status() != QDataStream::Ok) throw std::runtime_error(SC_TR("Could not write frequency sweep").toStdString());
     return reference;
 }
 
@@ -1065,7 +1065,7 @@ void checkCalibrationClipping(const QByteArray &pcm) {
         return std::abs(int(value)) >= 32760;
     });
     if (!samples.isEmpty() && double(clipped) / samples.size() >= 0.001)
-        throw std::runtime_error("Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.");
+        throw std::runtime_error(SC_TR("Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.").toStdString());
 }
 
 double sweepFrequencyAmplitude(const QVector<int16_t> &samples, int frequency,
@@ -1117,7 +1117,7 @@ QJsonArray analyzeSweep(const QByteArray &pcm, const QByteArray &noise,
 
 int runCalibration(const QString &output, const QString &input, int levelDb, bool sweep) {
     try {
-        if (levelDb < -54 || levelDb > -5) throw std::runtime_error("Test level is outside the allowed range");
+        if (levelDb < -54 || levelDb > -5) throw std::runtime_error(SC_TR("Test level is outside the allowed range").toStdString());
         bool outputFound = false, inputFound = false;
         for (const auto &device : devices()) if (device.name == output) outputFound = true;
 #ifndef Q_OS_WIN
@@ -1126,9 +1126,9 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
         if (output == kSink) { standardCable(false); outputFound = true; }
 #endif
         for (const auto &device : inputDevices()) if (device.name == input) inputFound = true;
-        if (!outputFound || !inputFound) throw std::runtime_error("Selected audio device is unavailable");
+        if (!outputFound || !inputFound) throw std::runtime_error(SC_TR("Selected audio device is unavailable").toStdString());
         QTemporaryDir directory(QDir::tempPath() + "/soundcurrent-calibration-XXXXXX");
-        if (!directory.isValid()) throw std::runtime_error("Could not create a private test folder");
+        if (!directory.isValid()) throw std::runtime_error(SC_TR("Could not create a private test folder").toStdString());
 #ifndef Q_OS_WIN
         QProcess recorder;
         recorder.setProgram("parec");
@@ -1136,7 +1136,7 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
                                "--channels=1", "--latency-msec=10", "--process-time-msec=5"});
         recorder.setChildProcessModifier([] { prctl(PR_SET_PDEATHSIG, SIGTERM); });
         recorder.start();
-        if (!recorder.waitForStarted(2000)) throw std::runtime_error("Could not start microphone capture");
+        if (!recorder.waitForStarted(2000)) throw std::runtime_error(SC_TR("Could not start microphone capture").toStdString());
         auto collect = [&recorder](int milliseconds) {
             QByteArray pcm;
             QElapsedTimer timer;
@@ -1145,7 +1145,7 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
                 recorder.waitForReadyRead(20);
                 pcm.append(recorder.readAllStandardOutput());
                 if (recorder.state() == QProcess::NotRunning)
-                    throw std::runtime_error("Microphone capture stopped during the test");
+                    throw std::runtime_error(SC_TR("Microphone capture stopped during the test").toStdString());
             }
             return pcm;
         };
@@ -1156,17 +1156,17 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
             player.setArguments({"-d", output, path});
             player.setChildProcessModifier([] { prctl(PR_SET_PDEATHSIG, SIGTERM); });
             player.start();
-            if (!player.waitForStarted(2000)) throw std::runtime_error("Could not play quiet test audio");
+            if (!player.waitForStarted(2000)) throw std::runtime_error(SC_TR("Could not play quiet test audio").toStdString());
             QByteArray recorded;
             while (player.state() != QProcess::NotRunning) {
                 player.waitForFinished(20);
                 recorded.append(recorder.readAllStandardOutput());
                 if (recorder.state() == QProcess::NotRunning)
-                    throw std::runtime_error("Microphone capture stopped during playback");
+                    throw std::runtime_error(SC_TR("Microphone capture stopped during playback").toStdString());
             }
             recorded.append(collect(180));
             if (player.exitStatus() != QProcess::NormalExit || player.exitCode() != 0)
-                throw std::runtime_error("Could not play test audio through the selected output");
+                throw std::runtime_error(SC_TR("Could not play test audio through the selected output").toStdString());
             return recorded;
         };
 #else
@@ -1188,7 +1188,7 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
         collect(350);
         auto playAndRecord = [&](const QString &path) {
             QFile wav(path);
-            if (!wav.open(QIODevice::ReadOnly)) throw std::runtime_error("Could not open test waveform");
+            if (!wav.open(QIODevice::ReadOnly)) throw std::runtime_error(SC_TR("Could not open test waveform").toStdString());
             const auto bytes = wav.readAll().mid(44); // our own stereo PCM16 WAV writers
             std::vector<std::int16_t> signal(bytes.size() / 2);
             std::memcpy(signal.data(), bytes.constData(), signal.size() * 2);
@@ -1249,7 +1249,7 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
 #else
         recorder.stop();
 #endif
-        if (valid < 4) throw std::runtime_error("Too little test audio reached the microphone. Move it closer or raise the test level slightly.");
+        if (valid < 4) throw std::runtime_error(SC_TR("Too little test audio reached the microphone. Move it closer or raise the test level slightly.").toStdString());
         QJsonObject result{{"levels", levels}, {"testLevelDb", levelDb},
                            {"mode", sweep ? "sweep" : "tones"}};
         QTextStream(stdout) << QJsonDocument(result).toJson(QJsonDocument::Compact) << Qt::endl;
@@ -1281,7 +1281,7 @@ std::optional<CalibrationSuggestion> calibrationSuggestion(const QJsonObject &re
     QStringList rows;
     for (int i = 0; i < levels.size(); ++i) {
         if (!levels[i].isDouble() || levels[i].toDouble() <= 0.0) {
-            rows << QString("%1 Hz: too quiet to measure").arg(kCalibrationFrequencies[i]);
+            rows << SC_TR("%1 Hz: too quiet to measure").arg(kCalibrationFrequencies[i]);
             continue;
         }
         const double relative = 20.0 * std::log10(levels[i].toDouble()) - reference;
@@ -1297,7 +1297,7 @@ std::optional<CalibrationSuggestion> calibrationSuggestion(const QJsonObject &re
         const double before = suggestion.bands[nearest].gain;
         suggestion.bands[nearest].gain = std::clamp(before + change, -12.0, 12.0);
         if (std::abs(suggestion.bands[nearest].gain - before) > 0.01) ++suggestion.changed;
-        rows << QString("%1 Hz: measured %2%3 dB; suggested %4%5 dB")
+        rows << SC_TR("%1 Hz: measured %2%3 dB; suggested %4%5 dB")
                     .arg(kCalibrationFrequencies[i])
                     .arg(relative > 0 ? "+" : "").arg(relative, 0, 'f', 1)
                     .arg(change > 0 ? "+" : "").arg(change, 0, 'f', 1);
@@ -2139,7 +2139,7 @@ public:
         auto *toneRow = new QHBoxLayout;
         const QStringList micNames = {"Warmth", "Boxiness", "Clarity", "Air"};
         for (int i = 0; i < 4; ++i) {
-            micLabels_[i] = new QLabel(micNames[i]);
+            micLabels_[i] = new QLabel(soundcurrent::i18n::text(micNames[i].toUtf8().constData()));
             toneRow->addWidget(micLabels_[i]);
             micSliders_[i] = new QSlider(Qt::Horizontal);
             micSliders_[i]->setRange(-24, 24);
@@ -2147,7 +2147,7 @@ public:
             micSliders_[i]->setAccessibleName(SC_TR("Microphone %1 adjustment").arg(soundcurrent::i18n::text(micNames[i].toUtf8().constData())));
             micSliders_[i]->setToolTip(SC_TR("Adjust this tone band around the natural voice profile"));
             toneRow->addWidget(micSliders_[i], 1);
-            micLabels_[i]->setText(QString(SC_TR("%1 %2%3 dB")).arg(micNames[i])
+            micLabels_[i]->setText(QString(SC_TR("%1 %2%3 dB")).arg(soundcurrent::i18n::text(micNames[i].toUtf8().constData()))
                                       .arg(micSliders_[i]->value() > 0 ? "+" : "")
                                       .arg(micSliders_[i]->value() / 2.0, 0, 'f', 1));
         }
@@ -2176,7 +2176,7 @@ public:
         micCableCombo_->setAccessibleName(SC_TR("Second virtual cable for microphone EQ"));
         cableRow->addWidget(micCableCombo_, 1);
         inputLayout->addLayout(cableRow);
-        auto *cableHelp = new QLabel("SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.");
+        auto *cableHelp = new QLabel(SC_TR("SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available."));
         cableHelp->setWordWrap(true);
         inputLayout->addWidget(cableHelp);
         refreshMicCables();
@@ -2760,15 +2760,13 @@ private:
         const auto suggestion = calibrationSuggestion(result, bands_);
         if (!suggestion) { calibrationStatus_->setText(SC_TR("Measurement data was incomplete.")); return; }
         QMessageBox preview(this);
-        preview.setWindowTitle("Speaker and room measurement");
+        preview.setWindowTitle(SC_TR("Speaker and room measurement"));
         preview.setIcon(QMessageBox::Information);
         preview.setText(SC_TR("Suggested changes to the playback EQ"));
-        preview.setInformativeText("Relative measurements include the speaker, room, and microphone response. "
-                                   "The proposed changes are limited to 3 dB per measured frequency.\n\n" +
-                                   suggestion->preview);
-        auto *saveMeasured = preview.addButton("Save system response profile", QMessageBox::ActionRole);
-        auto *apply = preview.addButton("Apply suggested EQ", QMessageBox::AcceptRole);
-        preview.addButton("Keep current EQ", QMessageBox::RejectRole);
+        preview.setInformativeText(SC_TR("Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.\n\n%1").arg(suggestion->preview));
+        auto *saveMeasured = preview.addButton(SC_TR("Save system response profile"), QMessageBox::ActionRole);
+        auto *apply = preview.addButton(SC_TR("Apply suggested EQ"), QMessageBox::AcceptRole);
+        preview.addButton(SC_TR("Keep current EQ"), QMessageBox::RejectRole);
         preview.exec();
         if (preview.clickedButton() == saveMeasured) {
             soundcurrent::equipment::Profile p;
@@ -2833,7 +2831,7 @@ private:
                 inputCombo_->blockSignals(false);
             }
             micPower_->setEnabled(!inputs_.isEmpty());
-            if (!disconnected.isEmpty()) micDisconnectNotice_ = disconnected + " disconnected. ";
+            if (!disconnected.isEmpty()) micDisconnectNotice_ = SC_TR("%1 disconnected. ").arg(disconnected);
             if (!micPower_->isChecked()) {
                 if (!micDisconnectNotice_.isEmpty()) micStatus_->setText(micDisconnectNotice_ + SC_TR("Microphone EQ is off."));
                 return;
@@ -2867,7 +2865,7 @@ private:
             const bool usbConnected = std::any_of(inputs_.begin(), inputs_.end(), [](const InputDevice &device) {
                 return device.name.contains(".usb-");
             });
-            micStatus_->setText(micDisconnectNotice_ + SC_TR("Natural mic EQ on · ") + desired.description +
+            micStatus_->setText(micDisconnectNotice_ + SC_TR("Natural mic EQ on · %1").arg(desired.description) +
                                 (!usbConnected ? usbMicrophoneHint() : ""));
         } catch (const std::exception &error) { micStatus_->setText(SC_TR("Microphone error: %1").arg(QString::fromUtf8(error.what()))); }
     }
@@ -3034,7 +3032,7 @@ private:
 #ifdef Q_OS_WIN
         return {};
 #else
-        return " · no USB microphone detected";
+        return SC_TR(" · no USB microphone detected");
 #endif
     }
     QLabel *equipmentStatus_ = nullptr;
@@ -4167,7 +4165,14 @@ int main(int argc, char **argv) {
         window.show();
         QTimer::singleShot(100, &app, [&] {
             const auto dir=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
-            if(!dir.isEmpty()){QDir().mkpath(dir);window.grab().save(dir+"/localized.png");}
+            if(!dir.isEmpty()){
+                QDir().mkpath(dir);window.grab().save(dir+"/localized.png");
+                auto *tabs=window.findChild<QTabWidget *>();
+                for(int page=0;tabs && page<tabs->count();++page){
+                    tabs->setCurrentIndex(page);QApplication::processEvents();
+                    window.grab().save(dir+"/localized-tab-"+QString::number(page)+".png");
+                }
+            }
             qInfo("Localization UI: %s -> %s",qPrintable(localization.requested()),qPrintable(localization.loaded()));
             app.quit();
         });

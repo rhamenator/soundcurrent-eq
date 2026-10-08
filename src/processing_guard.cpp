@@ -80,8 +80,7 @@ QString equalizerNodeConflict(const QByteArray &dump, const QString &ownPrefix) 
         if (name.startsWith("soundcurrent_") || name.contains("easyeffects") ||
             name.contains("pulseeffects") || name.contains("equalizer") || app.contains("easyeffects") ||
             app.contains("pulseeffects"))
-            return SC_TR("Another equalizer route is present: ") + props.value("node.description").toString(name) +
-                   ". Quit it before using SoundCurrent.";
+            return SC_TR("Another equalizer route is present: %1. Quit it before using SoundCurrent.").arg(props.value("node.description").toString(name));
     }
     return {};
 }

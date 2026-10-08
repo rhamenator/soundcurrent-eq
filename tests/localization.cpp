@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0-only
 #include "localization.h"
 #include <QDoubleSpinBox>
+#include <QDialogButtonBox>
+#include <QPushButton>
 #include <QJsonDocument>
 #include <QLineEdit>
 #include <QTemporaryDir>
@@ -33,6 +35,16 @@ int main(int argc,char **argv){
    spin.findChild<QLineEdit *>()->setText("-12,5");spin.interpretText();require(spin.value()==-12.5,"Localized numeric input changed value");
    auto json=QJsonDocument(QJsonObject{{"gain",spin.value()},{"presetId","Flat"}}).toJson(QJsonDocument::Compact);
    require(json.contains("-12.5") && !json.contains("-12,5"),"Machine state became locale-dependent");
+  }
+  {
+   QSettings().setValue("i18n/language","fr");Runtime runtime;runtime.initialize();
+   QDialogButtonBox actions(QDialogButtonBox::Close|QDialogButtonBox::Cancel|QDialogButtonBox::Save);
+   require(actions.button(QDialogButtonBox::Close)->text()==QString::fromUtf8("Fermer"),"Qt Close action stayed English");
+   require(actions.button(QDialogButtonBox::Save)->text()==QString::fromUtf8("Enregistrer"),"Qt Save action stayed English");
+   require(text("Import JSON")==QString::fromUtf8("Importer un fichier JSON"),"Equipment actions stayed English");
+   const auto prompt=text("%1 / %2\n%3\nApply this correction to the %4 route?").arg("FixtureBrand","FixtureModel","FixtureConditions",text("Speaker"));
+   require(prompt.contains("FixtureBrand")&&prompt.contains("FixtureConditions")&&!prompt.contains("%4"),"Translated confirmation lost equipment details");
+   for(const auto &language:languages())if(language.tag=="fr")require(language.translated==language.total,"French catalog has missing messages");
   }
   {
    QSettings().setValue("i18n/language","qps-rtl");Runtime runtime;runtime.initialize();
