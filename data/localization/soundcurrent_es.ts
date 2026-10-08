@@ -345,6 +345,10 @@ Import into your library?</source>
       <translation>El paquete del cable supera su búfer de captura</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>El punto de conexión de grabación del cable virtual no admite audio estéreo de coma flotante a 48 kHz en modo compartido</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Señal de prueba de calibración</translation>
     </message>
@@ -1201,6 +1205,10 @@ Import into your library?</source>
     <message>
       <source>Microphone route</source>
       <translation>Ruta del micrófono</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Se agotó el tiempo de espera al iniciar el micrófono</translation>
     </message>
     <message>
       <source>Model</source>

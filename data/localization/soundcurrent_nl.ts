@@ -345,6 +345,10 @@ Importeren in uw bibliotheek?</translation>
       <translation>Het kabelpakket overschrijdt de opnamebuffer</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Het opname-eindpunt van de virtuele kabel ondersteunt geen 48 kHz stereo-audio met zwevendekommagetallen in gedeelde modus</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Kalibratietestsignaal</translation>
     </message>
@@ -1201,6 +1205,10 @@ Importeren in uw bibliotheek?</translation>
     <message>
       <source>Microphone route</source>
       <translation>Microfoonroute</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Time-out bij het starten van de microfoon</translation>
     </message>
     <message>
       <source>Model</source>

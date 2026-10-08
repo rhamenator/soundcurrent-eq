@@ -345,6 +345,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Paketi ya kebo inazidi uwezo wa buffer ya kunasa sauti</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Sehemu ya mwisho ya kurekodi ya kebo pepe haitumii sauti ya stereo ya namba za nukta inayoelea ya 48 kHz katika hali ya pamoja</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Ishara ya kujaribu urekebishaji</translation>
     </message>
@@ -1201,6 +1205,10 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Microphone route</source>
       <translation>Njia ya maikrofoni</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Muda wa kusubiri kuanza maikrofoni umeisha</translation>
     </message>
     <message>
       <source>Model</source>

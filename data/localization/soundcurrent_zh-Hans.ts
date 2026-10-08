@@ -345,6 +345,10 @@ Import into your library?</source>
       <translation>音频线缆数据包超出捕获缓冲区容量</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>虚拟音频线录音端点不支持共享模式下的 48 kHz 立体声浮点音频</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>校准测试信号</translation>
     </message>
@@ -1201,6 +1205,10 @@ Import into your library?</source>
     <message>
       <source>Microphone route</source>
       <translation>麦克风路由</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>麦克风启动超时</translation>
     </message>
     <message>
       <source>Model</source>

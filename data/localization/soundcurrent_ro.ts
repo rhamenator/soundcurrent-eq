@@ -345,6 +345,10 @@ Importați în bibliotecă?</translation>
       <translation>Pachetul cablului depășește capacitatea bufferului de captură</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Punctul final de înregistrare al cablului virtual nu acceptă sunet stereo 48 kHz în format cu virgulă mobilă în modul partajat</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Semnal de test pentru calibrare</translation>
     </message>
@@ -1201,6 +1205,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Microphone route</source>
       <translation>Rută microfon</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>A expirat timpul de așteptare pentru pornirea microfonului</translation>
     </message>
     <message>
       <source>Model</source>

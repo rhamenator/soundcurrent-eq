@@ -345,6 +345,10 @@ Import into your library?</source>
       <translation>케이블 패킷이 캡처 버퍼 용량을 초과합니다</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>가상 케이블 녹음 엔드포인트는 공유 모드에서 48 kHz 스테레오 부동 소수점 오디오를 지원하지 않습니다</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>캘리브레이션 테스트 신호</translation>
     </message>
@@ -1201,6 +1205,10 @@ Import into your library?</source>
     <message>
       <source>Microphone route</source>
       <translation>마이크 경로</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>마이크 시작 시간 초과</translation>
     </message>
     <message>
       <source>Model</source>

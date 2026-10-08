@@ -345,6 +345,10 @@ Importare nella libreria?</translation>
       <translation>Il pacchetto del cavo supera la capacità del buffer di acquisizione</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>L’endpoint di registrazione del cavo virtuale non supporta audio stereo a virgola mobile a 48 kHz in modalità condivisa</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Segnale di prova per la calibrazione</translation>
     </message>
@@ -1201,6 +1205,10 @@ Importare nella libreria?</translation>
     <message>
       <source>Microphone route</source>
       <translation>Percorso microfono</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Tempo di attesa scaduto per l’avvio del microfono</translation>
     </message>
     <message>
       <source>Model</source>

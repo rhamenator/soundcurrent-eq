@@ -345,6 +345,10 @@ Import into your library?</source>
       <translation>केबल पैकेट कैप्चर बफ़र की क्षमता से बड़ा है</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>वर्चुअल केबल का रिकॉर्डिंग एंडपॉइंट साझा मोड में 48 kHz स्टीरियो फ़्लोटिंग-पॉइंट ऑडियो का समर्थन नहीं करता</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>कैलिब्रेशन परीक्षण सिग्नल</translation>
     </message>
@@ -1201,6 +1205,10 @@ Import into your library?</source>
     <message>
       <source>Microphone route</source>
       <translation>माइक्रोफ़ोन रूट</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>माइक्रोफ़ोन शुरू करने का समय समाप्त हो गया</translation>
     </message>
     <message>
       <source>Model</source>

@@ -345,6 +345,10 @@ Importér til dit bibliotek?</translation>
       <translation>Kabelpakken overskrider optagelsesbufferens kapacitet</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Det virtuelle kabels optagelsesslutpunkt understøtter ikke 48 kHz stereolyd i flydende komma-format i delt tilstand</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Testsignal til kalibrering</translation>
     </message>
@@ -1201,6 +1205,10 @@ Importér til dit bibliotek?</translation>
     <message>
       <source>Microphone route</source>
       <translation>Mikrofonens signalvej</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Tidsgrænsen for mikrofonstart blev overskredet</translation>
     </message>
     <message>
       <source>Model</source>

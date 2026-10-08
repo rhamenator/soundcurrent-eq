@@ -345,6 +345,10 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Das Kabelpaket überschreitet seinen Aufnahmebuffer</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Der Aufnahmeendpunkt des virtuellen Kabels unterstützt kein gemeinsames 48-kHz-Stereo-Float-Audio</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Kalibrierungstestsignal</translation>
     </message>
@@ -1201,6 +1205,10 @@ In Ihre Bibliothek importieren?</translation>
     <message>
       <source>Microphone route</source>
       <translation>Mikrofon-Audioweg</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Zeitüberschreitung beim Starten des Mikrofons</translation>
     </message>
     <message>
       <source>Model</source>

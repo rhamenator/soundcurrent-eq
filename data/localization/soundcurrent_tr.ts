@@ -345,6 +345,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Kablo paketi yakalama tamponunun kapasitesini aşıyor</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Sanal kablonun kayıt uç noktası paylaşımlı modda 48 kHz stereo kayan noktalı sesi desteklemiyor</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Kalibrasyon test sinyali</translation>
     </message>
@@ -1201,6 +1205,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Microphone route</source>
       <translation>Mikrofon ses yolu</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Mikrofon başlatma zaman aşımına uğradı</translation>
     </message>
     <message>
       <source>Model</source>

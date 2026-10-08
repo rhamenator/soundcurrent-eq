@@ -345,6 +345,10 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Le paquet du câble dépasse la capacité de son tampon de capture</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Le point de terminaison d’enregistrement du câble virtuel ne prend pas en charge l’audio stéréo flottant à 48 kHz en mode partagé</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Signal de test d’étalonnage</translation>
     </message>
@@ -1201,6 +1205,10 @@ Importer dans votre bibliothèque ?</translation>
     <message>
       <source>Microphone route</source>
       <translation>Chemin audio du microphone</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Délai dépassé lors du démarrage du microphone</translation>
     </message>
     <message>
       <source>Model</source>

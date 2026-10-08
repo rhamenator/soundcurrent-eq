@@ -345,6 +345,10 @@ Import into your library?</source>
       <translation>แพ็กเก็ตของสายเกินความจุของบัฟเฟอร์รับเสียง</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>จุดปลายทางการบันทึกของสายสัญญาณเสมือนไม่รองรับเสียงสเตอริโอแบบทศนิยมลอยตัวที่ 48 kHz ในโหมดใช้ร่วมกัน</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>สัญญาณทดสอบสำหรับปรับเทียบ</translation>
     </message>
@@ -1201,6 +1205,10 @@ Import into your library?</source>
     <message>
       <source>Microphone route</source>
       <translation>เส้นทางไมโครโฟน</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>หมดเวลารอเริ่มไมโครโฟน</translation>
     </message>
     <message>
       <source>Model</source>

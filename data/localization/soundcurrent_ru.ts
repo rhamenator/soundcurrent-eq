@@ -345,6 +345,10 @@ Import into your library?</source>
       <translation>Пакет кабеля превышает ёмкость буфера захвата</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Устройство записи виртуального кабеля не поддерживает стереозвук 48 kHz в формате с плавающей запятой в общем режиме</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Калибровочный тестовый сигнал</translation>
     </message>
@@ -1201,6 +1205,10 @@ Import into your library?</source>
     <message>
       <source>Microphone route</source>
       <translation>Аудиотракт микрофона</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Превышено время ожидания запуска микрофона</translation>
     </message>
     <message>
       <source>Model</source>

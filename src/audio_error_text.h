@@ -31,6 +31,10 @@ inline QString audioErrorText(const QString &diagnostic) {
         return SC_TR("Unsupported speaker mix sample format");
     if (diagnostic == QStringLiteral("Windows audio COM unavailable"))
         return SC_TR("Windows audio COM unavailable");
+    if (diagnostic == QStringLiteral("Microphone start timed out"))
+        return SC_TR("Microphone start timed out");
+    if (diagnostic == QStringLiteral("Cable recording endpoint does not support shared 48 kHz stereo float audio"))
+        return SC_TR("Cable recording endpoint does not support shared 48 kHz stereo float audio");
     // Match only this backend's invariant HRESULT message format. Unknown
     // operations are not guessed, and the hexadecimal error code is preserved.
     static const QRegularExpression failure(QStringLiteral("^(.+) failed \\(0x([0-9A-Fa-f]{1,8})\\)$"));

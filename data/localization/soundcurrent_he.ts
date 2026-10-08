@@ -345,6 +345,10 @@ Import into your library?</source>
       <translation>חבילת הכבל חורגת מקיבולת מאגר הלכידה</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>נקודת קצה ההקלטה של הכבל הווירטואלי אינה תומכת בשמע סטריאו בנקודה צפה בקצב 48 kHz במצב משותף</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>אות בדיקת כיול</translation>
     </message>
@@ -1201,6 +1205,10 @@ Import into your library?</source>
     <message>
       <source>Microphone route</source>
       <translation>נתיב המיקרופון</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>תם הזמן הקצוב להפעלת המיקרופון</translation>
     </message>
     <message>
       <source>Model</source>

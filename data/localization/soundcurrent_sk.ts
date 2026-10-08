@@ -345,6 +345,10 @@ Importovať do vašej knižnice?</translation>
       <translation>Paket kábla prekračuje kapacitu zachytávacieho buffera</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Nahrávací koncový bod virtuálneho kábla nepodporuje stereofónny zvuk 48 kHz vo formáte s pohyblivou rádovou čiarkou v zdieľanom režime</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Kalibračný testovací signál</translation>
     </message>
@@ -1201,6 +1205,10 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>Microphone route</source>
       <translation>Signálová cesta mikrofónu</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Vypršal časový limit spustenia mikrofónu</translation>
     </message>
     <message>
       <source>Model</source>

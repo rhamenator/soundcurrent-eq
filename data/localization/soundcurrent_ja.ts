@@ -345,6 +345,10 @@ Import into your library?</source>
       <translation>ケーブルのパケットがキャプチャーバッファーの容量を超えています</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>仮想ケーブルの録音エンドポイントは共有モードの 48 kHz ステレオ浮動小数点オーディオに対応していません</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>キャリブレーションのテスト信号</translation>
     </message>
@@ -1201,6 +1205,10 @@ Import into your library?</source>
     <message>
       <source>Microphone route</source>
       <translation>マイクの経路</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>マイクの開始がタイムアウトしました</translation>
     </message>
     <message>
       <source>Model</source>

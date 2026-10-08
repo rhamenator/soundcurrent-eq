@@ -345,6 +345,10 @@ Import into your library?</translation>
       <translation>Cable packet exceeds its capture buffer</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Cable recording endpoint does not support shared 48 kHz stereo float audio</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Calibration test signal</translation>
     </message>
@@ -1201,6 +1205,10 @@ Import into your library?</translation>
     <message>
       <source>Microphone route</source>
       <translation>Microphone route</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Microphone start timed out</translation>
     </message>
     <message>
       <source>Model</source>

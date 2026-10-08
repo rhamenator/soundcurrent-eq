@@ -345,6 +345,10 @@ Importere til biblioteket ditt?</translation>
       <translation>Kabelpakken overskrider opptaksbufferens kapasitet</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Den virtuelle kabelens opptaksendepunkt støtter ikke 48 kHz stereolyd i flyttallsformat i delt modus</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Testsignal for kalibrering</translation>
     </message>
@@ -1201,6 +1205,10 @@ Importere til biblioteket ditt?</translation>
     <message>
       <source>Microphone route</source>
       <translation>Mikrofonruting</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Tidsavbrudd ved start av mikrofonen</translation>
     </message>
     <message>
       <source>Model</source>

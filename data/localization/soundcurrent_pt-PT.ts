@@ -345,6 +345,10 @@ Importar para a sua biblioteca?</translation>
       <translation>O pacote do cabo excede a capacidade do buffer de captura</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>O ponto de extremidade de gravação do cabo virtual não suporta áudio estéreo de vírgula flutuante a 48 kHz em modo partilhado</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Sinal de teste de calibração</translation>
     </message>
@@ -1201,6 +1205,10 @@ Importar para a sua biblioteca?</translation>
     <message>
       <source>Microphone route</source>
       <translation>Percurso do microfone</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>O tempo de espera para iniciar o microfone expirou</translation>
     </message>
     <message>
       <source>Model</source>

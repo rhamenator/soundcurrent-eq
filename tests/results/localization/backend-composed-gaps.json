@@ -1,0 +1,28 @@
+{
+  "scope": "Manual reachability inspection of remaining composed/conditional Windows backend diagnostics; not a whole-interface audit",
+  "nativeReviewed": false,
+  "backendSourcesChanged": false,
+  "findings": [
+    {
+      "file": "src/windows_io.cpp",
+      "source": "Microphone start timed out",
+      "kind": "conditional fallback literal",
+      "status": "Desktop mapping and all 33 non-English translations added; actual compiled-catalog mapping test passed on Linux",
+      "reachability": "Microphone start failure propagates to the desktop error boundary"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "source": "Cable recording endpoint does not support shared 48 kHz stereo float audio",
+      "kind": "composed format diagnostic",
+      "status": "Desktop mapping and all 33 non-English translations added; actual compiled-catalog mapping test passed on Linux",
+      "reachability": "checkFormat called with Cable recording endpoint; rejection propagates through bridge error to desktop"
+    }
+  ],
+  "sourceHashes": {
+    "src/windows_audio.cpp": "6499a93ccc8429a6a257fc9c1cd52cdfae11f2045c40b6c5a037c4c614b1d0bd",
+    "src/windows_io.cpp": "13362ffd61431d9ea105ebbf5eb55df30b54904adc34a750a4da4bf9bab08ac7",
+    "src/audio_error_text.h": "9b7525ee286c0c8e6341956fcc75e34112e5545864180230c59248d7f45658e2"
+  },
+  "nextAction": "Continue helper/installer and remaining user-facing message audit; visual and Windows/package qualification pending",
+  "linuxCtest": "4/4 focused tests passed: localization, translation-maintenance, translation-catalogs, backend-error-text"
+}

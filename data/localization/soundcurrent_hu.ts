@@ -345,6 +345,10 @@ Importálja a könyvtárba?</translation>
       <translation>A kábelcsomag meghaladja a rögzítési puffer kapacitását</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>A virtuális kábel felvételi végpontja nem támogatja a 48 kHz-es sztereó lebegőpontos hangot megosztott módban</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Kalibrációs tesztjel</translation>
     </message>
@@ -1201,6 +1205,10 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Microphone route</source>
       <translation>Mikrofonútvonal</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>A mikrofon indítása túllépte az időkorlátot</translation>
     </message>
     <message>
       <source>Model</source>

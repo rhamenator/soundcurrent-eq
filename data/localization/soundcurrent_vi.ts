@@ -345,6 +345,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Gói dữ liệu cáp vượt quá dung lượng bộ đệm thu</translation>
     </message>
     <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Điểm cuối ghi âm của cáp ảo không hỗ trợ âm thanh stereo dấu phẩy động 48 kHz ở chế độ dùng chung</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Tín hiệu thử hiệu chuẩn</translation>
     </message>
@@ -1201,6 +1205,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Microphone route</source>
       <translation>Tuyến micrô</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Đã hết thời gian chờ khởi động micrô</translation>
     </message>
     <message>
       <source>Model</source>
