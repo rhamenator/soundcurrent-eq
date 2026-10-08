@@ -1,24 +1,24 @@
 {
-  "stage": "Swahili fourth existing-catalog batch",
+  "stage": "Swahili fifth existing-catalog batch",
   "catalogs": [
     {
       "tag": "sw",
       "name": "Kiswahili",
-      "translated": 291,
+      "translated": 349,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "e4a7063febade173ffce25aa12cf39a42a9bc215e9673f2c0039d7123065890c",
-      "qmSha256": "7c868029ca88db707ebc335c485c56c37e8d22ee99594bcf180e5176a066caed"
+      "tsSha256": "ce1dc30bb356258e1fef387ee1aba48bfe25e0234cd17c826da718188277f3b7",
+      "qmSha256": "25afcb68b2b7243c4debfa6244272254aac5aaaa6f4a733d6a7ba0065916d2f6"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "Embedded localization assertions, Swahili MainWindow offscreen smoke test and structural catalog checks",
-    "log": "/tmp/soundcurrent-eq-sw-fourth-tests.log"
+    "log": "/tmp/soundcurrent-eq-sw-fifth-tests.log"
   },
-  "review": "Contextual AI review of shared source entries 0–319: measured response versus EQ correction, channel limits, microphone clipping/retry instructions, safe package updates and left/right attenuation behavior. Placeholders, file patterns, numerical limits and physical L marker preserved. Linguistic accuracy unverified.",
+  "review": "Contextual AI review of shared source entries 0–399: post-EQ gain, exclusive startup, measured response versus correction, dry effects and rendered clipping counts. Hyperlink destinations, file patterns, placeholders, numerical limits and physical L/R markers preserved. Linguistic accuracy unverified.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
   "remaining": "Swahili incomplete. Omitted source messages reserved for second pass."

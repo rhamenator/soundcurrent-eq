@@ -1137,43 +1137,43 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>No</source>
-      <translation type="unfinished" />
+      <translation>Hapana</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>Hakuna usahihishaji wa kifaa ulioingizwa uliochaguliwa.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>Hakuna usahihishaji wa amplifaya uliopimwa uliochaguliwa. Maelezo ya masafa katika matangazo hayatoshi kuunda mkunjo wa usahihishaji.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>Hakuna maikrofoni iliyounganishwa.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>Hakuna usahihishaji wa modeli uliochaguliwa. EQ yako ya kusikiliza inafanya kazi kawaida.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>Hakuna toleo jipya zaidi lililochapishwa lililopatikana. Visakinishi vilivyopakuliwa pia hukaguliwa.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>Hakuna kifaa cha tokeo kinachopatikana.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>Hakuna kifaa cha tokeo kilichounganishwa.</translation>
     </message>
     <message>
       <source>No to All</source>
-      <translation type="unfinished" />
+      <translation>Hapana kwa yote</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>Hakuna — tumia EQ yangu mwenyewe</translation>
     </message>
     <message>
       <source>Number and date format</source>
@@ -1181,75 +1181,75 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>Idadi ya bendi za kisawazishi</translation>
     </message>
     <message>
       <source>OK</source>
-      <translation type="unfinished" />
+      <translation>Sawa</translation>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>Imewashwa · Inacheza kupitia %1</translation>
     </message>
     <message>
       <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
-      <translation type="unfinished" />
+      <translation>Programu moja tu ya SoundCurrent huanza unapoingia kwenye mfumo. Kuwasha hii hubadilisha mpangilio wa kuanza wa programu nyingine. Huanza chinichini ikiwa ikoni ya eneo la arifa inapatikana.</translation>
     </message>
     <message>
       <source>Open</source>
-      <translation type="unfinished" />
+      <translation>Fungua</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>Fungua paneli ya udhibiti ya VB-Audio kwa ucheleweshaji wa kebo na kiwango cha sampuli cha ndani. Kubadilisha hivi wakati sauti inafanya kazi kunaweza kukatiza uchezaji.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>Fungua paneli ya udhibiti ya VB-CABLE</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>Fungua vipakuliwa vya matoleo</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>Fungua folda ya masasisho</translation>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>Rangi ya machungwa: mwitikio uliopimwa ikiwa umetolewa. Kijani kibichi cha samawati: usahihishaji katika 48 kHz. Buruta nukta za rangi hiyo au hariri jedwali. Kuhifadhi huweka rejeleo na kuunda nakala maalumu.</translation>
     </message>
     <message>
       <source>Output device</source>
-      <translation>Kifaa cha kutoa sauti</translation>
+      <translation>Kifaa cha tokeo</translation>
     </message>
     <message>
       <source>Output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>Kifaa cha tokeo hakipatikani tena</translation>
     </message>
     <message>
       <source>Output has no volume channels</source>
-      <translation type="unfinished" />
+      <translation>Tokeo halina chaneli za kiwango cha sauti</translation>
     </message>
     <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>Tokeo la jumla</translation>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>Sitisha uchakataji kwa muda na ufungue usanidi wa sauti. Programu hubaki wazi na kuripoti matokeo. Anzisha Windows upya baada ya kusakinisha kiendeshi.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>Alama za kilele</translation>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>Piano</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>Cheza sauti hafifu ya majaribio na uhakiki mabadiliko yaliyopendekezwa ya EQ ya uchezaji</translation>
     </message>
     <message>
       <source>Playback</source>
@@ -1257,113 +1257,113 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>Inacheza sauti hafifu ya majaribio. Sitisha ikiwa inakukera.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>Unganisha maikrofoni yako ili kuchagua wasifu wa maikrofoni</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>Podikasti</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>Pop</translation>
     </message>
     <message>
       <source>Post gain</source>
       <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
-      <translation>Ukuzaji wa sauti baada ya uchakataji</translation>
+      <translation>Gain ya baada ya EQ</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>Gain baada ya kusawazisha</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>Thamani ya gain ya baada ya EQ katika desibeli</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>Jina la mpangilio uliowekwa tayari:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>Zuia mabadiliko ya mipangilio iliyowekwa tayari, bendi za EQ, gain ya baada ya EQ na usawa</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>Wasifu</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>Maelezo ya wasifu</translation>
     </message>
     <message>
       <source>Profile exceeds the 1 MiB limit.</source>
-      <translation type="unfinished" />
+      <translation>Wasifu unazidi kikomo cha 1 MiB.</translation>
     </message>
     <message>
       <source>Profile library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Maktaba ya wasifu inazidi 16 MiB.</translation>
     </message>
     <message>
       <source>Profile metadata is too long.</source>
-      <translation type="unfinished" />
+      <translation>Metadata ya wasifu ni ndefu mno.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>Wasifu lazima usomeke na uwe mdogo kuliko 64 KiB.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>
-      <translation type="unfinished" />
+      <translation>Wasifu unahitaji vichujio 1–16 vya usahihishaji.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>Vyanzo vya vipimo vilivyochapishwa: &lt;a href="https://www.spinorama.org/"&gt;Vipimo vya spika / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Urekebishaji wa Dayton kwa namba ya kifaa&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;Urekebishaji wa miniDSP kwa namba ya kifaa&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Grafu za maikrofoni za Neumann&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;Grafu ya mwitikio wa AT2020&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Vipimo vya amplifaya&lt;/a&gt;</translation>
     </message>
     <message>
       <source>Published profiles need an HTTPS measurement source.</source>
-      <translation type="unfinished" />
+      <translation>Wasifu uliochapishwa unahitaji chanzo cha vipimo cha HTTPS.</translation>
     </message>
     <message>
       <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <translation>Matoleo yaliyochapishwa hayakuweza kukaguliwa. Matoleo binafsi ya Studio yanahitaji ufikiaji wa GitHub. Tumia Fungua vipakuliwa vya matoleo; visakinishi vilivyopakuliwa bado hugunduliwa kwenye kifaa.</translation>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>Mwitikio uliochapishwa na mikunjo ya usahihishaji inayoharirika</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>Sasisho lililochapishwa %1 linapatikana. Fungua vipakuliwa vya matoleo, kisha usakinishe juu ya toleo hili na ufungue tena.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>Besi yenye msukumo</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>Ishara hafifu ya kufagia masafa kilogarithimu</translation>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>Toka kwenye SoundCurrent EQ</translation>
     </message>
     <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
-      <translation>Funga programu</translation>
+      <translation>Toka kwenye programu</translation>
     </message>
     <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>R</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>R&amp;B</translation>
     </message>
     <message>
       <source>Refresh devices</source>
@@ -1373,27 +1373,29 @@ Uingize kwenye maktaba yako?</translation>
       <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
 
 %1</source>
-      <translation type="unfinished" />
+      <translation>Vipimo vya kiasi vinajumuisha mwitikio wa spika, chumba na maikrofoni. Mabadiliko yaliyopendekezwa yamewekewa kikomo cha 3 dB kwa kila masafa yaliyopimwa.
+
+%1</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>Nikumbushe masasisho yanapopatikana au kuanza upya kunapohitajika</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>Ondoa kichujio kilichochaguliwa</translation>
     </message>
     <message>
       <source>Reset</source>
-      <translation type="unfinished" />
+      <translation>Weka upya</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>Weka upya uboreshaji wa sauti</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>Weka upya toni ya maikrofoni</translation>
     </message>
     <message>
       <source>Reset to flat</source>
