@@ -1,24 +1,24 @@
 {
-  "stage": "Traditional Chinese initial audio controls and profile guidance",
+  "stage": "Traditional Chinese calibration, recovery and delay batch",
   "catalogs": [
     {
       "tag": "zh-Hant",
       "name": "繁體中文",
-      "translated": 102,
+      "translated": 166,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "e60a62d427f19fbe7c179ab0e92eb4487ec7d9b3709281150b28acb147a9baab",
-      "qmSha256": "69f7139e6d201f243c267de65abb9c086383ec6cf6f919dcb930782d22dcbe63"
+      "tsSha256": "842ae893bfacbe35cd55104daac78ab8b22c0b7914ec6cb1613088c019f23b4a",
+      "qmSha256": "30f8dd793284d6ccf0e979e731d4c96f3362cc010eb075b7c44134b8ce57cba1"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "compiled localization, Traditional Chinese main window and catalog validation",
-    "log": "/tmp/soundcurrent-eq-zh-Hant-first-tests.log"
+    "log": "/tmp/soundcurrent-eq-zh-Hant-second-tests.log"
   },
-  "review": "Contextual AI review; unverified. Gain/headroom, clipping, amplifier measurement requirements, quit versus close and listening effects reviewed.",
+  "review": "Contextual AI review; unverified. Calibration recovery, unchanged 1 MiB limits, app-remains-open messages, cancel versus close, updates and delay wet mix reviewed.",
   "nativeReviewed": false,
   "windows": "Pending CI",
   "remaining": "Traditional Chinese catalog incomplete. 8 original target catalogs remain incomplete; omitted messages scheduled for second pass. Real UI and platform qualification remain open."
