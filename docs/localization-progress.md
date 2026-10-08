@@ -16,7 +16,7 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 - French: all 437 extracted EQ messages and all 523 extracted Studio messages populated, including standard actions, help and errors. Contextual AI translation/review only; nativeReviewed remains false.
 - German: all 437 extracted EQ messages and all 523 extracted Studio messages populated. Contextual AI review covers audio terminology, safe calibration/update instructions, and standard actions; nativeReviewed remains false.
-- Portuguese (Portugal/Brazil): partial translation batches in progress; current counts are recorded in portuguese-progress.json.
+- Portuguese (Portugal/Brazil): both catalogs populated; coverage and regional runtime checks are recorded in portuguese-progress.json.
 - Other 26 locales: 30 core entries populated each; the remaining messages must be translated and reviewed in subsequent batches.
 - Locale selection: region-only Chinese and explicit Latin-script Portuguese aliases resolve to available catalogs; formatting extensions do not block fallback; unsupported explicit scripts remain rejected.
 - Maintenance: preserve unfinished translator work/comments; reject unsupported numerus before rewriting; validate placeholders, markup/hyperlinks, glob filters, resource inventory and compiled hashes; prevent regressions in previously populated locales.
@@ -26,7 +26,7 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 Populate all current messages for every existing locale, pass structural and compiled/live UI checks on Linux/Windows, validate changed packages, and record evidence/known limitations. Full populated coverage must never be labeled native-speaker verification without an identified reviewer and catalog-specific evidence. The global --require-complete gate will remain failing until all missing entries are filled. No arbitrary English copies should be inserted merely to pass coverage.
 
-Next translation batch: Portuguese (Portugal and Brazil). French, German, Spanish and Italian are required to stay populated as sources evolve. The Filter Q caption now describes the dimensionless filter quality parameter; saved processing IDs and numeric values are unchanged.
+Next translation batch: Dutch. French, German, Spanish and Italian are required to stay populated as sources evolve. The Filter Q caption now describes the dimensionless filter quality parameter; saved processing IDs and numeric values are unchanged.
 
 Windows audio setup now translates application-owned failure, repair, calibration and restart instructions. Restart-required results always retain the translated reboot instruction alongside original helper diagnostics. The source guard also rejects unmarked literal messages passed to the setup completion helper.
 
@@ -35,3 +35,5 @@ Spanish: all 437 extracted messages populated. Contextual AI review covers calib
 Italian: all 437 extracted messages populated. Full Linux CTest passed 51/51, including Italian equipment workflows. Settings/effects tabs inspected with xcb/Xvfb at 1280×720. Contextual AI review remains unverified; Windows qualification for the new catalogs is pending.
 
 Portuguese partial checkpoint: 216/437 messages populated for each regional variant. Linux compiled-catalog and both Portuguese main-window checks passed (3/3). Regional terminology is reviewed separately; the remainder stays unfinished and falls back to English. Native-speaker verification remains unverified.
+
+Portuguese completed checkpoint: all 437 extracted messages populated in both regional catalogs. Full Linux CTest passed 53/53, including both equipment workflows. Regional settings/effects tabs inspected at 1280×720. Structural completeness is required for future updates; all translations remain unverified. Prior Italian commits passed Windows CI.

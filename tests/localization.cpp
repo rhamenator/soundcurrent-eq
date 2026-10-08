@@ -70,6 +70,13 @@ int main(int argc,char **argv){
    require(actions.button(QDialogButtonBox::Close)->text()==QString::fromUtf8("Chiudi"),"Italian standard actions stayed English");
    for(const auto &language:languages())if(language.tag=="it")require(language.translated==language.total,"Italian catalog has missing messages");
   }
+  for(const auto &tag: {QString("pt-PT"),QString("pt-BR")}) {
+   QSettings().setValue("i18n/language",tag);Runtime runtime;runtime.initialize();
+   require(text("Speaker")==QString::fromUtf8(tag=="pt-PT"?"Coluna":"Alto-falante"),"Portuguese regional equipment term incorrect");
+   QDialogButtonBox actions(QDialogButtonBox::Close|QDialogButtonBox::Save);
+   require(actions.button(QDialogButtonBox::Save)->text()==QString::fromUtf8(tag=="pt-PT"?"Guardar":"Salvar"),"Portuguese regional standard action incorrect");
+   for(const auto &language:languages())if(language.tag==tag)require(language.translated==language.total,"Portuguese catalog has missing messages");
+  }
   {
    QSettings().setValue("i18n/language","qps-rtl");Runtime runtime;runtime.initialize();
    auto pattern=text("Value %1 / %2");require(pattern.contains("%1")&&pattern.contains("%2"),"Pseudo locale damaged placeholders");

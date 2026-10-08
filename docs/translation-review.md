@@ -10,7 +10,7 @@ Corrections address clear semantic risks and ambiguous audio terminology: Swahil
 
 ## Remaining uncertainty
 
-French, German, Spanish and Italian are populated; the other 28 language packs remain incomplete. All 32 lack native review. Particular review priorities are Swahili audio vocabulary, Thai preset wording, natural microphone EQ terminology in every language, and regional Portuguese and Chinese usage. An AI reread or back-translation by the same model is not independent evidence and must not be labeled native review. Do not promote catalog review status based on this pass.
+French, German, Spanish, Italian and both Portuguese variants are populated; the other 26 language packs remain incomplete. All 32 lack native review. Particular review priorities are Swahili audio vocabulary, Thai preset wording, natural microphone EQ terminology in every language, and regional Portuguese and Chinese usage. An AI reread or back-translation by the same model is not independent evidence and must not be labeled native review. Do not promote catalog review status based on this pass.
 
 ## Required review workflow
 
@@ -26,7 +26,7 @@ Catalog audit checks source inventory, duplicate keys, nonempty finished entries
 
 ## Localization completion checkpoint
 
-The French catalog is now populated for all currently extracted app messages (437 EQ / 523 Studio). Translation and contextual review were performed by this coding agent; no external provider or fluent-speaker certification was used. Coverage includes help, equipment validation, calibration preview, standard Qt actions and Studio render/status text. Every French entry remains unverified. German, Spanish and Italian are also populated; the other 28 languages retain their starter coverage. The independent localization-guard audit agrees with populated coverage; its linguistic/runtime qualification fields remain unknown because that tool cannot assess them. Compiled/runtime evidence is recorded separately in tests/results/localization/checkpoint.json.
+The French catalog is now populated for all currently extracted app messages (437 EQ / 523 Studio). Translation and contextual review were performed by this coding agent; no external provider or fluent-speaker certification was used. Coverage includes help, equipment validation, calibration preview, standard Qt actions and Studio render/status text. Every French entry remains unverified. German, Spanish, Italian and both Portuguese variants are also populated; the other 26 languages retain their starter coverage. The independent localization-guard audit agrees with populated coverage; its linguistic/runtime qualification fields remain unknown because that tool cannot assess them. Compiled/runtime evidence is recorded separately in tests/results/localization/checkpoint.json.
 
 ## German completion checkpoint
 
@@ -39,3 +39,7 @@ All current catalog entries are populated in Spanish (437 EQ / 523 Studio). Cont
 ## Italian completion checkpoint
 
 All current extracted entries are populated (437 EQ / 523 Studio). Contextual AI review distinguishes Guadagno (signed audio gain), Fattore Q del filtro, Piatto (zero EQ gain), Compensazione loudness (low-volume listening correction), Senza effetto (dry signal), Rilascio del compressore and Annulla modifica (undo, distinct from Annulla for cancellation). Stable IDs, vendor/user metadata, links, file filters and placeholders remain unchanged. No native-speaker certification was obtained; all entries remain unverified.
+
+## Portuguese regional completion checkpoint
+
+Both pt-PT and pt-BR catalogs populate all currently extracted messages (437 EQ / 523 Studio each). Regional contextual review uses coluna/alto-falante, auscultadores/fones de ouvido, ficheiro/arquivo, guardar/salvar, controlos/controles, recetor/receptor, varrimento/varredura and percentagem/porcentagem. Technical intent preserves zero-gain Plano, low-volume Compensação loudness, Sem efeito for dry signal and signed gain adjustments. Compressor release is Tempo de recuperação do compressor in pt-PT and Tempo de liberação do compressor in pt-BR. This is contextual AI review, unverified; no native-speaker certification is claimed.
