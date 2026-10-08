@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-08",
+  "change": "Isolate the signed numeric headroom value and invariant dB unit together at display time",
+  "catalogChanges": false,
+  "processingChanges": false,
+  "nativeReviewed": false,
+  "linuxBuild": "application and localization tests rebuilt successfully",
+  "tests": "Six focused Linux CTests passed: localization, localized-ui-ar, localized-ui-he, localized-ui-fa, translation-maintenance, translation-catalogs",
+  "visualRegression": "Compiled Arabic/Hebrew/Persian catalogs rendered with Qt QTextLayout; actual sign, number and unit glyph positions assert LTR ordering inside RTL prose",
+  "screenshotsInspected": [
+    "ar",
+    "he"
+  ],
+  "limitations": [
+    "This change has not yet been qualified with the updated Windows installer",
+    "Other numerical labels, paths and error dialogs still need mixed-direction qualification",
+    "No native-speaker verification"
+  ]
+}

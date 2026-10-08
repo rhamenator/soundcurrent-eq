@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-only
+#include <QTextLayout>
 #include "localization.h"
 #include "audio_error_text.h"
 #include <QDoubleSpinBox>
@@ -15,6 +16,23 @@ int main(int argc,char **argv){
  QTemporaryDir dir;QSettings::setDefaultFormat(QSettings::IniFormat);QSettings::setPath(QSettings::IniFormat,QSettings::UserScope,dir.path());
  try{
   require(languages().size()>=30,"Global language catalogs missing");
+  for (const auto &tag : {QStringLiteral("ar"), QStringLiteral("he"), QStringLiteral("fa")}) {
+   QTranslator translator;require(translator.load(":/i18n/soundcurrent_"+tag+".qm"),"RTL catalog missing");
+   const auto pattern=translator.translate("SoundCurrent","Auto headroom %1 dB");
+   require(pattern.contains("%1 dB"),"Headroom unit token changed in RTL catalog");
+   const auto display=numberWithUnit(pattern,QStringLiteral("-12.5"),QStringLiteral("dB"));
+   require(display.contains(QString(QChar(0x2066))+"-12.5 dB"+QChar(0x2069)),"Headroom number/unit not isolated together");
+   QTextLayout layout(display);QTextOption option;option.setTextDirection(Qt::RightToLeft);layout.setTextOption(option);
+   layout.beginLayout();auto line=layout.createLine();line.setLineWidth(800);layout.endLayout();
+   const int number=display.indexOf("-12.5"),unit=display.indexOf("dB",number);
+   const auto glyphX=[&layout](int position) {
+    const auto runs=layout.glyphRuns(position,1);
+    require(!runs.isEmpty() && !runs.front().positions().isEmpty(),"Headroom glyph positions missing");
+    return runs.front().positions().front().x();
+   };
+   require(glyphX(number)<glyphX(number+1) && glyphX(number+1)<glyphX(unit),"RTL headroom sign/number/unit visual order changed");
+  }
+
   require(resolve("nn-NO")=="nn" && resolve("nb-NO")=="nb","Norwegian written standards collapsed");
   require(resolve("fr_CA")=="fr","Regional fallback failed");
   require(resolve("zh-TW")=="zh-Hant" && resolve("zh-CN")=="zh-Hans","Chinese region aliases fell back to English");

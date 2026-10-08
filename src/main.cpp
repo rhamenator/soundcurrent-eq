@@ -3021,7 +3021,8 @@ private:
         frequencyBox_->setValue(band.frequency);
         gainBox_->setValue(band.gain);
         qBox_->setValue(band.q);
-        headroom_->setText(SC_TR("Auto headroom %1 dB").arg(QLocale().toString(headroom(processingBands()), 'f', 1)));
+        headroom_->setText(soundcurrent::i18n::numberWithUnit(SC_TR("Auto headroom %1 dB"),
+            QLocale().toString(headroom(processingBands()), 'f', 1), QStringLiteral("dB")));
         curve_->setBands(bands_, selected_);
         curve_->setCorrection(speakerCorrection());
     }
