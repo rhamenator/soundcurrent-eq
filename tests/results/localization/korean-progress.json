@@ -21,5 +21,11 @@
   "review": "Contextual AI review across current Korean catalogs: effects, calibration limitations, microphone versus speaker paths, save/quit behavior, profile validation and neutral rendering counts. Linguistic accuracy unverified; no native review.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
-  "remaining": "Five target catalogs incomplete. Second-pass omitted source strings, visual and Windows lifecycle qualification remain open."
+  "remaining": "Five target catalogs incomplete. Second-pass omitted source strings, visual and Windows lifecycle qualification remain open.",
+  "focusedWorkflowTests": {
+    "passed": 4,
+    "total": 4,
+    "scope": "Korean profile editor workflow, embedded catalog completeness, standard Save, regional resolution, LTR, MainWindow offscreen and structural checks",
+    "log": "/tmp/soundcurrent-eq-ko-workflows-tests.log"
+  }
 }

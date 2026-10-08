@@ -193,6 +193,15 @@ int main(int argc,char **argv){
    for(const auto &language:languages())if(language.tag=="ja")require(language.translated==language.total,"Japanese catalog has missing messages");
   }
   {
+   QSettings().setValue("i18n/language","ko");Runtime runtime;runtime.initialize();
+   require(text("Filter Q")==QString::fromUtf8("필터 Q"),"Korean filter quality caption incorrect");
+   QDialogButtonBox actions(QDialogButtonBox::Close|QDialogButtonBox::Save);
+   require(actions.button(QDialogButtonBox::Save)->text()==QString::fromUtf8("저장"),"Korean standard actions stayed English");
+   require(QApplication::layoutDirection()==Qt::LeftToRight,"Korean layout is not LTR");
+   require(resolve("ko-KR")=="ko","Korean regional fallback incorrect");
+   for(const auto &language:languages())if(language.tag=="ko")require(language.translated==language.total,"Korean catalog has missing messages");
+  }
+  {
    QSettings().setValue("i18n/language","qps-rtl");Runtime runtime;runtime.initialize();
    auto pattern=text("Value %1 / %2");require(pattern.contains("%1")&&pattern.contains("%2"),"Pseudo locale damaged placeholders");
    require(QApplication::layoutDirection()==Qt::RightToLeft,"RTL layout missing");
