@@ -68,7 +68,8 @@ private:
         escaped.replace("$", "\\$");
         escaped.replace("%", "%%");
         // Desktop entry string escapes are decoded before Exec quoting.
-        const auto exec = (QStringLiteral("\"") + escaped + "\" --background").replace("\\", "\\\\");
+        QString exec = QStringLiteral("\"") + escaped + "\" --background";
+        exec.replace("\\", "\\\\");
         const auto tryExec = QString(executable_).replace("\\", "\\\\");
         return "[Desktop Entry]\nType=Application\nName=SoundCurrent\nExec=" + exec
             + "\nTryExec=" + tryExec + "\nTerminal=false\n";
