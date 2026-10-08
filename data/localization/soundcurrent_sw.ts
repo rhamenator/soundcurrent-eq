@@ -866,43 +866,43 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
-      <translation type="unfinished" />
+      <translation>Ingiza, unda na hariri wasifu wa vifaa</translation>
     </message>
     <message>
       <source>Import equipment profile</source>
-      <translation type="unfinished" />
+      <translation>Ingiza wasifu wa kifaa</translation>
     </message>
     <message>
       <source>Import measured amplifier correction</source>
-      <translation type="unfinished" />
+      <translation>Ingiza usahihishaji wa amplifaya uliopimwa</translation>
     </message>
     <message>
       <source>Import measured profile</source>
-      <translation type="unfinished" />
+      <translation>Ingiza wasifu uliopimwa</translation>
     </message>
     <message>
       <source>Import profile?</source>
-      <translation type="unfinished" />
+      <translation>Uingize wasifu?</translation>
     </message>
     <message>
       <source>Import relative measured response</source>
-      <translation type="unfinished" />
+      <translation>Ingiza mwitikio wa kiasi uliopimwa</translation>
     </message>
     <message>
       <source>Import response text</source>
-      <translation type="unfinished" />
+      <translation>Ingiza maandishi ya mwitikio</translation>
     </message>
     <message>
       <source>Include preview releases</source>
-      <translation type="unfinished" />
+      <translation>Jumuisha matoleo ya hakikisho</translation>
     </message>
     <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Sakinisha vifurushi vipya juu ya toleo hili — hakuna haja ya kuondoa programu. Mipangilio iliyowekwa tayari na wasifu huhifadhiwa. Hifadhi kazi yako, tumia Toka (kufunga dirisha huacha programu ikiendelea kufanya kazi), sakinisha sasisho, kisha ufungue tena.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
-      <translation type="unfinished" />
+      <translation>Toleo lililosakinishwa: %1</translation>
     </message>
     <message>
       <source>Interface language</source>
@@ -910,92 +910,92 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
-      <translation type="unfinished" />
+      <translation>Aina ndogo ya kifaa au aina ya nguvu si sahihi</translation>
     </message>
     <message>
       <source>Invalid filter.</source>
-      <translation type="unfinished" />
+      <translation>Kichujio si sahihi.</translation>
     </message>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
-      <translation type="unfinished" />
+      <translation>Wasifu wa amplifaya uliopimwa si sahihi. Unahitaji modeli, chanzo cha vipimo cha HTTPS, masharti, na vichujio 1–16 vya PK/LS/HS vyenye thamani ndani ya mipaka. Angalia muundo wa wasifu katika README.</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
-      <translation type="unfinished" />
+      <translation>Mwitikio uliopimwa si sahihi au haujapangwa kwa mpangilio.</translation>
     </message>
     <message>
       <source>Invalid or unordered response data.</source>
-      <translation type="unfinished" />
+      <translation>Data ya mwitikio si sahihi au haijapangwa kwa mpangilio.</translation>
     </message>
     <message>
       <source>Invalid profile library.</source>
-      <translation type="unfinished" />
+      <translation>Maktaba ya wasifu si sahihi.</translation>
     </message>
     <message>
       <source>Invalid response from pactl</source>
-      <translation type="unfinished" />
+      <translation>Jibu kutoka pactl si sahihi</translation>
     </message>
     <message>
       <source>Invalid response point.</source>
-      <translation type="unfinished" />
+      <translation>Nukta ya mwitikio si sahihi.</translation>
     </message>
     <message>
       <source>Invalid speaker correction filter count</source>
-      <translation type="unfinished" />
+      <translation>Idadi ya vichujio vya usahihishaji wa spika si sahihi</translation>
     </message>
     <message>
       <source>Invalid speaker filter type</source>
-      <translation type="unfinished" />
+      <translation>Aina ya kichujio cha spika si sahihi</translation>
     </message>
     <message>
       <source>Invalid speaker identity</source>
-      <translation type="unfinished" />
+      <translation>Utambulisho wa spika si sahihi</translation>
     </message>
     <message>
       <source>Jazz</source>
-      <translation type="unfinished" />
+      <translation>Jazz</translation>
     </message>
     <message>
       <source>Keep current EQ</source>
-      <translation type="unfinished" />
+      <translation>Weka EQ ya sasa</translation>
     </message>
     <message>
       <source>L</source>
-      <translation type="unfinished" />
+      <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
-      <translation>Lugha na eneo</translation>
+      <translation>Lugha na mipangilio ya eneo</translation>
     </message>
     <message>
       <source>Left right balance</source>
-      <translation type="unfinished" />
+      <translation>Usawa wa kushoto/kulia</translation>
     </message>
     <message>
       <source>Level indicator refresh interval</source>
-      <translation type="unfinished" />
+      <translation>Muda kati ya masasisho ya kiashiria cha kiwango</translation>
     </message>
     <message>
       <source>Level refresh</source>
-      <translation type="unfinished" />
+      <translation>Usasishaji wa kiwango</translation>
     </message>
     <message>
       <source>Library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Maktaba inazidi 16 MiB.</translation>
     </message>
     <message>
       <source>Listening preset</source>
       <extracomment>Saved equalizer settings for playback. Not a listening device.</extracomment>
-      <translation>Mpangilio wa kusikiliza</translation>
+      <translation>Mpangilio wa kusikiliza uliowekwa tayari</translation>
     </message>
     <message>
       <source>Live</source>
-      <translation type="unfinished" />
+      <translation>Moja kwa moja</translation>
     </message>
     <message>
       <source>Lo-Fi</source>
-      <translation type="unfinished" />
+      <translation>Lo-Fi</translation>
     </message>
     <message>
       <source>Lock EQ</source>
@@ -1004,59 +1004,59 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Lock equalizer settings</source>
-      <translation type="unfinished" />
+      <translation>Funga mipangilio ya kisawazishi</translation>
     </message>
     <message>
       <source>Loudness</source>
-      <translation type="unfinished" />
+      <translation>Loudness</translation>
     </message>
     <message>
       <source>Manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Mtengenezaji</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
-      <translation type="unfinished" />
+      <translation>Kikomo cha wasifu 32 wa amplifaya kimefikiwa.</translation>
     </message>
     <message>
       <source>Maximum stereo width</source>
-      <translation type="unfinished" />
+      <translation>Upana wa juu wa stereo</translation>
     </message>
     <message>
       <source>Measure</source>
-      <translation type="unfinished" />
+      <translation>Pima</translation>
     </message>
     <message>
       <source>Measure speaker room and microphone response</source>
-      <translation type="unfinished" />
+      <translation>Pima mwitikio wa spika, chumba na maikrofoni</translation>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
-      <translation type="unfinished" />
+      <translation>Usahihishaji wa modeli uliopimwa huongezwa kwenye EQ yako ya kusikiliza. Bado unaweza kuongeza besi au kurekebisha bendi yoyote. Unajumuisha mipaka ya tahadhari ya gain; athari za chumba na amplifaya zinahitaji kipimo cha mfumo.</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
-      <translation type="unfinished" />
+      <translation>Masharti ya kipimo yanahitajika.</translation>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
-      <translation type="unfinished" />
+      <translation>Data ya kipimo haikuwa kamili.</translation>
     </message>
     <message>
       <source>Measurement failed. Try a higher test level or move the mic closer.</source>
-      <translation type="unfinished" />
+      <translation>Kipimo kimeshindwa. Jaribu kiwango cha juu zaidi cha majaribio au usogeze maikrofoni karibu.</translation>
     </message>
     <message>
       <source>Measurement stopped.</source>
-      <translation type="unfinished" />
+      <translation>Kipimo kimesitishwa.</translation>
     </message>
     <message>
       <source>Metal</source>
-      <translation type="unfinished" />
+      <translation>Metal</translation>
     </message>
     <message>
       <source>Mic gain</source>
-      <translation type="unfinished" />
+      <translation>Gain ya maikrofoni</translation>
     </message>
     <message>
       <source>Microphone</source>
@@ -1064,59 +1064,59 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Microphone %1 adjustment</source>
-      <translation type="unfinished" />
+      <translation>Marekebisho ya maikrofoni %1</translation>
     </message>
     <message>
       <source>Microphone EQ is off.</source>
-      <translation type="unfinished" />
+      <translation>EQ ya maikrofoni imezimwa.</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
-      <translation type="unfinished" />
+      <translation>Unasaji wa maikrofoni ulisimama wakati wa kucheza sauti</translation>
     </message>
     <message>
       <source>Microphone capture stopped during the test</source>
-      <translation type="unfinished" />
+      <translation>Unasaji wa maikrofoni ulisimama wakati wa jaribio</translation>
     </message>
     <message>
       <source>Microphone error: %1</source>
-      <translation type="unfinished" />
+      <translation>Hitilafu ya maikrofoni: %1</translation>
     </message>
     <message>
       <source>Microphone filter did not appear</source>
-      <translation type="unfinished" />
+      <translation>Kichujio cha maikrofoni hakikuonekana</translation>
     </message>
     <message>
       <source>Microphone filter disappeared</source>
-      <translation type="unfinished" />
+      <translation>Kichujio cha maikrofoni kimetoweka</translation>
     </message>
     <message>
       <source>Microphone gain adjustment</source>
-      <translation type="unfinished" />
+      <translation>Marekebisho ya gain ya maikrofoni</translation>
     </message>
     <message>
       <source>Microphone input device</source>
-      <translation type="unfinished" />
+      <translation>Kifaa cha ingizo cha maikrofoni</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
-      <translation type="unfinished" />
+      <translation>Rekodi ya maikrofoni ina clipping. Punguza gain au ongezeko la maikrofoni na urudie kipimo.</translation>
     </message>
     <message>
       <source>Microphone route</source>
-      <translation type="unfinished" />
+      <translation>Njia ya maikrofoni</translation>
     </message>
     <message>
       <source>Model</source>
-      <translation type="unfinished" />
+      <translation>Modeli</translation>
     </message>
     <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
-      <translation type="unfinished" />
+      <translation>Sogeza kuelekea L au R kupunguza chaneli ya upande mwingine; katikati huweka zote mbili katika kiwango kamili</translation>
     </message>
     <message>
       <source>Movies</source>
-      <translation type="unfinished" />
+      <translation>Filamu</translation>
     </message>
     <message>
       <source>Natural mic EQ</source>
@@ -1125,15 +1125,15 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Natural mic EQ on · %1</source>
-      <translation type="unfinished" />
+      <translation>EQ ya asili ya maikrofoni imewashwa · %1</translation>
     </message>
     <message>
       <source>Natural microphone equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Washa au zima kisawazishi cha asili cha maikrofoni</translation>
     </message>
     <message>
       <source>Night Listening</source>
-      <translation type="unfinished" />
+      <translation>Kusikiliza usiku</translation>
     </message>
     <message>
       <source>No</source>
