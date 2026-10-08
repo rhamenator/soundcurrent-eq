@@ -83,3 +83,5 @@ Swedish/Danish filter and editor batch: sv: 230/441, da: 230/441. Four focused L
 Swedish/Danish microphone and measurement batch: sv: 291/441, da: 291/441. Four focused Linux checks passed per app. Whole-system limits, microphone clipping, additive correction, polarity and balance reviewed contextually. Both catalogs remain incomplete and unverified.
 
 Swedish/Danish startup and rendering batch: sv: 349/441, da: 349/441. Four focused Linux checks passed per app. Includes shared startup registration, preserved reference profiles, translated calibration links and neutral render counts. Both catalogs remain incomplete and unverified.
+
+Swedish/Danish import and speaker-profile batch: 398/441 messages each. Four focused Linux checks passed per app. Import constraints, saving, disconnected-device recovery and Windows restart guidance reviewed contextually. Catalogs remain incomplete and unverified.
