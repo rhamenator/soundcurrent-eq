@@ -4,259 +4,267 @@
     <name>SoundCurrent</name>
     <message>
       <source> (currently selected)</source>
-      <translation type="unfinished" />
+      <translation> (انتخاب فعلی)</translation>
     </message>
     <message>
       <source> (restored selection)</source>
-      <translation type="unfinished" />
+      <translation> (انتخاب بازیابی‌شده)</translation>
     </message>
     <message>
       <source> [custom]</source>
-      <translation type="unfinished" />
+      <translation> [سفارشی]</translation>
     </message>
     <message>
       <source> · mono</source>
-      <translation type="unfinished" />
+      <translation> · مونو</translation>
     </message>
     <message>
       <source> · no USB microphone detected</source>
-      <translation type="unfinished" />
+      <translation> · میکروفون USB شناسایی نشد</translation>
     </message>
     <message>
       <source> · stereo</source>
-      <translation type="unfinished" />
+      <translation> · استریو</translation>
     </message>
     <message>
       <source>%1
 
 Technical details:
 %2</source>
-      <translation type="unfinished" />
+      <translation>%1
+
+جزئیات فنی:
+%2</translation>
     </message>
     <message>
       <source>%1
 The app remains open; your settings have been kept.</source>
-      <translation type="unfinished" />
+      <translation>%1
+برنامه باز می‌ماند؛ تنظیمات شما حفظ شده‌اند.</translation>
     </message>
     <message>
       <source>%1 %2%3 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 %2%3 dB</translation>
     </message>
     <message>
       <source>%1 / %2
 %3
 Apply this correction to the %4 route?</source>
-      <translation type="unfinished" />
+      <translation>%1 / %2
+%3
+این اصلاح روی مسیر %4 اعمال شود؟</translation>
     </message>
     <message>
       <source>%1 / %2
 %3
 Import into your library?</source>
-      <translation type="unfinished" />
+      <translation>%1 / %2
+%3
+به کتابخانه شما وارد شود؟</translation>
     </message>
     <message>
       <source>%1 Hz: measured %2%3 dB; suggested %4%5 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 Hz: اندازه‌گیری‌شده %2%3 dB؛ پیشنهادی %4%5 dB</translation>
     </message>
     <message>
       <source>%1 Hz: too quiet to measure</source>
-      <translation type="unfinished" />
+      <translation>%1 Hz: صدا برای اندازه‌گیری بسیار ضعیف است</translation>
     </message>
     <message>
       <source>%1 disconnected. </source>
-      <translation type="unfinished" />
+      <translation>اتصال %1 قطع شد. </translation>
     </message>
     <message>
       <source>%1%2 dB</source>
-      <translation type="unfinished" />
+      <translation>%1%2 dB</translation>
     </message>
     <message>
       <source>Abort</source>
-      <translation type="unfinished" />
+      <translation>توقف عملیات</translation>
     </message>
     <message>
       <source>Acoustic</source>
-      <translation type="unfinished" />
+      <translation>آکوستیک</translation>
     </message>
     <message>
       <source>Active / passive / unknown</source>
-      <translation type="unfinished" />
+      <translation>اکتیو / پسیو / نامشخص</translation>
     </message>
     <message>
       <source>Add filter</source>
-      <translation type="unfinished" />
+      <translation>افزودن فیلتر</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
-      <translation type="unfinished" />
+      <translation>خروجی را پس از اکولایزر از -60 تا +12 dB تنظیم کنید. بهره بیشتر ممکن است باعث برش قله‌های سیگنال شود.</translation>
     </message>
     <message>
       <source>Adjust this tone band around the natural voice profile</source>
-      <translation type="unfinished" />
+      <translation>این باند صدا را حول پروفایل صدای طبیعی تنظیم کنید</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
-      <translation type="unfinished" />
+      <translation>کنترل‌های پیشرفته بهبود صدا</translation>
     </message>
     <message>
       <source>Air</source>
-      <translation type="unfinished" />
+      <translation>شفافیت فرکانس‌های بسیار بالا</translation>
     </message>
     <message>
       <source>All brands</source>
-      <translation type="unfinished" />
+      <translation>همه برندها</translation>
     </message>
     <message>
       <source>All equipment</source>
-      <translation type="unfinished" />
+      <translation>همه تجهیزات</translation>
     </message>
     <message>
       <source>All families</source>
-      <translation type="unfinished" />
+      <translation>همه خانواده‌ها</translation>
     </message>
     <message>
       <source>All manufacturers</source>
-      <translation type="unfinished" />
+      <translation>همه سازندگان</translation>
     </message>
     <message>
       <source>All speaker types</source>
-      <translation type="unfinished" />
+      <translation>همه انواع بلندگو</translation>
     </message>
     <message>
       <source>All subtypes</source>
-      <translation type="unfinished" />
+      <translation>همه زیرنوع‌ها</translation>
     </message>
     <message>
       <source>Ambience</source>
-      <translation type="unfinished" />
+      <translation>فضای آکوستیکی</translation>
     </message>
     <message>
       <source>Ambience damping</source>
-      <translation type="unfinished" />
+      <translation>میرایی فضای آکوستیکی</translation>
     </message>
     <message>
       <source>Ambience decay</source>
-      <translation type="unfinished" />
+      <translation>زمان فروکش فضای آکوستیکی</translation>
     </message>
     <message>
       <source>Amp details</source>
-      <translation type="unfinished" />
+      <translation>جزئیات تقویت‌کننده</translation>
     </message>
     <message>
       <source>Amplifier</source>
-      <translation type="unfinished" />
+      <translation>تقویت‌کننده</translation>
     </message>
     <message>
       <source>Amplifier / receiver</source>
-      <translation type="unfinished" />
+      <translation>تقویت‌کننده / گیرنده صوتی</translation>
     </message>
     <message>
       <source>Amplifier model profile</source>
-      <translation type="unfinished" />
+      <translation>پروفایل مدل تقویت‌کننده</translation>
     </message>
     <message>
       <source>Amplifier profile details</source>
-      <translation type="unfinished" />
+      <translation>جزئیات پروفایل تقویت‌کننده</translation>
     </message>
     <message>
       <source>Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.</source>
-      <translation type="unfinished" />
+      <translation>پروفایل تقویت‌کننده به اندازه‌گیری‌های الکتریکی با بار بلندگو، ورودی و تنظیمات تُن مشخص نیاز دارد. یک فایل اصلاح اندازه‌گیری‌شده وارد کنید؛ منحنی تقویت‌کننده از مشخصات تبلیغاتی فرض نمی‌شود.</translation>
     </message>
     <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
-      <translation type="unfinished" />
+      <translation>به‌روزرسانی برنامه نصب شد. برای بارگذاری آن از خروج استفاده کنید و برنامه را دوباره باز کنید؛ بستن این پنجره نسخه قدیمی را در حال اجرا نگه می‌دارد.</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
-      <translation type="unfinished" />
+      <translation>یک خروجی دیگر SoundCurrent EQ از قبل در حال اجراست</translation>
     </message>
     <message>
       <source>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</source>
-      <translation type="unfinished" />
+      <translation>یک برنامه دیگر SoundCurrent یا راه‌اندازی درایور صدا در حال اجراست. پیش از باز کردن این برنامه از آن خارج شوید.</translation>
     </message>
     <message>
       <source>Another SoundCurrent equalizer is running. Quit EQ or Studio before opening the other app.</source>
-      <translation type="unfinished" />
+      <translation>یک اکولایزر دیگر SoundCurrent در حال اجراست. پیش از باز کردن برنامه دیگر از EQ یا Studio خارج شوید.</translation>
     </message>
     <message>
       <source>Another SoundCurrent microphone filter is running</source>
-      <translation type="unfinished" />
+      <translation>یک فیلتر میکروفون دیگر SoundCurrent در حال اجراست</translation>
     </message>
     <message>
       <source>Another equalizer route is present: %1. Quit it before using SoundCurrent.</source>
-      <translation type="unfinished" />
+      <translation>یک مسیر اکولایزر دیگر وجود دارد: %1. پیش از استفاده از SoundCurrent از آن خارج شوید.</translation>
     </message>
     <message>
       <source>Application update</source>
-      <translation type="unfinished" />
+      <translation>به‌روزرسانی برنامه</translation>
     </message>
     <message>
       <source>Application updates</source>
-      <translation type="unfinished" />
+      <translation>به‌روزرسانی‌های برنامه</translation>
     </message>
     <message>
       <source>Apply</source>
-      <translation type="unfinished" />
+      <translation>اعمال</translation>
     </message>
     <message>
       <source>Apply correction?</source>
-      <translation type="unfinished" />
+      <translation>اصلاح اعمال شود؟</translation>
     </message>
     <message>
       <source>Apply profile</source>
-      <translation type="unfinished" />
+      <translation>اعمال پروفایل</translation>
     </message>
     <message>
       <source>Apply suggested EQ</source>
-      <translation type="unfinished" />
+      <translation>اعمال اکولایزر پیشنهادی</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
-      <translation type="unfinished" />
+      <translation>راه‌اندازی درایور صدا</translation>
     </message>
     <message>
       <source>Audio error: %1</source>
-      <translation type="unfinished" />
+      <translation>خطای صدا: %1</translation>
     </message>
     <message>
       <source>Audio setup</source>
-      <translation type="unfinished" />
+      <translation>راه‌اندازی صدا</translation>
     </message>
     <message>
       <source>Audio setup could not finish</source>
-      <translation type="unfinished" />
+      <translation>راه‌اندازی صدا تکمیل نشد</translation>
     </message>
     <message>
       <source>Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.</source>
-      <translation type="unfinished" />
+      <translation>راه‌اندازی صدا ناموفق بود. اگر VB-CABLE تازه نصب شده است، Windows را دوباره راه‌اندازی کنید و سپس دوباره تلاش کنید.</translation>
     </message>
     <message>
       <source>Audio setup is missing. Repair or reinstall SoundCurrent.</source>
-      <translation type="unfinished" />
+      <translation>بخش راه‌اندازی صدا موجود نیست. SoundCurrent را تعمیر یا دوباره نصب کنید.</translation>
     </message>
     <message>
       <source>Audio setup is running. Processing is paused; the app remains open.</source>
-      <translation type="unfinished" />
+      <translation>راه‌اندازی صدا در حال اجراست. پردازش متوقف شده است؛ برنامه باز می‌ماند.</translation>
     </message>
     <message>
       <source>Auto headroom %1 dB</source>
-      <translation type="unfinished" />
+      <translation>حاشیه خودکار تا سقف سیگنال %1 dB</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
-      <translation type="unfinished" />
+      <translation>خودکار (SoundCurrent Microphone)</translation>
     </message>
     <message>
       <source>Automatic (follow connected devices)</source>
-      <translation type="unfinished" />
+      <translation>خودکار (پیروی از دستگاه‌های متصل)</translation>
     </message>
     <message>
       <source>Automatic (follow connected microphones)</source>
-      <translation type="unfinished" />
+      <translation>خودکار (پیروی از میکروفون‌های متصل)</translation>
     </message>
     <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>تنظیم خودکار صدای میکروفون متصل؛ برای دور زدن اکولایزر میکروفون کلیک کنید</translation>
     </message>
     <message>
       <source>Balance</source>
@@ -265,15 +273,15 @@ Import into your library?</source>
     </message>
     <message>
       <source>Balance position</source>
-      <translation type="unfinished" />
+      <translation>موقعیت توازن</translation>
     </message>
     <message>
       <source>Balanced</source>
-      <translation type="unfinished" />
+      <translation>متعادل</translation>
     </message>
     <message>
       <source>Band %1 gain</source>
-      <translation type="unfinished" />
+      <translation>بهره باند %1</translation>
     </message>
     <message>
       <source>Bands</source>
@@ -282,35 +290,35 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.</source>
-      <translation type="unfinished" />
+      <translation>نوارهای کنار لغزنده‌ها سطوح تخمینی پس از اکولایزر را نشان می‌دهند. متن قرمز قله درباره احتمال برش قله‌های سیگنال هشدار می‌دهد.</translation>
     </message>
     <message>
       <source>Bass Boost</source>
-      <translation>تقویت بم</translation>
+      <translation>تقویت باس</translation>
     </message>
     <message>
       <source>Bass Cut</source>
-      <translation type="unfinished" />
+      <translation>کاهش باس</translation>
     </message>
     <message>
       <source>Bass adds low-frequency weight; Clarity adds high-frequency detail; Ambience adds room reflections; Surround widens stereo; Dynamic Boost compresses and raises quieter material with a peak ceiling. Boosting can increase output level.</source>
-      <translation type="unfinished" />
+      <translation>باس به فرکانس‌های پایین وزن می‌دهد؛ وضوح جزئیات فرکانس‌های بالا را افزایش می‌دهد؛ فضای آکوستیکی بازتاب‌های اتاق را اضافه می‌کند؛ صدای فراگیر استریو را گسترش می‌دهد؛ تقویت پویا بخش‌های آرام‌تر را فشرده و تقویت می‌کند و سقفی برای قله‌ها دارد. تقویت ممکن است سطح خروجی را افزایش دهد.</translation>
     </message>
     <message>
       <source>Bass frequency</source>
-      <translation type="unfinished" />
+      <translation>فرکانس باس</translation>
     </message>
     <message>
       <source>Boxiness</source>
-      <translation type="unfinished" />
+      <translation>صدای جعبه‌ای</translation>
     </message>
     <message>
       <source>Brand</source>
-      <translation type="unfinished" />
+      <translation>برند</translation>
     </message>
     <message>
       <source>Brand, family and model are required (maximum 120 characters each).</source>
-      <translation type="unfinished" />
+      <translation>برند، خانواده و مدل الزامی هستند (حداکثر 120 نویسه برای هر مورد).</translation>
     </message>
     <message>
       <source>Bright</source>

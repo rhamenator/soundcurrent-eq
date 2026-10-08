@@ -1,0 +1,25 @@
+{
+  "stage": "Persian initial audio controls and profile guidance",
+  "catalogs": [
+    {
+      "tag": "fa",
+      "name": "فارسی",
+      "translated": 102,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "2249af47b5bde628277c15b8b59f30d384d87f314bb749a645c703e1bf7e71c8",
+      "qmSha256": "e316da47f0b0682942b988f1f820540518dde84bae646f7306c4ab7e7d5d627b"
+    }
+  ],
+  "linuxTests": {
+    "passed": 3,
+    "total": 3,
+    "scope": "compiled localization, Persian main window and catalog validation",
+    "log": "/tmp/soundcurrent-eq-fa-first-tests.log"
+  },
+  "review": "Contextual AI review; unverified. Gain/headroom, clipping, amplifier measurement requirements, quit versus close and listening effects reviewed.",
+  "nativeReviewed": false,
+  "windows": "Pending CI",
+  "remaining": "Persian catalog incomplete. 10 original target catalogs remain incomplete; omitted messages scheduled for second pass. Full bidi and platform qualification remain open."
+}

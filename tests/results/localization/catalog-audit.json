@@ -9,7 +9,7 @@
     "data/localization/soundcurrent_de.ts": "d3ce9ddd7fe923c060b06b8a4b4839428f264542d4fc081e06986852fa72be9a",
     "data/localization/soundcurrent_el.ts": "25d4b76f8dcb5e44087be8224bc2e53fb8ba7cb75e61e4dfdd0dbe7e52dd4bab",
     "data/localization/soundcurrent_es.ts": "7ce2ca776d0d0f8897d394a8544aa051d1a99ca8dade6785f11f6154d41604e5",
-    "data/localization/soundcurrent_fa.ts": "0a4dd917fda23e5c7c1893b1cf1cc08ce05af3603e7aec8c3e9e487bab54c628",
+    "data/localization/soundcurrent_fa.ts": "2249af47b5bde628277c15b8b59f30d384d87f314bb749a645c703e1bf7e71c8",
     "data/localization/soundcurrent_fi.ts": "f679b24d37b5eee798fad68ce4b4634b6b8a1bf7e9355e3489766ef544a093f8",
     "data/localization/soundcurrent_fr.ts": "598edcb9a984736962bf390900fcca13f5cf5764fbcbec6c5fee4c20d549c54f",
     "data/localization/soundcurrent_he.ts": "bb7820cac1b1a251442001aae36ffde003dfcde0ea349308159fa5d7a72014b5",
@@ -44,7 +44,7 @@
       "commit": "unknown",
       "file": "data/localization/soundcurrent_fa.ts",
       "locale": "fa",
-      "key": "[\"SoundCurrent\",null,\" (currently selected)\",\"\"]",
+      "key": "[\"SoundCurrent\",null,\"Bright\",\"\"]",
       "category": "untranslated",
       "severity": "error",
       "confidence": 1.0,
@@ -52,14 +52,14 @@
       "recommended_action": "Review and correct catalog; rerun audit.",
       "verification_status": "deterministic",
       "kind": "deterministic",
-      "fingerprint": "ad66d7bc41f56392230557a5a0a60edc7448a4d1a49616ab7f3832ed6f07d035"
+      "fingerprint": "df25f20c6f37f15858d0fd6bb13c04ebfafadb66ef86793f3face1e4a2b57bf6"
     },
     {
       "repository": "soundcurrent-eq",
       "commit": "unknown",
       "file": "data/localization/soundcurrent_fa.ts",
       "locale": "fa",
-      "key": "[\"SoundCurrent\",null,\" (restored selection)\",\"\"]",
+      "key": "[\"SoundCurrent\",null,\"Browse all equipment profiles / editor\",\"\"]",
       "category": "untranslated",
       "severity": "error",
       "confidence": 1.0,
@@ -67,14 +67,14 @@
       "recommended_action": "Review and correct catalog; rerun audit.",
       "verification_status": "deterministic",
       "kind": "deterministic",
-      "fingerprint": "7cc4a7ef2bafe0541fa44641fcd5aff6d55786255051ca9535661dab79a211a8"
+      "fingerprint": "55d13430235b7dd64d3684f8ae9c63876f486d78195a7f6433ba771db0955494"
     },
     {
       "repository": "soundcurrent-eq",
       "commit": "unknown",
       "file": "data/localization/soundcurrent_fa.ts",
       "locale": "fa",
-      "key": "[\"SoundCurrent\",null,\" [custom]\",\"\"]",
+      "key": "[\"SoundCurrent\",null,\"Calibration test signal\",\"\"]",
       "category": "untranslated",
       "severity": "error",
       "confidence": 1.0,
@@ -82,7 +82,7 @@
       "recommended_action": "Review and correct catalog; rerun audit.",
       "verification_status": "deterministic",
       "kind": "deterministic",
-      "fingerprint": "ecd98ab58337257a02b335eb07646c511828d7818daa8ab3be2f383fe63b0e20"
+      "fingerprint": "5abaf54150d1c8927d5e81e353a592910e1aa0aa15de265b5275b9d379b5a1e0"
     }
   ],
   "metrics": [
@@ -138,7 +138,7 @@
       "file": "data/localization/soundcurrent_fa.ts",
       "locale": "fa",
       "total": 441,
-      "translated": 30,
+      "translated": 102,
       "linguistic_verification": "unknown",
       "runtime_ui_qualification": "unknown"
     },
@@ -352,7 +352,7 @@
     }
   ],
   "findingCounts": {
-    "untranslated": 4110
+    "untranslated": 4038
   },
   "reportNote": "Compact structural report: input hashes and metrics retained, three sample findings. Linguistic review and runtime qualification remain separate."
 }
