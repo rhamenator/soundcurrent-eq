@@ -55,3 +55,5 @@ All current extracted entries are populated (437 EQ / 523 Studio). Contextual AI
 ## Czech and Slovak initial batch
 
 Reviewed prompts against actual import, correction-preview, calibration and audio setup behavior. Signed gain uses zesílení/zosilnenie; headroom uses rezerva; meter text retains the estimated-level qualifier. Dynamic route types use a neutral label construction to avoid inflecting inserted names. Device identities, placeholders and numerical settings remain unchanged. Both catalogs remain incomplete and unverified; no native-speaker review is claimed.
+
+Czech/Slovak second batch: wet mix is the effect contribution, not total output volume; delay time is distinct from decay time. Sweep error text explicitly describes a continuously changing test frequency. Failure prompts preserve the conditions under which processing is refused and the app stays open. This is contextual AI review, not native-speaker verification.

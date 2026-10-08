@@ -47,3 +47,5 @@ Polish final catalog: three focused runtime/main-window/equipment checks passed.
 Startup option: implemented in Settings for both apps. One shared per-user registration chooses EQ or Studio. Background launch has a visible-window fallback when no tray is available. Linux full tests passed 56/56. Windows build/installer and actual sign-in qualification remain pending. See startup.md.
 
 Czech and Slovak initial batch: cs: 102/441, sk: 102/441. Four focused Linux checks passed in each repository. Includes calibration/profile prompts, gain/headroom and audio setup errors. Both remain incomplete and unverified.
+
+Czech and Slovak second batch: cs: 166/441, sk: 166/441. Four focused Linux checks passed for the compiled catalogs, both main windows and catalog regressions. Error recovery, updates, routing and delay controls are covered; catalogs remain incomplete and unverified.
