@@ -178,5 +178,9 @@
   "secondPassCableCompletion": {
     "status": "three notices translated and external-label guard tested; Windows install/repair flows and packages pending",
     "evidence": "tests/results/localization/second-pass-cable-completion.json"
+  },
+  "secondPassNsisSourceAudit": {
+    "status": "37 installer text candidates and four dynamic sites inventoried; English-only language declarations confirmed; translation and qualification pending",
+    "evidence": "tests/results/localization/second-pass-nsis-source-audit.json"
   }
 }

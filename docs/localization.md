@@ -88,3 +88,7 @@ The heuristic does not establish full interface extraction, does not parse NSIS,
 ### External installer labels
 
 EXTERNAL_UI_LABELS in the catalog validator is scoped to reviewed instruction source keys. It preserves the exact bundled third-party button label and its occurrence count. Do not freeze SoundCurrent-owned captions globally. The cable repair instruction preserves Install Driver and inserts the separately translated Audio driver setup caption through a numbered value. Native linguistic verification and actual Windows installer qualification remain separate requirements.
+
+### Installer source audit
+
+nsis_string_audit.py inventories supported custom controls, MessageBox/DetailPrint text, section captions, MUI headers and text definitions. nsis-text-backlog.json is an explicit unfinished-work inventory; new raw text or unaudited language references fail catalog unit tests. It is not a complete NSIS parser and does not expand macros or line continuations. A $(key) reference does not prove its definition, translation, layout or installed runtime behavior. Compiler and install/update/uninstall checks remain separate gates.

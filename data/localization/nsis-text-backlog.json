@@ -1,0 +1,337 @@
+{
+  "scope": "Supported NSIS UI text sites; not a full NSIS parser",
+  "wholeInterfaceCoverageProven": false,
+  "languages": {
+    "packaging/windows/soundcurrent-eq-native.nsi": [
+      "English"
+    ],
+    "packaging/windows/soundcurrent-eq.nsi": [
+      "English"
+    ]
+  },
+  "candidates": [
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 45,
+      "kind": "MUI-text",
+      "literal": "Install or update SoundCurrent EQ. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.$\\r$\\n$\\r$\\nSave your work and use Quit to exit the running app before continuing. Closing its window keeps it running in the background.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 76,
+      "kind": "page-heading",
+      "literal": "Connect your audio",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 76,
+      "kind": "page-heading",
+      "literal": "Set up SoundCurrent Audio for SoundCurrent EQ.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 82,
+      "kind": "control-caption",
+      "literal": "SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 84,
+      "kind": "control-caption",
+      "literal": "Install or update the shared SoundCurrent Audio driver",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 88,
+      "kind": "control-caption",
+      "literal": "SoundCurrent Audio is already present. Setup will register this app and keep the shared driver available for the other SoundCurrent app.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 91,
+      "kind": "control-caption",
+      "literal": "Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 93,
+      "kind": "control-caption",
+      "literal": "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 96,
+      "kind": "control-caption",
+      "literal": "Quit both EQ and Studio before changing the shared driver. Removing one app keeps the driver if the other app still uses it.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 104,
+      "kind": "Section",
+      "literal": "SoundCurrent EQ",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 107,
+      "kind": "MessageBox",
+      "literal": "Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 148,
+      "kind": "DetailPrint",
+      "literal": "Setting up the shared SoundCurrent Audio driver...",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 156,
+      "kind": "DetailPrint",
+      "literal": "SoundCurrent Audio setup did not finish. Retry using the Start menu shortcut.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 157,
+      "kind": "MessageBox",
+      "literal": "SoundCurrent Audio was not installed. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 162,
+      "kind": "Section",
+      "literal": "Uninstall",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 165,
+      "kind": "MessageBox",
+      "literal": "Quit SoundCurrent EQ before uninstalling it.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 179,
+      "kind": "MessageBox",
+      "literal": "Shared audio driver removal did not finish. This app was kept so you can retry. Quit EQ and Studio, then retry uninstalling.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 45,
+      "kind": "MUI-text",
+      "literal": "Install or update SoundCurrent EQ. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.$\\r$\\n$\\r$\\nSave your work and use Quit to exit the running app before continuing. Closing its window keeps it running in the background.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 87,
+      "kind": "page-heading",
+      "literal": "Connect your audio",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 87,
+      "kind": "page-heading",
+      "literal": "Set up VB-CABLE for SoundCurrent EQ.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 93,
+      "kind": "control-caption",
+      "literal": "VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 95,
+      "kind": "control-caption",
+      "literal": "Install VB-CABLE if missing (administrator approval)",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 99,
+      "kind": "control-caption",
+      "literal": "VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or Quit.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 101,
+      "kind": "control-caption",
+      "literal": "VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 104,
+      "kind": "control-caption",
+      "literal": "VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 107,
+      "kind": "control-caption",
+      "literal": "Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 109,
+      "kind": "control-caption",
+      "literal": "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 112,
+      "kind": "control-caption",
+      "literal": "Quit any running equalizer before driver setup. The last app’s uninstaller offers VB-CABLE removal. Other software may also need it. Extra A/B cables are not bundled.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 120,
+      "kind": "Section",
+      "literal": "SoundCurrent EQ",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 123,
+      "kind": "MessageBox",
+      "literal": "Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 157,
+      "kind": "DetailPrint",
+      "literal": "Opening VB-CABLE setup...",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 164,
+      "kind": "MessageBox",
+      "literal": "Restart Windows before using SoundCurrent or VB-CABLE settings. The audio driver installation needs a system restart.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 166,
+      "kind": "DetailPrint",
+      "literal": "VB-CABLE setup did not finish. Retry using the Start menu shortcut.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 167,
+      "kind": "MessageBox",
+      "literal": "VB-CABLE setup did not finish. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 172,
+      "kind": "Section",
+      "literal": "Uninstall",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 175,
+      "kind": "MessageBox",
+      "literal": "Quit SoundCurrent EQ before uninstalling it.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 192,
+      "kind": "MessageBox",
+      "literal": "VB-CABLE removal did not finish. This app was kept so you can retry.$\\r$\\n$1",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    }
+  ],
+  "dynamicSites": [
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 152,
+      "kind": "DetailPrint",
+      "expression": "DetailPrint $1"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 175,
+      "kind": "DetailPrint",
+      "expression": "DetailPrint $1"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 161,
+      "kind": "DetailPrint",
+      "expression": "DetailPrint $1"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 188,
+      "kind": "DetailPrint",
+      "expression": "DetailPrint $1"
+    }
+  ],
+  "baselinePolicy": "Raw candidates require translation or invariant-name review; marked references require explicit review. Normal checks never regenerate this backlog. Compiler and installed UI qualification remain required."
+}

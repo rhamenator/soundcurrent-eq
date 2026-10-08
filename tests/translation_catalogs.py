@@ -139,6 +139,35 @@ class CatalogTests(unittest.TestCase):
         # This rule does not freeze translatable SoundCurrent-owned action labels.
         catalog.validate_text('Audio driver setup', 'Configuration du pilote audio')
 
+    def test_installer_source_backlog_and_regression_gate(self):
+        root = Path(__file__).resolve().parents[1]
+        spec = importlib.util.spec_from_file_location('nsis_audit', root / 'scripts/nsis_string_audit.py')
+        audit = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(audit)
+        audit.check_backlog(audit.inventory(root), json.loads((root / 'data/localization/nsis-text-backlog.json').read_text()))
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = Path(directory)
+            folder = fixture / 'packaging/windows'
+            folder.mkdir(parents=True)
+            source = folder / 'fixture.nsi'
+            source.write_text('; MessageBox MB_OK "Ignored comment"\n'
+                              '/* DetailPrint "Ignored block" */\n'
+                              '${NSD_CreateLabel} 0 0 100% 10u "Caption; # literal"\n'
+                              'MessageBox MB_OK "Quoted $\\"word$\\""\n'
+                              'DetailPrint $1\n'
+                              '!insertmacro MUI_LANGUAGE "English"\n', encoding='utf-8')
+            baseline = audit.inventory(fixture)
+            self.assertEqual([row['literal'] for row in baseline['candidates']], ['Caption; # literal', 'Quoted $\\"word$\\"'])
+            self.assertEqual(len(baseline['dynamicSites']), 1)
+            self.assertFalse(baseline['wholeInterfaceCoverageProven'])
+            with source.open('a') as file:
+                file.write('MessageBox MB_OK "New untranslated installer message"\n')
+            with self.assertRaisesRegex(ValueError, 'New untranslated installer text'):
+                audit.check_backlog(audit.inventory(fixture), baseline)
+            source.write_text('MessageBox MB_OK "$(UnreviewedCaption)"\n', encoding='utf-8')
+            with self.assertRaisesRegex(ValueError, 'Unaudited installer language reference'):
+                audit.check_backlog(audit.inventory(fixture), baseline)
+
     def test_setup_lookup_keys_have_required_catalog_entries(self):
         root = Path(__file__).resolve().parents[1]
         required = json.loads((root / 'data/localization/setup-sources.json').read_text())
