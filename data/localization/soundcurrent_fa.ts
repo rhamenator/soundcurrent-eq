@@ -1400,107 +1400,107 @@ Import into your library?</source>
     <message>
       <source>Reset to flat</source>
       <extracomment>Restore zero gain in all EQ bands. Does not mute playback.</extracomment>
-      <translation>بازنشانی پاسخ تخت</translation>
+      <translation>بازنشانی به پاسخ تخت</translation>
     </message>
     <message>
       <source>Response data (*.txt *.csv *.frd *.cal)</source>
-      <translation type="unfinished" />
+      <translation>داده پاسخ (*.txt *.csv *.frd *.cal)</translation>
     </message>
     <message>
       <source>Response exceeds 4096 points.</source>
-      <translation type="unfinished" />
+      <translation>پاسخ بیش از 4096 نقطه دارد.</translation>
     </message>
     <message>
       <source>Response frequencies must increase, with finite bounded values.</source>
-      <translation type="unfinished" />
+      <translation>فرکانس‌های پاسخ باید افزایشی باشند و مقادیر متناهی و در محدوده مجاز باشند.</translation>
     </message>
     <message>
       <source>Response has no usable audio range.</source>
-      <translation type="unfinished" />
+      <translation>پاسخ محدوده صوتی قابل استفاده ندارد.</translation>
     </message>
     <message>
       <source>Response import</source>
-      <translation type="unfinished" />
+      <translation>وارد کردن پاسخ</translation>
     </message>
     <message>
       <source>Response needs 2–4096 measured points.</source>
-      <translation type="unfinished" />
+      <translation>پاسخ به 2–4096 نقطه اندازه‌گیری‌شده نیاز دارد.</translation>
     </message>
     <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
-      <translation type="unfinished" />
+      <translation>پیش از استفاده از اکولایزر یا تنظیمات VB-CABLE، Windows را دوباره راه‌اندازی کنید. تغییرات درایور صدا به راه‌اندازی دوباره سیستم نیاز دارند.</translation>
     </message>
     <message>
       <source>Restore Defaults</source>
-      <translation type="unfinished" />
+      <translation>بازیابی پیش‌فرض‌ها</translation>
     </message>
     <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
-      <translation type="unfinished" />
+      <translation>بازیابی تنظیم قبلی اکولایزر (Ctrl+Z)</translation>
     </message>
     <message>
       <source>Retry</source>
-      <translation type="unfinished" />
+      <translation>تلاش دوباره</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
-      <translation type="unfinished" />
+      <translation>زبان آزمون راست‌به‌چپ</translation>
     </message>
     <message>
       <source>Rock</source>
-      <translation type="unfinished" />
+      <translation>راک</translation>
     </message>
     <message>
       <source>Save</source>
-      <translation type="unfinished" />
+      <translation>ذخیره</translation>
     </message>
     <message>
       <source>Save All</source>
-      <translation type="unfinished" />
+      <translation>ذخیره همه</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
-      <translation type="unfinished" />
+      <translation>ذخیره پیش‌تنظیم اکولایزر</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
-      <translation type="unfinished" />
+      <translation>پروفایل تغییرکرده ذخیره شود؟</translation>
     </message>
     <message>
       <source>Save preset</source>
-      <translation>ذخیرهٔ پیش‌تنظیم</translation>
+      <translation>ذخیره پیش‌تنظیم</translation>
     </message>
     <message>
       <source>Save profile</source>
-      <translation type="unfinished" />
+      <translation>ذخیره پروفایل</translation>
     </message>
     <message>
       <source>Save system response profile</source>
-      <translation type="unfinished" />
+      <translation>ذخیره پروفایل پاسخ سیستم</translation>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
-      <translation type="unfinished" />
+      <translation>پیش‌تنظیم «%1» ذخیره شد.</translation>
     </message>
     <message>
       <source>Search brand, family, model or measurement conditions</source>
-      <translation type="unfinished" />
+      <translation>جستجوی برند، خانواده، مدل یا شرایط اندازه‌گیری</translation>
     </message>
     <message>
       <source>Second virtual cable for microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>کابل مجازی دوم برای اکولایزر میکروفون</translation>
     </message>
     <message>
       <source>Select band %1</source>
-      <translation type="unfinished" />
+      <translation>انتخاب باند %1</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
-      <translation type="unfinished" />
+      <translation>این باند را برای ویرایش فرکانس، بهره و Q انتخاب کنید</translation>
     </message>
     <message>
       <source>Selected audio device is unavailable</source>
-      <translation type="unfinished" />
+      <translation>دستگاه صوتی انتخاب‌شده در دسترس نیست</translation>
     </message>
     <message>
       <source>Selected band</source>
@@ -1509,27 +1509,27 @@ Import into your library?</source>
     </message>
     <message>
       <source>Selected band filter Q</source>
-      <translation type="unfinished" />
+      <translation>ضریب کیفیت Q فیلتر باند انتخاب‌شده</translation>
     </message>
     <message>
       <source>Selected band frequency</source>
-      <translation type="unfinished" />
+      <translation>فرکانس باند انتخاب‌شده</translation>
     </message>
     <message>
       <source>Selected band gain</source>
-      <translation type="unfinished" />
+      <translation>بهره باند انتخاب‌شده</translation>
     </message>
     <message>
       <source>Selected output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>دستگاه خروجی انتخاب‌شده دیگر در دسترس نیست</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
-      <translation type="unfinished" />
+      <translation>خروجی انتخاب‌شده جدا شد. به انتخاب خودکار خروجی تغییر یافت.</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
-      <translation type="unfinished" />
+      <translation>صداهای کم‌صدای جداگانه</translation>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
@@ -1537,27 +1537,27 @@ Import into your library?</source>
     </message>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
-      <translation type="unfinished" />
+      <translation>فاصله‌های کوتاه‌تر سطح‌ها را بیشتر تازه می‌کنند و پردازنده بیشتری مصرف می‌کنند؛ دریافت صدا ممکن است نرخ واقعی را محدود کند</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
-      <translation type="unfinished" />
+      <translation>نمایش خط نگهداری قله با افت تدریجی در هر نشانگر سطح فرکانس</translation>
     </message>
     <message>
       <source>Show advanced controls</source>
-      <translation type="unfinished" />
+      <translation>نمایش کنترل‌های پیشرفته</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>
-      <translation type="unfinished" />
+      <translation>نمایش نشانگرهای قله در سطح‌های فرکانس</translation>
     </message>
     <message>
       <source>Small Speakers</source>
-      <translation type="unfinished" />
+      <translation>بلندگوهای کوچک</translation>
     </message>
     <message>
       <source>Soft Treble</source>
-      <translation type="unfinished" />
+      <translation>فرکانس‌های بالای نرم</translation>
     </message>
     <message>
       <source>Sound enhancements</source>
@@ -1565,55 +1565,55 @@ Import into your library?</source>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
-      <translation type="unfinished" />
+      <translation>SoundCurrent Audio پس از نصب مسیر میکروفون خود را فراهم می‌کند. با VB-CABLE، اکولایزر هم‌زمان میکروفون و بلندگو به یک کابل دوم (A یا B) با نصب جداگانه نیاز دارد. آن کابل را در برنامه‌های ضبط انتخاب کنید. حالت خودکار در صورت دسترس بودن مسیر SoundCurrent را ترجیح می‌دهد.</translation>
     </message>
     <message>
       <source>Source</source>
-      <translation type="unfinished" />
+      <translation>منبع</translation>
     </message>
     <message>
       <source>Speaker</source>
-      <translation type="unfinished" />
+      <translation>بلندگو</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
-      <translation type="unfinished" />
+      <translation>کالیبراسیون بلندگو &amp;&amp; اتاق</translation>
     </message>
     <message>
       <source>Speaker + room check</source>
-      <translation type="unfinished" />
+      <translation>بررسی بلندگو و اتاق</translation>
     </message>
     <message>
       <source>Speaker and room measurement</source>
-      <translation type="unfinished" />
+      <translation>اندازه‌گیری بلندگو و اتاق</translation>
     </message>
     <message>
       <source>Speaker filter is outside conservative bounds</source>
-      <translation type="unfinished" />
+      <translation>فیلتر بلندگو خارج از محدوده محافظه‌کارانه است</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
-      <translation type="unfinished" />
+      <translation>سازنده بلندگو</translation>
     </message>
     <message>
       <source>Speaker model correction</source>
-      <translation type="unfinished" />
+      <translation>اصلاح مدل بلندگو</translation>
     </message>
     <message>
       <source>Speaker model profile</source>
-      <translation type="unfinished" />
+      <translation>پروفایل مدل بلندگو</translation>
     </message>
     <message>
       <source>Speaker profile details</source>
-      <translation type="unfinished" />
+      <translation>جزئیات پروفایل بلندگو</translation>
     </message>
     <message>
       <source>Speaker profile resource is missing</source>
-      <translation type="unfinished" />
+      <translation>منبع پروفایل بلندگو موجود نیست</translation>
     </message>
     <message>
       <source>Speaker type</source>
-      <translation type="unfinished" />
+      <translation>نوع بلندگو</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
