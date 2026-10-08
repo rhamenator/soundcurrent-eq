@@ -1,24 +1,24 @@
 {
-  "stage": "Nynorsk microphone and measurement batch",
+  "stage": "Nynorsk startup and rendering batch",
   "catalogs": [
     {
       "tag": "nn",
       "name": "Norsk nynorsk",
-      "translated": 292,
+      "translated": 349,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "eb20889ebfe8c966106a1038d2daf06e383dbb803172c8b17f9d06b7c6fc136b",
-      "qmSha256": "c4cf882b9ea723dc2c4eb41ff4d8cbf046c54d6bb55fcfc0e611f4dafbfe0532"
+      "tsSha256": "4a78879a4561d437239f4330577d7032362d5d5ffa314bb30a37298a41fe4b0c",
+      "qmSha256": "3c3d8518f1f1146545cc7d34a74de6247fe3b7bc2f5e9a2459a8a7b20863fa14"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "compiled localization with distinct nn-NO/nb-NO resolution, Nynorsk main window and catalog validation",
-    "log": "/tmp/soundcurrent-eq-nn-fourth-tests.log"
+    "log": "/tmp/soundcurrent-eq-nn-fifth-tests.log"
   },
-  "review": "Contextual AI review; unverified. Whole-system measurement limits, microphone clipping, additive correction, polarity and attenuation-only balance reviewed. Both endpoint captions match localized balance instructions.",
+  "review": "Contextual AI review; unverified. Shared sign-in registration, reference preservation, bounded measurement suggestions and neutral rendering counts reviewed. Link captions retain original destinations.",
   "nativeReviewed": false,
   "windows": "Pending CI",
   "remaining": "Nynorsk and 12 original target catalogs incomplete."

@@ -1137,43 +1137,43 @@ Importere til biblioteket ditt?</translation>
     </message>
     <message>
       <source>No</source>
-      <translation type="unfinished" />
+      <translation>Nei</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>Ingen importert utstyrskorreksjon er vald.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>Ingen målt forsterkarkorreksjon er vald. Marknadsførte frekvensområde er ikkje tilstrekkelege til å utleie ei korreksjonskurve.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>Ingen mikrofon tilkopla.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>Ingen modellkorreksjon er vald. Lytte-EQ-en fungerer som vanleg.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>Ingen nyare publisert utgåve funnen. Nedlasta installasjonsprogram vert òg kontrollerte.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>Ingen utgangseining er tilgjengeleg.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>Ingen utgangseining er tilkopla.</translation>
     </message>
     <message>
       <source>No to All</source>
-      <translation type="unfinished" />
+      <translation>Nei til alle</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>Ingen — bruk min eigen EQ</translation>
     </message>
     <message>
       <source>Number and date format</source>
@@ -1181,43 +1181,43 @@ Importere til biblioteket ditt?</translation>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>Tal på equalizerband</translation>
     </message>
     <message>
       <source>OK</source>
-      <translation type="unfinished" />
+      <translation>OK</translation>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>På · Spelar gjennom %1</translation>
     </message>
     <message>
       <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
-      <translation type="unfinished" />
+      <translation>Berre éin SoundCurrent-app startar ved innlogging. Aktivering erstattar oppstartsinnstillinga til den andre appen. Han startar i bakgrunnen når eit systemstatusikon er tilgjengeleg.</translation>
     </message>
     <message>
       <source>Open</source>
-      <translation type="unfinished" />
+      <translation>Opne</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>Opne kontrollpanelet til VB-Audio for kabelforseinking og intern samplingsfrekvens. Endringar medan lyden køyrer kan avbryte avspelinga.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>Opne VB-CABLE-kontrollpanel</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>Opne utgåvenedlastingar</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>Opne oppdateringsmappe</translation>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>Oransje: målt frekvensrespons når tilgjengeleg. Turkis: korreksjon ved 48 kHz. Dra turkise kontrollpunkt eller rediger tabellen. Lagring tek vare på referansen og opprettar ein eigendefinert kopi.</translation>
     </message>
     <message>
       <source>Output device</source>
@@ -1225,31 +1225,31 @@ Importere til biblioteket ditt?</translation>
     </message>
     <message>
       <source>Output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>Utgangseininga er ikkje lenger tilgjengeleg</translation>
     </message>
     <message>
       <source>Output has no volume channels</source>
-      <translation type="unfinished" />
+      <translation>Utgangen har ingen volumkanalar</translation>
     </message>
     <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>Samla utgang</translation>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>Set handsaminga på pause og opne lydoppsettet. Appen held seg open og viser resultatet. Start Windows på nytt etter at drivaren er installert.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>Toppmarkørar</translation>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>Piano</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>Spel av stille testlyd og førehandsvis føreslåtte endringar i avspelings-EQ</translation>
     </message>
     <message>
       <source>Playback</source>
@@ -1257,19 +1257,19 @@ Importere til biblioteket ditt?</translation>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>Spelar av stille testlyd. Stopp dersom det er ubehageleg.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>Kople til mikrofonen for å velje ein mikrofonprofil</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>Podkast</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>Pop</translation>
     </message>
     <message>
       <source>Post gain</source>
@@ -1278,79 +1278,79 @@ Importere til biblioteket ditt?</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>Etterforsterking etter equalizeren</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>Etterforsterking i desibel</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>Namn på førehandsinnstilling:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>Hindre endringar i førehandsinnstillingar, EQ-band, etterforsterking og balanse</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>Profil</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>Profildetaljar</translation>
     </message>
     <message>
       <source>Profile exceeds the 1 MiB limit.</source>
-      <translation type="unfinished" />
+      <translation>Profilen overskrid grensa på 1 MiB.</translation>
     </message>
     <message>
       <source>Profile library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Profilbiblioteket er større enn 16 MiB.</translation>
     </message>
     <message>
       <source>Profile metadata is too long.</source>
-      <translation type="unfinished" />
+      <translation>Profilmetadataa er for lange.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>Profilen må vere lesbar og mindre enn 64 KiB.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>
-      <translation type="unfinished" />
+      <translation>Profilar treng 1–16 korreksjonsfilter.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>Publiserte målekjelder: &lt;a href="https://www.spinorama.org/"&gt;Høgtalarmålingar / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton-kalibrering etter serienummer&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP-kalibrering etter serienummer&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann-mikrofonkurver&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020-frekvensresponskurve&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Forsterkarmålingar&lt;/a&gt;</translation>
     </message>
     <message>
       <source>Published profiles need an HTTPS measurement source.</source>
-      <translation type="unfinished" />
+      <translation>Publiserte profilar treng ei HTTPS-målekjelde.</translation>
     </message>
     <message>
       <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <translation>Publiserte utgåver kunne ikkje kontrollerast. Private Studio-utgåver krev GitHub-tilgang. Bruk Opne utgåvenedlastingar; nedlasta installasjonsprogram vert framleis oppdaga lokalt.</translation>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>Publisert frekvensrespons og redigerbare korreksjonskurver</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>Publisert oppdatering %1 er tilgjengeleg. Opne utgåvenedlastingar, installer over denne versjonen og opne att.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>Slagkraftig bass</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>Stille logaritmisk sveip</translation>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>Avslutt SoundCurrent EQ</translation>
     </message>
     <message>
       <source>Quit app</source>
@@ -1363,7 +1363,7 @@ Importere til biblioteket ditt?</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>R&amp;B</translation>
     </message>
     <message>
       <source>Refresh devices</source>
@@ -1373,27 +1373,29 @@ Importere til biblioteket ditt?</translation>
       <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
 
 %1</source>
-      <translation type="unfinished" />
+      <translation>Relative målingar inkluderer frekvensresponsen til høgtalar, rom og mikrofon. Føreslåtte endringar er avgrensa til 3 dB per målt frekvens.
+
+%1</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>Minn meg på tilgjengelege oppdateringar eller naudsynt omstart</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>Fjern valt filter</translation>
     </message>
     <message>
       <source>Reset</source>
-      <translation type="unfinished" />
+      <translation>Tilbakestill</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>Tilbakestill lydforbetringar</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>Tilbakestill mikrofontone</translation>
     </message>
     <message>
       <source>Reset to flat</source>
