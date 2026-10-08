@@ -113,3 +113,5 @@ All currently extracted messages populated (441 EQ / 527 Studio). Q remains dime
 ## Norwegian Bokmål and Finnish initial batch
 
 Forsterkning/vahvistus describes gain; nivåmargin/tasovara describes headroom, distinct from balance. Klipping/leikkautuminen describes clipping. Room-effect damping and decay retain separate controls, and dynamic boost retains its peak ceiling. Amplifier profiles still require electrical measurements with a known load; marketing specifications are insufficient. Setup recovery retains paused processing and the open app. Placeholders, units and character limits are preserved. Native-speaker review remains unverified.
+
+Norwegian Bokmål/Finnish recovery review: failures to inspect active equalizers explicitly prevent processing. Setup errors preserve an open app and Windows restart guidance. File-size limits and half-dB steps retain their original values. Avklingningstid/vaimenemisaika describes decay duration; effektandel/efektin osuus describes processed effect contribution. Render cancellation remains distinct from disabling live processing. Native review remains unverified.
