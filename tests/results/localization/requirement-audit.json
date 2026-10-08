@@ -262,5 +262,9 @@
   "secondPassProcessOutputDiagnostics": {
     "report": "tests/results/localization/second-pass-process-output-diagnostics.json",
     "status": "Windows output fixture failure observed; diagnostics added and host-tested; root cause unresolved"
+  },
+  "secondPassStagedOutputFixture": {
+    "report": "tests/results/localization/second-pass-staged-output-fixture.json",
+    "status": "runtime deployment moved before fixture execution; Windows confirmation pending"
   }
 }

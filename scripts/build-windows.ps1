@@ -45,8 +45,6 @@ try {
     & python scripts/windows_setup_catalogs.py --output "$stage\setup-translations.json"
     if ($LASTEXITCODE -ne 0) { throw 'Audio helper translation export failed' }
     Copy-Item packaging\windows\setup-localization.ps1 $stage
-    & build-windows-native\Release\soundcurrent-backend-error-text-test.exe --powershell-output-fixture powershell.exe "$root\tests\windows_setup_output_fixture.ps1"
-    if ($LASTEXITCODE -ne 0) { throw 'Audio helper UTF-8 process output regression failed' }
     & powershell.exe -NoProfile -NonInteractive -ExecutionPolicy RemoteSigned -File tests/windows_setup_localization.ps1 -CatalogPath "$stage\setup-translations.json"
     if ($LASTEXITCODE -ne 0) { throw 'Audio helper localization regression failed' }
     Copy-Item build-windows-native\Release\soundcurrent-eq.exe $stage
@@ -64,6 +62,12 @@ try {
         ForEach-Object { Get-ChildItem (Join-Path $_.FullName 'x64') -Directory -Filter 'Microsoft.VC*.CRT' } | Select-Object -ExpandProperty FullName -First 1
     if (!$redist) { throw 'Visual Studio redistributable CRT not found' }
     Copy-Item "$redist\*.dll" $stage
+    # Run with the same app-local Qt/CRT dependencies deployed for the product.
+    # The build directory does not contain Qt runtime DLLs and is not on SDK PATH.
+    Copy-Item build-windows-native\Release\soundcurrent-backend-error-text-test.exe $stage
+    & "$stage\soundcurrent-backend-error-text-test.exe" --powershell-output-fixture powershell.exe "$root\tests\windows_setup_output_fixture.ps1"
+    if ($LASTEXITCODE -ne 0) { throw "Audio helper UTF-8 process output regression failed (exit $LASTEXITCODE)" }
+    Remove-Item "$stage\soundcurrent-backend-error-text-test.exe"
     @('[Paths]', 'Prefix=.', 'Plugins=.') | Set-Content -Encoding ascii "$stage\qt.conf"
     New-Item -ItemType Directory -Force "$stage\licenses" | Out-Null
     $sourceArchive = Join-Path $root '.cache\qtbase-everywhere-src-6.12.0.tar.xz'
