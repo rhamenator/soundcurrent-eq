@@ -4,313 +4,321 @@
     <name>SoundCurrent</name>
     <message>
       <source> (currently selected)</source>
-      <translation type="unfinished" />
+      <translation> (अभी चयनित)</translation>
     </message>
     <message>
       <source> (restored selection)</source>
-      <translation type="unfinished" />
+      <translation> (बहाल किया गया चयन)</translation>
     </message>
     <message>
       <source> [custom]</source>
-      <translation type="unfinished" />
+      <translation> [कस्टम]</translation>
     </message>
     <message>
       <source> · mono</source>
-      <translation type="unfinished" />
+      <translation> · मोनो</translation>
     </message>
     <message>
       <source> · no USB microphone detected</source>
-      <translation type="unfinished" />
+      <translation> · कोई USB माइक्रोफ़ोन नहीं मिला</translation>
     </message>
     <message>
       <source> · stereo</source>
-      <translation type="unfinished" />
+      <translation> · स्टीरियो</translation>
     </message>
     <message>
       <source>%1
 
 Technical details:
 %2</source>
-      <translation type="unfinished" />
+      <translation>%1
+
+तकनीकी विवरण:
+%2</translation>
     </message>
     <message>
       <source>%1
 The app remains open; your settings have been kept.</source>
-      <translation type="unfinished" />
+      <translation>%1
+ऐप खुला रहता है; आपकी सेटिंग सुरक्षित रखी गई हैं।</translation>
     </message>
     <message>
       <source>%1 %2%3 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 %2%3 dB</translation>
     </message>
     <message>
       <source>%1 / %2
 %3
 Apply this correction to the %4 route?</source>
-      <translation type="unfinished" />
+      <translation>%1 / %2
+%3
+यह सुधार %4 रूट पर लागू करें?</translation>
     </message>
     <message>
       <source>%1 / %2
 %3
 Import into your library?</source>
-      <translation type="unfinished" />
+      <translation>%1 / %2
+%3
+अपनी लाइब्रेरी में आयात करें?</translation>
     </message>
     <message>
       <source>%1 Hz: measured %2%3 dB; suggested %4%5 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 Hz: मापा गया %2%3 dB; सुझाया गया %4%5 dB</translation>
     </message>
     <message>
       <source>%1 Hz: too quiet to measure</source>
-      <translation type="unfinished" />
+      <translation>%1 Hz: मापने के लिए आवाज़ बहुत धीमी है</translation>
     </message>
     <message>
       <source>%1 disconnected. </source>
-      <translation type="unfinished" />
+      <translation>%1 का कनेक्शन टूट गया। </translation>
     </message>
     <message>
       <source>%1%2 dB</source>
-      <translation type="unfinished" />
+      <translation>%1%2 dB</translation>
     </message>
     <message>
       <source>Abort</source>
-      <translation type="unfinished" />
+      <translation>बंद करें</translation>
     </message>
     <message>
       <source>Acoustic</source>
-      <translation type="unfinished" />
+      <translation>अकूस्टिक</translation>
     </message>
     <message>
       <source>Active / passive / unknown</source>
-      <translation type="unfinished" />
+      <translation>ऐक्टिव / पैसिव / अज्ञात</translation>
     </message>
     <message>
       <source>Add filter</source>
-      <translation type="unfinished" />
+      <translation>फ़िल्टर जोड़ें</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
-      <translation type="unfinished" />
+      <translation>EQ के बाद आउटपुट को -60 से +12 dB तक समायोजित करें। अधिक गेन से क्लिपिंग हो सकती है।</translation>
     </message>
     <message>
       <source>Adjust this tone band around the natural voice profile</source>
-      <translation type="unfinished" />
+      <translation>स्वाभाविक आवाज़ की प्रोफ़ाइल के आधार पर इस टोन बैंड को समायोजित करें</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
-      <translation type="unfinished" />
+      <translation>उन्नत ध्वनि सुधार नियंत्रण</translation>
     </message>
     <message>
       <source>Air</source>
-      <translation type="unfinished" />
+      <translation>एयर</translation>
     </message>
     <message>
       <source>All brands</source>
-      <translation type="unfinished" />
+      <translation>सभी ब्रांड</translation>
     </message>
     <message>
       <source>All equipment</source>
-      <translation type="unfinished" />
+      <translation>सभी उपकरण</translation>
     </message>
     <message>
       <source>All families</source>
-      <translation type="unfinished" />
+      <translation>सभी उत्पाद परिवार</translation>
     </message>
     <message>
       <source>All manufacturers</source>
-      <translation type="unfinished" />
+      <translation>सभी निर्माता</translation>
     </message>
     <message>
       <source>All speaker types</source>
-      <translation type="unfinished" />
+      <translation>सभी स्पीकर प्रकार</translation>
     </message>
     <message>
       <source>All subtypes</source>
-      <translation type="unfinished" />
+      <translation>सभी उपप्रकार</translation>
     </message>
     <message>
       <source>Ambience</source>
-      <translation type="unfinished" />
+      <translation>ऐम्बियंस</translation>
     </message>
     <message>
       <source>Ambience damping</source>
-      <translation type="unfinished" />
+      <translation>ऐम्बियंस डैम्पिंग</translation>
     </message>
     <message>
       <source>Ambience decay</source>
-      <translation type="unfinished" />
+      <translation>ऐम्बियंस क्षय समय</translation>
     </message>
     <message>
       <source>Amp details</source>
-      <translation type="unfinished" />
+      <translation>ऐम्प का विवरण</translation>
     </message>
     <message>
       <source>Amplifier</source>
-      <translation type="unfinished" />
+      <translation>ऐम्प्लिफ़ायर</translation>
     </message>
     <message>
       <source>Amplifier / receiver</source>
-      <translation type="unfinished" />
+      <translation>ऐम्प्लिफ़ायर / रिसीवर</translation>
     </message>
     <message>
       <source>Amplifier model profile</source>
-      <translation type="unfinished" />
+      <translation>ऐम्प्लिफ़ायर मॉडल प्रोफ़ाइल</translation>
     </message>
     <message>
       <source>Amplifier profile details</source>
-      <translation type="unfinished" />
+      <translation>ऐम्प्लिफ़ायर प्रोफ़ाइल का विवरण</translation>
     </message>
     <message>
       <source>Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.</source>
-      <translation type="unfinished" />
+      <translation>ऐम्प्लिफ़ायर प्रोफ़ाइल के लिए ज्ञात स्पीकर लोड, इनपुट और टोन सेटिंग के साथ विद्युत माप आवश्यक हैं। मापी गई सुधार फ़ाइल आयात करें; प्रचार संबंधी विनिर्देशों से ऐम्प्लिफ़ायर की प्रतिक्रिया वक्र का अनुमान नहीं लगाया जाता।</translation>
     </message>
     <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
-      <translation type="unfinished" />
+      <translation>ऐप अपडेट इंस्टॉल हो गया है। उसे लोड करने के लिए ऐप से बाहर निकलें और दोबारा खोलें; केवल यह विंडो बंद करने से पुराना संस्करण चलता रहता है।</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
-      <translation type="unfinished" />
+      <translation>एक अन्य SoundCurrent EQ सिंक पहले से चल रहा है</translation>
     </message>
     <message>
       <source>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</source>
-      <translation type="unfinished" />
+      <translation>एक अन्य SoundCurrent ऐप या ऑडियो ड्राइवर सेटअप चल रहा है। इस ऐप को खोलने से पहले उसे बंद करें।</translation>
     </message>
     <message>
       <source>Another SoundCurrent equalizer is running. Quit EQ or Studio before opening the other app.</source>
-      <translation type="unfinished" />
+      <translation>एक अन्य SoundCurrent इक्वलाइज़र चल रहा है। दूसरा ऐप खोलने से पहले EQ या Studio से बाहर निकलें।</translation>
     </message>
     <message>
       <source>Another SoundCurrent microphone filter is running</source>
-      <translation type="unfinished" />
+      <translation>एक अन्य SoundCurrent माइक्रोफ़ोन फ़िल्टर चल रहा है</translation>
     </message>
     <message>
       <source>Another equalizer route is present: %1. Quit it before using SoundCurrent.</source>
-      <translation type="unfinished" />
+      <translation>एक अन्य इक्वलाइज़र रूट मौजूद है: %1। SoundCurrent इस्तेमाल करने से पहले उसे बंद करें।</translation>
     </message>
     <message>
       <source>Application update</source>
-      <translation type="unfinished" />
+      <translation>ऐप अपडेट</translation>
     </message>
     <message>
       <source>Application updates</source>
-      <translation type="unfinished" />
+      <translation>ऐप अपडेट</translation>
     </message>
     <message>
       <source>Apply</source>
-      <translation type="unfinished" />
+      <translation>लागू करें</translation>
     </message>
     <message>
       <source>Apply correction?</source>
-      <translation type="unfinished" />
+      <translation>सुधार लागू करें?</translation>
     </message>
     <message>
       <source>Apply profile</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल लागू करें</translation>
     </message>
     <message>
       <source>Apply suggested EQ</source>
-      <translation type="unfinished" />
+      <translation>सुझाया गया EQ लागू करें</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
-      <translation type="unfinished" />
+      <translation>ऑडियो ड्राइवर सेटअप</translation>
     </message>
     <message>
       <source>Audio error: %1</source>
-      <translation type="unfinished" />
+      <translation>ऑडियो त्रुटि: %1</translation>
     </message>
     <message>
       <source>Audio setup</source>
-      <translation type="unfinished" />
+      <translation>ऑडियो सेटअप</translation>
     </message>
     <message>
       <source>Audio setup could not finish</source>
-      <translation type="unfinished" />
+      <translation>ऑडियो सेटअप पूरा नहीं हो सका</translation>
     </message>
     <message>
       <source>Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.</source>
-      <translation type="unfinished" />
+      <translation>ऑडियो सेटअप विफल हुआ। यदि VB-CABLE अभी इंस्टॉल किया है, तो Windows पुनः प्रारंभ करके फिर कोशिश करें।</translation>
     </message>
     <message>
       <source>Audio setup is missing. Repair or reinstall SoundCurrent.</source>
-      <translation type="unfinished" />
+      <translation>ऑडियो सेटअप नहीं मिला। SoundCurrent की मरम्मत करें या दोबारा इंस्टॉल करें।</translation>
     </message>
     <message>
       <source>Audio setup is running. Processing is paused; the app remains open.</source>
-      <translation type="unfinished" />
+      <translation>ऑडियो सेटअप चल रहा है। प्रोसेसिंग रुकी हुई है; ऐप खुला रहता है।</translation>
     </message>
     <message>
       <source>Auto headroom %1 dB</source>
-      <translation type="unfinished" />
+      <translation>स्वचालित हेडरूम %1 dB</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
-      <translation type="unfinished" />
+      <translation>स्वचालित (SoundCurrent Microphone)</translation>
     </message>
     <message>
       <source>Automatic (follow connected devices)</source>
-      <translation type="unfinished" />
+      <translation>स्वचालित (कनेक्ट किए गए उपकरणों के अनुसार)</translation>
     </message>
     <message>
       <source>Automatic (follow connected microphones)</source>
-      <translation type="unfinished" />
+      <translation>स्वचालित (कनेक्ट किए गए माइक्रोफ़ोन के अनुसार)</translation>
     </message>
     <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>कनेक्ट किए गए माइक्रोफ़ोन की ध्वनि को अपने आप सुधारें; माइक्रोफ़ोन EQ को बायपास करने के लिए क्लिक करें</translation>
     </message>
     <message>
       <source>Balance</source>
       <extracomment>Left/right audio channel balance. Not bank balance or physical equilibrium.</extracomment>
-      <translation>संतुलन</translation>
+      <translation>बैलेंस</translation>
     </message>
     <message>
       <source>Balance position</source>
-      <translation type="unfinished" />
+      <translation>बैलेंस की स्थिति</translation>
     </message>
     <message>
       <source>Balanced</source>
-      <translation type="unfinished" />
+      <translation>संतुलित</translation>
     </message>
     <message>
       <source>Band %1 gain</source>
-      <translation type="unfinished" />
+      <translation>बैंड %1 गेन</translation>
     </message>
     <message>
       <source>Bands</source>
       <extracomment>Frequency bands in an audio equalizer. Not music groups, belts or radio stations.</extracomment>
-      <translation>फ़्रीक्वेंसी बैंड</translation>
+      <translation>बैंड</translation>
     </message>
     <message>
       <source>Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.</source>
-      <translation type="unfinished" />
+      <translation>स्लाइडर के पास की पट्टियाँ EQ के बाद के अनुमानित स्तर दिखाती हैं। लाल पीक टेक्स्ट संभावित क्लिपिंग की चेतावनी देता है।</translation>
     </message>
     <message>
       <source>Bass Boost</source>
-      <translation>बास बढ़ाएँ</translation>
+      <translation>बास बूस्ट</translation>
     </message>
     <message>
       <source>Bass Cut</source>
-      <translation type="unfinished" />
+      <translation>बास कट</translation>
     </message>
     <message>
       <source>Bass adds low-frequency weight; Clarity adds high-frequency detail; Ambience adds room reflections; Surround widens stereo; Dynamic Boost compresses and raises quieter material with a peak ceiling. Boosting can increase output level.</source>
-      <translation type="unfinished" />
+      <translation>बास निम्न आवृत्तियों में भराव जोड़ता है; स्पष्टता उच्च आवृत्तियों का बारीक विवरण बढ़ाती है; ऐम्बियंस कमरे के परावर्तन जोड़ता है; सराउंड स्टीरियो विस्तार बढ़ाता है। डायनैमिक बूस्ट पीक की सीमा तय करते हुए कंप्रेस करता है और धीमी ध्वनि को बढ़ाता है। बूस्ट करने से आउटपुट स्तर बढ़ सकता है।</translation>
     </message>
     <message>
       <source>Bass frequency</source>
-      <translation type="unfinished" />
+      <translation>बास आवृत्ति</translation>
     </message>
     <message>
       <source>Boxiness</source>
-      <translation type="unfinished" />
+      <translation>डिब्बेनुमा ध्वनि</translation>
     </message>
     <message>
       <source>Brand</source>
-      <translation type="unfinished" />
+      <translation>ब्रांड</translation>
     </message>
     <message>
       <source>Brand, family and model are required (maximum 120 characters each).</source>
-      <translation type="unfinished" />
+      <translation>ब्रांड, उत्पाद परिवार और मॉडल आवश्यक हैं (प्रत्येक में अधिकतम 120 अक्षर)।</translation>
     </message>
     <message>
       <source>Bright</source>
