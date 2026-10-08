@@ -2,6 +2,7 @@
 #include <QTextLayout>
 #include "localization.h"
 #include "audio_error_text.h"
+#include "accelerating_spinbox.h"
 #include <QDoubleSpinBox>
 #include <QDialogButtonBox>
 #include <QPushButton>
@@ -47,6 +48,27 @@ int main(int argc,char **argv){
   for(const auto &l:languages()) {
    QTranslator translator;require(translator.load(":/i18n/soundcurrent_"+l.tag+".qm"),"Embedded catalog failed to load");
    require(!translator.translate("SoundCurrent","Equalizer").isEmpty(),"Language catalog is empty");
+  }
+  for (const auto &region : {QStringLiteral("ar-EG"), QStringLiteral("he-IL"), QStringLiteral("fa-IR")}) {
+   const auto language=region.left(2);
+   QSettings().setValue("i18n/language",language);QSettings().setValue("i18n/formatLocale",region);
+   Runtime runtime;runtime.initialize();
+   require(runtime.loaded()==language,"Regional format changed selected RTL language");
+   const QLocale locale(region);require(QLocale().name()==locale.name(),"Regional number format not selected");
+   soundcurrent::AcceleratingDoubleSpinBox spin;spin.setLocale(locale);spin.setLayoutDirection(Qt::LeftToRight);
+   spin.setRange(-60,12);spin.setDecimals(1);spin.setSuffix(" dB");spin.setValue(1.5);
+   const auto input=locale.toString(-12.5,'f',1);
+   spin.findChild<QLineEdit *>()->setText(input+" dB");spin.interpretText();
+   require(spin.value()==-12.5,"RTL localized negative numeric input changed gain");
+   require(spin.text().contains(locale.toString(12.5,'f',1)),"Regional digits/decimal separator lost in displayed gain");
+   const auto saved=QJsonDocument(QJsonObject{{"gain",spin.value()},{"presetId","Flat"}}).toJson(QJsonDocument::Compact);
+   require(saved.contains("-12.5") && QJsonDocument::fromJson(saved).object().value("gain").toDouble()==-12.5,"Regional format changed JSON gain representation");
+   require(QJsonDocument::fromJson(saved).object().value("presetId").toString()=="Flat","Translated UI changed persisted preset ID");
+  }
+  {
+   QSettings().setValue("i18n/language","ar");QSettings().setValue("i18n/formatLocale","de-DE");
+   Runtime runtime;runtime.initialize();
+   require(runtime.loaded()=="ar" && QLocale().decimalPoint()==",","Interface language and regional number format were coupled");
   }
   QSettings().setValue("i18n/language","de");QSettings().setValue("i18n/formatLocale","de-DE");
   {
