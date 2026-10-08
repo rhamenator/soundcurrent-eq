@@ -1,24 +1,24 @@
 {
-  "stage": "Vietnamese fifth existing-catalog batch",
+  "stage": "Vietnamese sixth existing-catalog batch",
   "catalogs": [
     {
       "tag": "vi",
       "name": "Tiếng Việt",
-      "translated": 349,
+      "translated": 398,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "531a444b5e13eba67fb64ac703c85a46e99268ce13cfd88293eb3fac91e74381",
-      "qmSha256": "30775c81b78a8663def6adf477ca68b7b3abe2eeef1561c2320a19130bf27df8"
+      "tsSha256": "f9cca54a44ca45d4ec641f9877c646cbe663b790679fb9d7bf91950e253b8ec1",
+      "qmSha256": "0ae6bfb203138c459672cee29c8f4efda27c75bc40ad9661f04a530c00c47096"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "Embedded localization assertions, Vietnamese MainWindow offscreen smoke test and structural catalog checks",
-    "log": "/tmp/soundcurrent-eq-vi-fifth-tests.log"
+    "log": "/tmp/soundcurrent-eq-vi-sixth-tests.log"
   },
-  "review": "Contextual AI review of shared source entries 0–399: output/post gain, exclusive startup, measured response versus correction, sweep limits and neutral rendering counts. Hyperlink destinations, file patterns, placeholders and numerical limits preserved. Linguistic accuracy unverified.",
+  "review": "Contextual AI review of shared source entries 0–469, including save/reset actions, room measurement, microphone routing and distinct reverb/echo labels. Placeholders, file patterns and numerical limits preserved. Linguistic accuracy unverified.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
   "remaining": "Vietnamese incomplete. Three target catalogs still incomplete; omitted source messages reserved for second pass."
