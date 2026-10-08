@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>התקנת מנהל התקן שמע</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>הגדרת מנהל התקן השמע לא הושלמה: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>שגיאת שמע: %1</translation>
     </message>

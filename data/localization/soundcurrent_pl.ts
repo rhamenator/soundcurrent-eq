@@ -246,6 +246,10 @@ Zaimportować do biblioteki?</translation>
       <translation>Konfiguracja sterownika audio</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Konfiguracja sterownika audio nie została ukończona: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Błąd audio: %1</translation>
     </message>

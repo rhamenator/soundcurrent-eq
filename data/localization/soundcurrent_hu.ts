@@ -246,6 +246,10 @@ Importálja a könyvtárba?</translation>
       <translation>Hangillesztőprogram beállítása</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>A hangillesztőprogram beállítása nem fejeződött be: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Hanghiba: %1</translation>
     </message>

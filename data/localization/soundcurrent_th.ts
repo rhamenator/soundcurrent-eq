@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>ตั้งค่าไดรเวอร์เสียง</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>การตั้งค่าไดรเวอร์เสียงไม่เสร็จสมบูรณ์: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>ข้อผิดพลาดเกี่ยวกับเสียง: %1</translation>
     </message>

@@ -246,6 +246,10 @@ Importați în bibliotecă?</translation>
       <translation>Configurare driver audio</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Configurarea driverului audio nu s-a încheiat: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Eroare audio: %1</translation>
     </message>

@@ -246,6 +246,10 @@ Importeren in uw bibliotheek?</translation>
       <translation>Audiodriver instellen</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Het instellen van het audiostuurprogramma is niet voltooid: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Audiofout: %1</translation>
     </message>

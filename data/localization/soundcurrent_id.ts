@@ -246,6 +246,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Penyiapan driver audio</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Penyiapan driver audio tidak selesai: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Kesalahan audio: %1</translation>
     </message>

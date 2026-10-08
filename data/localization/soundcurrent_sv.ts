@@ -246,6 +246,10 @@ Importera till ditt bibliotek?</translation>
       <translation>Installation av ljuddrivrutin</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Ljuddrivrutinsinstallationen slutfördes inte: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Ljudfel: %1</translation>
     </message>

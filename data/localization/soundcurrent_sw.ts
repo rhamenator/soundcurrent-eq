@@ -246,6 +246,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Usanidi wa kiendeshi cha sauti</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Usanidi wa kiendeshi cha sauti haujakamilika: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Hitilafu ya sauti: %1</translation>
     </message>

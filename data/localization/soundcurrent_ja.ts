@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>オーディオドライバー設定</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>オーディオドライバーのセットアップが完了しませんでした：%1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>オーディオエラー: %1</translation>
     </message>

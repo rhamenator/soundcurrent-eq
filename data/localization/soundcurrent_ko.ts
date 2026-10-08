@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>오디오 드라이버 설정</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>오디오 드라이버 설정이 완료되지 않았습니다: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>오디오 오류: %1</translation>
     </message>

@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>Εγκατάσταση οδηγού ήχου</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Η ρύθμιση του προγράμματος οδήγησης ήχου δεν ολοκληρώθηκε: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Σφάλμα ήχου: %1</translation>
     </message>

@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>إعداد برنامج تشغيل الصوت</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>لم يكتمل إعداد برنامج تشغيل الصوت: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>خطأ صوتي: %1</translation>
     </message>

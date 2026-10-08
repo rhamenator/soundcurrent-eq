@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>Configuración del controlador de audio</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>La configuración del controlador de audio no finalizó: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Error de audio: %1</translation>
     </message>

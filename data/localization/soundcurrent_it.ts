@@ -246,6 +246,10 @@ Importare nella libreria?</translation>
       <translation>Configurazione driver audio</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>La configurazione del driver audio non è stata completata: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Errore audio: %1</translation>
     </message>

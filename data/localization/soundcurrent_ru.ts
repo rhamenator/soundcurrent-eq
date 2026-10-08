@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>Установка аудиодрайвера</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Настройка аудиодрайвера не завершена: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Ошибка аудио: %1</translation>
     </message>

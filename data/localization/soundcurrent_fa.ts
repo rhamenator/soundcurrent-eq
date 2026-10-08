@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>راه‌اندازی درایور صدا</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>راه‌اندازی درایور صدا به پایان نرسید: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>خطای صدا: %1</translation>
     </message>

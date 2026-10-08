@@ -246,6 +246,10 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Audiotreiber einrichten</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Die Audiotreibereinrichtung wurde nicht abgeschlossen: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Audiofehler: %1</translation>
     </message>

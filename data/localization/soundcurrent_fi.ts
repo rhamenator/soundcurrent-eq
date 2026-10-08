@@ -246,6 +246,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>Ääniajurin asennus</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Ääniohjaimen asennusta ei suoritettu loppuun: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Äänivirhe: %1</translation>
     </message>

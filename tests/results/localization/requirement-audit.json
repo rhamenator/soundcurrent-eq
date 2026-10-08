@@ -146,5 +146,9 @@
   "secondPassSetupCodeErrors": {
     "status": "two owned code-bearing setup errors translated; Windows failure paths and packages pending",
     "evidence": "tests/results/localization/second-pass-setup-code-errors.json"
+  },
+  "secondPassSetupFailureHeading": {
+    "status": "host native/cable no-action faults passed; Windows attempt prevented by existing disk copy lock",
+    "evidence": "tests/results/localization/second-pass-setup-failure-heading.json"
   }
 }

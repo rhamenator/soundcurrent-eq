@@ -246,6 +246,10 @@ Importovat do vaší knihovny?</translation>
       <translation>Instalace zvukového ovladače</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Nastavení zvukového ovladače nebylo dokončeno: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Chyba zvuku: %1</translation>
     </message>

@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>音频驱动安装</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>音频驱动程序设置未完成：%1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>音频错误：%1</translation>
     </message>

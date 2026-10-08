@@ -246,6 +246,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Thiết lập driver âm thanh</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Thiết lập trình điều khiển âm thanh chưa hoàn tất: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Lỗi âm thanh: %1</translation>
     </message>

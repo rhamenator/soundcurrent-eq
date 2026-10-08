@@ -24,7 +24,7 @@ function Notice([string]$Text) {
 }
 try {
     if (@($Check,$Install,$Remove).Where({$_}).Count -ne 1) {
-        throw 'Choose exactly one of -Check, -Install, or -Remove.'
+        throw (Get-SCSetupText 'Choose one audio setup action.' -Language $Language -Application ('soundcurrent-' + $App))
     }
     if ($Check) {
         # This can run from the installer's temporary directory before payload
@@ -76,6 +76,6 @@ try {
     exit $code
 } catch {
     if ($Check) { Write-Output $_.Exception.Message; exit 20 }
-    Notice ('Audio driver setup did not finish: ' + $_.Exception.Message)
+    Notice (Format-SCSetupText 'Audio driver setup did not finish: %1' -Values @($_.Exception.Message) -Language $Language -Application ('soundcurrent-' + $App))
     exit 30
 }

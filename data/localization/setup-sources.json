@@ -7,5 +7,6 @@
   "VB-CABLE package checksum mismatch. Repair the installation.",
   "Windows could not verify the VB-Audio executable signature.",
   "Driver setup failed (code %1). No Windows security settings were changed.",
-  "VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry."
+  "VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.",
+  "Audio driver setup did not finish: %1"
 ]

@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>ऑडियो ड्राइवर सेटअप</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>ऑडियो ड्राइवर सेटअप पूरा नहीं हुआ: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>ऑडियो त्रुटि: %1</translation>
     </message>

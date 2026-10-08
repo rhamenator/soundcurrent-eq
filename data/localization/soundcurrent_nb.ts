@@ -246,6 +246,10 @@ Importere til biblioteket ditt?</translation>
       <translation>Lyddriveroppsett</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Oppsettet av lyddriveren ble ikke fullført: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Lydfeil: %1</translation>
     </message>

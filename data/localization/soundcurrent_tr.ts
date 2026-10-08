@@ -246,6 +246,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Ses sürücüsü kurulumu</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Ses sürücüsü kurulumu tamamlanmadı: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Ses hatası: %1</translation>
     </message>

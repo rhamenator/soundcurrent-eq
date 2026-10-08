@@ -246,6 +246,10 @@ Importér til dit bibliotek?</translation>
       <translation>Installation af lyddriver</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Opsætningen af lyddriveren blev ikke fuldført: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Lydfejl: %1</translation>
     </message>

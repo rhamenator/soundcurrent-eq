@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-only
-"""Run data-only setup localization checks without loading a driver helper."""
+"""Run catalog checks and safe no-action helper faults without driver operations."""
 from pathlib import Path
 import subprocess
 import json
@@ -19,13 +19,16 @@ with tempfile.TemporaryDirectory(prefix='soundcurrent-setup-i18n-') as directory
     # No action switches: the real helper rejects before any driver/PnP check.
     # Quiet mode also avoids loading Windows Forms on this host.
     shutil.copyfile(root / 'packaging/windows/setup-localization.ps1', Path(directory) / 'setup-localization.ps1')
-    script = Path(directory) / 'cable-setup.ps1'
-    shutil.copyfile(root / 'packaging/windows/cable-setup.ps1', script)
     data = json.loads(catalog.read_text())
-    for language in ('fr','ar','nn'):
-        result = subprocess.run(['pwsh','-NoProfile','-NonInteractive','-ExecutionPolicy','RemoteSigned',
-                                 '-File',str(script),'-Quiet','-Language',language], capture_output=True)
-        expected = data['languages'][language]['Choose one audio setup action.']
-        if result.returncode != 30 or result.stdout.decode('utf-8').strip() != expected:
-            raise RuntimeError('Actual quiet helper validation failed: ' + language)
-    print('PASS: actual quiet action-validation errors in fr/ar/nn; no action switches or driver/endpoint checks')
+    for helper in ('cable-setup.ps1', 'native-audio-setup.ps1'):
+        script = Path(directory) / helper
+        shutil.copyfile(root / 'packaging/windows' / helper, script)
+        for language in ('fr','ar','nn'):
+            result = subprocess.run(['pwsh','-NoProfile','-NonInteractive','-ExecutionPolicy','RemoteSigned',
+                                     '-File',str(script),'-Quiet','-Language',language], capture_output=True)
+            expected = data['languages'][language]['Choose one audio setup action.']
+            if helper == 'native-audio-setup.ps1':
+                expected = data['languages'][language]['Audio driver setup did not finish: %1'].replace('%1', expected)
+            if result.returncode != 30 or result.stdout.decode('utf-8').strip() != expected:
+                raise RuntimeError('Actual quiet helper validation failed: ' + helper + ': ' + language)
+    print('PASS: actual cable/native quiet action-validation errors in fr/ar/nn; no action switches or driver/endpoint checks')

@@ -246,6 +246,10 @@ Import into your library?</translation>
       <translation>Audio driver setup</translation>
     </message>
     <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Audio driver setup did not finish: %1</translation>
+    </message>
+    <message>
       <source>Audio error: %1</source>
       <translation>Audio error: %1</translation>
     </message>
