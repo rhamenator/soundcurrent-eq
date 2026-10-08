@@ -322,87 +322,87 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bright</source>
-      <translation type="unfinished" />
+      <translation>בהיר</translation>
     </message>
     <message>
       <source>Browse all equipment profiles / editor</source>
-      <translation type="unfinished" />
+      <translation>עיון בכל פרופילי הציוד / עורך</translation>
     </message>
     <message>
       <source>Calibration test signal</source>
-      <translation type="unfinished" />
+      <translation>אות בדיקת כיול</translation>
     </message>
     <message>
       <source>Calibration tone level</source>
-      <translation type="unfinished" />
+      <translation>עוצמת צליל הכיול</translation>
     </message>
     <message>
       <source>Cancel</source>
-      <translation type="unfinished" />
+      <translation>ביטול</translation>
     </message>
     <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להשיג את הגנת ההפעלה המשותפת של SoundCurrent.</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן ליצור תיקיית פרופילי מגברים.</translation>
     </message>
     <message>
       <source>Cannot create profile folder.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן ליצור תיקיית פרופילים.</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן ליצור את הגנת ההפעלה המשותפת של SoundCurrent.</translation>
     </message>
     <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להשלים את בדיקת האקולייזרים הפועלים; SoundCurrent לא יפעיל עיבוד.</translation>
     </message>
     <message>
       <source>Cannot finish saving amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להשלים את שמירת פרופיל המגבר.</translation>
     </message>
     <message>
       <source>Cannot finish saving profile library.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להשלים את שמירת ספריית הפרופילים.</translation>
     </message>
     <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לבדוק אקולייזרים פועלים; SoundCurrent לא יפעיל עיבוד.</translation>
     </message>
     <message>
       <source>Cannot read profile library.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לקרוא את ספריית הפרופילים.</translation>
     </message>
     <message>
       <source>Cannot read profile or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לקרוא את הפרופיל, או שהקובץ גדול מ־1 MiB.</translation>
     </message>
     <message>
       <source>Cannot read response or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לקרוא את התגובה, או שהקובץ גדול מ־1 MiB.</translation>
     </message>
     <message>
       <source>Cannot save amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לשמור את פרופיל המגבר.</translation>
     </message>
     <message>
       <source>Cannot save profile library.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לשמור את ספריית הפרופילים.</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לשמור את הפרופיל.</translation>
     </message>
     <message>
       <source>Cannot start measurement: %1</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להתחיל מדידה: %1</translation>
     </message>
     <message>
       <source>Center</source>
-      <translation type="unfinished" />
+      <translation>מרכז</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -410,167 +410,167 @@ Import into your library?</source>
     </message>
     <message>
       <source>Checking for published updates…</source>
-      <translation type="unfinished" />
+      <translation>מתבצעת בדיקת עדכונים שפורסמו…</translation>
     </message>
     <message>
       <source>Checks published releases and downloaded installers. No update is installed automatically.</source>
-      <translation type="unfinished" />
+      <translation>בדיקת גרסאות שפורסמו ותוכנות התקנה שהורדו. אף עדכון אינו מותקן אוטומטית.</translation>
     </message>
     <message>
       <source>Choose a name that is not a built-in preset.</source>
-      <translation type="unfinished" />
+      <translation>יש לבחור שם שאינו שם של קביעה מוגדרת מראש מובנית.</translation>
     </message>
     <message>
       <source>Choose update folder…</source>
-      <translation type="unfinished" />
+      <translation>בחירת תיקיית עדכונים…</translation>
     </message>
     <message>
       <source>Clarity</source>
-      <translation type="unfinished" />
+      <translation>בהירות</translation>
     </message>
     <message>
       <source>Clarity frequency</source>
-      <translation type="unfinished" />
+      <translation>תדר הבהירות</translation>
     </message>
     <message>
       <source>Classical</source>
-      <translation type="unfinished" />
+      <translation>מוזיקה קלאסית</translation>
     </message>
     <message>
       <source>Clear Voice</source>
-      <translation type="unfinished" />
+      <translation>קול ברור</translation>
     </message>
     <message>
       <source>Clear imported equipment corrections</source>
-      <translation type="unfinished" />
+      <translation>ניקוי תיקוני הציוד שיובאו</translation>
     </message>
     <message>
       <source>Click to turn the equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>לחיצה להפעלה או לכיבוי של האקולייזר</translation>
     </message>
     <message>
       <source>Clipping risk · estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>סיכון לקיטום · שיא משוער %1 dBFS</translation>
     </message>
     <message>
       <source>Close</source>
-      <translation type="unfinished" />
+      <translation>סגירה</translation>
     </message>
     <message>
       <source>Conditions</source>
-      <translation type="unfinished" />
+      <translation>תנאים</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
-      <translation type="unfinished" />
+      <translation>יש לחבר יציאה ומיקרופון לפני המדידה.</translation>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>פרופיל תיקון (*.json)</translation>
     </message>
     <message>
       <source>Could not create a private test folder</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן ליצור תיקיית בדיקה פרטית</translation>
     </message>
     <message>
       <source>Could not create microphone configuration folder</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן ליצור תיקיית הגדרות מיקרופון</translation>
     </message>
     <message>
       <source>Could not create preset folder.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן ליצור תיקיית קביעות מוגדרות מראש.</translation>
     </message>
     <message>
       <source>Could not create quiet frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן ליצור סריקת תדרים שקטה</translation>
     </message>
     <message>
       <source>Could not create temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן ליצור תצורת שמע זמנית</translation>
     </message>
     <message>
       <source>Could not create test tone</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן ליצור צליל בדיקה</translation>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להשלים את שמירת הקביעה המוגדרת מראש.</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לפתוח את צורת הגל לבדיקה</translation>
     </message>
     <message>
       <source>Could not play quiet test audio</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להשמיע שמע בדיקה שקט</translation>
     </message>
     <message>
       <source>Could not play test audio through the selected output</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להשמיע את שמע הבדיקה דרך היציאה שנבחרה</translation>
     </message>
     <message>
       <source>Could not read output volume</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לקרוא את עוצמת היציאה</translation>
     </message>
     <message>
       <source>Could not run %1</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להפעיל את %1</translation>
     </message>
     <message>
       <source>Could not save preset.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לשמור את הקביעה המוגדרת מראש.</translation>
     </message>
     <message>
       <source>Could not start PipeWire filter</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להפעיל מסנן PipeWire</translation>
     </message>
     <message>
       <source>Could not start audio setup: %1. The app remains open.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להתחיל את הגדרת השמע: %1. האפליקציה נשארת פתוחה.</translation>
     </message>
     <message>
       <source>Could not start microphone capture</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להתחיל לכידת שמע מהמיקרופון</translation>
     </message>
     <message>
       <source>Could not start microphone filter</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להפעיל מסנן מיקרופון</translation>
     </message>
     <message>
       <source>Could not start output volume safety guard</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להפעיל את הגנת הבטיחות לעוצמת היציאה</translation>
     </message>
     <message>
       <source>Could not start the measurement.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן להתחיל את המדידה.</translation>
     </message>
     <message>
       <source>Could not update startup settings.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לעדכן את הגדרות ההפעלה האוטומטית.</translation>
     </message>
     <message>
       <source>Could not write frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לכתוב סריקת תדרים</translation>
     </message>
     <message>
       <source>Could not write microphone configuration</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לכתוב תצורת מיקרופון</translation>
     </message>
     <message>
       <source>Could not write temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לכתוב תצורת שמע זמנית</translation>
     </message>
     <message>
       <source>Could not write test tone</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן לכתוב צליל בדיקה</translation>
     </message>
     <message>
       <source>Create profile</source>
-      <translation type="unfinished" />
+      <translation>יצירת פרופיל</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
-      <translation type="unfinished" />
+      <translation>הגדרות האקולייזר הנוכחיות נשמרו.</translation>
     </message>
     <message>
       <source>Custom</source>
@@ -578,11 +578,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Dance</source>
-      <translation type="unfinished" />
+      <translation>דאנס</translation>
     </message>
     <message>
       <source>Deep Bass</source>
-      <translation type="unfinished" />
+      <translation>בס עמוק</translation>
     </message>
     <message>
       <source>Discard</source>
