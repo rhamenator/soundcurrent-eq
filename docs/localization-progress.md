@@ -255,3 +255,7 @@ Korean now has 291/441 populated current catalog entries. Added import/export gu
 ### Korean: fifth existing-catalog batch
 
 Korean now has 349/441 populated current catalog entries. Added output controls, source links, startup and rendering guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Korean: sixth existing-catalog batch
+
+Korean now has 398/441 populated current catalog entries. Added save/reset actions, room measurement and microphone-routing guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
