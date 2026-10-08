@@ -2022,6 +2022,10 @@ Import into your library?</source>
       <translation>출력 음소거 상태 설정</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>%2용 %1을 설정합니다.</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>설정 &amp;&amp; 캘리브레이션</translation>
     </message>

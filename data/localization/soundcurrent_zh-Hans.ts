@@ -2022,6 +2022,10 @@ Import into your library?</source>
       <translation>设置输出静音状态</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>为 %2 设置 %1。</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>设置 &amp;&amp; 校准</translation>
     </message>

@@ -2022,6 +2022,10 @@ Importálja a könyvtárba?</translation>
       <translation>A kimenet némítási állapotának beállítása</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>%1 beállítása a(z) %2 alkalmazáshoz.</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Beállítások &amp;&amp; kalibráció</translation>
     </message>

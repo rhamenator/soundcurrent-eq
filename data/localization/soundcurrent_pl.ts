@@ -2022,6 +2022,10 @@ Zaimportować do biblioteki?</translation>
       <translation>Ustawić stan wyciszenia wyjścia</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>Skonfiguruj %1 dla %2.</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Ustawienia &amp;&amp; kalibracja</translation>
     </message>

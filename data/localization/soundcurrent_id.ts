@@ -2022,6 +2022,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Mengatur status pembisuan keluaran</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>Siapkan %1 untuk %2.</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Pengaturan &amp;&amp; kalibrasi</translation>
     </message>

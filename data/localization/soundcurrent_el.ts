@@ -2022,6 +2022,10 @@ Import into your library?</source>
       <translation>Ρύθμιση κατάστασης σίγασης εξόδου</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>Ρυθμίστε το %1 για το %2.</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Ρυθμίσεις &amp;&amp; βαθμονόμηση</translation>
     </message>

@@ -2022,6 +2022,10 @@ Import into your library?</source>
       <translation>הגדרת מצב השתקת הפלט</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>הגדרת %1 עבור %2.</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>הגדרות &amp;&amp; כיול</translation>
     </message>

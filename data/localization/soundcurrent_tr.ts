@@ -2022,6 +2022,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Çıkışın sessize alınma durumunu ayarlama</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>%2 için %1 kurulumu.</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Ayarlar &amp;&amp; kalibrasyon</translation>
     </message>

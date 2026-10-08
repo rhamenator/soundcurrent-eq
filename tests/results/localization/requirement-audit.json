@@ -210,5 +210,9 @@
   "secondPassInstallerAudioHeading": {
     "report": "tests/results/localization/second-pass-installer-audio-heading.json",
     "status": "heading translated in shared catalogs; English reference wired; other installer languages pending activation"
+  },
+  "secondPassInstallerSetupSubtitle": {
+    "report": "tests/results/localization/second-pass-installer-setup-subtitle.json",
+    "status": "all locale templates translated; English installer references wired; locale activation remains pending"
   }
 }

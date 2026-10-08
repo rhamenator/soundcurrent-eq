@@ -2022,6 +2022,10 @@ Importați în bibliotecă?</translation>
       <translation>Setarea stării de dezactivare a sunetului la ieșire</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>Configurați %1 pentru %2.</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Setări &amp;&amp; calibrare</translation>
     </message>

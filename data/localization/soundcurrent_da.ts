@@ -2022,6 +2022,10 @@ Importér til dit bibliotek?</translation>
       <translation>Indstilling af udgangens lydløse status</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>Konfigurer %1 til %2.</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Indstillinger &amp;&amp; kalibrering</translation>
     </message>

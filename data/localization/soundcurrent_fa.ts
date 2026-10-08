@@ -2022,6 +2022,10 @@ Import into your library?</source>
       <translation>تنظیم وضعیت بی‌صدایی خروجی</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>راه‌اندازی %1 برای %2.</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>تنظیمات &amp;&amp; کالیبراسیون</translation>
     </message>

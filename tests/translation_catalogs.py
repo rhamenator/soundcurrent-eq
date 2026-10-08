@@ -15,6 +15,25 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_installer_setup_subtitle_preserves_product_names(self):
+        root = Path(__file__).resolve().parents[1]
+        template = 'Set up %1 for %2.'
+        product = 'SoundCurrent Studio' if (root / 'src/studio_model.cpp').exists() else 'SoundCurrent EQ'
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            driver = 'SoundCurrent Audio' if 'native' in installer.stem else 'VB-CABLE'
+            code = installer.read_text(encoding='utf-8')
+            self.assertIn('MUI_HEADER_TEXT "$(SCConnectAudio)" "$(SCSetupAudio)"', code)
+            values = re.findall(r'^LangString SCSetupAudio \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M)
+            self.assertEqual(values, [template.replace('%1', driver).replace('%2', product)])
+            for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+                message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[template]
+                self.assertTrue(catalog.finished(message), row['tag'])
+                translated = message.findtext('translation')
+                catalog.validate_text(template, translated)
+                rendered = translated.replace('%1', driver).replace('%2', product)
+                self.assertEqual(rendered.count(driver), 1)
+                self.assertEqual(rendered.count(product), 1)
+
     def test_installer_audio_heading_matches_catalog_source(self):
         root = Path(__file__).resolve().parents[1]
         for installer in sorted((root / 'packaging/windows').glob('*.nsi')):

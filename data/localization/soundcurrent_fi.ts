@@ -2022,6 +2022,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>Ulostulon mykistystilan asettaminen</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>Määritä %1 sovellukselle %2.</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Asetukset &amp;&amp; kalibrointi</translation>
     </message>

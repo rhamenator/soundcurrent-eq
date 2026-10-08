@@ -55,6 +55,7 @@ Page custom AudioPage AudioPageLeave
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_LANGUAGE "English"
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
+LangString SCSetupAudio ${LANG_ENGLISH} "Set up VB-CABLE for SoundCurrent EQ."
 
 Function .onInit
   ; Migrate the old install location, including custom folders.
@@ -85,7 +86,7 @@ Function .onInit
 FunctionEnd
 
 Function AudioPage
-  !insertmacro MUI_HEADER_TEXT "$(SCConnectAudio)" "Set up VB-CABLE for SoundCurrent EQ."
+  !insertmacro MUI_HEADER_TEXT "$(SCConnectAudio)" "$(SCSetupAudio)"
   nsDialogs::Create 1018
   Pop $0
   ${If} $0 == error

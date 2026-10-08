@@ -2022,6 +2022,10 @@ Importeren in uw bibliotheek?</translation>
       <translation>Dempingsstatus van uitgang instellen</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>%1 instellen voor %2.</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Instellingen &amp;&amp; kalibratie</translation>
     </message>

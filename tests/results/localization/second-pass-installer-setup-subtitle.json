@@ -1,0 +1,45 @@
+{
+  "scope": "Audio setup page subtitle in cable and native installer variants",
+  "sourceTemplate": "Set up %1 for %2.",
+  "sourceMessagesPerLocale": 603,
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "meaning": "Set up the named audio driver for the named app; product names remain invariant",
+    "placeholderReordering": "supported, e.g. Turkish, Chinese, Japanese and Hindi"
+  },
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "unitTestsPassed": 26,
+    "unitTestsSkipped": 1,
+    "allCatalogRendering": "one exact driver name and one exact application name in each rendered subtitle",
+    "compiledQtCatalogs": "regenerated; hashes checked",
+    "nsisMinimalHeadingFixtures": "both variants compiled with actual header/definition lines",
+    "fullInstallersCompiled": false,
+    "currentInstalledUiQualified": false
+  },
+  "installerLanguagesEnabled": [
+    "English"
+  ],
+  "remainingScope": [
+    "Installer language selection and translation activation",
+    "Remaining installer/uninstaller text",
+    "One untranslated PowerShell repair notice",
+    "Current package UI and lifecycle qualification"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "newPackagesQualified": false,
+  "invariants": [
+    "Driver actions unchanged",
+    "Product names retained",
+    "Saved state and numerical processing unchanged"
+  ],
+  "evidenceSha256": {
+    "data/localization/catalogs.json": "7eb0325ec18f94d5813c3392732d739cb901b3840e10c205a644f85894cdcc2b",
+    "tests/translation_catalogs.py": "ebf96afec8caf8a2fbc4658e8b5efdb911c64bafdb08ded9b3fd57ef4976fbc5",
+    "tests/results/localization/installer-setup-subtitle-tests.log": "4831e61804cd305c36c4ab848ea2c11782eb71ac7406101777321279f961236a",
+    "tests/results/localization/installer-setup-subtitle-compiler.log": "7511a2339df94858ff26fb4752a1a2db6252bfe0d8d7dcf2b31208a60033db09"
+  }
+}

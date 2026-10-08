@@ -2022,6 +2022,10 @@ Import into your library?</source>
       <translation>Установка состояния отключения звука на выходе</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>Настройте %1 для %2.</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Настройки &amp;&amp; калибровка</translation>
     </message>

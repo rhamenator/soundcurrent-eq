@@ -2022,6 +2022,10 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Régler l’état muet de la sortie</translation>
     </message>
     <message>
+      <source>Set up %1 for %2.</source>
+      <translation>Configurer %1 pour %2.</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Réglages &amp;&amp; étalonnage</translation>
     </message>
