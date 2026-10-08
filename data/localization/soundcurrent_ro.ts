@@ -2198,9 +2198,21 @@ Importați în bibliotecă?</translation>
       <translation>Biblioteca personalizată poate conține până la 256 de profiluri.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>Managerul de drivere nu este semnat. Instalați o versiune semnată de SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Pachetul driverului este incomplet sau Windows nu îi poate verifica semnătura.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Lipsește asistentul de configurare care păstrează rutarea audio.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>Lipsește managerul de drivere partajat. Reparați instalarea aplicației.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

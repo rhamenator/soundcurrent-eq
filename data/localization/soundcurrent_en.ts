@@ -2198,9 +2198,21 @@ Import into your library?</translation>
       <translation>The custom library holds up to 256 profiles.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>The driver manager is not signed. Install a signed SoundCurrent release.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>The driver package is incomplete or Windows cannot verify its signature.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>The route-preserving setup helper is missing.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>The shared driver manager is missing. Repair the app installation.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

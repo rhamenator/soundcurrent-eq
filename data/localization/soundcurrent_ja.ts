@@ -2198,9 +2198,21 @@ Import into your library?</source>
       <translation>カスタムライブラリには最大 256 個のプロファイルを保存できます。</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>ドライバーマネージャーが署名されていません。署名済みの SoundCurrent リリースをインストールしてください。</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>ドライバーパッケージが不完全か、Windows がその署名を検証できません。</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>音声ルーティングを保持するセットアップ補助プログラムが見つかりません。</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>共有のドライバーマネージャーが見つかりません。アプリのインストールを修復してください。</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

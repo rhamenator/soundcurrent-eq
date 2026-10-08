@@ -2198,9 +2198,21 @@ Importeren in uw bibliotheek?</translation>
       <translation>De aangepaste bibliotheek bevat maximaal 256 profielen.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>De stuurprogrammabeheerder is niet ondertekend. Installeer een ondertekende versie van SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Het stuurprogrammapakket is onvolledig of Windows kan de handtekening niet verifiëren.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>De installatiehulp die audioroutes behoudt ontbreekt.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>De gedeelde stuurprogrammabeheerder ontbreekt. Herstel de installatie van de app.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

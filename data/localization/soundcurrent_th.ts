@@ -2198,9 +2198,21 @@ Import into your library?</source>
       <translation>คลังกำหนดเองรองรับสูงสุด 256 โปรไฟล์</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>ตัวจัดการไดรเวอร์ไม่ได้ลงลายเซ็น โปรดติดตั้ง SoundCurrent รุ่นที่ลงลายเซ็นแล้ว</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>แพ็กเกจไดรเวอร์ไม่สมบูรณ์ หรือ Windows ไม่สามารถตรวจสอบลายเซ็นของแพ็กเกจได้</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>ไม่พบโปรแกรมช่วยตั้งค่าที่คงการกำหนดเส้นทางเสียงไว้</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>ไม่พบตัวจัดการไดรเวอร์ที่ใช้ร่วมกัน โปรดซ่อมแซมการติดตั้งแอป</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

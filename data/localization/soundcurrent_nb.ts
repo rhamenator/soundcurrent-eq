@@ -2198,9 +2198,21 @@ Importere til biblioteket ditt?</translation>
       <translation>Det egendefinerte biblioteket rommer opptil 256 profiler.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>Driverbehandleren er ikke signert. Installer en signert versjon av SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Driverpakken er ufullstendig, eller Windows kan ikke bekrefte signaturen.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Oppsettshjelperen som bevarer lydrutingen, mangler.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>Den delte driverbehandleren mangler. Reparer appinstallasjonen.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

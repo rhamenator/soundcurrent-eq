@@ -158,30 +158,9 @@
     },
     {
       "file": "native-audio-setup.ps1",
-      "line": 38,
-      "kind": "StringConstantExpressionAst",
-      "literal": "The shared driver manager is missing. Repair the app installation.",
-      "reviewStatus": "untranslated; pending contextual translation"
-    },
-    {
-      "file": "native-audio-setup.ps1",
       "line": 56,
       "kind": "StringConstantExpressionAst",
       "literal": "Quit EQ and Studio before changing the shared audio driver.",
-      "reviewStatus": "untranslated; pending contextual translation"
-    },
-    {
-      "file": "native-audio-setup.ps1",
-      "line": 62,
-      "kind": "StringConstantExpressionAst",
-      "literal": "The driver package is incomplete or Windows cannot verify its signature.",
-      "reviewStatus": "untranslated; pending contextual translation"
-    },
-    {
-      "file": "native-audio-setup.ps1",
-      "line": 67,
-      "kind": "StringConstantExpressionAst",
-      "literal": "The driver manager is not signed. Install a signed SoundCurrent release.",
       "reviewStatus": "untranslated; pending contextual translation"
     },
     {

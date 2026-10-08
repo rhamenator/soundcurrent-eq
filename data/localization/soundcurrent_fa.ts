@@ -2198,9 +2198,21 @@ Import into your library?</source>
       <translation>کتابخانه سفارشی تا 256 پروفایل نگه می‌دارد.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>مدیر درایورها امضا نشده است. یک نسخهٔ امضاشدهٔ SoundCurrent نصب کنید.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>بستهٔ درایور ناقص است یا Windows نمی‌تواند امضای آن را تأیید کند.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>ابزار کمکی راه‌اندازی که مسیریابی صدا را حفظ می‌کند موجود نیست.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>مدیر مشترک درایورها موجود نیست. نصب برنامه را تعمیر کنید.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

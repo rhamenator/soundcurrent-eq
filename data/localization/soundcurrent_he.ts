@@ -2198,9 +2198,21 @@ Import into your library?</source>
       <translation>הספרייה המותאמת אישית מכילה עד 256 פרופילים.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>כלי ניהול מנהלי ההתקנים אינו חתום. התקינו גרסה חתומה של SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>חבילת מנהל ההתקן אינה שלמה או ש-Windows אינו יכול לאמת את חתימתה.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>תוכנית העזר להגדרה ששומרת על ניתוב השמע חסרה.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>כלי ניהול מנהלי ההתקנים המשותף חסר. תקנו את התקנת האפליקציה.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

@@ -2198,9 +2198,21 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Thư viện tùy chỉnh chứa tối đa 256 cấu hình.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>Trình quản lý trình điều khiển chưa được ký. Hãy cài đặt bản phát hành SoundCurrent đã được ký.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Gói trình điều khiển không đầy đủ hoặc Windows không thể xác minh chữ ký của gói.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Thiếu chương trình hỗ trợ thiết lập giữ nguyên định tuyến âm thanh.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>Thiếu trình quản lý trình điều khiển dùng chung. Hãy sửa chữa bản cài đặt ứng dụng.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

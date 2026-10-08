@@ -2198,9 +2198,21 @@ Import into your library?</source>
       <translation>कस्टम लाइब्रेरी में अधिकतम 256 प्रोफ़ाइल रखी जा सकती हैं।</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>ड्राइवर प्रबंधक पर हस्ताक्षर नहीं हैं। SoundCurrent का हस्ताक्षरित संस्करण स्थापित करें।</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>ड्राइवर पैकेज अधूरा है या Windows उसके हस्ताक्षर की पुष्टि नहीं कर सकता।</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>ऑडियो रूटिंग सुरक्षित रखने वाला सेटअप सहायक उपलब्ध नहीं है।</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>साझा ड्राइवर प्रबंधक मौजूद नहीं है। ऐप की स्थापना की मरम्मत करें।</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

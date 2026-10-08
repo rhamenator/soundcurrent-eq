@@ -2198,9 +2198,21 @@ Importar para a sua biblioteca?</translation>
       <translation>A biblioteca personalizada contém até 256 perfis.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>O gestor de controladores não está assinado. Instale uma versão assinada do SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>O pacote do controlador está incompleto ou o Windows não consegue verificar a sua assinatura.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Falta o assistente de configuração que preserva o encaminhamento de áudio.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>O gestor de controladores partilhado está em falta. Repare a instalação da aplicação.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

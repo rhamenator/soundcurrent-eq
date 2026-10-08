@@ -2198,9 +2198,21 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Özel kitaplık en fazla 256 profil tutar.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>Sürücü yöneticisi imzalı değil. İmzalı bir SoundCurrent sürümü yükleyin.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Sürücü paketi eksik veya Windows imzasını doğrulayamıyor.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Ses yönlendirmesini koruyan kurulum yardımcısı eksik.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>Paylaşılan sürücü yöneticisi eksik. Uygulama kurulumunu onarın.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

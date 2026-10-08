@@ -2198,9 +2198,21 @@ Import into your library?</source>
       <translation>사용자 지정 라이브러리에는 최대 256개 프로파일을 저장할 수 있습니다.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>드라이버 관리자가 서명되지 않았습니다. 서명된 SoundCurrent 릴리스를 설치하세요.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>드라이버 패키지가 불완전하거나 Windows에서 서명을 확인할 수 없습니다.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>오디오 라우팅을 유지하는 설정 도우미가 없습니다.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>공유 드라이버 관리자가 없습니다. 앱 설치를 복구하세요.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

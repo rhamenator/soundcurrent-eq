@@ -2198,9 +2198,21 @@ Import into your library?</source>
       <translation>Власна бібліотека вміщує до 256 профілів.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>Диспетчер драйверів не підписаний. Установіть підписаний випуск SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Пакет драйвера неповний або Windows не може перевірити його підпис.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Відсутній допоміжний засіб налаштування, що зберігає маршрути аудіо.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>Спільний диспетчер драйверів відсутній. Відновіть інсталяцію застосунку.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

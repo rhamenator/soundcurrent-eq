@@ -154,5 +154,9 @@
   "secondPassSetupProseGuard": {
     "status": "host regression gate passed; 26 untranslated helper candidates explicitly remain",
     "evidence": "tests/results/localization/second-pass-setup-prose-guard.json"
+  },
+  "secondPassNativePackageErrors": {
+    "status": "three owned errors translated; host missing-manager fault qualified; Windows package/signature paths pending",
+    "evidence": "tests/results/localization/second-pass-native-package-errors.json"
   }
 }

@@ -35,7 +35,7 @@ try {
         exit 10
     }
     $helper = Join-Path $PSScriptRoot 'soundcurrent-driver-manager.exe'
-    if (!(Test-Path -LiteralPath $helper)) { throw 'The shared driver manager is missing. Repair the app installation.' }
+    if (!(Test-Path -LiteralPath $helper)) { throw (Get-SCSetupText 'The shared driver manager is missing. Repair the app installation.' -Language $Language -Application ('soundcurrent-' + $App)) }
     # Resolve before UAC: a different administrator can approve setup without
     # becoming the registered owner of the requesting user's app installation.
     $sid = [Security.Principal.WindowsIdentity]::GetCurrent().User.Value
@@ -59,12 +59,12 @@ try {
     $package = Join-Path $PSScriptRoot 'audio-driver'
     if ($Install) {
         & $helper --verify $package
-        if ($LASTEXITCODE -ne 0) { throw 'The driver package is incomplete or Windows cannot verify its signature.' }
+        if ($LASTEXITCODE -ne 0) { throw (Get-SCSetupText 'The driver package is incomplete or Windows cannot verify its signature.' -Language $Language -Application ('soundcurrent-' + $App)) }
     }
     # Production setup elevates only the signed manager. Unsigned local builds
     # can check status/package rejection, but cannot request privileged setup.
     if ((Get-AuthenticodeSignature -LiteralPath $helper).Status -ne 'Valid') {
-        throw 'The driver manager is not signed. Install a signed SoundCurrent release.'
+        throw (Get-SCSetupText 'The driver manager is not signed. Install a signed SoundCurrent release.' -Language $Language -Application ('soundcurrent-' + $App))
     }
     if ($Install) { $arguments = @('--install',$App,('"{0}"' -f $package),$sid) }
     else { $arguments = @('--remove',$App,$sid) }

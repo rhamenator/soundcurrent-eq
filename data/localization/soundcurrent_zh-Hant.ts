@@ -2198,9 +2198,21 @@ Import into your library?</source>
       <translation>自訂資料庫最多可儲存 256 個設定檔。</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>驅動程式管理器未簽章。請安裝已簽章的 SoundCurrent 版本。</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>驅動程式套件不完整，或 Windows 無法驗證其簽章。</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>缺少用於保留音訊路由的設定輔助程式。</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>共用驅動程式管理器缺失。請修復應用程式安裝。</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

@@ -2198,9 +2198,21 @@ Impor ke pustaka Anda?</translation>
       <translation>Pustaka kustom menampung hingga 256 profil.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>Pengelola driver tidak ditandatangani. Pasang rilis SoundCurrent yang ditandatangani.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Paket driver tidak lengkap atau Windows tidak dapat memverifikasi tanda tangannya.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Program bantu pengaturan yang mempertahankan rute audio tidak ditemukan.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>Pengelola driver bersama tidak ditemukan. Perbaiki instalasi aplikasi.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

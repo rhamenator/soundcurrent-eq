@@ -2198,9 +2198,21 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Maktaba maalumu huhifadhi hadi wasifu 256.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>Kidhibiti cha viendeshi hakijatiwa sahihi. Sakinisha toleo la SoundCurrent lililotiwa sahihi.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Kifurushi cha kiendeshi hakijakamilika au Windows haiwezi kuthibitisha sahihi yake.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Programu saidizi ya usanidi inayohifadhi njia za sauti haipo.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>Kidhibiti cha viendeshi kinachotumiwa kwa pamoja hakipo. Rekebisha usakinishaji wa programu.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

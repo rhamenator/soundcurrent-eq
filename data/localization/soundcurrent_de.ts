@@ -2198,9 +2198,21 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Die benutzerdefinierte Bibliothek fasst bis zu 256 Profile.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>Der Treibermanager ist nicht signiert. Installieren Sie eine signierte SoundCurrent-Version.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Das Treiberpaket ist unvollständig oder Windows kann seine Signatur nicht überprüfen.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Die Einrichtungshilfe zum Erhalten der Audiowege fehlt.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>Der gemeinsame Treibermanager fehlt. Reparieren Sie die App-Installation.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

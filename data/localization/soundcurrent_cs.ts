@@ -2198,9 +2198,21 @@ Importovat do vaší knihovny?</translation>
       <translation>Vlastní knihovna pojme nejvýše 256 profilů.</translation>
     </message>
     <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>Správce ovladačů není podepsán. Nainstalujte podepsané vydání SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Balíček ovladače je neúplný nebo systém Windows nemůže ověřit jeho podpis.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Chybí pomocný program nastavení zachovávající směrování zvuku.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>Sdílený správce ovladačů chybí. Opravte instalaci aplikace.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
