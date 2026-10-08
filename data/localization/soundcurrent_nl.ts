@@ -678,6 +678,11 @@ Importeren in uw bibliotheek?</translation>
       <translation>Buffer voor testweergave leegspelen</translation>
     </message>
     <message>
+      <source>Duplicate Studio route</source>
+      <translation>Dubbele Studio-audioverbinding</translation>
+      <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
+    </message>
+    <message>
       <source>Dynamic Boost</source>
       <translation>Dynamische versterking</translation>
     </message>
@@ -716,6 +721,11 @@ Importeren in uw bibliotheek?</translation>
     <message>
       <source>Electronic</source>
       <translation>Elektronisch</translation>
+    </message>
+    <message>
+      <source>Enhancements outside supported ranges</source>
+      <translation>Geluidsverbeteringen buiten de ondersteunde bereiken</translation>
+      <extracomment>Enhancement values fail the supported range validation; not frequency coverage or wireless range.</extracomment>
     </message>
     <message>
       <source>Enumerate audio devices</source>
@@ -1046,8 +1056,38 @@ Importeren in uw bibliotheek?</translation>
       <translation>Interfacetaal</translation>
     </message>
     <message>
+      <source>Invalid Studio channel count</source>
+      <translation>Ongeldig aantal Studio-kanalen</translation>
+      <extracomment>Session channel count must be 1..256; audio channels, not stations.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio channel name or filters</source>
+      <translation>Ongeldige Studio-kanaalnaam of filterlijst</translation>
+      <extracomment>Saved channel name must be a nonempty string up to 80 characters, and bands must be an array; filter list, not filter-value validation.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio profile channel count</source>
+      <translation>Ongeldig aantal kanalen in het Studio-profiel</translation>
+      <extracomment>Saved profile channels array must be nonempty and contain at most 256 channels.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio route</source>
+      <translation>Ongeldige Studio-audioverbinding</translation>
+      <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
       <source>Invalid calibration audio</source>
       <translation>Ongeldige kalibratieaudio</translation>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter count</source>
+      <translation>Ongeldig aantal parameters voor geluidsverbetering</translation>
+      <extracomment>Enhancement array must contain the required number of parameters.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter type</source>
+      <translation>Ongeldig gegevenstype van een parameter voor geluidsverbetering</translation>
+      <extracomment>Enhancement parameter must be a JSON number; do not reinterpret strings or Boolean values.</extracomment>
     </message>
     <message>
       <source>Invalid enhancements</source>
@@ -1060,6 +1100,11 @@ Importeren in uw bibliotheek?</translation>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>Ongeldig apparaatsubtype of voedingstype</translation>
+    </message>
+    <message>
+      <source>Invalid filter type</source>
+      <translation>Ongeldig filtertype</translation>
+      <extracomment>Filter type numeric identifier must be a whole supported enum value; not a file type.</extracomment>
     </message>
     <message>
       <source>Invalid filter.</source>
@@ -1092,6 +1137,16 @@ Importeren in uw bibliotheek?</translation>
     <message>
       <source>Invalid response point.</source>
       <translation>Ongeldig responspunt.</translation>
+    </message>
+    <message>
+      <source>Invalid route indexes or weight</source>
+      <translation>Ongeldige kanaalindices of mengfactor</translation>
+      <extracomment>Audio route indices must be whole channel indices in range and mixing coefficient magnitude at most 4; weight means a signed mixing coefficient, not physical mass.</extracomment>
+    </message>
+    <message>
+      <source>Invalid route number</source>
+      <translation>Ongeldige numerieke waarde van de audioverbinding</translation>
+      <extracomment>A saved audio routing entry contains a nonnumeric or nonfinite number.</extracomment>
     </message>
     <message>
       <source>Invalid speaker correction filter count</source>
@@ -1913,6 +1968,11 @@ Importeren in uw bibliotheek?</translation>
       <translation>Instellingen &amp;&amp; kalibratie</translation>
     </message>
     <message>
+      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
+      <translation>De gedeelde EQ en kanaal-EQ overschrijden 64 filters; verwijder enkele kanaalfilters</translation>
+      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+    </message>
+    <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>Kortere intervallen verversen niveaus vaker en gebruiken meer CPU; de aanvoer van audio kan de werkelijke snelheid beperken</translation>
     </message>
@@ -2133,6 +2193,16 @@ Importeren in uw bibliotheek?</translation>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>Te weinig testaudio bereikte de microfoon. Plaats deze dichterbij of verhoog het testniveau iets.</translation>
+    </message>
+    <message>
+      <source>Too many Studio channel filters</source>
+      <translation>Te veel filters op een Studio-kanaal</translation>
+      <extracomment>Per-channel EQ filter count exceeds 64; unchanged processing bound.</extracomment>
+    </message>
+    <message>
+      <source>Too many Studio routes</source>
+      <translation>Te veel Studio-audioverbindingen</translation>
+      <extracomment>Saved audio routing edge count exceeds channel-count squared.</extracomment>
     </message>
     <message>
       <source>Touring PA speaker</source>

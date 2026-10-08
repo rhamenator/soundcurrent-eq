@@ -678,6 +678,11 @@ Import into your library?</source>
       <translation>Ολοκλήρωση αναπαραγωγής δοκιμαστικού ήχου</translation>
     </message>
     <message>
+      <source>Duplicate Studio route</source>
+      <translation>Διπλότυπη σύνδεση ήχου Studio</translation>
+      <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
+    </message>
+    <message>
       <source>Dynamic Boost</source>
       <translation>Δυναμική ενίσχυση</translation>
     </message>
@@ -716,6 +721,11 @@ Import into your library?</source>
     <message>
       <source>Electronic</source>
       <translation>Ηλεκτρονική μουσική</translation>
+    </message>
+    <message>
+      <source>Enhancements outside supported ranges</source>
+      <translation>Βελτιώσεις ήχου εκτός των υποστηριζόμενων περιοχών τιμών</translation>
+      <extracomment>Enhancement values fail the supported range validation; not frequency coverage or wireless range.</extracomment>
     </message>
     <message>
       <source>Enumerate audio devices</source>
@@ -1046,8 +1056,38 @@ Import into your library?</source>
       <translation>Γλώσσα διεπαφής</translation>
     </message>
     <message>
+      <source>Invalid Studio channel count</source>
+      <translation>Μη έγκυρος αριθμός καναλιών Studio</translation>
+      <extracomment>Session channel count must be 1..256; audio channels, not stations.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio channel name or filters</source>
+      <translation>Μη έγκυρο όνομα καναλιού Studio ή λίστα φίλτρων</translation>
+      <extracomment>Saved channel name must be a nonempty string up to 80 characters, and bands must be an array; filter list, not filter-value validation.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio profile channel count</source>
+      <translation>Μη έγκυρος αριθμός καναλιών στο προφίλ Studio</translation>
+      <extracomment>Saved profile channels array must be nonempty and contain at most 256 channels.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio route</source>
+      <translation>Μη έγκυρη σύνδεση ήχου Studio</translation>
+      <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
       <source>Invalid calibration audio</source>
       <translation>Μη έγκυρος ήχος βαθμονόμησης</translation>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter count</source>
+      <translation>Μη έγκυρος αριθμός παραμέτρων βελτίωσης ήχου</translation>
+      <extracomment>Enhancement array must contain the required number of parameters.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter type</source>
+      <translation>Μη έγκυρος τύπος δεδομένων παραμέτρου βελτίωσης ήχου</translation>
+      <extracomment>Enhancement parameter must be a JSON number; do not reinterpret strings or Boolean values.</extracomment>
     </message>
     <message>
       <source>Invalid enhancements</source>
@@ -1060,6 +1100,11 @@ Import into your library?</source>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>Μη έγκυρος υποτύπος εξοπλισμού ή τύπος τροφοδοσίας</translation>
+    </message>
+    <message>
+      <source>Invalid filter type</source>
+      <translation>Μη έγκυρος τύπος φίλτρου</translation>
+      <extracomment>Filter type numeric identifier must be a whole supported enum value; not a file type.</extracomment>
     </message>
     <message>
       <source>Invalid filter.</source>
@@ -1092,6 +1137,16 @@ Import into your library?</source>
     <message>
       <source>Invalid response point.</source>
       <translation>Μη έγκυρο σημείο απόκρισης.</translation>
+    </message>
+    <message>
+      <source>Invalid route indexes or weight</source>
+      <translation>Μη έγκυροι δείκτες καναλιών ή συντελεστής μίξης</translation>
+      <extracomment>Audio route indices must be whole channel indices in range and mixing coefficient magnitude at most 4; weight means a signed mixing coefficient, not physical mass.</extracomment>
+    </message>
+    <message>
+      <source>Invalid route number</source>
+      <translation>Μη έγκυρη αριθμητική τιμή σύνδεσης ήχου</translation>
+      <extracomment>A saved audio routing entry contains a nonnumeric or nonfinite number.</extracomment>
     </message>
     <message>
       <source>Invalid speaker correction filter count</source>
@@ -1913,6 +1968,11 @@ Import into your library?</source>
       <translation>Ρυθμίσεις &amp;&amp; βαθμονόμηση</translation>
     </message>
     <message>
+      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
+      <translation>Το κοινό EQ και το EQ καναλιού υπερβαίνουν τα 64 φίλτρα· αφαιρέστε μερικά φίλτρα καναλιού</translation>
+      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+    </message>
+    <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>Τα μικρότερα διαστήματα ανανεώνουν τις στάθμες συχνότερα και χρησιμοποιούν περισσότερη CPU· η παροχή ήχου μπορεί να περιορίζει τον πραγματικό ρυθμό</translation>
     </message>
@@ -2133,6 +2193,16 @@ Import into your library?</source>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>Πολύ λίγος δοκιμαστικός ήχος έφτασε στο μικρόφωνο. Φέρτε το πιο κοντά ή αυξήστε λίγο τη στάθμη δοκιμής.</translation>
+    </message>
+    <message>
+      <source>Too many Studio channel filters</source>
+      <translation>Υπερβολικά πολλά φίλτρα σε κανάλι Studio</translation>
+      <extracomment>Per-channel EQ filter count exceeds 64; unchanged processing bound.</extracomment>
+    </message>
+    <message>
+      <source>Too many Studio routes</source>
+      <translation>Υπερβολικά πολλές συνδέσεις ήχου Studio</translation>
+      <extracomment>Saved audio routing edge count exceeds channel-count squared.</extracomment>
     </message>
     <message>
       <source>Touring PA speaker</source>

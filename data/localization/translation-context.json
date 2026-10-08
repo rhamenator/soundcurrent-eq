@@ -43,5 +43,19 @@
   "Touring PA speaker": "Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.",
   "Unsupported Studio profile schema": "Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.",
   "Studio profile has an invalid numeric field": "Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.",
-  "Studio profile has an invalid boolean field": "Saved Studio setup requires a JSON true/false field. Wrong type or missing value is rejected; do not confuse this with an audio level or textual yes/no preference."
+  "Studio profile has an invalid boolean field": "Saved Studio setup requires a JSON true/false field. Wrong type or missing value is rejected; do not confuse this with an audio level or textual yes/no preference.",
+  "Invalid Studio channel count": "Session channel count must be 1..256; audio channels, not stations.",
+  "Invalid Studio profile channel count": "Saved profile channels array must be nonempty and contain at most 256 channels.",
+  "Invalid Studio channel name or filters": "Saved channel name must be a nonempty string up to 80 characters, and bands must be an array; filter list, not filter-value validation.",
+  "Too many Studio channel filters": "Per-channel EQ filter count exceeds 64; unchanged processing bound.",
+  "Invalid Studio route": "Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.",
+  "Duplicate Studio route": "Same input/output routing edge appears more than once; not duplicated media or road route.",
+  "Invalid route indexes or weight": "Audio route indices must be whole channel indices in range and mixing coefficient magnitude at most 4; weight means a signed mixing coefficient, not physical mass.",
+  "Invalid route number": "A saved audio routing entry contains a nonnumeric or nonfinite number.",
+  "Too many Studio routes": "Saved audio routing edge count exceeds channel-count squared.",
+  "Invalid filter type": "Filter type numeric identifier must be a whole supported enum value; not a file type.",
+  "Shared and channel EQ exceed 64 filters; remove some channel filters": "Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.",
+  "Invalid enhancement parameter count": "Enhancement array must contain the required number of parameters.",
+  "Invalid enhancement parameter type": "Enhancement parameter must be a JSON number; do not reinterpret strings or Boolean values.",
+  "Enhancements outside supported ranges": "Enhancement values fail the supported range validation; not frequency coverage or wireless range."
 }

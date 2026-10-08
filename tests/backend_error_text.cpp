@@ -9,6 +9,7 @@ class Fixture : public QTranslator {
  bool isEmpty() const override {return false;}
  QString translate(const char *context,const char *source,const char *,int) const override {
   if(QByteArray(context)!="SoundCurrent")return {};
+  if(QByteArray(source).startsWith("Invalid ") || QByteArray(source).startsWith("Too many ") || QByteArray(source)=="Duplicate Studio route" || QByteArray(source)=="Enhancements outside supported ranges" || QByteArray(source).startsWith("Shared and channel EQ"))return "OWNED_DIAGNOSTIC";
   if(QByteArray(source)=="Read speaker level")return "LEVEL";
   if(QByteArray(source)=="Unsupported Studio profile schema")return "PROFILE_SCHEMA";
   if(QByteArray(source)=="Studio profile has an invalid numeric field")return "PROFILE_NUMBER";
@@ -23,6 +24,21 @@ int main(int argc,char **argv) {
  require(audioErrorText("Unsupported Studio profile schema")=="PROFILE_SCHEMA");
  require(audioErrorText("Studio profile has an invalid numeric field")=="PROFILE_NUMBER");
  require(audioErrorText("Studio profile has an invalid boolean field")=="PROFILE_BOOLEAN");
+ require(audioErrorText("Invalid Studio channel count") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Invalid Studio profile channel count") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Invalid Studio channel name or filters") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Too many Studio channel filters") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Invalid Studio route") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Duplicate Studio route") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Invalid route indexes or weight") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Invalid route number") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Too many Studio routes") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Invalid filter type") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Shared and channel EQ exceed 64 filters; remove some channel filters") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Invalid enhancement parameter count") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Invalid enhancement parameter type") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Enhancements outside supported ranges") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Invalid external route %1")=="Invalid external route %1");
  require(audioErrorText("External profile %1 — unknown")=="External profile %1 — unknown");
  require(audioErrorText("Read speaker level failed (0xAbCd1234)")=="LEVEL | AbCd1234");
  require(audioErrorText("External driver failed (0x80070005)")=="External driver failed (0x80070005)");

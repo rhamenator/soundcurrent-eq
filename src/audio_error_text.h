@@ -7,6 +7,34 @@ namespace soundcurrent::i18n {
 // Desktop boundary only. Backend diagnostic strings and processing identifiers
 // remain invariant; unknown/external messages retain their original detail.
 inline QString audioErrorText(const QString &diagnostic) {
+    if (diagnostic == QStringLiteral("Invalid Studio channel count"))
+        return SC_TR("Invalid Studio channel count");
+    if (diagnostic == QStringLiteral("Invalid Studio profile channel count"))
+        return SC_TR("Invalid Studio profile channel count");
+    if (diagnostic == QStringLiteral("Invalid Studio channel name or filters"))
+        return SC_TR("Invalid Studio channel name or filters");
+    if (diagnostic == QStringLiteral("Too many Studio channel filters"))
+        return SC_TR("Too many Studio channel filters");
+    if (diagnostic == QStringLiteral("Invalid Studio route"))
+        return SC_TR("Invalid Studio route");
+    if (diagnostic == QStringLiteral("Duplicate Studio route"))
+        return SC_TR("Duplicate Studio route");
+    if (diagnostic == QStringLiteral("Invalid route indexes or weight"))
+        return SC_TR("Invalid route indexes or weight");
+    if (diagnostic == QStringLiteral("Invalid route number"))
+        return SC_TR("Invalid route number");
+    if (diagnostic == QStringLiteral("Too many Studio routes"))
+        return SC_TR("Too many Studio routes");
+    if (diagnostic == QStringLiteral("Invalid filter type"))
+        return SC_TR("Invalid filter type");
+    if (diagnostic == QStringLiteral("Shared and channel EQ exceed 64 filters; remove some channel filters"))
+        return SC_TR("Shared and channel EQ exceed 64 filters; remove some channel filters");
+    if (diagnostic == QStringLiteral("Invalid enhancement parameter count"))
+        return SC_TR("Invalid enhancement parameter count");
+    if (diagnostic == QStringLiteral("Invalid enhancement parameter type"))
+        return SC_TR("Invalid enhancement parameter type");
+    if (diagnostic == QStringLiteral("Enhancements outside supported ranges"))
+        return SC_TR("Enhancements outside supported ranges");
     if (diagnostic == QStringLiteral("Unsupported Studio profile schema"))
         return SC_TR("Unsupported Studio profile schema");
     if (diagnostic == QStringLiteral("Studio profile has an invalid numeric field"))

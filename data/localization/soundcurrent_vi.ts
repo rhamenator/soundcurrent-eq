@@ -678,6 +678,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Hoàn tất phát âm thanh thử nghiệm</translation>
     </message>
     <message>
+      <source>Duplicate Studio route</source>
+      <translation>Kết nối âm thanh Studio bị trùng</translation>
+      <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
+    </message>
+    <message>
       <source>Dynamic Boost</source>
       <translation>Tăng cường động</translation>
     </message>
@@ -716,6 +721,11 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Electronic</source>
       <translation>Nhạc điện tử</translation>
+    </message>
+    <message>
+      <source>Enhancements outside supported ranges</source>
+      <translation>Các cải thiện âm thanh nằm ngoài phạm vi được hỗ trợ</translation>
+      <extracomment>Enhancement values fail the supported range validation; not frequency coverage or wireless range.</extracomment>
     </message>
     <message>
       <source>Enumerate audio devices</source>
@@ -1046,8 +1056,38 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Ngôn ngữ giao diện</translation>
     </message>
     <message>
+      <source>Invalid Studio channel count</source>
+      <translation>Số kênh Studio không hợp lệ</translation>
+      <extracomment>Session channel count must be 1..256; audio channels, not stations.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio channel name or filters</source>
+      <translation>Tên kênh Studio hoặc danh sách bộ lọc không hợp lệ</translation>
+      <extracomment>Saved channel name must be a nonempty string up to 80 characters, and bands must be an array; filter list, not filter-value validation.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio profile channel count</source>
+      <translation>Số kênh trong hồ sơ Studio không hợp lệ</translation>
+      <extracomment>Saved profile channels array must be nonempty and contain at most 256 channels.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio route</source>
+      <translation>Kết nối âm thanh Studio không hợp lệ</translation>
+      <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
       <source>Invalid calibration audio</source>
       <translation>Âm thanh hiệu chuẩn không hợp lệ</translation>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter count</source>
+      <translation>Số tham số cải thiện âm thanh không hợp lệ</translation>
+      <extracomment>Enhancement array must contain the required number of parameters.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter type</source>
+      <translation>Kiểu dữ liệu của tham số cải thiện âm thanh không hợp lệ</translation>
+      <extracomment>Enhancement parameter must be a JSON number; do not reinterpret strings or Boolean values.</extracomment>
     </message>
     <message>
       <source>Invalid enhancements</source>
@@ -1060,6 +1100,11 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>Loại phụ hoặc kiểu cấp nguồn của thiết bị không hợp lệ</translation>
+    </message>
+    <message>
+      <source>Invalid filter type</source>
+      <translation>Loại bộ lọc không hợp lệ</translation>
+      <extracomment>Filter type numeric identifier must be a whole supported enum value; not a file type.</extracomment>
     </message>
     <message>
       <source>Invalid filter.</source>
@@ -1092,6 +1137,16 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Invalid response point.</source>
       <translation>Điểm đáp tuyến không hợp lệ.</translation>
+    </message>
+    <message>
+      <source>Invalid route indexes or weight</source>
+      <translation>Chỉ số kênh hoặc hệ số trộn không hợp lệ</translation>
+      <extracomment>Audio route indices must be whole channel indices in range and mixing coefficient magnitude at most 4; weight means a signed mixing coefficient, not physical mass.</extracomment>
+    </message>
+    <message>
+      <source>Invalid route number</source>
+      <translation>Giá trị số của kết nối âm thanh không hợp lệ</translation>
+      <extracomment>A saved audio routing entry contains a nonnumeric or nonfinite number.</extracomment>
     </message>
     <message>
       <source>Invalid speaker correction filter count</source>
@@ -1913,6 +1968,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Cài đặt &amp;&amp; hiệu chuẩn</translation>
     </message>
     <message>
+      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
+      <translation>EQ chung và EQ của kênh vượt quá tổng cộng 64 bộ lọc; hãy xóa bớt bộ lọc của kênh</translation>
+      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+    </message>
+    <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>Khoảng thời gian ngắn hơn cập nhật mức thường xuyên hơn và dùng nhiều CPU hơn; tốc độ thực tế có thể bị giới hạn bởi việc cung cấp âm thanh</translation>
     </message>
@@ -2133,6 +2193,16 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>Quá ít âm thử đến được micrô. Di chuyển micrô lại gần hoặc tăng nhẹ mức thử.</translation>
+    </message>
+    <message>
+      <source>Too many Studio channel filters</source>
+      <translation>Quá nhiều bộ lọc trên một kênh Studio</translation>
+      <extracomment>Per-channel EQ filter count exceeds 64; unchanged processing bound.</extracomment>
+    </message>
+    <message>
+      <source>Too many Studio routes</source>
+      <translation>Quá nhiều kết nối âm thanh Studio</translation>
+      <extracomment>Saved audio routing edge count exceeds channel-count squared.</extracomment>
     </message>
     <message>
       <source>Touring PA speaker</source>

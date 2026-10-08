@@ -678,6 +678,11 @@ Import into your library?</source>
       <translation>परीक्षण प्लेबैक पूरा करना</translation>
     </message>
     <message>
+      <source>Duplicate Studio route</source>
+      <translation>Studio ऑडियो कनेक्शन दोहराया गया है</translation>
+      <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
+    </message>
+    <message>
       <source>Dynamic Boost</source>
       <translation>डायनैमिक बूस्ट</translation>
     </message>
@@ -716,6 +721,11 @@ Import into your library?</source>
     <message>
       <source>Electronic</source>
       <translation>इलेक्ट्रॉनिक</translation>
+    </message>
+    <message>
+      <source>Enhancements outside supported ranges</source>
+      <translation>ध्वनि सुधार समर्थित सीमाओं से बाहर हैं</translation>
+      <extracomment>Enhancement values fail the supported range validation; not frequency coverage or wireless range.</extracomment>
     </message>
     <message>
       <source>Enumerate audio devices</source>
@@ -1046,8 +1056,38 @@ Import into your library?</source>
       <translation>इंटरफ़ेस की भाषा</translation>
     </message>
     <message>
+      <source>Invalid Studio channel count</source>
+      <translation>Studio चैनलों की संख्या अमान्य है</translation>
+      <extracomment>Session channel count must be 1..256; audio channels, not stations.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio channel name or filters</source>
+      <translation>Studio चैनल का नाम या फ़िल्टर सूची अमान्य है</translation>
+      <extracomment>Saved channel name must be a nonempty string up to 80 characters, and bands must be an array; filter list, not filter-value validation.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio profile channel count</source>
+      <translation>Studio प्रोफ़ाइल में चैनलों की संख्या अमान्य है</translation>
+      <extracomment>Saved profile channels array must be nonempty and contain at most 256 channels.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio route</source>
+      <translation>Studio ऑडियो कनेक्शन अमान्य है</translation>
+      <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
       <source>Invalid calibration audio</source>
       <translation>अमान्य कैलिब्रेशन ऑडियो</translation>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter count</source>
+      <translation>ध्वनि सुधार पैरामीटरों की संख्या अमान्य है</translation>
+      <extracomment>Enhancement array must contain the required number of parameters.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter type</source>
+      <translation>ध्वनि सुधार पैरामीटर का डेटा प्रकार अमान्य है</translation>
+      <extracomment>Enhancement parameter must be a JSON number; do not reinterpret strings or Boolean values.</extracomment>
     </message>
     <message>
       <source>Invalid enhancements</source>
@@ -1060,6 +1100,11 @@ Import into your library?</source>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>उपकरण का उपप्रकार या पावर प्रकार अमान्य है</translation>
+    </message>
+    <message>
+      <source>Invalid filter type</source>
+      <translation>फ़िल्टर का प्रकार अमान्य है</translation>
+      <extracomment>Filter type numeric identifier must be a whole supported enum value; not a file type.</extracomment>
     </message>
     <message>
       <source>Invalid filter.</source>
@@ -1092,6 +1137,16 @@ Import into your library?</source>
     <message>
       <source>Invalid response point.</source>
       <translation>अमान्य प्रतिक्रिया बिंदु।</translation>
+    </message>
+    <message>
+      <source>Invalid route indexes or weight</source>
+      <translation>चैनल सूचकांक या मिक्स गुणांक अमान्य हैं</translation>
+      <extracomment>Audio route indices must be whole channel indices in range and mixing coefficient magnitude at most 4; weight means a signed mixing coefficient, not physical mass.</extracomment>
+    </message>
+    <message>
+      <source>Invalid route number</source>
+      <translation>ऑडियो कनेक्शन में संख्यात्मक मान अमान्य है</translation>
+      <extracomment>A saved audio routing entry contains a nonnumeric or nonfinite number.</extracomment>
     </message>
     <message>
       <source>Invalid speaker correction filter count</source>
@@ -1913,6 +1968,11 @@ Import into your library?</source>
       <translation>सेटिंग &amp;&amp; कैलिब्रेशन</translation>
     </message>
     <message>
+      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
+      <translation>साझा EQ और चैनल EQ में कुल 64 से अधिक फ़िल्टर हैं; कुछ चैनल फ़िल्टर हटाएँ</translation>
+      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+    </message>
+    <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>छोटे अंतराल पर स्तर अधिक बार अपडेट होते हैं और CPU का उपयोग बढ़ता है; ऑडियो डेटा की आपूर्ति वास्तविक दर को सीमित कर सकती है</translation>
     </message>
@@ -2133,6 +2193,16 @@ Import into your library?</source>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>माइक्रोफ़ोन तक बहुत कम परीक्षण ऑडियो पहुँचा। उसे पास लाएँ या परीक्षण स्तर थोड़ा बढ़ाएँ।</translation>
+    </message>
+    <message>
+      <source>Too many Studio channel filters</source>
+      <translation>Studio चैनल में बहुत अधिक फ़िल्टर हैं</translation>
+      <extracomment>Per-channel EQ filter count exceeds 64; unchanged processing bound.</extracomment>
+    </message>
+    <message>
+      <source>Too many Studio routes</source>
+      <translation>Studio में बहुत अधिक ऑडियो कनेक्शन हैं</translation>
+      <extracomment>Saved audio routing edge count exceeds channel-count squared.</extracomment>
     </message>
     <message>
       <source>Touring PA speaker</source>

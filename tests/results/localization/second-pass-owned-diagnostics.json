@@ -1,0 +1,59 @@
+{
+  "scope": "All 17 Studio-owned session-model validation diagnostic display mappings",
+  "resolvedDiagnostics": [
+    "Unsupported Studio profile schema",
+    "Studio profile has an invalid numeric field",
+    "Studio profile has an invalid boolean field",
+    "Invalid Studio channel count",
+    "Invalid Studio profile channel count",
+    "Invalid Studio channel name or filters",
+    "Too many Studio channel filters",
+    "Invalid Studio route",
+    "Duplicate Studio route",
+    "Invalid route indexes or weight",
+    "Invalid route number",
+    "Too many Studio routes",
+    "Invalid filter type",
+    "Shared and channel EQ exceed 64 filters; remove some channel filters",
+    "Invalid enhancement parameter count",
+    "Invalid enhancement parameter type",
+    "Enhancements outside supported ranges"
+  ],
+  "nonEnglishLocales": 33,
+  "sourceMessagesPerLocale": 568,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "notes": [
+      "Channel/filter and routing validation refer to saved setup structure and supported limits",
+      "Enhancement ranges mean parameter bounds, not acoustic frequency bands",
+      "Nynorsk parametrar plural checked against https://ordbokene.no/nn/parameter; term support only, not native review"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "runtimeQualification": {
+    "platform": "Linux Qt offscreen",
+    "targetedTestsPassed": 39,
+    "failed": 0,
+    "StudioSessionFaultFixtures": false,
+    "sessionFixtureScope": "Direct constructor/parser/effective-filter rejection and desktop display mapping; valid signed routing and profile roundtrip preserved. Does not click malformed-file import dialogs."
+  },
+  "catalogUnitTests": {
+    "passed": 11,
+    "skipped": 1
+  },
+  "invariants": [
+    "Backend diagnostic keys and saved schema unchanged",
+    "Unknown external diagnostics preserved verbatim",
+    "Numerical processing unchanged"
+  ],
+  "remainingStudioSessionModelDiagnostics": 0,
+  "wholeInterfaceCoverageProven": false,
+  "WindowsCurrentChangesQualified": false,
+  "newPackagesQualified": false,
+  "evidence": {
+    "log": "tests/results/localization/owned-diagnostics-runtime.log",
+    "logSha256": "8823a23c65b1f877dbb48ed91b7919c277e210c77fe16e3b2893045ac80fde12",
+    "applicationBinarySha256": "c0f0b7a0a1892d8bf315b9e7f0a1c61f6a9d42c53c918048cb3bb0ddfc42c1bd"
+  }
+}

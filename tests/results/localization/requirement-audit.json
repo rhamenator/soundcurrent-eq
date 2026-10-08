@@ -98,7 +98,7 @@
   "secondPassProgress": "tests/results/localization/second-pass-speaker-text.json",
   "currentCatalogs": {
     "nonEnglishLocales": 33,
-    "sourceMessagesPerLocale": 554,
+    "sourceMessagesPerLocale": 568,
     "unfinished": 0,
     "nativeReviewed": false
   },
@@ -111,5 +111,12 @@
     "report": "tests/results/localization/second-pass-profile-diagnostics.json",
     "resolved": 3,
     "remainingStudioOwnedDiagnostics": 14
-  }
+  },
+  "ownedSessionDiagnosticProgress": {
+    "report": "tests/results/localization/second-pass-owned-diagnostics.json",
+    "resolved": 17,
+    "remainingStudioSessionModelDiagnostics": 0,
+    "scope": "Session-model inventory only; other backend/helper diagnostics still require audit"
+  },
+  "evidenceSha256Scope": "Historical evidence hashes retained from prior audit; current batch hashes are in second-pass-owned-diagnostics.json"
 }

@@ -678,6 +678,11 @@ Import into your library?</source>
       <translation>テスト再生の完了待ち</translation>
     </message>
     <message>
+      <source>Duplicate Studio route</source>
+      <translation>Studio の音声接続が重複しています</translation>
+      <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
+    </message>
+    <message>
       <source>Dynamic Boost</source>
       <translation>ダイナミックブースト</translation>
     </message>
@@ -716,6 +721,11 @@ Import into your library?</source>
     <message>
       <source>Electronic</source>
       <translation>エレクトロニック</translation>
+    </message>
+    <message>
+      <source>Enhancements outside supported ranges</source>
+      <translation>音質向上が対応範囲外です</translation>
+      <extracomment>Enhancement values fail the supported range validation; not frequency coverage or wireless range.</extracomment>
     </message>
     <message>
       <source>Enumerate audio devices</source>
@@ -1046,8 +1056,38 @@ Import into your library?</source>
       <translation>表示言語</translation>
     </message>
     <message>
+      <source>Invalid Studio channel count</source>
+      <translation>Studio のチャンネル数が無効です</translation>
+      <extracomment>Session channel count must be 1..256; audio channels, not stations.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio channel name or filters</source>
+      <translation>Studio のチャンネル名またはフィルター一覧が無効です</translation>
+      <extracomment>Saved channel name must be a nonempty string up to 80 characters, and bands must be an array; filter list, not filter-value validation.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio profile channel count</source>
+      <translation>Studio プロファイルのチャンネル数が無効です</translation>
+      <extracomment>Saved profile channels array must be nonempty and contain at most 256 channels.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio route</source>
+      <translation>Studio の音声接続が無効です</translation>
+      <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
       <source>Invalid calibration audio</source>
       <translation>キャリブレーション音声が無効です</translation>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter count</source>
+      <translation>音質向上パラメーターの数が無効です</translation>
+      <extracomment>Enhancement array must contain the required number of parameters.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter type</source>
+      <translation>音質向上パラメーターのデータ型が無効です</translation>
+      <extracomment>Enhancement parameter must be a JSON number; do not reinterpret strings or Boolean values.</extracomment>
     </message>
     <message>
       <source>Invalid enhancements</source>
@@ -1060,6 +1100,11 @@ Import into your library?</source>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>機器のサブタイプまたは駆動方式が無効です</translation>
+    </message>
+    <message>
+      <source>Invalid filter type</source>
+      <translation>フィルターの種類が無効です</translation>
+      <extracomment>Filter type numeric identifier must be a whole supported enum value; not a file type.</extracomment>
     </message>
     <message>
       <source>Invalid filter.</source>
@@ -1092,6 +1137,16 @@ Import into your library?</source>
     <message>
       <source>Invalid response point.</source>
       <translation>周波数特性の点が無効です。</translation>
+    </message>
+    <message>
+      <source>Invalid route indexes or weight</source>
+      <translation>チャンネルのインデックスまたはミックス係数が無効です</translation>
+      <extracomment>Audio route indices must be whole channel indices in range and mixing coefficient magnitude at most 4; weight means a signed mixing coefficient, not physical mass.</extracomment>
+    </message>
+    <message>
+      <source>Invalid route number</source>
+      <translation>音声接続の数値が無効です</translation>
+      <extracomment>A saved audio routing entry contains a nonnumeric or nonfinite number.</extracomment>
     </message>
     <message>
       <source>Invalid speaker correction filter count</source>
@@ -1913,6 +1968,11 @@ Import into your library?</source>
       <translation>設定 &amp;&amp; キャリブレーション</translation>
     </message>
     <message>
+      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
+      <translation>共通 EQ とチャンネル EQ の合計が 64 フィルターを超えています。チャンネルのフィルターを減らしてください</translation>
+      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+    </message>
+    <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>間隔を短くするとレベル表示の更新が増え、CPU 使用量も増えます。音声データの供給により、実際の更新頻度が制限されることがあります</translation>
     </message>
@@ -2133,6 +2193,16 @@ Import into your library?</source>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>マイクに届いたテスト音声が小さすぎます。マイクを近づけるか、テストレベルを少し上げてください。</translation>
+    </message>
+    <message>
+      <source>Too many Studio channel filters</source>
+      <translation>Studio チャンネルのフィルターが多すぎます</translation>
+      <extracomment>Per-channel EQ filter count exceeds 64; unchanged processing bound.</extracomment>
+    </message>
+    <message>
+      <source>Too many Studio routes</source>
+      <translation>Studio の音声接続が多すぎます</translation>
+      <extracomment>Saved audio routing edge count exceeds channel-count squared.</extracomment>
     </message>
     <message>
       <source>Touring PA speaker</source>

@@ -678,6 +678,11 @@ Import into your library?</source>
       <translation>테스트 재생 완료 대기</translation>
     </message>
     <message>
+      <source>Duplicate Studio route</source>
+      <translation>Studio 오디오 연결이 중복되었습니다</translation>
+      <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
+    </message>
+    <message>
       <source>Dynamic Boost</source>
       <translation>다이내믹 부스트</translation>
     </message>
@@ -716,6 +721,11 @@ Import into your library?</source>
     <message>
       <source>Electronic</source>
       <translation>일렉트로닉</translation>
+    </message>
+    <message>
+      <source>Enhancements outside supported ranges</source>
+      <translation>음향 개선이 지원 범위를 벗어났습니다</translation>
+      <extracomment>Enhancement values fail the supported range validation; not frequency coverage or wireless range.</extracomment>
     </message>
     <message>
       <source>Enumerate audio devices</source>
@@ -1046,8 +1056,38 @@ Import into your library?</source>
       <translation>인터페이스 언어</translation>
     </message>
     <message>
+      <source>Invalid Studio channel count</source>
+      <translation>Studio 채널 수가 잘못되었습니다</translation>
+      <extracomment>Session channel count must be 1..256; audio channels, not stations.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio channel name or filters</source>
+      <translation>Studio 채널 이름 또는 필터 목록이 잘못되었습니다</translation>
+      <extracomment>Saved channel name must be a nonempty string up to 80 characters, and bands must be an array; filter list, not filter-value validation.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio profile channel count</source>
+      <translation>Studio 프로필의 채널 수가 잘못되었습니다</translation>
+      <extracomment>Saved profile channels array must be nonempty and contain at most 256 channels.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio route</source>
+      <translation>Studio 오디오 연결이 잘못되었습니다</translation>
+      <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
       <source>Invalid calibration audio</source>
       <translation>잘못된 보정 오디오</translation>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter count</source>
+      <translation>음향 개선 매개변수 수가 잘못되었습니다</translation>
+      <extracomment>Enhancement array must contain the required number of parameters.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter type</source>
+      <translation>음향 개선 매개변수의 데이터 유형이 잘못되었습니다</translation>
+      <extracomment>Enhancement parameter must be a JSON number; do not reinterpret strings or Boolean values.</extracomment>
     </message>
     <message>
       <source>Invalid enhancements</source>
@@ -1060,6 +1100,11 @@ Import into your library?</source>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>장비 하위 유형 또는 구동 방식이 잘못되었습니다</translation>
+    </message>
+    <message>
+      <source>Invalid filter type</source>
+      <translation>필터 유형이 잘못되었습니다</translation>
+      <extracomment>Filter type numeric identifier must be a whole supported enum value; not a file type.</extracomment>
     </message>
     <message>
       <source>Invalid filter.</source>
@@ -1092,6 +1137,16 @@ Import into your library?</source>
     <message>
       <source>Invalid response point.</source>
       <translation>잘못된 응답 지점입니다.</translation>
+    </message>
+    <message>
+      <source>Invalid route indexes or weight</source>
+      <translation>채널 인덱스 또는 믹스 계수가 잘못되었습니다</translation>
+      <extracomment>Audio route indices must be whole channel indices in range and mixing coefficient magnitude at most 4; weight means a signed mixing coefficient, not physical mass.</extracomment>
+    </message>
+    <message>
+      <source>Invalid route number</source>
+      <translation>오디오 연결의 숫자 값이 잘못되었습니다</translation>
+      <extracomment>A saved audio routing entry contains a nonnumeric or nonfinite number.</extracomment>
     </message>
     <message>
       <source>Invalid speaker correction filter count</source>
@@ -1913,6 +1968,11 @@ Import into your library?</source>
       <translation>설정 &amp;&amp; 캘리브레이션</translation>
     </message>
     <message>
+      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
+      <translation>공통 EQ와 채널 EQ의 필터 합계가 64개를 초과합니다. 일부 채널 필터를 제거하세요</translation>
+      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+    </message>
+    <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>간격을 줄이면 레벨 표시가 더 자주 갱신되고 CPU 사용량이 증가합니다. 오디오 데이터 공급에 따라 실제 갱신 속도가 제한될 수 있습니다</translation>
     </message>
@@ -2133,6 +2193,16 @@ Import into your library?</source>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>마이크에 도달한 테스트 오디오가 너무 작습니다. 마이크를 더 가까이 옮기거나 테스트 레벨을 조금 높이세요.</translation>
+    </message>
+    <message>
+      <source>Too many Studio channel filters</source>
+      <translation>Studio 채널에 필터가 너무 많습니다</translation>
+      <extracomment>Per-channel EQ filter count exceeds 64; unchanged processing bound.</extracomment>
+    </message>
+    <message>
+      <source>Too many Studio routes</source>
+      <translation>Studio 오디오 연결이 너무 많습니다</translation>
+      <extracomment>Saved audio routing edge count exceeds channel-count squared.</extracomment>
     </message>
     <message>
       <source>Touring PA speaker</source>
