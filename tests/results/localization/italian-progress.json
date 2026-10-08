@@ -1,0 +1,32 @@
+{
+  "stage": "Italian complete extracted catalog checkpoint",
+  "catalog": {
+    "tag": "it",
+    "name": "Italiano",
+    "translated": 437,
+    "total": 437,
+    "status": "unverified",
+    "nativeReviewed": false,
+    "tsSha256": "c69b6ad0ac856cbfa52821d8df10b911c5c7812e8e6140c9ddb170f22e18b1f8",
+    "qmSha256": "a5c7c06bb4f31d8d9104a2743d8038df39a320f14c9cb9dc77e3a7b6e6b6ca20"
+  },
+  "linguisticReview": "Contextual AI review; unverified; no native-speaker review",
+  "linuxTests": {
+    "passed": 51,
+    "total": 51,
+    "scope": "Full CTest including Italian equipment and main-window tests",
+    "log": "/tmp/sc-it-complete-eq-tests.log"
+  },
+  "linuxVisualReview": {
+    "locale": "it",
+    "platform": "xcb/Xvfb",
+    "screen": "1280x720",
+    "tabsCaptured": 2,
+    "reviewedTabs": [
+      1
+    ],
+    "scope": "Visible settings/effects captions; scrolling required for remaining controls."
+  },
+  "windows": "Pending CI on new commits",
+  "remaining": "28 target locales incomplete; native-speaker verification unverified."
+}

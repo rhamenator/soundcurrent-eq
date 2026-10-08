@@ -1092,6 +1092,7 @@
   "requiredCompleteLocales": [
     "fr",
     "de",
-    "es"
+    "es",
+    "it"
   ]
 }

@@ -42,12 +42,12 @@
   {
     "tag": "it",
     "name": "Italiano",
-    "translated": 30,
+    "translated": 437,
     "total": 437,
     "status": "unverified",
     "nativeReviewed": false,
-    "tsSha256": "87bbaf652e4a61a17ee9072e7e14062c0e116e5c56868b05a4f3c8c8e3296b38",
-    "qmSha256": "3289bf2d3adee8b0fa8ee2cf540f5b2883fa34b29468fdfc020912489e43f2bd"
+    "tsSha256": "c69b6ad0ac856cbfa52821d8df10b911c5c7812e8e6140c9ddb170f22e18b1f8",
+    "qmSha256": "a5c7c06bb4f31d8d9104a2743d8038df39a320f14c9cb9dc77e3a7b6e6b6ca20"
   },
   {
     "tag": "pt-PT",

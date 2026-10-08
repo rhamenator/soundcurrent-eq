@@ -137,7 +137,7 @@ try {
         if ($localized.ExitCode -ne 0) { Get-Content $localizedLog; throw "Localized UI failed: $locale" }
     }
     Copy-Item 'build-windows-native\Release\soundcurrent-equipment-ui-test.exe' $stage
-    foreach ($locale in @('en','fr','de','es')) {
+    foreach ($locale in @('en','fr','de','es','it')) {
         $equipmentLog = Join-Path $root "build-windows-native\equipment-ui-$locale.log"
         $equipment = Start-Process "$stage\soundcurrent-equipment-ui-test.exe" -ArgumentList @('--language',$locale) -PassThru -RedirectStandardError $equipmentLog
         $null = $equipment.Handle
