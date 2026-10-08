@@ -84,3 +84,7 @@ Use Format-SCSetupText with a literal owned Source and a separate Values array. 
 The PowerShell AST candidate audit covers raw English-like literals anywhere in the two shipped cable/native helpers, including returned fragments, interpolation and dialog captions. Declared Get/Format-SCSetupText source arguments are excluded. setup-prose-backlog.json distinguishes invariant product names from untranslated candidates. New candidates fail the inert setup test; removing translated candidates is allowed. Ordinary checks never regenerate the backlog. The backlog is unfinished work, not a coverage exemption proving completion.
 
 The heuristic does not establish full interface extraction, does not parse NSIS, and does not interpret external variable-only diagnostics. Use the separate GUI/backend audits as well.
+
+### External installer labels
+
+EXTERNAL_UI_LABELS in the catalog validator is scoped to reviewed instruction source keys. It preserves the exact bundled third-party button label and its occurrence count. Do not freeze SoundCurrent-owned captions globally. The cable repair instruction preserves Install Driver and inserts the separately translated Audio driver setup caption through a numbered value. Native linguistic verification and actual Windows installer qualification remain separate requirements.

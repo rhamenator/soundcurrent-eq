@@ -2246,6 +2246,10 @@ Import into your library?</source>
       <translation>驱动程序包不完整，或 Windows 无法验证其签名。</translation>
     </message>
     <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>不完整的 VB-CABLE 安装已移除。请重启 Windows，再次打开 %1，点击 Install Driver，然后再重启一次。</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>缺少用于保留音频路由的设置辅助程序。</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
@@ -2390,6 +2394,10 @@ Import into your library?</source>
       <translation>使用系统区域设置</translation>
     </message>
     <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>VB-CABLE 已安装。如果刚安装或更新，请在使用均衡器或 VB-CABLE 设置前重启 Windows。否则，请在 SoundCurrent 中选择扬声器。</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE 未安装。请打开 "%1"，然后重启 Windows，再打开音频线缆设置。</translation>
     </message>
@@ -2409,6 +2417,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
       <translation>无法打开 VB-CABLE 设置。如果刚安装或更新驱动程序，请重启 Windows，然后重试。</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>VB-CABLE 设置已完成。请立即重启 Windows，再使用均衡器或 VB-CABLE 设置。之前仍可用的默认音频设备已保留。</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

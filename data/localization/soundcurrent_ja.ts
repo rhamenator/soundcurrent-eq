@@ -2246,6 +2246,10 @@ Import into your library?</source>
       <translation>ドライバーパッケージが不完全か、Windows がその署名を検証できません。</translation>
     </message>
     <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>不完全な VB-CABLE のインストールが削除されました。Windows を再起動し、%1 を再度開いて Install Driver をクリックしてから、もう一度再起動してください。</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>音声ルーティングを保持するセットアップ補助プログラムが見つかりません。</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
@@ -2390,6 +2394,10 @@ Import into your library?</source>
       <translation>システムの地域設定を使用</translation>
     </message>
     <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>VB-CABLE は既にインストールされています。インストールまたは更新した直後であれば、イコライザーや VB-CABLE の設定を使用する前に Windows を再起動してください。それ以外の場合は、SoundCurrent でスピーカーを選択してください。</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE がインストールされていません。"%1" を開き、Windows を再起動してからケーブルの設定を開いてください。</translation>
     </message>
@@ -2409,6 +2417,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
       <translation>VB-CABLE の設定を開けませんでした。ドライバーをインストールまたは更新した直後であれば、Windows を再起動してから再試行してください。</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>VB-CABLE のセットアップが完了しました。イコライザーや VB-CABLE の設定を使用する前に、今すぐ Windows を再起動してください。以前の既定のオーディオデバイスは、引き続き利用可能なものについて保持されました。</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

@@ -2246,6 +2246,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Gói trình điều khiển không đầy đủ hoặc Windows không thể xác minh chữ ký của gói.</translation>
     </message>
     <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>Bản cài đặt VB-CABLE không đầy đủ đã được gỡ. Khởi động lại Windows, mở lại %1, nhấp vào Install Driver, rồi khởi động lại một lần nữa.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Thiếu chương trình hỗ trợ thiết lập giữ nguyên định tuyến âm thanh.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
@@ -2390,6 +2394,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Dùng thiết lập vùng của hệ thống</translation>
     </message>
     <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>VB-CABLE đã được cài đặt. Nếu vừa được cài đặt hoặc cập nhật, hãy khởi động lại Windows trước khi sử dụng bộ cân bằng âm thanh hoặc cài đặt VB-CABLE. Nếu không, hãy chọn loa trong SoundCurrent.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE chưa được cài đặt. Mở "%1", rồi khởi động lại Windows trước khi mở cài đặt cáp.</translation>
     </message>
@@ -2409,6 +2417,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
       <translation>Không thể mở cài đặt VB-CABLE. Khởi động lại Windows nếu trình điều khiển vừa được cài đặt hoặc cập nhật, rồi thử lại.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>Thiết lập VB-CABLE đã hoàn tất. Khởi động lại Windows ngay trước khi sử dụng bộ cân bằng âm thanh hoặc cài đặt VB-CABLE. Các thiết bị âm thanh mặc định trước đó được giữ lại nếu vẫn còn khả dụng.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

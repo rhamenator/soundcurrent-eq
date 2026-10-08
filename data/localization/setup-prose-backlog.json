@@ -25,13 +25,6 @@
     },
     {
       "file": "cable-setup.ps1",
-      "line": 98,
-      "kind": "StringConstantExpressionAst",
-      "literal": "VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.",
-      "reviewStatus": "untranslated; pending contextual translation"
-    },
-    {
-      "file": "cable-setup.ps1",
       "line": 114,
       "kind": "StringConstantExpressionAst",
       "literal": "Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, use Audio driver setup to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.",
@@ -53,23 +46,9 @@
     },
     {
       "file": "cable-setup.ps1",
-      "line": 134,
-      "kind": "StringConstantExpressionAst",
-      "literal": "The incomplete VB-CABLE installation was removed. Restart Windows, run Audio driver setup again, click Install Driver, then restart once more.",
-      "reviewStatus": "untranslated; pending contextual translation"
-    },
-    {
-      "file": "cable-setup.ps1",
       "line": 138,
       "kind": "StringConstantExpressionAst",
       "literal": "VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then run Audio driver setup again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.",
-      "reviewStatus": "untranslated; pending contextual translation"
-    },
-    {
-      "file": "cable-setup.ps1",
-      "line": 140,
-      "kind": "StringConstantExpressionAst",
-      "literal": "VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.",
       "reviewStatus": "untranslated; pending contextual translation"
     }
   ],

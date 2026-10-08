@@ -2246,6 +2246,10 @@ Importați în bibliotecă?</translation>
       <translation>Pachetul driverului este incomplet sau Windows nu îi poate verifica semnătura.</translation>
     </message>
     <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>Instalarea incompletă a VB-CABLE a fost eliminată. Reporniți Windows, deschideți din nou %1, faceți clic pe Install Driver, apoi reporniți încă o dată.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Lipsește asistentul de configurare care păstrează rutarea audio.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
@@ -2390,6 +2394,10 @@ Importați în bibliotecă?</translation>
       <translation>Folosiți setările regionale ale sistemului</translation>
     </message>
     <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>VB-CABLE este deja instalat. Dacă tocmai a fost instalat sau actualizat, reporniți Windows înainte de a utiliza egalizatorul sau setările VB-CABLE. În caz contrar, selectați difuzoarele în SoundCurrent.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE nu este instalat. Deschideți "%1", apoi reporniți Windows înainte de a deschide setările cablului.</translation>
     </message>
@@ -2409,6 +2417,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
       <translation>Setările VB-CABLE nu au putut fi deschise. Reporniți Windows dacă driverul tocmai a fost instalat sau actualizat, apoi încercați din nou.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>Configurarea VB-CABLE s-a încheiat. Reporniți Windows acum înainte de a utiliza egalizatorul sau setările VB-CABLE. Dispozitivele audio implicite anterioare au fost păstrate acolo unde erau încă disponibile.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

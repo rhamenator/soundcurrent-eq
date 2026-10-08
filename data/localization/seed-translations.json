@@ -99,7 +99,10 @@
     "VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.",
     "Remove VB-CABLE?",
     "Repair incomplete VB-CABLE installation",
-    "VB-CABLE is not installed. Open \"%1\", then restart Windows before opening the cable settings."
+    "VB-CABLE is not installed. Open \"%1\", then restart Windows before opening the cable settings.",
+    "VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.",
+    "The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.",
+    "VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available."
   ],
   "languages": {
     "de": [
@@ -203,7 +206,10 @@
       "VB-CABLE wurde beibehalten, weil die andere SoundCurrent-App installiert ist. Entfernen Sie es mit der letzten App, wenn keine andere Software es benötigt.",
       "VB-CABLE entfernen?",
       "Unvollständige VB-CABLE-Installation reparieren",
-      "VB-CABLE ist nicht installiert. Öffnen Sie \"%1\" und starten Sie Windows neu, bevor Sie die Kabeleinstellungen öffnen."
+      "VB-CABLE ist nicht installiert. Öffnen Sie \"%1\" und starten Sie Windows neu, bevor Sie die Kabeleinstellungen öffnen.",
+      "VB-CABLE ist bereits installiert. Wenn es gerade installiert oder aktualisiert wurde, starten Sie Windows neu, bevor Sie den Equalizer oder die VB-CABLE-Einstellungen verwenden. Wählen Sie andernfalls Ihre Lautsprecher in SoundCurrent aus.",
+      "Die unvollständige VB-CABLE-Installation wurde entfernt. Starten Sie Windows neu, öffnen Sie %1 erneut, klicken Sie auf Install Driver und starten Sie anschließend nochmals neu.",
+      "Die VB-CABLE-Einrichtung ist abgeschlossen. Starten Sie Windows jetzt neu, bevor Sie den Equalizer oder die VB-CABLE-Einstellungen verwenden. Ihre bisherigen Audiostandardgeräte wurden beibehalten, soweit sie noch verfügbar sind."
     ],
     "fr": [
       "Français",
@@ -306,7 +312,10 @@
       "VB-CABLE a été conservé car l’autre application SoundCurrent est installée. Supprimez-le avec la dernière application si aucun autre logiciel n’en a besoin.",
       "Supprimer VB-CABLE ?",
       "Réparer l’installation incomplète de VB-CABLE",
-      "VB-CABLE n’est pas installé. Ouvrez \"%1\", puis redémarrez Windows avant d’ouvrir les paramètres du câble."
+      "VB-CABLE n’est pas installé. Ouvrez \"%1\", puis redémarrez Windows avant d’ouvrir les paramètres du câble.",
+      "VB-CABLE est déjà installé. S’il vient d’être installé ou mis à jour, redémarrez Windows avant d’utiliser l’égaliseur ou les paramètres de VB-CABLE. Sinon, sélectionnez vos haut-parleurs dans SoundCurrent.",
+      "L’installation incomplète de VB-CABLE a été supprimée. Redémarrez Windows, ouvrez à nouveau %1, cliquez sur Install Driver, puis redémarrez encore une fois.",
+      "La configuration de VB-CABLE est terminée. Redémarrez Windows maintenant avant d’utiliser l’égaliseur ou les paramètres de VB-CABLE. Vos périphériques audio par défaut précédents ont été conservés lorsqu’ils étaient encore disponibles."
     ],
     "es": [
       "Español",
@@ -409,7 +418,10 @@
       "Se conservó VB-CABLE porque la otra aplicación SoundCurrent está instalada. Elimínelo con la última aplicación si ningún otro programa lo necesita.",
       "¿Eliminar VB-CABLE?",
       "Reparar la instalación incompleta de VB-CABLE",
-      "VB-CABLE no está instalado. Abra \"%1\" y reinicie Windows antes de abrir los ajustes del cable."
+      "VB-CABLE no está instalado. Abra \"%1\" y reinicie Windows antes de abrir los ajustes del cable.",
+      "VB-CABLE ya está instalado. Si acaba de instalarse o actualizarse, reinicie Windows antes de usar el ecualizador o los ajustes de VB-CABLE. De lo contrario, seleccione sus altavoces en SoundCurrent.",
+      "Se eliminó la instalación incompleta de VB-CABLE. Reinicie Windows, abra %1 de nuevo, haga clic en Install Driver y reinicie una vez más.",
+      "La configuración de VB-CABLE ha finalizado. Reinicie Windows ahora antes de usar el ecualizador o los ajustes de VB-CABLE. Se conservaron los dispositivos de audio predeterminados anteriores que seguían disponibles."
     ],
     "it": [
       "Italiano",
@@ -512,7 +524,10 @@
       "VB-CABLE è stato mantenuto perché l’altra app SoundCurrent è installata. Rimuoverlo insieme all’ultima app se nessun altro software ne ha bisogno.",
       "Rimuovere VB-CABLE?",
       "Riparare l’installazione incompleta di VB-CABLE",
-      "VB-CABLE non è installato. Aprire \"%1\", quindi riavviare Windows prima di aprire le impostazioni del cavo."
+      "VB-CABLE non è installato. Aprire \"%1\", quindi riavviare Windows prima di aprire le impostazioni del cavo.",
+      "VB-CABLE è già installato. Se è appena stato installato o aggiornato, riavviare Windows prima di usare l’equalizzatore o le impostazioni di VB-CABLE. Altrimenti, selezionare gli altoparlanti in SoundCurrent.",
+      "L’installazione incompleta di VB-CABLE è stata rimossa. Riavviare Windows, aprire di nuovo %1, fare clic su Install Driver, quindi riavviare ancora una volta.",
+      "La configurazione di VB-CABLE è completata. Riavviare Windows ora prima di usare l’equalizzatore o le impostazioni di VB-CABLE. I precedenti dispositivi audio predefiniti sono stati mantenuti ove ancora disponibili."
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -615,7 +630,10 @@
       "O VB-CABLE foi mantido porque a outra aplicação SoundCurrent está instalada. Remova-o com a última aplicação se nenhum outro software precisar dele.",
       "Remover o VB-CABLE?",
       "Reparar a instalação incompleta do VB-CABLE",
-      "O VB-CABLE não está instalado. Abra \"%1\" e reinicie o Windows antes de abrir as definições do cabo."
+      "O VB-CABLE não está instalado. Abra \"%1\" e reinicie o Windows antes de abrir as definições do cabo.",
+      "O VB-CABLE já está instalado. Se acabou de ser instalado ou atualizado, reinicie o Windows antes de utilizar o equalizador ou as definições do VB-CABLE. Caso contrário, selecione as suas colunas no SoundCurrent.",
+      "A instalação incompleta do VB-CABLE foi removida. Reinicie o Windows, abra %1 novamente, clique em Install Driver e reinicie mais uma vez.",
+      "A configuração do VB-CABLE foi concluída. Reinicie o Windows agora antes de utilizar o equalizador ou as definições do VB-CABLE. Os seus dispositivos de áudio predefinidos anteriores foram preservados quando ainda estavam disponíveis."
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -718,7 +736,10 @@
       "O VB-CABLE foi mantido porque o outro aplicativo SoundCurrent está instalado. Remova-o com o último aplicativo se nenhum outro software precisar dele.",
       "Remover o VB-CABLE?",
       "Reparar a instalação incompleta do VB-CABLE",
-      "O VB-CABLE não está instalado. Abra \"%1\" e reinicie o Windows antes de abrir as configurações do cabo."
+      "O VB-CABLE não está instalado. Abra \"%1\" e reinicie o Windows antes de abrir as configurações do cabo.",
+      "O VB-CABLE já está instalado. Se acabou de ser instalado ou atualizado, reinicie o Windows antes de usar o equalizador ou as configurações do VB-CABLE. Caso contrário, selecione seus alto-falantes no SoundCurrent.",
+      "A instalação incompleta do VB-CABLE foi removida. Reinicie o Windows, abra %1 novamente, clique em Install Driver e reinicie mais uma vez.",
+      "A configuração do VB-CABLE foi concluída. Reinicie o Windows agora antes de usar o equalizador ou as configurações do VB-CABLE. Seus dispositivos de áudio padrão anteriores foram preservados quando ainda estavam disponíveis."
     ],
     "nl": [
       "Nederlands",
@@ -821,7 +842,10 @@
       "VB-CABLE is behouden omdat de andere SoundCurrent-app is geïnstalleerd. Verwijder het met de laatste app als geen andere software het nodig heeft.",
       "VB-CABLE verwijderen?",
       "Onvolledige VB-CABLE-installatie herstellen",
-      "VB-CABLE is niet geïnstalleerd. Open \"%1\" en start Windows opnieuw op voordat u de kabelinstellingen opent."
+      "VB-CABLE is niet geïnstalleerd. Open \"%1\" en start Windows opnieuw op voordat u de kabelinstellingen opent.",
+      "VB-CABLE is al geïnstalleerd. Start Windows opnieuw op voordat u de equalizer of VB-CABLE-instellingen gebruikt als het zojuist is geïnstalleerd of bijgewerkt. Kies anders uw luidsprekers in SoundCurrent.",
+      "De onvolledige VB-CABLE-installatie is verwijderd. Start Windows opnieuw op, open %1 opnieuw, klik op Install Driver en start daarna nogmaals opnieuw op.",
+      "Het instellen van VB-CABLE is voltooid. Start Windows nu opnieuw op voordat u de equalizer of VB-CABLE-instellingen gebruikt. Uw eerdere standaardaudioapparaten zijn behouden waar ze nog beschikbaar waren."
     ],
     "pl": [
       "Polski",
@@ -924,7 +948,10 @@
       "Zachowano VB-CABLE, ponieważ druga aplikacja SoundCurrent jest zainstalowana. Usuń go wraz z ostatnią aplikacją, jeśli żadne inne oprogramowanie go nie potrzebuje.",
       "Usunąć VB-CABLE?",
       "Napraw niekompletną instalację VB-CABLE",
-      "VB-CABLE nie jest zainstalowany. Otwórz \"%1\", a następnie uruchom ponownie system Windows przed otwarciem ustawień kabla."
+      "VB-CABLE nie jest zainstalowany. Otwórz \"%1\", a następnie uruchom ponownie system Windows przed otwarciem ustawień kabla.",
+      "VB-CABLE jest już zainstalowany. Jeśli został właśnie zainstalowany lub zaktualizowany, uruchom ponownie system Windows przed użyciem korektora lub ustawień VB-CABLE. W przeciwnym razie wybierz głośniki w SoundCurrent.",
+      "Niekompletna instalacja VB-CABLE została usunięta. Uruchom ponownie system Windows, otwórz ponownie %1, kliknij Install Driver i jeszcze raz uruchom system ponownie.",
+      "Konfiguracja VB-CABLE została ukończona. Uruchom teraz ponownie system Windows przed użyciem korektora lub ustawień VB-CABLE. Zachowano poprzednie domyślne urządzenia audio, o ile były nadal dostępne."
     ],
     "cs": [
       "Čeština",
@@ -1027,7 +1054,10 @@
       "VB-CABLE byl zachován, protože je nainstalována druhá aplikace SoundCurrent. Odstraňte jej s poslední aplikací, pokud jej nepotřebuje žádný jiný software.",
       "Odstranit VB-CABLE?",
       "Opravit neúplnou instalaci VB-CABLE",
-      "VB-CABLE není nainstalován. Otevřete \"%1\" a před otevřením nastavení kabelu restartujte systém Windows."
+      "VB-CABLE není nainstalován. Otevřete \"%1\" a před otevřením nastavení kabelu restartujte systém Windows.",
+      "VB-CABLE je již nainstalován. Pokud byl právě nainstalován nebo aktualizován, restartujte systém Windows před použitím ekvalizéru nebo nastavení VB-CABLE. Jinak vyberte reproduktory v SoundCurrent.",
+      "Neúplná instalace VB-CABLE byla odstraněna. Restartujte systém Windows, znovu otevřete %1, klikněte na Install Driver a pak znovu restartujte.",
+      "Nastavení VB-CABLE je dokončeno. Před použitím ekvalizéru nebo nastavení VB-CABLE nyní restartujte systém Windows. Předchozí výchozí zvuková zařízení byla zachována, pokud byla stále dostupná."
     ],
     "sk": [
       "Slovenčina",
@@ -1130,7 +1160,10 @@
       "VB-CABLE bol zachovaný, pretože je nainštalovaná druhá aplikácia SoundCurrent. Odstráňte ho s poslednou aplikáciou, ak ho nepotrebuje žiadny iný softvér.",
       "Odstrániť VB-CABLE?",
       "Opraviť neúplnú inštaláciu VB-CABLE",
-      "VB-CABLE nie je nainštalovaný. Otvorte \"%1\" a pred otvorením nastavení kábla reštartujte systém Windows."
+      "VB-CABLE nie je nainštalovaný. Otvorte \"%1\" a pred otvorením nastavení kábla reštartujte systém Windows.",
+      "VB-CABLE je už nainštalovaný. Ak bol práve nainštalovaný alebo aktualizovaný, reštartujte systém Windows pred použitím ekvalizéra alebo nastavení VB-CABLE. Inak vyberte reproduktory v SoundCurrent.",
+      "Neúplná inštalácia VB-CABLE bola odstránená. Reštartujte systém Windows, znova otvorte %1, kliknite na Install Driver a potom znova reštartujte.",
+      "Nastavenie VB-CABLE je dokončené. Pred použitím ekvalizéra alebo nastavení VB-CABLE teraz reštartujte systém Windows. Predchádzajúce predvolené zvukové zariadenia boli zachované, ak boli stále dostupné."
     ],
     "uk": [
       "Українська",
@@ -1233,7 +1266,10 @@
       "VB-CABLE збережено, оскільки інший застосунок SoundCurrent установлено. Видаліть його разом з останнім застосунком, якщо інше програмне забезпечення його не потребує.",
       "Видалити VB-CABLE?",
       "Відновити неповну інсталяцію VB-CABLE",
-      "VB-CABLE не встановлено. Відкрийте \"%1\", а потім перезапустіть Windows перед відкриттям параметрів кабелю."
+      "VB-CABLE не встановлено. Відкрийте \"%1\", а потім перезапустіть Windows перед відкриттям параметрів кабелю.",
+      "VB-CABLE уже встановлено. Якщо його щойно встановлено або оновлено, перезапустіть Windows перед використанням еквалайзера або параметрів VB-CABLE. Інакше виберіть динаміки в SoundCurrent.",
+      "Неповну інсталяцію VB-CABLE видалено. Перезапустіть Windows, знову відкрийте %1, натисніть Install Driver, а потім перезапустіть систему ще раз.",
+      "Налаштування VB-CABLE завершено. Перезапустіть Windows зараз перед використанням еквалайзера або параметрів VB-CABLE. Попередні типові аудіопристрої збережено, якщо вони залишалися доступними."
     ],
     "ru": [
       "Русский",
@@ -1336,7 +1372,10 @@
       "VB-CABLE сохранён, поскольку другое приложение SoundCurrent установлено. Удалите его вместе с последним приложением, если другому ПО он не нужен.",
       "Удалить VB-CABLE?",
       "Восстановить неполную установку VB-CABLE",
-      "VB-CABLE не установлен. Откройте \"%1\", затем перезапустите Windows перед открытием настроек кабеля."
+      "VB-CABLE не установлен. Откройте \"%1\", затем перезапустите Windows перед открытием настроек кабеля.",
+      "VB-CABLE уже установлен. Если он только что установлен или обновлён, перезапустите Windows перед использованием эквалайзера или настроек VB-CABLE. Иначе выберите динамики в SoundCurrent.",
+      "Неполная установка VB-CABLE удалена. Перезапустите Windows, снова откройте %1, нажмите Install Driver, затем перезапустите систему ещё раз.",
+      "Настройка VB-CABLE завершена. Перезапустите Windows сейчас перед использованием эквалайзера или настроек VB-CABLE. Прежние устройства аудио по умолчанию сохранены, если они оставались доступными."
     ],
     "el": [
       "Ελληνικά",
@@ -1439,7 +1478,10 @@
       "Το VB-CABLE διατηρήθηκε επειδή είναι εγκατεστημένη η άλλη εφαρμογή SoundCurrent. Αφαιρέστε το μαζί με την τελευταία εφαρμογή αν δεν το χρειάζεται άλλο λογισμικό.",
       "Αφαίρεση του VB-CABLE;",
       "Επιδιόρθωση ελλιπούς εγκατάστασης του VB-CABLE",
-      "Το VB-CABLE δεν είναι εγκατεστημένο. Ανοίξτε το \"%1\" και επανεκκινήστε τα Windows πριν ανοίξετε τις ρυθμίσεις του καλωδίου."
+      "Το VB-CABLE δεν είναι εγκατεστημένο. Ανοίξτε το \"%1\" και επανεκκινήστε τα Windows πριν ανοίξετε τις ρυθμίσεις του καλωδίου.",
+      "Το VB-CABLE είναι ήδη εγκατεστημένο. Αν μόλις εγκαταστάθηκε ή ενημερώθηκε, επανεκκινήστε τα Windows πριν χρησιμοποιήσετε τον ισοσταθμιστή ή τις ρυθμίσεις του VB-CABLE. Διαφορετικά, επιλέξτε τα ηχεία σας στο SoundCurrent.",
+      "Η ελλιπής εγκατάσταση του VB-CABLE αφαιρέθηκε. Επανεκκινήστε τα Windows, ανοίξτε ξανά το %1, κάντε κλικ στο Install Driver και επανεκκινήστε άλλη μία φορά.",
+      "Η ρύθμιση του VB-CABLE ολοκληρώθηκε. Επανεκκινήστε τώρα τα Windows πριν χρησιμοποιήσετε τον ισοσταθμιστή ή τις ρυθμίσεις του VB-CABLE. Οι προηγούμενες προεπιλεγμένες συσκευές ήχου διατηρήθηκαν όπου ήταν ακόμη διαθέσιμες."
     ],
     "tr": [
       "Türkçe",
@@ -1542,7 +1584,10 @@
       "Diğer SoundCurrent uygulaması yüklü olduğu için VB-CABLE korundu. Başka bir yazılım gerektirmiyorsa son uygulamayla birlikte kaldırın.",
       "VB-CABLE kaldırılsın mı?",
       "Eksik VB-CABLE kurulumunu onar",
-      "VB-CABLE yüklü değil. \"%1\" öğesini açın ve kablo ayarlarını açmadan önce Windows’u yeniden başlatın."
+      "VB-CABLE yüklü değil. \"%1\" öğesini açın ve kablo ayarlarını açmadan önce Windows’u yeniden başlatın.",
+      "VB-CABLE zaten yüklü. Yeni yüklendiyse veya güncellendiyse ekolayzırı veya VB-CABLE ayarlarını kullanmadan önce Windows’u yeniden başlatın. Aksi takdirde SoundCurrent içinde hoparlörlerinizi seçin.",
+      "Eksik VB-CABLE kurulumu kaldırıldı. Windows’u yeniden başlatın, %1 öğesini tekrar açın, Install Driver düğmesine tıklayın ve bir kez daha yeniden başlatın.",
+      "VB-CABLE kurulumu tamamlandı. Ekolayzırı veya VB-CABLE ayarlarını kullanmadan önce Windows’u şimdi yeniden başlatın. Önceki varsayılan ses aygıtlarınız hâlâ kullanılabilir oldukları ölçüde korundu."
     ],
     "sv": [
       "Svenska",
@@ -1645,7 +1690,10 @@
       "VB-CABLE behölls eftersom den andra SoundCurrent-appen är installerad. Ta bort det med den sista appen om ingen annan programvara behöver det.",
       "Ta bort VB-CABLE?",
       "Reparera ofullständig VB-CABLE-installation",
-      "VB-CABLE är inte installerat. Öppna \"%1\" och starta om Windows innan du öppnar kabelinställningarna."
+      "VB-CABLE är inte installerat. Öppna \"%1\" och starta om Windows innan du öppnar kabelinställningarna.",
+      "VB-CABLE är redan installerat. Starta om Windows innan du använder equalizern eller VB-CABLE-inställningarna om det just installerades eller uppdaterades. Välj annars dina högtalare i SoundCurrent.",
+      "Den ofullständiga VB-CABLE-installationen togs bort. Starta om Windows, öppna %1 igen, klicka på Install Driver och starta sedan om ännu en gång.",
+      "VB-CABLE-installationen är klar. Starta om Windows nu innan du använder equalizern eller VB-CABLE-inställningarna. Dina tidigare standardljudenheter behölls där de fortfarande var tillgängliga."
     ],
     "da": [
       "Dansk",
@@ -1748,7 +1796,10 @@
       "VB-CABLE blev bevaret, fordi den anden SoundCurrent-app er installeret. Fjern det sammen med den sidste app, hvis ingen anden software har brug for det.",
       "Fjern VB-CABLE?",
       "Reparer ufuldstændig VB-CABLE-installation",
-      "VB-CABLE er ikke installeret. Åbn \"%1\", og genstart Windows, før du åbner kabelindstillingerne."
+      "VB-CABLE er ikke installeret. Åbn \"%1\", og genstart Windows, før du åbner kabelindstillingerne.",
+      "VB-CABLE er allerede installeret. Hvis det lige er blevet installeret eller opdateret, skal du genstarte Windows, før du bruger equalizeren eller VB-CABLE-indstillingerne. Ellers skal du vælge dine højttalere i SoundCurrent.",
+      "Den ufuldstændige VB-CABLE-installation blev fjernet. Genstart Windows, åbn %1 igen, klik på Install Driver, og genstart derefter endnu en gang.",
+      "VB-CABLE-opsætningen er fuldført. Genstart Windows nu, før du bruger equalizeren eller VB-CABLE-indstillingerne. Dine tidligere standardlydenheder blev bevaret, hvor de stadig var tilgængelige."
     ],
     "nb": [
       "Norsk bokmål",
@@ -1851,7 +1902,10 @@
       "VB-CABLE ble beholdt fordi den andre SoundCurrent-appen er installert. Fjern det sammen med den siste appen hvis ingen annen programvare trenger det.",
       "Fjerne VB-CABLE?",
       "Reparer ufullstendig VB-CABLE-installasjon",
-      "VB-CABLE er ikke installert. Åpne \"%1\" og start Windows på nytt før du åpner kabelinnstillingene."
+      "VB-CABLE er ikke installert. Åpne \"%1\" og start Windows på nytt før du åpner kabelinnstillingene.",
+      "VB-CABLE er allerede installert. Hvis det nettopp ble installert eller oppdatert, start Windows på nytt før du bruker equalizeren eller VB-CABLE-innstillingene. Velg ellers høyttalerne dine i SoundCurrent.",
+      "Den ufullstendige VB-CABLE-installasjonen ble fjernet. Start Windows på nytt, åpne %1 igjen, klikk på Install Driver og start så på nytt en gang til.",
+      "VB-CABLE-oppsettet er fullført. Start Windows på nytt nå før du bruker equalizeren eller VB-CABLE-innstillingene. De tidligere standardlydenhetene dine ble beholdt der de fortsatt var tilgjengelige."
     ],
     "fi": [
       "Suomi",
@@ -1954,7 +2008,10 @@
       "VB-CABLE säilytettiin, koska toinen SoundCurrent-sovellus on asennettu. Poista se viimeisen sovelluksen kanssa, jos muut ohjelmistot eivät tarvitse sitä.",
       "Poistetaanko VB-CABLE?",
       "Korjaa puutteellinen VB-CABLE-asennus",
-      "VB-CABLEa ei ole asennettu. Avaa \"%1\" ja käynnistä Windows uudelleen ennen kaapelin asetusten avaamista."
+      "VB-CABLEa ei ole asennettu. Avaa \"%1\" ja käynnistä Windows uudelleen ennen kaapelin asetusten avaamista.",
+      "VB-CABLE on jo asennettu. Jos se on juuri asennettu tai päivitetty, käynnistä Windows uudelleen ennen taajuuskorjaimen tai VB-CABLEn asetusten käyttöä. Muussa tapauksessa valitse kaiuttimet SoundCurrentissa.",
+      "Puutteellinen VB-CABLE-asennus poistettiin. Käynnistä Windows uudelleen, avaa %1 uudelleen, napsauta Install Driver ja käynnistä sitten uudelleen vielä kerran.",
+      "VB-CABLEn asennus on valmis. Käynnistä Windows nyt uudelleen ennen taajuuskorjaimen tai VB-CABLEn asetusten käyttöä. Aiemmat oletusäänilaitteet säilytettiin, jos ne olivat edelleen käytettävissä."
     ],
     "ro": [
       "Română",
@@ -2057,7 +2114,10 @@
       "VB-CABLE a fost păstrat deoarece cealaltă aplicație SoundCurrent este instalată. Eliminați-l odată cu ultima aplicație dacă niciun alt program nu are nevoie de el.",
       "Eliminați VB-CABLE?",
       "Reparați instalarea incompletă a VB-CABLE",
-      "VB-CABLE nu este instalat. Deschideți \"%1\", apoi reporniți Windows înainte de a deschide setările cablului."
+      "VB-CABLE nu este instalat. Deschideți \"%1\", apoi reporniți Windows înainte de a deschide setările cablului.",
+      "VB-CABLE este deja instalat. Dacă tocmai a fost instalat sau actualizat, reporniți Windows înainte de a utiliza egalizatorul sau setările VB-CABLE. În caz contrar, selectați difuzoarele în SoundCurrent.",
+      "Instalarea incompletă a VB-CABLE a fost eliminată. Reporniți Windows, deschideți din nou %1, faceți clic pe Install Driver, apoi reporniți încă o dată.",
+      "Configurarea VB-CABLE s-a încheiat. Reporniți Windows acum înainte de a utiliza egalizatorul sau setările VB-CABLE. Dispozitivele audio implicite anterioare au fost păstrate acolo unde erau încă disponibile."
     ],
     "hu": [
       "Magyar",
@@ -2160,7 +2220,10 @@
       "A VB-CABLE megmaradt, mert a másik SoundCurrent alkalmazás telepítve van. Az utolsó alkalmazással együtt távolítsa el, ha más szoftvernek nincs szüksége rá.",
       "Eltávolítja a VB-CABLE-t?",
       "Hiányos VB-CABLE-telepítés javítása",
-      "A VB-CABLE nincs telepítve. Nyissa meg a \"%1\" lehetőséget, majd indítsa újra a Windowst a kábel beállításainak megnyitása előtt."
+      "A VB-CABLE nincs telepítve. Nyissa meg a \"%1\" lehetőséget, majd indítsa újra a Windowst a kábel beállításainak megnyitása előtt.",
+      "A VB-CABLE már telepítve van. Ha most telepítették vagy frissítették, indítsa újra a Windowst a hangszínszabályzó vagy a VB-CABLE beállításainak használata előtt. Ellenkező esetben válassza ki a hangszórókat a SoundCurrentben.",
+      "A hiányos VB-CABLE-telepítést eltávolították. Indítsa újra a Windowst, nyissa meg újra a %1 lehetőséget, kattintson az Install Driver gombra, majd indítsa újra még egyszer.",
+      "A VB-CABLE beállítása befejeződött. Most indítsa újra a Windowst a hangszínszabályzó vagy a VB-CABLE beállításainak használata előtt. A korábbi alapértelmezett hangeszközök megmaradtak, ahol még elérhetők voltak."
     ],
     "ar": [
       "العربية",
@@ -2263,7 +2326,10 @@
       "تم الاحتفاظ بـ VB-CABLE لأن تطبيق SoundCurrent الآخر مثبت. أزله مع التطبيق الأخير إذا لم يكن أي برنامج آخر بحاجة إليه.",
       "إزالة VB-CABLE؟",
       "إصلاح تثبيت VB-CABLE غير المكتمل",
-      "VB-CABLE غير مثبت. افتح \"%1\"، ثم أعد تشغيل Windows قبل فتح إعدادات الكابل."
+      "VB-CABLE غير مثبت. افتح \"%1\"، ثم أعد تشغيل Windows قبل فتح إعدادات الكابل.",
+      "VB-CABLE مثبت بالفعل. إذا تم تثبيته أو تحديثه للتو، فأعد تشغيل Windows قبل استخدام المعادل أو إعدادات VB-CABLE. وإلا فاختر مكبرات الصوت في SoundCurrent.",
+      "تمت إزالة تثبيت VB-CABLE غير المكتمل. أعد تشغيل Windows، وافتح %1 مرة أخرى، وانقر على Install Driver، ثم أعد التشغيل مرة أخرى.",
+      "اكتمل إعداد VB-CABLE. أعد تشغيل Windows الآن قبل استخدام المعادل أو إعدادات VB-CABLE. تم الاحتفاظ بأجهزة الصوت الافتراضية السابقة حيث كانت لا تزال متاحة."
     ],
     "he": [
       "עברית",
@@ -2366,7 +2432,10 @@
       "VB-CABLE נשמר משום שאפליקציית SoundCurrent האחרת מותקנת. הסירו אותו עם האפליקציה האחרונה אם תוכנות אחרות אינן זקוקות לו.",
       "להסיר את VB-CABLE?",
       "תיקון התקנת VB-CABLE שלא הושלמה",
-      "VB-CABLE אינו מותקן. פתחו את \"%1\", ואז הפעילו מחדש את Windows לפני פתיחת הגדרות הכבל."
+      "VB-CABLE אינו מותקן. פתחו את \"%1\", ואז הפעילו מחדש את Windows לפני פתיחת הגדרות הכבל.",
+      "VB-CABLE כבר מותקן. אם הוא הותקן או עודכן זה עתה, הפעילו מחדש את Windows לפני השימוש באקולייזר או בהגדרות VB-CABLE. אחרת, בחרו ברמקולים שלכם ב-SoundCurrent.",
+      "התקנת VB-CABLE שלא הושלמה הוסרה. הפעילו מחדש את Windows, פתחו שוב את %1, לחצו על Install Driver ואז הפעילו מחדש פעם נוספת.",
+      "הגדרת VB-CABLE הסתיימה. הפעילו מחדש את Windows עכשיו לפני השימוש באקולייזר או בהגדרות VB-CABLE. התקני השמע הקודמים שהוגדרו כברירת מחדל נשמרו במקומות שבהם עדיין היו זמינים."
     ],
     "fa": [
       "فارسی",
@@ -2469,7 +2538,10 @@
       "VB-CABLE نگه داشته شد چون برنامهٔ دیگر SoundCurrent نصب است. اگر نرم‌افزار دیگری به آن نیاز ندارد، آن را همراه با آخرین برنامه حذف کنید.",
       "VB-CABLE حذف شود؟",
       "تعمیر نصب ناقص VB-CABLE",
-      "VB-CABLE نصب نشده است. \"%1\" را باز کنید، سپس پیش از باز کردن تنظیمات کابل، Windows را دوباره راه‌اندازی کنید."
+      "VB-CABLE نصب نشده است. \"%1\" را باز کنید، سپس پیش از باز کردن تنظیمات کابل، Windows را دوباره راه‌اندازی کنید.",
+      "VB-CABLE از قبل نصب شده است. اگر به‌تازگی نصب یا به‌روز شده است، پیش از استفاده از اکولایزر یا تنظیمات VB-CABLE، Windows را دوباره راه‌اندازی کنید. در غیر این صورت، بلندگوهای خود را در SoundCurrent انتخاب کنید.",
+      "نصب ناقص VB-CABLE حذف شد. Windows را دوباره راه‌اندازی کنید، %1 را دوباره باز کنید، روی Install Driver کلیک کنید و سپس یک بار دیگر سیستم را دوباره راه‌اندازی کنید.",
+      "راه‌اندازی VB-CABLE پایان یافت. پیش از استفاده از اکولایزر یا تنظیمات VB-CABLE، اکنون Windows را دوباره راه‌اندازی کنید. دستگاه‌های صوتی پیش‌فرض قبلی تا جایی که همچنان در دسترس بودند حفظ شدند."
     ],
     "zh-Hans": [
       "简体中文",
@@ -2572,7 +2644,10 @@
       "由于另一个 SoundCurrent 应用仍已安装，VB-CABLE 已保留。如果其他软件不需要它，请在卸载最后一个应用时移除它。",
       "移除 VB-CABLE？",
       "修复不完整的 VB-CABLE 安装",
-      "VB-CABLE 未安装。请打开 \"%1\"，然后重启 Windows，再打开音频线缆设置。"
+      "VB-CABLE 未安装。请打开 \"%1\"，然后重启 Windows，再打开音频线缆设置。",
+      "VB-CABLE 已安装。如果刚安装或更新，请在使用均衡器或 VB-CABLE 设置前重启 Windows。否则，请在 SoundCurrent 中选择扬声器。",
+      "不完整的 VB-CABLE 安装已移除。请重启 Windows，再次打开 %1，点击 Install Driver，然后再重启一次。",
+      "VB-CABLE 设置已完成。请立即重启 Windows，再使用均衡器或 VB-CABLE 设置。之前仍可用的默认音频设备已保留。"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -2675,7 +2750,10 @@
       "由於另一個 SoundCurrent 應用程式仍已安裝，VB-CABLE 已保留。如果其他軟體不需要它，請在解除安裝最後一個應用程式時移除它。",
       "移除 VB-CABLE？",
       "修復不完整的 VB-CABLE 安裝",
-      "VB-CABLE 未安裝。請開啟 \"%1\"，然後重新啟動 Windows，再開啟音訊線纜設定。"
+      "VB-CABLE 未安裝。請開啟 \"%1\"，然後重新啟動 Windows，再開啟音訊線纜設定。",
+      "VB-CABLE 已安裝。如果剛安裝或更新，請在使用等化器或 VB-CABLE 設定前重新啟動 Windows。否則，請在 SoundCurrent 中選擇喇叭。",
+      "不完整的 VB-CABLE 安裝已移除。請重新啟動 Windows，再次開啟 %1，點擊 Install Driver，然後再重新啟動一次。",
+      "VB-CABLE 設定已完成。請立即重新啟動 Windows，再使用等化器或 VB-CABLE 設定。先前仍可用的預設音訊裝置已保留。"
     ],
     "ja": [
       "日本語",
@@ -2778,7 +2856,10 @@
       "もう一方の SoundCurrent アプリがインストールされているため、VB-CABLE は保持されました。他のソフトウェアで不要であれば、最後のアプリと一緒に削除してください。",
       "VB-CABLE を削除しますか？",
       "不完全な VB-CABLE のインストールを修復",
-      "VB-CABLE がインストールされていません。\"%1\" を開き、Windows を再起動してからケーブルの設定を開いてください。"
+      "VB-CABLE がインストールされていません。\"%1\" を開き、Windows を再起動してからケーブルの設定を開いてください。",
+      "VB-CABLE は既にインストールされています。インストールまたは更新した直後であれば、イコライザーや VB-CABLE の設定を使用する前に Windows を再起動してください。それ以外の場合は、SoundCurrent でスピーカーを選択してください。",
+      "不完全な VB-CABLE のインストールが削除されました。Windows を再起動し、%1 を再度開いて Install Driver をクリックしてから、もう一度再起動してください。",
+      "VB-CABLE のセットアップが完了しました。イコライザーや VB-CABLE の設定を使用する前に、今すぐ Windows を再起動してください。以前の既定のオーディオデバイスは、引き続き利用可能なものについて保持されました。"
     ],
     "ko": [
       "한국어",
@@ -2881,7 +2962,10 @@
       "다른 SoundCurrent 앱이 설치되어 있어 VB-CABLE이 유지되었습니다. 다른 소프트웨어에서 필요하지 않다면 마지막 앱과 함께 제거하세요.",
       "VB-CABLE을 제거할까요?",
       "불완전한 VB-CABLE 설치 복구",
-      "VB-CABLE이 설치되지 않았습니다. \"%1\"을 열고 Windows를 다시 시작한 후 케이블 설정을 여세요."
+      "VB-CABLE이 설치되지 않았습니다. \"%1\"을 열고 Windows를 다시 시작한 후 케이블 설정을 여세요.",
+      "VB-CABLE이 이미 설치되어 있습니다. 방금 설치하거나 업데이트했다면 이퀄라이저 또는 VB-CABLE 설정을 사용하기 전에 Windows를 다시 시작하세요. 그렇지 않다면 SoundCurrent에서 스피커를 선택하세요.",
+      "불완전한 VB-CABLE 설치가 제거되었습니다. Windows를 다시 시작하고 %1을 다시 열어 Install Driver를 클릭한 후 한 번 더 다시 시작하세요.",
+      "VB-CABLE 설정이 완료되었습니다. 이퀄라이저 또는 VB-CABLE 설정을 사용하기 전에 지금 Windows를 다시 시작하세요. 이전 기본 오디오 장치는 여전히 사용 가능한 경우 유지되었습니다."
     ],
     "hi": [
       "हिन्दी",
@@ -2984,7 +3068,10 @@
       "VB-CABLE को रखा गया क्योंकि दूसरा SoundCurrent ऐप स्थापित है। यदि किसी अन्य सॉफ़्टवेयर को इसकी आवश्यकता नहीं है, तो इसे अंतिम ऐप के साथ हटा दें।",
       "VB-CABLE हटाएँ?",
       "अधूरी VB-CABLE स्थापना की मरम्मत करें",
-      "VB-CABLE स्थापित नहीं है। \"%1\" खोलें, फिर केबल की सेटिंग खोलने से पहले Windows को पुनरारंभ करें।"
+      "VB-CABLE स्थापित नहीं है। \"%1\" खोलें, फिर केबल की सेटिंग खोलने से पहले Windows को पुनरारंभ करें।",
+      "VB-CABLE पहले से स्थापित है। यदि इसे अभी स्थापित या अपडेट किया गया है, तो इक्वलाइज़र या VB-CABLE की सेटिंग उपयोग करने से पहले Windows को पुनरारंभ करें। अन्यथा, SoundCurrent में अपने स्पीकर चुनें।",
+      "अधूरी VB-CABLE स्थापना हटा दी गई। Windows को पुनरारंभ करें, %1 फिर से खोलें, Install Driver पर क्लिक करें और फिर एक बार और पुनरारंभ करें।",
+      "VB-CABLE सेटअप पूरा हुआ। इक्वलाइज़र या VB-CABLE की सेटिंग उपयोग करने से पहले अब Windows को पुनरारंभ करें। पहले के डिफ़ॉल्ट ऑडियो उपकरण जहाँ अब भी उपलब्ध थे, वहाँ बनाए रखे गए।"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -3087,7 +3174,10 @@
       "VB-CABLE dipertahankan karena aplikasi SoundCurrent lainnya terpasang. Hapus bersama aplikasi terakhir jika tidak ada perangkat lunak lain yang membutuhkannya.",
       "Hapus VB-CABLE?",
       "Perbaiki instalasi VB-CABLE yang tidak lengkap",
-      "VB-CABLE belum terpasang. Buka \"%1\", lalu mulai ulang Windows sebelum membuka pengaturan kabel."
+      "VB-CABLE belum terpasang. Buka \"%1\", lalu mulai ulang Windows sebelum membuka pengaturan kabel.",
+      "VB-CABLE sudah terpasang. Jika baru saja dipasang atau diperbarui, mulai ulang Windows sebelum menggunakan equalizer atau pengaturan VB-CABLE. Jika tidak, pilih speaker Anda di SoundCurrent.",
+      "Instalasi VB-CABLE yang tidak lengkap telah dihapus. Mulai ulang Windows, buka %1 lagi, klik Install Driver, lalu mulai ulang sekali lagi.",
+      "Penyiapan VB-CABLE selesai. Mulai ulang Windows sekarang sebelum menggunakan equalizer atau pengaturan VB-CABLE. Perangkat audio default sebelumnya dipertahankan jika masih tersedia."
     ],
     "vi": [
       "Tiếng Việt",
@@ -3190,7 +3280,10 @@
       "VB-CABLE được giữ lại vì ứng dụng SoundCurrent còn lại đã được cài đặt. Hãy gỡ nó cùng ứng dụng cuối cùng nếu không có phần mềm nào khác cần nó.",
       "Gỡ VB-CABLE?",
       "Sửa chữa bản cài đặt VB-CABLE không đầy đủ",
-      "VB-CABLE chưa được cài đặt. Mở \"%1\", rồi khởi động lại Windows trước khi mở cài đặt cáp."
+      "VB-CABLE chưa được cài đặt. Mở \"%1\", rồi khởi động lại Windows trước khi mở cài đặt cáp.",
+      "VB-CABLE đã được cài đặt. Nếu vừa được cài đặt hoặc cập nhật, hãy khởi động lại Windows trước khi sử dụng bộ cân bằng âm thanh hoặc cài đặt VB-CABLE. Nếu không, hãy chọn loa trong SoundCurrent.",
+      "Bản cài đặt VB-CABLE không đầy đủ đã được gỡ. Khởi động lại Windows, mở lại %1, nhấp vào Install Driver, rồi khởi động lại một lần nữa.",
+      "Thiết lập VB-CABLE đã hoàn tất. Khởi động lại Windows ngay trước khi sử dụng bộ cân bằng âm thanh hoặc cài đặt VB-CABLE. Các thiết bị âm thanh mặc định trước đó được giữ lại nếu vẫn còn khả dụng."
     ],
     "th": [
       "ไทย",
@@ -3293,7 +3386,10 @@
       "เก็บ VB-CABLE ไว้เนื่องจากยังติดตั้งแอป SoundCurrent อีกแอปอยู่ ให้ลบพร้อมกับแอปสุดท้ายหากไม่มีซอฟต์แวร์อื่นต้องใช้",
       "ลบ VB-CABLE หรือไม่?",
       "ซ่อมแซมการติดตั้ง VB-CABLE ที่ไม่สมบูรณ์",
-      "ยังไม่ได้ติดตั้ง VB-CABLE เปิด \"%1\" แล้วเริ่ม Windows ใหม่ก่อนเปิดการตั้งค่าสายสัญญาณ"
+      "ยังไม่ได้ติดตั้ง VB-CABLE เปิด \"%1\" แล้วเริ่ม Windows ใหม่ก่อนเปิดการตั้งค่าสายสัญญาณ",
+      "ติดตั้ง VB-CABLE อยู่แล้ว หากเพิ่งติดตั้งหรืออัปเดต ให้เริ่ม Windows ใหม่ก่อนใช้อีควอไลเซอร์หรือการตั้งค่า VB-CABLE มิฉะนั้น ให้เลือกลำโพงของคุณใน SoundCurrent",
+      "ลบการติดตั้ง VB-CABLE ที่ไม่สมบูรณ์แล้ว เริ่ม Windows ใหม่ เปิด %1 อีกครั้ง คลิก Install Driver แล้วเริ่มใหม่อีกครั้ง",
+      "การตั้งค่า VB-CABLE เสร็จสมบูรณ์แล้ว เริ่ม Windows ใหม่ตอนนี้ก่อนใช้อีควอไลเซอร์หรือการตั้งค่า VB-CABLE เก็บอุปกรณ์เสียงเริ่มต้นเดิมไว้ในกรณีที่ยังใช้งานได้"
     ],
     "sw": [
       "Kiswahili",
@@ -3396,7 +3492,10 @@
       "VB-CABLE imehifadhiwa kwa sababu programu nyingine ya SoundCurrent imesakinishwa. Iondoe pamoja na programu ya mwisho ikiwa hakuna programu nyingine inayoihitaji.",
       "Ondoa VB-CABLE?",
       "Rekebisha usakinishaji wa VB-CABLE ambao haujakamilika",
-      "VB-CABLE haijasakinishwa. Fungua \"%1\", kisha uanzishe Windows upya kabla ya kufungua mipangilio ya kebo."
+      "VB-CABLE haijasakinishwa. Fungua \"%1\", kisha uanzishe Windows upya kabla ya kufungua mipangilio ya kebo.",
+      "VB-CABLE tayari imesakinishwa. Ikiwa imesakinishwa au kusasishwa hivi karibuni, anzisha Windows upya kabla ya kutumia kisawazishi au mipangilio ya VB-CABLE. Vinginevyo, chagua spika zako katika SoundCurrent.",
+      "Usakinishaji wa VB-CABLE ambao haujakamilika umeondolewa. Anzisha Windows upya, fungua %1 tena, bofya Install Driver, kisha uanzishe upya mara nyingine.",
+      "Usanidi wa VB-CABLE umekamilika. Anzisha Windows upya sasa kabla ya kutumia kisawazishi au mipangilio ya VB-CABLE. Vifaa vya sauti chaguomsingi vya awali vimehifadhiwa pale ambapo bado vinapatikana."
     ],
     "nn": [
       "Norsk nynorsk",
@@ -3499,7 +3598,10 @@
       "VB-CABLE vart halde på fordi den andre SoundCurrent-appen er installert. Fjern det saman med den siste appen dersom inga anna programvare treng det.",
       "Fjerne VB-CABLE?",
       "Reparer ufullstendig VB-CABLE-installasjon",
-      "VB-CABLE er ikkje installert. Opne \"%1\" og start Windows på nytt før du opnar kabelinnstillingane."
+      "VB-CABLE er ikkje installert. Opne \"%1\" og start Windows på nytt før du opnar kabelinnstillingane.",
+      "VB-CABLE er allereie installert. Dersom det nettopp vart installert eller oppdatert, start Windows på nytt før du brukar equalizeren eller VB-CABLE-innstillingane. Vel elles høgtalarane dine i SoundCurrent.",
+      "Den ufullstendige VB-CABLE-installasjonen vart fjerna. Start Windows på nytt, opne %1 igjen, klikk på Install Driver og start så på nytt ein gong til.",
+      "VB-CABLE-oppsettet er fullført. Start Windows på nytt no før du brukar equalizeren eller VB-CABLE-innstillingane. Dei tidlegare standardlydeiningane dine vart haldne på der dei framleis var tilgjengelege."
     ]
   },
   "requiredCompleteLocales": [

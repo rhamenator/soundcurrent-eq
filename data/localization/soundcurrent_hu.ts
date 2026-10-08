@@ -2246,6 +2246,10 @@ Importálja a könyvtárba?</translation>
       <translation>Az illesztőprogram-csomag hiányos, vagy a Windows nem tudja ellenőrizni az aláírását.</translation>
     </message>
     <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>A hiányos VB-CABLE-telepítést eltávolították. Indítsa újra a Windowst, nyissa meg újra a %1 lehetőséget, kattintson az Install Driver gombra, majd indítsa újra még egyszer.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Hiányzik a hangútvonalakat megőrző beállítási segédprogram.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
@@ -2390,6 +2394,10 @@ Importálja a könyvtárba?</translation>
       <translation>Rendszer területi beállításainak használata</translation>
     </message>
     <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>A VB-CABLE már telepítve van. Ha most telepítették vagy frissítették, indítsa újra a Windowst a hangszínszabályzó vagy a VB-CABLE beállításainak használata előtt. Ellenkező esetben válassza ki a hangszórókat a SoundCurrentben.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>A VB-CABLE nincs telepítve. Nyissa meg a "%1" lehetőséget, majd indítsa újra a Windowst a kábel beállításainak megnyitása előtt.</translation>
     </message>
@@ -2409,6 +2417,10 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
       <translation>A VB-CABLE beállításait nem sikerült megnyitni. Ha az illesztőprogramot most telepítették vagy frissítették, indítsa újra a Windowst, majd próbálja újra.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>A VB-CABLE beállítása befejeződött. Most indítsa újra a Windowst a hangszínszabályzó vagy a VB-CABLE beállításainak használata előtt. A korábbi alapértelmezett hangeszközök megmaradtak, ahol még elérhetők voltak.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

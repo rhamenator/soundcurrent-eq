@@ -180,7 +180,17 @@ class Markup(HTMLParser):
         self.structure.append(('empty', tag, tuple(sorted(attrs))))
 
 
+# Exact labels in the third-party installer are protected only in reviewed
+# instruction sources. SoundCurrent's own button captions remain translatable.
+EXTERNAL_UI_LABELS = {
+    'The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.': ('Install Driver',),
+}
+
+
 def validate_text(source, translated):
+    for label in EXTERNAL_UI_LABELS.get(source, ()):
+        if source.count(label) != translated.count(label):
+            raise ValueError('External installer label changed: ' + label)
     if not translated.strip():
         raise ValueError('Blank finished translation')
     if Counter(PLACEHOLDER.findall(source)) != Counter(PLACEHOLDER.findall(translated)):

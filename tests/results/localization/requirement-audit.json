@@ -174,5 +174,9 @@
   "secondPassCableDialogCaptions": {
     "status": "four messages translated; host nested-caption expression tested; real Windows dialogs and lifecycle pending",
     "evidence": "tests/results/localization/second-pass-cable-dialog-captions.json"
+  },
+  "secondPassCableCompletion": {
+    "status": "three notices translated and external-label guard tested; Windows install/repair flows and packages pending",
+    "evidence": "tests/results/localization/second-pass-cable-completion.json"
   }
 }

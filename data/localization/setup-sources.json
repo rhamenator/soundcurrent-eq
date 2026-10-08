@@ -25,5 +25,8 @@
   "VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.",
   "Remove VB-CABLE?",
   "Repair incomplete VB-CABLE installation",
-  "VB-CABLE is not installed. Open \"%1\", then restart Windows before opening the cable settings."
+  "VB-CABLE is not installed. Open \"%1\", then restart Windows before opening the cable settings.",
+  "VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.",
+  "The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.",
+  "VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available."
 ]

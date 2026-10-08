@@ -2246,6 +2246,10 @@ Import into your library?</source>
       <translation>드라이버 패키지가 불완전하거나 Windows에서 서명을 확인할 수 없습니다.</translation>
     </message>
     <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>불완전한 VB-CABLE 설치가 제거되었습니다. Windows를 다시 시작하고 %1을 다시 열어 Install Driver를 클릭한 후 한 번 더 다시 시작하세요.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>오디오 라우팅을 유지하는 설정 도우미가 없습니다.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
@@ -2390,6 +2394,10 @@ Import into your library?</source>
       <translation>시스템 지역 설정 사용</translation>
     </message>
     <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>VB-CABLE이 이미 설치되어 있습니다. 방금 설치하거나 업데이트했다면 이퀄라이저 또는 VB-CABLE 설정을 사용하기 전에 Windows를 다시 시작하세요. 그렇지 않다면 SoundCurrent에서 스피커를 선택하세요.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE이 설치되지 않았습니다. "%1"을 열고 Windows를 다시 시작한 후 케이블 설정을 여세요.</translation>
     </message>
@@ -2409,6 +2417,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
       <translation>VB-CABLE 설정을 열 수 없습니다. 드라이버를 방금 설치하거나 업데이트했다면 Windows를 다시 시작한 후 다시 시도하세요.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>VB-CABLE 설정이 완료되었습니다. 이퀄라이저 또는 VB-CABLE 설정을 사용하기 전에 지금 Windows를 다시 시작하세요. 이전 기본 오디오 장치는 여전히 사용 가능한 경우 유지되었습니다.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

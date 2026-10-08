@@ -2246,6 +2246,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Sürücü paketi eksik veya Windows imzasını doğrulayamıyor.</translation>
     </message>
     <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>Eksik VB-CABLE kurulumu kaldırıldı. Windows’u yeniden başlatın, %1 öğesini tekrar açın, Install Driver düğmesine tıklayın ve bir kez daha yeniden başlatın.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Ses yönlendirmesini koruyan kurulum yardımcısı eksik.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
@@ -2390,6 +2394,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Sistem yerel ayarını kullan</translation>
     </message>
     <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>VB-CABLE zaten yüklü. Yeni yüklendiyse veya güncellendiyse ekolayzırı veya VB-CABLE ayarlarını kullanmadan önce Windows’u yeniden başlatın. Aksi takdirde SoundCurrent içinde hoparlörlerinizi seçin.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE yüklü değil. "%1" öğesini açın ve kablo ayarlarını açmadan önce Windows’u yeniden başlatın.</translation>
     </message>
@@ -2409,6 +2417,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
       <translation>VB-CABLE ayarları açılamadı. Sürücü yeni yüklendiyse veya güncellendiyse Windows’u yeniden başlatıp tekrar deneyin.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>VB-CABLE kurulumu tamamlandı. Ekolayzırı veya VB-CABLE ayarlarını kullanmadan önce Windows’u şimdi yeniden başlatın. Önceki varsayılan ses aygıtlarınız hâlâ kullanılabilir oldukları ölçüde korundu.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

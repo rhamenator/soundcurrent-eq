@@ -130,6 +130,15 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual([row['literal'] for row in result['candidates']], ['Unmarked label'])
             self.assertFalse(result['wholeInterfaceCoverageProven'])
 
+    def test_external_installer_label_is_protected_in_reviewed_instruction(self):
+        source = 'The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.'
+        catalog.validate_text(source, 'Installation retirée. Ouvrez %1 puis cliquez sur Install Driver.')
+        for altered in ('Installer le pilote', 'install driver', 'Install Driver Install Driver', ''):
+            with self.assertRaisesRegex(ValueError, 'External installer label changed'):
+                catalog.validate_text(source, 'Installation retirée. Ouvrez %1 puis cliquez sur ' + altered + '.')
+        # This rule does not freeze translatable SoundCurrent-owned action labels.
+        catalog.validate_text('Audio driver setup', 'Configuration du pilote audio')
+
     def test_setup_lookup_keys_have_required_catalog_entries(self):
         root = Path(__file__).resolve().parents[1]
         required = json.loads((root / 'data/localization/setup-sources.json').read_text())

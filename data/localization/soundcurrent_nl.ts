@@ -2246,6 +2246,10 @@ Importeren in uw bibliotheek?</translation>
       <translation>Het stuurprogrammapakket is onvolledig of Windows kan de handtekening niet verifiëren.</translation>
     </message>
     <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>De onvolledige VB-CABLE-installatie is verwijderd. Start Windows opnieuw op, open %1 opnieuw, klik op Install Driver en start daarna nogmaals opnieuw op.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>De installatiehulp die audioroutes behoudt ontbreekt.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
@@ -2390,6 +2394,10 @@ Importeren in uw bibliotheek?</translation>
       <translation>Regionale systeeminstellingen gebruiken</translation>
     </message>
     <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>VB-CABLE is al geïnstalleerd. Start Windows opnieuw op voordat u de equalizer of VB-CABLE-instellingen gebruikt als het zojuist is geïnstalleerd of bijgewerkt. Kies anders uw luidsprekers in SoundCurrent.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE is niet geïnstalleerd. Open "%1" en start Windows opnieuw op voordat u de kabelinstellingen opent.</translation>
     </message>
@@ -2409,6 +2417,10 @@ Importeren in uw bibliotheek?</translation>
     <message>
       <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
       <translation>De VB-CABLE-instellingen konden niet worden geopend. Start Windows opnieuw op als het stuurprogramma zojuist is geïnstalleerd of bijgewerkt en probeer het opnieuw.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>Het instellen van VB-CABLE is voltooid. Start Windows nu opnieuw op voordat u de equalizer of VB-CABLE-instellingen gebruikt. Uw eerdere standaardaudioapparaten zijn behouden waar ze nog beschikbaar waren.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

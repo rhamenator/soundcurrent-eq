@@ -2246,6 +2246,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Kifurushi cha kiendeshi hakijakamilika au Windows haiwezi kuthibitisha sahihi yake.</translation>
     </message>
     <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>Usakinishaji wa VB-CABLE ambao haujakamilika umeondolewa. Anzisha Windows upya, fungua %1 tena, bofya Install Driver, kisha uanzishe upya mara nyingine.</translation>
+    </message>
+    <message>
       <source>The route-preserving setup helper is missing.</source>
       <translation>Programu saidizi ya usanidi inayohifadhi njia za sauti haipo.</translation>
       <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
@@ -2390,6 +2394,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Tumia mipangilio ya eneo ya mfumo</translation>
     </message>
     <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>VB-CABLE tayari imesakinishwa. Ikiwa imesakinishwa au kusasishwa hivi karibuni, anzisha Windows upya kabla ya kutumia kisawazishi au mipangilio ya VB-CABLE. Vinginevyo, chagua spika zako katika SoundCurrent.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE haijasakinishwa. Fungua "%1", kisha uanzishe Windows upya kabla ya kufungua mipangilio ya kebo.</translation>
     </message>
@@ -2409,6 +2417,10 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
       <translation>Mipangilio ya VB-CABLE haikuweza kufunguliwa. Anzisha Windows upya ikiwa kiendeshi kimesakinishwa au kusasishwa hivi karibuni, kisha ujaribu tena.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>Usanidi wa VB-CABLE umekamilika. Anzisha Windows upya sasa kabla ya kutumia kisawazishi au mipangilio ya VB-CABLE. Vifaa vya sauti chaguomsingi vya awali vimehifadhiwa pale ambapo bado vinapatikana.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
