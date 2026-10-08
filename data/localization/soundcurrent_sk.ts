@@ -4,259 +4,267 @@
     <name>SoundCurrent</name>
     <message>
       <source> (currently selected)</source>
-      <translation type="unfinished" />
+      <translation> (aktuálne vybrané)</translation>
     </message>
     <message>
       <source> (restored selection)</source>
-      <translation type="unfinished" />
+      <translation> (obnovený výber)</translation>
     </message>
     <message>
       <source> [custom]</source>
-      <translation type="unfinished" />
+      <translation> [vlastné]</translation>
     </message>
     <message>
       <source> · mono</source>
-      <translation type="unfinished" />
+      <translation> · mono</translation>
     </message>
     <message>
       <source> · no USB microphone detected</source>
-      <translation type="unfinished" />
+      <translation> · nebol zistený žiadny mikrofón USB</translation>
     </message>
     <message>
       <source> · stereo</source>
-      <translation type="unfinished" />
+      <translation> · stereo</translation>
     </message>
     <message>
       <source>%1
 
 Technical details:
 %2</source>
-      <translation type="unfinished" />
+      <translation>%1
+
+Technické podrobnosti:
+%2</translation>
     </message>
     <message>
       <source>%1
 The app remains open; your settings have been kept.</source>
-      <translation type="unfinished" />
+      <translation>%1
+Aplikácia zostáva otvorená; vaše nastavenia boli zachované.</translation>
     </message>
     <message>
       <source>%1 %2%3 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 %2%3 dB</translation>
     </message>
     <message>
       <source>%1 / %2
 %3
 Apply this correction to the %4 route?</source>
-      <translation type="unfinished" />
+      <translation>%1 / %2
+%3
+Použiť túto korekciu pre signálovú cestu typu %4?</translation>
     </message>
     <message>
       <source>%1 / %2
 %3
 Import into your library?</source>
-      <translation type="unfinished" />
+      <translation>%1 / %2
+%3
+Importovať do vašej knižnice?</translation>
     </message>
     <message>
       <source>%1 Hz: measured %2%3 dB; suggested %4%5 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 Hz: namerané %2%3 dB; odporúčané %4%5 dB</translation>
     </message>
     <message>
       <source>%1 Hz: too quiet to measure</source>
-      <translation type="unfinished" />
+      <translation>%1 Hz: príliš tiché na meranie</translation>
     </message>
     <message>
       <source>%1 disconnected. </source>
-      <translation type="unfinished" />
+      <translation>%1 odpojené. </translation>
     </message>
     <message>
       <source>%1%2 dB</source>
-      <translation type="unfinished" />
+      <translation>%1%2 dB</translation>
     </message>
     <message>
       <source>Abort</source>
-      <translation type="unfinished" />
+      <translation>Prerušiť</translation>
     </message>
     <message>
       <source>Acoustic</source>
-      <translation type="unfinished" />
+      <translation>Akustický</translation>
     </message>
     <message>
       <source>Active / passive / unknown</source>
-      <translation type="unfinished" />
+      <translation>Aktívny / pasívny / neznámy</translation>
     </message>
     <message>
       <source>Add filter</source>
-      <translation type="unfinished" />
+      <translation>Pridať filter</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
-      <translation type="unfinished" />
+      <translation>Upravte výstup za ekvalizérom v rozsahu −60 až +12 dB. Vyššie zosilnenie môže spôsobiť prebudenie.</translation>
     </message>
     <message>
       <source>Adjust this tone band around the natural voice profile</source>
-      <translation type="unfinished" />
+      <translation>Upravte toto frekvenčné pásmo voči profilu prirodzeného hlasu</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
-      <translation type="unfinished" />
+      <translation>Pokročilé ovládanie zvukových efektov</translation>
     </message>
     <message>
       <source>Air</source>
-      <translation type="unfinished" />
+      <translation>Vzdušnosť</translation>
     </message>
     <message>
       <source>All brands</source>
-      <translation type="unfinished" />
+      <translation>Všetky značky</translation>
     </message>
     <message>
       <source>All equipment</source>
-      <translation type="unfinished" />
+      <translation>Všetky zariadenia</translation>
     </message>
     <message>
       <source>All families</source>
-      <translation type="unfinished" />
+      <translation>Všetky rady</translation>
     </message>
     <message>
       <source>All manufacturers</source>
-      <translation type="unfinished" />
+      <translation>Všetci výrobcovia</translation>
     </message>
     <message>
       <source>All speaker types</source>
-      <translation type="unfinished" />
+      <translation>Všetky typy reproduktorov</translation>
     </message>
     <message>
       <source>All subtypes</source>
-      <translation type="unfinished" />
+      <translation>Všetky podtypy</translation>
     </message>
     <message>
       <source>Ambience</source>
-      <translation type="unfinished" />
+      <translation>Priestorový dozvuk</translation>
     </message>
     <message>
       <source>Ambience damping</source>
-      <translation type="unfinished" />
+      <translation>Tlmenie priestorového dozvuku</translation>
     </message>
     <message>
       <source>Ambience decay</source>
-      <translation type="unfinished" />
+      <translation>Doba priestorového dozvuku</translation>
     </message>
     <message>
       <source>Amp details</source>
-      <translation type="unfinished" />
+      <translation>Podrobnosti zosilňovača</translation>
     </message>
     <message>
       <source>Amplifier</source>
-      <translation type="unfinished" />
+      <translation>Zosilňovač</translation>
     </message>
     <message>
       <source>Amplifier / receiver</source>
-      <translation type="unfinished" />
+      <translation>Zosilňovač / receiver</translation>
     </message>
     <message>
       <source>Amplifier model profile</source>
-      <translation type="unfinished" />
+      <translation>Profil modelu zosilňovača</translation>
     </message>
     <message>
       <source>Amplifier profile details</source>
-      <translation type="unfinished" />
+      <translation>Podrobnosti profilu zosilňovača</translation>
     </message>
     <message>
       <source>Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.</source>
-      <translation type="unfinished" />
+      <translation>Profily zosilňovačov vyžadujú elektrické merania so známou záťažou reproduktorov, vstupom a nastavením tónových korekcií. Importujte súbor s nameranou korekciou; krivky zosilňovačov sa neodvodzujú z marketingových špecifikácií.</translation>
     </message>
     <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
-      <translation type="unfinished" />
+      <translation>Bola nainštalovaná aktualizácia aplikácie. Použite Ukončiť a aplikáciu znovu otvorte, aby sa aktualizácia načítala; zatvorením tohto okna zostane stará verzia spustená.</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
-      <translation type="unfinished" />
+      <translation>Iný výstup SoundCurrent EQ je už spustený</translation>
     </message>
     <message>
       <source>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</source>
-      <translation type="unfinished" />
+      <translation>Je spustená iná aplikácia SoundCurrent alebo inštalácia zvukového ovládača. Pred otvorením tejto aplikácie ju ukončite.</translation>
     </message>
     <message>
       <source>Another SoundCurrent equalizer is running. Quit EQ or Studio before opening the other app.</source>
-      <translation type="unfinished" />
+      <translation>Je spustený iný ekvalizér SoundCurrent. Pred otvorením druhej aplikácie ukončite EQ alebo Studio.</translation>
     </message>
     <message>
       <source>Another SoundCurrent microphone filter is running</source>
-      <translation type="unfinished" />
+      <translation>Je spustený iný mikrofónový filter SoundCurrent</translation>
     </message>
     <message>
       <source>Another equalizer route is present: %1. Quit it before using SoundCurrent.</source>
-      <translation type="unfinished" />
+      <translation>Je prítomná signálová cesta iného ekvalizéra: %1. Pred použitím SoundCurrent ho ukončite.</translation>
     </message>
     <message>
       <source>Application update</source>
-      <translation type="unfinished" />
+      <translation>Aktualizácia aplikácie</translation>
     </message>
     <message>
       <source>Application updates</source>
-      <translation type="unfinished" />
+      <translation>Aktualizácie aplikácie</translation>
     </message>
     <message>
       <source>Apply</source>
-      <translation type="unfinished" />
+      <translation>Použiť</translation>
     </message>
     <message>
       <source>Apply correction?</source>
-      <translation type="unfinished" />
+      <translation>Použiť korekciu?</translation>
     </message>
     <message>
       <source>Apply profile</source>
-      <translation type="unfinished" />
+      <translation>Použiť profil</translation>
     </message>
     <message>
       <source>Apply suggested EQ</source>
-      <translation type="unfinished" />
+      <translation>Použiť odporúčané nastavenie EQ</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
-      <translation type="unfinished" />
+      <translation>Inštalácia zvukového ovládača</translation>
     </message>
     <message>
       <source>Audio error: %1</source>
-      <translation type="unfinished" />
+      <translation>Chyba zvuku: %1</translation>
     </message>
     <message>
       <source>Audio setup</source>
-      <translation type="unfinished" />
+      <translation>Nastavenie zvuku</translation>
     </message>
     <message>
       <source>Audio setup could not finish</source>
-      <translation type="unfinished" />
+      <translation>Nastavenie zvuku sa nepodarilo dokončiť</translation>
     </message>
     <message>
       <source>Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.</source>
-      <translation type="unfinished" />
+      <translation>Nastavenie zvuku zlyhalo. Ak bol práve nainštalovaný VB-CABLE, reštartujte Windows a skúste to znovu.</translation>
     </message>
     <message>
       <source>Audio setup is missing. Repair or reinstall SoundCurrent.</source>
-      <translation type="unfinished" />
+      <translation>Chýba nástroj na nastavenie zvuku. Opravte inštaláciu SoundCurrent alebo ho znovu nainštalujte.</translation>
     </message>
     <message>
       <source>Audio setup is running. Processing is paused; the app remains open.</source>
-      <translation type="unfinished" />
+      <translation>Prebieha nastavenie zvuku. Spracovanie je pozastavené; aplikácia zostáva otvorená.</translation>
     </message>
     <message>
       <source>Auto headroom %1 dB</source>
-      <translation type="unfinished" />
+      <translation>Automatická rezerva %1 dB</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
-      <translation type="unfinished" />
+      <translation>Automaticky (SoundCurrent Microphone)</translation>
     </message>
     <message>
       <source>Automatic (follow connected devices)</source>
-      <translation type="unfinished" />
+      <translation>Automaticky (podľa pripojených zariadení)</translation>
     </message>
     <message>
       <source>Automatic (follow connected microphones)</source>
-      <translation type="unfinished" />
+      <translation>Automaticky (podľa pripojených mikrofónov)</translation>
     </message>
     <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Automaticky upraviť zvuk pripojeného mikrofónu; kliknutím obídete mikrofónový EQ</translation>
     </message>
     <message>
       <source>Balance</source>
@@ -265,15 +273,15 @@ Import into your library?</source>
     </message>
     <message>
       <source>Balance position</source>
-      <translation type="unfinished" />
+      <translation>Poloha vyváženia</translation>
     </message>
     <message>
       <source>Balanced</source>
-      <translation type="unfinished" />
+      <translation>Vyvážený</translation>
     </message>
     <message>
       <source>Band %1 gain</source>
-      <translation type="unfinished" />
+      <translation>Zosilnenie pásma %1</translation>
     </message>
     <message>
       <source>Bands</source>
@@ -282,35 +290,35 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.</source>
-      <translation type="unfinished" />
+      <translation>Ukazovatele vedľa posuvníkov zobrazujú odhadované úrovne za EQ. Červený text špičiek upozorňuje na možné prebudenie.</translation>
     </message>
     <message>
       <source>Bass Boost</source>
-      <translation>Zosilnenie basov</translation>
+      <translation>Zvýraznenie basov</translation>
     </message>
     <message>
       <source>Bass Cut</source>
-      <translation type="unfinished" />
+      <translation>Potlačenie basov</translation>
     </message>
     <message>
       <source>Bass adds low-frequency weight; Clarity adds high-frequency detail; Ambience adds room reflections; Surround widens stereo; Dynamic Boost compresses and raises quieter material with a peak ceiling. Boosting can increase output level.</source>
-      <translation type="unfinished" />
+      <translation>Basy dodávajú váhu nízkym frekvenciám; Zreteľnosť pridáva detaily vo vysokých frekvenciách; Priestorový dozvuk pridáva odrazy miestnosti; Surround rozširuje stereo; Dynamické zosilnenie komprimuje a zosilňuje tichší materiál s obmedzením špičiek. Zosilnenie môže zvýšiť výstupnú úroveň.</translation>
     </message>
     <message>
       <source>Bass frequency</source>
-      <translation type="unfinished" />
+      <translation>Frekvencia basov</translation>
     </message>
     <message>
       <source>Boxiness</source>
-      <translation type="unfinished" />
+      <translation>Krabicový zvuk</translation>
     </message>
     <message>
       <source>Brand</source>
-      <translation type="unfinished" />
+      <translation>Značka</translation>
     </message>
     <message>
       <source>Brand, family and model are required (maximum 120 characters each).</source>
-      <translation type="unfinished" />
+      <translation>Značka, rad a model sú povinné (každý údaj môže mať najviac 120 znakov).</translation>
     </message>
     <message>
       <source>Bright</source>

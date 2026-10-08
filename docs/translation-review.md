@@ -51,3 +51,7 @@ All current extracted entries are populated (437 EQ / 523 Studio). Contextual AI
 ## Polish completion checkpoint
 
 All current extracted entries are populated (437 EQ / 523 Studio). Contextual AI review uses Wzmocnienie for signed audio gain, Dobroć filtra Q for dimensionless quality factor, Płaska charakterystyka for zero EQ gain, Kompensacja loudness for low-volume listening compensation, Bez efektu for dry signal, and Czas powrotu kompresora for release. Render counts use Wyrenderowane kanały: %1 to avoid an incorrect fixed grammatical ending. Placeholder-containing route and microphone captions avoid requiring declension of inserted names. Machine IDs, file filters, links and saved parameters remain invariant. All entries remain unverified; no native-speaker review is claimed.
+
+## Czech and Slovak initial batch
+
+Reviewed prompts against actual import, correction-preview, calibration and audio setup behavior. Signed gain uses zesílení/zosilnenie; headroom uses rezerva; meter text retains the estimated-level qualifier. Dynamic route types use a neutral label construction to avoid inflecting inserted names. Device identities, placeholders and numerical settings remain unchanged. Both catalogs remain incomplete and unverified; no native-speaker review is claimed.

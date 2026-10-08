@@ -1,0 +1,33 @@
+{
+  "stage": "Czech and Slovak initial catalog batch",
+  "catalogs": [
+    {
+      "tag": "cs",
+      "name": "Čeština",
+      "translated": 102,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "c88ccde95d751041c5405134a19dc4175a1f35a06410b111380d6b772648effb",
+      "qmSha256": "a40cf604579a41a05cde740ec5b8a133f02dcf29ab890c8e490892ac817d2c36"
+    },
+    {
+      "tag": "sk",
+      "name": "Slovenčina",
+      "translated": 102,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "4a403f85af7078ff00c0ecfe53f71000ba4b4a8d652745ae4a77bfea8e5fdb12",
+      "qmSha256": "2127847db38bdf8f00cf69dc482a48f557bdb1a95f44123992603458ce2e441f"
+    }
+  ],
+  "linuxTests": {
+    "passed": 4,
+    "total": 4,
+    "scope": "compiled localization, Czech and Slovak main windows, catalog regressions"
+  },
+  "review": "Contextual AI review, unverified; preserve headroom/gain distinction and estimated meter qualifier",
+  "nativeReviewed": false,
+  "remaining": "Both catalogs incomplete; Windows tests pending on this commit."
+}
