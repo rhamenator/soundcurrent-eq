@@ -2270,9 +2270,11 @@ public:
         auto *curveHelp = new QLabel(SC_TR("Drag curve points or tune the selected band below."));
         curveHelp->setWordWrap(true);
         toolbar->addWidget(curveHelp, 1);
-        headroom_ = new QLabel;
-        toolbar->addWidget(headroom_);
         eqLayout->addLayout(toolbar);
+        headroom_ = new QLabel;
+        headroom_->setWordWrap(true);
+        headroom_->setLayoutDirection(QApplication::layoutDirection());
+        eqLayout->addWidget(headroom_);
 
         auto *details = new QWidget;
         auto *detailsRow = new QHBoxLayout(details);
