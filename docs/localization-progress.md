@@ -235,3 +235,7 @@ All current Japanese catalog entries are populated (441 EQ, 527 Studio). Context
 ### Japanese: completeness and profile-editor gates
 
 Japanese is now required to stay fully populated by the source/catalog validator. Runtime assertions verify its regional fallback, LTR layout and standard Save action. The actual profile editor now runs its import/edit/save/cancel/discard/apply workflow in Japanese; all four focused Linux checks passed in both apps. The preceding full-suite results remain 75/75 EQ and 77/77 Studio before this additional workflow test. Translations remain unverified.
+
+### Korean: first existing-catalog batch
+
+Korean now has 102/441 populated current catalog entries. The first 80 shared sources cover routing, measurement limitations and primary audio controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.

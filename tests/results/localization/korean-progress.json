@@ -1,0 +1,25 @@
+{
+  "stage": "Korean first existing-catalog batch",
+  "catalogs": [
+    {
+      "tag": "ko",
+      "name": "한국어",
+      "translated": 102,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "2a7b726fec691318303a4d0debcb29b5002d20a6adc0773d0fe12e5ab4cc359f",
+      "qmSha256": "0c7847e64ddabd7c89cc4358c81715a82942be2cb0193df6416eaf1220c05c2c"
+    }
+  ],
+  "linuxTests": {
+    "passed": 3,
+    "total": 3,
+    "scope": "Embedded localization assertions, Korean MainWindow offscreen smoke test and structural catalog validation",
+    "log": "/tmp/soundcurrent-eq-ko-first-tests.log"
+  },
+  "review": "Contextual AI review of shared source entries 0–79: routing, quiet calibration limits, electrical amplifier measurements, gain/clipping, enhancement behavior and quit versus close. Linguistic accuracy unverified.",
+  "nativeReviewed": false,
+  "windows": "Pending CI; no Windows runtime qualification for this batch",
+  "remaining": "Korean incomplete. Six target catalogs still incomplete; omitted source messages reserved for second pass."
+}
