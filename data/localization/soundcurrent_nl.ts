@@ -474,6 +474,11 @@ Importeren in uw bibliotheek?</translation>
       <translation>Kies een naam die geen ingebouwde preset is.</translation>
     </message>
     <message>
+      <source>Choose one audio setup action.</source>
+      <translation>Kies precies één actie voor audio-instellingen.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
+    </message>
+    <message>
       <source>Choose update folder…</source>
       <translation>Updatemap kiezen…</translation>
     </message>
@@ -1074,6 +1079,11 @@ Importeren in uw bibliotheek?</translation>
       <source>Invalid Studio route</source>
       <translation>Ongeldige Studio-audioverbinding</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>Ongeldig proces dat audio-instellingen aanvraagt.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
     </message>
     <message>
       <source>Invalid calibration audio</source>
@@ -2173,6 +2183,11 @@ Importeren in uw bibliotheek?</translation>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
       <translation>De aangepaste bibliotheek bevat maximaal 256 profielen.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>De installatiehulp die audioroutes behoudt ontbreekt.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

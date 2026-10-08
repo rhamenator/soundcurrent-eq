@@ -474,6 +474,11 @@ Import into your library?</source>
       <translation>請選擇與內建預設名稱不同的名稱。</translation>
     </message>
     <message>
+      <source>Choose one audio setup action.</source>
+      <translation>請選擇一項音訊設定操作。</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
+    </message>
+    <message>
       <source>Choose update folder…</source>
       <translation>選擇更新資料夾…</translation>
     </message>
@@ -1074,6 +1079,11 @@ Import into your library?</source>
       <source>Invalid Studio route</source>
       <translation>Studio 音訊連接無效</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>請求音訊設定的處理程序無效。</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
     </message>
     <message>
       <source>Invalid calibration audio</source>
@@ -2173,6 +2183,11 @@ Import into your library?</source>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
       <translation>自訂資料庫最多可儲存 256 個設定檔。</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>缺少用於保留音訊路由的設定輔助程式。</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

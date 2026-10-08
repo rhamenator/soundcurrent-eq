@@ -474,6 +474,11 @@ Import into your library?</source>
       <translation>اختر اسمًا لا يطابق اسم إعداد مسبق مدمج.</translation>
     </message>
     <message>
+      <source>Choose one audio setup action.</source>
+      <translation>اختر إجراء واحدًا فقط لإعداد الصوت.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
+    </message>
+    <message>
       <source>Choose update folder…</source>
       <translation>اختيار مجلد التحديث…</translation>
     </message>
@@ -1074,6 +1079,11 @@ Import into your library?</source>
       <source>Invalid Studio route</source>
       <translation>توصيل صوتي غير صالح في Studio</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>عملية طلب إعداد الصوت غير صالحة.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
     </message>
     <message>
       <source>Invalid calibration audio</source>
@@ -2173,6 +2183,11 @@ Import into your library?</source>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
       <translation>تستوعب المكتبة المخصصة حتى 256 ملف تعريف.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>أداة الإعداد المساعدة التي تحافظ على توجيه الصوت مفقودة.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

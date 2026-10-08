@@ -98,7 +98,7 @@
   "secondPassProgress": "tests/results/localization/second-pass-speaker-text.json",
   "currentCatalogs": {
     "nonEnglishLocales": 33,
-    "sourceMessagesPerLocale": 568,
+    "sourceMessagesPerLocale": 571,
     "unfinished": 0,
     "nativeReviewed": false
   },
@@ -130,5 +130,9 @@
   "helperUtf8Progress": {
     "report": "tests/results/localization/second-pass-helper-utf8.json",
     "status": "Explicit UTF-8 protocol and real inert process boundary passed on host; helper message translation and Windows qualification pending"
+  },
+  "setupErrorProgress": {
+    "report": "tests/results/localization/second-pass-setup-errors.json",
+    "status": "Three errors translated in 33 non-English locales; declared helper lookups and safe quiet fault path tested on host; remaining bodies/NSIS and Windows qualification pending"
   }
 }

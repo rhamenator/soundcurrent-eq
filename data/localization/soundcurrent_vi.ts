@@ -474,6 +474,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Chọn tên khác với tên thiết lập sẵn tích hợp.</translation>
     </message>
     <message>
+      <source>Choose one audio setup action.</source>
+      <translation>Chọn đúng một thao tác thiết lập âm thanh.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
+    </message>
+    <message>
       <source>Choose update folder…</source>
       <translation>Chọn thư mục cập nhật…</translation>
     </message>
@@ -1074,6 +1079,11 @@ Nhập vào thư viện của bạn?</translation>
       <source>Invalid Studio route</source>
       <translation>Kết nối âm thanh Studio không hợp lệ</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>Tiến trình yêu cầu thiết lập âm thanh không hợp lệ.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
     </message>
     <message>
       <source>Invalid calibration audio</source>
@@ -2173,6 +2183,11 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
       <translation>Thư viện tùy chỉnh chứa tối đa 256 cấu hình.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>Thiếu chương trình hỗ trợ thiết lập giữ nguyên định tuyến âm thanh.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

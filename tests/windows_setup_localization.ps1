@@ -5,13 +5,16 @@ $root = Split-Path $PSScriptRoot -Parent
 . (Join-Path $root 'packaging/windows/setup-localization.ps1')
 $script:SCSetupCatalogPath = $CatalogPath
 $data = Get-Content -LiteralPath $CatalogPath -Raw -Encoding UTF8 | ConvertFrom-Json
+$required = Get-Content -LiteralPath (Join-Path $root 'data/localization/setup-sources.json') -Raw -Encoding UTF8 | ConvertFrom-Json
 $count = 0
 foreach ($pack in $data.languages.PSObject.Properties) {
-    $expected = $pack.Value.PSObject.Properties['Audio driver setup'].Value
-    $actual = Get-SCSetupText 'Audio driver setup' -Language $pack.Name
-    if (!$expected -or $actual -cne $expected) { throw "Helper title lookup failed: $($pack.Name)" }
-    if ($pack.Name -ne 'en' -and $actual -ceq 'Audio driver setup') { throw "Untranslated helper title: $($pack.Name)" }
-    $count++
+    foreach ($source in $required) {
+        $expected = $pack.Value.PSObject.Properties[$source].Value
+        $actual = Get-SCSetupText $source -Language $pack.Name
+        if (!$expected -or $actual -cne $expected) { throw "Helper lookup failed: $($pack.Name): $source" }
+        if ($pack.Name -ne 'en' -and $actual -ceq $source) { throw "Untranslated helper text: $($pack.Name): $source" }
+        $count++
+    }
 }
 $available = @($data.languages.PSObject.Properties.Name)
 foreach ($case in @(@('FR_ca','fr'),@('NN_no','nn'),@('zh-HK','zh-Hant'),@('zh-CN','zh-Hans'),@('pt-AO','en'),@('fr-Xxxx','en'),@('not-a-language','en'))) {
@@ -34,6 +37,7 @@ try {
         if ((Get-SCSetupText 'Audio driver setup' -Language fr) -cne 'Audio driver setup') { throw 'Invalid package data fallback failed' }
     }
 } finally { Remove-Item -LiteralPath $badData -ErrorAction SilentlyContinue }
+$literalLookups = @()
 foreach ($file in Get-ChildItem (Join-Path $root 'packaging/windows') -Filter '*.ps1') {
     $tokens=$null;$errors=$null
     $ast=[Management.Automation.Language.Parser]::ParseFile($file.FullName,[ref]$tokens,[ref]$errors)
@@ -41,6 +45,16 @@ foreach ($file in Get-ChildItem (Join-Path $root 'packaging/windows') -Filter '*
     if ($file.Name -in @('cable-setup.ps1','native-audio-setup.ps1')) {
         $parameters=@($ast.ParamBlock.Parameters | ForEach-Object {$_.Name.VariablePath.UserPath})
         if ($parameters -notcontains 'Language') { throw "Helper language argument missing: $($file.Name)" }
+        foreach ($command in $ast.FindAll({param($node)
+            $node -is [Management.Automation.Language.CommandAst] -and $node.GetCommandName() -ieq 'Get-SCSetupText'
+        },$true)) {
+            if ($command.CommandElements[1] -isnot [Management.Automation.Language.StringConstantExpressionAst]) {
+                throw "Dynamic helper source needs explicit coverage review: $($file.Name)"
+            }
+            $literalLookups += $command.CommandElements[1].Value
+        }
     }
 }
-Write-Output "PASS: $count helper title catalogs, locale selection, external fallback, missing data and PowerShell parsing; no driver/endpoint actions"
+$lookupDifference = Compare-Object @($required | Sort-Object -Unique) @($literalLookups | Sort-Object -Unique)
+if ($lookupDifference) { throw "Declared helper source inventory differs from PowerShell AST: $lookupDifference" }
+Write-Output "PASS: $count required helper text lookups, locale selection, external fallback, missing data and PowerShell parsing; no driver/endpoint actions"

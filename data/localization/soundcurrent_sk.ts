@@ -474,6 +474,11 @@ Importovať do vašej knižnice?</translation>
       <translation>Zvoľte názov, ktorý nepatrí vstavanej predvoľbe.</translation>
     </message>
     <message>
+      <source>Choose one audio setup action.</source>
+      <translation>Vyberte práve jednu akciu nastavenia zvuku.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
+    </message>
+    <message>
       <source>Choose update folder…</source>
       <translation>Vybrať priečinok aktualizácií…</translation>
     </message>
@@ -1074,6 +1079,11 @@ Importovať do vašej knižnice?</translation>
       <source>Invalid Studio route</source>
       <translation>Neplatné zvukové prepojenie Studio</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>Neplatný proces požadujúci nastavenie zvuku.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
     </message>
     <message>
       <source>Invalid calibration audio</source>
@@ -2173,6 +2183,11 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
       <translation>Vlastná knižnica pojme najviac 256 profilov.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>Chýba pomocný program nastavenia zachovávajúci smerovanie zvuku.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

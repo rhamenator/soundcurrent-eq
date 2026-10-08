@@ -474,6 +474,11 @@ Import into your library?</source>
       <translation>เลือกชื่อที่ไม่ซ้ำกับพรีเซ็ตที่มีมาให้</translation>
     </message>
     <message>
+      <source>Choose one audio setup action.</source>
+      <translation>เลือกการดำเนินการตั้งค่าเสียงเพียงหนึ่งรายการ</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
+    </message>
+    <message>
       <source>Choose update folder…</source>
       <translation>เลือกโฟลเดอร์อัปเดต…</translation>
     </message>
@@ -1074,6 +1079,11 @@ Import into your library?</source>
       <source>Invalid Studio route</source>
       <translation>การเชื่อมต่อเสียง Studio ไม่ถูกต้อง</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>โพรเซสที่ร้องขอการตั้งค่าเสียงไม่ถูกต้อง</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
     </message>
     <message>
       <source>Invalid calibration audio</source>
@@ -2173,6 +2183,11 @@ Import into your library?</source>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
       <translation>คลังกำหนดเองรองรับสูงสุด 256 โปรไฟล์</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>ไม่พบโปรแกรมช่วยตั้งค่าที่คงการกำหนดเส้นทางเสียงไว้</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

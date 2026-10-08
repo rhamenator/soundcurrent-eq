@@ -474,6 +474,11 @@ Import into your library?</source>
       <translation>ऐसा नाम चुनें जो पहले से उपलब्ध प्रीसेट का न हो।</translation>
     </message>
     <message>
+      <source>Choose one audio setup action.</source>
+      <translation>ऑडियो सेटअप के लिए केवल एक कार्रवाई चुनें।</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
+    </message>
+    <message>
       <source>Choose update folder…</source>
       <translation>अपडेट फ़ोल्डर चुनें…</translation>
     </message>
@@ -1074,6 +1079,11 @@ Import into your library?</source>
       <source>Invalid Studio route</source>
       <translation>Studio ऑडियो कनेक्शन अमान्य है</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>ऑडियो सेटअप का अनुरोध करने वाली प्रक्रिया अमान्य है।</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
     </message>
     <message>
       <source>Invalid calibration audio</source>
@@ -2173,6 +2183,11 @@ Import into your library?</source>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
       <translation>कस्टम लाइब्रेरी में अधिकतम 256 प्रोफ़ाइल रखी जा सकती हैं।</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>ऑडियो रूटिंग सुरक्षित रखने वाला सेटअप सहायक उपलब्ध नहीं है।</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

@@ -474,6 +474,11 @@ Importovat do vaší knihovny?</translation>
       <translation>Zvolte název, který nepatří vestavěné předvolbě.</translation>
     </message>
     <message>
+      <source>Choose one audio setup action.</source>
+      <translation>Vyberte právě jednu akci nastavení zvuku.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
+    </message>
+    <message>
       <source>Choose update folder…</source>
       <translation>Vybrat složku aktualizací…</translation>
     </message>
@@ -1074,6 +1079,11 @@ Importovat do vaší knihovny?</translation>
       <source>Invalid Studio route</source>
       <translation>Neplatné zvukové propojení Studio</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>Neplatný proces požadující nastavení zvuku.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
     </message>
     <message>
       <source>Invalid calibration audio</source>
@@ -2173,6 +2183,11 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
       <translation>Vlastní knihovna pojme nejvýše 256 profilů.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>Chybí pomocný program nastavení zachovávající směrování zvuku.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

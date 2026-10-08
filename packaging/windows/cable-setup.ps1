@@ -57,7 +57,7 @@ function QuitMessage($Clients) {
     return 'Quit ' + ($names -join ' and ') + ' before changing VB-CABLE.'
 }
 try {
-    if (@($Check,$Install,$Remove,$Settings).Where({$_}).Count -ne 1) { throw 'Choose one audio setup action.' }
+    if (@($Check,$Install,$Remove,$Settings).Where({$_}).Count -ne 1) { throw (Get-SCSetupText 'Choose one audio setup action.' -Language $Language -Application ('soundcurrent-' + $App)) }
     if ($Check) { if (NeedsReboot) { exit 3010 }; if (Present) { if (Ready) { exit 0 }; exit 11 }; exit 10 }
     if (!$Remove -and (NeedsReboot)) { Notice 'Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.'; exit 3010 }
     if ($Silent -and ($Install -or $Remove)) { exit 0 } # No unattended third-party changes.
@@ -78,7 +78,7 @@ try {
         $requester = Get-Process -Id $RequestingProcessId -ErrorAction Stop
         $expected = if ($App -eq 'eq') { 'soundcurrent-eq' } else { 'soundcurrent-studio' }
         if ($requester.Name -ne $expected -or $requester.SessionId -ne (Get-Process -Id $PID).SessionId) {
-            throw 'Invalid audio setup requester.'
+            throw (Get-SCSetupText 'Invalid audio setup requester.' -Language $Language -Application ('soundcurrent-' + $App))
         }
     }
     if (!$Settings) {
@@ -109,7 +109,7 @@ try {
             if ($process.ExitCode -ne 0) { throw 'VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.' }
         } else {
             $guard = Join-Path $PSScriptRoot 'soundcurrent-cable-setup-guard.exe'
-            if (!(Test-Path -LiteralPath $guard)) { throw 'The route-preserving setup helper is missing.' }
+            if (!(Test-Path -LiteralPath $guard)) { throw (Get-SCSetupText 'The route-preserving setup helper is missing.' -Language $Language -Application ('soundcurrent-' + $App)) }
             $repair = $Install -and (Present) -and !(Ready)
             if ($repair) {
                 Add-Type -AssemblyName System.Windows.Forms

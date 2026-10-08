@@ -474,6 +474,11 @@ Import into your library?</source>
       <translation>نامی انتخاب کنید که با نام یک پیش‌تنظیم داخلی یکسان نباشد.</translation>
     </message>
     <message>
+      <source>Choose one audio setup action.</source>
+      <translation>فقط یک اقدام برای راه‌اندازی صدا انتخاب کنید.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
+    </message>
+    <message>
       <source>Choose update folder…</source>
       <translation>انتخاب پوشه به‌روزرسانی…</translation>
     </message>
@@ -1074,6 +1079,11 @@ Import into your library?</source>
       <source>Invalid Studio route</source>
       <translation>اتصال صوتی Studio نامعتبر است</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>فرایند درخواست‌کنندهٔ راه‌اندازی صدا نامعتبر است.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
     </message>
     <message>
       <source>Invalid calibration audio</source>
@@ -2173,6 +2183,11 @@ Import into your library?</source>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
       <translation>کتابخانه سفارشی تا 256 پروفایل نگه می‌دارد.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>ابزار کمکی راه‌اندازی که مسیریابی صدا را حفظ می‌کند موجود نیست.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

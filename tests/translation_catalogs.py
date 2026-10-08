@@ -130,6 +130,33 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual([row['literal'] for row in result['candidates']], ['Unmarked label'])
             self.assertFalse(result['wholeInterfaceCoverageProven'])
 
+    def test_setup_lookup_keys_have_required_catalog_entries(self):
+        root = Path(__file__).resolve().parents[1]
+        required = json.loads((root / 'data/localization/setup-sources.json').read_text())
+        self.assertEqual(len(required), len(set(required)))
+        calls = set()
+        for file in ('cable-setup.ps1', 'native-audio-setup.ps1'):
+            code = (root / 'packaging/windows' / file).read_text()
+            calls.update(re.findall(r"Get-SCSetupText\s+'([^']+)'", code))
+        self.assertEqual(calls, set(required), 'New literal helper lookups must be declared and translated')
+        self.assertTrue(set(required).issubset(catalog.sources()))
+
+    def test_setup_export_rejects_unfinished_required_text_before_writing(self):
+        root = Path(__file__).resolve().parents[1]
+        export_spec = importlib.util.spec_from_file_location('setup_export', root / 'scripts/windows_setup_catalogs.py')
+        exporter = importlib.util.module_from_spec(export_spec)
+        with patch.dict('sys.modules', {'localization': catalog}):
+            export_spec.loader.exec_module(exporter)
+        with tempfile.TemporaryDirectory() as directory:
+            data = Path(directory)
+            self.fixture(data)
+            (data / 'catalogs.json').write_text(json.dumps([{'tag':'fr'}]))
+            (data / 'setup-sources.json').write_text(json.dumps(['First']))
+            destination = data / 'export.json'
+            with patch.object(catalog, 'DATA', data), patch.object(catalog, 'check'), self.assertRaisesRegex(ValueError, 'Missing required setup translations'):
+                exporter.export(destination)
+            self.assertFalse(destination.exists())
+
     def test_structural_translation_checks(self):
         valid = [('%1 / %2', '%2 / %1'), ('%L1 / %n', '%n / %L1'),
                  ('Settings && calibration', 'Réglages && étalonnage'),

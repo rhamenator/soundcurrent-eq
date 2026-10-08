@@ -57,5 +57,8 @@
   "Shared and channel EQ exceed 64 filters; remove some channel filters": "Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.",
   "Invalid enhancement parameter count": "Enhancement array must contain the required number of parameters.",
   "Invalid enhancement parameter type": "Enhancement parameter must be a JSON number; do not reinterpret strings or Boolean values.",
-  "Enhancements outside supported ranges": "Enhancement values fail the supported range validation; not frequency coverage or wireless range."
+  "Enhancements outside supported ranges": "Enhancement values fail the supported range validation; not frequency coverage or wireless range.",
+  "Choose one audio setup action.": "Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.",
+  "Invalid audio setup requester.": "The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.",
+  "The route-preserving setup helper is missing.": "The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing."
 }

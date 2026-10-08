@@ -474,6 +474,11 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Choisissez un nom différent de ceux des préréglages intégrés.</translation>
     </message>
     <message>
+      <source>Choose one audio setup action.</source>
+      <translation>Choisissez une seule action de configuration audio.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
+    </message>
+    <message>
       <source>Choose update folder…</source>
       <translation>Choisir le dossier des mises à jour…</translation>
     </message>
@@ -1074,6 +1079,11 @@ Importer dans votre bibliothèque ?</translation>
       <source>Invalid Studio route</source>
       <translation>Connexion audio Studio invalide</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>Processus demandeur de configuration audio non valide.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
     </message>
     <message>
       <source>Invalid calibration audio</source>
@@ -2173,6 +2183,11 @@ Importer dans votre bibliothèque ?</translation>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
       <translation>La bibliothèque personnalisée peut contenir jusqu’à 256 profils.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>L’assistant de configuration qui préserve le routage audio est introuvable.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

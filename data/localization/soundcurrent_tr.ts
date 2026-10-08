@@ -474,6 +474,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Yerleşik bir hazır ayara ait olmayan bir ad seçin.</translation>
     </message>
     <message>
+      <source>Choose one audio setup action.</source>
+      <translation>Yalnızca bir ses kurulum işlemi seçin.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
+    </message>
+    <message>
       <source>Choose update folder…</source>
       <translation>Güncelleme klasörü seç…</translation>
     </message>
@@ -1074,6 +1079,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <source>Invalid Studio route</source>
       <translation>Geçersiz Studio ses bağlantısı</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>Ses kurulumu isteyen işlem geçersiz.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
     </message>
     <message>
       <source>Invalid calibration audio</source>
@@ -2173,6 +2183,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
       <translation>Özel kitaplık en fazla 256 profil tutar.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>Ses yönlendirmesini koruyan kurulum yardımcısı eksik.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>

@@ -474,6 +474,11 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Wählen Sie einen Namen, der keinem integrierten Preset entspricht.</translation>
     </message>
     <message>
+      <source>Choose one audio setup action.</source>
+      <translation>Wählen Sie genau eine Aktion für die Audioeinrichtung.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
+    </message>
+    <message>
       <source>Choose update folder…</source>
       <translation>Updateordner auswählen…</translation>
     </message>
@@ -1074,6 +1079,11 @@ In Ihre Bibliothek importieren?</translation>
       <source>Invalid Studio route</source>
       <translation>Ungültige Studio-Audioverbindung</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>Ungültiger anfordernder Prozess für die Audioeinrichtung.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
     </message>
     <message>
       <source>Invalid calibration audio</source>
@@ -2173,6 +2183,11 @@ In Ihre Bibliothek importieren?</translation>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
       <translation>Die benutzerdefinierte Bibliothek fasst bis zu 256 Profile.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>Die Einrichtungshilfe zum Erhalten der Audiowege fehlt.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
