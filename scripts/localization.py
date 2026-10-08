@@ -23,7 +23,7 @@ DATA = ROOT / 'data/localization'
 LITERAL = r'"(?:\\.|[^"\\])*"'
 PLACEHOLDER = re.compile(r'%L?[1-9][0-9]?|%Ln|%n')
 UI_SOURCES = ['main.cpp', 'equipment_profiles.cpp', 'enhancement_controls.h',
-              'update_panel.h', 'localization.h', 'processing_guard.cpp', 'studio_panel.cpp']
+              'update_panel.h', 'startup_controls.h', 'localization.h', 'processing_guard.cpp', 'studio_panel.cpp']
 
 
 def literal(expression):

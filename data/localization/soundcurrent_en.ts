@@ -545,6 +545,10 @@ Import into your library?</translation>
       <translation>Could not start the measurement.</translation>
     </message>
     <message>
+      <source>Could not update startup settings.</source>
+      <translation>Could not update startup settings.</translation>
+    </message>
+    <message>
       <source>Could not write frequency sweep</source>
       <translation>Could not write frequency sweep</translation>
     </message>
@@ -1188,6 +1192,10 @@ Import into your library?</translation>
       <translation>On · Playing through %1</translation>
     </message>
     <message>
+      <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
+      <translation>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</translation>
+    </message>
+    <message>
       <source>Open</source>
       <translation>Open</translation>
     </message>
@@ -1610,6 +1618,14 @@ Import into your library?</translation>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>Start quiet. Raise only if the microphone cannot hear the tones.</translation>
+    </message>
+    <message>
+      <source>Start when I sign in</source>
+      <translation>Start when I sign in</translation>
+    </message>
+    <message>
+      <source>Startup</source>
+      <translation>Startup</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>

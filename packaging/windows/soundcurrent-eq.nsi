@@ -172,6 +172,10 @@ Section "Uninstall"
   StrCmp $0 0 +3
     MessageBox MB_ICONEXCLAMATION "Quit SoundCurrent EQ before uninstalling it."
     Abort
+  ; Remove only this application's shared per-user login entry.
+  ReadRegStr $1 HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "SoundCurrent"
+  StrCmp $1 '"$INSTDIR\soundcurrent-eq.exe" --background' 0 +2
+    DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "SoundCurrent"
   ; Interactive removal offers the official shared cable remover. Silent app
   ; updates/uninstalls keep the cable; they never display UAC or vendor dialogs.
   IfSilent cable_keep cable_remove

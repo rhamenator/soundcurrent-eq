@@ -545,6 +545,10 @@ Importeren in uw bibliotheek?</translation>
       <translation>Kon de meting niet starten.</translation>
     </message>
     <message>
+      <source>Could not update startup settings.</source>
+      <translation>Kon de opstartinstellingen niet bijwerken.</translation>
+    </message>
+    <message>
       <source>Could not write frequency sweep</source>
       <translation>Kon de frequentiesweep niet schrijven</translation>
     </message>
@@ -1188,6 +1192,10 @@ Importeren in uw bibliotheek?</translation>
       <translation>Aan · Afspelen via %1</translation>
     </message>
     <message>
+      <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
+      <translation>Er start bij het aanmelden maar één SoundCurrent-app. Inschakelen vervangt de opstartinstelling van de andere app. De app start op de achtergrond als een systeemvakpictogram beschikbaar is.</translation>
+    </message>
+    <message>
       <source>Open</source>
       <translation>Openen</translation>
     </message>
@@ -1610,6 +1618,14 @@ Importeren in uw bibliotheek?</translation>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>Begin zacht. Verhoog alleen als de microfoon de tonen niet kan horen.</translation>
+    </message>
+    <message>
+      <source>Start when I sign in</source>
+      <translation>Starten wanneer ik me aanmeld</translation>
+    </message>
+    <message>
+      <source>Startup</source>
+      <translation>Opstarten</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>

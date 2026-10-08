@@ -5,6 +5,7 @@
 
 #include "dsp.h"
 #include "update_panel.h"
+#include "startup_controls.h"
 #include "enhancement_controls.h"
 #ifndef SOUNDCURRENT_EFFECTS_DIR
 #define SOUNDCURRENT_EFFECTS_DIR "/usr/lib/soundcurrent-eq"
@@ -1883,6 +1884,7 @@ public:
         tabs_->addTab(settingsScroll, SC_TR("Settings && calibration"));
         tabs_->setCurrentIndex(0);
         settingsRoot->addWidget(soundcurrent::i18n::settingsPanel());
+        settingsRoot->addWidget(soundcurrent::startupPanel());
 
         auto *deviceBox = new QGroupBox(SC_TR("Output device"));
         auto *deviceLayout = new QVBoxLayout(deviceBox);
@@ -4280,6 +4282,7 @@ int main(int argc, char **argv) {
             QObject::connect(client, &QLocalSocket::disconnected, client, &QLocalSocket::deleteLater);
         }
     });
-    window.show();
+    if (!app.arguments().contains("--background") || !QSystemTrayIcon::isSystemTrayAvailable())
+        window.show();
     return app.exec();
 }

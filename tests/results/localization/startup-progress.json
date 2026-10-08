@@ -1,0 +1,30 @@
+{
+  "feature": "Optional start at desktop sign-in",
+  "linuxFullCTest": {
+    "passed": 56,
+    "failed": 0
+  },
+  "registrationTests": [
+    "enable/disable",
+    "exclusive app selection",
+    "preserve other application entry",
+    "unsafe path rejection"
+  ],
+  "sourceMessages": 441,
+  "translatedLocales": [
+    "fr",
+    "de",
+    "es",
+    "it",
+    "pt-PT",
+    "pt-BR",
+    "nl",
+    "pl"
+  ],
+  "nativeReviewed": false,
+  "pending": [
+    "Windows CI and installer qualification",
+    "actual desktop sign-in test"
+  ],
+  "catalogIndexSha256": "4b663edfa5bb233c7e58c02a474fdacca0fea405f25a809b856e902fdbd117e9"
+}

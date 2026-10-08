@@ -164,6 +164,10 @@ Section "Uninstall"
   StrCmp $0 0 +3
     MessageBox MB_ICONEXCLAMATION "Quit SoundCurrent EQ before uninstalling it."
     Abort
+  ; Remove only this application's shared per-user login entry.
+  ReadRegStr $1 HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "SoundCurrent"
+  StrCmp $1 '"$INSTDIR\soundcurrent-eq.exe" --background' 0 +2
+    DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "SoundCurrent"
   ; Release shared ownership before deleting the manager or setup script.
   nsExec::ExecToStack '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy RemoteSigned -File "$INSTDIR\audio-setup.ps1" -Remove -Quiet'
   Pop $0

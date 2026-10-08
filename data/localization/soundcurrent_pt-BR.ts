@@ -545,6 +545,10 @@ Importar para a sua biblioteca?</translation>
       <translation>Não foi possível iniciar a medição.</translation>
     </message>
     <message>
+      <source>Could not update startup settings.</source>
+      <translation>Não foi possível atualizar as configurações de inicialização.</translation>
+    </message>
+    <message>
       <source>Could not write frequency sweep</source>
       <translation>Não foi possível escrever a varredura de frequência</translation>
     </message>
@@ -1188,6 +1192,10 @@ Importar para a sua biblioteca?</translation>
       <translation>Ativado · Reproduzindo através de %1</translation>
     </message>
     <message>
+      <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
+      <translation>Somente um aplicativo SoundCurrent inicia com a sessão. Ativar esta opção substitui a configuração de inicialização do outro aplicativo. Ele inicia em segundo plano quando há um ícone disponível na área de notificação.</translation>
+    </message>
+    <message>
       <source>Open</source>
       <translation>Abrir</translation>
     </message>
@@ -1610,6 +1618,14 @@ Importar para a sua biblioteca?</translation>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>Comece em volume baixo. Aumente apenas se o microfone não conseguir captar os tons.</translation>
+    </message>
+    <message>
+      <source>Start when I sign in</source>
+      <translation>Iniciar quando eu entrar na sessão</translation>
+    </message>
+    <message>
+      <source>Startup</source>
+      <translation>Inicialização</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
