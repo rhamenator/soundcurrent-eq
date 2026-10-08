@@ -127,3 +127,5 @@ Nynorsk filter and editor batch: 230/441 messages populated. Three focused Linux
 Nynorsk microphone and measurement batch: 292/441 messages populated. Three focused Linux checks passed per app. Additive correction, system measurement limits, clipping, polarity and balance reviewed contextually. Both balance endpoint captions match their instructions. Catalog remains incomplete and unverified.
 
 Nynorsk startup and rendering batch: 349/441 messages populated. Three focused Linux checks passed per app. Startup registration, reference-profile preservation, calibration links and render counts reviewed contextually. Catalog remains incomplete and unverified.
+
+Nynorsk import and speaker-profile batch: 398/441 messages populated. Three focused Linux checks passed per app. Import constraints, saving, disconnected-device recovery and Windows restart guidance reviewed contextually. Catalog remains incomplete and unverified.
