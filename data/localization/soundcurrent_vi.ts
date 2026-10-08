@@ -4,259 +4,267 @@
     <name>SoundCurrent</name>
     <message>
       <source> (currently selected)</source>
-      <translation type="unfinished" />
+      <translation> (đang được chọn)</translation>
     </message>
     <message>
       <source> (restored selection)</source>
-      <translation type="unfinished" />
+      <translation> (lựa chọn đã khôi phục)</translation>
     </message>
     <message>
       <source> [custom]</source>
-      <translation type="unfinished" />
+      <translation> [tùy chỉnh]</translation>
     </message>
     <message>
       <source> · mono</source>
-      <translation type="unfinished" />
+      <translation> · mono</translation>
     </message>
     <message>
       <source> · no USB microphone detected</source>
-      <translation type="unfinished" />
+      <translation> · không phát hiện micrô USB</translation>
     </message>
     <message>
       <source> · stereo</source>
-      <translation type="unfinished" />
+      <translation> · stereo</translation>
     </message>
     <message>
       <source>%1
 
 Technical details:
 %2</source>
-      <translation type="unfinished" />
+      <translation>%1
+
+Chi tiết kỹ thuật:
+%2</translation>
     </message>
     <message>
       <source>%1
 The app remains open; your settings have been kept.</source>
-      <translation type="unfinished" />
+      <translation>%1
+Ứng dụng vẫn mở; các thiết lập của bạn được giữ nguyên.</translation>
     </message>
     <message>
       <source>%1 %2%3 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 %2%3 dB</translation>
     </message>
     <message>
       <source>%1 / %2
 %3
 Apply this correction to the %4 route?</source>
-      <translation type="unfinished" />
+      <translation>%1 / %2
+%3
+Áp dụng hiệu chỉnh này cho tuyến %4?</translation>
     </message>
     <message>
       <source>%1 / %2
 %3
 Import into your library?</source>
-      <translation type="unfinished" />
+      <translation>%1 / %2
+%3
+Nhập vào thư viện của bạn?</translation>
     </message>
     <message>
       <source>%1 Hz: measured %2%3 dB; suggested %4%5 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 Hz: đo được %2%3 dB; đề xuất %4%5 dB</translation>
     </message>
     <message>
       <source>%1 Hz: too quiet to measure</source>
-      <translation type="unfinished" />
+      <translation>%1 Hz: âm quá nhỏ để đo</translation>
     </message>
     <message>
       <source>%1 disconnected. </source>
-      <translation type="unfinished" />
+      <translation>%1 đã ngắt kết nối. </translation>
     </message>
     <message>
       <source>%1%2 dB</source>
-      <translation type="unfinished" />
+      <translation>%1%2 dB</translation>
     </message>
     <message>
       <source>Abort</source>
-      <translation type="unfinished" />
+      <translation>Dừng</translation>
     </message>
     <message>
       <source>Acoustic</source>
-      <translation type="unfinished" />
+      <translation>Acoustic</translation>
     </message>
     <message>
       <source>Active / passive / unknown</source>
-      <translation type="unfinished" />
+      <translation>Chủ động / thụ động / chưa biết</translation>
     </message>
     <message>
       <source>Add filter</source>
-      <translation type="unfinished" />
+      <translation>Thêm bộ lọc</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
-      <translation type="unfinished" />
+      <translation>Điều chỉnh đầu ra từ -60 đến +12 dB sau EQ. Tăng gain có thể gây xén đỉnh tín hiệu.</translation>
     </message>
     <message>
       <source>Adjust this tone band around the natural voice profile</source>
-      <translation type="unfinished" />
+      <translation>Điều chỉnh dải âm này dựa trên cấu hình giọng nói tự nhiên</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
-      <translation type="unfinished" />
+      <translation>Điều khiển cải thiện âm thanh nâng cao</translation>
     </message>
     <message>
       <source>Air</source>
-      <translation type="unfinished" />
+      <translation>Độ thoáng</translation>
     </message>
     <message>
       <source>All brands</source>
-      <translation type="unfinished" />
+      <translation>Tất cả thương hiệu</translation>
     </message>
     <message>
       <source>All equipment</source>
-      <translation type="unfinished" />
+      <translation>Tất cả thiết bị</translation>
     </message>
     <message>
       <source>All families</source>
-      <translation type="unfinished" />
+      <translation>Tất cả dòng sản phẩm</translation>
     </message>
     <message>
       <source>All manufacturers</source>
-      <translation type="unfinished" />
+      <translation>Tất cả nhà sản xuất</translation>
     </message>
     <message>
       <source>All speaker types</source>
-      <translation type="unfinished" />
+      <translation>Tất cả loại loa</translation>
     </message>
     <message>
       <source>All subtypes</source>
-      <translation type="unfinished" />
+      <translation>Tất cả loại phụ</translation>
     </message>
     <message>
       <source>Ambience</source>
-      <translation type="unfinished" />
+      <translation>Âm vang không gian</translation>
     </message>
     <message>
       <source>Ambience damping</source>
-      <translation type="unfinished" />
+      <translation>Độ giảm chấn âm vang không gian</translation>
     </message>
     <message>
       <source>Ambience decay</source>
-      <translation type="unfinished" />
+      <translation>Thời gian suy giảm âm vang không gian</translation>
     </message>
     <message>
       <source>Amp details</source>
-      <translation type="unfinished" />
+      <translation>Chi tiết ampli</translation>
     </message>
     <message>
       <source>Amplifier</source>
-      <translation type="unfinished" />
+      <translation>Ampli</translation>
     </message>
     <message>
       <source>Amplifier / receiver</source>
-      <translation type="unfinished" />
+      <translation>Ampli / receiver</translation>
     </message>
     <message>
       <source>Amplifier model profile</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình mẫu ampli</translation>
     </message>
     <message>
       <source>Amplifier profile details</source>
-      <translation type="unfinished" />
+      <translation>Chi tiết cấu hình ampli</translation>
     </message>
     <message>
       <source>Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình ampli cần phép đo điện với tải loa, đầu vào và thiết lập âm sắc đã biết. Nhập tệp hiệu chỉnh từ phép đo; không suy đoán đường đáp tuyến ampli từ thông số quảng cáo.</translation>
     </message>
     <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
-      <translation type="unfinished" />
+      <translation>Bản cập nhật ứng dụng đã được cài đặt. Chọn Thoát rồi mở lại để tải bản mới; chỉ đóng cửa sổ này thì phiên bản cũ vẫn chạy.</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
-      <translation type="unfinished" />
+      <translation>Một đầu ra ảo SoundCurrent EQ khác đang chạy</translation>
     </message>
     <message>
       <source>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</source>
-      <translation type="unfinished" />
+      <translation>Một ứng dụng SoundCurrent khác hoặc trình thiết lập driver âm thanh đang chạy. Thoát chương trình đó trước khi mở ứng dụng này.</translation>
     </message>
     <message>
       <source>Another SoundCurrent equalizer is running. Quit EQ or Studio before opening the other app.</source>
-      <translation type="unfinished" />
+      <translation>Một bộ cân bằng âm SoundCurrent khác đang chạy. Thoát EQ hoặc Studio trước khi mở ứng dụng còn lại.</translation>
     </message>
     <message>
       <source>Another SoundCurrent microphone filter is running</source>
-      <translation type="unfinished" />
+      <translation>Một bộ lọc micrô SoundCurrent khác đang chạy</translation>
     </message>
     <message>
       <source>Another equalizer route is present: %1. Quit it before using SoundCurrent.</source>
-      <translation type="unfinished" />
+      <translation>Có tuyến cân bằng âm khác: %1. Thoát chương trình đó trước khi dùng SoundCurrent.</translation>
     </message>
     <message>
       <source>Application update</source>
-      <translation type="unfinished" />
+      <translation>Cập nhật ứng dụng</translation>
     </message>
     <message>
       <source>Application updates</source>
-      <translation type="unfinished" />
+      <translation>Cập nhật ứng dụng</translation>
     </message>
     <message>
       <source>Apply</source>
-      <translation type="unfinished" />
+      <translation>Áp dụng</translation>
     </message>
     <message>
       <source>Apply correction?</source>
-      <translation type="unfinished" />
+      <translation>Áp dụng hiệu chỉnh?</translation>
     </message>
     <message>
       <source>Apply profile</source>
-      <translation type="unfinished" />
+      <translation>Áp dụng cấu hình</translation>
     </message>
     <message>
       <source>Apply suggested EQ</source>
-      <translation type="unfinished" />
+      <translation>Áp dụng EQ đề xuất</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
-      <translation type="unfinished" />
+      <translation>Thiết lập driver âm thanh</translation>
     </message>
     <message>
       <source>Audio error: %1</source>
-      <translation type="unfinished" />
+      <translation>Lỗi âm thanh: %1</translation>
     </message>
     <message>
       <source>Audio setup</source>
-      <translation type="unfinished" />
+      <translation>Thiết lập âm thanh</translation>
     </message>
     <message>
       <source>Audio setup could not finish</source>
-      <translation type="unfinished" />
+      <translation>Không thể hoàn tất thiết lập âm thanh</translation>
     </message>
     <message>
       <source>Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.</source>
-      <translation type="unfinished" />
+      <translation>Thiết lập âm thanh thất bại. Nếu vừa cài VB-CABLE, hãy khởi động lại Windows rồi thử lại.</translation>
     </message>
     <message>
       <source>Audio setup is missing. Repair or reinstall SoundCurrent.</source>
-      <translation type="unfinished" />
+      <translation>Không tìm thấy trình thiết lập âm thanh. Hãy sửa chữa hoặc cài lại SoundCurrent.</translation>
     </message>
     <message>
       <source>Audio setup is running. Processing is paused; the app remains open.</source>
-      <translation type="unfinished" />
+      <translation>Trình thiết lập âm thanh đang chạy. Xử lý được tạm dừng; ứng dụng vẫn mở.</translation>
     </message>
     <message>
       <source>Auto headroom %1 dB</source>
-      <translation type="unfinished" />
+      <translation>Khoảng dự phòng tự động %1 dB</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
-      <translation type="unfinished" />
+      <translation>Tự động (SoundCurrent Microphone)</translation>
     </message>
     <message>
       <source>Automatic (follow connected devices)</source>
-      <translation type="unfinished" />
+      <translation>Tự động (theo thiết bị được kết nối)</translation>
     </message>
     <message>
       <source>Automatic (follow connected microphones)</source>
-      <translation type="unfinished" />
+      <translation>Tự động (theo micrô được kết nối)</translation>
     </message>
     <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Tự động hiệu chỉnh âm thanh micrô được kết nối; nhấp để bỏ qua EQ micrô</translation>
     </message>
     <message>
       <source>Balance</source>
@@ -265,15 +273,15 @@ Import into your library?</source>
     </message>
     <message>
       <source>Balance position</source>
-      <translation type="unfinished" />
+      <translation>Vị trí cân bằng</translation>
     </message>
     <message>
       <source>Balanced</source>
-      <translation type="unfinished" />
+      <translation>Cân đối</translation>
     </message>
     <message>
       <source>Band %1 gain</source>
-      <translation type="unfinished" />
+      <translation>Gain dải %1</translation>
     </message>
     <message>
       <source>Bands</source>
@@ -282,7 +290,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.</source>
-      <translation type="unfinished" />
+      <translation>Các thanh cạnh thanh trượt hiển thị mức ước tính sau EQ. Chữ đỉnh màu đỏ cảnh báo nguy cơ xén đỉnh tín hiệu.</translation>
     </message>
     <message>
       <source>Bass Boost</source>
@@ -290,27 +298,27 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bass Cut</source>
-      <translation type="unfinished" />
+      <translation>Giảm âm trầm</translation>
     </message>
     <message>
       <source>Bass adds low-frequency weight; Clarity adds high-frequency detail; Ambience adds room reflections; Surround widens stereo; Dynamic Boost compresses and raises quieter material with a peak ceiling. Boosting can increase output level.</source>
-      <translation type="unfinished" />
+      <translation>Âm trầm tăng độ đầy ở tần số thấp; Độ rõ tăng chi tiết ở tần số cao; Âm vang không gian thêm phản xạ phòng; Surround mở rộng stereo. Tăng cường động nén và nâng âm nhỏ với giới hạn đỉnh. Tăng cường có thể làm tăng mức đầu ra.</translation>
     </message>
     <message>
       <source>Bass frequency</source>
-      <translation type="unfinished" />
+      <translation>Tần số âm trầm</translation>
     </message>
     <message>
       <source>Boxiness</source>
-      <translation type="unfinished" />
+      <translation>Âm hộp</translation>
     </message>
     <message>
       <source>Brand</source>
-      <translation type="unfinished" />
+      <translation>Thương hiệu</translation>
     </message>
     <message>
       <source>Brand, family and model are required (maximum 120 characters each).</source>
-      <translation type="unfinished" />
+      <translation>Cần có thương hiệu, dòng sản phẩm và mẫu (mỗi mục tối đa 120 ký tự).</translation>
     </message>
     <message>
       <source>Bright</source>

@@ -331,3 +331,7 @@ All current Indonesian catalog entries are populated (441 EQ, 527 Studio). Both 
 ### Indonesian: completeness and profile-editor gates
 
 Indonesian is required to stay fully populated by the source/catalog validator. Runtime assertions verify regional fallback, LTR layout and the standard Save action. The profile editor import/edit/save/cancel/discard/apply workflow runs in Indonesian. All four focused Linux checks passed in both apps. Translations remain unverified; Windows and visual qualification are pending.
+
+### Vietnamese: first existing-catalog batch
+
+Vietnamese now has 102/441 populated current catalog entries. The first 80 shared sources cover routing, calibration limitations and main audio controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
