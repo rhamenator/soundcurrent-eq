@@ -172,22 +172,22 @@
   {
     "tag": "nb",
     "name": "Norsk bokmål",
-    "translated": 230,
+    "translated": 292,
     "total": 441,
     "status": "unverified",
     "nativeReviewed": false,
-    "tsSha256": "7933839a038b4fc62dd0fb6d3a75f1390fe7da559656aa7defb9f94046dea8a3",
-    "qmSha256": "032714ac8db60bd8dc1f4bbcedbd638a5057ab5011a880f9a5286342412b4629"
+    "tsSha256": "30d0d10bfe2bdcf65851d358c6f83cc609b262135364b4aeba3377615ef2ac35",
+    "qmSha256": "9ebbf271f93c89a6d23e61eaef3bd692bca29f97b1aa8a6ef2e033882f2d3068"
   },
   {
     "tag": "fi",
     "name": "Suomi",
-    "translated": 230,
+    "translated": 292,
     "total": 441,
     "status": "unverified",
     "nativeReviewed": false,
-    "tsSha256": "930a82dcf2d49b9171988fd69f94970b6731bcfe5e6680458409bcaf03da8718",
-    "qmSha256": "b68e2f46cc7363ad153acc16eec9eb4fd81a10bd9854461eff895f4772bff427"
+    "tsSha256": "51b34b510467b57ad7d09f2b70019b35caf3a82ffc70cce3cc8e42a17a3f9042",
+    "qmSha256": "918ff7fd28d7246bf66adb26e93d6e075454d649739840558543e14b8803290e"
   },
   {
     "tag": "ro",
