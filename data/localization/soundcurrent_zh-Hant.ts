@@ -1137,87 +1137,87 @@ Import into your library?</source>
     </message>
     <message>
       <source>No</source>
-      <translation type="unfinished" />
+      <translation>否</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>未選擇匯入的設備校正。</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>未選擇實測擴大機校正。行銷中的頻率範圍規格不足以推導校正曲線。</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>未連接麥克風。</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>未選擇型號校正。您的聆聽等化設定正常運作。</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>未發現較新的已發布版本。也會檢查已下載的安裝程式。</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>沒有可用的輸出裝置。</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>未連接輸出裝置。</translation>
     </message>
     <message>
       <source>No to All</source>
-      <translation type="unfinished" />
+      <translation>全部否</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>無 — 使用我的等化設定</translation>
     </message>
     <message>
       <source>Number and date format</source>
-      <translation>數字和日期格式</translation>
+      <translation>數字及日期格式</translation>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>等化器頻段數</translation>
     </message>
     <message>
       <source>OK</source>
-      <translation type="unfinished" />
+      <translation>確定</translation>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>開啟 · 透過 %1 播放</translation>
     </message>
     <message>
       <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
-      <translation type="unfinished" />
+      <translation>登入時只啟動一個 SoundCurrent 應用程式。啟用此選項會取代另一個應用程式的啟動設定。如果系統匣圖示可用，應用程式會在背景啟動。</translation>
     </message>
     <message>
       <source>Open</source>
-      <translation type="unfinished" />
+      <translation>開啟</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>開啟 VB-Audio 控制台以調整線纜延遲及內部取樣率。播放音訊時變更這些設定可能中斷播放。</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>開啟 VB-CABLE 控制台</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>開啟版本下載頁面</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>開啟更新資料夾</translation>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>橙色：實測響應（如有）。青綠色：48 kHz 下的校正。拖曳青綠色控制點或編輯表格。儲存會保留參考資料並建立自訂副本。</translation>
     </message>
     <message>
       <source>Output device</source>
@@ -1225,31 +1225,31 @@ Import into your library?</source>
     </message>
     <message>
       <source>Output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>輸出裝置已不可用</translation>
     </message>
     <message>
       <source>Output has no volume channels</source>
-      <translation type="unfinished" />
+      <translation>輸出沒有音量控制聲道</translation>
     </message>
     <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>整體輸出</translation>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>暫停處理並開啟音訊設定。應用程式保持開啟並回報結果。安裝驅動程式後請重新啟動 Windows。</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>峰值標記</translation>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>鋼琴</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>播放低音量測試音訊並預覽建議的播放等化調整</translation>
     </message>
     <message>
       <source>Playback</source>
@@ -1257,100 +1257,100 @@ Import into your library?</source>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>正在播放低音量測試音訊。如感到不適，請停止。</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>請連接麥克風以選擇麥克風設定檔</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>Podcast</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>流行</translation>
     </message>
     <message>
       <source>Post gain</source>
       <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
-      <translation>輸出增益</translation>
+      <translation>後級增益</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>等化處理後的增益</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>後級增益值（分貝）</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>預設名稱：</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>防止變更預設、等化器頻段、後級增益及平衡</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>設定檔</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>設定檔詳細資訊</translation>
     </message>
     <message>
       <source>Profile exceeds the 1 MiB limit.</source>
-      <translation type="unfinished" />
+      <translation>設定檔超過 1 MiB 限制。</translation>
     </message>
     <message>
       <source>Profile library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>設定檔資料庫超過 16 MiB。</translation>
     </message>
     <message>
       <source>Profile metadata is too long.</source>
-      <translation type="unfinished" />
+      <translation>設定檔中繼資料過長。</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>設定檔必須可讀且小於 64 KiB。</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>
-      <translation type="unfinished" />
+      <translation>設定檔需要 1–16 個校正濾波器。</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>已發布的測量來源： &lt;a href="https://www.spinorama.org/"&gt;喇叭測量 / 等化&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton 依序號校正&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP 依序號校正&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann 麥克風曲線&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 響應曲線&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;擴大機測量&lt;/a&gt;</translation>
     </message>
     <message>
       <source>Published profiles need an HTTPS measurement source.</source>
-      <translation type="unfinished" />
+      <translation>已發布的設定檔需要 HTTPS 測量來源。</translation>
     </message>
     <message>
       <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <translation>無法檢查已發布的版本。私人 Studio 版本需要 GitHub 存取權。請使用「開啟版本下載頁面」；已下載的安裝程式仍會在本機偵測。</translation>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>已發布的響應及可編輯的校正曲線</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>已發布的更新 %1 可用。開啟版本下載頁面，然後在此版本上直接安裝並重新開啟。</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>有力低音</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>低音量對數掃頻</translation>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>結束 SoundCurrent EQ</translation>
     </message>
     <message>
       <source>Quit app</source>
@@ -1359,11 +1359,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>R</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>節奏藍調</translation>
     </message>
     <message>
       <source>Refresh devices</source>
@@ -1373,27 +1373,29 @@ Import into your library?</source>
       <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
 
 %1</source>
-      <translation type="unfinished" />
+      <translation>相對測量包含喇叭、房間及麥克風的響應。建議調整在每個實測頻率上最多為 3 dB。
+
+%1</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>有可用更新或需要重新啟動時提醒我</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>移除所選濾波器</translation>
     </message>
     <message>
       <source>Reset</source>
-      <translation type="unfinished" />
+      <translation>重設</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>重設增強效果</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>重設麥克風音色</translation>
     </message>
     <message>
       <source>Reset to flat</source>
