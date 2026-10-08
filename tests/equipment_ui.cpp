@@ -98,7 +98,12 @@ int main(int argc,char **argv) {
         if(phase==0){require(bundledProfiles().size()>1000,"Bundled equipment missing");
             auto *kind=library->findChild<QComboBox *>("equipmentKindFilter");require(kind,"No equipment kind selector");
             require(kind->itemData(1).toString()=="speaker" && kind->itemData(2).toString()=="microphone" && kind->itemData(3).toString()=="amplifier","Localized kinds changed profile IDs");
-            kind->setCurrentIndex(2);kind->setCurrentIndex(0);phase=1;clickLater(button(library,"Import JSON"));}
+            auto *subtype=library->findChild<QComboBox *>("equipmentSubtypeFilter");require(subtype,"No stable equipment subtype selector");
+            const int bookshelf=subtype->findData("Bookshelf");require(bookshelf>=0,"Missing bookshelf taxonomy key");
+            subtype->setItemText(bookshelf,QString::fromUtf8("Bibliothèque / 棚型"));subtype->setCurrentIndex(bookshelf);
+            require(subtype->currentData().toString()=="Bookshelf","Display caption changed subtype identity");
+            kind->setCurrentIndex(1);require(subtype->currentData().toString()=="Bookshelf","Taxonomy refresh lost stable subtype selection");
+            subtype->setCurrentIndex(0);kind->setCurrentIndex(2);kind->setCurrentIndex(0);phase=1;clickLater(button(library,"Import JSON"));}
         else if(phase==3){phase=4;clickLater(button(library,"Import JSON"));}
         else if(phase==6){auto profiles=loadLibrary();require(profiles.size()==2 && profiles[0].id==originalId,"Valid import overwrote existing profile");phase=7;clickLater(button(library,"Apply profile"));}
         else if(phase==8){require(applied,"Apply callback missing");phase=9;closeLater(library);}

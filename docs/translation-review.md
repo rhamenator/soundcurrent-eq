@@ -231,3 +231,7 @@ keep numerical/unit tokens and URLs together. The details dialog explicitly uses
 plain text. All locale fixtures test the attribution boundary, negative gain,
 frequency/Q formatting, URLs and policy tokens; native dialog layout/glyph
 qualification still belongs to the final package tests.
+
+## Second pass: stable equipment taxonomy keys
+
+Speaker and equipment-library subtype dropdowns now store the original equipmentType key in item data. Filtering and refresh no longer depend on display text. Regression fixtures replace a caption with French/Japanese text and verify the speaker results and preserved subtype selection. All 34 equipment UI tests and 38 shared/localized/catalog tests passed on Linux with Qt offscreen. Built-in taxonomy labels still need translation; this prerequisite does not establish full interface coverage or Windows qualification. Native-speaker verification remains unverified.

@@ -527,7 +527,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     taxonomy->addWidget(kindFilter);
     taxonomy->addWidget(brandFilter);
     taxonomy->addWidget(familyFilter);
-    auto *subtypeFilter=new QComboBox;subtypeFilter->setAccessibleName(SC_TR("Equipment subtype"));taxonomy->addWidget(subtypeFilter);
+    auto *subtypeFilter=new QComboBox;subtypeFilter->setObjectName("equipmentSubtypeFilter");subtypeFilter->setAccessibleName(SC_TR("Equipment subtype"));taxonomy->addWidget(subtypeFilter);
     layout->insertLayout(0, taxonomy);
     auto taxonomyRefresh = [&] {
         const QSignalBlocker b(brandFilter), f(familyFilter), st(subtypeFilter);
@@ -542,7 +542,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
                     !families.contains(p.family))
                     families.append(p.family);
             }
-        const auto subtype=subtypeFilter->currentText();subtypes.sort(Qt::CaseInsensitive);subtypeFilter->clear();subtypeFilter->addItem(SC_TR("All subtypes"));subtypeFilter->addItems(subtypes);subtypeFilter->setCurrentIndex(std::max(0,subtypeFilter->findText(subtype)));
+        const auto subtype=subtypeFilter->currentData().toString();subtypes.sort(Qt::CaseInsensitive);subtypeFilter->clear();subtypeFilter->addItem(SC_TR("All subtypes"));for(const auto &type:subtypes)subtypeFilter->addItem(type,type);subtypeFilter->setCurrentIndex(std::max(0,subtypeFilter->findData(subtype)));
         brands.sort(Qt::CaseInsensitive);
         families.sort(Qt::CaseInsensitive);
         brandFilter->clear();
@@ -564,7 +564,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             if ((kindFilter->currentIndex() == 0 || p.kind == kindFilter->currentData().toString()) &&
                 (brandFilter->currentIndex() == 0 || p.brand == brandFilter->currentText()) &&
                 (familyFilter->currentIndex() == 0 || p.family == familyFilter->currentText()) &&
-                (subtypeFilter->currentIndex()==0 || p.equipmentType==subtypeFilter->currentText()) &&
+                (subtypeFilter->currentIndex()==0 || p.equipmentType==subtypeFilter->currentData().toString()) &&
                 (name + " " + p.conditions).contains(search->text(), Qt::CaseInsensitive))
                 list->addItem(name, i);
         }

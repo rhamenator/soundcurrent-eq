@@ -2078,7 +2078,7 @@ public:
         taxonomy->addWidget(new QLabel(SC_TR("Manufacturer")));speakerBrand_=new PresetComboBox;speakerBrand_->setAccessibleName(SC_TR("Speaker manufacturer"));speakerBrand_->addItem(SC_TR("All manufacturers"));
         taxonomy->addWidget(speakerBrand_,1);taxonomy->addWidget(new QLabel(SC_TR("Type")));speakerType_=new PresetComboBox;speakerType_->setAccessibleName(SC_TR("Speaker type"));speakerType_->addItem(SC_TR("All speaker types"));taxonomy->addWidget(speakerType_,1);
         QStringList brands,types;for(const auto &p:speakerProfiles()){if(!brands.contains(p.brand))brands<<p.brand;if(!types.contains(p.equipmentType))types<<p.equipmentType;}
-        brands.sort(Qt::CaseInsensitive);types.sort(Qt::CaseInsensitive);speakerBrand_->addItems(brands);speakerType_->addItems(types);
+        brands.sort(Qt::CaseInsensitive);types.sort(Qt::CaseInsensitive);speakerBrand_->addItems(brands);for(const auto &type:types)speakerType_->addItem(type,type);
         speakerLayout->addLayout(taxonomy);speakerLayout->addLayout(speakerRow);
         connect(speakerBrand_,&QComboBox::currentIndexChanged,this,[this]{filterSpeakers();});
         connect(speakerType_,&QComboBox::currentIndexChanged,this,[this]{filterSpeakers();});
@@ -3155,7 +3155,7 @@ private:
         const auto selected=speakerCombo_->currentData().toString();const QSignalBlocker block(speakerCombo_);
         speakerCombo_->clear();speakerCombo_->addItem(SC_TR("None — use my own EQ"),QString());
         for(const auto &p:speakerProfiles()){
-            const bool matches=(speakerBrand_->currentIndex()==0 || p.brand==speakerBrand_->currentText()) && (speakerType_->currentIndex()==0 || p.equipmentType==speakerType_->currentText());
+            const bool matches=(speakerBrand_->currentIndex()==0 || p.brand==speakerBrand_->currentText()) && (speakerType_->currentIndex()==0 || p.equipmentType==speakerType_->currentData().toString());
             if(matches || p.id==selected)speakerCombo_->addItem(p.name+(matches?QString():SC_TR(" (currently selected)")),p.id);
         }
         speakerCombo_->setCurrentIndex(std::max(0,speakerCombo_->findData(selected)));
@@ -4072,7 +4072,9 @@ int main(int argc, char **argv) {
         for(auto *combo:testWindow.findChildren<QComboBox *>()){if(combo->accessibleName()=="Speaker manufacturer")manufacturer=combo;if(combo->accessibleName()=="Speaker type")speakerType=combo;}
         if(!manufacturer || !speakerType || manufacturer->count()<200 || speakerType->count()<10 || speakers->count()<1000)qFatal("Full speaker taxonomy missing");
         manufacturer->setCurrentText("JBL");if(speakers->count()<10 || !speakers->currentData().toString().isEmpty())qFatal("Speaker filtering applied a correction");
-        speakerType->setCurrentText("Bookshelf");if(speakers->count()<2)qFatal("Speaker type filtering failed");
+        const int bookshelf=speakerType->findData("Bookshelf");if(bookshelf<0)qFatal("Stable speaker subtype key missing");
+        speakerType->setItemText(bookshelf,QString::fromUtf8("Bibliothèque / 棚型"));speakerType->setCurrentIndex(bookshelf);if(speakers->count()<2)qFatal("Speaker type filtering failed with a localized caption");
+        for(int row=1;row<speakers->count();++row){const auto id=speakers->itemData(row).toString();bool matches=false;for(const auto &profile:speakerProfiles())if(profile.id==id)matches=profile.equipmentType=="Bookshelf" && profile.brand=="JBL";if(!matches)qFatal("Speaker filtering used display text instead of the stable key");}
         manufacturer->setCurrentIndex(0);speakerType->setCurrentIndex(0);
         const int kali = speakers->findData("Kali LP-6v2");
         speakers->setCurrentIndex(kali);
