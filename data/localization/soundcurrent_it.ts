@@ -478,6 +478,11 @@ Importare nella libreria?</translation>
       <translation>Scegli cartella aggiornamenti…</translation>
     </message>
     <message>
+      <source>Cinema speaker</source>
+      <translation>Diffusore per cinema</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
+    </message>
+    <message>
       <source>Clarity</source>
       <translation>Chiarezza</translation>
     </message>
@@ -510,12 +515,22 @@ Importare nella libreria?</translation>
       <translation>Chiudi</translation>
     </message>
     <message>
+      <source>Column speaker</source>
+      <translation>Diffusore a colonna per sonorizzazione</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>Condizioni</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>Collega un’uscita e un microfono prima della misurazione.</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>Diffusore a larghezza del fascio costante</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
       <source>Correction filters:</source>
@@ -1361,6 +1376,11 @@ Importare nella libreria?</translation>
       <translation>OK</translation>
     </message>
     <message>
+      <source>Omnidirectional speaker</source>
+      <translation>Diffusore omnidirezionale</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
+    </message>
+    <message>
       <source>On · Playing through %1</source>
       <translation>Attivo · Riproduzione attraverso %1</translation>
     </message>
@@ -1429,6 +1449,11 @@ Importare nella libreria?</translation>
       <translation>Arancione: risposta misurata, se fornita. Turchese: correzione a 48 kHz. Trascina i punti di controllo turchesi o modifica la tabella. Il salvataggio conserva il riferimento e crea una copia personalizzata.</translation>
     </message>
     <message>
+      <source>Outdoor speaker</source>
+      <translation>Diffusore da esterno</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
+    </message>
+    <message>
       <source>Output device</source>
       <translation>Dispositivo di uscita</translation>
     </message>
@@ -1443,6 +1468,11 @@ Importare nella libreria?</translation>
     <message>
       <source>Overall output</source>
       <translation>Uscita complessiva</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>Diffusore a pannello</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
@@ -1484,6 +1514,11 @@ Importare nella libreria?</translation>
     <message>
       <source>Pop</source>
       <translation>Pop</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>Diffusore PA portatile</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -1926,6 +1961,11 @@ Importare nella libreria?</translation>
       <translation>L’uscita virtuale SoundCurrent richiede audio stereo a 48 kHz in virgola mobile</translation>
     </message>
     <message>
+      <source>Soundbar</source>
+      <translation>Soundbar</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Fonte</translation>
     </message>
@@ -2032,6 +2072,11 @@ Importare nella libreria?</translation>
       <translation>Suono surround</translation>
     </message>
     <message>
+      <source>Surround speaker</source>
+      <translation>Diffusore surround</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
+    </message>
+    <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
       <translation>Editor del profilo di risposta del sistema aperto. I profili salvati sono disponibili nella libreria apparecchiature.</translation>
     </message>
@@ -2078,6 +2123,11 @@ Importare nella libreria?</translation>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>Troppo poco audio di prova ha raggiunto il microfono. Avvicinalo o aumenta leggermente il livello di test.</translation>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>Diffusore PA da tournée</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>

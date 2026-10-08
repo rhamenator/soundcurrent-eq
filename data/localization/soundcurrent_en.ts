@@ -478,6 +478,11 @@ Import into your library?</translation>
       <translation>Choose update folder…</translation>
     </message>
     <message>
+      <source>Cinema speaker</source>
+      <translation>Cinema speaker</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
+    </message>
+    <message>
       <source>Clarity</source>
       <translation>Clarity</translation>
     </message>
@@ -510,12 +515,22 @@ Import into your library?</translation>
       <translation>Close</translation>
     </message>
     <message>
+      <source>Column speaker</source>
+      <translation>Column speaker</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>Conditions</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>Connect an output and a microphone before measuring.</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>Constant-beamwidth speaker</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
       <source>Correction filters:</source>
@@ -1361,6 +1376,11 @@ Import into your library?</translation>
       <translation>OK</translation>
     </message>
     <message>
+      <source>Omnidirectional speaker</source>
+      <translation>Omnidirectional speaker</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
+    </message>
+    <message>
       <source>On · Playing through %1</source>
       <translation>On · Playing through %1</translation>
     </message>
@@ -1429,6 +1449,11 @@ Import into your library?</translation>
       <translation>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</translation>
     </message>
     <message>
+      <source>Outdoor speaker</source>
+      <translation>Outdoor speaker</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
+    </message>
+    <message>
       <source>Output device</source>
       <translation>Output device</translation>
     </message>
@@ -1443,6 +1468,11 @@ Import into your library?</translation>
     <message>
       <source>Overall output</source>
       <translation>Overall output</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>Panel speaker</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
@@ -1484,6 +1514,11 @@ Import into your library?</translation>
     <message>
       <source>Pop</source>
       <translation>Pop</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>Portable PA speaker</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -1926,6 +1961,11 @@ Import into your library?</translation>
       <translation>SoundCurrent virtual output requires 48 kHz stereo float audio</translation>
     </message>
     <message>
+      <source>Soundbar</source>
+      <translation>Soundbar</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Source</translation>
     </message>
@@ -2032,6 +2072,11 @@ Import into your library?</translation>
       <translation>Surround Sound</translation>
     </message>
     <message>
+      <source>Surround speaker</source>
+      <translation>Surround speaker</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
+    </message>
+    <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
       <translation>System response profile editor opened. Saved profiles are available in the equipment library.</translation>
     </message>
@@ -2078,6 +2123,11 @@ Import into your library?</translation>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</translation>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>Touring PA speaker</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>

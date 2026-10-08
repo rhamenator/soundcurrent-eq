@@ -478,6 +478,11 @@ Importați în bibliotecă?</translation>
       <translation>Alegeți dosarul de actualizare…</translation>
     </message>
     <message>
+      <source>Cinema speaker</source>
+      <translation>Boxă de cinema</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
+    </message>
+    <message>
       <source>Clarity</source>
       <translation>Claritate</translation>
     </message>
@@ -510,12 +515,22 @@ Importați în bibliotecă?</translation>
       <translation>Închideți</translation>
     </message>
     <message>
+      <source>Column speaker</source>
+      <translation>Boxă coloană pentru sonorizare</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>Condiții</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>Conectați o ieșire și un microfon înainte de măsurare.</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>Boxă cu lățime constantă a fasciculului</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
       <source>Correction filters:</source>
@@ -1361,6 +1376,11 @@ Importați în bibliotecă?</translation>
       <translation>OK</translation>
     </message>
     <message>
+      <source>Omnidirectional speaker</source>
+      <translation>Boxă omnidirecțională</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
+    </message>
+    <message>
       <source>On · Playing through %1</source>
       <translation>Pornit · Redare prin %1</translation>
     </message>
@@ -1429,6 +1449,11 @@ Importați în bibliotecă?</translation>
       <translation>Portocaliu: răspuns măsurat, dacă este furnizat. Turcoaz: corecție la 48 kHz. Trageți punctele de control turcoaz sau editați tabelul. Salvarea păstrează referința și creează o copie personalizată.</translation>
     </message>
     <message>
+      <source>Outdoor speaker</source>
+      <translation>Boxă de exterior</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
+    </message>
+    <message>
       <source>Output device</source>
       <translation>Dispozitiv de ieșire</translation>
     </message>
@@ -1443,6 +1468,11 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Overall output</source>
       <translation>Ieșire generală</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>Boxă tip panou</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
@@ -1484,6 +1514,11 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Pop</source>
       <translation>Pop</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>Boxă PA portabilă</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -1926,6 +1961,11 @@ Importați în bibliotecă?</translation>
       <translation>Ieșirea virtuală SoundCurrent necesită sunet stereo la 48 kHz în virgulă mobilă</translation>
     </message>
     <message>
+      <source>Soundbar</source>
+      <translation>Bară de sunet</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Sursă</translation>
     </message>
@@ -2032,6 +2072,11 @@ Importați în bibliotecă?</translation>
       <translation>Sunet surround</translation>
     </message>
     <message>
+      <source>Surround speaker</source>
+      <translation>Boxă surround</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
+    </message>
+    <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
       <translation>Editorul profilului răspunsului sistemului a fost deschis. Profilurile salvate sunt disponibile în biblioteca de echipament.</translation>
     </message>
@@ -2078,6 +2123,11 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>Prea puțin sunet de test a ajuns la microfon. Apropiați-l sau creșteți ușor nivelul de test.</translation>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>Boxă PA pentru turnee</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>

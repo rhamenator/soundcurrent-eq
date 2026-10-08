@@ -478,6 +478,11 @@ Import into your library?</source>
       <translation>अपडेट फ़ोल्डर चुनें…</translation>
     </message>
     <message>
+      <source>Cinema speaker</source>
+      <translation>सिनेमा स्पीकर</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
+    </message>
+    <message>
       <source>Clarity</source>
       <translation>स्पष्टता</translation>
     </message>
@@ -510,12 +515,22 @@ Import into your library?</source>
       <translation>बंद करें</translation>
     </message>
     <message>
+      <source>Column speaker</source>
+      <translation>कॉलम स्पीकर</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>माप की स्थितियाँ</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>मापने से पहले आउटपुट उपकरण और माइक्रोफ़ोन कनेक्ट करें।</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>स्थिर बीम चौड़ाई वाला स्पीकर</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
       <source>Correction filters:</source>
@@ -1361,6 +1376,11 @@ Import into your library?</source>
       <translation>ठीक है</translation>
     </message>
     <message>
+      <source>Omnidirectional speaker</source>
+      <translation>सर्वदिशात्मक स्पीकर</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
+    </message>
+    <message>
       <source>On · Playing through %1</source>
       <translation>चालू · %1 से चल रहा है</translation>
     </message>
@@ -1429,6 +1449,11 @@ Import into your library?</source>
       <translation>नारंगी: उपलब्ध होने पर मापी गई प्रतिक्रिया। नीला-हरा: 48 kHz पर सुधार। नीले-हरे नियंत्रण बिंदु खींचें या तालिका संपादित करें। सहेजने पर संदर्भ सुरक्षित रहता है और एक कस्टम कॉपी बनती है।</translation>
     </message>
     <message>
+      <source>Outdoor speaker</source>
+      <translation>बाहरी उपयोग का स्पीकर</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
+    </message>
+    <message>
       <source>Output device</source>
       <translation>आउटपुट उपकरण</translation>
     </message>
@@ -1443,6 +1468,11 @@ Import into your library?</source>
     <message>
       <source>Overall output</source>
       <translation>कुल आउटपुट</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>पैनल स्पीकर</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
@@ -1484,6 +1514,11 @@ Import into your library?</source>
     <message>
       <source>Pop</source>
       <translation>पॉप</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>पोर्टेबल PA स्पीकर</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -1926,6 +1961,11 @@ Import into your library?</source>
       <translation>SoundCurrent वर्चुअल आउटपुट के लिए 48 kHz स्टीरियो फ़्लोटिंग-पॉइंट ऑडियो चाहिए</translation>
     </message>
     <message>
+      <source>Soundbar</source>
+      <translation>साउंडबार</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
       <translation>स्रोत</translation>
     </message>
@@ -2032,6 +2072,11 @@ Import into your library?</source>
       <translation>सराउंड साउंड</translation>
     </message>
     <message>
+      <source>Surround speaker</source>
+      <translation>सराउंड स्पीकर</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
+    </message>
+    <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
       <translation>सिस्टम प्रतिक्रिया प्रोफ़ाइल संपादक खोला गया। सहेजी गई प्रोफ़ाइल उपकरण लाइब्रेरी में उपलब्ध हैं।</translation>
     </message>
@@ -2078,6 +2123,11 @@ Import into your library?</source>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>माइक्रोफ़ोन तक बहुत कम परीक्षण ऑडियो पहुँचा। उसे पास लाएँ या परीक्षण स्तर थोड़ा बढ़ाएँ।</translation>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>टूरिंग PA स्पीकर</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>

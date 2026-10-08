@@ -478,6 +478,11 @@ Importovat do vaší knihovny?</translation>
       <translation>Vybrat složku aktualizací…</translation>
     </message>
     <message>
+      <source>Cinema speaker</source>
+      <translation>Kinový reproduktor</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
+    </message>
+    <message>
       <source>Clarity</source>
       <translation>Zřetelnost</translation>
     </message>
@@ -510,12 +515,22 @@ Importovat do vaší knihovny?</translation>
       <translation>Zavřít</translation>
     </message>
     <message>
+      <source>Column speaker</source>
+      <translation>Sloupový reproduktor pro ozvučení</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>Podmínky</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>Před měřením připojte výstup a mikrofon.</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>Reproduktor s konstantní šířkou vyzařovacího svazku</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
       <source>Correction filters:</source>
@@ -1361,6 +1376,11 @@ Importovat do vaší knihovny?</translation>
       <translation>OK</translation>
     </message>
     <message>
+      <source>Omnidirectional speaker</source>
+      <translation>Všesměrový reproduktor</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
+    </message>
+    <message>
       <source>On · Playing through %1</source>
       <translation>Zapnuto · Přehrávání přes %1</translation>
     </message>
@@ -1429,6 +1449,11 @@ Importovat do vaší knihovny?</translation>
       <translation>Oranžová: naměřená odezva, pokud je dodána. Tyrkysová: korekce při 48 kHz. Přetahujte tyrkysové body nebo upravujte tabulku. Uložením zachováte referenční profil a vytvoříte vlastní kopii.</translation>
     </message>
     <message>
+      <source>Outdoor speaker</source>
+      <translation>Venkovní reproduktor</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
+    </message>
+    <message>
       <source>Output device</source>
       <translation>Výstupní zařízení</translation>
     </message>
@@ -1443,6 +1468,11 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Overall output</source>
       <translation>Celkový výstup</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>Panelový reproduktor</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
@@ -1484,6 +1514,11 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Pop</source>
       <translation>Pop</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>Přenosný reproduktor pro ozvučení</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -1926,6 +1961,11 @@ Importovat do vaší knihovny?</translation>
       <translation>Virtuální výstup SoundCurrent vyžaduje stereofonní zvuk 48 kHz v plovoucí řádové čárce</translation>
     </message>
     <message>
+      <source>Soundbar</source>
+      <translation>Soundbar</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Zdroj</translation>
     </message>
@@ -2032,6 +2072,11 @@ Importovat do vaší knihovny?</translation>
       <translation>Prostorový zvuk</translation>
     </message>
     <message>
+      <source>Surround speaker</source>
+      <translation>Prostorový reproduktor</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
+    </message>
+    <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
       <translation>Editor profilu odezvy systému otevřen. Uložené profily jsou dostupné v knihovně zařízení.</translation>
     </message>
@@ -2078,6 +2123,11 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>K mikrofonu dorazilo příliš málo testovacího zvuku. Přesuňte jej blíže nebo mírně zvyšte testovací úroveň.</translation>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>Reproduktor pro koncertní ozvučení</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>

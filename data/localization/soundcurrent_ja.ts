@@ -478,6 +478,11 @@ Import into your library?</source>
       <translation>更新フォルダーを選択…</translation>
     </message>
     <message>
+      <source>Cinema speaker</source>
+      <translation>シネマ用スピーカー</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
+    </message>
+    <message>
       <source>Clarity</source>
       <translation>明瞭さ</translation>
     </message>
@@ -510,12 +515,22 @@ Import into your library?</source>
       <translation>閉じる</translation>
     </message>
     <message>
+      <source>Column speaker</source>
+      <translation>コラム型スピーカー</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>測定条件</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>測定の前に、出力デバイスとマイクを接続してください。</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>定ビーム幅スピーカー</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
       <source>Correction filters:</source>
@@ -1361,6 +1376,11 @@ Import into your library?</source>
       <translation>OK</translation>
     </message>
     <message>
+      <source>Omnidirectional speaker</source>
+      <translation>無指向性スピーカー</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
+    </message>
+    <message>
       <source>On · Playing through %1</source>
       <translation>オン · %1 で再生中</translation>
     </message>
@@ -1429,6 +1449,11 @@ Import into your library?</source>
       <translation>オレンジ: 提供されている場合の測定周波数特性。青緑: 48 kHz での補正。青緑のコントロールポイントをドラッグするか、表を編集してください。保存すると参照データを保持したまま、カスタムコピーを作成します。</translation>
     </message>
     <message>
+      <source>Outdoor speaker</source>
+      <translation>屋外用スピーカー</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
+    </message>
+    <message>
       <source>Output device</source>
       <translation>出力デバイス</translation>
     </message>
@@ -1443,6 +1468,11 @@ Import into your library?</source>
     <message>
       <source>Overall output</source>
       <translation>全体出力</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>パネル型スピーカー</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
@@ -1484,6 +1514,11 @@ Import into your library?</source>
     <message>
       <source>Pop</source>
       <translation>ポップ</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>ポータブルPAスピーカー</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -1926,6 +1961,11 @@ Import into your library?</source>
       <translation>SoundCurrent の仮想出力には 48 kHz のステレオ浮動小数点音声が必要です</translation>
     </message>
     <message>
+      <source>Soundbar</source>
+      <translation>サウンドバー</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
       <translation>出典</translation>
     </message>
@@ -2032,6 +2072,11 @@ Import into your library?</source>
       <translation>サラウンドサウンド</translation>
     </message>
     <message>
+      <source>Surround speaker</source>
+      <translation>サラウンドスピーカー</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
+    </message>
+    <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
       <translation>システムの周波数特性プロファイルエディターを開きました。保存したプロファイルは機器ライブラリで利用できます。</translation>
     </message>
@@ -2078,6 +2123,11 @@ Import into your library?</source>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>マイクに届いたテスト音声が小さすぎます。マイクを近づけるか、テストレベルを少し上げてください。</translation>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>ツアー用PAスピーカー</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>

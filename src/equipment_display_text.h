@@ -11,6 +11,16 @@ inline QString equipmentTypeText(const QString &key) {
     if(key=="Floorstanding")return SC_TR("Floorstanding speaker");
     if(key=="In-wall")return SC_TR("In-wall speaker");
     if(key=="Unclassified")return SC_TR("Unclassified equipment");
+    if(key=="Cinema")return SC_TR("Cinema speaker");
+    if(key=="Column")return SC_TR("Column speaker");
+    if(key=="Constant beamwidth")return SC_TR("Constant-beamwidth speaker");
+    if(key=="Omnidirectional")return SC_TR("Omnidirectional speaker");
+    if(key=="Outdoor")return SC_TR("Outdoor speaker");
+    if(key=="Panel")return SC_TR("Panel speaker");
+    if(key=="Portable PA")return SC_TR("Portable PA speaker");
+    if(key=="Soundbar")return SC_TR("Soundbar");
+    if(key=="Surround")return SC_TR("Surround speaker");
+    if(key=="Touring PA")return SC_TR("Touring PA speaker");
     return key;
 }
 // Directionality belongs to the rendered text, never to imported/saved data.

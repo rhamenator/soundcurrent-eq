@@ -2,6 +2,7 @@
 """Regression tests for catalog preservation and invalid translation rejection."""
 import importlib.util
 import json
+import re
 from pathlib import Path
 import tempfile
 import unittest
@@ -14,6 +15,15 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_bundled_speaker_taxonomy_has_marked_display_labels(self):
+        root = Path(__file__).resolve().parents[1]
+        profiles = json.loads((root / 'data/equipment/spinorama.json').read_text())
+        keys = {profile['equipmentType'] for profile in profiles}
+        header = (root / 'src/equipment_display_text.h').read_text()
+        mapping = dict(re.findall(r'if\(key=="([^"]+)"\)return SC_TR\("([^"]+)"\);', header))
+        self.assertEqual(keys, set(mapping), 'Published taxonomy additions need explicit localized display labels')
+        self.assertTrue(set(mapping.values()).issubset(catalog.marked_sources(root / 'src')))
+
     def test_extraction_respects_comments_and_nested_arguments(self):
         code = '// SC_TR("Not UI")\n/* SC_TR("Not UI either") */\nSC_TR("A " "label"); require(call(a, b), "A reason"); text("Value %1");'
         self.assertEqual([catalog.literal(args[0]) for args in catalog.calls(code, 'SC_TR')], ['A label'])

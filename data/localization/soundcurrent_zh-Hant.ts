@@ -478,6 +478,11 @@ Import into your library?</source>
       <translation>選擇更新資料夾…</translation>
     </message>
     <message>
+      <source>Cinema speaker</source>
+      <translation>影院喇叭</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
+    </message>
+    <message>
       <source>Clarity</source>
       <translation>清晰度</translation>
     </message>
@@ -510,12 +515,22 @@ Import into your library?</source>
       <translation>關閉</translation>
     </message>
     <message>
+      <source>Column speaker</source>
+      <translation>聲柱喇叭</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>條件</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>測量前請連接輸出裝置及麥克風。</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>恆定波束寬度喇叭</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
       <source>Correction filters:</source>
@@ -1361,6 +1376,11 @@ Import into your library?</source>
       <translation>確定</translation>
     </message>
     <message>
+      <source>Omnidirectional speaker</source>
+      <translation>全向喇叭</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
+    </message>
+    <message>
       <source>On · Playing through %1</source>
       <translation>開啟 · 透過 %1 播放</translation>
     </message>
@@ -1429,6 +1449,11 @@ Import into your library?</source>
       <translation>橙色：實測響應（如有）。青綠色：48 kHz 下的校正。拖曳青綠色控制點或編輯表格。儲存會保留參考資料並建立自訂副本。</translation>
     </message>
     <message>
+      <source>Outdoor speaker</source>
+      <translation>戶外喇叭</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
+    </message>
+    <message>
       <source>Output device</source>
       <translation>輸出裝置</translation>
     </message>
@@ -1443,6 +1468,11 @@ Import into your library?</source>
     <message>
       <source>Overall output</source>
       <translation>整體輸出</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>平板喇叭</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
@@ -1484,6 +1514,11 @@ Import into your library?</source>
     <message>
       <source>Pop</source>
       <translation>流行</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>可攜式擴聲喇叭</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -1926,6 +1961,11 @@ Import into your library?</source>
       <translation>SoundCurrent 虛擬輸出需要 48 kHz 立體聲浮點音訊</translation>
     </message>
     <message>
+      <source>Soundbar</source>
+      <translation>聲霸</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
       <translation>來源</translation>
     </message>
@@ -2032,6 +2072,11 @@ Import into your library?</source>
       <translation>環繞音效</translation>
     </message>
     <message>
+      <source>Surround speaker</source>
+      <translation>環繞喇叭</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
+    </message>
+    <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
       <translation>已開啟系統響應設定檔編輯器。儲存的設定檔可在設備資料庫中找到。</translation>
     </message>
@@ -2078,6 +2123,11 @@ Import into your library?</source>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>到達麥克風的測試音訊太弱。請將麥克風移近或稍微提高測試位準。</translation>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>巡演擴聲喇叭</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>

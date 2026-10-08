@@ -46,7 +46,17 @@
     "Floorstanding speaker",
     "In-wall speaker",
     "Unclassified equipment",
-    " (original; not SS-CS5M2)"
+    " (original; not SS-CS5M2)",
+    "Cinema speaker",
+    "Column speaker",
+    "Constant-beamwidth speaker",
+    "Omnidirectional speaker",
+    "Outdoor speaker",
+    "Panel speaker",
+    "Portable PA speaker",
+    "Soundbar",
+    "Surround speaker",
+    "Touring PA speaker"
   ],
   "languages": {
     "de": [
@@ -97,7 +107,17 @@
       "Standlautsprecher",
       "Wandeinbaulautsprecher",
       "Nicht klassifiziertes Gerät",
-      " (Originalmodell; nicht SS-CS5M2)"
+      " (Originalmodell; nicht SS-CS5M2)",
+      "Kinolautsprecher",
+      "Säulenlautsprecher",
+      "Lautsprecher mit konstanter Abstrahlbreite",
+      "Rundumstrahlender Lautsprecher",
+      "Außenlautsprecher",
+      "Flächenlautsprecher",
+      "Tragbarer PA-Lautsprecher",
+      "Soundbar",
+      "Surround-Lautsprecher",
+      "Touring-PA-Lautsprecher"
     ],
     "fr": [
       "Français",
@@ -147,7 +167,17 @@
       "Enceinte colonne",
       "Enceinte encastrable murale",
       "Équipement non classé",
-      " (modèle original ; pas SS-CS5M2)"
+      " (modèle original ; pas SS-CS5M2)",
+      "Enceinte de cinéma",
+      "Enceinte colonne de sonorisation",
+      "Enceinte à largeur de faisceau constante",
+      "Enceinte omnidirectionnelle",
+      "Enceinte extérieure",
+      "Enceinte à panneau",
+      "Enceinte de sonorisation portable",
+      "Barre de son",
+      "Enceinte surround",
+      "Enceinte de sonorisation de tournée"
     ],
     "es": [
       "Español",
@@ -197,7 +227,17 @@
       "Altavoz de suelo",
       "Altavoz empotrado en pared",
       "Equipo sin clasificar",
-      " (modelo original; no SS-CS5M2)"
+      " (modelo original; no SS-CS5M2)",
+      "Altavoz de cine",
+      "Altavoz de columna de sonorización",
+      "Altavoz de cobertura angular constante",
+      "Altavoz omnidireccional",
+      "Altavoz para exteriores",
+      "Altavoz de panel",
+      "Altavoz de PA portátil",
+      "Barra de sonido",
+      "Altavoz envolvente",
+      "Altavoz de PA para giras"
     ],
     "it": [
       "Italiano",
@@ -247,7 +287,17 @@
       "Diffusore da pavimento",
       "Diffusore da incasso a parete",
       "Apparecchio non classificato",
-      " (modello originale; non SS-CS5M2)"
+      " (modello originale; non SS-CS5M2)",
+      "Diffusore per cinema",
+      "Diffusore a colonna per sonorizzazione",
+      "Diffusore a larghezza del fascio costante",
+      "Diffusore omnidirezionale",
+      "Diffusore da esterno",
+      "Diffusore a pannello",
+      "Diffusore PA portatile",
+      "Soundbar",
+      "Diffusore surround",
+      "Diffusore PA da tournée"
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -297,7 +347,17 @@
       "Coluna de chão",
       "Coluna de embutir na parede",
       "Equipamento não classificado",
-      " (modelo original; não SS-CS5M2)"
+      " (modelo original; não SS-CS5M2)",
+      "Coluna de cinema",
+      "Coluna de sonorização em coluna",
+      "Coluna com largura de feixe constante",
+      "Coluna omnidirecional",
+      "Coluna de exterior",
+      "Coluna de painel",
+      "Coluna de sonorização portátil",
+      "Barra de som",
+      "Coluna surround",
+      "Coluna de sonorização para digressões"
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -347,7 +407,17 @@
       "Caixa acústica de piso",
       "Caixa acústica embutida na parede",
       "Equipamento não classificado",
-      " (modelo original; não SS-CS5M2)"
+      " (modelo original; não SS-CS5M2)",
+      "Caixa acústica de cinema",
+      "Caixa acústica de sonorização em coluna",
+      "Caixa acústica com largura de feixe constante",
+      "Caixa acústica omnidirecional",
+      "Caixa acústica para ambientes externos",
+      "Caixa acústica de painel",
+      "Caixa acústica de PA portátil",
+      "Barra de som",
+      "Caixa acústica surround",
+      "Caixa acústica de PA para turnês"
     ],
     "nl": [
       "Nederlands",
@@ -397,7 +467,17 @@
       "Vloerstaande luidspreker",
       "Wandinbouwluidspreker",
       "Niet-geclassificeerde apparatuur",
-      " (oorspronkelijk model; niet SS-CS5M2)"
+      " (oorspronkelijk model; niet SS-CS5M2)",
+      "Bioscoopluidspreker",
+      "Kolomluidspreker",
+      "Luidspreker met constante bundelbreedte",
+      "Omnidirectionele luidspreker",
+      "Buitenluidspreker",
+      "Paneelluidspreker",
+      "Draagbare PA-luidspreker",
+      "Soundbar",
+      "Surroundluidspreker",
+      "PA-luidspreker voor tournees"
     ],
     "pl": [
       "Polski",
@@ -447,7 +527,17 @@
       "Głośnik podłogowy",
       "Głośnik do zabudowy w ścianie",
       "Sprzęt niesklasyfikowany",
-      " (model oryginalny; nie SS-CS5M2)"
+      " (model oryginalny; nie SS-CS5M2)",
+      "Głośnik kinowy",
+      "Głośnik kolumnowy do nagłośnienia",
+      "Głośnik o stałej szerokości wiązki",
+      "Głośnik dookólny",
+      "Głośnik zewnętrzny",
+      "Głośnik panelowy",
+      "Przenośny głośnik nagłośnieniowy",
+      "Soundbar",
+      "Głośnik surround",
+      "Głośnik nagłośnieniowy do tras koncertowych"
     ],
     "cs": [
       "Čeština",
@@ -497,7 +587,17 @@
       "Sloupový reproduktor",
       "Reproduktor vestavěný do stěny",
       "Nezařazené zařízení",
-      " (původní model; nikoli SS-CS5M2)"
+      " (původní model; nikoli SS-CS5M2)",
+      "Kinový reproduktor",
+      "Sloupový reproduktor pro ozvučení",
+      "Reproduktor s konstantní šířkou vyzařovacího svazku",
+      "Všesměrový reproduktor",
+      "Venkovní reproduktor",
+      "Panelový reproduktor",
+      "Přenosný reproduktor pro ozvučení",
+      "Soundbar",
+      "Prostorový reproduktor",
+      "Reproduktor pro koncertní ozvučení"
     ],
     "sk": [
       "Slovenčina",
@@ -547,7 +647,17 @@
       "Stĺpový reproduktor",
       "Reproduktor zabudovaný do steny",
       "Nezaradené zariadenie",
-      " (pôvodný model; nie SS-CS5M2)"
+      " (pôvodný model; nie SS-CS5M2)",
+      "Kinový reproduktor",
+      "Stĺpový reproduktor na ozvučenie",
+      "Reproduktor s konštantnou šírkou vyžarovacieho zväzku",
+      "Všesmerový reproduktor",
+      "Vonkajší reproduktor",
+      "Panelový reproduktor",
+      "Prenosný reproduktor na ozvučenie",
+      "Soundbar",
+      "Priestorový reproduktor",
+      "Reproduktor na koncertné ozvučenie"
     ],
     "uk": [
       "Українська",
@@ -597,7 +707,17 @@
       "Підлогова акустична система",
       "Акустична система для вбудовування в стіну",
       "Некласифіковане обладнання",
-      " (оригінальна модель; не SS-CS5M2)"
+      " (оригінальна модель; не SS-CS5M2)",
+      "Акустична система для кінотеатру",
+      "Колонна акустична система для озвучення",
+      "Акустична система зі сталою шириною променя",
+      "Всеспрямована акустична система",
+      "Акустична система для вулиці",
+      "Панельна акустична система",
+      "Портативна акустична система для озвучення",
+      "Саундбар",
+      "Акустична система об’ємного звучання",
+      "Акустична система для гастрольного озвучення"
     ],
     "ru": [
       "Русский",
@@ -647,7 +767,17 @@
       "Напольная акустическая система",
       "Акустическая система для встраивания в стену",
       "Неклассифицированное оборудование",
-      " (исходная модель; не SS-CS5M2)"
+      " (исходная модель; не SS-CS5M2)",
+      "Акустическая система для кинотеатра",
+      "Колонная акустическая система для озвучивания",
+      "Акустическая система с постоянной шириной луча",
+      "Всенаправленная акустическая система",
+      "Акустическая система для улицы",
+      "Панельная акустическая система",
+      "Портативная акустическая система для озвучивания",
+      "Саундбар",
+      "Акустическая система объёмного звучания",
+      "Акустическая система для гастрольного озвучивания"
     ],
     "el": [
       "Ελληνικά",
@@ -697,7 +827,17 @@
       "Ηχείο δαπέδου",
       "Εντοιχιζόμενο ηχείο",
       "Μη ταξινομημένος εξοπλισμός",
-      " (αρχικό μοντέλο· όχι SS-CS5M2)"
+      " (αρχικό μοντέλο· όχι SS-CS5M2)",
+      "Ηχείο κινηματογράφου",
+      "Ηχείο στήλης για ηχητική κάλυψη",
+      "Ηχείο σταθερού εύρους δέσμης",
+      "Πανκατευθυντικό ηχείο",
+      "Ηχείο εξωτερικού χώρου",
+      "Ηχείο πάνελ",
+      "Φορητό ηχείο PA",
+      "Ηχομπάρα",
+      "Ηχείο περιφερειακού ήχου",
+      "Ηχείο PA για περιοδείες"
     ],
     "tr": [
       "Türkçe",
@@ -747,7 +887,17 @@
       "Yer tipi hoparlör",
       "Duvara gömme hoparlör",
       "Sınıflandırılmamış ekipman",
-      " (ilk model; SS-CS5M2 değil)"
+      " (ilk model; SS-CS5M2 değil)",
+      "Sinema hoparlörü",
+      "Sütun tipi seslendirme hoparlörü",
+      "Sabit ışın genişlikli hoparlör",
+      "Çok yönlü hoparlör",
+      "Dış mekan hoparlörü",
+      "Panel hoparlör",
+      "Taşınabilir PA hoparlörü",
+      "Ses çubuğu",
+      "Çevresel ses hoparlörü",
+      "Turne tipi PA hoparlörü"
     ],
     "sv": [
       "Svenska",
@@ -797,7 +947,17 @@
       "Golvhögtalare",
       "Vägginbyggd högtalare",
       "Oklassificerad utrustning",
-      " (ursprunglig modell; inte SS-CS5M2)"
+      " (ursprunglig modell; inte SS-CS5M2)",
+      "Biohögtalare",
+      "Kolumnhögtalare",
+      "Högtalare med konstant strålbredd",
+      "Rundstrålande högtalare",
+      "Utomhushögtalare",
+      "Panelhögtalare",
+      "Portabel PA-högtalare",
+      "Ljudlimpa",
+      "Surroundhögtalare",
+      "PA-högtalare för turnéer"
     ],
     "da": [
       "Dansk",
@@ -847,7 +1007,17 @@
       "Gulvhøjttaler",
       "Vægindbygningshøjttaler",
       "Uklassificeret udstyr",
-      " (oprindelig model; ikke SS-CS5M2)"
+      " (oprindelig model; ikke SS-CS5M2)",
+      "Biografhøjttaler",
+      "Søjlehøjttaler",
+      "Højttaler med konstant strålebredde",
+      "Rundstrålende højttaler",
+      "Udendørshøjttaler",
+      "Panelhøjttaler",
+      "Bærbar PA-højttaler",
+      "Lydbar",
+      "Surroundhøjttaler",
+      "PA-højttaler til turnéer"
     ],
     "nb": [
       "Norsk bokmål",
@@ -897,7 +1067,17 @@
       "Gulvstående høyttaler",
       "Vegginnbygd høyttaler",
       "Uklassifisert utstyr",
-      " (opprinnelig modell; ikke SS-CS5M2)"
+      " (opprinnelig modell; ikke SS-CS5M2)",
+      "Kinohøyttaler",
+      "Søylehøyttaler",
+      "Høyttaler med konstant strålebredde",
+      "Rundstrålende høyttaler",
+      "Utendørshøyttaler",
+      "Panelhøyttaler",
+      "Bærbar PA-høyttaler",
+      "Lydplanke",
+      "Surroundhøyttaler",
+      "PA-høyttaler for turneer"
     ],
     "fi": [
       "Suomi",
@@ -947,7 +1127,17 @@
       "Lattiakaiutin",
       "Seinään upotettava kaiutin",
       "Luokittelematon laite",
-      " (alkuperäinen malli; ei SS-CS5M2)"
+      " (alkuperäinen malli; ei SS-CS5M2)",
+      "Elokuvateatterikaiutin",
+      "Pylväskaiutin",
+      "Kaiutin, jonka keilanleveys on vakio",
+      "Ympärisäteilevä kaiutin",
+      "Ulkokaiutin",
+      "Paneelikaiutin",
+      "Kannettava PA-kaiutin",
+      "Äänipalkki",
+      "Surround-kaiutin",
+      "Kiertueiden PA-kaiutin"
     ],
     "ro": [
       "Română",
@@ -997,7 +1187,17 @@
       "Boxă de podea",
       "Boxă încastrată în perete",
       "Echipament neclasificat",
-      " (modelul original; nu SS-CS5M2)"
+      " (modelul original; nu SS-CS5M2)",
+      "Boxă de cinema",
+      "Boxă coloană pentru sonorizare",
+      "Boxă cu lățime constantă a fasciculului",
+      "Boxă omnidirecțională",
+      "Boxă de exterior",
+      "Boxă tip panou",
+      "Boxă PA portabilă",
+      "Bară de sunet",
+      "Boxă surround",
+      "Boxă PA pentru turnee"
     ],
     "hu": [
       "Magyar",
@@ -1047,7 +1247,17 @@
       "Álló hangsugárzó",
       "Falba építhető hangsugárzó",
       "Nem besorolt berendezés",
-      " (eredeti modell; nem SS-CS5M2)"
+      " (eredeti modell; nem SS-CS5M2)",
+      "Mozihangsugárzó",
+      "Oszlopos hangsugárzó",
+      "Állandó nyalábszélességű hangsugárzó",
+      "Körsugárzó hangsugárzó",
+      "Kültéri hangsugárzó",
+      "Paneles hangsugárzó",
+      "Hordozható PA-hangsugárzó",
+      "Hangprojektor",
+      "Surround hangsugárzó",
+      "Turnékon használt PA-hangsugárzó"
     ],
     "ar": [
       "العربية",
@@ -1097,7 +1307,17 @@
       "مكبر صوت قائم على الأرض",
       "مكبر صوت مدمج في الحائط",
       "معدات غير مصنفة",
-      " (الطراز الأصلي؛ وليس SS-CS5M2)"
+      " (الطراز الأصلي؛ وليس SS-CS5M2)",
+      "مكبر صوت للسينما",
+      "مكبر صوت عمودي",
+      "مكبر صوت بعرض حزمة ثابت",
+      "مكبر صوت شامل الاتجاهات",
+      "مكبر صوت للاستخدام الخارجي",
+      "مكبر صوت لوحي",
+      "مكبر صوت محمول لنظام مخاطبة الجمهور",
+      "شريط صوت",
+      "مكبر صوت محيطي",
+      "مكبر صوت لنظام مخاطبة الجمهور في الجولات"
     ],
     "he": [
       "עברית",
@@ -1147,7 +1367,17 @@
       "רמקול רצפתי",
       "רמקול שקוע בקיר",
       "ציוד לא מסווג",
-      " (הדגם המקורי; לא SS-CS5M2)"
+      " (הדגם המקורי; לא SS-CS5M2)",
+      "רמקול קולנוע",
+      "רמקול עמוד",
+      "רמקול בעל רוחב אלומה קבוע",
+      "רמקול כל־כיווני",
+      "רמקול חוץ",
+      "רמקול פאנל",
+      "רמקול הגברה נייד",
+      "מקרן קול",
+      "רמקול סראונד",
+      "רמקול הגברה לסיבובי הופעות"
     ],
     "fa": [
       "فارسی",
@@ -1197,7 +1427,17 @@
       "بلندگوی ایستاده روی زمین",
       "بلندگوی توکار دیواری",
       "تجهیزات دسته‌بندی‌نشده",
-      " (مدل اصلی؛ نه SS-CS5M2)"
+      " (مدل اصلی؛ نه SS-CS5M2)",
+      "بلندگوی سینما",
+      "بلندگوی ستونی",
+      "بلندگو با پهنای پرتو ثابت",
+      "بلندگوی همه‌جهته",
+      "بلندگوی فضای باز",
+      "بلندگوی پنلی",
+      "بلندگوی قابل‌حمل سامانهٔ صوت عمومی",
+      "ساندبار",
+      "بلندگوی صدای فراگیر",
+      "بلندگوی سامانهٔ صوت عمومی برای تورهای اجرا"
     ],
     "zh-Hans": [
       "简体中文",
@@ -1247,7 +1487,17 @@
       "落地音箱",
       "嵌墙音箱",
       "未分类设备",
-      "（原始型号；非 SS-CS5M2）"
+      "（原始型号；非 SS-CS5M2）",
+      "影院音箱",
+      "声柱音箱",
+      "恒定波束宽度音箱",
+      "全向音箱",
+      "户外音箱",
+      "平板音箱",
+      "便携式扩声音箱",
+      "条形音箱",
+      "环绕音箱",
+      "巡演扩声音箱"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -1297,7 +1547,17 @@
       "落地喇叭",
       "嵌牆喇叭",
       "未分類設備",
-      "（原始型號；非 SS-CS5M2）"
+      "（原始型號；非 SS-CS5M2）",
+      "影院喇叭",
+      "聲柱喇叭",
+      "恆定波束寬度喇叭",
+      "全向喇叭",
+      "戶外喇叭",
+      "平板喇叭",
+      "可攜式擴聲喇叭",
+      "聲霸",
+      "環繞喇叭",
+      "巡演擴聲喇叭"
     ],
     "ja": [
       "日本語",
@@ -1347,7 +1607,17 @@
       "フロア型スピーカー",
       "壁埋め込み型スピーカー",
       "未分類の機器",
-      "（初代モデル：SS-CS5M2 ではありません）"
+      "（初代モデル：SS-CS5M2 ではありません）",
+      "シネマ用スピーカー",
+      "コラム型スピーカー",
+      "定ビーム幅スピーカー",
+      "無指向性スピーカー",
+      "屋外用スピーカー",
+      "パネル型スピーカー",
+      "ポータブルPAスピーカー",
+      "サウンドバー",
+      "サラウンドスピーカー",
+      "ツアー用PAスピーカー"
     ],
     "ko": [
       "한국어",
@@ -1397,7 +1667,17 @@
       "플로어스탠딩 스피커",
       "벽 매립형 스피커",
       "미분류 장비",
-      " (초기 모델; SS-CS5M2 아님)"
+      " (초기 모델; SS-CS5M2 아님)",
+      "영화관용 스피커",
+      "컬럼 스피커",
+      "일정한 빔 폭의 스피커",
+      "무지향성 스피커",
+      "실외용 스피커",
+      "패널 스피커",
+      "휴대용 PA 스피커",
+      "사운드바",
+      "서라운드 스피커",
+      "투어용 PA 스피커"
     ],
     "hi": [
       "हिन्दी",
@@ -1447,7 +1727,17 @@
       "फ़्लोरस्टैंडिंग स्पीकर",
       "दीवार में लगे स्पीकर",
       "अवर्गीकृत उपकरण",
-      " (मूल मॉडल; SS-CS5M2 नहीं)"
+      " (मूल मॉडल; SS-CS5M2 नहीं)",
+      "सिनेमा स्पीकर",
+      "कॉलम स्पीकर",
+      "स्थिर बीम चौड़ाई वाला स्पीकर",
+      "सर्वदिशात्मक स्पीकर",
+      "बाहरी उपयोग का स्पीकर",
+      "पैनल स्पीकर",
+      "पोर्टेबल PA स्पीकर",
+      "साउंडबार",
+      "सराउंड स्पीकर",
+      "टूरिंग PA स्पीकर"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -1497,7 +1787,17 @@
       "Speaker berdiri di lantai",
       "Speaker tanam dinding",
       "Peralatan belum diklasifikasikan",
-      " (model asli; bukan SS-CS5M2)"
+      " (model asli; bukan SS-CS5M2)",
+      "Speaker bioskop",
+      "Speaker kolom",
+      "Speaker dengan lebar berkas konstan",
+      "Speaker segala arah",
+      "Speaker luar ruangan",
+      "Speaker panel",
+      "Speaker PA portabel",
+      "Bilah suara",
+      "Speaker surround",
+      "Speaker PA untuk tur"
     ],
     "vi": [
       "Tiếng Việt",
@@ -1547,7 +1847,17 @@
       "Loa đứng sàn",
       "Loa âm tường",
       "Thiết bị chưa phân loại",
-      " (mẫu ban đầu; không phải SS-CS5M2)"
+      " (mẫu ban đầu; không phải SS-CS5M2)",
+      "Loa rạp chiếu phim",
+      "Loa cột",
+      "Loa có độ rộng chùm âm không đổi",
+      "Loa đa hướng",
+      "Loa ngoài trời",
+      "Loa dạng tấm",
+      "Loa PA di động",
+      "Loa thanh",
+      "Loa vòm",
+      "Loa PA lưu diễn"
     ],
     "th": [
       "ไทย",
@@ -1597,7 +1907,17 @@
       "ลำโพงตั้งพื้น",
       "ลำโพงฝังผนัง",
       "อุปกรณ์ที่ยังไม่จัดประเภท",
-      " (รุ่นดั้งเดิม ไม่ใช่ SS-CS5M2)"
+      " (รุ่นดั้งเดิม ไม่ใช่ SS-CS5M2)",
+      "ลำโพงโรงภาพยนตร์",
+      "ลำโพงคอลัมน์",
+      "ลำโพงที่มีความกว้างลำเสียงคงที่",
+      "ลำโพงรอบทิศทาง",
+      "ลำโพงกลางแจ้ง",
+      "ลำโพงแบบแผง",
+      "ลำโพง PA แบบพกพา",
+      "ซาวด์บาร์",
+      "ลำโพงเซอร์ราวด์",
+      "ลำโพง PA สำหรับทัวร์แสดง"
     ],
     "sw": [
       "Kiswahili",
@@ -1647,7 +1967,17 @@
       "Spika inayosimama sakafuni",
       "Spika iliyojengewa ukutani",
       "Kifaa kisichoainishwa",
-      " (modeli ya awali; si SS-CS5M2)"
+      " (modeli ya awali; si SS-CS5M2)",
+      "Spika ya sinema",
+      "Spika ya safu wima",
+      "Spika yenye upana thabiti wa boriti ya sauti",
+      "Spika inayotoa sauti pande zote",
+      "Spika ya nje",
+      "Spika ya paneli",
+      "Spika inayobebeka ya mfumo wa sauti kwa umma",
+      "Upau wa sauti",
+      "Spika ya sauti inayozunguka",
+      "Spika ya mfumo wa sauti kwa umma kwa ziara za maonyesho"
     ],
     "nn": [
       "Norsk nynorsk",
@@ -1697,7 +2027,17 @@
       "Golvståande høgtalar",
       "Vegginnbygd høgtalar",
       "Uklassifisert utstyr",
-      " (opphavleg modell; ikkje SS-CS5M2)"
+      " (opphavleg modell; ikkje SS-CS5M2)",
+      "Kinohøgtalar",
+      "Søylehøgtalar",
+      "Høgtalar med konstant strålebreidd",
+      "Rundstrålande høgtalar",
+      "Utandørshøgtalar",
+      "Panelhøgtalar",
+      "Berbar PA-høgtalar",
+      "Lydplanke",
+      "Surroundhøgtalar",
+      "PA-høgtalar for turnear"
     ]
   },
   "requiredCompleteLocales": [

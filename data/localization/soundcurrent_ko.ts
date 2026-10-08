@@ -478,6 +478,11 @@ Import into your library?</source>
       <translation>업데이트 폴더 선택…</translation>
     </message>
     <message>
+      <source>Cinema speaker</source>
+      <translation>영화관용 스피커</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
+    </message>
+    <message>
       <source>Clarity</source>
       <translation>명료도</translation>
     </message>
@@ -510,12 +515,22 @@ Import into your library?</source>
       <translation>닫기</translation>
     </message>
     <message>
+      <source>Column speaker</source>
+      <translation>컬럼 스피커</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>측정 조건</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>측정하기 전에 출력 장치와 마이크를 연결하세요.</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>일정한 빔 폭의 스피커</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
       <source>Correction filters:</source>
@@ -1361,6 +1376,11 @@ Import into your library?</source>
       <translation>확인</translation>
     </message>
     <message>
+      <source>Omnidirectional speaker</source>
+      <translation>무지향성 스피커</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
+    </message>
+    <message>
       <source>On · Playing through %1</source>
       <translation>켜짐 · %1에서 재생 중</translation>
     </message>
@@ -1429,6 +1449,11 @@ Import into your library?</source>
       <translation>주황색: 제공된 측정 응답. 청록색: 48 kHz에서의 보정. 청록색 제어점을 드래그하거나 표를 편집하세요. 저장하면 참조 데이터를 유지한 채 사용자 지정 사본을 만듭니다.</translation>
     </message>
     <message>
+      <source>Outdoor speaker</source>
+      <translation>실외용 스피커</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
+    </message>
+    <message>
       <source>Output device</source>
       <translation>출력 장치</translation>
     </message>
@@ -1443,6 +1468,11 @@ Import into your library?</source>
     <message>
       <source>Overall output</source>
       <translation>전체 출력</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>패널 스피커</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
@@ -1484,6 +1514,11 @@ Import into your library?</source>
     <message>
       <source>Pop</source>
       <translation>팝</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>휴대용 PA 스피커</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -1926,6 +1961,11 @@ Import into your library?</source>
       <translation>SoundCurrent 가상 출력에는 48 kHz 스테레오 부동 소수점 오디오가 필요합니다</translation>
     </message>
     <message>
+      <source>Soundbar</source>
+      <translation>사운드바</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
       <translation>출처</translation>
     </message>
@@ -2032,6 +2072,11 @@ Import into your library?</source>
       <translation>서라운드 사운드</translation>
     </message>
     <message>
+      <source>Surround speaker</source>
+      <translation>서라운드 스피커</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
+    </message>
+    <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
       <translation>시스템 응답 프로파일 편집기를 열었습니다. 저장한 프로파일은 장비 라이브러리에서 사용할 수 있습니다.</translation>
     </message>
@@ -2078,6 +2123,11 @@ Import into your library?</source>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>마이크에 도달한 테스트 오디오가 너무 작습니다. 마이크를 더 가까이 옮기거나 테스트 레벨을 조금 높이세요.</translation>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>투어용 PA 스피커</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>

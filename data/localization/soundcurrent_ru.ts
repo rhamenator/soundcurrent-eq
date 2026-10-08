@@ -478,6 +478,11 @@ Import into your library?</source>
       <translation>Выбрать папку обновлений…</translation>
     </message>
     <message>
+      <source>Cinema speaker</source>
+      <translation>Акустическая система для кинотеатра</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
+    </message>
+    <message>
       <source>Clarity</source>
       <translation>Чёткость</translation>
     </message>
@@ -510,12 +515,22 @@ Import into your library?</source>
       <translation>Закрыть</translation>
     </message>
     <message>
+      <source>Column speaker</source>
+      <translation>Колонная акустическая система для озвучивания</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>Условия</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>Перед измерением подключите выход и микрофон.</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>Акустическая система с постоянной шириной луча</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
       <source>Correction filters:</source>
@@ -1361,6 +1376,11 @@ Import into your library?</source>
       <translation>OK</translation>
     </message>
     <message>
+      <source>Omnidirectional speaker</source>
+      <translation>Всенаправленная акустическая система</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
+    </message>
+    <message>
       <source>On · Playing through %1</source>
       <translation>Включено · Воспроизведение через %1</translation>
     </message>
@@ -1429,6 +1449,11 @@ Import into your library?</source>
       <translation>Оранжевая: измеренная характеристика, если предоставлена. Бирюзовая: коррекция при 48 kHz. Перетаскивайте бирюзовые точки или редактируйте таблицу. Сохранение оставляет эталонный профиль и создаёт собственную копию.</translation>
     </message>
     <message>
+      <source>Outdoor speaker</source>
+      <translation>Акустическая система для улицы</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
+    </message>
+    <message>
       <source>Output device</source>
       <translation>Выходное устройство</translation>
     </message>
@@ -1443,6 +1468,11 @@ Import into your library?</source>
     <message>
       <source>Overall output</source>
       <translation>Общий выход</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>Панельная акустическая система</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
@@ -1484,6 +1514,11 @@ Import into your library?</source>
     <message>
       <source>Pop</source>
       <translation>Поп</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>Портативная акустическая система для озвучивания</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -1926,6 +1961,11 @@ Import into your library?</source>
       <translation>Виртуальный выход SoundCurrent требует стереоаудио 48 kHz в формате с плавающей точкой</translation>
     </message>
     <message>
+      <source>Soundbar</source>
+      <translation>Саундбар</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Источник</translation>
     </message>
@@ -2032,6 +2072,11 @@ Import into your library?</source>
       <translation>Объёмный звук</translation>
     </message>
     <message>
+      <source>Surround speaker</source>
+      <translation>Акустическая система объёмного звучания</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
+    </message>
+    <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
       <translation>Редактор профиля характеристики системы открыт. Сохранённые профили доступны в библиотеке оборудования.</translation>
     </message>
@@ -2078,6 +2123,11 @@ Import into your library?</source>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>До микрофона дошло слишком мало тестового звука. Переместите его ближе или немного повысьте тестовый уровень.</translation>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>Акустическая система для гастрольного озвучивания</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>

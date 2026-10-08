@@ -478,6 +478,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Güncelleme klasörü seç…</translation>
     </message>
     <message>
+      <source>Cinema speaker</source>
+      <translation>Sinema hoparlörü</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
+    </message>
+    <message>
       <source>Clarity</source>
       <translation>Netlik</translation>
     </message>
@@ -510,12 +515,22 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Kapat</translation>
     </message>
     <message>
+      <source>Column speaker</source>
+      <translation>Sütun tipi seslendirme hoparlörü</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>Koşullar</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>Ölçümden önce bir çıkış ve mikrofon bağlayın.</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>Sabit ışın genişlikli hoparlör</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
       <source>Correction filters:</source>
@@ -1361,6 +1376,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Tamam</translation>
     </message>
     <message>
+      <source>Omnidirectional speaker</source>
+      <translation>Çok yönlü hoparlör</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
+    </message>
+    <message>
       <source>On · Playing through %1</source>
       <translation>Açık · %1 üzerinden oynatılıyor</translation>
     </message>
@@ -1429,6 +1449,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Turuncu: sağlanmışsa ölçülmüş yanıt. Turkuaz: 48 kHz'deki düzeltme. Turkuaz noktaları sürükleyin veya tabloyu düzenleyin. Kaydetmek referansı korur ve özel bir kopya oluşturur.</translation>
     </message>
     <message>
+      <source>Outdoor speaker</source>
+      <translation>Dış mekan hoparlörü</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
+    </message>
+    <message>
       <source>Output device</source>
       <translation>Çıkış cihazı</translation>
     </message>
@@ -1443,6 +1468,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Overall output</source>
       <translation>Genel çıkış</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>Panel hoparlör</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
@@ -1484,6 +1514,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Pop</source>
       <translation>Pop</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>Taşınabilir PA hoparlörü</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -1926,6 +1961,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>SoundCurrent sanal çıkışı 48 kHz stereo kayan noktalı ses gerektirir</translation>
     </message>
     <message>
+      <source>Soundbar</source>
+      <translation>Ses çubuğu</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Kaynak</translation>
     </message>
@@ -2032,6 +2072,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Çevresel ses</translation>
     </message>
     <message>
+      <source>Surround speaker</source>
+      <translation>Çevresel ses hoparlörü</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
+    </message>
+    <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
       <translation>Sistem yanıt profili düzenleyicisi açıldı. Kaydedilen profiller ekipman kitaplığında bulunur.</translation>
     </message>
@@ -2078,6 +2123,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>Mikrofona çok az test sesi ulaştı. Mikrofonu yaklaştırın veya test seviyesini biraz yükseltin.</translation>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>Turne tipi PA hoparlörü</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>

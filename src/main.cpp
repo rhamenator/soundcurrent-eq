@@ -4173,7 +4173,7 @@ int main(int argc, char **argv) {
         for(auto *combo:window.findChildren<QComboBox *>())
             if(combo->accessibleName()==SC_TR("Speaker type"))speakerTaxonomy=combo;
         if(!speakerTaxonomy)qFatal("Localized speaker taxonomy missing");
-        for(const auto &key:QStringList{"Bookshelf","Center","Floorstanding","In-wall","Unclassified"}) {
+        for(const auto &key:QStringList{"Bookshelf","Center","Floorstanding","In-wall","Unclassified","Cinema","Column","Constant beamwidth","Omnidirectional","Outdoor","Panel","Portable PA","Soundbar","Surround","Touring PA"}) {
             const int row=speakerTaxonomy->findData(key);
             if(row<0 || speakerTaxonomy->itemText(row)!=soundcurrent::i18n::equipmentTypeText(key))
                 qFatal("Localized taxonomy lost caption or stable key");

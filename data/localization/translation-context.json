@@ -30,5 +30,15 @@
   "Floorstanding speaker": "Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.",
   "In-wall speaker": "Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.",
   "Unclassified equipment": "Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.",
-  " (original; not SS-CS5M2)": "Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence."
+  " (original; not SS-CS5M2)": "Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.",
+  "Cinema speaker": "Speaker for cinema sound reproduction, not a film file or video player.",
+  "Column speaker": "Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.",
+  "Constant-beamwidth speaker": "Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.",
+  "Omnidirectional speaker": "Speaker radiating in all directions; not a microphone pickup pattern.",
+  "Outdoor speaker": "Speaker designed for outdoor use; not an output device selector.",
+  "Panel speaker": "Panel-format speaker category, including planar/electrostatic models; not an application UI panel.",
+  "Portable PA speaker": "Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.",
+  "Soundbar": "Integrated elongated speaker system commonly used with televisions.",
+  "Surround speaker": "Speaker used for surround audio channels; not an app surround-mode toggle.",
+  "Touring PA speaker": "Professional sound-reinforcement speaker for touring/live events, distinct from portable PA."
 }

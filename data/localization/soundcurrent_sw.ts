@@ -478,6 +478,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Chagua folda ya masasisho…</translation>
     </message>
     <message>
+      <source>Cinema speaker</source>
+      <translation>Spika ya sinema</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
+    </message>
+    <message>
       <source>Clarity</source>
       <translation>Uwazi</translation>
     </message>
@@ -510,12 +515,22 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Funga</translation>
     </message>
     <message>
+      <source>Column speaker</source>
+      <translation>Spika ya safu wima</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>Masharti</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>Unganisha tokeo na maikrofoni kabla ya kupima.</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>Spika yenye upana thabiti wa boriti ya sauti</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
       <source>Correction filters:</source>
@@ -1361,6 +1376,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Sawa</translation>
     </message>
     <message>
+      <source>Omnidirectional speaker</source>
+      <translation>Spika inayotoa sauti pande zote</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
+    </message>
+    <message>
       <source>On · Playing through %1</source>
       <translation>Imewashwa · Inacheza kupitia %1</translation>
     </message>
@@ -1429,6 +1449,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Rangi ya machungwa: mwitikio uliopimwa ikiwa umetolewa. Kijani kibichi cha samawati: usahihishaji katika 48 kHz. Buruta nukta za rangi hiyo au hariri jedwali. Kuhifadhi huweka rejeleo na kuunda nakala maalumu.</translation>
     </message>
     <message>
+      <source>Outdoor speaker</source>
+      <translation>Spika ya nje</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
+    </message>
+    <message>
       <source>Output device</source>
       <translation>Kifaa cha tokeo</translation>
     </message>
@@ -1443,6 +1468,11 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Overall output</source>
       <translation>Tokeo la jumla</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>Spika ya paneli</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
@@ -1484,6 +1514,11 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Pop</source>
       <translation>Pop</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>Spika inayobebeka ya mfumo wa sauti kwa umma</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -1926,6 +1961,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Tokeo pepe la SoundCurrent linahitaji sauti ya stereo ya 48 kHz katika muundo wa namba zenye nukta inayoelea</translation>
     </message>
     <message>
+      <source>Soundbar</source>
+      <translation>Upau wa sauti</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Chanzo</translation>
     </message>
@@ -2032,6 +2072,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Sauti ya kuzunguka</translation>
     </message>
     <message>
+      <source>Surround speaker</source>
+      <translation>Spika ya sauti inayozunguka</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
+    </message>
+    <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
       <translation>Kihariri cha wasifu wa mwitikio wa mfumo kimefunguliwa. Wasifu uliohifadhiwa unapatikana katika maktaba ya vifaa.</translation>
     </message>
@@ -2078,6 +2123,11 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>Sauti ndogo mno ya majaribio ilifika kwenye maikrofoni. Isogeze karibu au ongeza kiwango cha majaribio kidogo.</translation>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>Spika ya mfumo wa sauti kwa umma kwa ziara za maonyesho</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>

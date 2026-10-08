@@ -478,6 +478,11 @@ Import into your library?</source>
       <translation>בחירת תיקיית עדכונים…</translation>
     </message>
     <message>
+      <source>Cinema speaker</source>
+      <translation>רמקול קולנוע</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
+    </message>
+    <message>
       <source>Clarity</source>
       <translation>בהירות</translation>
     </message>
@@ -510,12 +515,22 @@ Import into your library?</source>
       <translation>סגירה</translation>
     </message>
     <message>
+      <source>Column speaker</source>
+      <translation>רמקול עמוד</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>תנאים</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>יש לחבר יציאה ומיקרופון לפני המדידה.</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>רמקול בעל רוחב אלומה קבוע</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
       <source>Correction filters:</source>
@@ -1361,6 +1376,11 @@ Import into your library?</source>
       <translation>אישור</translation>
     </message>
     <message>
+      <source>Omnidirectional speaker</source>
+      <translation>רמקול כל־כיווני</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
+    </message>
+    <message>
       <source>On · Playing through %1</source>
       <translation>פועל · השמעה דרך %1</translation>
     </message>
@@ -1429,6 +1449,11 @@ Import into your library?</source>
       <translation>כתום: תגובה שנמדדה, כאשר קיימת. טורקיז: תיקון ב־48 kHz. יש לגרור נקודות בקרה בטורקיז או לערוך את הטבלה. השמירה משמרת את המקור ויוצרת עותק מותאם אישית.</translation>
     </message>
     <message>
+      <source>Outdoor speaker</source>
+      <translation>רמקול חוץ</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
+    </message>
+    <message>
       <source>Output device</source>
       <translation>מכשיר יציאה</translation>
     </message>
@@ -1443,6 +1468,11 @@ Import into your library?</source>
     <message>
       <source>Overall output</source>
       <translation>יציאה כוללת</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>רמקול פאנל</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
@@ -1484,6 +1514,11 @@ Import into your library?</source>
     <message>
       <source>Pop</source>
       <translation>פופ</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>רמקול הגברה נייד</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -1926,6 +1961,11 @@ Import into your library?</source>
       <translation>הפלט הווירטואלי של SoundCurrent דורש שמע סטריאו של 48 kHz בתבנית נקודה צפה</translation>
     </message>
     <message>
+      <source>Soundbar</source>
+      <translation>מקרן קול</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
       <translation>מקור</translation>
     </message>
@@ -2032,6 +2072,11 @@ Import into your library?</source>
       <translation>צליל היקפי</translation>
     </message>
     <message>
+      <source>Surround speaker</source>
+      <translation>רמקול סראונד</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
+    </message>
+    <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
       <translation>עורך פרופיל תגובת המערכת נפתח. פרופילים שנשמרו זמינים בספריית הציוד.</translation>
     </message>
@@ -2078,6 +2123,11 @@ Import into your library?</source>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>מעט מדי שמע בדיקה הגיע למיקרופון. יש לקרב אותו או להעלות מעט את עוצמת הבדיקה.</translation>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>רמקול הגברה לסיבובי הופעות</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>

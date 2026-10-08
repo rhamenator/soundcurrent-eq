@@ -478,6 +478,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Chọn thư mục cập nhật…</translation>
     </message>
     <message>
+      <source>Cinema speaker</source>
+      <translation>Loa rạp chiếu phim</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
+    </message>
+    <message>
       <source>Clarity</source>
       <translation>Độ rõ</translation>
     </message>
@@ -510,12 +515,22 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Đóng</translation>
     </message>
     <message>
+      <source>Column speaker</source>
+      <translation>Loa cột</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>Điều kiện</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>Kết nối thiết bị đầu ra và micrô trước khi đo.</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>Loa có độ rộng chùm âm không đổi</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
       <source>Correction filters:</source>
@@ -1361,6 +1376,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>OK</translation>
     </message>
     <message>
+      <source>Omnidirectional speaker</source>
+      <translation>Loa đa hướng</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
+    </message>
+    <message>
       <source>On · Playing through %1</source>
       <translation>Bật · Đang phát qua %1</translation>
     </message>
@@ -1429,6 +1449,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Cam: đáp tuyến đo nếu có. Xanh ngọc: hiệu chỉnh ở 48 kHz. Kéo các điểm điều khiển xanh ngọc hoặc chỉnh bảng. Khi lưu, dữ liệu tham chiếu được giữ nguyên và một bản sao tùy chỉnh được tạo.</translation>
     </message>
     <message>
+      <source>Outdoor speaker</source>
+      <translation>Loa ngoài trời</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
+    </message>
+    <message>
       <source>Output device</source>
       <translation>Thiết bị đầu ra</translation>
     </message>
@@ -1443,6 +1468,11 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Overall output</source>
       <translation>Đầu ra tổng thể</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>Loa dạng tấm</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
@@ -1484,6 +1514,11 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Pop</source>
       <translation>Pop</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>Loa PA di động</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -1926,6 +1961,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Đầu ra ảo SoundCurrent yêu cầu âm thanh stereo 48 kHz ở định dạng dấu phẩy động</translation>
     </message>
     <message>
+      <source>Soundbar</source>
+      <translation>Loa thanh</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Nguồn</translation>
     </message>
@@ -2032,6 +2072,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Âm thanh vòm</translation>
     </message>
     <message>
+      <source>Surround speaker</source>
+      <translation>Loa vòm</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
+    </message>
+    <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
       <translation>Đã mở trình sửa cấu hình đáp tuyến hệ thống. Các cấu hình đã lưu có trong thư viện thiết bị.</translation>
     </message>
@@ -2078,6 +2123,11 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
       <translation>Quá ít âm thử đến được micrô. Di chuyển micrô lại gần hoặc tăng nhẹ mức thử.</translation>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>Loa PA lưu diễn</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>

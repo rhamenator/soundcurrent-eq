@@ -1,0 +1,45 @@
+{
+  "scope": "Remaining ten built-in speaker taxonomy captions",
+  "translatedSubtypeKeys": [
+    "Cinema",
+    "Column",
+    "Constant beamwidth",
+    "Omnidirectional",
+    "Outdoor",
+    "Panel",
+    "Portable PA",
+    "Soundbar",
+    "Surround",
+    "Touring PA"
+  ],
+  "allDefinedTaxonomyKeysMarked": 15,
+  "nonEnglishLocales": 33,
+  "sourceMessagesPerLocale": 551,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": "Documented audio category review; not native-speaker verification",
+  "nativeSpeakerVerification": "unverified",
+  "references": [
+    {
+      "url": "https://jblpro.com/en-US/products/cbt-70j-1",
+      "supports": "Constant beamwidth concerns acoustic coverage, not frequency bandwidth"
+    }
+  ],
+  "tests": {
+    "catalogStructureAndCompiledHashes": "passed",
+    "extractionAndTaxonomyUnitTests": {
+      "passed": 11,
+      "failed": 0
+    },
+    "build": "passed",
+    "LinuxRuntimeMatrix": "in progress with equipment fixture timeouts; not qualified",
+    "WindowsAndPackages": "pending"
+  },
+  "runtimeFailureObservations": [
+    "Several equipment UI fixtures exceeded their wall-clock limits",
+    "EQ Hindi retry also exceeded its fixture limit",
+    "Host load average observed approximately 25-27; concurrent compiler approximately 500-900% CPU",
+    "Resource pressure is a suspected contributor, not a verified explanation"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "newPackagesQualified": false
+}
