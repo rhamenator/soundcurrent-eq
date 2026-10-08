@@ -1,24 +1,24 @@
 {
-  "stage": "Hindi first existing-catalog batch",
+  "stage": "Hindi second existing-catalog batch",
   "catalogs": [
     {
       "tag": "hi",
       "name": "हिन्दी",
-      "translated": 102,
+      "translated": 166,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "f0b1e8843879902e43c2113c4b9abc4a06d50c97cf3fc71e94c4fd0e99f7ab9a",
-      "qmSha256": "f17afbc3e67133aba4128248efb5bde4351b523d4cd9b646bdd0f396ca49d38b"
+      "tsSha256": "01d03e3c3d12764db63e8e7ba5d40f5b8fd56569c9207ffeeef3b131f7910e33",
+      "qmSha256": "5ffedfebd4202a27594f762c0acc582bf3dc695e8207312bd97a29d12bd56632"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "Embedded localization assertions, Hindi MainWindow offscreen smoke test and structural catalog checks",
-    "log": "/tmp/soundcurrent-eq-hi-first-tests.log"
+    "log": "/tmp/soundcurrent-eq-hi-second-tests.log"
   },
-  "review": "Contextual AI review of shared source entries 0–79: routing, electrical measurement requirements, calibration, gain/clipping, enhancement behavior and quit versus close. Linguistic accuracy unverified.",
+  "review": "Contextual AI review of shared source entries 0–159: safe failure messages, profile saving, calibration, microphone recording, update guidance and delay wet mix. File patterns, placeholders and numerical limits preserved. Linguistic accuracy unverified.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
   "remaining": "Hindi incomplete. Five target catalogs still incomplete; omitted source messages reserved for second pass."

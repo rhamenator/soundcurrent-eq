@@ -322,255 +322,255 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bright</source>
-      <translation type="unfinished" />
+      <translation>उज्ज्वल ध्वनि</translation>
     </message>
     <message>
       <source>Browse all equipment profiles / editor</source>
-      <translation type="unfinished" />
+      <translation>सभी उपकरण प्रोफ़ाइल देखें / संपादित करें</translation>
     </message>
     <message>
       <source>Calibration test signal</source>
-      <translation type="unfinished" />
+      <translation>कैलिब्रेशन परीक्षण सिग्नल</translation>
     </message>
     <message>
       <source>Calibration tone level</source>
-      <translation type="unfinished" />
+      <translation>कैलिब्रेशन टोन स्तर</translation>
     </message>
     <message>
       <source>Cancel</source>
-      <translation type="unfinished" />
+      <translation>रद्द करें</translation>
     </message>
     <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>साझा SoundCurrent सेशन गार्ड प्राप्त नहीं किया जा सकता।</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
-      <translation type="unfinished" />
+      <translation>ऐम्प्लिफ़ायर प्रोफ़ाइल फ़ोल्डर नहीं बनाया जा सकता।</translation>
     </message>
     <message>
       <source>Cannot create profile folder.</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल फ़ोल्डर नहीं बनाया जा सकता।</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>साझा SoundCurrent सेशन गार्ड नहीं बनाया जा सकता।</translation>
     </message>
     <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>चल रहे इक्वलाइज़र की जाँच पूरी नहीं की जा सकती; SoundCurrent प्रोसेसिंग चालू नहीं करेगा।</translation>
     </message>
     <message>
       <source>Cannot finish saving amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>ऐम्प्लिफ़ायर प्रोफ़ाइल सहेजना पूरा नहीं किया जा सकता।</translation>
     </message>
     <message>
       <source>Cannot finish saving profile library.</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल लाइब्रेरी सहेजना पूरा नहीं किया जा सकता।</translation>
     </message>
     <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>चल रहे इक्वलाइज़र की जाँच नहीं की जा सकती; SoundCurrent प्रोसेसिंग चालू नहीं करेगा।</translation>
     </message>
     <message>
       <source>Cannot read profile library.</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल लाइब्रेरी नहीं पढ़ी जा सकती।</translation>
     </message>
     <message>
       <source>Cannot read profile or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल नहीं पढ़ी जा सकती या फ़ाइल 1 MiB से बड़ी है।</translation>
     </message>
     <message>
       <source>Cannot read response or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>आवृत्ति प्रतिक्रिया नहीं पढ़ी जा सकती या फ़ाइल 1 MiB से बड़ी है।</translation>
     </message>
     <message>
       <source>Cannot save amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>ऐम्प्लिफ़ायर प्रोफ़ाइल नहीं सहेजी जा सकती।</translation>
     </message>
     <message>
       <source>Cannot save profile library.</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल लाइब्रेरी नहीं सहेजी जा सकती।</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल नहीं सहेजी जा सकती।</translation>
     </message>
     <message>
       <source>Cannot start measurement: %1</source>
-      <translation type="unfinished" />
+      <translation>माप शुरू नहीं किया जा सकता: %1</translation>
     </message>
     <message>
       <source>Center</source>
-      <translation type="unfinished" />
+      <translation>मध्य</translation>
     </message>
     <message>
       <source>Check for updates</source>
-      <translation>अपडेट जाँचें</translation>
+      <translation>अपडेट की जाँच करें</translation>
     </message>
     <message>
       <source>Checking for published updates…</source>
-      <translation type="unfinished" />
+      <translation>प्रकाशित अपडेट की जाँच हो रही है…</translation>
     </message>
     <message>
       <source>Checks published releases and downloaded installers. No update is installed automatically.</source>
-      <translation type="unfinished" />
+      <translation>प्रकाशित रिलीज़ और डाउनलोड किए गए इंस्टॉलर की जाँच करता है। कोई अपडेट अपने आप इंस्टॉल नहीं किया जाता।</translation>
     </message>
     <message>
       <source>Choose a name that is not a built-in preset.</source>
-      <translation type="unfinished" />
+      <translation>ऐसा नाम चुनें जो पहले से उपलब्ध प्रीसेट का न हो।</translation>
     </message>
     <message>
       <source>Choose update folder…</source>
-      <translation type="unfinished" />
+      <translation>अपडेट फ़ोल्डर चुनें…</translation>
     </message>
     <message>
       <source>Clarity</source>
-      <translation type="unfinished" />
+      <translation>स्पष्टता</translation>
     </message>
     <message>
       <source>Clarity frequency</source>
-      <translation type="unfinished" />
+      <translation>स्पष्टता की आवृत्ति</translation>
     </message>
     <message>
       <source>Classical</source>
-      <translation type="unfinished" />
+      <translation>शास्त्रीय संगीत</translation>
     </message>
     <message>
       <source>Clear Voice</source>
-      <translation type="unfinished" />
+      <translation>स्पष्ट आवाज़</translation>
     </message>
     <message>
       <source>Clear imported equipment corrections</source>
-      <translation type="unfinished" />
+      <translation>आयात किए गए उपकरण सुधार हटाएँ</translation>
     </message>
     <message>
       <source>Click to turn the equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>इक्वलाइज़र चालू या बंद करने के लिए क्लिक करें</translation>
     </message>
     <message>
       <source>Clipping risk · estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>क्लिपिंग का जोखिम · अनुमानित पीक %1 dBFS</translation>
     </message>
     <message>
       <source>Close</source>
-      <translation type="unfinished" />
+      <translation>बंद करें</translation>
     </message>
     <message>
       <source>Conditions</source>
-      <translation type="unfinished" />
+      <translation>माप की स्थितियाँ</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
-      <translation type="unfinished" />
+      <translation>मापने से पहले आउटपुट उपकरण और माइक्रोफ़ोन कनेक्ट करें।</translation>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>सुधार प्रोफ़ाइल (*.json)</translation>
     </message>
     <message>
       <source>Could not create a private test folder</source>
-      <translation type="unfinished" />
+      <translation>निजी परीक्षण फ़ोल्डर नहीं बनाया जा सका</translation>
     </message>
     <message>
       <source>Could not create microphone configuration folder</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन कॉन्फ़िगरेशन फ़ोल्डर नहीं बनाया जा सका</translation>
     </message>
     <message>
       <source>Could not create preset folder.</source>
-      <translation type="unfinished" />
+      <translation>प्रीसेट फ़ोल्डर नहीं बनाया जा सका।</translation>
     </message>
     <message>
       <source>Could not create quiet frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>धीमी आवाज़ वाला आवृत्ति स्वीप नहीं बनाया जा सका</translation>
     </message>
     <message>
       <source>Could not create temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>अस्थायी ऑडियो कॉन्फ़िगरेशन नहीं बनाया जा सका</translation>
     </message>
     <message>
       <source>Could not create test tone</source>
-      <translation type="unfinished" />
+      <translation>परीक्षण टोन नहीं बनाया जा सका</translation>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
-      <translation type="unfinished" />
+      <translation>प्रीसेट सहेजना पूरा नहीं हो सका।</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
-      <translation type="unfinished" />
+      <translation>परीक्षण वेवफ़ॉर्म नहीं खोला जा सका</translation>
     </message>
     <message>
       <source>Could not play quiet test audio</source>
-      <translation type="unfinished" />
+      <translation>धीमी आवाज़ वाला परीक्षण ऑडियो नहीं चलाया जा सका</translation>
     </message>
     <message>
       <source>Could not play test audio through the selected output</source>
-      <translation type="unfinished" />
+      <translation>चयनित आउटपुट से परीक्षण ऑडियो नहीं चलाया जा सका</translation>
     </message>
     <message>
       <source>Could not read output volume</source>
-      <translation type="unfinished" />
+      <translation>आउटपुट वॉल्यूम नहीं पढ़ा जा सका</translation>
     </message>
     <message>
       <source>Could not run %1</source>
-      <translation type="unfinished" />
+      <translation>%1 नहीं चलाया जा सका</translation>
     </message>
     <message>
       <source>Could not save preset.</source>
-      <translation type="unfinished" />
+      <translation>प्रीसेट नहीं सहेजा जा सका।</translation>
     </message>
     <message>
       <source>Could not start PipeWire filter</source>
-      <translation type="unfinished" />
+      <translation>PipeWire फ़िल्टर शुरू नहीं किया जा सका</translation>
     </message>
     <message>
       <source>Could not start audio setup: %1. The app remains open.</source>
-      <translation type="unfinished" />
+      <translation>ऑडियो सेटअप शुरू नहीं किया जा सका: %1। ऐप खुला रहता है।</translation>
     </message>
     <message>
       <source>Could not start microphone capture</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन रिकॉर्डिंग शुरू नहीं की जा सकी</translation>
     </message>
     <message>
       <source>Could not start microphone filter</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन फ़िल्टर शुरू नहीं किया जा सका</translation>
     </message>
     <message>
       <source>Could not start output volume safety guard</source>
-      <translation type="unfinished" />
+      <translation>आउटपुट वॉल्यूम सुरक्षा गार्ड शुरू नहीं किया जा सका</translation>
     </message>
     <message>
       <source>Could not start the measurement.</source>
-      <translation type="unfinished" />
+      <translation>माप शुरू नहीं किया जा सका।</translation>
     </message>
     <message>
       <source>Could not update startup settings.</source>
-      <translation type="unfinished" />
+      <translation>स्वचालित प्रारंभ की सेटिंग अपडेट नहीं की जा सकीं।</translation>
     </message>
     <message>
       <source>Could not write frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>आवृत्ति स्वीप नहीं लिखा जा सका</translation>
     </message>
     <message>
       <source>Could not write microphone configuration</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन कॉन्फ़िगरेशन नहीं लिखा जा सका</translation>
     </message>
     <message>
       <source>Could not write temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>अस्थायी ऑडियो कॉन्फ़िगरेशन नहीं लिखा जा सका</translation>
     </message>
     <message>
       <source>Could not write test tone</source>
-      <translation type="unfinished" />
+      <translation>परीक्षण टोन नहीं लिखा जा सका</translation>
     </message>
     <message>
       <source>Create profile</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल बनाएँ</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
-      <translation type="unfinished" />
+      <translation>वर्तमान EQ बनाए रखा गया।</translation>
     </message>
     <message>
       <source>Custom</source>
@@ -578,11 +578,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Dance</source>
-      <translation type="unfinished" />
+      <translation>डांस</translation>
     </message>
     <message>
       <source>Deep Bass</source>
-      <translation type="unfinished" />
+      <translation>गहरा बास</translation>
     </message>
     <message>
       <source>Discard</source>

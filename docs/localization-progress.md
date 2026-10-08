@@ -271,3 +271,7 @@ Korean is required to stay fully populated by the source/catalog validator. Runt
 ### Hindi: first existing-catalog batch
 
 Hindi now has 102/441 populated current catalog entries. The first 80 shared sources cover device routing, calibration limitations and main audio controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Hindi: second existing-catalog batch
+
+Hindi now has 166/441 populated current catalog entries. Added saving errors, calibration failures and delay controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
