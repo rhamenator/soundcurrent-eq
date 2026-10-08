@@ -549,6 +549,10 @@ Importați în bibliotecă?</translation>
       <translation>Conectați o ieșire și un microfon înainte de măsurare.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>Conectați sunetul</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>Boxă cu lățime constantă a fasciculului</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

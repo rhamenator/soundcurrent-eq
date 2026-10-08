@@ -549,6 +549,10 @@ Importera till ditt bibliotek?</translation>
       <translation>Anslut en utgång och en mikrofon före mätningen.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>Anslut ljudet</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>Högtalare med konstant strålbredd</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

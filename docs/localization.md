@@ -108,3 +108,7 @@ Catalog extraction includes setup-sources.json directly; a seed entry is no long
 ### Direct installer language definitions
 
 Reviewed $(key) references now require one nonempty direct LangString definition for each declared MUI language in that installer file. Missing languages and duplicate definitions fail the gate. This limited check does not expand includes or macros and normalizes MUI names to LANG tokens; language aliases need explicit support before use. It does not establish translation accuracy, compiler success, layout or whole-interface coverage. Existing English installer text remains pending translation. See second-pass-nsis-language-definitions.json.
+
+### Installer audio page heading
+
+Connect your audio is translated in all 33 non-English catalogs. Both installer variants reference SCConnectAudio with a direct English definition. Tests keep this source synchronized with finished catalog entries. Minimal fixtures using the actual definition and header lines compile in NSIS; full current installer builds and installed UI qualification remain pending. Only English is currently enabled in the installers. Translated heading entries alone do not provide localized installer pages or language selection. See second-pass-installer-audio-heading.json.

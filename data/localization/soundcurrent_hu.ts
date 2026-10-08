@@ -549,6 +549,10 @@ Importálja a könyvtárba?</translation>
       <translation>Mérés előtt csatlakoztasson kimenetet és mikrofont.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>Hang csatlakoztatása</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>Állandó nyalábszélességű hangsugárzó</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

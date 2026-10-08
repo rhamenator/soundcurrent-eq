@@ -549,6 +549,10 @@ Import into your library?</source>
       <translation>เชื่อมต่อเอาต์พุตและไมโครโฟนก่อนวัด</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>เชื่อมต่อเสียง</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>ลำโพงที่มีความกว้างลำเสียงคงที่</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

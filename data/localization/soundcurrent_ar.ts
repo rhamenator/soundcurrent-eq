@@ -549,6 +549,10 @@ Import into your library?</source>
       <translation>وصّل مخرجًا وميكروفونًا قبل القياس.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>توصيل الصوت</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>مكبر صوت بعرض حزمة ثابت</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

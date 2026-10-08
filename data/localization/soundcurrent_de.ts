@@ -549,6 +549,10 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Schließen Sie vor der Messung einen Audioausgang und ein Mikrofon an.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>Audio verbinden</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>Lautsprecher mit konstanter Abstrahlbreite</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

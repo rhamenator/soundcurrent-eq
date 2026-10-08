@@ -549,6 +549,10 @@ Import into your library?</source>
       <translation>測定の前に、出力デバイスとマイクを接続してください。</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>オーディオを接続</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>定ビーム幅スピーカー</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

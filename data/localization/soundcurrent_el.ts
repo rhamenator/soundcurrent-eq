@@ -549,6 +549,10 @@ Import into your library?</source>
       <translation>Συνδέστε έξοδο και μικρόφωνο πριν από τη μέτρηση.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>Σύνδεση ήχου</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>Ηχείο σταθερού εύρους δέσμης</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

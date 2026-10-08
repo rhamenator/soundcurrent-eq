@@ -549,6 +549,10 @@ Importeren in uw bibliotheek?</translation>
       <translation>Sluit een uitgang en een microfoon aan voordat u meet.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>Audio aansluiten</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>Luidspreker met constante bundelbreedte</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

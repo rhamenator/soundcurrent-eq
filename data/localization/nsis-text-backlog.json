@@ -22,9 +22,9 @@
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 76,
       "kind": "page-heading",
-      "literal": "Connect your audio",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCConnectAudio)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale catalog translations available; installer language activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
@@ -158,9 +158,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 87,
       "kind": "page-heading",
-      "literal": "Connect your audio",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCConnectAudio)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale catalog translations available; installer language activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",

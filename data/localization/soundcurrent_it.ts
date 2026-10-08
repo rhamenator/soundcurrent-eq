@@ -549,6 +549,10 @@ Importare nella libreria?</translation>
       <translation>Collega un’uscita e un microfono prima della misurazione.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>Collega l’audio</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>Diffusore a larghezza del fascio costante</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

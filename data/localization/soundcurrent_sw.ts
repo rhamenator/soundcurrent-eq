@@ -549,6 +549,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Unganisha tokeo na maikrofoni kabla ya kupima.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>Unganisha sauti</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>Spika yenye upana thabiti wa boriti ya sauti</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

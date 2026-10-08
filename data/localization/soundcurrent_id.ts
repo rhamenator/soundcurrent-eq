@@ -549,6 +549,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Hubungkan perangkat keluaran dan mikrofon sebelum mengukur.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>Hubungkan audio</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>Speaker dengan lebar berkas konstan</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

@@ -15,6 +15,18 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_installer_audio_heading_matches_catalog_source(self):
+        root = Path(__file__).resolve().parents[1]
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text(encoding='utf-8')
+            self.assertIn('MUI_HEADER_TEXT "$(SCConnectAudio)"', code)
+            matches = re.findall(r'^LangString SCConnectAudio \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M)
+            self.assertEqual(matches, ['Connect your audio'])
+            self.assertIn(matches[0], catalog.sources())
+            for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+                entry = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[matches[0]]
+                self.assertTrue(catalog.finished(entry), row['tag'])
+
     def test_declared_helper_source_is_extracted_without_seed(self):
         with tempfile.TemporaryDirectory() as directory:
             data = Path(directory)

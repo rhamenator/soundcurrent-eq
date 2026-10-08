@@ -549,6 +549,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>Liitä lähtölaite ja mikrofoni ennen mittausta.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>Äänen yhdistäminen</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>Kaiutin, jonka keilanleveys on vakio</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

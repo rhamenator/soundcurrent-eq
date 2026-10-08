@@ -206,5 +206,9 @@
   "secondPassNsisLanguageDefinitions": {
     "report": "tests/results/localization/second-pass-nsis-language-definitions.json",
     "status": "direct definitions validated; installer translations and runtime qualification pending"
+  },
+  "secondPassInstallerAudioHeading": {
+    "report": "tests/results/localization/second-pass-installer-audio-heading.json",
+    "status": "heading translated in shared catalogs; English reference wired; other installer languages pending activation"
   }
 }

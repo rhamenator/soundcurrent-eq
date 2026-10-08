@@ -549,6 +549,10 @@ Import into your library?</source>
       <translation>יש לחבר יציאה ומיקרופון לפני המדידה.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>חיבור שמע</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>רמקול בעל רוחב אלומה קבוע</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

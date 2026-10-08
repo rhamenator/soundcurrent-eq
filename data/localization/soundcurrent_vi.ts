@@ -549,6 +549,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Kết nối thiết bị đầu ra và micrô trước khi đo.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>Kết nối âm thanh</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>Loa có độ rộng chùm âm không đổi</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

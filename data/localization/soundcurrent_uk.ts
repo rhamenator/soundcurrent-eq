@@ -549,6 +549,10 @@ Import into your library?</source>
       <translation>Перед вимірюванням під’єднайте вихід і мікрофон.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>Підключення звуку</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>Акустична система зі сталою шириною променя</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

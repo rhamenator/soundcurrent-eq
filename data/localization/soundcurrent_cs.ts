@@ -549,6 +549,10 @@ Importovat do vaší knihovny?</translation>
       <translation>Před měřením připojte výstup a mikrofon.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>Připojení zvuku</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>Reproduktor s konstantní šířkou vyzařovacího svazku</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

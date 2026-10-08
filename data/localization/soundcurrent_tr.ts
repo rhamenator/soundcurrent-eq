@@ -549,6 +549,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Ölçümden önce bir çıkış ve mikrofon bağlayın.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>Ses bağlantısını kurun</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>Sabit ışın genişlikli hoparlör</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

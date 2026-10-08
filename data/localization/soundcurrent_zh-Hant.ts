@@ -549,6 +549,10 @@ Import into your library?</source>
       <translation>測量前請連接輸出裝置及麥克風。</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>連接音訊</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>恆定波束寬度喇叭</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

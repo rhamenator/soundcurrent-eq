@@ -549,6 +549,10 @@ Import into your library?</source>
       <translation>मापने से पहले आउटपुट उपकरण और माइक्रोफ़ोन कनेक्ट करें।</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>ऑडियो कनेक्ट करें</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>स्थिर बीम चौड़ाई वाला स्पीकर</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>

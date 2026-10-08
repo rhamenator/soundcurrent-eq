@@ -549,6 +549,10 @@ Import into your library?</source>
       <translation>پیش از اندازه‌گیری یک خروجی و یک میکروفون وصل کنید.</translation>
     </message>
     <message>
+      <source>Connect your audio</source>
+      <translation>اتصال صدا</translation>
+    </message>
+    <message>
       <source>Constant-beamwidth speaker</source>
       <translation>بلندگو با پهنای پرتو ثابت</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
