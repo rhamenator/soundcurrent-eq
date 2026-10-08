@@ -2146,8 +2146,10 @@ public:
         const QStringList micNames = {"Warmth", "Boxiness", "Clarity", "Air"};
         for (int i = 0; i < 4; ++i) {
             micLabels_[i] = new QLabel(soundcurrent::i18n::text(micNames[i].toUtf8().constData()));
+            micLabels_[i]->setObjectName(QString("micToneValue%1").arg(i));
             toneRow->addWidget(micLabels_[i], 2*(i/2), i%2);
             micSliders_[i] = new QSlider(Qt::Horizontal);
+            micSliders_[i]->setObjectName(QString("micTone%1").arg(i));
             micSliders_[i]->setRange(-24, 24);
             micSliders_[i]->setValue(std::clamp(QSettings().value(QString("micBand%1").arg(i), 0).toInt(), -24, 24));
             micSliders_[i]->setAccessibleName(SC_TR("Microphone %1 adjustment").arg(soundcurrent::i18n::text(micNames[i].toUtf8().constData())));
@@ -2156,7 +2158,7 @@ public:
             toneRow->setColumnStretch(i%2, 1);
             micLabels_[i]->setText(QString(SC_TR("%1 %2%3 dB")).arg(soundcurrent::i18n::text(micNames[i].toUtf8().constData()))
                                       .arg(micSliders_[i]->value() > 0 ? "+" : "")
-                                      .arg(micSliders_[i]->value() / 2.0, 0, 'f', 1));
+                                      .arg(QLocale().toString(micSliders_[i]->value() / 2.0, 'f', 1)));
         }
         inputLayout->addLayout(toneRow);
         auto *micGainRow = new QHBoxLayout;
@@ -2345,7 +2347,7 @@ public:
                 for (const auto &device : inputDevices())
                     inputCombo_->addItem(device.description + (device.channels == 1 ? SC_TR(" · mono") : SC_TR(" · stereo")), device.name);
             } catch (const std::exception &) {}
-            if (inputCombo_->count() > 1) inputCombo_->setItemText(0, "Automatic (follow connected microphones)");
+            if (inputCombo_->count() > 1) inputCombo_->setItemText(0, SC_TR("Automatic (follow connected microphones)"));
         }
 
         connect(refresh, &QPushButton::clicked, this, [this] { refreshDevices(); });
@@ -2361,7 +2363,7 @@ public:
             connect(micSliders_[i], &QSlider::valueChanged, this, [this, i](int value) {
                 QSettings().setValue(QString("micBand%1").arg(i), value);
                 const QStringList names = {"Warmth", "Boxiness", "Clarity", "Air"};
-                micLabels_[i]->setText(QString(SC_TR("%1 %2%3 dB")).arg(names[i])
+                micLabels_[i]->setText(QString(SC_TR("%1 %2%3 dB")).arg(soundcurrent::i18n::text(names[i].toUtf8().constData()))
                                            .arg(value > 0 ? "+" : "").arg(QLocale().toString(value / 2.0, 'f', 1)));
                 try { microphone_.update(micAdjustments(), micGain_->value() / 2.0); }
                 catch (const std::exception &error) { micStatus_->setText(soundcurrent::i18n::audioErrorText(QString::fromUtf8(error.what()))); }
@@ -2890,13 +2892,13 @@ private:
         tray_->setToolTip("SoundCurrent EQ");
         auto *menu = new QMenu(this);
         menu->addAction("Open SoundCurrent EQ", this, [this] { reopen(); });
-        trayToggle_ = menu->addAction("Turn equalizer off", this, [this] { power_->setChecked(!power_->isChecked()); });
+        trayToggle_ = menu->addAction(SC_TR("Turn equalizer off"), this, [this] { power_->setChecked(!power_->isChecked()); });
         connect(power_, &QCheckBox::toggled, this, [this](bool on) {
             trayToggle_->setText(on ? SC_TR("Turn equalizer off") : SC_TR("Turn equalizer on"));
             tray_->setToolTip(on ? "SoundCurrent EQ · On" : "SoundCurrent EQ · Off");
         });
         menu->addSeparator();
-        menu->addAction("Quit SoundCurrent EQ", qApp, [] { qApp->quit(); });
+        menu->addAction(SC_TR("Quit SoundCurrent EQ"), qApp, [] { qApp->quit(); });
         tray_->setContextMenu(menu);
         connect(tray_, &QSystemTrayIcon::activated, this, [this](QSystemTrayIcon::ActivationReason reason) {
             if (reason == QSystemTrayIcon::Trigger || reason == QSystemTrayIcon::DoubleClick) reopen();
@@ -4191,6 +4193,19 @@ int main(int argc, char **argv) {
             qFatal("Moving post gain lost the selected regional number format");
         postGain->setValue(originalPostGain);
 
+        const QStringList microphoneToneNames={"Warmth","Boxiness","Clarity","Air"};
+        for(int i=0;i<4;++i) {
+            auto *slider=window.findChild<QSlider *>(QString("micTone%1").arg(i));
+            auto *label=window.findChild<QLabel *>(QString("micToneValue%1").arg(i));
+            if(!slider || !label) qFatal("Microphone tone controls are missing");
+            const int previous=slider->value();
+            slider->setValue(previous==3 ? 5 : 3);
+            const auto expected=SC_TR("%1 %2%3 dB")
+                .arg(soundcurrent::i18n::text(microphoneToneNames[i].toUtf8().constData()))
+                .arg("+").arg(QLocale().toString(slider->value()/2.0,'f',1));
+            if(label->text()!=expected) qFatal("Moving microphone tone lost translation or regional formatting");
+            slider->setValue(previous);
+        }
         window.show();
         QTimer::singleShot(100, &app, [&] {
             if(qEnvironmentVariableIsSet("SOUNDCURRENT_LAYOUT_DIAGNOSTICS")) {
