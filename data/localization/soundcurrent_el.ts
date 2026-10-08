@@ -1069,8 +1069,16 @@ Import into your library?</source>
       <translation>Εγκαταστήστε το SoundCurrent Audio μέσω της ρύθμισης προγράμματος οδήγησης ήχου και ανοίξτε ξανά την εφαρμογή για να ενεργοποιήσετε τη διαδρομή μικροφώνου.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Εγκατάσταση του VB-CABLE αν λείπει (έγκριση διαχειριστή)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Εγκαταστήστε τα νέα πακέτα πάνω από αυτή την έκδοση — δεν χρειάζεται απεγκατάσταση. Οι προρυθμίσεις και τα προφίλ διατηρούνται. Αποθηκεύστε την εργασία σας, τερματίστε την εφαρμογή (το κλείσιμο του παραθύρου την αφήνει σε λειτουργία), εγκαταστήστε την ενημέρωση και ανοίξτε την ξανά.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Εγκατάσταση ή ενημέρωση του κοινόχρηστου προγράμματος οδήγησης SoundCurrent Audio</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

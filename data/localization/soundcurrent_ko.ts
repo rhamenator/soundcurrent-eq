@@ -1069,8 +1069,16 @@ Import into your library?</source>
       <translation>오디오 드라이버 설정을 통해 SoundCurrent Audio를 설치한 다음 앱을 다시 열어 마이크 오디오 경로를 활성화하세요.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>VB-CABLE이 없으면 설치(관리자 승인 필요)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>이 버전에 새 패키지를 덮어 설치하세요. 제거할 필요가 없으며 프리셋과 프로파일은 유지됩니다. 작업을 저장하고 종료한 다음 (창만 닫으면 계속 실행됩니다), 업데이트를 설치한 후 다시 여세요.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>공유 SoundCurrent Audio 드라이버 설치 또는 업데이트</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

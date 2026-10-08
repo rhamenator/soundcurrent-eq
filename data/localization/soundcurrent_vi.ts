@@ -1069,8 +1069,16 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Cài đặt SoundCurrent Audio bằng chức năng thiết lập trình điều khiển âm thanh, rồi mở lại ứng dụng để bật tuyến micrô.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Cài đặt VB-CABLE nếu chưa có (cần quản trị viên chấp thuận)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Cài gói mới đè lên phiên bản này — không cần gỡ cài đặt. Các thiết lập sẵn và cấu hình được giữ nguyên. Lưu công việc, chọn Thoát (chỉ đóng cửa sổ thì ứng dụng vẫn chạy), cài bản cập nhật rồi mở lại.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Cài đặt hoặc cập nhật trình điều khiển SoundCurrent Audio dùng chung</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

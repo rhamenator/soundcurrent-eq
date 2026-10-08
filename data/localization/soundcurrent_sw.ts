@@ -1069,8 +1069,16 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Sakinisha SoundCurrent Audio kupitia usanidi wa kiendeshi cha sauti, kisha ufungue programu tena ili kuwasha njia ya maikrofoni.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Sakinisha VB-CABLE ikiwa haipo (idhini ya msimamizi)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Sakinisha vifurushi vipya juu ya toleo hili — hakuna haja ya kuondoa programu. Mipangilio iliyowekwa tayari na wasifu huhifadhiwa. Hifadhi kazi yako, tumia Toka (kufunga dirisha huacha programu ikiendelea kufanya kazi), sakinisha sasisho, kisha ufungue tena.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Sakinisha au sasisha kiendeshi cha SoundCurrent Audio kinachoshirikiwa</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

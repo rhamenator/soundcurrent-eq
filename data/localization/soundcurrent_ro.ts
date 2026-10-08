@@ -1069,8 +1069,16 @@ Importați în bibliotecă?</translation>
       <translation>Instalează SoundCurrent Audio prin configurarea driverului audio, apoi redeschide aplicația pentru a activa ruta microfonului.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Instalați VB-CABLE dacă lipsește (aprobare de administrator)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Instalați pachetele noi peste această versiune — dezinstalarea nu este necesară. Presetările și profilurile sunt păstrate. Salvați lucrul, folosiți Ieșire (închiderea ferestrei o păstrează în funcțiune), instalați actualizarea, apoi redeschideți.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Instalați sau actualizați driverul partajat SoundCurrent Audio</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

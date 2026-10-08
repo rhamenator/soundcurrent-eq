@@ -108,7 +108,9 @@
     "Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.",
     "VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.",
     "Connect your audio",
-    "Set up %1 for %2."
+    "Set up %1 for %2.",
+    "Install VB-CABLE if missing (administrator approval)",
+    "Install or update the shared SoundCurrent Audio driver"
   ],
   "languages": {
     "de": [
@@ -221,7 +223,9 @@
       "Windows hat einen VB-CABLE-Treibereintrag, aber der Wiedergabe- oder Aufnahmeendpunkt ist nicht verfügbar. Wenn Sie bereits neu gestartet haben, öffnen Sie %1 zur Reparatur. Aktivieren Sie CABLE Input und CABLE Output in den Windows-Soundeinstellungen, falls sie deaktiviert sind.",
       "VB-CABLE hat weiterhin keine nutzbaren Wiedergabe-/Aufnahmeendpunkte. Schließen Sie Remove Driver im offiziellen Installationsprogramm ab, starten Sie Windows neu und öffnen Sie %1 erneut zur Neuinstallation. CABLE Input und CABLE Output müssen in den Windows-Soundeinstellungen aktiviert sein.",
       "Audio verbinden",
-      "%1 für %2 einrichten."
+      "%1 für %2 einrichten.",
+      "VB-CABLE installieren, falls es fehlt (Administratorbestätigung)",
+      "Den gemeinsam genutzten SoundCurrent Audio-Treiber installieren oder aktualisieren"
     ],
     "fr": [
       "Français",
@@ -333,7 +337,9 @@
       "Windows possède une entrée de pilote VB-CABLE, mais son point de terminaison de lecture ou d’enregistrement est indisponible. Si vous avez déjà redémarré, ouvrez %1 pour le réparer. Activez CABLE Input et CABLE Output dans les paramètres audio de Windows s’ils sont désactivés.",
       "VB-CABLE ne dispose toujours d’aucun périphérique de lecture ou d’enregistrement utilisable. Terminez Remove Driver dans le programme d’installation officiel, redémarrez Windows, puis ouvrez à nouveau %1 pour réinstaller le pilote. CABLE Input et CABLE Output doivent être activés dans les paramètres audio de Windows.",
       "Connecter votre audio",
-      "Configurer %1 pour %2."
+      "Configurer %1 pour %2.",
+      "Installer VB-CABLE s’il est absent (autorisation administrateur)",
+      "Installer ou mettre à jour le pilote SoundCurrent Audio partagé"
     ],
     "es": [
       "Español",
@@ -445,7 +451,9 @@
       "Windows tiene un registro del controlador VB-CABLE, pero su punto de conexión de reproducción o grabación no está disponible. Si ya reinició, abra %1 para repararlo. Active CABLE Input y CABLE Output en los ajustes de sonido de Windows si están desactivados.",
       "VB-CABLE sigue sin tener dispositivos de reproducción o grabación utilizables. Complete Remove Driver en el instalador oficial, reinicie Windows y vuelva a abrir %1 para reinstalarlo. CABLE Input y CABLE Output deben estar habilitados en la configuración de sonido de Windows.",
       "Conectar el audio",
-      "Configurar %1 para %2."
+      "Configurar %1 para %2.",
+      "Instalar VB-CABLE si falta (aprobación del administrador)",
+      "Instalar o actualizar el controlador compartido de SoundCurrent Audio"
     ],
     "it": [
       "Italiano",
@@ -557,7 +565,9 @@
       "Windows ha una voce del driver VB-CABLE, ma il suo endpoint di riproduzione o registrazione non è disponibile. Se è già stato effettuato un riavvio, aprire %1 per ripararlo. Abilitare CABLE Input e CABLE Output nelle impostazioni audio di Windows se sono disabilitati.",
       "VB-CABLE non dispone ancora di dispositivi di riproduzione o registrazione utilizzabili. Completa Remove Driver nel programma di installazione ufficiale, riavvia Windows, quindi riapri %1 per reinstallare il driver. CABLE Input e CABLE Output devono essere abilitati nelle impostazioni audio di Windows.",
       "Collega l’audio",
-      "Configura %1 per %2."
+      "Configura %1 per %2.",
+      "Installa VB-CABLE se manca (approvazione dell’amministratore)",
+      "Installa o aggiorna il driver condiviso SoundCurrent Audio"
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -669,7 +679,9 @@
       "O Windows tem um registo do controlador VB-CABLE, mas o ponto de extremidade de reprodução ou gravação está indisponível. Se já reiniciou, abra %1 para o reparar. Ative CABLE Input e CABLE Output nas definições de som do Windows se estiverem desativados.",
       "O VB-CABLE continua sem dispositivos de reprodução ou gravação utilizáveis. Conclua Remove Driver no instalador oficial, reinicie o Windows e volte a abrir %1 para reinstalar o controlador. CABLE Input e CABLE Output têm de estar ativados nas definições de som do Windows.",
       "Ligar o áudio",
-      "Configurar %1 para %2."
+      "Configurar %1 para %2.",
+      "Instalar o VB-CABLE se estiver em falta (autorização de administrador)",
+      "Instalar ou atualizar o controlador partilhado SoundCurrent Audio"
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -781,7 +793,9 @@
       "O Windows tem um registro do driver VB-CABLE, mas o ponto de extremidade de reprodução ou gravação está indisponível. Se já reiniciou, abra %1 para repará-lo. Ative CABLE Input e CABLE Output nas configurações de som do Windows se estiverem desativados.",
       "O VB-CABLE ainda não tem dispositivos de reprodução ou gravação utilizáveis. Conclua Remove Driver no instalador oficial, reinicie o Windows e abra %1 novamente para reinstalar o driver. CABLE Input e CABLE Output precisam estar habilitados nas configurações de som do Windows.",
       "Conectar o áudio",
-      "Configurar %1 para %2."
+      "Configurar %1 para %2.",
+      "Instalar VB-CABLE se estiver ausente (aprovação do administrador)",
+      "Instalar ou atualizar o driver compartilhado SoundCurrent Audio"
     ],
     "nl": [
       "Nederlands",
@@ -893,7 +907,9 @@
       "Windows heeft een vermelding van het VB-CABLE-stuurprogramma, maar het afspeel- of opname-eindpunt is niet beschikbaar. Open %1 om dit te herstellen als u al opnieuw hebt opgestart. Schakel CABLE Input en CABLE Output in de Windows-geluidsinstellingen in als ze zijn uitgeschakeld.",
       "VB-CABLE heeft nog steeds geen bruikbare afspeel- of opnameapparaten. Voltooi Remove Driver in het officiële installatieprogramma, start Windows opnieuw op en open %1 opnieuw om het stuurprogramma opnieuw te installeren. CABLE Input en CABLE Output moeten in de geluidsinstellingen van Windows zijn ingeschakeld.",
       "Audio aansluiten",
-      "%1 instellen voor %2."
+      "%1 instellen voor %2.",
+      "VB-CABLE installeren als het ontbreekt (goedkeuring van beheerder)",
+      "Het gedeelde SoundCurrent Audio-stuurprogramma installeren of bijwerken"
     ],
     "pl": [
       "Polski",
@@ -1005,7 +1021,9 @@
       "Windows ma wpis sterownika VB-CABLE, ale jego punkt końcowy odtwarzania lub nagrywania jest niedostępny. Jeśli system został już uruchomiony ponownie, otwórz %1, aby go naprawić. Włącz CABLE Input i CABLE Output w ustawieniach dźwięku systemu Windows, jeśli są wyłączone.",
       "VB-CABLE nadal nie ma działających urządzeń odtwarzania lub nagrywania. Dokończ Remove Driver w oficjalnym instalatorze, uruchom ponownie Windows, a następnie ponownie otwórz %1, aby zainstalować sterownik. CABLE Input i CABLE Output muszą być włączone w ustawieniach dźwięku Windows.",
       "Podłącz dźwięk",
-      "Skonfiguruj %1 dla %2."
+      "Skonfiguruj %1 dla %2.",
+      "Zainstaluj VB-CABLE, jeśli go brakuje (zgoda administratora)",
+      "Zainstaluj lub zaktualizuj współdzielony sterownik SoundCurrent Audio"
     ],
     "cs": [
       "Čeština",
@@ -1117,7 +1135,9 @@
       "Windows má záznam ovladače VB-CABLE, ale jeho koncový bod přehrávání nebo nahrávání není dostupný. Pokud jste již restartovali, otevřete %1 pro opravu. Povolte CABLE Input a CABLE Output v nastavení zvuku systému Windows, pokud jsou zakázány.",
       "VB-CABLE stále nemá použitelné zařízení pro přehrávání nebo záznam. Dokončete Remove Driver v oficiálním instalačním programu, restartujte Windows a znovu otevřete %1 pro přeinstalování ovladače. CABLE Input a CABLE Output musí být povoleny v nastavení zvuku Windows.",
       "Připojení zvuku",
-      "Nastavte %1 pro %2."
+      "Nastavte %1 pro %2.",
+      "Nainstalovat VB-CABLE, pokud chybí (schválení správce)",
+      "Nainstalovat nebo aktualizovat sdílený ovladač SoundCurrent Audio"
     ],
     "sk": [
       "Slovenčina",
@@ -1229,7 +1249,9 @@
       "Windows má záznam ovládača VB-CABLE, ale jeho koncový bod prehrávania alebo nahrávania nie je dostupný. Ak ste už reštartovali, otvorte %1 na opravu. Povoľte CABLE Input a CABLE Output v nastaveniach zvuku systému Windows, ak sú zakázané.",
       "VB-CABLE stále nemá použiteľné zariadenia na prehrávanie alebo nahrávanie. Dokončite Remove Driver v oficiálnom inštalačnom programe, reštartujte Windows a znova otvorte %1 na preinštalovanie ovládača. CABLE Input a CABLE Output musia byť povolené v nastaveniach zvuku Windows.",
       "Pripojenie zvuku",
-      "Nastavte %1 pre %2."
+      "Nastavte %1 pre %2.",
+      "Nainštalovať VB-CABLE, ak chýba (schválenie správcu)",
+      "Nainštalovať alebo aktualizovať zdieľaný ovládač SoundCurrent Audio"
     ],
     "uk": [
       "Українська",
@@ -1341,7 +1363,9 @@
       "Windows має запис драйвера VB-CABLE, але його кінцева точка відтворення або запису недоступна. Якщо ви вже перезапустили систему, відкрийте %1 для відновлення. Увімкніть CABLE Input і CABLE Output у параметрах звуку Windows, якщо їх вимкнено.",
       "VB-CABLE досі не має придатних пристроїв відтворення або запису. Завершіть Remove Driver в офіційному інсталяторі, перезапустіть Windows, а потім знову відкрийте %1 для перевстановлення драйвера. CABLE Input і CABLE Output мають бути ввімкнені в параметрах звуку Windows.",
       "Підключення звуку",
-      "Налаштуйте %1 для %2."
+      "Налаштуйте %1 для %2.",
+      "Установити VB-CABLE, якщо він відсутній (дозвіл адміністратора)",
+      "Установити або оновити спільний драйвер SoundCurrent Audio"
     ],
     "ru": [
       "Русский",
@@ -1453,7 +1477,9 @@
       "В Windows есть запись драйвера VB-CABLE, но его конечная точка воспроизведения или записи недоступна. Если вы уже перезапустили систему, откройте %1 для восстановления. Включите CABLE Input и CABLE Output в настройках звука Windows, если они отключены.",
       "У VB-CABLE по-прежнему нет пригодных устройств воспроизведения или записи. Завершите Remove Driver в официальном установщике, перезапустите Windows, затем снова откройте %1 для переустановки драйвера. CABLE Input и CABLE Output должны быть включены в параметрах звука Windows.",
       "Подключение звука",
-      "Настройте %1 для %2."
+      "Настройте %1 для %2.",
+      "Установить VB-CABLE, если он отсутствует (разрешение администратора)",
+      "Установить или обновить общий драйвер SoundCurrent Audio"
     ],
     "el": [
       "Ελληνικά",
@@ -1565,7 +1591,9 @@
       "Τα Windows έχουν καταχώριση προγράμματος οδήγησης VB-CABLE, αλλά το τελικό σημείο αναπαραγωγής ή εγγραφής δεν είναι διαθέσιμο. Αν έχετε ήδη επανεκκινήσει, ανοίξτε το %1 για επιδιόρθωση. Ενεργοποιήστε τα CABLE Input και CABLE Output στις ρυθμίσεις ήχου των Windows αν είναι απενεργοποιημένα.",
       "Το VB-CABLE εξακολουθεί να μην έχει διαθέσιμες συσκευές αναπαραγωγής ή εγγραφής. Ολοκληρώστε το Remove Driver στο επίσημο πρόγραμμα εγκατάστασης, επανεκκινήστε τα Windows και ανοίξτε ξανά το %1 για επανεγκατάσταση του προγράμματος οδήγησης. Τα CABLE Input και CABLE Output πρέπει να είναι ενεργοποιημένα στις ρυθμίσεις ήχου των Windows.",
       "Σύνδεση ήχου",
-      "Ρυθμίστε το %1 για το %2."
+      "Ρυθμίστε το %1 για το %2.",
+      "Εγκατάσταση του VB-CABLE αν λείπει (έγκριση διαχειριστή)",
+      "Εγκατάσταση ή ενημέρωση του κοινόχρηστου προγράμματος οδήγησης SoundCurrent Audio"
     ],
     "tr": [
       "Türkçe",
@@ -1677,7 +1705,9 @@
       "Windows’ta bir VB-CABLE sürücü kaydı var ancak oynatma veya kayıt uç noktası kullanılamıyor. Zaten yeniden başlattıysanız onarmak için %1 öğesini açın. Devre dışıysa Windows ses ayarlarında CABLE Input ve CABLE Output öğelerini etkinleştirin.",
       "VB-CABLE hâlâ kullanılabilir oynatma veya kayıt aygıtlarına sahip değil. Resmî kurulum programında Remove Driver işlemini tamamlayın, Windows’u yeniden başlatın ve sürücüyü yeniden yüklemek için %1 öğesini tekrar açın. Windows ses ayarlarında CABLE Input ve CABLE Output etkin olmalıdır.",
       "Ses bağlantısını kurun",
-      "%2 için %1 kurulumu."
+      "%2 için %1 kurulumu.",
+      "VB-CABLE eksikse yükle (yönetici onayı)",
+      "Paylaşılan SoundCurrent Audio sürücüsünü yükle veya güncelle"
     ],
     "sv": [
       "Svenska",
@@ -1789,7 +1819,9 @@
       "Windows har en drivrutinspost för VB-CABLE, men uppspelnings- eller inspelningsslutpunkten är inte tillgänglig. Öppna %1 för reparation om du redan har startat om. Aktivera CABLE Input och CABLE Output i Windows ljudinställningar om de är inaktiverade.",
       "VB-CABLE saknar fortfarande användbara uppspelnings- eller inspelningsenheter. Slutför Remove Driver i det officiella installationsprogrammet, starta om Windows och öppna %1 igen för att installera om drivrutinen. CABLE Input och CABLE Output måste vara aktiverade i Windows ljudinställningar.",
       "Anslut ljudet",
-      "Konfigurera %1 för %2."
+      "Konfigurera %1 för %2.",
+      "Installera VB-CABLE om det saknas (administratörens godkännande)",
+      "Installera eller uppdatera den delade SoundCurrent Audio-drivrutinen"
     ],
     "da": [
       "Dansk",
@@ -1901,7 +1933,9 @@
       "Windows har en driverregistrering for VB-CABLE, men afspilnings- eller optagelsesslutpunktet er ikke tilgængeligt. Hvis du allerede har genstartet, skal du åbne %1 for at reparere det. Aktivér CABLE Input og CABLE Output i Windows’ lydindstillinger, hvis de er deaktiverede.",
       "VB-CABLE har stadig ingen brugbare afspilnings- eller optageenheder. Fuldfør Remove Driver i det officielle installationsprogram, genstart Windows, og åbn %1 igen for at geninstallere driveren. CABLE Input og CABLE Output skal være aktiveret i Windows' lydindstillinger.",
       "Tilslut lyd",
-      "Konfigurer %1 til %2."
+      "Konfigurer %1 til %2.",
+      "Installer VB-CABLE, hvis det mangler (administratorgodkendelse)",
+      "Installer eller opdater den delte SoundCurrent Audio-driver"
     ],
     "nb": [
       "Norsk bokmål",
@@ -2013,7 +2047,9 @@
       "Windows har en driveroppføring for VB-CABLE, men avspillings- eller opptaksendepunktet er utilgjengelig. Hvis du allerede har startet på nytt, åpne %1 for å reparere det. Aktiver CABLE Input og CABLE Output i Windows’ lydinnstillinger hvis de er deaktivert.",
       "VB-CABLE har fortsatt ingen brukbare avspillings- eller opptaksenheter. Fullfør Remove Driver i det offisielle installasjonsprogrammet, start Windows på nytt, og åpne %1 igjen for å installere driveren på nytt. CABLE Input og CABLE Output må være aktivert i lydinnstillingene i Windows.",
       "Koble til lyd",
-      "Sett opp %1 for %2."
+      "Sett opp %1 for %2.",
+      "Installer VB-CABLE hvis det mangler (administratorgodkjenning)",
+      "Installer eller oppdater den delte SoundCurrent Audio-driveren"
     ],
     "fi": [
       "Suomi",
@@ -2125,7 +2161,9 @@
       "Windowsissa on VB-CABLE-ohjaimen merkintä, mutta toiston tai tallennuksen päätepiste ei ole käytettävissä. Jos olet jo käynnistänyt uudelleen, avaa %1 korjausta varten. Ota CABLE Input ja CABLE Output käyttöön Windowsin ääniasetuksissa, jos ne on poistettu käytöstä.",
       "VB-CABLElla ei edelleenkään ole käyttökelpoisia toisto- tai tallennuslaitteita. Suorita Remove Driver loppuun virallisessa asennusohjelmassa, käynnistä Windows uudelleen ja avaa %1 uudelleen ajurin asentamista varten. CABLE Input ja CABLE Output on otettava käyttöön Windowsin ääniasetuksissa.",
       "Äänen yhdistäminen",
-      "Määritä %1 sovellukselle %2."
+      "Määritä %1 sovellukselle %2.",
+      "Asenna VB-CABLE, jos se puuttuu (järjestelmänvalvojan hyväksyntä)",
+      "Asenna tai päivitä jaettu SoundCurrent Audio -ajuri"
     ],
     "ro": [
       "Română",
@@ -2237,7 +2275,9 @@
       "Windows are o înregistrare a driverului VB-CABLE, dar dispozitivul său audio de redare sau înregistrare nu este disponibil. Dacă ați repornit deja, deschideți %1 pentru reparare. Activați CABLE Input și CABLE Output în setările de sunet Windows dacă sunt dezactivate.",
       "VB-CABLE încă nu are dispozitive de redare sau înregistrare utilizabile. Finalizați Remove Driver în programul oficial de instalare, reporniți Windows, apoi deschideți din nou %1 pentru a reinstala driverul. CABLE Input și CABLE Output trebuie să fie activate în setările de sunet Windows.",
       "Conectați sunetul",
-      "Configurați %1 pentru %2."
+      "Configurați %1 pentru %2.",
+      "Instalați VB-CABLE dacă lipsește (aprobare de administrator)",
+      "Instalați sau actualizați driverul partajat SoundCurrent Audio"
     ],
     "hu": [
       "Magyar",
@@ -2349,7 +2389,9 @@
       "A Windowsban van VB-CABLE illesztőprogram-bejegyzés, de a lejátszási vagy felvételi végpont nem érhető el. Ha már újraindította, nyissa meg a %1 lehetőséget a javításhoz. Engedélyezze a CABLE Input és CABLE Output eszközöket a Windows hangbeállításaiban, ha le vannak tiltva.",
       "A VB-CABLE továbbra sem rendelkezik használható lejátszó- vagy felvevőeszközökkel. Fejezze be a Remove Driver műveletet a hivatalos telepítőben, indítsa újra a Windowst, majd nyissa meg ismét a(z) %1 lehetőséget az illesztőprogram újratelepítéséhez. A Windows hangbeállításaiban engedélyezni kell a CABLE Input és CABLE Output eszközöket.",
       "Hang csatlakoztatása",
-      "%1 beállítása a(z) %2 alkalmazáshoz."
+      "%1 beállítása a(z) %2 alkalmazáshoz.",
+      "VB-CABLE telepítése, ha hiányzik (rendszergazdai jóváhagyás)",
+      "A megosztott SoundCurrent Audio illesztőprogram telepítése vagy frissítése"
     ],
     "ar": [
       "العربية",
@@ -2461,7 +2503,9 @@
       "يوجد سجل لبرنامج تشغيل VB-CABLE في Windows، لكن نقطة التشغيل أو التسجيل غير متاحة. إذا كنت قد أعدت التشغيل بالفعل، فافتح %1 للإصلاح. فعّل CABLE Input وCABLE Output في إعدادات الصوت في Windows إذا كانا معطّلين.",
       "ما زالت VB-CABLE تفتقر إلى أجهزة تشغيل أو تسجيل قابلة للاستخدام. أكمل Remove Driver في برنامج التثبيت الرسمي، وأعد تشغيل Windows، ثم افتح %1 مجددًا لإعادة تثبيت برنامج التشغيل. يجب تمكين CABLE Input وCABLE Output في إعدادات الصوت في Windows.",
       "توصيل الصوت",
-      "إعداد %1 لاستخدامه مع %2."
+      "إعداد %1 لاستخدامه مع %2.",
+      "تثبيت VB-CABLE إذا كان غير موجود (موافقة المسؤول)",
+      "تثبيت برنامج تشغيل SoundCurrent Audio المشترك أو تحديثه"
     ],
     "he": [
       "עברית",
@@ -2573,7 +2617,9 @@
       "ב-Windows יש רישום של מנהל התקן VB-CABLE, אך נקודת הקצה להשמעה או להקלטה אינה זמינה. אם כבר הפעלתם מחדש, פתחו את %1 לתיקון. הפעילו את CABLE Input ואת CABLE Output בהגדרות השמע של Windows אם הם מושבתים.",
       "עדיין אין ל־VB-CABLE התקני השמעה או הקלטה שמישים. יש להשלים את Remove Driver בתוכנית ההתקנה הרשמית, להפעיל מחדש את Windows ולפתוח שוב את %1 להתקנה מחדש של מנהל ההתקן. יש להפעיל את CABLE Input ואת CABLE Output בהגדרות הצליל של Windows.",
       "חיבור שמע",
-      "הגדרת %1 עבור %2."
+      "הגדרת %1 עבור %2.",
+      "התקנת VB-CABLE אם אינו מותקן (אישור מנהל מערכת)",
+      "התקנה או עדכון של מנהל ההתקן המשותף SoundCurrent Audio"
     ],
     "fa": [
       "فارسی",
@@ -2685,7 +2731,9 @@
       "Windows رکوردی از درایور VB-CABLE دارد، اما نقطهٔ پایانی پخش یا ضبط آن در دسترس نیست. اگر قبلاً سیستم را دوباره راه‌اندازی کرده‌اید، %1 را برای تعمیر باز کنید. اگر CABLE Input و CABLE Output غیرفعال هستند، آن‌ها را در تنظیمات صدای Windows فعال کنید.",
       "VB-CABLE هنوز دستگاه پخش یا ضبط قابل استفاده ندارد. Remove Driver را در نصب‌کنندهٔ رسمی تکمیل کنید، Windows را راه‌اندازی مجدد کنید، سپس %1 را دوباره باز کنید تا درایور دوباره نصب شود. CABLE Input و CABLE Output باید در تنظیمات صدای Windows فعال باشند.",
       "اتصال صدا",
-      "راه‌اندازی %1 برای %2."
+      "راه‌اندازی %1 برای %2.",
+      "نصب VB-CABLE در صورت نبودن (تأیید مدیر سیستم)",
+      "نصب یا به‌روزرسانی درایور مشترک SoundCurrent Audio"
     ],
     "zh-Hans": [
       "简体中文",
@@ -2797,7 +2845,9 @@
       "Windows 有 VB-CABLE 驱动程序记录，但其播放或录音端点不可用。如果已重启，请打开 %1 进行修复。如果 CABLE Input 和 CABLE Output 已禁用，请在 Windows 声音设置中启用它们。",
       "VB-CABLE 仍没有可用的播放或录音设备。请在官方安装程序中完成 Remove Driver，重启 Windows，然后再次打开 %1 以重新安装驱动程序。必须在 Windows 声音设置中启用 CABLE Input 和 CABLE Output。",
       "连接音频",
-      "为 %2 设置 %1。"
+      "为 %2 设置 %1。",
+      "未安装时安装 VB-CABLE（需要管理员批准）",
+      "安装或更新共享的 SoundCurrent Audio 驱动程序"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -2909,7 +2959,9 @@
       "Windows 有 VB-CABLE 驅動程式記錄，但其播放或錄音端點無法使用。如果已重新啟動，請開啟 %1 進行修復。如果 CABLE Input 和 CABLE Output 已停用，請在 Windows 音效設定中啟用它們。",
       "VB-CABLE 仍沒有可用的播放或錄音裝置。請在官方安裝程式中完成 Remove Driver，重新啟動 Windows，然後再次開啟 %1 以重新安裝驅動程式。必須在 Windows 音效設定中啟用 CABLE Input 和 CABLE Output。",
       "連接音訊",
-      "為 %2 設定 %1。"
+      "為 %2 設定 %1。",
+      "未安裝時安裝 VB-CABLE（需要系統管理員核准）",
+      "安裝或更新共用的 SoundCurrent Audio 驅動程式"
     ],
     "ja": [
       "日本語",
@@ -3021,7 +3073,9 @@
       "Windows に VB-CABLE ドライバーの記録がありますが、再生または録音のエンドポイントを使用できません。既に再起動した場合は、修復のため %1 を開いてください。CABLE Input と CABLE Output が無効になっている場合は、Windows のサウンド設定で有効にしてください。",
       "VB-CABLE にはまだ使用可能な再生・録音デバイスがありません。公式セットアップで Remove Driver を完了し、Windows を再起動してから、%1 を再度開いてドライバーを再インストールしてください。Windows のサウンド設定で CABLE Input と CABLE Output を有効にする必要があります。",
       "オーディオを接続",
-      "%2 用に %1 を設定します。"
+      "%2 用に %1 を設定します。",
+      "VB-CABLE が未インストールの場合にインストール（管理者の承認が必要）",
+      "共有の SoundCurrent Audio ドライバーをインストールまたは更新"
     ],
     "ko": [
       "한국어",
@@ -3133,7 +3187,9 @@
       "Windows에 VB-CABLE 드라이버 기록이 있지만 재생 또는 녹음 엔드포인트를 사용할 수 없습니다. 이미 다시 시작했다면 복구를 위해 %1을 여세요. CABLE Input과 CABLE Output이 비활성화되어 있다면 Windows 소리 설정에서 활성화하세요.",
       "VB-CABLE에 아직 사용 가능한 재생 또는 녹음 장치가 없습니다. 공식 설치 프로그램에서 Remove Driver를 완료하고 Windows를 다시 시작한 뒤 %1을 다시 열어 드라이버를 재설치하세요. Windows 소리 설정에서 CABLE Input과 CABLE Output을 활성화해야 합니다.",
       "오디오 연결",
-      "%2용 %1을 설정합니다."
+      "%2용 %1을 설정합니다.",
+      "VB-CABLE이 없으면 설치(관리자 승인 필요)",
+      "공유 SoundCurrent Audio 드라이버 설치 또는 업데이트"
     ],
     "hi": [
       "हिन्दी",
@@ -3245,7 +3301,9 @@
       "Windows में VB-CABLE ड्राइवर का रिकॉर्ड है, लेकिन उसका प्लेबैक या रिकॉर्डिंग एंडपॉइंट उपलब्ध नहीं है। यदि आपने पहले ही पुनरारंभ किया है, तो मरम्मत के लिए %1 खोलें। यदि CABLE Input और CABLE Output अक्षम हैं, तो उन्हें Windows की ध्वनि सेटिंग में सक्षम करें।",
       "VB-CABLE में अभी भी उपयोग योग्य प्लेबैक या रिकॉर्डिंग डिवाइस नहीं हैं। आधिकारिक इंस्टॉलर में Remove Driver पूरा करें, Windows को पुनः शुरू करें, फिर ड्राइवर दोबारा इंस्टॉल करने के लिए %1 फिर से खोलें। Windows की ध्वनि सेटिंग में CABLE Input और CABLE Output सक्षम होने चाहिए।",
       "ऑडियो कनेक्ट करें",
-      "%2 के लिए %1 सेट अप करें।"
+      "%2 के लिए %1 सेट अप करें।",
+      "VB-CABLE न होने पर इंस्टॉल करें (व्यवस्थापक की अनुमति)",
+      "साझा SoundCurrent Audio ड्राइवर इंस्टॉल या अपडेट करें"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -3357,7 +3415,9 @@
       "Windows memiliki catatan driver VB-CABLE, tetapi titik akhir pemutaran atau perekamannya tidak tersedia. Jika sudah memulai ulang, buka %1 untuk memperbaikinya. Aktifkan CABLE Input dan CABLE Output di pengaturan suara Windows jika dinonaktifkan.",
       "VB-CABLE masih tidak memiliki perangkat pemutaran atau perekaman yang dapat digunakan. Selesaikan Remove Driver di penginstal resmi, mulai ulang Windows, lalu buka kembali %1 untuk menginstal ulang driver. CABLE Input dan CABLE Output harus diaktifkan dalam pengaturan suara Windows.",
       "Hubungkan audio",
-      "Siapkan %1 untuk %2."
+      "Siapkan %1 untuk %2.",
+      "Instal VB-CABLE jika belum terpasang (persetujuan administrator)",
+      "Instal atau perbarui driver SoundCurrent Audio bersama"
     ],
     "vi": [
       "Tiếng Việt",
@@ -3469,7 +3529,9 @@
       "Windows có bản ghi trình điều khiển VB-CABLE, nhưng điểm cuối phát hoặc ghi âm không khả dụng. Nếu đã khởi động lại, hãy mở %1 để sửa chữa. Bật CABLE Input và CABLE Output trong cài đặt âm thanh Windows nếu chúng bị tắt.",
       "VB-CABLE vẫn chưa có thiết bị phát hoặc ghi âm sử dụng được. Hoàn tất Remove Driver trong trình cài đặt chính thức, khởi động lại Windows, rồi mở lại %1 để cài lại trình điều khiển. CABLE Input và CABLE Output phải được bật trong cài đặt âm thanh của Windows.",
       "Kết nối âm thanh",
-      "Thiết lập %1 cho %2."
+      "Thiết lập %1 cho %2.",
+      "Cài đặt VB-CABLE nếu chưa có (cần quản trị viên chấp thuận)",
+      "Cài đặt hoặc cập nhật trình điều khiển SoundCurrent Audio dùng chung"
     ],
     "th": [
       "ไทย",
@@ -3581,7 +3643,9 @@
       "Windows มีข้อมูลไดรเวอร์ VB-CABLE แต่จุดปลายทางสำหรับเล่นหรือบันทึกเสียงใช้งานไม่ได้ หากเริ่มใหม่แล้ว ให้เปิด %1 เพื่อซ่อมแซม หาก CABLE Input และ CABLE Output ถูกปิดใช้งาน ให้เปิดใช้งานในการตั้งค่าเสียงของ Windows",
       "VB-CABLE ยังไม่มีอุปกรณ์เล่นหรือบันทึกเสียงที่ใช้งานได้ ให้ดำเนินการ Remove Driver ในโปรแกรมติดตั้งอย่างเป็นทางการให้เสร็จ รีสตาร์ต Windows แล้วเปิด %1 อีกครั้งเพื่อติดตั้งไดรเวอร์ใหม่ ต้องเปิดใช้งาน CABLE Input และ CABLE Output ในการตั้งค่าเสียงของ Windows",
       "เชื่อมต่อเสียง",
-      "ตั้งค่า %1 สำหรับ %2"
+      "ตั้งค่า %1 สำหรับ %2",
+      "ติดตั้ง VB-CABLE หากยังไม่มี (ต้องได้รับอนุมัติจากผู้ดูแลระบบ)",
+      "ติดตั้งหรืออัปเดตไดรเวอร์ SoundCurrent Audio ที่ใช้ร่วมกัน"
     ],
     "sw": [
       "Kiswahili",
@@ -3693,7 +3757,9 @@
       "Windows ina rekodi ya kiendeshi cha VB-CABLE, lakini kifaa chake cha kucheza au kurekodi sauti hakipatikani. Ikiwa tayari umeanzisha upya, fungua %1 ili kurekebisha. Washa CABLE Input na CABLE Output katika mipangilio ya sauti ya Windows ikiwa zimezimwa.",
       "VB-CABLE bado haina vifaa vya kucheza au kurekodi sauti vinavyoweza kutumika. Kamilisha Remove Driver katika kisakinishi rasmi, anzisha Windows upya, kisha fungua %1 tena ili kusakinisha kiendeshi upya. CABLE Input na CABLE Output lazima viwezeshwe katika mipangilio ya sauti ya Windows.",
       "Unganisha sauti",
-      "Sanidi %1 kwa ajili ya %2."
+      "Sanidi %1 kwa ajili ya %2.",
+      "Sakinisha VB-CABLE ikiwa haipo (idhini ya msimamizi)",
+      "Sakinisha au sasisha kiendeshi cha SoundCurrent Audio kinachoshirikiwa"
     ],
     "nn": [
       "Norsk nynorsk",
@@ -3805,7 +3871,9 @@
       "Windows har ei drivaroppføring for VB-CABLE, men avspelings- eller opptaksendepunktet er utilgjengeleg. Dersom du allereie har starta på nytt, opne %1 for å reparere det. Aktiver CABLE Input og CABLE Output i lydinnstillingane til Windows dersom dei er deaktiverte.",
       "VB-CABLE har framleis ingen brukande avspelings- eller opptakseiningar. Fullfør Remove Driver i det offisielle installasjonsprogrammet, start Windows på nytt, og opne %1 igjen for å installere drivaren på nytt. CABLE Input og CABLE Output må vere aktiverte i lydinnstillingane i Windows.",
       "Kople til lyd",
-      "Set opp %1 for %2."
+      "Set opp %1 for %2.",
+      "Installer VB-CABLE dersom det manglar (administratorgodkjenning)",
+      "Installer eller oppdater den delte SoundCurrent Audio-drivaren"
     ]
   },
   "requiredCompleteLocales": [

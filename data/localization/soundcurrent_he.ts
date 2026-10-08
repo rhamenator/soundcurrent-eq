@@ -1069,8 +1069,16 @@ Import into your library?</source>
       <translation>יש להתקין את SoundCurrent Audio באמצעות הגדרת מנהל התקן השמע, ולאחר מכן לפתוח את היישום מחדש כדי להפעיל את נתיב המיקרופון.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>התקנת VB-CABLE אם אינו מותקן (אישור מנהל מערכת)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>יש להתקין חבילות חדשות על גרסה זו — אין צורך להסיר את ההתקנה. הקביעות המוגדרות מראש והפרופילים נשמרים. יש לשמור את העבודה, לבחור יציאה (סגירת החלון משאירה את האפליקציה פועלת), להתקין את העדכון ולפתוח מחדש.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>התקנה או עדכון של מנהל ההתקן המשותף SoundCurrent Audio</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

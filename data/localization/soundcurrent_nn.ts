@@ -1069,8 +1069,16 @@ Importere til biblioteket ditt?</translation>
       <translation>Installer SoundCurrent Audio via oppsettet av lyddrivaren, og opne deretter appen på nytt for å aktivere lydruta til mikrofonen.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Installer VB-CABLE dersom det manglar (administratorgodkjenning)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Installer nye pakkar over denne versjonen — avinstallering er ikkje naudsynt. Førehandsinnstillingar og profilar vert tekne vare på. Lagre arbeidet, bruk Avslutt (lukking av vindauget lèt appen køyre vidare), installer oppdateringa og opne att.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Installer eller oppdater den delte SoundCurrent Audio-drivaren</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

@@ -1069,8 +1069,16 @@ Importovať do vašej knižnice?</translation>
       <translation>Nainštalujte SoundCurrent Audio pomocou nastavenia zvukového ovládača a potom aplikáciu znovu otvorte, aby sa aktivovala mikrofónová cesta.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Nainštalovať VB-CABLE, ak chýba (schválenie správcu)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Nové balíky nainštalujte cez túto verziu — odinštalovanie nie je potrebné. Predvoľby a profily sa zachovajú. Uložte svoju prácu, použite Ukončiť (zatvorením okna aplikácia zostane spustená), nainštalujte aktualizáciu a znovu ju otvorte.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Nainštalovať alebo aktualizovať zdieľaný ovládač SoundCurrent Audio</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

@@ -1069,8 +1069,16 @@ Import into your library?</source>
       <translation>Instala SoundCurrent Audio mediante la configuración del controlador de audio y vuelve a abrir la aplicación para activar la ruta del micrófono.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Instalar VB-CABLE si falta (aprobación del administrador)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Instale los nuevos paquetes sobre esta versión; no es necesario desinstalar. Se conservan los preajustes y los perfiles. Guarde su trabajo, use Salir (cerrar la ventana mantiene la aplicación en ejecución), instale la actualización y vuelva a abrirla.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Instalar o actualizar el controlador compartido de SoundCurrent Audio</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

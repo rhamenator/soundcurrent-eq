@@ -1069,8 +1069,16 @@ Import into your library?</source>
       <translation>ติดตั้ง SoundCurrent Audio ผ่านการตั้งค่าไดรเวอร์เสียง แล้วเปิดแอปใหม่เพื่อเปิดใช้เส้นทางไมโครโฟน</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>ติดตั้ง VB-CABLE หากยังไม่มี (ต้องได้รับอนุมัติจากผู้ดูแลระบบ)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>ติดตั้งแพ็กเกจใหม่ทับเวอร์ชันนี้ได้โดยไม่ต้องถอนการติดตั้ง พรีเซ็ตและโปรไฟล์จะคงอยู่ บันทึกงาน ใช้ ออกจากแอป (การปิดหน้าต่างจะทำให้แอปยังทำงานอยู่) ติดตั้งอัปเดต แล้วเปิดใหม่</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>ติดตั้งหรืออัปเดตไดรเวอร์ SoundCurrent Audio ที่ใช้ร่วมกัน</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

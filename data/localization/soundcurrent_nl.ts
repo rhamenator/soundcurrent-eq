@@ -1069,8 +1069,16 @@ Importeren in uw bibliotheek?</translation>
       <translation>Installeer SoundCurrent Audio via de installatie van het audiostuurprogramma en open de app opnieuw om de microfoonroute in te schakelen.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>VB-CABLE installeren als het ontbreekt (goedkeuring van beheerder)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Installeer nieuwe pakketten over deze versie; verwijderen is niet nodig. Presets en profielen blijven behouden. Sla uw werk op, gebruik Afsluiten (het sluiten van het venster laat de app actief), installeer de update en open de app opnieuw.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Het gedeelde SoundCurrent Audio-stuurprogramma installeren of bijwerken</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

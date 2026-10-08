@@ -1069,8 +1069,16 @@ Import into your library?</source>
       <translation>ऑडियो ड्राइवर सेटअप से SoundCurrent Audio इंस्टॉल करें, फिर माइक्रोफ़ोन रूट चालू करने के लिए ऐप दोबारा खोलें।</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>VB-CABLE न होने पर इंस्टॉल करें (व्यवस्थापक की अनुमति)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>इस संस्करण के ऊपर नए पैकेज इंस्टॉल करें — अनइंस्टॉल करने की आवश्यकता नहीं है। प्रीसेट और प्रोफ़ाइल सुरक्षित रहते हैं। अपना काम सहेजें, ऐप से बाहर निकलें (केवल विंडो बंद करने से ऐप चलता रहता है), अपडेट इंस्टॉल करें और फिर दोबारा खोलें।</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>साझा SoundCurrent Audio ड्राइवर इंस्टॉल या अपडेट करें</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

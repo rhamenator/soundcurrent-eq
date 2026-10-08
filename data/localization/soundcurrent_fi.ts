@@ -1069,8 +1069,16 @@ Tuodaanko kirjastoon?</translation>
       <translation>Asenna SoundCurrent Audio ääniohjaimen asennustoiminnolla ja avaa sitten sovellus uudelleen mikrofonin äänireitin ottamiseksi käyttöön.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Asenna VB-CABLE, jos se puuttuu (järjestelmänvalvojan hyväksyntä)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Asenna uudet paketit tämän version päälle — poistamista ei tarvita. Esiasetukset ja profiilit säilytetään. Tallenna työsi, valitse Lopeta (ikkunan sulkeminen jättää sovelluksen käyntiin), asenna päivitys ja avaa uudelleen.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Asenna tai päivitä jaettu SoundCurrent Audio -ajuri</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

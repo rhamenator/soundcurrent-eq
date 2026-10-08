@@ -1069,8 +1069,16 @@ Import into your library?</source>
       <translation>ثبّت SoundCurrent Audio باستخدام إعداد برنامج تشغيل الصوت، ثم أعد فتح التطبيق لتفعيل مسار الميكروفون.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>تثبيت VB-CABLE إذا كان غير موجود (موافقة المسؤول)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>ثبّت الحزم الجديدة فوق هذا الإصدار — لا حاجة لإلغاء التثبيت. تُحفظ الإعدادات المسبقة وملفات التعريف. احفظ عملك، واستخدم إنهاء (إغلاق النافذة يُبقي التطبيق قيد التشغيل)، وثبّت التحديث، ثم أعد فتح التطبيق.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>تثبيت برنامج تشغيل SoundCurrent Audio المشترك أو تحديثه</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

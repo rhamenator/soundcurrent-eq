@@ -1069,8 +1069,16 @@ Import into your library?</source>
       <translation>Установите SoundCurrent Audio через настройку аудиодрайвера, затем снова откройте приложение, чтобы включить маршрут микрофона.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Установить VB-CABLE, если он отсутствует (разрешение администратора)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Устанавливайте новые пакеты поверх этой версии — удаление не требуется. Пресеты и профили сохраняются. Сохраните свою работу, завершите работу приложения (закрытие окна оставляет его запущенным), установите обновление и откройте снова.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Установить или обновить общий драйвер SoundCurrent Audio</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

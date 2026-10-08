@@ -1069,8 +1069,16 @@ Import into your library?</source>
       <translation>请通过音频驱动设置安装 SoundCurrent Audio，然后重新打开应用以启用麦克风音频路径。</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>未安装时安装 VB-CABLE（需要管理员批准）</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>在此版本上直接安装新软件包 — 无需卸载。预设和配置会保留。请保存工作，使用“退出”（关闭窗口会让应用继续运行），安装更新，然后重新打开。</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>安装或更新共享的 SoundCurrent Audio 驱动程序</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

@@ -1069,8 +1069,16 @@ Import into your library?</source>
       <translation>オーディオドライバーのセットアップから SoundCurrent Audio をインストールし、アプリを開き直してマイクの音声経路を有効にしてください。</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>VB-CABLE が未インストールの場合にインストール（管理者の承認が必要）</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>このバージョンに上書きして新しいパッケージをインストールできます。アンインストールは不要で、プリセットとプロファイルは保持されます。作業を保存し、「終了」を選択して（ウィンドウを閉じるだけでは動作が続きます）、更新をインストールしてから開き直してください。</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>共有の SoundCurrent Audio ドライバーをインストールまたは更新</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

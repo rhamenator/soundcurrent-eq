@@ -1069,8 +1069,16 @@ Impor ke pustaka Anda?</translation>
       <translation>Instal SoundCurrent Audio melalui pengaturan driver audio, lalu buka kembali aplikasi untuk mengaktifkan rute mikrofon.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Instal VB-CABLE jika belum terpasang (persetujuan administrator)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Instal paket baru di atas versi ini — tidak perlu menghapus instalasi. Preset dan profil dipertahankan. Simpan pekerjaan Anda, gunakan Keluar (menutup jendela membuat aplikasi tetap berjalan), instal pembaruan, lalu buka kembali.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Instal atau perbarui driver SoundCurrent Audio bersama</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

@@ -1069,8 +1069,16 @@ Import into your library?</source>
       <translation>SoundCurrent Audio را از طریق تنظیم راه‌انداز صوتی نصب کنید، سپس برنامه را دوباره باز کنید تا مسیر میکروفون فعال شود.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>نصب VB-CABLE در صورت نبودن (تأیید مدیر سیستم)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>بسته‌های جدید را روی این نسخه نصب کنید — نیازی به حذف نصب نیست. پیش‌تنظیم‌ها و پروفایل‌ها حفظ می‌شوند. کار خود را ذخیره کنید، از خروج استفاده کنید (بستن پنجره برنامه را در حال اجرا نگه می‌دارد)، به‌روزرسانی را نصب کنید و دوباره باز کنید.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>نصب یا به‌روزرسانی درایور مشترک SoundCurrent Audio</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

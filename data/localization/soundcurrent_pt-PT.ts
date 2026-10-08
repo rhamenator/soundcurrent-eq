@@ -1069,8 +1069,16 @@ Importar para a sua biblioteca?</translation>
       <translation>Instale o SoundCurrent Audio através da configuração do controlador de áudio e reabra a aplicação para ativar o encaminhamento do microfone.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Instalar o VB-CABLE se estiver em falta (autorização de administrador)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Instale os novos pacotes sobre esta versão; não é necessário desinstalar. Os predefinidos e perfis são mantidos. Guarde o trabalho, use Sair (fechar a janela mantém a aplicação em execução), instale a atualização e volte a abrir.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Instalar ou atualizar o controlador partilhado SoundCurrent Audio</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

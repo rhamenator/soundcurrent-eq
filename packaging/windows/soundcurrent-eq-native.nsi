@@ -55,6 +55,7 @@ Page custom AudioPage AudioPageLeave
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_LANGUAGE "English"
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
+LangString SCInstallDriver ${LANG_ENGLISH} "Install or update the shared SoundCurrent Audio driver"
 LangString SCSetupAudio ${LANG_ENGLISH} "Set up SoundCurrent Audio for SoundCurrent EQ."
 
 Function .onInit
@@ -83,7 +84,7 @@ Function AudioPage
   ${EndIf}
   ${NSD_CreateLabel} 0 0 100% 32u "SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved."
   Pop $0
-  ${NSD_CreateCheckbox} 0 38u 100% 18u "Install or update the shared SoundCurrent Audio driver"
+  ${NSD_CreateCheckbox} 0 38u 100% 18u "$(SCInstallDriver)"
   Pop $DriverChoice
   ${If} $DriverCheck == 0
     ${NSD_Check} $DriverChoice

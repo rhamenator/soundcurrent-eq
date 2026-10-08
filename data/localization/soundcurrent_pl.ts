@@ -1069,8 +1069,16 @@ Zaimportować do biblioteki?</translation>
       <translation>Zainstaluj SoundCurrent Audio za pomocą konfiguracji sterownika audio, a następnie ponownie otwórz aplikację, aby włączyć tor mikrofonu.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Zainstaluj VB-CABLE, jeśli go brakuje (zgoda administratora)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Zainstaluj nowe pakiety na tej wersji — odinstalowanie nie jest potrzebne. Ustawienia i profile są zachowane. Zapisz pracę, wybierz Zakończ (zamknięcie okna pozostawia aplikację uruchomioną), zainstaluj aktualizację i otwórz ponownie.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Zainstaluj lub zaktualizuj współdzielony sterownik SoundCurrent Audio</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

@@ -46,9 +46,9 @@
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 84,
       "kind": "control-caption",
-      "literal": "Install or update the shared SoundCurrent Audio driver",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCInstallDriver)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale catalog translations available; installer language activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
@@ -182,9 +182,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 95,
       "kind": "control-caption",
-      "literal": "Install VB-CABLE if missing (administrator approval)",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCInstallDriver)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale catalog translations available; installer language activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",

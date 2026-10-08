@@ -1069,8 +1069,16 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Ses sürücüsü kurulumu üzerinden SoundCurrent Audio’yu yükleyin, ardından mikrofon yolunu etkinleştirmek için uygulamayı yeniden açın.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>VB-CABLE eksikse yükle (yönetici onayı)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Yeni paketleri bu sürümün üzerine yükleyin — kaldırmanız gerekmez. Hazır ayarlar ve profiller korunur. Çalışmanızı kaydedin, uygulamadan çıkın (pencereyi kapatmak uygulamayı çalışır durumda bırakır), güncellemeyi yükleyip yeniden açın.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Paylaşılan SoundCurrent Audio sürücüsünü yükle veya güncelle</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

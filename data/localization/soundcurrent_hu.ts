@@ -1069,8 +1069,16 @@ Importálja a könyvtárba?</translation>
       <translation>Telepítse a SoundCurrent Audio összetevőt a hangillesztőprogram beállításával, majd nyissa meg újra az alkalmazást a mikrofon hangútjának engedélyezéséhez.</translation>
     </message>
     <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>VB-CABLE telepítése, ha hiányzik (rendszergazdai jóváhagyás)</translation>
+    </message>
+    <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
       <translation>Telepítse az új csomagokat erre a verzióra — eltávolítás nem szükséges. Az előbeállítások és profilok megmaradnak. Mentse munkáját, válassza a Kilépés lehetőséget (az ablak bezárása futva hagyja), telepítse a frissítést, majd nyissa meg újra.</translation>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>A megosztott SoundCurrent Audio illesztőprogram telepítése vagy frissítése</translation>
     </message>
     <message>
       <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>

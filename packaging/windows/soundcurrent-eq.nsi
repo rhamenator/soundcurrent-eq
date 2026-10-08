@@ -55,6 +55,7 @@ Page custom AudioPage AudioPageLeave
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_LANGUAGE "English"
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
+LangString SCInstallDriver ${LANG_ENGLISH} "Install VB-CABLE if missing (administrator approval)"
 LangString SCSetupAudio ${LANG_ENGLISH} "Set up VB-CABLE for SoundCurrent EQ."
 
 Function .onInit
@@ -94,7 +95,7 @@ Function AudioPage
   ${EndIf}
   ${NSD_CreateLabel} 0 0 100% 32u "VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome."
   Pop $0
-  ${NSD_CreateCheckbox} 0 38u 100% 18u "Install VB-CABLE if missing (administrator approval)"
+  ${NSD_CreateCheckbox} 0 38u 100% 18u "$(SCInstallDriver)"
   Pop $DriverChoice
   ${If} $DriverCheck == 0
     ${NSD_Check} $DriverChoice

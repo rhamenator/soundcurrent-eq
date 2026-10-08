@@ -15,6 +15,25 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_installer_checkbox_catalog_sources_and_names(self):
+        root = Path(__file__).resolve().parents[1]
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            native = 'native' in installer.stem
+            source = ('Install or update the shared SoundCurrent Audio driver' if native
+                      else 'Install VB-CABLE if missing (administrator approval)')
+            name = 'SoundCurrent Audio' if native else 'VB-CABLE'
+            code = installer.read_text(encoding='utf-8')
+            self.assertRegex(code, r'\$\{NSD_CreateCheckbox\}[^\n]+"\$\(SCInstallDriver\)"')
+            self.assertEqual(re.findall(r'^LangString SCInstallDriver \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
+            for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+                message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
+                self.assertTrue(catalog.finished(message), row['tag'])
+                translated = message.findtext('translation')
+                catalog.validate_text(source, translated)
+                for replacement in ('Wrong driver', name.lower(), name + ' ' + name):
+                    with self.assertRaisesRegex(ValueError, 'External installer label changed'):
+                        catalog.validate_text(source, translated.replace(name, replacement))
+
     def test_installer_setup_subtitle_preserves_product_names(self):
         root = Path(__file__).resolve().parents[1]
         template = 'Set up %1 for %2.'

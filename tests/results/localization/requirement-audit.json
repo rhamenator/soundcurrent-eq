@@ -214,5 +214,9 @@
   "secondPassInstallerSetupSubtitle": {
     "report": "tests/results/localization/second-pass-installer-setup-subtitle.json",
     "status": "all locale templates translated; English installer references wired; locale activation remains pending"
+  },
+  "secondPassInstallerDriverCheckbox": {
+    "report": "tests/results/localization/second-pass-installer-driver-checkbox.json",
+    "status": "all locale captions translated; English references wired; other installer languages pending activation"
   }
 }
