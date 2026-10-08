@@ -1137,119 +1137,119 @@ Import into your library?</source>
     </message>
     <message>
       <source>No</source>
-      <translation type="unfinished" />
+      <translation>Ні</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>Імпортовану корекцію обладнання не вибрано.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>Виміряну корекцію підсилювача не вибрано. Маркетингових характеристик частотного діапазону недостатньо для побудови кривої корекції.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>Мікрофон не під’єднано.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>Корекцію моделі не вибрано. Ваш EQ для прослуховування працює як звичайно.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>Новішої опублікованої версії не знайдено. Завантажені інсталятори також перевіряються.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>Немає доступного вихідного пристрою.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>Вихідний пристрій не під’єднано.</translation>
     </message>
     <message>
       <source>No to All</source>
-      <translation type="unfinished" />
+      <translation>Ні для всіх</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>Без корекції — використовувати власний EQ</translation>
     </message>
     <message>
       <source>Number and date format</source>
-      <translation>Формат чисел і дат</translation>
+      <translation>Формат чисел і дати</translation>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>Кількість смуг еквалайзера</translation>
     </message>
     <message>
       <source>OK</source>
-      <translation type="unfinished" />
+      <translation>OK</translation>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>Увімкнено · Відтворення через %1</translation>
     </message>
     <message>
       <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
-      <translation type="unfinished" />
+      <translation>Під час входу запускається лише одна програма SoundCurrent. Увімкнення цієї опції замінює налаштування автозапуску іншої програми. Якщо доступний значок у системному треї, програма запускається у фоні.</translation>
     </message>
     <message>
       <source>Open</source>
-      <translation type="unfinished" />
+      <translation>Відкрити</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>Відкрити панель керування VB-Audio для налаштування затримки кабелю та внутрішньої частоти дискретизації. Зміни під час роботи аудіо можуть перервати відтворення.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>Відкрити панель керування VB-CABLE</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>Відкрити завантаження версій</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>Відкрити папку оновлень</translation>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>Помаранчева: виміряна характеристика, якщо надана. Бірюзова: корекція при 48 kHz. Перетягуйте бірюзові точки або редагуйте таблицю. Збереження залишає еталонний профіль і створює власну копію.</translation>
     </message>
     <message>
       <source>Output device</source>
-      <translation>Пристрій виведення</translation>
+      <translation>Вихідний пристрій</translation>
     </message>
     <message>
       <source>Output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>Вихідний пристрій більше недоступний</translation>
     </message>
     <message>
       <source>Output has no volume channels</source>
-      <translation type="unfinished" />
+      <translation>Вихід не має каналів керування гучністю</translation>
     </message>
     <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>Загальний вихід</translation>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>Призупинити обробку та відкрити налаштування аудіо. Програма залишається відкритою та повідомляє результат. Перезапустіть Windows після встановлення драйвера.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>Позначки піків</translation>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>Фортепіано</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>Відтворити тихий тестовий звук і переглянути запропоновані зміни EQ для відтворення</translation>
     </message>
     <message>
       <source>Playback</source>
@@ -1257,19 +1257,19 @@ Import into your library?</source>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>Відтворюється тихий тестовий звук. Зупиніть його, якщо він неприємний.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>Під’єднайте мікрофон, щоб вибрати його профіль</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>Подкаст</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>Поп</translation>
     </message>
     <message>
       <source>Post gain</source>
@@ -1278,79 +1278,79 @@ Import into your library?</source>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>Вихідне підсилення після еквалізації</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>Значення вихідного підсилення в децибелах</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>Назва пресету:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>Запобігати змінам пресетів, смуг EQ, вихідного підсилення та балансу</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>Профіль</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>Відомості про профіль</translation>
     </message>
     <message>
       <source>Profile exceeds the 1 MiB limit.</source>
-      <translation type="unfinished" />
+      <translation>Профіль перевищує межу 1 MiB.</translation>
     </message>
     <message>
       <source>Profile library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Бібліотека профілів перевищує 16 MiB.</translation>
     </message>
     <message>
       <source>Profile metadata is too long.</source>
-      <translation type="unfinished" />
+      <translation>Метадані профілю надто довгі.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>Профіль має бути читабельним і меншим за 64 KiB.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>
-      <translation type="unfinished" />
+      <translation>Профілі потребують 1–16 фільтрів корекції.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>Опубліковані джерела вимірювань: &lt;a href="https://www.spinorama.org/"&gt;Вимірювання акустичних систем / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Калібрування Dayton за серійним номером&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;Калібрування miniDSP за серійним номером&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Графіки мікрофонів Neumann&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;Графік характеристики AT2020&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Вимірювання підсилювачів&lt;/a&gt;</translation>
     </message>
     <message>
       <source>Published profiles need an HTTPS measurement source.</source>
-      <translation type="unfinished" />
+      <translation>Опубліковані профілі потребують джерела вимірювання через HTTPS.</translation>
     </message>
     <message>
       <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <translation>Не вдалося перевірити опубліковані версії. Приватні версії Studio потребують доступу до GitHub. Скористайтеся командою «Відкрити завантаження версій»; завантажені інсталятори й далі виявляються локально.</translation>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>Опублікована характеристика та редаговані криві корекції</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>Доступне опубліковане оновлення %1. Відкрийте завантаження версій, установіть поверх цієї версії та відкрийте програму знову.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>Ударні баси</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>Тихий логарифмічний частотний свіп</translation>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>Вийти із SoundCurrent EQ</translation>
     </message>
     <message>
       <source>Quit app</source>
@@ -1359,41 +1359,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>R</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>R&amp;B</translation>
     </message>
     <message>
       <source>Refresh devices</source>
-      <translation>Оновити пристрої</translation>
+      <translation>Оновити список пристроїв</translation>
     </message>
     <message>
       <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
 
 %1</source>
-      <translation type="unfinished" />
+      <translation>Відносні вимірювання включають характеристики акустичних систем, приміщення та мікрофона. Запропоновані зміни обмежені 3 dB для кожної виміряної частоти.
+
+%1</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>Нагадувати про доступні оновлення або потребу перезапуску</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>Видалити вибраний фільтр</translation>
     </message>
     <message>
       <source>Reset</source>
-      <translation type="unfinished" />
+      <translation>Скинути</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>Скинути звукові ефекти</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>Скинути тембр мікрофона</translation>
     </message>
     <message>
       <source>Reset to flat</source>
