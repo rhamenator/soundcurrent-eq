@@ -2029,7 +2029,7 @@ public:
         });
         connect(audioSetup, &QProcess::finished, this, [audioSetup, output, action, finish](int code, QProcess::ExitStatus exitStatus) {
             output->append(audioSetup->readAllStandardOutput());
-            auto message = QString::fromLocal8Bit(*output).trimmed();
+            auto message = soundcurrent::i18n::audioSetupOutput(*output);
             if (exitStatus != QProcess::NormalExit || (code != 0 && code != 3010)) {
                 if (message.isEmpty()) message = SC_TR("Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.");
                 finish(SC_TR("%1\nThe app remains open; your settings have been kept.").arg(message), true);

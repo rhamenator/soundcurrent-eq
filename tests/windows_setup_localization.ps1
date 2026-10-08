@@ -18,7 +18,7 @@ foreach ($case in @(@('FR_ca','fr'),@('NN_no','nn'),@('zh-HK','zh-Hant'),@('zh-C
     if ((Resolve-SCSetupLanguage $case[0] $available) -ne $case[1]) { throw "Helper language resolution failed: $($case[0])" }
 }
 if ((Get-SCSetupText 'audio driver setup' -Language fr) -cne 'audio driver setup') { throw 'Case-folding altered unknown source text' }
-$external = 'Unknown external %1 / 音声'
+$external = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('VW5rbm93biBleHRlcm5hbCAlMSAvIOmfs+WjsA=='))
 if ((Get-SCSetupText $external -Language ar) -cne $external) { throw 'Unknown diagnostic text changed' }
 $script:SCSetupLanguages = $null
 $script:SCSetupCatalogPath = Join-Path ([IO.Path]::GetTempPath()) ('missing-' + [guid]::NewGuid().ToString('N'))

@@ -60,3 +60,17 @@ Helper translation source keys are compared ordinally and case-sensitively.
 Unknown external text, including different capitalization, is kept verbatim.
 The common dialog title is localized; most helper message bodies and NSIS
 pages still need translation and actual Windows package qualification.
+
+### Audio helper output encoding
+
+Cable and native setup scripts set console output and native-pipeline encoding
+to UTF-8 without a BOM. The app accumulates QProcess output chunks and decodes
+the finished buffer as UTF-8, retaining the existing whitespace trimming.
+This protocol is independent of the Windows ANSI code page and number locale.
+
+An inert ASCII-source PowerShell fixture emits a UTF-8 payload containing
+French, Japanese, Arabic and a literal placeholder. A compiled Qt test captures
+that child process output and checks the exact decoded value. Windows package
+builds run it explicitly with powershell.exe and a process-only RemoteSigned
+policy; no machine execution policy, audio endpoints or driver state is changed.
+Host PowerShell qualification does not prove Windows PowerShell 5.1 behavior.

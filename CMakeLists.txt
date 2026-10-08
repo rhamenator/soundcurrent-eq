@@ -230,3 +230,15 @@ add_executable(soundcurrent-backend-error-text-test tests/backend_error_text.cpp
 target_include_directories(soundcurrent-backend-error-text-test PRIVATE src)
 target_link_libraries(soundcurrent-backend-error-text-test PRIVATE Qt6::Core)
 add_test(NAME backend-error-text COMMAND soundcurrent-backend-error-text-test)
+
+if(TARGET soundcurrent-backend-error-text-test)
+if(MSVC)
+  target_compile_options(soundcurrent-backend-error-text-test PRIVATE /utf-8)
+endif()
+find_program(SOUNDCURRENT_POWERSHELL NAMES pwsh powershell)
+if(SOUNDCURRENT_POWERSHELL)
+  add_test(NAME helper-utf8-output COMMAND soundcurrent-backend-error-text-test
+    --powershell-output-fixture "${SOUNDCURRENT_POWERSHELL}" "${CMAKE_CURRENT_SOURCE_DIR}/tests/windows_setup_output_fixture.ps1")
+  set_tests_properties(helper-utf8-output PROPERTIES TIMEOUT 20)
+endif()
+endif()

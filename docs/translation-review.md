@@ -293,3 +293,11 @@ The runtime records its actually loaded interface catalog, and Windows audio set
 Single-job builds and targeted Linux Qt offscreen checks passed (EQ 39; Studio 42). Fixtures check loaded catalog propagation and the compiled argv builder, including Unicode/spaces in a script path. Both inert host PowerShell 7.6.6 runs passed all 34 title lookups, fallback cases, exact-case behavior and helper parameter AST checks. Windows process launch, Forms and PowerShell 5.1 are not qualified by these tests. Evidence and binary hashes are in second-pass-helper-language.json. Native linguistic review remains unverified.
 
 An additional boundary gap was found: the app currently decodes helper output using fromLocal8Bit, without an explicit PowerShell UTF-8 output contract. Fix this before translated bodies are added. Most helper bodies and NSIS text remain untranslated, and current changed-package qualification is pending. No VMs or driver/endpoint operations were used.
+
+## Second pass: audio helper UTF-8 output protocol
+
+Cable/native helper output now explicitly uses UTF-8 without a BOM, and the app decodes accumulated process output with the shared UTF-8 decoder. Existing whitespace trimming is retained. An ASCII-source inert PowerShell fixture emits French, Japanese, Arabic and placeholder text; a compiled Qt test launches it and verifies captured bytes decode exactly. The MSVC test target explicitly uses UTF-8 source compilation. Windows package builds run the fixture with powershell.exe and a process-only RemoteSigned policy.
+
+Single-job builds and all targeted host checks passed (EQ 40; Studio 43), including the real inert PowerShell-to-Qt process boundary. Both 34-catalog helper lookup suites also passed after converting their external Unicode test payload to ASCII-source/base64 form for PowerShell 5.1 compatibility. Production driver helpers, Windows PowerShell 5.1 and actual installers were not executed. Source assignments in the real helpers are reviewed; the process fixture is deliberately inert. Evidence is in second-pass-helper-utf8.json.
+
+This closes the previously recorded host output-encoding prerequisite, not the remaining helper body/NSIS translation or Windows/package qualification. Native linguistic verification remains unverified. No VMs, driver/endpoint operations or machine execution-policy changes were used.

@@ -2,6 +2,7 @@
 #include "audio_error_text.h"
 #include "audio_setup_arguments.h"
 #include <QCoreApplication>
+#include <QProcess>
 #include <QTranslator>
 #include <stdexcept>
 void require(bool pass) {if(!pass)throw std::runtime_error("Backend diagnostic translation invariant failed");}
@@ -22,6 +23,20 @@ class Fixture : public QTranslator {
 int main(int argc,char **argv) {
  QCoreApplication app(argc,argv);Fixture fixture;app.installTranslator(&fixture);
  using soundcurrent::i18n::audioErrorText;
+ const auto unicodeOutput=QString::fromUtf8("Réparation / 日本語 / العربية / %1 / 音声");
+ const auto outputBytes=unicodeOutput.toUtf8()+"\r\n";
+ QByteArray accumulated;
+ for(const char byte:outputBytes)accumulated.append(byte);
+ require(soundcurrent::i18n::audioSetupOutput(accumulated)==unicodeOutput);
+ const auto fixtureIndex=app.arguments().indexOf("--powershell-output-fixture");
+ if(fixtureIndex>=0) {
+  require(fixtureIndex+2<app.arguments().size());
+  QProcess child;child.setProgram(app.arguments()[fixtureIndex+1]);
+  child.setArguments({"-NoProfile","-NonInteractive","-ExecutionPolicy","RemoteSigned","-File",app.arguments()[fixtureIndex+2]});
+  child.start();require(child.waitForFinished(15000));
+  require(child.exitStatus()==QProcess::NormalExit && child.exitCode()==0);
+  require(soundcurrent::i18n::audioSetupOutput(child.readAllStandardOutput())==unicodeOutput);
+ }
  const auto setupScript=QString::fromUtf8("C:/Program Files/SoundCurrent/音声 setup.ps1");
  for(const auto &language:QStringList{"fr","nn","zh-Hant","en","qps-rtl"}) {
   for(bool install:{false,true}) {

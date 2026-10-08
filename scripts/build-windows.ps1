@@ -45,7 +45,9 @@ try {
     & python scripts/windows_setup_catalogs.py --output "$stage\setup-translations.json"
     if ($LASTEXITCODE -ne 0) { throw 'Audio helper translation export failed' }
     Copy-Item packaging\windows\setup-localization.ps1 $stage
-    & powershell.exe -NoProfile -NonInteractive -File tests/windows_setup_localization.ps1 -CatalogPath "$stage\setup-translations.json"
+    & build-windows-native\Release\soundcurrent-backend-error-text-test.exe --powershell-output-fixture powershell.exe "$root\tests\windows_setup_output_fixture.ps1"
+    if ($LASTEXITCODE -ne 0) { throw 'Audio helper UTF-8 process output regression failed' }
+    & powershell.exe -NoProfile -NonInteractive -ExecutionPolicy RemoteSigned -File tests/windows_setup_localization.ps1 -CatalogPath "$stage\setup-translations.json"
     if ($LASTEXITCODE -ne 0) { throw 'Audio helper localization regression failed' }
     Copy-Item build-windows-native\Release\soundcurrent-eq.exe $stage
     Copy-Item build-windows-native\Release\soundcurrent-route-guardian.exe $stage

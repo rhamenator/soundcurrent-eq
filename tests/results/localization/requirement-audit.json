@@ -126,5 +126,9 @@
   "helperLanguageProgress": {
     "report": "tests/results/localization/second-pass-helper-language.json",
     "status": "Loaded-language/argv and exact source fallback tested on host; Windows launch, UTF-8 output, helper bodies and installer qualification pending"
+  },
+  "helperUtf8Progress": {
+    "report": "tests/results/localization/second-pass-helper-utf8.json",
+    "status": "Explicit UTF-8 protocol and real inert process boundary passed on host; helper message translation and Windows qualification pending"
   }
 }

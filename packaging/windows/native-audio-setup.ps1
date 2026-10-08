@@ -3,6 +3,9 @@ param([switch]$Check, [switch]$Install, [switch]$Remove, [switch]$Quiet,
       [ValidateSet('eq','studio')][string]$App = 'eq', [string]$Language = '')
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
+# Match the app's UTF-8 QProcess output decoder, including Windows PowerShell 5.1.
+[Console]::OutputEncoding = [Text.UTF8Encoding]::new($false)
+$OutputEncoding = [Console]::OutputEncoding
 $localization = Join-Path $PSScriptRoot 'setup-localization.ps1'
 if (Test-Path -LiteralPath $localization) { . $localization }
 else { function Get-SCSetupText([string]$Source, [string]$Language = '', [string]$Application = '') { return $Source } }
