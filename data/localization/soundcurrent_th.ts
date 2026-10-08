@@ -586,43 +586,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>Discard</source>
-      <translation type="unfinished" />
+      <translation>ละทิ้ง</translation>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
-      <translation type="unfinished" />
+      <translation>ลากจุดบนกราฟหรือปรับย่านที่เลือกด้านล่าง</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
-      <translation type="unfinished" />
+      <translation>เพิ่มความดังแบบไดนามิก</translation>
     </message>
     <message>
       <source>Dynamics attack</source>
-      <translation type="unfinished" />
+      <translation>เวลาเริ่มบีบอัด</translation>
     </message>
     <message>
       <source>Dynamics ceiling</source>
-      <translation type="unfinished" />
+      <translation>เพดานระดับเสียงไดนามิก</translation>
     </message>
     <message>
       <source>Dynamics makeup</source>
-      <translation type="unfinished" />
+      <translation>เกนชดเชยหลังบีบอัด</translation>
     </message>
     <message>
       <source>Dynamics ratio</source>
-      <translation type="unfinished" />
+      <translation>อัตราส่วนการบีบอัด</translation>
     </message>
     <message>
       <source>Dynamics release</source>
-      <translation type="unfinished" />
+      <translation>เวลาคลายการบีบอัด</translation>
     </message>
     <message>
       <source>Dynamics threshold</source>
-      <translation type="unfinished" />
+      <translation>ระดับเริ่มบีบอัด</translation>
     </message>
     <message>
       <source>Edit / save copy</source>
-      <translation type="unfinished" />
+      <translation>แก้ไข / บันทึกสำเนา</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -630,7 +630,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Electronic</source>
-      <translation type="unfinished" />
+      <translation>อิเล็กทรอนิกส์</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -639,177 +639,177 @@ Import into your library?</source>
     </message>
     <message>
       <source>Equalizer and configuration pages</source>
-      <translation type="unfinished" />
+      <translation>หน้าอีควอไลเซอร์และการตั้งค่า</translation>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>
-      <translation type="unfinished" />
+      <translation>กราฟอีควอไลเซอร์ เลือกจุดหรือลากเพื่อปรับความถี่และเกน</translation>
     </message>
     <message>
       <source>Equalizer is off. Windows selected the physical output directly.</source>
-      <translation type="unfinished" />
+      <translation>ปิดอีควอไลเซอร์แล้ว Windows เลือกเอาต์พุตจริงโดยตรง</translation>
     </message>
     <message>
       <source>Equalizer is off. Your audio uses its normal output.</source>
-      <translation type="unfinished" />
+      <translation>ปิดอีควอไลเซอร์แล้ว เสียงใช้เอาต์พุตปกติ</translation>
     </message>
     <message>
       <source>Equalizer is still running. Use the tray icon to reopen or quit.</source>
-      <translation type="unfinished" />
+      <translation>อีควอไลเซอร์ยังทำงานอยู่ ใช้ไอคอนถาดระบบเพื่อเปิดหน้าต่างอีกครั้งหรือออกจากแอป</translation>
     </message>
     <message>
       <source>Equalizer off</source>
-      <translation type="unfinished" />
+      <translation>อีควอไลเซอร์ปิด</translation>
     </message>
     <message>
       <source>Equalizer on</source>
-      <translation type="unfinished" />
+      <translation>อีควอไลเซอร์เปิด</translation>
     </message>
     <message>
       <source>Equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>เปิดหรือปิดอีควอไลเซอร์</translation>
     </message>
     <message>
       <source>Equalizer sink disappeared</source>
-      <translation type="unfinished" />
+      <translation>เอาต์พุตเสมือนอีควอไลเซอร์หายไป</translation>
     </message>
     <message>
       <source>Equipment brand</source>
-      <translation type="unfinished" />
+      <translation>แบรนด์อุปกรณ์</translation>
     </message>
     <message>
       <source>Equipment family</source>
-      <translation type="unfinished" />
+      <translation>ตระกูลรุ่นอุปกรณ์</translation>
     </message>
     <message>
       <source>Equipment kind must be speaker, microphone or amplifier.</source>
-      <translation type="unfinished" />
+      <translation>ชนิดอุปกรณ์ต้องเป็นลำโพง ไมโครโฟน หรือเครื่องขยายเสียง</translation>
     </message>
     <message>
       <source>Equipment profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>โปรไฟล์อุปกรณ์ (*.json)</translation>
     </message>
     <message>
       <source>Equipment profile editor</source>
-      <translation type="unfinished" />
+      <translation>ตัวแก้ไขโปรไฟล์อุปกรณ์</translation>
     </message>
     <message>
       <source>Equipment profiles (*.json)</source>
-      <translation type="unfinished" />
+      <translation>โปรไฟล์อุปกรณ์ (*.json)</translation>
     </message>
     <message>
       <source>Equipment profiles by brand family and model</source>
-      <translation type="unfinished" />
+      <translation>โปรไฟล์อุปกรณ์ตามแบรนด์ ตระกูลรุ่น และรุ่น</translation>
     </message>
     <message>
       <source>Equipment profiles — brand / family / model</source>
-      <translation type="unfinished" />
+      <translation>โปรไฟล์อุปกรณ์ — แบรนด์ / ตระกูลรุ่น / รุ่น</translation>
     </message>
     <message>
       <source>Equipment resource missing.</source>
-      <translation type="unfinished" />
+      <translation>ไม่พบทรัพยากรอุปกรณ์</translation>
     </message>
     <message>
       <source>Equipment subtype</source>
-      <translation type="unfinished" />
+      <translation>ประเภทย่อยอุปกรณ์</translation>
     </message>
     <message>
       <source>Equipment type</source>
-      <translation type="unfinished" />
+      <translation>ประเภทอุปกรณ์</translation>
     </message>
     <message>
       <source>Estimated output level near band %1</source>
-      <translation type="unfinished" />
+      <translation>ระดับเอาต์พุตโดยประมาณใกล้ย่าน %1</translation>
     </message>
     <message>
       <source>Estimated output near %1: %2 dBFS</source>
-      <translation type="unfinished" />
+      <translation>เอาต์พุตโดยประมาณใกล้ %1: %2 dBFS</translation>
     </message>
     <message>
       <source>Estimated output peak and clipping risk</source>
-      <translation type="unfinished" />
+      <translation>พีกเอาต์พุตโดยประมาณและความเสี่ยงต่อสัญญาณคลิป</translation>
     </message>
     <message>
       <source>Estimated overall output level</source>
-      <translation type="unfinished" />
+      <translation>ระดับเอาต์พุตรวมโดยประมาณ</translation>
     </message>
     <message>
       <source>Estimated overall output peak: %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>พีกเอาต์พุตรวมโดยประมาณ: %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>พีกโดยประมาณ %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak: EQ off</source>
-      <translation type="unfinished" />
+      <translation>พีกโดยประมาณ: EQ ปิด</translation>
     </message>
     <message>
       <source>Estimated peak: waiting for audio</source>
-      <translation type="unfinished" />
+      <translation>พีกโดยประมาณ: รอเสียง</translation>
     </message>
     <message>
       <source>Estimated post-EQ level near this frequency</source>
-      <translation type="unfinished" />
+      <translation>ระดับโดยประมาณหลัง EQ ใกล้ความถี่นี้</translation>
     </message>
     <message>
       <source>Estimated post-EQ output peak, including post gain and balance</source>
-      <translation type="unfinished" />
+      <translation>พีกเอาต์พุตโดยประมาณหลัง EQ รวมเกนหลัง EQ และสมดุลซ้าย–ขวา</translation>
     </message>
     <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
-      <translation type="unfinished" />
+      <translation>ออกจาก SoundCurrent EQ และคืนเสียงปกติ</translation>
     </message>
     <message>
       <source>Expanded test language</source>
-      <translation type="unfinished" />
+      <translation>ภาษาทดสอบข้อความขยาย</translation>
     </message>
     <message>
       <source>Expected a JSON equipment profile. Import response text using the response import button.</source>
-      <translation type="unfinished" />
+      <translation>ต้องเป็นโปรไฟล์อุปกรณ์ JSON นำเข้าข้อความการตอบสนองด้วยปุ่มนำเข้าการตอบสนอง</translation>
     </message>
     <message>
       <source>Expected frequency Hz and relative measured response dB on every data line.</source>
-      <translation type="unfinished" />
+      <translation>ทุกบรรทัดข้อมูลต้องมีความถี่เป็น Hz และการตอบสนองสัมพัทธ์ที่วัดได้เป็น dB</translation>
     </message>
     <message>
       <source>Export</source>
-      <translation type="unfinished" />
+      <translation>ส่งออก</translation>
     </message>
     <message>
       <source>Export JSON</source>
-      <translation type="unfinished" />
+      <translation>ส่งออก JSON</translation>
     </message>
     <message>
       <source>Export profile</source>
-      <translation type="unfinished" />
+      <translation>ส่งออกโปรไฟล์</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
-      <translation type="unfinished" />
+      <translation>เสียงฝีเท้าในเกม FPS</translation>
     </message>
     <message>
       <source>Family</source>
-      <translation type="unfinished" />
+      <translation>ตระกูลรุ่น</translation>
     </message>
     <message>
       <source>Filter Q</source>
-      <translation type="unfinished" />
+      <translation>ค่า Q ของฟิลเตอร์</translation>
       <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
     </message>
     <message>
       <source>Filter values must be numbers.</source>
-      <translation type="unfinished" />
+      <translation>ค่าฟิลเตอร์ต้องเป็นตัวเลข</translation>
     </message>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
-      <translation type="unfinished" />
+      <translation>ฟิลเตอร์เกินขีดจำกัดความถี่ เกน หรือ Q</translation>
     </message>
     <message>
       <source>Flat</source>
       <extracomment>Preset with zero equalizer gain at every frequency. Not an apartment; does not imply muted audio.</extracomment>
-      <translation>เรียบ</translation>
+      <translation>ราบ</translation>
     </message>
     <message>
       <source>Frequency</source>
@@ -817,11 +817,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Frequency Hz</source>
-      <translation type="unfinished" />
+      <translation>ความถี่ Hz</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
-      <translation type="unfinished" />
+      <translation>การปรับแต่งแชนเนลหน้าซ้าย/ขวา (รองรับโมโน) แชนเนลอื่นคงเอฟเฟกต์ Studio ของตนไว้ ค่า 0 บายพาสการปรับแต่งแต่ละรายการ</translation>
     </message>
     <message>
       <source>Gain</source>
@@ -830,39 +830,39 @@ Import into your library?</source>
     </message>
     <message>
       <source>Gain dB</source>
-      <translation type="unfinished" />
+      <translation>เกน dB</translation>
     </message>
     <message>
       <source>Gaming</source>
-      <translation type="unfinished" />
+      <translation>เล่นเกม</translation>
     </message>
     <message>
       <source>Headphones</source>
-      <translation type="unfinished" />
+      <translation>หูฟัง</translation>
     </message>
     <message>
       <source>Help</source>
-      <translation type="unfinished" />
+      <translation>ช่วยเหลือ</translation>
     </message>
     <message>
       <source>Hide advanced controls</source>
-      <translation type="unfinished" />
+      <translation>ซ่อนตัวควบคุมขั้นสูง</translation>
     </message>
     <message>
       <source>Hip-Hop</source>
-      <translation type="unfinished" />
+      <translation>ฮิปฮอป</translation>
     </message>
     <message>
       <source>Ignore</source>
-      <translation type="unfinished" />
+      <translation>ละเว้น</translation>
     </message>
     <message>
       <source>Import</source>
-      <translation type="unfinished" />
+      <translation>นำเข้า</translation>
     </message>
     <message>
       <source>Import JSON</source>
-      <translation type="unfinished" />
+      <translation>นำเข้า JSON</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
