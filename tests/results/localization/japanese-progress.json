@@ -1,24 +1,24 @@
 {
-  "stage": "Japanese fourth catalog batch",
+  "stage": "Japanese fifth catalog batch",
   "catalogs": [
     {
       "tag": "ja",
       "name": "日本語",
-      "translated": 291,
+      "translated": 349,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "4a08c2af03693071cc78b4f050ddf4bd662c627b4f28b0d6583bfe5393dc8a90",
-      "qmSha256": "1b0d221dc2e2d576f80fbccabc5ef271acc0b57d3bcfabf1763fe60c24e94021"
+      "tsSha256": "6f9409487daff2fe0c0e9eb7454b4854f900a851dba223733c2c9693b7026088",
+      "qmSha256": "d5ba2a6a713fa5f9a1ef3194c5ed1a3913ea4ff31185cc06d826bd5f17c528d7"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "Localization assertions, Japanese actual MainWindow offscreen smoke test, structural catalog checks",
-    "log": "/tmp/soundcurrent-eq-ja-fourth-tests.log"
+    "log": "/tmp/soundcurrent-eq-ja-fifth-tests.log"
   },
-  "review": "Contextual AI review of shared source entries 0–319: equipment imports and electrical measurement requirements, live channel constraints, estimated metering, microphone clipping, balance attenuation and model correction versus room measurement. Numerical limits and physical L/R labels preserved. Linguistic accuracy unverified.",
+  "review": "Contextual AI review of shared source entries 0–399: quit versus close, exclusive startup, measured response versus correction, conservative sweep guidance, post gain, profile limits and rendering counts. Hyperlink destinations, numerical limits and physical L/R labels preserved. Linguistic accuracy unverified.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
   "remaining": "Japanese catalog incomplete; seven target languages still incomplete. Omitted source strings reserved for the second pass."
