@@ -246,6 +246,10 @@ Importera till ditt bibliotek?</translation>
       <translation>Installation av ljuddrivrutin</translation>
     </message>
     <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>Ljuddrivrutinsinstallationen är klar. Starta om Windows innan du använder SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio driver setup did not finish: %1</source>
       <translation>Ljuddrivrutinsinstallationen slutfördes inte: %1</translation>
     </message>
@@ -1680,6 +1684,10 @@ Importera till ditt bibliotek?</translation>
       <translation>Avsluta appen</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Avsluta SoundCurrent-appar som körs och vänta tills ljudåterställningen är klar innan du ändrar den delade ljuddrivrutinen.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2029,6 +2037,10 @@ Importera till ditt bibliotek?</translation>
     <message>
       <source>Sound enhancements</source>
       <translation>Ljudförbättringar</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio är redo. Öppna appen och välj dina högtalare eller hörlurar.</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>

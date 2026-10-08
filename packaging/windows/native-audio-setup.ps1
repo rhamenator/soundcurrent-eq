@@ -53,7 +53,7 @@ try {
     # briefly for its route guardian to finish before requesting elevation.
     $until = [DateTime]::UtcNow.AddSeconds(15)
     while (Get-Process -Name 'soundcurrent-eq','soundcurrent-studio','soundcurrent-route-guardian' -ErrorAction SilentlyContinue) {
-        if ([DateTime]::UtcNow -ge $until) { throw 'Quit EQ and Studio before changing the shared audio driver.' }
+        if ([DateTime]::UtcNow -ge $until) { throw (Get-SCSetupText 'Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.' -Language $Language -Application ('soundcurrent-' + $App)) }
         Start-Sleep -Milliseconds 200
     }
     $package = Join-Path $PSScriptRoot 'audio-driver'
@@ -71,8 +71,8 @@ try {
     $process = Start-Process -FilePath $helper -ArgumentList $arguments -Verb RunAs -Wait -PassThru
     $code = $process.ExitCode
     if ($code -notin @(0,3010)) { throw (Format-SCSetupText 'Driver setup failed (code %1). No Windows security settings were changed.' -Values @([string]$code) -Language $Language -Application ('soundcurrent-' + $App)) }
-    if ($code -eq 3010) { Notice 'Audio driver setup completed. Restart Windows before using SoundCurrent.' }
-    elseif ($Install) { Notice 'SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.' }
+    if ($code -eq 3010) { Notice (Get-SCSetupText 'Audio driver setup completed. Restart Windows before using SoundCurrent.' -Language $Language -Application ('soundcurrent-' + $App)) }
+    elseif ($Install) { Notice (Get-SCSetupText 'SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.' -Language $Language -Application ('soundcurrent-' + $App)) }
     exit $code
 } catch {
     if ($Check) { Write-Output $_.Exception.Message; exit 20 }

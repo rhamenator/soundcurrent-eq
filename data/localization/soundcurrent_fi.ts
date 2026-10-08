@@ -246,6 +246,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>Ääniajurin asennus</translation>
     </message>
     <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>Ääniohjaimen asennus on valmis. Käynnistä Windows uudelleen ennen SoundCurrentin käyttöä.</translation>
+    </message>
+    <message>
       <source>Audio driver setup did not finish: %1</source>
       <translation>Ääniohjaimen asennusta ei suoritettu loppuun: %1</translation>
     </message>
@@ -1680,6 +1684,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>Lopeta sovellus</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Sulje käynnissä olevat SoundCurrent-sovellukset ja odota äänen palautuksen valmistumista ennen jaetun ääniohjaimen muuttamista.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>O</translation>
     </message>
@@ -2029,6 +2037,10 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Sound enhancements</source>
       <translation>Äänenparannukset</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio on valmis. Avaa sovellus ja valitse kaiuttimet tai kuulokkeet.</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>

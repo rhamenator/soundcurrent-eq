@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>音訊驅動程式安裝</translation>
     </message>
     <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>音訊驅動程式設定已完成。使用 SoundCurrent 前請重新啟動 Windows。</translation>
+    </message>
+    <message>
       <source>Audio driver setup did not finish: %1</source>
       <translation>音訊驅動程式設定未完成：%1</translation>
     </message>
@@ -1680,6 +1684,10 @@ Import into your library?</source>
       <translation>結束應用程式</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>變更共用音訊驅動程式前，請結束正在執行的 SoundCurrent 應用程式，並等待音訊復原完成。</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2029,6 +2037,10 @@ Import into your library?</source>
     <message>
       <source>Sound enhancements</source>
       <translation>聲音增強</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio 已就緒。請開啟應用程式並選擇喇叭或耳機。</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>

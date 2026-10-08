@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>오디오 드라이버 설정</translation>
     </message>
     <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>오디오 드라이버 설정이 완료되었습니다. SoundCurrent를 사용하기 전에 Windows를 다시 시작하세요.</translation>
+    </message>
+    <message>
       <source>Audio driver setup did not finish: %1</source>
       <translation>오디오 드라이버 설정이 완료되지 않았습니다: %1</translation>
     </message>
@@ -1680,6 +1684,10 @@ Import into your library?</source>
       <translation>앱 종료</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>공유 오디오 드라이버를 변경하기 전에 실행 중인 SoundCurrent 앱을 종료하고 오디오 복구가 완료될 때까지 기다리세요.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2029,6 +2037,10 @@ Import into your library?</source>
     <message>
       <source>Sound enhancements</source>
       <translation>음질 개선</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio가 준비되었습니다. 앱을 열고 스피커나 헤드폰을 선택하세요.</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>

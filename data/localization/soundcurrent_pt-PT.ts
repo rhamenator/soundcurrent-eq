@@ -246,6 +246,10 @@ Importar para a sua biblioteca?</translation>
       <translation>Configuração do controlador de áudio</translation>
     </message>
     <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>A configuração do controlador de áudio foi concluída. Reinicie o Windows antes de utilizar o SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio driver setup did not finish: %1</source>
       <translation>A configuração do controlador de áudio não foi concluída: %1</translation>
     </message>
@@ -1680,6 +1684,10 @@ Importar para a sua biblioteca?</translation>
       <translation>Sair da aplicação</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Feche as aplicações SoundCurrent em execução e aguarde a conclusão da recuperação do áudio antes de alterar o controlador de áudio partilhado.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>D</translation>
     </message>
@@ -2029,6 +2037,10 @@ Importar para a sua biblioteca?</translation>
     <message>
       <source>Sound enhancements</source>
       <translation>Efeitos sonoros</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>O SoundCurrent Audio está pronto. Abra a aplicação e escolha as suas colunas ou auscultadores.</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>

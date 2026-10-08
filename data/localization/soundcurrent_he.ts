@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>התקנת מנהל התקן שמע</translation>
     </message>
     <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>הגדרת מנהל התקן השמע הושלמה. הפעילו מחדש את Windows לפני השימוש ב-SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio driver setup did not finish: %1</source>
       <translation>הגדרת מנהל התקן השמע לא הושלמה: %1</translation>
     </message>
@@ -1680,6 +1684,10 @@ Import into your library?</source>
       <translation>יציאה מהאפליקציה</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>צאו מאפליקציות SoundCurrent שפועלות והמתינו לסיום שחזור השמע לפני שינוי מנהל התקן השמע המשותף.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2029,6 +2037,10 @@ Import into your library?</source>
     <message>
       <source>Sound enhancements</source>
       <translation>שיפורי שמע</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio מוכן. פתחו את האפליקציה ובחרו ברמקולים או באוזניות.</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>

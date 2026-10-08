@@ -246,6 +246,10 @@ Importovat do vaší knihovny?</translation>
       <translation>Instalace zvukového ovladače</translation>
     </message>
     <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>Nastavení zvukového ovladače je dokončeno. Před použitím SoundCurrent restartujte systém Windows.</translation>
+    </message>
+    <message>
       <source>Audio driver setup did not finish: %1</source>
       <translation>Nastavení zvukového ovladače nebylo dokončeno: %1</translation>
     </message>
@@ -1680,6 +1684,10 @@ Importovat do vaší knihovny?</translation>
       <translation>Ukončit aplikaci</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Ukončete spuštěné aplikace SoundCurrent a před změnou sdíleného zvukového ovladače počkejte na dokončení obnovy zvuku.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2029,6 +2037,10 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Sound enhancements</source>
       <translation>Zvukové efekty</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio je připraven. Otevřete aplikaci a vyberte reproduktory nebo sluchátka.</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>

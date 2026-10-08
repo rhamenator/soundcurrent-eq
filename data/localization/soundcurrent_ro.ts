@@ -246,6 +246,10 @@ Importați în bibliotecă?</translation>
       <translation>Configurare driver audio</translation>
     </message>
     <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>Configurarea driverului audio s-a încheiat. Reporniți Windows înainte de a utiliza SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio driver setup did not finish: %1</source>
       <translation>Configurarea driverului audio nu s-a încheiat: %1</translation>
     </message>
@@ -1680,6 +1684,10 @@ Importați în bibliotecă?</translation>
       <translation>Ieșiți din aplicație</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Închideți aplicațiile SoundCurrent care rulează și așteptați finalizarea recuperării audio înainte de a modifica driverul audio partajat.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>D</translation>
     </message>
@@ -2029,6 +2037,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Sound enhancements</source>
       <translation>Îmbunătățiri sonore</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio este pregătit. Deschideți aplicația și alegeți difuzoarele sau căștile.</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>

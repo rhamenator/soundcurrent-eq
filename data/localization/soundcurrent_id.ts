@@ -246,6 +246,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Penyiapan driver audio</translation>
     </message>
     <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>Penyiapan driver audio selesai. Mulai ulang Windows sebelum menggunakan SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio driver setup did not finish: %1</source>
       <translation>Penyiapan driver audio tidak selesai: %1</translation>
     </message>
@@ -1680,6 +1684,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Keluar dari aplikasi</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Tutup aplikasi SoundCurrent yang sedang berjalan dan tunggu pemulihan audio selesai sebelum mengubah driver audio bersama.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2029,6 +2037,10 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Sound enhancements</source>
       <translation>Peningkatan suara</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio siap. Buka aplikasi dan pilih speaker atau headphone Anda.</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>

@@ -246,6 +246,10 @@ Importér til dit bibliotek?</translation>
       <translation>Installation af lyddriver</translation>
     </message>
     <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>Opsætningen af lyddriveren er fuldført. Genstart Windows, før du bruger SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio driver setup did not finish: %1</source>
       <translation>Opsætningen af lyddriveren blev ikke fuldført: %1</translation>
     </message>
@@ -1680,6 +1684,10 @@ Importér til dit bibliotek?</translation>
       <translation>Afslut appen</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Luk kørende SoundCurrent-apps, og vent på, at lydgendannelsen er færdig, før du ændrer den delte lyddriver.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2029,6 +2037,10 @@ Importér til dit bibliotek?</translation>
     <message>
       <source>Sound enhancements</source>
       <translation>Lydforbedringer</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio er klar. Åbn appen, og vælg dine højttalere eller hovedtelefoner.</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>

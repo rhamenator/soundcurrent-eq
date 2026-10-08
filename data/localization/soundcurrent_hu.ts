@@ -246,6 +246,10 @@ Importálja a könyvtárba?</translation>
       <translation>Hangillesztőprogram beállítása</translation>
     </message>
     <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>A hangillesztőprogram beállítása befejeződött. A SoundCurrent használata előtt indítsa újra a Windowst.</translation>
+    </message>
+    <message>
       <source>Audio driver setup did not finish: %1</source>
       <translation>A hangillesztőprogram beállítása nem fejeződött be: %1</translation>
     </message>
@@ -1680,6 +1684,10 @@ Importálja a könyvtárba?</translation>
       <translation>Kilépés az alkalmazásból</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Lépjen ki a futó SoundCurrent alkalmazásokból, és várja meg a hang helyreállítását a közösen használt hangillesztőprogram módosítása előtt.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>J</translation>
     </message>
@@ -2029,6 +2037,10 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Sound enhancements</source>
       <translation>Hangjavítások</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>A SoundCurrent Audio készen áll. Nyissa meg az alkalmazást, és válassza ki a hangszórókat vagy a fejhallgatót.</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>

@@ -11,5 +11,8 @@
   "Audio driver setup did not finish: %1",
   "The shared driver manager is missing. Repair the app installation.",
   "The driver package is incomplete or Windows cannot verify its signature.",
-  "The driver manager is not signed. Install a signed SoundCurrent release."
+  "The driver manager is not signed. Install a signed SoundCurrent release.",
+  "Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.",
+  "Audio driver setup completed. Restart Windows before using SoundCurrent.",
+  "SoundCurrent Audio is ready. Open the app and choose your speakers or headphones."
 ]

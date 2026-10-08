@@ -26,6 +26,30 @@ foreach ($pack in $data.languages.PSObject.Properties) {
         }
     }
 }
+
+# Exercise the real success-notice branch in isolation; never run the helper body.
+$nativeTokens=$null;$nativeErrors=$null
+$nativeAst=[Management.Automation.Language.Parser]::ParseFile((Join-Path $root 'packaging/windows/native-audio-setup.ps1'),[ref]$nativeTokens,[ref]$nativeErrors)
+$noticeBranch=$nativeAst.Find({param($node)
+    $node -is [Management.Automation.Language.IfStatementAst] -and
+    $node.Clauses[0].Item1.Extent.Text.Trim() -ceq '$code -eq 3010'
+},$true)
+if (!$noticeBranch) { throw 'Native success notice branch fixture is missing' }
+foreach ($pack in $data.languages.PSObject.Properties) {
+    foreach ($case in @(@(3010,$true),@(3010,$false),@(0,$true),@(0,$false))) {
+        $actual=@(& {
+            function Notice([string]$Text) { Write-Output $Text }
+            $App='eq';$Language=$pack.Name;$code=$case[0];$Install=$case[1]
+            & ([scriptblock]::Create($noticeBranch.Extent.Text))
+        })
+        if ($case[0] -eq 3010) { $source='Audio driver setup completed. Restart Windows before using SoundCurrent.' }
+        elseif ($case[1]) { $source='SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.' }
+        else { $source=$null }
+        if ($source) {
+            if ($actual.Count -ne 1 -or $actual[0] -cne $pack.Value.PSObject.Properties[$source].Value) { throw ('Native success notice mismatch: '+$pack.Name) }
+        } elseif ($actual.Count) { throw 'Removal incorrectly emitted ready notice' }
+    }
+}
 $available = @($data.languages.PSObject.Properties.Name)
 foreach ($case in @(@('FR_ca','fr'),@('NN_no','nn'),@('zh-HK','zh-Hant'),@('zh-CN','zh-Hans'),@('pt-AO','en'),@('fr-Xxxx','en'),@('not-a-language','en'))) {
     if ((Resolve-SCSetupLanguage $case[0] $available) -ne $case[1]) { throw "Helper language resolution failed: $($case[0])" }

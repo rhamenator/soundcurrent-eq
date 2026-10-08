@@ -158,5 +158,9 @@
   "secondPassNativePackageErrors": {
     "status": "three owned errors translated; host missing-manager fault qualified; Windows package/signature paths pending",
     "evidence": "tests/results/localization/second-pass-native-package-errors.json"
+  },
+  "secondPassNativeNotices": {
+    "status": "three notices translated; isolated native success conditional tested on host; Windows timeout/dialogs and lifecycle pending",
+    "evidence": "tests/results/localization/second-pass-native-notices.json"
   }
 }

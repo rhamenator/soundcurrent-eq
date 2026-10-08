@@ -246,6 +246,10 @@ Import into your library?</source>
       <translation>ऑडियो ड्राइवर सेटअप</translation>
     </message>
     <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>ऑडियो ड्राइवर सेटअप पूरा हुआ। SoundCurrent का उपयोग करने से पहले Windows को पुनरारंभ करें।</translation>
+    </message>
+    <message>
       <source>Audio driver setup did not finish: %1</source>
       <translation>ऑडियो ड्राइवर सेटअप पूरा नहीं हुआ: %1</translation>
     </message>
@@ -1680,6 +1684,10 @@ Import into your library?</source>
       <translation>ऐप से बाहर निकलें</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>साझा ऑडियो ड्राइवर बदलने से पहले चल रहे SoundCurrent ऐप बंद करें और ऑडियो बहाली पूरी होने की प्रतीक्षा करें।</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2029,6 +2037,10 @@ Import into your library?</source>
     <message>
       <source>Sound enhancements</source>
       <translation>ध्वनि सुधार</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio तैयार है। ऐप खोलें और अपने स्पीकर या हेडफ़ोन चुनें।</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>

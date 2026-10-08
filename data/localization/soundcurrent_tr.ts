@@ -246,6 +246,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Ses sürücüsü kurulumu</translation>
     </message>
     <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>Ses sürücüsü kurulumu tamamlandı. SoundCurrent kullanmadan önce Windows’u yeniden başlatın.</translation>
+    </message>
+    <message>
       <source>Audio driver setup did not finish: %1</source>
       <translation>Ses sürücüsü kurulumu tamamlanmadı: %1</translation>
     </message>
@@ -1680,6 +1684,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Uygulamadan çık</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Paylaşılan ses sürücüsünü değiştirmeden önce çalışan SoundCurrent uygulamalarını kapatın ve ses kurtarmanın tamamlanmasını bekleyin.</translation>
+    </message>
+    <message>
       <source>R</source>
       <translation>R</translation>
     </message>
@@ -2029,6 +2037,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Sound enhancements</source>
       <translation>Ses efektleri</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio hazır. Uygulamayı açıp hoparlörlerinizi veya kulaklığınızı seçin.</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
