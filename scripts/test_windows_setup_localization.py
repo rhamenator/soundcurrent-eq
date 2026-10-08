@@ -19,7 +19,7 @@ with tempfile.TemporaryDirectory(prefix='soundcurrent-setup-i18n-') as directory
     # No action switches: the real helper rejects before any driver/PnP check.
     # Quiet mode also avoids loading Windows Forms on this host.
     shutil.copyfile(root / 'packaging/windows/setup-localization.ps1', Path(directory) / 'setup-localization.ps1')
-    data = json.loads(catalog.read_text())
+    data = json.loads(catalog.read_text(encoding='utf-8'))
     for helper in ('cable-setup.ps1', 'native-audio-setup.ps1'):
         script = Path(directory) / helper
         shutil.copyfile(root / 'packaging/windows' / helper, script)

@@ -15,17 +15,48 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_setup_export_ignores_windows_default_codepage(self):
+        root = Path(__file__).resolve().parents[1]
+        spec = importlib.util.spec_from_file_location('setup_export_codepage', root / 'scripts/windows_setup_catalogs.py')
+        exporter = importlib.util.module_from_spec(spec)
+        with patch.dict('sys.modules', {'localization': catalog}):
+            spec.loader.exec_module(exporter)
+        original = Path.read_text
+        def windows_default(path, *args, **kwargs):
+            if not args and 'encoding' not in kwargs:
+                kwargs['encoding'] = 'cp1252'
+            return original(path, *args, **kwargs)
+        # The actual metadata contains multilingual display names that cp1252
+        # cannot decode. Exercise real exporter/source checks under that default.
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / 'setup.json'
+            broken = importlib.util.module_from_spec(spec)
+            legacy = (root / 'scripts/windows_setup_catalogs.py').read_text(encoding='utf-8').replace(".read_text(encoding='utf-8')", '.read_text()')
+            with patch.dict('sys.modules', {'localization': catalog}):
+                exec(compile(legacy, '<legacy-export-fixture>', 'exec'), broken.__dict__)
+            with patch.object(Path, 'read_text', windows_default):
+                with self.assertRaises(UnicodeDecodeError):
+                    broken.export(output)
+                self.assertFalse(output.exists())
+                exporter.export(output)
+            payload = json.loads(output.read_text(encoding='utf-8'))
+            self.assertEqual(len(payload['languages']), 34)
+            self.assertIn('ar', payload['languages'])
+            source = 'Audio driver setup'
+            arabic = catalog.entries(catalog.DATA / 'soundcurrent_ar.ts')[source].findtext('translation')
+            self.assertEqual(payload['languages']['ar'][source], arabic)
+
     def test_native_routing_notice_is_native_only_and_name_preserved(self):
         root = Path(__file__).resolve().parents[1]
         source = 'SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.'
         for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
-            code = installer.read_text()
+            code = installer.read_text(encoding='utf-8')
             if 'native' not in installer.stem:
                 self.assertNotIn('SCNativeRouting', code)
             else:
                 self.assertRegex(code, r'\$\{NSD_CreateLabel\}[^\n]+"\$\(SCNativeRouting\)"')
                 self.assertEqual(re.findall(r'^LangString SCNativeRouting \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
-        for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
             message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
             self.assertTrue(catalog.finished(message), row['tag'])
             translated = message.findtext('translation')
@@ -38,13 +69,13 @@ class CatalogTests(unittest.TestCase):
         root = Path(__file__).resolve().parents[1]
         source = 'SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.'
         for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
-            code = installer.read_text()
+            code = installer.read_text(encoding='utf-8')
             if 'native' not in installer.stem:
                 self.assertNotIn('SCNativePresent', code)
             else:
                 self.assertRegex(code, r'\$\{NSD_CreateLabel\}[^\n]+"\$\(SCNativePresent\)"')
                 self.assertEqual(re.findall(r'^LangString SCNativePresent \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
-        for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
             message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
             self.assertTrue(catalog.finished(message), row['tag'])
             translated = message.findtext('translation')
@@ -57,13 +88,13 @@ class CatalogTests(unittest.TestCase):
         root = Path(__file__).resolve().parents[1]
         source = 'Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.'
         for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
-            code = installer.read_text()
+            code = installer.read_text(encoding='utf-8')
             if 'native' not in installer.stem:
                 self.assertNotIn('SCNativeApproval', code)
             else:
                 self.assertRegex(code, r'\$\{NSD_CreateLabel\}[^\n]+"\$\(SCNativeApproval\)"')
                 self.assertEqual(re.findall(r'^LangString SCNativeApproval \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
-        for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
             message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
             self.assertTrue(catalog.finished(message), row['tag'])
             catalog.validate_text(source, message.findtext('translation'))
@@ -72,13 +103,13 @@ class CatalogTests(unittest.TestCase):
         root = Path(__file__).resolve().parents[1]
         source = 'Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.'
         for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
-            code = installer.read_text()
+            code = installer.read_text(encoding='utf-8')
             if 'native' not in installer.stem:
                 self.assertNotIn('SCSharedDriverNotice', code)
             else:
                 self.assertRegex(code, r'\$\{NSD_CreateLabel\}[^\n]+"\$\(SCSharedDriverNotice\)"')
                 self.assertEqual(re.findall(r'^LangString SCSharedDriverNotice \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
-        for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
             message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
             self.assertTrue(catalog.finished(message), row['tag'])
             translated = message.findtext('translation')
@@ -90,13 +121,13 @@ class CatalogTests(unittest.TestCase):
         root = Path(__file__).resolve().parents[1]
         source = 'VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.'
         for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
-            code = installer.read_text()
+            code = installer.read_text(encoding='utf-8')
             if 'native' in installer.stem:
                 self.assertNotIn('SCCableRestart', code)
             else:
                 self.assertRegex(code, r'\$\{NSD_CreateLabel\}[^\n]+"\$\(SCCableRestart\)"')
                 self.assertEqual(re.findall(r'^LangString SCCableRestart \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
-        for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
             message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
             self.assertTrue(catalog.finished(message), row['tag'])
             translated = message.findtext('translation')
@@ -112,7 +143,7 @@ class CatalogTests(unittest.TestCase):
             code = installer.read_text(encoding='utf-8')
             self.assertRegex(code, r'\$\{NSD_CreateLabel\}[^\n]+"\$\(SCDriverCheckFailed\)"')
             self.assertEqual(re.findall(r'^LangString SCDriverCheckFailed \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source.replace('%1', 'Audio driver setup')])
-        for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
             messages = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))
             message = messages[source]
             self.assertTrue(catalog.finished(message), row['tag'])
@@ -144,12 +175,12 @@ class CatalogTests(unittest.TestCase):
                     exporter.generate_installer(source, source, product, captions)
                 fixture = folder / source.name
                 for replacement in ('', 'LangString SCConnectAudio ${LANG_ENGLISH} "One"\nLangString SCConnectAudio ${LANG_ENGLISH} "Two"'):
-                    fixture.write_text(re.sub(r'^LangString SCConnectAudio.*$', replacement, source.read_text(), flags=re.M))
+                    fixture.write_text(re.sub(r'^LangString SCConnectAudio.*$', replacement, source.read_text(encoding='utf-8'), flags=re.M), encoding='utf-8')
                     failed = folder / 'failed.nsi'
                     with self.assertRaisesRegex(ValueError, 'Missing or duplicate'):
                         exporter.generate_installer(fixture, failed, product, captions)
                     self.assertFalse(failed.exists())
-                fixture.write_text(source.read_text() + '\n!insertmacro MUI_LANGUAGE "French"\n')
+                fixture.write_text(source.read_text(encoding='utf-8') + '\n!insertmacro MUI_LANGUAGE "French"\n', encoding='utf-8')
                 with self.assertRaisesRegex(ValueError, 'activation'):
                     exporter.generate_installer(fixture, folder / 'failed.nsi', product, captions)
 
@@ -169,8 +200,8 @@ class CatalogTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / 'captions.json'
             exporter.export(output, 'SoundCurrent Studio' if (root / 'src/studio_model.cpp').exists() else 'SoundCurrent EQ')
-            result = json.loads(output.read_text())
-            self.assertEqual(set(result['languages']), {row['tag'] for row in json.loads((catalog.DATA / 'catalogs.json').read_text())})
+            result = json.loads(output.read_text(encoding='utf-8'))
+            self.assertEqual(set(result['languages']), {row['tag'] for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8'))})
             self.assertFalse(result['installerLocaleActivationComplete'])
             for variants in result['languages'].values():
                 self.assertEqual(set(variants), {'cable', 'native'})
@@ -188,7 +219,7 @@ class CatalogTests(unittest.TestCase):
             code = installer.read_text(encoding='utf-8')
             self.assertRegex(code, r'\$\{NSD_CreateCheckbox\}[^\n]+"\$\(SCInstallDriver\)"')
             self.assertEqual(re.findall(r'^LangString SCInstallDriver \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
-            for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+            for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
                 message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
                 self.assertTrue(catalog.finished(message), row['tag'])
                 translated = message.findtext('translation')
@@ -207,7 +238,7 @@ class CatalogTests(unittest.TestCase):
             self.assertIn('MUI_HEADER_TEXT "$(SCConnectAudio)" "$(SCSetupAudio)"', code)
             values = re.findall(r'^LangString SCSetupAudio \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M)
             self.assertEqual(values, [template.replace('%1', driver).replace('%2', product)])
-            for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+            for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
                 message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[template]
                 self.assertTrue(catalog.finished(message), row['tag'])
                 translated = message.findtext('translation')
@@ -224,7 +255,7 @@ class CatalogTests(unittest.TestCase):
             matches = re.findall(r'^LangString SCConnectAudio \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M)
             self.assertEqual(matches, ['Connect your audio'])
             self.assertIn(matches[0], catalog.sources())
-            for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+            for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
                 entry = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[matches[0]]
                 self.assertTrue(catalog.finished(entry), row['tag'])
 
@@ -233,8 +264,8 @@ class CatalogTests(unittest.TestCase):
             data = Path(directory)
             (data / 'seed-translations.json').write_bytes((catalog.DATA / 'seed-translations.json').read_bytes())
             fixture = 'New owned helper diagnostic %1'
-            self.assertNotIn(fixture, json.loads((data / 'seed-translations.json').read_text())['sources'])
-            (data / 'setup-sources.json').write_text(json.dumps([fixture]))
+            self.assertNotIn(fixture, json.loads((data / 'seed-translations.json').read_text(encoding='utf-8'))['sources'])
+            (data / 'setup-sources.json').write_text(json.dumps([fixture]), encoding='utf-8')
             with patch.object(catalog, 'DATA', data):
                 self.assertIn(fixture, catalog.sources())
         # Use the actual existing catalogs: a newly declared source must invalidate
@@ -248,7 +279,7 @@ class CatalogTests(unittest.TestCase):
         for values in ({'source': 'Text'}, ['Text', 'Text'], [''], ['  '], [None], [42], [['Text']]):
             with self.subTest(values=values), tempfile.TemporaryDirectory() as directory:
                 data = Path(directory)
-                (data / 'setup-sources.json').write_text(json.dumps(values))
+                (data / 'setup-sources.json').write_text(json.dumps(values), encoding='utf-8')
                 with patch.object(catalog, 'DATA', data), self.assertRaisesRegex(ValueError, 'Invalid setup source inventory'):
                     catalog.setup_sources()
 
@@ -257,11 +288,11 @@ class CatalogTests(unittest.TestCase):
         model = root / 'src/studio_model.cpp'
         if not model.exists():
             self.skipTest('Studio session model is not part of EQ')
-        reasons = {catalog.literal(args[1]) for args in catalog.calls(model.read_text(), 'require')
+        reasons = {catalog.literal(args[1]) for args in catalog.calls(model.read_text(encoding='utf-8'), 'require')
                    if len(args) == 2 and catalog.literal(args[1]) is not None}
-        boundary = (root / 'src/audio_error_text.h').read_text()
+        boundary = (root / 'src/audio_error_text.h').read_text(encoding='utf-8')
         mappings = dict(re.findall(r'if \(diagnostic == QStringLiteral\("([^"]+)"\)\)\s*return SC_TR\("([^"]+)"\);', boundary))
-        gaps = json.loads((root / 'tests/results/localization/studio-model-diagnostic-gaps.json').read_text())
+        gaps = json.loads((root / 'tests/results/localization/studio-model-diagnostic-gaps.json').read_text(encoding='utf-8'))
         self.assertEqual(reasons - set(mappings), set(gaps['diagnosticsNeedingMappingAndTranslations']))
         self.assertEqual(gaps['unmappedCount'], len(gaps['diagnosticsNeedingMappingAndTranslations']))
         self.assertTrue({mappings[key] for key in reasons & set(mappings)}.issubset(catalog.marked_sources(root / 'src')))
@@ -279,9 +310,9 @@ class CatalogTests(unittest.TestCase):
 
     def test_bundled_speaker_taxonomy_has_marked_display_labels(self):
         root = Path(__file__).resolve().parents[1]
-        profiles = json.loads((root / 'data/equipment/spinorama.json').read_text())
+        profiles = json.loads((root / 'data/equipment/spinorama.json').read_text(encoding='utf-8'))
         keys = {profile['equipmentType'] for profile in profiles}
-        header = (root / 'src/equipment_display_text.h').read_text()
+        header = (root / 'src/equipment_display_text.h').read_text(encoding='utf-8')
         mapping = dict(re.findall(r'if\(key=="([^"]+)"\)return SC_TR\("([^"]+)"\);', header))
         self.assertEqual(keys, set(mapping), 'Published taxonomy additions need explicit localized display labels')
         self.assertTrue(set(mapping.values()).issubset(catalog.marked_sources(root / 'src')))
@@ -412,7 +443,7 @@ class CatalogTests(unittest.TestCase):
         spec = importlib.util.spec_from_file_location('nsis_audit', root / 'scripts/nsis_string_audit.py')
         audit = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(audit)
-        audit.check_backlog(audit.inventory(root), json.loads((root / 'data/localization/nsis-text-backlog.json').read_text()))
+        audit.check_backlog(audit.inventory(root), json.loads((root / 'data/localization/nsis-text-backlog.json').read_text(encoding='utf-8')))
         with tempfile.TemporaryDirectory() as directory:
             fixture = Path(directory)
             folder = fixture / 'packaging/windows'
@@ -453,11 +484,11 @@ class CatalogTests(unittest.TestCase):
 
     def test_setup_lookup_keys_have_required_catalog_entries(self):
         root = Path(__file__).resolve().parents[1]
-        required = json.loads((root / 'data/localization/setup-sources.json').read_text())
+        required = json.loads((root / 'data/localization/setup-sources.json').read_text(encoding='utf-8'))
         self.assertEqual(len(required), len(set(required)))
         calls = set()
         for file in ('cable-setup.ps1', 'native-audio-setup.ps1'):
-            code = (root / 'packaging/windows' / file).read_text()
+            code = (root / 'packaging/windows' / file).read_text(encoding='utf-8')
             calls.update(re.findall(r"(?:Get|Format)-SCSetupText\s+'([^']+)'", code))
         self.assertEqual(calls, set(required), 'New literal helper lookups must be declared and translated')
         self.assertTrue(set(required).issubset(catalog.sources()))
@@ -471,8 +502,8 @@ class CatalogTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             data = Path(directory)
             self.fixture(data)
-            (data / 'catalogs.json').write_text(json.dumps([{'tag':'fr'}]))
-            (data / 'setup-sources.json').write_text(json.dumps(['First']))
+            (data / 'catalogs.json').write_text(json.dumps([{'tag':'fr'}]), encoding='utf-8')
+            (data / 'setup-sources.json').write_text(json.dumps(['First']), encoding='utf-8')
             destination = data / 'export.json'
             with patch.object(catalog, 'DATA', data), patch.object(catalog, 'check'), self.assertRaisesRegex(ValueError, 'Missing required setup translations'):
                 exporter.export(destination)

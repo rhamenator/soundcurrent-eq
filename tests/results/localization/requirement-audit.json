@@ -250,5 +250,9 @@
   "secondPassInstallerNativeRouting": {
     "report": "tests/results/localization/second-pass-installer-native-routing.json",
     "status": "native output/routing explanation translated; locale activation and runtime qualification pending"
+  },
+  "secondPassWindowsCodepage": {
+    "report": "tests/results/localization/second-pass-windows-codepage.json",
+    "status": "observed Windows export encoding failure fixed and reproduced in host regression; fresh Windows qualification pending"
   }
 }

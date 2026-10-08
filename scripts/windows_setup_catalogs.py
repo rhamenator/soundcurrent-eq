@@ -8,9 +8,9 @@ import localization as catalog
 
 def export(destination):
     catalog.check(require_complete=True)
-    required = set(json.loads((catalog.DATA / 'setup-sources.json').read_text()))
+    required = set(json.loads((catalog.DATA / 'setup-sources.json').read_text(encoding='utf-8')))
     languages = {}
-    for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+    for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
         tag = row['tag']
         entries = catalog.entries(catalog.DATA / ('soundcurrent_' + tag + '.ts'))
         languages[tag] = {source: message.findtext('translation') for source, message in entries.items()
