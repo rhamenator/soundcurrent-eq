@@ -332,11 +332,11 @@
   {
     "tag": "nn",
     "name": "Norsk nynorsk",
-    "translated": 166,
+    "translated": 230,
     "total": 441,
     "status": "unverified",
     "nativeReviewed": false,
-    "tsSha256": "769e1a7bd5895106141cf4c100274196567d689de0ec8d2d922762c54700ad37",
-    "qmSha256": "fd5f17fc35f0aa4a10703665bf986403fd8a347ff7b87947ef5b0570b0f03a16"
+    "tsSha256": "fa5833f64fe4cde35ef1645ca2d019d99ded98d31c2e1594c3d51112e63c291d",
+    "qmSha256": "54f43ef0c5c2ab510126c8f8ade0e6b6811420da16e2089ab17a0b6c92d4039b"
   }
 ]

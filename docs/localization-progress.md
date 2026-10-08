@@ -121,3 +121,5 @@ Romanian/Hungarian complete extracted catalogs: 441 messages each. Full Linux CT
 Nynorsk added as a separate nn catalog, with 102/441 messages populated. Three focused Linux checks passed per app, including distinct Nynorsk/Bokmål regional selection. It remains incomplete and unverified. The target scope is now 33 non-English locales; 20 original catalogs are populated and 13 catalogs remain incomplete.
 
 Nynorsk recovery and effects batch: 166/441 messages populated. Three focused Linux checks passed per app. Processing refusal, restart recovery, update checks and delay controls reviewed contextually. Catalog remains incomplete and unverified.
+
+Nynorsk filter and editor batch: 230/441 messages populated. Three focused Linux checks passed per app. Filter Q, compressor parameters, equipment editing and estimated meters reviewed contextually. Catalog remains incomplete and unverified.
