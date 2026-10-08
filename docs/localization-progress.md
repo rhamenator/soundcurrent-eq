@@ -135,3 +135,5 @@ Nynorsk complete extracted catalogs: 441 messages each. Full Linux CTest passed 
 Arabic initial batch: 102/441 messages populated. Three focused Linux checks passed per app. Arabic EQ sample inspected at 1280×720 with RTL text/tabs and LTR frequency/numerical controls. Catalog remains incomplete and unverified; full bidi qualification remains open.
 
 Arabic recovery, calibration and delay batch: 166/441 messages populated. Three focused Linux checks passed. Processing refusal, 1 MiB limits, update behavior and processed delay mix reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Arabic equipment, filters and metering batch: 230/441 messages populated. Three focused Linux checks passed. Estimated levels, filter Q/high-pass/high-shelf, equipment kinds and dynamics makeup gain reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.

@@ -3,7 +3,7 @@
   "tool_version": "0.1.0",
   "inputs": {
     "data/localization/soundcurrent_en.ts": "e4b4b609330f1f47cec0f01d80366d65e2d095552bd313ccc8bf880a8518deba",
-    "data/localization/soundcurrent_ar.ts": "fbaea24f4ddb9ce8fdd5d5f6e0fd585666242733631dd59c2bb217018ce913b1",
+    "data/localization/soundcurrent_ar.ts": "64a05d419ba18d270eb0eb0e7c65c12d9ce8668c5b240e8776ac43a438a2dcef",
     "data/localization/soundcurrent_cs.ts": "da39ed37ee0f2523774d4bb4debd71e8d5982f807f0f518aaccb51127a3c0217",
     "data/localization/soundcurrent_da.ts": "8435592cb6006b9393e64e330ef110baf8ee8c5f55d243338837bb7d5dc1f6be",
     "data/localization/soundcurrent_de.ts": "d3ce9ddd7fe923c060b06b8a4b4839428f264542d4fc081e06986852fa72be9a",
@@ -44,7 +44,7 @@
       "commit": "unknown",
       "file": "data/localization/soundcurrent_ar.ts",
       "locale": "ar",
-      "key": "[\"SoundCurrent\",null,\"Discard\",\"\"]",
+      "key": "[\"SoundCurrent\",null,\"Import create and edit equipment profiles\",\"\"]",
       "category": "untranslated",
       "severity": "error",
       "confidence": 1.0,
@@ -52,14 +52,14 @@
       "recommended_action": "Review and correct catalog; rerun audit.",
       "verification_status": "deterministic",
       "kind": "deterministic",
-      "fingerprint": "40347df677c03f070233d6fb12ff1fef31abe75fef529e53e955ac8829651fc1"
+      "fingerprint": "04bd0edc054a584e642b44bf7ab5d9df3b857cde908946d537d78a29c3df8708"
     },
     {
       "repository": "soundcurrent-eq",
       "commit": "unknown",
       "file": "data/localization/soundcurrent_ar.ts",
       "locale": "ar",
-      "key": "[\"SoundCurrent\",null,\"Drag curve points or tune the selected band below.\",\"\"]",
+      "key": "[\"SoundCurrent\",null,\"Import equipment profile\",\"\"]",
       "category": "untranslated",
       "severity": "error",
       "confidence": 1.0,
@@ -67,14 +67,14 @@
       "recommended_action": "Review and correct catalog; rerun audit.",
       "verification_status": "deterministic",
       "kind": "deterministic",
-      "fingerprint": "ab3ed083c056be25dc67d0aac3440522850ab2299fbf2f7d88a7eaeee969ab42"
+      "fingerprint": "9536f58d49dfaab00ccb16193d9a4ccee1e15820b0c68fa3d76de2ded1dd7412"
     },
     {
       "repository": "soundcurrent-eq",
       "commit": "unknown",
       "file": "data/localization/soundcurrent_ar.ts",
       "locale": "ar",
-      "key": "[\"SoundCurrent\",null,\"Dynamic Boost\",\"\"]",
+      "key": "[\"SoundCurrent\",null,\"Import measured amplifier correction\",\"\"]",
       "category": "untranslated",
       "severity": "error",
       "confidence": 1.0,
@@ -82,7 +82,7 @@
       "recommended_action": "Review and correct catalog; rerun audit.",
       "verification_status": "deterministic",
       "kind": "deterministic",
-      "fingerprint": "7334c51835219fec5b02d0334f5c2fdd9765222396c97d2acc8bb4e08efe34c2"
+      "fingerprint": "a7f851acf0ea91a40eadc3da47d032414cffce4a409403abd8ef6ee0afed28e5"
     }
   ],
   "metrics": [
@@ -90,7 +90,7 @@
       "file": "data/localization/soundcurrent_ar.ts",
       "locale": "ar",
       "total": 441,
-      "translated": 166,
+      "translated": 230,
       "linguistic_verification": "unknown",
       "runtime_ui_qualification": "unknown"
     },
@@ -352,7 +352,7 @@
     }
   ],
   "findingCounts": {
-    "untranslated": 4796
+    "untranslated": 4732
   },
   "reportNote": "Compact structural report: input hashes and metrics retained, three sample findings. Linguistic review and runtime qualification remain separate."
 }
