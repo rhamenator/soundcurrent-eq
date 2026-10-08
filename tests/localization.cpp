@@ -119,6 +119,13 @@ int main(int argc,char **argv){
    require(actions.button(QDialogButtonBox::Save)->text()==QString::fromUtf8(tag=="sv"?"Spara":"Gem"),"Swedish/Danish standard actions stayed English");
    for(const auto &language:languages())if(language.tag==tag)require(language.translated==language.total,"Swedish/Danish catalog has missing messages");
   }
+  for (const auto &tag : {QStringLiteral("nb"), QStringLiteral("fi")}) {
+   QSettings().setValue("i18n/language",tag);Runtime runtime;runtime.initialize();
+   require(text("Filter Q")==QString::fromUtf8(tag=="nb"?"Filterets kvalitetsfaktor Q":"Suodattimen laatutekijä Q"),"Norwegian/Finnish filter quality caption incorrect");
+   QDialogButtonBox actions(QDialogButtonBox::Close|QDialogButtonBox::Save);
+   require(actions.button(QDialogButtonBox::Save)->text()==QString::fromUtf8(tag=="nb"?"Lagre":"Tallenna"),"Norwegian/Finnish standard actions stayed English");
+   for(const auto &language:languages())if(language.tag==tag)require(language.translated==language.total,"Norwegian/Finnish catalog has missing messages");
+  }
   {
    QSettings().setValue("i18n/language","qps-rtl");Runtime runtime;runtime.initialize();
    auto pattern=text("Value %1 / %2");require(pattern.contains("%1")&&pattern.contains("%2"),"Pseudo locale damaged placeholders");

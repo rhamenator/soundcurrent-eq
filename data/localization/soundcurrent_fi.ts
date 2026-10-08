@@ -1617,103 +1617,103 @@ Tuodaanko kirjastoon?</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>Aloita hiljaa. Nosta tasoa vain, jos mikrofoni ei havaitse ääniä.</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
-      <translation type="unfinished" />
+      <translation>Käynnistä kirjautuessani</translation>
     </message>
     <message>
       <source>Startup</source>
-      <translation type="unfinished" />
+      <translation>Käynnistys</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
-      <translation type="unfinished" />
+      <translation>Pysäytä mikrofonikalibrointi ennen ääniajurin vaihtamista.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>Pysäytä äänet</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>Ehdotettu taajuuskorjaus otettiin käyttöön. Säilytä se valitsemalla Tallenna esiasetus.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>Ehdotetut muutokset toiston taajuuskorjaukseen</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>Surround-ääni</translation>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>Järjestelmän taajuusvasteprofiilin muokkain avattiin. Tallennetut profiilit ovat saatavilla laitekirjastossa.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>TV-dialogi</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>Turkoosi: korjaustaajuuskorjain. Oranssi: mitattu taajuusvaste, jos saatavilla. Pystysuora asteikko näyttää suhteelliset dB-arvot.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>Testitaso</translation>
     </message>
     <message>
       <source>Test level is outside the allowed range</source>
-      <translation type="unfinished" />
+      <translation>Testitaso on sallitun alueen ulkopuolella</translation>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>Ääniprosessori pysähtyi odottamatta.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
-      <translation type="unfinished" />
+      <translation>Oma kirjasto sisältää enintään 256 profiilia.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>Päivitysvastaus oli virheellinen. Asennusohjelmaa ei avattu.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>Tämä tuo mitatun TAAJUUSVASTEEN, ei valmiiksi käännettyjä taajuuskorjausvahvistuksia. Vahvista laitetyyppi. Absoluuttinen äänenpainetaso on normalisoitava ennen tuontia.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>Tätä profiilia on muutettu. Tallennetaanko oma kopio ennen poistumista?</translation>
     </message>
     <message>
       <source>Timed out waiting for the equalizer sink: %1</source>
-      <translation type="unfinished" />
+      <translation>Taajuuskorjaimen ääninielun odotus aikakatkaistiin: %1</translation>
     </message>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
-      <translation type="unfinished" />
+      <translation>Mikrofoniin päätyi liian vähän testiääntä. Siirrä sitä lähemmäs tai nosta testitasoa hieman.</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>Käännöskattavuus: %1/%2 viestiä. Puuttuvat käännökset näytetään englanniksi. Kielipaketit ovat varmentamattomia ja odottavat äidinkielisten puhujien tarkistusta. Ota muutokset käyttöön valitsemalla Lopeta ja avaamalla uudelleen.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>Diskantin yksityiskohdat</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Poista taajuuskorjain käytöstä</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Ota taajuuskorjain käyttöön</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Tyyppi</translation>
     </message>
     <message>
       <source>Undo</source>
@@ -1722,43 +1722,43 @@ Tuodaanko kirjastoon?</translation>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>Kumoa viimeisin taajuuskorjausmuutos</translation>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>Avaa taajuuskorjaimen lukitus</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>Avaa säädinten lukitus ja viimeistele mittaus ennen profiilien muokkaamista.</translation>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation type="unfinished" />
+      <translation>Laiteprofiilin skeemaa ei tueta (odotettu: 2).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
-      <translation type="unfinished" />
+      <translation>Suodatintyyppiä ei tueta.</translation>
     </message>
     <message>
       <source>Unsupported microphone channel layout</source>
-      <translation type="unfinished" />
+      <translation>Mikrofonin kanavakokoonpanoa ei tueta</translation>
     </message>
     <message>
       <source>Unsupported speaker profile schema</source>
-      <translation type="unfinished" />
+      <translation>Kaiutinprofiilin skeemaa ei tueta</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Päivitys %1 on ladattu: %2. Lopeta, asenna nykyisen sovelluksen päälle ja avaa uudelleen.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>Päivitysten latauskansio</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>Käytä hiljaista huonetta. Mittaa kaiuttimet, huoneen ja mikrofonin yhdessä; tulokset sisältävät mikrofonin taajuusvasteen.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1767,39 +1767,39 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>Käytä järjestelmän aluetta</translation>
+      <translation>Käytä järjestelmän alueasetuksia</translation>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>VB-CABLE-asetukset</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>Laulupainotus</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>Odotetaan mikrofonia.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>Lämmin</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>Lämpö</translation>
     </message>
     <message>
       <source>Yes</source>
-      <translation type="unfinished" />
+      <translation>Kyllä</translation>
     </message>
     <message>
       <source>Yes to All</source>
-      <translation type="unfinished" />
+      <translation>Kyllä kaikkiin</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>Nolla poistaa kunkin efektin käytöstä. Nämä kuunteluefektit vaikuttavat kaiutintoistoon, eivät mikrofonikorjaukseen.</translation>
     </message>
   </context>
 </TS>

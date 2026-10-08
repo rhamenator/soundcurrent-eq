@@ -1617,103 +1617,103 @@ Importere til biblioteket ditt?</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>Start stille. Øk bare hvis mikrofonen ikke kan høre tonene.</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
-      <translation type="unfinished" />
+      <translation>Start når jeg logger inn</translation>
     </message>
     <message>
       <source>Startup</source>
-      <translation type="unfinished" />
+      <translation>Oppstart</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
-      <translation type="unfinished" />
+      <translation>Stopp mikrofonkalibreringen før du bytter lyddriver.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>Stopp toner</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>Foreslått EQ er brukt. Bruk Lagre forhåndsinnstilling for å beholde den.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>Foreslåtte endringer i avspillings-EQ</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>Surroundlyd</translation>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>Profilredigering for systemets frekvensrespons er åpnet. Lagrede profiler finnes i utstyrsbiblioteket.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>TV-dialog</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>Turkis: korreksjons-EQ. Oransje: målt frekvensrespons når tilgjengelig. Den loddrette skalaen viser relative dB.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>Testnivå</translation>
     </message>
     <message>
       <source>Test level is outside the allowed range</source>
-      <translation type="unfinished" />
+      <translation>Testnivået ligger utenfor det tillatte området</translation>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>Lydprosessoren stoppet uventet.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
-      <translation type="unfinished" />
+      <translation>Det egendefinerte biblioteket rommer opptil 256 profiler.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>Oppdateringssvaret var ugyldig. Ingen installasjonsprogrammer ble åpnet.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>Dette importerer målt FREKVENSRESPONS, ikke allerede inverterte EQ-forsterkninger. Bekreft utstyrstypen. Absolutt lydtrykknivå må normaliseres før import.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>Denne profilen er endret. Lagre en egendefinert kopi før du går videre?</translation>
     </message>
     <message>
       <source>Timed out waiting for the equalizer sink: %1</source>
-      <translation type="unfinished" />
+      <translation>Tidsavbrudd mens equalizerens sink ble ventet på: %1</translation>
     </message>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
-      <translation type="unfinished" />
+      <translation>For lite testlyd nådde mikrofonen. Flytt den nærmere eller øk testnivået litt.</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>Oversettelsesdekning: %1 av %2 meldinger. Manglende oversettelser bruker engelsk. Språkpakker er ubekreftet og venter på gjennomgang av morsmålsbrukere. Bruk Avslutt og åpne igjen for å ta i bruk endringer.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>Diskantdetaljer</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Slå equalizeren av</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Slå equalizeren på</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Type</translation>
     </message>
     <message>
       <source>Undo</source>
@@ -1722,43 +1722,43 @@ Importere til biblioteket ditt?</translation>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>Angre siste equalizerendring</translation>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>Lås opp EQ</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>Lås opp kontrollene og fullfør målingen før du redigerer profiler.</translation>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation type="unfinished" />
+      <translation>Utstyrsprofilens skjema støttes ikke (forventet: 2).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
-      <translation type="unfinished" />
+      <translation>Filtertypen støttes ikke.</translation>
     </message>
     <message>
       <source>Unsupported microphone channel layout</source>
-      <translation type="unfinished" />
+      <translation>Mikrofonens kanaloppsett støttes ikke</translation>
     </message>
     <message>
       <source>Unsupported speaker profile schema</source>
-      <translation type="unfinished" />
+      <translation>Høyttalerprofilens skjema støttes ikke</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Oppdatering %1 er lastet ned: %2. Avslutt, installer over den eksisterende appen og åpne igjen.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>Mappe for nedlastede oppdateringer</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>Bruk et stille rom. Måler høyttalere, rom og mikrofon sammen; resultatene inkluderer mikrofonens frekvensrespons.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1767,39 +1767,39 @@ Importere til biblioteket ditt?</translation>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>Bruk systemregion</translation>
+      <translation>Bruk systemets regionale innstillinger</translation>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>VB-CABLE-innstillinger</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>Vokalfokus</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>Venter på en mikrofon.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>Varm</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>Varme</translation>
     </message>
     <message>
       <source>Yes</source>
-      <translation type="unfinished" />
+      <translation>Ja</translation>
     </message>
     <message>
       <source>Yes to All</source>
-      <translation type="unfinished" />
+      <translation>Ja til alle</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>Null slår hver effekt av. Disse lytteeffektene gjelder høyttaleravspilling, ikke mikrofonkorreksjon.</translation>
     </message>
   </context>
 </TS>
