@@ -123,3 +123,5 @@ Nynorsk added as a separate nn catalog, with 102/441 messages populated. Three f
 Nynorsk recovery and effects batch: 166/441 messages populated. Three focused Linux checks passed per app. Processing refusal, restart recovery, update checks and delay controls reviewed contextually. Catalog remains incomplete and unverified.
 
 Nynorsk filter and editor batch: 230/441 messages populated. Three focused Linux checks passed per app. Filter Q, compressor parameters, equipment editing and estimated meters reviewed contextually. Catalog remains incomplete and unverified.
+
+Nynorsk microphone and measurement batch: 292/441 messages populated. Three focused Linux checks passed per app. Additive correction, system measurement limits, clipping, polarity and balance reviewed contextually. Both balance endpoint captions match their instructions. Catalog remains incomplete and unverified.
