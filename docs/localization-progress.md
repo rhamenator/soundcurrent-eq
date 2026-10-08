@@ -239,3 +239,7 @@ Japanese is now required to stay fully populated by the source/catalog validator
 ### Korean: first existing-catalog batch
 
 Korean now has 102/441 populated current catalog entries. The first 80 shared sources cover routing, measurement limitations and primary audio controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Korean: second existing-catalog batch
+
+Korean now has 166/441 populated current catalog entries. Added profile-saving errors, calibration failures, update guidance and delay controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
