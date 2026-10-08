@@ -223,3 +223,7 @@ Japanese now has 291/441 populated current catalog entries. Added import/export 
 ### Japanese: fifth existing-catalog batch
 
 Japanese now has 349/441 populated current catalog entries. Added output controls, startup guidance, profile source links, sweep cautions and rendering messages. Both apps passed the three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Japanese: sixth existing-catalog batch
+
+Japanese now has 398/441 populated current catalog entries. Added save/reset actions, room measurement, microphone routing and peak-marker guidance. Both apps passed the three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.

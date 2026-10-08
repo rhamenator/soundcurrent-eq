@@ -1,24 +1,24 @@
 {
-  "stage": "Japanese fifth catalog batch",
+  "stage": "Japanese sixth catalog batch",
   "catalogs": [
     {
       "tag": "ja",
       "name": "日本語",
-      "translated": 349,
+      "translated": 398,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "6f9409487daff2fe0c0e9eb7454b4854f900a851dba223733c2c9693b7026088",
-      "qmSha256": "d5ba2a6a713fa5f9a1ef3194c5ed1a3913ea4ff31185cc06d826bd5f17c528d7"
+      "tsSha256": "fbb7953d4d009bfcd50c59e4fa6124e051bd47d2fdad8e6668155582bab66a51",
+      "qmSha256": "068e0799e287be91169efca825629be9c1e718de9ffb4110176520dd6491e086"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "Localization assertions, Japanese actual MainWindow offscreen smoke test, structural catalog checks",
-    "log": "/tmp/soundcurrent-eq-ja-fifth-tests.log"
+    "log": "/tmp/soundcurrent-eq-ja-sixth-tests.log"
   },
-  "review": "Contextual AI review of shared source entries 0–399: quit versus close, exclusive startup, measured response versus correction, conservative sweep guidance, post gain, profile limits and rendering counts. Hyperlink destinations, numerical limits and physical L/R labels preserved. Linguistic accuracy unverified.",
+  "review": "Contextual AI review of shared source entries 0–469: save versus discard, reset behavior, microphone virtual-route requirements, room measurement, peak hold and refresh performance. File patterns, numerical limits and literal ampersands preserved. Linguistic accuracy unverified.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
   "remaining": "Japanese catalog incomplete; seven target languages still incomplete. Omitted source strings reserved for the second pass."
