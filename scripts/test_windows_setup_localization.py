@@ -32,3 +32,21 @@ with tempfile.TemporaryDirectory(prefix='soundcurrent-setup-i18n-') as directory
             if result.returncode != 30 or result.stdout.decode('utf-8').strip() != expected:
                 raise RuntimeError('Actual quiet helper validation failed: ' + helper + ': ' + language)
     print('PASS: actual cable/native quiet action-validation errors in fr/ar/nn; no action switches or driver/endpoint checks')
+
+    # Mutation check: the actual guard must reject new raw UI text, not merely list it.
+    negative_root = Path(directory) / 'negative-prose-fixture'
+    for relative in ('tests/windows_setup_localization.ps1', 'scripts/windows_setup_inventory.ps1',
+                     'packaging/windows/setup-localization.ps1', 'packaging/windows/cable-setup.ps1',
+                     'packaging/windows/native-audio-setup.ps1', 'data/localization/setup-sources.json',
+                     'data/localization/setup-prose-backlog.json'):
+        destination = negative_root / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(root / relative, destination)
+    with (negative_root / 'packaging/windows/cable-setup.ps1').open('a') as fixture:
+        fixture.write("\nNotice 'Unexpected helper caption'\n")
+    rejected = subprocess.run(['pwsh', '-NoProfile', '-NonInteractive', '-File',
+                               str(negative_root / 'tests/windows_setup_localization.ps1'),
+                               '-CatalogPath', str(catalog)], capture_output=True)
+    if rejected.returncode == 0 or 'New untranslated helper prose:' not in rejected.stderr.decode('utf-8'):
+        raise RuntimeError('New raw helper UI message was not rejected by the regression gate')
+    print('PASS: mutation test rejected newly added untranslated helper caption')

@@ -78,3 +78,9 @@ Host PowerShell qualification does not prove Windows PowerShell 5.1 behavior.
 ### Owned setup template formatting
 
 Use Format-SCSetupText with a literal owned Source and a separate Values array. It supports numbered %1 through %99, including repeated tokens and reordered translations. Values are inserted once as literal data. A translated token mismatch falls back to the source template; missing values or unsupported %L/numerus placeholders reject the template. Do not pass arbitrary caught external diagnostics as owned templates. Production lookup sources must be declared in setup-sources.json and pass the AST inventory check.
+
+### Setup prose regression guard
+
+The PowerShell AST candidate audit covers raw English-like literals anywhere in the two shipped cable/native helpers, including returned fragments, interpolation and dialog captions. Declared Get/Format-SCSetupText source arguments are excluded. setup-prose-backlog.json distinguishes invariant product names from untranslated candidates. New candidates fail the inert setup test; removing translated candidates is allowed. Ordinary checks never regenerate the backlog. The backlog is unfinished work, not a coverage exemption proving completion.
+
+The heuristic does not establish full interface extraction, does not parse NSIS, and does not interpret external variable-only diagnostics. Use the separate GUI/backend audits as well.
