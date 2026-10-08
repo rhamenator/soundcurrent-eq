@@ -71,3 +71,7 @@ Translated independently with Ukrainian підсилення/чіткість an
 Ukrainian/Russian filter and measurement review: добротність/добротность identifies dimensionless filter Q; компенсаційне/компенсационное підсилення/усиление distinguishes compressor makeup from post gain. Тонкомпенсація/тонкомпенсация means low-volume tone compensation. Negative route gain explicitly reverses polarity. Calibration continues to require a system measurement for room/amplifier effects, and labels distinguish estimated output from measured microphone response. Catalogs remain unverified.
 
 Ukrainian/Russian startup and render review: render-channel and clipped-sample counts use labels to avoid a fixed plural suffix. Profile editing preserves the measured reference and saves a custom copy. Quit/reopen remains distinct from closing the window. Device-setup changes retain the restart warning and possible playback interruption. Structural checks preserve source hyperlinks and placeholders; native-speaker verification remains unverified.
+
+## Ukrainian and Russian completed extracted catalogs
+
+All currently extracted messages populated (441 EQ / 527 Studio). Q uses добротність/добротность; signed gain uses підсилення/усиление; tone compensation uses тонкомпенсація/тонкомпенсация. Wet mix remains effect contribution, compressor makeup differs from post gain, and measurement results retain microphone influence. Rendering counts use neutral labels. Warnings preserve restart, quiet-start and clipping behavior. Catalogs remain unverified; native-speaker review is not claimed.

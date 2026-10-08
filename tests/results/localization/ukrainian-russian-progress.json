@@ -1,35 +1,41 @@
 {
-  "stage": "Ukrainian/Russian through startup and rendering batch",
+  "stage": "Ukrainian and Russian complete extracted catalogs",
   "catalogs": [
     {
       "tag": "uk",
       "name": "Українська",
-      "translated": 349,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "9a49dec113cb2cc29e104a65815864dee067c23bd0967cb8f761dcb850677e11",
-      "qmSha256": "a89a3904c0d2f4c5dd3ebaa50ee82a3865996a4b379d55812c394649dece1fb3"
+      "tsSha256": "d843b7ae2e389b861d6e4d1a4ce835ccccf25f49d2ff70d92ccfb00e62010927",
+      "qmSha256": "1c8768d9349d480eeb2f1a09737e3daab0ac28db59fb7716b2c328727cb7ebda"
     },
     {
       "tag": "ru",
       "name": "Русский",
-      "translated": 349,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "e7601456ef68cb5dbffb5c2db042c5cd07741842a48619b0787f654de488f632",
-      "qmSha256": "6dff8aff72a2600a3f4b8ecff6bb1ce1b4947636cb1ae74b5ea5b7b9b235198b"
+      "tsSha256": "a98f9af5df1994e90f1801a286a4c11ab249d81e2ad858af5ffc3853d6167db0",
+      "qmSha256": "f2d6cc22f6c4f07f971627d299dcc6e1913a2bafb4bce5d99bb6ce1d9a69dcd0"
     }
   ],
   "linuxTests": {
-    "passed": 4,
-    "total": 4,
-    "scope": "compiled localization, Ukrainian/Russian main windows and catalog regressions",
-    "log": "/tmp/soundcurrent-eq-uk-ru-fifth-tests.log"
+    "passed": 60,
+    "total": 60,
+    "scope": "Full CTest including Ukrainian/Russian equipment workflows and all configured main windows",
+    "log": "/tmp/soundcurrent-eq-uk-ru-complete-tests.log"
   },
-  "review": "Contextual AI review, unverified. Arbitrary rendered-channel and clipped-sample counts use neutral labels; microphone/system-response limits retained; markup and link URLs preserved.",
+  "visualInspection": {
+    "platform": "xcb/Xvfb",
+    "display": "1280x720",
+    "sample": "Ukrainian EQ equalizer",
+    "screenshots": "/tmp/soundcurrent-eq-uk-complete-xcb"
+  },
+  "review": "Contextual AI review, unverified. Q, signed gain, compressor timings, wet mixes, tone compensation and system-measurement limits reviewed. Render counts use labels.",
   "nativeReviewed": false,
-  "windows": "Pending CI for current catalogs",
-  "remaining": "Ukrainian, Russian and 20 other target catalogs incomplete."
+  "windows": "Pending CI on completed catalogs",
+  "remaining": "20 target catalogs incomplete; backend/installer extraction, small-screen Polish layout and platform lifecycle/sign-in qualification remain open."
 }

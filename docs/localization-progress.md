@@ -14,8 +14,8 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 ## Current checkpoint
 
-- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk; 441 extracted messages each. These are unverified translations; nativeReviewed remains false.
-- Other 22 target locales remain incomplete. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
+- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru; 441 extracted messages each. These are unverified translations; nativeReviewed remains false.
+- Other 20 target locales remain incomplete. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
 - Coverage is distinct from contextual AI review, native-speaker verification and runtime qualification. Checkpoint reports in tests/results/localization identify tested catalogs, platforms and scopes.
 - Runtime supports separate UI language and number/date locale selection, regional/script fallback, pseudo localization and RTL. Maintenance preserves unfinished edits/comments and rejects unsupported numerus before rewriting.
 - Shared interface layout now wraps meter guidance; the curve instruction also wraps for longer translated text.
@@ -24,7 +24,7 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 Populate all current messages for every existing locale, pass structural and compiled/live UI checks on Linux/Windows, validate changed packages, and record evidence/known limitations. Full populated coverage must never be labeled native-speaker verification without an identified reviewer and catalog-specific evidence. The global --require-complete gate will remain failing until all missing entries are filled. No arbitrary English copies should be inserted merely to pass coverage.
 
-Next translation batch: Ukrainian and Russian. French, German, Spanish and Italian are required to stay populated as sources evolve. The Filter Q caption now describes the dimensionless filter quality parameter; saved processing IDs and numeric values are unchanged.
+Next translation batch: Greek and Turkish. French, German, Spanish and Italian are required to stay populated as sources evolve. The Filter Q caption now describes the dimensionless filter quality parameter; saved processing IDs and numeric values are unchanged.
 
 Windows audio setup now translates application-owned failure, repair, calibration and restart instructions. Restart-required results always retain the translated reboot instruction alongside original helper diagnostics. The source guard also rejects unmarked literal messages passed to the setup completion helper.
 
@@ -59,3 +59,5 @@ Ukrainian/Russian initial batches: uk: 166/441, ru: 166/441. Four focused Linux 
 Ukrainian/Russian through measurement batch: uk: 291/441, ru: 291/441. Four focused Linux checks passed per app. Compressor/filter controls, equipment editing, microphone behavior and model-correction limits reviewed contextually; translations remain incomplete and unverified. Completed Czech/Slovak catalog commits passed Windows CI, with exact source commits recorded in their checkpoint report.
 
 Ukrainian/Russian startup and render batch: uk: 349/441, ru: 349/441. Four focused Linux checks passed in each app. Includes background-startup ownership, hardware setup restart guidance, bounded calibration suggestions, profile copy/reference behavior and neutral render-count labels. Both catalogs remain incomplete and unverified.
+
+Ukrainian/Russian complete extracted catalogs: 441 messages each. Full Linux CTest passed 60/60 including equipment workflows. Ukrainian EQ and Russian Studio effects inspected at 1280×720. Contextual review remains unverified, with no native-speaker claim. Windows qualification pending on these catalogs.
