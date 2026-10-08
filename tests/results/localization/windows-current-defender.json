@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-08",
+  "sourceCommit": "88b4337",
+  "ciRun": 37744842197,
+  "ciStatus": "passed",
+  "independentWindowsVm": "soundcurrent-win11-dev",
+  "installedPackageStatus": "Installation completed; executable launch blocked by Defender before locale/lifecycle fixtures",
+  "defenderDetection": "Trojan:Win32/Bearfoos.A!ml",
+  "threatId": 2147731250,
+  "resource": "Installed SoundCurrent EQ executable",
+  "ciPackagedExeSha256": "733177458493a678ca5439f0e8a5007d611bab70049b150e53112c172d627072",
+  "falsePositiveEstablished": false,
+  "nativeReviewed": false,
+  "limitations": [
+    "CI success does not qualify installed Windows package",
+    "No Defender exclusions or disabled protection",
+    "Older unrelated threat history not attributed to this package"
+  ],
+  "nextAction": "Investigate reproducible detection and obtain an authoritative clean classification before qualifying the installer"
+}
