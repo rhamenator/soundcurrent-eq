@@ -1137,43 +1137,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>No</source>
-      <translation type="unfinished" />
+      <translation>नहीं</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>कोई आयात किया गया उपकरण सुधार चयनित नहीं है।</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>कोई मापा गया ऐम्प्लिफ़ायर सुधार चयनित नहीं है। प्रचार संबंधी आवृत्ति-सीमा विनिर्देश सुधार वक्र निकालने के लिए पर्याप्त नहीं हैं।</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>कोई माइक्रोफ़ोन कनेक्ट नहीं है।</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>कोई मॉडल सुधार चयनित नहीं है। आपका सुनने का EQ सामान्य रूप से काम करता है।</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>कोई नई प्रकाशित रिलीज़ नहीं मिली। डाउनलोड किए गए इंस्टॉलर भी जाँचे जाते हैं।</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>कोई आउटपुट उपकरण उपलब्ध नहीं है।</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>कोई आउटपुट उपकरण कनेक्ट नहीं है।</translation>
     </message>
     <message>
       <source>No to All</source>
-      <translation type="unfinished" />
+      <translation>सभी के लिए नहीं</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>कोई नहीं — अपना EQ इस्तेमाल करें</translation>
     </message>
     <message>
       <source>Number and date format</source>
@@ -1181,43 +1181,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>इक्वलाइज़र बैंड की संख्या</translation>
     </message>
     <message>
       <source>OK</source>
-      <translation type="unfinished" />
+      <translation>ठीक है</translation>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>चालू · %1 से चल रहा है</translation>
     </message>
     <message>
       <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
-      <translation type="unfinished" />
+      <translation>साइन इन करने पर केवल एक SoundCurrent ऐप शुरू होता है। इसे सक्षम करने से दूसरे ऐप की स्टार्टअप सेटिंग बदल जाती है। ट्रे आइकन उपलब्ध होने पर यह बैकग्राउंड में शुरू होता है।</translation>
     </message>
     <message>
       <source>Open</source>
-      <translation type="unfinished" />
+      <translation>खोलें</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>केबल की लेटेंसी और आंतरिक सैंपल रेट के लिए VB-Audio का कंट्रोल पैनल खोलें। ऑडियो चलते समय इन्हें बदलने से प्लेबैक बाधित हो सकता है।</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>VB-CABLE कंट्रोल पैनल खोलें</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>रिलीज़ डाउनलोड पृष्ठ खोलें</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>अपडेट फ़ोल्डर खोलें</translation>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>नारंगी: उपलब्ध होने पर मापी गई प्रतिक्रिया। नीला-हरा: 48 kHz पर सुधार। नीले-हरे नियंत्रण बिंदु खींचें या तालिका संपादित करें। सहेजने पर संदर्भ सुरक्षित रहता है और एक कस्टम कॉपी बनती है।</translation>
     </message>
     <message>
       <source>Output device</source>
@@ -1225,31 +1225,31 @@ Import into your library?</source>
     </message>
     <message>
       <source>Output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>आउटपुट उपकरण अब उपलब्ध नहीं है</translation>
     </message>
     <message>
       <source>Output has no volume channels</source>
-      <translation type="unfinished" />
+      <translation>आउटपुट में वॉल्यूम चैनल नहीं हैं</translation>
     </message>
     <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>कुल आउटपुट</translation>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>प्रोसेसिंग रोककर ऑडियो सेटअप खोलें। ऐप खुला रहता है और परिणाम दिखाता है। ड्राइवर इंस्टॉल करने के बाद Windows पुनः प्रारंभ करें।</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>पीक चिह्न</translation>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>पियानो</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>धीमी आवाज़ वाला परीक्षण ऑडियो चलाएँ और सुझाए गए प्लेबैक EQ बदलाव का प्रीव्यू देखें</translation>
     </message>
     <message>
       <source>Playback</source>
@@ -1257,143 +1257,145 @@ Import into your library?</source>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>धीमी आवाज़ वाला परीक्षण ऑडियो चल रहा है। असुविधा होने पर रोकें।</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन प्रोफ़ाइल चुनने के लिए अपना माइक्रोफ़ोन कनेक्ट करें</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>पॉडकास्ट</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>पॉप</translation>
     </message>
     <message>
       <source>Post gain</source>
       <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
-      <translation>आउटपुट गेन</translation>
+      <translation>पोस्ट गेन</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>इक्वलाइज़ेशन के बाद पोस्ट गेन</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>डेसीबल में पोस्ट गेन का मान</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>प्रीसेट का नाम:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>प्रीसेट, EQ बैंड, पोस्ट गेन और बैलेंस में बदलाव रोकें</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल का विवरण</translation>
     </message>
     <message>
       <source>Profile exceeds the 1 MiB limit.</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल 1 MiB की सीमा से बड़ी है।</translation>
     </message>
     <message>
       <source>Profile library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल लाइब्रेरी 16 MiB से बड़ी है।</translation>
     </message>
     <message>
       <source>Profile metadata is too long.</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल का मेटाडेटा बहुत लंबा है।</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल पढ़ने योग्य और 64 KiB से छोटी होनी चाहिए।</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल में 1–16 सुधार फ़िल्टर आवश्यक हैं।</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>प्रकाशित माप स्रोत: &lt;a href="https://www.spinorama.org/"&gt;स्पीकर माप / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton सीरियल नंबर के अनुसार कैलिब्रेशन&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP सीरियल नंबर के अनुसार कैलिब्रेशन&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann माइक्रोफ़ोन ग्राफ़&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 प्रतिक्रिया ग्राफ़&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;ऐम्प्लिफ़ायर माप&lt;/a&gt;</translation>
     </message>
     <message>
       <source>Published profiles need an HTTPS measurement source.</source>
-      <translation type="unfinished" />
+      <translation>प्रकाशित प्रोफ़ाइल के लिए HTTPS माप स्रोत आवश्यक है।</translation>
     </message>
     <message>
       <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <translation>प्रकाशित रिलीज़ की जाँच नहीं हो सकी। निजी Studio रिलीज़ के लिए GitHub तक पहुँच आवश्यक है। रिलीज़ डाउनलोड पृष्ठ खोलें; डाउनलोड किए गए इंस्टॉलर स्थानीय रूप से अब भी पहचाने जाते हैं।</translation>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>प्रकाशित प्रतिक्रिया और संपादन योग्य सुधार वक्र</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>प्रकाशित अपडेट %1 उपलब्ध है। रिलीज़ डाउनलोड पृष्ठ खोलें, फिर इस संस्करण के ऊपर इंस्टॉल करके दोबारा खोलें।</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>दमदार बास</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>धीमी आवाज़ वाला लॉगरिदमिक स्वीप</translation>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>SoundCurrent EQ से बाहर निकलें</translation>
     </message>
     <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
-      <translation>ऐप बंद करें</translation>
+      <translation>ऐप से बाहर निकलें</translation>
     </message>
     <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>R</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>R&amp;B</translation>
     </message>
     <message>
       <source>Refresh devices</source>
-      <translation>उपकरण रीफ़्रेश करें</translation>
+      <translation>उपकरण सूची अपडेट करें</translation>
     </message>
     <message>
       <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
 
 %1</source>
-      <translation type="unfinished" />
+      <translation>सापेक्ष माप में स्पीकर, कमरे और माइक्रोफ़ोन की प्रतिक्रिया शामिल होती है। प्रस्तावित बदलाव प्रत्येक मापी गई आवृत्ति पर 3 dB तक सीमित हैं।
+
+%1</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>अपडेट उपलब्ध होने या पुनः प्रारंभ आवश्यक होने पर याद दिलाएँ</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>चयनित फ़िल्टर हटाएँ</translation>
     </message>
     <message>
       <source>Reset</source>
-      <translation type="unfinished" />
+      <translation>रीसेट करें</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>ध्वनि सुधार रीसेट करें</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>माइक टोन रीसेट करें</translation>
     </message>
     <message>
       <source>Reset to flat</source>
