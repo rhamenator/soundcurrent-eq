@@ -1,35 +1,41 @@
 {
-  "stage": "Romanian/Hungarian import, saving and speaker-profile batch",
+  "stage": "Romanian and Hungarian complete extracted catalogs",
   "catalogs": [
     {
       "tag": "ro",
       "name": "Română",
-      "translated": 398,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "76b58b3b2d3805c1f85529d1edfd30cbb19d16346a68eda52838559ed014124d",
-      "qmSha256": "cfb343d0478eb19277b2787aba29b5afe6abefe88ad70f1ff41ff7515cb13811"
+      "tsSha256": "c6293a5cc553fdf0e36df3e5732349b797ead519e7e7737408aee3f9160aae1b",
+      "qmSha256": "603ee944fffda608cfeb49af5c79b31f1f4f526cb752390a0ea19f2c48e47610"
     },
     {
       "tag": "hu",
       "name": "Magyar",
-      "translated": 398,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "545446cf69d43a0f5c96d9581493524ad6d71ddb649f8b59d91318d93af78a84",
-      "qmSha256": "709f88010e1273cf3b57b92b62bf8b407c333c9701aa383e2857ece0fa542a32"
+      "tsSha256": "0957b4b4d2d0ad7ba1a3c22fd52a322095e8e0ae72812652f0a598300b741492",
+      "qmSha256": "7645a7b64638e3b4efa09914ba593cdc75b47896d9055006ac5a0b6607ded861"
     }
   ],
   "linuxTests": {
-    "passed": 4,
-    "total": 4,
-    "scope": "compiled localization, Romanian/Hungarian main windows and catalog regressions",
-    "log": "/tmp/soundcurrent-eq-ro-hu-sixth-tests.log"
+    "passed": 68,
+    "total": 68,
+    "scope": "Full CTest including Romanian/Hungarian equipment workflows and all configured main windows",
+    "log": "/tmp/soundcurrent-eq-ro-hu-complete-tests.log"
   },
-  "review": "Contextual AI review; unverified. Measured response, increasing frequency constraints, restart guidance, device-disconnection recovery and processed effect contribution reviewed.",
+  "visualInspection": {
+    "platform": "xcb/Xvfb",
+    "display": "1280x720",
+    "sample": "Romanian EQ equalizer",
+    "screenshots": "/tmp/soundcurrent-eq-ro-complete-xcb"
+  },
+  "review": "Contextual AI review, unverified. Q, gain/headroom, wet mixes, loudness compensation and measured-response limits reviewed. Render counts use neutral labels.",
   "nativeReviewed": false,
-  "windows": "Pending CI",
-  "remaining": "Romanian, Hungarian and 12 other target catalogs incomplete."
+  "windows": "Pending CI on completed catalogs",
+  "remaining": "12 target catalogs incomplete; backend/installer extraction, small-screen Polish layout and platform lifecycle/sign-in qualification remain open."
 }

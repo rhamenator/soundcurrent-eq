@@ -1617,103 +1617,103 @@ Importálja a könyvtárba?</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>Kezdje halkan. Csak akkor emelje a szintet, ha a mikrofon nem hallja a hangokat.</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
-      <translation type="unfinished" />
+      <translation>Indítás bejelentkezéskor</translation>
     </message>
     <message>
       <source>Startup</source>
-      <translation type="unfinished" />
+      <translation>Indítás</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
-      <translation type="unfinished" />
+      <translation>A hangillesztőprogram módosítása előtt állítsa le a mikrofonkalibrációt.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>Hangok leállítása</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>Javasolt EQ alkalmazva. Megőrzéséhez használja az Előbeállítás mentése lehetőséget.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>Javasolt módosítások a lejátszási EQ-hoz</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>Surround hang</translation>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>A rendszer-frekvenciamenetprofil szerkesztője megnyílt. A mentett profilok az eszközkönyvtárban érhetők el.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>TV-párbeszéd</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>Türkiz: korrekciós EQ. Narancs: mért frekvenciamenet, ha rendelkezésre áll. A függőleges skála relatív dB.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>Tesztszint</translation>
     </message>
     <message>
       <source>Test level is outside the allowed range</source>
-      <translation type="unfinished" />
+      <translation>A tesztszint a megengedett tartományon kívül van</translation>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>A hangfeldolgozó váratlanul leállt.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
-      <translation type="unfinished" />
+      <translation>Az egyéni könyvtár legfeljebb 256 profilt tárolhat.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>A frissítési válasz érvénytelen volt. Nem nyílt meg telepítő.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>Ez mért FREKVENCIAMENETET importál, nem előre invertált EQ-erősítéseket. Erősítse meg az eszköztípust. Az abszolút hangnyomásszintet importálás előtt normalizálni kell.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>Ez a profil módosult. Ment egyéni másolatot távozás előtt?</translation>
     </message>
     <message>
       <source>Timed out waiting for the equalizer sink: %1</source>
-      <translation type="unfinished" />
+      <translation>Időtúllépés a hangszínszabályzó virtuális kimenetére várva: %1</translation>
     </message>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
-      <translation type="unfinished" />
+      <translation>Túl kevés teszthang jutott a mikrofonhoz. Vigye közelebb vagy kissé emelje a tesztszintet.</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>Fordítási lefedettség: %1/%2 üzenet. A hiányzó fordítások angolul jelennek meg. A nyelvi csomagok nem ellenőrzöttek, anyanyelvi felülvizsgálatra várnak. A módosítások alkalmazásához lépjen ki és nyissa meg újra.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>Magas részletek</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Hangszínszabályzó kikapcsolása</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Hangszínszabályzó bekapcsolása</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Típus</translation>
     </message>
     <message>
       <source>Undo</source>
@@ -1722,43 +1722,43 @@ Importálja a könyvtárba?</translation>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>Utolsó hangszínszabályzó-módosítás visszavonása</translation>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>EQ feloldása</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>Oldja fel a vezérlőket és fejezze be a mérést profilok szerkesztése előtt.</translation>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation type="unfinished" />
+      <translation>Nem támogatott eszközprofil-séma (elvárt: 2).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
-      <translation type="unfinished" />
+      <translation>Nem támogatott szűrőtípus.</translation>
     </message>
     <message>
       <source>Unsupported microphone channel layout</source>
-      <translation type="unfinished" />
+      <translation>Nem támogatott mikrofoncsatorna-elrendezés</translation>
     </message>
     <message>
       <source>Unsupported speaker profile schema</source>
-      <translation type="unfinished" />
+      <translation>Nem támogatott hangsugárzóprofil-séma</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>A(z) %1 frissítés letöltve: %2. Lépjen ki, telepítse a meglévő alkalmazásra, majd nyissa meg újra.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>Frissítésletöltési mappa</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>Használjon csendes szobát. Együtt méri a hangsugárzókat, a szobát és a mikrofont; az eredmény tartalmazza a mikrofon frekvenciamenetét.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1767,39 +1767,39 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>A rendszer területi beállításainak használata</translation>
+      <translation>Rendszer területi beállításainak használata</translation>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>VB-CABLE-beállítások</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>Énekhang kiemelése</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>Mikrofonra vár.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>Meleg</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>Melegség</translation>
     </message>
     <message>
       <source>Yes</source>
-      <translation type="unfinished" />
+      <translation>Igen</translation>
     </message>
     <message>
       <source>Yes to All</source>
-      <translation type="unfinished" />
+      <translation>Mindegyikre igen</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>A nulla kikapcsolja az adott effektet. Ezek a hallgatási effektek a hangsugárzó-lejátszásra vonatkoznak, nem a mikrofonkorrekcióra.</translation>
     </message>
   </context>
 </TS>

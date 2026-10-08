@@ -1617,189 +1617,189 @@ Importați în bibliotecă?</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>Începeți încet. Creșteți nivelul doar dacă microfonul nu poate auzi tonurile.</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
-      <translation type="unfinished" />
+      <translation>Pornește la autentificare</translation>
     </message>
     <message>
       <source>Startup</source>
-      <translation type="unfinished" />
+      <translation>Pornire</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
-      <translation type="unfinished" />
+      <translation>Opriți calibrarea microfonului înainte de a schimba driverul audio.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>Opriți tonurile</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>EQ-ul sugerat a fost aplicat. Folosiți Salvați presetarea pentru a-l păstra.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>Modificări sugerate ale EQ-ului de redare</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>Sunet surround</translation>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>Editorul profilului răspunsului sistemului a fost deschis. Profilurile salvate sunt disponibile în biblioteca de echipament.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>Dialog TV</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>Turcoaz: EQ de corecție. Portocaliu: răspuns măsurat, dacă este furnizat. Scara verticală este în dB relativi.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>Nivel de test</translation>
     </message>
     <message>
       <source>Test level is outside the allowed range</source>
-      <translation type="unfinished" />
+      <translation>Nivelul de test este în afara intervalului permis</translation>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>Procesorul audio s-a oprit neașteptat.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
-      <translation type="unfinished" />
+      <translation>Biblioteca personalizată poate conține până la 256 de profiluri.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>Răspunsul de actualizare a fost nevalid. Niciun program de instalare nu a fost deschis.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>Se importă RĂSPUNSUL măsurat, nu câștiguri EQ deja inversate. Confirmați tipul echipamentului. Nivelul absolut de presiune sonoră necesită normalizare înainte de import.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>Acest profil a fost modificat. Salvați o copie personalizată înainte de a pleca?</translation>
     </message>
     <message>
       <source>Timed out waiting for the equalizer sink: %1</source>
-      <translation type="unfinished" />
+      <translation>Timpul de așteptare pentru ieșirea virtuală a egalizatorului a expirat: %1</translation>
     </message>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
-      <translation type="unfinished" />
+      <translation>Prea puțin sunet de test a ajuns la microfon. Apropiați-l sau creșteți ușor nivelul de test.</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>Acoperirea traducerii: %1 din %2 mesaje. Traducerile lipsă folosesc engleza. Pachetele de limbă sunt neverificate și așteaptă revizuirea de către vorbitori nativi. Folosiți Ieșire și redeschideți pentru a aplica modificările.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>Detalii înalte</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Opriți egalizatorul</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Porniți egalizatorul</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Tip</translation>
     </message>
     <message>
       <source>Undo</source>
       <extracomment>Reverse the previous editable setting change.</extracomment>
-      <translation>Anulează</translation>
+      <translation>Anulați ultima acțiune</translation>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>Anulați ultima modificare a egalizatorului</translation>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>Deblocați EQ</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>Deblocați controalele și finalizați măsurarea înainte de a edita profilurile.</translation>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation type="unfinished" />
+      <translation>Schemă de profil de echipament neacceptată (se aștepta 2).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
-      <translation type="unfinished" />
+      <translation>Tip de filtru neacceptat.</translation>
     </message>
     <message>
       <source>Unsupported microphone channel layout</source>
-      <translation type="unfinished" />
+      <translation>Configurație de canale a microfonului neacceptată</translation>
     </message>
     <message>
       <source>Unsupported speaker profile schema</source>
-      <translation type="unfinished" />
+      <translation>Schemă de profil de boxă neacceptată</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Actualizarea %1 a fost descărcată: %2. Ieșiți, instalați peste aplicația existentă, apoi redeschideți.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>Dosar de descărcare a actualizărilor</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>Folosiți o cameră liniștită. Măsoară boxele, camera și microfonul împreună; rezultatele includ răspunsul microfonului.</translation>
     </message>
     <message>
       <source>Use system language</source>
-      <translation>Folosește limba sistemului</translation>
+      <translation>Folosiți limba sistemului</translation>
     </message>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>Folosește regiunea sistemului</translation>
+      <translation>Folosiți setările regionale ale sistemului</translation>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>Setări VB-CABLE</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>Accent pe voce</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>Se așteaptă un microfon.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>Cald</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>Căldură</translation>
     </message>
     <message>
       <source>Yes</source>
-      <translation type="unfinished" />
+      <translation>Da</translation>
     </message>
     <message>
       <source>Yes to All</source>
-      <translation type="unfinished" />
+      <translation>Da pentru toate</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>Zero oprește fiecare efect. Aceste efecte de ascultare se aplică redării prin boxe, nu corecției microfonului.</translation>
     </message>
   </context>
 </TS>
