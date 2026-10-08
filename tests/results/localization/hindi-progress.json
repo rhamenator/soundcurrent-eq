@@ -1,24 +1,24 @@
 {
-  "stage": "Hindi second existing-catalog batch",
+  "stage": "Hindi third existing-catalog batch",
   "catalogs": [
     {
       "tag": "hi",
       "name": "हिन्दी",
-      "translated": 166,
+      "translated": 230,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "01d03e3c3d12764db63e8e7ba5d40f5b8fd56569c9207ffeeef3b131f7910e33",
-      "qmSha256": "5ffedfebd4202a27594f762c0acc582bf3dc695e8207312bd97a29d12bd56632"
+      "tsSha256": "0d74c37d43535023a3cd997b8bb4b8df00cc09f2f87e78d026203d62a6aa902e",
+      "qmSha256": "c27b4432cd5487f4438e07a1f30321490299b55247704bcb94904b2cb6a2bc05"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "Embedded localization assertions, Hindi MainWindow offscreen smoke test and structural catalog checks",
-    "log": "/tmp/soundcurrent-eq-hi-second-tests.log"
+    "log": "/tmp/soundcurrent-eq-hi-third-tests.log"
   },
-  "review": "Contextual AI review of shared source entries 0–159: safe failure messages, profile saving, calibration, microphone recording, update guidance and delay wet mix. File patterns, placeholders and numerical limits preserved. Linguistic accuracy unverified.",
+  "review": "Contextual AI review of shared source entries 0–239: effects dynamics, estimated metering, physical L/R, editor import/export, filter constraints and quit versus close. File patterns, placeholders and numerical limits preserved. Linguistic accuracy unverified.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
   "remaining": "Hindi incomplete. Five target catalogs still incomplete; omitted source messages reserved for second pass."
