@@ -586,43 +586,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>Discard</source>
-      <translation type="unfinished" />
+      <translation>Απόρριψη</translation>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
-      <translation type="unfinished" />
+      <translation>Σύρετε σημεία της καμπύλης ή ρυθμίστε την επιλεγμένη ζώνη παρακάτω.</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
-      <translation type="unfinished" />
+      <translation>Δυναμική ενίσχυση</translation>
     </message>
     <message>
       <source>Dynamics attack</source>
-      <translation type="unfinished" />
+      <translation>Χρόνος έναρξης συμπιεστή</translation>
     </message>
     <message>
       <source>Dynamics ceiling</source>
-      <translation type="unfinished" />
+      <translation>Όριο κορυφών συμπιεστή</translation>
     </message>
     <message>
       <source>Dynamics makeup</source>
-      <translation type="unfinished" />
+      <translation>Ενίσχυση αντιστάθμισης συμπιεστή</translation>
     </message>
     <message>
       <source>Dynamics ratio</source>
-      <translation type="unfinished" />
+      <translation>Λόγος συμπίεσης</translation>
     </message>
     <message>
       <source>Dynamics release</source>
-      <translation type="unfinished" />
+      <translation>Χρόνος αποδέσμευσης συμπιεστή</translation>
     </message>
     <message>
       <source>Dynamics threshold</source>
-      <translation type="unfinished" />
+      <translation>Κατώφλι συμπιεστή</translation>
     </message>
     <message>
       <source>Edit / save copy</source>
-      <translation type="unfinished" />
+      <translation>Επεξεργασία / αποθήκευση αντιγράφου</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -630,7 +630,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Electronic</source>
-      <translation type="unfinished" />
+      <translation>Ηλεκτρονική μουσική</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -639,177 +639,177 @@ Import into your library?</source>
     </message>
     <message>
       <source>Equalizer and configuration pages</source>
-      <translation type="unfinished" />
+      <translation>Σελίδες ισοσταθμιστή και ρυθμίσεων</translation>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>
-      <translation type="unfinished" />
+      <translation>Καμπύλη ισοσταθμιστή. Επιλέξτε ένα σημείο ή σύρετέ το για να αλλάξετε τη συχνότητα και την ενίσχυση.</translation>
     </message>
     <message>
       <source>Equalizer is off. Windows selected the physical output directly.</source>
-      <translation type="unfinished" />
+      <translation>Ο ισοσταθμιστής είναι ανενεργός. Τα Windows επέλεξαν απευθείας τη φυσική έξοδο.</translation>
     </message>
     <message>
       <source>Equalizer is off. Your audio uses its normal output.</source>
-      <translation type="unfinished" />
+      <translation>Ο ισοσταθμιστής είναι ανενεργός. Ο ήχος χρησιμοποιεί την κανονική του έξοδο.</translation>
     </message>
     <message>
       <source>Equalizer is still running. Use the tray icon to reopen or quit.</source>
-      <translation type="unfinished" />
+      <translation>Ο ισοσταθμιστής λειτουργεί ακόμα. Χρησιμοποιήστε το εικονίδιο στην περιοχή ειδοποιήσεων για να τον ανοίξετε ξανά ή να τερματίσετε τη λειτουργία του.</translation>
     </message>
     <message>
       <source>Equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Ισοσταθμιστής ανενεργός</translation>
     </message>
     <message>
       <source>Equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Ισοσταθμιστής ενεργός</translation>
     </message>
     <message>
       <source>Equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Ενεργοποίηση ή απενεργοποίηση ισοσταθμιστή</translation>
     </message>
     <message>
       <source>Equalizer sink disappeared</source>
-      <translation type="unfinished" />
+      <translation>Η έξοδος ισοσταθμιστή εξαφανίστηκε</translation>
     </message>
     <message>
       <source>Equipment brand</source>
-      <translation type="unfinished" />
+      <translation>Μάρκα εξοπλισμού</translation>
     </message>
     <message>
       <source>Equipment family</source>
-      <translation type="unfinished" />
+      <translation>Σειρά εξοπλισμού</translation>
     </message>
     <message>
       <source>Equipment kind must be speaker, microphone or amplifier.</source>
-      <translation type="unfinished" />
+      <translation>Το είδος εξοπλισμού πρέπει να είναι ηχείο, μικρόφωνο ή ενισχυτής.</translation>
     </message>
     <message>
       <source>Equipment profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ εξοπλισμού (*.json)</translation>
     </message>
     <message>
       <source>Equipment profile editor</source>
-      <translation type="unfinished" />
+      <translation>Επεξεργασία προφίλ εξοπλισμού</translation>
     </message>
     <message>
       <source>Equipment profiles (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ εξοπλισμού (*.json)</translation>
     </message>
     <message>
       <source>Equipment profiles by brand family and model</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ εξοπλισμού ανά μάρκα, σειρά και μοντέλο</translation>
     </message>
     <message>
       <source>Equipment profiles — brand / family / model</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ εξοπλισμού — μάρκα / σειρά / μοντέλο</translation>
     </message>
     <message>
       <source>Equipment resource missing.</source>
-      <translation type="unfinished" />
+      <translation>Λείπει ο πόρος εξοπλισμού.</translation>
     </message>
     <message>
       <source>Equipment subtype</source>
-      <translation type="unfinished" />
+      <translation>Υποτύπος εξοπλισμού</translation>
     </message>
     <message>
       <source>Equipment type</source>
-      <translation type="unfinished" />
+      <translation>Τύπος εξοπλισμού</translation>
     </message>
     <message>
       <source>Estimated output level near band %1</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη στάθμη εξόδου κοντά στη ζώνη %1</translation>
     </message>
     <message>
       <source>Estimated output near %1: %2 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη έξοδος κοντά στο %1: %2 dBFS</translation>
     </message>
     <message>
       <source>Estimated output peak and clipping risk</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη κορυφή εξόδου και κίνδυνος ψαλιδισμού</translation>
     </message>
     <message>
       <source>Estimated overall output level</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη συνολική στάθμη εξόδου</translation>
     </message>
     <message>
       <source>Estimated overall output peak: %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη συνολική κορυφή εξόδου: %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη κορυφή %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak: EQ off</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη κορυφή: EQ ανενεργό</translation>
     </message>
     <message>
       <source>Estimated peak: waiting for audio</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη κορυφή: αναμονή ήχου</translation>
     </message>
     <message>
       <source>Estimated post-EQ level near this frequency</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη στάθμη μετά το EQ κοντά σε αυτή τη συχνότητα</translation>
     </message>
     <message>
       <source>Estimated post-EQ output peak, including post gain and balance</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη κορυφή εξόδου μετά το EQ, με την τελική ενίσχυση και την ισορροπία</translation>
     </message>
     <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
-      <translation type="unfinished" />
+      <translation>Έξοδος από το SoundCurrent EQ και επαναφορά κανονικού ήχου</translation>
     </message>
     <message>
       <source>Expanded test language</source>
-      <translation type="unfinished" />
+      <translation>Εκτεταμένη δοκιμαστική γλώσσα</translation>
     </message>
     <message>
       <source>Expected a JSON equipment profile. Import response text using the response import button.</source>
-      <translation type="unfinished" />
+      <translation>Αναμένεται προφίλ εξοπλισμού JSON. Εισαγάγετε κείμενο απόκρισης με το κουμπί εισαγωγής απόκρισης.</translation>
     </message>
     <message>
       <source>Expected frequency Hz and relative measured response dB on every data line.</source>
-      <translation type="unfinished" />
+      <translation>Σε κάθε γραμμή δεδομένων αναμένονται συχνότητα σε Hz και σχετική μετρημένη απόκριση σε dB.</translation>
     </message>
     <message>
       <source>Export</source>
-      <translation type="unfinished" />
+      <translation>Εξαγωγή</translation>
     </message>
     <message>
       <source>Export JSON</source>
-      <translation type="unfinished" />
+      <translation>Εξαγωγή JSON</translation>
     </message>
     <message>
       <source>Export profile</source>
-      <translation type="unfinished" />
+      <translation>Εξαγωγή προφίλ</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
-      <translation type="unfinished" />
+      <translation>Βήματα σε παιχνίδια FPS</translation>
     </message>
     <message>
       <source>Family</source>
-      <translation type="unfinished" />
+      <translation>Σειρά</translation>
     </message>
     <message>
       <source>Filter Q</source>
-      <translation type="unfinished" />
+      <translation>Συντελεστής ποιότητας φίλτρου Q</translation>
       <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
     </message>
     <message>
       <source>Filter values must be numbers.</source>
-      <translation type="unfinished" />
+      <translation>Οι τιμές φίλτρου πρέπει να είναι αριθμοί.</translation>
     </message>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
-      <translation type="unfinished" />
+      <translation>Τα φίλτρα υπερβαίνουν τα όρια συχνότητας, ενίσχυσης ή Q.</translation>
     </message>
     <message>
       <source>Flat</source>
       <extracomment>Preset with zero equalizer gain at every frequency. Not an apartment; does not imply muted audio.</extracomment>
-      <translation>Επίπεδο</translation>
+      <translation>Επίπεδη απόκριση</translation>
     </message>
     <message>
       <source>Frequency</source>
@@ -817,52 +817,52 @@ Import into your library?</source>
     </message>
     <message>
       <source>Frequency Hz</source>
-      <translation type="unfinished" />
+      <translation>Συχνότητα σε Hz</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
-      <translation type="unfinished" />
+      <translation>Εφέ εμπρός καναλιών L/R (υποστηρίζεται μονοφωνικό)· τα άλλα κανάλια διατηρούν τα δικά τους εφέ Studio. Οι μηδενικές τιμές παρακάμπτουν κάθε εφέ.</translation>
     </message>
     <message>
       <source>Gain</source>
       <extracomment>Audio signal level adjustment in dB, positive or negative. Not financial profit.</extracomment>
-      <translation>Κέρδος</translation>
+      <translation>Ενίσχυση</translation>
     </message>
     <message>
       <source>Gain dB</source>
-      <translation type="unfinished" />
+      <translation>Ενίσχυση σε dB</translation>
     </message>
     <message>
       <source>Gaming</source>
-      <translation type="unfinished" />
+      <translation>Παιχνίδια</translation>
     </message>
     <message>
       <source>Headphones</source>
-      <translation type="unfinished" />
+      <translation>Ακουστικά</translation>
     </message>
     <message>
       <source>Help</source>
-      <translation type="unfinished" />
+      <translation>Βοήθεια</translation>
     </message>
     <message>
       <source>Hide advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Απόκρυψη προχωρημένων χειριστηρίων</translation>
     </message>
     <message>
       <source>Hip-Hop</source>
-      <translation type="unfinished" />
+      <translation>Χιπ χοπ</translation>
     </message>
     <message>
       <source>Ignore</source>
-      <translation type="unfinished" />
+      <translation>Παράβλεψη</translation>
     </message>
     <message>
       <source>Import</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή</translation>
     </message>
     <message>
       <source>Import JSON</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή JSON</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>

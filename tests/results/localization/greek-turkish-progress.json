@@ -1,34 +1,34 @@
 {
-  "stage": "Greek/Turkish recovery and effects batch",
+  "stage": "Greek/Turkish filter and editor batch",
   "catalogs": [
     {
       "tag": "el",
       "name": "Ελληνικά",
-      "translated": 166,
+      "translated": 230,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "1604b648e9ede3be8a26b95b5981f8a2562b4d1744f317880f82ee7adf65f5ce",
-      "qmSha256": "80aaf70679bfd2fd9ee4281bcacef747083bdf7eb7dc78db0853dfaede573193"
+      "tsSha256": "21a5b91dfa79cbe171d25cab7b896ea06b2fa06cfa74b10e5c6202ece40736c7",
+      "qmSha256": "84a175fa9e0ca25b035730f2411f3cd0c157dfdc4efa648b0e4099a4b8c90c5f"
     },
     {
       "tag": "tr",
       "name": "Türkçe",
-      "translated": 166,
+      "translated": 230,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "c7497d67465bb2ca937eb6a1374d6cb9fbb58cfd4a24d958ed57ce27307225cc",
-      "qmSha256": "8f406c0e67a7c4fecbf20459b659be1c931c3df39ac20a3df0f617cce432b35b"
+      "tsSha256": "7d415e620f29156a419fcfc1df1aa0182cd17a728334b1e7542c9c01ce2543cd",
+      "qmSha256": "75652b4f05ef9ef2cce9dc60d6c2a0a91d6f1c3eaae7eda901edb55dc2f8f0c3"
     }
   ],
   "linuxTests": {
     "passed": 4,
     "total": 4,
     "scope": "compiled localization, Greek/Turkish main windows and catalog regressions",
-    "log": "/tmp/soundcurrent-eq-el-tr-second-tests.log"
+    "log": "/tmp/soundcurrent-eq-el-tr-third-tests.log"
   },
-  "review": "Contextual AI review; unverified. Errors preserve refused processing and saved state. Render cancellation specifically means output-file creation. Wet mix means effect contribution, distinct from overall gain.",
+  "review": "Contextual AI review; unverified. Q is dimensionless quality, shelving differs from pass filtering, compressor makeup differs from overall post gain, and output meters remain estimates.",
   "nativeReviewed": false,
   "windows": "Pending CI",
   "remaining": "Greek, Turkish and 18 other target catalogs incomplete."
