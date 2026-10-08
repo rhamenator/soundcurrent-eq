@@ -2451,6 +2451,10 @@ Importálja a könyvtárba?</translation>
       <translation>A VB-CABLE beállítása befejeződött. Most indítsa újra a Windowst a hangszínszabályzó vagy a VB-CABLE beállításainak használata előtt. A korábbi alapértelmezett hangeszközök megmaradtak, ahol még elérhetők voltak.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>A VB-CABLE beállításához újra kell indítani a Windowst. Indítsa újra a rendszert a hangszínszabályzó használata vagy a VB-CABLE beállításainak megnyitása előtt.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>A VB-CABLE beállítását megszakították, vagy nem fejeződött be (kód: %1). A SoundCurrent telepítve marad az újrapróbálkozáshoz.</translation>
     </message>

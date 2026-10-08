@@ -2451,6 +2451,10 @@ Import into your library?</source>
       <translation>הגדרת VB-CABLE הסתיימה. הפעילו מחדש את Windows עכשיו לפני השימוש באקולייזר או בהגדרות VB-CABLE. התקני השמע הקודמים שהוגדרו כברירת מחדל נשמרו במקומות שבהם עדיין היו זמינים.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>הגדרת VB-CABLE מחייבת הפעלה מחדש של Windows. יש להפעיל מחדש לפני השימוש באקולייזר או פתיחת הגדרות VB-CABLE.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>הגדרת VB-CABLE בוטלה או לא הושלמה (קוד %1). SoundCurrent נשאר מותקן כדי לאפשר ניסיון נוסף.</translation>
     </message>

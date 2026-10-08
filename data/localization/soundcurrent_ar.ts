@@ -2451,6 +2451,10 @@ Import into your library?</source>
       <translation>اكتمل إعداد VB-CABLE. أعد تشغيل Windows الآن قبل استخدام المعادل أو إعدادات VB-CABLE. تم الاحتفاظ بأجهزة الصوت الافتراضية السابقة حيث كانت لا تزال متاحة.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>يتطلب إعداد VB-CABLE إعادة تشغيل Windows. أعد التشغيل قبل استخدام معادل الصوت أو فتح إعدادات VB-CABLE.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>تم إلغاء إعداد VB-CABLE أو لم يكتمل (الرمز %1). بقي SoundCurrent مثبتًا لإعادة المحاولة.</translation>
     </message>

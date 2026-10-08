@@ -55,6 +55,7 @@ Page custom AudioPage AudioPageLeave
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_LANGUAGE "English"
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
+LangString SCCableRestart ${LANG_ENGLISH} "VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings."
 LangString SCDriverCheckFailed ${LANG_ENGLISH} "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu."
 LangString SCInstallDriver ${LANG_ENGLISH} "Install VB-CABLE if missing (administrator approval)"
 LangString SCSetupAudio ${LANG_ENGLISH} "Set up VB-CABLE for SoundCurrent EQ."
@@ -102,7 +103,7 @@ Function AudioPage
     ${NSD_Check} $DriverChoice
     ${NSD_CreateLabel} 0 65u 100% 35u "VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or Quit."
   ${ElseIf} $DriverCheck == 3010
-    ${NSD_CreateLabel} 0 65u 100% 35u "VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings."
+    ${NSD_CreateLabel} 0 65u 100% 35u "$(SCCableRestart)"
   ${ElseIf} $DriverCheck == 11
     ${NSD_Check} $DriverChoice
     ${NSD_CreateLabel} 0 65u 100% 35u "VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again."

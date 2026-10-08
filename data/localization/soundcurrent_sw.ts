@@ -2451,6 +2451,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Usanidi wa VB-CABLE umekamilika. Anzisha Windows upya sasa kabla ya kutumia kisawazishi au mipangilio ya VB-CABLE. Vifaa vya sauti chaguomsingi vya awali vimehifadhiwa pale ambapo bado vinapatikana.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>Usanidi wa VB-CABLE unahitaji kuanzisha Windows upya. Anzisha upya kabla ya kutumia kisawazisha sauti au kufungua mipangilio ya VB-CABLE.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Usanidi wa VB-CABLE umeghairiwa au haujakamilika (msimbo %1). SoundCurrent bado imesakinishwa ili uweze kujaribu tena.</translation>
     </message>

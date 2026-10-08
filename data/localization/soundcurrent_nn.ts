@@ -2451,6 +2451,10 @@ Importere til biblioteket ditt?</translation>
       <translation>VB-CABLE-oppsettet er fullført. Start Windows på nytt no før du brukar equalizeren eller VB-CABLE-innstillingane. Dei tidlegare standardlydeiningane dine vart haldne på der dei framleis var tilgjengelege.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>Oppsett av VB-CABLE krev ein omstart av Windows. Start på nytt før du brukar equalizeren eller opnar innstillingane for VB-CABLE.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE-oppsettet vart avbrote eller ikkje fullført (kode %1). SoundCurrent blir verande installert slik at du kan prøve på nytt.</translation>
     </message>

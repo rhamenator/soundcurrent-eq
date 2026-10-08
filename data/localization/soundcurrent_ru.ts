@@ -2451,6 +2451,10 @@ Import into your library?</source>
       <translation>Настройка VB-CABLE завершена. Перезапустите Windows сейчас перед использованием эквалайзера или настроек VB-CABLE. Прежние устройства аудио по умолчанию сохранены, если они оставались доступными.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>Настройка VB-CABLE требует перезапуска Windows. Перезапустите систему перед использованием эквалайзера или открытием настроек VB-CABLE.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Настройка VB-CABLE отменена или не завершена (код %1). SoundCurrent остаётся установленным для повторной попытки.</translation>
     </message>

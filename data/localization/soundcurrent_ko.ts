@@ -2451,6 +2451,10 @@ Import into your library?</source>
       <translation>VB-CABLE 설정이 완료되었습니다. 이퀄라이저 또는 VB-CABLE 설정을 사용하기 전에 지금 Windows를 다시 시작하세요. 이전 기본 오디오 장치는 여전히 사용 가능한 경우 유지되었습니다.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>VB-CABLE 설정에는 Windows 재시작이 필요합니다. 이퀄라이저를 사용하거나 VB-CABLE 설정을 열기 전에 다시 시작하세요.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE 설정이 취소되었거나 완료되지 않았습니다(코드 %1). 다시 시도할 수 있도록 SoundCurrent는 설치된 상태로 유지됩니다.</translation>
     </message>

@@ -2451,6 +2451,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>VB-CABLEn asennus on valmis. Käynnistä Windows nyt uudelleen ennen taajuuskorjaimen tai VB-CABLEn asetusten käyttöä. Aiemmat oletusäänilaitteet säilytettiin, jos ne olivat edelleen käytettävissä.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>VB-CABLEn määritys edellyttää Windowsin uudelleenkäynnistystä. Käynnistä uudelleen ennen taajuuskorjaimen käyttöä tai VB-CABLEn asetusten avaamista.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE-asennus peruutettiin tai sitä ei suoritettu loppuun (koodi %1). SoundCurrent jää asennetuksi uutta yritystä varten.</translation>
     </message>

@@ -2451,6 +2451,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>VB-CABLE kurulumu tamamlandı. Ekolayzırı veya VB-CABLE ayarlarını kullanmadan önce Windows’u şimdi yeniden başlatın. Önceki varsayılan ses aygıtlarınız hâlâ kullanılabilir oldukları ölçüde korundu.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>VB-CABLE kurulumu Windows’un yeniden başlatılmasını gerektirir. Ekolayzırı kullanmadan veya VB-CABLE ayarlarını açmadan önce yeniden başlatın.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE kurulumu iptal edildi veya tamamlanmadı (kod %1). Yeniden denemek için SoundCurrent yüklü bırakıldı.</translation>
     </message>

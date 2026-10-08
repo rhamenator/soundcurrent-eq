@@ -2451,6 +2451,10 @@ Importovat do vaší knihovny?</translation>
       <translation>Nastavení VB-CABLE je dokončeno. Před použitím ekvalizéru nebo nastavení VB-CABLE nyní restartujte systém Windows. Předchozí výchozí zvuková zařízení byla zachována, pokud byla stále dostupná.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>Nastavení VB-CABLE vyžaduje restart Windows. Restartujte před použitím ekvalizéru nebo otevřením nastavení VB-CABLE.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Nastavení VB-CABLE bylo zrušeno nebo nebylo dokončeno (kód %1). SoundCurrent zůstává nainstalován pro další pokus.</translation>
     </message>

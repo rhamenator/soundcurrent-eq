@@ -2451,6 +2451,10 @@ Import into your library?</source>
       <translation>VB-CABLE सेटअप पूरा हुआ। इक्वलाइज़र या VB-CABLE की सेटिंग उपयोग करने से पहले अब Windows को पुनरारंभ करें। पहले के डिफ़ॉल्ट ऑडियो उपकरण जहाँ अब भी उपलब्ध थे, वहाँ बनाए रखे गए।</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>VB-CABLE सेटअप के लिए Windows को पुनः शुरू करना आवश्यक है। इक्वलाइज़र इस्तेमाल करने या VB-CABLE सेटिंग खोलने से पहले पुनः शुरू करें।</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE सेटअप रद्द कर दिया गया या पूरा नहीं हुआ (कोड %1)। दोबारा प्रयास करने के लिए SoundCurrent स्थापित रखा गया है।</translation>
     </message>

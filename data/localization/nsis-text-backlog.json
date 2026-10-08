@@ -198,9 +198,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 101,
       "kind": "control-caption",
-      "literal": "VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCCableRestart)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale translations exported; language activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",

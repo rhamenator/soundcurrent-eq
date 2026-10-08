@@ -230,5 +230,9 @@
   "secondPassInstallerDriverCheck": {
     "report": "tests/results/localization/second-pass-installer-driver-check.json",
     "status": "all-locale failure guidance and translated setup action exported; locale activation and runtime qualification pending"
+  },
+  "secondPassInstallerReboot": {
+    "report": "tests/results/localization/second-pass-installer-reboot.json",
+    "status": "all-locale cable restart notice exported; language activation and current runtime qualification pending"
   }
 }

@@ -2451,6 +2451,10 @@ Import into your library?</translation>
       <translation>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</translation>
     </message>

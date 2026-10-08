@@ -2451,6 +2451,10 @@ Import into your library?</source>
       <translation>راه‌اندازی VB-CABLE پایان یافت. پیش از استفاده از اکولایزر یا تنظیمات VB-CABLE، اکنون Windows را دوباره راه‌اندازی کنید. دستگاه‌های صوتی پیش‌فرض قبلی تا جایی که همچنان در دسترس بودند حفظ شدند.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>راه‌اندازی VB-CABLE نیازمند راه‌اندازی مجدد Windows است. پیش از استفاده از اکولایزر یا باز کردن تنظیمات VB-CABLE، سیستم را راه‌اندازی مجدد کنید.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>راه‌اندازی VB-CABLE لغو شد یا به پایان نرسید (کد %1). SoundCurrent برای تلاش دوباره نصب‌شده باقی ماند.</translation>
     </message>

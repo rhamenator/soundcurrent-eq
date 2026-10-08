@@ -2451,6 +2451,10 @@ Import into your library?</source>
       <translation>VB-CABLE 设置已完成。请立即重启 Windows，再使用均衡器或 VB-CABLE 设置。之前仍可用的默认音频设备已保留。</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>VB-CABLE 设置需要重启 Windows。请在使用均衡器或打开 VB-CABLE 设置之前重启。</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE 设置已取消或未完成（代码 %1）。SoundCurrent 仍保持安装，可重试。</translation>
     </message>

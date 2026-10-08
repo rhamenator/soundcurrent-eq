@@ -2451,6 +2451,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Penyiapan VB-CABLE selesai. Mulai ulang Windows sekarang sebelum menggunakan equalizer atau pengaturan VB-CABLE. Perangkat audio default sebelumnya dipertahankan jika masih tersedia.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>Penyiapan VB-CABLE memerlukan mulai ulang Windows. Mulai ulang sebelum menggunakan equalizer atau membuka pengaturan VB-CABLE.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Penyiapan VB-CABLE dibatalkan atau tidak selesai (kode %1). SoundCurrent tetap terpasang agar Anda dapat mencoba lagi.</translation>
     </message>

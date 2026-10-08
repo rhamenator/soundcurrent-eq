@@ -2451,6 +2451,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Thiết lập VB-CABLE đã hoàn tất. Khởi động lại Windows ngay trước khi sử dụng bộ cân bằng âm thanh hoặc cài đặt VB-CABLE. Các thiết bị âm thanh mặc định trước đó được giữ lại nếu vẫn còn khả dụng.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>Thiết lập VB-CABLE yêu cầu khởi động lại Windows. Hãy khởi động lại trước khi sử dụng bộ cân bằng âm hoặc mở cài đặt VB-CABLE.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Thiết lập VB-CABLE đã bị hủy hoặc chưa hoàn tất (mã %1). SoundCurrent vẫn được cài đặt để có thể thử lại.</translation>
     </message>

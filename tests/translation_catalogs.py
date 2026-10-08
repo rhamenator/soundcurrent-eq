@@ -15,6 +15,25 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_cable_restart_notice_preserves_driver_name(self):
+        root = Path(__file__).resolve().parents[1]
+        source = 'VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.'
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text()
+            if 'native' in installer.stem:
+                self.assertNotIn('SCCableRestart', code)
+            else:
+                self.assertRegex(code, r'\$\{NSD_CreateLabel\}[^\n]+"\$\(SCCableRestart\)"')
+                self.assertEqual(re.findall(r'^LangString SCCableRestart \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+            message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
+            self.assertTrue(catalog.finished(message), row['tag'])
+            translated = message.findtext('translation')
+            catalog.validate_text(source, translated)
+            for changed in ('Cable', 'vb-cable', 'VB-CABLE VB-CABLE'):
+                with self.assertRaisesRegex(ValueError, 'External installer label changed'):
+                    catalog.validate_text(source, translated.replace('VB-CABLE', changed))
+
     def test_installer_driver_check_guidance_uses_translated_action(self):
         root = Path(__file__).resolve().parents[1]
         source = 'Setup could not check the driver. You can retry with %1 in the app or Start menu.'
@@ -84,8 +103,8 @@ class CatalogTests(unittest.TestCase):
             self.assertFalse(result['installerLocaleActivationComplete'])
             for variants in result['languages'].values():
                 self.assertEqual(set(variants), {'cable', 'native'})
-                for route in variants.values():
-                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed'})
+                for routeName, route in variants.items():
+                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed'} | ({'SCCableRestart'} if routeName == 'cable' else set()))
                     self.assertEqual(set(route['nsisEscaped']), set(route['captions']))
 
     def test_installer_checkbox_catalog_sources_and_names(self):

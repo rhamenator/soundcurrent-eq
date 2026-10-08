@@ -2451,6 +2451,10 @@ Importați în bibliotecă?</translation>
       <translation>Configurarea VB-CABLE s-a încheiat. Reporniți Windows acum înainte de a utiliza egalizatorul sau setările VB-CABLE. Dispozitivele audio implicite anterioare au fost păstrate acolo unde erau încă disponibile.</translation>
     </message>
     <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>Configurarea VB-CABLE necesită repornirea Windows. Reporniți înainte de a utiliza egalizatorul sau de a deschide setările VB-CABLE.</translation>
+    </message>
+    <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Configurarea VB-CABLE a fost anulată sau nu s-a încheiat (cod %1). SoundCurrent rămâne instalat pentru o nouă încercare.</translation>
     </message>
