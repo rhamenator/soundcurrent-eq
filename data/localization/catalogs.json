@@ -72,12 +72,12 @@
   {
     "tag": "nl",
     "name": "Nederlands",
-    "translated": 30,
+    "translated": 437,
     "total": 437,
     "status": "unverified",
     "nativeReviewed": false,
-    "tsSha256": "be24575f08fedc002f621faa5270f9dc1baf0bab6eec55b2b3c29181405ee03e",
-    "qmSha256": "619414303547a2fe2fa63b3ddaf2fd3526d7975a29b079649cdf55de1b38c964"
+    "tsSha256": "9f7c8851fc11043c0e5fa6bfab89c6bd70d142d8ffde04e750afcafed0ea9197",
+    "qmSha256": "e97bf102ff69c41f1aafe1ef69d20b6cec09f4c163693f54280d5c498b1e0207"
   },
   {
     "tag": "pl",

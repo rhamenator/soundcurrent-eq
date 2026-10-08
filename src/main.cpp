@@ -2313,7 +2313,9 @@ public:
         bandScroll_->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         bandScroll_->setFixedHeight(235);
         eqLayout->addWidget(bandScroll_);
-        eqLayout->addWidget(new QLabel(SC_TR("Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.")));
+        auto *meterHelp = new QLabel(SC_TR("Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping."));
+        meterHelp->setWordWrap(true);
+        eqLayout->addWidget(meterHelp);
         root->insertWidget(0, eqBox);
         root->addWidget(outputBox);
         enhancements_=new soundcurrent::EnhancementControls(false);

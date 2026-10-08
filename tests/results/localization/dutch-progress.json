@@ -1,0 +1,42 @@
+{
+  "stage": "Dutch complete extracted catalog checkpoint",
+  "catalog": {
+    "tag": "nl",
+    "name": "Nederlands",
+    "translated": 437,
+    "total": 437,
+    "status": "unverified",
+    "nativeReviewed": false,
+    "tsSha256": "9f7c8851fc11043c0e5fa6bfab89c6bd70d142d8ffde04e750afcafed0ea9197",
+    "qmSha256": "e97bf102ff69c41f1aafe1ef69d20b6cec09f4c163693f54280d5c498b1e0207"
+  },
+  "linguisticReview": "Contextual AI review; unverified; no native-speaker review",
+  "linuxTests": {
+    "passed": 54,
+    "total": 54,
+    "scope": "Full CTest including Dutch equipment workflow and main-window fixture before meter-help wrapping change",
+    "log": "/tmp/sc-nl-complete-eq-tests.log"
+  },
+  "layoutFollowup": {
+    "change": "Meter-help label wraps; no page-wide horizontal scrollbar in inspected EQ screenshots. Band-strip scrolling remains available.",
+    "tests": {
+      "passed": 4,
+      "total": 4,
+      "scope": [
+        "Dutch main window",
+        "Spanish main window",
+        "expanded pseudo locale",
+        "RTL pseudo locale"
+      ],
+      "log": "/tmp/sc-nl-wrap-eq-tests.log"
+    },
+    "visualReview": {
+      "screen": "1280x720",
+      "platform": "xcb/Xvfb",
+      "inspected": "Dutch EQ tab 0 / Studio tab 1; Spanish EQ tab 0",
+      "tabsCapturedPerLocale": 2
+    }
+  },
+  "windows": "Pending CI on new commits",
+  "remaining": "25 target locales incomplete; native-speaker verification unverified."
+}

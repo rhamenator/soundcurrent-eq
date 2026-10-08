@@ -10,7 +10,7 @@ Corrections address clear semantic risks and ambiguous audio terminology: Swahil
 
 ## Remaining uncertainty
 
-French, German, Spanish, Italian and both Portuguese variants are populated; the other 26 language packs remain incomplete. All 32 lack native review. Particular review priorities are Swahili audio vocabulary, Thai preset wording, natural microphone EQ terminology in every language, and regional Portuguese and Chinese usage. An AI reread or back-translation by the same model is not independent evidence and must not be labeled native review. Do not promote catalog review status based on this pass.
+French, German, Spanish, Italian and both Portuguese variants and Dutch are populated; the other 25 language packs remain incomplete. All 32 lack native review. Particular review priorities are Swahili audio vocabulary, Thai preset wording, natural microphone EQ terminology in every language, and regional Portuguese and Chinese usage. An AI reread or back-translation by the same model is not independent evidence and must not be labeled native review. Do not promote catalog review status based on this pass.
 
 ## Required review workflow
 
@@ -43,3 +43,7 @@ All current extracted entries are populated (437 EQ / 523 Studio). Contextual AI
 ## Portuguese regional completion checkpoint
 
 Both pt-PT and pt-BR catalogs populate all currently extracted messages (437 EQ / 523 Studio each). Regional contextual review uses coluna/alto-falante, auscultadores/fones de ouvido, ficheiro/arquivo, guardar/salvar, controlos/controles, recetor/receptor, varrimento/varredura and percentagem/porcentagem. Technical intent preserves zero-gain Plano, low-volume Compensação loudness, Sem efeito for dry signal and signed gain adjustments. Compressor release is Tempo de recuperação do compressor in pt-PT and Tempo de liberação do compressor in pt-BR. This is contextual AI review, unverified; no native-speaker certification is claimed.
+
+## Dutch completion checkpoint
+
+All current extracted entries are populated (437 EQ / 523 Studio). Contextual AI review uses Versterking for signed audio gain, Filter-Q for quality factor, Vlak for zero EQ gain, Loudnesscompensatie for low-volume listening compensation, Zonder effect for dry signal, Hersteltijd van compressor for release and Ongedaan maken for undo. Vendor metadata, machine IDs, file filters, placeholders and source links remain invariant. All entries remain unverified; no native-speaker review is claimed.
