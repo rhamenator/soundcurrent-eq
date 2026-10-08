@@ -1617,103 +1617,103 @@ Import into your library?</source>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>धीमी आवाज़ से शुरू करें। केवल तभी बढ़ाएँ जब माइक्रोफ़ोन टोन न सुन पाए।</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
-      <translation type="unfinished" />
+      <translation>साइन इन करने पर शुरू करें</translation>
     </message>
     <message>
       <source>Startup</source>
-      <translation type="unfinished" />
+      <translation>स्टार्टअप</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
-      <translation type="unfinished" />
+      <translation>ऑडियो ड्राइवर बदलने से पहले माइक्रोफ़ोन कैलिब्रेशन रोकें।</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>टोन रोकें</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>सुझाया गया EQ लागू हुआ। इसे बनाए रखने के लिए प्रीसेट सहेजें।</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>प्लेबैक EQ के लिए सुझाए गए बदलाव</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>सराउंड साउंड</translation>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>सिस्टम प्रतिक्रिया प्रोफ़ाइल संपादक खोला गया। सहेजी गई प्रोफ़ाइल उपकरण लाइब्रेरी में उपलब्ध हैं।</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>टीवी संवाद</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>नीला-हरा: सुधार EQ। नारंगी: उपलब्ध होने पर मापी गई प्रतिक्रिया। ऊर्ध्वाधर पैमाना सापेक्ष dB में है।</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>परीक्षण स्तर</translation>
     </message>
     <message>
       <source>Test level is outside the allowed range</source>
-      <translation type="unfinished" />
+      <translation>परीक्षण स्तर अनुमत सीमा से बाहर है</translation>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>ऑडियो प्रोसेसर अप्रत्याशित रूप से रुक गया।</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
-      <translation type="unfinished" />
+      <translation>कस्टम लाइब्रेरी में अधिकतम 256 प्रोफ़ाइल रखी जा सकती हैं।</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>अपडेट का उत्तर अमान्य था। कोई इंस्टॉलर नहीं खोला गया।</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>यह मापी गई प्रतिक्रिया आयात करता है, पहले से उलटे गए EQ गेन नहीं। उपकरण का प्रकार सुनिश्चित करें। पूर्ण SPL मानों को आयात से पहले सामान्यीकृत करना आवश्यक है।</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>इस प्रोफ़ाइल में बदलाव हुआ है। बाहर जाने से पहले कस्टम कॉपी सहेजें?</translation>
     </message>
     <message>
       <source>Timed out waiting for the equalizer sink: %1</source>
-      <translation type="unfinished" />
+      <translation>इक्वलाइज़र सिंक की प्रतीक्षा का समय समाप्त हुआ: %1</translation>
     </message>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन तक बहुत कम परीक्षण ऑडियो पहुँचा। उसे पास लाएँ या परीक्षण स्तर थोड़ा बढ़ाएँ।</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>अनुवाद कवरेज: %2 में से %1 संदेश। अनुपलब्ध अनुवाद के स्थान पर अंग्रेज़ी दिखाई जाती है। भाषा पैक असत्यापित हैं और मातृभाषी समीक्षा की प्रतीक्षा में हैं। बदलाव लागू करने के लिए ऐप से बाहर निकलें और दोबारा खोलें।</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>ऊँची आवृत्तियों का बारीक विवरण</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>इक्वलाइज़र बंद करें</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>इक्वलाइज़र चालू करें</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>प्रकार</translation>
     </message>
     <message>
       <source>Undo</source>
@@ -1722,84 +1722,84 @@ Import into your library?</source>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>पिछला इक्वलाइज़र बदलाव पूर्ववत करें</translation>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>EQ अनलॉक करें</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल संपादित करने से पहले नियंत्रण अनलॉक करें और माप समाप्त करें।</translation>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation type="unfinished" />
+      <translation>असमर्थित उपकरण प्रोफ़ाइल स्कीमा (अपेक्षित संस्करण 2)।</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
-      <translation type="unfinished" />
+      <translation>असमर्थित फ़िल्टर प्रकार।</translation>
     </message>
     <message>
       <source>Unsupported microphone channel layout</source>
-      <translation type="unfinished" />
+      <translation>असमर्थित माइक्रोफ़ोन चैनल लेआउट</translation>
     </message>
     <message>
       <source>Unsupported speaker profile schema</source>
-      <translation type="unfinished" />
+      <translation>असमर्थित स्पीकर प्रोफ़ाइल स्कीमा</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>अपडेट %1 डाउनलोड हो गया है: %2। ऐप से बाहर निकलें, मौजूदा ऐप के ऊपर इंस्टॉल करें और दोबारा खोलें।</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>अपडेट डाउनलोड फ़ोल्डर</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>शांत कमरे का उपयोग करें। स्पीकर, कमरा और माइक्रोफ़ोन एक साथ मापे जाते हैं; परिणाम में माइक्रोफ़ोन की प्रतिक्रिया शामिल होती है।</translation>
     </message>
     <message>
       <source>Use system language</source>
-      <translation>सिस्टम की भाषा उपयोग करें</translation>
+      <translation>सिस्टम की भाषा इस्तेमाल करें</translation>
     </message>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>सिस्टम का क्षेत्र उपयोग करें</translation>
+      <translation>सिस्टम की क्षेत्रीय सेटिंग इस्तेमाल करें</translation>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>VB-CABLE सेटिंग</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>गायन पर ज़ोर</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन की प्रतीक्षा है।</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>गर्माहट वाली ध्वनि</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>गर्माहट</translation>
     </message>
     <message>
       <source>Yes</source>
-      <translation type="unfinished" />
+      <translation>हाँ</translation>
     </message>
     <message>
       <source>Yes to All</source>
-      <translation type="unfinished" />
+      <translation>सभी के लिए हाँ</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>शून्य करने पर प्रत्येक इफ़ेक्ट बंद हो जाता है। ये सुनने के इफ़ेक्ट स्पीकर प्लेबैक पर लागू होते हैं, माइक्रोफ़ोन सुधार पर नहीं।</translation>
     </message>
   </context>
 </TS>

@@ -1,25 +1,25 @@
 {
-  "stage": "Hindi sixth existing-catalog batch",
+  "stage": "Hindi current catalogs populated",
   "catalogs": [
     {
       "tag": "hi",
       "name": "हिन्दी",
-      "translated": 398,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "6c6fa2a82b4fa716a0097e0954ba8ac3a15e858adaa780648a5f92362e99ae69",
-      "qmSha256": "4dc8cdb5ea96d557e886e6586568b7518acf05abddd27c7296d1f10c96547bc5"
+      "tsSha256": "ffd1a6e85aa97a58f81ff980b85a3bc3500e56519c7b0d52c30d2b4966eb3e97",
+      "qmSha256": "90856009841eb19bc50d88b992aa50806530fdcbe79af93d1ca072d811aea85c"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "Embedded localization assertions, Hindi MainWindow offscreen smoke test and structural catalog checks",
-    "log": "/tmp/soundcurrent-eq-hi-sixth-tests.log"
+    "log": "/tmp/soundcurrent-eq-hi-complete-tests.log"
   },
-  "review": "Contextual AI review of shared source entries 0–469: save/reset actions, room measurement, microphone virtual routing, peak hold and refresh performance. Literal ampersands, file patterns, placeholders and numerical limits preserved. Linguistic accuracy unverified.",
+  "review": "Contextual AI review across current Hindi catalogs: DSP controls, calibration limitations, microphone versus speaker paths, save/quit behavior and neutral rendering counts. Linguistic accuracy unverified; no native review.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
-  "remaining": "Hindi incomplete. Five target catalogs still incomplete; omitted source messages reserved for second pass."
+  "remaining": "Four target catalogs incomplete. Second-pass omitted source strings, visual and Windows lifecycle qualification remain open."
 }
