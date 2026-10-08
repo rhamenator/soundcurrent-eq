@@ -29,6 +29,17 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(gaps['unmappedCount'], len(gaps['diagnosticsNeedingMappingAndTranslations']))
         self.assertTrue({mappings[key] for key in reasons & set(mappings)}.issubset(catalog.marked_sources(root / 'src')))
 
+    def test_repair_failure_external_labels(self):
+        source = 'VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.'
+        valid = 'Terminez Remove Driver, redémarrez et ouvrez %1. Activez CABLE Input et CABLE Output.'
+        catalog.validate_text(source, valid)
+        for label in ('Remove Driver', 'CABLE Input', 'CABLE Output'):
+            for replacement in ('Traduction', label.lower(), label + ' ' + label):
+                with self.assertRaisesRegex(ValueError, 'External installer label changed'):
+                    catalog.validate_text(source, valid.replace(label, replacement))
+        with self.assertRaisesRegex(ValueError, 'Placeholder mismatch'):
+            catalog.validate_text(source, valid.replace('%1', '%2'))
+
     def test_bundled_speaker_taxonomy_has_marked_display_labels(self):
         root = Path(__file__).resolve().parents[1]
         profiles = json.loads((root / 'data/equipment/spinorama.json').read_text())

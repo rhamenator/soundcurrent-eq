@@ -98,3 +98,5 @@ The source-specific external-label rule also preserves CABLE Input and CABLE Out
 ### Windows PowerShell 5.1 qualification
 
 The 2026-10-08 inert helper run passed on Windows PowerShell 5.1.26100.9549: 1,122 required source/catalog lookups per application, isolated message fixtures and real quiet no-action errors in French, Arabic and Nynorsk. See second-pass-windows-ps51.json and its runtime log. The initial policy-blocked invocation is retained; the retry used process-only RemoteSigned. This does not qualify current installed Qt UI, driver operations or installer lifecycle. Native-speaker verification remains unverified.
+
+The repair-failure instruction now uses a translated Audio driver setup caption through %1, with source-specific protection for Remove Driver, CABLE Input and CABLE Output. Host checks cover all 34 catalogs and reject altered labels and placeholders. One longer cable repair notice remains untranslated. Earlier Windows PowerShell qualification applies to its recorded source commit; it does not qualify this new instruction. See second-pass-cable-repair-failure.json.

@@ -194,5 +194,9 @@
   "secondPassWindowsPowerShell51": {
     "report": "tests/results/localization/second-pass-windows-ps51.json",
     "status": "inert helper runtime passed; current installed UI and package lifecycle pending"
+  },
+  "secondPassCableRepairFailure": {
+    "report": "tests/results/localization/second-pass-cable-repair-failure.json",
+    "status": "translated extracted source in all catalogs; current Windows instruction/package qualification pending"
   }
 }

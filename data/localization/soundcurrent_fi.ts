@@ -2435,6 +2435,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>VB-CABLE-asennus peruutettiin tai sitä ei suoritettu loppuun (koodi %1). SoundCurrent jää asennetuksi uutta yritystä varten.</translation>
     </message>
     <message>
+      <source>VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.</source>
+      <translation>VB-CABLElla ei edelleenkään ole käyttökelpoisia toisto- tai tallennuslaitteita. Suorita Remove Driver loppuun virallisessa asennusohjelmassa, käynnistä Windows uudelleen ja avaa %1 uudelleen ajurin asentamista varten. CABLE Input ja CABLE Output on otettava käyttöön Windowsin ääniasetuksissa.</translation>
+    </message>
+    <message>
       <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
       <translation>VB-CABLE säilytettiin, koska toinen SoundCurrent-sovellus on asennettu. Poista se viimeisen sovelluksen kanssa, jos muut ohjelmistot eivät tarvitse sitä.</translation>
     </message>

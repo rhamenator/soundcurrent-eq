@@ -2435,6 +2435,10 @@ Importați în bibliotecă?</translation>
       <translation>Configurarea VB-CABLE a fost anulată sau nu s-a încheiat (cod %1). SoundCurrent rămâne instalat pentru o nouă încercare.</translation>
     </message>
     <message>
+      <source>VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.</source>
+      <translation>VB-CABLE încă nu are dispozitive de redare sau înregistrare utilizabile. Finalizați Remove Driver în programul oficial de instalare, reporniți Windows, apoi deschideți din nou %1 pentru a reinstala driverul. CABLE Input și CABLE Output trebuie să fie activate în setările de sunet Windows.</translation>
+    </message>
+    <message>
       <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
       <translation>VB-CABLE a fost păstrat deoarece cealaltă aplicație SoundCurrent este instalată. Eliminați-l odată cu ultima aplicație dacă niciun alt program nu are nevoie de el.</translation>
     </message>

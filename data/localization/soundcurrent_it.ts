@@ -2435,6 +2435,10 @@ Importare nella libreria?</translation>
       <translation>La configurazione di VB-CABLE è stata annullata o non è stata completata (codice %1). SoundCurrent rimane installato per consentire un nuovo tentativo.</translation>
     </message>
     <message>
+      <source>VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.</source>
+      <translation>VB-CABLE non dispone ancora di dispositivi di riproduzione o registrazione utilizzabili. Completa Remove Driver nel programma di installazione ufficiale, riavvia Windows, quindi riapri %1 per reinstallare il driver. CABLE Input e CABLE Output devono essere abilitati nelle impostazioni audio di Windows.</translation>
+    </message>
+    <message>
       <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
       <translation>VB-CABLE è stato mantenuto perché l’altra app SoundCurrent è installata. Rimuoverlo insieme all’ultima app se nessun altro software ne ha bisogno.</translation>
     </message>

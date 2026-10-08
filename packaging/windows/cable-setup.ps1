@@ -135,7 +135,7 @@ try {
                 exit 3010
             }
             if ($Install -and !(Present)) { throw (Get-SCSetupText 'VB-CABLE is not present. Restart Windows if requested, then retry audio setup.' -Language $Language -Application ('soundcurrent-' + $App)) }
-            if ($repair -and !(Ready)) { throw 'VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then run Audio driver setup again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.' }
+            if ($repair -and !(Ready)) { throw (Format-SCSetupText 'VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.' -Values @((Get-SCSetupText 'Audio driver setup' -Language $Language -Application ('soundcurrent-' + $App))) -Language $Language -Application ('soundcurrent-' + $App)) }
             MarkReboot
             Notice (Get-SCSetupText 'VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.' -Language $Language -Application ('soundcurrent-' + $App))
             exit 3010

@@ -2435,6 +2435,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Penyiapan VB-CABLE dibatalkan atau tidak selesai (kode %1). SoundCurrent tetap terpasang agar Anda dapat mencoba lagi.</translation>
     </message>
     <message>
+      <source>VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.</source>
+      <translation>VB-CABLE masih tidak memiliki perangkat pemutaran atau perekaman yang dapat digunakan. Selesaikan Remove Driver di penginstal resmi, mulai ulang Windows, lalu buka kembali %1 untuk menginstal ulang driver. CABLE Input dan CABLE Output harus diaktifkan dalam pengaturan suara Windows.</translation>
+    </message>
+    <message>
       <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
       <translation>VB-CABLE dipertahankan karena aplikasi SoundCurrent lainnya terpasang. Hapus bersama aplikasi terakhir jika tidak ada perangkat lunak lain yang membutuhkannya.</translation>
     </message>

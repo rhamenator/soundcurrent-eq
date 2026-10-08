@@ -2435,6 +2435,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Thiết lập VB-CABLE đã bị hủy hoặc chưa hoàn tất (mã %1). SoundCurrent vẫn được cài đặt để có thể thử lại.</translation>
     </message>
     <message>
+      <source>VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.</source>
+      <translation>VB-CABLE vẫn chưa có thiết bị phát hoặc ghi âm sử dụng được. Hoàn tất Remove Driver trong trình cài đặt chính thức, khởi động lại Windows, rồi mở lại %1 để cài lại trình điều khiển. CABLE Input và CABLE Output phải được bật trong cài đặt âm thanh của Windows.</translation>
+    </message>
+    <message>
       <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
       <translation>VB-CABLE được giữ lại vì ứng dụng SoundCurrent còn lại đã được cài đặt. Hãy gỡ nó cùng ứng dụng cuối cùng nếu không có phần mềm nào khác cần nó.</translation>
     </message>

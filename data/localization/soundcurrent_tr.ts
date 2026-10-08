@@ -2435,6 +2435,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>VB-CABLE kurulumu iptal edildi veya tamamlanmadı (kod %1). Yeniden denemek için SoundCurrent yüklü bırakıldı.</translation>
     </message>
     <message>
+      <source>VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.</source>
+      <translation>VB-CABLE hâlâ kullanılabilir oynatma veya kayıt aygıtlarına sahip değil. Resmî kurulum programında Remove Driver işlemini tamamlayın, Windows’u yeniden başlatın ve sürücüyü yeniden yüklemek için %1 öğesini tekrar açın. Windows ses ayarlarında CABLE Input ve CABLE Output etkin olmalıdır.</translation>
+    </message>
+    <message>
       <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
       <translation>Diğer SoundCurrent uygulaması yüklü olduğu için VB-CABLE korundu. Başka bir yazılım gerektirmiyorsa son uygulamayla birlikte kaldırın.</translation>
     </message>

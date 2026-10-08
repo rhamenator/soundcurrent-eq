@@ -2435,6 +2435,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Usanidi wa VB-CABLE umeghairiwa au haujakamilika (msimbo %1). SoundCurrent bado imesakinishwa ili uweze kujaribu tena.</translation>
     </message>
     <message>
+      <source>VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.</source>
+      <translation>VB-CABLE bado haina vifaa vya kucheza au kurekodi sauti vinavyoweza kutumika. Kamilisha Remove Driver katika kisakinishi rasmi, anzisha Windows upya, kisha fungua %1 tena ili kusakinisha kiendeshi upya. CABLE Input na CABLE Output lazima viwezeshwe katika mipangilio ya sauti ya Windows.</translation>
+    </message>
+    <message>
       <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
       <translation>VB-CABLE imehifadhiwa kwa sababu programu nyingine ya SoundCurrent imesakinishwa. Iondoe pamoja na programu ya mwisho ikiwa hakuna programu nyingine inayoihitaji.</translation>
     </message>
