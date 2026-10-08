@@ -3,7 +3,7 @@
   "tool_version": "0.1.0",
   "inputs": {
     "data/localization/soundcurrent_en.ts": "e4b4b609330f1f47cec0f01d80366d65e2d095552bd313ccc8bf880a8518deba",
-    "data/localization/soundcurrent_ar.ts": "ecbcca944c24cc70472b2bf8fc33cf5b9c9c05cca15a4b0659690f1caf02b717",
+    "data/localization/soundcurrent_ar.ts": "f103d64c3bcdcde3b0ec8b466400eea2234a3b21316e02f94e7cfca91918c244",
     "data/localization/soundcurrent_cs.ts": "da39ed37ee0f2523774d4bb4debd71e8d5982f807f0f518aaccb51127a3c0217",
     "data/localization/soundcurrent_da.ts": "8435592cb6006b9393e64e330ef110baf8ee8c5f55d243338837bb7d5dc1f6be",
     "data/localization/soundcurrent_de.ts": "d3ce9ddd7fe923c060b06b8a4b4839428f264542d4fc081e06986852fa72be9a",
@@ -42,9 +42,9 @@
     {
       "repository": "soundcurrent-eq",
       "commit": "unknown",
-      "file": "data/localization/soundcurrent_ar.ts",
-      "locale": "ar",
-      "key": "[\"SoundCurrent\",null,\"Start quiet. Raise only if the microphone cannot hear the tones.\",\"\"]",
+      "file": "data/localization/soundcurrent_fa.ts",
+      "locale": "fa",
+      "key": "[\"SoundCurrent\",null,\" (currently selected)\",\"\"]",
       "category": "untranslated",
       "severity": "error",
       "confidence": 1.0,
@@ -52,14 +52,14 @@
       "recommended_action": "Review and correct catalog; rerun audit.",
       "verification_status": "deterministic",
       "kind": "deterministic",
-      "fingerprint": "48558e50fa7338a697a9335635597a313fca5cab94cb7e86c543f782cdf8f384"
+      "fingerprint": "ad66d7bc41f56392230557a5a0a60edc7448a4d1a49616ab7f3832ed6f07d035"
     },
     {
       "repository": "soundcurrent-eq",
       "commit": "unknown",
-      "file": "data/localization/soundcurrent_ar.ts",
-      "locale": "ar",
-      "key": "[\"SoundCurrent\",null,\"Start when I sign in\",\"\"]",
+      "file": "data/localization/soundcurrent_fa.ts",
+      "locale": "fa",
+      "key": "[\"SoundCurrent\",null,\" (restored selection)\",\"\"]",
       "category": "untranslated",
       "severity": "error",
       "confidence": 1.0,
@@ -67,14 +67,14 @@
       "recommended_action": "Review and correct catalog; rerun audit.",
       "verification_status": "deterministic",
       "kind": "deterministic",
-      "fingerprint": "17b9ba53a1cbc3ce676ee69682615049be02070d13ff6c275d2eb54d08c9caf8"
+      "fingerprint": "7cc4a7ef2bafe0541fa44641fcd5aff6d55786255051ca9535661dab79a211a8"
     },
     {
       "repository": "soundcurrent-eq",
       "commit": "unknown",
-      "file": "data/localization/soundcurrent_ar.ts",
-      "locale": "ar",
-      "key": "[\"SoundCurrent\",null,\"Startup\",\"\"]",
+      "file": "data/localization/soundcurrent_fa.ts",
+      "locale": "fa",
+      "key": "[\"SoundCurrent\",null,\" [custom]\",\"\"]",
       "category": "untranslated",
       "severity": "error",
       "confidence": 1.0,
@@ -82,7 +82,7 @@
       "recommended_action": "Review and correct catalog; rerun audit.",
       "verification_status": "deterministic",
       "kind": "deterministic",
-      "fingerprint": "926c381384a9cbb97564ef9f4458131a727f9e0ec51d56ab0d43a6a5f5dafc0a"
+      "fingerprint": "ecd98ab58337257a02b335eb07646c511828d7818daa8ab3be2f383fe63b0e20"
     }
   ],
   "metrics": [
@@ -90,7 +90,7 @@
       "file": "data/localization/soundcurrent_ar.ts",
       "locale": "ar",
       "total": 441,
-      "translated": 398,
+      "translated": 441,
       "linguistic_verification": "unknown",
       "runtime_ui_qualification": "unknown"
     },
@@ -352,7 +352,7 @@
     }
   ],
   "findingCounts": {
-    "untranslated": 4564
+    "untranslated": 4521
   },
   "reportNote": "Compact structural report: input hashes and metrics retained, three sample findings. Linguistic review and runtime qualification remain separate."
 }

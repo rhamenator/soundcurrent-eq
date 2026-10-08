@@ -142,6 +142,14 @@ int main(int argc,char **argv){
    for(const auto &language:languages())if(language.tag=="nn")require(language.translated==language.total,"Nynorsk catalog has missing messages");
   }
   {
+   QSettings().setValue("i18n/language","ar");Runtime runtime;runtime.initialize();
+   require(text("Filter Q")==QString::fromUtf8("معامل جودة المرشح Q"),"Arabic filter quality caption incorrect");
+   QDialogButtonBox actions(QDialogButtonBox::Close|QDialogButtonBox::Save);
+   require(actions.button(QDialogButtonBox::Save)->text()==QString::fromUtf8("حفظ"),"Arabic standard actions stayed English");
+   require(QApplication::layoutDirection()==Qt::RightToLeft,"Arabic layout is not RTL");
+   for(const auto &language:languages())if(language.tag=="ar")require(language.translated==language.total,"Arabic catalog has missing messages");
+  }
+  {
    QSettings().setValue("i18n/language","qps-rtl");Runtime runtime;runtime.initialize();
    auto pattern=text("Value %1 / %2");require(pattern.contains("%1")&&pattern.contains("%2"),"Pseudo locale damaged placeholders");
    require(QApplication::layoutDirection()==Qt::RightToLeft,"RTL layout missing");

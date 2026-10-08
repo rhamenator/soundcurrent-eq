@@ -1,27 +1,27 @@
 {
-  "stage": "Arabic saving, speaker profiles and device recovery batch",
+  "stage": "Arabic current catalogs complete",
   "catalogs": [
     {
       "tag": "ar",
       "name": "العربية",
-      "translated": 398,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "ecbcca944c24cc70472b2bf8fc33cf5b9c9c05cca15a4b0659690f1caf02b717",
-      "qmSha256": "797643cd40ae0291fbc10e4223933beda9af5eac03e5a1df0f30abeced7f921e"
+      "tsSha256": "f103d64c3bcdcde3b0ec8b466400eea2234a3b21316e02f94e7cfca91918c244",
+      "qmSha256": "a663fa0fb08de5f33ffe1ac679c391eb7dad9b6f4c348145fda7c235726f7a30"
     }
   ],
   "linuxTests": {
-    "passed": 3,
-    "total": 3,
-    "scope": "compiled localization, Arabic main window and catalog validation",
-    "log": "/tmp/soundcurrent-eq-ar-sixth-tests.log"
+    "passed": 71,
+    "total": 71,
+    "scope": "Full Linux CTest including Arabic equipment workflows and RTL catalog assertions",
+    "log": "/tmp/soundcurrent-eq-ar-complete-tests.log"
   },
-  "review": "Contextual AI review; unverified. Save versus discard, speaker correction bounds, peak hold, device recovery, separate cable routing and reverb versus echo reviewed.",
+  "review": "Contextual AI review; unverified. Current catalogs populated; contextual AI review remains unverified. Calibration limitations, microphone versus playback effects, save/quit behavior and neutral render counts reviewed.",
   "nativeReviewed": false,
   "windows": "Pending CI",
-  "remaining": "12 original target catalogs incomplete. Full RTL, bidi and platform qualification remain open.",
+  "remaining": "11 original target catalogs incomplete. Second-pass backend/helper/installer coverage, full bidi and platform lifecycle qualification remain open.",
   "visualInspection": {
     "platform": "xcb/Xvfb",
     "display": "1280x720",

@@ -1617,103 +1617,103 @@ Import into your library?</source>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>ابدأ بمستوى منخفض. ارفعه فقط إذا لم يلتقط الميكروفون النغمات.</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
-      <translation type="unfinished" />
+      <translation>البدء عند تسجيل دخولي</translation>
     </message>
     <message>
       <source>Startup</source>
-      <translation type="unfinished" />
+      <translation>بدء التشغيل</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
-      <translation type="unfinished" />
+      <translation>أوقف معايرة الميكروفون قبل تغيير برنامج تشغيل الصوت.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>إيقاف النغمات</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>تم تطبيق المعادلة المقترحة. استخدم حفظ الإعداد المسبق للاحتفاظ بها.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>التغييرات المقترحة لمعادل صوت التشغيل</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>صوت محيطي</translation>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>تم فتح محرر ملف تعريف استجابة النظام. تتوفر ملفات التعريف المحفوظة في مكتبة المعدات.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>حوار تلفزيوني</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>الأزرق المخضر: معادلة التصحيح. البرتقالي: الاستجابة المقاسة عند توفرها. المقياس الرأسي بوحدة dB النسبية.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>مستوى الاختبار</translation>
     </message>
     <message>
       <source>Test level is outside the allowed range</source>
-      <translation type="unfinished" />
+      <translation>مستوى الاختبار خارج النطاق المسموح</translation>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>توقف معالج الصوت بشكل غير متوقع.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
-      <translation type="unfinished" />
+      <translation>تستوعب المكتبة المخصصة حتى 256 ملف تعريف.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>كانت استجابة التحديث غير صالحة. لم يتم فتح أي برنامج تثبيت.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>يستورد هذا الاستجابة المقاسة، وليس قيم كسب المعادلة المعكوسة مسبقًا. تأكد من نوع المعدات. يحتاج مستوى ضغط الصوت المطلق SPL إلى تطبيع قبل الاستيراد.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>تم تغيير ملف التعريف هذا. هل تريد حفظ نسخة مخصصة قبل المغادرة؟</translation>
     </message>
     <message>
       <source>Timed out waiting for the equalizer sink: %1</source>
-      <translation type="unfinished" />
+      <translation>انتهت مهلة انتظار مخرج معادل الصوت: %1</translation>
     </message>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
-      <translation type="unfinished" />
+      <translation>وصل صوت اختبار ضعيف جدًا إلى الميكروفون. قرّبه أو ارفع مستوى الاختبار قليلًا.</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>تغطية الترجمة: %1 من %2 رسالة. تستخدم الترجمات المفقودة الإنجليزية. حزم اللغات غير متحقق منها وتنتظر مراجعة متحدثين أصليين. استخدم إنهاء وأعد فتح التطبيق لتطبيق التغييرات.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>تفاصيل الترددات العالية</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>إيقاف معادل الصوت</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>تشغيل معادل الصوت</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>النوع</translation>
     </message>
     <message>
       <source>Undo</source>
@@ -1722,43 +1722,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>التراجع عن آخر تغيير لمعادل الصوت</translation>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>فتح قفل معادل الصوت</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>افتح قفل عناصر التحكم وأكمل القياس قبل تحرير ملفات التعريف.</translation>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation type="unfinished" />
+      <translation>مخطط ملف تعريف المعدات غير مدعوم (المتوقع 2).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
-      <translation type="unfinished" />
+      <translation>نوع المرشح غير مدعوم.</translation>
     </message>
     <message>
       <source>Unsupported microphone channel layout</source>
-      <translation type="unfinished" />
+      <translation>تخطيط قنوات الميكروفون غير مدعوم</translation>
     </message>
     <message>
       <source>Unsupported speaker profile schema</source>
-      <translation type="unfinished" />
+      <translation>مخطط ملف تعريف مكبر الصوت غير مدعوم</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>تم تنزيل التحديث %1: %2. أنهِ التطبيق، وثبّته فوق التطبيق الحالي، ثم أعد فتحه.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>مجلد تنزيل التحديثات</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>استخدم غرفة هادئة. يقيس مكبرات الصوت والغرفة والميكروفون معًا؛ تتضمن النتائج استجابة الميكروفون.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1767,39 +1767,39 @@ Import into your library?</source>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>استخدام منطقة النظام</translation>
+      <translation>استخدام الإعدادات الإقليمية للنظام</translation>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>إعدادات VB-CABLE</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>تركيز على الصوت البشري</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>بانتظار ميكروفون.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>دافئ</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>الدفء</translation>
     </message>
     <message>
       <source>Yes</source>
-      <translation type="unfinished" />
+      <translation>نعم</translation>
     </message>
     <message>
       <source>Yes to All</source>
-      <translation type="unfinished" />
+      <translation>نعم للكل</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>تُوقف القيمة الصفرية كل مؤثر. تُطبّق مؤثرات الاستماع هذه على تشغيل مكبرات الصوت، وليس على تصحيح الميكروفون.</translation>
     </message>
   </context>
 </TS>
