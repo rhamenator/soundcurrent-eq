@@ -1,25 +1,25 @@
 {
-  "stage": "Swahili sixth existing-catalog batch",
+  "stage": "Swahili existing catalog complete",
   "catalogs": [
     {
       "tag": "sw",
       "name": "Kiswahili",
-      "translated": 398,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "37e4dc08c62303eb6e0b236e45df297fee82b970ac7b1f76617fe907864df70a",
-      "qmSha256": "0d030d8baa2346d388bdd8c167e8127d792a841d2784b3430e978fe6ac9a8562"
+      "tsSha256": "dac5803aa59ef6cec2ec519637613da3db67567c0a1812c2f044b58b4d08bf93",
+      "qmSha256": "0d7639131dfb2fea3c802f52ed6aabc9c7b94dd7cdf69899e370aff8086f4668"
     }
   ],
   "linuxTests": {
-    "passed": 3,
-    "total": 3,
-    "scope": "Embedded localization assertions, Swahili MainWindow offscreen smoke test and structural catalog checks",
-    "log": "/tmp/soundcurrent-eq-sw-sixth-tests.log"
+    "passed": 82,
+    "total": 82,
+    "scope": "Full Linux CTest suite, including Swahili profile import/edit/save/cancel/discard/apply, compiled localization assertions, regional fallback and MainWindow offscreen checks",
+    "log": "/tmp/soundcurrent-eq-sw-final-tests.log"
   },
-  "review": "Contextual AI review of shared source entries 0–469: save/reset actions, measured response bounds, room measurement, microphone routing and distinct reverb/echo controls. Placeholders, file patterns and numerical limits preserved. Linguistic accuracy unverified.",
+  "review": "Contextual AI review of all current Swahili catalog entries: microphone/room measurement limits, channel gain trim, zero-valued effect bypass, save/undo actions and regional fallback. Placeholders, file patterns, hyperlinks and numerical limits preserved. Linguistic accuracy unverified.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
-  "remaining": "Swahili incomplete. Omitted source messages reserved for second pass."
+  "remaining": "Current target catalogs populated. Omitted source messages require second pass. Windows and visual qualification pending."
 }

@@ -1617,103 +1617,103 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>Anza kwa sauti hafifu. Ongeza tu ikiwa maikrofoni haiwezi kusikia toni.</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
-      <translation type="unfinished" />
+      <translation>Anza ninapoingia kwenye mfumo</translation>
     </message>
     <message>
       <source>Startup</source>
-      <translation type="unfinished" />
+      <translation>Kuanzisha programu</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
-      <translation type="unfinished" />
+      <translation>Sitisha urekebishaji wa maikrofoni kabla ya kubadilisha kiendeshi cha sauti.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>Sitisha toni</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>EQ iliyopendekezwa imetumika. Tumia Hifadhi mpangilio uliowekwa tayari kuiweka.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>Mabadiliko yaliyopendekezwa kwenye EQ ya uchezaji</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>Sauti ya kuzunguka</translation>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>Kihariri cha wasifu wa mwitikio wa mfumo kimefunguliwa. Wasifu uliohifadhiwa unapatikana katika maktaba ya vifaa.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>Mazungumzo ya TV</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>Kijani kibichi cha samawati: EQ ya usahihishaji. Rangi ya machungwa: mwitikio uliopimwa, ikiwa umetolewa. Kipimo cha wima ni dB za kiasi.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>Kiwango cha majaribio</translation>
     </message>
     <message>
       <source>Test level is outside the allowed range</source>
-      <translation type="unfinished" />
+      <translation>Kiwango cha majaribio kiko nje ya eneo linaloruhusiwa</translation>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>Kichakataji cha sauti kimesimama bila kutarajiwa.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
-      <translation type="unfinished" />
+      <translation>Maktaba maalumu huhifadhi hadi wasifu 256.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>Jibu la sasisho halikuwa sahihi. Hakuna kisakinishi kilichofunguliwa.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>Hii huingiza MWITIKIO uliopimwa, si gain za EQ ambazo tayari zimegeuzwa. Thibitisha aina ya kifaa. SPL kamili inahitaji kusawazishwa kabla ya kuingizwa.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>Wasifu huu umebadilishwa. Uhifadhi nakala maalumu kabla ya kuondoka?</translation>
     </message>
     <message>
       <source>Timed out waiting for the equalizer sink: %1</source>
-      <translation type="unfinished" />
+      <translation>Muda wa kusubiri tokeo pepe la kisawazishi umeisha: %1</translation>
     </message>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
-      <translation type="unfinished" />
+      <translation>Sauti ndogo mno ya majaribio ilifika kwenye maikrofoni. Isogeze karibu au ongeza kiwango cha majaribio kidogo.</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>Ufunikaji wa tafsiri: ujumbe %1 kati ya %2. Tafsiri zinazokosekana hutumia Kiingereza. Vifurushi vya lugha havijathibitishwa na vinasubiri ukaguzi wa wazungumzaji wa asili. Tumia Toka na ufungue tena kutekeleza mabadiliko.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>Maelezo ya sauti za juu</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Zima kisawazishi</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Washa kisawazishi</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Aina</translation>
     </message>
     <message>
       <source>Undo</source>
@@ -1722,43 +1722,43 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>Tendua mabadiliko ya mwisho ya kisawazishi</translation>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>Fungua EQ</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>Fungua vidhibiti na ukamilishe kipimo kabla ya kuhariri wasifu.</translation>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation type="unfinished" />
+      <translation>Muundo wa wasifu wa kifaa hautumiki (unatarajiwa 2).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
-      <translation type="unfinished" />
+      <translation>Aina ya kichujio haitumiki.</translation>
     </message>
     <message>
       <source>Unsupported microphone channel layout</source>
-      <translation type="unfinished" />
+      <translation>Mpangilio wa chaneli za maikrofoni hautumiki</translation>
     </message>
     <message>
       <source>Unsupported speaker profile schema</source>
-      <translation type="unfinished" />
+      <translation>Muundo wa wasifu wa spika hautumiki</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Sasisho %1 limepakuliwa: %2. Toka, sakinisha juu ya programu iliyopo, kisha ufungue tena.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>Folda ya kupakua masasisho</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>Tumia chumba tulivu. Hupima spika, chumba na maikrofoni pamoja; matokeo yanajumuisha mwitikio wa maikrofoni.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1767,39 +1767,39 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>Tumia eneo la mfumo</translation>
+      <translation>Tumia mipangilio ya eneo ya mfumo</translation>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>Mipangilio ya VB-CABLE</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>Lenga sauti ya mwimbaji</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>Inasubiri maikrofoni.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>Sauti yenye joto</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>Joto la sauti</translation>
     </message>
     <message>
       <source>Yes</source>
-      <translation type="unfinished" />
+      <translation>Ndiyo</translation>
     </message>
     <message>
       <source>Yes to All</source>
-      <translation type="unfinished" />
+      <translation>Ndiyo kwa yote</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>Sifuri huzima kila athari. Athari hizi za kusikiliza hutumika kwa uchezaji kupitia spika, si usahihishaji wa maikrofoni.</translation>
     </message>
   </context>
 </TS>
