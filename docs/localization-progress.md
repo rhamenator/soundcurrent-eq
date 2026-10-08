@@ -207,3 +207,7 @@ Traditional Chinese current catalogs complete: 441/441 messages populated. Full 
 ### Japanese: first existing-catalog batch
 
 Japanese now has 102/441 populated current catalog entries. The first 80 shared sources cover device routing, calibration limitations, enhancement controls and update/quit guidance. Both repositories passed the three focused Linux checks (localization, Japanese MainWindow offscreen, catalog structure). These translations remain unverified; Windows and visual qualification remain pending. Seven languages still have incomplete existing catalogs. Missing source strings remain scheduled for the second pass.
+
+### Japanese: second existing-catalog batch
+
+Japanese now has 166/441 populated current catalog entries. Added equipment-profile errors, calibration failure messages, update guidance, preset actions and delay controls. Both apps passed the three focused Linux checks. Native-speaker, Windows and visual qualification remain pending; translations are unverified. Missing source strings remain scheduled for the second pass.

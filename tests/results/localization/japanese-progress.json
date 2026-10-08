@@ -1,24 +1,24 @@
 {
-  "stage": "Japanese first catalog batch",
+  "stage": "Japanese second catalog batch",
   "catalogs": [
     {
       "tag": "ja",
       "name": "日本語",
-      "translated": 102,
+      "translated": 166,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "4014df0a317e86b744f500f9e5fdd3cd919e18ef9eb32f3aaa45d43665c9d53b",
-      "qmSha256": "51363bca4ceacc4b64e88694f00fab18fb98cee78ec5c92d229237588cbbbe33"
+      "tsSha256": "89cf3956d085dd04ee4d09bd6738bcbea246a1b38977e516bf8eaf990698c171",
+      "qmSha256": "62b995102147d794f8becc4b37a165b09b3770eab05e77e23efd65098c553843"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "Localization assertions, Japanese actual MainWindow offscreen smoke test, structural catalog checks",
-    "log": "/tmp/soundcurrent-eq-ja-first-tests.log"
+    "log": "/tmp/soundcurrent-eq-ja-second-tests.log"
   },
-  "review": "Contextual AI review of first 80 shared source entries: calibration evidence, enhancement behavior, driver setup, bypass and quit versus close. Linguistic accuracy unverified.",
+  "review": "Contextual AI review of shared source entries 0–159: calibration evidence, driver setup, update/quit behavior, safe failure messages, preset saving and delay controls. Linguistic accuracy unverified.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
   "remaining": "Japanese catalog incomplete; seven target languages still incomplete. Omitted source strings reserved for the second pass."
