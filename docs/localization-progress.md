@@ -107,3 +107,5 @@ Romanian/Hungarian initial batch: 102/441 messages each. Four focused Linux chec
 Romanian/Hungarian recovery and effects batch: 166/441 messages each. Four focused Linux checks passed per app. Processing refusal, restart recovery, updates and delay controls reviewed contextually. Catalogs remain incomplete and unverified.
 
 Additional user requirement: add a separate Nynorsk (nn) catalog and runtime/workflow checks after completing Romanian and Hungarian. This expands the language scope beyond the original 32 target catalogs.
+
+Romanian/Hungarian filter and editor batch: 230/441 messages each. Four focused Linux checks passed per app. Filter Q, compressor parameters, equipment editing and estimated meters reviewed contextually. Catalogs remain incomplete and unverified. Nynorsk remains next after completing these two catalogs.

@@ -1,34 +1,34 @@
 {
-  "stage": "Romanian/Hungarian recovery and effects batch",
+  "stage": "Romanian/Hungarian filter and editor batch",
   "catalogs": [
     {
       "tag": "ro",
       "name": "Română",
-      "translated": 166,
+      "translated": 230,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "ecf7afe61317e0f45db6ddd8d95fbccda497820bec627c139d81b0df867e3a77",
-      "qmSha256": "5699d2d7caa30a307f1f4ed46ccd6f20e952f0df7140d4f9449c12318df1a119"
+      "tsSha256": "5bf3b9f6f29830d319c7edfbcfafd8407a1fbbd801ab65f15d9a144ef34fc12c",
+      "qmSha256": "a6743838ea7685498140ff5d939e5440f4869e2da568aec309449710d1bb155e"
     },
     {
       "tag": "hu",
       "name": "Magyar",
-      "translated": 166,
+      "translated": 230,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "d4c0d44a7627bd59a00ebff0dfded4fbdd7238998a34f271509f246a89e472ab",
-      "qmSha256": "a0d5178015696bf2deb853ab0d929fee4dc0fe90f1ec162d4884b88f1f2df510"
+      "tsSha256": "80089641a57718723dfadad34bac38f65a4e3a2cbba4579653dfb72b5cbd9ffb",
+      "qmSha256": "fff81d4a37bd5de26fa68fc8a719e976c7f5d58b9c10148efbb2746a2d69b414"
     }
   ],
   "linuxTests": {
     "passed": 4,
     "total": 4,
     "scope": "compiled localization, Romanian/Hungarian main windows and catalog regressions",
-    "log": "/tmp/soundcurrent-eq-ro-hu-second-tests.log"
+    "log": "/tmp/soundcurrent-eq-ro-hu-third-tests.log"
   },
-  "review": "Contextual AI review; unverified. Processing refusal, kept settings, render cancellation and effect duration versus contribution reviewed. Romanian clipping explicitly describes cut-off signal peaks.",
+  "review": "Contextual AI review; unverified. Dimensionless Q, shelving versus pass filters, compressor makeup versus post gain, estimated meters and exit behavior reviewed.",
   "nativeReviewed": false,
   "windows": "Pending CI",
   "remaining": "Romanian, Hungarian and 12 other target catalogs incomplete."
