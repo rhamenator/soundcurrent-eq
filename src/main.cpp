@@ -2424,7 +2424,7 @@ public:
             const double value = outputGainDb();
             QSettings().setValue("outputGainDb", value);
             outputGainValue_->setText(QString(SC_TR("%1%2 dB")).arg(value > 0 ? "+" : "")
-                                          .arg(value, 0, 'f', 1));
+                                          .arg(QLocale().toString(value, 'f', 1)));
             meter_.setProfile(bands_, value, balance_->value(), speakerCorrection());
             try { audio_.updateGain(value, balance_->value()); }
             catch (const std::exception &error) { showError(error.what()); }
@@ -2991,11 +2991,14 @@ private:
         } else {
             const double db = 20.0 * std::log10(peak);
             overallLevel_->setLevel(db);
-            overallLevel_->setToolTip(QString(SC_TR("Estimated overall output peak: %1 dBFS"))
-                                          .arg(db, 0, 'f', 1));
+            overallLevel_->setToolTip(soundcurrent::i18n::numberWithUnit(
+                SC_TR("Estimated overall output peak: %1 dBFS"),
+                QLocale().toString(db, 'f', 1), QStringLiteral("dBFS")));
             peakStatus_->setText(db >= -1.0
-                                     ? QString(SC_TR("Clipping risk · estimated peak %1 dBFS")).arg(db, 0, 'f', 1)
-                                     : QString(SC_TR("Estimated peak %1 dBFS")).arg(db, 0, 'f', 1));
+                                     ? soundcurrent::i18n::numberWithUnit(SC_TR("Clipping risk · estimated peak %1 dBFS"),
+                                           QLocale().toString(db, 'f', 1), QStringLiteral("dBFS"))
+                                     : soundcurrent::i18n::numberWithUnit(SC_TR("Estimated peak %1 dBFS"),
+                                           QLocale().toString(db, 'f', 1), QStringLiteral("dBFS")));
             peakStatus_->setStyleSheet(db >= -1.0 ? "color:#f16b76;font-weight:700;"
                                                     : db >= -6.0 ? "color:#e6b450;" : "color:#50d1ba;");
         }
@@ -3574,6 +3577,10 @@ int main(int argc, char **argv) {
         QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, testSettings.path());
     }
     soundcurrent::i18n::Runtime localization;
+    if (app.arguments().contains("--localization-ui-test")) {
+        const auto testFormat = qEnvironmentVariable("SOUNDCURRENT_TEST_FORMAT_LOCALE");
+        if (!testFormat.isEmpty()) QSettings().setValue("i18n/formatLocale", testFormat);
+    }
     localization.initialize(app.arguments().contains("--ui-self-test"));
     QGuiApplication::setDesktopFileName("io.github.rhamenator.SoundCurrentEQ");
     app.setWindowIcon(QIcon::fromTheme("io.github.rhamenator.SoundCurrentEQ", QIcon(":/app.ico")));
@@ -4174,6 +4181,17 @@ int main(int argc, char **argv) {
         auto *language=window.findChild<QComboBox *>("uiLanguage");
         auto *format=window.findChild<QComboBox *>("formatLocale");
         if(!language || !format || format->count()<100) qFatal("Locale selection is missing");
+        QSlider *postGain=nullptr;QLabel *postGainValue=nullptr;
+        for(auto *slider:window.findChildren<QSlider *>())
+            if(slider->accessibleName()==SC_TR("Post gain after equalization"))postGain=slider;
+        for(auto *label:window.findChildren<QLabel *>())
+            if(label->accessibleName()==SC_TR("Post gain value in decibels"))postGainValue=label;
+        if(!postGain || !postGainValue)qFatal("Post gain controls missing");
+        const int originalPostGain=postGain->value();postGain->setValue(3);
+        if(!postGainValue->text().contains(QLocale().toString(1.5,'f',1)))
+            qFatal("Moving post gain lost the selected regional number format");
+        postGain->setValue(originalPostGain);
+
         window.show();
         QTimer::singleShot(100, &app, [&] {
             const auto dir=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");

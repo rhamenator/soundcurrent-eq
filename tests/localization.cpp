@@ -19,10 +19,13 @@ int main(int argc,char **argv){
   require(languages().size()>=30,"Global language catalogs missing");
   for (const auto &tag : {QStringLiteral("ar"), QStringLiteral("he"), QStringLiteral("fa")}) {
    QTranslator translator;require(translator.load(":/i18n/soundcurrent_"+tag+".qm"),"RTL catalog missing");
-   const auto pattern=translator.translate("SoundCurrent","Auto headroom %1 dB");
-   require(pattern.contains("%1 dB"),"Headroom unit token changed in RTL catalog");
-   const auto display=numberWithUnit(pattern,QStringLiteral("-12.5"),QStringLiteral("dB"));
-   require(display.contains(QString(QChar(0x2066))+"-12.5 dB"+QChar(0x2069)),"Headroom number/unit not isolated together");
+   for (const auto *source : {"Auto headroom %1 dB", "Estimated overall output peak: %1 dBFS",
+                             "Clipping risk · estimated peak %1 dBFS", "Estimated peak %1 dBFS"}) {
+   const QString unitName=QString::fromUtf8(source).endsWith("dBFS") ? QStringLiteral("dBFS") : QStringLiteral("dB");
+   const auto pattern=translator.translate("SoundCurrent",source);
+   require(pattern.contains("%1 "+unitName),"Level unit token changed in RTL catalog");
+   const auto display=numberWithUnit(pattern,QStringLiteral("-12.5"),unitName);
+   require(display.contains(QString(QChar(0x2066))+"-12.5 "+unitName+QChar(0x2069)),"Headroom number/unit not isolated together");
    QTextLayout layout(display);QTextOption option;option.setTextDirection(Qt::RightToLeft);layout.setTextOption(option);
    layout.beginLayout();auto line=layout.createLine();line.setLineWidth(800);layout.endLayout();
    const int number=display.indexOf("-12.5"),unit=display.indexOf("dB",number);
@@ -32,6 +35,7 @@ int main(int argc,char **argv){
     return runs.front().positions().front().x();
    };
    require(glyphX(number)<glyphX(number+1) && glyphX(number+1)<glyphX(unit),"RTL headroom sign/number/unit visual order changed");
+   }
   }
 
   require(resolve("nn-NO")=="nn" && resolve("nb-NO")=="nb","Norwegian written standards collapsed");
