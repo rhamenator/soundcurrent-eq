@@ -1137,87 +1137,87 @@ Import into your library?</source>
     </message>
     <message>
       <source>No</source>
-      <translation type="unfinished" />
+      <translation>Όχι</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>Δεν έχει επιλεγεί εισαγμένη διόρθωση εξοπλισμού.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>Δεν έχει επιλεγεί μετρημένη διόρθωση ενισχυτή. Οι διαφημιστικές προδιαγραφές εύρους συχνοτήτων δεν επαρκούν για να εξαχθεί καμπύλη διόρθωσης.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>Δεν υπάρχει συνδεδεμένο μικρόφωνο.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>Δεν έχει επιλεγεί διόρθωση μοντέλου. Το EQ ακρόασής σας λειτουργεί κανονικά.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>Δεν βρέθηκε νεότερη δημοσιευμένη έκδοση. Ελέγχονται επίσης τα ληφθέντα προγράμματα εγκατάστασης.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>Δεν υπάρχει διαθέσιμη συσκευή εξόδου.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>Δεν υπάρχει συνδεδεμένη συσκευή εξόδου.</translation>
     </message>
     <message>
       <source>No to All</source>
-      <translation type="unfinished" />
+      <translation>Όχι σε όλα</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>Καμία — χρήση του δικού μου EQ</translation>
     </message>
     <message>
       <source>Number and date format</source>
-      <translation>Μορφή αριθμών και ημερομηνιών</translation>
+      <translation>Μορφή αριθμών και ημερομηνίας</translation>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>Αριθμός ζωνών ισοσταθμιστή</translation>
     </message>
     <message>
       <source>OK</source>
-      <translation type="unfinished" />
+      <translation>OK</translation>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>Ενεργό · Αναπαραγωγή μέσω %1</translation>
     </message>
     <message>
       <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
-      <translation type="unfinished" />
+      <translation>Μόνο μία εφαρμογή SoundCurrent εκκινεί κατά τη σύνδεση. Η ενεργοποίηση αυτής της επιλογής αντικαθιστά τη ρύθμιση εκκίνησης της άλλης εφαρμογής. Εκκινεί στο παρασκήνιο όταν υπάρχει εικονίδιο στην περιοχή ειδοποιήσεων.</translation>
     </message>
     <message>
       <source>Open</source>
-      <translation type="unfinished" />
+      <translation>Άνοιγμα</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>Άνοιγμα του πίνακα ελέγχου VB-Audio για την καθυστέρηση καλωδίου και την εσωτερική συχνότητα δειγματοληψίας. Αλλαγές κατά τη λειτουργία ήχου μπορεί να διακόψουν την αναπαραγωγή.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>Άνοιγμα πίνακα ελέγχου VB-CABLE</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>Άνοιγμα λήψεων εκδόσεων</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>Άνοιγμα φακέλου ενημερώσεων</translation>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>Πορτοκαλί: μετρημένη απόκριση, όταν παρέχεται. Τιρκουάζ: διόρθωση στα 48 kHz. Σύρετε τα τιρκουάζ σημεία ή επεξεργαστείτε τον πίνακα. Η αποθήκευση διατηρεί το προφίλ αναφοράς και δημιουργεί προσαρμοσμένο αντίγραφο.</translation>
     </message>
     <message>
       <source>Output device</source>
@@ -1225,31 +1225,31 @@ Import into your library?</source>
     </message>
     <message>
       <source>Output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>Η συσκευή εξόδου δεν είναι πλέον διαθέσιμη</translation>
     </message>
     <message>
       <source>Output has no volume channels</source>
-      <translation type="unfinished" />
+      <translation>Η έξοδος δεν έχει κανάλια ρύθμισης έντασης</translation>
     </message>
     <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>Συνολική έξοδος</translation>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>Παύση επεξεργασίας και άνοιγμα ρύθμισης ήχου. Η εφαρμογή παραμένει ανοιχτή και αναφέρει το αποτέλεσμα. Επανεκκινήστε τα Windows μετά την εγκατάσταση του οδηγού.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>Δείκτες κορυφών</translation>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>Πιάνο</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>Αναπαραγωγή ήσυχου δοκιμαστικού ήχου και προεπισκόπηση προτεινόμενων αλλαγών EQ αναπαραγωγής</translation>
     </message>
     <message>
       <source>Playback</source>
@@ -1257,113 +1257,113 @@ Import into your library?</source>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>Αναπαράγεται ήσυχος δοκιμαστικός ήχος. Διακόψτε τον αν είναι δυσάρεστος.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>Συνδέστε το μικρόφωνό σας για να επιλέξετε προφίλ μικροφώνου</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>Πόντκαστ</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>Ποπ</translation>
     </message>
     <message>
       <source>Post gain</source>
       <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
-      <translation>Κέρδος εξόδου</translation>
+      <translation>Τελική ενίσχυση</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>Τελική ενίσχυση μετά την ισοστάθμιση</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>Τιμή τελικής ενίσχυσης σε ντεσιμπέλ</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>Όνομα προρύθμισης:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>Αποτροπή αλλαγών σε προρυθμίσεις, ζώνες EQ, τελική ενίσχυση και ισορροπία</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>Λεπτομέρειες προφίλ</translation>
     </message>
     <message>
       <source>Profile exceeds the 1 MiB limit.</source>
-      <translation type="unfinished" />
+      <translation>Το προφίλ υπερβαίνει το όριο του 1 MiB.</translation>
     </message>
     <message>
       <source>Profile library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Η βιβλιοθήκη προφίλ υπερβαίνει τα 16 MiB.</translation>
     </message>
     <message>
       <source>Profile metadata is too long.</source>
-      <translation type="unfinished" />
+      <translation>Τα μεταδεδομένα προφίλ είναι πολύ μεγάλα.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>Το προφίλ πρέπει να είναι αναγνώσιμο και μικρότερο από 64 KiB.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>
-      <translation type="unfinished" />
+      <translation>Τα προφίλ χρειάζονται 1–16 φίλτρα διόρθωσης.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>Δημοσιευμένες πηγές μετρήσεων: &lt;a href="https://www.spinorama.org/"&gt;Μετρήσεις ηχείων / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Βαθμονόμηση Dayton ανά σειριακό αριθμό&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;Βαθμονόμηση miniDSP ανά σειριακό αριθμό&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Γραφήματα μικροφώνων Neumann&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;Γράφημα απόκρισης AT2020&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Μετρήσεις ενισχυτών&lt;/a&gt;</translation>
     </message>
     <message>
       <source>Published profiles need an HTTPS measurement source.</source>
-      <translation type="unfinished" />
+      <translation>Τα δημοσιευμένα προφίλ χρειάζονται πηγή μέτρησης HTTPS.</translation>
     </message>
     <message>
       <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατός ο έλεγχος δημοσιευμένων εκδόσεων. Οι ιδιωτικές εκδόσεις Studio απαιτούν πρόσβαση στο GitHub. Χρησιμοποιήστε το Άνοιγμα λήψεων εκδόσεων· τα ληφθέντα προγράμματα εγκατάστασης εξακολουθούν να εντοπίζονται τοπικά.</translation>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>Δημοσιευμένη απόκριση και επεξεργάσιμες καμπύλες διόρθωσης</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>Η δημοσιευμένη ενημέρωση %1 είναι διαθέσιμη. Ανοίξτε τις λήψεις εκδόσεων, εγκαταστήστε πάνω από αυτή την έκδοση και ανοίξτε ξανά την εφαρμογή.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>Δυνατά κρουστικά μπάσα</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>Ήσυχη λογαριθμική σάρωση συχνοτήτων</translation>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>Έξοδος από το SoundCurrent EQ</translation>
     </message>
     <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
-      <translation>Έξοδος από την εφαρμογή</translation>
+      <translation>Έξοδος εφαρμογής</translation>
     </message>
     <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>R</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>R&amp;B</translation>
     </message>
     <message>
       <source>Refresh devices</source>
@@ -1373,27 +1373,29 @@ Import into your library?</source>
       <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
 
 %1</source>
-      <translation type="unfinished" />
+      <translation>Οι σχετικές μετρήσεις περιλαμβάνουν την απόκριση ηχείων, χώρου και μικροφώνου. Οι προτεινόμενες αλλαγές περιορίζονται σε 3 dB ανά μετρημένη συχνότητα.
+
+%1</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>Υπενθύμιση όταν υπάρχουν ενημερώσεις ή απαιτείται επανεκκίνηση</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>Αφαίρεση επιλεγμένου φίλτρου</translation>
     </message>
     <message>
       <source>Reset</source>
-      <translation type="unfinished" />
+      <translation>Επαναφορά</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>Επαναφορά ηχητικών εφέ</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>Επαναφορά τόνου μικροφώνου</translation>
     </message>
     <message>
       <source>Reset to flat</source>

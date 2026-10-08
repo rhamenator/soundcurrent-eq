@@ -1137,43 +1137,43 @@ Kitaplığınıza aktarılsın mı?</translation>
     </message>
     <message>
       <source>No</source>
-      <translation type="unfinished" />
+      <translation>Hayır</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>Aktarılan ekipman düzeltmesi seçili değil.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>Ölçülmüş amplifikatör düzeltmesi seçili değil. Pazarlama amaçlı frekans aralığı özellikleri bir düzeltme eğrisi türetmek için yeterli değildir.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>Mikrofon bağlı değil.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>Model düzeltmesi seçili değil. Dinleme EQ'nuz normal çalışır.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>Daha yeni yayımlanmış sürüm bulunamadı. İndirilen yükleyiciler de denetlenir.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>Kullanılabilir çıkış cihazı yok.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>Çıkış cihazı bağlı değil.</translation>
     </message>
     <message>
       <source>No to All</source>
-      <translation type="unfinished" />
+      <translation>Tümüne hayır</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>Yok — kendi EQ'mu kullan</translation>
     </message>
     <message>
       <source>Number and date format</source>
@@ -1181,75 +1181,75 @@ Kitaplığınıza aktarılsın mı?</translation>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>Ekolayzır bandı sayısı</translation>
     </message>
     <message>
       <source>OK</source>
-      <translation type="unfinished" />
+      <translation>Tamam</translation>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>Açık · %1 üzerinden oynatılıyor</translation>
     </message>
     <message>
       <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
-      <translation type="unfinished" />
+      <translation>Oturum açıldığında yalnızca bir SoundCurrent uygulaması başlar. Bu seçeneği etkinleştirmek diğer uygulamanın başlangıç ayarını değiştirir. Sistem tepsisi simgesi kullanılabiliyorsa arka planda başlar.</translation>
     </message>
     <message>
       <source>Open</source>
-      <translation type="unfinished" />
+      <translation>Aç</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>Kablo gecikmesi ve iç örnekleme hızı için VB-Audio denetim masasını açın. Ses çalışırken bunları değiştirmek oynatmayı kesintiye uğratabilir.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>VB-CABLE denetim masasını aç</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>Sürüm indirmelerini aç</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>Güncelleme klasörünü aç</translation>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>Turuncu: sağlanmışsa ölçülmüş yanıt. Turkuaz: 48 kHz'deki düzeltme. Turkuaz noktaları sürükleyin veya tabloyu düzenleyin. Kaydetmek referansı korur ve özel bir kopya oluşturur.</translation>
     </message>
     <message>
       <source>Output device</source>
-      <translation>Çıkış aygıtı</translation>
+      <translation>Çıkış cihazı</translation>
     </message>
     <message>
       <source>Output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>Çıkış cihazı artık kullanılamıyor</translation>
     </message>
     <message>
       <source>Output has no volume channels</source>
-      <translation type="unfinished" />
+      <translation>Çıkışta ses düzeyi kanalları yok</translation>
     </message>
     <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>Genel çıkış</translation>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>İşlemeyi duraklatıp ses kurulumunu açın. Uygulama açık kalır ve sonucu bildirir. Sürücüyü yükledikten sonra Windows'u yeniden başlatın.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>Tepe işaretleri</translation>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>Piyano</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>Düşük seviyeli test sesi çal ve önerilen oynatma EQ değişikliklerini önizle</translation>
     </message>
     <message>
       <source>Playback</source>
@@ -1257,19 +1257,19 @@ Kitaplığınıza aktarılsın mı?</translation>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>Düşük seviyeli test sesi çalınıyor. Rahatsız ediyorsa durdurun.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>Mikrofon profili seçmek için mikrofonunuzu bağlayın</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>Podcast</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>Pop</translation>
     </message>
     <message>
       <source>Post gain</source>
@@ -1278,79 +1278,79 @@ Kitaplığınıza aktarılsın mı?</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>Ekolayzır sonrası çıkış kazancı</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>Desibel cinsinden çıkış kazancı değeri</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>Hazır ayar adı:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>Hazır ayarlar, EQ bantları, çıkış kazancı ve dengede değişiklikleri önle</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>Profil</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>Profil ayrıntıları</translation>
     </message>
     <message>
       <source>Profile exceeds the 1 MiB limit.</source>
-      <translation type="unfinished" />
+      <translation>Profil 1 MiB sınırını aşıyor.</translation>
     </message>
     <message>
       <source>Profile library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Profil kitaplığı 16 MiB sınırını aşıyor.</translation>
     </message>
     <message>
       <source>Profile metadata is too long.</source>
-      <translation type="unfinished" />
+      <translation>Profil meta verileri çok uzun.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>Profil okunabilir ve 64 KiB'den küçük olmalıdır.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>
-      <translation type="unfinished" />
+      <translation>Profiller 1–16 düzeltme filtresi gerektirir.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>Yayımlanan ölçüm kaynakları: &lt;a href="https://www.spinorama.org/"&gt;Hoparlör ölçümleri / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton seri numarasına göre kalibrasyon&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP seri numarasına göre kalibrasyon&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann mikrofon grafikleri&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 yanıt grafiği&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifikatör ölçümleri&lt;/a&gt;</translation>
     </message>
     <message>
       <source>Published profiles need an HTTPS measurement source.</source>
-      <translation type="unfinished" />
+      <translation>Yayımlanan profiller bir HTTPS ölçüm kaynağı gerektirir.</translation>
     </message>
     <message>
       <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <translation>Yayımlanan sürümler denetlenemedi. Özel Studio sürümleri GitHub erişimi gerektirir. Sürüm indirmelerini aç seçeneğini kullanın; indirilen yükleyiciler yerel olarak algılanmaya devam eder.</translation>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>Yayımlanan yanıt ve düzenlenebilir düzeltme eğrileri</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>Yayımlanan %1 güncellemesi kullanılabilir. Sürüm indirmelerini açın, bu sürümün üzerine yükleyip yeniden açın.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>Vurucu bas</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>Düşük seviyeli logaritmik frekans taraması</translation>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>SoundCurrent EQ'dan çık</translation>
     </message>
     <message>
       <source>Quit app</source>
@@ -1359,41 +1359,43 @@ Kitaplığınıza aktarılsın mı?</translation>
     </message>
     <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>R</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>R&amp;B</translation>
     </message>
     <message>
       <source>Refresh devices</source>
-      <translation>Aygıtları yenile</translation>
+      <translation>Cihazları yenile</translation>
     </message>
     <message>
       <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
 
 %1</source>
-      <translation type="unfinished" />
+      <translation>Göreli ölçümler hoparlör, oda ve mikrofon yanıtını içerir. Önerilen değişiklikler ölçülen her frekansta 3 dB ile sınırlıdır.
+
+%1</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>Güncellemeler kullanılabilir olduğunda veya yeniden başlatma gerektiğinde hatırlat</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>Seçili filtreyi kaldır</translation>
     </message>
     <message>
       <source>Reset</source>
-      <translation type="unfinished" />
+      <translation>Sıfırla</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>Ses efektlerini sıfırla</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>Mikrofon tonunu sıfırla</translation>
     </message>
     <message>
       <source>Reset to flat</source>
