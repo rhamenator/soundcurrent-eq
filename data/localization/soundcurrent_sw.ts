@@ -1400,136 +1400,136 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Reset to flat</source>
       <extracomment>Restore zero gain in all EQ bands. Does not mute playback.</extracomment>
-      <translation>Rejesha mwitikio tambarare</translation>
+      <translation>Weka upya kuwa tambarare</translation>
     </message>
     <message>
       <source>Response data (*.txt *.csv *.frd *.cal)</source>
-      <translation type="unfinished" />
+      <translation>Data ya mwitikio (*.txt *.csv *.frd *.cal)</translation>
     </message>
     <message>
       <source>Response exceeds 4096 points.</source>
-      <translation type="unfinished" />
+      <translation>Mwitikio unazidi nukta 4096.</translation>
     </message>
     <message>
       <source>Response frequencies must increase, with finite bounded values.</source>
-      <translation type="unfinished" />
+      <translation>Masafa ya mwitikio lazima yaongezeke kwa mpangilio, na thamani ziwe za kiasi chenye mwisho ndani ya mipaka.</translation>
     </message>
     <message>
       <source>Response has no usable audio range.</source>
-      <translation type="unfinished" />
+      <translation>Mwitikio hauna eneo la sauti linaloweza kutumika.</translation>
     </message>
     <message>
       <source>Response import</source>
-      <translation type="unfinished" />
+      <translation>Uingizaji wa mwitikio</translation>
     </message>
     <message>
       <source>Response needs 2–4096 measured points.</source>
-      <translation type="unfinished" />
+      <translation>Mwitikio unahitaji nukta 2–4096 zilizopimwa.</translation>
     </message>
     <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
-      <translation type="unfinished" />
+      <translation>Anzisha Windows upya kabla ya kutumia kisawazishi au mipangilio ya VB-CABLE. Mabadiliko ya kiendeshi cha sauti yanahitaji mfumo kuanza upya.</translation>
     </message>
     <message>
       <source>Restore Defaults</source>
-      <translation type="unfinished" />
+      <translation>Rejesha mipangilio ya awali</translation>
     </message>
     <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
-      <translation type="unfinished" />
+      <translation>Rejesha mpangilio wa EQ uliotangulia (Ctrl+Z)</translation>
     </message>
     <message>
       <source>Retry</source>
-      <translation type="unfinished" />
+      <translation>Jaribu tena</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
-      <translation type="unfinished" />
+      <translation>Lugha ya majaribio ya kulia kwenda kushoto</translation>
     </message>
     <message>
       <source>Rock</source>
-      <translation type="unfinished" />
+      <translation>Rock</translation>
     </message>
     <message>
       <source>Save</source>
-      <translation type="unfinished" />
+      <translation>Hifadhi</translation>
     </message>
     <message>
       <source>Save All</source>
-      <translation type="unfinished" />
+      <translation>Hifadhi yote</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
-      <translation type="unfinished" />
+      <translation>Hifadhi mpangilio wa EQ uliowekwa tayari</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
-      <translation type="unfinished" />
+      <translation>Uhifadhi wasifu uliobadilishwa?</translation>
     </message>
     <message>
       <source>Save preset</source>
-      <translation>Hifadhi mpangilio</translation>
+      <translation>Hifadhi mpangilio uliowekwa tayari</translation>
     </message>
     <message>
       <source>Save profile</source>
-      <translation type="unfinished" />
+      <translation>Hifadhi wasifu</translation>
     </message>
     <message>
       <source>Save system response profile</source>
-      <translation type="unfinished" />
+      <translation>Hifadhi wasifu wa mwitikio wa mfumo</translation>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
-      <translation type="unfinished" />
+      <translation>Mpangilio uliowekwa tayari “%1” umehifadhiwa.</translation>
     </message>
     <message>
       <source>Search brand, family, model or measurement conditions</source>
-      <translation type="unfinished" />
+      <translation>Tafuta chapa, familia, modeli au masharti ya kipimo</translation>
     </message>
     <message>
       <source>Second virtual cable for microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Kebo pepe ya pili kwa EQ ya maikrofoni</translation>
     </message>
     <message>
       <source>Select band %1</source>
-      <translation type="unfinished" />
+      <translation>Chagua bendi %1</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
-      <translation type="unfinished" />
+      <translation>Chagua bendi hii kuhariri masafa, gain na Q</translation>
     </message>
     <message>
       <source>Selected audio device is unavailable</source>
-      <translation type="unfinished" />
+      <translation>Kifaa cha sauti kilichochaguliwa hakipatikani</translation>
     </message>
     <message>
       <source>Selected band</source>
       <extracomment>Currently selected frequency band in the equalizer.</extracomment>
-      <translation>Bendi ya masafa iliyochaguliwa</translation>
+      <translation>Bendi iliyochaguliwa</translation>
     </message>
     <message>
       <source>Selected band filter Q</source>
-      <translation type="unfinished" />
+      <translation>Q ya kichujio cha bendi iliyochaguliwa</translation>
     </message>
     <message>
       <source>Selected band frequency</source>
-      <translation type="unfinished" />
+      <translation>Masafa ya bendi iliyochaguliwa</translation>
     </message>
     <message>
       <source>Selected band gain</source>
-      <translation type="unfinished" />
+      <translation>Gain ya bendi iliyochaguliwa</translation>
     </message>
     <message>
       <source>Selected output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>Kifaa cha tokeo kilichochaguliwa hakipatikani tena</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
-      <translation type="unfinished" />
+      <translation>Tokeo lililochaguliwa limekatishwa. Imehamia kwenye tokeo la kiotomatiki.</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
-      <translation type="unfinished" />
+      <translation>Toni hafifu tofauti</translation>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
@@ -1537,83 +1537,83 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
-      <translation type="unfinished" />
+      <translation>Vipindi vifupi husasisha viwango mara nyingi zaidi na kutumia CPU zaidi; utoaji wa sauti unaweza kupunguza kasi halisi</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
-      <translation type="unfinished" />
+      <translation>Onyesha mstari wa kushikilia kilele unaoshuka kwenye kiwango cha kila masafa</translation>
     </message>
     <message>
       <source>Show advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Onyesha vidhibiti vya juu</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>
-      <translation type="unfinished" />
+      <translation>Onyesha alama za kilele kwenye viwango vya masafa</translation>
     </message>
     <message>
       <source>Small Speakers</source>
-      <translation type="unfinished" />
+      <translation>Spika ndogo</translation>
     </message>
     <message>
       <source>Soft Treble</source>
-      <translation type="unfinished" />
+      <translation>Sauti laini za juu</translation>
     </message>
     <message>
       <source>Sound enhancements</source>
-      <translation>Maboresho ya sauti</translation>
+      <translation>Uboreshaji wa sauti</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
-      <translation type="unfinished" />
+      <translation>SoundCurrent Audio hutoa njia yake ya maikrofoni inaposakinishwa. Kwa VB-CABLE, EQ ya maikrofoni na spika kwa wakati mmoja inahitaji kebo ya pili (A au B) iliyosakinishwa kando. Chagua kebo hiyo kwenye programu za kurekodi. Hali ya kiotomatiki hupendelea njia ya SoundCurrent inapopatikana.</translation>
     </message>
     <message>
       <source>Source</source>
-      <translation type="unfinished" />
+      <translation>Chanzo</translation>
     </message>
     <message>
       <source>Speaker</source>
-      <translation type="unfinished" />
+      <translation>Spika</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
-      <translation type="unfinished" />
+      <translation>Urekebishaji wa spika &amp;&amp; chumba</translation>
     </message>
     <message>
       <source>Speaker + room check</source>
-      <translation type="unfinished" />
+      <translation>Ukaguzi wa spika + chumba</translation>
     </message>
     <message>
       <source>Speaker and room measurement</source>
-      <translation type="unfinished" />
+      <translation>Kipimo cha spika na chumba</translation>
     </message>
     <message>
       <source>Speaker filter is outside conservative bounds</source>
-      <translation type="unfinished" />
+      <translation>Kichujio cha spika kiko nje ya mipaka ya tahadhari</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Mtengenezaji wa spika</translation>
     </message>
     <message>
       <source>Speaker model correction</source>
-      <translation type="unfinished" />
+      <translation>Usahihishaji wa modeli ya spika</translation>
     </message>
     <message>
       <source>Speaker model profile</source>
-      <translation type="unfinished" />
+      <translation>Wasifu wa modeli ya spika</translation>
     </message>
     <message>
       <source>Speaker profile details</source>
-      <translation type="unfinished" />
+      <translation>Maelezo ya wasifu wa spika</translation>
     </message>
     <message>
       <source>Speaker profile resource is missing</source>
-      <translation type="unfinished" />
+      <translation>Rasilimali ya wasifu wa spika haipo</translation>
     </message>
     <message>
       <source>Speaker type</source>
-      <translation type="unfinished" />
+      <translation>Aina ya spika</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
