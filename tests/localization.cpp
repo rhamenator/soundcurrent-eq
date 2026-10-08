@@ -158,6 +158,14 @@ int main(int argc,char **argv){
    for(const auto &language:languages())if(language.tag=="he")require(language.translated==language.total,"Hebrew catalog has missing messages");
   }
   {
+   QSettings().setValue("i18n/language","fa");Runtime runtime;runtime.initialize();
+   require(text("Filter Q")==QString::fromUtf8("ضریب کیفیت فیلتر Q"),"Persian filter quality caption incorrect");
+   QDialogButtonBox actions(QDialogButtonBox::Close|QDialogButtonBox::Save);
+   require(actions.button(QDialogButtonBox::Save)->text()==QString::fromUtf8("ذخیره"),"Persian standard actions stayed English");
+   require(QApplication::layoutDirection()==Qt::RightToLeft,"Persian layout is not RTL");
+   for(const auto &language:languages())if(language.tag=="fa")require(language.translated==language.total,"Persian catalog has missing messages");
+  }
+  {
    QSettings().setValue("i18n/language","qps-rtl");Runtime runtime;runtime.initialize();
    auto pattern=text("Value %1 / %2");require(pattern.contains("%1")&&pattern.contains("%2"),"Pseudo locale damaged placeholders");
    require(QApplication::layoutDirection()==Qt::RightToLeft,"RTL layout missing");

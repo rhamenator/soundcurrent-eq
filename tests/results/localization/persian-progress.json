@@ -1,25 +1,25 @@
 {
-  "stage": "Persian saving, speaker profiles and device recovery batch",
+  "stage": "Persian current catalogs complete",
   "catalogs": [
     {
       "tag": "fa",
       "name": "فارسی",
-      "translated": 398,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "8c1e868fa88fb514e3da40a8095427126d5bd1f98d93590ae32e833e58164958",
-      "qmSha256": "a1b479bc101275d32b064f87e71ccddce0283538c332ac0203fdde9a172e12e4"
+      "tsSha256": "151d29537b59ff007637427166a02fedd0de0c5952165024e8089d18e8a38742",
+      "qmSha256": "e942771b2f77b818b552a72cb5bb131167332332905e14277b7690564bb934ff"
     }
   ],
   "linuxTests": {
-    "passed": 3,
-    "total": 3,
-    "scope": "compiled localization, Persian main window and catalog validation",
-    "log": "/tmp/soundcurrent-eq-fa-sixth-tests.log"
+    "passed": 73,
+    "total": 73,
+    "scope": "Full Linux CTest including Persian equipment workflows and RTL catalog assertions",
+    "log": "/tmp/soundcurrent-eq-fa-complete-tests.log"
   },
-  "review": "Contextual AI review; unverified. Save versus discard, speaker correction bounds, peak hold, device recovery, separate cable routing and reverb versus echo reviewed.",
+  "review": "Contextual AI review; unverified. Current catalogs populated; contextual AI review remains unverified. Calibration limitations, microphone versus playback effects, save/quit behavior and neutral render counts reviewed.",
   "nativeReviewed": false,
   "windows": "Pending CI",
-  "remaining": "Persian catalog incomplete. 10 original target catalogs remain incomplete; omitted messages scheduled for second pass. Full bidi and platform qualification remain open."
+  "remaining": "9 original target catalogs incomplete. Second-pass backend/helper/installer coverage, full bidi and platform lifecycle qualification remain open."
 }

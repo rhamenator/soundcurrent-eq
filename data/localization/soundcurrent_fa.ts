@@ -1617,103 +1617,103 @@ Import into your library?</source>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>با صدای کم شروع کنید. فقط اگر میکروفون صداها را نمی‌شنود سطح را افزایش دهید.</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
-      <translation type="unfinished" />
+      <translation>شروع هنگام ورود من</translation>
     </message>
     <message>
       <source>Startup</source>
-      <translation type="unfinished" />
+      <translation>شروع خودکار</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
-      <translation type="unfinished" />
+      <translation>پیش از تغییر درایور صدا، کالیبراسیون میکروفون را متوقف کنید.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>توقف صداهای آزمون</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>اکولایزر پیشنهادی اعمال شد. برای حفظ آن از ذخیره پیش‌تنظیم استفاده کنید.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>تغییرات پیشنهادی اکولایزر پخش</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>صدای فراگیر</translation>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>ویرایشگر پروفایل پاسخ سیستم باز شد. پروفایل‌های ذخیره‌شده در کتابخانه تجهیزات در دسترس هستند.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>گفت‌وگوی تلویزیونی</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>سبزآبی: اکولایزر اصلاحی. نارنجی: پاسخ اندازه‌گیری‌شده، در صورت وجود. مقیاس عمودی بر حسب dB نسبی است.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>سطح آزمون</translation>
     </message>
     <message>
       <source>Test level is outside the allowed range</source>
-      <translation type="unfinished" />
+      <translation>سطح آزمون خارج از محدوده مجاز است</translation>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>پردازشگر صدا به‌طور غیرمنتظره متوقف شد.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
-      <translation type="unfinished" />
+      <translation>کتابخانه سفارشی تا 256 پروفایل نگه می‌دارد.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>پاسخ به‌روزرسانی نامعتبر بود. هیچ نصب‌کننده‌ای باز نشد.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>این گزینه پاسخ اندازه‌گیری‌شده را وارد می‌کند، نه بهره‌های اکولایزری که قبلاً برای اصلاح وارونه شده‌اند. نوع تجهیزات را تأیید کنید. SPL مطلق پیش از وارد کردن به نرمال‌سازی نیاز دارد.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>این پروفایل تغییر کرده است. پیش از خروج یک نسخه سفارشی ذخیره شود؟</translation>
     </message>
     <message>
       <source>Timed out waiting for the equalizer sink: %1</source>
-      <translation type="unfinished" />
+      <translation>مهلت انتظار برای خروجی اکولایزر پایان یافت: %1</translation>
     </message>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
-      <translation type="unfinished" />
+      <translation>صدای آزمون بسیار کمی به میکروفون رسید. آن را نزدیک‌تر کنید یا سطح آزمون را کمی افزایش دهید.</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>پوشش ترجمه: %1 از %2 پیام. پیام‌های بدون ترجمه به انگلیسی نمایش داده می‌شوند. بسته‌های زبان تأییدنشده هستند و منتظر بازبینی گویشور بومی‌اند. برای اعمال تغییرات از خروج استفاده کنید و برنامه را دوباره باز کنید.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>جزئیات فرکانس‌های بالا</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>خاموش کردن اکولایزر</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>روشن کردن اکولایزر</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>نوع</translation>
     </message>
     <message>
       <source>Undo</source>
@@ -1722,43 +1722,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>واگرد آخرین تغییر اکولایزر</translation>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>باز کردن قفل اکولایزر</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>پیش از ویرایش پروفایل‌ها، قفل کنترل‌ها را باز کنید و اندازه‌گیری را به پایان برسانید.</translation>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation type="unfinished" />
+      <translation>طرح ساختار پروفایل تجهیزات پشتیبانی نمی‌شود (نسخه مورد انتظار 2).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
-      <translation type="unfinished" />
+      <translation>نوع فیلتر پشتیبانی نمی‌شود.</translation>
     </message>
     <message>
       <source>Unsupported microphone channel layout</source>
-      <translation type="unfinished" />
+      <translation>چیدمان کانال‌های میکروفون پشتیبانی نمی‌شود</translation>
     </message>
     <message>
       <source>Unsupported speaker profile schema</source>
-      <translation type="unfinished" />
+      <translation>طرح ساختار پروفایل بلندگو پشتیبانی نمی‌شود</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>به‌روزرسانی %1 دانلود شده است: %2. از برنامه خارج شوید، روی برنامه موجود نصب کنید و دوباره باز کنید.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>پوشه دانلود به‌روزرسانی</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>از اتاقی آرام استفاده کنید. بلندگوها، اتاق و میکروفون را با هم اندازه‌گیری می‌کند؛ نتایج شامل پاسخ میکروفون هستند.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1767,39 +1767,39 @@ Import into your library?</source>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>استفاده از منطقهٔ سیستم</translation>
+      <translation>استفاده از تنظیمات منطقه‌ای سیستم</translation>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>تنظیمات VB-CABLE</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>تمرکز بر صدای انسان</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>در انتظار میکروفون.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>گرم</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>گرمی صدا</translation>
     </message>
     <message>
       <source>Yes</source>
-      <translation type="unfinished" />
+      <translation>بله</translation>
     </message>
     <message>
       <source>Yes to All</source>
-      <translation type="unfinished" />
+      <translation>بله به همه</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>صفر هر افکت را خاموش می‌کند. این افکت‌های شنیدن روی پخش بلندگو اعمال می‌شوند، نه اصلاح میکروفون.</translation>
     </message>
   </context>
 </TS>
