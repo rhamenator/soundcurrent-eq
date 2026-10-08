@@ -14,8 +14,8 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 ## Current checkpoint
 
-- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr, sv, da, nb, fi, ro, hu, nn, ar, he, fa, zh-Hans, zh-Hant, ja, ko, hi, id, vi; 441 extracted messages each. These are unverified translations; nativeReviewed remains false.
-- Other 2 original target locales (Thai and Swahili) remain incomplete. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
+- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr, sv, da, nb, fi, ro, hu, nn, ar, he, fa, zh-Hans, zh-Hant, ja, ko, hi, id, vi, th; 441 extracted messages each. These are unverified translations; nativeReviewed remains false.
+- The remaining original target locale (Swahili) is incomplete. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
 - Coverage is distinct from contextual AI review, native-speaker verification and runtime qualification. Checkpoint reports in tests/results/localization identify tested catalogs, platforms and scopes.
 - Runtime supports separate UI language and number/date locale selection, regional/script fallback, pseudo localization and RTL. Maintenance preserves unfinished edits/comments and rejects unsupported numerus before rewriting.
 - Shared interface layout now wraps meter guidance; the curve instruction also wraps for longer translated text.
@@ -24,7 +24,7 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 Populate all current messages for every existing locale, pass structural and compiled/live UI checks on Linux/Windows, validate changed packages, and record evidence/known limitations. Full populated coverage must never be labeled native-speaker verification without an identified reviewer and catalog-specific evidence. The global --require-complete gate will remain failing until all missing entries are filled. No arbitrary English copies should be inserted merely to pass coverage.
 
-Next translation batch: Thai, then Swahili. French, German, Spanish and Italian are required to stay populated as sources evolve. The Filter Q caption now describes the dimensionless filter quality parameter; saved processing IDs and numeric values are unchanged.
+Next translation batch: Swahili. French, German, Spanish and Italian are required to stay populated as sources evolve. The Filter Q caption now describes the dimensionless filter quality parameter; saved processing IDs and numeric values are unchanged.
 
 Windows audio setup now translates application-owned failure, repair, calibration and restart instructions. Restart-required results always retain the translated reboot instruction alongside original helper diagnostics. The source guard also rejects unmarked literal messages passed to the setup completion helper.
 
@@ -383,3 +383,7 @@ Thai now has 349/441 populated current catalog entries. Added output controls, s
 ### Thai: sixth existing-catalog batch
 
 Thai now has 398/441 populated current catalog entries. Added save/reset actions, room measurement and microphone-routing guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Thai existing catalog complete
+
+All 441/441 current Thai catalog entries are populated. Required-complete and regional fallback gates now include Thai. Both apps passed four focused Linux checks, including the profile import/edit/save/cancel/discard/apply workflow. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.

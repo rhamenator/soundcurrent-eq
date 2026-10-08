@@ -229,6 +229,15 @@ int main(int argc,char **argv){
    for(const auto &language:languages())if(language.tag=="vi")require(language.translated==language.total,"Vietnamese catalog has missing messages");
   }
   {
+   QSettings().setValue("i18n/language","th");Runtime runtime;runtime.initialize();
+   require(text("Filter Q")==QString::fromUtf8("ค่า Q ของฟิลเตอร์"),"Thai filter Q caption incorrect");
+   QDialogButtonBox actions(QDialogButtonBox::Save);
+   require(actions.button(QDialogButtonBox::Save)->text()==QString::fromUtf8("บันทึก"),"Thai standard Save button incorrect");
+   require(QApplication::layoutDirection()==Qt::LeftToRight,"Thai direction incorrect");
+   require(resolve("th-TH")=="th","Thai regional fallback incorrect");
+   for(const auto &language:languages())if(language.tag=="th")require(language.translated==language.total,"Thai catalog has missing messages");
+  }
+  {
    QSettings().setValue("i18n/language","qps-rtl");Runtime runtime;runtime.initialize();
    auto pattern=text("Value %1 / %2");require(pattern.contains("%1")&&pattern.contains("%2"),"Pseudo locale damaged placeholders");
    require(QApplication::layoutDirection()==Qt::RightToLeft,"RTL layout missing");

@@ -1,25 +1,25 @@
 {
-  "stage": "Thai sixth existing-catalog batch",
+  "stage": "Thai existing catalog complete",
   "catalogs": [
     {
       "tag": "th",
       "name": "ไทย",
-      "translated": 398,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "09158e547aa1df77287662201c510ca8de8ef3e04692c729ff132b793a45474a",
-      "qmSha256": "760e9b4b2e853459397f01fc9aaaea79b1f1680afc8ba3794c0af856f71874f1"
+      "tsSha256": "5c7e4bfaf8a352d9e348496d85d06b0a7dfcd65584ebbe7f19e4c39f65b1ba50",
+      "qmSha256": "ab6f938fab8a5c0d4dfc690959a39a3ea693cc1f239294317c872429b7dc62e5"
     }
   ],
   "linuxTests": {
-    "passed": 3,
-    "total": 3,
-    "scope": "Embedded localization assertions, Thai MainWindow offscreen smoke test and structural catalog checks",
-    "log": "/tmp/soundcurrent-eq-th-sixth-tests.log"
+    "passed": 4,
+    "total": 4,
+    "scope": "Embedded localization assertions, Thai profile import/edit/save/cancel/discard/apply workflow, MainWindow offscreen smoke test and structural catalog checks",
+    "log": "/tmp/soundcurrent-eq-th-final-tests.log"
   },
-  "review": "Contextual AI review of shared source entries 0–469: save/reset actions, measured response bounds, room measurement, microphone routing and distinct reverb/echo controls. Placeholders, file patterns and numerical limits preserved. Linguistic accuracy unverified.",
+  "review": "Contextual AI review of all current Thai catalog entries: microphone/room measurement limits, channel gain trim, zero-valued effect bypass, save/undo actions and regional fallback. Placeholders, file patterns, hyperlinks and numerical limits preserved. Linguistic accuracy unverified.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
-  "remaining": "Thai incomplete; Swahili also incomplete. Omitted source messages reserved for second pass."
+  "remaining": "Swahili existing catalog incomplete; omitted source messages reserved for second pass. Windows and visual qualification pending."
 }

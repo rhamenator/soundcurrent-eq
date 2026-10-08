@@ -1617,103 +1617,103 @@ Import into your library?</source>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>เริ่มด้วยเสียงเบา เพิ่มเฉพาะเมื่อไมโครโฟนไม่ได้ยินเสียงทดสอบ</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
-      <translation type="unfinished" />
+      <translation>เริ่มเมื่อฉันเข้าสู่ระบบ</translation>
     </message>
     <message>
       <source>Startup</source>
-      <translation type="unfinished" />
+      <translation>การเริ่มต้น</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
-      <translation type="unfinished" />
+      <translation>หยุดการปรับเทียบไมโครโฟนก่อนเปลี่ยนไดรเวอร์เสียง</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>หยุดเสียงทดสอบ</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>ใช้ EQ ที่แนะนำแล้ว ใช้ บันทึกพรีเซ็ต เพื่อเก็บไว้</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>การเปลี่ยน EQ สำหรับเล่นเสียงที่แนะนำ</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>เสียงเซอร์ราวด์</translation>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>เปิดตัวแก้ไขโปรไฟล์การตอบสนองของระบบแล้ว โปรไฟล์ที่บันทึกมีอยู่ในคลังอุปกรณ์</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>บทสนทนา TV</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>สีเขียวอมฟ้า: EQ ชดเชย สีส้ม: การตอบสนองที่วัดได้เมื่อมีข้อมูล สเกลแนวตั้งเป็น dB สัมพัทธ์</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>ระดับทดสอบ</translation>
     </message>
     <message>
       <source>Test level is outside the allowed range</source>
-      <translation type="unfinished" />
+      <translation>ระดับทดสอบอยู่นอกช่วงที่อนุญาต</translation>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>ตัวประมวลผลเสียงหยุดโดยไม่คาดคิด</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
-      <translation type="unfinished" />
+      <translation>คลังกำหนดเองรองรับสูงสุด 256 โปรไฟล์</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>การตอบกลับอัปเดตไม่ถูกต้อง ไม่ได้เปิดตัวติดตั้ง</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>นี่เป็นการนำเข้าการตอบสนองที่วัดได้ ไม่ใช่เกน EQ ที่กลับค่าแล้ว ยืนยันประเภทอุปกรณ์ SPL สัมบูรณ์ต้องปรับให้อยู่ในมาตรฐานก่อนนำเข้า</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>โปรไฟล์นี้มีการเปลี่ยนแปลง บันทึกสำเนากำหนดเองก่อนออกหรือไม่?</translation>
     </message>
     <message>
       <source>Timed out waiting for the equalizer sink: %1</source>
-      <translation type="unfinished" />
+      <translation>หมดเวลารอเอาต์พุตเสมือนอีควอไลเซอร์: %1</translation>
     </message>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
-      <translation type="unfinished" />
+      <translation>เสียงทดสอบที่ถึงไมโครโฟนเบาเกินไป ขยับให้ใกล้ขึ้นหรือเพิ่มระดับทดสอบเล็กน้อย</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>ความครอบคลุมการแปล: %1 จาก %2 ข้อความ ข้อความที่ยังไม่แปลใช้ภาษาอังกฤษ ชุดภาษายังไม่ผ่านการยืนยันและรอผู้ใช้ภาษาแม่ตรวจสอบ ใช้ ออกจากแอป แล้วเปิดใหม่เพื่อใช้การเปลี่ยนแปลง</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>รายละเอียดเสียงแหลม</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>ปิดอีควอไลเซอร์</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>เปิดอีควอไลเซอร์</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>ประเภท</translation>
     </message>
     <message>
       <source>Undo</source>
@@ -1722,43 +1722,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>เลิกทำการเปลี่ยนอีควอไลเซอร์ล่าสุด</translation>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>ปลดล็อก EQ</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>ปลดล็อกตัวควบคุมและวัดให้เสร็จก่อนแก้ไขโปรไฟล์</translation>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation type="unfinished" />
+      <translation>ไม่รองรับรุ่นโครงสร้างโปรไฟล์อุปกรณ์ (ต้องเป็น 2)</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
-      <translation type="unfinished" />
+      <translation>ไม่รองรับประเภทฟิลเตอร์</translation>
     </message>
     <message>
       <source>Unsupported microphone channel layout</source>
-      <translation type="unfinished" />
+      <translation>ไม่รองรับโครงร่างแชนเนลไมโครโฟน</translation>
     </message>
     <message>
       <source>Unsupported speaker profile schema</source>
-      <translation type="unfinished" />
+      <translation>ไม่รองรับรุ่นโครงสร้างโปรไฟล์ลำโพง</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>ดาวน์โหลดอัปเดต %1 แล้ว: %2 ออกจากแอป ติดตั้งทับแอปเดิม แล้วเปิดใหม่</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>โฟลเดอร์ดาวน์โหลดอัปเดต</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>ใช้ห้องเงียบ วัดลำโพง ห้อง และไมโครโฟนร่วมกัน ผลรวมการตอบสนองของไมโครโฟนด้วย</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1767,39 +1767,39 @@ Import into your library?</source>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>ใช้ภูมิภาคของระบบ</translation>
+      <translation>ใช้การตั้งค่าภูมิภาคของระบบ</translation>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>การตั้งค่า VB-CABLE</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>เน้นเสียงร้อง</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>กำลังรอไมโครโฟน</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>เสียงอุ่น</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>ความอุ่น</translation>
     </message>
     <message>
       <source>Yes</source>
-      <translation type="unfinished" />
+      <translation>ใช่</translation>
     </message>
     <message>
       <source>Yes to All</source>
-      <translation type="unfinished" />
+      <translation>ใช่ทั้งหมด</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>ค่า 0 ปิดเอฟเฟกต์แต่ละตัว เอฟเฟกต์สำหรับฟังเหล่านี้ใช้กับเสียงที่เล่นผ่านลำโพง ไม่ใช่การชดเชยไมโครโฟน</translation>
     </message>
   </context>
 </TS>
