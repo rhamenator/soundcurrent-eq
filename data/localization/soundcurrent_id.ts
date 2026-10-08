@@ -866,43 +866,43 @@ Impor ke pustaka Anda?</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
-      <translation type="unfinished" />
+      <translation>Impor, buat, dan edit profil peralatan</translation>
     </message>
     <message>
       <source>Import equipment profile</source>
-      <translation type="unfinished" />
+      <translation>Impor profil peralatan</translation>
     </message>
     <message>
       <source>Import measured amplifier correction</source>
-      <translation type="unfinished" />
+      <translation>Impor koreksi amplifier hasil pengukuran</translation>
     </message>
     <message>
       <source>Import measured profile</source>
-      <translation type="unfinished" />
+      <translation>Impor profil hasil pengukuran</translation>
     </message>
     <message>
       <source>Import profile?</source>
-      <translation type="unfinished" />
+      <translation>Impor profil?</translation>
     </message>
     <message>
       <source>Import relative measured response</source>
-      <translation type="unfinished" />
+      <translation>Impor respons pengukuran relatif</translation>
     </message>
     <message>
       <source>Import response text</source>
-      <translation type="unfinished" />
+      <translation>Impor teks respons</translation>
     </message>
     <message>
       <source>Include preview releases</source>
-      <translation type="unfinished" />
+      <translation>Sertakan rilis pratinjau</translation>
     </message>
     <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Instal paket baru di atas versi ini — tidak perlu menghapus instalasi. Preset dan profil dipertahankan. Simpan pekerjaan Anda, gunakan Keluar (menutup jendela membuat aplikasi tetap berjalan), instal pembaruan, lalu buka kembali.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
-      <translation type="unfinished" />
+      <translation>Versi terinstal: %1</translation>
     </message>
     <message>
       <source>Interface language</source>
@@ -910,79 +910,79 @@ Impor ke pustaka Anda?</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
-      <translation type="unfinished" />
+      <translation>Subjenis peralatan atau jenis daya tidak valid</translation>
     </message>
     <message>
       <source>Invalid filter.</source>
-      <translation type="unfinished" />
+      <translation>Filter tidak valid.</translation>
     </message>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
-      <translation type="unfinished" />
+      <translation>Profil amplifier hasil pengukuran tidak valid. Diperlukan model, sumber pengukuran HTTPS, kondisi pengukuran, dan 1–16 filter PK/LS/HS dalam batas yang ditentukan. Lihat format profil di README.</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
-      <translation type="unfinished" />
+      <translation>Respons pengukuran tidak valid atau tidak berurutan.</translation>
     </message>
     <message>
       <source>Invalid or unordered response data.</source>
-      <translation type="unfinished" />
+      <translation>Data respons tidak valid atau tidak berurutan.</translation>
     </message>
     <message>
       <source>Invalid profile library.</source>
-      <translation type="unfinished" />
+      <translation>Pustaka profil tidak valid.</translation>
     </message>
     <message>
       <source>Invalid response from pactl</source>
-      <translation type="unfinished" />
+      <translation>Respons dari pactl tidak valid</translation>
     </message>
     <message>
       <source>Invalid response point.</source>
-      <translation type="unfinished" />
+      <translation>Titik respons tidak valid.</translation>
     </message>
     <message>
       <source>Invalid speaker correction filter count</source>
-      <translation type="unfinished" />
+      <translation>Jumlah filter koreksi speaker tidak valid</translation>
     </message>
     <message>
       <source>Invalid speaker filter type</source>
-      <translation type="unfinished" />
+      <translation>Jenis filter speaker tidak valid</translation>
     </message>
     <message>
       <source>Invalid speaker identity</source>
-      <translation type="unfinished" />
+      <translation>Identitas speaker tidak valid</translation>
     </message>
     <message>
       <source>Jazz</source>
-      <translation type="unfinished" />
+      <translation>Jazz</translation>
     </message>
     <message>
       <source>Keep current EQ</source>
-      <translation type="unfinished" />
+      <translation>Pertahankan EQ saat ini</translation>
     </message>
     <message>
       <source>L</source>
-      <translation type="unfinished" />
+      <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
-      <translation>Bahasa dan wilayah</translation>
+      <translation>Pengaturan bahasa dan wilayah</translation>
     </message>
     <message>
       <source>Left right balance</source>
-      <translation type="unfinished" />
+      <translation>Keseimbangan kiri dan kanan</translation>
     </message>
     <message>
       <source>Level indicator refresh interval</source>
-      <translation type="unfinished" />
+      <translation>Interval pembaruan indikator level</translation>
     </message>
     <message>
       <source>Level refresh</source>
-      <translation type="unfinished" />
+      <translation>Pembaruan level</translation>
     </message>
     <message>
       <source>Library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Pustaka melebihi 16 MiB.</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -991,11 +991,11 @@ Impor ke pustaka Anda?</translation>
     </message>
     <message>
       <source>Live</source>
-      <translation type="unfinished" />
+      <translation>Live</translation>
     </message>
     <message>
       <source>Lo-Fi</source>
-      <translation type="unfinished" />
+      <translation>Lo-Fi</translation>
     </message>
     <message>
       <source>Lock EQ</source>
@@ -1004,59 +1004,59 @@ Impor ke pustaka Anda?</translation>
     </message>
     <message>
       <source>Lock equalizer settings</source>
-      <translation type="unfinished" />
+      <translation>Kunci pengaturan equalizer</translation>
     </message>
     <message>
       <source>Loudness</source>
-      <translation type="unfinished" />
+      <translation>Kompensasi loudness</translation>
     </message>
     <message>
       <source>Manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Produsen</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
-      <translation type="unfinished" />
+      <translation>Batas maksimal 32 profil amplifier tercapai.</translation>
     </message>
     <message>
       <source>Maximum stereo width</source>
-      <translation type="unfinished" />
+      <translation>Lebar stereo maksimum</translation>
     </message>
     <message>
       <source>Measure</source>
-      <translation type="unfinished" />
+      <translation>Ukur</translation>
     </message>
     <message>
       <source>Measure speaker room and microphone response</source>
-      <translation type="unfinished" />
+      <translation>Ukur respons speaker, ruangan, dan mikrofon</translation>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
-      <translation type="unfinished" />
+      <translation>Koreksi model hasil pengukuran ditambahkan ke EQ mendengarkan Anda. Anda tetap dapat menambah bas atau menyesuaikan pita mana pun. Batas gain konservatif diterapkan; pengaruh ruangan dan amplifier memerlukan pengukuran sistem.</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
-      <translation type="unfinished" />
+      <translation>Kondisi pengukuran wajib diisi.</translation>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
-      <translation type="unfinished" />
+      <translation>Data pengukuran tidak lengkap.</translation>
     </message>
     <message>
       <source>Measurement failed. Try a higher test level or move the mic closer.</source>
-      <translation type="unfinished" />
+      <translation>Pengukuran gagal. Coba tingkatkan level uji atau dekatkan mikrofon.</translation>
     </message>
     <message>
       <source>Measurement stopped.</source>
-      <translation type="unfinished" />
+      <translation>Pengukuran dihentikan.</translation>
     </message>
     <message>
       <source>Metal</source>
-      <translation type="unfinished" />
+      <translation>Metal</translation>
     </message>
     <message>
       <source>Mic gain</source>
-      <translation type="unfinished" />
+      <translation>Gain mikrofon</translation>
     </message>
     <message>
       <source>Microphone</source>
@@ -1064,59 +1064,59 @@ Impor ke pustaka Anda?</translation>
     </message>
     <message>
       <source>Microphone %1 adjustment</source>
-      <translation type="unfinished" />
+      <translation>Penyesuaian %1 mikrofon</translation>
     </message>
     <message>
       <source>Microphone EQ is off.</source>
-      <translation type="unfinished" />
+      <translation>EQ mikrofon nonaktif.</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
-      <translation type="unfinished" />
+      <translation>Perekaman mikrofon berhenti selama pemutaran</translation>
     </message>
     <message>
       <source>Microphone capture stopped during the test</source>
-      <translation type="unfinished" />
+      <translation>Perekaman mikrofon berhenti selama pengujian</translation>
     </message>
     <message>
       <source>Microphone error: %1</source>
-      <translation type="unfinished" />
+      <translation>Kesalahan mikrofon: %1</translation>
     </message>
     <message>
       <source>Microphone filter did not appear</source>
-      <translation type="unfinished" />
+      <translation>Filter mikrofon tidak muncul</translation>
     </message>
     <message>
       <source>Microphone filter disappeared</source>
-      <translation type="unfinished" />
+      <translation>Filter mikrofon menghilang</translation>
     </message>
     <message>
       <source>Microphone gain adjustment</source>
-      <translation type="unfinished" />
+      <translation>Penyesuaian gain mikrofon</translation>
     </message>
     <message>
       <source>Microphone input device</source>
-      <translation type="unfinished" />
+      <translation>Perangkat masukan mikrofon</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
-      <translation type="unfinished" />
+      <translation>Rekaman mikrofon mengalami clipping. Kurangi gain atau penguatan mikrofon, lalu ulangi pengukuran.</translation>
     </message>
     <message>
       <source>Microphone route</source>
-      <translation type="unfinished" />
+      <translation>Jalur mikrofon</translation>
     </message>
     <message>
       <source>Model</source>
-      <translation type="unfinished" />
+      <translation>Model</translation>
     </message>
     <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
-      <translation type="unfinished" />
+      <translation>Geser ke L atau R untuk mengurangi level kanal sebaliknya; posisi tengah mempertahankan keduanya pada level penuh</translation>
     </message>
     <message>
       <source>Movies</source>
-      <translation type="unfinished" />
+      <translation>Film</translation>
     </message>
     <message>
       <source>Natural mic EQ</source>
@@ -1125,15 +1125,15 @@ Impor ke pustaka Anda?</translation>
     </message>
     <message>
       <source>Natural mic EQ on · %1</source>
-      <translation type="unfinished" />
+      <translation>EQ mikrofon alami aktif · %1</translation>
     </message>
     <message>
       <source>Natural microphone equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Aktifkan atau nonaktifkan equalizer mikrofon alami</translation>
     </message>
     <message>
       <source>Night Listening</source>
-      <translation type="unfinished" />
+      <translation>Mendengarkan malam hari</translation>
     </message>
     <message>
       <source>No</source>

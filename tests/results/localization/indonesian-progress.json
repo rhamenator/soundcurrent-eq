@@ -1,24 +1,24 @@
 {
-  "stage": "Indonesian third existing-catalog batch",
+  "stage": "Indonesian fourth existing-catalog batch",
   "catalogs": [
     {
       "tag": "id",
       "name": "Bahasa Indonesia",
-      "translated": 230,
+      "translated": 291,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "818f8a946b23280a7e3a4016e77726a0ea4b87e58e8b4680073128b1918fed7e",
-      "qmSha256": "44356ac00970e06721677c37dd829f58e4faae0e0b0e635a899531181734f965"
+      "tsSha256": "af467444a6574f5f787e65af96ed4e8d6ffcc15b9ffe87d52e318293a6b04bfc",
+      "qmSha256": "956056013e1a28d5f2111b60b1a0cb9458036bd3863d86eded79fff4570048d4"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "Embedded localization assertions, Indonesian MainWindow offscreen smoke test and structural catalog checks",
-    "log": "/tmp/soundcurrent-eq-id-third-tests.log"
+    "log": "/tmp/soundcurrent-eq-id-fourth-tests.log"
   },
-  "review": "Contextual AI review of shared source entries 0–239: effects dynamics, estimated metering, physical L/R, editor import/export, filter constraints and quit versus close. File patterns, placeholders and numerical limits preserved. Linguistic accuracy unverified.",
+  "review": "Contextual AI review of shared source entries 0–319: measured amplifier validation, model correction versus room measurement, microphone clipping, balance attenuation and live channel constraints. File patterns, placeholders and numerical limits preserved. Linguistic accuracy unverified.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
   "remaining": "Indonesian incomplete. Four target catalogs still incomplete; omitted source messages reserved for second pass."
