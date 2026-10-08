@@ -1,34 +1,34 @@
 {
-  "stage": "Norwegian Bokmål/Finnish microphone and measurement batch",
+  "stage": "Norwegian Bokmål/Finnish startup and rendering batch",
   "catalogs": [
     {
       "tag": "nb",
       "name": "Norsk bokmål",
-      "translated": 292,
+      "translated": 349,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "30d0d10bfe2bdcf65851d358c6f83cc609b262135364b4aeba3377615ef2ac35",
-      "qmSha256": "9ebbf271f93c89a6d23e61eaef3bd692bca29f97b1aa8a6ef2e033882f2d3068"
+      "tsSha256": "f6a9d623666707471716d73910a27fc880788f60afbd37ddb8acf26f7634a316",
+      "qmSha256": "27f35edc606bb1c6f48917ed79bd975949728352e45ca75b4a9cab388c19f1f0"
     },
     {
       "tag": "fi",
       "name": "Suomi",
-      "translated": 292,
+      "translated": 349,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "51b34b510467b57ad7d09f2b70019b35caf3a82ffc70cce3cc8e42a17a3f9042",
-      "qmSha256": "918ff7fd28d7246bf66adb26e93d6e075454d649739840558543e14b8803290e"
+      "tsSha256": "6335952c145a2f1010ccb4bd6062208680e335083f8a8fe8f961964a8bb70ce5",
+      "qmSha256": "9f1ee35baee70c0bd896b0a796ecba840d61b0749628227f190082ea9fa1b2d8"
     }
   ],
   "linuxTests": {
     "passed": 4,
     "total": 4,
     "scope": "compiled localization, Norwegian Bokmål/Finnish main windows and catalog regressions",
-    "log": "/tmp/soundcurrent-eq-nb-fi-fourth-tests.log"
+    "log": "/tmp/soundcurrent-eq-nb-fi-fifth-tests.log"
   },
-  "review": "Contextual AI review; unverified. Whole-system measurement limits, microphone clipping, additive correction, polarity and attenuation-only balance reviewed. Both endpoint captions match localized balance instructions.",
+  "review": "Contextual AI review; unverified. Shared sign-in registration ownership, profile reference preservation, bounded measurement suggestions and neutral rendering counts reviewed. Link captions are translated with original destinations preserved.",
   "nativeReviewed": false,
   "windows": "Pending CI",
   "remaining": "Norwegian Bokmål, Finnish and 14 other target catalogs incomplete."
