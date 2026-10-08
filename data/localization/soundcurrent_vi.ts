@@ -586,43 +586,43 @@ Nhập vào thư viện của bạn?</translation>
     </message>
     <message>
       <source>Discard</source>
-      <translation type="unfinished" />
+      <translation>Bỏ thay đổi</translation>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
-      <translation type="unfinished" />
+      <translation>Kéo các điểm trên đường cong hoặc điều chỉnh dải đã chọn bên dưới.</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
-      <translation type="unfinished" />
+      <translation>Tăng cường động</translation>
     </message>
     <message>
       <source>Dynamics attack</source>
-      <translation type="unfinished" />
+      <translation>Thời gian attack của xử lý động</translation>
     </message>
     <message>
       <source>Dynamics ceiling</source>
-      <translation type="unfinished" />
+      <translation>Giới hạn đỉnh của xử lý động</translation>
     </message>
     <message>
       <source>Dynamics makeup</source>
-      <translation type="unfinished" />
+      <translation>Gain bù của xử lý động</translation>
     </message>
     <message>
       <source>Dynamics ratio</source>
-      <translation type="unfinished" />
+      <translation>Tỷ lệ nén của xử lý động</translation>
     </message>
     <message>
       <source>Dynamics release</source>
-      <translation type="unfinished" />
+      <translation>Thời gian release của xử lý động</translation>
     </message>
     <message>
       <source>Dynamics threshold</source>
-      <translation type="unfinished" />
+      <translation>Ngưỡng của xử lý động</translation>
     </message>
     <message>
       <source>Edit / save copy</source>
-      <translation type="unfinished" />
+      <translation>Chỉnh sửa / lưu bản sao</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -630,181 +630,181 @@ Nhập vào thư viện của bạn?</translation>
     </message>
     <message>
       <source>Electronic</source>
-      <translation type="unfinished" />
+      <translation>Nhạc điện tử</translation>
     </message>
     <message>
       <source>Equalizer</source>
       <extracomment>Audio frequency-response processor, not social equality.</extracomment>
-      <translation>Bộ cân bằng âm thanh</translation>
+      <translation>Bộ cân bằng âm</translation>
     </message>
     <message>
       <source>Equalizer and configuration pages</source>
-      <translation type="unfinished" />
+      <translation>Các trang cân bằng âm và thiết lập</translation>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>
-      <translation type="unfinished" />
+      <translation>Đường cong cân bằng âm. Chọn hoặc kéo điểm để điều chỉnh tần số và gain.</translation>
     </message>
     <message>
       <source>Equalizer is off. Windows selected the physical output directly.</source>
-      <translation type="unfinished" />
+      <translation>Bộ cân bằng âm đã tắt. Windows đã chọn trực tiếp đầu ra vật lý.</translation>
     </message>
     <message>
       <source>Equalizer is off. Your audio uses its normal output.</source>
-      <translation type="unfinished" />
+      <translation>Bộ cân bằng âm đã tắt. Âm thanh dùng đầu ra thông thường.</translation>
     </message>
     <message>
       <source>Equalizer is still running. Use the tray icon to reopen or quit.</source>
-      <translation type="unfinished" />
+      <translation>Bộ cân bằng âm vẫn chạy. Dùng biểu tượng khay để mở lại hoặc thoát.</translation>
     </message>
     <message>
       <source>Equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Cân bằng âm tắt</translation>
     </message>
     <message>
       <source>Equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Cân bằng âm bật</translation>
     </message>
     <message>
       <source>Equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Bật hoặc tắt bộ cân bằng âm</translation>
     </message>
     <message>
       <source>Equalizer sink disappeared</source>
-      <translation type="unfinished" />
+      <translation>Đầu ra ảo của bộ cân bằng âm đã biến mất</translation>
     </message>
     <message>
       <source>Equipment brand</source>
-      <translation type="unfinished" />
+      <translation>Thương hiệu thiết bị</translation>
     </message>
     <message>
       <source>Equipment family</source>
-      <translation type="unfinished" />
+      <translation>Dòng sản phẩm thiết bị</translation>
     </message>
     <message>
       <source>Equipment kind must be speaker, microphone or amplifier.</source>
-      <translation type="unfinished" />
+      <translation>Loại thiết bị phải là loa, micrô hoặc ampli.</translation>
     </message>
     <message>
       <source>Equipment profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình thiết bị (*.json)</translation>
     </message>
     <message>
       <source>Equipment profile editor</source>
-      <translation type="unfinished" />
+      <translation>Trình chỉnh sửa cấu hình thiết bị</translation>
     </message>
     <message>
       <source>Equipment profiles (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình thiết bị (*.json)</translation>
     </message>
     <message>
       <source>Equipment profiles by brand family and model</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình thiết bị theo thương hiệu, dòng sản phẩm và mẫu</translation>
     </message>
     <message>
       <source>Equipment profiles — brand / family / model</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình thiết bị — thương hiệu / dòng sản phẩm / mẫu</translation>
     </message>
     <message>
       <source>Equipment resource missing.</source>
-      <translation type="unfinished" />
+      <translation>Thiếu tài nguyên thiết bị.</translation>
     </message>
     <message>
       <source>Equipment subtype</source>
-      <translation type="unfinished" />
+      <translation>Loại phụ của thiết bị</translation>
     </message>
     <message>
       <source>Equipment type</source>
-      <translation type="unfinished" />
+      <translation>Loại thiết bị</translation>
     </message>
     <message>
       <source>Estimated output level near band %1</source>
-      <translation type="unfinished" />
+      <translation>Mức đầu ra ước tính gần dải %1</translation>
     </message>
     <message>
       <source>Estimated output near %1: %2 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Đầu ra ước tính gần %1: %2 dBFS</translation>
     </message>
     <message>
       <source>Estimated output peak and clipping risk</source>
-      <translation type="unfinished" />
+      <translation>Đỉnh đầu ra ước tính và nguy cơ xén đỉnh</translation>
     </message>
     <message>
       <source>Estimated overall output level</source>
-      <translation type="unfinished" />
+      <translation>Mức đầu ra tổng thể ước tính</translation>
     </message>
     <message>
       <source>Estimated overall output peak: %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Đỉnh đầu ra tổng thể ước tính: %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Đỉnh ước tính %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak: EQ off</source>
-      <translation type="unfinished" />
+      <translation>Đỉnh ước tính: EQ tắt</translation>
     </message>
     <message>
       <source>Estimated peak: waiting for audio</source>
-      <translation type="unfinished" />
+      <translation>Đỉnh ước tính: chờ âm thanh</translation>
     </message>
     <message>
       <source>Estimated post-EQ level near this frequency</source>
-      <translation type="unfinished" />
+      <translation>Mức ước tính sau EQ gần tần số này</translation>
     </message>
     <message>
       <source>Estimated post-EQ output peak, including post gain and balance</source>
-      <translation type="unfinished" />
+      <translation>Đỉnh đầu ra ước tính sau EQ, bao gồm gain sau EQ và cân bằng</translation>
     </message>
     <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
-      <translation type="unfinished" />
+      <translation>Thoát SoundCurrent EQ và khôi phục âm thanh thông thường</translation>
     </message>
     <message>
       <source>Expanded test language</source>
-      <translation type="unfinished" />
+      <translation>Ngôn ngữ thử với chuỗi mở rộng</translation>
     </message>
     <message>
       <source>Expected a JSON equipment profile. Import response text using the response import button.</source>
-      <translation type="unfinished" />
+      <translation>Cần cấu hình thiết bị JSON. Nhập văn bản đáp tuyến bằng nút nhập đáp tuyến.</translation>
     </message>
     <message>
       <source>Expected frequency Hz and relative measured response dB on every data line.</source>
-      <translation type="unfinished" />
+      <translation>Mỗi dòng dữ liệu cần có tần số Hz và đáp tuyến đo tương đối dB.</translation>
     </message>
     <message>
       <source>Export</source>
-      <translation type="unfinished" />
+      <translation>Xuất</translation>
     </message>
     <message>
       <source>Export JSON</source>
-      <translation type="unfinished" />
+      <translation>Xuất JSON</translation>
     </message>
     <message>
       <source>Export profile</source>
-      <translation type="unfinished" />
+      <translation>Xuất cấu hình</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
-      <translation type="unfinished" />
+      <translation>Tiếng bước chân FPS</translation>
     </message>
     <message>
       <source>Family</source>
-      <translation type="unfinished" />
+      <translation>Dòng sản phẩm</translation>
     </message>
     <message>
       <source>Filter Q</source>
-      <translation type="unfinished" />
+      <translation>Q của bộ lọc</translation>
       <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
     </message>
     <message>
       <source>Filter values must be numbers.</source>
-      <translation type="unfinished" />
+      <translation>Giá trị bộ lọc phải là số.</translation>
     </message>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
-      <translation type="unfinished" />
+      <translation>Bộ lọc vượt giới hạn tần số, gain hoặc Q.</translation>
     </message>
     <message>
       <source>Flat</source>
@@ -817,52 +817,52 @@ Nhập vào thư viện của bạn?</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
-      <translation type="unfinished" />
+      <translation>Tần số Hz</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
-      <translation type="unfinished" />
+      <translation>Cải thiện âm thanh L/R phía trước (hỗ trợ mono); các kênh khác giữ hiệu ứng Studio riêng. Đặt mức về 0 để bỏ qua từng cải thiện.</translation>
     </message>
     <message>
       <source>Gain</source>
       <extracomment>Audio signal level adjustment in dB, positive or negative. Not financial profit.</extracomment>
-      <translation>Độ lợi</translation>
+      <translation>Gain</translation>
     </message>
     <message>
       <source>Gain dB</source>
-      <translation type="unfinished" />
+      <translation>Gain dB</translation>
     </message>
     <message>
       <source>Gaming</source>
-      <translation type="unfinished" />
+      <translation>Chơi game</translation>
     </message>
     <message>
       <source>Headphones</source>
-      <translation type="unfinished" />
+      <translation>Tai nghe</translation>
     </message>
     <message>
       <source>Help</source>
-      <translation type="unfinished" />
+      <translation>Trợ giúp</translation>
     </message>
     <message>
       <source>Hide advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Ẩn điều khiển nâng cao</translation>
     </message>
     <message>
       <source>Hip-Hop</source>
-      <translation type="unfinished" />
+      <translation>Hip-Hop</translation>
     </message>
     <message>
       <source>Ignore</source>
-      <translation type="unfinished" />
+      <translation>Bỏ qua</translation>
     </message>
     <message>
       <source>Import</source>
-      <translation type="unfinished" />
+      <translation>Nhập</translation>
     </message>
     <message>
       <source>Import JSON</source>
-      <translation type="unfinished" />
+      <translation>Nhập JSON</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
