@@ -7,6 +7,11 @@
       <translation> (sedang dipilih)</translation>
     </message>
     <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (model asli; bukan SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
+    </message>
+    <message>
       <source> (restored selection)</source>
       <translation> (pilihan dipulihkan)</translation>
     </message>
@@ -335,6 +340,11 @@ Impor ke pustaka Anda?</translation>
       <translation>Frekuensi bas</translation>
     </message>
     <message>
+      <source>Bookshelf speaker</source>
+      <translation>Speaker rak</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Boxiness</source>
       <translation>Suara seperti di dalam kotak</translation>
     </message>
@@ -437,6 +447,11 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Center</source>
       <translation>Tengah</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Speaker tengah</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Change default audio endpoint</source>
@@ -880,6 +895,11 @@ Impor ke pustaka Anda?</translation>
       <translation>Datar</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>Speaker berdiri di lantai</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Frekuensi</translation>
     </message>
@@ -964,6 +984,11 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Import response text</source>
       <translation>Impor teks respons</translation>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Speaker tanam dinding</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
@@ -2073,6 +2098,11 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Type</source>
       <translation>Jenis</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Peralatan belum diklasifikasikan</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>

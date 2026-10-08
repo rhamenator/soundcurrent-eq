@@ -1,4 +1,5 @@
 #include "localization.h"
+#include "equipment_display_text.h"
 // SPDX-License-Identifier: GPL-3.0-only
 #include "accelerating_spinbox.h"
 #include "equipment_profiles.h"
@@ -542,7 +543,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
                     !families.contains(p.family))
                     families.append(p.family);
             }
-        const auto subtype=subtypeFilter->currentData().toString();subtypes.sort(Qt::CaseInsensitive);subtypeFilter->clear();subtypeFilter->addItem(SC_TR("All subtypes"));for(const auto &type:subtypes)subtypeFilter->addItem(type,type);subtypeFilter->setCurrentIndex(std::max(0,subtypeFilter->findData(subtype)));
+        const auto subtype=subtypeFilter->currentData().toString();subtypes.sort(Qt::CaseInsensitive);subtypeFilter->clear();subtypeFilter->addItem(SC_TR("All subtypes"));for(const auto &type:subtypes)subtypeFilter->addItem(soundcurrent::i18n::equipmentTypeText(type),type);subtypeFilter->setCurrentIndex(std::max(0,subtypeFilter->findData(subtype)));
         brands.sort(Qt::CaseInsensitive);
         families.sort(Qt::CaseInsensitive);
         brandFilter->clear();

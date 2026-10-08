@@ -7,6 +7,11 @@
       <translation> (đang được chọn)</translation>
     </message>
     <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (mẫu ban đầu; không phải SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
+    </message>
+    <message>
       <source> (restored selection)</source>
       <translation> (lựa chọn đã khôi phục)</translation>
     </message>
@@ -335,6 +340,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Tần số âm trầm</translation>
     </message>
     <message>
+      <source>Bookshelf speaker</source>
+      <translation>Loa bookshelf</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Boxiness</source>
       <translation>Âm hộp</translation>
     </message>
@@ -437,6 +447,11 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Center</source>
       <translation>Giữa</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Loa trung tâm</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Change default audio endpoint</source>
@@ -880,6 +895,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Phẳng</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>Loa đứng sàn</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Tần số</translation>
     </message>
@@ -964,6 +984,11 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Import response text</source>
       <translation>Nhập văn bản đáp tuyến</translation>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Loa âm tường</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
@@ -2073,6 +2098,11 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Type</source>
       <translation>Loại</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Thiết bị chưa phân loại</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>

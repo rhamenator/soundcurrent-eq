@@ -40,7 +40,13 @@
     "Peaking filter",
     "Low-shelf filter",
     "High-shelf filter",
-    "Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately."
+    "Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.",
+    "Bookshelf speaker",
+    "Center speaker",
+    "Floorstanding speaker",
+    "In-wall speaker",
+    "Unclassified equipment",
+    " (original; not SS-CS5M2)"
   ],
   "languages": {
     "de": [
@@ -85,7 +91,13 @@
       "Glockenfilter",
       "Low-Shelf-Filter",
       "High-Shelf-Filter",
-      "Spinorama AutoEQ: Die Korrekturverstärkung ist auf %1 und Q auf %2 begrenzt. Anhebungen unter %3 werden ausgelassen. Ihr Hörpreset wird separat hinzugefügt."
+      "Spinorama AutoEQ: Die Korrekturverstärkung ist auf %1 und Q auf %2 begrenzt. Anhebungen unter %3 werden ausgelassen. Ihr Hörpreset wird separat hinzugefügt.",
+      "Regallautsprecher",
+      "Center-Lautsprecher",
+      "Standlautsprecher",
+      "Wandeinbaulautsprecher",
+      "Nicht klassifiziertes Gerät",
+      " (Originalmodell; nicht SS-CS5M2)"
     ],
     "fr": [
       "Français",
@@ -129,7 +141,13 @@
       "Filtre en cloche",
       "Filtre en plateau grave",
       "Filtre en plateau aigu",
-      "Spinorama AutoEQ : le gain de correction est limité à %1 et Q à %2. Les renforcements sous %3 sont omis. Votre préréglage d’écoute est ajouté séparément."
+      "Spinorama AutoEQ : le gain de correction est limité à %1 et Q à %2. Les renforcements sous %3 sont omis. Votre préréglage d’écoute est ajouté séparément.",
+      "Enceinte de bibliothèque",
+      "Enceinte centrale",
+      "Enceinte colonne",
+      "Enceinte encastrable murale",
+      "Équipement non classé",
+      " (modèle original ; pas SS-CS5M2)"
     ],
     "es": [
       "Español",
@@ -173,7 +191,13 @@
       "Filtro de campana",
       "Filtro shelving de graves",
       "Filtro shelving de agudos",
-      "Spinorama AutoEQ: la ganancia de corrección se limita a %1 y Q a %2. Se omiten los refuerzos por debajo de %3. Su preajuste de escucha se añade por separado."
+      "Spinorama AutoEQ: la ganancia de corrección se limita a %1 y Q a %2. Se omiten los refuerzos por debajo de %3. Su preajuste de escucha se añade por separado.",
+      "Altavoz de estantería",
+      "Altavoz central",
+      "Altavoz de suelo",
+      "Altavoz empotrado en pared",
+      "Equipo sin clasificar",
+      " (modelo original; no SS-CS5M2)"
     ],
     "it": [
       "Italiano",
@@ -217,7 +241,13 @@
       "Filtro a campana",
       "Filtro shelving dei bassi",
       "Filtro shelving degli alti",
-      "Spinorama AutoEQ: il guadagno di correzione è limitato a %1 e Q a %2. Gli aumenti sotto %3 sono esclusi. Il preset di ascolto viene aggiunto separatamente."
+      "Spinorama AutoEQ: il guadagno di correzione è limitato a %1 e Q a %2. Gli aumenti sotto %3 sono esclusi. Il preset di ascolto viene aggiunto separatamente.",
+      "Diffusore da scaffale",
+      "Diffusore centrale",
+      "Diffusore da pavimento",
+      "Diffusore da incasso a parete",
+      "Apparecchio non classificato",
+      " (modello originale; non SS-CS5M2)"
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -261,7 +291,13 @@
       "Filtro em sino",
       "Filtro shelving de graves",
       "Filtro shelving de agudos",
-      "Spinorama AutoEQ: o ganho de correção é limitado a %1 e Q a %2. Os reforços abaixo de %3 são omitidos. A sua predefinição de audição é adicionada separadamente."
+      "Spinorama AutoEQ: o ganho de correção é limitado a %1 e Q a %2. Os reforços abaixo de %3 são omitidos. A sua predefinição de audição é adicionada separadamente.",
+      "Coluna de prateleira",
+      "Coluna central",
+      "Coluna de chão",
+      "Coluna de embutir na parede",
+      "Equipamento não classificado",
+      " (modelo original; não SS-CS5M2)"
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -305,7 +341,13 @@
       "Filtro em sino",
       "Filtro shelving de graves",
       "Filtro shelving de agudos",
-      "Spinorama AutoEQ: o ganho de correção é limitado a %1 e Q a %2. Os reforços abaixo de %3 são omitidos. Sua predefinição de audição é adicionada separadamente."
+      "Spinorama AutoEQ: o ganho de correção é limitado a %1 e Q a %2. Os reforços abaixo de %3 são omitidos. Sua predefinição de audição é adicionada separadamente.",
+      "Caixa acústica de estante",
+      "Caixa acústica central",
+      "Caixa acústica de piso",
+      "Caixa acústica embutida na parede",
+      "Equipamento não classificado",
+      " (modelo original; não SS-CS5M2)"
     ],
     "nl": [
       "Nederlands",
@@ -349,7 +391,13 @@
       "Klokfilter",
       "Low-shelffilter",
       "High-shelffilter",
-      "Spinorama AutoEQ: de correctieversterking is beperkt tot %1 en Q tot %2. Versterkingen onder %3 worden weggelaten. Uw luisterpreset wordt afzonderlijk toegevoegd."
+      "Spinorama AutoEQ: de correctieversterking is beperkt tot %1 en Q tot %2. Versterkingen onder %3 worden weggelaten. Uw luisterpreset wordt afzonderlijk toegevoegd.",
+      "Boekenplankluidspreker",
+      "Centerluidspreker",
+      "Vloerstaande luidspreker",
+      "Wandinbouwluidspreker",
+      "Niet-geclassificeerde apparatuur",
+      " (oorspronkelijk model; niet SS-CS5M2)"
     ],
     "pl": [
       "Polski",
@@ -393,7 +441,13 @@
       "Filtr dzwonowy",
       "Filtr półkowy niskich częstotliwości",
       "Filtr półkowy wysokich częstotliwości",
-      "Spinorama AutoEQ: wzmocnienie korekcji jest ograniczone do %1, a Q do %2. Podbicia poniżej %3 są pomijane. Ustawienie odsłuchu jest dodawane osobno."
+      "Spinorama AutoEQ: wzmocnienie korekcji jest ograniczone do %1, a Q do %2. Podbicia poniżej %3 są pomijane. Ustawienie odsłuchu jest dodawane osobno.",
+      "Głośnik podstawkowy",
+      "Głośnik centralny",
+      "Głośnik podłogowy",
+      "Głośnik do zabudowy w ścianie",
+      "Sprzęt niesklasyfikowany",
+      " (model oryginalny; nie SS-CS5M2)"
     ],
     "cs": [
       "Čeština",
@@ -437,7 +491,13 @@
       "Zvonový filtr",
       "Dolní policový filtr",
       "Horní policový filtr",
-      "Spinorama AutoEQ: zisk korekce je omezen na %1 a Q na %2. Zesílení pod %3 se vynechává. Vaše poslechová předvolba se přidává samostatně."
+      "Spinorama AutoEQ: zisk korekce je omezen na %1 a Q na %2. Zesílení pod %3 se vynechává. Vaše poslechová předvolba se přidává samostatně.",
+      "Regálový reproduktor",
+      "Centrální reproduktor",
+      "Sloupový reproduktor",
+      "Reproduktor vestavěný do stěny",
+      "Nezařazené zařízení",
+      " (původní model; nikoli SS-CS5M2)"
     ],
     "sk": [
       "Slovenčina",
@@ -481,7 +541,13 @@
       "Zvonový filter",
       "Dolný policový filter",
       "Horný policový filter",
-      "Spinorama AutoEQ: zisk korekcie je obmedzený na %1 a Q na %2. Zosilnenia pod %3 sa vynechávajú. Vaša predvoľba počúvania sa pridáva samostatne."
+      "Spinorama AutoEQ: zisk korekcie je obmedzený na %1 a Q na %2. Zosilnenia pod %3 sa vynechávajú. Vaša predvoľba počúvania sa pridáva samostatne.",
+      "Regálový reproduktor",
+      "Centrálny reproduktor",
+      "Stĺpový reproduktor",
+      "Reproduktor zabudovaný do steny",
+      "Nezaradené zariadenie",
+      " (pôvodný model; nie SS-CS5M2)"
     ],
     "uk": [
       "Українська",
@@ -525,7 +591,13 @@
       "Дзвоновий фільтр",
       "Низькочастотний поличковий фільтр",
       "Високочастотний поличковий фільтр",
-      "Spinorama AutoEQ: підсилення корекції обмежене до %1, а Q — до %2. Підсилення нижче %3 пропускаються. Вашу слухацьку передустановку додано окремо."
+      "Spinorama AutoEQ: підсилення корекції обмежене до %1, а Q — до %2. Підсилення нижче %3 пропускаються. Вашу слухацьку передустановку додано окремо.",
+      "Поличкова акустична система",
+      "Центральна акустична система",
+      "Підлогова акустична система",
+      "Акустична система для вбудовування в стіну",
+      "Некласифіковане обладнання",
+      " (оригінальна модель; не SS-CS5M2)"
     ],
     "ru": [
       "Русский",
@@ -569,7 +641,13 @@
       "Колокольный фильтр",
       "Низкочастотный полочный фильтр",
       "Высокочастотный полочный фильтр",
-      "Spinorama AutoEQ: усиление коррекции ограничено до %1, а Q — до %2. Подъёмы ниже %3 исключены. Ваша настройка прослушивания добавляется отдельно."
+      "Spinorama AutoEQ: усиление коррекции ограничено до %1, а Q — до %2. Подъёмы ниже %3 исключены. Ваша настройка прослушивания добавляется отдельно.",
+      "Полочная акустическая система",
+      "Центральная акустическая система",
+      "Напольная акустическая система",
+      "Акустическая система для встраивания в стену",
+      "Неклассифицированное оборудование",
+      " (исходная модель; не SS-CS5M2)"
     ],
     "el": [
       "Ελληνικά",
@@ -613,7 +691,13 @@
       "Φίλτρο καμπάνας",
       "Φίλτρο shelving χαμηλών συχνοτήτων",
       "Φίλτρο shelving υψηλών συχνοτήτων",
-      "Spinorama AutoEQ: το κέρδος διόρθωσης περιορίζεται σε %1 και το Q σε %2. Οι ενισχύσεις κάτω από %3 παραλείπονται. Η προεπιλογή ακρόασής σας προστίθεται ξεχωριστά."
+      "Spinorama AutoEQ: το κέρδος διόρθωσης περιορίζεται σε %1 και το Q σε %2. Οι ενισχύσεις κάτω από %3 παραλείπονται. Η προεπιλογή ακρόασής σας προστίθεται ξεχωριστά.",
+      "Ηχείο βιβλιοθήκης",
+      "Κεντρικό ηχείο",
+      "Ηχείο δαπέδου",
+      "Εντοιχιζόμενο ηχείο",
+      "Μη ταξινομημένος εξοπλισμός",
+      " (αρχικό μοντέλο· όχι SS-CS5M2)"
     ],
     "tr": [
       "Türkçe",
@@ -657,7 +741,13 @@
       "Çan filtresi",
       "Bas shelving filtresi",
       "Tiz shelving filtresi",
-      "Spinorama AutoEQ: düzeltme kazancı %1, Q ise %2 ile sınırlıdır. %3 altındaki yükseltmeler atlanır. Dinleme ön ayarınız ayrıca eklenir."
+      "Spinorama AutoEQ: düzeltme kazancı %1, Q ise %2 ile sınırlıdır. %3 altındaki yükseltmeler atlanır. Dinleme ön ayarınız ayrıca eklenir.",
+      "Raf tipi hoparlör",
+      "Merkez hoparlör",
+      "Yer tipi hoparlör",
+      "Duvara gömme hoparlör",
+      "Sınıflandırılmamış ekipman",
+      " (ilk model; SS-CS5M2 değil)"
     ],
     "sv": [
       "Svenska",
@@ -701,7 +791,13 @@
       "Klockfilter",
       "Shelvingfilter för bas",
       "Shelvingfilter för diskant",
-      "Spinorama AutoEQ: korrigeringsförstärkningen begränsas till %1 och Q till %2. Förstärkningar under %3 utelämnas. Din lyssningsförinställning läggs till separat."
+      "Spinorama AutoEQ: korrigeringsförstärkningen begränsas till %1 och Q till %2. Förstärkningar under %3 utelämnas. Din lyssningsförinställning läggs till separat.",
+      "Bokhyllehögtalare",
+      "Centerhögtalare",
+      "Golvhögtalare",
+      "Vägginbyggd högtalare",
+      "Oklassificerad utrustning",
+      " (ursprunglig modell; inte SS-CS5M2)"
     ],
     "da": [
       "Dansk",
@@ -745,7 +841,13 @@
       "Klokkefilter",
       "Shelvingfilter til bas",
       "Shelvingfilter til diskant",
-      "Spinorama AutoEQ: korrektionsforstærkningen begrænses til %1 og Q til %2. Forstærkninger under %3 udelades. Din lytteforudindstilling tilføjes separat."
+      "Spinorama AutoEQ: korrektionsforstærkningen begrænses til %1 og Q til %2. Forstærkninger under %3 udelades. Din lytteforudindstilling tilføjes separat.",
+      "Reolhøjttaler",
+      "Centerhøjttaler",
+      "Gulvhøjttaler",
+      "Vægindbygningshøjttaler",
+      "Uklassificeret udstyr",
+      " (oprindelig model; ikke SS-CS5M2)"
     ],
     "nb": [
       "Norsk bokmål",
@@ -789,7 +891,13 @@
       "Klokkefilter",
       "Shelvingfilter for bass",
       "Shelvingfilter for diskant",
-      "Spinorama AutoEQ: korreksjonsforsterkningen begrenses til %1 og Q til %2. Forsterkninger under %3 utelates. Lytteforhåndsinnstillingen din legges til separat."
+      "Spinorama AutoEQ: korreksjonsforsterkningen begrenses til %1 og Q til %2. Forsterkninger under %3 utelates. Lytteforhåndsinnstillingen din legges til separat.",
+      "Bokhyllehøyttaler",
+      "Senterhøyttaler",
+      "Gulvstående høyttaler",
+      "Vegginnbygd høyttaler",
+      "Uklassifisert utstyr",
+      " (opprinnelig modell; ikke SS-CS5M2)"
     ],
     "fi": [
       "Suomi",
@@ -833,7 +941,13 @@
       "Kellokäyräsuodatin",
       "Matalien taajuuksien hyllysuodatin",
       "Korkeiden taajuuksien hyllysuodatin",
-      "Spinorama AutoEQ: korjauksen vahvistus rajataan arvoon %1 ja Q arvoon %2. Taajuuden %3 alapuoliset korostukset jätetään pois. Kuunteluesiasetuksesi lisätään erikseen."
+      "Spinorama AutoEQ: korjauksen vahvistus rajataan arvoon %1 ja Q arvoon %2. Taajuuden %3 alapuoliset korostukset jätetään pois. Kuunteluesiasetuksesi lisätään erikseen.",
+      "Jalustakaiutin",
+      "Keskikaiutin",
+      "Lattiakaiutin",
+      "Seinään upotettava kaiutin",
+      "Luokittelematon laite",
+      " (alkuperäinen malli; ei SS-CS5M2)"
     ],
     "ro": [
       "Română",
@@ -877,7 +991,13 @@
       "Filtru de tip clopot",
       "Filtru shelving pentru frecvențe joase",
       "Filtru shelving pentru frecvențe înalte",
-      "Spinorama AutoEQ: câștigul corecției este limitat la %1, iar Q la %2. Amplificările sub %3 sunt omise. Presetarea de audiție este adăugată separat."
+      "Spinorama AutoEQ: câștigul corecției este limitat la %1, iar Q la %2. Amplificările sub %3 sunt omise. Presetarea de audiție este adăugată separat.",
+      "Boxă de raft",
+      "Boxă centrală",
+      "Boxă de podea",
+      "Boxă încastrată în perete",
+      "Echipament neclasificat",
+      " (modelul original; nu SS-CS5M2)"
     ],
     "hu": [
       "Magyar",
@@ -921,7 +1041,13 @@
       "Haranggörbe-szűrő",
       "Mély polcszűrő",
       "Magas polcszűrő",
-      "Spinorama AutoEQ: a korrekció erősítése %1 értékre, a Q pedig %2 értékre van korlátozva. A %3 alatti kiemelések kimaradnak. A hallgatási beállítás külön adódik hozzá."
+      "Spinorama AutoEQ: a korrekció erősítése %1 értékre, a Q pedig %2 értékre van korlátozva. A %3 alatti kiemelések kimaradnak. A hallgatási beállítás külön adódik hozzá.",
+      "Polcsugárzó",
+      "Centersugárzó",
+      "Álló hangsugárzó",
+      "Falba építhető hangsugárzó",
+      "Nem besorolt berendezés",
+      " (eredeti modell; nem SS-CS5M2)"
     ],
     "ar": [
       "العربية",
@@ -965,7 +1091,13 @@
       "مرشح جرسي",
       "مرشح رف للترددات المنخفضة",
       "مرشح رف للترددات العالية",
-      "Spinorama AutoEQ: كسب التصحيح محدود بـ %1 وQ بـ %2. تُحذف التعزيزات دون %3. يُضاف إعداد الاستماع المسبق بشكل منفصل."
+      "Spinorama AutoEQ: كسب التصحيح محدود بـ %1 وQ بـ %2. تُحذف التعزيزات دون %3. يُضاف إعداد الاستماع المسبق بشكل منفصل.",
+      "مكبر صوت للرفوف",
+      "مكبر صوت للقناة المركزية",
+      "مكبر صوت قائم على الأرض",
+      "مكبر صوت مدمج في الحائط",
+      "معدات غير مصنفة",
+      " (الطراز الأصلي؛ وليس SS-CS5M2)"
     ],
     "he": [
       "עברית",
@@ -1009,7 +1141,13 @@
       "מסנן פעמון",
       "מסנן מדף לתדרים נמוכים",
       "מסנן מדף לתדרים גבוהים",
-      "Spinorama AutoEQ: הגבר התיקון מוגבל ל־%1 ו־Q ל־%2. הגברות מתחת ל־%3 מושמטות. הגדרת ההאזנה שלך מתווספת בנפרד."
+      "Spinorama AutoEQ: הגבר התיקון מוגבל ל־%1 ו־Q ל־%2. הגברות מתחת ל־%3 מושמטות. הגדרת ההאזנה שלך מתווספת בנפרד.",
+      "רמקול מדף",
+      "רמקול מרכזי",
+      "רמקול רצפתי",
+      "רמקול שקוע בקיר",
+      "ציוד לא מסווג",
+      " (הדגם המקורי; לא SS-CS5M2)"
     ],
     "fa": [
       "فارسی",
@@ -1053,7 +1191,13 @@
       "فیلتر زنگوله‌ای",
       "فیلتر شلف فرکانس‌های پایین",
       "فیلتر شلف فرکانس‌های بالا",
-      "Spinorama AutoEQ: بهرهٔ اصلاح به %1 و Q به %2 محدود است. تقویت‌های زیر %3 حذف می‌شوند. پیش‌تنظیم شنیداری شما جداگانه اضافه می‌شود."
+      "Spinorama AutoEQ: بهرهٔ اصلاح به %1 و Q به %2 محدود است. تقویت‌های زیر %3 حذف می‌شوند. پیش‌تنظیم شنیداری شما جداگانه اضافه می‌شود.",
+      "بلندگوی قفسه‌ای",
+      "بلندگوی کانال مرکزی",
+      "بلندگوی ایستاده روی زمین",
+      "بلندگوی توکار دیواری",
+      "تجهیزات دسته‌بندی‌نشده",
+      " (مدل اصلی؛ نه SS-CS5M2)"
     ],
     "zh-Hans": [
       "简体中文",
@@ -1097,7 +1241,13 @@
       "钟形滤波器",
       "低频搁架滤波器",
       "高频搁架滤波器",
-      "Spinorama AutoEQ：校正增益限制为 %1，Q 限制为 %2。低于 %3 的提升被省略。您的聆听预设单独叠加。"
+      "Spinorama AutoEQ：校正增益限制为 %1，Q 限制为 %2。低于 %3 的提升被省略。您的聆听预设单独叠加。",
+      "书架音箱",
+      "中置音箱",
+      "落地音箱",
+      "嵌墙音箱",
+      "未分类设备",
+      "（原始型号；非 SS-CS5M2）"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -1141,7 +1291,13 @@
       "鐘形濾波器",
       "低頻棚架濾波器",
       "高頻棚架濾波器",
-      "Spinorama AutoEQ：校正增益限制為 %1，Q 限制為 %2。低於 %3 的提升會省略。您的聆聽預設會另行疊加。"
+      "Spinorama AutoEQ：校正增益限制為 %1，Q 限制為 %2。低於 %3 的提升會省略。您的聆聽預設會另行疊加。",
+      "書架喇叭",
+      "中置喇叭",
+      "落地喇叭",
+      "嵌牆喇叭",
+      "未分類設備",
+      "（原始型號；非 SS-CS5M2）"
     ],
     "ja": [
       "日本語",
@@ -1185,7 +1341,13 @@
       "ベル型フィルター",
       "ローシェルフフィルター",
       "ハイシェルフフィルター",
-      "Spinorama AutoEQ：補正ゲインは %1、Q は %2 に制限されます。%3 未満のブーストは除外されます。リスニングプリセットは別途加算されます。"
+      "Spinorama AutoEQ：補正ゲインは %1、Q は %2 に制限されます。%3 未満のブーストは除外されます。リスニングプリセットは別途加算されます。",
+      "ブックシェルフ型スピーカー",
+      "センタースピーカー",
+      "フロア型スピーカー",
+      "壁埋め込み型スピーカー",
+      "未分類の機器",
+      "（初代モデル：SS-CS5M2 ではありません）"
     ],
     "ko": [
       "한국어",
@@ -1229,7 +1391,13 @@
       "벨 필터",
       "로우 셸프 필터",
       "하이 셸프 필터",
-      "Spinorama AutoEQ: 보정 게인은 %1, Q는 %2로 제한됩니다. %3 미만의 부스트는 제외됩니다. 청취 프리셋은 별도로 더해집니다."
+      "Spinorama AutoEQ: 보정 게인은 %1, Q는 %2로 제한됩니다. %3 미만의 부스트는 제외됩니다. 청취 프리셋은 별도로 더해집니다.",
+      "북쉘프 스피커",
+      "센터 스피커",
+      "플로어스탠딩 스피커",
+      "벽 매립형 스피커",
+      "미분류 장비",
+      " (초기 모델; SS-CS5M2 아님)"
     ],
     "hi": [
       "हिन्दी",
@@ -1273,7 +1441,13 @@
       "बेल फ़िल्टर",
       "लो-शेल्फ फ़िल्टर",
       "हाई-शेल्फ फ़िल्टर",
-      "Spinorama AutoEQ: सुधार का गेन %1 और Q %2 तक सीमित है। %3 से नीचे के बूस्ट हटाए जाते हैं। आपका सुनने का प्रीसेट अलग से जोड़ा जाता है।"
+      "Spinorama AutoEQ: सुधार का गेन %1 और Q %2 तक सीमित है। %3 से नीचे के बूस्ट हटाए जाते हैं। आपका सुनने का प्रीसेट अलग से जोड़ा जाता है।",
+      "बुकशेल्फ़ स्पीकर",
+      "सेंटर स्पीकर",
+      "फ़्लोरस्टैंडिंग स्पीकर",
+      "दीवार में लगे स्पीकर",
+      "अवर्गीकृत उपकरण",
+      " (मूल मॉडल; SS-CS5M2 नहीं)"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -1317,7 +1491,13 @@
       "Filter berbentuk lonceng",
       "Filter shelving frekuensi rendah",
       "Filter shelving frekuensi tinggi",
-      "Spinorama AutoEQ: gain koreksi dibatasi hingga %1 dan Q hingga %2. Boost di bawah %3 dihilangkan. Preset mendengarkan Anda ditambahkan secara terpisah."
+      "Spinorama AutoEQ: gain koreksi dibatasi hingga %1 dan Q hingga %2. Boost di bawah %3 dihilangkan. Preset mendengarkan Anda ditambahkan secara terpisah.",
+      "Speaker rak",
+      "Speaker tengah",
+      "Speaker berdiri di lantai",
+      "Speaker tanam dinding",
+      "Peralatan belum diklasifikasikan",
+      " (model asli; bukan SS-CS5M2)"
     ],
     "vi": [
       "Tiếng Việt",
@@ -1361,7 +1541,13 @@
       "Bộ lọc hình chuông",
       "Bộ lọc shelving tần số thấp",
       "Bộ lọc shelving tần số cao",
-      "Spinorama AutoEQ: độ lợi hiệu chỉnh được giới hạn ở %1 và Q ở %2. Các mức tăng dưới %3 được bỏ qua. Thiết lập nghe của bạn được cộng riêng."
+      "Spinorama AutoEQ: độ lợi hiệu chỉnh được giới hạn ở %1 và Q ở %2. Các mức tăng dưới %3 được bỏ qua. Thiết lập nghe của bạn được cộng riêng.",
+      "Loa bookshelf",
+      "Loa trung tâm",
+      "Loa đứng sàn",
+      "Loa âm tường",
+      "Thiết bị chưa phân loại",
+      " (mẫu ban đầu; không phải SS-CS5M2)"
     ],
     "th": [
       "ไทย",
@@ -1405,7 +1591,13 @@
       "ตัวกรองรูปทรงระฆัง",
       "ตัวกรองเชลฟ์ความถี่ต่ำ",
       "ตัวกรองเชลฟ์ความถี่สูง",
-      "Spinorama AutoEQ: เกนการแก้ไขจำกัดไว้ที่ %1 และ Q ที่ %2 การเพิ่มเกนต่ำกว่า %3 จะถูกละเว้น พรีเซ็ตการฟังของคุณจะถูกเพิ่มแยกต่างหาก"
+      "Spinorama AutoEQ: เกนการแก้ไขจำกัดไว้ที่ %1 และ Q ที่ %2 การเพิ่มเกนต่ำกว่า %3 จะถูกละเว้น พรีเซ็ตการฟังของคุณจะถูกเพิ่มแยกต่างหาก",
+      "ลำโพงวางหิ้ง",
+      "ลำโพงเซ็นเตอร์",
+      "ลำโพงตั้งพื้น",
+      "ลำโพงฝังผนัง",
+      "อุปกรณ์ที่ยังไม่จัดประเภท",
+      " (รุ่นดั้งเดิม ไม่ใช่ SS-CS5M2)"
     ],
     "sw": [
       "Kiswahili",
@@ -1449,7 +1641,13 @@
       "Kichujio chenye umbo la kengele",
       "Kichujio cha shelving kwa masafa ya chini",
       "Kichujio cha shelving kwa masafa ya juu",
-      "Spinorama AutoEQ: ongezeko la marekebisho limewekewa kikomo cha %1 na Q cha %2. Nyongeza chini ya %3 huondolewa. Mpangilio wako wa kusikiliza huongezwa kando."
+      "Spinorama AutoEQ: ongezeko la marekebisho limewekewa kikomo cha %1 na Q cha %2. Nyongeza chini ya %3 huondolewa. Mpangilio wako wa kusikiliza huongezwa kando.",
+      "Spika ya rafu",
+      "Spika ya kituo cha kati",
+      "Spika inayosimama sakafuni",
+      "Spika iliyojengewa ukutani",
+      "Kifaa kisichoainishwa",
+      " (modeli ya awali; si SS-CS5M2)"
     ],
     "nn": [
       "Norsk nynorsk",
@@ -1493,7 +1691,13 @@
       "Klokkefilter",
       "Shelvingfilter for bass",
       "Shelvingfilter for diskant",
-      "Spinorama AutoEQ: korreksjonsforsterkinga er avgrensa til %1 og Q til %2. Forsterkingar under %3 vert utelatne. Lytteførehandsinnstillinga di vert lagd til separat."
+      "Spinorama AutoEQ: korreksjonsforsterkinga er avgrensa til %1 og Q til %2. Forsterkingar under %3 vert utelatne. Lytteførehandsinnstillinga di vert lagd til separat.",
+      "Bokhyllehøgtalar",
+      "Senterhøgtalar",
+      "Golvståande høgtalar",
+      "Vegginnbygd høgtalar",
+      "Uklassifisert utstyr",
+      " (opphavleg modell; ikkje SS-CS5M2)"
     ]
   },
   "requiredCompleteLocales": [

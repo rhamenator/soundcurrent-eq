@@ -7,6 +7,11 @@
       <translation> (현재 선택됨)</translation>
     </message>
     <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (초기 모델; SS-CS5M2 아님)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
+    </message>
+    <message>
       <source> (restored selection)</source>
       <translation> (복원된 선택)</translation>
     </message>
@@ -335,6 +340,11 @@ Import into your library?</source>
       <translation>저음 주파수</translation>
     </message>
     <message>
+      <source>Bookshelf speaker</source>
+      <translation>북쉘프 스피커</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Boxiness</source>
       <translation>박스 울림</translation>
     </message>
@@ -437,6 +447,11 @@ Import into your library?</source>
     <message>
       <source>Center</source>
       <translation>중앙</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>센터 스피커</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Change default audio endpoint</source>
@@ -880,6 +895,11 @@ Import into your library?</source>
       <translation>플랫</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>플로어스탠딩 스피커</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>주파수</translation>
     </message>
@@ -964,6 +984,11 @@ Import into your library?</source>
     <message>
       <source>Import response text</source>
       <translation>주파수 응답 텍스트 가져오기</translation>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>벽 매립형 스피커</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
@@ -2073,6 +2098,11 @@ Import into your library?</source>
     <message>
       <source>Type</source>
       <translation>유형</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>미분류 장비</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>

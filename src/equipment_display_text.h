@@ -4,6 +4,15 @@
 #include <QLocale>
 #include <QStringList>
 namespace soundcurrent::i18n {
+// Translate defined taxonomy keys only; imported custom text is displayed verbatim.
+inline QString equipmentTypeText(const QString &key) {
+    if(key=="Bookshelf")return SC_TR("Bookshelf speaker");
+    if(key=="Center")return SC_TR("Center speaker");
+    if(key=="Floorstanding")return SC_TR("Floorstanding speaker");
+    if(key=="In-wall")return SC_TR("In-wall speaker");
+    if(key=="Unclassified")return SC_TR("Unclassified equipment");
+    return key;
+}
 // Directionality belongs to the rendered text, never to imported/saved data.
 inline QString equipmentDisplayData(const QString &value, bool leftToRight = false) {
     return QString(QChar(leftToRight ? 0x2066 : 0x2068)) + value + QChar(0x2069);

@@ -7,6 +7,11 @@
       <translation> (aktuálne vybrané)</translation>
     </message>
     <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (pôvodný model; nie SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
+    </message>
+    <message>
       <source> (restored selection)</source>
       <translation> (obnovený výber)</translation>
     </message>
@@ -335,6 +340,11 @@ Importovať do vašej knižnice?</translation>
       <translation>Frekvencia basov</translation>
     </message>
     <message>
+      <source>Bookshelf speaker</source>
+      <translation>Regálový reproduktor</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Boxiness</source>
       <translation>Krabicový zvuk</translation>
     </message>
@@ -437,6 +447,11 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>Center</source>
       <translation>Stred</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Centrálny reproduktor</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Change default audio endpoint</source>
@@ -880,6 +895,11 @@ Importovať do vašej knižnice?</translation>
       <translation>Rovná charakteristika</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>Stĺpový reproduktor</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Frekvencia</translation>
     </message>
@@ -964,6 +984,11 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>Import response text</source>
       <translation>Importovať text odozvy</translation>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Reproduktor zabudovaný do steny</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
@@ -2073,6 +2098,11 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>Type</source>
       <translation>Typ</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Nezaradené zariadenie</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>

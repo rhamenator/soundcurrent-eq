@@ -7,6 +7,11 @@
       <translation> (imechaguliwa sasa)</translation>
     </message>
     <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (modeli ya awali; si SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
+    </message>
+    <message>
       <source> (restored selection)</source>
       <translation> (chaguo limerejeshwa)</translation>
     </message>
@@ -335,6 +340,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Masafa ya besi</translation>
     </message>
     <message>
+      <source>Bookshelf speaker</source>
+      <translation>Spika ya rafu</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Boxiness</source>
       <translation>Sauti kama ya sanduku</translation>
     </message>
@@ -437,6 +447,11 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Center</source>
       <translation>Katikati</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Spika ya kituo cha kati</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Change default audio endpoint</source>
@@ -880,6 +895,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Tambarare</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>Spika inayosimama sakafuni</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Masafa</translation>
     </message>
@@ -964,6 +984,11 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Import response text</source>
       <translation>Ingiza maandishi ya mwitikio</translation>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Spika iliyojengewa ukutani</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
@@ -2073,6 +2098,11 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Type</source>
       <translation>Aina</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Kifaa kisichoainishwa</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>

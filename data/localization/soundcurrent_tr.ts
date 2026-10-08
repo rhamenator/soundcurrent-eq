@@ -7,6 +7,11 @@
       <translation> (şu anda seçili)</translation>
     </message>
     <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (ilk model; SS-CS5M2 değil)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
+    </message>
+    <message>
       <source> (restored selection)</source>
       <translation> (geri yüklenen seçim)</translation>
     </message>
@@ -335,6 +340,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Bas frekansı</translation>
     </message>
     <message>
+      <source>Bookshelf speaker</source>
+      <translation>Raf tipi hoparlör</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Boxiness</source>
       <translation>Kutulu tını</translation>
     </message>
@@ -437,6 +447,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Center</source>
       <translation>Orta</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Merkez hoparlör</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Change default audio endpoint</source>
@@ -880,6 +895,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Düz yanıt</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>Yer tipi hoparlör</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Frekans</translation>
     </message>
@@ -964,6 +984,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Import response text</source>
       <translation>Yanıt metnini içe aktar</translation>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Duvara gömme hoparlör</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
@@ -2073,6 +2098,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Type</source>
       <translation>Tür</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Sınıflandırılmamış ekipman</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>

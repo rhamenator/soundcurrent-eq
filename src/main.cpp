@@ -144,7 +144,7 @@ const QVector<SpeakerProfile> &speakerProfiles() {
             SpeakerProfile profile;
             profile.id = item.value("id").toString();
             profile.name = item.value("name").toString();
-            if (profile.id == "Sony SS-CS5") profile.name += " (original; not SS-CS5M2)";
+            if (profile.id == "Sony SS-CS5") profile.name += SC_TR(" (original; not SS-CS5M2)");
             if (profile.id.isEmpty() || ids.contains(profile.id)) throw std::runtime_error(SC_TR("Invalid speaker identity").toStdString());
             ids.append(profile.id);
             profile.attribution = item.value("measurement").toString() + " · " + item.value("measurementDate").toString();
@@ -2078,7 +2078,7 @@ public:
         taxonomy->addWidget(new QLabel(SC_TR("Manufacturer")));speakerBrand_=new PresetComboBox;speakerBrand_->setAccessibleName(SC_TR("Speaker manufacturer"));speakerBrand_->addItem(SC_TR("All manufacturers"));
         taxonomy->addWidget(speakerBrand_,1);taxonomy->addWidget(new QLabel(SC_TR("Type")));speakerType_=new PresetComboBox;speakerType_->setAccessibleName(SC_TR("Speaker type"));speakerType_->addItem(SC_TR("All speaker types"));taxonomy->addWidget(speakerType_,1);
         QStringList brands,types;for(const auto &p:speakerProfiles()){if(!brands.contains(p.brand))brands<<p.brand;if(!types.contains(p.equipmentType))types<<p.equipmentType;}
-        brands.sort(Qt::CaseInsensitive);types.sort(Qt::CaseInsensitive);speakerBrand_->addItems(brands);for(const auto &type:types)speakerType_->addItem(type,type);
+        brands.sort(Qt::CaseInsensitive);types.sort(Qt::CaseInsensitive);speakerBrand_->addItems(brands);for(const auto &type:types)speakerType_->addItem(soundcurrent::i18n::equipmentTypeText(type),type);
         speakerLayout->addLayout(taxonomy);speakerLayout->addLayout(speakerRow);
         connect(speakerBrand_,&QComboBox::currentIndexChanged,this,[this]{filterSpeakers();});
         connect(speakerType_,&QComboBox::currentIndexChanged,this,[this]{filterSpeakers();});
@@ -4169,6 +4169,22 @@ int main(int argc, char **argv) {
     if (app.arguments().contains("--localization-ui-test")) {
         auto ownedWindow=std::make_unique<MainWindow>(false);
         auto &window=*ownedWindow;
+        QComboBox *speakerTaxonomy=nullptr;
+        for(auto *combo:window.findChildren<QComboBox *>())
+            if(combo->accessibleName()==SC_TR("Speaker type"))speakerTaxonomy=combo;
+        if(!speakerTaxonomy)qFatal("Localized speaker taxonomy missing");
+        for(const auto &key:QStringList{"Bookshelf","Center","Floorstanding","In-wall","Unclassified"}) {
+            const int row=speakerTaxonomy->findData(key);
+            if(row<0 || speakerTaxonomy->itemText(row)!=soundcurrent::i18n::equipmentTypeText(key))
+                qFatal("Localized taxonomy lost caption or stable key");
+        }
+        bool originalSonyFound=false;
+        for(const auto &profile:speakerProfiles())if(profile.id=="Sony SS-CS5") {
+            originalSonyFound=true;
+            if(!profile.name.endsWith(SC_TR(" (original; not SS-CS5M2)")))
+                qFatal("Original Sony model qualifier is not localized");
+        }
+        if(!originalSonyFound)qFatal("Original Sony fixture missing");
         auto *preset=window.findChild<QComboBox *>("localizedPresetSelector");
         if(!preset || preset->currentData().toString()!="Flat") qFatal("Localized preset lost its stable ID");
         QDoubleSpinBox *selectedGain=nullptr;

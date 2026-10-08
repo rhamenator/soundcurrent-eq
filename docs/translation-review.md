@@ -235,3 +235,9 @@ qualification still belongs to the final package tests.
 ## Second pass: stable equipment taxonomy keys
 
 Speaker and equipment-library subtype dropdowns now store the original equipmentType key in item data. Filtering and refresh no longer depend on display text. Regression fixtures replace a caption with French/Japanese text and verify the speaker results and preserved subtype selection. All 34 equipment UI tests and 38 shared/localized/catalog tests passed on Linux with Qt offscreen. Built-in taxonomy labels still need translation; this prerequisite does not establish full interface coverage or Windows qualification. Native-speaker verification remains unverified.
+
+## Second pass: common speaker categories and model qualifier
+
+Translated bookshelf, center-channel, floorstanding, in-wall and unclassified equipment captions in all 33 non-English locales, plus the original Sony SS-CS5 qualifier. Shared display mapping preserves original keys and returns unknown/custom subtype text verbatim. Contextual AI review distinguishes center-channel and enclosure/installation types, and preserves the SS-CS5M2 model identifier. Native-speaker verification remains unverified.
+
+All 34 equipment UI tests and 38 shared/localized/catalog tests passed on Linux Qt offscreen; the 10 extraction unit tests also passed. Runtime fixtures check the actual speaker dropdown labels and keys, original Sony qualifier, taxonomy refresh and custom Unicode/placeholder preservation. Ten less common built-in categories still need translation. Windows and package qualification for this source change remain pending. Zero unfinished catalog entries does not prove whole-interface extraction coverage.

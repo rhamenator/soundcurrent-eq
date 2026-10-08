@@ -7,6 +7,11 @@
       <translation> (зараз вибрано)</translation>
     </message>
     <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (оригінальна модель; не SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
+    </message>
+    <message>
       <source> (restored selection)</source>
       <translation> (відновлений вибір)</translation>
     </message>
@@ -335,6 +340,11 @@ Import into your library?</source>
       <translation>Частота басів</translation>
     </message>
     <message>
+      <source>Bookshelf speaker</source>
+      <translation>Поличкова акустична система</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Boxiness</source>
       <translation>Коробкове забарвлення</translation>
     </message>
@@ -437,6 +447,11 @@ Import into your library?</source>
     <message>
       <source>Center</source>
       <translation>Центр</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Центральна акустична система</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Change default audio endpoint</source>
@@ -880,6 +895,11 @@ Import into your library?</source>
       <translation>Рівна характеристика</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>Підлогова акустична система</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Частота</translation>
     </message>
@@ -964,6 +984,11 @@ Import into your library?</source>
     <message>
       <source>Import response text</source>
       <translation>Імпортувати текст характеристики</translation>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Акустична система для вбудовування в стіну</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
@@ -2073,6 +2098,11 @@ Import into your library?</source>
     <message>
       <source>Type</source>
       <translation>Тип</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Некласифіковане обладнання</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>

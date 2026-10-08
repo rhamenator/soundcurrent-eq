@@ -24,5 +24,11 @@
   "Peaking filter": "Bell-shaped parametric EQ filter centered at its frequency; this is not a peak/clipping indicator.",
   "Low-shelf filter": "Shelving EQ: raise/lower the low-frequency region. Do not translate as low-pass; it is not a cutoff filter.",
   "High-shelf filter": "Shelving EQ: raise/lower the high-frequency region. Do not translate as high-pass; it is not a cutoff filter.",
-  "Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.": "Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name."
+  "Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.": "Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.",
+  "Bookshelf speaker": "Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.",
+  "Center speaker": "Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.",
+  "Floorstanding speaker": "Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.",
+  "In-wall speaker": "Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.",
+  "Unclassified equipment": "Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.",
+  " (original; not SS-CS5M2)": "Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence."
 }

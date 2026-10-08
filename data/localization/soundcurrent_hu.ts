@@ -7,6 +7,11 @@
       <translation> (jelenleg kiválasztva)</translation>
     </message>
     <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (eredeti modell; nem SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
+    </message>
+    <message>
       <source> (restored selection)</source>
       <translation> (visszaállított kiválasztás)</translation>
     </message>
@@ -335,6 +340,11 @@ Importálja a könyvtárba?</translation>
       <translation>Basszusfrekvencia</translation>
     </message>
     <message>
+      <source>Bookshelf speaker</source>
+      <translation>Polcsugárzó</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Boxiness</source>
       <translation>Dobozhang</translation>
     </message>
@@ -437,6 +447,11 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Center</source>
       <translation>Közép</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Centersugárzó</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Change default audio endpoint</source>
@@ -880,6 +895,11 @@ Importálja a könyvtárba?</translation>
       <translation>Sík</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>Álló hangsugárzó</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Frekvencia</translation>
     </message>
@@ -964,6 +984,11 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Import response text</source>
       <translation>Frekvenciamenet szövegének importálása</translation>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Falba építhető hangsugárzó</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
@@ -2073,6 +2098,11 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Type</source>
       <translation>Típus</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Nem besorolt berendezés</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>

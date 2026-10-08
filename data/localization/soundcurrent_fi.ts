@@ -7,6 +7,11 @@
       <translation> (valittuna nyt)</translation>
     </message>
     <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (alkuperäinen malli; ei SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
+    </message>
+    <message>
       <source> (restored selection)</source>
       <translation> (palautettu valinta)</translation>
     </message>
@@ -335,6 +340,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>Bassotaajuus</translation>
     </message>
     <message>
+      <source>Bookshelf speaker</source>
+      <translation>Jalustakaiutin</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Boxiness</source>
       <translation>Laatikkomaisuus</translation>
     </message>
@@ -437,6 +447,11 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Center</source>
       <translation>Keskellä</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Keskikaiutin</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Change default audio endpoint</source>
@@ -880,6 +895,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>Tasainen</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>Lattiakaiutin</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Taajuus</translation>
     </message>
@@ -964,6 +984,11 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Import response text</source>
       <translation>Tuo taajuusvasteteksti</translation>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Seinään upotettava kaiutin</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
@@ -2073,6 +2098,11 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Type</source>
       <translation>Tyyppi</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Luokittelematon laite</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>

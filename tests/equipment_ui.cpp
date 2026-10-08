@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 #include "equipment_profiles.h"
 #include "localization.h"
+#include "equipment_display_text.h"
 #include <QApplication>
 #include <QComboBox>
 #include <QDialogButtonBox>
@@ -100,6 +101,8 @@ int main(int argc,char **argv) {
             require(kind->itemData(1).toString()=="speaker" && kind->itemData(2).toString()=="microphone" && kind->itemData(3).toString()=="amplifier","Localized kinds changed profile IDs");
             auto *subtype=library->findChild<QComboBox *>("equipmentSubtypeFilter");require(subtype,"No stable equipment subtype selector");
             const int bookshelf=subtype->findData("Bookshelf");require(bookshelf>=0,"Missing bookshelf taxonomy key");
+            require(subtype->itemText(bookshelf)==soundcurrent::i18n::text("Bookshelf speaker"),"Built-in subtype caption is not localized");
+            require(soundcurrent::i18n::equipmentTypeText("Custom %1 / 棚型")=="Custom %1 / 棚型","Custom subtype text was changed");
             subtype->setItemText(bookshelf,QString::fromUtf8("Bibliothèque / 棚型"));subtype->setCurrentIndex(bookshelf);
             require(subtype->currentData().toString()=="Bookshelf","Display caption changed subtype identity");
             kind->setCurrentIndex(1);require(subtype->currentData().toString()=="Bookshelf","Taxonomy refresh lost stable subtype selection");

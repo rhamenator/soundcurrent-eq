@@ -7,6 +7,11 @@
       <translation> (เลือกอยู่ในขณะนี้)</translation>
     </message>
     <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (รุ่นดั้งเดิม ไม่ใช่ SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
+    </message>
+    <message>
       <source> (restored selection)</source>
       <translation> (กู้คืนการเลือกแล้ว)</translation>
     </message>
@@ -335,6 +340,11 @@ Import into your library?</source>
       <translation>ความถี่เบส</translation>
     </message>
     <message>
+      <source>Bookshelf speaker</source>
+      <translation>ลำโพงวางหิ้ง</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Boxiness</source>
       <translation>เสียงอู้แบบกล่อง</translation>
     </message>
@@ -437,6 +447,11 @@ Import into your library?</source>
     <message>
       <source>Center</source>
       <translation>กึ่งกลาง</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>ลำโพงเซ็นเตอร์</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Change default audio endpoint</source>
@@ -880,6 +895,11 @@ Import into your library?</source>
       <translation>ราบ</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>ลำโพงตั้งพื้น</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>ความถี่</translation>
     </message>
@@ -964,6 +984,11 @@ Import into your library?</source>
     <message>
       <source>Import response text</source>
       <translation>นำเข้าข้อความการตอบสนอง</translation>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>ลำโพงฝังผนัง</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
@@ -2073,6 +2098,11 @@ Import into your library?</source>
     <message>
       <source>Type</source>
       <translation>ประเภท</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>อุปกรณ์ที่ยังไม่จัดประเภท</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>

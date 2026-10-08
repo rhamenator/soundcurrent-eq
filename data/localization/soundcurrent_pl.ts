@@ -7,6 +7,11 @@
       <translation> (obecnie wybrane)</translation>
     </message>
     <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (model oryginalny; nie SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
+    </message>
+    <message>
       <source> (restored selection)</source>
       <translation> (przywrócony wybór)</translation>
     </message>
@@ -335,6 +340,11 @@ Zaimportować do biblioteki?</translation>
       <translation>Częstotliwość basu</translation>
     </message>
     <message>
+      <source>Bookshelf speaker</source>
+      <translation>Głośnik podstawkowy</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Boxiness</source>
       <translation>Pudełkowe brzmienie</translation>
     </message>
@@ -437,6 +447,11 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Center</source>
       <translation>Środek</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Głośnik centralny</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Change default audio endpoint</source>
@@ -880,6 +895,11 @@ Zaimportować do biblioteki?</translation>
       <translation>Płaska charakterystyka</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>Głośnik podłogowy</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Częstotliwość</translation>
     </message>
@@ -964,6 +984,11 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Import response text</source>
       <translation>Importuj tekst odpowiedzi</translation>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Głośnik do zabudowy w ścianie</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
@@ -2073,6 +2098,11 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Type</source>
       <translation>Typ</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Sprzęt niesklasyfikowany</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>

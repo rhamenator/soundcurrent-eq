@@ -7,6 +7,11 @@
       <translation> (seleccionado actualmente)</translation>
     </message>
     <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (modelo original; no SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
+    </message>
+    <message>
       <source> (restored selection)</source>
       <translation> (selección restaurada)</translation>
     </message>
@@ -335,6 +340,11 @@ Import into your library?</source>
       <translation>Frecuencia de graves</translation>
     </message>
     <message>
+      <source>Bookshelf speaker</source>
+      <translation>Altavoz de estantería</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Boxiness</source>
       <translation>Sonido de caja</translation>
     </message>
@@ -437,6 +447,11 @@ Import into your library?</source>
     <message>
       <source>Center</source>
       <translation>Centro</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Altavoz central</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Change default audio endpoint</source>
@@ -880,6 +895,11 @@ Import into your library?</source>
       <translation>Plano</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>Altavoz de suelo</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Frecuencia</translation>
     </message>
@@ -964,6 +984,11 @@ Import into your library?</source>
     <message>
       <source>Import response text</source>
       <translation>Importar texto de respuesta</translation>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Altavoz empotrado en pared</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
@@ -2073,6 +2098,11 @@ Import into your library?</source>
     <message>
       <source>Type</source>
       <translation>Tipo</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Equipo sin clasificar</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>

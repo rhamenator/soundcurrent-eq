@@ -99,8 +99,12 @@
   "secondPassProgress": "tests/results/localization/second-pass-speaker-text.json",
   "currentCatalogs": {
     "nonEnglishLocales": 33,
-    "sourceMessagesPerLocale": 535,
+    "sourceMessagesPerLocale": 541,
     "unfinished": 0,
     "nativeReviewed": false
+  },
+  "taxonomyCaptionProgress": {
+    "report": "tests/results/localization/second-pass-taxonomy-captions.json",
+    "status": "five common categories and Sony qualifier complete; ten categories pending"
   }
 }

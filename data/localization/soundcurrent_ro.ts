@@ -7,6 +7,11 @@
       <translation> (selectat în prezent)</translation>
     </message>
     <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (modelul original; nu SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
+    </message>
+    <message>
       <source> (restored selection)</source>
       <translation> (selecție restaurată)</translation>
     </message>
@@ -335,6 +340,11 @@ Importați în bibliotecă?</translation>
       <translation>Frecvență bas</translation>
     </message>
     <message>
+      <source>Bookshelf speaker</source>
+      <translation>Boxă de raft</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Boxiness</source>
       <translation>Sunet de cutie</translation>
     </message>
@@ -437,6 +447,11 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Center</source>
       <translation>Centru</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Boxă centrală</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Change default audio endpoint</source>
@@ -880,6 +895,11 @@ Importați în bibliotecă?</translation>
       <translation>Plat</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>Boxă de podea</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Frecvență</translation>
     </message>
@@ -964,6 +984,11 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Import response text</source>
       <translation>Importați textul răspunsului în frecvență</translation>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Boxă încastrată în perete</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
@@ -2073,6 +2098,11 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Type</source>
       <translation>Tip</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Echipament neclasificat</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>
