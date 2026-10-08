@@ -95,3 +95,5 @@ All currently extracted messages populated (441 EQ / 527 Studio). Q remains dime
 ## Swedish and Danish initial batch
 
 Regional terms reviewed separately: Swedish förstärkning/klippning and Danish forstærkning/klipning. Headroom is nivåmarginal/niveaumargin, not balance or overall volume. Meter text retains estimated levels and peak warnings. Damping refers to high-frequency absorption while decay refers to duration. Amplifier profiles retain the requirement for actual electrical measurements. Native-speaker review remains unverified; both catalogs are incomplete.
+
+Swedish/Danish recovery review: refusing processing when active-equalizer inspection fails remains explicit. Preset names are distinguished from built-in identifiers, file-size limits remain unchanged, and app-open recovery behavior is retained. Avklingningstid/henfaldstid describes effect decay; effektandel describes processed effect contribution. Native review remains unverified.
