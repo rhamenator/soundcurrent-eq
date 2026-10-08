@@ -279,3 +279,7 @@ Hindi now has 166/441 populated current catalog entries. Added saving errors, ca
 ### Hindi: third existing-catalog batch
 
 Hindi now has 230/441 populated current catalog entries. Added effects, estimated metering and equipment-profile editing. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Hindi: fourth existing-catalog batch
+
+Hindi now has 291/441 populated current catalog entries. Added import validation, microphone calibration, channel limits and balance guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.

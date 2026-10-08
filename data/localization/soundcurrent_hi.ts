@@ -866,43 +866,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
-      <translation type="unfinished" />
+      <translation>उपकरण प्रोफ़ाइल आयात करें, बनाएँ और संपादित करें</translation>
     </message>
     <message>
       <source>Import equipment profile</source>
-      <translation type="unfinished" />
+      <translation>उपकरण प्रोफ़ाइल आयात करें</translation>
     </message>
     <message>
       <source>Import measured amplifier correction</source>
-      <translation type="unfinished" />
+      <translation>मापा गया ऐम्प्लिफ़ायर सुधार आयात करें</translation>
     </message>
     <message>
       <source>Import measured profile</source>
-      <translation type="unfinished" />
+      <translation>मापी गई प्रोफ़ाइल आयात करें</translation>
     </message>
     <message>
       <source>Import profile?</source>
-      <translation type="unfinished" />
+      <translation>प्रोफ़ाइल आयात करें?</translation>
     </message>
     <message>
       <source>Import relative measured response</source>
-      <translation type="unfinished" />
+      <translation>सापेक्ष मापी गई प्रतिक्रिया आयात करें</translation>
     </message>
     <message>
       <source>Import response text</source>
-      <translation type="unfinished" />
+      <translation>प्रतिक्रिया टेक्स्ट आयात करें</translation>
     </message>
     <message>
       <source>Include preview releases</source>
-      <translation type="unfinished" />
+      <translation>प्रीव्यू रिलीज़ शामिल करें</translation>
     </message>
     <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>इस संस्करण के ऊपर नए पैकेज इंस्टॉल करें — अनइंस्टॉल करने की आवश्यकता नहीं है। प्रीसेट और प्रोफ़ाइल सुरक्षित रहते हैं। अपना काम सहेजें, ऐप से बाहर निकलें (केवल विंडो बंद करने से ऐप चलता रहता है), अपडेट इंस्टॉल करें और फिर दोबारा खोलें।</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
-      <translation type="unfinished" />
+      <translation>इंस्टॉल किया गया संस्करण: %1</translation>
     </message>
     <message>
       <source>Interface language</source>
@@ -910,79 +910,79 @@ Import into your library?</source>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
-      <translation type="unfinished" />
+      <translation>उपकरण का उपप्रकार या पावर प्रकार अमान्य है</translation>
     </message>
     <message>
       <source>Invalid filter.</source>
-      <translation type="unfinished" />
+      <translation>अमान्य फ़िल्टर।</translation>
     </message>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
-      <translation type="unfinished" />
+      <translation>मापी गई ऐम्प्लिफ़ायर प्रोफ़ाइल अमान्य है। मॉडल, HTTPS माप स्रोत, माप की स्थितियाँ और सीमा के भीतर 1–16 PK/LS/HS फ़िल्टर आवश्यक हैं। README में प्रोफ़ाइल प्रारूप देखें।</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
-      <translation type="unfinished" />
+      <translation>मापी गई प्रतिक्रिया अमान्य है या सही क्रम में नहीं है।</translation>
     </message>
     <message>
       <source>Invalid or unordered response data.</source>
-      <translation type="unfinished" />
+      <translation>प्रतिक्रिया डेटा अमान्य है या सही क्रम में नहीं है।</translation>
     </message>
     <message>
       <source>Invalid profile library.</source>
-      <translation type="unfinished" />
+      <translation>अमान्य प्रोफ़ाइल लाइब्रेरी।</translation>
     </message>
     <message>
       <source>Invalid response from pactl</source>
-      <translation type="unfinished" />
+      <translation>pactl से अमान्य उत्तर</translation>
     </message>
     <message>
       <source>Invalid response point.</source>
-      <translation type="unfinished" />
+      <translation>अमान्य प्रतिक्रिया बिंदु।</translation>
     </message>
     <message>
       <source>Invalid speaker correction filter count</source>
-      <translation type="unfinished" />
+      <translation>स्पीकर सुधार फ़िल्टर की संख्या अमान्य है</translation>
     </message>
     <message>
       <source>Invalid speaker filter type</source>
-      <translation type="unfinished" />
+      <translation>स्पीकर फ़िल्टर का प्रकार अमान्य है</translation>
     </message>
     <message>
       <source>Invalid speaker identity</source>
-      <translation type="unfinished" />
+      <translation>स्पीकर की पहचान अमान्य है</translation>
     </message>
     <message>
       <source>Jazz</source>
-      <translation type="unfinished" />
+      <translation>जैज़</translation>
     </message>
     <message>
       <source>Keep current EQ</source>
-      <translation type="unfinished" />
+      <translation>वर्तमान EQ बनाए रखें</translation>
     </message>
     <message>
       <source>L</source>
-      <translation type="unfinished" />
+      <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
-      <translation>भाषा और क्षेत्र</translation>
+      <translation>भाषा और क्षेत्रीय सेटिंग</translation>
     </message>
     <message>
       <source>Left right balance</source>
-      <translation type="unfinished" />
+      <translation>बाएँ-दाएँ बैलेंस</translation>
     </message>
     <message>
       <source>Level indicator refresh interval</source>
-      <translation type="unfinished" />
+      <translation>स्तर संकेतक का अपडेट अंतराल</translation>
     </message>
     <message>
       <source>Level refresh</source>
-      <translation type="unfinished" />
+      <translation>स्तर अपडेट</translation>
     </message>
     <message>
       <source>Library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>लाइब्रेरी 16 MiB से बड़ी है।</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -991,11 +991,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Live</source>
-      <translation type="unfinished" />
+      <translation>लाइव</translation>
     </message>
     <message>
       <source>Lo-Fi</source>
-      <translation type="unfinished" />
+      <translation>लो-फ़ाई</translation>
     </message>
     <message>
       <source>Lock EQ</source>
@@ -1004,59 +1004,59 @@ Import into your library?</source>
     </message>
     <message>
       <source>Lock equalizer settings</source>
-      <translation type="unfinished" />
+      <translation>इक्वलाइज़र सेटिंग लॉक करें</translation>
     </message>
     <message>
       <source>Loudness</source>
-      <translation type="unfinished" />
+      <translation>लाउडनेस सुधार</translation>
     </message>
     <message>
       <source>Manufacturer</source>
-      <translation type="unfinished" />
+      <translation>निर्माता</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
-      <translation type="unfinished" />
+      <translation>अधिकतम 32 ऐम्प्लिफ़ायर प्रोफ़ाइल की सीमा पूरी हो गई है।</translation>
     </message>
     <message>
       <source>Maximum stereo width</source>
-      <translation type="unfinished" />
+      <translation>अधिकतम स्टीरियो विस्तार</translation>
     </message>
     <message>
       <source>Measure</source>
-      <translation type="unfinished" />
+      <translation>मापें</translation>
     </message>
     <message>
       <source>Measure speaker room and microphone response</source>
-      <translation type="unfinished" />
+      <translation>स्पीकर, कमरे और माइक्रोफ़ोन की प्रतिक्रिया मापें</translation>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
-      <translation type="unfinished" />
+      <translation>मापा गया मॉडल सुधार आपके सुनने के EQ में जोड़ा जाता है। उसके बाद भी आप बास बढ़ा सकते हैं या कोई बैंड समायोजित कर सकते हैं। गेन की सावधानीपूर्ण सीमाएँ लागू होती हैं; कमरे और ऐम्प्लिफ़ायर के प्रभाव के लिए पूरे सिस्टम का माप आवश्यक है।</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
-      <translation type="unfinished" />
+      <translation>माप की स्थितियाँ आवश्यक हैं।</translation>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
-      <translation type="unfinished" />
+      <translation>माप डेटा अधूरा था।</translation>
     </message>
     <message>
       <source>Measurement failed. Try a higher test level or move the mic closer.</source>
-      <translation type="unfinished" />
+      <translation>माप विफल हुआ। परीक्षण स्तर बढ़ाकर या माइक्रोफ़ोन पास लाकर कोशिश करें।</translation>
     </message>
     <message>
       <source>Measurement stopped.</source>
-      <translation type="unfinished" />
+      <translation>माप रोक दिया गया।</translation>
     </message>
     <message>
       <source>Metal</source>
-      <translation type="unfinished" />
+      <translation>मेटल</translation>
     </message>
     <message>
       <source>Mic gain</source>
-      <translation type="unfinished" />
+      <translation>माइक गेन</translation>
     </message>
     <message>
       <source>Microphone</source>
@@ -1064,76 +1064,76 @@ Import into your library?</source>
     </message>
     <message>
       <source>Microphone %1 adjustment</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन %1 समायोजन</translation>
     </message>
     <message>
       <source>Microphone EQ is off.</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन EQ बंद है।</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
-      <translation type="unfinished" />
+      <translation>प्लेबैक के दौरान माइक्रोफ़ोन रिकॉर्डिंग रुक गई</translation>
     </message>
     <message>
       <source>Microphone capture stopped during the test</source>
-      <translation type="unfinished" />
+      <translation>परीक्षण के दौरान माइक्रोफ़ोन रिकॉर्डिंग रुक गई</translation>
     </message>
     <message>
       <source>Microphone error: %1</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन त्रुटि: %1</translation>
     </message>
     <message>
       <source>Microphone filter did not appear</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन फ़िल्टर दिखाई नहीं दिया</translation>
     </message>
     <message>
       <source>Microphone filter disappeared</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन फ़िल्टर गायब हो गया</translation>
     </message>
     <message>
       <source>Microphone gain adjustment</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन गेन समायोजन</translation>
     </message>
     <message>
       <source>Microphone input device</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन इनपुट उपकरण</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन रिकॉर्डिंग में क्लिपिंग हो रही है। माइक्रोफ़ोन गेन या बूस्ट घटाकर दोबारा मापें।</translation>
     </message>
     <message>
       <source>Microphone route</source>
-      <translation type="unfinished" />
+      <translation>माइक्रोफ़ोन रूट</translation>
     </message>
     <message>
       <source>Model</source>
-      <translation type="unfinished" />
+      <translation>मॉडल</translation>
     </message>
     <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
-      <translation type="unfinished" />
+      <translation>L या R की ओर खिसकाने से दूसरे चैनल का स्तर घटता है; मध्य में दोनों का पूरा स्तर बना रहता है</translation>
     </message>
     <message>
       <source>Movies</source>
-      <translation type="unfinished" />
+      <translation>फ़िल्में</translation>
     </message>
     <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
-      <translation>प्राकृतिक माइक्रोफ़ोन EQ</translation>
+      <translation>स्वाभाविक माइक EQ</translation>
     </message>
     <message>
       <source>Natural mic EQ on · %1</source>
-      <translation type="unfinished" />
+      <translation>स्वाभाविक माइक EQ चालू · %1</translation>
     </message>
     <message>
       <source>Natural microphone equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>स्वाभाविक माइक्रोफ़ोन इक्वलाइज़र चालू या बंद</translation>
     </message>
     <message>
       <source>Night Listening</source>
-      <translation type="unfinished" />
+      <translation>रात में सुनना</translation>
     </message>
     <message>
       <source>No</source>
