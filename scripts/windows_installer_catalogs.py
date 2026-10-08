@@ -80,18 +80,19 @@ def generate_installer(source, destination, product, captions):
     if product not in ('SoundCurrent EQ', 'SoundCurrent Studio') or source.name not in (stem + '.nsi', stem + '-native.nsi'):
         raise ValueError('Installer source does not match product')
     route = 'native' if source.name.endswith('-native.nsi') else 'cable'
-    text = source.read_text(encoding='utf-8')
-    declared = re.findall(r'^!insertmacro MUI_LANGUAGE "([^"]+)"$', text, re.M)
+    # Byte I/O preserves LF, CRLF and mixed endings independently of host OS.
+    text = source.read_bytes().decode('utf-8')
+    declared = re.findall(r'^!insertmacro MUI_LANGUAGE "([^"]+)"\r?$', text, re.M)
     if declared != ['English']:
         raise ValueError('Installer language activation needs an explicit expanded generation plan')
     for key, value in captions['languages']['en'][route]['nsisEscaped'].items():
-        pattern = r'^LangString ' + re.escape(key) + r' \$\{LANG_ENGLISH\} "(?:\$\\"|[^"])*"$'
+        pattern = r'^LangString ' + re.escape(key) + r' \$\{LANG_ENGLISH\} "(?:\$\\"|[^"])*"(\r?)$'
         replacement = 'LangString ' + key + ' ${LANG_ENGLISH} "' + value + '"'
-        text, count = re.subn(pattern, lambda match: replacement, text, flags=re.M)
+        text, count = re.subn(pattern, lambda match: replacement + match[1], text, flags=re.M)
         if count != 1:
             raise ValueError('Missing or duplicate installer caption definition: ' + key)
     destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(text, encoding='utf-8')
+    destination.write_bytes(text.encode('utf-8'))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)

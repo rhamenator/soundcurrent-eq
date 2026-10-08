@@ -174,6 +174,15 @@ class CatalogTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'overwrite'):
                     exporter.generate_installer(source, source, product, captions)
                 fixture = folder / source.name
+                for ending in (b'\n', b'\r\n', None):
+                    normalized = original.replace(b'\r\n', b'\n')
+                    expected = normalized.replace(b'\n', ending) if ending else b''.join(
+                        line[:-1] + (b'\r\n' if index % 2 else b'\n') if line.endswith(b'\n') else line
+                        for index, line in enumerate(normalized.splitlines(keepends=True)))
+                    fixture.write_bytes(expected)
+                    exporter.generate_installer(fixture, generated, product, captions)
+                    self.assertEqual(generated.read_bytes(), expected, 'Preserve LF/CRLF/mixed bytes on every host')
+                    self.assertEqual(fixture.read_bytes(), expected)
                 for replacement in ('', 'LangString SCConnectAudio ${LANG_ENGLISH} "One"\nLangString SCConnectAudio ${LANG_ENGLISH} "Two"'):
                     fixture.write_text(re.sub(r'^LangString SCConnectAudio.*$', replacement, source.read_text(encoding='utf-8'), flags=re.M), encoding='utf-8')
                     failed = folder / 'failed.nsi'
