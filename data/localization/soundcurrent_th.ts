@@ -866,43 +866,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
-      <translation type="unfinished" />
+      <translation>นำเข้า สร้าง และแก้ไขโปรไฟล์อุปกรณ์</translation>
     </message>
     <message>
       <source>Import equipment profile</source>
-      <translation type="unfinished" />
+      <translation>นำเข้าโปรไฟล์อุปกรณ์</translation>
     </message>
     <message>
       <source>Import measured amplifier correction</source>
-      <translation type="unfinished" />
+      <translation>นำเข้าการชดเชยเครื่องขยายเสียงที่ได้จากการวัด</translation>
     </message>
     <message>
       <source>Import measured profile</source>
-      <translation type="unfinished" />
+      <translation>นำเข้าโปรไฟล์ที่ได้จากการวัด</translation>
     </message>
     <message>
       <source>Import profile?</source>
-      <translation type="unfinished" />
+      <translation>นำเข้าโปรไฟล์หรือไม่?</translation>
     </message>
     <message>
       <source>Import relative measured response</source>
-      <translation type="unfinished" />
+      <translation>นำเข้าการตอบสนองสัมพัทธ์ที่วัดได้</translation>
     </message>
     <message>
       <source>Import response text</source>
-      <translation type="unfinished" />
+      <translation>นำเข้าข้อความการตอบสนอง</translation>
     </message>
     <message>
       <source>Include preview releases</source>
-      <translation type="unfinished" />
+      <translation>รวมรุ่นพรีวิว</translation>
     </message>
     <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>ติดตั้งแพ็กเกจใหม่ทับเวอร์ชันนี้ได้โดยไม่ต้องถอนการติดตั้ง พรีเซ็ตและโปรไฟล์จะคงอยู่ บันทึกงาน ใช้ ออกจากแอป (การปิดหน้าต่างจะทำให้แอปยังทำงานอยู่) ติดตั้งอัปเดต แล้วเปิดใหม่</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
-      <translation type="unfinished" />
+      <translation>เวอร์ชันที่ติดตั้ง: %1</translation>
     </message>
     <message>
       <source>Interface language</source>
@@ -910,92 +910,92 @@ Import into your library?</source>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
-      <translation type="unfinished" />
+      <translation>ประเภทย่อยอุปกรณ์หรือประเภทกำลังขับไม่ถูกต้อง</translation>
     </message>
     <message>
       <source>Invalid filter.</source>
-      <translation type="unfinished" />
+      <translation>ฟิลเตอร์ไม่ถูกต้อง</translation>
     </message>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
-      <translation type="unfinished" />
+      <translation>โปรไฟล์เครื่องขยายเสียงที่วัดได้ไม่ถูกต้อง ต้องมีรุ่น แหล่งข้อมูลการวัด HTTPS เงื่อนไข และฟิลเตอร์ PK/LS/HS จำนวน 1–16 ตัวที่มีค่าอยู่ในขอบเขต ดูรูปแบบโปรไฟล์ใน README</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
-      <translation type="unfinished" />
+      <translation>การตอบสนองที่วัดได้ไม่ถูกต้องหรือไม่เรียงลำดับ</translation>
     </message>
     <message>
       <source>Invalid or unordered response data.</source>
-      <translation type="unfinished" />
+      <translation>ข้อมูลการตอบสนองไม่ถูกต้องหรือไม่เรียงลำดับ</translation>
     </message>
     <message>
       <source>Invalid profile library.</source>
-      <translation type="unfinished" />
+      <translation>คลังโปรไฟล์ไม่ถูกต้อง</translation>
     </message>
     <message>
       <source>Invalid response from pactl</source>
-      <translation type="unfinished" />
+      <translation>การตอบกลับจาก pactl ไม่ถูกต้อง</translation>
     </message>
     <message>
       <source>Invalid response point.</source>
-      <translation type="unfinished" />
+      <translation>จุดข้อมูลการตอบสนองไม่ถูกต้อง</translation>
     </message>
     <message>
       <source>Invalid speaker correction filter count</source>
-      <translation type="unfinished" />
+      <translation>จำนวนฟิลเตอร์ชดเชยลำโพงไม่ถูกต้อง</translation>
     </message>
     <message>
       <source>Invalid speaker filter type</source>
-      <translation type="unfinished" />
+      <translation>ประเภทฟิลเตอร์ลำโพงไม่ถูกต้อง</translation>
     </message>
     <message>
       <source>Invalid speaker identity</source>
-      <translation type="unfinished" />
+      <translation>ข้อมูลระบุลำโพงไม่ถูกต้อง</translation>
     </message>
     <message>
       <source>Jazz</source>
-      <translation type="unfinished" />
+      <translation>แจ๊ส</translation>
     </message>
     <message>
       <source>Keep current EQ</source>
-      <translation type="unfinished" />
+      <translation>คง EQ ปัจจุบัน</translation>
     </message>
     <message>
       <source>L</source>
-      <translation type="unfinished" />
+      <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
-      <translation>ภาษาและภูมิภาค</translation>
+      <translation>ภาษาและการตั้งค่าภูมิภาค</translation>
     </message>
     <message>
       <source>Left right balance</source>
-      <translation type="unfinished" />
+      <translation>สมดุลซ้าย–ขวา</translation>
     </message>
     <message>
       <source>Level indicator refresh interval</source>
-      <translation type="unfinished" />
+      <translation>ช่วงเวลารีเฟรชตัวแสดงระดับ</translation>
     </message>
     <message>
       <source>Level refresh</source>
-      <translation type="unfinished" />
+      <translation>รีเฟรชระดับ</translation>
     </message>
     <message>
       <source>Library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>คลังมีขนาดเกิน 16 MiB</translation>
     </message>
     <message>
       <source>Listening preset</source>
       <extracomment>Saved equalizer settings for playback. Not a listening device.</extracomment>
-      <translation>ค่าฟังสำเร็จรูป</translation>
+      <translation>พรีเซ็ตการฟัง</translation>
     </message>
     <message>
       <source>Live</source>
-      <translation type="unfinished" />
+      <translation>สด</translation>
     </message>
     <message>
       <source>Lo-Fi</source>
-      <translation type="unfinished" />
+      <translation>โลไฟ</translation>
     </message>
     <message>
       <source>Lock EQ</source>
@@ -1004,59 +1004,59 @@ Import into your library?</source>
     </message>
     <message>
       <source>Lock equalizer settings</source>
-      <translation type="unfinished" />
+      <translation>ล็อกการตั้งค่าอีควอไลเซอร์</translation>
     </message>
     <message>
       <source>Loudness</source>
-      <translation type="unfinished" />
+      <translation>ลาวด์เนส</translation>
     </message>
     <message>
       <source>Manufacturer</source>
-      <translation type="unfinished" />
+      <translation>ผู้ผลิต</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
-      <translation type="unfinished" />
+      <translation>ถึงจำนวนสูงสุด 32 โปรไฟล์เครื่องขยายเสียงแล้ว</translation>
     </message>
     <message>
       <source>Maximum stereo width</source>
-      <translation type="unfinished" />
+      <translation>ความกว้างสเตอริโอสูงสุด</translation>
     </message>
     <message>
       <source>Measure</source>
-      <translation type="unfinished" />
+      <translation>วัด</translation>
     </message>
     <message>
       <source>Measure speaker room and microphone response</source>
-      <translation type="unfinished" />
+      <translation>วัดการตอบสนองของลำโพง ห้อง และไมโครโฟน</translation>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
-      <translation type="unfinished" />
+      <translation>การชดเชยรุ่นที่ได้จากการวัดจะเพิ่มเข้าไปใน EQ สำหรับฟังของคุณ คุณยังเพิ่มเบสหรือปรับย่านใดก็ได้ มีขีดจำกัดเกนแบบระมัดระวัง การชดเชยผลของห้องและเครื่องขยายเสียงต้องวัดทั้งระบบ</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
-      <translation type="unfinished" />
+      <translation>ต้องระบุเงื่อนไขการวัด</translation>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
-      <translation type="unfinished" />
+      <translation>ข้อมูลการวัดไม่ครบถ้วน</translation>
     </message>
     <message>
       <source>Measurement failed. Try a higher test level or move the mic closer.</source>
-      <translation type="unfinished" />
+      <translation>การวัดล้มเหลว ลองเพิ่มระดับทดสอบหรือขยับไมโครโฟนให้ใกล้ขึ้น</translation>
     </message>
     <message>
       <source>Measurement stopped.</source>
-      <translation type="unfinished" />
+      <translation>หยุดการวัดแล้ว</translation>
     </message>
     <message>
       <source>Metal</source>
-      <translation type="unfinished" />
+      <translation>เมทัล</translation>
     </message>
     <message>
       <source>Mic gain</source>
-      <translation type="unfinished" />
+      <translation>เกนไมโครโฟน</translation>
     </message>
     <message>
       <source>Microphone</source>
@@ -1064,76 +1064,76 @@ Import into your library?</source>
     </message>
     <message>
       <source>Microphone %1 adjustment</source>
-      <translation type="unfinished" />
+      <translation>การปรับไมโครโฟน %1</translation>
     </message>
     <message>
       <source>Microphone EQ is off.</source>
-      <translation type="unfinished" />
+      <translation>EQ ไมโครโฟนปิดอยู่</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
-      <translation type="unfinished" />
+      <translation>การรับเสียงจากไมโครโฟนหยุดระหว่างเล่นเสียง</translation>
     </message>
     <message>
       <source>Microphone capture stopped during the test</source>
-      <translation type="unfinished" />
+      <translation>การรับเสียงจากไมโครโฟนหยุดระหว่างทดสอบ</translation>
     </message>
     <message>
       <source>Microphone error: %1</source>
-      <translation type="unfinished" />
+      <translation>ข้อผิดพลาดไมโครโฟน: %1</translation>
     </message>
     <message>
       <source>Microphone filter did not appear</source>
-      <translation type="unfinished" />
+      <translation>ฟิลเตอร์ไมโครโฟนไม่ปรากฏ</translation>
     </message>
     <message>
       <source>Microphone filter disappeared</source>
-      <translation type="unfinished" />
+      <translation>ฟิลเตอร์ไมโครโฟนหายไป</translation>
     </message>
     <message>
       <source>Microphone gain adjustment</source>
-      <translation type="unfinished" />
+      <translation>การปรับเกนไมโครโฟน</translation>
     </message>
     <message>
       <source>Microphone input device</source>
-      <translation type="unfinished" />
+      <translation>อุปกรณ์อินพุตไมโครโฟน</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
-      <translation type="unfinished" />
+      <translation>การบันทึกไมโครโฟนเกิดสัญญาณคลิป ลดเกนไมโครโฟนหรือบูสต์แล้ววัดใหม่</translation>
     </message>
     <message>
       <source>Microphone route</source>
-      <translation type="unfinished" />
+      <translation>เส้นทางไมโครโฟน</translation>
     </message>
     <message>
       <source>Model</source>
-      <translation type="unfinished" />
+      <translation>รุ่น</translation>
     </message>
     <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
-      <translation type="unfinished" />
+      <translation>เลื่อนไปทาง L หรือ R เพื่อลดระดับแชนเนลตรงข้าม ตำแหน่งกึ่งกลางคงทั้งสองแชนเนลไว้ที่ระดับเต็ม</translation>
     </message>
     <message>
       <source>Movies</source>
-      <translation type="unfinished" />
+      <translation>ภาพยนตร์</translation>
     </message>
     <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
-      <translation>EQ ไมโครโฟนแบบธรรมชาติ</translation>
+      <translation>EQ ไมโครโฟนเสียงธรรมชาติ</translation>
     </message>
     <message>
       <source>Natural mic EQ on · %1</source>
-      <translation type="unfinished" />
+      <translation>EQ ไมโครโฟนเสียงธรรมชาติเปิด · %1</translation>
     </message>
     <message>
       <source>Natural microphone equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>เปิดหรือปิดอีควอไลเซอร์ไมโครโฟนเสียงธรรมชาติ</translation>
     </message>
     <message>
       <source>Night Listening</source>
-      <translation type="unfinished" />
+      <translation>ฟังยามค่ำคืน</translation>
     </message>
     <message>
       <source>No</source>
