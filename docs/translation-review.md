@@ -127,3 +127,7 @@ Norwegian Bokmål/Finnish import and speaker-profile review: frekvensrespons/taa
 ## Norwegian Bokmål and Finnish completed extracted catalogs
 
 All currently extracted messages populated (441 EQ / 527 Studio). Q remains dimensionless quality, headroom is level margin, compressor makeup differs from post gain, and wet mix is effect contribution. Low-volume loudness compensation differs from output volume. Relative measurements include the microphone; measured response differs from inverted correction. Rendering summaries use labels for arbitrary counts. URLs, file filters, placeholders, machine IDs and numerical settings are preserved. Catalogs remain unverified; native-speaker review is not claimed.
+
+## Romanian and Hungarian initial batch
+
+Câștig/erősítés describes gain; rezervă de nivel/szinttartalék describes headroom, distinct from balance. Clipping warnings retain potential distortion, while dynamic boost retains its peak ceiling. Ambience damping and decay remain separate controls. Amplifier profiles require electrical measurements with known load and settings; marketing specifications are insufficient. Setup recovery keeps processing paused and the app open. Placeholders, units and character limits remain unchanged. Native review remains unverified.
