@@ -19,6 +19,15 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual([catalog.literal(args[0]) for args in catalog.calls(code, 'SC_TR')], ['A label'])
         self.assertEqual([catalog.literal(args[1]) for args in catalog.calls(code, 'require')], ['A reason'])
 
+    def test_marked_sources_include_unlisted_platform_adapters(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'platform').mkdir()
+            (root / 'platform/audio.inc').write_text('SC_TR("Route unavailable"); // SC_TR("Comment")', encoding='utf-8')
+            (root / 'new_controls.hpp').write_text('SC_TR("New control");', encoding='utf-8')
+            (root / 'notes.txt').write_text('SC_TR("Not compiled source");', encoding='utf-8')
+            self.assertEqual(catalog.marked_sources(root), {'Route unavailable', 'New control'})
+
     def test_source_scan_rejects_unmarked_caption(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

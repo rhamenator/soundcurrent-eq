@@ -58,8 +58,23 @@ def calls(code, name):
                 start = part.end()
 
 
-def sources():
+def marked_sources(directory):
+    """Discover explicit translation markers in every C++ source/header/adapter."""
     out = set()
+    for path in sorted(directory.rglob('*')):
+        if path.suffix not in ('.cpp', '.h', '.hpp', '.inc'):
+            continue
+        for args in calls(path.read_text(encoding='utf-8'), 'SC_TR'):
+            value = literal(args[0]) if args else None
+            if value is not None:
+                if len(args) > 1 and args[1] != '-1':
+                    raise ValueError('Numerus extraction needs explicit Qt language plural rules')
+                out.add(value)
+    return out
+
+
+def sources():
+    out = marked_sources(ROOT / 'src')
     for name in UI_SOURCES:
         path = ROOT / 'src' / name
         if not path.exists():
