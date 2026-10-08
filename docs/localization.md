@@ -94,3 +94,7 @@ EXTERNAL_UI_LABELS in the catalog validator is scoped to reviewed instruction so
 nsis_string_audit.py inventories supported custom controls, MessageBox/DetailPrint text, section captions, MUI headers and text definitions. nsis-text-backlog.json is an explicit unfinished-work inventory; new raw text or unaudited language references fail catalog unit tests. It is not a complete NSIS parser and does not expand macros or line continuations. A $(key) reference does not prove its definition, translation, layout or installed runtime behavior. Compiler and install/update/uninstall checks remain separate gates.
 
 The source-specific external-label rule also preserves CABLE Input and CABLE Output in the reviewed Windows endpoint diagnostic. These are default external device labels; user-edited names and SoundCurrent-owned action captions remain separate.
+
+### Windows PowerShell 5.1 qualification
+
+The 2026-10-08 inert helper run passed on Windows PowerShell 5.1.26100.9549: 1,122 required source/catalog lookups per application, isolated message fixtures and real quiet no-action errors in French, Arabic and Nynorsk. See second-pass-windows-ps51.json and its runtime log. The initial policy-blocked invocation is retained; the retry used process-only RemoteSigned. This does not qualify current installed Qt UI, driver operations or installer lifecycle. Native-speaker verification remains unverified.

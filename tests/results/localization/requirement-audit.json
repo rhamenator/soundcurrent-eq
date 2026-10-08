@@ -190,5 +190,9 @@
   "secondPassCableEndpoint": {
     "status": "one owned endpoint diagnostic translated and device labels protected; actual Windows endpoint path and packages pending",
     "evidence": "tests/results/localization/second-pass-cable-endpoint.json"
+  },
+  "secondPassWindowsPowerShell51": {
+    "report": "tests/results/localization/second-pass-windows-ps51.json",
+    "status": "inert helper runtime passed; current installed UI and package lifecycle pending"
   }
 }

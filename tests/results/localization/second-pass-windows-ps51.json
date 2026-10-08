@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-08",
+  "sourceCommit": "c4ea69ad58b9fb2ae966226c436062039a0e623a",
+  "runtime": "Windows PowerShell 5.1.26100.9549",
+  "catalogs": 34,
+  "requiredHelperLookupsPassed": 1122,
+  "isolatedHelperBranchFixtures": "passed",
+  "actualQuietNoActionHelpers": {
+    "helpers": [
+      "cable-setup.ps1",
+      "native-audio-setup.ps1"
+    ],
+    "languages": [
+      "fr",
+      "ar",
+      "nn"
+    ],
+    "expectedExit": 30,
+    "result": "passed"
+  },
+  "initialInvocation": "blocked by script policy; retried with process-only RemoteSigned",
+  "archiveSha256": "69602aa9ac1b934a46147f4fb6a4bc1145dea6fd4e1d49cb81cb2eb57eb39608",
+  "nativeSpeakerVerification": "unverified",
+  "driverActionsExecuted": false,
+  "installedQtUiQualified": false,
+  "installerLifecycleQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingHelperProseGaps": 2,
+  "notes": [
+    "Temporary data-only tests on authorized Copperfin VFP9 original. No driver installation, PnP action, registry writes or machine policy changes.",
+    "Real no-action helpers reject before device checks; other branch fixtures are isolated from driver actions.",
+    "Native missing-manager production fault was not included in this Windows run.",
+    "Temporary test files removed; graceful shutdown requested."
+  ]
+}
