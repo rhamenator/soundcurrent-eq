@@ -137,3 +137,5 @@ Arabic initial batch: 102/441 messages populated. Three focused Linux checks pas
 Arabic recovery, calibration and delay batch: 166/441 messages populated. Three focused Linux checks passed. Processing refusal, 1 MiB limits, update behavior and processed delay mix reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
 
 Arabic equipment, filters and metering batch: 230/441 messages populated. Three focused Linux checks passed. Estimated levels, filter Q/high-pass/high-shelf, equipment kinds and dynamics makeup gain reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Arabic microphone and measurement batch: 291/441 messages populated. Three focused Linux checks passed. Additive correction, microphone clipping, balance endpoints and signed routing gain reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
