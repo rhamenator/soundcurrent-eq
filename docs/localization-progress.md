@@ -203,3 +203,7 @@ Traditional Chinese startup, output and rendering batch: 349/441 messages popula
 Traditional Chinese saving, speaker profiles and device recovery batch: 398/441 messages populated. Three focused Linux checks passed. Saving, speaker correction bounds, peak hold, device recovery and reverb versus echo reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
 
 Traditional Chinese current catalogs complete: 441/441 messages populated. Full Linux CTest passed 75/75, including equipment workflows and script selection assertions. Calibration limits and operational controls reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+### Japanese: first existing-catalog batch
+
+Japanese now has 102/441 populated current catalog entries. The first 80 shared sources cover device routing, calibration limitations, enhancement controls and update/quit guidance. Both repositories passed the three focused Linux checks (localization, Japanese MainWindow offscreen, catalog structure). These translations remain unverified; Windows and visual qualification remain pending. Seven languages still have incomplete existing catalogs. Missing source strings remain scheduled for the second pass.
