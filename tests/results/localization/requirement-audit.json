@@ -218,5 +218,9 @@
   "secondPassInstallerDriverCheckbox": {
     "report": "tests/results/localization/second-pass-installer-driver-checkbox.json",
     "status": "all locale captions translated; English references wired; other installer languages pending activation"
+  },
+  "secondPassInstallerCaptionExport": {
+    "report": "tests/results/localization/second-pass-installer-caption-export.json",
+    "status": "shared exporter and all-locale syntax fixture passed; production integration and UI qualification pending"
   }
 }

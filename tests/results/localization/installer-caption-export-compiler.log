@@ -1,0 +1,17 @@
+204 generated captions, 34 locale tags x 2 routes x 3 captions. Compile-only syntax fixture with English language ID; no locale activation or UI layout tested.
+Processing config: /etc/nsisconf.nsh
+Processing script file: "/tmp/sc-installer-export-7ku6v12b/captions.nsi" (UTF8)
+
+Processed 1 file, writing output (x86-unicode):
+
+Output: "/tmp/sc-installer-export-7ku6v12b/captions.exe"
+Install: 1 page (64 bytes), 1 section (1 required) (4120 bytes), 244 instructions (6832 bytes), 224 strings (15956 bytes), 1 language table (1042 bytes).
+
+Using zlib compression.
+
+EXE header size:              133120 / 120832 bytes
+Install code:                   5631 / 26430 bytes
+Install data:                      0 / 0 bytes
+CRC (0x8C5FB12E):                  4 / 4 bytes
+
+Total size:                   138755 / 147266 bytes (94.2%)

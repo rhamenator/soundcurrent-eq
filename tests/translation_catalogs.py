@@ -15,6 +15,31 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_installer_export_preserves_literal_names_and_nsis_escaping(self):
+        root = Path(__file__).resolve().parents[1]
+        spec = importlib.util.spec_from_file_location('installer_export', root / 'scripts/windows_installer_catalogs.py')
+        exporter = importlib.util.module_from_spec(spec)
+        with patch.dict('sys.modules', {'localization': catalog}):
+            spec.loader.exec_module(exporter)
+        self.assertEqual(exporter.format_names('%2 / %1', 'Driver %2 $1', 'Product %1'), 'Product %1 / Driver %2 $1')
+        for template in ('%1', '%1 %1 %2', '%1 %2 %10', '%1 %2 %L1', '%1 %2 %n'):
+            with self.assertRaises(ValueError):
+                exporter.format_names(template, 'Driver', 'Product')
+        self.assertEqual(exporter.nsis_escape('Cost $1 "quoted"\n路径'), 'Cost $$1 $\\"quoted$\\"$\\n路径')
+        with self.assertRaises(ValueError):
+            exporter.nsis_escape('Bad\x00caption')
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / 'captions.json'
+            exporter.export(output, 'SoundCurrent Studio' if (root / 'src/studio_model.cpp').exists() else 'SoundCurrent EQ')
+            result = json.loads(output.read_text())
+            self.assertEqual(set(result['languages']), {row['tag'] for row in json.loads((catalog.DATA / 'catalogs.json').read_text())})
+            self.assertFalse(result['installerLocaleActivationComplete'])
+            for variants in result['languages'].values():
+                self.assertEqual(set(variants), {'cable', 'native'})
+                for route in variants.values():
+                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver'})
+                    self.assertEqual(set(route['nsisEscaped']), set(route['captions']))
+
     def test_installer_checkbox_catalog_sources_and_names(self):
         root = Path(__file__).resolve().parents[1]
         for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
