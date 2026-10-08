@@ -1,35 +1,35 @@
 {
-  "stage": "Ukrainian and Russian initial two batches",
+  "stage": "Ukrainian and Russian through microphone and measurement batch",
   "catalogs": [
     {
       "tag": "uk",
       "name": "Українська",
-      "translated": 166,
+      "translated": 291,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "a647f371e09f046d8e3ee587b4b09e4311428329b80c51c5384da1046763c5e4",
-      "qmSha256": "7b2840b119314eab3b01712c5373e8cd80014735a2fd20acbc23aa7265566657"
+      "tsSha256": "948334b96f2847b456d772746195886b32e92b9f5c503fb938584f8c0a61429d",
+      "qmSha256": "492436c2f222880193fe6dd082978d4a663ff63ccadb93db82e9b9f9f3fe2dd9"
     },
     {
       "tag": "ru",
       "name": "Русский",
-      "translated": 166,
+      "translated": 291,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "eaccf72da0528d74dd9d91b2b90a71199f855f6174e7f4356753d499e4a38c8f",
-      "qmSha256": "04638da19c2cdf77f7e97c7ee671eb6efd7465f5ba3841a41ac7020baafa9a02"
+      "tsSha256": "46c03ad98ad5eb1ee4a5d232acdb32235a10c41b08366a67feb1f7a99c634770",
+      "qmSha256": "9063c7fb8d4514b3468a6fc9c9097db08bf2dd0ca82164d822528773f75146a2"
     }
   ],
   "linuxTests": {
     "passed": 4,
     "total": 4,
     "scope": "compiled localization, Ukrainian/Russian main windows and catalog regressions",
-    "log": "/tmp/soundcurrent-eq-uk-ru-second-tests.log"
+    "log": "/tmp/soundcurrent-eq-uk-ru-fourth-tests.log"
   },
-  "review": "Contextual AI review; unverified. DSP confirms ambience damping filters high frequencies in feedback; decay controls duration. Error prompts preserve paused/disabled processing and kept settings.",
+  "review": "Contextual AI review; unverified. Q is filter quality, compressor makeup differs from post gain, loudness is low-volume tone compensation and negative routing gain reverses polarity. Measurement warnings preserve microphone contribution and clipping risk.",
   "nativeReviewed": false,
-  "windows": "Pending CI",
+  "windows": "Pending CI for current catalogs",
   "remaining": "Ukrainian, Russian and 20 other target catalogs incomplete."
 }

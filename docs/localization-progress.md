@@ -55,3 +55,5 @@ Czech and Slovak through microphone/measurement batch: cs: 291/441, sk: 291/441.
 Czech and Slovak completed checkpoint: all 441 current extracted messages populated. Full Linux CTest passed 58/58, including both equipment workflows. Czech EQ Settings and Slovak Studio effects were inspected at 1280×720. Render counts use neutral labels instead of fixed plural endings; native review remains unverified. Windows qualification pending for these catalogs.
 
 Ukrainian/Russian initial batches: uk: 166/441, ru: 166/441. Four focused Linux checks passed per repository. Profiles, gain, error recovery, updates and delay controls were reviewed contextually. Both catalogs remain incomplete and unverified.
+
+Ukrainian/Russian through measurement batch: uk: 291/441, ru: 291/441. Four focused Linux checks passed per app. Compressor/filter controls, equipment editing, microphone behavior and model-correction limits reviewed contextually; translations remain incomplete and unverified. Completed Czech/Slovak catalog commits passed Windows CI, with exact source commits recorded in their checkpoint report.

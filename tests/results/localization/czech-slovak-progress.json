@@ -36,6 +36,11 @@
   },
   "review": "Contextual AI review, unverified. Render counts use label form to avoid fixed plural endings. HTML links unchanged, measured response differs from inverted correction, wet contribution differs from post gain.",
   "nativeReviewed": false,
-  "windows": "Pending CI on new catalogs",
+  "windows": {
+    "runId": 37719842558,
+    "conclusion": "success",
+    "sourceCommit": "625ae9733f2c9dbc53cf6ff1480260ac4c55e2c3",
+    "scope": "Windows build, staged runtime and installer creation; actual desktop sign-in and manual installer lifecycle separate"
+  },
   "remaining": "22 target locales incomplete; small-screen Polish layout, own backend/installer text and actual Windows lifecycle/sign-in qualification remain open."
 }

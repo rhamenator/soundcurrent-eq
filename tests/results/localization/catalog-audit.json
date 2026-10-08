@@ -25,13 +25,13 @@
     "data/localization/soundcurrent_pt-BR.ts": "16a8efd1c3c3dd94ed3d1c08ce1bcabaa9cc71b2470890e29b5aa9fc79257bac",
     "data/localization/soundcurrent_pt-PT.ts": "cefd4fccf14f8ed506acece0bf27be665f3709f60db229d2f2cde3b44bbc428e",
     "data/localization/soundcurrent_ro.ts": "f9ed2d449d7326622a60296cb9fdf77a07fd0e77821154ef32c41f329cf137a4",
-    "data/localization/soundcurrent_ru.ts": "eaccf72da0528d74dd9d91b2b90a71199f855f6174e7f4356753d499e4a38c8f",
+    "data/localization/soundcurrent_ru.ts": "46c03ad98ad5eb1ee4a5d232acdb32235a10c41b08366a67feb1f7a99c634770",
     "data/localization/soundcurrent_sk.ts": "2b74cfa6278c989f5aa346110837022526c224d73d75b6e405d38e11b0fa56e1",
     "data/localization/soundcurrent_sv.ts": "66fcc930b516965888813624c45c2b7f9a4b4114884d33e72f733af38a87c06a",
     "data/localization/soundcurrent_sw.ts": "adfbee053ae79510539a5d4d3627d6b466cbf9108b0463feaeb42c6105675429",
     "data/localization/soundcurrent_th.ts": "87eaa9bf6279fbe1e9a412bf4be7f51f5ac7b23e14678cbd55d58709bc171b44",
     "data/localization/soundcurrent_tr.ts": "d376220e0ea0ede74587efab23723474784456cade8d59af20f2d7fd3a302f63",
-    "data/localization/soundcurrent_uk.ts": "a647f371e09f046d8e3ee587b4b09e4311428329b80c51c5384da1046763c5e4",
+    "data/localization/soundcurrent_uk.ts": "948334b96f2847b456d772746195886b32e92b9f5c503fb938584f8c0a61429d",
     "data/localization/soundcurrent_vi.ts": "93013b2064726f9c5001a629fc2cf13216def14e3b77a50ac389958dac30fe2e",
     "data/localization/soundcurrent_zh-Hans.ts": "760fd9a0c77dc1d0c907b4aa49f0652a7d691e4d58ed758a1ec54a01cd36e429",
     "data/localization/soundcurrent_zh-Hant.ts": "05202a8332aea63558a4785aca698dfa2084621ff7de9ec0b52cb4f6c070c73d"
@@ -265,7 +265,7 @@
       "file": "data/localization/soundcurrent_ru.ts",
       "locale": "ru",
       "total": 441,
-      "translated": 166,
+      "translated": 291,
       "linguistic_verification": "unknown",
       "runtime_ui_qualification": "unknown"
     },
@@ -313,7 +313,7 @@
       "file": "data/localization/soundcurrent_uk.ts",
       "locale": "uk",
       "total": 441,
-      "translated": 166,
+      "translated": 291,
       "linguistic_verification": "unknown",
       "runtime_ui_qualification": "unknown"
     },
@@ -343,7 +343,7 @@
     }
   ],
   "findingCounts": {
-    "untranslated": 8770
+    "untranslated": 8520
   },
-  "reportNote": "Compact structural report with input hashes and metrics; three sample findings. Contextual review and runtime qualification remain separate."
+  "reportNote": "Compact structural report with input hashes and metrics; three sample findings. Linguistic and runtime review remain separate."
 }

@@ -67,3 +67,5 @@ All current extracted entries populated (441 EQ / 527 Studio). The review distin
 ## Ukrainian and Russian initial batches
 
 Translated independently with Ukrainian підсилення/чіткість and Russian усиление/чёткость. Dynamic equipment names use neutral constructions to avoid forcing noun declension. Inspection of enhancement.cpp confirms ambience damping reduces high-frequency content in the feedback path; decay describes duration. Estimated-meter qualifiers, clipping warnings and safe failure/paused-state messages remain explicit. This is contextual AI review; both catalogs are incomplete and native-speaker verification remains unverified.
+
+Ukrainian/Russian filter and measurement review: добротність/добротность identifies dimensionless filter Q; компенсаційне/компенсационное підсилення/усиление distinguishes compressor makeup from post gain. Тонкомпенсація/тонкомпенсация means low-volume tone compensation. Negative route gain explicitly reverses polarity. Calibration continues to require a system measurement for room/amplifier effects, and labels distinguish estimated output from measured microphone response. Catalogs remain unverified.
