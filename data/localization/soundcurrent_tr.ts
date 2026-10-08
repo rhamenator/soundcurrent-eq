@@ -333,6 +333,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Tüm ekipman profillerine göz at / düzenleyici</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Kablo paketi yakalama tamponunun kapasitesini aşıyor</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Kalibrasyon test sinyali</translation>
     </message>
@@ -499,6 +503,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>Hazır ayarın kaydı tamamlanamadı.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Windows ses COM sistemi başlatılamadı</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Arayüz dili</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>Geçersiz kalibrasyon sesi</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Geçersiz ses iyileştirmeleri</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>Geçersiz ekolayzır ayarları</translation>
     </message>
@@ -971,6 +987,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Invalid speaker identity</source>
       <translation>Geçersiz hoparlör kimliği</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Geçersiz hoparlör miks biçimi</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Microphone input device</source>
       <translation>Mikrofon giriş cihazı</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Mikrofon kaydının işlenmesi durakladı</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>SoundCurrent Audio yüklendiğinde kendi mikrofon ses yolunu sağlar. VB-CABLE ile eşzamanlı mikrofon ve hoparlör EQ'su, ayrıca yüklenmiş ikinci bir kablo (A veya B) gerektirir. Kayıt uygulamalarında bu kabloyu seçin. Otomatik seçim, kullanılabiliyorsa SoundCurrent ses yolunu tercih eder.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>SoundCurrent sanal çıkışı 48 kHz stereo kayan noktalı ses gerektirir</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Kaynak</translation>
     </message>
@@ -1773,6 +1801,18 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Desteklenmeyen mikrofon kanal düzeni</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>Desteklenmeyen kayıt biçimi</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Desteklenmeyen hoparlör kanal düzeni veya örnekleme hızı</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Desteklenmeyen hoparlör miks örnek biçimi</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>Desteklenmeyen hoparlör profili şeması</translation>
     </message>
@@ -1816,6 +1856,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Warmth</source>
       <translation>Sıcaklık</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>Windows ses COM sistemi kullanılamıyor</translation>
     </message>
     <message>
       <source>Yes</source>

@@ -333,6 +333,10 @@ Import into your library?</source>
       <translation>모든 장비 프로파일 탐색 / 편집</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>케이블 패킷이 캡처 버퍼 용량을 초과합니다</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>캘리브레이션 테스트 신호</translation>
     </message>
@@ -499,6 +503,10 @@ Import into your library?</source>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>프리셋 저장을 완료하지 못했습니다.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Windows 오디오 COM을 초기화하지 못했습니다</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Import into your library?</source>
       <translation>인터페이스 언어</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>잘못된 보정 오디오</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>잘못된 음질 개선 설정</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>잘못된 이퀄라이저 설정</translation>
     </message>
@@ -971,6 +987,10 @@ Import into your library?</source>
     <message>
       <source>Invalid speaker identity</source>
       <translation>스피커 식별 정보가 잘못되었습니다</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>잘못된 스피커 믹스 형식</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Import into your library?</source>
     <message>
       <source>Microphone input device</source>
       <translation>마이크 입력 장치</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>마이크 녹음 처리가 멈췄습니다</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Import into your library?</source>
       <translation>SoundCurrent Audio가 설치되어 있으면 자체 마이크 경로를 제공합니다. VB-CABLE에서 마이크와 스피커 EQ를 동시에 사용하려면 별도로 설치한 두 번째 케이블 (A 또는 B)이 필요합니다. 녹음 앱에서 해당 케이블을 선택하세요. 자동 설정은 사용할 수 있는 경우 SoundCurrent 경로를 우선합니다.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>SoundCurrent 가상 출력에는 48 kHz 스테레오 부동 소수점 오디오가 필요합니다</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>출처</translation>
     </message>
@@ -1773,6 +1801,18 @@ Import into your library?</source>
       <translation>지원하지 않는 마이크 채널 레이아웃입니다</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>지원하지 않는 녹음 형식</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>지원하지 않는 스피커 채널 구성 또는 샘플링 주파수</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>지원하지 않는 스피커 믹스 샘플 형식</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>지원하지 않는 스피커 프로파일 스키마입니다</translation>
     </message>
@@ -1816,6 +1856,10 @@ Import into your library?</source>
     <message>
       <source>Warmth</source>
       <translation>따뜻함</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>Windows 오디오 COM을 사용할 수 없습니다</translation>
     </message>
     <message>
       <source>Yes</source>

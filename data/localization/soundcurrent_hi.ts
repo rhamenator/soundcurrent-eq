@@ -333,6 +333,10 @@ Import into your library?</source>
       <translation>सभी उपकरण प्रोफ़ाइल देखें / संपादित करें</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>केबल पैकेट कैप्चर बफ़र की क्षमता से बड़ा है</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>कैलिब्रेशन परीक्षण सिग्नल</translation>
     </message>
@@ -499,6 +503,10 @@ Import into your library?</source>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>प्रीसेट सहेजना पूरा नहीं हो सका।</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Windows ऑडियो COM शुरू नहीं किया जा सका</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Import into your library?</source>
       <translation>इंटरफ़ेस की भाषा</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>अमान्य कैलिब्रेशन ऑडियो</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>अमान्य ध्वनि सुधार सेटिंग्स</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>अमान्य इक्वलाइज़र सेटिंग्स</translation>
     </message>
@@ -971,6 +987,10 @@ Import into your library?</source>
     <message>
       <source>Invalid speaker identity</source>
       <translation>स्पीकर की पहचान अमान्य है</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>अमान्य स्पीकर मिक्स फ़ॉर्मैट</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Import into your library?</source>
     <message>
       <source>Microphone input device</source>
       <translation>माइक्रोफ़ोन इनपुट उपकरण</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>माइक्रोफ़ोन रिकॉर्डिंग की प्रोसेसिंग अटक गई है</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Import into your library?</source>
       <translation>SoundCurrent Audio इंस्टॉल होने पर अपना माइक्रोफ़ोन रूट प्रदान करता है। VB-CABLE में माइक्रोफ़ोन और स्पीकर EQ साथ चलाने के लिए अलग से इंस्टॉल की गई दूसरी केबल (A या B) आवश्यक है। रिकॉर्डिंग ऐप में वह केबल चुनें। स्वचालित विकल्प उपलब्ध होने पर SoundCurrent रूट को प्राथमिकता देता है।</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>SoundCurrent वर्चुअल आउटपुट के लिए 48 kHz स्टीरियो फ़्लोटिंग-पॉइंट ऑडियो चाहिए</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>स्रोत</translation>
     </message>
@@ -1773,6 +1801,18 @@ Import into your library?</source>
       <translation>असमर्थित माइक्रोफ़ोन चैनल लेआउट</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>रिकॉर्डिंग फ़ॉर्मैट समर्थित नहीं है</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>स्पीकर चैनल लेआउट या सैंपल रेट समर्थित नहीं है</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>स्पीकर मिक्स का सैंपल फ़ॉर्मैट समर्थित नहीं है</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>असमर्थित स्पीकर प्रोफ़ाइल स्कीमा</translation>
     </message>
@@ -1816,6 +1856,10 @@ Import into your library?</source>
     <message>
       <source>Warmth</source>
       <translation>गर्माहट</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>Windows ऑडियो COM उपलब्ध नहीं है</translation>
     </message>
     <message>
       <source>Yes</source>

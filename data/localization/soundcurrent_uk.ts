@@ -333,6 +333,10 @@ Import into your library?</source>
       <translation>Перегляд усіх профілів обладнання / редактор</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Пакет кабелю перевищує місткість буфера захоплення</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Калібрувальний тестовий сигнал</translation>
     </message>
@@ -499,6 +503,10 @@ Import into your library?</source>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>Не вдалося завершити збереження пресету.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Не вдалося ініціалізувати COM для аудіо Windows</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Import into your library?</source>
       <translation>Мова інтерфейсу</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>Неприпустимий калібрувальний аудіосигнал</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Неприпустимі налаштування поліпшення звуку</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>Неприпустимі налаштування еквалайзера</translation>
     </message>
@@ -971,6 +987,10 @@ Import into your library?</source>
     <message>
       <source>Invalid speaker identity</source>
       <translation>Неприпустимі ідентифікаційні дані акустичної системи</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Неприпустимий формат мікшування динаміків</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Import into your library?</source>
     <message>
       <source>Microphone input device</source>
       <translation>Вхідний пристрій мікрофона</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Обробка запису мікрофона зависла</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Import into your library?</source>
       <translation>SoundCurrent Audio після встановлення надає власний мікрофонний аудіотракт. Із VB-CABLE одночасний мікрофонний і акустичний EQ потребує окремо встановленого другого кабелю (A або B). Виберіть цей кабель у програмах запису. Автоматичний вибір надає перевагу аудіотракту SoundCurrent, якщо він доступний.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>Віртуальний вихід SoundCurrent потребує стереоаудіо 48 kHz у форматі з рухомою комою</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Джерело</translation>
     </message>
@@ -1773,6 +1801,18 @@ Import into your library?</source>
       <translation>Непідтримувана конфігурація каналів мікрофона</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>Непідтримуваний формат запису</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Непідтримувана конфігурація каналів динаміків або частота дискретизації</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Непідтримуваний формат відліків мікшування динаміків</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>Непідтримувана схема профілю акустичної системи</translation>
     </message>
@@ -1816,6 +1856,10 @@ Import into your library?</source>
     <message>
       <source>Warmth</source>
       <translation>Теплота</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM для аудіо Windows недоступний</translation>
     </message>
     <message>
       <source>Yes</source>

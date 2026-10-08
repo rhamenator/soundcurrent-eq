@@ -14,7 +14,7 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 ## Current checkpoint
 
-- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr, sv, da, nb, fi, ro, hu, nn, ar, he, fa, zh-Hans, zh-Hant, ja, ko, hi, id, vi, th, sw; 448 extracted messages each. These are unverified translations; nativeReviewed remains false.
+- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr, sv, da, nb, fi, ro, hu, nn, ar, he, fa, zh-Hans, zh-Hant, ja, ko, hi, id, vi, th, sw; 459 extracted messages each. These are unverified translations; nativeReviewed remains false.
 - All original target locales and added Nynorsk have populated current catalogs; omitted application messages still require the second pass. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
 - Coverage is distinct from contextual AI review, native-speaker verification and runtime qualification. Checkpoint reports in tests/results/localization identify tested catalogs, platforms and scopes.
 - Runtime supports separate UI language and number/date locale selection, regional/script fallback, pseudo localization and RTL. Maintenance preserves unfinished edits/comments and rejects unsupported numerus before rewriting.
@@ -441,3 +441,19 @@ All 33 non-English locales now cover the new seven EQ / nine Studio messages. Gl
 ### Backend diagnostic translation boundary
 
 Added a shared Qt desktop-only audio-error mapper. The invariant Windows backend diagnostic “The selected EQ settings are invalid” now displays the existing translated equalizer-settings message. Unknown driver diagnostics retain their exact text and Unicode details. The backend remains Qt-independent and its diagnostics/processing identifiers are unchanged. Both builds passed catalog completeness and two focused Linux checks, including mapping across non-English locales. Other backend diagnostics still require cataloging; Windows runtime and package qualification remain pending.
+
+### Backend literal diagnostics in progress
+
+Extended the Qt desktop boundary to direct literal Windows audio/capture errors, including unsupported formats, buffer overrun and stalled microphone consumption. Each app adds eleven applicable catalog messages; backend diagnostic IDs and DSP code remain unchanged. Microphone and calibration display paths now use the same mapping. German/French translations pass structural checks; seven catalog-maintenance regressions pass. Remaining locales, HRESULT/composed diagnostics and runtime/package qualification remain incomplete. The global completeness gate is failing for the new untranslated entries. Changes remain local and translations unverified.
+
+Backend literal translation checkpoint: added Spanish, Italian, European/Brazilian Portuguese, Dutch and Polish. Eight locales now populate all applicable new backend literal messages; structural checks and seven catalog-maintenance regressions passed. Twenty-five non-English locales remain. Changes remain local; no runtime qualification is claimed and translations remain unverified.
+
+Backend literal translation checkpoint: added Czech, Slovak, Ukrainian, Russian, Greek and Turkish. Fourteen locales now populate the applicable new backend messages. Structural checks and seven catalog-maintenance regressions passed in each repository. Nineteen locales remain. Changes remain local, translations unverified and runtime qualification pending.
+
+Backend literal translation checkpoint: added Swedish, Danish, Norwegian Bokmål/Nynorsk, Finnish, Romanian and Hungarian. Twenty-one locales populate all applicable new backend messages. Structural checks and seven catalog-maintenance regressions passed in each repository. Twelve locales remain; changes are local and translations unverified. Runtime/package qualification remains pending.
+
+Backend literal translation checkpoint: added Arabic, Hebrew, Persian, both Chinese variants, Japanese and Korean. Twenty-eight locales populate the applicable new messages. Structural checks and seven catalog-maintenance regressions passed in each repository. Hindi, Indonesian, Vietnamese, Thai and Swahili remain. Changes are local, translations unverified and runtime/package qualification pending.
+
+### Backend literal diagnostic batch complete
+
+All 33 non-English locales now cover the eleven applicable direct-literal backend messages per app. Global required-complete and structural checks pass. Both apps rebuilt and passed two focused Linux checks, including compiled translations, known diagnostic mapping and preservation of unknown Unicode details. Backend/DSP sources remain unchanged. HRESULT/composed diagnostics, helper and installer messages, visual and Windows/package qualification remain outstanding. Translations remain unverified. Earlier in-progress checkpoints describe historical states.

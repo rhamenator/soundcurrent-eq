@@ -333,6 +333,10 @@ Import into your library?</source>
       <translation>すべての機器プロファイルを参照 / 編集</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>ケーブルのパケットがキャプチャーバッファーの容量を超えています</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>キャリブレーションのテスト信号</translation>
     </message>
@@ -499,6 +503,10 @@ Import into your library?</source>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>プリセットの保存を完了できませんでした。</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Windows オーディオ COM を初期化できませんでした</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Import into your library?</source>
       <translation>表示言語</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>キャリブレーション音声が無効です</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>音質補正の設定が無効です</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>イコライザーの設定が無効です</translation>
     </message>
@@ -971,6 +987,10 @@ Import into your library?</source>
     <message>
       <source>Invalid speaker identity</source>
       <translation>スピーカーの識別情報が無効です</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>スピーカーのミックス形式が無効です</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Import into your library?</source>
     <message>
       <source>Microphone input device</source>
       <translation>マイク入力デバイス</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>マイク録音の処理が停滞しています</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Import into your library?</source>
       <translation>SoundCurrent Audio がインストールされている場合は、専用のマイク経路を提供します。VB-CABLE でマイクとスピーカーの EQ を同時に使用するには、別途インストールした 2 本目のケーブル（A または B）が必要です。録音アプリでそのケーブルを選択してください。自動設定では、利用可能な場合は SoundCurrent の経路を優先します。</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>SoundCurrent の仮想出力には 48 kHz のステレオ浮動小数点音声が必要です</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>出典</translation>
     </message>
@@ -1773,6 +1801,18 @@ Import into your library?</source>
       <translation>対応していないマイクのチャンネルレイアウトです</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>録音形式はサポートされていません</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>スピーカーのチャンネル構成またはサンプルレートはサポートされていません</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>スピーカーミックスのサンプル形式はサポートされていません</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>対応していないスピーカープロファイルのスキーマです</translation>
     </message>
@@ -1816,6 +1856,10 @@ Import into your library?</source>
     <message>
       <source>Warmth</source>
       <translation>温かみ</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>Windows オーディオ COM を利用できません</translation>
     </message>
     <message>
       <source>Yes</source>

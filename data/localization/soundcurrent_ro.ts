@@ -333,6 +333,10 @@ Importați în bibliotecă?</translation>
       <translation>Răsfoiți toate profilurile de echipament / editor</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Pachetul cablului depășește capacitatea bufferului de captură</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Semnal de test pentru calibrare</translation>
     </message>
@@ -499,6 +503,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>Nu s-a putut finaliza salvarea presetării.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Nu s-a putut inițializa COM pentru sunetul Windows</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Importați în bibliotecă?</translation>
       <translation>Limba interfeței</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>Semnal audio de calibrare nevalid</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Îmbunătățiri sonore nevalide</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>Setări ale egalizatorului nevalide</translation>
     </message>
@@ -971,6 +987,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Invalid speaker identity</source>
       <translation>Identitate nevalidă de boxă</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Format de mixaj al difuzoarelor nevalid</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Microphone input device</source>
       <translation>Dispozitiv de intrare microfon</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Procesarea înregistrării microfonului s-a blocat</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Importați în bibliotecă?</translation>
       <translation>SoundCurrent Audio oferă propria rută de microfon când este instalat. Cu VB-CABLE, EQ-ul simultan pentru microfon și boxe necesită un al doilea cablu instalat separat (A sau B). Selectați acel cablu în aplicațiile de înregistrare. Modul Automat preferă ruta SoundCurrent când este disponibilă.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>Ieșirea virtuală SoundCurrent necesită sunet stereo la 48 kHz în virgulă mobilă</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Sursă</translation>
     </message>
@@ -1773,6 +1801,18 @@ Importați în bibliotecă?</translation>
       <translation>Configurație de canale a microfonului neacceptată</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>Format de înregistrare neacceptat</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Configurație de canale a difuzoarelor sau rată de eșantionare neacceptată</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Format de eșantioane al mixajului difuzoarelor neacceptat</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>Schemă de profil de boxă neacceptată</translation>
     </message>
@@ -1816,6 +1856,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Warmth</source>
       <translation>Căldură</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM pentru sunetul Windows nu este disponibil</translation>
     </message>
     <message>
       <source>Yes</source>

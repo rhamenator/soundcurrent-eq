@@ -333,6 +333,10 @@ Import into your library?</source>
       <translation>تصفح جميع ملفات تعريف المعدات / المحرر</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>حزمة الكابل تتجاوز سعة مخزن الالتقاط</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>إشارة اختبار المعايرة</translation>
     </message>
@@ -499,6 +503,10 @@ Import into your library?</source>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>تعذر إكمال حفظ الإعداد المسبق.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>تعذرت تهيئة COM لصوت Windows</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Import into your library?</source>
       <translation>لغة الواجهة</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>صوت معايرة غير صالح</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>تحسينات صوت غير صالحة</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>إعدادات معادل الصوت غير صالحة</translation>
     </message>
@@ -971,6 +987,10 @@ Import into your library?</source>
     <message>
       <source>Invalid speaker identity</source>
       <translation>هوية مكبر الصوت غير صالحة</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>تنسيق مزج مكبرات الصوت غير صالح</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Import into your library?</source>
     <message>
       <source>Microphone input device</source>
       <translation>جهاز إدخال الميكروفون</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>توقفت معالجة تسجيل الميكروفون عن التقدم</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Import into your library?</source>
       <translation>يوفر SoundCurrent Audio مسار الميكروفون الخاص به عند تثبيته. مع VB-CABLE، تتطلب معادلة صوت الميكروفون ومكبرات الصوت في الوقت نفسه كابلًا ثانيًا مثبتًا بشكل منفصل (A أو B). اختر ذلك الكابل في تطبيقات التسجيل. يفضّل الوضع التلقائي مسار SoundCurrent عند توفره.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>يتطلب خرج SoundCurrent الافتراضي صوتًا ستيريو بتردد 48 kHz وتنسيق الفاصلة العائمة</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>المصدر</translation>
     </message>
@@ -1773,6 +1801,18 @@ Import into your library?</source>
       <translation>تخطيط قنوات الميكروفون غير مدعوم</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>تنسيق التسجيل غير مدعوم</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>تخطيط قنوات مكبرات الصوت أو معدل أخذ العينات غير مدعوم</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>تنسيق عينات مزج مكبرات الصوت غير مدعوم</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>مخطط ملف تعريف مكبر الصوت غير مدعوم</translation>
     </message>
@@ -1816,6 +1856,10 @@ Import into your library?</source>
     <message>
       <source>Warmth</source>
       <translation>الدفء</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM لصوت Windows غير متاح</translation>
     </message>
     <message>
       <source>Yes</source>

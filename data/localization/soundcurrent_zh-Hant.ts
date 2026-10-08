@@ -333,6 +333,10 @@ Import into your library?</source>
       <translation>瀏覽所有設備設定檔 / 編輯器</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>音訊線路資料封包超出擷取緩衝區容量</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>校正測試訊號</translation>
     </message>
@@ -499,6 +503,10 @@ Import into your library?</source>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>無法完成儲存預設。</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>無法初始化 Windows 音訊 COM</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Import into your library?</source>
       <translation>介面語言</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>校準音訊無效</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>聲音增強設定無效</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>等化器設定無效</translation>
     </message>
@@ -971,6 +987,10 @@ Import into your library?</source>
     <message>
       <source>Invalid speaker identity</source>
       <translation>喇叭識別資訊無效</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>喇叭混音格式無效</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Import into your library?</source>
     <message>
       <source>Microphone input device</source>
       <translation>麥克風輸入裝置</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>麥克風錄音處理已停滯</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Import into your library?</source>
       <translation>安裝後，SoundCurrent Audio 會提供自己的麥克風路由。使用 VB-CABLE 時，同時處理麥克風及喇叭等化需要另行安裝第二條線纜（A 或 B）。請在錄音應用程式中選擇該線纜。自動模式會優先使用可用的 SoundCurrent 路由。</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>SoundCurrent 虛擬輸出需要 48 kHz 立體聲浮點音訊</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>來源</translation>
     </message>
@@ -1773,6 +1801,18 @@ Import into your library?</source>
       <translation>不支援的麥克風聲道配置</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>不支援此錄音格式</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>不支援此喇叭聲道配置或取樣率</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>不支援此喇叭混音取樣格式</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>不支援的喇叭設定檔格式版本</translation>
     </message>
@@ -1816,6 +1856,10 @@ Import into your library?</source>
     <message>
       <source>Warmth</source>
       <translation>溫暖感</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>Windows 音訊 COM 無法使用</translation>
     </message>
     <message>
       <source>Yes</source>

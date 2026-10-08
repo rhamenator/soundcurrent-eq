@@ -333,6 +333,10 @@ Importovať do vašej knižnice?</translation>
       <translation>Prehliadať všetky profily zariadení / editor</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Paket kábla prekračuje kapacitu zachytávacieho buffera</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Kalibračný testovací signál</translation>
     </message>
@@ -499,6 +503,10 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>Nepodarilo sa dokončiť uloženie predvoľby.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Nie je možné inicializovať COM pre zvuk Windows</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Importovať do vašej knižnice?</translation>
       <translation>Jazyk rozhrania</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>Neplatný kalibračný zvuk</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Neplatné vylepšenia zvuku</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>Neplatné nastavenia ekvalizéra</translation>
     </message>
@@ -971,6 +987,10 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>Invalid speaker identity</source>
       <translation>Neplatné identifikačné údaje reproduktora</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Neplatný zmiešavací formát reproduktorov</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>Microphone input device</source>
       <translation>Vstupné zariadenie mikrofónu</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Spracovanie záznamu mikrofónu sa zablokovalo</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Importovať do vašej knižnice?</translation>
       <translation>SoundCurrent Audio po inštalácii poskytuje vlastnú mikrofónovú signálovú cestu. S VB-CABLE vyžaduje súčasné mikrofónové a reproduktorové EQ samostatne nainštalovaný druhý kábel (A alebo B). Tento kábel vyberte v aplikáciách na záznam. Automatická voľba uprednostňuje signálovú cestu SoundCurrent, ak je dostupná.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>Virtuálny výstup SoundCurrent vyžaduje stereofónny zvuk 48 kHz v pohyblivej rádovej čiarke</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Zdroj</translation>
     </message>
@@ -1773,6 +1801,18 @@ Importovať do vašej knižnice?</translation>
       <translation>Nepodporované rozloženie kanálov mikrofónu</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>Nepodporovaný formát záznamu</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Nepodporované rozloženie kanálov reproduktorov alebo vzorkovacia frekvencia</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Nepodporovaný formát vzoriek zmiešavania reproduktorov</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>Nepodporovaná schéma profilu reproduktora</translation>
     </message>
@@ -1816,6 +1856,10 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>Warmth</source>
       <translation>Teplý tón</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM pre zvuk Windows nie je dostupné</translation>
     </message>
     <message>
       <source>Yes</source>

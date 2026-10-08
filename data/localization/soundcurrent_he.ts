@@ -333,6 +333,10 @@ Import into your library?</source>
       <translation>עיון בכל פרופילי הציוד / עורך</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>חבילת הכבל חורגת מקיבולת מאגר הלכידה</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>אות בדיקת כיול</translation>
     </message>
@@ -499,6 +503,10 @@ Import into your library?</source>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>לא ניתן להשלים את שמירת הקביעה המוגדרת מראש.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>לא ניתן לאתחל COM לשמע של Windows</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Import into your library?</source>
       <translation>שפת הממשק</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>שמע כיול אינו תקין</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>שיפורי השמע אינם תקינים</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>הגדרות האקולייזר אינן תקינות</translation>
     </message>
@@ -971,6 +987,10 @@ Import into your library?</source>
     <message>
       <source>Invalid speaker identity</source>
       <translation>זהות הרמקול אינה תקינה</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>תבנית ערבול הרמקולים אינה תקינה</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Import into your library?</source>
     <message>
       <source>Microphone input device</source>
       <translation>מכשיר קלט המיקרופון</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>עיבוד הקלטת המיקרופון נתקע</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Import into your library?</source>
       <translation>SoundCurrent Audio מספק נתיב מיקרופון משלו כשהוא מותקן. עם VB-CABLE, שימוש בו־זמני באקולייזר למיקרופון ולרמקולים דורש כבל שני המותקן בנפרד (A או B). יש לבחור כבל זה באפליקציות הקלטה. מצב אוטומטי מעדיף את נתיב SoundCurrent כשהוא זמין.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>הפלט הווירטואלי של SoundCurrent דורש שמע סטריאו של 48 kHz בתבנית נקודה צפה</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>מקור</translation>
     </message>
@@ -1773,6 +1801,18 @@ Import into your library?</source>
       <translation>תצורת ערוצי המיקרופון אינה נתמכת</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>תבנית ההקלטה אינה נתמכת</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>פריסת ערוצי הרמקולים או קצב הדגימה אינם נתמכים</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>תבנית הדגימות של ערבול הרמקולים אינה נתמכת</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>סכמת פרופיל הרמקול אינה נתמכת</translation>
     </message>
@@ -1816,6 +1856,10 @@ Import into your library?</source>
     <message>
       <source>Warmth</source>
       <translation>חמימות</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM לשמע של Windows אינו זמין</translation>
     </message>
     <message>
       <source>Yes</source>

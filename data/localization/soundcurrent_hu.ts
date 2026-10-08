@@ -333,6 +333,10 @@ Importálja a könyvtárba?</translation>
       <translation>Összes eszközprofil böngészése / szerkesztő</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>A kábelcsomag meghaladja a rögzítési puffer kapacitását</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Kalibrációs tesztjel</translation>
     </message>
@@ -499,6 +503,10 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>Nem fejezhető be az előbeállítás mentése.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Nem sikerült inicializálni a Windows hang COM rendszerét</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Importálja a könyvtárba?</translation>
       <translation>Felület nyelve</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>Érvénytelen kalibrációs hang</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Érvénytelen hangjavítások</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>Érvénytelen hangszínszabályzó-beállítások</translation>
     </message>
@@ -971,6 +987,10 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Invalid speaker identity</source>
       <translation>Érvénytelen hangsugárzó-azonosító</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Érvénytelen hangszórókeverési formátum</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Microphone input device</source>
       <translation>Mikrofon bemeneti eszköze</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>A mikrofonfelvétel feldolgozása elakadt</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Importálja a könyvtárba?</translation>
       <translation>A SoundCurrent Audio telepítve saját mikrofonútvonalat biztosít. VB-CABLE esetén az egyidejű mikrofon- és hangsugárzó-EQ-hoz külön telepített második kábel (A vagy B) szükséges. Válassza ezt a kábelt a felvevőalkalmazásokban. Az Automatikus mód az elérhető SoundCurrent-útvonalat részesíti előnyben.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>A SoundCurrent virtuális kimenete 48 kHz-es, lebegőpontos sztereó hangot igényel</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Forrás</translation>
     </message>
@@ -1773,6 +1801,18 @@ Importálja a könyvtárba?</translation>
       <translation>Nem támogatott mikrofoncsatorna-elrendezés</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>Nem támogatott felvételi formátum</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Nem támogatott hangszóró-csatornaelrendezés vagy mintavételi frekvencia</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Nem támogatott hangszórókeverési mintaformátum</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>Nem támogatott hangsugárzóprofil-séma</translation>
     </message>
@@ -1816,6 +1856,10 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Warmth</source>
       <translation>Melegség</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>A Windows hang COM rendszere nem érhető el</translation>
     </message>
     <message>
       <source>Yes</source>

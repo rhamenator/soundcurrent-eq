@@ -333,6 +333,10 @@ Import into your library?</translation>
       <translation>Browse all equipment profiles / editor</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Cable packet exceeds its capture buffer</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Calibration test signal</translation>
     </message>
@@ -499,6 +503,10 @@ Import into your library?</translation>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>Could not finish saving preset.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Could not initialize Windows audio COM</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Import into your library?</translation>
       <translation>Interface language</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>Invalid calibration audio</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Invalid enhancements</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>Invalid equalizer settings</translation>
     </message>
@@ -971,6 +987,10 @@ Import into your library?</translation>
     <message>
       <source>Invalid speaker identity</source>
       <translation>Invalid speaker identity</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Invalid speaker mix format</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Import into your library?</translation>
     <message>
       <source>Microphone input device</source>
       <translation>Microphone input device</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Microphone recording consumer stalled</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Import into your library?</translation>
       <translation>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>SoundCurrent virtual output requires 48 kHz stereo float audio</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Source</translation>
     </message>
@@ -1773,6 +1801,18 @@ Import into your library?</translation>
       <translation>Unsupported microphone channel layout</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>Unsupported recording format</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Unsupported speaker channel layout or sample rate</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Unsupported speaker mix sample format</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>Unsupported speaker profile schema</translation>
     </message>
@@ -1816,6 +1856,10 @@ Import into your library?</translation>
     <message>
       <source>Warmth</source>
       <translation>Warmth</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>Windows audio COM unavailable</translation>
     </message>
     <message>
       <source>Yes</source>

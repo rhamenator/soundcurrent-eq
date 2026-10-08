@@ -333,6 +333,10 @@ Importere til biblioteket ditt?</translation>
       <translation>Bla gjennom alle utstyrsprofilar / rediger</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Kabelpakken overskrid kapasiteten til opptaksbufferen</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Testsignal for kalibrering</translation>
     </message>
@@ -499,6 +503,10 @@ Importere til biblioteket ditt?</translation>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>Kunne ikkje fullføre lagring av førehandsinnstillinga.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Kunne ikkje initialisere COM for Windows-lyd</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Importere til biblioteket ditt?</translation>
       <translation>Grensesnittspråk</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>Ugyldig kalibreringslyd</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Ugyldige lydforbetringar</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>Ugyldige equalizerinnstillingar</translation>
     </message>
@@ -971,6 +987,10 @@ Importere til biblioteket ditt?</translation>
     <message>
       <source>Invalid speaker identity</source>
       <translation>Ugyldig høgtalaridentitet</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Ugyldig miksformat for høgtalarar</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Importere til biblioteket ditt?</translation>
     <message>
       <source>Microphone input device</source>
       <translation>Mikrofoninngangseining</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Behandlinga av mikrofonopptaket har stoppa opp</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Importere til biblioteket ditt?</translation>
       <translation>SoundCurrent Audio tilbyr si eiga mikrofonruting når det er installert. Med VB-CABLE krev samtidig mikrofon- og høgtalar-EQ ein separat installert andre kabel (A eller B). Vel denne kabelen i opptaksappar. Automatisk føretrekkjer SoundCurrent-rutinga når ho er tilgjengeleg.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>Den virtuelle SoundCurrent-utgangen krev stereolyd ved 48 kHz i flyttalsformat</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Kjelde</translation>
     </message>
@@ -1773,6 +1801,18 @@ Importere til biblioteket ditt?</translation>
       <translation>Kanaloppsettet til mikrofonen er ikkje støtta</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>Opptaksformatet er ikkje støtta</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Kanaloppsettet eller samplingsfrekvensen til høgtalarane er ikkje støtta</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Sampleformatet for høgtalarmiksen er ikkje støtta</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>Skjemaet for høgtalarprofilen er ikkje støtta</translation>
     </message>
@@ -1816,6 +1856,10 @@ Importere til biblioteket ditt?</translation>
     <message>
       <source>Warmth</source>
       <translation>Varme</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM for Windows-lyd er ikkje tilgjengeleg</translation>
     </message>
     <message>
       <source>Yes</source>

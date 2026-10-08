@@ -333,6 +333,10 @@ Import into your library?</source>
       <translation>เรียกดูโปรไฟล์อุปกรณ์ทั้งหมด / ตัวแก้ไข</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>แพ็กเก็ตของสายเกินความจุของบัฟเฟอร์รับเสียง</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>สัญญาณทดสอบสำหรับปรับเทียบ</translation>
     </message>
@@ -499,6 +503,10 @@ Import into your library?</source>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>บันทึกพรีเซ็ตไม่สำเร็จ</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>ไม่สามารถเริ่มต้น COM เสียง Windows ได้</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Import into your library?</source>
       <translation>ภาษาของส่วนติดต่อ</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>เสียงปรับเทียบไม่ถูกต้อง</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>การตั้งค่าปรับแต่งเสียงไม่ถูกต้อง</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>การตั้งค่าอีควอไลเซอร์ไม่ถูกต้อง</translation>
     </message>
@@ -971,6 +987,10 @@ Import into your library?</source>
     <message>
       <source>Invalid speaker identity</source>
       <translation>ข้อมูลระบุลำโพงไม่ถูกต้อง</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>รูปแบบมิกซ์ลำโพงไม่ถูกต้อง</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Import into your library?</source>
     <message>
       <source>Microphone input device</source>
       <translation>อุปกรณ์อินพุตไมโครโฟน</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>การประมวลผลการบันทึกไมโครโฟนหยุดค้าง</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Import into your library?</source>
       <translation>SoundCurrent Audio มีเส้นทางไมโครโฟนของตนเองเมื่อติดตั้งแล้ว สำหรับ VB-CABLE การใช้ EQ ไมโครโฟนและลำโพงพร้อมกันต้องมีสายตัวที่สอง (A หรือ B) ที่ติดตั้งแยกต่างหาก เลือกสายนั้นในแอปบันทึกเสียง โหมดอัตโนมัติจะเลือกเส้นทาง SoundCurrent ก่อนเมื่อมีให้ใช้</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>เอาต์พุตเสมือน SoundCurrent ต้องใช้เสียงสเตอริโอ 48 kHz แบบทศนิยมลอยตัว</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>แหล่งที่มา</translation>
     </message>
@@ -1773,6 +1801,18 @@ Import into your library?</source>
       <translation>ไม่รองรับโครงร่างแชนเนลไมโครโฟน</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>ไม่รองรับรูปแบบการบันทึก</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>ไม่รองรับโครงร่างแชนเนลลำโพงหรืออัตราสุ่ม</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>ไม่รองรับรูปแบบตัวอย่างของมิกซ์ลำโพง</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>ไม่รองรับรุ่นโครงสร้างโปรไฟล์ลำโพง</translation>
     </message>
@@ -1816,6 +1856,10 @@ Import into your library?</source>
     <message>
       <source>Warmth</source>
       <translation>ความอุ่น</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM เสียง Windows ไม่พร้อมใช้งาน</translation>
     </message>
     <message>
       <source>Yes</source>

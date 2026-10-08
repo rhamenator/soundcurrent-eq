@@ -333,6 +333,10 @@ Zaimportować do biblioteki?</translation>
       <translation>Przeglądaj wszystkie profile sprzętu / edytor</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Pakiet kabla przekracza pojemność bufora przechwytywania</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Sygnał testowy kalibracji</translation>
     </message>
@@ -499,6 +503,10 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>Nie udało się zakończyć zapisywania ustawienia.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Nie udało się zainicjować COM dla dźwięku systemu Windows</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Zaimportować do biblioteki?</translation>
       <translation>Język interfejsu</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>Nieprawidłowy dźwięk kalibracji</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Nieprawidłowe ustawienia ulepszeń dźwięku</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>Nieprawidłowe ustawienia korektora</translation>
     </message>
@@ -971,6 +987,10 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Invalid speaker identity</source>
       <translation>Nieprawidłowa identyfikacja głośnika</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Nieprawidłowy format miksowania głośników</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Microphone input device</source>
       <translation>Urządzenie wejściowe mikrofonu</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Przetwarzanie nagrania mikrofonu zablokowało się</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Zaimportować do biblioteki?</translation>
       <translation>SoundCurrent Audio po instalacji udostępnia własny tor mikrofonu. Z VB-CABLE jednoczesna korekcja mikrofonu i głośników wymaga osobno zainstalowanego drugiego kabla (A lub B). Wybierz ten kabel w aplikacjach nagrywających. Tryb automatyczny preferuje tor SoundCurrent, gdy jest dostępny.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>Wirtualne wyjście SoundCurrent wymaga dźwięku stereo 48 kHz w formacie zmiennoprzecinkowym</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Źródło</translation>
     </message>
@@ -1773,6 +1801,18 @@ Zaimportować do biblioteki?</translation>
       <translation>Nieobsługiwany układ kanałów mikrofonu</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>Nieobsługiwany format nagrywania</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Nieobsługiwany układ kanałów głośników lub częstotliwość próbkowania</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Nieobsługiwany format próbek miksu głośników</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>Nieobsługiwany schemat profilu głośnika</translation>
     </message>
@@ -1816,6 +1856,10 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Warmth</source>
       <translation>Ciepło</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM dla dźwięku systemu Windows jest niedostępne</translation>
     </message>
     <message>
       <source>Yes</source>

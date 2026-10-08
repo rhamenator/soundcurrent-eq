@@ -333,6 +333,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Jelajahi semua profil peralatan / editor</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Paket kabel melebihi kapasitas buffer tangkapan</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Sinyal uji kalibrasi</translation>
     </message>
@@ -499,6 +503,10 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>Tidak dapat menyelesaikan penyimpanan preset.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Tidak dapat menginisialisasi COM audio Windows</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Impor ke pustaka Anda?</translation>
       <translation>Bahasa antarmuka</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>Audio kalibrasi tidak valid</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Pengaturan peningkatan suara tidak valid</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>Pengaturan equalizer tidak valid</translation>
     </message>
@@ -971,6 +987,10 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Invalid speaker identity</source>
       <translation>Identitas speaker tidak valid</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Format campuran speaker tidak valid</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Microphone input device</source>
       <translation>Perangkat masukan mikrofon</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Pemrosesan rekaman mikrofon macet</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Impor ke pustaka Anda?</translation>
       <translation>SoundCurrent Audio menyediakan jalur mikrofon sendiri saat diinstal. Dengan VB-CABLE, EQ mikrofon dan speaker secara bersamaan memerlukan kabel kedua (A atau B) yang diinstal terpisah. Pilih kabel tersebut di aplikasi perekaman. Opsi Otomatis mengutamakan jalur SoundCurrent jika tersedia.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>Output virtual SoundCurrent memerlukan audio stereo 48 kHz dengan format floating-point</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Sumber</translation>
     </message>
@@ -1773,6 +1801,18 @@ Impor ke pustaka Anda?</translation>
       <translation>Tata letak kanal mikrofon tidak didukung</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>Format rekaman tidak didukung</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Tata letak kanal speaker atau laju sampel tidak didukung</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Format sampel campuran speaker tidak didukung</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>Skema profil speaker tidak didukung</translation>
     </message>
@@ -1816,6 +1856,10 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Warmth</source>
       <translation>Kehangatan</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM audio Windows tidak tersedia</translation>
     </message>
     <message>
       <source>Yes</source>

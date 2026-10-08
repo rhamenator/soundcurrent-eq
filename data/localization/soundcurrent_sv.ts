@@ -333,6 +333,10 @@ Importera till ditt bibliotek?</translation>
       <translation>Bläddra bland alla utrustningsprofiler / redigera</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Kabelpaketet överskrider inspelningsbuffertens kapacitet</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Testsignal för kalibrering</translation>
     </message>
@@ -499,6 +503,10 @@ Importera till ditt bibliotek?</translation>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>Kunde inte slutföra sparandet av förinställningen.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Det gick inte att initiera COM för Windows-ljud</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Importera till ditt bibliotek?</translation>
       <translation>Gränssnittsspråk</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>Ogiltigt kalibreringsljud</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Ogiltiga ljudförbättringar</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>Ogiltiga equalizerinställningar</translation>
     </message>
@@ -971,6 +987,10 @@ Importera till ditt bibliotek?</translation>
     <message>
       <source>Invalid speaker identity</source>
       <translation>Ogiltiga högtalaruppgifter</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Ogiltigt mixformat för högtalare</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Importera till ditt bibliotek?</translation>
     <message>
       <source>Microphone input device</source>
       <translation>Mikrofonens inmatningsenhet</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Bearbetningen av mikrofoninspelningen har fastnat</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Importera till ditt bibliotek?</translation>
       <translation>SoundCurrent Audio tillhandahåller en egen mikrofonroutning när det är installerat. Med VB-CABLE kräver samtidig mikrofon- och högtalar-EQ en separat installerad andra kabel (A eller B). Välj den kabeln i inspelningsappar. Automatiskt läge föredrar SoundCurrent-routningen när den är tillgänglig.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>SoundCurrents virtuella utgång kräver stereoljud med 48 kHz i flyttalsformat</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Källa</translation>
     </message>
@@ -1773,6 +1801,18 @@ Importera till ditt bibliotek?</translation>
       <translation>Mikrofonens kanallayout stöds inte</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>Inspelningsformatet stöds inte</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Högtalarnas kanaluppsättning eller samplingsfrekvens stöds inte</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Samplingsformatet för högtalarmixen stöds inte</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>Högtalarprofilens schema stöds inte</translation>
     </message>
@@ -1816,6 +1856,10 @@ Importera till ditt bibliotek?</translation>
     <message>
       <source>Warmth</source>
       <translation>Värme</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM för Windows-ljud är inte tillgängligt</translation>
     </message>
     <message>
       <source>Yes</source>

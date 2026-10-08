@@ -1,6 +1,6 @@
 {
   "scope": "Literal C++ exceptions and selected view calls across src, NSIS UI candidates, Python script diagnostics. Dynamic/composed strings, shell/PowerShell messages, native dialogs and data-driven names require further review. Not whole-application coverage.",
-  "catalogSourceCount": 448,
+  "catalogSourceCount": 459,
   "candidateCount": 82,
   "candidates": [
     {
@@ -126,35 +126,35 @@
       "file": "src/windows_audio.cpp",
       "call": "runtime_error",
       "source": "Could not initialize Windows audio COM",
-      "inCatalog": false,
+      "inCatalog": true,
       "classification": "needs reachability and runtime translation review"
     },
     {
       "file": "src/windows_audio.cpp",
       "call": "runtime_error",
       "source": "Invalid speaker mix format",
-      "inCatalog": false,
+      "inCatalog": true,
       "classification": "needs reachability and runtime translation review"
     },
     {
       "file": "src/windows_audio.cpp",
       "call": "runtime_error",
       "source": "Unsupported speaker mix sample format",
-      "inCatalog": false,
+      "inCatalog": true,
       "classification": "needs reachability and runtime translation review"
     },
     {
       "file": "src/windows_audio.cpp",
       "call": "runtime_error",
       "source": "SoundCurrent virtual output requires 48 kHz stereo float audio",
-      "inCatalog": false,
+      "inCatalog": true,
       "classification": "needs reachability and runtime translation review"
     },
     {
       "file": "src/windows_audio.cpp",
       "call": "runtime_error",
       "source": "Unsupported speaker channel layout or sample rate",
-      "inCatalog": false,
+      "inCatalog": true,
       "classification": "needs reachability and runtime translation review"
     },
     {
@@ -168,42 +168,42 @@
       "file": "src/windows_audio.cpp",
       "call": "runtime_error",
       "source": "Invalid enhancements",
-      "inCatalog": false,
+      "inCatalog": true,
       "classification": "needs reachability and runtime translation review"
     },
     {
       "file": "src/windows_audio.cpp",
       "call": "runtime_error",
       "source": "Cable packet exceeds its capture buffer",
-      "inCatalog": false,
+      "inCatalog": true,
       "classification": "needs reachability and runtime translation review"
     },
     {
       "file": "src/windows_io.cpp",
       "call": "runtime_error",
       "source": "Windows audio COM unavailable",
-      "inCatalog": false,
+      "inCatalog": true,
       "classification": "needs reachability and runtime translation review"
     },
     {
       "file": "src/windows_io.cpp",
       "call": "runtime_error",
       "source": "Unsupported recording format",
-      "inCatalog": false,
+      "inCatalog": true,
       "classification": "needs reachability and runtime translation review"
     },
     {
       "file": "src/windows_io.cpp",
       "call": "runtime_error",
       "source": "Microphone recording consumer stalled",
-      "inCatalog": false,
+      "inCatalog": true,
       "classification": "needs reachability and runtime translation review"
     },
     {
       "file": "src/windows_io.cpp",
       "call": "runtime_error",
       "source": "Invalid calibration audio",
-      "inCatalog": false,
+      "inCatalog": true,
       "classification": "needs reachability and runtime translation review"
     },
     {

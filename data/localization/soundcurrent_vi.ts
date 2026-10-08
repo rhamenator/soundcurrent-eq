@@ -333,6 +333,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Duyệt tất cả cấu hình thiết bị / trình chỉnh sửa</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Gói dữ liệu cáp vượt quá dung lượng bộ đệm thu</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Tín hiệu thử hiệu chuẩn</translation>
     </message>
@@ -499,6 +503,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>Không thể hoàn tất lưu thiết lập sẵn.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Không thể khởi tạo COM âm thanh Windows</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Ngôn ngữ giao diện</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>Âm thanh hiệu chuẩn không hợp lệ</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Thiết lập cải thiện âm thanh không hợp lệ</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>Thiết lập bộ cân bằng âm không hợp lệ</translation>
     </message>
@@ -971,6 +987,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Invalid speaker identity</source>
       <translation>Thông tin nhận dạng loa không hợp lệ</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Định dạng trộn âm loa không hợp lệ</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Microphone input device</source>
       <translation>Thiết bị đầu vào micrô</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Quá trình xử lý bản ghi micrô bị đình trệ</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>SoundCurrent Audio cung cấp tuyến micrô riêng khi được cài đặt. Với VB-CABLE, EQ micrô và loa đồng thời cần một cáp thứ hai (A hoặc B) được cài đặt riêng. Chọn cáp đó trong ứng dụng ghi âm. Chế độ tự động ưu tiên tuyến SoundCurrent khi có sẵn.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>Đầu ra ảo SoundCurrent yêu cầu âm thanh stereo 48 kHz ở định dạng dấu phẩy động</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Nguồn</translation>
     </message>
@@ -1773,6 +1801,18 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Không hỗ trợ bố trí kênh micrô</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>Không hỗ trợ định dạng ghi âm</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Không hỗ trợ bố trí kênh loa hoặc tần số lấy mẫu</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Không hỗ trợ định dạng mẫu trộn âm loa</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>Không hỗ trợ phiên bản cấu trúc cấu hình loa</translation>
     </message>
@@ -1816,6 +1856,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Warmth</source>
       <translation>Độ ấm</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM âm thanh Windows không khả dụng</translation>
     </message>
     <message>
       <source>Yes</source>

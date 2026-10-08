@@ -333,6 +333,10 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Parcourir tous les profils d’équipement / éditeur</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Le paquet du câble dépasse la capacité de son tampon de capture</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>Signal de test d’étalonnage</translation>
     </message>
@@ -499,6 +503,10 @@ Importer dans votre bibliothèque ?</translation>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>Impossible de terminer l’enregistrement du préréglage.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Impossible d’initialiser COM pour l’audio Windows</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Langue de l’interface</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>Audio de calibration non valide</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Améliorations sonores non valides</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>Réglages de l’égaliseur non valides</translation>
     </message>
@@ -971,6 +987,10 @@ Importer dans votre bibliothèque ?</translation>
     <message>
       <source>Invalid speaker identity</source>
       <translation>Identité d’enceinte invalide</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Format de mixage des enceintes non valide</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Importer dans votre bibliothèque ?</translation>
     <message>
       <source>Microphone input device</source>
       <translation>Appareil d’entrée du microphone</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Le traitement de l’enregistrement du microphone ne suit plus</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Importer dans votre bibliothèque ?</translation>
       <translation>SoundCurrent Audio fournit son propre chemin audio pour microphone lorsqu’il est installé. Avec VB-CABLE, l’égalisation simultanée du microphone et des enceintes nécessite un deuxième câble installé séparément (A ou B). Sélectionnez ce câble dans les applications d’enregistrement. Le mode automatique privilégie le chemin SoundCurrent lorsqu’il est disponible.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>La sortie virtuelle SoundCurrent nécessite un audio stéréo à 48 kHz en virgule flottante</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>Source</translation>
     </message>
@@ -1773,6 +1801,18 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Configuration des canaux du microphone non prise en charge</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>Format d’enregistrement non pris en charge</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Disposition des canaux des enceintes ou fréquence d’échantillonnage non prise en charge</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Format des échantillons du mixage des enceintes non pris en charge</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>Version du format de profil d’enceinte non prise en charge</translation>
     </message>
@@ -1816,6 +1856,10 @@ Importer dans votre bibliothèque ?</translation>
     <message>
       <source>Warmth</source>
       <translation>Chaleur</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM pour l’audio Windows n’est pas disponible</translation>
     </message>
     <message>
       <source>Yes</source>

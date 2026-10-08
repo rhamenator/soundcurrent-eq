@@ -333,6 +333,10 @@ Import into your library?</source>
       <translation>مرور همه پروفایل‌های تجهیزات / ویرایشگر</translation>
     </message>
     <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>بستهٔ کابل از ظرفیت بافر دریافت فراتر می‌رود</translation>
+    </message>
+    <message>
       <source>Calibration test signal</source>
       <translation>سیگنال آزمون کالیبراسیون</translation>
     </message>
@@ -499,6 +503,10 @@ Import into your library?</source>
     <message>
       <source>Could not finish saving preset.</source>
       <translation>تکمیل ذخیره پیش‌تنظیم ممکن نشد.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>راه‌اندازی COM صوتی Windows ممکن نشد</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
@@ -921,6 +929,14 @@ Import into your library?</source>
       <translation>زبان رابط</translation>
     </message>
     <message>
+      <source>Invalid calibration audio</source>
+      <translation>صدای کالیبراسیون نامعتبر است</translation>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>بهبودهای صوتی نامعتبر است</translation>
+    </message>
+    <message>
       <source>Invalid equalizer settings</source>
       <translation>تنظیمات اکولایزر نامعتبر است</translation>
     </message>
@@ -971,6 +987,10 @@ Import into your library?</source>
     <message>
       <source>Invalid speaker identity</source>
       <translation>شناسه بلندگو نامعتبر است</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>قالب میکس بلندگو نامعتبر است</translation>
     </message>
     <message>
       <source>Jazz</source>
@@ -1121,6 +1141,10 @@ Import into your library?</source>
     <message>
       <source>Microphone input device</source>
       <translation>دستگاه ورودی میکروفون</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>پردازش ضبط میکروفون متوقف شده است</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
@@ -1596,6 +1620,10 @@ Import into your library?</source>
       <translation>SoundCurrent Audio پس از نصب مسیر میکروفون خود را فراهم می‌کند. با VB-CABLE، اکولایزر هم‌زمان میکروفون و بلندگو به یک کابل دوم (A یا B) با نصب جداگانه نیاز دارد. آن کابل را در برنامه‌های ضبط انتخاب کنید. حالت خودکار در صورت دسترس بودن مسیر SoundCurrent را ترجیح می‌دهد.</translation>
     </message>
     <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>خروجی مجازی SoundCurrent به صدای استریوی 48 kHz با قالب ممیز شناور نیاز دارد</translation>
+    </message>
+    <message>
       <source>Source</source>
       <translation>منبع</translation>
     </message>
@@ -1773,6 +1801,18 @@ Import into your library?</source>
       <translation>چیدمان کانال‌های میکروفون پشتیبانی نمی‌شود</translation>
     </message>
     <message>
+      <source>Unsupported recording format</source>
+      <translation>قالب ضبط پشتیبانی نمی‌شود</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>چیدمان کانال بلندگو یا نرخ نمونه‌برداری پشتیبانی نمی‌شود</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>قالب نمونه‌های میکس بلندگو پشتیبانی نمی‌شود</translation>
+    </message>
+    <message>
       <source>Unsupported speaker profile schema</source>
       <translation>طرح ساختار پروفایل بلندگو پشتیبانی نمی‌شود</translation>
     </message>
@@ -1816,6 +1856,10 @@ Import into your library?</source>
     <message>
       <source>Warmth</source>
       <translation>گرمی صدا</translation>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM صوتی Windows در دسترس نیست</translation>
     </message>
     <message>
       <source>Yes</source>
