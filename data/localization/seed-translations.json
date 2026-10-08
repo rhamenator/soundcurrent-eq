@@ -76,7 +76,10 @@
     "Enhancements outside supported ranges",
     "Choose one audio setup action.",
     "Invalid audio setup requester.",
-    "The route-preserving setup helper is missing."
+    "The route-preserving setup helper is missing.",
+    "The VB-CABLE package is missing. Repair the SoundCurrent installation.",
+    "VB-CABLE package checksum mismatch. Repair the installation.",
+    "Windows could not verify the VB-Audio executable signature."
   ],
   "languages": {
     "de": [
@@ -157,7 +160,10 @@
       "Klangverbesserungen außerhalb der unterstützten Wertebereiche",
       "Wählen Sie genau eine Aktion für die Audioeinrichtung.",
       "Ungültiger anfordernder Prozess für die Audioeinrichtung.",
-      "Die Einrichtungshilfe zum Erhalten der Audiowege fehlt."
+      "Die Einrichtungshilfe zum Erhalten der Audiowege fehlt.",
+      "Das VB-CABLE-Paket fehlt. Reparieren Sie die SoundCurrent-Installation.",
+      "Die Prüfsumme des VB-CABLE-Pakets stimmt nicht überein. Reparieren Sie die Installation.",
+      "Windows konnte die Signatur der ausführbaren VB-Audio-Datei nicht überprüfen."
     ],
     "fr": [
       "Français",
@@ -237,7 +243,10 @@
       "Améliorations sonores hors des plages prises en charge",
       "Choisissez une seule action de configuration audio.",
       "Processus demandeur de configuration audio non valide.",
-      "L’assistant de configuration qui préserve le routage audio est introuvable."
+      "L’assistant de configuration qui préserve le routage audio est introuvable.",
+      "Le paquet VB-CABLE est introuvable. Réparez l’installation de SoundCurrent.",
+      "La somme de contrôle du paquet VB-CABLE ne correspond pas. Réparez l’installation.",
+      "Windows n’a pas pu vérifier la signature du fichier exécutable VB-Audio."
     ],
     "es": [
       "Español",
@@ -317,7 +326,10 @@
       "Mejoras de sonido fuera de los rangos admitidos",
       "Elija una sola acción de configuración de audio.",
       "Proceso solicitante de configuración de audio no válido.",
-      "Falta el asistente de configuración que conserva las rutas de audio."
+      "Falta el asistente de configuración que conserva las rutas de audio.",
+      "Falta el paquete VB-CABLE. Repare la instalación de SoundCurrent.",
+      "La suma de comprobación del paquete VB-CABLE no coincide. Repare la instalación.",
+      "Windows no pudo verificar la firma del ejecutable de VB-Audio."
     ],
     "it": [
       "Italiano",
@@ -397,7 +409,10 @@
       "Miglioramenti sonori fuori dagli intervalli supportati",
       "Scegli una sola azione di configurazione audio.",
       "Processo richiedente della configurazione audio non valido.",
-      "Manca il programma di configurazione che preserva il routing audio."
+      "Manca il programma di configurazione che preserva il routing audio.",
+      "Manca il pacchetto VB-CABLE. Ripara l’installazione di SoundCurrent.",
+      "La somma di controllo del pacchetto VB-CABLE non corrisponde. Ripara l’installazione.",
+      "Windows non ha potuto verificare la firma del file eseguibile VB-Audio."
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -477,7 +492,10 @@
       "Melhorias sonoras fora dos intervalos suportados",
       "Escolha uma única ação de configuração de áudio.",
       "Processo requerente da configuração de áudio inválido.",
-      "Falta o assistente de configuração que preserva o encaminhamento de áudio."
+      "Falta o assistente de configuração que preserva o encaminhamento de áudio.",
+      "Falta o pacote VB-CABLE. Repare a instalação do SoundCurrent.",
+      "A soma de verificação do pacote VB-CABLE não corresponde. Repare a instalação.",
+      "O Windows não conseguiu verificar a assinatura do executável VB-Audio."
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -557,7 +575,10 @@
       "Melhorias de som fora dos intervalos suportados",
       "Escolha uma única ação de configuração de áudio.",
       "Processo solicitante da configuração de áudio inválido.",
-      "O assistente de configuração que preserva o roteamento de áudio está ausente."
+      "O assistente de configuração que preserva o roteamento de áudio está ausente.",
+      "O pacote VB-CABLE está ausente. Repare a instalação do SoundCurrent.",
+      "A soma de verificação do pacote VB-CABLE não corresponde. Repare a instalação.",
+      "O Windows não conseguiu verificar a assinatura do executável VB-Audio."
     ],
     "nl": [
       "Nederlands",
@@ -637,7 +658,10 @@
       "Geluidsverbeteringen buiten de ondersteunde bereiken",
       "Kies precies één actie voor audio-instellingen.",
       "Ongeldig proces dat audio-instellingen aanvraagt.",
-      "De installatiehulp die audioroutes behoudt ontbreekt."
+      "De installatiehulp die audioroutes behoudt ontbreekt.",
+      "Het VB-CABLE-pakket ontbreekt. Herstel de SoundCurrent-installatie.",
+      "De controlesom van het VB-CABLE-pakket komt niet overeen. Herstel de installatie.",
+      "Windows kon de handtekening van het uitvoerbare VB-Audio-bestand niet verifiëren."
     ],
     "pl": [
       "Polski",
@@ -717,7 +741,10 @@
       "Parametry poprawy dźwięku poza obsługiwanymi zakresami",
       "Wybierz dokładnie jedną czynność konfiguracji audio.",
       "Nieprawidłowy proces żądający konfiguracji audio.",
-      "Brak pomocnika konfiguracji zachowującego routing audio."
+      "Brak pomocnika konfiguracji zachowującego routing audio.",
+      "Brak pakietu VB-CABLE. Napraw instalację SoundCurrent.",
+      "Suma kontrolna pakietu VB-CABLE nie jest zgodna. Napraw instalację.",
+      "Windows nie mógł zweryfikować podpisu pliku wykonywalnego VB-Audio."
     ],
     "cs": [
       "Čeština",
@@ -797,7 +824,10 @@
       "Vylepšení zvuku mimo podporované rozsahy",
       "Vyberte právě jednu akci nastavení zvuku.",
       "Neplatný proces požadující nastavení zvuku.",
-      "Chybí pomocný program nastavení zachovávající směrování zvuku."
+      "Chybí pomocný program nastavení zachovávající směrování zvuku.",
+      "Balíček VB-CABLE chybí. Opravte instalaci SoundCurrent.",
+      "Kontrolní součet balíčku VB-CABLE nesouhlasí. Opravte instalaci.",
+      "Windows nemohl ověřit podpis spustitelného souboru VB-Audio."
     ],
     "sk": [
       "Slovenčina",
@@ -877,7 +907,10 @@
       "Vylepšenia zvuku mimo podporovaných rozsahov",
       "Vyberte práve jednu akciu nastavenia zvuku.",
       "Neplatný proces požadujúci nastavenie zvuku.",
-      "Chýba pomocný program nastavenia zachovávajúci smerovanie zvuku."
+      "Chýba pomocný program nastavenia zachovávajúci smerovanie zvuku.",
+      "Balík VB-CABLE chýba. Opravte inštaláciu SoundCurrent.",
+      "Kontrolný súčet balíka VB-CABLE nesúhlasí. Opravte inštaláciu.",
+      "Windows nedokázal overiť podpis spustiteľného súboru VB-Audio."
     ],
     "uk": [
       "Українська",
@@ -957,7 +990,10 @@
       "Параметри поліпшення звуку поза підтримуваними діапазонами",
       "Виберіть лише одну дію налаштування аудіо.",
       "Недійсний процес, що запитує налаштування аудіо.",
-      "Відсутній допоміжний засіб налаштування, що зберігає маршрути аудіо."
+      "Відсутній допоміжний засіб налаштування, що зберігає маршрути аудіо.",
+      "Пакет VB-CABLE відсутній. Відновіть інсталяцію SoundCurrent.",
+      "Контрольна сума пакета VB-CABLE не збігається. Відновіть інсталяцію.",
+      "Windows не вдалося перевірити підпис виконуваного файлу VB-Audio."
     ],
     "ru": [
       "Русский",
@@ -1037,7 +1073,10 @@
       "Параметры улучшения звука вне поддерживаемых диапазонов",
       "Выберите только одно действие настройки аудио.",
       "Недопустимый процесс, запрашивающий настройку аудио.",
-      "Отсутствует вспомогательная программа настройки, сохраняющая маршрутизацию аудио."
+      "Отсутствует вспомогательная программа настройки, сохраняющая маршрутизацию аудио.",
+      "Пакет VB-CABLE отсутствует. Восстановите установку SoundCurrent.",
+      "Контрольная сумма пакета VB-CABLE не совпадает. Восстановите установку.",
+      "Windows не удалось проверить подпись исполняемого файла VB-Audio."
     ],
     "el": [
       "Ελληνικά",
@@ -1117,7 +1156,10 @@
       "Βελτιώσεις ήχου εκτός των υποστηριζόμενων περιοχών τιμών",
       "Επιλέξτε μία μόνο ενέργεια ρύθμισης ήχου.",
       "Μη έγκυρη διεργασία που ζητά ρύθμιση ήχου.",
-      "Λείπει το βοηθητικό πρόγραμμα ρύθμισης που διατηρεί τη δρομολόγηση ήχου."
+      "Λείπει το βοηθητικό πρόγραμμα ρύθμισης που διατηρεί τη δρομολόγηση ήχου.",
+      "Λείπει το πακέτο VB-CABLE. Επιδιορθώστε την εγκατάσταση του SoundCurrent.",
+      "Το άθροισμα ελέγχου του πακέτου VB-CABLE δεν συμφωνεί. Επιδιορθώστε την εγκατάσταση.",
+      "Τα Windows δεν μπόρεσαν να επαληθεύσουν την υπογραφή του εκτελέσιμου αρχείου VB-Audio."
     ],
     "tr": [
       "Türkçe",
@@ -1197,7 +1239,10 @@
       "Ses iyileştirmeleri desteklenen aralıkların dışında",
       "Yalnızca bir ses kurulum işlemi seçin.",
       "Ses kurulumu isteyen işlem geçersiz.",
-      "Ses yönlendirmesini koruyan kurulum yardımcısı eksik."
+      "Ses yönlendirmesini koruyan kurulum yardımcısı eksik.",
+      "VB-CABLE paketi eksik. SoundCurrent kurulumunu onarın.",
+      "VB-CABLE paketinin sağlama toplamı eşleşmiyor. Kurulumu onarın.",
+      "Windows, VB-Audio yürütülebilir dosyasının imzasını doğrulayamadı."
     ],
     "sv": [
       "Svenska",
@@ -1277,7 +1322,10 @@
       "Ljudförbättringar utanför de intervall som stöds",
       "Välj exakt en åtgärd för ljudinställning.",
       "Ogiltig process som begär ljudinställning.",
-      "Installationshjälpen som bevarar ljudroutningen saknas."
+      "Installationshjälpen som bevarar ljudroutningen saknas.",
+      "VB-CABLE-paketet saknas. Reparera SoundCurrent-installationen.",
+      "Kontrollsumman för VB-CABLE-paketet stämmer inte. Reparera installationen.",
+      "Windows kunde inte verifiera signaturen för VB-Audios körbara fil."
     ],
     "da": [
       "Dansk",
@@ -1357,7 +1405,10 @@
       "Lydforbedringer uden for de understøttede intervaller",
       "Vælg præcis én handling til lydopsætning.",
       "Ugyldig proces, der anmoder om lydopsætning.",
-      "Opsætningshjælpen, der bevarer lydroutningen, mangler."
+      "Opsætningshjælpen, der bevarer lydroutningen, mangler.",
+      "VB-CABLE-pakken mangler. Reparer SoundCurrent-installationen.",
+      "Kontrolsummen for VB-CABLE-pakken stemmer ikke. Reparer installationen.",
+      "Windows kunne ikke bekræfte signaturen på VB-Audios eksekverbare fil."
     ],
     "nb": [
       "Norsk bokmål",
@@ -1437,7 +1488,10 @@
       "Lydforbedringer utenfor de støttede områdene",
       "Velg nøyaktig én handling for lydoppsett.",
       "Ugyldig prosess som ber om lydoppsett.",
-      "Oppsettshjelperen som bevarer lydrutingen, mangler."
+      "Oppsettshjelperen som bevarer lydrutingen, mangler.",
+      "VB-CABLE-pakken mangler. Reparer SoundCurrent-installasjonen.",
+      "Kontrollsummen for VB-CABLE-pakken stemmer ikke. Reparer installasjonen.",
+      "Windows kunne ikke bekrefte signaturen til den kjørbare VB-Audio-filen."
     ],
     "fi": [
       "Suomi",
@@ -1517,7 +1571,10 @@
       "Äänenparannukset tuettujen alueiden ulkopuolella",
       "Valitse vain yksi ääniasetustoiminto.",
       "Ääniasetuksia pyytävä prosessi on virheellinen.",
-      "Äänireitityksen säilyttävä asennusapuri puuttuu."
+      "Äänireitityksen säilyttävä asennusapuri puuttuu.",
+      "VB-CABLE-paketti puuttuu. Korjaa SoundCurrent-asennus.",
+      "VB-CABLE-paketin tarkistussumma ei täsmää. Korjaa asennus.",
+      "Windows ei voinut vahvistaa VB-Audion suoritettavan tiedoston allekirjoitusta."
     ],
     "ro": [
       "Română",
@@ -1597,7 +1654,10 @@
       "Îmbunătățirile sunetului sunt în afara intervalelor acceptate",
       "Alegeți o singură acțiune de configurare audio.",
       "Procesul care solicită configurarea audio nu este valid.",
-      "Lipsește asistentul de configurare care păstrează rutarea audio."
+      "Lipsește asistentul de configurare care păstrează rutarea audio.",
+      "Lipsește pachetul VB-CABLE. Reparați instalarea SoundCurrent.",
+      "Suma de control a pachetului VB-CABLE nu corespunde. Reparați instalarea.",
+      "Windows nu a putut verifica semnătura fișierului executabil VB-Audio."
     ],
     "hu": [
       "Magyar",
@@ -1677,7 +1737,10 @@
       "A hangjavítások kívül esnek a támogatott tartományokon",
       "Válasszon pontosan egy hangbeállítási műveletet.",
       "Érvénytelen hangbeállítást kérő folyamat.",
-      "Hiányzik a hangútvonalakat megőrző beállítási segédprogram."
+      "Hiányzik a hangútvonalakat megőrző beállítási segédprogram.",
+      "Hiányzik a VB-CABLE csomag. Javítsa a SoundCurrent telepítését.",
+      "A VB-CABLE csomag ellenőrzőösszege nem egyezik. Javítsa a telepítést.",
+      "A Windows nem tudta ellenőrizni a VB-Audio futtatható fájl aláírását."
     ],
     "ar": [
       "العربية",
@@ -1757,7 +1820,10 @@
       "تحسينات الصوت خارج النطاقات المدعومة",
       "اختر إجراء واحدًا فقط لإعداد الصوت.",
       "عملية طلب إعداد الصوت غير صالحة.",
-      "أداة الإعداد المساعدة التي تحافظ على توجيه الصوت مفقودة."
+      "أداة الإعداد المساعدة التي تحافظ على توجيه الصوت مفقودة.",
+      "حزمة VB-CABLE مفقودة. أصلح تثبيت SoundCurrent.",
+      "المجموع الاختباري لحزمة VB-CABLE غير مطابق. أصلح التثبيت.",
+      "تعذّر على Windows التحقق من توقيع ملف VB-Audio التنفيذي."
     ],
     "he": [
       "עברית",
@@ -1837,7 +1903,10 @@
       "שיפורי השמע מחוץ לטווחים הנתמכים",
       "יש לבחור פעולה אחת בלבד להגדרת שמע.",
       "התהליך המבקש הגדרת שמע אינו תקין.",
-      "תוכנית העזר להגדרה ששומרת על ניתוב השמע חסרה."
+      "תוכנית העזר להגדרה ששומרת על ניתוב השמע חסרה.",
+      "חבילת VB-CABLE חסרה. יש לתקן את התקנת SoundCurrent.",
+      "סכום הביקורת של חבילת VB-CABLE אינו תואם. יש לתקן את ההתקנה.",
+      "Windows לא הצליח לאמת את חתימת קובץ ההפעלה של VB-Audio."
     ],
     "fa": [
       "فارسی",
@@ -1917,7 +1986,10 @@
       "بهبودهای صدا خارج از محدوده‌های پشتیبانی‌شده هستند",
       "فقط یک اقدام برای راه‌اندازی صدا انتخاب کنید.",
       "فرایند درخواست‌کنندهٔ راه‌اندازی صدا نامعتبر است.",
-      "ابزار کمکی راه‌اندازی که مسیریابی صدا را حفظ می‌کند موجود نیست."
+      "ابزار کمکی راه‌اندازی که مسیریابی صدا را حفظ می‌کند موجود نیست.",
+      "بستهٔ VB-CABLE موجود نیست. نصب SoundCurrent را تعمیر کنید.",
+      "مجموع وارسی بستهٔ VB-CABLE مطابقت ندارد. نصب را تعمیر کنید.",
+      "Windows نتوانست امضای فایل اجرایی VB-Audio را تأیید کند."
     ],
     "zh-Hans": [
       "简体中文",
@@ -1997,7 +2069,10 @@
       "音效增强参数超出支持的范围",
       "请选择一项音频设置操作。",
       "请求音频设置的进程无效。",
-      "缺少用于保留音频路由的设置辅助程序。"
+      "缺少用于保留音频路由的设置辅助程序。",
+      "缺少 VB-CABLE 软件包。请修复 SoundCurrent 安装。",
+      "VB-CABLE 软件包校验和不匹配。请修复安装。",
+      "Windows 无法验证 VB-Audio 可执行文件的签名。"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -2077,7 +2152,10 @@
       "音效增強參數超出支援的範圍",
       "請選擇一項音訊設定操作。",
       "請求音訊設定的處理程序無效。",
-      "缺少用於保留音訊路由的設定輔助程式。"
+      "缺少用於保留音訊路由的設定輔助程式。",
+      "缺少 VB-CABLE 套件。請修復 SoundCurrent 安裝。",
+      "VB-CABLE 套件檢查碼不符。請修復安裝。",
+      "Windows 無法驗證 VB-Audio 執行檔的簽章。"
     ],
     "ja": [
       "日本語",
@@ -2157,7 +2235,10 @@
       "音質向上が対応範囲外です",
       "音声セットアップの操作を1つだけ選択してください。",
       "音声セットアップを要求したプロセスが無効です。",
-      "音声ルーティングを保持するセットアップ補助プログラムが見つかりません。"
+      "音声ルーティングを保持するセットアップ補助プログラムが見つかりません。",
+      "VB-CABLE パッケージが見つかりません。SoundCurrent のインストールを修復してください。",
+      "VB-CABLE パッケージのチェックサムが一致しません。インストールを修復してください。",
+      "Windows は VB-Audio 実行ファイルの署名を検証できませんでした。"
     ],
     "ko": [
       "한국어",
@@ -2237,7 +2318,10 @@
       "음향 개선이 지원 범위를 벗어났습니다",
       "오디오 설정 작업을 하나만 선택하세요.",
       "오디오 설정을 요청한 프로세스가 유효하지 않습니다.",
-      "오디오 라우팅을 유지하는 설정 도우미가 없습니다."
+      "오디오 라우팅을 유지하는 설정 도우미가 없습니다.",
+      "VB-CABLE 패키지가 없습니다. SoundCurrent 설치를 복구하세요.",
+      "VB-CABLE 패키지의 체크섬이 일치하지 않습니다. 설치를 복구하세요.",
+      "Windows에서 VB-Audio 실행 파일의 서명을 확인하지 못했습니다."
     ],
     "hi": [
       "हिन्दी",
@@ -2317,7 +2401,10 @@
       "ध्वनि सुधार समर्थित सीमाओं से बाहर हैं",
       "ऑडियो सेटअप के लिए केवल एक कार्रवाई चुनें।",
       "ऑडियो सेटअप का अनुरोध करने वाली प्रक्रिया अमान्य है।",
-      "ऑडियो रूटिंग सुरक्षित रखने वाला सेटअप सहायक उपलब्ध नहीं है।"
+      "ऑडियो रूटिंग सुरक्षित रखने वाला सेटअप सहायक उपलब्ध नहीं है।",
+      "VB-CABLE पैकेज उपलब्ध नहीं है। SoundCurrent की स्थापना की मरम्मत करें।",
+      "VB-CABLE पैकेज का चेकसम मेल नहीं खाता। स्थापना की मरम्मत करें।",
+      "Windows, VB-Audio की निष्पादन योग्य फ़ाइल के हस्ताक्षर को सत्यापित नहीं कर सका।"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -2397,7 +2484,10 @@
       "Peningkatan suara di luar rentang yang didukung",
       "Pilih tepat satu tindakan pengaturan audio.",
       "Proses yang meminta pengaturan audio tidak valid.",
-      "Program bantu pengaturan yang mempertahankan rute audio tidak ditemukan."
+      "Program bantu pengaturan yang mempertahankan rute audio tidak ditemukan.",
+      "Paket VB-CABLE tidak ditemukan. Perbaiki instalasi SoundCurrent.",
+      "Checksum paket VB-CABLE tidak cocok. Perbaiki instalasi.",
+      "Windows tidak dapat memverifikasi tanda tangan berkas yang dapat dijalankan milik VB-Audio."
     ],
     "vi": [
       "Tiếng Việt",
@@ -2477,7 +2567,10 @@
       "Các cải thiện âm thanh nằm ngoài phạm vi được hỗ trợ",
       "Chọn đúng một thao tác thiết lập âm thanh.",
       "Tiến trình yêu cầu thiết lập âm thanh không hợp lệ.",
-      "Thiếu chương trình hỗ trợ thiết lập giữ nguyên định tuyến âm thanh."
+      "Thiếu chương trình hỗ trợ thiết lập giữ nguyên định tuyến âm thanh.",
+      "Thiếu gói VB-CABLE. Hãy sửa chữa bản cài đặt SoundCurrent.",
+      "Tổng kiểm tra của gói VB-CABLE không khớp. Hãy sửa chữa bản cài đặt.",
+      "Windows không thể xác minh chữ ký của tệp thực thi VB-Audio."
     ],
     "th": [
       "ไทย",
@@ -2557,7 +2650,10 @@
       "การปรับปรุงเสียงอยู่นอกช่วงที่รองรับ",
       "เลือกการดำเนินการตั้งค่าเสียงเพียงหนึ่งรายการ",
       "โพรเซสที่ร้องขอการตั้งค่าเสียงไม่ถูกต้อง",
-      "ไม่พบโปรแกรมช่วยตั้งค่าที่คงการกำหนดเส้นทางเสียงไว้"
+      "ไม่พบโปรแกรมช่วยตั้งค่าที่คงการกำหนดเส้นทางเสียงไว้",
+      "ไม่พบแพ็กเกจ VB-CABLE โปรดซ่อมแซมการติดตั้ง SoundCurrent",
+      "ค่าตรวจสอบของแพ็กเกจ VB-CABLE ไม่ตรงกัน โปรดซ่อมแซมการติดตั้ง",
+      "Windows ไม่สามารถตรวจสอบลายเซ็นของไฟล์ปฏิบัติการ VB-Audio ได้"
     ],
     "sw": [
       "Kiswahili",
@@ -2637,7 +2733,10 @@
       "Thamani za maboresho ya sauti ziko nje ya mipaka inayokubalika",
       "Chagua kitendo kimoja tu cha kusanidi sauti.",
       "Mchakato unaoomba usanidi wa sauti si halali.",
-      "Programu saidizi ya usanidi inayohifadhi njia za sauti haipo."
+      "Programu saidizi ya usanidi inayohifadhi njia za sauti haipo.",
+      "Kifurushi cha VB-CABLE hakipo. Rekebisha usakinishaji wa SoundCurrent.",
+      "Jumla ya ukaguzi ya kifurushi cha VB-CABLE hailingani. Rekebisha usakinishaji.",
+      "Windows haikuweza kuthibitisha sahihi ya kidijitali ya faili tekelezi ya VB-Audio."
     ],
     "nn": [
       "Norsk nynorsk",
@@ -2717,7 +2816,10 @@
       "Lydforbetringar utanfor dei støtta områda",
       "Vel nøyaktig éi handling for lydoppsett.",
       "Ugyldig prosess som ber om lydoppsett.",
-      "Oppsettshjelparen som tek vare på lydrutinga, manglar."
+      "Oppsettshjelparen som tek vare på lydrutinga, manglar.",
+      "VB-CABLE-pakken manglar. Reparer SoundCurrent-installasjonen.",
+      "Kontrollsummen for VB-CABLE-pakken stemmer ikkje. Reparer installasjonen.",
+      "Windows kunne ikkje stadfeste signaturen til den køyrbare VB-Audio-fila."
     ]
   },
   "requiredCompleteLocales": [

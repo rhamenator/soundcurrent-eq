@@ -2177,6 +2177,11 @@ Importér til dit bibliotek?</translation>
       <translation>Testniveauet ligger uden for det tilladte område</translation>
     </message>
     <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>VB-CABLE-pakken mangler. Reparer SoundCurrent-installationen.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
+    </message>
+    <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Lydprocessoren stoppede uventet.</translation>
     </message>
@@ -2325,6 +2330,11 @@ Importér til dit bibliotek?</translation>
       <translation>Brug systemets landestandard</translation>
     </message>
     <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>Kontrolsummen for VB-CABLE-pakken stemmer ikke. Reparer installationen.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE-indstillinger</translation>
     </message>
@@ -2347,6 +2357,11 @@ Importér til dit bibliotek?</translation>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>COM til Windows-lyd er ikke tilgængeligt</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Windows kunne ikke bekræfte signaturen på VB-Audios eksekverbare fil.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
       <source>Write speaker buffer</source>

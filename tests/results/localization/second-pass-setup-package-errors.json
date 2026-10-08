@@ -1,0 +1,53 @@
+{
+  "scope": "Three owned VB-CABLE package integrity error captions",
+  "resolvedSources": [
+    "The VB-CABLE package is missing. Repair the SoundCurrent installation.",
+    "VB-CABLE package checksum mismatch. Repair the installation.",
+    "Windows could not verify the VB-Audio executable signature."
+  ],
+  "nonEnglishLocales": 33,
+  "sourceMessagesPerLocale": 574,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "notes": [
+      "Missing package is the bundled ZIP, not an unplugged physical cable",
+      "Checksum refers to pinned SHA-256 file integrity, not audio quality",
+      "Signature refers to executable Authenticode validation; no reason for failure is inferred and no bypass suggested"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "runtimeQualification": {
+    "platform": "Linux Qt offscreen and PowerShell 7.6.6",
+    "targetedQtTestsPassed": 40,
+    "failed": 0,
+    "catalogUnitTestsPassed": 16,
+    "catalogUnitTestsSkipped": 1,
+    "requiredHelperTextLookupsPassed": 238,
+    "newProductionIntegrityErrorPathsExecuted": false,
+    "previousQuietActionErrorLocales": [
+      "fr",
+      "ar",
+      "nn"
+    ]
+  },
+  "invariants": [
+    "Pinned SHA-256 unchanged",
+    "Authenticode Valid requirement unchanged",
+    "Vendor/app identifiers and English source keys unchanged",
+    "Driver actions, exit codes and audio processing unchanged"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "WindowsCurrentChangesQualified": false,
+  "newPackagesQualified": false,
+  "remainingScope": [
+    "Other cable/native setup bodies and dialog captions",
+    "NSIS installer/uninstaller text",
+    "Windows integrity-error paths and package lifecycle qualification"
+  ],
+  "evidence": {
+    "log": "tests/results/localization/setup-package-errors-runtime.log",
+    "logSha256": "f770df8c62a55bceac3a374d809a5d2e4f02bfa7b0366b4b9b667c726f03664b",
+    "applicationBinarySha256": "bf35afa8461439404d5f58fe58d11ba718f0307669f5be9ced9b0f8acea01f76"
+  }
+}

@@ -2177,6 +2177,11 @@ Impor ke pustaka Anda?</translation>
       <translation>Level uji berada di luar rentang yang diizinkan</translation>
     </message>
     <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>Paket VB-CABLE tidak ditemukan. Perbaiki instalasi SoundCurrent.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
+    </message>
+    <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Prosesor audio berhenti secara tak terduga.</translation>
     </message>
@@ -2325,6 +2330,11 @@ Impor ke pustaka Anda?</translation>
       <translation>Gunakan pengaturan wilayah sistem</translation>
     </message>
     <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>Checksum paket VB-CABLE tidak cocok. Perbaiki instalasi.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE settings</source>
       <translation>Pengaturan VB-CABLE</translation>
     </message>
@@ -2347,6 +2357,11 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>COM audio Windows tidak tersedia</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Windows tidak dapat memverifikasi tanda tangan berkas yang dapat dijalankan milik VB-Audio.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
       <source>Write speaker buffer</source>

@@ -90,9 +90,9 @@ try {
         if ($Install -and (Present) -and (Ready)) { Notice 'VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.'; exit 0 }
     }
     $archive = Join-Path $PSScriptRoot 'VBCABLE_Driver_Pack45.zip'
-    if (!(Test-Path -LiteralPath $archive)) { throw 'The VB-CABLE package is missing. Repair the SoundCurrent installation.' }
+    if (!(Test-Path -LiteralPath $archive)) { throw (Get-SCSetupText 'The VB-CABLE package is missing. Repair the SoundCurrent installation.' -Language $Language -Application ('soundcurrent-' + $App)) }
     if ((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne 'b950e39f01af1d04ea623c8f6d8eb9b6ea5c477c637295fabf20631c85116bfb') {
-        throw 'VB-CABLE package checksum mismatch. Repair the installation.'
+        throw (Get-SCSetupText 'VB-CABLE package checksum mismatch. Repair the installation.' -Language $Language -Application ('soundcurrent-' + $App))
     }
     # Use a fresh private extraction each time; do not trust cached executables.
     $temp = Join-Path ([IO.Path]::GetTempPath()) ('SoundCurrent-VBCABLE-' + [guid]::NewGuid().ToString('N'))
@@ -100,7 +100,7 @@ try {
     try {
         Expand-Archive -LiteralPath $archive -DestinationPath $temp
         $exe = Join-Path $temp $(if ($Settings) { 'VBCABLE_ControlPanel.exe' } else { 'VBCABLE_Setup_x64.exe' })
-        if ((Get-AuthenticodeSignature -LiteralPath $exe).Status -ne 'Valid') { throw 'Windows could not verify the VB-Audio executable signature.' }
+        if ((Get-AuthenticodeSignature -LiteralPath $exe).Status -ne 'Valid') { throw (Get-SCSetupText 'Windows could not verify the VB-Audio executable signature.' -Language $Language -Application ('soundcurrent-' + $App)) }
         if ($Settings) {
             if (!(Present)) { throw 'VB-CABLE is not installed. Use Audio driver setup, then restart Windows before opening its settings.' }
             if (!(Ready)) { throw 'Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, use Audio driver setup to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.' }

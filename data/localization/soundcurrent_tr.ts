@@ -2177,6 +2177,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Test seviyesi izin verilen aralığın dışında</translation>
     </message>
     <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>VB-CABLE paketi eksik. SoundCurrent kurulumunu onarın.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
+    </message>
+    <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Ses işlemcisi beklenmedik şekilde durdu.</translation>
     </message>
@@ -2325,6 +2330,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Sistem yerel ayarını kullan</translation>
     </message>
     <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>VB-CABLE paketinin sağlama toplamı eşleşmiyor. Kurulumu onarın.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE ayarları</translation>
     </message>
@@ -2347,6 +2357,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>Windows ses COM sistemi kullanılamıyor</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Windows, VB-Audio yürütülebilir dosyasının imzasını doğrulayamadı.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
       <source>Write speaker buffer</source>

@@ -2177,6 +2177,11 @@ Import into your library?</source>
       <translation>परीक्षण स्तर अनुमत सीमा से बाहर है</translation>
     </message>
     <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>VB-CABLE पैकेज उपलब्ध नहीं है। SoundCurrent की स्थापना की मरम्मत करें।</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
+    </message>
+    <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>ऑडियो प्रोसेसर अप्रत्याशित रूप से रुक गया।</translation>
     </message>
@@ -2325,6 +2330,11 @@ Import into your library?</source>
       <translation>सिस्टम की क्षेत्रीय सेटिंग इस्तेमाल करें</translation>
     </message>
     <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>VB-CABLE पैकेज का चेकसम मेल नहीं खाता। स्थापना की मरम्मत करें।</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE सेटिंग</translation>
     </message>
@@ -2347,6 +2357,11 @@ Import into your library?</source>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>Windows ऑडियो COM उपलब्ध नहीं है</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Windows, VB-Audio की निष्पादन योग्य फ़ाइल के हस्ताक्षर को सत्यापित नहीं कर सका।</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
       <source>Write speaker buffer</source>

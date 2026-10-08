@@ -2177,6 +2177,11 @@ Importovat do vaší knihovny?</translation>
       <translation>Testovací úroveň je mimo povolený rozsah</translation>
     </message>
     <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>Balíček VB-CABLE chybí. Opravte instalaci SoundCurrent.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
+    </message>
+    <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Zvukový procesor se neočekávaně zastavil.</translation>
     </message>
@@ -2325,6 +2330,11 @@ Importovat do vaší knihovny?</translation>
       <translation>Použít místní nastavení systému</translation>
     </message>
     <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>Kontrolní součet balíčku VB-CABLE nesouhlasí. Opravte instalaci.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE settings</source>
       <translation>Nastavení VB-CABLE</translation>
     </message>
@@ -2347,6 +2357,11 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>COM pro zvuk Windows není dostupné</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Windows nemohl ověřit podpis spustitelného souboru VB-Audio.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
       <source>Write speaker buffer</source>

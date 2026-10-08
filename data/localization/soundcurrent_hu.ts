@@ -2177,6 +2177,11 @@ Importálja a könyvtárba?</translation>
       <translation>A tesztszint a megengedett tartományon kívül van</translation>
     </message>
     <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>Hiányzik a VB-CABLE csomag. Javítsa a SoundCurrent telepítését.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
+    </message>
+    <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>A hangfeldolgozó váratlanul leállt.</translation>
     </message>
@@ -2325,6 +2330,11 @@ Importálja a könyvtárba?</translation>
       <translation>Rendszer területi beállításainak használata</translation>
     </message>
     <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>A VB-CABLE csomag ellenőrzőösszege nem egyezik. Javítsa a telepítést.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE-beállítások</translation>
     </message>
@@ -2347,6 +2357,11 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>A Windows hang COM rendszere nem érhető el</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>A Windows nem tudta ellenőrizni a VB-Audio futtatható fájl aláírását.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
       <source>Write speaker buffer</source>

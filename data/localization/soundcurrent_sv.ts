@@ -2177,6 +2177,11 @@ Importera till ditt bibliotek?</translation>
       <translation>Testnivån ligger utanför det tillåtna området</translation>
     </message>
     <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>VB-CABLE-paketet saknas. Reparera SoundCurrent-installationen.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
+    </message>
+    <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Ljudprocessorn stoppades oväntat.</translation>
     </message>
@@ -2325,6 +2330,11 @@ Importera till ditt bibliotek?</translation>
       <translation>Använd systemets regionala inställningar</translation>
     </message>
     <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>Kontrollsumman för VB-CABLE-paketet stämmer inte. Reparera installationen.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE-inställningar</translation>
     </message>
@@ -2347,6 +2357,11 @@ Importera till ditt bibliotek?</translation>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>COM för Windows-ljud är inte tillgängligt</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Windows kunde inte verifiera signaturen för VB-Audios körbara fil.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
       <source>Write speaker buffer</source>

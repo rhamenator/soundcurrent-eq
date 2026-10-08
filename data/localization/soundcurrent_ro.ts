@@ -2177,6 +2177,11 @@ Importați în bibliotecă?</translation>
       <translation>Nivelul de test este în afara intervalului permis</translation>
     </message>
     <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>Lipsește pachetul VB-CABLE. Reparați instalarea SoundCurrent.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
+    </message>
+    <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Procesorul audio s-a oprit neașteptat.</translation>
     </message>
@@ -2325,6 +2330,11 @@ Importați în bibliotecă?</translation>
       <translation>Folosiți setările regionale ale sistemului</translation>
     </message>
     <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>Suma de control a pachetului VB-CABLE nu corespunde. Reparați instalarea.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE settings</source>
       <translation>Setări VB-CABLE</translation>
     </message>
@@ -2347,6 +2357,11 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>COM pentru sunetul Windows nu este disponibil</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Windows nu a putut verifica semnătura fișierului executabil VB-Audio.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
       <source>Write speaker buffer</source>

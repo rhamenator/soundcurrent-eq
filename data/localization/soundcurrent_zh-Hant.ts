@@ -2177,6 +2177,11 @@ Import into your library?</source>
       <translation>測試位準超出允許範圍</translation>
     </message>
     <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>缺少 VB-CABLE 套件。請修復 SoundCurrent 安裝。</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
+    </message>
+    <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>音訊處理器意外停止。</translation>
     </message>
@@ -2325,6 +2330,11 @@ Import into your library?</source>
       <translation>使用系統區域設定</translation>
     </message>
     <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>VB-CABLE 套件檢查碼不符。請修復安裝。</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE 設定</translation>
     </message>
@@ -2347,6 +2357,11 @@ Import into your library?</source>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>Windows 音訊 COM 無法使用</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Windows 無法驗證 VB-Audio 執行檔的簽章。</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
       <source>Write speaker buffer</source>

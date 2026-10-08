@@ -2177,6 +2177,11 @@ Import into your library?</source>
       <translation>테스트 레벨이 허용 범위를 벗어납니다</translation>
     </message>
     <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>VB-CABLE 패키지가 없습니다. SoundCurrent 설치를 복구하세요.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
+    </message>
+    <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>오디오 프로세서가 예기치 않게 중지되었습니다.</translation>
     </message>
@@ -2325,6 +2330,11 @@ Import into your library?</source>
       <translation>시스템 지역 설정 사용</translation>
     </message>
     <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>VB-CABLE 패키지의 체크섬이 일치하지 않습니다. 설치를 복구하세요.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE 설정</translation>
     </message>
@@ -2347,6 +2357,11 @@ Import into your library?</source>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>Windows 오디오 COM을 사용할 수 없습니다</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Windows에서 VB-Audio 실행 파일의 서명을 확인하지 못했습니다.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
       <source>Write speaker buffer</source>

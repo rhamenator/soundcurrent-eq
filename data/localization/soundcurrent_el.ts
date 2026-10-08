@@ -2177,6 +2177,11 @@ Import into your library?</source>
       <translation>Η στάθμη δοκιμής βρίσκεται εκτός επιτρεπόμενου εύρους</translation>
     </message>
     <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>Λείπει το πακέτο VB-CABLE. Επιδιορθώστε την εγκατάσταση του SoundCurrent.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
+    </message>
+    <message>
       <source>The audio processor stopped unexpectedly.</source>
       <translation>Ο επεξεργαστής ήχου σταμάτησε απρόσμενα.</translation>
     </message>
@@ -2325,6 +2330,11 @@ Import into your library?</source>
       <translation>Χρήση τοπικών ρυθμίσεων συστήματος</translation>
     </message>
     <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>Το άθροισμα ελέγχου του πακέτου VB-CABLE δεν συμφωνεί. Επιδιορθώστε την εγκατάσταση.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE settings</source>
       <translation>Ρυθμίσεις VB-CABLE</translation>
     </message>
@@ -2347,6 +2357,11 @@ Import into your library?</source>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>Το COM για τον ήχο των Windows δεν είναι διαθέσιμο</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Τα Windows δεν μπόρεσαν να επαληθεύσουν την υπογραφή του εκτελέσιμου αρχείου VB-Audio.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
       <source>Write speaker buffer</source>
