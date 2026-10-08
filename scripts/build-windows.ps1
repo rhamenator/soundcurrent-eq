@@ -42,6 +42,11 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'Windows build failed' }
     if (Test-Path $stage) { Remove-Item -Recurse -Force $stage }
     New-Item -ItemType Directory -Force $stage | Out-Null
+    & python scripts/windows_setup_catalogs.py --output "$stage\setup-translations.json"
+    if ($LASTEXITCODE -ne 0) { throw 'Audio helper translation export failed' }
+    Copy-Item packaging\windows\setup-localization.ps1 $stage
+    & powershell.exe -NoProfile -NonInteractive -File tests/windows_setup_localization.ps1 -CatalogPath "$stage\setup-translations.json"
+    if ($LASTEXITCODE -ne 0) { throw 'Audio helper localization regression failed' }
     Copy-Item build-windows-native\Release\soundcurrent-eq.exe $stage
     Copy-Item build-windows-native\Release\soundcurrent-route-guardian.exe $stage
     # This must be the signed manager built from this release source.

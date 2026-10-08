@@ -118,5 +118,9 @@
     "remainingStudioSessionModelDiagnostics": 0,
     "scope": "Session-model inventory only; other backend/helper diagnostics still require audit"
   },
-  "evidenceSha256Scope": "Historical evidence hashes retained from prior audit; current batch hashes are in second-pass-owned-diagnostics.json"
+  "evidenceSha256Scope": "Historical evidence hashes retained from prior audit; current batch hashes are in second-pass-owned-diagnostics.json",
+  "setupCatalogLookupProgress": {
+    "report": "tests/results/localization/second-pass-setup-catalog-lookup.json",
+    "status": "Host PowerShell inert lookup tests passed; helper body/installer translation and Windows qualification pending"
+  }
 }

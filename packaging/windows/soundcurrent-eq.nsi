@@ -67,6 +67,8 @@ Function .onInit
   InitPluginsDir
   SetOutPath "$PLUGINSDIR"
   ; Readiness detection needs the helper and its runtime before installation.
+  File "${DLL_DIR}\setup-localization.ps1"
+  File "${DLL_DIR}\setup-translations.json"
   File "${DLL_DIR}\soundcurrent-cable-setup-guard.exe"
   File "${DLL_DIR}\Qt6Core.dll"
   File "${DLL_DIR}\msvcp140*.dll"

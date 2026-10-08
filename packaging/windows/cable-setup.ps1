@@ -4,11 +4,14 @@ param([switch]$Check, [switch]$Install, [switch]$Remove, [switch]$Settings,
       [ValidateSet('eq','studio')][string]$App = 'eq')
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
+$localization = Join-Path $PSScriptRoot 'setup-localization.ps1'
+if (Test-Path -LiteralPath $localization) { . $localization }
+else { function Get-SCSetupText([string]$Source, [string]$Language = '', [string]$Application = '') { return $Source } }
 function Notice([string]$Text) {
     Write-Output $Text
     if (!$Quiet) {
         Add-Type -AssemblyName System.Windows.Forms
-        [void][System.Windows.Forms.MessageBox]::Show($Text,'SoundCurrent audio setup')
+        [void][System.Windows.Forms.MessageBox]::Show($Text,(Get-SCSetupText 'Audio driver setup' -Application ('soundcurrent-' + $App)))
     }
 }
 function Present {
