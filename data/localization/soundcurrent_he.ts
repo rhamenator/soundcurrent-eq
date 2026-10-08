@@ -1137,119 +1137,119 @@ Import into your library?</source>
     </message>
     <message>
       <source>No</source>
-      <translation type="unfinished" />
+      <translation>לא</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>לא נבחר תיקון ציוד מיובא.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>לא נבחר תיקון מגבר שנמדד. מפרטי טווח תדרים שיווקיים אינם מספיקים להפקת עקומת תיקון.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>אין מיקרופון מחובר.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>לא נבחר תיקון דגם. אקולייזר ההאזנה שלך פועל כרגיל.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>לא נמצאה גרסה חדשה יותר שפורסמה. נבדקות גם תוכנות התקנה שהורדו.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>אין מכשיר יציאה זמין.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>אין מכשיר יציאה מחובר.</translation>
     </message>
     <message>
       <source>No to All</source>
-      <translation type="unfinished" />
+      <translation>לא לכול</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>ללא — שימוש באקולייזר שלי</translation>
     </message>
     <message>
       <source>Number and date format</source>
-      <translation>תבנית מספרים ותאריכים</translation>
+      <translation>פורמט מספרים ותאריכים</translation>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>מספר תחומי האקולייזר</translation>
     </message>
     <message>
       <source>OK</source>
-      <translation type="unfinished" />
+      <translation>אישור</translation>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>פועל · השמעה דרך %1</translation>
     </message>
     <message>
       <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
-      <translation type="unfinished" />
+      <translation>רק אפליקציית SoundCurrent אחת מופעלת בכניסה למערכת. הפעלת אפשרות זו מחליפה את הגדרת ההפעלה של האפליקציה השנייה. היא מתחילה ברקע כאשר סמל מגש המערכת זמין.</translation>
     </message>
     <message>
       <source>Open</source>
-      <translation type="unfinished" />
+      <translation>פתיחה</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>פתיחת לוח הבקרה של VB-Audio להשהיית הכבל ולקצב הדגימה הפנימי. שינוי ערכים אלה בזמן שהשמע פועל עלול להפסיק את ההשמעה.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>פתיחת לוח הבקרה של VB-CABLE</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>פתיחת הורדות גרסאות</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>פתיחת תיקיית העדכונים</translation>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>כתום: תגובה שנמדדה, כאשר קיימת. טורקיז: תיקון ב־48 kHz. יש לגרור נקודות בקרה בטורקיז או לערוך את הטבלה. השמירה משמרת את המקור ויוצרת עותק מותאם אישית.</translation>
     </message>
     <message>
       <source>Output device</source>
-      <translation>התקן פלט</translation>
+      <translation>מכשיר יציאה</translation>
     </message>
     <message>
       <source>Output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>מכשיר היציאה אינו זמין עוד</translation>
     </message>
     <message>
       <source>Output has no volume channels</source>
-      <translation type="unfinished" />
+      <translation>ליציאה אין ערוצי עוצמה</translation>
     </message>
     <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>יציאה כוללת</translation>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>השהיית העיבוד ופתיחת הגדרת השמע. האפליקציה נשארת פתוחה ומדווחת על התוצאה. יש להפעיל מחדש את Windows לאחר התקנת מנהל ההתקן.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>סמני שיא</translation>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>פסנתר</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>השמעת שמע בדיקה שקט ותצוגה מקדימה של שינויים מוצעים באקולייזר ההשמעה</translation>
     </message>
     <message>
       <source>Playback</source>
@@ -1257,143 +1257,145 @@ Import into your library?</source>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>מושמע שמע בדיקה שקט. יש להפסיק אם הוא אינו נעים.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>יש לחבר מיקרופון כדי לבחור פרופיל מיקרופון</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>פודקאסט</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>פופ</translation>
     </message>
     <message>
       <source>Post gain</source>
       <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
-      <translation>הגבר פלט</translation>
+      <translation>הגבר לאחר העיבוד</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>הגבר לאחר האקולייזר</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>ערך ההגבר לאחר העיבוד בדציבלים</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>שם הקביעה המוגדרת מראש:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>מניעת שינויים בקביעות מוגדרות מראש, בתחומי האקולייזר, בהגבר לאחר העיבוד ובאיזון</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>פרופיל</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>פרטי פרופיל</translation>
     </message>
     <message>
       <source>Profile exceeds the 1 MiB limit.</source>
-      <translation type="unfinished" />
+      <translation>הפרופיל חורג ממגבלת 1 MiB.</translation>
     </message>
     <message>
       <source>Profile library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>ספריית הפרופילים גדולה מ־16 MiB.</translation>
     </message>
     <message>
       <source>Profile metadata is too long.</source>
-      <translation type="unfinished" />
+      <translation>מטא־נתוני הפרופיל ארוכים מדי.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>הפרופיל חייב להיות קריא וקטן מ־64 KiB.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>
-      <translation type="unfinished" />
+      <translation>פרופילים דורשים 1–16 מסנני תיקון.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>מקורות מדידה שפורסמו: &lt;a href="https://www.spinorama.org/"&gt;מדידות רמקולים / אקולייזר&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;כיול Dayton לפי מספר סידורי&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;כיול miniDSP לפי מספר סידורי&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;גרפי מיקרופונים של Neumann&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;גרף תגובת AT2020&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;מדידות מגברים&lt;/a&gt;</translation>
     </message>
     <message>
       <source>Published profiles need an HTTPS measurement source.</source>
-      <translation type="unfinished" />
+      <translation>פרופילים שפורסמו דורשים מקור מדידה ב־HTTPS.</translation>
     </message>
     <message>
       <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <translation>לא ניתן היה לבדוק גרסאות שפורסמו. גרסאות Studio פרטיות דורשות גישה ל־GitHub. יש להשתמש בפתיחת הורדות גרסאות; תוכנות התקנה שהורדו עדיין מזוהות מקומית.</translation>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>תגובה שפורסמה ועקומות תיקון ניתנות לעריכה</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>עדכון %1 שפורסם זמין. יש לפתוח את הורדות הגרסאות, להתקין על גרסה זו ולפתוח מחדש.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>בס נמרץ</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>סריקה לוגריתמית שקטה</translation>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>יציאה מ־SoundCurrent EQ</translation>
     </message>
     <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
-      <translation>יציאה מהיישום</translation>
+      <translation>יציאה מהאפליקציה</translation>
     </message>
     <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>R</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>רית׳ם אנד בלוז</translation>
     </message>
     <message>
       <source>Refresh devices</source>
-      <translation>רענון התקנים</translation>
+      <translation>רענון מכשירים</translation>
     </message>
     <message>
       <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
 
 %1</source>
-      <translation type="unfinished" />
+      <translation>מדידות יחסיות כוללות את תגובת הרמקול, החדר והמיקרופון. השינויים המוצעים מוגבלים ל־3 dB לכל תדר שנמדד.
+
+%1</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>תזכורת כאשר עדכונים זמינים או נדרשת הפעלה מחדש</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>הסרת המסנן הנבחר</translation>
     </message>
     <message>
       <source>Reset</source>
-      <translation type="unfinished" />
+      <translation>איפוס</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>איפוס השיפורים</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>איפוס צליל המיקרופון</translation>
     </message>
     <message>
       <source>Reset to flat</source>

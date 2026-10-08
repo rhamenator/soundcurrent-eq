@@ -1,24 +1,24 @@
 {
-  "stage": "Hebrew microphone and measurement batch",
+  "stage": "Hebrew startup, output and rendering batch",
   "catalogs": [
     {
       "tag": "he",
       "name": "עברית",
-      "translated": 291,
+      "translated": 349,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "bbfc31b14f7516078f0ab2833ab13d37799abd1f126314822c0e9a54b4c5519b",
-      "qmSha256": "3650c5d8944ef0c6e0fd8dd2a33de79cb67f51150ca46851e768838c5eb8a1b0"
+      "tsSha256": "fcb3f76f123691e2b775153a0d780024db88009626031d91bc4b62aa43bf0eaf",
+      "qmSha256": "0eba0c053513db2d4aab3e2394891e82d2c6cb91f06b5ebc0e0ec70a084e8931"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "compiled localization, Hebrew main window and catalog validation",
-    "log": "/tmp/soundcurrent-eq-he-fourth-tests.log"
+    "log": "/tmp/soundcurrent-eq-he-fifth-tests.log"
   },
-  "review": "Contextual AI review; unverified. Additive model correction versus whole-system measurement, microphone clipping, balance endpoints, signed routing gain and update instructions reviewed.",
+  "review": "Contextual AI review; unverified. Single-app startup registration, close versus quit, reference-preserving edits, calibration links, post gain and neutral render counts reviewed.",
   "nativeReviewed": false,
   "windows": "Pending CI",
   "remaining": "Hebrew catalog incomplete. 11 original target catalogs remain incomplete; omitted messages scheduled for second pass. Full bidi and platform qualification remain open."
