@@ -106,6 +106,7 @@ try {
     $dsp.Refresh()
     if ($null -eq $dsp.ExitCode -or $dsp.ExitCode -ne 0) { throw "DSP test failed: $($dsp.ExitCode)" }
     $env:QT_QPA_PLATFORM = 'offscreen'
+    $env:QT_FORCE_STDERR_LOGGING = '1' # Capture Qt test failures from GUI-linked processes.
     foreach ($testName in @('soundcurrent-equipment-test', 'soundcurrent-processing-guard-test', 'soundcurrent-enhancement-test', 'soundcurrent-update-test','soundcurrent-spin-test','soundcurrent-localization-test','soundcurrent-startup-test')) {
         Copy-Item "build-windows-native\Release\$testName.exe" $stage
         $testArgs = @()

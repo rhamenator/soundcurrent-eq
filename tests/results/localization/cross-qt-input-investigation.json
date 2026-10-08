@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-08",
+  "status": "Cross-version numeric-input regression unresolved",
+  "evidence": {
+    "linux": "EQ run 37742826892 failed localization on Ubuntu 24.04: RTL localized negative numeric input changed gain",
+    "windows": "Studio run 37742826938 failed soundcurrent-localization-test, but Qt diagnostic text was not visible"
+  },
+  "changes": [
+    "Include Qt version, region, controlled input codepoints, spin value and QLocale parse outcome in failing numeric-input assertion",
+    "Enable QT_FORCE_STDERR_LOGGING in Windows build test stage"
+  ],
+  "localVerification": "Localization test rebuilt and passed on host Qt 6.10.2 in both repositories",
+  "remaining": [
+    "Obtain exact CI region/input failure and repair numeric behavior across supported Qt versions",
+    "Updated Windows installer qualification and RPM lifecycle pending"
+  ],
+  "nativeReviewed": false,
+  "productionCodeChanged": false
+}

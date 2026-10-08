@@ -63,7 +63,12 @@ int main(int argc,char **argv){
    spin.setRange(-60,12);spin.setDecimals(1);spin.setSuffix(" dB");spin.setValue(1.5);
    const auto input=locale.toString(-12.5,'f',1);
    spin.findChild<QLineEdit *>()->setText(input+" dB");spin.interpretText();
-   require(spin.value()==-12.5,"RTL localized negative numeric input changed gain");
+   QStringList codepoints;
+   for(const auto character:input)codepoints << QString::number(character.unicode(),16);
+   bool localeParsed=false;const double parsed=locale.toDouble(input,&localeParsed);
+   const auto parseFailure=QString("RTL negative input failed: Qt %1, region %2, input codepoints %3, control value %4, locale parser %5 (accepted %6)")
+       .arg(qVersion(),region,codepoints.join(','),QString::number(spin.value()),QString::number(parsed),localeParsed ? "yes" : "no");
+   require(spin.value()==-12.5,qPrintable(parseFailure));
    require(spin.text().contains(locale.toString(12.5,'f',1)),"Regional digits/decimal separator lost in displayed gain");
    const auto saved=QJsonDocument(QJsonObject{{"gain",spin.value()},{"presetId","Flat"}}).toJson(QJsonDocument::Compact);
    require(saved.contains("-12.5") && QJsonDocument::fromJson(saved).object().value("gain").toDouble()==-12.5,"Regional format changed JSON gain representation");
