@@ -220,6 +220,11 @@ Import into your library?</source>
       <translation>보정을 적용하시겠습니까?</translation>
     </message>
     <message>
+      <source>Apply only if these conditions match your system.</source>
+      <translation>이 조건이 사용 중인 시스템과 일치하는 경우에만 적용하세요.</translation>
+      <extracomment>Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.</extracomment>
+    </message>
+    <message>
       <source>Apply profile</source>
       <translation>프로파일 적용</translation>
     </message>
@@ -496,6 +501,11 @@ Import into your library?</source>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>측정하기 전에 출력 장치와 마이크를 연결하세요.</translation>
+    </message>
+    <message>
+      <source>Correction filters:</source>
+      <translation>보정 필터:</translation>
+      <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
@@ -1143,6 +1153,11 @@ Import into your library?</source>
     <message>
       <source>Measurement conditions are required.</source>
       <translation>측정 조건은 필수입니다.</translation>
+    </message>
+    <message>
+      <source>Measurement conditions: %1</source>
+      <translation>측정 조건: %1</translation>
+      <extracomment>Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.</extracomment>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
@@ -1868,6 +1883,11 @@ Import into your library?</source>
     <message>
       <source>Source</source>
       <translation>출처</translation>
+    </message>
+    <message>
+      <source>Source: %1</source>
+      <translation>출처: %1</translation>
+      <extracomment>Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.</extracomment>
     </message>
     <message>
       <source>Speaker</source>

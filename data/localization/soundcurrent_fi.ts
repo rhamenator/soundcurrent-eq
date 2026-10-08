@@ -220,6 +220,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>Käytetäänkö korjausta?</translation>
     </message>
     <message>
+      <source>Apply only if these conditions match your system.</source>
+      <translation>Käytä vain, jos nämä olosuhteet vastaavat järjestelmääsi.</translation>
+      <extracomment>Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.</extracomment>
+    </message>
+    <message>
       <source>Apply profile</source>
       <translation>Käytä profiilia</translation>
     </message>
@@ -496,6 +501,11 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>Liitä lähtölaite ja mikrofoni ennen mittausta.</translation>
+    </message>
+    <message>
+      <source>Correction filters:</source>
+      <translation>Korjaussuodattimet:</translation>
+      <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
@@ -1143,6 +1153,11 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Measurement conditions are required.</source>
       <translation>Mittausolosuhteet vaaditaan.</translation>
+    </message>
+    <message>
+      <source>Measurement conditions: %1</source>
+      <translation>Mittausolosuhteet: %1</translation>
+      <extracomment>Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.</extracomment>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
@@ -1868,6 +1883,11 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Source</source>
       <translation>Lähde</translation>
+    </message>
+    <message>
+      <source>Source: %1</source>
+      <translation>Lähde: %1</translation>
+      <extracomment>Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.</extracomment>
     </message>
     <message>
       <source>Speaker</source>

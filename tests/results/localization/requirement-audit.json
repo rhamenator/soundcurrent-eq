@@ -73,7 +73,7 @@
   "knownSecondPassExamples": [
     "Default Studio channel names and other stored/user captions require provenance-aware display handling",
     "Installer/helper diagnostics and other uncaptured interface strings require audit",
-    "Dynamic amplifier preview/details prose remains untranslated"
+    "Dynamic speaker details prose and filter descriptions remain untranslated"
   ],
   "limitations": [
     "Representative screenshots and all-locale geometry measurements do not constitute all-string linguistic review",
@@ -96,10 +96,10 @@
     "tests/windows_interactive_localization.ps1": "e5d29e2692db4899c98167f7bee2be1724b1d0495351a9c1dc9a5b976e6f2edd",
     "tests/windows_startup_desktop_observer.ps1": "f59c6dc395b0a16429ad0fb3bc52cf8f4eb44cb41b2d5598dfe4cf7fac41fc79"
   },
-  "secondPassProgress": "tests/results/localization/second-pass-captions.json",
+  "secondPassProgress": "tests/results/localization/second-pass-amplifier-text.json",
   "currentCatalogs": {
     "nonEnglishLocales": 33,
-    "sourceMessagesPerLocale": 526,
+    "sourceMessagesPerLocale": 530,
     "unfinished": 0,
     "nativeReviewed": false
   }

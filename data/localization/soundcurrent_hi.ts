@@ -220,6 +220,11 @@ Import into your library?</source>
       <translation>सुधार लागू करें?</translation>
     </message>
     <message>
+      <source>Apply only if these conditions match your system.</source>
+      <translation>केवल तभी लागू करें जब ये स्थितियाँ आपके सिस्टम से मेल खाती हों।</translation>
+      <extracomment>Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.</extracomment>
+    </message>
+    <message>
       <source>Apply profile</source>
       <translation>प्रोफ़ाइल लागू करें</translation>
     </message>
@@ -496,6 +501,11 @@ Import into your library?</source>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>मापने से पहले आउटपुट उपकरण और माइक्रोफ़ोन कनेक्ट करें।</translation>
+    </message>
+    <message>
+      <source>Correction filters:</source>
+      <translation>सुधार फ़िल्टर:</translation>
+      <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
@@ -1143,6 +1153,11 @@ Import into your library?</source>
     <message>
       <source>Measurement conditions are required.</source>
       <translation>माप की स्थितियाँ आवश्यक हैं।</translation>
+    </message>
+    <message>
+      <source>Measurement conditions: %1</source>
+      <translation>मापन की स्थितियाँ: %1</translation>
+      <extracomment>Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.</extracomment>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
@@ -1868,6 +1883,11 @@ Import into your library?</source>
     <message>
       <source>Source</source>
       <translation>स्रोत</translation>
+    </message>
+    <message>
+      <source>Source: %1</source>
+      <translation>स्रोत: %1</translation>
+      <extracomment>Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.</extracomment>
     </message>
     <message>
       <source>Speaker</source>

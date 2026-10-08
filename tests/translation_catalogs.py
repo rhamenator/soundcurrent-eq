@@ -46,6 +46,14 @@ class CatalogTests(unittest.TestCase):
                 with patch.object(catalog, 'ROOT', root), self.assertRaisesRegex(ValueError, 'Unmarked UI literal'):
                     catalog.sources()
 
+    def test_new_control_header_cannot_escape_caption_validation(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'src').mkdir()
+            (root / 'src/new_controls.hpp').write_text('menu->addAction("Untranslated new control", callback);', encoding='utf-8')
+            with patch.object(catalog, 'ROOT', root), self.assertRaisesRegex(ValueError, 'Unmarked UI literal'):
+                catalog.sources()
+
     def test_named_dialog_title_requires_marker(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

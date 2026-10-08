@@ -22,8 +22,6 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data/localization'
 LITERAL = r'"(?:\\.|[^"\\])*"'
 PLACEHOLDER = re.compile(r'%L?[1-9][0-9]?|%Ln|%n')
-UI_SOURCES = ['main.cpp', 'equipment_profiles.cpp', 'enhancement_controls.h',
-              'update_panel.h', 'startup_controls.h', 'localization.h', 'processing_guard.cpp', 'studio_panel.cpp']
 
 
 def literal(expression):
@@ -85,10 +83,10 @@ def sources():
     if adapter.exists():
         check_platform_errors(adapter.read_text(encoding='utf-8'))
     out = marked_sources(ROOT / 'src')
-    for name in UI_SOURCES:
-        path = ROOT / 'src' / name
-        if not path.exists():
+    for path in sorted((ROOT / 'src').rglob('*')):
+        if path.suffix not in ('.cpp', '.h', '.hpp', '.inc'):
             continue
+        name = path.relative_to(ROOT / 'src').as_posix()
         code = path.read_text(encoding='utf-8')
         # Obvious view literals must be wrapped; machine names/units are explicit exceptions.
         for method, argument in [('setWindowTitle', 0), ('setAccessibleName', 0), ('setToolTip', 0),

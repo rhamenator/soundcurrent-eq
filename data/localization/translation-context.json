@@ -15,5 +15,9 @@
   "Undo": "Reverse the previous editable setting change.",
   "Filter Q": "Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.",
   "Apply amplifier correction?": "Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.",
-  "Equalizer conflict": "Warning title when another equalizer or processing owner conflicts with this app. It is a software routing/ownership conflict, not clipping or a bad acoustic measurement."
+  "Equalizer conflict": "Warning title when another equalizer or processing owner conflicts with this app. It is a software routing/ownership conflict, not clipping or a bad acoustic measurement.",
+  "Measurement conditions: %1": "Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.",
+  "Source: %1": "Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.",
+  "Apply only if these conditions match your system.": "Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.",
+  "Correction filters:": "Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged."
 }

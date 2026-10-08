@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-08",
+  "stage": "second-pass amplifier preview/details prose",
+  "nativeReviewed": false,
+  "contextualAIReview": "Measurement conditions describe the published electrical load/input/tone setup; source is attribution URL; applying correction is conditional on the actual setup matching. Imported content is preserved rather than translated.",
+  "newSources": [
+    "Measurement conditions: %1",
+    "Source: %1",
+    "Apply only if these conditions match your system.",
+    "Correction filters:"
+  ],
+  "nonEnglishLocales": 33,
+  "sourceMessagesPerLocale": 530,
+  "unfinished": 0,
+  "preservation": "Shared display helpers add FSI/PDI to supplied names/conditions and LRI/PDI to URL/filter text only when rendering. Imported profile identifiers, stored values and JSON fields are unchanged.",
+  "linuxTests": {
+    "passed": 38,
+    "failed": 0,
+    "command": "ctest -R 'shared-ui|localized-ui-|localized-number-format|translation-catalog' --output-on-failure -j 2",
+    "scope": "33 locales plus pseudo-locales/regional/shared UI/catalog fixtures. Each locale verifies imported name, conditions, URL and filter data including literal placeholder-looking tokens; translated prose and URL isolation are checked as display strings, not native-speaker or full dialog glyph/layout certification."
+  },
+  "extractionTests": {
+    "passed": 10,
+    "newGate": "Every src C++ source/header/adapter receives existing direct-caption validation; a newly added control header cannot bypass it."
+  },
+  "remaining": [
+    "Dynamic speaker details prose and filter descriptions",
+    "Provenance-aware Studio built-in channel names",
+    "Other dynamic display/diagnostic text",
+    "Installer/helper localization",
+    "Final changed Linux/Windows package qualification"
+  ],
+  "sourceSha256": {
+    "src/main.cpp": "52d7271e78522df0a5ca06bedf33a8f0e5a9f7055034b021b846011829844759",
+    "src/equipment_display_text.h": "4ef9f1164cd6a3e9015e029636b77886bded1762ef0623d450eb139466fdce92",
+    "scripts/localization.py": "46d1847f7cb40356502ad98c81f990530ee2693a3afcc00891f01968d50df6a7",
+    "tests/translation_catalogs.py": "c0074f1cdf000f93fd63b9dd27b81d90669b689b13f835d7f3b4b60a73b9f18f"
+  }
+}

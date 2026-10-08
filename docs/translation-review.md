@@ -193,3 +193,20 @@ The literal Qt inventory does not cover every dynamic expression, saved/user
 name, backend diagnostic or installer message. Its remaining language-picker
 caption `English (en)` is an intentional native autonym plus stable locale tag.
 Whole-interface coverage remains incomplete.
+
+## Amplifier preview and details prose (second pass, 2026-10-08)
+
+All 33 non-English catalogs now translate the measurement-condition label,
+source label, conditional apply warning and correction-filter heading. The
+warning refers to using a measured amplifier response only with matching
+electrical load, input and tone settings. It is not a recommendation to copy
+a curve measured with a different speaker load. Contextual review is AI review;
+native-speaker verification remains unverified.
+
+Profile names, original measurement conditions, attribution URLs and filter
+JSON remain supplied data. Display-only direction isolates keep that content
+separate from the translated surrounding prose, without changing stored values.
+Every locale fixture checks names and conditions containing literal `%1`/`%2`,
+URL escapes, and numerical/filter JSON so placeholder substitution cannot
+rewrite imported content. This checks strings and data boundaries; full native
+dialog visual qualification remains a later package gate.

@@ -220,6 +220,11 @@ Import into your library?</source>
       <translation>להחיל תיקון?</translation>
     </message>
     <message>
+      <source>Apply only if these conditions match your system.</source>
+      <translation>יש להחיל רק אם תנאים אלה תואמים למערכת שלך.</translation>
+      <extracomment>Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.</extracomment>
+    </message>
+    <message>
       <source>Apply profile</source>
       <translation>החלת פרופיל</translation>
     </message>
@@ -496,6 +501,11 @@ Import into your library?</source>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>יש לחבר יציאה ומיקרופון לפני המדידה.</translation>
+    </message>
+    <message>
+      <source>Correction filters:</source>
+      <translation>מסנני תיקון:</translation>
+      <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
@@ -1143,6 +1153,11 @@ Import into your library?</source>
     <message>
       <source>Measurement conditions are required.</source>
       <translation>נדרשים תנאי המדידה.</translation>
+    </message>
+    <message>
+      <source>Measurement conditions: %1</source>
+      <translation>תנאי המדידה: %1</translation>
+      <extracomment>Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.</extracomment>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
@@ -1868,6 +1883,11 @@ Import into your library?</source>
     <message>
       <source>Source</source>
       <translation>מקור</translation>
+    </message>
+    <message>
+      <source>Source: %1</source>
+      <translation>מקור: %1</translation>
+      <extracomment>Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.</extracomment>
     </message>
     <message>
       <source>Speaker</source>

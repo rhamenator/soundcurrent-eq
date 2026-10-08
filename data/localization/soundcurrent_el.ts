@@ -220,6 +220,11 @@ Import into your library?</source>
       <translation>Εφαρμογή διόρθωσης;</translation>
     </message>
     <message>
+      <source>Apply only if these conditions match your system.</source>
+      <translation>Εφαρμόστε μόνο εάν αυτές οι συνθήκες αντιστοιχούν στο σύστημά σας.</translation>
+      <extracomment>Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.</extracomment>
+    </message>
+    <message>
       <source>Apply profile</source>
       <translation>Εφαρμογή προφίλ</translation>
     </message>
@@ -496,6 +501,11 @@ Import into your library?</source>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>Συνδέστε έξοδο και μικρόφωνο πριν από τη μέτρηση.</translation>
+    </message>
+    <message>
+      <source>Correction filters:</source>
+      <translation>Φίλτρα διόρθωσης:</translation>
+      <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
@@ -1143,6 +1153,11 @@ Import into your library?</source>
     <message>
       <source>Measurement conditions are required.</source>
       <translation>Οι συνθήκες μέτρησης είναι υποχρεωτικές.</translation>
+    </message>
+    <message>
+      <source>Measurement conditions: %1</source>
+      <translation>Συνθήκες μέτρησης: %1</translation>
+      <extracomment>Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.</extracomment>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
@@ -1868,6 +1883,11 @@ Import into your library?</source>
     <message>
       <source>Source</source>
       <translation>Πηγή</translation>
+    </message>
+    <message>
+      <source>Source: %1</source>
+      <translation>Πηγή: %1</translation>
+      <extracomment>Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.</extracomment>
     </message>
     <message>
       <source>Speaker</source>

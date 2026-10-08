@@ -220,6 +220,11 @@ Importovat do vaší knihovny?</translation>
       <translation>Použít korekci?</translation>
     </message>
     <message>
+      <source>Apply only if these conditions match your system.</source>
+      <translation>Použijte pouze tehdy, pokud tyto podmínky odpovídají vašemu systému.</translation>
+      <extracomment>Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.</extracomment>
+    </message>
+    <message>
       <source>Apply profile</source>
       <translation>Použít profil</translation>
     </message>
@@ -496,6 +501,11 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>Před měřením připojte výstup a mikrofon.</translation>
+    </message>
+    <message>
+      <source>Correction filters:</source>
+      <translation>Korekční filtry:</translation>
+      <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
@@ -1143,6 +1153,11 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Measurement conditions are required.</source>
       <translation>Podmínky měření jsou povinné.</translation>
+    </message>
+    <message>
+      <source>Measurement conditions: %1</source>
+      <translation>Podmínky měření: %1</translation>
+      <extracomment>Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.</extracomment>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
@@ -1868,6 +1883,11 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Source</source>
       <translation>Zdroj</translation>
+    </message>
+    <message>
+      <source>Source: %1</source>
+      <translation>Zdroj: %1</translation>
+      <extracomment>Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.</extracomment>
     </message>
     <message>
       <source>Speaker</source>

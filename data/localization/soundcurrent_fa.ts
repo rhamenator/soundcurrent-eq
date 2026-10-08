@@ -220,6 +220,11 @@ Import into your library?</source>
       <translation>اصلاح اعمال شود؟</translation>
     </message>
     <message>
+      <source>Apply only if these conditions match your system.</source>
+      <translation>فقط در صورتی اعمال کنید که این شرایط با سیستم شما مطابقت داشته باشد.</translation>
+      <extracomment>Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.</extracomment>
+    </message>
+    <message>
       <source>Apply profile</source>
       <translation>اعمال پروفایل</translation>
     </message>
@@ -496,6 +501,11 @@ Import into your library?</source>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
       <translation>پیش از اندازه‌گیری یک خروجی و یک میکروفون وصل کنید.</translation>
+    </message>
+    <message>
+      <source>Correction filters:</source>
+      <translation>فیلترهای اصلاح:</translation>
+      <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
@@ -1143,6 +1153,11 @@ Import into your library?</source>
     <message>
       <source>Measurement conditions are required.</source>
       <translation>شرایط اندازه‌گیری الزامی است.</translation>
+    </message>
+    <message>
+      <source>Measurement conditions: %1</source>
+      <translation>شرایط اندازه‌گیری: %1</translation>
+      <extracomment>Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.</extracomment>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
@@ -1868,6 +1883,11 @@ Import into your library?</source>
     <message>
       <source>Source</source>
       <translation>منبع</translation>
+    </message>
+    <message>
+      <source>Source: %1</source>
+      <translation>منبع: %1</translation>
+      <extracomment>Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.</extracomment>
     </message>
     <message>
       <source>Speaker</source>

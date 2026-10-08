@@ -31,7 +31,11 @@
     "Language and regional settings",
     "Effects",
     "Apply amplifier correction?",
-    "Equalizer conflict"
+    "Equalizer conflict",
+    "Measurement conditions: %1",
+    "Source: %1",
+    "Apply only if these conditions match your system.",
+    "Correction filters:"
   ],
   "languages": {
     "de": [
@@ -67,7 +71,11 @@
       "Sprache und Region",
       "Effekte",
       "Verstärkerkorrektur anwenden?",
-      "Konflikt zwischen Equalizern"
+      "Konflikt zwischen Equalizern",
+      "Messbedingungen: %1",
+      "Quelle: %1",
+      "Nur anwenden, wenn diese Bedingungen zu Ihrem System passen.",
+      "Korrekturfilter:"
     ],
     "fr": [
       "Français",
@@ -102,7 +110,11 @@
       "Langue et région",
       "Effets",
       "Appliquer la correction de l’amplificateur ?",
-      "Conflit entre égaliseurs"
+      "Conflit entre égaliseurs",
+      "Conditions de mesure : %1",
+      "Source : %1",
+      "Appliquez uniquement si ces conditions correspondent à votre système.",
+      "Filtres de correction :"
     ],
     "es": [
       "Español",
@@ -137,7 +149,11 @@
       "Idioma y región",
       "Efectos",
       "¿Aplicar la corrección del amplificador?",
-      "Conflicto entre ecualizadores"
+      "Conflicto entre ecualizadores",
+      "Condiciones de medición: %1",
+      "Fuente: %1",
+      "Aplique solo si estas condiciones coinciden con su sistema.",
+      "Filtros de corrección:"
     ],
     "it": [
       "Italiano",
@@ -172,7 +188,11 @@
       "Lingua e regione",
       "Effetti",
       "Applicare la correzione dell’amplificatore?",
-      "Conflitto tra equalizzatori"
+      "Conflitto tra equalizzatori",
+      "Condizioni di misurazione: %1",
+      "Fonte: %1",
+      "Applicare solo se queste condizioni corrispondono al proprio sistema.",
+      "Filtri di correzione:"
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -207,7 +227,11 @@
       "Idioma e região",
       "Efeitos",
       "Aplicar a correção do amplificador?",
-      "Conflito entre equalizadores"
+      "Conflito entre equalizadores",
+      "Condições de medição: %1",
+      "Fonte: %1",
+      "Aplique apenas se estas condições corresponderem ao seu sistema.",
+      "Filtros de correção:"
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -242,7 +266,11 @@
       "Idioma e região",
       "Efeitos",
       "Aplicar a correção do amplificador?",
-      "Conflito entre equalizadores"
+      "Conflito entre equalizadores",
+      "Condições de medição: %1",
+      "Fonte: %1",
+      "Aplique apenas se estas condições corresponderem ao seu sistema.",
+      "Filtros de correção:"
     ],
     "nl": [
       "Nederlands",
@@ -277,7 +305,11 @@
       "Taal en regio",
       "Effecten",
       "Versterkercorrectie toepassen?",
-      "Conflict tussen equalizers"
+      "Conflict tussen equalizers",
+      "Meetomstandigheden: %1",
+      "Bron: %1",
+      "Alleen toepassen als deze omstandigheden overeenkomen met uw systeem.",
+      "Correctiefilters:"
     ],
     "pl": [
       "Polski",
@@ -312,7 +344,11 @@
       "Język i region",
       "Efekty",
       "Zastosować korekcję wzmacniacza?",
-      "Konflikt między korektorami"
+      "Konflikt między korektorami",
+      "Warunki pomiaru: %1",
+      "Źródło: %1",
+      "Zastosuj tylko wtedy, gdy te warunki odpowiadają Twojemu systemowi.",
+      "Filtry korekcyjne:"
     ],
     "cs": [
       "Čeština",
@@ -347,7 +383,11 @@
       "Jazyk a oblast",
       "Efekty",
       "Použít korekci zesilovače?",
-      "Konflikt mezi ekvalizéry"
+      "Konflikt mezi ekvalizéry",
+      "Podmínky měření: %1",
+      "Zdroj: %1",
+      "Použijte pouze tehdy, pokud tyto podmínky odpovídají vašemu systému.",
+      "Korekční filtry:"
     ],
     "sk": [
       "Slovenčina",
@@ -382,7 +422,11 @@
       "Jazyk a oblasť",
       "Efekty",
       "Použiť korekciu zosilňovača?",
-      "Konflikt medzi ekvalizérmi"
+      "Konflikt medzi ekvalizérmi",
+      "Podmienky merania: %1",
+      "Zdroj: %1",
+      "Použite iba vtedy, ak tieto podmienky zodpovedajú vášmu systému.",
+      "Korekčné filtre:"
     ],
     "uk": [
       "Українська",
@@ -417,7 +461,11 @@
       "Мова та регіон",
       "Ефекти",
       "Застосувати корекцію підсилювача?",
-      "Конфлікт між еквалайзерами"
+      "Конфлікт між еквалайзерами",
+      "Умови вимірювання: %1",
+      "Джерело: %1",
+      "Застосовуйте лише якщо ці умови відповідають вашій системі.",
+      "Фільтри корекції:"
     ],
     "ru": [
       "Русский",
@@ -452,7 +500,11 @@
       "Язык и регион",
       "Эффекты",
       "Применить коррекцию усилителя?",
-      "Конфликт между эквалайзерами"
+      "Конфликт между эквалайзерами",
+      "Условия измерения: %1",
+      "Источник: %1",
+      "Применяйте только если эти условия соответствуют вашей системе.",
+      "Фильтры коррекции:"
     ],
     "el": [
       "Ελληνικά",
@@ -487,7 +539,11 @@
       "Γλώσσα και περιοχή",
       "Εφέ",
       "Εφαρμογή διόρθωσης ενισχυτή;",
-      "Διένεξη μεταξύ ισοσταθμιστών"
+      "Διένεξη μεταξύ ισοσταθμιστών",
+      "Συνθήκες μέτρησης: %1",
+      "Πηγή: %1",
+      "Εφαρμόστε μόνο εάν αυτές οι συνθήκες αντιστοιχούν στο σύστημά σας.",
+      "Φίλτρα διόρθωσης:"
     ],
     "tr": [
       "Türkçe",
@@ -522,7 +578,11 @@
       "Dil ve bölge",
       "Efektler",
       "Amplifikatör düzeltmesi uygulansın mı?",
-      "Ekolayzırlar arasında çakışma"
+      "Ekolayzırlar arasında çakışma",
+      "Ölçüm koşulları: %1",
+      "Kaynak: %1",
+      "Yalnızca bu koşullar sisteminizle eşleşiyorsa uygulayın.",
+      "Düzeltme filtreleri:"
     ],
     "sv": [
       "Svenska",
@@ -557,7 +617,11 @@
       "Språk och region",
       "Effekter",
       "Tillämpa förstärkarkorrigering?",
-      "Konflikt mellan equalizrar"
+      "Konflikt mellan equalizrar",
+      "Mätförhållanden: %1",
+      "Källa: %1",
+      "Tillämpa endast om dessa förhållanden stämmer med ditt system.",
+      "Korrigeringsfilter:"
     ],
     "da": [
       "Dansk",
@@ -592,7 +656,11 @@
       "Sprog og region",
       "Effekter",
       "Anvend forstærkerkorrektion?",
-      "Konflikt mellem equalizere"
+      "Konflikt mellem equalizere",
+      "Måleforhold: %1",
+      "Kilde: %1",
+      "Anvend kun, hvis disse forhold svarer til dit system.",
+      "Korrektionsfiltre:"
     ],
     "nb": [
       "Norsk bokmål",
@@ -627,7 +695,11 @@
       "Språk og region",
       "Effekter",
       "Bruke forsterkerkorreksjon?",
-      "Konflikt mellom equalizere"
+      "Konflikt mellom equalizere",
+      "Måleforhold: %1",
+      "Kilde: %1",
+      "Bruk bare hvis disse forholdene stemmer med systemet ditt.",
+      "Korreksjonsfiltre:"
     ],
     "fi": [
       "Suomi",
@@ -662,7 +734,11 @@
       "Kieli ja alue",
       "Tehosteet",
       "Otetaanko vahvistimen korjaus käyttöön?",
-      "Taajuuskorjainten ristiriita"
+      "Taajuuskorjainten ristiriita",
+      "Mittausolosuhteet: %1",
+      "Lähde: %1",
+      "Käytä vain, jos nämä olosuhteet vastaavat järjestelmääsi.",
+      "Korjaussuodattimet:"
     ],
     "ro": [
       "Română",
@@ -697,7 +773,11 @@
       "Limbă și regiune",
       "Efecte",
       "Aplicați corecția amplificatorului?",
-      "Conflict între egalizatoare"
+      "Conflict între egalizatoare",
+      "Condiții de măsurare: %1",
+      "Sursă: %1",
+      "Aplicați numai dacă aceste condiții corespund sistemului dumneavoastră.",
+      "Filtre de corecție:"
     ],
     "hu": [
       "Magyar",
@@ -732,7 +812,11 @@
       "Nyelv és terület",
       "Effektek",
       "Alkalmazza az erősítő korrekcióját?",
-      "Ütközés a hangszínszabályozók között"
+      "Ütközés a hangszínszabályozók között",
+      "Mérési körülmények: %1",
+      "Forrás: %1",
+      "Csak akkor alkalmazza, ha ezek a körülmények megfelelnek a rendszerének.",
+      "Korrekciós szűrők:"
     ],
     "ar": [
       "العربية",
@@ -767,7 +851,11 @@
       "اللغة والمنطقة",
       "المؤثرات",
       "هل تريد تطبيق تصحيح مضخّم الصوت؟",
-      "تعارض بين برامج معادلة الصوت"
+      "تعارض بين برامج معادلة الصوت",
+      "ظروف القياس: %1",
+      "المصدر: %1",
+      "طبّق التصحيح فقط إذا كانت هذه الظروف مطابقة لنظامك.",
+      "مرشحات التصحيح:"
     ],
     "he": [
       "עברית",
@@ -802,7 +890,11 @@
       "שפה ואזור",
       "אפקטים",
       "להחיל תיקון למגבר?",
-      "התנגשות בין אקולייזרים"
+      "התנגשות בין אקולייזרים",
+      "תנאי המדידה: %1",
+      "מקור: %1",
+      "יש להחיל רק אם תנאים אלה תואמים למערכת שלך.",
+      "מסנני תיקון:"
     ],
     "fa": [
       "فارسی",
@@ -837,7 +929,11 @@
       "زبان و منطقه",
       "افکت‌ها",
       "اصلاح پاسخ تقویت‌کننده اعمال شود؟",
-      "تداخل بین اکولایزرها"
+      "تداخل بین اکولایزرها",
+      "شرایط اندازه‌گیری: %1",
+      "منبع: %1",
+      "فقط در صورتی اعمال کنید که این شرایط با سیستم شما مطابقت داشته باشد.",
+      "فیلترهای اصلاح:"
     ],
     "zh-Hans": [
       "简体中文",
@@ -872,7 +968,11 @@
       "语言和区域设置",
       "效果",
       "应用功放校正？",
-      "均衡器冲突"
+      "均衡器冲突",
+      "测量条件：%1",
+      "来源：%1",
+      "仅在这些条件与您的系统一致时应用。",
+      "校正滤波器："
     ],
     "zh-Hant": [
       "繁體中文",
@@ -907,7 +1007,11 @@
       "語言和地區設定",
       "效果",
       "套用擴大機校正？",
-      "等化器衝突"
+      "等化器衝突",
+      "量測條件：%1",
+      "來源：%1",
+      "僅在這些條件與您的系統相符時套用。",
+      "校正濾波器："
     ],
     "ja": [
       "日本語",
@@ -942,7 +1046,11 @@
       "言語と地域設定",
       "エフェクト",
       "アンプの補正を適用しますか？",
-      "イコライザーの競合"
+      "イコライザーの競合",
+      "測定条件：%1",
+      "出典：%1",
+      "これらの条件がご使用のシステムと一致する場合にのみ適用してください。",
+      "補正フィルター："
     ],
     "ko": [
       "한국어",
@@ -977,7 +1085,11 @@
       "언어 및 지역 설정",
       "효과",
       "앰프 보정을 적용할까요?",
-      "이퀄라이저 간 충돌"
+      "이퀄라이저 간 충돌",
+      "측정 조건: %1",
+      "출처: %1",
+      "이 조건이 사용 중인 시스템과 일치하는 경우에만 적용하세요.",
+      "보정 필터:"
     ],
     "hi": [
       "हिन्दी",
@@ -1012,7 +1124,11 @@
       "भाषा और क्षेत्र",
       "प्रभाव",
       "एम्प्लीफायर का सुधार लागू करें?",
-      "इक्वलाइज़रों के बीच टकराव"
+      "इक्वलाइज़रों के बीच टकराव",
+      "मापन की स्थितियाँ: %1",
+      "स्रोत: %1",
+      "केवल तभी लागू करें जब ये स्थितियाँ आपके सिस्टम से मेल खाती हों।",
+      "सुधार फ़िल्टर:"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -1047,7 +1163,11 @@
       "Bahasa dan wilayah",
       "Efek",
       "Terapkan koreksi amplifier?",
-      "Konflik antar-equalizer"
+      "Konflik antar-equalizer",
+      "Kondisi pengukuran: %1",
+      "Sumber: %1",
+      "Terapkan hanya jika kondisi ini sesuai dengan sistem Anda.",
+      "Filter koreksi:"
     ],
     "vi": [
       "Tiếng Việt",
@@ -1082,7 +1202,11 @@
       "Ngôn ngữ và vùng",
       "Hiệu ứng",
       "Áp dụng hiệu chỉnh bộ khuếch đại?",
-      "Xung đột giữa các bộ cân bằng âm thanh"
+      "Xung đột giữa các bộ cân bằng âm thanh",
+      "Điều kiện đo: %1",
+      "Nguồn: %1",
+      "Chỉ áp dụng nếu các điều kiện này phù hợp với hệ thống của bạn.",
+      "Bộ lọc hiệu chỉnh:"
     ],
     "th": [
       "ไทย",
@@ -1117,7 +1241,11 @@
       "ภาษาและภูมิภาค",
       "เอฟเฟกต์",
       "ใช้การแก้ไขการตอบสนองของเครื่องขยายเสียงหรือไม่?",
-      "ข้อขัดแย้งระหว่างอีควอไลเซอร์"
+      "ข้อขัดแย้งระหว่างอีควอไลเซอร์",
+      "เงื่อนไขการวัด: %1",
+      "แหล่งที่มา: %1",
+      "ใช้การแก้ไขเฉพาะเมื่อเงื่อนไขเหล่านี้ตรงกับระบบของคุณเท่านั้น",
+      "ตัวกรองการแก้ไข:"
     ],
     "sw": [
       "Kiswahili",
@@ -1152,7 +1280,11 @@
       "Lugha na eneo",
       "Athari",
       "Utumie marekebisho ya amplifaya?",
-      "Mgongano kati ya visawazishi vya sauti"
+      "Mgongano kati ya visawazishi vya sauti",
+      "Masharti ya upimaji: %1",
+      "Chanzo: %1",
+      "Tumia tu ikiwa masharti haya yanalingana na mfumo wako.",
+      "Vichujio vya marekebisho:"
     ],
     "nn": [
       "Norsk nynorsk",
@@ -1187,7 +1319,11 @@
       "Språk og regionale innstillingar",
       "Effektar",
       "Bruke forsterkarkorreksjon?",
-      "Konflikt mellom equalizerar"
+      "Konflikt mellom equalizerar",
+      "Måletilhøve: %1",
+      "Kjelde: %1",
+      "Bruk berre dersom desse tilhøva stemmer med systemet ditt.",
+      "Korreksjonsfilter:"
     ]
   },
   "requiredCompleteLocales": [

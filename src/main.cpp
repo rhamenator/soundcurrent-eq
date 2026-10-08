@@ -7,6 +7,7 @@
 #include "dsp.h"
 #include "update_panel.h"
 #include "startup_controls.h"
+#include "equipment_display_text.h"
 #include "enhancement_controls.h"
 #ifndef SOUNDCURRENT_EFFECTS_DIR
 #define SOUNDCURRENT_EFFECTS_DIR "/usr/lib/soundcurrent-eq"
@@ -3108,8 +3109,7 @@ private:
         const auto profile = parseAmplifierProfile(QJsonDocument::fromJson(file.readAll()).object());
         if (!profile) { showError(SC_TR("Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.")); return; }
         QMessageBox preview(QMessageBox::Question, SC_TR("Apply amplifier correction?"),
-                            profile->name + "\n\nMeasurement conditions: " + profile->conditions +
-                            "\nSource: " + profile->source + "\n\nApply only if these conditions match your system.",
+                            soundcurrent::i18n::amplifierPreviewText(profile->name, profile->conditions, profile->source),
                             QMessageBox::Apply | QMessageBox::Cancel, this);
         preview.setTextFormat(Qt::PlainText);
         if (preview.exec() != QMessageBox::Apply) return;
@@ -3135,8 +3135,8 @@ private:
         const auto id = ampCombo_->currentData().toString();
         for (const auto &p : amplifierProfiles_) if (p.id == id) {
             QMessageBox details(QMessageBox::Information, SC_TR("Amplifier profile details"),
-                p.name + "\nConditions: " + p.conditions + "\nSource: " + p.source +
-                "\n\nCorrection filters:\n" + QString::fromUtf8(QJsonDocument(p.json.value("filters").toArray()).toJson()),
+                soundcurrent::i18n::amplifierDetailsText(p.name, p.conditions, p.source,
+                    QString::fromUtf8(QJsonDocument(p.json.value("filters").toArray()).toJson())),
                 QMessageBox::Ok, this);
             details.setTextFormat(Qt::PlainText); details.exec(); return;
         }
@@ -4203,6 +4203,25 @@ int main(int argc, char **argv) {
                 qFatal("Enhancement amount lost regional digits or percent symbol");
             slider->setValue(previous);
         }
+        // Imported text may itself contain placeholder-looking tokens. Rendering
+        // must translate application prose without modifying that supplied data.
+        const QString fixtureName=QString::fromUtf8("Model %1 %2 混合");
+        const QString fixtureConditions=QString::fromUtf8("Load %1 / room %2 — original conditions");
+        const QString fixtureSource="https://example.invalid/a%20b?x=%25";
+        const QString fixtureFilters="[{\"type\":\"PK\",\"frequency\":50,\"gain\":-2.5}]";
+        const auto previewText=soundcurrent::i18n::amplifierPreviewText(fixtureName,fixtureConditions,fixtureSource);
+        const auto detailsText=soundcurrent::i18n::amplifierDetailsText(fixtureName,fixtureConditions,fixtureSource,fixtureFilters);
+        for(const auto &rendered:{previewText,detailsText}) {
+            if(!rendered.contains(fixtureName) || !rendered.contains(fixtureConditions) || !rendered.contains(fixtureSource))
+                qFatal("Amplifier display modified imported names, conditions or URL");
+            if(!rendered.contains(SC_TR("Measurement conditions: %1").arg(soundcurrent::i18n::equipmentDisplayData(fixtureConditions))))
+                qFatal("Amplifier measurement conditions lost translation");
+            if(!rendered.contains(SC_TR("Source: %1").arg(soundcurrent::i18n::equipmentDisplayData(fixtureSource,true))))
+                qFatal("Amplifier source label lost translation or URL direction isolation");
+        }
+        if(!detailsText.contains(fixtureFilters) || !detailsText.contains(SC_TR("Correction filters:")) ||
+           !previewText.contains(SC_TR("Apply only if these conditions match your system.")))
+            qFatal("Amplifier filter details or apply warning are missing");
         const QStringList microphoneToneNames={"Warmth","Boxiness","Clarity","Air"};
         for(int i=0;i<4;++i) {
             auto *slider=window.findChild<QSlider *>(QString("micTone%1").arg(i));
