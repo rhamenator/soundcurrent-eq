@@ -87,3 +87,7 @@ Greek/Turkish filter/editor review: συντελεστής ποιότητας φ
 Greek/Turkish measurement review: loudness is low-volume tonal compensation rather than a global volume increase. Greek offline rendering describes non-real-time processing to avoid implying an internet requirement. Negative route gain means polarity inversion. Correction remains additive and microphone clipping requires reducing input gain/boost. Preset and profile limits preserve numerical meaning; native review remains unverified.
 
 Greek/Turkish startup/render review: sign-in differs from a boot-time service; enabling one app replaces the shared registration. Quitting differs from closing the window. Profile-save instructions preserve the reference copy. Rendering summaries use labels for arbitrary channel and clipped-sample counts. Link text is localized while href attributes remain unchanged. Native review remains unverified.
+
+## Greek and Turkish completed extracted catalogs
+
+All currently extracted messages populated (441 EQ / 527 Studio). Q remains dimensionless quality, headroom is level margin, compressor makeup differs from post gain, and wet mix is effect contribution. Low-volume loudness compensation differs from output volume. Relative measurements include the microphone; measured response differs from inverted correction. Rendering summaries use labels for arbitrary counts. URLs, file filters, placeholders, machine IDs and numerical settings are preserved. Catalogs remain unverified; native-speaker review is not claimed.

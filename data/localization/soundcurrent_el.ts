@@ -1404,67 +1404,67 @@ Import into your library?</source>
     </message>
     <message>
       <source>Response data (*.txt *.csv *.frd *.cal)</source>
-      <translation type="unfinished" />
+      <translation>Δεδομένα απόκρισης (*.txt *.csv *.frd *.cal)</translation>
     </message>
     <message>
       <source>Response exceeds 4096 points.</source>
-      <translation type="unfinished" />
+      <translation>Η απόκριση υπερβαίνει τα 4096 σημεία.</translation>
     </message>
     <message>
       <source>Response frequencies must increase, with finite bounded values.</source>
-      <translation type="unfinished" />
+      <translation>Οι συχνότητες απόκρισης πρέπει να αυξάνονται, με πεπερασμένες τιμές εντός ορίων.</translation>
     </message>
     <message>
       <source>Response has no usable audio range.</source>
-      <translation type="unfinished" />
+      <translation>Η απόκριση δεν έχει χρήσιμο εύρος ήχου.</translation>
     </message>
     <message>
       <source>Response import</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή απόκρισης</translation>
     </message>
     <message>
       <source>Response needs 2–4096 measured points.</source>
-      <translation type="unfinished" />
+      <translation>Η απόκριση χρειάζεται 2–4096 μετρημένα σημεία.</translation>
     </message>
     <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
-      <translation type="unfinished" />
+      <translation>Επανεκκινήστε τα Windows πριν χρησιμοποιήσετε τον ισοσταθμιστή ή τις ρυθμίσεις VB-CABLE. Οι αλλαγές οδηγού ήχου χρειάζονται επανεκκίνηση συστήματος.</translation>
     </message>
     <message>
       <source>Restore Defaults</source>
-      <translation type="unfinished" />
+      <translation>Επαναφορά προεπιλογών</translation>
     </message>
     <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
-      <translation type="unfinished" />
+      <translation>Επαναφορά προηγούμενης ρύθμισης EQ (Ctrl+Z)</translation>
     </message>
     <message>
       <source>Retry</source>
-      <translation type="unfinished" />
+      <translation>Επανάληψη</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
-      <translation type="unfinished" />
+      <translation>Δοκιμαστική γλώσσα από δεξιά προς αριστερά</translation>
     </message>
     <message>
       <source>Rock</source>
-      <translation type="unfinished" />
+      <translation>Ροκ</translation>
     </message>
     <message>
       <source>Save</source>
-      <translation type="unfinished" />
+      <translation>Αποθήκευση</translation>
     </message>
     <message>
       <source>Save All</source>
-      <translation type="unfinished" />
+      <translation>Αποθήκευση όλων</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
-      <translation type="unfinished" />
+      <translation>Αποθήκευση προρύθμισης EQ</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
-      <translation type="unfinished" />
+      <translation>Αποθήκευση τροποποιημένου προφίλ;</translation>
     </message>
     <message>
       <source>Save preset</source>
@@ -1472,35 +1472,35 @@ Import into your library?</source>
     </message>
     <message>
       <source>Save profile</source>
-      <translation type="unfinished" />
+      <translation>Αποθήκευση προφίλ</translation>
     </message>
     <message>
       <source>Save system response profile</source>
-      <translation type="unfinished" />
+      <translation>Αποθήκευση προφίλ απόκρισης συστήματος</translation>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
-      <translation type="unfinished" />
+      <translation>Αποθηκεύτηκε η προρύθμιση «%1».</translation>
     </message>
     <message>
       <source>Search brand, family, model or measurement conditions</source>
-      <translation type="unfinished" />
+      <translation>Αναζήτηση μάρκας, σειράς, μοντέλου ή συνθηκών μέτρησης</translation>
     </message>
     <message>
       <source>Second virtual cable for microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Δεύτερο εικονικό καλώδιο για EQ μικροφώνου</translation>
     </message>
     <message>
       <source>Select band %1</source>
-      <translation type="unfinished" />
+      <translation>Επιλογή ζώνης %1</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
-      <translation type="unfinished" />
+      <translation>Επιλέξτε αυτή τη ζώνη για επεξεργασία συχνότητας, ενίσχυσης και Q</translation>
     </message>
     <message>
       <source>Selected audio device is unavailable</source>
-      <translation type="unfinished" />
+      <translation>Η επιλεγμένη συσκευή ήχου δεν είναι διαθέσιμη</translation>
     </message>
     <message>
       <source>Selected band</source>
@@ -1509,27 +1509,27 @@ Import into your library?</source>
     </message>
     <message>
       <source>Selected band filter Q</source>
-      <translation type="unfinished" />
+      <translation>Συντελεστής Q επιλεγμένης ζώνης</translation>
     </message>
     <message>
       <source>Selected band frequency</source>
-      <translation type="unfinished" />
+      <translation>Συχνότητα επιλεγμένης ζώνης</translation>
     </message>
     <message>
       <source>Selected band gain</source>
-      <translation type="unfinished" />
+      <translation>Ενίσχυση επιλεγμένης ζώνης</translation>
     </message>
     <message>
       <source>Selected output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>Η επιλεγμένη συσκευή εξόδου δεν είναι πλέον διαθέσιμη</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
-      <translation type="unfinished" />
+      <translation>Η επιλεγμένη έξοδος αποσυνδέθηκε. Έγινε μετάβαση στην αυτόματη έξοδο.</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
-      <translation type="unfinished" />
+      <translation>Ξεχωριστοί ήσυχοι τόνοι</translation>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
@@ -1537,183 +1537,183 @@ Import into your library?</source>
     </message>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
-      <translation type="unfinished" />
+      <translation>Τα μικρότερα διαστήματα ανανεώνουν τις στάθμες συχνότερα και χρησιμοποιούν περισσότερη CPU· η παροχή ήχου μπορεί να περιορίζει τον πραγματικό ρυθμό</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
-      <translation type="unfinished" />
+      <translation>Εμφάνιση γραμμής συγκράτησης κορυφής που πέφτει σε κάθε ένδειξη συχνότητας</translation>
     </message>
     <message>
       <source>Show advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Εμφάνιση προχωρημένων χειριστηρίων</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>
-      <translation type="unfinished" />
+      <translation>Εμφάνιση δεικτών κορυφών στις ενδείξεις συχνότητας</translation>
     </message>
     <message>
       <source>Small Speakers</source>
-      <translation type="unfinished" />
+      <translation>Μικρά ηχεία</translation>
     </message>
     <message>
       <source>Soft Treble</source>
-      <translation type="unfinished" />
+      <translation>Απαλά πρίμα</translation>
     </message>
     <message>
       <source>Sound enhancements</source>
-      <translation>Βελτιώσεις ήχου</translation>
+      <translation>Ηχητικά εφέ</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
-      <translation type="unfinished" />
+      <translation>Το SoundCurrent Audio παρέχει τη δική του διαδρομή μικροφώνου όταν εγκατασταθεί. Με το VB-CABLE, ταυτόχρονο EQ μικροφώνου και ηχείων χρειάζεται ξεχωριστά εγκατεστημένο δεύτερο καλώδιο (A ή B). Επιλέξτε αυτό το καλώδιο στις εφαρμογές εγγραφής. Η αυτόματη επιλογή προτιμά τη διαδρομή SoundCurrent όταν είναι διαθέσιμη.</translation>
     </message>
     <message>
       <source>Source</source>
-      <translation type="unfinished" />
+      <translation>Πηγή</translation>
     </message>
     <message>
       <source>Speaker</source>
-      <translation type="unfinished" />
+      <translation>Ηχείο</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
-      <translation type="unfinished" />
+      <translation>Βαθμονόμηση ηχείων &amp;&amp; χώρου</translation>
     </message>
     <message>
       <source>Speaker + room check</source>
-      <translation type="unfinished" />
+      <translation>Έλεγχος ηχείων και χώρου</translation>
     </message>
     <message>
       <source>Speaker and room measurement</source>
-      <translation type="unfinished" />
+      <translation>Μέτρηση ηχείων και χώρου</translation>
     </message>
     <message>
       <source>Speaker filter is outside conservative bounds</source>
-      <translation type="unfinished" />
+      <translation>Το φίλτρο ηχείου βρίσκεται εκτός συντηρητικών ορίων</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Κατασκευαστής ηχείου</translation>
     </message>
     <message>
       <source>Speaker model correction</source>
-      <translation type="unfinished" />
+      <translation>Διόρθωση μοντέλου ηχείου</translation>
     </message>
     <message>
       <source>Speaker model profile</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ μοντέλου ηχείου</translation>
     </message>
     <message>
       <source>Speaker profile details</source>
-      <translation type="unfinished" />
+      <translation>Λεπτομέρειες προφίλ ηχείου</translation>
     </message>
     <message>
       <source>Speaker profile resource is missing</source>
-      <translation type="unfinished" />
+      <translation>Λείπει ο πόρος προφίλ ηχείου</translation>
     </message>
     <message>
       <source>Speaker type</source>
-      <translation type="unfinished" />
+      <translation>Τύπος ηχείου</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>Ξεκινήστε ήσυχα. Αυξήστε μόνο αν το μικρόφωνο δεν ακούει τους τόνους.</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
-      <translation type="unfinished" />
+      <translation>Εκκίνηση κατά τη σύνδεση</translation>
     </message>
     <message>
       <source>Startup</source>
-      <translation type="unfinished" />
+      <translation>Εκκίνηση</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
-      <translation type="unfinished" />
+      <translation>Σταματήστε τη βαθμονόμηση μικροφώνου πριν αλλάξετε τον οδηγό ήχου.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>Διακοπή τόνων</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>Το προτεινόμενο EQ εφαρμόστηκε. Χρησιμοποιήστε την Αποθήκευση προρύθμισης για να το διατηρήσετε.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>Προτεινόμενες αλλαγές στο EQ αναπαραγωγής</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>Περιβάλλων ήχος</translation>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>Άνοιξε η επεξεργασία προφίλ απόκρισης συστήματος. Τα αποθηκευμένα προφίλ είναι διαθέσιμα στη βιβλιοθήκη εξοπλισμού.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>Τηλεοπτικοί διάλογοι</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>Τιρκουάζ: EQ διόρθωσης. Πορτοκαλί: μετρημένη απόκριση, όταν παρέχεται. Η κατακόρυφη κλίμακα είναι σε σχετικά dB.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>Στάθμη δοκιμής</translation>
     </message>
     <message>
       <source>Test level is outside the allowed range</source>
-      <translation type="unfinished" />
+      <translation>Η στάθμη δοκιμής βρίσκεται εκτός επιτρεπόμενου εύρους</translation>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>Ο επεξεργαστής ήχου σταμάτησε απρόσμενα.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
-      <translation type="unfinished" />
+      <translation>Η προσαρμοσμένη βιβλιοθήκη χωρά έως 256 προφίλ.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>Η απάντηση ενημέρωσης ήταν μη έγκυρη. Δεν άνοιξε πρόγραμμα εγκατάστασης.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>Εισάγεται μετρημένη ΑΠΟΚΡΙΣΗ, όχι ήδη ανεστραμμένες ενισχύσεις EQ. Επιβεβαιώστε τον τύπο εξοπλισμού. Το απόλυτο SPL χρειάζεται κανονικοποίηση πριν από την εισαγωγή.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>Αυτό το προφίλ έχει αλλάξει. Αποθήκευση προσαρμοσμένου αντιγράφου πριν φύγετε;</translation>
     </message>
     <message>
       <source>Timed out waiting for the equalizer sink: %1</source>
-      <translation type="unfinished" />
+      <translation>Έληξε η αναμονή για την έξοδο ισοσταθμιστή: %1</translation>
     </message>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
-      <translation type="unfinished" />
+      <translation>Πολύ λίγος δοκιμαστικός ήχος έφτασε στο μικρόφωνο. Φέρτε το πιο κοντά ή αυξήστε λίγο τη στάθμη δοκιμής.</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>Κάλυψη μετάφρασης: %1 από %2 μηνύματα. Οι ελλείπουσες μεταφράσεις χρησιμοποιούν αγγλικά. Τα γλωσσικά πακέτα δεν έχουν επαληθευτεί και αναμένουν έλεγχο από φυσικό ομιλητή. Τερματίστε και ανοίξτε ξανά για να εφαρμοστούν οι αλλαγές.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>Λεπτομέρεια πρίμων</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Απενεργοποίηση ισοσταθμιστή</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Ενεργοποίηση ισοσταθμιστή</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Τύπος</translation>
     </message>
     <message>
       <source>Undo</source>
@@ -1722,43 +1722,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>Αναίρεση τελευταίας αλλαγής ισοσταθμιστή</translation>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>Ξεκλείδωμα EQ</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>Ξεκλειδώστε τα χειριστήρια και ολοκληρώστε τη μέτρηση πριν επεξεργαστείτε προφίλ.</translation>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation type="unfinished" />
+      <translation>Μη υποστηριζόμενο σχήμα προφίλ εξοπλισμού (αναμένεται 2).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
-      <translation type="unfinished" />
+      <translation>Μη υποστηριζόμενος τύπος φίλτρου.</translation>
     </message>
     <message>
       <source>Unsupported microphone channel layout</source>
-      <translation type="unfinished" />
+      <translation>Μη υποστηριζόμενη διάταξη καναλιών μικροφώνου</translation>
     </message>
     <message>
       <source>Unsupported speaker profile schema</source>
-      <translation type="unfinished" />
+      <translation>Μη υποστηριζόμενο σχήμα προφίλ ηχείου</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Η ενημέρωση %1 έχει ληφθεί: %2. Τερματίστε, εγκαταστήστε πάνω από την υπάρχουσα εφαρμογή και ανοίξτε ξανά.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>Φάκελος λήψης ενημερώσεων</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>Χρησιμοποιήστε ήσυχο χώρο. Μετρά ηχεία, χώρο και μικρόφωνο μαζί· τα αποτελέσματα περιλαμβάνουν την απόκριση μικροφώνου.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1767,39 +1767,39 @@ Import into your library?</source>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>Χρήση περιοχής συστήματος</translation>
+      <translation>Χρήση τοπικών ρυθμίσεων συστήματος</translation>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>Ρυθμίσεις VB-CABLE</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>Έμφαση φωνής</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>Αναμονή μικροφώνου.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>Ζεστό</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>Ζεστασιά</translation>
     </message>
     <message>
       <source>Yes</source>
-      <translation type="unfinished" />
+      <translation>Ναι</translation>
     </message>
     <message>
       <source>Yes to All</source>
-      <translation type="unfinished" />
+      <translation>Ναι σε όλα</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>Το μηδέν απενεργοποιεί κάθε εφέ. Αυτά τα εφέ ακρόασης εφαρμόζονται στην αναπαραγωγή ηχείων, όχι στη διόρθωση μικροφώνου.</translation>
     </message>
   </context>
 </TS>

@@ -1,35 +1,41 @@
 {
-  "stage": "Greek/Turkish startup and rendering batch",
+  "stage": "Greek and Turkish complete extracted catalogs",
   "catalogs": [
     {
       "tag": "el",
       "name": "Ελληνικά",
-      "translated": 349,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "8df4587e062d8ddbca22f0ee564d06034d2fb9978c57d816558b41ef0d637cfe",
-      "qmSha256": "fd3314cf45946d1112414d6d00e0052468abe1cee6215d7be88e0930c6e29b35"
+      "tsSha256": "25d4b76f8dcb5e44087be8224bc2e53fb8ba7cb75e61e4dfdd0dbe7e52dd4bab",
+      "qmSha256": "7888301ef18383e04786341e216b720d158b02bd01c0f2d9b976ffd08990d338"
     },
     {
       "tag": "tr",
       "name": "Türkçe",
-      "translated": 349,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "b7e697fe7869599ec06d6e0a0fb3ba954aa7cfd62ad54caa90f3ac2c67c6553a",
-      "qmSha256": "e215d9f81b735738ae986ded31557d01b1eac113cd5d4bc4192fac01f3d28aff"
+      "tsSha256": "996a5c19db7c9561216010c02db4a5e3046c65720877c1d395fce4387f46c288",
+      "qmSha256": "074c1f91a5856d76d61ac34c874bf3f1e2e70c2f4a50e4b836aa0766bb9999c0"
     }
   ],
   "linuxTests": {
-    "passed": 4,
-    "total": 4,
-    "scope": "compiled localization, Greek/Turkish main windows and catalog regressions",
-    "log": "/tmp/soundcurrent-eq-el-tr-fifth-tests.log"
+    "passed": 62,
+    "total": 62,
+    "scope": "Full CTest including Greek/Turkish equipment workflows and all configured main windows",
+    "log": "/tmp/soundcurrent-eq-el-tr-complete-tests.log"
   },
-  "review": "Contextual AI review; unverified. Render counters use labels for arbitrary counts. Startup refers to desktop sign-in and one shared registration. Profile saves retain measured reference and create a custom copy. Restart and calibration limits unchanged.",
+  "visualInspection": {
+    "platform": "xcb/Xvfb",
+    "display": "1280x720",
+    "sample": "Greek EQ equalizer",
+    "screenshots": "/tmp/soundcurrent-eq-el-complete-xcb"
+  },
+  "review": "Contextual AI review, unverified. Q, gain/headroom, wet mixes, loudness compensation and measured-response limits reviewed. Render counts use neutral labels.",
   "nativeReviewed": false,
-  "windows": "Pending CI",
-  "remaining": "Greek, Turkish and 18 other target catalogs incomplete."
+  "windows": "Pending CI on completed catalogs",
+  "remaining": "18 target catalogs incomplete; backend/installer extraction, small-screen Polish layout and platform lifecycle/sign-in qualification remain open."
 }
