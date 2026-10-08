@@ -144,6 +144,7 @@ public:
         if(translator_)QCoreApplication::installTranslator(translator_.get());
         const auto direction=loaded_=="qps-rtl"?Qt::RightToLeft:QLocale(loaded_).textDirection();
         QApplication::setLayoutDirection(direction);
+        QCoreApplication::instance()->setProperty("soundcurrentInterfaceLanguage", loaded_);
     }
     ~Runtime(){if(translator_)QCoreApplication::removeTranslator(translator_.get());QCoreApplication::removeTranslator(&standardActions_);}
     QString requested() const{return requested_;} QString loaded() const{return loaded_;}

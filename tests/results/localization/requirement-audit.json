@@ -122,5 +122,9 @@
   "setupCatalogLookupProgress": {
     "report": "tests/results/localization/second-pass-setup-catalog-lookup.json",
     "status": "Host PowerShell inert lookup tests passed; helper body/installer translation and Windows qualification pending"
+  },
+  "helperLanguageProgress": {
+    "report": "tests/results/localization/second-pass-helper-language.json",
+    "status": "Loaded-language/argv and exact source fallback tested on host; Windows launch, UTF-8 output, helper bodies and installer qualification pending"
   }
 }

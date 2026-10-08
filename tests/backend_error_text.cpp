@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 #include "audio_error_text.h"
+#include "audio_setup_arguments.h"
 #include <QCoreApplication>
 #include <QTranslator>
 #include <stdexcept>
@@ -21,6 +22,14 @@ class Fixture : public QTranslator {
 int main(int argc,char **argv) {
  QCoreApplication app(argc,argv);Fixture fixture;app.installTranslator(&fixture);
  using soundcurrent::i18n::audioErrorText;
+ const auto setupScript=QString::fromUtf8("C:/Program Files/SoundCurrent/音声 setup.ps1");
+ for(const auto &language:QStringList{"fr","nn","zh-Hant","en","qps-rtl"}) {
+  for(bool install:{false,true}) {
+   const auto args=soundcurrent::i18n::audioSetupArguments(setupScript,install,1234,language);
+   require(args==QStringList{"-NoProfile","-ExecutionPolicy","RemoteSigned","-File",setupScript,
+                            install?"-Install":"-Settings","-Quiet","-RequestingProcessId","1234","-Language",language});
+  }
+ }
  require(audioErrorText("Unsupported Studio profile schema")=="PROFILE_SCHEMA");
  require(audioErrorText("Studio profile has an invalid numeric field")=="PROFILE_NUMBER");
  require(audioErrorText("Studio profile has an invalid boolean field")=="PROFILE_BOOLEAN");

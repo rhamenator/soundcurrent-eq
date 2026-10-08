@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-only
 param([switch]$Check, [switch]$Install, [switch]$Remove, [switch]$Quiet,
-      [ValidateSet('eq','studio')][string]$App = 'eq')
+      [ValidateSet('eq','studio')][string]$App = 'eq', [string]$Language = '')
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 $localization = Join-Path $PSScriptRoot 'setup-localization.ps1'
@@ -10,7 +10,7 @@ else { function Get-SCSetupText([string]$Source, [string]$Language = '', [string
 function Notice([string]$Text) {
     if ($Quiet) { Write-Output $Text; return }
     Add-Type -AssemblyName System.Windows.Forms
-    [void][System.Windows.Forms.MessageBox]::Show($Text, (Get-SCSetupText 'Audio driver setup' -Application ('soundcurrent-' + $App)))
+    [void][System.Windows.Forms.MessageBox]::Show($Text, (Get-SCSetupText 'Audio driver setup' -Language $Language -Application ('soundcurrent-' + $App)))
 }
 try {
     if (@($Check,$Install,$Remove).Where({$_}).Count -ne 1) {

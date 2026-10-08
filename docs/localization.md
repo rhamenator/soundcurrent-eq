@@ -45,3 +45,18 @@ References: [Qt internationalization](https://doc.qt.io/qt-6/internationalizatio
 See [translation review](translation-review.md) for contextual corrections, known uncertainties and fluent-review requirements. Audio terminology notes in `data/localization/translation-context.json` are embedded in Qt Linguist catalogs. Structural audits do not certify linguistic accuracy.
 
 Locale inference uses [Qt QLocale language, script and territory data](https://doc.qt.io/qt-6/qlocale.html), rather than treating every four-character suffix as a script.
+
+### Windows audio helper language
+
+The app passes the catalog it actually loaded as a separate `-Language`
+argument to cable/native audio setup. This follows a command-line language
+override without changing persisted language preferences. The shared argument
+builder retains the script path, requester ID, quiet mode and existing action.
+Standalone shortcuts may omit the argument and use saved preference/system UI
+culture through the helper lookup. Unsupported helper catalog tags fall back
+to English; the development pseudo-locales are not exported as helper packs.
+
+Helper translation source keys are compared ordinally and case-sensitively.
+Unknown external text, including different capitalization, is kept verbatim.
+The common dialog title is localized; most helper message bodies and NSIS
+pages still need translation and actual Windows package qualification.

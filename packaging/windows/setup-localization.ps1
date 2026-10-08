@@ -35,7 +35,9 @@ function Get-SCSetupText([string]$Source, [string]$Language = '', [string]$Appli
         $available = @($script:SCSetupLanguages.PSObject.Properties.Name)
         $tag = Resolve-SCSetupLanguage $Language $available
         $pack = $script:SCSetupLanguages.PSObject.Properties[$tag].Value
-        $entry = $pack.PSObject.Properties[$Source]
+        $entry = @($pack.PSObject.Properties | Where-Object {
+            [string]::Equals($_.Name,$Source,[StringComparison]::Ordinal)
+        }) | Select-Object -First 1
         if ($null -eq $entry -or $entry.Value -isnot [string] -or !$entry.Value.Trim()) { return $Source }
         return $entry.Value
     } catch { return $Source } # Missing/corrupt/older package data keeps readable English.

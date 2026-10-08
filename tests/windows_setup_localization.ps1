@@ -17,6 +17,7 @@ $available = @($data.languages.PSObject.Properties.Name)
 foreach ($case in @(@('FR_ca','fr'),@('NN_no','nn'),@('zh-HK','zh-Hant'),@('zh-CN','zh-Hans'),@('pt-AO','en'),@('fr-Xxxx','en'),@('not-a-language','en'))) {
     if ((Resolve-SCSetupLanguage $case[0] $available) -ne $case[1]) { throw "Helper language resolution failed: $($case[0])" }
 }
+if ((Get-SCSetupText 'audio driver setup' -Language fr) -cne 'audio driver setup') { throw 'Case-folding altered unknown source text' }
 $external = 'Unknown external %1 / 音声'
 if ((Get-SCSetupText $external -Language ar) -cne $external) { throw 'Unknown diagnostic text changed' }
 $script:SCSetupLanguages = $null
@@ -35,7 +36,11 @@ try {
 } finally { Remove-Item -LiteralPath $badData -ErrorAction SilentlyContinue }
 foreach ($file in Get-ChildItem (Join-Path $root 'packaging/windows') -Filter '*.ps1') {
     $tokens=$null;$errors=$null
-    $null=[Management.Automation.Language.Parser]::ParseFile($file.FullName,[ref]$tokens,[ref]$errors)
+    $ast=[Management.Automation.Language.Parser]::ParseFile($file.FullName,[ref]$tokens,[ref]$errors)
     if ($errors.Count) { throw "PowerShell parse failed: $($file.Name): $errors" }
+    if ($file.Name -in @('cable-setup.ps1','native-audio-setup.ps1')) {
+        $parameters=@($ast.ParamBlock.Parameters | ForEach-Object {$_.Name.VariablePath.UserPath})
+        if ($parameters -notcontains 'Language') { throw "Helper language argument missing: $($file.Name)" }
+    }
 }
 Write-Output "PASS: $count helper title catalogs, locale selection, external fallback, missing data and PowerShell parsing; no driver/endpoint actions"
