@@ -1,25 +1,31 @@
 {
-  "stage": "Nynorsk import, saving and speaker-profile batch",
+  "stage": "Nynorsk complete extracted catalogs",
   "catalogs": [
     {
       "tag": "nn",
       "name": "Norsk nynorsk",
-      "translated": 398,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "0e00e139d932283f98fb8b1c2ecba10181c65be3066c30f11c1d71b03120edc4",
-      "qmSha256": "7d330e3014ea5ca85f96f08a3e242dfbabc5ab1ffcba84c713780cd16c9a8dba"
+      "tsSha256": "e86dd1fa06ab2d99bf383b1d35cd0b341a6f5300a03cffb43b0b7b53334278da",
+      "qmSha256": "090d36bf5384ea9894df76ffad20e05526a6b889edab21445ed80b8ca1329d74"
     }
   ],
   "linuxTests": {
-    "passed": 3,
-    "total": 3,
-    "scope": "compiled localization with distinct nn-NO/nb-NO resolution, Nynorsk main window and catalog validation",
-    "log": "/tmp/soundcurrent-eq-nn-sixth-tests.log"
+    "passed": 70,
+    "total": 70,
+    "scope": "Full CTest including Nynorsk equipment workflows and all configured main windows",
+    "log": "/tmp/soundcurrent-eq-nn-complete-tests.log"
   },
-  "review": "Contextual AI review; unverified. Measured response, increasing frequency constraints, restart guidance, device-disconnection recovery and processed effect contribution reviewed.",
+  "visualInspection": {
+    "platform": "xcb/Xvfb",
+    "display": "1280x720",
+    "sample": "Nynorsk EQ equalizer",
+    "screenshots": "/tmp/soundcurrent-eq-nn-complete-xcb"
+  },
+  "review": "Contextual AI review, unverified. Q, gain/headroom, wet mixes, loudness compensation and measured-response limits reviewed. Render counts use neutral labels.",
   "nativeReviewed": false,
-  "windows": "Pending CI",
-  "remaining": "Nynorsk and 12 original target catalogs incomplete."
+  "windows": "Pending CI on completed catalogs",
+  "remaining": "12 target catalogs incomplete; backend/installer extraction, small-screen Polish layout and platform lifecycle/sign-in qualification remain open."
 }

@@ -159,3 +159,7 @@ Nynorsk measurement review: loudness compensation remains low-volume tonal compe
 Nynorsk startup/render review: innlogging describes user sign-in rather than system boot. Enabling one app replaces the shared registration. Profile saving preserves the reference and creates an eigendefinert kopi. Render summaries use neutral labels for arbitrary counts. Measured response differs from correction at 48 kHz; measurement suggestions retain the 3 dB limit. Link destinations and placeholders are unchanged. Native review remains unverified.
 
 Nynorsk import and speaker-profile review: frekvensrespons describes measured response. Imported points require increasing frequencies and finite bounded values; numerical limits and file globs remain unchanged. Romklang describes reverb, distinct from delayed echo and output gain. Device disconnection explicitly switches to automatic output; Windows restart guidance remains intact. Native review remains unverified.
+
+## Nynorsk completed extracted catalogs
+
+All currently extracted messages populated (441 EQ / 527 Studio). Q remains dimensionless quality, headroom is level margin, compressor makeup differs from post gain, and wet mix is effect contribution. Low-volume loudness compensation differs from output volume. Relative measurements include the microphone; measured response differs from inverted correction. Rendering summaries use labels for arbitrary counts. URLs, file filters, placeholders, machine IDs and numerical settings are preserved. Catalogs remain unverified; native-speaker review is not claimed.
