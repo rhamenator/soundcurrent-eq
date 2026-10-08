@@ -113,3 +113,5 @@ Romanian/Hungarian filter and editor batch: 230/441 messages each. Four focused 
 Romanian/Hungarian microphone and measurement batch: 292/441 messages each. Four focused Linux checks passed per app. Additive correction, system measurement limits, clipping, polarity and balance reviewed contextually. Both balance endpoint captions match their instructions. Catalogs remain incomplete and unverified; Nynorsk follows these catalogs.
 
 Romanian/Hungarian startup and rendering batch: 349/441 messages each. Four focused Linux checks passed per app. Shared startup registration, saved-profile reference preservation, calibration links and neutral render counts reviewed contextually. Catalogs remain incomplete and unverified; Nynorsk follows completion.
+
+Romanian/Hungarian import and speaker-profile batch: 398/441 messages each. Four focused Linux checks passed per app. Import constraints, saving, disconnected-device recovery and Windows restart guidance reviewed contextually. Catalogs remain incomplete and unverified; Nynorsk follows completion.

@@ -1400,136 +1400,136 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Reset to flat</source>
       <extracomment>Restore zero gain in all EQ bands. Does not mute playback.</extracomment>
-      <translation>Revino la răspuns plat</translation>
+      <translation>Resetați la răspuns plat</translation>
     </message>
     <message>
       <source>Response data (*.txt *.csv *.frd *.cal)</source>
-      <translation type="unfinished" />
+      <translation>Date de răspuns (*.txt *.csv *.frd *.cal)</translation>
     </message>
     <message>
       <source>Response exceeds 4096 points.</source>
-      <translation type="unfinished" />
+      <translation>Răspunsul depășește 4096 de puncte.</translation>
     </message>
     <message>
       <source>Response frequencies must increase, with finite bounded values.</source>
-      <translation type="unfinished" />
+      <translation>Frecvențele răspunsului trebuie să crească, cu valori finite în limite.</translation>
     </message>
     <message>
       <source>Response has no usable audio range.</source>
-      <translation type="unfinished" />
+      <translation>Răspunsul nu are un interval audio utilizabil.</translation>
     </message>
     <message>
       <source>Response import</source>
-      <translation type="unfinished" />
+      <translation>Import răspuns</translation>
     </message>
     <message>
       <source>Response needs 2–4096 measured points.</source>
-      <translation type="unfinished" />
+      <translation>Răspunsul necesită 2–4096 de puncte măsurate.</translation>
     </message>
     <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
-      <translation type="unfinished" />
+      <translation>Reporniți Windows înainte de a folosi egalizatorul sau setările VB-CABLE. Modificările driverului audio necesită o repornire a sistemului.</translation>
     </message>
     <message>
       <source>Restore Defaults</source>
-      <translation type="unfinished" />
+      <translation>Restaurați valorile implicite</translation>
     </message>
     <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
-      <translation type="unfinished" />
+      <translation>Restaurați setarea EQ anterioară (Ctrl+Z)</translation>
     </message>
     <message>
       <source>Retry</source>
-      <translation type="unfinished" />
+      <translation>Reîncercați</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
-      <translation type="unfinished" />
+      <translation>Limbă de test de la dreapta la stânga</translation>
     </message>
     <message>
       <source>Rock</source>
-      <translation type="unfinished" />
+      <translation>Rock</translation>
     </message>
     <message>
       <source>Save</source>
-      <translation type="unfinished" />
+      <translation>Salvați</translation>
     </message>
     <message>
       <source>Save All</source>
-      <translation type="unfinished" />
+      <translation>Salvați tot</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
-      <translation type="unfinished" />
+      <translation>Salvați presetarea EQ</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
-      <translation type="unfinished" />
+      <translation>Salvați profilul modificat?</translation>
     </message>
     <message>
       <source>Save preset</source>
-      <translation>Salvează presetarea</translation>
+      <translation>Salvați presetarea</translation>
     </message>
     <message>
       <source>Save profile</source>
-      <translation type="unfinished" />
+      <translation>Salvați profilul</translation>
     </message>
     <message>
       <source>Save system response profile</source>
-      <translation type="unfinished" />
+      <translation>Salvați profilul răspunsului sistemului</translation>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
-      <translation type="unfinished" />
+      <translation>Presetarea „%1” a fost salvată.</translation>
     </message>
     <message>
       <source>Search brand, family, model or measurement conditions</source>
-      <translation type="unfinished" />
+      <translation>Căutați marca, familia, modelul sau condițiile de măsurare</translation>
     </message>
     <message>
       <source>Second virtual cable for microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Al doilea cablu virtual pentru EQ-ul microfonului</translation>
     </message>
     <message>
       <source>Select band %1</source>
-      <translation type="unfinished" />
+      <translation>Selectați banda %1</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
-      <translation type="unfinished" />
+      <translation>Selectați această bandă pentru a edita frecvența, câștigul și Q</translation>
     </message>
     <message>
       <source>Selected audio device is unavailable</source>
-      <translation type="unfinished" />
+      <translation>Dispozitivul audio selectat nu este disponibil</translation>
     </message>
     <message>
       <source>Selected band</source>
       <extracomment>Currently selected frequency band in the equalizer.</extracomment>
-      <translation>Banda selectată</translation>
+      <translation>Bandă selectată</translation>
     </message>
     <message>
       <source>Selected band filter Q</source>
-      <translation type="unfinished" />
+      <translation>Q-ul filtrului benzii selectate</translation>
     </message>
     <message>
       <source>Selected band frequency</source>
-      <translation type="unfinished" />
+      <translation>Frecvența benzii selectate</translation>
     </message>
     <message>
       <source>Selected band gain</source>
-      <translation type="unfinished" />
+      <translation>Câștigul benzii selectate</translation>
     </message>
     <message>
       <source>Selected output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>Dispozitivul de ieșire selectat nu mai este disponibil</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
-      <translation type="unfinished" />
+      <translation>Ieșirea selectată a fost deconectată. S-a trecut la ieșire automată.</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
-      <translation type="unfinished" />
+      <translation>Tonuri silențioase separate</translation>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
@@ -1537,83 +1537,83 @@ Importați în bibliotecă?</translation>
     </message>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
-      <translation type="unfinished" />
+      <translation>Intervalele mai scurte actualizează nivelurile mai des și folosesc mai mult CPU; furnizarea sunetului poate limita rata efectivă</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
-      <translation type="unfinished" />
+      <translation>Afișați o linie descrescătoare de menținere a vârfului pentru fiecare nivel de frecvență</translation>
     </message>
     <message>
       <source>Show advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Afișați controalele avansate</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>
-      <translation type="unfinished" />
+      <translation>Afișați marcajele de vârf pe nivelurile de frecvență</translation>
     </message>
     <message>
       <source>Small Speakers</source>
-      <translation type="unfinished" />
+      <translation>Boxe mici</translation>
     </message>
     <message>
       <source>Soft Treble</source>
-      <translation type="unfinished" />
+      <translation>Înalte blânde</translation>
     </message>
     <message>
       <source>Sound enhancements</source>
-      <translation>Îmbunătățiri audio</translation>
+      <translation>Îmbunătățiri sonore</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
-      <translation type="unfinished" />
+      <translation>SoundCurrent Audio oferă propria rută de microfon când este instalat. Cu VB-CABLE, EQ-ul simultan pentru microfon și boxe necesită un al doilea cablu instalat separat (A sau B). Selectați acel cablu în aplicațiile de înregistrare. Modul Automat preferă ruta SoundCurrent când este disponibilă.</translation>
     </message>
     <message>
       <source>Source</source>
-      <translation type="unfinished" />
+      <translation>Sursă</translation>
     </message>
     <message>
       <source>Speaker</source>
-      <translation type="unfinished" />
+      <translation>Boxă</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
-      <translation type="unfinished" />
+      <translation>Calibrare boxă &amp;&amp; cameră</translation>
     </message>
     <message>
       <source>Speaker + room check</source>
-      <translation type="unfinished" />
+      <translation>Verificare boxă + cameră</translation>
     </message>
     <message>
       <source>Speaker and room measurement</source>
-      <translation type="unfinished" />
+      <translation>Măsurare boxă și cameră</translation>
     </message>
     <message>
       <source>Speaker filter is outside conservative bounds</source>
-      <translation type="unfinished" />
+      <translation>Filtrul boxei este în afara limitelor prudente</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Producător boxă</translation>
     </message>
     <message>
       <source>Speaker model correction</source>
-      <translation type="unfinished" />
+      <translation>Corecție model de boxă</translation>
     </message>
     <message>
       <source>Speaker model profile</source>
-      <translation type="unfinished" />
+      <translation>Profil de model de boxă</translation>
     </message>
     <message>
       <source>Speaker profile details</source>
-      <translation type="unfinished" />
+      <translation>Detalii profil boxă</translation>
     </message>
     <message>
       <source>Speaker profile resource is missing</source>
-      <translation type="unfinished" />
+      <translation>Resursa profilului boxei lipsește</translation>
     </message>
     <message>
       <source>Speaker type</source>
-      <translation type="unfinished" />
+      <translation>Tip de boxă</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
