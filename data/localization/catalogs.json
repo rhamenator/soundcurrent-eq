@@ -212,12 +212,12 @@
   {
     "tag": "ar",
     "name": "العربية",
-    "translated": 349,
+    "translated": 398,
     "total": 441,
     "status": "unverified",
     "nativeReviewed": false,
-    "tsSha256": "adc219e388ddd42eacaa0b68ce106b60120e919a815dde058ada5a8a1716179f",
-    "qmSha256": "99f38e51063956e1b2da2b4ddbcaa8a504a59857595c1f16f71fad560fa49a4e"
+    "tsSha256": "ecbcca944c24cc70472b2bf8fc33cf5b9c9c05cca15a4b0659690f1caf02b717",
+    "qmSha256": "797643cd40ae0291fbc10e4223933beda9af5eac03e5a1df0f30abeced7f921e"
   },
   {
     "tag": "he",
