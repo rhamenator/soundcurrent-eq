@@ -25,5 +25,7 @@
     "credentialValuesLogged": false,
     "furtherLoginAttempts": 0,
     "desktopSession": "quser still reports no signed-in user"
-  }
+  },
+  "supersededBy": "windows-interactive-installed.json",
+  "currentPrecondition": "resolved: active console session 1 observed; saved credential also validated through Windows LogonUser and saved privately in Login keyring"
 }
