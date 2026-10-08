@@ -327,3 +327,7 @@ Indonesian now has 398/441 populated current catalog entries. Added save/reset a
 ### Indonesian: current catalogs populated
 
 All current Indonesian catalog entries are populated (441 EQ, 527 Studio). Both apps passed three focused Linux checks, including the actual MainWindow offscreen. Translations remain unverified; native-speaker, visual and Windows qualification are pending. Three target languages remain incomplete. Omitted source strings remain scheduled for the second pass.
+
+### Indonesian: completeness and profile-editor gates
+
+Indonesian is required to stay fully populated by the source/catalog validator. Runtime assertions verify regional fallback, LTR layout and the standard Save action. The profile editor import/edit/save/cancel/discard/apply workflow runs in Indonesian. All four focused Linux checks passed in both apps. Translations remain unverified; Windows and visual qualification are pending.
