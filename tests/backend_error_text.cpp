@@ -4,6 +4,7 @@
 #include <QCoreApplication>
 #include <QProcess>
 #include <QTranslator>
+#include <QTextStream>
 #include <stdexcept>
 void require(bool pass) {if(!pass)throw std::runtime_error("Backend diagnostic translation invariant failed");}
 class Fixture : public QTranslator {
@@ -20,7 +21,7 @@ class Fixture : public QTranslator {
   return {};
  }
 };
-int main(int argc,char **argv) {
+int main(int argc,char **argv) try {
  QCoreApplication app(argc,argv);Fixture fixture;app.installTranslator(&fixture);
  using soundcurrent::i18n::audioErrorText;
  const auto unicodeOutput=QString::fromUtf8("Réparation / 日本語 / العربية / %1 / 音声");
@@ -33,9 +34,28 @@ int main(int argc,char **argv) {
   require(fixtureIndex+2<app.arguments().size());
   QProcess child;child.setProgram(app.arguments()[fixtureIndex+1]);
   child.setArguments({"-NoProfile","-NonInteractive","-ExecutionPolicy","RemoteSigned","-File",app.arguments()[fixtureIndex+2]});
-  child.start();require(child.waitForFinished(15000));
-  require(child.exitStatus()==QProcess::NormalExit && child.exitCode()==0);
-  require(soundcurrent::i18n::audioSetupOutput(child.readAllStandardOutput())==unicodeOutput);
+  child.start();
+  const bool finished=child.waitForFinished(15000);
+  const auto standardOutput=child.readAllStandardOutput();
+  const auto standardError=child.readAllStandardError();
+  const bool successful=finished && child.exitStatus()==QProcess::NormalExit && child.exitCode()==0;
+  const bool correctOutput=soundcurrent::i18n::audioSetupOutput(standardOutput)==unicodeOutput;
+  if(!successful || !correctOutput) {
+   // Inert fixture only. Bound diagnostics; bytes expose encoding differences
+   // without relying on the runner's console code page to render them.
+   QTextStream diagnostic(stderr);
+   diagnostic << "PowerShell output fixture failed: finished=" << finished
+              << " processError=" << static_cast<int>(child.error())
+              << " exitStatus=" << static_cast<int>(child.exitStatus())
+              << " exitCode=" << child.exitCode() << '\n'
+              << "processErrorText=" << child.errorString() << '\n'
+              << "stdoutHex=" << standardOutput.left(4096).toHex() << '\n'
+              << "stderrHex=" << standardError.left(4096).toHex() << '\n'
+              << "expectedHex=" << unicodeOutput.toUtf8().toHex() << '\n';
+   diagnostic.flush();
+   if(!finished) {child.kill();child.waitForFinished(5000);}
+   return 1;
+  }
  }
  const auto setupScript=QString::fromUtf8("C:/Program Files/SoundCurrent/音声 setup.ps1");
  for(const auto &language:QStringList{"fr","nn","zh-Hant","en","qps-rtl"}) {
@@ -67,4 +87,9 @@ int main(int argc,char **argv) {
  require(audioErrorText("Read speaker level failed (0xAbCd1234)")=="LEVEL | AbCd1234");
  require(audioErrorText("External driver failed (0x80070005)")=="External driver failed (0x80070005)");
  require(audioErrorText("Read speaker level failed (0xZZ)")=="Read speaker level failed (0xZZ)");
+} catch(const std::exception &error) {
+ QTextStream diagnostic(stderr);
+ diagnostic << error.what() << '\n';
+ diagnostic.flush();
+ return 1;
 }

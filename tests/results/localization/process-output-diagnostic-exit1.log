@@ -1,0 +1,5 @@
+PowerShell output fixture failed: finished=1 processError=5 exitStatus=0 exitCode=1
+processErrorText=Unknown error
+stdoutHex=
+stderrHex=
+expectedHex=52c3a97061726174696f6e202f20e697a5e69cace8aa9e202f20d8a7d984d8b9d8b1d8a8d98ad8a9202f202531202f20e99fb3e5a3b0

@@ -1,0 +1,9 @@
+Test project /home/rich/dev/soundcurrent-eq/build
+    Start 84: backend-error-text
+1/2 Test #84: backend-error-text ...............   Passed    0.01 sec
+    Start 85: helper-utf8-output
+2/2 Test #85: helper-utf8-output ...............   Passed    0.66 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Total Test time (real) =   0.67 sec
