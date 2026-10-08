@@ -235,6 +235,10 @@ Importovať do vašej knižnice?</translation>
       <translation>Chyba zvuku: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Pomocný program na obnovenie zvukovej trasy sa nepodarilo spustiť. Opravte alebo preinštalujte SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Nastavenie zvuku</translation>
     </message>

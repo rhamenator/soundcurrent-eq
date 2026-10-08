@@ -235,6 +235,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Ses hatası: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Ses yolu kurtarma yardımcısı başlatılamadı. SoundCurrent uygulamasını onarın veya yeniden yükleyin.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Ses kurulumu</translation>
     </message>

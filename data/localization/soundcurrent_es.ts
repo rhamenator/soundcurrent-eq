@@ -235,6 +235,10 @@ Import into your library?</source>
       <translation>Error de audio: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>No se pudo iniciar el asistente de recuperación de la ruta de audio. Repare o reinstale SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Configuración de audio</translation>
     </message>

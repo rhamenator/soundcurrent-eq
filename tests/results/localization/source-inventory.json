@@ -1,6 +1,6 @@
 {
-  "scope": "Literal C++ exceptions and selected view calls across src, NSIS UI candidates, Python script diagnostics. Dynamic/composed strings, shell/PowerShell messages, native dialogs and data-driven names require further review. Not whole-application coverage.",
-  "catalogSourceCount": 459,
+  "scope": "Literal C++ exceptions and selected view calls across src, NSIS UI candidates, Python script diagnostics. Dynamic/composed strings, shell/PowerShell messages, native dialogs and data-driven names require further review. Not whole-application coverage. Classification is partial: test-only and branding candidates distinguished; remaining helper, DSP and Studio engine reachability still needs review.",
+  "catalogSourceCount": 524,
   "candidateCount": 82,
   "candidates": [
     {
@@ -22,105 +22,105 @@
       "call": "runtime_error",
       "source": "No microphone is connected",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
     },
     {
       "file": "src/main.cpp",
       "call": "runtime_error",
       "source": "Microphone filter is missing",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
     },
     {
       "file": "src/main.cpp",
       "call": "runtime_error",
       "source": "Microphone filter did not connect to the selected device",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
     },
     {
       "file": "src/main.cpp",
       "call": "runtime_error",
       "source": "Original microphone was not restored",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
     },
     {
       "file": "src/main.cpp",
       "call": "runtime_error",
       "source": "Default band layout is invalid",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
     },
     {
       "file": "src/main.cpp",
       "call": "runtime_error",
       "source": "Custom preset round trip failed",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
     },
     {
       "file": "src/main.cpp",
       "call": "runtime_error",
       "source": "Nine-band preset migration failed",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
     },
     {
       "file": "src/main.cpp",
       "call": "runtime_error",
       "source": "No audio output devices found",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
     },
     {
       "file": "src/main.cpp",
       "call": "runtime_error",
       "source": "Equalizer chose the wrong system output",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
     },
     {
       "file": "src/main.cpp",
       "call": "runtime_error",
       "source": "Transparent filter applies a second volume reduction",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
     },
     {
       "file": "src/main.cpp",
       "call": "runtime_error",
       "source": "Legacy filter still applies a second volume reduction",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
     },
     {
       "file": "src/main.cpp",
       "call": "runtime_error",
       "source": "Original output was not restored",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
     },
     {
       "file": "src/main.cpp",
       "call": "runtime_error",
       "source": "Original output volume was not restored",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
     },
     {
       "file": "src/main.cpp",
       "call": "setToolTip",
       "source": "SoundCurrent EQ",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Invariant product name; preserve branding"
     },
     {
       "file": "src/main.cpp",
       "call": "setWindowTitle",
       "source": "SoundCurrent EQ",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Invariant product name; preserve branding"
     },
     {
       "file": "src/windows_audio.cpp",
@@ -162,7 +162,7 @@
       "call": "runtime_error",
       "source": "The selected EQ settings are invalid",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Translated at audioErrorText desktop boundary using Invalid equalizer settings"
     },
     {
       "file": "src/windows_audio.cpp",
@@ -211,231 +211,231 @@
       "call": "runtime_error",
       "source": "Live processing did not start",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_conflict_test.inc",
       "call": "runtime_error",
       "source": "Live app did not acquire all output roles",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_conflict_test.inc",
       "call": "runtime_error",
       "source": "Cannot write conflict readiness",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Audio session busy",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "No physical fixture",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Need two physical outputs",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Power control missing",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Output control missing",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Live audio did not start",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Route not acquired",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Cannot select direct physical output",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "UI still claims EQ on after Windows selects direct physical output",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Manual output choice overwritten",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Supply a test status file",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Audio session busy",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Cannot report hotplug test state",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Live controls unavailable",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Need clone USB and onboard fixtures",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "USB processing did not start",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Processing disabled during hotplug",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Unplug did not switch to automatic",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Owned output role missing after completed switch",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Owned output role missing after completed switch",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Hotplug test left owned default",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Another SoundCurrent session is active",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "No physical output fixture",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Fixture already owns default output; preserve it",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "UI output route does not match enabled state",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Output control unavailable",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "UI failed to start audio",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Quit control unavailable",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_live_ui_test.inc",
       "call": "runtime_error",
       "source": "Quit event loop failed",
       "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "classification": "Test-only failure diagnostic; not production interface text"
     },
     {
       "file": "src/windows_managed_route.h",
       "call": "runtime_error",
       "source": "Audio route recovery helper could not start. Repair or reinstall SoundCurrent.",
-      "inCatalog": false,
-      "classification": "needs reachability and runtime translation review"
+      "inCatalog": true,
+      "classification": "Production recovery-helper failure translated at desktop audioErrorText boundary; actual compiled catalogs tested across all non-English locales"
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",

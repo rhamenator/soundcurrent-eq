@@ -235,6 +235,10 @@ Importeren in uw bibliotheek?</translation>
       <translation>Audiofout: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>De hulpapp voor herstel van de audioroute kon niet starten. Herstel SoundCurrent of installeer het opnieuw.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Audio-instellingen</translation>
     </message>

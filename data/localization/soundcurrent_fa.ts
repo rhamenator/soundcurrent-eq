@@ -235,6 +235,10 @@ Import into your library?</source>
       <translation>خطای صدا: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>برنامهٔ کمکی بازیابی مسیر صدا شروع نشد. SoundCurrent را تعمیر یا دوباره نصب کنید.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>راه‌اندازی صدا</translation>
     </message>

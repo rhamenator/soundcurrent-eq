@@ -235,6 +235,10 @@ Import into your library?</source>
       <translation>שגיאת שמע: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>לא ניתן להפעיל את תוכנית העזר לשחזור נתיב השמע. יש לתקן או להתקין מחדש את SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>הגדרת שמע</translation>
     </message>

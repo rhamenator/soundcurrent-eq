@@ -235,6 +235,10 @@ Import into your library?</source>
       <translation>오디오 오류: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>오디오 경로 복구 도우미를 시작할 수 없습니다. SoundCurrent를 복구하거나 다시 설치하세요.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>오디오 설정</translation>
     </message>

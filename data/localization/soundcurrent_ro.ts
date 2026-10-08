@@ -235,6 +235,10 @@ Importați în bibliotecă?</translation>
       <translation>Eroare audio: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Programul auxiliar de recuperare a rutei audio nu a putut porni. Reparați sau reinstalați SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Configurare audio</translation>
     </message>

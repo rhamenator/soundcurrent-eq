@@ -235,6 +235,10 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Audiofehler: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Der Helfer zur Wiederherstellung der Audioroute konnte nicht gestartet werden. Reparieren Sie SoundCurrent oder installieren Sie es erneut.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Audioeinrichtung</translation>
     </message>

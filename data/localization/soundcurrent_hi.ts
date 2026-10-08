@@ -235,6 +235,10 @@ Import into your library?</source>
       <translation>ऑडियो त्रुटि: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>ऑडियो रूट पुनर्प्राप्ति सहायक शुरू नहीं हो सका। SoundCurrent की मरम्मत करें या उसे फिर से इंस्टॉल करें।</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>ऑडियो सेटअप</translation>
     </message>

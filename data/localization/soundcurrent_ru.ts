@@ -235,6 +235,10 @@ Import into your library?</source>
       <translation>Ошибка аудио: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Не удалось запустить вспомогательную программу восстановления аудиомаршрута. Восстановите или переустановите SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Настройка аудио</translation>
     </message>

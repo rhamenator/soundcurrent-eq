@@ -235,6 +235,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Lỗi âm thanh: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Không thể khởi động chương trình hỗ trợ khôi phục đường dẫn âm thanh. Hãy sửa chữa hoặc cài đặt lại SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Thiết lập âm thanh</translation>
     </message>

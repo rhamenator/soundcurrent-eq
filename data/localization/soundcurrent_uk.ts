@@ -235,6 +235,10 @@ Import into your library?</source>
       <translation>Помилка аудіо: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Не вдалося запустити допоміжну програму відновлення маршруту аудіо. Відновіть або перевстановіть SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Налаштування аудіо</translation>
     </message>

@@ -251,7 +251,7 @@ int main(int argc,char **argv){
    if(language.tag=="en")continue;
    QSettings().setValue("i18n/language",language.tag);Runtime runtime;runtime.initialize();
    require(audioErrorText(QStringLiteral("The selected EQ settings are invalid"))==text("Invalid equalizer settings"),"Backend EQ error did not use translated view text");
-   for(const char *source:{"Could not initialize Windows audio COM","Invalid calibration audio","Unsupported recording format","Microphone recording consumer stalled","Microphone start timed out","Cable recording endpoint does not support shared 48 kHz stereo float audio"}) {
+   for(const char *source:{"Could not initialize Windows audio COM","Invalid calibration audio","Unsupported recording format","Microphone recording consumer stalled","Microphone start timed out","Cable recording endpoint does not support shared 48 kHz stereo float audio","Audio route recovery helper could not start. Repair or reinstall SoundCurrent."}) {
     const auto mapped=audioErrorText(QString::fromUtf8(source));
     require(mapped==text(source)&&mapped!=QString::fromUtf8(source),"Backend literal diagnostic was not localized");
    }

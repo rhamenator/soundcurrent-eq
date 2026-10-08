@@ -35,6 +35,8 @@ inline QString audioErrorText(const QString &diagnostic) {
         return SC_TR("Microphone start timed out");
     if (diagnostic == QStringLiteral("Cable recording endpoint does not support shared 48 kHz stereo float audio"))
         return SC_TR("Cable recording endpoint does not support shared 48 kHz stereo float audio");
+    if (diagnostic == QStringLiteral("Audio route recovery helper could not start. Repair or reinstall SoundCurrent."))
+        return SC_TR("Audio route recovery helper could not start. Repair or reinstall SoundCurrent.");
     // Match only this backend's invariant HRESULT message format. Unknown
     // operations are not guessed, and the hexadecimal error code is preserved.
     static const QRegularExpression failure(QStringLiteral("^(.+) failed \\(0x([0-9A-Fa-f]{1,8})\\)$"));

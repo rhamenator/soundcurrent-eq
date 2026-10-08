@@ -235,6 +235,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>Äänivirhe: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Äänireitin palautusapuohjelmaa ei voitu käynnistää. Korjaa SoundCurrent tai asenna se uudelleen.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Ääniasetukset</translation>
     </message>

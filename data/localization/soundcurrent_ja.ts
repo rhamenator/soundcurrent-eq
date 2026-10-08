@@ -235,6 +235,10 @@ Import into your library?</source>
       <translation>オーディオエラー: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>オーディオ経路の復元ヘルパーを起動できませんでした。SoundCurrent を修復するか再インストールしてください。</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>オーディオ設定</translation>
     </message>

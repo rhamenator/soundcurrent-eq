@@ -235,6 +235,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Hitilafu ya sauti: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Programu saidizi ya kurejesha njia ya sauti haikuweza kuanza. Rekebisha au usakinishe upya SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Usanidi wa sauti</translation>
     </message>

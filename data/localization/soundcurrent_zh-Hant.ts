@@ -235,6 +235,10 @@ Import into your library?</source>
       <translation>音訊錯誤：%1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>無法啟動音訊路由復原輔助程式。請修復或重新安裝 SoundCurrent。</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>音訊設定</translation>
     </message>

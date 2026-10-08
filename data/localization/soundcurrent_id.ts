@@ -235,6 +235,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Kesalahan audio: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Program pembantu pemulihan rute audio tidak dapat dimulai. Perbaiki atau instal ulang SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Penyiapan audio</translation>
     </message>

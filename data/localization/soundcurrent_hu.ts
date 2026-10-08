@@ -235,6 +235,10 @@ Importálja a könyvtárba?</translation>
       <translation>Hanghiba: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>A hangútvonal helyreállítását segítő program nem indult el. Javítsa vagy telepítse újra a SoundCurrent alkalmazást.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Hangbeállítás</translation>
     </message>

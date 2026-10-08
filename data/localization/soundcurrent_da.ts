@@ -235,6 +235,10 @@ Importér til dit bibliotek?</translation>
       <translation>Lydfejl: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Hjælpeprogrammet til gendannelse af lydruten kunne ikke starte. Reparer eller geninstaller SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Lydopsætning</translation>
     </message>

@@ -235,6 +235,10 @@ Import into your library?</source>
       <translation>Σφάλμα ήχου: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Δεν ήταν δυνατή η εκκίνηση του βοηθητικού προγράμματος επαναφοράς της διαδρομής ήχου. Επιδιορθώστε ή επανεγκαταστήστε το SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Ρύθμιση ήχου</translation>
     </message>

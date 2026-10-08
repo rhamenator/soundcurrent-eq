@@ -235,6 +235,10 @@ Importera till ditt bibliotek?</translation>
       <translation>Ljudfel: %1</translation>
     </message>
     <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Hjälpprogrammet för återställning av ljudroutningen kunde inte starta. Reparera eller installera om SoundCurrent.</translation>
+    </message>
+    <message>
       <source>Audio setup</source>
       <translation>Ljudinställning</translation>
     </message>
