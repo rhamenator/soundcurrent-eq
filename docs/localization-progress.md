@@ -387,3 +387,7 @@ Thai now has 398/441 populated current catalog entries. Added save/reset actions
 ### Thai existing catalog complete
 
 All 441/441 current Thai catalog entries are populated. Required-complete and regional fallback gates now include Thai. Both apps passed four focused Linux checks, including the profile import/edit/save/cancel/discard/apply workflow. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Swahili: first existing-catalog batch
+
+Swahili now has 102/441 populated current catalog entries. Added main controls, routing, amplifier-measurement limitations and enhancement guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.

@@ -1,0 +1,25 @@
+{
+  "stage": "Swahili first existing-catalog batch",
+  "catalogs": [
+    {
+      "tag": "sw",
+      "name": "Kiswahili",
+      "translated": 102,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "21d3cabb2f2cf1cd8b4167b53f017bb6e91b48e67801adc602a279f761591862",
+      "qmSha256": "e7c47e28b37618b8bff52e5936637c159f4a45cdaacf2c156728c3a52d058a57"
+    }
+  ],
+  "linuxTests": {
+    "passed": 3,
+    "total": 3,
+    "scope": "Embedded localization assertions, Swahili MainWindow offscreen smoke test and structural catalog checks",
+    "log": "/tmp/soundcurrent-eq-sw-first-tests.log"
+  },
+  "review": "Contextual AI review of shared source entries 0–79: routing, post-EQ gain, calibration limitations, exclusive processing, headroom and effect behavior. Placeholders and numerical limits preserved. Linguistic accuracy unverified.",
+  "nativeReviewed": false,
+  "windows": "Pending CI; no Windows runtime qualification for this batch",
+  "remaining": "Swahili incomplete. Omitted source messages reserved for second pass."
+}
