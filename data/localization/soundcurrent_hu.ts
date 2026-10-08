@@ -917,6 +917,11 @@ Importálja a könyvtárba?</translation>
       <translation>Speciális vezérlők elrejtése</translation>
     </message>
     <message>
+      <source>High-shelf filter</source>
+      <translation>Magas polcszűrő</translation>
+      <extracomment>Shelving EQ: raise/lower the high-frequency region. Do not translate as high-pass; it is not a cutoff filter.</extracomment>
+    </message>
+    <message>
       <source>Hip-Hop</source>
       <translation>Hip-Hop</translation>
     </message>
@@ -1127,6 +1132,11 @@ Importálja a könyvtárba?</translation>
       <translation>Loudness-kompenzáció</translation>
     </message>
     <message>
+      <source>Low-shelf filter</source>
+      <translation>Mély polcszűrő</translation>
+      <extracomment>Shelving EQ: raise/lower the low-frequency region. Do not translate as low-pass; it is not a cutoff filter.</extracomment>
+    </message>
+    <message>
       <source>Manufacturer</source>
       <translation>Gyártó</translation>
     </message>
@@ -1170,6 +1180,11 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Measurement stopped.</source>
       <translation>A mérés leállt.</translation>
+    </message>
+    <message>
+      <source>Measurement: %1</source>
+      <translation>Mérés: %1</translation>
+      <extracomment>Label for verbatim published speaker measurement attribution, not a new calibration run.</extracomment>
     </message>
     <message>
       <source>Metal</source>
@@ -1411,6 +1426,11 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Peak markers</source>
       <translation>Csúcsjelölők</translation>
+    </message>
+    <message>
+      <source>Peaking filter</source>
+      <translation>Haranggörbe-szűrő</translation>
+      <extracomment>Bell-shaped parametric EQ filter centered at its frequency; this is not a peak/clipping indicator.</extracomment>
     </message>
     <message>
       <source>Piano</source>
@@ -1932,6 +1952,11 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Hangsugárzó típusa</translation>
+    </message>
+    <message>
+      <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
+      <translation>Spinorama AutoEQ: a korrekció erősítése %1 értékre, a Q pedig %2 értékre van korlátozva. A %3 alatti kiemelések kimaradnak. A hallgatási beállítás külön adódik hozzá.</translation>
+      <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
     </message>
     <message>
       <source>Start cable capture</source>

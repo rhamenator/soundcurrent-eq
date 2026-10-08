@@ -3163,15 +3163,15 @@ private:
     void showSpeakerDetails() {
         const auto id = speakerCombo_->currentData().toString();
         for (const auto &p : speakerProfiles()) if (p.id == id) {
-            QString text = p.name + "\nMeasurement: " + p.attribution +
-                "\n\nSpinorama AutoEQ adapted with gain capped at ±6 dB, Q capped at 6, and positive filters below 80 Hz omitted. Your listening preset is added separately.\n\n";
+            QString text = soundcurrent::i18n::speakerDetailsHeader(p.name, p.attribution);
             for (const auto &b : p.filters) {
                 using T = soundcurrent::FilterType;
-                text += QString("%1 Hz · %2 dB · Q %3 · %4\n").arg(b.frequency).arg(b.gain).arg(b.q)
-                    .arg(b.type == T::LowShelf ? "low shelf" : b.type == T::HighShelf ? "high shelf" : "peak");
+                text += soundcurrent::i18n::speakerFilterLine(b.frequency, b.gain, b.q,
+                    b.type == T::LowShelf ? SC_TR("Low-shelf filter") : b.type == T::HighShelf ? SC_TR("High-shelf filter") : SC_TR("Peaking filter"));
             }
-            text += "\nSources:\n" + p.links.join('\n');
-            QMessageBox::information(this, SC_TR("Speaker profile details"), text);
+            text += "\n" + soundcurrent::i18n::measurementSourcesText(p.links);
+            QMessageBox details(QMessageBox::Information, SC_TR("Speaker profile details"), text, QMessageBox::Ok, this);
+            details.setTextFormat(Qt::PlainText); details.exec();
             return;
         }
         QMessageBox::information(this, SC_TR("Speaker profile details"), SC_TR("No model correction selected. Your listening EQ works normally."));
@@ -4222,6 +4222,20 @@ int main(int argc, char **argv) {
         if(!detailsText.contains(fixtureFilters) || !detailsText.contains(SC_TR("Correction filters:")) ||
            !previewText.contains(SC_TR("Apply only if these conditions match your system.")))
             qFatal("Amplifier filter details or apply warning are missing");
+        const auto speakerHeader=soundcurrent::i18n::speakerDetailsHeader(fixtureName,fixtureConditions);
+        if(!speakerHeader.contains(fixtureName) || !speakerHeader.contains(fixtureConditions) ||
+           !speakerHeader.contains(SC_TR("Measurement: %1").arg(soundcurrent::i18n::equipmentDisplayData(fixtureConditions))))
+            qFatal("Speaker details modified attribution or lost measurement translation");
+        const auto speakerRow=soundcurrent::i18n::speakerFilterLine(1250.5,-2.5,.707,SC_TR("Low-shelf filter"));
+        for(const auto &token:{QLocale().toString(1250.5,'g',6)+" Hz",QLocale().toString(-2.5,'g',6)+" dB",
+                              QStringLiteral("Q ")+QLocale().toString(.707,'g',6),SC_TR("Low-shelf filter")})
+            if(!speakerRow.contains(token)) qFatal("Speaker correction filter lost regional formatting or filter meaning");
+        const auto speakerSources=soundcurrent::i18n::measurementSourcesText({fixtureSource,"https://example.invalid/%25literal"});
+        if(!speakerSources.contains(fixtureSource) || !speakerSources.contains("https://example.invalid/%25literal"))
+            qFatal("Speaker measurement URL was modified");
+        const auto speakerPolicy=soundcurrent::i18n::speakerPolicyText();
+        for(const auto &token:{QStringLiteral("±")+QLocale().toString(6)+" dB",QLocale().toString(6),QLocale().toString(80)+" Hz"})
+            if(!speakerPolicy.contains(token)) qFatal("Speaker correction policy lost actual limits or regional format");
         const QStringList microphoneToneNames={"Warmth","Boxiness","Clarity","Air"};
         for(int i=0;i<4;++i) {
             auto *slider=window.findChild<QSlider *>(QString("micTone%1").arg(i));

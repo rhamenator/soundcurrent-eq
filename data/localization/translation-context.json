@@ -19,5 +19,10 @@
   "Measurement conditions: %1": "Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.",
   "Source: %1": "Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.",
   "Apply only if these conditions match your system.": "Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.",
-  "Correction filters:": "Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged."
+  "Correction filters:": "Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.",
+  "Measurement: %1": "Label for verbatim published speaker measurement attribution, not a new calibration run.",
+  "Peaking filter": "Bell-shaped parametric EQ filter centered at its frequency; this is not a peak/clipping indicator.",
+  "Low-shelf filter": "Shelving EQ: raise/lower the low-frequency region. Do not translate as low-pass; it is not a cutoff filter.",
+  "High-shelf filter": "Shelving EQ: raise/lower the high-frequency region. Do not translate as high-pass; it is not a cutoff filter.",
+  "Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.": "Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name."
 }

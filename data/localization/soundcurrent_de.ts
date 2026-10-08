@@ -917,6 +917,11 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Erweiterte Regler ausblenden</translation>
     </message>
     <message>
+      <source>High-shelf filter</source>
+      <translation>High-Shelf-Filter</translation>
+      <extracomment>Shelving EQ: raise/lower the high-frequency region. Do not translate as high-pass; it is not a cutoff filter.</extracomment>
+    </message>
+    <message>
       <source>Hip-Hop</source>
       <translation>Hip-Hop</translation>
     </message>
@@ -1127,6 +1132,11 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Loudness-Korrektur</translation>
     </message>
     <message>
+      <source>Low-shelf filter</source>
+      <translation>Low-Shelf-Filter</translation>
+      <extracomment>Shelving EQ: raise/lower the low-frequency region. Do not translate as low-pass; it is not a cutoff filter.</extracomment>
+    </message>
+    <message>
       <source>Manufacturer</source>
       <translation>Hersteller</translation>
     </message>
@@ -1170,6 +1180,11 @@ In Ihre Bibliothek importieren?</translation>
     <message>
       <source>Measurement stopped.</source>
       <translation>Messung gestoppt.</translation>
+    </message>
+    <message>
+      <source>Measurement: %1</source>
+      <translation>Messung: %1</translation>
+      <extracomment>Label for verbatim published speaker measurement attribution, not a new calibration run.</extracomment>
     </message>
     <message>
       <source>Metal</source>
@@ -1411,6 +1426,11 @@ In Ihre Bibliothek importieren?</translation>
     <message>
       <source>Peak markers</source>
       <translation>Spitzenmarkierungen</translation>
+    </message>
+    <message>
+      <source>Peaking filter</source>
+      <translation>Glockenfilter</translation>
+      <extracomment>Bell-shaped parametric EQ filter centered at its frequency; this is not a peak/clipping indicator.</extracomment>
     </message>
     <message>
       <source>Piano</source>
@@ -1932,6 +1952,11 @@ In Ihre Bibliothek importieren?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Lautsprechertyp</translation>
+    </message>
+    <message>
+      <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
+      <translation>Spinorama AutoEQ: Die Korrekturverstärkung ist auf %1 und Q auf %2 begrenzt. Anhebungen unter %3 werden ausgelassen. Ihr Hörpreset wird separat hinzugefügt.</translation>
+      <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
     </message>
     <message>
       <source>Start cable capture</source>

@@ -210,3 +210,24 @@ Every locale fixture checks names and conditions containing literal `%1`/`%2`,
 URL escapes, and numerical/filter JSON so placeholder substitution cannot
 rewrite imported content. This checks strings and data boundaries; full native
 dialog visual qualification remains a later package gate.
+
+## Speaker details (second pass, 2026-10-08)
+
+The measurement-attribution label, correction policy and peaking/low-shelf/high-
+shelf names are now translated in all 33 non-English catalogs. Contextual AI
+review distinguishes bell-shaped peaking EQ from peak/clipping indicators and
+shelving EQ from low/high-pass cutoff filters. Established technical shelving
+loanwords are retained where appropriate. Native-speaker verification remains
+unverified.
+
+The policy describes correction-only gain ±6 dB, Q at most 6, and omitted
+positive-gain filters below 80 Hz. These match the unchanged speaker-profile
+loader validation. Listening preset EQ is added separately and can exceed those
+correction-only limits. Numbers are now regional display values, while processing
+and stored profile fields are unchanged.
+
+Published names, attribution and URLs remain supplied content. Display isolates
+keep numerical/unit tokens and URLs together. The details dialog explicitly uses
+plain text. All locale fixtures test the attribution boundary, negative gain,
+frequency/Q formatting, URLs and policy tokens; native dialog layout/glyph
+qualification still belongs to the final package tests.

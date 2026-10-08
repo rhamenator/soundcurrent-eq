@@ -35,7 +35,12 @@
     "Measurement conditions: %1",
     "Source: %1",
     "Apply only if these conditions match your system.",
-    "Correction filters:"
+    "Correction filters:",
+    "Measurement: %1",
+    "Peaking filter",
+    "Low-shelf filter",
+    "High-shelf filter",
+    "Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately."
   ],
   "languages": {
     "de": [
@@ -75,7 +80,12 @@
       "Messbedingungen: %1",
       "Quelle: %1",
       "Nur anwenden, wenn diese Bedingungen zu Ihrem System passen.",
-      "Korrekturfilter:"
+      "Korrekturfilter:",
+      "Messung: %1",
+      "Glockenfilter",
+      "Low-Shelf-Filter",
+      "High-Shelf-Filter",
+      "Spinorama AutoEQ: Die Korrekturverstärkung ist auf %1 und Q auf %2 begrenzt. Anhebungen unter %3 werden ausgelassen. Ihr Hörpreset wird separat hinzugefügt."
     ],
     "fr": [
       "Français",
@@ -114,7 +124,12 @@
       "Conditions de mesure : %1",
       "Source : %1",
       "Appliquez uniquement si ces conditions correspondent à votre système.",
-      "Filtres de correction :"
+      "Filtres de correction :",
+      "Mesure : %1",
+      "Filtre en cloche",
+      "Filtre en plateau grave",
+      "Filtre en plateau aigu",
+      "Spinorama AutoEQ : le gain de correction est limité à %1 et Q à %2. Les renforcements sous %3 sont omis. Votre préréglage d’écoute est ajouté séparément."
     ],
     "es": [
       "Español",
@@ -153,7 +168,12 @@
       "Condiciones de medición: %1",
       "Fuente: %1",
       "Aplique solo si estas condiciones coinciden con su sistema.",
-      "Filtros de corrección:"
+      "Filtros de corrección:",
+      "Medición: %1",
+      "Filtro de campana",
+      "Filtro shelving de graves",
+      "Filtro shelving de agudos",
+      "Spinorama AutoEQ: la ganancia de corrección se limita a %1 y Q a %2. Se omiten los refuerzos por debajo de %3. Su preajuste de escucha se añade por separado."
     ],
     "it": [
       "Italiano",
@@ -192,7 +212,12 @@
       "Condizioni di misurazione: %1",
       "Fonte: %1",
       "Applicare solo se queste condizioni corrispondono al proprio sistema.",
-      "Filtri di correzione:"
+      "Filtri di correzione:",
+      "Misurazione: %1",
+      "Filtro a campana",
+      "Filtro shelving dei bassi",
+      "Filtro shelving degli alti",
+      "Spinorama AutoEQ: il guadagno di correzione è limitato a %1 e Q a %2. Gli aumenti sotto %3 sono esclusi. Il preset di ascolto viene aggiunto separatamente."
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -231,7 +256,12 @@
       "Condições de medição: %1",
       "Fonte: %1",
       "Aplique apenas se estas condições corresponderem ao seu sistema.",
-      "Filtros de correção:"
+      "Filtros de correção:",
+      "Medição: %1",
+      "Filtro em sino",
+      "Filtro shelving de graves",
+      "Filtro shelving de agudos",
+      "Spinorama AutoEQ: o ganho de correção é limitado a %1 e Q a %2. Os reforços abaixo de %3 são omitidos. A sua predefinição de audição é adicionada separadamente."
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -270,7 +300,12 @@
       "Condições de medição: %1",
       "Fonte: %1",
       "Aplique apenas se estas condições corresponderem ao seu sistema.",
-      "Filtros de correção:"
+      "Filtros de correção:",
+      "Medição: %1",
+      "Filtro em sino",
+      "Filtro shelving de graves",
+      "Filtro shelving de agudos",
+      "Spinorama AutoEQ: o ganho de correção é limitado a %1 e Q a %2. Os reforços abaixo de %3 são omitidos. Sua predefinição de audição é adicionada separadamente."
     ],
     "nl": [
       "Nederlands",
@@ -309,7 +344,12 @@
       "Meetomstandigheden: %1",
       "Bron: %1",
       "Alleen toepassen als deze omstandigheden overeenkomen met uw systeem.",
-      "Correctiefilters:"
+      "Correctiefilters:",
+      "Meting: %1",
+      "Klokfilter",
+      "Low-shelffilter",
+      "High-shelffilter",
+      "Spinorama AutoEQ: de correctieversterking is beperkt tot %1 en Q tot %2. Versterkingen onder %3 worden weggelaten. Uw luisterpreset wordt afzonderlijk toegevoegd."
     ],
     "pl": [
       "Polski",
@@ -348,7 +388,12 @@
       "Warunki pomiaru: %1",
       "Źródło: %1",
       "Zastosuj tylko wtedy, gdy te warunki odpowiadają Twojemu systemowi.",
-      "Filtry korekcyjne:"
+      "Filtry korekcyjne:",
+      "Pomiar: %1",
+      "Filtr dzwonowy",
+      "Filtr półkowy niskich częstotliwości",
+      "Filtr półkowy wysokich częstotliwości",
+      "Spinorama AutoEQ: wzmocnienie korekcji jest ograniczone do %1, a Q do %2. Podbicia poniżej %3 są pomijane. Ustawienie odsłuchu jest dodawane osobno."
     ],
     "cs": [
       "Čeština",
@@ -387,7 +432,12 @@
       "Podmínky měření: %1",
       "Zdroj: %1",
       "Použijte pouze tehdy, pokud tyto podmínky odpovídají vašemu systému.",
-      "Korekční filtry:"
+      "Korekční filtry:",
+      "Měření: %1",
+      "Zvonový filtr",
+      "Dolní policový filtr",
+      "Horní policový filtr",
+      "Spinorama AutoEQ: zisk korekce je omezen na %1 a Q na %2. Zesílení pod %3 se vynechává. Vaše poslechová předvolba se přidává samostatně."
     ],
     "sk": [
       "Slovenčina",
@@ -426,7 +476,12 @@
       "Podmienky merania: %1",
       "Zdroj: %1",
       "Použite iba vtedy, ak tieto podmienky zodpovedajú vášmu systému.",
-      "Korekčné filtre:"
+      "Korekčné filtre:",
+      "Meranie: %1",
+      "Zvonový filter",
+      "Dolný policový filter",
+      "Horný policový filter",
+      "Spinorama AutoEQ: zisk korekcie je obmedzený na %1 a Q na %2. Zosilnenia pod %3 sa vynechávajú. Vaša predvoľba počúvania sa pridáva samostatne."
     ],
     "uk": [
       "Українська",
@@ -465,7 +520,12 @@
       "Умови вимірювання: %1",
       "Джерело: %1",
       "Застосовуйте лише якщо ці умови відповідають вашій системі.",
-      "Фільтри корекції:"
+      "Фільтри корекції:",
+      "Вимірювання: %1",
+      "Дзвоновий фільтр",
+      "Низькочастотний поличковий фільтр",
+      "Високочастотний поличковий фільтр",
+      "Spinorama AutoEQ: підсилення корекції обмежене до %1, а Q — до %2. Підсилення нижче %3 пропускаються. Вашу слухацьку передустановку додано окремо."
     ],
     "ru": [
       "Русский",
@@ -504,7 +564,12 @@
       "Условия измерения: %1",
       "Источник: %1",
       "Применяйте только если эти условия соответствуют вашей системе.",
-      "Фильтры коррекции:"
+      "Фильтры коррекции:",
+      "Измерение: %1",
+      "Колокольный фильтр",
+      "Низкочастотный полочный фильтр",
+      "Высокочастотный полочный фильтр",
+      "Spinorama AutoEQ: усиление коррекции ограничено до %1, а Q — до %2. Подъёмы ниже %3 исключены. Ваша настройка прослушивания добавляется отдельно."
     ],
     "el": [
       "Ελληνικά",
@@ -543,7 +608,12 @@
       "Συνθήκες μέτρησης: %1",
       "Πηγή: %1",
       "Εφαρμόστε μόνο εάν αυτές οι συνθήκες αντιστοιχούν στο σύστημά σας.",
-      "Φίλτρα διόρθωσης:"
+      "Φίλτρα διόρθωσης:",
+      "Μέτρηση: %1",
+      "Φίλτρο καμπάνας",
+      "Φίλτρο shelving χαμηλών συχνοτήτων",
+      "Φίλτρο shelving υψηλών συχνοτήτων",
+      "Spinorama AutoEQ: το κέρδος διόρθωσης περιορίζεται σε %1 και το Q σε %2. Οι ενισχύσεις κάτω από %3 παραλείπονται. Η προεπιλογή ακρόασής σας προστίθεται ξεχωριστά."
     ],
     "tr": [
       "Türkçe",
@@ -582,7 +652,12 @@
       "Ölçüm koşulları: %1",
       "Kaynak: %1",
       "Yalnızca bu koşullar sisteminizle eşleşiyorsa uygulayın.",
-      "Düzeltme filtreleri:"
+      "Düzeltme filtreleri:",
+      "Ölçüm: %1",
+      "Çan filtresi",
+      "Bas shelving filtresi",
+      "Tiz shelving filtresi",
+      "Spinorama AutoEQ: düzeltme kazancı %1, Q ise %2 ile sınırlıdır. %3 altındaki yükseltmeler atlanır. Dinleme ön ayarınız ayrıca eklenir."
     ],
     "sv": [
       "Svenska",
@@ -621,7 +696,12 @@
       "Mätförhållanden: %1",
       "Källa: %1",
       "Tillämpa endast om dessa förhållanden stämmer med ditt system.",
-      "Korrigeringsfilter:"
+      "Korrigeringsfilter:",
+      "Mätning: %1",
+      "Klockfilter",
+      "Shelvingfilter för bas",
+      "Shelvingfilter för diskant",
+      "Spinorama AutoEQ: korrigeringsförstärkningen begränsas till %1 och Q till %2. Förstärkningar under %3 utelämnas. Din lyssningsförinställning läggs till separat."
     ],
     "da": [
       "Dansk",
@@ -660,7 +740,12 @@
       "Måleforhold: %1",
       "Kilde: %1",
       "Anvend kun, hvis disse forhold svarer til dit system.",
-      "Korrektionsfiltre:"
+      "Korrektionsfiltre:",
+      "Måling: %1",
+      "Klokkefilter",
+      "Shelvingfilter til bas",
+      "Shelvingfilter til diskant",
+      "Spinorama AutoEQ: korrektionsforstærkningen begrænses til %1 og Q til %2. Forstærkninger under %3 udelades. Din lytteforudindstilling tilføjes separat."
     ],
     "nb": [
       "Norsk bokmål",
@@ -699,7 +784,12 @@
       "Måleforhold: %1",
       "Kilde: %1",
       "Bruk bare hvis disse forholdene stemmer med systemet ditt.",
-      "Korreksjonsfiltre:"
+      "Korreksjonsfiltre:",
+      "Måling: %1",
+      "Klokkefilter",
+      "Shelvingfilter for bass",
+      "Shelvingfilter for diskant",
+      "Spinorama AutoEQ: korreksjonsforsterkningen begrenses til %1 og Q til %2. Forsterkninger under %3 utelates. Lytteforhåndsinnstillingen din legges til separat."
     ],
     "fi": [
       "Suomi",
@@ -738,7 +828,12 @@
       "Mittausolosuhteet: %1",
       "Lähde: %1",
       "Käytä vain, jos nämä olosuhteet vastaavat järjestelmääsi.",
-      "Korjaussuodattimet:"
+      "Korjaussuodattimet:",
+      "Mittaus: %1",
+      "Kellokäyräsuodatin",
+      "Matalien taajuuksien hyllysuodatin",
+      "Korkeiden taajuuksien hyllysuodatin",
+      "Spinorama AutoEQ: korjauksen vahvistus rajataan arvoon %1 ja Q arvoon %2. Taajuuden %3 alapuoliset korostukset jätetään pois. Kuunteluesiasetuksesi lisätään erikseen."
     ],
     "ro": [
       "Română",
@@ -777,7 +872,12 @@
       "Condiții de măsurare: %1",
       "Sursă: %1",
       "Aplicați numai dacă aceste condiții corespund sistemului dumneavoastră.",
-      "Filtre de corecție:"
+      "Filtre de corecție:",
+      "Măsurare: %1",
+      "Filtru de tip clopot",
+      "Filtru shelving pentru frecvențe joase",
+      "Filtru shelving pentru frecvențe înalte",
+      "Spinorama AutoEQ: câștigul corecției este limitat la %1, iar Q la %2. Amplificările sub %3 sunt omise. Presetarea de audiție este adăugată separat."
     ],
     "hu": [
       "Magyar",
@@ -816,7 +916,12 @@
       "Mérési körülmények: %1",
       "Forrás: %1",
       "Csak akkor alkalmazza, ha ezek a körülmények megfelelnek a rendszerének.",
-      "Korrekciós szűrők:"
+      "Korrekciós szűrők:",
+      "Mérés: %1",
+      "Haranggörbe-szűrő",
+      "Mély polcszűrő",
+      "Magas polcszűrő",
+      "Spinorama AutoEQ: a korrekció erősítése %1 értékre, a Q pedig %2 értékre van korlátozva. A %3 alatti kiemelések kimaradnak. A hallgatási beállítás külön adódik hozzá."
     ],
     "ar": [
       "العربية",
@@ -855,7 +960,12 @@
       "ظروف القياس: %1",
       "المصدر: %1",
       "طبّق التصحيح فقط إذا كانت هذه الظروف مطابقة لنظامك.",
-      "مرشحات التصحيح:"
+      "مرشحات التصحيح:",
+      "القياس: %1",
+      "مرشح جرسي",
+      "مرشح رف للترددات المنخفضة",
+      "مرشح رف للترددات العالية",
+      "Spinorama AutoEQ: كسب التصحيح محدود بـ %1 وQ بـ %2. تُحذف التعزيزات دون %3. يُضاف إعداد الاستماع المسبق بشكل منفصل."
     ],
     "he": [
       "עברית",
@@ -894,7 +1004,12 @@
       "תנאי המדידה: %1",
       "מקור: %1",
       "יש להחיל רק אם תנאים אלה תואמים למערכת שלך.",
-      "מסנני תיקון:"
+      "מסנני תיקון:",
+      "מדידה: %1",
+      "מסנן פעמון",
+      "מסנן מדף לתדרים נמוכים",
+      "מסנן מדף לתדרים גבוהים",
+      "Spinorama AutoEQ: הגבר התיקון מוגבל ל־%1 ו־Q ל־%2. הגברות מתחת ל־%3 מושמטות. הגדרת ההאזנה שלך מתווספת בנפרד."
     ],
     "fa": [
       "فارسی",
@@ -933,7 +1048,12 @@
       "شرایط اندازه‌گیری: %1",
       "منبع: %1",
       "فقط در صورتی اعمال کنید که این شرایط با سیستم شما مطابقت داشته باشد.",
-      "فیلترهای اصلاح:"
+      "فیلترهای اصلاح:",
+      "اندازه‌گیری: %1",
+      "فیلتر زنگوله‌ای",
+      "فیلتر شلف فرکانس‌های پایین",
+      "فیلتر شلف فرکانس‌های بالا",
+      "Spinorama AutoEQ: بهرهٔ اصلاح به %1 و Q به %2 محدود است. تقویت‌های زیر %3 حذف می‌شوند. پیش‌تنظیم شنیداری شما جداگانه اضافه می‌شود."
     ],
     "zh-Hans": [
       "简体中文",
@@ -972,7 +1092,12 @@
       "测量条件：%1",
       "来源：%1",
       "仅在这些条件与您的系统一致时应用。",
-      "校正滤波器："
+      "校正滤波器：",
+      "测量：%1",
+      "钟形滤波器",
+      "低频搁架滤波器",
+      "高频搁架滤波器",
+      "Spinorama AutoEQ：校正增益限制为 %1，Q 限制为 %2。低于 %3 的提升被省略。您的聆听预设单独叠加。"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -1011,7 +1136,12 @@
       "量測條件：%1",
       "來源：%1",
       "僅在這些條件與您的系統相符時套用。",
-      "校正濾波器："
+      "校正濾波器：",
+      "量測：%1",
+      "鐘形濾波器",
+      "低頻棚架濾波器",
+      "高頻棚架濾波器",
+      "Spinorama AutoEQ：校正增益限制為 %1，Q 限制為 %2。低於 %3 的提升會省略。您的聆聽預設會另行疊加。"
     ],
     "ja": [
       "日本語",
@@ -1050,7 +1180,12 @@
       "測定条件：%1",
       "出典：%1",
       "これらの条件がご使用のシステムと一致する場合にのみ適用してください。",
-      "補正フィルター："
+      "補正フィルター：",
+      "測定：%1",
+      "ベル型フィルター",
+      "ローシェルフフィルター",
+      "ハイシェルフフィルター",
+      "Spinorama AutoEQ：補正ゲインは %1、Q は %2 に制限されます。%3 未満のブーストは除外されます。リスニングプリセットは別途加算されます。"
     ],
     "ko": [
       "한국어",
@@ -1089,7 +1224,12 @@
       "측정 조건: %1",
       "출처: %1",
       "이 조건이 사용 중인 시스템과 일치하는 경우에만 적용하세요.",
-      "보정 필터:"
+      "보정 필터:",
+      "측정: %1",
+      "벨 필터",
+      "로우 셸프 필터",
+      "하이 셸프 필터",
+      "Spinorama AutoEQ: 보정 게인은 %1, Q는 %2로 제한됩니다. %3 미만의 부스트는 제외됩니다. 청취 프리셋은 별도로 더해집니다."
     ],
     "hi": [
       "हिन्दी",
@@ -1128,7 +1268,12 @@
       "मापन की स्थितियाँ: %1",
       "स्रोत: %1",
       "केवल तभी लागू करें जब ये स्थितियाँ आपके सिस्टम से मेल खाती हों।",
-      "सुधार फ़िल्टर:"
+      "सुधार फ़िल्टर:",
+      "मापन: %1",
+      "बेल फ़िल्टर",
+      "लो-शेल्फ फ़िल्टर",
+      "हाई-शेल्फ फ़िल्टर",
+      "Spinorama AutoEQ: सुधार का गेन %1 और Q %2 तक सीमित है। %3 से नीचे के बूस्ट हटाए जाते हैं। आपका सुनने का प्रीसेट अलग से जोड़ा जाता है।"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -1167,7 +1312,12 @@
       "Kondisi pengukuran: %1",
       "Sumber: %1",
       "Terapkan hanya jika kondisi ini sesuai dengan sistem Anda.",
-      "Filter koreksi:"
+      "Filter koreksi:",
+      "Pengukuran: %1",
+      "Filter berbentuk lonceng",
+      "Filter shelving frekuensi rendah",
+      "Filter shelving frekuensi tinggi",
+      "Spinorama AutoEQ: gain koreksi dibatasi hingga %1 dan Q hingga %2. Boost di bawah %3 dihilangkan. Preset mendengarkan Anda ditambahkan secara terpisah."
     ],
     "vi": [
       "Tiếng Việt",
@@ -1206,7 +1356,12 @@
       "Điều kiện đo: %1",
       "Nguồn: %1",
       "Chỉ áp dụng nếu các điều kiện này phù hợp với hệ thống của bạn.",
-      "Bộ lọc hiệu chỉnh:"
+      "Bộ lọc hiệu chỉnh:",
+      "Phép đo: %1",
+      "Bộ lọc hình chuông",
+      "Bộ lọc shelving tần số thấp",
+      "Bộ lọc shelving tần số cao",
+      "Spinorama AutoEQ: độ lợi hiệu chỉnh được giới hạn ở %1 và Q ở %2. Các mức tăng dưới %3 được bỏ qua. Thiết lập nghe của bạn được cộng riêng."
     ],
     "th": [
       "ไทย",
@@ -1245,7 +1400,12 @@
       "เงื่อนไขการวัด: %1",
       "แหล่งที่มา: %1",
       "ใช้การแก้ไขเฉพาะเมื่อเงื่อนไขเหล่านี้ตรงกับระบบของคุณเท่านั้น",
-      "ตัวกรองการแก้ไข:"
+      "ตัวกรองการแก้ไข:",
+      "การวัด: %1",
+      "ตัวกรองรูปทรงระฆัง",
+      "ตัวกรองเชลฟ์ความถี่ต่ำ",
+      "ตัวกรองเชลฟ์ความถี่สูง",
+      "Spinorama AutoEQ: เกนการแก้ไขจำกัดไว้ที่ %1 และ Q ที่ %2 การเพิ่มเกนต่ำกว่า %3 จะถูกละเว้น พรีเซ็ตการฟังของคุณจะถูกเพิ่มแยกต่างหาก"
     ],
     "sw": [
       "Kiswahili",
@@ -1284,7 +1444,12 @@
       "Masharti ya upimaji: %1",
       "Chanzo: %1",
       "Tumia tu ikiwa masharti haya yanalingana na mfumo wako.",
-      "Vichujio vya marekebisho:"
+      "Vichujio vya marekebisho:",
+      "Upimaji: %1",
+      "Kichujio chenye umbo la kengele",
+      "Kichujio cha shelving kwa masafa ya chini",
+      "Kichujio cha shelving kwa masafa ya juu",
+      "Spinorama AutoEQ: ongezeko la marekebisho limewekewa kikomo cha %1 na Q cha %2. Nyongeza chini ya %3 huondolewa. Mpangilio wako wa kusikiliza huongezwa kando."
     ],
     "nn": [
       "Norsk nynorsk",
@@ -1323,7 +1488,12 @@
       "Måletilhøve: %1",
       "Kjelde: %1",
       "Bruk berre dersom desse tilhøva stemmer med systemet ditt.",
-      "Korreksjonsfilter:"
+      "Korreksjonsfilter:",
+      "Måling: %1",
+      "Klokkefilter",
+      "Shelvingfilter for bass",
+      "Shelvingfilter for diskant",
+      "Spinorama AutoEQ: korreksjonsforsterkinga er avgrensa til %1 og Q til %2. Forsterkingar under %3 vert utelatne. Lytteførehandsinnstillinga di vert lagd til separat."
     ]
   },
   "requiredCompleteLocales": [
