@@ -211,3 +211,7 @@ Japanese now has 102/441 populated current catalog entries. The first 80 shared 
 ### Japanese: second existing-catalog batch
 
 Japanese now has 166/441 populated current catalog entries. Added equipment-profile errors, calibration failure messages, update guidance, preset actions and delay controls. Both apps passed the three focused Linux checks. Native-speaker, Windows and visual qualification remain pending; translations are unverified. Missing source strings remain scheduled for the second pass.
+
+### Japanese: third existing-catalog batch
+
+Japanese now has 230/441 populated current catalog entries. Added dynamics controls, estimated metering, profile editor guidance and filter validation. Both apps passed the three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
