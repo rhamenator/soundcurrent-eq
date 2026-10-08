@@ -1,24 +1,24 @@
 {
-  "stage": "Hebrew calibration, recovery and delay batch",
+  "stage": "Hebrew equipment, filters and metering batch",
   "catalogs": [
     {
       "tag": "he",
       "name": "עברית",
-      "translated": 166,
+      "translated": 230,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "22153d3f08c24ec7459b86dcfe524d60e2d2aa7322ebb71dbb612efd8cb9cbe3",
-      "qmSha256": "8f85b804f9d794432f608d1780a548b8b1e199365aa3192745226b0c60845abd"
+      "tsSha256": "4d153ef4329a10a5b3bad15392190b2d5c96c16699b6ccd82c27a97b7f7b874f",
+      "qmSha256": "9b0dfd669ea4c1c96f63681a19edee7d601903abc08f949ca94aa4a423975516"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "compiled localization, Hebrew main window and catalog validation",
-    "log": "/tmp/soundcurrent-eq-he-second-tests.log"
+    "log": "/tmp/soundcurrent-eq-he-third-tests.log"
   },
-  "review": "Contextual AI review; unverified. Calibration recovery, unchanged 1 MiB limits, app-remains-open messages, cancel versus close, updates and processed delay mix reviewed.",
+  "review": "Contextual AI review; unverified. Estimated versus measured levels, filter Q/high-pass/high-shelf, dynamics makeup gain, equipment kinds and quit behavior reviewed.",
   "nativeReviewed": false,
   "windows": "Pending CI",
   "remaining": "Hebrew catalog incomplete. 11 original target catalogs remain incomplete; omitted messages scheduled for second pass. Full bidi and platform qualification remain open."
