@@ -1404,67 +1404,67 @@ Impor ke pustaka Anda?</translation>
     </message>
     <message>
       <source>Response data (*.txt *.csv *.frd *.cal)</source>
-      <translation type="unfinished" />
+      <translation>Data respons (*.txt *.csv *.frd *.cal)</translation>
     </message>
     <message>
       <source>Response exceeds 4096 points.</source>
-      <translation type="unfinished" />
+      <translation>Respons melebihi 4096 titik.</translation>
     </message>
     <message>
       <source>Response frequencies must increase, with finite bounded values.</source>
-      <translation type="unfinished" />
+      <translation>Frekuensi respons harus berurutan naik, dengan nilai berhingga dalam batas yang ditentukan.</translation>
     </message>
     <message>
       <source>Response has no usable audio range.</source>
-      <translation type="unfinished" />
+      <translation>Respons tidak memiliki rentang audio yang dapat digunakan.</translation>
     </message>
     <message>
       <source>Response import</source>
-      <translation type="unfinished" />
+      <translation>Impor respons</translation>
     </message>
     <message>
       <source>Response needs 2–4096 measured points.</source>
-      <translation type="unfinished" />
+      <translation>Respons memerlukan 2–4096 titik hasil pengukuran.</translation>
     </message>
     <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
-      <translation type="unfinished" />
+      <translation>Mulai ulang Windows sebelum menggunakan equalizer atau pengaturan VB-CABLE. Perubahan driver audio memerlukan mulai ulang sistem.</translation>
     </message>
     <message>
       <source>Restore Defaults</source>
-      <translation type="unfinished" />
+      <translation>Pulihkan Default</translation>
     </message>
     <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
-      <translation type="unfinished" />
+      <translation>Pulihkan pengaturan EQ sebelumnya (Ctrl+Z)</translation>
     </message>
     <message>
       <source>Retry</source>
-      <translation type="unfinished" />
+      <translation>Coba lagi</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
-      <translation type="unfinished" />
+      <translation>Bahasa uji kanan ke kiri</translation>
     </message>
     <message>
       <source>Rock</source>
-      <translation type="unfinished" />
+      <translation>Rock</translation>
     </message>
     <message>
       <source>Save</source>
-      <translation type="unfinished" />
+      <translation>Simpan</translation>
     </message>
     <message>
       <source>Save All</source>
-      <translation type="unfinished" />
+      <translation>Simpan Semua</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
-      <translation type="unfinished" />
+      <translation>Simpan preset EQ</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
-      <translation type="unfinished" />
+      <translation>Simpan profil yang diubah?</translation>
     </message>
     <message>
       <source>Save preset</source>
@@ -1472,64 +1472,64 @@ Impor ke pustaka Anda?</translation>
     </message>
     <message>
       <source>Save profile</source>
-      <translation type="unfinished" />
+      <translation>Simpan profil</translation>
     </message>
     <message>
       <source>Save system response profile</source>
-      <translation type="unfinished" />
+      <translation>Simpan profil respons sistem</translation>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
-      <translation type="unfinished" />
+      <translation>Preset “%1” disimpan.</translation>
     </message>
     <message>
       <source>Search brand, family, model or measurement conditions</source>
-      <translation type="unfinished" />
+      <translation>Cari merek, keluarga produk, model, atau kondisi pengukuran</translation>
     </message>
     <message>
       <source>Second virtual cable for microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Kabel virtual kedua untuk EQ mikrofon</translation>
     </message>
     <message>
       <source>Select band %1</source>
-      <translation type="unfinished" />
+      <translation>Pilih pita %1</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
-      <translation type="unfinished" />
+      <translation>Pilih pita ini untuk mengedit frekuensi, gain, dan Q</translation>
     </message>
     <message>
       <source>Selected audio device is unavailable</source>
-      <translation type="unfinished" />
+      <translation>Perangkat audio yang dipilih tidak tersedia</translation>
     </message>
     <message>
       <source>Selected band</source>
       <extracomment>Currently selected frequency band in the equalizer.</extracomment>
-      <translation>Pita frekuensi terpilih</translation>
+      <translation>Pita yang dipilih</translation>
     </message>
     <message>
       <source>Selected band filter Q</source>
-      <translation type="unfinished" />
+      <translation>Q filter pita yang dipilih</translation>
     </message>
     <message>
       <source>Selected band frequency</source>
-      <translation type="unfinished" />
+      <translation>Frekuensi pita yang dipilih</translation>
     </message>
     <message>
       <source>Selected band gain</source>
-      <translation type="unfinished" />
+      <translation>Gain pita yang dipilih</translation>
     </message>
     <message>
       <source>Selected output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>Perangkat keluaran yang dipilih tidak lagi tersedia</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
-      <translation type="unfinished" />
+      <translation>Keluaran yang dipilih dicabut. Beralih ke keluaran otomatis.</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
-      <translation type="unfinished" />
+      <translation>Nada terpisah berlevel rendah</translation>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
@@ -1537,27 +1537,27 @@ Impor ke pustaka Anda?</translation>
     </message>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
-      <translation type="unfinished" />
+      <translation>Interval lebih pendek memperbarui level lebih sering dan menggunakan lebih banyak CPU; pasokan audio dapat membatasi laju aktual</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
-      <translation type="unfinished" />
+      <translation>Tampilkan garis penahan puncak yang turun pada setiap level frekuensi</translation>
     </message>
     <message>
       <source>Show advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Tampilkan kontrol lanjutan</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>
-      <translation type="unfinished" />
+      <translation>Tampilkan penanda puncak pada level frekuensi</translation>
     </message>
     <message>
       <source>Small Speakers</source>
-      <translation type="unfinished" />
+      <translation>Speaker kecil</translation>
     </message>
     <message>
       <source>Soft Treble</source>
-      <translation type="unfinished" />
+      <translation>Treble lembut</translation>
     </message>
     <message>
       <source>Sound enhancements</source>
@@ -1565,55 +1565,55 @@ Impor ke pustaka Anda?</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
-      <translation type="unfinished" />
+      <translation>SoundCurrent Audio menyediakan jalur mikrofon sendiri saat diinstal. Dengan VB-CABLE, EQ mikrofon dan speaker secara bersamaan memerlukan kabel kedua (A atau B) yang diinstal terpisah. Pilih kabel tersebut di aplikasi perekaman. Opsi Otomatis mengutamakan jalur SoundCurrent jika tersedia.</translation>
     </message>
     <message>
       <source>Source</source>
-      <translation type="unfinished" />
+      <translation>Sumber</translation>
     </message>
     <message>
       <source>Speaker</source>
-      <translation type="unfinished" />
+      <translation>Speaker</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
-      <translation type="unfinished" />
+      <translation>Kalibrasi speaker &amp;&amp; ruangan</translation>
     </message>
     <message>
       <source>Speaker + room check</source>
-      <translation type="unfinished" />
+      <translation>Pemeriksaan speaker + ruangan</translation>
     </message>
     <message>
       <source>Speaker and room measurement</source>
-      <translation type="unfinished" />
+      <translation>Pengukuran speaker dan ruangan</translation>
     </message>
     <message>
       <source>Speaker filter is outside conservative bounds</source>
-      <translation type="unfinished" />
+      <translation>Filter speaker berada di luar batas konservatif</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Produsen speaker</translation>
     </message>
     <message>
       <source>Speaker model correction</source>
-      <translation type="unfinished" />
+      <translation>Koreksi model speaker</translation>
     </message>
     <message>
       <source>Speaker model profile</source>
-      <translation type="unfinished" />
+      <translation>Profil model speaker</translation>
     </message>
     <message>
       <source>Speaker profile details</source>
-      <translation type="unfinished" />
+      <translation>Detail profil speaker</translation>
     </message>
     <message>
       <source>Speaker profile resource is missing</source>
-      <translation type="unfinished" />
+      <translation>Sumber daya profil speaker tidak ditemukan</translation>
     </message>
     <message>
       <source>Speaker type</source>
-      <translation type="unfinished" />
+      <translation>Jenis speaker</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>

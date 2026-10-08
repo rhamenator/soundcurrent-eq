@@ -1,24 +1,24 @@
 {
-  "stage": "Indonesian fifth existing-catalog batch",
+  "stage": "Indonesian sixth existing-catalog batch",
   "catalogs": [
     {
       "tag": "id",
       "name": "Bahasa Indonesia",
-      "translated": 349,
+      "translated": 398,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "5d8d710210d83a3e3447aea2862d8340c350d4987029a9923ce7fc63d02b3660",
-      "qmSha256": "0cf7d81ccdf7c7912298b2c9f944062f329f52cf7488d9bce96790cbb9702882"
+      "tsSha256": "9f535f183d4fbdc29bcdcfc6ec20199df643460f99ca91530c59dea830d677c3",
+      "qmSha256": "24f491381638c7b444d41404417d4ff1f87da34f39e68b46c2d6b425724f1fed"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "Embedded localization assertions, Indonesian MainWindow offscreen smoke test and structural catalog checks",
-    "log": "/tmp/soundcurrent-eq-id-fifth-tests.log"
+    "log": "/tmp/soundcurrent-eq-id-sixth-tests.log"
   },
-  "review": "Contextual AI review of shared source entries 0–399: output/post gain, exclusive startup, measured response versus correction, sweep limits and neutral rendering counts. Hyperlink destinations, file patterns, placeholders and numerical limits preserved. Linguistic accuracy unverified.",
+  "review": "Contextual AI review of shared source entries 0–469: save/reset actions, room measurement, microphone virtual routing, peak hold and refresh performance. Literal ampersands, file patterns, placeholders and numerical limits preserved. Linguistic accuracy unverified.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
   "remaining": "Indonesian incomplete. Four target catalogs still incomplete; omitted source messages reserved for second pass."

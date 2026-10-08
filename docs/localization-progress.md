@@ -319,3 +319,7 @@ Indonesian now has 291/441 populated current catalog entries. Added import valid
 ### Indonesian: fifth existing-catalog batch
 
 Indonesian now has 349/441 populated current catalog entries. Added output controls, startup guidance, profile-source links and rendering messages. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Indonesian: sixth existing-catalog batch
+
+Indonesian now has 398/441 populated current catalog entries. Added save/reset actions, room measurement and microphone-routing guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
