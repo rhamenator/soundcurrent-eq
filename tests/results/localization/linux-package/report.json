@@ -1,27 +1,21 @@
 {
   "date": "2026-10-08",
-  "sourceCommit": "88b4337",
-  "packagePath": "/home/rich/Downloads/SoundCurrent-localization-qa/linux-88b4337-c0ae560/soundcurrent-eq_1.1.0_amd64.deb",
-  "sha256": "8876dad45753d77da1037aaa4f53b0d0550307a88b3cf6e7002716e50213fbbe",
+  "sourceCommit": "eca144a60f81274e15d65b710fa0c09f4a992062",
+  "packagePath": "/home/rich/Downloads/SoundCurrent-localization-qa/linux-eca144a-9166cfa/soundcurrent-eq_1.1.0_amd64.deb",
+  "sha256": "f41695b37ca0e71357e665e30284fe057cf4d5057dcd8a0d33aa89cf72aea0a7",
   "distribution": "Ubuntu 26.04.1 LTS",
-  "vm": "soundcurrent-ubuntu-qa; independent QCOW2 without backing image",
-  "previousVersion": "1.1.0 earlier localization preview",
-  "candidateVersion": "1.1.0 unreleased localization preview",
-  "checks": [
-    "In-place DEB update from earlier 1.1.0 localization candidate",
-    "33 installed offscreen locale/control fixtures",
-    "Arabic UI/German number-format live slider check",
-    "Same-version update, removal and reinstallation",
-    "Owned settings/profile fixture hashes preserved",
-    "Unknown user file preserved",
-    "Reinstalled regional UI fixture passed"
-  ],
+  "independentVm": "soundcurrent-ubuntu-qa",
+  "installedBinaryHash": "76f4ab111042c90326a1fa30c845c6d017105d59ceb738421dd855264064fb45",
+  "binaryIdentityVerified": true,
+  "installMode": "apt forced reinstall followed by cmp against package-extracted binary",
+  "installedLocaleFixturesPassed": 33,
+  "regionalFormatting": "Arabic UI / German number format passed",
+  "lifecycleResult": "PASS: soundcurrent-eq update/remove/reinstall, settings/profile fixtures and unknown user file preserved",
   "nativeReviewed": false,
   "limitations": [
-    "Offscreen installed fixtures do not constitute additional visual/native review",
-    "Preservation checks use owned fixture files, not exhaustive actual user data comparison",
-    "Fedora/RHEL RPM lifecycle and interactive installer remain pending",
-    "No release authorization implied"
+    "Owned preservation fixtures only; not exhaustive user-data comparison",
+    "Installed offscreen fixtures are not native-speaker or additional visual qualification",
+    "Interactive installation and current Windows package qualification remain pending"
   ],
-  "lifecycleResult": "PASS: soundcurrent-eq update/remove/reinstall, settings/profile fixtures and unknown user file preserved"
+  "supersedes": "Earlier equal-version installed-fixture evidence without forced replacement; do not use those locale runs to qualify a newer binary"
 }

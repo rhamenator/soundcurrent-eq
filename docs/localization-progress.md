@@ -579,3 +579,7 @@ The localization fixture can optionally capture middle and bottom scroll positio
 ### Settings layout qualification
 
 Calibration and update actions now use two rows; amplifier controls are stacked, and microphone tone controls use a two-column grid. All tabs reported horizontal range zero for all 33 translated locales at effective 960×540 (200% scaling). Russian amplifier/microphone and Polish calibration/update viewports were inspected and readable. Seven focused UI, formatting, update-policy and catalog tests passed per app. Tests/results/localization/hidpi/settings-fixed records exact worktree source hashes; Windows and rebuilt packages remain pending. Processing, IDs, state and translated catalogs were unchanged.
+
+### Exact installed preview identity
+
+APT can skip a local preview whose version equals the installed package. The independent-VM localization harness now forces reinstall and compares /usr/bin executables byte-for-byte with their package contents before testing. Both current application builds passed all 33 installed locale fixtures and mixed Arabic/German formatting. Update/remove/reinstall and preservation fixtures passed. These runs supersede earlier equal-version locale checks that did not establish current executable identity; their lifecycle reinstall evidence remains separately scoped. No processing or catalogs changed.
