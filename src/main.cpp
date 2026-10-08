@@ -2231,18 +2231,18 @@ public:
         settingsRoot->addStretch();
 
         auto *presetBox = new QGroupBox(SC_TR("Listening preset"));
-        auto *presetRow = new QHBoxLayout(presetBox);
+        auto *presetRow = new QGridLayout(presetBox);
         presetCombo_ = new PresetComboBox;
         presetCombo_->setObjectName("localizedPresetSelector");
         presetCombo_->setAccessibleName(SC_TR("Listening preset"));
         presetCombo_->setView(new QListView(presetCombo_));
         presetCombo_->setMaxVisibleItems(12);
         presetCombo_->view()->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-        presetRow->addWidget(presetCombo_, 1);
+        presetRow->addWidget(presetCombo_, 0, 0, 1, 4);
         auto *save = new QPushButton(SC_TR("Save preset"));
-        presetRow->addWidget(save);
+        presetRow->addWidget(save, 1, 0);
         auto *reset = new QPushButton(SC_TR("Reset to flat"));
-        presetRow->addWidget(reset);
+        presetRow->addWidget(reset, 1, 1);
         savePresetButton_ = save;
         resetButton_ = reset;
         lockButton_ = new QPushButton(SC_TR("Lock EQ"));
@@ -2250,12 +2250,12 @@ public:
         lockButton_->setChecked(startEnabled && QSettings().value("eqLocked", false).toBool());
         lockButton_->setAccessibleName(SC_TR("Lock equalizer settings"));
         lockButton_->setToolTip(SC_TR("Prevent changes to presets, EQ bands, post gain, and balance"));
-        presetRow->addWidget(lockButton_);
+        presetRow->addWidget(lockButton_, 1, 2);
         undoButton_ = new QPushButton(SC_TR("Undo"));
         undoButton_->setAccessibleName(SC_TR("Undo last equalizer change"));
         undoButton_->setToolTip(SC_TR("Restore the previous EQ setting (Ctrl+Z)"));
         undoButton_->setEnabled(false);
-        presetRow->addWidget(undoButton_);
+        presetRow->addWidget(undoButton_, 1, 3);
         root->addWidget(presetBox);
 
         auto *eqBox = new QGroupBox(SC_TR("Equalizer"));
@@ -2279,36 +2279,35 @@ public:
         eqLayout->addWidget(headroom_);
 
         auto *details = new QWidget;
-        auto *detailsRow = new QHBoxLayout(details);
+        auto *detailsRow = new QGridLayout(details);
         detailsRow->setContentsMargins(0, 2, 0, 2);
-        detailsRow->addWidget(new QLabel(SC_TR("Selected band")));
-        detailsRow->addSpacing(8);
-        detailsRow->addWidget(new QLabel(SC_TR("Frequency")));
+        detailsRow->addWidget(new QLabel(SC_TR("Selected band")), 0, 0, 1, 3);
+        detailsRow->addWidget(new QLabel(SC_TR("Frequency")), 1, 0);
         frequencyBox_ = new soundcurrent::AcceleratingDoubleSpinBox;
         frequencyBox_->setRange(20, 20000);
         frequencyBox_->setDecimals(0);
         frequencyBox_->setSingleStep(1);
         frequencyBox_->setSuffix(" Hz");
         frequencyBox_->setAccessibleName(SC_TR("Selected band frequency"));
-        detailsRow->addWidget(frequencyBox_);
-        detailsRow->addSpacing(12);
-        detailsRow->addWidget(new QLabel(SC_TR("Gain")));
+        detailsRow->addWidget(frequencyBox_, 2, 0);
+        detailsRow->setColumnStretch(0, 1);
+        detailsRow->addWidget(new QLabel(SC_TR("Gain")), 1, 1);
         gainBox_ = new soundcurrent::AcceleratingDoubleSpinBox;
         gainBox_->setRange(-12, 12);
         gainBox_->setDecimals(1);
         gainBox_->setSingleStep(0.5);
         gainBox_->setSuffix(" dB");
         gainBox_->setAccessibleName(SC_TR("Selected band gain"));
-        detailsRow->addWidget(gainBox_);
-        detailsRow->addSpacing(12);
-        detailsRow->addWidget(new QLabel(SC_TR("Filter Q")));
+        detailsRow->addWidget(gainBox_, 2, 1);
+        detailsRow->setColumnStretch(1, 1);
+        detailsRow->addWidget(new QLabel(SC_TR("Filter Q")), 1, 2);
         qBox_ = new soundcurrent::AcceleratingDoubleSpinBox;
         qBox_->setRange(0.3, 10.0);
         qBox_->setDecimals(2);
         qBox_->setSingleStep(0.1);
         qBox_->setAccessibleName(SC_TR("Selected band filter Q"));
-        detailsRow->addWidget(qBox_);
-        detailsRow->addStretch();
+        detailsRow->addWidget(qBox_, 2, 2);
+        detailsRow->setColumnStretch(2, 1);
         eqLayout->addWidget(details);
 
         curve_ = new CurveWidget;
@@ -4194,6 +4193,14 @@ int main(int argc, char **argv) {
 
         window.show();
         QTimer::singleShot(100, &app, [&] {
+            if(qEnvironmentVariableIsSet("SOUNDCURRENT_LAYOUT_DIAGNOSTICS")) {
+                auto *outer=qobject_cast<QScrollArea *>(window.findChild<QTabWidget *>()->widget(0));
+                const int width=outer->viewport()->width();
+                qInfo("Layout viewport %d; horizontal range %d",width,outer->horizontalScrollBar()->maximum());
+                for(auto *widget:outer->widget()->findChildren<QWidget *>())
+                    if(widget->minimumSizeHint().width()>width-76)
+                        qInfo("Wide widget %s: minimum %d; name %s",widget->metaObject()->className(),widget->minimumSizeHint().width(),qPrintable(widget->accessibleName()));
+            }
             const auto dir=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
             if(!dir.isEmpty()){
                 QDir().mkpath(dir);window.grab().save(dir+"/localized.png");
