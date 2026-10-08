@@ -2091,6 +2091,10 @@ Import into your library?</source>
       <translation>음질 개선</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio가 이미 있습니다. 드라이버 설정을 활성화한 상태로 두면 설치 프로그램이 이 앱을 등록하고 다른 SoundCurrent 앱에서도 공유 드라이버를 사용할 수 있도록 유지합니다.</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>SoundCurrent Audio가 준비되었습니다. 앱을 열고 스피커나 헤드폰을 선택하세요.</translation>
     </message>

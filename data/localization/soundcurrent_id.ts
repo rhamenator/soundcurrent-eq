@@ -2091,6 +2091,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Peningkatan suara</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio sudah ada. Jika penyiapan driver tetap diaktifkan, penginstal akan mendaftarkan aplikasi ini dan menjaga driver bersama tetap tersedia untuk aplikasi SoundCurrent lainnya.</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>SoundCurrent Audio siap. Buka aplikasi dan pilih speaker atau headphone Anda.</translation>
     </message>

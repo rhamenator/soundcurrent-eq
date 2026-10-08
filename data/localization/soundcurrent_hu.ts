@@ -2091,6 +2091,10 @@ Importálja a könyvtárba?</translation>
       <translation>Hangjavítások</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>A SoundCurrent Audio már jelen van. Ha az illesztőprogram beállítása engedélyezve marad, a telepítő regisztrálja ezt az alkalmazást, és a megosztott illesztőprogramot elérhetővé teszi a másik SoundCurrent alkalmazás számára.</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>A SoundCurrent Audio készen áll. Nyissa meg az alkalmazást, és válassza ki a hangszórókat vagy a fejhallgatót.</translation>
     </message>

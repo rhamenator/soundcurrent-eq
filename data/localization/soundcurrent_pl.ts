@@ -2091,6 +2091,10 @@ Zaimportować do biblioteki?</translation>
       <translation>Efekty dźwiękowe</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio jest już obecny. Jeśli konfiguracja sterownika pozostanie włączona, instalator zarejestruje tę aplikację i zachowa dostępność współdzielonego sterownika dla drugiej aplikacji SoundCurrent.</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>SoundCurrent Audio jest gotowy. Otwórz aplikację i wybierz głośniki lub słuchawki.</translation>
     </message>

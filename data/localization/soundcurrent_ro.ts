@@ -2091,6 +2091,10 @@ Importați în bibliotecă?</translation>
       <translation>Îmbunătățiri sonore</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio este deja prezent. Dacă configurarea driverului rămâne activată, programul de instalare va înregistra această aplicație și va păstra driverul partajat disponibil pentru cealaltă aplicație SoundCurrent.</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>SoundCurrent Audio este pregătit. Deschideți aplicația și alegeți difuzoarele sau căștile.</translation>
     </message>

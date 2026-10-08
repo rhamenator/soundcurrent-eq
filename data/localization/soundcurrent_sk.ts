@@ -2091,6 +2091,10 @@ Importovať do vašej knižnice?</translation>
       <translation>Zvukové efekty</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio je už prítomné. Ak zostane nastavenie ovládača povolené, inštalačný program zaregistruje túto aplikáciu a ponechá zdieľaný ovládač dostupný pre druhú aplikáciu SoundCurrent.</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>SoundCurrent Audio je pripravený. Otvorte aplikáciu a vyberte reproduktory alebo slúchadlá.</translation>
     </message>

@@ -2091,6 +2091,10 @@ Import into your library?</source>
       <translation>שיפורי שמע</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio כבר קיים. אם הגדרת מנהל ההתקן תישאר מופעלת, תוכנית ההתקנה תרשום יישום זה ותשאיר את מנהל ההתקן המשותף זמין ליישום SoundCurrent האחר.</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>SoundCurrent Audio מוכן. פתחו את האפליקציה ובחרו ברמקולים או באוזניות.</translation>
     </message>

@@ -2091,6 +2091,10 @@ Importera till ditt bibliotek?</translation>
       <translation>Ljudförbättringar</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio finns redan. Om drivrutinsinstallationen förblir aktiverad registrerar installationsprogrammet denna app och håller den delade drivrutinen tillgänglig för den andra SoundCurrent-appen.</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>SoundCurrent Audio är redo. Öppna appen och välj dina högtalare eller hörlurar.</translation>
     </message>

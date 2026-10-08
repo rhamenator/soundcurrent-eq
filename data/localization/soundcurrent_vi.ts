@@ -2091,6 +2091,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Cải thiện âm thanh</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio đã có sẵn. Nếu thiết lập trình điều khiển vẫn được bật, trình cài đặt sẽ đăng ký ứng dụng này và giữ trình điều khiển dùng chung cho ứng dụng SoundCurrent còn lại.</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>SoundCurrent Audio đã sẵn sàng. Mở ứng dụng và chọn loa hoặc tai nghe.</translation>
     </message>

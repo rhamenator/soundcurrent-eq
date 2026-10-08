@@ -2091,6 +2091,10 @@ Import into your library?</source>
       <translation>Звуковые эффекты</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio уже присутствует. Если настройка драйвера останется включённой, установщик зарегистрирует это приложение и сохранит общий драйвер доступным для другого приложения SoundCurrent.</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>SoundCurrent Audio готов. Откройте приложение и выберите динамики или наушники.</translation>
     </message>

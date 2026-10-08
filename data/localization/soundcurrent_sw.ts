@@ -2091,6 +2091,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Uboreshaji wa sauti</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio tayari ipo. Ikiwa usanidi wa kiendeshi unabaki umewezeshwa, kisakinishi kitasajili programu hii na kuweka kiendeshi kinachoshirikiwa kipatikane kwa programu nyingine ya SoundCurrent.</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>SoundCurrent Audio iko tayari. Fungua programu na uchague spika au vipokea sauti vya kichwani.</translation>
     </message>

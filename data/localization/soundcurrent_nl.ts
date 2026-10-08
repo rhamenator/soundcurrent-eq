@@ -2091,6 +2091,10 @@ Importeren in uw bibliotheek?</translation>
       <translation>Geluidseffecten</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio is al aanwezig. Als stuurprogramma-instelling ingeschakeld blijft, registreert het installatieprogramma deze app en houdt het gedeelde stuurprogramma beschikbaar voor de andere SoundCurrent-app.</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>SoundCurrent Audio is gereed. Open de app en kies uw luidsprekers of hoofdtelefoon.</translation>
     </message>

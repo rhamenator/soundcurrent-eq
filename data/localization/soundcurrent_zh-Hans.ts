@@ -2091,6 +2091,10 @@ Import into your library?</source>
       <translation>声音增强</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio 已存在。如果保持启用驱动程序设置，安装程序会注册此应用，并保留共享驱动程序供另一个 SoundCurrent 应用使用。</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>SoundCurrent Audio 已就绪。请打开应用并选择扬声器或耳机。</translation>
     </message>

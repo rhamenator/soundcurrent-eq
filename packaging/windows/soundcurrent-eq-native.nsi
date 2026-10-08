@@ -55,6 +55,7 @@ Page custom AudioPage AudioPageLeave
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_LANGUAGE "English"
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
+LangString SCNativePresent ${LANG_ENGLISH} "SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app."
 LangString SCNativeApproval ${LANG_ENGLISH} "Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required."
 LangString SCSharedDriverNotice ${LANG_ENGLISH} "Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it."
 LangString SCDriverCheckFailed ${LANG_ENGLISH} "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu."
@@ -91,7 +92,7 @@ Function AudioPage
   Pop $DriverChoice
   ${If} $DriverCheck == 0
     ${NSD_Check} $DriverChoice
-    ${NSD_CreateLabel} 0 65u 100% 35u "SoundCurrent Audio is already present. Setup will register this app and keep the shared driver available for the other SoundCurrent app."
+    ${NSD_CreateLabel} 0 65u 100% 35u "$(SCNativePresent)"
   ${ElseIf} $DriverCheck == 10
     ${NSD_Check} $DriverChoice
     ${NSD_CreateLabel} 0 65u 100% 35u "$(SCNativeApproval)"

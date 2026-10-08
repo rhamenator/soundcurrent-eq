@@ -8,6 +8,7 @@ from pathlib import Path
 import localization as catalog
 
 SOURCES = {
+    'SCNativePresent': 'SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.',
     'SCNativeApproval': 'Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.',
     'SCSharedDriverNotice': 'Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.',
     'SCCableRestart': 'VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.',
@@ -53,13 +54,14 @@ def export(destination, product):
                         'SCInstallDriver': translations[checkbox],
                         'SCDriverCheckFailed': translations['SCDriverCheckFailed'].replace('%1', translations['SCSetupAction'])}
             if route == 'native':
+                captions['SCNativePresent'] = translations['SCNativePresent']
                 captions['SCNativeApproval'] = translations['SCNativeApproval']
                 captions['SCSharedDriverNotice'] = translations['SCSharedDriverNotice']
             if route == 'cable':
                 captions['SCCableRestart'] = translations['SCCableRestart']
             variants[route] = {'captions': captions, 'nsisEscaped': {key: nsis_escape(text) for key, text in captions.items()}}
         languages[row['tag']] = variants
-    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval guidance only',
+    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver guidance only',
               'installerLocaleActivationComplete': False, 'nativeSpeakerVerified': False,
               'sources': SOURCES, 'languages': languages}
     destination.parent.mkdir(parents=True, exist_ok=True)

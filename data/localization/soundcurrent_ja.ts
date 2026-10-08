@@ -2091,6 +2091,10 @@ Import into your library?</source>
       <translation>音質補正</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio は既に存在します。ドライバーのセットアップを有効にしたままにすると、セットアップはこのアプリを登録し、もう一方の SoundCurrent アプリで共有ドライバーを使用できる状態を維持します。</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>SoundCurrent Audio の準備ができました。アプリを開いてスピーカーまたはヘッドホンを選択してください。</translation>
     </message>

@@ -2091,6 +2091,10 @@ Import into your library?</source>
       <translation>การปรับแต่งเสียง</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>มี SoundCurrent Audio อยู่แล้ว หากยังเปิดใช้งานการตั้งค่าไดรเวอร์ โปรแกรมติดตั้งจะลงทะเบียนแอปนี้และคงไดรเวอร์ที่ใช้ร่วมกันไว้ให้แอป SoundCurrent อีกแอปใช้งาน</translation>
+    </message>
+    <message>
       <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
       <translation>SoundCurrent Audio พร้อมแล้ว เปิดแอปแล้วเลือกลำโพงหรือหูฟังของคุณ</translation>
     </message>

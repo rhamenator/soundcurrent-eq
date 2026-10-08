@@ -242,5 +242,9 @@
   "secondPassInstallerNativeApproval": {
     "report": "tests/results/localization/second-pass-installer-native-approval.json",
     "status": "native signed-program approval notice translated; locale activation and runtime qualification pending"
+  },
+  "secondPassInstallerNativePresent": {
+    "report": "tests/results/localization/second-pass-installer-native-present.json",
+    "status": "native registration notice made conditional and translated; language activation and runtime qualification pending"
   }
 }

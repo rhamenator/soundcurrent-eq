@@ -54,9 +54,9 @@
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 88,
       "kind": "control-caption",
-      "literal": "SoundCurrent Audio is already present. Setup will register this app and keep the shared driver available for the other SoundCurrent app.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCNativePresent)",
+      "marked": true,
+      "reviewStatus": "checkbox condition explicit; all locale translations exported; language activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
