@@ -322,87 +322,87 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bright</source>
-      <translation type="unfinished" />
+      <translation>روشن</translation>
     </message>
     <message>
       <source>Browse all equipment profiles / editor</source>
-      <translation type="unfinished" />
+      <translation>مرور همه پروفایل‌های تجهیزات / ویرایشگر</translation>
     </message>
     <message>
       <source>Calibration test signal</source>
-      <translation type="unfinished" />
+      <translation>سیگنال آزمون کالیبراسیون</translation>
     </message>
     <message>
       <source>Calibration tone level</source>
-      <translation type="unfinished" />
+      <translation>سطح صدای کالیبراسیون</translation>
     </message>
     <message>
       <source>Cancel</source>
-      <translation type="unfinished" />
+      <translation>لغو</translation>
     </message>
     <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>دریافت قفل محافظ نشست مشترک SoundCurrent ممکن نیست.</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
-      <translation type="unfinished" />
+      <translation>ایجاد پوشه پروفایل تقویت‌کننده ممکن نیست.</translation>
     </message>
     <message>
       <source>Cannot create profile folder.</source>
-      <translation type="unfinished" />
+      <translation>ایجاد پوشه پروفایل ممکن نیست.</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>ایجاد قفل محافظ نشست مشترک SoundCurrent ممکن نیست.</translation>
     </message>
     <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>تکمیل بررسی اکولایزرهای در حال اجرا ممکن نیست؛ SoundCurrent پردازش را فعال نخواهد کرد.</translation>
     </message>
     <message>
       <source>Cannot finish saving amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>تکمیل ذخیره پروفایل تقویت‌کننده ممکن نیست.</translation>
     </message>
     <message>
       <source>Cannot finish saving profile library.</source>
-      <translation type="unfinished" />
+      <translation>تکمیل ذخیره کتابخانه پروفایل‌ها ممکن نیست.</translation>
     </message>
     <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>بررسی اکولایزرهای در حال اجرا ممکن نیست؛ SoundCurrent پردازش را فعال نخواهد کرد.</translation>
     </message>
     <message>
       <source>Cannot read profile library.</source>
-      <translation type="unfinished" />
+      <translation>خواندن کتابخانه پروفایل‌ها ممکن نیست.</translation>
     </message>
     <message>
       <source>Cannot read profile or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>خواندن پروفایل ممکن نیست یا اندازه فایل بیش از 1 MiB است.</translation>
     </message>
     <message>
       <source>Cannot read response or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>خواندن پاسخ ممکن نیست یا اندازه فایل بیش از 1 MiB است.</translation>
     </message>
     <message>
       <source>Cannot save amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>ذخیره پروفایل تقویت‌کننده ممکن نیست.</translation>
     </message>
     <message>
       <source>Cannot save profile library.</source>
-      <translation type="unfinished" />
+      <translation>ذخیره کتابخانه پروفایل‌ها ممکن نیست.</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
-      <translation type="unfinished" />
+      <translation>ذخیره پروفایل ممکن نیست.</translation>
     </message>
     <message>
       <source>Cannot start measurement: %1</source>
-      <translation type="unfinished" />
+      <translation>شروع اندازه‌گیری ممکن نیست: %1</translation>
     </message>
     <message>
       <source>Center</source>
-      <translation type="unfinished" />
+      <translation>مرکز</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -410,167 +410,167 @@ Import into your library?</source>
     </message>
     <message>
       <source>Checking for published updates…</source>
-      <translation type="unfinished" />
+      <translation>در حال بررسی به‌روزرسانی‌های منتشرشده…</translation>
     </message>
     <message>
       <source>Checks published releases and downloaded installers. No update is installed automatically.</source>
-      <translation type="unfinished" />
+      <translation>نسخه‌های منتشرشده و نصب‌کننده‌های دانلودشده را بررسی می‌کند. هیچ به‌روزرسانی به‌صورت خودکار نصب نمی‌شود.</translation>
     </message>
     <message>
       <source>Choose a name that is not a built-in preset.</source>
-      <translation type="unfinished" />
+      <translation>نامی انتخاب کنید که با نام یک پیش‌تنظیم داخلی یکسان نباشد.</translation>
     </message>
     <message>
       <source>Choose update folder…</source>
-      <translation type="unfinished" />
+      <translation>انتخاب پوشه به‌روزرسانی…</translation>
     </message>
     <message>
       <source>Clarity</source>
-      <translation type="unfinished" />
+      <translation>وضوح</translation>
     </message>
     <message>
       <source>Clarity frequency</source>
-      <translation type="unfinished" />
+      <translation>فرکانس وضوح</translation>
     </message>
     <message>
       <source>Classical</source>
-      <translation type="unfinished" />
+      <translation>موسیقی کلاسیک</translation>
     </message>
     <message>
       <source>Clear Voice</source>
-      <translation type="unfinished" />
+      <translation>صدای واضح</translation>
     </message>
     <message>
       <source>Clear imported equipment corrections</source>
-      <translation type="unfinished" />
+      <translation>پاک کردن اصلاحات تجهیزات واردشده</translation>
     </message>
     <message>
       <source>Click to turn the equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>برای روشن یا خاموش کردن اکولایزر کلیک کنید</translation>
     </message>
     <message>
       <source>Clipping risk · estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>خطر برش قله‌های سیگنال · قله تخمینی %1 dBFS</translation>
     </message>
     <message>
       <source>Close</source>
-      <translation type="unfinished" />
+      <translation>بستن</translation>
     </message>
     <message>
       <source>Conditions</source>
-      <translation type="unfinished" />
+      <translation>شرایط</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
-      <translation type="unfinished" />
+      <translation>پیش از اندازه‌گیری یک خروجی و یک میکروفون وصل کنید.</translation>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>پروفایل اصلاح (*.json)</translation>
     </message>
     <message>
       <source>Could not create a private test folder</source>
-      <translation type="unfinished" />
+      <translation>ایجاد پوشه خصوصی آزمون ممکن نشد</translation>
     </message>
     <message>
       <source>Could not create microphone configuration folder</source>
-      <translation type="unfinished" />
+      <translation>ایجاد پوشه پیکربندی میکروفون ممکن نشد</translation>
     </message>
     <message>
       <source>Could not create preset folder.</source>
-      <translation type="unfinished" />
+      <translation>ایجاد پوشه پیش‌تنظیم‌ها ممکن نشد.</translation>
     </message>
     <message>
       <source>Could not create quiet frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>ایجاد جاروب فرکانسی کم‌صدا ممکن نشد</translation>
     </message>
     <message>
       <source>Could not create temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>ایجاد پیکربندی موقت صدا ممکن نشد</translation>
     </message>
     <message>
       <source>Could not create test tone</source>
-      <translation type="unfinished" />
+      <translation>ایجاد صدای آزمون ممکن نشد</translation>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
-      <translation type="unfinished" />
+      <translation>تکمیل ذخیره پیش‌تنظیم ممکن نشد.</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
-      <translation type="unfinished" />
+      <translation>باز کردن شکل موج آزمون ممکن نشد</translation>
     </message>
     <message>
       <source>Could not play quiet test audio</source>
-      <translation type="unfinished" />
+      <translation>پخش صدای آزمون کم‌صدا ممکن نشد</translation>
     </message>
     <message>
       <source>Could not play test audio through the selected output</source>
-      <translation type="unfinished" />
+      <translation>پخش صدای آزمون از خروجی انتخاب‌شده ممکن نشد</translation>
     </message>
     <message>
       <source>Could not read output volume</source>
-      <translation type="unfinished" />
+      <translation>خواندن بلندی صدای خروجی ممکن نشد</translation>
     </message>
     <message>
       <source>Could not run %1</source>
-      <translation type="unfinished" />
+      <translation>اجرای %1 ممکن نشد</translation>
     </message>
     <message>
       <source>Could not save preset.</source>
-      <translation type="unfinished" />
+      <translation>ذخیره پیش‌تنظیم ممکن نشد.</translation>
     </message>
     <message>
       <source>Could not start PipeWire filter</source>
-      <translation type="unfinished" />
+      <translation>شروع فیلتر PipeWire ممکن نشد</translation>
     </message>
     <message>
       <source>Could not start audio setup: %1. The app remains open.</source>
-      <translation type="unfinished" />
+      <translation>شروع راه‌اندازی صدا ممکن نشد: %1. برنامه باز می‌ماند.</translation>
     </message>
     <message>
       <source>Could not start microphone capture</source>
-      <translation type="unfinished" />
+      <translation>شروع ضبط میکروفون ممکن نشد</translation>
     </message>
     <message>
       <source>Could not start microphone filter</source>
-      <translation type="unfinished" />
+      <translation>شروع فیلتر میکروفون ممکن نشد</translation>
     </message>
     <message>
       <source>Could not start output volume safety guard</source>
-      <translation type="unfinished" />
+      <translation>شروع محافظ ایمنی بلندی صدای خروجی ممکن نشد</translation>
     </message>
     <message>
       <source>Could not start the measurement.</source>
-      <translation type="unfinished" />
+      <translation>شروع اندازه‌گیری ممکن نشد.</translation>
     </message>
     <message>
       <source>Could not update startup settings.</source>
-      <translation type="unfinished" />
+      <translation>به‌روزرسانی تنظیمات شروع خودکار ممکن نشد.</translation>
     </message>
     <message>
       <source>Could not write frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>نوشتن جاروب فرکانسی ممکن نشد</translation>
     </message>
     <message>
       <source>Could not write microphone configuration</source>
-      <translation type="unfinished" />
+      <translation>نوشتن پیکربندی میکروفون ممکن نشد</translation>
     </message>
     <message>
       <source>Could not write temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>نوشتن پیکربندی موقت صدا ممکن نشد</translation>
     </message>
     <message>
       <source>Could not write test tone</source>
-      <translation type="unfinished" />
+      <translation>نوشتن صدای آزمون ممکن نشد</translation>
     </message>
     <message>
       <source>Create profile</source>
-      <translation type="unfinished" />
+      <translation>ایجاد پروفایل</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
-      <translation type="unfinished" />
+      <translation>تنظیمات فعلی اکولایزر حفظ شد.</translation>
     </message>
     <message>
       <source>Custom</source>
@@ -578,11 +578,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Dance</source>
-      <translation type="unfinished" />
+      <translation>موسیقی رقص</translation>
     </message>
     <message>
       <source>Deep Bass</source>
-      <translation type="unfinished" />
+      <translation>باس عمیق</translation>
     </message>
     <message>
       <source>Discard</source>
