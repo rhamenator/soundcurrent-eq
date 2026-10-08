@@ -198,5 +198,9 @@
   "secondPassCableRepairFailure": {
     "report": "tests/results/localization/second-pass-cable-repair-failure.json",
     "status": "translated extracted source in all catalogs; current Windows instruction/package qualification pending"
+  },
+  "secondPassSetupSourceInventory": {
+    "report": "tests/results/localization/second-pass-setup-source-inventory.json",
+    "status": "declared helper sources extracted directly; missing declaration invalidates existing catalogs"
   }
 }

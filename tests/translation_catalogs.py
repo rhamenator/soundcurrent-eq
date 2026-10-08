@@ -15,6 +15,30 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_declared_helper_source_is_extracted_without_seed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            data = Path(directory)
+            (data / 'seed-translations.json').write_bytes((catalog.DATA / 'seed-translations.json').read_bytes())
+            fixture = 'New owned helper diagnostic %1'
+            self.assertNotIn(fixture, json.loads((data / 'seed-translations.json').read_text())['sources'])
+            (data / 'setup-sources.json').write_text(json.dumps([fixture]))
+            with patch.object(catalog, 'DATA', data):
+                self.assertIn(fixture, catalog.sources())
+        # Use the actual existing catalogs: a newly declared source must invalidate
+        # them before helper export, even if no seed translation was added.
+        declared = catalog.setup_sources() | {fixture}
+        with patch.object(catalog, 'setup_sources', return_value=declared):
+            with self.assertRaisesRegex(ValueError, 'Run --update after UI changes'):
+                catalog.check(require_complete=True)
+
+    def test_setup_source_inventory_rejects_damaged_declarations(self):
+        for values in ({'source': 'Text'}, ['Text', 'Text'], [''], ['  '], [None], [42], [['Text']]):
+            with self.subTest(values=values), tempfile.TemporaryDirectory() as directory:
+                data = Path(directory)
+                (data / 'setup-sources.json').write_text(json.dumps(values))
+                with patch.object(catalog, 'DATA', data), self.assertRaisesRegex(ValueError, 'Invalid setup source inventory'):
+                    catalog.setup_sources()
+
     def test_studio_owned_diagnostic_gaps_match_current_source(self):
         root = Path(__file__).resolve().parents[1]
         model = root / 'src/studio_model.cpp'

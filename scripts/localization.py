@@ -92,6 +92,16 @@ def check_platform_errors(code):
             raise ValueError('Unmarked Windows adapter error: ' + literal(args[0]))
 
 
+def setup_sources():
+    """Declared owned helper literals also belong to the catalog source inventory."""
+    values = json.loads((DATA / 'setup-sources.json').read_text(encoding='utf-8'))
+    if (not isinstance(values, list) or
+            any(not isinstance(value, str) or not value.strip() for value in values) or
+            len(values) != len(set(values))):
+        raise ValueError('Invalid setup source inventory: expected unique nonempty strings')
+    return set(values)
+
+
 def sources():
     adapter = ROOT / 'src/windows_platform.inc'
     if adapter.exists():
@@ -132,6 +142,7 @@ def sources():
                 if len(args) == 2 and (value := literal(args[1])) is not None:
                     out.add(value)
     out.update(json.loads((DATA / 'seed-translations.json').read_text(encoding='utf-8'))['sources'])
+    out.update(setup_sources())
     out.update(['Warmth', 'Boxiness', 'Clarity', 'Air'])
     code = (ROOT / 'src/enhancement.h').read_text(encoding='utf-8')
     out.update(re.findall(r'\{\s*"([^"]+)"\s*,', code))

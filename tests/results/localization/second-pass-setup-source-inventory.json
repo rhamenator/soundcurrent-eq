@@ -1,0 +1,32 @@
+{
+  "scope": "Declared Windows helper source inventory participates in extraction without duplicate seed entry",
+  "sourceMessagesPerLocale": 601,
+  "catalogs": 34,
+  "unfinishedExtractedEntries": 0,
+  "validation": {
+    "unitTestsPassed": 23,
+    "unitTestsSkipped": 1,
+    "declaredSourceWithoutSeed": "included in source inventory",
+    "existingCatalogWithNewDeclaredSource": "rejected before export",
+    "malformedInventory": "duplicate, blank, non-string and non-list declarations rejected",
+    "finishedHelperExport": "passed for all 34 catalogs"
+  },
+  "nativeSpeakerVerification": "unverified",
+  "runtimeCodeChanged": false,
+  "compiledCatalogsChanged": false,
+  "newWindowsRuntimeQualification": false,
+  "newPackageQualification": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "One untranslated cable helper notice",
+    "NSIS installer/uninstaller localization",
+    "Remaining dynamic interface/source audit",
+    "Current Linux/Windows installed UI and package lifecycle"
+  ],
+  "evidenceSha256": {
+    "scripts/localization.py": "06f009b4da0d45609cfdee02e0661a44f2bb7dabd73e3541a04e40e445a92050",
+    "tests/translation_catalogs.py": "55b812b64b9fff7f1928fbf47418821bf4c8adea72c21b14a3c67b9855c3df82",
+    "tests/results/localization/setup-source-inventory-tests.log": "62101a6b9f2b3d61ca92815f039e57679e8921223f1fd600a65c8bc6faf2bb7a"
+  },
+  "exportSha256": "695350a2afbf32642b33dd114a8278ffba7b29920b673f1b6b5b90f5cd8ca9b0"
+}
