@@ -104,3 +104,7 @@ The repair-failure instruction now uses a translated Audio driver setup caption 
 ### Helper source inventory and extraction
 
 Catalog extraction includes setup-sources.json directly; a seed entry is no longer required merely to retain a declared helper source. Adding a declaration invalidates existing catalogs until they are updated and translated. Declarations must be a list of unique, nonempty strings. This is separate from the PowerShell AST gate that checks literal calls against declarations, and does not prove complete extraction of unmarked interface text. Tests and scope are recorded in second-pass-setup-source-inventory.json.
+
+### Direct installer language definitions
+
+Reviewed $(key) references now require one nonempty direct LangString definition for each declared MUI language in that installer file. Missing languages and duplicate definitions fail the gate. This limited check does not expand includes or macros and normalizes MUI names to LANG tokens; language aliases need explicit support before use. It does not establish translation accuracy, compiler success, layout or whole-interface coverage. Existing English installer text remains pending translation. See second-pass-nsis-language-definitions.json.

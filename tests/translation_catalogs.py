@@ -174,6 +174,26 @@ class CatalogTests(unittest.TestCase):
         # This rule does not freeze translatable SoundCurrent-owned action labels.
         catalog.validate_text('Audio driver setup', 'Configuration du pilote audio')
 
+    def test_reviewed_installer_reference_requires_language_definitions(self):
+        root = Path(__file__).resolve().parents[1]
+        spec = importlib.util.spec_from_file_location('nsis_definitions', root / 'scripts/nsis_string_audit.py')
+        audit = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(audit)
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = Path(directory)
+            folder = fixture / 'packaging/windows'
+            folder.mkdir(parents=True)
+            source = folder / 'fixture.nsi'
+            base = '!insertmacro MUI_LANGUAGE "English"\n!insertmacro MUI_LANGUAGE "French"\nMessageBox MB_OK "$(Caption)"\n'
+            valid = 'LangString Caption ${LANG_ENGLISH} "Caption"\nLangString Caption ${LANG_FRENCH} "Légende"\n'
+            source.write_text(base + valid, encoding='utf-8')
+            reviewed = audit.inventory(fixture)
+            audit.check_backlog(reviewed, reviewed)
+            for definitions in ('', valid.splitlines()[0] + '\n', valid.replace('"Légende"', '" "'), valid + valid):
+                source.write_text(base + definitions, encoding='utf-8')
+                with self.subTest(definitions=definitions), self.assertRaisesRegex(ValueError, 'installer language definition'):
+                    audit.check_backlog(audit.inventory(fixture), reviewed)
+
     def test_installer_source_backlog_and_regression_gate(self):
         root = Path(__file__).resolve().parents[1]
         spec = importlib.util.spec_from_file_location('nsis_audit', root / 'scripts/nsis_string_audit.py')

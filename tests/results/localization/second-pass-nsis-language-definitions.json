@@ -1,0 +1,27 @@
+{
+  "scope": "Reviewed NSIS UI references require direct nonempty unique LangString definitions for each declared MUI language",
+  "unitTestsPassed": 24,
+  "unitTestsSkipped": 1,
+  "negativeFixtures": [
+    "Missing all definitions",
+    "Missing French definition",
+    "Whitespace-only translation",
+    "Duplicate definitions"
+  ],
+  "positiveFixture": "English and French direct definitions accepted",
+  "limitations": [
+    "Not a complete NSIS parser",
+    "Includes and macro expansion not resolved",
+    "MUI names are normalized to LANG tokens; aliases require explicit future support",
+    "Definition presence does not prove translation accuracy, complete coverage, compiler success or UI layout"
+  ],
+  "installerTextChanged": false,
+  "newPackageQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "nativeSpeakerVerification": "unverified",
+  "evidenceSha256": {
+    "scripts/nsis_string_audit.py": "37ba496cb382c3e09ce4aa6e55b52302b81a2d15f9a9ed6c6514d299da1c710e",
+    "tests/translation_catalogs.py": "176c3e658b1af558104b29832a7d27bfaa6df35c2fcc9df05600e81c60c22541",
+    "tests/results/localization/nsis-language-definitions.log": "b6262d682ceb51a62d57f4a122d12d802a88a0bacd7496e062268b7ffbaebf3d"
+  }
+}

@@ -37,7 +37,7 @@ def logical_lines(code):
 
 
 def inventory(root):
-    rows, languages, dynamic = [], {}, []
+    rows, languages, dynamic, definitions = [], {}, [], []
     quoted = re.compile(r'"((?:\$\\"|[^"])*)"')
     for path in sorted((root / 'packaging/windows').glob('*.nsi')):
         relative = path.relative_to(root).as_posix()
@@ -46,6 +46,12 @@ def inventory(root):
             values = quoted.findall(code)
             if re.match(r'!insertmacro\s+MUI_LANGUAGE\b', code):
                 languages[relative].extend(values)
+                continue
+            definition = re.fullmatch(r'LangString\s+([A-Za-z_][A-Za-z_0-9]*)\s+(\$\{LANG_[A-Z_0-9]+\})\s+"((?:\$\\"|[^"])*)"', code)
+            if definition:
+                definitions.append({'file': relative, 'line': line,
+                                    'key': definition[1], 'language': definition[2],
+                                    'literal': definition[3]})
                 continue
             kind = None
             if re.match(r'\$\{NSD_Create(?:Label|Checkbox|Button|GroupBox|Link|RadioButton)\}', code):
@@ -66,7 +72,7 @@ def inventory(root):
                              'marked': marked, 'reviewStatus': 'language-string reference; qualification pending' if marked else 'untranslated candidate; contextual review pending'})
     return {'scope': 'Supported NSIS UI text sites; not a full NSIS parser',
             'wholeInterfaceCoverageProven': False, 'languages': languages,
-            'candidates': rows, 'dynamicSites': dynamic}
+            'candidates': rows, 'dynamicSites': dynamic, 'directLanguageDefinitions': definitions}
 
 
 def check_backlog(audit, backlog):
@@ -76,6 +82,21 @@ def check_backlog(audit, backlog):
     unreviewed = [row for row in audit['candidates'] if row['marked'] and key(row) not in approved]
     if unreviewed:
         raise ValueError('Unaudited installer language reference: ' + repr(unreviewed))
+    # Direct declarations only. An include/macro definition requires a separate
+    # reviewed expanded inventory; a language reference alone cannot qualify it.
+    for row in audit['candidates']:
+        if not row['marked']:
+            continue
+        name = row['literal'][2:-1]
+        languages = audit['languages'].get(row['file'], [])
+        if not languages:
+            raise ValueError('Installer reference has no declared language: ' + name)
+        for language in languages:
+            token = '${LANG_' + re.sub(r'[^A-Za-z0-9_]', '', language).upper() + '}'
+            matches = [entry for entry in audit.get('directLanguageDefinitions', [])
+                       if entry['file'] == row['file'] and entry['key'] == name and entry['language'] == token]
+            if len(matches) != 1 or not matches[0]['literal'].strip():
+                raise ValueError('Missing, empty or duplicate installer language definition: ' + name + '/' + language)
     new = [row for row in audit['candidates'] if not row['marked'] and key(row) not in known]
     if new:
         raise ValueError('New untranslated installer text: ' + repr(new))
