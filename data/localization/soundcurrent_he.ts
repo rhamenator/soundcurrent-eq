@@ -2038,6 +2038,10 @@ Import into your library?</source>
       <translation>הגדרות &amp;&amp; כיול</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>תוכנית ההתקנה לא הצליחה לבדוק את מנהל ההתקן. ניתן לנסות שוב באמצעות %1 ביישום או בתפריט התחל.</translation>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>האקולייזר המשותף ואקולייזר הערוץ חורגים מ־64 מסננים; יש להסיר חלק ממסנני הערוץ</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

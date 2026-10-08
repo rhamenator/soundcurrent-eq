@@ -2038,6 +2038,10 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Réglages &amp;&amp; étalonnage</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>Le programme d’installation n’a pas pu vérifier le pilote. Vous pouvez réessayer avec %1 dans l’application ou le menu Démarrer.</translation>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>L’EQ commun et l’EQ du canal dépassent 64 filtres ; supprimez des filtres du canal</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

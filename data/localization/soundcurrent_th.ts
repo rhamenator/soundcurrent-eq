@@ -2038,6 +2038,10 @@ Import into your library?</source>
       <translation>การตั้งค่า &amp;&amp; การปรับเทียบ</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>โปรแกรมติดตั้งไม่สามารถตรวจสอบไดรเวอร์ได้ คุณสามารถลองอีกครั้งด้วย %1 ในแอปหรือเมนูเริ่ม</translation>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>EQ ส่วนกลางและ EQ ของช่องสัญญาณมีตัวกรองรวมเกิน 64 ตัว ให้ลบตัวกรองของช่องสัญญาณบางส่วน</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

@@ -2038,6 +2038,10 @@ Import into your library?</source>
       <translation>設定 &amp;&amp; 校正</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>安裝程式無法檢查驅動程式。您可以透過應用程式內或開始功能表中的 %1 重試。</translation>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>共用等化器和聲道等化器的濾波器總數超過 64；請刪除一些聲道濾波器</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

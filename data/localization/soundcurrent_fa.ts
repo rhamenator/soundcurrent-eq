@@ -2038,6 +2038,10 @@ Import into your library?</source>
       <translation>تنظیمات &amp;&amp; کالیبراسیون</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>نصب‌کننده نتوانست درایور را بررسی کند. می‌توانید با %1 در برنامه یا منوی شروع دوباره تلاش کنید.</translation>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>اکولایزر مشترک و اکولایزر کانال از 64 فیلتر فراتر می‌روند؛ برخی فیلترهای کانال را حذف کنید</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

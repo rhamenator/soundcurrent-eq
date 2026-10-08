@@ -70,9 +70,9 @@
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 93,
       "kind": "control-caption",
-      "literal": "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCDriverCheckFailed)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale template translations available; installer language activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
@@ -222,9 +222,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 109,
       "kind": "control-caption",
-      "literal": "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCDriverCheckFailed)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale template translations available; installer language activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",

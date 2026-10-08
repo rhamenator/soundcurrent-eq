@@ -226,5 +226,9 @@
   "secondPassInstallerBuildIntegration": {
     "report": "tests/results/localization/second-pass-installer-build-integration.json",
     "status": "production script integration implemented; full Windows execution and packages pending"
+  },
+  "secondPassInstallerDriverCheck": {
+    "report": "tests/results/localization/second-pass-installer-driver-check.json",
+    "status": "all-locale failure guidance and translated setup action exported; locale activation and runtime qualification pending"
   }
 }

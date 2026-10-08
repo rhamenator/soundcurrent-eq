@@ -2038,6 +2038,10 @@ Import into your library?</source>
       <translation>設定 &amp;&amp; キャリブレーション</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>セットアップでドライバーを確認できませんでした。アプリ内またはスタートメニューの %1 から再試行できます。</translation>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>共通 EQ とチャンネル EQ の合計が 64 フィルターを超えています。チャンネルのフィルターを減らしてください</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

@@ -15,6 +15,23 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_installer_driver_check_guidance_uses_translated_action(self):
+        root = Path(__file__).resolve().parents[1]
+        source = 'Setup could not check the driver. You can retry with %1 in the app or Start menu.'
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text(encoding='utf-8')
+            self.assertRegex(code, r'\$\{NSD_CreateLabel\}[^\n]+"\$\(SCDriverCheckFailed\)"')
+            self.assertEqual(re.findall(r'^LangString SCDriverCheckFailed \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source.replace('%1', 'Audio driver setup')])
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+            messages = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))
+            message = messages[source]
+            self.assertTrue(catalog.finished(message), row['tag'])
+            self.assertTrue(catalog.finished(messages['Audio driver setup']), row['tag'])
+            translated = message.findtext('translation')
+            catalog.validate_text(source, translated)
+            with self.assertRaisesRegex(ValueError, 'Placeholder mismatch'):
+                catalog.validate_text(source, translated.replace('%1', '%2'))
+
     def test_installer_build_copy_generation_and_failures(self):
         root = Path(__file__).resolve().parents[1]
         spec = importlib.util.spec_from_file_location('installer_build_copy', root / 'scripts/windows_installer_catalogs.py')
@@ -68,7 +85,7 @@ class CatalogTests(unittest.TestCase):
             for variants in result['languages'].values():
                 self.assertEqual(set(variants), {'cable', 'native'})
                 for route in variants.values():
-                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver'})
+                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed'})
                     self.assertEqual(set(route['nsisEscaped']), set(route['captions']))
 
     def test_installer_checkbox_catalog_sources_and_names(self):

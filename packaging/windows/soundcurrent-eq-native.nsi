@@ -55,6 +55,7 @@ Page custom AudioPage AudioPageLeave
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_LANGUAGE "English"
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
+LangString SCDriverCheckFailed ${LANG_ENGLISH} "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu."
 LangString SCInstallDriver ${LANG_ENGLISH} "Install or update the shared SoundCurrent Audio driver"
 LangString SCSetupAudio ${LANG_ENGLISH} "Set up SoundCurrent Audio for SoundCurrent EQ."
 
@@ -93,7 +94,7 @@ Function AudioPage
     ${NSD_Check} $DriverChoice
     ${NSD_CreateLabel} 0 65u 100% 35u "Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required."
   ${Else}
-    ${NSD_CreateLabel} 0 65u 100% 35u "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu."
+    ${NSD_CreateLabel} 0 65u 100% 35u "$(SCDriverCheckFailed)"
   ${EndIf}
   Pop $0
   ${NSD_CreateLabel} 0 108u 100% 40u "Quit both EQ and Studio before changing the shared driver. Removing one app keeps the driver if the other app still uses it."

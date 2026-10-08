@@ -8,6 +8,8 @@ from pathlib import Path
 import localization as catalog
 
 SOURCES = {
+    'SCDriverCheckFailed': 'Setup could not check the driver. You can retry with %1 in the app or Start menu.',
+    'SCSetupAction': 'Audio driver setup',
     'SCConnectAudio': 'Connect your audio',
     'SCSetupAudio': 'Set up %1 for %2.',
     'SCInstallCable': 'Install VB-CABLE if missing (administrator approval)',
@@ -45,10 +47,11 @@ def export(destination, product):
                                          ('native', 'SoundCurrent Audio', 'SCInstallNative')]:
             captions = {'SCConnectAudio': translations['SCConnectAudio'],
                         'SCSetupAudio': format_names(translations['SCSetupAudio'], driver, product),
-                        'SCInstallDriver': translations[checkbox]}
+                        'SCInstallDriver': translations[checkbox],
+                        'SCDriverCheckFailed': translations['SCDriverCheckFailed'].replace('%1', translations['SCSetupAction'])}
             variants[route] = {'captions': captions, 'nsisEscaped': {key: nsis_escape(text) for key, text in captions.items()}}
         languages[row['tag']] = variants
-    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle and driver checkbox captions only',
+    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance only',
               'installerLocaleActivationComplete': False, 'nativeSpeakerVerified': False,
               'sources': SOURCES, 'languages': languages}
     destination.parent.mkdir(parents=True, exist_ok=True)

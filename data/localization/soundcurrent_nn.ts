@@ -2038,6 +2038,10 @@ Importere til biblioteket ditt?</translation>
       <translation>Innstillingar &amp;&amp; kalibrering</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>Installasjonsprogrammet kunne ikkje kontrollere drivaren. Du kan prøve igjen med %1 i appen eller Start-menyen.</translation>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>Felles EQ og kanal-EQ overskrid 64 filter; fjern nokre kanalfilter</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

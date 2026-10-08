@@ -2038,6 +2038,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Ayarlar &amp;&amp; kalibrasyon</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>Kurulum programı sürücüyü denetleyemedi. Uygulamadaki veya Başlat menüsündeki %1 ile yeniden deneyebilirsiniz.</translation>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>Ortak EQ ve kanal EQ’su 64 filtreyi aşıyor; bazı kanal filtrelerini kaldırın</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

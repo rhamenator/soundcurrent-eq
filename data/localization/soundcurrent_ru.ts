@@ -2038,6 +2038,10 @@ Import into your library?</source>
       <translation>Настройки &amp;&amp; калибровка</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>Установщик не смог проверить драйвер. Повторите попытку с помощью %1 в приложении или меню «Пуск».</translation>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>Общий EQ и EQ канала превышают 64 фильтра; удалите часть фильтров канала</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

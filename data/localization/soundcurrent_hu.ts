@@ -2038,6 +2038,10 @@ Importálja a könyvtárba?</translation>
       <translation>Beállítások &amp;&amp; kalibráció</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>A telepítő nem tudta ellenőrizni az illesztőprogramot. Újra próbálkozhat az alkalmazásban vagy a Start menüben található %1 segítségével.</translation>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>A közös EQ és a csatorna EQ-ja meghaladja a 64 szűrőt; távolítson el néhány csatornaszűrőt</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
