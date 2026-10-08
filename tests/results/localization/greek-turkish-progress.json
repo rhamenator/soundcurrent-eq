@@ -1,34 +1,34 @@
 {
-  "stage": "Greek/Turkish filter and editor batch",
+  "stage": "Greek/Turkish microphone and measurement batch",
   "catalogs": [
     {
       "tag": "el",
       "name": "Ελληνικά",
-      "translated": 230,
+      "translated": 291,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "21a5b91dfa79cbe171d25cab7b896ea06b2fa06cfa74b10e5c6202ece40736c7",
-      "qmSha256": "84a175fa9e0ca25b035730f2411f3cd0c157dfdc4efa648b0e4099a4b8c90c5f"
+      "tsSha256": "7ac53372159573f8c971b86b65ffb7c2cc4dba049835c538782a029ccc9b56f7",
+      "qmSha256": "bff9993e266ee0ce7b7c150622d6339ef7e31435b88191251b7fa2372f9854ae"
     },
     {
       "tag": "tr",
       "name": "Türkçe",
-      "translated": 230,
+      "translated": 291,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "7d415e620f29156a419fcfc1df1aa0182cd17a728334b1e7542c9c01ce2543cd",
-      "qmSha256": "75652b4f05ef9ef2cce9dc60d6c2a0a91d6f1c3eaae7eda901edb55dc2f8f0c3"
+      "tsSha256": "611c4be89fa1571c34d4a7d5da0856c0b6f96058e89b940624233665b522b6b8",
+      "qmSha256": "f5b03250864888a7f31b093b08966f97c5a94892c532d32e02b3d758a0f53dcc"
     }
   ],
   "linuxTests": {
     "passed": 4,
     "total": 4,
     "scope": "compiled localization, Greek/Turkish main windows and catalog regressions",
-    "log": "/tmp/soundcurrent-eq-el-tr-third-tests.log"
+    "log": "/tmp/soundcurrent-eq-el-tr-fourth-tests.log"
   },
-  "review": "Contextual AI review; unverified. Q is dimensionless quality, shelving differs from pass filtering, compressor makeup differs from overall post gain, and output meters remain estimates.",
+  "review": "Contextual AI review; unverified. Greek offline rendering describes non-real-time processing. Measurement warnings retain microphone contribution and clipping, model correction is added to listening EQ, negative route gain inverts polarity.",
   "nativeReviewed": false,
   "windows": "Pending CI",
   "remaining": "Greek, Turkish and 18 other target catalogs incomplete."

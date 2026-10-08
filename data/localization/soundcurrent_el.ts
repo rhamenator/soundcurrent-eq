@@ -866,123 +866,123 @@ Import into your library?</source>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή, δημιουργία και επεξεργασία προφίλ εξοπλισμού</translation>
     </message>
     <message>
       <source>Import equipment profile</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή προφίλ εξοπλισμού</translation>
     </message>
     <message>
       <source>Import measured amplifier correction</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή μετρημένης διόρθωσης ενισχυτή</translation>
     </message>
     <message>
       <source>Import measured profile</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή μετρημένου προφίλ</translation>
     </message>
     <message>
       <source>Import profile?</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή προφίλ;</translation>
     </message>
     <message>
       <source>Import relative measured response</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή σχετικής μετρημένης απόκρισης</translation>
     </message>
     <message>
       <source>Import response text</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή κειμένου απόκρισης</translation>
     </message>
     <message>
       <source>Include preview releases</source>
-      <translation type="unfinished" />
+      <translation>Συμπερίληψη δοκιμαστικών εκδόσεων</translation>
     </message>
     <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Εγκαταστήστε τα νέα πακέτα πάνω από αυτή την έκδοση — δεν χρειάζεται απεγκατάσταση. Οι προρυθμίσεις και τα προφίλ διατηρούνται. Αποθηκεύστε την εργασία σας, τερματίστε την εφαρμογή (το κλείσιμο του παραθύρου την αφήνει σε λειτουργία), εγκαταστήστε την ενημέρωση και ανοίξτε την ξανά.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
-      <translation type="unfinished" />
+      <translation>Εγκατεστημένη έκδοση: %1</translation>
     </message>
     <message>
       <source>Interface language</source>
-      <translation>Γλώσσα περιβάλλοντος</translation>
+      <translation>Γλώσσα διεπαφής</translation>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
-      <translation type="unfinished" />
+      <translation>Μη έγκυρος υποτύπος εξοπλισμού ή τύπος τροφοδοσίας</translation>
     </message>
     <message>
       <source>Invalid filter.</source>
-      <translation type="unfinished" />
+      <translation>Μη έγκυρο φίλτρο.</translation>
     </message>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
-      <translation type="unfinished" />
+      <translation>Μη έγκυρο μετρημένο προφίλ ενισχυτή. Απαιτούνται μοντέλο, πηγή μέτρησης HTTPS, συνθήκες και 1–16 φίλτρα PK/LS/HS εντός ορίων. Δείτε τη μορφή προφίλ στο README.</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
-      <translation type="unfinished" />
+      <translation>Μη έγκυρη ή μη ταξινομημένη μετρημένη απόκριση.</translation>
     </message>
     <message>
       <source>Invalid or unordered response data.</source>
-      <translation type="unfinished" />
+      <translation>Μη έγκυρα ή μη ταξινομημένα δεδομένα απόκρισης.</translation>
     </message>
     <message>
       <source>Invalid profile library.</source>
-      <translation type="unfinished" />
+      <translation>Μη έγκυρη βιβλιοθήκη προφίλ.</translation>
     </message>
     <message>
       <source>Invalid response from pactl</source>
-      <translation type="unfinished" />
+      <translation>Μη έγκυρη απάντηση από το pactl</translation>
     </message>
     <message>
       <source>Invalid response point.</source>
-      <translation type="unfinished" />
+      <translation>Μη έγκυρο σημείο απόκρισης.</translation>
     </message>
     <message>
       <source>Invalid speaker correction filter count</source>
-      <translation type="unfinished" />
+      <translation>Μη έγκυρος αριθμός φίλτρων διόρθωσης ηχείου</translation>
     </message>
     <message>
       <source>Invalid speaker filter type</source>
-      <translation type="unfinished" />
+      <translation>Μη έγκυρος τύπος φίλτρου ηχείου</translation>
     </message>
     <message>
       <source>Invalid speaker identity</source>
-      <translation type="unfinished" />
+      <translation>Μη έγκυρα στοιχεία ταυτότητας ηχείου</translation>
     </message>
     <message>
       <source>Jazz</source>
-      <translation type="unfinished" />
+      <translation>Τζαζ</translation>
     </message>
     <message>
       <source>Keep current EQ</source>
-      <translation type="unfinished" />
+      <translation>Διατήρηση τρέχοντος EQ</translation>
     </message>
     <message>
       <source>L</source>
-      <translation type="unfinished" />
+      <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
-      <translation>Γλώσσα και περιοχή</translation>
+      <translation>Γλώσσα και τοπικές ρυθμίσεις</translation>
     </message>
     <message>
       <source>Left right balance</source>
-      <translation type="unfinished" />
+      <translation>Ισορροπία αριστερά/δεξιά</translation>
     </message>
     <message>
       <source>Level indicator refresh interval</source>
-      <translation type="unfinished" />
+      <translation>Διάστημα ανανέωσης ενδείξεων στάθμης</translation>
     </message>
     <message>
       <source>Level refresh</source>
-      <translation type="unfinished" />
+      <translation>Ανανέωση στάθμης</translation>
     </message>
     <message>
       <source>Library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Η βιβλιοθήκη υπερβαίνει τα 16 MiB.</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -991,11 +991,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Live</source>
-      <translation type="unfinished" />
+      <translation>Σε πραγματικό χρόνο</translation>
     </message>
     <message>
       <source>Lo-Fi</source>
-      <translation type="unfinished" />
+      <translation>Λόου φάι</translation>
     </message>
     <message>
       <source>Lock EQ</source>
@@ -1004,59 +1004,59 @@ Import into your library?</source>
     </message>
     <message>
       <source>Lock equalizer settings</source>
-      <translation type="unfinished" />
+      <translation>Κλείδωμα ρυθμίσεων ισοσταθμιστή</translation>
     </message>
     <message>
       <source>Loudness</source>
-      <translation type="unfinished" />
+      <translation>Αντιστάθμιση χαμηλής έντασης</translation>
     </message>
     <message>
       <source>Manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Κατασκευαστής</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
-      <translation type="unfinished" />
+      <translation>Συμπληρώθηκε το όριο των 32 προφίλ ενισχυτών.</translation>
     </message>
     <message>
       <source>Maximum stereo width</source>
-      <translation type="unfinished" />
+      <translation>Μέγιστο στερεοφωνικό πλάτος</translation>
     </message>
     <message>
       <source>Measure</source>
-      <translation type="unfinished" />
+      <translation>Μέτρηση</translation>
     </message>
     <message>
       <source>Measure speaker room and microphone response</source>
-      <translation type="unfinished" />
+      <translation>Μέτρηση απόκρισης ηχείων, χώρου και μικροφώνου</translation>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
-      <translation type="unfinished" />
+      <translation>Η μετρημένη διόρθωση μοντέλου προστίθεται στο EQ ακρόασής σας. Μπορείτε ακόμα να προσθέσετε μπάσα ή να ρυθμίσετε οποιαδήποτε ζώνη. Περιλαμβάνει συντηρητικά όρια ενίσχυσης· οι επιδράσεις χώρου και ενισχυτή απαιτούν μέτρηση ολόκληρου του συστήματος.</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
-      <translation type="unfinished" />
+      <translation>Οι συνθήκες μέτρησης είναι υποχρεωτικές.</translation>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
-      <translation type="unfinished" />
+      <translation>Τα δεδομένα μέτρησης ήταν ελλιπή.</translation>
     </message>
     <message>
       <source>Measurement failed. Try a higher test level or move the mic closer.</source>
-      <translation type="unfinished" />
+      <translation>Η μέτρηση απέτυχε. Δοκιμάστε υψηλότερη στάθμη δοκιμής ή φέρτε το μικρόφωνο πιο κοντά.</translation>
     </message>
     <message>
       <source>Measurement stopped.</source>
-      <translation type="unfinished" />
+      <translation>Η μέτρηση διακόπηκε.</translation>
     </message>
     <message>
       <source>Metal</source>
-      <translation type="unfinished" />
+      <translation>Μέταλ</translation>
     </message>
     <message>
       <source>Mic gain</source>
-      <translation type="unfinished" />
+      <translation>Ενίσχυση μικροφώνου</translation>
     </message>
     <message>
       <source>Microphone</source>
@@ -1064,76 +1064,76 @@ Import into your library?</source>
     </message>
     <message>
       <source>Microphone %1 adjustment</source>
-      <translation type="unfinished" />
+      <translation>Ρύθμιση μικροφώνου %1</translation>
     </message>
     <message>
       <source>Microphone EQ is off.</source>
-      <translation type="unfinished" />
+      <translation>Το EQ μικροφώνου είναι ανενεργό.</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
-      <translation type="unfinished" />
+      <translation>Η εγγραφή μικροφώνου διακόπηκε κατά την αναπαραγωγή</translation>
     </message>
     <message>
       <source>Microphone capture stopped during the test</source>
-      <translation type="unfinished" />
+      <translation>Η εγγραφή μικροφώνου διακόπηκε κατά τη δοκιμή</translation>
     </message>
     <message>
       <source>Microphone error: %1</source>
-      <translation type="unfinished" />
+      <translation>Σφάλμα μικροφώνου: %1</translation>
     </message>
     <message>
       <source>Microphone filter did not appear</source>
-      <translation type="unfinished" />
+      <translation>Το φίλτρο μικροφώνου δεν εμφανίστηκε</translation>
     </message>
     <message>
       <source>Microphone filter disappeared</source>
-      <translation type="unfinished" />
+      <translation>Το φίλτρο μικροφώνου εξαφανίστηκε</translation>
     </message>
     <message>
       <source>Microphone gain adjustment</source>
-      <translation type="unfinished" />
+      <translation>Ρύθμιση ενίσχυσης μικροφώνου</translation>
     </message>
     <message>
       <source>Microphone input device</source>
-      <translation type="unfinished" />
+      <translation>Συσκευή εισόδου μικροφώνου</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
-      <translation type="unfinished" />
+      <translation>Η εγγραφή μικροφώνου ψαλιδίζεται. Μειώστε την ενίσχυση μικροφώνου ή την πρόσθετη ενίσχυση και επαναλάβετε τη μέτρηση.</translation>
     </message>
     <message>
       <source>Microphone route</source>
-      <translation type="unfinished" />
+      <translation>Διαδρομή μικροφώνου</translation>
     </message>
     <message>
       <source>Model</source>
-      <translation type="unfinished" />
+      <translation>Μοντέλο</translation>
     </message>
     <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
-      <translation type="unfinished" />
+      <translation>Μετακινήστε προς L ή R για να μειώσετε το αντίθετο κανάλι· το κέντρο διατηρεί και τα δύο στην πλήρη στάθμη</translation>
     </message>
     <message>
       <source>Movies</source>
-      <translation type="unfinished" />
+      <translation>Ταινίες</translation>
     </message>
     <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
-      <translation>Φυσικό EQ μικροφώνου</translation>
+      <translation>EQ φυσικής φωνής</translation>
     </message>
     <message>
       <source>Natural mic EQ on · %1</source>
-      <translation type="unfinished" />
+      <translation>EQ φυσικής φωνής ενεργό · %1</translation>
     </message>
     <message>
       <source>Natural microphone equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Ενεργοποίηση ή απενεργοποίηση ισοσταθμιστή φυσικής φωνής μικροφώνου</translation>
     </message>
     <message>
       <source>Night Listening</source>
-      <translation type="unfinished" />
+      <translation>Νυχτερινή ακρόαση</translation>
     </message>
     <message>
       <source>No</source>
