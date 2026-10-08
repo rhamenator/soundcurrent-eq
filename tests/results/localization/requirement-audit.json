@@ -104,6 +104,7 @@
   },
   "taxonomyCaptionProgress": {
     "report": "tests/results/localization/second-pass-taxonomy-remaining.json",
-    "status": "all 15 published taxonomy types and Sony qualifier translated; current runtime matrix not qualified"
+    "status": "all 15 published taxonomy types and Sony qualifier translated; current main/catalog and equipment Qt offscreen locale checks passed; Windows/package qualification pending",
+    "equipmentRuntimeReport": "tests/results/localization/equipment-ui-watchdog.json"
   }
 }

@@ -52,5 +52,10 @@
       "fixture": "original",
       "isolatedHindi": "passed in 9.34 seconds"
     }
-  ]
+  ],
+  "evidence": {
+    "log": "tests/results/localization/equipment-ui-watchdog-run.log",
+    "logSha256": "9e9602a1c6116fb76df9d6332b170716012edfeb7df9184b5005354e0088df3f",
+    "applicationBinarySha256": "c3d5750a429dcd91e92ea6a03a6364f7d5ea2793e6298df8139efc3165d32163"
+  }
 }
