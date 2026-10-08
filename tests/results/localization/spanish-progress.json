@@ -1,0 +1,25 @@
+{
+  "stage": "Spanish partial catalog checkpoint",
+  "catalog": {
+    "tag": "es",
+    "name": "Español",
+    "translated": 216,
+    "total": 437,
+    "status": "unverified",
+    "nativeReviewed": false,
+    "tsSha256": "76b63c1deb8270074b4994ce2b7ec81095ddc2461477b31747052216503fabde",
+    "qmSha256": "474fce5898eeac077bcc90c737ad55b15dd17f3c21c40e7bc21afe59f97f1f0c"
+  },
+  "linguisticReview": "Contextual AI translation; unverified; no native-speaker review",
+  "linuxTests": {
+    "passed": 2,
+    "total": 2,
+    "scope": [
+      "compiled localization runtime",
+      "Spanish main-window fixture"
+    ],
+    "log": "/tmp/sc-es-eq-tests.log"
+  },
+  "windows": "Pending CI after correcting fixture staging",
+  "remaining": "Complete the remaining Spanish entries, then continue other target locales."
+}

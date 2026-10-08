@@ -149,7 +149,8 @@ try {
     # Exercise only inert setup fixtures: no driver installation or endpoint changes.
     $setupScript = Join-Path $stage 'audio-setup.ps1'
     $setupBackup = Join-Path $stage 'audio-setup.saved.ps1'
-    Move-Item $setupScript $setupBackup
+    $hadSetupScript = Test-Path $setupScript
+    if ($hadSetupScript) { Move-Item $setupScript $setupBackup }
     try {
         foreach ($locale in @('fr','de')) {
             $expected = if ($locale -eq 'fr') { 'introuvable' } else { 'fehlt' }
@@ -170,7 +171,7 @@ try {
         }
     } finally {
         Remove-Item $setupScript -ErrorAction SilentlyContinue
-        Move-Item $setupBackup $setupScript
+        if ($hadSetupScript) { Move-Item $setupBackup $setupScript }
     }
     & python tests/translation_catalogs.py
     if ($LASTEXITCODE -ne 0) { throw 'Translation-maintenance regression tests failed' }

@@ -28,3 +28,7 @@ Populate all current messages for every existing locale, pass structural and com
 Next translation batch: Spanish. French and German are required to stay populated as sources evolve. The Filter Q caption now describes the dimensionless filter quality parameter; saved processing IDs and numeric values are unchanged.
 
 Windows audio setup now translates application-owned failure, repair, calibration and restart instructions. Restart-required results always retain the translated reboot instruction alongside original helper diagnostics. The source guard also rejects unmarked literal messages passed to the setup completion helper.
+
+Spanish batch in progress: 216/437 EQ and 237/523 Studio messages populated. Compiled-catalog and Spanish main-window tests passed on Linux. Coverage is partial and linguistic review remains unverified. Windows fixture staging was corrected after CI found that the setup script is not yet present before installer assembly.
+
+

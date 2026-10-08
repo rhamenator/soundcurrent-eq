@@ -32,12 +32,12 @@
   {
     "tag": "es",
     "name": "Español",
-    "translated": 30,
+    "translated": 216,
     "total": 437,
     "status": "unverified",
     "nativeReviewed": false,
-    "tsSha256": "0400c28c55cef4e3b200f13ba797e3103f7506606839bd75795d25cfce7bf962",
-    "qmSha256": "7fa86fc8a30726060f100464bced65390a0434afd4d408a8a9af05fbf4f1a320"
+    "tsSha256": "76b63c1deb8270074b4994ce2b7ec81095ddc2461477b31747052216503fabde",
+    "qmSha256": "474fce5898eeac077bcc90c737ad55b15dd17f3c21c40e7bc21afe59f97f1f0c"
   },
   {
     "tag": "it",
