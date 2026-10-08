@@ -1617,103 +1617,103 @@ Nhập vào thư viện của bạn?</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>Bắt đầu ở mức nhỏ. Chỉ tăng nếu micrô không thu được âm thử.</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
-      <translation type="unfinished" />
+      <translation>Khởi động khi tôi đăng nhập</translation>
     </message>
     <message>
       <source>Startup</source>
-      <translation type="unfinished" />
+      <translation>Khởi động</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
-      <translation type="unfinished" />
+      <translation>Dừng hiệu chuẩn micrô trước khi thay đổi trình điều khiển âm thanh.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>Dừng âm thử</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>Đã áp dụng EQ đề xuất. Dùng Lưu thiết lập sẵn để giữ lại.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>Các thay đổi đề xuất cho EQ phát âm thanh</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>Âm thanh vòm</translation>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>Đã mở trình sửa cấu hình đáp tuyến hệ thống. Các cấu hình đã lưu có trong thư viện thiết bị.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>Lời thoại TV</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>Xanh ngọc: EQ hiệu chỉnh. Cam: đáp tuyến đo được, nếu có. Thang dọc là dB tương đối.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>Mức thử</translation>
     </message>
     <message>
       <source>Test level is outside the allowed range</source>
-      <translation type="unfinished" />
+      <translation>Mức thử nằm ngoài phạm vi cho phép</translation>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>Bộ xử lý âm thanh đã dừng đột ngột.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
-      <translation type="unfinished" />
+      <translation>Thư viện tùy chỉnh chứa tối đa 256 cấu hình.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>Phản hồi cập nhật không hợp lệ. Không có trình cài đặt nào được mở.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>Thao tác này nhập ĐÁP TUYẾN đo được, không phải gain EQ đã đảo ngược. Xác nhận loại thiết bị. SPL tuyệt đối cần được chuẩn hóa trước khi nhập.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình này đã thay đổi. Lưu một bản sao tùy chỉnh trước khi rời đi?</translation>
     </message>
     <message>
       <source>Timed out waiting for the equalizer sink: %1</source>
-      <translation type="unfinished" />
+      <translation>Đã hết thời gian chờ đầu ra ảo của bộ cân bằng âm: %1</translation>
     </message>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
-      <translation type="unfinished" />
+      <translation>Quá ít âm thử đến được micrô. Di chuyển micrô lại gần hoặc tăng nhẹ mức thử.</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>Mức độ bao phủ bản dịch: %1 trên %2 thông điệp. Các bản dịch còn thiếu dùng tiếng Anh. Gói ngôn ngữ chưa được xác minh và đang chờ người bản ngữ rà soát. Dùng Thoát rồi mở lại để áp dụng thay đổi.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>Chi tiết âm cao</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Tắt bộ cân bằng âm</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Bật bộ cân bằng âm</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Loại</translation>
     </message>
     <message>
       <source>Undo</source>
@@ -1722,43 +1722,43 @@ Nhập vào thư viện của bạn?</translation>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>Hoàn tác thay đổi bộ cân bằng âm gần nhất</translation>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>Mở khóa EQ</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>Mở khóa điều khiển và hoàn tất phép đo trước khi sửa cấu hình.</translation>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation type="unfinished" />
+      <translation>Không hỗ trợ phiên bản cấu trúc cấu hình thiết bị (yêu cầu 2).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
-      <translation type="unfinished" />
+      <translation>Không hỗ trợ loại bộ lọc.</translation>
     </message>
     <message>
       <source>Unsupported microphone channel layout</source>
-      <translation type="unfinished" />
+      <translation>Không hỗ trợ bố trí kênh micrô</translation>
     </message>
     <message>
       <source>Unsupported speaker profile schema</source>
-      <translation type="unfinished" />
+      <translation>Không hỗ trợ phiên bản cấu trúc cấu hình loa</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Đã tải bản cập nhật %1: %2. Thoát, cài đè lên ứng dụng hiện có, rồi mở lại.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>Thư mục tải bản cập nhật</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>Dùng phòng yên tĩnh. Đo loa, phòng và micrô cùng nhau; kết quả bao gồm đáp tuyến micrô.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1767,39 +1767,39 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>Dùng vùng hệ thống</translation>
+      <translation>Dùng thiết lập vùng của hệ thống</translation>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>Cài đặt VB-CABLE</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>Nhấn giọng hát</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>Đang chờ micrô.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>Ấm</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>Độ ấm</translation>
     </message>
     <message>
       <source>Yes</source>
-      <translation type="unfinished" />
+      <translation>Có</translation>
     </message>
     <message>
       <source>Yes to All</source>
-      <translation type="unfinished" />
+      <translation>Có với tất cả</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>Giá trị 0 tắt từng hiệu ứng. Các hiệu ứng nghe này áp dụng cho âm thanh phát qua loa, không áp dụng cho hiệu chỉnh micrô.</translation>
     </message>
   </context>
 </TS>
