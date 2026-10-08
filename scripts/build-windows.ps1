@@ -138,7 +138,7 @@ try {
     }
     $ui.Refresh()
     Get-Content $uiLog -ErrorAction SilentlyContinue
-    foreach ($locale in @('de','fr','es','it','pt-PT','pt-BR','nl','pl','cs','sk','uk','ru','el','tr','sv','da','nb','fi','ro','hu','ar','he','fa','zh-Hans','zh-Hant','ja','ko','hi','id','vi','th','sw','qps-ploc','qps-rtl')) {
+    foreach ($locale in @('de','fr','es','it','pt-PT','pt-BR','nl','pl','cs','sk','uk','ru','el','tr','sv','da','nb','fi','ro','hu','nn','ar','he','fa','zh-Hans','zh-Hant','ja','ko','hi','id','vi','th','sw','qps-ploc','qps-rtl')) {
         $localizedLog = Join-Path $root "build-windows-native\localized-$locale.log"
         $localized = Start-Process "$stage\soundcurrent-eq.exe" -ArgumentList @('--localization-ui-test','--language',$locale) -PassThru -RedirectStandardError $localizedLog
         $null = $localized.Handle
