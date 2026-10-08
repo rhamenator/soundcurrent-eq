@@ -108,6 +108,9 @@ try {
     $env:QT_QPA_PLATFORM = 'offscreen'
     $env:QT_FORCE_STDERR_LOGGING = '1' # Capture Qt test failures from GUI-linked processes.
     foreach ($testName in @('soundcurrent-equipment-test', 'soundcurrent-processing-guard-test', 'soundcurrent-enhancement-test', 'soundcurrent-update-test','soundcurrent-spin-test','soundcurrent-localization-test','soundcurrent-startup-test')) {
+        # Text shaping needs system fonts. Qt's Windows offscreen plugin
+        # searches an unbundled lib/fonts directory instead of native fonts.
+        $env:QT_QPA_PLATFORM = if ($testName -eq 'soundcurrent-localization-test') { 'windows' } else { 'offscreen' }
         Copy-Item "build-windows-native\Release\$testName.exe" $stage
         $testArgs = @()
         if ($testName -eq 'soundcurrent-equipment-test') { $testArgs = @('--ui-self-test') }
@@ -124,6 +127,7 @@ try {
         Remove-Item $testLog
         Remove-Item "$stage\$testName.exe"
     }
+    $env:QT_QPA_PLATFORM = 'offscreen'
     $uiLog = Join-Path $root 'build-windows-native\ui-self-test.log'
     $ui = Start-Process "$stage\soundcurrent-eq.exe" -ArgumentList '--ui-self-test' -PassThru -RedirectStandardError $uiLog
     $null = $ui.Handle
