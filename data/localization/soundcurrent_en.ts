@@ -75,6 +75,10 @@ Import into your library?</translation>
       <translation>%1 disconnected. </translation>
     </message>
     <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>%1 failed (0x%2)</translation>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -267,6 +271,10 @@ Import into your library?</translation>
       <translation>Automatic (follow connected microphones)</translation>
     </message>
     <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Automatic audio routing unavailable</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Automatically shape a connected microphone; click to bypass the microphone EQ</translation>
     </message>
@@ -411,6 +419,10 @@ Import into your library?</translation>
     <message>
       <source>Center</source>
       <translation>Center</translation>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Change default audio endpoint</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -577,6 +589,10 @@ Import into your library?</translation>
       <translation>Could not write test tone</translation>
     </message>
     <message>
+      <source>Count audio endpoints</source>
+      <translation>Count audio endpoints</translation>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>Create profile</translation>
     </message>
@@ -603,6 +619,10 @@ Import into your library?</translation>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
       <translation>Drag curve points or tune the selected band below.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>Drain test playback</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
@@ -643,6 +663,14 @@ Import into your library?</translation>
     <message>
       <source>Electronic</source>
       <translation>Electronic</translation>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>Enumerate audio devices</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>Enumerate endpoints</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -909,6 +937,22 @@ Import into your library?</translation>
       <translation>Include preview releases</translation>
     </message>
     <message>
+      <source>Initialize audio capture</source>
+      <translation>Initialize audio capture</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>Initialize microphone recording</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>Initialize speaker output</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>Initialize test playback</translation>
+    </message>
+    <message>
       <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
       <translation>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</translation>
     </message>
@@ -1023,6 +1067,10 @@ Import into your library?</translation>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>Library exceeds 16 MiB.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>List audio endpoints</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -1256,8 +1304,44 @@ Import into your library?</translation>
       <translation>Open VB-CABLE control panel</translation>
     </message>
     <message>
+      <source>Open audio stream</source>
+      <translation>Open audio stream</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>Open cable capture stream</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>Open cable recording endpoint</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>Open endpoint</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>Open endpoint volume</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>Open microphone reader</translation>
+    </message>
+    <message>
       <source>Open release downloads</source>
       <translation>Open release downloads</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>Open speaker endpoint</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>Open speaker render stream</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>Open test playback writer</translation>
     </message>
     <message>
       <source>Open update folder</source>
@@ -1414,6 +1498,102 @@ Import into your library?</translation>
       <translation>R&amp;B</translation>
     </message>
     <message>
+      <source>Read audio endpoint</source>
+      <translation>Read audio endpoint</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>Read audio endpoint ID</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>Read audio endpoint name</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>Read audio endpoint properties</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>Read cable audio</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>Read cable capture interface</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>Read cable packet size</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Read default output ID</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Read default output endpoint</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>Read microphone mix format</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>Read microphone packet size</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>Read microphone samples</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>Read next cable packet size</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>Read next microphone packet</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>Read output buffer level</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>Read output level</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>Read output mute</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>Read speaker level</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>Read speaker mix format</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>Read speaker mute</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>Read speaker render interface</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>Read speaker volume</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>Read test playback padding</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>Read virtual output mix format</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Refresh devices</translation>
     </message>
@@ -1424,6 +1604,22 @@ Import into your library?</translation>
       <translation>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
 
 %1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>Release cable audio</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>Release microphone packet</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>Release speaker buffer</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>Release test playback</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
@@ -1584,6 +1780,18 @@ Import into your library?</translation>
       <translation>Separate quiet tones</translation>
     </message>
     <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>Set full speaker level for EQ</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>Set output level</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>Set output mute</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Settings &amp;&amp; calibration</translation>
     </message>
@@ -1602,6 +1810,18 @@ Import into your library?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Show peak markers on frequency levels</translation>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>Size capture buffer</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>Size output buffer</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>Size test playback buffer</translation>
     </message>
     <message>
       <source>Small Speakers</source>
@@ -1672,8 +1892,24 @@ Import into your library?</translation>
       <translation>Speaker type</translation>
     </message>
     <message>
+      <source>Start cable capture</source>
+      <translation>Start cable capture</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>Start microphone recording</translation>
+    </message>
+    <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>Start quiet. Raise only if the microphone cannot hear the tones.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>Start speaker output</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>Start test playback</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
@@ -1789,6 +2025,10 @@ Import into your library?</translation>
       <translation>Unlock controls and finish measurement before editing profiles.</translation>
     </message>
     <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>Unmute speaker for EQ</translation>
+    </message>
+    <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
       <translation>Unsupported equipment profile schema (expected 2).</translation>
     </message>
@@ -1860,6 +2100,14 @@ Import into your library?</translation>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>Windows audio COM unavailable</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Write speaker buffer</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>Write test playback</translation>
     </message>
     <message>
       <source>Yes</source>

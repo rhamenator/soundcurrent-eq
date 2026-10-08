@@ -75,6 +75,10 @@ Importera till ditt bibliotek?</translation>
       <translation>%1 frånkopplad. </translation>
     </message>
     <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>Åtgärden misslyckades: %1 (0x%2)</translation>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -267,6 +271,10 @@ Importera till ditt bibliotek?</translation>
       <translation>Automatiskt (följ anslutna mikrofoner)</translation>
     </message>
     <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Automatisk ljudroutning är inte tillgänglig</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Forma en ansluten mikrofons ljud automatiskt; klicka för att förbigå mikrofonens EQ</translation>
     </message>
@@ -411,6 +419,10 @@ Importera till ditt bibliotek?</translation>
     <message>
       <source>Center</source>
       <translation>Mitten</translation>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Ändra standardljudslutpunkt</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -577,6 +589,10 @@ Importera till ditt bibliotek?</translation>
       <translation>Kunde inte skriva testtonen</translation>
     </message>
     <message>
+      <source>Count audio endpoints</source>
+      <translation>Räkna ljudslutpunkter</translation>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>Skapa profil</translation>
     </message>
@@ -603,6 +619,10 @@ Importera till ditt bibliotek?</translation>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
       <translation>Dra kurvans punkter eller justera det valda bandet nedan.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>Slutföra uppspelning av testljud</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
@@ -643,6 +663,14 @@ Importera till ditt bibliotek?</translation>
     <message>
       <source>Electronic</source>
       <translation>Elektronisk musik</translation>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>Lista ljudenheter</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>Lista slutpunkter</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -909,6 +937,22 @@ Importera till ditt bibliotek?</translation>
       <translation>Inkludera förhandsversioner</translation>
     </message>
     <message>
+      <source>Initialize audio capture</source>
+      <translation>Initiera ljudinsamling</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>Initiera mikrofoninspelning</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>Initiera högtalarutgång</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>Initiera uppspelning av testljud</translation>
+    </message>
+    <message>
       <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
       <translation>Installera SoundCurrent Audio via inställningen av ljuddrivrutinen och öppna sedan appen igen för att aktivera mikrofonens ljudväg.</translation>
     </message>
@@ -1023,6 +1067,10 @@ Importera till ditt bibliotek?</translation>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>Biblioteket överstiger 16 MiB.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>Hämta lista över ljudslutpunkter</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -1256,8 +1304,44 @@ Importera till ditt bibliotek?</translation>
       <translation>Öppna VB-CABLE-kontrollpanelen</translation>
     </message>
     <message>
+      <source>Open audio stream</source>
+      <translation>Öppna ljudström</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>Öppna den virtuella kabelns insamlingsström</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>Öppna den virtuella kabelns inspelningsslutpunkt</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>Öppna slutpunkt</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>Öppna slutpunktens volymgränssnitt</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>Öppna mikrofonens läsgränssnitt</translation>
+    </message>
+    <message>
       <source>Open release downloads</source>
       <translation>Öppna versionshämtningar</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>Öppna högtalarslutpunkt</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>Öppna högtalarnas uppspelningsström</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>Öppna testljudets skrivgränssnitt</translation>
     </message>
     <message>
       <source>Open update folder</source>
@@ -1414,6 +1498,102 @@ Importera till ditt bibliotek?</translation>
       <translation>R&amp;B</translation>
     </message>
     <message>
+      <source>Read audio endpoint</source>
+      <translation>Läsa ljudslutpunkt</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>Läsa ljudslutpunktens ID</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>Läsa ljudslutpunktens namn</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>Läsa ljudslutpunktens egenskaper</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>Läsa den virtuella kabelns ljud</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>Hämta den virtuella kabelns insamlingsgränssnitt</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>Läsa den virtuella kabelns paketstorlek</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Läsa standardutgångens ID</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Läsa standardutgångens slutpunkt</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>Läsa mikrofonens mixformat</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>Läsa mikrofonens paketstorlek</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>Läsa mikrofonens sampel</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>Läsa storleken på den virtuella kabelns nästa paket</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>Läsa nästa mikrofonpaket</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>Läsa utgångsbuffertens fyllnadsnivå</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>Läsa utgångsnivå</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>Läsa utgångens tystningsstatus</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>Läsa högtalarnivå</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>Läsa högtalarnas mixformat</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>Läsa högtalarnas tystningsstatus</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>Hämta högtalarnas uppspelningsgränssnitt</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>Läsa högtalarvolym</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>Läsa antalet buffrade ljudramar för testuppspelning</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>Läsa den virtuella utgångens mixformat</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Uppdatera enheter</translation>
     </message>
@@ -1424,6 +1604,22 @@ Importera till ditt bibliotek?</translation>
       <translation>Relativa mätningar omfattar högtalarnas, rummets och mikrofonens frekvensgång. Föreslagna ändringar begränsas till 3 dB per uppmätt frekvens.
 
 %1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>Frigöra den virtuella kabelns ljudpaket</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>Frigöra mikrofonpaket</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>Frigöra högtalarbuffert</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>Frigöra buffert för testuppspelning</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
@@ -1584,6 +1780,18 @@ Importera till ditt bibliotek?</translation>
       <translation>Separata tysta toner</translation>
     </message>
     <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>Ställa in full högtalarnivå för equalizern</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>Ställa in utgångsnivå</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>Ställa in utgångens tystningsstatus</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Inställningar &amp;&amp; kalibrering</translation>
     </message>
@@ -1602,6 +1810,18 @@ Importera till ditt bibliotek?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Visa toppmarkörer på frekvensnivåerna</translation>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>Bestämma insamlingsbuffertens storlek</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>Bestämma utgångsbuffertens storlek</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>Bestämma testuppspelningsbuffertens storlek</translation>
     </message>
     <message>
       <source>Small Speakers</source>
@@ -1672,8 +1892,24 @@ Importera till ditt bibliotek?</translation>
       <translation>Högtalartyp</translation>
     </message>
     <message>
+      <source>Start cable capture</source>
+      <translation>Starta den virtuella kabelns ljudinsamling</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>Starta mikrofoninspelning</translation>
+    </message>
+    <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>Börja tyst. Höj bara om mikrofonen inte kan uppfatta tonerna.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>Starta högtalarutgång</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>Starta uppspelning av testljud</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
@@ -1789,6 +2025,10 @@ Importera till ditt bibliotek?</translation>
       <translation>Lås upp reglagen och avsluta mätningen innan du redigerar profiler.</translation>
     </message>
     <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>Slå på högtalarljudet för equalizern</translation>
+    </message>
+    <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
       <translation>Utrustningsprofilens schema stöds inte (förväntat: 2).</translation>
     </message>
@@ -1860,6 +2100,14 @@ Importera till ditt bibliotek?</translation>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>COM för Windows-ljud är inte tillgängligt</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Skriva till högtalarbufferten</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>Skriva testljud för uppspelning</translation>
     </message>
     <message>
       <source>Yes</source>

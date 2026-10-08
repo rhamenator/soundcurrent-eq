@@ -75,6 +75,10 @@ Import into your library?</source>
       <translation>%1 が切断されました。 </translation>
     </message>
     <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>操作に失敗しました：%1 (0x%2)</translation>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -267,6 +271,10 @@ Import into your library?</source>
       <translation>自動（接続されたマイクに追従）</translation>
     </message>
     <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>自動オーディオルーティングは利用できません</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>接続されたマイクの音質を自動補正します。クリックするとマイク EQ をバイパスします</translation>
     </message>
@@ -411,6 +419,10 @@ Import into your library?</source>
     <message>
       <source>Center</source>
       <translation>中央</translation>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>既定のオーディオエンドポイントの変更</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -577,6 +589,10 @@ Import into your library?</source>
       <translation>テストトーンを書き込めませんでした</translation>
     </message>
     <message>
+      <source>Count audio endpoints</source>
+      <translation>オーディオエンドポイント数の取得</translation>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>プロファイルを作成</translation>
     </message>
@@ -603,6 +619,10 @@ Import into your library?</source>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
       <translation>カーブ上の点をドラッグするか、下の選択したバンドを調整してください。</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>テスト再生の完了待ち</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
@@ -643,6 +663,14 @@ Import into your library?</source>
     <message>
       <source>Electronic</source>
       <translation>エレクトロニック</translation>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>オーディオデバイスの列挙</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>エンドポイントの列挙</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -909,6 +937,22 @@ Import into your library?</source>
       <translation>プレビューリリースを含める</translation>
     </message>
     <message>
+      <source>Initialize audio capture</source>
+      <translation>オーディオキャプチャの初期化</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>マイク録音の初期化</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>スピーカー出力の初期化</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>テスト再生の初期化</translation>
+    </message>
+    <message>
       <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
       <translation>オーディオドライバーのセットアップから SoundCurrent Audio をインストールし、アプリを開き直してマイクの音声経路を有効にしてください。</translation>
     </message>
@@ -1023,6 +1067,10 @@ Import into your library?</source>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>ライブラリが 16 MiB を超えています。</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>オーディオエンドポイント一覧の取得</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -1256,8 +1304,44 @@ Import into your library?</source>
       <translation>VB-CABLE コントロールパネルを開く</translation>
     </message>
     <message>
+      <source>Open audio stream</source>
+      <translation>オーディオストリームのオープン</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>仮想ケーブルのキャプチャストリームのオープン</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>仮想ケーブルの録音エンドポイントのオープン</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>エンドポイントのオープン</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>エンドポイント音量インターフェースのオープン</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>マイク読み取りインターフェースのオープン</translation>
+    </message>
+    <message>
       <source>Open release downloads</source>
       <translation>リリースのダウンロードページを開く</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>スピーカーエンドポイントのオープン</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>スピーカー再生ストリームのオープン</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>テスト再生書き込みインターフェースのオープン</translation>
     </message>
     <message>
       <source>Open update folder</source>
@@ -1414,6 +1498,102 @@ Import into your library?</source>
       <translation>R&amp;B</translation>
     </message>
     <message>
+      <source>Read audio endpoint</source>
+      <translation>オーディオエンドポイントの読み取り</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>オーディオエンドポイントIDの読み取り</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>オーディオエンドポイント名の読み取り</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>オーディオエンドポイントのプロパティの読み取り</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>仮想ケーブルのオーディオの読み取り</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>仮想ケーブルのキャプチャインターフェースの取得</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>仮想ケーブルのパケットサイズの読み取り</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>既定の出力IDの読み取り</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>既定の出力エンドポイントの読み取り</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>マイクのミックスフォーマットの読み取り</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>マイクのパケットサイズの読み取り</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>マイクのサンプル値の読み取り</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>仮想ケーブルの次のパケットサイズの読み取り</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>次のマイクパケットの読み取り</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>出力バッファの使用量の読み取り</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>出力レベルの読み取り</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>出力のミュート状態の読み取り</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>スピーカーレベルの読み取り</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>スピーカーのミックスフォーマットの読み取り</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>スピーカーのミュート状態の読み取り</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>スピーカー再生インターフェースの取得</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>スピーカー音量の読み取り</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>テスト再生でバッファに格納されたオーディオフレーム数の読み取り</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>仮想出力のミックスフォーマットの読み取り</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>デバイスを再検出</translation>
     </message>
@@ -1424,6 +1604,22 @@ Import into your library?</source>
       <translation>相対測定には、スピーカー、部屋、マイクの周波数特性が含まれます。提案される変更は、各測定周波数で 3 dB 以内に制限されます。
 
 %1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>仮想ケーブルのオーディオパケットの解放</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>マイクパケットの解放</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>スピーカーバッファの解放</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>テスト再生バッファの解放</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
@@ -1584,6 +1780,18 @@ Import into your library?</source>
       <translation>個別の低音量トーン</translation>
     </message>
     <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>イコライザー用にスピーカーレベルを最大に設定</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>出力レベルの設定</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>出力のミュート状態の設定</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>設定 &amp;&amp; キャリブレーション</translation>
     </message>
@@ -1602,6 +1810,18 @@ Import into your library?</source>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>周波数ごとのレベルにピークマーカーを表示</translation>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>キャプチャバッファサイズの取得</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>出力バッファサイズの取得</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>テスト再生バッファサイズの取得</translation>
     </message>
     <message>
       <source>Small Speakers</source>
@@ -1672,8 +1892,24 @@ Import into your library?</source>
       <translation>スピーカーの種類</translation>
     </message>
     <message>
+      <source>Start cable capture</source>
+      <translation>仮想ケーブルのオーディオキャプチャの開始</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>マイク録音の開始</translation>
+    </message>
+    <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>低音量から始めてください。マイクがトーンを拾えない場合だけ、レベルを上げてください。</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>スピーカー出力の開始</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>テスト再生の開始</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
@@ -1789,6 +2025,10 @@ Import into your library?</source>
       <translation>プロファイルを編集する前に、コントロールのロックを解除して測定を終了してください。</translation>
     </message>
     <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>イコライザー用にスピーカーのミュートを解除</translation>
+    </message>
+    <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
       <translation>対応していない機器プロファイルのスキーマです（必要なバージョンは 2）。</translation>
     </message>
@@ -1860,6 +2100,14 @@ Import into your library?</source>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>Windows オーディオ COM を利用できません</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>スピーカーバッファへの書き込み</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>再生用テストオーディオの書き込み</translation>
     </message>
     <message>
       <source>Yes</source>

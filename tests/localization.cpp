@@ -255,6 +255,14 @@ int main(int argc,char **argv){
     const auto mapped=audioErrorText(QString::fromUtf8(source));
     require(mapped==text(source)&&mapped!=QString::fromUtf8(source),"Backend literal diagnostic was not localized");
    }
+   for(const char *action:{"Read speaker level","Read output buffer level","Read microphone samples","Release test playback"}) {
+    const auto translated=text(action);
+    require(translated!=QString::fromUtf8(action),"Backend operation fell back to English");
+    const auto expected=text("%1 failed (0x%2)").arg(translated,QStringLiteral("AbCd1234"));
+    const auto raw=QString::fromUtf8(action)+QStringLiteral(" failed (0xAbCd1234)");
+    require(audioErrorText(raw)==expected,"Compiled catalog operation or HRESULT mapping failed");
+    require(expected.contains(QStringLiteral("0xAbCd1234")),"HRESULT changed during translation");
+   }
    require(audioErrorText(QString::fromUtf8("Driver diagnostic 0x80070005 / Ω"))==QString::fromUtf8("Driver diagnostic 0x80070005 / Ω"),"Unknown backend detail changed");
    for(const char *source:{"Selected speakers are disconnected","Audio bridge did not start","Install the Windows audio route using Audio driver setup, then reopen the app."}) {
     const auto translated=text(source);

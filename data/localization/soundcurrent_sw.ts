@@ -75,6 +75,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>%1 imekatishwa. </translation>
     </message>
     <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>Operesheni imeshindwa: %1 (0x%2)</translation>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -267,6 +271,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Kiotomatiki (fuata maikrofoni zilizounganishwa)</translation>
     </message>
     <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Uelekezaji wa sauti kiotomatiki haupatikani</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Rekebisha sauti ya maikrofoni iliyounganishwa kiotomatiki; bofya ili kupita EQ ya maikrofoni</translation>
     </message>
@@ -411,6 +419,10 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Center</source>
       <translation>Katikati</translation>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Kubadilisha sehemu ya mwisho ya sauti chaguomsingi</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -577,6 +589,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Haikuwezekana kuandika toni ya majaribio</translation>
     </message>
     <message>
+      <source>Count audio endpoints</source>
+      <translation>Kuhesabu sehemu za mwisho za sauti</translation>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>Unda wasifu</translation>
     </message>
@@ -603,6 +619,10 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
       <translation>Buruta nukta za mkunjo au rekebisha bendi iliyochaguliwa hapa chini.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>Kukamilisha uchezaji wa majaribio</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
@@ -643,6 +663,14 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Electronic</source>
       <translation>Muziki wa elektroniki</translation>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>Kuorodhesha vifaa vya sauti</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>Kuorodhesha sehemu za mwisho</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -909,6 +937,22 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Jumuisha matoleo ya hakikisho</translation>
     </message>
     <message>
+      <source>Initialize audio capture</source>
+      <translation>Kuandaa kunasa sauti</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>Kuandaa kurekodi maikrofoni</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>Kuandaa toleo la spika</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>Kuandaa uchezaji wa majaribio</translation>
+    </message>
+    <message>
       <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
       <translation>Sakinisha SoundCurrent Audio kupitia usanidi wa kiendeshi cha sauti, kisha ufungue programu tena ili kuwasha njia ya maikrofoni.</translation>
     </message>
@@ -1023,6 +1067,10 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>Maktaba inazidi 16 MiB.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>Kupata orodha ya sehemu za mwisho za sauti</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -1256,8 +1304,44 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Fungua paneli ya udhibiti ya VB-CABLE</translation>
     </message>
     <message>
+      <source>Open audio stream</source>
+      <translation>Kufungua mtiririko wa sauti</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>Kufungua mtiririko wa kunasa sauti wa kebo pepe</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>Kufungua sehemu ya mwisho ya kurekodi ya kebo pepe</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>Kufungua sehemu ya mwisho</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>Kufungua kiolesura cha kiasi cha sauti cha sehemu ya mwisho</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>Kufungua kiolesura cha kusoma maikrofoni</translation>
+    </message>
+    <message>
       <source>Open release downloads</source>
       <translation>Fungua vipakuliwa vya matoleo</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>Kufungua sehemu ya mwisho ya spika</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>Kufungua mtiririko wa uchezaji wa spika</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>Kufungua kiolesura cha kuandika sauti ya majaribio</translation>
     </message>
     <message>
       <source>Open update folder</source>
@@ -1414,6 +1498,102 @@ Uingize kwenye maktaba yako?</translation>
       <translation>R&amp;B</translation>
     </message>
     <message>
+      <source>Read audio endpoint</source>
+      <translation>Kusoma sehemu ya mwisho ya sauti</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>Kusoma kitambulisho cha sehemu ya mwisho ya sauti</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>Kusoma jina la sehemu ya mwisho ya sauti</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>Kusoma sifa za sehemu ya mwisho ya sauti</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>Kusoma sauti ya kebo pepe</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>Kupata kiolesura cha kunasa sauti cha kebo pepe</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>Kusoma ukubwa wa pakiti ya kebo pepe</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Kusoma kitambulisho cha toleo chaguomsingi</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Kusoma sehemu ya mwisho ya toleo chaguomsingi</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>Kusoma umbizo la kuchanganya sauti la maikrofoni</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>Kusoma ukubwa wa pakiti ya maikrofoni</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>Kusoma thamani za sampuli za maikrofoni</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>Kusoma ukubwa wa pakiti inayofuata ya kebo pepe</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>Kusoma pakiti inayofuata ya maikrofoni</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>Kusoma kiwango cha ujazo wa bafa ya toleo</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>Kusoma kiwango cha toleo</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>Kusoma hali ya kunyamazishwa kwa toleo</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>Kusoma kiwango cha spika</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>Kusoma umbizo la kuchanganya sauti la spika</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>Kusoma hali ya kunyamazishwa kwa spika</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>Kupata kiolesura cha uchezaji wa spika</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>Kusoma kiasi cha sauti cha spika</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>Kusoma idadi ya fremu za sauti katika bafa ya uchezaji wa majaribio</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>Kusoma umbizo la kuchanganya sauti la toleo pepe</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Onyesha vifaa upya</translation>
     </message>
@@ -1424,6 +1604,22 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Vipimo vya kiasi vinajumuisha mwitikio wa spika, chumba na maikrofoni. Mabadiliko yaliyopendekezwa yamewekewa kikomo cha 3 dB kwa kila masafa yaliyopimwa.
 
 %1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>Kuachilia pakiti ya sauti ya kebo pepe</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>Kuachilia pakiti ya maikrofoni</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>Kuachilia bafa ya spika</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>Kuachilia bafa ya uchezaji wa majaribio</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
@@ -1584,6 +1780,18 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Toni hafifu tofauti</translation>
     </message>
     <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>Kuweka kiwango cha spika kuwa cha juu zaidi kwa kisawazishi</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>Kuweka kiwango cha toleo</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>Kuweka hali ya kunyamazishwa kwa toleo</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Mipangilio &amp;&amp; urekebishaji</translation>
     </message>
@@ -1602,6 +1810,18 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Onyesha alama za kilele kwenye viwango vya masafa</translation>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>Kubaini ukubwa wa bafa ya kunasa sauti</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>Kubaini ukubwa wa bafa ya toleo</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>Kubaini ukubwa wa bafa ya uchezaji wa majaribio</translation>
     </message>
     <message>
       <source>Small Speakers</source>
@@ -1672,8 +1892,24 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Aina ya spika</translation>
     </message>
     <message>
+      <source>Start cable capture</source>
+      <translation>Kuanza kunasa sauti ya kebo pepe</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>Kuanza kurekodi maikrofoni</translation>
+    </message>
+    <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>Anza kwa sauti hafifu. Ongeza tu ikiwa maikrofoni haiwezi kusikia toni.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>Kuanza toleo la spika</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>Kuanza uchezaji wa majaribio</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
@@ -1789,6 +2025,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Fungua vidhibiti na ukamilishe kipimo kabla ya kuhariri wasifu.</translation>
     </message>
     <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>Kuondoa kunyamazishwa kwa spika kwa kisawazishi</translation>
+    </message>
+    <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
       <translation>Muundo wa wasifu wa kifaa hautumiki (unatarajiwa 2).</translation>
     </message>
@@ -1860,6 +2100,14 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>COM ya sauti ya Windows haipatikani</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Kuandika kwenye bafa ya spika</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>Kuandika sauti ya majaribio kwa uchezaji</translation>
     </message>
     <message>
       <source>Yes</source>

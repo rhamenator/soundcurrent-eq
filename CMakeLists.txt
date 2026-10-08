@@ -222,3 +222,9 @@ if(TARGET soundcurrent-eq)
     add_test(NAME translation-catalogs COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/localization.py --check)
   endif()
 endif()
+
+# Desktop error translation is independent of a running audio backend.
+add_executable(soundcurrent-backend-error-text-test tests/backend_error_text.cpp)
+target_include_directories(soundcurrent-backend-error-text-test PRIVATE src)
+target_link_libraries(soundcurrent-backend-error-text-test PRIVATE Qt6::Core)
+add_test(NAME backend-error-text COMMAND soundcurrent-backend-error-text-test)

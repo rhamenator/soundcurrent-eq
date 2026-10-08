@@ -75,6 +75,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>%1 bağlantısı kesildi. </translation>
     </message>
     <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>İşlem başarısız: %1 (0x%2)</translation>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -267,6 +271,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Otomatik (bağlı mikrofonlara göre)</translation>
     </message>
     <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Otomatik ses yönlendirmesi kullanılamıyor</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Bağlı mikrofonun sesini otomatik düzeltin; mikrofon EQ'sunu atlamak için tıklayın</translation>
     </message>
@@ -411,6 +419,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Center</source>
       <translation>Orta</translation>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Varsayılan ses uç noktasını değiştirme</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -577,6 +589,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Test tonu yazılamadı</translation>
     </message>
     <message>
+      <source>Count audio endpoints</source>
+      <translation>Ses uç noktalarını sayma</translation>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>Profil oluştur</translation>
     </message>
@@ -603,6 +619,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
       <translation>Eğri noktalarını sürükleyin veya seçili bandı aşağıda ayarlayın.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>Test sesi oynatımını tamamlama</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
@@ -643,6 +663,14 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Electronic</source>
       <translation>Elektronik müzik</translation>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>Ses aygıtlarını listeleme</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>Uç noktaları listeleme</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -909,6 +937,22 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Önizleme sürümlerini dâhil et</translation>
     </message>
     <message>
+      <source>Initialize audio capture</source>
+      <translation>Ses yakalamayı başlatmaya hazırlama</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>Mikrofon kaydını başlatmaya hazırlama</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>Hoparlör çıkışını başlatmaya hazırlama</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>Test sesi oynatımını başlatmaya hazırlama</translation>
+    </message>
+    <message>
       <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
       <translation>Ses sürücüsü kurulumu üzerinden SoundCurrent Audio’yu yükleyin, ardından mikrofon yolunu etkinleştirmek için uygulamayı yeniden açın.</translation>
     </message>
@@ -1023,6 +1067,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>Kitaplık 16 MiB sınırını aşıyor.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>Ses uç noktalarının listesini alma</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -1256,8 +1304,44 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>VB-CABLE denetim masasını aç</translation>
     </message>
     <message>
+      <source>Open audio stream</source>
+      <translation>Ses akışını açma</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>Sanal kablonun yakalama akışını açma</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>Sanal kablonun kayıt uç noktasını açma</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>Uç noktayı açma</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>Uç noktanın ses düzeyi arayüzünü açma</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>Mikrofon okuma arayüzünü açma</translation>
+    </message>
+    <message>
       <source>Open release downloads</source>
       <translation>Sürüm indirmelerini aç</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>Hoparlör uç noktasını açma</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>Hoparlör oynatma akışını açma</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>Test sesi yazma arayüzünü açma</translation>
     </message>
     <message>
       <source>Open update folder</source>
@@ -1414,6 +1498,102 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>R&amp;B</translation>
     </message>
     <message>
+      <source>Read audio endpoint</source>
+      <translation>Ses uç noktasını okuma</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>Ses uç noktası kimliğini okuma</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>Ses uç noktası adını okuma</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>Ses uç noktası özelliklerini okuma</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>Sanal kablonun sesini okuma</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>Sanal kablonun yakalama arayüzünü alma</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>Sanal kablonun paket boyutunu okuma</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Varsayılan çıkış kimliğini okuma</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Varsayılan çıkış uç noktasını okuma</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>Mikrofon karıştırma biçimini okuma</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>Mikrofon paket boyutunu okuma</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>Mikrofon örneklerini okuma</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>Sanal kablonun sonraki paket boyutunu okuma</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>Sonraki mikrofon paketini okuma</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>Çıkış tamponunun doluluk düzeyini okuma</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>Çıkış düzeyini okuma</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>Çıkışın sessize alınma durumunu okuma</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>Hoparlör düzeyini okuma</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>Hoparlör karıştırma biçimini okuma</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>Hoparlörün sessize alınma durumunu okuma</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>Hoparlör oynatma arayüzünü alma</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>Hoparlör ses düzeyini okuma</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>Tampondaki test sesi çerçevelerinin sayısını okuma</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>Sanal çıkışın karıştırma biçimini okuma</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Cihazları yenile</translation>
     </message>
@@ -1424,6 +1604,22 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Göreli ölçümler hoparlör, oda ve mikrofon yanıtını içerir. Önerilen değişiklikler ölçülen her frekansta 3 dB ile sınırlıdır.
 
 %1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>Sanal kablonun ses paketini serbest bırakma</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>Mikrofon paketini serbest bırakma</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>Hoparlör tamponunu serbest bırakma</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>Test sesi oynatma tamponunu serbest bırakma</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
@@ -1584,6 +1780,18 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Ayrı düşük seviyeli tonlar</translation>
     </message>
     <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>Ekolayzır için hoparlör düzeyini en yükseğe ayarlama</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>Çıkış düzeyini ayarlama</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>Çıkışın sessize alınma durumunu ayarlama</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Ayarlar &amp;&amp; kalibrasyon</translation>
     </message>
@@ -1602,6 +1810,18 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Frekans seviyelerinde tepe işaretlerini göster</translation>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>Yakalama tamponunun boyutunu belirleme</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>Çıkış tamponunun boyutunu belirleme</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>Test sesi oynatma tamponunun boyutunu belirleme</translation>
     </message>
     <message>
       <source>Small Speakers</source>
@@ -1672,8 +1892,24 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Hoparlör türü</translation>
     </message>
     <message>
+      <source>Start cable capture</source>
+      <translation>Sanal kablodan ses yakalamayı başlatma</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>Mikrofon kaydını başlatma</translation>
+    </message>
+    <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>Düşük seviyede başlayın. Yalnızca mikrofon tonları duyamıyorsa yükseltin.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>Hoparlör çıkışını başlatma</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>Test sesi oynatımını başlatma</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
@@ -1789,6 +2025,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Profilleri düzenlemeden önce kontrollerin kilidini açın ve ölçümü bitirin.</translation>
     </message>
     <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>Ekolayzır için hoparlörün sesini açma</translation>
+    </message>
+    <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
       <translation>Desteklenmeyen ekipman profili şeması (beklenen 2).</translation>
     </message>
@@ -1860,6 +2100,14 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>Windows ses COM sistemi kullanılamıyor</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Hoparlör tamponuna yazma</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>Oynatılacak test sesini yazma</translation>
     </message>
     <message>
       <source>Yes</source>

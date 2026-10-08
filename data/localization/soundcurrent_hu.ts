@@ -75,6 +75,10 @@ Importálja a könyvtárba?</translation>
       <translation>%1 leválasztva. </translation>
     </message>
     <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>A művelet sikertelen: %1 (0x%2)</translation>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -267,6 +271,10 @@ Importálja a könyvtárba?</translation>
       <translation>Automatikus (csatlakoztatott mikrofonok követése)</translation>
     </message>
     <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Az automatikus hangútválasztás nem érhető el</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Csatlakoztatott mikrofon hangjának automatikus formálása; kattintson a mikrofon-EQ megkerüléséhez</translation>
     </message>
@@ -411,6 +419,10 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Center</source>
       <translation>Közép</translation>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Az alapértelmezett hangvégpont módosítása</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -577,6 +589,10 @@ Importálja a könyvtárba?</translation>
       <translation>Nem írható ki a teszthang</translation>
     </message>
     <message>
+      <source>Count audio endpoints</source>
+      <translation>A hangvégpontok megszámlálása</translation>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>Profil létrehozása</translation>
     </message>
@@ -603,6 +619,10 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
       <translation>Húzza a görbe pontjait, vagy állítsa a kiválasztott sávot alább.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>A tesztlejátszás befejezése</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
@@ -643,6 +663,14 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Electronic</source>
       <translation>Elektronikus</translation>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>A hangeszközök felsorolása</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>A végpontok felsorolása</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -909,6 +937,22 @@ Importálja a könyvtárba?</translation>
       <translation>Előzetes kiadások megjelenítése</translation>
     </message>
     <message>
+      <source>Initialize audio capture</source>
+      <translation>A hangrögzítés inicializálása</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>A mikrofonfelvétel inicializálása</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>A hangszórókimenet inicializálása</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>A tesztlejátszás inicializálása</translation>
+    </message>
+    <message>
       <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
       <translation>Telepítse a SoundCurrent Audio összetevőt a hangillesztőprogram beállításával, majd nyissa meg újra az alkalmazást a mikrofon hangútjának engedélyezéséhez.</translation>
     </message>
@@ -1023,6 +1067,10 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>A könyvtár meghaladja a 16 MiB-ot.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>A hangvégpontok listájának lekérése</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -1256,8 +1304,44 @@ Importálja a könyvtárba?</translation>
       <translation>VB-CABLE vezérlőpult megnyitása</translation>
     </message>
     <message>
+      <source>Open audio stream</source>
+      <translation>A hangfolyam megnyitása</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>A virtuális kábel rögzítési adatfolyamának megnyitása</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>A virtuális kábel felvételi végpontjának megnyitása</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>A végpont megnyitása</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>A végpont hangerőszabályzó interfészének megnyitása</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>A mikrofon olvasási interfészének megnyitása</translation>
+    </message>
+    <message>
       <source>Open release downloads</source>
       <translation>Kiadásletöltések megnyitása</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>A hangszóróvégpont megnyitása</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>A hangszórók lejátszási adatfolyamának megnyitása</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>A tesztlejátszás írási interfészének megnyitása</translation>
     </message>
     <message>
       <source>Open update folder</source>
@@ -1414,6 +1498,102 @@ Importálja a könyvtárba?</translation>
       <translation>R&amp;B</translation>
     </message>
     <message>
+      <source>Read audio endpoint</source>
+      <translation>A hangvégpont olvasása</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>A hangvégpont azonosítójának olvasása</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>A hangvégpont nevének olvasása</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>A hangvégpont tulajdonságainak olvasása</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>A virtuális kábel hangadatainak olvasása</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>A virtuális kábel rögzítési interfészének lekérése</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>A virtuális kábel csomagméretének olvasása</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Az alapértelmezett kimenet azonosítójának olvasása</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Az alapértelmezett kimeneti végpont olvasása</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>A mikrofon keverési formátumának olvasása</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>A mikrofon csomagméretének olvasása</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>A mikrofon hangmintáinak olvasása</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>A virtuális kábel következő csomagméretének olvasása</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>A következő mikrofoncsomag olvasása</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>A kimeneti puffer telítettségének olvasása</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>A kimeneti szint olvasása</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>A kimenet némítási állapotának olvasása</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>A hangszórószint olvasása</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>A hangszórók keverési formátumának olvasása</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>A hangszórók némítási állapotának olvasása</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>A hangszórók lejátszási interfészének lekérése</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>A hangszórók hangerejének olvasása</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>A tesztlejátszáshoz pufferelt hangkeretek számának olvasása</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>A virtuális kimenet keverési formátumának olvasása</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Eszközök frissítése</translation>
     </message>
@@ -1424,6 +1604,22 @@ Importálja a könyvtárba?</translation>
       <translation>A relatív mérések tartalmazzák a hangsugárzó, a szoba és a mikrofon frekvenciamenetét. A javasolt módosítások mért frekvenciánként legfeljebb 3 dB-esek.
 
 %1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>A virtuális kábel hangcsomagjának felszabadítása</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>A mikrofoncsomag felszabadítása</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>A hangszórópuffer felszabadítása</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>A tesztlejátszás pufferének felszabadítása</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
@@ -1584,6 +1780,18 @@ Importálja a könyvtárba?</translation>
       <translation>Különálló halk hangok</translation>
     </message>
     <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>A hangszórószint maximumra állítása a hangszínszabályzóhoz</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>A kimeneti szint beállítása</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>A kimenet némítási állapotának beállítása</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Beállítások &amp;&amp; kalibráció</translation>
     </message>
@@ -1602,6 +1810,18 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Csúcsjelölők megjelenítése a frekvenciaszinteken</translation>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>A rögzítési puffer méretének meghatározása</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>A kimeneti puffer méretének meghatározása</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>A tesztlejátszási puffer méretének meghatározása</translation>
     </message>
     <message>
       <source>Small Speakers</source>
@@ -1672,8 +1892,24 @@ Importálja a könyvtárba?</translation>
       <translation>Hangsugárzó típusa</translation>
     </message>
     <message>
+      <source>Start cable capture</source>
+      <translation>A virtuális kábel hangrögzítésének indítása</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>A mikrofonfelvétel indítása</translation>
+    </message>
+    <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>Kezdje halkan. Csak akkor emelje a szintet, ha a mikrofon nem hallja a hangokat.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>A hangszórókimenet indítása</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>A tesztlejátszás indítása</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
@@ -1789,6 +2025,10 @@ Importálja a könyvtárba?</translation>
       <translation>Oldja fel a vezérlőket és fejezze be a mérést profilok szerkesztése előtt.</translation>
     </message>
     <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>A hangszórók némításának feloldása a hangszínszabályzóhoz</translation>
+    </message>
+    <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
       <translation>Nem támogatott eszközprofil-séma (elvárt: 2).</translation>
     </message>
@@ -1860,6 +2100,14 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>A Windows hang COM rendszere nem érhető el</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Írás a hangszórópufferbe</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>A teszthang írása lejátszáshoz</translation>
     </message>
     <message>
       <source>Yes</source>

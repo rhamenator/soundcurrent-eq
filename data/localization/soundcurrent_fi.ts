@@ -75,6 +75,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>%1 irrotettu. </translation>
     </message>
     <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>Toiminto epäonnistui: %1 (0x%2)</translation>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -267,6 +271,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>Automaattinen (seuraa liitettyjä mikrofoneja)</translation>
     </message>
     <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Automaattinen äänen reititys ei ole käytettävissä</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Muokkaa liitetyn mikrofonin ääntä automaattisesti; ohita mikrofonin taajuuskorjaus napsauttamalla</translation>
     </message>
@@ -411,6 +419,10 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Center</source>
       <translation>Keskellä</translation>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Oletusäänipäätepisteen vaihtaminen</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -577,6 +589,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>Testiääntä ei voitu kirjoittaa</translation>
     </message>
     <message>
+      <source>Count audio endpoints</source>
+      <translation>Äänipäätepisteiden laskeminen</translation>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>Luo profiili</translation>
     </message>
@@ -603,6 +619,10 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
       <translation>Vedä käyrän pisteitä tai säädä valittua kaistaa alla.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>Testitoiston loppuun saattaminen</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
@@ -643,6 +663,14 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Electronic</source>
       <translation>Elektroninen</translation>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>Äänilaitteiden luetteleminen</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>Päätepisteiden luetteleminen</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -909,6 +937,22 @@ Tuodaanko kirjastoon?</translation>
       <translation>Sisällytä esiversiot</translation>
     </message>
     <message>
+      <source>Initialize audio capture</source>
+      <translation>Äänen kaappauksen alustaminen</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>Mikrofonitallennuksen alustaminen</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>Kaiutinulostulon alustaminen</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>Testitoiston alustaminen</translation>
+    </message>
+    <message>
       <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
       <translation>Asenna SoundCurrent Audio ääniohjaimen asennustoiminnolla ja avaa sitten sovellus uudelleen mikrofonin äänireitin ottamiseksi käyttöön.</translation>
     </message>
@@ -1023,6 +1067,10 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>Kirjasto on suurempi kuin 16 MiB.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>Äänipäätepisteluettelon hakeminen</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -1256,8 +1304,44 @@ Tuodaanko kirjastoon?</translation>
       <translation>Avaa VB-CABLE-ohjauspaneeli</translation>
     </message>
     <message>
+      <source>Open audio stream</source>
+      <translation>Äänivirran avaaminen</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>Virtuaalikaapelin kaappausvirran avaaminen</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>Virtuaalikaapelin tallennuspäätepisteen avaaminen</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>Päätepisteen avaaminen</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>Päätepisteen äänenvoimakkuusrajapinnan avaaminen</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>Mikrofonin lukurajapinnan avaaminen</translation>
+    </message>
+    <message>
       <source>Open release downloads</source>
       <translation>Avaa versiolataukset</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>Kaiutinpäätepisteen avaaminen</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>Kaiuttimien toistovirran avaaminen</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>Testitoiston kirjoitusrajapinnan avaaminen</translation>
     </message>
     <message>
       <source>Open update folder</source>
@@ -1414,6 +1498,102 @@ Tuodaanko kirjastoon?</translation>
       <translation>R&amp;B</translation>
     </message>
     <message>
+      <source>Read audio endpoint</source>
+      <translation>Äänipäätepisteen lukeminen</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>Äänipäätepisteen tunnisteen lukeminen</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>Äänipäätepisteen nimen lukeminen</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>Äänipäätepisteen ominaisuuksien lukeminen</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>Virtuaalikaapelin äänen lukeminen</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>Virtuaalikaapelin kaappausrajapinnan hakeminen</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>Virtuaalikaapelin pakettikoon lukeminen</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Oletusulostulon tunnisteen lukeminen</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Oletusulostulon päätepisteen lukeminen</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>Mikrofonin miksausmuodon lukeminen</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>Mikrofonin pakettikoon lukeminen</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>Mikrofonin ääninäytteiden lukeminen</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>Virtuaalikaapelin seuraavan paketin koon lukeminen</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>Seuraavan mikrofonipaketin lukeminen</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>Ulostulopuskurin täyttöasteen lukeminen</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>Ulostulotason lukeminen</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>Ulostulon mykistystilan lukeminen</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>Kaiutintason lukeminen</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>Kaiuttimien miksausmuodon lukeminen</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>Kaiuttimien mykistystilan lukeminen</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>Kaiuttimien toistorajapinnan hakeminen</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>Kaiuttimien äänenvoimakkuuden lukeminen</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>Puskuroitujen testitoiston äänikehysten määrän lukeminen</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>Virtuaaliulostulon miksausmuodon lukeminen</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Päivitä laitteet</translation>
     </message>
@@ -1424,6 +1604,22 @@ Tuodaanko kirjastoon?</translation>
       <translation>Suhteelliset mittaukset sisältävät kaiuttimen, huoneen ja mikrofonin taajuusvasteen. Ehdotetut muutokset rajoitetaan 3 dB:iin mitattua taajuutta kohden.
 
 %1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>Virtuaalikaapelin äänipaketin vapauttaminen</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>Mikrofonipaketin vapauttaminen</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>Kaiutinpuskurin vapauttaminen</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>Testitoistopuskurin vapauttaminen</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
@@ -1584,6 +1780,18 @@ Tuodaanko kirjastoon?</translation>
       <translation>Erilliset hiljaiset äänet</translation>
     </message>
     <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>Kaiutintason asettaminen täydeksi taajuuskorjainta varten</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>Ulostulotason asettaminen</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>Ulostulon mykistystilan asettaminen</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Asetukset &amp;&amp; kalibrointi</translation>
     </message>
@@ -1602,6 +1810,18 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Näytä huippumerkit taajuustasoilla</translation>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>Kaappauspuskurin koon määrittäminen</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>Ulostulopuskurin koon määrittäminen</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>Testitoistopuskurin koon määrittäminen</translation>
     </message>
     <message>
       <source>Small Speakers</source>
@@ -1672,8 +1892,24 @@ Tuodaanko kirjastoon?</translation>
       <translation>Kaiutintyyppi</translation>
     </message>
     <message>
+      <source>Start cable capture</source>
+      <translation>Virtuaalikaapelin äänen kaappauksen käynnistäminen</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>Mikrofonitallennuksen käynnistäminen</translation>
+    </message>
+    <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>Aloita hiljaa. Nosta tasoa vain, jos mikrofoni ei havaitse ääniä.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>Kaiutinulostulon käynnistäminen</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>Testitoiston käynnistäminen</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
@@ -1789,6 +2025,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>Avaa säädinten lukitus ja viimeistele mittaus ennen profiilien muokkaamista.</translation>
     </message>
     <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>Kaiuttimien mykistyksen poistaminen taajuuskorjainta varten</translation>
+    </message>
+    <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
       <translation>Laiteprofiilin skeemaa ei tueta (odotettu: 2).</translation>
     </message>
@@ -1860,6 +2100,14 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>Windows-äänen COM ei ole käytettävissä</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Kaiutinpuskuriin kirjoittaminen</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>Testiäänen kirjoittaminen toistoa varten</translation>
     </message>
     <message>
       <source>Yes</source>

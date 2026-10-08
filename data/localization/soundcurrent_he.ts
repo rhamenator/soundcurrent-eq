@@ -75,6 +75,10 @@ Import into your library?</source>
       <translation>%1 נותק. </translation>
     </message>
     <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>הפעולה נכשלה: %1 (0x%2)</translation>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -267,6 +271,10 @@ Import into your library?</source>
       <translation>אוטומטי (מעקב אחר מיקרופונים מחוברים)</translation>
     </message>
     <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>ניתוב שמע אוטומטי אינו זמין</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>עיצוב אוטומטי של צליל מיקרופון מחובר; לחיצה עוקפת את אקולייזר המיקרופון</translation>
     </message>
@@ -411,6 +419,10 @@ Import into your library?</source>
     <message>
       <source>Center</source>
       <translation>מרכז</translation>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>שינוי נקודת קצה השמע המוגדרת כברירת מחדל</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -577,6 +589,10 @@ Import into your library?</source>
       <translation>לא ניתן לכתוב צליל בדיקה</translation>
     </message>
     <message>
+      <source>Count audio endpoints</source>
+      <translation>ספירת נקודות קצה של שמע</translation>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>יצירת פרופיל</translation>
     </message>
@@ -603,6 +619,10 @@ Import into your library?</source>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
       <translation>יש לגרור נקודות בעקומה או לכוונן את התחום הנבחר למטה.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>השלמת ניגון הבדיקה</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
@@ -643,6 +663,14 @@ Import into your library?</source>
     <message>
       <source>Electronic</source>
       <translation>מוזיקה אלקטרונית</translation>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>מניית התקני שמע</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>מניית נקודות קצה</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -909,6 +937,22 @@ Import into your library?</source>
       <translation>הכללת גרסאות מקדימות</translation>
     </message>
     <message>
+      <source>Initialize audio capture</source>
+      <translation>אתחול לכידת שמע</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>אתחול הקלטה מהמיקרופון</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>אתחול פלט הרמקולים</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>אתחול ניגון הבדיקה</translation>
+    </message>
+    <message>
       <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
       <translation>יש להתקין את SoundCurrent Audio באמצעות הגדרת מנהל התקן השמע, ולאחר מכן לפתוח את היישום מחדש כדי להפעיל את נתיב המיקרופון.</translation>
     </message>
@@ -1023,6 +1067,10 @@ Import into your library?</source>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>הספרייה גדולה מ־16 MiB.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>קבלת רשימת נקודות קצה של שמע</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -1256,8 +1304,44 @@ Import into your library?</source>
       <translation>פתיחת לוח הבקרה של VB-CABLE</translation>
     </message>
     <message>
+      <source>Open audio stream</source>
+      <translation>פתיחת זרם שמע</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>פתיחת זרם הלכידה של הכבל הווירטואלי</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>פתיחת נקודת קצה ההקלטה של הכבל הווירטואלי</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>פתיחת נקודת קצה</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>פתיחת ממשק עוצמת הקול של נקודת הקצה</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>פתיחת ממשק הקריאה מהמיקרופון</translation>
+    </message>
+    <message>
       <source>Open release downloads</source>
       <translation>פתיחת הורדות גרסאות</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>פתיחת נקודת קצה הרמקולים</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>פתיחת זרם הניגון של הרמקולים</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>פתיחת ממשק הכתיבה לניגון הבדיקה</translation>
     </message>
     <message>
       <source>Open update folder</source>
@@ -1414,6 +1498,102 @@ Import into your library?</source>
       <translation>רית׳ם אנד בלוז</translation>
     </message>
     <message>
+      <source>Read audio endpoint</source>
+      <translation>קריאת נקודת קצה של שמע</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>קריאת מזהה נקודת קצה של שמע</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>קריאת שם נקודת קצה של שמע</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>קריאת מאפייני נקודת קצה של שמע</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>קריאת השמע מהכבל הווירטואלי</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>קבלת ממשק הלכידה של הכבל הווירטואלי</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>קריאת גודל החבילה של הכבל הווירטואלי</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>קריאת מזהה הפלט המוגדר כברירת מחדל</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>קריאת נקודת קצה הפלט המוגדרת כברירת מחדל</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>קריאת תבנית המיקס של המיקרופון</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>קריאת גודל חבילת המיקרופון</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>קריאת דגימות המיקרופון</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>קריאת גודל החבילה הבאה של הכבל הווירטואלי</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>קריאת חבילת המיקרופון הבאה</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>קריאת רמת המילוי של מאגר הפלט</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>קריאת רמת הפלט</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>קריאת מצב השתקת הפלט</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>קריאת רמת הרמקולים</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>קריאת תבנית המיקס של הרמקולים</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>קריאת מצב השתקת הרמקולים</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>קבלת ממשק הניגון של הרמקולים</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>קריאת עוצמת הקול של הרמקולים</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>קריאת מספר מסגרות השמע שבמאגר לניגון הבדיקה</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>קריאת תבנית המיקס של הפלט הווירטואלי</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>רענון מכשירים</translation>
     </message>
@@ -1424,6 +1604,22 @@ Import into your library?</source>
       <translation>מדידות יחסיות כוללות את תגובת הרמקול, החדר והמיקרופון. השינויים המוצעים מוגבלים ל־3 dB לכל תדר שנמדד.
 
 %1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>שחרור חבילת השמע של הכבל הווירטואלי</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>שחרור חבילת המיקרופון</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>שחרור מאגר הרמקולים</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>שחרור מאגר ניגון הבדיקה</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
@@ -1584,6 +1780,18 @@ Import into your library?</source>
       <translation>צלילים שקטים נפרדים</translation>
     </message>
     <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>הגדרת רמת הרמקולים למרבית עבור האקולייזר</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>הגדרת רמת הפלט</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>הגדרת מצב השתקת הפלט</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>הגדרות &amp;&amp; כיול</translation>
     </message>
@@ -1602,6 +1810,18 @@ Import into your library?</source>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>הצגת סמני שיא ברמות התדרים</translation>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>קביעת גודל מאגר הלכידה</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>קביעת גודל מאגר הפלט</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>קביעת גודל מאגר ניגון הבדיקה</translation>
     </message>
     <message>
       <source>Small Speakers</source>
@@ -1672,8 +1892,24 @@ Import into your library?</source>
       <translation>סוג הרמקול</translation>
     </message>
     <message>
+      <source>Start cable capture</source>
+      <translation>התחלת לכידת שמע מהכבל הווירטואלי</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>התחלת הקלטה מהמיקרופון</translation>
+    </message>
+    <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>יש להתחיל בעוצמה שקטה. יש להעלות אותה רק אם המיקרופון אינו קולט את הצלילים.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>התחלת פלט הרמקולים</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>התחלת ניגון הבדיקה</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
@@ -1789,6 +2025,10 @@ Import into your library?</source>
       <translation>יש לשחרר את נעילת הפקדים ולסיים את המדידה לפני עריכת פרופילים.</translation>
     </message>
     <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>ביטול השתקת הרמקולים עבור האקולייזר</translation>
+    </message>
+    <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
       <translation>סכמת פרופיל ציוד אינה נתמכת (נדרשת 2).</translation>
     </message>
@@ -1860,6 +2100,14 @@ Import into your library?</source>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>COM לשמע של Windows אינו זמין</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>כתיבה למאגר הרמקולים</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>כתיבת שמע הבדיקה לניגון</translation>
     </message>
     <message>
       <source>Yes</source>

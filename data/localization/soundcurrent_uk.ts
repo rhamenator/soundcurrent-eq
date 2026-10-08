@@ -75,6 +75,10 @@ Import into your library?</source>
       <translation>%1 від’єднано. </translation>
     </message>
     <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>Операція не вдалася: %1 (0x%2)</translation>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -267,6 +271,10 @@ Import into your library?</source>
       <translation>Автоматично (за під’єднаними мікрофонами)</translation>
     </message>
     <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Автоматична маршрутизація аудіо недоступна</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Автоматично коригувати звук під’єднаного мікрофона; натисніть, щоб обійти мікрофонний EQ</translation>
     </message>
@@ -411,6 +419,10 @@ Import into your library?</source>
     <message>
       <source>Center</source>
       <translation>Центр</translation>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Змінити стандартний аудіопристрій</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -577,6 +589,10 @@ Import into your library?</source>
       <translation>Не вдалося записати тестовий тон</translation>
     </message>
     <message>
+      <source>Count audio endpoints</source>
+      <translation>Підрахувати аудіопристрої</translation>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>Створити профіль</translation>
     </message>
@@ -603,6 +619,10 @@ Import into your library?</source>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
       <translation>Перетягуйте точки кривої або налаштовуйте вибрану смугу нижче.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>Спорожнити буфер тестового відтворення</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
@@ -643,6 +663,14 @@ Import into your library?</source>
     <message>
       <source>Electronic</source>
       <translation>Електронна музика</translation>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>Перелічити аудіопристрої</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>Перелічити пристрої</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -909,6 +937,22 @@ Import into your library?</source>
       <translation>Включати попередні версії</translation>
     </message>
     <message>
+      <source>Initialize audio capture</source>
+      <translation>Ініціалізувати захоплення аудіо</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>Ініціалізувати запис мікрофона</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>Ініціалізувати вихід динаміків</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>Ініціалізувати тестове відтворення</translation>
+    </message>
+    <message>
       <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
       <translation>Установіть SoundCurrent Audio через налаштування аудіодрайвера, а потім знову відкрийте застосунок, щоб увімкнути маршрут мікрофона.</translation>
     </message>
@@ -1023,6 +1067,10 @@ Import into your library?</source>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>Бібліотека перевищує 16 MiB.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>Отримати список аудіопристроїв</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -1256,8 +1304,44 @@ Import into your library?</source>
       <translation>Відкрити панель керування VB-CABLE</translation>
     </message>
     <message>
+      <source>Open audio stream</source>
+      <translation>Відкрити аудіопотік</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>Відкрити потік захоплення кабелю</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>Відкрити пристрій запису кабелю</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>Відкрити пристрій</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>Відкрити керування гучністю пристрою</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>Відкрити інтерфейс читання мікрофона</translation>
+    </message>
+    <message>
       <source>Open release downloads</source>
       <translation>Відкрити завантаження версій</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>Відкрити пристрій динаміків</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>Відкрити вихідний потік динаміків</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>Відкрити інтерфейс запису тестового відтворення</translation>
     </message>
     <message>
       <source>Open update folder</source>
@@ -1414,6 +1498,102 @@ Import into your library?</source>
       <translation>R&amp;B</translation>
     </message>
     <message>
+      <source>Read audio endpoint</source>
+      <translation>Прочитати аудіопристрій</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>Прочитати ідентифікатор аудіопристрою</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>Прочитати назву аудіопристрою</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>Прочитати властивості аудіопристрою</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>Прочитати аудіо кабелю</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>Прочитати інтерфейс захоплення кабелю</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>Прочитати розмір пакета кабелю</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Прочитати ідентифікатор стандартного виходу</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Прочитати стандартний вихідний пристрій</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>Прочитати формат мікшування мікрофона</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>Прочитати розмір пакета мікрофона</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>Прочитати відліки мікрофона</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>Прочитати розмір наступного пакета кабелю</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>Прочитати наступний пакет мікрофона</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>Прочитати рівень заповнення вихідного буфера</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>Прочитати рівень виходу</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>Прочитати стан вимкнення звуку виходу</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>Прочитати рівень динаміків</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>Прочитати формат мікшування динаміків</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>Прочитати стан вимкнення звуку динаміків</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>Прочитати вихідний інтерфейс динаміків</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>Прочитати гучність динаміків</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>Прочитати рівень заповнення буфера тестового відтворення</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>Прочитати формат мікшування віртуального виходу</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Оновити список пристроїв</translation>
     </message>
@@ -1424,6 +1604,22 @@ Import into your library?</source>
       <translation>Відносні вимірювання включають характеристики акустичних систем, приміщення та мікрофона. Запропоновані зміни обмежені 3 dB для кожної виміряної частоти.
 
 %1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>Звільнити аудіо кабелю</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>Звільнити пакет мікрофона</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>Звільнити буфер динаміків</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>Звільнити буфер тестового відтворення</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
@@ -1584,6 +1780,18 @@ Import into your library?</source>
       <translation>Окремі тихі тони</translation>
     </message>
     <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>Установити повний рівень динаміків для EQ</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>Установити рівень виходу</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>Установити вимкнення звуку виходу</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Налаштування &amp;&amp; калібрування</translation>
     </message>
@@ -1602,6 +1810,18 @@ Import into your library?</source>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Показувати позначки піків на частотних рівнях</translation>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>Визначити розмір буфера захоплення</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>Визначити розмір вихідного буфера</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>Визначити розмір буфера тестового відтворення</translation>
     </message>
     <message>
       <source>Small Speakers</source>
@@ -1672,8 +1892,24 @@ Import into your library?</source>
       <translation>Тип акустичної системи</translation>
     </message>
     <message>
+      <source>Start cable capture</source>
+      <translation>Запустити захоплення кабелю</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>Запустити запис мікрофона</translation>
+    </message>
+    <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>Починайте тихо. Підвищуйте рівень лише тоді, коли мікрофон не чує тонів.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>Запустити вихід динаміків</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>Запустити тестове відтворення</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
@@ -1789,6 +2025,10 @@ Import into your library?</source>
       <translation>Розблокуйте елементи керування та завершіть вимірювання перед редагуванням профілів.</translation>
     </message>
     <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>Увімкнути звук динаміків для EQ</translation>
+    </message>
+    <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
       <translation>Непідтримувана схема профілю обладнання (очікується 2).</translation>
     </message>
@@ -1860,6 +2100,14 @@ Import into your library?</source>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>COM для аудіо Windows недоступний</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Записати буфер динаміків</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>Записати тестове відтворення</translation>
     </message>
     <message>
       <source>Yes</source>

@@ -75,6 +75,10 @@ Import into your library?</source>
       <translation>%1 αποσυνδέθηκε. </translation>
     </message>
     <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>Αποτυχία λειτουργίας: %1 (0x%2)</translation>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -267,6 +271,10 @@ Import into your library?</source>
       <translation>Αυτόματα (ανάλογα με τα συνδεδεμένα μικρόφωνα)</translation>
     </message>
     <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Η αυτόματη δρομολόγηση ήχου δεν είναι διαθέσιμη</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Αυτόματη διόρθωση του συνδεδεμένου μικροφώνου· πατήστε για παράκαμψη του EQ μικροφώνου</translation>
     </message>
@@ -411,6 +419,10 @@ Import into your library?</source>
     <message>
       <source>Center</source>
       <translation>Κέντρο</translation>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Αλλαγή προεπιλεγμένου τελικού σημείου ήχου</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -577,6 +589,10 @@ Import into your library?</source>
       <translation>Δεν ήταν δυνατή η εγγραφή δοκιμαστικού τόνου</translation>
     </message>
     <message>
+      <source>Count audio endpoints</source>
+      <translation>Καταμέτρηση τελικών σημείων ήχου</translation>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>Δημιουργία προφίλ</translation>
     </message>
@@ -603,6 +619,10 @@ Import into your library?</source>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
       <translation>Σύρετε σημεία της καμπύλης ή ρυθμίστε την επιλεγμένη ζώνη παρακάτω.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>Ολοκλήρωση αναπαραγωγής δοκιμαστικού ήχου</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
@@ -643,6 +663,14 @@ Import into your library?</source>
     <message>
       <source>Electronic</source>
       <translation>Ηλεκτρονική μουσική</translation>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>Απαρίθμηση συσκευών ήχου</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>Απαρίθμηση τελικών σημείων</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -909,6 +937,22 @@ Import into your library?</source>
       <translation>Συμπερίληψη δοκιμαστικών εκδόσεων</translation>
     </message>
     <message>
+      <source>Initialize audio capture</source>
+      <translation>Αρχικοποίηση λήψης ήχου</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>Αρχικοποίηση εγγραφής μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>Αρχικοποίηση εξόδου ηχείων</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>Αρχικοποίηση αναπαραγωγής δοκιμαστικού ήχου</translation>
+    </message>
+    <message>
       <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
       <translation>Εγκαταστήστε το SoundCurrent Audio μέσω της ρύθμισης προγράμματος οδήγησης ήχου και ανοίξτε ξανά την εφαρμογή για να ενεργοποιήσετε τη διαδρομή μικροφώνου.</translation>
     </message>
@@ -1023,6 +1067,10 @@ Import into your library?</source>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>Η βιβλιοθήκη υπερβαίνει τα 16 MiB.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>Λήψη λίστας τελικών σημείων ήχου</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -1256,8 +1304,44 @@ Import into your library?</source>
       <translation>Άνοιγμα πίνακα ελέγχου VB-CABLE</translation>
     </message>
     <message>
+      <source>Open audio stream</source>
+      <translation>Άνοιγμα ροής ήχου</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>Άνοιγμα ροής λήψης εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>Άνοιγμα τελικού σημείου εγγραφής εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>Άνοιγμα τελικού σημείου</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>Άνοιγμα διεπαφής έντασης τελικού σημείου</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>Άνοιγμα διεπαφής ανάγνωσης μικροφώνου</translation>
+    </message>
+    <message>
       <source>Open release downloads</source>
       <translation>Άνοιγμα λήψεων εκδόσεων</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>Άνοιγμα τελικού σημείου ηχείων</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>Άνοιγμα ροής αναπαραγωγής ηχείων</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>Άνοιγμα διεπαφής εγγραφής δοκιμαστικού ήχου</translation>
     </message>
     <message>
       <source>Open update folder</source>
@@ -1414,6 +1498,102 @@ Import into your library?</source>
       <translation>R&amp;B</translation>
     </message>
     <message>
+      <source>Read audio endpoint</source>
+      <translation>Ανάγνωση τελικού σημείου ήχου</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>Ανάγνωση αναγνωριστικού τελικού σημείου ήχου</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>Ανάγνωση ονόματος τελικού σημείου ήχου</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>Ανάγνωση ιδιοτήτων τελικού σημείου ήχου</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>Ανάγνωση ήχου εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>Λήψη διεπαφής λήψης εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>Ανάγνωση μεγέθους πακέτου εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Ανάγνωση αναγνωριστικού προεπιλεγμένης εξόδου</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Ανάγνωση προεπιλεγμένου τελικού σημείου εξόδου</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>Ανάγνωση μορφής μίξης μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>Ανάγνωση μεγέθους πακέτου μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>Ανάγνωση δειγμάτων μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>Ανάγνωση μεγέθους επόμενου πακέτου εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>Ανάγνωση επόμενου πακέτου μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>Ανάγνωση πληρότητας προσωρινής μνήμης εξόδου</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>Ανάγνωση στάθμης εξόδου</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>Ανάγνωση κατάστασης σίγασης εξόδου</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>Ανάγνωση στάθμης ηχείων</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>Ανάγνωση μορφής μίξης ηχείων</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>Ανάγνωση κατάστασης σίγασης ηχείων</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>Λήψη διεπαφής αναπαραγωγής ηχείων</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>Ανάγνωση έντασης ηχείων</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>Ανάγνωση αριθμού πλαισίων δοκιμαστικού ήχου στην προσωρινή μνήμη</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>Ανάγνωση μορφής μίξης εικονικής εξόδου</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Ανανέωση συσκευών</translation>
     </message>
@@ -1424,6 +1604,22 @@ Import into your library?</source>
       <translation>Οι σχετικές μετρήσεις περιλαμβάνουν την απόκριση ηχείων, χώρου και μικροφώνου. Οι προτεινόμενες αλλαγές περιορίζονται σε 3 dB ανά μετρημένη συχνότητα.
 
 %1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>Αποδέσμευση πακέτου ήχου εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>Αποδέσμευση πακέτου μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>Αποδέσμευση προσωρινής μνήμης ηχείων</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>Αποδέσμευση προσωρινής μνήμης δοκιμαστικής αναπαραγωγής</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
@@ -1584,6 +1780,18 @@ Import into your library?</source>
       <translation>Ξεχωριστοί ήσυχοι τόνοι</translation>
     </message>
     <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>Ρύθμιση πλήρους στάθμης ηχείων για τον ισοσταθμιστή</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>Ρύθμιση στάθμης εξόδου</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>Ρύθμιση κατάστασης σίγασης εξόδου</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Ρυθμίσεις &amp;&amp; βαθμονόμηση</translation>
     </message>
@@ -1602,6 +1810,18 @@ Import into your library?</source>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Εμφάνιση δεικτών κορυφών στις ενδείξεις συχνότητας</translation>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>Προσδιορισμός μεγέθους προσωρινής μνήμης λήψης</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>Προσδιορισμός μεγέθους προσωρινής μνήμης εξόδου</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>Προσδιορισμός μεγέθους προσωρινής μνήμης δοκιμαστικής αναπαραγωγής</translation>
     </message>
     <message>
       <source>Small Speakers</source>
@@ -1672,8 +1892,24 @@ Import into your library?</source>
       <translation>Τύπος ηχείου</translation>
     </message>
     <message>
+      <source>Start cable capture</source>
+      <translation>Έναρξη λήψης εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>Έναρξη εγγραφής μικροφώνου</translation>
+    </message>
+    <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>Ξεκινήστε ήσυχα. Αυξήστε μόνο αν το μικρόφωνο δεν ακούει τους τόνους.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>Έναρξη εξόδου ηχείων</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>Έναρξη αναπαραγωγής δοκιμαστικού ήχου</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
@@ -1789,6 +2025,10 @@ Import into your library?</source>
       <translation>Ξεκλειδώστε τα χειριστήρια και ολοκληρώστε τη μέτρηση πριν επεξεργαστείτε προφίλ.</translation>
     </message>
     <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>Άρση σίγασης ηχείων για τον ισοσταθμιστή</translation>
+    </message>
+    <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
       <translation>Μη υποστηριζόμενο σχήμα προφίλ εξοπλισμού (αναμένεται 2).</translation>
     </message>
@@ -1860,6 +2100,14 @@ Import into your library?</source>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>Το COM για τον ήχο των Windows δεν είναι διαθέσιμο</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Εγγραφή στην προσωρινή μνήμη ηχείων</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>Εγγραφή δοκιμαστικού ήχου για αναπαραγωγή</translation>
     </message>
     <message>
       <source>Yes</source>

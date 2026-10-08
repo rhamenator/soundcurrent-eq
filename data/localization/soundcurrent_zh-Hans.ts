@@ -75,6 +75,10 @@ Import into your library?</source>
       <translation>%1 已断开。 </translation>
     </message>
     <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>操作失败：%1 (0x%2)</translation>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -267,6 +271,10 @@ Import into your library?</source>
       <translation>自动（跟随已连接的麦克风）</translation>
     </message>
     <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>自动音频路由不可用</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>自动调整已连接麦克风的音色；点击可旁路麦克风均衡器</translation>
     </message>
@@ -411,6 +419,10 @@ Import into your library?</source>
     <message>
       <source>Center</source>
       <translation>居中</translation>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>更改默认音频端点</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -577,6 +589,10 @@ Import into your library?</source>
       <translation>无法写入测试音调</translation>
     </message>
     <message>
+      <source>Count audio endpoints</source>
+      <translation>统计音频端点数量</translation>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>创建配置</translation>
     </message>
@@ -603,6 +619,10 @@ Import into your library?</source>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
       <translation>拖动曲线上的点，或在下方调整所选频段。</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>完成测试音频播放</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
@@ -643,6 +663,14 @@ Import into your library?</source>
     <message>
       <source>Electronic</source>
       <translation>电子</translation>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>枚举音频设备</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>枚举端点</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -909,6 +937,22 @@ Import into your library?</source>
       <translation>包含预览版本</translation>
     </message>
     <message>
+      <source>Initialize audio capture</source>
+      <translation>初始化音频采集</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>初始化麦克风录音</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>初始化扬声器输出</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>初始化测试音频播放</translation>
+    </message>
+    <message>
       <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
       <translation>请通过音频驱动设置安装 SoundCurrent Audio，然后重新打开应用以启用麦克风音频路径。</translation>
     </message>
@@ -1023,6 +1067,10 @@ Import into your library?</source>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>资料库大小超过 16 MiB。</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>获取音频端点列表</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -1256,8 +1304,44 @@ Import into your library?</source>
       <translation>打开 VB-CABLE 控制面板</translation>
     </message>
     <message>
+      <source>Open audio stream</source>
+      <translation>打开音频流</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>打开虚拟音频线采集流</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>打开虚拟音频线录音端点</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>打开端点</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>打开端点音量接口</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>打开麦克风读取接口</translation>
+    </message>
+    <message>
       <source>Open release downloads</source>
       <translation>打开版本下载页面</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>打开扬声器端点</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>打开扬声器播放流</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>打开测试音频写入接口</translation>
     </message>
     <message>
       <source>Open update folder</source>
@@ -1414,6 +1498,102 @@ Import into your library?</source>
       <translation>节奏布鲁斯</translation>
     </message>
     <message>
+      <source>Read audio endpoint</source>
+      <translation>读取音频端点</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>读取音频端点标识符</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>读取音频端点名称</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>读取音频端点属性</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>读取虚拟音频线音频</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>获取虚拟音频线采集接口</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>读取虚拟音频线数据包大小</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>读取默认输出标识符</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>读取默认输出端点</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>读取麦克风混音格式</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>读取麦克风数据包大小</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>读取麦克风采样值</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>读取虚拟音频线下一个数据包的大小</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>读取下一个麦克风数据包</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>读取输出缓冲区填充量</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>读取输出电平</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>读取输出静音状态</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>读取扬声器电平</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>读取扬声器混音格式</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>读取扬声器静音状态</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>获取扬声器播放接口</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>读取扬声器音量</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>读取测试播放缓冲区中的音频帧数</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>读取虚拟输出混音格式</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>刷新设备</translation>
     </message>
@@ -1424,6 +1604,22 @@ Import into your library?</source>
       <translation>相对测量包含扬声器、房间和麦克风的响应。建议调整在每个实测频率上最多为 3 dB。
 
 %1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>释放虚拟音频线音频数据包</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>释放麦克风数据包</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>释放扬声器缓冲区</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>释放测试播放缓冲区</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
@@ -1584,6 +1780,18 @@ Import into your library?</source>
       <translation>分开的低音量音调</translation>
     </message>
     <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>为均衡器将扬声器电平设为最大值</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>设置输出电平</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>设置输出静音状态</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>设置 &amp;&amp; 校准</translation>
     </message>
@@ -1602,6 +1810,18 @@ Import into your library?</source>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>在频率电平上显示峰值标记</translation>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>确定采集缓冲区大小</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>确定输出缓冲区大小</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>确定测试播放缓冲区大小</translation>
     </message>
     <message>
       <source>Small Speakers</source>
@@ -1672,8 +1892,24 @@ Import into your library?</source>
       <translation>扬声器类型</translation>
     </message>
     <message>
+      <source>Start cable capture</source>
+      <translation>启动虚拟音频线音频采集</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>启动麦克风录音</translation>
+    </message>
+    <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>从低音量开始。仅在麦克风无法听到音调时提高音量。</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>启动扬声器输出</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>启动测试音频播放</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
@@ -1789,6 +2025,10 @@ Import into your library?</source>
       <translation>编辑配置前请解锁控制并完成测量。</translation>
     </message>
     <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>为均衡器取消扬声器静音</translation>
+    </message>
+    <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
       <translation>不支持的设备配置格式版本（应为 2）。</translation>
     </message>
@@ -1860,6 +2100,14 @@ Import into your library?</source>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>Windows 音频 COM 不可用</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>写入扬声器缓冲区</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>写入用于播放的测试音频</translation>
     </message>
     <message>
       <source>Yes</source>

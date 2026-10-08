@@ -75,6 +75,10 @@ Import into your library?</source>
       <translation>تم فصل %1. </translation>
     </message>
     <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>فشلت العملية: %1 (0x%2)</translation>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -267,6 +271,10 @@ Import into your library?</source>
       <translation>تلقائي (يتبع الميكروفونات المتصلة)</translation>
     </message>
     <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>توجيه الصوت التلقائي غير متاح</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>تشكيل صوت الميكروفون المتصل تلقائيًا؛ انقر لتجاوز معادل الميكروفون</translation>
     </message>
@@ -411,6 +419,10 @@ Import into your library?</source>
     <message>
       <source>Center</source>
       <translation>الوسط</translation>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>تغيير نقطة نهاية الصوت الافتراضية</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -577,6 +589,10 @@ Import into your library?</source>
       <translation>تعذر كتابة نغمة الاختبار</translation>
     </message>
     <message>
+      <source>Count audio endpoints</source>
+      <translation>عد نقاط نهاية الصوت</translation>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>إنشاء ملف تعريف</translation>
     </message>
@@ -603,6 +619,10 @@ Import into your library?</source>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
       <translation>اسحب نقاط المنحنى أو اضبط النطاق المحدد أدناه.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>إكمال تشغيل صوت الاختبار</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
@@ -643,6 +663,14 @@ Import into your library?</source>
     <message>
       <source>Electronic</source>
       <translation>موسيقى إلكترونية</translation>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>تعداد أجهزة الصوت</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>تعداد نقاط النهاية</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -909,6 +937,22 @@ Import into your library?</source>
       <translation>تضمين الإصدارات التجريبية</translation>
     </message>
     <message>
+      <source>Initialize audio capture</source>
+      <translation>تهيئة التقاط الصوت</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>تهيئة التسجيل من الميكروفون</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>تهيئة خرج مكبرات الصوت</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>تهيئة تشغيل صوت الاختبار</translation>
+    </message>
+    <message>
       <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
       <translation>ثبّت SoundCurrent Audio باستخدام إعداد برنامج تشغيل الصوت، ثم أعد فتح التطبيق لتفعيل مسار الميكروفون.</translation>
     </message>
@@ -1023,6 +1067,10 @@ Import into your library?</source>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>تتجاوز المكتبة 16 MiB.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>جلب قائمة نقاط نهاية الصوت</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -1256,8 +1304,44 @@ Import into your library?</source>
       <translation>فتح لوحة تحكم VB-CABLE</translation>
     </message>
     <message>
+      <source>Open audio stream</source>
+      <translation>فتح تدفق الصوت</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>فتح تدفق الالتقاط للكابل الافتراضي</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>فتح نقطة نهاية التسجيل للكابل الافتراضي</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>فتح نقطة النهاية</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>فتح واجهة مستوى صوت نقطة النهاية</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>فتح واجهة قراءة الميكروفون</translation>
+    </message>
+    <message>
       <source>Open release downloads</source>
       <translation>فتح تنزيلات الإصدارات</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>فتح نقطة نهاية مكبرات الصوت</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>فتح تدفق تشغيل مكبرات الصوت</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>فتح واجهة كتابة صوت الاختبار</translation>
     </message>
     <message>
       <source>Open update folder</source>
@@ -1414,6 +1498,102 @@ Import into your library?</source>
       <translation>آر أند بي</translation>
     </message>
     <message>
+      <source>Read audio endpoint</source>
+      <translation>قراءة نقطة نهاية الصوت</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>قراءة معرّف نقطة نهاية الصوت</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>قراءة اسم نقطة نهاية الصوت</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>قراءة خصائص نقطة نهاية الصوت</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>قراءة صوت الكابل الافتراضي</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>جلب واجهة الالتقاط للكابل الافتراضي</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>قراءة حجم حزمة الكابل الافتراضي</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>قراءة معرّف الخرج الافتراضي</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>قراءة نقطة نهاية الخرج الافتراضية</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>قراءة تنسيق مزج الميكروفون</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>قراءة حجم حزمة الميكروفون</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>قراءة عينات الميكروفون</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>قراءة حجم الحزمة التالية للكابل الافتراضي</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>قراءة حزمة الميكروفون التالية</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>قراءة مستوى امتلاء مخزن الخرج المؤقت</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>قراءة مستوى الخرج</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>قراءة حالة كتم صوت الخرج</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>قراءة مستوى مكبرات الصوت</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>قراءة تنسيق مزج مكبرات الصوت</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>قراءة حالة كتم مكبرات الصوت</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>جلب واجهة تشغيل مكبرات الصوت</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>قراءة مستوى صوت مكبرات الصوت</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>قراءة عدد إطارات صوت الاختبار في المخزن المؤقت</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>قراءة تنسيق مزج الخرج الافتراضي</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>تحديث الأجهزة</translation>
     </message>
@@ -1424,6 +1604,22 @@ Import into your library?</source>
       <translation>تشمل القياسات النسبية استجابة مكبر الصوت والغرفة والميكروفون. تقتصر التغييرات المقترحة على 3 dB لكل تردد مقاس.
 
 %1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>تحرير حزمة صوت الكابل الافتراضي</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>تحرير حزمة الميكروفون</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>تحرير المخزن المؤقت لمكبرات الصوت</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>تحرير المخزن المؤقت لتشغيل صوت الاختبار</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
@@ -1584,6 +1780,18 @@ Import into your library?</source>
       <translation>نغمات منفصلة منخفضة الصوت</translation>
     </message>
     <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>ضبط مستوى مكبرات الصوت على الحد الأقصى للمعادل</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>ضبط مستوى الخرج</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>ضبط حالة كتم صوت الخرج</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>الإعدادات &amp;&amp; المعايرة</translation>
     </message>
@@ -1602,6 +1810,18 @@ Import into your library?</source>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>إظهار علامات القمم على مؤشرات مستويات الترددات</translation>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>تحديد حجم المخزن المؤقت للالتقاط</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>تحديد حجم المخزن المؤقت للخرج</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>تحديد حجم المخزن المؤقت لتشغيل صوت الاختبار</translation>
     </message>
     <message>
       <source>Small Speakers</source>
@@ -1672,8 +1892,24 @@ Import into your library?</source>
       <translation>نوع مكبر الصوت</translation>
     </message>
     <message>
+      <source>Start cable capture</source>
+      <translation>بدء التقاط صوت الكابل الافتراضي</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>بدء التسجيل من الميكروفون</translation>
+    </message>
+    <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>ابدأ بمستوى منخفض. ارفعه فقط إذا لم يلتقط الميكروفون النغمات.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>بدء خرج مكبرات الصوت</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>بدء تشغيل صوت الاختبار</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
@@ -1789,6 +2025,10 @@ Import into your library?</source>
       <translation>افتح قفل عناصر التحكم وأكمل القياس قبل تحرير ملفات التعريف.</translation>
     </message>
     <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>إلغاء كتم مكبرات الصوت للمعادل</translation>
+    </message>
+    <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
       <translation>مخطط ملف تعريف المعدات غير مدعوم (المتوقع 2).</translation>
     </message>
@@ -1860,6 +2100,14 @@ Import into your library?</source>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>COM لصوت Windows غير متاح</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>الكتابة في المخزن المؤقت لمكبرات الصوت</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>كتابة صوت الاختبار للتشغيل</translation>
     </message>
     <message>
       <source>Yes</source>

@@ -75,6 +75,10 @@ Importovat do vaší knihovny?</translation>
       <translation>%1 odpojeno. </translation>
     </message>
     <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>Operace selhala: %1 (0x%2)</translation>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -267,6 +271,10 @@ Importovat do vaší knihovny?</translation>
       <translation>Automaticky (podle připojených mikrofonů)</translation>
     </message>
     <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Automatické směrování zvuku není dostupné</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Automaticky upravit zvuk připojeného mikrofonu; kliknutím obejdete mikrofonní EQ</translation>
     </message>
@@ -411,6 +419,10 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Center</source>
       <translation>Střed</translation>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Změnit výchozí zvukové zařízení</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -577,6 +589,10 @@ Importovat do vaší knihovny?</translation>
       <translation>Nepodařilo se zapsat testovací tón</translation>
     </message>
     <message>
+      <source>Count audio endpoints</source>
+      <translation>Spočítat zvuková zařízení</translation>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>Vytvořit profil</translation>
     </message>
@@ -603,6 +619,10 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
       <translation>Přetahujte body křivky nebo dolaďte vybrané pásmo níže.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>Vyprázdnit buffer testovacího přehrávání</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
@@ -643,6 +663,14 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Electronic</source>
       <translation>Elektronická hudba</translation>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>Vyjmenovat zvuková zařízení</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>Vyjmenovat zařízení</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -909,6 +937,22 @@ Importovat do vaší knihovny?</translation>
       <translation>Zahrnout předběžné verze</translation>
     </message>
     <message>
+      <source>Initialize audio capture</source>
+      <translation>Inicializovat zachytávání zvuku</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>Inicializovat záznam mikrofonu</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>Inicializovat výstup reproduktorů</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>Inicializovat testovací přehrávání</translation>
+    </message>
+    <message>
       <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
       <translation>Nainstalujte SoundCurrent Audio pomocí nastavení zvukového ovladače a poté aplikaci znovu otevřete, aby se aktivovala mikrofonní cesta.</translation>
     </message>
@@ -1023,6 +1067,10 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>Knihovna přesahuje 16 MiB.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>Vypsat zvuková zařízení</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -1256,8 +1304,44 @@ Importovat do vaší knihovny?</translation>
       <translation>Otevřít ovládací panel VB-CABLE</translation>
     </message>
     <message>
+      <source>Open audio stream</source>
+      <translation>Otevřít zvukový stream</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>Otevřít zachytávací stream kabelu</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>Otevřít záznamové zařízení kabelu</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>Otevřít zařízení</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>Otevřít ovládání hlasitosti zařízení</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>Otevřít čtecí rozhraní mikrofonu</translation>
+    </message>
+    <message>
       <source>Open release downloads</source>
       <translation>Otevřít stahování vydaných verzí</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>Otevřít zařízení reproduktorů</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>Otevřít výstupní stream reproduktorů</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>Otevřít zapisovací rozhraní testovacího přehrávání</translation>
     </message>
     <message>
       <source>Open update folder</source>
@@ -1414,6 +1498,102 @@ Importovat do vaší knihovny?</translation>
       <translation>R&amp;B</translation>
     </message>
     <message>
+      <source>Read audio endpoint</source>
+      <translation>Přečíst zvukové zařízení</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>Přečíst ID zvukového zařízení</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>Přečíst název zvukového zařízení</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>Přečíst vlastnosti zvukového zařízení</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>Přečíst zvuk kabelu</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>Přečíst zachytávací rozhraní kabelu</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>Přečíst velikost paketu kabelu</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Přečíst ID výchozího výstupu</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Přečíst výchozí výstupní zařízení</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>Přečíst směšovací formát mikrofonu</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>Přečíst velikost paketu mikrofonu</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>Přečíst vzorky mikrofonu</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>Přečíst velikost dalšího paketu kabelu</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>Přečíst další paket mikrofonu</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>Přečíst zaplnění výstupního bufferu</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>Přečíst úroveň výstupu</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>Přečíst stav ztlumení výstupu</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>Přečíst úroveň reproduktorů</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>Přečíst směšovací formát reproduktorů</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>Přečíst stav ztlumení reproduktorů</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>Přečíst výstupní rozhraní reproduktorů</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>Přečíst hlasitost reproduktorů</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>Přečíst zaplnění bufferu testovacího přehrávání</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>Přečíst směšovací formát virtuálního výstupu</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Obnovit seznam zařízení</translation>
     </message>
@@ -1424,6 +1604,22 @@ Importovat do vaší knihovny?</translation>
       <translation>Relativní měření zahrnují odezvu reproduktorů, místnosti a mikrofonu. Navržené změny jsou omezeny na 3 dB pro každou měřenou frekvenci.
 
 %1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>Uvolnit zvuk kabelu</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>Uvolnit paket mikrofonu</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>Uvolnit buffer reproduktorů</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>Uvolnit buffer testovacího přehrávání</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
@@ -1584,6 +1780,18 @@ Importovat do vaší knihovny?</translation>
       <translation>Samostatné tiché tóny</translation>
     </message>
     <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>Nastavit plnou úroveň reproduktorů pro EQ</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>Nastavit úroveň výstupu</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>Nastavit ztlumení výstupu</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Nastavení &amp;&amp; kalibrace</translation>
     </message>
@@ -1602,6 +1810,18 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Zobrazit značky špiček frekvenčních úrovní</translation>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>Zjistit velikost zachytávacího bufferu</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>Zjistit velikost výstupního bufferu</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>Zjistit velikost bufferu testovacího přehrávání</translation>
     </message>
     <message>
       <source>Small Speakers</source>
@@ -1672,8 +1892,24 @@ Importovat do vaší knihovny?</translation>
       <translation>Typ reproduktoru</translation>
     </message>
     <message>
+      <source>Start cable capture</source>
+      <translation>Spustit zachytávání kabelu</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>Spustit záznam mikrofonu</translation>
+    </message>
+    <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
       <translation>Začněte potichu. Zvyšujte úroveň jen tehdy, když mikrofon tóny nezachytí.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>Spustit výstup reproduktorů</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>Spustit testovací přehrávání</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
@@ -1789,6 +2025,10 @@ Importovat do vaší knihovny?</translation>
       <translation>Před úpravou profilů odemkněte ovládání a dokončete měření.</translation>
     </message>
     <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>Zrušit ztlumení reproduktorů pro EQ</translation>
+    </message>
+    <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
       <translation>Nepodporované schéma profilu zařízení (očekáváno 2).</translation>
     </message>
@@ -1860,6 +2100,14 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Windows audio COM unavailable</source>
       <translation>COM pro zvuk Windows není dostupné</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Zapsat buffer reproduktorů</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>Zapsat testovací přehrávání</translation>
     </message>
     <message>
       <source>Yes</source>
