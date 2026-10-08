@@ -4,285 +4,293 @@
     <name>SoundCurrent</name>
     <message>
       <source> (currently selected)</source>
-      <translation type="unfinished" />
+      <translation> (เลือกอยู่ในขณะนี้)</translation>
     </message>
     <message>
       <source> (restored selection)</source>
-      <translation type="unfinished" />
+      <translation> (กู้คืนการเลือกแล้ว)</translation>
     </message>
     <message>
       <source> [custom]</source>
-      <translation type="unfinished" />
+      <translation> [กำหนดเอง]</translation>
     </message>
     <message>
       <source> · mono</source>
-      <translation type="unfinished" />
+      <translation> · โมโน</translation>
     </message>
     <message>
       <source> · no USB microphone detected</source>
-      <translation type="unfinished" />
+      <translation> · ไม่พบไมโครโฟน USB</translation>
     </message>
     <message>
       <source> · stereo</source>
-      <translation type="unfinished" />
+      <translation> · สเตอริโอ</translation>
     </message>
     <message>
       <source>%1
 
 Technical details:
 %2</source>
-      <translation type="unfinished" />
+      <translation>%1
+
+รายละเอียดทางเทคนิค:
+%2</translation>
     </message>
     <message>
       <source>%1
 The app remains open; your settings have been kept.</source>
-      <translation type="unfinished" />
+      <translation>%1
+แอปยังเปิดอยู่และเก็บการตั้งค่าของคุณไว้แล้ว</translation>
     </message>
     <message>
       <source>%1 %2%3 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 %2%3 dB</translation>
     </message>
     <message>
       <source>%1 / %2
 %3
 Apply this correction to the %4 route?</source>
-      <translation type="unfinished" />
+      <translation>%1 / %2
+%3
+ใช้การชดเชยนี้กับเส้นทาง %4 หรือไม่?</translation>
     </message>
     <message>
       <source>%1 / %2
 %3
 Import into your library?</source>
-      <translation type="unfinished" />
+      <translation>%1 / %2
+%3
+นำเข้าไปยังคลังของคุณหรือไม่?</translation>
     </message>
     <message>
       <source>%1 Hz: measured %2%3 dB; suggested %4%5 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 Hz: วัดได้ %2%3 dB; แนะนำ %4%5 dB</translation>
     </message>
     <message>
       <source>%1 Hz: too quiet to measure</source>
-      <translation type="unfinished" />
+      <translation>%1 Hz: เสียงเบาเกินกว่าจะวัดได้</translation>
     </message>
     <message>
       <source>%1 disconnected. </source>
-      <translation type="unfinished" />
+      <translation>%1 ถูกถอดออกแล้ว </translation>
     </message>
     <message>
       <source>%1%2 dB</source>
-      <translation type="unfinished" />
+      <translation>%1%2 dB</translation>
     </message>
     <message>
       <source>Abort</source>
-      <translation type="unfinished" />
+      <translation>ยุติ</translation>
     </message>
     <message>
       <source>Acoustic</source>
-      <translation type="unfinished" />
+      <translation>อะคูสติก</translation>
     </message>
     <message>
       <source>Active / passive / unknown</source>
-      <translation type="unfinished" />
+      <translation>แอ็กทีฟ / พาสซีฟ / ไม่ทราบ</translation>
     </message>
     <message>
       <source>Add filter</source>
-      <translation type="unfinished" />
+      <translation>เพิ่มฟิลเตอร์</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
-      <translation type="unfinished" />
+      <translation>ปรับระดับเอาต์พุตหลัง EQ จาก -60 ถึง +12 dB เกนที่สูงขึ้นอาจทำให้สัญญาณคลิป</translation>
     </message>
     <message>
       <source>Adjust this tone band around the natural voice profile</source>
-      <translation type="unfinished" />
+      <translation>ปรับย่านเสียงนี้โดยอ้างอิงโปรไฟล์เสียงพูดที่เป็นธรรมชาติ</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
-      <translation type="unfinished" />
+      <translation>ตัวควบคุมการปรับแต่งเสียงขั้นสูง</translation>
     </message>
     <message>
       <source>Air</source>
-      <translation type="unfinished" />
+      <translation>ความโปร่ง</translation>
     </message>
     <message>
       <source>All brands</source>
-      <translation type="unfinished" />
+      <translation>ทุกแบรนด์</translation>
     </message>
     <message>
       <source>All equipment</source>
-      <translation type="unfinished" />
+      <translation>อุปกรณ์ทั้งหมด</translation>
     </message>
     <message>
       <source>All families</source>
-      <translation type="unfinished" />
+      <translation>ทุกรุ่นตระกูล</translation>
     </message>
     <message>
       <source>All manufacturers</source>
-      <translation type="unfinished" />
+      <translation>ผู้ผลิตทั้งหมด</translation>
     </message>
     <message>
       <source>All speaker types</source>
-      <translation type="unfinished" />
+      <translation>ลำโพงทุกประเภท</translation>
     </message>
     <message>
       <source>All subtypes</source>
-      <translation type="unfinished" />
+      <translation>ทุกประเภทย่อย</translation>
     </message>
     <message>
       <source>Ambience</source>
-      <translation type="unfinished" />
+      <translation>บรรยากาศเสียง</translation>
     </message>
     <message>
       <source>Ambience damping</source>
-      <translation type="unfinished" />
+      <translation>การลดทอนบรรยากาศเสียง</translation>
     </message>
     <message>
       <source>Ambience decay</source>
-      <translation type="unfinished" />
+      <translation>เวลาสลายของบรรยากาศเสียง</translation>
     </message>
     <message>
       <source>Amp details</source>
-      <translation type="unfinished" />
+      <translation>รายละเอียดแอมป์</translation>
     </message>
     <message>
       <source>Amplifier</source>
-      <translation type="unfinished" />
+      <translation>เครื่องขยายเสียง</translation>
     </message>
     <message>
       <source>Amplifier / receiver</source>
-      <translation type="unfinished" />
+      <translation>เครื่องขยายเสียง / รีซีฟเวอร์</translation>
     </message>
     <message>
       <source>Amplifier model profile</source>
-      <translation type="unfinished" />
+      <translation>โปรไฟล์รุ่นเครื่องขยายเสียง</translation>
     </message>
     <message>
       <source>Amplifier profile details</source>
-      <translation type="unfinished" />
+      <translation>รายละเอียดโปรไฟล์เครื่องขยายเสียง</translation>
     </message>
     <message>
       <source>Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.</source>
-      <translation type="unfinished" />
+      <translation>โปรไฟล์เครื่องขยายเสียงต้องอาศัยการวัดทางไฟฟ้าที่ทราบโหลดลำโพง อินพุต และการตั้งค่าโทนเสียง ให้นำเข้าไฟล์ชดเชยที่ได้จากการวัด ไม่อนุมานกราฟเครื่องขยายเสียงจากสเปกทางการตลาด</translation>
     </message>
     <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
-      <translation type="unfinished" />
+      <translation>ติดตั้งอัปเดตแอปแล้ว ใช้ ออกจากแอป แล้วเปิดใหม่เพื่อโหลดอัปเดต การปิดหน้าต่างนี้จะทำให้เวอร์ชันเก่ายังคงทำงานอยู่</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
-      <translation type="unfinished" />
+      <translation>เอาต์พุตเสมือน SoundCurrent EQ อีกตัวกำลังทำงานอยู่</translation>
     </message>
     <message>
       <source>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</source>
-      <translation type="unfinished" />
+      <translation>แอป SoundCurrent อีกตัวหรือการตั้งค่าไดรเวอร์เสียงกำลังทำงานอยู่ ให้ออกจากโปรแกรมนั้นก่อนเปิดแอปนี้</translation>
     </message>
     <message>
       <source>Another SoundCurrent equalizer is running. Quit EQ or Studio before opening the other app.</source>
-      <translation type="unfinished" />
+      <translation>อีควอไลเซอร์ SoundCurrent อีกตัวกำลังทำงานอยู่ ให้ออกจาก EQ หรือ Studio ก่อนเปิดอีกแอป</translation>
     </message>
     <message>
       <source>Another SoundCurrent microphone filter is running</source>
-      <translation type="unfinished" />
+      <translation>ฟิลเตอร์ไมโครโฟน SoundCurrent อีกตัวกำลังทำงานอยู่</translation>
     </message>
     <message>
       <source>Another equalizer route is present: %1. Quit it before using SoundCurrent.</source>
-      <translation type="unfinished" />
+      <translation>พบเส้นทางอีควอไลเซอร์อื่น: %1 ให้ออกจากโปรแกรมนั้นก่อนใช้ SoundCurrent</translation>
     </message>
     <message>
       <source>Application update</source>
-      <translation type="unfinished" />
+      <translation>อัปเดตแอป</translation>
     </message>
     <message>
       <source>Application updates</source>
-      <translation type="unfinished" />
+      <translation>การอัปเดตแอป</translation>
     </message>
     <message>
       <source>Apply</source>
-      <translation type="unfinished" />
+      <translation>นำไปใช้</translation>
     </message>
     <message>
       <source>Apply correction?</source>
-      <translation type="unfinished" />
+      <translation>ใช้การชดเชยหรือไม่?</translation>
     </message>
     <message>
       <source>Apply profile</source>
-      <translation type="unfinished" />
+      <translation>ใช้โปรไฟล์</translation>
     </message>
     <message>
       <source>Apply suggested EQ</source>
-      <translation type="unfinished" />
+      <translation>ใช้ EQ ที่แนะนำ</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
-      <translation type="unfinished" />
+      <translation>ตั้งค่าไดรเวอร์เสียง</translation>
     </message>
     <message>
       <source>Audio error: %1</source>
-      <translation type="unfinished" />
+      <translation>ข้อผิดพลาดเกี่ยวกับเสียง: %1</translation>
     </message>
     <message>
       <source>Audio setup</source>
-      <translation type="unfinished" />
+      <translation>ตั้งค่าเสียง</translation>
     </message>
     <message>
       <source>Audio setup could not finish</source>
-      <translation type="unfinished" />
+      <translation>ตั้งค่าเสียงไม่สำเร็จ</translation>
     </message>
     <message>
       <source>Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.</source>
-      <translation type="unfinished" />
+      <translation>ตั้งค่าเสียงล้มเหลว หากเพิ่งติดตั้ง VB-CABLE ให้เริ่ม Windows ใหม่แล้วลองอีกครั้ง</translation>
     </message>
     <message>
       <source>Audio setup is missing. Repair or reinstall SoundCurrent.</source>
-      <translation type="unfinished" />
+      <translation>ไม่พบโปรแกรมตั้งค่าเสียง ให้ซ่อมแซมหรือติดตั้ง SoundCurrent ใหม่</translation>
     </message>
     <message>
       <source>Audio setup is running. Processing is paused; the app remains open.</source>
-      <translation type="unfinished" />
+      <translation>กำลังตั้งค่าเสียง การประมวลผลหยุดชั่วคราวและแอปยังเปิดอยู่</translation>
     </message>
     <message>
       <source>Auto headroom %1 dB</source>
-      <translation type="unfinished" />
+      <translation>เฮดรูมอัตโนมัติ %1 dB</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
-      <translation type="unfinished" />
+      <translation>อัตโนมัติ (SoundCurrent Microphone)</translation>
     </message>
     <message>
       <source>Automatic (follow connected devices)</source>
-      <translation type="unfinished" />
+      <translation>อัตโนมัติ (ตามอุปกรณ์ที่เชื่อมต่อ)</translation>
     </message>
     <message>
       <source>Automatic (follow connected microphones)</source>
-      <translation type="unfinished" />
+      <translation>อัตโนมัติ (ตามไมโครโฟนที่เชื่อมต่อ)</translation>
     </message>
     <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>ปรับเสียงไมโครโฟนที่เชื่อมต่อโดยอัตโนมัติ คลิกเพื่อบายพาส EQ ไมโครโฟน</translation>
     </message>
     <message>
       <source>Balance</source>
       <extracomment>Left/right audio channel balance. Not bank balance or physical equilibrium.</extracomment>
-      <translation>สมดุล</translation>
+      <translation>สมดุลซ้าย–ขวา</translation>
     </message>
     <message>
       <source>Balance position</source>
-      <translation type="unfinished" />
+      <translation>ตำแหน่งสมดุลซ้าย–ขวา</translation>
     </message>
     <message>
       <source>Balanced</source>
-      <translation type="unfinished" />
+      <translation>สมดุล</translation>
     </message>
     <message>
       <source>Band %1 gain</source>
-      <translation type="unfinished" />
+      <translation>เกนย่าน %1</translation>
     </message>
     <message>
       <source>Bands</source>
       <extracomment>Frequency bands in an audio equalizer. Not music groups, belts or radio stations.</extracomment>
-      <translation>แถบ</translation>
+      <translation>ย่านความถี่</translation>
     </message>
     <message>
       <source>Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.</source>
-      <translation type="unfinished" />
+      <translation>แถบข้างสไลเดอร์แสดงระดับโดยประมาณหลัง EQ ข้อความพีกสีแดงเตือนว่าอาจเกิดสัญญาณคลิป</translation>
     </message>
     <message>
       <source>Bass Boost</source>
@@ -290,27 +298,27 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bass Cut</source>
-      <translation type="unfinished" />
+      <translation>ลดเสียงเบส</translation>
     </message>
     <message>
       <source>Bass adds low-frequency weight; Clarity adds high-frequency detail; Ambience adds room reflections; Surround widens stereo; Dynamic Boost compresses and raises quieter material with a peak ceiling. Boosting can increase output level.</source>
-      <translation type="unfinished" />
+      <translation>เบสเพิ่มน้ำหนักเสียงความถี่ต่ำ ความชัดเพิ่มรายละเอียดความถี่สูง บรรยากาศเสียงเพิ่มเสียงสะท้อนในห้อง เซอร์ราวด์ขยายภาพเสียงสเตอริโอ Dynamic Boost บีบอัดและเพิ่มระดับเสียงที่เบาโดยจำกัดพีก การเพิ่มเสียงอาจทำให้ระดับเอาต์พุตสูงขึ้น</translation>
     </message>
     <message>
       <source>Bass frequency</source>
-      <translation type="unfinished" />
+      <translation>ความถี่เบส</translation>
     </message>
     <message>
       <source>Boxiness</source>
-      <translation type="unfinished" />
+      <translation>เสียงอู้แบบกล่อง</translation>
     </message>
     <message>
       <source>Brand</source>
-      <translation type="unfinished" />
+      <translation>แบรนด์</translation>
     </message>
     <message>
       <source>Brand, family and model are required (maximum 120 characters each).</source>
-      <translation type="unfinished" />
+      <translation>ต้องระบุแบรนด์ ตระกูลรุ่น และรุ่น (สูงสุดรายการละ 120 อักขระ)</translation>
     </message>
     <message>
       <source>Bright</source>
