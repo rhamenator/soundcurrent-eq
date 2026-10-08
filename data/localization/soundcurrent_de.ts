@@ -1836,8 +1836,16 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Bei verfügbaren Updates oder erforderlichem Neustart erinnern</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>VB-CABLE entfernen?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Ausgewählten Filter entfernen</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Unvollständige VB-CABLE-Installation reparieren</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Systemregion verwenden</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE ist nicht installiert. Öffnen Sie "%1" und starten Sie Windows neu, bevor Sie die Kabeleinstellungen öffnen.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE ist nicht vorhanden. Starten Sie Windows neu, falls Sie dazu aufgefordert wurden, und versuchen Sie die Audioeinrichtung erneut.</translation>
     </message>
@@ -2401,6 +2413,10 @@ In Ihre Bibliothek importieren?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Die VB-CABLE-Einrichtung wurde abgebrochen oder nicht abgeschlossen (Code %1). SoundCurrent bleibt für einen erneuten Versuch installiert.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE wurde beibehalten, weil die andere SoundCurrent-App installiert ist. Entfernen Sie es mit der letzten App, wenn keine andere Software es benötigt.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

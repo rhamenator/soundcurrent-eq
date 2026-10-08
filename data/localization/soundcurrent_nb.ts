@@ -1836,8 +1836,16 @@ Importere til biblioteket ditt?</translation>
       <translation>Minn meg på tilgjengelige oppdateringer eller nødvendig omstart</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Fjerne VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Fjern valgt filter</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Reparer ufullstendig VB-CABLE-installasjon</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Importere til biblioteket ditt?</translation>
       <translation>Bruk systemets regionale innstillinger</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE er ikke installert. Åpne "%1" og start Windows på nytt før du åpner kabelinnstillingene.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE er ikke til stede. Start Windows på nytt hvis du ble bedt om det, og prøv lydoppsettet igjen.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Importere til biblioteket ditt?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE-oppsettet ble avbrutt eller ikke fullført (kode %1). SoundCurrent forblir installert slik at du kan prøve igjen.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE ble beholdt fordi den andre SoundCurrent-appen er installert. Fjern det sammen med den siste appen hvis ingen annen programvare trenger det.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

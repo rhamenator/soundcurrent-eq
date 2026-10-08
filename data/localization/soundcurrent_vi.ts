@@ -1836,8 +1836,16 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Nhắc tôi khi có cập nhật hoặc cần khởi động lại</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Gỡ VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Xóa bộ lọc đã chọn</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Sửa chữa bản cài đặt VB-CABLE không đầy đủ</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Dùng thiết lập vùng của hệ thống</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE chưa được cài đặt. Mở "%1", rồi khởi động lại Windows trước khi mở cài đặt cáp.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>Không có VB-CABLE. Khởi động lại Windows nếu được yêu cầu, rồi thử thiết lập âm thanh lại.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Thiết lập VB-CABLE đã bị hủy hoặc chưa hoàn tất (mã %1). SoundCurrent vẫn được cài đặt để có thể thử lại.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE được giữ lại vì ứng dụng SoundCurrent còn lại đã được cài đặt. Hãy gỡ nó cùng ứng dụng cuối cùng nếu không có phần mềm nào khác cần nó.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

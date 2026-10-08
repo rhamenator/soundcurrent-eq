@@ -1836,8 +1836,16 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Nikumbushe masasisho yanapopatikana au kuanza upya kunapohitajika</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Ondoa VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Ondoa kichujio kilichochaguliwa</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Rekebisha usakinishaji wa VB-CABLE ambao haujakamilika</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Tumia mipangilio ya eneo ya mfumo</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE haijasakinishwa. Fungua "%1", kisha uanzishe Windows upya kabla ya kufungua mipangilio ya kebo.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE haipo. Anzisha Windows upya ikiwa uliombwa kufanya hivyo, kisha ujaribu usanidi wa sauti tena.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Usanidi wa VB-CABLE umeghairiwa au haujakamilika (msimbo %1). SoundCurrent bado imesakinishwa ili uweze kujaribu tena.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE imehifadhiwa kwa sababu programu nyingine ya SoundCurrent imesakinishwa. Iondoe pamoja na programu ya mwisho ikiwa hakuna programu nyingine inayoihitaji.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

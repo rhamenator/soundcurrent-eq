@@ -1836,8 +1836,16 @@ Import into your library?</translation>
       <translation>Remind me when updates are available or a restart is needed</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Remove VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Remove selected filter</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Repair incomplete VB-CABLE installation</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Import into your library?</translation>
       <translation>Use system locale</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Import into your library?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

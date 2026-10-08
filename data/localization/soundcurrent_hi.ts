@@ -1836,8 +1836,16 @@ Import into your library?</source>
       <translation>अपडेट उपलब्ध होने या पुनः प्रारंभ आवश्यक होने पर याद दिलाएँ</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>VB-CABLE हटाएँ?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>चयनित फ़िल्टर हटाएँ</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>अधूरी VB-CABLE स्थापना की मरम्मत करें</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Import into your library?</source>
       <translation>सिस्टम की क्षेत्रीय सेटिंग इस्तेमाल करें</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE स्थापित नहीं है। "%1" खोलें, फिर केबल की सेटिंग खोलने से पहले Windows को पुनरारंभ करें।</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE मौजूद नहीं है। यदि पुनरारंभ करने को कहा गया था, तो Windows को पुनरारंभ करें और ऑडियो सेटअप फिर से आज़माएँ।</translation>
     </message>
@@ -2401,6 +2413,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE सेटअप रद्द कर दिया गया या पूरा नहीं हुआ (कोड %1)। दोबारा प्रयास करने के लिए SoundCurrent स्थापित रखा गया है।</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE को रखा गया क्योंकि दूसरा SoundCurrent ऐप स्थापित है। यदि किसी अन्य सॉफ़्टवेयर को इसकी आवश्यकता नहीं है, तो इसे अंतिम ऐप के साथ हटा दें।</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

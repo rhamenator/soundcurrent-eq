@@ -1836,8 +1836,16 @@ Importare nella libreria?</translation>
       <translation>Avvisami quando sono disponibili aggiornamenti o serve un riavvio</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Rimuovere VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Rimuovi filtro selezionato</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Riparare l’installazione incompleta di VB-CABLE</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Importare nella libreria?</translation>
       <translation>Usa impostazioni regionali del sistema</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE non è installato. Aprire "%1", quindi riavviare Windows prima di aprire le impostazioni del cavo.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE non è presente. Riavviare Windows se richiesto, quindi riprovare la configurazione audio.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Importare nella libreria?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>La configurazione di VB-CABLE è stata annullata o non è stata completata (codice %1). SoundCurrent rimane installato per consentire un nuovo tentativo.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE è stato mantenuto perché l’altra app SoundCurrent è installata. Rimuoverlo insieme all’ultima app se nessun altro software ne ha bisogno.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

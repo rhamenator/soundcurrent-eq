@@ -1836,8 +1836,16 @@ Import into your library?</source>
       <translation>更新が利用可能なとき、または再起動が必要なときに通知する</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>VB-CABLE を削除しますか？</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>選択したフィルターを削除</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>不完全な VB-CABLE のインストールを修復</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Import into your library?</source>
       <translation>システムの地域設定を使用</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE がインストールされていません。"%1" を開き、Windows を再起動してからケーブルの設定を開いてください。</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE が見つかりません。再起動を求められた場合は Windows を再起動してから、オーディオのセットアップを再試行してください。</translation>
     </message>
@@ -2401,6 +2413,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE のセットアップがキャンセルされたか、完了しませんでした（コード %1）。再試行できるよう、SoundCurrent はインストールされたままです。</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>もう一方の SoundCurrent アプリがインストールされているため、VB-CABLE は保持されました。他のソフトウェアで不要であれば、最後のアプリと一緒に削除してください。</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

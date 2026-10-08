@@ -18,13 +18,6 @@
     },
     {
       "file": "cable-setup.ps1",
-      "line": 76,
-      "kind": "StringConstantExpressionAst",
-      "literal": "VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.",
-      "reviewStatus": "untranslated; pending contextual translation"
-    },
-    {
-      "file": "cable-setup.ps1",
       "line": 81,
       "kind": "StringConstantExpressionAst",
       "literal": "Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Choose Yes to open the official remover, then click Remove Driver. Choose No to keep the cable and uninstall only SoundCurrent.",
@@ -32,23 +25,9 @@
     },
     {
       "file": "cable-setup.ps1",
-      "line": 82,
-      "kind": "StringConstantExpressionAst",
-      "literal": "Remove VB-CABLE?",
-      "reviewStatus": "untranslated; pending contextual translation"
-    },
-    {
-      "file": "cable-setup.ps1",
       "line": 98,
       "kind": "StringConstantExpressionAst",
       "literal": "VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.",
-      "reviewStatus": "untranslated; pending contextual translation"
-    },
-    {
-      "file": "cable-setup.ps1",
-      "line": 113,
-      "kind": "StringConstantExpressionAst",
-      "literal": "VB-CABLE is not installed. Use Audio driver setup, then restart Windows before opening its settings.",
       "reviewStatus": "untranslated; pending contextual translation"
     },
     {
@@ -63,13 +42,6 @@
       "line": 125,
       "kind": "StringConstantExpressionAst",
       "literal": "Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then run Audio driver setup again and click Install Driver. Restart once more before using SoundCurrent. Removing this shared cable affects other apps that use it.",
-      "reviewStatus": "untranslated; pending contextual translation"
-    },
-    {
-      "file": "cable-setup.ps1",
-      "line": 126,
-      "kind": "StringConstantExpressionAst",
-      "literal": "Repair incomplete VB-CABLE installation",
       "reviewStatus": "untranslated; pending contextual translation"
     },
     {

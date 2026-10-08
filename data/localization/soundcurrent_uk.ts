@@ -1836,8 +1836,16 @@ Import into your library?</source>
       <translation>Нагадувати про доступні оновлення або потребу перезапуску</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Видалити VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Видалити вибраний фільтр</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Відновити неповну інсталяцію VB-CABLE</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Import into your library?</source>
       <translation>Використовувати регіональні налаштування системи</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE не встановлено. Відкрийте "%1", а потім перезапустіть Windows перед відкриттям параметрів кабелю.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE відсутній. Перезапустіть Windows, якщо це було запропоновано, і повторіть налаштування аудіо.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Налаштування VB-CABLE скасовано або не завершено (код %1). SoundCurrent залишається встановленим для повторної спроби.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE збережено, оскільки інший застосунок SoundCurrent установлено. Видаліть його разом з останнім застосунком, якщо інше програмне забезпечення його не потребує.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

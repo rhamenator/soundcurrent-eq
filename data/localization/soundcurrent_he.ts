@@ -1836,8 +1836,16 @@ Import into your library?</source>
       <translation>תזכורת כאשר עדכונים זמינים או נדרשת הפעלה מחדש</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>להסיר את VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>הסרת המסנן הנבחר</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>תיקון התקנת VB-CABLE שלא הושלמה</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Import into your library?</source>
       <translation>שימוש בהגדרות האזוריות של המערכת</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE אינו מותקן. פתחו את "%1", ואז הפעילו מחדש את Windows לפני פתיחת הגדרות הכבל.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE אינו קיים. הפעילו מחדש את Windows אם התבקשתם לכך, ואז נסו שוב להגדיר את השמע.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>הגדרת VB-CABLE בוטלה או לא הושלמה (קוד %1). SoundCurrent נשאר מותקן כדי לאפשר ניסיון נוסף.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE נשמר משום שאפליקציית SoundCurrent האחרת מותקנת. הסירו אותו עם האפליקציה האחרונה אם תוכנות אחרות אינן זקוקות לו.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

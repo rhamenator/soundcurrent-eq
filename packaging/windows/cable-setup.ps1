@@ -73,13 +73,13 @@ try {
         if (!(Present)) { exit 0 }
         $other = if ($App -eq 'eq') { 'SoundCurrentStudio' } else { 'SoundCurrentEQ' }
         if (Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\$other") {
-            Notice 'VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.'
+            Notice (Get-SCSetupText 'VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.' -Language $Language -Application ('soundcurrent-' + $App))
             exit 0
         }
         Add-Type -AssemblyName System.Windows.Forms
         $answer = [System.Windows.Forms.MessageBox]::Show(
             'Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Choose Yes to open the official remover, then click Remove Driver. Choose No to keep the cable and uninstall only SoundCurrent.',
-            'Remove VB-CABLE?', 'YesNo', 'Question')
+            (Get-SCSetupText 'Remove VB-CABLE?' -Language $Language -Application ('soundcurrent-' + $App)), 'YesNo', 'Question')
         if ($answer -ne 'Yes') { exit 0 }
     }
     if ($RequestingProcessId) {
@@ -110,7 +110,7 @@ try {
         $exe = Join-Path $temp $(if ($Settings) { 'VBCABLE_ControlPanel.exe' } else { 'VBCABLE_Setup_x64.exe' })
         if ((Get-AuthenticodeSignature -LiteralPath $exe).Status -ne 'Valid') { throw (Get-SCSetupText 'Windows could not verify the VB-Audio executable signature.' -Language $Language -Application ('soundcurrent-' + $App)) }
         if ($Settings) {
-            if (!(Present)) { throw 'VB-CABLE is not installed. Use Audio driver setup, then restart Windows before opening its settings.' }
+            if (!(Present)) { throw (Format-SCSetupText 'VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.' -Values @((Get-SCSetupText 'Audio driver setup' -Language $Language -Application ('soundcurrent-' + $App))) -Language $Language -Application ('soundcurrent-' + $App)) }
             if (!(Ready)) { throw 'Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, use Audio driver setup to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.' }
             $process = Start-Process -FilePath $exe -WorkingDirectory $temp -PassThru
             $process.WaitForExit()
@@ -123,7 +123,7 @@ try {
                 Add-Type -AssemblyName System.Windows.Forms
                 [void][System.Windows.Forms.MessageBox]::Show(
                     'Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then run Audio driver setup again and click Install Driver. Restart once more before using SoundCurrent. Removing this shared cable affects other apps that use it.',
-                    'Repair incomplete VB-CABLE installation')
+                    (Get-SCSetupText 'Repair incomplete VB-CABLE installation' -Language $Language -Application ('soundcurrent-' + $App)))
             }
             if ($Install) { MarkReboot } # Persist before mutation, even if the UI closes.
             & $guard $(if ($Install) { '--install' } else { '--remove' }) $exe

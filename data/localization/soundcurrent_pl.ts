@@ -1836,8 +1836,16 @@ Zaimportować do biblioteki?</translation>
       <translation>Powiadamiaj o dostępnych aktualizacjach lub konieczności ponownego uruchomienia</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Usunąć VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Usuń wybrany filtr</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Napraw niekompletną instalację VB-CABLE</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Zaimportować do biblioteki?</translation>
       <translation>Użyj ustawień regionalnych systemu</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE nie jest zainstalowany. Otwórz "%1", a następnie uruchom ponownie system Windows przed otwarciem ustawień kabla.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE nie jest obecny. Uruchom ponownie system Windows, jeśli pojawiła się taka prośba, i ponów konfigurację audio.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Konfiguracja VB-CABLE została anulowana lub nie została ukończona (kod %1). SoundCurrent pozostaje zainstalowany, aby można było ponowić próbę.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>Zachowano VB-CABLE, ponieważ druga aplikacja SoundCurrent jest zainstalowana. Usuń go wraz z ostatnią aplikacją, jeśli żadne inne oprogramowanie go nie potrzebuje.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

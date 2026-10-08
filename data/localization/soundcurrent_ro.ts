@@ -1836,8 +1836,16 @@ Importați în bibliotecă?</translation>
       <translation>Amintiți-mi când sunt disponibile actualizări sau este necesară o repornire</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Eliminați VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Eliminați filtrul selectat</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Reparați instalarea incompletă a VB-CABLE</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Importați în bibliotecă?</translation>
       <translation>Folosiți setările regionale ale sistemului</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE nu este instalat. Deschideți "%1", apoi reporniți Windows înainte de a deschide setările cablului.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE nu este prezent. Reporniți Windows dacă vi s-a solicitat, apoi reîncercați configurarea audio.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Configurarea VB-CABLE a fost anulată sau nu s-a încheiat (cod %1). SoundCurrent rămâne instalat pentru o nouă încercare.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE a fost păstrat deoarece cealaltă aplicație SoundCurrent este instalată. Eliminați-l odată cu ultima aplicație dacă niciun alt program nu are nevoie de el.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

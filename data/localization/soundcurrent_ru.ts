@@ -1836,8 +1836,16 @@ Import into your library?</source>
       <translation>Напоминать о доступных обновлениях или необходимости перезапуска</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Удалить VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Удалить выбранный фильтр</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Восстановить неполную установку VB-CABLE</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Import into your library?</source>
       <translation>Использовать региональные настройки системы</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE не установлен. Откройте "%1", затем перезапустите Windows перед открытием настроек кабеля.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE отсутствует. Перезапустите Windows, если это было предложено, и повторите настройку аудио.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Настройка VB-CABLE отменена или не завершена (код %1). SoundCurrent остаётся установленным для повторной попытки.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE сохранён, поскольку другое приложение SoundCurrent установлено. Удалите его вместе с последним приложением, если другому ПО он не нужен.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

@@ -97,6 +97,24 @@ try {
         }
     }
 } finally { Remove-Item -LiteralPath $emptyPayload -Recurse -Force -ErrorAction SilentlyContinue }
+
+# Execute only the owned nested-caption throw expression, not its device predicate.
+$missingCableThrow=$cableAst.Find({param($node)
+    $node -is [Management.Automation.Language.ThrowStatementAst] -and
+    $node.Extent.Text -like '*VB-CABLE is not installed. Open*'
+},$true)
+if (!$missingCableThrow) { throw 'Missing cable diagnostic fixture not found' }
+foreach ($pack in $data.languages.PSObject.Properties) {
+    $actual=& {
+        $App='eq';$Language=$pack.Name
+        try { & ([scriptblock]::Create($missingCableThrow.Extent.Text)); throw 'Expected cable diagnostic missing' }
+        catch { $_.Exception.Message }
+    }
+    $source='VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.'
+    $caption=$pack.Value.PSObject.Properties['Audio driver setup'].Value
+    $expected=$pack.Value.PSObject.Properties[$source].Value.Replace('%1',$caption)
+    if ($actual -cne $expected) { throw ('Nested setup caption mismatch: '+$pack.Name) }
+}
 $available = @($data.languages.PSObject.Properties.Name)
 foreach ($case in @(@('FR_ca','fr'),@('NN_no','nn'),@('zh-HK','zh-Hant'),@('zh-CN','zh-Hans'),@('pt-AO','en'),@('fr-Xxxx','en'),@('not-a-language','en'))) {
     if ((Resolve-SCSetupLanguage $case[0] $available) -ne $case[1]) { throw "Helper language resolution failed: $($case[0])" }

@@ -1836,8 +1836,16 @@ Import into your library?</source>
       <translation>تذكيري عند توفر تحديثات أو الحاجة إلى إعادة التشغيل</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>إزالة VB-CABLE؟</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>إزالة المرشح المحدد</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>إصلاح تثبيت VB-CABLE غير المكتمل</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Import into your library?</source>
       <translation>استخدام الإعدادات الإقليمية للنظام</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE غير مثبت. افتح "%1"، ثم أعد تشغيل Windows قبل فتح إعدادات الكابل.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE غير موجود. أعد تشغيل Windows إذا طُلب منك ذلك، ثم أعد محاولة إعداد الصوت.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>تم إلغاء إعداد VB-CABLE أو لم يكتمل (الرمز %1). بقي SoundCurrent مثبتًا لإعادة المحاولة.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>تم الاحتفاظ بـ VB-CABLE لأن تطبيق SoundCurrent الآخر مثبت. أزله مع التطبيق الأخير إذا لم يكن أي برنامج آخر بحاجة إليه.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

@@ -170,5 +170,9 @@
   "secondPassCableRestartErrors": {
     "status": "three owned messages translated; host lookup and regression checks passed; actual Windows paths and package lifecycle pending",
     "evidence": "tests/results/localization/second-pass-cable-restart-errors.json"
+  },
+  "secondPassCableDialogCaptions": {
+    "status": "four messages translated; host nested-caption expression tested; real Windows dialogs and lifecycle pending",
+    "evidence": "tests/results/localization/second-pass-cable-dialog-captions.json"
   }
 }

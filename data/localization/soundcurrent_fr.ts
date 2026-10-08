@@ -1836,8 +1836,16 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Me prévenir lorsqu’une mise à jour est disponible ou qu’un redémarrage est nécessaire</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Supprimer VB-CABLE ?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Supprimer le filtre sélectionné</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Réparer l’installation incomplète de VB-CABLE</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Utiliser les paramètres régionaux du système</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE n’est pas installé. Ouvrez "%1", puis redémarrez Windows avant d’ouvrir les paramètres du câble.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE est absent. Redémarrez Windows si cela vous a été demandé, puis réessayez la configuration audio.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Importer dans votre bibliothèque ?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>La configuration de VB-CABLE a été annulée ou n’a pas abouti (code %1). SoundCurrent reste installé pour permettre une nouvelle tentative.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE a été conservé car l’autre application SoundCurrent est installée. Supprimez-le avec la dernière application si aucun autre logiciel n’en a besoin.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

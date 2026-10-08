@@ -1836,8 +1836,16 @@ Impor ke pustaka Anda?</translation>
       <translation>Ingatkan saat pembaruan tersedia atau perlu memulai ulang</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Hapus VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Hapus filter yang dipilih</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Perbaiki instalasi VB-CABLE yang tidak lengkap</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Gunakan pengaturan wilayah sistem</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE belum terpasang. Buka "%1", lalu mulai ulang Windows sebelum membuka pengaturan kabel.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE tidak ditemukan. Mulai ulang Windows jika diminta, lalu coba penyiapan audio lagi.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Penyiapan VB-CABLE dibatalkan atau tidak selesai (kode %1). SoundCurrent tetap terpasang agar Anda dapat mencoba lagi.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE dipertahankan karena aplikasi SoundCurrent lainnya terpasang. Hapus bersama aplikasi terakhir jika tidak ada perangkat lunak lain yang membutuhkannya.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

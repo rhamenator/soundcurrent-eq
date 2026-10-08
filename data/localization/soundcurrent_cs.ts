@@ -1836,8 +1836,16 @@ Importovat do vaší knihovny?</translation>
       <translation>Upozornit na dostupné aktualizace nebo potřebu restartu</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Odstranit VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Odstranit vybraný filtr</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Opravit neúplnou instalaci VB-CABLE</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Importovat do vaší knihovny?</translation>
       <translation>Použít místní nastavení systému</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE není nainstalován. Otevřete "%1" a před otevřením nastavení kabelu restartujte systém Windows.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE není přítomen. Pokud byl požadován restart, restartujte systém Windows a zkuste nastavení zvuku znovu.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Nastavení VB-CABLE bylo zrušeno nebo nebylo dokončeno (kód %1). SoundCurrent zůstává nainstalován pro další pokus.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE byl zachován, protože je nainstalována druhá aplikace SoundCurrent. Odstraňte jej s poslední aplikací, pokud jej nepotřebuje žádný jiný software.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

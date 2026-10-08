@@ -1836,8 +1836,16 @@ Importér til dit bibliotek?</translation>
       <translation>Mind mig om tilgængelige opdateringer eller behov for genstart</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Fjern VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Fjern valgt filter</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Reparer ufuldstændig VB-CABLE-installation</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Importér til dit bibliotek?</translation>
       <translation>Brug systemets landestandard</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE er ikke installeret. Åbn "%1", og genstart Windows, før du åbner kabelindstillingerne.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE er ikke til stede. Genstart Windows, hvis du blev bedt om det, og prøv lydopsætningen igen.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Importér til dit bibliotek?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE-opsætningen blev annulleret eller ikke fuldført (kode %1). SoundCurrent forbliver installeret, så du kan prøve igen.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE blev bevaret, fordi den anden SoundCurrent-app er installeret. Fjern det sammen med den sidste app, hvis ingen anden software har brug for det.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

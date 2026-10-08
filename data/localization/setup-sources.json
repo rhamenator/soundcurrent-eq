@@ -21,5 +21,9 @@
   "The audio readiness helper is missing. Repair the SoundCurrent installation.",
   "Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.",
   "VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.",
-  "VB-CABLE is not present. Restart Windows if requested, then retry audio setup."
+  "VB-CABLE is not present. Restart Windows if requested, then retry audio setup.",
+  "VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.",
+  "Remove VB-CABLE?",
+  "Repair incomplete VB-CABLE installation",
+  "VB-CABLE is not installed. Open \"%1\", then restart Windows before opening the cable settings."
 ]

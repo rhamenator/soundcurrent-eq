@@ -95,7 +95,11 @@
     "The audio readiness helper is missing. Repair the SoundCurrent installation.",
     "Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.",
     "VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.",
-    "VB-CABLE is not present. Restart Windows if requested, then retry audio setup."
+    "VB-CABLE is not present. Restart Windows if requested, then retry audio setup.",
+    "VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.",
+    "Remove VB-CABLE?",
+    "Repair incomplete VB-CABLE installation",
+    "VB-CABLE is not installed. Open \"%1\", then restart Windows before opening the cable settings."
   ],
   "languages": {
     "de": [
@@ -195,7 +199,11 @@
       "Die Hilfe zur Prüfung der Audiobereitschaft fehlt. Reparieren Sie die SoundCurrent-Installation.",
       "Starten Sie Windows neu, bevor Sie VB-CABLE verwenden. Die Audioeinrichtung ist abgeschlossen, aber der Treiber und seine Einstellungen erfordern einen Systemneustart.",
       "Die VB-CABLE-Einstellungen konnten nicht geöffnet werden. Starten Sie Windows neu, wenn der Treiber gerade installiert oder aktualisiert wurde, und versuchen Sie es erneut.",
-      "VB-CABLE ist nicht vorhanden. Starten Sie Windows neu, falls Sie dazu aufgefordert wurden, und versuchen Sie die Audioeinrichtung erneut."
+      "VB-CABLE ist nicht vorhanden. Starten Sie Windows neu, falls Sie dazu aufgefordert wurden, und versuchen Sie die Audioeinrichtung erneut.",
+      "VB-CABLE wurde beibehalten, weil die andere SoundCurrent-App installiert ist. Entfernen Sie es mit der letzten App, wenn keine andere Software es benötigt.",
+      "VB-CABLE entfernen?",
+      "Unvollständige VB-CABLE-Installation reparieren",
+      "VB-CABLE ist nicht installiert. Öffnen Sie \"%1\" und starten Sie Windows neu, bevor Sie die Kabeleinstellungen öffnen."
     ],
     "fr": [
       "Français",
@@ -294,7 +302,11 @@
       "L’assistant de vérification de disponibilité audio est manquant. Réparez l’installation de SoundCurrent.",
       "Redémarrez Windows avant d’utiliser VB-CABLE. La configuration audio est terminée, mais le pilote et ses paramètres nécessitent un redémarrage du système.",
       "Les paramètres de VB-CABLE n’ont pas pu s’ouvrir. Redémarrez Windows si le pilote vient d’être installé ou mis à jour, puis réessayez.",
-      "VB-CABLE est absent. Redémarrez Windows si cela vous a été demandé, puis réessayez la configuration audio."
+      "VB-CABLE est absent. Redémarrez Windows si cela vous a été demandé, puis réessayez la configuration audio.",
+      "VB-CABLE a été conservé car l’autre application SoundCurrent est installée. Supprimez-le avec la dernière application si aucun autre logiciel n’en a besoin.",
+      "Supprimer VB-CABLE ?",
+      "Réparer l’installation incomplète de VB-CABLE",
+      "VB-CABLE n’est pas installé. Ouvrez \"%1\", puis redémarrez Windows avant d’ouvrir les paramètres du câble."
     ],
     "es": [
       "Español",
@@ -393,7 +405,11 @@
       "Falta el asistente de comprobación de disponibilidad de audio. Repare la instalación de SoundCurrent.",
       "Reinicie Windows antes de usar VB-CABLE. La configuración de audio ha finalizado, pero el controlador y sus ajustes requieren reiniciar el sistema.",
       "No se pudieron abrir los ajustes de VB-CABLE. Reinicie Windows si el controlador acaba de instalarse o actualizarse y vuelva a intentarlo.",
-      "VB-CABLE no está presente. Reinicie Windows si se le solicitó y vuelva a intentar la configuración de audio."
+      "VB-CABLE no está presente. Reinicie Windows si se le solicitó y vuelva a intentar la configuración de audio.",
+      "Se conservó VB-CABLE porque la otra aplicación SoundCurrent está instalada. Elimínelo con la última aplicación si ningún otro programa lo necesita.",
+      "¿Eliminar VB-CABLE?",
+      "Reparar la instalación incompleta de VB-CABLE",
+      "VB-CABLE no está instalado. Abra \"%1\" y reinicie Windows antes de abrir los ajustes del cable."
     ],
     "it": [
       "Italiano",
@@ -492,7 +508,11 @@
       "Manca l’assistente per la verifica della disponibilità audio. Riparare l’installazione di SoundCurrent.",
       "Riavviare Windows prima di usare VB-CABLE. La configurazione audio è completata, ma il driver e le sue impostazioni richiedono un riavvio del sistema.",
       "Impossibile aprire le impostazioni di VB-CABLE. Riavviare Windows se il driver è appena stato installato o aggiornato, quindi riprovare.",
-      "VB-CABLE non è presente. Riavviare Windows se richiesto, quindi riprovare la configurazione audio."
+      "VB-CABLE non è presente. Riavviare Windows se richiesto, quindi riprovare la configurazione audio.",
+      "VB-CABLE è stato mantenuto perché l’altra app SoundCurrent è installata. Rimuoverlo insieme all’ultima app se nessun altro software ne ha bisogno.",
+      "Rimuovere VB-CABLE?",
+      "Riparare l’installazione incompleta di VB-CABLE",
+      "VB-CABLE non è installato. Aprire \"%1\", quindi riavviare Windows prima di aprire le impostazioni del cavo."
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -591,7 +611,11 @@
       "O assistente de verificação de disponibilidade do áudio está em falta. Repare a instalação do SoundCurrent.",
       "Reinicie o Windows antes de utilizar o VB-CABLE. A configuração do áudio foi concluída, mas o controlador e as suas definições exigem um reinício do sistema.",
       "Não foi possível abrir as definições do VB-CABLE. Reinicie o Windows se o controlador acabou de ser instalado ou atualizado e tente novamente.",
-      "O VB-CABLE não está presente. Reinicie o Windows se tal tiver sido solicitado e tente novamente a configuração do áudio."
+      "O VB-CABLE não está presente. Reinicie o Windows se tal tiver sido solicitado e tente novamente a configuração do áudio.",
+      "O VB-CABLE foi mantido porque a outra aplicação SoundCurrent está instalada. Remova-o com a última aplicação se nenhum outro software precisar dele.",
+      "Remover o VB-CABLE?",
+      "Reparar a instalação incompleta do VB-CABLE",
+      "O VB-CABLE não está instalado. Abra \"%1\" e reinicie o Windows antes de abrir as definições do cabo."
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -690,7 +714,11 @@
       "O assistente de verificação de disponibilidade do áudio está ausente. Repare a instalação do SoundCurrent.",
       "Reinicie o Windows antes de usar o VB-CABLE. A configuração do áudio foi concluída, mas o driver e suas configurações exigem uma reinicialização do sistema.",
       "Não foi possível abrir as configurações do VB-CABLE. Reinicie o Windows se o driver acabou de ser instalado ou atualizado e tente novamente.",
-      "O VB-CABLE não está presente. Reinicie o Windows se isso tiver sido solicitado e tente novamente a configuração do áudio."
+      "O VB-CABLE não está presente. Reinicie o Windows se isso tiver sido solicitado e tente novamente a configuração do áudio.",
+      "O VB-CABLE foi mantido porque o outro aplicativo SoundCurrent está instalado. Remova-o com o último aplicativo se nenhum outro software precisar dele.",
+      "Remover o VB-CABLE?",
+      "Reparar a instalação incompleta do VB-CABLE",
+      "O VB-CABLE não está instalado. Abra \"%1\" e reinicie o Windows antes de abrir as configurações do cabo."
     ],
     "nl": [
       "Nederlands",
@@ -789,7 +817,11 @@
       "De hulp voor het controleren van de audiogereedheid ontbreekt. Herstel de installatie van SoundCurrent.",
       "Start Windows opnieuw op voordat u VB-CABLE gebruikt. De audio-instelling is voltooid, maar het stuurprogramma en de instellingen vereisen een herstart van het systeem.",
       "De VB-CABLE-instellingen konden niet worden geopend. Start Windows opnieuw op als het stuurprogramma zojuist is geïnstalleerd of bijgewerkt en probeer het opnieuw.",
-      "VB-CABLE is niet aanwezig. Start Windows opnieuw op als daarom is gevraagd en probeer de audio-instelling opnieuw."
+      "VB-CABLE is niet aanwezig. Start Windows opnieuw op als daarom is gevraagd en probeer de audio-instelling opnieuw.",
+      "VB-CABLE is behouden omdat de andere SoundCurrent-app is geïnstalleerd. Verwijder het met de laatste app als geen andere software het nodig heeft.",
+      "VB-CABLE verwijderen?",
+      "Onvolledige VB-CABLE-installatie herstellen",
+      "VB-CABLE is niet geïnstalleerd. Open \"%1\" en start Windows opnieuw op voordat u de kabelinstellingen opent."
     ],
     "pl": [
       "Polski",
@@ -888,7 +920,11 @@
       "Brakuje pomocnika sprawdzania gotowości dźwięku. Napraw instalację SoundCurrent.",
       "Uruchom ponownie system Windows przed użyciem VB-CABLE. Konfiguracja audio jest ukończona, ale sterownik i jego ustawienia wymagają ponownego uruchomienia systemu.",
       "Nie można otworzyć ustawień VB-CABLE. Uruchom ponownie system Windows, jeśli sterownik został właśnie zainstalowany lub zaktualizowany, i spróbuj ponownie.",
-      "VB-CABLE nie jest obecny. Uruchom ponownie system Windows, jeśli pojawiła się taka prośba, i ponów konfigurację audio."
+      "VB-CABLE nie jest obecny. Uruchom ponownie system Windows, jeśli pojawiła się taka prośba, i ponów konfigurację audio.",
+      "Zachowano VB-CABLE, ponieważ druga aplikacja SoundCurrent jest zainstalowana. Usuń go wraz z ostatnią aplikacją, jeśli żadne inne oprogramowanie go nie potrzebuje.",
+      "Usunąć VB-CABLE?",
+      "Napraw niekompletną instalację VB-CABLE",
+      "VB-CABLE nie jest zainstalowany. Otwórz \"%1\", a następnie uruchom ponownie system Windows przed otwarciem ustawień kabla."
     ],
     "cs": [
       "Čeština",
@@ -987,7 +1023,11 @@
       "Pomocník kontroly připravenosti zvuku chybí. Opravte instalaci SoundCurrent.",
       "Před použitím VB-CABLE restartujte systém Windows. Nastavení zvuku je dokončeno, ale ovladač a jeho nastavení vyžadují restart systému.",
       "Nastavení VB-CABLE se nepodařilo otevřít. Pokud byl ovladač právě nainstalován nebo aktualizován, restartujte systém Windows a zkuste to znovu.",
-      "VB-CABLE není přítomen. Pokud byl požadován restart, restartujte systém Windows a zkuste nastavení zvuku znovu."
+      "VB-CABLE není přítomen. Pokud byl požadován restart, restartujte systém Windows a zkuste nastavení zvuku znovu.",
+      "VB-CABLE byl zachován, protože je nainstalována druhá aplikace SoundCurrent. Odstraňte jej s poslední aplikací, pokud jej nepotřebuje žádný jiný software.",
+      "Odstranit VB-CABLE?",
+      "Opravit neúplnou instalaci VB-CABLE",
+      "VB-CABLE není nainstalován. Otevřete \"%1\" a před otevřením nastavení kabelu restartujte systém Windows."
     ],
     "sk": [
       "Slovenčina",
@@ -1086,7 +1126,11 @@
       "Pomocník kontroly pripravenosti zvuku chýba. Opravte inštaláciu SoundCurrent.",
       "Pred použitím VB-CABLE reštartujte systém Windows. Nastavenie zvuku je dokončené, ale ovládač a jeho nastavenia vyžadujú reštart systému.",
       "Nastavenia VB-CABLE sa nepodarilo otvoriť. Ak bol ovládač práve nainštalovaný alebo aktualizovaný, reštartujte systém Windows a skúste to znova.",
-      "VB-CABLE nie je prítomný. Ak bol požadovaný reštart, reštartujte systém Windows a skúste nastavenie zvuku znova."
+      "VB-CABLE nie je prítomný. Ak bol požadovaný reštart, reštartujte systém Windows a skúste nastavenie zvuku znova.",
+      "VB-CABLE bol zachovaný, pretože je nainštalovaná druhá aplikácia SoundCurrent. Odstráňte ho s poslednou aplikáciou, ak ho nepotrebuje žiadny iný softvér.",
+      "Odstrániť VB-CABLE?",
+      "Opraviť neúplnú inštaláciu VB-CABLE",
+      "VB-CABLE nie je nainštalovaný. Otvorte \"%1\" a pred otvorením nastavení kábla reštartujte systém Windows."
     ],
     "uk": [
       "Українська",
@@ -1185,7 +1229,11 @@
       "Помічник перевірки готовності аудіо відсутній. Відновіть інсталяцію SoundCurrent.",
       "Перезапустіть Windows перед використанням VB-CABLE. Налаштування аудіо завершено, але драйвер і його параметри потребують перезапуску системи.",
       "Не вдалося відкрити параметри VB-CABLE. Перезапустіть Windows, якщо драйвер щойно встановлено або оновлено, і повторіть спробу.",
-      "VB-CABLE відсутній. Перезапустіть Windows, якщо це було запропоновано, і повторіть налаштування аудіо."
+      "VB-CABLE відсутній. Перезапустіть Windows, якщо це було запропоновано, і повторіть налаштування аудіо.",
+      "VB-CABLE збережено, оскільки інший застосунок SoundCurrent установлено. Видаліть його разом з останнім застосунком, якщо інше програмне забезпечення його не потребує.",
+      "Видалити VB-CABLE?",
+      "Відновити неповну інсталяцію VB-CABLE",
+      "VB-CABLE не встановлено. Відкрийте \"%1\", а потім перезапустіть Windows перед відкриттям параметрів кабелю."
     ],
     "ru": [
       "Русский",
@@ -1284,7 +1332,11 @@
       "Помощник проверки готовности аудио отсутствует. Восстановите установку SoundCurrent.",
       "Перезапустите Windows перед использованием VB-CABLE. Настройка аудио завершена, но драйвер и его параметры требуют перезапуска системы.",
       "Не удалось открыть настройки VB-CABLE. Перезапустите Windows, если драйвер только что установлен или обновлён, и повторите попытку.",
-      "VB-CABLE отсутствует. Перезапустите Windows, если это было предложено, и повторите настройку аудио."
+      "VB-CABLE отсутствует. Перезапустите Windows, если это было предложено, и повторите настройку аудио.",
+      "VB-CABLE сохранён, поскольку другое приложение SoundCurrent установлено. Удалите его вместе с последним приложением, если другому ПО он не нужен.",
+      "Удалить VB-CABLE?",
+      "Восстановить неполную установку VB-CABLE",
+      "VB-CABLE не установлен. Откройте \"%1\", затем перезапустите Windows перед открытием настроек кабеля."
     ],
     "el": [
       "Ελληνικά",
@@ -1383,7 +1435,11 @@
       "Λείπει ο βοηθός ελέγχου ετοιμότητας ήχου. Επιδιορθώστε την εγκατάσταση του SoundCurrent.",
       "Επανεκκινήστε τα Windows πριν χρησιμοποιήσετε το VB-CABLE. Η ρύθμιση ήχου ολοκληρώθηκε, αλλά το πρόγραμμα οδήγησης και οι ρυθμίσεις του απαιτούν επανεκκίνηση του συστήματος.",
       "Δεν ήταν δυνατό να ανοίξουν οι ρυθμίσεις του VB-CABLE. Επανεκκινήστε τα Windows αν το πρόγραμμα οδήγησης μόλις εγκαταστάθηκε ή ενημερώθηκε και δοκιμάστε ξανά.",
-      "Το VB-CABLE δεν υπάρχει. Επανεκκινήστε τα Windows αν σας ζητήθηκε και δοκιμάστε ξανά τη ρύθμιση ήχου."
+      "Το VB-CABLE δεν υπάρχει. Επανεκκινήστε τα Windows αν σας ζητήθηκε και δοκιμάστε ξανά τη ρύθμιση ήχου.",
+      "Το VB-CABLE διατηρήθηκε επειδή είναι εγκατεστημένη η άλλη εφαρμογή SoundCurrent. Αφαιρέστε το μαζί με την τελευταία εφαρμογή αν δεν το χρειάζεται άλλο λογισμικό.",
+      "Αφαίρεση του VB-CABLE;",
+      "Επιδιόρθωση ελλιπούς εγκατάστασης του VB-CABLE",
+      "Το VB-CABLE δεν είναι εγκατεστημένο. Ανοίξτε το \"%1\" και επανεκκινήστε τα Windows πριν ανοίξετε τις ρυθμίσεις του καλωδίου."
     ],
     "tr": [
       "Türkçe",
@@ -1482,7 +1538,11 @@
       "Ses hazırlık denetimi yardımcısı eksik. SoundCurrent kurulumunu onarın.",
       "VB-CABLE kullanmadan önce Windows’u yeniden başlatın. Ses kurulumu tamamlandı ancak sürücü ve ayarları sistemin yeniden başlatılmasını gerektiriyor.",
       "VB-CABLE ayarları açılamadı. Sürücü yeni yüklendiyse veya güncellendiyse Windows’u yeniden başlatıp tekrar deneyin.",
-      "VB-CABLE mevcut değil. İstendiyse Windows’u yeniden başlatın ve ses kurulumunu tekrar deneyin."
+      "VB-CABLE mevcut değil. İstendiyse Windows’u yeniden başlatın ve ses kurulumunu tekrar deneyin.",
+      "Diğer SoundCurrent uygulaması yüklü olduğu için VB-CABLE korundu. Başka bir yazılım gerektirmiyorsa son uygulamayla birlikte kaldırın.",
+      "VB-CABLE kaldırılsın mı?",
+      "Eksik VB-CABLE kurulumunu onar",
+      "VB-CABLE yüklü değil. \"%1\" öğesini açın ve kablo ayarlarını açmadan önce Windows’u yeniden başlatın."
     ],
     "sv": [
       "Svenska",
@@ -1581,7 +1641,11 @@
       "Hjälpen för kontroll av ljudberedskap saknas. Reparera SoundCurrent-installationen.",
       "Starta om Windows innan du använder VB-CABLE. Ljudinstallationen är klar, men drivrutinen och dess inställningar kräver en systemomstart.",
       "VB-CABLE-inställningarna kunde inte öppnas. Starta om Windows om drivrutinen just installerades eller uppdaterades och försök igen.",
-      "VB-CABLE finns inte. Starta om Windows om du uppmanades att göra det och försök med ljudinstallationen igen."
+      "VB-CABLE finns inte. Starta om Windows om du uppmanades att göra det och försök med ljudinstallationen igen.",
+      "VB-CABLE behölls eftersom den andra SoundCurrent-appen är installerad. Ta bort det med den sista appen om ingen annan programvara behöver det.",
+      "Ta bort VB-CABLE?",
+      "Reparera ofullständig VB-CABLE-installation",
+      "VB-CABLE är inte installerat. Öppna \"%1\" och starta om Windows innan du öppnar kabelinställningarna."
     ],
     "da": [
       "Dansk",
@@ -1680,7 +1744,11 @@
       "Hjælperen til kontrol af lydberedskab mangler. Reparer SoundCurrent-installationen.",
       "Genstart Windows, før du bruger VB-CABLE. Lydopsætningen er fuldført, men driveren og dens indstillinger kræver en genstart af systemet.",
       "VB-CABLE-indstillingerne kunne ikke åbnes. Genstart Windows, hvis driveren lige er blevet installeret eller opdateret, og prøv igen.",
-      "VB-CABLE er ikke til stede. Genstart Windows, hvis du blev bedt om det, og prøv lydopsætningen igen."
+      "VB-CABLE er ikke til stede. Genstart Windows, hvis du blev bedt om det, og prøv lydopsætningen igen.",
+      "VB-CABLE blev bevaret, fordi den anden SoundCurrent-app er installeret. Fjern det sammen med den sidste app, hvis ingen anden software har brug for det.",
+      "Fjern VB-CABLE?",
+      "Reparer ufuldstændig VB-CABLE-installation",
+      "VB-CABLE er ikke installeret. Åbn \"%1\", og genstart Windows, før du åbner kabelindstillingerne."
     ],
     "nb": [
       "Norsk bokmål",
@@ -1779,7 +1847,11 @@
       "Hjelperen for kontroll av lydberedskap mangler. Reparer SoundCurrent-installasjonen.",
       "Start Windows på nytt før du bruker VB-CABLE. Lydoppsettet er fullført, men driveren og innstillingene krever en omstart av systemet.",
       "VB-CABLE-innstillingene kunne ikke åpnes. Start Windows på nytt hvis driveren nettopp ble installert eller oppdatert, og prøv igjen.",
-      "VB-CABLE er ikke til stede. Start Windows på nytt hvis du ble bedt om det, og prøv lydoppsettet igjen."
+      "VB-CABLE er ikke til stede. Start Windows på nytt hvis du ble bedt om det, og prøv lydoppsettet igjen.",
+      "VB-CABLE ble beholdt fordi den andre SoundCurrent-appen er installert. Fjern det sammen med den siste appen hvis ingen annen programvare trenger det.",
+      "Fjerne VB-CABLE?",
+      "Reparer ufullstendig VB-CABLE-installasjon",
+      "VB-CABLE er ikke installert. Åpne \"%1\" og start Windows på nytt før du åpner kabelinnstillingene."
     ],
     "fi": [
       "Suomi",
@@ -1878,7 +1950,11 @@
       "Äänen valmiuden tarkistuksen apuohjelma puuttuu. Korjaa SoundCurrentin asennus.",
       "Käynnistä Windows uudelleen ennen VB-CABLEn käyttöä. Ääniasetukset on tehty, mutta ohjain ja sen asetukset vaativat järjestelmän uudelleenkäynnistyksen.",
       "VB-CABLEn asetuksia ei voitu avata. Käynnistä Windows uudelleen, jos ohjain on juuri asennettu tai päivitetty, ja yritä uudelleen.",
-      "VB-CABLE puuttuu. Käynnistä Windows uudelleen, jos sitä pyydettiin, ja yritä ääniasetusten tekemistä uudelleen."
+      "VB-CABLE puuttuu. Käynnistä Windows uudelleen, jos sitä pyydettiin, ja yritä ääniasetusten tekemistä uudelleen.",
+      "VB-CABLE säilytettiin, koska toinen SoundCurrent-sovellus on asennettu. Poista se viimeisen sovelluksen kanssa, jos muut ohjelmistot eivät tarvitse sitä.",
+      "Poistetaanko VB-CABLE?",
+      "Korjaa puutteellinen VB-CABLE-asennus",
+      "VB-CABLEa ei ole asennettu. Avaa \"%1\" ja käynnistä Windows uudelleen ennen kaapelin asetusten avaamista."
     ],
     "ro": [
       "Română",
@@ -1977,7 +2053,11 @@
       "Lipsește asistentul de verificare a disponibilității audio. Reparați instalarea SoundCurrent.",
       "Reporniți Windows înainte de a utiliza VB-CABLE. Configurarea audio s-a încheiat, dar driverul și setările sale necesită repornirea sistemului.",
       "Setările VB-CABLE nu au putut fi deschise. Reporniți Windows dacă driverul tocmai a fost instalat sau actualizat, apoi încercați din nou.",
-      "VB-CABLE nu este prezent. Reporniți Windows dacă vi s-a solicitat, apoi reîncercați configurarea audio."
+      "VB-CABLE nu este prezent. Reporniți Windows dacă vi s-a solicitat, apoi reîncercați configurarea audio.",
+      "VB-CABLE a fost păstrat deoarece cealaltă aplicație SoundCurrent este instalată. Eliminați-l odată cu ultima aplicație dacă niciun alt program nu are nevoie de el.",
+      "Eliminați VB-CABLE?",
+      "Reparați instalarea incompletă a VB-CABLE",
+      "VB-CABLE nu este instalat. Deschideți \"%1\", apoi reporniți Windows înainte de a deschide setările cablului."
     ],
     "hu": [
       "Magyar",
@@ -2076,7 +2156,11 @@
       "Hiányzik a hang készenlétét ellenőrző segédprogram. Javítsa a SoundCurrent telepítését.",
       "A VB-CABLE használata előtt indítsa újra a Windowst. A hang beállítása befejeződött, de az illesztőprogram és a beállításai a rendszer újraindítását igénylik.",
       "A VB-CABLE beállításait nem sikerült megnyitni. Ha az illesztőprogramot most telepítették vagy frissítették, indítsa újra a Windowst, majd próbálja újra.",
-      "A VB-CABLE nincs jelen. Ha erre felszólítást kapott, indítsa újra a Windowst, majd próbálja újra a hang beállítását."
+      "A VB-CABLE nincs jelen. Ha erre felszólítást kapott, indítsa újra a Windowst, majd próbálja újra a hang beállítását.",
+      "A VB-CABLE megmaradt, mert a másik SoundCurrent alkalmazás telepítve van. Az utolsó alkalmazással együtt távolítsa el, ha más szoftvernek nincs szüksége rá.",
+      "Eltávolítja a VB-CABLE-t?",
+      "Hiányos VB-CABLE-telepítés javítása",
+      "A VB-CABLE nincs telepítve. Nyissa meg a \"%1\" lehetőséget, majd indítsa újra a Windowst a kábel beállításainak megnyitása előtt."
     ],
     "ar": [
       "العربية",
@@ -2175,7 +2259,11 @@
       "مساعد التحقق من جاهزية الصوت مفقود. أصلح تثبيت SoundCurrent.",
       "أعد تشغيل Windows قبل استخدام VB-CABLE. اكتمل إعداد الصوت، لكن برنامج التشغيل وإعداداته يتطلبان إعادة تشغيل النظام.",
       "تعذر فتح إعدادات VB-CABLE. أعد تشغيل Windows إذا تم تثبيت برنامج التشغيل أو تحديثه للتو، ثم حاول مرة أخرى.",
-      "VB-CABLE غير موجود. أعد تشغيل Windows إذا طُلب منك ذلك، ثم أعد محاولة إعداد الصوت."
+      "VB-CABLE غير موجود. أعد تشغيل Windows إذا طُلب منك ذلك، ثم أعد محاولة إعداد الصوت.",
+      "تم الاحتفاظ بـ VB-CABLE لأن تطبيق SoundCurrent الآخر مثبت. أزله مع التطبيق الأخير إذا لم يكن أي برنامج آخر بحاجة إليه.",
+      "إزالة VB-CABLE؟",
+      "إصلاح تثبيت VB-CABLE غير المكتمل",
+      "VB-CABLE غير مثبت. افتح \"%1\"، ثم أعد تشغيل Windows قبل فتح إعدادات الكابل."
     ],
     "he": [
       "עברית",
@@ -2274,7 +2362,11 @@
       "כלי העזר לבדיקת מוכנות השמע חסר. תקנו את התקנת SoundCurrent.",
       "הפעילו מחדש את Windows לפני השימוש ב-VB-CABLE. הגדרת השמע הושלמה, אך מנהל ההתקן והגדרותיו דורשים הפעלה מחדש של המערכת.",
       "לא ניתן לפתוח את הגדרות VB-CABLE. הפעילו מחדש את Windows אם מנהל ההתקן הותקן או עודכן זה עתה, ואז נסו שוב.",
-      "VB-CABLE אינו קיים. הפעילו מחדש את Windows אם התבקשתם לכך, ואז נסו שוב להגדיר את השמע."
+      "VB-CABLE אינו קיים. הפעילו מחדש את Windows אם התבקשתם לכך, ואז נסו שוב להגדיר את השמע.",
+      "VB-CABLE נשמר משום שאפליקציית SoundCurrent האחרת מותקנת. הסירו אותו עם האפליקציה האחרונה אם תוכנות אחרות אינן זקוקות לו.",
+      "להסיר את VB-CABLE?",
+      "תיקון התקנת VB-CABLE שלא הושלמה",
+      "VB-CABLE אינו מותקן. פתחו את \"%1\", ואז הפעילו מחדש את Windows לפני פתיחת הגדרות הכבל."
     ],
     "fa": [
       "فارسی",
@@ -2373,7 +2465,11 @@
       "ابزار کمکی بررسی آمادگی صدا موجود نیست. نصب SoundCurrent را تعمیر کنید.",
       "پیش از استفاده از VB-CABLE، Windows را دوباره راه‌اندازی کنید. راه‌اندازی صدا پایان یافته، اما درایور و تنظیمات آن به راه‌اندازی دوبارهٔ سیستم نیاز دارند.",
       "تنظیمات VB-CABLE باز نشد. اگر درایور به‌تازگی نصب یا به‌روز شده است، Windows را دوباره راه‌اندازی کنید و سپس دوباره تلاش کنید.",
-      "VB-CABLE موجود نیست. اگر از شما خواسته شده است، Windows را دوباره راه‌اندازی کنید و سپس راه‌اندازی صدا را دوباره امتحان کنید."
+      "VB-CABLE موجود نیست. اگر از شما خواسته شده است، Windows را دوباره راه‌اندازی کنید و سپس راه‌اندازی صدا را دوباره امتحان کنید.",
+      "VB-CABLE نگه داشته شد چون برنامهٔ دیگر SoundCurrent نصب است. اگر نرم‌افزار دیگری به آن نیاز ندارد، آن را همراه با آخرین برنامه حذف کنید.",
+      "VB-CABLE حذف شود؟",
+      "تعمیر نصب ناقص VB-CABLE",
+      "VB-CABLE نصب نشده است. \"%1\" را باز کنید، سپس پیش از باز کردن تنظیمات کابل، Windows را دوباره راه‌اندازی کنید."
     ],
     "zh-Hans": [
       "简体中文",
@@ -2472,7 +2568,11 @@
       "音频就绪检查助手缺失。请修复 SoundCurrent 安装。",
       "使用 VB-CABLE 前请重启 Windows。音频设置已完成，但驱动程序及其设置需要重启系统才能生效。",
       "无法打开 VB-CABLE 设置。如果刚安装或更新驱动程序，请重启 Windows，然后重试。",
-      "VB-CABLE 不存在。如果提示需要重启，请重启 Windows，然后重试音频设置。"
+      "VB-CABLE 不存在。如果提示需要重启，请重启 Windows，然后重试音频设置。",
+      "由于另一个 SoundCurrent 应用仍已安装，VB-CABLE 已保留。如果其他软件不需要它，请在卸载最后一个应用时移除它。",
+      "移除 VB-CABLE？",
+      "修复不完整的 VB-CABLE 安装",
+      "VB-CABLE 未安装。请打开 \"%1\"，然后重启 Windows，再打开音频线缆设置。"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -2571,7 +2671,11 @@
       "音訊就緒檢查助手缺失。請修復 SoundCurrent 安裝。",
       "使用 VB-CABLE 前請重新啟動 Windows。音訊設定已完成，但驅動程式及其設定需要重新啟動系統才能生效。",
       "無法開啟 VB-CABLE 設定。如果剛安裝或更新驅動程式，請重新啟動 Windows，然後重試。",
-      "VB-CABLE 不存在。如果提示需要重新啟動，請重新啟動 Windows，然後重試音訊設定。"
+      "VB-CABLE 不存在。如果提示需要重新啟動，請重新啟動 Windows，然後重試音訊設定。",
+      "由於另一個 SoundCurrent 應用程式仍已安裝，VB-CABLE 已保留。如果其他軟體不需要它，請在解除安裝最後一個應用程式時移除它。",
+      "移除 VB-CABLE？",
+      "修復不完整的 VB-CABLE 安裝",
+      "VB-CABLE 未安裝。請開啟 \"%1\"，然後重新啟動 Windows，再開啟音訊線纜設定。"
     ],
     "ja": [
       "日本語",
@@ -2670,7 +2774,11 @@
       "オーディオ準備状態の確認ヘルパーが見つかりません。SoundCurrent のインストールを修復してください。",
       "VB-CABLE を使用する前に Windows を再起動してください。オーディオのセットアップは完了しましたが、ドライバーとその設定にはシステムの再起動が必要です。",
       "VB-CABLE の設定を開けませんでした。ドライバーをインストールまたは更新した直後であれば、Windows を再起動してから再試行してください。",
-      "VB-CABLE が見つかりません。再起動を求められた場合は Windows を再起動してから、オーディオのセットアップを再試行してください。"
+      "VB-CABLE が見つかりません。再起動を求められた場合は Windows を再起動してから、オーディオのセットアップを再試行してください。",
+      "もう一方の SoundCurrent アプリがインストールされているため、VB-CABLE は保持されました。他のソフトウェアで不要であれば、最後のアプリと一緒に削除してください。",
+      "VB-CABLE を削除しますか？",
+      "不完全な VB-CABLE のインストールを修復",
+      "VB-CABLE がインストールされていません。\"%1\" を開き、Windows を再起動してからケーブルの設定を開いてください。"
     ],
     "ko": [
       "한국어",
@@ -2769,7 +2877,11 @@
       "오디오 준비 상태 확인 도우미가 없습니다. SoundCurrent 설치를 복구하세요.",
       "VB-CABLE을 사용하기 전에 Windows를 다시 시작하세요. 오디오 설정은 완료되었지만 드라이버와 해당 설정에는 시스템 다시 시작이 필요합니다.",
       "VB-CABLE 설정을 열 수 없습니다. 드라이버를 방금 설치하거나 업데이트했다면 Windows를 다시 시작한 후 다시 시도하세요.",
-      "VB-CABLE이 없습니다. 다시 시작하라는 안내가 있었다면 Windows를 다시 시작한 후 오디오 설정을 다시 시도하세요."
+      "VB-CABLE이 없습니다. 다시 시작하라는 안내가 있었다면 Windows를 다시 시작한 후 오디오 설정을 다시 시도하세요.",
+      "다른 SoundCurrent 앱이 설치되어 있어 VB-CABLE이 유지되었습니다. 다른 소프트웨어에서 필요하지 않다면 마지막 앱과 함께 제거하세요.",
+      "VB-CABLE을 제거할까요?",
+      "불완전한 VB-CABLE 설치 복구",
+      "VB-CABLE이 설치되지 않았습니다. \"%1\"을 열고 Windows를 다시 시작한 후 케이블 설정을 여세요."
     ],
     "hi": [
       "हिन्दी",
@@ -2868,7 +2980,11 @@
       "ऑडियो तत्परता जाँच सहायक मौजूद नहीं है। SoundCurrent की स्थापना की मरम्मत करें।",
       "VB-CABLE का उपयोग करने से पहले Windows को पुनरारंभ करें। ऑडियो सेटअप पूरा हुआ है, लेकिन ड्राइवर और उसकी सेटिंग के लिए सिस्टम को पुनरारंभ करना आवश्यक है।",
       "VB-CABLE की सेटिंग नहीं खुल सकीं। यदि ड्राइवर अभी स्थापित या अपडेट किया गया है, तो Windows को पुनरारंभ करके फिर प्रयास करें।",
-      "VB-CABLE मौजूद नहीं है। यदि पुनरारंभ करने को कहा गया था, तो Windows को पुनरारंभ करें और ऑडियो सेटअप फिर से आज़माएँ।"
+      "VB-CABLE मौजूद नहीं है। यदि पुनरारंभ करने को कहा गया था, तो Windows को पुनरारंभ करें और ऑडियो सेटअप फिर से आज़माएँ।",
+      "VB-CABLE को रखा गया क्योंकि दूसरा SoundCurrent ऐप स्थापित है। यदि किसी अन्य सॉफ़्टवेयर को इसकी आवश्यकता नहीं है, तो इसे अंतिम ऐप के साथ हटा दें।",
+      "VB-CABLE हटाएँ?",
+      "अधूरी VB-CABLE स्थापना की मरम्मत करें",
+      "VB-CABLE स्थापित नहीं है। \"%1\" खोलें, फिर केबल की सेटिंग खोलने से पहले Windows को पुनरारंभ करें।"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -2967,7 +3083,11 @@
       "Pembantu pemeriksaan kesiapan audio tidak ditemukan. Perbaiki instalasi SoundCurrent.",
       "Mulai ulang Windows sebelum menggunakan VB-CABLE. Penyiapan audio selesai, tetapi driver dan pengaturannya memerlukan mulai ulang sistem.",
       "Pengaturan VB-CABLE tidak dapat dibuka. Mulai ulang Windows jika driver baru saja dipasang atau diperbarui, lalu coba lagi.",
-      "VB-CABLE tidak ditemukan. Mulai ulang Windows jika diminta, lalu coba penyiapan audio lagi."
+      "VB-CABLE tidak ditemukan. Mulai ulang Windows jika diminta, lalu coba penyiapan audio lagi.",
+      "VB-CABLE dipertahankan karena aplikasi SoundCurrent lainnya terpasang. Hapus bersama aplikasi terakhir jika tidak ada perangkat lunak lain yang membutuhkannya.",
+      "Hapus VB-CABLE?",
+      "Perbaiki instalasi VB-CABLE yang tidak lengkap",
+      "VB-CABLE belum terpasang. Buka \"%1\", lalu mulai ulang Windows sebelum membuka pengaturan kabel."
     ],
     "vi": [
       "Tiếng Việt",
@@ -3066,7 +3186,11 @@
       "Thiếu trợ giúp kiểm tra trạng thái sẵn sàng của âm thanh. Hãy sửa chữa bản cài đặt SoundCurrent.",
       "Khởi động lại Windows trước khi sử dụng VB-CABLE. Thiết lập âm thanh đã hoàn tất, nhưng trình điều khiển và các thiết lập của nó yêu cầu khởi động lại hệ thống.",
       "Không thể mở cài đặt VB-CABLE. Khởi động lại Windows nếu trình điều khiển vừa được cài đặt hoặc cập nhật, rồi thử lại.",
-      "Không có VB-CABLE. Khởi động lại Windows nếu được yêu cầu, rồi thử thiết lập âm thanh lại."
+      "Không có VB-CABLE. Khởi động lại Windows nếu được yêu cầu, rồi thử thiết lập âm thanh lại.",
+      "VB-CABLE được giữ lại vì ứng dụng SoundCurrent còn lại đã được cài đặt. Hãy gỡ nó cùng ứng dụng cuối cùng nếu không có phần mềm nào khác cần nó.",
+      "Gỡ VB-CABLE?",
+      "Sửa chữa bản cài đặt VB-CABLE không đầy đủ",
+      "VB-CABLE chưa được cài đặt. Mở \"%1\", rồi khởi động lại Windows trước khi mở cài đặt cáp."
     ],
     "th": [
       "ไทย",
@@ -3165,7 +3289,11 @@
       "ไม่พบตัวช่วยตรวจสอบความพร้อมของเสียง โปรดซ่อมแซมการติดตั้ง SoundCurrent",
       "เริ่ม Windows ใหม่ก่อนใช้ VB-CABLE การตั้งค่าเสียงเสร็จสมบูรณ์แล้ว แต่ไดรเวอร์และการตั้งค่าของไดรเวอร์ต้องเริ่มระบบใหม่",
       "ไม่สามารถเปิดการตั้งค่า VB-CABLE ได้ หากเพิ่งติดตั้งหรืออัปเดตไดรเวอร์ ให้เริ่ม Windows ใหม่แล้วลองอีกครั้ง",
-      "ไม่พบ VB-CABLE หากมีคำขอให้เริ่ม Windows ใหม่ ให้ดำเนินการแล้วลองตั้งค่าเสียงอีกครั้ง"
+      "ไม่พบ VB-CABLE หากมีคำขอให้เริ่ม Windows ใหม่ ให้ดำเนินการแล้วลองตั้งค่าเสียงอีกครั้ง",
+      "เก็บ VB-CABLE ไว้เนื่องจากยังติดตั้งแอป SoundCurrent อีกแอปอยู่ ให้ลบพร้อมกับแอปสุดท้ายหากไม่มีซอฟต์แวร์อื่นต้องใช้",
+      "ลบ VB-CABLE หรือไม่?",
+      "ซ่อมแซมการติดตั้ง VB-CABLE ที่ไม่สมบูรณ์",
+      "ยังไม่ได้ติดตั้ง VB-CABLE เปิด \"%1\" แล้วเริ่ม Windows ใหม่ก่อนเปิดการตั้งค่าสายสัญญาณ"
     ],
     "sw": [
       "Kiswahili",
@@ -3264,7 +3392,11 @@
       "Msaidizi wa ukaguzi wa utayari wa sauti hayupo. Rekebisha usakinishaji wa SoundCurrent.",
       "Anzisha Windows upya kabla ya kutumia VB-CABLE. Usanidi wa sauti umekamilika, lakini kiendeshi na mipangilio yake vinahitaji mfumo kuanzishwa upya.",
       "Mipangilio ya VB-CABLE haikuweza kufunguliwa. Anzisha Windows upya ikiwa kiendeshi kimesakinishwa au kusasishwa hivi karibuni, kisha ujaribu tena.",
-      "VB-CABLE haipo. Anzisha Windows upya ikiwa uliombwa kufanya hivyo, kisha ujaribu usanidi wa sauti tena."
+      "VB-CABLE haipo. Anzisha Windows upya ikiwa uliombwa kufanya hivyo, kisha ujaribu usanidi wa sauti tena.",
+      "VB-CABLE imehifadhiwa kwa sababu programu nyingine ya SoundCurrent imesakinishwa. Iondoe pamoja na programu ya mwisho ikiwa hakuna programu nyingine inayoihitaji.",
+      "Ondoa VB-CABLE?",
+      "Rekebisha usakinishaji wa VB-CABLE ambao haujakamilika",
+      "VB-CABLE haijasakinishwa. Fungua \"%1\", kisha uanzishe Windows upya kabla ya kufungua mipangilio ya kebo."
     ],
     "nn": [
       "Norsk nynorsk",
@@ -3363,7 +3495,11 @@
       "Hjelparen for kontroll av lydberedskap manglar. Reparer SoundCurrent-installasjonen.",
       "Start Windows på nytt før du brukar VB-CABLE. Lydoppsettet er fullført, men drivaren og innstillingane krev ein omstart av systemet.",
       "VB-CABLE-innstillingane kunne ikkje opnast. Start Windows på nytt dersom drivaren nettopp vart installert eller oppdatert, og prøv på nytt.",
-      "VB-CABLE er ikkje til stades. Start Windows på nytt dersom du vart beden om det, og prøv lydoppsettet på nytt."
+      "VB-CABLE er ikkje til stades. Start Windows på nytt dersom du vart beden om det, og prøv lydoppsettet på nytt.",
+      "VB-CABLE vart halde på fordi den andre SoundCurrent-appen er installert. Fjern det saman med den siste appen dersom inga anna programvare treng det.",
+      "Fjerne VB-CABLE?",
+      "Reparer ufullstendig VB-CABLE-installasjon",
+      "VB-CABLE er ikkje installert. Opne \"%1\" og start Windows på nytt før du opnar kabelinnstillingane."
     ]
   },
   "requiredCompleteLocales": [

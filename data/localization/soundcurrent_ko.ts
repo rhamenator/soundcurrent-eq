@@ -1836,8 +1836,16 @@ Import into your library?</source>
       <translation>업데이트를 사용할 수 있거나 다시 시작이 필요할 때 알림</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>VB-CABLE을 제거할까요?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>선택한 필터 제거</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>불완전한 VB-CABLE 설치 복구</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Import into your library?</source>
       <translation>시스템 지역 설정 사용</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE이 설치되지 않았습니다. "%1"을 열고 Windows를 다시 시작한 후 케이블 설정을 여세요.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE이 없습니다. 다시 시작하라는 안내가 있었다면 Windows를 다시 시작한 후 오디오 설정을 다시 시도하세요.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE 설정이 취소되었거나 완료되지 않았습니다(코드 %1). 다시 시도할 수 있도록 SoundCurrent는 설치된 상태로 유지됩니다.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>다른 SoundCurrent 앱이 설치되어 있어 VB-CABLE이 유지되었습니다. 다른 소프트웨어에서 필요하지 않다면 마지막 앱과 함께 제거하세요.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

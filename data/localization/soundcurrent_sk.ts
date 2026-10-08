@@ -1836,8 +1836,16 @@ Importovať do vašej knižnice?</translation>
       <translation>Upozorniť na dostupné aktualizácie alebo potrebu reštartu</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Odstrániť VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Odstrániť vybraný filter</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Opraviť neúplnú inštaláciu VB-CABLE</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Importovať do vašej knižnice?</translation>
       <translation>Použiť miestne nastavenia systému</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE nie je nainštalovaný. Otvorte "%1" a pred otvorením nastavení kábla reštartujte systém Windows.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE nie je prítomný. Ak bol požadovaný reštart, reštartujte systém Windows a skúste nastavenie zvuku znova.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Importovať do vašej knižnice?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>Nastavenie VB-CABLE bolo zrušené alebo nebolo dokončené (kód %1). SoundCurrent zostáva nainštalovaný pre ďalší pokus.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE bol zachovaný, pretože je nainštalovaná druhá aplikácia SoundCurrent. Odstráňte ho s poslednou aplikáciou, ak ho nepotrebuje žiadny iný softvér.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

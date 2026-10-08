@@ -1836,8 +1836,16 @@ Tuodaanko kirjastoon?</translation>
       <translation>Muistuta saatavilla olevista päivityksistä tai tarvittavasta uudelleenkäynnistyksestä</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Poistetaanko VB-CABLE?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Poista valittu suodatin</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Korjaa puutteellinen VB-CABLE-asennus</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>Käytä järjestelmän alueasetuksia</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLEa ei ole asennettu. Avaa "%1" ja käynnistä Windows uudelleen ennen kaapelin asetusten avaamista.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE puuttuu. Käynnistä Windows uudelleen, jos sitä pyydettiin, ja yritä ääniasetusten tekemistä uudelleen.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE-asennus peruutettiin tai sitä ei suoritettu loppuun (koodi %1). SoundCurrent jää asennetuksi uutta yritystä varten.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE säilytettiin, koska toinen SoundCurrent-sovellus on asennettu. Poista se viimeisen sovelluksen kanssa, jos muut ohjelmistot eivät tarvitse sitä.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

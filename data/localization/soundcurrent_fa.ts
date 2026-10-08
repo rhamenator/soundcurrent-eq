@@ -1836,8 +1836,16 @@ Import into your library?</source>
       <translation>هنگام وجود به‌روزرسانی یا نیاز به شروع دوباره یادآوری کن</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>VB-CABLE حذف شود؟</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>حذف فیلتر انتخاب‌شده</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>تعمیر نصب ناقص VB-CABLE</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Import into your library?</source>
       <translation>استفاده از تنظیمات منطقه‌ای سیستم</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE نصب نشده است. "%1" را باز کنید، سپس پیش از باز کردن تنظیمات کابل، Windows را دوباره راه‌اندازی کنید.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE موجود نیست. اگر از شما خواسته شده است، Windows را دوباره راه‌اندازی کنید و سپس راه‌اندازی صدا را دوباره امتحان کنید.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>راه‌اندازی VB-CABLE لغو شد یا به پایان نرسید (کد %1). SoundCurrent برای تلاش دوباره نصب‌شده باقی ماند.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE نگه داشته شد چون برنامهٔ دیگر SoundCurrent نصب است. اگر نرم‌افزار دیگری به آن نیاز ندارد، آن را همراه با آخرین برنامه حذف کنید.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

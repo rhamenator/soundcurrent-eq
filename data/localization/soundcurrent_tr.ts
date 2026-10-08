@@ -1836,8 +1836,16 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Güncellemeler kullanılabilir olduğunda veya yeniden başlatma gerektiğinde hatırlat</translation>
     </message>
     <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>VB-CABLE kaldırılsın mı?</translation>
+    </message>
+    <message>
       <source>Remove selected filter</source>
       <translation>Seçili filtreyi kaldır</translation>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Eksik VB-CABLE kurulumunu onar</translation>
     </message>
     <message>
       <source>Reset</source>
@@ -2382,6 +2390,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Sistem yerel ayarını kullan</translation>
     </message>
     <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE yüklü değil. "%1" öğesini açın ve kablo ayarlarını açmadan önce Windows’u yeniden başlatın.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
       <translation>VB-CABLE mevcut değil. İstendiyse Windows’u yeniden başlatın ve ses kurulumunu tekrar deneyin.</translation>
     </message>
@@ -2401,6 +2413,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
       <translation>VB-CABLE kurulumu iptal edildi veya tamamlanmadı (kod %1). Yeniden denemek için SoundCurrent yüklü bırakıldı.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>Diğer SoundCurrent uygulaması yüklü olduğu için VB-CABLE korundu. Başka bir yazılım gerektirmiyorsa son uygulamayla birlikte kaldırın.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
