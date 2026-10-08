@@ -322,87 +322,87 @@ Kitaplığınıza aktarılsın mı?</translation>
     </message>
     <message>
       <source>Bright</source>
-      <translation type="unfinished" />
+      <translation>Parlak</translation>
     </message>
     <message>
       <source>Browse all equipment profiles / editor</source>
-      <translation type="unfinished" />
+      <translation>Tüm ekipman profillerine göz at / düzenleyici</translation>
     </message>
     <message>
       <source>Calibration test signal</source>
-      <translation type="unfinished" />
+      <translation>Kalibrasyon test sinyali</translation>
     </message>
     <message>
       <source>Calibration tone level</source>
-      <translation type="unfinished" />
+      <translation>Kalibrasyon tonu seviyesi</translation>
     </message>
     <message>
       <source>Cancel</source>
-      <translation type="unfinished" />
+      <translation>İptal</translation>
     </message>
     <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Ortak SoundCurrent oturum kilidi alınamıyor.</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
-      <translation type="unfinished" />
+      <translation>Amplifikatör profili klasörü oluşturulamıyor.</translation>
     </message>
     <message>
       <source>Cannot create profile folder.</source>
-      <translation type="unfinished" />
+      <translation>Profil klasörü oluşturulamıyor.</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Ortak SoundCurrent oturum kilidi oluşturulamıyor.</translation>
     </message>
     <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Çalışan ekolayzırların denetimi tamamlanamıyor; SoundCurrent işlemeyi etkinleştirmeyecek.</translation>
     </message>
     <message>
       <source>Cannot finish saving amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Amplifikatör profilinin kaydı tamamlanamıyor.</translation>
     </message>
     <message>
       <source>Cannot finish saving profile library.</source>
-      <translation type="unfinished" />
+      <translation>Profil kitaplığının kaydı tamamlanamıyor.</translation>
     </message>
     <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Çalışan ekolayzırlar denetlenemiyor; SoundCurrent işlemeyi etkinleştirmeyecek.</translation>
     </message>
     <message>
       <source>Cannot read profile library.</source>
-      <translation type="unfinished" />
+      <translation>Profil kitaplığı okunamıyor.</translation>
     </message>
     <message>
       <source>Cannot read profile or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Profil okunamıyor veya dosya 1 MiB sınırını aşıyor.</translation>
     </message>
     <message>
       <source>Cannot read response or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Frekans yanıtı okunamıyor veya dosya 1 MiB sınırını aşıyor.</translation>
     </message>
     <message>
       <source>Cannot save amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Amplifikatör profili kaydedilemiyor.</translation>
     </message>
     <message>
       <source>Cannot save profile library.</source>
-      <translation type="unfinished" />
+      <translation>Profil kitaplığı kaydedilemiyor.</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
-      <translation type="unfinished" />
+      <translation>Profil kaydedilemiyor.</translation>
     </message>
     <message>
       <source>Cannot start measurement: %1</source>
-      <translation type="unfinished" />
+      <translation>Ölçüm başlatılamıyor: %1</translation>
     </message>
     <message>
       <source>Center</source>
-      <translation type="unfinished" />
+      <translation>Orta</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -410,167 +410,167 @@ Kitaplığınıza aktarılsın mı?</translation>
     </message>
     <message>
       <source>Checking for published updates…</source>
-      <translation type="unfinished" />
+      <translation>Yayımlanan güncellemeler denetleniyor…</translation>
     </message>
     <message>
       <source>Checks published releases and downloaded installers. No update is installed automatically.</source>
-      <translation type="unfinished" />
+      <translation>Yayımlanan sürümleri ve indirilen yükleyicileri denetler. Hiçbir güncelleme otomatik yüklenmez.</translation>
     </message>
     <message>
       <source>Choose a name that is not a built-in preset.</source>
-      <translation type="unfinished" />
+      <translation>Yerleşik bir hazır ayara ait olmayan bir ad seçin.</translation>
     </message>
     <message>
       <source>Choose update folder…</source>
-      <translation type="unfinished" />
+      <translation>Güncelleme klasörü seç…</translation>
     </message>
     <message>
       <source>Clarity</source>
-      <translation type="unfinished" />
+      <translation>Netlik</translation>
     </message>
     <message>
       <source>Clarity frequency</source>
-      <translation type="unfinished" />
+      <translation>Netlik frekansı</translation>
     </message>
     <message>
       <source>Classical</source>
-      <translation type="unfinished" />
+      <translation>Klasik müzik</translation>
     </message>
     <message>
       <source>Clear Voice</source>
-      <translation type="unfinished" />
+      <translation>Temiz ses</translation>
     </message>
     <message>
       <source>Clear imported equipment corrections</source>
-      <translation type="unfinished" />
+      <translation>Aktarılan ekipman düzeltmelerini temizle</translation>
     </message>
     <message>
       <source>Click to turn the equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Ekolayzırı açmak veya kapatmak için tıklayın</translation>
     </message>
     <message>
       <source>Clipping risk · estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Kırpılma riski · tahmini tepe %1 dBFS</translation>
     </message>
     <message>
       <source>Close</source>
-      <translation type="unfinished" />
+      <translation>Kapat</translation>
     </message>
     <message>
       <source>Conditions</source>
-      <translation type="unfinished" />
+      <translation>Koşullar</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
-      <translation type="unfinished" />
+      <translation>Ölçümden önce bir çıkış ve mikrofon bağlayın.</translation>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Düzeltme profili (*.json)</translation>
     </message>
     <message>
       <source>Could not create a private test folder</source>
-      <translation type="unfinished" />
+      <translation>Özel test klasörü oluşturulamadı</translation>
     </message>
     <message>
       <source>Could not create microphone configuration folder</source>
-      <translation type="unfinished" />
+      <translation>Mikrofon yapılandırma klasörü oluşturulamadı</translation>
     </message>
     <message>
       <source>Could not create preset folder.</source>
-      <translation type="unfinished" />
+      <translation>Hazır ayar klasörü oluşturulamadı.</translation>
     </message>
     <message>
       <source>Could not create quiet frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>Frekansı sürekli değişen düşük seviyeli test sinyali oluşturulamadı</translation>
     </message>
     <message>
       <source>Could not create temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>Geçici ses yapılandırması oluşturulamadı</translation>
     </message>
     <message>
       <source>Could not create test tone</source>
-      <translation type="unfinished" />
+      <translation>Test tonu oluşturulamadı</translation>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
-      <translation type="unfinished" />
+      <translation>Hazır ayarın kaydı tamamlanamadı.</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
-      <translation type="unfinished" />
+      <translation>Test ses dosyası açılamadı</translation>
     </message>
     <message>
       <source>Could not play quiet test audio</source>
-      <translation type="unfinished" />
+      <translation>Düşük seviyeli test sesi çalınamadı</translation>
     </message>
     <message>
       <source>Could not play test audio through the selected output</source>
-      <translation type="unfinished" />
+      <translation>Test sesi seçili çıkış üzerinden çalınamadı</translation>
     </message>
     <message>
       <source>Could not read output volume</source>
-      <translation type="unfinished" />
+      <translation>Çıkış ses düzeyi okunamadı</translation>
     </message>
     <message>
       <source>Could not run %1</source>
-      <translation type="unfinished" />
+      <translation>%1 çalıştırılamadı</translation>
     </message>
     <message>
       <source>Could not save preset.</source>
-      <translation type="unfinished" />
+      <translation>Hazır ayar kaydedilemedi.</translation>
     </message>
     <message>
       <source>Could not start PipeWire filter</source>
-      <translation type="unfinished" />
+      <translation>PipeWire filtresi başlatılamadı</translation>
     </message>
     <message>
       <source>Could not start audio setup: %1. The app remains open.</source>
-      <translation type="unfinished" />
+      <translation>Ses kurulumu başlatılamadı: %1. Uygulama açık kalır.</translation>
     </message>
     <message>
       <source>Could not start microphone capture</source>
-      <translation type="unfinished" />
+      <translation>Mikrofon kaydı başlatılamadı</translation>
     </message>
     <message>
       <source>Could not start microphone filter</source>
-      <translation type="unfinished" />
+      <translation>Mikrofon filtresi başlatılamadı</translation>
     </message>
     <message>
       <source>Could not start output volume safety guard</source>
-      <translation type="unfinished" />
+      <translation>Çıkış ses düzeyi güvenlik koruması başlatılamadı</translation>
     </message>
     <message>
       <source>Could not start the measurement.</source>
-      <translation type="unfinished" />
+      <translation>Ölçüm başlatılamadı.</translation>
     </message>
     <message>
       <source>Could not update startup settings.</source>
-      <translation type="unfinished" />
+      <translation>Başlangıç ayarları güncellenemedi.</translation>
     </message>
     <message>
       <source>Could not write frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>Frekansı sürekli değişen test sinyali yazılamadı</translation>
     </message>
     <message>
       <source>Could not write microphone configuration</source>
-      <translation type="unfinished" />
+      <translation>Mikrofon yapılandırması yazılamadı</translation>
     </message>
     <message>
       <source>Could not write temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>Geçici ses yapılandırması yazılamadı</translation>
     </message>
     <message>
       <source>Could not write test tone</source>
-      <translation type="unfinished" />
+      <translation>Test tonu yazılamadı</translation>
     </message>
     <message>
       <source>Create profile</source>
-      <translation type="unfinished" />
+      <translation>Profil oluştur</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
-      <translation type="unfinished" />
+      <translation>Geçerli EQ korundu.</translation>
     </message>
     <message>
       <source>Custom</source>
@@ -578,11 +578,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     </message>
     <message>
       <source>Dance</source>
-      <translation type="unfinished" />
+      <translation>Dans müziği</translation>
     </message>
     <message>
       <source>Deep Bass</source>
-      <translation type="unfinished" />
+      <translation>Derin bas</translation>
     </message>
     <message>
       <source>Discard</source>

@@ -322,87 +322,87 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bright</source>
-      <translation type="unfinished" />
+      <translation>Φωτεινό</translation>
     </message>
     <message>
       <source>Browse all equipment profiles / editor</source>
-      <translation type="unfinished" />
+      <translation>Περιήγηση σε όλα τα προφίλ εξοπλισμού / επεξεργασία</translation>
     </message>
     <message>
       <source>Calibration test signal</source>
-      <translation type="unfinished" />
+      <translation>Δοκιμαστικό σήμα βαθμονόμησης</translation>
     </message>
     <message>
       <source>Calibration tone level</source>
-      <translation type="unfinished" />
+      <translation>Στάθμη τόνου βαθμονόμησης</translation>
     </message>
     <message>
       <source>Cancel</source>
-      <translation type="unfinished" />
+      <translation>Ακύρωση</translation>
     </message>
     <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η απόκτηση κλειδώματος της κοινής συνεδρίας SoundCurrent.</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η δημιουργία φακέλου προφίλ ενισχυτή.</translation>
     </message>
     <message>
       <source>Cannot create profile folder.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η δημιουργία φακέλου προφίλ.</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η δημιουργία κλειδώματος της κοινής συνεδρίας SoundCurrent.</translation>
     </message>
     <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η ολοκλήρωση του ελέγχου ενεργών ισοσταθμιστών· το SoundCurrent δεν θα ενεργοποιήσει την επεξεργασία.</translation>
     </message>
     <message>
       <source>Cannot finish saving amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η ολοκλήρωση της αποθήκευσης προφίλ ενισχυτή.</translation>
     </message>
     <message>
       <source>Cannot finish saving profile library.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η ολοκλήρωση της αποθήκευσης βιβλιοθήκης προφίλ.</translation>
     </message>
     <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατός ο έλεγχος ενεργών ισοσταθμιστών· το SoundCurrent δεν θα ενεργοποιήσει την επεξεργασία.</translation>
     </message>
     <message>
       <source>Cannot read profile library.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η ανάγνωση της βιβλιοθήκης προφίλ.</translation>
     </message>
     <message>
       <source>Cannot read profile or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η ανάγνωση του προφίλ ή το αρχείο υπερβαίνει το 1 MiB.</translation>
     </message>
     <message>
       <source>Cannot read response or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η ανάγνωση της απόκρισης ή το αρχείο υπερβαίνει το 1 MiB.</translation>
     </message>
     <message>
       <source>Cannot save amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η αποθήκευση του προφίλ ενισχυτή.</translation>
     </message>
     <message>
       <source>Cannot save profile library.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η αποθήκευση της βιβλιοθήκης προφίλ.</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η αποθήκευση του προφίλ.</translation>
     </message>
     <message>
       <source>Cannot start measurement: %1</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η έναρξη μέτρησης: %1</translation>
     </message>
     <message>
       <source>Center</source>
-      <translation type="unfinished" />
+      <translation>Κέντρο</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -410,167 +410,167 @@ Import into your library?</source>
     </message>
     <message>
       <source>Checking for published updates…</source>
-      <translation type="unfinished" />
+      <translation>Έλεγχος δημοσιευμένων ενημερώσεων…</translation>
     </message>
     <message>
       <source>Checks published releases and downloaded installers. No update is installed automatically.</source>
-      <translation type="unfinished" />
+      <translation>Ελέγχει δημοσιευμένες εκδόσεις και ληφθέντα προγράμματα εγκατάστασης. Καμία ενημέρωση δεν εγκαθίσταται αυτόματα.</translation>
     </message>
     <message>
       <source>Choose a name that is not a built-in preset.</source>
-      <translation type="unfinished" />
+      <translation>Επιλέξτε όνομα που δεν ανήκει σε ενσωματωμένη προρύθμιση.</translation>
     </message>
     <message>
       <source>Choose update folder…</source>
-      <translation type="unfinished" />
+      <translation>Επιλογή φακέλου ενημερώσεων…</translation>
     </message>
     <message>
       <source>Clarity</source>
-      <translation type="unfinished" />
+      <translation>Καθαρότητα</translation>
     </message>
     <message>
       <source>Clarity frequency</source>
-      <translation type="unfinished" />
+      <translation>Συχνότητα καθαρότητας</translation>
     </message>
     <message>
       <source>Classical</source>
-      <translation type="unfinished" />
+      <translation>Κλασική μουσική</translation>
     </message>
     <message>
       <source>Clear Voice</source>
-      <translation type="unfinished" />
+      <translation>Καθαρή φωνή</translation>
     </message>
     <message>
       <source>Clear imported equipment corrections</source>
-      <translation type="unfinished" />
+      <translation>Εκκαθάριση εισαγμένων διορθώσεων εξοπλισμού</translation>
     </message>
     <message>
       <source>Click to turn the equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Πατήστε για ενεργοποίηση ή απενεργοποίηση του ισοσταθμιστή</translation>
     </message>
     <message>
       <source>Clipping risk · estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Κίνδυνος ψαλιδισμού · εκτιμώμενη κορυφή %1 dBFS</translation>
     </message>
     <message>
       <source>Close</source>
-      <translation type="unfinished" />
+      <translation>Κλείσιμο</translation>
     </message>
     <message>
       <source>Conditions</source>
-      <translation type="unfinished" />
+      <translation>Συνθήκες</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
-      <translation type="unfinished" />
+      <translation>Συνδέστε έξοδο και μικρόφωνο πριν από τη μέτρηση.</translation>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ διόρθωσης (*.json)</translation>
     </message>
     <message>
       <source>Could not create a private test folder</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η δημιουργία ιδιωτικού δοκιμαστικού φακέλου</translation>
     </message>
     <message>
       <source>Could not create microphone configuration folder</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η δημιουργία φακέλου ρυθμίσεων μικροφώνου</translation>
     </message>
     <message>
       <source>Could not create preset folder.</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η δημιουργία φακέλου προρυθμίσεων.</translation>
     </message>
     <message>
       <source>Could not create quiet frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η δημιουργία ήσυχου σήματος με συνεχή μεταβολή συχνότητας</translation>
     </message>
     <message>
       <source>Could not create temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η δημιουργία προσωρινών ρυθμίσεων ήχου</translation>
     </message>
     <message>
       <source>Could not create test tone</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η δημιουργία δοκιμαστικού τόνου</translation>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η ολοκλήρωση αποθήκευσης της προρύθμισης.</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατό το άνοιγμα του δοκιμαστικού αρχείου ήχου</translation>
     </message>
     <message>
       <source>Could not play quiet test audio</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η αναπαραγωγή ήσυχου δοκιμαστικού ήχου</translation>
     </message>
     <message>
       <source>Could not play test audio through the selected output</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η αναπαραγωγή δοκιμαστικού ήχου μέσω της επιλεγμένης εξόδου</translation>
     </message>
     <message>
       <source>Could not read output volume</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η ανάγνωση της έντασης εξόδου</translation>
     </message>
     <message>
       <source>Could not run %1</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η εκτέλεση του %1</translation>
     </message>
     <message>
       <source>Could not save preset.</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η αποθήκευση της προρύθμισης.</translation>
     </message>
     <message>
       <source>Could not start PipeWire filter</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η εκκίνηση του φίλτρου PipeWire</translation>
     </message>
     <message>
       <source>Could not start audio setup: %1. The app remains open.</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η έναρξη ρύθμισης ήχου: %1. Η εφαρμογή παραμένει ανοιχτή.</translation>
     </message>
     <message>
       <source>Could not start microphone capture</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η έναρξη εγγραφής μικροφώνου</translation>
     </message>
     <message>
       <source>Could not start microphone filter</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η εκκίνηση του φίλτρου μικροφώνου</translation>
     </message>
     <message>
       <source>Could not start output volume safety guard</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η εκκίνηση της προστασίας έντασης εξόδου</translation>
     </message>
     <message>
       <source>Could not start the measurement.</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η έναρξη της μέτρησης.</translation>
     </message>
     <message>
       <source>Could not update startup settings.</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η ενημέρωση ρυθμίσεων αυτόματης εκκίνησης.</translation>
     </message>
     <message>
       <source>Could not write frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η εγγραφή σήματος με συνεχή μεταβολή συχνότητας</translation>
     </message>
     <message>
       <source>Could not write microphone configuration</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η εγγραφή ρυθμίσεων μικροφώνου</translation>
     </message>
     <message>
       <source>Could not write temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η εγγραφή προσωρινών ρυθμίσεων ήχου</translation>
     </message>
     <message>
       <source>Could not write test tone</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η εγγραφή δοκιμαστικού τόνου</translation>
     </message>
     <message>
       <source>Create profile</source>
-      <translation type="unfinished" />
+      <translation>Δημιουργία προφίλ</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
-      <translation type="unfinished" />
+      <translation>Οι τρέχουσες ρυθμίσεις EQ διατηρήθηκαν.</translation>
     </message>
     <message>
       <source>Custom</source>
@@ -578,11 +578,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Dance</source>
-      <translation type="unfinished" />
+      <translation>Χορευτική μουσική</translation>
     </message>
     <message>
       <source>Deep Bass</source>
-      <translation type="unfinished" />
+      <translation>Βαθιά μπάσα</translation>
     </message>
     <message>
       <source>Discard</source>

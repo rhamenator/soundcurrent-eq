@@ -79,3 +79,5 @@ All currently extracted messages populated (441 EQ / 527 Studio). Q uses доб�
 ## Greek and Turkish initial batch
 
 Greek ενίσχυση and Turkish kazanç describe audio gain; ψαλιδισμός/kırpılma describes clipping. Headroom is περιθώριο στάθμης/seviye payı, distinct from user balance and post gain. Ambience damping refers to high-frequency absorption in feedback and decay to duration. Dynamic model names use neutral route-type constructions. Error messages retain paused processing, kept settings and restart guidance. Contextual AI review remains unverified, with no native-speaker claim.
+
+Greek/Turkish recovery review: processing refusal stays explicit when equalizer inspection fails. File limits and protected settings remain unchanged. Turkish cancel-render text refers to creating an audio file, distinct from live processing. Decay describes effect duration, while wet mix describes contribution. Catalogs remain incomplete and native review unverified.
