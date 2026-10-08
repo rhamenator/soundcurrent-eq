@@ -202,6 +202,15 @@ int main(int argc,char **argv){
    for(const auto &language:languages())if(language.tag=="ko")require(language.translated==language.total,"Korean catalog has missing messages");
   }
   {
+   QSettings().setValue("i18n/language","hi");Runtime runtime;runtime.initialize();
+   require(text("Filter Q")==QString::fromUtf8("फ़िल्टर Q"),"Hindi filter quality caption incorrect");
+   QDialogButtonBox actions(QDialogButtonBox::Close|QDialogButtonBox::Save);
+   require(actions.button(QDialogButtonBox::Save)->text()==QString::fromUtf8("सहेजें"),"Hindi standard actions stayed English");
+   require(QApplication::layoutDirection()==Qt::LeftToRight,"Hindi layout is not LTR");
+   require(resolve("hi-IN")=="hi","Hindi regional fallback incorrect");
+   for(const auto &language:languages())if(language.tag=="hi")require(language.translated==language.total,"Hindi catalog has missing messages");
+  }
+  {
    QSettings().setValue("i18n/language","qps-rtl");Runtime runtime;runtime.initialize();
    auto pattern=text("Value %1 / %2");require(pattern.contains("%1")&&pattern.contains("%2"),"Pseudo locale damaged placeholders");
    require(QApplication::layoutDirection()==Qt::RightToLeft,"RTL layout missing");

@@ -295,3 +295,7 @@ Hindi now has 398/441 populated current catalog entries. Added save/reset action
 ### Hindi: current catalogs populated
 
 All current Hindi catalog entries are populated (441 EQ, 527 Studio). Both apps passed three focused Linux checks, including the actual MainWindow offscreen. Translations remain unverified; native-speaker, visual and Windows qualification are pending. Four target languages remain incomplete. Omitted source strings remain scheduled for the second pass.
+
+### Hindi: completeness and profile-editor gates
+
+Hindi is required to stay fully populated by the source/catalog validator. Runtime assertions verify regional fallback, LTR layout and the standard Save action. The profile editor import/edit/save/cancel/discard/apply workflow runs in Hindi. All four focused Linux checks passed in both apps. Translations remain unverified; Windows and visual qualification are pending.
