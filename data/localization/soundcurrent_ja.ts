@@ -683,6 +683,10 @@ Import into your library?</source>
       <translation>テスト再生の完了待ち</translation>
     </message>
     <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>ドライバーのセットアップに失敗しました（コード %1）。Windows のセキュリティ設定は変更されていません。</translation>
+    </message>
+    <message>
       <source>Duplicate Studio route</source>
       <translation>Studio の音声接続が重複しています</translation>
       <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
@@ -2337,6 +2341,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE 設定</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>VB-CABLE のセットアップがキャンセルされたか、完了しませんでした（コード %1）。再試行できるよう、SoundCurrent はインストールされたままです。</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

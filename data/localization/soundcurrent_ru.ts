@@ -683,6 +683,10 @@ Import into your library?</source>
       <translation>Завершение воспроизведения тестового сигнала</translation>
     </message>
     <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Настройка драйвера не удалась (код %1). Параметры безопасности Windows не изменялись.</translation>
+    </message>
+    <message>
       <source>Duplicate Studio route</source>
       <translation>Повторяющееся аудиосоединение Studio</translation>
       <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
@@ -2337,6 +2341,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings</source>
       <translation>Настройки VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>Настройка VB-CABLE отменена или не завершена (код %1). SoundCurrent остаётся установленным для повторной попытки.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

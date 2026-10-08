@@ -683,6 +683,10 @@ Import into your library?</source>
       <translation>परीक्षण प्लेबैक पूरा करना</translation>
     </message>
     <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>ड्राइवर सेटअप विफल हुआ (कोड %1)। Windows की कोई सुरक्षा सेटिंग नहीं बदली गई।</translation>
+    </message>
+    <message>
       <source>Duplicate Studio route</source>
       <translation>Studio ऑडियो कनेक्शन दोहराया गया है</translation>
       <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
@@ -2337,6 +2341,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE सेटिंग</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>VB-CABLE सेटअप रद्द कर दिया गया या पूरा नहीं हुआ (कोड %1)। दोबारा प्रयास करने के लिए SoundCurrent स्थापित रखा गया है।</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

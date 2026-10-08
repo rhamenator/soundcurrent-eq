@@ -683,6 +683,10 @@ Import into your library?</source>
       <translation>تکمیل پخش آزمایشی</translation>
     </message>
     <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>راه‌اندازی درایور ناموفق بود (کد %1). هیچ‌یک از تنظیمات امنیتی Windows تغییر نکرد.</translation>
+    </message>
+    <message>
       <source>Duplicate Studio route</source>
       <translation>اتصال صوتی Studio تکراری است</translation>
       <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
@@ -2337,6 +2341,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings</source>
       <translation>تنظیمات VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>راه‌اندازی VB-CABLE لغو شد یا به پایان نرسید (کد %1). SoundCurrent برای تلاش دوباره نصب‌شده باقی ماند.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

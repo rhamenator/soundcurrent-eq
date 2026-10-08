@@ -683,6 +683,10 @@ Import into your library?</source>
       <translation>إكمال تشغيل صوت الاختبار</translation>
     </message>
     <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>فشل إعداد برنامج التشغيل (الرمز %1). لم يتم تغيير أي إعدادات أمان في Windows.</translation>
+    </message>
+    <message>
       <source>Duplicate Studio route</source>
       <translation>توصيل صوتي مكرر في Studio</translation>
       <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
@@ -2337,6 +2341,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings</source>
       <translation>إعدادات VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>تم إلغاء إعداد VB-CABLE أو لم يكتمل (الرمز %1). بقي SoundCurrent مثبتًا لإعادة المحاولة.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

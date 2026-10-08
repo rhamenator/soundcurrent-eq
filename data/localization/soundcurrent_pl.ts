@@ -683,6 +683,10 @@ Zaimportować do biblioteki?</translation>
       <translation>Opróżnić bufor odtwarzania testowego</translation>
     </message>
     <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Konfiguracja sterownika nie powiodła się (kod %1). Nie zmieniono żadnych ustawień zabezpieczeń systemu Windows.</translation>
+    </message>
+    <message>
       <source>Duplicate Studio route</source>
       <translation>Powielone połączenie audio Studio</translation>
       <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
@@ -2337,6 +2341,10 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>Ustawienia VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>Konfiguracja VB-CABLE została anulowana lub nie została ukończona (kod %1). SoundCurrent pozostaje zainstalowany, aby można było ponowić próbę.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

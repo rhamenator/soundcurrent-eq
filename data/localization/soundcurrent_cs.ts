@@ -683,6 +683,10 @@ Importovat do vaší knihovny?</translation>
       <translation>Vyprázdnit buffer testovacího přehrávání</translation>
     </message>
     <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Nastavení ovladače selhalo (kód %1). Žádná nastavení zabezpečení systému Windows nebyla změněna.</translation>
+    </message>
+    <message>
       <source>Duplicate Studio route</source>
       <translation>Duplicitní zvukové propojení Studio</translation>
       <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
@@ -2337,6 +2341,10 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>Nastavení VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>Nastavení VB-CABLE bylo zrušeno nebo nebylo dokončeno (kód %1). SoundCurrent zůstává nainstalován pro další pokus.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

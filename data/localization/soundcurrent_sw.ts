@@ -683,6 +683,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Kukamilisha uchezaji wa majaribio</translation>
     </message>
     <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Usanidi wa kiendeshi umeshindwa (msimbo %1). Hakuna mipangilio ya usalama ya Windows iliyobadilishwa.</translation>
+    </message>
+    <message>
       <source>Duplicate Studio route</source>
       <translation>Muunganisho wa sauti wa Studio umerudiwa</translation>
       <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
@@ -2337,6 +2341,10 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>Mipangilio ya VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>Usanidi wa VB-CABLE umeghairiwa au haujakamilika (msimbo %1). SoundCurrent bado imesakinishwa ili uweze kujaribu tena.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

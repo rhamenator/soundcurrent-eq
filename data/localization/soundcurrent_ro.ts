@@ -683,6 +683,10 @@ Importați în bibliotecă?</translation>
       <translation>Finalizarea redării de test</translation>
     </message>
     <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Configurarea driverului a eșuat (cod %1). Nu au fost modificate setări de securitate Windows.</translation>
+    </message>
+    <message>
       <source>Duplicate Studio route</source>
       <translation>Conexiune audio Studio duplicată</translation>
       <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
@@ -2337,6 +2341,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>Setări VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>Configurarea VB-CABLE a fost anulată sau nu s-a încheiat (cod %1). SoundCurrent rămâne instalat pentru o nouă încercare.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

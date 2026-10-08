@@ -142,5 +142,9 @@
   "secondPassSetupFormatting": {
     "status": "host fixtures passed; production dynamic-message conversion and Windows qualification pending",
     "evidence": "tests/results/localization/second-pass-setup-formatting.json"
+  },
+  "secondPassSetupCodeErrors": {
+    "status": "two owned code-bearing setup errors translated; Windows failure paths and packages pending",
+    "evidence": "tests/results/localization/second-pass-setup-code-errors.json"
   }
 }

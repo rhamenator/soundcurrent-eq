@@ -683,6 +683,10 @@ Import into your library?</source>
       <translation>השלמת ניגון הבדיקה</translation>
     </message>
     <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>הגדרת מנהל ההתקן נכשלה (קוד %1). לא שונו הגדרות אבטחה של Windows.</translation>
+    </message>
+    <message>
       <source>Duplicate Studio route</source>
       <translation>חיבור שמע Studio כפול</translation>
       <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
@@ -2337,6 +2341,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings</source>
       <translation>הגדרות VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>הגדרת VB-CABLE בוטלה או לא הושלמה (קוד %1). SoundCurrent נשאר מותקן כדי לאפשר ניסיון נוסף.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

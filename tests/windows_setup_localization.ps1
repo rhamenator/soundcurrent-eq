@@ -16,6 +16,16 @@ foreach ($pack in $data.languages.PSObject.Properties) {
         $count++
     }
 }
+# Exercise the real declared dynamic templates in every installed catalog.
+foreach ($pack in $data.languages.PSObject.Properties) {
+    foreach ($source in @($required | Where-Object {$_ -match '%1'})) {
+        foreach ($value in @('-2147024891','0x80004005','%1 / $1 / C:\Windows')) {
+            $expected=$pack.Value.PSObject.Properties[$source].Value.Replace('%1',$value)
+            $actual=Format-SCSetupText $source -Values @($value) -Language $pack.Name
+            if ($actual -cne $expected) { throw "Owned setup code formatting failed: $($pack.Name)" }
+        }
+    }
+}
 $available = @($data.languages.PSObject.Properties.Name)
 foreach ($case in @(@('FR_ca','fr'),@('NN_no','nn'),@('zh-HK','zh-Hant'),@('zh-CN','zh-Hans'),@('pt-AO','en'),@('fr-Xxxx','en'),@('not-a-language','en'))) {
     if ((Resolve-SCSetupLanguage $case[0] $available) -ne $case[1]) { throw "Helper language resolution failed: $($case[0])" }
@@ -61,6 +71,16 @@ foreach ($file in Get-ChildItem (Join-Path $root 'packaging/windows') -Filter '*
     if ($file.Name -in @('cable-setup.ps1','native-audio-setup.ps1')) {
         $parameters=@($ast.ParamBlock.Parameters | ForEach-Object {$_.Name.VariablePath.UserPath})
         if ($parameters -notcontains 'Language') { throw "Helper language argument missing: $($file.Name)" }
+        # Run only the trusted fallback function definition, never driver script actions.
+        $fallback=$ast.Find({param($node)
+            $node -is [Management.Automation.Language.FunctionDefinitionAst] -and $node.Name -eq 'Format-SCSetupText'
+        },$true)
+        if (!$fallback) { throw "Missing English template fallback: $($file.Name)" }
+        $fallbackResult = & {
+            . ([scriptblock]::Create($fallback.Extent.Text))
+            Format-SCSetupText 'Code %1' -Values @('%1 / $1 / C:\Windows')
+        }
+        if ($fallbackResult -cne 'Code %1 / $1 / C:\Windows') { throw "Fallback altered literal code data: $($file.Name)" }
         foreach ($command in $ast.FindAll({param($node)
             $node -is [Management.Automation.Language.CommandAst] -and $node.GetCommandName() -in @('Get-SCSetupText','Format-SCSetupText')
         },$true)) {

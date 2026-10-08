@@ -683,6 +683,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Test sesi oynatımını tamamlama</translation>
     </message>
     <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Sürücü kurulumu başarısız oldu (kod %1). Windows güvenlik ayarları değiştirilmedi.</translation>
+    </message>
+    <message>
       <source>Duplicate Studio route</source>
       <translation>Yinelenen Studio ses bağlantısı</translation>
       <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
@@ -2337,6 +2341,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE ayarları</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>VB-CABLE kurulumu iptal edildi veya tamamlanmadı (kod %1). Yeniden denemek için SoundCurrent yüklü bırakıldı.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

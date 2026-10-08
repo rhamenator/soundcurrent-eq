@@ -683,6 +683,10 @@ Importere til biblioteket ditt?</translation>
       <translation>Fullføring av testavspeling</translation>
     </message>
     <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Drivaroppsettet mislukkast (kode %1). Ingen tryggleiksinnstillingar i Windows vart endra.</translation>
+    </message>
+    <message>
       <source>Duplicate Studio route</source>
       <translation>Duplisert Studio-lydsamband</translation>
       <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
@@ -2337,6 +2341,10 @@ Importere til biblioteket ditt?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE-innstillingar</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>VB-CABLE-oppsettet vart avbrote eller ikkje fullført (kode %1). SoundCurrent blir verande installert slik at du kan prøve på nytt.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

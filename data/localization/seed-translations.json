@@ -79,7 +79,9 @@
     "The route-preserving setup helper is missing.",
     "The VB-CABLE package is missing. Repair the SoundCurrent installation.",
     "VB-CABLE package checksum mismatch. Repair the installation.",
-    "Windows could not verify the VB-Audio executable signature."
+    "Windows could not verify the VB-Audio executable signature.",
+    "Driver setup failed (code %1). No Windows security settings were changed.",
+    "VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry."
   ],
   "languages": {
     "de": [
@@ -163,7 +165,9 @@
       "Die Einrichtungshilfe zum Erhalten der Audiowege fehlt.",
       "Das VB-CABLE-Paket fehlt. Reparieren Sie die SoundCurrent-Installation.",
       "Die Prüfsumme des VB-CABLE-Pakets stimmt nicht überein. Reparieren Sie die Installation.",
-      "Windows konnte die Signatur der ausführbaren VB-Audio-Datei nicht überprüfen."
+      "Windows konnte die Signatur der ausführbaren VB-Audio-Datei nicht überprüfen.",
+      "Die Treibereinrichtung ist fehlgeschlagen (Code %1). Es wurden keine Windows-Sicherheitseinstellungen geändert.",
+      "Die VB-CABLE-Einrichtung wurde abgebrochen oder nicht abgeschlossen (Code %1). SoundCurrent bleibt für einen erneuten Versuch installiert."
     ],
     "fr": [
       "Français",
@@ -246,7 +250,9 @@
       "L’assistant de configuration qui préserve le routage audio est introuvable.",
       "Le paquet VB-CABLE est introuvable. Réparez l’installation de SoundCurrent.",
       "La somme de contrôle du paquet VB-CABLE ne correspond pas. Réparez l’installation.",
-      "Windows n’a pas pu vérifier la signature du fichier exécutable VB-Audio."
+      "Windows n’a pas pu vérifier la signature du fichier exécutable VB-Audio.",
+      "La configuration du pilote a échoué (code %1). Aucun paramètre de sécurité Windows n’a été modifié.",
+      "La configuration de VB-CABLE a été annulée ou n’a pas abouti (code %1). SoundCurrent reste installé pour permettre une nouvelle tentative."
     ],
     "es": [
       "Español",
@@ -329,7 +335,9 @@
       "Falta el asistente de configuración que conserva las rutas de audio.",
       "Falta el paquete VB-CABLE. Repare la instalación de SoundCurrent.",
       "La suma de comprobación del paquete VB-CABLE no coincide. Repare la instalación.",
-      "Windows no pudo verificar la firma del ejecutable de VB-Audio."
+      "Windows no pudo verificar la firma del ejecutable de VB-Audio.",
+      "La configuración del controlador falló (código %1). No se modificó ninguna configuración de seguridad de Windows.",
+      "La configuración de VB-CABLE se canceló o no finalizó (código %1). SoundCurrent sigue instalado para poder intentarlo de nuevo."
     ],
     "it": [
       "Italiano",
@@ -412,7 +420,9 @@
       "Manca il programma di configurazione che preserva il routing audio.",
       "Manca il pacchetto VB-CABLE. Ripara l’installazione di SoundCurrent.",
       "La somma di controllo del pacchetto VB-CABLE non corrisponde. Ripara l’installazione.",
-      "Windows non ha potuto verificare la firma del file eseguibile VB-Audio."
+      "Windows non ha potuto verificare la firma del file eseguibile VB-Audio.",
+      "La configurazione del driver non è riuscita (codice %1). Nessuna impostazione di sicurezza di Windows è stata modificata.",
+      "La configurazione di VB-CABLE è stata annullata o non è stata completata (codice %1). SoundCurrent rimane installato per consentire un nuovo tentativo."
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -495,7 +505,9 @@
       "Falta o assistente de configuração que preserva o encaminhamento de áudio.",
       "Falta o pacote VB-CABLE. Repare a instalação do SoundCurrent.",
       "A soma de verificação do pacote VB-CABLE não corresponde. Repare a instalação.",
-      "O Windows não conseguiu verificar a assinatura do executável VB-Audio."
+      "O Windows não conseguiu verificar a assinatura do executável VB-Audio.",
+      "A configuração do controlador falhou (código %1). Não foram alteradas definições de segurança do Windows.",
+      "A configuração do VB-CABLE foi cancelada ou não foi concluída (código %1). O SoundCurrent continua instalado para permitir uma nova tentativa."
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -578,7 +590,9 @@
       "O assistente de configuração que preserva o roteamento de áudio está ausente.",
       "O pacote VB-CABLE está ausente. Repare a instalação do SoundCurrent.",
       "A soma de verificação do pacote VB-CABLE não corresponde. Repare a instalação.",
-      "O Windows não conseguiu verificar a assinatura do executável VB-Audio."
+      "O Windows não conseguiu verificar a assinatura do executável VB-Audio.",
+      "A configuração do driver falhou (código %1). Nenhuma configuração de segurança do Windows foi alterada.",
+      "A configuração do VB-CABLE foi cancelada ou não foi concluída (código %1). O SoundCurrent continua instalado para permitir uma nova tentativa."
     ],
     "nl": [
       "Nederlands",
@@ -661,7 +675,9 @@
       "De installatiehulp die audioroutes behoudt ontbreekt.",
       "Het VB-CABLE-pakket ontbreekt. Herstel de SoundCurrent-installatie.",
       "De controlesom van het VB-CABLE-pakket komt niet overeen. Herstel de installatie.",
-      "Windows kon de handtekening van het uitvoerbare VB-Audio-bestand niet verifiëren."
+      "Windows kon de handtekening van het uitvoerbare VB-Audio-bestand niet verifiëren.",
+      "Het instellen van het stuurprogramma is mislukt (code %1). Er zijn geen Windows-beveiligingsinstellingen gewijzigd.",
+      "Het instellen van VB-CABLE is geannuleerd of niet voltooid (code %1). SoundCurrent blijft geïnstalleerd zodat u het opnieuw kunt proberen."
     ],
     "pl": [
       "Polski",
@@ -744,7 +760,9 @@
       "Brak pomocnika konfiguracji zachowującego routing audio.",
       "Brak pakietu VB-CABLE. Napraw instalację SoundCurrent.",
       "Suma kontrolna pakietu VB-CABLE nie jest zgodna. Napraw instalację.",
-      "Windows nie mógł zweryfikować podpisu pliku wykonywalnego VB-Audio."
+      "Windows nie mógł zweryfikować podpisu pliku wykonywalnego VB-Audio.",
+      "Konfiguracja sterownika nie powiodła się (kod %1). Nie zmieniono żadnych ustawień zabezpieczeń systemu Windows.",
+      "Konfiguracja VB-CABLE została anulowana lub nie została ukończona (kod %1). SoundCurrent pozostaje zainstalowany, aby można było ponowić próbę."
     ],
     "cs": [
       "Čeština",
@@ -827,7 +845,9 @@
       "Chybí pomocný program nastavení zachovávající směrování zvuku.",
       "Balíček VB-CABLE chybí. Opravte instalaci SoundCurrent.",
       "Kontrolní součet balíčku VB-CABLE nesouhlasí. Opravte instalaci.",
-      "Windows nemohl ověřit podpis spustitelného souboru VB-Audio."
+      "Windows nemohl ověřit podpis spustitelného souboru VB-Audio.",
+      "Nastavení ovladače selhalo (kód %1). Žádná nastavení zabezpečení systému Windows nebyla změněna.",
+      "Nastavení VB-CABLE bylo zrušeno nebo nebylo dokončeno (kód %1). SoundCurrent zůstává nainstalován pro další pokus."
     ],
     "sk": [
       "Slovenčina",
@@ -910,7 +930,9 @@
       "Chýba pomocný program nastavenia zachovávajúci smerovanie zvuku.",
       "Balík VB-CABLE chýba. Opravte inštaláciu SoundCurrent.",
       "Kontrolný súčet balíka VB-CABLE nesúhlasí. Opravte inštaláciu.",
-      "Windows nedokázal overiť podpis spustiteľného súboru VB-Audio."
+      "Windows nedokázal overiť podpis spustiteľného súboru VB-Audio.",
+      "Nastavenie ovládača zlyhalo (kód %1). Žiadne nastavenia zabezpečenia systému Windows neboli zmenené.",
+      "Nastavenie VB-CABLE bolo zrušené alebo nebolo dokončené (kód %1). SoundCurrent zostáva nainštalovaný pre ďalší pokus."
     ],
     "uk": [
       "Українська",
@@ -993,7 +1015,9 @@
       "Відсутній допоміжний засіб налаштування, що зберігає маршрути аудіо.",
       "Пакет VB-CABLE відсутній. Відновіть інсталяцію SoundCurrent.",
       "Контрольна сума пакета VB-CABLE не збігається. Відновіть інсталяцію.",
-      "Windows не вдалося перевірити підпис виконуваного файлу VB-Audio."
+      "Windows не вдалося перевірити підпис виконуваного файлу VB-Audio.",
+      "Налаштування драйвера не вдалося (код %1). Жодні параметри безпеки Windows не змінено.",
+      "Налаштування VB-CABLE скасовано або не завершено (код %1). SoundCurrent залишається встановленим для повторної спроби."
     ],
     "ru": [
       "Русский",
@@ -1076,7 +1100,9 @@
       "Отсутствует вспомогательная программа настройки, сохраняющая маршрутизацию аудио.",
       "Пакет VB-CABLE отсутствует. Восстановите установку SoundCurrent.",
       "Контрольная сумма пакета VB-CABLE не совпадает. Восстановите установку.",
-      "Windows не удалось проверить подпись исполняемого файла VB-Audio."
+      "Windows не удалось проверить подпись исполняемого файла VB-Audio.",
+      "Настройка драйвера не удалась (код %1). Параметры безопасности Windows не изменялись.",
+      "Настройка VB-CABLE отменена или не завершена (код %1). SoundCurrent остаётся установленным для повторной попытки."
     ],
     "el": [
       "Ελληνικά",
@@ -1159,7 +1185,9 @@
       "Λείπει το βοηθητικό πρόγραμμα ρύθμισης που διατηρεί τη δρομολόγηση ήχου.",
       "Λείπει το πακέτο VB-CABLE. Επιδιορθώστε την εγκατάσταση του SoundCurrent.",
       "Το άθροισμα ελέγχου του πακέτου VB-CABLE δεν συμφωνεί. Επιδιορθώστε την εγκατάσταση.",
-      "Τα Windows δεν μπόρεσαν να επαληθεύσουν την υπογραφή του εκτελέσιμου αρχείου VB-Audio."
+      "Τα Windows δεν μπόρεσαν να επαληθεύσουν την υπογραφή του εκτελέσιμου αρχείου VB-Audio.",
+      "Η ρύθμιση του προγράμματος οδήγησης απέτυχε (κωδικός %1). Δεν άλλαξαν ρυθμίσεις ασφαλείας των Windows.",
+      "Η ρύθμιση του VB-CABLE ακυρώθηκε ή δεν ολοκληρώθηκε (κωδικός %1). Το SoundCurrent παραμένει εγκατεστημένο για νέα προσπάθεια."
     ],
     "tr": [
       "Türkçe",
@@ -1242,7 +1270,9 @@
       "Ses yönlendirmesini koruyan kurulum yardımcısı eksik.",
       "VB-CABLE paketi eksik. SoundCurrent kurulumunu onarın.",
       "VB-CABLE paketinin sağlama toplamı eşleşmiyor. Kurulumu onarın.",
-      "Windows, VB-Audio yürütülebilir dosyasının imzasını doğrulayamadı."
+      "Windows, VB-Audio yürütülebilir dosyasının imzasını doğrulayamadı.",
+      "Sürücü kurulumu başarısız oldu (kod %1). Windows güvenlik ayarları değiştirilmedi.",
+      "VB-CABLE kurulumu iptal edildi veya tamamlanmadı (kod %1). Yeniden denemek için SoundCurrent yüklü bırakıldı."
     ],
     "sv": [
       "Svenska",
@@ -1325,7 +1355,9 @@
       "Installationshjälpen som bevarar ljudroutningen saknas.",
       "VB-CABLE-paketet saknas. Reparera SoundCurrent-installationen.",
       "Kontrollsumman för VB-CABLE-paketet stämmer inte. Reparera installationen.",
-      "Windows kunde inte verifiera signaturen för VB-Audios körbara fil."
+      "Windows kunde inte verifiera signaturen för VB-Audios körbara fil.",
+      "Drivrutinsinstallationen misslyckades (kod %1). Inga säkerhetsinställningar i Windows ändrades.",
+      "VB-CABLE-installationen avbröts eller slutfördes inte (kod %1). SoundCurrent finns kvar installerat så att du kan försöka igen."
     ],
     "da": [
       "Dansk",
@@ -1408,7 +1440,9 @@
       "Opsætningshjælpen, der bevarer lydroutningen, mangler.",
       "VB-CABLE-pakken mangler. Reparer SoundCurrent-installationen.",
       "Kontrolsummen for VB-CABLE-pakken stemmer ikke. Reparer installationen.",
-      "Windows kunne ikke bekræfte signaturen på VB-Audios eksekverbare fil."
+      "Windows kunne ikke bekræfte signaturen på VB-Audios eksekverbare fil.",
+      "Driveropsætningen mislykkedes (kode %1). Ingen Windows-sikkerhedsindstillinger blev ændret.",
+      "VB-CABLE-opsætningen blev annulleret eller ikke fuldført (kode %1). SoundCurrent forbliver installeret, så du kan prøve igen."
     ],
     "nb": [
       "Norsk bokmål",
@@ -1491,7 +1525,9 @@
       "Oppsettshjelperen som bevarer lydrutingen, mangler.",
       "VB-CABLE-pakken mangler. Reparer SoundCurrent-installasjonen.",
       "Kontrollsummen for VB-CABLE-pakken stemmer ikke. Reparer installasjonen.",
-      "Windows kunne ikke bekrefte signaturen til den kjørbare VB-Audio-filen."
+      "Windows kunne ikke bekrefte signaturen til den kjørbare VB-Audio-filen.",
+      "Driveroppsettet mislyktes (kode %1). Ingen sikkerhetsinnstillinger i Windows ble endret.",
+      "VB-CABLE-oppsettet ble avbrutt eller ikke fullført (kode %1). SoundCurrent forblir installert slik at du kan prøve igjen."
     ],
     "fi": [
       "Suomi",
@@ -1574,7 +1610,9 @@
       "Äänireitityksen säilyttävä asennusapuri puuttuu.",
       "VB-CABLE-paketti puuttuu. Korjaa SoundCurrent-asennus.",
       "VB-CABLE-paketin tarkistussumma ei täsmää. Korjaa asennus.",
-      "Windows ei voinut vahvistaa VB-Audion suoritettavan tiedoston allekirjoitusta."
+      "Windows ei voinut vahvistaa VB-Audion suoritettavan tiedoston allekirjoitusta.",
+      "Ohjaimen asennus epäonnistui (koodi %1). Windowsin suojausasetuksia ei muutettu.",
+      "VB-CABLE-asennus peruutettiin tai sitä ei suoritettu loppuun (koodi %1). SoundCurrent jää asennetuksi uutta yritystä varten."
     ],
     "ro": [
       "Română",
@@ -1657,7 +1695,9 @@
       "Lipsește asistentul de configurare care păstrează rutarea audio.",
       "Lipsește pachetul VB-CABLE. Reparați instalarea SoundCurrent.",
       "Suma de control a pachetului VB-CABLE nu corespunde. Reparați instalarea.",
-      "Windows nu a putut verifica semnătura fișierului executabil VB-Audio."
+      "Windows nu a putut verifica semnătura fișierului executabil VB-Audio.",
+      "Configurarea driverului a eșuat (cod %1). Nu au fost modificate setări de securitate Windows.",
+      "Configurarea VB-CABLE a fost anulată sau nu s-a încheiat (cod %1). SoundCurrent rămâne instalat pentru o nouă încercare."
     ],
     "hu": [
       "Magyar",
@@ -1740,7 +1780,9 @@
       "Hiányzik a hangútvonalakat megőrző beállítási segédprogram.",
       "Hiányzik a VB-CABLE csomag. Javítsa a SoundCurrent telepítését.",
       "A VB-CABLE csomag ellenőrzőösszege nem egyezik. Javítsa a telepítést.",
-      "A Windows nem tudta ellenőrizni a VB-Audio futtatható fájl aláírását."
+      "A Windows nem tudta ellenőrizni a VB-Audio futtatható fájl aláírását.",
+      "Az illesztőprogram beállítása sikertelen (kód: %1). A Windows biztonsági beállításai nem változtak.",
+      "A VB-CABLE beállítását megszakították, vagy nem fejeződött be (kód: %1). A SoundCurrent telepítve marad az újrapróbálkozáshoz."
     ],
     "ar": [
       "العربية",
@@ -1823,7 +1865,9 @@
       "أداة الإعداد المساعدة التي تحافظ على توجيه الصوت مفقودة.",
       "حزمة VB-CABLE مفقودة. أصلح تثبيت SoundCurrent.",
       "المجموع الاختباري لحزمة VB-CABLE غير مطابق. أصلح التثبيت.",
-      "تعذّر على Windows التحقق من توقيع ملف VB-Audio التنفيذي."
+      "تعذّر على Windows التحقق من توقيع ملف VB-Audio التنفيذي.",
+      "فشل إعداد برنامج التشغيل (الرمز %1). لم يتم تغيير أي إعدادات أمان في Windows.",
+      "تم إلغاء إعداد VB-CABLE أو لم يكتمل (الرمز %1). بقي SoundCurrent مثبتًا لإعادة المحاولة."
     ],
     "he": [
       "עברית",
@@ -1906,7 +1950,9 @@
       "תוכנית העזר להגדרה ששומרת על ניתוב השמע חסרה.",
       "חבילת VB-CABLE חסרה. יש לתקן את התקנת SoundCurrent.",
       "סכום הביקורת של חבילת VB-CABLE אינו תואם. יש לתקן את ההתקנה.",
-      "Windows לא הצליח לאמת את חתימת קובץ ההפעלה של VB-Audio."
+      "Windows לא הצליח לאמת את חתימת קובץ ההפעלה של VB-Audio.",
+      "הגדרת מנהל ההתקן נכשלה (קוד %1). לא שונו הגדרות אבטחה של Windows.",
+      "הגדרת VB-CABLE בוטלה או לא הושלמה (קוד %1). SoundCurrent נשאר מותקן כדי לאפשר ניסיון נוסף."
     ],
     "fa": [
       "فارسی",
@@ -1989,7 +2035,9 @@
       "ابزار کمکی راه‌اندازی که مسیریابی صدا را حفظ می‌کند موجود نیست.",
       "بستهٔ VB-CABLE موجود نیست. نصب SoundCurrent را تعمیر کنید.",
       "مجموع وارسی بستهٔ VB-CABLE مطابقت ندارد. نصب را تعمیر کنید.",
-      "Windows نتوانست امضای فایل اجرایی VB-Audio را تأیید کند."
+      "Windows نتوانست امضای فایل اجرایی VB-Audio را تأیید کند.",
+      "راه‌اندازی درایور ناموفق بود (کد %1). هیچ‌یک از تنظیمات امنیتی Windows تغییر نکرد.",
+      "راه‌اندازی VB-CABLE لغو شد یا به پایان نرسید (کد %1). SoundCurrent برای تلاش دوباره نصب‌شده باقی ماند."
     ],
     "zh-Hans": [
       "简体中文",
@@ -2072,7 +2120,9 @@
       "缺少用于保留音频路由的设置辅助程序。",
       "缺少 VB-CABLE 软件包。请修复 SoundCurrent 安装。",
       "VB-CABLE 软件包校验和不匹配。请修复安装。",
-      "Windows 无法验证 VB-Audio 可执行文件的签名。"
+      "Windows 无法验证 VB-Audio 可执行文件的签名。",
+      "驱动程序设置失败（代码 %1）。未更改任何 Windows 安全设置。",
+      "VB-CABLE 设置已取消或未完成（代码 %1）。SoundCurrent 仍保持安装，可重试。"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -2155,7 +2205,9 @@
       "缺少用於保留音訊路由的設定輔助程式。",
       "缺少 VB-CABLE 套件。請修復 SoundCurrent 安裝。",
       "VB-CABLE 套件檢查碼不符。請修復安裝。",
-      "Windows 無法驗證 VB-Audio 執行檔的簽章。"
+      "Windows 無法驗證 VB-Audio 執行檔的簽章。",
+      "驅動程式設定失敗（代碼 %1）。未變更任何 Windows 安全性設定。",
+      "VB-CABLE 設定已取消或未完成（代碼 %1）。SoundCurrent 仍保持安裝，可重試。"
     ],
     "ja": [
       "日本語",
@@ -2238,7 +2290,9 @@
       "音声ルーティングを保持するセットアップ補助プログラムが見つかりません。",
       "VB-CABLE パッケージが見つかりません。SoundCurrent のインストールを修復してください。",
       "VB-CABLE パッケージのチェックサムが一致しません。インストールを修復してください。",
-      "Windows は VB-Audio 実行ファイルの署名を検証できませんでした。"
+      "Windows は VB-Audio 実行ファイルの署名を検証できませんでした。",
+      "ドライバーのセットアップに失敗しました（コード %1）。Windows のセキュリティ設定は変更されていません。",
+      "VB-CABLE のセットアップがキャンセルされたか、完了しませんでした（コード %1）。再試行できるよう、SoundCurrent はインストールされたままです。"
     ],
     "ko": [
       "한국어",
@@ -2321,7 +2375,9 @@
       "오디오 라우팅을 유지하는 설정 도우미가 없습니다.",
       "VB-CABLE 패키지가 없습니다. SoundCurrent 설치를 복구하세요.",
       "VB-CABLE 패키지의 체크섬이 일치하지 않습니다. 설치를 복구하세요.",
-      "Windows에서 VB-Audio 실행 파일의 서명을 확인하지 못했습니다."
+      "Windows에서 VB-Audio 실행 파일의 서명을 확인하지 못했습니다.",
+      "드라이버 설정에 실패했습니다(코드 %1). Windows 보안 설정은 변경되지 않았습니다.",
+      "VB-CABLE 설정이 취소되었거나 완료되지 않았습니다(코드 %1). 다시 시도할 수 있도록 SoundCurrent는 설치된 상태로 유지됩니다."
     ],
     "hi": [
       "हिन्दी",
@@ -2404,7 +2460,9 @@
       "ऑडियो रूटिंग सुरक्षित रखने वाला सेटअप सहायक उपलब्ध नहीं है।",
       "VB-CABLE पैकेज उपलब्ध नहीं है। SoundCurrent की स्थापना की मरम्मत करें।",
       "VB-CABLE पैकेज का चेकसम मेल नहीं खाता। स्थापना की मरम्मत करें।",
-      "Windows, VB-Audio की निष्पादन योग्य फ़ाइल के हस्ताक्षर को सत्यापित नहीं कर सका।"
+      "Windows, VB-Audio की निष्पादन योग्य फ़ाइल के हस्ताक्षर को सत्यापित नहीं कर सका।",
+      "ड्राइवर सेटअप विफल हुआ (कोड %1)। Windows की कोई सुरक्षा सेटिंग नहीं बदली गई।",
+      "VB-CABLE सेटअप रद्द कर दिया गया या पूरा नहीं हुआ (कोड %1)। दोबारा प्रयास करने के लिए SoundCurrent स्थापित रखा गया है।"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -2487,7 +2545,9 @@
       "Program bantu pengaturan yang mempertahankan rute audio tidak ditemukan.",
       "Paket VB-CABLE tidak ditemukan. Perbaiki instalasi SoundCurrent.",
       "Checksum paket VB-CABLE tidak cocok. Perbaiki instalasi.",
-      "Windows tidak dapat memverifikasi tanda tangan berkas yang dapat dijalankan milik VB-Audio."
+      "Windows tidak dapat memverifikasi tanda tangan berkas yang dapat dijalankan milik VB-Audio.",
+      "Penyiapan driver gagal (kode %1). Tidak ada pengaturan keamanan Windows yang diubah.",
+      "Penyiapan VB-CABLE dibatalkan atau tidak selesai (kode %1). SoundCurrent tetap terpasang agar Anda dapat mencoba lagi."
     ],
     "vi": [
       "Tiếng Việt",
@@ -2570,7 +2630,9 @@
       "Thiếu chương trình hỗ trợ thiết lập giữ nguyên định tuyến âm thanh.",
       "Thiếu gói VB-CABLE. Hãy sửa chữa bản cài đặt SoundCurrent.",
       "Tổng kiểm tra của gói VB-CABLE không khớp. Hãy sửa chữa bản cài đặt.",
-      "Windows không thể xác minh chữ ký của tệp thực thi VB-Audio."
+      "Windows không thể xác minh chữ ký của tệp thực thi VB-Audio.",
+      "Thiết lập trình điều khiển thất bại (mã %1). Không có cài đặt bảo mật Windows nào bị thay đổi.",
+      "Thiết lập VB-CABLE đã bị hủy hoặc chưa hoàn tất (mã %1). SoundCurrent vẫn được cài đặt để có thể thử lại."
     ],
     "th": [
       "ไทย",
@@ -2653,7 +2715,9 @@
       "ไม่พบโปรแกรมช่วยตั้งค่าที่คงการกำหนดเส้นทางเสียงไว้",
       "ไม่พบแพ็กเกจ VB-CABLE โปรดซ่อมแซมการติดตั้ง SoundCurrent",
       "ค่าตรวจสอบของแพ็กเกจ VB-CABLE ไม่ตรงกัน โปรดซ่อมแซมการติดตั้ง",
-      "Windows ไม่สามารถตรวจสอบลายเซ็นของไฟล์ปฏิบัติการ VB-Audio ได้"
+      "Windows ไม่สามารถตรวจสอบลายเซ็นของไฟล์ปฏิบัติการ VB-Audio ได้",
+      "การตั้งค่าไดรเวอร์ล้มเหลว (รหัส %1) ไม่มีการเปลี่ยนแปลงการตั้งค่าความปลอดภัยของ Windows",
+      "การตั้งค่า VB-CABLE ถูกยกเลิกหรือไม่เสร็จสมบูรณ์ (รหัส %1) SoundCurrent ยังคงติดตั้งอยู่เพื่อให้ลองอีกครั้งได้"
     ],
     "sw": [
       "Kiswahili",
@@ -2736,7 +2800,9 @@
       "Programu saidizi ya usanidi inayohifadhi njia za sauti haipo.",
       "Kifurushi cha VB-CABLE hakipo. Rekebisha usakinishaji wa SoundCurrent.",
       "Jumla ya ukaguzi ya kifurushi cha VB-CABLE hailingani. Rekebisha usakinishaji.",
-      "Windows haikuweza kuthibitisha sahihi ya kidijitali ya faili tekelezi ya VB-Audio."
+      "Windows haikuweza kuthibitisha sahihi ya kidijitali ya faili tekelezi ya VB-Audio.",
+      "Usanidi wa kiendeshi umeshindwa (msimbo %1). Hakuna mipangilio ya usalama ya Windows iliyobadilishwa.",
+      "Usanidi wa VB-CABLE umeghairiwa au haujakamilika (msimbo %1). SoundCurrent bado imesakinishwa ili uweze kujaribu tena."
     ],
     "nn": [
       "Norsk nynorsk",
@@ -2819,7 +2885,9 @@
       "Oppsettshjelparen som tek vare på lydrutinga, manglar.",
       "VB-CABLE-pakken manglar. Reparer SoundCurrent-installasjonen.",
       "Kontrollsummen for VB-CABLE-pakken stemmer ikkje. Reparer installasjonen.",
-      "Windows kunne ikkje stadfeste signaturen til den køyrbare VB-Audio-fila."
+      "Windows kunne ikkje stadfeste signaturen til den køyrbare VB-Audio-fila.",
+      "Drivaroppsettet mislukkast (kode %1). Ingen tryggleiksinnstillingar i Windows vart endra.",
+      "VB-CABLE-oppsettet vart avbrote eller ikkje fullført (kode %1). SoundCurrent blir verande installert slik at du kan prøve på nytt."
     ]
   },
   "requiredCompleteLocales": [

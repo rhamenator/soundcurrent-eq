@@ -8,7 +8,14 @@ $ProgressPreference = 'SilentlyContinue'
 $OutputEncoding = [Console]::OutputEncoding
 $localization = Join-Path $PSScriptRoot 'setup-localization.ps1'
 if (Test-Path -LiteralPath $localization) { . $localization }
-else { function Get-SCSetupText([string]$Source, [string]$Language = '', [string]$Application = '') { return $Source } }
+else {
+    function Get-SCSetupText([string]$Source, [string]$Language = '', [string]$Application = '') { return $Source }
+    function Format-SCSetupText([string]$Source, [string[]]$Values, [string]$Language = '', [string]$Application = '') {
+        # Older/missing payload fallback: format owned English templates once.
+        $replacement = {param($match) return [string]$Values[[int]$match.Value.Substring(1) - 1]}.GetNewClosure()
+        return [regex]::Replace($Source,'%[1-9][0-9]*',[Text.RegularExpressions.MatchEvaluator]$replacement)
+    }
+}
 
 function Notice([string]$Text) {
     if ($Quiet) { Write-Output $Text; return }
@@ -63,7 +70,7 @@ try {
     else { $arguments = @('--remove',$App,$sid) }
     $process = Start-Process -FilePath $helper -ArgumentList $arguments -Verb RunAs -Wait -PassThru
     $code = $process.ExitCode
-    if ($code -notin @(0,3010)) { throw "Driver setup failed (code $code). No Windows security settings were changed." }
+    if ($code -notin @(0,3010)) { throw (Format-SCSetupText 'Driver setup failed (code %1). No Windows security settings were changed.' -Values @([string]$code) -Language $Language -Application ('soundcurrent-' + $App)) }
     if ($code -eq 3010) { Notice 'Audio driver setup completed. Restart Windows before using SoundCurrent.' }
     elseif ($Install) { Notice 'SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.' }
     exit $code

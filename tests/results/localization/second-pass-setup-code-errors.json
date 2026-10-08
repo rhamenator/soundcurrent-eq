@@ -1,0 +1,53 @@
+{
+  "scope": "Two owned driver setup failure messages containing process exit codes",
+  "sourceMessagesPerLocale": 576,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": "reviewed for cancellation/incompletion, retained app installation, unchanged Windows security settings, invariant identifiers and literal exit code",
+  "nativeSpeakerVerification": "unverified",
+  "runtimeQualification": {
+    "platform": "Linux Qt offscreen and host PowerShell 7.6.6",
+    "targetedQtTestsPassed": 40,
+    "catalogUnitTestsPassed": 16,
+    "catalogUnitTestsSkipped": 1,
+    "requiredHelperLookupsPassed": 306,
+    "dynamicTemplateChecks": 204,
+    "dynamicValues": [
+      "-2147024891",
+      "0x80004005",
+      "%1 / $1 / C:\\Windows"
+    ],
+    "EnglishFallbackDefinitions": "both production helper definitions passed in isolation",
+    "quietNoActionProductionFaultLocales": [
+      "fr",
+      "ar",
+      "nn"
+    ],
+    "newProductionDriverFailurePathsExecuted": false
+  },
+  "invariants": [
+    "Exit-code values remain literal data",
+    "Failure predicates and exit statuses unchanged",
+    "Driver ownership, signature checks and installation actions unchanged",
+    "App/vendor identifiers unchanged",
+    "DSP and persisted state unchanged"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "WindowsCurrentChangesQualified": false,
+  "newPackagesQualified": false,
+  "VMUsed": false,
+  "remainingScope": [
+    "Other helper bodies and dialog captions",
+    "Native catch prefix",
+    "NSIS installer/uninstaller",
+    "Windows failure-path and current-package lifecycle qualification"
+  ],
+  "evidenceSha256": {
+    "packaging/windows/cable-setup.ps1": "ddee9cd250fe19a29f9f8651ea4d00877f52746cb315c5e9c99b0f83ac13488d",
+    "packaging/windows/native-audio-setup.ps1": "c8de5b53ae3976b69dfcfe5a2779499b055dc15aa19672f8e97e32ac1cca1d07",
+    "tests/windows_setup_localization.ps1": "14c4df12999ec6888ed70370b50fe6cf90d24869e360e35f937aab2d5a577a7a",
+    "tests/results/localization/setup-code-errors-runtime.log": "30850285feb319370b7669134523a0e8bdc6524543f3cf379c80b299e8226568",
+    "tests/results/localization/setup-code-errors-qt.log": "f413312338825d732009ea47de7707b1ee05db8344a3110b35c6f6348114d0c2",
+    "build/soundcurrent-eq": "d1f9d2d605c654852c77a5612d100a515071db00d391c721ae4416c06f5f8151"
+  }
+}

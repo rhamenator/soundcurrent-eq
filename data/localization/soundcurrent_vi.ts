@@ -683,6 +683,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Hoàn tất phát âm thanh thử nghiệm</translation>
     </message>
     <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Thiết lập trình điều khiển thất bại (mã %1). Không có cài đặt bảo mật Windows nào bị thay đổi.</translation>
+    </message>
+    <message>
       <source>Duplicate Studio route</source>
       <translation>Kết nối âm thanh Studio bị trùng</translation>
       <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
@@ -2337,6 +2341,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>Cài đặt VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>Thiết lập VB-CABLE đã bị hủy hoặc chưa hoàn tất (mã %1). SoundCurrent vẫn được cài đặt để có thể thử lại.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

@@ -683,6 +683,10 @@ Importeren in uw bibliotheek?</translation>
       <translation>Buffer voor testweergave leegspelen</translation>
     </message>
     <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Het instellen van het stuurprogramma is mislukt (code %1). Er zijn geen Windows-beveiligingsinstellingen gewijzigd.</translation>
+    </message>
+    <message>
       <source>Duplicate Studio route</source>
       <translation>Dubbele Studio-audioverbinding</translation>
       <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
@@ -2337,6 +2341,10 @@ Importeren in uw bibliotheek?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE-instellingen</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>Het instellen van VB-CABLE is geannuleerd of niet voltooid (code %1). SoundCurrent blijft geïnstalleerd zodat u het opnieuw kunt proberen.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>

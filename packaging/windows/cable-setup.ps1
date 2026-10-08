@@ -9,7 +9,14 @@ $ProgressPreference = 'SilentlyContinue'
 $OutputEncoding = [Console]::OutputEncoding
 $localization = Join-Path $PSScriptRoot 'setup-localization.ps1'
 if (Test-Path -LiteralPath $localization) { . $localization }
-else { function Get-SCSetupText([string]$Source, [string]$Language = '', [string]$Application = '') { return $Source } }
+else {
+    function Get-SCSetupText([string]$Source, [string]$Language = '', [string]$Application = '') { return $Source }
+    function Format-SCSetupText([string]$Source, [string[]]$Values, [string]$Language = '', [string]$Application = '') {
+        # Older/missing payload fallback: format owned English templates once.
+        $replacement = {param($match) return [string]$Values[[int]$match.Value.Substring(1) - 1]}.GetNewClosure()
+        return [regex]::Replace($Source,'%[1-9][0-9]*',[Text.RegularExpressions.MatchEvaluator]$replacement)
+    }
+}
 function Notice([string]$Text) {
     Write-Output $Text
     if (!$Quiet) {
@@ -119,7 +126,7 @@ try {
             }
             if ($Install) { MarkReboot } # Persist before mutation, even if the UI closes.
             & $guard $(if ($Install) { '--install' } else { '--remove' }) $exe
-            if ($LASTEXITCODE -ne 0) { throw "VB-CABLE setup was cancelled or did not finish (code $LASTEXITCODE). SoundCurrent was retained for retry." }
+            if ($LASTEXITCODE -ne 0) { throw (Format-SCSetupText 'VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.' -Values @([string]$LASTEXITCODE) -Language $Language -Application ('soundcurrent-' + $App)) }
             if ($Remove -and (Present)) { throw 'VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.' }
             if ($repair -and !(Present)) {
                 MarkReboot
