@@ -2500,6 +2500,10 @@ Import into your library?</translation>
       <translation>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Write speaker buffer</translation>
     </message>

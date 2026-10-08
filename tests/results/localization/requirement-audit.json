@@ -238,5 +238,9 @@
   "secondPassInstallerSharedDriver": {
     "report": "tests/results/localization/second-pass-installer-shared-driver.json",
     "status": "native running-app notice corrected and translated; locale activation and current runtime qualification pending"
+  },
+  "secondPassInstallerNativeApproval": {
+    "report": "tests/results/localization/second-pass-installer-native-approval.json",
+    "status": "native signed-program approval notice translated; locale activation and runtime qualification pending"
   }
 }

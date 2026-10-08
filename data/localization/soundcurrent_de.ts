@@ -2500,6 +2500,10 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Windows hat einen VB-CABLE-Treibereintrag, aber der Wiedergabe- oder Aufnahmeendpunkt ist nicht verfügbar. Wenn Sie bereits neu gestartet haben, öffnen Sie %1 zur Reparatur. Aktivieren Sie CABLE Input und CABLE Output in den Windows-Soundeinstellungen, falls sie deaktiviert sind.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows fordert eine Administratorbestätigung für den signierten Treibermanager an. Das Installationsprogramm informiert Sie, falls ein Neustart erforderlich ist.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Lautsprecherbuffer schreiben</translation>
     </message>

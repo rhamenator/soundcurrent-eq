@@ -2500,6 +2500,10 @@ Importera till ditt bibliotek?</translation>
       <translation>Windows har en drivrutinspost för VB-CABLE, men uppspelnings- eller inspelningsslutpunkten är inte tillgänglig. Öppna %1 för reparation om du redan har startat om. Aktivera CABLE Input och CABLE Output i Windows ljudinställningar om de är inaktiverade.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows begär administratörens godkännande för den signerade drivrutinshanteraren. Installationsprogrammet meddelar om en omstart krävs.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Skriva till högtalarbufferten</translation>
     </message>

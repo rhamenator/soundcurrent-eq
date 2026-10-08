@@ -2500,6 +2500,10 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Windows possède une entrée de pilote VB-CABLE, mais son point de terminaison de lecture ou d’enregistrement est indisponible. Si vous avez déjà redémarré, ouvrez %1 pour le réparer. Activez CABLE Input et CABLE Output dans les paramètres audio de Windows s’ils sont désactivés.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows demandera une autorisation administrateur pour le gestionnaire de pilotes signé. Le programme d’installation vous indiquera si un redémarrage est nécessaire.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Écrire dans le tampon des enceintes</translation>
     </message>

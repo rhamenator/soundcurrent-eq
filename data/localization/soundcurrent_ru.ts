@@ -2500,6 +2500,10 @@ Import into your library?</source>
       <translation>В Windows есть запись драйвера VB-CABLE, но его конечная точка воспроизведения или записи недоступна. Если вы уже перезапустили систему, откройте %1 для восстановления. Включите CABLE Input и CABLE Output в настройках звука Windows, если они отключены.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows запросит разрешение администратора для подписанного менеджера драйверов. Установщик сообщит, требуется ли перезапуск.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Запись в буфер динамиков</translation>
     </message>

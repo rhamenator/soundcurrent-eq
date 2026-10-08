@@ -2500,6 +2500,10 @@ Import into your library?</source>
       <translation>يوجد سجل لبرنامج تشغيل VB-CABLE في Windows، لكن نقطة التشغيل أو التسجيل غير متاحة. إذا كنت قد أعدت التشغيل بالفعل، فافتح %1 للإصلاح. فعّل CABLE Input وCABLE Output في إعدادات الصوت في Windows إذا كانا معطّلين.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>سيطلب Windows موافقة المسؤول لتشغيل مدير برامج التشغيل الموقّع. سيخبرك برنامج التثبيت إذا كانت إعادة التشغيل مطلوبة.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>الكتابة في المخزن المؤقت لمكبرات الصوت</translation>
     </message>

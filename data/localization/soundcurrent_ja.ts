@@ -2500,6 +2500,10 @@ Import into your library?</source>
       <translation>Windows に VB-CABLE ドライバーの記録がありますが、再生または録音のエンドポイントを使用できません。既に再起動した場合は、修復のため %1 を開いてください。CABLE Input と CABLE Output が無効になっている場合は、Windows のサウンド設定で有効にしてください。</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows は署名済みドライバーマネージャーに対する管理者の承認を求めます。再起動が必要な場合はセットアップが通知します。</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>スピーカーバッファへの書き込み</translation>
     </message>

@@ -2500,6 +2500,10 @@ Importare nella libreria?</translation>
       <translation>Windows ha una voce del driver VB-CABLE, ma il suo endpoint di riproduzione o registrazione non è disponibile. Se è già stato effettuato un riavvio, aprire %1 per ripararlo. Abilitare CABLE Input e CABLE Output nelle impostazioni audio di Windows se sono disabilitati.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows richiederà l’approvazione dell’amministratore per il gestore dei driver firmato. Il programma di installazione ti informerà se è necessario un riavvio.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Scrivere nel buffer degli altoparlanti</translation>
     </message>

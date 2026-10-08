@@ -2500,6 +2500,10 @@ Import into your library?</source>
       <translation>Windows رکوردی از درایور VB-CABLE دارد، اما نقطهٔ پایانی پخش یا ضبط آن در دسترس نیست. اگر قبلاً سیستم را دوباره راه‌اندازی کرده‌اید، %1 را برای تعمیر باز کنید. اگر CABLE Input و CABLE Output غیرفعال هستند، آن‌ها را در تنظیمات صدای Windows فعال کنید.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows برای مدیر درایور دارای امضای دیجیتال تأیید مدیر سیستم را درخواست می‌کند. نصب‌کننده اعلام می‌کند که آیا راه‌اندازی مجدد لازم است.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>نوشتن در بافر بلندگو</translation>
     </message>

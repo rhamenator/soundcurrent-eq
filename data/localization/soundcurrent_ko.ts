@@ -2500,6 +2500,10 @@ Import into your library?</source>
       <translation>Windows에 VB-CABLE 드라이버 기록이 있지만 재생 또는 녹음 엔드포인트를 사용할 수 없습니다. 이미 다시 시작했다면 복구를 위해 %1을 여세요. CABLE Input과 CABLE Output이 비활성화되어 있다면 Windows 소리 설정에서 활성화하세요.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows가 서명된 드라이버 관리 프로그램의 실행을 위한 관리자 승인을 요청합니다. 설치 프로그램이 재시작이 필요한지 알려줍니다.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>스피커 버퍼에 쓰기</translation>
     </message>

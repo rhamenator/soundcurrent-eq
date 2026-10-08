@@ -2500,6 +2500,10 @@ Import into your library?</source>
       <translation>Windows 有 VB-CABLE 驱动程序记录，但其播放或录音端点不可用。如果已重启，请打开 %1 进行修复。如果 CABLE Input 和 CABLE Output 已禁用，请在 Windows 声音设置中启用它们。</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows 将为已签名的驱动程序管理器请求管理员批准。安装程序会告知您是否需要重启。</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>写入扬声器缓冲区</translation>
     </message>

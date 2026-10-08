@@ -2500,6 +2500,10 @@ Importere til biblioteket ditt?</translation>
       <translation>Windows har ei drivaroppføring for VB-CABLE, men avspelings- eller opptaksendepunktet er utilgjengeleg. Dersom du allereie har starta på nytt, opne %1 for å reparere det. Aktiver CABLE Input og CABLE Output i lydinnstillingane til Windows dersom dei er deaktiverte.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows ber om administratorgodkjenning for den signerte drivarhandsamaren. Installasjonsprogrammet seier frå om ein omstart er nødvendig.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Skriving til høgtalarbufferen</translation>
     </message>

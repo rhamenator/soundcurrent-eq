@@ -2500,6 +2500,10 @@ Import into your library?</source>
       <translation>Windows में VB-CABLE ड्राइवर का रिकॉर्ड है, लेकिन उसका प्लेबैक या रिकॉर्डिंग एंडपॉइंट उपलब्ध नहीं है। यदि आपने पहले ही पुनरारंभ किया है, तो मरम्मत के लिए %1 खोलें। यदि CABLE Input और CABLE Output अक्षम हैं, तो उन्हें Windows की ध्वनि सेटिंग में सक्षम करें।</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows हस्ताक्षरित ड्राइवर प्रबंधक के लिए व्यवस्थापक की अनुमति माँगेगा। इंस्टॉलर बताएगा कि पुनः शुरू करना आवश्यक है या नहीं।</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>स्पीकर बफ़र में लिखना</translation>
     </message>

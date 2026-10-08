@@ -2500,6 +2500,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Windows có bản ghi trình điều khiển VB-CABLE, nhưng điểm cuối phát hoặc ghi âm không khả dụng. Nếu đã khởi động lại, hãy mở %1 để sửa chữa. Bật CABLE Input và CABLE Output trong cài đặt âm thanh Windows nếu chúng bị tắt.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows sẽ yêu cầu quản trị viên chấp thuận cho trình quản lý trình điều khiển đã ký. Trình cài đặt sẽ cho biết có cần khởi động lại hay không.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Ghi vào bộ đệm loa</translation>
     </message>

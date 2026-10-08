@@ -2500,6 +2500,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Windows ina rekodi ya kiendeshi cha VB-CABLE, lakini kifaa chake cha kucheza au kurekodi sauti hakipatikani. Ikiwa tayari umeanzisha upya, fungua %1 ili kurekebisha. Washa CABLE Input na CABLE Output katika mipangilio ya sauti ya Windows ikiwa zimezimwa.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows itaomba idhini ya msimamizi kwa kidhibiti cha viendeshi chenye sahihi ya kidijitali. Kisakinishi kitakujulisha ikiwa kuanzisha upya kunahitajika.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Kuandika kwenye bafa ya spika</translation>
     </message>

@@ -2500,6 +2500,10 @@ Importar para a sua biblioteca?</translation>
       <translation>O Windows tem um registro do driver VB-CABLE, mas o ponto de extremidade de reprodução ou gravação está indisponível. Se já reiniciou, abra %1 para repará-lo. Ative CABLE Input e CABLE Output nas configurações de som do Windows se estiverem desativados.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>O Windows solicitará aprovação do administrador para o gerenciador de drivers assinado. O instalador informará se é necessário reiniciar.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Escrever no buffer dos alto-falantes</translation>
     </message>

@@ -2500,6 +2500,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>Windowsissa on VB-CABLE-ohjaimen merkintä, mutta toiston tai tallennuksen päätepiste ei ole käytettävissä. Jos olet jo käynnistänyt uudelleen, avaa %1 korjausta varten. Ota CABLE Input ja CABLE Output käyttöön Windowsin ääniasetuksissa, jos ne on poistettu käytöstä.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows pyytää järjestelmänvalvojan hyväksyntää allekirjoitetulle ajurien hallintaohjelmalle. Asennusohjelma ilmoittaa, tarvitaanko uudelleenkäynnistys.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Kaiutinpuskuriin kirjoittaminen</translation>
     </message>

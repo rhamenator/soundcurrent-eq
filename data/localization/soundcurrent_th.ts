@@ -2500,6 +2500,10 @@ Import into your library?</source>
       <translation>Windows มีข้อมูลไดรเวอร์ VB-CABLE แต่จุดปลายทางสำหรับเล่นหรือบันทึกเสียงใช้งานไม่ได้ หากเริ่มใหม่แล้ว ให้เปิด %1 เพื่อซ่อมแซม หาก CABLE Input และ CABLE Output ถูกปิดใช้งาน ให้เปิดใช้งานในการตั้งค่าเสียงของ Windows</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows จะขออนุมัติจากผู้ดูแลระบบสำหรับโปรแกรมจัดการไดรเวอร์ที่มีลายเซ็นดิจิทัล โปรแกรมติดตั้งจะแจ้งว่าจำเป็นต้องรีสตาร์ตหรือไม่</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>เขียนข้อมูลลงบัฟเฟอร์ลำโพง</translation>
     </message>

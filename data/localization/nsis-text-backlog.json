@@ -62,9 +62,9 @@
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 91,
       "kind": "control-caption",
-      "literal": "Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCNativeApproval)",
+      "marked": true,
+      "reviewStatus": "all locale translations exported; language activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",

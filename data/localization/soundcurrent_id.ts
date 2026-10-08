@@ -2500,6 +2500,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Windows memiliki catatan driver VB-CABLE, tetapi titik akhir pemutaran atau perekamannya tidak tersedia. Jika sudah memulai ulang, buka %1 untuk memperbaikinya. Aktifkan CABLE Input dan CABLE Output di pengaturan suara Windows jika dinonaktifkan.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows akan meminta persetujuan administrator untuk pengelola driver yang ditandatangani. Penginstal akan memberi tahu jika perlu memulai ulang.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Menulis ke buffer speaker</translation>
     </message>

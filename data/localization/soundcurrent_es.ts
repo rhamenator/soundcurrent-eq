@@ -2500,6 +2500,10 @@ Import into your library?</source>
       <translation>Windows tiene un registro del controlador VB-CABLE, pero su punto de conexión de reproducción o grabación no está disponible. Si ya reinició, abra %1 para repararlo. Active CABLE Input y CABLE Output en los ajustes de sonido de Windows si están desactivados.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows solicitará la aprobación del administrador para el gestor de controladores firmado. El instalador le indicará si es necesario reiniciar.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Escribir en el búfer de los altavoces</translation>
     </message>

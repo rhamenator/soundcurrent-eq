@@ -2500,6 +2500,10 @@ Importálja a könyvtárba?</translation>
       <translation>A Windowsban van VB-CABLE illesztőprogram-bejegyzés, de a lejátszási vagy felvételi végpont nem érhető el. Ha már újraindította, nyissa meg a %1 lehetőséget a javításhoz. Engedélyezze a CABLE Input és CABLE Output eszközöket a Windows hangbeállításaiban, ha le vannak tiltva.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>A Windows rendszergazdai jóváhagyást kér az aláírt illesztőprogram-kezelőhöz. A telepítő jelzi, ha újraindítás szükséges.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Írás a hangszórópufferbe</translation>
     </message>

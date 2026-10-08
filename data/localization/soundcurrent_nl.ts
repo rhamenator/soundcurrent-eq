@@ -2500,6 +2500,10 @@ Importeren in uw bibliotheek?</translation>
       <translation>Windows heeft een vermelding van het VB-CABLE-stuurprogramma, maar het afspeel- of opname-eindpunt is niet beschikbaar. Open %1 om dit te herstellen als u al opnieuw hebt opgestart. Schakel CABLE Input en CABLE Output in de Windows-geluidsinstellingen in als ze zijn uitgeschakeld.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows vraagt om goedkeuring van de beheerder voor de ondertekende stuurprogrammabeheerder. Het installatieprogramma meldt of opnieuw opstarten nodig is.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Luidsprekerbuffer schrijven</translation>
     </message>

@@ -2500,6 +2500,10 @@ Importați în bibliotecă?</translation>
       <translation>Windows are o înregistrare a driverului VB-CABLE, dar dispozitivul său audio de redare sau înregistrare nu este disponibil. Dacă ați repornit deja, deschideți %1 pentru reparare. Activați CABLE Input și CABLE Output în setările de sunet Windows dacă sunt dezactivate.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows va solicita aprobare de administrator pentru managerul de drivere semnat. Programul de instalare vă va informa dacă este necesară o repornire.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Scrierea în memoria tampon a difuzoarelor</translation>
     </message>

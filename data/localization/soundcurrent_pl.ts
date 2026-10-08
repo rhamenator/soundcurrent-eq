@@ -2500,6 +2500,10 @@ Zaimportować do biblioteki?</translation>
       <translation>Windows ma wpis sterownika VB-CABLE, ale jego punkt końcowy odtwarzania lub nagrywania jest niedostępny. Jeśli system został już uruchomiony ponownie, otwórz %1, aby go naprawić. Włącz CABLE Input i CABLE Output w ustawieniach dźwięku systemu Windows, jeśli są wyłączone.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows poprosi o zgodę administratora dla podpisanego menedżera sterowników. Instalator poinformuje, czy wymagane jest ponowne uruchomienie.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Zapisać bufor głośników</translation>
     </message>

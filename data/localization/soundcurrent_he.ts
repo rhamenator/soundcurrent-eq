@@ -2500,6 +2500,10 @@ Import into your library?</source>
       <translation>ב-Windows יש רישום של מנהל התקן VB-CABLE, אך נקודת הקצה להשמעה או להקלטה אינה זמינה. אם כבר הפעלתם מחדש, פתחו את %1 לתיקון. הפעילו את CABLE Input ואת CABLE Output בהגדרות השמע של Windows אם הם מושבתים.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows יבקש אישור מנהל מערכת עבור תוכנת ניהול מנהלי ההתקנים החתומה. תוכנית ההתקנה תודיע אם נדרשת הפעלה מחדש.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>כתיבה למאגר הרמקולים</translation>
     </message>

@@ -2500,6 +2500,10 @@ Import into your library?</source>
       <translation>Τα Windows έχουν καταχώριση προγράμματος οδήγησης VB-CABLE, αλλά το τελικό σημείο αναπαραγωγής ή εγγραφής δεν είναι διαθέσιμο. Αν έχετε ήδη επανεκκινήσει, ανοίξτε το %1 για επιδιόρθωση. Ενεργοποιήστε τα CABLE Input και CABLE Output στις ρυθμίσεις ήχου των Windows αν είναι απενεργοποιημένα.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Τα Windows θα ζητήσουν έγκριση διαχειριστή για τον υπογεγραμμένο διαχειριστή προγραμμάτων οδήγησης. Το πρόγραμμα εγκατάστασης θα σας ενημερώσει αν απαιτείται επανεκκίνηση.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Εγγραφή στην προσωρινή μνήμη ηχείων</translation>
     </message>

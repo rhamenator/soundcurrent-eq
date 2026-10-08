@@ -2500,6 +2500,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Windows’ta bir VB-CABLE sürücü kaydı var ancak oynatma veya kayıt uç noktası kullanılamıyor. Zaten yeniden başlattıysanız onarmak için %1 öğesini açın. Devre dışıysa Windows ses ayarlarında CABLE Input ve CABLE Output öğelerini etkinleştirin.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows, imzalı sürücü yöneticisi için yönetici onayı isteyecektir. Kurulum programı yeniden başlatma gerekip gerekmediğini bildirecektir.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Hoparlör tamponuna yazma</translation>
     </message>

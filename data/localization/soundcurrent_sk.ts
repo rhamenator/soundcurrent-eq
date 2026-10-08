@@ -2500,6 +2500,10 @@ Importovať do vašej knižnice?</translation>
       <translation>Windows má záznam ovládača VB-CABLE, ale jeho koncový bod prehrávania alebo nahrávania nie je dostupný. Ak ste už reštartovali, otvorte %1 na opravu. Povoľte CABLE Input a CABLE Output v nastaveniach zvuku systému Windows, ak sú zakázané.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows požiada o schválenie správcom pre digitálne podpísaný program na správu ovládačov. Inštalačný program oznámi, či je potrebný reštart.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Zapísať buffer reproduktorov</translation>
     </message>

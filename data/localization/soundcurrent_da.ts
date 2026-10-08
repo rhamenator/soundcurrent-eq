@@ -2500,6 +2500,10 @@ Importér til dit bibliotek?</translation>
       <translation>Windows har en driverregistrering for VB-CABLE, men afspilnings- eller optagelsesslutpunktet er ikke tilgængeligt. Hvis du allerede har genstartet, skal du åbne %1 for at reparere det. Aktivér CABLE Input og CABLE Output i Windows’ lydindstillinger, hvis de er deaktiverede.</translation>
     </message>
     <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows vil bede om administratorgodkendelse til det signerede program til administration af drivere. Installationsprogrammet fortæller, om en genstart er nødvendig.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Skrivning til højttalerbufferen</translation>
     </message>
