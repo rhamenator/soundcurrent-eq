@@ -247,3 +247,7 @@ Korean now has 166/441 populated current catalog entries. Added profile-saving e
 ### Korean: third existing-catalog batch
 
 Korean now has 230/441 populated current catalog entries. Added effects, estimated metering and equipment-profile editing. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Korean: fourth existing-catalog batch
+
+Korean now has 291/441 populated current catalog entries. Added import/export guidance, microphone calibration and balance behavior. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
