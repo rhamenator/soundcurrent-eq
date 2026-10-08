@@ -149,3 +149,5 @@ All currently extracted messages populated (441 EQ / 527 Studio). Q remains dime
 ## Nynorsk initial batch
 
 Nynorsk is its own written standard and catalog, separate from Bokmål. Wording uses innstillingar, einingar, forsterking and førehandsinnstilling consistently. Nivåmargin remains distinct from balance, and clipping warnings retain estimated peak risk. Amplifier profiles require electrical measurement, not marketing specifications. Setup recovery preserves an open app with paused processing. Regional language selection retains nn and nb separately. Native review remains unverified.
+
+Nynorsk recovery review: inability to inspect active equalizers explicitly prevents handsaming. Setup errors keep the app open. Limits and half-dB steps retain their values. Avklingingstid describes duration, while effektdel describes processed contribution. Render cancellation remains distinct from disabling live playback processing. Native review remains unverified.
