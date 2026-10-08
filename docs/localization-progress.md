@@ -227,3 +227,7 @@ Japanese now has 349/441 populated current catalog entries. Added output control
 ### Japanese: sixth existing-catalog batch
 
 Japanese now has 398/441 populated current catalog entries. Added save/reset actions, room measurement, microphone routing and peak-marker guidance. Both apps passed the three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Japanese: current catalogs populated
+
+All current Japanese catalog entries are populated (441 EQ, 527 Studio). Contextual AI review remains unverified; native-speaker and Windows qualification are pending. Six target languages still have incomplete existing catalogs. Omitted source strings remain scheduled for the second pass. The Japanese checkpoint report records Linux test evidence.
