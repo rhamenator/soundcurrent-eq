@@ -1,24 +1,24 @@
 {
-  "stage": "Hebrew startup, output and rendering batch",
+  "stage": "Hebrew saving, speaker profiles and device recovery batch",
   "catalogs": [
     {
       "tag": "he",
       "name": "עברית",
-      "translated": 349,
+      "translated": 398,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "fcb3f76f123691e2b775153a0d780024db88009626031d91bc4b62aa43bf0eaf",
-      "qmSha256": "0eba0c053513db2d4aab3e2394891e82d2c6cb91f06b5ebc0e0ec70a084e8931"
+      "tsSha256": "d9bedf3242593db252a89533f4ba62faee4d6f132cd6813871ca4a2233b18534",
+      "qmSha256": "e3da160a4ffcc4f1f9f6dc363250edc91094e490ff53a7ddcf34be637d06beba"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "compiled localization, Hebrew main window and catalog validation",
-    "log": "/tmp/soundcurrent-eq-he-fifth-tests.log"
+    "log": "/tmp/soundcurrent-eq-he-sixth-tests.log"
   },
-  "review": "Contextual AI review; unverified. Single-app startup registration, close versus quit, reference-preserving edits, calibration links, post gain and neutral render counts reviewed.",
+  "review": "Contextual AI review; unverified. Save versus discard, speaker correction bounds, peak hold, device recovery, separate cable routing and reverb versus echo reviewed.",
   "nativeReviewed": false,
   "windows": "Pending CI",
   "remaining": "Hebrew catalog incomplete. 11 original target catalogs remain incomplete; omitted messages scheduled for second pass. Full bidi and platform qualification remain open."

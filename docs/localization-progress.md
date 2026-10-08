@@ -157,3 +157,5 @@ Hebrew equipment, filters and metering batch: 230/441 messages populated. Three 
 Hebrew microphone and measurement batch: 291/441 messages populated. Three focused Linux checks passed. Additive correction, microphone clipping, balance endpoints and signed routing gain reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
 
 Hebrew startup, output and rendering batch: 349/441 messages populated. Three focused Linux checks passed. Startup registration, reference-preserving edits, calibration links, post gain and render counts reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Hebrew saving, speaker profiles and device recovery batch: 398/441 messages populated. Three focused Linux checks passed. Saving, speaker correction bounds, peak hold, device recovery and reverb versus echo reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.

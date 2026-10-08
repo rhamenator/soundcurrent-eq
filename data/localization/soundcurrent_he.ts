@@ -1404,132 +1404,132 @@ Import into your library?</source>
     </message>
     <message>
       <source>Response data (*.txt *.csv *.frd *.cal)</source>
-      <translation type="unfinished" />
+      <translation>נתוני תגובה (*.txt *.csv *.frd *.cal)</translation>
     </message>
     <message>
       <source>Response exceeds 4096 points.</source>
-      <translation type="unfinished" />
+      <translation>התגובה כוללת יותר מ־4096 נקודות.</translation>
     </message>
     <message>
       <source>Response frequencies must increase, with finite bounded values.</source>
-      <translation type="unfinished" />
+      <translation>תדרי התגובה חייבים לעלות, עם ערכים סופיים בטווח המותר.</translation>
     </message>
     <message>
       <source>Response has no usable audio range.</source>
-      <translation type="unfinished" />
+      <translation>לתגובה אין טווח שמע שימושי.</translation>
     </message>
     <message>
       <source>Response import</source>
-      <translation type="unfinished" />
+      <translation>ייבוא תגובה</translation>
     </message>
     <message>
       <source>Response needs 2–4096 measured points.</source>
-      <translation type="unfinished" />
+      <translation>התגובה דורשת 2–4096 נקודות שנמדדו.</translation>
     </message>
     <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
-      <translation type="unfinished" />
+      <translation>יש להפעיל מחדש את Windows לפני השימוש באקולייזר או בהגדרות VB-CABLE. שינויים במנהל התקן השמע דורשים הפעלה מחדש של המערכת.</translation>
     </message>
     <message>
       <source>Restore Defaults</source>
-      <translation type="unfinished" />
+      <translation>שחזור ברירות המחדל</translation>
     </message>
     <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
-      <translation type="unfinished" />
+      <translation>שחזור הגדרת האקולייזר הקודמת (Ctrl+Z)</translation>
     </message>
     <message>
       <source>Retry</source>
-      <translation type="unfinished" />
+      <translation>ניסיון חוזר</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
-      <translation type="unfinished" />
+      <translation>שפת בדיקה מימין לשמאל</translation>
     </message>
     <message>
       <source>Rock</source>
-      <translation type="unfinished" />
+      <translation>רוק</translation>
     </message>
     <message>
       <source>Save</source>
-      <translation type="unfinished" />
+      <translation>שמירה</translation>
     </message>
     <message>
       <source>Save All</source>
-      <translation type="unfinished" />
+      <translation>שמירת הכול</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
-      <translation type="unfinished" />
+      <translation>שמירת קביעה מוגדרת מראש לאקולייזר</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
-      <translation type="unfinished" />
+      <translation>לשמור את הפרופיל ששונה?</translation>
     </message>
     <message>
       <source>Save preset</source>
-      <translation>שמירת הגדרה</translation>
+      <translation>שמירת קביעה מוגדרת מראש</translation>
     </message>
     <message>
       <source>Save profile</source>
-      <translation type="unfinished" />
+      <translation>שמירת פרופיל</translation>
     </message>
     <message>
       <source>Save system response profile</source>
-      <translation type="unfinished" />
+      <translation>שמירת פרופיל תגובת המערכת</translation>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
-      <translation type="unfinished" />
+      <translation>הקביעה המוגדרת מראש ״%1״ נשמרה.</translation>
     </message>
     <message>
       <source>Search brand, family, model or measurement conditions</source>
-      <translation type="unfinished" />
+      <translation>חיפוש לפי מותג, משפחה, דגם או תנאי מדידה</translation>
     </message>
     <message>
       <source>Second virtual cable for microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>כבל וירטואלי שני לאקולייזר המיקרופון</translation>
     </message>
     <message>
       <source>Select band %1</source>
-      <translation type="unfinished" />
+      <translation>בחירת תחום %1</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
-      <translation type="unfinished" />
+      <translation>יש לבחור תחום זה כדי לערוך תדר, הגבר ו־Q</translation>
     </message>
     <message>
       <source>Selected audio device is unavailable</source>
-      <translation type="unfinished" />
+      <translation>מכשיר השמע הנבחר אינו זמין</translation>
     </message>
     <message>
       <source>Selected band</source>
       <extracomment>Currently selected frequency band in the equalizer.</extracomment>
-      <translation>תחום התדרים הנבחר</translation>
+      <translation>התחום הנבחר</translation>
     </message>
     <message>
       <source>Selected band filter Q</source>
-      <translation type="unfinished" />
+      <translation>מקדם האיכות Q של מסנן התחום הנבחר</translation>
     </message>
     <message>
       <source>Selected band frequency</source>
-      <translation type="unfinished" />
+      <translation>תדר התחום הנבחר</translation>
     </message>
     <message>
       <source>Selected band gain</source>
-      <translation type="unfinished" />
+      <translation>הגבר התחום הנבחר</translation>
     </message>
     <message>
       <source>Selected output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>מכשיר היציאה הנבחר אינו זמין עוד</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
-      <translation type="unfinished" />
+      <translation>היציאה הנבחרת נותקה. בוצע מעבר לבחירת יציאה אוטומטית.</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
-      <translation type="unfinished" />
+      <translation>צלילים שקטים נפרדים</translation>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
@@ -1537,83 +1537,83 @@ Import into your library?</source>
     </message>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
-      <translation type="unfinished" />
+      <translation>מרווחים קצרים יותר מרעננים רמות לעיתים קרובות יותר וצורכים יותר מעבד; אספקת השמע עשויה להגביל את הקצב בפועל</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
-      <translation type="unfinished" />
+      <translation>הצגת קו החזקת שיא יורד בכל מחוון רמת תדר</translation>
     </message>
     <message>
       <source>Show advanced controls</source>
-      <translation type="unfinished" />
+      <translation>הצגת פקדים מתקדמים</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>
-      <translation type="unfinished" />
+      <translation>הצגת סמני שיא ברמות התדרים</translation>
     </message>
     <message>
       <source>Small Speakers</source>
-      <translation type="unfinished" />
+      <translation>רמקולים קטנים</translation>
     </message>
     <message>
       <source>Soft Treble</source>
-      <translation type="unfinished" />
+      <translation>תדרים גבוהים רכים</translation>
     </message>
     <message>
       <source>Sound enhancements</source>
-      <translation>שיפורי צליל</translation>
+      <translation>שיפורי שמע</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
-      <translation type="unfinished" />
+      <translation>SoundCurrent Audio מספק נתיב מיקרופון משלו כשהוא מותקן. עם VB-CABLE, שימוש בו־זמני באקולייזר למיקרופון ולרמקולים דורש כבל שני המותקן בנפרד (A או B). יש לבחור כבל זה באפליקציות הקלטה. מצב אוטומטי מעדיף את נתיב SoundCurrent כשהוא זמין.</translation>
     </message>
     <message>
       <source>Source</source>
-      <translation type="unfinished" />
+      <translation>מקור</translation>
     </message>
     <message>
       <source>Speaker</source>
-      <translation type="unfinished" />
+      <translation>רמקול</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
-      <translation type="unfinished" />
+      <translation>כיול רמקול &amp;&amp; חדר</translation>
     </message>
     <message>
       <source>Speaker + room check</source>
-      <translation type="unfinished" />
+      <translation>בדיקת רמקול וחדר</translation>
     </message>
     <message>
       <source>Speaker and room measurement</source>
-      <translation type="unfinished" />
+      <translation>מדידת רמקול וחדר</translation>
     </message>
     <message>
       <source>Speaker filter is outside conservative bounds</source>
-      <translation type="unfinished" />
+      <translation>מסנן הרמקול חורג מהגבולות השמרניים</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
-      <translation type="unfinished" />
+      <translation>יצרן הרמקול</translation>
     </message>
     <message>
       <source>Speaker model correction</source>
-      <translation type="unfinished" />
+      <translation>תיקון דגם הרמקול</translation>
     </message>
     <message>
       <source>Speaker model profile</source>
-      <translation type="unfinished" />
+      <translation>פרופיל דגם הרמקול</translation>
     </message>
     <message>
       <source>Speaker profile details</source>
-      <translation type="unfinished" />
+      <translation>פרטי פרופיל הרמקול</translation>
     </message>
     <message>
       <source>Speaker profile resource is missing</source>
-      <translation type="unfinished" />
+      <translation>משאב פרופיל הרמקול חסר</translation>
     </message>
     <message>
       <source>Speaker type</source>
-      <translation type="unfinished" />
+      <translation>סוג הרמקול</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
