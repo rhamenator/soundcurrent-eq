@@ -109,3 +109,7 @@ Swedish/Danish import and speaker-profile review: frekvensgång/frekvensgang des
 ## Swedish and Danish completed extracted catalogs
 
 All currently extracted messages populated (441 EQ / 527 Studio). Q remains dimensionless quality, headroom is level margin, compressor makeup differs from post gain, and wet mix is effect contribution. Low-volume loudness compensation differs from output volume. Relative measurements include the microphone; measured response differs from inverted correction. Rendering summaries use labels for arbitrary counts. URLs, file filters, placeholders, machine IDs and numerical settings are preserved. Catalogs remain unverified; native-speaker review is not claimed.
+
+## Norwegian Bokmål and Finnish initial batch
+
+Forsterkning/vahvistus describes gain; nivåmargin/tasovara describes headroom, distinct from balance. Klipping/leikkautuminen describes clipping. Room-effect damping and decay retain separate controls, and dynamic boost retains its peak ceiling. Amplifier profiles still require electrical measurements with a known load; marketing specifications are insufficient. Setup recovery retains paused processing and the open app. Placeholders, units and character limits are preserved. Native-speaker review remains unverified.
