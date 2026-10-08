@@ -109,3 +109,5 @@ Romanian/Hungarian recovery and effects batch: 166/441 messages each. Four focus
 Additional user requirement: add a separate Nynorsk (nn) catalog and runtime/workflow checks after completing Romanian and Hungarian. This expands the language scope beyond the original 32 target catalogs.
 
 Romanian/Hungarian filter and editor batch: 230/441 messages each. Four focused Linux checks passed per app. Filter Q, compressor parameters, equipment editing and estimated meters reviewed contextually. Catalogs remain incomplete and unverified. Nynorsk remains next after completing these two catalogs.
+
+Romanian/Hungarian microphone and measurement batch: 292/441 messages each. Four focused Linux checks passed per app. Additive correction, system measurement limits, clipping, polarity and balance reviewed contextually. Both balance endpoint captions match their instructions. Catalogs remain incomplete and unverified; Nynorsk follows these catalogs.
