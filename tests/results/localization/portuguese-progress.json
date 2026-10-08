@@ -1,0 +1,57 @@
+{
+  "stage": "Portuguese partial catalogs checkpoint",
+  "catalogs": [
+    {
+      "tag": "pt-PT",
+      "name": "Português (Portugal)",
+      "translated": 216,
+      "total": 437,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "8231896c94361ce8063b5952bea3bc44898618c3261c5b8e725272c3ae482cf0",
+      "qmSha256": "4cd012c91c810fcc3ec26d242c80f1e3db0c5c16d329091f2803aed41e264f8c"
+    },
+    {
+      "tag": "pt-BR",
+      "name": "Português (Brasil)",
+      "translated": 216,
+      "total": 437,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "57a6d381b080468fd5e2c06582986c5b43b8fd98fdd06246a01e6d88a1536a3b",
+      "qmSha256": "a06389102c5ff139f962da8a3e8a2d619bcbd59db559c89cc1df357de487c63e"
+    }
+  ],
+  "linguisticReview": "Contextual AI translation; unverified; no native-speaker review",
+  "regionalTerminology": {
+    "pt-PT": [
+      "coluna",
+      "ficheiro",
+      "guardar",
+      "controlos",
+      "recetor",
+      "varrimento",
+      "percentagem"
+    ],
+    "pt-BR": [
+      "alto-falante",
+      "arquivo",
+      "salvar",
+      "controles",
+      "receptor",
+      "varredura",
+      "porcentagem"
+    ]
+  },
+  "linuxTests": {
+    "passed": 3,
+    "total": 3,
+    "scope": [
+      "compiled localization runtime",
+      "Portuguese Portugal main window",
+      "Portuguese Brazil main window"
+    ],
+    "log": "/tmp/sc-pt-partial-eq-tests.log"
+  },
+  "remaining": "Complete both Portuguese catalogs, then remaining target locales. Native-speaker verification unverified."
+}
