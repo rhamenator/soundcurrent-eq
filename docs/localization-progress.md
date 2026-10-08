@@ -567,3 +567,7 @@ The installed VM harness already exercised all 33 translated locales, including 
 ### Narrow high-scaling layout fix
 
 Selected-band labels now sit above their frequency/gain/Q controls, and the preset selector sits above its action buttons. Arabic at an effective 960×540 display (Xvfb 1920×1080 at 200%) now reports outer horizontal range 0 in both apps. Both first-page screenshots were inspected; four focused UI/regional-format tests passed per app. This does not qualify lower scrolled controls, Windows or rebuilt packages. No processing, IDs, stored settings or catalog strings changed.
+
+### All-locale first-page scaling measurement
+
+At 200% scale on Xvfb 1920×1080 (effective 960×540), all 33 translated locale/control fixtures passed and every first-page outer horizontal scroll maximum was zero. Measurements are recorded in tests/results/localization/hidpi/all-locales.json. This is automated geometry evidence, not visual or native-speaker review, and does not qualify lower scrolled content or Windows display scaling. Current package CI remains pending.
