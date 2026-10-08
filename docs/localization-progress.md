@@ -307,3 +307,7 @@ Indonesian now has 102/441 populated current catalog entries. The first 80 share
 ### Indonesian: second existing-catalog batch
 
 Indonesian now has 166/441 populated current catalog entries. Added profile-saving errors, calibration failures and delay controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Indonesian: third existing-catalog batch
+
+Indonesian now has 230/441 populated current catalog entries. Added effects, metering and profile-editor controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
