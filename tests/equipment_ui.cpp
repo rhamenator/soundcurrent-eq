@@ -6,6 +6,7 @@
 #include <QComboBox>
 #include <QDialogButtonBox>
 #include <QDoubleSpinBox>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QFileDialog>
 #include <QJsonDocument>
@@ -50,6 +51,10 @@ int main(int argc,char **argv) {
     Profile fixture;fixture.kind="speaker";fixture.brand="UI fixture";fixture.family="Test";fixture.model="Saved profile";
     fixture.source="https://example.invalid/ui-test";fixture.conditions="Synthetic test only";fixture.filters={{1000,0,1}};
     QTimer drive;drive.setInterval(20);int phase=0;bool checkedCancel=false;
+    QElapsedTimer elapsed,progressElapsed;elapsed.start();progressElapsed.start();QTimer phaseTrace;int lastPhase=-1;
+    QObject::connect(&phaseTrace,&QTimer::timeout,&app,[&]{if(phase!=lastPhase){
+        qInfo("Equipment fixture phase %d at %lld ms",phase,static_cast<long long>(elapsed.elapsed()));lastPhase=phase;progressElapsed.restart();}});
+    phaseTrace.start(100);
     QObject::connect(&drive,&QTimer::timeout,&app,[&] {
         if(auto *box=qobject_cast<QMessageBox *>(dialog("Save modified profile?"))) {
             if(phase==1){require(box->button(QMessageBox::Cancel),"No cancel choice");phase=2;clickLater(box->button(QMessageBox::Cancel));}
@@ -64,7 +69,7 @@ int main(int argc,char **argv) {
             else if(phase==2){checkedCancel=true;phase=3;closeLater(editor);}
         }
     });
-    QTimer::singleShot(20000,&app,[&]{for(auto *w:QApplication::topLevelWidgets())if(w->isVisible()){qWarning("Visible: %s / %s",w->metaObject()->className(),qPrintable(w->windowTitle()));if(auto *f=qobject_cast<QFileDialog *>(w))qWarning("Selected: %s",qPrintable(f->selectedFiles().join(";")));if(auto *b=qobject_cast<QMessageBox *>(w))qWarning("Message: %s",qPrintable(b->text()));w->grab().save(temp.filePath("timeout.png"));}qFatal("Equipment UI test timed out at phase %d",phase);});
+    QTimer watchdog;QObject::connect(&watchdog,&QTimer::timeout,&app,[&]{if(progressElapsed.elapsed()<20000)return;for(auto *w:QApplication::topLevelWidgets())if(w->isVisible()){qWarning("Visible: %s / %s",w->metaObject()->className(),qPrintable(w->windowTitle()));if(auto *f=qobject_cast<QFileDialog *>(w))qWarning("Selected: %s",qPrintable(f->selectedFiles().join(";")));if(auto *b=qobject_cast<QMessageBox *>(w))qWarning("Message: %s",qPrintable(b->text()));w->grab().save(temp.filePath("timeout.png"));}qFatal("Equipment UI test made no phase progress for 20 seconds at phase %d",phase);});watchdog.start(100);
     drive.start();saveNewProfile(nullptr,fixture);drive.stop();
     require(phase==4 && checkedCancel && loadLibrary().isEmpty(),"Cancel/discard modified profile failed");
     phase=0;
@@ -89,7 +94,7 @@ int main(int argc,char **argv) {
                 if(phase==1 || phase==4){const auto name=phase==1?invalid.fileName():valid.fileName();phase=phase==1?2:5;QTimer::singleShot(250,file,[file,name]{auto *input=file->findChild<QLineEdit *>("fileNameEdit");require(input,"No file selection input");input->setText(name);QMetaObject::invokeMethod(file,"accept",Qt::QueuedConnection);});return;}continue;
             }
             if(auto *box=qobject_cast<QMessageBox *>(w)) {
-                if(phase==2){malformedRejected=true;require(loadLibrary().size()==1,"Malformed import changed library");phase=3;QTimer::singleShot(0,box,&QMessageBox::accept);}
+                if(phase==2){malformedRejected=true;require(loadLibrary().size()==1,"Malformed import changed library");phase=3;require(box->button(QMessageBox::Ok),"Malformed import warning has no OK button");clickLater(box->button(QMessageBox::Ok));}
                 else if(phase==5){require(box->button(QMessageBox::Yes),"Import confirmation missing");phase=6;clickLater(box->button(QMessageBox::Yes));}
                 else if(phase==7){phase=8;clickLater(box->button(QMessageBox::Yes));}
                 return;
