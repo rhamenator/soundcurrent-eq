@@ -272,12 +272,12 @@
   {
     "tag": "ko",
     "name": "한국어",
-    "translated": 166,
+    "translated": 230,
     "total": 441,
     "status": "unverified",
     "nativeReviewed": false,
-    "tsSha256": "2acaf19fffe17bf65b6f91706d2952b9d320cf8a9b481326c57218d33f5a6de2",
-    "qmSha256": "745791baa031d45fb0fac0864f44cb06baba5b22d44fa73d68619e3484ee9b10"
+    "tsSha256": "4d9b1e363536ee29245f4e5c859fcb25af6fa81ff0be0cf7a590fd7a3e9a96d4",
+    "qmSha256": "27b2e17072f4f9d5e2493de6d97bf1b49cfe75530632916e91077c2714395015"
   },
   {
     "tag": "hi",
