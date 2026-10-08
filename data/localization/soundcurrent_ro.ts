@@ -1699,6 +1699,10 @@ Importați în bibliotecă?</translation>
       <translation>Ieșiți din SoundCurrent EQ</translation>
     </message>
     <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>Închideți toate aplicațiile SoundCurrent care rulează înainte de a modifica driverul partajat. Dezinstalarea unei aplicații păstrează driverul dacă cealaltă încă îl utilizează.</translation>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Ieșiți din aplicație</translation>

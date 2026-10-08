@@ -1699,6 +1699,10 @@ Importovat do vaší knihovny?</translation>
       <translation>Ukončit SoundCurrent EQ</translation>
     </message>
     <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>Před změnou sdíleného ovladače ukončete všechny spuštěné aplikace SoundCurrent. Odinstalování jedné aplikace zachová ovladač, pokud jej druhá stále používá.</translation>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Ukončit aplikaci</translation>

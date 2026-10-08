@@ -1699,6 +1699,10 @@ Importálja a könyvtárba?</translation>
       <translation>Kilépés a SoundCurrent EQ-ból</translation>
     </message>
     <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>A megosztott illesztőprogram módosítása előtt lépjen ki minden futó SoundCurrent alkalmazásból. Az egyik alkalmazás eltávolításakor az illesztőprogram megmarad, ha a másik még használja.</translation>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Kilépés az alkalmazásból</translation>

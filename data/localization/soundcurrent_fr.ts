@@ -1699,6 +1699,10 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Quitter SoundCurrent EQ</translation>
     </message>
     <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>Quittez toute application SoundCurrent en cours d’exécution avant de modifier le pilote partagé. La désinstallation d’une application conserve le pilote si l’autre l’utilise encore.</translation>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Quitter l’application</translation>

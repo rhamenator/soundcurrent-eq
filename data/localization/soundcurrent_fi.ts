@@ -1699,6 +1699,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>Lopeta SoundCurrent EQ</translation>
     </message>
     <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>Sulje kaikki käynnissä olevat SoundCurrent-sovellukset ennen jaetun ajurin muuttamista. Yhden sovelluksen poistaminen säilyttää ajurin, jos toinen sovellus käyttää sitä edelleen.</translation>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Lopeta sovellus</translation>

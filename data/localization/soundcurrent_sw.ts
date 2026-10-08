@@ -1699,6 +1699,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Toka kwenye SoundCurrent EQ</translation>
     </message>
     <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>Funga programu zote za SoundCurrent zinazoendeshwa kabla ya kubadilisha kiendeshi kinachoshirikiwa. Kuondoa programu moja huhifadhi kiendeshi ikiwa programu nyingine bado inakitumia.</translation>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Toka kwenye programu</translation>

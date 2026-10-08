@@ -1699,6 +1699,10 @@ Import into your library?</source>
       <translation>SoundCurrent EQ से बाहर निकलें</translation>
     </message>
     <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>साझा ड्राइवर बदलने से पहले चल रहे सभी SoundCurrent ऐप बंद करें। एक ऐप हटाने पर ड्राइवर बना रहता है, अगर दूसरा ऐप अभी भी उसका इस्तेमाल करता है।</translation>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>ऐप से बाहर निकलें</translation>

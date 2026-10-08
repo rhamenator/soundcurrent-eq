@@ -15,6 +15,24 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_native_shared_driver_notice_uses_running_app_wording(self):
+        root = Path(__file__).resolve().parents[1]
+        source = 'Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.'
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text()
+            if 'native' not in installer.stem:
+                self.assertNotIn('SCSharedDriverNotice', code)
+            else:
+                self.assertRegex(code, r'\$\{NSD_CreateLabel\}[^\n]+"\$\(SCSharedDriverNotice\)"')
+                self.assertEqual(re.findall(r'^LangString SCSharedDriverNotice \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text()):
+            message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
+            self.assertTrue(catalog.finished(message), row['tag'])
+            translated = message.findtext('translation')
+            catalog.validate_text(source, translated)
+            with self.assertRaisesRegex(ValueError, 'External installer label changed'):
+                catalog.validate_text(source, translated.replace('SoundCurrent', 'Other app'))
+
     def test_cable_restart_notice_preserves_driver_name(self):
         root = Path(__file__).resolve().parents[1]
         source = 'VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.'
@@ -104,7 +122,7 @@ class CatalogTests(unittest.TestCase):
             for variants in result['languages'].values():
                 self.assertEqual(set(variants), {'cable', 'native'})
                 for routeName, route in variants.items():
-                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed'} | ({'SCCableRestart'} if routeName == 'cable' else set()))
+                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed'} | ({'SCCableRestart'} if routeName == 'cable' else {'SCSharedDriverNotice'}))
                     self.assertEqual(set(route['nsisEscaped']), set(route['captions']))
 
     def test_installer_checkbox_catalog_sources_and_names(self):

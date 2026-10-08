@@ -1699,6 +1699,10 @@ Importere til biblioteket ditt?</translation>
       <translation>Avslutt SoundCurrent EQ</translation>
     </message>
     <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>Avslutt alle SoundCurrent-apper som kjører, før du endrer den delte driveren. Når én app avinstalleres, beholdes driveren hvis den andre appen fortsatt bruker den.</translation>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Avslutt app</translation>

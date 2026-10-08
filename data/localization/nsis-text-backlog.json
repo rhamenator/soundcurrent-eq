@@ -78,9 +78,9 @@
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 96,
       "kind": "control-caption",
-      "literal": "Quit both EQ and Studio before changing the shared driver. Removing one app keeps the driver if the other app still uses it.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCSharedDriverNotice)",
+      "marked": true,
+      "reviewStatus": "running-app wording corrected; all locale translations exported; language activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",

@@ -1699,6 +1699,10 @@ Import into your library?</source>
       <translation>ออกจาก SoundCurrent EQ</translation>
     </message>
     <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>ออกจากแอป SoundCurrent ทั้งหมดที่กำลังทำงานก่อนเปลี่ยนไดรเวอร์ที่ใช้ร่วมกัน เมื่อถอนการติดตั้งแอปหนึ่ง ไดรเวอร์จะยังคงอยู่หากอีกแอปยังใช้งานไดรเวอร์นั้น</translation>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>ออกจากแอป</translation>

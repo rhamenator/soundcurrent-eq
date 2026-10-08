@@ -1699,6 +1699,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Keluar dari SoundCurrent EQ</translation>
     </message>
     <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>Keluar dari semua aplikasi SoundCurrent yang berjalan sebelum mengubah driver bersama. Menghapus satu aplikasi mempertahankan driver jika aplikasi lain masih menggunakannya.</translation>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Keluar dari aplikasi</translation>

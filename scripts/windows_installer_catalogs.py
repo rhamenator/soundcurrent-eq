@@ -8,6 +8,7 @@ from pathlib import Path
 import localization as catalog
 
 SOURCES = {
+    'SCSharedDriverNotice': 'Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.',
     'SCCableRestart': 'VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.',
     'SCDriverCheckFailed': 'Setup could not check the driver. You can retry with %1 in the app or Start menu.',
     'SCSetupAction': 'Audio driver setup',
@@ -50,11 +51,13 @@ def export(destination, product):
                         'SCSetupAudio': format_names(translations['SCSetupAudio'], driver, product),
                         'SCInstallDriver': translations[checkbox],
                         'SCDriverCheckFailed': translations['SCDriverCheckFailed'].replace('%1', translations['SCSetupAction'])}
+            if route == 'native':
+                captions['SCSharedDriverNotice'] = translations['SCSharedDriverNotice']
             if route == 'cable':
                 captions['SCCableRestart'] = translations['SCCableRestart']
             variants[route] = {'captions': captions, 'nsisEscaped': {key: nsis_escape(text) for key, text in captions.items()}}
         languages[row['tag']] = variants
-    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice only',
+    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver guidance only',
               'installerLocaleActivationComplete': False, 'nativeSpeakerVerified': False,
               'sources': SOURCES, 'languages': languages}
     destination.parent.mkdir(parents=True, exist_ok=True)
