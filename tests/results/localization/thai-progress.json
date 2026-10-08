@@ -1,24 +1,24 @@
 {
-  "stage": "Thai fifth existing-catalog batch",
+  "stage": "Thai sixth existing-catalog batch",
   "catalogs": [
     {
       "tag": "th",
       "name": "ไทย",
-      "translated": 349,
+      "translated": 398,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "4d8ab9f1224c288dd1cc2ec8477d07d50f7141b2ac403aafd74a714f8fdd2163",
-      "qmSha256": "2e66624bce61b2f9fc6c27153ec693eb39562dafe4bac82fe2f8b74fa51defbf"
+      "tsSha256": "09158e547aa1df77287662201c510ca8de8ef3e04692c729ff132b793a45474a",
+      "qmSha256": "760e9b4b2e853459397f01fc9aaaea79b1f1680afc8ba3794c0af856f71874f1"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "Embedded localization assertions, Thai MainWindow offscreen smoke test and structural catalog checks",
-    "log": "/tmp/soundcurrent-eq-th-fifth-tests.log"
+    "log": "/tmp/soundcurrent-eq-th-sixth-tests.log"
   },
-  "review": "Contextual AI review of shared source entries 0–399: post-EQ gain, exclusive startup, measured response versus correction, dry effects and rendered clipping counts. Hyperlink destinations, file patterns, placeholders, numerical limits and physical L/R markers preserved. Linguistic accuracy unverified.",
+  "review": "Contextual AI review of shared source entries 0–469: save/reset actions, measured response bounds, room measurement, microphone routing and distinct reverb/echo controls. Placeholders, file patterns and numerical limits preserved. Linguistic accuracy unverified.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
   "remaining": "Thai incomplete; Swahili also incomplete. Omitted source messages reserved for second pass."
