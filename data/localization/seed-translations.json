@@ -56,7 +56,10 @@
     "Portable PA speaker",
     "Soundbar",
     "Surround speaker",
-    "Touring PA speaker"
+    "Touring PA speaker",
+    "Unsupported Studio profile schema",
+    "Studio profile has an invalid numeric field",
+    "Studio profile has an invalid boolean field"
   ],
   "languages": {
     "de": [
@@ -117,7 +120,10 @@
       "Tragbarer PA-Lautsprecher",
       "Soundbar",
       "Surround-Lautsprecher",
-      "Touring-PA-Lautsprecher"
+      "Touring-PA-Lautsprecher",
+      "Nicht unterstütztes Studio-Profilformat",
+      "Das Studio-Profil enthält ein ungültiges Zahlenfeld",
+      "Das Studio-Profil enthält ein ungültiges boolesches Feld"
     ],
     "fr": [
       "Français",
@@ -177,7 +183,10 @@
       "Enceinte de sonorisation portable",
       "Barre de son",
       "Enceinte surround",
-      "Enceinte de sonorisation de tournée"
+      "Enceinte de sonorisation de tournée",
+      "Format de profil Studio non pris en charge",
+      "Le profil Studio contient un champ numérique invalide",
+      "Le profil Studio contient un champ booléen invalide"
     ],
     "es": [
       "Español",
@@ -237,7 +246,10 @@
       "Altavoz de PA portátil",
       "Barra de sonido",
       "Altavoz envolvente",
-      "Altavoz de PA para giras"
+      "Altavoz de PA para giras",
+      "Formato de perfil de Studio no compatible",
+      "El perfil de Studio contiene un campo numérico no válido",
+      "El perfil de Studio contiene un campo booleano no válido"
     ],
     "it": [
       "Italiano",
@@ -297,7 +309,10 @@
       "Diffusore PA portatile",
       "Soundbar",
       "Diffusore surround",
-      "Diffusore PA da tournée"
+      "Diffusore PA da tournée",
+      "Formato del profilo Studio non supportato",
+      "Il profilo Studio contiene un campo numerico non valido",
+      "Il profilo Studio contiene un campo booleano non valido"
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -357,7 +372,10 @@
       "Coluna de sonorização portátil",
       "Barra de som",
       "Coluna surround",
-      "Coluna de sonorização para digressões"
+      "Coluna de sonorização para digressões",
+      "Formato de perfil do Studio não suportado",
+      "O perfil do Studio contém um campo numérico inválido",
+      "O perfil do Studio contém um campo booleano inválido"
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -417,7 +435,10 @@
       "Caixa acústica de PA portátil",
       "Barra de som",
       "Caixa acústica surround",
-      "Caixa acústica de PA para turnês"
+      "Caixa acústica de PA para turnês",
+      "Formato de perfil do Studio não suportado",
+      "O perfil do Studio contém um campo numérico inválido",
+      "O perfil do Studio contém um campo booleano inválido"
     ],
     "nl": [
       "Nederlands",
@@ -477,7 +498,10 @@
       "Draagbare PA-luidspreker",
       "Soundbar",
       "Surroundluidspreker",
-      "PA-luidspreker voor tournees"
+      "PA-luidspreker voor tournees",
+      "Niet-ondersteund Studio-profielbestandformaat",
+      "Het Studio-profiel bevat een ongeldig numeriek veld",
+      "Het Studio-profiel bevat een ongeldig booleaans veld"
     ],
     "pl": [
       "Polski",
@@ -537,7 +561,10 @@
       "Przenośny głośnik nagłośnieniowy",
       "Soundbar",
       "Głośnik surround",
-      "Głośnik nagłośnieniowy do tras koncertowych"
+      "Głośnik nagłośnieniowy do tras koncertowych",
+      "Nieobsługiwany format profilu Studio",
+      "Profil Studio zawiera nieprawidłowe pole liczbowe",
+      "Profil Studio zawiera nieprawidłowe pole logiczne"
     ],
     "cs": [
       "Čeština",
@@ -597,7 +624,10 @@
       "Přenosný reproduktor pro ozvučení",
       "Soundbar",
       "Prostorový reproduktor",
-      "Reproduktor pro koncertní ozvučení"
+      "Reproduktor pro koncertní ozvučení",
+      "Nepodporovaný formát profilu Studio",
+      "Profil Studio obsahuje neplatné číselné pole",
+      "Profil Studio obsahuje neplatné logické pole"
     ],
     "sk": [
       "Slovenčina",
@@ -657,7 +687,10 @@
       "Prenosný reproduktor na ozvučenie",
       "Soundbar",
       "Priestorový reproduktor",
-      "Reproduktor na koncertné ozvučenie"
+      "Reproduktor na koncertné ozvučenie",
+      "Nepodporovaný formát profilu Studio",
+      "Profil Studio obsahuje neplatné číselné pole",
+      "Profil Studio obsahuje neplatné logické pole"
     ],
     "uk": [
       "Українська",
@@ -717,7 +750,10 @@
       "Портативна акустична система для озвучення",
       "Саундбар",
       "Акустична система об’ємного звучання",
-      "Акустична система для гастрольного озвучення"
+      "Акустична система для гастрольного озвучення",
+      "Непідтримуваний формат профілю Studio",
+      "Профіль Studio містить некоректне числове поле",
+      "Профіль Studio містить некоректне логічне поле"
     ],
     "ru": [
       "Русский",
@@ -777,7 +813,10 @@
       "Портативная акустическая система для озвучивания",
       "Саундбар",
       "Акустическая система объёмного звучания",
-      "Акустическая система для гастрольного озвучивания"
+      "Акустическая система для гастрольного озвучивания",
+      "Неподдерживаемый формат профиля Studio",
+      "Профиль Studio содержит некорректное числовое поле",
+      "Профиль Studio содержит некорректное логическое поле"
     ],
     "el": [
       "Ελληνικά",
@@ -837,7 +876,10 @@
       "Φορητό ηχείο PA",
       "Ηχομπάρα",
       "Ηχείο περιφερειακού ήχου",
-      "Ηχείο PA για περιοδείες"
+      "Ηχείο PA για περιοδείες",
+      "Μη υποστηριζόμενη μορφή προφίλ Studio",
+      "Το προφίλ Studio περιέχει μη έγκυρο αριθμητικό πεδίο",
+      "Το προφίλ Studio περιέχει μη έγκυρο λογικό πεδίο"
     ],
     "tr": [
       "Türkçe",
@@ -897,7 +939,10 @@
       "Taşınabilir PA hoparlörü",
       "Ses çubuğu",
       "Çevresel ses hoparlörü",
-      "Turne tipi PA hoparlörü"
+      "Turne tipi PA hoparlörü",
+      "Desteklenmeyen Studio profil biçimi",
+      "Studio profilinde geçersiz bir sayısal alan var",
+      "Studio profilinde geçersiz bir mantıksal alan var"
     ],
     "sv": [
       "Svenska",
@@ -957,7 +1002,10 @@
       "Portabel PA-högtalare",
       "Ljudlimpa",
       "Surroundhögtalare",
-      "PA-högtalare för turnéer"
+      "PA-högtalare för turnéer",
+      "Studio-profilformatet stöds inte",
+      "Studio-profilen innehåller ett ogiltigt numeriskt fält",
+      "Studio-profilen innehåller ett ogiltigt booleskt fält"
     ],
     "da": [
       "Dansk",
@@ -1017,7 +1065,10 @@
       "Bærbar PA-højttaler",
       "Lydbar",
       "Surroundhøjttaler",
-      "PA-højttaler til turnéer"
+      "PA-højttaler til turnéer",
+      "Studio-profilformatet understøttes ikke",
+      "Studio-profilen indeholder et ugyldigt numerisk felt",
+      "Studio-profilen indeholder et ugyldigt boolesk felt"
     ],
     "nb": [
       "Norsk bokmål",
@@ -1077,7 +1128,10 @@
       "Bærbar PA-høyttaler",
       "Lydplanke",
       "Surroundhøyttaler",
-      "PA-høyttaler for turneer"
+      "PA-høyttaler for turneer",
+      "Studio-profilformatet støttes ikke",
+      "Studio-profilen inneholder et ugyldig tallfelt",
+      "Studio-profilen inneholder et ugyldig boolsk felt"
     ],
     "fi": [
       "Suomi",
@@ -1137,7 +1191,10 @@
       "Kannettava PA-kaiutin",
       "Äänipalkki",
       "Surround-kaiutin",
-      "Kiertueiden PA-kaiutin"
+      "Kiertueiden PA-kaiutin",
+      "Studio-profiilin muotoa ei tueta",
+      "Studio-profiili sisältää virheellisen numerokentän",
+      "Studio-profiili sisältää virheellisen totuusarvokentän"
     ],
     "ro": [
       "Română",
@@ -1197,7 +1254,10 @@
       "Boxă PA portabilă",
       "Bară de sunet",
       "Boxă surround",
-      "Boxă PA pentru turnee"
+      "Boxă PA pentru turnee",
+      "Format de profil Studio neacceptat",
+      "Profilul Studio conține un câmp numeric invalid",
+      "Profilul Studio conține un câmp boolean invalid"
     ],
     "hu": [
       "Magyar",
@@ -1257,7 +1317,10 @@
       "Hordozható PA-hangsugárzó",
       "Hangprojektor",
       "Surround hangsugárzó",
-      "Turnékon használt PA-hangsugárzó"
+      "Turnékon használt PA-hangsugárzó",
+      "Nem támogatott Studio-profilformátum",
+      "A Studio-profil érvénytelen numerikus mezőt tartalmaz",
+      "A Studio-profil érvénytelen logikai mezőt tartalmaz"
     ],
     "ar": [
       "العربية",
@@ -1317,7 +1380,10 @@
       "مكبر صوت محمول لنظام مخاطبة الجمهور",
       "شريط صوت",
       "مكبر صوت محيطي",
-      "مكبر صوت لنظام مخاطبة الجمهور في الجولات"
+      "مكبر صوت لنظام مخاطبة الجمهور في الجولات",
+      "تنسيق ملف إعدادات Studio غير مدعوم",
+      "يحتوي ملف إعدادات Studio على حقل رقمي غير صالح",
+      "يحتوي ملف إعدادات Studio على حقل منطقي غير صالح"
     ],
     "he": [
       "עברית",
@@ -1377,7 +1443,10 @@
       "רמקול הגברה נייד",
       "מקרן קול",
       "רמקול סראונד",
-      "רמקול הגברה לסיבובי הופעות"
+      "רמקול הגברה לסיבובי הופעות",
+      "פורמט פרופיל Studio אינו נתמך",
+      "פרופיל Studio מכיל שדה מספרי לא תקין",
+      "פרופיל Studio מכיל שדה בוליאני לא תקין"
     ],
     "fa": [
       "فارسی",
@@ -1437,7 +1506,10 @@
       "بلندگوی قابل‌حمل سامانهٔ صوت عمومی",
       "ساندبار",
       "بلندگوی صدای فراگیر",
-      "بلندگوی سامانهٔ صوت عمومی برای تورهای اجرا"
+      "بلندگوی سامانهٔ صوت عمومی برای تورهای اجرا",
+      "قالب نمایهٔ Studio پشتیبانی نمی‌شود",
+      "نمایهٔ Studio دارای یک فیلد عددی نامعتبر است",
+      "نمایهٔ Studio دارای یک فیلد منطقی نامعتبر است"
     ],
     "zh-Hans": [
       "简体中文",
@@ -1497,7 +1569,10 @@
       "便携式扩声音箱",
       "条形音箱",
       "环绕音箱",
-      "巡演扩声音箱"
+      "巡演扩声音箱",
+      "不支持的 Studio 配置文件格式",
+      "Studio 配置文件包含无效的数值字段",
+      "Studio 配置文件包含无效的布尔字段"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -1557,7 +1632,10 @@
       "可攜式擴聲喇叭",
       "聲霸",
       "環繞喇叭",
-      "巡演擴聲喇叭"
+      "巡演擴聲喇叭",
+      "不支援的 Studio 設定檔格式",
+      "Studio 設定檔包含無效的數值欄位",
+      "Studio 設定檔包含無效的布林欄位"
     ],
     "ja": [
       "日本語",
@@ -1617,7 +1695,10 @@
       "ポータブルPAスピーカー",
       "サウンドバー",
       "サラウンドスピーカー",
-      "ツアー用PAスピーカー"
+      "ツアー用PAスピーカー",
+      "対応していない Studio プロファイル形式です",
+      "Studio プロファイルに無効な数値フィールドがあります",
+      "Studio プロファイルに無効な真偽値フィールドがあります"
     ],
     "ko": [
       "한국어",
@@ -1677,7 +1758,10 @@
       "휴대용 PA 스피커",
       "사운드바",
       "서라운드 스피커",
-      "투어용 PA 스피커"
+      "투어용 PA 스피커",
+      "지원하지 않는 Studio 프로필 형식",
+      "Studio 프로필에 잘못된 숫자 필드가 있습니다",
+      "Studio 프로필에 잘못된 불리언 필드가 있습니다"
     ],
     "hi": [
       "हिन्दी",
@@ -1737,7 +1821,10 @@
       "पोर्टेबल PA स्पीकर",
       "साउंडबार",
       "सराउंड स्पीकर",
-      "टूरिंग PA स्पीकर"
+      "टूरिंग PA स्पीकर",
+      "Studio प्रोफ़ाइल का प्रारूप समर्थित नहीं है",
+      "Studio प्रोफ़ाइल में अमान्य संख्यात्मक फ़ील्ड है",
+      "Studio प्रोफ़ाइल में अमान्य बूलियन फ़ील्ड है"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -1797,7 +1884,10 @@
       "Speaker PA portabel",
       "Bilah suara",
       "Speaker surround",
-      "Speaker PA untuk tur"
+      "Speaker PA untuk tur",
+      "Format profil Studio tidak didukung",
+      "Profil Studio berisi kolom numerik yang tidak valid",
+      "Profil Studio berisi kolom boolean yang tidak valid"
     ],
     "vi": [
       "Tiếng Việt",
@@ -1857,7 +1947,10 @@
       "Loa PA di động",
       "Loa thanh",
       "Loa vòm",
-      "Loa PA lưu diễn"
+      "Loa PA lưu diễn",
+      "Định dạng hồ sơ Studio không được hỗ trợ",
+      "Hồ sơ Studio có trường số không hợp lệ",
+      "Hồ sơ Studio có trường luận lý không hợp lệ"
     ],
     "th": [
       "ไทย",
@@ -1917,7 +2010,10 @@
       "ลำโพง PA แบบพกพา",
       "ซาวด์บาร์",
       "ลำโพงเซอร์ราวด์",
-      "ลำโพง PA สำหรับทัวร์แสดง"
+      "ลำโพง PA สำหรับทัวร์แสดง",
+      "ไม่รองรับรูปแบบโปรไฟล์ Studio นี้",
+      "โปรไฟล์ Studio มีฟิลด์ตัวเลขที่ไม่ถูกต้อง",
+      "โปรไฟล์ Studio มีฟิลด์บูลีนที่ไม่ถูกต้อง"
     ],
     "sw": [
       "Kiswahili",
@@ -1977,7 +2073,10 @@
       "Spika inayobebeka ya mfumo wa sauti kwa umma",
       "Upau wa sauti",
       "Spika ya sauti inayozunguka",
-      "Spika ya mfumo wa sauti kwa umma kwa ziara za maonyesho"
+      "Spika ya mfumo wa sauti kwa umma kwa ziara za maonyesho",
+      "Muundo wa wasifu wa Studio hautumiki",
+      "Wasifu wa Studio una sehemu ya nambari isiyo sahihi",
+      "Wasifu wa Studio una sehemu ya thamani ya kweli au si kweli isiyo sahihi"
     ],
     "nn": [
       "Norsk nynorsk",
@@ -2037,7 +2136,10 @@
       "Berbar PA-høgtalar",
       "Lydplanke",
       "Surroundhøgtalar",
-      "PA-høgtalar for turnear"
+      "PA-høgtalar for turnear",
+      "Studio-profilformatet er ikkje støtta",
+      "Studio-profilen inneheld eit ugyldig talfelt",
+      "Studio-profilen inneheld eit ugyldig boolsk felt"
     ]
   },
   "requiredCompleteLocales": [

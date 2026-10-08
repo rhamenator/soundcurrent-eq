@@ -7,6 +7,12 @@ namespace soundcurrent::i18n {
 // Desktop boundary only. Backend diagnostic strings and processing identifiers
 // remain invariant; unknown/external messages retain their original detail.
 inline QString audioErrorText(const QString &diagnostic) {
+    if (diagnostic == QStringLiteral("Unsupported Studio profile schema"))
+        return SC_TR("Unsupported Studio profile schema");
+    if (diagnostic == QStringLiteral("Studio profile has an invalid numeric field"))
+        return SC_TR("Studio profile has an invalid numeric field");
+    if (diagnostic == QStringLiteral("Studio profile has an invalid boolean field"))
+        return SC_TR("Studio profile has an invalid boolean field");
     if (diagnostic == QStringLiteral("The selected EQ settings are invalid"))
         return SC_TR("Invalid equalizer settings");
     if (diagnostic == QStringLiteral("Cable packet exceeds its capture buffer"))

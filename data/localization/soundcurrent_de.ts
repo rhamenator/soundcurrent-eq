@@ -2060,6 +2060,16 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Töne stoppen</translation>
     </message>
     <message>
+      <source>Studio profile has an invalid boolean field</source>
+      <translation>Das Studio-Profil enthält ein ungültiges boolesches Feld</translation>
+      <extracomment>Saved Studio setup requires a JSON true/false field. Wrong type or missing value is rejected; do not confuse this with an audio level or textual yes/no preference.</extracomment>
+    </message>
+    <message>
+      <source>Studio profile has an invalid numeric field</source>
+      <translation>Das Studio-Profil enthält ein ungültiges Zahlenfeld</translation>
+      <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
+    </message>
+    <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
       <translation>Vorgeschlagener EQ angewendet. Verwenden Sie „Preset speichern“, um ihn zu behalten.</translation>
     </message>
@@ -2174,6 +2184,11 @@ In Ihre Bibliothek importieren?</translation>
     <message>
       <source>Unmute speaker for EQ</source>
       <translation>Lautsprecher für EQ aus der Stummschaltung nehmen</translation>
+    </message>
+    <message>
+      <source>Unsupported Studio profile schema</source>
+      <translation>Nicht unterstütztes Studio-Profilformat</translation>
+      <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>

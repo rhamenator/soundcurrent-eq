@@ -2060,6 +2060,16 @@ Importați în bibliotecă?</translation>
       <translation>Opriți tonurile</translation>
     </message>
     <message>
+      <source>Studio profile has an invalid boolean field</source>
+      <translation>Profilul Studio conține un câmp boolean invalid</translation>
+      <extracomment>Saved Studio setup requires a JSON true/false field. Wrong type or missing value is rejected; do not confuse this with an audio level or textual yes/no preference.</extracomment>
+    </message>
+    <message>
+      <source>Studio profile has an invalid numeric field</source>
+      <translation>Profilul Studio conține un câmp numeric invalid</translation>
+      <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
+    </message>
+    <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
       <translation>EQ-ul sugerat a fost aplicat. Folosiți Salvați presetarea pentru a-l păstra.</translation>
     </message>
@@ -2174,6 +2184,11 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Unmute speaker for EQ</source>
       <translation>Activarea sunetului difuzoarelor pentru egalizator</translation>
+    </message>
+    <message>
+      <source>Unsupported Studio profile schema</source>
+      <translation>Format de profil Studio neacceptat</translation>
+      <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>

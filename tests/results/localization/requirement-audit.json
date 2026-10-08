@@ -98,7 +98,7 @@
   "secondPassProgress": "tests/results/localization/second-pass-speaker-text.json",
   "currentCatalogs": {
     "nonEnglishLocales": 33,
-    "sourceMessagesPerLocale": 551,
+    "sourceMessagesPerLocale": 554,
     "unfinished": 0,
     "nativeReviewed": false
   },
@@ -106,5 +106,10 @@
     "report": "tests/results/localization/second-pass-taxonomy-remaining.json",
     "status": "all 15 published taxonomy types and Sony qualifier translated; current main/catalog and equipment Qt offscreen locale checks passed; Windows/package qualification pending",
     "equipmentRuntimeReport": "tests/results/localization/equipment-ui-watchdog.json"
+  },
+  "profileDiagnosticProgress": {
+    "report": "tests/results/localization/second-pass-profile-diagnostics.json",
+    "resolved": 3,
+    "remainingStudioOwnedDiagnostics": 14
   }
 }

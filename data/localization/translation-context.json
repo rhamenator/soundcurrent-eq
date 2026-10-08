@@ -40,5 +40,8 @@
   "Portable PA speaker": "Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.",
   "Soundbar": "Integrated elongated speaker system commonly used with televisions.",
   "Surround speaker": "Speaker used for surround audio channels; not an app surround-mode toggle.",
-  "Touring PA speaker": "Professional sound-reinforcement speaker for touring/live events, distinct from portable PA."
+  "Touring PA speaker": "Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.",
+  "Unsupported Studio profile schema": "Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.",
+  "Studio profile has an invalid numeric field": "Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.",
+  "Studio profile has an invalid boolean field": "Saved Studio setup requires a JSON true/false field. Wrong type or missing value is rejected; do not confuse this with an audio level or textual yes/no preference."
 }

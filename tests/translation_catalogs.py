@@ -15,6 +15,20 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_studio_owned_diagnostic_gaps_match_current_source(self):
+        root = Path(__file__).resolve().parents[1]
+        model = root / 'src/studio_model.cpp'
+        if not model.exists():
+            self.skipTest('Studio session model is not part of EQ')
+        reasons = {catalog.literal(args[1]) for args in catalog.calls(model.read_text(), 'require')
+                   if len(args) == 2 and catalog.literal(args[1]) is not None}
+        boundary = (root / 'src/audio_error_text.h').read_text()
+        mappings = dict(re.findall(r'if \(diagnostic == QStringLiteral\("([^"]+)"\)\)\s*return SC_TR\("([^"]+)"\);', boundary))
+        gaps = json.loads((root / 'tests/results/localization/studio-model-diagnostic-gaps.json').read_text())
+        self.assertEqual(reasons - set(mappings), set(gaps['diagnosticsNeedingMappingAndTranslations']))
+        self.assertEqual(gaps['unmappedCount'], len(gaps['diagnosticsNeedingMappingAndTranslations']))
+        self.assertTrue({mappings[key] for key in reasons & set(mappings)}.issubset(catalog.marked_sources(root / 'src')))
+
     def test_bundled_speaker_taxonomy_has_marked_display_labels(self):
         root = Path(__file__).resolve().parents[1]
         profiles = json.loads((root / 'data/equipment/spinorama.json').read_text())

@@ -2060,6 +2060,16 @@ Import into your library?</source>
       <translation>톤 중지</translation>
     </message>
     <message>
+      <source>Studio profile has an invalid boolean field</source>
+      <translation>Studio 프로필에 잘못된 불리언 필드가 있습니다</translation>
+      <extracomment>Saved Studio setup requires a JSON true/false field. Wrong type or missing value is rejected; do not confuse this with an audio level or textual yes/no preference.</extracomment>
+    </message>
+    <message>
+      <source>Studio profile has an invalid numeric field</source>
+      <translation>Studio 프로필에 잘못된 숫자 필드가 있습니다</translation>
+      <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
+    </message>
+    <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
       <translation>권장 EQ를 적용했습니다. 유지하려면 프리셋 저장을 사용하세요.</translation>
     </message>
@@ -2174,6 +2184,11 @@ Import into your library?</source>
     <message>
       <source>Unmute speaker for EQ</source>
       <translation>이퀄라이저용 스피커 음소거 해제</translation>
+    </message>
+    <message>
+      <source>Unsupported Studio profile schema</source>
+      <translation>지원하지 않는 Studio 프로필 형식</translation>
+      <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>

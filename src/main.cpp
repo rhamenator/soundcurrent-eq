@@ -4169,6 +4169,9 @@ int main(int argc, char **argv) {
     if (app.arguments().contains("--localization-ui-test")) {
         auto ownedWindow=std::make_unique<MainWindow>(false);
         auto &window=*ownedWindow;
+        for(const auto &reason:QStringList{"Unsupported Studio profile schema","Studio profile has an invalid numeric field","Studio profile has an invalid boolean field"})
+            if(soundcurrent::i18n::audioErrorText(reason)!=soundcurrent::i18n::text(reason.toUtf8().constData()))
+                qFatal("Studio validation diagnostic missed the localized display boundary");
         QComboBox *speakerTaxonomy=nullptr;
         for(auto *combo:window.findChildren<QComboBox *>())
             if(combo->accessibleName()==SC_TR("Speaker type"))speakerTaxonomy=combo;
