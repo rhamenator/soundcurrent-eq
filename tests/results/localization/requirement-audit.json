@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-08",
+  "auditedHead": "6081fd4a25d19b8fd15121e67c5852f9af1f1ac5",
+  "overallStatus": "incomplete; do not mark full localization goal achieved",
+  "firstPassCatalogs": {
+    "nonEnglishLocales": 33,
+    "sourceMessagesPerLocale": 524,
+    "structuralCheck": "passed fresh scripts/localization.py --check",
+    "nativeSpeakerVerification": "unverified",
+    "contextualAIReview": "documented separately; not native or independent certification"
+  },
+  "requirements": [
+    {
+      "requirement": "Current catalog completeness, placeholders, compiled hashes",
+      "status": "verified",
+      "evidence": [
+        "data/localization/catalogs.json",
+        "tests/results/localization/catalog-audit.json"
+      ]
+    },
+    {
+      "requirement": "Contextual audio terminology review",
+      "status": "documented AI review; linguistic verification unverified",
+      "evidence": [
+        "docs/translation-review.md"
+      ]
+    },
+    {
+      "requirement": "Stable identifiers, regional input, plural policy, RTL and fallback",
+      "status": "tested within implemented fixture scope",
+      "evidence": [
+        "tests/localization.cpp",
+        "tests/translation_catalogs.py",
+        "tests/results/localization/linux-package/current-ci.json"
+      ]
+    },
+    {
+      "requirement": "Changed Linux/Windows packages and installed language fixtures",
+      "status": "verified for explicit source/package hashes; silent fixture lifecycle scope",
+      "evidence": [
+        "tests/results/localization/linux-package/report.json",
+        "tests/results/localization/linux-package/current-ci.json",
+        "tests/results/localization/windows-current-installed.json"
+      ]
+    },
+    {
+      "requirement": "Whole-interface extraction and missing dynamic captions",
+      "status": "deferred to second pass by user; not complete"
+    },
+    {
+      "requirement": "Interactive installer and actual sign-in startup",
+      "status": "unverified; unit registration and silent installer evidence do not establish these workflows"
+    },
+    {
+      "requirement": "Preserve virtual-driver work",
+      "status": "bookmark and native packaging remain present",
+      "evidence": [
+        "docs/windows-native-driver-bookmark.md"
+      ]
+    },
+    {
+      "requirement": "Release publication",
+      "status": "not authorized; no release made in this work"
+    }
+  ],
+  "knownSecondPassExamples": [
+    "Connected-microphone initial automatic caption still uses a raw English literal",
+    "Live microphone tone-name updates require source-to-display audit",
+    "Default Studio channel names and other stored/user captions require provenance-aware display handling",
+    "Installer/helper diagnostics and other uncaptured interface strings require audit"
+  ],
+  "limitations": [
+    "Representative screenshots and all-locale geometry measurements do not constitute all-string linguistic review",
+    "AlmaLinux container qualification does not prove an actual RHEL desktop",
+    "Owned preservation fixtures do not establish exhaustive comparison of every user file"
+  ],
+  "evidenceSha256": {
+    "data/localization/catalogs.json": "cae15d48e1d6bf411399d8c1610693e77fe4f9d010a38a51f750c42deda16901",
+    "docs/translation-review.md": "8704e24d4ce1f67c914344de4a0fc1c2ca5c82ed739faac6a6a274c9ead0ca22",
+    "tests/results/localization/catalog-audit.json": "390de086b8c05b02cd1ef39b01d62c8c40eddc8fa26eab4bcd2e0a9dba1c402d",
+    "tests/results/localization/linux-package/report.json": "1c0153db7b95386bb215bbdd5536aec6c21f023aadd3e7e33698e2eff83b70cf",
+    "tests/results/localization/linux-package/current-ci.json": "85a81a13d2ff5c660db5aa27c51547ddc79243968c5aa81f6ffcc3ccc0ec199f",
+    "tests/results/localization/windows-current-installed.json": "7c440d19e096289375f59c93748d8b6f2d7574b31d8a25bb9e71f0723bf8a336",
+    "tests/results/localization/hidpi/settings-fixed/report.json": "f4f53e9db6bd7ee3db30ae5260426593dd46357e3c2c414357750b39699e4d12",
+    "tests/localization.cpp": "67ea8c54cfba2994483a4240d7c94367f2926c4639b6b9b84ac402ff16551d75",
+    "tests/translation_catalogs.py": "b56234843f46f9aa7064fa865c8729289349cfda282586eda6fad12957369355",
+    "tests/startup_registration.cpp": "ea1a51cdfc141bd53e3ee631ed061bcf8f9eeb654c9173f38eb0dad099c91578",
+    "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd"
+  }
+}
