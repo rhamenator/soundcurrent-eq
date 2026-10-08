@@ -1137,43 +1137,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>No</source>
-      <translation type="unfinished" />
+      <translation>خیر</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>هیچ اصلاح تجهیزات واردشده‌ای انتخاب نشده است.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>هیچ اصلاح اندازه‌گیری‌شده تقویت‌کننده‌ای انتخاب نشده است. مشخصات تبلیغاتی محدوده فرکانس برای استخراج منحنی اصلاح کافی نیستند.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>هیچ میکروفونی متصل نیست.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>هیچ اصلاح مدلی انتخاب نشده است. اکولایزر شنیدن شما به‌طور معمول کار می‌کند.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>نسخه منتشرشده جدیدتری یافت نشد. نصب‌کننده‌های دانلودشده نیز بررسی می‌شوند.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>هیچ دستگاه خروجی در دسترس نیست.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>هیچ دستگاه خروجی متصل نیست.</translation>
     </message>
     <message>
       <source>No to All</source>
-      <translation type="unfinished" />
+      <translation>خیر به همه</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>هیچ‌کدام — استفاده از اکولایزر خودم</translation>
     </message>
     <message>
       <source>Number and date format</source>
@@ -1181,43 +1181,43 @@ Import into your library?</source>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>تعداد باندهای اکولایزر</translation>
     </message>
     <message>
       <source>OK</source>
-      <translation type="unfinished" />
+      <translation>تأیید</translation>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>روشن · پخش از طریق %1</translation>
     </message>
     <message>
       <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
-      <translation type="unfinished" />
+      <translation>فقط یک برنامه SoundCurrent هنگام ورود به سیستم شروع می‌شود. فعال کردن این گزینه تنظیم شروع برنامه دیگر را جایگزین می‌کند. اگر نماد سینی سیستم در دسترس باشد، برنامه در پس‌زمینه شروع می‌شود.</translation>
     </message>
     <message>
       <source>Open</source>
-      <translation type="unfinished" />
+      <translation>باز کردن</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>باز کردن پنل کنترل VB-Audio برای تأخیر کابل و نرخ نمونه‌برداری داخلی. تغییر این موارد هنگام پخش صدا ممکن است پخش را قطع کند.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>باز کردن پنل کنترل VB-CABLE</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>باز کردن دانلودهای نسخه‌ها</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>باز کردن پوشه به‌روزرسانی</translation>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>نارنجی: پاسخ اندازه‌گیری‌شده در صورت وجود. سبزآبی: اصلاح در 48 kHz. نقاط کنترل سبزآبی را بکشید یا جدول را ویرایش کنید. ذخیره، مرجع را حفظ می‌کند و نسخه سفارشی می‌سازد.</translation>
     </message>
     <message>
       <source>Output device</source>
@@ -1225,31 +1225,31 @@ Import into your library?</source>
     </message>
     <message>
       <source>Output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>دستگاه خروجی دیگر در دسترس نیست</translation>
     </message>
     <message>
       <source>Output has no volume channels</source>
-      <translation type="unfinished" />
+      <translation>خروجی کانال کنترل بلندی صدا ندارد</translation>
     </message>
     <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>خروجی کلی</translation>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>پردازش را متوقف کرده و راه‌اندازی صدا را باز کنید. برنامه باز می‌ماند و نتیجه را گزارش می‌کند. پس از نصب درایور Windows را دوباره راه‌اندازی کنید.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>نشانگرهای قله</translation>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>پیانو</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>پخش صدای آزمون کم‌صدا و پیش‌نمایش تغییرات پیشنهادی اکولایزر پخش</translation>
     </message>
     <message>
       <source>Playback</source>
@@ -1257,100 +1257,100 @@ Import into your library?</source>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>صدای آزمون کم‌صدا در حال پخش است. اگر آزاردهنده است آن را متوقف کنید.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>برای انتخاب پروفایل میکروفون، میکروفون خود را وصل کنید</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>پادکست</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>پاپ</translation>
     </message>
     <message>
       <source>Post gain</source>
       <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
-      <translation>بهرهٔ خروجی</translation>
+      <translation>بهره پس از پردازش</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>بهره پس از اکولایزر</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>مقدار بهره پس از پردازش بر حسب دسی‌بل</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>نام پیش‌تنظیم:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>جلوگیری از تغییر پیش‌تنظیم‌ها، باندهای اکولایزر، بهره پس از پردازش و توازن</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>پروفایل</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>جزئیات پروفایل</translation>
     </message>
     <message>
       <source>Profile exceeds the 1 MiB limit.</source>
-      <translation type="unfinished" />
+      <translation>پروفایل از محدودیت 1 MiB فراتر می‌رود.</translation>
     </message>
     <message>
       <source>Profile library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>اندازه کتابخانه پروفایل‌ها بیش از 16 MiB است.</translation>
     </message>
     <message>
       <source>Profile metadata is too long.</source>
-      <translation type="unfinished" />
+      <translation>فراداده پروفایل بیش از حد طولانی است.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>پروفایل باید قابل خواندن و کوچک‌تر از 64 KiB باشد.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>
-      <translation type="unfinished" />
+      <translation>پروفایل‌ها به 1–16 فیلتر اصلاح نیاز دارند.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>منابع اندازه‌گیری منتشرشده: &lt;a href="https://www.spinorama.org/"&gt;اندازه‌گیری بلندگو / اکولایزر&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;کالیبراسیون Dayton بر اساس شماره سریال&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;کالیبراسیون miniDSP بر اساس شماره سریال&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;نمودارهای میکروفون Neumann&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;نمودار پاسخ AT2020&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;اندازه‌گیری تقویت‌کننده&lt;/a&gt;</translation>
     </message>
     <message>
       <source>Published profiles need an HTTPS measurement source.</source>
-      <translation type="unfinished" />
+      <translation>پروفایل‌های منتشرشده به منبع اندازه‌گیری HTTPS نیاز دارند.</translation>
     </message>
     <message>
       <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <translation>بررسی نسخه‌های منتشرشده ممکن نشد. نسخه‌های خصوصی Studio به دسترسی GitHub نیاز دارند. از باز کردن دانلودهای نسخه‌ها استفاده کنید؛ نصب‌کننده‌های دانلودشده همچنان به‌صورت محلی شناسایی می‌شوند.</translation>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>پاسخ منتشرشده و منحنی‌های اصلاح قابل ویرایش</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>به‌روزرسانی منتشرشده %1 در دسترس است. دانلودهای نسخه‌ها را باز کنید، سپس روی این نسخه نصب کرده و دوباره باز کنید.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>باس ضربه‌ای</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>جاروب لگاریتمی کم‌صدا</translation>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>خروج از SoundCurrent EQ</translation>
     </message>
     <message>
       <source>Quit app</source>
@@ -1359,11 +1359,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>R</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>ریتم اند بلوز</translation>
     </message>
     <message>
       <source>Refresh devices</source>
@@ -1373,27 +1373,29 @@ Import into your library?</source>
       <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
 
 %1</source>
-      <translation type="unfinished" />
+      <translation>اندازه‌گیری‌های نسبی شامل پاسخ بلندگو، اتاق و میکروفون هستند. تغییرات پیشنهادی به 3 dB برای هر فرکانس اندازه‌گیری‌شده محدود می‌شوند.
+
+%1</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>هنگام وجود به‌روزرسانی یا نیاز به شروع دوباره یادآوری کن</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>حذف فیلتر انتخاب‌شده</translation>
     </message>
     <message>
       <source>Reset</source>
-      <translation type="unfinished" />
+      <translation>بازنشانی</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>بازنشانی بهبودها</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>بازنشانی تُن میکروفون</translation>
     </message>
     <message>
       <source>Reset to flat</source>
