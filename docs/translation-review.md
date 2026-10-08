@@ -59,3 +59,7 @@ Reviewed prompts against actual import, correction-preview, calibration and audi
 Czech/Slovak second batch: wet mix is the effect contribution, not total output volume; delay time is distinct from decay time. Sweep error text explicitly describes a continuously changing test frequency. Failure prompts preserve the conditions under which processing is refused and the app stays open. This is contextual AI review, not native-speaker verification.
 
 Czech/Slovak filter and measurement review: Q is a dimensionless quality factor, shelving differs from pass filtering, compressor attack/release differs from effect decay, and makeup is gain compensation. Loudness describes low-volume tonal compensation. Estimated level labels retain that qualifier. Published model correction remains additive to listening EQ and does not claim room/amplifier calibration. Native-speaker review remains unverified.
+
+## Czech and Slovak completed extracted catalogs
+
+All current extracted entries populated (441 EQ / 527 Studio). The review distinguishes compressor makeup from post gain, pass filters from shelving, measured response from inverted EQ correction and effects from microphone correction. Render summary uses a label form for arbitrary counts. Calibration warnings retain the microphone contribution and bounded suggested gain. File filters, markup URLs, placeholders, IDs and saved numeric parameters are unchanged. Catalogs remain unverified; no native-speaker review is claimed.
