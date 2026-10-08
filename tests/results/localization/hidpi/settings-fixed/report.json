@@ -1,0 +1,608 @@
+{
+  "environment": "Host Linux Xvfb 1920x1080 at 200%, xcb; effective 960x540",
+  "scope": "All-tab automated geometry and existing locale/control fixtures; selective Russian/Polish screenshot inspection only; no native review",
+  "nativeReviewed": false,
+  "locales": [
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "de",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "fr",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "es",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "it",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "pt-PT",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "pt-BR",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "nl",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "pl",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "cs",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "sk",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "uk",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "ru",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "el",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "tr",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "sv",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "da",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "nb",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "fi",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "ro",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "hu",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "ar",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "he",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "fa",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "zh-Hans",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "zh-Hant",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "ja",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "ko",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "hi",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "id",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "vi",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "th",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "sw",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "tabs": [
+        {
+          "tab": 0,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        },
+        {
+          "tab": 1,
+          "viewport": 898,
+          "outerHorizontalMaximum": 0
+        }
+      ],
+      "locale": "nn",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    }
+  ],
+  "baseCommit": "1a344fdbef6390e04dce4e60e07120fa36730f63",
+  "sourceWorktreeChanges": true,
+  "sourceHashes": {
+    "src/main.cpp": "83d45e52f220f97f3c96f1421c3a149d46ef95f4708ff6c0f92579bd632c38dd",
+    "src/update_panel.h": "06c037cb6a3c88103459ca40bc9ae25e29757f2a2b66bb0ad8e069977930a074"
+  },
+  "focusedTestsPassed": 7
+}

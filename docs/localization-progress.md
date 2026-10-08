@@ -575,3 +575,7 @@ At 200% scale on Xvfb 1920×1080 (effective 960×540), all 33 translated locale/
 ### Scrolled high-scaling interface inspection
 
 The localization fixture can optionally capture middle and bottom scroll positions with SOUNDCURRENT_UI_CAPTURE_SCROLL. Inspected lower-page results are recorded in tests/results/localization/hidpi/scrolled/report.json. Polish Studio settings still show horizontal overflow around calibration/update controls. Default English channel names are recorded for the deferred second pass; no saved names or IDs were modified. This evidence is partial visual inspection, not native review.
+
+### Settings layout qualification
+
+Calibration and update actions now use two rows; amplifier controls are stacked, and microphone tone controls use a two-column grid. All tabs reported horizontal range zero for all 33 translated locales at effective 960×540 (200% scaling). Russian amplifier/microphone and Polish calibration/update viewports were inspected and readable. Seven focused UI, formatting, update-policy and catalog tests passed per app. Tests/results/localization/hidpi/settings-fixed records exact worktree source hashes; Windows and rebuilt packages remain pending. Processing, IDs, state and translated catalogs were unchanged.

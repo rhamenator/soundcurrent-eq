@@ -2107,19 +2107,19 @@ public:
         });
         refreshEquipmentStatus();
         settingsRoot->addWidget(speakerBox);
-        auto *ampRow = new QHBoxLayout;
-        ampRow->addWidget(new QLabel(SC_TR("Amplifier / receiver")));
+        auto *ampRow = new QGridLayout;
+        ampRow->addWidget(new QLabel(SC_TR("Amplifier / receiver")), 0, 0, 1, 2);
         ampCombo_ = new PresetComboBox;
         ampCombo_->setAccessibleName(SC_TR("Amplifier model profile"));
         ampCombo_->addItem(SC_TR("None — use my own EQ"), QString());
         loadAmplifierProfiles();
         for (const auto &profile : amplifierProfiles_) ampCombo_->addItem(profile.name, profile.id);
         ampCombo_->setCurrentIndex(std::max(0, ampCombo_->findData(QSettings().value("amplifierModelId").toString())));
-        ampRow->addWidget(ampCombo_, 1);
+        ampRow->addWidget(ampCombo_, 1, 0, 1, 2);
         ampImport_ = new QPushButton(SC_TR("Import measured profile"));
-        ampRow->addWidget(ampImport_);
+        ampRow->addWidget(ampImport_, 2, 0);
         auto *ampDetails = new QPushButton(SC_TR("Amp details"));
-        ampRow->addWidget(ampDetails);
+        ampRow->addWidget(ampDetails, 2, 1);
         speakerLayout->addLayout(ampRow);
         auto *ampHelp = new QLabel(SC_TR("Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications."));
         ampHelp->setWordWrap(true);
@@ -2131,7 +2131,7 @@ public:
 
         auto *inputBox = new QGroupBox(SC_TR("Microphone"));
         auto *inputLayout = new QVBoxLayout(inputBox);
-        auto *inputRow = new QHBoxLayout;
+        auto *inputRow = new QVBoxLayout;
         inputCombo_ = new QComboBox;
         inputCombo_->setAccessibleName(SC_TR("Microphone input device"));
         inputCombo_->addItem(SC_TR("Plug in your microphone to select a microphone profile"), QString());
@@ -2142,17 +2142,18 @@ public:
         micPower_->setChecked(QSettings().value("microphoneEnabled", true).toBool());
         inputRow->addWidget(micPower_);
         inputLayout->addLayout(inputRow);
-        auto *toneRow = new QHBoxLayout;
+        auto *toneRow = new QGridLayout;
         const QStringList micNames = {"Warmth", "Boxiness", "Clarity", "Air"};
         for (int i = 0; i < 4; ++i) {
             micLabels_[i] = new QLabel(soundcurrent::i18n::text(micNames[i].toUtf8().constData()));
-            toneRow->addWidget(micLabels_[i]);
+            toneRow->addWidget(micLabels_[i], 2*(i/2), i%2);
             micSliders_[i] = new QSlider(Qt::Horizontal);
             micSliders_[i]->setRange(-24, 24);
             micSliders_[i]->setValue(std::clamp(QSettings().value(QString("micBand%1").arg(i), 0).toInt(), -24, 24));
             micSliders_[i]->setAccessibleName(SC_TR("Microphone %1 adjustment").arg(soundcurrent::i18n::text(micNames[i].toUtf8().constData())));
             micSliders_[i]->setToolTip(SC_TR("Adjust this tone band around the natural voice profile"));
-            toneRow->addWidget(micSliders_[i], 1);
+            toneRow->addWidget(micSliders_[i], 2*(i/2)+1, i%2);
+            toneRow->setColumnStretch(i%2, 1);
             micLabels_[i]->setText(QString(SC_TR("%1 %2%3 dB")).arg(soundcurrent::i18n::text(micNames[i].toUtf8().constData()))
                                       .arg(micSliders_[i]->value() > 0 ? "+" : "")
                                       .arg(micSliders_[i]->value() / 2.0, 0, 'f', 1));
@@ -2197,29 +2198,28 @@ public:
         settingsRoot->addWidget(inputBox);
         auto *calibrationBox = new QGroupBox(SC_TR("Speaker && room calibration"));
         auto *calibrationLayout = new QVBoxLayout(calibrationBox);
-        auto *calibrationRow = new QHBoxLayout;
-        calibrationRow->addWidget(new QLabel(SC_TR("Speaker + room check")));
+        auto *calibrationRow = new QGridLayout;
+        calibrationRow->addWidget(new QLabel(SC_TR("Speaker + room check")), 0, 0);
         calibrationMode_ = new QComboBox;
         calibrationMode_->addItem(SC_TR("Quiet logarithmic sweep"), "sweep");
         calibrationMode_->addItem(SC_TR("Separate quiet tones"), "tones");
         calibrationMode_->setAccessibleName(SC_TR("Calibration test signal"));
-        calibrationRow->addWidget(calibrationMode_);
+        calibrationRow->addWidget(calibrationMode_, 0, 1, 1, 3);
         calibrationStart_ = new QPushButton(SC_TR("Measure"));
         calibrationStart_->setAccessibleName(SC_TR("Measure speaker room and microphone response"));
         calibrationStart_->setToolTip(SC_TR("Play quiet test audio and preview suggested playback EQ changes"));
-        calibrationRow->addWidget(calibrationStart_);
+        calibrationRow->addWidget(calibrationStart_, 1, 0);
         calibrationStop_ = new QPushButton(SC_TR("Stop tones"));
         calibrationStop_->setEnabled(false);
-        calibrationRow->addWidget(calibrationStop_);
-        calibrationRow->addWidget(new QLabel(SC_TR("Test level")));
+        calibrationRow->addWidget(calibrationStop_, 1, 1);
+        calibrationRow->addWidget(new QLabel(SC_TR("Test level")), 1, 2);
         calibrationLevel_ = new soundcurrent::AcceleratingSpinBox;
         calibrationLevel_->setRange(-54, -5);
         calibrationLevel_->setValue(-24);
         calibrationLevel_->setSuffix(" dBFS");
         calibrationLevel_->setToolTip(SC_TR("Start quiet. Raise only if the microphone cannot hear the tones."));
         calibrationLevel_->setAccessibleName(SC_TR("Calibration tone level"));
-        calibrationRow->addWidget(calibrationLevel_);
-        calibrationRow->addStretch();
+        calibrationRow->addWidget(calibrationLevel_, 1, 3);
         calibrationLayout->addLayout(calibrationRow);
         calibrationStatus_ = new QLabel(SC_TR("Use a quiet room. Measures speakers, room, and microphone together; results include the mic response."));
         calibrationStatus_->setWordWrap(true);
@@ -4197,6 +4197,13 @@ int main(int argc, char **argv) {
                 auto *outer=qobject_cast<QScrollArea *>(window.findChild<QTabWidget *>()->widget(0));
                 const int width=outer->viewport()->width();
                 qInfo("Layout viewport %d; horizontal range %d",width,outer->horizontalScrollBar()->maximum());
+                auto *tabs=window.findChild<QTabWidget *>();
+                for(int page=0;page<tabs->count();++page) {
+                    tabs->setCurrentIndex(page);QApplication::processEvents();
+                    if(auto *scroll=qobject_cast<QScrollArea *>(tabs->widget(page)))
+                        qInfo("Layout tab %d viewport %d; horizontal range %d",page,scroll->viewport()->width(),scroll->horizontalScrollBar()->maximum());
+                }
+                tabs->setCurrentIndex(0);QApplication::processEvents();
                 for(auto *widget:outer->widget()->findChildren<QWidget *>())
                     if(widget->minimumSizeHint().width()>width-76)
                         qInfo("Wide widget %s: minimum %d; name %s",widget->metaObject()->className(),widget->minimumSizeHint().width(),qPrintable(widget->accessibleName()));
