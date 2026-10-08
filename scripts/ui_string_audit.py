@@ -36,12 +36,12 @@ def inventory(root):
             for args in catalog.calls(code,method):
                 if len(args)<=index:
                     continue
-                text = catalog.literal(args[index])
+                text = catalog.display_literal(args[index])
                 if text is None or not text.strip() or text in IDENTITIES:
                     continue
                 records.append({'file':str(path.relative_to(root)),
                                 'call':method,'argument':index,'literal':text})
-    return {'scope':'Unmarked direct literal Qt display candidates; dynamic strings, stored/user data, backend and installer strings are not covered',
+    return {'scope':'Unmarked direct and exact Qt-wrapped literal display candidates; dynamic strings, stored/user data, backend and installer strings are not covered',
             'candidateCount':len(records),'candidates':records,
             'nativeReviewed':False,'wholeInterfaceCoverageProven':False}
 

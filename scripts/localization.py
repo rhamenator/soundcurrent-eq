@@ -31,6 +31,20 @@ def literal(expression):
     return ''.join(ast.literal_eval(s) for s in re.findall(LITERAL, expression))
 
 
+def display_literal(expression):
+    """Read a direct UI literal, including exact Qt string wrappers.
+
+    Does not evaluate C++, concatenate dynamic expressions or infer user text.
+    Translation calls are deliberately not wrappers in this list.
+    """
+    value = literal(expression)
+    if value is not None:
+        return value
+    match = re.fullmatch(r'(?:QStringLiteral|QString|QLatin1String|QLatin1StringView)\s*\((.*)\)',
+                         expression.strip(), re.S)
+    return literal(match.group(1)) if match else None
+
+
 def calls(code, name):
     """Extract call arguments; skip comments/strings and track nested brackets."""
     tokens = re.compile(r'//[^\n]*|/\*[\s\S]*?\*/|' + LITERAL + r"|'(?:\\.|[^'\\])*'|\b[A-Za-z_]\w*\b|[^\s]")
@@ -95,14 +109,14 @@ def sources():
             for args in calls(code, method):
                 if len(args) <= argument:
                     continue
-                value = literal(args[argument])
+                value = display_literal(args[argument])
                 if value is not None and value not in ('', 'Q', 'Hz', 'dB', 'SoundCurrent EQ', 'SoundCurrent Studio'):
                     raise ValueError(f'Unmarked UI literal in {name}: {method}: {value}')
         # Named QMessageBox constructors use icon, title, then body.
         # Explicit titles must be marked; dynamic bodies need separate review.
         for match in re.finditer(r'^\s*QMessageBox\s+(\w+)\s*\(', code, re.M):
             for args in calls(code, match.group(1)):
-                value = literal(args[1]) if len(args) > 1 else None
+                value = display_literal(args[1]) if len(args) > 1 else None
                 if value:
                     raise ValueError(f'Unmarked UI literal in {name}: dialog title: {value}')
         for method in ('SC_TR', 'text'):

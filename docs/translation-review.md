@@ -271,3 +271,9 @@ Added the remaining 14 Studio session-model validation mappings and translations
 Contextual AI review distinguishes parameter bounds from acoustic frequency ranges and saved routing/filter structure from UI controls. The Nynorsk plural parametrar was checked against the [official dictionary](https://ordbokene.no/nn/parameter); this supports that term only. Native-speaker verification remains unverified.
 
 Both single-job builds, fresh complete catalog checks and all 39 targeted Linux Qt offscreen tests passed per app. Studio fixtures reject malformed channel/filter/routing/enhancement data and verify unchanged input, valid signed routing and saved profile roundtrip through the parser/display boundary. These are not malformed-file picker tests. Current counts are 568 messages for EQ and 676 for Studio. Evidence and binary hashes are in second-pass-owned-diagnostics.json. Windows and changed-package qualification remain pending.
+
+## Second pass: Qt-wrapped source caption guard
+
+The source guard and candidate inventory now recognize exact QStringLiteral, QString, QLatin1String and QLatin1StringView wrappers. Twelve synthetic tray/combo/dialog cases prove those wrappers cannot bypass the caption guard. The invariant literal extractor remains separate; translated expressions and dynamic/user text are not interpreted as literals. Commented-out captions remain excluded.
+
+Source/catalog unit checks passed (EQ 14 plus one Studio-only skip; Studio 15), and fresh complete catalog checks passed. The narrow inventory found only English (en), an intentional language self-name. This result excludes formatted/dynamic expressions, stored names, backend/helper diagnostics and installer text, and does not prove total interface coverage. Application and catalogs were unchanged by this batch, so no build or runtime repetition was needed. Current accumulated Windows/package changes remain unqualified. Evidence is in second-pass-wrapped-literal-audit.json.

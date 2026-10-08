@@ -92,6 +92,44 @@ class CatalogTests(unittest.TestCase):
         catalog.check_platform_errors('throw std::runtime_error(SC_TR("Route unavailable").toStdString());')
         catalog.check_platform_errors('throw std::runtime_error(backend.error());')
 
+    def test_exact_qt_wrapped_captions_cannot_escape_guard(self):
+        for wrapper in ['QStringLiteral', 'QString', 'QLatin1String', 'QLatin1StringView']:
+            for statement in [f'menu->addAction({wrapper}("Untranslated caption"), callback);',
+                              f'combo->setItemText(0, {wrapper}("Untranslated caption"));',
+                              f'QMessageBox box(QMessageBox::Warning, {wrapper}("Untranslated caption"), message);']:
+                with self.subTest(statement=statement), tempfile.TemporaryDirectory() as directory:
+                    root = Path(directory)
+                    (root / 'src').mkdir()
+                    (root / 'src/main.cpp').write_text(statement, encoding='utf-8')
+                    with patch.object(catalog, 'ROOT', root), self.assertRaisesRegex(ValueError, 'Unmarked UI literal'):
+                        catalog.sources()
+
+    def test_display_literal_preserves_extraction_boundary(self):
+        self.assertEqual(catalog.display_literal('QStringLiteral("Saved " "setup")'), 'Saved setup')
+        self.assertEqual(catalog.display_literal('QLatin1String("Hz")'), 'Hz')
+        for expression in ['SC_TR("Saved setup")', 'QString(SC_TR("Saved setup"))',
+                           'QStringLiteral("Device: ") + userName',
+                           'QStringLiteral("Channel %1").arg(channel)', 'storedName']:
+            self.assertIsNone(catalog.display_literal(expression))
+        self.assertIsNone(catalog.literal('QStringLiteral("Backend invariant")'))
+
+    def test_display_inventory_includes_wrappers_and_ignores_comments(self):
+        audit_spec = importlib.util.spec_from_file_location('ui_audit', Path(__file__).resolve().parents[1] / 'scripts/ui_string_audit.py')
+        audit = importlib.util.module_from_spec(audit_spec)
+        with patch.dict('sys.modules', {'localization': catalog}):
+            audit_spec.loader.exec_module(audit)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'src').mkdir()
+            (root / 'src/new_controls.hpp').write_text(
+                'label->setText(QStringLiteral("Unmarked label")); '
+                'label->setText(SC_TR("Marked label")); '
+                'label->setText(userName); '
+                '// label->setText(QStringLiteral("Comment"));', encoding='utf-8')
+            result = audit.inventory(root)
+            self.assertEqual([row['literal'] for row in result['candidates']], ['Unmarked label'])
+            self.assertFalse(result['wholeInterfaceCoverageProven'])
+
     def test_structural_translation_checks(self):
         valid = [('%1 / %2', '%2 / %1'), ('%L1 / %n', '%n / %L1'),
                  ('Settings && calibration', 'Réglages && étalonnage'),
