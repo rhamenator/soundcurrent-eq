@@ -222,5 +222,9 @@
   "secondPassInstallerCaptionExport": {
     "report": "tests/results/localization/second-pass-installer-caption-export.json",
     "status": "shared exporter and all-locale syntax fixture passed; production integration and UI qualification pending"
+  },
+  "secondPassInstallerBuildIntegration": {
+    "report": "tests/results/localization/second-pass-installer-build-integration.json",
+    "status": "production script integration implemented; full Windows execution and packages pending"
   }
 }

@@ -53,10 +53,40 @@ def export(destination, product):
               'sources': SOURCES, 'languages': languages}
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    return result
+
+def generate_installer(source, destination, product, captions):
+    """Write a build copy; current installer language inventory is still English."""
+    if captions.get('schema') != 1 or captions.get('product') != product:
+        raise ValueError('Installer caption payload does not match product/schema')
+    if source.resolve() == destination.resolve():
+        raise ValueError('Generated installer must not overwrite its source')
+    stem = 'soundcurrent-eq' if product == 'SoundCurrent EQ' else 'soundcurrent-studio'
+    if product not in ('SoundCurrent EQ', 'SoundCurrent Studio') or source.name not in (stem + '.nsi', stem + '-native.nsi'):
+        raise ValueError('Installer source does not match product')
+    route = 'native' if source.name.endswith('-native.nsi') else 'cable'
+    text = source.read_text(encoding='utf-8')
+    declared = re.findall(r'^!insertmacro MUI_LANGUAGE "([^"]+)"$', text, re.M)
+    if declared != ['English']:
+        raise ValueError('Installer language activation needs an explicit expanded generation plan')
+    for key, value in captions['languages']['en'][route]['nsisEscaped'].items():
+        pattern = r'^LangString ' + re.escape(key) + r' \$\{LANG_ENGLISH\} "(?:\$\\"|[^"])*"$'
+        replacement = 'LangString ' + key + ' ${LANG_ENGLISH} "' + value + '"'
+        text, count = re.subn(pattern, lambda match: replacement, text, flags=re.M)
+        if count != 1:
+            raise ValueError('Missing or duplicate installer caption definition: ' + key)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(text, encoding='utf-8')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--product', choices=['SoundCurrent EQ', 'SoundCurrent Studio'], required=True)
+    parser.add_argument('--installer-source', type=Path)
+    parser.add_argument('--installer-output', type=Path)
     arguments = parser.parse_args()
-    export(arguments.output, arguments.product)
+    if bool(arguments.installer_source) != bool(arguments.installer_output):
+        parser.error('--installer-source and --installer-output must be used together')
+    captions = export(arguments.output, arguments.product)
+    if arguments.installer_source:
+        generate_installer(arguments.installer_source, arguments.installer_output, arguments.product, captions)

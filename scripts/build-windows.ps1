@@ -211,7 +211,10 @@ try {
     $installer = Join-Path $root "dist\SoundCurrent-EQ-$version-windows-x64-setup.exe"
     [string[]]$audioOptions = if ($AudioRoute -eq 'Native') { @("/DDRIVER_DIR=$SignedDriverPackage") } else { @("/DCABLE_ZIP=$CablePackage") }
     $installerScript = if ($AudioRoute -eq 'Native') { 'packaging\windows\soundcurrent-eq-native.nsi' } else { 'packaging\windows\soundcurrent-eq.nsi' }
-    & $Nsis /INPUTCHARSET UTF8 "/DAPP_EXE=$stage\soundcurrent-eq.exe" "/DDLL_DIR=$stage" "/DAPP_VERSION=$version" "/DOUTPUT=$installer" @audioOptions "/DSOURCE_ROOT=$root" "/DUNINSTALL_PAYLOAD=$root\build-windows-native\uninstall-payload.nsh" $installerScript
+    $generatedInstallerScript = Join-Path $root 'build-windows-native\localized-installer.nsi'
+    & python scripts/windows_installer_catalogs.py --product "SoundCurrent EQ" --output "$root\build-windows-native\installer-translations.json" --installer-source $installerScript --installer-output $generatedInstallerScript
+    if ($LASTEXITCODE -ne 0) { throw 'Installer caption generation failed' }
+    & $Nsis /INPUTCHARSET UTF8 "/DAPP_EXE=$stage\soundcurrent-eq.exe" "/DDLL_DIR=$stage" "/DAPP_VERSION=$version" "/DOUTPUT=$installer" @audioOptions "/DSOURCE_ROOT=$root" "/DUNINSTALL_PAYLOAD=$root\build-windows-native\uninstall-payload.nsh" $generatedInstallerScript
     if ($LASTEXITCODE -ne 0) { throw 'Windows installer build failed' }
     Copy-Item $sourceArchive dist
     $sourceHash = (Get-FileHash $sourceArchive).Hash.ToLowerInvariant()

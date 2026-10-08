@@ -15,6 +15,37 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_installer_build_copy_generation_and_failures(self):
+        root = Path(__file__).resolve().parents[1]
+        spec = importlib.util.spec_from_file_location('installer_build_copy', root / 'scripts/windows_installer_catalogs.py')
+        exporter = importlib.util.module_from_spec(spec)
+        with patch.dict('sys.modules', {'localization': catalog}):
+            spec.loader.exec_module(exporter)
+        product = 'SoundCurrent Studio' if (root / 'src/studio_model.cpp').exists() else 'SoundCurrent EQ'
+        with tempfile.TemporaryDirectory() as directory:
+            folder = Path(directory)
+            captions = exporter.export(folder / 'captions.json', product)
+            for source in sorted((root / 'packaging/windows').glob('*.nsi')):
+                original = source.read_bytes()
+                with self.assertRaisesRegex(ValueError, 'product/schema'):
+                    exporter.generate_installer(source, folder / 'mismatch.nsi', product, {**captions, 'product': 'Wrong app'})
+                generated = folder / ('generated-' + source.name)
+                exporter.generate_installer(source, generated, product, captions)
+                self.assertEqual(generated.read_bytes(), original, 'Only catalog captions may change; current English is identical')
+                self.assertEqual(source.read_bytes(), original)
+                with self.assertRaisesRegex(ValueError, 'overwrite'):
+                    exporter.generate_installer(source, source, product, captions)
+                fixture = folder / source.name
+                for replacement in ('', 'LangString SCConnectAudio ${LANG_ENGLISH} "One"\nLangString SCConnectAudio ${LANG_ENGLISH} "Two"'):
+                    fixture.write_text(re.sub(r'^LangString SCConnectAudio.*$', replacement, source.read_text(), flags=re.M))
+                    failed = folder / 'failed.nsi'
+                    with self.assertRaisesRegex(ValueError, 'Missing or duplicate'):
+                        exporter.generate_installer(fixture, failed, product, captions)
+                    self.assertFalse(failed.exists())
+                fixture.write_text(source.read_text() + '\n!insertmacro MUI_LANGUAGE "French"\n')
+                with self.assertRaisesRegex(ValueError, 'activation'):
+                    exporter.generate_installer(fixture, folder / 'failed.nsi', product, captions)
+
     def test_installer_export_preserves_literal_names_and_nsis_escaping(self):
         root = Path(__file__).resolve().parents[1]
         spec = importlib.util.spec_from_file_location('installer_export', root / 'scripts/windows_installer_catalogs.py')
