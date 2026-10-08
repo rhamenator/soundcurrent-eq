@@ -415,3 +415,9 @@ Swahili now has 398/441 populated current catalog entries. Added save/reset acti
 ### Swahili existing catalog complete
 
 All 441/441 current Swahili catalog entries are populated. Required-complete and regional fallback gates now include Swahili. Full Linux CTest passed 82/82, including profile workflows and all locale MainWindow offscreen checks. The global catalog completeness gate passes. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Second-pass source inventory
+
+Added `scripts/localization_inventory.py` and its generated `tests/results/localization/source-inventory.json`. This read-only discovery aid scans literal C++ exceptions and selected view calls across all source files, NSIS candidates and Python diagnostics. Counts are candidates, not confirmed untranslated user messages. Dynamic/composed strings, shell/PowerShell helpers, native dialogs and data-driven names still require review. Current catalog completeness checks continue to pass.
+
+Confirmed first adapter targets: missing Windows audio-route instructions, disconnected speakers, invalid equalizer/microphone settings; Studio also has live-layout and invalid Studio-setting messages. Translate at the Qt adapter/view boundary while preserving backend identifiers and numeric processing. Installer strings require their own language selection and catalog workflow. The existing full Linux 82/82 (EQ) and 84/84 (Studio) results predate this informational tooling change; no new runtime qualification is claimed.
