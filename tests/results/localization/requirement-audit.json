@@ -186,5 +186,9 @@
   "secondPassCableRemoval": {
     "status": "two messages translated and protected external labels tested; Windows dialogs and removal flow pending",
     "evidence": "tests/results/localization/second-pass-cable-removal.json"
+  },
+  "secondPassCableEndpoint": {
+    "status": "one owned endpoint diagnostic translated and device labels protected; actual Windows endpoint path and packages pending",
+    "evidence": "tests/results/localization/second-pass-cable-endpoint.json"
   }
 }

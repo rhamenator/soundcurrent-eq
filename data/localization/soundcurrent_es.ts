@@ -2464,6 +2464,10 @@ Import into your library?</source>
       <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
+      <source>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</source>
+      <translation>Windows tiene un registro del controlador VB-CABLE, pero su punto de conexión de reproducción o grabación no está disponible. Si ya reinició, abra %1 para repararlo. Active CABLE Input y CABLE Output en los ajustes de sonido de Windows si están desactivados.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Escribir en el búfer de los altavoces</translation>
     </message>

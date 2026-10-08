@@ -2464,6 +2464,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
+      <source>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</source>
+      <translation>Windows’ta bir VB-CABLE sürücü kaydı var ancak oynatma veya kayıt uç noktası kullanılamıyor. Zaten yeniden başlattıysanız onarmak için %1 öğesini açın. Devre dışıysa Windows ses ayarlarında CABLE Input ve CABLE Output öğelerini etkinleştirin.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Hoparlör tamponuna yazma</translation>
     </message>

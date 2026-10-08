@@ -111,7 +111,7 @@ try {
         if ((Get-AuthenticodeSignature -LiteralPath $exe).Status -ne 'Valid') { throw (Get-SCSetupText 'Windows could not verify the VB-Audio executable signature.' -Language $Language -Application ('soundcurrent-' + $App)) }
         if ($Settings) {
             if (!(Present)) { throw (Format-SCSetupText 'VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.' -Values @((Get-SCSetupText 'Audio driver setup' -Language $Language -Application ('soundcurrent-' + $App))) -Language $Language -Application ('soundcurrent-' + $App)) }
-            if (!(Ready)) { throw 'Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, use Audio driver setup to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.' }
+            if (!(Ready)) { throw (Format-SCSetupText 'Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.' -Values @((Get-SCSetupText 'Audio driver setup' -Language $Language -Application ('soundcurrent-' + $App))) -Language $Language -Application ('soundcurrent-' + $App)) }
             $process = Start-Process -FilePath $exe -WorkingDirectory $temp -PassThru
             $process.WaitForExit()
             if ($process.ExitCode -ne 0) { throw (Get-SCSetupText 'VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.' -Language $Language -Application ('soundcurrent-' + $App)) }

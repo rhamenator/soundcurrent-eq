@@ -180,9 +180,10 @@ class Markup(HTMLParser):
         self.structure.append(('empty', tag, tuple(sorted(attrs))))
 
 
-# Exact labels in the third-party installer are protected only in reviewed
+# Exact labels in third-party installer or device UI are protected only in reviewed
 # instruction sources. SoundCurrent's own button captions remain translatable.
 EXTERNAL_UI_LABELS = {
+    'Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.': ('CABLE Input', 'CABLE Output'),
     'Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.': ('Remove Driver',),
     'VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.': ('Remove Driver',),
     'The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.': ('Install Driver',),

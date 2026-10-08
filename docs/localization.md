@@ -92,3 +92,5 @@ EXTERNAL_UI_LABELS in the catalog validator is scoped to reviewed instruction so
 ### Installer source audit
 
 nsis_string_audit.py inventories supported custom controls, MessageBox/DetailPrint text, section captions, MUI headers and text definitions. nsis-text-backlog.json is an explicit unfinished-work inventory; new raw text or unaudited language references fail catalog unit tests. It is not a complete NSIS parser and does not expand macros or line continuations. A $(key) reference does not prove its definition, translation, layout or installed runtime behavior. Compiler and install/update/uninstall checks remain separate gates.
+
+The source-specific external-label rule also preserves CABLE Input and CABLE Output in the reviewed Windows endpoint diagnostic. These are default external device labels; user-edited names and SoundCurrent-owned action captions remain separate.

@@ -2464,6 +2464,10 @@ Uingize kwenye maktaba yako?</translation>
       <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
+      <source>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</source>
+      <translation>Windows ina rekodi ya kiendeshi cha VB-CABLE, lakini kifaa chake cha kucheza au kurekodi sauti hakipatikani. Ikiwa tayari umeanzisha upya, fungua %1 ili kurekebisha. Washa CABLE Input na CABLE Output katika mipangilio ya sauti ya Windows ikiwa zimezimwa.</translation>
+    </message>
+    <message>
       <source>Write speaker buffer</source>
       <translation>Kuandika kwenye bafa ya spika</translation>
     </message>

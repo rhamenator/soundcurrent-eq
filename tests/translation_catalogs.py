@@ -176,6 +176,13 @@ class CatalogTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'External installer label changed'):
                     catalog.validate_text(source, target)
 
+    def test_endpoint_device_labels_remain_exact(self):
+        source = 'Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.'
+        catalog.validate_text(source, 'Ouvrez %1. Activez CABLE Input et CABLE Output.')
+        for text in ('CABLE input et CABLE Output', 'Entrée câble et CABLE Output', 'CABLE Input et Sortie câble', 'CABLE Input et CABLE Output CABLE Output'):
+            with self.assertRaisesRegex(ValueError, 'External installer label changed'):
+                catalog.validate_text(source, 'Ouvrez %1. ' + text)
+
     def test_setup_lookup_keys_have_required_catalog_entries(self):
         root = Path(__file__).resolve().parents[1]
         required = json.loads((root / 'data/localization/setup-sources.json').read_text())

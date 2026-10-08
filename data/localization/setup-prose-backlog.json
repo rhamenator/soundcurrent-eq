@@ -18,13 +18,6 @@
     },
     {
       "file": "cable-setup.ps1",
-      "line": 114,
-      "kind": "StringConstantExpressionAst",
-      "literal": "Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, use Audio driver setup to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.",
-      "reviewStatus": "untranslated; pending contextual translation"
-    },
-    {
-      "file": "cable-setup.ps1",
       "line": 125,
       "kind": "StringConstantExpressionAst",
       "literal": "Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then run Audio driver setup again and click Install Driver. Restart once more before using SoundCurrent. Removing this shared cable affects other apps that use it.",
