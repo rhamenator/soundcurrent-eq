@@ -586,51 +586,51 @@ Tuodaanko kirjastoon?</translation>
     </message>
     <message>
       <source>Discard</source>
-      <translation type="unfinished" />
+      <translation>Hylkää</translation>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
-      <translation type="unfinished" />
+      <translation>Vedä käyrän pisteitä tai säädä valittua kaistaa alla.</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
-      <translation type="unfinished" />
+      <translation>Dynaaminen vahvistus</translation>
     </message>
     <message>
       <source>Dynamics attack</source>
-      <translation type="unfinished" />
+      <translation>Dynamiikan reagointiaika</translation>
     </message>
     <message>
       <source>Dynamics ceiling</source>
-      <translation type="unfinished" />
+      <translation>Dynamiikan huipputason yläraja</translation>
     </message>
     <message>
       <source>Dynamics makeup</source>
-      <translation type="unfinished" />
+      <translation>Dynamiikan kompensointivahvistus</translation>
     </message>
     <message>
       <source>Dynamics ratio</source>
-      <translation type="unfinished" />
+      <translation>Dynamiikan kompressiosuhde</translation>
     </message>
     <message>
       <source>Dynamics release</source>
-      <translation type="unfinished" />
+      <translation>Dynamiikan palautumisaika</translation>
     </message>
     <message>
       <source>Dynamics threshold</source>
-      <translation type="unfinished" />
+      <translation>Dynamiikan kynnys</translation>
     </message>
     <message>
       <source>Edit / save copy</source>
-      <translation type="unfinished" />
+      <translation>Muokkaa / tallenna kopio</translation>
     </message>
     <message>
       <source>Effects</source>
-      <translation>Tehosteet</translation>
+      <translation>Efektit</translation>
     </message>
     <message>
       <source>Electronic</source>
-      <translation type="unfinished" />
+      <translation>Elektroninen</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -639,172 +639,172 @@ Tuodaanko kirjastoon?</translation>
     </message>
     <message>
       <source>Equalizer and configuration pages</source>
-      <translation type="unfinished" />
+      <translation>Taajuuskorjaimen ja asetusten sivut</translation>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>
-      <translation type="unfinished" />
+      <translation>Taajuuskorjaimen käyrä. Valitse piste tai vedä sitä säätääksesi taajuutta ja vahvistusta.</translation>
     </message>
     <message>
       <source>Equalizer is off. Windows selected the physical output directly.</source>
-      <translation type="unfinished" />
+      <translation>Taajuuskorjain on pois käytöstä. Windows valitsi fyysisen lähtölaitteen suoraan.</translation>
     </message>
     <message>
       <source>Equalizer is off. Your audio uses its normal output.</source>
-      <translation type="unfinished" />
+      <translation>Taajuuskorjain on pois käytöstä. Ääni käyttää tavallista lähtölaitettaan.</translation>
     </message>
     <message>
       <source>Equalizer is still running. Use the tray icon to reopen or quit.</source>
-      <translation type="unfinished" />
+      <translation>Taajuuskorjain on edelleen käynnissä. Avaa se uudelleen tai lopeta ilmaisinalueen kuvakkeesta.</translation>
     </message>
     <message>
       <source>Equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Taajuuskorjain pois</translation>
     </message>
     <message>
       <source>Equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Taajuuskorjain päällä</translation>
     </message>
     <message>
       <source>Equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Taajuuskorjain päällä tai pois</translation>
     </message>
     <message>
       <source>Equalizer sink disappeared</source>
-      <translation type="unfinished" />
+      <translation>Taajuuskorjaimen ääninielu katosi</translation>
     </message>
     <message>
       <source>Equipment brand</source>
-      <translation type="unfinished" />
+      <translation>Laitteen tuotemerkki</translation>
     </message>
     <message>
       <source>Equipment family</source>
-      <translation type="unfinished" />
+      <translation>Laitteen tuoteperhe</translation>
     </message>
     <message>
       <source>Equipment kind must be speaker, microphone or amplifier.</source>
-      <translation type="unfinished" />
+      <translation>Laitetyypin on oltava kaiutin, mikrofoni tai vahvistin.</translation>
     </message>
     <message>
       <source>Equipment profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Laiteprofiili (*.json)</translation>
     </message>
     <message>
       <source>Equipment profile editor</source>
-      <translation type="unfinished" />
+      <translation>Laiteprofiilin muokkain</translation>
     </message>
     <message>
       <source>Equipment profiles (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Laiteprofiilit (*.json)</translation>
     </message>
     <message>
       <source>Equipment profiles by brand family and model</source>
-      <translation type="unfinished" />
+      <translation>Laiteprofiilit tuotemerkin, tuoteperheen ja mallin mukaan</translation>
     </message>
     <message>
       <source>Equipment profiles — brand / family / model</source>
-      <translation type="unfinished" />
+      <translation>Laiteprofiilit — tuotemerkki / tuoteperhe / malli</translation>
     </message>
     <message>
       <source>Equipment resource missing.</source>
-      <translation type="unfinished" />
+      <translation>Laiteresurssi puuttuu.</translation>
     </message>
     <message>
       <source>Equipment subtype</source>
-      <translation type="unfinished" />
+      <translation>Laitteen alatyyppi</translation>
     </message>
     <message>
       <source>Equipment type</source>
-      <translation type="unfinished" />
+      <translation>Laitetyyppi</translation>
     </message>
     <message>
       <source>Estimated output level near band %1</source>
-      <translation type="unfinished" />
+      <translation>Arvioitu lähtötaso kaistan %1 lähellä</translation>
     </message>
     <message>
       <source>Estimated output near %1: %2 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Arvioitu lähtötaso taajuuden %1 lähellä: %2 dBFS</translation>
     </message>
     <message>
       <source>Estimated output peak and clipping risk</source>
-      <translation type="unfinished" />
+      <translation>Arvioitu lähtöhuippu ja leikkautumisriski</translation>
     </message>
     <message>
       <source>Estimated overall output level</source>
-      <translation type="unfinished" />
+      <translation>Arvioitu kokonaislähtötaso</translation>
     </message>
     <message>
       <source>Estimated overall output peak: %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Arvioitu kokonaislähtöhuippu: %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Arvioitu huipputaso %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak: EQ off</source>
-      <translation type="unfinished" />
+      <translation>Arvioitu huipputaso: taajuuskorjain pois</translation>
     </message>
     <message>
       <source>Estimated peak: waiting for audio</source>
-      <translation type="unfinished" />
+      <translation>Arvioitu huipputaso: odotetaan ääntä</translation>
     </message>
     <message>
       <source>Estimated post-EQ level near this frequency</source>
-      <translation type="unfinished" />
+      <translation>Arvioitu taso taajuuskorjauksen jälkeen tämän taajuuden lähellä</translation>
     </message>
     <message>
       <source>Estimated post-EQ output peak, including post gain and balance</source>
-      <translation type="unfinished" />
+      <translation>Arvioitu lähtöhuippu taajuuskorjauksen jälkeen, mukaan lukien jälkivahvistus ja tasapaino</translation>
     </message>
     <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
-      <translation type="unfinished" />
+      <translation>Lopeta SoundCurrent EQ ja palauta tavallinen ääni</translation>
     </message>
     <message>
       <source>Expanded test language</source>
-      <translation type="unfinished" />
+      <translation>Laajennettu testikieli</translation>
     </message>
     <message>
       <source>Expected a JSON equipment profile. Import response text using the response import button.</source>
-      <translation type="unfinished" />
+      <translation>Odotettiin JSON-laiteprofiilia. Tuo taajuusvasteteksti taajuusvasteen tuontipainikkeella.</translation>
     </message>
     <message>
       <source>Expected frequency Hz and relative measured response dB on every data line.</source>
-      <translation type="unfinished" />
+      <translation>Jokaisella tietorivillä odotettiin taajuutta hertseinä ja suhteellista mitattua taajuusvastetta desibeleinä.</translation>
     </message>
     <message>
       <source>Export</source>
-      <translation type="unfinished" />
+      <translation>Vie</translation>
     </message>
     <message>
       <source>Export JSON</source>
-      <translation type="unfinished" />
+      <translation>Vie JSON</translation>
     </message>
     <message>
       <source>Export profile</source>
-      <translation type="unfinished" />
+      <translation>Vie profiili</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
-      <translation type="unfinished" />
+      <translation>Askeleet FPS-peleissä</translation>
     </message>
     <message>
       <source>Family</source>
-      <translation type="unfinished" />
+      <translation>Tuoteperhe</translation>
     </message>
     <message>
       <source>Filter Q</source>
-      <translation type="unfinished" />
+      <translation>Suodattimen laatutekijä Q</translation>
       <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
     </message>
     <message>
       <source>Filter values must be numbers.</source>
-      <translation type="unfinished" />
+      <translation>Suodattimen arvojen on oltava numeroita.</translation>
     </message>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
-      <translation type="unfinished" />
+      <translation>Suodattimet ylittävät taajuuden, vahvistuksen tai Q:n rajat.</translation>
     </message>
     <message>
       <source>Flat</source>
@@ -817,11 +817,11 @@ Tuodaanko kirjastoon?</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
-      <translation type="unfinished" />
+      <translation>Taajuus Hz</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
-      <translation type="unfinished" />
+      <translation>Etukanavien V/O-parannukset (mono tuettu); muut kanavat säilyttävät omat Studio-efektinsä. Nolla ohittaa kunkin parannuksen.</translation>
     </message>
     <message>
       <source>Gain</source>
@@ -830,39 +830,39 @@ Tuodaanko kirjastoon?</translation>
     </message>
     <message>
       <source>Gain dB</source>
-      <translation type="unfinished" />
+      <translation>Vahvistus dB</translation>
     </message>
     <message>
       <source>Gaming</source>
-      <translation type="unfinished" />
+      <translation>Pelaaminen</translation>
     </message>
     <message>
       <source>Headphones</source>
-      <translation type="unfinished" />
+      <translation>Kuulokkeet</translation>
     </message>
     <message>
       <source>Help</source>
-      <translation type="unfinished" />
+      <translation>Ohje</translation>
     </message>
     <message>
       <source>Hide advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Piilota lisäsäätimet</translation>
     </message>
     <message>
       <source>Hip-Hop</source>
-      <translation type="unfinished" />
+      <translation>Hip-Hop</translation>
     </message>
     <message>
       <source>Ignore</source>
-      <translation type="unfinished" />
+      <translation>Ohita</translation>
     </message>
     <message>
       <source>Import</source>
-      <translation type="unfinished" />
+      <translation>Tuo</translation>
     </message>
     <message>
       <source>Import JSON</source>
-      <translation type="unfinished" />
+      <translation>Tuo JSON</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>

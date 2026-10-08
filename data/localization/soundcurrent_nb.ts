@@ -586,43 +586,43 @@ Importere til biblioteket ditt?</translation>
     </message>
     <message>
       <source>Discard</source>
-      <translation type="unfinished" />
+      <translation>Forkast</translation>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
-      <translation type="unfinished" />
+      <translation>Dra punktene på kurven eller juster det valgte båndet nedenfor.</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
-      <translation type="unfinished" />
+      <translation>Dynamisk forsterkning</translation>
     </message>
     <message>
       <source>Dynamics attack</source>
-      <translation type="unfinished" />
+      <translation>Dynamikkens anslagstid</translation>
     </message>
     <message>
       <source>Dynamics ceiling</source>
-      <translation type="unfinished" />
+      <translation>Dynamikkens toppnivågrense</translation>
     </message>
     <message>
       <source>Dynamics makeup</source>
-      <translation type="unfinished" />
+      <translation>Dynamikkens kompensasjonsforsterkning</translation>
     </message>
     <message>
       <source>Dynamics ratio</source>
-      <translation type="unfinished" />
+      <translation>Dynamikkens kompresjonsforhold</translation>
     </message>
     <message>
       <source>Dynamics release</source>
-      <translation type="unfinished" />
+      <translation>Dynamikkens utløsingstid</translation>
     </message>
     <message>
       <source>Dynamics threshold</source>
-      <translation type="unfinished" />
+      <translation>Dynamikkens terskel</translation>
     </message>
     <message>
       <source>Edit / save copy</source>
-      <translation type="unfinished" />
+      <translation>Rediger / lagre kopi</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -630,7 +630,7 @@ Importere til biblioteket ditt?</translation>
     </message>
     <message>
       <source>Electronic</source>
-      <translation type="unfinished" />
+      <translation>Elektronisk</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -639,172 +639,172 @@ Importere til biblioteket ditt?</translation>
     </message>
     <message>
       <source>Equalizer and configuration pages</source>
-      <translation type="unfinished" />
+      <translation>Equalizer- og konfigurasjonssider</translation>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>
-      <translation type="unfinished" />
+      <translation>Equalizerkurve. Velg et punkt eller dra det for å justere frekvens og forsterkning.</translation>
     </message>
     <message>
       <source>Equalizer is off. Windows selected the physical output directly.</source>
-      <translation type="unfinished" />
+      <translation>Equalizeren er av. Windows valgte den fysiske utgangen direkte.</translation>
     </message>
     <message>
       <source>Equalizer is off. Your audio uses its normal output.</source>
-      <translation type="unfinished" />
+      <translation>Equalizeren er av. Lyden bruker sin vanlige utgang.</translation>
     </message>
     <message>
       <source>Equalizer is still running. Use the tray icon to reopen or quit.</source>
-      <translation type="unfinished" />
+      <translation>Equalizeren kjører fortsatt. Bruk systemstatusikonet for å åpne igjen eller avslutte.</translation>
     </message>
     <message>
       <source>Equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Equalizer av</translation>
     </message>
     <message>
       <source>Equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Equalizer på</translation>
     </message>
     <message>
       <source>Equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Equalizer på eller av</translation>
     </message>
     <message>
       <source>Equalizer sink disappeared</source>
-      <translation type="unfinished" />
+      <translation>Equalizerens sink forsvant</translation>
     </message>
     <message>
       <source>Equipment brand</source>
-      <translation type="unfinished" />
+      <translation>Utstyrsmerke</translation>
     </message>
     <message>
       <source>Equipment family</source>
-      <translation type="unfinished" />
+      <translation>Utstyrsfamilie</translation>
     </message>
     <message>
       <source>Equipment kind must be speaker, microphone or amplifier.</source>
-      <translation type="unfinished" />
+      <translation>Utstyrstypen må være høyttaler, mikrofon eller forsterker.</translation>
     </message>
     <message>
       <source>Equipment profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Utstyrsprofil (*.json)</translation>
     </message>
     <message>
       <source>Equipment profile editor</source>
-      <translation type="unfinished" />
+      <translation>Redigering av utstyrsprofil</translation>
     </message>
     <message>
       <source>Equipment profiles (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Utstyrsprofiler (*.json)</translation>
     </message>
     <message>
       <source>Equipment profiles by brand family and model</source>
-      <translation type="unfinished" />
+      <translation>Utstyrsprofiler etter merke, familie og modell</translation>
     </message>
     <message>
       <source>Equipment profiles — brand / family / model</source>
-      <translation type="unfinished" />
+      <translation>Utstyrsprofiler — merke / familie / modell</translation>
     </message>
     <message>
       <source>Equipment resource missing.</source>
-      <translation type="unfinished" />
+      <translation>Utstyrsressurs mangler.</translation>
     </message>
     <message>
       <source>Equipment subtype</source>
-      <translation type="unfinished" />
+      <translation>Utstyrets undertype</translation>
     </message>
     <message>
       <source>Equipment type</source>
-      <translation type="unfinished" />
+      <translation>Utstyrstype</translation>
     </message>
     <message>
       <source>Estimated output level near band %1</source>
-      <translation type="unfinished" />
+      <translation>Anslått utgangsnivå nær bånd %1</translation>
     </message>
     <message>
       <source>Estimated output near %1: %2 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Anslått utgang nær %1: %2 dBFS</translation>
     </message>
     <message>
       <source>Estimated output peak and clipping risk</source>
-      <translation type="unfinished" />
+      <translation>Anslått utgangstopp og fare for klipping</translation>
     </message>
     <message>
       <source>Estimated overall output level</source>
-      <translation type="unfinished" />
+      <translation>Anslått samlet utgangsnivå</translation>
     </message>
     <message>
       <source>Estimated overall output peak: %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Anslått samlet utgangstopp: %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Anslått toppnivå %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak: EQ off</source>
-      <translation type="unfinished" />
+      <translation>Anslått toppnivå: EQ av</translation>
     </message>
     <message>
       <source>Estimated peak: waiting for audio</source>
-      <translation type="unfinished" />
+      <translation>Anslått toppnivå: venter på lyd</translation>
     </message>
     <message>
       <source>Estimated post-EQ level near this frequency</source>
-      <translation type="unfinished" />
+      <translation>Anslått nivå etter EQ nær denne frekvensen</translation>
     </message>
     <message>
       <source>Estimated post-EQ output peak, including post gain and balance</source>
-      <translation type="unfinished" />
+      <translation>Anslått utgangstopp etter EQ, inkludert etterforsterkning og balanse</translation>
     </message>
     <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
-      <translation type="unfinished" />
+      <translation>Avslutt SoundCurrent EQ og gjenopprett vanlig lyd</translation>
     </message>
     <message>
       <source>Expanded test language</source>
-      <translation type="unfinished" />
+      <translation>Utvidet testspråk</translation>
     </message>
     <message>
       <source>Expected a JSON equipment profile. Import response text using the response import button.</source>
-      <translation type="unfinished" />
+      <translation>Forventet en JSON-utstyrsprofil. Importer frekvensresponstekst med knappen for import av frekvensrespons.</translation>
     </message>
     <message>
       <source>Expected frequency Hz and relative measured response dB on every data line.</source>
-      <translation type="unfinished" />
+      <translation>Forventet frekvens i Hz og relativ målt frekvensrespons i dB på hver datalinje.</translation>
     </message>
     <message>
       <source>Export</source>
-      <translation type="unfinished" />
+      <translation>Eksporter</translation>
     </message>
     <message>
       <source>Export JSON</source>
-      <translation type="unfinished" />
+      <translation>Eksporter JSON</translation>
     </message>
     <message>
       <source>Export profile</source>
-      <translation type="unfinished" />
+      <translation>Eksporter profil</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
-      <translation type="unfinished" />
+      <translation>Fottrinn i FPS-spill</translation>
     </message>
     <message>
       <source>Family</source>
-      <translation type="unfinished" />
+      <translation>Familie</translation>
     </message>
     <message>
       <source>Filter Q</source>
-      <translation type="unfinished" />
+      <translation>Filterets kvalitetsfaktor Q</translation>
       <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
     </message>
     <message>
       <source>Filter values must be numbers.</source>
-      <translation type="unfinished" />
+      <translation>Filterverdiene må være tall.</translation>
     </message>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
-      <translation type="unfinished" />
+      <translation>Filtrene overskrider grensene for frekvens, forsterkning eller Q.</translation>
     </message>
     <message>
       <source>Flat</source>
@@ -817,11 +817,11 @@ Importere til biblioteket ditt?</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
-      <translation type="unfinished" />
+      <translation>Frekvens Hz</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
-      <translation type="unfinished" />
+      <translation>Forbedringer for fremre V/H-kanaler (mono støttes); andre kanaler beholder sine egne Studio-effekter. Null omgår hver forbedring.</translation>
     </message>
     <message>
       <source>Gain</source>
@@ -830,39 +830,39 @@ Importere til biblioteket ditt?</translation>
     </message>
     <message>
       <source>Gain dB</source>
-      <translation type="unfinished" />
+      <translation>Forsterkning dB</translation>
     </message>
     <message>
       <source>Gaming</source>
-      <translation type="unfinished" />
+      <translation>Spill</translation>
     </message>
     <message>
       <source>Headphones</source>
-      <translation type="unfinished" />
+      <translation>Hodetelefoner</translation>
     </message>
     <message>
       <source>Help</source>
-      <translation type="unfinished" />
+      <translation>Hjelp</translation>
     </message>
     <message>
       <source>Hide advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Skjul avanserte kontroller</translation>
     </message>
     <message>
       <source>Hip-Hop</source>
-      <translation type="unfinished" />
+      <translation>Hip-Hop</translation>
     </message>
     <message>
       <source>Ignore</source>
-      <translation type="unfinished" />
+      <translation>Ignorer</translation>
     </message>
     <message>
       <source>Import</source>
-      <translation type="unfinished" />
+      <translation>Importer</translation>
     </message>
     <message>
       <source>Import JSON</source>
-      <translation type="unfinished" />
+      <translation>Importer JSON</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>

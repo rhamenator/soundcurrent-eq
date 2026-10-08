@@ -1,34 +1,34 @@
 {
-  "stage": "Norwegian Bokmål/Finnish recovery and effects batch",
+  "stage": "Norwegian Bokmål/Finnish filter and editor batch",
   "catalogs": [
     {
       "tag": "nb",
       "name": "Norsk bokmål",
-      "translated": 166,
+      "translated": 230,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "cdf8a8450fe43c643e15376e65595227b7c6b2780a2f8b2d2f6c5ff7bd376c75",
-      "qmSha256": "d08debcfa6dc5f6930ec5f611020cfbfeff37ce6c7a2830b4472467c4942a9db"
+      "tsSha256": "7933839a038b4fc62dd0fb6d3a75f1390fe7da559656aa7defb9f94046dea8a3",
+      "qmSha256": "032714ac8db60bd8dc1f4bbcedbd638a5057ab5011a880f9a5286342412b4629"
     },
     {
       "tag": "fi",
       "name": "Suomi",
-      "translated": 166,
+      "translated": 230,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "23790a8752526cd86bf307f364866c448003175702aa96570e9db04a93ad6fb2",
-      "qmSha256": "4245dd6ecb851b25c4d99dd3f0142197128937e4703819dc20707845027c47e9"
+      "tsSha256": "930a82dcf2d49b9171988fd69f94970b6731bcfe5e6680458409bcaf03da8718",
+      "qmSha256": "b68e2f46cc7363ad153acc16eec9eb4fd81a10bd9854461eff895f4772bff427"
     }
   ],
   "linuxTests": {
     "passed": 4,
     "total": 4,
     "scope": "compiled localization, Norwegian Bokmål/Finnish main windows and catalog regressions",
-    "log": "/tmp/soundcurrent-eq-nb-fi-second-tests.log"
+    "log": "/tmp/soundcurrent-eq-nb-fi-third-tests.log"
   },
-  "review": "Contextual AI review; unverified. Processing refusal, recovery with settings preserved, render cancellation and effect decay versus contribution reviewed.",
+  "review": "Contextual AI review; unverified. Dimensionless Q, shelving versus pass filters, compressor makeup versus post gain, estimated meters and exit behavior reviewed.",
   "nativeReviewed": false,
   "windows": "Pending CI",
   "remaining": "Norwegian Bokmål, Finnish and 14 other target catalogs incomplete."

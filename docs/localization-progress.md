@@ -91,3 +91,5 @@ Swedish/Danish complete extracted catalogs: 441 messages each. Full Linux CTest 
 Norwegian Bokmål/Finnish initial batch: 102/441 messages each. Four focused Linux checks passed per app. Gain, headroom, clipping, amplifier measurements and audio-setup recovery reviewed contextually. Catalogs remain incomplete and unverified.
 
 Norwegian Bokmål/Finnish recovery and effects batch: 166/441 messages each. Four focused Linux checks passed per app. Processing refusal, restart recovery, update checks and delay controls reviewed contextually. Catalogs remain incomplete and unverified.
+
+Norwegian Bokmål/Finnish filter and editor batch: 230/441 messages each. Four focused Linux checks passed per app. Filter Q, compressor parameters, equipment editing and estimated meters reviewed contextually. Catalogs remain incomplete and unverified. Completed Swedish/Danish commits passed Windows CI, with exact runs recorded in their reports.
