@@ -91,3 +91,7 @@ Greek/Turkish startup/render review: sign-in differs from a boot-time service; e
 ## Greek and Turkish completed extracted catalogs
 
 All currently extracted messages populated (441 EQ / 527 Studio). Q remains dimensionless quality, headroom is level margin, compressor makeup differs from post gain, and wet mix is effect contribution. Low-volume loudness compensation differs from output volume. Relative measurements include the microphone; measured response differs from inverted correction. Rendering summaries use labels for arbitrary counts. URLs, file filters, placeholders, machine IDs and numerical settings are preserved. Catalogs remain unverified; native-speaker review is not claimed.
+
+## Swedish and Danish initial batch
+
+Regional terms reviewed separately: Swedish förstärkning/klippning and Danish forstærkning/klipning. Headroom is nivåmarginal/niveaumargin, not balance or overall volume. Meter text retains estimated levels and peak warnings. Damping refers to high-frequency absorption while decay refers to duration. Amplifier profiles retain the requirement for actual electrical measurements. Native-speaker review remains unverified; both catalogs are incomplete.

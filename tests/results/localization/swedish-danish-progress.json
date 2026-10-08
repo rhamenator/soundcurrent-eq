@@ -1,0 +1,35 @@
+{
+  "stage": "Swedish and Danish initial catalog batch",
+  "catalogs": [
+    {
+      "tag": "sv",
+      "name": "Svenska",
+      "translated": 102,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "e5f02d60ca6ccc5a428bb0cc18b2cc9c5739eaf649cb1e40537e96966010cfbe",
+      "qmSha256": "abcd5f17fdde7b677a447af4cff3795676363eaeff16f29780c1791aca2f1aad"
+    },
+    {
+      "tag": "da",
+      "name": "Dansk",
+      "translated": 102,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "97b0703f061308cd832260278b25a9eb722653a38a930cbeec20e6e454b4bd6b",
+      "qmSha256": "c345bced1b5ec98c3956e3eacf0e07bb4b12436fb5964d7adb1ac72675b3d9dd"
+    }
+  ],
+  "linuxTests": {
+    "passed": 4,
+    "total": 4,
+    "scope": "compiled localization, Swedish/Danish main windows and catalog regressions",
+    "log": "/tmp/soundcurrent-eq-sv-da-first-final-tests.log"
+  },
+  "review": "Contextual AI review, unverified. Headroom uses level margin distinct from gain; clipping, measured amplifier data and effect contributions retained. Swedish and Danish terminology reviewed separately.",
+  "nativeReviewed": false,
+  "windows": "Pending CI",
+  "remaining": "Swedish, Danish and 16 other target catalogs incomplete."
+}

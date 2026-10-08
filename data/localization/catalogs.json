@@ -152,22 +152,22 @@
   {
     "tag": "sv",
     "name": "Svenska",
-    "translated": 30,
+    "translated": 102,
     "total": 441,
     "status": "unverified",
     "nativeReviewed": false,
-    "tsSha256": "66fcc930b516965888813624c45c2b7f9a4b4114884d33e72f733af38a87c06a",
-    "qmSha256": "71bbe0cd1def32009d36b1c0bcbf1faf3575b58ecba5b2704a9013960ba56968"
+    "tsSha256": "e5f02d60ca6ccc5a428bb0cc18b2cc9c5739eaf649cb1e40537e96966010cfbe",
+    "qmSha256": "abcd5f17fdde7b677a447af4cff3795676363eaeff16f29780c1791aca2f1aad"
   },
   {
     "tag": "da",
     "name": "Dansk",
-    "translated": 30,
+    "translated": 102,
     "total": 441,
     "status": "unverified",
     "nativeReviewed": false,
-    "tsSha256": "e9a6c6d6309f75a0965cb0ecc98542e51e7503207cd5125fe1920be15c8d2b09",
-    "qmSha256": "edb3e711ccd2519ae400718767967be93d1d212bb844be3020a8ffb996a3bca3"
+    "tsSha256": "97b0703f061308cd832260278b25a9eb722653a38a930cbeec20e6e454b4bd6b",
+    "qmSha256": "c345bced1b5ec98c3956e3eacf0e07bb4b12436fb5964d7adb1ac72675b3d9dd"
   },
   {
     "tag": "nb",

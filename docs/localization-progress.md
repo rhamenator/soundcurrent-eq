@@ -73,3 +73,5 @@ Greek/Turkish microphone and measurement batch: el: 291/441, tr: 291/441. Four f
 Greek/Turkish startup and rendering batch: el: 349/441, tr: 349/441. Four focused Linux checks passed per app. Includes shared sign-in registration, restart guidance, profile reference copies, post gain and count-neutral render summaries. Both catalogs remain incomplete and unverified.
 
 Greek/Turkish complete extracted catalogs: 441 messages each. Full Linux CTest passed 62/62 including equipment workflows. Greek EQ and Turkish Studio effects inspected at 1280×720. Contextual review remains unverified, with no native-speaker claim. Windows qualification pending for these catalogs.
+
+Swedish/Danish initial batch: sv: 102/441, da: 102/441. Four focused Linux checks passed per app. Gain/headroom, clipping, amplifier measurement requirements and setup errors reviewed contextually. Catalogs remain incomplete and unverified.
