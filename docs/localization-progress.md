@@ -61,3 +61,5 @@ Ukrainian/Russian through measurement batch: uk: 291/441, ru: 291/441. Four focu
 Ukrainian/Russian startup and render batch: uk: 349/441, ru: 349/441. Four focused Linux checks passed in each app. Includes background-startup ownership, hardware setup restart guidance, bounded calibration suggestions, profile copy/reference behavior and neutral render-count labels. Both catalogs remain incomplete and unverified.
 
 Ukrainian/Russian complete extracted catalogs: 441 messages each. Full Linux CTest passed 60/60 including equipment workflows. Ukrainian EQ and Russian Studio effects inspected at 1280×720. Contextual review remains unverified, with no native-speaker claim. Windows qualification pending on these catalogs.
+
+Greek/Turkish initial batch: el: 102/441, tr: 102/441. Four focused Linux checks passed in each app. Gain, headroom, clipping, profile prompts and setup errors reviewed contextually; both catalogs remain incomplete and unverified.

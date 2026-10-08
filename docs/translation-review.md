@@ -75,3 +75,7 @@ Ukrainian/Russian startup and render review: render-channel and clipped-sample c
 ## Ukrainian and Russian completed extracted catalogs
 
 All currently extracted messages populated (441 EQ / 527 Studio). Q uses добротність/добротность; signed gain uses підсилення/усиление; tone compensation uses тонкомпенсація/тонкомпенсация. Wet mix remains effect contribution, compressor makeup differs from post gain, and measurement results retain microphone influence. Rendering counts use neutral labels. Warnings preserve restart, quiet-start and clipping behavior. Catalogs remain unverified; native-speaker review is not claimed.
+
+## Greek and Turkish initial batch
+
+Greek ενίσχυση and Turkish kazanç describe audio gain; ψαλιδισμός/kırpılma describes clipping. Headroom is περιθώριο στάθμης/seviye payı, distinct from user balance and post gain. Ambience damping refers to high-frequency absorption in feedback and decay to duration. Dynamic model names use neutral route-type constructions. Error messages retain paused processing, kept settings and restart guidance. Contextual AI review remains unverified, with no native-speaker claim.

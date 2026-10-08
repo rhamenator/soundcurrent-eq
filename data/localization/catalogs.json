@@ -132,22 +132,22 @@
   {
     "tag": "el",
     "name": "Ελληνικά",
-    "translated": 30,
+    "translated": 102,
     "total": 441,
     "status": "unverified",
     "nativeReviewed": false,
-    "tsSha256": "e59fcc36219dddfcfc2db468082ccbcc0b5121f519574effaa6300afa367f93b",
-    "qmSha256": "f8338760c1b24f0380bacfa1b801ebf41f0b23e8d9a5b2bc02114a5b434113f0"
+    "tsSha256": "a68ba34919586e1ab11e8ac08d8a89214fd9e177658672167fba5a5ccd7a59f1",
+    "qmSha256": "b9ce8891fb2fcdd6d929a0af9fa1c5bbfa975ac58431ee29e489e3ffe9cf43a2"
   },
   {
     "tag": "tr",
     "name": "Türkçe",
-    "translated": 30,
+    "translated": 102,
     "total": 441,
     "status": "unverified",
     "nativeReviewed": false,
-    "tsSha256": "d376220e0ea0ede74587efab23723474784456cade8d59af20f2d7fd3a302f63",
-    "qmSha256": "72b99301fa40ea3ddd59242b1069352943e22d2a8862be92e3f0f32120be3a4a"
+    "tsSha256": "1f31c20ebdab53ab67cd21ec71cef9447b6dd36e3fe5a5844f6d988e297843ba",
+    "qmSha256": "7b57c0d7a37e74e61d1f8e17862a3e2236970f47365109c6d43f0de18b44f29d"
   },
   {
     "tag": "sv",

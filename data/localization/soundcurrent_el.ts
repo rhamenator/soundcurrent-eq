@@ -4,259 +4,267 @@
     <name>SoundCurrent</name>
     <message>
       <source> (currently selected)</source>
-      <translation type="unfinished" />
+      <translation> (τρέχουσα επιλογή)</translation>
     </message>
     <message>
       <source> (restored selection)</source>
-      <translation type="unfinished" />
+      <translation> (επαναφερμένη επιλογή)</translation>
     </message>
     <message>
       <source> [custom]</source>
-      <translation type="unfinished" />
+      <translation> [προσαρμοσμένο]</translation>
     </message>
     <message>
       <source> · mono</source>
-      <translation type="unfinished" />
+      <translation> · μονοφωνικό</translation>
     </message>
     <message>
       <source> · no USB microphone detected</source>
-      <translation type="unfinished" />
+      <translation> · δεν εντοπίστηκε μικρόφωνο USB</translation>
     </message>
     <message>
       <source> · stereo</source>
-      <translation type="unfinished" />
+      <translation> · στερεοφωνικό</translation>
     </message>
     <message>
       <source>%1
 
 Technical details:
 %2</source>
-      <translation type="unfinished" />
+      <translation>%1
+
+Τεχνικές λεπτομέρειες:
+%2</translation>
     </message>
     <message>
       <source>%1
 The app remains open; your settings have been kept.</source>
-      <translation type="unfinished" />
+      <translation>%1
+Η εφαρμογή παραμένει ανοιχτή· οι ρυθμίσεις σας διατηρήθηκαν.</translation>
     </message>
     <message>
       <source>%1 %2%3 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 %2%3 dB</translation>
     </message>
     <message>
       <source>%1 / %2
 %3
 Apply this correction to the %4 route?</source>
-      <translation type="unfinished" />
+      <translation>%1 / %2
+%3
+Να εφαρμοστεί αυτή η διόρθωση στη διαδρομή τύπου %4;</translation>
     </message>
     <message>
       <source>%1 / %2
 %3
 Import into your library?</source>
-      <translation type="unfinished" />
+      <translation>%1 / %2
+%3
+Εισαγωγή στη βιβλιοθήκη σας;</translation>
     </message>
     <message>
       <source>%1 Hz: measured %2%3 dB; suggested %4%5 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 Hz: μέτρηση %2%3 dB· πρόταση %4%5 dB</translation>
     </message>
     <message>
       <source>%1 Hz: too quiet to measure</source>
-      <translation type="unfinished" />
+      <translation>%1 Hz: πολύ χαμηλή στάθμη για μέτρηση</translation>
     </message>
     <message>
       <source>%1 disconnected. </source>
-      <translation type="unfinished" />
+      <translation>%1 αποσυνδέθηκε. </translation>
     </message>
     <message>
       <source>%1%2 dB</source>
-      <translation type="unfinished" />
+      <translation>%1%2 dB</translation>
     </message>
     <message>
       <source>Abort</source>
-      <translation type="unfinished" />
+      <translation>Διακοπή</translation>
     </message>
     <message>
       <source>Acoustic</source>
-      <translation type="unfinished" />
+      <translation>Ακουστική μουσική</translation>
     </message>
     <message>
       <source>Active / passive / unknown</source>
-      <translation type="unfinished" />
+      <translation>Ενεργό / παθητικό / άγνωστο</translation>
     </message>
     <message>
       <source>Add filter</source>
-      <translation type="unfinished" />
+      <translation>Προσθήκη φίλτρου</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
-      <translation type="unfinished" />
+      <translation>Ρυθμίστε την έξοδο από −60 έως +12 dB μετά τον ισοσταθμιστή. Η μεγαλύτερη ενίσχυση μπορεί να προκαλέσει ψαλιδισμό.</translation>
     </message>
     <message>
       <source>Adjust this tone band around the natural voice profile</source>
-      <translation type="unfinished" />
+      <translation>Ρυθμίστε αυτή τη ζώνη συχνοτήτων σε σχέση με το προφίλ φυσικής φωνής</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
-      <translation type="unfinished" />
+      <translation>Προχωρημένα χειριστήρια ηχητικών εφέ</translation>
     </message>
     <message>
       <source>Air</source>
-      <translation type="unfinished" />
+      <translation>Αέρινος ήχος</translation>
     </message>
     <message>
       <source>All brands</source>
-      <translation type="unfinished" />
+      <translation>Όλες οι μάρκες</translation>
     </message>
     <message>
       <source>All equipment</source>
-      <translation type="unfinished" />
+      <translation>Όλος ο εξοπλισμός</translation>
     </message>
     <message>
       <source>All families</source>
-      <translation type="unfinished" />
+      <translation>Όλες οι σειρές</translation>
     </message>
     <message>
       <source>All manufacturers</source>
-      <translation type="unfinished" />
+      <translation>Όλοι οι κατασκευαστές</translation>
     </message>
     <message>
       <source>All speaker types</source>
-      <translation type="unfinished" />
+      <translation>Όλοι οι τύποι ηχείων</translation>
     </message>
     <message>
       <source>All subtypes</source>
-      <translation type="unfinished" />
+      <translation>Όλοι οι υποτύποι</translation>
     </message>
     <message>
       <source>Ambience</source>
-      <translation type="unfinished" />
+      <translation>Αίσθηση χώρου</translation>
     </message>
     <message>
       <source>Ambience damping</source>
-      <translation type="unfinished" />
+      <translation>Απόσβεση υψηλών συχνοτήτων ανακλάσεων</translation>
     </message>
     <message>
       <source>Ambience decay</source>
-      <translation type="unfinished" />
+      <translation>Διάρκεια ανακλάσεων χώρου</translation>
     </message>
     <message>
       <source>Amp details</source>
-      <translation type="unfinished" />
+      <translation>Λεπτομέρειες ενισχυτή</translation>
     </message>
     <message>
       <source>Amplifier</source>
-      <translation type="unfinished" />
+      <translation>Ενισχυτής</translation>
     </message>
     <message>
       <source>Amplifier / receiver</source>
-      <translation type="unfinished" />
+      <translation>Ενισχυτής / ραδιοενισχυτής</translation>
     </message>
     <message>
       <source>Amplifier model profile</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ μοντέλου ενισχυτή</translation>
     </message>
     <message>
       <source>Amplifier profile details</source>
-      <translation type="unfinished" />
+      <translation>Λεπτομέρειες προφίλ ενισχυτή</translation>
     </message>
     <message>
       <source>Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.</source>
-      <translation type="unfinished" />
+      <translation>Τα προφίλ ενισχυτών απαιτούν ηλεκτρικές μετρήσεις με γνωστό φορτίο ηχείων, είσοδο και ρυθμίσεις τόνου. Εισαγάγετε ένα αρχείο μετρημένης διόρθωσης· δεν εξάγονται καμπύλες ενισχυτών από διαφημιστικές προδιαγραφές.</translation>
     </message>
     <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
-      <translation type="unfinished" />
+      <translation>Εγκαταστάθηκε ενημέρωση της εφαρμογής. Επιλέξτε έξοδο και ανοίξτε την ξανά για να φορτωθεί· το κλείσιμο αυτού του παραθύρου αφήνει την παλιά έκδοση σε λειτουργία.</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
-      <translation type="unfinished" />
+      <translation>Μια άλλη έξοδος SoundCurrent EQ λειτουργεί ήδη</translation>
     </message>
     <message>
       <source>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</source>
-      <translation type="unfinished" />
+      <translation>Μια άλλη εφαρμογή SoundCurrent ή διαδικασία εγκατάστασης οδηγού ήχου εκτελείται. Τερματίστε την πριν ανοίξετε αυτή την εφαρμογή.</translation>
     </message>
     <message>
       <source>Another SoundCurrent equalizer is running. Quit EQ or Studio before opening the other app.</source>
-      <translation type="unfinished" />
+      <translation>Ένας άλλος ισοσταθμιστής SoundCurrent λειτουργεί. Τερματίστε το EQ ή το Studio πριν ανοίξετε την άλλη εφαρμογή.</translation>
     </message>
     <message>
       <source>Another SoundCurrent microphone filter is running</source>
-      <translation type="unfinished" />
+      <translation>Ένα άλλο φίλτρο μικροφώνου SoundCurrent λειτουργεί</translation>
     </message>
     <message>
       <source>Another equalizer route is present: %1. Quit it before using SoundCurrent.</source>
-      <translation type="unfinished" />
+      <translation>Υπάρχει διαδρομή άλλου ισοσταθμιστή: %1. Τερματίστε τον πριν χρησιμοποιήσετε το SoundCurrent.</translation>
     </message>
     <message>
       <source>Application update</source>
-      <translation type="unfinished" />
+      <translation>Ενημέρωση εφαρμογής</translation>
     </message>
     <message>
       <source>Application updates</source>
-      <translation type="unfinished" />
+      <translation>Ενημερώσεις εφαρμογής</translation>
     </message>
     <message>
       <source>Apply</source>
-      <translation type="unfinished" />
+      <translation>Εφαρμογή</translation>
     </message>
     <message>
       <source>Apply correction?</source>
-      <translation type="unfinished" />
+      <translation>Εφαρμογή διόρθωσης;</translation>
     </message>
     <message>
       <source>Apply profile</source>
-      <translation type="unfinished" />
+      <translation>Εφαρμογή προφίλ</translation>
     </message>
     <message>
       <source>Apply suggested EQ</source>
-      <translation type="unfinished" />
+      <translation>Εφαρμογή προτεινόμενης ισοστάθμισης</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
-      <translation type="unfinished" />
+      <translation>Εγκατάσταση οδηγού ήχου</translation>
     </message>
     <message>
       <source>Audio error: %1</source>
-      <translation type="unfinished" />
+      <translation>Σφάλμα ήχου: %1</translation>
     </message>
     <message>
       <source>Audio setup</source>
-      <translation type="unfinished" />
+      <translation>Ρύθμιση ήχου</translation>
     </message>
     <message>
       <source>Audio setup could not finish</source>
-      <translation type="unfinished" />
+      <translation>Η ρύθμιση ήχου δεν ολοκληρώθηκε</translation>
     </message>
     <message>
       <source>Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.</source>
-      <translation type="unfinished" />
+      <translation>Η ρύθμιση ήχου απέτυχε. Αν μόλις εγκαταστάθηκε το VB-CABLE, επανεκκινήστε τα Windows και δοκιμάστε ξανά.</translation>
     </message>
     <message>
       <source>Audio setup is missing. Repair or reinstall SoundCurrent.</source>
-      <translation type="unfinished" />
+      <translation>Το εργαλείο ρύθμισης ήχου λείπει. Επιδιορθώστε ή επανεγκαταστήστε το SoundCurrent.</translation>
     </message>
     <message>
       <source>Audio setup is running. Processing is paused; the app remains open.</source>
-      <translation type="unfinished" />
+      <translation>Η ρύθμιση ήχου εκτελείται. Η επεξεργασία έχει παύσει· η εφαρμογή παραμένει ανοιχτή.</translation>
     </message>
     <message>
       <source>Auto headroom %1 dB</source>
-      <translation type="unfinished" />
+      <translation>Αυτόματο περιθώριο %1 dB</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
-      <translation type="unfinished" />
+      <translation>Αυτόματα (SoundCurrent Microphone)</translation>
     </message>
     <message>
       <source>Automatic (follow connected devices)</source>
-      <translation type="unfinished" />
+      <translation>Αυτόματα (ανάλογα με τις συνδεδεμένες συσκευές)</translation>
     </message>
     <message>
       <source>Automatic (follow connected microphones)</source>
-      <translation type="unfinished" />
+      <translation>Αυτόματα (ανάλογα με τα συνδεδεμένα μικρόφωνα)</translation>
     </message>
     <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Αυτόματη διόρθωση του συνδεδεμένου μικροφώνου· πατήστε για παράκαμψη του EQ μικροφώνου</translation>
     </message>
     <message>
       <source>Balance</source>
@@ -265,15 +273,15 @@ Import into your library?</source>
     </message>
     <message>
       <source>Balance position</source>
-      <translation type="unfinished" />
+      <translation>Θέση ισορροπίας</translation>
     </message>
     <message>
       <source>Balanced</source>
-      <translation type="unfinished" />
+      <translation>Ισορροπημένο</translation>
     </message>
     <message>
       <source>Band %1 gain</source>
-      <translation type="unfinished" />
+      <translation>Ενίσχυση ζώνης %1</translation>
     </message>
     <message>
       <source>Bands</source>
@@ -282,7 +290,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.</source>
-      <translation type="unfinished" />
+      <translation>Οι ενδείξεις δίπλα στα ρυθμιστικά δείχνουν εκτιμώμενες στάθμες μετά το EQ. Το κόκκινο κείμενο κορυφών προειδοποιεί για πιθανό ψαλιδισμό.</translation>
     </message>
     <message>
       <source>Bass Boost</source>
@@ -290,27 +298,27 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bass Cut</source>
-      <translation type="unfinished" />
+      <translation>Μείωση μπάσων</translation>
     </message>
     <message>
       <source>Bass adds low-frequency weight; Clarity adds high-frequency detail; Ambience adds room reflections; Surround widens stereo; Dynamic Boost compresses and raises quieter material with a peak ceiling. Boosting can increase output level.</source>
-      <translation type="unfinished" />
+      <translation>Τα Μπάσα προσθέτουν βάρος στις χαμηλές συχνότητες· η Καθαρότητα προσθέτει λεπτομέρειες στις υψηλές· η Αίσθηση χώρου προσθέτει ανακλάσεις· ο Περιβάλλων ήχος διευρύνει το στερεοφωνικό πεδίο· η Δυναμική ενίσχυση συμπιέζει και ενισχύει το πιο ήσυχο υλικό με όριο κορυφών. Η ενίσχυση μπορεί να αυξήσει τη στάθμη εξόδου.</translation>
     </message>
     <message>
       <source>Bass frequency</source>
-      <translation type="unfinished" />
+      <translation>Συχνότητα μπάσων</translation>
     </message>
     <message>
       <source>Boxiness</source>
-      <translation type="unfinished" />
+      <translation>Χροιά κουτιού</translation>
     </message>
     <message>
       <source>Brand</source>
-      <translation type="unfinished" />
+      <translation>Μάρκα</translation>
     </message>
     <message>
       <source>Brand, family and model are required (maximum 120 characters each).</source>
-      <translation type="unfinished" />
+      <translation>Η μάρκα, η σειρά και το μοντέλο είναι υποχρεωτικά (έως 120 χαρακτήρες το καθένα).</translation>
     </message>
     <message>
       <source>Bright</source>
