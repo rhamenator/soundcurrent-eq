@@ -4,259 +4,267 @@
     <name>SoundCurrent</name>
     <message>
       <source> (currently selected)</source>
-      <translation type="unfinished" />
+      <translation> (obecnie wybrane)</translation>
     </message>
     <message>
       <source> (restored selection)</source>
-      <translation type="unfinished" />
+      <translation> (przywrócony wybór)</translation>
     </message>
     <message>
       <source> [custom]</source>
-      <translation type="unfinished" />
+      <translation> [niestandardowe]</translation>
     </message>
     <message>
       <source> · mono</source>
-      <translation type="unfinished" />
+      <translation> · mono</translation>
     </message>
     <message>
       <source> · no USB microphone detected</source>
-      <translation type="unfinished" />
+      <translation> · nie wykryto mikrofonu USB</translation>
     </message>
     <message>
       <source> · stereo</source>
-      <translation type="unfinished" />
+      <translation> · stereo</translation>
     </message>
     <message>
       <source>%1
 
 Technical details:
 %2</source>
-      <translation type="unfinished" />
+      <translation>%1
+
+Szczegóły techniczne:
+%2</translation>
     </message>
     <message>
       <source>%1
 The app remains open; your settings have been kept.</source>
-      <translation type="unfinished" />
+      <translation>%1
+Aplikacja pozostaje otwarta; ustawienia zostały zachowane.</translation>
     </message>
     <message>
       <source>%1 %2%3 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 %2%3 dB</translation>
     </message>
     <message>
       <source>%1 / %2
 %3
 Apply this correction to the %4 route?</source>
-      <translation type="unfinished" />
+      <translation>%1 / %2
+%3
+Zastosować tę korekcję do toru typu %4?</translation>
     </message>
     <message>
       <source>%1 / %2
 %3
 Import into your library?</source>
-      <translation type="unfinished" />
+      <translation>%1 / %2
+%3
+Zaimportować do biblioteki?</translation>
     </message>
     <message>
       <source>%1 Hz: measured %2%3 dB; suggested %4%5 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 Hz: pomiar %2%3 dB; zalecenie %4%5 dB</translation>
     </message>
     <message>
       <source>%1 Hz: too quiet to measure</source>
-      <translation type="unfinished" />
+      <translation>%1 Hz: poziom zbyt niski do pomiaru</translation>
     </message>
     <message>
       <source>%1 disconnected. </source>
-      <translation type="unfinished" />
+      <translation>Odłączono %1. </translation>
     </message>
     <message>
       <source>%1%2 dB</source>
-      <translation type="unfinished" />
+      <translation>%1%2 dB</translation>
     </message>
     <message>
       <source>Abort</source>
-      <translation type="unfinished" />
+      <translation>Przerwij</translation>
     </message>
     <message>
       <source>Acoustic</source>
-      <translation type="unfinished" />
+      <translation>Akustyczny</translation>
     </message>
     <message>
       <source>Active / passive / unknown</source>
-      <translation type="unfinished" />
+      <translation>Aktywny / pasywny / nieznany</translation>
     </message>
     <message>
       <source>Add filter</source>
-      <translation type="unfinished" />
+      <translation>Dodaj filtr</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
-      <translation type="unfinished" />
+      <translation>Ustaw poziom wyjściowy po korektorze od -60 do +12 dB. Większe wzmocnienie może powodować przesterowanie.</translation>
     </message>
     <message>
       <source>Adjust this tone band around the natural voice profile</source>
-      <translation type="unfinished" />
+      <translation>Dostosuj to pasmo tonalne względem naturalnego profilu głosu</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
-      <translation type="unfinished" />
+      <translation>Zaawansowane ustawienia efektów</translation>
     </message>
     <message>
       <source>Air</source>
-      <translation type="unfinished" />
+      <translation>Powietrze</translation>
     </message>
     <message>
       <source>All brands</source>
-      <translation type="unfinished" />
+      <translation>Wszystkie marki</translation>
     </message>
     <message>
       <source>All equipment</source>
-      <translation type="unfinished" />
+      <translation>Cały sprzęt</translation>
     </message>
     <message>
       <source>All families</source>
-      <translation type="unfinished" />
+      <translation>Wszystkie serie</translation>
     </message>
     <message>
       <source>All manufacturers</source>
-      <translation type="unfinished" />
+      <translation>Wszyscy producenci</translation>
     </message>
     <message>
       <source>All speaker types</source>
-      <translation type="unfinished" />
+      <translation>Wszystkie typy głośników</translation>
     </message>
     <message>
       <source>All subtypes</source>
-      <translation type="unfinished" />
+      <translation>Wszystkie podtypy</translation>
     </message>
     <message>
       <source>Ambience</source>
-      <translation type="unfinished" />
+      <translation>Przestrzeń</translation>
     </message>
     <message>
       <source>Ambience damping</source>
-      <translation type="unfinished" />
+      <translation>Tłumienie przestrzeni</translation>
     </message>
     <message>
       <source>Ambience decay</source>
-      <translation type="unfinished" />
+      <translation>Czas zanikania przestrzeni</translation>
     </message>
     <message>
       <source>Amp details</source>
-      <translation type="unfinished" />
+      <translation>Szczegóły wzmacniacza</translation>
     </message>
     <message>
       <source>Amplifier</source>
-      <translation type="unfinished" />
+      <translation>Wzmacniacz</translation>
     </message>
     <message>
       <source>Amplifier / receiver</source>
-      <translation type="unfinished" />
+      <translation>Wzmacniacz / amplituner</translation>
     </message>
     <message>
       <source>Amplifier model profile</source>
-      <translation type="unfinished" />
+      <translation>Profil modelu wzmacniacza</translation>
     </message>
     <message>
       <source>Amplifier profile details</source>
-      <translation type="unfinished" />
+      <translation>Szczegóły profilu wzmacniacza</translation>
     </message>
     <message>
       <source>Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.</source>
-      <translation type="unfinished" />
+      <translation>Profile wzmacniaczy wymagają pomiarów elektrycznych przy znanym obciążeniu głośnikowym, wejściu i ustawieniach barwy. Zaimportuj plik zmierzonej korekcji; krzywe wzmacniacza nie są wyznaczane na podstawie specyfikacji marketingowych.</translation>
     </message>
     <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
-      <translation type="unfinished" />
+      <translation>Zainstalowano aktualizację aplikacji. Wybierz Zakończ i otwórz aplikację ponownie, aby ją wczytać; zamknięcie tego okna pozostawia starą wersję uruchomioną.</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
-      <translation type="unfinished" />
+      <translation>Inne urządzenie wyjściowe SoundCurrent EQ już działa</translation>
     </message>
     <message>
       <source>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</source>
-      <translation type="unfinished" />
+      <translation>Działa inna aplikacja SoundCurrent lub konfigurator sterownika audio. Zamknij go przed otwarciem tej aplikacji.</translation>
     </message>
     <message>
       <source>Another SoundCurrent equalizer is running. Quit EQ or Studio before opening the other app.</source>
-      <translation type="unfinished" />
+      <translation>Działa inny korektor SoundCurrent. Zakończ EQ lub Studio przed otwarciem drugiej aplikacji.</translation>
     </message>
     <message>
       <source>Another SoundCurrent microphone filter is running</source>
-      <translation type="unfinished" />
+      <translation>Działa inny filtr mikrofonu SoundCurrent</translation>
     </message>
     <message>
       <source>Another equalizer route is present: %1. Quit it before using SoundCurrent.</source>
-      <translation type="unfinished" />
+      <translation>Istnieje inny tor korektora: %1. Zakończ jego działanie przed użyciem SoundCurrent.</translation>
     </message>
     <message>
       <source>Application update</source>
-      <translation type="unfinished" />
+      <translation>Aktualizacja aplikacji</translation>
     </message>
     <message>
       <source>Application updates</source>
-      <translation type="unfinished" />
+      <translation>Aktualizacje aplikacji</translation>
     </message>
     <message>
       <source>Apply</source>
-      <translation type="unfinished" />
+      <translation>Zastosuj</translation>
     </message>
     <message>
       <source>Apply correction?</source>
-      <translation type="unfinished" />
+      <translation>Zastosować korekcję?</translation>
     </message>
     <message>
       <source>Apply profile</source>
-      <translation type="unfinished" />
+      <translation>Zastosuj profil</translation>
     </message>
     <message>
       <source>Apply suggested EQ</source>
-      <translation type="unfinished" />
+      <translation>Zastosuj zalecaną korekcję</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
-      <translation type="unfinished" />
+      <translation>Konfiguracja sterownika audio</translation>
     </message>
     <message>
       <source>Audio error: %1</source>
-      <translation type="unfinished" />
+      <translation>Błąd audio: %1</translation>
     </message>
     <message>
       <source>Audio setup</source>
-      <translation type="unfinished" />
+      <translation>Konfiguracja audio</translation>
     </message>
     <message>
       <source>Audio setup could not finish</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się zakończyć konfiguracji audio</translation>
     </message>
     <message>
       <source>Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.</source>
-      <translation type="unfinished" />
+      <translation>Konfiguracja audio nie powiodła się. Jeśli właśnie zainstalowano VB-CABLE, uruchom ponownie Windows i spróbuj jeszcze raz.</translation>
     </message>
     <message>
       <source>Audio setup is missing. Repair or reinstall SoundCurrent.</source>
-      <translation type="unfinished" />
+      <translation>Brakuje programu konfiguracji audio. Napraw lub zainstaluj ponownie SoundCurrent.</translation>
     </message>
     <message>
       <source>Audio setup is running. Processing is paused; the app remains open.</source>
-      <translation type="unfinished" />
+      <translation>Trwa konfiguracja audio. Przetwarzanie jest wstrzymane; aplikacja pozostaje otwarta.</translation>
     </message>
     <message>
       <source>Auto headroom %1 dB</source>
-      <translation type="unfinished" />
+      <translation>Automatyczny zapas %1 dB</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
-      <translation type="unfinished" />
+      <translation>Automatycznie (SoundCurrent Microphone)</translation>
     </message>
     <message>
       <source>Automatic (follow connected devices)</source>
-      <translation type="unfinished" />
+      <translation>Automatycznie (śledź podłączone urządzenia)</translation>
     </message>
     <message>
       <source>Automatic (follow connected microphones)</source>
-      <translation type="unfinished" />
+      <translation>Automatycznie (śledź podłączone mikrofony)</translation>
     </message>
     <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Automatycznie kształtuj brzmienie podłączonego mikrofonu; kliknij, aby pominąć korekcję mikrofonu</translation>
     </message>
     <message>
       <source>Balance</source>
@@ -265,15 +273,15 @@ Import into your library?</source>
     </message>
     <message>
       <source>Balance position</source>
-      <translation type="unfinished" />
+      <translation>Pozycja balansu</translation>
     </message>
     <message>
       <source>Balanced</source>
-      <translation type="unfinished" />
+      <translation>Zrównoważony</translation>
     </message>
     <message>
       <source>Band %1 gain</source>
-      <translation type="unfinished" />
+      <translation>Wzmocnienie pasma %1</translation>
     </message>
     <message>
       <source>Bands</source>
@@ -282,119 +290,119 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.</source>
-      <translation type="unfinished" />
+      <translation>Słupki obok suwaków pokazują szacowane poziomy po korekcji. Czerwone wartości szczytowe ostrzegają przed możliwym przesterowaniem.</translation>
     </message>
     <message>
       <source>Bass Boost</source>
-      <translation>Wzmocnienie basów</translation>
+      <translation>Podbicie basu</translation>
     </message>
     <message>
       <source>Bass Cut</source>
-      <translation type="unfinished" />
+      <translation>Tłumienie basu</translation>
     </message>
     <message>
       <source>Bass adds low-frequency weight; Clarity adds high-frequency detail; Ambience adds room reflections; Surround widens stereo; Dynamic Boost compresses and raises quieter material with a peak ceiling. Boosting can increase output level.</source>
-      <translation type="unfinished" />
+      <translation>Bas dodaje ciężaru niskim częstotliwościom; Klarowność dodaje szczegółów wysokim częstotliwościom; Przestrzeń dodaje odbicia pomieszczenia; Surround poszerza obraz stereo; Wzmocnienie dynamiczne kompresuje i podnosi cichszy materiał z ograniczeniem poziomu szczytowego. Podbicie może zwiększyć poziom wyjściowy.</translation>
     </message>
     <message>
       <source>Bass frequency</source>
-      <translation type="unfinished" />
+      <translation>Częstotliwość basu</translation>
     </message>
     <message>
       <source>Boxiness</source>
-      <translation type="unfinished" />
+      <translation>Pudełkowe brzmienie</translation>
     </message>
     <message>
       <source>Brand</source>
-      <translation type="unfinished" />
+      <translation>Marka</translation>
     </message>
     <message>
       <source>Brand, family and model are required (maximum 120 characters each).</source>
-      <translation type="unfinished" />
+      <translation>Marka, seria i model są wymagane (maksymalnie po 120 znaków).</translation>
     </message>
     <message>
       <source>Bright</source>
-      <translation type="unfinished" />
+      <translation>Jasne brzmienie</translation>
     </message>
     <message>
       <source>Browse all equipment profiles / editor</source>
-      <translation type="unfinished" />
+      <translation>Przeglądaj wszystkie profile sprzętu / edytor</translation>
     </message>
     <message>
       <source>Calibration test signal</source>
-      <translation type="unfinished" />
+      <translation>Sygnał testowy kalibracji</translation>
     </message>
     <message>
       <source>Calibration tone level</source>
-      <translation type="unfinished" />
+      <translation>Poziom tonu kalibracji</translation>
     </message>
     <message>
       <source>Cancel</source>
-      <translation type="unfinished" />
+      <translation>Anuluj</translation>
     </message>
     <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Nie można uzyskać współdzielonej blokady sesji SoundCurrent.</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
-      <translation type="unfinished" />
+      <translation>Nie można utworzyć folderu profili wzmacniacza.</translation>
     </message>
     <message>
       <source>Cannot create profile folder.</source>
-      <translation type="unfinished" />
+      <translation>Nie można utworzyć folderu profili.</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Nie można utworzyć współdzielonej blokady sesji SoundCurrent.</translation>
     </message>
     <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Nie można zakończyć sprawdzania działających korektorów; SoundCurrent nie włączy przetwarzania.</translation>
     </message>
     <message>
       <source>Cannot finish saving amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Nie można zakończyć zapisywania profilu wzmacniacza.</translation>
     </message>
     <message>
       <source>Cannot finish saving profile library.</source>
-      <translation type="unfinished" />
+      <translation>Nie można zakończyć zapisywania biblioteki profili.</translation>
     </message>
     <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Nie można sprawdzić działających korektorów; SoundCurrent nie włączy przetwarzania.</translation>
     </message>
     <message>
       <source>Cannot read profile library.</source>
-      <translation type="unfinished" />
+      <translation>Nie można odczytać biblioteki profili.</translation>
     </message>
     <message>
       <source>Cannot read profile or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Nie można odczytać profilu lub plik przekracza 1 MiB.</translation>
     </message>
     <message>
       <source>Cannot read response or file exceeds 1 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Nie można odczytać odpowiedzi lub plik przekracza 1 MiB.</translation>
     </message>
     <message>
       <source>Cannot save amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Nie można zapisać profilu wzmacniacza.</translation>
     </message>
     <message>
       <source>Cannot save profile library.</source>
-      <translation type="unfinished" />
+      <translation>Nie można zapisać biblioteki profili.</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
-      <translation type="unfinished" />
+      <translation>Nie można zapisać profilu.</translation>
     </message>
     <message>
       <source>Cannot start measurement: %1</source>
-      <translation type="unfinished" />
+      <translation>Nie można rozpocząć pomiaru: %1</translation>
     </message>
     <message>
       <source>Center</source>
-      <translation type="unfinished" />
+      <translation>Środek</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -402,215 +410,215 @@ Import into your library?</source>
     </message>
     <message>
       <source>Checking for published updates…</source>
-      <translation type="unfinished" />
+      <translation>Sprawdzanie opublikowanych aktualizacji…</translation>
     </message>
     <message>
       <source>Checks published releases and downloaded installers. No update is installed automatically.</source>
-      <translation type="unfinished" />
+      <translation>Sprawdza opublikowane wersje i pobrane instalatory. Żadna aktualizacja nie jest instalowana automatycznie.</translation>
     </message>
     <message>
       <source>Choose a name that is not a built-in preset.</source>
-      <translation type="unfinished" />
+      <translation>Wybierz nazwę inną niż nazwa wbudowanego ustawienia.</translation>
     </message>
     <message>
       <source>Choose update folder…</source>
-      <translation type="unfinished" />
+      <translation>Wybierz folder aktualizacji…</translation>
     </message>
     <message>
       <source>Clarity</source>
-      <translation type="unfinished" />
+      <translation>Klarowność</translation>
     </message>
     <message>
       <source>Clarity frequency</source>
-      <translation type="unfinished" />
+      <translation>Częstotliwość klarowności</translation>
     </message>
     <message>
       <source>Classical</source>
-      <translation type="unfinished" />
+      <translation>Klasyczna</translation>
     </message>
     <message>
       <source>Clear Voice</source>
-      <translation type="unfinished" />
+      <translation>Wyraźny głos</translation>
     </message>
     <message>
       <source>Clear imported equipment corrections</source>
-      <translation type="unfinished" />
+      <translation>Usuń zaimportowane korekcje sprzętu</translation>
     </message>
     <message>
       <source>Click to turn the equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Kliknij, aby włączyć lub wyłączyć korektor</translation>
     </message>
     <message>
       <source>Clipping risk · estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Ryzyko przesterowania · szacowany szczyt %1 dBFS</translation>
     </message>
     <message>
       <source>Close</source>
-      <translation type="unfinished" />
+      <translation>Zamknij</translation>
     </message>
     <message>
       <source>Conditions</source>
-      <translation type="unfinished" />
+      <translation>Warunki</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
-      <translation type="unfinished" />
+      <translation>Podłącz wyjście i mikrofon przed pomiarem.</translation>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Profil korekcji (*.json)</translation>
     </message>
     <message>
       <source>Could not create a private test folder</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się utworzyć prywatnego folderu testowego</translation>
     </message>
     <message>
       <source>Could not create microphone configuration folder</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się utworzyć folderu konfiguracji mikrofonu</translation>
     </message>
     <message>
       <source>Could not create preset folder.</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się utworzyć folderu ustawień.</translation>
     </message>
     <message>
       <source>Could not create quiet frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się utworzyć cichego przemiatania częstotliwości</translation>
     </message>
     <message>
       <source>Could not create temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się utworzyć tymczasowej konfiguracji audio</translation>
     </message>
     <message>
       <source>Could not create test tone</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się utworzyć tonu testowego</translation>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się zakończyć zapisywania ustawienia.</translation>
     </message>
     <message>
       <source>Could not open test waveform</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się otworzyć przebiegu testowego</translation>
     </message>
     <message>
       <source>Could not play quiet test audio</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się odtworzyć cichego dźwięku testowego</translation>
     </message>
     <message>
       <source>Could not play test audio through the selected output</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się odtworzyć dźwięku testowego przez wybrane wyjście</translation>
     </message>
     <message>
       <source>Could not read output volume</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się odczytać głośności wyjściowej</translation>
     </message>
     <message>
       <source>Could not run %1</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się uruchomić %1</translation>
     </message>
     <message>
       <source>Could not save preset.</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się zapisać ustawienia.</translation>
     </message>
     <message>
       <source>Could not start PipeWire filter</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się uruchomić filtra PipeWire</translation>
     </message>
     <message>
       <source>Could not start audio setup: %1. The app remains open.</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się uruchomić konfiguracji audio: %1. Aplikacja pozostaje otwarta.</translation>
     </message>
     <message>
       <source>Could not start microphone capture</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się rozpocząć przechwytywania z mikrofonu</translation>
     </message>
     <message>
       <source>Could not start microphone filter</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się uruchomić filtra mikrofonu</translation>
     </message>
     <message>
       <source>Could not start output volume safety guard</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się uruchomić zabezpieczenia głośności wyjściowej</translation>
     </message>
     <message>
       <source>Could not start the measurement.</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się rozpocząć pomiaru.</translation>
     </message>
     <message>
       <source>Could not write frequency sweep</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się zapisać przemiatania częstotliwości</translation>
     </message>
     <message>
       <source>Could not write microphone configuration</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się zapisać konfiguracji mikrofonu</translation>
     </message>
     <message>
       <source>Could not write temporary audio configuration</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się zapisać tymczasowej konfiguracji audio</translation>
     </message>
     <message>
       <source>Could not write test tone</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się zapisać tonu testowego</translation>
     </message>
     <message>
       <source>Create profile</source>
-      <translation type="unfinished" />
+      <translation>Utwórz profil</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
-      <translation type="unfinished" />
+      <translation>Zachowano bieżącą korekcję.</translation>
     </message>
     <message>
       <source>Custom</source>
-      <translation>Własny</translation>
+      <translation>Niestandardowe</translation>
     </message>
     <message>
       <source>Dance</source>
-      <translation type="unfinished" />
+      <translation>Taneczna</translation>
     </message>
     <message>
       <source>Deep Bass</source>
-      <translation type="unfinished" />
+      <translation>Głęboki bas</translation>
     </message>
     <message>
       <source>Discard</source>
-      <translation type="unfinished" />
+      <translation>Odrzuć</translation>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
-      <translation type="unfinished" />
+      <translation>Przeciągnij punkty krzywej lub dostosuj wybrane pasmo poniżej.</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
-      <translation type="unfinished" />
+      <translation>Wzmocnienie dynamiczne</translation>
     </message>
     <message>
       <source>Dynamics attack</source>
-      <translation type="unfinished" />
+      <translation>Czas ataku kompresora</translation>
     </message>
     <message>
       <source>Dynamics ceiling</source>
-      <translation type="unfinished" />
+      <translation>Limit szczytowy kompresora</translation>
     </message>
     <message>
       <source>Dynamics makeup</source>
-      <translation type="unfinished" />
+      <translation>Wzmocnienie kompensacyjne kompresora</translation>
     </message>
     <message>
       <source>Dynamics ratio</source>
-      <translation type="unfinished" />
+      <translation>Stopień kompresji</translation>
     </message>
     <message>
       <source>Dynamics release</source>
-      <translation type="unfinished" />
+      <translation>Czas powrotu kompresora</translation>
     </message>
     <message>
       <source>Dynamics threshold</source>
-      <translation type="unfinished" />
+      <translation>Próg kompresora</translation>
     </message>
     <message>
       <source>Edit / save copy</source>
-      <translation type="unfinished" />
+      <translation>Edytuj / zapisz kopię</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -618,7 +626,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Electronic</source>
-      <translation type="unfinished" />
+      <translation>Elektroniczna</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -627,177 +635,177 @@ Import into your library?</source>
     </message>
     <message>
       <source>Equalizer and configuration pages</source>
-      <translation type="unfinished" />
+      <translation>Strony korektora i konfiguracji</translation>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>
-      <translation type="unfinished" />
+      <translation>Krzywa korektora. Wybierz punkt lub przeciągnij go, aby dostosować częstotliwość i wzmocnienie.</translation>
     </message>
     <message>
       <source>Equalizer is off. Windows selected the physical output directly.</source>
-      <translation type="unfinished" />
+      <translation>Korektor jest wyłączony. Windows wybrał bezpośrednio wyjście fizyczne.</translation>
     </message>
     <message>
       <source>Equalizer is off. Your audio uses its normal output.</source>
-      <translation type="unfinished" />
+      <translation>Korektor jest wyłączony. Dźwięk korzysta z normalnego wyjścia.</translation>
     </message>
     <message>
       <source>Equalizer is still running. Use the tray icon to reopen or quit.</source>
-      <translation type="unfinished" />
+      <translation>Korektor nadal działa. Użyj ikony w zasobniku systemowym, aby otworzyć go ponownie lub zakończyć.</translation>
     </message>
     <message>
       <source>Equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Korektor wyłączony</translation>
     </message>
     <message>
       <source>Equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Korektor włączony</translation>
     </message>
     <message>
       <source>Equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Włącz lub wyłącz korektor</translation>
     </message>
     <message>
       <source>Equalizer sink disappeared</source>
-      <translation type="unfinished" />
+      <translation>Urządzenie wyjściowe korektora zniknęło</translation>
     </message>
     <message>
       <source>Equipment brand</source>
-      <translation type="unfinished" />
+      <translation>Marka sprzętu</translation>
     </message>
     <message>
       <source>Equipment family</source>
-      <translation type="unfinished" />
+      <translation>Seria sprzętu</translation>
     </message>
     <message>
       <source>Equipment kind must be speaker, microphone or amplifier.</source>
-      <translation type="unfinished" />
+      <translation>Typ sprzętu musi być głośnikiem, mikrofonem lub wzmacniaczem.</translation>
     </message>
     <message>
       <source>Equipment profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Profil sprzętu (*.json)</translation>
     </message>
     <message>
       <source>Equipment profile editor</source>
-      <translation type="unfinished" />
+      <translation>Edytor profili sprzętu</translation>
     </message>
     <message>
       <source>Equipment profiles (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Profile sprzętu (*.json)</translation>
     </message>
     <message>
       <source>Equipment profiles by brand family and model</source>
-      <translation type="unfinished" />
+      <translation>Profile sprzętu według marki, serii i modelu</translation>
     </message>
     <message>
       <source>Equipment profiles — brand / family / model</source>
-      <translation type="unfinished" />
+      <translation>Profile sprzętu — marka / seria / model</translation>
     </message>
     <message>
       <source>Equipment resource missing.</source>
-      <translation type="unfinished" />
+      <translation>Brakuje zasobu sprzętu.</translation>
     </message>
     <message>
       <source>Equipment subtype</source>
-      <translation type="unfinished" />
+      <translation>Podtyp sprzętu</translation>
     </message>
     <message>
       <source>Equipment type</source>
-      <translation type="unfinished" />
+      <translation>Typ sprzętu</translation>
     </message>
     <message>
       <source>Estimated output level near band %1</source>
-      <translation type="unfinished" />
+      <translation>Szacowany poziom wyjściowy w pobliżu pasma %1</translation>
     </message>
     <message>
       <source>Estimated output near %1: %2 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Szacowane wyjście w pobliżu %1: %2 dBFS</translation>
     </message>
     <message>
       <source>Estimated output peak and clipping risk</source>
-      <translation type="unfinished" />
+      <translation>Szacowany szczyt wyjściowy i ryzyko przesterowania</translation>
     </message>
     <message>
       <source>Estimated overall output level</source>
-      <translation type="unfinished" />
+      <translation>Szacowany ogólny poziom wyjściowy</translation>
     </message>
     <message>
       <source>Estimated overall output peak: %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Szacowany ogólny szczyt wyjściowy: %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Szacowany szczyt %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak: EQ off</source>
-      <translation type="unfinished" />
+      <translation>Szacowany szczyt: korektor wyłączony</translation>
     </message>
     <message>
       <source>Estimated peak: waiting for audio</source>
-      <translation type="unfinished" />
+      <translation>Szacowany szczyt: oczekiwanie na dźwięk</translation>
     </message>
     <message>
       <source>Estimated post-EQ level near this frequency</source>
-      <translation type="unfinished" />
+      <translation>Szacowany poziom po korekcji w pobliżu tej częstotliwości</translation>
     </message>
     <message>
       <source>Estimated post-EQ output peak, including post gain and balance</source>
-      <translation type="unfinished" />
+      <translation>Szacowany szczyt wyjściowy po korekcji, z uwzględnieniem wzmocnienia końcowego i balansu</translation>
     </message>
     <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
-      <translation type="unfinished" />
+      <translation>Zakończ SoundCurrent EQ i przywróć normalny dźwięk</translation>
     </message>
     <message>
       <source>Expanded test language</source>
-      <translation type="unfinished" />
+      <translation>Język testowy z wydłużonym tekstem</translation>
     </message>
     <message>
       <source>Expected a JSON equipment profile. Import response text using the response import button.</source>
-      <translation type="unfinished" />
+      <translation>Oczekiwano profilu sprzętu JSON. Zaimportuj tekst odpowiedzi przyciskiem importowania odpowiedzi.</translation>
     </message>
     <message>
       <source>Expected frequency Hz and relative measured response dB on every data line.</source>
-      <translation type="unfinished" />
+      <translation>W każdym wierszu danych oczekiwano częstotliwości w Hz i względnej zmierzonej odpowiedzi w dB.</translation>
     </message>
     <message>
       <source>Export</source>
-      <translation type="unfinished" />
+      <translation>Eksportuj</translation>
     </message>
     <message>
       <source>Export JSON</source>
-      <translation type="unfinished" />
+      <translation>Eksportuj JSON</translation>
     </message>
     <message>
       <source>Export profile</source>
-      <translation type="unfinished" />
+      <translation>Eksportuj profil</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
-      <translation type="unfinished" />
+      <translation>Kroki w grach FPS</translation>
     </message>
     <message>
       <source>Family</source>
-      <translation type="unfinished" />
+      <translation>Seria</translation>
     </message>
     <message>
       <source>Filter Q</source>
-      <translation type="unfinished" />
+      <translation>Dobroć filtra Q</translation>
       <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
     </message>
     <message>
       <source>Filter values must be numbers.</source>
-      <translation type="unfinished" />
+      <translation>Wartości filtrów muszą być liczbami.</translation>
     </message>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
-      <translation type="unfinished" />
+      <translation>Filtry przekraczają limity częstotliwości, wzmocnienia lub Q.</translation>
     </message>
     <message>
       <source>Flat</source>
       <extracomment>Preset with zero equalizer gain at every frequency. Not an apartment; does not imply muted audio.</extracomment>
-      <translation>Płaski</translation>
+      <translation>Płaska charakterystyka</translation>
     </message>
     <message>
       <source>Frequency</source>
@@ -805,11 +813,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Frequency Hz</source>
-      <translation type="unfinished" />
+      <translation>Częstotliwość Hz</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
-      <translation type="unfinished" />
+      <translation>Efekty dla przednich kanałów L/P (obsługa mono); pozostałe kanały zachowują własne efekty Studio. Wartość zero pomija każdy efekt.</translation>
     </message>
     <message>
       <source>Gain</source>
@@ -818,79 +826,79 @@ Import into your library?</source>
     </message>
     <message>
       <source>Gain dB</source>
-      <translation type="unfinished" />
+      <translation>Wzmocnienie dB</translation>
     </message>
     <message>
       <source>Gaming</source>
-      <translation type="unfinished" />
+      <translation>Gry</translation>
     </message>
     <message>
       <source>Headphones</source>
-      <translation type="unfinished" />
+      <translation>Słuchawki</translation>
     </message>
     <message>
       <source>Help</source>
-      <translation type="unfinished" />
+      <translation>Pomoc</translation>
     </message>
     <message>
       <source>Hide advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Ukryj zaawansowane ustawienia</translation>
     </message>
     <message>
       <source>Hip-Hop</source>
-      <translation type="unfinished" />
+      <translation>Hip-Hop</translation>
     </message>
     <message>
       <source>Ignore</source>
-      <translation type="unfinished" />
+      <translation>Ignoruj</translation>
     </message>
     <message>
       <source>Import</source>
-      <translation type="unfinished" />
+      <translation>Importuj</translation>
     </message>
     <message>
       <source>Import JSON</source>
-      <translation type="unfinished" />
+      <translation>Importuj JSON</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
-      <translation type="unfinished" />
+      <translation>Importuj, twórz i edytuj profile sprzętu</translation>
     </message>
     <message>
       <source>Import equipment profile</source>
-      <translation type="unfinished" />
+      <translation>Importuj profil sprzętu</translation>
     </message>
     <message>
       <source>Import measured amplifier correction</source>
-      <translation type="unfinished" />
+      <translation>Importuj zmierzoną korekcję wzmacniacza</translation>
     </message>
     <message>
       <source>Import measured profile</source>
-      <translation type="unfinished" />
+      <translation>Importuj zmierzony profil</translation>
     </message>
     <message>
       <source>Import profile?</source>
-      <translation type="unfinished" />
+      <translation>Zaimportować profil?</translation>
     </message>
     <message>
       <source>Import relative measured response</source>
-      <translation type="unfinished" />
+      <translation>Importuj względną zmierzoną odpowiedź</translation>
     </message>
     <message>
       <source>Import response text</source>
-      <translation type="unfinished" />
+      <translation>Importuj tekst odpowiedzi</translation>
     </message>
     <message>
       <source>Include preview releases</source>
-      <translation type="unfinished" />
+      <translation>Uwzględniaj wersje przedpremierowe</translation>
     </message>
     <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Zainstaluj nowe pakiety na tej wersji — odinstalowanie nie jest potrzebne. Ustawienia i profile są zachowane. Zapisz pracę, wybierz Zakończ (zamknięcie okna pozostawia aplikację uruchomioną), zainstaluj aktualizację i otwórz ponownie.</translation>
     </message>
     <message>
       <source>Installed version: %1</source>
-      <translation type="unfinished" />
+      <translation>Zainstalowana wersja: %1</translation>
     </message>
     <message>
       <source>Interface language</source>
@@ -898,79 +906,79 @@ Import into your library?</source>
     </message>
     <message>
       <source>Invalid equipment subtype or power type</source>
-      <translation type="unfinished" />
+      <translation>Nieprawidłowy podtyp sprzętu lub typ zasilania</translation>
     </message>
     <message>
       <source>Invalid filter.</source>
-      <translation type="unfinished" />
+      <translation>Nieprawidłowy filtr.</translation>
     </message>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
-      <translation type="unfinished" />
+      <translation>Nieprawidłowy zmierzony profil wzmacniacza. Wymaga modelu, źródła pomiaru HTTPS, warunków oraz 1–16 filtrów PK/LS/HS w dozwolonych granicach. Zobacz format profilu w README.</translation>
     </message>
     <message>
       <source>Invalid or unordered measured response.</source>
-      <translation type="unfinished" />
+      <translation>Nieprawidłowa lub nieuporządkowana zmierzona odpowiedź.</translation>
     </message>
     <message>
       <source>Invalid or unordered response data.</source>
-      <translation type="unfinished" />
+      <translation>Nieprawidłowe lub nieuporządkowane dane odpowiedzi.</translation>
     </message>
     <message>
       <source>Invalid profile library.</source>
-      <translation type="unfinished" />
+      <translation>Nieprawidłowa biblioteka profili.</translation>
     </message>
     <message>
       <source>Invalid response from pactl</source>
-      <translation type="unfinished" />
+      <translation>Nieprawidłowa odpowiedź z pactl</translation>
     </message>
     <message>
       <source>Invalid response point.</source>
-      <translation type="unfinished" />
+      <translation>Nieprawidłowy punkt odpowiedzi.</translation>
     </message>
     <message>
       <source>Invalid speaker correction filter count</source>
-      <translation type="unfinished" />
+      <translation>Nieprawidłowa liczba filtrów korekcji głośnika</translation>
     </message>
     <message>
       <source>Invalid speaker filter type</source>
-      <translation type="unfinished" />
+      <translation>Nieprawidłowy typ filtra głośnika</translation>
     </message>
     <message>
       <source>Invalid speaker identity</source>
-      <translation type="unfinished" />
+      <translation>Nieprawidłowa identyfikacja głośnika</translation>
     </message>
     <message>
       <source>Jazz</source>
-      <translation type="unfinished" />
+      <translation>Jazz</translation>
     </message>
     <message>
       <source>Keep current EQ</source>
-      <translation type="unfinished" />
+      <translation>Zachowaj bieżącą korekcję</translation>
     </message>
     <message>
       <source>L</source>
-      <translation type="unfinished" />
+      <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
-      <translation>Język i region</translation>
+      <translation>Język i ustawienia regionalne</translation>
     </message>
     <message>
       <source>Left right balance</source>
-      <translation type="unfinished" />
+      <translation>Balans lewy-prawy</translation>
     </message>
     <message>
       <source>Level indicator refresh interval</source>
-      <translation type="unfinished" />
+      <translation>Interwał odświeżania wskaźnika poziomu</translation>
     </message>
     <message>
       <source>Level refresh</source>
-      <translation type="unfinished" />
+      <translation>Odświeżanie poziomów</translation>
     </message>
     <message>
       <source>Library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Biblioteka przekracza 16 MiB.</translation>
     </message>
     <message>
       <source>Listening preset</source>
@@ -979,72 +987,72 @@ Import into your library?</source>
     </message>
     <message>
       <source>Live</source>
-      <translation type="unfinished" />
+      <translation>Na żywo</translation>
     </message>
     <message>
       <source>Lo-Fi</source>
-      <translation type="unfinished" />
+      <translation>Lo-Fi</translation>
     </message>
     <message>
       <source>Lock EQ</source>
       <extracomment>Prevent accidental editing of EQ controls; not encryption or a security lock.</extracomment>
-      <translation>Zablokuj EQ</translation>
+      <translation>Zablokuj korektor</translation>
     </message>
     <message>
       <source>Lock equalizer settings</source>
-      <translation type="unfinished" />
+      <translation>Zablokuj ustawienia korektora</translation>
     </message>
     <message>
       <source>Loudness</source>
-      <translation type="unfinished" />
+      <translation>Kompensacja loudness</translation>
     </message>
     <message>
       <source>Manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Producent</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
-      <translation type="unfinished" />
+      <translation>Osiągnięto maksymalną liczbę 32 profili wzmacniaczy.</translation>
     </message>
     <message>
       <source>Maximum stereo width</source>
-      <translation type="unfinished" />
+      <translation>Maksymalna szerokość stereo</translation>
     </message>
     <message>
       <source>Measure</source>
-      <translation type="unfinished" />
+      <translation>Zmierz</translation>
     </message>
     <message>
       <source>Measure speaker room and microphone response</source>
-      <translation type="unfinished" />
+      <translation>Zmierz odpowiedź głośników, pomieszczenia i mikrofonu</translation>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
-      <translation type="unfinished" />
+      <translation>Zmierzona korekcja modelu jest dodawana do korekcji odsłuchu. Nadal możesz podbić bas lub dostosować dowolne pasmo. Obowiązują zachowawcze limity wzmocnienia; wpływ pomieszczenia i wzmacniacza wymaga pomiaru systemu.</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
-      <translation type="unfinished" />
+      <translation>Warunki pomiaru są wymagane.</translation>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
-      <translation type="unfinished" />
+      <translation>Dane pomiarowe były niekompletne.</translation>
     </message>
     <message>
       <source>Measurement failed. Try a higher test level or move the mic closer.</source>
-      <translation type="unfinished" />
+      <translation>Pomiar nie powiódł się. Spróbuj zwiększyć poziom testu lub przysunąć mikrofon.</translation>
     </message>
     <message>
       <source>Measurement stopped.</source>
-      <translation type="unfinished" />
+      <translation>Pomiar zatrzymany.</translation>
     </message>
     <message>
       <source>Metal</source>
-      <translation type="unfinished" />
+      <translation>Metal</translation>
     </message>
     <message>
       <source>Mic gain</source>
-      <translation type="unfinished" />
+      <translation>Wzmocnienie mikrofonu</translation>
     </message>
     <message>
       <source>Microphone</source>
@@ -1052,116 +1060,116 @@ Import into your library?</source>
     </message>
     <message>
       <source>Microphone %1 adjustment</source>
-      <translation type="unfinished" />
+      <translation>Regulacja mikrofonu: %1</translation>
     </message>
     <message>
       <source>Microphone EQ is off.</source>
-      <translation type="unfinished" />
+      <translation>Korekcja mikrofonu jest wyłączona.</translation>
     </message>
     <message>
       <source>Microphone capture stopped during playback</source>
-      <translation type="unfinished" />
+      <translation>Przechwytywanie z mikrofonu zatrzymało się podczas odtwarzania</translation>
     </message>
     <message>
       <source>Microphone capture stopped during the test</source>
-      <translation type="unfinished" />
+      <translation>Przechwytywanie z mikrofonu zatrzymało się podczas testu</translation>
     </message>
     <message>
       <source>Microphone error: %1</source>
-      <translation type="unfinished" />
+      <translation>Błąd mikrofonu: %1</translation>
     </message>
     <message>
       <source>Microphone filter did not appear</source>
-      <translation type="unfinished" />
+      <translation>Filtr mikrofonu nie pojawił się</translation>
     </message>
     <message>
       <source>Microphone filter disappeared</source>
-      <translation type="unfinished" />
+      <translation>Filtr mikrofonu zniknął</translation>
     </message>
     <message>
       <source>Microphone gain adjustment</source>
-      <translation type="unfinished" />
+      <translation>Regulacja wzmocnienia mikrofonu</translation>
     </message>
     <message>
       <source>Microphone input device</source>
-      <translation type="unfinished" />
+      <translation>Urządzenie wejściowe mikrofonu</translation>
     </message>
     <message>
       <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
-      <translation type="unfinished" />
+      <translation>Nagranie z mikrofonu jest przesterowane. Zmniejsz wzmocnienie lub podbicie mikrofonu i powtórz pomiar.</translation>
     </message>
     <message>
       <source>Microphone route</source>
-      <translation type="unfinished" />
+      <translation>Tor mikrofonu</translation>
     </message>
     <message>
       <source>Model</source>
-      <translation type="unfinished" />
+      <translation>Model</translation>
     </message>
     <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
-      <translation type="unfinished" />
+      <translation>Przesuń w stronę L lub P, aby osłabić przeciwny kanał; środek zachowuje pełny poziom obu kanałów</translation>
     </message>
     <message>
       <source>Movies</source>
-      <translation type="unfinished" />
+      <translation>Filmy</translation>
     </message>
     <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
-      <translation>Naturalny korektor mikrofonu</translation>
+      <translation>Naturalna korekcja mikrofonu</translation>
     </message>
     <message>
       <source>Natural mic EQ on · %1</source>
-      <translation type="unfinished" />
+      <translation>Naturalna korekcja mikrofonu włączona · %1</translation>
     </message>
     <message>
       <source>Natural microphone equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Włącz lub wyłącz naturalną korekcję mikrofonu</translation>
     </message>
     <message>
       <source>Night Listening</source>
-      <translation type="unfinished" />
+      <translation>Nocny odsłuch</translation>
     </message>
     <message>
       <source>No</source>
-      <translation type="unfinished" />
+      <translation>Nie</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>Nie wybrano zaimportowanej korekcji sprzętu.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>Nie wybrano zmierzonej korekcji wzmacniacza. Marketingowe specyfikacje zakresu częstotliwości nie wystarczają do wyznaczenia krzywej korekcji.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>Nie podłączono mikrofonu.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>Nie wybrano korekcji modelu. Korekcja odsłuchu działa normalnie.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>Nie znaleziono nowszej opublikowanej wersji. Sprawdzane są również pobrane instalatory.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>Brak dostępnego urządzenia wyjściowego.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>Nie podłączono urządzenia wyjściowego.</translation>
     </message>
     <message>
       <source>No to All</source>
-      <translation type="unfinished" />
+      <translation>Nie na wszystko</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>Brak — użyj własnej korekcji</translation>
     </message>
     <message>
       <source>Number and date format</source>
@@ -1169,39 +1177,39 @@ Import into your library?</source>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>Liczba pasm korektora</translation>
     </message>
     <message>
       <source>OK</source>
-      <translation type="unfinished" />
+      <translation>OK</translation>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>Włączone · Odtwarzanie przez %1</translation>
     </message>
     <message>
       <source>Open</source>
-      <translation type="unfinished" />
+      <translation>Otwórz</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>Otwórz panel sterowania VB-Audio, aby ustawić opóźnienie kabla i wewnętrzną częstotliwość próbkowania. Zmiana tych wartości podczas odtwarzania może je przerwać.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>Otwórz panel sterowania VB-CABLE</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>Otwórz pliki wersji do pobrania</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>Otwórz folder aktualizacji</translation>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>Pomarańczowy: zmierzona odpowiedź, jeśli dostarczono. Turkusowy: korekcja przy 48 kHz. Przeciągnij turkusowe punkty sterujące lub edytuj tabelę. Zapis zachowuje dane odniesienia i tworzy niestandardową kopię.</translation>
     </message>
     <message>
       <source>Output device</source>
@@ -1209,31 +1217,31 @@ Import into your library?</source>
     </message>
     <message>
       <source>Output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>Urządzenie wyjściowe nie jest już dostępne</translation>
     </message>
     <message>
       <source>Output has no volume channels</source>
-      <translation type="unfinished" />
+      <translation>Wyjście nie ma kanałów głośności</translation>
     </message>
     <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>Ogólny poziom wyjściowy</translation>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>Wstrzymaj przetwarzanie i otwórz konfigurację audio. Aplikacja pozostaje otwarta i informuje o wyniku. Uruchom ponownie Windows po zainstalowaniu sterownika.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>Znaczniki szczytów</translation>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>Fortepian</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>Odtwórz cichy dźwięk testowy i przejrzyj proponowane zmiany korekcji odtwarzania</translation>
     </message>
     <message>
       <source>Playback</source>
@@ -1241,100 +1249,100 @@ Import into your library?</source>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>Odtwarzanie cichego dźwięku testowego. Zatrzymaj, jeśli jest nieprzyjemny.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>Podłącz mikrofon, aby wybrać profil mikrofonu</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>Podcast</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>Pop</translation>
     </message>
     <message>
       <source>Post gain</source>
       <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
-      <translation>Wzmocnienie wyjściowe</translation>
+      <translation>Wzmocnienie końcowe</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>Wzmocnienie po korekcji</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>Wartość wzmocnienia końcowego w decybelach</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>Nazwa ustawienia:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>Zapobiegaj zmianom ustawień, pasm korektora, wzmocnienia końcowego i balansu</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>Profil</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>Szczegóły profilu</translation>
     </message>
     <message>
       <source>Profile exceeds the 1 MiB limit.</source>
-      <translation type="unfinished" />
+      <translation>Profil przekracza limit 1 MiB.</translation>
     </message>
     <message>
       <source>Profile library exceeds 16 MiB.</source>
-      <translation type="unfinished" />
+      <translation>Biblioteka profili przekracza 16 MiB.</translation>
     </message>
     <message>
       <source>Profile metadata is too long.</source>
-      <translation type="unfinished" />
+      <translation>Metadane profilu są zbyt długie.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>Profil musi być czytelny i mniejszy niż 64 KiB.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>
-      <translation type="unfinished" />
+      <translation>Profile wymagają 1–16 filtrów korekcji.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>Źródła opublikowanych pomiarów: &lt;a href="https://www.spinorama.org/"&gt;Pomiary głośników / korekcja&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Kalibracja Dayton według numeru seryjnego&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;Kalibracja miniDSP według numeru seryjnego&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Wykresy mikrofonów Neumann&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;Wykres odpowiedzi AT2020&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Pomiary wzmacniaczy&lt;/a&gt;</translation>
     </message>
     <message>
       <source>Published profiles need an HTTPS measurement source.</source>
-      <translation type="unfinished" />
+      <translation>Opublikowane profile wymagają źródła pomiaru HTTPS.</translation>
     </message>
     <message>
       <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <translation>Nie udało się sprawdzić opublikowanych wersji. Prywatne wersje Studio wymagają dostępu do GitHub. Użyj opcji Otwórz pliki wersji do pobrania; pobrane instalatory nadal są wykrywane lokalnie.</translation>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>Opublikowana odpowiedź i edytowalne krzywe korekcji</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>Dostępna jest opublikowana aktualizacja %1. Otwórz pliki wersji do pobrania, zainstaluj na tej wersji i otwórz ponownie.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>Mocny bas</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>Ciche przemiatanie logarytmiczne</translation>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>Zakończ SoundCurrent EQ</translation>
     </message>
     <message>
       <source>Quit app</source>
@@ -1343,11 +1351,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>P</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>R&amp;B</translation>
     </message>
     <message>
       <source>Refresh devices</source>
@@ -1357,27 +1365,29 @@ Import into your library?</source>
       <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
 
 %1</source>
-      <translation type="unfinished" />
+      <translation>Pomiary względne obejmują odpowiedź głośników, pomieszczenia i mikrofonu. Proponowane zmiany są ograniczone do 3 dB na zmierzoną częstotliwość.
+
+%1</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>Powiadamiaj o dostępnych aktualizacjach lub konieczności ponownego uruchomienia</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>Usuń wybrany filtr</translation>
     </message>
     <message>
       <source>Reset</source>
-      <translation type="unfinished" />
+      <translation>Resetuj</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>Resetuj efekty</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>Resetuj barwę mikrofonu</translation>
     </message>
     <message>
       <source>Reset to flat</source>
@@ -1386,67 +1396,67 @@ Import into your library?</source>
     </message>
     <message>
       <source>Response data (*.txt *.csv *.frd *.cal)</source>
-      <translation type="unfinished" />
+      <translation>Dane odpowiedzi (*.txt *.csv *.frd *.cal)</translation>
     </message>
     <message>
       <source>Response exceeds 4096 points.</source>
-      <translation type="unfinished" />
+      <translation>Odpowiedź przekracza 4096 punktów.</translation>
     </message>
     <message>
       <source>Response frequencies must increase, with finite bounded values.</source>
-      <translation type="unfinished" />
+      <translation>Częstotliwości odpowiedzi muszą rosnąć, a wartości muszą być skończone i mieścić się w granicach.</translation>
     </message>
     <message>
       <source>Response has no usable audio range.</source>
-      <translation type="unfinished" />
+      <translation>Odpowiedź nie ma użytecznego zakresu audio.</translation>
     </message>
     <message>
       <source>Response import</source>
-      <translation type="unfinished" />
+      <translation>Import odpowiedzi</translation>
     </message>
     <message>
       <source>Response needs 2–4096 measured points.</source>
-      <translation type="unfinished" />
+      <translation>Odpowiedź wymaga 2–4096 zmierzonych punktów.</translation>
     </message>
     <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
-      <translation type="unfinished" />
+      <translation>Uruchom ponownie Windows przed użyciem korektora lub ustawień VB-CABLE. Zmiany sterownika audio wymagają ponownego uruchomienia systemu.</translation>
     </message>
     <message>
       <source>Restore Defaults</source>
-      <translation type="unfinished" />
+      <translation>Przywróć domyślne</translation>
     </message>
     <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
-      <translation type="unfinished" />
+      <translation>Przywróć poprzednie ustawienie korektora (Ctrl+Z)</translation>
     </message>
     <message>
       <source>Retry</source>
-      <translation type="unfinished" />
+      <translation>Ponów próbę</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
-      <translation type="unfinished" />
+      <translation>Język testowy od prawej do lewej</translation>
     </message>
     <message>
       <source>Rock</source>
-      <translation type="unfinished" />
+      <translation>Rock</translation>
     </message>
     <message>
       <source>Save</source>
-      <translation type="unfinished" />
+      <translation>Zapisz</translation>
     </message>
     <message>
       <source>Save All</source>
-      <translation type="unfinished" />
+      <translation>Zapisz wszystko</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
-      <translation type="unfinished" />
+      <translation>Zapisz ustawienie korektora</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
-      <translation type="unfinished" />
+      <translation>Zapisać zmodyfikowany profil?</translation>
     </message>
     <message>
       <source>Save preset</source>
@@ -1454,35 +1464,35 @@ Import into your library?</source>
     </message>
     <message>
       <source>Save profile</source>
-      <translation type="unfinished" />
+      <translation>Zapisz profil</translation>
     </message>
     <message>
       <source>Save system response profile</source>
-      <translation type="unfinished" />
+      <translation>Zapisz profil odpowiedzi systemu</translation>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
-      <translation type="unfinished" />
+      <translation>Zapisano ustawienie „%1”.</translation>
     </message>
     <message>
       <source>Search brand, family, model or measurement conditions</source>
-      <translation type="unfinished" />
+      <translation>Szukaj marki, serii, modelu lub warunków pomiaru</translation>
     </message>
     <message>
       <source>Second virtual cable for microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Drugi kabel wirtualny do korekcji mikrofonu</translation>
     </message>
     <message>
       <source>Select band %1</source>
-      <translation type="unfinished" />
+      <translation>Wybierz pasmo %1</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
-      <translation type="unfinished" />
+      <translation>Wybierz to pasmo, aby edytować częstotliwość, wzmocnienie i Q</translation>
     </message>
     <message>
       <source>Selected audio device is unavailable</source>
-      <translation type="unfinished" />
+      <translation>Wybrane urządzenie audio jest niedostępne</translation>
     </message>
     <message>
       <source>Selected band</source>
@@ -1491,27 +1501,27 @@ Import into your library?</source>
     </message>
     <message>
       <source>Selected band filter Q</source>
-      <translation type="unfinished" />
+      <translation>Dobroć filtra Q wybranego pasma</translation>
     </message>
     <message>
       <source>Selected band frequency</source>
-      <translation type="unfinished" />
+      <translation>Częstotliwość wybranego pasma</translation>
     </message>
     <message>
       <source>Selected band gain</source>
-      <translation type="unfinished" />
+      <translation>Wzmocnienie wybranego pasma</translation>
     </message>
     <message>
       <source>Selected output device is no longer available</source>
-      <translation type="unfinished" />
+      <translation>Wybrane urządzenie wyjściowe nie jest już dostępne</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
-      <translation type="unfinished" />
+      <translation>Wybrane wyjście zostało odłączone. Przełączono na wyjście automatyczne.</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
-      <translation type="unfinished" />
+      <translation>Oddzielne ciche tony</translation>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
@@ -1519,175 +1529,175 @@ Import into your library?</source>
     </message>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
-      <translation type="unfinished" />
+      <translation>Krótsze interwały częściej aktualizują poziomy i zużywają więcej CPU; dostarczanie audio może ograniczać rzeczywistą częstotliwość</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
-      <translation type="unfinished" />
+      <translation>Pokaż opadającą linię podtrzymania szczytu dla każdego poziomu częstotliwości</translation>
     </message>
     <message>
       <source>Show advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Pokaż zaawansowane ustawienia</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>
-      <translation type="unfinished" />
+      <translation>Pokaż znaczniki szczytów na poziomach częstotliwości</translation>
     </message>
     <message>
       <source>Small Speakers</source>
-      <translation type="unfinished" />
+      <translation>Małe głośniki</translation>
     </message>
     <message>
       <source>Soft Treble</source>
-      <translation type="unfinished" />
+      <translation>Łagodne wysokie tony</translation>
     </message>
     <message>
       <source>Sound enhancements</source>
-      <translation>Ulepszenia dźwięku</translation>
+      <translation>Efekty dźwiękowe</translation>
     </message>
     <message>
       <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
-      <translation type="unfinished" />
+      <translation>SoundCurrent Audio po instalacji udostępnia własny tor mikrofonu. Z VB-CABLE jednoczesna korekcja mikrofonu i głośników wymaga osobno zainstalowanego drugiego kabla (A lub B). Wybierz ten kabel w aplikacjach nagrywających. Tryb automatyczny preferuje tor SoundCurrent, gdy jest dostępny.</translation>
     </message>
     <message>
       <source>Source</source>
-      <translation type="unfinished" />
+      <translation>Źródło</translation>
     </message>
     <message>
       <source>Speaker</source>
-      <translation type="unfinished" />
+      <translation>Głośnik</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
-      <translation type="unfinished" />
+      <translation>Kalibracja głośników &amp;&amp; pomieszczenia</translation>
     </message>
     <message>
       <source>Speaker + room check</source>
-      <translation type="unfinished" />
+      <translation>Test głośników + pomieszczenia</translation>
     </message>
     <message>
       <source>Speaker and room measurement</source>
-      <translation type="unfinished" />
+      <translation>Pomiar głośników i pomieszczenia</translation>
     </message>
     <message>
       <source>Speaker filter is outside conservative bounds</source>
-      <translation type="unfinished" />
+      <translation>Filtr głośnika przekracza zachowawcze granice</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Producent głośnika</translation>
     </message>
     <message>
       <source>Speaker model correction</source>
-      <translation type="unfinished" />
+      <translation>Korekcja modelu głośnika</translation>
     </message>
     <message>
       <source>Speaker model profile</source>
-      <translation type="unfinished" />
+      <translation>Profil modelu głośnika</translation>
     </message>
     <message>
       <source>Speaker profile details</source>
-      <translation type="unfinished" />
+      <translation>Szczegóły profilu głośnika</translation>
     </message>
     <message>
       <source>Speaker profile resource is missing</source>
-      <translation type="unfinished" />
+      <translation>Brakuje zasobu profilu głośnika</translation>
     </message>
     <message>
       <source>Speaker type</source>
-      <translation type="unfinished" />
+      <translation>Typ głośnika</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>Zacznij cicho. Zwiększ poziom tylko wtedy, gdy mikrofon nie odbiera tonów.</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
-      <translation type="unfinished" />
+      <translation>Zatrzymaj kalibrację mikrofonu przed zmianą sterownika audio.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>Zatrzymaj tony</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>Zastosowano zalecaną korekcję. Użyj opcji Zapisz ustawienie, aby ją zachować.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>Proponowane zmiany korekcji odtwarzania</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>Dźwięk przestrzenny</translation>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>Otwarto edytor profilu odpowiedzi systemu. Zapisane profile są dostępne w bibliotece sprzętu.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>Dialogi telewizyjne</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>Turkusowy: korekcja. Pomarańczowy: zmierzona odpowiedź, jeśli dostarczono. Skala pionowa pokazuje względne wartości w dB.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>Poziom testu</translation>
     </message>
     <message>
       <source>Test level is outside the allowed range</source>
-      <translation type="unfinished" />
+      <translation>Poziom testu jest poza dozwolonym zakresem</translation>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>Procesor audio zatrzymał się nieoczekiwanie.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
-      <translation type="unfinished" />
+      <translation>Biblioteka niestandardowa mieści do 256 profili.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>Odpowiedź aktualizacji była nieprawidłowa. Nie otwarto żadnego instalatora.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>Importowana jest zmierzona ODPOWIEDŹ, a nie już odwrócone wzmocnienia korektora. Potwierdź typ sprzętu. Bezwzględny poziom ciśnienia akustycznego wymaga normalizacji przed importem.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>Ten profil został zmieniony. Zapisać niestandardową kopię przed wyjściem?</translation>
     </message>
     <message>
       <source>Timed out waiting for the equalizer sink: %1</source>
-      <translation type="unfinished" />
+      <translation>Upłynął czas oczekiwania na urządzenie wyjściowe korektora: %1</translation>
     </message>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
-      <translation type="unfinished" />
+      <translation>Do mikrofonu dotarło zbyt mało dźwięku testowego. Przysuń go lub nieznacznie zwiększ poziom testu.</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>Kompletność tłumaczenia: %1 z %2 komunikatów. Brakujące tłumaczenia są wyświetlane po angielsku. Pakiety językowe są niezweryfikowane i oczekują na przegląd przez rodzimych użytkowników języka. Wybierz Zakończ i otwórz ponownie, aby zastosować zmiany.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>Szczegółowe wysokie tony</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Wyłącz korektor</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Włącz korektor</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Typ</translation>
     </message>
     <message>
       <source>Undo</source>
@@ -1696,84 +1706,84 @@ Import into your library?</source>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>Cofnij ostatnią zmianę korektora</translation>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>Odblokuj korektor</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>Odblokuj ustawienia i zakończ pomiar przed edycją profili.</translation>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation type="unfinished" />
+      <translation>Nieobsługiwany schemat profilu sprzętu (oczekiwano 2).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
-      <translation type="unfinished" />
+      <translation>Nieobsługiwany typ filtra.</translation>
     </message>
     <message>
       <source>Unsupported microphone channel layout</source>
-      <translation type="unfinished" />
+      <translation>Nieobsługiwany układ kanałów mikrofonu</translation>
     </message>
     <message>
       <source>Unsupported speaker profile schema</source>
-      <translation type="unfinished" />
+      <translation>Nieobsługiwany schemat profilu głośnika</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Pobrano aktualizację %1: %2. Zakończ aplikację, zainstaluj na istniejącej wersji i otwórz ponownie.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>Folder pobierania aktualizacji</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>Użyj cichego pomieszczenia. Mierzy łącznie głośniki, pomieszczenie i mikrofon; wyniki obejmują odpowiedź mikrofonu.</translation>
     </message>
     <message>
       <source>Use system language</source>
-      <translation>Użyj języka systemu</translation>
+      <translation>Użyj języka systemowego</translation>
     </message>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>Użyj regionu systemu</translation>
+      <translation>Użyj ustawień regionalnych systemu</translation>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>Ustawienia VB-CABLE</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>Wyeksponowany wokal</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>Oczekiwanie na mikrofon.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>Ciepłe brzmienie</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>Ciepło</translation>
     </message>
     <message>
       <source>Yes</source>
-      <translation type="unfinished" />
+      <translation>Tak</translation>
     </message>
     <message>
       <source>Yes to All</source>
-      <translation type="unfinished" />
+      <translation>Tak na wszystko</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>Zero wyłącza każdy efekt. Te efekty odsłuchu dotyczą odtwarzania przez głośniki, a nie korekcji mikrofonu.</translation>
     </message>
   </context>
 </TS>

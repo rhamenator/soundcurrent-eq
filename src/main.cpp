@@ -2264,8 +2264,9 @@ public:
         countBox_->setAccessibleName(SC_TR("Number of equalizer bands"));
         toolbar->addWidget(countBox_);
         toolbar->addSpacing(14);
-        toolbar->addWidget(new QLabel(SC_TR("Drag curve points or tune the selected band below.")));
-        toolbar->addStretch();
+        auto *curveHelp = new QLabel(SC_TR("Drag curve points or tune the selected band below."));
+        curveHelp->setWordWrap(true);
+        toolbar->addWidget(curveHelp, 1);
         headroom_ = new QLabel;
         toolbar->addWidget(headroom_);
         eqLayout->addLayout(toolbar);

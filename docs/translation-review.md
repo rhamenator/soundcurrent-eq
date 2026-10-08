@@ -10,7 +10,7 @@ Corrections address clear semantic risks and ambiguous audio terminology: Swahil
 
 ## Remaining uncertainty
 
-French, German, Spanish, Italian and both Portuguese variants and Dutch are populated; the other 25 language packs remain incomplete. All 32 lack native review. Particular review priorities are Swahili audio vocabulary, Thai preset wording, natural microphone EQ terminology in every language, and regional Portuguese and Chinese usage. An AI reread or back-translation by the same model is not independent evidence and must not be labeled native review. Do not promote catalog review status based on this pass.
+French, German, Spanish, Italian and both Portuguese variants, Dutch and Polish are populated; the other 24 language packs remain incomplete. All 32 lack native review. Particular review priorities are Swahili audio vocabulary, Thai preset wording, natural microphone EQ terminology in every language, and regional Portuguese and Chinese usage. An AI reread or back-translation by the same model is not independent evidence and must not be labeled native review. Do not promote catalog review status based on this pass.
 
 ## Required review workflow
 
@@ -47,3 +47,7 @@ Both pt-PT and pt-BR catalogs populate all currently extracted messages (437 EQ 
 ## Dutch completion checkpoint
 
 All current extracted entries are populated (437 EQ / 523 Studio). Contextual AI review uses Versterking for signed audio gain, Filter-Q for quality factor, Vlak for zero EQ gain, Loudnesscompensatie for low-volume listening compensation, Zonder effect for dry signal, Hersteltijd van compressor for release and Ongedaan maken for undo. Vendor metadata, machine IDs, file filters, placeholders and source links remain invariant. All entries remain unverified; no native-speaker review is claimed.
+
+## Polish completion checkpoint
+
+All current extracted entries are populated (437 EQ / 523 Studio). Contextual AI review uses Wzmocnienie for signed audio gain, Dobroć filtra Q for dimensionless quality factor, Płaska charakterystyka for zero EQ gain, Kompensacja loudness for low-volume listening compensation, Bez efektu for dry signal, and Czas powrotu kompresora for release. Render counts use Wyrenderowane kanały: %1 to avoid an incorrect fixed grammatical ending. Placeholder-containing route and microphone captions avoid requiring declension of inserted names. Machine IDs, file filters, links and saved parameters remain invariant. All entries remain unverified; no native-speaker review is claimed.

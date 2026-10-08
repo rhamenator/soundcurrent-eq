@@ -14,19 +14,17 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 ## Current checkpoint
 
-- French: all 437 extracted EQ messages and all 523 extracted Studio messages populated, including standard actions, help and errors. Contextual AI translation/review only; nativeReviewed remains false.
-- German: all 437 extracted EQ messages and all 523 extracted Studio messages populated. Contextual AI review covers audio terminology, safe calibration/update instructions, and standard actions; nativeReviewed remains false.
-- Portuguese (Portugal/Brazil): both catalogs populated; coverage and regional runtime checks are recorded in portuguese-progress.json.
-- Other 25 locales: 30 core entries populated each; the remaining messages must be translated and reviewed in subsequent batches.
-- Locale selection: region-only Chinese and explicit Latin-script Portuguese aliases resolve to available catalogs; formatting extensions do not block fallback; unsupported explicit scripts remain rejected.
-- Maintenance: preserve unfinished translator work/comments; reject unsupported numerus before rewriting; validate placeholders, markup/hyperlinks, glob filters, resource inventory and compiled hashes; prevent regressions in previously populated locales.
-- Qualification: run real main-window fixtures for all 32 languages plus pseudo locales; test French and German equipment import/edit/save and field limits; inspect translated tabs at small-screen size. Windows checks and package validation are tracked on the review PRs.
+- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl; 437 extracted messages each. These are unverified translations; nativeReviewed remains false.
+- Other 24 target locales remain incomplete. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
+- Coverage is distinct from contextual AI review, native-speaker verification and runtime qualification. Checkpoint reports in tests/results/localization identify tested catalogs, platforms and scopes.
+- Runtime supports separate UI language and number/date locale selection, regional/script fallback, pseudo localization and RTL. Maintenance preserves unfinished edits/comments and rejects unsupported numerus before rewriting.
+- Shared interface layout now wraps meter guidance; the curve instruction also wraps for longer translated text.
 
 ## Completion criteria
 
 Populate all current messages for every existing locale, pass structural and compiled/live UI checks on Linux/Windows, validate changed packages, and record evidence/known limitations. Full populated coverage must never be labeled native-speaker verification without an identified reviewer and catalog-specific evidence. The global --require-complete gate will remain failing until all missing entries are filled. No arbitrary English copies should be inserted merely to pass coverage.
 
-Next translation batch: Polish. French, German, Spanish and Italian are required to stay populated as sources evolve. The Filter Q caption now describes the dimensionless filter quality parameter; saved processing IDs and numeric values are unchanged.
+Next translation batch: Czech and Slovak. French, German, Spanish and Italian are required to stay populated as sources evolve. The Filter Q caption now describes the dimensionless filter quality parameter; saved processing IDs and numeric values are unchanged.
 
 Windows audio setup now translates application-owned failure, repair, calibration and restart instructions. Restart-required results always retain the translated reboot instruction alongside original helper diagnostics. The source guard also rejects unmarked literal messages passed to the setup completion helper.
 
@@ -41,3 +39,7 @@ Portuguese completed checkpoint: all 437 extracted messages populated in both re
 Dutch: all 437 extracted messages populated. Full Linux CTest passed 54/54 before the meter-help wrapping adjustment. The localized equipment import/edit/save workflow is included. Meter-help text now wraps instead of forcing a wider EQ page. Contextual review remains unverified; current Windows qualification pending.
 
 Layout follow-up: four targeted Dutch/Spanish/pseudo-locale checks passed after wrapping the meter-help label. Inspected Dutch EQ/Studio and Spanish EQ screenshots at 1280×720. The EQ page no longer needs page-wide horizontal scrolling in these samples; the frequency-band strip keeps its own scroll control. Prior Portuguese commits passed Windows CI.
+
+Polish: all 437 extracted messages populated. Full Linux CTest passed 55/55 before one final plot-caption wording correction; focused runtime/UI/equipment tests cover the final catalog separately. Contextual review distinguishes signed gain, filter Q, flat response, low-volume loudness correction and count-independent render summaries. Native-speaker verification remains unverified; current Windows qualification pending.
+
+Polish final catalog: three focused runtime/main-window/equipment checks passed. After curve-instruction wrapping, three Polish/pseudo-locale checks passed. Small-screen inspection still shows Polish EQ horizontal scrolling and partially offscreen headroom; layout qualification remains incomplete. The user also requested optional startup at sign-in for both apps; implement this alongside localization, preserving mutual exclusion and leaving it disabled by default.
