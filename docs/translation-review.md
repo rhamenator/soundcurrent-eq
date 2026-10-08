@@ -1,5 +1,11 @@
 # Translation review — 2026-10-07
 
+## Current catalog status — 2026-10-08
+
+All 524 currently extracted source messages have populated translations in all 33 non-English catalogs, including Nynorsk. There are 34 catalogs including English. This count describes catalog coverage; it does not establish that every user-facing string has been extracted. Missing interface strings remain a separate second pass, as requested.
+
+The dated checkpoints below document earlier states and contextual AI review. Their incomplete-language counts are historical, not current status. Automated structural and compiled-catalog checks do not prove linguistic accuracy. Native-speaker verification remains unverified for every non-English locale. Visual qualification and Windows install/update/uninstall qualification remain pending; no release is authorized by this checkpoint.
+
 ## Scope and evidence
 
 A contextual AI review examined the 30 starter strings in each of 32 unverified languages (960 translated entries). This is an internal review, not an independent review or native-speaker certification. No external translator service was used. Remaining untranslated strings were not certified by this review.
