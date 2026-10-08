@@ -1881,6 +1881,10 @@ Import into your library?</source>
       <translation>响应需要 2–4096 个实测点。</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>使用 VB-CABLE 前请重启 Windows。音频设置已完成，但驱动程序及其设置需要重启系统才能生效。</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>使用均衡器或 VB-CABLE 设置前请重启 Windows。音频驱动更改需要重启系统。</translation>
     </message>
@@ -2378,6 +2382,10 @@ Import into your library?</source>
       <translation>使用系统区域设置</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE 不存在。如果提示需要重启，请重启 Windows，然后重试音频设置。</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>VB-CABLE 软件包校验和不匹配。请修复安装。</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE 设置</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>无法打开 VB-CABLE 设置。如果刚安装或更新驱动程序，请重启 Windows，然后重试。</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

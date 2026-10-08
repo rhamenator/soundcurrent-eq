@@ -67,7 +67,7 @@ function QuitMessage($Clients) {
 try {
     if (@($Check,$Install,$Remove,$Settings).Where({$_}).Count -ne 1) { throw (Get-SCSetupText 'Choose one audio setup action.' -Language $Language -Application ('soundcurrent-' + $App)) }
     if ($Check) { if (NeedsReboot) { exit 3010 }; if (Present) { if (Ready) { exit 0 }; exit 11 }; exit 10 }
-    if (!$Remove -and (NeedsReboot)) { Notice 'Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.'; exit 3010 }
+    if (!$Remove -and (NeedsReboot)) { Notice (Get-SCSetupText 'Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.' -Language $Language -Application ('soundcurrent-' + $App)); exit 3010 }
     if ($Silent -and ($Install -or $Remove)) { exit 0 } # No unattended third-party changes.
     if ($Remove) {
         if (!(Present)) { exit 0 }
@@ -114,7 +114,7 @@ try {
             if (!(Ready)) { throw 'Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, use Audio driver setup to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.' }
             $process = Start-Process -FilePath $exe -WorkingDirectory $temp -PassThru
             $process.WaitForExit()
-            if ($process.ExitCode -ne 0) { throw 'VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.' }
+            if ($process.ExitCode -ne 0) { throw (Get-SCSetupText 'VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.' -Language $Language -Application ('soundcurrent-' + $App)) }
         } else {
             $guard = Join-Path $PSScriptRoot 'soundcurrent-cable-setup-guard.exe'
             if (!(Test-Path -LiteralPath $guard)) { throw (Get-SCSetupText 'The route-preserving setup helper is missing.' -Language $Language -Application ('soundcurrent-' + $App)) }
@@ -134,7 +134,7 @@ try {
                 Notice 'The incomplete VB-CABLE installation was removed. Restart Windows, run Audio driver setup again, click Install Driver, then restart once more.'
                 exit 3010
             }
-            if ($Install -and !(Present)) { throw 'VB-CABLE is not present. Restart Windows if requested, then retry audio setup.' }
+            if ($Install -and !(Present)) { throw (Get-SCSetupText 'VB-CABLE is not present. Restart Windows if requested, then retry audio setup.' -Language $Language -Application ('soundcurrent-' + $App)) }
             if ($repair -and !(Ready)) { throw 'VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then run Audio driver setup again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.' }
             MarkReboot
             Notice 'VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.'

@@ -1881,6 +1881,10 @@ Importovat do vaší knihovny?</translation>
       <translation>Odezva potřebuje 2–4096 naměřených bodů.</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Před použitím VB-CABLE restartujte systém Windows. Nastavení zvuku je dokončeno, ale ovladač a jeho nastavení vyžadují restart systému.</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>Před použitím ekvalizéru nebo nastavení VB-CABLE restartujte Windows. Změny zvukového ovladače vyžadují restart systému.</translation>
     </message>
@@ -2378,6 +2382,10 @@ Importovat do vaší knihovny?</translation>
       <translation>Použít místní nastavení systému</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE není přítomen. Pokud byl požadován restart, restartujte systém Windows a zkuste nastavení zvuku znovu.</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>Kontrolní součet balíčku VB-CABLE nesouhlasí. Opravte instalaci.</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>Nastavení VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>Nastavení VB-CABLE se nepodařilo otevřít. Pokud byl ovladač právě nainstalován nebo aktualizován, restartujte systém Windows a zkuste to znovu.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

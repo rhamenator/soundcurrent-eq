@@ -1881,6 +1881,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Respons memerlukan 2–4096 titik hasil pengukuran.</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Mulai ulang Windows sebelum menggunakan VB-CABLE. Penyiapan audio selesai, tetapi driver dan pengaturannya memerlukan mulai ulang sistem.</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>Mulai ulang Windows sebelum menggunakan equalizer atau pengaturan VB-CABLE. Perubahan driver audio memerlukan mulai ulang sistem.</translation>
     </message>
@@ -2378,6 +2382,10 @@ Impor ke pustaka Anda?</translation>
       <translation>Gunakan pengaturan wilayah sistem</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE tidak ditemukan. Mulai ulang Windows jika diminta, lalu coba penyiapan audio lagi.</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>Checksum paket VB-CABLE tidak cocok. Perbaiki instalasi.</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>Pengaturan VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>Pengaturan VB-CABLE tidak dapat dibuka. Mulai ulang Windows jika driver baru saja dipasang atau diperbarui, lalu coba lagi.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

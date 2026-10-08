@@ -1881,6 +1881,10 @@ Importere til biblioteket ditt?</translation>
       <translation>Frekvensresponsen treng 2–4096 målte punkt.</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Start Windows på nytt før du brukar VB-CABLE. Lydoppsettet er fullført, men drivaren og innstillingane krev ein omstart av systemet.</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>Start Windows på nytt før du brukar equalizeren eller VB-CABLE-innstillingane. Endringar av lyddrivarar krev ein systemomstart.</translation>
     </message>
@@ -2378,6 +2382,10 @@ Importere til biblioteket ditt?</translation>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE er ikkje til stades. Start Windows på nytt dersom du vart beden om det, og prøv lydoppsettet på nytt.</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>Kontrollsummen for VB-CABLE-pakken stemmer ikkje. Reparer installasjonen.</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Importere til biblioteket ditt?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE-innstillingar</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>VB-CABLE-innstillingane kunne ikkje opnast. Start Windows på nytt dersom drivaren nettopp vart installert eller oppdatert, og prøv på nytt.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

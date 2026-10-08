@@ -1881,6 +1881,10 @@ Importer dans votre bibliothèque ?</translation>
       <translation>La réponse nécessite de 2 à 4096 points mesurés.</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Redémarrez Windows avant d’utiliser VB-CABLE. La configuration audio est terminée, mais le pilote et ses paramètres nécessitent un redémarrage du système.</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>Redémarrez Windows avant d’utiliser l’égaliseur ou les réglages de VB-CABLE. Les modifications du pilote audio nécessitent un redémarrage du système.</translation>
     </message>
@@ -2378,6 +2382,10 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Utiliser les paramètres régionaux du système</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE est absent. Redémarrez Windows si cela vous a été demandé, puis réessayez la configuration audio.</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>La somme de contrôle du paquet VB-CABLE ne correspond pas. Réparez l’installation.</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Importer dans votre bibliothèque ?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>Réglages VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>Les paramètres de VB-CABLE n’ont pas pu s’ouvrir. Redémarrez Windows si le pilote vient d’être installé ou mis à jour, puis réessayez.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

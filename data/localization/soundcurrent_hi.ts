@@ -1881,6 +1881,10 @@ Import into your library?</source>
       <translation>प्रतिक्रिया में 2–4096 मापे गए बिंदु आवश्यक हैं।</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>VB-CABLE का उपयोग करने से पहले Windows को पुनरारंभ करें। ऑडियो सेटअप पूरा हुआ है, लेकिन ड्राइवर और उसकी सेटिंग के लिए सिस्टम को पुनरारंभ करना आवश्यक है।</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>इक्वलाइज़र या VB-CABLE सेटिंग का उपयोग करने से पहले Windows पुनः प्रारंभ करें। ऑडियो ड्राइवर में बदलाव के लिए सिस्टम पुनः प्रारंभ करना आवश्यक है।</translation>
     </message>
@@ -2378,6 +2382,10 @@ Import into your library?</source>
       <translation>सिस्टम की क्षेत्रीय सेटिंग इस्तेमाल करें</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE मौजूद नहीं है। यदि पुनरारंभ करने को कहा गया था, तो Windows को पुनरारंभ करें और ऑडियो सेटअप फिर से आज़माएँ।</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>VB-CABLE पैकेज का चेकसम मेल नहीं खाता। स्थापना की मरम्मत करें।</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE सेटिंग</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>VB-CABLE की सेटिंग नहीं खुल सकीं। यदि ड्राइवर अभी स्थापित या अपडेट किया गया है, तो Windows को पुनरारंभ करके फिर प्रयास करें।</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

@@ -1881,6 +1881,10 @@ Importér til dit bibliotek?</translation>
       <translation>Frekvensgangen skal indeholde 2–4096 målte punkter.</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Genstart Windows, før du bruger VB-CABLE. Lydopsætningen er fuldført, men driveren og dens indstillinger kræver en genstart af systemet.</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>Genstart Windows, før du bruger equalizeren eller VB-CABLE-indstillingerne. Ændringer af lyddrivere kræver en systemgenstart.</translation>
     </message>
@@ -2378,6 +2382,10 @@ Importér til dit bibliotek?</translation>
       <translation>Brug systemets landestandard</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE er ikke til stede. Genstart Windows, hvis du blev bedt om det, og prøv lydopsætningen igen.</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>Kontrolsummen for VB-CABLE-pakken stemmer ikke. Reparer installationen.</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Importér til dit bibliotek?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE-indstillinger</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>VB-CABLE-indstillingerne kunne ikke åbnes. Genstart Windows, hvis driveren lige er blevet installeret eller opdateret, og prøv igen.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

@@ -1881,6 +1881,10 @@ Import into your library?</source>
       <translation>응답에는 측정 지점 2~4096개가 필요합니다.</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>VB-CABLE을 사용하기 전에 Windows를 다시 시작하세요. 오디오 설정은 완료되었지만 드라이버와 해당 설정에는 시스템 다시 시작이 필요합니다.</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>이퀄라이저 또는 VB-CABLE 설정을 사용하기 전에 Windows를 다시 시작하세요. 오디오 드라이버 변경에는 시스템 다시 시작이 필요합니다.</translation>
     </message>
@@ -2378,6 +2382,10 @@ Import into your library?</source>
       <translation>시스템 지역 설정 사용</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE이 없습니다. 다시 시작하라는 안내가 있었다면 Windows를 다시 시작한 후 오디오 설정을 다시 시도하세요.</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>VB-CABLE 패키지의 체크섬이 일치하지 않습니다. 설치를 복구하세요.</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE 설정</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>VB-CABLE 설정을 열 수 없습니다. 드라이버를 방금 설치하거나 업데이트했다면 Windows를 다시 시작한 후 다시 시도하세요.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

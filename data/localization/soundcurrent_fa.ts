@@ -1881,6 +1881,10 @@ Import into your library?</source>
       <translation>پاسخ به 2–4096 نقطه اندازه‌گیری‌شده نیاز دارد.</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>پیش از استفاده از VB-CABLE، Windows را دوباره راه‌اندازی کنید. راه‌اندازی صدا پایان یافته، اما درایور و تنظیمات آن به راه‌اندازی دوبارهٔ سیستم نیاز دارند.</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>پیش از استفاده از اکولایزر یا تنظیمات VB-CABLE، Windows را دوباره راه‌اندازی کنید. تغییرات درایور صدا به راه‌اندازی دوباره سیستم نیاز دارند.</translation>
     </message>
@@ -2378,6 +2382,10 @@ Import into your library?</source>
       <translation>استفاده از تنظیمات منطقه‌ای سیستم</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE موجود نیست. اگر از شما خواسته شده است، Windows را دوباره راه‌اندازی کنید و سپس راه‌اندازی صدا را دوباره امتحان کنید.</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>مجموع وارسی بستهٔ VB-CABLE مطابقت ندارد. نصب را تعمیر کنید.</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings</source>
       <translation>تنظیمات VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>تنظیمات VB-CABLE باز نشد. اگر درایور به‌تازگی نصب یا به‌روز شده است، Windows را دوباره راه‌اندازی کنید و سپس دوباره تلاش کنید.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

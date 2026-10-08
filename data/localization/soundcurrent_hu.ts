@@ -1881,6 +1881,10 @@ Importálja a könyvtárba?</translation>
       <translation>A frekvenciamenethez 2–4096 mért pont szükséges.</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>A VB-CABLE használata előtt indítsa újra a Windowst. A hang beállítása befejeződött, de az illesztőprogram és a beállításai a rendszer újraindítását igénylik.</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>A hangszínszabályzó vagy a VB-CABLE-beállítások használata előtt indítsa újra a Windowst. A hangillesztőprogram változásai rendszer-újraindítást igényelnek.</translation>
     </message>
@@ -2378,6 +2382,10 @@ Importálja a könyvtárba?</translation>
       <translation>Rendszer területi beállításainak használata</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>A VB-CABLE nincs jelen. Ha erre felszólítást kapott, indítsa újra a Windowst, majd próbálja újra a hang beállítását.</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>A VB-CABLE csomag ellenőrzőösszege nem egyezik. Javítsa a telepítést.</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE-beállítások</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>A VB-CABLE beállításait nem sikerült megnyitni. Ha az illesztőprogramot most telepítették vagy frissítették, indítsa újra a Windowst, majd próbálja újra.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

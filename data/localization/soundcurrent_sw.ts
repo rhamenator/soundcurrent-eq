@@ -1881,6 +1881,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Mwitikio unahitaji nukta 2–4096 zilizopimwa.</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Anzisha Windows upya kabla ya kutumia VB-CABLE. Usanidi wa sauti umekamilika, lakini kiendeshi na mipangilio yake vinahitaji mfumo kuanzishwa upya.</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>Anzisha Windows upya kabla ya kutumia kisawazishi au mipangilio ya VB-CABLE. Mabadiliko ya kiendeshi cha sauti yanahitaji mfumo kuanza upya.</translation>
     </message>
@@ -2378,6 +2382,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Tumia mipangilio ya eneo ya mfumo</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE haipo. Anzisha Windows upya ikiwa uliombwa kufanya hivyo, kisha ujaribu usanidi wa sauti tena.</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>Jumla ya ukaguzi ya kifurushi cha VB-CABLE hailingani. Rekebisha usakinishaji.</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>Mipangilio ya VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>Mipangilio ya VB-CABLE haikuweza kufunguliwa. Anzisha Windows upya ikiwa kiendeshi kimesakinishwa au kusasishwa hivi karibuni, kisha ujaribu tena.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

@@ -1881,6 +1881,10 @@ Import into your library?</source>
       <translation>Η απόκριση χρειάζεται 2–4096 μετρημένα σημεία.</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Επανεκκινήστε τα Windows πριν χρησιμοποιήσετε το VB-CABLE. Η ρύθμιση ήχου ολοκληρώθηκε, αλλά το πρόγραμμα οδήγησης και οι ρυθμίσεις του απαιτούν επανεκκίνηση του συστήματος.</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>Επανεκκινήστε τα Windows πριν χρησιμοποιήσετε τον ισοσταθμιστή ή τις ρυθμίσεις VB-CABLE. Οι αλλαγές οδηγού ήχου χρειάζονται επανεκκίνηση συστήματος.</translation>
     </message>
@@ -2378,6 +2382,10 @@ Import into your library?</source>
       <translation>Χρήση τοπικών ρυθμίσεων συστήματος</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>Το VB-CABLE δεν υπάρχει. Επανεκκινήστε τα Windows αν σας ζητήθηκε και δοκιμάστε ξανά τη ρύθμιση ήχου.</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>Το άθροισμα ελέγχου του πακέτου VB-CABLE δεν συμφωνεί. Επιδιορθώστε την εγκατάσταση.</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings</source>
       <translation>Ρυθμίσεις VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>Δεν ήταν δυνατό να ανοίξουν οι ρυθμίσεις του VB-CABLE. Επανεκκινήστε τα Windows αν το πρόγραμμα οδήγησης μόλις εγκαταστάθηκε ή ενημερώθηκε και δοκιμάστε ξανά.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

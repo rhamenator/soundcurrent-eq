@@ -1881,6 +1881,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Yanıt 2–4096 ölçülmüş nokta gerektirir.</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>VB-CABLE kullanmadan önce Windows’u yeniden başlatın. Ses kurulumu tamamlandı ancak sürücü ve ayarları sistemin yeniden başlatılmasını gerektiriyor.</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>Ekolayzırı veya VB-CABLE ayarlarını kullanmadan önce Windows'u yeniden başlatın. Ses sürücüsü değişiklikleri sistemin yeniden başlatılmasını gerektirir.</translation>
     </message>
@@ -2378,6 +2382,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Sistem yerel ayarını kullan</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE mevcut değil. İstendiyse Windows’u yeniden başlatın ve ses kurulumunu tekrar deneyin.</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>VB-CABLE paketinin sağlama toplamı eşleşmiyor. Kurulumu onarın.</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE ayarları</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>VB-CABLE ayarları açılamadı. Sürücü yeni yüklendiyse veya güncellendiyse Windows’u yeniden başlatıp tekrar deneyin.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

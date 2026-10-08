@@ -1881,6 +1881,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Đáp tuyến cần 2–4096 điểm đo.</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Khởi động lại Windows trước khi sử dụng VB-CABLE. Thiết lập âm thanh đã hoàn tất, nhưng trình điều khiển và các thiết lập của nó yêu cầu khởi động lại hệ thống.</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>Khởi động lại Windows trước khi sử dụng bộ cân bằng âm hoặc cài đặt VB-CABLE. Thay đổi trình điều khiển âm thanh cần khởi động lại hệ thống.</translation>
     </message>
@@ -2378,6 +2382,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Dùng thiết lập vùng của hệ thống</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>Không có VB-CABLE. Khởi động lại Windows nếu được yêu cầu, rồi thử thiết lập âm thanh lại.</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>Tổng kiểm tra của gói VB-CABLE không khớp. Hãy sửa chữa bản cài đặt.</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>Cài đặt VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>Không thể mở cài đặt VB-CABLE. Khởi động lại Windows nếu trình điều khiển vừa được cài đặt hoặc cập nhật, rồi thử lại.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

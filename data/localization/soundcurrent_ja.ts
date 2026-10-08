@@ -1881,6 +1881,10 @@ Import into your library?</source>
       <translation>周波数特性には 2～4096 個の測定点が必要です。</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>VB-CABLE を使用する前に Windows を再起動してください。オーディオのセットアップは完了しましたが、ドライバーとその設定にはシステムの再起動が必要です。</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>イコライザーまたは VB-CABLE 設定を使用する前に、Windows を再起動してください。オーディオドライバーの変更にはシステムの再起動が必要です。</translation>
     </message>
@@ -2378,6 +2382,10 @@ Import into your library?</source>
       <translation>システムの地域設定を使用</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE が見つかりません。再起動を求められた場合は Windows を再起動してから、オーディオのセットアップを再試行してください。</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>VB-CABLE パッケージのチェックサムが一致しません。インストールを修復してください。</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE 設定</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>VB-CABLE の設定を開けませんでした。ドライバーをインストールまたは更新した直後であれば、Windows を再起動してから再試行してください。</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

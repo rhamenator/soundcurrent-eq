@@ -1881,6 +1881,10 @@ Importați în bibliotecă?</translation>
       <translation>Răspunsul necesită 2–4096 de puncte măsurate.</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Reporniți Windows înainte de a utiliza VB-CABLE. Configurarea audio s-a încheiat, dar driverul și setările sale necesită repornirea sistemului.</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>Reporniți Windows înainte de a folosi egalizatorul sau setările VB-CABLE. Modificările driverului audio necesită o repornire a sistemului.</translation>
     </message>
@@ -2378,6 +2382,10 @@ Importați în bibliotecă?</translation>
       <translation>Folosiți setările regionale ale sistemului</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE nu este prezent. Reporniți Windows dacă vi s-a solicitat, apoi reîncercați configurarea audio.</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>Suma de control a pachetului VB-CABLE nu corespunde. Reparați instalarea.</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Importați în bibliotecă?</translation>
     <message>
       <source>VB-CABLE settings</source>
       <translation>Setări VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>Setările VB-CABLE nu au putut fi deschise. Reporniți Windows dacă driverul tocmai a fost instalat sau actualizat, apoi încercați din nou.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

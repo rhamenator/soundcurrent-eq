@@ -18,13 +18,6 @@
     },
     {
       "file": "cable-setup.ps1",
-      "line": 70,
-      "kind": "StringConstantExpressionAst",
-      "literal": "Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.",
-      "reviewStatus": "untranslated; pending contextual translation"
-    },
-    {
-      "file": "cable-setup.ps1",
       "line": 76,
       "kind": "StringConstantExpressionAst",
       "literal": "VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.",
@@ -67,13 +60,6 @@
     },
     {
       "file": "cable-setup.ps1",
-      "line": 117,
-      "kind": "StringConstantExpressionAst",
-      "literal": "VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.",
-      "reviewStatus": "untranslated; pending contextual translation"
-    },
-    {
-      "file": "cable-setup.ps1",
       "line": 125,
       "kind": "StringConstantExpressionAst",
       "literal": "Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then run Audio driver setup again and click Install Driver. Restart once more before using SoundCurrent. Removing this shared cable affects other apps that use it.",
@@ -98,13 +84,6 @@
       "line": 134,
       "kind": "StringConstantExpressionAst",
       "literal": "The incomplete VB-CABLE installation was removed. Restart Windows, run Audio driver setup again, click Install Driver, then restart once more.",
-      "reviewStatus": "untranslated; pending contextual translation"
-    },
-    {
-      "file": "cable-setup.ps1",
-      "line": 137,
-      "kind": "StringConstantExpressionAst",
-      "literal": "VB-CABLE is not present. Restart Windows if requested, then retry audio setup.",
       "reviewStatus": "untranslated; pending contextual translation"
     },
     {

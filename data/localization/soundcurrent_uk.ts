@@ -1881,6 +1881,10 @@ Import into your library?</source>
       <translation>Характеристика потребує 2–4096 виміряних точок.</translation>
     </message>
     <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Перезапустіть Windows перед використанням VB-CABLE. Налаштування аудіо завершено, але драйвер і його параметри потребують перезапуску системи.</translation>
+    </message>
+    <message>
       <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
       <translation>Перезапустіть Windows перед використанням еквалайзера або налаштувань VB-CABLE. Зміни аудіодрайвера потребують перезапуску системи.</translation>
     </message>
@@ -2378,6 +2382,10 @@ Import into your library?</source>
       <translation>Використовувати регіональні налаштування системи</translation>
     </message>
     <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE відсутній. Перезапустіть Windows, якщо це було запропоновано, і повторіть налаштування аудіо.</translation>
+    </message>
+    <message>
       <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
       <translation>Контрольна сума пакета VB-CABLE не збігається. Відновіть інсталяцію.</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
@@ -2385,6 +2393,10 @@ Import into your library?</source>
     <message>
       <source>VB-CABLE settings</source>
       <translation>Налаштування VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>Не вдалося відкрити параметри VB-CABLE. Перезапустіть Windows, якщо драйвер щойно встановлено або оновлено, і повторіть спробу.</translation>
     </message>
     <message>
       <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>

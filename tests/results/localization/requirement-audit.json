@@ -166,5 +166,9 @@
   "secondPassCableClientMessages": {
     "status": "owned quit/readiness text translated; host isolated functions tested; Windows dialogs, waits and packages pending",
     "evidence": "tests/results/localization/second-pass-cable-client-messages.json"
+  },
+  "secondPassCableRestartErrors": {
+    "status": "three owned messages translated; host lookup and regression checks passed; actual Windows paths and package lifecycle pending",
+    "evidence": "tests/results/localization/second-pass-cable-restart-errors.json"
   }
 }
