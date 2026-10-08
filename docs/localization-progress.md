@@ -14,8 +14,8 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 ## Current checkpoint
 
-- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr, sv, da, nb, fi, ro, hu, nn, ar; 441 extracted messages each. These are unverified translations; nativeReviewed remains false.
-- Other 11 original target locales remain incomplete. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
+- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr, sv, da, nb, fi, ro, hu, nn, ar, he; 441 extracted messages each. These are unverified translations; nativeReviewed remains false.
+- Other 10 original target locales remain incomplete. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
 - Coverage is distinct from contextual AI review, native-speaker verification and runtime qualification. Checkpoint reports in tests/results/localization identify tested catalogs, platforms and scopes.
 - Runtime supports separate UI language and number/date locale selection, regional/script fallback, pseudo localization and RTL. Maintenance preserves unfinished edits/comments and rejects unsupported numerus before rewriting.
 - Shared interface layout now wraps meter guidance; the curve instruction also wraps for longer translated text.
@@ -159,3 +159,5 @@ Hebrew microphone and measurement batch: 291/441 messages populated. Three focus
 Hebrew startup, output and rendering batch: 349/441 messages populated. Three focused Linux checks passed. Startup registration, reference-preserving edits, calibration links, post gain and render counts reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
 
 Hebrew saving, speaker profiles and device recovery batch: 398/441 messages populated. Three focused Linux checks passed. Saving, speaker correction bounds, peak hold, device recovery and reverb versus echo reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Hebrew current catalogs complete: 441/441 messages populated. Full Linux CTest passed 72/72, including Hebrew equipment workflows and RTL assertions. Calibration limits and operational controls reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.

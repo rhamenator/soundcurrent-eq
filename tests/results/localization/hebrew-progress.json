@@ -1,25 +1,25 @@
 {
-  "stage": "Hebrew saving, speaker profiles and device recovery batch",
+  "stage": "Hebrew current catalogs complete",
   "catalogs": [
     {
       "tag": "he",
       "name": "עברית",
-      "translated": 398,
+      "translated": 441,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "d9bedf3242593db252a89533f4ba62faee4d6f132cd6813871ca4a2233b18534",
-      "qmSha256": "e3da160a4ffcc4f1f9f6dc363250edc91094e490ff53a7ddcf34be637d06beba"
+      "tsSha256": "bb7820cac1b1a251442001aae36ffde003dfcde0ea349308159fa5d7a72014b5",
+      "qmSha256": "b18260634852c425b6cfdeb9526c2f551bb7775f3a0616f3a1214e1fd5f9fffe"
     }
   ],
   "linuxTests": {
-    "passed": 3,
-    "total": 3,
-    "scope": "compiled localization, Hebrew main window and catalog validation",
-    "log": "/tmp/soundcurrent-eq-he-sixth-tests.log"
+    "passed": 72,
+    "total": 72,
+    "scope": "Full Linux CTest including Hebrew equipment workflows and RTL catalog assertions",
+    "log": "/tmp/soundcurrent-eq-he-complete-tests.log"
   },
-  "review": "Contextual AI review; unverified. Save versus discard, speaker correction bounds, peak hold, device recovery, separate cable routing and reverb versus echo reviewed.",
+  "review": "Contextual AI review; unverified. Current catalogs populated; contextual AI review remains unverified. Calibration limitations, microphone versus playback effects, save/quit behavior and neutral render counts reviewed.",
   "nativeReviewed": false,
   "windows": "Pending CI",
-  "remaining": "Hebrew catalog incomplete. 11 original target catalogs remain incomplete; omitted messages scheduled for second pass. Full bidi and platform qualification remain open."
+  "remaining": "10 original target catalogs incomplete. Second-pass backend/helper/installer coverage, full bidi and platform lifecycle qualification remain open."
 }

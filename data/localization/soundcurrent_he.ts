@@ -1617,148 +1617,148 @@ Import into your library?</source>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>יש להתחיל בעוצמה שקטה. יש להעלות אותה רק אם המיקרופון אינו קולט את הצלילים.</translation>
     </message>
     <message>
       <source>Start when I sign in</source>
-      <translation type="unfinished" />
+      <translation>הפעלה בכניסה למערכת</translation>
     </message>
     <message>
       <source>Startup</source>
-      <translation type="unfinished" />
+      <translation>הפעלה אוטומטית</translation>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
-      <translation type="unfinished" />
+      <translation>יש לעצור את כיול המיקרופון לפני שינוי מנהל התקן השמע.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>עצירת הצלילים</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>האקולייזר המוצע הוחל. יש להשתמש בשמירת קביעה מוגדרת מראש כדי לשמור אותו.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>שינויים מוצעים באקולייזר ההשמעה</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>צליל היקפי</translation>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>עורך פרופיל תגובת המערכת נפתח. פרופילים שנשמרו זמינים בספריית הציוד.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>דיאלוג בטלוויזיה</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>טורקיז: אקולייזר תיקון. כתום: תגובה שנמדדה, כאשר קיימת. הסולם האנכי הוא dB יחסי.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>עוצמת בדיקה</translation>
     </message>
     <message>
       <source>Test level is outside the allowed range</source>
-      <translation type="unfinished" />
+      <translation>עוצמת הבדיקה חורגת מהטווח המותר</translation>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>מעבד השמע נעצר באופן בלתי צפוי.</translation>
     </message>
     <message>
       <source>The custom library holds up to 256 profiles.</source>
-      <translation type="unfinished" />
+      <translation>הספרייה המותאמת אישית מכילה עד 256 פרופילים.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>תגובת העדכון לא הייתה תקינה. לא נפתחה תוכנת התקנה.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>פעולה זו מייבאת תגובה שנמדדה, ולא ערכי הגבר אקולייזר שכבר הומרו לתיקון הפוך. יש לאשר את סוג הציוד. SPL מוחלט דורש נרמול לפני הייבוא.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>פרופיל זה השתנה. לשמור עותק מותאם אישית לפני היציאה?</translation>
     </message>
     <message>
       <source>Timed out waiting for the equalizer sink: %1</source>
-      <translation type="unfinished" />
+      <translation>תם זמן ההמתנה ליציאת האקולייזר: %1</translation>
     </message>
     <message>
       <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
-      <translation type="unfinished" />
+      <translation>מעט מדי שמע בדיקה הגיע למיקרופון. יש לקרב אותו או להעלות מעט את עוצמת הבדיקה.</translation>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>כיסוי התרגום: %1 מתוך %2 הודעות. הודעות ללא תרגום משתמשות באנגלית. חבילות השפה לא אומתו וממתינות לבדיקת דוברי שפת אם. יש לבחור יציאה ולפתוח מחדש כדי להחיל שינויים.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>פירוט תדרים גבוהים</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>כיבוי האקולייזר</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>הפעלת האקולייזר</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>סוג</translation>
     </message>
     <message>
       <source>Undo</source>
       <extracomment>Reverse the previous editable setting change.</extracomment>
-      <translation>ביטול</translation>
+      <translation>ביטול הפעולה האחרונה</translation>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>ביטול השינוי האחרון באקולייזר</translation>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>שחרור נעילת האקולייזר</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>יש לשחרר את נעילת הפקדים ולסיים את המדידה לפני עריכת פרופילים.</translation>
     </message>
     <message>
       <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation type="unfinished" />
+      <translation>סכמת פרופיל ציוד אינה נתמכת (נדרשת 2).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
-      <translation type="unfinished" />
+      <translation>סוג המסנן אינו נתמך.</translation>
     </message>
     <message>
       <source>Unsupported microphone channel layout</source>
-      <translation type="unfinished" />
+      <translation>תצורת ערוצי המיקרופון אינה נתמכת</translation>
     </message>
     <message>
       <source>Unsupported speaker profile schema</source>
-      <translation type="unfinished" />
+      <translation>סכמת פרופיל הרמקול אינה נתמכת</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>עדכון %1 הורד: %2. יש לצאת, להתקין על האפליקציה הקיימת ולפתוח מחדש.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>תיקיית הורדת עדכונים</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>יש להשתמש בחדר שקט. המדידה כוללת יחד את הרמקולים, החדר והמיקרופון; התוצאות כוללות את תגובת המיקרופון.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1767,39 +1767,39 @@ Import into your library?</source>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>שימוש באזור המערכת</translation>
+      <translation>שימוש בהגדרות האזוריות של המערכת</translation>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>הגדרות VB-CABLE</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>מיקוד בקול</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>בהמתנה למיקרופון.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>חם</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>חמימות</translation>
     </message>
     <message>
       <source>Yes</source>
-      <translation type="unfinished" />
+      <translation>כן</translation>
     </message>
     <message>
       <source>Yes to All</source>
-      <translation type="unfinished" />
+      <translation>כן לכול</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>אפס מכבה כל אפקט. אפקטי האזנה אלה חלים על השמעה ברמקולים, ולא על תיקון המיקרופון.</translation>
     </message>
   </context>
 </TS>
