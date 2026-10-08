@@ -34,15 +34,38 @@ inline QString resolve(const QString &requested) {
     auto tag=normalize(requested);
     if(tag=="qps-ploc" || tag=="qps-rtl") return tag;
     const auto supported=languages();
-    for(const auto &l:supported) if(l.tag.compare(tag,Qt::CaseInsensitive)==0) return l.tag;
-    // Strip only regional subtags, keeping explicit scripts (e.g. sr-Latn).
+    for(const auto &language:supported)
+        if(language.tag.compare(tag,Qt::CaseInsensitive)==0) return language.tag;
+    const QRegularExpression syntax("^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{1,8})*$");
+    if(!syntax.match(tag).hasMatch())return "en";
     auto parts=tag.split('-');
-    while(parts.size()>1) {
-        if(parts.last().size()==4) break;
-        parts.removeLast();const auto base=parts.join('-');
-        for(const auto &l:supported) if(l.tag.compare(base,Qt::CaseInsensitive)==0) return l.tag;
+    // Unicode/private-use extensions affect formatting, not catalog selection.
+    for(int i=1;i<parts.size();++i)if(parts[i].size()==1){parts=parts.mid(0,i);break;}
+    tag=parts.join('-');
+    const QLocale requestedLocale(tag);
+    const auto languageCode=QLocale::languageToCode(requestedLocale.language());
+    if(languageCode.compare(parts.front(),Qt::CaseInsensitive)!=0)return "en";
+    int regionIndex=1;
+    if(parts.size()>1 && parts[1].size()==4){
+        if(QLocale::scriptToCode(requestedLocale.script()).compare(parts[1],Qt::CaseInsensitive)!=0)return "en";
+        regionIndex=2;
     }
-    return "en";
+    QString explicitRegion;
+    if(parts.size()>regionIndex && (parts[regionIndex].size()==2 ||
+       QRegularExpression("^[0-9]{3}$").match(parts[regionIndex]).hasMatch()))explicitRegion=parts[regionIndex];
+    const auto desiredRegion=explicitRegion.isEmpty()?QLocale::territoryToCode(requestedLocale.territory()):explicitRegion;
+    QString regionalMatch;
+    for(const auto &language:supported){
+        if(language.tag.section('-',0,0).compare(languageCode,Qt::CaseInsensitive)!=0)continue;
+        const QLocale candidate(language.tag);
+        if(candidate.script()!=requestedLocale.script())continue;
+        const auto candidateParts=language.tag.split('-');
+        const bool regionSpecific=candidateParts.size()>1 && (candidateParts.last().size()==2 || candidateParts.last().size()==3);
+        // Generic language/script packs cover their regions, retaining script identity.
+        if(!regionSpecific)return language.tag;
+        if(candidateParts.last().compare(desiredRegion,Qt::CaseInsensitive)==0)regionalMatch=language.tag;
+    }
+    return regionalMatch.isEmpty()?QString("en"):regionalMatch;
 }
 inline QString selectedLanguage() {
     const auto args=QCoreApplication::arguments();

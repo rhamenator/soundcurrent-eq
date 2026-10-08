@@ -16,6 +16,7 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 - French: all 430 extracted EQ messages and all 516 extracted Studio messages populated, including standard actions, help and errors. Contextual AI translation/review only; nativeReviewed remains false.
 - Other 31 locales: 30 core entries populated each; the remaining messages must be translated and reviewed in subsequent batches.
+- Locale selection: region-only Chinese and explicit Latin-script Portuguese aliases resolve to available catalogs; formatting extensions do not block fallback; unsupported explicit scripts remain rejected.
 - Maintenance: preserve unfinished translator work/comments; reject unsupported numerus before rewriting; validate placeholders, markup/hyperlinks, glob filters, resource inventory and compiled hashes; prevent regressions in previously populated locales.
 - Qualification: run real main-window fixtures for all 32 languages plus pseudo locales; test French equipment import/edit/save and field limits; inspect translated tabs at small-screen size. Windows checks and package validation are tracked on the review PRs.
 

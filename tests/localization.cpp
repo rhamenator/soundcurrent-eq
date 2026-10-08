@@ -15,6 +15,11 @@ int main(int argc,char **argv){
  try{
   require(languages().size()>=30,"Global language catalogs missing");
   require(resolve("fr_CA")=="fr","Regional fallback failed");
+  require(resolve("zh-TW")=="zh-Hant" && resolve("zh-CN")=="zh-Hans","Chinese region aliases fell back to English");
+  require(resolve("pt-Latn-BR")=="pt-BR" && resolve("pt-Latn-PT")=="pt-PT","Explicit Latin script lost Portuguese regions");
+  require(resolve("de-DE-u-nu-latn")=="de","Unicode locale extension blocked language fallback");
+  require(resolve("pt-Cyrl-BR")=="en" && resolve("zh-Kore-TW")=="en","Unsupported explicit script was guessed");
+  require(resolve("fr--CA")=="en","Malformed language tag was accepted");
   require(resolve("pt-BR")=="pt-BR" && resolve("pt-PT")=="pt-PT","Distinct Portuguese regions collapsed");
   require(resolve("zh-Hant-TW")=="zh-Hant" && resolve("zh-Hans-CN")=="zh-Hans","Chinese scripts collapsed");
   require(resolve("sr-Latn")=="en","An absent explicit script was guessed");
