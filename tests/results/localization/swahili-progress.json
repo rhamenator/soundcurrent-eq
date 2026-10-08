@@ -1,24 +1,24 @@
 {
-  "stage": "Swahili second existing-catalog batch",
+  "stage": "Swahili third existing-catalog batch",
   "catalogs": [
     {
       "tag": "sw",
       "name": "Kiswahili",
-      "translated": 166,
+      "translated": 230,
       "total": 441,
       "status": "unverified",
       "nativeReviewed": false,
-      "tsSha256": "7908bcfea4e09bddfec3e1dcc88ae6362bdc7a2832bce3d9b90417286d93d643",
-      "qmSha256": "b1690ef37c3af74ac94464d5b86172ea95f380bc71413c7f4605cb39b7cc2a0a"
+      "tsSha256": "9d867cc1d64bda3bd183da5c4504e3b672c123d754a7eea81199eb92515b36bd",
+      "qmSha256": "bab39836f542216e8fee82aa2e9c0da29c6ad4f183f7a53f51d3a2512263415e"
     }
   ],
   "linuxTests": {
     "passed": 3,
     "total": 3,
     "scope": "Embedded localization assertions, Swahili MainWindow offscreen smoke test and structural catalog checks",
-    "log": "/tmp/soundcurrent-eq-sw-second-tests.log"
+    "log": "/tmp/soundcurrent-eq-sw-third-tests.log"
   },
-  "review": "Contextual AI review of shared source entries 0–159: profile read/save errors, calibration failures, half-dB channel gain, update behavior and delay wet mix versus decay/damping. Placeholders, file patterns and numerical limits preserved. Linguistic accuracy unverified.",
+  "review": "Contextual AI review of shared source entries 0–239: compressor timing/ratio/makeup/ceiling, estimated post-EQ levels, effect tails, profile import versus correction and dimensionless filter Q. Placeholders, file patterns and numerical limits preserved. Linguistic accuracy unverified.",
   "nativeReviewed": false,
   "windows": "Pending CI; no Windows runtime qualification for this batch",
   "remaining": "Swahili incomplete. Omitted source messages reserved for second pass."

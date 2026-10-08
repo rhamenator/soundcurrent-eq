@@ -586,43 +586,43 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Discard</source>
-      <translation type="unfinished" />
+      <translation>Tupa mabadiliko</translation>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
-      <translation type="unfinished" />
+      <translation>Buruta nukta za mkunjo au rekebisha bendi iliyochaguliwa hapa chini.</translation>
     </message>
     <message>
       <source>Dynamic Boost</source>
-      <translation type="unfinished" />
+      <translation>Ongezeko la sauti kwa mgandamizo</translation>
     </message>
     <message>
       <source>Dynamics attack</source>
-      <translation type="unfinished" />
+      <translation>Muda wa kuanza mgandamizo</translation>
     </message>
     <message>
       <source>Dynamics ceiling</source>
-      <translation type="unfinished" />
+      <translation>Kikomo cha kilele cha mgandamizo</translation>
     </message>
     <message>
       <source>Dynamics makeup</source>
-      <translation type="unfinished" />
+      <translation>Gain ya kufidia mgandamizo</translation>
     </message>
     <message>
       <source>Dynamics ratio</source>
-      <translation type="unfinished" />
+      <translation>Uwiano wa mgandamizo</translation>
     </message>
     <message>
       <source>Dynamics release</source>
-      <translation type="unfinished" />
+      <translation>Muda wa kuachia mgandamizo</translation>
     </message>
     <message>
       <source>Dynamics threshold</source>
-      <translation type="unfinished" />
+      <translation>Kiwango cha kuanza mgandamizo</translation>
     </message>
     <message>
       <source>Edit / save copy</source>
-      <translation type="unfinished" />
+      <translation>Hariri / hifadhi nakala</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -630,181 +630,181 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Electronic</source>
-      <translation type="unfinished" />
+      <translation>Muziki wa elektroniki</translation>
     </message>
     <message>
       <source>Equalizer</source>
       <extracomment>Audio frequency-response processor, not social equality.</extracomment>
-      <translation>Kisawazisha</translation>
+      <translation>Kisawazishi</translation>
     </message>
     <message>
       <source>Equalizer and configuration pages</source>
-      <translation type="unfinished" />
+      <translation>Kurasa za kisawazishi na usanidi</translation>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>
-      <translation type="unfinished" />
+      <translation>Mkunjo wa kisawazishi. Chagua nukta au iburute kurekebisha masafa na gain.</translation>
     </message>
     <message>
       <source>Equalizer is off. Windows selected the physical output directly.</source>
-      <translation type="unfinished" />
+      <translation>Kisawazishi kimezimwa. Windows imechagua tokeo halisi moja kwa moja.</translation>
     </message>
     <message>
       <source>Equalizer is off. Your audio uses its normal output.</source>
-      <translation type="unfinished" />
+      <translation>Kisawazishi kimezimwa. Sauti yako inatumia tokeo lake la kawaida.</translation>
     </message>
     <message>
       <source>Equalizer is still running. Use the tray icon to reopen or quit.</source>
-      <translation type="unfinished" />
+      <translation>Kisawazishi bado kinafanya kazi. Tumia ikoni ya eneo la arifa kufungua tena au kutoka.</translation>
     </message>
     <message>
       <source>Equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Kisawazishi kimezimwa</translation>
     </message>
     <message>
       <source>Equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Kisawazishi kimewashwa</translation>
     </message>
     <message>
       <source>Equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Washa au zima kisawazishi</translation>
     </message>
     <message>
       <source>Equalizer sink disappeared</source>
-      <translation type="unfinished" />
+      <translation>Tokeo pepe la kisawazishi limetoweka</translation>
     </message>
     <message>
       <source>Equipment brand</source>
-      <translation type="unfinished" />
+      <translation>Chapa ya kifaa</translation>
     </message>
     <message>
       <source>Equipment family</source>
-      <translation type="unfinished" />
+      <translation>Familia ya kifaa</translation>
     </message>
     <message>
       <source>Equipment kind must be speaker, microphone or amplifier.</source>
-      <translation type="unfinished" />
+      <translation>Aina ya kifaa lazima iwe spika, maikrofoni au amplifaya.</translation>
     </message>
     <message>
       <source>Equipment profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Wasifu wa kifaa (*.json)</translation>
     </message>
     <message>
       <source>Equipment profile editor</source>
-      <translation type="unfinished" />
+      <translation>Kihariri cha wasifu wa vifaa</translation>
     </message>
     <message>
       <source>Equipment profiles (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Wasifu wa vifaa (*.json)</translation>
     </message>
     <message>
       <source>Equipment profiles by brand family and model</source>
-      <translation type="unfinished" />
+      <translation>Wasifu wa vifaa kwa chapa, familia na modeli</translation>
     </message>
     <message>
       <source>Equipment profiles — brand / family / model</source>
-      <translation type="unfinished" />
+      <translation>Wasifu wa vifaa — chapa / familia / modeli</translation>
     </message>
     <message>
       <source>Equipment resource missing.</source>
-      <translation type="unfinished" />
+      <translation>Rasilimali ya kifaa haipo.</translation>
     </message>
     <message>
       <source>Equipment subtype</source>
-      <translation type="unfinished" />
+      <translation>Aina ndogo ya kifaa</translation>
     </message>
     <message>
       <source>Equipment type</source>
-      <translation type="unfinished" />
+      <translation>Aina ya kifaa</translation>
     </message>
     <message>
       <source>Estimated output level near band %1</source>
-      <translation type="unfinished" />
+      <translation>Kiwango cha tokeo kinachokadiriwa karibu na bendi %1</translation>
     </message>
     <message>
       <source>Estimated output near %1: %2 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Tokeo linalokadiriwa karibu na %1: %2 dBFS</translation>
     </message>
     <message>
       <source>Estimated output peak and clipping risk</source>
-      <translation type="unfinished" />
+      <translation>Kilele cha tokeo kinachokadiriwa na hatari ya clipping</translation>
     </message>
     <message>
       <source>Estimated overall output level</source>
-      <translation type="unfinished" />
+      <translation>Kiwango cha jumla cha tokeo kinachokadiriwa</translation>
     </message>
     <message>
       <source>Estimated overall output peak: %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Kilele cha jumla cha tokeo kinachokadiriwa: %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Kilele kinachokadiriwa %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak: EQ off</source>
-      <translation type="unfinished" />
+      <translation>Kilele kinachokadiriwa: EQ imezimwa</translation>
     </message>
     <message>
       <source>Estimated peak: waiting for audio</source>
-      <translation type="unfinished" />
+      <translation>Kilele kinachokadiriwa: inasubiri sauti</translation>
     </message>
     <message>
       <source>Estimated post-EQ level near this frequency</source>
-      <translation type="unfinished" />
+      <translation>Kiwango kinachokadiriwa baada ya EQ karibu na masafa haya</translation>
     </message>
     <message>
       <source>Estimated post-EQ output peak, including post gain and balance</source>
-      <translation type="unfinished" />
+      <translation>Kilele cha tokeo kinachokadiriwa baada ya EQ, pamoja na gain ya baada na usawa</translation>
     </message>
     <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
-      <translation type="unfinished" />
+      <translation>Toka kwenye SoundCurrent EQ na urejeshe sauti ya kawaida</translation>
     </message>
     <message>
       <source>Expanded test language</source>
-      <translation type="unfinished" />
+      <translation>Lugha ya majaribio yenye maandishi yaliyopanuliwa</translation>
     </message>
     <message>
       <source>Expected a JSON equipment profile. Import response text using the response import button.</source>
-      <translation type="unfinished" />
+      <translation>Wasifu wa kifaa wa JSON unahitajika. Ingiza maandishi ya mwitikio kwa kutumia kitufe cha kuingiza mwitikio.</translation>
     </message>
     <message>
       <source>Expected frequency Hz and relative measured response dB on every data line.</source>
-      <translation type="unfinished" />
+      <translation>Kila mstari wa data unahitaji masafa katika Hz na mwitikio wa kiasi uliopimwa katika dB.</translation>
     </message>
     <message>
       <source>Export</source>
-      <translation type="unfinished" />
+      <translation>Hamisha</translation>
     </message>
     <message>
       <source>Export JSON</source>
-      <translation type="unfinished" />
+      <translation>Hamisha JSON</translation>
     </message>
     <message>
       <source>Export profile</source>
-      <translation type="unfinished" />
+      <translation>Hamisha wasifu</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
-      <translation type="unfinished" />
+      <translation>Hatua za miguu katika FPS</translation>
     </message>
     <message>
       <source>Family</source>
-      <translation type="unfinished" />
+      <translation>Familia</translation>
     </message>
     <message>
       <source>Filter Q</source>
-      <translation type="unfinished" />
+      <translation>Q ya kichujio</translation>
       <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
     </message>
     <message>
       <source>Filter values must be numbers.</source>
-      <translation type="unfinished" />
+      <translation>Thamani za kichujio lazima ziwe namba.</translation>
     </message>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
-      <translation type="unfinished" />
+      <translation>Vichujio vinazidi mipaka ya masafa, gain au Q.</translation>
     </message>
     <message>
       <source>Flat</source>
@@ -817,52 +817,52 @@ Uingize kwenye maktaba yako?</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
-      <translation type="unfinished" />
+      <translation>Masafa Hz</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
-      <translation type="unfinished" />
+      <translation>Uboreshaji wa chaneli za mbele L/R (mono inatumika); chaneli nyingine huhifadhi athari zao za Studio. Thamani ya sifuri hupita kila uboreshaji.</translation>
     </message>
     <message>
       <source>Gain</source>
       <extracomment>Audio signal level adjustment in dB, positive or negative. Not financial profit.</extracomment>
-      <translation>Ukuzaji wa sauti</translation>
+      <translation>Gain</translation>
     </message>
     <message>
       <source>Gain dB</source>
-      <translation type="unfinished" />
+      <translation>Gain dB</translation>
     </message>
     <message>
       <source>Gaming</source>
-      <translation type="unfinished" />
+      <translation>Michezo</translation>
     </message>
     <message>
       <source>Headphones</source>
-      <translation type="unfinished" />
+      <translation>Vipokea sauti vya masikioni</translation>
     </message>
     <message>
       <source>Help</source>
-      <translation type="unfinished" />
+      <translation>Msaada</translation>
     </message>
     <message>
       <source>Hide advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Ficha vidhibiti vya juu</translation>
     </message>
     <message>
       <source>Hip-Hop</source>
-      <translation type="unfinished" />
+      <translation>Hip-Hop</translation>
     </message>
     <message>
       <source>Ignore</source>
-      <translation type="unfinished" />
+      <translation>Puuza</translation>
     </message>
     <message>
       <source>Import</source>
-      <translation type="unfinished" />
+      <translation>Ingiza</translation>
     </message>
     <message>
       <source>Import JSON</source>
-      <translation type="unfinished" />
+      <translation>Ingiza JSON</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
