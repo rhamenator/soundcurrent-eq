@@ -889,6 +889,15 @@ class CatalogTests(unittest.TestCase):
             self.assertTrue(any(row['expression'] == 'profileBrands'
                                 for row in audit.dynamic_inventory(fixture)['expressions']))
 
+    def test_direct_backend_diagnostic_requires_declared_desktop_mapping(self):
+        backend = 'throw std::runtime_error("Stable backend ID");'
+        mapping = 'if (diagnostic == QStringLiteral("Stable backend ID")) return SC_TR("Displayed diagnostic");'
+        catalog.check_backend_diagnostics(backend, mapping, {'Displayed diagnostic'})
+        for broken, declared in (('', {'Displayed diagnostic'}), (mapping, set())):
+            with self.assertRaisesRegex(ValueError, 'Unmapped direct Windows backend diagnostic'):
+                catalog.check_backend_diagnostics(backend, broken, declared)
+        catalog.check_backend_diagnostics('throw std::runtime_error(device + " external detail");', '', set())
+
     def test_studio_display_helpers_reject_raw_prose(self):
         root = Path(__file__).resolve().parents[1]
         spec = importlib.util.spec_from_file_location('ui_audit', root / 'scripts/ui_string_audit.py')

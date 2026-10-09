@@ -525,3 +525,7 @@ Local preview bundles contain the qualified Linux packages, assembled easy insta
 ### Local Studio display helpers (2026-10-09)
 
 The source guard now follows explicit table header and cell helper arguments. Current Studio producers were reviewed: translated type/route/meter captions, selected-locale numeric formatting, translated generated channel roles and preserved user names. A mixed raw-header/raw-cell negative fixture verifies the guard while keeping forwarded numeric expressions in the provenance inventory. This guard does not change processing, state or visible text. Shared infrastructure is applied to EQ as well. Native-speaker verification remains unverified.
+
+### Direct Windows backend diagnostic guard (2026-10-09)
+
+Every direct literal runtime_error in windows*.cpp now requires an exact desktop SC_TR mapping with a declared translation target. Existing diagnostic identity is preserved. Positive/missing/undeclared-target regression fixtures passed; composed external/device diagnostics remain outside this exact guard and use separate reviewed templates. Complete-catalog checks passed in both projects. Native-speaker verification remains unverified.

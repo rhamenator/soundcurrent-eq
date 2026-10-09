@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-09",
+  "scope": "Direct literal runtime_error arguments in windows*.cpp; composed diagnostics excluded and reviewed separately.",
+  "behavior": "Require exact diagnostic-to-SC_TR desktop mapping with declared target; preserves backend diagnostic identity and numerical processing.",
+  "tests": "Focused positive mapping, missing mapping, undeclared target and composed/external exclusion passed. Complete-catalog maintenance passed: EQ699/Studio884 messages across34 catalogs.",
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false,
+  "sourceSha256": {
+    "scripts/localization.py": "88771db5d51c6de93f9f19e0ef9ebe985cb3315c1dab86c964cde20be75d66b6",
+    "tests/translation_catalogs.py": "04c02e797e62f2fa95635882f0154e1003ca21366eed7530fb79748a3e9048bb",
+    "src/audio_error_text.h": "45426afb00c16ba5d9f96d19045dab8ffda48946edb6be1395afb156f75c5554"
+  }
+}

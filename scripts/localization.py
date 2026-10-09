@@ -161,6 +161,21 @@ def check_renderer_diagnostics(code, declared):
             raise ValueError('Undeclared renderer diagnostic: ' + value)
 
 
+def check_backend_diagnostics(code, mapping_code, declared):
+    """Require exact desktop mappings for direct literal Windows exceptions.
+
+    Composed HRESULT/device diagnostics use separate prefix/template mappings.
+    Backend strings remain invariant; this only guards the display boundary.
+    """
+    mappings = dict(re.findall(
+        r'if\s*\(diagnostic\s*==\s*QStringLiteral\("([^"\n]+)"\)\)\s*'
+        r'return\s+SC_TR\("([^"\n]+)"\)', mapping_code))
+    for args in calls(code, 'runtime_error'):
+        value = literal(args[0]) if args else None
+        if value is not None and (value not in mappings or mappings[value] not in declared):
+            raise ValueError('Unmapped direct Windows backend diagnostic: ' + value)
+
+
 def sources():
     adapter = ROOT / 'src/windows_platform.inc'
     if adapter.exists():
@@ -216,6 +231,9 @@ def sources():
     renderer = ROOT / 'src/studio_render.cpp'
     if renderer.exists():
         check_renderer_diagnostics(renderer.read_text(encoding='utf-8'), out)
+    mapping = (ROOT / 'src/audio_error_text.h').read_text(encoding='utf-8')
+    for backend in (ROOT / 'src').glob('windows*.cpp'):
+        check_backend_diagnostics(backend.read_text(encoding='utf-8'), mapping, out)
     return sorted(out)
 
 
