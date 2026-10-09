@@ -485,3 +485,7 @@ The Linux easy installer had English-only owned titles, confirmations, help and 
 ## Linux installer western European batch — 2026-10-09
 
 German, Spanish, Italian, European Portuguese, Brazilian Portuguese and Dutch add 156 populated installer entries. Ten locales including English are now populated; 24 remain pending. Install/download distinctions, no-install failures, version retention, administrator approval and command/version tokens were reviewed against the script. Instructions now quote the exact app quit caption in every populated locale; the generator rejects mismatched references. Five inert tests pass in both repositories, including all ten locale dialog argument/cancel cases. Native-speaker verification and actual GTK dialog rendering remain unverified.
+
+## Linux installer central European batch — 2026-10-09
+
+Romanian, Hungarian, Polish, Czech and Slovak add 130 populated installer entries. Fifteen locales including English are populated; 19 remain pending. Confirmations and failures were reviewed against install/download behavior, with exact app quit captions and preserved package/version/command syntax. Hungarian opaque substitutions use neutral a(z); Polish/Czech/Slovak name Fedora as a system to retain the product identifier without awkward inflection. Native-speaker verification remains unverified. Focused inert test results are retained in linux-installer-central-tests.log; real GTK dialog rendering is outside this scope.

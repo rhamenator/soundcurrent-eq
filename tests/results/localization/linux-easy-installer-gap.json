@@ -107,8 +107,8 @@
       "source": "message \"Installed $product $version. Open it from the applications menu. Use Quit and reopen after an update. No uninstall or reboot is needed for the app update.\""
     }
   ],
-  "status": "Standalone localization infrastructure implemented; 24 locale translations pending",
-  "nextTask": "Populate all remaining 24 installer locales, review wording against behavior, then qualify actual installer UI and the complete release companion.",
+  "status": "Standalone localization infrastructure implemented; 19 locale translations pending",
+  "nextTask": "Populate all remaining 19 installer locales, review wording against behavior, then qualify actual installer UI and the complete release companion.",
   "nativeReviewed": false,
   "wholeInterfaceCoverageProven": false,
   "originalSourceSha256": "59a55ec160229be983015b49e71ac92164d6dcc727119b12a1b4fe9fec42bb67",
@@ -124,20 +124,25 @@
       "it",
       "pt-PT",
       "pt-BR",
-      "nl"
+      "nl",
+      "ro",
+      "hu",
+      "pl",
+      "cs",
+      "sk"
     ],
-    "pendingLocaleCount": 24,
+    "pendingLocaleCount": 19,
     "selection": "--language TAG, SC_INSTALLER_LANGUAGE, LANGUAGE/LC_ALL/LC_MESSAGES/LANG; explicit supported region aliases and English fallback",
     "standalone": "Shell-quoted catalog embedded in the .run file; no external catalog or translation service required",
     "substitution": "Single-pass literal parameter copying; no eval or re-expansion",
     "verification": "Pinned product/version/release/repository and package hashes unchanged",
     "releaseGate": "assemble-release requires every app locale to have a complete installer catalog",
-    "tests": "Five focused tests passed: all ten populated catalog lookups, opaque substitutions, CLI help/errors, all ten dialog argument/cancel cases, raw caption mutation and exact app quit-caption correspondence. Real dialog rendering/installation not exercised."
+    "tests": "Five focused tests passed with all 15 populated locales: text lookup, literal substitutions, help/errors, dialog arguments/cancellation and source/action-caption guards. No actual GTK rendering or installation."
   },
   "sourceSha256": {
-    "scripts/install-linux.run": "f920793f1b731841001676897f92085428f15368c6bf4206124b3b5f32b84409",
+    "scripts/install-linux.run": "435336465323ad9e1854c028650f04eae8dbd84ec689c536ce21fe32066332c3",
     "scripts/linux_installer_catalogs.py": "d3e03fe8521f3d14cda6cef691f4bb3b73f9c3b25b7a400b9344d3ce09673915",
-    "data/localization/linux-installer.json": "993a13a8a0b8bd295e95dff8af861c1360788c0de165a3f2dbb847a913630ee1",
+    "data/localization/linux-installer.json": "2a2b240a6cb4004bd374f4298b254d8dc4b9886bd5b5864163d3731ffda51ab9",
     "tests/linux_installer_localization.py": "7a853c7e7375198e0a1b1270907f1262f126dd0bd5305ee73b40700e07b17400"
   },
   "catalogRegressionSuite": {
@@ -160,5 +165,19 @@
     "nativeReviewed": false,
     "testLog": "tests/results/localization/linux-installer-western-tests.log",
     "testLogSha256": "15d347acad9ddbcdd393d8b5b9eeae1b6522a7a031394340ce10f3b2e1e5d2d2"
+  },
+  "centralLocaleReview": {
+    "added": [
+      "ro",
+      "hu",
+      "pl",
+      "cs",
+      "sk"
+    ],
+    "entriesReviewed": 130,
+    "scope": "Contextual AI review against script behavior: install/download separation, no-install failures, newer-version retention, kept presets/profiles and administrator approval. Exact Quit app captions copied from the Qt catalogs; package/version/CLI tokens remain unchanged. Hungarian articles use neutral a(z) for opaque substitutions. Fedora product name retained with an explicit system noun in Polish/Czech/Slovak for grammar.",
+    "nativeReviewed": false,
+    "testLog": "tests/results/localization/linux-installer-central-tests.log",
+    "testLogSha256": "983eecb7b6841d0fc7664e9203c734891f95a86487fb719575e3535beac5c222"
   }
 }

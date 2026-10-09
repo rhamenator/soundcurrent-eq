@@ -31,6 +31,11 @@ sc_resolve_language() {
                 pt-pt) printf '%s' pt-PT; return;;
                 pt-br) printf '%s' pt-BR; return;;
                 nl) printf '%s' nl; return;;
+                ro) printf '%s' ro; return;;
+                hu) printf '%s' hu; return;;
+                pl) printf '%s' pl; return;;
+                cs) printf '%s' cs; return;;
+                sk) printf '%s' sk; return;;
             esac
         done
     done
@@ -338,6 +343,156 @@ Installatieprogramma: %6';;
         nl:saved) printf '%s' 'Gecontroleerd pakket opgeslagen in %1';;
         nl:glibc) printf '%s' 'Dit pakket vereist glibc %1 of nieuwer; dit systeem heeft versie %2. Er is niets geïnstalleerd.';;
         nl:installed) printf '%s' '%1 %2 is geïnstalleerd. Open de app vanuit het toepassingsmenu. Gebruik «App afsluiten» en open de app opnieuw na een update. Voor het bijwerken van de app hoeft u de app niet te verwijderen en het systeem niet opnieuw te starten.';;
+        ro:enterprise) printf '%s' 'Pachetul RPM actual pentru sistemele de întreprindere necesită RHEL 10 sau o distribuție derivată compatibilă, versiunea 10.';;
+        ro:fedora) printf '%s' 'Pachetul Fedora actual necesită Fedora 44 sau o versiune mai nouă.';;
+        ro:unsupported) printf '%s' 'Această distribuție nu are încă un pachet verificat. Consultați versiunile publicate pe GitHub pentru pachetele acceptate.';;
+        ro:installer_title) printf '%s' 'Programul de instalare SoundCurrent';;
+        ro:install_title) printf '%s' 'Instalați sau actualizați SoundCurrent';;
+        ro:interactive) printf '%s' 'Rulați acest program de instalare interactiv într-un terminal.';;
+        ro:continue) printf '%s' 'Continuați? [y/N] ';;
+        ro:package_file) printf '%s' 'Indicați un pachet existent după --package-file.';;
+        ro:unknown_option) printf '%s' 'Opțiune necunoscută.';;
+        ro:language_required) printf '%s' 'Indicați un cod de limbă după --language.';;
+        ro:usage) printf '%s' 'Utilizare: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        ro:architecture) printf '%s' 'Aceste pachete verificate necesită un computer x86-64.';;
+        ro:identify) printf '%s' 'Nu se poate identifica această distribuție.';;
+        ro:dry_run) printf '%s' 'Produs: %1 %2
+Distribuție: %3
+Pachet: %4
+SHA256: %5
+Program de instalare: %6';;
+        ro:manager) printf '%s' 'Acest sistem nu are %1.';;
+        ro:newer) printf '%s' 'Este deja instalată o versiune mai nouă de %1 (%2). Aceasta a fost păstrată; acest program de instalare Linux oferă versiunea %3.';;
+        ro:sha_required) printf '%s' 'Este necesar sha256sum.';;
+        ro:quit) printf '%s' 'Folosiți «Ieșiți din aplicație» pentru a închide aplicația SoundCurrent care rulează înainte de actualizare. Închiderea ferestrei lasă aplicația să ruleze.';;
+        ro:download_confirm) printf '%s' 'Descărcați și verificați %1 %2 pentru %3? Nu se va efectua nicio instalare.';;
+        ro:install_confirm) printf '%s' 'Instalați sau actualizați %1 %2 pe %3? Presetările și profilurile sunt păstrate. Managerul de pachete instalează dependențele și adaugă o pictogramă în meniul aplicațiilor. Este necesară aprobarea administratorului. Ar trebui să ruleze un singur egalizator la un moment dat.';;
+        ro:download_tool) printf '%s' 'Instalați mai întâi curl sau wget.';;
+        ro:verification) printf '%s' 'Verificarea pachetului a eșuat. Nu s-a instalat nimic.';;
+        ro:exists) printf '%s' 'Există deja: %1';;
+        ro:saved) printf '%s' 'Pachetul verificat a fost salvat în %1';;
+        ro:glibc) printf '%s' 'Acest pachet necesită glibc %1 sau o versiune mai nouă; acest sistem are versiunea %2. Nu s-a instalat nimic.';;
+        ro:installed) printf '%s' '%1 %2 a fost instalat. Deschideți aplicația din meniul aplicațiilor. Folosiți «Ieșiți din aplicație» și redeschideți aplicația după o actualizare. Nu este necesară dezinstalarea aplicației sau repornirea sistemului pentru a o actualiza.';;
+        hu:enterprise) printf '%s' 'A jelenlegi vállalati RPM-csomaghoz RHEL 10 vagy kompatibilis, 10-es verziójú származtatott disztribúció szükséges.';;
+        hu:fedora) printf '%s' 'A jelenlegi Fedora-csomaghoz Fedora 44 vagy újabb verzió szükséges.';;
+        hu:unsupported) printf '%s' 'Ehhez a disztribúcióhoz még nincs ellenőrzött csomag. A támogatott csomagokat a GitHub kiadásai között találja.';;
+        hu:installer_title) printf '%s' 'SoundCurrent telepítő';;
+        hu:install_title) printf '%s' 'SoundCurrent telepítése vagy frissítése';;
+        hu:interactive) printf '%s' 'Futtassa ezt a telepítőt interaktívan egy terminálban.';;
+        hu:continue) printf '%s' 'Folytatja? [y/N] ';;
+        hu:package_file) printf '%s' 'Adjon meg egy létező csomagot a --package-file után.';;
+        hu:unknown_option) printf '%s' 'Ismeretlen kapcsoló.';;
+        hu:language_required) printf '%s' 'Adjon meg egy nyelvkódot a --language után.';;
+        hu:usage) printf '%s' 'Használat: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        hu:architecture) printf '%s' 'Ezekhez az ellenőrzött csomagokhoz x86-64 számítógép szükséges.';;
+        hu:identify) printf '%s' 'Nem sikerült azonosítani ezt a disztribúciót.';;
+        hu:dry_run) printf '%s' 'Termék: %1 %2
+Disztribúció: %3
+Csomag: %4
+SHA256: %5
+Telepítő: %6';;
+        hu:manager) printf '%s' 'Erről a rendszerről hiányzik a(z) %1.';;
+        hu:newer) printf '%s' 'A(z) %1 újabb verziója (%2) már telepítve van. Megmaradt; ez a Linux-telepítő a(z) %3 verziót biztosítja.';;
+        hu:sha_required) printf '%s' 'A sha256sum szükséges.';;
+        hu:quit) printf '%s' 'A frissítés előtt a «Kilépés az alkalmazásból» paranccsal zárja be a futó SoundCurrent alkalmazást. Az ablak bezárása után az alkalmazás tovább fut.';;
+        hu:download_confirm) printf '%s' 'Letölti és ellenőrzi a(z) %1 %2 verzióját a(z) %3 rendszerhez? Telepítés nem történik.';;
+        hu:install_confirm) printf '%s' 'Telepíti vagy frissíti a(z) %1 %2 verzióját a(z) %3 rendszeren? Az előbeállítások és profilok megmaradnak. A csomagkezelő telepíti a függőségeket, és ikont ad az alkalmazásmenühöz. Rendszergazdai jóváhagyás szükséges. Egyszerre csak egy hangszínszabályzó fusson.';;
+        hu:download_tool) printf '%s' 'Először telepítse a curl vagy wget programot.';;
+        hu:verification) printf '%s' 'A csomag ellenőrzése sikertelen. Semmi sem lett telepítve.';;
+        hu:exists) printf '%s' 'Már létezik: %1';;
+        hu:saved) printf '%s' 'Az ellenőrzött csomag mentve ide: %1';;
+        hu:glibc) printf '%s' 'Ehhez a csomaghoz glibc %1 vagy újabb verzió szükséges; ezen a rendszeren a(z) %2 verzió van. Semmi sem lett telepítve.';;
+        hu:installed) printf '%s' 'A(z) %1 %2 telepítve lett. Nyissa meg az alkalmazásmenüből. Frissítés után használja a «Kilépés az alkalmazásból» parancsot, majd nyissa meg újra az alkalmazást. Az alkalmazás frissítéséhez nem kell eltávolítani az alkalmazást vagy újraindítani a rendszert.';;
+        pl:enterprise) printf '%s' 'Obecny pakiet RPM dla systemów firmowych wymaga RHEL 10 lub zgodnej dystrybucji pochodnej w wersji 10.';;
+        pl:fedora) printf '%s' 'Obecny pakiet Fedora wymaga systemu Fedora 44 lub nowszej wersji.';;
+        pl:unsupported) printf '%s' 'Dla tej dystrybucji nie ma jeszcze sprawdzonego pakietu. Obsługiwane pakiety znajdziesz w wydaniach na GitHub.';;
+        pl:installer_title) printf '%s' 'Instalator SoundCurrent';;
+        pl:install_title) printf '%s' 'Zainstaluj lub zaktualizuj SoundCurrent';;
+        pl:interactive) printf '%s' 'Uruchom ten instalator interaktywnie w terminalu.';;
+        pl:continue) printf '%s' 'Kontynuować? [y/N] ';;
+        pl:package_file) printf '%s' 'Podaj istniejący pakiet po --package-file.';;
+        pl:unknown_option) printf '%s' 'Nieznana opcja.';;
+        pl:language_required) printf '%s' 'Podaj kod języka po --language.';;
+        pl:usage) printf '%s' 'Użycie: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        pl:architecture) printf '%s' 'Te sprawdzone pakiety wymagają komputera x86-64.';;
+        pl:identify) printf '%s' 'Nie można rozpoznać tej dystrybucji.';;
+        pl:dry_run) printf '%s' 'Produkt: %1 %2
+Dystrybucja: %3
+Pakiet: %4
+SHA256: %5
+Instalator: %6';;
+        pl:manager) printf '%s' 'W tym systemie brakuje %1.';;
+        pl:newer) printf '%s' 'Nowsza wersja %1 (%2) jest już zainstalowana. Została zachowana; ten instalator dla systemu Linux udostępnia wersję %3.';;
+        pl:sha_required) printf '%s' 'Wymagany jest sha256sum.';;
+        pl:quit) printf '%s' 'Przed aktualizacją użyj «Zakończ aplikację», aby zamknąć działającą aplikację SoundCurrent. Zamknięcie okna pozostawia aplikację uruchomioną.';;
+        pl:download_confirm) printf '%s' 'Pobrać i sprawdzić %1 %2 dla %3? Nic nie zostanie zainstalowane.';;
+        pl:install_confirm) printf '%s' 'Zainstalować lub zaktualizować %1 %2 w systemie %3? Ustawienia wstępne i profile zostaną zachowane. Menedżer pakietów instaluje zależności i dodaje ikonę w menu aplikacji. Wymagana jest zgoda administratora. Jednocześnie powinien działać tylko jeden korektor dźwięku.';;
+        pl:download_tool) printf '%s' 'Najpierw zainstaluj curl lub wget.';;
+        pl:verification) printf '%s' 'Sprawdzenie pakietu nie powiodło się. Nic nie zostało zainstalowane.';;
+        pl:exists) printf '%s' 'Już istnieje: %1';;
+        pl:saved) printf '%s' 'Sprawdzony pakiet zapisano w %1';;
+        pl:glibc) printf '%s' 'Ten pakiet wymaga glibc %1 lub nowszej wersji; w tym systemie jest wersja %2. Nic nie zostało zainstalowane.';;
+        pl:installed) printf '%s' 'Zainstalowano %1 %2. Otwórz aplikację z menu aplikacji. Po aktualizacji użyj «Zakończ aplikację» i otwórz ją ponownie. Aktualizacja aplikacji nie wymaga jej odinstalowania ani ponownego uruchomienia systemu.';;
+        cs:enterprise) printf '%s' 'Aktuální podnikový balíček RPM vyžaduje RHEL 10 nebo kompatibilní odvozenou distribuci ve verzi 10.';;
+        cs:fedora) printf '%s' 'Aktuální balíček Fedora vyžaduje systém Fedora 44 nebo novější verzi.';;
+        cs:unsupported) printf '%s' 'Pro tuto distribuci zatím není k dispozici ověřený balíček. Podporované balíčky najdete ve vydáních na GitHubu.';;
+        cs:installer_title) printf '%s' 'Instalátor SoundCurrent';;
+        cs:install_title) printf '%s' 'Nainstalovat nebo aktualizovat SoundCurrent';;
+        cs:interactive) printf '%s' 'Spusťte tento instalátor interaktivně v terminálu.';;
+        cs:continue) printf '%s' 'Pokračovat? [y/N] ';;
+        cs:package_file) printf '%s' 'Za --package-file zadejte existující balíček.';;
+        cs:unknown_option) printf '%s' 'Neznámá volba.';;
+        cs:language_required) printf '%s' 'Za --language zadejte kód jazyka.';;
+        cs:usage) printf '%s' 'Použití: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        cs:architecture) printf '%s' 'Tyto ověřené balíčky vyžadují počítač x86-64.';;
+        cs:identify) printf '%s' 'Tuto distribuci nelze rozpoznat.';;
+        cs:dry_run) printf '%s' 'Produkt: %1 %2
+Distribuce: %3
+Balíček: %4
+SHA256: %5
+Instalátor: %6';;
+        cs:manager) printf '%s' 'V tomto systému chybí %1.';;
+        cs:newer) printf '%s' 'Novější verze %1 (%2) je již nainstalována. Byla zachována; tento instalátor pro Linux nabízí verzi %3.';;
+        cs:sha_required) printf '%s' 'Je vyžadován sha256sum.';;
+        cs:quit) printf '%s' 'Před aktualizací ukončete běžící aplikaci SoundCurrent pomocí «Ukončit aplikaci». Zavření okna ponechá aplikaci spuštěnou.';;
+        cs:download_confirm) printf '%s' 'Stáhnout a ověřit %1 %2 pro %3? Nebude provedena žádná instalace.';;
+        cs:install_confirm) printf '%s' 'Nainstalovat nebo aktualizovat %1 %2 v systému %3? Vaše předvolby a profily zůstanou zachovány. Správce balíčků nainstaluje závislosti a přidá ikonu do nabídky aplikací. Je nutné schválení správcem. Současně by měl běžet pouze jeden ekvalizér.';;
+        cs:download_tool) printf '%s' 'Nejprve nainstalujte curl nebo wget.';;
+        cs:verification) printf '%s' 'Ověření balíčku selhalo. Nic nebylo nainstalováno.';;
+        cs:exists) printf '%s' 'Již existuje: %1';;
+        cs:saved) printf '%s' 'Ověřený balíček byl uložen do %1';;
+        cs:glibc) printf '%s' 'Tento balíček vyžaduje glibc %1 nebo novější verzi; tento systém má verzi %2. Nic nebylo nainstalováno.';;
+        cs:installed) printf '%s' '%1 %2 byl nainstalován. Otevřete aplikaci z nabídky aplikací. Po aktualizaci použijte «Ukončit aplikaci» a otevřete aplikaci znovu. Aktualizace aplikace nevyžaduje její odinstalování ani restart systému.';;
+        sk:enterprise) printf '%s' 'Aktuálny podnikový balík RPM vyžaduje RHEL 10 alebo kompatibilnú odvodenú distribúciu vo verzii 10.';;
+        sk:fedora) printf '%s' 'Aktuálny balík Fedora vyžaduje systém Fedora 44 alebo novšiu verziu.';;
+        sk:unsupported) printf '%s' 'Pre túto distribúciu zatiaľ nie je k dispozícii overený balík. Podporované balíky nájdete vo vydaniach na GitHube.';;
+        sk:installer_title) printf '%s' 'Inštalátor SoundCurrent';;
+        sk:install_title) printf '%s' 'Nainštalovať alebo aktualizovať SoundCurrent';;
+        sk:interactive) printf '%s' 'Spustite tento inštalátor interaktívne v termináli.';;
+        sk:continue) printf '%s' 'Pokračovať? [y/N] ';;
+        sk:package_file) printf '%s' 'Za --package-file zadajte existujúci balík.';;
+        sk:unknown_option) printf '%s' 'Neznáma voľba.';;
+        sk:language_required) printf '%s' 'Za --language zadajte kód jazyka.';;
+        sk:usage) printf '%s' 'Použitie: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        sk:architecture) printf '%s' 'Tieto overené balíky vyžadujú počítač x86-64.';;
+        sk:identify) printf '%s' 'Túto distribúciu nemožno rozpoznať.';;
+        sk:dry_run) printf '%s' 'Produkt: %1 %2
+Distribúcia: %3
+Balík: %4
+SHA256: %5
+Inštalátor: %6';;
+        sk:manager) printf '%s' 'V tomto systéme chýba %1.';;
+        sk:newer) printf '%s' 'Novšia verzia %1 (%2) je už nainštalovaná. Bola zachovaná; tento inštalátor pre Linux poskytuje verziu %3.';;
+        sk:sha_required) printf '%s' 'Vyžaduje sa sha256sum.';;
+        sk:quit) printf '%s' 'Pred aktualizáciou ukončite spustenú aplikáciu SoundCurrent pomocou «Ukončiť aplikáciu». Zatvorenie okna ponechá aplikáciu spustenú.';;
+        sk:download_confirm) printf '%s' 'Stiahnuť a overiť %1 %2 pre %3? Nevykoná sa žiadna inštalácia.';;
+        sk:install_confirm) printf '%s' 'Nainštalovať alebo aktualizovať %1 %2 v systéme %3? Vaše predvoľby a profily zostanú zachované. Správca balíkov nainštaluje závislosti a pridá ikonu do ponuky aplikácií. Vyžaduje sa schválenie správcom. Súčasne by mal byť spustený iba jeden ekvalizér.';;
+        sk:download_tool) printf '%s' 'Najprv nainštalujte curl alebo wget.';;
+        sk:verification) printf '%s' 'Overenie balíka zlyhalo. Nič nebolo nainštalované.';;
+        sk:exists) printf '%s' 'Už existuje: %1';;
+        sk:saved) printf '%s' 'Overený balík bol uložený do %1';;
+        sk:glibc) printf '%s' 'Tento balík vyžaduje glibc %1 alebo novšiu verziu; tento systém má verziu %2. Nič nebolo nainštalované.';;
+        sk:installed) printf '%s' '%1 %2 bol nainštalovaný. Otvorte aplikáciu z ponuky aplikácií. Po aktualizácii použite «Ukončiť aplikáciu» a otvorte aplikáciu znova. Aktualizácia aplikácie nevyžaduje jej odinštalovanie ani reštart systému.';;
         *:enterprise) printf '%s' 'The current enterprise RPM requires RHEL 10 or a compatible version 10 derivative.';;
         *:fedora) printf '%s' 'The current Fedora package requires Fedora 44 or newer.';;
         *:unsupported) printf '%s' 'This distribution has no reviewed package yet. See the GitHub releases for supported builds.';;
