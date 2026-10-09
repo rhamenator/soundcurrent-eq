@@ -1695,6 +1695,16 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Balayage logarithmique à faible niveau</translation>
     </message>
     <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>Quittez %1 avant de désinstaller l’application.</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>Quittez %1 avant la mise à jour. Fermer la fenêtre laisse l’application en cours d’exécution. Aucune désinstallation n’est nécessaire.</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit SoundCurrent EQ</source>
       <translation>Quitter SoundCurrent EQ</translation>
     </message>

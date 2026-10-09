@@ -1695,6 +1695,16 @@ Importera till ditt bibliotek?</translation>
       <translation>Svagt logaritmiskt frekvenssvep</translation>
     </message>
     <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>Avsluta %1 innan du avinstallerar appen.</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>Avsluta %1 före uppdateringen. Appen fortsätter att köras när fönstret stängs. Ingen avinstallation behövs.</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit SoundCurrent EQ</source>
       <translation>Avsluta SoundCurrent EQ</translation>
     </message>

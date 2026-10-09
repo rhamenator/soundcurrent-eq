@@ -1695,6 +1695,16 @@ Tuodaanko kirjastoon?</translation>
       <translation>Hiljainen logaritminen pyyhkäisy</translation>
     </message>
     <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>Lopeta %1 ennen sen asennuksen poistamista.</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>Lopeta %1 ennen päivitystä. Ikkunan sulkeminen jättää sovelluksen käyntiin. Asennusta ei tarvitse poistaa.</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit SoundCurrent EQ</source>
       <translation>Lopeta SoundCurrent EQ</translation>
     </message>

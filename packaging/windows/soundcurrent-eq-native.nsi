@@ -54,6 +54,8 @@ Page custom AudioPage AudioPageLeave
 !insertmacro MUI_UNPAGE_CONFIRM
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_LANGUAGE "English"
+LangString SCQuitBeforeUpdate ${LANG_ENGLISH} "Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed."
+LangString SCQuitBeforeUninstall ${LANG_ENGLISH} "Quit SoundCurrent EQ before uninstalling it."
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
 LangString SCNativeRouting ${LANG_ENGLISH} "SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved."
 LangString SCNativePresent ${LANG_ENGLISH} "SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app."
@@ -112,7 +114,7 @@ FunctionEnd
 Section "SoundCurrent EQ" main
   FindWindow $0 "" "SoundCurrent EQ"
   StrCmp $0 0 +3
-    MessageBox MB_ICONEXCLAMATION "Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed."
+    MessageBox MB_ICONEXCLAMATION "$(SCQuitBeforeUpdate)"
     Abort
   SetOutPath "$INSTDIR"
 !ifdef DLL_DIR
@@ -170,7 +172,7 @@ SectionEnd
 Section "Uninstall"
   FindWindow $0 "" "SoundCurrent EQ"
   StrCmp $0 0 +3
-    MessageBox MB_ICONEXCLAMATION "Quit SoundCurrent EQ before uninstalling it."
+    MessageBox MB_ICONEXCLAMATION "$(SCQuitBeforeUninstall)"
     Abort
   ; Remove only this application's shared per-user login entry.
   ReadRegStr $1 HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "SoundCurrent"

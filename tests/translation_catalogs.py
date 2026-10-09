@@ -15,6 +15,34 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_quit_installer_messages_keep_product_placeholder(self):
+        root = Path(__file__).resolve().parents[1]
+        product = 'SoundCurrent Studio' if (root / 'src/studio_model.cpp').exists() else 'SoundCurrent EQ'
+        sources = {'SCQuitBeforeUpdate': 'Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.',
+                   'SCQuitBeforeUninstall': 'Quit %1 before uninstalling it.'}
+        spec = importlib.util.spec_from_file_location('quit_installer_export', root / 'scripts/windows_installer_catalogs.py')
+        exporter = importlib.util.module_from_spec(spec)
+        with patch.dict('sys.modules', {'localization': catalog}):
+            spec.loader.exec_module(exporter)
+        self.assertEqual(exporter.format_value('Quit %1.', 'Name %1 / $1'), 'Quit Name %1 / $1.')
+        for malformed in ('Quit.', '%1 %1', '%2', '%10', '%L1'):
+            with self.assertRaisesRegex(ValueError, 'exactly one %1'):
+                exporter.format_value(malformed, product)
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text(encoding='utf-8')
+            for key, source in sources.items():
+                self.assertIn('MessageBox MB_ICONEXCLAMATION "$('+key+')"', code)
+                self.assertEqual(re.findall(r'^LangString '+key+r' \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source.replace('%1', product)])
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
+            messages = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))
+            for source in sources.values():
+                self.assertTrue(catalog.finished(messages[source]), row['tag'])
+                translated = messages[source].findtext('translation')
+                catalog.validate_text(source, translated)
+                self.assertIn(product, exporter.format_value(translated, product))
+                with self.assertRaisesRegex(ValueError, 'Placeholder mismatch'):
+                    catalog.validate_text(source, translated.replace('%1','%2'))
+
     def test_cable_routing_notice_and_custom_page_coverage(self):
         root = Path(__file__).resolve().parents[1]
         source = 'VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.'
@@ -328,7 +356,7 @@ class CatalogTests(unittest.TestCase):
             for variants in result['languages'].values():
                 self.assertEqual(set(variants), {'cable', 'native'})
                 for routeName, route in variants.items():
-                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller', 'SCCableSharedNotice', 'SCCableRouting'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting'}))
+                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed', 'SCQuitBeforeUpdate', 'SCQuitBeforeUninstall'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller', 'SCCableSharedNotice', 'SCCableRouting'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting'}))
                     self.assertEqual(set(route['nsisEscaped']), set(route['captions']))
 
     def test_installer_checkbox_catalog_sources_and_names(self):

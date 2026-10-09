@@ -1695,6 +1695,16 @@ Import into your library?</source>
       <translation>مسح لوغاريتمي منخفض الصوت</translation>
     </message>
     <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>اخرج من %1 قبل إلغاء تثبيته.</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>اخرج من %1 قبل التحديث. إغلاق النافذة يُبقي التطبيق قيد التشغيل. لا حاجة إلى إلغاء تثبيته.</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit SoundCurrent EQ</source>
       <translation>إنهاء SoundCurrent EQ</translation>
     </message>

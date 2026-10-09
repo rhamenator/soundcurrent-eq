@@ -1695,6 +1695,16 @@ Import into your library?</source>
       <translation>低音量對數掃頻</translation>
     </message>
     <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>解除安裝前請結束 %1。</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>更新前請結束 %1。關閉視窗後應用程式仍會繼續執行。無須解除安裝。</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit SoundCurrent EQ</source>
       <translation>結束 SoundCurrent EQ</translation>
     </message>

@@ -1695,6 +1695,16 @@ Import into your library?</source>
       <translation>Ήσυχη λογαριθμική σάρωση συχνοτήτων</translation>
     </message>
     <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>Τερματίστε το %1 πριν από την απεγκατάστασή του.</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>Τερματίστε το %1 πριν από την ενημέρωση. Το κλείσιμο του παραθύρου αφήνει την εφαρμογή σε λειτουργία. Δεν απαιτείται απεγκατάσταση.</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit SoundCurrent EQ</source>
       <translation>Έξοδος από το SoundCurrent EQ</translation>
     </message>

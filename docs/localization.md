@@ -168,3 +168,7 @@ All 33 non-English catalogs now contain the shared-cable notice. The English cap
 ### Cable routing caption and Windows Unicode dialog evidence
 
 All custom audio-page control captions now use catalog-backed LangStrings, with all 33 non-English translations prepared. A new guard rejects raw control captions. Other welcome, progress and error text remains incomplete; installer locale activation is pending. All 612 exported caption literals compile in an English-ID syntax fixture. Studio Windows run 37864139375 passed at commit `dde32e7`; six actual dialog captures decode as strict UTF-8, including French “Redémarrez”. That run predates the shared/routing caption work and does not verify installed-package lifecycle. See `second-pass-installer-cable-routing.json` and `second-pass-windows-dialog-utf8.json` under `tests/results/localization/`.
+
+### Quit before update and uninstall dialogs
+
+Both installer routes now use catalog translations for the quit-before-update and quit-before-uninstall messages in all 33 non-English locales. Review preserves full process exit, closing-window/background behavior and updates without prior uninstall. A shared single-value formatter rejects malformed placeholders and preserves inserted names literally; existing retry and Quit app captions now use it too. Catalog tests, final exporter tests and 748 caption syntax checks pass. Installer locale activation and installed-package lifecycle qualification remain pending. See `tests/results/localization/second-pass-installer-quit-dialogs.json`.

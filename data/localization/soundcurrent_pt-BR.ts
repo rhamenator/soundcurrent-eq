@@ -1695,6 +1695,16 @@ Importar para a sua biblioteca?</translation>
       <translation>Varredura logarítmica em volume baixo</translation>
     </message>
     <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>Saia de %1 antes de desinstalar o aplicativo.</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>Saia de %1 antes de atualizar. Fechar a janela mantém o aplicativo em execução. Não é necessário desinstalá-lo.</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit SoundCurrent EQ</source>
       <translation>Sair do SoundCurrent EQ</translation>
     </message>

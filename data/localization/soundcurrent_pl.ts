@@ -1695,6 +1695,16 @@ Zaimportować do biblioteki?</translation>
       <translation>Ciche przemiatanie logarytmiczne</translation>
     </message>
     <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>Zakończ działanie %1 przed odinstalowaniem aplikacji.</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>Zakończ działanie %1 przed aktualizacją. Zamknięcie okna pozostawia aplikację uruchomioną. Odinstalowanie nie jest potrzebne.</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit SoundCurrent EQ</source>
       <translation>Zakończ SoundCurrent EQ</translation>
     </message>

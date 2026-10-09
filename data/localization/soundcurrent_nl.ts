@@ -1695,6 +1695,16 @@ Importeren in uw bibliotheek?</translation>
       <translation>Logaritmische sweep op laag volume</translation>
     </message>
     <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>Sluit %1 volledig af voordat u de app verwijdert.</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>Sluit %1 volledig af voordat u bijwerkt. Na het sluiten van het venster blijft de app actief. Verwijderen is niet nodig.</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit SoundCurrent EQ</source>
       <translation>SoundCurrent EQ afsluiten</translation>
     </message>

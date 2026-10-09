@@ -1695,6 +1695,16 @@ Import into your library?</source>
       <translation>धीमी आवाज़ वाला लॉगरिदमिक स्वीप</translation>
     </message>
     <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>अनइंस्टॉल करने से पहले %1 से बाहर निकलें।</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>अपडेट करने से पहले %1 से बाहर निकलें। विंडो बंद करने पर ऐप चलता रहता है। अनइंस्टॉल करने की ज़रूरत नहीं है।</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit SoundCurrent EQ</source>
       <translation>SoundCurrent EQ से बाहर निकलें</translation>
     </message>

@@ -94,9 +94,9 @@
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 107,
       "kind": "MessageBox",
-      "literal": "Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCQuitBeforeUpdate)",
+      "marked": true,
+      "reviewStatus": "all locale quit/update/uninstall translations prepared; language activation and lifecycle qualification pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
@@ -134,9 +134,9 @@
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 165,
       "kind": "MessageBox",
-      "literal": "Quit SoundCurrent EQ before uninstalling it.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCQuitBeforeUninstall)",
+      "marked": true,
+      "reviewStatus": "all locale quit/update/uninstall translations prepared; language activation and lifecycle qualification pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
@@ -246,9 +246,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 123,
       "kind": "MessageBox",
-      "literal": "Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCQuitBeforeUpdate)",
+      "marked": true,
+      "reviewStatus": "all locale quit/update/uninstall translations prepared; language activation and lifecycle qualification pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",
@@ -294,9 +294,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 175,
       "kind": "MessageBox",
-      "literal": "Quit SoundCurrent EQ before uninstalling it.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCQuitBeforeUninstall)",
+      "marked": true,
+      "reviewStatus": "all locale quit/update/uninstall translations prepared; language activation and lifecycle qualification pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",
