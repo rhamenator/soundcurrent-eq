@@ -147,9 +147,19 @@
       "boundary": "Declared helper/NSIS prose, placeholders, translated shortcut captions and explicit locale/RTL map; actual driver operations distinct from silent app lifecycle.",
       "evidence": [
         "tests/results/localization/second-pass-setup-source-inventory.json",
-        "tests/results/localization/installer-language-activation.json"
+        "tests/results/localization/installer-language-activation.json",
+        "tests/results/localization/windows-setup-current-review-tests.log",
+        "tests/results/localization/windows-installer-current-review-tests.log",
+        "tests/results/localization/windows-startup-installed/verified-artifact.json"
       ],
-      "auditState": "indexed; final source/evidence correspondence check pending"
+      "auditState": "current source correspondence reviewed; no missing owned caption identified in declared helper/installer boundaries",
+      "review": {
+        "helpers": "Owned PowerShell messages use Get-SCSetupText/Format-SCSetupText with declared catalog keys; AST prose guard rejects new unmarked captions. Two retained candidates are invariant app names.",
+        "nsis": "Production templates reference SC LangStrings; generated34-language script activates explicit Windows/NSIS locale map and RTL custom page. Standard NSIS text from matching language modules, app shortcut/action captions from catalog.",
+        "build": "build-windows.ps1 exports helper data and generates installer with --activate-languages; source template kept intact. Helper locale passed to readiness/setup/settings/removal paths.",
+        "state": "Installer language preference and per-user app preference kept distinct; first-run app fallback consumes installer preference while explicit app setting wins. Stable route/driver/product identifiers retained."
+      },
+      "runtimeLimit": "Inert lookup/formatting/parsing/missing-manager tests plus earlier hosted silent fr/nn/ar lifecycle. No new actual driver install/repair/removal or all-language dialog rendering. Current production refresh pending for corrected process-conflict code/catalogs."
     },
     {
       "id": "linux-launcher-installer",
