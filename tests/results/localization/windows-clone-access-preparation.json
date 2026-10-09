@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "clone": "soundcurrent-localization-win11-qa",
+  "finalState": "shut off",
+  "qemuGuestAgentChannelPresent": false,
+  "readOnlySetupDisc": "/var/lib/libvirt/images/soundcurrent-localization-ssh-setup.iso",
+  "discSha256": "2f5d9829e6d18db22b14153997c6b7effd9ae1dd28e9de6bb534d2ddeb107429",
+  "setupScriptSha256": "3b8d135301214dd82eafbbe33130b80a82ca3b2438591aa72017ddc564b27e39",
+  "discContains": "Clone-only setup script and public Ed25519 SSH key; no passwords or private keys",
+  "noRunSetupGuardPassed": true,
+  "setupScriptExecutedInGuest": false,
+  "guestLoginVerified": false,
+  "keyboardEntryMethodQualificationPending": true,
+  "installerExecuted": false,
+  "gracefulShutdownVerified": true,
+  "originalsOrTemplateModified": false,
+  "dawModified": false,
+  "scope": "Preparation and bounded guest-access attempt; no application/runtime/lifecycle qualification",
+  "nativeSpeakerVerified": false
+}
