@@ -2419,6 +2419,11 @@ Importere til biblioteket ditt?</translation>
       <translation>Angre siste equalizerendring</translation>
     </message>
     <message>
+      <source>Uninstall</source>
+      <translation>Avinstaller</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
       <source>Unlock EQ</source>
       <translation>Lås opp EQ</translation>
     </message>

@@ -2419,6 +2419,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Hoàn tác thay đổi bộ cân bằng âm gần nhất</translation>
     </message>
     <message>
+      <source>Uninstall</source>
+      <translation>Gỡ cài đặt</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
       <source>Unlock EQ</source>
       <translation>Mở khóa EQ</translation>
     </message>

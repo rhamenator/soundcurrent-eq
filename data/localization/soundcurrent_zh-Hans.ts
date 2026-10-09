@@ -2419,6 +2419,11 @@ Import into your library?</source>
       <translation>撤销上一次均衡器更改</translation>
     </message>
     <message>
+      <source>Uninstall</source>
+      <translation>卸载</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
       <source>Unlock EQ</source>
       <translation>解锁均衡器</translation>
     </message>

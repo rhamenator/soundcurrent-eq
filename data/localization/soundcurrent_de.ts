@@ -2419,6 +2419,11 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Letzte Equalizeränderung rückgängig machen</translation>
     </message>
     <message>
+      <source>Uninstall</source>
+      <translation>Deinstallieren</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
       <source>Unlock EQ</source>
       <translation>EQ entsperren</translation>
     </message>

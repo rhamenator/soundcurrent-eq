@@ -2419,6 +2419,11 @@ Import into your library?</source>
       <translation>واگرد آخرین تغییر اکولایزر</translation>
     </message>
     <message>
+      <source>Uninstall</source>
+      <translation>حذف نصب</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
       <source>Unlock EQ</source>
       <translation>باز کردن قفل اکولایزر</translation>
     </message>

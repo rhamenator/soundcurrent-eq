@@ -49,6 +49,29 @@ class Activation(unittest.TestCase):
             for line in helpers: self.assertIn('-Language "$SCLocaleTag"',line)
             self.assertIn('StrCpy $InstallDriver 0 ; Silent app updates never install/elevate a driver.',text)
 
+    def test_shortcut_names_and_exact_cleanup(self):
+        for value in ('../other','folder/name','folder\\name','bad:name','NUL','CON.txt','COM1','LPT9','trailing.',' trailing','bad\nname',''):
+            with self.subTest(value=value), self.assertRaises(ValueError): installer.validate_shortcut_name(value)
+        for source in sorted((ROOT/'packaging/windows').glob('*.nsi')):
+            generated=self.folder/('shortcuts-'+source.name)
+            installer.generate_installer(source,generated,PRODUCT,self.captions,activate=True)
+            text=generated.read_text()
+            route='native' if source.name.endswith('-native.nsi') else 'cable'
+            names={'Uninstall','Audio driver setup','Install VB-CABLE','VB-CABLE settings'}
+            for tag,variants in self.captions['languages'].items():
+                pack=variants[route]
+                names.update(pack['shortcutCaptions'].values())
+                if tag!='en':
+                    self.assertIn(installer.nsis_escape(pack['localizedSetupFailure']),text)
+            for name in names:
+                instruction='  Delete "$SMPROGRAMS\\'+PRODUCT+'\\'+installer.nsis_escape(name)+'.lnk"'
+                self.assertEqual(text.count(instruction),2,name)
+            self.assertNotIn('Delete "$SMPROGRAMS\\'+PRODUCT+'\\*',text)
+            for key in ('SCShortcutUninstall','SCShortcutSetup'):
+                self.assertIn('CreateShortcut "$SMPROGRAMS\\'+PRODUCT+'\\$('+key+').lnk"',text)
+            if route=='cable': self.assertIn('CreateShortcut "$SMPROGRAMS\\'+PRODUCT+'\\$(SCShortcutCableSettings).lnk"',text)
+            self.assertIn('CreateShortcut "$DESKTOP\\'+PRODUCT+'.lnk"',text)
+
     def test_activation_checkout_line_endings(self):
         for source in sorted((ROOT/'packaging/windows').glob('*.nsi')):
             original=source.read_bytes().replace(b'\r\n',b'\n')

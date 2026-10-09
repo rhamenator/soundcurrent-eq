@@ -2419,6 +2419,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>Kumoa viimeisin taajuuskorjausmuutos</translation>
     </message>
     <message>
+      <source>Uninstall</source>
+      <translation>Poista asennus</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
       <source>Unlock EQ</source>
       <translation>Avaa taajuuskorjaimen lukitus</translation>
     </message>

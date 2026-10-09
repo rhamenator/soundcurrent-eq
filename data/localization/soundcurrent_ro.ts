@@ -2419,6 +2419,11 @@ Importați în bibliotecă?</translation>
       <translation>Anulați ultima modificare a egalizatorului</translation>
     </message>
     <message>
+      <source>Uninstall</source>
+      <translation>Dezinstalare</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
       <source>Unlock EQ</source>
       <translation>Deblocați EQ</translation>
     </message>

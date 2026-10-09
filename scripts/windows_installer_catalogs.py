@@ -8,6 +8,9 @@ from pathlib import Path
 import localization as catalog
 
 SOURCES = {
+    'SCShortcutUninstall': 'Uninstall',
+    'SCShortcutSetup': 'Audio driver setup',
+    'SCShortcutCableSettings': 'VB-CABLE settings',
     'SCWelcomeQuit': 'Save your work and quit the running app before continuing. Closing its window keeps it running in the background.',
     'SCWelcomeInstall': 'Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.',
     'SCSetupFailedAppInstalled': '%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.',
@@ -142,7 +145,11 @@ def export(destination, product):
                 captions['SCCableRepair'] = translations['SCCableRepair']
                 captions['SCCablePresent'] = format_value(translations['SCCablePresent'], translations['SCQuitAction'])
                 captions['SCCableRestart'] = translations['SCCableRestart']
-            variants[route] = {'captions': captions, 'nsisEscaped': {key: nsis_escape(text) for key, text in captions.items()}}
+            shortcuts = {key: translations[key] for key in ('SCShortcutUninstall', 'SCShortcutSetup', 'SCShortcutCableSettings')}
+            for value in shortcuts.values():
+                validate_shortcut_name(value)
+            localized_guidance = format_values(translations['SCSetupFailedAppInstalled'], (driver, product, shortcuts['SCShortcutSetup']))
+            variants[route] = {'shortcutCaptions': shortcuts, 'localizedSetupFailure': localized_guidance, 'captions': captions, 'nsisEscaped': {key: nsis_escape(text) for key, text in captions.items()}}
         languages[row['tag']] = variants
     result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair and signed-installer and shared-cable and cable-routing donation and quit-before-update/uninstall and setup progress and native and cable removal failure and installed-app setup failure and welcome guidance only',
               'installerLocaleActivationComplete': False, 'nativeSpeakerVerified': False,
@@ -151,6 +158,12 @@ def export(destination, product):
     destination.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     return result
 
+
+def validate_shortcut_name(value):
+    if not value or value != value.strip() or value.endswith('.') or any(c in value for c in '<>:"/\\|?*') or any(ord(c)<32 for c in value):
+        raise ValueError('Unsafe localized shortcut name')
+    if value.split('.')[0].upper() in {'CON','PRN','AUX','NUL',*(f'COM{i}' for i in range(1,10)),*(f'LPT{i}' for i in range(1,10))}:
+        raise ValueError('Reserved Windows shortcut name')
 
 def activate_languages(text, product, captions, route):
     """Activate explicit language assets and persist installer-only preferences."""
@@ -171,11 +184,19 @@ def activate_languages(text, product, captions, route):
             declarations.append('!insertmacro MUI_LANGUAGEEX "${SOURCE_ROOT}\\packaging\\windows\\languages" "' + row['nsisLanguage'] + '"')
     text = text.replace('!insertmacro MUI_LANGUAGE "English"', '\n'.join(declarations), 1)
     lines = []
+    shortcut_names = {'Uninstall', 'Audio driver setup', 'Install VB-CABLE', 'VB-CABLE settings'}
     for row in rows:
-        if row['tag'] == 'en':
-            continue
         pack = captions['languages'][row['tag']][route]
-        for name, value in pack['nsisEscaped'].items():
+        localized = {name: nsis_escape(value) for name, value in pack['shortcutCaptions'].items()}
+        for value in pack['shortcutCaptions'].values():
+            validate_shortcut_name(value)
+            shortcut_names.add(value)
+        if len({value.casefold() for value in pack['shortcutCaptions'].values()}) != 3:
+            raise ValueError('Localized shortcut names collide')
+        if row['tag'] != 'en':
+            localized.update(pack['nsisEscaped'])
+            localized['SCSetupFailedAppInstalled'] = nsis_escape(pack['localizedSetupFailure'])
+        for name, value in localized.items():
             lines.append('LangString ' + name + ' ' + str(row['windowsLanguageId']) + ' "' + value + '"')
     anchor = '\nFunction .onInit\n'
     if text.count(anchor) != 1 or 'Function un.onInit' in text:
@@ -203,6 +224,21 @@ def activate_languages(text, product, captions, route):
     if text.count(anchor) != 1:
         raise ValueError('Missing owned install registry anchor')
     text = text.replace(anchor, anchor + '\n  WriteRegStr HKCU "' + key + '" "InstallerLocale" "$SCLocaleTag"', 1)
+    folder = '$SMPROGRAMS\\' + product + '\\'
+    for original, name in [('Uninstall', 'SCShortcutUninstall'), ('Audio driver setup', 'SCShortcutSetup'), ('VB-CABLE settings', 'SCShortcutCableSettings')]:
+        text = text.replace('CreateShortcut "' + folder + original + '.lnk"', 'CreateShortcut "' + folder + '$(' + name + ').lnk"')
+    cleanup = '\n'.join('  Delete "' + folder + nsis_escape(name) + '.lnk"' for name in sorted(shortcut_names))
+    directory = '  CreateDirectory "$SMPROGRAMS\\' + product + '"'
+    if text.count(directory) != 1:
+        raise ValueError('Missing shortcut directory anchor')
+    # Keep product shortcut deletion, replace action deletions with exact known names.
+    text = '\n'.join(line for line in text.split('\n') if not any(line.strip() == 'Delete "' + folder + name + '.lnk"' for name in ('Uninstall','Audio driver setup','Install VB-CABLE','VB-CABLE settings')))
+    text = text.replace(directory, cleanup + '\n' + directory, 1)
+    # Insert cleanup at uninstall directory removal, never a recursive/wildcard delete.
+    removal = '  RMDir "$SMPROGRAMS\\' + product + '"'
+    if text.count(removal) != 1:
+        raise ValueError('Missing shortcut uninstall directory anchor')
+    text = text.replace(removal, cleanup + '\n' + removal, 1)
     return text
 
 def generate_installer(source, destination, product, captions, activate=False):

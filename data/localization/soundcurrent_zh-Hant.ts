@@ -2419,6 +2419,11 @@ Import into your library?</source>
       <translation>復原上一次等化器變更</translation>
     </message>
     <message>
+      <source>Uninstall</source>
+      <translation>解除安裝</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
       <source>Unlock EQ</source>
       <translation>解除等化器鎖定</translation>
     </message>

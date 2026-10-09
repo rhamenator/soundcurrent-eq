@@ -2419,6 +2419,11 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Annuler la dernière modification de l’égaliseur</translation>
     </message>
     <message>
+      <source>Uninstall</source>
+      <translation>Désinstaller</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
       <source>Unlock EQ</source>
       <translation>Déverrouiller l’égaliseur</translation>
     </message>

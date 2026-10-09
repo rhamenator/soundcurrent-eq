@@ -2419,6 +2419,11 @@ Importovat do vaší knihovny?</translation>
       <translation>Vrátit poslední změnu ekvalizéru</translation>
     </message>
     <message>
+      <source>Uninstall</source>
+      <translation>Odinstalovat</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
       <source>Unlock EQ</source>
       <translation>Odemknout EQ</translation>
     </message>

@@ -2419,6 +2419,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Tendua mabadiliko ya mwisho ya kisawazishi</translation>
     </message>
     <message>
+      <source>Uninstall</source>
+      <translation>Ondoa</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
       <source>Unlock EQ</source>
       <translation>Fungua EQ</translation>
     </message>

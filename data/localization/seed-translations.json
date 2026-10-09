@@ -132,7 +132,8 @@
     "%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.",
     "Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.",
     "Save your work and quit the running app before continuing. Closing its window keeps it running in the background.",
-    "Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it."
+    "Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.",
+    "Uninstall"
   ],
   "languages": {
     "de": [
@@ -269,7 +270,8 @@
       "Die Einrichtung von %1 wurde nicht abgeschlossen. %2 selbst ist installiert. Verwenden Sie %3 im Startmenü, um es erneut zu versuchen; den Grund finden Sie in den Einrichtungsdetails.",
       "Installieren oder aktualisieren Sie %1. Eine ältere Version muss nicht deinstalliert werden. Ihre Einstellungen, Presets und Geräteprofile bleiben erhalten.",
       "Speichern Sie Ihre Arbeit und beenden Sie die laufende App, bevor Sie fortfahren. Beim Schließen des Fensters läuft die App im Hintergrund weiter.",
-      "Windows hat einen Treibereintrag für VB-CABLE, aber keine nutzbaren Kabel-Audioendpunkte. Prüfen Sie zuerst, ob CABLE Input und CABLE Output in den Windows-Soundeinstellungen aktiviert sind. Zur Neuinstallation: Klicken Sie im offiziellen Installationsprogramm, das als Nächstes geöffnet wird, auf Remove Driver, starten Sie Windows neu, öffnen Sie dann erneut %1 in der App und klicken Sie auf Install Driver. Starten Sie nochmals neu, bevor Sie Audio über SoundCurrent wiedergeben. Die Entfernung dieses gemeinsam genutzten Kabels betrifft auch andere Apps, die es verwenden."
+      "Windows hat einen Treibereintrag für VB-CABLE, aber keine nutzbaren Kabel-Audioendpunkte. Prüfen Sie zuerst, ob CABLE Input und CABLE Output in den Windows-Soundeinstellungen aktiviert sind. Zur Neuinstallation: Klicken Sie im offiziellen Installationsprogramm, das als Nächstes geöffnet wird, auf Remove Driver, starten Sie Windows neu, öffnen Sie dann erneut %1 in der App und klicken Sie auf Install Driver. Starten Sie nochmals neu, bevor Sie Audio über SoundCurrent wiedergeben. Die Entfernung dieses gemeinsam genutzten Kabels betrifft auch andere Apps, die es verwenden.",
+      "Deinstallieren"
     ],
     "fr": [
       "Français",
@@ -405,7 +407,8 @@
       "La configuration de %1 n’a pas abouti. %2 est bien installé. Utilisez %3 dans le menu Démarrer pour réessayer ; consultez les détails de l’installation pour connaître la raison.",
       "Installez ou mettez à jour %1. Il n’est pas nécessaire de désinstaller une ancienne version. Vos paramètres, préréglages et profils d’équipement seront conservés.",
       "Enregistrez votre travail et quittez l’application en cours d’exécution avant de continuer. Fermer sa fenêtre la laisse fonctionner en arrière-plan.",
-      "Windows possède une entrée de pilote VB-CABLE, mais aucun point de terminaison audio utilisable pour ce câble. Vérifiez d’abord que CABLE Input et CABLE Output sont activés dans les paramètres de son de Windows. Pour réinstaller : cliquez sur Remove Driver dans le programme d’installation officiel qui s’ouvre ensuite, redémarrez Windows, puis ouvrez de nouveau %1 dans l’application et cliquez sur Install Driver. Redémarrez encore une fois avant de lire de l’audio via SoundCurrent. Supprimer ce câble partagé affecte les autres applications qui l’utilisent."
+      "Windows possède une entrée de pilote VB-CABLE, mais aucun point de terminaison audio utilisable pour ce câble. Vérifiez d’abord que CABLE Input et CABLE Output sont activés dans les paramètres de son de Windows. Pour réinstaller : cliquez sur Remove Driver dans le programme d’installation officiel qui s’ouvre ensuite, redémarrez Windows, puis ouvrez de nouveau %1 dans l’application et cliquez sur Install Driver. Redémarrez encore une fois avant de lire de l’audio via SoundCurrent. Supprimer ce câble partagé affecte les autres applications qui l’utilisent.",
+      "Désinstaller"
     ],
     "es": [
       "Español",
@@ -541,7 +544,8 @@
       "La instalación de %1 no se completó. %2 sí está instalado. Use %3 en el menú Inicio para volver a intentarlo; consulte los detalles de la instalación para conocer el motivo.",
       "Instale o actualice %1. No es necesario desinstalar una versión anterior. Se conservarán sus ajustes, preajustes y perfiles de equipos.",
       "Guarde su trabajo y salga de la aplicación en ejecución antes de continuar. Cerrar su ventana deja la aplicación funcionando en segundo plano.",
-      "Windows tiene un registro de controlador de VB-CABLE, pero no hay puntos de conexión del cable utilizables. Compruebe primero que CABLE Input y CABLE Output estén habilitados en la configuración de sonido de Windows. Para reinstalar: haga clic en Remove Driver en el instalador oficial que se abre a continuación, reinicie Windows, vuelva a abrir %1 en la aplicación y haga clic en Install Driver. Reinicie otra vez antes de reproducir audio a través de SoundCurrent. Quitar este cable compartido afecta a otras aplicaciones que lo usan."
+      "Windows tiene un registro de controlador de VB-CABLE, pero no hay puntos de conexión del cable utilizables. Compruebe primero que CABLE Input y CABLE Output estén habilitados en la configuración de sonido de Windows. Para reinstalar: haga clic en Remove Driver en el instalador oficial que se abre a continuación, reinicie Windows, vuelva a abrir %1 en la aplicación y haga clic en Install Driver. Reinicie otra vez antes de reproducir audio a través de SoundCurrent. Quitar este cable compartido afecta a otras aplicaciones que lo usan.",
+      "Desinstalar"
     ],
     "it": [
       "Italiano",
@@ -677,7 +681,8 @@
       "La configurazione di %1 non è stata completata. %2 è comunque installato. Usare %3 nel menu Start per riprovare; consultare i dettagli dell’installazione per il motivo.",
       "Installare o aggiornare %1. Non è necessario disinstallare una versione precedente. Impostazioni, preset e profili delle apparecchiature verranno mantenuti.",
       "Salvare il lavoro e uscire dall’app in esecuzione prima di continuare. La chiusura della finestra lascia l’app in esecuzione in background.",
-      "Windows ha una voce del driver VB-CABLE, ma non ci sono endpoint del cavo utilizzabili. Verificare prima che CABLE Input e CABLE Output siano abilitati nelle impostazioni audio di Windows. Per reinstallare: fare clic su Remove Driver nel programma di installazione ufficiale che si apre subito dopo, riavviare Windows, quindi aprire di nuovo %1 nell’app e fare clic su Install Driver. Riavviare ancora prima di riprodurre audio tramite SoundCurrent. La rimozione di questo cavo condiviso riguarda anche le altre app che lo usano."
+      "Windows ha una voce del driver VB-CABLE, ma non ci sono endpoint del cavo utilizzabili. Verificare prima che CABLE Input e CABLE Output siano abilitati nelle impostazioni audio di Windows. Per reinstallare: fare clic su Remove Driver nel programma di installazione ufficiale che si apre subito dopo, riavviare Windows, quindi aprire di nuovo %1 nell’app e fare clic su Install Driver. Riavviare ancora prima di riprodurre audio tramite SoundCurrent. La rimozione di questo cavo condiviso riguarda anche le altre app che lo usano.",
+      "Disinstalla"
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -813,7 +818,8 @@
       "A instalação do %1 não foi concluída. O %2 está instalado. Utilize %3 no menu Iniciar para tentar novamente; consulte os detalhes da instalação para saber o motivo.",
       "Instale ou atualize o %1. Não é necessário desinstalar uma versão anterior. As suas definições, predefinições e perfis de equipamento serão mantidos.",
       "Guarde o seu trabalho e saia da aplicação em execução antes de continuar. Fechar a janela mantém a aplicação em execução em segundo plano.",
-      "O Windows tem um registo do controlador VB-CABLE, mas não há pontos de ligação do cabo utilizáveis. Verifique primeiro se CABLE Input e CABLE Output estão ativados nas definições de som do Windows. Para reinstalar: clique em Remove Driver no instalador oficial que abre a seguir, reinicie o Windows, volte a abrir %1 na aplicação e clique em Install Driver. Reinicie mais uma vez antes de reproduzir áudio através do SoundCurrent. Remover este cabo partilhado afeta outras aplicações que o utilizam."
+      "O Windows tem um registo do controlador VB-CABLE, mas não há pontos de ligação do cabo utilizáveis. Verifique primeiro se CABLE Input e CABLE Output estão ativados nas definições de som do Windows. Para reinstalar: clique em Remove Driver no instalador oficial que abre a seguir, reinicie o Windows, volte a abrir %1 na aplicação e clique em Install Driver. Reinicie mais uma vez antes de reproduzir áudio através do SoundCurrent. Remover este cabo partilhado afeta outras aplicações que o utilizam.",
+      "Desinstalar"
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -949,7 +955,8 @@
       "A instalação do %1 não foi concluída. O %2 está instalado. Use %3 no menu Iniciar para tentar novamente; consulte os detalhes da instalação para saber o motivo.",
       "Instale ou atualize o %1. Não é necessário desinstalar uma versão anterior. Suas configurações, predefinições e perfis de equipamentos serão mantidos.",
       "Salve seu trabalho e saia do aplicativo em execução antes de continuar. Fechar a janela mantém o aplicativo em execução em segundo plano.",
-      "O Windows tem um registro do driver VB-CABLE, mas não há pontos de conexão do cabo utilizáveis. Primeiro, verifique se CABLE Input e CABLE Output estão habilitados nas configurações de som do Windows. Para reinstalar: clique em Remove Driver no instalador oficial que será aberto em seguida, reinicie o Windows, abra %1 novamente no aplicativo e clique em Install Driver. Reinicie mais uma vez antes de reproduzir áudio pelo SoundCurrent. Remover este cabo compartilhado afeta outros aplicativos que o utilizam."
+      "O Windows tem um registro do driver VB-CABLE, mas não há pontos de conexão do cabo utilizáveis. Primeiro, verifique se CABLE Input e CABLE Output estão habilitados nas configurações de som do Windows. Para reinstalar: clique em Remove Driver no instalador oficial que será aberto em seguida, reinicie o Windows, abra %1 novamente no aplicativo e clique em Install Driver. Reinicie mais uma vez antes de reproduzir áudio pelo SoundCurrent. Remover este cabo compartilhado afeta outros aplicativos que o utilizam.",
+      "Desinstalar"
     ],
     "nl": [
       "Nederlands",
@@ -1085,7 +1092,8 @@
       "De installatie van %1 is niet voltooid. %2 zelf is geïnstalleerd. Gebruik %3 in het Startmenu om het opnieuw te proberen; zie de installatiedetails voor de reden.",
       "Installeer of werk %1 bij. Een oudere versie hoeft niet te worden verwijderd. Uw instellingen, voorinstellingen en apparatuurprofielen blijven behouden.",
       "Sla uw werk op en sluit de actieve app volledig af voordat u doorgaat. Als u het venster sluit, blijft de app op de achtergrond actief.",
-      "Windows heeft een stuurprogrammaregistratie voor VB-CABLE, maar geen bruikbare audio-eindpunten van de kabel. Controleer eerst of CABLE Input en CABLE Output zijn ingeschakeld in de geluidsinstellingen van Windows. Om opnieuw te installeren: klik op Remove Driver in het officiële installatieprogramma dat hierna opent, start Windows opnieuw op, open vervolgens %1 opnieuw in de app en klik op Install Driver. Start nogmaals opnieuw op voordat u audio via SoundCurrent afspeelt. Het verwijderen van deze gedeelde kabel heeft gevolgen voor andere apps die deze gebruiken."
+      "Windows heeft een stuurprogrammaregistratie voor VB-CABLE, maar geen bruikbare audio-eindpunten van de kabel. Controleer eerst of CABLE Input en CABLE Output zijn ingeschakeld in de geluidsinstellingen van Windows. Om opnieuw te installeren: klik op Remove Driver in het officiële installatieprogramma dat hierna opent, start Windows opnieuw op, open vervolgens %1 opnieuw in de app en klik op Install Driver. Start nogmaals opnieuw op voordat u audio via SoundCurrent afspeelt. Het verwijderen van deze gedeelde kabel heeft gevolgen voor andere apps die deze gebruiken.",
+      "Verwijderen"
     ],
     "pl": [
       "Polski",
@@ -1221,7 +1229,8 @@
       "Konfiguracja %1 nie została ukończona. Sama aplikacja %2 jest zainstalowana. Użyj %3 w menu Start, aby spróbować ponownie; przyczynę znajdziesz w szczegółach instalacji.",
       "Zainstaluj lub zaktualizuj %1. Nie trzeba odinstalowywać starszej wersji. Ustawienia, presety i profile sprzętu zostaną zachowane.",
       "Zapisz swoją pracę i zakończ działanie uruchomionej aplikacji przed kontynuowaniem. Zamknięcie jej okna pozostawia ją działającą w tle.",
-      "Windows ma wpis sterownika VB-CABLE, ale nie ma dostępnych punktów końcowych kabla. Najpierw sprawdź, czy CABLE Input i CABLE Output są włączone w ustawieniach dźwięku Windows. Aby zainstalować ponownie: kliknij Remove Driver w oficjalnym instalatorze, który zaraz się otworzy, uruchom ponownie Windows, następnie ponownie otwórz %1 w aplikacji i kliknij Install Driver. Jeszcze raz uruchom komputer ponownie przed odtwarzaniem dźwięku przez SoundCurrent. Usunięcie tego współdzielonego kabla wpływa na inne aplikacje, które go używają."
+      "Windows ma wpis sterownika VB-CABLE, ale nie ma dostępnych punktów końcowych kabla. Najpierw sprawdź, czy CABLE Input i CABLE Output są włączone w ustawieniach dźwięku Windows. Aby zainstalować ponownie: kliknij Remove Driver w oficjalnym instalatorze, który zaraz się otworzy, uruchom ponownie Windows, następnie ponownie otwórz %1 w aplikacji i kliknij Install Driver. Jeszcze raz uruchom komputer ponownie przed odtwarzaniem dźwięku przez SoundCurrent. Usunięcie tego współdzielonego kabla wpływa na inne aplikacje, które go używają.",
+      "Odinstaluj"
     ],
     "cs": [
       "Čeština",
@@ -1357,7 +1366,8 @@
       "Instalace %1 nebyla dokončena. Samotná aplikace %2 je nainstalována. Pro další pokus použijte %3 v nabídce Start; důvod najdete v podrobnostech instalace.",
       "Nainstalujte nebo aktualizujte %1. Starší verzi není nutné odinstalovat. Vaše nastavení, předvolby a profily zařízení budou zachovány.",
       "Před pokračováním uložte svou práci a ukončete spuštěnou aplikaci. Zavření jejího okna ponechá aplikaci spuštěnou na pozadí.",
-      "Windows obsahuje záznam ovladače VB-CABLE, ale nemá použitelné koncové body kabelu. Nejprve zkontrolujte, zda jsou CABLE Input a CABLE Output povoleny v nastavení zvuku Windows. Pro novou instalaci: klikněte na Remove Driver v oficiálním instalačním programu, který se otevře jako další, restartujte Windows, poté v aplikaci znovu otevřete %1 a klikněte na Install Driver. Před přehráváním zvuku přes SoundCurrent ještě jednou restartujte počítač. Odstranění tohoto sdíleného kabelu ovlivní další aplikace, které jej používají."
+      "Windows obsahuje záznam ovladače VB-CABLE, ale nemá použitelné koncové body kabelu. Nejprve zkontrolujte, zda jsou CABLE Input a CABLE Output povoleny v nastavení zvuku Windows. Pro novou instalaci: klikněte na Remove Driver v oficiálním instalačním programu, který se otevře jako další, restartujte Windows, poté v aplikaci znovu otevřete %1 a klikněte na Install Driver. Před přehráváním zvuku přes SoundCurrent ještě jednou restartujte počítač. Odstranění tohoto sdíleného kabelu ovlivní další aplikace, které jej používají.",
+      "Odinstalovat"
     ],
     "sk": [
       "Slovenčina",
@@ -1493,7 +1503,8 @@
       "Inštalácia %1 nebola dokončená. Samotná aplikácia %2 je nainštalovaná. Na ďalší pokus použite %3 v ponuke Štart; dôvod nájdete v podrobnostiach inštalácie.",
       "Nainštalujte alebo aktualizujte %1. Staršiu verziu nie je potrebné odinštalovať. Vaše nastavenia, predvoľby a profily zariadení budú zachované.",
       "Pred pokračovaním uložte svoju prácu a ukončite spustenú aplikáciu. Zatvorenie jej okna ponechá aplikáciu spustenú na pozadí.",
-      "Windows obsahuje záznam ovládača VB-CABLE, ale nemá použiteľné koncové body kábla. Najprv skontrolujte, či sú CABLE Input a CABLE Output povolené v nastaveniach zvuku Windows. Na opätovnú inštaláciu: kliknite na Remove Driver v oficiálnom inštalačnom programe, ktorý sa otvorí ako ďalší, reštartujte Windows, potom v aplikácii znova otvorte %1 a kliknite na Install Driver. Pred prehrávaním zvuku cez SoundCurrent ešte raz reštartujte počítač. Odstránenie tohto zdieľaného kábla ovplyvní ďalšie aplikácie, ktoré ho používajú."
+      "Windows obsahuje záznam ovládača VB-CABLE, ale nemá použiteľné koncové body kábla. Najprv skontrolujte, či sú CABLE Input a CABLE Output povolené v nastaveniach zvuku Windows. Na opätovnú inštaláciu: kliknite na Remove Driver v oficiálnom inštalačnom programe, ktorý sa otvorí ako ďalší, reštartujte Windows, potom v aplikácii znova otvorte %1 a kliknite na Install Driver. Pred prehrávaním zvuku cez SoundCurrent ešte raz reštartujte počítač. Odstránenie tohto zdieľaného kábla ovplyvní ďalšie aplikácie, ktoré ho používajú.",
+      "Odinštalovať"
     ],
     "uk": [
       "Українська",
@@ -1629,7 +1640,8 @@
       "Налаштування %1 не завершено. Саму програму %2 установлено. Скористайтеся %3 у меню «Пуск», щоб повторити спробу; причину наведено в деталях установлення.",
       "Установіть або оновіть %1. Видаляти попередню версію не потрібно. Ваші налаштування, пресети та профілі обладнання буде збережено.",
       "Збережіть свою роботу та вийдіть із запущеної програми, перш ніж продовжувати. Закриття її вікна залишає програму працювати у фоновому режимі.",
-      "У Windows є запис драйвера VB-CABLE, але немає придатних кінцевих точок кабелю. Спочатку перевірте, чи ввімкнено CABLE Input і CABLE Output у налаштуваннях звуку Windows. Для повторного встановлення: натисніть Remove Driver в офіційному інсталяторі, який відкриється далі, перезавантажте Windows, потім знову відкрийте %1 у програмі та натисніть Install Driver. Ще раз перезавантажте комп’ютер, перш ніж відтворювати звук через SoundCurrent. Видалення цього спільного кабелю впливає на інші програми, які його використовують."
+      "У Windows є запис драйвера VB-CABLE, але немає придатних кінцевих точок кабелю. Спочатку перевірте, чи ввімкнено CABLE Input і CABLE Output у налаштуваннях звуку Windows. Для повторного встановлення: натисніть Remove Driver в офіційному інсталяторі, який відкриється далі, перезавантажте Windows, потім знову відкрийте %1 у програмі та натисніть Install Driver. Ще раз перезавантажте комп’ютер, перш ніж відтворювати звук через SoundCurrent. Видалення цього спільного кабелю впливає на інші програми, які його використовують.",
+      "Видалити"
     ],
     "ru": [
       "Русский",
@@ -1765,7 +1777,8 @@
       "Настройка %1 не завершена. Само приложение %2 установлено. Используйте %3 в меню «Пуск», чтобы повторить попытку; причина указана в подробностях установки.",
       "Установите или обновите %1. Удалять предыдущую версию не требуется. Ваши настройки, пресеты и профили оборудования будут сохранены.",
       "Сохраните свою работу и выйдите из работающего приложения перед продолжением. При закрытии его окна приложение продолжает работать в фоновом режиме.",
-      "В Windows есть запись драйвера VB-CABLE, но нет доступных конечных точек кабеля. Сначала проверьте, включены ли CABLE Input и CABLE Output в настройках звука Windows. Для переустановки: нажмите Remove Driver в официальном установщике, который откроется далее, перезагрузите Windows, затем снова откройте %1 в приложении и нажмите Install Driver. Ещё раз перезагрузите компьютер перед воспроизведением звука через SoundCurrent. Удаление этого общего кабеля затронет другие приложения, которые его используют."
+      "В Windows есть запись драйвера VB-CABLE, но нет доступных конечных точек кабеля. Сначала проверьте, включены ли CABLE Input и CABLE Output в настройках звука Windows. Для переустановки: нажмите Remove Driver в официальном установщике, который откроется далее, перезагрузите Windows, затем снова откройте %1 в приложении и нажмите Install Driver. Ещё раз перезагрузите компьютер перед воспроизведением звука через SoundCurrent. Удаление этого общего кабеля затронет другие приложения, которые его используют.",
+      "Удалить"
     ],
     "el": [
       "Ελληνικά",
@@ -1901,7 +1914,8 @@
       "Η εγκατάσταση του %1 δεν ολοκληρώθηκε. Το ίδιο το %2 έχει εγκατασταθεί. Χρησιμοποιήστε το %3 στο μενού Έναρξη για να δοκιμάσετε ξανά· δείτε τις λεπτομέρειες εγκατάστασης για την αιτία.",
       "Εγκαταστήστε ή ενημερώστε το %1. Δεν χρειάζεται να απεγκαταστήσετε παλαιότερη έκδοση. Οι ρυθμίσεις, οι προεπιλογές και τα προφίλ εξοπλισμού σας θα διατηρηθούν.",
       "Αποθηκεύστε την εργασία σας και τερματίστε την εφαρμογή που εκτελείται πριν συνεχίσετε. Το κλείσιμο του παραθύρου της την αφήνει να εκτελείται στο παρασκήνιο.",
-      "Τα Windows έχουν καταχώριση προγράμματος οδήγησης VB-CABLE, αλλά δεν υπάρχουν διαθέσιμα τελικά σημεία του καλωδίου. Ελέγξτε πρώτα ότι τα CABLE Input και CABLE Output είναι ενεργοποιημένα στις ρυθμίσεις ήχου των Windows. Για επανεγκατάσταση: κάντε κλικ στο Remove Driver στο επίσημο πρόγραμμα εγκατάστασης που ανοίγει στη συνέχεια, επανεκκινήστε τα Windows, έπειτα ανοίξτε ξανά το %1 μέσα στην εφαρμογή και κάντε κλικ στο Install Driver. Επανεκκινήστε ακόμη μία φορά πριν αναπαραγάγετε ήχο μέσω του SoundCurrent. Η αφαίρεση αυτού του κοινόχρηστου καλωδίου επηρεάζει άλλες εφαρμογές που το χρησιμοποιούν."
+      "Τα Windows έχουν καταχώριση προγράμματος οδήγησης VB-CABLE, αλλά δεν υπάρχουν διαθέσιμα τελικά σημεία του καλωδίου. Ελέγξτε πρώτα ότι τα CABLE Input και CABLE Output είναι ενεργοποιημένα στις ρυθμίσεις ήχου των Windows. Για επανεγκατάσταση: κάντε κλικ στο Remove Driver στο επίσημο πρόγραμμα εγκατάστασης που ανοίγει στη συνέχεια, επανεκκινήστε τα Windows, έπειτα ανοίξτε ξανά το %1 μέσα στην εφαρμογή και κάντε κλικ στο Install Driver. Επανεκκινήστε ακόμη μία φορά πριν αναπαραγάγετε ήχο μέσω του SoundCurrent. Η αφαίρεση αυτού του κοινόχρηστου καλωδίου επηρεάζει άλλες εφαρμογές που το χρησιμοποιούν.",
+      "Απεγκατάσταση"
     ],
     "tr": [
       "Türkçe",
@@ -2037,7 +2051,8 @@
       "%1 kurulumu tamamlanmadı. %2 uygulaması yüklüdür. Yeniden denemek için Başlat menüsündeki %3 seçeneğini kullanın; nedeni kurulum ayrıntılarında görebilirsiniz.",
       "%1 uygulamasını yükleyin veya güncelleyin. Eski bir sürümü kaldırmanız gerekmez. Ayarlarınız, hazır ayarlarınız ve ekipman profilleriniz korunacaktır.",
       "Devam etmeden önce çalışmanızı kaydedin ve çalışan uygulamadan çıkın. Penceresini kapatmak uygulamanın arka planda çalışmasını durdurmaz.",
-      "Windows’ta VB-CABLE sürücü kaydı var ancak kullanılabilir kablo uç noktası yok. Önce Windows ses ayarlarında CABLE Input ve CABLE Output uç noktalarının etkin olduğunu kontrol edin. Yeniden yüklemek için: birazdan açılacak resmi kurulum programında Remove Driver düğmesine tıklayın, Windows’u yeniden başlatın, ardından uygulamada %1 seçeneğini tekrar açın ve Install Driver düğmesine tıklayın. SoundCurrent üzerinden ses çalmadan önce bir kez daha yeniden başlatın. Bu paylaşılan kabloyu kaldırmak, onu kullanan diğer uygulamaları etkiler."
+      "Windows’ta VB-CABLE sürücü kaydı var ancak kullanılabilir kablo uç noktası yok. Önce Windows ses ayarlarında CABLE Input ve CABLE Output uç noktalarının etkin olduğunu kontrol edin. Yeniden yüklemek için: birazdan açılacak resmi kurulum programında Remove Driver düğmesine tıklayın, Windows’u yeniden başlatın, ardından uygulamada %1 seçeneğini tekrar açın ve Install Driver düğmesine tıklayın. SoundCurrent üzerinden ses çalmadan önce bir kez daha yeniden başlatın. Bu paylaşılan kabloyu kaldırmak, onu kullanan diğer uygulamaları etkiler.",
+      "Kaldır"
     ],
     "sv": [
       "Svenska",
@@ -2173,7 +2188,8 @@
       "Installationen av %1 slutfördes inte. Själva %2 är installerat. Använd %3 i Start-menyn för att försöka igen; se installationsinformationen för orsaken.",
       "Installera eller uppdatera %1. Du behöver inte avinstallera en äldre version. Dina inställningar, förinställningar och utrustningsprofiler behålls.",
       "Spara ditt arbete och avsluta appen som körs innan du fortsätter. Appen fortsätter att köras i bakgrunden när dess fönster stängs.",
-      "Windows har en drivrutinspost för VB-CABLE men inga användbara slutpunkter för kabeln. Kontrollera först att CABLE Input och CABLE Output är aktiverade i Windows ljudinställningar. För att installera om: klicka på Remove Driver i det officiella installationsprogrammet som öppnas härnäst, starta om Windows, öppna sedan %1 i appen igen och klicka på Install Driver. Starta om en gång till innan du spelar upp ljud via SoundCurrent. Om den här delade kabeln tas bort påverkas andra appar som använder den."
+      "Windows har en drivrutinspost för VB-CABLE men inga användbara slutpunkter för kabeln. Kontrollera först att CABLE Input och CABLE Output är aktiverade i Windows ljudinställningar. För att installera om: klicka på Remove Driver i det officiella installationsprogrammet som öppnas härnäst, starta om Windows, öppna sedan %1 i appen igen och klicka på Install Driver. Starta om en gång till innan du spelar upp ljud via SoundCurrent. Om den här delade kabeln tas bort påverkas andra appar som använder den.",
+      "Avinstallera"
     ],
     "da": [
       "Dansk",
@@ -2309,7 +2325,8 @@
       "Installationen af %1 blev ikke fuldført. Selve %2 er installeret. Brug %3 i Start-menuen for at prøve igen; se installationsoplysningerne for årsagen.",
       "Installer eller opdater %1. Du behøver ikke at afinstallere en ældre version. Dine indstillinger, forudindstillinger og udstyrsprofiler bevares.",
       "Gem dit arbejde, og afslut den kørende app, før du fortsætter. Når vinduet lukkes, fortsætter appen med at køre i baggrunden.",
-      "Windows har en driverregistrering for VB-CABLE, men ingen brugbare endepunkter for kablet. Kontrollér først, at CABLE Input og CABLE Output er aktiveret i Windows lydindstillinger. For at geninstallere: klik på Remove Driver i det officielle installationsprogram, der åbner bagefter, genstart Windows, åbn derefter %1 i appen igen, og klik på Install Driver. Genstart endnu en gang, før du afspiller lyd gennem SoundCurrent. Fjernelse af dette delte kabel påvirker andre apps, der bruger det."
+      "Windows har en driverregistrering for VB-CABLE, men ingen brugbare endepunkter for kablet. Kontrollér først, at CABLE Input og CABLE Output er aktiveret i Windows lydindstillinger. For at geninstallere: klik på Remove Driver i det officielle installationsprogram, der åbner bagefter, genstart Windows, åbn derefter %1 i appen igen, og klik på Install Driver. Genstart endnu en gang, før du afspiller lyd gennem SoundCurrent. Fjernelse af dette delte kabel påvirker andre apps, der bruger det.",
+      "Afinstaller"
     ],
     "nb": [
       "Norsk bokmål",
@@ -2445,7 +2462,8 @@
       "Oppsettet av %1 ble ikke fullført. Selve %2 er installert. Bruk %3 i Start-menyen for å prøve igjen; se oppsettdetaljene for årsaken.",
       "Installer eller oppdater %1. Du trenger ikke å avinstallere en eldre versjon. Innstillingene, forhåndsinnstillingene og utstyrsprofilene dine beholdes.",
       "Lagre arbeidet ditt og avslutt appen som kjører før du fortsetter. Når vinduet lukkes, fortsetter appen å kjøre i bakgrunnen.",
-      "Windows har en driveroppføring for VB-CABLE, men ingen brukbare endepunkter for kabelen. Kontroller først at CABLE Input og CABLE Output er aktivert i Windows-lydinnstillingene. For å installere på nytt: klikk på Remove Driver i det offisielle installasjonsprogrammet som åpnes etterpå, start Windows på nytt, åpne deretter %1 i appen igjen og klikk på Install Driver. Start på nytt en gang til før du spiller av lyd gjennom SoundCurrent. Fjerning av denne delte kabelen påvirker andre apper som bruker den."
+      "Windows har en driveroppføring for VB-CABLE, men ingen brukbare endepunkter for kabelen. Kontroller først at CABLE Input og CABLE Output er aktivert i Windows-lydinnstillingene. For å installere på nytt: klikk på Remove Driver i det offisielle installasjonsprogrammet som åpnes etterpå, start Windows på nytt, åpne deretter %1 i appen igjen og klikk på Install Driver. Start på nytt en gang til før du spiller av lyd gjennom SoundCurrent. Fjerning av denne delte kabelen påvirker andre apper som bruker den.",
+      "Avinstaller"
     ],
     "fi": [
       "Suomi",
@@ -2581,7 +2599,8 @@
       "%1-asennus ei valmistunut. Itse %2 on asennettu. Yritä uudelleen valitsemalla %3 Käynnistä-valikosta; syy löytyy asennuksen tiedoista.",
       "Asenna tai päivitä %1. Vanhemman version asennusta ei tarvitse poistaa. Asetuksesi, esiasetuksesi ja laiteprofiilisi säilytetään.",
       "Tallenna työsi ja lopeta käynnissä oleva sovellus ennen jatkamista. Ikkunan sulkeminen jättää sovelluksen käyntiin taustalle.",
-      "Windowsissa on VB-CABLE-ohjaimen rekisterimerkintä, mutta kaapelilla ei ole käytettäviä päätepisteitä. Tarkista ensin, että CABLE Input ja CABLE Output ovat käytössä Windowsin ääniasetuksissa. Asenna uudelleen napsauttamalla Remove Driver seuraavaksi avautuvassa virallisessa asennusohjelmassa, käynnistä Windows uudelleen, avaa sitten %1 sovelluksessa uudelleen ja napsauta Install Driver. Käynnistä tietokone vielä kerran uudelleen ennen äänen toistamista SoundCurrent-sovelluksen kautta. Tämän jaetun kaapelin poistaminen vaikuttaa muihin sitä käyttäviin sovelluksiin."
+      "Windowsissa on VB-CABLE-ohjaimen rekisterimerkintä, mutta kaapelilla ei ole käytettäviä päätepisteitä. Tarkista ensin, että CABLE Input ja CABLE Output ovat käytössä Windowsin ääniasetuksissa. Asenna uudelleen napsauttamalla Remove Driver seuraavaksi avautuvassa virallisessa asennusohjelmassa, käynnistä Windows uudelleen, avaa sitten %1 sovelluksessa uudelleen ja napsauta Install Driver. Käynnistä tietokone vielä kerran uudelleen ennen äänen toistamista SoundCurrent-sovelluksen kautta. Tämän jaetun kaapelin poistaminen vaikuttaa muihin sitä käyttäviin sovelluksiin.",
+      "Poista asennus"
     ],
     "ro": [
       "Română",
@@ -2717,7 +2736,8 @@
       "Instalarea %1 nu s-a finalizat. Aplicația %2 este instalată. Folosiți %3 din meniul Start pentru a reîncerca; consultați detaliile instalării pentru motiv.",
       "Instalați sau actualizați %1. Nu trebuie să dezinstalați o versiune mai veche. Setările, presetările și profilurile echipamentelor vor fi păstrate.",
       "Salvați-vă munca și ieșiți din aplicația care rulează înainte de a continua. Închiderea ferestrei lasă aplicația să ruleze în fundal.",
-      "Windows are o înregistrare pentru driverul VB-CABLE, dar nu există puncte terminale utilizabile ale cablului. Verificați mai întâi că CABLE Input și CABLE Output sunt activate în setările de sunet Windows. Pentru reinstalare: faceți clic pe Remove Driver în programul oficial de instalare care se deschide în continuare, reporniți Windows, apoi deschideți din nou %1 în aplicație și faceți clic pe Install Driver. Reporniți încă o dată înainte de a reda sunet prin SoundCurrent. Eliminarea acestui cablu partajat afectează alte aplicații care îl folosesc."
+      "Windows are o înregistrare pentru driverul VB-CABLE, dar nu există puncte terminale utilizabile ale cablului. Verificați mai întâi că CABLE Input și CABLE Output sunt activate în setările de sunet Windows. Pentru reinstalare: faceți clic pe Remove Driver în programul oficial de instalare care se deschide în continuare, reporniți Windows, apoi deschideți din nou %1 în aplicație și faceți clic pe Install Driver. Reporniți încă o dată înainte de a reda sunet prin SoundCurrent. Eliminarea acestui cablu partajat afectează alte aplicații care îl folosesc.",
+      "Dezinstalare"
     ],
     "hu": [
       "Magyar",
@@ -2853,7 +2873,8 @@
       "A %1 telepítése nem fejeződött be. Maga a %2 alkalmazás telepítve van. Az újrapróbálkozáshoz használja a Start menü %3 parancsát; az okot a telepítés részleteinél találja.",
       "Telepítse vagy frissítse a %1 alkalmazást. Nem szükséges eltávolítani a régebbi verziót. Beállításai, előbeállításai és eszközprofiljai megmaradnak.",
       "A folytatás előtt mentse a munkáját, és lépjen ki a futó alkalmazásból. Az ablak bezárása után az alkalmazás tovább fut a háttérben.",
-      "A Windowsban szerepel a VB-CABLE illesztőprogramja, de a kábelnek nincsenek használható végpontjai. Először ellenőrizze, hogy a CABLE Input és a CABLE Output engedélyezve van-e a Windows hangbeállításaiban. Újratelepítéshez: kattintson a következőként megnyíló hivatalos telepítőben a Remove Driver gombra, indítsa újra a Windowst, majd az alkalmazásban válassza újra a %1 lehetőséget, és kattintson az Install Driver gombra. Még egyszer indítsa újra a gépet, mielőtt hangot játszana le a SoundCurrent alkalmazáson keresztül. A megosztott kábel eltávolítása a kábelt használó más alkalmazásokat is érinti."
+      "A Windowsban szerepel a VB-CABLE illesztőprogramja, de a kábelnek nincsenek használható végpontjai. Először ellenőrizze, hogy a CABLE Input és a CABLE Output engedélyezve van-e a Windows hangbeállításaiban. Újratelepítéshez: kattintson a következőként megnyíló hivatalos telepítőben a Remove Driver gombra, indítsa újra a Windowst, majd az alkalmazásban válassza újra a %1 lehetőséget, és kattintson az Install Driver gombra. Még egyszer indítsa újra a gépet, mielőtt hangot játszana le a SoundCurrent alkalmazáson keresztül. A megosztott kábel eltávolítása a kábelt használó más alkalmazásokat is érinti.",
+      "Eltávolítás"
     ],
     "ar": [
       "العربية",
@@ -2989,7 +3010,8 @@
       "لم يكتمل إعداد %1. تطبيق %2 نفسه مثبّت. استخدم %3 في قائمة ابدأ لإعادة المحاولة؛ راجع تفاصيل الإعداد لمعرفة السبب.",
       "ثبّت %1 أو حدّثه. لا حاجة إلى إلغاء تثبيت إصدار أقدم. سيتم الاحتفاظ بإعداداتك وإعداداتك المسبقة وملفات تعريف المعدات.",
       "احفظ عملك واخرج من التطبيق قيد التشغيل قبل المتابعة. إغلاق نافذته يُبقيه قيد التشغيل في الخلفية.",
-      "يحتوي Windows على سجل لبرنامج تشغيل VB-CABLE، لكن لا توجد نقاط نهاية قابلة للاستخدام للكبل. تحقق أولًا من تمكين CABLE Input وCABLE Output في إعدادات الصوت في Windows. لإعادة التثبيت: انقر على Remove Driver في برنامج الإعداد الرسمي الذي سيفتح بعد ذلك، وأعد تشغيل Windows، ثم افتح %1 في التطبيق مجددًا وانقر على Install Driver. أعد التشغيل مرة أخرى قبل تشغيل الصوت عبر SoundCurrent. إزالة هذا الكبل المشترك تؤثر في التطبيقات الأخرى التي تستخدمه."
+      "يحتوي Windows على سجل لبرنامج تشغيل VB-CABLE، لكن لا توجد نقاط نهاية قابلة للاستخدام للكبل. تحقق أولًا من تمكين CABLE Input وCABLE Output في إعدادات الصوت في Windows. لإعادة التثبيت: انقر على Remove Driver في برنامج الإعداد الرسمي الذي سيفتح بعد ذلك، وأعد تشغيل Windows، ثم افتح %1 في التطبيق مجددًا وانقر على Install Driver. أعد التشغيل مرة أخرى قبل تشغيل الصوت عبر SoundCurrent. إزالة هذا الكبل المشترك تؤثر في التطبيقات الأخرى التي تستخدمه.",
+      "إلغاء التثبيت"
     ],
     "he": [
       "עברית",
@@ -3125,7 +3147,8 @@
       "ההתקנה של %1 לא הושלמה. האפליקציה %2 עצמה מותקנת. יש להשתמש ב־%3 בתפריט התחל כדי לנסות שוב; הסיבה מופיעה בפרטי ההתקנה.",
       "התקנה או עדכון של %1. אין צורך להסיר גרסה ישנה יותר. ההגדרות, ההגדרות הקבועות מראש ופרופילי הציוד שלך יישמרו.",
       "יש לשמור את עבודתך ולצאת מהאפליקציה הפועלת לפני ההמשך. סגירת החלון שלה משאירה אותה פועלת ברקע.",
-      "ב־Windows קיימת רשומת מנהל התקן של VB-CABLE, אך אין נקודות קצה שמישות של הכבל. יש לבדוק תחילה ש־CABLE Input ו־CABLE Output מופעלים בהגדרות השמע של Windows. להתקנה מחדש: יש ללחוץ על Remove Driver בתוכנית ההתקנה הרשמית שתיפתח כעת, להפעיל מחדש את Windows, ואז לפתוח שוב את %1 באפליקציה וללחוץ על Install Driver. יש להפעיל מחדש פעם נוספת לפני השמעת שמע דרך SoundCurrent. הסרת הכבל המשותף הזה משפיעה על אפליקציות אחרות שמשתמשות בו."
+      "ב־Windows קיימת רשומת מנהל התקן של VB-CABLE, אך אין נקודות קצה שמישות של הכבל. יש לבדוק תחילה ש־CABLE Input ו־CABLE Output מופעלים בהגדרות השמע של Windows. להתקנה מחדש: יש ללחוץ על Remove Driver בתוכנית ההתקנה הרשמית שתיפתח כעת, להפעיל מחדש את Windows, ואז לפתוח שוב את %1 באפליקציה וללחוץ על Install Driver. יש להפעיל מחדש פעם נוספת לפני השמעת שמע דרך SoundCurrent. הסרת הכבל המשותף הזה משפיעה על אפליקציות אחרות שמשתמשות בו.",
+      "הסרה"
     ],
     "fa": [
       "فارسی",
@@ -3261,7 +3284,8 @@
       "راه‌اندازی %1 کامل نشد. خودِ %2 نصب شده است. برای تلاش دوباره از %3 در منوی شروع استفاده کنید؛ دلیل را در جزئیات نصب ببینید.",
       "%1 را نصب یا به‌روزرسانی کنید. نیازی به حذف نصب نسخهٔ قدیمی‌تر نیست. تنظیمات، پیش‌تنظیم‌ها و پروفایل‌های تجهیزات شما حفظ خواهند شد.",
       "پیش از ادامه، کار خود را ذخیره کنید و از برنامهٔ در حال اجرا خارج شوید. بستن پنجرهٔ آن، برنامه را در پس‌زمینه در حال اجرا نگه می‌دارد.",
-      "در Windows رکوردی برای درایور VB-CABLE وجود دارد، اما هیچ نقطهٔ پایانی قابل استفاده‌ای برای کابل نیست. ابتدا بررسی کنید که CABLE Input و CABLE Output در تنظیمات صدای Windows فعال باشند. برای نصب مجدد: در برنامهٔ نصب رسمی که در ادامه باز می‌شود روی Remove Driver کلیک کنید، Windows را راه‌اندازی مجدد کنید، سپس %1 را دوباره در برنامه باز کنید و روی Install Driver کلیک کنید. پیش از پخش صدا از طریق SoundCurrent، یک بار دیگر راه‌اندازی مجدد کنید. حذف این کابل مشترک بر برنامه‌های دیگری که از آن استفاده می‌کنند تأثیر می‌گذارد."
+      "در Windows رکوردی برای درایور VB-CABLE وجود دارد، اما هیچ نقطهٔ پایانی قابل استفاده‌ای برای کابل نیست. ابتدا بررسی کنید که CABLE Input و CABLE Output در تنظیمات صدای Windows فعال باشند. برای نصب مجدد: در برنامهٔ نصب رسمی که در ادامه باز می‌شود روی Remove Driver کلیک کنید، Windows را راه‌اندازی مجدد کنید، سپس %1 را دوباره در برنامه باز کنید و روی Install Driver کلیک کنید. پیش از پخش صدا از طریق SoundCurrent، یک بار دیگر راه‌اندازی مجدد کنید. حذف این کابل مشترک بر برنامه‌های دیگری که از آن استفاده می‌کنند تأثیر می‌گذارد.",
+      "حذف نصب"
     ],
     "zh-Hans": [
       "简体中文",
@@ -3397,7 +3421,8 @@
       "%1 安装未完成。%2 应用本身已安装。请使用开始菜单中的 %3 重试；原因请查看安装详情。",
       "安装或更新 %1。无需卸载旧版本。您的设置、预设和设备配置文件将会保留。",
       "继续前请保存工作并退出正在运行的应用。关闭窗口后，应用仍会在后台运行。",
-      "Windows 中存在 VB-CABLE 驱动程序记录，但没有可用的虚拟音频线端点。请先检查 Windows 声音设置中的 CABLE Input 和 CABLE Output 是否已启用。要重新安装，请在接下来打开的官方安装程序中点击 Remove Driver，重启 Windows，然后在应用中再次打开 %1 并点击 Install Driver。在通过 SoundCurrent 播放音频之前，请再重启一次。卸载此共享虚拟音频线会影响使用它的其他应用。"
+      "Windows 中存在 VB-CABLE 驱动程序记录，但没有可用的虚拟音频线端点。请先检查 Windows 声音设置中的 CABLE Input 和 CABLE Output 是否已启用。要重新安装，请在接下来打开的官方安装程序中点击 Remove Driver，重启 Windows，然后在应用中再次打开 %1 并点击 Install Driver。在通过 SoundCurrent 播放音频之前，请再重启一次。卸载此共享虚拟音频线会影响使用它的其他应用。",
+      "卸载"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -3533,7 +3558,8 @@
       "%1 安裝未完成。%2 應用程式本身已安裝。請使用開始功能表中的 %3 重試；原因請查看安裝詳細資訊。",
       "安裝或更新 %1。無須解除安裝舊版本。您的設定、預設集和設備設定檔將會保留。",
       "繼續前請儲存工作並結束正在執行的應用程式。關閉視窗後，應用程式仍會在背景執行。",
-      "Windows 中存在 VB-CABLE 驅動程式記錄，但沒有可用的虛擬音訊線端點。請先檢查 Windows 音效設定中的 CABLE Input 和 CABLE Output 是否已啟用。若要重新安裝，請在接下來開啟的官方安裝程式中按 Remove Driver，重新啟動 Windows，然後在應用程式中再次開啟 %1 並按 Install Driver。透過 SoundCurrent 播放音訊之前，請再重新啟動一次。移除此共用虛擬音訊線會影響使用它的其他應用程式。"
+      "Windows 中存在 VB-CABLE 驅動程式記錄，但沒有可用的虛擬音訊線端點。請先檢查 Windows 音效設定中的 CABLE Input 和 CABLE Output 是否已啟用。若要重新安裝，請在接下來開啟的官方安裝程式中按 Remove Driver，重新啟動 Windows，然後在應用程式中再次開啟 %1 並按 Install Driver。透過 SoundCurrent 播放音訊之前，請再重新啟動一次。移除此共用虛擬音訊線會影響使用它的其他應用程式。",
+      "解除安裝"
     ],
     "ja": [
       "日本語",
@@ -3669,7 +3695,8 @@
       "%1 のセットアップが完了しませんでした。%2 本体はインストールされています。スタートメニューの %3 から再試行してください。原因はセットアップの詳細を参照してください。",
       "%1 をインストールまたは更新します。古いバージョンをアンインストールする必要はありません。設定、プリセット、機器プロファイルは保持されます。",
       "続行する前に作業内容を保存し、実行中のアプリを終了してください。ウィンドウを閉じてもアプリはバックグラウンドで実行され続けます。",
-      "Windows には VB-CABLE ドライバーの登録情報がありますが、使用可能なケーブルのエンドポイントがありません。まず、Windows のサウンド設定で CABLE Input と CABLE Output が有効になっていることを確認してください。再インストールするには、次に開く公式セットアップで Remove Driver をクリックし、Windows を再起動してから、アプリ内で %1 を再度開いて Install Driver をクリックしてください。SoundCurrent 経由で音声を再生する前に、もう一度再起動してください。この共有ケーブルを削除すると、使用している他のアプリにも影響します。"
+      "Windows には VB-CABLE ドライバーの登録情報がありますが、使用可能なケーブルのエンドポイントがありません。まず、Windows のサウンド設定で CABLE Input と CABLE Output が有効になっていることを確認してください。再インストールするには、次に開く公式セットアップで Remove Driver をクリックし、Windows を再起動してから、アプリ内で %1 を再度開いて Install Driver をクリックしてください。SoundCurrent 経由で音声を再生する前に、もう一度再起動してください。この共有ケーブルを削除すると、使用している他のアプリにも影響します。",
+      "アンインストール"
     ],
     "ko": [
       "한국어",
@@ -3805,7 +3832,8 @@
       "%1 설치가 완료되지 않았습니다. %2 앱 자체는 설치되어 있습니다. 시작 메뉴의 %3을 사용하여 다시 시도하세요. 이유는 설치 세부 정보를 확인하세요.",
       "%1을 설치하거나 업데이트합니다. 이전 버전을 제거할 필요는 없습니다. 설정, 프리셋 및 장비 프로필은 유지됩니다.",
       "계속하기 전에 작업을 저장하고 실행 중인 앱을 종료하세요. 창을 닫아도 앱은 백그라운드에서 계속 실행됩니다.",
-      "Windows에 VB-CABLE 드라이버 기록이 있지만 사용 가능한 케이블 엔드포인트가 없습니다. 먼저 Windows 소리 설정에서 CABLE Input과 CABLE Output이 활성화되어 있는지 확인하세요. 재설치하려면 다음에 열리는 공식 설치 프로그램에서 Remove Driver를 클릭하고 Windows를 다시 시작한 후 앱에서 %1을 다시 열어 Install Driver를 클릭하세요. SoundCurrent를 통해 오디오를 재생하기 전에 한 번 더 다시 시작하세요. 이 공유 케이블을 제거하면 이를 사용하는 다른 앱에도 영향을 줍니다."
+      "Windows에 VB-CABLE 드라이버 기록이 있지만 사용 가능한 케이블 엔드포인트가 없습니다. 먼저 Windows 소리 설정에서 CABLE Input과 CABLE Output이 활성화되어 있는지 확인하세요. 재설치하려면 다음에 열리는 공식 설치 프로그램에서 Remove Driver를 클릭하고 Windows를 다시 시작한 후 앱에서 %1을 다시 열어 Install Driver를 클릭하세요. SoundCurrent를 통해 오디오를 재생하기 전에 한 번 더 다시 시작하세요. 이 공유 케이블을 제거하면 이를 사용하는 다른 앱에도 영향을 줍니다.",
+      "제거"
     ],
     "hi": [
       "हिन्दी",
@@ -3941,7 +3969,8 @@
       "%1 सेटअप पूरा नहीं हुआ। %2 ऐप स्वयं इंस्टॉल है। फिर कोशिश करने के लिए स्टार्ट मेनू में %3 का उपयोग करें; कारण जानने के लिए सेटअप विवरण देखें।",
       "%1 इंस्टॉल या अपडेट करें। पुराने संस्करण को अनइंस्टॉल करने की ज़रूरत नहीं है। आपकी सेटिंग, प्रीसेट और उपकरण प्रोफ़ाइल सुरक्षित रखी जाएँगी।",
       "आगे बढ़ने से पहले अपना काम सेव करें और चल रहे ऐप से बाहर निकलें। उसकी विंडो बंद करने पर ऐप बैकग्राउंड में चलता रहता है।",
-      "Windows में VB-CABLE ड्राइवर का रिकॉर्ड है, लेकिन केबल के उपयोग करने योग्य एंडपॉइंट नहीं हैं। पहले जाँचें कि Windows की साउंड सेटिंग में CABLE Input और CABLE Output सक्षम हैं। दोबारा इंस्टॉल करने के लिए: आगे खुलने वाले आधिकारिक सेटअप में Remove Driver पर क्लिक करें, Windows रीस्टार्ट करें, फिर ऐप में %1 दोबारा खोलें और Install Driver पर क्लिक करें। SoundCurrent से ऑडियो चलाने से पहले एक बार और रीस्टार्ट करें। इस साझा केबल को हटाने से इसका उपयोग करने वाले अन्य ऐप प्रभावित होते हैं।"
+      "Windows में VB-CABLE ड्राइवर का रिकॉर्ड है, लेकिन केबल के उपयोग करने योग्य एंडपॉइंट नहीं हैं। पहले जाँचें कि Windows की साउंड सेटिंग में CABLE Input और CABLE Output सक्षम हैं। दोबारा इंस्टॉल करने के लिए: आगे खुलने वाले आधिकारिक सेटअप में Remove Driver पर क्लिक करें, Windows रीस्टार्ट करें, फिर ऐप में %1 दोबारा खोलें और Install Driver पर क्लिक करें। SoundCurrent से ऑडियो चलाने से पहले एक बार और रीस्टार्ट करें। इस साझा केबल को हटाने से इसका उपयोग करने वाले अन्य ऐप प्रभावित होते हैं।",
+      "अनइंस्टॉल करें"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -4077,7 +4106,8 @@
       "Penyiapan %1 belum selesai. Aplikasi %2 sendiri sudah terinstal. Gunakan %3 di menu Mulai untuk mencoba lagi; lihat detail penyiapan untuk mengetahui alasannya.",
       "Instal atau perbarui %1. Anda tidak perlu menghapus versi lama. Pengaturan, preset, dan profil perangkat Anda akan dipertahankan.",
       "Simpan pekerjaan Anda dan keluar dari aplikasi yang berjalan sebelum melanjutkan. Menutup jendelanya membuat aplikasi tetap berjalan di latar belakang.",
-      "Windows memiliki catatan driver VB-CABLE, tetapi tidak ada titik akhir kabel yang dapat digunakan. Periksa dahulu bahwa CABLE Input dan CABLE Output diaktifkan dalam pengaturan suara Windows. Untuk menginstal ulang: klik Remove Driver pada penginstal resmi yang akan terbuka berikutnya, mulai ulang Windows, lalu buka %1 lagi di aplikasi dan klik Install Driver. Mulai ulang sekali lagi sebelum memutar audio melalui SoundCurrent. Menghapus kabel bersama ini memengaruhi aplikasi lain yang menggunakannya."
+      "Windows memiliki catatan driver VB-CABLE, tetapi tidak ada titik akhir kabel yang dapat digunakan. Periksa dahulu bahwa CABLE Input dan CABLE Output diaktifkan dalam pengaturan suara Windows. Untuk menginstal ulang: klik Remove Driver pada penginstal resmi yang akan terbuka berikutnya, mulai ulang Windows, lalu buka %1 lagi di aplikasi dan klik Install Driver. Mulai ulang sekali lagi sebelum memutar audio melalui SoundCurrent. Menghapus kabel bersama ini memengaruhi aplikasi lain yang menggunakannya.",
+      "Copot pemasangan"
     ],
     "vi": [
       "Tiếng Việt",
@@ -4213,7 +4243,8 @@
       "Thiết lập %1 chưa hoàn tất. Bản thân ứng dụng %2 đã được cài đặt. Dùng %3 trong menu Bắt đầu để thử lại; xem chi tiết cài đặt để biết lý do.",
       "Cài đặt hoặc cập nhật %1. Bạn không cần gỡ cài đặt phiên bản cũ. Các cài đặt, thiết lập sẵn và hồ sơ thiết bị của bạn sẽ được giữ lại.",
       "Lưu công việc và thoát ứng dụng đang chạy trước khi tiếp tục. Đóng cửa sổ vẫn để ứng dụng chạy trong nền.",
-      "Windows có bản ghi trình điều khiển VB-CABLE nhưng không có điểm cuối của cáp dùng được. Trước hết hãy kiểm tra rằng CABLE Input và CABLE Output đã được bật trong cài đặt âm thanh Windows. Để cài đặt lại: nhấp Remove Driver trong trình cài đặt chính thức sẽ mở tiếp theo, khởi động lại Windows, rồi mở lại %1 trong ứng dụng và nhấp Install Driver. Khởi động lại thêm một lần trước khi phát âm thanh qua SoundCurrent. Gỡ cáp dùng chung này sẽ ảnh hưởng đến các ứng dụng khác đang sử dụng nó."
+      "Windows có bản ghi trình điều khiển VB-CABLE nhưng không có điểm cuối của cáp dùng được. Trước hết hãy kiểm tra rằng CABLE Input và CABLE Output đã được bật trong cài đặt âm thanh Windows. Để cài đặt lại: nhấp Remove Driver trong trình cài đặt chính thức sẽ mở tiếp theo, khởi động lại Windows, rồi mở lại %1 trong ứng dụng và nhấp Install Driver. Khởi động lại thêm một lần trước khi phát âm thanh qua SoundCurrent. Gỡ cáp dùng chung này sẽ ảnh hưởng đến các ứng dụng khác đang sử dụng nó.",
+      "Gỡ cài đặt"
     ],
     "th": [
       "ไทย",
@@ -4349,7 +4380,8 @@
       "การติดตั้ง %1 ยังไม่เสร็จสมบูรณ์ แต่ตัวแอป %2 ติดตั้งแล้ว ใช้ %3 ในเมนูเริ่มเพื่อลองอีกครั้ง ดูสาเหตุได้ในรายละเอียดการติดตั้ง",
       "ติดตั้งหรืออัปเดต %1 ไม่จำเป็นต้องถอนการติดตั้งเวอร์ชันเก่า การตั้งค่า ค่าที่ตั้งไว้ล่วงหน้า และโปรไฟล์อุปกรณ์ของคุณจะยังคงอยู่",
       "บันทึกงานและออกจากแอปที่กำลังทำงานก่อนดำเนินการต่อ การปิดหน้าต่างจะยังคงให้แอปทำงานในเบื้องหลัง",
-      "Windows มีข้อมูลไดรเวอร์ VB-CABLE แต่ไม่มีจุดปลายทางของสายที่ใช้งานได้ ก่อนอื่นตรวจสอบว่าเปิดใช้งาน CABLE Input และ CABLE Output ในการตั้งค่าเสียงของ Windows แล้ว หากต้องการติดตั้งใหม่ ให้คลิก Remove Driver ในโปรแกรมติดตั้งอย่างเป็นทางการที่จะเปิดต่อไป รีสตาร์ท Windows แล้วเปิด %1 ในแอปอีกครั้งและคลิก Install Driver รีสตาร์ทอีกหนึ่งครั้งก่อนเล่นเสียงผ่าน SoundCurrent การลบสายที่ใช้ร่วมกันนี้จะส่งผลต่อแอปอื่นที่ใช้สายนี้ด้วย"
+      "Windows มีข้อมูลไดรเวอร์ VB-CABLE แต่ไม่มีจุดปลายทางของสายที่ใช้งานได้ ก่อนอื่นตรวจสอบว่าเปิดใช้งาน CABLE Input และ CABLE Output ในการตั้งค่าเสียงของ Windows แล้ว หากต้องการติดตั้งใหม่ ให้คลิก Remove Driver ในโปรแกรมติดตั้งอย่างเป็นทางการที่จะเปิดต่อไป รีสตาร์ท Windows แล้วเปิด %1 ในแอปอีกครั้งและคลิก Install Driver รีสตาร์ทอีกหนึ่งครั้งก่อนเล่นเสียงผ่าน SoundCurrent การลบสายที่ใช้ร่วมกันนี้จะส่งผลต่อแอปอื่นที่ใช้สายนี้ด้วย",
+      "ถอนการติดตั้ง"
     ],
     "sw": [
       "Kiswahili",
@@ -4485,7 +4517,8 @@
       "Usanidi wa %1 haukukamilika. Programu ya %2 yenyewe imesakinishwa. Tumia %3 kwenye menyu ya Anza kujaribu tena; angalia maelezo ya usanidi kwa sababu.",
       "Sakinisha au sasisha %1. Huhitaji kuondoa toleo la zamani. Mipangilio, mipangilio iliyowekwa tayari na profaili za vifaa vyako zitahifadhiwa.",
       "Hifadhi kazi yako na utoke kabisa kwenye programu inayoendeshwa kabla ya kuendelea. Kufunga dirisha lake huacha programu ikiendelea kufanya kazi chinichini.",
-      "Windows ina rekodi ya kiendeshi cha VB-CABLE lakini haina sehemu za mwisho za kebo zinazoweza kutumika. Kwanza hakikisha CABLE Input na CABLE Output zimewezeshwa katika mipangilio ya sauti ya Windows. Kusakinisha tena: bofya Remove Driver kwenye kisakinishi rasmi kitakachofunguka baada ya hapa, anzisha Windows upya, kisha fungua %1 tena ndani ya programu na ubofye Install Driver. Anzisha upya mara nyingine kabla ya kucheza sauti kupitia SoundCurrent. Kuondoa kebo hii inayoshirikiwa huathiri programu nyingine zinazoitumia."
+      "Windows ina rekodi ya kiendeshi cha VB-CABLE lakini haina sehemu za mwisho za kebo zinazoweza kutumika. Kwanza hakikisha CABLE Input na CABLE Output zimewezeshwa katika mipangilio ya sauti ya Windows. Kusakinisha tena: bofya Remove Driver kwenye kisakinishi rasmi kitakachofunguka baada ya hapa, anzisha Windows upya, kisha fungua %1 tena ndani ya programu na ubofye Install Driver. Anzisha upya mara nyingine kabla ya kucheza sauti kupitia SoundCurrent. Kuondoa kebo hii inayoshirikiwa huathiri programu nyingine zinazoitumia.",
+      "Ondoa"
     ],
     "nn": [
       "Norsk nynorsk",
@@ -4621,7 +4654,8 @@
       "Oppsettet av %1 vart ikkje fullført. Sjølve %2 er installert. Bruk %3 i Start-menyen for å prøve på nytt; sjå oppsettdetaljane for årsaka.",
       "Installer eller oppdater %1. Du treng ikkje å avinstallere ein eldre versjon. Innstillingane, førehandsinnstillingane og utstyrsprofilane dine blir tekne vare på.",
       "Lagre arbeidet ditt og avslutt appen som køyrer før du held fram. Når vindauget blir lukka, held appen fram med å køyre i bakgrunnen.",
-      "Windows har ei drivaroppføring for VB-CABLE, men ingen brukande endepunkt for kabelen. Kontroller først at CABLE Input og CABLE Output er aktiverte i lydinnstillingane i Windows. For å installere på nytt: klikk på Remove Driver i det offisielle installasjonsprogrammet som opnar etterpå, start Windows på nytt, opne deretter %1 i appen igjen og klikk på Install Driver. Start på nytt ein gong til før du spelar av lyd gjennom SoundCurrent. Fjerning av denne delte kabelen påverkar andre appar som brukar han."
+      "Windows har ei drivaroppføring for VB-CABLE, men ingen brukande endepunkt for kabelen. Kontroller først at CABLE Input og CABLE Output er aktiverte i lydinnstillingane i Windows. For å installere på nytt: klikk på Remove Driver i det offisielle installasjonsprogrammet som opnar etterpå, start Windows på nytt, opne deretter %1 i appen igjen og klikk på Install Driver. Start på nytt ein gong til før du spelar av lyd gjennom SoundCurrent. Fjerning av denne delte kabelen påverkar andre appar som brukar han.",
+      "Avinstaller"
     ]
   },
   "requiredCompleteLocales": [
