@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 #include <QTextLayout>
 #include "localization.h"
+#include "file_display_locale_proxy.h"
 #include "worker_message_buffer.h"
 #include "audio_error_text.h"
 #include "accelerating_spinbox.h"
@@ -30,6 +31,28 @@ int main(int argc,char **argv){
  QApplication app(argc,argv);app.setOrganizationName("SoundCurrent");app.setApplicationName("localization-test");
  QTemporaryDir dir;QSettings::setDefaultFormat(QSettings::IniFormat);QSettings::setPath(QSettings::IniFormat,QSettings::UserScope,dir.path());
  try{
+  {
+   QFile file(dir.filePath(QString::fromUtf8("format %1 音声.bin")));
+   require(file.open(QIODevice::WriteOnly),"Could not create size/date fixture");
+   require(file.write(QByteArray(1536,'x'))==1536,"Could not write size/date fixture");file.close();
+   QFileSystemModel files;files.setRootPath(dir.path());
+   const auto sourceIndex=files.index(file.fileName());
+   require(sourceIndex.isValid(),"File formatting source index missing");
+   FileDisplayLocaleProxy display;display.setSourceModel(&files);
+   const auto oldLocale=QLocale();
+   for(const auto *tag:{"de-DE","en-US","ar-EG","fr-FR"}) {
+    QLocale::setDefault(QLocale(tag));
+    const auto proxyIndex=display.mapFromSource(sourceIndex);
+    const auto info=files.fileInfo(sourceIndex);
+    require(display.data(proxyIndex.siblingAtColumn(1)).toString()==QLocale().formattedDataSize(1536),"File size ignored selected format locale");
+    require(display.data(proxyIndex.siblingAtColumn(3)).toString()==QLocale().toString(info.lastModified(),QLocale::ShortFormat),"File date ignored selected format locale");
+    for(const auto role:std::initializer_list<int>{Qt::EditRole,QFileSystemModel::FilePathRole,QFileSystemModel::FileNameRole})
+     require(display.data(proxyIndex,role)==files.data(sourceIndex,role),"File locale adapter changed opaque file identity/edit role");
+    require(display.mapToSource(proxyIndex)==sourceIndex,"File locale adapter changed index identity");
+   }
+   QLocale::setDefault(oldLocale);
+  }
+
   require(languages().size()>=30,"Global language catalogs missing");
   {
    WorkerMessageBuffer buffer;

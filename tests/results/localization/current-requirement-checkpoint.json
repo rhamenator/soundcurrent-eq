@@ -76,10 +76,10 @@
   "evidenceSha256": {
     "data/localization/catalogs.json": "0d51aa81af88e86e207ee6bafcf0190efe60e8b7c3ed5a2ba6dbe668acfc1087",
     "docs/translation-review.md": "5c84c7b1aa1d8c309dce34d84418188427f4ca10c0cdf471fb428a9b7c29e55b",
-    "tests/localization.cpp": "20a5d78362b08d5c4c657278c2a91b473ebc141379c5715f165be2809dab8b33",
+    "tests/localization.cpp": "d781a1cb5d413e86ea842d8c4de5fe5297a960f77c77a7744903cae40f91b48c",
     "tests/translation_catalogs.py": "443fb29d0b4cb1e848ec443cbf7a8245d54087e682036d5bcdb2c9c618ea524f",
     "scripts/ui_string_audit.py": "a7cd0132f32a3f103eadffe8798aee877b4c397545f3e53ec1ea4134b133629f",
-    "tests/results/localization/dynamic-display-inventory.json": "38df353e34970b1855b8342b1c447558576c2a1fd66f6b1b218aae83088c68c3",
+    "tests/results/localization/dynamic-display-inventory.json": "dff6f185f26c0c6e2910e398efa0cf6f0bc3750c5b7b0609cbd5648d014f15fa",
     "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
     "src/main.cpp": "1f8c56b4e82e1b3bfd2d9406694ca9c06f3e007362fc59a60c80728157986ee9",
     "src/localization.h": "a9222646f7a3003622f11b68c6cb2a6f687454bcd922f1afd9924bd9ed4a2b35",
@@ -207,5 +207,7 @@
       "scope": "actual generic-provider directory/drive/unknown; direct File/Shortcut and Windows folder alias; no MIME/provider override or file operations"
     }
   },
-  "qt612CompatibilityEvidence": "tests/results/localization/qt-file-dialog-qt612-compatibility.json"
+  "qt612CompatibilityEvidence": "tests/results/localization/qt-file-dialog-qt612-compatibility.json",
+  "fileDisplayLocaleAdapter": "tests/results/localization/file-display-locale-adapter.json",
+  "qt612FixedNativeEvidence": "tests/results/localization/qt-file-dialog-qt612-native-success.json"
 }

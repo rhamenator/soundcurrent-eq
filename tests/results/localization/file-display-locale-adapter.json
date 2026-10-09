@@ -1,0 +1,26 @@
+{
+  "status": "shared adapter implemented; application integration pending",
+  "scope": "Selected-format sizes/dates for QFileSystemModel display roles only",
+  "sourceSha256": {
+    "src/file_display_locale_proxy.h": "73bf365758b447200f7170819f8cf998e40b1ba584122cad51ec5de855593435",
+    "tests/localization.cpp": "d781a1cb5d413e86ea842d8c4de5fe5297a960f77c77a7744903cae40f91b48c"
+  },
+  "testFormats": [
+    "de-DE",
+    "en-US",
+    "ar-EG",
+    "fr-FR"
+  ],
+  "invariants": "Opaque Unicode/literal-percent file identity, edit/path/name roles, source index mapping unchanged",
+  "remaining": [
+    "Connect adapter to actual application chooser paths",
+    "Test open/save/directory acceptance and cancel",
+    "Native Windows and fresh installed packages"
+  ],
+  "nativeReviewed": false,
+  "localFixture": {
+    "result": "passed",
+    "log": "tests/results/localization/file-display-locale-adapter-linux.log",
+    "sha256": "6551597a2751937130c01fd1fba48e949f4a146aa67c2556518f83f9f67f2f41"
+  }
+}

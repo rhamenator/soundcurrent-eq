@@ -2238,7 +2238,8 @@
     "src/windows_managed_route.h": "14518879f006783b89c69024abbb83751ac1f38b3dd5a4e7fe7dff9760f016f1",
     "src/windows_platform.inc": "211d815bd910f4a06362979b762e919952260ab03cc2e809b482c9dda9f38d51",
     "src/windows_route_guardian.cpp": "4f683ce99ad6bafe227e293d94a82487157da269642e2e2298fa148bc3dfbf2d",
-    "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42"
+    "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42",
+    "src/file_display_locale_proxy.h": "73bf365758b447200f7170819f8cf998e40b1ba584122cad51ec5de855593435"
   },
   "reviewStatus": "Whole-interface review incomplete. Generic Qt file types now mapped; external MIME/type descriptors, selected-locale size/date formatting, composed header actions and errors remain pending."
 }
