@@ -2,12 +2,14 @@
 # SPDX-License-Identifier: GPL-3.0-only
 """Compile actual multilingual installers using inert payloads; never execute them."""
 import json
+import io
 import re
 import shutil
 import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
@@ -31,7 +33,7 @@ class Activation(unittest.TestCase):
             target=self.folder/source.name
             original=source.read_bytes()
             installer.generate_installer(source,target,PRODUCT,self.captions,activate=True)
-            text=target.read_text()
+            text=target.read_text(encoding='utf-8')
             route='native' if source.name.endswith('-native.nsi') else 'cable'
             self.assertEqual(source.read_bytes(),original)
             self.assertEqual(len(re.findall(r'^!insertmacro MUI_LANGUAGE(?:EX)? ',text,re.M)),34)
@@ -49,13 +51,30 @@ class Activation(unittest.TestCase):
             for line in helpers: self.assertIn('-Language "$SCLocaleTag"',line)
             self.assertIn('StrCpy $InstallDriver 0 ; Silent app updates never install/elevate a driver.',text)
 
+    def test_generated_text_under_cp1252_default(self):
+        # Model a Windows default independently of this host's UTF-8 mode.
+        original_open=Path.open
+        def legacy_open(path,mode='r',buffering=-1,encoding=None,errors=None,newline=None):
+            if 'b' not in mode and encoding in (None,'locale'):
+                encoding='cp1252'
+            return original_open(path,mode,buffering,encoding,errors,newline)
+        original_text_encoding=io.text_encoding
+        def legacy_text_encoding(encoding,stacklevel=2):
+            return 'cp1252' if encoding is None else original_text_encoding(encoding,stacklevel)
+        with patch.object(Path,'open',legacy_open),patch.object(io,'text_encoding',legacy_text_encoding):
+            self.test_generated_routing_and_persistence()
+            self.test_shortcut_names_and_exact_cleanup()
+            # Negative control: omitting UTF-8 must reproduce the Windows decode fault.
+            with self.assertRaises(UnicodeDecodeError):
+                (self.folder/(STEM+'.nsi')).read_text()
+
     def test_shortcut_names_and_exact_cleanup(self):
         for value in ('../other','folder/name','folder\\name','bad:name','NUL','CON.txt','COM1','LPT9','trailing.',' trailing','bad\nname',''):
             with self.subTest(value=value), self.assertRaises(ValueError): installer.validate_shortcut_name(value)
         for source in sorted((ROOT/'packaging/windows').glob('*.nsi')):
             generated=self.folder/('shortcuts-'+source.name)
             installer.generate_installer(source,generated,PRODUCT,self.captions,activate=True)
-            text=generated.read_text()
+            text=generated.read_text(encoding='utf-8')
             route='native' if source.name.endswith('-native.nsi') else 'cable'
             names={'Uninstall','Audio driver setup','Install VB-CABLE','VB-CABLE settings'}
             for tag,variants in self.captions['languages'].items():
@@ -97,7 +116,7 @@ class Activation(unittest.TestCase):
         stage=self.folder/'stage';stage.mkdir(exist_ok=True)
         names=[STEM+'.exe','setup-localization.ps1','setup-translations.json','soundcurrent-cable-setup-guard.exe','soundcurrent-driver-manager.exe','soundcurrent-route-guardian.exe','Qt6Core.dll','msvcp140.dll','vcruntime140.dll','concrt140.dll','soundcurrentvad.inf','soundcurrentvad.sys','soundcurrentvad.cat','cable.zip']
         for name in names: (stage/name).write_bytes(b'Inert compile fixture, never execute')
-        manifest=self.folder/'uninstall.nsh';manifest.write_text('; Inert compile fixture\n')
+        manifest=self.folder/'uninstall.nsh';manifest.write_text('; Inert compile fixture\n',encoding='utf-8')
         for source in sorted((ROOT/'packaging/windows').glob('*.nsi')):
             generated=self.folder/('compiled-'+source.name)
             installer.generate_installer(source,generated,PRODUCT,self.captions,activate=True)

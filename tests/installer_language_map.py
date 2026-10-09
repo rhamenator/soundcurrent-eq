@@ -24,7 +24,7 @@ class InstallerLanguageMap(unittest.TestCase):
     def test_mutations_rejected(self):
         import json
         data=installer.catalog.DATA
-        original=json.loads((data/'installer-language-map.json').read_text())
+        original=json.loads((data/'installer-language-map.json').read_text(encoding='utf-8'))
         for field,value in [('tag','en'),('windowsLanguageId',1033),('rtl',True)]:
             mutated=json.loads(json.dumps(original))
             mutated['languages'][1][field]=value
