@@ -9,6 +9,9 @@
 #include <QJsonDocument>
 #include <QLineEdit>
 #include <QMenu>
+#include <QContextMenuEvent>
+#include <QKeyEvent>
+#include <QTimer>
 #include <QTextEdit>
 #include <QTemporaryDir>
 #include <QUuid>
@@ -347,6 +350,20 @@ int main(int argc,char **argv){
   for(const auto &language:languages()) {
    if(language.tag=="en")continue;
    QSettings().setValue("i18n/language",language.tag);Runtime runtime;runtime.initialize();
+   const std::pair<QDialogButtonBox::StandardButton,const char*> standardButtons[]={
+    {QDialogButtonBox::Ok,"OK"},{QDialogButtonBox::Save,"Save"},{QDialogButtonBox::SaveAll,"Save All"},
+    {QDialogButtonBox::Open,"Open"},{QDialogButtonBox::Yes,"Yes"},{QDialogButtonBox::YesToAll,"Yes to All"},
+    {QDialogButtonBox::No,"No"},{QDialogButtonBox::NoToAll,"No to All"},{QDialogButtonBox::Abort,"Abort"},
+    {QDialogButtonBox::Retry,"Retry"},{QDialogButtonBox::Ignore,"Ignore"},{QDialogButtonBox::Close,"Close"},
+    {QDialogButtonBox::Cancel,"Cancel"},{QDialogButtonBox::Discard,"Discard"},{QDialogButtonBox::Help,"Help"},
+    {QDialogButtonBox::Apply,"Apply"},{QDialogButtonBox::Reset,"Reset"},{QDialogButtonBox::RestoreDefaults,"Restore Defaults"}};
+   QDialogButtonBox allButtons;
+   for(const auto &[id,caption]:standardButtons) {
+    const auto *button=allButtons.addButton(id);
+    require(button->text()==text(caption),"Platform-theme standard button did not use the app catalog");
+   }
+   require(QCoreApplication::translate("QGnomeTheme","&Close")==text("Close"),"GNOME Close stayed English");
+   require(QCoreApplication::translate("QGnomeTheme","Close without Saving")==text("Discard"),"GNOME discard label stayed English");
    QLineEdit line;line.setText(QStringLiteral("selection"));line.selectAll();
    QTextEdit paragraph;paragraph.setPlainText(QStringLiteral("selection"));paragraph.selectAll();
    for(auto *menu:{line.createStandardContextMenu(),paragraph.createStandardContextMenu()}) {
@@ -358,6 +375,31 @@ int main(int argc,char **argv){
     }
     delete menu;
    }
+   // Exercise the real spin-box popup; close it on the next event-loop turn.
+   // Never invoke clipboard actions or touch system audio/settings.
+   QDoubleSpinBox spin;spin.setRange(-10,10);spin.setSingleStep(0.5);spin.setValue(1);spin.show();
+   bool inspectedSpin=false,incrementFound=false,decrementFound=false;
+   QTimer::singleShot(0,[&]{
+    auto *menu=qobject_cast<QMenu*>(QApplication::activePopupWidget());
+    if(!menu)return;
+    inspectedSpin=true;
+    QAction *increment=nullptr;
+    for(auto *action:menu->actions()) {
+     const auto caption=action->text().section('\t',0,0).remove('&');
+     if(caption==text("Step up")){incrementFound=true;increment=action;}
+     if(caption==text("Step down"))decrementFound=true;
+    }
+    if(increment) {
+     menu->setActiveAction(increment);
+     QKeyEvent enter(QEvent::KeyPress,Qt::Key_Return,Qt::NoModifier);
+     QApplication::sendEvent(menu,&enter);
+    } else menu->close();
+   });
+   QContextMenuEvent event(QContextMenuEvent::Mouse,QPoint(2,2),spin.mapToGlobal(QPoint(2,2)));
+   QApplication::sendEvent(&spin,&event);
+   require(inspectedSpin&&incrementFound&&decrementFound,"Actual spin menu did not contain localized numeric commands");
+   require(spin.value()==1.5,"Translated spin increment changed its numeric behavior");
+   spin.hide();
    require(QCoreApplication::translate("QAbstractSpinBox","&Step up")==text("Step up"),"Spin increment stayed English");
    require(QCoreApplication::translate("QAbstractSpinBox","Step &down")==text("Step down"),"Spin decrement stayed English");
    require(QCoreApplication::translate("UnrelatedPlugin","&Copy")==QStringLiteral("&Copy"),"Standard menu mapping leaked into unrelated contexts");
