@@ -11,8 +11,10 @@
     "soundcurrent-eq-1.1.0-1.el10.x86_64.rpm": "a6d351e2792b512069d88e44d7b33c47b31eb290cd7cdf9a556ff405bff99ae2"
   },
   "windowsQualifiedProductionHead": "fcb3e9d6e2a92f6bbb4f5f5dec5ca55f715bc715",
-  "windowsCurrentAppAndInstallerSourcesMatch": true,
+  "windowsCurrentAppAndInstallerSourcesMatch": false,
   "scope": "Local unpublished preview assembly; easy-installer dry runs select current Ubuntu package without download/install. Current Linux container and Windows hosted lifecycle qualifications retained separately, including actual French easy-installer main on a verified local current package. No native-speaker verification or physical Windows audio qualification.",
   "nativeReviewed": false,
-  "releasePublished": false
+  "releasePublished": false,
+  "currentSourceQualification": "superseded by equipment summary and calibration-profile creation changes; fresh packages required",
+  "verificationAppliesToHistoricalBundle": true
 }

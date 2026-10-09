@@ -1,47 +1,54 @@
 {
   "date": "2026-10-09",
-  "supersedesCurrentStatusOf": "tests/results/localization/requirement-audit.json",
   "overallStatus": "incomplete",
   "catalogs": {
     "count": 34,
     "nonEnglish": 33,
     "messagesPerCatalog": 704,
-    "check": "scripts/localization.py --check --require-complete passed locally",
+    "check": "complete structural/compiled-hash gate passed",
     "nativeReviewed": false
   },
   "requirements": [
     {
       "requirement": "Complete missing interface translations",
-      "status": "declared catalogs complete; whole-interface coverage remains unproven",
+      "status": "Declared catalogs complete; finite owned-surface source review complete after concrete summary/calibration fixes. Whole-interface runtime proof not claimed.",
       "evidence": [
         "data/localization/catalogs.json",
-        "tests/results/localization/dynamic-display-inventory.json",
-        "tests/results/localization/dynamic-provenance-review.json",
-        "tests/results/localization/expanded-display-sinks.json"
-      ],
-      "remaining": "Finite source correspondence review complete after two concrete main-window fixes. Fresh installed package qualification and final evidence reconciliation remain."
+        "tests/results/localization/interface-surface-inventory.json",
+        "tests/results/localization/main-equipment-display-gap.json"
+      ]
     },
     {
       "requirement": "Contextual terminology review",
-      "status": "AI review documented separately; native-speaker verification unverified",
+      "status": "Contextual AI review documented; native-speaker verification unverified.",
       "evidence": [
         "docs/translation-review.md",
         "data/localization/translation-context.json"
       ]
     },
     {
-      "requirement": "Stable IDs, saved state, placeholders, numerical processing, plural policy, formatting, RTL and fallback",
-      "status": "compiled fixture scope verified; not exhaustive all workflows",
+      "requirement": "Stable IDs, saved state, placeholders and numerical processing",
+      "status": "Compiled fixtures cover IDs, edited controls, opaque substitutions and measured metadata save/reopen; serialized processing values retained.",
       "evidence": [
         "tests/localization.cpp",
+        "tests/results/localization/measured-profile-runtime.log",
+        "tests/results/localization/dynamic-provenance-review.json"
+      ]
+    },
+    {
+      "requirement": "Plural, formatting, RTL and fallback validation",
+      "status": "Source/catalog gates and compiled locale/RTL fixtures retained; numerus explicitly rejected until supported, no silent plural loss.",
+      "evidence": [
+        "scripts/localization.py",
         "tests/translation_catalogs.py",
+        "tests/results/localization/rtl-regional-numbers.json",
         "tests/results/localization/standard-editing-menus.json"
       ]
     },
     {
       "requirement": "Changed Linux packages and installed language interfaces",
-      "status": "Current process-conflict production packages verified on Ubuntu/Fedora/AlmaLinux: hashes, CTest, 33 installed locale completions, launcher bytes, direct install/update/uninstall/reinstall and actual French easy-installer main on current installed package.",
-      "run": 37916163773,
+      "status": "Fresh jobs live; earlier packages superseded for current-source qualification.",
+      "run": 37918553344,
       "evidence": [
         "tests/results/localization/linux-current-qualified-0/verified-artifact.json",
         "tests/results/localization/linux-current-qualified-1/verified-artifact.json",
@@ -50,233 +57,66 @@
     },
     {
       "requirement": "Changed Windows packages and installed language interfaces",
-      "status": "Current process-conflict production installer and staged executable hashes match installed lifecycle; 34 locale completions and fr/nn/ar silent lifecycle passed on hosted Windows.",
-      "run": 37916168742,
-      "evidence": "tests/results/localization/windows-current-qualified/verified-artifact.json"
+      "status": "Fresh UTF-8-fixed test run live. Earlier calibration run failed in Python default decoding; earlier qualified packages superseded.",
+      "run": 37918763255,
+      "evidence": [
+        "tests/results/localization/measurement-test-utf8-fix.json",
+        "tests/results/localization/windows-current-qualified/verified-artifact.json"
+      ]
     },
     {
       "requirement": "Shared localization infrastructure",
-      "status": "shared runtime and audit changes applied to both; regression checks for mixed translated/untranslated dynamic fragments passed"
+      "status": "Shared source/catalog and platform boundaries applied to both products; Studio-only renderer/channel evidence separate.",
+      "evidence": [
+        "tests/results/localization/interface-surface-inventory.json"
+      ]
     },
     {
       "requirement": "Reviewable packages and synchronized commits",
-      "status": "Local unpublished preview refreshed with current qualified Linux and Windows packages, complete easy-installer catalog and source archive. Checksums and all34 dry runs passed; final main-window source/evidence consolidation remains open.",
-      "evidence": "tests/results/localization/preview-bundle-verification.json"
+      "status": "Local previews explicitly superseded; refresh after fresh qualified artifacts.",
+      "evidence": [
+        "tests/results/localization/preview-bundle-verification.json"
+      ]
     },
     {
       "requirement": "Preserve virtual driver and separately owned DAW",
-      "status": "native driver bookmark remains present; this audit did not modify driver or DAW files",
-      "evidence": "docs/windows-native-driver-bookmark.md"
+      "status": "Virtual-driver bookmark preserved; this localization pass does not modify DAW or native-driver implementation.",
+      "evidence": [
+        "docs/windows-native-driver-bookmark.md"
+      ]
     },
     {
       "requirement": "No unauthorized release",
-      "status": "no release published"
+      "status": "Previews remain unpublished; no release action performed."
     }
   ],
   "limitations": [
-    "Catalog completeness is not whole-interface extraction proof",
-    "Native-speaker verification is not claimed",
-    "Native OS dialogs may retain operating-system language",
-    "Container/synthetic tests do not prove live audio or a physical RHEL desktop",
-    "Silent same-package updates do not prove older-version migration or interactive chooser behavior"
+    "Native-speaker accuracy unverified",
+    "All-locale visual rendering and screen-reader speech not proven",
+    "External provider/OS prose retains provider locale",
+    "Synthetic/container fixtures do not prove physical Windows audio, live sweep or hardware faults",
+    "Same-package lifecycle does not establish older-version migration"
   ],
   "evidenceSha256": {
-    "data/localization/catalogs.json": "64ed7ec0276520fc0ce977649021dad53c03d6e4cb08c6e725aceec5b8ae4736",
-    "docs/translation-review.md": "1ee49b709e96ce855185351b6a6a46b72576c4445cec2f2cfdd0a3d5336c7f38",
-    "tests/localization.cpp": "f0ad22384bbeed61639a5035e695c66e462fbbd20332da7a52bef5bd951be5ad",
-    "tests/translation_catalogs.py": "b41f784f86b1ef8a336cb4b4b98b9a69684fd990f9633a56c59d3775a038be08",
-    "scripts/ui_string_audit.py": "681c99092923ff7e1e0587421b7cf163d8901c024617b111732d99b98e683957",
-    "tests/results/localization/dynamic-display-inventory.json": "1153b65dc14f876e813c20669dc596b67456daf7643ba401232ffd182edd49bb",
+    "data/localization/catalogs.json": "e9c4254f6f8457cc5fd71f3994d717148eee36e136d6ed3769475ec300913c07",
+    "data/localization/translation-context.json": "eba6af9ce1ae4035cbe4ab9881f27a47fa170986c8ea0c75a7efaa8825fd590c",
+    "docs/translation-review.md": "c3d2251675db7f39e3f86e4db934d30269f4b628142d255a585a5e8988fcefd2",
     "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
-    "src/main.cpp": "27dc3d05c3aef5aa0900dff5f9cdd12bc8aee62d31dccfe72b4e087e3bfa5fc1",
-    "src/localization.h": "f430613fdec6915b10791010bdf9f1e36838240571accd041b818ba00e3561b9",
-    "src/localization_text.h": "d9d06c97d3108e857250a419243138cd0939a72a0d19b535666beb1eedcf776c",
-    "scripts/localization.py": "cfcaf17c94b8ac179d7d1ebef9e690838010c37b436d0a544a3ef16e61633bc5",
-    "tests/calibration_worker_localization.py": "c6120b78b59ae6d547cd7d0a503d4f39a46f0fa3c03c9c4007b46f8e53db34f8",
-    "tests/results/localization/calibration-worker-gap.json": "1d4ef1003d317f52bf79b740686ef055d580d9f7bfcfad9e2b171c57492efba8",
-    "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42",
-    "tests/results/localization/calibration-worker-native-ci.json": "377d797dfc8478b69a02fb63760577d5a2571393c939e35aa1eecbb270467e35",
-    "src/equipment_profiles.cpp": "1d4adb32603fc05635a456aaf584ede368ad73fc4ebb27acd696890771686f63",
-    "tests/results/localization/profile-authored-defaults.json": "2d3aa7687f468de8c9b652c2dafd2afae1f929b3d401ac3390a6f691f08156af",
-    "tests/results/localization/qt-file-dialog-gap.json": "676b5116c3e234c73f0a9a68b454ab0e51d91553ae720b57809897b2aedee36e",
-    "tests/results/localization/linux-688-installed/verified-artifact.json": "435d31a2706acd047f256c13c58b1a084e1160b67d3e7f981ff243a1c5aec32f",
-    "tests/results/localization/windows-688-installed/verified-artifact.json": "78a34e382fe1699e047e6d67922c4ab8e061798f76ed0c3f6e4e45c5b3e7cd01"
+    "scripts/localization.py": "5e4ac4b9490e99b5e2884415e2b537c0c04d9b006c0f4806afdf999cb8bb3601",
+    "tests/localization.cpp": "f0ad22384bbeed61639a5035e695c66e462fbbd20332da7a52bef5bd951be5ad",
+    "tests/results/localization/dynamic-provenance-review.json": "11e783260018e133ab988e352b63cc9f27765d1e3998471fa000e160ae7ec439",
+    "tests/results/localization/interface-surface-inventory.json": "d0c2d73d438a0499bcabddb835dc708fe5a081ade8d5ac0276e799a4ef55d004",
+    "tests/results/localization/linux-current-qualified-0/verified-artifact.json": "433139d27e4a72e182b2043b8ab85b2a44758c95569754132927ef9be9b5970d",
+    "tests/results/localization/linux-current-qualified-1/verified-artifact.json": "0dfb7afd28f3d7033050b8cca7bd46a4d823de9e00ac3b2d5b202e7c30b98795",
+    "tests/results/localization/linux-current-qualified-2/verified-artifact.json": "fbb1c47c65ba4ab936303f12ae18133d17515da4f295818cc692acc63cc38e9d",
+    "tests/results/localization/main-equipment-display-gap.json": "5ac06b40175f5f4dd5ee09c89e52e31aca30e07999416117633ca52c5c991781",
+    "tests/results/localization/measured-profile-runtime.log": "c181ba5d62cc4eaf64a47acc10827b8e83992fa28ed8d693c658d239abbfce75",
+    "tests/results/localization/measurement-test-utf8-fix.json": "c219ff1a50a71cc291339594c61166e1e14e46de5364a38807b92ff89922d0e2",
+    "tests/results/localization/preview-bundle-verification.json": "832fd1bdee38eb43bd33bf01cfe2568077d9a4ccc1d1b4b8ae95371979127dc8",
+    "tests/results/localization/rtl-regional-numbers.json": "17b7144a8b04fe80f91b1947d15ad44fc20fe9ad9b54887847c3b938040943b9",
+    "tests/results/localization/standard-editing-menus.json": "5430ad8c33b9bba56746e0c0871e69b458498796efb7f2dfc0873e4757b994b8",
+    "tests/results/localization/windows-current-qualified/verified-artifact.json": "9c1dc3f693b7c2fd36e8611ebd49811e1b48f995a51792e34e34a69a28e0a638",
+    "tests/translation_catalogs.py": "1174f414c79c3bd6ffdf2c19e251b77ce978e947308237b8fa5ccc05eede88d7"
   },
-  "auditedBaseHead": "a39082b688e3a0ad21e40c39a966ee11c44e5439",
-  "sourceIdentity": "Current files identified by SHA-256; auditedBaseHead is historical, qualifiedCurrentProductionHead identifies package production code.",
-  "currentCalibrationFraming": {
-    "localStatus": "offscreen/X11 compiled fixtures and actual worker tests passed",
-    "nativeWindowsStatus": "Combined graph-patch Windows build and installed fixtures passed; qualification limited to documented worker/GUI fixtures, no live sweep.",
-    "priorWorkerNativeEvidence": "tests/results/localization/calibration-worker-native-ci.json",
-    "sourceScope": "presentation buffering only; synthesis/analysis and successful JSON unchanged"
-  },
-  "currentProfileDefaults": {
-    "scope": "Generated equipment profile defaults and authored provenance, not all metadata or whole-interface coverage",
-    "sourceSha256": "1d4adb32603fc05635a456aaf584ede368ad73fc4ebb27acd696890771686f63",
-    "catalogMessages": 694,
-    "nonEnglishCatalogs": 33,
-    "nativeReviewed": false,
-    "behavior": "Translate human defaults at creation/import and new provenance on explicit save-copy; preserve loaded saved/published metadata verbatim. Stable IDs, filenames, digest values, filter codes and JSON keys remain unchanged.",
-    "localEvidence": [
-      "Compiled localization fixture passed",
-      "French, Arabic and Nynorsk equipment-dialog fixtures passed",
-      "Profile authored-default source guard passed",
-      "File-identifier mutation guard passed"
-    ],
-    "limitations": [
-      "No native-speaker verification",
-      "No claim of visual inspection of every new default field",
-      "Whole-interface dynamic expression review remains incomplete"
-    ]
-  },
-  "currentQtFileDialogGap": {
-    "date": "2026-10-09",
-    "status": "Caption/helper compiled tests and installed app fixtures qualified on current production graph packages; provider metadata boundary documented separately.",
-    "probeSourceSha256": "b3be9f969d44f0352b65c07ce5b0e22ff63d66e26b95b68c3a1c7874ebdfd08f",
-    "probeScope": "Standalone Qt6Widgets QFileDialog using the actual EQ compiled French catalog and shared StandardActionTranslator. Offscreen, DontUseNativeDialog. No file selection, settings writes, audio or VM. Shared implementation matches Studio; Studio full app dialog not separately exercised.",
-    "untranslatedObserved": [
-      "Look in:",
-      "File &name:",
-      "Files of type:",
-      "Back",
-      "Forward",
-      "Parent Directory",
-      "Create New Folder",
-      "List View",
-      "Detail View",
-      "&Open"
-    ],
-    "translatedObserved": [
-      "Annuler"
-    ],
-    "interpretation": "Owned app captions and standard-button mapping do not cover QFileDialog-specific labels, navigation tooltips or its own Open caption. This is a Qt fallback dialog, not an operating-system-language native dialog exception.",
-    "nextTask": "Inventory QFileDialog and its file-model contexts for open/save/error/context-menu workflows; localize all owned Qt fallback captions with exact-context guards and actual dialog tests across catalogs. Preserve filenames, directory paths, filters and extension semantics.",
-    "nativeReviewed": false,
-    "wholeInterfaceCoverageProven": false,
-    "implementedBasicCaptions": [
-      "Look in:",
-      "File name:",
-      "Files of type:",
-      "Back",
-      "Forward",
-      "Parent directory",
-      "Create new folder",
-      "List view",
-      "Detail view",
-      "Open",
-      "Save"
-    ],
-    "remainingScope": [
-      "External MIME/file-association descriptors",
-      "Context-menu permission gating and protected-path/delete-failure workflows",
-      "Screen-reader listening test"
-    ],
-    "localRuntimeEvidence": "CTest localization passed across all 33 non-English catalogs: actual DontUseNativeDialog controls, Unicode/literal-percent filenames, filter preservation and plugin-context exclusion. Offscreen constructor/control inspection; no acceptance, file creation or errors exercised.",
-    "sources": [
-      "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.cpp",
-      "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.ui"
-    ],
-    "sourceSha256": {
-      "src/localization.h": "1d82243a04150a1252c4564270f00879474427d32f13f178112c9bd2c467789a",
-      "tests/localization.cpp": "c0d9403fa294731fdb580f9022d08fc5be3ca27da89e87547297566315cde278",
-      "data/localization/catalogs.json": "dfa87d833eb2a7a4974ba01e12258ba4976b2533334741a67b72cbed2e649897"
-    },
-    "accessibilityTestScope": "Actual QAccessible Name/Description queries for six navigation buttons, sidebar and list/tree file views, all 33 non-English catalogs. Does not test screen-reader speech.",
-    "accessibilityLinuxEvidence": {
-      "log": "tests/results/localization/qt-file-dialog-accessibility-linux.log",
-      "sha256": "9097467c7197c3b31ea7c9460259efc81781a57cfe1334bafb5010b543bb448f",
-      "result": "passed",
-      "platform": "Qt offscreen",
-      "catalogs": 33,
-      "screenReaderSpeechTested": false
-    },
-    "nativeWindowsKnownFailure": "tests/results/localization/qt-file-dialog-qt612-compatibility.json",
-    "actionHeaderScope": "Inspect actual chooser-owned QAction captions and QFileSystemModel headerData across 33 non-English locales; no file mutation or action activation.",
-    "actionHeaderLinuxEvidence": {
-      "log": "tests/results/localization/qt-file-dialog-menu-header-linux.log",
-      "sha256": "59049fece247d18d46694c4b3af303788a8875474be8bdeb5c9c47c9d97e3b87",
-      "result": "passed",
-      "catalogs": 33,
-      "fileOperationsPerformed": false
-    },
-    "sizeDateFormattingGap": {
-      "status": "Shared adapter compiled/local formatting and modal acceptance/cancel passed; current production packages hash-qualified.",
-      "source": "https://github.com/qt/qtbase/blob/6.4/src/gui/itemmodels/qfilesystemmodel.cpp",
-      "behavior": "size(qint64) and time(QModelIndex) use QLocale::system() rather than selected app default locale",
-      "evidence": "tests/results/localization/file-display-locale-adapter.json"
-    },
-    "genericTypeLinuxEvidence": {
-      "log": "tests/results/localization/qt-file-dialog-type-linux.log",
-      "sha256": "02535bbb59c9f1e9049dd7a9d4ace311f9e24c36a41da63a5b13d71c7d497259",
-      "result": "passed",
-      "catalogs": 33,
-      "scope": "actual generic-provider directory/drive/unknown; direct File/Shortcut and Windows folder alias; no MIME/provider override or file operations"
-    },
-    "upstreamInventory": "tests/results/localization/qt-file-dialog-source-inventory.json",
-    "errorLinuxEvidence": {
-      "log": "tests/results/localization/qt-file-dialog-errors-linux.log",
-      "sha256": "6dda61e4d7f574ec4d700e3ef5e86c4f3887438ac00a5bd3728c1e36dc2b9188",
-      "result": "passed",
-      "catalogChecks": 33,
-      "actualModalLocales": [
-        "fr",
-        "ar",
-        "nn"
-      ],
-      "scope": "Missing file/directory and declined overwrite; raw QMessageBox text and unchanged input contents; no deletion/permission or visual/speech checks"
-    },
-    "defaultLinuxEvidence": {
-      "log": "tests/results/localization/qt-file-dialog-defaults-linux.log",
-      "sha256": "df9e92a9a30c65a9d9849b01ee06bca19ba8d6f5a7a7b5c42e0f0e60908311f9",
-      "result": "passed",
-      "catalogs": 33,
-      "scope": "Initial all-files filter, directory label/Choose, direct default caption aliases; general filter mutation guard passed",
-      "nativeReviewed": false
-    },
-    "deleteLinuxEvidence": {
-      "log": "tests/results/localization/qt-file-dialog-delete-linux.log",
-      "sha256": "e67b8552c5a4d8ca6c788e967e1ee4aa2ab58c204164676906092ac8c3b5f5ad",
-      "result": "passed",
-      "captionCatalogs": 33,
-      "actualModalLocales": [
-        "fr",
-        "ar",
-        "nn"
-      ],
-      "observedPrompt": "confirmation",
-      "scope": "Fixture enables selected temporary-file action directly, real No-button click preserves contents; permission gating, protected-path and delete-failure workflows not exercised"
-    },
-    "headerCaptionEvidence": "tests/results/localization/qt-file-dialog-header-captions.json",
-    "remainingScopeInterpretation": "Unexercised broader workflow/assistive-technology scopes and external-provider text; not evidence of an identified missing owned caption."
-  },
-  "qt612CompatibilityEvidence": "tests/results/localization/qt-file-dialog-qt612-compatibility.json",
-  "fileDisplayLocaleAdapter": "tests/results/localization/file-display-locale-adapter.json",
-  "qt612FixedNativeEvidence": "tests/results/localization/qt-file-dialog-qt612-native-success.json",
-  "qualifiedPrecedingHead": "6111c989cdc8ec2c08f6b9ce4cc0a921f2dfb781",
-  "audioDisplayNumbers": "tests/results/localization/audio-display-numbers.json",
-  "qualifiedCurrentProductionHead": "16ec67362e4875ab893c3d88ea87cc89fc5ce0ea",
-  "currentProductionSourceMatch": "Current src/data/CMake/installer production sources match qualified complete-catalog head. Later source guards and terminal tests passed locally; reports differ. Windows app-production evidence remains separate.",
-  "balanceNumberFormats": "tests/results/localization/balance-number-formats.json",
-  "profileGraphNumberFormats": "tests/results/localization/profile-graph-number-formats.json",
-  "fileTypeProviderBoundary": "tests/results/localization/file-type-provider-boundary.json",
-  "equalizerGraphNumberFormats": "tests/results/localization/eq-graph-number-formats.json",
-  "windowsOwnedDiagnosticReview": "tests/results/localization/windows-owned-diagnostic-source-review.json",
-  "displayLiteralGate": "tests/results/localization/display-literal-review-gate.json",
-  "displayLiteralWindowsPathFix": "tests/results/localization/display-literal-windows-path-fix.json",
-  "publicUpdateMessageReview": "tests/results/localization/public-update-message-review.json",
-  "choiceListDisplayGuard": "tests/results/localization/choice-list-display-guard.json",
-  "launcherDescriptionReview": "tests/results/localization/launcher-description-localization.json",
-  "startupDiagnosticReview": "tests/results/localization/startup-diagnostic-gap.json",
-  "rendererDirectDiagnosticGuard": "tests/results/localization/renderer-direct-diagnostic-guard.json",
-  "ubuntuStartupPackageEvidence": "tests/results/localization/ubuntu-startup-installed/verified-artifact.json",
-  "windowsStartupPackageEvidence": "tests/results/localization/windows-startup-installed/verified-artifact.json",
-  "linuxEasyInstallerReview": "tests/results/localization/linux-easy-installer-gap.json",
-  "headerListDisplayGuard": "tests/results/localization/header-list-display-guard.json",
-  "currentLinuxPackageEvidence": [
-    "tests/results/localization/linux-complete-installer-0/verified-artifact.json",
-    "tests/results/localization/linux-complete-installer-1/verified-artifact.json",
-    "tests/results/localization/linux-complete-installer-2/verified-artifact.json"
-  ],
-  "qualifiedLinuxProductionHead": "8489a3eed172ba2d1c0098667e3b3202d7ca8049",
-  "previewBundleEvidence": "tests/results/localization/preview-bundle-verification.json"
+  "historicalCheckpoint": "Prior detailed checkpoint revisions remain in Git history; current statuses above supersede earlier current-source claims."
 }
