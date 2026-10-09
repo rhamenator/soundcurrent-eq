@@ -2046,6 +2046,11 @@ Import into your library?</source>
       <translation>โปรแกรมติดตั้งไม่สามารถตรวจสอบไดรเวอร์ได้ คุณสามารถลองอีกครั้งด้วย %1 ในแอปหรือเมนูเริ่ม</translation>
     </message>
     <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>โปรแกรมติดตั้งจะเปิดโปรแกรมติดตั้งที่มีลายเซ็นดิจิทัลของ VB-Audio คลิก Install Driver แล้วรีสตาร์ท Windows ก่อนใช้ตัวปรับแต่งเสียงหรือการตั้งค่า VB-CABLE</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>EQ ส่วนกลางและ EQ ของช่องสัญญาณมีตัวกรองรวมเกิน 64 ตัว ให้ลบตัวกรองของช่องสัญญาณบางส่วน</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

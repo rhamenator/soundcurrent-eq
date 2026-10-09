@@ -2046,6 +2046,11 @@ Import into your library?</source>
       <translation>安装程序无法检查驱动程序。您可以通过应用内或开始菜单中的 %1 重试。</translation>
     </message>
     <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>安装程序会打开 VB-Audio 的已签名安装程序。请点击 Install Driver，然后重启 Windows，再使用均衡器或 VB-CABLE 设置。</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>共享均衡器和通道均衡器的滤波器总数超过 64；请删除一些通道滤波器</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

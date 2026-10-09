@@ -214,9 +214,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 107,
       "kind": "control-caption",
-      "literal": "Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCCableSignedInstaller)",
+      "marked": true,
+      "reviewStatus": "all locale signed-installer translations prepared; activation and installed layout pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",

@@ -15,6 +15,25 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_signed_installer_notice_preserves_external_button(self):
+        root = Path(__file__).resolve().parents[1]
+        source = 'Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.'
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text(encoding='utf-8')
+            if 'native' in installer.stem:
+                self.assertNotIn('SCCableSignedInstaller', code)
+            else:
+                self.assertIn('${NSD_CreateLabel} 0 65u 100% 35u "$(SCCableSignedInstaller)"', code)
+                self.assertEqual(re.findall(r'^LangString SCCableSignedInstaller \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
+            message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
+            self.assertTrue(catalog.finished(message), row['tag'])
+            translated = message.findtext('translation')
+            catalog.validate_text(source, translated)
+            for external in ('VB-Audio', 'Install Driver', 'Windows', 'VB-CABLE'):
+                with self.assertRaisesRegex(ValueError, 'External installer label changed'):
+                    catalog.validate_text(source, translated.replace(external, 'Other label'))
+
     def test_incomplete_driver_notice_keeps_brand_and_route(self):
         root = Path(__file__).resolve().parents[1]
         source = 'VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.'
@@ -255,7 +274,7 @@ class CatalogTests(unittest.TestCase):
             for variants in result['languages'].values():
                 self.assertEqual(set(variants), {'cable', 'native'})
                 for routeName, route in variants.items():
-                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting'}))
+                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting'}))
                     self.assertEqual(set(route['nsisEscaped']), set(route['captions']))
 
     def test_installer_checkbox_catalog_sources_and_names(self):

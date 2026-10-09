@@ -2046,6 +2046,11 @@ Import into your library?</source>
       <translation>安裝程式無法檢查驅動程式。您可以透過應用程式內或開始功能表中的 %1 重試。</translation>
     </message>
     <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>安裝程式會開啟 VB-Audio 已簽署的安裝程式。請按 Install Driver，然後重新啟動 Windows，再使用等化器或 VB-CABLE 設定。</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>共用等化器和聲道等化器的濾波器總數超過 64；請刪除一些聲道濾波器</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

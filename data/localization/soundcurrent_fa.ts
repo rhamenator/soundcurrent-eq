@@ -2046,6 +2046,11 @@ Import into your library?</source>
       <translation>نصب‌کننده نتوانست درایور را بررسی کند. می‌توانید با %1 در برنامه یا منوی شروع دوباره تلاش کنید.</translation>
     </message>
     <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>برنامهٔ نصب، نصب‌کنندهٔ دارای امضای دیجیتال VB-Audio را باز می‌کند. روی Install Driver کلیک کنید، سپس پیش از استفاده از اکولایزر یا تنظیمات VB-CABLE، Windows را راه‌اندازی مجدد کنید.</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>اکولایزر مشترک و اکولایزر کانال از 64 فیلتر فراتر می‌روند؛ برخی فیلترهای کانال را حذف کنید</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

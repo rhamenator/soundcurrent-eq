@@ -118,7 +118,8 @@
     "SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.",
     "SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.",
     "VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.",
-    "VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again."
+    "VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.",
+    "Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings."
   ],
   "languages": {
     "de": [
@@ -241,7 +242,8 @@
       "SoundCurrent Audio ist bereits vorhanden. Wenn die Treibereinrichtung aktiviert bleibt, registriert das Installationsprogramm diese App und hält den gemeinsam genutzten Treiber für die andere SoundCurrent-App verfügbar.",
       "SoundCurrent Audio leitet die Wiedergabe durch die App. Wählen Sie Ihre physischen Lautsprecher oder Kopfhörer in der App aus. Deren Hardwaretreiber bleiben erhalten.",
       "VB-CABLE ist bereits vorhanden und wird wiederverwendet. SoundCurrent stellt Ihre normale Ausgabe wieder her, wenn es ausgeschaltet wird oder Sie %1 verwenden.",
-      "VB-CABLE ist als Treiber registriert, hat aber keine nutzbaren Audioendpunkte. Setup bietet eine Reparatur an: Treiber entfernen, neu starten, neu installieren und erneut neu starten."
+      "VB-CABLE ist als Treiber registriert, hat aber keine nutzbaren Audioendpunkte. Setup bietet eine Reparatur an: Treiber entfernen, neu starten, neu installieren und erneut neu starten.",
+      "Setup öffnet das signierte Installationsprogramm von VB-Audio. Klicken Sie auf Install Driver und starten Sie Windows neu, bevor Sie den Equalizer oder die VB-CABLE-Einstellungen verwenden."
     ],
     "fr": [
       "Français",
@@ -363,7 +365,8 @@
       "SoundCurrent Audio est déjà présent. Si la configuration du pilote reste activée, le programme d’installation enregistrera cette application et conservera le pilote partagé pour l’autre application SoundCurrent.",
       "SoundCurrent Audio fait passer la lecture par l’application. Choisissez vos enceintes ou votre casque physiques dans l’application. Leurs pilotes matériels sont conservés.",
       "VB-CABLE est déjà présent et sera réutilisé. SoundCurrent rétablit votre sortie habituelle lorsqu’il est désactivé ou lorsque vous utilisez %1.",
-      "VB-CABLE est enregistré comme pilote, mais aucun point de terminaison audio utilisable n’est disponible. L’installation propose une réparation : désinstaller le pilote, redémarrer, réinstaller, puis redémarrer à nouveau."
+      "VB-CABLE est enregistré comme pilote, mais aucun point de terminaison audio utilisable n’est disponible. L’installation propose une réparation : désinstaller le pilote, redémarrer, réinstaller, puis redémarrer à nouveau.",
+      "L’installation ouvre le programme d’installation signé de VB-Audio. Cliquez sur Install Driver, puis redémarrez Windows avant d’utiliser l’égaliseur ou les paramètres de VB-CABLE."
     ],
     "es": [
       "Español",
@@ -485,7 +488,8 @@
       "SoundCurrent Audio ya está presente. Si la configuración del controlador sigue habilitada, el instalador registrará esta aplicación y mantendrá el controlador compartido disponible para la otra aplicación SoundCurrent.",
       "SoundCurrent Audio dirige la reproducción a través de la aplicación. Elija sus altavoces o auriculares físicos dentro de la aplicación. Sus controladores de hardware se conservan.",
       "VB-CABLE ya está presente y se reutilizará. SoundCurrent restaura su salida habitual cuando se desactiva o cuando utiliza %1.",
-      "VB-CABLE tiene un registro de controlador, pero no hay puntos de conexión de audio utilizables. El instalador ofrece una reparación: quitar el controlador, reiniciar, reinstalar y reiniciar otra vez."
+      "VB-CABLE tiene un registro de controlador, pero no hay puntos de conexión de audio utilizables. El instalador ofrece una reparación: quitar el controlador, reiniciar, reinstalar y reiniciar otra vez.",
+      "El instalador abre el programa de instalación firmado de VB-Audio. Haga clic en Install Driver y reinicie Windows antes de usar el ecualizador o la configuración de VB-CABLE."
     ],
     "it": [
       "Italiano",
@@ -607,7 +611,8 @@
       "SoundCurrent Audio è già presente. Se la configurazione del driver rimane abilitata, il programma di installazione registrerà questa app e manterrà il driver condiviso disponibile per l’altra app SoundCurrent.",
       "SoundCurrent Audio instrada la riproduzione attraverso l’app. Scegli gli altoparlanti o le cuffie fisiche all’interno dell’app. I relativi driver hardware vengono conservati.",
       "VB-CABLE è già presente e verrà riutilizzato. SoundCurrent ripristina l’uscita normale quando viene disattivato o quando usi %1.",
-      "VB-CABLE risulta registrato come driver, ma non dispone di endpoint audio utilizzabili. Il programma di installazione offre una riparazione: rimuovere il driver, riavviare, reinstallare e riavviare di nuovo."
+      "VB-CABLE risulta registrato come driver, ma non dispone di endpoint audio utilizzabili. Il programma di installazione offre una riparazione: rimuovere il driver, riavviare, reinstallare e riavviare di nuovo.",
+      "La procedura apre il programma di installazione firmato di VB-Audio. Fare clic su Install Driver, quindi riavviare Windows prima di usare l’equalizzatore o le impostazioni di VB-CABLE."
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -729,7 +734,8 @@
       "O SoundCurrent Audio já está presente. Se a configuração do controlador continuar ativada, o instalador registará esta aplicação e manterá o controlador partilhado disponível para a outra aplicação SoundCurrent.",
       "O SoundCurrent Audio encaminha a reprodução através da aplicação. Escolha as suas colunas ou auscultadores físicos na aplicação. Os respetivos controladores de hardware são mantidos.",
       "O VB-CABLE já está presente e será reutilizado. O SoundCurrent repõe a saída habitual quando é desligado ou quando utiliza %1.",
-      "VB-CABLE tem um registo de controlador, mas não tem pontos de ligação de áudio utilizáveis. O instalador propõe uma reparação: remover o controlador, reiniciar, reinstalar e reiniciar novamente."
+      "VB-CABLE tem um registo de controlador, mas não tem pontos de ligação de áudio utilizáveis. O instalador propõe uma reparação: remover o controlador, reiniciar, reinstalar e reiniciar novamente.",
+      "O instalador abre o programa de instalação assinado da VB-Audio. Clique em Install Driver e reinicie o Windows antes de utilizar o equalizador ou as definições do VB-CABLE."
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -851,7 +857,8 @@
       "O SoundCurrent Audio já está presente. Se a configuração do driver continuar habilitada, o instalador registrará este aplicativo e manterá o driver compartilhado disponível para o outro aplicativo SoundCurrent.",
       "O SoundCurrent Audio encaminha a reprodução pelo aplicativo. Escolha suas caixas de som ou fones de ouvido físicos no aplicativo. Os respectivos drivers de hardware são preservados.",
       "O VB-CABLE já está presente e será reutilizado. O SoundCurrent restaura a saída normal quando é desativado ou quando você usa %1.",
-      "VB-CABLE tem um registro de driver, mas não há pontos de conexão de áudio utilizáveis. O instalador oferece um reparo: remover o driver, reiniciar, reinstalar e reiniciar novamente."
+      "VB-CABLE tem um registro de driver, mas não há pontos de conexão de áudio utilizáveis. O instalador oferece um reparo: remover o driver, reiniciar, reinstalar e reiniciar novamente.",
+      "O instalador abre o programa de instalação assinado da VB-Audio. Clique em Install Driver e reinicie o Windows antes de usar o equalizador ou as configurações do VB-CABLE."
     ],
     "nl": [
       "Nederlands",
@@ -973,7 +980,8 @@
       "SoundCurrent Audio is al aanwezig. Als stuurprogramma-instelling ingeschakeld blijft, registreert het installatieprogramma deze app en houdt het gedeelde stuurprogramma beschikbaar voor de andere SoundCurrent-app.",
       "SoundCurrent Audio leidt de weergave door de app. Kies uw fysieke luidsprekers of hoofdtelefoon in de app. De bijbehorende hardwarestuurprogramma’s blijven behouden.",
       "VB-CABLE is al aanwezig en wordt opnieuw gebruikt. SoundCurrent herstelt uw normale uitvoer wanneer het wordt uitgeschakeld of u %1 gebruikt.",
-      "VB-CABLE is als stuurprogramma geregistreerd, maar heeft geen bruikbare audio-eindpunten. Het installatieprogramma biedt herstel aan: verwijder het stuurprogramma, start opnieuw op, installeer het opnieuw en start nogmaals opnieuw op."
+      "VB-CABLE is als stuurprogramma geregistreerd, maar heeft geen bruikbare audio-eindpunten. Het installatieprogramma biedt herstel aan: verwijder het stuurprogramma, start opnieuw op, installeer het opnieuw en start nogmaals opnieuw op.",
+      "Het installatieprogramma opent het ondertekende installatieprogramma van VB-Audio. Klik op Install Driver en start Windows opnieuw op voordat u de equalizer of de VB-CABLE-instellingen gebruikt."
     ],
     "pl": [
       "Polski",
@@ -1095,7 +1103,8 @@
       "SoundCurrent Audio jest już obecny. Jeśli konfiguracja sterownika pozostanie włączona, instalator zarejestruje tę aplikację i zachowa dostępność współdzielonego sterownika dla drugiej aplikacji SoundCurrent.",
       "SoundCurrent Audio kieruje odtwarzany dźwięk przez aplikację. Wybierz fizyczne głośniki lub słuchawki w aplikacji. Ich sterowniki sprzętowe zostają zachowane.",
       "VB-CABLE jest już obecny i zostanie ponownie użyty. SoundCurrent przywraca zwykłe wyjście po wyłączeniu lub użyciu %1.",
-      "VB-CABLE jest zarejestrowany jako sterownik, ale nie ma dostępnych punktów końcowych audio. Instalator oferuje naprawę: usuń sterownik, uruchom komputer ponownie, zainstaluj sterownik ponownie i jeszcze raz uruchom komputer ponownie."
+      "VB-CABLE jest zarejestrowany jako sterownik, ale nie ma dostępnych punktów końcowych audio. Instalator oferuje naprawę: usuń sterownik, uruchom komputer ponownie, zainstaluj sterownik ponownie i jeszcze raz uruchom komputer ponownie.",
+      "Instalator otwiera podpisany program instalacyjny VB-Audio. Kliknij Install Driver, a następnie uruchom ponownie Windows przed użyciem korektora lub ustawień VB-CABLE."
     ],
     "cs": [
       "Čeština",
@@ -1217,7 +1226,8 @@
       "SoundCurrent Audio je již přítomno. Pokud zůstane nastavení ovladače povoleno, instalační program zaregistruje tuto aplikaci a ponechá sdílený ovladač dostupný pro druhou aplikaci SoundCurrent.",
       "SoundCurrent Audio směruje přehrávání přes aplikaci. V aplikaci vyberte své fyzické reproduktory nebo sluchátka. Jejich hardwarové ovladače zůstanou zachovány.",
       "VB-CABLE je již přítomno a bude znovu použito. SoundCurrent obnoví váš běžný výstup po vypnutí nebo použití %1.",
-      "VB-CABLE je zaregistrován jako ovladač, ale nemá použitelné zvukové koncové body. Instalátor nabízí opravu: odeberte ovladač, restartujte počítač, znovu ovladač nainstalujte a opět restartujte počítač."
+      "VB-CABLE je zaregistrován jako ovladač, ale nemá použitelné zvukové koncové body. Instalátor nabízí opravu: odeberte ovladač, restartujte počítač, znovu ovladač nainstalujte a opět restartujte počítač.",
+      "Instalátor otevře podepsaný instalační program VB-Audio. Klikněte na Install Driver a před použitím ekvalizéru nebo nastavení VB-CABLE restartujte Windows."
     ],
     "sk": [
       "Slovenčina",
@@ -1339,7 +1349,8 @@
       "SoundCurrent Audio je už prítomné. Ak zostane nastavenie ovládača povolené, inštalačný program zaregistruje túto aplikáciu a ponechá zdieľaný ovládač dostupný pre druhú aplikáciu SoundCurrent.",
       "SoundCurrent Audio smeruje prehrávanie cez aplikáciu. V aplikácii vyberte svoje fyzické reproduktory alebo slúchadlá. Ich hardvérové ovládače zostanú zachované.",
       "VB-CABLE je už prítomné a bude znova použité. SoundCurrent obnoví váš bežný výstup po vypnutí alebo použití %1.",
-      "VB-CABLE je zaregistrovaný ako ovládač, ale nemá použiteľné zvukové koncové body. Inštalátor ponúka opravu: odstráňte ovládač, reštartujte počítač, znova ovládač nainštalujte a opäť reštartujte počítač."
+      "VB-CABLE je zaregistrovaný ako ovládač, ale nemá použiteľné zvukové koncové body. Inštalátor ponúka opravu: odstráňte ovládač, reštartujte počítač, znova ovládač nainštalujte a opäť reštartujte počítač.",
+      "Inštalátor otvorí podpísaný inštalačný program VB-Audio. Kliknite na Install Driver a pred použitím ekvalizéra alebo nastavení VB-CABLE reštartujte Windows."
     ],
     "uk": [
       "Українська",
@@ -1461,7 +1472,8 @@
       "SoundCurrent Audio уже присутній. Якщо налаштування драйвера залишиться ввімкненим, інсталятор зареєструє цю програму й залишить спільний драйвер доступним для іншої програми SoundCurrent.",
       "SoundCurrent Audio спрямовує відтворення через програму. Виберіть у програмі свої фізичні динаміки або навушники. Їхні апаратні драйвери зберігаються.",
       "VB-CABLE уже присутній і буде використаний повторно. SoundCurrent відновлює звичайний вихід після вимкнення або використання %1.",
-      "VB-CABLE зареєстровано як драйвер, але придатні аудіокінцеві точки відсутні. Інсталятор пропонує відновлення: видаліть драйвер, перезавантажте комп’ютер, установіть драйвер знову та ще раз перезавантажте комп’ютер."
+      "VB-CABLE зареєстровано як драйвер, але придатні аудіокінцеві точки відсутні. Інсталятор пропонує відновлення: видаліть драйвер, перезавантажте комп’ютер, установіть драйвер знову та ще раз перезавантажте комп’ютер.",
+      "Інсталятор відкриє підписану програму встановлення VB-Audio. Натисніть Install Driver, а потім перезавантажте Windows, перш ніж користуватися еквалайзером або налаштуваннями VB-CABLE."
     ],
     "ru": [
       "Русский",
@@ -1583,7 +1595,8 @@
       "SoundCurrent Audio уже присутствует. Если настройка драйвера останется включённой, установщик зарегистрирует это приложение и сохранит общий драйвер доступным для другого приложения SoundCurrent.",
       "SoundCurrent Audio направляет воспроизведение через приложение. Выберите в приложении физические колонки или наушники. Их аппаратные драйверы сохраняются.",
       "VB-CABLE уже присутствует и будет использован повторно. SoundCurrent восстанавливает обычный выход после отключения или использования %1.",
-      "VB-CABLE зарегистрирован как драйвер, но доступных аудиоконечных точек нет. Установщик предлагает восстановление: удалите драйвер, перезагрузите компьютер, установите драйвер заново и ещё раз перезагрузите компьютер."
+      "VB-CABLE зарегистрирован как драйвер, но доступных аудиоконечных точек нет. Установщик предлагает восстановление: удалите драйвер, перезагрузите компьютер, установите драйвер заново и ещё раз перезагрузите компьютер.",
+      "Установщик откроет подписанную программу установки VB-Audio. Нажмите Install Driver, затем перезагрузите Windows перед использованием эквалайзера или настроек VB-CABLE."
     ],
     "el": [
       "Ελληνικά",
@@ -1705,7 +1718,8 @@
       "Το SoundCurrent Audio υπάρχει ήδη. Αν η ρύθμιση του προγράμματος οδήγησης παραμείνει ενεργοποιημένη, το πρόγραμμα εγκατάστασης θα καταχωρίσει αυτή την εφαρμογή και θα διατηρήσει το κοινόχρηστο πρόγραμμα οδήγησης διαθέσιμο για την άλλη εφαρμογή SoundCurrent.",
       "Το SoundCurrent Audio δρομολογεί την αναπαραγωγή μέσω της εφαρμογής. Επιλέξτε τα φυσικά ηχεία ή ακουστικά σας μέσα στην εφαρμογή. Τα προγράμματα οδήγησης του υλικού τους διατηρούνται.",
       "Το VB-CABLE υπάρχει ήδη και θα επαναχρησιμοποιηθεί. Το SoundCurrent επαναφέρει τη συνηθισμένη έξοδο όταν απενεργοποιείται ή όταν χρησιμοποιείτε το %1.",
-      "Το VB-CABLE είναι καταχωρισμένο ως πρόγραμμα οδήγησης, αλλά δεν έχει διαθέσιμα τελικά σημεία ήχου. Το πρόγραμμα εγκατάστασης προσφέρει επιδιόρθωση: αφαιρέστε το πρόγραμμα οδήγησης, επανεκκινήστε, εγκαταστήστε το ξανά και επανεκκινήστε πάλι."
+      "Το VB-CABLE είναι καταχωρισμένο ως πρόγραμμα οδήγησης, αλλά δεν έχει διαθέσιμα τελικά σημεία ήχου. Το πρόγραμμα εγκατάστασης προσφέρει επιδιόρθωση: αφαιρέστε το πρόγραμμα οδήγησης, επανεκκινήστε, εγκαταστήστε το ξανά και επανεκκινήστε πάλι.",
+      "Η εγκατάσταση ανοίγει το υπογεγραμμένο πρόγραμμα εγκατάστασης της VB-Audio. Κάντε κλικ στο Install Driver και έπειτα επανεκκινήστε τα Windows πριν χρησιμοποιήσετε τον ισοσταθμιστή ή τις ρυθμίσεις του VB-CABLE."
     ],
     "tr": [
       "Türkçe",
@@ -1827,7 +1841,8 @@
       "SoundCurrent Audio zaten mevcut. Sürücü kurulumu etkin kalırsa kurulum programı bu uygulamayı kaydeder ve paylaşılan sürücüyü diğer SoundCurrent uygulaması için kullanılabilir tutar.",
       "SoundCurrent Audio, oynatılan sesi uygulama üzerinden yönlendirir. Uygulama içinde fiziksel hoparlörlerinizi veya kulaklığınızı seçin. Donanım sürücüleri korunur.",
       "VB-CABLE zaten mevcut ve yeniden kullanılacak. SoundCurrent kapatıldığında veya %1 kullandığınızda normal çıkışınızı geri yükler.",
-      "VB-CABLE için bir sürücü kaydı var ancak kullanılabilir ses uç noktası yok. Kurulum onarım sunar: sürücüyü kaldırın, yeniden başlatın, sürücüyü yeniden yükleyin ve tekrar yeniden başlatın."
+      "VB-CABLE için bir sürücü kaydı var ancak kullanılabilir ses uç noktası yok. Kurulum onarım sunar: sürücüyü kaldırın, yeniden başlatın, sürücüyü yeniden yükleyin ve tekrar yeniden başlatın.",
+      "Kurulum, VB-Audio’nun imzalı yükleme programını açar. Install Driver düğmesine tıklayın, ardından ekolayzeri veya VB-CABLE ayarlarını kullanmadan önce Windows’u yeniden başlatın."
     ],
     "sv": [
       "Svenska",
@@ -1949,7 +1964,8 @@
       "SoundCurrent Audio finns redan. Om drivrutinsinstallationen förblir aktiverad registrerar installationsprogrammet denna app och håller den delade drivrutinen tillgänglig för den andra SoundCurrent-appen.",
       "SoundCurrent Audio leder uppspelningen genom appen. Välj dina fysiska högtalare eller hörlurar i appen. Deras hårdvarudrivrutiner bevaras.",
       "VB-CABLE finns redan och återanvänds. SoundCurrent återställer din vanliga utgång när det stängs av eller när du använder %1.",
-      "VB-CABLE är registrerat som drivrutin men har inga användbara ljudslutpunkter. Installationsprogrammet erbjuder reparation: ta bort drivrutinen, starta om, installera den igen och starta om en gång till."
+      "VB-CABLE är registrerat som drivrutin men har inga användbara ljudslutpunkter. Installationsprogrammet erbjuder reparation: ta bort drivrutinen, starta om, installera den igen och starta om en gång till.",
+      "Installationsprogrammet öppnar VB-Audios signerade installationsprogram. Klicka på Install Driver och starta sedan om Windows innan du använder equalizern eller VB-CABLE-inställningarna."
     ],
     "da": [
       "Dansk",
@@ -2071,7 +2087,8 @@
       "SoundCurrent Audio findes allerede. Hvis driveropsætning forbliver aktiveret, registrerer installationsprogrammet denne app og holder den delte driver tilgængelig for den anden SoundCurrent-app.",
       "SoundCurrent Audio sender afspilningen gennem appen. Vælg dine fysiske højttalere eller hovedtelefoner i appen. Deres hardwaredrivere bevares.",
       "VB-CABLE findes allerede og genbruges. SoundCurrent gendanner din normale udgang, når det slås fra, eller når du bruger %1.",
-      "VB-CABLE er registreret som driver, men har ingen brugbare lydendepunkter. Installationsprogrammet tilbyder reparation: fjern driveren, genstart, installer den igen, og genstart endnu en gang."
+      "VB-CABLE er registreret som driver, men har ingen brugbare lydendepunkter. Installationsprogrammet tilbyder reparation: fjern driveren, genstart, installer den igen, og genstart endnu en gang.",
+      "Installationsprogrammet åbner VB-Audios signerede installationsprogram. Klik på Install Driver, og genstart derefter Windows, før du bruger equalizeren eller VB-CABLE-indstillingerne."
     ],
     "nb": [
       "Norsk bokmål",
@@ -2193,7 +2210,8 @@
       "SoundCurrent Audio finnes allerede. Hvis driveroppsettet fortsatt er aktivert, registrerer installasjonsprogrammet denne appen og holder den delte driveren tilgjengelig for den andre SoundCurrent-appen.",
       "SoundCurrent Audio sender avspillingen gjennom appen. Velg de fysiske høyttalerne eller hodetelefonene dine i appen. Maskinvaredriverne deres beholdes.",
       "VB-CABLE finnes allerede og brukes på nytt. SoundCurrent gjenoppretter den vanlige utgangen når det slås av eller du bruker %1.",
-      "VB-CABLE er registrert som driver, men har ingen brukbare lydendepunkter. Installasjonsprogrammet tilbyr reparasjon: fjern driveren, start på nytt, installer den igjen og start på nytt en gang til."
+      "VB-CABLE er registrert som driver, men har ingen brukbare lydendepunkter. Installasjonsprogrammet tilbyr reparasjon: fjern driveren, start på nytt, installer den igjen og start på nytt en gang til.",
+      "Installasjonsprogrammet åpner det signerte installasjonsprogrammet fra VB-Audio. Klikk på Install Driver, og start deretter Windows på nytt før du bruker equalizeren eller VB-CABLE-innstillingene."
     ],
     "fi": [
       "Suomi",
@@ -2315,7 +2333,8 @@
       "SoundCurrent Audio on jo olemassa. Jos ajurin määritys pysyy käytössä, asennusohjelma rekisteröi tämän sovelluksen ja pitää jaetun ajurin toisen SoundCurrent-sovelluksen käytettävissä.",
       "SoundCurrent Audio reitittää toiston sovelluksen kautta. Valitse fyysiset kaiuttimet tai kuulokkeet sovelluksessa. Niiden laiteajurit säilytetään.",
       "VB-CABLE on jo olemassa ja sitä käytetään uudelleen. SoundCurrent palauttaa tavallisen lähtösi, kun taajuuskorjain kytketään pois päältä tai valitset %1.",
-      "VB-CABLE on rekisteröity ohjaimeksi, mutta sillä ei ole käytettäviä äänen päätepisteitä. Asennusohjelma tarjoaa korjausta: poista ohjain, käynnistä tietokone uudelleen, asenna ohjain uudelleen ja käynnistä tietokone vielä kerran uudelleen."
+      "VB-CABLE on rekisteröity ohjaimeksi, mutta sillä ei ole käytettäviä äänen päätepisteitä. Asennusohjelma tarjoaa korjausta: poista ohjain, käynnistä tietokone uudelleen, asenna ohjain uudelleen ja käynnistä tietokone vielä kerran uudelleen.",
+      "Asennusohjelma avaa VB-Audion allekirjoitetun asennusohjelman. Napsauta Install Driver ja käynnistä Windows uudelleen ennen taajuuskorjaimen tai VB-CABLE-asetusten käyttöä."
     ],
     "ro": [
       "Română",
@@ -2437,7 +2456,8 @@
       "SoundCurrent Audio este deja prezent. Dacă configurarea driverului rămâne activată, programul de instalare va înregistra această aplicație și va păstra driverul partajat disponibil pentru cealaltă aplicație SoundCurrent.",
       "SoundCurrent Audio direcționează redarea prin aplicație. Alegeți boxele sau căștile fizice în aplicație. Driverele lor hardware sunt păstrate.",
       "VB-CABLE este deja prezent și va fi reutilizat. SoundCurrent restabilește ieșirea obișnuită când este dezactivat sau când utilizați %1.",
-      "VB-CABLE este înregistrat ca driver, dar nu are puncte terminale audio utilizabile. Programul de instalare oferă repararea: eliminați driverul, reporniți, reinstalați și reporniți din nou."
+      "VB-CABLE este înregistrat ca driver, dar nu are puncte terminale audio utilizabile. Programul de instalare oferă repararea: eliminați driverul, reporniți, reinstalați și reporniți din nou.",
+      "Programul de instalare deschide programul de instalare semnat al VB-Audio. Faceți clic pe Install Driver, apoi reporniți Windows înainte de a utiliza egalizatorul sau setările VB-CABLE."
     ],
     "hu": [
       "Magyar",
@@ -2559,7 +2579,8 @@
       "A SoundCurrent Audio már jelen van. Ha az illesztőprogram beállítása engedélyezve marad, a telepítő regisztrálja ezt az alkalmazást, és a megosztott illesztőprogramot elérhetővé teszi a másik SoundCurrent alkalmazás számára.",
       "A SoundCurrent Audio az alkalmazáson keresztül irányítja a lejátszást. Válassza ki a fizikai hangszóróit vagy fejhallgatóját az alkalmazásban. A hardveres illesztőprogramjaik megmaradnak.",
       "A VB-CABLE már jelen van, és újra felhasználásra kerül. A SoundCurrent kikapcsoláskor vagy a(z) %1 használatakor visszaállítja a szokásos kimenetet.",
-      "A VB-CABLE illesztőprogramként regisztrálva van, de nincsenek használható hangvégpontjai. A telepítő javítást kínál: távolítsa el az illesztőprogramot, indítsa újra a gépet, telepítse újra, majd ismét indítsa újra a gépet."
+      "A VB-CABLE illesztőprogramként regisztrálva van, de nincsenek használható hangvégpontjai. A telepítő javítást kínál: távolítsa el az illesztőprogramot, indítsa újra a gépet, telepítse újra, majd ismét indítsa újra a gépet.",
+      "A telepítő megnyitja a VB-Audio digitálisan aláírt telepítőprogramját. Kattintson az Install Driver gombra, majd indítsa újra a Windowst, mielőtt az equalizert vagy a VB-CABLE beállításait használná."
     ],
     "ar": [
       "العربية",
@@ -2681,7 +2702,8 @@
       "SoundCurrent Audio موجود بالفعل. إذا ظل إعداد برنامج التشغيل مفعّلًا، فسيسجّل برنامج التثبيت هذا التطبيق ويبقي برنامج التشغيل المشترك متاحًا لتطبيق SoundCurrent الآخر.",
       "يوجّه SoundCurrent Audio تشغيل الصوت عبر التطبيق. اختر مكبرات الصوت أو سماعات الرأس الفعلية داخل التطبيق. تبقى برامج تشغيل أجهزتها محفوظة.",
       "VB-CABLE موجود بالفعل وسيُستخدم مجددًا. يعيد SoundCurrent إخراج الصوت المعتاد عند تعطيله أو عند استخدام %1.",
-      "VB-CABLE مسجّل كبرنامج تشغيل، لكن لا توجد نقاط نهاية صوتية قابلة للاستخدام. يتيح برنامج الإعداد الإصلاح: أزل برنامج التشغيل، ثم أعد تشغيل الكمبيوتر، وأعد تثبيته، ثم أعد تشغيل الكمبيوتر مرة أخرى."
+      "VB-CABLE مسجّل كبرنامج تشغيل، لكن لا توجد نقاط نهاية صوتية قابلة للاستخدام. يتيح برنامج الإعداد الإصلاح: أزل برنامج التشغيل، ثم أعد تشغيل الكمبيوتر، وأعد تثبيته، ثم أعد تشغيل الكمبيوتر مرة أخرى.",
+      "يفتح برنامج الإعداد برنامج التثبيت الموقّع من VB-Audio. انقر على Install Driver، ثم أعد تشغيل Windows قبل استخدام المعادل أو إعدادات VB-CABLE."
     ],
     "he": [
       "עברית",
@@ -2803,7 +2825,8 @@
       "SoundCurrent Audio כבר קיים. אם הגדרת מנהל ההתקן תישאר מופעלת, תוכנית ההתקנה תרשום יישום זה ותשאיר את מנהל ההתקן המשותף זמין ליישום SoundCurrent האחר.",
       "SoundCurrent Audio מנתב את ההשמעה דרך היישום. בחרו את הרמקולים או האוזניות הפיזיים בתוך היישום. מנהלי ההתקנים של החומרה נשמרים.",
       "VB-CABLE כבר קיים וייעשה בו שימוש חוזר. SoundCurrent משחזר את הפלט הרגיל כשהוא מושבת או כשמשתמשים ב־%1.",
-      "VB-CABLE רשום כמנהל התקן, אך אין נקודות קצה שמע שמישות. תוכנית ההתקנה מציעה תיקון: להסיר את מנהל ההתקן, להפעיל מחדש, להתקין שוב ולהפעיל מחדש פעם נוספת."
+      "VB-CABLE רשום כמנהל התקן, אך אין נקודות קצה שמע שמישות. תוכנית ההתקנה מציעה תיקון: להסיר את מנהל ההתקן, להפעיל מחדש, להתקין שוב ולהפעיל מחדש פעם נוספת.",
+      "תוכנית ההתקנה פותחת את תוכנית ההתקנה החתומה של VB-Audio. יש ללחוץ על Install Driver, ואז להפעיל מחדש את Windows לפני השימוש באקולייזר או בהגדרות VB-CABLE."
     ],
     "fa": [
       "فارسی",
@@ -2925,7 +2948,8 @@
       "SoundCurrent Audio از قبل موجود است. اگر راه‌اندازی درایور فعال بماند، نصب‌کننده این برنامه را ثبت می‌کند و درایور مشترک را برای برنامهٔ دیگر SoundCurrent در دسترس نگه می‌دارد.",
       "SoundCurrent Audio پخش صدا را از طریق برنامه هدایت می‌کند. بلندگوها یا هدفون فیزیکی خود را در برنامه انتخاب کنید. درایورهای سخت‌افزاری آن‌ها حفظ می‌شوند.",
       "VB-CABLE از قبل موجود است و دوباره استفاده خواهد شد. SoundCurrent هنگام غیرفعال شدن یا استفاده از %1، خروجی معمول شما را بازمی‌گرداند.",
-      "VB-CABLE به‌عنوان درایور ثبت شده است، اما هیچ نقطهٔ پایانی صوتی قابل استفاده‌ای ندارد. برنامهٔ نصب امکان تعمیر را می‌دهد: درایور را حذف کنید، رایانه را راه‌اندازی مجدد کنید، درایور را دوباره نصب کنید و رایانه را بار دیگر راه‌اندازی مجدد کنید."
+      "VB-CABLE به‌عنوان درایور ثبت شده است، اما هیچ نقطهٔ پایانی صوتی قابل استفاده‌ای ندارد. برنامهٔ نصب امکان تعمیر را می‌دهد: درایور را حذف کنید، رایانه را راه‌اندازی مجدد کنید، درایور را دوباره نصب کنید و رایانه را بار دیگر راه‌اندازی مجدد کنید.",
+      "برنامهٔ نصب، نصب‌کنندهٔ دارای امضای دیجیتال VB-Audio را باز می‌کند. روی Install Driver کلیک کنید، سپس پیش از استفاده از اکولایزر یا تنظیمات VB-CABLE، Windows را راه‌اندازی مجدد کنید."
     ],
     "zh-Hans": [
       "简体中文",
@@ -3047,7 +3071,8 @@
       "SoundCurrent Audio 已存在。如果保持启用驱动程序设置，安装程序会注册此应用，并保留共享驱动程序供另一个 SoundCurrent 应用使用。",
       "SoundCurrent Audio 将播放的音频经由此应用传送。请在应用内选择实际的扬声器或耳机。它们的硬件驱动程序会被保留。",
       "VB-CABLE 已存在，将继续使用。关闭 SoundCurrent 的均衡器或使用 %1 时，会恢复常规输出。",
-      "VB-CABLE 已有驱动程序记录，但没有可用的音频端点。安装程序提供修复选项：卸载驱动程序、重启电脑、重新安装，然后再次重启电脑。"
+      "VB-CABLE 已有驱动程序记录，但没有可用的音频端点。安装程序提供修复选项：卸载驱动程序、重启电脑、重新安装，然后再次重启电脑。",
+      "安装程序会打开 VB-Audio 的已签名安装程序。请点击 Install Driver，然后重启 Windows，再使用均衡器或 VB-CABLE 设置。"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -3169,7 +3194,8 @@
       "SoundCurrent Audio 已存在。若保持啟用驅動程式設定，安裝程式會註冊此應用程式，並保留共用驅動程式供另一個 SoundCurrent 應用程式使用。",
       "SoundCurrent Audio 會透過此應用程式傳送播放的音訊。請在應用程式內選擇實際的喇叭或耳機。它們的硬體驅動程式會被保留。",
       "VB-CABLE 已存在，將繼續使用。停用 SoundCurrent 的等化器或使用 %1 時，會恢復一般輸出。",
-      "VB-CABLE 已有驅動程式記錄，但沒有可用的音訊端點。安裝程式提供修復選項：解除安裝驅動程式、重新啟動電腦、重新安裝，然後再次重新啟動電腦。"
+      "VB-CABLE 已有驅動程式記錄，但沒有可用的音訊端點。安裝程式提供修復選項：解除安裝驅動程式、重新啟動電腦、重新安裝，然後再次重新啟動電腦。",
+      "安裝程式會開啟 VB-Audio 已簽署的安裝程式。請按 Install Driver，然後重新啟動 Windows，再使用等化器或 VB-CABLE 設定。"
     ],
     "ja": [
       "日本語",
@@ -3291,7 +3317,8 @@
       "SoundCurrent Audio は既に存在します。ドライバーのセットアップを有効にしたままにすると、セットアップはこのアプリを登録し、もう一方の SoundCurrent アプリで共有ドライバーを使用できる状態を維持します。",
       "SoundCurrent Audio は再生音声をアプリ経由で送ります。アプリ内で実際のスピーカーまたはヘッドホンを選択してください。それらのハードウェアドライバーは保持されます。",
       "VB-CABLE は既に存在し、再利用されます。SoundCurrent はオフにしたとき、または %1 を使用したときに通常の出力を復元します。",
-      "VB-CABLE のドライバーは登録されていますが、使用可能なオーディオエンドポイントがありません。セットアップでは修復が可能です。ドライバーを削除し、パソコンを再起動してから再インストールし、もう一度再起動してください。"
+      "VB-CABLE のドライバーは登録されていますが、使用可能なオーディオエンドポイントがありません。セットアップでは修復が可能です。ドライバーを削除し、パソコンを再起動してから再インストールし、もう一度再起動してください。",
+      "セットアップは VB-Audio の署名済みインストーラーを開きます。Install Driver をクリックし、Windows を再起動してから、イコライザーや VB-CABLE の設定を使用してください。"
     ],
     "ko": [
       "한국어",
@@ -3413,7 +3440,8 @@
       "SoundCurrent Audio가 이미 있습니다. 드라이버 설정을 활성화한 상태로 두면 설치 프로그램이 이 앱을 등록하고 다른 SoundCurrent 앱에서도 공유 드라이버를 사용할 수 있도록 유지합니다.",
       "SoundCurrent Audio는 재생 오디오를 앱을 통해 전달합니다. 앱 안에서 실제 스피커나 헤드폰을 선택하세요. 해당 하드웨어 드라이버는 유지됩니다.",
       "VB-CABLE이 이미 있으며 재사용됩니다. SoundCurrent의 이퀄라이저를 끄거나 %1을 사용하면 원래 출력을 복원합니다.",
-      "VB-CABLE 드라이버가 등록되어 있지만 사용 가능한 오디오 엔드포인트가 없습니다. 설치 프로그램에서 복구할 수 있습니다. 드라이버를 제거하고 컴퓨터를 다시 시작한 후 재설치하고 컴퓨터를 한 번 더 다시 시작하세요."
+      "VB-CABLE 드라이버가 등록되어 있지만 사용 가능한 오디오 엔드포인트가 없습니다. 설치 프로그램에서 복구할 수 있습니다. 드라이버를 제거하고 컴퓨터를 다시 시작한 후 재설치하고 컴퓨터를 한 번 더 다시 시작하세요.",
+      "설치 프로그램이 VB-Audio의 서명된 설치 프로그램을 엽니다. Install Driver를 클릭한 후 Windows를 다시 시작하고 이퀄라이저나 VB-CABLE 설정을 사용하세요."
     ],
     "hi": [
       "हिन्दी",
@@ -3535,7 +3563,8 @@
       "SoundCurrent Audio पहले से मौजूद है। ड्राइवर सेटअप सक्षम रहने पर इंस्टॉलर इस ऐप को पंजीकृत करेगा और साझा ड्राइवर को दूसरे SoundCurrent ऐप के लिए उपलब्ध रखेगा।",
       "SoundCurrent Audio प्लेबैक को ऐप के ज़रिए भेजता है। ऐप में अपने वास्तविक स्पीकर या हेडफ़ोन चुनें। उनके हार्डवेयर ड्राइवर सुरक्षित रखे जाते हैं।",
       "VB-CABLE पहले से मौजूद है और दोबारा इस्तेमाल किया जाएगा। SoundCurrent बंद किए जाने या %1 इस्तेमाल करने पर आपका सामान्य आउटपुट वापस बहाल करता है।",
-      "VB-CABLE का ड्राइवर रिकॉर्ड मौजूद है, लेकिन उपयोग करने योग्य ऑडियो एंडपॉइंट नहीं हैं। सेटअप मरम्मत का विकल्प देता है: ड्राइवर हटाएँ, कंप्यूटर रीस्टार्ट करें, फिर से इंस्टॉल करें और दोबारा रीस्टार्ट करें।"
+      "VB-CABLE का ड्राइवर रिकॉर्ड मौजूद है, लेकिन उपयोग करने योग्य ऑडियो एंडपॉइंट नहीं हैं। सेटअप मरम्मत का विकल्प देता है: ड्राइवर हटाएँ, कंप्यूटर रीस्टार्ट करें, फिर से इंस्टॉल करें और दोबारा रीस्टार्ट करें।",
+      "सेटअप VB-Audio का डिजिटल हस्ताक्षर वाला इंस्टॉलर खोलता है। Install Driver पर क्लिक करें, फिर इक्वलाइज़र या VB-CABLE सेटिंग का उपयोग करने से पहले Windows रीस्टार्ट करें।"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -3657,7 +3686,8 @@
       "SoundCurrent Audio sudah ada. Jika penyiapan driver tetap diaktifkan, penginstal akan mendaftarkan aplikasi ini dan menjaga driver bersama tetap tersedia untuk aplikasi SoundCurrent lainnya.",
       "SoundCurrent Audio mengarahkan pemutaran melalui aplikasi. Pilih speaker atau headphone fisik Anda di dalam aplikasi. Driver perangkat kerasnya dipertahankan.",
       "VB-CABLE sudah ada dan akan digunakan kembali. SoundCurrent memulihkan keluaran normal saat dinonaktifkan atau saat Anda menggunakan %1.",
-      "VB-CABLE terdaftar sebagai driver, tetapi tidak memiliki titik akhir audio yang dapat digunakan. Penginstal menawarkan perbaikan: hapus driver, mulai ulang, instal kembali, lalu mulai ulang sekali lagi."
+      "VB-CABLE terdaftar sebagai driver, tetapi tidak memiliki titik akhir audio yang dapat digunakan. Penginstal menawarkan perbaikan: hapus driver, mulai ulang, instal kembali, lalu mulai ulang sekali lagi.",
+      "Penginstal membuka program instalasi VB-Audio yang ditandatangani secara digital. Klik Install Driver, lalu mulai ulang Windows sebelum menggunakan equalizer atau pengaturan VB-CABLE."
     ],
     "vi": [
       "Tiếng Việt",
@@ -3779,7 +3809,8 @@
       "SoundCurrent Audio đã có sẵn. Nếu thiết lập trình điều khiển vẫn được bật, trình cài đặt sẽ đăng ký ứng dụng này và giữ trình điều khiển dùng chung cho ứng dụng SoundCurrent còn lại.",
       "SoundCurrent Audio định tuyến âm thanh phát qua ứng dụng. Chọn loa hoặc tai nghe vật lý của bạn trong ứng dụng. Trình điều khiển phần cứng của chúng được giữ nguyên.",
       "VB-CABLE đã có sẵn và sẽ được dùng lại. SoundCurrent khôi phục đầu ra thông thường khi bị tắt hoặc khi bạn dùng %1.",
-      "VB-CABLE có bản ghi trình điều khiển nhưng không có điểm cuối âm thanh dùng được. Trình cài đặt cung cấp tùy chọn sửa chữa: gỡ trình điều khiển, khởi động lại, cài đặt lại rồi khởi động lại lần nữa."
+      "VB-CABLE có bản ghi trình điều khiển nhưng không có điểm cuối âm thanh dùng được. Trình cài đặt cung cấp tùy chọn sửa chữa: gỡ trình điều khiển, khởi động lại, cài đặt lại rồi khởi động lại lần nữa.",
+      "Trình cài đặt mở chương trình cài đặt có chữ ký số của VB-Audio. Nhấp vào Install Driver, rồi khởi động lại Windows trước khi dùng bộ cân bằng âm thanh hoặc cài đặt VB-CABLE."
     ],
     "th": [
       "ไทย",
@@ -3901,7 +3932,8 @@
       "มี SoundCurrent Audio อยู่แล้ว หากยังเปิดใช้งานการตั้งค่าไดรเวอร์ โปรแกรมติดตั้งจะลงทะเบียนแอปนี้และคงไดรเวอร์ที่ใช้ร่วมกันไว้ให้แอป SoundCurrent อีกแอปใช้งาน",
       "SoundCurrent Audio ส่งเสียงที่เล่นผ่านแอป เลือกลำโพงหรือหูฟังจริงของคุณภายในแอป ไดรเวอร์ฮาร์ดแวร์ของอุปกรณ์เหล่านั้นจะยังคงอยู่",
       "มี VB-CABLE อยู่แล้วและจะใช้ต่อไป SoundCurrent จะคืนค่าเอาต์พุตปกติเมื่อปิดใช้งานหรือเมื่อคุณใช้ %1",
-      "VB-CABLE มีข้อมูลไดรเวอร์ที่ลงทะเบียนไว้ แต่ไม่มีจุดปลายทางเสียงที่ใช้งานได้ โปรแกรมติดตั้งมีตัวเลือกซ่อมแซม: ถอนการติดตั้งไดรเวอร์ รีสตาร์ทคอมพิวเตอร์ ติดตั้งใหม่ แล้วรีสตาร์ทอีกครั้ง"
+      "VB-CABLE มีข้อมูลไดรเวอร์ที่ลงทะเบียนไว้ แต่ไม่มีจุดปลายทางเสียงที่ใช้งานได้ โปรแกรมติดตั้งมีตัวเลือกซ่อมแซม: ถอนการติดตั้งไดรเวอร์ รีสตาร์ทคอมพิวเตอร์ ติดตั้งใหม่ แล้วรีสตาร์ทอีกครั้ง",
+      "โปรแกรมติดตั้งจะเปิดโปรแกรมติดตั้งที่มีลายเซ็นดิจิทัลของ VB-Audio คลิก Install Driver แล้วรีสตาร์ท Windows ก่อนใช้ตัวปรับแต่งเสียงหรือการตั้งค่า VB-CABLE"
     ],
     "sw": [
       "Kiswahili",
@@ -4023,7 +4055,8 @@
       "SoundCurrent Audio tayari ipo. Ikiwa usanidi wa kiendeshi unabaki umewezeshwa, kisakinishi kitasajili programu hii na kuweka kiendeshi kinachoshirikiwa kipatikane kwa programu nyingine ya SoundCurrent.",
       "SoundCurrent Audio huelekeza sauti inayochezwa kupitia programu. Chagua spika au vipokea sauti vyako halisi ndani ya programu. Viendeshi vya vifaa hivyo huhifadhiwa.",
       "VB-CABLE tayari ipo na itatumika tena. SoundCurrent hurejesha utoaji wako wa kawaida wa sauti inapozimwa au unapotumia %1.",
-      "VB-CABLE imesajiliwa kama kiendeshi, lakini haina sehemu za mwisho za sauti zinazoweza kutumika. Kisakinishi kinatoa chaguo la kurekebisha: ondoa kiendeshi, anzisha kompyuta upya, sakinisha tena, kisha anzisha kompyuta upya mara nyingine."
+      "VB-CABLE imesajiliwa kama kiendeshi, lakini haina sehemu za mwisho za sauti zinazoweza kutumika. Kisakinishi kinatoa chaguo la kurekebisha: ondoa kiendeshi, anzisha kompyuta upya, sakinisha tena, kisha anzisha kompyuta upya mara nyingine.",
+      "Kisakinishi hufungua programu ya kusakinisha ya VB-Audio yenye saini ya kidijitali. Bofya Install Driver, kisha anzisha Windows upya kabla ya kutumia kisawazishi au mipangilio ya VB-CABLE."
     ],
     "nn": [
       "Norsk nynorsk",
@@ -4145,7 +4178,8 @@
       "SoundCurrent Audio finst allereie. Dersom drivaroppsettet framleis er aktivert, registrerer installasjonsprogrammet denne appen og held den delte drivaren tilgjengeleg for den andre SoundCurrent-appen.",
       "SoundCurrent Audio sender avspelinga gjennom appen. Vel dei fysiske høgtalarane eller hovudtelefonane dine i appen. Maskinvaredrivarane deira vert bevarte.",
       "VB-CABLE finst allereie og vert brukt på nytt. SoundCurrent gjenopprettar den vanlege utgangen når det vert slått av eller du brukar %1.",
-      "VB-CABLE er registrert som drivar, men har ingen brukande lydendepunkt. Installasjonsprogrammet tilbyr reparasjon: fjern drivaren, start på nytt, installer han på nytt og start på nytt ein gong til."
+      "VB-CABLE er registrert som drivar, men har ingen brukande lydendepunkt. Installasjonsprogrammet tilbyr reparasjon: fjern drivaren, start på nytt, installer han på nytt og start på nytt ein gong til.",
+      "Installasjonsprogrammet opnar det signerte installasjonsprogrammet frå VB-Audio. Klikk på Install Driver, og start deretter Windows på nytt før du brukar equalizeren eller VB-CABLE-innstillingane."
     ]
   },
   "requiredCompleteLocales": [

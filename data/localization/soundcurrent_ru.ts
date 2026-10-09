@@ -2046,6 +2046,11 @@ Import into your library?</source>
       <translation>Установщик не смог проверить драйвер. Повторите попытку с помощью %1 в приложении или меню «Пуск».</translation>
     </message>
     <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>Установщик откроет подписанную программу установки VB-Audio. Нажмите Install Driver, затем перезагрузите Windows перед использованием эквалайзера или настроек VB-CABLE.</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>Общий EQ и EQ канала превышают 64 фильтра; удалите часть фильтров канала</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

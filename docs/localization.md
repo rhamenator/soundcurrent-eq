@@ -152,3 +152,7 @@ The existing-cable notice now uses the actual translated Quit app button label; 
 ### Incomplete cable driver repair notice
 
 The installer repair notice now has catalog translations in all 33 non-English locales. Review preserves the remove/restart/reinstall/restart sequence and protects VB-CABLE. Catalog tests and all 510 exported NSIS caption literals pass; the compiler fixture uses English language IDs and does not prove language activation or installed layout. Native-speaker review remains unverified. See `tests/results/localization/second-pass-installer-cable-repair.json`.
+
+### Signed cable installer instructions
+
+All 33 non-English catalogs now contain the signed-installer notice. The exact external button caption `Install Driver` and the required Windows restart remain intact. Catalog tests and 544 exported caption literals pass syntax checks. This does not qualify installer locale activation, translated layout, or a current installed package. Native-speaker verification is unverified. See `tests/results/localization/second-pass-installer-signed-notice.json`.

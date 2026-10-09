@@ -2046,6 +2046,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Kisakinishi hakikuweza kukagua kiendeshi. Unaweza kujaribu tena kwa kutumia %1 katika programu au menyu ya Anza.</translation>
     </message>
     <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>Kisakinishi hufungua programu ya kusakinisha ya VB-Audio yenye saini ya kidijitali. Bofya Install Driver, kisha anzisha Windows upya kabla ya kutumia kisawazishi au mipangilio ya VB-CABLE.</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>EQ ya pamoja na EQ ya chaneli zinazidi vichujio 64; ondoa baadhi ya vichujio vya chaneli</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

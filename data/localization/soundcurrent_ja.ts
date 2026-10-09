@@ -2046,6 +2046,11 @@ Import into your library?</source>
       <translation>セットアップでドライバーを確認できませんでした。アプリ内またはスタートメニューの %1 から再試行できます。</translation>
     </message>
     <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>セットアップは VB-Audio の署名済みインストーラーを開きます。Install Driver をクリックし、Windows を再起動してから、イコライザーや VB-CABLE の設定を使用してください。</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>共通 EQ とチャンネル EQ の合計が 64 フィルターを超えています。チャンネルのフィルターを減らしてください</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

@@ -2046,6 +2046,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>Asennusohjelma ei voinut tarkistaa ajuria. Voit yrittää uudelleen sovelluksen tai Käynnistä-valikon toiminnolla %1.</translation>
     </message>
     <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>Asennusohjelma avaa VB-Audion allekirjoitetun asennusohjelman. Napsauta Install Driver ja käynnistä Windows uudelleen ennen taajuuskorjaimen tai VB-CABLE-asetusten käyttöä.</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>Yhteinen EQ ja kanavan EQ ylittävät 64 suodatinta; poista joitakin kanavan suodattimia</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>

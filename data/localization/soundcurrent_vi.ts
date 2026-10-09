@@ -2046,6 +2046,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Trình cài đặt không thể kiểm tra trình điều khiển. Bạn có thể thử lại bằng %1 trong ứng dụng hoặc menu Bắt đầu.</translation>
     </message>
     <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>Trình cài đặt mở chương trình cài đặt có chữ ký số của VB-Audio. Nhấp vào Install Driver, rồi khởi động lại Windows trước khi dùng bộ cân bằng âm thanh hoặc cài đặt VB-CABLE.</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
       <translation>EQ chung và EQ của kênh vượt quá tổng cộng 64 bộ lọc; hãy xóa bớt bộ lọc của kênh</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
