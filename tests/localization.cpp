@@ -9,6 +9,7 @@
 #include <QLabel>
 #include <QToolButton>
 #include <QAccessible>
+#include <QDebug>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QJsonDocument>
@@ -391,6 +392,7 @@ int main(int argc,char **argv){
     for (const auto &[object, caption]:std::initializer_list<std::pair<const char*,const char*>>{
       {"lookInLabel","Look in:"},{"fileNameLabel","File name:"},{"fileTypeLabel","Files of type:"}}) {
      const auto *label=chooser.findChild<QLabel*>(object);
+     if (!label || label->text()!=text(caption)) qCritical().noquote()<<"Qt chooser field mismatch:"<<object<<"actual:"<<(label?label->text():QStringLiteral("missing widget"))<<"expected:"<<text(caption)<<"language:"<<app.property("soundcurrentInterfaceLanguage").toString()<<"Qt:"<<qVersion();
      require(label && label->text()==text(caption),"Qt fallback chooser field stayed outside app catalog");
     }
     for (const auto &[object, caption]:std::initializer_list<std::pair<const char*,const char*>>{
@@ -416,6 +418,8 @@ int main(int argc,char **argv){
      auto *accessible=QAccessible::queryAccessibleInterface(view);
      require(accessible && accessible->text(QAccessible::Name)==text("Files"),"Qt chooser file view accessible name stayed English");
     }
+    require(QCoreApplication::translate("QFileDialog","&Look in:")==text("Look in:"),"Qt 6.12 Look in mnemonic variant stayed English");
+    require(QCoreApplication::translate("QFileDialog","Files of &type:")==text("Files of type:"),"Qt 6.12 file-type mnemonic variant stayed English");
     const auto *buttons=chooser.findChild<QDialogButtonBox*>("buttonBox");
     require(buttons && buttons->button(QDialogButtonBox::Open)->text()==text("Open"),"Qt chooser Open stayed outside app catalog");
     chooser.setAcceptMode(QFileDialog::AcceptSave);

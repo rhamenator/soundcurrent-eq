@@ -161,9 +161,9 @@ public:
             if (action == "List of places and bookmarks") return text("List of places and bookmarks");
             if (action == "Files") return text("Files");
 
-            if (action == "Look in:") return text("Look in:");
+            if (action == "Look in:" || action == "&Look in:") return text("Look in:");
             if (action == "File &name:") return text("File name:");
-            if (action == "Files of type:") return text("Files of type:");
+            if (action == "Files of type:" || action == "Files of &type:") return text("Files of type:");
             if (action == "Back") return text("Back");
             if (action == "Forward") return text("Forward");
             if (action == "Parent Directory") return text("Parent directory");

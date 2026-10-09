@@ -605,3 +605,7 @@ The expanded compiled Linux localization fixture passed in both apps (EQ 20.11 s
 ### Qt chooser accessibility captions
 
 Nine accessibility captions now use the app catalog in QFileDialog context: navigation descriptions, sidebar name/description and file-view names. Qt upstream translations cover 24 non-English locales; nine locales use contextual AI translations. All remain native-unverified. Navigation refers to directory history and parent folders, not playback. Regional spot review checked pt-BR/pt-PT (Arquivos/Ficheiros, favoritos/marcadores), nb/nn (frem/fram, listevisning/listevising), Romanian/Hungarian and Arabic/Hebrew against these controls. This does not certify all upstream wording. Tests query actual QAccessible interfaces across 33 non-English locales; no screen-reader listening test is claimed. Context menus, model headers and error workflows remain pending.
+
+### Qt 6.12 Windows chooser compatibility
+
+Native Windows run 37892083899 failed the new basic chooser field assertion. Qt 6.12 upstream UI uses &Look in: and Files of &type:, where Linux Qt 6.4 uses the unmarked forms. The shared translator now maps both exact forms to existing captions; compiled tests explicitly check aliases and report actual/expected field values, locale and Qt version on mismatch. Fresh native Windows qualification is required; the preceding Linux pass does not establish it.

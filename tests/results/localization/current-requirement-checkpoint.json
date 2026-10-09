@@ -76,13 +76,13 @@
   "evidenceSha256": {
     "data/localization/catalogs.json": "eb91289c5cb434f98dbe521b322337f16843e2e1f1b186849fba0c0e63af3664",
     "docs/translation-review.md": "23a3c6a8c40944ebe7613f58184357f20d305d22dd65c1829ce24fc98e7630f7",
-    "tests/localization.cpp": "bbc3fd56a9a0c227d4e7ea7479c65d1b416d4603fe5c9453c36be4b54a11b33f",
+    "tests/localization.cpp": "e3e4d6b2c8295251ecfd30e83168e532c5895419ae9402f3ad7427c1beb39d11",
     "tests/translation_catalogs.py": "443fb29d0b4cb1e848ec443cbf7a8245d54087e682036d5bcdb2c9c618ea524f",
     "scripts/ui_string_audit.py": "a7cd0132f32a3f103eadffe8798aee877b4c397545f3e53ec1ea4134b133629f",
-    "tests/results/localization/dynamic-display-inventory.json": "2a2ed093e233efb058401de953e0b3c6a3f9eb9ff70d08d1539997c5b39bb2a3",
+    "tests/results/localization/dynamic-display-inventory.json": "847a6089acfaeae40ca76c0b02cebd1dc7f8ecb245b9f0e8781acbfb17d3a1aa",
     "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
     "src/main.cpp": "1f8c56b4e82e1b3bfd2d9406694ca9c06f3e007362fc59a60c80728157986ee9",
-    "src/localization.h": "a1504aa8bc591ec1a5090686385b5f007131c5969a97cd664462da627225b3e9",
+    "src/localization.h": "682d7be0bfeebdcdf99d7fec88b9c92e412b54cf792f04e2a6445170907e4ff9",
     "src/localization_text.h": "9cbb9b2c5e49287651cba6bcd273c01e148f8fd5dce4b7e39fdd86594e344cd0",
     "scripts/localization.py": "a5ac5ebed546faab47f0b4b4dae66f2a1ce1ece2936d2968483191ef5e02d19d",
     "tests/calibration_worker_localization.py": "c6120b78b59ae6d547cd7d0a503d4f39a46f0fa3c03c9c4007b46f8e53db34f8",
@@ -91,7 +91,7 @@
     "tests/results/localization/calibration-worker-native-ci.json": "377d797dfc8478b69a02fb63760577d5a2571393c939e35aa1eecbb270467e35",
     "src/equipment_profiles.cpp": "6853faa29c08f99df84bd12c9ca938657216c57ca39b5d9a5b15e747eb6c78ed",
     "tests/results/localization/profile-authored-defaults.json": "2d3aa7687f468de8c9b652c2dafd2afae1f929b3d401ac3390a6f691f08156af",
-    "tests/results/localization/qt-file-dialog-gap.json": "e19bc387c911ab2403ab775b6fd3e5e36ee7c96951d09f2ec37fd9d6fd7eeecc"
+    "tests/results/localization/qt-file-dialog-gap.json": "3f110cbd74a56dd68135015b5099e602680c6f949c256314590b386a57ac2424"
   },
   "auditedBaseHead": "a39082b688e3a0ad21e40c39a966ee11c44e5439",
   "sourceIdentity": "Current inspected source files are identified by SHA-256 below; base commit is historical context, not qualification of pending calibration changes",
@@ -123,7 +123,7 @@
   },
   "currentQtFileDialogGap": {
     "date": "2026-10-09",
-    "status": "basic labels/navigation and actual QAccessible fixture passed on compiled Linux builds; remaining chooser workflows incomplete",
+    "status": "basic/accessibility mappings passed local compiled tests; native Windows Qt 6.12 mismatch found and patched, fresh native qualification pending",
     "probeSourceSha256": "b3be9f969d44f0352b65c07ce5b0e22ff63d66e26b95b68c3a1c7874ebdfd08f",
     "probeScope": "Standalone Qt6Widgets QFileDialog using the actual EQ compiled French catalog and shared StandardActionTranslator. Offscreen, DontUseNativeDialog. No file selection, settings writes, audio or VM. Shared implementation matches Studio; Studio full app dialog not separately exercised.",
     "untranslatedObserved": [
@@ -171,8 +171,8 @@
       "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.ui"
     ],
     "sourceSha256": {
-      "src/localization.h": "a1504aa8bc591ec1a5090686385b5f007131c5969a97cd664462da627225b3e9",
-      "tests/localization.cpp": "bbc3fd56a9a0c227d4e7ea7479c65d1b416d4603fe5c9453c36be4b54a11b33f",
+      "src/localization.h": "682d7be0bfeebdcdf99d7fec88b9c92e412b54cf792f04e2a6445170907e4ff9",
+      "tests/localization.cpp": "e3e4d6b2c8295251ecfd30e83168e532c5895419ae9402f3ad7427c1beb39d11",
       "data/localization/catalogs.json": "eb91289c5cb434f98dbe521b322337f16843e2e1f1b186849fba0c0e63af3664"
     },
     "accessibilityTestScope": "Actual QAccessible Name/Description queries for six navigation buttons, sidebar and list/tree file views, all 33 non-English catalogs. Does not test screen-reader speech.",
@@ -183,6 +183,8 @@
       "platform": "Qt offscreen",
       "catalogs": 33,
       "screenReaderSpeechTested": false
-    }
-  }
+    },
+    "nativeWindowsKnownFailure": "tests/results/localization/qt-file-dialog-qt612-compatibility.json"
+  },
+  "qt612CompatibilityEvidence": "tests/results/localization/qt-file-dialog-qt612-compatibility.json"
 }
