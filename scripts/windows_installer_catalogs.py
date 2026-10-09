@@ -151,8 +151,60 @@ def export(destination, product):
     destination.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     return result
 
-def generate_installer(source, destination, product, captions):
-    """Write a build copy; current installer language inventory is still English."""
+
+def activate_languages(text, product, captions, route):
+    """Activate explicit language assets and persist installer-only preferences."""
+    rows = validate_language_map()['languages']
+    key = 'Software\\SoundCurrent\\' + product
+    settings = ('!define MUI_LANGDLL_REGISTRY_ROOT "HKCU"\n'
+                '!define MUI_LANGDLL_REGISTRY_KEY "' + key + '"\n'
+                '!define MUI_LANGDLL_REGISTRY_VALUENAME "InstallerLanguage"\n'
+                'Var SCLocaleTag\n')
+    text = text.replace('!include "MUI2.nsh"', '!include "MUI2.nsh"\n' + settings, 1)
+    declarations = []
+    for row in rows:
+        if row['builtinAssetsExpected']:
+            declarations.append('!insertmacro MUI_LANGUAGE "' + row['nsisLanguage'] + '"')
+        else:
+            declarations.append('!insertmacro MUI_LANGUAGEEX "${SOURCE_ROOT}\\packaging\\windows\\languages" "' + row['nsisLanguage'] + '"')
+    text = text.replace('!insertmacro MUI_LANGUAGE "English"', '\n'.join(declarations), 1)
+    lines = []
+    for row in rows:
+        if row['tag'] == 'en':
+            continue
+        pack = captions['languages'][row['tag']][route]
+        for name, value in pack['nsisEscaped'].items():
+            lines.append('LangString ' + name + ' ' + str(row['windowsLanguageId']) + ' "' + value + '"')
+    anchor = '\nFunction .onInit\n'
+    if text.count(anchor) != 1 or 'Function un.onInit' in text:
+        raise ValueError('Installer lifecycle language activation requires one owned init')
+    functions = []
+    for prefix in ('', 'un.'):
+        functions.append('Function ' + prefix + 'SCResolveInstallerLocale\n  StrCpy $SCLocaleTag "en"')
+        for row in rows:
+            functions.append('  ${If} $LANGUAGE == ' + str(row['windowsLanguageId']) + '\n    StrCpy $SCLocaleTag "' + row['tag'] + '"\n  ${EndIf}')
+        functions.append('FunctionEnd')
+    functions.append('Function un.onInit\n  !insertmacro MUI_UNGETLANGUAGE\n  Call un.SCResolveInstallerLocale\nFunctionEnd')
+    text = text.replace(anchor, '\n' + '\n'.join(lines + functions) + anchor + '  !insertmacro MUI_LANGDLL_DISPLAY\n  Call SCResolveInstallerLocale\n', 1)
+    text = text.replace('  nsDialogs::Create 1018', '  nsDialogs::SetRTL $(^RTL)\n  nsDialogs::Create 1018', 1)
+    # All owned helper calls, including setup shortcuts, receive the selected tag.
+    call_lines = []
+    for line in text.splitlines(keepends=True):
+        if '-File "' in line and ('audio-setup.ps1' in line or 'cable-setup.ps1' in line):
+            end = line.rfind("'")
+            if end < 0 or '-Language ' in line:
+                raise ValueError('Unexpected helper command shape during language activation')
+            line = line[:end] + ' -Language "$SCLocaleTag"' + line[end:]
+        call_lines.append(line)
+    text = ''.join(call_lines)
+    anchor = '  WriteRegStr HKCU "' + key + '" "InstallDir" "$INSTDIR"'
+    if text.count(anchor) != 1:
+        raise ValueError('Missing owned install registry anchor')
+    text = text.replace(anchor, anchor + '\n  WriteRegStr HKCU "' + key + '" "InstallerLocale" "$SCLocaleTag"', 1)
+    return text
+
+def generate_installer(source, destination, product, captions, activate=False):
+    """Write a build copy; expanded languages require explicit activation."""
     if captions.get('schema') != 1 or captions.get('product') != product:
         raise ValueError('Installer caption payload does not match product/schema')
     if source.resolve() == destination.resolve():
@@ -172,6 +224,8 @@ def generate_installer(source, destination, product, captions):
         text, count = re.subn(pattern, lambda match: replacement + match[1], text, flags=re.M)
         if count != 1:
             raise ValueError('Missing or duplicate installer caption definition: ' + key)
+    if activate:
+        text = activate_languages(text, product, captions, route)
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_bytes(text.encode('utf-8'))
 
@@ -179,11 +233,14 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--product', choices=['SoundCurrent EQ', 'SoundCurrent Studio'], required=True)
+    parser.add_argument('--activate-languages', action='store_true', help='Enable all mapped installer languages and installer preference persistence')
     parser.add_argument('--installer-source', type=Path)
     parser.add_argument('--installer-output', type=Path)
     arguments = parser.parse_args()
     if bool(arguments.installer_source) != bool(arguments.installer_output):
         parser.error('--installer-source and --installer-output must be used together')
+    if arguments.activate_languages and not arguments.installer_source:
+        parser.error('--activate-languages requires an installer source/output')
     captions = export(arguments.output, arguments.product)
     if arguments.installer_source:
-        generate_installer(arguments.installer_source, arguments.installer_output, arguments.product, captions)
+        generate_installer(arguments.installer_source, arguments.installer_output, arguments.product, captions, activate=arguments.activate_languages)
