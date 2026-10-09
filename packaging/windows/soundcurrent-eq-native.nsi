@@ -58,6 +58,7 @@ LangString SCQuitBeforeUpdate ${LANG_ENGLISH} "Quit SoundCurrent EQ before updat
 LangString SCQuitBeforeUninstall ${LANG_ENGLISH} "Quit SoundCurrent EQ before uninstalling it."
 LangString SCNativeSetupProgress ${LANG_ENGLISH} "Setting up the shared SoundCurrent Audio driver..."
 LangString SCSetupRetryProgress ${LANG_ENGLISH} "SoundCurrent Audio setup did not finish. Retry using the Start menu shortcut."
+LangString SCNativeRemovalFailed ${LANG_ENGLISH} "Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling."
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
 LangString SCNativeRouting ${LANG_ENGLISH} "SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved."
 LangString SCNativePresent ${LANG_ENGLISH} "SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app."
@@ -188,7 +189,7 @@ Section "Uninstall"
   ${If} $0 == 3010
     SetRebootFlag true
   ${ElseIf} $0 != 0
-    MessageBox MB_ICONEXCLAMATION "Shared audio driver removal did not finish. This app was kept so you can retry. Quit EQ and Studio, then retry uninstalling."
+    MessageBox MB_ICONEXCLAMATION "$(SCNativeRemovalFailed)"
     Abort
   ${EndIf}
   Delete "$DESKTOP\SoundCurrent EQ.lnk"

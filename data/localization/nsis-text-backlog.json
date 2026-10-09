@@ -142,9 +142,9 @@
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 179,
       "kind": "MessageBox",
-      "literal": "Shared audio driver removal did not finish. This app was kept so you can retry. Quit EQ and Studio, then retry uninstalling.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCNativeRemovalFailed)",
+      "marked": true,
+      "reviewStatus": "all locale native removal failure translations prepared; activation and lifecycle qualification pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",

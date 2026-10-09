@@ -2086,6 +2086,11 @@ Importálja a könyvtárba?</translation>
       <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
     </message>
     <message>
+      <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
+      <translation>A megosztott hangillesztőprogram eltávolítása nem fejeződött be. Ez az alkalmazás megmaradt, hogy újra próbálkozhasson. Lépjen ki minden futó SoundCurrent alkalmazásból, majd próbálja újra az eltávolítást.</translation>
+      <extracomment>Native uninstall nonzero failure (excluding restart code 3010) aborts before app payload deletion so user can retry. Shared audio driver means EQ/Studio ownership, not network. Quit any running SoundCurrent apps, not necessarily both products; fully exit rather than hide UI. SoundCurrent is invariant. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>Rövidebb időközzel a szintek gyakrabban frissülnek és több CPU-t használnak; a hangellátás korlátozhatja a tényleges ütemet</translation>
     </message>

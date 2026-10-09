@@ -176,3 +176,7 @@ Both installer routes now use catalog translations for the quit-before-update an
 ### Installer progress and retry captions
 
 Three shared catalog sources now translate native driver setup progress, cable installer launch, and retry progress across all 33 non-English locales. Review preserves route names, shared ownership and failure/restart distinctions. All static DetailPrint caption sites use LangStrings; dynamic helper output is preserved. Catalog tests and 884 exported caption literals pass syntax checks. Installer locale activation, current installed UI and package lifecycle remain pending. See `tests/results/localization/second-pass-installer-progress.json`.
+
+### Native driver removal error
+
+The removal failure notice now asks users to quit any running SoundCurrent app, instead of both EQ and Studio unconditionally. All 33 non-English translations are prepared and contextually reviewed; native-speaker review remains unverified. The uninstall failure still aborts before payload deletion and keeps the app for retry. Catalog tests and 918 caption syntax checks pass; native installed-package runtime and locale activation remain unqualified. See `tests/results/localization/second-pass-installer-native-removal.json`.

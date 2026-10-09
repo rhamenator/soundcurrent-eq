@@ -15,6 +15,26 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_native_removal_error_uses_running_apps_and_aborts(self):
+        root = Path(__file__).resolve().parents[1]
+        source = 'Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.'
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text(encoding='utf-8')
+            if 'native' not in installer.stem:
+                self.assertNotIn('SCNativeRemovalFailed', code)
+            else:
+                message = 'MessageBox MB_ICONEXCLAMATION "$(SCNativeRemovalFailed)"'
+                self.assertIn(message+'\n    Abort', code)
+                self.assertEqual(re.findall(r'^LangString SCNativeRemovalFailed \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
+                self.assertNotIn('Quit EQ and Studio, then retry uninstalling.', code)
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
+            message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
+            self.assertTrue(catalog.finished(message), row['tag'])
+            translated = message.findtext('translation')
+            catalog.validate_text(source, translated)
+            with self.assertRaisesRegex(ValueError, 'External installer label changed'):
+                catalog.validate_text(source, translated.replace('SoundCurrent','Another app'))
+
     def test_setup_progress_keeps_route_names_and_no_raw_static_details(self):
         root = Path(__file__).resolve().parents[1]
         sources = {'SCNativeSetupProgress': 'Setting up the shared %1 driver...',
@@ -386,7 +406,7 @@ class CatalogTests(unittest.TestCase):
             for variants in result['languages'].values():
                 self.assertEqual(set(variants), {'cable', 'native'})
                 for routeName, route in variants.items():
-                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed', 'SCQuitBeforeUpdate', 'SCQuitBeforeUninstall', 'SCSetupRetryProgress'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller', 'SCCableSharedNotice', 'SCCableRouting', 'SCCableSetupProgress'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting', 'SCNativeSetupProgress'}))
+                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed', 'SCQuitBeforeUpdate', 'SCQuitBeforeUninstall', 'SCSetupRetryProgress'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller', 'SCCableSharedNotice', 'SCCableRouting', 'SCCableSetupProgress'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting', 'SCNativeSetupProgress', 'SCNativeRemovalFailed'}))
                     self.assertEqual(set(route['nsisEscaped']), set(route['captions']))
 
     def test_installer_checkbox_catalog_sources_and_names(self):

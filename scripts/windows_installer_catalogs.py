@@ -8,6 +8,7 @@ from pathlib import Path
 import localization as catalog
 
 SOURCES = {
+    'SCNativeRemovalFailed': 'Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.',
     'SCSetupRetryProgress': '%1 setup did not finish. Retry using the Start menu shortcut.',
     'SCCableSetupProgress': 'Opening %1 setup...',
     'SCNativeSetupProgress': 'Setting up the shared %1 driver...',
@@ -74,6 +75,7 @@ def export(destination, product):
                         'SCInstallDriver': translations[checkbox],
                         'SCDriverCheckFailed': format_value(translations['SCDriverCheckFailed'], translations['SCSetupAction'])}
             if route == 'native':
+                captions['SCNativeRemovalFailed'] = translations['SCNativeRemovalFailed']
                 captions['SCNativeSetupProgress'] = format_value(translations['SCNativeSetupProgress'], driver)
                 captions['SCNativeRouting'] = translations['SCNativeRouting']
                 captions['SCNativePresent'] = translations['SCNativePresent']
@@ -89,7 +91,7 @@ def export(destination, product):
                 captions['SCCableRestart'] = translations['SCCableRestart']
             variants[route] = {'captions': captions, 'nsisEscaped': {key: nsis_escape(text) for key, text in captions.items()}}
         languages[row['tag']] = variants
-    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair and signed-installer and shared-cable and cable-routing donation and quit-before-update/uninstall and setup progress guidance only',
+    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair and signed-installer and shared-cable and cable-routing donation and quit-before-update/uninstall and setup progress and native removal failure guidance only',
               'installerLocaleActivationComplete': False, 'nativeSpeakerVerified': False,
               'sources': SOURCES, 'languages': languages}
     destination.parent.mkdir(parents=True, exist_ok=True)
