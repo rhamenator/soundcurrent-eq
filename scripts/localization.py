@@ -218,7 +218,8 @@ EXTERNAL_UI_LABELS = {
 
 
 # File-format contracts from the reviewed owned WAVE diagnostic inventory.
-REVIEWED_FILE_IDENTIFIERS = {'Cannot create output WAVE file': ('WAVE',),
+REVIEWED_FILE_IDENTIFIERS = {'Input: PCM16/24/32 or float32 RIFF/WAVE. Output: float32 extensible WAVE.': ('PCM16/24/32', 'float32', 'RIFF/WAVE', 'WAVE'),
+ 'Cannot create output WAVE file': ('WAVE',),
  'Cannot open input WAVE file': ('WAVE',),
  'Cannot seek to WAVE audio': ('WAVE',),
  'Chunk extends beyond RIFF bounds': ('RIFF',),
@@ -259,6 +260,9 @@ REVIEWED_CLI_TOKENS = {
     '.1-10 seconds (default 1.5)': ('.1-10', '1.5'),
     '0-.95 (default .4)': ('0-.95', '.4'),
     'wet fraction 0-1 (enables reverb)': ('0-1',),
+    'append 0-30 seconds to render effect tails': ('0-30',),
+    'disable automatic EQ headroom': ('EQ',),
+    'bypass EQ, effects, gains and mute': ('EQ',),
 }
 
 

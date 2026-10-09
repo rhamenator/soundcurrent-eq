@@ -785,7 +785,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_reviewed_wave_diagnostics_preserve_file_format_identity(self):
         for source, identifiers in catalog.REVIEWED_FILE_IDENTIFIERS.items():
-            translated = 'Erreur du fichier ' + ' / '.join(identifiers)
+            translated = 'Erreur du fichier : ' + source  # Retain repeated/overlapping identifiers.
             catalog.validate_text(source, translated)
             for identifier in identifiers:
                 for damaged in (translated.replace(identifier, ''),
