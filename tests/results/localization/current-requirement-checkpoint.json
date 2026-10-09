@@ -100,7 +100,7 @@
   "evidenceSha256": {
     "data/localization/catalogs.json": "e9c4254f6f8457cc5fd71f3994d717148eee36e136d6ed3769475ec300913c07",
     "data/localization/translation-context.json": "eba6af9ce1ae4035cbe4ab9881f27a47fa170986c8ea0c75a7efaa8825fd590c",
-    "docs/translation-review.md": "c3d2251675db7f39e3f86e4db934d30269f4b628142d255a585a5e8988fcefd2",
+    "docs/translation-review.md": "57b535d073cd6d0aba3e9c9343bdd8943864b97df27d2be479f4a179c417c356",
     "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
     "scripts/localization.py": "5e4ac4b9490e99b5e2884415e2b537c0c04d9b006c0f4806afdf999cb8bb3601",
     "tests/localization.cpp": "f0ad22384bbeed61639a5035e695c66e462fbbd20332da7a52bef5bd951be5ad",
