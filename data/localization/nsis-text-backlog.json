@@ -190,9 +190,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 99,
       "kind": "control-caption",
-      "literal": "VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or Quit.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCCablePresent)",
+      "marked": true,
+      "reviewStatus": "all locale translations and translated Quit caption exported; activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",

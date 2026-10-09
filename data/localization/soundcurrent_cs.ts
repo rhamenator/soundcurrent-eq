@@ -2434,6 +2434,10 @@ Importovat do vaší knihovny?</translation>
       <translation>VB-CABLE je již nainstalován. Pokud byl právě nainstalován nebo aktualizován, restartujte systém Windows před použitím ekvalizéru nebo nastavení VB-CABLE. Jinak vyberte reproduktory v SoundCurrent.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE je již přítomno a bude znovu použito. SoundCurrent obnoví váš běžný výstup po vypnutí nebo použití %1.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE není nainstalován. Otevřete "%1" a před otevřením nastavení kabelu restartujte systém Windows.</translation>
     </message>

@@ -2434,6 +2434,10 @@ Importeren in uw bibliotheek?</translation>
       <translation>VB-CABLE is al geïnstalleerd. Start Windows opnieuw op voordat u de equalizer of VB-CABLE-instellingen gebruikt als het zojuist is geïnstalleerd of bijgewerkt. Kies anders uw luidsprekers in SoundCurrent.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE is al aanwezig en wordt opnieuw gebruikt. SoundCurrent herstelt uw normale uitvoer wanneer het wordt uitgeschakeld of u %1 gebruikt.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE is niet geïnstalleerd. Open "%1" en start Windows opnieuw op voordat u de kabelinstellingen opent.</translation>
     </message>

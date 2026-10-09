@@ -2434,6 +2434,10 @@ Import into your library?</source>
       <translation>ติดตั้ง VB-CABLE อยู่แล้ว หากเพิ่งติดตั้งหรืออัปเดต ให้เริ่ม Windows ใหม่ก่อนใช้อีควอไลเซอร์หรือการตั้งค่า VB-CABLE มิฉะนั้น ให้เลือกลำโพงของคุณใน SoundCurrent</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>มี VB-CABLE อยู่แล้วและจะใช้ต่อไป SoundCurrent จะคืนค่าเอาต์พุตปกติเมื่อปิดใช้งานหรือเมื่อคุณใช้ %1</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>ยังไม่ได้ติดตั้ง VB-CABLE เปิด "%1" แล้วเริ่ม Windows ใหม่ก่อนเปิดการตั้งค่าสายสัญญาณ</translation>
     </message>

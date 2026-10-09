@@ -1,0 +1,52 @@
+{
+  "scope": "Existing VB-CABLE reuse and output-restoration notice",
+  "sourceMessagesPerLocale": 612,
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "notes": [
+      "Existing cable reused; normal output restored on equalizer off or Quit app",
+      "Uses actual translated Quit app button label, not nonexistent Quit source",
+      "Chinese, Korean and Finnish wording distinguishes processing off from closing UI",
+      "Product and driver names retained"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "unitTestsPassed": 37,
+    "unitTestsSkipped": 1,
+    "initialFailure": "Missing Quit source rejected before export; corrected to actual Quit app caption",
+    "compiledQtCatalogs": "regenerated; hashes checked",
+    "generatedEnglishInstallers": "all four variants and all line-ending fixtures unit-tested; CLI cable copies equal source bytes",
+    "allCaptionSyntaxFixture": "476 captions per product compiled with English language IDs only",
+    "currentFullInstallersBuilt": false,
+    "currentInstalledUiQualified": false
+  },
+  "installerLanguagesEnabled": [
+    "English"
+  ],
+  "remainingScope": [
+    "Installer language activation and selection",
+    "Remaining installer/uninstaller text",
+    "One raw PowerShell repair notice",
+    "Windows German Studio validation-message failure",
+    "Current package/UI/lifecycle qualification"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "newPackagesQualified": false,
+  "invariants": [
+    "Output restoration and cable reuse behavior unchanged",
+    "Saved state and numerical processing unchanged"
+  ],
+  "evidenceSha256": {
+    "data/localization/catalogs.json": "d7b0b75ea1602b928de902f7319dc3f508b25a04fda2a0b3575942d6e62988df",
+    "scripts/windows_installer_catalogs.py": "d63dfbb3fde7d505983e647690edea2fb2af908c852f6cac6e48a98acb42a893",
+    "scripts/localization.py": "aeff89833a8d1be5d144b42fa594b11d16547fb6b13209ea64b450219fab4f76",
+    "tests/translation_catalogs.py": "51fbdd0b9ad3d195880787160b8c369740b4c53efc8d66183aed5a7be8fca16a",
+    "tests/results/localization/installer-cable-present-captions.json": "ce467ee92b765777f321e6265a735147f6422f640710070588e4d3bb7318601e",
+    "tests/results/localization/installer-cable-present-tests-final.log": "99b8a77b6dfe292f282fe7871db6e14efb75fc353eb15f01b3b89444e70354ec",
+    "tests/results/localization/installer-cable-present-compiler.log": "2ea454f4cccd7f10ee80a658b4507b2011e0a2a6b3768a4e271a81919394df60"
+  }
+}

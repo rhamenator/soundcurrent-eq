@@ -2434,6 +2434,10 @@ Uingize kwenye maktaba yako?</translation>
       <translation>VB-CABLE tayari imesakinishwa. Ikiwa imesakinishwa au kusasishwa hivi karibuni, anzisha Windows upya kabla ya kutumia kisawazishi au mipangilio ya VB-CABLE. Vinginevyo, chagua spika zako katika SoundCurrent.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE tayari ipo na itatumika tena. SoundCurrent hurejesha utoaji wako wa kawaida wa sauti inapozimwa au unapotumia %1.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE haijasakinishwa. Fungua "%1", kisha uanzishe Windows upya kabla ya kufungua mipangilio ya kebo.</translation>
     </message>

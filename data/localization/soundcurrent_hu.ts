@@ -2434,6 +2434,10 @@ Importálja a könyvtárba?</translation>
       <translation>A VB-CABLE már telepítve van. Ha most telepítették vagy frissítették, indítsa újra a Windowst a hangszínszabályzó vagy a VB-CABLE beállításainak használata előtt. Ellenkező esetben válassza ki a hangszórókat a SoundCurrentben.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>A VB-CABLE már jelen van, és újra felhasználásra kerül. A SoundCurrent kikapcsoláskor vagy a(z) %1 használatakor visszaállítja a szokásos kimenetet.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>A VB-CABLE nincs telepítve. Nyissa meg a "%1" lehetőséget, majd indítsa újra a Windowst a kábel beállításainak megnyitása előtt.</translation>
     </message>

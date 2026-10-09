@@ -2434,6 +2434,10 @@ Import into your library?</source>
       <translation>VB-CABLE は既にインストールされています。インストールまたは更新した直後であれば、イコライザーや VB-CABLE の設定を使用する前に Windows を再起動してください。それ以外の場合は、SoundCurrent でスピーカーを選択してください。</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE は既に存在し、再利用されます。SoundCurrent はオフにしたとき、または %1 を使用したときに通常の出力を復元します。</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE がインストールされていません。"%1" を開き、Windows を再起動してからケーブルの設定を開いてください。</translation>
     </message>

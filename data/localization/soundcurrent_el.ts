@@ -2434,6 +2434,10 @@ Import into your library?</source>
       <translation>Το VB-CABLE είναι ήδη εγκατεστημένο. Αν μόλις εγκαταστάθηκε ή ενημερώθηκε, επανεκκινήστε τα Windows πριν χρησιμοποιήσετε τον ισοσταθμιστή ή τις ρυθμίσεις του VB-CABLE. Διαφορετικά, επιλέξτε τα ηχεία σας στο SoundCurrent.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>Το VB-CABLE υπάρχει ήδη και θα επαναχρησιμοποιηθεί. Το SoundCurrent επαναφέρει τη συνηθισμένη έξοδο όταν απενεργοποιείται ή όταν χρησιμοποιείτε το %1.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>Το VB-CABLE δεν είναι εγκατεστημένο. Ανοίξτε το "%1" και επανεκκινήστε τα Windows πριν ανοίξετε τις ρυθμίσεις του καλωδίου.</translation>
     </message>

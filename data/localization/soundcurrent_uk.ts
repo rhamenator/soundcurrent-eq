@@ -2434,6 +2434,10 @@ Import into your library?</source>
       <translation>VB-CABLE уже встановлено. Якщо його щойно встановлено або оновлено, перезапустіть Windows перед використанням еквалайзера або параметрів VB-CABLE. Інакше виберіть динаміки в SoundCurrent.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE уже присутній і буде використаний повторно. SoundCurrent відновлює звичайний вихід після вимкнення або використання %1.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE не встановлено. Відкрийте "%1", а потім перезапустіть Windows перед відкриттям параметрів кабелю.</translation>
     </message>

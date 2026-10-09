@@ -2434,6 +2434,10 @@ Import into your library?</source>
       <translation>VB-CABLE از قبل نصب شده است. اگر به‌تازگی نصب یا به‌روز شده است، پیش از استفاده از اکولایزر یا تنظیمات VB-CABLE، Windows را دوباره راه‌اندازی کنید. در غیر این صورت، بلندگوهای خود را در SoundCurrent انتخاب کنید.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE از قبل موجود است و دوباره استفاده خواهد شد. SoundCurrent هنگام غیرفعال شدن یا استفاده از %1، خروجی معمول شما را بازمی‌گرداند.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE نصب نشده است. "%1" را باز کنید، سپس پیش از باز کردن تنظیمات کابل، Windows را دوباره راه‌اندازی کنید.</translation>
     </message>

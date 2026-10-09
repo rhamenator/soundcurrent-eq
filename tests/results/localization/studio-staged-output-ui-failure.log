@@ -1,0 +1,371 @@
+windows	Build, test and package the shared application	﻿2026-10-09T00:00:07.3454915Z ##[group]Run ./scripts/build-windows.ps1 -QtPrefix 'C:\Qt\6.12.0\msvc2022_64'
+windows	Build, test and package the shared application	2026-10-09T00:00:07.3455434Z [36;1m./scripts/build-windows.ps1 -QtPrefix 'C:\Qt\6.12.0\msvc2022_64'[0m
+windows	Build, test and package the shared application	2026-10-09T00:00:07.3485169Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+windows	Build, test and package the shared application	2026-10-09T00:00:07.3485454Z ##[endgroup]
+windows	Build, test and package the shared application	2026-10-09T00:00:13.0198720Z -- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.20348.
+windows	Build, test and package the shared application	2026-10-09T00:00:25.7879285Z -- The CXX compiler identification is MSVC 19.44.35229.0
+windows	Build, test and package the shared application	2026-10-09T00:00:25.9296801Z -- Detecting CXX compiler ABI info
+windows	Build, test and package the shared application	2026-10-09T00:00:26.8589220Z -- Detecting CXX compiler ABI info - done
+windows	Build, test and package the shared application	2026-10-09T00:00:26.8711781Z -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+windows	Build, test and package the shared application	2026-10-09T00:00:26.8725904Z -- Detecting CXX compile features
+windows	Build, test and package the shared application	2026-10-09T00:00:26.8776061Z -- Detecting CXX compile features - done
+windows	Build, test and package the shared application	2026-10-09T00:00:26.9373301Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+windows	Build, test and package the shared application	2026-10-09T00:00:29.5114311Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+windows	Build, test and package the shared application	2026-10-09T00:00:29.5114840Z -- Looking for pthread_create in pthreads
+windows	Build, test and package the shared application	2026-10-09T00:00:30.0107394Z -- Looking for pthread_create in pthreads - not found
+windows	Build, test and package the shared application	2026-10-09T00:00:30.0107883Z -- Looking for pthread_create in pthread
+windows	Build, test and package the shared application	2026-10-09T00:00:30.5247492Z -- Looking for pthread_create in pthread - not found
+windows	Build, test and package the shared application	2026-10-09T00:00:30.5366480Z -- Found Threads: TRUE
+windows	Build, test and package the shared application	2026-10-09T00:00:30.5393873Z -- Performing Test HAVE_STDATOMIC
+windows	Build, test and package the shared application	2026-10-09T00:00:32.0066800Z -- Performing Test HAVE_STDATOMIC - Success
+windows	Build, test and package the shared application	2026-10-09T00:00:32.0076455Z -- Found WrapAtomic: TRUE
+windows	Build, test and package the shared application	2026-10-09T00:00:32.4880686Z -- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+windows	Build, test and package the shared application	2026-10-09T00:00:34.2700168Z -- Found Python3: C:/hostedtoolcache/windows/Python/3.14.8/x64/python3.exe (found version "3.14.8") found components: Interpreter
+windows	Build, test and package the shared application	2026-10-09T00:00:34.4699637Z -- Configuring done (21.7s)
+windows	Build, test and package the shared application	2026-10-09T00:00:35.4981136Z -- Generating done (1.0s)
+windows	Build, test and package the shared application	2026-10-09T00:00:35.4993492Z -- Build files have been written to: D:/a/soundcurrent-studio/soundcurrent-studio/build-windows-native
+windows	Build, test and package the shared application	2026-10-09T00:00:35.6014679Z MSBuild version 17.14.60+43b635718 for .NET Framework
+windows	Build, test and package the shared application	2026-10-09T00:00:35.6262366Z 
+windows	Build, test and package the shared application	2026-10-09T00:00:35.9280044Z   1>Checking Build System
+windows	Build, test and package the shared application	2026-10-09T00:00:36.2054171Z   Automatic MOC for target soundcurrent-backend-error-text-test
+windows	Build, test and package the shared application	2026-10-09T00:00:36.3068332Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:36.4892080Z   Automatic MOC for target soundcurrent-driver-manager
+windows	Build, test and package the shared application	2026-10-09T00:00:36.4925080Z   backend_error_text.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:36.5241059Z   Automatic MOC for target soundcurrent-dsp
+windows	Build, test and package the shared application	2026-10-09T00:00:36.5399175Z   Automatic MOC for target soundcurrent-endpoint-identity-test
+windows	Build, test and package the shared application	2026-10-09T00:00:36.6473308Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:36.6707378Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/native/windows/driver-manager/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:36.6833686Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:36.7421835Z   windows_endpoint_identity.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:36.8068183Z   main.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:37.6827816Z   Automatic MOC for target soundcurrent-mic-transport-test
+windows	Build, test and package the shared application	2026-10-09T00:00:37.7531386Z   Automatic MOC for target soundcurrent-localization-test
+windows	Build, test and package the shared application	2026-10-09T00:00:37.7594279Z   dsp.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:37.7811883Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:37.8851842Z   1>Automatic RCC for data/localization/resources.qrc
+windows	Build, test and package the shared application	2026-10-09T00:00:37.9071026Z   windows_mic_transport.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:38.2708929Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:38.3538770Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:00:38.7243322Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:38.9458020Z   enhancement.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:38.9534239Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:38.9573456Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:00:39.2141239Z   localization.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:39.2683547Z   Automatic MOC for target soundcurrent-processing-guard-test
+windows	Build, test and package the shared application	2026-10-09T00:00:39.3654189Z   soundcurrent-endpoint-identity-test.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-endpoint-identity-test.exe
+windows	Build, test and package the shared application	2026-10-09T00:00:39.3987653Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:39.4972249Z   processing_guard.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:39.6278396Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:39.6462399Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:00:39.6675255Z   soundcurrent-mic-transport-test.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-mic-transport-test.exe
+windows	Build, test and package the shared application	2026-10-09T00:00:39.9448199Z   Automatic MOC for target soundcurrent-spin-test
+windows	Build, test and package the shared application	2026-10-09T00:00:39.9678034Z   Automatic MOC for target soundcurrent-startup-test
+windows	Build, test and package the shared application	2026-10-09T00:00:40.0536722Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:40.2094520Z   spin_acceleration.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:40.2909142Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:42.1657931Z   startup_registration.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:42.3062297Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:42.3062684Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:00:42.8112668Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:43.0792520Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:00:46.0193404Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:46.0433177Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:00:46.2842261Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:46.5137979Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:00:46.8515727Z   soundcurrent-backend-error-text-test.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-backend-error-text-test.exe
+windows	Build, test and package the shared application	2026-10-09T00:00:46.9206645Z   soundcurrent-dsp.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-dsp.lib
+windows	Build, test and package the shared application	2026-10-09T00:00:46.9685476Z   Automatic MOC for target soundcurrent-update-test
+windows	Build, test and package the shared application	2026-10-09T00:00:47.0812383Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:47.1187375Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:47.1274384Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:00:47.1801874Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:47.1976477Z   windows_session_gate_smoke.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:47.2869778Z   soundcurrent-spin-test.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-spin-test.exe
+windows	Build, test and package the shared application	2026-10-09T00:00:47.3771103Z   update_policy.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:47.3927225Z   processing_guard.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:48.3753626Z   Automatic MOC for target soundcurrent-dsp-test
+windows	Build, test and package the shared application	2026-10-09T00:00:48.7696868Z   Automatic MOC for target soundcurrent-engine
+windows	Build, test and package the shared application	2026-10-09T00:00:48.8698875Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:48.9208808Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:48.9726338Z   Automatic MOC for target soundcurrent-enhancement-test
+windows	Build, test and package the shared application	2026-10-09T00:00:49.1440699Z   soundcurrent-driver-manager.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\native\windows\driver-manager\Release\soundcurrent-driver-manager.exe
+windows	Build, test and package the shared application	2026-10-09T00:00:49.2891319Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:49.4161837Z   Automatic MOC for target soundcurrent-equipment-test
+windows	Build, test and package the shared application	2026-10-09T00:00:49.4409000Z   soundcurrent-startup-test.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-startup-test.exe
+windows	Build, test and package the shared application	2026-10-09T00:00:49.4686608Z   soundcurrent-windows-session-gate-smoke.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-windows-session-gate-smoke.exe
+windows	Build, test and package the shared application	2026-10-09T00:00:49.5603543Z   dsp_response.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:50.0383896Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:50.0547541Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:00:50.5508670Z   1>Automatic RCC for data/resources.qrc
+windows	Build, test and package the shared application	2026-10-09T00:00:51.0877723Z   soundcurrent-dsp-test.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-dsp-test.exe
+windows	Build, test and package the shared application	2026-10-09T00:00:51.1081181Z   2>Automatic RCC for data/localization/resources.qrc
+windows	Build, test and package the shared application	2026-10-09T00:00:51.1454875Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:51.2573538Z   equipment_profiles.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:51.9720546Z   engine.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:52.8009789Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:52.8523605Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:00:52.9148911Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:53.0299897Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244: '=': conversion from 'const _Ty' to 'float', possible loss of data [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-engine.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:00:53.1524431Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:         with [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-engine.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:00:53.1717298Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:         [ [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-engine.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:00:53.1795425Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:             _Ty=int [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-engine.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:00:53.1855711Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:         ] [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-engine.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:00:53.1911931Z   (compiling source file '../src/engine.cpp')
+windows	Build, test and package the shared application	2026-10-09T00:00:53.2000919Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24):
+windows	Build, test and package the shared application	2026-10-09T00:00:53.2025343Z       the template instantiation context (the oldest one first) is
+windows	Build, test and package the shared application	2026-10-09T00:00:53.2044689Z           D:\a\soundcurrent-studio\soundcurrent-studio\src\engine.cpp(41,14):
+windows	Build, test and package the shared application	2026-10-09T00:00:53.2078464Z           see reference to function template instantiation 'void std::fill<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,int>(const _FwdIt,const _FwdIt,const int &)' being compiled
+windows	Build, test and package the shared application	2026-10-09T00:00:53.2091597Z           with
+windows	Build, test and package the shared application	2026-10-09T00:00:53.2164725Z           [
+windows	Build, test and package the shared application	2026-10-09T00:00:53.2358152Z               _Ty=float,
+windows	Build, test and package the shared application	2026-10-09T00:00:53.2362982Z               _FwdIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<float>>>
+windows	Build, test and package the shared application	2026-10-09T00:00:53.2394863Z           ]
+windows	Build, test and package the shared application	2026-10-09T00:00:53.2395450Z   
+windows	Build, test and package the shared application	2026-10-09T00:00:53.2395763Z   qrc_resources.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:53.2396163Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:53.2415922Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:00:53.6523337Z   enhancement_response.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:53.8662080Z   soundcurrent-processing-guard-test.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-processing-guard-test.exe
+windows	Build, test and package the shared application	2026-10-09T00:00:54.1021872Z   soundcurrent-update-test.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-update-test.exe
+windows	Build, test and package the shared application	2026-10-09T00:00:54.1892548Z   soundcurrent-engine.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-engine.lib
+windows	Build, test and package the shared application	2026-10-09T00:00:54.2187540Z   Automatic MOC for target soundcurrent-equipment-ui-test
+windows	Build, test and package the shared application	2026-10-09T00:00:54.3253239Z   soundcurrent-localization-test.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-localization-test.exe
+windows	Build, test and package the shared application	2026-10-09T00:00:54.5755642Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:54.5792806Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:00:54.6880364Z   1>Automatic RCC for data/resources.qrc
+windows	Build, test and package the shared application	2026-10-09T00:00:54.6882573Z   2>Automatic RCC for data/localization/resources.qrc
+windows	Build, test and package the shared application	2026-10-09T00:00:54.8595440Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:54.9271495Z   equipment_ui.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:56.0991353Z   soundcurrent-enhancement-test.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-enhancement-test.exe
+windows	Build, test and package the shared application	2026-10-09T00:00:56.1257634Z   Automatic MOC for target soundcurrent-wave
+windows	Build, test and package the shared application	2026-10-09T00:00:56.2136072Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:56.2736803Z   Automatic MOC for target soundcurrent-engine-test
+windows	Build, test and package the shared application	2026-10-09T00:00:56.3055846Z   equipment_profiles.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:56.3989916Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:56.4130230Z   Automatic MOC for target soundcurrent-windows-audio
+windows	Build, test and package the shared application	2026-10-09T00:00:56.5189522Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:00:56.5925876Z   windows_audio.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:56.7025107Z   engine_response.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:57.5182454Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244: '=': conversion from 'const _Ty' to 'float', possible loss of data [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-engine-test.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:00:57.5295457Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:         with [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-engine-test.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:00:57.5303943Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:         [ [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-engine-test.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:00:57.5523574Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:             _Ty=int [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-engine-test.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:00:57.5540671Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:         ] [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-engine-test.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:00:57.5684254Z   (compiling source file '../tests/engine_response.cpp')
+windows	Build, test and package the shared application	2026-10-09T00:00:57.5796823Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24):
+windows	Build, test and package the shared application	2026-10-09T00:00:57.7829407Z       the template instantiation context (the oldest one first) is
+windows	Build, test and package the shared application	2026-10-09T00:00:57.9861360Z           D:\a\soundcurrent-studio\soundcurrent-studio\tests\engine_response.cpp(132,10):
+windows	Build, test and package the shared application	2026-10-09T00:00:58.0708624Z           see reference to function template instantiation 'void std::fill<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,int>(const _FwdIt,const _FwdIt,const int &)' being compiled
+windows	Build, test and package the shared application	2026-10-09T00:00:58.1594580Z           with
+windows	Build, test and package the shared application	2026-10-09T00:00:58.1608896Z           [
+windows	Build, test and package the shared application	2026-10-09T00:00:58.1667711Z               _Ty=float,
+windows	Build, test and package the shared application	2026-10-09T00:00:58.1678393Z               _FwdIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<float>>>
+windows	Build, test and package the shared application	2026-10-09T00:00:58.1829659Z           ]
+windows	Build, test and package the shared application	2026-10-09T00:00:58.1841809Z   
+windows	Build, test and package the shared application	2026-10-09T00:00:58.1861867Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:58.1865268Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:00:58.2015429Z   wav.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:58.6118347Z   soundcurrent-engine-test.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-engine-test.exe
+windows	Build, test and package the shared application	2026-10-09T00:00:59.8168218Z   windows_io.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:59.8277433Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:00:59.8471446Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:01:00.1899256Z   soundcurrent-wave.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-wave.lib
+windows	Build, test and package the shared application	2026-10-09T00:01:00.2121412Z   Automatic MOC for target soundcurrent-studio-ui
+windows	Build, test and package the shared application	2026-10-09T00:01:00.2162388Z   Automatic MOC for target soundcurrent-studio-render
+windows	Build, test and package the shared application	2026-10-09T00:01:00.2672525Z   equipment_profiles.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:00.3539177Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:01:00.3630038Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:01:00.6145632Z   studio_render.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:01.0677314Z   studio_model.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:02.6462758Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244: '=': conversion from 'const _Ty' to '_Ty', possible loss of data [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-studio-render.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:01:02.7087232Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:         with [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-studio-render.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:01:02.7596835Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:         [ [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-studio-render.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:01:02.7603437Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:             _Ty=int [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-studio-render.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:01:02.8493483Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:         ] [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-studio-render.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:01:02.8962332Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:         and [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-studio-render.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:01:03.0524619Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:         [ [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-studio-render.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:01:03.0526984Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:             _Ty=float [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-studio-render.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:01:03.2556301Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24): warning C4244:         ] [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-studio-render.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:01:03.4435993Z   (compiling source file '../src/studio_render.cpp')
+windows	Build, test and package the shared application	2026-10-09T00:01:03.5536819Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310,24):
+windows	Build, test and package the shared application	2026-10-09T00:01:03.8359009Z       the template instantiation context (the oldest one first) is
+windows	Build, test and package the shared application	2026-10-09T00:01:03.9599296Z           D:\a\soundcurrent-studio\soundcurrent-studio\src\studio_render.cpp(176,18):
+windows	Build, test and package the shared application	2026-10-09T00:01:04.1004909Z           see reference to function template instantiation 'void std::fill<std::_Span_iterator<_Ty>,int>(const _FwdIt,const _FwdIt,const int &)' being compiled
+windows	Build, test and package the shared application	2026-10-09T00:01:04.1109136Z           with
+windows	Build, test and package the shared application	2026-10-09T00:01:04.3348428Z           [
+windows	Build, test and package the shared application	2026-10-09T00:01:04.5379379Z               _Ty=float,
+windows	Build, test and package the shared application	2026-10-09T00:01:04.7317482Z               _FwdIt=std::_Span_iterator<float>
+windows	Build, test and package the shared application	2026-10-09T00:01:04.8155364Z           ]
+windows	Build, test and package the shared application	2026-10-09T00:01:04.9295967Z   
+windows	Build, test and package the shared application	2026-10-09T00:01:05.1005045Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:05.3041328Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:01:05.3748844Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:05.3900429Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:01:05.4568697Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:05.5588858Z   soundcurrent-windows-audio.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-windows-audio.lib
+windows	Build, test and package the shared application	2026-10-09T00:01:05.7433517Z   qrc_resources.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:05.8021070Z   Automatic MOC for target soundcurrent-windows-audio-smoke
+windows	Build, test and package the shared application	2026-10-09T00:01:05.8131610Z   Automatic MOC for target soundcurrent-cable-setup-guard
+windows	Build, test and package the shared application	2026-10-09T00:01:05.8275545Z   Automatic MOC for target soundcurrent-route-guardian
+windows	Build, test and package the shared application	2026-10-09T00:01:05.9750003Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:01:06.0118018Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:01:06.0141457Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:01:06.1294462Z   qrc_resources.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:06.3536103Z   windows_cable_setup_guard.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:06.4007035Z   windows_route_guardian.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:06.7914859Z   studio_panel.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:07.7504241Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:07.7749114Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:01:07.9212894Z   soundcurrent-studio-render.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-studio-render.exe
+windows	Build, test and package the shared application	2026-10-09T00:01:07.9487750Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:07.9630541Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:01:08.8239094Z   windows_audio_smoke.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:09.9333341Z   Automatic MOC for target soundcurrent-windows-route-contract
+windows	Build, test and package the shared application	2026-10-09T00:01:09.9861115Z   soundcurrent-route-guardian.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-route-guardian.exe
+windows	Build, test and package the shared application	2026-10-09T00:01:10.0015250Z   soundcurrent-equipment-test.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-equipment-test.exe
+windows	Build, test and package the shared application	2026-10-09T00:01:10.2307122Z   qrc_resources.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:10.3401163Z   qrc_resources.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:10.5727779Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:10.5912100Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:01:11.0382590Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:01:11.3411770Z   windows_route_contract.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:11.3892522Z   soundcurrent-cable-setup-guard.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-cable-setup-guard.exe
+windows	Build, test and package the shared application	2026-10-09T00:01:11.4377921Z   Automatic MOC for target soundcurrent-windows-volume-smoke
+windows	Build, test and package the shared application	2026-10-09T00:01:11.5894422Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813,18): warning C4244: '=': conversion from 'const wchar_t' to 'char', possible loss of data [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-windows-audio-smoke.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:01:11.5899371Z   (compiling source file '../tests/windows_audio_smoke.cpp')
+windows	Build, test and package the shared application	2026-10-09T00:01:11.5901948Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813,18):
+windows	Build, test and package the shared application	2026-10-09T00:01:11.5971784Z       the template instantiation context (the oldest one first) is
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6128677Z           D:\a\soundcurrent-studio\soundcurrent-studio\tests\windows_audio_smoke.cpp(167,39):
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6158816Z           see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_const_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6163294Z           with
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6163742Z           [
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6164181Z               _Elem=wchar_t,
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6164822Z               _Iter=std::_String_const_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6168067Z               _Alloc=std::allocator<char>
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6168586Z           ]
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6169225Z               D:\a\soundcurrent-studio\soundcurrent-studio\tests\windows_audio_smoke.cpp(200,24):
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6170407Z               see the first reference to 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string' in 'main::<lambda_1>::operator ()'
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6173137Z           C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(812,17):
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6174855Z           see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<const wchar_t*,const wchar_t*,_Size_type>(_Iter,const _Sent,_Size)' being compiled
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6179851Z           with
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6180298Z           [
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6192766Z               _Size_type=unsigned __int64,
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6193347Z               _Iter=const wchar_t *,
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6195073Z               _Sent=const wchar_t *,
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6195581Z               _Size=unsigned __int64
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6196826Z           ]
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6197511Z           C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(968,18):
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6266760Z           see reference to function template instantiation '_OutIt *std::_Copy_n_unchecked4<const wchar_t*,_Size,char*>(_InIt,_SizeTy,_OutIt)' being compiled
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6272985Z           with
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6307930Z           [
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6316392Z               _OutIt=char *,
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6326439Z               _Size=unsigned __int64,
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6328520Z               _InIt=const wchar_t *,
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6440715Z               _SizeTy=unsigned __int64
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6480347Z           ]
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6534347Z   
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6545125Z   soundcurrent-equipment-ui-test.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-equipment-ui-test.exe
+windows	Build, test and package the shared application	2026-10-09T00:01:11.6933606Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:01:11.7430685Z   Automatic MOC for target soundcurrent-windows-route-smoke
+windows	Build, test and package the shared application	2026-10-09T00:01:11.8004329Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:11.8133910Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:01:11.8616313Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:01:12.2411904Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:12.2532139Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:01:12.3911321Z   windows_route_smoke.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:12.5941178Z   windows_volume_route_smoke.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:12.9896690Z   soundcurrent-windows-route-contract.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-windows-route-contract.exe
+windows	Build, test and package the shared application	2026-10-09T00:01:13.1502123Z   soundcurrent-windows-audio-smoke.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-windows-audio-smoke.exe
+windows	Build, test and package the shared application	2026-10-09T00:01:14.1376342Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:14.1400227Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:01:16.8418296Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:16.8474992Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:01:17.2041528Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:17.2092357Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:01:17.8762153Z   soundcurrent-windows-route-smoke.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-windows-route-smoke.exe
+windows	Build, test and package the shared application	2026-10-09T00:01:18.0683805Z   soundcurrent-windows-volume-smoke.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-windows-volume-smoke.exe
+windows	Build, test and package the shared application	2026-10-09T00:01:18.1992745Z   soundcurrent-studio-ui.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-studio-ui.lib
+windows	Build, test and package the shared application	2026-10-09T00:01:18.2173784Z   Automatic MOC for target soundcurrent-studio
+windows	Build, test and package the shared application	2026-10-09T00:01:18.2873609Z   2>Automatic RCC for data/localization/resources.qrc
+windows	Build, test and package the shared application	2026-10-09T00:01:18.2874161Z   1>Automatic RCC for data/resources.qrc
+windows	Build, test and package the shared application	2026-10-09T00:01:18.7557484Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:01:18.8180969Z   main.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:23.1669507Z D:\a\soundcurrent-studio\soundcurrent-studio\src\main.cpp(4254,23): warning C4456: declaration of 'row' hides previous local declaration [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-studio.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:01:23.1670454Z       D:\a\soundcurrent-studio\soundcurrent-studio\src\main.cpp(4217,14):
+windows	Build, test and package the shared application	2026-10-09T00:01:23.1670758Z       see declaration of 'row'
+windows	Build, test and package the shared application	2026-10-09T00:01:23.1670940Z   
+windows	Build, test and package the shared application	2026-10-09T00:01:23.1925311Z D:\a\soundcurrent-studio\soundcurrent-studio\src\main.cpp(4341,24): warning C4456: declaration of 'expected' hides previous local declaration [D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\soundcurrent-studio.vcxproj]
+windows	Build, test and package the shared application	2026-10-09T00:01:23.1926783Z       D:\a\soundcurrent-studio\soundcurrent-studio\src\main.cpp(4273,20):
+windows	Build, test and package the shared application	2026-10-09T00:01:23.1927710Z       see declaration of 'expected'
+windows	Build, test and package the shared application	2026-10-09T00:01:23.1928027Z   
+windows	Build, test and package the shared application	2026-10-09T00:01:25.5040323Z   equipment_profiles.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:29.2679112Z   processing_guard.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:32.1453936Z   mocs_compilation_Release.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:32.1496675Z   Generating Code...
+windows	Build, test and package the shared application	2026-10-09T00:01:43.8415696Z   qrc_resources.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:43.9927375Z   qrc_resources.cpp
+windows	Build, test and package the shared application	2026-10-09T00:01:44.9097326Z   soundcurrent-studio.vcxproj -> D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\Release\soundcurrent-studio.exe
+windows	Build, test and package the shared application	2026-10-09T00:01:44.9645557Z   Building Custom Rule D:/a/soundcurrent-studio/soundcurrent-studio/CMakeLists.txt
+windows	Build, test and package the shared application	2026-10-09T00:01:48.1980840Z PASS: 34 catalogs, 729 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+windows	Build, test and package the shared application	2026-10-09T00:02:11.3863556Z PASS: 1156 required helper text lookups, locale selection, external fallback, missing data and PowerShell parsing; no driver/endpoint actions
+windows	Build, test and package the shared application	2026-10-09T00:02:11.4976609Z PASS: helper prose regression guard; 3 existing candidates remain explicitly unresolved
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6201834Z D:\a\soundcurrent-studio\soundcurrent-studio\build-windows-native\package\soundcurrent-studio.exe 64 bit, release executable
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6203208Z Warning: Cannot find any version of the dxcompiler.dll and dxil.dll. This is not a problem unless Direct3D 12 and certain features are used by the application.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6204104Z Adding in plugin type generic for module: Qt6Gui
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6204471Z Adding in plugin type imageformats for module: Qt6Gui
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6204903Z Adding in plugin type networkinformation for module: Qt6Network
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6205332Z Adding in plugin type platforms for module: Qt6Gui
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6205710Z Adding in plugin type styles for module: Qt6Widgets
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6206081Z Adding in plugin type tls for module: Qt6Network
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6206694Z Skipping plugin qopensslbackend.dll. Use -force-openssl or specify -openssl-root if you want to use it.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6207323Z Direct dependencies: Qt6Core Qt6Gui Qt6Network Qt6Widgets
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6207782Z All dependencies   : Qt6Core Qt6Gui Qt6Network Qt6Widgets
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6208561Z To be deployed     : Qt6Core Qt6Gui Qt6Network Qt6Widgets
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6345660Z Skipping system library C:/Windows/system32/icuuc.dll
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6346038Z Updating Qt6Core.dll.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6346212Z Updating Qt6Gui.dll.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6346383Z Updating Qt6Network.dll.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6346559Z Updating Qt6Widgets.dll.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6346792Z Skipping system library C:/Windows/system32/D3Dcompiler_47.dll
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6347233Z Creating directory D:/a/soundcurrent-studio/soundcurrent-studio/build-windows-native/package/generic.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6347737Z Updating qtuiotouchplugin.dll.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6348523Z Creating directory D:/a/soundcurrent-studio/soundcurrent-studio/build-windows-native/package/imageformats.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6349259Z Updating qgif.dll.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6349498Z Updating qico.dll.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6349732Z Updating qjpeg.dll.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6350343Z Creating directory D:/a/soundcurrent-studio/soundcurrent-studio/build-windows-native/package/networkinformation.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6350977Z Updating qnetworklistmanager.dll.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6351549Z Creating directory D:/a/soundcurrent-studio/soundcurrent-studio/build-windows-native/package/platforms.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6352150Z Updating qwindows.dll.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6352698Z Creating directory D:/a/soundcurrent-studio/soundcurrent-studio/build-windows-native/package/styles.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6353311Z Updating qmodernwindowsstyle.dll.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6353890Z Creating directory D:/a/soundcurrent-studio/soundcurrent-studio/build-windows-native/package/tls.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6354466Z Updating qcertonlybackend.dll.
+windows	Build, test and package the shared application	2026-10-09T00:02:11.6354734Z Updating qschannelbackend.dll.
+windows	Build, test and package the shared application	2026-10-09T00:02:12.0635579Z Downloading the corresponding Qt source archive
+windows	Build, test and package the shared application	2026-10-09T00:02:13.8801175Z Extracting Qt license and attribution notices
+windows	Build, test and package the shared application	2026-10-09T00:02:15.9547243Z Checking shared DSP and Qt controls
+windows	Build, test and package the shared application	2026-10-09T00:02:15.9846703Z Windows DSP core: 1 kHz cut -12.0 dB, post gain 6.0 dB, balance passed
+windows	Build, test and package the shared application	2026-10-09T00:02:16.3938270Z Equipment: 1093 bundled profiles; parser limits, inverse fit, save/reopen and dirty-editor save copy passed (6 invalid cases).
+windows	Build, test and package the shared application	2026-10-09T00:02:16.4668625Z Processing guard: cross-process exclusion, crash recovery, release and recognized process/route coverage passed.
+windows	Build, test and package the shared application	2026-10-09T00:02:16.5386448Z PASS: five audible/selective effects, mono/width, ambience tails, dynamic ceiling/update, bounds, exact zero bypass, reset and allocation-free processing
+windows	Build, test and package the shared application	2026-10-09T00:02:16.5674431Z PASS: update version ordering, local package selection, app isolation, published preview/draft/source policy; no network or installation performed
+windows	Build, test and package the shared application	2026-10-09T00:02:19.4113939Z PASS: half-Gaussian acceleration, bounded speed, hold, release/direction reset, integer and decimal steps
+windows	Build, test and package the shared application	2026-10-09T00:02:25.8071437Z UI self-test: constructing window
+windows	Build, test and package the shared application	2026-10-09T00:02:25.8072418Z QFontDatabase: Cannot find font directory D:/a/soundcurrent-studio/soundcurrent-studio/build-windows-native/package/lib/fonts.
+windows	Build, test and package the shared application	2026-10-09T00:02:25.8073663Z Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+windows	Build, test and package the shared application	2026-10-09T00:02:25.8074432Z UI self-test: window constructed
+windows	Build, test and package the shared application	2026-10-09T00:02:25.8074795Z This plugin does not support raise()
+windows	Build, test and package the shared application	2026-10-09T00:02:25.8075219Z This plugin does not support grabbing the keyboard
+windows	Build, test and package the shared application	2026-10-09T00:02:25.8075669Z This plugin does not support propagateSizeHints()
+windows	Build, test and package the shared application	2026-10-09T00:02:25.8076377Z This plugin does not support propagateSizeHints()
+windows	Build, test and package the shared application	2026-10-09T00:02:25.8078002Z UI self-test passed with 34 presets and editable 5–31 band layout
+windows	Build, test and package the shared application	2026-10-09T00:02:26.2992913Z QFontDatabase: Cannot find font directory D:/a/soundcurrent-studio/soundcurrent-studio/build-windows-native/package/lib/fonts.
+windows	Build, test and package the shared application	2026-10-09T00:02:26.2993919Z Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+windows	Build, test and package the shared application	2026-10-09T00:02:26.2994814Z Owned Studio validation reason or localized display changed
+windows	Build, test and package the shared application	2026-10-09T00:02:26.3865744Z [31;1mException: [0mD:\a\soundcurrent-studio\soundcurrent-studio\scripts\build-windows.ps1:158[0m
+windows	Build, test and package the shared application	2026-10-09T00:02:26.3866893Z [31;1m[0m[36;1mLine |[0m
+windows	Build, test and package the shared application	2026-10-09T00:02:26.3867649Z [31;1m[0m[36;1m[36;1m 158 | [0m … ) { Get-Content $localizedLog; [36;1mthrow "Localized UI failed: $locale"[0m }[0m
+windows	Build, test and package the shared application	2026-10-09T00:02:26.3868482Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+windows	Build, test and package the shared application	2026-10-09T00:02:26.3869228Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mLocalized UI failed: de[0m
+windows	Build, test and package the shared application	2026-10-09T00:02:26.4040630Z ##[error]Process completed with exit code 1.

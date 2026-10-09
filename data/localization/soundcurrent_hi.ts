@@ -2434,6 +2434,10 @@ Import into your library?</source>
       <translation>VB-CABLE पहले से स्थापित है। यदि इसे अभी स्थापित या अपडेट किया गया है, तो इक्वलाइज़र या VB-CABLE की सेटिंग उपयोग करने से पहले Windows को पुनरारंभ करें। अन्यथा, SoundCurrent में अपने स्पीकर चुनें।</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE पहले से मौजूद है और दोबारा इस्तेमाल किया जाएगा। SoundCurrent बंद किए जाने या %1 इस्तेमाल करने पर आपका सामान्य आउटपुट वापस बहाल करता है।</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE स्थापित नहीं है। "%1" खोलें, फिर केबल की सेटिंग खोलने से पहले Windows को पुनरारंभ करें।</translation>
     </message>

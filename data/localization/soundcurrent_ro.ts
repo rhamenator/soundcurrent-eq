@@ -2434,6 +2434,10 @@ Importați în bibliotecă?</translation>
       <translation>VB-CABLE este deja instalat. Dacă tocmai a fost instalat sau actualizat, reporniți Windows înainte de a utiliza egalizatorul sau setările VB-CABLE. În caz contrar, selectați difuzoarele în SoundCurrent.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE este deja prezent și va fi reutilizat. SoundCurrent restabilește ieșirea obișnuită când este dezactivat sau când utilizați %1.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE nu este instalat. Deschideți "%1", apoi reporniți Windows înainte de a deschide setările cablului.</translation>
     </message>

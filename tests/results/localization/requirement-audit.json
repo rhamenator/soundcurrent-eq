@@ -266,5 +266,17 @@
   "secondPassStagedOutputFixture": {
     "report": "tests/results/localization/second-pass-staged-output-fixture.json",
     "status": "runtime deployment moved before fixture execution; Windows confirmation pending"
+  },
+  "secondPassInstallerCablePresent": {
+    "report": "tests/results/localization/second-pass-installer-cable-present.json",
+    "status": "reuse/translated Quit app guidance exported; locale activation and runtime qualification pending"
+  },
+  "windowsStagedOutputProgress": {
+    "repository": "soundcurrent-studio",
+    "runId": 37862439944,
+    "sourceCommit": "54aa95e",
+    "evidence": "tests/results/localization/studio-staged-output-ui-failure.log",
+    "result": "passed export/helper text tests, staged UTF-8 fixture and core/shared UI checks; failed German localized owned-validation check",
+    "wholeWindowsQualification": false
   }
 }

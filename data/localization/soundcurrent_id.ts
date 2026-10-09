@@ -2434,6 +2434,10 @@ Impor ke pustaka Anda?</translation>
       <translation>VB-CABLE sudah terpasang. Jika baru saja dipasang atau diperbarui, mulai ulang Windows sebelum menggunakan equalizer atau pengaturan VB-CABLE. Jika tidak, pilih speaker Anda di SoundCurrent.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE sudah ada dan akan digunakan kembali. SoundCurrent memulihkan keluaran normal saat dinonaktifkan atau saat Anda menggunakan %1.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE belum terpasang. Buka "%1", lalu mulai ulang Windows sebelum membuka pengaturan kabel.</translation>
     </message>

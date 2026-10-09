@@ -2434,6 +2434,10 @@ Import into your library?</source>
       <translation>VB-CABLE مثبت بالفعل. إذا تم تثبيته أو تحديثه للتو، فأعد تشغيل Windows قبل استخدام المعادل أو إعدادات VB-CABLE. وإلا فاختر مكبرات الصوت في SoundCurrent.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE موجود بالفعل وسيُستخدم مجددًا. يعيد SoundCurrent إخراج الصوت المعتاد عند تعطيله أو عند استخدام %1.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE غير مثبت. افتح "%1"، ثم أعد تشغيل Windows قبل فتح إعدادات الكابل.</translation>
     </message>

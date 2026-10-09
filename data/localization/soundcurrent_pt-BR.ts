@@ -2434,6 +2434,10 @@ Importar para a sua biblioteca?</translation>
       <translation>O VB-CABLE já está instalado. Se acabou de ser instalado ou atualizado, reinicie o Windows antes de usar o equalizador ou as configurações do VB-CABLE. Caso contrário, selecione seus alto-falantes no SoundCurrent.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>O VB-CABLE já está presente e será reutilizado. O SoundCurrent restaura a saída normal quando é desativado ou quando você usa %1.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>O VB-CABLE não está instalado. Abra "%1" e reinicie o Windows antes de abrir as configurações do cabo.</translation>
     </message>

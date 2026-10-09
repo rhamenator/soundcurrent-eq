@@ -194,6 +194,7 @@ class Markup(HTMLParser):
 # Exact labels in third-party installer or device UI are protected only in reviewed
 # instruction sources. SoundCurrent's own button captions remain translatable.
 EXTERNAL_UI_LABELS = {
+    'VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.': ('VB-CABLE', 'SoundCurrent'),
     'SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.': ('SoundCurrent Audio',),
     'SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.': ('SoundCurrent Audio', 'SoundCurrent'),
     'Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.': ('SoundCurrent',),

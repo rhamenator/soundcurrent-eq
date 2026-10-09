@@ -2434,6 +2434,10 @@ Tuodaanko kirjastoon?</translation>
       <translation>VB-CABLE on jo asennettu. Jos se on juuri asennettu tai päivitetty, käynnistä Windows uudelleen ennen taajuuskorjaimen tai VB-CABLEn asetusten käyttöä. Muussa tapauksessa valitse kaiuttimet SoundCurrentissa.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE on jo olemassa ja sitä käytetään uudelleen. SoundCurrent palauttaa tavallisen lähtösi, kun taajuuskorjain kytketään pois päältä tai valitset %1.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLEa ei ole asennettu. Avaa "%1" ja käynnistä Windows uudelleen ennen kaapelin asetusten avaamista.</translation>
     </message>

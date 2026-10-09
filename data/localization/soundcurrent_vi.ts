@@ -2434,6 +2434,10 @@ Nhập vào thư viện của bạn?</translation>
       <translation>VB-CABLE đã được cài đặt. Nếu vừa được cài đặt hoặc cập nhật, hãy khởi động lại Windows trước khi sử dụng bộ cân bằng âm thanh hoặc cài đặt VB-CABLE. Nếu không, hãy chọn loa trong SoundCurrent.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE đã có sẵn và sẽ được dùng lại. SoundCurrent khôi phục đầu ra thông thường khi bị tắt hoặc khi bạn dùng %1.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE chưa được cài đặt. Mở "%1", rồi khởi động lại Windows trước khi mở cài đặt cáp.</translation>
     </message>

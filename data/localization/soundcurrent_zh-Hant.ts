@@ -2434,6 +2434,10 @@ Import into your library?</source>
       <translation>VB-CABLE 已安裝。如果剛安裝或更新，請在使用等化器或 VB-CABLE 設定前重新啟動 Windows。否則，請在 SoundCurrent 中選擇喇叭。</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE 已存在，將繼續使用。停用 SoundCurrent 的等化器或使用 %1 時，會恢復一般輸出。</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE 未安裝。請開啟 "%1"，然後重新啟動 Windows，再開啟音訊線纜設定。</translation>
     </message>

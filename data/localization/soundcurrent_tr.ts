@@ -2434,6 +2434,10 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>VB-CABLE zaten yüklü. Yeni yüklendiyse veya güncellendiyse ekolayzırı veya VB-CABLE ayarlarını kullanmadan önce Windows’u yeniden başlatın. Aksi takdirde SoundCurrent içinde hoparlörlerinizi seçin.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE zaten mevcut ve yeniden kullanılacak. SoundCurrent kapatıldığında veya %1 kullandığınızda normal çıkışınızı geri yükler.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE yüklü değil. "%1" öğesini açın ve kablo ayarlarını açmadan önce Windows’u yeniden başlatın.</translation>
     </message>

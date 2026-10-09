@@ -2434,6 +2434,10 @@ Import into your library?</source>
       <translation>VB-CABLE이 이미 설치되어 있습니다. 방금 설치하거나 업데이트했다면 이퀄라이저 또는 VB-CABLE 설정을 사용하기 전에 Windows를 다시 시작하세요. 그렇지 않다면 SoundCurrent에서 스피커를 선택하세요.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE이 이미 있으며 재사용됩니다. SoundCurrent의 이퀄라이저를 끄거나 %1을 사용하면 원래 출력을 복원합니다.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE이 설치되지 않았습니다. "%1"을 열고 Windows를 다시 시작한 후 케이블 설정을 여세요.</translation>
     </message>

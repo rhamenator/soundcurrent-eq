@@ -2434,6 +2434,10 @@ Import into your library?</source>
       <translation>VB-CABLE 已安装。如果刚安装或更新，请在使用均衡器或 VB-CABLE 设置前重启 Windows。否则，请在 SoundCurrent 中选择扬声器。</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE 已存在，将继续使用。关闭 SoundCurrent 的均衡器或使用 %1 时，会恢复常规输出。</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE 未安装。请打开 "%1"，然后重启 Windows，再打开音频线缆设置。</translation>
     </message>

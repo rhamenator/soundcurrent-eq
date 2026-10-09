@@ -15,6 +15,28 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_existing_cable_notice_keeps_names_and_quit_placeholder(self):
+        root = Path(__file__).resolve().parents[1]
+        source = 'VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.'
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text(encoding='utf-8')
+            if 'native' in installer.stem:
+                self.assertNotIn('SCCablePresent', code)
+            else:
+                self.assertRegex(code, r'\$\{NSD_CreateLabel\}[^\n]+"\$\(SCCablePresent\)"')
+                self.assertEqual(re.findall(r'^LangString SCCablePresent \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source.replace('%1','Quit app')])
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
+            messages = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))
+            self.assertTrue(catalog.finished(messages[source]), row['tag'])
+            self.assertTrue(catalog.finished(messages['Quit app']), row['tag'])
+            translated = messages[source].findtext('translation')
+            catalog.validate_text(source, translated)
+            for label in ('VB-CABLE','SoundCurrent'):
+                with self.assertRaisesRegex(ValueError, 'External installer label changed'):
+                    catalog.validate_text(source, translated.replace(label, 'Other product'))
+            with self.assertRaisesRegex(ValueError, 'Placeholder mismatch'):
+                catalog.validate_text(source, translated.replace('%1','%2'))
+
     def test_setup_export_ignores_windows_default_codepage(self):
         root = Path(__file__).resolve().parents[1]
         spec = importlib.util.spec_from_file_location('setup_export_codepage', root / 'scripts/windows_setup_catalogs.py')
@@ -215,7 +237,7 @@ class CatalogTests(unittest.TestCase):
             for variants in result['languages'].values():
                 self.assertEqual(set(variants), {'cable', 'native'})
                 for routeName, route in variants.items():
-                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed'} | ({'SCCableRestart'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting'}))
+                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed'} | ({'SCCableRestart', 'SCCablePresent'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting'}))
                     self.assertEqual(set(route['nsisEscaped']), set(route['captions']))
 
     def test_installer_checkbox_catalog_sources_and_names(self):

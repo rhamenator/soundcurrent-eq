@@ -2434,6 +2434,10 @@ Zaimportować do biblioteki?</translation>
       <translation>VB-CABLE jest już zainstalowany. Jeśli został właśnie zainstalowany lub zaktualizowany, uruchom ponownie system Windows przed użyciem korektora lub ustawień VB-CABLE. W przeciwnym razie wybierz głośniki w SoundCurrent.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE jest już obecny i zostanie ponownie użyty. SoundCurrent przywraca zwykłe wyjście po wyłączeniu lub użyciu %1.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE nie jest zainstalowany. Otwórz "%1", a następnie uruchom ponownie system Windows przed otwarciem ustawień kabla.</translation>
     </message>

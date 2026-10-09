@@ -2434,6 +2434,10 @@ Import into your library?</source>
       <translation>VB-CABLE כבר מותקן. אם הוא הותקן או עודכן זה עתה, הפעילו מחדש את Windows לפני השימוש באקולייזר או בהגדרות VB-CABLE. אחרת, בחרו ברמקולים שלכם ב-SoundCurrent.</translation>
     </message>
     <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE כבר קיים וייעשה בו שימוש חוזר. SoundCurrent משחזר את הפלט הרגיל כשהוא מושבת או כשמשתמשים ב־%1.</translation>
+    </message>
+    <message>
       <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
       <translation>VB-CABLE אינו מותקן. פתחו את "%1", ואז הפעילו מחדש את Windows לפני פתיחת הגדרות הכבל.</translation>
     </message>
