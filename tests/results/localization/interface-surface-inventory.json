@@ -16,9 +16,19 @@
         "tests/results/localization/choice-list-display-guard.json",
         "tests/results/localization/eq-graph-number-formats.json",
         "tests/results/localization/balance-number-formats.json",
-        "tests/results/localization/main-equipment-display-gap.json"
+        "tests/results/localization/main-equipment-display-gap.json",
+        "tests/results/localization/measured-profile-runtime.log"
       ],
-      "auditState": "equipment summary and calibration creation-default gaps fixed; sampled compiled fixtures passed; final surface consolidation pending"
+      "auditState": "current source correspondence reviewed; identified summary and calibration-default gaps fixed; fresh installed qualification pending",
+      "review": {
+        "staticControls": "Owned constructors, actions, help, tooltip/accessibility captions use declared SC_TR or i18n::text; product names, units and filter symbols retain identity.",
+        "dynamicControls": "Preset group keys translated at addGroup; custom names preserved. Gain/frequency/curve labels use QLocale; band counts, percent symbols, balance and headroom follow recorded display helpers.",
+        "deviceAndEquipment": "OS endpoint descriptions, manufacturer/model/source metadata and custom names stay opaque. Defined equipment taxonomy uses display helper. Summary type captions corrected; generated calibration metadata translated at creation, serialized/reopened through production helper fixture.",
+        "messages": "Setup finish receives SC_TR or audioSetupOutput boundary; calibration status receives bounded translated child messages; showError uses audioErrorText; conflict box receives translated guard reason. Tray reminders receive translated update-panel messages.",
+        "dialogs": "Calibration/preset/equipment confirmation titles and actions translated at callers; standard actions and file picker have separate exact-context evidence.",
+        "boundaries": "Fixture-only synthetic multilingual captions and raw qFatal messages belong to explicit developer tests; QMenu(this) has parent argument. Unknown external diagnostic details and third-party provider descriptions preserved."
+      },
+      "runtimeLimit": "Current source review plus prior compiled workflows and new fr/ar/nn measured-profile creation/reopen fixtures. Installed packages pending refreshed qualification. No claim of native-speaker accuracy, every acoustic/device failure, all-locale visual rendering or provider-owned prose."
     },
     {
       "id": "equipment-editor",
@@ -219,5 +229,6 @@
   },
   "nativeReviewed": false,
   "wholeInterfaceCoverageProven": false,
-  "nextAction": "Check each indexed surface against current producers/callers and reference scope; record any missing owned string as a concrete gap. Complete only after all surface correspondences are verified."
+  "nextAction": "Verify fresh installed package evidence, reconcile completion requirement reports and refresh previews. Current finite surface source correspondences reviewed; runtime and linguistic verification remain separately scoped.",
+  "sourceCorrespondenceReviewComplete": true
 }

@@ -16,7 +16,7 @@ spec.loader.exec_module(catalog)
 
 class CatalogTests(unittest.TestCase):
     def test_equipment_summary_translates_kind_and_preserves_metadata(self):
-        code = (catalog.ROOT / 'src/main.cpp').read_text()
+        code = (catalog.ROOT / 'src/main.cpp').read_text(encoding='utf-8')
         body = code.split('void refreshEquipmentStatus()', 1)[1].split('void setEquipment(', 1)[0]
         for caption in ('Speaker', 'Amplifier', 'Microphone'):
             self.assertIn('SC_TR("' + caption + '")', body)
@@ -782,7 +782,7 @@ class CatalogTests(unittest.TestCase):
             self.assertFalse(result['wholeInterfaceCoverageProven'])
 
     def test_calibration_profile_defaults_are_translated_at_creation(self):
-        code = (catalog.ROOT / 'src/main.cpp').read_text()
+        code = (catalog.ROOT / 'src/main.cpp').read_text(encoding='utf-8')
         body = code.split('static soundcurrent::equipment::Profile measuredSystemProfile(', 1)[1].split('class MainWindow', 1)[0]
         raw = re.findall(r'\bp\.(?:brand|family|model|conditions|provenance)\s*=\s*("(?:\\.|[^"\\])*")', body)
         self.assertEqual(raw, [], 'Unmarked generated calibration metadata')
@@ -909,7 +909,7 @@ class CatalogTests(unittest.TestCase):
                                 for row in audit.dynamic_inventory(fixture)['expressions']))
 
     def test_process_conflict_template_covers_both_platform_branches(self):
-        code = (Path(__file__).resolve().parents[1] / 'src/processing_guard.cpp').read_text()
+        code = (Path(__file__).resolve().parents[1] / 'src/processing_guard.cpp').read_text(encoding='utf-8')
         source = '%1 is running. Quit it before using SoundCurrent.'
         marked = [catalog.literal(args[0]) for args in catalog.calls(code, 'SC_TR') if args]
         self.assertEqual(marked.count(source), 2)

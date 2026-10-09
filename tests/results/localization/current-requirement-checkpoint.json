@@ -5,7 +5,7 @@
   "catalogs": {
     "count": 34,
     "nonEnglish": 33,
-    "messagesPerCatalog": 700,
+    "messagesPerCatalog": 704,
     "check": "scripts/localization.py --check --require-complete passed locally",
     "nativeReviewed": false
   },
@@ -19,7 +19,7 @@
         "tests/results/localization/dynamic-provenance-review.json",
         "tests/results/localization/expanded-display-sinks.json"
       ],
-      "remaining": "Current package evidence retained. Final main-window source/evidence consolidation remains open; native-speaker verification remains unverified."
+      "remaining": "Finite source correspondence review complete after two concrete main-window fixes. Fresh installed package qualification and final evidence reconciliation remain."
     },
     {
       "requirement": "Contextual terminology review",
