@@ -783,11 +783,12 @@ class CatalogTests(unittest.TestCase):
 
     def test_calibration_profile_defaults_are_translated_at_creation(self):
         code = (catalog.ROOT / 'src/main.cpp').read_text()
-        body = code.split('if (preview.clickedButton() == saveMeasured)', 1)[1].split('if (preview.clickedButton() == apply', 1)[0]
+        body = code.split('static soundcurrent::equipment::Profile measuredSystemProfile(', 1)[1].split('class MainWindow', 1)[0]
         raw = re.findall(r'\bp\.(?:brand|family|model|conditions|provenance)\s*=\s*("(?:\\.|[^"\\])*")', body)
         self.assertEqual(raw, [], 'Unmarked generated calibration metadata')
         self.assertIn('p.kind = "speaker"', body)
-        self.assertIn('.arg(inputCombo_->currentText(), outputCombo_->currentText())', body)
+        self.assertIn('.arg(input, output)', body)
+        self.assertIn('measuredSystemProfile(inputCombo_->currentText(), outputCombo_->currentText())', code)
         for args in catalog.calls(body, 'SC_TR'):
             self.assertIn(catalog.literal(args[0]), set(catalog.sources()))
 

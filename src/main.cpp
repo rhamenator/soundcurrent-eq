@@ -1850,6 +1850,14 @@ protected:
     }
 };
 
+static soundcurrent::equipment::Profile measuredSystemProfile(const QString &input, const QString &output) {
+    soundcurrent::equipment::Profile p;
+    p.kind = "speaker"; p.brand = SC_TR("Custom"); p.family = SC_TR("Whole listening system"); p.model = SC_TR("Measured listening position"); p.custom = true;
+    p.conditions = SC_TR("Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2").arg(input, output);
+    p.provenance = SC_TR("SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.");
+    return p;
+}
+
 class MainWindow : public QMainWindow {
 public:
     explicit MainWindow(bool startEnabled = true) : bands_(builtinProfile("Flat", kDefaultBands)) {
@@ -2785,10 +2793,7 @@ private:
         preview.addButton(SC_TR("Keep current EQ"), QMessageBox::RejectRole);
         preview.exec();
         if (preview.clickedButton() == saveMeasured) {
-            soundcurrent::equipment::Profile p;
-            p.kind = "speaker"; p.brand = SC_TR("Custom"); p.family = SC_TR("Whole listening system"); p.model = SC_TR("Measured listening position"); p.custom = true;
-            p.conditions = SC_TR("Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2").arg(inputCombo_->currentText(), outputCombo_->currentText());
-            p.provenance = SC_TR("SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.");
+            auto p = measuredSystemProfile(inputCombo_->currentText(), outputCombo_->currentText());
             const auto levels = result.value("levels").toArray(); QVector<double> db;
             for (const auto &v : levels) if (v.isDouble() && v.toDouble() > 0) db.append(20 * std::log10(v.toDouble()));
             std::sort(db.begin(),db.end()); const double reference = db[db.size()/2];
@@ -4282,6 +4287,25 @@ int main(int argc, char **argv) {
         const auto speakerPolicy=soundcurrent::i18n::speakerPolicyText();
         for(const auto &token:{QStringLiteral("±")+QLocale().toString(6)+" dB",QLocale().toString(6),QLocale().toString(80)+" Hz"})
             if(!speakerPolicy.contains(token)) qFatal("Speaker correction policy lost actual limits or regional format");
+        const QString measuredInput=QString::fromUtf8("Mic %1 %2 混合");
+        const QString measuredOutput=QString::fromUtf8("Speaker %2 %1 Original");
+        const auto measured=measuredSystemProfile(measuredInput,measuredOutput);
+        if(measured.kind!="speaker" || !measured.custom || measured.brand!=SC_TR("Custom") ||
+           measured.family!=SC_TR("Whole listening system") || measured.model!=SC_TR("Measured listening position") ||
+           !measured.conditions.contains(measuredInput) || !measured.conditions.contains(measuredOutput) ||
+           measured.provenance!=SC_TR("SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included."))
+            qFatal("Measured profile defaults lost translation, identity or opaque device captions");
+        auto measuredForSave=measured;
+        measuredForSave.filters.append({1000,0,.707,soundcurrent::FilterType::Peaking});
+        const auto savedMeasured=soundcurrent::equipment::serialize(measuredForSave);
+        const auto reopenedMeasured=soundcurrent::equipment::parse(QJsonDocument(savedMeasured).toJson());
+        if(reopenedMeasured.brand!=measured.brand || reopenedMeasured.family!=measured.family ||
+           reopenedMeasured.model!=measured.model || reopenedMeasured.conditions!=measured.conditions ||
+           reopenedMeasured.provenance!=measured.provenance || reopenedMeasured.kind!=measured.kind ||
+           reopenedMeasured.filters.front().gainDb!=0)
+            qFatal("Reopening measured profile changed metadata or numerical filter data");
+        for(const auto &field:QStringList{"brand","family","model","conditions","provenance"})
+            if(savedMeasured.value(field).toString().isEmpty())qFatal("Measured profile serialization lost authored metadata");
         const QStringList microphoneToneNames={"Warmth","Boxiness","Clarity","Air"};
         for(int i=0;i<4;++i) {
             auto *slider=window.findChild<QSlider *>(QString("micTone%1").arg(i));

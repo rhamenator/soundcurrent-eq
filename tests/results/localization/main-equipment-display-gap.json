@@ -6,8 +6,10 @@
   "nativeReviewed": false,
   "wholeInterfaceCoverageProven": false,
   "packageQualification": "Previously qualified packages superseded by summary display change; fresh packages required after remaining creation-default fix.",
-  "sourceSha256": "b5c3d882add6030ffc55a6883edcc71df3d1097f887963bc5b6f30e00d6e3cfa",
+  "sourceSha256": "fe6c7d43aa8f95d319b12e5997047bc440519e4668b2f96babc41e7dd5163e5e",
   "calibrationFix": "New generated brand/family/model/conditions/provenance use translations at creation. Device captions inserted as opaque arguments; saved/imported metadata untouched. All33 non-English locale entries supplied for four new messages.",
   "contextualReview": "AI-reviewed against combined measurement, median reference, mic-EQ bypass and possible playback-EQ inclusion; uncertainty retained. Native-speaker accuracy unverified.",
-  "tests": "Focused creation-default and summary regressions passed; complete34-catalog structural/compiled-hash checks passed, zero unfinished entries."
+  "tests": "Focused creation-default and summary regressions passed; complete34-catalog structural/compiled-hash checks passed, zero unfinished entries.",
+  "compiledRuntime": "French/Arabic/Nynorsk main-window fixtures passed. Shared production measuredSystemProfile helper translates creation metadata, preserves opaque placeholder-bearing device names, serializes/reopens text and retains filter value.",
+  "runtimeLimit": "Offscreen interface fixture; no actual acoustic measurement, physical microphone or native-speaker review."
 }
