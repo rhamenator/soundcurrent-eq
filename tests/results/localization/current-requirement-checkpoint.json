@@ -5,7 +5,7 @@
   "catalogs": {
     "count": 34,
     "nonEnglish": 33,
-    "messagesPerCatalog": 699,
+    "messagesPerCatalog": 700,
     "check": "scripts/localization.py --check --require-complete passed locally",
     "nativeReviewed": false
   },
@@ -40,19 +40,19 @@
     },
     {
       "requirement": "Changed Linux packages and installed language interfaces",
-      "status": "Ubuntu 24.04, Fedora 44 and AlmaLinux 10 package hashes, CTest, installed locales and install/update/uninstall/reinstall verified against retained artifacts.",
-      "run": 37903361741,
+      "status": "Current process-conflict production packages verified on Ubuntu/Fedora/AlmaLinux: hashes, CTest, 33 installed locale completions, launcher bytes, direct install/update/uninstall/reinstall and actual French easy-installer main on current installed package.",
+      "run": 37916163773,
       "evidence": [
-        "tests/results/localization/linux-complete-installer-0/verified-artifact.json",
-        "tests/results/localization/linux-complete-installer-1/verified-artifact.json",
-        "tests/results/localization/linux-complete-installer-2/verified-artifact.json"
+        "tests/results/localization/linux-current-qualified-0/verified-artifact.json",
+        "tests/results/localization/linux-current-qualified-1/verified-artifact.json",
+        "tests/results/localization/linux-current-qualified-2/verified-artifact.json"
       ]
     },
     {
       "requirement": "Changed Windows packages and installed language interfaces",
-      "status": "Startup/launcher production installer and executable hashes matched installed lifecycle; 34 locale completions and fr/nn/ar lifecycle passed.",
-      "run": 37903335849,
-      "evidence": "tests/results/localization/windows-public-update-installed/verified-artifact.json"
+      "status": "Current process-conflict production installer and staged executable hashes match installed lifecycle; 34 locale completions and fr/nn/ar silent lifecycle passed on hosted Windows.",
+      "run": 37916168742,
+      "evidence": "tests/results/localization/windows-current-qualified/verified-artifact.json"
     },
     {
       "requirement": "Shared localization infrastructure",

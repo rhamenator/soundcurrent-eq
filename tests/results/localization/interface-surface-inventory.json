@@ -96,7 +96,7 @@
         "tests/results/localization/calibration-worker-gap.json",
         "tests/results/localization/process-conflict-localization-gap.json"
       ],
-      "auditState": "current source correspondence reviewed; process-conflict gap fixed; fresh installed qualification pending",
+      "auditState": "current source correspondence reviewed; process-conflict gap fixed and current installed packages qualified",
       "review": {
         "startup": "Four owned production qCritical failures use SC_TR UTF-8 strings. Startup paths/socket/process IDs remain invariant; QLocalServer error detail remains external.",
         "guard": "Acquisition/inspection/route-conflict diagnostics use SC_TR; both process-name conflict returns corrected to one translated template. Warning title/button localized; monitor forwards reason without reinterpretation.",
@@ -112,7 +112,13 @@
         "parent": "Start/stop/incomplete/suggestion/keep/apply captions translated. Worker-reported failures retained; numerical JSON, capture data and waveform processing unchanged.",
         "external": "Recorder/PipeWire process error details preserved in translated owned wrapper. Raw fixture exceptions and qFatal assertions belong to explicit self-test/developer paths."
       },
-      "runtimeLimit": "Prior worker invalid-level/UTF-8 and package fixtures are bounded evidence; no live calibration sweep in this audit. Fresh packages required for changed process-conflict source."
+      "runtimeLimit": "Current installed locale and lifecycle fixtures passed on Linux containers and hosted Windows. No live calibration sweep or induced physical endpoint failure in this audit.",
+      "qualificationEvidence": [
+        "tests/results/localization/linux-current-qualified-0/verified-artifact.json",
+        "tests/results/localization/linux-current-qualified-1/verified-artifact.json",
+        "tests/results/localization/linux-current-qualified-2/verified-artifact.json",
+        "tests/results/localization/windows-current-qualified/verified-artifact.json"
+      ]
     },
     {
       "id": "windows-audio-boundary",
