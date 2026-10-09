@@ -13,5 +13,5 @@
   "originalsModified": false,
   "nativeReviewed": false,
   "nextAction": "Inspect Windows capability state before rerunning setup; do not assume successful guest access",
-  "shutdown": "Guest shows Shutting down; libvirt still running at last observation; not forced off"
+  "shutdown": "Graceful shutdown completed; libvirt confirmed shut off"
 }
