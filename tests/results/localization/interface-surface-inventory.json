@@ -96,7 +96,23 @@
         "tests/results/localization/calibration-worker-gap.json",
         "tests/results/localization/process-conflict-localization-gap.json"
       ],
-      "auditState": "concrete process-conflict gap fixed; fresh installed production qualification pending"
+      "auditState": "current source correspondence reviewed; process-conflict gap fixed; fresh installed qualification pending",
+      "review": {
+        "startup": "Four owned production qCritical failures use SC_TR UTF-8 strings. Startup paths/socket/process IDs remain invariant; QLocalServer error detail remains external.",
+        "guard": "Acquisition/inspection/route-conflict diagnostics use SC_TR; both process-name conflict returns corrected to one translated template. Warning title/button localized; monitor forwards reason without reinterpretation.",
+        "calibrationStderr": [
+          "Playing a logarithmic sweep from 20 Hz to 25 kHz",
+          "Capture bytes: %1, noise bytes: %2",
+          "Checking %1 Hz",
+          "Capture bytes: %1, noise bytes: %2",
+          "%1 Hz: signal %2, background %3",
+          "Measurement failed: %1"
+        ],
+        "workerTransport": "Complete translated UTF-8 lines/tails decoded with bounded64KiB buffer; failure recognition matches localized template around placeholder, not English prefix.",
+        "parent": "Start/stop/incomplete/suggestion/keep/apply captions translated. Worker-reported failures retained; numerical JSON, capture data and waveform processing unchanged.",
+        "external": "Recorder/PipeWire process error details preserved in translated owned wrapper. Raw fixture exceptions and qFatal assertions belong to explicit self-test/developer paths."
+      },
+      "runtimeLimit": "Prior worker invalid-level/UTF-8 and package fixtures are bounded evidence; no live calibration sweep in this audit. Fresh packages required for changed process-conflict source."
     },
     {
       "id": "windows-audio-boundary",
