@@ -1,0 +1,21 @@
+{
+  "baseStringCount": 89,
+  "muiDeclarationCount": 62,
+  "testsPassed": 3,
+  "compiledFixtures": [
+    "base Unicode NLF",
+    "MUI install/uninstall pages with standard components",
+    "MUI install/uninstall pages with alternative components"
+  ],
+  "fixtureExecuted": false,
+  "nativeSpeakerVerified": false,
+  "renderedInstallerQualified": false,
+  "installerLocaleActivationComplete": false,
+  "vmUsed": false,
+  "sourceProvenance": "Locally packaged NSIS English.nlf and English.nsh; altered source identified and zlib notice preserved",
+  "linguisticLimitations": [
+    "No native-speaker review",
+    "System error dialog buttons belong to Windows and may use the OS language; base file-error guidance preserves English external action names",
+    "Stock welcome text is present for completeness; SoundCurrent overrides its welcome body with app-specific restart guidance"
+  ]
+}

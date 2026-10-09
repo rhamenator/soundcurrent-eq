@@ -204,3 +204,7 @@ The long pre-repair modal is translated in all 33 non-English locales. Its app a
 ### Explicit installer locale identities
 
 `installer-language-map.json` covers all 34 catalog tags with unique NSIS names and Windows language IDs. Validation checks catalog coverage, duplicate identities, RTL direction, and actual installed NLF/MUI asset pairs. On the Linux NSIS installation, 33 pairs match; Swahili has no built-in pair and requires owned installer translations. The mapping is validated during caption export and has a CTest regression gate. Installer locale activation remains incomplete; this mapping does not enable language selection or qualify rendered installer pages.
+
+### Swahili installer assets
+
+Owned `packaging/windows/languages/Swahili.nlf` and `Swahili.nsh` provide 89 base strings and 62 Modern UI declarations, including both conditional component-description variants. Altered NSIS source provenance and its zlib notice are retained alongside review inventories. Token, quote and whitespace checks passed; Unicode base and full MUI install/uninstall fixtures compiled for both component-page variants. Fixtures were never executed. The locale-map validator resolves the missing built-in Swahili pair to these owned files and checks their Windows ID and direction. Native-speaker verification, rendered UI qualification, and installer language-selection activation remain incomplete. See `tests/results/localization/swahili-installer-assets.json`.

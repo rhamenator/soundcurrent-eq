@@ -1,0 +1,192 @@
+﻿# Altered NSIS English.nlf: SoundCurrent Swahili translation; linguistic review unverified.
+# Header, don't edit
+NLF v6
+# Start editing here
+# Language ID
+1089
+# Font and size - dash (-) means default
+-
+-
+# Codepage - dash (-) means ASCII code page
+-
+# RTL - anything else than RTL means LTR
+-
+# Translation by ..... (any credits should go here)
+# ^Branding
+Nullsoft Install System %s
+# ^SetupCaption
+Usakinishaji wa $(^Name)
+# ^UninstallCaption
+Uondoaji wa $(^Name)
+# ^LicenseSubCaption
+: Makubaliano ya leseni
+# ^ComponentsSubCaption
+: Chaguo za usakinishaji
+# ^DirSubCaption
+: Folda ya usakinishaji
+# ^InstallingSubCaption
+: Inasakinisha
+# ^CompletedSubCaption
+: Imekamilika
+# ^UnComponentsSubCaption
+: Chaguo za uondoaji
+# ^UnDirSubCaption
+: Folda ya uondoaji
+# ^ConfirmSubCaption
+: Uthibitisho
+# ^UninstallingSubCaption
+: Inaondoa
+# ^UnCompletedSubCaption
+: Imekamilika
+# ^BackBtn
+< &Nyuma
+# ^NextBtn
+&Endelea >
+# ^AgreeBtn
+Nina&kubali
+# ^AcceptBtn
+Nina&kubali masharti ya makubaliano ya leseni
+# ^DontAcceptBtn
+Si&kubali masharti ya makubaliano ya leseni
+# ^InstallBtn
+&Sakinisha
+# ^UninstallBtn
+&Ondoa
+# ^CancelBtn
+Ghairi
+# ^CloseBtn
+&Funga
+# ^BrowseBtn
+&Vinjari...
+# ^ShowDetailsBtn
+Onyesha &maelezo
+# ^ClickNext
+Bofya Endelea ili kuendelea.
+# ^ClickInstall
+Bofya Sakinisha ili kuanza usakinishaji.
+# ^ClickUninstall
+Bofya Ondoa ili kuanza uondoaji.
+# ^Name
+Jina
+# ^Completed
+Imekamilika
+# ^LicenseText
+Soma makubaliano ya leseni kabla ya kusakinisha $(^NameDA). Ukikubali masharti yote, bofya Ninakubali.
+# ^LicenseTextCB
+Soma makubaliano ya leseni kabla ya kusakinisha $(^NameDA). Ukikubali masharti yote, weka alama kwenye kisanduku hapa chini. $_CLICK
+# ^LicenseTextRB
+Soma makubaliano ya leseni kabla ya kusakinisha $(^NameDA). Ukikubali masharti yote, chagua chaguo la kwanza hapa chini. $_CLICK
+# ^UnLicenseText
+Soma makubaliano ya leseni kabla ya kuondoa $(^NameDA). Ukikubali masharti yote, bofya Ninakubali.
+# ^UnLicenseTextCB
+Soma makubaliano ya leseni kabla ya kuondoa $(^NameDA). Ukikubali masharti yote, weka alama kwenye kisanduku hapa chini. $_CLICK
+# ^UnLicenseTextRB
+Soma makubaliano ya leseni kabla ya kuondoa $(^NameDA). Ukikubali masharti yote, chagua chaguo la kwanza hapa chini. $_CLICK
+# ^Custom
+Maalum
+# ^ComponentsText
+Weka alama kwenye vipengele unavyotaka kusakinisha na ondoa alama kwenye vile usivyotaka. $_CLICK
+# ^ComponentsSubText1
+Chagua aina ya usakinishaji:
+# ^ComponentsSubText2_NoInstTypes
+Chagua vipengele vya kusakinisha:
+# ^ComponentsSubText2
+Au chagua vipengele vya hiari unavyotaka kusakinisha:
+# ^UnComponentsText
+Weka alama kwenye vipengele unavyotaka kuondoa na ondoa alama kwenye vile usivyotaka kuondoa. $_CLICK
+# ^UnComponentsSubText1
+Chagua aina ya uondoaji:
+# ^UnComponentsSubText2_NoInstTypes
+Chagua vipengele vya kuondoa:
+# ^UnComponentsSubText2
+Au chagua vipengele vya hiari unavyotaka kuondoa:
+# ^DirText
+$(^NameDA) itasakinishwa kwenye folda ifuatayo. Ili kutumia folda nyingine, bofya Vinjari na uchague folda nyingine. $_CLICK
+# ^DirSubText
+Folda lengwa
+# ^DirBrowseText
+Chagua folda ya kusakinisha $(^NameDA):
+# ^UnDirText
+$(^NameDA) itaondolewa kwenye folda ifuatayo. Ili kutumia folda nyingine, bofya Vinjari na uchague folda nyingine. $_CLICK
+# ^UnDirSubText
+""
+# ^UnDirBrowseText
+Chagua folda ya kuondoa $(^NameDA):
+# ^SpaceAvailable
+"Nafasi iliyopo: "
+# ^SpaceRequired
+"Nafasi inayohitajika: "
+# ^UninstallingText
+$(^NameDA) itaondolewa kwenye folda ifuatayo. $_CLICK
+# ^UninstallingSubText
+Inaondoa kutoka:
+# ^FileError
+Hitilafu ya kufungua faili kwa kuandika: \r\n\r\n$0\r\n\r\nBofya Abort kusitisha usakinishaji,\r\nRetry kujaribu tena, au\r\nIgnore kuruka faili hili.
+# ^FileError_NoIgnore
+Hitilafu ya kufungua faili kwa kuandika: \r\n\r\n$0\r\n\r\nBofya Retry kujaribu tena, au\r\nCancel kusitisha usakinishaji.
+# ^CantWrite
+"Haiwezi kuandika: "
+# ^CopyFailed
+Kunakili kumeshindikana
+# ^CopyTo
+"Nakili kwenda "
+# ^Registering
+"Inasajili: "
+# ^Unregistering
+"Inaondoa usajili: "
+# ^SymbolNotFound
+"Alama haikupatikana: "
+# ^CouldNotLoad
+"Haikuweza kupakia: "
+# ^CreateFolder
+"Unda folda: "
+# ^CreateShortcut
+"Unda njia ya mkato: "
+# ^CreatedUninstaller
+"Programu ya uondoaji imeundwa: "
+# ^Delete
+"Futa faili: "
+# ^DeleteOnReboot
+"Futa baada ya kuwasha upya: "
+# ^ErrorCreatingShortcut
+"Hitilafu ya kuunda njia ya mkato: "
+# ^ErrorCreating
+"Hitilafu ya kuunda: "
+# ^ErrorDecompressing
+Hitilafu ya kufungua data iliyobanwa! Je, kisakinishi kimeharibika?
+# ^ErrorRegistering
+Hitilafu ya kusajili DLL
+# ^ExecShell
+"ExecShell: "
+# ^Exec
+"Tekeleza: "
+# ^Extract
+"Toa: "
+# ^ErrorWriting
+"Toa: hitilafu ya kuandika kwenye faili "
+# ^InvalidOpcode
+Kisakinishi kimeharibika: msimbo wa operesheni si halali
+# ^NoOLE
+"Hakuna OLE kwa: "
+# ^OutputFolder
+"Folda ya matokeo: "
+# ^RemoveFolder
+"Ondoa folda: "
+# ^RenameOnReboot
+"Badili jina baada ya kuwasha upya: "
+# ^Rename
+"Badili jina: "
+# ^Skipped
+"Imerukwa: "
+# ^CopyDetails
+Nakili maelezo kwenye ubao wa kunakili
+# ^LogInstall
+Rekodi mchakato wa usakinishaji
+# ^Byte
+B
+# ^Kilo
+ K
+# ^Mega
+ M
+# ^Giga
+ G

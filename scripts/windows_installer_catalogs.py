@@ -64,7 +64,9 @@ def validate_language_map(nsis_language_directory=None):
             missing.append(row['tag'])
             if row['builtinAssetsExpected']:
                 raise ValueError('Missing expected NSIS language asset: ' + str(path))
-            continue
+            path = catalog.ROOT / 'packaging/windows/languages' / (row['nsisLanguage'] + '.nlf')
+            if not path.exists():
+                raise ValueError('Missing owned NSIS language asset: ' + str(path))
         fields = [line for line in path.read_text(encoding='utf-8-sig').splitlines()
                   if line and not line.startswith('#')]
         if fields[0] != 'NLF v6' or int(fields[1]) != row['windowsLanguageId'] or (fields[5] == 'RTL') != row['rtl']:
