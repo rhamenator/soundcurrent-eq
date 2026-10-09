@@ -1,0 +1,18 @@
+{
+  "run": 37918553344,
+  "qualifiedProductionHead": "cac01931a91c5cbf0f5285bd5058043731d145ab",
+  "platform": "Ubuntu 24.04 disposable container",
+  "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-measured-linux-37918553344/package-validation-0/soundcurrent-eq_1.1.0_amd64.deb",
+  "packageSha256": "f71f4585a2800d9efa7dbb53c053a594a6ef5424bbcc5678f68305849f91a86b",
+  "sha256ManifestMatches": true,
+  "allCTestPassed": true,
+  "standaloneInstallerCatalogCTestPassed": true,
+  "installedLocaleCompletions": 33,
+  "launcherInstallUpdateReinstallMatchesCurrentSource": true,
+  "currentProductionSourcesMatchQualifiedHead": true,
+  "actualFrenchEasyInstallerMainPassed": true,
+  "scope": "Package install, same-package update, uninstall/config preservation and reinstall; installed locale fixtures and exact launcher bytes. Actual French easy-installer main uses verified local package through apt/dnf on an already installed current package. No older-version migration, downloaded package path or first-install easy-installer execution proven.",
+  "nativeReviewed": false,
+  "allLocaleVisualRenderingProven": false,
+  "wholeInterfaceCoverageProven": false
+}

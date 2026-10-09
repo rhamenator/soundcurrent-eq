@@ -1,0 +1,139 @@
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE  
+-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   
+-- Found WrapOpenGL: TRUE  
+-- Could NOT find XKB (missing: XKB_LIBRARY XKB_INCLUDE_DIR) (Required is at least version "0.5.0")
+-- Found WrapVulkanHeaders: /usr/include  
+-- Configuring done (0.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /work/build
+[1/81] Automatic MOC for target soundcurrent-dsp
+[2/81] Automatic MOC for target soundcurrent-startup-test
+[3/81] Automatic MOC for target soundcurrent-endpoint-identity-test
+[4/81] Automatic MOC for target soundcurrent-mic-transport-test
+[5/81] Automatic MOC for target soundcurrent-processing-guard-test
+[6/81] Automatic MOC for target soundcurrent-enhancements
+[7/81] Building CXX object CMakeFiles/soundcurrent-dsp.dir/soundcurrent-dsp_autogen/mocs_compilation.cpp.o
+[8/81] Automatic MOC for target soundcurrent-update-test
+[9/81] Building CXX object CMakeFiles/soundcurrent-startup-test.dir/soundcurrent-startup-test_autogen/mocs_compilation.cpp.o
+[10/81] Automatic MOC for target soundcurrent-spin-test
+[11/81] Automatic MOC for target soundcurrent-localization-test
+[12/81] Automatic MOC for target soundcurrent-backend-error-text-test
+[13/81] Building CXX object CMakeFiles/soundcurrent-endpoint-identity-test.dir/soundcurrent-endpoint-identity-test_autogen/mocs_compilation.cpp.o
+[14/81] Building CXX object CMakeFiles/soundcurrent-mic-transport-test.dir/soundcurrent-mic-transport-test_autogen/mocs_compilation.cpp.o
+[15/81] Building CXX object CMakeFiles/soundcurrent-processing-guard-test.dir/soundcurrent-processing-guard-test_autogen/mocs_compilation.cpp.o
+[16/81] Building CXX object CMakeFiles/soundcurrent-endpoint-identity-test.dir/tests/windows_endpoint_identity.cpp.o
+[17/81] Linking CXX executable soundcurrent-endpoint-identity-test
+[18/81] Building CXX object CMakeFiles/soundcurrent-dsp.dir/src/enhancement.cpp.o
+[19/81] Building CXX object CMakeFiles/soundcurrent-mic-transport-test.dir/tests/windows_mic_transport.cpp.o
+[20/81] Building CXX object CMakeFiles/soundcurrent-enhancements.dir/soundcurrent-enhancements_autogen/mocs_compilation.cpp.o
+[21/81] Linking CXX executable soundcurrent-mic-transport-test
+[22/81] Building CXX object CMakeFiles/soundcurrent-dsp.dir/src/dsp.cpp.o
+[23/81] Linking CXX static library libsoundcurrent-dsp.a
+[24/81] Building CXX object CMakeFiles/soundcurrent-enhancements.dir/src/enhancement_ladspa.cpp.o
+[25/81] Automatic MOC for target soundcurrent-eq
+[26/81] Automatic MOC for target soundcurrent-dsp-test
+[27/81] Building CXX object CMakeFiles/soundcurrent-enhancements.dir/src/enhancement.cpp.o
+[28/81] Linking CXX shared module effects/soundcurrent-enhancements.so
+[29/81] Building CXX object CMakeFiles/soundcurrent-dsp-test.dir/soundcurrent-dsp-test_autogen/mocs_compilation.cpp.o
+[30/81] Automatic RCC for data/resources.qrc
+[31/81] Building CXX object CMakeFiles/soundcurrent-startup-test.dir/tests/startup_registration.cpp.o
+[32/81] Building CXX object CMakeFiles/soundcurrent-dsp-test.dir/tests/dsp_response.cpp.o
+[33/81] Automatic MOC for target soundcurrent-equipment-test
+[34/81] Linking CXX executable soundcurrent-dsp-test
+[35/81] Linking CXX executable soundcurrent-startup-test
+[36/81] Automatic MOC for target soundcurrent-enhancement-test
+[37/81] Building CXX object CMakeFiles/soundcurrent-enhancement-test.dir/soundcurrent-enhancement-test_autogen/mocs_compilation.cpp.o
+[38/81] Building CXX object CMakeFiles/soundcurrent-processing-guard-test.dir/tests/processing_guard.cpp.o
+[39/81] Building CXX object CMakeFiles/soundcurrent-update-test.dir/soundcurrent-update-test_autogen/mocs_compilation.cpp.o
+[40/81] Building CXX object CMakeFiles/soundcurrent-processing-guard-test.dir/src/processing_guard.cpp.o
+[41/81] Linking CXX executable soundcurrent-processing-guard-test
+[42/81] Building CXX object CMakeFiles/soundcurrent-spin-test.dir/soundcurrent-spin-test_autogen/mocs_compilation.cpp.o
+[43/81] Building CXX object CMakeFiles/soundcurrent-enhancement-test.dir/tests/enhancement_response.cpp.o
+[44/81] Linking CXX executable soundcurrent-enhancement-test
+[45/81] Automatic RCC for data/localization/resources.qrc
+[46/81] Building CXX object CMakeFiles/soundcurrent-eq.dir/soundcurrent-eq_autogen/mocs_compilation.cpp.o
+[47/81] Automatic MOC for target soundcurrent-equipment-ui-test
+[48/81] Automatic RCC for data/resources.qrc
+[49/81] Automatic RCC for data/localization/resources.qrc
+[50/81] Building CXX object CMakeFiles/soundcurrent-eq.dir/soundcurrent-eq_autogen/QYFM2Z2WYQ/qrc_resources.cpp.o
+[51/81] Building CXX object CMakeFiles/soundcurrent-spin-test.dir/tests/spin_acceleration.cpp.o
+[52/81] Building CXX object CMakeFiles/soundcurrent-equipment-test.dir/soundcurrent-equipment-test_autogen/mocs_compilation.cpp.o
+[53/81] Building CXX object CMakeFiles/soundcurrent-update-test.dir/tests/update_policy.cpp.o
+[54/81] Building CXX object CMakeFiles/soundcurrent-eq.dir/src/processing_guard.cpp.o
+[55/81] Building CXX object CMakeFiles/soundcurrent-equipment-test.dir/soundcurrent-equipment-test_autogen/QYFM2Z2WYQ/qrc_resources.cpp.o
+[56/81] Building CXX object CMakeFiles/soundcurrent-eq.dir/soundcurrent-eq_autogen/VVIUIMQMFG/qrc_resources.cpp.o
+[57/81] Linking CXX executable soundcurrent-update-test
+[58/81] Linking CXX executable soundcurrent-spin-test
+[59/81] Building CXX object CMakeFiles/soundcurrent-equipment-test.dir/soundcurrent-equipment-test_autogen/VVIUIMQMFG/qrc_resources.cpp.o
+[60/81] Automatic RCC for data/resources.qrc
+[61/81] Building CXX object CMakeFiles/soundcurrent-equipment-test.dir/tests/equipment_profiles.cpp.o
+[62/81] Building CXX object CMakeFiles/soundcurrent-backend-error-text-test.dir/soundcurrent-backend-error-text-test_autogen/mocs_compilation.cpp.o
+[63/81] Building CXX object CMakeFiles/soundcurrent-eq.dir/src/equipment_profiles.cpp.o
+[64/81] Automatic RCC for data/localization/resources.qrc
+[65/81] Building CXX object CMakeFiles/soundcurrent-equipment-ui-test.dir/soundcurrent-equipment-ui-test_autogen/mocs_compilation.cpp.o
+[66/81] Automatic RCC for data/localization/resources.qrc
+[67/81] Building CXX object CMakeFiles/soundcurrent-equipment-test.dir/src/equipment_profiles.cpp.o
+[68/81] Building CXX object CMakeFiles/soundcurrent-equipment-ui-test.dir/soundcurrent-equipment-ui-test_autogen/QYFM2Z2WYQ/qrc_resources.cpp.o
+[69/81] Building CXX object CMakeFiles/soundcurrent-backend-error-text-test.dir/tests/backend_error_text.cpp.o
+[70/81] Building CXX object CMakeFiles/soundcurrent-localization-test.dir/soundcurrent-localization-test_autogen/mocs_compilation.cpp.o
+[71/81] Linking CXX executable soundcurrent-equipment-test
+[72/81] Building CXX object CMakeFiles/soundcurrent-equipment-ui-test.dir/soundcurrent-equipment-ui-test_autogen/VVIUIMQMFG/qrc_resources.cpp.o
+[73/81] Linking CXX executable soundcurrent-backend-error-text-test
+[74/81] Building CXX object CMakeFiles/soundcurrent-localization-test.dir/soundcurrent-localization-test_autogen/VVIUIMQMFG/qrc_resources.cpp.o
+[75/81] Building CXX object CMakeFiles/soundcurrent-equipment-ui-test.dir/tests/equipment_ui.cpp.o
+[76/81] Building CXX object CMakeFiles/soundcurrent-equipment-ui-test.dir/src/equipment_profiles.cpp.o
+[77/81] Linking CXX executable soundcurrent-equipment-ui-test
+[78/81] Building CXX object CMakeFiles/soundcurrent-localization-test.dir/tests/localization.cpp.o
+[79/81] Linking CXX executable soundcurrent-localization-test
+[80/81] Building CXX object CMakeFiles/soundcurrent-eq.dir/src/main.cpp.o
+[81/81] Linking CXX executable soundcurrent-eq
+-- Install configuration: "Release"
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/bin/soundcurrent-eq
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/applications/io.github.rhamenator.SoundCurrentEQ.desktop
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/icons/hicolor/scalable/apps/io.github.rhamenator.SoundCurrentEQ.svg
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/copyright
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/THIRD-PARTY-NOTICES.md
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/Sony_SS-CS5.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/Edifier_MR4.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/Yamaha_HS8.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/JBL_306P_Mark_ii.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/profiles.json
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/Elac_Debut_2.0_B6.2.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/Adam_T5V.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/LICENSE
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/Kali_LP-8v2.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/JBL_308P_Mark_ii.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/JBL_305P_Mark_ii.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/Elac_Debut_Reference_DBR-62.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/KEF_Q350.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/KRK_Systems_RoKit_5_G4.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/Kali_LP-6v2.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/Adam_T7V.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/Wharfedale_Diamond_12.1.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/KEF_Q150.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/Yamaha_HS5.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/speakers/Yamaha_HS7.txt
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/LICENSE
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/equipment
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/equipment/profiles.json
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/equipment/measurement-sources.json
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/equipment/LICENSE
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/equipment/collection-report.json
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/equipment/spinorama.json
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/equipment-profiles.md
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/lib/x86_64-linux-gnu/soundcurrent-eq/soundcurrent-enhancements.so
+-- Installing: /tmp/tmp.pZshq8YVIR/usr/share/doc/soundcurrent-eq/LGPL-2.1
+dpkg-deb: building package 'soundcurrent-eq' in '/work/dist/soundcurrent-eq_1.1.0_amd64.deb'.
+Built /work/dist/soundcurrent-eq_1.1.0_amd64.deb
