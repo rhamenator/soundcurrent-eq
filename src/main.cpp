@@ -1951,9 +1951,7 @@ public:
         balanceValue_ = new QLabel;
         balanceValue_->setMinimumWidth(62);
         balanceValue_->setAccessibleName(SC_TR("Balance position"));
-        balanceValue_->setText(balance_->value() == 0 ? SC_TR("Center")
-                               : QString("%1 %2%").arg(balance_->value() < 0 ? SC_TR("L") : SC_TR("R"))
-                                     .arg(std::abs(balance_->value())));
+        balanceValue_->setText(soundcurrent::i18n::balancePositionText(balance_->value()));
         gainRow->addWidget(balanceValue_);
         outputLayout->addLayout(gainRow);
         auto *meterRow = new QHBoxLayout;
@@ -2432,8 +2430,7 @@ public:
         connect(balance_, &QSlider::valueChanged, this, [this](int value) {
             recordChange(balance_);
             QSettings().setValue("balancePercent", value);
-            balanceValue_->setText(value == 0 ? SC_TR("Center")
-                                   : QString("%1 %2%").arg(value < 0 ? SC_TR("L") : SC_TR("R")).arg(std::abs(value)));
+            balanceValue_->setText(soundcurrent::i18n::balancePositionText(value));
             meter_.setProfile(bands_, outputGainDb(), value, speakerCorrection());
             try { audio_.updateGain(outputGainDb(), value); }
             catch (const std::exception &error) { showError(error.what()); }
@@ -2635,9 +2632,7 @@ private:
         }
         outputGainValue_->setText(QString(SC_TR("%1%2 dB")).arg(outputGainDb() > 0 ? "+" : "")
                                       .arg(QLocale().toString(outputGainDb(), 'f', 1)));
-        balanceValue_->setText(balance_->value() == 0 ? SC_TR("Center")
-                               : QString("%1 %2%").arg(balance_->value() < 0 ? SC_TR("L") : SC_TR("R"))
-                                     .arg(std::abs(balance_->value())));
+        balanceValue_->setText(soundcurrent::i18n::balancePositionText(balance_->value()));
         QSettings().setValue("outputGainDb", outputGainDb());
         QSettings().setValue("balancePercent", balance_->value());
         applyChanges();
@@ -2944,7 +2939,7 @@ private:
             slider->setSingleStep(1);
             slider->setPageStep(2);
             slider->setMinimumHeight(140);
-            slider->setAccessibleName(QString(SC_TR("Band %1 gain")).arg(i + 1));
+            slider->setAccessibleName(QString(SC_TR("Band %1 gain")).arg(QLocale().toString(i + 1)));
             slider->installEventFilter(this);
             sliders_.append(slider);
             auto *sliderRow = new QHBoxLayout;
@@ -2952,14 +2947,14 @@ private:
             sliderRow->addWidget(slider, 1, Qt::AlignHCenter);
             auto *level = new BandLevelMeter;
             level->setPeakMarkersEnabled(peakMarkers_->isChecked());
-            level->setAccessibleName(QString(SC_TR("Estimated output level near band %1")).arg(i + 1));
+            level->setAccessibleName(QString(SC_TR("Estimated output level near band %1")).arg(QLocale().toString(i + 1)));
             level->setToolTip(SC_TR("Estimated post-EQ level near this frequency"));
             levelBars_.append(level);
             sliderRow->addWidget(level);
             column->addLayout(sliderRow, 1);
             auto *frequency = new QPushButton;
             frequency->setToolTip(SC_TR("Select this band to edit frequency, gain, and Q"));
-            frequency->setAccessibleName(QString(SC_TR("Select band %1")).arg(i + 1));
+            frequency->setAccessibleName(QString(SC_TR("Select band %1")).arg(QLocale().toString(i + 1)));
             frequencyButtons_.append(frequency);
             column->addWidget(frequency);
             row->addLayout(column);
@@ -4228,6 +4223,21 @@ int main(int argc, char **argv) {
         if(!postGainValue->text().contains(QLocale().toString(1.5,'f',1)))
             qFatal("Moving post gain lost the selected regional number format");
         postGain->setValue(originalPostGain);
+
+        QSlider *balanceSlider=nullptr;QLabel *balanceCaption=nullptr;
+        for(auto *slider:window.findChildren<QSlider *>())
+            if(slider->accessibleName()==SC_TR("Left right balance"))balanceSlider=slider;
+        for(auto *label:window.findChildren<QLabel *>())
+            if(label->accessibleName()==SC_TR("Balance position"))balanceCaption=label;
+        if(!balanceSlider || !balanceCaption)qFatal("Balance controls missing");
+        const int originalBalance=balanceSlider->value();
+        for(int position:{-37,0,42}) {
+            balanceSlider->setValue(position);
+            if(position==0 ? balanceCaption->text()!=SC_TR("Center") :
+               !balanceCaption->text().contains(QLocale().toString(position<0?-position:position)+QLocale().percent()))
+                qFatal("Moving balance lost regional digits or percent symbol");
+        }
+        balanceSlider->setValue(originalBalance);
 
         for(int i=0;i<5;++i) {
             auto *slider=window.findChild<QSlider *>(QString("enhancementAmount%1").arg(i));

@@ -328,7 +328,7 @@ inline QGroupBox *settingsPanel() {
         auto requested=language->currentData().toString();if(requested=="system")requested=selectedLanguage();
         auto tag=resolve(requested);int done=0,total=0;
         for(const auto &l:languages())if(l.tag==tag){done=l.translated;total=l.total;}
-        help->setText(text("Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.").arg(done).arg(total));
+        help->setText(text("Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.").arg(QLocale().toString(done),QLocale().toString(total)));
     };
     update();
     QObject::connect(language,&QComboBox::currentIndexChanged,box,[language,update]{QSettings().setValue("i18n/language",language->currentData());update();});

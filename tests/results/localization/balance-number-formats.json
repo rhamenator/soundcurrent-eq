@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-09",
+  "changes": [
+    "Balance displayed digits and percent sign use selected locale at construction, movement and undo restoration",
+    "Band accessibility captions and coverage counts format their integer numbers with selected locale"
+  ],
+  "runtimeEvidence": {
+    "balance-format-ar-linux.log": "1e81cc01efb49abc87d418e481c40edce34ffd91e7ea907061eb044d09e82770",
+    "balance-format-de-linux.log": "3a0cdf54ba45069449f6e51a59e2464ad23286781d04062074bab7db946cc989"
+  },
+  "runtimeScope": "Actual offscreen application fixture moves balance to -37, 0 and 42 and restores original; ar language/ar-EG format and fr language/de-DE format. No live audio or screen-reader speech tested.",
+  "sourceOnlyScope": [
+    "Band accessibility integer formatting",
+    "Translation coverage integer formatting",
+    "Undo restoration formatting call site"
+  ],
+  "sourceSha256": {
+    "src/main.cpp": "67a782e55e0b1c658a04ca4a8b7a6539ec344d9be786c5a5da74abc3a2a841e4",
+    "src/localization.h": "f430613fdec6915b10791010bdf9f1e36838240571accd041b818ba00e3561b9",
+    "src/localization_text.h": "d9d06c97d3108e857250a419243138cd0939a72a0d19b535666beb1eedcf776c"
+  },
+  "catalogsUnchanged": true,
+  "nativeReviewed": false,
+  "currentPackageQualification": "pending"
+}

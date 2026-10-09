@@ -447,3 +447,7 @@ Qt's Show-plus-column concatenation is replaced by complete Show Size, Show Type
 ### Audio display numbers
 
 Band-level tooltips and calibration suggestion rows now format numeric values with the selected format locale. German/French comma decimals, English decimal points and Arabic Qt locale output are checked in a compiled fixture; German frequency grouping has an independent expected-value assertion. Opaque percent-bearing frequency captions remain intact. Only display composition changed: filter-chain configuration, DSP calculations and persisted numeric values retain their existing code. These tests do not demonstrate live metering, a microphone sweep, or native-speaker verification. Current package qualification is pending.
+
+### Balance and displayed integer counts
+
+Balance position now uses selected-locale digits and the locale percent sign at construction, slider movement and undo restoration. The real application fixture moves left/center/right and restores the original value; Arabic format and French text with German format are exercised locally. Band accessibility numbers and translation-coverage counts also use selected-locale integer formatting; those two changes are source-reviewed, not independently screen-reader-qualified. Slider values, saved numeric settings, control IDs and generated audio configuration remain unchanged. Existing translated Center/L/R captions are reused; no new translations or native-speaker certification are claimed.

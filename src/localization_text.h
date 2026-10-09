@@ -16,6 +16,11 @@ inline QString calibrationBandPreviewText(int frequency,double measured,double s
              QLocale().toString(measured,'f',1),suggested>0?QStringLiteral("+"):QString(),
              QLocale().toString(suggested,'f',1));
 }
+inline QString balancePositionText(int value) {
+    if(value==0)return text("Center");
+    return QStringLiteral("%1 %2%3").arg(text(value<0?"L":"R"),
+        QLocale().toString(value<0?-value:value),QLocale().percent());
+}
 // Recognize the localized worker diagnostic without an English-prefix test.
 // Match fixed parts on both sides so placeholder order can vary by language.
 inline bool isCalibrationFailureMessage(const QString &message) {
