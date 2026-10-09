@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-09",
+  "terminal": {
+    "locales": 34,
+    "cases": 68,
+    "behavior": "Real pseudoterminal, actual Bash confirm function, localized body/prompt observed before input; n cancels and Y accepts. Function-only; no download/elevation/install.",
+    "log": "tests/results/localization/linux-installer-terminal-tests.log"
+  },
+  "gtk": {
+    "provider": "Host Zenity under Xvfb",
+    "locales": [
+      "fr",
+      "ar",
+      "ja"
+    ],
+    "visualInspection": "Rendered titles/body readable, no observed missing glyphs or clipped text; Arabic shaping and mixed product/version text inspected. Japanese body wraps over several lines.",
+    "cancellation": "Escape returned 1 for each actual dialog",
+    "buttons": "Yes/No remained English from host GTK locale; external provider text, separate from owned catalog.",
+    "limitations": [
+      "Shared installer catalog and dialog function identical in both projects; visual experiment ran EQ source only.",
+      "No actual installation or administrator prompt",
+      "No claim for every locale or native-speaker verification",
+      "No KDialog rendering test"
+    ],
+    "captures": {
+      "fr": "3ede8982d098b6b5ed8303b376953e499a8d1cfd7f54a01b24a615ab6bb941cf",
+      "ar": "60422eb90d177e5f1d9c52a2d8399d812860e25665265ae83596c559a7090b0f",
+      "ja": "b24471fe11224a830463667c75ed2d67707fac14b4e51d4c218629ec04686941"
+    }
+  },
+  "packageQualification": {
+    "run": 37912691903,
+    "productionHead": "8489a3eed172ba2d1c0098667e3b3202d7ca8049",
+    "status": "Dispatched; authoritative results not yet inspected"
+  },
+  "nativeReviewed": false
+}

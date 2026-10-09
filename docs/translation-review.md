@@ -505,3 +505,7 @@ Added 104 entries for Simplified Chinese, Traditional Chinese, Japanese and Kore
 ### Linux installer: remaining five locales (2026-10-09)
 
 Added 130 entries for Hindi, Indonesian, Vietnamese, Thai and Swahili. All 34 catalogs now satisfy the completion gate. Contextual AI review preserves installation versus download-only behavior, retained versions/settings, administrator approval and exact app Quit captions. A removed-locale negative test keeps the release gate effective after completion. Native-speaker verification is unverified. Lookup and dialog-argument tests do not prove actual glyph rendering or installation. Actual UI/package qualification and the whole-interface audit remain open. No local VM was used.
+
+### Installer terminal and GTK runtime check (2026-10-09)
+
+Real pseudoterminal tests cover localized prompts and n/Y outcomes in all 34 languages. Actual Zenity dialogs from the shared EQ installer rendered French, Arabic and Japanese titles/messages under Xvfb; captures were inspected and Escape cancellation returned 1. GTK Yes/No captions follow the host locale and remained English. This does not prove all-locale rendering, KDialog, installation or native-speaker review. Fresh Ubuntu/Fedora/AlmaLinux jobs were dispatched for both completed catalog heads.

@@ -4,6 +4,9 @@
 import importlib.util
 import json
 import os
+import pty
+import select
+import time
 from pathlib import Path
 import subprocess
 import sys
@@ -105,6 +108,36 @@ class InstallerTests(unittest.TestCase):
         self.assertEqual(result.stdout,'fr')
         result=self.run_bash('source "$1"; printf "%s" "$sc_language"',environment={'SC_INSTALLER_LANGUAGE':'$(touch /invalid)/unknown'})
         self.assertEqual(result.stdout,'en')
+
+    def test_real_terminal_confirmation_accept_and_cancel(self):
+        data, _ = catalogs.payload()
+        for language, entries in data['languages'].items():
+            for answer, expected in (('n', 1), ('Y', 0)):
+                master, slave = pty.openpty()
+                env = dict(os.environ, SC_INSTALLER_LANGUAGE=language,
+                           DISPLAY='', WAYLAND_DISPLAY='')
+                child = subprocess.Popen(
+                    ['bash', '-c', 'source "$1"; confirm "$(sc_text download_confirm Demo 1 Ubuntu)"',
+                     '--', str(SCRIPT)], stdin=slave, stdout=slave, stderr=slave, env=env)
+                os.close(slave)
+                captured = bytearray()
+                try:
+                    prompt = entries['continue'].encode('utf-8')
+                    deadline = time.monotonic() + 5
+                    while prompt not in captured:
+                        if time.monotonic() >= deadline:
+                            self.fail(f'{language}: terminal prompt timed out')
+                        if select.select([master], [], [], 0.1)[0]:
+                            captured.extend(os.read(master, 65536))
+                    os.write(master, (answer + '\n').encode('ascii'))
+                    self.assertEqual(child.wait(timeout=5), expected, language)
+                    body = entries['download_confirm'].replace('%1','Demo').replace('%2','1').replace('%3','Ubuntu')
+                    self.assertIn(body.encode('utf-8'), captured, language)
+                finally:
+                    if child.poll() is None:
+                        child.kill()
+                        child.wait()
+                    os.close(master)
 
     def test_dialog_titles_bodies_and_cancel_are_forwarded(self):
         data, _=catalogs.payload()

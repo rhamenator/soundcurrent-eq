@@ -107,7 +107,7 @@
       "source": "message \"Installed $product $version. Open it from the applications menu. Use Quit and reopen after an update. No uninstall or reboot is needed for the app update.\""
     }
   ],
-  "status": "All 34 installer catalogs populated; actual UI and package qualification pending",
+  "status": "All 34 catalogs complete; real terminal prompts and sampled GTK dialogs exercised; package qualification pending",
   "nextTask": "Qualify actual terminal/dialog installer interactions and final release companion packages; finish whole-interface coverage audit.",
   "nativeReviewed": false,
   "wholeInterfaceCoverageProven": false,
@@ -162,7 +162,7 @@
     "scripts/install-linux.run": "32ae166e8daf1f989fd4e21c1b679de1e192e5f162193ccc94d94271c988048a",
     "scripts/linux_installer_catalogs.py": "d3e03fe8521f3d14cda6cef691f4bb3b73f9c3b25b7a400b9344d3ce09673915",
     "data/localization/linux-installer.json": "79fcb57a8ab13aaf0e3e9d7fbd38237129a097d612cfbed80a6a511a1e895d67",
-    "tests/linux_installer_localization.py": "76c036b771a0299891ea15dcb2a0008df80867fcf419ec9fe302b8f22a65dfd9"
+    "tests/linux_installer_localization.py": "bd8cf3ad59c5c7ff768863cd392b54f49eb23301f0f2a3172e4b86e215301b06"
   },
   "catalogRegressionSuite": {
     "tests": 62,
@@ -254,5 +254,6 @@
     "testLog": "tests/results/localization/linux-installer-all-locales-tests.log",
     "testLogSha256": "30d3f69f0d3875a516f96537047a2741391153dc21287080aa0d021c98c99413",
     "result": "All-locale focused tests and separate removed-locale negative gate passed; exact run counts retained in log"
-  }
+  },
+  "runtimeEvidence": "tests/results/localization/linux-installer-runtime.json"
 }
