@@ -29,6 +29,14 @@ run_ui(){
     if command -v xvfb-run >/dev/null; then xvfb-run -a -s '-screen 0 1280x800x24' "/usr/bin/$product" --ui-self-test
     else QT_QPA_PLATFORM=offscreen "/usr/bin/$product" --ui-self-test; fi
 }
+check_launcher(){
+    local phase=$1
+    # Exact installed metadata includes all localized descriptions and preserves
+    # product identity, Exec arguments, icon, categories and locale aliases.
+    cmp "data/$desktop" "/usr/share/applications/$desktop"
+    cp "/usr/share/applications/$desktop" "$out/launcher-$phase.desktop"
+    sha256sum "$out/launcher-$phase.desktop" > "$out/launcher-$phase.sha256"
+}
 [[ -f $package ]]
 cp "$package" "$package.sha256" "$out/"
 (cd "$(dirname "$package")" && sha256sum --check "$(basename "$package").sha256")
@@ -37,6 +45,7 @@ else printf 'CTest executed by RPM %%check; see build.log.\n' > "$out/ctest.log"
 install_package > "$out/install.log" 2>&1
 [[ -x /usr/bin/$product && -f /usr/share/applications/$desktop ]]
 grep -q "Exec=$product" "/usr/share/applications/$desktop"
+check_launcher installed
 mkdir -p "$HOME/.config/SoundCurrent"
 config="$HOME/.config/SoundCurrent/$product.conf"
 printf '[General]\nreleaseValidationMarker=keep-this-setting\n' > "$config"
@@ -47,11 +56,13 @@ for locale in de fr es it pt-PT pt-BR nl pl cs sk uk ru el tr sv da nb fi ro hu 
     grep -F "Localization UI: $locale -> $locale" "$out/locale-$locale.log" >/dev/null
 done
 update_package > "$out/update.log" 2>&1
+check_launcher updated
 [[ $(sha256sum "$config" | cut -d ' ' -f1) == "$config_hash" ]]
 remove_package > "$out/uninstall.log" 2>&1
 [[ ! -e /usr/bin/$product && ! -e /usr/share/applications/$desktop ]]
 [[ $(sha256sum "$config" | cut -d ' ' -f1) == "$config_hash" ]]
 install_package > "$out/reinstall.log" 2>&1
+check_launcher reinstalled
 run_ui > "$out/reinstalled-ui.log" 2>&1
 [[ $(sha256sum "$config" | cut -d ' ' -f1) == "$config_hash" ]]
 printf 'PASS: %s install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall\n' "$product" | tee "$out/result.txt"
