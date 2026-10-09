@@ -804,6 +804,9 @@ class CatalogTests(unittest.TestCase):
             spec.loader.exec_module(audit)
         reviewed = json.loads((root / 'data/localization/ui-literal-exceptions.json').read_text(encoding='utf-8'))
         audit.check_reviewed_literals(root, reviewed)
+        windows_rows = [dict(row, file=row['file'].replace('/', '\\')) for row in reviewed['exceptions']]
+        with patch.object(audit, 'inventory', return_value={'candidates': windows_rows}):
+            audit.check_reviewed_literals(root, reviewed)
         with tempfile.TemporaryDirectory() as directory:
             fixture = Path(directory)
             (fixture / 'src').mkdir()

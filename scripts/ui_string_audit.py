@@ -47,7 +47,7 @@ def inventory(root):
                 text = catalog.display_literal(args[index])
                 if text is None or not text.strip() or text in IDENTITIES:
                     continue
-                records.append({'file':str(path.relative_to(root)),
+                records.append({'file':path.relative_to(root).as_posix(),
                                 'call':method,'argument':index,'literal':text})
     return {'scope':'Unmarked direct and exact Qt-wrapped literal display candidates; dynamic strings, stored/user data, backend and installer strings are not covered',
             'candidateCount':len(records),'candidates':records,
@@ -76,7 +76,7 @@ def dynamic_inventory(root):
                     expression = args[index].strip()
                     if not expression or catalog.display_literal(expression) is not None:
                         continue
-                    records.append({'file': str(path.relative_to(root)), 'call': method,
+                    records.append({'file': path.relative_to(root).as_posix(), 'call': method,
                                     'argument': index, 'expression': expression,
                                     'containsTranslationCall': bool(re.search(r'\b(?:SC_TR|text)\s*\(', expression))})
     return {'scope': 'Dynamic arguments to known Qt display sinks; expressions need manual provenance review. Contains-translation-call is informational and does not prove all fragments are localized.',
@@ -85,7 +85,7 @@ def dynamic_inventory(root):
 
 def check_reviewed_literals(root, reviewed):
     """Reject newly unmarked captions; exemptions are exact source-site identities."""
-    key = lambda row: (row['file'], row['call'], row['argument'], row['literal'])
+    key = lambda row: (row['file'].replace('\\', '/'), row['call'], row['argument'], row['literal'])
     allowed = {key(row) for row in reviewed['exceptions']}
     for row in inventory(root)['candidates']:
         if key(row) not in allowed:
