@@ -3067,7 +3067,7 @@ private:
     }
     void refreshEquipmentStatus() {
         QStringList names;
-        for (const auto &kind : {"speaker","amplifier","microphone"}) if (const auto p = equipmentProfile(kind)) names << QString(kind) + ": " + p->brand + " / " + p->family + " / " + p->model;
+        for (const auto &kind : {"speaker","amplifier","microphone"}) if (const auto p = equipmentProfile(kind)) names << (QString(kind) == "speaker" ? SC_TR("Speaker") : QString(kind) == "amplifier" ? SC_TR("Amplifier") : SC_TR("Microphone")) + ": " + p->brand + " / " + p->family + " / " + p->model;
         equipmentStatus_->setText(names.isEmpty() ? SC_TR("No imported equipment correction selected.") : names.join("\n"));
     }
     void setEquipment(const soundcurrent::equipment::Profile &profile) {

@@ -15,6 +15,14 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_equipment_summary_translates_kind_and_preserves_metadata(self):
+        code = (catalog.ROOT / 'src/main.cpp').read_text()
+        body = code.split('void refreshEquipmentStatus()', 1)[1].split('void setEquipment(', 1)[0]
+        for caption in ('Speaker', 'Amplifier', 'Microphone'):
+            self.assertIn('SC_TR("' + caption + '")', body)
+        self.assertNotIn('names << QString(kind)', body)
+        self.assertIn('p->brand + " / " + p->family + " / " + p->model', body)
+
     def test_all_files_filter_preserves_wildcard_and_filter_count(self):
         source='All files (*)'
         catalog.validate_text(source,'Tous les fichiers (*)')

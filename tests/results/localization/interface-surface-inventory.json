@@ -15,9 +15,10 @@
         "tests/results/localization/dynamic-provenance-review.json",
         "tests/results/localization/choice-list-display-guard.json",
         "tests/results/localization/eq-graph-number-formats.json",
-        "tests/results/localization/balance-number-formats.json"
+        "tests/results/localization/balance-number-formats.json",
+        "tests/results/localization/main-equipment-display-gap.json"
       ],
-      "auditState": "indexed; final source/evidence correspondence check pending"
+      "auditState": "concrete equipment summary gap fixed; calibration creation-default gap open"
     },
     {
       "id": "equipment-editor",
