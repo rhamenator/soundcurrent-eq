@@ -8,6 +8,7 @@ from pathlib import Path
 import localization as catalog
 
 SOURCES = {
+    'SCInstallerLanguageTitle': 'Interface language',
     'SCShortcutUninstall': 'Uninstall',
     'SCShortcutSetup': 'Audio driver setup',
     'SCShortcutCableSettings': 'VB-CABLE settings',
@@ -149,7 +150,7 @@ def export(destination, product):
             for value in shortcuts.values():
                 validate_shortcut_name(value)
             localized_guidance = format_values(translations['SCSetupFailedAppInstalled'], (driver, product, shortcuts['SCShortcutSetup']))
-            variants[route] = {'shortcutCaptions': shortcuts, 'localizedSetupFailure': localized_guidance, 'captions': captions, 'nsisEscaped': {key: nsis_escape(text) for key, text in captions.items()}}
+            variants[route] = {'installerLanguageTitle': translations['SCInstallerLanguageTitle'], 'shortcutCaptions': shortcuts, 'localizedSetupFailure': localized_guidance, 'captions': captions, 'nsisEscaped': {key: nsis_escape(text) for key, text in captions.items()}}
         languages[row['tag']] = variants
     result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair and signed-installer and shared-cable and cable-routing donation and quit-before-update/uninstall and setup progress and native and cable removal failure and installed-app setup failure and welcome guidance only',
               'installerLocaleActivationComplete': False, 'nativeSpeakerVerified': False,
@@ -174,6 +175,10 @@ def activate_languages(text, product, captions, route):
     settings = ('!define MUI_LANGDLL_REGISTRY_ROOT "HKCU"\n'
                 '!define MUI_LANGDLL_REGISTRY_KEY "' + key + '"\n'
                 '!define MUI_LANGDLL_REGISTRY_VALUENAME "InstallerLanguage"\n'
+                '!define MUI_LANGDLL_ALWAYSSHOW\n'
+                '!define MUI_LANGDLL_ALLLANGUAGES\n'
+                '!define MUI_LANGDLL_WINDOWTITLE "$(SCInstallerLanguageTitle)"\n'
+                '!define MUI_LANGDLL_INFO "$(SCInstallerLanguageTitle)"\n'
                 'Var SCLocaleTag\n')
     text = text.replace('!include "MUI2.nsh"', '!include "MUI2.nsh"\n' + settings, 1)
     declarations = []
@@ -188,6 +193,7 @@ def activate_languages(text, product, captions, route):
     for row in rows:
         pack = captions['languages'][row['tag']][route]
         localized = {name: nsis_escape(value) for name, value in pack['shortcutCaptions'].items()}
+        localized['SCInstallerLanguageTitle'] = nsis_escape(pack['installerLanguageTitle'])
         for value in pack['shortcutCaptions'].values():
             validate_shortcut_name(value)
             shortcut_names.add(value)

@@ -228,3 +228,7 @@ Activated installers use catalog captions for uninstall, audio-driver setup, and
 ### Explicit UTF-8 in installer qualification tests
 
 The Windows activation regression suite failed while reading generated multilingual NSIS source with implicit CP1252. The test infrastructure now uses explicit UTF-8 for generated scripts, review inventories, language maps, and fixture text. A modeled CP1252 default exercises the actual generation and shortcut checks; its negative control proves that omitting UTF-8 reproduces the decoding fault. Activation (5), mapping (3), and Swahili asset (3) tests passed locally, including compiler fixtures. Current Windows packaging/runtime qualification remains pending. Evidence: `tests/results/localization/installer-explicit-utf8.json`.
+
+### Language chooser available during interactive updates
+
+NSIS defaults suppress its language chooser after a preference is saved and apply codepage filtering. Activated builds now define `MUI_LANGDLL_ALWAYSSHOW` and `MUI_LANGDLL_ALLLANGUAGES`, enabling an interactive language-changing update and listing all 34 languages. The chooser title/prompt uses the existing translated Interface language caption. The installed NSIS macro reads the saved preference before its silent-mode guard, so silent updates retain it without displaying a chooser. Both route fixtures compiled and regression checks passed. Actual chooser rendering, persistence and language-changing installed update remain unqualified. See `tests/results/localization/installer-chooser.json`.
