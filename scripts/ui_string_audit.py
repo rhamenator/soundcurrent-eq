@@ -21,6 +21,8 @@ METHODS = {'setText':0, 'setToolTip':0, 'setAccessibleName':0,
            'getOpenFileName':1, 'getSaveFileName':1, 'getExistingDirectory':1,
            'showMessage':(0,1), 'setSuffix':0, 'setPrefix':0,
            'setHorizontalHeaderLabels':0, 'setVerticalHeaderLabels':0, 'setHeaderLabels':0, 'addItems':0,
+           # Local Studio display helpers forward header lists and cell text.
+           'table':0, 'cell':3,
            'drawText':-1, 'getText':(1,2), 'getInt':(1,2), 'getDouble':(1,2),
            'information':(1,2), 'warning':(1,2), 'critical':(1,2), 'question':(1,2)}
 CONSTRUCTORS = ('QLabel','QPushButton','QCheckBox','QGroupBox','QRadioButton',
@@ -31,7 +33,7 @@ IDENTITIES = {'SoundCurrent EQ','SoundCurrent Studio','SoundCurrent','Q','Hz','d
 def display_entries(expression, method):
     """Inspect explicit choice lists entry by entry; forwarded lists need provenance review."""
     expression = expression.strip()
-    if method in ('addItems', 'setHorizontalHeaderLabels', 'setVerticalHeaderLabels', 'setHeaderLabels') and expression.startswith('{') and expression.endswith('}'):
+    if method in ('addItems', 'setHorizontalHeaderLabels', 'setVerticalHeaderLabels', 'setHeaderLabels', 'table') and expression.startswith('{') and expression.endswith('}'):
         return next(catalog.calls('entries(' + expression[1:-1] + ')', 'entries'))
     return [expression]
 

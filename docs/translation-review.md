@@ -521,3 +521,7 @@ Ubuntu 24.04, Fedora 44 and AlmaLinux 10 artifacts passed hash/manifest verifica
 ### Unpublished preview assembly (2026-10-09)
 
 Local preview bundles contain the qualified Linux packages, assembled easy installer with exact package hashes and all 34 catalogs, previously qualified unchanged Windows app/installer, source archive and SHA256SUMS. All checksums and 34 installer dry runs passed. This is preview preparation, not a published release. The Windows comparison excludes the standalone Linux-only JSON catalog; compiled Windows app/resources and installer sources match the qualified head. Privileged easy-installer execution remains unexercised.
+
+### Local Studio display helpers (2026-10-09)
+
+The source guard now follows explicit table header and cell helper arguments. Current Studio producers were reviewed: translated type/route/meter captions, selected-locale numeric formatting, translated generated channel roles and preserved user names. A mixed raw-header/raw-cell negative fixture verifies the guard while keeping forwarded numeric expressions in the provenance inventory. This guard does not change processing, state or visible text. Shared infrastructure is applied to EQ as well. Native-speaker verification remains unverified.

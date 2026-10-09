@@ -889,6 +889,26 @@ class CatalogTests(unittest.TestCase):
             self.assertTrue(any(row['expression'] == 'profileBrands'
                                 for row in audit.dynamic_inventory(fixture)['expressions']))
 
+    def test_studio_display_helpers_reject_raw_prose(self):
+        root = Path(__file__).resolve().parents[1]
+        spec = importlib.util.spec_from_file_location('ui_audit', root / 'scripts/ui_string_audit.py')
+        audit = importlib.util.module_from_spec(spec)
+        with patch.dict('sys.modules', {'localization': catalog}):
+            spec.loader.exec_module(audit)
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = Path(directory)
+            (fixture / 'src').mkdir()
+            (fixture / 'src/panel.cpp').write_text(
+                'table({SC_TR("Translated"), "Raw header", "Hz"}); '
+                'cell(view, 0, 1, QStringLiteral("Raw cell")); '
+                'cell(view, 1, 1, QLocale().toString(value));', encoding='utf-8')
+            self.assertEqual([row['literal'] for row in audit.inventory(fixture)['candidates']],
+                             ['Raw header', 'Raw cell'])
+            with self.assertRaisesRegex(ValueError, 'Unreviewed display literal'):
+                audit.check_reviewed_literals(fixture, {'exceptions': []})
+            self.assertTrue(any(row['expression'] == 'QLocale().toString(value)'
+                                for row in audit.dynamic_inventory(fixture)['expressions']))
+
     def test_header_lists_detect_mixed_untranslated_entries(self):
         root = Path(__file__).resolve().parents[1]
         spec = importlib.util.spec_from_file_location('ui_audit', root / 'scripts/ui_string_audit.py')
