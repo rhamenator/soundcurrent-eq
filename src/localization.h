@@ -67,14 +67,47 @@ inline QString resolve(const QString &requested) {
     }
     return regionalMatch.isEmpty()?QString("en"):regionalMatch;
 }
+// Installer preferences seed only an untouched app language preference.
+// An explicit "system" choice must continue following the operating system.
+inline QString installerSettingsPath(const QString &applicationName) {
+    if(applicationName=="soundcurrent-eq")
+        return QStringLiteral("HKEY_CURRENT_USER\\Software\\SoundCurrent\\SoundCurrent EQ");
+    if(applicationName=="soundcurrent-studio")
+        return QStringLiteral("HKEY_CURRENT_USER\\Software\\SoundCurrent\\SoundCurrent Studio");
+    return {};
+}
+inline QString installerLanguageFallback(const QSettings &applicationSettings,
+                                         const QSettings &installerSettings) {
+    if(applicationSettings.contains("i18n/language")) return {};
+    const auto tag=normalize(installerSettings.value("InstallerLocale").toString());
+    // Accept only a catalog identity, never a guessed region or pseudo locale.
+    for(const auto &language:languages())
+        if(language.tag.compare(tag,Qt::CaseInsensitive)==0) return language.tag;
+    return {};
+}
+inline QString initialInstallerLanguage(const QSettings &settings) {
+#ifdef Q_OS_WIN
+    const auto path=installerSettingsPath(QCoreApplication::applicationName());
+    if(!path.isEmpty()) {
+        const QSettings installer(path,QSettings::NativeFormat);
+        return installerLanguageFallback(settings,installer);
+    }
+#else
+    Q_UNUSED(settings);
+#endif
+    return {};
+}
 inline QString selectedLanguage() {
     const auto args=QCoreApplication::arguments();
     const auto i=args.indexOf("--language");
     if(i>=0 && i+1<args.size()) return args[i+1];
-    const auto saved=QSettings().value("i18n/language","system").toString();
+    const QSettings settings;
+    const auto saved=settings.value("i18n/language","system").toString();
     if(saved!="system") return saved;
     const auto env=qEnvironmentVariable("SOUNDCURRENT_LANGUAGE");
     if(!env.isEmpty()) return env;
+    const auto initial=initialInstallerLanguage(settings);
+    if(!initial.isEmpty()) return initial;
     const auto choices=QLocale::system().uiLanguages();
     for(const auto &choice:choices) if(resolve(choice)!="en" || choice.startsWith("en")) return choice;
     return "en";
@@ -157,7 +190,10 @@ inline QGroupBox *settingsPanel() {
     language->addItem(text("Use system language"),"system");language->addItem("English (en)","en");
     for(const auto &l:languages()) if(l.tag!="en")language->addItem(l.nativeName+" ("+l.tag+")",l.tag);
     language->addItem(text("Expanded test language"),"qps-ploc");language->addItem(text("Right-to-left test language"),"qps-rtl");
-    auto saved=QSettings().value("i18n/language","system").toString();
+    const QSettings settings;
+    auto saved=settings.value("i18n/language","system").toString();
+    const auto initial=initialInstallerLanguage(settings);
+    if(!initial.isEmpty()) saved=initial;
     auto index=language->findData(saved);language->setCurrentIndex(index>=0?index:0);
     form->addRow(text("Interface language"),language);
     auto *format=new QComboBox;

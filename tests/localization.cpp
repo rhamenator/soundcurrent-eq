@@ -9,6 +9,7 @@
 #include <QJsonDocument>
 #include <QLineEdit>
 #include <QTemporaryDir>
+#include <QUuid>
 #include <stdexcept>
 using namespace soundcurrent::i18n;
 void require(bool pass,const char *why){if(!pass)throw std::runtime_error(why);}
@@ -17,6 +18,42 @@ int main(int argc,char **argv){
  QTemporaryDir dir;QSettings::setDefaultFormat(QSettings::IniFormat);QSettings::setPath(QSettings::IniFormat,QSettings::UserScope,dir.path());
  try{
   require(languages().size()>=30,"Global language catalogs missing");
+  {
+   QSettings application(dir.filePath("installer-app.ini"),QSettings::IniFormat);
+   QSettings installer(dir.filePath("installer-preference.ini"),QSettings::IniFormat);
+   require(installerLanguageFallback(application,installer).isEmpty(),"Missing installer preference guessed a language");
+   for(const auto &language:languages()) {
+    installer.setValue("InstallerLocale",language.tag);
+    require(installerLanguageFallback(application,installer)==language.tag,"Installer locale lost catalog identity");
+    require(application.allKeys().isEmpty(),"Installer fallback modified app state");
+   }
+   installer.setValue("InstallerLocale","pt_BR");
+   require(installerLanguageFallback(application,installer)=="pt-BR","Installer tag normalization lost Portuguese variant");
+   for(const auto *invalid:{"system","qps-ploc","qps-rtl","fr-CA","../bad","","sr-Latn"}) {
+    installer.setValue("InstallerLocale",invalid);
+    require(installerLanguageFallback(application,installer).isEmpty(),"Invalid installer identity was accepted");
+   }
+   installer.setValue("InstallerLocale","nn");
+   for(const auto *saved:{"system","fr","qps-ploc","unsupported"}) {
+    application.setValue("i18n/language",saved);
+    require(installerLanguageFallback(application,installer).isEmpty(),"Installer overrode explicit app preference");
+    require(application.value("i18n/language").toString()==saved,"Installer rewrote explicit app preference");
+   }
+   require(installerSettingsPath("soundcurrent-eq")==QStringLiteral("HKEY_CURRENT_USER\\Software\\SoundCurrent\\SoundCurrent EQ"),"EQ installer registry identity changed");
+   require(installerSettingsPath("soundcurrent-studio")==QStringLiteral("HKEY_CURRENT_USER\\Software\\SoundCurrent\\SoundCurrent Studio"),"Studio installer registry identity changed");
+   require(installerSettingsPath("localization-test").isEmpty(),"Unknown app inherited installer preference");
+#ifdef Q_OS_WIN
+   const auto testRegistry=QStringLiteral("HKEY_CURRENT_USER\\Software\\SoundCurrent\\LocalizationTest-")+QUuid::createUuid().toString(QUuid::WithoutBraces);
+   QSettings nativeInstaller(testRegistry,QSettings::NativeFormat);
+   nativeInstaller.setValue("InstallerLocale","nn");nativeInstaller.sync();
+   application.remove("i18n/language");
+   const QSettings nativeRead(testRegistry,QSettings::NativeFormat);
+   const bool nativePassed=nativeInstaller.status()==QSettings::NoError && installerLanguageFallback(application,nativeRead)=="nn";
+   nativeInstaller.clear();nativeInstaller.sync();
+   require(nativePassed,"Windows native registry installer preference failed");
+#endif
+  }
+
   {
    auto marked=QString(QChar(0x061c))+"-12.5"+QChar(0x200e)+QChar(0x200f);
    int cursor=marked.size();soundcurrent::normalizeNumericDirectionMarks(marked,&cursor);
