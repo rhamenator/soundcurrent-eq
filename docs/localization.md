@@ -164,3 +164,7 @@ Windows CI run 37863575451 passed for Studio commit `6a26206`, including 35 loca
 ### Shared cable ownership notice
 
 All 33 non-English catalogs now contain the shared-cable notice. The English caption explicitly identifies the last SoundCurrent app, and contextual review checked optional removal, other software dependencies, extra A/B virtual cables, and quitting background processing. Catalog tests and 578 exported caption literals compile. Native-speaker review, installer language activation, installed layout and current package lifecycle remain unverified. See `tests/results/localization/second-pass-installer-shared-cable.json`.
+
+### Cable routing caption and Windows Unicode dialog evidence
+
+All custom audio-page control captions now use catalog-backed LangStrings, with all 33 non-English translations prepared. A new guard rejects raw control captions. Other welcome, progress and error text remains incomplete; installer locale activation is pending. All 612 exported caption literals compile in an English-ID syntax fixture. Studio Windows run 37864139375 passed at commit `dde32e7`; six actual dialog captures decode as strict UTF-8, including French “Redémarrez”. That run predates the shared/routing caption work and does not verify installed-package lifecycle. See `second-pass-installer-cable-routing.json` and `second-pass-windows-dialog-utf8.json` under `tests/results/localization/`.

@@ -8,6 +8,7 @@ from pathlib import Path
 import localization as catalog
 
 SOURCES = {
+    'SCCableRouting': 'VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.',
     'SCCableSharedNotice': 'Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.',
     'SCCableSignedInstaller': 'Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.',
     'SCCableRepair': 'VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.',
@@ -65,6 +66,7 @@ def export(destination, product):
                 captions['SCNativeApproval'] = translations['SCNativeApproval']
                 captions['SCSharedDriverNotice'] = translations['SCSharedDriverNotice']
             if route == 'cable':
+                captions['SCCableRouting'] = translations['SCCableRouting']
                 captions['SCCableSharedNotice'] = translations['SCCableSharedNotice']
                 captions['SCCableSignedInstaller'] = translations['SCCableSignedInstaller']
                 captions['SCCableRepair'] = translations['SCCableRepair']
@@ -72,7 +74,7 @@ def export(destination, product):
                 captions['SCCableRestart'] = translations['SCCableRestart']
             variants[route] = {'captions': captions, 'nsisEscaped': {key: nsis_escape(text) for key, text in captions.items()}}
         languages[row['tag']] = variants
-    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair and signed-installer and shared-cable guidance only',
+    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair and signed-installer and shared-cable and cable-routing donation guidance only',
               'installerLocaleActivationComplete': False, 'nativeSpeakerVerified': False,
               'sources': SOURCES, 'languages': languages}
     destination.parent.mkdir(parents=True, exist_ok=True)

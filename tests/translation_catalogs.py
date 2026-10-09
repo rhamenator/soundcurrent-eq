@@ -15,6 +15,33 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_cable_routing_notice_and_custom_page_coverage(self):
+        root = Path(__file__).resolve().parents[1]
+        source = 'VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.'
+        spec = importlib.util.spec_from_file_location('audio_page_audit', root / 'scripts/nsis_string_audit.py')
+        audit = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(audit)
+        found = audit.inventory(root)
+        controls = [row for row in found['candidates'] if row['kind'] == 'control-caption']
+        self.assertTrue(controls)
+        self.assertTrue(all(row['marked'] for row in controls), controls)
+        audit.check_backlog(found, json.loads((catalog.DATA / 'nsis-text-backlog.json').read_text(encoding='utf-8')))
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text(encoding='utf-8')
+            if 'native' in installer.stem:
+                self.assertNotIn('SCCableRouting', code)
+            else:
+                self.assertIn('${NSD_CreateLabel} 0 0 100% 32u "$(SCCableRouting)"', code)
+                self.assertEqual(re.findall(r'^LangString SCCableRouting \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
+            message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
+            self.assertTrue(catalog.finished(message), row['tag'])
+            translated = message.findtext('translation')
+            catalog.validate_text(source, translated)
+            for external in ('VB-CABLE', 'SoundCurrent', 'VB-Audio', 'https://vb-cable.com'):
+                with self.assertRaisesRegex(ValueError, 'External installer label changed'):
+                    catalog.validate_text(source, translated.replace(external, 'Other label'))
+
     def test_shared_cable_notice_keeps_family_and_optional_cables(self):
         root = Path(__file__).resolve().parents[1]
         source = 'Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.'
@@ -301,7 +328,7 @@ class CatalogTests(unittest.TestCase):
             for variants in result['languages'].values():
                 self.assertEqual(set(variants), {'cable', 'native'})
                 for routeName, route in variants.items():
-                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller', 'SCCableSharedNotice'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting'}))
+                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller', 'SCCableSharedNotice', 'SCCableRouting'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting'}))
                     self.assertEqual(set(route['nsisEscaped']), set(route['captions']))
 
     def test_installer_checkbox_catalog_sources_and_names(self):

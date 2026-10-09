@@ -2470,6 +2470,11 @@ Importálja a könyvtárba?</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
     </message>
     <message>
+      <source>VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.</source>
+      <translation>A VB-CABLE az alkalmazáson keresztül vezeti a lejátszást. Válassza ki a hangszórókat a SoundCurrent alkalmazásban. A VB-CABLE a VB-Audio adományokkal támogatott szoftvere: https://vb-cable.com — az adományokat szívesen fogadják.</translation>
+      <extracomment>Cable audio page routing and donation notice. Software routes system playback through SoundCurrent to physical output selected inside app. Donationware means supported by voluntary donations, not mandatory payment. Preserve VB-CABLE twice, SoundCurrent, VB-Audio and exact donation URL. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE-beállítások</translation>
     </message>

@@ -2470,6 +2470,11 @@ Importere til biblioteket ditt?</translation>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
     </message>
     <message>
+      <source>VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.</source>
+      <translation>VB-CABLE ruter avspillingen gjennom appen. Velg høyttalere i SoundCurrent. VB-CABLE er programvare fra VB-Audio som støttes av donasjoner: https://vb-cable.com — donasjoner er velkomne.</translation>
+      <extracomment>Cable audio page routing and donation notice. Software routes system playback through SoundCurrent to physical output selected inside app. Donationware means supported by voluntary donations, not mandatory payment. Preserve VB-CABLE twice, SoundCurrent, VB-Audio and exact donation URL. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE settings</source>
       <translation>VB-CABLE-innstillinger</translation>
     </message>

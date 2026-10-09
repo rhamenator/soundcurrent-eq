@@ -55,6 +55,7 @@ Page custom AudioPage AudioPageLeave
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_LANGUAGE "English"
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
+LangString SCCableRouting ${LANG_ENGLISH} "VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome."
 LangString SCCableSharedNotice ${LANG_ENGLISH} "Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled."
 LangString SCCableSignedInstaller ${LANG_ENGLISH} "Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings."
 LangString SCCableRepair ${LANG_ENGLISH} "VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again."
@@ -99,7 +100,7 @@ Function AudioPage
   ${If} $0 == error
     Abort
   ${EndIf}
-  ${NSD_CreateLabel} 0 0 100% 32u "VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome."
+  ${NSD_CreateLabel} 0 0 100% 32u "$(SCCableRouting)"
   Pop $0
   ${NSD_CreateCheckbox} 0 38u 100% 18u "$(SCInstallDriver)"
   Pop $DriverChoice

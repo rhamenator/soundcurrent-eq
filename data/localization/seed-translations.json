@@ -120,7 +120,8 @@
     "VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.",
     "VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.",
     "Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.",
-    "Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled."
+    "Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.",
+    "VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome."
   ],
   "languages": {
     "de": [
@@ -245,7 +246,8 @@
       "VB-CABLE ist bereits vorhanden und wird wiederverwendet. SoundCurrent stellt Ihre normale Ausgabe wieder her, wenn es ausgeschaltet wird oder Sie %1 verwenden.",
       "VB-CABLE ist als Treiber registriert, hat aber keine nutzbaren Audioendpunkte. Setup bietet eine Reparatur an: Treiber entfernen, neu starten, neu installieren und erneut neu starten.",
       "Setup öffnet das signierte Installationsprogramm von VB-Audio. Klicken Sie auf Install Driver und starten Sie Windows neu, bevor Sie den Equalizer oder die VB-CABLE-Einstellungen verwenden.",
-      "Beenden Sie alle laufenden Equalizer vor der Treiberinstallation. Beim Entfernen der letzten SoundCurrent-App bietet deren Deinstallationsprogramm die Entfernung von VB-CABLE an. Andere Software benötigt das Kabel möglicherweise ebenfalls. Zusätzliche A/B-Kabel sind nicht enthalten."
+      "Beenden Sie alle laufenden Equalizer vor der Treiberinstallation. Beim Entfernen der letzten SoundCurrent-App bietet deren Deinstallationsprogramm die Entfernung von VB-CABLE an. Andere Software benötigt das Kabel möglicherweise ebenfalls. Zusätzliche A/B-Kabel sind nicht enthalten.",
+      "VB-CABLE leitet die Wiedergabe durch die App. Wählen Sie Ihre Lautsprecher in SoundCurrent aus. VB-CABLE ist spendenfinanzierte Software von VB-Audio: https://vb-cable.com — Spenden sind willkommen."
     ],
     "fr": [
       "Français",
@@ -369,7 +371,8 @@
       "VB-CABLE est déjà présent et sera réutilisé. SoundCurrent rétablit votre sortie habituelle lorsqu’il est désactivé ou lorsque vous utilisez %1.",
       "VB-CABLE est enregistré comme pilote, mais aucun point de terminaison audio utilisable n’est disponible. L’installation propose une réparation : désinstaller le pilote, redémarrer, réinstaller, puis redémarrer à nouveau.",
       "L’installation ouvre le programme d’installation signé de VB-Audio. Cliquez sur Install Driver, puis redémarrez Windows avant d’utiliser l’égaliseur ou les paramètres de VB-CABLE.",
-      "Quittez tout égaliseur en cours d’exécution avant l’installation du pilote. Lors de la désinstallation de la dernière application SoundCurrent, son programme de désinstallation propose de supprimer VB-CABLE. D’autres logiciels peuvent aussi avoir besoin du câble. Les câbles A/B supplémentaires ne sont pas inclus."
+      "Quittez tout égaliseur en cours d’exécution avant l’installation du pilote. Lors de la désinstallation de la dernière application SoundCurrent, son programme de désinstallation propose de supprimer VB-CABLE. D’autres logiciels peuvent aussi avoir besoin du câble. Les câbles A/B supplémentaires ne sont pas inclus.",
+      "VB-CABLE fait passer la lecture audio par l’application. Choisissez les enceintes dans SoundCurrent. VB-CABLE est un logiciel de VB-Audio financé par les dons : https://vb-cable.com — les dons sont les bienvenus."
     ],
     "es": [
       "Español",
@@ -493,7 +496,8 @@
       "VB-CABLE ya está presente y se reutilizará. SoundCurrent restaura su salida habitual cuando se desactiva o cuando utiliza %1.",
       "VB-CABLE tiene un registro de controlador, pero no hay puntos de conexión de audio utilizables. El instalador ofrece una reparación: quitar el controlador, reiniciar, reinstalar y reiniciar otra vez.",
       "El instalador abre el programa de instalación firmado de VB-Audio. Haga clic en Install Driver y reinicie Windows antes de usar el ecualizador o la configuración de VB-CABLE.",
-      "Salga de todos los ecualizadores en ejecución antes de instalar el controlador. Al quitar la última aplicación de SoundCurrent, su desinstalador ofrece quitar VB-CABLE. Otros programas también pueden necesitar el cable. Los cables A/B adicionales no están incluidos."
+      "Salga de todos los ecualizadores en ejecución antes de instalar el controlador. Al quitar la última aplicación de SoundCurrent, su desinstalador ofrece quitar VB-CABLE. Otros programas también pueden necesitar el cable. Los cables A/B adicionales no están incluidos.",
+      "VB-CABLE dirige la reproducción a través de la aplicación. Seleccione los altavoces en SoundCurrent. VB-CABLE es software de VB-Audio financiado por donaciones: https://vb-cable.com — las donaciones son bienvenidas."
     ],
     "it": [
       "Italiano",
@@ -617,7 +621,8 @@
       "VB-CABLE è già presente e verrà riutilizzato. SoundCurrent ripristina l’uscita normale quando viene disattivato o quando usi %1.",
       "VB-CABLE risulta registrato come driver, ma non dispone di endpoint audio utilizzabili. Il programma di installazione offre una riparazione: rimuovere il driver, riavviare, reinstallare e riavviare di nuovo.",
       "La procedura apre il programma di installazione firmato di VB-Audio. Fare clic su Install Driver, quindi riavviare Windows prima di usare l’equalizzatore o le impostazioni di VB-CABLE.",
-      "Uscire da tutti gli equalizzatori in esecuzione prima di installare il driver. Quando si rimuove l’ultima app SoundCurrent, il suo programma di disinstallazione propone di rimuovere VB-CABLE. Anche altri programmi potrebbero aver bisogno del cavo. I cavi A/B aggiuntivi non sono inclusi."
+      "Uscire da tutti gli equalizzatori in esecuzione prima di installare il driver. Quando si rimuove l’ultima app SoundCurrent, il suo programma di disinstallazione propone di rimuovere VB-CABLE. Anche altri programmi potrebbero aver bisogno del cavo. I cavi A/B aggiuntivi non sono inclusi.",
+      "VB-CABLE instrada la riproduzione attraverso l’app. Selezionare gli altoparlanti in SoundCurrent. VB-CABLE è un software di VB-Audio sostenuto dalle donazioni: https://vb-cable.com — le donazioni sono benvenute."
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -741,7 +746,8 @@
       "O VB-CABLE já está presente e será reutilizado. O SoundCurrent repõe a saída habitual quando é desligado ou quando utiliza %1.",
       "VB-CABLE tem um registo de controlador, mas não tem pontos de ligação de áudio utilizáveis. O instalador propõe uma reparação: remover o controlador, reiniciar, reinstalar e reiniciar novamente.",
       "O instalador abre o programa de instalação assinado da VB-Audio. Clique em Install Driver e reinicie o Windows antes de utilizar o equalizador ou as definições do VB-CABLE.",
-      "Feche todos os equalizadores em execução antes de instalar o controlador. Ao remover a última aplicação SoundCurrent, o respetivo desinstalador propõe remover o VB-CABLE. Outros programas também podem precisar do cabo. Os cabos A/B adicionais não estão incluídos."
+      "Feche todos os equalizadores em execução antes de instalar o controlador. Ao remover a última aplicação SoundCurrent, o respetivo desinstalador propõe remover o VB-CABLE. Outros programas também podem precisar do cabo. Os cabos A/B adicionais não estão incluídos.",
+      "VB-CABLE encaminha a reprodução através da aplicação. Escolha os altifalantes no SoundCurrent. VB-CABLE é software da VB-Audio apoiado por donativos: https://vb-cable.com — os donativos são bem-vindos."
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -865,7 +871,8 @@
       "O VB-CABLE já está presente e será reutilizado. O SoundCurrent restaura a saída normal quando é desativado ou quando você usa %1.",
       "VB-CABLE tem um registro de driver, mas não há pontos de conexão de áudio utilizáveis. O instalador oferece um reparo: remover o driver, reiniciar, reinstalar e reiniciar novamente.",
       "O instalador abre o programa de instalação assinado da VB-Audio. Clique em Install Driver e reinicie o Windows antes de usar o equalizador ou as configurações do VB-CABLE.",
-      "Feche todos os equalizadores em execução antes de instalar o driver. Ao remover o último aplicativo SoundCurrent, o desinstalador oferece remover o VB-CABLE. Outros programas também podem precisar do cabo. Os cabos A/B adicionais não estão incluídos."
+      "Feche todos os equalizadores em execução antes de instalar o driver. Ao remover o último aplicativo SoundCurrent, o desinstalador oferece remover o VB-CABLE. Outros programas também podem precisar do cabo. Os cabos A/B adicionais não estão incluídos.",
+      "VB-CABLE encaminha a reprodução pelo aplicativo. Escolha os alto-falantes no SoundCurrent. VB-CABLE é um software da VB-Audio mantido por doações: https://vb-cable.com — doações são bem-vindas."
     ],
     "nl": [
       "Nederlands",
@@ -989,7 +996,8 @@
       "VB-CABLE is al aanwezig en wordt opnieuw gebruikt. SoundCurrent herstelt uw normale uitvoer wanneer het wordt uitgeschakeld of u %1 gebruikt.",
       "VB-CABLE is als stuurprogramma geregistreerd, maar heeft geen bruikbare audio-eindpunten. Het installatieprogramma biedt herstel aan: verwijder het stuurprogramma, start opnieuw op, installeer het opnieuw en start nogmaals opnieuw op.",
       "Het installatieprogramma opent het ondertekende installatieprogramma van VB-Audio. Klik op Install Driver en start Windows opnieuw op voordat u de equalizer of de VB-CABLE-instellingen gebruikt.",
-      "Sluit alle actieve equalizers af voordat u het stuurprogramma installeert. Bij het verwijderen van de laatste SoundCurrent-app biedt het verwijderprogramma aan om VB-CABLE te verwijderen. Andere software kan de kabel ook nodig hebben. Extra A/B-kabels zijn niet inbegrepen."
+      "Sluit alle actieve equalizers af voordat u het stuurprogramma installeert. Bij het verwijderen van de laatste SoundCurrent-app biedt het verwijderprogramma aan om VB-CABLE te verwijderen. Andere software kan de kabel ook nodig hebben. Extra A/B-kabels zijn niet inbegrepen.",
+      "VB-CABLE leidt de weergave door de app. Kies de luidsprekers in SoundCurrent. VB-CABLE is software van VB-Audio die met donaties wordt ondersteund: https://vb-cable.com — donaties zijn welkom."
     ],
     "pl": [
       "Polski",
@@ -1113,7 +1121,8 @@
       "VB-CABLE jest już obecny i zostanie ponownie użyty. SoundCurrent przywraca zwykłe wyjście po wyłączeniu lub użyciu %1.",
       "VB-CABLE jest zarejestrowany jako sterownik, ale nie ma dostępnych punktów końcowych audio. Instalator oferuje naprawę: usuń sterownik, uruchom komputer ponownie, zainstaluj sterownik ponownie i jeszcze raz uruchom komputer ponownie.",
       "Instalator otwiera podpisany program instalacyjny VB-Audio. Kliknij Install Driver, a następnie uruchom ponownie Windows przed użyciem korektora lub ustawień VB-CABLE.",
-      "Przed instalacją sterownika zamknij wszystkie działające korektory. Podczas usuwania ostatniej aplikacji SoundCurrent jej deinstalator proponuje usunięcie VB-CABLE. Inne programy również mogą potrzebować kabla. Dodatkowe kable A/B nie są dołączone."
+      "Przed instalacją sterownika zamknij wszystkie działające korektory. Podczas usuwania ostatniej aplikacji SoundCurrent jej deinstalator proponuje usunięcie VB-CABLE. Inne programy również mogą potrzebować kabla. Dodatkowe kable A/B nie są dołączone.",
+      "VB-CABLE kieruje odtwarzany dźwięk przez aplikację. Wybierz głośniki w SoundCurrent. VB-CABLE to oprogramowanie VB-Audio wspierane darowiznami: https://vb-cable.com — darowizny są mile widziane."
     ],
     "cs": [
       "Čeština",
@@ -1237,7 +1246,8 @@
       "VB-CABLE je již přítomno a bude znovu použito. SoundCurrent obnoví váš běžný výstup po vypnutí nebo použití %1.",
       "VB-CABLE je zaregistrován jako ovladač, ale nemá použitelné zvukové koncové body. Instalátor nabízí opravu: odeberte ovladač, restartujte počítač, znovu ovladač nainstalujte a opět restartujte počítač.",
       "Instalátor otevře podepsaný instalační program VB-Audio. Klikněte na Install Driver a před použitím ekvalizéru nebo nastavení VB-CABLE restartujte Windows.",
-      "Před instalací ovladače ukončete všechny spuštěné ekvalizéry. Při odstraňování poslední aplikace SoundCurrent její odinstalační program nabídne odstranění VB-CABLE. Kabel mohou potřebovat i jiné programy. Další kabely A/B nejsou součástí balíčku."
+      "Před instalací ovladače ukončete všechny spuštěné ekvalizéry. Při odstraňování poslední aplikace SoundCurrent její odinstalační program nabídne odstranění VB-CABLE. Kabel mohou potřebovat i jiné programy. Další kabely A/B nejsou součástí balíčku.",
+      "VB-CABLE směruje přehrávání přes aplikaci. Vyberte reproduktory v SoundCurrent. VB-CABLE je software od VB-Audio podporovaný dary: https://vb-cable.com — dary jsou vítány."
     ],
     "sk": [
       "Slovenčina",
@@ -1361,7 +1371,8 @@
       "VB-CABLE je už prítomné a bude znova použité. SoundCurrent obnoví váš bežný výstup po vypnutí alebo použití %1.",
       "VB-CABLE je zaregistrovaný ako ovládač, ale nemá použiteľné zvukové koncové body. Inštalátor ponúka opravu: odstráňte ovládač, reštartujte počítač, znova ovládač nainštalujte a opäť reštartujte počítač.",
       "Inštalátor otvorí podpísaný inštalačný program VB-Audio. Kliknite na Install Driver a pred použitím ekvalizéra alebo nastavení VB-CABLE reštartujte Windows.",
-      "Pred inštaláciou ovládača ukončite všetky spustené ekvalizéry. Pri odstraňovaní poslednej aplikácie SoundCurrent jej odinštalačný program ponúkne odstránenie VB-CABLE. Kábel môžu potrebovať aj iné programy. Ďalšie káble A/B nie sú súčasťou balíka."
+      "Pred inštaláciou ovládača ukončite všetky spustené ekvalizéry. Pri odstraňovaní poslednej aplikácie SoundCurrent jej odinštalačný program ponúkne odstránenie VB-CABLE. Kábel môžu potrebovať aj iné programy. Ďalšie káble A/B nie sú súčasťou balíka.",
+      "VB-CABLE smeruje prehrávanie cez aplikáciu. Vyberte reproduktory v SoundCurrent. VB-CABLE je softvér od VB-Audio podporovaný darmi: https://vb-cable.com — dary sú vítané."
     ],
     "uk": [
       "Українська",
@@ -1485,7 +1496,8 @@
       "VB-CABLE уже присутній і буде використаний повторно. SoundCurrent відновлює звичайний вихід після вимкнення або використання %1.",
       "VB-CABLE зареєстровано як драйвер, але придатні аудіокінцеві точки відсутні. Інсталятор пропонує відновлення: видаліть драйвер, перезавантажте комп’ютер, установіть драйвер знову та ще раз перезавантажте комп’ютер.",
       "Інсталятор відкриє підписану програму встановлення VB-Audio. Натисніть Install Driver, а потім перезавантажте Windows, перш ніж користуватися еквалайзером або налаштуваннями VB-CABLE.",
-      "Перед установленням драйвера закрийте всі запущені еквалайзери. Під час видалення останньої програми SoundCurrent її деінсталятор пропонує видалити VB-CABLE. Іншим програмам також може бути потрібен цей кабель. Додаткові кабелі A/B не входять до комплекту."
+      "Перед установленням драйвера закрийте всі запущені еквалайзери. Під час видалення останньої програми SoundCurrent її деінсталятор пропонує видалити VB-CABLE. Іншим програмам також може бути потрібен цей кабель. Додаткові кабелі A/B не входять до комплекту.",
+      "VB-CABLE спрямовує відтворення через програму. Виберіть колонки в SoundCurrent. VB-CABLE — програмне забезпечення VB-Audio, підтримуване пожертвами: https://vb-cable.com — пожертви вітаються."
     ],
     "ru": [
       "Русский",
@@ -1609,7 +1621,8 @@
       "VB-CABLE уже присутствует и будет использован повторно. SoundCurrent восстанавливает обычный выход после отключения или использования %1.",
       "VB-CABLE зарегистрирован как драйвер, но доступных аудиоконечных точек нет. Установщик предлагает восстановление: удалите драйвер, перезагрузите компьютер, установите драйвер заново и ещё раз перезагрузите компьютер.",
       "Установщик откроет подписанную программу установки VB-Audio. Нажмите Install Driver, затем перезагрузите Windows перед использованием эквалайзера или настроек VB-CABLE.",
-      "Перед установкой драйвера закройте все работающие эквалайзеры. При удалении последнего приложения SoundCurrent его деинсталлятор предлагает удалить VB-CABLE. Другим программам тоже может понадобиться этот кабель. Дополнительные кабели A/B не входят в комплект."
+      "Перед установкой драйвера закройте все работающие эквалайзеры. При удалении последнего приложения SoundCurrent его деинсталлятор предлагает удалить VB-CABLE. Другим программам тоже может понадобиться этот кабель. Дополнительные кабели A/B не входят в комплект.",
+      "VB-CABLE направляет воспроизведение через приложение. Выберите колонки в SoundCurrent. VB-CABLE — программное обеспечение VB-Audio, поддерживаемое пожертвованиями: https://vb-cable.com — пожертвования приветствуются."
     ],
     "el": [
       "Ελληνικά",
@@ -1733,7 +1746,8 @@
       "Το VB-CABLE υπάρχει ήδη και θα επαναχρησιμοποιηθεί. Το SoundCurrent επαναφέρει τη συνηθισμένη έξοδο όταν απενεργοποιείται ή όταν χρησιμοποιείτε το %1.",
       "Το VB-CABLE είναι καταχωρισμένο ως πρόγραμμα οδήγησης, αλλά δεν έχει διαθέσιμα τελικά σημεία ήχου. Το πρόγραμμα εγκατάστασης προσφέρει επιδιόρθωση: αφαιρέστε το πρόγραμμα οδήγησης, επανεκκινήστε, εγκαταστήστε το ξανά και επανεκκινήστε πάλι.",
       "Η εγκατάσταση ανοίγει το υπογεγραμμένο πρόγραμμα εγκατάστασης της VB-Audio. Κάντε κλικ στο Install Driver και έπειτα επανεκκινήστε τα Windows πριν χρησιμοποιήσετε τον ισοσταθμιστή ή τις ρυθμίσεις του VB-CABLE.",
-      "Κλείστε όλους τους ισοσταθμιστές που εκτελούνται πριν εγκαταστήσετε το πρόγραμμα οδήγησης. Κατά την αφαίρεση της τελευταίας εφαρμογής SoundCurrent, το πρόγραμμα απεγκατάστασής της προσφέρει αφαίρεση του VB-CABLE. Άλλο λογισμικό μπορεί επίσης να χρειάζεται το καλώδιο. Τα πρόσθετα καλώδια A/B δεν περιλαμβάνονται."
+      "Κλείστε όλους τους ισοσταθμιστές που εκτελούνται πριν εγκαταστήσετε το πρόγραμμα οδήγησης. Κατά την αφαίρεση της τελευταίας εφαρμογής SoundCurrent, το πρόγραμμα απεγκατάστασής της προσφέρει αφαίρεση του VB-CABLE. Άλλο λογισμικό μπορεί επίσης να χρειάζεται το καλώδιο. Τα πρόσθετα καλώδια A/B δεν περιλαμβάνονται.",
+      "Το VB-CABLE δρομολογεί την αναπαραγωγή μέσω της εφαρμογής. Επιλέξτε ηχεία μέσα στο SoundCurrent. Το VB-CABLE είναι λογισμικό της VB-Audio που υποστηρίζεται από δωρεές: https://vb-cable.com — οι δωρεές είναι ευπρόσδεκτες."
     ],
     "tr": [
       "Türkçe",
@@ -1857,7 +1871,8 @@
       "VB-CABLE zaten mevcut ve yeniden kullanılacak. SoundCurrent kapatıldığında veya %1 kullandığınızda normal çıkışınızı geri yükler.",
       "VB-CABLE için bir sürücü kaydı var ancak kullanılabilir ses uç noktası yok. Kurulum onarım sunar: sürücüyü kaldırın, yeniden başlatın, sürücüyü yeniden yükleyin ve tekrar yeniden başlatın.",
       "Kurulum, VB-Audio’nun imzalı yükleme programını açar. Install Driver düğmesine tıklayın, ardından ekolayzeri veya VB-CABLE ayarlarını kullanmadan önce Windows’u yeniden başlatın.",
-      "Sürücü kurulumundan önce çalışan tüm ekolayzerlerden çıkın. Son SoundCurrent uygulaması kaldırılırken, kaldırma programı VB-CABLE’ı kaldırma seçeneği sunar. Diğer yazılımlar da kabloya ihtiyaç duyabilir. Ek A/B kabloları pakete dahil değildir."
+      "Sürücü kurulumundan önce çalışan tüm ekolayzerlerden çıkın. Son SoundCurrent uygulaması kaldırılırken, kaldırma programı VB-CABLE’ı kaldırma seçeneği sunar. Diğer yazılımlar da kabloya ihtiyaç duyabilir. Ek A/B kabloları pakete dahil değildir.",
+      "VB-CABLE, çalmayı uygulama üzerinden yönlendirir. Hoparlörleri SoundCurrent içinde seçin. VB-CABLE, VB-Audio’nun bağışlarla desteklenen yazılımıdır: https://vb-cable.com — bağışlar memnuniyetle kabul edilir."
     ],
     "sv": [
       "Svenska",
@@ -1981,7 +1996,8 @@
       "VB-CABLE finns redan och återanvänds. SoundCurrent återställer din vanliga utgång när det stängs av eller när du använder %1.",
       "VB-CABLE är registrerat som drivrutin men har inga användbara ljudslutpunkter. Installationsprogrammet erbjuder reparation: ta bort drivrutinen, starta om, installera den igen och starta om en gång till.",
       "Installationsprogrammet öppnar VB-Audios signerade installationsprogram. Klicka på Install Driver och starta sedan om Windows innan du använder equalizern eller VB-CABLE-inställningarna.",
-      "Avsluta alla equalizerprogram som körs före drivrutinsinstallationen. När den sista SoundCurrent-appen tas bort erbjuder dess avinstallationsprogram att ta bort VB-CABLE. Annan programvara kan också behöva kabeln. Extra A/B-kablar ingår inte."
+      "Avsluta alla equalizerprogram som körs före drivrutinsinstallationen. När den sista SoundCurrent-appen tas bort erbjuder dess avinstallationsprogram att ta bort VB-CABLE. Annan programvara kan också behöva kabeln. Extra A/B-kablar ingår inte.",
+      "VB-CABLE leder uppspelningen genom appen. Välj högtalare i SoundCurrent. VB-CABLE är programvara från VB-Audio som stöds av donationer: https://vb-cable.com — donationer är välkomna."
     ],
     "da": [
       "Dansk",
@@ -2105,7 +2121,8 @@
       "VB-CABLE findes allerede og genbruges. SoundCurrent gendanner din normale udgang, når det slås fra, eller når du bruger %1.",
       "VB-CABLE er registreret som driver, men har ingen brugbare lydendepunkter. Installationsprogrammet tilbyder reparation: fjern driveren, genstart, installer den igen, og genstart endnu en gang.",
       "Installationsprogrammet åbner VB-Audios signerede installationsprogram. Klik på Install Driver, og genstart derefter Windows, før du bruger equalizeren eller VB-CABLE-indstillingerne.",
-      "Afslut alle kørende equalizere før driverinstallationen. Når den sidste SoundCurrent-app fjernes, tilbyder dens afinstallationsprogram at fjerne VB-CABLE. Andre programmer kan også have brug for kablet. Ekstra A/B-kabler er ikke inkluderet."
+      "Afslut alle kørende equalizere før driverinstallationen. Når den sidste SoundCurrent-app fjernes, tilbyder dens afinstallationsprogram at fjerne VB-CABLE. Andre programmer kan også have brug for kablet. Ekstra A/B-kabler er ikke inkluderet.",
+      "VB-CABLE fører afspilningen gennem appen. Vælg højttalere i SoundCurrent. VB-CABLE er software fra VB-Audio, der støttes af donationer: https://vb-cable.com — donationer er velkomne."
     ],
     "nb": [
       "Norsk bokmål",
@@ -2229,7 +2246,8 @@
       "VB-CABLE finnes allerede og brukes på nytt. SoundCurrent gjenoppretter den vanlige utgangen når det slås av eller du bruker %1.",
       "VB-CABLE er registrert som driver, men har ingen brukbare lydendepunkter. Installasjonsprogrammet tilbyr reparasjon: fjern driveren, start på nytt, installer den igjen og start på nytt en gang til.",
       "Installasjonsprogrammet åpner det signerte installasjonsprogrammet fra VB-Audio. Klikk på Install Driver, og start deretter Windows på nytt før du bruker equalizeren eller VB-CABLE-innstillingene.",
-      "Avslutt alle equalizere som kjører før driverinstallasjonen. Når den siste SoundCurrent-appen fjernes, tilbyr avinstallasjonsprogrammet å fjerne VB-CABLE. Annen programvare kan også trenge kabelen. Ekstra A/B-kabler er ikke inkludert."
+      "Avslutt alle equalizere som kjører før driverinstallasjonen. Når den siste SoundCurrent-appen fjernes, tilbyr avinstallasjonsprogrammet å fjerne VB-CABLE. Annen programvare kan også trenge kabelen. Ekstra A/B-kabler er ikke inkludert.",
+      "VB-CABLE ruter avspillingen gjennom appen. Velg høyttalere i SoundCurrent. VB-CABLE er programvare fra VB-Audio som støttes av donasjoner: https://vb-cable.com — donasjoner er velkomne."
     ],
     "fi": [
       "Suomi",
@@ -2353,7 +2371,8 @@
       "VB-CABLE on jo olemassa ja sitä käytetään uudelleen. SoundCurrent palauttaa tavallisen lähtösi, kun taajuuskorjain kytketään pois päältä tai valitset %1.",
       "VB-CABLE on rekisteröity ohjaimeksi, mutta sillä ei ole käytettäviä äänen päätepisteitä. Asennusohjelma tarjoaa korjausta: poista ohjain, käynnistä tietokone uudelleen, asenna ohjain uudelleen ja käynnistä tietokone vielä kerran uudelleen.",
       "Asennusohjelma avaa VB-Audion allekirjoitetun asennusohjelman. Napsauta Install Driver ja käynnistä Windows uudelleen ennen taajuuskorjaimen tai VB-CABLE-asetusten käyttöä.",
-      "Sulje kaikki käynnissä olevat taajuuskorjaimet ennen ohjaimen asennusta. Kun viimeinen SoundCurrent-sovellus poistetaan, sen poisto-ohjelma tarjoaa VB-CABLE-ohjaimen poistamista. Muutkin ohjelmat saattavat tarvita kaapelia. Ylimääräiset A/B-kaapelit eivät sisälly pakettiin."
+      "Sulje kaikki käynnissä olevat taajuuskorjaimet ennen ohjaimen asennusta. Kun viimeinen SoundCurrent-sovellus poistetaan, sen poisto-ohjelma tarjoaa VB-CABLE-ohjaimen poistamista. Muutkin ohjelmat saattavat tarvita kaapelia. Ylimääräiset A/B-kaapelit eivät sisälly pakettiin.",
+      "VB-CABLE reitittää toiston sovelluksen kautta. Valitse kaiuttimet SoundCurrent-sovelluksessa. VB-CABLE on VB-Audion lahjoituksilla tuettu ohjelmisto: https://vb-cable.com — lahjoitukset ovat tervetulleita."
     ],
     "ro": [
       "Română",
@@ -2477,7 +2496,8 @@
       "VB-CABLE este deja prezent și va fi reutilizat. SoundCurrent restabilește ieșirea obișnuită când este dezactivat sau când utilizați %1.",
       "VB-CABLE este înregistrat ca driver, dar nu are puncte terminale audio utilizabile. Programul de instalare oferă repararea: eliminați driverul, reporniți, reinstalați și reporniți din nou.",
       "Programul de instalare deschide programul de instalare semnat al VB-Audio. Faceți clic pe Install Driver, apoi reporniți Windows înainte de a utiliza egalizatorul sau setările VB-CABLE.",
-      "Ieșiți din toate egalizatoarele care rulează înainte de instalarea driverului. La eliminarea ultimei aplicații SoundCurrent, programul ei de dezinstalare oferă eliminarea VB-CABLE. Alte programe pot avea și ele nevoie de cablu. Cablurile A/B suplimentare nu sunt incluse."
+      "Ieșiți din toate egalizatoarele care rulează înainte de instalarea driverului. La eliminarea ultimei aplicații SoundCurrent, programul ei de dezinstalare oferă eliminarea VB-CABLE. Alte programe pot avea și ele nevoie de cablu. Cablurile A/B suplimentare nu sunt incluse.",
+      "VB-CABLE direcționează redarea prin aplicație. Selectați difuzoarele în SoundCurrent. VB-CABLE este un software de la VB-Audio susținut prin donații: https://vb-cable.com — donațiile sunt binevenite."
     ],
     "hu": [
       "Magyar",
@@ -2601,7 +2621,8 @@
       "A VB-CABLE már jelen van, és újra felhasználásra kerül. A SoundCurrent kikapcsoláskor vagy a(z) %1 használatakor visszaállítja a szokásos kimenetet.",
       "A VB-CABLE illesztőprogramként regisztrálva van, de nincsenek használható hangvégpontjai. A telepítő javítást kínál: távolítsa el az illesztőprogramot, indítsa újra a gépet, telepítse újra, majd ismét indítsa újra a gépet.",
       "A telepítő megnyitja a VB-Audio digitálisan aláírt telepítőprogramját. Kattintson az Install Driver gombra, majd indítsa újra a Windowst, mielőtt az equalizert vagy a VB-CABLE beállításait használná.",
-      "Az illesztőprogram telepítése előtt lépjen ki minden futó equalizerből. Az utolsó SoundCurrent alkalmazás eltávolításakor az eltávolítóprogram felajánlja a VB-CABLE eltávolítását. Más szoftvereknek is szükségük lehet a kábelre. A további A/B kábelek nincsenek a csomagban."
+      "Az illesztőprogram telepítése előtt lépjen ki minden futó equalizerből. Az utolsó SoundCurrent alkalmazás eltávolításakor az eltávolítóprogram felajánlja a VB-CABLE eltávolítását. Más szoftvereknek is szükségük lehet a kábelre. A további A/B kábelek nincsenek a csomagban.",
+      "A VB-CABLE az alkalmazáson keresztül vezeti a lejátszást. Válassza ki a hangszórókat a SoundCurrent alkalmazásban. A VB-CABLE a VB-Audio adományokkal támogatott szoftvere: https://vb-cable.com — az adományokat szívesen fogadják."
     ],
     "ar": [
       "العربية",
@@ -2725,7 +2746,8 @@
       "VB-CABLE موجود بالفعل وسيُستخدم مجددًا. يعيد SoundCurrent إخراج الصوت المعتاد عند تعطيله أو عند استخدام %1.",
       "VB-CABLE مسجّل كبرنامج تشغيل، لكن لا توجد نقاط نهاية صوتية قابلة للاستخدام. يتيح برنامج الإعداد الإصلاح: أزل برنامج التشغيل، ثم أعد تشغيل الكمبيوتر، وأعد تثبيته، ثم أعد تشغيل الكمبيوتر مرة أخرى.",
       "يفتح برنامج الإعداد برنامج التثبيت الموقّع من VB-Audio. انقر على Install Driver، ثم أعد تشغيل Windows قبل استخدام المعادل أو إعدادات VB-CABLE.",
-      "أغلق جميع المعادلات الصوتية قيد التشغيل قبل تثبيت برنامج التشغيل. عند إزالة آخر تطبيق من SoundCurrent، يتيح برنامج إلغاء التثبيت إزالة VB-CABLE. قد تحتاج برامج أخرى إلى الكبل أيضًا. كبلات A/B الإضافية غير مرفقة."
+      "أغلق جميع المعادلات الصوتية قيد التشغيل قبل تثبيت برنامج التشغيل. عند إزالة آخر تطبيق من SoundCurrent، يتيح برنامج إلغاء التثبيت إزالة VB-CABLE. قد تحتاج برامج أخرى إلى الكبل أيضًا. كبلات A/B الإضافية غير مرفقة.",
+      "يوجّه VB-CABLE التشغيل عبر التطبيق. اختر مكبرات الصوت داخل SoundCurrent. VB-CABLE برنامج من VB-Audio تدعمه التبرعات: https://vb-cable.com — التبرعات مرحّب بها."
     ],
     "he": [
       "עברית",
@@ -2849,7 +2871,8 @@
       "VB-CABLE כבר קיים וייעשה בו שימוש חוזר. SoundCurrent משחזר את הפלט הרגיל כשהוא מושבת או כשמשתמשים ב־%1.",
       "VB-CABLE רשום כמנהל התקן, אך אין נקודות קצה שמע שמישות. תוכנית ההתקנה מציעה תיקון: להסיר את מנהל ההתקן, להפעיל מחדש, להתקין שוב ולהפעיל מחדש פעם נוספת.",
       "תוכנית ההתקנה פותחת את תוכנית ההתקנה החתומה של VB-Audio. יש ללחוץ על Install Driver, ואז להפעיל מחדש את Windows לפני השימוש באקולייזר או בהגדרות VB-CABLE.",
-      "יש לצאת מכל אקולייזר פועל לפני התקנת מנהל ההתקן. בעת הסרת אפליקציית SoundCurrent האחרונה, תוכנית ההסרה שלה מציעה להסיר את VB-CABLE. ייתכן שגם תוכנות אחרות זקוקות לכבל. כבלי A/B נוספים אינם כלולים."
+      "יש לצאת מכל אקולייזר פועל לפני התקנת מנהל ההתקן. בעת הסרת אפליקציית SoundCurrent האחרונה, תוכנית ההסרה שלה מציעה להסיר את VB-CABLE. ייתכן שגם תוכנות אחרות זקוקות לכבל. כבלי A/B נוספים אינם כלולים.",
+      "VB-CABLE מנתב את ההשמעה דרך האפליקציה. יש לבחור רמקולים בתוך SoundCurrent. VB-CABLE הוא תוכנה של VB-Audio הנתמכת בתרומות: https://vb-cable.com — תרומות מתקבלות בברכה."
     ],
     "fa": [
       "فارسی",
@@ -2973,7 +2996,8 @@
       "VB-CABLE از قبل موجود است و دوباره استفاده خواهد شد. SoundCurrent هنگام غیرفعال شدن یا استفاده از %1، خروجی معمول شما را بازمی‌گرداند.",
       "VB-CABLE به‌عنوان درایور ثبت شده است، اما هیچ نقطهٔ پایانی صوتی قابل استفاده‌ای ندارد. برنامهٔ نصب امکان تعمیر را می‌دهد: درایور را حذف کنید، رایانه را راه‌اندازی مجدد کنید، درایور را دوباره نصب کنید و رایانه را بار دیگر راه‌اندازی مجدد کنید.",
       "برنامهٔ نصب، نصب‌کنندهٔ دارای امضای دیجیتال VB-Audio را باز می‌کند. روی Install Driver کلیک کنید، سپس پیش از استفاده از اکولایزر یا تنظیمات VB-CABLE، Windows را راه‌اندازی مجدد کنید.",
-      "پیش از نصب درایور، از همهٔ اکولایزرهای در حال اجرا خارج شوید. هنگام حذف آخرین برنامهٔ SoundCurrent، حذف‌کنندهٔ آن امکان حذف VB-CABLE را ارائه می‌دهد. نرم‌افزارهای دیگر نیز ممکن است به این کابل نیاز داشته باشند. کابل‌های اضافی A/B در بسته نیستند."
+      "پیش از نصب درایور، از همهٔ اکولایزرهای در حال اجرا خارج شوید. هنگام حذف آخرین برنامهٔ SoundCurrent، حذف‌کنندهٔ آن امکان حذف VB-CABLE را ارائه می‌دهد. نرم‌افزارهای دیگر نیز ممکن است به این کابل نیاز داشته باشند. کابل‌های اضافی A/B در بسته نیستند.",
+      "VB-CABLE پخش را از طریق برنامه هدایت می‌کند. بلندگوها را در SoundCurrent انتخاب کنید. VB-CABLE نرم‌افزاری از VB-Audio است که با کمک‌های مالی پشتیبانی می‌شود: https://vb-cable.com — از کمک‌های مالی استقبال می‌شود."
     ],
     "zh-Hans": [
       "简体中文",
@@ -3097,7 +3121,8 @@
       "VB-CABLE 已存在，将继续使用。关闭 SoundCurrent 的均衡器或使用 %1 时，会恢复常规输出。",
       "VB-CABLE 已有驱动程序记录，但没有可用的音频端点。安装程序提供修复选项：卸载驱动程序、重启电脑、重新安装，然后再次重启电脑。",
       "安装程序会打开 VB-Audio 的已签名安装程序。请点击 Install Driver，然后重启 Windows，再使用均衡器或 VB-CABLE 设置。",
-      "安装驱动程序前，请退出所有正在运行的均衡器。卸载最后一个 SoundCurrent 应用时，其卸载程序会提供卸载 VB-CABLE 的选项。其他软件也可能需要该虚拟音频线。额外的 A/B 虚拟音频线不包含在安装包中。"
+      "安装驱动程序前，请退出所有正在运行的均衡器。卸载最后一个 SoundCurrent 应用时，其卸载程序会提供卸载 VB-CABLE 的选项。其他软件也可能需要该虚拟音频线。额外的 A/B 虚拟音频线不包含在安装包中。",
+      "VB-CABLE 将播放音频路由到应用中处理。请在 SoundCurrent 中选择扬声器。VB-CABLE 是 VB-Audio 以捐赠支持的软件：https://vb-cable.com — 欢迎捐赠。"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -3221,7 +3246,8 @@
       "VB-CABLE 已存在，將繼續使用。停用 SoundCurrent 的等化器或使用 %1 時，會恢復一般輸出。",
       "VB-CABLE 已有驅動程式記錄，但沒有可用的音訊端點。安裝程式提供修復選項：解除安裝驅動程式、重新啟動電腦、重新安裝，然後再次重新啟動電腦。",
       "安裝程式會開啟 VB-Audio 已簽署的安裝程式。請按 Install Driver，然後重新啟動 Windows，再使用等化器或 VB-CABLE 設定。",
-      "安裝驅動程式前，請結束所有正在執行的等化器。解除安裝最後一個 SoundCurrent 應用程式時，其解除安裝程式會提供移除 VB-CABLE 的選項。其他軟體也可能需要該虛擬音訊線。額外的 A/B 虛擬音訊線不包含在安裝套件中。"
+      "安裝驅動程式前，請結束所有正在執行的等化器。解除安裝最後一個 SoundCurrent 應用程式時，其解除安裝程式會提供移除 VB-CABLE 的選項。其他軟體也可能需要該虛擬音訊線。額外的 A/B 虛擬音訊線不包含在安裝套件中。",
+      "VB-CABLE 將播放音訊路由至應用程式處理。請在 SoundCurrent 中選擇喇叭。VB-CABLE 是 VB-Audio 透過捐款支持的軟體：https://vb-cable.com — 歡迎捐款。"
     ],
     "ja": [
       "日本語",
@@ -3345,7 +3371,8 @@
       "VB-CABLE は既に存在し、再利用されます。SoundCurrent はオフにしたとき、または %1 を使用したときに通常の出力を復元します。",
       "VB-CABLE のドライバーは登録されていますが、使用可能なオーディオエンドポイントがありません。セットアップでは修復が可能です。ドライバーを削除し、パソコンを再起動してから再インストールし、もう一度再起動してください。",
       "セットアップは VB-Audio の署名済みインストーラーを開きます。Install Driver をクリックし、Windows を再起動してから、イコライザーや VB-CABLE の設定を使用してください。",
-      "ドライバーをセットアップする前に、実行中のイコライザーをすべて終了してください。最後の SoundCurrent アプリを削除するとき、そのアンインストーラーは VB-CABLE の削除を提案します。他のソフトウェアもこのケーブルを必要とする場合があります。追加の A/B ケーブルは同梱されていません。"
+      "ドライバーをセットアップする前に、実行中のイコライザーをすべて終了してください。最後の SoundCurrent アプリを削除するとき、そのアンインストーラーは VB-CABLE の削除を提案します。他のソフトウェアもこのケーブルを必要とする場合があります。追加の A/B ケーブルは同梱されていません。",
+      "VB-CABLE は再生音声をアプリ経由で出力します。SoundCurrent 内でスピーカーを選択してください。VB-CABLE は寄付によって支えられる VB-Audio のソフトウェアです：https://vb-cable.com — 寄付を歓迎します。"
     ],
     "ko": [
       "한국어",
@@ -3469,7 +3496,8 @@
       "VB-CABLE이 이미 있으며 재사용됩니다. SoundCurrent의 이퀄라이저를 끄거나 %1을 사용하면 원래 출력을 복원합니다.",
       "VB-CABLE 드라이버가 등록되어 있지만 사용 가능한 오디오 엔드포인트가 없습니다. 설치 프로그램에서 복구할 수 있습니다. 드라이버를 제거하고 컴퓨터를 다시 시작한 후 재설치하고 컴퓨터를 한 번 더 다시 시작하세요.",
       "설치 프로그램이 VB-Audio의 서명된 설치 프로그램을 엽니다. Install Driver를 클릭한 후 Windows를 다시 시작하고 이퀄라이저나 VB-CABLE 설정을 사용하세요.",
-      "드라이버 설치 전에 실행 중인 모든 이퀄라이저를 종료하세요. 마지막 SoundCurrent 앱을 제거할 때 해당 제거 프로그램에서 VB-CABLE 제거를 선택할 수 있습니다. 다른 소프트웨어에도 이 케이블이 필요할 수 있습니다. 추가 A/B 케이블은 포함되어 있지 않습니다."
+      "드라이버 설치 전에 실행 중인 모든 이퀄라이저를 종료하세요. 마지막 SoundCurrent 앱을 제거할 때 해당 제거 프로그램에서 VB-CABLE 제거를 선택할 수 있습니다. 다른 소프트웨어에도 이 케이블이 필요할 수 있습니다. 추가 A/B 케이블은 포함되어 있지 않습니다.",
+      "VB-CABLE은 재생 오디오를 앱을 통해 전달합니다. SoundCurrent에서 스피커를 선택하세요. VB-CABLE은 기부로 지원되는 VB-Audio 소프트웨어입니다: https://vb-cable.com — 기부를 환영합니다."
     ],
     "hi": [
       "हिन्दी",
@@ -3593,7 +3621,8 @@
       "VB-CABLE पहले से मौजूद है और दोबारा इस्तेमाल किया जाएगा। SoundCurrent बंद किए जाने या %1 इस्तेमाल करने पर आपका सामान्य आउटपुट वापस बहाल करता है।",
       "VB-CABLE का ड्राइवर रिकॉर्ड मौजूद है, लेकिन उपयोग करने योग्य ऑडियो एंडपॉइंट नहीं हैं। सेटअप मरम्मत का विकल्प देता है: ड्राइवर हटाएँ, कंप्यूटर रीस्टार्ट करें, फिर से इंस्टॉल करें और दोबारा रीस्टार्ट करें।",
       "सेटअप VB-Audio का डिजिटल हस्ताक्षर वाला इंस्टॉलर खोलता है। Install Driver पर क्लिक करें, फिर इक्वलाइज़र या VB-CABLE सेटिंग का उपयोग करने से पहले Windows रीस्टार्ट करें।",
-      "ड्राइवर सेटअप से पहले सभी चल रहे इक्वलाइज़र पूरी तरह बंद करें। आखिरी SoundCurrent ऐप हटाते समय उसका अनइंस्टॉलर VB-CABLE हटाने का विकल्प देता है। दूसरे सॉफ़्टवेयर को भी केबल की ज़रूरत हो सकती है। अतिरिक्त A/B केबल पैकेज में शामिल नहीं हैं।"
+      "ड्राइवर सेटअप से पहले सभी चल रहे इक्वलाइज़र पूरी तरह बंद करें। आखिरी SoundCurrent ऐप हटाते समय उसका अनइंस्टॉलर VB-CABLE हटाने का विकल्प देता है। दूसरे सॉफ़्टवेयर को भी केबल की ज़रूरत हो सकती है। अतिरिक्त A/B केबल पैकेज में शामिल नहीं हैं।",
+      "VB-CABLE प्लेबैक को ऐप के ज़रिए भेजता है। SoundCurrent में स्पीकर चुनें। VB-CABLE, VB-Audio का दान से समर्थित सॉफ़्टवेयर है: https://vb-cable.com — दान का स्वागत है।"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -3717,7 +3746,8 @@
       "VB-CABLE sudah ada dan akan digunakan kembali. SoundCurrent memulihkan keluaran normal saat dinonaktifkan atau saat Anda menggunakan %1.",
       "VB-CABLE terdaftar sebagai driver, tetapi tidak memiliki titik akhir audio yang dapat digunakan. Penginstal menawarkan perbaikan: hapus driver, mulai ulang, instal kembali, lalu mulai ulang sekali lagi.",
       "Penginstal membuka program instalasi VB-Audio yang ditandatangani secara digital. Klik Install Driver, lalu mulai ulang Windows sebelum menggunakan equalizer atau pengaturan VB-CABLE.",
-      "Tutup semua equalizer yang berjalan sebelum memasang driver. Saat aplikasi SoundCurrent terakhir dihapus, program penghapusnya menawarkan penghapusan VB-CABLE. Perangkat lunak lain mungkin juga memerlukan kabel tersebut. Kabel A/B tambahan tidak disertakan."
+      "Tutup semua equalizer yang berjalan sebelum memasang driver. Saat aplikasi SoundCurrent terakhir dihapus, program penghapusnya menawarkan penghapusan VB-CABLE. Perangkat lunak lain mungkin juga memerlukan kabel tersebut. Kabel A/B tambahan tidak disertakan.",
+      "VB-CABLE mengarahkan pemutaran melalui aplikasi. Pilih speaker di SoundCurrent. VB-CABLE adalah perangkat lunak VB-Audio yang didukung donasi: https://vb-cable.com — donasi diterima dengan senang hati."
     ],
     "vi": [
       "Tiếng Việt",
@@ -3841,7 +3871,8 @@
       "VB-CABLE đã có sẵn và sẽ được dùng lại. SoundCurrent khôi phục đầu ra thông thường khi bị tắt hoặc khi bạn dùng %1.",
       "VB-CABLE có bản ghi trình điều khiển nhưng không có điểm cuối âm thanh dùng được. Trình cài đặt cung cấp tùy chọn sửa chữa: gỡ trình điều khiển, khởi động lại, cài đặt lại rồi khởi động lại lần nữa.",
       "Trình cài đặt mở chương trình cài đặt có chữ ký số của VB-Audio. Nhấp vào Install Driver, rồi khởi động lại Windows trước khi dùng bộ cân bằng âm thanh hoặc cài đặt VB-CABLE.",
-      "Thoát mọi bộ cân bằng âm thanh đang chạy trước khi cài đặt trình điều khiển. Khi gỡ ứng dụng SoundCurrent cuối cùng, trình gỡ cài đặt của ứng dụng sẽ đưa ra tùy chọn gỡ VB-CABLE. Phần mềm khác cũng có thể cần cáp này. Cáp A/B bổ sung không được kèm theo."
+      "Thoát mọi bộ cân bằng âm thanh đang chạy trước khi cài đặt trình điều khiển. Khi gỡ ứng dụng SoundCurrent cuối cùng, trình gỡ cài đặt của ứng dụng sẽ đưa ra tùy chọn gỡ VB-CABLE. Phần mềm khác cũng có thể cần cáp này. Cáp A/B bổ sung không được kèm theo.",
+      "VB-CABLE định tuyến âm thanh phát qua ứng dụng. Chọn loa trong SoundCurrent. VB-CABLE là phần mềm của VB-Audio được hỗ trợ bằng đóng góp tự nguyện: https://vb-cable.com — hoan nghênh các khoản đóng góp."
     ],
     "th": [
       "ไทย",
@@ -3965,7 +3996,8 @@
       "มี VB-CABLE อยู่แล้วและจะใช้ต่อไป SoundCurrent จะคืนค่าเอาต์พุตปกติเมื่อปิดใช้งานหรือเมื่อคุณใช้ %1",
       "VB-CABLE มีข้อมูลไดรเวอร์ที่ลงทะเบียนไว้ แต่ไม่มีจุดปลายทางเสียงที่ใช้งานได้ โปรแกรมติดตั้งมีตัวเลือกซ่อมแซม: ถอนการติดตั้งไดรเวอร์ รีสตาร์ทคอมพิวเตอร์ ติดตั้งใหม่ แล้วรีสตาร์ทอีกครั้ง",
       "โปรแกรมติดตั้งจะเปิดโปรแกรมติดตั้งที่มีลายเซ็นดิจิทัลของ VB-Audio คลิก Install Driver แล้วรีสตาร์ท Windows ก่อนใช้ตัวปรับแต่งเสียงหรือการตั้งค่า VB-CABLE",
-      "ออกจากตัวปรับแต่งเสียงทั้งหมดที่กำลังทำงานก่อนติดตั้งไดรเวอร์ เมื่อถอนการติดตั้งแอป SoundCurrent แอปสุดท้าย โปรแกรมถอนการติดตั้งจะมีตัวเลือกให้ลบ VB-CABLE ซอฟต์แวร์อื่นอาจต้องใช้สายนี้ด้วย สาย A/B เพิ่มเติมไม่ได้รวมอยู่ในแพ็กเกจ"
+      "ออกจากตัวปรับแต่งเสียงทั้งหมดที่กำลังทำงานก่อนติดตั้งไดรเวอร์ เมื่อถอนการติดตั้งแอป SoundCurrent แอปสุดท้าย โปรแกรมถอนการติดตั้งจะมีตัวเลือกให้ลบ VB-CABLE ซอฟต์แวร์อื่นอาจต้องใช้สายนี้ด้วย สาย A/B เพิ่มเติมไม่ได้รวมอยู่ในแพ็กเกจ",
+      "VB-CABLE ส่งเสียงที่เล่นผ่านแอป เลือกลำโพงใน SoundCurrent โดย VB-CABLE เป็นซอฟต์แวร์ของ VB-Audio ที่ได้รับการสนับสนุนด้วยเงินบริจาค: https://vb-cable.com — ยินดีรับบริจาค"
     ],
     "sw": [
       "Kiswahili",
@@ -4089,7 +4121,8 @@
       "VB-CABLE tayari ipo na itatumika tena. SoundCurrent hurejesha utoaji wako wa kawaida wa sauti inapozimwa au unapotumia %1.",
       "VB-CABLE imesajiliwa kama kiendeshi, lakini haina sehemu za mwisho za sauti zinazoweza kutumika. Kisakinishi kinatoa chaguo la kurekebisha: ondoa kiendeshi, anzisha kompyuta upya, sakinisha tena, kisha anzisha kompyuta upya mara nyingine.",
       "Kisakinishi hufungua programu ya kusakinisha ya VB-Audio yenye saini ya kidijitali. Bofya Install Driver, kisha anzisha Windows upya kabla ya kutumia kisawazishi au mipangilio ya VB-CABLE.",
-      "Funga kabisa visawazishi vyote vinavyoendeshwa kabla ya kusakinisha kiendeshi. Unapoondoa programu ya mwisho ya SoundCurrent, programu yake ya kuondoa programu hutoa chaguo la kuondoa VB-CABLE. Programu nyingine zinaweza pia kuhitaji kebo hiyo. Kebo za ziada za A/B hazijajumuishwa."
+      "Funga kabisa visawazishi vyote vinavyoendeshwa kabla ya kusakinisha kiendeshi. Unapoondoa programu ya mwisho ya SoundCurrent, programu yake ya kuondoa programu hutoa chaguo la kuondoa VB-CABLE. Programu nyingine zinaweza pia kuhitaji kebo hiyo. Kebo za ziada za A/B hazijajumuishwa.",
+      "VB-CABLE huelekeza sauti inayochezwa kupitia programu. Chagua spika ndani ya SoundCurrent. VB-CABLE ni programu ya VB-Audio inayosaidiwa kwa michango: https://vb-cable.com — michango inakaribishwa."
     ],
     "nn": [
       "Norsk nynorsk",
@@ -4213,7 +4246,8 @@
       "VB-CABLE finst allereie og vert brukt på nytt. SoundCurrent gjenopprettar den vanlege utgangen når det vert slått av eller du brukar %1.",
       "VB-CABLE er registrert som drivar, men har ingen brukande lydendepunkt. Installasjonsprogrammet tilbyr reparasjon: fjern drivaren, start på nytt, installer han på nytt og start på nytt ein gong til.",
       "Installasjonsprogrammet opnar det signerte installasjonsprogrammet frå VB-Audio. Klikk på Install Driver, og start deretter Windows på nytt før du brukar equalizeren eller VB-CABLE-innstillingane.",
-      "Avslutt alle equalizerar som køyrer før drivarinstallasjonen. Når den siste SoundCurrent-appen blir fjerna, tilbyr avinstallasjonsprogrammet å fjerne VB-CABLE. Andre program kan òg trenge kabelen. Ekstra A/B-kablar er ikkje med i pakken."
+      "Avslutt alle equalizerar som køyrer før drivarinstallasjonen. Når den siste SoundCurrent-appen blir fjerna, tilbyr avinstallasjonsprogrammet å fjerne VB-CABLE. Andre program kan òg trenge kabelen. Ekstra A/B-kablar er ikkje med i pakken.",
+      "VB-CABLE rutar avspelinga gjennom appen. Vel høgtalarar i SoundCurrent. VB-CABLE er programvare frå VB-Audio som blir støtta av donasjonar: https://vb-cable.com — donasjonar er velkomne."
     ]
   },
   "requiredCompleteLocales": [

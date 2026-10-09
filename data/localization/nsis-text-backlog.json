@@ -174,9 +174,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 93,
       "kind": "control-caption",
-      "literal": "VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCCableRouting)",
+      "marked": true,
+      "reviewStatus": "all locale cable-routing donation translations prepared; activation and installed layout pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",
