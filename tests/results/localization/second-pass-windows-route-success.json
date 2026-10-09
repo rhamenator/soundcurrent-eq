@@ -1,0 +1,37 @@
+{
+  "scope": "Windows Studio route fixture correction qualification and lossless dialog-test diagnostics",
+  "WindowsRun": {
+    "id": 37863575451,
+    "url": "https://github.com/rhamenator/soundcurrent-studio/actions/runs/37863575451",
+    "sourceCommit": "6a26206c65cdf08bd6ee4a7569a6093c7eadc060",
+    "result": "success",
+    "catalogSourceMessages": 730,
+    "localizedUIChecks": 35,
+    "locales": "33 non-English plus qps-ploc and qps-rtl",
+    "installerBuilt": true,
+    "installUpdateUninstallVerified": false,
+    "evidence": "studio-nested-route-windows-success.log",
+    "sha256": "aab6d411770b6913dd49c7aad640e855bd04d20beecf5b3803113541a812b118",
+    "artifact": {
+      "name": "windows-build",
+      "archiveBytes": 81936722,
+      "digest": "sha256:dafa54551360aa9d3579fccf977fe31c3442d6d0f59b64cdd64c0debe4bf503f"
+    }
+  },
+  "currentChanges": {
+    "dialogTest": "Exact UTF-8 hex logs replace qPrintable; actual Unicode dialog substring assertions unchanged",
+    "eqCI": "Enable same relevant pull-request path trigger as Studio; no release publishing"
+  },
+  "newerInstallerCaptionsCoveredByThisWindowsRun": false,
+  "currentWindowsValidation": "pending CI after diagnostic change",
+  "nativeSpeakerVerification": "unverified",
+  "wholeInterfaceCoverageProven": false,
+  "currentPackagesQualified": false,
+  "hostValidation": {
+    "catalogTests": 41,
+    "passed": 40,
+    "skipped": 1,
+    "scope": "Catalog and diagnostic source guards; Windows logging execution pending",
+    "evidence": "dialog-utf8-catalog-tests.log"
+  }
+}

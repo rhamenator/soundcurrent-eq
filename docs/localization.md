@@ -156,3 +156,7 @@ The installer repair notice now has catalog translations in all 33 non-English l
 ### Signed cable installer instructions
 
 All 33 non-English catalogs now contain the signed-installer notice. The exact external button caption `Install Driver` and the required Windows restart remain intact. Catalog tests and 544 exported caption literals pass syntax checks. This does not qualify installer locale activation, translated layout, or a current installed package. Native-speaker verification is unverified. See `tests/results/localization/second-pass-installer-signed-notice.json`.
+
+### Windows Studio route validation qualification
+
+Windows CI run 37863575451 passed for Studio commit `6a26206`, including 35 localized UI assertions and installer compilation. It predates the newer repair and signed-installer notices and does not test installed-package lifecycle. Test diagnostic logs now preserve exact Unicode as UTF-8 hex; actual dialog assertions remain unchanged. EQ now uses the same relevant PR Windows-check trigger as Studio. See `tests/results/localization/second-pass-windows-route-success.json`.

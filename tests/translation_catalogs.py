@@ -15,6 +15,14 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_setup_dialog_test_logs_exact_utf8(self):
+        root = Path(__file__).resolve().parents[1]
+        code = (root / 'src/windows_audio_setup_test.inc').read_text(encoding='utf-8')
+        self.assertIn('text.contains(expected, Qt::CaseInsensitive)', code)
+        self.assertNotIn('qPrintable', code)
+        for value in ('action', 'expected', 'text'):
+            self.assertIn(value + '.toUtf8().toHex().constData()', code)
+
     def test_signed_installer_notice_preserves_external_button(self):
         root = Path(__file__).resolve().parents[1]
         source = 'Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.'
