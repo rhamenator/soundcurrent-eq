@@ -60,7 +60,8 @@
     },
     {
       "requirement": "Reviewable packages and synchronized commits",
-      "status": "Current Linux .deb and two RPM previews qualified and retained locally; standalone companion assembly remains pending. Existing current-app Windows installer evidence separate."
+      "status": "Unpublished local preview bundle assembled with qualified .deb/Fedora/AlmaLinux packages, all-locale Linux easy installer, earlier qualified Windows installer and source archive. Checksums and 34 installer dry runs passed.",
+      "evidence": "tests/results/localization/preview-bundle-verification.json"
     },
     {
       "requirement": "Preserve virtual driver and separately owned DAW",
@@ -276,5 +277,6 @@
     "tests/results/localization/linux-complete-installer-1/verified-artifact.json",
     "tests/results/localization/linux-complete-installer-2/verified-artifact.json"
   ],
-  "qualifiedLinuxProductionHead": "8489a3eed172ba2d1c0098667e3b3202d7ca8049"
+  "qualifiedLinuxProductionHead": "8489a3eed172ba2d1c0098667e3b3202d7ca8049",
+  "previewBundleEvidence": "tests/results/localization/preview-bundle-verification.json"
 }

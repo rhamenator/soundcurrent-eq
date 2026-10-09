@@ -1,0 +1,18 @@
+{
+  "previewDirectory": "/home/rich/dev/soundcurrent-localization-previews/soundcurrent-eq",
+  "linuxInstaller": "/home/rich/dev/soundcurrent-localization-previews/soundcurrent-eq/SoundCurrent-EQ-Linux-Installer.run",
+  "linuxInstallerSha256": "d8eca8107ce380aec59b6ee7cce2a8b22ccd910bf138dd5a75acbe7cf60e9f2a",
+  "manifestValidated": true,
+  "embeddedCatalogMatchesCurrentSource": true,
+  "localeDryRuns": 34,
+  "packageHashes": {
+    "soundcurrent-eq_1.1.0_amd64.deb": "d454b16a9bf6b6d0f8140ac48e89c781a8f49555f04f49a4f921c4a5b6a258d4",
+    "soundcurrent-eq-1.1.0-1.fc44.x86_64.rpm": "cce4398258283a91dc078af0dbb4a92bc6b667d82168086df4280a476037c379",
+    "soundcurrent-eq-1.1.0-1.el10.x86_64.rpm": "829688d5f107f417f41fd8715fb0c6159ff2201b9535f4dd8d1c05a0f93f5d78"
+  },
+  "windowsQualifiedProductionHead": "6b11bfcd097c4beb0cf48f65bca3a1afd73d23f4",
+  "windowsCurrentAppAndInstallerSourcesMatch": true,
+  "scope": "Local unpublished preview assembly; easy-installer dry runs select current Ubuntu package without download/install. Earlier Linux container and Windows hosted lifecycle qualifications retained separately. No privileged easy-installer execution or native-speaker verification.",
+  "nativeReviewed": false,
+  "releasePublished": false
+}

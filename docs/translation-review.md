@@ -517,3 +517,7 @@ Header brace lists are now inspected entry by entry, matching combo-box lists. M
 ### Complete-catalog Linux package qualification (2026-10-09)
 
 Ubuntu 24.04, Fedora 44 and AlmaLinux 10 artifacts passed hash/manifest verification, CTest (including standalone installer catalog tests), 33 installed non-English locale fixtures, exact launcher metadata, same-package update, uninstall/config preservation and reinstall. Production src/data/CMake/installer files match the qualified heads. Later guard/terminal tests ran locally. Disposable-container fixtures do not prove all-locale visual rendering, older-version migration, privileged easy-installer paths or native-speaker accuracy. Package binaries are retained outside Git; raw qualification logs and verification reports are committed.
+
+### Unpublished preview assembly (2026-10-09)
+
+Local preview bundles contain the qualified Linux packages, assembled easy installer with exact package hashes and all 34 catalogs, previously qualified unchanged Windows app/installer, source archive and SHA256SUMS. All checksums and 34 installer dry runs passed. This is preview preparation, not a published release. The Windows comparison excludes the standalone Linux-only JSON catalog; compiled Windows app/resources and installer sources match the qualified head. Privileged easy-installer execution remains unexercised.
