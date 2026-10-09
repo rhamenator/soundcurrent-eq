@@ -744,6 +744,27 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual([row['literal'] for row in result['candidates']], ['Unmarked label'])
             self.assertFalse(result['wholeInterfaceCoverageProven'])
 
+    def test_display_inventory_covers_tabs_and_help_captions(self):
+        spec = importlib.util.spec_from_file_location('ui_audit', Path(__file__).resolve().parents[1] / 'scripts/ui_string_audit.py')
+        audit = importlib.util.module_from_spec(spec)
+        with patch.dict('sys.modules', {'localization': catalog}):
+            spec.loader.exec_module(audit)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'src').mkdir()
+            (root / 'src/panel.cpp').write_text(
+                'tabs->addTab(panel, "Audio tab"); '
+                'tabs->insertTab(0, panel, QStringLiteral("Routing tab")); '
+                'dialog.setInformativeText("Diagnostic detail"); '
+                'action->setStatusTip("Status guidance"); '
+                'panel->setWhatsThis("Help guidance"); '
+                'tabs->addTab(panel, SC_TR("Already translated")); '
+                'panel->setWhatsThis(userDescription);', encoding='utf-8')
+            rows = audit.inventory(root)['candidates']
+            self.assertEqual({row['literal'] for row in rows}, {
+                'Audio tab', 'Routing tab', 'Diagnostic detail',
+                'Status guidance', 'Help guidance'})
+
     def test_external_installer_label_is_protected_in_reviewed_instruction(self):
         source = 'The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.'
         catalog.validate_text(source, 'Installation retirée. Ouvrez %1 puis cliquez sur Install Driver.')

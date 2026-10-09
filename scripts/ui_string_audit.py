@@ -14,6 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 METHODS = {'setText':0, 'setToolTip':0, 'setAccessibleName':0,
            'setWindowTitle':0, 'setPlaceholderText':0, 'addItem':0,
            'addAction':0, 'addRow':0, 'addButton':0, 'setItemText':1,
+           'addTab':1, 'insertTab':2, 'setInformativeText':0,
+           'setStatusTip':0, 'setWhatsThis':0,
            'getOpenFileName':1, 'getSaveFileName':1,
            'information':1, 'warning':1, 'critical':1, 'question':1}
 CONSTRUCTORS = ('QLabel','QPushButton','QCheckBox','QGroupBox','QRadioButton',
