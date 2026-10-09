@@ -40,13 +40,13 @@
     },
     {
       "requirement": "Changed Linux packages and installed language interfaces",
-      "status": "Qualified preceding balance packages; current graph-axis patch requires fresh artifact qualification",
-      "run": 37899561440,
-      "evidence": "tests/results/localization/linux-balance-installed/verified-artifact.json"
+      "status": "Combined graph-patch packages downloaded/hash-verified, full CTest and install/update/uninstall/preservation/reinstall plus 33 installed locales per image passed",
+      "run": 37901203604,
+      "evidence": "tests/results/localization/linux-graph-installed/verified-artifact.json"
     },
     {
       "requirement": "Changed Windows packages and installed language interfaces",
-      "status": "Qualified preceding balance packages; current graph-axis patch requires fresh artifact qualification",
+      "status": "Qualified preceding balance installer; current combined graph-patch Windows run remains in progress",
       "run": 37899545845,
       "evidence": "tests/results/localization/windows-balance-installed/verified-artifact.json"
     },
@@ -56,7 +56,7 @@
     },
     {
       "requirement": "Reviewable packages and synchronized commits",
-      "status": "current production packages downloaded and hash-verified; committed synchronized fixes; report evidence being committed"
+      "status": "Current Linux graph packages downloaded/hash-verified; Windows balance packages qualified, graph-patch Windows pending; source fixes synced"
     },
     {
       "requirement": "Preserve virtual driver and separately owned DAW",
@@ -255,5 +255,7 @@
   "balanceNumberFormats": "tests/results/localization/balance-number-formats.json",
   "profileGraphNumberFormats": "tests/results/localization/profile-graph-number-formats.json",
   "fileTypeProviderBoundary": "tests/results/localization/file-type-provider-boundary.json",
-  "equalizerGraphNumberFormats": "tests/results/localization/eq-graph-number-formats.json"
+  "equalizerGraphNumberFormats": "tests/results/localization/eq-graph-number-formats.json",
+  "windowsOwnedDiagnosticReview": "tests/results/localization/windows-owned-diagnostic-source-review.json",
+  "displayLiteralGate": "tests/results/localization/display-literal-review-gate.json"
 }

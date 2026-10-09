@@ -6,6 +6,9 @@
   "result": "passed",
   "logSha256": "b503a3e351cfcf2f299313eac5203686401d0b3f85ef3ce475ddda122a9241cf",
   "testScope": "Actual profile editor interaction/change/discard/save/import/preservation/apply fixture; not independent raster/OCR proof of each axis glyph or native-speaker review.",
-  "currentPackageQualification": "pending",
+  "currentPackageQualification": {
+    "linux": "linux-graph-installed/verified-artifact.json",
+    "windows": "graph-patch run still in progress"
+  },
   "nativeReviewed": false
 }

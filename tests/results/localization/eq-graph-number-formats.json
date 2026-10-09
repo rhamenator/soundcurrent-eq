@@ -9,6 +9,9 @@
   "visualReview": "Displayed numeric axes use localized glyphs; captured top page graph retains low-to-high frequency from left to right. Narrow visual review only: does not verify all Arabic wording, every scroll position or every locale.",
   "machineFormattingReview": "Remaining QString::number call sites traced to audio config/command arguments, activation IDs and fixture filenames; kept locale invariant.",
   "inputDialogReview": "Save EQ preset title and Preset name prompt use SC_TR.",
-  "currentPackageQualification": "pending",
+  "currentPackageQualification": {
+    "linux": "linux-graph-installed/verified-artifact.json",
+    "windows": "graph-patch run still in progress"
+  },
   "nativeReviewed": false
 }
