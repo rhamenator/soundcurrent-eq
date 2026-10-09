@@ -88,6 +88,11 @@ Impor ke pustaka Anda?</translation>
       <translation>Operasi gagal: %1 (0x%2)</translation>
     </message>
     <message>
+      <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
+      <translation>Penyiapan %1 belum selesai. Coba lagi melalui pintasan di menu Mulai.</translation>
+      <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -1542,6 +1547,11 @@ Impor ke pustaka Anda?</translation>
       <translation>Buka folder pembaruan</translation>
     </message>
     <message>
+      <source>Opening %1 setup...</source>
+      <translation>Membuka penginstal %1...</translation>
+      <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
+    </message>
+    <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
       <translation>Oranye: respons hasil pengukuran jika tersedia. Hijau kebiruan: koreksi pada 48 kHz. Seret titik kontrol hijau kebiruan atau edit tabel. Penyimpanan mempertahankan referensi dan membuat salinan kustom.</translation>
     </message>
@@ -2051,6 +2061,11 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Set up %1 for %2.</source>
       <translation>Siapkan %1 untuk %2.</translation>
+    </message>
+    <message>
+      <source>Setting up the shared %1 driver...</source>
+      <translation>Menyiapkan driver %1 bersama...</translation>
+      <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>

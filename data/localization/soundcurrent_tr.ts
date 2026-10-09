@@ -88,6 +88,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>İşlem başarısız: %1 (0x%2)</translation>
     </message>
     <message>
+      <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
+      <translation>%1 kurulumu tamamlanmadı. Başlat menüsündeki kısayolu kullanarak yeniden deneyin.</translation>
+      <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -1542,6 +1547,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Güncelleme klasörünü aç</translation>
     </message>
     <message>
+      <source>Opening %1 setup...</source>
+      <translation>%1 kurulumu açılıyor...</translation>
+      <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
+    </message>
+    <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
       <translation>Turuncu: sağlanmışsa ölçülmüş yanıt. Turkuaz: 48 kHz'deki düzeltme. Turkuaz noktaları sürükleyin veya tabloyu düzenleyin. Kaydetmek referansı korur ve özel bir kopya oluşturur.</translation>
     </message>
@@ -2051,6 +2061,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Set up %1 for %2.</source>
       <translation>%2 için %1 kurulumu.</translation>
+    </message>
+    <message>
+      <source>Setting up the shared %1 driver...</source>
+      <translation>Paylaşılan %1 sürücüsü kuruluyor...</translation>
+      <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>

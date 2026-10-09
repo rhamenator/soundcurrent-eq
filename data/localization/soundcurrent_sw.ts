@@ -88,6 +88,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Operesheni imeshindwa: %1 (0x%2)</translation>
     </message>
     <message>
+      <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
+      <translation>Usanidi wa %1 haukukamilika. Jaribu tena kupitia njia ya mkato kwenye menyu ya Anza.</translation>
+      <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -1542,6 +1547,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Fungua folda ya masasisho</translation>
     </message>
     <message>
+      <source>Opening %1 setup...</source>
+      <translation>Inafungua kisakinishi cha %1...</translation>
+      <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
+    </message>
+    <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
       <translation>Rangi ya machungwa: mwitikio uliopimwa ikiwa umetolewa. Kijani kibichi cha samawati: usahihishaji katika 48 kHz. Buruta nukta za rangi hiyo au hariri jedwali. Kuhifadhi huweka rejeleo na kuunda nakala maalumu.</translation>
     </message>
@@ -2051,6 +2061,11 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Set up %1 for %2.</source>
       <translation>Sanidi %1 kwa ajili ya %2.</translation>
+    </message>
+    <message>
+      <source>Setting up the shared %1 driver...</source>
+      <translation>Inasanidi kiendeshi cha %1 kinachoshirikiwa...</translation>
+      <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>

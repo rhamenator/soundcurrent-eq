@@ -56,6 +56,8 @@ Page custom AudioPage AudioPageLeave
 !insertmacro MUI_LANGUAGE "English"
 LangString SCQuitBeforeUpdate ${LANG_ENGLISH} "Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed."
 LangString SCQuitBeforeUninstall ${LANG_ENGLISH} "Quit SoundCurrent EQ before uninstalling it."
+LangString SCCableSetupProgress ${LANG_ENGLISH} "Opening VB-CABLE setup..."
+LangString SCSetupRetryProgress ${LANG_ENGLISH} "VB-CABLE setup did not finish. Retry using the Start menu shortcut."
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
 LangString SCCableRouting ${LANG_ENGLISH} "VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome."
 LangString SCCableSharedNotice ${LANG_ENGLISH} "Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled."
@@ -166,7 +168,7 @@ Section "SoundCurrent EQ" main
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "NoModify" 1
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "NoRepair" 1
   ${If} $InstallDriver == ${BST_CHECKED}
-    DetailPrint "Opening VB-CABLE setup..."
+    DetailPrint "$(SCCableSetupProgress)"
     nsExec::ExecToStack '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy RemoteSigned -File "$INSTDIR\audio-setup.ps1" -Install -Quiet'
     Pop $0
     Pop $1
@@ -175,7 +177,7 @@ Section "SoundCurrent EQ" main
       SetRebootFlag true
       MessageBox MB_OK|MB_ICONINFORMATION "Restart Windows before using SoundCurrent or VB-CABLE settings. The audio driver installation needs a system restart." /SD IDOK
     ${ElseIf} $0 != 0
-      DetailPrint "VB-CABLE setup did not finish. Retry using the Start menu shortcut."
+      DetailPrint "$(SCSetupRetryProgress)"
       MessageBox MB_OK|MB_ICONINFORMATION "VB-CABLE setup did not finish. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason."
     ${EndIf}
   ${EndIf}

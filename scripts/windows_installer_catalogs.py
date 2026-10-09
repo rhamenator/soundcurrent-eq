@@ -8,6 +8,9 @@ from pathlib import Path
 import localization as catalog
 
 SOURCES = {
+    'SCSetupRetryProgress': '%1 setup did not finish. Retry using the Start menu shortcut.',
+    'SCCableSetupProgress': 'Opening %1 setup...',
+    'SCNativeSetupProgress': 'Setting up the shared %1 driver...',
     'SCQuitBeforeUninstall': 'Quit %1 before uninstalling it.',
     'SCQuitBeforeUpdate': 'Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.',
     'SCCableRouting': 'VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.',
@@ -63,18 +66,21 @@ def export(destination, product):
         variants = {}
         for route, driver, checkbox in [('cable', 'VB-CABLE', 'SCInstallCable'),
                                          ('native', 'SoundCurrent Audio', 'SCInstallNative')]:
-            captions = {'SCQuitBeforeUpdate': format_value(translations['SCQuitBeforeUpdate'], product),
+            captions = {'SCSetupRetryProgress': format_value(translations['SCSetupRetryProgress'], driver),
+                        'SCQuitBeforeUpdate': format_value(translations['SCQuitBeforeUpdate'], product),
                         'SCQuitBeforeUninstall': format_value(translations['SCQuitBeforeUninstall'], product),
                         'SCConnectAudio': translations['SCConnectAudio'],
                         'SCSetupAudio': format_names(translations['SCSetupAudio'], driver, product),
                         'SCInstallDriver': translations[checkbox],
                         'SCDriverCheckFailed': format_value(translations['SCDriverCheckFailed'], translations['SCSetupAction'])}
             if route == 'native':
+                captions['SCNativeSetupProgress'] = format_value(translations['SCNativeSetupProgress'], driver)
                 captions['SCNativeRouting'] = translations['SCNativeRouting']
                 captions['SCNativePresent'] = translations['SCNativePresent']
                 captions['SCNativeApproval'] = translations['SCNativeApproval']
                 captions['SCSharedDriverNotice'] = translations['SCSharedDriverNotice']
             if route == 'cable':
+                captions['SCCableSetupProgress'] = format_value(translations['SCCableSetupProgress'], driver)
                 captions['SCCableRouting'] = translations['SCCableRouting']
                 captions['SCCableSharedNotice'] = translations['SCCableSharedNotice']
                 captions['SCCableSignedInstaller'] = translations['SCCableSignedInstaller']
@@ -83,7 +89,7 @@ def export(destination, product):
                 captions['SCCableRestart'] = translations['SCCableRestart']
             variants[route] = {'captions': captions, 'nsisEscaped': {key: nsis_escape(text) for key, text in captions.items()}}
         languages[row['tag']] = variants
-    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair and signed-installer and shared-cable and cable-routing donation and quit-before-update/uninstall guidance only',
+    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair and signed-installer and shared-cable and cable-routing donation and quit-before-update/uninstall and setup progress guidance only',
               'installerLocaleActivationComplete': False, 'nativeSpeakerVerified': False,
               'sources': SOURCES, 'languages': languages}
     destination.parent.mkdir(parents=True, exist_ok=True)

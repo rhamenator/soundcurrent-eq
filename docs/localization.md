@@ -172,3 +172,7 @@ All custom audio-page control captions now use catalog-backed LangStrings, with 
 ### Quit before update and uninstall dialogs
 
 Both installer routes now use catalog translations for the quit-before-update and quit-before-uninstall messages in all 33 non-English locales. Review preserves full process exit, closing-window/background behavior and updates without prior uninstall. A shared single-value formatter rejects malformed placeholders and preserves inserted names literally; existing retry and Quit app captions now use it too. Catalog tests, final exporter tests and 748 caption syntax checks pass. Installer locale activation and installed-package lifecycle qualification remain pending. See `tests/results/localization/second-pass-installer-quit-dialogs.json`.
+
+### Installer progress and retry captions
+
+Three shared catalog sources now translate native driver setup progress, cable installer launch, and retry progress across all 33 non-English locales. Review preserves route names, shared ownership and failure/restart distinctions. All static DetailPrint caption sites use LangStrings; dynamic helper output is preserved. Catalog tests and 884 exported caption literals pass syntax checks. Installer locale activation, current installed UI and package lifecycle remain pending. See `tests/results/localization/second-pass-installer-progress.json`.

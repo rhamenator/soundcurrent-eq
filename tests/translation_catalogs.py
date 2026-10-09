@@ -15,6 +15,36 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_setup_progress_keeps_route_names_and_no_raw_static_details(self):
+        root = Path(__file__).resolve().parents[1]
+        sources = {'SCNativeSetupProgress': 'Setting up the shared %1 driver...',
+                   'SCCableSetupProgress': 'Opening %1 setup...',
+                   'SCSetupRetryProgress': '%1 setup did not finish. Retry using the Start menu shortcut.'}
+        spec = importlib.util.spec_from_file_location('setup_progress_audit', root / 'scripts/nsis_string_audit.py')
+        audit = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(audit)
+        found = audit.inventory(root)
+        details = [row for row in found['candidates'] if row['kind'] == 'DetailPrint']
+        self.assertTrue(details)
+        self.assertTrue(all(row['marked'] for row in details), details)
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text(encoding='utf-8')
+            native = 'native' in installer.stem
+            driver = 'SoundCurrent Audio' if native else 'VB-CABLE'
+            selected = ('SCNativeSetupProgress', 'SCSetupRetryProgress') if native else ('SCCableSetupProgress', 'SCSetupRetryProgress')
+            for key in selected:
+                self.assertIn('DetailPrint "$('+key+')"', code)
+                self.assertEqual(re.findall(r'^LangString '+key+r' \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [sources[key].replace('%1',driver)])
+            self.assertNotIn('SCCableSetupProgress' if native else 'SCNativeSetupProgress', code)
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
+            messages = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))
+            for source in sources.values():
+                self.assertTrue(catalog.finished(messages[source]), row['tag'])
+                translated = messages[source].findtext('translation')
+                catalog.validate_text(source, translated)
+                with self.assertRaisesRegex(ValueError, 'Placeholder mismatch'):
+                    catalog.validate_text(source, translated.replace('%1','%2'))
+
     def test_quit_installer_messages_keep_product_placeholder(self):
         root = Path(__file__).resolve().parents[1]
         product = 'SoundCurrent Studio' if (root / 'src/studio_model.cpp').exists() else 'SoundCurrent EQ'
@@ -356,7 +386,7 @@ class CatalogTests(unittest.TestCase):
             for variants in result['languages'].values():
                 self.assertEqual(set(variants), {'cable', 'native'})
                 for routeName, route in variants.items():
-                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed', 'SCQuitBeforeUpdate', 'SCQuitBeforeUninstall'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller', 'SCCableSharedNotice', 'SCCableRouting'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting'}))
+                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed', 'SCQuitBeforeUpdate', 'SCQuitBeforeUninstall', 'SCSetupRetryProgress'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller', 'SCCableSharedNotice', 'SCCableRouting', 'SCCableSetupProgress'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting', 'SCNativeSetupProgress'}))
                     self.assertEqual(set(route['nsisEscaped']), set(route['captions']))
 
     def test_installer_checkbox_catalog_sources_and_names(self):

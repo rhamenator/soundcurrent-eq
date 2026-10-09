@@ -56,6 +56,8 @@ Page custom AudioPage AudioPageLeave
 !insertmacro MUI_LANGUAGE "English"
 LangString SCQuitBeforeUpdate ${LANG_ENGLISH} "Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed."
 LangString SCQuitBeforeUninstall ${LANG_ENGLISH} "Quit SoundCurrent EQ before uninstalling it."
+LangString SCNativeSetupProgress ${LANG_ENGLISH} "Setting up the shared SoundCurrent Audio driver..."
+LangString SCSetupRetryProgress ${LANG_ENGLISH} "SoundCurrent Audio setup did not finish. Retry using the Start menu shortcut."
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
 LangString SCNativeRouting ${LANG_ENGLISH} "SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved."
 LangString SCNativePresent ${LANG_ENGLISH} "SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app."
@@ -155,7 +157,7 @@ Section "SoundCurrent EQ" main
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "NoModify" 1
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "NoRepair" 1
   ${If} $InstallDriver == ${BST_CHECKED}
-    DetailPrint "Setting up the shared SoundCurrent Audio driver..."
+    DetailPrint "$(SCNativeSetupProgress)"
     nsExec::ExecToStack '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy RemoteSigned -File "$INSTDIR\audio-setup.ps1" -Install -Quiet'
     Pop $0
     Pop $1
@@ -163,7 +165,7 @@ Section "SoundCurrent EQ" main
     ${If} $0 == 3010
       SetRebootFlag true
     ${ElseIf} $0 != 0
-      DetailPrint "SoundCurrent Audio setup did not finish. Retry using the Start menu shortcut."
+      DetailPrint "$(SCSetupRetryProgress)"
       MessageBox MB_OK|MB_ICONINFORMATION "SoundCurrent Audio was not installed. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason."
     ${EndIf}
   ${EndIf}

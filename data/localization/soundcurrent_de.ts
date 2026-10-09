@@ -88,6 +88,11 @@ In Ihre Bibliothek importieren?</translation>
       <translation>%1 fehlgeschlagen (0x%2)</translation>
     </message>
     <message>
+      <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
+      <translation>Die Einrichtung von %1 wurde nicht abgeschlossen. Versuchen Sie es erneut über die Verknüpfung im Startmenü.</translation>
+      <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -1542,6 +1547,11 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Updateordner öffnen</translation>
     </message>
     <message>
+      <source>Opening %1 setup...</source>
+      <translation>%1-Setup wird geöffnet...</translation>
+      <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
+    </message>
+    <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
       <translation>Orange: gemessener Frequenzgang, sofern vorhanden. Türkis: Korrektur bei 48 kHz. Ziehen Sie die türkisen Kontrollpunkte oder bearbeiten Sie die Tabelle. Beim Speichern bleibt die Referenz erhalten und eine benutzerdefinierte Kopie wird erstellt.</translation>
     </message>
@@ -2051,6 +2061,11 @@ In Ihre Bibliothek importieren?</translation>
     <message>
       <source>Set up %1 for %2.</source>
       <translation>%1 für %2 einrichten.</translation>
+    </message>
+    <message>
+      <source>Setting up the shared %1 driver...</source>
+      <translation>Der gemeinsam genutzte %1-Treiber wird eingerichtet...</translation>
+      <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>

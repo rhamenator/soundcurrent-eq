@@ -88,6 +88,11 @@ Import into your library?</source>
       <translation>操作失败：%1 (0x%2)</translation>
     </message>
     <message>
+      <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
+      <translation>%1 安装未完成。请使用开始菜单中的快捷方式重试。</translation>
+      <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -1542,6 +1547,11 @@ Import into your library?</source>
       <translation>打开更新文件夹</translation>
     </message>
     <message>
+      <source>Opening %1 setup...</source>
+      <translation>正在打开 %1 安装程序...</translation>
+      <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
+    </message>
+    <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
       <translation>橙色：实测响应（如有）。青绿色：48 kHz 下的校正。拖动青绿色控制点或编辑表格。保存会保留参考数据并创建自定义副本。</translation>
     </message>
@@ -2051,6 +2061,11 @@ Import into your library?</source>
     <message>
       <source>Set up %1 for %2.</source>
       <translation>为 %2 设置 %1。</translation>
+    </message>
+    <message>
+      <source>Setting up the shared %1 driver...</source>
+      <translation>正在设置共享的 %1 驱动程序...</translation>
+      <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>

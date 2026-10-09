@@ -102,17 +102,17 @@
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 148,
       "kind": "DetailPrint",
-      "literal": "Setting up the shared SoundCurrent Audio driver...",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCNativeSetupProgress)",
+      "marked": true,
+      "reviewStatus": "all locale setup progress/retry translations prepared; activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 156,
       "kind": "DetailPrint",
-      "literal": "SoundCurrent Audio setup did not finish. Retry using the Start menu shortcut.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCSetupRetryProgress)",
+      "marked": true,
+      "reviewStatus": "all locale setup progress/retry translations prepared; activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
@@ -254,9 +254,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 157,
       "kind": "DetailPrint",
-      "literal": "Opening VB-CABLE setup...",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCCableSetupProgress)",
+      "marked": true,
+      "reviewStatus": "all locale setup progress/retry translations prepared; activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",
@@ -270,9 +270,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 166,
       "kind": "DetailPrint",
-      "literal": "VB-CABLE setup did not finish. Retry using the Start menu shortcut.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCSetupRetryProgress)",
+      "marked": true,
+      "reviewStatus": "all locale setup progress/retry translations prepared; activation pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",

@@ -88,6 +88,11 @@ Import into your library?</source>
       <translation>작업 실패: %1 (0x%2)</translation>
     </message>
     <message>
+      <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
+      <translation>%1 설치가 완료되지 않았습니다. 시작 메뉴의 바로 가기로 다시 시도하세요.</translation>
+      <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -1542,6 +1547,11 @@ Import into your library?</source>
       <translation>업데이트 폴더 열기</translation>
     </message>
     <message>
+      <source>Opening %1 setup...</source>
+      <translation>%1 설치 프로그램을 여는 중...</translation>
+      <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
+    </message>
+    <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
       <translation>주황색: 제공된 측정 응답. 청록색: 48 kHz에서의 보정. 청록색 제어점을 드래그하거나 표를 편집하세요. 저장하면 참조 데이터를 유지한 채 사용자 지정 사본을 만듭니다.</translation>
     </message>
@@ -2051,6 +2061,11 @@ Import into your library?</source>
     <message>
       <source>Set up %1 for %2.</source>
       <translation>%2용 %1을 설정합니다.</translation>
+    </message>
+    <message>
+      <source>Setting up the shared %1 driver...</source>
+      <translation>공유 %1 드라이버를 설정하는 중...</translation>
+      <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>

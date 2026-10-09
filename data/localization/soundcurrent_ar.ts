@@ -88,6 +88,11 @@ Import into your library?</source>
       <translation>فشلت العملية: %1 (0x%2)</translation>
     </message>
     <message>
+      <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
+      <translation>لم يكتمل إعداد %1. أعد المحاولة باستخدام الاختصار في قائمة ابدأ.</translation>
+      <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>%1%2 dB</source>
       <translation>%1%2 dB</translation>
     </message>
@@ -1542,6 +1547,11 @@ Import into your library?</source>
       <translation>فتح مجلد التحديث</translation>
     </message>
     <message>
+      <source>Opening %1 setup...</source>
+      <translation>جارٍ فتح إعداد %1...</translation>
+      <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
+    </message>
+    <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
       <translation>البرتقالي: الاستجابة المقاسة عند توفرها. الأزرق المخضر: التصحيح عند 48 kHz. اسحب نقاط التحكم الزرقاء المخضرة أو حرر الجدول. يحافظ الحفظ على المرجع وينشئ نسخة مخصصة.</translation>
     </message>
@@ -2051,6 +2061,11 @@ Import into your library?</source>
     <message>
       <source>Set up %1 for %2.</source>
       <translation>إعداد %1 لاستخدامه مع %2.</translation>
+    </message>
+    <message>
+      <source>Setting up the shared %1 driver...</source>
+      <translation>جارٍ إعداد برنامج التشغيل المشترك %1...</translation>
+      <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
