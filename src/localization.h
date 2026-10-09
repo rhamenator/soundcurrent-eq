@@ -137,8 +137,20 @@ public:
     bool isEmpty() const override { return false; }
     QString translate(const char *context, const char *source, const char *, int) const override {
         const QByteArray name(context);
-        if (name != "QPlatformTheme" && name != "QDialogButtonBox") return {};
         const QByteArray action(source);
+        if (name == "QLineEdit" || name == "QWidgetTextControl" || name == "QAbstractSpinBox") {
+            if (action == "&Undo") return text("Undo");
+            if (action == "&Redo") return text("Redo");
+            if (action == "Cu&t") return text("Cut");
+            if (action == "&Copy") return text("Copy");
+            if (action == "&Paste") return text("Paste");
+            if (action == "Delete") return text("Delete");
+            if (action == "Select All" || action == "&Select All") return text("Select all");
+            if (name == "QAbstractSpinBox" && action == "&Step up") return text("Step up");
+            if (name == "QAbstractSpinBox" && action == "Step &down") return text("Step down");
+            return {};
+        }
+        if (name != "QPlatformTheme" && name != "QDialogButtonBox") return {};
         if (action == "OK") return text("OK");
         if (action == "&Yes") return text("Yes");
         if (action == "&No") return text("No");

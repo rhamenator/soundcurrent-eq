@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-09",
+  "sourceMessages": 636,
+  "catalogs": 34,
+  "unfinished": 0,
+  "nativeReviewed": false,
+  "scope": "Qt standard text editing menus and spin-box captions",
+  "addedSources": [
+    "Redo",
+    "Cut",
+    "Copy",
+    "Paste",
+    "Delete",
+    "Select all",
+    "Step up",
+    "Step down"
+  ],
+  "localChecks": {
+    "compiledQtLineEditAndTextEditMenus": "passed for all 33 non-English catalogs",
+    "spinCaptionContextLookup": "passed for all 33 non-English catalogs",
+    "unrelatedPluginContextUnmodified": "passed",
+    "catalogStructuralAndHashChecks": "passed"
+  },
+  "limitations": [
+    "Native linguistic verification pending",
+    "Spin menu visual interaction not tested",
+    "Current revision Windows and package validation pending",
+    "Whole-interface coverage remains under audit"
+  ],
+  "localVmStarted": false
+}

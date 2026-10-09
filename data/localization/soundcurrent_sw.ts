@@ -568,6 +568,11 @@ Uingize kwenye maktaba yako?</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
+      <source>Copy</source>
+      <translation>Nakili</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Correction filters:</source>
       <translation>Vichujio vya marekebisho:</translation>
       <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
@@ -693,12 +698,22 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Maalumu</translation>
     </message>
     <message>
+      <source>Cut</source>
+      <translation>Kata</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Dance</source>
       <translation>Muziki wa dansi</translation>
     </message>
     <message>
       <source>Deep Bass</source>
       <translation>Besi nzito</translation>
+    </message>
+    <message>
+      <source>Delete</source>
+      <translation>Futa</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Discard</source>
@@ -1592,6 +1607,11 @@ Uingize kwenye maktaba yako?</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
+      <source>Paste</source>
+      <translation>Bandika</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>Sitisha uchakataji kwa muda na ufungue usanidi wa sauti. Programu hubaki wazi na kuripoti matokeo. Anzisha Windows upya baada ya kusakinisha kiendeshi.</translation>
     </message>
@@ -1855,6 +1875,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Kusoma umbizo la kuchanganya sauti la toleo pepe</translation>
     </message>
     <message>
+      <source>Redo</source>
+      <translation>Rudia</translation>
+      <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Onyesha vifaa upya</translation>
     </message>
@@ -2015,6 +2040,11 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Second virtual cable for microphone EQ</source>
       <translation>Kebo pepe ya pili kwa EQ ya maikrofoni</translation>
+    </message>
+    <message>
+      <source>Select all</source>
+      <translation>Chagua yote</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Select band %1</source>
@@ -2255,6 +2285,16 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Startup</source>
       <translation>Kuanzisha programu</translation>
+    </message>
+    <message>
+      <source>Step down</source>
+      <translation>Punguza thamani</translation>
+      <extracomment>Decrease the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Step up</source>
+      <translation>Ongeza thamani</translation>
+      <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>

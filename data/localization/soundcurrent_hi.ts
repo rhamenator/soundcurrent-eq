@@ -568,6 +568,11 @@ Import into your library?</source>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
+      <source>Copy</source>
+      <translation>कॉपी करें</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Correction filters:</source>
       <translation>सुधार फ़िल्टर:</translation>
       <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
@@ -693,12 +698,22 @@ Import into your library?</source>
       <translation>कस्टम</translation>
     </message>
     <message>
+      <source>Cut</source>
+      <translation>काटें</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Dance</source>
       <translation>डांस</translation>
     </message>
     <message>
       <source>Deep Bass</source>
       <translation>गहरा बास</translation>
+    </message>
+    <message>
+      <source>Delete</source>
+      <translation>हटाएँ</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Discard</source>
@@ -1592,6 +1607,11 @@ Import into your library?</source>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
+      <source>Paste</source>
+      <translation>चिपकाएँ</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>प्रोसेसिंग रोककर ऑडियो सेटअप खोलें। ऐप खुला रहता है और परिणाम दिखाता है। ड्राइवर इंस्टॉल करने के बाद Windows पुनः प्रारंभ करें।</translation>
     </message>
@@ -1855,6 +1875,11 @@ Import into your library?</source>
       <translation>वर्चुअल आउटपुट का मिक्स फ़ॉर्मैट पढ़ना</translation>
     </message>
     <message>
+      <source>Redo</source>
+      <translation>फिर करें</translation>
+      <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>उपकरण सूची अपडेट करें</translation>
     </message>
@@ -2015,6 +2040,11 @@ Import into your library?</source>
     <message>
       <source>Second virtual cable for microphone EQ</source>
       <translation>माइक्रोफ़ोन EQ के लिए दूसरी वर्चुअल केबल</translation>
+    </message>
+    <message>
+      <source>Select all</source>
+      <translation>सभी चुनें</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Select band %1</source>
@@ -2255,6 +2285,16 @@ Import into your library?</source>
     <message>
       <source>Startup</source>
       <translation>स्टार्टअप</translation>
+    </message>
+    <message>
+      <source>Step down</source>
+      <translation>मान घटाएँ</translation>
+      <extracomment>Decrease the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Step up</source>
+      <translation>मान बढ़ाएँ</translation>
+      <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>

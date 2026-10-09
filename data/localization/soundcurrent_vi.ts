@@ -568,6 +568,11 @@ Nhập vào thư viện của bạn?</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
+      <source>Copy</source>
+      <translation>Sao chép</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Correction filters:</source>
       <translation>Bộ lọc hiệu chỉnh:</translation>
       <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
@@ -693,12 +698,22 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Tùy chỉnh</translation>
     </message>
     <message>
+      <source>Cut</source>
+      <translation>Cắt</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Dance</source>
       <translation>Nhạc dance</translation>
     </message>
     <message>
       <source>Deep Bass</source>
       <translation>Âm trầm sâu</translation>
+    </message>
+    <message>
+      <source>Delete</source>
+      <translation>Xóa</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Discard</source>
@@ -1592,6 +1607,11 @@ Nhập vào thư viện của bạn?</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
+      <source>Paste</source>
+      <translation>Dán</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>Tạm dừng xử lý và mở thiết lập âm thanh. Ứng dụng vẫn mở và báo kết quả. Khởi động lại Windows sau khi cài driver.</translation>
     </message>
@@ -1855,6 +1875,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Đọc định dạng trộn của đầu ra ảo</translation>
     </message>
     <message>
+      <source>Redo</source>
+      <translation>Làm lại</translation>
+      <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Làm mới thiết bị</translation>
     </message>
@@ -2015,6 +2040,11 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Second virtual cable for microphone EQ</source>
       <translation>Cáp ảo thứ hai cho EQ micrô</translation>
+    </message>
+    <message>
+      <source>Select all</source>
+      <translation>Chọn tất cả</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Select band %1</source>
@@ -2255,6 +2285,16 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Startup</source>
       <translation>Khởi động</translation>
+    </message>
+    <message>
+      <source>Step down</source>
+      <translation>Giảm giá trị</translation>
+      <extracomment>Decrease the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Step up</source>
+      <translation>Tăng giá trị</translation>
+      <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>

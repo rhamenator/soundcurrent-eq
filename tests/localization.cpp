@@ -8,6 +8,8 @@
 #include <QPushButton>
 #include <QJsonDocument>
 #include <QLineEdit>
+#include <QMenu>
+#include <QTextEdit>
 #include <QTemporaryDir>
 #include <QUuid>
 #include <stdexcept>
@@ -345,6 +347,21 @@ int main(int argc,char **argv){
   for(const auto &language:languages()) {
    if(language.tag=="en")continue;
    QSettings().setValue("i18n/language",language.tag);Runtime runtime;runtime.initialize();
+   QLineEdit line;line.setText(QStringLiteral("selection"));line.selectAll();
+   QTextEdit paragraph;paragraph.setPlainText(QStringLiteral("selection"));paragraph.selectAll();
+   for(auto *menu:{line.createStandardContextMenu(),paragraph.createStandardContextMenu()}) {
+    for(const char *caption:{"Undo","Redo","Cut","Copy","Paste","Delete","Select all"}) {
+     bool found=false;
+     for(const auto *action:menu->actions())
+      if(action->text().section('\t',0,0).remove('&')==text(caption))found=true;
+     require(found,"Qt editing menu caption did not use the app catalog");
+    }
+    delete menu;
+   }
+   require(QCoreApplication::translate("QAbstractSpinBox","&Step up")==text("Step up"),"Spin increment stayed English");
+   require(QCoreApplication::translate("QAbstractSpinBox","Step &down")==text("Step down"),"Spin decrement stayed English");
+   require(QCoreApplication::translate("UnrelatedPlugin","&Copy")==QStringLiteral("&Copy"),"Standard menu mapping leaked into unrelated contexts");
+
    require(audioErrorText(QStringLiteral("The selected EQ settings are invalid"))==text("Invalid equalizer settings"),"Backend EQ error did not use translated view text");
    for(const char *source:{"Could not initialize Windows audio COM","Invalid calibration audio","Unsupported recording format","Microphone recording consumer stalled","Microphone start timed out","Cable recording endpoint does not support shared 48 kHz stereo float audio","Audio route recovery helper could not start. Repair or reinstall SoundCurrent."}) {
     const auto mapped=audioErrorText(QString::fromUtf8(source));

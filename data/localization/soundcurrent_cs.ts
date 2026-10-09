@@ -568,6 +568,11 @@ Importovat do vaší knihovny?</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
+      <source>Copy</source>
+      <translation>Kopírovat</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Correction filters:</source>
       <translation>Korekční filtry:</translation>
       <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
@@ -693,12 +698,22 @@ Importovat do vaší knihovny?</translation>
       <translation>Vlastní</translation>
     </message>
     <message>
+      <source>Cut</source>
+      <translation>Vyjmout</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Dance</source>
       <translation>Taneční hudba</translation>
     </message>
     <message>
       <source>Deep Bass</source>
       <translation>Hluboké basy</translation>
+    </message>
+    <message>
+      <source>Delete</source>
+      <translation>Odstranit</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Discard</source>
@@ -1592,6 +1607,11 @@ Importovat do vaší knihovny?</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
+      <source>Paste</source>
+      <translation>Vložit</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>Pozastavit zpracování a otevřít nastavení zvuku. Aplikace zůstane otevřená a oznámí výsledek. Po instalaci ovladače restartujte Windows.</translation>
     </message>
@@ -1855,6 +1875,11 @@ Importovat do vaší knihovny?</translation>
       <translation>Přečíst směšovací formát virtuálního výstupu</translation>
     </message>
     <message>
+      <source>Redo</source>
+      <translation>Znovu</translation>
+      <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Obnovit seznam zařízení</translation>
     </message>
@@ -2015,6 +2040,11 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Second virtual cable for microphone EQ</source>
       <translation>Druhý virtuální kabel pro mikrofonní EQ</translation>
+    </message>
+    <message>
+      <source>Select all</source>
+      <translation>Vybrat vše</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Select band %1</source>
@@ -2255,6 +2285,16 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Startup</source>
       <translation>Spouštění</translation>
+    </message>
+    <message>
+      <source>Step down</source>
+      <translation>Snížit hodnotu</translation>
+      <extracomment>Decrease the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Step up</source>
+      <translation>Zvýšit hodnotu</translation>
+      <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>

@@ -568,6 +568,11 @@ Impor ke pustaka Anda?</translation>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
+      <source>Copy</source>
+      <translation>Salin</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Correction filters:</source>
       <translation>Filter koreksi:</translation>
       <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
@@ -693,12 +698,22 @@ Impor ke pustaka Anda?</translation>
       <translation>Kustom</translation>
     </message>
     <message>
+      <source>Cut</source>
+      <translation>Potong</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Dance</source>
       <translation>Dance</translation>
     </message>
     <message>
       <source>Deep Bass</source>
       <translation>Bas dalam</translation>
+    </message>
+    <message>
+      <source>Delete</source>
+      <translation>Hapus</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Discard</source>
@@ -1592,6 +1607,11 @@ Impor ke pustaka Anda?</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
+      <source>Paste</source>
+      <translation>Tempel</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>Jeda pemrosesan dan buka penyiapan audio. Aplikasi tetap terbuka dan melaporkan hasilnya. Mulai ulang Windows setelah menginstal driver.</translation>
     </message>
@@ -1855,6 +1875,11 @@ Impor ke pustaka Anda?</translation>
       <translation>Membaca format pencampuran keluaran virtual</translation>
     </message>
     <message>
+      <source>Redo</source>
+      <translation>Ulangi</translation>
+      <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Perbarui daftar perangkat</translation>
     </message>
@@ -2015,6 +2040,11 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Second virtual cable for microphone EQ</source>
       <translation>Kabel virtual kedua untuk EQ mikrofon</translation>
+    </message>
+    <message>
+      <source>Select all</source>
+      <translation>Pilih semua</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Select band %1</source>
@@ -2255,6 +2285,16 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Startup</source>
       <translation>Mulai otomatis</translation>
+    </message>
+    <message>
+      <source>Step down</source>
+      <translation>Turunkan nilai</translation>
+      <extracomment>Decrease the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Step up</source>
+      <translation>Naikkan nilai</translation>
+      <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>

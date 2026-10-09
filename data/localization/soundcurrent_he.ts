@@ -568,6 +568,11 @@ Import into your library?</source>
       <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
     </message>
     <message>
+      <source>Copy</source>
+      <translation>העתקה</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Correction filters:</source>
       <translation>מסנני תיקון:</translation>
       <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
@@ -693,12 +698,22 @@ Import into your library?</source>
       <translation>מותאם אישית</translation>
     </message>
     <message>
+      <source>Cut</source>
+      <translation>גזירה</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Dance</source>
       <translation>דאנס</translation>
     </message>
     <message>
       <source>Deep Bass</source>
       <translation>בס עמוק</translation>
+    </message>
+    <message>
+      <source>Delete</source>
+      <translation>מחיקה</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Discard</source>
@@ -1592,6 +1607,11 @@ Import into your library?</source>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
     </message>
     <message>
+      <source>Paste</source>
+      <translation>הדבקה</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>השהיית העיבוד ופתיחת הגדרת השמע. האפליקציה נשארת פתוחה ומדווחת על התוצאה. יש להפעיל מחדש את Windows לאחר התקנת מנהל ההתקן.</translation>
     </message>
@@ -1855,6 +1875,11 @@ Import into your library?</source>
       <translation>קריאת תבנית המיקס של הפלט הווירטואלי</translation>
     </message>
     <message>
+      <source>Redo</source>
+      <translation>ביצוע מחדש</translation>
+      <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>רענון מכשירים</translation>
     </message>
@@ -2015,6 +2040,11 @@ Import into your library?</source>
     <message>
       <source>Second virtual cable for microphone EQ</source>
       <translation>כבל וירטואלי שני לאקולייזר המיקרופון</translation>
+    </message>
+    <message>
+      <source>Select all</source>
+      <translation>בחירת הכול</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Select band %1</source>
@@ -2255,6 +2285,16 @@ Import into your library?</source>
     <message>
       <source>Startup</source>
       <translation>הפעלה אוטומטית</translation>
+    </message>
+    <message>
+      <source>Step down</source>
+      <translation>הקטנת הערך</translation>
+      <extracomment>Decrease the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Step up</source>
+      <translation>הגדלת הערך</translation>
+      <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
