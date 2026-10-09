@@ -15,6 +15,17 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_cli_help_preserves_reviewed_limits_and_identifiers(self):
+        for source, tokens in catalog.REVIEWED_CLI_TOKENS.items():
+            translated = 'Texte ' + ' '.join(tokens)
+            catalog.validate_text(source, translated)
+            for token in tokens:
+                with self.subTest(source=source, token=token):
+                    with self.assertRaisesRegex(ValueError, 'CLI invariant changed'):
+                        catalog.validate_text(source, translated.replace(token, '', 1))
+                    with self.assertRaisesRegex(ValueError, 'CLI invariant changed'):
+                        catalog.validate_text(source, translated + ' ' + token)
+
     def test_welcome_paragraphs_keep_update_and_background_meaning(self):
         root = Path(__file__).resolve().parents[1]
         product = 'SoundCurrent Studio' if (root / 'src/studio_model.cpp').exists() else 'SoundCurrent EQ'

@@ -247,7 +247,19 @@ REVIEWED_FILE_IDENTIFIERS = {'Cannot create output WAVE file': ('WAVE',),
  'Unsupported extensible WAVE subtype': ('WAVE',),
  'WAVE output exceeds its declared length': ('WAVE',)}
 
+# Reviewed CLI help contracts; signs, limits and identifiers are not prose.
+REVIEWED_CLI_TOKENS = {
+    '1-256 output channels (default: input count)': ('1-256',),
+    'optional channel low-pass (e.g. LFE)': ('LFE',),
+    'output channel trim, -60 to +24 dB': ('-60', '+24', 'dB'),
+    'overall post gain, -84 to +24 dB': ('-84', '+24', 'dB'),
+}
+
+
 def validate_text(source, translated):
+    for token in REVIEWED_CLI_TOKENS.get(source, ()):
+        if source.count(token) != translated.count(token):
+            raise ValueError('CLI invariant changed: ' + token)
     for identifier in REVIEWED_FILE_IDENTIFIERS.get(source, ()):
         if translated.count(identifier) != source.count(identifier):
             raise ValueError('File-format identifier changed: ' + identifier)
