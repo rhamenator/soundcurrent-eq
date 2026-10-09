@@ -2786,9 +2786,9 @@ private:
         preview.exec();
         if (preview.clickedButton() == saveMeasured) {
             soundcurrent::equipment::Profile p;
-            p.kind = "speaker"; p.brand = "Custom"; p.family = "Whole listening system"; p.model = "Measured listening position"; p.custom = true;
-            p.conditions = "Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. " + inputCombo_->currentText() + " / " + outputCombo_->currentText();
-            p.provenance = "SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.";
+            p.kind = "speaker"; p.brand = SC_TR("Custom"); p.family = SC_TR("Whole listening system"); p.model = SC_TR("Measured listening position"); p.custom = true;
+            p.conditions = SC_TR("Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2").arg(inputCombo_->currentText(), outputCombo_->currentText());
+            p.provenance = SC_TR("SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.");
             const auto levels = result.value("levels").toArray(); QVector<double> db;
             for (const auto &v : levels) if (v.isDouble() && v.toDouble() > 0) db.append(20 * std::log10(v.toDouble()));
             std::sort(db.begin(),db.end()); const double reference = db[db.size()/2];

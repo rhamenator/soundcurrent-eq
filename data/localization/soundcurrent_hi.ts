@@ -653,6 +653,11 @@ Do you want to delete it anyway?</source>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
     </message>
     <message>
+      <source>Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2</source>
+      <translation>स्पीकर/एम्प्लीफायर/माइक्रोफ़ोन/कमरे की संयुक्त प्रतिक्रिया; यह किसी एक उपकरण का अलग मापन नहीं है। %1 / %2</translation>
+      <extracomment>New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>माप की स्थितियाँ</translation>
     </message>
@@ -1544,6 +1549,11 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Measure speaker room and microphone response</source>
       <translation>स्पीकर, कमरे और माइक्रोफ़ोन की प्रतिक्रिया मापें</translation>
+    </message>
+    <message>
+      <source>Measured listening position</source>
+      <translation>मापी गई सुनने की स्थिति</translation>
+      <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
@@ -2505,6 +2515,11 @@ Do you want to delete it anyway?</source>
       <translation>SoundCurrent Audio प्लेबैक को ऐप के ज़रिए भेजता है। ऐप में अपने वास्तविक स्पीकर या हेडफ़ोन चुनें। उनके हार्डवेयर ड्राइवर सुरक्षित रखे जाते हैं।</translation>
     </message>
     <message>
+      <source>SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.</source>
+      <translation>SoundCurrent स्वीप या टोन मापन; माध्यिका के सापेक्ष; माइक्रोफ़ोन EQ बायपास किया गया। प्लेबैक EQ शामिल हो सकता है।</translation>
+      <extracomment>New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.</extracomment>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>SoundCurrent वर्चुअल आउटपुट के लिए 48 kHz स्टीरियो फ़्लोटिंग-पॉइंट ऑडियो चाहिए</translation>
     </message>
@@ -2945,6 +2960,11 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Warmth</source>
       <translation>गर्माहट</translation>
+    </message>
+    <message>
+      <source>Whole listening system</source>
+      <translation>संपूर्ण श्रवण प्रणाली</translation>
+      <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

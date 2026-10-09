@@ -653,6 +653,11 @@ Do you want to delete it anyway?</source>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
     </message>
     <message>
+      <source>Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2</source>
+      <translation>喇叭、擴大機、麥克風和房間的綜合響應；不是單一設備的獨立量測。%1 / %2</translation>
+      <extracomment>New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>條件</translation>
     </message>
@@ -1544,6 +1549,11 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Measure speaker room and microphone response</source>
       <translation>測量喇叭、房間及麥克風的響應</translation>
+    </message>
+    <message>
+      <source>Measured listening position</source>
+      <translation>已量測的聆聽位置</translation>
+      <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
@@ -2505,6 +2515,11 @@ Do you want to delete it anyway?</source>
       <translation>SoundCurrent Audio 會透過此應用程式傳送播放的音訊。請在應用程式內選擇實際的喇叭或耳機。它們的硬體驅動程式會被保留。</translation>
     </message>
     <message>
+      <source>SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.</source>
+      <translation>SoundCurrent 掃頻或音調量測；相對於中位數；已繞過麥克風等化。可能包含播放等化的影響。</translation>
+      <extracomment>New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.</extracomment>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>SoundCurrent 虛擬輸出需要 48 kHz 立體聲浮點音訊</translation>
     </message>
@@ -2945,6 +2960,11 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Warmth</source>
       <translation>溫暖感</translation>
+    </message>
+    <message>
+      <source>Whole listening system</source>
+      <translation>完整聆聽系統</translation>
+      <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

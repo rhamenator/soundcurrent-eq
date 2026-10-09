@@ -553,3 +553,7 @@ The checkFormat endpoint label and owned format-error suffix produce a full diag
 ### Competing process diagnostic gap (2026-10-09)
 
 Source tracing found two English process-conflict return paths reaching the dialog unchanged. Both now use one translated template with an opaque executable-name placeholder. All33 non-English translations received contextual AI review and remain unverified by native speakers. Source regression and compiled processing-guard tests passed; conflict detection and processing values are unchanged. Catalog counts are now700 EQ/885 Studio. Fresh Linux/Windows packages are required before qualifying this production change.
+
+### Calibration profile creation defaults (2026-10-09)
+
+Four new messages cover the whole listening system, measured listening position, combined equipment/room conditions and measurement provenance. Contextual AI review preserves median reference, microphone EQ bypass and possible playback EQ inclusion. Device names are opaque substitutions. New editable metadata is translated at creation; loaded profiles retain their recorded language and text. All33 non-English locales are populated. Native-speaker verification remains unverified.

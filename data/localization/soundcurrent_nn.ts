@@ -653,6 +653,11 @@ Vil du likevel sletta ho?</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
     </message>
     <message>
+      <source>Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2</source>
+      <translation>Samla respons frå høgtalarar/forsterkar/mikrofon/rom; ikkje ei isolert måling av ei eining. %1 / %2</translation>
+      <extracomment>New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>Tilhøve</translation>
     </message>
@@ -1544,6 +1549,11 @@ Vil du likevel sletta ho?</translation>
     <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Mål frekvensresponsen til høgtalar, rom og mikrofon</translation>
+    </message>
+    <message>
+      <source>Measured listening position</source>
+      <translation>Målt lytteposisjon</translation>
+      <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
@@ -2505,6 +2515,11 @@ Vil du likevel sletta ho?</translation>
       <translation>SoundCurrent Audio sender avspelinga gjennom appen. Vel dei fysiske høgtalarane eller hovudtelefonane dine i appen. Maskinvaredrivarane deira vert bevarte.</translation>
     </message>
     <message>
+      <source>SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.</source>
+      <translation>SoundCurrent-måling med frekvenssveip eller tonar; relativt til medianen; mikrofon-EQ forbigått. Avspelings-EQ kan vere inkludert.</translation>
+      <extracomment>New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.</extracomment>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>Den virtuelle SoundCurrent-utgangen krev stereolyd ved 48 kHz i flyttalsformat</translation>
     </message>
@@ -2945,6 +2960,11 @@ Vil du likevel sletta ho?</translation>
     <message>
       <source>Warmth</source>
       <translation>Varme</translation>
+    </message>
+    <message>
+      <source>Whole listening system</source>
+      <translation>Heile lyttesystemet</translation>
+      <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

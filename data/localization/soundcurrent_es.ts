@@ -653,6 +653,11 @@ Do you want to delete it anyway?</source>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
     </message>
     <message>
+      <source>Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2</source>
+      <translation>Respuesta combinada de altavoces/amplificador/micrófono/sala; no es una medición aislada de un equipo. %1 / %2</translation>
+      <extracomment>New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>Condiciones</translation>
     </message>
@@ -1544,6 +1549,11 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Medir la respuesta de los altavoces, la sala y el micrófono</translation>
+    </message>
+    <message>
+      <source>Measured listening position</source>
+      <translation>Posición de escucha medida</translation>
+      <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
@@ -2505,6 +2515,11 @@ Do you want to delete it anyway?</source>
       <translation>SoundCurrent Audio dirige la reproducción a través de la aplicación. Elija sus altavoces o auriculares físicos dentro de la aplicación. Sus controladores de hardware se conservan.</translation>
     </message>
     <message>
+      <source>SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.</source>
+      <translation>Medición SoundCurrent con barrido o tonos; relativa a la mediana; ecualización del micrófono omitida. Puede incluir la ecualización de reproducción.</translation>
+      <extracomment>New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.</extracomment>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>La salida virtual de SoundCurrent requiere audio estéreo de 48 kHz en coma flotante</translation>
     </message>
@@ -2945,6 +2960,11 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Warmth</source>
       <translation>Calidez</translation>
+    </message>
+    <message>
+      <source>Whole listening system</source>
+      <translation>Sistema de escucha completo</translation>
+      <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

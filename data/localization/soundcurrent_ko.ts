@@ -653,6 +653,11 @@ Do you want to delete it anyway?</source>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
     </message>
     <message>
+      <source>Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2</source>
+      <translation>스피커/앰프/마이크/방의 종합 응답이며, 개별 장비를 따로 측정한 결과가 아닙니다. %1 / %2</translation>
+      <extracomment>New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>측정 조건</translation>
     </message>
@@ -1544,6 +1549,11 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Measure speaker room and microphone response</source>
       <translation>스피커, 실내 및 마이크 응답 측정</translation>
+    </message>
+    <message>
+      <source>Measured listening position</source>
+      <translation>측정한 청취 위치</translation>
+      <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
@@ -2505,6 +2515,11 @@ Do you want to delete it anyway?</source>
       <translation>SoundCurrent Audio는 재생 오디오를 앱을 통해 전달합니다. 앱 안에서 실제 스피커나 헤드폰을 선택하세요. 해당 하드웨어 드라이버는 유지됩니다.</translation>
     </message>
     <message>
+      <source>SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.</source>
+      <translation>SoundCurrent 스윕 또는 톤 측정; 중앙값 기준; 마이크 EQ 우회됨. 재생 EQ의 영향이 포함될 수 있습니다.</translation>
+      <extracomment>New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.</extracomment>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>SoundCurrent 가상 출력에는 48 kHz 스테레오 부동 소수점 오디오가 필요합니다</translation>
     </message>
@@ -2945,6 +2960,11 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Warmth</source>
       <translation>따뜻함</translation>
+    </message>
+    <message>
+      <source>Whole listening system</source>
+      <translation>전체 청취 시스템</translation>
+      <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

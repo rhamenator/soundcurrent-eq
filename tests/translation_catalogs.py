@@ -781,6 +781,16 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual([row['literal'] for row in result['candidates']], ['Unmarked label'])
             self.assertFalse(result['wholeInterfaceCoverageProven'])
 
+    def test_calibration_profile_defaults_are_translated_at_creation(self):
+        code = (catalog.ROOT / 'src/main.cpp').read_text()
+        body = code.split('if (preview.clickedButton() == saveMeasured)', 1)[1].split('if (preview.clickedButton() == apply', 1)[0]
+        raw = re.findall(r'\bp\.(?:brand|family|model|conditions|provenance)\s*=\s*("(?:\\.|[^"\\])*")', body)
+        self.assertEqual(raw, [], 'Unmarked generated calibration metadata')
+        self.assertIn('p.kind = "speaker"', body)
+        self.assertIn('.arg(inputCombo_->currentText(), outputCombo_->currentText())', body)
+        for args in catalog.calls(body, 'SC_TR'):
+            self.assertIn(catalog.literal(args[0]), set(catalog.sources()))
+
     def test_profile_authored_defaults_are_translated_at_creation(self):
         root = Path(__file__).resolve().parents[1]
         code = (root / 'src/equipment_profiles.cpp').read_text(encoding='utf-8')

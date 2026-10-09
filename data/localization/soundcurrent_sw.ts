@@ -653,6 +653,11 @@ Unataka kuifuta hata hivyo?</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
     </message>
     <message>
+      <source>Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2</source>
+      <translation>Mwitikio wa pamoja wa spika/amplifaya/maikrofoni/chumba; si kipimo cha kifaa kimoja pekee. %1 / %2</translation>
+      <extracomment>New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>Masharti</translation>
     </message>
@@ -1544,6 +1549,11 @@ Unataka kuifuta hata hivyo?</translation>
     <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Pima mwitikio wa spika, chumba na maikrofoni</translation>
+    </message>
+    <message>
+      <source>Measured listening position</source>
+      <translation>Nafasi ya kusikiliza iliyopimwa</translation>
+      <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
@@ -2505,6 +2515,11 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>SoundCurrent Audio huelekeza sauti inayochezwa kupitia programu. Chagua spika au vipokea sauti vyako halisi ndani ya programu. Viendeshi vya vifaa hivyo huhifadhiwa.</translation>
     </message>
     <message>
+      <source>SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.</source>
+      <translation>Kipimo cha SoundCurrent kwa kufagia masafa au toni; kulingana na thamani ya kati; EQ ya maikrofoni imepitwa. EQ ya uchezaji inaweza kujumuishwa.</translation>
+      <extracomment>New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.</extracomment>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>Tokeo pepe la SoundCurrent linahitaji sauti ya stereo ya 48 kHz katika muundo wa namba zenye nukta inayoelea</translation>
     </message>
@@ -2945,6 +2960,11 @@ Unataka kuifuta hata hivyo?</translation>
     <message>
       <source>Warmth</source>
       <translation>Joto la sauti</translation>
+    </message>
+    <message>
+      <source>Whole listening system</source>
+      <translation>Mfumo mzima wa usikilizaji</translation>
+      <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

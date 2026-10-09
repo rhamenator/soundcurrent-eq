@@ -653,6 +653,11 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
     </message>
     <message>
+      <source>Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2</source>
+      <translation>Společná odezva reproduktorů/zesilovače/mikrofonu/místnosti; nejde o samostatné měření zařízení. %1 / %2</translation>
+      <extracomment>New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>Podmínky</translation>
     </message>
@@ -1544,6 +1549,11 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Změřit odezvu reproduktorů, místnosti a mikrofonu</translation>
+    </message>
+    <message>
+      <source>Measured listening position</source>
+      <translation>Změřená poslechová pozice</translation>
+      <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
@@ -2505,6 +2515,11 @@ Přesto chcete soubor smazat?</translation>
       <translation>SoundCurrent Audio směruje přehrávání přes aplikaci. V aplikaci vyberte své fyzické reproduktory nebo sluchátka. Jejich hardwarové ovladače zůstanou zachovány.</translation>
     </message>
     <message>
+      <source>SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.</source>
+      <translation>Měření SoundCurrent frekvenčním přeběhem nebo tóny; vzhledem k mediánu; mikrofonní EQ vynechán. Může zahrnovat EQ přehrávání.</translation>
+      <extracomment>New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.</extracomment>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>Virtuální výstup SoundCurrent vyžaduje stereofonní zvuk 48 kHz v plovoucí řádové čárce</translation>
     </message>
@@ -2945,6 +2960,11 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Warmth</source>
       <translation>Teplý tón</translation>
+    </message>
+    <message>
+      <source>Whole listening system</source>
+      <translation>Celá poslechová soustava</translation>
+      <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

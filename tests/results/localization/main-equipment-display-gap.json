@@ -2,9 +2,12 @@
   "date": "2026-10-09",
   "scope": "Main equipment summary display and newly generated calibration profile metadata",
   "fixed": "Summary translates speaker/amplifier/microphone captions using existing catalogs; keys and loaded metadata preserved.",
-  "remaining": "Calibration save-profile path still assigns English authored brand/family/model/conditions/provenance. Translate new defaults at creation; preserve loaded records.",
+  "remaining": "Fresh compiled UI and installed package qualification required; finish main-window source correspondence audit.",
   "nativeReviewed": false,
   "wholeInterfaceCoverageProven": false,
   "packageQualification": "Previously qualified packages superseded by summary display change; fresh packages required after remaining creation-default fix.",
-  "sourceSha256": "b5c3d882add6030ffc55a6883edcc71df3d1097f887963bc5b6f30e00d6e3cfa"
+  "sourceSha256": "b5c3d882add6030ffc55a6883edcc71df3d1097f887963bc5b6f30e00d6e3cfa",
+  "calibrationFix": "New generated brand/family/model/conditions/provenance use translations at creation. Device captions inserted as opaque arguments; saved/imported metadata untouched. All33 non-English locale entries supplied for four new messages.",
+  "contextualReview": "AI-reviewed against combined measurement, median reference, mic-EQ bypass and possible playback-EQ inclusion; uncertainty retained. Native-speaker accuracy unverified.",
+  "tests": "Focused creation-default and summary regressions passed; complete34-catalog structural/compiled-hash checks passed, zero unfinished entries."
 }

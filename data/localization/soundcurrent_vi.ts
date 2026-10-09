@@ -653,6 +653,11 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
     </message>
     <message>
+      <source>Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2</source>
+      <translation>Đáp tuyến tổng hợp của loa/bộ khuếch đại/micrô/phòng; không phải phép đo riêng một thiết bị. %1 / %2</translation>
+      <extracomment>New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Conditions</source>
       <translation>Điều kiện</translation>
     </message>
@@ -1544,6 +1549,11 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Đo đáp tuyến loa, phòng và micrô</translation>
+    </message>
+    <message>
+      <source>Measured listening position</source>
+      <translation>Vị trí nghe đã đo</translation>
+      <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
@@ -2505,6 +2515,11 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>SoundCurrent Audio định tuyến âm thanh phát qua ứng dụng. Chọn loa hoặc tai nghe vật lý của bạn trong ứng dụng. Trình điều khiển phần cứng của chúng được giữ nguyên.</translation>
     </message>
     <message>
+      <source>SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.</source>
+      <translation>Phép đo SoundCurrent bằng quét tần số hoặc âm thử; so với trung vị; bỏ qua EQ micrô. Có thể bao gồm ảnh hưởng của EQ phát lại.</translation>
+      <extracomment>New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.</extracomment>
+    </message>
+    <message>
       <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
       <translation>Đầu ra ảo SoundCurrent yêu cầu âm thanh stereo 48 kHz ở định dạng dấu phẩy động</translation>
     </message>
@@ -2945,6 +2960,11 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Warmth</source>
       <translation>Độ ấm</translation>
+    </message>
+    <message>
+      <source>Whole listening system</source>
+      <translation>Toàn bộ hệ thống nghe</translation>
+      <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>
