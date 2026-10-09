@@ -49,6 +49,25 @@ class Activation(unittest.TestCase):
             for line in helpers: self.assertIn('-Language "$SCLocaleTag"',line)
             self.assertIn('StrCpy $InstallDriver 0 ; Silent app updates never install/elevate a driver.',text)
 
+    def test_activation_checkout_line_endings(self):
+        for source in sorted((ROOT/'packaging/windows').glob('*.nsi')):
+            original=source.read_bytes().replace(b'\r\n',b'\n')
+            outputs=[]
+            for variant in ('lf','crlf','mixed'):
+                folder=self.folder/variant;folder.mkdir(exist_ok=True)
+                fixture=folder/source.name
+                data=original if variant=='lf' else original.replace(b'\n',b'\r\n')
+                if variant=='mixed':
+                    data=b''.join(line[:-1]+(b'\r\n' if index%2 else b'\n') if line.endswith(b'\n') else line for index,line in enumerate(original.splitlines(keepends=True)))
+                fixture.write_bytes(data)
+                generated=folder/('generated-'+source.name)
+                installer.generate_installer(fixture,generated,PRODUCT,self.captions,activate=True)
+                outputs.append(generated.read_bytes())
+                self.assertEqual(fixture.read_bytes(),data)
+                self.assertNotIn(b'\r\n',outputs[-1])
+            self.assertEqual(outputs[0],outputs[1])
+            self.assertEqual(outputs[0],outputs[2])
+
     def test_compile_real_templates(self):
         compiler=shutil.which('makensis')
         if not compiler: self.skipTest('NSIS compiler unavailable')
@@ -60,7 +79,8 @@ class Activation(unittest.TestCase):
             generated=self.folder/('compiled-'+source.name)
             installer.generate_installer(source,generated,PRODUCT,self.captions,activate=True)
             defines={'APP_EXE':stage/(STEM+'.exe'),'OUTPUT':self.folder/(source.stem+'.exe'),'SOURCE_ROOT':ROOT,'DLL_DIR':stage,'UNINSTALL_PAYLOAD':manifest,'CABLE_ZIP':stage/'cable.zip','DRIVER_DIR':stage}
-            args=[compiler,'-V2']+['-D'+key+'='+str(value) for key,value in defines.items()]+[str(generated)]
+            prefix='/' if sys.platform=='win32' else '-'
+            args=[compiler,prefix+'INPUTCHARSET','UTF8',prefix+'V2']+[prefix+'D'+key+'='+str(value) for key,value in defines.items()]+[str(generated)]
             result=subprocess.run(args,capture_output=True,text=True)
             self.assertEqual(result.returncode,0,result.stdout+result.stderr)
             self.assertNotIn('not set in language',result.stdout+result.stderr)

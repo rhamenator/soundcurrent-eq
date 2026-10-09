@@ -215,6 +215,8 @@ try {
     $installer = Join-Path $root "dist\SoundCurrent-EQ-$version-windows-x64-setup.exe"
     [string[]]$audioOptions = if ($AudioRoute -eq 'Native') { @("/DDRIVER_DIR=$SignedDriverPackage") } else { @("/DCABLE_ZIP=$CablePackage") }
     $installerScript = if ($AudioRoute -eq 'Native') { 'packaging\windows\soundcurrent-eq-native.nsi' } else { 'packaging\windows\soundcurrent-eq.nsi' }
+    & python tests/installer_language_activation.py
+    if ($LASTEXITCODE -ne 0) { throw 'Installer language activation regression failed' }
     $generatedInstallerScript = Join-Path $root 'build-windows-native\localized-installer.nsi'
     & python scripts/windows_installer_catalogs.py --product "SoundCurrent EQ" --output "$root\build-windows-native\installer-translations.json" --installer-source $installerScript --installer-output $generatedInstallerScript --activate-languages
     if ($LASTEXITCODE -ne 0) { throw 'Installer caption generation failed' }

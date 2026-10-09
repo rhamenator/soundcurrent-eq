@@ -154,6 +154,8 @@ def export(destination, product):
 
 def activate_languages(text, product, captions, route):
     """Activate explicit language assets and persist installer-only preferences."""
+    # Activated build copies use canonical LF; source/default mode stays byte-preserving.
+    text = text.replace('\r\n', '\n')
     rows = validate_language_map()['languages']
     key = 'Software\\SoundCurrent\\' + product
     settings = ('!define MUI_LANGDLL_REGISTRY_ROOT "HKCU"\n'
