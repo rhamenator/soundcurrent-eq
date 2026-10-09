@@ -364,6 +364,9 @@ int main(int argc,char **argv){
    }
    require(QCoreApplication::translate("QGnomeTheme","&Close")==text("Close"),"GNOME Close stayed English");
    require(QCoreApplication::translate("QGnomeTheme","Close without Saving")==text("Discard"),"GNOME discard label stayed English");
+   const auto calibrationFailure=text("Measurement failed: %1").arg(text("Test level is outside the allowed range"));
+   require(isCalibrationFailureMessage(calibrationFailure),"Localized calibration detail would be overwritten by generic English-prefix handling");
+   require(!isCalibrationFailureMessage(text("Checking %1 Hz").arg(QLocale().toString(1000))),"Calibration progress was mistaken for failure");
    QLineEdit line;line.setText(QStringLiteral("selection"));line.selectAll();
    QTextEdit paragraph;paragraph.setPlainText(QStringLiteral("selection"));paragraph.selectAll();
    for(auto *menu:{line.createStandardContextMenu(),paragraph.createStandardContextMenu()}) {

@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-09",
+  "catalogMessages": 641,
+  "newSources": [
+    "Playing a logarithmic sweep from 20 Hz to 25 kHz",
+    "Checking %1 Hz",
+    "Capture bytes: %1, noise bytes: %2",
+    "%1 Hz: signal %2, background %3",
+    "Measurement failed: %1"
+  ],
+  "cause": "Core-only calibration worker branched before desktop Runtime initialization; owned stderr prose and parent English-prefix detection were untranslated",
+  "changes": [
+    "Explicit active language and number locale passed through child process environment",
+    "Shared Runtime supports QCoreApplication without changing GUI direction in non-GUI workers",
+    "All calibration stderr templates use catalogs",
+    "Parent recognizes translated failure fixed parts on either side of placeholder"
+  ],
+  "localVerification": {
+    "compiledLocalizationCTest": "passed",
+    "actualWorkerCTest": "passed for 34 catalogs and three regional/fallback cases, both invalid levels",
+    "sourceProseGuard": "passed for all six owned stderr statements",
+    "physicalBoundsUnitPlaceholderMutationChecks": "passed",
+    "catalogHashesCompleteness": "passed with zero unfinished entries"
+  },
+  "qualificationRemaining": [
+    "Fresh native Windows worker fixture",
+    "Fresh installed Linux/Windows package qualification",
+    "Parent stderr partial UTF-8/line handling still needs review"
+  ],
+  "scope": "Invalid levels are rejected before devices/capture/playback; no live sweep performed",
+  "nativeReviewed": false
+}

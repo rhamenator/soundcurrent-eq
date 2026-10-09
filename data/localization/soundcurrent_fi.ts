@@ -76,6 +76,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>%1 Hz: mitattu %2%3 dB; ehdotettu %4%5 dB</translation>
     </message>
     <message>
+      <source>%1 Hz: signal %2, background %3</source>
+      <translation>%1 Hz: signaali %2, tausta %3</translation>
+      <extracomment>Debug calibration tone amplitude and background noise amplitude. %1 is frequency, %2 signal amplitude, %3 background amplitude. Display only; no change to numerical analysis.</extracomment>
+    </message>
+    <message>
       <source>%1 Hz: too quiet to measure</source>
       <translation>%1 Hz: liian hiljainen mitattavaksi</translation>
     </message>
@@ -471,6 +476,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>Mittausta ei voida aloittaa: %1</translation>
     </message>
     <message>
+      <source>Capture bytes: %1, noise bytes: %2</source>
+      <translation>Tallennetut tavut: %1, kohinatavut: %2</translation>
+      <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
+    </message>
+    <message>
       <source>Center</source>
       <translation>Keskellä</translation>
     </message>
@@ -486,6 +496,11 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Check for updates</source>
       <translation>Tarkista päivitykset</translation>
+    </message>
+    <message>
+      <source>Checking %1 Hz</source>
+      <translation>Tarkistetaan %1 Hz</translation>
+      <extracomment>Calibration worker progress for a single test frequency. %1 is a locale-formatted frequency; Hz is the physical unit.</extracomment>
     </message>
     <message>
       <source>Checking for published updates…</source>
@@ -1345,6 +1360,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>Mittaus epäonnistui. Kokeile korkeampaa testitasoa tai siirrä mikrofoni lähemmäs.</translation>
     </message>
     <message>
+      <source>Measurement failed: %1</source>
+      <translation>Mittaus epäonnistui: %1</translation>
+      <extracomment>Calibration failure prefix. %1 is a translated owned diagnostic or preserved external technical detail; do not modify device identifiers or paths.</extracomment>
+    </message>
+    <message>
       <source>Measurement stopped.</source>
       <translation>Mittaus pysäytettiin.</translation>
     </message>
@@ -1635,6 +1655,11 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Playback</source>
       <translation>Toisto</translation>
+    </message>
+    <message>
+      <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
+      <translation>Toistetaan logaritminen pyyhkäisy 20 Hz:stä 25 kHz:iin</translation>
+      <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>

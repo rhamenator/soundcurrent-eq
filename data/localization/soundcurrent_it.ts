@@ -76,6 +76,11 @@ Importare nella libreria?</translation>
       <translation>%1 Hz: livello misurato %2%3 dB; correzione suggerita %4%5 dB</translation>
     </message>
     <message>
+      <source>%1 Hz: signal %2, background %3</source>
+      <translation>%1 Hz: segnale %2, rumore di fondo %3</translation>
+      <extracomment>Debug calibration tone amplitude and background noise amplitude. %1 is frequency, %2 signal amplitude, %3 background amplitude. Display only; no change to numerical analysis.</extracomment>
+    </message>
+    <message>
       <source>%1 Hz: too quiet to measure</source>
       <translation>%1 Hz: livello troppo basso per la misurazione</translation>
     </message>
@@ -471,6 +476,11 @@ Importare nella libreria?</translation>
       <translation>Impossibile avviare la misurazione: %1</translation>
     </message>
     <message>
+      <source>Capture bytes: %1, noise bytes: %2</source>
+      <translation>Byte acquisiti: %1, byte del rumore: %2</translation>
+      <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
+    </message>
+    <message>
       <source>Center</source>
       <translation>Centro</translation>
     </message>
@@ -486,6 +496,11 @@ Importare nella libreria?</translation>
     <message>
       <source>Check for updates</source>
       <translation>Controlla aggiornamenti</translation>
+    </message>
+    <message>
+      <source>Checking %1 Hz</source>
+      <translation>Verifica a %1 Hz</translation>
+      <extracomment>Calibration worker progress for a single test frequency. %1 is a locale-formatted frequency; Hz is the physical unit.</extracomment>
     </message>
     <message>
       <source>Checking for published updates…</source>
@@ -1345,6 +1360,11 @@ Importare nella libreria?</translation>
       <translation>Misurazione non riuscita. Prova un livello di test maggiore o avvicina il microfono.</translation>
     </message>
     <message>
+      <source>Measurement failed: %1</source>
+      <translation>Misurazione non riuscita: %1</translation>
+      <extracomment>Calibration failure prefix. %1 is a translated owned diagnostic or preserved external technical detail; do not modify device identifiers or paths.</extracomment>
+    </message>
+    <message>
       <source>Measurement stopped.</source>
       <translation>Misurazione interrotta.</translation>
     </message>
@@ -1635,6 +1655,11 @@ Importare nella libreria?</translation>
     <message>
       <source>Playback</source>
       <translation>Riproduzione</translation>
+    </message>
+    <message>
+      <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
+      <translation>Riproduzione di uno sweep logaritmico da 20 Hz a 25 kHz</translation>
+      <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>

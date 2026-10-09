@@ -175,9 +175,9 @@ public:
 };
 class Runtime {
 public:
-    void initialize(bool englishTest=false) {
-        requested_=englishTest?"en":selectedLanguage();loaded_=resolve(requested_);
-        const auto format=englishTest?QString("en-US"):QSettings().value("i18n/formatLocale","system").toString();
+    void initialize(bool englishTest=false, const QString &languageOverride={}, const QString &formatOverride={}) {
+        requested_=englishTest?"en":languageOverride.isEmpty()?selectedLanguage():languageOverride;loaded_=resolve(requested_);
+        const auto format=englishTest?QString("en-US"):formatOverride.isEmpty()?QSettings().value("i18n/formatLocale","system").toString():formatOverride;
         const auto locale=format=="system"?QLocale::system():QLocale(format);
         QLocale::setDefault(locale);
         if(loaded_.startsWith("qps-")) translator_=std::make_unique<PseudoTranslator>(loaded_=="qps-rtl");
@@ -189,7 +189,7 @@ public:
         QCoreApplication::installTranslator(&standardActions_);
         if(translator_)QCoreApplication::installTranslator(translator_.get());
         const auto direction=loaded_=="qps-rtl"?Qt::RightToLeft:QLocale(loaded_).textDirection();
-        QApplication::setLayoutDirection(direction);
+        if(qobject_cast<QApplication*>(QCoreApplication::instance())) QApplication::setLayoutDirection(direction);
         QCoreApplication::instance()->setProperty("soundcurrentInterfaceLanguage", loaded_);
     }
     ~Runtime(){if(translator_)QCoreApplication::removeTranslator(translator_.get());QCoreApplication::removeTranslator(&standardActions_);}

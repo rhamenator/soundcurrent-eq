@@ -76,6 +76,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>%1 Hz: ölçülen %2%3 dB; önerilen %4%5 dB</translation>
     </message>
     <message>
+      <source>%1 Hz: signal %2, background %3</source>
+      <translation>%1 Hz: sinyal %2, arka plan %3</translation>
+      <extracomment>Debug calibration tone amplitude and background noise amplitude. %1 is frequency, %2 signal amplitude, %3 background amplitude. Display only; no change to numerical analysis.</extracomment>
+    </message>
+    <message>
       <source>%1 Hz: too quiet to measure</source>
       <translation>%1 Hz: ölçüm için çok düşük ses düzeyi</translation>
     </message>
@@ -471,6 +476,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Ölçüm başlatılamıyor: %1</translation>
     </message>
     <message>
+      <source>Capture bytes: %1, noise bytes: %2</source>
+      <translation>Kaydedilen bayt: %1, gürültü baytı: %2</translation>
+      <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
+    </message>
+    <message>
       <source>Center</source>
       <translation>Orta</translation>
     </message>
@@ -486,6 +496,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Check for updates</source>
       <translation>Güncellemeleri denetle</translation>
+    </message>
+    <message>
+      <source>Checking %1 Hz</source>
+      <translation>%1 Hz kontrol ediliyor</translation>
+      <extracomment>Calibration worker progress for a single test frequency. %1 is a locale-formatted frequency; Hz is the physical unit.</extracomment>
     </message>
     <message>
       <source>Checking for published updates…</source>
@@ -1345,6 +1360,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Ölçüm başarısız oldu. Daha yüksek bir test seviyesi deneyin veya mikrofonu yaklaştırın.</translation>
     </message>
     <message>
+      <source>Measurement failed: %1</source>
+      <translation>Ölçüm başarısız: %1</translation>
+      <extracomment>Calibration failure prefix. %1 is a translated owned diagnostic or preserved external technical detail; do not modify device identifiers or paths.</extracomment>
+    </message>
+    <message>
       <source>Measurement stopped.</source>
       <translation>Ölçüm durduruldu.</translation>
     </message>
@@ -1635,6 +1655,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Playback</source>
       <translation>Oynatma</translation>
+    </message>
+    <message>
+      <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
+      <translation>20 Hz ile 25 kHz arasında logaritmik tarama çalınıyor</translation>
+      <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>

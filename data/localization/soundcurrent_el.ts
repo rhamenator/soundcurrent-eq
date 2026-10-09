@@ -76,6 +76,11 @@ Import into your library?</source>
       <translation>%1 Hz: μέτρηση %2%3 dB· πρόταση %4%5 dB</translation>
     </message>
     <message>
+      <source>%1 Hz: signal %2, background %3</source>
+      <translation>%1 Hz: σήμα %2, θόρυβος υποβάθρου %3</translation>
+      <extracomment>Debug calibration tone amplitude and background noise amplitude. %1 is frequency, %2 signal amplitude, %3 background amplitude. Display only; no change to numerical analysis.</extracomment>
+    </message>
+    <message>
       <source>%1 Hz: too quiet to measure</source>
       <translation>%1 Hz: πολύ χαμηλή στάθμη για μέτρηση</translation>
     </message>
@@ -471,6 +476,11 @@ Import into your library?</source>
       <translation>Δεν είναι δυνατή η έναρξη μέτρησης: %1</translation>
     </message>
     <message>
+      <source>Capture bytes: %1, noise bytes: %2</source>
+      <translation>Καταγεγραμμένα byte: %1, byte θορύβου: %2</translation>
+      <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
+    </message>
+    <message>
       <source>Center</source>
       <translation>Κέντρο</translation>
     </message>
@@ -486,6 +496,11 @@ Import into your library?</source>
     <message>
       <source>Check for updates</source>
       <translation>Έλεγχος ενημερώσεων</translation>
+    </message>
+    <message>
+      <source>Checking %1 Hz</source>
+      <translation>Έλεγχος στα %1 Hz</translation>
+      <extracomment>Calibration worker progress for a single test frequency. %1 is a locale-formatted frequency; Hz is the physical unit.</extracomment>
     </message>
     <message>
       <source>Checking for published updates…</source>
@@ -1345,6 +1360,11 @@ Import into your library?</source>
       <translation>Η μέτρηση απέτυχε. Δοκιμάστε υψηλότερη στάθμη δοκιμής ή φέρτε το μικρόφωνο πιο κοντά.</translation>
     </message>
     <message>
+      <source>Measurement failed: %1</source>
+      <translation>Η μέτρηση απέτυχε: %1</translation>
+      <extracomment>Calibration failure prefix. %1 is a translated owned diagnostic or preserved external technical detail; do not modify device identifiers or paths.</extracomment>
+    </message>
+    <message>
       <source>Measurement stopped.</source>
       <translation>Η μέτρηση διακόπηκε.</translation>
     </message>
@@ -1635,6 +1655,11 @@ Import into your library?</source>
     <message>
       <source>Playback</source>
       <translation>Αναπαραγωγή</translation>
+    </message>
+    <message>
+      <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
+      <translation>Αναπαραγωγή λογαριθμικής σάρωσης από 20 Hz έως 25 kHz</translation>
+      <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>

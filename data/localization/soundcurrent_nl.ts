@@ -76,6 +76,11 @@ Importeren in uw bibliotheek?</translation>
       <translation>%1 Hz: gemeten %2%3 dB; voorgesteld %4%5 dB</translation>
     </message>
     <message>
+      <source>%1 Hz: signal %2, background %3</source>
+      <translation>%1 Hz: signaal %2, achtergrond %3</translation>
+      <extracomment>Debug calibration tone amplitude and background noise amplitude. %1 is frequency, %2 signal amplitude, %3 background amplitude. Display only; no change to numerical analysis.</extracomment>
+    </message>
+    <message>
       <source>%1 Hz: too quiet to measure</source>
       <translation>%1 Hz: te zacht om te meten</translation>
     </message>
@@ -471,6 +476,11 @@ Importeren in uw bibliotheek?</translation>
       <translation>Kan de meting niet starten: %1</translation>
     </message>
     <message>
+      <source>Capture bytes: %1, noise bytes: %2</source>
+      <translation>Opgenomen bytes: %1, ruisbytes: %2</translation>
+      <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
+    </message>
+    <message>
       <source>Center</source>
       <translation>Midden</translation>
     </message>
@@ -486,6 +496,11 @@ Importeren in uw bibliotheek?</translation>
     <message>
       <source>Check for updates</source>
       <translation>Controleren op updates</translation>
+    </message>
+    <message>
+      <source>Checking %1 Hz</source>
+      <translation>%1 Hz controleren</translation>
+      <extracomment>Calibration worker progress for a single test frequency. %1 is a locale-formatted frequency; Hz is the physical unit.</extracomment>
     </message>
     <message>
       <source>Checking for published updates…</source>
@@ -1345,6 +1360,11 @@ Importeren in uw bibliotheek?</translation>
       <translation>Meting mislukt. Probeer een hoger testniveau of plaats de microfoon dichterbij.</translation>
     </message>
     <message>
+      <source>Measurement failed: %1</source>
+      <translation>Meting mislukt: %1</translation>
+      <extracomment>Calibration failure prefix. %1 is a translated owned diagnostic or preserved external technical detail; do not modify device identifiers or paths.</extracomment>
+    </message>
+    <message>
       <source>Measurement stopped.</source>
       <translation>Meting gestopt.</translation>
     </message>
@@ -1635,6 +1655,11 @@ Importeren in uw bibliotheek?</translation>
     <message>
       <source>Playback</source>
       <translation>Weergave</translation>
+    </message>
+    <message>
+      <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
+      <translation>Logaritmische sweep van 20 Hz tot 25 kHz wordt afgespeeld</translation>
+      <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>

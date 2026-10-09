@@ -196,6 +196,8 @@ try {
     }
     & python tests/translation_catalogs.py
     if ($LASTEXITCODE -ne 0) { throw 'Translation-maintenance regression tests failed' }
+    & python tests/calibration_worker_localization.py "$stage\soundcurrent-eq.exe"
+    if ($LASTEXITCODE -ne 0) { throw 'Calibration worker localization regression failed' }
     & python scripts/localization.py --check
     if ($LASTEXITCODE -ne 0) { throw 'Translation catalog audit failed' }
     Remove-Item Env:\QT_QPA_PLATFORM

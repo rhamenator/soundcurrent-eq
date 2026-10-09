@@ -57,6 +57,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QProcess>
+#include <QProcessEnvironment>
 #include <QPushButton>
 #include <QRegularExpression>
 #include <QScrollArea>
@@ -1214,33 +1215,30 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
         QJsonArray levels;
         int valid = 0;
         if (sweep) {
-            QTextStream(stderr) << "Playing a logarithmic sweep from 20 Hz to 25 kHz" << Qt::endl;
+            QTextStream(stderr) << SC_TR("Playing a logarithmic sweep from 20 Hz to 25 kHz") << Qt::endl;
             const auto noise = collect(1500);
             const auto path = directory.filePath("quiet-sweep.wav");
             const auto reference = writeCalibrationSweep(path, levelDb);
             const auto recorded = playAndRecord(path);
             checkCalibrationClipping(recorded);
             if (qEnvironmentVariableIsSet("SOUNDCURRENT_CALIBRATION_DEBUG"))
-                QTextStream(stderr) << "Sweep capture bytes: " << recorded.size()
-                                    << ", noise bytes: " << noise.size() << Qt::endl;
+                QTextStream(stderr) << SC_TR("Capture bytes: %1, noise bytes: %2").arg(QLocale().toString(recorded.size()),QLocale().toString(noise.size())) << Qt::endl;
             levels = analyzeSweep(recorded, noise, reference);
             for (const auto &value : levels) if (value.isDouble()) ++valid;
         } else {
             for (const auto frequency : kCalibrationFrequencies) {
-                QTextStream(stderr) << "Checking " << frequency << " Hz" << Qt::endl;
+                QTextStream(stderr) << SC_TR("Checking %1 Hz").arg(QLocale().toString(frequency)) << Qt::endl;
                 const auto noise = collect(500);
                 const auto path = directory.filePath(QString("tone-%1.wav").arg(frequency));
                 writeCalibrationTone(path, frequency, levelDb);
                 const auto recorded = playAndRecord(path);
                 checkCalibrationClipping(recorded);
                 if (qEnvironmentVariableIsSet("SOUNDCURRENT_CALIBRATION_DEBUG"))
-                    QTextStream(stderr) << "Capture bytes: " << recorded.size()
-                                        << ", noise bytes: " << noise.size() << Qt::endl;
+                    QTextStream(stderr) << SC_TR("Capture bytes: %1, noise bytes: %2").arg(QLocale().toString(recorded.size()),QLocale().toString(noise.size())) << Qt::endl;
                 const double heard = toneAmplitude(recorded, frequency);
                 const double background = toneAmplitude(noise, frequency);
                 if (qEnvironmentVariableIsSet("SOUNDCURRENT_CALIBRATION_DEBUG"))
-                    QTextStream(stderr) << frequency << " Hz: signal " << heard
-                                        << ", background " << background << Qt::endl;
+                    QTextStream(stderr) << SC_TR("%1 Hz: signal %2, background %3").arg(QLocale().toString(frequency),QLocale().toString(heard),QLocale().toString(background)) << Qt::endl;
                 if (heard >= std::max(1.0, background * 3.2)) {
                     levels.append(std::sqrt(std::max(0.0, heard * heard - background * background)));
                     ++valid;
@@ -1259,7 +1257,7 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
         QTextStream(stdout) << QJsonDocument(result).toJson(QJsonDocument::Compact) << Qt::endl;
         return 0;
     } catch (const std::exception &error) {
-        QTextStream(stderr) << "Measurement failed: " << error.what() << Qt::endl;
+        QTextStream(stderr) << SC_TR("Measurement failed: %1").arg(soundcurrent::i18n::audioErrorText(QString::fromUtf8(error.what()))) << Qt::endl;
         return 1;
     }
 }
@@ -2732,6 +2730,10 @@ private:
         micPower_->setEnabled(false);
         microphone_.stop();
         calibrationStatus_->setText(SC_TR("Playing quiet test audio. Stop if it is uncomfortable."));
+        auto workerEnvironment=QProcessEnvironment::systemEnvironment();
+        workerEnvironment.insert("SOUNDCURRENT_WORKER_LANGUAGE",QCoreApplication::instance()->property("soundcurrentInterfaceLanguage").toString());
+        workerEnvironment.insert("SOUNDCURRENT_WORKER_FORMAT_LOCALE",QLocale().name());
+        calibration_.setProcessEnvironment(workerEnvironment);
         calibration_.setProgram(QCoreApplication::applicationFilePath());
         calibration_.setArguments({"--calibration-worker", output, input,
                                    QString::number(calibrationLevel_->value()),
@@ -2766,7 +2768,7 @@ private:
         refreshInputs();
         if (cancelled) { calibrationStatus_->setText(SC_TR("Measurement stopped.")); return; }
         if (exitStatus != QProcess::NormalExit || code != 0) {
-            if (!calibrationStatus_->text().startsWith("Measurement failed"))
+            if (!soundcurrent::i18n::isCalibrationFailureMessage(calibrationStatus_->text()))
                 calibrationStatus_->setText(SC_TR("Measurement failed. Try a higher test level or move the mic closer."));
             return;
         }
@@ -3548,6 +3550,11 @@ int main(int argc, char **argv) {
     }
     if (argc == 6 && QString::fromLocal8Bit(argv[1]) == "--calibration-worker") {
         QCoreApplication workerApp(argc, argv);
+        workerApp.setOrganizationName("SoundCurrent");
+        workerApp.setApplicationName("soundcurrent-eq");
+        soundcurrent::i18n::Runtime workerLocalization;
+        workerLocalization.initialize(false,qEnvironmentVariable("SOUNDCURRENT_WORKER_LANGUAGE"),
+                                      qEnvironmentVariable("SOUNDCURRENT_WORKER_FORMAT_LOCALE"));
         bool valid = false;
         const int level = QString::fromLocal8Bit(argv[4]).toInt(&valid);
         const auto mode = QString::fromLocal8Bit(argv[5]);

@@ -1,12 +1,11 @@
 {
   "date": "2026-10-09",
   "supersedesCurrentStatusOf": "tests/results/localization/requirement-audit.json",
-  "productSourceHead": "d9155fbb124e244220cf0dfb59551737afb607da",
   "overallStatus": "incomplete",
   "catalogs": {
     "count": 34,
     "nonEnglish": 33,
-    "messagesPerCatalog": 636,
+    "messagesPerCatalog": 641,
     "check": "scripts/localization.py --check --require-complete passed locally",
     "nativeReviewed": false
   },
@@ -39,13 +38,13 @@
     },
     {
       "requirement": "Changed Linux packages and installed language interfaces",
-      "status": "verified exact source/packages across Ubuntu/Fedora/AlmaLinux containers",
+      "status": "preceding menu-fix packages verified for recorded hashes; current calibration changes await fresh package qualification",
       "run": 37886568927,
       "evidence": "tests/results/localization/linux-636-installed/verified-artifact.json"
     },
     {
       "requirement": "Changed Windows packages and installed language interfaces",
-      "status": "verified native Windows installed fixture scope for exact product source and package hashes",
+      "status": "preceding menu-fix packages verified for recorded hashes; current calibration changes await fresh native Windows/package qualification",
       "run": 37886556997,
       "evidence": "tests/results/localization/windows-menu-installed-ci/verified-artifact.json"
     },
@@ -55,7 +54,7 @@
     },
     {
       "requirement": "Reviewable packages and synchronized commits",
-      "status": "Linux and Windows packages downloaded, exact hashes verified, and records synchronized in checkpoint commit"
+      "status": "preceding Linux/Windows packages downloaded and verified; current calibration source synchronized with this checkpoint; fresh packages pending"
     },
     {
       "requirement": "Preserve virtual driver and separately owned DAW",
@@ -75,12 +74,20 @@
     "Silent same-package updates do not prove older-version migration or interactive chooser behavior"
   ],
   "evidenceSha256": {
-    "data/localization/catalogs.json": "da7dfaac73073e1d85a48af3b20a1c4a07bfe5354099895b682c4a26c6779b08",
-    "docs/translation-review.md": "8e9458c2b4d053b968da7bc1aa80597814202f03e3b39f46c40adc161ec92b58",
-    "tests/localization.cpp": "e41a1b569843cad385574a70f126e2656c7021e7e7711c044c516543f317c2e8",
-    "tests/translation_catalogs.py": "dfe6a6a2dd4521944c1dae9cadef3df0e81676783bcc06245b05c32f2620f037",
+    "data/localization/catalogs.json": "c2adcfc863611b86b23111672ec55b88f8d32bdfd74164e8874a57d000d4fab8",
+    "docs/translation-review.md": "37e2c40b97cb208c5fbf866965f98e48fbbae0e77a467426f9e1c0072588b731",
+    "tests/localization.cpp": "870f108dfab069c6f5357076c122c98338317c65ea5af384d74841591fc2ea59",
+    "tests/translation_catalogs.py": "8105e278e20fc992ce7fd327d2749602794a902211975d47f326cd1ac5c66ed5",
     "scripts/ui_string_audit.py": "a7cd0132f32a3f103eadffe8798aee877b4c397545f3e53ec1ea4134b133629f",
-    "tests/results/localization/dynamic-display-inventory.json": "4e6cbc28245874d5ef63884e66c004cc2e2dc312d77f1d31a52a064448d7a3ff",
-    "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd"
-  }
+    "tests/results/localization/dynamic-display-inventory.json": "6c3db754057b302b011399d2f6892db3a7399f10a2c28ca9572ec26901cedfb3",
+    "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
+    "src/main.cpp": "5f4489aef88064d7ebde055caf0c88e641ca8aba71370b3265e203352fbcf7ff",
+    "src/localization.h": "ba4d9f31588317ccea9345a986c2b46057bff067d92a0ae5903909a515a8da85",
+    "src/localization_text.h": "9cbb9b2c5e49287651cba6bcd273c01e148f8fd5dce4b7e39fdd86594e344cd0",
+    "scripts/localization.py": "acc44a9a92f8dd0155e534011ea0c4d76ae673e425c87fe7434c9e902826e56b",
+    "tests/calibration_worker_localization.py": "c6120b78b59ae6d547cd7d0a503d4f39a46f0fa3c03c9c4007b46f8e53db34f8",
+    "tests/results/localization/calibration-worker-gap.json": "e509ba9b8e57133a0f5656e8cfba4effc4b8a265c711a4154d00259b08d166b1"
+  },
+  "auditedBaseHead": "a39082b688e3a0ad21e40c39a966ee11c44e5439",
+  "sourceIdentity": "Current inspected source files are identified by SHA-256 below; base commit is historical context, not qualification of pending calibration changes"
 }

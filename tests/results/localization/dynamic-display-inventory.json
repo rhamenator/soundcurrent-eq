@@ -2216,9 +2216,9 @@
     "src/equipment_display_text.h": "e3086d524e9b436075ecf9d9b8c143a0058a692685c10919b72298fd97ec44c5",
     "src/equipment_profiles.cpp": "83f71e230427be50c03c4c69d80c88f48643a54dc4ddc3d59b34eca655c1b63b",
     "src/equipment_profiles.h": "34fb124fe9a9177735c3e96b54f947fbdd2881ff175153c29334842c140b9545",
-    "src/localization.h": "118847e5522a946cb8d126e1b1519d01317a337673bc7dbf227ab16316e088fa",
-    "src/localization_text.h": "980dad1105437ab39e17ba1b75937496430abe974a75f65763ddd92fd04c38ec",
-    "src/main.cpp": "c315f54e08e86d342717345b4550c5c3c10c488ac697f70547f40caf1bc89f50",
+    "src/localization.h": "ba4d9f31588317ccea9345a986c2b46057bff067d92a0ae5903909a515a8da85",
+    "src/localization_text.h": "9cbb9b2c5e49287651cba6bcd273c01e148f8fd5dce4b7e39fdd86594e344cd0",
+    "src/main.cpp": "5f4489aef88064d7ebde055caf0c88e641ca8aba71370b3265e203352fbcf7ff",
     "src/main_windows.cpp": "df16bae0597ddb53f7a31bf2d99bd50f5768f6174265309d254da9b10bebd6c0",
     "src/processing_guard.cpp": "7357547a751b724be0c1743d94f8318a9f86b5f6b2180911799dc660bd5e74b2",
     "src/processing_guard.h": "3210a47f6da6b8d019710e052785a90b1b4635182497ca8c64549fb3b31a1913",
@@ -2239,5 +2239,5 @@
     "src/windows_platform.inc": "211d815bd910f4a06362979b762e919952260ab03cc2e809b482c9dda9f38d51",
     "src/windows_route_guardian.cpp": "4f683ce99ad6bafe227e293d94a82487157da269642e2e2298fa148bc3dfbf2d"
   },
-  "reviewStatus": "inventory only; provenance classification in progress"
+  "reviewStatus": "provenance review in progress; calibration subprocess gap fixed and covered by separate source/actual-worker tests"
 }

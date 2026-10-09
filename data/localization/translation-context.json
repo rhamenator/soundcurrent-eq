@@ -87,5 +87,10 @@
   "Delete": "Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.",
   "Select all": "Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.",
   "Step up": "Increase the numeric spin-box value by one step; not physical movement.",
-  "Step down": "Decrease the numeric spin-box value by one step; not physical movement."
+  "Step down": "Decrease the numeric spin-box value by one step; not physical movement.",
+  "Playing a logarithmic sweep from 20 Hz to 25 kHz": "Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.",
+  "Checking %1 Hz": "Calibration worker progress for a single test frequency. %1 is a locale-formatted frequency; Hz is the physical unit.",
+  "Capture bytes: %1, noise bytes: %2": "Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.",
+  "%1 Hz: signal %2, background %3": "Debug calibration tone amplitude and background noise amplitude. %1 is frequency, %2 signal amplitude, %3 background amplitude. Display only; no change to numerical analysis.",
+  "Measurement failed: %1": "Calibration failure prefix. %1 is a translated owned diagnostic or preserved external technical detail; do not modify device identifiers or paths."
 }

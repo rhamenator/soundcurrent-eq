@@ -250,6 +250,9 @@ REVIEWED_FILE_IDENTIFIERS = {'Input: PCM16/24/32 or float32 RIFF/WAVE. Output: f
 
 # Reviewed CLI help contracts; signs, limits and identifiers are not prose.
 REVIEWED_CLI_TOKENS = {
+    'Playing a logarithmic sweep from 20 Hz to 25 kHz': ('20', '25', 'Hz', 'kHz'),
+    'Checking %1 Hz': ('Hz',),
+    '%1 Hz: signal %2, background %3': ('Hz',),
     '1-256 output channels (default: input count)': ('1-256',),
     'optional channel low-pass (e.g. LFE)': ('LFE',),
     'output channel trim, -60 to +24 dB': ('-60', '+24', 'dB'),

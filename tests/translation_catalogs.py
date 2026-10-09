@@ -17,7 +17,7 @@ spec.loader.exec_module(catalog)
 class CatalogTests(unittest.TestCase):
     def test_cli_help_preserves_reviewed_limits_and_identifiers(self):
         for source, tokens in catalog.REVIEWED_CLI_TOKENS.items():
-            translated = 'Texte ' + ' '.join(tokens)
+            translated = 'Texte ' + ' '.join(tokens) + ' ' + ' '.join(catalog.PLACEHOLDER.findall(source))
             catalog.validate_text(source, translated)
             for token in tokens:
                 with self.subTest(source=source, token=token):
@@ -759,6 +759,21 @@ class CatalogTests(unittest.TestCase):
             result = audit.inventory(root)
             self.assertEqual([row['literal'] for row in result['candidates']], ['Unmarked label'])
             self.assertFalse(result['wholeInterfaceCoverageProven'])
+
+    def test_calibration_worker_display_prose_uses_declared_translations(self):
+        root = Path(__file__).resolve().parents[1]
+        code = (root / 'src/main.cpp').read_text(encoding='utf-8')
+        block = code[code.index('int runCalibration('):code.index('struct CalibrationSuggestion')]
+        statements = re.findall(r'QTextStream\(stderr\)([^;]*);', block)
+        self.assertEqual(len(statements), 6)
+        declared = set(catalog.sources())
+        for statement in statements:
+            marked = [catalog.literal(args[0]) for args in catalog.calls(statement, 'SC_TR')]
+            literals = [catalog.literal(value) for value in re.findall(catalog.LITERAL, statement)]
+            self.assertEqual(len(marked), 1)
+            self.assertEqual(literals, marked, 'Untranslated calibration stderr fragment')
+            self.assertIn(marked[0], declared)
+        self.assertNotIn('calibrationStatus_->text().startsWith("Measurement failed")', code)
 
     def test_dynamic_display_inventory_does_not_assume_translation_coverage(self):
         spec = importlib.util.spec_from_file_location('ui_audit', Path(__file__).resolve().parents[1] / 'scripts/ui_string_audit.py')

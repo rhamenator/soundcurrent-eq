@@ -76,6 +76,11 @@ Import into your library?</source>
       <translation>%1 Hz: 측정값 %2%3 dB, 권장값 %4%5 dB</translation>
     </message>
     <message>
+      <source>%1 Hz: signal %2, background %3</source>
+      <translation>%1 Hz: 신호 %2, 배경 %3</translation>
+      <extracomment>Debug calibration tone amplitude and background noise amplitude. %1 is frequency, %2 signal amplitude, %3 background amplitude. Display only; no change to numerical analysis.</extracomment>
+    </message>
+    <message>
       <source>%1 Hz: too quiet to measure</source>
       <translation>%1 Hz: 소리가 너무 작아 측정할 수 없음</translation>
     </message>
@@ -471,6 +476,11 @@ Import into your library?</source>
       <translation>측정을 시작할 수 없습니다: %1</translation>
     </message>
     <message>
+      <source>Capture bytes: %1, noise bytes: %2</source>
+      <translation>캡처 바이트: %1, 잡음 바이트: %2</translation>
+      <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
+    </message>
+    <message>
       <source>Center</source>
       <translation>중앙</translation>
     </message>
@@ -486,6 +496,11 @@ Import into your library?</source>
     <message>
       <source>Check for updates</source>
       <translation>업데이트 확인</translation>
+    </message>
+    <message>
+      <source>Checking %1 Hz</source>
+      <translation>%1 Hz 확인 중</translation>
+      <extracomment>Calibration worker progress for a single test frequency. %1 is a locale-formatted frequency; Hz is the physical unit.</extracomment>
     </message>
     <message>
       <source>Checking for published updates…</source>
@@ -1345,6 +1360,11 @@ Import into your library?</source>
       <translation>측정에 실패했습니다. 테스트 레벨을 높이거나 마이크를 더 가까이 옮겨 보세요.</translation>
     </message>
     <message>
+      <source>Measurement failed: %1</source>
+      <translation>측정 실패: %1</translation>
+      <extracomment>Calibration failure prefix. %1 is a translated owned diagnostic or preserved external technical detail; do not modify device identifiers or paths.</extracomment>
+    </message>
+    <message>
       <source>Measurement stopped.</source>
       <translation>측정이 중지되었습니다.</translation>
     </message>
@@ -1635,6 +1655,11 @@ Import into your library?</source>
     <message>
       <source>Playback</source>
       <translation>재생</translation>
+    </message>
+    <message>
+      <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
+      <translation>20 Hz에서 25 kHz까지 로그 스윕 재생 중</translation>
+      <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
