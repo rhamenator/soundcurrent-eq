@@ -40,7 +40,7 @@
     },
     {
       "requirement": "Changed Linux packages and installed language interfaces",
-      "status": "Prior public-update package qualified as documented. Launcher-description catalog change awaits rebuilt package qualification.",
+      "status": "Startup/launcher Ubuntu package hash, CTest, installed locales and launcher lifecycle verified. Corrected Fedora/AlmaLinux fixture jobs pending.",
       "run": 37903361741,
       "evidence": "tests/results/localization/linux-public-update-installed/verified-artifact.json"
     },
@@ -262,5 +262,6 @@
   "choiceListDisplayGuard": "tests/results/localization/choice-list-display-guard.json",
   "launcherDescriptionReview": "tests/results/localization/launcher-description-localization.json",
   "startupDiagnosticReview": "tests/results/localization/startup-diagnostic-gap.json",
-  "rendererDirectDiagnosticGuard": "tests/results/localization/renderer-direct-diagnostic-guard.json"
+  "rendererDirectDiagnosticGuard": "tests/results/localization/renderer-direct-diagnostic-guard.json",
+  "ubuntuStartupPackageEvidence": "tests/results/localization/ubuntu-startup-installed/verified-artifact.json"
 }
