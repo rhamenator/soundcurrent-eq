@@ -1,0 +1,191 @@
+Internal ctest changing into directory: /work/build
+Test project /work/build
+      Start  1: startup-registration
+ 1/91 Test  #1: startup-registration .................   Passed    0.01 sec
+      Start  2: endpoint-identity
+ 2/91 Test  #2: endpoint-identity ....................   Passed    0.00 sec
+      Start  3: microphone-transport
+ 3/91 Test  #3: microphone-transport .................   Passed    0.02 sec
+      Start  4: dsp-response
+ 4/91 Test  #4: dsp-response .........................   Passed    0.02 sec
+      Start  5: shared-ui
+ 5/91 Test  #5: shared-ui ............................   Passed    1.38 sec
+      Start  6: equipment-profiles
+ 6/91 Test  #6: equipment-profiles ...................   Passed    0.37 sec
+      Start  7: processing-guard
+ 7/91 Test  #7: processing-guard .....................   Passed    0.01 sec
+      Start  8: sound-enhancements
+ 8/91 Test  #8: sound-enhancements ...................   Passed    0.05 sec
+      Start  9: update-policy
+ 9/91 Test  #9: update-policy ........................   Passed    0.01 sec
+      Start 10: spin-acceleration
+10/91 Test #10: spin-acceleration ....................   Passed    2.81 sec
+      Start 11: equipment-ui
+11/91 Test #11: equipment-ui .........................   Passed    0.97 sec
+      Start 12: equipment-ui-pt-PT
+12/91 Test #12: equipment-ui-pt-PT ...................   Passed    0.97 sec
+      Start 13: equipment-ui-pt-BR
+13/91 Test #13: equipment-ui-pt-BR ...................   Passed    0.97 sec
+      Start 14: equipment-ui-cs
+14/91 Test #14: equipment-ui-cs ......................   Passed    0.97 sec
+      Start 15: equipment-ui-sk
+15/91 Test #15: equipment-ui-sk ......................   Passed    0.97 sec
+      Start 16: equipment-ui-uk
+16/91 Test #16: equipment-ui-uk ......................   Passed    0.97 sec
+      Start 17: equipment-ui-ru
+17/91 Test #17: equipment-ui-ru ......................   Passed    0.98 sec
+      Start 18: equipment-ui-el
+18/91 Test #18: equipment-ui-el ......................   Passed    0.97 sec
+      Start 19: equipment-ui-tr
+19/91 Test #19: equipment-ui-tr ......................   Passed    0.97 sec
+      Start 20: equipment-ui-sv
+20/91 Test #20: equipment-ui-sv ......................   Passed    0.97 sec
+      Start 21: equipment-ui-da
+21/91 Test #21: equipment-ui-da ......................   Passed    0.97 sec
+      Start 22: equipment-ui-nb
+22/91 Test #22: equipment-ui-nb ......................   Passed    0.97 sec
+      Start 23: equipment-ui-fi
+23/91 Test #23: equipment-ui-fi ......................   Passed    0.97 sec
+      Start 24: equipment-ui-ro
+24/91 Test #24: equipment-ui-ro ......................   Passed    0.97 sec
+      Start 25: equipment-ui-hu
+25/91 Test #25: equipment-ui-hu ......................   Passed    0.97 sec
+      Start 26: equipment-ui-nn
+26/91 Test #26: equipment-ui-nn ......................   Passed    0.97 sec
+      Start 27: equipment-ui-ar
+27/91 Test #27: equipment-ui-ar ......................   Passed    0.99 sec
+      Start 28: equipment-ui-he
+28/91 Test #28: equipment-ui-he ......................   Passed    0.98 sec
+      Start 29: equipment-ui-fa
+29/91 Test #29: equipment-ui-fa ......................   Passed    0.98 sec
+      Start 30: equipment-ui-zh-Hans
+30/91 Test #30: equipment-ui-zh-Hans .................   Passed    0.97 sec
+      Start 31: equipment-ui-zh-Hant
+31/91 Test #31: equipment-ui-zh-Hant .................   Passed    0.97 sec
+      Start 32: equipment-ui-ja
+32/91 Test #32: equipment-ui-ja ......................   Passed    0.97 sec
+      Start 33: equipment-ui-ko
+33/91 Test #33: equipment-ui-ko ......................   Passed    0.97 sec
+      Start 34: equipment-ui-hi
+34/91 Test #34: equipment-ui-hi ......................   Passed    0.98 sec
+      Start 35: equipment-ui-id
+35/91 Test #35: equipment-ui-id ......................   Passed    0.97 sec
+      Start 36: equipment-ui-vi
+36/91 Test #36: equipment-ui-vi ......................   Passed    0.97 sec
+      Start 37: equipment-ui-th
+37/91 Test #37: equipment-ui-th ......................   Passed    0.98 sec
+      Start 38: equipment-ui-sw
+38/91 Test #38: equipment-ui-sw ......................   Passed    0.97 sec
+      Start 39: equipment-ui-pl
+39/91 Test #39: equipment-ui-pl ......................   Passed    0.97 sec
+      Start 40: equipment-ui-nl
+40/91 Test #40: equipment-ui-nl ......................   Passed    0.97 sec
+      Start 41: equipment-ui-it
+41/91 Test #41: equipment-ui-it ......................   Passed    0.97 sec
+      Start 42: equipment-ui-es
+42/91 Test #42: equipment-ui-es ......................   Passed    0.97 sec
+      Start 43: equipment-ui-de
+43/91 Test #43: equipment-ui-de ......................   Passed    0.97 sec
+      Start 44: equipment-ui-fr
+44/91 Test #44: equipment-ui-fr ......................   Passed    0.97 sec
+      Start 45: localization
+45/91 Test #45: localization .........................   Passed    0.95 sec
+      Start 46: localized-number-format-de
+46/91 Test #46: localized-number-format-de ...........   Passed    0.34 sec
+      Start 47: localized-ui-de
+47/91 Test #47: localized-ui-de ......................   Passed    0.34 sec
+      Start 48: localized-ui-fr
+48/91 Test #48: localized-ui-fr ......................   Passed    0.34 sec
+      Start 49: localized-ui-es
+49/91 Test #49: localized-ui-es ......................   Passed    0.34 sec
+      Start 50: localized-ui-it
+50/91 Test #50: localized-ui-it ......................   Passed    0.34 sec
+      Start 51: localized-ui-pt-PT
+51/91 Test #51: localized-ui-pt-PT ...................   Passed    0.34 sec
+      Start 52: localized-ui-pt-BR
+52/91 Test #52: localized-ui-pt-BR ...................   Passed    0.34 sec
+      Start 53: localized-ui-nl
+53/91 Test #53: localized-ui-nl ......................   Passed    0.34 sec
+      Start 54: localized-ui-pl
+54/91 Test #54: localized-ui-pl ......................   Passed    0.33 sec
+      Start 55: localized-ui-cs
+55/91 Test #55: localized-ui-cs ......................   Passed    0.34 sec
+      Start 56: localized-ui-sk
+56/91 Test #56: localized-ui-sk ......................   Passed    0.34 sec
+      Start 57: localized-ui-uk
+57/91 Test #57: localized-ui-uk ......................   Passed    0.34 sec
+      Start 58: localized-ui-ru
+58/91 Test #58: localized-ui-ru ......................   Passed    0.34 sec
+      Start 59: localized-ui-el
+59/91 Test #59: localized-ui-el ......................   Passed    0.33 sec
+      Start 60: localized-ui-tr
+60/91 Test #60: localized-ui-tr ......................   Passed    0.33 sec
+      Start 61: localized-ui-sv
+61/91 Test #61: localized-ui-sv ......................   Passed    0.33 sec
+      Start 62: localized-ui-da
+62/91 Test #62: localized-ui-da ......................   Passed    0.34 sec
+      Start 63: localized-ui-nb
+63/91 Test #63: localized-ui-nb ......................   Passed    0.34 sec
+      Start 64: localized-ui-fi
+64/91 Test #64: localized-ui-fi ......................   Passed    0.34 sec
+      Start 65: localized-ui-ro
+65/91 Test #65: localized-ui-ro ......................   Passed    0.34 sec
+      Start 66: localized-ui-hu
+66/91 Test #66: localized-ui-hu ......................   Passed    0.33 sec
+      Start 67: localized-ui-nn
+67/91 Test #67: localized-ui-nn ......................   Passed    0.34 sec
+      Start 68: localized-ui-ar
+68/91 Test #68: localized-ui-ar ......................   Passed    0.34 sec
+      Start 69: localized-ui-he
+69/91 Test #69: localized-ui-he ......................   Passed    0.33 sec
+      Start 70: localized-ui-fa
+70/91 Test #70: localized-ui-fa ......................   Passed    0.34 sec
+      Start 71: localized-ui-zh-Hans
+71/91 Test #71: localized-ui-zh-Hans .................   Passed    0.34 sec
+      Start 72: localized-ui-zh-Hant
+72/91 Test #72: localized-ui-zh-Hant .................   Passed    0.33 sec
+      Start 73: localized-ui-ja
+73/91 Test #73: localized-ui-ja ......................   Passed    0.34 sec
+      Start 74: localized-ui-ko
+74/91 Test #74: localized-ui-ko ......................   Passed    0.33 sec
+      Start 75: localized-ui-hi
+75/91 Test #75: localized-ui-hi ......................   Passed    0.33 sec
+      Start 76: localized-ui-id
+76/91 Test #76: localized-ui-id ......................   Passed    0.33 sec
+      Start 77: localized-ui-vi
+77/91 Test #77: localized-ui-vi ......................   Passed    0.33 sec
+      Start 78: localized-ui-th
+78/91 Test #78: localized-ui-th ......................   Passed    0.34 sec
+      Start 79: localized-ui-sw
+79/91 Test #79: localized-ui-sw ......................   Passed    0.33 sec
+      Start 80: localized-ui-qps-ploc
+80/91 Test #80: localized-ui-qps-ploc ................   Passed    0.35 sec
+      Start 81: localized-ui-qps-rtl
+81/91 Test #81: localized-ui-qps-rtl .................   Passed    0.36 sec
+      Start 82: linux-installer-localization
+82/91 Test #82: linux-installer-localization .........   Passed   13.76 sec
+      Start 83: startup-diagnostics-localization
+83/91 Test #83: startup-diagnostics-localization .....   Passed    6.73 sec
+      Start 84: calibration-worker-localization
+84/91 Test #84: calibration-worker-localization ......   Passed    1.04 sec
+      Start 85: translation-maintenance
+85/91 Test #85: translation-maintenance ..............   Passed   26.82 sec
+      Start 86: installer-language-map
+86/91 Test #86: installer-language-map ...............   Passed    0.09 sec
+      Start 87: installer-language-activation
+87/91 Test #87: installer-language-activation ........   Passed    3.72 sec
+      Start 88: installer-locale-lifecycle-fixture
+88/91 Test #88: installer-locale-lifecycle-fixture ...***Skipped   0.04 sec
+      Start 89: swahili-installer-base
+89/91 Test #89: swahili-installer-base ...............   Passed    0.05 sec
+      Start 90: translation-catalogs
+90/91 Test #90: translation-catalogs .................   Passed    1.85 sec
+      Start 91: backend-error-text
+91/91 Test #91: backend-error-text ...................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 91
+
+Total Test time (real) = 104.92 sec
+
+The following tests did not run:
+	 88 - installer-locale-lifecycle-fixture (Skipped)

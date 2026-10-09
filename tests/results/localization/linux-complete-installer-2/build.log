@@ -1,0 +1,540 @@
+setting SOURCE_DATE_EPOCH=1791158400
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.cfWNqm
++ umask 022
++ cd /work/build/rpm/BUILD
++ cd /work/build/rpm/BUILD
++ rm -rf soundcurrent-eq-1.1.0
++ /usr/lib/rpm/rpmuncompress -x /work/build/rpm/SOURCES/soundcurrent-eq-1.1.0.tar.gz
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd soundcurrent-eq-1.1.0
++ rm -rf /work/build/rpm/BUILD/soundcurrent-eq-1.1.0-SPECPARTS
++ /usr/bin/mkdir -p /work/build/rpm/BUILD/soundcurrent-eq-1.1.0-SPECPARTS
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.T1AWOV
++ umask 022
++ cd /work/build/rpm/BUILD
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64-v3 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64-v3 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64-v3 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64-v3 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd soundcurrent-eq-1.1.0
++ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+-- The CXX compiler identification is GNU 14.3.1
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE
+-- Found OpenGL: /usr/lib64/libOpenGL.so
+-- Found WrapOpenGL: TRUE
+-- Found WrapVulkanHeaders: /usr/include
+-- Configuring done (0.9s)
+-- Generating done (0.1s)
+-- Build files have been written to: /work/build/rpm/BUILD/soundcurrent-eq-1.1.0/build
++ cmake --build build --parallel 4
+[  0%] Built target soundcurrent-dsp_autogen_timestamp_deps
+[  0%] Built target soundcurrent-startup-test_autogen_timestamp_deps
+[  0%] Built target soundcurrent-endpoint-identity-test_autogen_timestamp_deps
+[  0%] Built target soundcurrent-mic-transport-test_autogen_timestamp_deps
+[  0%] Built target soundcurrent-enhancements_autogen_timestamp_deps
+[  0%] Built target soundcurrent-processing-guard-test_autogen_timestamp_deps
+[  0%] Built target soundcurrent-update-test_autogen_timestamp_deps
+[  0%] Built target soundcurrent-spin-test_autogen_timestamp_deps
+[  1%] Automatic MOC for target soundcurrent-dsp
+[  2%] Automatic MOC for target soundcurrent-startup-test
+[  2%] Built target soundcurrent-localization-test_autogen_timestamp_deps
+[  2%] Built target soundcurrent-backend-error-text-test_autogen_timestamp_deps
+[  4%] Automatic MOC for target soundcurrent-mic-transport-test
+[  4%] Automatic MOC for target soundcurrent-endpoint-identity-test
+[  4%] Built target soundcurrent-dsp_autogen
+[  4%] Built target soundcurrent-startup-test_autogen
+[  4%] Built target soundcurrent-endpoint-identity-test_autogen
+[  7%] Automatic MOC for target soundcurrent-processing-guard-test
+[  7%] Automatic MOC for target soundcurrent-enhancements
+[  7%] Built target soundcurrent-mic-transport-test_autogen
+[  8%] Automatic MOC for target soundcurrent-update-test
+[  9%] Automatic MOC for target soundcurrent-spin-test
+[  9%] Built target soundcurrent-enhancements_autogen
+[  9%] Built target soundcurrent-processing-guard-test_autogen
+[ 11%] Automatic MOC for target soundcurrent-localization-test
+[ 11%] Built target soundcurrent-spin-test_autogen
+[ 12%] Automatic MOC for target soundcurrent-backend-error-text-test
+[ 12%] Built target soundcurrent-update-test_autogen
+[ 13%] Building CXX object CMakeFiles/soundcurrent-dsp.dir/soundcurrent-dsp_autogen/mocs_compilation.cpp.o
+[ 14%] Building CXX object CMakeFiles/soundcurrent-startup-test.dir/soundcurrent-startup-test_autogen/mocs_compilation.cpp.o
+[ 14%] Built target soundcurrent-localization-test_autogen
+[ 14%] Built target soundcurrent-backend-error-text-test_autogen
+[ 16%] Building CXX object CMakeFiles/soundcurrent-dsp.dir/src/dsp.cpp.o
+[ 17%] Building CXX object CMakeFiles/soundcurrent-dsp.dir/src/enhancement.cpp.o
+[ 18%] Building CXX object CMakeFiles/soundcurrent-startup-test.dir/tests/startup_registration.cpp.o
+[ 19%] Building CXX object CMakeFiles/soundcurrent-endpoint-identity-test.dir/soundcurrent-endpoint-identity-test_autogen/mocs_compilation.cpp.o
+[ 20%] Building CXX object CMakeFiles/soundcurrent-endpoint-identity-test.dir/tests/windows_endpoint_identity.cpp.o
+[ 22%] Linking CXX executable soundcurrent-endpoint-identity-test
+[ 22%] Built target soundcurrent-endpoint-identity-test
+[ 23%] Building CXX object CMakeFiles/soundcurrent-mic-transport-test.dir/soundcurrent-mic-transport-test_autogen/mocs_compilation.cpp.o
+[ 24%] Building CXX object CMakeFiles/soundcurrent-mic-transport-test.dir/tests/windows_mic_transport.cpp.o
+[ 25%] Building CXX object CMakeFiles/soundcurrent-processing-guard-test.dir/soundcurrent-processing-guard-test_autogen/mocs_compilation.cpp.o
+[ 27%] Building CXX object CMakeFiles/soundcurrent-processing-guard-test.dir/tests/processing_guard.cpp.o
+[ 28%] Linking CXX static library libsoundcurrent-dsp.a
+[ 28%] Built target soundcurrent-dsp
+[ 29%] Building CXX object CMakeFiles/soundcurrent-enhancements.dir/soundcurrent-enhancements_autogen/mocs_compilation.cpp.o
+[ 30%] Building CXX object CMakeFiles/soundcurrent-enhancements.dir/src/enhancement_ladspa.cpp.o
+[ 32%] Linking CXX executable soundcurrent-mic-transport-test
+[ 33%] Building CXX object CMakeFiles/soundcurrent-enhancements.dir/src/enhancement.cpp.o
+[ 33%] Built target soundcurrent-mic-transport-test
+[ 34%] Building CXX object CMakeFiles/soundcurrent-processing-guard-test.dir/src/processing_guard.cpp.o
+[ 35%] Linking CXX shared module effects/soundcurrent-enhancements.so
+[ 35%] Built target soundcurrent-enhancements
+[ 35%] Built target soundcurrent-enhancement-test_autogen_timestamp_deps
+[ 37%] Building CXX object CMakeFiles/soundcurrent-update-test.dir/soundcurrent-update-test_autogen/mocs_compilation.cpp.o
+[ 38%] Building CXX object CMakeFiles/soundcurrent-update-test.dir/tests/update_policy.cpp.o
+[ 39%] Linking CXX executable soundcurrent-startup-test
+[ 39%] Built target soundcurrent-startup-test
+[ 40%] Building CXX object CMakeFiles/soundcurrent-spin-test.dir/soundcurrent-spin-test_autogen/mocs_compilation.cpp.o
+[ 41%] Building CXX object CMakeFiles/soundcurrent-spin-test.dir/tests/spin_acceleration.cpp.o
+[ 41%] Built target soundcurrent-equipment-ui-test_autogen_timestamp_deps
+[ 43%] Automatic RCC for data/localization/resources.qrc
+/work/build/rpm/BUILD/soundcurrent-eq-1.1.0/tests/update_policy.cpp: In function ‘int main(int, char**)’:
+/work/build/rpm/BUILD/soundcurrent-eq-1.1.0/tests/update_policy.cpp:19:20: warning: loop variable ‘version’ creates a copy from type ‘const QString’ [-Wrange-loop-construct]
+   19 |  for(const QString version:{QString("0.7.3"),QString("0.7.6"),QString("0.7.5")}){QFile f(folder.filePath(prefix+version+suffix));require(f.open(QIODevice::WriteOnly),"test file");f.write("fixture");}
+      |                    ^~~~~~~
+/work/build/rpm/BUILD/soundcurrent-eq-1.1.0/tests/update_policy.cpp:19:20: note: use reference type to prevent copying
+   19 |  for(const QString version:{QString("0.7.3"),QString("0.7.6"),QString("0.7.5")}){QFile f(folder.filePath(prefix+version+suffix));require(f.open(QIODevice::WriteOnly),"test file");f.write("fixture");}
+      |                    ^~~~~~~
+      |                    &
+[ 44%] Linking CXX executable soundcurrent-processing-guard-test
+[ 45%] Building CXX object CMakeFiles/soundcurrent-localization-test.dir/soundcurrent-localization-test_autogen/mocs_compilation.cpp.o
+[ 46%] Building CXX object CMakeFiles/soundcurrent-localization-test.dir/tests/localization.cpp.o
+[ 46%] Built target soundcurrent-processing-guard-test
+[ 48%] Building CXX object CMakeFiles/soundcurrent-backend-error-text-test.dir/soundcurrent-backend-error-text-test_autogen/mocs_compilation.cpp.o
+[ 49%] Building CXX object CMakeFiles/soundcurrent-backend-error-text-test.dir/tests/backend_error_text.cpp.o
+[ 50%] Linking CXX executable soundcurrent-update-test
+[ 51%] Linking CXX executable soundcurrent-spin-test
+[ 51%] Built target soundcurrent-spin-test
+[ 51%] Built target soundcurrent-eq_autogen_timestamp_deps
+[ 51%] Built target soundcurrent-dsp-test_autogen_timestamp_deps
+[ 53%] Building CXX object CMakeFiles/soundcurrent-localization-test.dir/soundcurrent-localization-test_autogen/VVIUIMQMFG/qrc_resources.cpp.o
+[ 53%] Built target soundcurrent-update-test
+[ 53%] Built target soundcurrent-equipment-test_autogen_timestamp_deps
+[ 54%] Automatic MOC for target soundcurrent-enhancement-test
+[ 54%] Built target soundcurrent-enhancement-test_autogen
+[ 55%] Automatic MOC for target soundcurrent-equipment-ui-test
+[ 55%] Built target soundcurrent-equipment-ui-test_autogen
+[ 56%] Automatic MOC for target soundcurrent-eq
+[ 56%] Built target soundcurrent-eq_autogen
+[ 58%] Automatic MOC for target soundcurrent-dsp-test
+[ 58%] Built target soundcurrent-dsp-test_autogen
+[ 59%] Automatic MOC for target soundcurrent-equipment-test
+[ 59%] Built target soundcurrent-equipment-test_autogen
+[ 60%] Building CXX object CMakeFiles/soundcurrent-enhancement-test.dir/soundcurrent-enhancement-test_autogen/mocs_compilation.cpp.o
+[ 61%] Building CXX object CMakeFiles/soundcurrent-enhancement-test.dir/tests/enhancement_response.cpp.o
+[ 62%] Linking CXX executable soundcurrent-enhancement-test
+[ 64%] Automatic RCC for data/localization/resources.qrc
+[ 64%] Built target soundcurrent-enhancement-test
+[ 65%] Automatic RCC for data/resources.qrc
+[ 66%] Linking CXX executable soundcurrent-backend-error-text-test
+[ 67%] Automatic RCC for data/localization/resources.qrc
+[ 69%] Building CXX object CMakeFiles/soundcurrent-equipment-ui-test.dir/soundcurrent-equipment-ui-test_autogen/mocs_compilation.cpp.o
+[ 70%] Building CXX object CMakeFiles/soundcurrent-equipment-ui-test.dir/tests/equipment_ui.cpp.o
+[ 70%] Built target soundcurrent-backend-error-text-test
+[ 71%] Building CXX object CMakeFiles/soundcurrent-equipment-ui-test.dir/src/equipment_profiles.cpp.o
+[ 72%] Automatic RCC for data/resources.qrc
+[ 74%] Building CXX object CMakeFiles/soundcurrent-eq.dir/soundcurrent-eq_autogen/mocs_compilation.cpp.o
+[ 75%] Building CXX object CMakeFiles/soundcurrent-eq.dir/src/main.cpp.o
+[ 76%] Building CXX object CMakeFiles/soundcurrent-dsp-test.dir/soundcurrent-dsp-test_autogen/mocs_compilation.cpp.o
+[ 77%] Building CXX object CMakeFiles/soundcurrent-dsp-test.dir/tests/dsp_response.cpp.o
+[ 79%] Linking CXX executable soundcurrent-dsp-test
+[ 79%] Built target soundcurrent-dsp-test
+[ 80%] Building CXX object CMakeFiles/soundcurrent-eq.dir/src/equipment_profiles.cpp.o
+[ 81%] Building CXX object CMakeFiles/soundcurrent-equipment-ui-test.dir/soundcurrent-equipment-ui-test_autogen/QYFM2Z2WYQ/qrc_resources.cpp.o
+[ 82%] Building CXX object CMakeFiles/soundcurrent-equipment-ui-test.dir/soundcurrent-equipment-ui-test_autogen/VVIUIMQMFG/qrc_resources.cpp.o
+[ 83%] Linking CXX executable soundcurrent-equipment-ui-test
+[ 85%] Linking CXX executable soundcurrent-localization-test
+[ 85%] Built target soundcurrent-equipment-ui-test
+[ 86%] Building CXX object CMakeFiles/soundcurrent-eq.dir/src/processing_guard.cpp.o
+[ 87%] Automatic RCC for data/localization/resources.qrc
+[ 88%] Automatic RCC for data/resources.qrc
+[ 90%] Building CXX object CMakeFiles/soundcurrent-equipment-test.dir/soundcurrent-equipment-test_autogen/mocs_compilation.cpp.o
+[ 91%] Building CXX object CMakeFiles/soundcurrent-equipment-test.dir/tests/equipment_profiles.cpp.o
+[ 92%] Building CXX object CMakeFiles/soundcurrent-equipment-test.dir/src/equipment_profiles.cpp.o
+[ 93%] Building CXX object CMakeFiles/soundcurrent-eq.dir/soundcurrent-eq_autogen/QYFM2Z2WYQ/qrc_resources.cpp.o
+[ 95%] Building CXX object CMakeFiles/soundcurrent-equipment-test.dir/soundcurrent-equipment-test_autogen/QYFM2Z2WYQ/qrc_resources.cpp.o
+[ 96%] Building CXX object CMakeFiles/soundcurrent-eq.dir/soundcurrent-eq_autogen/VVIUIMQMFG/qrc_resources.cpp.o
+[ 97%] Building CXX object CMakeFiles/soundcurrent-equipment-test.dir/soundcurrent-equipment-test_autogen/VVIUIMQMFG/qrc_resources.cpp.o
+[ 97%] Built target soundcurrent-localization-test
+[ 98%] Linking CXX executable soundcurrent-equipment-test
+[100%] Linking CXX executable soundcurrent-eq
+[100%] Built target soundcurrent-equipment-test
+[100%] Built target soundcurrent-eq
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.feleFS
++ umask 022
++ cd /work/build/rpm/BUILD
++ '[' /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64 '!=' / ']'
++ rm -rf /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64
+++ dirname /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64
++ mkdir -p /work/build/rpm/BUILDROOT
++ mkdir /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64-v3 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64-v3 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64-v3 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64-v3 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd soundcurrent-eq-1.1.0
++ DESTDIR=/work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64
++ cmake --install build
+-- Install configuration: "Release"
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/bin/soundcurrent-eq
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/applications/io.github.rhamenator.SoundCurrentEQ.desktop
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/icons/hicolor/scalable/apps/io.github.rhamenator.SoundCurrentEQ.svg
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/copyright
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/THIRD-PARTY-NOTICES.md
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/Sony_SS-CS5.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/Edifier_MR4.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/Yamaha_HS8.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/JBL_306P_Mark_ii.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/profiles.json
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/Elac_Debut_2.0_B6.2.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/Adam_T5V.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/LICENSE
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/Kali_LP-8v2.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/JBL_308P_Mark_ii.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/JBL_305P_Mark_ii.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/Elac_Debut_Reference_DBR-62.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/KEF_Q350.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/KRK_Systems_RoKit_5_G4.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/Kali_LP-6v2.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/Adam_T7V.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/Wharfedale_Diamond_12.1.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/KEF_Q150.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/Yamaha_HS5.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/speakers/Yamaha_HS7.txt
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/LICENSE
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/equipment
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/equipment/profiles.json
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/equipment/measurement-sources.json
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/equipment/LICENSE
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/equipment/collection-report.json
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/equipment/spinorama.json
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/equipment-profiles.md
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/lib64/soundcurrent-eq/soundcurrent-enhancements.so
+-- Installing: /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq/LGPL-2.1
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/brp-strip /usr/bin/strip
++ /usr/lib/rpm/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
++ /usr/lib/rpm/brp-remove-la-files
++ /usr/lib/rpm/redhat/brp-python-rpm-in-distinfo
++ env /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0 -j4
++ /usr/lib/rpm/redhat/brp-python-hardlink
+Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.kWjUM0
++ umask 022
++ cd /work/build/rpm/BUILD
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64-v3 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64-v3 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64-v3 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64-v3 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd soundcurrent-eq-1.1.0
++ ctest --test-dir build --output-on-failure --no-tests=error
+Internal ctest changing into directory: /work/build/rpm/BUILD/soundcurrent-eq-1.1.0/build
+Test project /work/build/rpm/BUILD/soundcurrent-eq-1.1.0/build
+      Start  1: startup-registration
+ 1/91 Test  #1: startup-registration .................   Passed    0.04 sec
+      Start  2: endpoint-identity
+ 2/91 Test  #2: endpoint-identity ....................   Passed    0.00 sec
+      Start  3: microphone-transport
+ 3/91 Test  #3: microphone-transport .................   Passed    0.01 sec
+      Start  4: dsp-response
+ 4/91 Test  #4: dsp-response .........................   Passed    0.02 sec
+      Start  5: shared-ui
+ 5/91 Test  #5: shared-ui ............................   Passed    1.47 sec
+      Start  6: equipment-profiles
+ 6/91 Test  #6: equipment-profiles ...................   Passed    0.30 sec
+      Start  7: processing-guard
+ 7/91 Test  #7: processing-guard .....................   Passed    0.01 sec
+      Start  8: sound-enhancements
+ 8/91 Test  #8: sound-enhancements ...................   Passed    0.04 sec
+      Start  9: update-policy
+ 9/91 Test  #9: update-policy ........................   Passed    0.02 sec
+      Start 10: spin-acceleration
+10/91 Test #10: spin-acceleration ....................   Passed    2.82 sec
+      Start 11: equipment-ui
+11/91 Test #11: equipment-ui .........................   Passed    0.92 sec
+      Start 12: equipment-ui-pt-PT
+12/91 Test #12: equipment-ui-pt-PT ...................   Passed    0.97 sec
+      Start 13: equipment-ui-pt-BR
+13/91 Test #13: equipment-ui-pt-BR ...................   Passed    0.97 sec
+      Start 14: equipment-ui-cs
+14/91 Test #14: equipment-ui-cs ......................   Passed    0.93 sec
+      Start 15: equipment-ui-sk
+15/91 Test #15: equipment-ui-sk ......................   Passed    0.93 sec
+      Start 16: equipment-ui-uk
+16/91 Test #16: equipment-ui-uk ......................   Passed    0.94 sec
+      Start 17: equipment-ui-ru
+17/91 Test #17: equipment-ui-ru ......................   Passed    0.94 sec
+      Start 18: equipment-ui-el
+18/91 Test #18: equipment-ui-el ......................   Passed    0.93 sec
+      Start 19: equipment-ui-tr
+19/91 Test #19: equipment-ui-tr ......................   Passed    0.93 sec
+      Start 20: equipment-ui-sv
+20/91 Test #20: equipment-ui-sv ......................   Passed    0.97 sec
+      Start 21: equipment-ui-da
+21/91 Test #21: equipment-ui-da ......................   Passed    0.96 sec
+      Start 22: equipment-ui-nb
+22/91 Test #22: equipment-ui-nb ......................   Passed    1.17 sec
+      Start 23: equipment-ui-fi
+23/91 Test #23: equipment-ui-fi ......................   Passed    0.98 sec
+      Start 24: equipment-ui-ro
+24/91 Test #24: equipment-ui-ro ......................   Passed    0.93 sec
+      Start 25: equipment-ui-hu
+25/91 Test #25: equipment-ui-hu ......................   Passed    1.06 sec
+      Start 26: equipment-ui-nn
+26/91 Test #26: equipment-ui-nn ......................   Passed    0.97 sec
+      Start 27: equipment-ui-ar
+27/91 Test #27: equipment-ui-ar ......................   Passed    1.06 sec
+      Start 28: equipment-ui-he
+28/91 Test #28: equipment-ui-he ......................   Passed    1.26 sec
+      Start 29: equipment-ui-fa
+29/91 Test #29: equipment-ui-fa ......................   Passed    0.95 sec
+      Start 30: equipment-ui-zh-Hans
+30/91 Test #30: equipment-ui-zh-Hans .................   Passed    0.99 sec
+      Start 31: equipment-ui-zh-Hant
+31/91 Test #31: equipment-ui-zh-Hant .................   Passed    0.95 sec
+      Start 32: equipment-ui-ja
+32/91 Test #32: equipment-ui-ja ......................   Passed    1.09 sec
+      Start 33: equipment-ui-ko
+33/91 Test #33: equipment-ui-ko ......................   Passed    1.22 sec
+      Start 34: equipment-ui-hi
+34/91 Test #34: equipment-ui-hi ......................   Passed    0.94 sec
+      Start 35: equipment-ui-id
+35/91 Test #35: equipment-ui-id ......................   Passed    0.98 sec
+      Start 36: equipment-ui-vi
+36/91 Test #36: equipment-ui-vi ......................   Passed    1.16 sec
+      Start 37: equipment-ui-th
+37/91 Test #37: equipment-ui-th ......................   Passed    0.93 sec
+      Start 38: equipment-ui-sw
+38/91 Test #38: equipment-ui-sw ......................   Passed    0.92 sec
+      Start 39: equipment-ui-pl
+39/91 Test #39: equipment-ui-pl ......................   Passed    1.06 sec
+      Start 40: equipment-ui-nl
+40/91 Test #40: equipment-ui-nl ......................   Passed    0.97 sec
+      Start 41: equipment-ui-it
+41/91 Test #41: equipment-ui-it ......................   Passed    1.04 sec
+      Start 42: equipment-ui-es
+42/91 Test #42: equipment-ui-es ......................   Passed    1.25 sec
+      Start 43: equipment-ui-de
+43/91 Test #43: equipment-ui-de ......................   Passed    1.06 sec
+      Start 44: equipment-ui-fr
+44/91 Test #44: equipment-ui-fr ......................   Passed    0.95 sec
+      Start 45: localization
+45/91 Test #45: localization .........................   Passed    1.53 sec
+      Start 46: localized-number-format-de
+46/91 Test #46: localized-number-format-de ...........   Passed    0.43 sec
+      Start 47: localized-ui-de
+47/91 Test #47: localized-ui-de ......................   Passed    0.85 sec
+      Start 48: localized-ui-fr
+48/91 Test #48: localized-ui-fr ......................   Passed    0.37 sec
+      Start 49: localized-ui-es
+49/91 Test #49: localized-ui-es ......................   Passed    0.42 sec
+      Start 50: localized-ui-it
+50/91 Test #50: localized-ui-it ......................   Passed    1.28 sec
+      Start 51: localized-ui-pt-PT
+51/91 Test #51: localized-ui-pt-PT ...................   Passed    0.70 sec
+      Start 52: localized-ui-pt-BR
+52/91 Test #52: localized-ui-pt-BR ...................   Passed    1.17 sec
+      Start 53: localized-ui-nl
+53/91 Test #53: localized-ui-nl ......................   Passed    0.38 sec
+      Start 54: localized-ui-pl
+54/91 Test #54: localized-ui-pl ......................   Passed    0.91 sec
+      Start 55: localized-ui-cs
+55/91 Test #55: localized-ui-cs ......................   Passed    0.56 sec
+      Start 56: localized-ui-sk
+56/91 Test #56: localized-ui-sk ......................   Passed    0.44 sec
+      Start 57: localized-ui-uk
+57/91 Test #57: localized-ui-uk ......................   Passed    0.51 sec
+      Start 58: localized-ui-ru
+58/91 Test #58: localized-ui-ru ......................   Passed    0.75 sec
+      Start 59: localized-ui-el
+59/91 Test #59: localized-ui-el ......................   Passed    0.72 sec
+      Start 60: localized-ui-tr
+60/91 Test #60: localized-ui-tr ......................   Passed    1.75 sec
+      Start 61: localized-ui-sv
+61/91 Test #61: localized-ui-sv ......................   Passed    0.40 sec
+      Start 62: localized-ui-da
+62/91 Test #62: localized-ui-da ......................   Passed    0.44 sec
+      Start 63: localized-ui-nb
+63/91 Test #63: localized-ui-nb ......................   Passed    0.34 sec
+      Start 64: localized-ui-fi
+64/91 Test #64: localized-ui-fi ......................   Passed    0.68 sec
+      Start 65: localized-ui-ro
+65/91 Test #65: localized-ui-ro ......................   Passed    0.62 sec
+      Start 66: localized-ui-hu
+66/91 Test #66: localized-ui-hu ......................   Passed    0.61 sec
+      Start 67: localized-ui-nn
+67/91 Test #67: localized-ui-nn ......................   Passed    1.61 sec
+      Start 68: localized-ui-ar
+68/91 Test #68: localized-ui-ar ......................   Passed    1.99 sec
+      Start 69: localized-ui-he
+69/91 Test #69: localized-ui-he ......................   Passed    0.84 sec
+      Start 70: localized-ui-fa
+70/91 Test #70: localized-ui-fa ......................   Passed    0.89 sec
+      Start 71: localized-ui-zh-Hans
+71/91 Test #71: localized-ui-zh-Hans .................   Passed    0.46 sec
+      Start 72: localized-ui-zh-Hant
+72/91 Test #72: localized-ui-zh-Hant .................   Passed    0.47 sec
+      Start 73: localized-ui-ja
+73/91 Test #73: localized-ui-ja ......................   Passed    0.51 sec
+      Start 74: localized-ui-ko
+74/91 Test #74: localized-ui-ko ......................   Passed    0.41 sec
+      Start 75: localized-ui-hi
+75/91 Test #75: localized-ui-hi ......................   Passed    0.38 sec
+      Start 76: localized-ui-id
+76/91 Test #76: localized-ui-id ......................   Passed    0.40 sec
+      Start 77: localized-ui-vi
+77/91 Test #77: localized-ui-vi ......................   Passed    0.53 sec
+      Start 78: localized-ui-th
+78/91 Test #78: localized-ui-th ......................   Passed    0.57 sec
+      Start 79: localized-ui-sw
+79/91 Test #79: localized-ui-sw ......................   Passed    0.55 sec
+      Start 80: localized-ui-qps-ploc
+80/91 Test #80: localized-ui-qps-ploc ................   Passed    0.53 sec
+      Start 81: localized-ui-qps-rtl
+81/91 Test #81: localized-ui-qps-rtl .................   Passed    0.53 sec
+      Start 82: linux-installer-localization
+82/91 Test #82: linux-installer-localization .........   Passed   13.59 sec
+      Start 83: startup-diagnostics-localization
+83/91 Test #83: startup-diagnostics-localization .....   Passed    6.73 sec
+      Start 84: calibration-worker-localization
+84/91 Test #84: calibration-worker-localization ......   Passed    1.24 sec
+      Start 85: translation-maintenance
+85/91 Test #85: translation-maintenance ..............   Passed   21.14 sec
+      Start 86: installer-language-map
+86/91 Test #86: installer-language-map ...............   Passed    0.07 sec
+      Start 87: installer-language-activation
+87/91 Test #87: installer-language-activation ........   Passed    3.25 sec
+      Start 88: installer-locale-lifecycle-fixture
+88/91 Test #88: installer-locale-lifecycle-fixture ...***Skipped   0.04 sec
+      Start 89: swahili-installer-base
+89/91 Test #89: swahili-installer-base ...............   Passed    0.05 sec
+      Start 90: translation-catalogs
+90/91 Test #90: translation-catalogs .................   Passed    1.44 sec
+      Start 91: backend-error-text
+91/91 Test #91: backend-error-text ...................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 91
+
+Total Test time (real) = 113.14 sec
+
+The following tests did not run:
+	 88 - installer-locale-lifecycle-fixture (Skipped)
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Processing files: soundcurrent-eq-1.1.0-1.el10.x86_64
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.GVElkD
++ umask 022
++ cd /work/build/rpm/BUILD
++ cd soundcurrent-eq-1.1.0
++ DOCDIR=/work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq
++ export LC_ALL=
++ LC_ALL=
++ export DOCDIR
++ /usr/bin/mkdir -p /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq
++ cp -pr /work/build/rpm/BUILD/soundcurrent-eq-1.1.0/README.md /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/doc/soundcurrent-eq
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.zyOLGC
++ umask 022
++ cd /work/build/rpm/BUILD
++ cd soundcurrent-eq-1.1.0
++ LICENSEDIR=/work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/licenses/soundcurrent-eq
++ export LC_ALL=
++ LC_ALL=
++ export LICENSEDIR
++ /usr/bin/mkdir -p /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/licenses/soundcurrent-eq
++ cp -pr /work/build/rpm/BUILD/soundcurrent-eq-1.1.0/LICENSE /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64/usr/share/licenses/soundcurrent-eq
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Provides: application() application(io.github.rhamenator.SoundCurrentEQ.desktop) soundcurrent-eq = 1.1.0-1.el10 soundcurrent-eq(x86-64) = 1.1.0-1.el10
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: libQt6Core.so.6()(64bit) libQt6Core.so.6(Qt_6)(64bit) libQt6Core.so.6(Qt_6.10)(64bit) libQt6Gui.so.6()(64bit) libQt6Gui.so.6(Qt_6)(64bit) libQt6Network.so.6()(64bit) libQt6Network.so.6(Qt_6)(64bit) libQt6Widgets.so.6()(64bit) libQt6Widgets.so.6(Qt_6)(64bit) libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.3.4)(64bit) libc.so.6(GLIBC_2.32)(64bit) libc.so.6(GLIBC_2.34)(64bit) libc.so.6(GLIBC_2.4)(64bit) libc.so.6(GLIBC_ABI_DT_RELR)(64bit) libgcc_s.so.1()(64bit) libgcc_s.so.1(GCC_3.0)(64bit) libgcc_s.so.1(GCC_3.3.1)(64bit) libgcc_s.so.1(GCC_4.0.0)(64bit) libm.so.6()(64bit) libm.so.6(GLIBC_2.2.5)(64bit) libm.so.6(GLIBC_2.29)(64bit) libm.so.6(GLIBC_2.35)(64bit) libstdc++.so.6()(64bit) libstdc++.so.6(CXXABI_1.3)(64bit) libstdc++.so.6(CXXABI_1.3.9)(64bit) libstdc++.so.6(GLIBCXX_3.4)(64bit) libstdc++.so.6(GLIBCXX_3.4.14)(64bit) libstdc++.so.6(GLIBCXX_3.4.21)(64bit) libstdc++.so.6(GLIBCXX_3.4.30)(64bit) rtld(GNU_HASH)
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64
+Wrote: /work/dist/x86_64/soundcurrent-eq-1.1.0-1.el10.x86_64.rpm
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.FiyStL
++ umask 022
++ cd /work/build/rpm/BUILD
++ cd soundcurrent-eq-1.1.0
++ /usr/bin/rm -rf /work/build/rpm/BUILDROOT/soundcurrent-eq-1.1.0-1.el10.x86_64
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(rmbuild): /bin/sh -e /var/tmp/rpm-tmp.56WkIy
++ umask 022
++ cd /work/build/rpm/BUILD
++ rm -rf /work/build/rpm/BUILD/soundcurrent-eq-1.1.0-SPECPARTS
++ rm -rf soundcurrent-eq-1.1.0 soundcurrent-eq-1.1.0.gemspec
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Built /work/dist/x86_64/soundcurrent-eq-1.1.0-1.el10.x86_64.rpm

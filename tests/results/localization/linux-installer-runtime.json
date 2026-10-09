@@ -31,7 +31,12 @@
   "packageQualification": {
     "run": 37912691903,
     "productionHead": "8489a3eed172ba2d1c0098667e3b3202d7ca8049",
-    "status": "Dispatched; authoritative results not yet inspected"
+    "status": "All three jobs succeeded; downloaded package hashes and retained lifecycle/catalog logs inspected",
+    "evidence": [
+      "tests/results/localization/linux-complete-installer-0/verified-artifact.json",
+      "tests/results/localization/linux-complete-installer-1/verified-artifact.json",
+      "tests/results/localization/linux-complete-installer-2/verified-artifact.json"
+    ]
   },
   "nativeReviewed": false
 }

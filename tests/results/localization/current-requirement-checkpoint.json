@@ -40,9 +40,13 @@
     },
     {
       "requirement": "Changed Linux packages and installed language interfaces",
-      "status": "Startup/launcher Ubuntu package hash, CTest, installed locales and launcher lifecycle verified. Corrected Fedora/AlmaLinux fixture jobs pending.",
+      "status": "Ubuntu 24.04, Fedora 44 and AlmaLinux 10 package hashes, CTest, installed locales and install/update/uninstall/reinstall verified against retained artifacts.",
       "run": 37903361741,
-      "evidence": "tests/results/localization/linux-public-update-installed/verified-artifact.json"
+      "evidence": [
+        "tests/results/localization/linux-complete-installer-0/verified-artifact.json",
+        "tests/results/localization/linux-complete-installer-1/verified-artifact.json",
+        "tests/results/localization/linux-complete-installer-2/verified-artifact.json"
+      ]
     },
     {
       "requirement": "Changed Windows packages and installed language interfaces",
@@ -56,7 +60,7 @@
     },
     {
       "requirement": "Reviewable packages and synchronized commits",
-      "status": "Previous production packages available; launcher-description change requires rebuilt preview packages."
+      "status": "Current Linux .deb and two RPM previews qualified and retained locally; standalone companion assembly remains pending. Existing current-app Windows installer evidence separate."
     },
     {
       "requirement": "Preserve virtual driver and separately owned DAW",
@@ -250,7 +254,7 @@
   "qualifiedPrecedingHead": "6111c989cdc8ec2c08f6b9ce4cc0a921f2dfb781",
   "audioDisplayNumbers": "tests/results/localization/audio-display-numbers.json",
   "qualifiedCurrentProductionHead": "16ec67362e4875ab893c3d88ea87cc89fc5ce0ea",
-  "currentProductionSourceMatch": "Standalone Linux installer catalog/generator and test registration changed beyond qualified startup packages; compiled src/Qt resource catalogs unchanged. Installer locale work and qualification remain incomplete.",
+  "currentProductionSourceMatch": "Current src/data/CMake/installer production sources match qualified complete-catalog head. Later source guards and terminal tests passed locally; reports differ. Windows app-production evidence remains separate.",
   "balanceNumberFormats": "tests/results/localization/balance-number-formats.json",
   "profileGraphNumberFormats": "tests/results/localization/profile-graph-number-formats.json",
   "fileTypeProviderBoundary": "tests/results/localization/file-type-provider-boundary.json",
@@ -266,5 +270,11 @@
   "ubuntuStartupPackageEvidence": "tests/results/localization/ubuntu-startup-installed/verified-artifact.json",
   "windowsStartupPackageEvidence": "tests/results/localization/windows-startup-installed/verified-artifact.json",
   "linuxEasyInstallerReview": "tests/results/localization/linux-easy-installer-gap.json",
-  "headerListDisplayGuard": "tests/results/localization/header-list-display-guard.json"
+  "headerListDisplayGuard": "tests/results/localization/header-list-display-guard.json",
+  "currentLinuxPackageEvidence": [
+    "tests/results/localization/linux-complete-installer-0/verified-artifact.json",
+    "tests/results/localization/linux-complete-installer-1/verified-artifact.json",
+    "tests/results/localization/linux-complete-installer-2/verified-artifact.json"
+  ],
+  "qualifiedLinuxProductionHead": "8489a3eed172ba2d1c0098667e3b3202d7ca8049"
 }

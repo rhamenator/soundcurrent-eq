@@ -513,3 +513,7 @@ Real pseudoterminal tests cover localized prompts and n/Y outcomes in all 34 lan
 ### Table and tree header source guard (2026-10-09)
 
 Header brace lists are now inspected entry by entry, matching combo-box lists. Mixed translated/raw captions and Qt-wrapped literals cannot hide in a list. Negative fixtures cover horizontal, vertical and tree headers, commas inside translations, standard units and forwarded-list inventory. Current equipment headers and Studio table callers were inspected; no additional owned untranslated header was found. This is a bounded source guard, not a whole-interface proof or native-speaker review.
+
+### Complete-catalog Linux package qualification (2026-10-09)
+
+Ubuntu 24.04, Fedora 44 and AlmaLinux 10 artifacts passed hash/manifest verification, CTest (including standalone installer catalog tests), 33 installed non-English locale fixtures, exact launcher metadata, same-package update, uninstall/config preservation and reinstall. Production src/data/CMake/installer files match the qualified heads. Later guard/terminal tests ran locally. Disposable-container fixtures do not prove all-locale visual rendering, older-version migration, privileged easy-installer paths or native-speaker accuracy. Package binaries are retained outside Git; raw qualification logs and verification reports are committed.
