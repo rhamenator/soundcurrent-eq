@@ -253,12 +253,23 @@ REVIEWED_CLI_TOKENS = {
     'optional channel low-pass (e.g. LFE)': ('LFE',),
     'output channel trim, -60 to +24 dB': ('-60', '+24', 'dB'),
     'overall post gain, -84 to +24 dB': ('-84', '+24', 'dB'),
+    '1-2000 ms (default 250)': ('1-2000', 'ms', '250'),
+    '0-0.9 (default .35)': ('0-0.9', '.35'),
+    'wet fraction 0-1 (enables delay)': ('0-1',),
+    '.1-10 seconds (default 1.5)': ('.1-10', '1.5'),
+    '0-.95 (default .4)': ('0-.95', '.4'),
+    'wet fraction 0-1 (enables reverb)': ('0-1',),
 }
 
 
 def validate_text(source, translated):
     for token in REVIEWED_CLI_TOKENS.get(source, ()):
-        if source.count(token) != translated.count(token):
+        # Match numeric endpoints as tokens: -600 must not satisfy -60.
+        if any(c.isdigit() for c in token):
+            pattern = r'(?<![0-9.+-])' + re.escape(token) + r'(?![0-9.])'
+        else:
+            pattern = r'(?<![A-Za-z_])' + re.escape(token) + r'(?![A-Za-z_])'
+        if len(re.findall(pattern, source)) != len(re.findall(pattern, translated)):
             raise ValueError('CLI invariant changed: ' + token)
     for identifier in REVIEWED_FILE_IDENTIFIERS.get(source, ()):
         if translated.count(identifier) != source.count(identifier):

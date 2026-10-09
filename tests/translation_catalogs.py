@@ -25,6 +25,9 @@ class CatalogTests(unittest.TestCase):
                         catalog.validate_text(source, translated.replace(token, '', 1))
                     with self.assertRaisesRegex(ValueError, 'CLI invariant changed'):
                         catalog.validate_text(source, translated + ' ' + token)
+                    extended = token + ('0' if any(c.isdigit() for c in token) else 'x')
+                    with self.assertRaisesRegex(ValueError, 'CLI invariant changed'):
+                        catalog.validate_text(source, translated.replace(token, extended, 1))
 
     def test_welcome_paragraphs_keep_update_and_background_meaning(self):
         root = Path(__file__).resolve().parents[1]
