@@ -42,7 +42,7 @@ BrandingText "SoundCurrent EQ • GPL-3.0-only"
 Icon "${SOURCE_ROOT}\data\soundcurrent-eq.ico"
 UninstallIcon "${SOURCE_ROOT}\data\soundcurrent-eq.ico"
 
-!define MUI_WELCOMEPAGE_TEXT "Install or update SoundCurrent EQ. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.$\r$\n$\r$\nSave your work and use Quit to exit the running app before continuing. Closing its window keeps it running in the background."
+!define MUI_WELCOMEPAGE_TEXT "$(SCWelcome)"
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_LICENSE "${SOURCE_ROOT}\LICENSE"
 !insertmacro MUI_PAGE_DIRECTORY
@@ -60,6 +60,7 @@ LangString SCCableSetupProgress ${LANG_ENGLISH} "Opening VB-CABLE setup..."
 LangString SCSetupRetryProgress ${LANG_ENGLISH} "VB-CABLE setup did not finish. Retry using the Start menu shortcut."
 LangString SCCableRemovalFailed ${LANG_ENGLISH} "VB-CABLE removal did not finish. This app was kept so you can retry."
 LangString SCSetupFailedAppInstalled ${LANG_ENGLISH} "VB-CABLE setup did not finish. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason."
+LangString SCWelcome ${LANG_ENGLISH} "Install or update SoundCurrent EQ. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.$\r$\n$\r$\nSave your work and quit the running app before continuing. Closing its window keeps it running in the background."
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
 LangString SCCableRouting ${LANG_ENGLISH} "VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome."
 LangString SCCableSharedNotice ${LANG_ENGLISH} "Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled."

@@ -129,7 +129,9 @@
     "%1 setup did not finish. Retry using the Start menu shortcut.",
     "Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.",
     "VB-CABLE removal did not finish. This app was kept so you can retry.",
-    "%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason."
+    "%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.",
+    "Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.",
+    "Save your work and quit the running app before continuing. Closing its window keeps it running in the background."
   ],
   "languages": {
     "de": [
@@ -263,7 +265,9 @@
       "Die Einrichtung von %1 wurde nicht abgeschlossen. Versuchen Sie es erneut über die Verknüpfung im Startmenü.",
       "Die Entfernung des gemeinsam genutzten Audiotreibers wurde nicht abgeschlossen. Diese App wurde beibehalten, damit Sie es erneut versuchen können. Beenden Sie alle laufenden SoundCurrent-Apps und versuchen Sie die Deinstallation erneut.",
       "Die Entfernung von VB-CABLE wurde nicht abgeschlossen. Diese App wurde beibehalten, damit Sie es erneut versuchen können.",
-      "Die Einrichtung von %1 wurde nicht abgeschlossen. %2 selbst ist installiert. Verwenden Sie %3 im Startmenü, um es erneut zu versuchen; den Grund finden Sie in den Einrichtungsdetails."
+      "Die Einrichtung von %1 wurde nicht abgeschlossen. %2 selbst ist installiert. Verwenden Sie %3 im Startmenü, um es erneut zu versuchen; den Grund finden Sie in den Einrichtungsdetails.",
+      "Installieren oder aktualisieren Sie %1. Eine ältere Version muss nicht deinstalliert werden. Ihre Einstellungen, Presets und Geräteprofile bleiben erhalten.",
+      "Speichern Sie Ihre Arbeit und beenden Sie die laufende App, bevor Sie fortfahren. Beim Schließen des Fensters läuft die App im Hintergrund weiter."
     ],
     "fr": [
       "Français",
@@ -396,7 +400,9 @@
       "La configuration de %1 n’a pas abouti. Réessayez via le raccourci du menu Démarrer.",
       "La suppression du pilote audio partagé n’a pas abouti. Cette application a été conservée pour vous permettre de réessayer. Quittez toute application SoundCurrent en cours d’exécution, puis réessayez la désinstallation.",
       "La suppression de VB-CABLE n’a pas abouti. Cette application a été conservée pour vous permettre de réessayer.",
-      "La configuration de %1 n’a pas abouti. %2 est bien installé. Utilisez %3 dans le menu Démarrer pour réessayer ; consultez les détails de l’installation pour connaître la raison."
+      "La configuration de %1 n’a pas abouti. %2 est bien installé. Utilisez %3 dans le menu Démarrer pour réessayer ; consultez les détails de l’installation pour connaître la raison.",
+      "Installez ou mettez à jour %1. Il n’est pas nécessaire de désinstaller une ancienne version. Vos paramètres, préréglages et profils d’équipement seront conservés.",
+      "Enregistrez votre travail et quittez l’application en cours d’exécution avant de continuer. Fermer sa fenêtre la laisse fonctionner en arrière-plan."
     ],
     "es": [
       "Español",
@@ -529,7 +535,9 @@
       "La instalación de %1 no se completó. Vuelva a intentarlo desde el acceso directo del menú Inicio.",
       "La eliminación del controlador de audio compartido no se completó. Se ha conservado esta aplicación para que pueda volver a intentarlo. Salga de todas las aplicaciones SoundCurrent en ejecución y vuelva a intentar la desinstalación.",
       "La eliminación de VB-CABLE no se completó. Se ha conservado esta aplicación para que pueda volver a intentarlo.",
-      "La instalación de %1 no se completó. %2 sí está instalado. Use %3 en el menú Inicio para volver a intentarlo; consulte los detalles de la instalación para conocer el motivo."
+      "La instalación de %1 no se completó. %2 sí está instalado. Use %3 en el menú Inicio para volver a intentarlo; consulte los detalles de la instalación para conocer el motivo.",
+      "Instale o actualice %1. No es necesario desinstalar una versión anterior. Se conservarán sus ajustes, preajustes y perfiles de equipos.",
+      "Guarde su trabajo y salga de la aplicación en ejecución antes de continuar. Cerrar su ventana deja la aplicación funcionando en segundo plano."
     ],
     "it": [
       "Italiano",
@@ -662,7 +670,9 @@
       "La configurazione di %1 non è stata completata. Riprovare tramite il collegamento nel menu Start.",
       "La rimozione del driver audio condiviso non è stata completata. Questa app è stata mantenuta per consentire un nuovo tentativo. Uscire da tutte le app SoundCurrent in esecuzione e riprovare la disinstallazione.",
       "La rimozione di VB-CABLE non è stata completata. Questa app è stata mantenuta per consentire un nuovo tentativo.",
-      "La configurazione di %1 non è stata completata. %2 è comunque installato. Usare %3 nel menu Start per riprovare; consultare i dettagli dell’installazione per il motivo."
+      "La configurazione di %1 non è stata completata. %2 è comunque installato. Usare %3 nel menu Start per riprovare; consultare i dettagli dell’installazione per il motivo.",
+      "Installare o aggiornare %1. Non è necessario disinstallare una versione precedente. Impostazioni, preset e profili delle apparecchiature verranno mantenuti.",
+      "Salvare il lavoro e uscire dall’app in esecuzione prima di continuare. La chiusura della finestra lascia l’app in esecuzione in background."
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -795,7 +805,9 @@
       "A instalação do %1 não foi concluída. Tente novamente através do atalho no menu Iniciar.",
       "A remoção do controlador de áudio partilhado não foi concluída. Esta aplicação foi mantida para poder tentar novamente. Saia de todas as aplicações SoundCurrent em execução e tente novamente a desinstalação.",
       "A remoção do VB-CABLE não foi concluída. Esta aplicação foi mantida para poder tentar novamente.",
-      "A instalação do %1 não foi concluída. O %2 está instalado. Utilize %3 no menu Iniciar para tentar novamente; consulte os detalhes da instalação para saber o motivo."
+      "A instalação do %1 não foi concluída. O %2 está instalado. Utilize %3 no menu Iniciar para tentar novamente; consulte os detalhes da instalação para saber o motivo.",
+      "Instale ou atualize o %1. Não é necessário desinstalar uma versão anterior. As suas definições, predefinições e perfis de equipamento serão mantidos.",
+      "Guarde o seu trabalho e saia da aplicação em execução antes de continuar. Fechar a janela mantém a aplicação em execução em segundo plano."
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -928,7 +940,9 @@
       "A instalação do %1 não foi concluída. Tente novamente pelo atalho no menu Iniciar.",
       "A remoção do driver de áudio compartilhado não foi concluída. Este aplicativo foi mantido para que você possa tentar novamente. Saia de todos os aplicativos SoundCurrent em execução e tente desinstalar novamente.",
       "A remoção do VB-CABLE não foi concluída. Este aplicativo foi mantido para que você possa tentar novamente.",
-      "A instalação do %1 não foi concluída. O %2 está instalado. Use %3 no menu Iniciar para tentar novamente; consulte os detalhes da instalação para saber o motivo."
+      "A instalação do %1 não foi concluída. O %2 está instalado. Use %3 no menu Iniciar para tentar novamente; consulte os detalhes da instalação para saber o motivo.",
+      "Instale ou atualize o %1. Não é necessário desinstalar uma versão anterior. Suas configurações, predefinições e perfis de equipamentos serão mantidos.",
+      "Salve seu trabalho e saia do aplicativo em execução antes de continuar. Fechar a janela mantém o aplicativo em execução em segundo plano."
     ],
     "nl": [
       "Nederlands",
@@ -1061,7 +1075,9 @@
       "De installatie van %1 is niet voltooid. Probeer het opnieuw via de snelkoppeling in het Startmenu.",
       "Het verwijderen van het gedeelde audiostuurprogramma is niet voltooid. Deze app is behouden zodat u het opnieuw kunt proberen. Sluit alle actieve SoundCurrent-apps volledig af en probeer opnieuw te verwijderen.",
       "Het verwijderen van VB-CABLE is niet voltooid. Deze app is behouden zodat u het opnieuw kunt proberen.",
-      "De installatie van %1 is niet voltooid. %2 zelf is geïnstalleerd. Gebruik %3 in het Startmenu om het opnieuw te proberen; zie de installatiedetails voor de reden."
+      "De installatie van %1 is niet voltooid. %2 zelf is geïnstalleerd. Gebruik %3 in het Startmenu om het opnieuw te proberen; zie de installatiedetails voor de reden.",
+      "Installeer of werk %1 bij. Een oudere versie hoeft niet te worden verwijderd. Uw instellingen, voorinstellingen en apparatuurprofielen blijven behouden.",
+      "Sla uw werk op en sluit de actieve app volledig af voordat u doorgaat. Als u het venster sluit, blijft de app op de achtergrond actief."
     ],
     "pl": [
       "Polski",
@@ -1194,7 +1210,9 @@
       "Konfiguracja %1 nie została ukończona. Spróbuj ponownie za pomocą skrótu w menu Start.",
       "Usunięcie współdzielonego sterownika audio nie zostało ukończone. Ta aplikacja została zachowana, aby umożliwić ponowną próbę. Zakończ działanie wszystkich uruchomionych aplikacji SoundCurrent, a następnie ponów odinstalowanie.",
       "Usunięcie VB-CABLE nie zostało ukończone. Ta aplikacja została zachowana, aby umożliwić ponowną próbę.",
-      "Konfiguracja %1 nie została ukończona. Sama aplikacja %2 jest zainstalowana. Użyj %3 w menu Start, aby spróbować ponownie; przyczynę znajdziesz w szczegółach instalacji."
+      "Konfiguracja %1 nie została ukończona. Sama aplikacja %2 jest zainstalowana. Użyj %3 w menu Start, aby spróbować ponownie; przyczynę znajdziesz w szczegółach instalacji.",
+      "Zainstaluj lub zaktualizuj %1. Nie trzeba odinstalowywać starszej wersji. Ustawienia, presety i profile sprzętu zostaną zachowane.",
+      "Zapisz swoją pracę i zakończ działanie uruchomionej aplikacji przed kontynuowaniem. Zamknięcie jej okna pozostawia ją działającą w tle."
     ],
     "cs": [
       "Čeština",
@@ -1327,7 +1345,9 @@
       "Instalace %1 nebyla dokončena. Zkuste to znovu pomocí zástupce v nabídce Start.",
       "Odstranění sdíleného zvukového ovladače nebylo dokončeno. Tato aplikace byla zachována, abyste mohli pokus opakovat. Ukončete všechny spuštěné aplikace SoundCurrent a zkuste odinstalaci znovu.",
       "Odstranění VB-CABLE nebylo dokončeno. Tato aplikace byla zachována, abyste mohli pokus opakovat.",
-      "Instalace %1 nebyla dokončena. Samotná aplikace %2 je nainstalována. Pro další pokus použijte %3 v nabídce Start; důvod najdete v podrobnostech instalace."
+      "Instalace %1 nebyla dokončena. Samotná aplikace %2 je nainstalována. Pro další pokus použijte %3 v nabídce Start; důvod najdete v podrobnostech instalace.",
+      "Nainstalujte nebo aktualizujte %1. Starší verzi není nutné odinstalovat. Vaše nastavení, předvolby a profily zařízení budou zachovány.",
+      "Před pokračováním uložte svou práci a ukončete spuštěnou aplikaci. Zavření jejího okna ponechá aplikaci spuštěnou na pozadí."
     ],
     "sk": [
       "Slovenčina",
@@ -1460,7 +1480,9 @@
       "Inštalácia %1 nebola dokončená. Skúste to znova pomocou zástupcu v ponuke Štart.",
       "Odstránenie zdieľaného zvukového ovládača nebolo dokončené. Táto aplikácia bola ponechaná, aby ste mohli pokus zopakovať. Ukončite všetky spustené aplikácie SoundCurrent a skúste odinštalovanie znova.",
       "Odstránenie VB-CABLE nebolo dokončené. Táto aplikácia bola ponechaná, aby ste mohli pokus zopakovať.",
-      "Inštalácia %1 nebola dokončená. Samotná aplikácia %2 je nainštalovaná. Na ďalší pokus použite %3 v ponuke Štart; dôvod nájdete v podrobnostiach inštalácie."
+      "Inštalácia %1 nebola dokončená. Samotná aplikácia %2 je nainštalovaná. Na ďalší pokus použite %3 v ponuke Štart; dôvod nájdete v podrobnostiach inštalácie.",
+      "Nainštalujte alebo aktualizujte %1. Staršiu verziu nie je potrebné odinštalovať. Vaše nastavenia, predvoľby a profily zariadení budú zachované.",
+      "Pred pokračovaním uložte svoju prácu a ukončite spustenú aplikáciu. Zatvorenie jej okna ponechá aplikáciu spustenú na pozadí."
     ],
     "uk": [
       "Українська",
@@ -1593,7 +1615,9 @@
       "Налаштування %1 не завершено. Спробуйте знову через ярлик у меню «Пуск».",
       "Видалення спільного аудіодрайвера не завершено. Цю програму збережено, щоб ви могли повторити спробу. Вийдіть з усіх запущених програм SoundCurrent і знову спробуйте видалення.",
       "Видалення VB-CABLE не завершено. Цю програму збережено, щоб ви могли повторити спробу.",
-      "Налаштування %1 не завершено. Саму програму %2 установлено. Скористайтеся %3 у меню «Пуск», щоб повторити спробу; причину наведено в деталях установлення."
+      "Налаштування %1 не завершено. Саму програму %2 установлено. Скористайтеся %3 у меню «Пуск», щоб повторити спробу; причину наведено в деталях установлення.",
+      "Установіть або оновіть %1. Видаляти попередню версію не потрібно. Ваші налаштування, пресети та профілі обладнання буде збережено.",
+      "Збережіть свою роботу та вийдіть із запущеної програми, перш ніж продовжувати. Закриття її вікна залишає програму працювати у фоновому режимі."
     ],
     "ru": [
       "Русский",
@@ -1726,7 +1750,9 @@
       "Настройка %1 не завершена. Повторите попытку через ярлык в меню «Пуск».",
       "Удаление общего аудиодрайвера не завершено. Это приложение сохранено, чтобы вы могли повторить попытку. Выйдите из всех работающих приложений SoundCurrent и повторите удаление.",
       "Удаление VB-CABLE не завершено. Это приложение сохранено, чтобы вы могли повторить попытку.",
-      "Настройка %1 не завершена. Само приложение %2 установлено. Используйте %3 в меню «Пуск», чтобы повторить попытку; причина указана в подробностях установки."
+      "Настройка %1 не завершена. Само приложение %2 установлено. Используйте %3 в меню «Пуск», чтобы повторить попытку; причина указана в подробностях установки.",
+      "Установите или обновите %1. Удалять предыдущую версию не требуется. Ваши настройки, пресеты и профили оборудования будут сохранены.",
+      "Сохраните свою работу и выйдите из работающего приложения перед продолжением. При закрытии его окна приложение продолжает работать в фоновом режиме."
     ],
     "el": [
       "Ελληνικά",
@@ -1859,7 +1885,9 @@
       "Η εγκατάσταση του %1 δεν ολοκληρώθηκε. Δοκιμάστε ξανά μέσω της συντόμευσης στο μενού Έναρξη.",
       "Η αφαίρεση του κοινόχρηστου προγράμματος οδήγησης ήχου δεν ολοκληρώθηκε. Αυτή η εφαρμογή διατηρήθηκε ώστε να μπορείτε να δοκιμάσετε ξανά. Τερματίστε όλες τις εφαρμογές SoundCurrent που εκτελούνται και δοκιμάστε ξανά την απεγκατάσταση.",
       "Η αφαίρεση του VB-CABLE δεν ολοκληρώθηκε. Αυτή η εφαρμογή διατηρήθηκε ώστε να μπορείτε να δοκιμάσετε ξανά.",
-      "Η εγκατάσταση του %1 δεν ολοκληρώθηκε. Το ίδιο το %2 έχει εγκατασταθεί. Χρησιμοποιήστε το %3 στο μενού Έναρξη για να δοκιμάσετε ξανά· δείτε τις λεπτομέρειες εγκατάστασης για την αιτία."
+      "Η εγκατάσταση του %1 δεν ολοκληρώθηκε. Το ίδιο το %2 έχει εγκατασταθεί. Χρησιμοποιήστε το %3 στο μενού Έναρξη για να δοκιμάσετε ξανά· δείτε τις λεπτομέρειες εγκατάστασης για την αιτία.",
+      "Εγκαταστήστε ή ενημερώστε το %1. Δεν χρειάζεται να απεγκαταστήσετε παλαιότερη έκδοση. Οι ρυθμίσεις, οι προεπιλογές και τα προφίλ εξοπλισμού σας θα διατηρηθούν.",
+      "Αποθηκεύστε την εργασία σας και τερματίστε την εφαρμογή που εκτελείται πριν συνεχίσετε. Το κλείσιμο του παραθύρου της την αφήνει να εκτελείται στο παρασκήνιο."
     ],
     "tr": [
       "Türkçe",
@@ -1992,7 +2020,9 @@
       "%1 kurulumu tamamlanmadı. Başlat menüsündeki kısayolu kullanarak yeniden deneyin.",
       "Paylaşılan ses sürücüsünün kaldırılması tamamlanmadı. Yeniden deneyebilmeniz için bu uygulama korundu. Çalışan tüm SoundCurrent uygulamalarından çıkın ve kaldırmayı yeniden deneyin.",
       "VB-CABLE’ın kaldırılması tamamlanmadı. Yeniden deneyebilmeniz için bu uygulama korundu.",
-      "%1 kurulumu tamamlanmadı. %2 uygulaması yüklüdür. Yeniden denemek için Başlat menüsündeki %3 seçeneğini kullanın; nedeni kurulum ayrıntılarında görebilirsiniz."
+      "%1 kurulumu tamamlanmadı. %2 uygulaması yüklüdür. Yeniden denemek için Başlat menüsündeki %3 seçeneğini kullanın; nedeni kurulum ayrıntılarında görebilirsiniz.",
+      "%1 uygulamasını yükleyin veya güncelleyin. Eski bir sürümü kaldırmanız gerekmez. Ayarlarınız, hazır ayarlarınız ve ekipman profilleriniz korunacaktır.",
+      "Devam etmeden önce çalışmanızı kaydedin ve çalışan uygulamadan çıkın. Penceresini kapatmak uygulamanın arka planda çalışmasını durdurmaz."
     ],
     "sv": [
       "Svenska",
@@ -2125,7 +2155,9 @@
       "Installationen av %1 slutfördes inte. Försök igen via genvägen i Start-menyn.",
       "Borttagningen av den delade ljuddrivrutinen slutfördes inte. Den här appen behölls så att du kan försöka igen. Avsluta alla SoundCurrent-appar som körs och försök sedan avinstallera igen.",
       "Borttagningen av VB-CABLE slutfördes inte. Den här appen behölls så att du kan försöka igen.",
-      "Installationen av %1 slutfördes inte. Själva %2 är installerat. Använd %3 i Start-menyn för att försöka igen; se installationsinformationen för orsaken."
+      "Installationen av %1 slutfördes inte. Själva %2 är installerat. Använd %3 i Start-menyn för att försöka igen; se installationsinformationen för orsaken.",
+      "Installera eller uppdatera %1. Du behöver inte avinstallera en äldre version. Dina inställningar, förinställningar och utrustningsprofiler behålls.",
+      "Spara ditt arbete och avsluta appen som körs innan du fortsätter. Appen fortsätter att köras i bakgrunden när dess fönster stängs."
     ],
     "da": [
       "Dansk",
@@ -2258,7 +2290,9 @@
       "Installationen af %1 blev ikke fuldført. Prøv igen via genvejen i Start-menuen.",
       "Fjernelsen af den delte lyddriver blev ikke fuldført. Denne app blev beholdt, så du kan prøve igen. Afslut alle kørende SoundCurrent-apps, og prøv derefter at afinstallere igen.",
       "Fjernelsen af VB-CABLE blev ikke fuldført. Denne app blev beholdt, så du kan prøve igen.",
-      "Installationen af %1 blev ikke fuldført. Selve %2 er installeret. Brug %3 i Start-menuen for at prøve igen; se installationsoplysningerne for årsagen."
+      "Installationen af %1 blev ikke fuldført. Selve %2 er installeret. Brug %3 i Start-menuen for at prøve igen; se installationsoplysningerne for årsagen.",
+      "Installer eller opdater %1. Du behøver ikke at afinstallere en ældre version. Dine indstillinger, forudindstillinger og udstyrsprofiler bevares.",
+      "Gem dit arbejde, og afslut den kørende app, før du fortsætter. Når vinduet lukkes, fortsætter appen med at køre i baggrunden."
     ],
     "nb": [
       "Norsk bokmål",
@@ -2391,7 +2425,9 @@
       "Oppsettet av %1 ble ikke fullført. Prøv igjen via snarveien i Start-menyen.",
       "Fjerningen av den delte lyddriveren ble ikke fullført. Denne appen ble beholdt slik at du kan prøve igjen. Avslutt alle SoundCurrent-apper som kjører, og prøv deretter å avinstallere på nytt.",
       "Fjerningen av VB-CABLE ble ikke fullført. Denne appen ble beholdt slik at du kan prøve igjen.",
-      "Oppsettet av %1 ble ikke fullført. Selve %2 er installert. Bruk %3 i Start-menyen for å prøve igjen; se oppsettdetaljene for årsaken."
+      "Oppsettet av %1 ble ikke fullført. Selve %2 er installert. Bruk %3 i Start-menyen for å prøve igjen; se oppsettdetaljene for årsaken.",
+      "Installer eller oppdater %1. Du trenger ikke å avinstallere en eldre versjon. Innstillingene, forhåndsinnstillingene og utstyrsprofilene dine beholdes.",
+      "Lagre arbeidet ditt og avslutt appen som kjører før du fortsetter. Når vinduet lukkes, fortsetter appen å kjøre i bakgrunnen."
     ],
     "fi": [
       "Suomi",
@@ -2524,7 +2560,9 @@
       "%1-asennus ei valmistunut. Yritä uudelleen Käynnistä-valikon pikakuvakkeella.",
       "Jaetun ääniohjaimen poisto ei valmistunut. Tämä sovellus säilytettiin, jotta voit yrittää uudelleen. Lopeta kaikki käynnissä olevat SoundCurrent-sovellukset ja yritä poistaa asennus uudelleen.",
       "VB-CABLE-ohjaimen poisto ei valmistunut. Tämä sovellus säilytettiin, jotta voit yrittää uudelleen.",
-      "%1-asennus ei valmistunut. Itse %2 on asennettu. Yritä uudelleen valitsemalla %3 Käynnistä-valikosta; syy löytyy asennuksen tiedoista."
+      "%1-asennus ei valmistunut. Itse %2 on asennettu. Yritä uudelleen valitsemalla %3 Käynnistä-valikosta; syy löytyy asennuksen tiedoista.",
+      "Asenna tai päivitä %1. Vanhemman version asennusta ei tarvitse poistaa. Asetuksesi, esiasetuksesi ja laiteprofiilisi säilytetään.",
+      "Tallenna työsi ja lopeta käynnissä oleva sovellus ennen jatkamista. Ikkunan sulkeminen jättää sovelluksen käyntiin taustalle."
     ],
     "ro": [
       "Română",
@@ -2657,7 +2695,9 @@
       "Instalarea %1 nu s-a finalizat. Reîncercați folosind comanda rapidă din meniul Start.",
       "Eliminarea driverului audio partajat nu s-a finalizat. Această aplicație a fost păstrată pentru a putea reîncerca. Ieșiți din toate aplicațiile SoundCurrent care rulează, apoi reîncercați dezinstalarea.",
       "Eliminarea VB-CABLE nu s-a finalizat. Această aplicație a fost păstrată pentru a putea reîncerca.",
-      "Instalarea %1 nu s-a finalizat. Aplicația %2 este instalată. Folosiți %3 din meniul Start pentru a reîncerca; consultați detaliile instalării pentru motiv."
+      "Instalarea %1 nu s-a finalizat. Aplicația %2 este instalată. Folosiți %3 din meniul Start pentru a reîncerca; consultați detaliile instalării pentru motiv.",
+      "Instalați sau actualizați %1. Nu trebuie să dezinstalați o versiune mai veche. Setările, presetările și profilurile echipamentelor vor fi păstrate.",
+      "Salvați-vă munca și ieșiți din aplicația care rulează înainte de a continua. Închiderea ferestrei lasă aplicația să ruleze în fundal."
     ],
     "hu": [
       "Magyar",
@@ -2790,7 +2830,9 @@
       "A %1 telepítése nem fejeződött be. Próbálja újra a Start menü parancsikonjával.",
       "A megosztott hangillesztőprogram eltávolítása nem fejeződött be. Ez az alkalmazás megmaradt, hogy újra próbálkozhasson. Lépjen ki minden futó SoundCurrent alkalmazásból, majd próbálja újra az eltávolítást.",
       "A VB-CABLE eltávolítása nem fejeződött be. Ez az alkalmazás megmaradt, hogy újra próbálkozhasson.",
-      "A %1 telepítése nem fejeződött be. Maga a %2 alkalmazás telepítve van. Az újrapróbálkozáshoz használja a Start menü %3 parancsát; az okot a telepítés részleteinél találja."
+      "A %1 telepítése nem fejeződött be. Maga a %2 alkalmazás telepítve van. Az újrapróbálkozáshoz használja a Start menü %3 parancsát; az okot a telepítés részleteinél találja.",
+      "Telepítse vagy frissítse a %1 alkalmazást. Nem szükséges eltávolítani a régebbi verziót. Beállításai, előbeállításai és eszközprofiljai megmaradnak.",
+      "A folytatás előtt mentse a munkáját, és lépjen ki a futó alkalmazásból. Az ablak bezárása után az alkalmazás tovább fut a háttérben."
     ],
     "ar": [
       "العربية",
@@ -2923,7 +2965,9 @@
       "لم يكتمل إعداد %1. أعد المحاولة باستخدام الاختصار في قائمة ابدأ.",
       "لم تكتمل إزالة برنامج تشغيل الصوت المشترك. أُبقي هذا التطبيق لتتمكن من إعادة المحاولة. اخرج من جميع تطبيقات SoundCurrent قيد التشغيل، ثم أعد محاولة إلغاء التثبيت.",
       "لم تكتمل إزالة VB-CABLE. أُبقي هذا التطبيق لتتمكن من إعادة المحاولة.",
-      "لم يكتمل إعداد %1. تطبيق %2 نفسه مثبّت. استخدم %3 في قائمة ابدأ لإعادة المحاولة؛ راجع تفاصيل الإعداد لمعرفة السبب."
+      "لم يكتمل إعداد %1. تطبيق %2 نفسه مثبّت. استخدم %3 في قائمة ابدأ لإعادة المحاولة؛ راجع تفاصيل الإعداد لمعرفة السبب.",
+      "ثبّت %1 أو حدّثه. لا حاجة إلى إلغاء تثبيت إصدار أقدم. سيتم الاحتفاظ بإعداداتك وإعداداتك المسبقة وملفات تعريف المعدات.",
+      "احفظ عملك واخرج من التطبيق قيد التشغيل قبل المتابعة. إغلاق نافذته يُبقيه قيد التشغيل في الخلفية."
     ],
     "he": [
       "עברית",
@@ -3056,7 +3100,9 @@
       "ההתקנה של %1 לא הושלמה. יש לנסות שוב באמצעות קיצור הדרך בתפריט התחל.",
       "הסרת מנהל התקן השמע המשותף לא הושלמה. האפליקציה הזאת נשמרה כדי לאפשר ניסיון נוסף. יש לצאת מכל אפליקציות SoundCurrent הפועלות ואז לנסות להסיר שוב.",
       "הסרת VB-CABLE לא הושלמה. האפליקציה הזאת נשמרה כדי לאפשר ניסיון נוסף.",
-      "ההתקנה של %1 לא הושלמה. האפליקציה %2 עצמה מותקנת. יש להשתמש ב־%3 בתפריט התחל כדי לנסות שוב; הסיבה מופיעה בפרטי ההתקנה."
+      "ההתקנה של %1 לא הושלמה. האפליקציה %2 עצמה מותקנת. יש להשתמש ב־%3 בתפריט התחל כדי לנסות שוב; הסיבה מופיעה בפרטי ההתקנה.",
+      "התקנה או עדכון של %1. אין צורך להסיר גרסה ישנה יותר. ההגדרות, ההגדרות הקבועות מראש ופרופילי הציוד שלך יישמרו.",
+      "יש לשמור את עבודתך ולצאת מהאפליקציה הפועלת לפני ההמשך. סגירת החלון שלה משאירה אותה פועלת ברקע."
     ],
     "fa": [
       "فارسی",
@@ -3189,7 +3235,9 @@
       "راه‌اندازی %1 کامل نشد. با استفاده از میان‌بر منوی شروع دوباره تلاش کنید.",
       "حذف درایور صوتی مشترک کامل نشد. این برنامه حفظ شد تا بتوانید دوباره تلاش کنید. از همهٔ برنامه‌های SoundCurrent در حال اجرا خارج شوید، سپس دوباره حذف نصب را امتحان کنید.",
       "حذف VB-CABLE کامل نشد. این برنامه حفظ شد تا بتوانید دوباره تلاش کنید.",
-      "راه‌اندازی %1 کامل نشد. خودِ %2 نصب شده است. برای تلاش دوباره از %3 در منوی شروع استفاده کنید؛ دلیل را در جزئیات نصب ببینید."
+      "راه‌اندازی %1 کامل نشد. خودِ %2 نصب شده است. برای تلاش دوباره از %3 در منوی شروع استفاده کنید؛ دلیل را در جزئیات نصب ببینید.",
+      "%1 را نصب یا به‌روزرسانی کنید. نیازی به حذف نصب نسخهٔ قدیمی‌تر نیست. تنظیمات، پیش‌تنظیم‌ها و پروفایل‌های تجهیزات شما حفظ خواهند شد.",
+      "پیش از ادامه، کار خود را ذخیره کنید و از برنامهٔ در حال اجرا خارج شوید. بستن پنجرهٔ آن، برنامه را در پس‌زمینه در حال اجرا نگه می‌دارد."
     ],
     "zh-Hans": [
       "简体中文",
@@ -3322,7 +3370,9 @@
       "%1 安装未完成。请使用开始菜单中的快捷方式重试。",
       "共享音频驱动程序未能完成卸载。此应用已保留，以便重试。请退出所有正在运行的 SoundCurrent 应用，然后再次尝试卸载。",
       "VB-CABLE 未能完成卸载。此应用已保留，以便重试。",
-      "%1 安装未完成。%2 应用本身已安装。请使用开始菜单中的 %3 重试；原因请查看安装详情。"
+      "%1 安装未完成。%2 应用本身已安装。请使用开始菜单中的 %3 重试；原因请查看安装详情。",
+      "安装或更新 %1。无需卸载旧版本。您的设置、预设和设备配置文件将会保留。",
+      "继续前请保存工作并退出正在运行的应用。关闭窗口后，应用仍会在后台运行。"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -3455,7 +3505,9 @@
       "%1 安裝未完成。請使用開始功能表中的捷徑重試。",
       "共用音訊驅動程式未能完成移除。此應用程式已保留，以便重試。請結束所有正在執行的 SoundCurrent 應用程式，然後再次嘗試解除安裝。",
       "VB-CABLE 未能完成移除。此應用程式已保留，以便重試。",
-      "%1 安裝未完成。%2 應用程式本身已安裝。請使用開始功能表中的 %3 重試；原因請查看安裝詳細資訊。"
+      "%1 安裝未完成。%2 應用程式本身已安裝。請使用開始功能表中的 %3 重試；原因請查看安裝詳細資訊。",
+      "安裝或更新 %1。無須解除安裝舊版本。您的設定、預設集和設備設定檔將會保留。",
+      "繼續前請儲存工作並結束正在執行的應用程式。關閉視窗後，應用程式仍會在背景執行。"
     ],
     "ja": [
       "日本語",
@@ -3588,7 +3640,9 @@
       "%1 のセットアップが完了しませんでした。スタートメニューのショートカットから再試行してください。",
       "共有オーディオドライバーの削除が完了しませんでした。再試行できるように、このアプリは保持されています。実行中の SoundCurrent アプリをすべて終了してから、アンインストールを再試行してください。",
       "VB-CABLE の削除が完了しませんでした。再試行できるように、このアプリは保持されています。",
-      "%1 のセットアップが完了しませんでした。%2 本体はインストールされています。スタートメニューの %3 から再試行してください。原因はセットアップの詳細を参照してください。"
+      "%1 のセットアップが完了しませんでした。%2 本体はインストールされています。スタートメニューの %3 から再試行してください。原因はセットアップの詳細を参照してください。",
+      "%1 をインストールまたは更新します。古いバージョンをアンインストールする必要はありません。設定、プリセット、機器プロファイルは保持されます。",
+      "続行する前に作業内容を保存し、実行中のアプリを終了してください。ウィンドウを閉じてもアプリはバックグラウンドで実行され続けます。"
     ],
     "ko": [
       "한국어",
@@ -3721,7 +3775,9 @@
       "%1 설치가 완료되지 않았습니다. 시작 메뉴의 바로 가기로 다시 시도하세요.",
       "공유 오디오 드라이버 제거가 완료되지 않았습니다. 다시 시도할 수 있도록 이 앱을 유지했습니다. 실행 중인 모든 SoundCurrent 앱을 종료한 후 제거를 다시 시도하세요.",
       "VB-CABLE 제거가 완료되지 않았습니다. 다시 시도할 수 있도록 이 앱을 유지했습니다.",
-      "%1 설치가 완료되지 않았습니다. %2 앱 자체는 설치되어 있습니다. 시작 메뉴의 %3을 사용하여 다시 시도하세요. 이유는 설치 세부 정보를 확인하세요."
+      "%1 설치가 완료되지 않았습니다. %2 앱 자체는 설치되어 있습니다. 시작 메뉴의 %3을 사용하여 다시 시도하세요. 이유는 설치 세부 정보를 확인하세요.",
+      "%1을 설치하거나 업데이트합니다. 이전 버전을 제거할 필요는 없습니다. 설정, 프리셋 및 장비 프로필은 유지됩니다.",
+      "계속하기 전에 작업을 저장하고 실행 중인 앱을 종료하세요. 창을 닫아도 앱은 백그라운드에서 계속 실행됩니다."
     ],
     "hi": [
       "हिन्दी",
@@ -3854,7 +3910,9 @@
       "%1 सेटअप पूरा नहीं हुआ। स्टार्ट मेनू के शॉर्टकट से फिर कोशिश करें।",
       "साझा ऑडियो ड्राइवर हटाने की प्रक्रिया पूरी नहीं हुई। फिर कोशिश करने के लिए यह ऐप रखा गया है। सभी चल रहे SoundCurrent ऐप से बाहर निकलें, फिर अनइंस्टॉल करने की दोबारा कोशिश करें।",
       "VB-CABLE हटाने की प्रक्रिया पूरी नहीं हुई। फिर कोशिश करने के लिए यह ऐप रखा गया है।",
-      "%1 सेटअप पूरा नहीं हुआ। %2 ऐप स्वयं इंस्टॉल है। फिर कोशिश करने के लिए स्टार्ट मेनू में %3 का उपयोग करें; कारण जानने के लिए सेटअप विवरण देखें।"
+      "%1 सेटअप पूरा नहीं हुआ। %2 ऐप स्वयं इंस्टॉल है। फिर कोशिश करने के लिए स्टार्ट मेनू में %3 का उपयोग करें; कारण जानने के लिए सेटअप विवरण देखें।",
+      "%1 इंस्टॉल या अपडेट करें। पुराने संस्करण को अनइंस्टॉल करने की ज़रूरत नहीं है। आपकी सेटिंग, प्रीसेट और उपकरण प्रोफ़ाइल सुरक्षित रखी जाएँगी।",
+      "आगे बढ़ने से पहले अपना काम सेव करें और चल रहे ऐप से बाहर निकलें। उसकी विंडो बंद करने पर ऐप बैकग्राउंड में चलता रहता है।"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -3987,7 +4045,9 @@
       "Penyiapan %1 belum selesai. Coba lagi melalui pintasan di menu Mulai.",
       "Penghapusan driver audio bersama belum selesai. Aplikasi ini dipertahankan agar Anda dapat mencoba lagi. Keluar dari semua aplikasi SoundCurrent yang berjalan, lalu coba hapus instalasi lagi.",
       "Penghapusan VB-CABLE belum selesai. Aplikasi ini dipertahankan agar Anda dapat mencoba lagi.",
-      "Penyiapan %1 belum selesai. Aplikasi %2 sendiri sudah terinstal. Gunakan %3 di menu Mulai untuk mencoba lagi; lihat detail penyiapan untuk mengetahui alasannya."
+      "Penyiapan %1 belum selesai. Aplikasi %2 sendiri sudah terinstal. Gunakan %3 di menu Mulai untuk mencoba lagi; lihat detail penyiapan untuk mengetahui alasannya.",
+      "Instal atau perbarui %1. Anda tidak perlu menghapus versi lama. Pengaturan, preset, dan profil perangkat Anda akan dipertahankan.",
+      "Simpan pekerjaan Anda dan keluar dari aplikasi yang berjalan sebelum melanjutkan. Menutup jendelanya membuat aplikasi tetap berjalan di latar belakang."
     ],
     "vi": [
       "Tiếng Việt",
@@ -4120,7 +4180,9 @@
       "Thiết lập %1 chưa hoàn tất. Thử lại bằng lối tắt trong menu Bắt đầu.",
       "Việc gỡ trình điều khiển âm thanh dùng chung chưa hoàn tất. Ứng dụng này được giữ lại để bạn có thể thử lại. Thoát mọi ứng dụng SoundCurrent đang chạy, rồi thử gỡ cài đặt lại.",
       "Việc gỡ VB-CABLE chưa hoàn tất. Ứng dụng này được giữ lại để bạn có thể thử lại.",
-      "Thiết lập %1 chưa hoàn tất. Bản thân ứng dụng %2 đã được cài đặt. Dùng %3 trong menu Bắt đầu để thử lại; xem chi tiết cài đặt để biết lý do."
+      "Thiết lập %1 chưa hoàn tất. Bản thân ứng dụng %2 đã được cài đặt. Dùng %3 trong menu Bắt đầu để thử lại; xem chi tiết cài đặt để biết lý do.",
+      "Cài đặt hoặc cập nhật %1. Bạn không cần gỡ cài đặt phiên bản cũ. Các cài đặt, thiết lập sẵn và hồ sơ thiết bị của bạn sẽ được giữ lại.",
+      "Lưu công việc và thoát ứng dụng đang chạy trước khi tiếp tục. Đóng cửa sổ vẫn để ứng dụng chạy trong nền."
     ],
     "th": [
       "ไทย",
@@ -4253,7 +4315,9 @@
       "การติดตั้ง %1 ยังไม่เสร็จสมบูรณ์ ลองอีกครั้งโดยใช้ทางลัดในเมนูเริ่ม",
       "การลบไดรเวอร์เสียงที่ใช้ร่วมกันยังไม่เสร็จสมบูรณ์ แอปนี้ยังคงอยู่เพื่อให้คุณลองใหม่ได้ ออกจากแอป SoundCurrent ทั้งหมดที่กำลังทำงาน แล้วลองถอนการติดตั้งอีกครั้ง",
       "การลบ VB-CABLE ยังไม่เสร็จสมบูรณ์ แอปนี้ยังคงอยู่เพื่อให้คุณลองใหม่ได้",
-      "การติดตั้ง %1 ยังไม่เสร็จสมบูรณ์ แต่ตัวแอป %2 ติดตั้งแล้ว ใช้ %3 ในเมนูเริ่มเพื่อลองอีกครั้ง ดูสาเหตุได้ในรายละเอียดการติดตั้ง"
+      "การติดตั้ง %1 ยังไม่เสร็จสมบูรณ์ แต่ตัวแอป %2 ติดตั้งแล้ว ใช้ %3 ในเมนูเริ่มเพื่อลองอีกครั้ง ดูสาเหตุได้ในรายละเอียดการติดตั้ง",
+      "ติดตั้งหรืออัปเดต %1 ไม่จำเป็นต้องถอนการติดตั้งเวอร์ชันเก่า การตั้งค่า ค่าที่ตั้งไว้ล่วงหน้า และโปรไฟล์อุปกรณ์ของคุณจะยังคงอยู่",
+      "บันทึกงานและออกจากแอปที่กำลังทำงานก่อนดำเนินการต่อ การปิดหน้าต่างจะยังคงให้แอปทำงานในเบื้องหลัง"
     ],
     "sw": [
       "Kiswahili",
@@ -4386,7 +4450,9 @@
       "Usanidi wa %1 haukukamilika. Jaribu tena kupitia njia ya mkato kwenye menyu ya Anza.",
       "Uondoaji wa kiendeshi cha sauti kinachoshirikiwa haukukamilika. Programu hii imehifadhiwa ili uweze kujaribu tena. Toka kabisa kwenye programu zote za SoundCurrent zinazoendeshwa, kisha jaribu kuondoa programu tena.",
       "Uondoaji wa VB-CABLE haukukamilika. Programu hii imehifadhiwa ili uweze kujaribu tena.",
-      "Usanidi wa %1 haukukamilika. Programu ya %2 yenyewe imesakinishwa. Tumia %3 kwenye menyu ya Anza kujaribu tena; angalia maelezo ya usanidi kwa sababu."
+      "Usanidi wa %1 haukukamilika. Programu ya %2 yenyewe imesakinishwa. Tumia %3 kwenye menyu ya Anza kujaribu tena; angalia maelezo ya usanidi kwa sababu.",
+      "Sakinisha au sasisha %1. Huhitaji kuondoa toleo la zamani. Mipangilio, mipangilio iliyowekwa tayari na profaili za vifaa vyako zitahifadhiwa.",
+      "Hifadhi kazi yako na utoke kabisa kwenye programu inayoendeshwa kabla ya kuendelea. Kufunga dirisha lake huacha programu ikiendelea kufanya kazi chinichini."
     ],
     "nn": [
       "Norsk nynorsk",
@@ -4519,7 +4585,9 @@
       "Oppsettet av %1 vart ikkje fullført. Prøv på nytt via snarvegen i Start-menyen.",
       "Fjerninga av den delte lyddrivaren vart ikkje fullført. Denne appen vart ikkje fjerna, slik at du kan prøve på nytt. Avslutt alle SoundCurrent-appar som køyrer, og prøv deretter å avinstallere på nytt.",
       "Fjerninga av VB-CABLE vart ikkje fullført. Denne appen vart ikkje fjerna, slik at du kan prøve på nytt.",
-      "Oppsettet av %1 vart ikkje fullført. Sjølve %2 er installert. Bruk %3 i Start-menyen for å prøve på nytt; sjå oppsettdetaljane for årsaka."
+      "Oppsettet av %1 vart ikkje fullført. Sjølve %2 er installert. Bruk %3 i Start-menyen for å prøve på nytt; sjå oppsettdetaljane for årsaka.",
+      "Installer eller oppdater %1. Du treng ikkje å avinstallere ein eldre versjon. Innstillingane, førehandsinnstillingane og utstyrsprofilane dine blir tekne vare på.",
+      "Lagre arbeidet ditt og avslutt appen som køyrer før du held fram. Når vindauget blir lukka, held appen fram med å køyre i bakgrunnen."
     ]
   },
   "requiredCompleteLocales": [

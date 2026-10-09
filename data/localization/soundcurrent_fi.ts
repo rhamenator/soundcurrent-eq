@@ -1087,6 +1087,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>Asenna uudet paketit tämän version päälle — poistamista ei tarvita. Esiasetukset ja profiilit säilytetään. Tallenna työsi, valitse Lopeta (ikkunan sulkeminen jättää sovelluksen käyntiin), asenna päivitys ja avaa uudelleen.</translation>
     </message>
     <message>
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>Asenna tai päivitä %1. Vanhemman version asennusta ei tarvitse poistaa. Asetuksesi, esiasetuksesi ja laiteprofiilisi säilytetään.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Install or update the shared SoundCurrent Audio driver</source>
       <translation>Asenna tai päivitä jaettu SoundCurrent Audio -ajuri</translation>
     </message>
@@ -1993,6 +1998,11 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Save system response profile</source>
       <translation>Tallenna järjestelmän taajuusvasteprofiili</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>Tallenna työsi ja lopeta käynnissä oleva sovellus ennen jatkamista. Ikkunan sulkeminen jättää sovelluksen käyntiin taustalle.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>

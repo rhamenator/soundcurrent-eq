@@ -1087,6 +1087,11 @@ Importálja a könyvtárba?</translation>
       <translation>Telepítse az új csomagokat erre a verzióra — eltávolítás nem szükséges. Az előbeállítások és profilok megmaradnak. Mentse munkáját, válassza a Kilépés lehetőséget (az ablak bezárása futva hagyja), telepítse a frissítést, majd nyissa meg újra.</translation>
     </message>
     <message>
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>Telepítse vagy frissítse a %1 alkalmazást. Nem szükséges eltávolítani a régebbi verziót. Beállításai, előbeállításai és eszközprofiljai megmaradnak.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Install or update the shared SoundCurrent Audio driver</source>
       <translation>A megosztott SoundCurrent Audio illesztőprogram telepítése vagy frissítése</translation>
     </message>
@@ -1993,6 +1998,11 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Save system response profile</source>
       <translation>Rendszer-frekvenciamenetprofil mentése</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>A folytatás előtt mentse a munkáját, és lépjen ki a futó alkalmazásból. Az ablak bezárása után az alkalmazás tovább fut a háttérben.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>

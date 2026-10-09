@@ -14,9 +14,9 @@
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 45,
       "kind": "MUI-text",
-      "literal": "Install or update SoundCurrent EQ. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.$\\r$\\n$\\r$\\nSave your work and use Quit to exit the running app before continuing. Closing its window keeps it running in the background.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCWelcome)",
+      "marked": true,
+      "reviewStatus": "all locale welcome paragraphs prepared; activation and installed layout pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
@@ -150,9 +150,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 45,
       "kind": "MUI-text",
-      "literal": "Install or update SoundCurrent EQ. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.$\\r$\\n$\\r$\\nSave your work and use Quit to exit the running app before continuing. Closing its window keeps it running in the background.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCWelcome)",
+      "marked": true,
+      "reviewStatus": "all locale welcome paragraphs prepared; activation and installed layout pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",

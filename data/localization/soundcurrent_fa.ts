@@ -1087,6 +1087,11 @@ Import into your library?</source>
       <translation>بسته‌های جدید را روی این نسخه نصب کنید — نیازی به حذف نصب نیست. پیش‌تنظیم‌ها و پروفایل‌ها حفظ می‌شوند. کار خود را ذخیره کنید، از خروج استفاده کنید (بستن پنجره برنامه را در حال اجرا نگه می‌دارد)، به‌روزرسانی را نصب کنید و دوباره باز کنید.</translation>
     </message>
     <message>
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>%1 را نصب یا به‌روزرسانی کنید. نیازی به حذف نصب نسخهٔ قدیمی‌تر نیست. تنظیمات، پیش‌تنظیم‌ها و پروفایل‌های تجهیزات شما حفظ خواهند شد.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Install or update the shared SoundCurrent Audio driver</source>
       <translation>نصب یا به‌روزرسانی درایور مشترک SoundCurrent Audio</translation>
     </message>
@@ -1993,6 +1998,11 @@ Import into your library?</source>
     <message>
       <source>Save system response profile</source>
       <translation>ذخیره پروفایل پاسخ سیستم</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>پیش از ادامه، کار خود را ذخیره کنید و از برنامهٔ در حال اجرا خارج شوید. بستن پنجرهٔ آن، برنامه را در پس‌زمینه در حال اجرا نگه می‌دارد.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>

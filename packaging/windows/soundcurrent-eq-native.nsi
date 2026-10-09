@@ -42,7 +42,7 @@ BrandingText "SoundCurrent EQ • GPL-3.0-only"
 Icon "${SOURCE_ROOT}\data\soundcurrent-eq.ico"
 UninstallIcon "${SOURCE_ROOT}\data\soundcurrent-eq.ico"
 
-!define MUI_WELCOMEPAGE_TEXT "Install or update SoundCurrent EQ. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.$\r$\n$\r$\nSave your work and use Quit to exit the running app before continuing. Closing its window keeps it running in the background."
+!define MUI_WELCOMEPAGE_TEXT "$(SCWelcome)"
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_LICENSE "${SOURCE_ROOT}\LICENSE"
 !insertmacro MUI_PAGE_DIRECTORY
@@ -60,6 +60,7 @@ LangString SCNativeSetupProgress ${LANG_ENGLISH} "Setting up the shared SoundCur
 LangString SCSetupRetryProgress ${LANG_ENGLISH} "SoundCurrent Audio setup did not finish. Retry using the Start menu shortcut."
 LangString SCNativeRemovalFailed ${LANG_ENGLISH} "Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling."
 LangString SCSetupFailedAppInstalled ${LANG_ENGLISH} "SoundCurrent Audio setup did not finish. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason."
+LangString SCWelcome ${LANG_ENGLISH} "Install or update SoundCurrent EQ. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.$\r$\n$\r$\nSave your work and quit the running app before continuing. Closing its window keeps it running in the background."
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
 LangString SCNativeRouting ${LANG_ENGLISH} "SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved."
 LangString SCNativePresent ${LANG_ENGLISH} "SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app."

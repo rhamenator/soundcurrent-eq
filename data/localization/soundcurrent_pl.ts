@@ -1087,6 +1087,11 @@ Zaimportować do biblioteki?</translation>
       <translation>Zainstaluj nowe pakiety na tej wersji — odinstalowanie nie jest potrzebne. Ustawienia i profile są zachowane. Zapisz pracę, wybierz Zakończ (zamknięcie okna pozostawia aplikację uruchomioną), zainstaluj aktualizację i otwórz ponownie.</translation>
     </message>
     <message>
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>Zainstaluj lub zaktualizuj %1. Nie trzeba odinstalowywać starszej wersji. Ustawienia, presety i profile sprzętu zostaną zachowane.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Install or update the shared SoundCurrent Audio driver</source>
       <translation>Zainstaluj lub zaktualizuj współdzielony sterownik SoundCurrent Audio</translation>
     </message>
@@ -1993,6 +1998,11 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Save system response profile</source>
       <translation>Zapisz profil odpowiedzi systemu</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>Zapisz swoją pracę i zakończ działanie uruchomionej aplikacji przed kontynuowaniem. Zamknięcie jej okna pozostawia ją działającą w tle.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>

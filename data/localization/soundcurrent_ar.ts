@@ -1087,6 +1087,11 @@ Import into your library?</source>
       <translation>ثبّت الحزم الجديدة فوق هذا الإصدار — لا حاجة لإلغاء التثبيت. تُحفظ الإعدادات المسبقة وملفات التعريف. احفظ عملك، واستخدم إنهاء (إغلاق النافذة يُبقي التطبيق قيد التشغيل)، وثبّت التحديث، ثم أعد فتح التطبيق.</translation>
     </message>
     <message>
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>ثبّت %1 أو حدّثه. لا حاجة إلى إلغاء تثبيت إصدار أقدم. سيتم الاحتفاظ بإعداداتك وإعداداتك المسبقة وملفات تعريف المعدات.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Install or update the shared SoundCurrent Audio driver</source>
       <translation>تثبيت برنامج تشغيل SoundCurrent Audio المشترك أو تحديثه</translation>
     </message>
@@ -1993,6 +1998,11 @@ Import into your library?</source>
     <message>
       <source>Save system response profile</source>
       <translation>حفظ ملف تعريف استجابة النظام</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>احفظ عملك واخرج من التطبيق قيد التشغيل قبل المتابعة. إغلاق نافذته يُبقيه قيد التشغيل في الخلفية.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>

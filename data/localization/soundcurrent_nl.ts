@@ -1087,6 +1087,11 @@ Importeren in uw bibliotheek?</translation>
       <translation>Installeer nieuwe pakketten over deze versie; verwijderen is niet nodig. Presets en profielen blijven behouden. Sla uw werk op, gebruik Afsluiten (het sluiten van het venster laat de app actief), installeer de update en open de app opnieuw.</translation>
     </message>
     <message>
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>Installeer of werk %1 bij. Een oudere versie hoeft niet te worden verwijderd. Uw instellingen, voorinstellingen en apparatuurprofielen blijven behouden.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Install or update the shared SoundCurrent Audio driver</source>
       <translation>Het gedeelde SoundCurrent Audio-stuurprogramma installeren of bijwerken</translation>
     </message>
@@ -1993,6 +1998,11 @@ Importeren in uw bibliotheek?</translation>
     <message>
       <source>Save system response profile</source>
       <translation>Systeemresponsprofiel opslaan</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>Sla uw werk op en sluit de actieve app volledig af voordat u doorgaat. Als u het venster sluit, blijft de app op de achtergrond actief.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>

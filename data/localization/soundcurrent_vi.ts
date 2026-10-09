@@ -1087,6 +1087,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Cài gói mới đè lên phiên bản này — không cần gỡ cài đặt. Các thiết lập sẵn và cấu hình được giữ nguyên. Lưu công việc, chọn Thoát (chỉ đóng cửa sổ thì ứng dụng vẫn chạy), cài bản cập nhật rồi mở lại.</translation>
     </message>
     <message>
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>Cài đặt hoặc cập nhật %1. Bạn không cần gỡ cài đặt phiên bản cũ. Các cài đặt, thiết lập sẵn và hồ sơ thiết bị của bạn sẽ được giữ lại.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Install or update the shared SoundCurrent Audio driver</source>
       <translation>Cài đặt hoặc cập nhật trình điều khiển SoundCurrent Audio dùng chung</translation>
     </message>
@@ -1993,6 +1998,11 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Save system response profile</source>
       <translation>Lưu cấu hình đáp tuyến hệ thống</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>Lưu công việc và thoát ứng dụng đang chạy trước khi tiếp tục. Đóng cửa sổ vẫn để ứng dụng chạy trong nền.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>

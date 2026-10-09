@@ -1087,6 +1087,11 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Installieren Sie neue Pakete über diese Version, ohne sie vorher zu deinstallieren. Presets und Profile bleiben erhalten. Speichern Sie Ihre Arbeit, beenden Sie die App (beim Schließen des Fensters läuft sie weiter), installieren Sie das Update und öffnen Sie die App erneut.</translation>
     </message>
     <message>
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>Installieren oder aktualisieren Sie %1. Eine ältere Version muss nicht deinstalliert werden. Ihre Einstellungen, Presets und Geräteprofile bleiben erhalten.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Install or update the shared SoundCurrent Audio driver</source>
       <translation>Den gemeinsam genutzten SoundCurrent Audio-Treiber installieren oder aktualisieren</translation>
     </message>
@@ -1993,6 +1998,11 @@ In Ihre Bibliothek importieren?</translation>
     <message>
       <source>Save system response profile</source>
       <translation>Profil des Systemfrequenzgangs speichern</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>Speichern Sie Ihre Arbeit und beenden Sie die laufende App, bevor Sie fortfahren. Beim Schließen des Fensters läuft die App im Hintergrund weiter.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>

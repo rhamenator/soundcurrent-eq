@@ -1087,6 +1087,11 @@ Import into your library?</source>
       <translation>이 버전에 새 패키지를 덮어 설치하세요. 제거할 필요가 없으며 프리셋과 프로파일은 유지됩니다. 작업을 저장하고 종료한 다음 (창만 닫으면 계속 실행됩니다), 업데이트를 설치한 후 다시 여세요.</translation>
     </message>
     <message>
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>%1을 설치하거나 업데이트합니다. 이전 버전을 제거할 필요는 없습니다. 설정, 프리셋 및 장비 프로필은 유지됩니다.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Install or update the shared SoundCurrent Audio driver</source>
       <translation>공유 SoundCurrent Audio 드라이버 설치 또는 업데이트</translation>
     </message>
@@ -1993,6 +1998,11 @@ Import into your library?</source>
     <message>
       <source>Save system response profile</source>
       <translation>시스템 응답 프로파일 저장</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>계속하기 전에 작업을 저장하고 실행 중인 앱을 종료하세요. 창을 닫아도 앱은 백그라운드에서 계속 실행됩니다.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>

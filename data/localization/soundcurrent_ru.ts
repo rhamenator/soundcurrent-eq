@@ -1087,6 +1087,11 @@ Import into your library?</source>
       <translation>Устанавливайте новые пакеты поверх этой версии — удаление не требуется. Пресеты и профили сохраняются. Сохраните свою работу, завершите работу приложения (закрытие окна оставляет его запущенным), установите обновление и откройте снова.</translation>
     </message>
     <message>
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>Установите или обновите %1. Удалять предыдущую версию не требуется. Ваши настройки, пресеты и профили оборудования будут сохранены.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Install or update the shared SoundCurrent Audio driver</source>
       <translation>Установить или обновить общий драйвер SoundCurrent Audio</translation>
     </message>
@@ -1993,6 +1998,11 @@ Import into your library?</source>
     <message>
       <source>Save system response profile</source>
       <translation>Сохранить профиль характеристики системы</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>Сохраните свою работу и выйдите из работающего приложения перед продолжением. При закрытии его окна приложение продолжает работать в фоновом режиме.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>

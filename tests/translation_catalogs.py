@@ -15,6 +15,48 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_welcome_paragraphs_keep_update_and_background_meaning(self):
+        root = Path(__file__).resolve().parents[1]
+        product = 'SoundCurrent Studio' if (root / 'src/studio_model.cpp').exists() else 'SoundCurrent EQ'
+        first = 'Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.'
+        second = 'Save your work and quit the running app before continuing. Closing its window keeps it running in the background.'
+        spec = importlib.util.spec_from_file_location('welcome_export', root / 'scripts/windows_installer_catalogs.py')
+        exporter = importlib.util.module_from_spec(spec)
+        with patch.dict('sys.modules', {'localization': catalog}):
+            spec.loader.exec_module(exporter)
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text(encoding='utf-8')
+            self.assertIn('!define MUI_WELCOMEPAGE_TEXT "$(SCWelcome)"', code)
+            expected = first.replace('%1', product) + r'$\r$\n$\r$\n' + second
+            self.assertEqual(re.findall(r'^LangString SCWelcome \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [expected])
+            self.assertNotIn('use Quit to exit', code)
+        with tempfile.TemporaryDirectory() as folder:
+            result = exporter.export(Path(folder) / 'welcome.json', product)
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
+            messages = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))
+            for source in (first,second):
+                self.assertTrue(catalog.finished(messages[source]), row['tag'])
+                translated = messages[source].findtext('translation')
+                catalog.validate_text(source, translated)
+                self.assertNotIn('\n', translated)
+                self.assertNotIn('\r', translated)
+            for data in result['languages'][row['tag']].values():
+                raw = data['captions']['SCWelcome']
+                paragraphs = raw.split('\r\n\r\n')
+                self.assertEqual(len(paragraphs),2)
+                self.assertEqual(paragraphs[0], exporter.format_value(messages[first].findtext('translation'), product))
+                self.assertEqual(paragraphs[1], messages[second].findtext('translation'))
+                self.assertEqual(raw.count(product),1)
+                escaped = data['nsisEscaped']['SCWelcome']
+                self.assertEqual(escaped.count(r'$\r$\n'),2)
+        spec = importlib.util.spec_from_file_location('welcome_audit', root / 'scripts/nsis_string_audit.py')
+        audit = importlib.util.module_from_spec(spec); spec.loader.exec_module(audit)
+        found = audit.inventory(root)
+        owned = [row for row in found['candidates'] if row['kind'] != 'Section']
+        self.assertTrue(owned)
+        self.assertTrue(all(row['marked'] for row in owned), owned)
+        audit.check_backlog(found, json.loads((catalog.DATA / 'nsis-text-backlog.json').read_text(encoding='utf-8')))
+
     def test_setup_failure_keeps_actual_shortcut_and_parameter_roles(self):
         root = Path(__file__).resolve().parents[1]
         product = 'SoundCurrent Studio' if (root / 'src/studio_model.cpp').exists() else 'SoundCurrent EQ'
@@ -499,7 +541,7 @@ class CatalogTests(unittest.TestCase):
             for variants in result['languages'].values():
                 self.assertEqual(set(variants), {'cable', 'native'})
                 for routeName, route in variants.items():
-                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed', 'SCQuitBeforeUpdate', 'SCQuitBeforeUninstall', 'SCSetupRetryProgress', 'SCSetupFailedAppInstalled'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller', 'SCCableSharedNotice', 'SCCableRouting', 'SCCableSetupProgress', 'SCCableRemovalFailed'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting', 'SCNativeSetupProgress', 'SCNativeRemovalFailed'}))
+                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed', 'SCQuitBeforeUpdate', 'SCQuitBeforeUninstall', 'SCSetupRetryProgress', 'SCSetupFailedAppInstalled', 'SCWelcome'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller', 'SCCableSharedNotice', 'SCCableRouting', 'SCCableSetupProgress', 'SCCableRemovalFailed'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting', 'SCNativeSetupProgress', 'SCNativeRemovalFailed'}))
                     self.assertEqual(set(route['nsisEscaped']), set(route['captions']))
 
     def test_installer_checkbox_catalog_sources_and_names(self):

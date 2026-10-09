@@ -1087,6 +1087,11 @@ Import into your library?</source>
       <translation>在此版本上直接安裝新套件 — 無需解除安裝。預設及設定檔會保留。請儲存工作，使用「結束」（關閉視窗會讓應用程式繼續執行），安裝更新，然後重新開啟。</translation>
     </message>
     <message>
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>安裝或更新 %1。無須解除安裝舊版本。您的設定、預設集和設備設定檔將會保留。</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Install or update the shared SoundCurrent Audio driver</source>
       <translation>安裝或更新共用的 SoundCurrent Audio 驅動程式</translation>
     </message>
@@ -1993,6 +1998,11 @@ Import into your library?</source>
     <message>
       <source>Save system response profile</source>
       <translation>儲存系統響應設定檔</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>繼續前請儲存工作並結束正在執行的應用程式。關閉視窗後，應用程式仍會在背景執行。</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>

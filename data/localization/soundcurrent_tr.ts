@@ -1087,6 +1087,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Yeni paketleri bu sürümün üzerine yükleyin — kaldırmanız gerekmez. Hazır ayarlar ve profiller korunur. Çalışmanızı kaydedin, uygulamadan çıkın (pencereyi kapatmak uygulamayı çalışır durumda bırakır), güncellemeyi yükleyip yeniden açın.</translation>
     </message>
     <message>
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>%1 uygulamasını yükleyin veya güncelleyin. Eski bir sürümü kaldırmanız gerekmez. Ayarlarınız, hazır ayarlarınız ve ekipman profilleriniz korunacaktır.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Install or update the shared SoundCurrent Audio driver</source>
       <translation>Paylaşılan SoundCurrent Audio sürücüsünü yükle veya güncelle</translation>
     </message>
@@ -1993,6 +1998,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Save system response profile</source>
       <translation>Sistem yanıt profilini kaydet</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>Devam etmeden önce çalışmanızı kaydedin ve çalışan uygulamadan çıkın. Penceresini kapatmak uygulamanın arka planda çalışmasını durdurmaz.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>

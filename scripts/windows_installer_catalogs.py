@@ -8,6 +8,8 @@ from pathlib import Path
 import localization as catalog
 
 SOURCES = {
+    'SCWelcomeQuit': 'Save your work and quit the running app before continuing. Closing its window keeps it running in the background.',
+    'SCWelcomeInstall': 'Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.',
     'SCSetupFailedAppInstalled': '%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.',
     'SCCableRemovalFailed': 'VB-CABLE removal did not finish. This app was kept so you can retry.',
     'SCNativeRemovalFailed': 'Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.',
@@ -75,7 +77,8 @@ def export(destination, product):
         variants = {}
         for route, driver, checkbox in [('cable', 'VB-CABLE', 'SCInstallCable'),
                                          ('native', 'SoundCurrent Audio', 'SCInstallNative')]:
-            captions = {'SCSetupFailedAppInstalled': format_values(translations['SCSetupFailedAppInstalled'], (driver, product, 'Audio driver setup')),
+            captions = {'SCWelcome': format_value(translations['SCWelcomeInstall'], product) + '\r\n\r\n' + translations['SCWelcomeQuit'],
+                        'SCSetupFailedAppInstalled': format_values(translations['SCSetupFailedAppInstalled'], (driver, product, 'Audio driver setup')),
                         'SCSetupRetryProgress': format_value(translations['SCSetupRetryProgress'], driver),
                         'SCQuitBeforeUpdate': format_value(translations['SCQuitBeforeUpdate'], product),
                         'SCQuitBeforeUninstall': format_value(translations['SCQuitBeforeUninstall'], product),
@@ -101,7 +104,7 @@ def export(destination, product):
                 captions['SCCableRestart'] = translations['SCCableRestart']
             variants[route] = {'captions': captions, 'nsisEscaped': {key: nsis_escape(text) for key, text in captions.items()}}
         languages[row['tag']] = variants
-    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair and signed-installer and shared-cable and cable-routing donation and quit-before-update/uninstall and setup progress and native and cable removal failure and installed-app setup failure guidance only',
+    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair and signed-installer and shared-cable and cable-routing donation and quit-before-update/uninstall and setup progress and native and cable removal failure and installed-app setup failure and welcome guidance only',
               'installerLocaleActivationComplete': False, 'nativeSpeakerVerified': False,
               'sources': SOURCES, 'languages': languages}
     destination.parent.mkdir(parents=True, exist_ok=True)
