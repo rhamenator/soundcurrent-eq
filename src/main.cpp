@@ -3291,7 +3291,7 @@ private:
             presetCombo_->insertSeparator(presetCombo_->count());
             for (auto it = custom_.begin(); it != custom_.end(); ++it) presetCombo_->addItem(it.key(),it.key());
         }
-        presetCombo_->addItem(SC_TR("Custom"));
+        presetCombo_->addItem(SC_TR("Custom"), QStringLiteral("Custom"));
         presetCombo_->setCurrentIndex(presetCombo_->findData(selected));
     }
 
@@ -4215,6 +4215,11 @@ int main(int argc, char **argv) {
         if(std::abs(selectedGain->value()-expected)>0.1)qFatal("Translated preset name blocked its EQ change");
         preset->setCurrentIndex(preset->findData("Flat"));
         if(selectedGain->value()!=0) qFatal("Localized Flat reset failed");
+        selectedGain->setValue(1.5);
+        if(preset->currentData().toString()!=QStringLiteral("Custom") || preset->currentText()!=SC_TR("Custom"))
+            qFatal("Editing a localized band lost the Custom preset stable ID");
+        preset->setCurrentIndex(preset->findData("Flat"));
+        if(selectedGain->value()!=0) qFatal("Flat reset after a Custom edit failed");
         auto *language=window.findChild<QComboBox *>("uiLanguage");
         auto *format=window.findChild<QComboBox *>("formatLocale");
         if(!language || !format || format->count()<100) qFatal("Locale selection is missing");
