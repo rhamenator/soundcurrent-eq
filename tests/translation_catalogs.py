@@ -814,6 +814,15 @@ class CatalogTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Unreviewed display literal'):
                 audit.check_reviewed_literals(fixture, reviewed)
 
+    def test_startup_diagnostics_reject_untranslated_production_logging(self):
+        start = '    const auto runtime = QStandardPaths::writableLocation(0);'
+        end = '    soundcurrent::ProcessingGuard processingGuard;'
+        catalog.check_startup_diagnostics(start + 'qCritical("%s", qPrintable(SC_TR("Failure")));' + end)
+        for unmarked in ['qCritical("English failure");',
+                         'qCritical("%s", qPrintable(QStringLiteral("English failure")));']:
+            with self.subTest(unmarked=unmarked), self.assertRaisesRegex(ValueError, 'Untranslated production startup'):
+                catalog.check_startup_diagnostics(start + unmarked + end)
+
     def test_launcher_translation_preserves_identity_and_rejects_stale_text(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

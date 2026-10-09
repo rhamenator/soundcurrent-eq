@@ -142,6 +142,15 @@ def maintain_desktop_comments(tags, write=False):
             raise ValueError('Stale launcher translations: ' + str(path))
 
 
+def check_startup_diagnostics(code):
+    """Guard production startup failures; fixture-only logging is outside this block."""
+    start = code.index('    const auto runtime = QStandardPaths::')
+    end = code.index('    soundcurrent::ProcessingGuard processingGuard;', start)
+    for args in calls(code[start:end], 'qCritical'):
+        if len(args) != 2 or literal(args[0]) != '%s' or not list(calls(args[1], 'SC_TR')):
+            raise ValueError('Untranslated production startup diagnostic')
+
+
 def sources():
     adapter = ROOT / 'src/windows_platform.inc'
     if adapter.exists():
@@ -189,6 +198,7 @@ def sources():
     code = (ROOT / 'src/enhancement.h').read_text(encoding='utf-8')
     out.update(re.findall(r'\{\s*"([^"]+)"\s*,', code))
     code = (ROOT / 'src/main.cpp').read_text(encoding='utf-8')
+    check_startup_diagnostics(code)
     start = code.index('void rebuildPresetList(')
     end = code.index('void savePreset(', start)
     for args in calls(code[start:end], 'addGroup'):

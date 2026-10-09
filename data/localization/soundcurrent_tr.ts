@@ -118,6 +118,11 @@ Değiştirmek istiyor musunuz?</translation>
       <translation>İşlem başarısız: %1 (0x%2)</translation>
     </message>
     <message>
+      <source>%1 is already running or its instance lock is unavailable</source>
+      <translation>%1 zaten çalışıyor veya örnek kilidi kullanılamıyor</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
       <source>%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.</source>
       <translation>%1 kurulumu tamamlanmadı. %2 uygulaması yüklüdür. Yeniden denemek için Başlat menüsündeki %3 seçeneğini kullanın; nedeni kurulum ayrıntılarında görebilirsiniz.</translation>
       <extracomment>Setup failure dialog after app files/shortcuts copied. %1 = stable driver name; %2 = stable app name; %3 = actual currently English Start-menu shortcut name Audio driver setup (not localized Qt button). Setup failure does not prove existing driver absent. Preserve app installed, Start-menu retry and details for reason. Shortcut display-name localization and upgrade cleanup remain open. AI review only; native review unverified.</extracomment>
@@ -137,6 +142,11 @@ Do you want to delete it anyway?</source>
       <translation>“%1” yazma korumalı.
 Yine de silmek istiyor musunuz?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>A private user runtime directory is required</source>
+      <translation>Kullanıcıya özel bir çalışma zamanı dizini gerekiyor</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
     </message>
     <message>
       <source>Abort</source>
@@ -484,6 +494,11 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Ortak SoundCurrent oturum kilidi oluşturulamıyor.</translation>
     </message>
     <message>
+      <source>Cannot create user settings directory</source>
+      <translation>Kullanıcı ayarları dizini oluşturulamıyor</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
       <translation>Çalışan ekolayzırların denetimi tamamlanamıyor; SoundCurrent işlemeyi etkinleştirmeyecek.</translation>
     </message>
@@ -686,6 +701,11 @@ Yine de silmek istiyor musunuz?</translation>
     <message>
       <source>Could not create test tone</source>
       <translation>Test tonu oluşturulamadı</translation>
+    </message>
+    <message>
+      <source>Could not create the local activation socket for %1: %2</source>
+      <translation>%1 için yerel etkinleştirme soketi oluşturulamadı: %2</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
     </message>
     <message>
       <source>Could not delete directory.</source>

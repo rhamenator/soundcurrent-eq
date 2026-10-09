@@ -4342,12 +4342,12 @@ int main(int argc, char **argv) {
     }
 #ifdef Q_OS_WIN
     const auto runtime = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
-    if (!QDir().mkpath(runtime)) { qCritical("Cannot create user settings directory"); return 1; }
+    if (!QDir().mkpath(runtime)) { qCritical("%s", qUtf8Printable(SC_TR("Cannot create user settings directory"))); return 1; }
 #else
     const auto runtime = QStandardPaths::writableLocation(QStandardPaths::RuntimeLocation);
 #endif
     if (runtime.isEmpty() || !QFileInfo(runtime).isDir()) {
-        qCritical("A private user runtime directory is required");
+        qCritical("%s", qUtf8Printable(SC_TR("A private user runtime directory is required")));
         return 1;
     }
     #ifdef Q_OS_WIN
@@ -4373,7 +4373,7 @@ int main(int argc, char **argv) {
                 QThread::msleep(50);
             }
         }
-        qCritical("SoundCurrent EQ is already running or its instance lock is unavailable");
+        qCritical("%s", qUtf8Printable(SC_TR("%1 is already running or its instance lock is unavailable").arg("SoundCurrent EQ")));
         return 1;
     }
     if (app.arguments().contains("--quit")) return 0;
@@ -4381,7 +4381,7 @@ int main(int argc, char **argv) {
     instanceServer.setSocketOptions(QLocalServer::UserAccessOption);
     QLocalServer::removeServer(socketPath);
     if (!instanceServer.listen(socketPath)) {
-        qCritical("Could not create SoundCurrent EQ's local activation socket: %s", qPrintable(instanceServer.errorString()));
+        qCritical("%s", qUtf8Printable(SC_TR("Could not create the local activation socket for %1: %2").arg("SoundCurrent EQ", instanceServer.errorString())));
         return 1;
     }
     soundcurrent::ProcessingGuard processingGuard;

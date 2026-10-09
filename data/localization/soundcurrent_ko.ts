@@ -118,6 +118,11 @@ Do you want to replace it?</source>
       <translation>작업 실패: %1 (0x%2)</translation>
     </message>
     <message>
+      <source>%1 is already running or its instance lock is unavailable</source>
+      <translation>%1이(가) 이미 실행 중이거나 인스턴스 잠금을 사용할 수 없습니다</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
       <source>%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.</source>
       <translation>%1 설치가 완료되지 않았습니다. %2 앱 자체는 설치되어 있습니다. 시작 메뉴의 %3을 사용하여 다시 시도하세요. 이유는 설치 세부 정보를 확인하세요.</translation>
       <extracomment>Setup failure dialog after app files/shortcuts copied. %1 = stable driver name; %2 = stable app name; %3 = actual currently English Start-menu shortcut name Audio driver setup (not localized Qt button). Setup failure does not prove existing driver absent. Preserve app installed, Start-menu retry and details for reason. Shortcut display-name localization and upgrade cleanup remain open. AI review only; native review unverified.</extracomment>
@@ -137,6 +142,11 @@ Do you want to delete it anyway?</source>
       <translation>'%1'이(가) 쓰기 금지되어 있습니다.
 그래도 삭제하시겠습니까?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>A private user runtime directory is required</source>
+      <translation>사용자 전용 런타임 디렉터리가 필요합니다</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
     </message>
     <message>
       <source>Abort</source>
@@ -484,6 +494,11 @@ Do you want to delete it anyway?</source>
       <translation>SoundCurrent 공용 세션 가드를 만들 수 없습니다.</translation>
     </message>
     <message>
+      <source>Cannot create user settings directory</source>
+      <translation>사용자 설정 디렉터리를 만들 수 없습니다</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
       <translation>실행 중인 이퀄라이저 확인을 완료할 수 없습니다. SoundCurrent는 처리를 활성화하지 않습니다.</translation>
     </message>
@@ -686,6 +701,11 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Could not create test tone</source>
       <translation>테스트 톤을 만들지 못했습니다</translation>
+    </message>
+    <message>
+      <source>Could not create the local activation socket for %1: %2</source>
+      <translation>%1의 로컬 활성화 소켓을 만들 수 없습니다: %2</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
     </message>
     <message>
       <source>Could not delete directory.</source>

@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-09",
+  "scope": "Production startup qCritical diagnostics in main.cpp; self-test-only diagnostics excluded.",
+  "gaps": [
+    {
+      "line": 4345,
+      "source": "if (!QDir().mkpath(runtime)) { qCritical(\"Cannot create user settings directory\"); return 1; }",
+      "classification": "Owned startup diagnostic outside fixture; English-only"
+    },
+    {
+      "line": 4350,
+      "source": "qCritical(\"A private user runtime directory is required\");",
+      "classification": "Owned startup diagnostic outside fixture; English-only"
+    },
+    {
+      "line": 4376,
+      "source": "qCritical(\"SoundCurrent EQ is already running or its instance lock is unavailable\");",
+      "classification": "Owned startup diagnostic outside fixture; English-only"
+    },
+    {
+      "line": 4384,
+      "source": "qCritical(\"Could not create SoundCurrent EQ's local activation socket: %s\", qPrintable(instanceServer.errorString()));",
+      "classification": "Owned startup diagnostic outside fixture; English-only"
+    }
+  ],
+  "nextTask": "Qualify current compiled startup diagnostics and rebuilt Linux/Windows packages; continue finite interface coverage audit.",
+  "wholeInterfaceCoverageProven": false,
+  "nativeReviewed": false,
+  "runningPackageQualification": {
+    "linuxRun": 37905858140,
+    "windowsRun": 37905834687,
+    "note": "These launcher-only Linux runs passed; Windows runs pending at latest observation. None contain the newer startup fix."
+  },
+  "originalSourceSha256": "385ed79a6410f3360ec4338b48ff2fe2c92e53f1ea8e868aaeadef4e9a3baea8",
+  "currentSourceSha256": "27dc3d05c3aef5aa0900dff5f9cdd12bc8aee62d31dccfe72b4e087e3bfa5fc1",
+  "status": "Four owned diagnostic templates translated; current package qualification pending",
+  "implemented": "SC_TR templates logged with qUtf8Printable; product names and external errorString substituted unchanged. No checks, paths, lock timing, activation messages or exit codes changed.",
+  "contextualAiReview": "Runtime directory is private per user, not a project directory. Instance lock prevents another process instance; activation socket shows/quits the existing process. Disjunctive already-running OR unavailable-lock meaning retained. Translations remain native-unverified.",
+  "localQualification": {
+    "fullCatalogTests": {
+      "tests": 61,
+      "skipped": 1,
+      "passed": true
+    },
+    "rebuiltApplication": true,
+    "compiledCatalogCTest": "passed",
+    "actualStartupLockCTest": {
+      "passed": true,
+      "locales": [
+        "fr",
+        "ar",
+        "nn"
+      ],
+      "exitCode": 1,
+      "settingsWritten": false,
+      "audioStarted": false
+    },
+    "unexercisedBranches": [
+      "Windows settings-directory creation failure",
+      "Private runtime-directory failure",
+      "Activation socket creation failure"
+    ],
+    "sourceGuardMutation": "New raw qCritical messages in production startup block rejected"
+  },
+  "evidenceSha256": {
+    "src/main.cpp": "27dc3d05c3aef5aa0900dff5f9cdd12bc8aee62d31dccfe72b4e087e3bfa5fc1",
+    "scripts/localization.py": "6c578199f65c915218fd0ead30af58713292e5f7ffccb01382d1ca94c30c4d24",
+    "tests/startup_diagnostics_localization.py": "6eed32edc3822d2dc94a0be463c0fcc7f51b67986b2945ea4e5bc977d09bb84c",
+    "tests/translation_catalogs.py": "9fee351df9341edc2255e37e62698eae9e06159da82c1b07150766c716733f63",
+    "CMakeLists.txt": "51643438bbddddf5ef8a57f865daf376ab28e2ccc75e65ec13e392659229e1df"
+  }
+}
