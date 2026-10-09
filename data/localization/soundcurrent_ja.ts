@@ -2578,6 +2578,11 @@ Import into your library?</source>
       <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
+      <source>Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.</source>
+      <translation>Windows には VB-CABLE ドライバーの登録情報がありますが、使用可能なケーブルのエンドポイントがありません。まず、Windows のサウンド設定で CABLE Input と CABLE Output が有効になっていることを確認してください。再インストールするには、次に開く公式セットアップで Remove Driver をクリックし、Windows を再起動してから、アプリ内で %1 を再度開いて Install Driver をクリックしてください。SoundCurrent 経由で音声を再生する前に、もう一度再起動してください。この共有ケーブルを削除すると、使用している他のアプリにも影響します。</translation>
+      <extracomment>Pre-repair modal, before official driver installer is opened. Existing driver record but endpoints unavailable; first check Windows endpoint enablement. Remove Driver and Install Driver are exact English external buttons. %1 is actual localized Audio driver setup button inside app, not English Start-menu shortcut. Preserve removal -&gt; Windows restart -&gt; app setup -&gt; reinstall -&gt; second restart, then audio playback; affects other users of shared cable. No claim removal already happened. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</source>
       <translation>Windows に VB-CABLE ドライバーの記録がありますが、再生または録音のエンドポイントを使用できません。既に再起動した場合は、修復のため %1 を開いてください。CABLE Input と CABLE Output が無効になっている場合は、Windows のサウンド設定で有効にしてください。</translation>
     </message>

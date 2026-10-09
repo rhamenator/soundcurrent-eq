@@ -194,6 +194,7 @@ class Markup(HTMLParser):
 # Exact labels in third-party installer or device UI are protected only in reviewed
 # instruction sources. SoundCurrent's own button captions remain translatable.
 EXTERNAL_UI_LABELS = {
+    'Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.': ('VB-CABLE', 'CABLE Input', 'CABLE Output', 'Remove Driver', 'Install Driver', 'SoundCurrent'),
     'VB-CABLE removal did not finish. This app was kept so you can retry.': ('VB-CABLE',),
     'Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.': ('SoundCurrent',),
     'VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.': ('VB-CABLE', 'SoundCurrent', 'VB-Audio', 'https://vb-cable.com'),

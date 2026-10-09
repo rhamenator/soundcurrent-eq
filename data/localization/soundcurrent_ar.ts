@@ -2578,6 +2578,11 @@ Import into your library?</source>
       <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
+      <source>Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.</source>
+      <translation>يحتوي Windows على سجل لبرنامج تشغيل VB-CABLE، لكن لا توجد نقاط نهاية قابلة للاستخدام للكبل. تحقق أولًا من تمكين CABLE Input وCABLE Output في إعدادات الصوت في Windows. لإعادة التثبيت: انقر على Remove Driver في برنامج الإعداد الرسمي الذي سيفتح بعد ذلك، وأعد تشغيل Windows، ثم افتح %1 في التطبيق مجددًا وانقر على Install Driver. أعد التشغيل مرة أخرى قبل تشغيل الصوت عبر SoundCurrent. إزالة هذا الكبل المشترك تؤثر في التطبيقات الأخرى التي تستخدمه.</translation>
+      <extracomment>Pre-repair modal, before official driver installer is opened. Existing driver record but endpoints unavailable; first check Windows endpoint enablement. Remove Driver and Install Driver are exact English external buttons. %1 is actual localized Audio driver setup button inside app, not English Start-menu shortcut. Preserve removal -&gt; Windows restart -&gt; app setup -&gt; reinstall -&gt; second restart, then audio playback; affects other users of shared cable. No claim removal already happened. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</source>
       <translation>يوجد سجل لبرنامج تشغيل VB-CABLE في Windows، لكن نقطة التشغيل أو التسجيل غير متاحة. إذا كنت قد أعدت التشغيل بالفعل، فافتح %1 للإصلاح. فعّل CABLE Input وCABLE Output في إعدادات الصوت في Windows إذا كانا معطّلين.</translation>
     </message>

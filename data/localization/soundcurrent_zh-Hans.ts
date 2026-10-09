@@ -2578,6 +2578,11 @@ Import into your library?</source>
       <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
+      <source>Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.</source>
+      <translation>Windows 中存在 VB-CABLE 驱动程序记录，但没有可用的虚拟音频线端点。请先检查 Windows 声音设置中的 CABLE Input 和 CABLE Output 是否已启用。要重新安装，请在接下来打开的官方安装程序中点击 Remove Driver，重启 Windows，然后在应用中再次打开 %1 并点击 Install Driver。在通过 SoundCurrent 播放音频之前，请再重启一次。卸载此共享虚拟音频线会影响使用它的其他应用。</translation>
+      <extracomment>Pre-repair modal, before official driver installer is opened. Existing driver record but endpoints unavailable; first check Windows endpoint enablement. Remove Driver and Install Driver are exact English external buttons. %1 is actual localized Audio driver setup button inside app, not English Start-menu shortcut. Preserve removal -&gt; Windows restart -&gt; app setup -&gt; reinstall -&gt; second restart, then audio playback; affects other users of shared cable. No claim removal already happened. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</source>
       <translation>Windows 有 VB-CABLE 驱动程序记录，但其播放或录音端点不可用。如果已重启，请打开 %1 进行修复。如果 CABLE Input 和 CABLE Output 已禁用，请在 Windows 声音设置中启用它们。</translation>
     </message>

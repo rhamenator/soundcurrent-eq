@@ -16,6 +16,35 @@ foreach ($pack in $data.languages.PSObject.Properties) {
         $count++
     }
 }
+# Capture only the real repair modal expression; never run driver actions or WinForms.
+$repairSource=@($required | Where-Object { $_.StartsWith('Windows has a VB-CABLE driver record but no usable cable endpoints.') })
+if ($repairSource.Count -ne 1) { throw 'Repair source inventory mismatch' }
+$repairTokens=$null;$repairErrors=$null
+$repairAst=[Management.Automation.Language.Parser]::ParseFile((Join-Path $root 'packaging/windows/cable-setup.ps1'),[ref]$repairTokens,[ref]$repairErrors)
+$repairCalls=@($repairAst.FindAll({param($node)
+    $node -is [Management.Automation.Language.InvokeMemberExpressionAst] -and
+    $node.Extent.Text.StartsWith('[System.Windows.Forms.MessageBox]::Show(') -and
+    $node.Extent.Text.Contains($repairSource[0])
+},$true))
+if ($repairErrors.Count -or $repairCalls.Count -ne 1) { throw 'Repair modal expression mismatch' }
+Add-Type -TypeDefinition 'public static class SCRepairNoticeCapture { public static string Text; public static string Caption; public static int Show(string text, string caption) { Text=text; Caption=caption; return 0; } }'
+$repairExpression=$repairCalls[0].Extent.Text.Replace('[System.Windows.Forms.MessageBox]::Show','[SCRepairNoticeCapture]::Show')
+$App='eq'
+foreach ($pack in $data.languages.PSObject.Properties) {
+    $Language=$pack.Name
+    $null=& ([scriptblock]::Create($repairExpression))
+    $button=Get-SCSetupText 'Audio driver setup' -Language $Language
+    $expected=$pack.Value.PSObject.Properties[$repairSource[0]].Value.Replace('%1',$button)
+    if ([SCRepairNoticeCapture]::Text -cne $expected -or
+        [SCRepairNoticeCapture]::Caption -cne (Get-SCSetupText 'Repair incomplete VB-CABLE installation' -Language $Language)) {
+        throw ('Repair modal formatting failed: '+$Language)
+    }
+    foreach ($label in @('VB-CABLE','CABLE Input','CABLE Output','Remove Driver','Install Driver','SoundCurrent')) {
+        if (![SCRepairNoticeCapture]::Text.Contains($label)) { throw ('Repair label missing: '+$Language+': '+$label) }
+    }
+}
+Write-Output 'PASS: actual repair modal argument formatting in all 34 catalogs; inert capture, no UI or driver actions'
+
 # Exercise the real declared dynamic templates in every installed catalog.
 foreach ($pack in $data.languages.PSObject.Properties) {
     foreach ($source in @($required | Where-Object {$_ -match '%1'})) {

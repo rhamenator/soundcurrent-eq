@@ -196,3 +196,7 @@ The shared dialog now reports setup failure without falsely claiming an existing
 ### Installer welcome paragraphs
 
 Both welcome paragraphs now have translations in all 33 non-English locales. Review preserves update without prior uninstall, retained settings/presets/equipment profiles, saving work and full exit/background behavior. Generic quit wording avoids an incorrect button caption. Arabic grammar, Romanian wording and Swahili preset terminology were refined. Two catalog sources are joined with an escaped CRLF paragraph break after app-name substitution. Catalog tests and 1088 caption literals, including 68 welcome texts, compile with the actual MUI welcome macro. All supported non-Section NSIS text sites now reference LangStrings; whole-interface coverage, language activation, shortcut names and installed layout/lifecycle remain unqualified. See `tests/results/localization/second-pass-installer-welcome.json`.
+
+### Repair-helper notice second pass
+
+The long pre-repair modal is translated in all 33 non-English locales. Its app action uses the localized Audio driver setup caption; external endpoint and installer labels remain exact. The actual modal expression passed inert argument capture in all 34 catalogs, and 1,190 helper lookups plus safe fault and mutation checks passed. No driver actions or VM session were used. This is formatting evidence, not installed dialog layout or native-language qualification. See `tests/results/localization/second-pass-helper-repair.json`.

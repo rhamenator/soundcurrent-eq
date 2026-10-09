@@ -2578,6 +2578,11 @@ Import into your library?</source>
       <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
+      <source>Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.</source>
+      <translation>ב־Windows קיימת רשומת מנהל התקן של VB-CABLE, אך אין נקודות קצה שמישות של הכבל. יש לבדוק תחילה ש־CABLE Input ו־CABLE Output מופעלים בהגדרות השמע של Windows. להתקנה מחדש: יש ללחוץ על Remove Driver בתוכנית ההתקנה הרשמית שתיפתח כעת, להפעיל מחדש את Windows, ואז לפתוח שוב את %1 באפליקציה וללחוץ על Install Driver. יש להפעיל מחדש פעם נוספת לפני השמעת שמע דרך SoundCurrent. הסרת הכבל המשותף הזה משפיעה על אפליקציות אחרות שמשתמשות בו.</translation>
+      <extracomment>Pre-repair modal, before official driver installer is opened. Existing driver record but endpoints unavailable; first check Windows endpoint enablement. Remove Driver and Install Driver are exact English external buttons. %1 is actual localized Audio driver setup button inside app, not English Start-menu shortcut. Preserve removal -&gt; Windows restart -&gt; app setup -&gt; reinstall -&gt; second restart, then audio playback; affects other users of shared cable. No claim removal already happened. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</source>
       <translation>ב-Windows יש רישום של מנהל התקן VB-CABLE, אך נקודת הקצה להשמעה או להקלטה אינה זמינה. אם כבר הפעלתם מחדש, פתחו את %1 לתיקון. הפעילו את CABLE Input ואת CABLE Output בהגדרות השמע של Windows אם הם מושבתים.</translation>
     </message>

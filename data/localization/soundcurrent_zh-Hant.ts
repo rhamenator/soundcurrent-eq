@@ -2578,6 +2578,11 @@ Import into your library?</source>
       <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
     </message>
     <message>
+      <source>Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.</source>
+      <translation>Windows 中存在 VB-CABLE 驅動程式記錄，但沒有可用的虛擬音訊線端點。請先檢查 Windows 音效設定中的 CABLE Input 和 CABLE Output 是否已啟用。若要重新安裝，請在接下來開啟的官方安裝程式中按 Remove Driver，重新啟動 Windows，然後在應用程式中再次開啟 %1 並按 Install Driver。透過 SoundCurrent 播放音訊之前，請再重新啟動一次。移除此共用虛擬音訊線會影響使用它的其他應用程式。</translation>
+      <extracomment>Pre-repair modal, before official driver installer is opened. Existing driver record but endpoints unavailable; first check Windows endpoint enablement. Remove Driver and Install Driver are exact English external buttons. %1 is actual localized Audio driver setup button inside app, not English Start-menu shortcut. Preserve removal -&gt; Windows restart -&gt; app setup -&gt; reinstall -&gt; second restart, then audio playback; affects other users of shared cable. No claim removal already happened. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</source>
       <translation>Windows 有 VB-CABLE 驅動程式記錄，但其播放或錄音端點無法使用。如果已重新啟動，請開啟 %1 進行修復。如果 CABLE Input 和 CABLE Output 已停用，請在 Windows 音效設定中啟用它們。</translation>
     </message>

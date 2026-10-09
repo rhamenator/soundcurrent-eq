@@ -122,7 +122,7 @@ try {
             if ($repair) {
                 Add-Type -AssemblyName System.Windows.Forms
                 [void][System.Windows.Forms.MessageBox]::Show(
-                    'Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then run Audio driver setup again and click Install Driver. Restart once more before using SoundCurrent. Removing this shared cable affects other apps that use it.',
+                    (Format-SCSetupText 'Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.' -Values @((Get-SCSetupText 'Audio driver setup' -Language $Language -Application ('soundcurrent-' + $App))) -Language $Language -Application ('soundcurrent-' + $App)),
                     (Get-SCSetupText 'Repair incomplete VB-CABLE installation' -Language $Language -Application ('soundcurrent-' + $App)))
             }
             if ($Install) { MarkReboot } # Persist before mutation, even if the UI closes.
