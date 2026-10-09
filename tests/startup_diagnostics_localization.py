@@ -25,7 +25,10 @@ for language in ('fr', 'ar', 'nn'):
         (runtime / (executable.name + '.lock')).mkdir()
         config = Path(directory) / 'config'
         config.mkdir()
+        # Qt builds with journald/syslog can route captured diagnostics away
+        # from stderr. Force only this child process to the observable sink.
         environment = dict(os.environ, QT_QPA_PLATFORM='offscreen',
+                           QT_FORCE_STDERR_LOGGING='1', LC_ALL='C.UTF-8',
                            XDG_RUNTIME_DIR=str(runtime), XDG_CONFIG_HOME=str(config))
         result = subprocess.run([str(executable), '--language', language],
                                 env=environment, capture_output=True, timeout=10)
