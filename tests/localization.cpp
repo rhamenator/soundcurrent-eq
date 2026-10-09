@@ -2,6 +2,7 @@
 #include <QTextLayout>
 #include "localization.h"
 #include "file_display_locale_proxy.h"
+#include "localized_file_dialog.h"
 #include "worker_message_buffer.h"
 #include "audio_error_text.h"
 #include "accelerating_spinbox.h"
@@ -53,6 +54,37 @@ int main(int argc,char **argv){
    QLocale::setDefault(oldLocale);
   }
 
+  {
+   const auto previous=QLocale();
+   QLocale::setDefault(QLocale::system()==QLocale("de-DE")?QLocale("en-US"):QLocale("de-DE"));
+   const auto existing=dir.filePath(QString::fromUtf8("selected %1 音声.json"));
+   QFile file(existing);require(file.open(QIODevice::WriteOnly),"Could not create chooser fixture");file.write("{}");file.close();
+   const auto future=dir.filePath(QString::fromUtf8("new %2 é.json"));
+   auto exercise=[&](int mode,const QString &selection,bool cancel) {
+    bool inspected=false,timedOut=false;
+    QTimer action;action.setSingleShot(true);
+    QObject::connect(&action,&QTimer::timeout,[&]{
+     auto *dialog=qobject_cast<QFileDialog*>(app.activeModalWidget());
+     if(!dialog)return;
+     inspected=dialog->testOption(QFileDialog::DontUseNativeDialog) && dialog->proxyModel()!=nullptr && dialog->windowTitle()==QStringLiteral("opaque chooser title");
+     if(cancel)dialog->reject();
+     else {dialog->selectFile(selection);QMetaObject::invokeMethod(dialog,"accept",Qt::DirectConnection);}
+    });
+    QTimer watchdog;watchdog.setSingleShot(true);
+    QObject::connect(&watchdog,&QTimer::timeout,[&]{timedOut=true;if(auto *dialog=qobject_cast<QFileDialog*>(app.activeModalWidget()))dialog->reject();});
+    action.start(0);watchdog.start(5000);
+    QString result;
+    if(mode==0) result=FileDialogs::getOpenFileName(nullptr,"opaque chooser title",dir.path(),"JSON (*.json)");
+    else if(mode==1) result=FileDialogs::getSaveFileName(nullptr,"opaque chooser title",dir.path(),"JSON (*.json)");
+    else result=FileDialogs::getExistingDirectory(nullptr,"opaque chooser title",dir.path());
+    require(inspected && !timedOut,"Localized application chooser timed out or missed format adapter");
+    require(cancel?result.isEmpty():QDir::cleanPath(result)==QDir::cleanPath(selection),"Localized chooser changed selected path or cancel result");
+   };
+   exercise(0,existing,false);exercise(1,future,false);exercise(2,dir.path(),false);exercise(0,existing,true);
+   require(!QFileInfo::exists(future),"Save chooser unexpectedly created a file");
+   require(file.open(QIODevice::ReadOnly) && file.readAll()==QByteArray("{}"),"Chooser changed existing file contents");
+   QLocale::setDefault(previous);
+  }
   require(languages().size()>=30,"Global language catalogs missing");
   {
    WorkerMessageBuffer buffer;

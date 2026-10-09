@@ -1,3 +1,4 @@
+#include "localized_file_dialog.h"
 #include "localization.h"
 #include "equipment_display_text.h"
 // SPDX-License-Identifier: GPL-3.0-only
@@ -639,7 +640,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     auto *exportButton = button(SC_TR("Export JSON"));
     auto *use = button(SC_TR("Apply profile"));
     QObject::connect(import, &QPushButton::clicked, &dialog, [&] {
-        const auto path = QFileDialog::getOpenFileName(&dialog, SC_TR("Import equipment profile"), {},
+        const auto path = soundcurrent::i18n::FileDialogs::getOpenFileName(&dialog, SC_TR("Import equipment profile"), {},
                                                        SC_TR("Equipment profiles (*.json)"));
         if (path.isEmpty())
             return;
@@ -657,7 +658,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         }
     });
     QObject::connect(text, &QPushButton::clicked, &dialog, [&] {
-        const auto path = QFileDialog::getOpenFileName(&dialog, SC_TR("Import relative measured response"), {},
+        const auto path = soundcurrent::i18n::FileDialogs::getOpenFileName(&dialog, SC_TR("Import relative measured response"), {},
                                                        SC_TR("Response data (*.txt *.csv *.frd *.cal)"));
         if (path.isEmpty())
             return;
@@ -754,7 +755,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         if (list->currentIndex() < 0)
             return;
         const auto path =
-            QFileDialog::getSaveFileName(&dialog, SC_TR("Export profile"), {}, SC_TR("Equipment profile (*.json)"));
+            soundcurrent::i18n::FileDialogs::getSaveFileName(&dialog, SC_TR("Export profile"), {}, SC_TR("Equipment profile (*.json)"));
         if (path.isEmpty())
             return;
         QSaveFile f(path);

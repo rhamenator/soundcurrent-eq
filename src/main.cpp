@@ -1,3 +1,4 @@
+#include "localized_file_dialog.h"
 #include "localization.h"
 #include "worker_message_buffer.h"
 #include "audio_error_text.h"
@@ -3112,7 +3113,7 @@ private:
         }
     }
     void importAmplifierProfile() {
-        const auto path = QFileDialog::getOpenFileName(this, SC_TR("Import measured amplifier correction"), {}, SC_TR("Correction profile (*.json)"));
+        const auto path = soundcurrent::i18n::FileDialogs::getOpenFileName(this, SC_TR("Import measured amplifier correction"), {}, SC_TR("Correction profile (*.json)"));
         if (path.isEmpty()) return;
         QFile file(path);
         if (!file.open(QIODevice::ReadOnly) || file.size() > 65536) { showError(SC_TR("Profile must be readable and smaller than 64 KiB.")); return; }

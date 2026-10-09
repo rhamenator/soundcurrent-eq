@@ -1,6 +1,6 @@
 {
   "scope": "Dynamic arguments to known Qt display sinks; expressions need manual provenance review. Contains-translation-call is informational and does not prove all fragments are localized.",
-  "expressionCount": 314,
+  "expressionCount": 318,
   "expressions": [
     {
       "file": "src/enhancement_controls.h",
@@ -575,6 +575,34 @@
       "argument": 0,
       "expression": "text(\"Language and regional settings\")",
       "containsTranslationCall": true
+    },
+    {
+      "file": "src/localized_file_dialog.h",
+      "call": "getOpenFileName",
+      "argument": 1,
+      "expression": "const QString &title",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/localized_file_dialog.h",
+      "call": "getOpenFileName",
+      "argument": 1,
+      "expression": "title",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/localized_file_dialog.h",
+      "call": "getSaveFileName",
+      "argument": 1,
+      "expression": "const QString &title",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/localized_file_dialog.h",
+      "call": "getSaveFileName",
+      "argument": 1,
+      "expression": "title",
+      "containsTranslationCall": false
     },
     {
       "file": "src/main.cpp",
@@ -2214,17 +2242,19 @@
     "src/enhancement_controls.h": "a5c3e8358fa8235b9625567e152dc3eb73ba54f13fba8b4fba2202a272262b52",
     "src/enhancement_ladspa.cpp": "ce4d70573e679c61c2cf62044d3d150fc28cca245d8c79f409b69ee8dd4cef2c",
     "src/equipment_display_text.h": "e3086d524e9b436075ecf9d9b8c143a0058a692685c10919b72298fd97ec44c5",
-    "src/equipment_profiles.cpp": "6853faa29c08f99df84bd12c9ca938657216c57ca39b5d9a5b15e747eb6c78ed",
+    "src/equipment_profiles.cpp": "b41db4ef53c46a0c9e7b6745d0ea106fd0185ba9eb30e90f66d7afda8877779d",
     "src/equipment_profiles.h": "34fb124fe9a9177735c3e96b54f947fbdd2881ff175153c29334842c140b9545",
+    "src/file_display_locale_proxy.h": "73bf365758b447200f7170819f8cf998e40b1ba584122cad51ec5de855593435",
     "src/localization.h": "a9222646f7a3003622f11b68c6cb2a6f687454bcd922f1afd9924bd9ed4a2b35",
     "src/localization_text.h": "9cbb9b2c5e49287651cba6bcd273c01e148f8fd5dce4b7e39fdd86594e344cd0",
-    "src/main.cpp": "1f8c56b4e82e1b3bfd2d9406694ca9c06f3e007362fc59a60c80728157986ee9",
+    "src/localized_file_dialog.h": "db8e7403e18efca39f41bcb02238c94297e09cc9b9a1f9870f12276bdc58a7ff",
+    "src/main.cpp": "2d0fed8458fc09d15674f069a53aae542c092bbee2bbc6fa274cdde827fc2383",
     "src/main_windows.cpp": "df16bae0597ddb53f7a31bf2d99bd50f5768f6174265309d254da9b10bebd6c0",
     "src/processing_guard.cpp": "7357547a751b724be0c1743d94f8318a9f86b5f6b2180911799dc660bd5e74b2",
     "src/processing_guard.h": "3210a47f6da6b8d019710e052785a90b1b4635182497ca8c64549fb3b31a1913",
     "src/startup_controls.h": "94cccaea96412bd21f1949463cee81e06980c6e5f207b55f2b8f7dd058acb5af",
     "src/startup_registration.h": "f9ee3d7f131e0f958b2f95ff1711e9956d4e17b42fbc1de224c87f3fe63c3e36",
-    "src/update_panel.h": "06c037cb6a3c88103459ca40bc9ae25e29757f2a2b66bb0ad8e069977930a074",
+    "src/update_panel.h": "7637f0a9cd4c6b28a2eb3b185f09f21b36c7f98143e3023338fe2de039f7a68d",
     "src/vendor/ladspa.h": "c72ceb7383f159a944bfe80b1b155795857026aea1155dbe4ecf1664354320ad",
     "src/windows_audio.cpp": "6499a93ccc8429a6a257fc9c1cd52cdfae11f2045c40b6c5a037c4c614b1d0bd",
     "src/windows_audio.h": "d34971b56a34a96cb05f4e15e7e954a11918e73f01f4c97f6cfb2bc305eb71a4",
@@ -2238,8 +2268,7 @@
     "src/windows_managed_route.h": "14518879f006783b89c69024abbb83751ac1f38b3dd5a4e7fe7dff9760f016f1",
     "src/windows_platform.inc": "211d815bd910f4a06362979b762e919952260ab03cc2e809b482c9dda9f38d51",
     "src/windows_route_guardian.cpp": "4f683ce99ad6bafe227e293d94a82487157da269642e2e2298fa148bc3dfbf2d",
-    "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42",
-    "src/file_display_locale_proxy.h": "73bf365758b447200f7170819f8cf998e40b1ba584122cad51ec5de855593435"
+    "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42"
   },
-  "reviewStatus": "Whole-interface review incomplete. Generic Qt file types now mapped; external MIME/type descriptors, selected-locale size/date formatting, composed header actions and errors remain pending."
+  "reviewStatus": "Whole-interface provenance review incomplete; selected-format chooser wrapper wired. Composed headers, MIME descriptors, errors and native/current package validation pending."
 }

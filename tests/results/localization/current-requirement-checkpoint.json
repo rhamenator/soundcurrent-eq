@@ -76,12 +76,12 @@
   "evidenceSha256": {
     "data/localization/catalogs.json": "0d51aa81af88e86e207ee6bafcf0190efe60e8b7c3ed5a2ba6dbe668acfc1087",
     "docs/translation-review.md": "5c84c7b1aa1d8c309dce34d84418188427f4ca10c0cdf471fb428a9b7c29e55b",
-    "tests/localization.cpp": "d781a1cb5d413e86ea842d8c4de5fe5297a960f77c77a7744903cae40f91b48c",
+    "tests/localization.cpp": "1a85dc5352c817900ab2b17b61f0fd1343617b4fbb25da3b47a527f4ddcc51f0",
     "tests/translation_catalogs.py": "443fb29d0b4cb1e848ec443cbf7a8245d54087e682036d5bcdb2c9c618ea524f",
     "scripts/ui_string_audit.py": "a7cd0132f32a3f103eadffe8798aee877b4c397545f3e53ec1ea4134b133629f",
-    "tests/results/localization/dynamic-display-inventory.json": "dff6f185f26c0c6e2910e398efa0cf6f0bc3750c5b7b0609cbd5648d014f15fa",
+    "tests/results/localization/dynamic-display-inventory.json": "03d381eda406be83b3b39461dcf6e0691769e17127df86de8526c14261068000",
     "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
-    "src/main.cpp": "1f8c56b4e82e1b3bfd2d9406694ca9c06f3e007362fc59a60c80728157986ee9",
+    "src/main.cpp": "2d0fed8458fc09d15674f069a53aae542c092bbee2bbc6fa274cdde827fc2383",
     "src/localization.h": "a9222646f7a3003622f11b68c6cb2a6f687454bcd922f1afd9924bd9ed4a2b35",
     "src/localization_text.h": "9cbb9b2c5e49287651cba6bcd273c01e148f8fd5dce4b7e39fdd86594e344cd0",
     "scripts/localization.py": "a5ac5ebed546faab47f0b4b4dae66f2a1ce1ece2936d2968483191ef5e02d19d",
@@ -89,9 +89,9 @@
     "tests/results/localization/calibration-worker-gap.json": "1d4ef1003d317f52bf79b740686ef055d580d9f7bfcfad9e2b171c57492efba8",
     "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42",
     "tests/results/localization/calibration-worker-native-ci.json": "377d797dfc8478b69a02fb63760577d5a2571393c939e35aa1eecbb270467e35",
-    "src/equipment_profiles.cpp": "6853faa29c08f99df84bd12c9ca938657216c57ca39b5d9a5b15e747eb6c78ed",
+    "src/equipment_profiles.cpp": "b41db4ef53c46a0c9e7b6745d0ea106fd0185ba9eb30e90f66d7afda8877779d",
     "tests/results/localization/profile-authored-defaults.json": "2d3aa7687f468de8c9b652c2dafd2afae1f929b3d401ac3390a6f691f08156af",
-    "tests/results/localization/qt-file-dialog-gap.json": "5dcecd1bc1d9eea2f65a99699b015da6100981b97c41fec80790fc94960134cf"
+    "tests/results/localization/qt-file-dialog-gap.json": "6a553fc028198cd03d09876b5a43d3f3b7a5c16add5f179a1475da99c3ff2a15"
   },
   "auditedBaseHead": "a39082b688e3a0ad21e40c39a966ee11c44e5439",
   "sourceIdentity": "Current inspected source files are identified by SHA-256 below; base commit is historical context, not qualification of pending calibration changes",
@@ -195,9 +195,10 @@
       "fileOperationsPerformed": false
     },
     "sizeDateFormattingGap": {
-      "status": "unresolved, identified in upstream source; runtime reproduction pending",
+      "status": "shared adapter integrated; compiled local formatting and modal acceptance/cancel passed; native/current package qualification pending",
       "source": "https://github.com/qt/qtbase/blob/6.4/src/gui/itemmodels/qfilesystemmodel.cpp",
-      "behavior": "size(qint64) and time(QModelIndex) use QLocale::system() rather than selected app default locale"
+      "behavior": "size(qint64) and time(QModelIndex) use QLocale::system() rather than selected app default locale",
+      "evidence": "tests/results/localization/file-display-locale-adapter.json"
     },
     "genericTypeLinuxEvidence": {
       "log": "tests/results/localization/qt-file-dialog-type-linux.log",

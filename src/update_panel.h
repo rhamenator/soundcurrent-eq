@@ -1,3 +1,4 @@
+#include "localized_file_dialog.h"
 #include "localization.h"
 // SPDX-License-Identifier: GPL-3.0-only
 #pragma once
@@ -75,7 +76,7 @@ public:
         connect(check,&QPushButton::clicked,this,[this]{checkUpdates(true);});
         connect(download,&QPushButton::clicked,this,[this]{QDesktopServices::openUrl(QUrl("https://github.com/rhamenator/"+repo_+"/releases"));});
         connect(folder,&QPushButton::clicked,this,[this]{QDesktopServices::openUrl(QUrl::fromLocalFile(folder_));});
-        connect(choose,&QPushButton::clicked,this,[this]{auto path=QFileDialog::getExistingDirectory(this,SC_TR("Update download folder"),folder_);if(path.isEmpty())return;folder_=path;QSettings().setValue("updates/folder",path);checkLocal();});
+        connect(choose,&QPushButton::clicked,this,[this]{auto path=soundcurrent::i18n::FileDialogs::getExistingDirectory(this,SC_TR("Update download folder"),folder_);if(path.isEmpty())return;folder_=path;QSettings().setValue("updates/folder",path);checkLocal();});
         connect(enabled_,&QCheckBox::toggled,this,[](bool on){QSettings().setValue("updates/reminders",on);});
         connect(preview_,&QCheckBox::toggled,this,[](bool on){QSettings().setValue("updates/previews",on);});
         const QFileInfo binary(QCoreApplication::applicationFilePath());size_=binary.size();modified_=binary.lastModified();

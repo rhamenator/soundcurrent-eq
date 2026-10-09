@@ -72,9 +72,10 @@
     "fileOperationsPerformed": false
   },
   "sizeDateFormattingGap": {
-    "status": "unresolved, identified in upstream source; runtime reproduction pending",
+    "status": "shared adapter integrated; compiled local formatting and modal acceptance/cancel passed; native/current package qualification pending",
     "source": "https://github.com/qt/qtbase/blob/6.4/src/gui/itemmodels/qfilesystemmodel.cpp",
-    "behavior": "size(qint64) and time(QModelIndex) use QLocale::system() rather than selected app default locale"
+    "behavior": "size(qint64) and time(QModelIndex) use QLocale::system() rather than selected app default locale",
+    "evidence": "tests/results/localization/file-display-locale-adapter.json"
   },
   "genericTypeLinuxEvidence": {
     "log": "tests/results/localization/qt-file-dialog-type-linux.log",
