@@ -2400,6 +2400,11 @@ Do you want to delete it anyway?</source>
       <translation>顯示進階控制</translation>
     </message>
     <message>
+      <source>Show date modified</source>
+      <translation>顯示修改日期</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
       <source>Show hidden files</source>
       <translation>顯示隱藏檔案(H)</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -2407,6 +2412,16 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>在頻率位準上顯示峰值標記</translation>
+    </message>
+    <message>
+      <source>Show size</source>
+      <translation>顯示大小</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show type</source>
+      <translation>顯示類型</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
     </message>
     <message>
       <source>Sidebar</source>

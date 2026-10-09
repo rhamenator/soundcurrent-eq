@@ -2400,6 +2400,11 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Hiển thị điều khiển nâng cao</translation>
     </message>
     <message>
+      <source>Show date modified</source>
+      <translation>Hiện ngày sửa đổi</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
       <source>Show hidden files</source>
       <translation>Hiện tệp ẩn</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -2407,6 +2412,16 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Hiển thị dấu đỉnh trên các mức tần số</translation>
+    </message>
+    <message>
+      <source>Show size</source>
+      <translation>Hiện kích thước</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show type</source>
+      <translation>Hiện loại</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
     </message>
     <message>
       <source>Sidebar</source>

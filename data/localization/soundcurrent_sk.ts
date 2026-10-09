@@ -2400,6 +2400,11 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Zobraziť pokročilé ovládanie</translation>
     </message>
     <message>
+      <source>Show date modified</source>
+      <translation>Zobraziť dátum zmeny</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
       <source>Show hidden files</source>
       <translation>Zobraziť skryté súbory</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -2407,6 +2412,16 @@ Chcete ho aj tak zmazať?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Zobraziť značky špičiek frekvenčných úrovní</translation>
+    </message>
+    <message>
+      <source>Show size</source>
+      <translation>Zobraziť veľkosť</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show type</source>
+      <translation>Zobraziť typ</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
     </message>
     <message>
       <source>Sidebar</source>

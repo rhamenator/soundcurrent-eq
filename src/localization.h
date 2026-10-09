@@ -2,6 +2,10 @@
 #pragma once
 #include "localization_text.h"
 #include <QApplication>
+#include <QFileDialog>
+#include <QTreeView>
+#include <QHeaderView>
+#include <QTimer>
 #include <QComboBox>
 #include <QCoreApplication>
 #include <QFile>
@@ -236,6 +240,33 @@ public:
         return {};
     }
 };
+class FileDialogCaptionFilter final : public QObject {
+public:
+    static void apply(QFileDialog *dialog) {
+        auto *tree=dialog->findChild<QTreeView*>("treeView");
+        if(!tree || !tree->model() || tree->model()->columnCount()!=4) return;
+        auto *model=tree->model();
+        for(int i=0;i<4;++i) {
+            const char *columns[]={"Name","Size","Type","Date modified"};
+            if(model->headerData(i,Qt::Horizontal).toString()!=text(columns[i])) return;
+        }
+        const auto actions=tree->header()->actions();
+        if(actions.size()!=3) return;
+        actions[0]->setText(text("Show size"));
+        actions[1]->setText(text("Show type"));
+        actions[2]->setText(text("Show date modified"));
+    }
+protected:
+    bool eventFilter(QObject *watched,QEvent *event) override {
+        if(event->type()==QEvent::Show || event->type()==QEvent::LanguageChange) {
+            if(auto *dialog=qobject_cast<QFileDialog*>(watched)) {
+                if(event->type()==QEvent::Show) apply(dialog);
+                else QTimer::singleShot(0,dialog,[dialog]{apply(dialog);});
+            }
+        }
+        return QObject::eventFilter(watched,event);
+    }
+};
 class Runtime {
 public:
     void initialize(bool englishTest=false, const QString &languageOverride={}, const QString &formatOverride={}) {
@@ -251,13 +282,14 @@ public:
         }
         QCoreApplication::installTranslator(&standardActions_);
         if(translator_)QCoreApplication::installTranslator(translator_.get());
+        if(qobject_cast<QApplication*>(QCoreApplication::instance())) QCoreApplication::instance()->installEventFilter(&fileDialogCaptions_);
         const auto direction=loaded_=="qps-rtl"?Qt::RightToLeft:QLocale(loaded_).textDirection();
         if(qobject_cast<QApplication*>(QCoreApplication::instance())) QApplication::setLayoutDirection(direction);
         QCoreApplication::instance()->setProperty("soundcurrentInterfaceLanguage", loaded_);
     }
-    ~Runtime(){if(translator_)QCoreApplication::removeTranslator(translator_.get());QCoreApplication::removeTranslator(&standardActions_);}
+    ~Runtime(){QCoreApplication::instance()->removeEventFilter(&fileDialogCaptions_);if(translator_)QCoreApplication::removeTranslator(translator_.get());QCoreApplication::removeTranslator(&standardActions_);}
     QString requested() const{return requested_;} QString loaded() const{return loaded_;}
-private: QString requested_,loaded_;StandardActionTranslator standardActions_;std::unique_ptr<QTranslator> translator_;
+private: FileDialogCaptionFilter fileDialogCaptions_;QString requested_,loaded_;StandardActionTranslator standardActions_;std::unique_ptr<QTranslator> translator_;
 };
 inline QGroupBox *settingsPanel() {
     auto *box=new QGroupBox(text("Language and regional settings"));

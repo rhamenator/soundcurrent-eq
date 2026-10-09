@@ -51,15 +51,15 @@
         },
         {
           "source": "Alt+Left",
-          "status": "unmapped or needs semantic classification"
+          "status": "key sequence binding literal; preserved rather than translated as caption"
         },
         {
           "source": "Alt+Right",
-          "status": "unmapped or needs semantic classification"
+          "status": "key sequence binding literal; preserved rather than translated as caption"
         },
         {
           "source": "Alt+Up",
-          "status": "unmapped or needs semantic classification"
+          "status": "key sequence binding literal; preserved rather than translated as caption"
         },
         {
           "source": "Are you sure you want to delete '%1'?",
@@ -171,7 +171,7 @@
         },
         {
           "source": "Show ",
-          "status": "unmapped or needs semantic classification"
+          "status": "fragment replaced by whole header-action captions on shown standard dialogs; custom models preserved; see qt-file-dialog-header-captions.json"
         },
         {
           "source": "Show &hidden files",
@@ -237,15 +237,15 @@
         },
         {
           "source": "Alt+Left",
-          "status": "unmapped or needs semantic classification"
+          "status": "key sequence binding literal; preserved rather than translated as caption"
         },
         {
           "source": "Alt+Right",
-          "status": "unmapped or needs semantic classification"
+          "status": "key sequence binding literal; preserved rather than translated as caption"
         },
         {
           "source": "Alt+Up",
-          "status": "unmapped or needs semantic classification"
+          "status": "key sequence binding literal; preserved rather than translated as caption"
         },
         {
           "source": "Are you sure you want to delete '%1'?",
@@ -353,7 +353,7 @@
         },
         {
           "source": "Show ",
-          "status": "unmapped or needs semantic classification"
+          "status": "fragment replaced by whole header-action captions on shown standard dialogs; custom models preserved; see qt-file-dialog-header-captions.json"
         },
         {
           "source": "Show &hidden files",

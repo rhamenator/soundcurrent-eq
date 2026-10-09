@@ -1,6 +1,6 @@
 {
   "date": "2026-10-09",
-  "status": "deletion captions and actual declined confirmation fixtures passed compiled Linux tests; broader workflows/native/packages incomplete",
+  "status": "whole header captions passed compiled Linux shown-dialog/toggle/custom-model and core-worker tests; current native/packages pending",
   "probeSourceSha256": "b3be9f969d44f0352b65c07ce5b0e22ff63d66e26b95b68c3a1c7874ebdfd08f",
   "probeScope": "Standalone Qt6Widgets QFileDialog using the actual EQ compiled French catalog and shared StandardActionTranslator. Offscreen, DontUseNativeDialog. No file selection, settings writes, audio or VM. Shared implementation matches Studio; Studio full app dialog not separately exercised.",
   "untranslatedObserved": [
@@ -36,7 +36,6 @@
     "Save"
   ],
   "remainingScope": [
-    "Header-visibility menu composition",
     "External MIME/file-association descriptors",
     "Context-menu permission gating and protected-path/delete-failure workflows",
     "Current native Windows/package qualification",
@@ -48,9 +47,9 @@
     "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.ui"
   ],
   "sourceSha256": {
-    "src/localization.h": "966605fca47c7640c038347712c439f0ca1e33ca0db086daa54f8aa533c4a318",
-    "tests/localization.cpp": "b419e486abe1b086252bb7e3afe9f0cf1fccf522a20cb1a52407c5907de06f92",
-    "data/localization/catalogs.json": "a6d7b3f2a75b9decdbc7a660e1a1012d81ae25f248452a7e1a50a750b552dc33"
+    "src/localization.h": "1d82243a04150a1252c4564270f00879474427d32f13f178112c9bd2c467789a",
+    "tests/localization.cpp": "0842e2301acf9e36df808fdb799664e33d2a231986af9083f28d4a92aa4c18f6",
+    "data/localization/catalogs.json": "dfa87d833eb2a7a4974ba01e12258ba4976b2533334741a67b72cbed2e649897"
   },
   "accessibilityTestScope": "Actual QAccessible Name/Description queries for six navigation buttons, sidebar and list/tree file views, all 33 non-English catalogs. Does not test screen-reader speech.",
   "accessibilityLinuxEvidence": {
@@ -116,5 +115,6 @@
     ],
     "observedPrompt": "confirmation",
     "scope": "Fixture enables selected temporary-file action directly, real No-button click preserves contents; permission gating, protected-path and delete-failure workflows not exercised"
-  }
+  },
+  "headerCaptionEvidence": "tests/results/localization/qt-file-dialog-header-captions.json"
 }

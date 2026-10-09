@@ -2400,6 +2400,11 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Afișați controalele avansate</translation>
     </message>
     <message>
+      <source>Show date modified</source>
+      <translation>Arată data modificării</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
       <source>Show hidden files</source>
       <translation>Arată fișierele ascunse</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -2407,6 +2412,16 @@ Doriți să îl ștergeți totuși?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Afișați marcajele de vârf pe nivelurile de frecvență</translation>
+    </message>
+    <message>
+      <source>Show size</source>
+      <translation>Arată dimensiunea</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show type</source>
+      <translation>Arată tipul</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
     </message>
     <message>
       <source>Sidebar</source>

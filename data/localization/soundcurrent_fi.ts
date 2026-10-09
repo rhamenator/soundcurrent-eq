@@ -2400,6 +2400,11 @@ Haluatko silti poistaa sen?</translation>
       <translation>Näytä lisäsäätimet</translation>
     </message>
     <message>
+      <source>Show date modified</source>
+      <translation>Näytä muokkauspäivä</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
       <source>Show hidden files</source>
       <translation>Näytä piilotiedostot</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -2407,6 +2412,16 @@ Haluatko silti poistaa sen?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Näytä huippumerkit taajuustasoilla</translation>
+    </message>
+    <message>
+      <source>Show size</source>
+      <translation>Näytä koko</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show type</source>
+      <translation>Näytä tyyppi</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
     </message>
     <message>
       <source>Sidebar</source>

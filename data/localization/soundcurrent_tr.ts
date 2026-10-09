@@ -2400,6 +2400,11 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Gelişmiş kontrolleri göster</translation>
     </message>
     <message>
+      <source>Show date modified</source>
+      <translation>Değiştirilme tarihini göster</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
       <source>Show hidden files</source>
       <translation>Gizli dosyaları göster</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -2407,6 +2412,16 @@ Yine de silmek istiyor musunuz?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Frekans seviyelerinde tepe işaretlerini göster</translation>
+    </message>
+    <message>
+      <source>Show size</source>
+      <translation>Boyutu göster</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show type</source>
+      <translation>Türü göster</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
     </message>
     <message>
       <source>Sidebar</source>

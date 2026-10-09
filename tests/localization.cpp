@@ -449,7 +449,23 @@ int main(int argc,char **argv){
     chooser.setDirectory(dir.path());
     const auto filter=text("Equipment profile (*.json)");
     chooser.setNameFilter(filter);
-    chooser.selectFile(QString::fromUtf8("音声 %1 é.json"));
+    const auto opaquePath=dir.filePath(QString::fromUtf8("音声 %1 é.json"));
+    QFile opaqueFile(opaquePath);require(opaqueFile.open(QIODevice::WriteOnly),"Could not create visible chooser selection fixture");opaqueFile.write("{}");opaqueFile.close();
+    chooser.selectFile(opaquePath);
+    chooser.show();app.processEvents();
+    auto *headerTree=chooser.findChild<QTreeView*>("treeView");
+    require(headerTree && headerTree->header()->actions().size()==3,"Qt file-column visibility actions missing");
+    const char *headerCaptions[]={"Show size","Show type","Show date modified"};
+    int headerColumn=1;
+    for(auto *action:headerTree->header()->actions()) {
+     require(action->text()==text(headerCaptions[headerColumn-1]),"Qt file-column menu joined fragments instead of translated whole caption");
+     const auto oldHidden=headerTree->isColumnHidden(headerColumn);
+     action->trigger();
+     require(headerTree->isColumnHidden(headerColumn)!=oldHidden,"Translated file-column action stopped toggling visibility");
+     action->trigger();require(headerTree->isColumnHidden(headerColumn)==oldHidden,"File-column action did not restore visibility");
+     ++headerColumn;
+    }
+
     for (const auto &[object, caption]:std::initializer_list<std::pair<const char*,const char*>>{
       {"lookInLabel","Look in:"},{"fileNameLabel","File name:"},{"fileTypeLabel","Files of type:"}}) {
      const auto *label=chooser.findChild<QLabel*>(object);
@@ -502,10 +518,12 @@ int main(int argc,char **argv){
     require(QCoreApplication::translate("ExternalPlugin","Folder")==QStringLiteral("Folder"),"Qt generic type mapping intercepted plugin data");
     const auto *buttons=chooser.findChild<QDialogButtonBox*>("buttonBox");
     require(buttons && buttons->button(QDialogButtonBox::Open)->text()==text("Open"),"Qt chooser Open stayed outside app catalog");
+    if(chooser.selectedFiles()!=QStringList{opaquePath})qCritical()<<"Visible chooser selected paths:"<<chooser.selectedFiles()<<"expected:"<<opaquePath;
+    require(chooser.selectedFiles().size()==1 && chooser.selectedFiles().front().endsWith(QString::fromUtf8("音声 %1 é.json")),"Qt chooser translation changed an opaque filename");
     chooser.setAcceptMode(QFileDialog::AcceptSave);
     require(buttons->button(QDialogButtonBox::Save)->text()==text("Save"),"Qt chooser Save stayed outside app catalog");
     require(chooser.nameFilters()==QStringList{filter},"Qt chooser translation changed a file filter");
-    require(chooser.selectedFiles().size()==1 && chooser.selectedFiles().front().endsWith(QString::fromUtf8("音声 %1 é.json")),"Qt chooser translation changed an opaque filename");
+
     require(QCoreApplication::translate("ExternalPlugin","File &name:")==QStringLiteral("File &name:"),"Qt chooser mapping intercepted plugin captions");
     chooser.setAcceptMode(QFileDialog::AcceptOpen);
     chooser.setFileMode(QFileDialog::Directory);
@@ -515,6 +533,19 @@ int main(int argc,char **argv){
     for(const auto &[qt,caption]:std::initializer_list<std::pair<const char*,const char*>>{
       {"Directories","Directories"},{"Find Directory","Find directory"},{"Recent Places","Recent places"},{"Save As","Save as"},{"Open","Open"}})
      require(QCoreApplication::translate("QFileDialog",qt)==text(caption),"Qt default caption stayed outside app catalog");
+    if(language.tag=="fr") {
+     class OpaqueHeaderProxy final : public QIdentityProxyModel {
+     public: using QIdentityProxyModel::QIdentityProxyModel;
+      QVariant headerData(int section,Qt::Orientation orientation,int role=Qt::DisplayRole) const override {
+       if(orientation==Qt::Horizontal && role==Qt::DisplayRole)return QStringLiteral("Opaque custom header");
+       return QIdentityProxyModel::headerData(section,orientation,role);
+      }
+     };
+     chooser.setProxyModel(new OpaqueHeaderProxy(&chooser));
+     for(auto *action:headerTree->header()->actions())action->setText(QStringLiteral("Opaque custom action"));
+     FileDialogCaptionFilter::apply(&chooser);
+     for(auto *action:headerTree->header()->actions())require(action->text()==QStringLiteral("Opaque custom action"),"File caption filter rewrote a custom model action");
+    }
    }
    const char *chooserErrors[]={
     "%1\nDirectory not found.\nPlease verify the correct directory name was given.",

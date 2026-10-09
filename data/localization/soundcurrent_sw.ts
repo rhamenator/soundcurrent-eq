@@ -2400,6 +2400,11 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Onyesha vidhibiti vya juu</translation>
     </message>
     <message>
+      <source>Show date modified</source>
+      <translation>Onyesha tarehe ya kubadilishwa</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
       <source>Show hidden files</source>
       <translation>Onyesha faili zilizofichwa</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -2407,6 +2412,16 @@ Unataka kuifuta hata hivyo?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Onyesha alama za kilele kwenye viwango vya masafa</translation>
+    </message>
+    <message>
+      <source>Show size</source>
+      <translation>Onyesha ukubwa</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show type</source>
+      <translation>Onyesha aina</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
     </message>
     <message>
       <source>Sidebar</source>

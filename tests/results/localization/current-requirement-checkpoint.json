@@ -5,7 +5,7 @@
   "catalogs": {
     "count": 34,
     "nonEnglish": 33,
-    "messagesPerCatalog": 691,
+    "messagesPerCatalog": 694,
     "check": "scripts/localization.py --check --require-complete passed locally",
     "nativeReviewed": false
   },
@@ -74,15 +74,15 @@
     "Silent same-package updates do not prove older-version migration or interactive chooser behavior"
   ],
   "evidenceSha256": {
-    "data/localization/catalogs.json": "a6d7b3f2a75b9decdbc7a660e1a1012d81ae25f248452a7e1a50a750b552dc33",
-    "docs/translation-review.md": "0aee1b281763f2859c304110e888030942e245d4b9b2ad944e0178ae7ddd73f2",
-    "tests/localization.cpp": "b419e486abe1b086252bb7e3afe9f0cf1fccf522a20cb1a52407c5907de06f92",
+    "data/localization/catalogs.json": "dfa87d833eb2a7a4974ba01e12258ba4976b2533334741a67b72cbed2e649897",
+    "docs/translation-review.md": "6408d39734cfb068f023796ac8a924f4d8103f995ff476e76b30d172da5e69af",
+    "tests/localization.cpp": "0842e2301acf9e36df808fdb799664e33d2a231986af9083f28d4a92aa4c18f6",
     "tests/translation_catalogs.py": "a31c1dea85d778cbea2834f46d610dbf620e7edb12e41a5ce46b3be625151885",
     "scripts/ui_string_audit.py": "a7cd0132f32a3f103eadffe8798aee877b4c397545f3e53ec1ea4134b133629f",
-    "tests/results/localization/dynamic-display-inventory.json": "36c4da99673a6c7979650c190cbdd3f642eadd9ab32b71ca8cbc2553d40b1f91",
+    "tests/results/localization/dynamic-display-inventory.json": "7a1c81fb71b290032839b312f15f2b0986883bd03c731fbd74588465fb52f138",
     "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
     "src/main.cpp": "2d0fed8458fc09d15674f069a53aae542c092bbee2bbc6fa274cdde827fc2383",
-    "src/localization.h": "966605fca47c7640c038347712c439f0ca1e33ca0db086daa54f8aa533c4a318",
+    "src/localization.h": "1d82243a04150a1252c4564270f00879474427d32f13f178112c9bd2c467789a",
     "src/localization_text.h": "9cbb9b2c5e49287651cba6bcd273c01e148f8fd5dce4b7e39fdd86594e344cd0",
     "scripts/localization.py": "4bdd696dcc8eab8075aec9c7d5cd7ceeaef52d3482d28dc50245eac280eab67c",
     "tests/calibration_worker_localization.py": "c6120b78b59ae6d547cd7d0a503d4f39a46f0fa3c03c9c4007b46f8e53db34f8",
@@ -91,7 +91,7 @@
     "tests/results/localization/calibration-worker-native-ci.json": "377d797dfc8478b69a02fb63760577d5a2571393c939e35aa1eecbb270467e35",
     "src/equipment_profiles.cpp": "b41db4ef53c46a0c9e7b6745d0ea106fd0185ba9eb30e90f66d7afda8877779d",
     "tests/results/localization/profile-authored-defaults.json": "2d3aa7687f468de8c9b652c2dafd2afae1f929b3d401ac3390a6f691f08156af",
-    "tests/results/localization/qt-file-dialog-gap.json": "fbd98b87887051d111da8d72abb56716cf2a87ace0d927ce8ec98e75aa8f0d6d",
+    "tests/results/localization/qt-file-dialog-gap.json": "4951c4a5ef4ffacf8404ea1503b1b3acfcdef08d80b634bfa0591b2fe11ac9ef",
     "tests/results/localization/linux-688-installed/verified-artifact.json": "435d31a2706acd047f256c13c58b1a084e1160b67d3e7f981ff243a1c5aec32f",
     "tests/results/localization/windows-688-installed/verified-artifact.json": "78a34e382fe1699e047e6d67922c4ab8e061798f76ed0c3f6e4e45c5b3e7cd01"
   },
@@ -125,7 +125,7 @@
   },
   "currentQtFileDialogGap": {
     "date": "2026-10-09",
-    "status": "deletion captions and actual declined confirmation fixtures passed compiled Linux tests; broader workflows/native/packages incomplete",
+    "status": "whole header captions passed compiled Linux shown-dialog/toggle/custom-model and core-worker tests; current native/packages pending",
     "probeSourceSha256": "b3be9f969d44f0352b65c07ce5b0e22ff63d66e26b95b68c3a1c7874ebdfd08f",
     "probeScope": "Standalone Qt6Widgets QFileDialog using the actual EQ compiled French catalog and shared StandardActionTranslator. Offscreen, DontUseNativeDialog. No file selection, settings writes, audio or VM. Shared implementation matches Studio; Studio full app dialog not separately exercised.",
     "untranslatedObserved": [
@@ -161,7 +161,6 @@
       "Save"
     ],
     "remainingScope": [
-      "Header-visibility menu composition",
       "External MIME/file-association descriptors",
       "Context-menu permission gating and protected-path/delete-failure workflows",
       "Current native Windows/package qualification",
@@ -173,9 +172,9 @@
       "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.ui"
     ],
     "sourceSha256": {
-      "src/localization.h": "966605fca47c7640c038347712c439f0ca1e33ca0db086daa54f8aa533c4a318",
-      "tests/localization.cpp": "b419e486abe1b086252bb7e3afe9f0cf1fccf522a20cb1a52407c5907de06f92",
-      "data/localization/catalogs.json": "a6d7b3f2a75b9decdbc7a660e1a1012d81ae25f248452a7e1a50a750b552dc33"
+      "src/localization.h": "1d82243a04150a1252c4564270f00879474427d32f13f178112c9bd2c467789a",
+      "tests/localization.cpp": "0842e2301acf9e36df808fdb799664e33d2a231986af9083f28d4a92aa4c18f6",
+      "data/localization/catalogs.json": "dfa87d833eb2a7a4974ba01e12258ba4976b2533334741a67b72cbed2e649897"
     },
     "accessibilityTestScope": "Actual QAccessible Name/Description queries for six navigation buttons, sidebar and list/tree file views, all 33 non-English catalogs. Does not test screen-reader speech.",
     "accessibilityLinuxEvidence": {
@@ -241,7 +240,8 @@
       ],
       "observedPrompt": "confirmation",
       "scope": "Fixture enables selected temporary-file action directly, real No-button click preserves contents; permission gating, protected-path and delete-failure workflows not exercised"
-    }
+    },
+    "headerCaptionEvidence": "tests/results/localization/qt-file-dialog-header-captions.json"
   },
   "qt612CompatibilityEvidence": "tests/results/localization/qt-file-dialog-qt612-compatibility.json",
   "fileDisplayLocaleAdapter": "tests/results/localization/file-display-locale-adapter.json",
