@@ -1,0 +1,8 @@
+{
+  "failureEvidence": "EQ Fedora run 37873804267, job 113637610855: package built, %check passed, installed UI test passed, first locale log empty and completion grep failed",
+  "change": "Emit locale fixture completion to explicit flushed stdout instead of filterable Qt info logging",
+  "localRegression": "Rebuilt executable --localization-ui-test --language de with QT_LOGGING_RULES=*.info=false returned 0 and printed Localization UI: de -> de",
+  "scope": "Test reporting only; no processing, state, IDs or translations changed",
+  "rpmInstalledQualification": "pending rerun",
+  "nativeReviewed": false
+}

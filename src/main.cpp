@@ -4311,7 +4311,9 @@ int main(int argc, char **argv) {
                     }
                 }
             }
-            qInfo("Localization UI: %s -> %s",qPrintable(localization.requested()),qPrintable(localization.loaded()));
+            // Test completion is a protocol result, independent of Qt logging filters.
+            QTextStream(stdout) << "Localization UI: " << localization.requested()
+                                << " -> " << localization.loaded() << Qt::endl;
             app.quit();
         });
         return app.exec();
