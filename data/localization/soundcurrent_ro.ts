@@ -132,6 +132,13 @@ Doriți să îl înlocuiți?</translation>
       <translation>%1%2 dB</translation>
     </message>
     <message>
+      <source>'%1' is write protected.
+Do you want to delete it anyway?</source>
+      <translation>'%1' este protejat la scriere.
+Doriți să îl ștergeți totuși?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Abort</source>
       <translation>Abandonați</translation>
     </message>
@@ -285,6 +292,11 @@ Doriți să îl înlocuiți?</translation>
     <message>
       <source>Apply suggested EQ</source>
       <translation>Aplicați EQ-ul sugerat</translation>
+    </message>
+    <message>
+      <source>Are you sure you want to delete '%1'?</source>
+      <translation>Sigur doriți să ștergeți '%1'?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Audio bridge did not start</source>
@@ -669,6 +681,11 @@ Doriți să îl înlocuiți?</translation>
     <message>
       <source>Could not create test tone</source>
       <translation>Nu s-a putut crea tonul de test</translation>
+    </message>
+    <message>
+      <source>Could not delete directory.</source>
+      <translation>Directorul nu a putut fi șters.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Could not finish saving preset.</source>

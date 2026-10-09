@@ -132,6 +132,13 @@ Do you want to replace it?</source>
       <translation>%1%2 dB</translation>
     </message>
     <message>
+      <source>'%1' is write protected.
+Do you want to delete it anyway?</source>
+      <translation>'%1' लिखने से सुरक्षित है।
+क्या आप फिर भी इसे मिटाना चाहते हैं?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Abort</source>
       <translation>बंद करें</translation>
     </message>
@@ -285,6 +292,11 @@ Do you want to replace it?</source>
     <message>
       <source>Apply suggested EQ</source>
       <translation>सुझाया गया EQ लागू करें</translation>
+    </message>
+    <message>
+      <source>Are you sure you want to delete '%1'?</source>
+      <translation>क्या आप वाकई '%1' को मिटाना चाहते हैं?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Audio bridge did not start</source>
@@ -669,6 +681,11 @@ Do you want to replace it?</source>
     <message>
       <source>Could not create test tone</source>
       <translation>परीक्षण टोन नहीं बनाया जा सका</translation>
+    </message>
+    <message>
+      <source>Could not delete directory.</source>
+      <translation>निर्देशिका नहीं मिटाई जा सकी।</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Could not finish saving preset.</source>

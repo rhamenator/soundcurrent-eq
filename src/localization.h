@@ -167,6 +167,10 @@ public:
             return {};
         }
         if (name == "QFileDialog") {
+            if (action == "'%1' is write protected.\nDo you want to delete it anyway?") return text("'%1' is write protected.\nDo you want to delete it anyway?");
+            if (action == "Are you sure you want to delete '%1'?") return text("Are you sure you want to delete '%1'?");
+            if (action == "Could not delete directory.") return text("Could not delete directory.");
+
             if (action == "Open") return text("Open");
             if (action == "&Choose") return text("Choose");
             if (action == "All files (*)" || action == "All Files (*)") return text("All files (*)");

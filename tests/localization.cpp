@@ -538,14 +538,14 @@ int main(int argc,char **argv){
      chooser.selectFile(selected);
      bool inspected=false,timedOut=false;
      QTimer watchdog;watchdog.setSingleShot(true);
-     QObject::connect(&watchdog,&QTimer::timeout,[&]{timedOut=true;if(auto *message=qobject_cast<QMessageBox*>(app.activeModalWidget()))message->reject();chooser.reject();});
+     QObject::connect(&watchdog,&QTimer::timeout,[&]{timedOut=true;if(auto *message=qobject_cast<QMessageBox*>(app.activeModalWidget())) {if(auto *no=message->button(QMessageBox::No))no->click();else message->reject();}chooser.reject();});
      watchdog.start(5000);
      QTimer::singleShot(0,&chooser,[&]{
       QTimer::singleShot(0,&chooser,[&]{
        auto *message=qobject_cast<QMessageBox*>(app.activeModalWidget());
        if(!message)return;
        inspected=message->text()==text(chooserErrors[kind]).arg(QFileInfo(selected).fileName());
-       message->done(kind==2?QMessageBox::No:QMessageBox::Ok);
+       if(auto *button=message->button(kind==2?QMessageBox::No:QMessageBox::Ok))button->click();
       });
       QMetaObject::invokeMethod(&chooser,"accept",Qt::DirectConnection);
       chooser.reject();
@@ -555,6 +555,48 @@ int main(int argc,char **argv){
      require(result==QDialog::Rejected,"Declined/error chooser unexpectedly accepted a path");
     }
     require(input.open(QIODevice::ReadOnly) && input.readAll()==QByteArray("preserved"),"Declined overwrite changed file contents");
+   }
+   const char *deleteMessages[]={"'%1' is write protected.\nDo you want to delete it anyway?","Are you sure you want to delete '%1'?","Could not delete directory."};
+   for(const auto *source:deleteMessages) {
+    require(QCoreApplication::translate("QFileDialog",source)==text(source),"Qt delete caption stayed outside app catalog");
+    if(QString::fromUtf8(source).contains("%1"))require(text(source).arg(opaqueFilename).contains(opaqueFilename),"Qt deletion caption changed opaque filename");
+   }
+   if(language.tag=="fr" || language.tag=="ar" || language.tag=="nn") {
+    const auto existing=dir.filePath(opaqueFilename);
+    QFileDialog chooser(nullptr,"delete decline fixture",dir.path());
+    chooser.setOption(QFileDialog::DontUseNativeDialog);chooser.setOption(QFileDialog::DontUseCustomDirectoryIcons);
+    chooser.selectFile(existing);
+    bool inspected=false,timedOut=false,invoked=false;
+    QTimer watchdog;watchdog.setSingleShot(true);
+    QObject::connect(&watchdog,&QTimer::timeout,[&]{timedOut=true;if(auto *message=qobject_cast<QMessageBox*>(app.activeModalWidget())) {if(auto *no=message->button(QMessageBox::No))no->click();else message->reject();}chooser.reject();});watchdog.start(5000);
+    QTimer::singleShot(0,&chooser,[&]{
+     auto *view=chooser.findChild<QListView*>("listView");
+     auto *files=view?qobject_cast<QFileSystemModel*>(view->model()):nullptr;
+     if(!files){qCritical()<<"Delete model:"<<(view&&view->model()?view->model()->metaObject()->className():"missing view");chooser.reject();return;}
+     const auto index=files->index(existing);
+     qInfo()<<"Delete index:"<<index.isValid()<<files->filePath(index);
+     view->setCurrentIndex(index);view->selectionModel()->select(index,QItemSelectionModel::ClearAndSelect|QItemSelectionModel::Rows);
+     QTimer::singleShot(0,&chooser,[&]{
+      auto *message=qobject_cast<QMessageBox*>(app.activeModalWidget());
+      if(!message)return;
+      const auto confirmation=message->text()==text(deleteMessages[1]).arg(opaqueFilename);
+      const auto protectedWarning=message->text()==text(deleteMessages[0]).arg(opaqueFilename);
+      inspected=message->windowTitle()==text("Delete") && (confirmation || protectedWarning);
+      qInfo().noquote()<<"Actual declined delete prompt:"<<language.tag<<(confirmation?"confirmation":protectedWarning?"write-protected":"unexpected");
+      if(auto *button=message->button(QMessageBox::No))button->click();
+     });
+     for(auto *action:chooser.findChildren<QAction*>())if(action->text()==text("Delete")) {
+      // Qt enables this action when the context menu opens. This message fixture
+      // enables the selected temporary-file action directly; permission gating
+      // and context-menu interaction are qualified separately.
+      action->setEnabled(true);invoked=true;action->trigger();break;
+     }
+     chooser.reject();
+    });
+    const auto result=chooser.exec();
+    if(!invoked || !inspected) qCritical()<<"Delete fixture state:"<<invoked<<inspected<<timedOut<<result;
+    require(invoked && inspected && !timedOut && result==QDialog::Rejected,"Actual Qt declined delete prompt did not expose expected localized text");
+    QFile preserved(existing);require(preserved.open(QIODevice::ReadOnly) && preserved.readAll()==QByteArray("preserved"),"Declined deletion changed fixture contents");
    }
    const auto calibrationFailure=text("Measurement failed: %1").arg(text("Test level is outside the allowed range"));
    const auto failureBytes=(calibrationFailure+QStringLiteral("\r\n")).toUtf8();

@@ -132,6 +132,13 @@ Szeretné lecserélni?</translation>
       <translation>%1%2 dB</translation>
     </message>
     <message>
+      <source>'%1' is write protected.
+Do you want to delete it anyway?</source>
+      <translation>„%1” írásvédett.
+Mindenképp törölni szeretné?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Abort</source>
       <translation>Megszakítás</translation>
     </message>
@@ -285,6 +292,11 @@ Szeretné lecserélni?</translation>
     <message>
       <source>Apply suggested EQ</source>
       <translation>Javasolt EQ alkalmazása</translation>
+    </message>
+    <message>
+      <source>Are you sure you want to delete '%1'?</source>
+      <translation>Biztosan törölni szeretné: „%1”?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Audio bridge did not start</source>
@@ -669,6 +681,11 @@ Szeretné lecserélni?</translation>
     <message>
       <source>Could not create test tone</source>
       <translation>Nem hozható létre teszthang</translation>
+    </message>
+    <message>
+      <source>Could not delete directory.</source>
+      <translation>Nem sikerült törölni a könyvtárat.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Could not finish saving preset.</source>

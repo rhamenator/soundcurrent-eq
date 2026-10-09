@@ -132,6 +132,13 @@ Czy chcesz go zastąpić?</translation>
       <translation>%1%2 dB</translation>
     </message>
     <message>
+      <source>'%1' is write protected.
+Do you want to delete it anyway?</source>
+      <translation>'%1' jest zabezpieczony przed zapisem.
+Czy na pewno chcesz go usunąć?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Abort</source>
       <translation>Przerwij</translation>
     </message>
@@ -285,6 +292,11 @@ Czy chcesz go zastąpić?</translation>
     <message>
       <source>Apply suggested EQ</source>
       <translation>Zastosuj zalecaną korekcję</translation>
+    </message>
+    <message>
+      <source>Are you sure you want to delete '%1'?</source>
+      <translation>Czy na pewno chcesz usunąć "%1"?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Audio bridge did not start</source>
@@ -669,6 +681,11 @@ Czy chcesz go zastąpić?</translation>
     <message>
       <source>Could not create test tone</source>
       <translation>Nie udało się utworzyć tonu testowego</translation>
+    </message>
+    <message>
+      <source>Could not delete directory.</source>
+      <translation>Nie można usunąć katalogu.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Could not finish saving preset.</source>

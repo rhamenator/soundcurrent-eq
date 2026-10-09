@@ -132,6 +132,13 @@ Unataka kuibadilisha?</translation>
       <translation>%1%2 dB</translation>
     </message>
     <message>
+      <source>'%1' is write protected.
+Do you want to delete it anyway?</source>
+      <translation>'%1' imelindwa dhidi ya kuandikwa.
+Unataka kuifuta hata hivyo?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Abort</source>
       <translation>Sitisha</translation>
     </message>
@@ -285,6 +292,11 @@ Unataka kuibadilisha?</translation>
     <message>
       <source>Apply suggested EQ</source>
       <translation>Tumia EQ iliyopendekezwa</translation>
+    </message>
+    <message>
+      <source>Are you sure you want to delete '%1'?</source>
+      <translation>Una uhakika unataka kufuta '%1'?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Audio bridge did not start</source>
@@ -669,6 +681,11 @@ Unataka kuibadilisha?</translation>
     <message>
       <source>Could not create test tone</source>
       <translation>Haikuwezekana kuunda toni ya majaribio</translation>
+    </message>
+    <message>
+      <source>Could not delete directory.</source>
+      <translation>Haikuwezekana kufuta saraka.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Could not finish saving preset.</source>

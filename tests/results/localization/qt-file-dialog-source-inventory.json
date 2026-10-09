@@ -43,7 +43,7 @@
         },
         {
           "source": "'%1' is write protected.\nDo you want to delete it anyway?",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "All files (*)",
@@ -63,7 +63,7 @@
         },
         {
           "source": "Are you sure you want to delete '%1'?",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Back",
@@ -79,7 +79,7 @@
         },
         {
           "source": "Could not delete directory.",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Create New Folder",
@@ -229,7 +229,7 @@
         },
         {
           "source": "'%1' is write protected.\nDo you want to delete it anyway?",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "All files (*)",
@@ -249,7 +249,7 @@
         },
         {
           "source": "Are you sure you want to delete '%1'?",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Back",
@@ -265,7 +265,7 @@
         },
         {
           "source": "Could not delete directory.",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Create New Folder",

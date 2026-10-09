@@ -132,6 +132,13 @@ Do you want to replace it?</source>
       <translation>%1%2 dB</translation>
     </message>
     <message>
+      <source>'%1' is write protected.
+Do you want to delete it anyway?</source>
+      <translation>Το '%1' προστατεύεται από εγγραφή.
+Θέλετε να το διαγράψετε παρ' όλα αυτά;</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Abort</source>
       <translation>Διακοπή</translation>
     </message>
@@ -285,6 +292,11 @@ Do you want to replace it?</source>
     <message>
       <source>Apply suggested EQ</source>
       <translation>Εφαρμογή προτεινόμενης ισοστάθμισης</translation>
+    </message>
+    <message>
+      <source>Are you sure you want to delete '%1'?</source>
+      <translation>Είστε βέβαιοι ότι θέλετε να διαγράψετε το '%1';</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Audio bridge did not start</source>
@@ -669,6 +681,11 @@ Do you want to replace it?</source>
     <message>
       <source>Could not create test tone</source>
       <translation>Δεν ήταν δυνατή η δημιουργία δοκιμαστικού τόνου</translation>
+    </message>
+    <message>
+      <source>Could not delete directory.</source>
+      <translation>Δεν ήταν δυνατή η διαγραφή του καταλόγου.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Could not finish saving preset.</source>

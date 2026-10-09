@@ -132,6 +132,13 @@ Vil du byta ho ut?</translation>
       <translation>%1%2 dB</translation>
     </message>
     <message>
+      <source>'%1' is write protected.
+Do you want to delete it anyway?</source>
+      <translation>«%1» er skriveverna.
+Vil du likevel sletta ho?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Abort</source>
       <translation>Avbryt</translation>
     </message>
@@ -285,6 +292,11 @@ Vil du byta ho ut?</translation>
     <message>
       <source>Apply suggested EQ</source>
       <translation>Bruk føreslått EQ</translation>
+    </message>
+    <message>
+      <source>Are you sure you want to delete '%1'?</source>
+      <translation>Er du sikker på at du vil sletta «%1»?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Audio bridge did not start</source>
@@ -669,6 +681,11 @@ Vil du byta ho ut?</translation>
     <message>
       <source>Could not create test tone</source>
       <translation>Kunne ikkje opprette testtone</translation>
+    </message>
+    <message>
+      <source>Could not delete directory.</source>
+      <translation>Klarte ikkje sletta mappa.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Could not finish saving preset.</source>

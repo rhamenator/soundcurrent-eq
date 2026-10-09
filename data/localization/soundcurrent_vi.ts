@@ -132,6 +132,13 @@ Bạn có muốn thay thế không?</translation>
       <translation>%1%2 dB</translation>
     </message>
     <message>
+      <source>'%1' is write protected.
+Do you want to delete it anyway?</source>
+      <translation>'%1' được bảo vệ chống ghi.
+Bạn vẫn muốn xóa không?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Abort</source>
       <translation>Dừng</translation>
     </message>
@@ -285,6 +292,11 @@ Bạn có muốn thay thế không?</translation>
     <message>
       <source>Apply suggested EQ</source>
       <translation>Áp dụng EQ đề xuất</translation>
+    </message>
+    <message>
+      <source>Are you sure you want to delete '%1'?</source>
+      <translation>Bạn có chắc muốn xóa '%1' không?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Audio bridge did not start</source>
@@ -669,6 +681,11 @@ Bạn có muốn thay thế không?</translation>
     <message>
       <source>Could not create test tone</source>
       <translation>Không thể tạo âm thử</translation>
+    </message>
+    <message>
+      <source>Could not delete directory.</source>
+      <translation>Không thể xóa thư mục.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
