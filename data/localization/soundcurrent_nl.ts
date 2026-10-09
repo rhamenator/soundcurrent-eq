@@ -1947,8 +1947,9 @@ Wilt u het toch verwijderen?</translation>
       <translation>Gepubliceerde profielen vereisen een HTTPS-meetbron.</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>Gepubliceerde versies konden niet worden gecontroleerd. Privéversies van Studio vereisen GitHub-toegang. Gebruik Versiedownloads openen; gedownloade installatieprogramma’s worden nog steeds lokaal gedetecteerd.</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Gepubliceerde versies konden niet worden gecontroleerd. Gebruik Versiedownloads openen; gedownloade installatieprogramma’s worden nog steeds lokaal gedetecteerd.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

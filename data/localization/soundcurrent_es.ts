@@ -1947,8 +1947,9 @@ Do you want to delete it anyway?</source>
       <translation>Los perfiles publicados necesitan una fuente de medición HTTPS.</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>No se han podido comprobar las versiones publicadas. Las versiones privadas de Studio requieren acceso a GitHub. Use Abrir descargas de versiones; los instaladores descargados se siguen detectando localmente.</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>No se han podido comprobar las versiones publicadas. Use Abrir descargas de versiones; los instaladores descargados se siguen detectando localmente.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

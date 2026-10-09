@@ -1947,8 +1947,9 @@ Do you want to delete it anyway?</source>
       <translation>공개 프로파일에는 HTTPS 측정 출처가 필요합니다.</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>공개 릴리스를 확인하지 못했습니다. 비공개 Studio 릴리스에는 GitHub 접근 권한이 필요합니다. 릴리스 다운로드 페이지 열기를 사용하세요. 다운로드한 설치 프로그램은 계속 로컬에서 감지됩니다.</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>공개 릴리스를 확인하지 못했습니다. 릴리스 다운로드 페이지 열기를 사용하세요. 다운로드한 설치 프로그램은 계속 로컬에서 감지됩니다.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

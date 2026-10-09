@@ -109,7 +109,7 @@ private:
         connect(reply,&QNetworkReply::finished,this,[this,reply,bytes,manual]{
             busy_=false;bytes->append(reply->readAll());
             if(reply->error()!=QNetworkReply::NoError || bytes->size()>1024*1024){
-                if(manual)status_->setText(SC_TR("Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally."));
+                if(manual)status_->setText(SC_TR("Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally."));
                 reply->deleteLater();return;}
             QJsonParseError error;const auto document=QJsonDocument::fromJson(*bytes,&error);
             if(error.error!=QJsonParseError::NoError || !document.isArray()){if(manual)status_->setText(SC_TR("The update response was invalid. No installer was opened."));reply->deleteLater();return;}

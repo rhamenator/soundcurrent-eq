@@ -1947,8 +1947,9 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Profilurile publicate necesită o sursă de măsurare HTTPS.</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>Versiunile publicate nu au putut fi verificate. Versiunile private Studio necesită acces GitHub. Folosiți Deschideți descărcările versiunilor; programele de instalare descărcate sunt detectate în continuare local.</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Versiunile publicate nu au putut fi verificate. Folosiți Deschideți descărcările versiunilor; programele de instalare descărcate sunt detectate în continuare local.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

@@ -1947,8 +1947,9 @@ Do you want to delete it anyway?</source>
       <translation>प्रकाशित प्रोफ़ाइल के लिए HTTPS माप स्रोत आवश्यक है।</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>प्रकाशित रिलीज़ की जाँच नहीं हो सकी। निजी Studio रिलीज़ के लिए GitHub तक पहुँच आवश्यक है। रिलीज़ डाउनलोड पृष्ठ खोलें; डाउनलोड किए गए इंस्टॉलर स्थानीय रूप से अब भी पहचाने जाते हैं।</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>प्रकाशित रिलीज़ की जाँच नहीं हो सकी। रिलीज़ डाउनलोड पृष्ठ खोलें; डाउनलोड किए गए इंस्टॉलर स्थानीय रूप से अब भी पहचाने जाते हैं।</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

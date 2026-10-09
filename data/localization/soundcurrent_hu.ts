@@ -1947,8 +1947,9 @@ Mindenképp törölni szeretné?</translation>
       <translation>A közzétett profilokhoz HTTPS-mérési forrás szükséges.</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>A közzétett kiadások nem ellenőrizhetők. A privát Studio-kiadásokhoz GitHub-hozzáférés szükséges. Használja a Kiadásletöltések megnyitása lehetőséget; a letöltött telepítőket továbbra is helyben észleljük.</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>A közzétett kiadások nem ellenőrizhetők. Használja a Kiadásletöltések megnyitása lehetőséget; a letöltött telepítőket továbbra is helyben észleljük.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

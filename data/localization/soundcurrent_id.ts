@@ -1947,8 +1947,9 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Profil yang dipublikasikan memerlukan sumber pengukuran HTTPS.</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>Rilis yang dipublikasikan tidak dapat diperiksa. Rilis Studio privat memerlukan akses GitHub. Gunakan Buka unduhan rilis; penginstal yang diunduh tetap terdeteksi secara lokal.</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Rilis yang dipublikasikan tidak dapat diperiksa. Gunakan Buka unduhan rilis; penginstal yang diunduh tetap terdeteksi secara lokal.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

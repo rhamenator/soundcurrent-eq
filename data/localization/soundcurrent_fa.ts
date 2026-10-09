@@ -1947,8 +1947,9 @@ Do you want to delete it anyway?</source>
       <translation>پروفایل‌های منتشرشده به منبع اندازه‌گیری HTTPS نیاز دارند.</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>بررسی نسخه‌های منتشرشده ممکن نشد. نسخه‌های خصوصی Studio به دسترسی GitHub نیاز دارند. از باز کردن دانلودهای نسخه‌ها استفاده کنید؛ نصب‌کننده‌های دانلودشده همچنان به‌صورت محلی شناسایی می‌شوند.</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>بررسی نسخه‌های منتشرشده ممکن نشد. از باز کردن دانلودهای نسخه‌ها استفاده کنید؛ نصب‌کننده‌های دانلودشده همچنان به‌صورت محلی شناسایی می‌شوند.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

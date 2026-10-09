@@ -1947,8 +1947,9 @@ Do you want to delete it anyway?</source>
       <translation>已发布的配置需要 HTTPS 测量来源。</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>无法检查已发布的版本。私有 Studio 版本需要 GitHub 访问权限。请使用“打开版本下载页面”；已下载的安装程序仍会在本地检测。</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>无法检查已发布的版本。请使用“打开版本下载页面”；已下载的安装程序仍会在本地检测。</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

@@ -1947,8 +1947,9 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Opublikowane profile wymagają źródła pomiaru HTTPS.</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>Nie udało się sprawdzić opublikowanych wersji. Prywatne wersje Studio wymagają dostępu do GitHub. Użyj opcji Otwórz pliki wersji do pobrania; pobrane instalatory nadal są wykrywane lokalnie.</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Nie udało się sprawdzić opublikowanych wersji. Użyj opcji Otwórz pliki wersji do pobrania; pobrane instalatory nadal są wykrywane lokalnie.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

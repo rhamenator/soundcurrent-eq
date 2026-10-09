@@ -1947,8 +1947,9 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Publikované profily potrebujú zdroj merania cez HTTPS.</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>Vydané verzie sa nepodarilo skontrolovať. Súkromné verzie Studio vyžadujú prístup ku GitHubu. Použite Otvoriť sťahovanie vydaných verzií; stiahnuté inštalátory sa stále vyhľadávajú lokálne.</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Vydané verzie sa nepodarilo skontrolovať. Použite Otvoriť sťahovanie vydaných verzií; stiahnuté inštalátory sa stále vyhľadávajú lokálne.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

@@ -1947,8 +1947,9 @@ Vill du ta bort den ändå?</translation>
       <translation>Publicerade profiler behöver en HTTPS-mätkälla.</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>Publicerade versioner kunde inte kontrolleras. Privata Studio-versioner kräver GitHub-åtkomst. Använd Öppna versionshämtningar; hämtade installationsprogram hittas fortfarande lokalt.</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Publicerade versioner kunde inte kontrolleras. Använd Öppna versionshämtningar; hämtade installationsprogram hittas fortfarande lokalt.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

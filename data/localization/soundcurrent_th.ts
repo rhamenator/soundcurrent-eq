@@ -1947,8 +1947,9 @@ Do you want to delete it anyway?</source>
       <translation>โปรไฟล์ที่เผยแพร่ต้องมีแหล่งข้อมูลการวัด HTTPS</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>ไม่สามารถตรวจสอบรุ่นที่เผยแพร่ได้ รุ่น Studio แบบส่วนตัวต้องมีสิทธิ์เข้าถึง GitHub ใช้ เปิดหน้าดาวน์โหลดรุ่นที่เผยแพร่ ตัวติดตั้งที่ดาวน์โหลดยังคงตรวจพบในเครื่อง</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>ไม่สามารถตรวจสอบรุ่นที่เผยแพร่ได้ ใช้ เปิดหน้าดาวน์โหลดรุ่นที่เผยแพร่ ตัวติดตั้งที่ดาวน์โหลดยังคงตรวจพบในเครื่อง</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

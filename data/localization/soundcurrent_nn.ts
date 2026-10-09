@@ -1947,8 +1947,9 @@ Vil du likevel sletta ho?</translation>
       <translation>Publiserte profilar treng ei HTTPS-målekjelde.</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>Publiserte utgåver kunne ikkje kontrollerast. Private Studio-utgåver krev GitHub-tilgang. Bruk Opne utgåvenedlastingar; nedlasta installasjonsprogram vert framleis oppdaga lokalt.</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Publiserte utgåver kunne ikkje kontrollerast. Bruk Opne utgåvenedlastingar; nedlasta installasjonsprogram vert framleis oppdaga lokalt.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

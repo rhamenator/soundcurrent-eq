@@ -1947,8 +1947,9 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Veröffentlichte Profile benötigen eine HTTPS-Messquelle.</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>Veröffentlichte Versionen konnten nicht geprüft werden. Private Studio-Versionen erfordern GitHub-Zugriff. Verwenden Sie „Versionsdownloads öffnen“; heruntergeladene Installationsprogramme werden weiterhin lokal erkannt.</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Veröffentlichte Versionen konnten nicht geprüft werden. Verwenden Sie „Versionsdownloads öffnen“; heruntergeladene Installationsprogramme werden weiterhin lokal erkannt.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

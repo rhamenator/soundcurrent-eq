@@ -1947,8 +1947,9 @@ Do you want to delete it anyway?</source>
       <translation>公開プロファイルには、HTTPS の測定出典が必要です。</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>公開リリースを確認できませんでした。非公開の Studio リリースには GitHub へのアクセスが必要です。「リリースのダウンロードページを開く」を使用してください。ダウンロード済みのインストーラーは引き続きローカルで検出されます。</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>公開リリースを確認できませんでした。「リリースのダウンロードページを開く」を使用してください。ダウンロード済みのインストーラーは引き続きローカルで検出されます。</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

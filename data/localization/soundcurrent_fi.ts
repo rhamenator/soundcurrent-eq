@@ -1947,8 +1947,9 @@ Haluatko silti poistaa sen?</translation>
       <translation>Julkaistut profiilit tarvitsevat HTTPS-mittauslähteen.</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>Julkaistuja versioita ei voitu tarkistaa. Yksityiset Studio-versiot edellyttävät GitHub-käyttöoikeutta. Käytä Avaa versiolataukset -toimintoa; ladatut asennusohjelmat tunnistetaan silti paikallisesti.</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Julkaistuja versioita ei voitu tarkistaa. Käytä Avaa versiolataukset -toimintoa; ladatut asennusohjelmat tunnistetaan silti paikallisesti.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

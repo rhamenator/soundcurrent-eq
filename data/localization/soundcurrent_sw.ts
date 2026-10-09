@@ -1947,8 +1947,9 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Wasifu uliochapishwa unahitaji chanzo cha vipimo cha HTTPS.</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation>Matoleo yaliyochapishwa hayakuweza kukaguliwa. Matoleo binafsi ya Studio yanahitaji ufikiaji wa GitHub. Tumia Fungua vipakuliwa vya matoleo; visakinishi vilivyopakuliwa bado hugunduliwa kwenye kifaa.</translation>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Matoleo yaliyochapishwa hayakuweza kukaguliwa. Tumia Fungua vipakuliwa vya matoleo; visakinishi vilivyopakuliwa bado hugunduliwa kwenye kifaa.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>

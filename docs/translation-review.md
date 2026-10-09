@@ -465,3 +465,7 @@ Expanded drawing inventory exposed three remaining plain-number axis calls in th
 ### Unmarked display-caption regression gate
 
 The expanded Qt display inventory now has an exact-site exception list for physical units, the English autonym and synthetic user-name test data. Translation-maintenance tests reject a new unmarked QLabel caption and accept current reviewed source. This strengthens detection of direct owned captions without assuming that a translation call proves every part of a composed expression. Dynamic/backend/installer review remains separate. See display-literal-review-gate.json.
+
+### Public release update-check wording
+
+GitHub confirms soundcurrent-studio is public. The manual update-check failure no longer includes irrelevant private-release/GitHub-access advice. Every catalog removes the reviewed obsolete sentence and retains the release-download action and local installer detection guidance. No networking policy or installer behavior changed. Structural checks and compiled localization fixtures pass; packages for this wording change remain pending. All non-English entries remain native-unverified. See public-update-message-review.json for before/after text and evidence.
