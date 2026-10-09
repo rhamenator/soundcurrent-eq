@@ -90,7 +90,8 @@
     "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42",
     "tests/results/localization/calibration-worker-native-ci.json": "377d797dfc8478b69a02fb63760577d5a2571393c939e35aa1eecbb270467e35",
     "src/equipment_profiles.cpp": "6853faa29c08f99df84bd12c9ca938657216c57ca39b5d9a5b15e747eb6c78ed",
-    "tests/results/localization/profile-authored-defaults.json": "2d3aa7687f468de8c9b652c2dafd2afae1f929b3d401ac3390a6f691f08156af"
+    "tests/results/localization/profile-authored-defaults.json": "2d3aa7687f468de8c9b652c2dafd2afae1f929b3d401ac3390a6f691f08156af",
+    "tests/results/localization/qt-file-dialog-gap.json": "3773fe6121c219d20746eb29261ce42326aa48db8ea27256628ceba5f7f01957"
   },
   "auditedBaseHead": "a39082b688e3a0ad21e40c39a966ee11c44e5439",
   "sourceIdentity": "Current inspected source files are identified by SHA-256 below; base commit is historical context, not qualification of pending calibration changes",
@@ -119,5 +120,30 @@
       "Fresh Windows and installed-package qualification pending",
       "Whole-interface dynamic expression review remains incomplete"
     ]
+  },
+  "currentQtFileDialogGap": {
+    "date": "2026-10-09",
+    "status": "confirmed unresolved shared Qt fallback file-dialog localization gap",
+    "probeSourceSha256": "b3be9f969d44f0352b65c07ce5b0e22ff63d66e26b95b68c3a1c7874ebdfd08f",
+    "probeScope": "Standalone Qt6Widgets QFileDialog using the actual EQ compiled French catalog and shared StandardActionTranslator. Offscreen, DontUseNativeDialog. No file selection, settings writes, audio or VM. Shared implementation matches Studio; Studio full app dialog not separately exercised.",
+    "untranslatedObserved": [
+      "Look in:",
+      "File &name:",
+      "Files of type:",
+      "Back",
+      "Forward",
+      "Parent Directory",
+      "Create New Folder",
+      "List View",
+      "Detail View",
+      "&Open"
+    ],
+    "translatedObserved": [
+      "Annuler"
+    ],
+    "interpretation": "Owned app captions and standard-button mapping do not cover QFileDialog-specific labels, navigation tooltips or its own Open caption. This is a Qt fallback dialog, not an operating-system-language native dialog exception.",
+    "nextTask": "Inventory QFileDialog and its file-model contexts for open/save/error/context-menu workflows; localize all owned Qt fallback captions with exact-context guards and actual dialog tests across catalogs. Preserve filenames, directory paths, filters and extension semantics.",
+    "nativeReviewed": false,
+    "wholeInterfaceCoverageProven": false
   }
 }

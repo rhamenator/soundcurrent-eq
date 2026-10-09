@@ -591,3 +591,7 @@ Both current application builds passed all 33 installed native-backend locale fi
 ### Profile defaults and authored provenance
 
 New profile names, relative-response import instructions and newly authored provenance captions now use the selected interface language. Existing saved or published metadata remains verbatim; opening a profile does not rewrite it. Filenames, SHA256 digests, profile IDs and processing data are unchanged. All 33 non-English catalogs contain the eight added captions. Compiled localization and French/Arabic/Nynorsk equipment-dialog fixtures passed locally; source guards passed in both applications. These checks do not prove native-speaker accuracy or every creation field visually. Fresh Windows and installed-package qualification remains pending.
+
+### Confirmed Qt fallback file chooser gap
+
+An isolated real Qt file-dialog probe loaded the actual French app catalog and shared standard-action translator. The fallback chooser still displayed English field labels, navigation tooltips and Open; Cancel was translated. This is an unresolved interface gap, separate from native operating-system dialog language. The exact probe and limitations are recorded in tests/results/localization/qt-file-dialog-gap.json. Next: cover file-dialog/file-model contexts and actual open/save/error workflows without altering paths or filter semantics.

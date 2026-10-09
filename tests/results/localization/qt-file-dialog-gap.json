@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-09",
+  "status": "confirmed unresolved shared Qt fallback file-dialog localization gap",
+  "probeSourceSha256": "b3be9f969d44f0352b65c07ce5b0e22ff63d66e26b95b68c3a1c7874ebdfd08f",
+  "probeScope": "Standalone Qt6Widgets QFileDialog using the actual EQ compiled French catalog and shared StandardActionTranslator. Offscreen, DontUseNativeDialog. No file selection, settings writes, audio or VM. Shared implementation matches Studio; Studio full app dialog not separately exercised.",
+  "untranslatedObserved": [
+    "Look in:",
+    "File &name:",
+    "Files of type:",
+    "Back",
+    "Forward",
+    "Parent Directory",
+    "Create New Folder",
+    "List View",
+    "Detail View",
+    "&Open"
+  ],
+  "translatedObserved": [
+    "Annuler"
+  ],
+  "interpretation": "Owned app captions and standard-button mapping do not cover QFileDialog-specific labels, navigation tooltips or its own Open caption. This is a Qt fallback dialog, not an operating-system-language native dialog exception.",
+  "nextTask": "Inventory QFileDialog and its file-model contexts for open/save/error/context-menu workflows; localize all owned Qt fallback captions with exact-context guards and actual dialog tests across catalogs. Preserve filenames, directory paths, filters and extension semantics.",
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false
+}
