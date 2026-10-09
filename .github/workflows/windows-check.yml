@@ -34,6 +34,13 @@ jobs:
       - name: Build, test and package the shared application
         shell: pwsh
         run: ./scripts/build-windows.ps1 -QtPrefix 'C:\Qt\6.12.0\msvc2022_64'
+      - name: Qualify installed locale interfaces and app lifecycle
+        shell: pwsh
+        run: |
+          if ($env:GITHUB_ACTIONS -ne 'true' -or $env:RUNNER_ENVIRONMENT -ne 'github-hosted') { throw 'Use a disposable GitHub-hosted Windows runner' }
+          $installer = Get-ChildItem 'dist/SoundCurrent-EQ-*-windows-x64-setup.exe'
+          if (@($installer).Count -ne 1) { throw 'Expected exactly one current installer' }
+          ./tests/windows_installer_locale_lifecycle.ps1 -Run -Product EQ -InstallerPath $installer.FullName -CatalogPath 'build-windows-native/installer-translations.json' -LanguageMapPath 'data/localization/installer-language-map.json' -ResultDirectory 'build-windows-native/installed-runtime' -QualifyInstalledUi -ExpectedExecutablePath 'build-windows-native/package/soundcurrent-eq.exe'
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:
@@ -45,3 +52,4 @@ jobs:
             build-windows-native/package/**
             build-windows-native/Release/*smoke.exe
             build-windows-native/ui-self-test.log
+            build-windows-native/installed-runtime/**

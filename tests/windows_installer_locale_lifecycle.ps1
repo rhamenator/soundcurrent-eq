@@ -5,7 +5,8 @@ param([switch]$Run,[Parameter(Mandatory=$true)][ValidateSet('EQ','Studio')][stri
  [Parameter(Mandatory=$true)][string]$CatalogPath,
  [Parameter(Mandatory=$true)][string]$LanguageMapPath,
  [Parameter(Mandatory=$true)][string]$ResultDirectory,
- [string[]]$LanguageSequence=@('fr','nn','ar'))
+ [string[]]$LanguageSequence=@('fr','nn','ar'),
+ [switch]$QualifyInstalledUi,[string]$ExpectedExecutablePath)
 $ErrorActionPreference='Stop'
 function Get-LocaleExpectation($Catalog,$Map,[string]$Tag) {
  $row=@($Map.languages | Where-Object {$_.tag -ceq $Tag})
@@ -108,6 +109,25 @@ try {
   Assert ((AudioState) -eq $before) 'Install/update changed audio device identities/status'
   $steps+=@{locale=$expected.tag;languageId=$expected.id;installerSha256=(Get-FileHash $candidate).Hash;shortcuts='passed';preservation='passed'}
  }
+ $installedUi=@()
+ if($QualifyInstalledUi){
+  Assert ($ExpectedExecutablePath -and (Test-Path -LiteralPath $ExpectedExecutablePath)) 'Installed UI qualification requires staged executable identity'
+  Assert ((Get-FileHash -LiteralPath $exe).Hash -eq (Get-FileHash -LiteralPath $ExpectedExecutablePath).Hash) 'Installed executable differs from staged payload'
+  foreach($locale in $catalog.languages.PSObject.Properties.Name){
+   $stdout=Join-Path $ResultDirectory ('installed-ui-'+$locale+'.stdout.log')
+   $stderr=Join-Path $ResultDirectory ('installed-ui-'+$locale+'.stderr.log')
+   $process=Start-Process -FilePath $exe -ArgumentList @('--localization-ui-test','--language',$locale) -PassThru -RedirectStandardOutput $stdout -RedirectStandardError $stderr
+   try {
+    $null=$process.Handle
+    if(!$process.WaitForExit(60000)){Stop-Process -Id $process.Id -Force;throw ('Installed locale timed out: '+$locale)}
+    $process.Refresh()
+    Assert ($process.ExitCode -eq 0) ('Installed locale failed: '+$locale)
+    Assert ((Get-Content -LiteralPath $stdout -Raw -Encoding UTF8).Contains('Localization UI: '+$locale+' -> '+$locale)) ('Installed locale identity not reported: '+$locale)
+    $installedUi+=$locale
+   }finally{$process.Dispose()}
+  }
+  Assert ($installedUi.Count -eq 34) 'Installed UI qualification requires all catalog languages'
+ }
  Execute (Join-Path $directory 'uninstall.exe') '/S'
  $deadline=[DateTime]::UtcNow.AddSeconds(30)
  while((Test-Path $uninstallKey) -and [DateTime]::UtcNow -lt $deadline){Start-Sleep -Milliseconds 100}
@@ -118,7 +138,7 @@ try {
  Assert (Test-Path -LiteralPath $marker) 'Uninstall lost unknown user file'
  Assert ((Get-Content -LiteralPath $shortcutMarker) -eq 'preserve-shortcut-folder-file') 'Uninstall lost or changed unrelated shortcut-folder file'
  Assert ((AudioState) -eq $before) 'Silent cable uninstall changed audio device identities/status'
- @{product=$Product;installerSha256=(Get-FileHash $InstallerPath).Hash;steps=$steps;uninstall='passed';scope='Silent cable app lifecycle on a clean independent clone; chooser rendering and native-driver lifecycle excluded';nativeSpeakerVerified=$false} | ConvertTo-Json -Depth 8 | Set-Content -Encoding UTF8 (Join-Path $ResultDirectory 'installer-locale-lifecycle.json')
+ @{product=$Product;installerSha256=(Get-FileHash $InstallerPath).Hash;steps=$steps;uninstall='passed';installedUiLocales=$installedUi;installedExecutableSha256=$(if($QualifyInstalledUi){(Get-FileHash -LiteralPath $ExpectedExecutablePath).Hash}else{$null});scope='Silent cable app lifecycle on a disposable Windows VM; installed UI catalog fixtures optional, chooser rendering and native-driver lifecycle excluded';nativeSpeakerVerified=$false} | ConvertTo-Json -Depth 8 | Set-Content -Encoding UTF8 (Join-Path $ResultDirectory 'installer-locale-lifecycle.json')
  Write-Output "PASS: $Product locale install/update/uninstall and preservation checks"
 }finally {
  if(Test-Path $settings){Remove-ItemProperty $settings -Name $sentinel -ErrorAction SilentlyContinue}
