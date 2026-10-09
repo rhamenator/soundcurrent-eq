@@ -1,0 +1,4 @@
+warning: !warning: MUI_LANGUAGE[EX] should be inserted after the MUI_[UN]PAGE_* macros (macro:MUI_LANGUAGEEX:6)
+
+1 warning:
+  !warning: MUI_LANGUAGE[EX] should be inserted after the MUI_[UN]PAGE_* macros (macro:MUI_LANGUAGEEX:6)

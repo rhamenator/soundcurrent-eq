@@ -2430,6 +2430,11 @@ Import into your library?</source>
       <translation>시스템 지역 설정 사용</translation>
     </message>
     <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>VB-CABLE 드라이버가 등록되어 있지만 사용 가능한 오디오 엔드포인트가 없습니다. 설치 프로그램에서 복구할 수 있습니다. 드라이버를 제거하고 컴퓨터를 다시 시작한 후 재설치하고 컴퓨터를 한 번 더 다시 시작하세요.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
       <translation>VB-CABLE이 이미 설치되어 있습니다. 방금 설치하거나 업데이트했다면 이퀄라이저 또는 VB-CABLE 설정을 사용하기 전에 Windows를 다시 시작하세요. 그렇지 않다면 SoundCurrent에서 스피커를 선택하세요.</translation>
     </message>

@@ -117,7 +117,8 @@
     "Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.",
     "SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.",
     "SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.",
-    "VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1."
+    "VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.",
+    "VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again."
   ],
   "languages": {
     "de": [
@@ -239,7 +240,8 @@
       "Windows fordert eine Administratorbestätigung für den signierten Treibermanager an. Das Installationsprogramm informiert Sie, falls ein Neustart erforderlich ist.",
       "SoundCurrent Audio ist bereits vorhanden. Wenn die Treibereinrichtung aktiviert bleibt, registriert das Installationsprogramm diese App und hält den gemeinsam genutzten Treiber für die andere SoundCurrent-App verfügbar.",
       "SoundCurrent Audio leitet die Wiedergabe durch die App. Wählen Sie Ihre physischen Lautsprecher oder Kopfhörer in der App aus. Deren Hardwaretreiber bleiben erhalten.",
-      "VB-CABLE ist bereits vorhanden und wird wiederverwendet. SoundCurrent stellt Ihre normale Ausgabe wieder her, wenn es ausgeschaltet wird oder Sie %1 verwenden."
+      "VB-CABLE ist bereits vorhanden und wird wiederverwendet. SoundCurrent stellt Ihre normale Ausgabe wieder her, wenn es ausgeschaltet wird oder Sie %1 verwenden.",
+      "VB-CABLE ist als Treiber registriert, hat aber keine nutzbaren Audioendpunkte. Setup bietet eine Reparatur an: Treiber entfernen, neu starten, neu installieren und erneut neu starten."
     ],
     "fr": [
       "Français",
@@ -360,7 +362,8 @@
       "Windows demandera une autorisation administrateur pour le gestionnaire de pilotes signé. Le programme d’installation vous indiquera si un redémarrage est nécessaire.",
       "SoundCurrent Audio est déjà présent. Si la configuration du pilote reste activée, le programme d’installation enregistrera cette application et conservera le pilote partagé pour l’autre application SoundCurrent.",
       "SoundCurrent Audio fait passer la lecture par l’application. Choisissez vos enceintes ou votre casque physiques dans l’application. Leurs pilotes matériels sont conservés.",
-      "VB-CABLE est déjà présent et sera réutilisé. SoundCurrent rétablit votre sortie habituelle lorsqu’il est désactivé ou lorsque vous utilisez %1."
+      "VB-CABLE est déjà présent et sera réutilisé. SoundCurrent rétablit votre sortie habituelle lorsqu’il est désactivé ou lorsque vous utilisez %1.",
+      "VB-CABLE est enregistré comme pilote, mais aucun point de terminaison audio utilisable n’est disponible. L’installation propose une réparation : désinstaller le pilote, redémarrer, réinstaller, puis redémarrer à nouveau."
     ],
     "es": [
       "Español",
@@ -481,7 +484,8 @@
       "Windows solicitará la aprobación del administrador para el gestor de controladores firmado. El instalador le indicará si es necesario reiniciar.",
       "SoundCurrent Audio ya está presente. Si la configuración del controlador sigue habilitada, el instalador registrará esta aplicación y mantendrá el controlador compartido disponible para la otra aplicación SoundCurrent.",
       "SoundCurrent Audio dirige la reproducción a través de la aplicación. Elija sus altavoces o auriculares físicos dentro de la aplicación. Sus controladores de hardware se conservan.",
-      "VB-CABLE ya está presente y se reutilizará. SoundCurrent restaura su salida habitual cuando se desactiva o cuando utiliza %1."
+      "VB-CABLE ya está presente y se reutilizará. SoundCurrent restaura su salida habitual cuando se desactiva o cuando utiliza %1.",
+      "VB-CABLE tiene un registro de controlador, pero no hay puntos de conexión de audio utilizables. El instalador ofrece una reparación: quitar el controlador, reiniciar, reinstalar y reiniciar otra vez."
     ],
     "it": [
       "Italiano",
@@ -602,7 +606,8 @@
       "Windows richiederà l’approvazione dell’amministratore per il gestore dei driver firmato. Il programma di installazione ti informerà se è necessario un riavvio.",
       "SoundCurrent Audio è già presente. Se la configurazione del driver rimane abilitata, il programma di installazione registrerà questa app e manterrà il driver condiviso disponibile per l’altra app SoundCurrent.",
       "SoundCurrent Audio instrada la riproduzione attraverso l’app. Scegli gli altoparlanti o le cuffie fisiche all’interno dell’app. I relativi driver hardware vengono conservati.",
-      "VB-CABLE è già presente e verrà riutilizzato. SoundCurrent ripristina l’uscita normale quando viene disattivato o quando usi %1."
+      "VB-CABLE è già presente e verrà riutilizzato. SoundCurrent ripristina l’uscita normale quando viene disattivato o quando usi %1.",
+      "VB-CABLE risulta registrato come driver, ma non dispone di endpoint audio utilizzabili. Il programma di installazione offre una riparazione: rimuovere il driver, riavviare, reinstallare e riavviare di nuovo."
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -723,7 +728,8 @@
       "O Windows pedirá autorização de administrador para o gestor de controladores assinado. O instalador indicará se é necessário reiniciar.",
       "O SoundCurrent Audio já está presente. Se a configuração do controlador continuar ativada, o instalador registará esta aplicação e manterá o controlador partilhado disponível para a outra aplicação SoundCurrent.",
       "O SoundCurrent Audio encaminha a reprodução através da aplicação. Escolha as suas colunas ou auscultadores físicos na aplicação. Os respetivos controladores de hardware são mantidos.",
-      "O VB-CABLE já está presente e será reutilizado. O SoundCurrent repõe a saída habitual quando é desligado ou quando utiliza %1."
+      "O VB-CABLE já está presente e será reutilizado. O SoundCurrent repõe a saída habitual quando é desligado ou quando utiliza %1.",
+      "VB-CABLE tem um registo de controlador, mas não tem pontos de ligação de áudio utilizáveis. O instalador propõe uma reparação: remover o controlador, reiniciar, reinstalar e reiniciar novamente."
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -844,7 +850,8 @@
       "O Windows solicitará aprovação do administrador para o gerenciador de drivers assinado. O instalador informará se é necessário reiniciar.",
       "O SoundCurrent Audio já está presente. Se a configuração do driver continuar habilitada, o instalador registrará este aplicativo e manterá o driver compartilhado disponível para o outro aplicativo SoundCurrent.",
       "O SoundCurrent Audio encaminha a reprodução pelo aplicativo. Escolha suas caixas de som ou fones de ouvido físicos no aplicativo. Os respectivos drivers de hardware são preservados.",
-      "O VB-CABLE já está presente e será reutilizado. O SoundCurrent restaura a saída normal quando é desativado ou quando você usa %1."
+      "O VB-CABLE já está presente e será reutilizado. O SoundCurrent restaura a saída normal quando é desativado ou quando você usa %1.",
+      "VB-CABLE tem um registro de driver, mas não há pontos de conexão de áudio utilizáveis. O instalador oferece um reparo: remover o driver, reiniciar, reinstalar e reiniciar novamente."
     ],
     "nl": [
       "Nederlands",
@@ -965,7 +972,8 @@
       "Windows vraagt om goedkeuring van de beheerder voor de ondertekende stuurprogrammabeheerder. Het installatieprogramma meldt of opnieuw opstarten nodig is.",
       "SoundCurrent Audio is al aanwezig. Als stuurprogramma-instelling ingeschakeld blijft, registreert het installatieprogramma deze app en houdt het gedeelde stuurprogramma beschikbaar voor de andere SoundCurrent-app.",
       "SoundCurrent Audio leidt de weergave door de app. Kies uw fysieke luidsprekers of hoofdtelefoon in de app. De bijbehorende hardwarestuurprogramma’s blijven behouden.",
-      "VB-CABLE is al aanwezig en wordt opnieuw gebruikt. SoundCurrent herstelt uw normale uitvoer wanneer het wordt uitgeschakeld of u %1 gebruikt."
+      "VB-CABLE is al aanwezig en wordt opnieuw gebruikt. SoundCurrent herstelt uw normale uitvoer wanneer het wordt uitgeschakeld of u %1 gebruikt.",
+      "VB-CABLE is als stuurprogramma geregistreerd, maar heeft geen bruikbare audio-eindpunten. Het installatieprogramma biedt herstel aan: verwijder het stuurprogramma, start opnieuw op, installeer het opnieuw en start nogmaals opnieuw op."
     ],
     "pl": [
       "Polski",
@@ -1086,7 +1094,8 @@
       "Windows poprosi o zgodę administratora dla podpisanego menedżera sterowników. Instalator poinformuje, czy wymagane jest ponowne uruchomienie.",
       "SoundCurrent Audio jest już obecny. Jeśli konfiguracja sterownika pozostanie włączona, instalator zarejestruje tę aplikację i zachowa dostępność współdzielonego sterownika dla drugiej aplikacji SoundCurrent.",
       "SoundCurrent Audio kieruje odtwarzany dźwięk przez aplikację. Wybierz fizyczne głośniki lub słuchawki w aplikacji. Ich sterowniki sprzętowe zostają zachowane.",
-      "VB-CABLE jest już obecny i zostanie ponownie użyty. SoundCurrent przywraca zwykłe wyjście po wyłączeniu lub użyciu %1."
+      "VB-CABLE jest już obecny i zostanie ponownie użyty. SoundCurrent przywraca zwykłe wyjście po wyłączeniu lub użyciu %1.",
+      "VB-CABLE jest zarejestrowany jako sterownik, ale nie ma dostępnych punktów końcowych audio. Instalator oferuje naprawę: usuń sterownik, uruchom komputer ponownie, zainstaluj sterownik ponownie i jeszcze raz uruchom komputer ponownie."
     ],
     "cs": [
       "Čeština",
@@ -1207,7 +1216,8 @@
       "Windows požádá o schválení správcem pro digitálně podepsaný program pro správu ovladačů. Instalační program oznámí, zda je nutný restart.",
       "SoundCurrent Audio je již přítomno. Pokud zůstane nastavení ovladače povoleno, instalační program zaregistruje tuto aplikaci a ponechá sdílený ovladač dostupný pro druhou aplikaci SoundCurrent.",
       "SoundCurrent Audio směruje přehrávání přes aplikaci. V aplikaci vyberte své fyzické reproduktory nebo sluchátka. Jejich hardwarové ovladače zůstanou zachovány.",
-      "VB-CABLE je již přítomno a bude znovu použito. SoundCurrent obnoví váš běžný výstup po vypnutí nebo použití %1."
+      "VB-CABLE je již přítomno a bude znovu použito. SoundCurrent obnoví váš běžný výstup po vypnutí nebo použití %1.",
+      "VB-CABLE je zaregistrován jako ovladač, ale nemá použitelné zvukové koncové body. Instalátor nabízí opravu: odeberte ovladač, restartujte počítač, znovu ovladač nainstalujte a opět restartujte počítač."
     ],
     "sk": [
       "Slovenčina",
@@ -1328,7 +1338,8 @@
       "Windows požiada o schválenie správcom pre digitálne podpísaný program na správu ovládačov. Inštalačný program oznámi, či je potrebný reštart.",
       "SoundCurrent Audio je už prítomné. Ak zostane nastavenie ovládača povolené, inštalačný program zaregistruje túto aplikáciu a ponechá zdieľaný ovládač dostupný pre druhú aplikáciu SoundCurrent.",
       "SoundCurrent Audio smeruje prehrávanie cez aplikáciu. V aplikácii vyberte svoje fyzické reproduktory alebo slúchadlá. Ich hardvérové ovládače zostanú zachované.",
-      "VB-CABLE je už prítomné a bude znova použité. SoundCurrent obnoví váš bežný výstup po vypnutí alebo použití %1."
+      "VB-CABLE je už prítomné a bude znova použité. SoundCurrent obnoví váš bežný výstup po vypnutí alebo použití %1.",
+      "VB-CABLE je zaregistrovaný ako ovládač, ale nemá použiteľné zvukové koncové body. Inštalátor ponúka opravu: odstráňte ovládač, reštartujte počítač, znova ovládač nainštalujte a opäť reštartujte počítač."
     ],
     "uk": [
       "Українська",
@@ -1449,7 +1460,8 @@
       "Windows попросить дозвіл адміністратора для підписаного менеджера драйверів. Інсталятор повідомить, чи потрібен перезапуск.",
       "SoundCurrent Audio уже присутній. Якщо налаштування драйвера залишиться ввімкненим, інсталятор зареєструє цю програму й залишить спільний драйвер доступним для іншої програми SoundCurrent.",
       "SoundCurrent Audio спрямовує відтворення через програму. Виберіть у програмі свої фізичні динаміки або навушники. Їхні апаратні драйвери зберігаються.",
-      "VB-CABLE уже присутній і буде використаний повторно. SoundCurrent відновлює звичайний вихід після вимкнення або використання %1."
+      "VB-CABLE уже присутній і буде використаний повторно. SoundCurrent відновлює звичайний вихід після вимкнення або використання %1.",
+      "VB-CABLE зареєстровано як драйвер, але придатні аудіокінцеві точки відсутні. Інсталятор пропонує відновлення: видаліть драйвер, перезавантажте комп’ютер, установіть драйвер знову та ще раз перезавантажте комп’ютер."
     ],
     "ru": [
       "Русский",
@@ -1570,7 +1582,8 @@
       "Windows запросит разрешение администратора для подписанного менеджера драйверов. Установщик сообщит, требуется ли перезапуск.",
       "SoundCurrent Audio уже присутствует. Если настройка драйвера останется включённой, установщик зарегистрирует это приложение и сохранит общий драйвер доступным для другого приложения SoundCurrent.",
       "SoundCurrent Audio направляет воспроизведение через приложение. Выберите в приложении физические колонки или наушники. Их аппаратные драйверы сохраняются.",
-      "VB-CABLE уже присутствует и будет использован повторно. SoundCurrent восстанавливает обычный выход после отключения или использования %1."
+      "VB-CABLE уже присутствует и будет использован повторно. SoundCurrent восстанавливает обычный выход после отключения или использования %1.",
+      "VB-CABLE зарегистрирован как драйвер, но доступных аудиоконечных точек нет. Установщик предлагает восстановление: удалите драйвер, перезагрузите компьютер, установите драйвер заново и ещё раз перезагрузите компьютер."
     ],
     "el": [
       "Ελληνικά",
@@ -1691,7 +1704,8 @@
       "Τα Windows θα ζητήσουν έγκριση διαχειριστή για τον υπογεγραμμένο διαχειριστή προγραμμάτων οδήγησης. Το πρόγραμμα εγκατάστασης θα σας ενημερώσει αν απαιτείται επανεκκίνηση.",
       "Το SoundCurrent Audio υπάρχει ήδη. Αν η ρύθμιση του προγράμματος οδήγησης παραμείνει ενεργοποιημένη, το πρόγραμμα εγκατάστασης θα καταχωρίσει αυτή την εφαρμογή και θα διατηρήσει το κοινόχρηστο πρόγραμμα οδήγησης διαθέσιμο για την άλλη εφαρμογή SoundCurrent.",
       "Το SoundCurrent Audio δρομολογεί την αναπαραγωγή μέσω της εφαρμογής. Επιλέξτε τα φυσικά ηχεία ή ακουστικά σας μέσα στην εφαρμογή. Τα προγράμματα οδήγησης του υλικού τους διατηρούνται.",
-      "Το VB-CABLE υπάρχει ήδη και θα επαναχρησιμοποιηθεί. Το SoundCurrent επαναφέρει τη συνηθισμένη έξοδο όταν απενεργοποιείται ή όταν χρησιμοποιείτε το %1."
+      "Το VB-CABLE υπάρχει ήδη και θα επαναχρησιμοποιηθεί. Το SoundCurrent επαναφέρει τη συνηθισμένη έξοδο όταν απενεργοποιείται ή όταν χρησιμοποιείτε το %1.",
+      "Το VB-CABLE είναι καταχωρισμένο ως πρόγραμμα οδήγησης, αλλά δεν έχει διαθέσιμα τελικά σημεία ήχου. Το πρόγραμμα εγκατάστασης προσφέρει επιδιόρθωση: αφαιρέστε το πρόγραμμα οδήγησης, επανεκκινήστε, εγκαταστήστε το ξανά και επανεκκινήστε πάλι."
     ],
     "tr": [
       "Türkçe",
@@ -1812,7 +1826,8 @@
       "Windows, imzalı sürücü yöneticisi için yönetici onayı isteyecektir. Kurulum programı yeniden başlatma gerekip gerekmediğini bildirecektir.",
       "SoundCurrent Audio zaten mevcut. Sürücü kurulumu etkin kalırsa kurulum programı bu uygulamayı kaydeder ve paylaşılan sürücüyü diğer SoundCurrent uygulaması için kullanılabilir tutar.",
       "SoundCurrent Audio, oynatılan sesi uygulama üzerinden yönlendirir. Uygulama içinde fiziksel hoparlörlerinizi veya kulaklığınızı seçin. Donanım sürücüleri korunur.",
-      "VB-CABLE zaten mevcut ve yeniden kullanılacak. SoundCurrent kapatıldığında veya %1 kullandığınızda normal çıkışınızı geri yükler."
+      "VB-CABLE zaten mevcut ve yeniden kullanılacak. SoundCurrent kapatıldığında veya %1 kullandığınızda normal çıkışınızı geri yükler.",
+      "VB-CABLE için bir sürücü kaydı var ancak kullanılabilir ses uç noktası yok. Kurulum onarım sunar: sürücüyü kaldırın, yeniden başlatın, sürücüyü yeniden yükleyin ve tekrar yeniden başlatın."
     ],
     "sv": [
       "Svenska",
@@ -1933,7 +1948,8 @@
       "Windows begär administratörens godkännande för den signerade drivrutinshanteraren. Installationsprogrammet meddelar om en omstart krävs.",
       "SoundCurrent Audio finns redan. Om drivrutinsinstallationen förblir aktiverad registrerar installationsprogrammet denna app och håller den delade drivrutinen tillgänglig för den andra SoundCurrent-appen.",
       "SoundCurrent Audio leder uppspelningen genom appen. Välj dina fysiska högtalare eller hörlurar i appen. Deras hårdvarudrivrutiner bevaras.",
-      "VB-CABLE finns redan och återanvänds. SoundCurrent återställer din vanliga utgång när det stängs av eller när du använder %1."
+      "VB-CABLE finns redan och återanvänds. SoundCurrent återställer din vanliga utgång när det stängs av eller när du använder %1.",
+      "VB-CABLE är registrerat som drivrutin men har inga användbara ljudslutpunkter. Installationsprogrammet erbjuder reparation: ta bort drivrutinen, starta om, installera den igen och starta om en gång till."
     ],
     "da": [
       "Dansk",
@@ -2054,7 +2070,8 @@
       "Windows vil bede om administratorgodkendelse til det signerede program til administration af drivere. Installationsprogrammet fortæller, om en genstart er nødvendig.",
       "SoundCurrent Audio findes allerede. Hvis driveropsætning forbliver aktiveret, registrerer installationsprogrammet denne app og holder den delte driver tilgængelig for den anden SoundCurrent-app.",
       "SoundCurrent Audio sender afspilningen gennem appen. Vælg dine fysiske højttalere eller hovedtelefoner i appen. Deres hardwaredrivere bevares.",
-      "VB-CABLE findes allerede og genbruges. SoundCurrent gendanner din normale udgang, når det slås fra, eller når du bruger %1."
+      "VB-CABLE findes allerede og genbruges. SoundCurrent gendanner din normale udgang, når det slås fra, eller når du bruger %1.",
+      "VB-CABLE er registreret som driver, men har ingen brugbare lydendepunkter. Installationsprogrammet tilbyder reparation: fjern driveren, genstart, installer den igen, og genstart endnu en gang."
     ],
     "nb": [
       "Norsk bokmål",
@@ -2175,7 +2192,8 @@
       "Windows ber om administratorgodkjenning for den signerte driverbehandleren. Installasjonsprogrammet forteller om en omstart er nødvendig.",
       "SoundCurrent Audio finnes allerede. Hvis driveroppsettet fortsatt er aktivert, registrerer installasjonsprogrammet denne appen og holder den delte driveren tilgjengelig for den andre SoundCurrent-appen.",
       "SoundCurrent Audio sender avspillingen gjennom appen. Velg de fysiske høyttalerne eller hodetelefonene dine i appen. Maskinvaredriverne deres beholdes.",
-      "VB-CABLE finnes allerede og brukes på nytt. SoundCurrent gjenoppretter den vanlige utgangen når det slås av eller du bruker %1."
+      "VB-CABLE finnes allerede og brukes på nytt. SoundCurrent gjenoppretter den vanlige utgangen når det slås av eller du bruker %1.",
+      "VB-CABLE er registrert som driver, men har ingen brukbare lydendepunkter. Installasjonsprogrammet tilbyr reparasjon: fjern driveren, start på nytt, installer den igjen og start på nytt en gang til."
     ],
     "fi": [
       "Suomi",
@@ -2296,7 +2314,8 @@
       "Windows pyytää järjestelmänvalvojan hyväksyntää allekirjoitetulle ajurien hallintaohjelmalle. Asennusohjelma ilmoittaa, tarvitaanko uudelleenkäynnistys.",
       "SoundCurrent Audio on jo olemassa. Jos ajurin määritys pysyy käytössä, asennusohjelma rekisteröi tämän sovelluksen ja pitää jaetun ajurin toisen SoundCurrent-sovelluksen käytettävissä.",
       "SoundCurrent Audio reitittää toiston sovelluksen kautta. Valitse fyysiset kaiuttimet tai kuulokkeet sovelluksessa. Niiden laiteajurit säilytetään.",
-      "VB-CABLE on jo olemassa ja sitä käytetään uudelleen. SoundCurrent palauttaa tavallisen lähtösi, kun taajuuskorjain kytketään pois päältä tai valitset %1."
+      "VB-CABLE on jo olemassa ja sitä käytetään uudelleen. SoundCurrent palauttaa tavallisen lähtösi, kun taajuuskorjain kytketään pois päältä tai valitset %1.",
+      "VB-CABLE on rekisteröity ohjaimeksi, mutta sillä ei ole käytettäviä äänen päätepisteitä. Asennusohjelma tarjoaa korjausta: poista ohjain, käynnistä tietokone uudelleen, asenna ohjain uudelleen ja käynnistä tietokone vielä kerran uudelleen."
     ],
     "ro": [
       "Română",
@@ -2417,7 +2436,8 @@
       "Windows va solicita aprobare de administrator pentru managerul de drivere semnat. Programul de instalare vă va informa dacă este necesară o repornire.",
       "SoundCurrent Audio este deja prezent. Dacă configurarea driverului rămâne activată, programul de instalare va înregistra această aplicație și va păstra driverul partajat disponibil pentru cealaltă aplicație SoundCurrent.",
       "SoundCurrent Audio direcționează redarea prin aplicație. Alegeți boxele sau căștile fizice în aplicație. Driverele lor hardware sunt păstrate.",
-      "VB-CABLE este deja prezent și va fi reutilizat. SoundCurrent restabilește ieșirea obișnuită când este dezactivat sau când utilizați %1."
+      "VB-CABLE este deja prezent și va fi reutilizat. SoundCurrent restabilește ieșirea obișnuită când este dezactivat sau când utilizați %1.",
+      "VB-CABLE este înregistrat ca driver, dar nu are puncte terminale audio utilizabile. Programul de instalare oferă repararea: eliminați driverul, reporniți, reinstalați și reporniți din nou."
     ],
     "hu": [
       "Magyar",
@@ -2538,7 +2558,8 @@
       "A Windows rendszergazdai jóváhagyást kér az aláírt illesztőprogram-kezelőhöz. A telepítő jelzi, ha újraindítás szükséges.",
       "A SoundCurrent Audio már jelen van. Ha az illesztőprogram beállítása engedélyezve marad, a telepítő regisztrálja ezt az alkalmazást, és a megosztott illesztőprogramot elérhetővé teszi a másik SoundCurrent alkalmazás számára.",
       "A SoundCurrent Audio az alkalmazáson keresztül irányítja a lejátszást. Válassza ki a fizikai hangszóróit vagy fejhallgatóját az alkalmazásban. A hardveres illesztőprogramjaik megmaradnak.",
-      "A VB-CABLE már jelen van, és újra felhasználásra kerül. A SoundCurrent kikapcsoláskor vagy a(z) %1 használatakor visszaállítja a szokásos kimenetet."
+      "A VB-CABLE már jelen van, és újra felhasználásra kerül. A SoundCurrent kikapcsoláskor vagy a(z) %1 használatakor visszaállítja a szokásos kimenetet.",
+      "A VB-CABLE illesztőprogramként regisztrálva van, de nincsenek használható hangvégpontjai. A telepítő javítást kínál: távolítsa el az illesztőprogramot, indítsa újra a gépet, telepítse újra, majd ismét indítsa újra a gépet."
     ],
     "ar": [
       "العربية",
@@ -2659,7 +2680,8 @@
       "سيطلب Windows موافقة المسؤول لتشغيل مدير برامج التشغيل الموقّع. سيخبرك برنامج التثبيت إذا كانت إعادة التشغيل مطلوبة.",
       "SoundCurrent Audio موجود بالفعل. إذا ظل إعداد برنامج التشغيل مفعّلًا، فسيسجّل برنامج التثبيت هذا التطبيق ويبقي برنامج التشغيل المشترك متاحًا لتطبيق SoundCurrent الآخر.",
       "يوجّه SoundCurrent Audio تشغيل الصوت عبر التطبيق. اختر مكبرات الصوت أو سماعات الرأس الفعلية داخل التطبيق. تبقى برامج تشغيل أجهزتها محفوظة.",
-      "VB-CABLE موجود بالفعل وسيُستخدم مجددًا. يعيد SoundCurrent إخراج الصوت المعتاد عند تعطيله أو عند استخدام %1."
+      "VB-CABLE موجود بالفعل وسيُستخدم مجددًا. يعيد SoundCurrent إخراج الصوت المعتاد عند تعطيله أو عند استخدام %1.",
+      "VB-CABLE مسجّل كبرنامج تشغيل، لكن لا توجد نقاط نهاية صوتية قابلة للاستخدام. يتيح برنامج الإعداد الإصلاح: أزل برنامج التشغيل، ثم أعد تشغيل الكمبيوتر، وأعد تثبيته، ثم أعد تشغيل الكمبيوتر مرة أخرى."
     ],
     "he": [
       "עברית",
@@ -2780,7 +2802,8 @@
       "Windows יבקש אישור מנהל מערכת עבור תוכנת ניהול מנהלי ההתקנים החתומה. תוכנית ההתקנה תודיע אם נדרשת הפעלה מחדש.",
       "SoundCurrent Audio כבר קיים. אם הגדרת מנהל ההתקן תישאר מופעלת, תוכנית ההתקנה תרשום יישום זה ותשאיר את מנהל ההתקן המשותף זמין ליישום SoundCurrent האחר.",
       "SoundCurrent Audio מנתב את ההשמעה דרך היישום. בחרו את הרמקולים או האוזניות הפיזיים בתוך היישום. מנהלי ההתקנים של החומרה נשמרים.",
-      "VB-CABLE כבר קיים וייעשה בו שימוש חוזר. SoundCurrent משחזר את הפלט הרגיל כשהוא מושבת או כשמשתמשים ב־%1."
+      "VB-CABLE כבר קיים וייעשה בו שימוש חוזר. SoundCurrent משחזר את הפלט הרגיל כשהוא מושבת או כשמשתמשים ב־%1.",
+      "VB-CABLE רשום כמנהל התקן, אך אין נקודות קצה שמע שמישות. תוכנית ההתקנה מציעה תיקון: להסיר את מנהל ההתקן, להפעיל מחדש, להתקין שוב ולהפעיל מחדש פעם נוספת."
     ],
     "fa": [
       "فارسی",
@@ -2901,7 +2924,8 @@
       "Windows برای مدیر درایور دارای امضای دیجیتال تأیید مدیر سیستم را درخواست می‌کند. نصب‌کننده اعلام می‌کند که آیا راه‌اندازی مجدد لازم است.",
       "SoundCurrent Audio از قبل موجود است. اگر راه‌اندازی درایور فعال بماند، نصب‌کننده این برنامه را ثبت می‌کند و درایور مشترک را برای برنامهٔ دیگر SoundCurrent در دسترس نگه می‌دارد.",
       "SoundCurrent Audio پخش صدا را از طریق برنامه هدایت می‌کند. بلندگوها یا هدفون فیزیکی خود را در برنامه انتخاب کنید. درایورهای سخت‌افزاری آن‌ها حفظ می‌شوند.",
-      "VB-CABLE از قبل موجود است و دوباره استفاده خواهد شد. SoundCurrent هنگام غیرفعال شدن یا استفاده از %1، خروجی معمول شما را بازمی‌گرداند."
+      "VB-CABLE از قبل موجود است و دوباره استفاده خواهد شد. SoundCurrent هنگام غیرفعال شدن یا استفاده از %1، خروجی معمول شما را بازمی‌گرداند.",
+      "VB-CABLE به‌عنوان درایور ثبت شده است، اما هیچ نقطهٔ پایانی صوتی قابل استفاده‌ای ندارد. برنامهٔ نصب امکان تعمیر را می‌دهد: درایور را حذف کنید، رایانه را راه‌اندازی مجدد کنید، درایور را دوباره نصب کنید و رایانه را بار دیگر راه‌اندازی مجدد کنید."
     ],
     "zh-Hans": [
       "简体中文",
@@ -3022,7 +3046,8 @@
       "Windows 将为已签名的驱动程序管理器请求管理员批准。安装程序会告知您是否需要重启。",
       "SoundCurrent Audio 已存在。如果保持启用驱动程序设置，安装程序会注册此应用，并保留共享驱动程序供另一个 SoundCurrent 应用使用。",
       "SoundCurrent Audio 将播放的音频经由此应用传送。请在应用内选择实际的扬声器或耳机。它们的硬件驱动程序会被保留。",
-      "VB-CABLE 已存在，将继续使用。关闭 SoundCurrent 的均衡器或使用 %1 时，会恢复常规输出。"
+      "VB-CABLE 已存在，将继续使用。关闭 SoundCurrent 的均衡器或使用 %1 时，会恢复常规输出。",
+      "VB-CABLE 已有驱动程序记录，但没有可用的音频端点。安装程序提供修复选项：卸载驱动程序、重启电脑、重新安装，然后再次重启电脑。"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -3143,7 +3168,8 @@
       "Windows 將為已簽署的驅動程式管理工具要求系統管理員核准。安裝程式會告知您是否需要重新啟動。",
       "SoundCurrent Audio 已存在。若保持啟用驅動程式設定，安裝程式會註冊此應用程式，並保留共用驅動程式供另一個 SoundCurrent 應用程式使用。",
       "SoundCurrent Audio 會透過此應用程式傳送播放的音訊。請在應用程式內選擇實際的喇叭或耳機。它們的硬體驅動程式會被保留。",
-      "VB-CABLE 已存在，將繼續使用。停用 SoundCurrent 的等化器或使用 %1 時，會恢復一般輸出。"
+      "VB-CABLE 已存在，將繼續使用。停用 SoundCurrent 的等化器或使用 %1 時，會恢復一般輸出。",
+      "VB-CABLE 已有驅動程式記錄，但沒有可用的音訊端點。安裝程式提供修復選項：解除安裝驅動程式、重新啟動電腦、重新安裝，然後再次重新啟動電腦。"
     ],
     "ja": [
       "日本語",
@@ -3264,7 +3290,8 @@
       "Windows は署名済みドライバーマネージャーに対する管理者の承認を求めます。再起動が必要な場合はセットアップが通知します。",
       "SoundCurrent Audio は既に存在します。ドライバーのセットアップを有効にしたままにすると、セットアップはこのアプリを登録し、もう一方の SoundCurrent アプリで共有ドライバーを使用できる状態を維持します。",
       "SoundCurrent Audio は再生音声をアプリ経由で送ります。アプリ内で実際のスピーカーまたはヘッドホンを選択してください。それらのハードウェアドライバーは保持されます。",
-      "VB-CABLE は既に存在し、再利用されます。SoundCurrent はオフにしたとき、または %1 を使用したときに通常の出力を復元します。"
+      "VB-CABLE は既に存在し、再利用されます。SoundCurrent はオフにしたとき、または %1 を使用したときに通常の出力を復元します。",
+      "VB-CABLE のドライバーは登録されていますが、使用可能なオーディオエンドポイントがありません。セットアップでは修復が可能です。ドライバーを削除し、パソコンを再起動してから再インストールし、もう一度再起動してください。"
     ],
     "ko": [
       "한국어",
@@ -3385,7 +3412,8 @@
       "Windows가 서명된 드라이버 관리 프로그램의 실행을 위한 관리자 승인을 요청합니다. 설치 프로그램이 재시작이 필요한지 알려줍니다.",
       "SoundCurrent Audio가 이미 있습니다. 드라이버 설정을 활성화한 상태로 두면 설치 프로그램이 이 앱을 등록하고 다른 SoundCurrent 앱에서도 공유 드라이버를 사용할 수 있도록 유지합니다.",
       "SoundCurrent Audio는 재생 오디오를 앱을 통해 전달합니다. 앱 안에서 실제 스피커나 헤드폰을 선택하세요. 해당 하드웨어 드라이버는 유지됩니다.",
-      "VB-CABLE이 이미 있으며 재사용됩니다. SoundCurrent의 이퀄라이저를 끄거나 %1을 사용하면 원래 출력을 복원합니다."
+      "VB-CABLE이 이미 있으며 재사용됩니다. SoundCurrent의 이퀄라이저를 끄거나 %1을 사용하면 원래 출력을 복원합니다.",
+      "VB-CABLE 드라이버가 등록되어 있지만 사용 가능한 오디오 엔드포인트가 없습니다. 설치 프로그램에서 복구할 수 있습니다. 드라이버를 제거하고 컴퓨터를 다시 시작한 후 재설치하고 컴퓨터를 한 번 더 다시 시작하세요."
     ],
     "hi": [
       "हिन्दी",
@@ -3506,7 +3534,8 @@
       "Windows हस्ताक्षरित ड्राइवर प्रबंधक के लिए व्यवस्थापक की अनुमति माँगेगा। इंस्टॉलर बताएगा कि पुनः शुरू करना आवश्यक है या नहीं।",
       "SoundCurrent Audio पहले से मौजूद है। ड्राइवर सेटअप सक्षम रहने पर इंस्टॉलर इस ऐप को पंजीकृत करेगा और साझा ड्राइवर को दूसरे SoundCurrent ऐप के लिए उपलब्ध रखेगा।",
       "SoundCurrent Audio प्लेबैक को ऐप के ज़रिए भेजता है। ऐप में अपने वास्तविक स्पीकर या हेडफ़ोन चुनें। उनके हार्डवेयर ड्राइवर सुरक्षित रखे जाते हैं।",
-      "VB-CABLE पहले से मौजूद है और दोबारा इस्तेमाल किया जाएगा। SoundCurrent बंद किए जाने या %1 इस्तेमाल करने पर आपका सामान्य आउटपुट वापस बहाल करता है।"
+      "VB-CABLE पहले से मौजूद है और दोबारा इस्तेमाल किया जाएगा। SoundCurrent बंद किए जाने या %1 इस्तेमाल करने पर आपका सामान्य आउटपुट वापस बहाल करता है।",
+      "VB-CABLE का ड्राइवर रिकॉर्ड मौजूद है, लेकिन उपयोग करने योग्य ऑडियो एंडपॉइंट नहीं हैं। सेटअप मरम्मत का विकल्प देता है: ड्राइवर हटाएँ, कंप्यूटर रीस्टार्ट करें, फिर से इंस्टॉल करें और दोबारा रीस्टार्ट करें।"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -3627,7 +3656,8 @@
       "Windows akan meminta persetujuan administrator untuk pengelola driver yang ditandatangani. Penginstal akan memberi tahu jika perlu memulai ulang.",
       "SoundCurrent Audio sudah ada. Jika penyiapan driver tetap diaktifkan, penginstal akan mendaftarkan aplikasi ini dan menjaga driver bersama tetap tersedia untuk aplikasi SoundCurrent lainnya.",
       "SoundCurrent Audio mengarahkan pemutaran melalui aplikasi. Pilih speaker atau headphone fisik Anda di dalam aplikasi. Driver perangkat kerasnya dipertahankan.",
-      "VB-CABLE sudah ada dan akan digunakan kembali. SoundCurrent memulihkan keluaran normal saat dinonaktifkan atau saat Anda menggunakan %1."
+      "VB-CABLE sudah ada dan akan digunakan kembali. SoundCurrent memulihkan keluaran normal saat dinonaktifkan atau saat Anda menggunakan %1.",
+      "VB-CABLE terdaftar sebagai driver, tetapi tidak memiliki titik akhir audio yang dapat digunakan. Penginstal menawarkan perbaikan: hapus driver, mulai ulang, instal kembali, lalu mulai ulang sekali lagi."
     ],
     "vi": [
       "Tiếng Việt",
@@ -3748,7 +3778,8 @@
       "Windows sẽ yêu cầu quản trị viên chấp thuận cho trình quản lý trình điều khiển đã ký. Trình cài đặt sẽ cho biết có cần khởi động lại hay không.",
       "SoundCurrent Audio đã có sẵn. Nếu thiết lập trình điều khiển vẫn được bật, trình cài đặt sẽ đăng ký ứng dụng này và giữ trình điều khiển dùng chung cho ứng dụng SoundCurrent còn lại.",
       "SoundCurrent Audio định tuyến âm thanh phát qua ứng dụng. Chọn loa hoặc tai nghe vật lý của bạn trong ứng dụng. Trình điều khiển phần cứng của chúng được giữ nguyên.",
-      "VB-CABLE đã có sẵn và sẽ được dùng lại. SoundCurrent khôi phục đầu ra thông thường khi bị tắt hoặc khi bạn dùng %1."
+      "VB-CABLE đã có sẵn và sẽ được dùng lại. SoundCurrent khôi phục đầu ra thông thường khi bị tắt hoặc khi bạn dùng %1.",
+      "VB-CABLE có bản ghi trình điều khiển nhưng không có điểm cuối âm thanh dùng được. Trình cài đặt cung cấp tùy chọn sửa chữa: gỡ trình điều khiển, khởi động lại, cài đặt lại rồi khởi động lại lần nữa."
     ],
     "th": [
       "ไทย",
@@ -3869,7 +3900,8 @@
       "Windows จะขออนุมัติจากผู้ดูแลระบบสำหรับโปรแกรมจัดการไดรเวอร์ที่มีลายเซ็นดิจิทัล โปรแกรมติดตั้งจะแจ้งว่าจำเป็นต้องรีสตาร์ตหรือไม่",
       "มี SoundCurrent Audio อยู่แล้ว หากยังเปิดใช้งานการตั้งค่าไดรเวอร์ โปรแกรมติดตั้งจะลงทะเบียนแอปนี้และคงไดรเวอร์ที่ใช้ร่วมกันไว้ให้แอป SoundCurrent อีกแอปใช้งาน",
       "SoundCurrent Audio ส่งเสียงที่เล่นผ่านแอป เลือกลำโพงหรือหูฟังจริงของคุณภายในแอป ไดรเวอร์ฮาร์ดแวร์ของอุปกรณ์เหล่านั้นจะยังคงอยู่",
-      "มี VB-CABLE อยู่แล้วและจะใช้ต่อไป SoundCurrent จะคืนค่าเอาต์พุตปกติเมื่อปิดใช้งานหรือเมื่อคุณใช้ %1"
+      "มี VB-CABLE อยู่แล้วและจะใช้ต่อไป SoundCurrent จะคืนค่าเอาต์พุตปกติเมื่อปิดใช้งานหรือเมื่อคุณใช้ %1",
+      "VB-CABLE มีข้อมูลไดรเวอร์ที่ลงทะเบียนไว้ แต่ไม่มีจุดปลายทางเสียงที่ใช้งานได้ โปรแกรมติดตั้งมีตัวเลือกซ่อมแซม: ถอนการติดตั้งไดรเวอร์ รีสตาร์ทคอมพิวเตอร์ ติดตั้งใหม่ แล้วรีสตาร์ทอีกครั้ง"
     ],
     "sw": [
       "Kiswahili",
@@ -3990,7 +4022,8 @@
       "Windows itaomba idhini ya msimamizi kwa kidhibiti cha viendeshi chenye sahihi ya kidijitali. Kisakinishi kitakujulisha ikiwa kuanzisha upya kunahitajika.",
       "SoundCurrent Audio tayari ipo. Ikiwa usanidi wa kiendeshi unabaki umewezeshwa, kisakinishi kitasajili programu hii na kuweka kiendeshi kinachoshirikiwa kipatikane kwa programu nyingine ya SoundCurrent.",
       "SoundCurrent Audio huelekeza sauti inayochezwa kupitia programu. Chagua spika au vipokea sauti vyako halisi ndani ya programu. Viendeshi vya vifaa hivyo huhifadhiwa.",
-      "VB-CABLE tayari ipo na itatumika tena. SoundCurrent hurejesha utoaji wako wa kawaida wa sauti inapozimwa au unapotumia %1."
+      "VB-CABLE tayari ipo na itatumika tena. SoundCurrent hurejesha utoaji wako wa kawaida wa sauti inapozimwa au unapotumia %1.",
+      "VB-CABLE imesajiliwa kama kiendeshi, lakini haina sehemu za mwisho za sauti zinazoweza kutumika. Kisakinishi kinatoa chaguo la kurekebisha: ondoa kiendeshi, anzisha kompyuta upya, sakinisha tena, kisha anzisha kompyuta upya mara nyingine."
     ],
     "nn": [
       "Norsk nynorsk",
@@ -4111,7 +4144,8 @@
       "Windows ber om administratorgodkjenning for den signerte drivarhandsamaren. Installasjonsprogrammet seier frå om ein omstart er nødvendig.",
       "SoundCurrent Audio finst allereie. Dersom drivaroppsettet framleis er aktivert, registrerer installasjonsprogrammet denne appen og held den delte drivaren tilgjengeleg for den andre SoundCurrent-appen.",
       "SoundCurrent Audio sender avspelinga gjennom appen. Vel dei fysiske høgtalarane eller hovudtelefonane dine i appen. Maskinvaredrivarane deira vert bevarte.",
-      "VB-CABLE finst allereie og vert brukt på nytt. SoundCurrent gjenopprettar den vanlege utgangen når det vert slått av eller du brukar %1."
+      "VB-CABLE finst allereie og vert brukt på nytt. SoundCurrent gjenopprettar den vanlege utgangen når det vert slått av eller du brukar %1.",
+      "VB-CABLE er registrert som drivar, men har ingen brukande lydendepunkt. Installasjonsprogrammet tilbyr reparasjon: fjern drivaren, start på nytt, installer han på nytt og start på nytt ein gong til."
     ]
   },
   "requiredCompleteLocales": [

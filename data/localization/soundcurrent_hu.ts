@@ -2430,6 +2430,11 @@ Importálja a könyvtárba?</translation>
       <translation>Rendszer területi beállításainak használata</translation>
     </message>
     <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>A VB-CABLE illesztőprogramként regisztrálva van, de nincsenek használható hangvégpontjai. A telepítő javítást kínál: távolítsa el az illesztőprogramot, indítsa újra a gépet, telepítse újra, majd ismét indítsa újra a gépet.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
       <translation>A VB-CABLE már telepítve van. Ha most telepítették vagy frissítették, indítsa újra a Windowst a hangszínszabályzó vagy a VB-CABLE beállításainak használata előtt. Ellenkező esetben válassza ki a hangszórókat a SoundCurrentben.</translation>
     </message>

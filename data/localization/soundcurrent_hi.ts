@@ -2430,6 +2430,11 @@ Import into your library?</source>
       <translation>सिस्टम की क्षेत्रीय सेटिंग इस्तेमाल करें</translation>
     </message>
     <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>VB-CABLE का ड्राइवर रिकॉर्ड मौजूद है, लेकिन उपयोग करने योग्य ऑडियो एंडपॉइंट नहीं हैं। सेटअप मरम्मत का विकल्प देता है: ड्राइवर हटाएँ, कंप्यूटर रीस्टार्ट करें, फिर से इंस्टॉल करें और दोबारा रीस्टार्ट करें।</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
       <translation>VB-CABLE पहले से स्थापित है। यदि इसे अभी स्थापित या अपडेट किया गया है, तो इक्वलाइज़र या VB-CABLE की सेटिंग उपयोग करने से पहले Windows को पुनरारंभ करें। अन्यथा, SoundCurrent में अपने स्पीकर चुनें।</translation>
     </message>

@@ -2430,6 +2430,11 @@ Impor ke pustaka Anda?</translation>
       <translation>Gunakan pengaturan wilayah sistem</translation>
     </message>
     <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>VB-CABLE terdaftar sebagai driver, tetapi tidak memiliki titik akhir audio yang dapat digunakan. Penginstal menawarkan perbaikan: hapus driver, mulai ulang, instal kembali, lalu mulai ulang sekali lagi.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
       <translation>VB-CABLE sudah terpasang. Jika baru saja dipasang atau diperbarui, mulai ulang Windows sebelum menggunakan equalizer atau pengaturan VB-CABLE. Jika tidak, pilih speaker Anda di SoundCurrent.</translation>
     </message>

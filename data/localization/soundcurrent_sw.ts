@@ -2430,6 +2430,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Tumia mipangilio ya eneo ya mfumo</translation>
     </message>
     <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>VB-CABLE imesajiliwa kama kiendeshi, lakini haina sehemu za mwisho za sauti zinazoweza kutumika. Kisakinishi kinatoa chaguo la kurekebisha: ondoa kiendeshi, anzisha kompyuta upya, sakinisha tena, kisha anzisha kompyuta upya mara nyingine.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
       <translation>VB-CABLE tayari imesakinishwa. Ikiwa imesakinishwa au kusasishwa hivi karibuni, anzisha Windows upya kabla ya kutumia kisawazishi au mipangilio ya VB-CABLE. Vinginevyo, chagua spika zako katika SoundCurrent.</translation>
     </message>

@@ -2430,6 +2430,11 @@ Import into your library?</source>
       <translation>שימוש בהגדרות האזוריות של המערכת</translation>
     </message>
     <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>VB-CABLE רשום כמנהל התקן, אך אין נקודות קצה שמע שמישות. תוכנית ההתקנה מציעה תיקון: להסיר את מנהל ההתקן, להפעיל מחדש, להתקין שוב ולהפעיל מחדש פעם נוספת.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
       <translation>VB-CABLE כבר מותקן. אם הוא הותקן או עודכן זה עתה, הפעילו מחדש את Windows לפני השימוש באקולייזר או בהגדרות VB-CABLE. אחרת, בחרו ברמקולים שלכם ב-SoundCurrent.</translation>
     </message>

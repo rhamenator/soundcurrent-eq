@@ -2430,6 +2430,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Sistem yerel ayarını kullan</translation>
     </message>
     <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>VB-CABLE için bir sürücü kaydı var ancak kullanılabilir ses uç noktası yok. Kurulum onarım sunar: sürücüyü kaldırın, yeniden başlatın, sürücüyü yeniden yükleyin ve tekrar yeniden başlatın.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
       <translation>VB-CABLE zaten yüklü. Yeni yüklendiyse veya güncellendiyse ekolayzırı veya VB-CABLE ayarlarını kullanmadan önce Windows’u yeniden başlatın. Aksi takdirde SoundCurrent içinde hoparlörlerinizi seçin.</translation>
     </message>

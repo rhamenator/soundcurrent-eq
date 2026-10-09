@@ -2430,6 +2430,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Dùng thiết lập vùng của hệ thống</translation>
     </message>
     <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>VB-CABLE có bản ghi trình điều khiển nhưng không có điểm cuối âm thanh dùng được. Trình cài đặt cung cấp tùy chọn sửa chữa: gỡ trình điều khiển, khởi động lại, cài đặt lại rồi khởi động lại lần nữa.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
       <translation>VB-CABLE đã được cài đặt. Nếu vừa được cài đặt hoặc cập nhật, hãy khởi động lại Windows trước khi sử dụng bộ cân bằng âm thanh hoặc cài đặt VB-CABLE. Nếu không, hãy chọn loa trong SoundCurrent.</translation>
     </message>

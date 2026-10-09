@@ -8,6 +8,7 @@ from pathlib import Path
 import localization as catalog
 
 SOURCES = {
+    'SCCableRepair': 'VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.',
     'SCCablePresent': 'VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.',
     'SCQuitAction': 'Quit app',
     'SCNativeRouting': 'SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.',
@@ -62,11 +63,12 @@ def export(destination, product):
                 captions['SCNativeApproval'] = translations['SCNativeApproval']
                 captions['SCSharedDriverNotice'] = translations['SCSharedDriverNotice']
             if route == 'cable':
+                captions['SCCableRepair'] = translations['SCCableRepair']
                 captions['SCCablePresent'] = translations['SCCablePresent'].replace('%1', translations['SCQuitAction'])
                 captions['SCCableRestart'] = translations['SCCableRestart']
             variants[route] = {'captions': captions, 'nsisEscaped': {key: nsis_escape(text) for key, text in captions.items()}}
         languages[row['tag']] = variants
-    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable guidance only',
+    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair guidance only',
               'installerLocaleActivationComplete': False, 'nativeSpeakerVerified': False,
               'sources': SOURCES, 'languages': languages}
     destination.parent.mkdir(parents=True, exist_ok=True)

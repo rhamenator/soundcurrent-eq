@@ -2430,6 +2430,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>Käytä järjestelmän alueasetuksia</translation>
     </message>
     <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>VB-CABLE on rekisteröity ohjaimeksi, mutta sillä ei ole käytettäviä äänen päätepisteitä. Asennusohjelma tarjoaa korjausta: poista ohjain, käynnistä tietokone uudelleen, asenna ohjain uudelleen ja käynnistä tietokone vielä kerran uudelleen.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
       <translation>VB-CABLE on jo asennettu. Jos se on juuri asennettu tai päivitetty, käynnistä Windows uudelleen ennen taajuuskorjaimen tai VB-CABLEn asetusten käyttöä. Muussa tapauksessa valitse kaiuttimet SoundCurrentissa.</translation>
     </message>

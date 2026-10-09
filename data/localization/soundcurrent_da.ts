@@ -2430,6 +2430,11 @@ Importér til dit bibliotek?</translation>
       <translation>Brug systemets landestandard</translation>
     </message>
     <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>VB-CABLE er registreret som driver, men har ingen brugbare lydendepunkter. Installationsprogrammet tilbyder reparation: fjern driveren, genstart, installer den igen, og genstart endnu en gang.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
       <translation>VB-CABLE er allerede installeret. Hvis det lige er blevet installeret eller opdateret, skal du genstarte Windows, før du bruger equalizeren eller VB-CABLE-indstillingerne. Ellers skal du vælge dine højttalere i SoundCurrent.</translation>
     </message>

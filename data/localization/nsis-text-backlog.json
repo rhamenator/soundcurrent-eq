@@ -206,9 +206,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 104,
       "kind": "control-caption",
-      "literal": "VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCCableRepair)",
+      "marked": true,
+      "reviewStatus": "all locale repair translations prepared; activation and installed layout pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",
