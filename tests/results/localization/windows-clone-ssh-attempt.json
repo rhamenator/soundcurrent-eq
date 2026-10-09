@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-09T02:02:33.619825+00:00",
+  "vm": "soundcurrent-localization-win11-qa",
+  "disk": "/var/lib/libvirt/images/soundcurrent-localization-win11-qa.qcow2",
+  "MAC": "52:54:00:20:0d:25",
+  "verifiedLease": "192.168.122.98",
+  "login": "desktop confirmed using saved owner credential",
+  "accessScript": "D:\\setup-ssh.ps1 -Run",
+  "elevation": "Microsoft Windows PowerShell UAC accepted on independent clone",
+  "capabilityInstallation": "running when graceful shutdown requested; outcome not verified",
+  "sshProbe": "timeout before authentication",
+  "applicationInstallersExecuted": false,
+  "originalsModified": false,
+  "nativeReviewed": false,
+  "nextAction": "Inspect Windows capability state before rerunning setup; do not assume successful guest access",
+  "shutdown": "Guest shows Shutting down; libvirt still running at last observation; not forced off"
+}
