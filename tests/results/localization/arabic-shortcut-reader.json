@@ -1,0 +1,9 @@
+{
+  "observations": "All four links have Shell Link header 4C0000000114020000000000C000000000000046; action sizes 2586/1644/1351 bytes. Copying setup link to GUID ASCII filename resolves target PowerShell and -Language ar correctly.",
+  "change": "Fixture reads checksum-identical ASCII temporary copy, releases COM objects, cleans copy, verifies target and locale; original filename presence checks retained",
+  "hostQualification": "34-locale parser/expectation helper and no-Run guard passed both products",
+  "actualModifiedHarness": "not yet run in Windows",
+  "originalArabicShortcutDesktopActivation": "pending; ASCII copy resolution does not prove native Explorer activation",
+  "vm": "gracefully shut off",
+  "nativeReviewed": false
+}

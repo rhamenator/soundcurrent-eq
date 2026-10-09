@@ -15,6 +15,24 @@ function Get-LocaleExpectation($Catalog,$Map,[string]$Tag) {
  if(!$pack.shortcutCaptions){throw 'Missing localized shortcut inventory'}
  [pscustomobject]@{tag=$Tag;id=$row[0].windowsLanguageId;captions=$pack.shortcutCaptions}
 }
+function Read-ShortcutData([string]$Path) {
+ # WScript's reader returned empty fields for Arabic filenames in the test guest.
+ # Inspect identical bytes under an ASCII name; original presence is checked above.
+ $temporary=Join-Path ([IO.Path]::GetTempPath()) ([guid]::NewGuid().ToString('N')+'.lnk')
+ if($temporary -match '[^\x00-\x7F]'){throw 'Shortcut fixture requires an ASCII temporary path'}
+ $shell=$null;$shortcut=$null
+ try {
+  Copy-Item -LiteralPath $Path -Destination $temporary
+  if((Get-FileHash -LiteralPath $Path).Hash -ne (Get-FileHash -LiteralPath $temporary).Hash){throw 'Shortcut copy checksum mismatch'}
+  $shell=New-Object -ComObject WScript.Shell
+  $shortcut=$shell.CreateShortcut($temporary)
+  [pscustomobject]@{TargetPath=$shortcut.TargetPath;Arguments=$shortcut.Arguments}
+ }finally {
+  if($shortcut){[void][Runtime.InteropServices.Marshal]::ReleaseComObject($shortcut)}
+  if($shell){[void][Runtime.InteropServices.Marshal]::ReleaseComObject($shell)}
+  Remove-Item -LiteralPath $temporary -ErrorAction SilentlyContinue
+ }
+}
 function Assert($value,$message){if(!$value){throw $message}}
 function Execute([string]$file,[string]$arguments){
  $p=Start-Process -FilePath $file -ArgumentList $arguments -PassThru
@@ -73,13 +91,11 @@ try {
    $link=Join-Path $shortcutFolder ($caption+'.lnk')
    Assert ((Test-Path -LiteralPath $link) -eq ($current -contains $caption)) 'Missing current or stale localized shortcut'
   }
-  $shell=New-Object -ComObject WScript.Shell
   foreach($action in @('SCShortcutSetup','SCShortcutCableSettings')){
-   $link=$shell.CreateShortcut((Join-Path $shortcutFolder ($expected.captions.$action+'.lnk')))
+   $link=Read-ShortcutData (Join-Path $shortcutFolder ($expected.captions.$action+'.lnk'))
+   Assert ($link.TargetPath.EndsWith('\WindowsPowerShell\v1.0\powershell.exe',[StringComparison]::OrdinalIgnoreCase)) 'Helper shortcut target mismatch'
    Assert ($link.Arguments.Contains('-Language "'+$expected.tag+'"')) 'Helper shortcut locale argument mismatch'
-   [void][Runtime.InteropServices.Marshal]::ReleaseComObject($link)
   }
-  [void][Runtime.InteropServices.Marshal]::ReleaseComObject($shell)
   if(!$marker){
    New-Item $settings -Force | Out-Null
    New-ItemProperty $settings -Name $sentinel -Value 'preserve-settings' -PropertyType String | Out-Null
