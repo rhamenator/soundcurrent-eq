@@ -17,7 +17,7 @@ METHODS = {'setText':0, 'setToolTip':0, 'setAccessibleName':0,
            'addTab':1, 'insertTab':2, 'setInformativeText':0,
            'setStatusTip':0, 'setWhatsThis':0,
            'getOpenFileName':1, 'getSaveFileName':1,
-           'information':1, 'warning':1, 'critical':1, 'question':1}
+           'information':(1,2), 'warning':(1,2), 'critical':(1,2), 'question':(1,2)}
 CONSTRUCTORS = ('QLabel','QPushButton','QCheckBox','QGroupBox','QRadioButton',
                 'QTableWidgetItem')
 # Brand identities and standard unit symbols are intentional display literals.
@@ -33,8 +33,9 @@ def inventory(root):
         candidates.update({kind:0 for kind in CONSTRUCTORS})
         # Named QMessageBox declarations have icon, title and body arguments.
         for match in re.finditer(r'^\s*QMessageBox\s+(\w+)\s*\(',code,re.M):
-            candidates[match.group(1)] = 1
-        for method,index in candidates.items():
+            candidates[match.group(1)] = (1,2)
+        for method,indices in candidates.items():
+          for index in (indices if isinstance(indices, tuple) else (indices,)):
             for args in catalog.calls(code,method):
                 if len(args)<=index:
                     continue

@@ -758,6 +758,8 @@ class CatalogTests(unittest.TestCase):
                 'tabs->addTab(panel, "Audio tab"); '
                 'tabs->insertTab(0, panel, QStringLiteral("Routing tab")); '
                 'dialog.setInformativeText("Diagnostic detail"); '
+                'QMessageBox::warning(parent, SC_TR("Translated title"), "Unmarked body"); '
+                '\nQMessageBox named(QMessageBox::Warning, "Named title", QStringLiteral("Named body"));\n '
                 'action->setStatusTip("Status guidance"); '
                 'panel->setWhatsThis("Help guidance"); '
                 'tabs->addTab(panel, SC_TR("Already translated")); '
@@ -765,7 +767,7 @@ class CatalogTests(unittest.TestCase):
             rows = audit.inventory(root)['candidates']
             self.assertEqual({row['literal'] for row in rows}, {
                 'Audio tab', 'Routing tab', 'Diagnostic detail',
-                'Status guidance', 'Help guidance'})
+                'Status guidance', 'Help guidance', 'Unmarked body', 'Named title', 'Named body'})
 
     def test_external_installer_label_is_protected_in_reviewed_instruction(self):
         source = 'The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.'
