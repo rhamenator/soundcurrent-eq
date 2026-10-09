@@ -1,0 +1,2243 @@
+{
+  "scope": "Dynamic arguments to known Qt display sinks; expressions need manual provenance review. Contains-translation-call is informational and does not prove all fragments are localized.",
+  "expressionCount": 314,
+  "expressions": [
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "setText",
+      "argument": 0,
+      "expression": "QLocale().toString(v)+QLocale().percent()",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "setText",
+      "argument": 0,
+      "expression": "on?SC_TR(\"Hide advanced controls\"):SC_TR(\"Show advanced controls\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "setText",
+      "argument": 0,
+      "expression": "QLocale().toString(sliders_[i]->value())+QLocale().percent()",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Bass adds low-frequency weight; Clarity adds high-frequency detail; Ambience adds room reflections; Surround widens stereo; Dynamic Boost compresses and raises quieter material with a peak ceiling. Boosting can increase output level.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "soundcurrent::i18n::text(effectParameters[i].name)",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "soundcurrent::i18n::text(p.name)",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "addRow",
+      "argument": 0,
+      "expression": "help",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "addRow",
+      "argument": 0,
+      "expression": "soundcurrent::i18n::text(effectParameters[i].name)",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "addRow",
+      "argument": 0,
+      "expression": "soundcurrent::i18n::text(p.name)",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "addRow",
+      "argument": 0,
+      "expression": "box",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "addRow",
+      "argument": 0,
+      "expression": "reset",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "advanced?SC_TR(\"Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.\"):SC_TR(\"Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "QLocale().toString(0)+QLocale().percent()",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Show advanced controls\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Reset enhancements\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "QGroupBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Sound enhancements\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "QGroupBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Advanced enhancement controls\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "p.source + \"\\n\" + p.conditions + \"\\n\" + p.provenance",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Published response and editable correction curves\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "table->horizontalHeaderItem(c)->text()",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Equipment profiles by brand family and model\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Equipment type\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Equipment brand\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Equipment family\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Equipment subtype\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "setWindowTitle",
+      "argument": 0,
+      "expression": "SC_TR(\"Equipment profile editor\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "setWindowTitle",
+      "argument": 0,
+      "expression": "SC_TR(\"Equipment profiles — brand / family / model\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "setPlaceholderText",
+      "argument": 0,
+      "expression": "SC_TR(\"Search brand, family, model or measurement conditions\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"All equipment\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Speaker\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Microphone\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Amplifier\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"All subtypes\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "soundcurrent::i18n::equipmentTypeText(type)",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"All brands\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"All families\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "name",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Microphone\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Speaker\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Amplifier\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Speaker\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Microphone\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Amplifier\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addRow",
+      "argument": 0,
+      "expression": "label",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addRow",
+      "argument": 0,
+      "expression": "i",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addRow",
+      "argument": 0,
+      "expression": "r",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addRow",
+      "argument": 0,
+      "expression": "int r",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "getOpenFileName",
+      "argument": 1,
+      "expression": "SC_TR(\"Import equipment profile\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "getOpenFileName",
+      "argument": 1,
+      "expression": "SC_TR(\"Import relative measured response\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "getSaveFileName",
+      "argument": 1,
+      "expression": "SC_TR(\"Export profile\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "warning",
+      "argument": 1,
+      "expression": "SC_TR(\"Save profile\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "warning",
+      "argument": 1,
+      "expression": "SC_TR(\"Profile\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "warning",
+      "argument": 1,
+      "expression": "SC_TR(\"Import\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "warning",
+      "argument": 1,
+      "expression": "SC_TR(\"Response import\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "warning",
+      "argument": 1,
+      "expression": "SC_TR(\"Export\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "warning",
+      "argument": 2,
+      "expression": "e.what()",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "warning",
+      "argument": 2,
+      "expression": "QString::fromUtf8(e.what())",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "warning",
+      "argument": 2,
+      "expression": "e.what()",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "warning",
+      "argument": 2,
+      "expression": "e.what()",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "warning",
+      "argument": 2,
+      "expression": "SC_TR(\"Cannot save profile.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points \"\n            \"or edit the table. Saving preserves the reference and creates a custom copy.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"This imports measured RESPONSE, not already-inverted EQ gains. Confirm \"\n                                     \"equipment type. Absolute SPL needs normalization before import.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Published measurement sources: <a href=\\\"https://www.spinorama.org/\\\">Speaker measurements / EQ</a> \"\n        \"· <a href=\\\"https://support.daytonaudio.com/microphonecalibrationtool\\\">Dayton serial \"\n        \"calibration</a> · <a href=\\\"https://www.minidsp.com/products/acoustic-measurement/umik-1\\\">miniDSP \"\n        \"serial calibration</a> · <a href=\\\"https://www.neumann.com/de-de/downloads/\\\">Neumann microphone \"\n        \"graphs</a> · <a href=\\\"https://docs.audio-technica.com/us/at2020_english.pdf\\\">AT2020 response \"\n        \"graph</a> · <a \"\n        \"href=\\\"https://www.soundstagenetwork.com/\"\n        \"index.php?Itemid=154&amp;id=97&amp;option=com_content&amp;view=category\\\">Amplifier \"\n        \"measurements</a>\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Add filter\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Remove selected filter\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "label",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "box",
+      "argument": 1,
+      "expression": "title",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "box",
+      "argument": 2,
+      "expression": "text",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/localization.h",
+      "call": "setText",
+      "argument": 0,
+      "expression": "text(\"Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.\").arg(done).arg(total)",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/localization.h",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "text(\"Interface language\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/localization.h",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "text(\"Number and date format\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/localization.h",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "text(\"Use system language\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/localization.h",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "l.nativeName+\" (\"+l.tag+\")\"",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/localization.h",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "text(\"Expanded test language\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/localization.h",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "text(\"Right-to-left test language\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/localization.h",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "text(\"Use system locale\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/localization.h",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "locale.nativeLanguageName()+\" — \"+locale.nativeTerritoryName()+\" (\"+tag+\")\"",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/localization.h",
+      "call": "addRow",
+      "argument": 0,
+      "expression": "text(\"Interface language\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/localization.h",
+      "call": "addRow",
+      "argument": 0,
+      "expression": "text(\"Number and date format\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/localization.h",
+      "call": "addRow",
+      "argument": 0,
+      "expression": "help",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/localization.h",
+      "call": "QGroupBox",
+      "argument": 0,
+      "expression": "text(\"Language and regional settings\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "QString(SC_TR(\"%1%2 dB\")).arg(outputGainDb() > 0 ? \"+\" : \"\")\n                                      .arg(QLocale().toString(outputGainDb(), 'f', 1))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "balance_->value() == 0 ? SC_TR(\"Center\")\n                               : QString(\"%1 %2%\").arg(balance_->value() < 0 ? SC_TR(\"L\") : SC_TR(\"R\"))\n                                     .arg(std::abs(balance_->value()))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "message",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Audio setup is running. Processing is paused; the app remains open.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "QString(SC_TR(\"%1 %2%3 dB\")).arg(soundcurrent::i18n::text(micNames[i].toUtf8().constData()))\n                                      .arg(micSliders_[i]->value() > 0 ? \"+\" : \"\")\n                                      .arg(QLocale().toString(micSliders_[i]->value() / 2.0, 'f', 1))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "QString(SC_TR(\"%1%2 dB\")).arg(micGain_->value() > 0 ? \"+\" : \"\")\n                                   .arg(QLocale().toString(micGain_->value() / 2.0, 'f', 1))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Microphone EQ is off.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "QString(SC_TR(\"%1 %2%3 dB\")).arg(soundcurrent::i18n::text(names[i].toUtf8().constData()))\n                                           .arg(value > 0 ? \"+\" : \"\").arg(QLocale().toString(value / 2.0, 'f', 1))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "soundcurrent::i18n::audioErrorText(QString::fromUtf8(error.what()))",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "QString(SC_TR(\"%1%2 dB\")).arg(value > 0 ? \"+\" : \"\")\n                                       .arg(QLocale().toString(value / 2.0, 'f', 1))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "soundcurrent::i18n::audioErrorText(QString::fromUtf8(error.what()))",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "message.section('\\n', -1)",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "QString(SC_TR(\"%1%2 dB\")).arg(value > 0 ? \"+\" : \"\")\n                                          .arg(QLocale().toString(value, 'f', 1))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "value == 0 ? SC_TR(\"Center\")\n                                   : QString(\"%1 %2%\").arg(value < 0 ? SC_TR(\"L\") : SC_TR(\"R\")).arg(std::abs(value))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "QString(SC_TR(\"%1%2 dB\")).arg(outputGainDb() > 0 ? \"+\" : \"\")\n                                      .arg(QLocale().toString(outputGainDb(), 'f', 1))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "balance_->value() == 0 ? SC_TR(\"Center\")\n                               : QString(\"%1 %2%\").arg(balance_->value() < 0 ? SC_TR(\"L\") : SC_TR(\"R\"))\n                                     .arg(std::abs(balance_->value()))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "editable ? SC_TR(\"Lock EQ\") : SC_TR(\"Unlock EQ\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Cannot start measurement: %1\").arg(soundcurrent::i18n::audioErrorText(QString::fromUtf8(error.what())))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Connect an output and a microphone before measuring.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Playing quiet test audio. Stop if it is uncomfortable.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Could not start the measurement.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Measurement stopped.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Measurement failed. Try a higher test level or move the mic closer.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Measurement data was incomplete.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Suggested changes to the playback EQ\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"System response profile editor opened. Saved profiles are available in the equipment library.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Suggested EQ applied. Use Save preset to keep it.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Current EQ kept.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "micDisconnectNotice_ + SC_TR(\"Microphone EQ is off.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "micDisconnectNotice_.isEmpty() ? SC_TR(\"No microphone connected.\")\n                                                               : micDisconnectNotice_ + SC_TR(\"No microphone connected.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "micDisconnectNotice_ + SC_TR(\"Natural mic EQ on · %1\").arg(desired.description) +\n                                (!usbConnected ? usbMicrophoneHint() : \"\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Microphone error: %1\").arg(soundcurrent::i18n::audioErrorText(QString::fromUtf8(error.what())))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"On · Playing through %1\").arg(device.description)",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "on ? SC_TR(\"Turn equalizer off\") : SC_TR(\"Turn equalizer on\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Estimated peak: EQ off\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Estimated peak: waiting for audio\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "db >= -1.0\n                                     ? soundcurrent::i18n::numberWithUnit(SC_TR(\"Clipping risk · estimated peak %1 dBFS\"),\n                                           QLocale().toString(db, 'f', 1), QStringLiteral(\"dBFS\"))\n                                     : soundcurrent::i18n::numberWithUnit(SC_TR(\"Estimated peak %1 dBFS\"),\n                                           QLocale().toString(db, 'f', 1), QStringLiteral(\"dBFS\"))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "(band.gain > 0 ? \"+\" : \"\") + QLocale().toString(band.gain, 'g', 3)",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "frequencyLabel(band.frequency)",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "soundcurrent::i18n::numberWithUnit(SC_TR(\"Auto headroom %1 dB\"),\n            QLocale().toString(headroom(processingBands()), 'f', 1), QStringLiteral(\"dB\"))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "names.isEmpty() ? SC_TR(\"No imported equipment correction selected.\") : names.join(\"\\n\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Saved preset “%1”.\").arg(name)",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Equalizer is off. Windows selected the physical output directly.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Selected output was unplugged. Switched to automatic output.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"No output device is connected.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "on ? SC_TR(\"Equalizer on\") : SC_TR(\"Equalizer off\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Equalizer is off. Your audio uses its normal output.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Audio error: %1\").arg(soundcurrent::i18n::audioErrorText(message))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Click to turn the equalizer on or off\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Exit SoundCurrent EQ and restore normal audio\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Move toward L or R to reduce the opposite channel; center keeps both at full level\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Estimated post-EQ output peak, including post gain and balance\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Show a falling peak hold line on each frequency level\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Automatically shape a connected microphone; click to bypass the microphone EQ\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Adjust this tone band around the natural voice profile\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Play quiet test audio and preview suggested playback EQ changes\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Start quiet. Raise only if the microphone cannot hear the tones.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Prevent changes to presets, EQ bands, post gain, and balance\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Restore the previous EQ setting (Ctrl+Z)\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "QStringLiteral(\"SoundCurrent EQ · \") + (on ? SC_TR(\"Equalizer on\") : SC_TR(\"Equalizer off\"))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Estimated post-EQ level near this frequency\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "SC_TR(\"Select this band to edit frequency, gain, and Q\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "QString(SC_TR(\"Estimated output near %1: %2 dBFS\"))\n                                     .arg(frequencyLabel(bands_[i].frequency)).arg(db, 0, 'f', 1)",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "argument": 0,
+      "expression": "soundcurrent::i18n::numberWithUnit(\n                SC_TR(\"Estimated overall output peak: %1 dBFS\"),\n                QLocale().toString(db, 'f', 1), QStringLiteral(\"dBFS\"))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Equalizer curve. Select a point or drag it to adjust frequency and gain.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Equalizer and configuration pages\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Output device\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Equalizer on or off\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Quit SoundCurrent EQ\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Post gain after equalization\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Post gain value in decibels\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Left right balance\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Balance position\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Estimated overall output level\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Estimated output peak and clipping risk\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Level indicator refresh interval\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Show peak markers on frequency levels\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Open VB-CABLE control panel\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Speaker model profile\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Speaker manufacturer\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Speaker type\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Import create and edit equipment profiles\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Amplifier model profile\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Microphone input device\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Natural microphone equalizer on or off\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Microphone %1 adjustment\").arg(soundcurrent::i18n::text(micNames[i].toUtf8().constData()))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Microphone gain adjustment\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Second virtual cable for microphone EQ\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Calibration test signal\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Measure speaker room and microphone response\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Calibration tone level\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Listening preset\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Lock equalizer settings\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Undo last equalizer change\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Number of equalizer bands\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Selected band frequency\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Selected band gain\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "SC_TR(\"Selected band filter Q\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "QString(SC_TR(\"Band %1 gain\")).arg(i + 1)",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "QString(SC_TR(\"Estimated output level near band %1\")).arg(i + 1)",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setAccessibleName",
+      "argument": 0,
+      "expression": "QString(SC_TR(\"Select band %1\")).arg(i + 1)",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setWindowTitle",
+      "argument": 0,
+      "expression": "SC_TR(\"Speaker and room measurement\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"None — use my own EQ\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "profile.name",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"All manufacturers\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"All speaker types\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "soundcurrent::i18n::equipmentTypeText(type)",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"None — use my own EQ\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "profile.name",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Plug in your microphone to select a microphone profile\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Quiet logarithmic sweep\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Separate quiet tones\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "device.description + (device.channels == 1 ? SC_TR(\" · mono\") : SC_TR(\" · stereo\"))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "inputs_.isEmpty() ? SC_TR(\"Plug in your microphone to select a microphone profile\")\n                                                     : SC_TR(\"Automatic (follow connected microphones)\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "device.description + (device.channels == 1 ? SC_TR(\" · mono\") : SC_TR(\" · stereo\"))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "profile->name",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "p.name+SC_TR(\" (restored selection)\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"None — use my own EQ\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "p.name+(matches?QString():SC_TR(\" (currently selected)\"))",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Automatic (SoundCurrent Microphone)\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "c.description",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "soundcurrent::i18n::text(name.toUtf8().constData())",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "it.key()",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Custom\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "SC_TR(\"Automatic (follow connected devices)\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addItem",
+      "argument": 0,
+      "expression": "device.description",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addAction",
+      "argument": 0,
+      "expression": "SC_TR(\"Open\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addAction",
+      "argument": 0,
+      "expression": "power_->isChecked() ? SC_TR(\"Turn equalizer off\") : SC_TR(\"Turn equalizer on\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addAction",
+      "argument": 0,
+      "expression": "SC_TR(\"Quit SoundCurrent EQ\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Save system response profile\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Apply suggested EQ\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Keep current EQ\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setItemText",
+      "argument": 1,
+      "expression": "SC_TR(\"Automatic (follow connected microphones)\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setItemText",
+      "argument": 1,
+      "expression": "QString::fromUtf8(\"Bibliothèque / 棚型\")",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addTab",
+      "argument": 1,
+      "expression": "SC_TR(\"Equalizer\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "addTab",
+      "argument": 1,
+      "expression": "SC_TR(\"Settings && calibration\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setInformativeText",
+      "argument": 0,
+      "expression": "SC_TR(\"Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.\\n\\n%1\").arg(suggestion->preview)",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "getOpenFileName",
+      "argument": 1,
+      "expression": "SC_TR(\"Import measured amplifier correction\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "information",
+      "argument": 1,
+      "expression": "SC_TR(\"Audio setup\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "information",
+      "argument": 1,
+      "expression": "SC_TR(\"Amplifier profile details\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "information",
+      "argument": 1,
+      "expression": "SC_TR(\"Speaker profile details\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "information",
+      "argument": 2,
+      "expression": "message",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "information",
+      "argument": 2,
+      "expression": "SC_TR(\"No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "information",
+      "argument": 2,
+      "expression": "SC_TR(\"No model correction selected. Your listening EQ works normally.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "warning",
+      "argument": 1,
+      "expression": "SC_TR(\"Audio setup could not finish\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "warning",
+      "argument": 2,
+      "expression": "message",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Post gain\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Balance\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"L\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"R\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Overall output\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Estimated peak: waiting for audio\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Level refresh\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Equalizer is off. Your audio uses its normal output.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Manufacturer\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Type\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Amplifier / receiver\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "soundcurrent::i18n::text(micNames[i].toUtf8().constData())",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Mic gain\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Waiting for a microphone.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Microphone route\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Speaker + room check\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Test level\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Bands\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Drag curve points or tune the selected band below.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Selected band\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Frequency\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Gain\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Filter Q\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Refresh devices\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Quit app\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Audio driver setup\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"VB-CABLE settings\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Profile details\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Browse all equipment profiles / editor\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Clear imported equipment corrections\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Import measured profile\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Amp details\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Reset mic tone\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Measure\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Stop tones\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Save preset\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Reset to flat\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Lock EQ\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Undo\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QCheckBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Equalizer off\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QCheckBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Peak markers\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QCheckBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Natural mic EQ\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QGroupBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Output device\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QGroupBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Playback\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QGroupBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Speaker model correction\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QGroupBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Microphone\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QGroupBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Speaker && room calibration\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QGroupBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Listening preset\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "QGroupBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Equalizer\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "preview",
+      "argument": 1,
+      "expression": "SC_TR(\"Apply amplifier correction?\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "preview",
+      "argument": 2,
+      "expression": "soundcurrent::i18n::amplifierPreviewText(profile->name, profile->conditions, profile->source)",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "details",
+      "argument": 1,
+      "expression": "SC_TR(\"Amplifier profile details\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "details",
+      "argument": 1,
+      "expression": "SC_TR(\"Speaker profile details\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "details",
+      "argument": 2,
+      "expression": "soundcurrent::i18n::amplifierDetailsText(p.name, p.conditions, p.source,\n                    QString::fromUtf8(QJsonDocument(p.json.value(\"filters\").toArray()).toJson()))",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "details",
+      "argument": 2,
+      "expression": "text",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "box",
+      "argument": 1,
+      "expression": "SC_TR(\"Equalizer conflict\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "box",
+      "argument": 2,
+      "expression": "reason",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/startup_controls.h",
+      "call": "warning",
+      "argument": 1,
+      "expression": "SC_TR(\"Startup\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/startup_controls.h",
+      "call": "warning",
+      "argument": 2,
+      "expression": "SC_TR(\"Could not update startup settings.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/startup_controls.h",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/startup_controls.h",
+      "call": "QCheckBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Start when I sign in\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/startup_controls.h",
+      "call": "QGroupBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Startup\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "setText",
+      "argument": 0,
+      "expression": "message",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Checking for published updates…\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"The update response was invalid. No installer was opened.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "setText",
+      "argument": 0,
+      "expression": "SC_TR(\"No newer published release found. Downloaded installers are also checked.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Installed version: %1\").arg(version_)",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "QLabel",
+      "argument": 0,
+      "expression": "SC_TR(\"Checks published releases and downloaded installers. No update is installed automatically.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Check for updates\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Open release downloads\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Open update folder\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "QPushButton",
+      "argument": 0,
+      "expression": "SC_TR(\"Choose update folder…\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "QCheckBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Remind me when updates are available or a restart is needed\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "QCheckBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Include preview releases\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
+      "call": "QGroupBox",
+      "argument": 0,
+      "expression": "SC_TR(\"Application updates\")",
+      "containsTranslationCall": true
+    }
+  ],
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false,
+  "sourceHashes": {
+    "src/accelerating_spinbox.h": "2231066a20cf4ee5dced8d99e9ae78e311dbec0c2eea9579b34d4bda67923223",
+    "src/audio_error_text.h": "45426afb00c16ba5d9f96d19045dab8ffda48946edb6be1395afb156f75c5554",
+    "src/audio_setup_arguments.h": "dbe9b08e198a66d85883f49e6eac0cde0fcea995106224e63b2a949d3b109336",
+    "src/dsp.cpp": "273cbcbd1e2112f98d54840c1af7621f7339a4122624b53d50bc51086add9647",
+    "src/dsp.h": "6cf3bbf1fa880d6159bffbed215fdb5b2c92c2b995a0b41631a483087adeab2d",
+    "src/enhancement.cpp": "080406017e4b6a88885a72f218279a61443be602811fae5de682c90bd0f0318f",
+    "src/enhancement.h": "25c25e302fe2e05952446ff6cece1fcebac62197165b523e057c9233fd156589",
+    "src/enhancement_controls.h": "a5c3e8358fa8235b9625567e152dc3eb73ba54f13fba8b4fba2202a272262b52",
+    "src/enhancement_ladspa.cpp": "ce4d70573e679c61c2cf62044d3d150fc28cca245d8c79f409b69ee8dd4cef2c",
+    "src/equipment_display_text.h": "e3086d524e9b436075ecf9d9b8c143a0058a692685c10919b72298fd97ec44c5",
+    "src/equipment_profiles.cpp": "83f71e230427be50c03c4c69d80c88f48643a54dc4ddc3d59b34eca655c1b63b",
+    "src/equipment_profiles.h": "34fb124fe9a9177735c3e96b54f947fbdd2881ff175153c29334842c140b9545",
+    "src/localization.h": "118847e5522a946cb8d126e1b1519d01317a337673bc7dbf227ab16316e088fa",
+    "src/localization_text.h": "980dad1105437ab39e17ba1b75937496430abe974a75f65763ddd92fd04c38ec",
+    "src/main.cpp": "c315f54e08e86d342717345b4550c5c3c10c488ac697f70547f40caf1bc89f50",
+    "src/main_windows.cpp": "df16bae0597ddb53f7a31bf2d99bd50f5768f6174265309d254da9b10bebd6c0",
+    "src/processing_guard.cpp": "7357547a751b724be0c1743d94f8318a9f86b5f6b2180911799dc660bd5e74b2",
+    "src/processing_guard.h": "3210a47f6da6b8d019710e052785a90b1b4635182497ca8c64549fb3b31a1913",
+    "src/startup_controls.h": "94cccaea96412bd21f1949463cee81e06980c6e5f207b55f2b8f7dd058acb5af",
+    "src/startup_registration.h": "f9ee3d7f131e0f958b2f95ff1711e9956d4e17b42fbc1de224c87f3fe63c3e36",
+    "src/update_panel.h": "06c037cb6a3c88103459ca40bc9ae25e29757f2a2b66bb0ad8e069977930a074",
+    "src/vendor/ladspa.h": "c72ceb7383f159a944bfe80b1b155795857026aea1155dbe4ecf1664354320ad",
+    "src/windows_audio.cpp": "6499a93ccc8429a6a257fc9c1cd52cdfae11f2045c40b6c5a037c4c614b1d0bd",
+    "src/windows_audio.h": "d34971b56a34a96cb05f4e15e7e954a11918e73f01f4c97f6cfb2bc305eb71a4",
+    "src/windows_audio_session_gate.h": "a83c76a39704438b04926177ed7717387ccba3d5ab98598c2d8f14b0998ce203",
+    "src/windows_audio_setup_test.inc": "30f21bb49445764cdaec31495635f1171b1b33604e5d678ad48028afd2846d26",
+    "src/windows_cable_setup_guard.cpp": "9f49a3a8590368d49f5258459202fde98991e27fd9bbc97e93488fd677fd9fa5",
+    "src/windows_endpoint_identity.h": "fd49a664ea42994fbae4adff183ce244f19375e21190c5b54ef4e39d5615d982",
+    "src/windows_io.cpp": "13362ffd61431d9ea105ebbf5eb55df30b54904adc34a750a4da4bf9bab08ac7",
+    "src/windows_live_conflict_test.inc": "0889ea7d4f4b7c8b701c9765636ca247d1576d44b9aa53a15a6c35564a756c94",
+    "src/windows_live_ui_test.inc": "9f3df878b1943f118355a2b003d2510e880a00c68518e689b8bc801825265b18",
+    "src/windows_managed_route.h": "14518879f006783b89c69024abbb83751ac1f38b3dd5a4e7fe7dff9760f016f1",
+    "src/windows_platform.inc": "211d815bd910f4a06362979b762e919952260ab03cc2e809b482c9dda9f38d51",
+    "src/windows_route_guardian.cpp": "4f683ce99ad6bafe227e293d94a82487157da269642e2e2298fa148bc3dfbf2d"
+  },
+  "reviewStatus": "inventory only; provenance classification in progress"
+}

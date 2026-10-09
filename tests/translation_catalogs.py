@@ -760,6 +760,31 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual([row['literal'] for row in result['candidates']], ['Unmarked label'])
             self.assertFalse(result['wholeInterfaceCoverageProven'])
 
+    def test_dynamic_display_inventory_does_not_assume_translation_coverage(self):
+        spec = importlib.util.spec_from_file_location('ui_audit', Path(__file__).resolve().parents[1] / 'scripts/ui_string_audit.py')
+        audit = importlib.util.module_from_spec(spec)
+        with patch.dict('sys.modules', {'localization': catalog}):
+            spec.loader.exec_module(audit)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'src').mkdir()
+            (root / 'src/panel.cpp').write_text(
+                'label->setText(SC_TR("Device: ") + userName); '
+                'label->setText(QStringLiteral("English prefix: ") + SC_TR("Translated suffix")); '
+                'label->setText(storedName); '
+                'label->setText("Direct literal"); '
+                'label->setAccessibleDescription(userDescription); '
+                '// label->setText(commentOnly);', encoding='utf-8')
+            result = audit.dynamic_inventory(root)
+            rows = result['expressions']
+            self.assertEqual(result['expressionCount'], 4)
+            self.assertEqual(sum(row['containsTranslationCall'] for row in rows), 2)
+            self.assertTrue(any('English prefix: ' in row['expression'] for row in rows))
+            self.assertTrue(any(row['expression'] == 'storedName' for row in rows))
+            self.assertFalse(result['wholeInterfaceCoverageProven'])
+            self.assertFalse(result['nativeReviewed'])
+            self.assertEqual([row['literal'] for row in audit.inventory(root)['candidates']], ['Direct literal'])
+
     def test_display_inventory_covers_tabs_and_help_captions(self):
         spec = importlib.util.spec_from_file_location('ui_audit', Path(__file__).resolve().parents[1] / 'scripts/ui_string_audit.py')
         audit = importlib.util.module_from_spec(spec)

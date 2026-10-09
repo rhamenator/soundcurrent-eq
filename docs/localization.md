@@ -264,3 +264,9 @@ Qt line-edit and rich-text context menus now use the application catalog for Und
 #### Linux platform-theme qualification
 
 The X11 run initially exposed English Save/Close captions through Qt’s `QGnomeTheme`, which the offscreen backend had not exercised. Standard button mapping now accepts that context and its mnemonic markers. GNOME’s “Close without Saving” maps to the existing translated Discard action. All 18 standard button captions are tested in every non-English catalog, alongside the actual text and numeric menus. These checks run with both offscreen and X11 backends in Linux CI; the numeric popup remains inside an isolated test application and does not change playback settings or the system clipboard.
+
+### Dynamic display audit
+
+Run `python3 scripts/ui_string_audit.py --dynamic` to inventory composed arguments to known Qt display methods and constructors. The retained inventory includes hashes of the inspected source files. An inline translation call is informational: an expression can still contain untranslated fragments. Stored names, external device descriptions, catalog-backed helper results, numeric formatting and synthetic test captions require separate provenance classification. Overloaded methods and helper declarations can appear in this lexical inventory; it is not a C++ semantic analysis or a whole-interface coverage certificate.
+
+Linux package run 37886568927 qualified the 636-message catalog at its recorded product source commit across Ubuntu 24.04, Fedora 44 and AlmaLinux 10. Package hashes and 99 installed locale completion logs are retained under `tests/results/localization/linux-636-installed/`. This covers same-package update, removal, configuration preservation and reinstall; it does not establish native-speaker review, a physical RHEL desktop or older-version migration.
