@@ -18,10 +18,12 @@ METHODS = {'setText':0, 'setToolTip':0, 'setAccessibleName':0,
            'addTab':1, 'insertTab':2, 'setInformativeText':0,
            'setStatusTip':0, 'setWhatsThis':0, 'setAccessibleDescription':0,
            'setTitle':0, 'setLabelText':0, 'setButtonText':1, 'setTabText':1,
-           'getOpenFileName':1, 'getSaveFileName':1,
+           'getOpenFileName':1, 'getSaveFileName':1, 'getExistingDirectory':1,
+           'showMessage':(0,1), 'setSuffix':0, 'setPrefix':0,
+           'setHorizontalHeaderLabels':0, 'setVerticalHeaderLabels':0,
            'information':(1,2), 'warning':(1,2), 'critical':(1,2), 'question':(1,2)}
 CONSTRUCTORS = ('QLabel','QPushButton','QCheckBox','QGroupBox','QRadioButton',
-                'QTableWidgetItem')
+                'QTableWidgetItem','QMenu','QAction')
 # Brand identities and standard unit symbols are intentional display literals.
 IDENTITIES = {'SoundCurrent EQ','SoundCurrent Studio','SoundCurrent','Q','Hz','dB','dBFS'}
 

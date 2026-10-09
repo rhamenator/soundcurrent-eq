@@ -1,6 +1,6 @@
 {
   "scope": "Dynamic arguments to known Qt display sinks; expressions need manual provenance review. Contains-translation-call is informational and does not prove all fragments are localized.",
-  "expressionCount": 321,
+  "expressionCount": 330,
   "expressions": [
     {
       "file": "src/enhancement_controls.h",
@@ -77,6 +77,13 @@
       "call": "addRow",
       "argument": 0,
       "expression": "reset",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/enhancement_controls.h",
+      "call": "setSuffix",
+      "argument": 0,
+      "expression": "p.unit",
       "containsTranslationCall": false
     },
     {
@@ -354,6 +361,13 @@
     },
     {
       "file": "src/equipment_profiles.cpp",
+      "call": "setHorizontalHeaderLabels",
+      "argument": 0,
+      "expression": "{SC_TR(\"Type\"), SC_TR(\"Frequency Hz\"), SC_TR(\"Gain dB\"), \"Q\"}",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
       "call": "warning",
       "argument": 1,
       "expression": "SC_TR(\"Save profile\")",
@@ -621,6 +635,20 @@
     {
       "file": "src/localized_file_dialog.h",
       "call": "getSaveFileName",
+      "argument": 1,
+      "expression": "title",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/localized_file_dialog.h",
+      "call": "getExistingDirectory",
+      "argument": 1,
+      "expression": "const QString &title",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/localized_file_dialog.h",
+      "call": "getExistingDirectory",
       "argument": 1,
       "expression": "title",
       "containsTranslationCall": false
@@ -1621,6 +1649,27 @@
     },
     {
       "file": "src/main.cpp",
+      "call": "showMessage",
+      "argument": 0,
+      "expression": "SC_TR(\"Application update\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "showMessage",
+      "argument": 1,
+      "expression": "message",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "showMessage",
+      "argument": 1,
+      "expression": "SC_TR(\"Equalizer is still running. Use the tray icon to reopen or quit.\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
       "call": "information",
       "argument": 1,
       "expression": "SC_TR(\"Audio setup\")",
@@ -2055,6 +2104,13 @@
     },
     {
       "file": "src/main.cpp",
+      "call": "QMenu",
+      "argument": 0,
+      "expression": "this",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
       "call": "preview",
       "argument": 1,
       "expression": "SC_TR(\"Apply amplifier correction?\")",
@@ -2181,6 +2237,13 @@
     },
     {
       "file": "src/update_panel.h",
+      "call": "getExistingDirectory",
+      "argument": 1,
+      "expression": "SC_TR(\"Update download folder\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/update_panel.h",
       "call": "QLabel",
       "argument": 0,
       "expression": "SC_TR(\"Installed version: %1\").arg(version_)",
@@ -2252,7 +2315,6 @@
   ],
   "nativeReviewed": false,
   "wholeInterfaceCoverageProven": false,
-  "reviewStatus": "Whole-interface provenance review incomplete. Complete file-header action captions implemented; external MIME descriptors, broader permission/failure workflows and current native/package checks remain pending.",
   "sourceSha256": {
     "src/accelerating_spinbox.h": "2231066a20cf4ee5dced8d99e9ae78e311dbec0c2eea9579b34d4bda67923223",
     "src/audio_error_text.h": "45426afb00c16ba5d9f96d19045dab8ffda48946edb6be1395afb156f75c5554",
@@ -2291,5 +2353,6 @@
     "src/windows_platform.inc": "211d815bd910f4a06362979b762e919952260ab03cc2e809b482c9dda9f38d51",
     "src/windows_route_guardian.cpp": "4f683ce99ad6bafe227e293d94a82487157da269642e2e2298fa148bc3dfbf2d",
     "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42"
-  }
+  },
+  "reviewStatus": "Whole-interface provenance review incomplete. Complete file-header action captions implemented; external MIME descriptors, broader permission/failure workflows and current native/package checks remain pending."
 }

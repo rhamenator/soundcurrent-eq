@@ -54,8 +54,28 @@
   "nativeReviewed": false,
   "wholeInterfaceCoverageProven": false,
   "remaining": [
-    "Review composed expressions containing translation calls for untranslated owned fragments",
     "External MIME/Windows file association descriptions follow provider behavior",
-    "Current artifact qualification still running"
-  ]
+    "Current artifact qualification still running",
+    "Whole-interface proof also requires checking display sinks outside this lexical inventory"
+  ],
+  "composedCaptionReview": {
+    "scope": "Expressions in dynamic inventory containing translation calls plus concatenation/arg composition; manually inspect producers for setup, microphone status, speaker details, numeric labels, accessibility captions and update panel. Source review does not substitute for every live device workflow.",
+    "reviewedBoundaries": [
+      "Microphone disconnect notice and USB hint are translated complete sentences/fragments; device description remains opaque",
+      "Speaker/amplifier metadata remains opaque; profile selection suffixes and filter/detail helpers translate owned captions",
+      "Tray tooltip uses invariant application name plus translated equalizer status",
+      "Translated gain labels use locale numeric strings; band accessibility counts and coverage totals corrected in latest source",
+      "Balance label uses translated Center/L/R with locale digits and percent sign",
+      "Setup errorString is external Qt/system diagnostic inside translated app template",
+      "Installed version is stable version metadata in translated template"
+    ],
+    "sourceSha256": {
+      "src/main.cpp": "67a782e55e0b1c658a04ca4a8b7a6539ec344d9be786c5a5da74abc3a2a841e4",
+      "src/localization.h": "f430613fdec6915b10791010bdf9f1e36838240571accd041b818ba00e3561b9",
+      "src/localization_text.h": "d9d06c97d3108e857250a419243138cd0939a72a0d19b535666beb1eedcf776c",
+      "src/update_panel.h": "7637f0a9cd4c6b28a2eb3b185f09f21b36c7f98143e3023338fe2de039f7a68d"
+    },
+    "result": "No further owned English prose found in reviewed composed expressions; current runtime/package results still require qualification",
+    "nativeReviewed": false
+  }
 }
