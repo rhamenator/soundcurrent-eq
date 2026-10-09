@@ -115,6 +115,7 @@ def sources():
         # Obvious view literals must be wrapped; machine names/units are explicit exceptions.
         for method, argument in [('setWindowTitle', 0), ('setAccessibleName', 0), ('setToolTip', 0),
                                  ('setPlaceholderText', 0), ('setInformativeText', 0),
+                                 ('setStatusTip', 0), ('setWhatsThis', 0),
                                  ('finish', 0), ('addButton', 0), ('addAction', 0), ('setItemText', 1), ('addTab', 1), ('insertTab', 2), ('button', 0)]:
             for args in calls(code, method):
                 if len(args) <= argument:

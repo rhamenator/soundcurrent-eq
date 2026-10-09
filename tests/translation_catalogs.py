@@ -708,7 +708,9 @@ class CatalogTests(unittest.TestCase):
 
     def test_exact_qt_wrapped_captions_cannot_escape_guard(self):
         for wrapper in ['QStringLiteral', 'QString', 'QLatin1String', 'QLatin1StringView']:
-            for statement in [f'menu->addAction({wrapper}("Untranslated caption"), callback);',
+            for statement in [f'control->setStatusTip({wrapper}("Untranslated caption"));',
+                              f'control->setWhatsThis({wrapper}("Untranslated caption"));',
+                              f'menu->addAction({wrapper}("Untranslated caption"), callback);',
                               f'combo->setItemText(0, {wrapper}("Untranslated caption"));',
                               f'QMessageBox box(QMessageBox::Warning, {wrapper}("Untranslated caption"), message);']:
                 with self.subTest(statement=statement), tempfile.TemporaryDirectory() as directory:

@@ -1,0 +1,595 @@
+Start testing: Oct 08 22:08 EDT
+----------------------------------------------------------
+45/89 Testing: localization
+45/89 Test: localization
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-localization-test"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localization" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+PASS: embedded global catalogs, regional/script fallback, decimal input, invariant JSON and RTL placeholders
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"localization" end time: Oct 08 22:08 EDT
+"localization" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/89 Testing: localized-number-format-de
+46/89 Test: localized-number-format-de
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "ar"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-number-format-de" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: ar -> ar
+<end of output>
+Test time =   0.47 sec
+----------------------------------------------------------
+Test Passed.
+"localized-number-format-de" end time: Oct 08 22:08 EDT
+"localized-number-format-de" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/89 Testing: localized-ui-de
+47/89 Test: localized-ui-de
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "de"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-de" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: de -> de
+<end of output>
+Test time =   0.46 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-de" end time: Oct 08 22:08 EDT
+"localized-ui-de" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/89 Testing: localized-ui-fr
+48/89 Test: localized-ui-fr
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "fr"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-fr" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: fr -> fr
+<end of output>
+Test time =   0.48 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-fr" end time: Oct 08 22:08 EDT
+"localized-ui-fr" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/89 Testing: localized-ui-es
+49/89 Test: localized-ui-es
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "es"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-es" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: es -> es
+<end of output>
+Test time =   0.45 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-es" end time: Oct 08 22:08 EDT
+"localized-ui-es" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/89 Testing: localized-ui-it
+50/89 Test: localized-ui-it
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "it"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-it" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: it -> it
+<end of output>
+Test time =   0.46 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-it" end time: Oct 08 22:08 EDT
+"localized-ui-it" time elapsed: 00:00:00
+----------------------------------------------------------
+
+51/89 Testing: localized-ui-pt-PT
+51/89 Test: localized-ui-pt-PT
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "pt-PT"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-pt-PT" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: pt-PT -> pt-PT
+<end of output>
+Test time =   0.48 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-pt-PT" end time: Oct 08 22:08 EDT
+"localized-ui-pt-PT" time elapsed: 00:00:00
+----------------------------------------------------------
+
+52/89 Testing: localized-ui-pt-BR
+52/89 Test: localized-ui-pt-BR
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "pt-BR"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-pt-BR" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: pt-BR -> pt-BR
+<end of output>
+Test time =   0.46 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-pt-BR" end time: Oct 08 22:08 EDT
+"localized-ui-pt-BR" time elapsed: 00:00:00
+----------------------------------------------------------
+
+53/89 Testing: localized-ui-nl
+53/89 Test: localized-ui-nl
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "nl"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-nl" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: nl -> nl
+<end of output>
+Test time =   0.48 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-nl" end time: Oct 08 22:08 EDT
+"localized-ui-nl" time elapsed: 00:00:00
+----------------------------------------------------------
+
+54/89 Testing: localized-ui-pl
+54/89 Test: localized-ui-pl
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "pl"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-pl" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: pl -> pl
+<end of output>
+Test time =   0.45 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-pl" end time: Oct 08 22:08 EDT
+"localized-ui-pl" time elapsed: 00:00:00
+----------------------------------------------------------
+
+55/89 Testing: localized-ui-cs
+55/89 Test: localized-ui-cs
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "cs"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-cs" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: cs -> cs
+<end of output>
+Test time =   0.44 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-cs" end time: Oct 08 22:08 EDT
+"localized-ui-cs" time elapsed: 00:00:00
+----------------------------------------------------------
+
+56/89 Testing: localized-ui-sk
+56/89 Test: localized-ui-sk
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "sk"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-sk" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: sk -> sk
+<end of output>
+Test time =   0.47 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-sk" end time: Oct 08 22:08 EDT
+"localized-ui-sk" time elapsed: 00:00:00
+----------------------------------------------------------
+
+57/89 Testing: localized-ui-uk
+57/89 Test: localized-ui-uk
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "uk"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-uk" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: uk -> uk
+<end of output>
+Test time =   0.47 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-uk" end time: Oct 08 22:08 EDT
+"localized-ui-uk" time elapsed: 00:00:00
+----------------------------------------------------------
+
+58/89 Testing: localized-ui-ru
+58/89 Test: localized-ui-ru
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "ru"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-ru" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: ru -> ru
+<end of output>
+Test time =   0.46 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-ru" end time: Oct 08 22:08 EDT
+"localized-ui-ru" time elapsed: 00:00:00
+----------------------------------------------------------
+
+59/89 Testing: localized-ui-el
+59/89 Test: localized-ui-el
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "el"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-el" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: el -> el
+<end of output>
+Test time =   0.44 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-el" end time: Oct 08 22:08 EDT
+"localized-ui-el" time elapsed: 00:00:00
+----------------------------------------------------------
+
+60/89 Testing: localized-ui-tr
+60/89 Test: localized-ui-tr
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "tr"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-tr" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: tr -> tr
+<end of output>
+Test time =   0.49 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-tr" end time: Oct 08 22:08 EDT
+"localized-ui-tr" time elapsed: 00:00:00
+----------------------------------------------------------
+
+61/89 Testing: localized-ui-sv
+61/89 Test: localized-ui-sv
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "sv"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-sv" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: sv -> sv
+<end of output>
+Test time =   0.45 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-sv" end time: Oct 08 22:08 EDT
+"localized-ui-sv" time elapsed: 00:00:00
+----------------------------------------------------------
+
+62/89 Testing: localized-ui-da
+62/89 Test: localized-ui-da
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "da"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-da" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: da -> da
+<end of output>
+Test time =   0.46 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-da" end time: Oct 08 22:08 EDT
+"localized-ui-da" time elapsed: 00:00:00
+----------------------------------------------------------
+
+63/89 Testing: localized-ui-nb
+63/89 Test: localized-ui-nb
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "nb"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-nb" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: nb -> nb
+<end of output>
+Test time =   0.45 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-nb" end time: Oct 08 22:08 EDT
+"localized-ui-nb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+64/89 Testing: localized-ui-fi
+64/89 Test: localized-ui-fi
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "fi"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-fi" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: fi -> fi
+<end of output>
+Test time =   0.45 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-fi" end time: Oct 08 22:08 EDT
+"localized-ui-fi" time elapsed: 00:00:00
+----------------------------------------------------------
+
+65/89 Testing: localized-ui-ro
+65/89 Test: localized-ui-ro
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "ro"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-ro" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: ro -> ro
+<end of output>
+Test time =   0.44 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-ro" end time: Oct 08 22:08 EDT
+"localized-ui-ro" time elapsed: 00:00:00
+----------------------------------------------------------
+
+66/89 Testing: localized-ui-hu
+66/89 Test: localized-ui-hu
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "hu"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-hu" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: hu -> hu
+<end of output>
+Test time =   0.45 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-hu" end time: Oct 08 22:08 EDT
+"localized-ui-hu" time elapsed: 00:00:00
+----------------------------------------------------------
+
+67/89 Testing: localized-ui-nn
+67/89 Test: localized-ui-nn
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "nn"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-nn" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: nn -> nn
+<end of output>
+Test time =   0.45 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-nn" end time: Oct 08 22:08 EDT
+"localized-ui-nn" time elapsed: 00:00:00
+----------------------------------------------------------
+
+68/89 Testing: localized-ui-ar
+68/89 Test: localized-ui-ar
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "ar"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-ar" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: ar -> ar
+<end of output>
+Test time =   0.47 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-ar" end time: Oct 08 22:08 EDT
+"localized-ui-ar" time elapsed: 00:00:00
+----------------------------------------------------------
+
+69/89 Testing: localized-ui-he
+69/89 Test: localized-ui-he
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "he"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-he" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: he -> he
+<end of output>
+Test time =   0.48 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-he" end time: Oct 08 22:08 EDT
+"localized-ui-he" time elapsed: 00:00:00
+----------------------------------------------------------
+
+70/89 Testing: localized-ui-fa
+70/89 Test: localized-ui-fa
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "fa"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-fa" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: fa -> fa
+<end of output>
+Test time =   0.47 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-fa" end time: Oct 08 22:08 EDT
+"localized-ui-fa" time elapsed: 00:00:00
+----------------------------------------------------------
+
+71/89 Testing: localized-ui-zh-Hans
+71/89 Test: localized-ui-zh-Hans
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "zh-Hans"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-zh-Hans" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: zh-Hans -> zh-Hans
+<end of output>
+Test time =   0.58 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-zh-Hans" end time: Oct 08 22:08 EDT
+"localized-ui-zh-Hans" time elapsed: 00:00:00
+----------------------------------------------------------
+
+72/89 Testing: localized-ui-zh-Hant
+72/89 Test: localized-ui-zh-Hant
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "zh-Hant"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-zh-Hant" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: zh-Hant -> zh-Hant
+<end of output>
+Test time =   0.55 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-zh-Hant" end time: Oct 08 22:08 EDT
+"localized-ui-zh-Hant" time elapsed: 00:00:00
+----------------------------------------------------------
+
+73/89 Testing: localized-ui-ja
+73/89 Test: localized-ui-ja
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "ja"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-ja" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: ja -> ja
+<end of output>
+Test time =   0.51 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-ja" end time: Oct 08 22:08 EDT
+"localized-ui-ja" time elapsed: 00:00:00
+----------------------------------------------------------
+
+74/89 Testing: localized-ui-ko
+74/89 Test: localized-ui-ko
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "ko"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-ko" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: ko -> ko
+<end of output>
+Test time =   0.49 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-ko" end time: Oct 08 22:08 EDT
+"localized-ui-ko" time elapsed: 00:00:00
+----------------------------------------------------------
+
+75/89 Testing: localized-ui-hi
+75/89 Test: localized-ui-hi
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "hi"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-hi" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: hi -> hi
+<end of output>
+Test time =   0.47 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-hi" end time: Oct 08 22:08 EDT
+"localized-ui-hi" time elapsed: 00:00:00
+----------------------------------------------------------
+
+76/89 Testing: localized-ui-id
+76/89 Test: localized-ui-id
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "id"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-id" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: id -> id
+<end of output>
+Test time =   0.45 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-id" end time: Oct 08 22:08 EDT
+"localized-ui-id" time elapsed: 00:00:00
+----------------------------------------------------------
+
+77/89 Testing: localized-ui-vi
+77/89 Test: localized-ui-vi
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "vi"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-vi" start time: Oct 08 22:08 EDT
+Output:
+----------------------------------------------------------
+Localization UI: vi -> vi
+<end of output>
+Test time =   0.47 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-vi" end time: Oct 08 22:09 EDT
+"localized-ui-vi" time elapsed: 00:00:00
+----------------------------------------------------------
+
+78/89 Testing: localized-ui-th
+78/89 Test: localized-ui-th
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "th"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-th" start time: Oct 08 22:09 EDT
+Output:
+----------------------------------------------------------
+Localization UI: th -> th
+<end of output>
+Test time =   0.49 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-th" end time: Oct 08 22:09 EDT
+"localized-ui-th" time elapsed: 00:00:00
+----------------------------------------------------------
+
+79/89 Testing: localized-ui-sw
+79/89 Test: localized-ui-sw
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "sw"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-sw" start time: Oct 08 22:09 EDT
+Output:
+----------------------------------------------------------
+Localization UI: sw -> sw
+<end of output>
+Test time =   0.47 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-sw" end time: Oct 08 22:09 EDT
+"localized-ui-sw" time elapsed: 00:00:00
+----------------------------------------------------------
+
+80/89 Testing: localized-ui-qps-ploc
+80/89 Test: localized-ui-qps-ploc
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "qps-ploc"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-qps-ploc" start time: Oct 08 22:09 EDT
+Output:
+----------------------------------------------------------
+Localization UI: qps-ploc -> qps-ploc
+<end of output>
+Test time =   0.50 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-qps-ploc" end time: Oct 08 22:09 EDT
+"localized-ui-qps-ploc" time elapsed: 00:00:00
+----------------------------------------------------------
+
+81/89 Testing: localized-ui-qps-rtl
+81/89 Test: localized-ui-qps-rtl
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq" "--localization-ui-test" "--language" "qps-rtl"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"localized-ui-qps-rtl" start time: Oct 08 22:09 EDT
+Output:
+----------------------------------------------------------
+Localization UI: qps-rtl -> qps-rtl
+<end of output>
+Test time =   0.49 sec
+----------------------------------------------------------
+Test Passed.
+"localized-ui-qps-rtl" end time: Oct 08 22:09 EDT
+"localized-ui-qps-rtl" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 08 22:09 EDT
