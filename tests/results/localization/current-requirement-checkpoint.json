@@ -38,15 +38,15 @@
     },
     {
       "requirement": "Changed Linux packages and installed language interfaces",
-      "status": "preceding menu-fix packages verified for recorded hashes; current calibration/profile changes await fresh package qualification",
-      "run": 37886568927,
-      "evidence": "tests/results/localization/linux-636-installed/verified-artifact.json"
+      "status": "preceding directory/default-caption packages downloaded and hash-verified with installed fixtures; latest deletion patch pending fresh qualification",
+      "run": 37895441324,
+      "evidence": "tests/results/localization/linux-688-installed/verified-artifact.json"
     },
     {
       "requirement": "Changed Windows packages and installed language interfaces",
-      "status": "preceding menu-fix packages verified for recorded hashes; current calibration/profile changes await fresh native Windows/package qualification",
-      "run": 37886556997,
-      "evidence": "tests/results/localization/windows-menu-installed-ci/verified-artifact.json"
+      "status": "preceding directory/default-caption installer/executable downloaded and matched installed lifecycle hashes; latest deletion patch pending fresh qualification",
+      "run": 37895446856,
+      "evidence": "tests/results/localization/windows-688-installed/verified-artifact.json"
     },
     {
       "requirement": "Shared localization infrastructure",
@@ -54,7 +54,7 @@
     },
     {
       "requirement": "Reviewable packages and synchronized commits",
-      "status": "preceding Linux/Windows packages downloaded and verified; current calibration/profile source synchronized with this checkpoint; fresh packages pending"
+      "status": "preceding Linux/Windows previews downloaded and verified; latest source synchronized, current patch package checks pending"
     },
     {
       "requirement": "Preserve virtual driver and separately owned DAW",
@@ -91,7 +91,9 @@
     "tests/results/localization/calibration-worker-native-ci.json": "377d797dfc8478b69a02fb63760577d5a2571393c939e35aa1eecbb270467e35",
     "src/equipment_profiles.cpp": "b41db4ef53c46a0c9e7b6745d0ea106fd0185ba9eb30e90f66d7afda8877779d",
     "tests/results/localization/profile-authored-defaults.json": "2d3aa7687f468de8c9b652c2dafd2afae1f929b3d401ac3390a6f691f08156af",
-    "tests/results/localization/qt-file-dialog-gap.json": "fbd98b87887051d111da8d72abb56716cf2a87ace0d927ce8ec98e75aa8f0d6d"
+    "tests/results/localization/qt-file-dialog-gap.json": "fbd98b87887051d111da8d72abb56716cf2a87ace0d927ce8ec98e75aa8f0d6d",
+    "tests/results/localization/linux-688-installed/verified-artifact.json": "435d31a2706acd047f256c13c58b1a084e1160b67d3e7f981ff243a1c5aec32f",
+    "tests/results/localization/windows-688-installed/verified-artifact.json": "78a34e382fe1699e047e6d67922c4ab8e061798f76ed0c3f6e4e45c5b3e7cd01"
   },
   "auditedBaseHead": "a39082b688e3a0ad21e40c39a966ee11c44e5439",
   "sourceIdentity": "Current inspected source files are identified by SHA-256 below; base commit is historical context, not qualification of pending calibration changes",
@@ -243,5 +245,6 @@
   },
   "qt612CompatibilityEvidence": "tests/results/localization/qt-file-dialog-qt612-compatibility.json",
   "fileDisplayLocaleAdapter": "tests/results/localization/file-display-locale-adapter.json",
-  "qt612FixedNativeEvidence": "tests/results/localization/qt-file-dialog-qt612-native-success.json"
+  "qt612FixedNativeEvidence": "tests/results/localization/qt-file-dialog-qt612-native-success.json",
+  "qualifiedPrecedingHead": "6111c989cdc8ec2c08f6b9ce4cc0a921f2dfb781"
 }
