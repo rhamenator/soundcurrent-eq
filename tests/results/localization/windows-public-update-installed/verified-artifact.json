@@ -1,0 +1,11 @@
+{
+  "run": 37903335849,
+  "testedHead": "16ec67362e4875ab893c3d88ea87cc89fc5ce0ea",
+  "result": "passed and downloaded installer/executable hashes matched installed lifecycle",
+  "installerPath": "/home/rich/dev/soundcurrent-localization-artifacts/eq-windows-public-update-37903335849/windows-build/dist/SoundCurrent-EQ-1.1.0-windows-x64-setup.exe",
+  "installerSha256": "0cbd1f7d13959f68555a773a8033545be30607633ca740891a5f1719aa2e9ddc",
+  "executableSha256": "f9388cbe199d758ae54a3511a1bcbe28de66f5bed1666f4e568da8f094443f3d",
+  "installedLocaleLogCount": 34,
+  "scope": "GitHub hosted Windows2022 compiled tests and installed GUI fixtures; fr/nn/ar silent install/same-installer update/preservation/shortcuts/uninstall. No older-version migration, interactive installer/chooser, native-driver lifecycle, live audio or native-speaker review.",
+  "nativeReviewed": false
+}
