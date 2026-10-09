@@ -8,6 +8,7 @@
 #include <QFileDialog>
 #include <QLabel>
 #include <QToolButton>
+#include <QAccessible>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QJsonDocument>
@@ -397,6 +398,23 @@ int main(int argc,char **argv){
       {"newFolderButton","Create new folder"},{"listModeButton","List view"},{"detailModeButton","Detail view"}}) {
      const auto *button=chooser.findChild<QToolButton*>(object);
      require(button && button->toolTip()==text(caption),"Qt fallback chooser navigation tooltip stayed outside app catalog");
+    }
+    for (const auto &[object, description]:std::initializer_list<std::pair<const char*,const char*>>{
+      {"backButton","Go back"},{"forwardButton","Go forward"},{"toParentButton","Go to the parent directory"},
+      {"newFolderButton","Create a New Folder"},{"listModeButton","Change to list view mode"},{"detailModeButton","Change to detail view mode"}}) {
+     auto *button=chooser.findChild<QToolButton*>(object);
+     auto *accessible=QAccessible::queryAccessibleInterface(button);
+     require(accessible && accessible->text(QAccessible::Name)==button->toolTip(),"Qt chooser accessible navigation name differs from translated tooltip");
+     require(accessible->text(QAccessible::Description)==text(description),"Qt chooser accessible navigation description stayed outside app catalog");
+    }
+    auto *sidebar=chooser.findChild<QWidget*>("sidebar");
+    auto *sidebarInterface=QAccessible::queryAccessibleInterface(sidebar);
+    require(sidebarInterface && sidebarInterface->text(QAccessible::Name)==text("Sidebar"),"Qt chooser sidebar accessible name stayed English");
+    require(sidebarInterface->text(QAccessible::Description)==text("List of places and bookmarks"),"Qt chooser sidebar accessible description stayed English");
+    for(const auto *object:{"listView","treeView"}) {
+     auto *view=chooser.findChild<QWidget*>(object);
+     auto *accessible=QAccessible::queryAccessibleInterface(view);
+     require(accessible && accessible->text(QAccessible::Name)==text("Files"),"Qt chooser file view accessible name stayed English");
     }
     const auto *buttons=chooser.findChild<QDialogButtonBox*>("buttonBox");
     require(buttons && buttons->button(QDialogButtonBox::Open)->text()==text("Open"),"Qt chooser Open stayed outside app catalog");

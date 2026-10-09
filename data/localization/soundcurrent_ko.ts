@@ -499,6 +499,16 @@ Import into your library?</source>
       <translation>기본 오디오 엔드포인트 변경</translation>
     </message>
     <message>
+      <source>Change to detail view mode</source>
+      <translation>자세히 보기 모드로 전환</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Change to list view mode</source>
+      <translation>목록 보기 모드로 전환</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Check for updates</source>
       <translation>업데이트 확인</translation>
     </message>
@@ -704,6 +714,11 @@ Import into your library?</source>
     <message>
       <source>Count audio endpoints</source>
       <translation>오디오 엔드포인트 개수 확인</translation>
+    </message>
+    <message>
+      <source>Create a New Folder</source>
+      <translation>새 폴더 만들기</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -996,6 +1011,11 @@ Import into your library?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Files</source>
+      <translation>파일</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Files of type:</source>
       <translation>파일 형식:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -1052,6 +1072,21 @@ Import into your library?</source>
     <message>
       <source>Gaming</source>
       <translation>게임</translation>
+    </message>
+    <message>
+      <source>Go back</source>
+      <translation>뒤로 이동</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go forward</source>
+      <translation>앞으로 이동</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go to the parent directory</source>
+      <translation>부모 디렉터리로 이동</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Headphones</source>
@@ -1326,6 +1361,11 @@ Import into your library?</source>
     <message>
       <source>List audio endpoints</source>
       <translation>오디오 엔드포인트 목록 가져오기</translation>
+    </message>
+    <message>
+      <source>List of places and bookmarks</source>
+      <translation>장소와 책갈피 목록</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>List view</source>
@@ -2245,6 +2285,11 @@ Import into your library?</source>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>주파수 레벨에 피크 마커 표시</translation>
+    </message>
+    <message>
+      <source>Sidebar</source>
+      <translation>사이드바</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Size capture buffer</source>

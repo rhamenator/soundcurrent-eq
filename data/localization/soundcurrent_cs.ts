@@ -499,6 +499,16 @@ Importovat do vaší knihovny?</translation>
       <translation>Změnit výchozí zvukové zařízení</translation>
     </message>
     <message>
+      <source>Change to detail view mode</source>
+      <translation>Změnit na režim s podrobným pohledem</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Change to list view mode</source>
+      <translation>Změnit na režim pohledu se seznamem</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Check for updates</source>
       <translation>Zkontrolovat aktualizace</translation>
     </message>
@@ -704,6 +714,11 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Count audio endpoints</source>
       <translation>Spočítat zvuková zařízení</translation>
+    </message>
+    <message>
+      <source>Create a New Folder</source>
+      <translation>Vytvořit novou složku</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -996,6 +1011,11 @@ Importovat do vaší knihovny?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Files</source>
+      <translation>Soubory</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Files of type:</source>
       <translation>Soubory typu:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -1052,6 +1072,21 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Gaming</source>
       <translation>Hry</translation>
+    </message>
+    <message>
+      <source>Go back</source>
+      <translation>Jít zpět</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go forward</source>
+      <translation>Jít dopředu</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go to the parent directory</source>
+      <translation>Jít do rodičovského adresáře</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Headphones</source>
@@ -1326,6 +1361,11 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>List audio endpoints</source>
       <translation>Vypsat zvuková zařízení</translation>
+    </message>
+    <message>
+      <source>List of places and bookmarks</source>
+      <translation>Seznam míst a záložek</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>List view</source>
@@ -2245,6 +2285,11 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Zobrazit značky špiček frekvenčních úrovní</translation>
+    </message>
+    <message>
+      <source>Sidebar</source>
+      <translation>Postranní panel</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Size capture buffer</source>

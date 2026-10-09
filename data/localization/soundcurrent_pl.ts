@@ -499,6 +499,16 @@ Zaimportować do biblioteki?</translation>
       <translation>Zmienić domyślne urządzenie audio</translation>
     </message>
     <message>
+      <source>Change to detail view mode</source>
+      <translation>Pokaż szczegóły</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Change to list view mode</source>
+      <translation>Pokaż listę</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Check for updates</source>
       <translation>Sprawdź aktualizacje</translation>
     </message>
@@ -704,6 +714,11 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Count audio endpoints</source>
       <translation>Policzyć urządzenia audio</translation>
+    </message>
+    <message>
+      <source>Create a New Folder</source>
+      <translation>Utwórz nowy katalog</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -996,6 +1011,11 @@ Zaimportować do biblioteki?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Files</source>
+      <translation>Pliki</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Files of type:</source>
       <translation>Pliki rodzaju:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -1052,6 +1072,21 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Gaming</source>
       <translation>Gry</translation>
+    </message>
+    <message>
+      <source>Go back</source>
+      <translation>Wróć</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go forward</source>
+      <translation>Przejdź dalej</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go to the parent directory</source>
+      <translation>Przejdź do katalogu wyżej</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Headphones</source>
@@ -1326,6 +1361,11 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>List audio endpoints</source>
       <translation>Wyświetlić listę urządzeń audio</translation>
+    </message>
+    <message>
+      <source>List of places and bookmarks</source>
+      <translation>Lista miejsc i zakładek</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>List view</source>
@@ -2245,6 +2285,11 @@ Zaimportować do biblioteki?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Pokaż znaczniki szczytów na poziomach częstotliwości</translation>
+    </message>
+    <message>
+      <source>Sidebar</source>
+      <translation>Pasek boczny</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Size capture buffer</source>

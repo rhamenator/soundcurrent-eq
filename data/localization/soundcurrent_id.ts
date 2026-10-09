@@ -499,6 +499,16 @@ Impor ke pustaka Anda?</translation>
       <translation>Mengubah titik akhir audio default</translation>
     </message>
     <message>
+      <source>Change to detail view mode</source>
+      <translation>Beralih ke tampilan detail</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Change to list view mode</source>
+      <translation>Beralih ke tampilan daftar</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Check for updates</source>
       <translation>Periksa pembaruan</translation>
     </message>
@@ -704,6 +714,11 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Count audio endpoints</source>
       <translation>Menghitung titik akhir audio</translation>
+    </message>
+    <message>
+      <source>Create a New Folder</source>
+      <translation>Buat folder baru</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -996,6 +1011,11 @@ Impor ke pustaka Anda?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Files</source>
+      <translation>Berkas</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Files of type:</source>
       <translation>Jenis berkas:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -1052,6 +1072,21 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Gaming</source>
       <translation>Game</translation>
+    </message>
+    <message>
+      <source>Go back</source>
+      <translation>Kembali</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go forward</source>
+      <translation>Maju</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go to the parent directory</source>
+      <translation>Buka direktori induk</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Headphones</source>
@@ -1326,6 +1361,11 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>List audio endpoints</source>
       <translation>Mengambil daftar titik akhir audio</translation>
+    </message>
+    <message>
+      <source>List of places and bookmarks</source>
+      <translation>Daftar lokasi dan markah</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>List view</source>
@@ -2245,6 +2285,11 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Tampilkan penanda puncak pada level frekuensi</translation>
+    </message>
+    <message>
+      <source>Sidebar</source>
+      <translation>Bilah sisi</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Size capture buffer</source>

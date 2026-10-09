@@ -151,6 +151,16 @@ public:
             return {};
         }
         if (name == "QFileDialog") {
+            if (action == "Go back") return text("Go back");
+            if (action == "Go forward") return text("Go forward");
+            if (action == "Go to the parent directory") return text("Go to the parent directory");
+            if (action == "Create a New Folder") return text("Create a New Folder");
+            if (action == "Change to list view mode") return text("Change to list view mode");
+            if (action == "Change to detail view mode") return text("Change to detail view mode");
+            if (action == "Sidebar") return text("Sidebar");
+            if (action == "List of places and bookmarks") return text("List of places and bookmarks");
+            if (action == "Files") return text("Files");
+
             if (action == "Look in:") return text("Look in:");
             if (action == "File &name:") return text("File name:");
             if (action == "Files of type:") return text("Files of type:");

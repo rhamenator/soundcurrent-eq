@@ -499,6 +499,16 @@ Import into your library?</source>
       <translation>डिफ़ॉल्ट ऑडियो एंडपॉइंट बदलना</translation>
     </message>
     <message>
+      <source>Change to detail view mode</source>
+      <translation>विस्तृत दृश्य में बदलें</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Change to list view mode</source>
+      <translation>सूची दृश्य में बदलें</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Check for updates</source>
       <translation>अपडेट की जाँच करें</translation>
     </message>
@@ -704,6 +714,11 @@ Import into your library?</source>
     <message>
       <source>Count audio endpoints</source>
       <translation>ऑडियो एंडपॉइंट की संख्या गिनना</translation>
+    </message>
+    <message>
+      <source>Create a New Folder</source>
+      <translation>नया फ़ोल्डर बनाएँ</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -996,6 +1011,11 @@ Import into your library?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Files</source>
+      <translation>फ़ाइलें</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Files of type:</source>
       <translation>फ़ाइलों का प्रकार:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -1052,6 +1072,21 @@ Import into your library?</source>
     <message>
       <source>Gaming</source>
       <translation>गेमिंग</translation>
+    </message>
+    <message>
+      <source>Go back</source>
+      <translation>पीछे जाएँ</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go forward</source>
+      <translation>आगे जाएँ</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go to the parent directory</source>
+      <translation>मूल निर्देशिका में जाएँ</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Headphones</source>
@@ -1326,6 +1361,11 @@ Import into your library?</source>
     <message>
       <source>List audio endpoints</source>
       <translation>ऑडियो एंडपॉइंट की सूची प्राप्त करना</translation>
+    </message>
+    <message>
+      <source>List of places and bookmarks</source>
+      <translation>स्थानों और बुकमार्क की सूची</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>List view</source>
@@ -2245,6 +2285,11 @@ Import into your library?</source>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>आवृत्ति स्तरों पर पीक चिह्न दिखाएँ</translation>
+    </message>
+    <message>
+      <source>Sidebar</source>
+      <translation>पार्श्व पट्टी</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Size capture buffer</source>

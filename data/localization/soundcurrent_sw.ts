@@ -499,6 +499,16 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Kubadilisha sehemu ya mwisho ya sauti chaguomsingi</translation>
     </message>
     <message>
+      <source>Change to detail view mode</source>
+      <translation>Badili kwenda mwonekano wa maelezo</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Change to list view mode</source>
+      <translation>Badili kwenda mwonekano wa orodha</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Check for updates</source>
       <translation>Angalia masasisho</translation>
     </message>
@@ -704,6 +714,11 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Count audio endpoints</source>
       <translation>Kuhesabu sehemu za mwisho za sauti</translation>
+    </message>
+    <message>
+      <source>Create a New Folder</source>
+      <translation>Unda folda mpya</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -996,6 +1011,11 @@ Uingize kwenye maktaba yako?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Files</source>
+      <translation>Faili</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Files of type:</source>
       <translation>Aina ya faili:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -1052,6 +1072,21 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Gaming</source>
       <translation>Michezo</translation>
+    </message>
+    <message>
+      <source>Go back</source>
+      <translation>Rudi nyuma</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go forward</source>
+      <translation>Nenda mbele</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go to the parent directory</source>
+      <translation>Nenda kwenye saraka kuu</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Headphones</source>
@@ -1326,6 +1361,11 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>List audio endpoints</source>
       <translation>Kupata orodha ya sehemu za mwisho za sauti</translation>
+    </message>
+    <message>
+      <source>List of places and bookmarks</source>
+      <translation>Orodha ya maeneo na alamisho</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>List view</source>
@@ -2245,6 +2285,11 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Onyesha alama za kilele kwenye viwango vya masafa</translation>
+    </message>
+    <message>
+      <source>Sidebar</source>
+      <translation>Upau wa pembeni</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Size capture buffer</source>

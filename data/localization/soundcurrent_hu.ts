@@ -499,6 +499,16 @@ Importálja a könyvtárba?</translation>
       <translation>Az alapértelmezett hangvégpont módosítása</translation>
     </message>
     <message>
+      <source>Change to detail view mode</source>
+      <translation>Váltás részletes nézet módra</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Change to list view mode</source>
+      <translation>Váltás listanézet módra</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Check for updates</source>
       <translation>Frissítések keresése</translation>
     </message>
@@ -704,6 +714,11 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Count audio endpoints</source>
       <translation>A hangvégpontok megszámlálása</translation>
+    </message>
+    <message>
+      <source>Create a New Folder</source>
+      <translation>Egy új mappa létrehozása</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -996,6 +1011,11 @@ Importálja a könyvtárba?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Files</source>
+      <translation>Fájlok</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Files of type:</source>
       <translation>Fájlok típusa:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -1052,6 +1072,21 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Gaming</source>
       <translation>Játék</translation>
+    </message>
+    <message>
+      <source>Go back</source>
+      <translation>Ugrás vissza</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go forward</source>
+      <translation>Ugrás előre</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go to the parent directory</source>
+      <translation>Ugrás a szülőkönyvtárba</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Headphones</source>
@@ -1326,6 +1361,11 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>List audio endpoints</source>
       <translation>A hangvégpontok listájának lekérése</translation>
+    </message>
+    <message>
+      <source>List of places and bookmarks</source>
+      <translation>Helyek és könyvjelzők listája</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>List view</source>
@@ -2245,6 +2285,11 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Csúcsjelölők megjelenítése a frekvenciaszinteken</translation>
+    </message>
+    <message>
+      <source>Sidebar</source>
+      <translation>Oldalsáv</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Size capture buffer</source>
