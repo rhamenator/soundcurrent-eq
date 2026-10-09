@@ -77,5 +77,13 @@
     },
     "result": "No further owned English prose found in reviewed composed expressions; current runtime/package results still require qualification",
     "nativeReviewed": false
+  },
+  "expandedSinksReview": {
+    "tableHeaders": "Equipment headers Type/Frequency Hz/Gain dB translated; Q is standard filter quality-factor symbol. Studio table helper callers translate Type/Input channel/Gain polarity/Channel/Peak; Hz/dB/Q remain unit symbols.",
+    "trayMessages": "Owned title/body translate at call sites; update reminder body traced through update_panel templates.",
+    "directoryTitles": "Update download folder caption translated at caller; FileDialogs forwards caller title.",
+    "suffixes": "Enhancement metadata contains only standard Hz/s/ms/dB/dBFS, multiplication and ratio symbols, or empty units.",
+    "menuConstructor": "QMenu(this) supplies a parent widget, not a visible title.",
+    "qualification": "Source review only; current installed package checks pending."
   }
 }

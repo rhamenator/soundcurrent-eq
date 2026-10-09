@@ -1,10 +1,12 @@
 # Translation review — 2026-10-07
 
-## Current catalog status — 2026-10-08
+## Current catalog status — 2026-10-09
 
-All 524 currently extracted source messages have populated translations in all 33 non-English catalogs, including Nynorsk. There are 34 catalogs including English. This count describes catalog coverage; it does not establish that every user-facing string has been extracted. Missing interface strings remain a separate second pass, as requested.
+All 694 currently extracted source messages have populated translations in all 33 non-English catalogs, including Nynorsk. There are 34 catalogs including English. This is catalog coverage, not proof that every user-facing string has been extracted. Native-speaker verification remains unverified for every non-English locale.
 
-The dated checkpoints below document earlier states and contextual AI review. Their incomplete-language counts are historical, not current status. Automated structural and compiled-catalog checks do not prove linguistic accuracy. Native-speaker verification remains unverified for every non-English locale. Runtime qualification is tracked separately in tests/results/localization. Current Linux lifecycle checks pass on Ubuntu, Fedora and AlmaLinux fixtures. Both current application builds passed Windows installed-package fixtures. An older EQ binary triggered a Defender detection whose false-positive status remains unresolved. Visual review is partial and interactive installer/startup qualification remains pending. No release is authorized by this checkpoint.
+The second-pass source audit has expanded to dynamic captions, Qt fallback dialogs, menus, accessibility names, diagnostics and selected-locale number formatting. Current source and runtime evidence is recorded in `tests/results/localization/current-requirement-checkpoint.json`, `dynamic-provenance-review.json`, `expanded-display-sinks.json` and the focused test reports. Compiled local application fixtures pass for Arabic digits and French text with German number formatting. The newest Linux and Windows installed-package checks are still running; qualified preceding artifacts are identified by their exact source hashes in the reports. No release has been published by this work.
+
+The dated checkpoints below describe historical states and contextual AI review. Structural checks and successful runtime fixtures do not certify linguistic quality or every device workflow. Current goal completion remains unproven pending the remaining coverage and artifact audit.
 
 ## Scope and evidence
 
@@ -16,7 +18,7 @@ Corrections address clear semantic risks and ambiguous audio terminology: Swahil
 
 ## Remaining uncertainty
 
-French, German, Spanish, Italian and both Portuguese variants, Dutch and Polish are populated; the other 24 language packs remain incomplete. All 32 lack native review. Particular review priorities are Swahili audio vocabulary, Thai preset wording, natural microphone EQ terminology in every language, and regional Portuguese and Chinese usage. An AI reread or back-translation by the same model is not independent evidence and must not be labeled native review. Do not promote catalog review status based on this pass.
+All 33 non-English catalogs are populated but remain native-unverified. Contextual AI review and upstream Qt provenance are documented separately from runtime qualification. Review priorities include Swahili audio vocabulary, Thai preset wording, natural microphone EQ terminology, and regional Portuguese and Chinese usage. Imported equipment metadata, user text, device descriptions, external MIME comments and operating-system dialogs are separate from owned app prose; preserving those identities does not establish linguistic coverage of provider text. An AI reread or back-translation by the same model is not independent evidence and must not be labeled native review.
 
 ## Required review workflow
 

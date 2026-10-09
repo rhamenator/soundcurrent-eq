@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-09",
+  "command": "python3 tests/translation_catalogs.py",
+  "exitCode": 0,
+  "tests": 57,
+  "seconds": 25.507,
+  "skipped": 1,
+  "skipReason": "Studio session model is not part of EQ",
+  "scope": "Source/catalog mutation and regression suite; does not verify linguistic quality or installed UI lifecycle",
+  "sourceSha256": {
+    "tests/translation_catalogs.py": "a31c1dea85d778cbea2834f46d610dbf620e7edb12e41a5ce46b3be625151885",
+    "scripts/ui_string_audit.py": "fe6c8dee5cec4e36524ad1d586c7d89ce48c8c6823ce888512c78b367464edd1",
+    "scripts/localization.py": "4bdd696dcc8eab8075aec9c7d5cd7ceeaef52d3482d28dc50245eac280eab67c"
+  },
+  "nativeReviewed": false
+}
