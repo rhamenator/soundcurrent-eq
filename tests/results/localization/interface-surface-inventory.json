@@ -31,7 +31,16 @@
         "tests/results/localization/profile-authored-defaults.json",
         "tests/results/localization/header-list-display-guard.json"
       ],
-      "auditState": "indexed; final source/evidence correspondence check pending"
+      "auditState": "current source correspondence reviewed; no missing owned string identified",
+      "review": {
+        "fields": "Labels use SC_TR; initial editable field values retain imported/user metadata. Generated Custom/My equipment/New profile and measured-response defaults translated at creation; loaded records preserved.",
+        "diagnostics": "33 literal require validation sites declared; require translates reason before throwing, catches forward translated text. Export/write failures use SC_TR.",
+        "actions": "button and ask callers pass translated labels/titles/body; Save/Discard/Cancel use shared standard-action translator.",
+        "data": "Profile list kind/custom suffix and defined taxonomy translated; brand/family/model/source/conditions/provenance preserved. PK/LS/HS codes, JSON keys/UUIDs and numerical serialized values retained. Response-text frequency header belongs to supported file syntax.",
+        "plot": "Numeric axes and filter values use QLocale; translated captions plus preserved unit/filter symbols.",
+        "sharedSources": "Equipment implementation and display helper bytes identical across products."
+      },
+      "runtimeLimit": "Existing equipment locale fixtures and profile-default tests supplement source review; not every import/save error or native-speaker accuracy exercised."
     },
     {
       "id": "standard-dialogs",
