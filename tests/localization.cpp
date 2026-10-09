@@ -14,6 +14,7 @@
 #include <QDebug>
 #include <QTreeView>
 #include <QAbstractFileIconProvider>
+#include <QMessageBox>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QJsonDocument>
@@ -503,6 +504,46 @@ int main(int argc,char **argv){
     require(chooser.nameFilters()==QStringList{filter},"Qt chooser translation changed a file filter");
     require(chooser.selectedFiles().size()==1 && chooser.selectedFiles().front().endsWith(QString::fromUtf8("音声 %1 é.json")),"Qt chooser translation changed an opaque filename");
     require(QCoreApplication::translate("ExternalPlugin","File &name:")==QStringLiteral("File &name:"),"Qt chooser mapping intercepted plugin captions");
+   }
+   const char *chooserErrors[]={
+    "%1\nDirectory not found.\nPlease verify the correct directory name was given.",
+    "%1\nFile not found.\nPlease verify the correct file name was given.",
+    "%1 already exists.\nDo you want to replace it?"};
+   const auto opaqueFilename=QString::fromUtf8("test %1 %2 音声 é.json");
+   for(const auto *source:chooserErrors) {
+    require(QCoreApplication::translate("QFileDialog",source)==text(source),"Qt chooser error mapping stayed outside app catalog");
+    require(text(source).arg(opaqueFilename).contains(opaqueFilename),"Qt chooser error changed opaque filename");
+   }
+   if(language.tag=="fr" || language.tag=="ar" || language.tag=="nn") {
+    const auto existing=dir.filePath(opaqueFilename);
+    QFile input(existing);require(input.open(QIODevice::WriteOnly),"Could not create confirmation fixture");input.write("preserved");input.close();
+    for(int kind=0;kind<3;++kind) {
+     QFileDialog chooser(nullptr,"error fixture",dir.path());
+     chooser.setOption(QFileDialog::DontUseNativeDialog);
+     chooser.setOption(QFileDialog::DontUseCustomDirectoryIcons);
+     chooser.setFileMode(kind==0?QFileDialog::Directory:kind==1?QFileDialog::ExistingFile:QFileDialog::AnyFile);
+     chooser.setAcceptMode(kind==2?QFileDialog::AcceptSave:QFileDialog::AcceptOpen);
+     const auto selected=kind==2?existing:dir.filePath(QStringLiteral("missing ")+opaqueFilename);
+     chooser.selectFile(selected);
+     bool inspected=false,timedOut=false;
+     QTimer watchdog;watchdog.setSingleShot(true);
+     QObject::connect(&watchdog,&QTimer::timeout,[&]{timedOut=true;if(auto *message=qobject_cast<QMessageBox*>(app.activeModalWidget()))message->reject();chooser.reject();});
+     watchdog.start(5000);
+     QTimer::singleShot(0,&chooser,[&]{
+      QTimer::singleShot(0,&chooser,[&]{
+       auto *message=qobject_cast<QMessageBox*>(app.activeModalWidget());
+       if(!message)return;
+       inspected=message->text()==text(chooserErrors[kind]).arg(QFileInfo(selected).fileName());
+       message->done(kind==2?QMessageBox::No:QMessageBox::Ok);
+      });
+      QMetaObject::invokeMethod(&chooser,"accept",Qt::DirectConnection);
+      chooser.reject();
+     });
+     const auto result=chooser.exec();
+     require(inspected && !timedOut,"Actual Qt chooser error/confirmation did not expose expected localized text");
+     require(result==QDialog::Rejected,"Declined/error chooser unexpectedly accepted a path");
+    }
+    require(input.open(QIODevice::ReadOnly) && input.readAll()==QByteArray("preserved"),"Declined overwrite changed file contents");
    }
    const auto calibrationFailure=text("Measurement failed: %1").arg(text("Test level is outside the allowed range"));
    const auto failureBytes=(calibrationFailure+QStringLiteral("\r\n")).toUtf8();

@@ -47,6 +47,24 @@ Technical details:
     </message>
     <message>
       <source>%1
+Directory not found.
+Please verify the correct directory name was given.</source>
+      <translation>%1
+Тека не знайдена.
+Будь ласка, перевірте, що вказане правильне ім'я теки.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+File not found.
+Please verify the correct file name was given.</source>
+      <translation>%1
+Файл не знайдено.
+Будь ласка, перевірте, що вказане правильне ім'я файлу.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
 The app remains open; your settings have been kept.</source>
       <translation>%1
 Програма залишається відкритою; ваші налаштування збережено.</translation>
@@ -83,6 +101,13 @@ Import into your library?</source>
     <message>
       <source>%1 Hz: too quiet to measure</source>
       <translation>%1 Hz: надто тихо для вимірювання</translation>
+    </message>
+    <message>
+      <source>%1 already exists.
+Do you want to replace it?</source>
+      <translation>%1 вже існує.
+Бажаєте перезаписати його?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>%1 disconnected. </source>

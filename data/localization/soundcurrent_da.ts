@@ -47,6 +47,24 @@ Tekniske detaljer:
     </message>
     <message>
       <source>%1
+Directory not found.
+Please verify the correct directory name was given.</source>
+      <translation>%1
+Mappen blev ikke fundet.
+Kontrollér, at det korrekte mappenavn blev givet.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+File not found.
+Please verify the correct file name was given.</source>
+      <translation>%1
+Filen blev ikke fundet.
+Kontrollér, at det korrekte filnavn blev givet.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
 The app remains open; your settings have been kept.</source>
       <translation>%1
 Appen forbliver åben; dine indstillinger er bevaret.</translation>
@@ -83,6 +101,13 @@ Importér til dit bibliotek?</translation>
     <message>
       <source>%1 Hz: too quiet to measure</source>
       <translation>%1 Hz: for lavt niveau til måling</translation>
+    </message>
+    <message>
+      <source>%1 already exists.
+Do you want to replace it?</source>
+      <translation>%1 findes allerede.
+Vil du erstatte den?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>%1 disconnected. </source>

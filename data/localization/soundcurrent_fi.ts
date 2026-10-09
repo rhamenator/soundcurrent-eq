@@ -47,6 +47,24 @@ Tekniset tiedot:
     </message>
     <message>
       <source>%1
+Directory not found.
+Please verify the correct directory name was given.</source>
+      <translation>%1
+Kansiota ei löydy.
+Varmista oikea kansion nimi.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+File not found.
+Please verify the correct file name was given.</source>
+      <translation>%1
+Tiedostoa ei löydy.
+Varmista oikea tiedoston nimi.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
 The app remains open; your settings have been kept.</source>
       <translation>%1
 Sovellus pysyy auki; asetuksesi on säilytetty.</translation>
@@ -83,6 +101,13 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>%1 Hz: too quiet to measure</source>
       <translation>%1 Hz: liian hiljainen mitattavaksi</translation>
+    </message>
+    <message>
+      <source>%1 already exists.
+Do you want to replace it?</source>
+      <translation>%1 on jo olemassa.
+Korvataanko se?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>%1 disconnected. </source>

@@ -47,6 +47,24 @@ Dettagli tecnici:
     </message>
     <message>
       <source>%1
+Directory not found.
+Please verify the correct directory name was given.</source>
+      <translation>%1
+Cartella non trovata.
+Verifica che sia stato inserito il nome corretto della cartella.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+File not found.
+Please verify the correct file name was given.</source>
+      <translation>%1
+File non trovato.
+Verifica che sia stato inserito il nome corretto del file.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
 The app remains open; your settings have been kept.</source>
       <translation>%1
 L’app rimane aperta; le impostazioni sono state conservate.</translation>
@@ -83,6 +101,13 @@ Importare nella libreria?</translation>
     <message>
       <source>%1 Hz: too quiet to measure</source>
       <translation>%1 Hz: livello troppo basso per la misurazione</translation>
+    </message>
+    <message>
+      <source>%1 already exists.
+Do you want to replace it?</source>
+      <translation>%1 esiste già.
+Vuoi sostituirlo?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>%1 disconnected. </source>

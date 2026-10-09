@@ -167,6 +167,10 @@ public:
             return {};
         }
         if (name == "QFileDialog") {
+            if (action == "%1\nDirectory not found.\nPlease verify the correct directory name was given.") return text("%1\nDirectory not found.\nPlease verify the correct directory name was given.");
+            if (action == "%1\nFile not found.\nPlease verify the correct file name was given.") return text("%1\nFile not found.\nPlease verify the correct file name was given.");
+            if (action == "%1 already exists.\nDo you want to replace it?") return text("%1 already exists.\nDo you want to replace it?");
+
             if (action == "&Rename") return text("Rename");
             if (action == "New Folder") return text("New folder");
             if (action == "Show &hidden files") return text("Show hidden files");

@@ -47,6 +47,24 @@ Technical details:
     </message>
     <message>
       <source>%1
+Directory not found.
+Please verify the correct directory name was given.</source>
+      <translation>%1
+ディレクトリが見つかりません。
+正しいディレクトリ名が入力されているかを確認してください。</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+File not found.
+Please verify the correct file name was given.</source>
+      <translation>%1
+ファイルが見つかりません。
+正しいファイル名が入力されているかを確認してください。</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
 The app remains open; your settings have been kept.</source>
       <translation>%1
 アプリは開いたままです。設定は保持されています。</translation>
@@ -83,6 +101,13 @@ Import into your library?</source>
     <message>
       <source>%1 Hz: too quiet to measure</source>
       <translation>%1 Hz: 音量が小さすぎて測定できません</translation>
+    </message>
+    <message>
+      <source>%1 already exists.
+Do you want to replace it?</source>
+      <translation>%1 は既に存在します。
+置き換えますか?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>%1 disconnected. </source>

@@ -47,6 +47,24 @@ Technical details:
     </message>
     <message>
       <source>%1
+Directory not found.
+Please verify the correct directory name was given.</source>
+      <translation>%1
+Ο κατάλογος δεν βρέθηκε.
+Ελέγξτε ότι το όνομα του καταλόγου είναι σωστό.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+File not found.
+Please verify the correct file name was given.</source>
+      <translation>%1
+Το αρχείο δεν βρέθηκε.
+Ελέγξτε ότι το όνομα του αρχείου είναι σωστό.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
 The app remains open; your settings have been kept.</source>
       <translation>%1
 Η εφαρμογή παραμένει ανοιχτή· οι ρυθμίσεις σας διατηρήθηκαν.</translation>
@@ -83,6 +101,13 @@ Import into your library?</source>
     <message>
       <source>%1 Hz: too quiet to measure</source>
       <translation>%1 Hz: πολύ χαμηλή στάθμη για μέτρηση</translation>
+    </message>
+    <message>
+      <source>%1 already exists.
+Do you want to replace it?</source>
+      <translation>Το %1 υπάρχει ήδη.
+Θέλετε να το αντικαταστήσετε;</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>%1 disconnected. </source>

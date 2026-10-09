@@ -5,7 +5,7 @@
   "catalogs": {
     "count": 34,
     "nonEnglish": 33,
-    "messagesPerCatalog": 678,
+    "messagesPerCatalog": 681,
     "check": "scripts/localization.py --check --require-complete passed locally",
     "nativeReviewed": false
   },
@@ -74,15 +74,15 @@
     "Silent same-package updates do not prove older-version migration or interactive chooser behavior"
   ],
   "evidenceSha256": {
-    "data/localization/catalogs.json": "0d51aa81af88e86e207ee6bafcf0190efe60e8b7c3ed5a2ba6dbe668acfc1087",
-    "docs/translation-review.md": "5c84c7b1aa1d8c309dce34d84418188427f4ca10c0cdf471fb428a9b7c29e55b",
-    "tests/localization.cpp": "1a85dc5352c817900ab2b17b61f0fd1343617b4fbb25da3b47a527f4ddcc51f0",
+    "data/localization/catalogs.json": "02e1b93fac6e992b138fb4e5583fc42d59d7a8edcb017e861ed01e3c7def69d4",
+    "docs/translation-review.md": "9c5a3dd2de68fc87a9ee25c6904eedcb8519ce6dea010bef95faaed41733fb8f",
+    "tests/localization.cpp": "0531a0833bee256d875cf147019231eccce65ce949a8b94a0221e3d82e3f3a47",
     "tests/translation_catalogs.py": "443fb29d0b4cb1e848ec443cbf7a8245d54087e682036d5bcdb2c9c618ea524f",
     "scripts/ui_string_audit.py": "a7cd0132f32a3f103eadffe8798aee877b4c397545f3e53ec1ea4134b133629f",
-    "tests/results/localization/dynamic-display-inventory.json": "03d381eda406be83b3b39461dcf6e0691769e17127df86de8526c14261068000",
+    "tests/results/localization/dynamic-display-inventory.json": "885dada666b24a8c6080cbd072f30e21cd2418ead497b1daf9a1a27e3b15d115",
     "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
     "src/main.cpp": "2d0fed8458fc09d15674f069a53aae542c092bbee2bbc6fa274cdde827fc2383",
-    "src/localization.h": "a9222646f7a3003622f11b68c6cb2a6f687454bcd922f1afd9924bd9ed4a2b35",
+    "src/localization.h": "3827c8e93ef8d090994717aaba9ad42a8c9a2d9a8666f6d3a1c9c40d1199c01a",
     "src/localization_text.h": "9cbb9b2c5e49287651cba6bcd273c01e148f8fd5dce4b7e39fdd86594e344cd0",
     "scripts/localization.py": "a5ac5ebed546faab47f0b4b4dae66f2a1ce1ece2936d2968483191ef5e02d19d",
     "tests/calibration_worker_localization.py": "c6120b78b59ae6d547cd7d0a503d4f39a46f0fa3c03c9c4007b46f8e53db34f8",
@@ -91,7 +91,7 @@
     "tests/results/localization/calibration-worker-native-ci.json": "377d797dfc8478b69a02fb63760577d5a2571393c939e35aa1eecbb270467e35",
     "src/equipment_profiles.cpp": "b41db4ef53c46a0c9e7b6745d0ea106fd0185ba9eb30e90f66d7afda8877779d",
     "tests/results/localization/profile-authored-defaults.json": "2d3aa7687f468de8c9b652c2dafd2afae1f929b3d401ac3390a6f691f08156af",
-    "tests/results/localization/qt-file-dialog-gap.json": "6a553fc028198cd03d09876b5a43d3f3b7a5c16add5f179a1475da99c3ff2a15"
+    "tests/results/localization/qt-file-dialog-gap.json": "360b8132d2250a4c7205b84d434af28366cb92a38d38306419ec4655e755c380"
   },
   "auditedBaseHead": "a39082b688e3a0ad21e40c39a966ee11c44e5439",
   "sourceIdentity": "Current inspected source files are identified by SHA-256 below; base commit is historical context, not qualification of pending calibration changes",
@@ -123,7 +123,7 @@
   },
   "currentQtFileDialogGap": {
     "date": "2026-10-09",
-    "status": "Generic Qt file-type and prior chooser fixtures passed compiled Linux tests; remaining workflows and native Windows qualification incomplete",
+    "status": "three missing-path/overwrite messages and existing chooser fixtures passed compiled Linux checks; remaining workflows and fresh native/package qualification incomplete",
     "probeSourceSha256": "b3be9f969d44f0352b65c07ce5b0e22ff63d66e26b95b68c3a1c7874ebdfd08f",
     "probeScope": "Standalone Qt6Widgets QFileDialog using the actual EQ compiled French catalog and shared StandardActionTranslator. Offscreen, DontUseNativeDialog. No file selection, settings writes, audio or VM. Shared implementation matches Studio; Studio full app dialog not separately exercised.",
     "untranslatedObserved": [
@@ -161,9 +161,8 @@
     "remainingScope": [
       "Header-visibility menu composition",
       "External MIME/file-association descriptors",
-      "Selected-locale file size/date formatting",
-      "Open/save error and confirmation dialogs",
-      "Native Windows qualification",
+      "Deletion/permission errors and other unmapped chooser strings",
+      "Current native Windows/package qualification",
       "Screen-reader listening test"
     ],
     "localRuntimeEvidence": "CTest localization passed across all 33 non-English catalogs: actual DontUseNativeDialog controls, Unicode/literal-percent filenames, filter preservation and plugin-context exclusion. Offscreen constructor/control inspection; no acceptance, file creation or errors exercised.",
@@ -172,9 +171,9 @@
       "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.ui"
     ],
     "sourceSha256": {
-      "src/localization.h": "a9222646f7a3003622f11b68c6cb2a6f687454bcd922f1afd9924bd9ed4a2b35",
-      "tests/localization.cpp": "20a5d78362b08d5c4c657278c2a91b473ebc141379c5715f165be2809dab8b33",
-      "data/localization/catalogs.json": "0d51aa81af88e86e207ee6bafcf0190efe60e8b7c3ed5a2ba6dbe668acfc1087"
+      "src/localization.h": "3827c8e93ef8d090994717aaba9ad42a8c9a2d9a8666f6d3a1c9c40d1199c01a",
+      "tests/localization.cpp": "0531a0833bee256d875cf147019231eccce65ce949a8b94a0221e3d82e3f3a47",
+      "data/localization/catalogs.json": "02e1b93fac6e992b138fb4e5583fc42d59d7a8edcb017e861ed01e3c7def69d4"
     },
     "accessibilityTestScope": "Actual QAccessible Name/Description queries for six navigation buttons, sidebar and list/tree file views, all 33 non-English catalogs. Does not test screen-reader speech.",
     "accessibilityLinuxEvidence": {
@@ -206,6 +205,19 @@
       "result": "passed",
       "catalogs": 33,
       "scope": "actual generic-provider directory/drive/unknown; direct File/Shortcut and Windows folder alias; no MIME/provider override or file operations"
+    },
+    "upstreamInventory": "tests/results/localization/qt-file-dialog-source-inventory.json",
+    "errorLinuxEvidence": {
+      "log": "tests/results/localization/qt-file-dialog-errors-linux.log",
+      "sha256": "6dda61e4d7f574ec4d700e3ef5e86c4f3887438ac00a5bd3728c1e36dc2b9188",
+      "result": "passed",
+      "catalogChecks": 33,
+      "actualModalLocales": [
+        "fr",
+        "ar",
+        "nn"
+      ],
+      "scope": "Missing file/directory and declined overwrite; raw QMessageBox text and unchanged input contents; no deletion/permission or visual/speech checks"
     }
   },
   "qt612CompatibilityEvidence": "tests/results/localization/qt-file-dialog-qt612-compatibility.json",
