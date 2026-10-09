@@ -1,0 +1,68 @@
+{
+  "supersedesCurrentStatusOf": "tests/results/localization/requirement-audit.json",
+  "auditedHead": "b4539d2180e809b6d8709a02e81ea8b1a8dfa3f6",
+  "overallStatus": "incomplete",
+  "catalogs": {
+    "count": 34,
+    "nonEnglish": 33,
+    "messagesPerCatalog": 628,
+    "check": "scripts/localization.py --check --require-complete passed in this checkpoint",
+    "nativeReviewed": false
+  },
+  "requirements": [
+    {
+      "requirement": "Complete missing interface translations",
+      "status": "declared catalogs complete; whole-interface coverage unproven",
+      "remaining": "Review dynamic expressions and backend/CLI surfaces beyond literal display inventory; resolve any owned untranslated prose"
+    },
+    {
+      "requirement": "Contextual terminology review",
+      "status": "AI review documented; native-speaker verification unverified",
+      "evidence": "docs/translation-review.md"
+    },
+    {
+      "requirement": "Stable IDs, state, placeholders, plural, formatting, RTL, fallback",
+      "status": "implemented fixture coverage; not exhaustive all workflows",
+      "evidence": [
+        "tests/localization.cpp",
+        "tests/translation_catalogs.py"
+      ]
+    },
+    {
+      "requirement": "Linux changed-package install/update/uninstall",
+      "status": "passed for exact recorded heads on Ubuntu/Fedora/AlmaLinux containers",
+      "evidence": "tests/results/localization/linux-current/report.json",
+      "remaining": "Studio 747-message catalog was added after the recorded package head; current package qualification required"
+    },
+    {
+      "requirement": "Windows changed-package installed UI/lifecycle",
+      "status": "current CI qualification pending; earlier Studio lifecycle has console-only evidence",
+      "run": 37878092704,
+      "evidence": "tests/results/localization/studio-windows-lifecycle-console.json",
+      "remaining": "Inspect current installed-runtime artifact and exact hashes; inspect interactive chooser/shortcut behavior separately"
+    },
+    {
+      "requirement": "Reviewable packages and synchronized commits",
+      "status": "recorded Linux packages available; current Windows CI artifacts pending; branch synchronized before checkpoint"
+    },
+    {
+      "requirement": "Preserve native driver and separate DAW work",
+      "status": "native-driver bookmark present; no DAW files modified by this checkpoint",
+      "evidence": "docs/windows-native-driver-bookmark.md"
+    },
+    {
+      "requirement": "No unauthorized release",
+      "status": "no release publication performed"
+    }
+  ],
+  "evidenceSha256": {
+    "data/localization/catalogs.json": "8adda1240dac46fd59bb5a850a4564e255ad214e461662a41d52748ce1feeedf",
+    "docs/translation-review.md": "8e9458c2b4d053b968da7bc1aa80597814202f03e3b39f46c40adc161ec92b58",
+    "tests/localization.cpp": "c09dbf74f363c1678cdd3e49afdcaa079137eb3d5173d0345df75c8758bf0a19",
+    "tests/translation_catalogs.py": "615a481d649faf1e21476e90dea591221cda37ed99943d7a7d10082d4af3bacd",
+    "scripts/ui_string_audit.py": "bb5200bd3e1ad1b226b50a259a0653b0025b3d77e23d274168d4387cee1f8f2f",
+    "tests/results/localization/linux-current/report.json": "0d279ab2d69c961baa0777b1f673c4e9a982daa701b2a3b590ea87dcc0b3f4f8",
+    "tests/results/localization/studio-windows-lifecycle-console.json": "f975807de9a61a63f34f78a40a9f885373171e33394b4c424f2caec1298de08b",
+    "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd"
+  }
+}
