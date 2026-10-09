@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-09",
+  "scope": "Manual provenance review of dynamic display expressions without direct translation calls; follows concrete producers in listed sources. Not an exhaustive review of all composed translated expressions or external provider strings.",
+  "groups": [
+    {
+      "files": [
+        "src/enhancement_controls.h"
+      ],
+      "classification": "Locale-formatted numbers and percent sign; parameter captions through i18n::text; addRow(widget) expressions are widget placement, not untranslated prose."
+    },
+    {
+      "files": [
+        "src/equipment_profiles.cpp"
+      ],
+      "classification": "Profile names, source, conditions and provenance are imported/user metadata. Owned require diagnostics use i18n::text before throwing; displayed std::exception text originates at this boundary. Button/ask helper label/title arguments must be checked at callers, not inferred from parameter names."
+    },
+    {
+      "files": [
+        "src/localization.h"
+      ],
+      "classification": "Language/territory autonyms and BCP47 tags intentionally identify languages; these are not English-owned captions."
+    },
+    {
+      "files": [
+        "src/localized_file_dialog.h"
+      ],
+      "classification": "Title arguments forward caller-translated captions; declaration signatures and native delegation are inventory false positives."
+    },
+    {
+      "files": [
+        "src/update_panel.h"
+      ],
+      "classification": "remind(message) receives translated owned update templates; filenames/version tags remain opaque."
+    },
+    {
+      "files": [
+        "src/main.cpp",
+        "src/processing_guard.cpp",
+        "src/localization_text.h"
+      ],
+      "classification": "Setup finish messages originate from SC_TR or audioSetupOutput mapping. Calibration status comes from localized child worker messages through bounded UTF-8 buffering. Conflict reason originates from translated processing guard. Speaker details use translated display helpers with opaque model/source metadata; device descriptions and custom preset keys retain system/user identity. Numeric gain/frequency captions use QLocale. Synthetic multilingual setItemText belongs only to fixture."
+    }
+  ],
+  "sourceSha256": {
+    "src/enhancement_controls.h": "a5c3e8358fa8235b9625567e152dc3eb73ba54f13fba8b4fba2202a272262b52",
+    "src/equipment_profiles.cpp": "b41db4ef53c46a0c9e7b6745d0ea106fd0185ba9eb30e90f66d7afda8877779d",
+    "src/localization.h": "1d82243a04150a1252c4564270f00879474427d32f13f178112c9bd2c467789a",
+    "src/localized_file_dialog.h": "db8e7403e18efca39f41bcb02238c94297e09cc9b9a1f9870f12276bdc58a7ff",
+    "src/update_panel.h": "7637f0a9cd4c6b28a2eb3b185f09f21b36c7f98143e3023338fe2de039f7a68d",
+    "src/main.cpp": "23a90ba7c9e2d15e739e8cf7eaca81d2fa10c9f3300314fd86b906f9864ec7bf",
+    "src/processing_guard.cpp": "7357547a751b724be0c1743d94f8318a9f86b5f6b2180911799dc660bd5e74b2",
+    "src/localization_text.h": "66844e548183ff28867f3b90958f3e67dd22b9d5daa7114f5da8d81778bf53d5"
+  },
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false,
+  "remaining": [
+    "Review composed expressions containing translation calls for untranslated owned fragments",
+    "External MIME/Windows file association descriptions follow provider behavior",
+    "Current artifact qualification still running"
+  ]
+}
