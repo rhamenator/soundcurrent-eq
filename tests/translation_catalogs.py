@@ -814,6 +814,16 @@ class CatalogTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Unreviewed display literal'):
                 audit.check_reviewed_literals(fixture, reviewed)
 
+    def test_renderer_rejects_new_direct_untranslated_error(self):
+        declared = {'Mapped error', 'Output already exists; select a new filename',
+                    'Too many Studio channel filters'}
+        catalog.check_renderer_diagnostics(
+            'throw std::runtime_error("Mapped error"); '
+            'throw std::runtime_error("Output already exists; choose a new filename"); '
+            'throw std::runtime_error("Too many EQ bands for one channel");', declared)
+        with self.assertRaisesRegex(ValueError, 'Undeclared renderer diagnostic'):
+            catalog.check_renderer_diagnostics('throw std::runtime_error("New English error");', declared)
+
     def test_startup_diagnostics_reject_untranslated_production_logging(self):
         start = '    const auto runtime = QStandardPaths::writableLocation(0);'
         end = '    soundcurrent::ProcessingGuard processingGuard;'

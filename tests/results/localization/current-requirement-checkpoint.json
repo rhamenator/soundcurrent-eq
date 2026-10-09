@@ -79,14 +79,14 @@
     "data/localization/catalogs.json": "64ed7ec0276520fc0ce977649021dad53c03d6e4cb08c6e725aceec5b8ae4736",
     "docs/translation-review.md": "12ba99240ee7ecc72d68ebd96937e9cf21e8381f6412db0b1c63a52b151dd09c",
     "tests/localization.cpp": "f0ad22384bbeed61639a5035e695c66e462fbbd20332da7a52bef5bd951be5ad",
-    "tests/translation_catalogs.py": "9fee351df9341edc2255e37e62698eae9e06159da82c1b07150766c716733f63",
+    "tests/translation_catalogs.py": "7fa17c34250a56760e53f1374ee1967c8a04dc1a4f0be069c3f04925f87c67ff",
     "scripts/ui_string_audit.py": "681c99092923ff7e1e0587421b7cf163d8901c024617b111732d99b98e683957",
     "tests/results/localization/dynamic-display-inventory.json": "1153b65dc14f876e813c20669dc596b67456daf7643ba401232ffd182edd49bb",
     "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
     "src/main.cpp": "27dc3d05c3aef5aa0900dff5f9cdd12bc8aee62d31dccfe72b4e087e3bfa5fc1",
     "src/localization.h": "f430613fdec6915b10791010bdf9f1e36838240571accd041b818ba00e3561b9",
     "src/localization_text.h": "d9d06c97d3108e857250a419243138cd0939a72a0d19b535666beb1eedcf776c",
-    "scripts/localization.py": "6c578199f65c915218fd0ead30af58713292e5f7ffccb01382d1ca94c30c4d24",
+    "scripts/localization.py": "cfcaf17c94b8ac179d7d1ebef9e690838010c37b436d0a544a3ef16e61633bc5",
     "tests/calibration_worker_localization.py": "c6120b78b59ae6d547cd7d0a503d4f39a46f0fa3c03c9c4007b46f8e53db34f8",
     "tests/results/localization/calibration-worker-gap.json": "1d4ef1003d317f52bf79b740686ef055d580d9f7bfcfad9e2b171c57492efba8",
     "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42",
@@ -261,5 +261,6 @@
   "publicUpdateMessageReview": "tests/results/localization/public-update-message-review.json",
   "choiceListDisplayGuard": "tests/results/localization/choice-list-display-guard.json",
   "launcherDescriptionReview": "tests/results/localization/launcher-description-localization.json",
-  "startupDiagnosticReview": "tests/results/localization/startup-diagnostic-gap.json"
+  "startupDiagnosticReview": "tests/results/localization/startup-diagnostic-gap.json",
+  "rendererDirectDiagnosticGuard": "tests/results/localization/renderer-direct-diagnostic-guard.json"
 }

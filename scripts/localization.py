@@ -151,6 +151,16 @@ def check_startup_diagnostics(code):
             raise ValueError('Untranslated production startup diagnostic')
 
 
+def check_renderer_diagnostics(code, declared):
+    """Direct renderer exceptions are translated at the CLI boundary, not in DSP."""
+    aliases = {'Output already exists; choose a new filename': 'Output already exists; select a new filename',
+               'Too many EQ bands for one channel': 'Too many Studio channel filters'}
+    for args in calls(code, 'runtime_error'):
+        value = literal(args[0]) if args else None
+        if value is not None and aliases.get(value, value) not in declared:
+            raise ValueError('Undeclared renderer diagnostic: ' + value)
+
+
 def sources():
     adapter = ROOT / 'src/windows_platform.inc'
     if adapter.exists():
@@ -203,6 +213,9 @@ def sources():
     end = code.index('void savePreset(', start)
     for args in calls(code[start:end], 'addGroup'):
         out.update(re.findall(r'"([^"]+)"', args[0]))
+    renderer = ROOT / 'src/studio_render.cpp'
+    if renderer.exists():
+        check_renderer_diagnostics(renderer.read_text(encoding='utf-8'), out)
     return sorted(out)
 
 

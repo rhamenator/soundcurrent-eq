@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-09",
+  "scope": "Direct literal std::runtime_error arguments in the Studio offline renderer. This source guard does not infer composed or backend diagnostics; those retain separate mapping/runtime evidence. EQ shares the helper and regression test but has no offline renderer.",
+  "directLiteralThrowSites": 0,
+  "rows": [],
+  "regression": "New undeclared direct renderer exception rejected; known display aliases accepted",
+  "currentCatalogCheck": "passed, complete 34 catalogs",
+  "appOrAudioBehaviorChanged": false,
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false,
+  "sourceSha256": {
+    "scripts/localization.py": "cfcaf17c94b8ac179d7d1ebef9e690838010c37b436d0a544a3ef16e61633bc5",
+    "tests/translation_catalogs.py": "7fa17c34250a56760e53f1374ee1967c8a04dc1a4f0be069c3f04925f87c67ff"
+  }
+}
