@@ -176,6 +176,11 @@ Soll sie überschrieben werden?</translation>
       <translation>Alle Baureihen</translation>
     </message>
     <message>
+      <source>All files (*)</source>
+      <translation>Alle Dateien (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>All manufacturers</source>
       <translation>Alle Hersteller</translation>
     </message>
@@ -551,6 +556,11 @@ Soll sie überschrieben werden?</translation>
       <translation>Prüft veröffentlichte Versionen und heruntergeladene Installationsprogramme. Updates werden nicht automatisch installiert.</translation>
     </message>
     <message>
+      <source>Choose</source>
+      <translation>Auswählen</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Choose a name that is not a built-in preset.</source>
       <translation>Wählen Sie einen Namen, der keinem integrierten Preset entspricht.</translation>
     </message>
@@ -793,6 +803,16 @@ Soll sie überschrieben werden?</translation>
     <message>
       <source>Detail view</source>
       <translation>Details</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>Verzeichnisse</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>Verzeichnis:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
@@ -1072,6 +1092,11 @@ Soll sie überschrieben werden?</translation>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
       <translation>Die Filter überschreiten die Grenzen für Frequenz, Verstärkung oder Q.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>Verzeichnis suchen</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
@@ -2065,6 +2090,11 @@ Soll sie überschrieben werden?</translation>
       <translation>Mischformat der virtuellen Ausgabe lesen</translation>
     </message>
     <message>
+      <source>Recent places</source>
+      <translation>Zuletzt besucht</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Redo</source>
       <translation>Wiederholen</translation>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
@@ -2202,6 +2232,11 @@ Soll sie überschrieben werden?</translation>
     <message>
       <source>Save EQ preset</source>
       <translation>EQ-Preset speichern</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>Speichern unter</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>

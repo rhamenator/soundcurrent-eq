@@ -176,6 +176,11 @@ Do you want to replace it?</source>
       <translation>すべてのシリーズ</translation>
     </message>
     <message>
+      <source>All files (*)</source>
+      <translation>すべてのファイル(*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>All manufacturers</source>
       <translation>すべてのメーカー</translation>
     </message>
@@ -551,6 +556,11 @@ Do you want to replace it?</source>
       <translation>公開リリースとダウンロード済みのインストーラーを確認します。更新が自動的にインストールされることはありません。</translation>
     </message>
     <message>
+      <source>Choose</source>
+      <translation>選択(C)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Choose a name that is not a built-in preset.</source>
       <translation>組み込みプリセットとは異なる名前を選んでください。</translation>
     </message>
@@ -793,6 +803,16 @@ Do you want to replace it?</source>
     <message>
       <source>Detail view</source>
       <translation>詳細表示</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>ディレクトリ</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>ディレクトリ:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
@@ -1072,6 +1092,11 @@ Do you want to replace it?</source>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
       <translation>フィルターが周波数、ゲイン、または Q 値の制限を超えています。</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>ディレクトリの検索</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
@@ -2065,6 +2090,11 @@ Do you want to replace it?</source>
       <translation>仮想出力のミックスフォーマットの読み取り</translation>
     </message>
     <message>
+      <source>Recent places</source>
+      <translation>履歴</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Redo</source>
       <translation>やり直す</translation>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
@@ -2202,6 +2232,11 @@ Do you want to replace it?</source>
     <message>
       <source>Save EQ preset</source>
       <translation>EQ プリセットを保存</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>名前を付けて保存</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>

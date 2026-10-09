@@ -1,6 +1,6 @@
 {
   "date": "2026-10-09",
-  "status": "three missing-path/overwrite messages and existing chooser fixtures passed compiled Linux checks; remaining workflows and fresh native/package qualification incomplete",
+  "status": "directory/default captions and preceding chooser fixtures passed compiled Linux checks; remaining workflows and native/package checks incomplete",
   "probeSourceSha256": "b3be9f969d44f0352b65c07ce5b0e22ff63d66e26b95b68c3a1c7874ebdfd08f",
   "probeScope": "Standalone Qt6Widgets QFileDialog using the actual EQ compiled French catalog and shared StandardActionTranslator. Offscreen, DontUseNativeDialog. No file selection, settings writes, audio or VM. Shared implementation matches Studio; Studio full app dialog not separately exercised.",
   "untranslatedObserved": [
@@ -48,9 +48,9 @@
     "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.ui"
   ],
   "sourceSha256": {
-    "src/localization.h": "3827c8e93ef8d090994717aaba9ad42a8c9a2d9a8666f6d3a1c9c40d1199c01a",
-    "tests/localization.cpp": "0531a0833bee256d875cf147019231eccce65ce949a8b94a0221e3d82e3f3a47",
-    "data/localization/catalogs.json": "02e1b93fac6e992b138fb4e5583fc42d59d7a8edcb017e861ed01e3c7def69d4"
+    "src/localization.h": "c02d6e0f8957f5989a1ccd5667cd14f7cccb9df7b7cb1bb9c3c91edb417bb109",
+    "tests/localization.cpp": "03d90ba9e308ff5007eada974e3ece56d0b84ab5dc6e947e67fb6c094f4fef53",
+    "data/localization/catalogs.json": "1abec4f229ad11f31e8f29d021f37db9b0ff197de335c0cec812aada300f2521"
   },
   "accessibilityTestScope": "Actual QAccessible Name/Description queries for six navigation buttons, sidebar and list/tree file views, all 33 non-English catalogs. Does not test screen-reader speech.",
   "accessibilityLinuxEvidence": {
@@ -95,5 +95,13 @@
       "nn"
     ],
     "scope": "Missing file/directory and declined overwrite; raw QMessageBox text and unchanged input contents; no deletion/permission or visual/speech checks"
+  },
+  "defaultLinuxEvidence": {
+    "log": "tests/results/localization/qt-file-dialog-defaults-linux.log",
+    "sha256": "df9e92a9a30c65a9d9849b01ee06bca19ba8d6f5a7a7b5c42e0f0e60908311f9",
+    "result": "passed",
+    "catalogs": 33,
+    "scope": "Initial all-files filter, directory label/Choose, direct default caption aliases; general filter mutation guard passed",
+    "nativeReviewed": false
   }
 }

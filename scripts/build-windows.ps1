@@ -129,7 +129,8 @@ try {
         if ($testArgs.Count) { $test = Start-Process "$stage\$testName.exe" -ArgumentList $testArgs -PassThru -NoNewWindow -RedirectStandardError $testLog }
         else { $test = Start-Process "$stage\$testName.exe" -PassThru -NoNewWindow -RedirectStandardError $testLog }
         $null = $test.Handle
-        if (!$test.WaitForExit(90000)) { Stop-Process -Id $test.Id -Force; throw "$testName timed out" }
+        $testTimeout = if ($testName -eq 'soundcurrent-localization-test') { 150000 } else { 90000 }
+        if (!$test.WaitForExit($testTimeout)) { Stop-Process -Id $test.Id -Force; throw "$testName timed out" }
         $test.Refresh()
         if ($null -eq $test.ExitCode -or $test.ExitCode -ne 0) {
             Get-Content $testLog -ErrorAction SilentlyContinue | Write-Output

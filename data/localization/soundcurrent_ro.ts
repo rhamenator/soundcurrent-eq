@@ -176,6 +176,11 @@ Doriți să îl înlocuiți?</translation>
       <translation>Toate familiile</translation>
     </message>
     <message>
+      <source>All files (*)</source>
+      <translation>Toate fișierele (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>All manufacturers</source>
       <translation>Toți producătorii</translation>
     </message>
@@ -551,6 +556,11 @@ Doriți să îl înlocuiți?</translation>
       <translation>Verifică versiunile publicate și programele de instalare descărcate. Nicio actualizare nu este instalată automat.</translation>
     </message>
     <message>
+      <source>Choose</source>
+      <translation>Alege</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Choose a name that is not a built-in preset.</source>
       <translation>Alegeți un nume care nu aparține unei presetări încorporate.</translation>
     </message>
@@ -793,6 +803,16 @@ Doriți să îl înlocuiți?</translation>
     <message>
       <source>Detail view</source>
       <translation>Vizualizare detaliată</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>Directoare</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>Director:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
@@ -1072,6 +1092,11 @@ Doriți să îl înlocuiți?</translation>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
       <translation>Filtrele depășesc limitele de frecvență, câștig sau Q.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>Găsește directorul</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
@@ -2065,6 +2090,11 @@ Doriți să îl înlocuiți?</translation>
       <translation>Citirea formatului de mixare al ieșirii virtuale</translation>
     </message>
     <message>
+      <source>Recent places</source>
+      <translation>Locații recente</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Redo</source>
       <translation>Refă</translation>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
@@ -2202,6 +2232,11 @@ Doriți să îl înlocuiți?</translation>
     <message>
       <source>Save EQ preset</source>
       <translation>Salvați presetarea EQ</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>Salvează ca</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>

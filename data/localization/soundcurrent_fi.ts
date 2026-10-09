@@ -176,6 +176,11 @@ Korvataanko se?</translation>
       <translation>Kaikki tuoteperheet</translation>
     </message>
     <message>
+      <source>All files (*)</source>
+      <translation>Kaikki tiedostot (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>All manufacturers</source>
       <translation>Kaikki valmistajat</translation>
     </message>
@@ -551,6 +556,11 @@ Korvataanko se?</translation>
       <translation>Tarkistaa julkaistut versiot ja ladatut asennusohjelmat. Päivityksiä ei asenneta automaattisesti.</translation>
     </message>
     <message>
+      <source>Choose</source>
+      <translation>Valitse</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Choose a name that is not a built-in preset.</source>
       <translation>Valitse nimi, joka ei kuulu sisäänrakennetulle esiasetukselle.</translation>
     </message>
@@ -793,6 +803,16 @@ Korvataanko se?</translation>
     <message>
       <source>Detail view</source>
       <translation>Yksityiskohtainen näkymä</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>Kansiot</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>Kansio:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
@@ -1072,6 +1092,11 @@ Korvataanko se?</translation>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
       <translation>Suodattimet ylittävät taajuuden, vahvistuksen tai Q:n rajat.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>Etsi kansio</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
@@ -2065,6 +2090,11 @@ Korvataanko se?</translation>
       <translation>Virtuaaliulostulon miksausmuodon lukeminen</translation>
     </message>
     <message>
+      <source>Recent places</source>
+      <translation>Viimeaikaiset sijainnit</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Redo</source>
       <translation>Tee uudelleen</translation>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
@@ -2202,6 +2232,11 @@ Korvataanko se?</translation>
     <message>
       <source>Save EQ preset</source>
       <translation>Tallenna taajuuskorjausesiasetus</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>Tallenna nimellä</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>

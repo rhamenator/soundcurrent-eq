@@ -441,6 +441,9 @@ int main(int argc,char **argv){
    require(QCoreApplication::translate("QGnomeTheme","Close without Saving")==text("Discard"),"GNOME discard label stayed English");
    {
     QFileDialog chooser(nullptr, text("Import equipment profile"));
+    if(chooser.nameFilters()!=QStringList{text("All files (*)")}) qCritical().noquote()<<"Default filter actual:"<<chooser.nameFilters()<<"expected:"<<text("All files (*)");
+    require(QCoreApplication::translate("QFileDialog","All Files (*)")==text("All files (*)"),"Qt platform-helper default filter alias stayed English");
+    require(chooser.nameFilters()==QStringList{text("All files (*)")},"Qt default all-files filter stayed outside app catalog");
     chooser.setOption(QFileDialog::DontUseNativeDialog);
     chooser.setOption(QFileDialog::DontUseCustomDirectoryIcons);
     chooser.setDirectory(dir.path());
@@ -504,6 +507,14 @@ int main(int argc,char **argv){
     require(chooser.nameFilters()==QStringList{filter},"Qt chooser translation changed a file filter");
     require(chooser.selectedFiles().size()==1 && chooser.selectedFiles().front().endsWith(QString::fromUtf8("音声 %1 é.json")),"Qt chooser translation changed an opaque filename");
     require(QCoreApplication::translate("ExternalPlugin","File &name:")==QStringLiteral("File &name:"),"Qt chooser mapping intercepted plugin captions");
+    chooser.setAcceptMode(QFileDialog::AcceptOpen);
+    chooser.setFileMode(QFileDialog::Directory);
+    auto *directoryLabel=chooser.findChild<QLabel*>("fileNameLabel");
+    require(directoryLabel && directoryLabel->text()==text("Directory:"),"Qt directory selection label stayed outside app catalog");
+    require(buttons->button(QDialogButtonBox::Open)->text()==text("Choose"),"Qt directory Choose action stayed outside app catalog");
+    for(const auto &[qt,caption]:std::initializer_list<std::pair<const char*,const char*>>{
+      {"Directories","Directories"},{"Find Directory","Find directory"},{"Recent Places","Recent places"},{"Save As","Save as"},{"Open","Open"}})
+     require(QCoreApplication::translate("QFileDialog",qt)==text(caption),"Qt default caption stayed outside app catalog");
    }
    const char *chooserErrors[]={
     "%1\nDirectory not found.\nPlease verify the correct directory name was given.",

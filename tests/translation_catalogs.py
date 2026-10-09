@@ -15,6 +15,14 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_all_files_filter_preserves_wildcard_and_filter_count(self):
+        source='All files (*)'
+        catalog.validate_text(source,'Tous les fichiers (*)')
+        for translated in ['Tous les fichiers','Tous les fichiers (*.json)','Tous les fichiers (*) ;; JSON (*.json)']:
+            with self.subTest(translated=translated):
+                with self.assertRaisesRegex(ValueError,'File-dialog filter patterns changed'):
+                    catalog.validate_text(source,translated)
+
     def test_cli_help_preserves_reviewed_limits_and_identifiers(self):
         for source, tokens in catalog.REVIEWED_CLI_TOKENS.items():
             translated = 'Texte ' + ' '.join(tokens) + ' ' + ' '.join(catalog.PLACEHOLDER.findall(source))

@@ -299,8 +299,8 @@ def validate_text(source, translated):
     if original.structure != target.structure:
         raise ValueError('Rich-text tags, links or attributes changed')
     # File-dialog filters must preserve extension/glob patterns and filter count.
-    if re.search(r'\(\*\.[^)]*\)', source):
-        patterns = lambda text: re.findall(r'\(\*\.[^)]*\)', text)
+    if re.search(r'\(\*(?:\.[^)]*)?\)', source):
+        patterns = lambda text: re.findall(r'\(\*(?:\.[^)]*)?\)', text)
         if patterns(source) != patterns(translated) or source.count(';;') != translated.count(';;'):
             raise ValueError('File-dialog filter patterns changed')
 

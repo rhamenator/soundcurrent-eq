@@ -176,6 +176,11 @@ Do you want to replace it?</source>
       <translation>همه خانواده‌ها</translation>
     </message>
     <message>
+      <source>All files (*)</source>
+      <translation>تمام پرونده‌ها (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>All manufacturers</source>
       <translation>همه سازندگان</translation>
     </message>
@@ -551,6 +556,11 @@ Do you want to replace it?</source>
       <translation>نسخه‌های منتشرشده و نصب‌کننده‌های دانلودشده را بررسی می‌کند. هیچ به‌روزرسانی به‌صورت خودکار نصب نمی‌شود.</translation>
     </message>
     <message>
+      <source>Choose</source>
+      <translation>انتخاب</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Choose a name that is not a built-in preset.</source>
       <translation>نامی انتخاب کنید که با نام یک پیش‌تنظیم داخلی یکسان نباشد.</translation>
     </message>
@@ -793,6 +803,16 @@ Do you want to replace it?</source>
     <message>
       <source>Detail view</source>
       <translation>نمایش با جزئیات</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>پوشه‌ها</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>پوشه:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
@@ -1072,6 +1092,11 @@ Do you want to replace it?</source>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
       <translation>فیلترها از محدودیت فرکانس، بهره یا Q فراتر می‌روند.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>یافتن پوشه</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
@@ -2065,6 +2090,11 @@ Do you want to replace it?</source>
       <translation>خواندن قالب میکس خروجی مجازی</translation>
     </message>
     <message>
+      <source>Recent places</source>
+      <translation>مکان‌های اخیر</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Redo</source>
       <translation>انجام دوباره</translation>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
@@ -2202,6 +2232,11 @@ Do you want to replace it?</source>
     <message>
       <source>Save EQ preset</source>
       <translation>ذخیره پیش‌تنظیم اکولایزر</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>ذخیره به عنوان</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>

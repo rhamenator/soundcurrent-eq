@@ -176,6 +176,11 @@ Szeretné lecserélni?</translation>
       <translation>Minden termékcsalád</translation>
     </message>
     <message>
+      <source>All files (*)</source>
+      <translation>Minden fájl (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>All manufacturers</source>
       <translation>Minden gyártó</translation>
     </message>
@@ -551,6 +556,11 @@ Szeretné lecserélni?</translation>
       <translation>Ellenőrzi a közzétett kiadásokat és a letöltött telepítőket. Egyetlen frissítés sem települ automatikusan.</translation>
     </message>
     <message>
+      <source>Choose</source>
+      <translation>Kiválasztás</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Choose a name that is not a built-in preset.</source>
       <translation>Válasszon olyan nevet, amely nem egy beépített előbeállítás neve.</translation>
     </message>
@@ -793,6 +803,16 @@ Szeretné lecserélni?</translation>
     <message>
       <source>Detail view</source>
       <translation>Részletes nézet</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>Könyvtárak</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>Könyvtár:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
@@ -1072,6 +1092,11 @@ Szeretné lecserélni?</translation>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
       <translation>A szűrők túllépik a frekvencia, erősítés vagy Q határait.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>Könyvtár keresése</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
@@ -2065,6 +2090,11 @@ Szeretné lecserélni?</translation>
       <translation>A virtuális kimenet keverési formátumának olvasása</translation>
     </message>
     <message>
+      <source>Recent places</source>
+      <translation>Legutóbbi helyek</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Redo</source>
       <translation>Újra</translation>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
@@ -2202,6 +2232,11 @@ Szeretné lecserélni?</translation>
     <message>
       <source>Save EQ preset</source>
       <translation>EQ-előbeállítás mentése</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>Mentés másként</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>

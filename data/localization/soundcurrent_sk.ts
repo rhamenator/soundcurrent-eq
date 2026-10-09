@@ -176,6 +176,11 @@ Chcete ho nahradiť?</translation>
       <translation>Všetky rady</translation>
     </message>
     <message>
+      <source>All files (*)</source>
+      <translation>Všetky súbory (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>All manufacturers</source>
       <translation>Všetci výrobcovia</translation>
     </message>
@@ -551,6 +556,11 @@ Chcete ho nahradiť?</translation>
       <translation>Kontroluje vydané verzie a stiahnuté inštalátory. Žiadna aktualizácia sa neinštaluje automaticky.</translation>
     </message>
     <message>
+      <source>Choose</source>
+      <translation>Vybrať</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Choose a name that is not a built-in preset.</source>
       <translation>Zvoľte názov, ktorý nepatrí vstavanej predvoľbe.</translation>
     </message>
@@ -793,6 +803,16 @@ Chcete ho nahradiť?</translation>
     <message>
       <source>Detail view</source>
       <translation>Detaily</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>Priečinky</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>Priečinok:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
@@ -1072,6 +1092,11 @@ Chcete ho nahradiť?</translation>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
       <translation>Filtre prekračujú povolené rozsahy frekvencie, zosilnenia alebo Q.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>Nájsť priečinok</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
@@ -2065,6 +2090,11 @@ Chcete ho nahradiť?</translation>
       <translation>Prečítať zmiešavací formát virtuálneho výstupu</translation>
     </message>
     <message>
+      <source>Recent places</source>
+      <translation>Naposledy navštívené</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Redo</source>
       <translation>Znova</translation>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
@@ -2202,6 +2232,11 @@ Chcete ho nahradiť?</translation>
     <message>
       <source>Save EQ preset</source>
       <translation>Uložiť predvoľbu EQ</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>Uložiť ako</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>

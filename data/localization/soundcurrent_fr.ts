@@ -176,6 +176,11 @@ Voulez-vous l'écraser ?</translation>
       <translation>Toutes les gammes</translation>
     </message>
     <message>
+      <source>All files (*)</source>
+      <translation>Tous les fichiers (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>All manufacturers</source>
       <translation>Tous les fabricants</translation>
     </message>
@@ -551,6 +556,11 @@ Voulez-vous l'écraser ?</translation>
       <translation>Vérifie les versions publiées et les programmes d’installation téléchargés. Aucune mise à jour n’est installée automatiquement.</translation>
     </message>
     <message>
+      <source>Choose</source>
+      <translation>Choisir</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Choose a name that is not a built-in preset.</source>
       <translation>Choisissez un nom différent de ceux des préréglages intégrés.</translation>
     </message>
@@ -793,6 +803,16 @@ Voulez-vous l'écraser ?</translation>
     <message>
       <source>Detail view</source>
       <translation>Vue détaillée</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>Dossiers</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>Dossier :</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
@@ -1072,6 +1092,11 @@ Voulez-vous l'écraser ?</translation>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
       <translation>Les filtres dépassent les limites de fréquence, de gain ou de Q.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>Chercher dans le dossier</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
@@ -2065,6 +2090,11 @@ Voulez-vous l'écraser ?</translation>
       <translation>Lire le format de mixage de la sortie virtuelle</translation>
     </message>
     <message>
+      <source>Recent places</source>
+      <translation>Emplacements récents</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Redo</source>
       <translation>Rétablir</translation>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
@@ -2202,6 +2232,11 @@ Voulez-vous l'écraser ?</translation>
     <message>
       <source>Save EQ preset</source>
       <translation>Enregistrer le préréglage d’égalisation</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>Enregistrer sous</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>

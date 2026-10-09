@@ -2245,7 +2245,7 @@
     "src/equipment_profiles.cpp": "b41db4ef53c46a0c9e7b6745d0ea106fd0185ba9eb30e90f66d7afda8877779d",
     "src/equipment_profiles.h": "34fb124fe9a9177735c3e96b54f947fbdd2881ff175153c29334842c140b9545",
     "src/file_display_locale_proxy.h": "73bf365758b447200f7170819f8cf998e40b1ba584122cad51ec5de855593435",
-    "src/localization.h": "3827c8e93ef8d090994717aaba9ad42a8c9a2d9a8666f6d3a1c9c40d1199c01a",
+    "src/localization.h": "c02d6e0f8957f5989a1ccd5667cd14f7cccb9df7b7cb1bb9c3c91edb417bb109",
     "src/localization_text.h": "9cbb9b2c5e49287651cba6bcd273c01e148f8fd5dce4b7e39fdd86594e344cd0",
     "src/localized_file_dialog.h": "db8e7403e18efca39f41bcb02238c94297e09cc9b9a1f9870f12276bdc58a7ff",
     "src/main.cpp": "2d0fed8458fc09d15674f069a53aae542c092bbee2bbc6fa274cdde827fc2383",
@@ -2270,5 +2270,5 @@
     "src/windows_route_guardian.cpp": "4f683ce99ad6bafe227e293d94a82487157da269642e2e2298fa148bc3dfbf2d",
     "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42"
   },
-  "reviewStatus": "Whole-interface provenance review incomplete. Three missing-path/overwrite Qt messages now mapped; remaining Qt source inventory needs semantic classification and runtime coverage."
+  "reviewStatus": "Whole-interface review incomplete. Qt default/directory captions mapped including platform helper uppercase filter alias. Deletion errors, composed headers, external MIME descriptors and current native/package checks pending."
 }

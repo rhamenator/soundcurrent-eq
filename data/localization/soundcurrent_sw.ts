@@ -176,6 +176,11 @@ Unataka kuibadilisha?</translation>
       <translation>Familia zote</translation>
     </message>
     <message>
+      <source>All files (*)</source>
+      <translation>Faili zote (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>All manufacturers</source>
       <translation>Watengenezaji wote</translation>
     </message>
@@ -551,6 +556,11 @@ Unataka kuibadilisha?</translation>
       <translation>Hukagua matoleo yaliyochapishwa na visakinishi vilivyopakuliwa. Hakuna sasisho linalosakinishwa kiotomatiki.</translation>
     </message>
     <message>
+      <source>Choose</source>
+      <translation>Chagua</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Choose a name that is not a built-in preset.</source>
       <translation>Chagua jina ambalo si la mpangilio uliowekwa tayari ndani ya programu.</translation>
     </message>
@@ -793,6 +803,16 @@ Unataka kuibadilisha?</translation>
     <message>
       <source>Detail view</source>
       <translation>Mwonekano wa maelezo</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>Saraka</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>Saraka:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
@@ -1072,6 +1092,11 @@ Unataka kuibadilisha?</translation>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
       <translation>Vichujio vinazidi mipaka ya masafa, gain au Q.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>Tafuta saraka</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
@@ -2065,6 +2090,11 @@ Unataka kuibadilisha?</translation>
       <translation>Kusoma umbizo la kuchanganya sauti la toleo pepe</translation>
     </message>
     <message>
+      <source>Recent places</source>
+      <translation>Maeneo ya hivi karibuni</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Redo</source>
       <translation>Rudia</translation>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
@@ -2202,6 +2232,11 @@ Unataka kuibadilisha?</translation>
     <message>
       <source>Save EQ preset</source>
       <translation>Hifadhi mpangilio wa EQ uliowekwa tayari</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>Hifadhi kama</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>

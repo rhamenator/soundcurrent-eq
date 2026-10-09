@@ -19,7 +19,7 @@
         },
         {
           "source": "&Choose",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "&Delete",
@@ -47,7 +47,7 @@
         },
         {
           "source": "All files (*)",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Alt+Left",
@@ -99,11 +99,11 @@
         },
         {
           "source": "Directories",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Directory:",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "File &name:",
@@ -119,7 +119,7 @@
         },
         {
           "source": "Find Directory",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Forward",
@@ -155,7 +155,7 @@
         },
         {
           "source": "Open",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Parent Directory",
@@ -163,11 +163,11 @@
         },
         {
           "source": "Recent Places",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Save As",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Show ",
@@ -201,7 +201,7 @@
         },
         {
           "source": "&Choose",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "&Delete",
@@ -233,7 +233,7 @@
         },
         {
           "source": "All files (*)",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Alt+Left",
@@ -285,11 +285,11 @@
         },
         {
           "source": "Directories",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Directory:",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "File &name:",
@@ -305,7 +305,7 @@
         },
         {
           "source": "Find Directory",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Forward",
@@ -337,7 +337,7 @@
         },
         {
           "source": "Open",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Parent Directory",
@@ -345,11 +345,11 @@
         },
         {
           "source": "Recent Places",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Save As",
-          "status": "unmapped or needs semantic classification"
+          "status": "exact alias mapped"
         },
         {
           "source": "Show ",
@@ -366,5 +366,11 @@
       ]
     }
   },
-  "nativeReviewed": false
+  "nativeReviewed": false,
+  "additionalPlatformHelper": {
+    "source": "https://github.com/qt/qtbase/blob/6.4/src/gui/kernel/qplatformdialoghelper.cpp",
+    "sha256": "697a82c54a3dcaf990630c63abc66c2cb37022906113c53d73f14b5b99e7107a",
+    "caption": "All Files (*)",
+    "status": "exact alias mapped; discovered by actual default-filter fixture"
+  }
 }

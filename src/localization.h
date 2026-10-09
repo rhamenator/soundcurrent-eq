@@ -167,6 +167,15 @@ public:
             return {};
         }
         if (name == "QFileDialog") {
+            if (action == "Open") return text("Open");
+            if (action == "&Choose") return text("Choose");
+            if (action == "All files (*)" || action == "All Files (*)") return text("All files (*)");
+            if (action == "Directories") return text("Directories");
+            if (action == "Directory:") return text("Directory:");
+            if (action == "Find Directory") return text("Find directory");
+            if (action == "Recent Places") return text("Recent places");
+            if (action == "Save As") return text("Save as");
+
             if (action == "%1\nDirectory not found.\nPlease verify the correct directory name was given.") return text("%1\nDirectory not found.\nPlease verify the correct directory name was given.");
             if (action == "%1\nFile not found.\nPlease verify the correct file name was given.") return text("%1\nFile not found.\nPlease verify the correct file name was given.");
             if (action == "%1 already exists.\nDo you want to replace it?") return text("%1 already exists.\nDo you want to replace it?");

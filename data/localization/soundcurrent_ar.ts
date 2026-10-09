@@ -176,6 +176,11 @@ Do you want to replace it?</source>
       <translation>كل العائلات</translation>
     </message>
     <message>
+      <source>All files (*)</source>
+      <translation>كلّ الملفّات (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>All manufacturers</source>
       <translation>كل الشركات المصنعة</translation>
     </message>
@@ -551,6 +556,11 @@ Do you want to replace it?</source>
       <translation>يتحقق من الإصدارات المنشورة وبرامج التثبيت التي تم تنزيلها. لا يتم تثبيت أي تحديث تلقائيًا.</translation>
     </message>
     <message>
+      <source>Choose</source>
+      <translation>اختر</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Choose a name that is not a built-in preset.</source>
       <translation>اختر اسمًا لا يطابق اسم إعداد مسبق مدمج.</translation>
     </message>
@@ -793,6 +803,16 @@ Do you want to replace it?</source>
     <message>
       <source>Detail view</source>
       <translation>منظور تفصيليّ</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>الأدّلة</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>الدّليل:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
@@ -1072,6 +1092,11 @@ Do you want to replace it?</source>
     <message>
       <source>Filters exceed frequency, gain or Q limits.</source>
       <translation>تتجاوز المرشحات حدود التردد أو الكسب أو Q.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>اعثر على دليل</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
@@ -2065,6 +2090,11 @@ Do you want to replace it?</source>
       <translation>قراءة تنسيق مزج الخرج الافتراضي</translation>
     </message>
     <message>
+      <source>Recent places</source>
+      <translation>الأماكن الحديثة</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Redo</source>
       <translation>إعادة</translation>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
@@ -2202,6 +2232,11 @@ Do you want to replace it?</source>
     <message>
       <source>Save EQ preset</source>
       <translation>حفظ إعداد مسبق لمعادل الصوت</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>احفظ كَ‍</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>
