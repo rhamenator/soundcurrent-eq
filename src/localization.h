@@ -150,7 +150,20 @@ public:
             if (name == "QAbstractSpinBox" && action == "Step &down") return text("Step down");
             return {};
         }
+        if (name == "QFileSystemModel") {
+            if (action == "Name") return text("Name");
+            if (action == "Size") return text("Size");
+            if (action == "Date Modified") return text("Date modified");
+            if (action == "Type") return text("Type");
+            return {};
+        }
         if (name == "QFileDialog") {
+            if (action == "&Rename") return text("Rename");
+            if (action == "New Folder") return text("New folder");
+            if (action == "Show &hidden files") return text("Show hidden files");
+            if (action == "&New Folder") return text("New folder");
+            if (action == "&Delete" || action == "Delete") return text("Delete");
+
             if (action == "Go back") return text("Go back");
             if (action == "Go forward") return text("Go forward");
             if (action == "Go to the parent directory") return text("Go to the parent directory");

@@ -752,6 +752,11 @@ Importér til dit bibliotek?</translation>
       <translation>Dansemusik</translation>
     </message>
     <message>
+      <source>Date modified</source>
+      <translation>Ændringsdato</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Deep Bass</source>
       <translation>Dyb bas</translation>
     </message>
@@ -1554,6 +1559,11 @@ Importér til dit bibliotek?</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
+      <source>Name</source>
+      <translation>Navn</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>EQ til naturlig stemme</translation>
@@ -1565,6 +1575,11 @@ Importér til dit bibliotek?</translation>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Equalizer til naturlig mikrofonstemme til eller fra</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>Ny mappe</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>New profile</source>
@@ -2059,6 +2074,11 @@ Importér til dit bibliotek?</translation>
       <translation>Fjern også den delte VB-CABLE-driver? Andre brugere, optagelsesapps eller stemmeværktøjer kan have brug for den. Bekræft for at åbne det officielle fjernelsesprogram, og klik derefter på Remove Driver. Afvis for at beholde kablet og kun afinstallere SoundCurrent.</translation>
     </message>
     <message>
+      <source>Rename</source>
+      <translation>Omdøb</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Reparer ufuldstændig VB-CABLE-installation</translation>
     </message>
@@ -2283,12 +2303,22 @@ Importér til dit bibliotek?</translation>
       <translation>Vis avancerede kontroller</translation>
     </message>
     <message>
+      <source>Show hidden files</source>
+      <translation>Vis skjulte filer</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Vis spidsmarkører på frekvensniveauerne</translation>
     </message>
     <message>
       <source>Sidebar</source>
       <translation>Sidebjælke</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>Størrelse</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>

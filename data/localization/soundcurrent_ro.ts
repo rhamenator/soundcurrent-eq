@@ -752,6 +752,11 @@ Importați în bibliotecă?</translation>
       <translation>Dance</translation>
     </message>
     <message>
+      <source>Date modified</source>
+      <translation>Data modificării</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Deep Bass</source>
       <translation>Bas profund</translation>
     </message>
@@ -1554,6 +1559,11 @@ Importați în bibliotecă?</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
+      <source>Name</source>
+      <translation>Nume</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>EQ natural de microfon</translation>
@@ -1565,6 +1575,11 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Egalizator natural de microfon pornit sau oprit</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>Dosar nou</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>New profile</source>
@@ -2059,6 +2074,11 @@ Importați în bibliotecă?</translation>
       <translation>Eliminați și driverul VB-CABLE partajat? Alți utilizatori, aplicații de înregistrare sau instrumente vocale pot avea nevoie de el. Confirmați pentru a deschide programul oficial de eliminare, apoi faceți clic pe Remove Driver. Refuzați pentru a păstra cablul și a dezinstala doar SoundCurrent.</translation>
     </message>
     <message>
+      <source>Rename</source>
+      <translation>Redenumește</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Reparați instalarea incompletă a VB-CABLE</translation>
     </message>
@@ -2283,12 +2303,22 @@ Importați în bibliotecă?</translation>
       <translation>Afișați controalele avansate</translation>
     </message>
     <message>
+      <source>Show hidden files</source>
+      <translation>Arată fișierele ascunse</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Afișați marcajele de vârf pe nivelurile de frecvență</translation>
     </message>
     <message>
       <source>Sidebar</source>
       <translation>Bară laterală</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>Dimensiune</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>

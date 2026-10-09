@@ -752,6 +752,11 @@ Import into your library?</source>
       <translation>舞曲</translation>
     </message>
     <message>
+      <source>Date modified</source>
+      <translation>修改日期</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Deep Bass</source>
       <translation>深沉低音</translation>
     </message>
@@ -1554,6 +1559,11 @@ Import into your library?</source>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
+      <source>Name</source>
+      <translation>名稱</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>自然麥克風等化</translation>
@@ -1565,6 +1575,11 @@ Import into your library?</source>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>開啟或關閉自然麥克風等化器</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>新資料夾</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>New profile</source>
@@ -2059,6 +2074,11 @@ Import into your library?</source>
       <translation>是否也移除共用的 VB-CABLE 驅動程式？其他使用者、錄音應用程式或語音工具可能需要它。確認以開啟官方解除安裝程式，然後點擊 Remove Driver。拒絕以保留音訊線纜並僅解除安裝 SoundCurrent。</translation>
     </message>
     <message>
+      <source>Rename</source>
+      <translation>重新命名(R)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>修復不完整的 VB-CABLE 安裝</translation>
     </message>
@@ -2283,12 +2303,22 @@ Import into your library?</source>
       <translation>顯示進階控制</translation>
     </message>
     <message>
+      <source>Show hidden files</source>
+      <translation>顯示隱藏檔案(H)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>在頻率位準上顯示峰值標記</translation>
     </message>
     <message>
       <source>Sidebar</source>
       <translation>側邊欄</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>大小</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>

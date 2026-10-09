@@ -752,6 +752,11 @@ Importálja a könyvtárba?</translation>
       <translation>Dance</translation>
     </message>
     <message>
+      <source>Date modified</source>
+      <translation>Módosítás dátuma</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Deep Bass</source>
       <translation>Mély basszus</translation>
     </message>
@@ -1554,6 +1559,11 @@ Importálja a könyvtárba?</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
+      <source>Name</source>
+      <translation>Név</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>Természetes mikrofon-EQ</translation>
@@ -1565,6 +1575,11 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Természetes mikrofon-hangszínszabályzó be- vagy kikapcsolva</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>Új mappa</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>New profile</source>
@@ -2059,6 +2074,11 @@ Importálja a könyvtárba?</translation>
       <translation>Eltávolítja a közösen használt VB-CABLE illesztőprogramot is? Más felhasználóknak, felvevőalkalmazásoknak vagy hangkommunikációs eszközöknek szükségük lehet rá. Erősítse meg a hivatalos eltávolító megnyitását, majd kattintson a Remove Driver gombra. Az elutasítással megtarthatja a kábelt, és csak a SoundCurrentet távolítja el.</translation>
     </message>
     <message>
+      <source>Rename</source>
+      <translation>Átnevezés</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Hiányos VB-CABLE-telepítés javítása</translation>
     </message>
@@ -2283,12 +2303,22 @@ Importálja a könyvtárba?</translation>
       <translation>Speciális vezérlők megjelenítése</translation>
     </message>
     <message>
+      <source>Show hidden files</source>
+      <translation>Rejtett fájlok megjelenítése</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Csúcsjelölők megjelenítése a frekvenciaszinteken</translation>
     </message>
     <message>
       <source>Sidebar</source>
       <translation>Oldalsáv</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>Méret</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>

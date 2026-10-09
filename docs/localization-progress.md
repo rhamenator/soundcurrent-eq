@@ -609,3 +609,7 @@ Nine accessibility captions now use the app catalog in QFileDialog context: navi
 ### Qt 6.12 Windows chooser compatibility
 
 Native Windows run 37892083899 failed the new basic chooser field assertion. Qt 6.12 upstream UI uses &Look in: and Files of &type:, where Linux Qt 6.4 uses the unmarked forms. The shared translator now maps both exact forms to existing captions; compiled tests explicitly check aliases and report actual/expected field values, locale and Qt version on mismatch. Fresh native Windows qualification is required; the preceding Linux pass does not establish it.
+
+### Qt chooser file actions and headers
+
+Exact QFileDialog context mappings now cover Rename, Delete, New Folder and Show Hidden Files. Exact QFileSystemModel mappings cover Name, Size, Type and Date Modified headers. Studio retains its existing Name catalog entries. Names and paths in model rows are opaque data. These captions describe filesystem operations; they do not rename equipment or change audio processing. Added translations retain upstream provenance and native-unverified status. Actual chooser action/header tests run in each non-English locale. Header visibility menu composition, file-type/size values and errors/confirmation workflows remain pending. No rename/delete/new-folder operation is executed by the tests.

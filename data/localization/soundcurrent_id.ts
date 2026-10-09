@@ -752,6 +752,11 @@ Impor ke pustaka Anda?</translation>
       <translation>Dance</translation>
     </message>
     <message>
+      <source>Date modified</source>
+      <translation>Tanggal diubah</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Deep Bass</source>
       <translation>Bas dalam</translation>
     </message>
@@ -1554,6 +1559,11 @@ Impor ke pustaka Anda?</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
+      <source>Name</source>
+      <translation>Nama</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>EQ mikrofon alami</translation>
@@ -1565,6 +1575,11 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Aktifkan atau nonaktifkan equalizer mikrofon alami</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>Folder baru</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>New profile</source>
@@ -2059,6 +2074,11 @@ Impor ke pustaka Anda?</translation>
       <translation>Hapus juga driver VB-CABLE bersama? Pengguna lain, aplikasi perekaman atau alat suara mungkin membutuhkannya. Konfirmasikan untuk membuka penghapus resmi, lalu klik Remove Driver. Tolak untuk mempertahankan kabel dan hanya menghapus SoundCurrent.</translation>
     </message>
     <message>
+      <source>Rename</source>
+      <translation>Ubah nama</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Perbaiki instalasi VB-CABLE yang tidak lengkap</translation>
     </message>
@@ -2283,12 +2303,22 @@ Impor ke pustaka Anda?</translation>
       <translation>Tampilkan kontrol lanjutan</translation>
     </message>
     <message>
+      <source>Show hidden files</source>
+      <translation>Tampilkan berkas tersembunyi</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Tampilkan penanda puncak pada level frekuensi</translation>
     </message>
     <message>
       <source>Sidebar</source>
       <translation>Bilah sisi</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>Ukuran</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>

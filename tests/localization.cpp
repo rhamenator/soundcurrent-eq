@@ -10,6 +10,7 @@
 #include <QToolButton>
 #include <QAccessible>
 #include <QDebug>
+#include <QTreeView>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QJsonDocument>
@@ -420,6 +421,17 @@ int main(int argc,char **argv){
     }
     require(QCoreApplication::translate("QFileDialog","&Look in:")==text("Look in:"),"Qt 6.12 Look in mnemonic variant stayed English");
     require(QCoreApplication::translate("QFileDialog","Files of &type:")==text("Files of type:"),"Qt 6.12 file-type mnemonic variant stayed English");
+    QStringList fileActions;
+    for(auto *action:chooser.findChildren<QAction*>()) fileActions.append(action->text());
+    for(const auto *caption:{"Rename","Delete","Show hidden files","New folder"})
+     require(fileActions.contains(text(caption)),"Qt chooser file action stayed outside app catalog");
+    auto *fileTree=chooser.findChild<QTreeView*>("treeView");
+    require(fileTree && fileTree->model(),"Qt chooser file model missing");
+    int column=0;
+    for(const auto *caption:{"Name","Size","Type","Date modified"}) {
+     require(fileTree->model()->headerData(column++,Qt::Horizontal).toString()==text(caption),"Qt file model header stayed outside app catalog");
+    }
+    require(QCoreApplication::translate("ExternalPlugin","Date Modified")==QStringLiteral("Date Modified"),"Qt file model mapping intercepted plugin header");
     const auto *buttons=chooser.findChild<QDialogButtonBox*>("buttonBox");
     require(buttons && buttons->button(QDialogButtonBox::Open)->text()==text("Open"),"Qt chooser Open stayed outside app catalog");
     chooser.setAcceptMode(QFileDialog::AcceptSave);

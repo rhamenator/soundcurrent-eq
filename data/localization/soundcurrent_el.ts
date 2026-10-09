@@ -752,6 +752,11 @@ Import into your library?</source>
       <translation>Χορευτική μουσική</translation>
     </message>
     <message>
+      <source>Date modified</source>
+      <translation>Ημερομηνία τροποποίησης</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Deep Bass</source>
       <translation>Βαθιά μπάσα</translation>
     </message>
@@ -1554,6 +1559,11 @@ Import into your library?</source>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
+      <source>Name</source>
+      <translation>Όνομα</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>EQ φυσικής φωνής</translation>
@@ -1565,6 +1575,11 @@ Import into your library?</source>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Ενεργοποίηση ή απενεργοποίηση ισοσταθμιστή φυσικής φωνής μικροφώνου</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>Νέος φάκελος</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>New profile</source>
@@ -2059,6 +2074,11 @@ Import into your library?</source>
       <translation>Να αφαιρεθεί και το κοινόχρηστο πρόγραμμα οδήγησης VB-CABLE; Άλλοι χρήστες, εφαρμογές εγγραφής ή εργαλεία φωνής μπορεί να το χρειάζονται. Επιβεβαιώστε για να ανοίξετε το επίσημο πρόγραμμα αφαίρεσης και κάντε κλικ στο Remove Driver. Αρνηθείτε για να διατηρήσετε το καλώδιο και να απεγκαταστήσετε μόνο το SoundCurrent.</translation>
     </message>
     <message>
+      <source>Rename</source>
+      <translation>Μετονομασία</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Επιδιόρθωση ελλιπούς εγκατάστασης του VB-CABLE</translation>
     </message>
@@ -2283,12 +2303,22 @@ Import into your library?</source>
       <translation>Εμφάνιση προχωρημένων χειριστηρίων</translation>
     </message>
     <message>
+      <source>Show hidden files</source>
+      <translation>Εμφάνιση κρυφών αρχείων</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Εμφάνιση δεικτών κορυφών στις ενδείξεις συχνότητας</translation>
     </message>
     <message>
       <source>Sidebar</source>
       <translation>Πλευρική στήλη</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>Μέγεθος</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>

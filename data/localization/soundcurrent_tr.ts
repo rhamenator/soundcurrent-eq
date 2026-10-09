@@ -752,6 +752,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Dans müziği</translation>
     </message>
     <message>
+      <source>Date modified</source>
+      <translation>Değiştirilme Tarihi</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Deep Bass</source>
       <translation>Derin bas</translation>
     </message>
@@ -1554,6 +1559,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
+      <source>Name</source>
+      <translation>Ad</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>Doğal ses EQ'su</translation>
@@ -1565,6 +1575,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Doğal ses mikrofon ekolayzırını aç veya kapat</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>Yeni Klasör</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>New profile</source>
@@ -2059,6 +2074,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Paylaşılan VB-CABLE sürücüsü de kaldırılsın mı? Diğer kullanıcılar, kayıt uygulamaları veya sesli iletişim araçları buna ihtiyaç duyabilir. Resmî kaldırıcıyı açmak için onaylayın, ardından Remove Driver düğmesine tıklayın. Kabloyu koruyup yalnızca SoundCurrent’ı kaldırmak için reddedin.</translation>
     </message>
     <message>
+      <source>Rename</source>
+      <translation>Yeniden Adlandır</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Eksik VB-CABLE kurulumunu onar</translation>
     </message>
@@ -2283,12 +2303,22 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Gelişmiş kontrolleri göster</translation>
     </message>
     <message>
+      <source>Show hidden files</source>
+      <translation>Gizli dosyaları göster</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Frekans seviyelerinde tepe işaretlerini göster</translation>
     </message>
     <message>
       <source>Sidebar</source>
       <translation>Kenar Çubuğu</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>Boyut</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>

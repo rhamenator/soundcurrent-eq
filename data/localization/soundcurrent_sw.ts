@@ -752,6 +752,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Muziki wa dansi</translation>
     </message>
     <message>
+      <source>Date modified</source>
+      <translation>Tarehe ya kubadilishwa</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Deep Bass</source>
       <translation>Besi nzito</translation>
     </message>
@@ -1554,6 +1559,11 @@ Uingize kwenye maktaba yako?</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
+      <source>Name</source>
+      <translation>Jina</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>EQ ya asili ya maikrofoni</translation>
@@ -1565,6 +1575,11 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Washa au zima kisawazishi cha asili cha maikrofoni</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>Folda mpya</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>New profile</source>
@@ -2059,6 +2074,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Ondoa pia kiendeshi cha VB-CABLE kinachotumiwa kwa pamoja? Watumiaji wengine, programu za kurekodi au zana za sauti wanaweza kukihitaji. Thibitisha ili kufungua kiondoaji rasmi, kisha ubofye Remove Driver. Kataa ili kuhifadhi kebo na kuondoa SoundCurrent pekee.</translation>
     </message>
     <message>
+      <source>Rename</source>
+      <translation>Badili jina</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>Rekebisha usakinishaji wa VB-CABLE ambao haujakamilika</translation>
     </message>
@@ -2283,12 +2303,22 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Onyesha vidhibiti vya juu</translation>
     </message>
     <message>
+      <source>Show hidden files</source>
+      <translation>Onyesha faili zilizofichwa</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Onyesha alama za kilele kwenye viwango vya masafa</translation>
     </message>
     <message>
       <source>Sidebar</source>
       <translation>Upau wa pembeni</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>Ukubwa</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>

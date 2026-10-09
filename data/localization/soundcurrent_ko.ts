@@ -752,6 +752,11 @@ Import into your library?</source>
       <translation>댄스</translation>
     </message>
     <message>
+      <source>Date modified</source>
+      <translation>수정한 날짜</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Deep Bass</source>
       <translation>깊은 저음</translation>
     </message>
@@ -1554,6 +1559,11 @@ Import into your library?</source>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
+      <source>Name</source>
+      <translation>이름</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>자연스러운 마이크 EQ</translation>
@@ -1565,6 +1575,11 @@ Import into your library?</source>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>자연스러운 마이크 이퀄라이저 켜기 또는 끄기</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>새 폴더</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>New profile</source>
@@ -2059,6 +2074,11 @@ Import into your library?</source>
       <translation>공유 VB-CABLE 드라이버도 제거할까요? 다른 사용자, 녹음 앱 또는 음성 도구에서 필요할 수 있습니다. 승인하면 공식 제거 프로그램이 열립니다. 그런 다음 Remove Driver를 클릭하세요. 거부하면 케이블을 유지하고 SoundCurrent만 제거합니다.</translation>
     </message>
     <message>
+      <source>Rename</source>
+      <translation>이름 바꾸기(R)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Repair incomplete VB-CABLE installation</source>
       <translation>불완전한 VB-CABLE 설치 복구</translation>
     </message>
@@ -2283,12 +2303,22 @@ Import into your library?</source>
       <translation>고급 컨트롤 표시</translation>
     </message>
     <message>
+      <source>Show hidden files</source>
+      <translation>숨김 파일 표시(H)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>주파수 레벨에 피크 마커 표시</translation>
     </message>
     <message>
       <source>Sidebar</source>
       <translation>사이드바</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>크기</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
