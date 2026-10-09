@@ -45,9 +45,9 @@
     },
     {
       "requirement": "Changed Windows packages and installed language interfaces",
-      "status": "current job confirmed live; current artifact verification pending",
+      "status": "verified native Windows installed fixture scope for exact product source and package hashes",
       "run": 37886556997,
-      "remaining": "Inspect completion logs and installer/executable hashes when terminal; retain exact scope"
+      "evidence": "tests/results/localization/windows-menu-installed-ci/verified-artifact.json"
     },
     {
       "requirement": "Shared localization infrastructure",
@@ -55,7 +55,7 @@
     },
     {
       "requirement": "Reviewable packages and synchronized commits",
-      "status": "Linux artifacts downloaded and hashes verified; current Windows artifacts pending; audit/evidence records synchronized in checkpoint commit"
+      "status": "Linux and Windows packages downloaded, exact hashes verified, and records synchronized in checkpoint commit"
     },
     {
       "requirement": "Preserve virtual driver and separately owned DAW",

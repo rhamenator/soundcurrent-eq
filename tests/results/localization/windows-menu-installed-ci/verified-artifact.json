@@ -1,0 +1,21 @@
+{
+  "run": 37886556997,
+  "testedHead": "d9155fbb124e244220cf0dfb59551737afb607da",
+  "catalogMessages": 636,
+  "conclusion": "success",
+  "installerPath": "/home/rich/dev/soundcurrent-localization-artifacts/eq-installed-windows-37886556997/dist/SoundCurrent-EQ-1.1.0-windows-x64-setup.exe",
+  "installerSha256": "44c388bae072cb352f8065034a0da60cf12d8af6a909c787029703e5f3e614b0",
+  "executableSha256": "9980d1af260ab0a58a37ce451460bf9d7a23beb3a9389690ac6a34f3376dd0dd",
+  "installedLocaleLogCount": 34,
+  "scope": "Native Windows CI compiled tests and actual installed app UI fixtures for 34 catalogs; silent French/Nynorsk/Arabic install and same-installer update, localized shortcuts, settings/user-file preservation and uninstall; audio device identities/status guarded unchanged by fixture. Not interactive chooser, older-version migration, live audio, native-driver lifecycle or native-speaker verification.",
+  "nativeReviewed": false,
+  "compiledLocalizationFixtureEvidence": {
+    "platform": "windows",
+    "testTargetBuilt": true,
+    "executionGate": "build-windows.ps1 launches the named test with native Windows platform, waits up to 90 seconds and fails on absent/nonzero exit; successful CI build step passed this gate",
+    "buildScriptSha256": "8d66384662a68b75f1699f47877a705fe1a4e392a4a378ceacfa35e8c7af975e",
+    "ciLogSha256": "7e11e4b02ef6e63993195da5369fcd604a61ee2eaf1d1672a7afe9fe13333e39",
+    "ciLogPath": "/home/rich/dev/soundcurrent-localization-artifacts/eq-windows-menu-37886556997.log",
+    "limitations": "Successful GUI test stdout is not retained separately by this build script; installed app UI completion logs are retained separately"
+  }
+}
