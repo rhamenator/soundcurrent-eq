@@ -1686,14 +1686,14 @@
       "file": "src/main.cpp",
       "call": "drawText",
       "argument": -1,
-      "expression": "QString::number(gain, 'g', 2)",
+      "expression": "QLocale().toString(gain, 'g', 2)",
       "containsTranslationCall": false
     },
     {
       "file": "src/main.cpp",
       "call": "drawText",
       "argument": -1,
-      "expression": "frequency >= 1000 ? QString::number(frequency / 1000, 'g', 2) + \"k\"\n                                               : QString::number(frequency, 'g', 3)",
+      "expression": "frequency >= 1000 ? QLocale().toString(frequency / 1000, 'g', 2) + \"k\"\n                                               : QLocale().toString(frequency, 'g', 3)",
       "containsTranslationCall": false
     },
     {
@@ -2374,7 +2374,7 @@
     "src/localization.h": "f430613fdec6915b10791010bdf9f1e36838240571accd041b818ba00e3561b9",
     "src/localization_text.h": "d9d06c97d3108e857250a419243138cd0939a72a0d19b535666beb1eedcf776c",
     "src/localized_file_dialog.h": "db8e7403e18efca39f41bcb02238c94297e09cc9b9a1f9870f12276bdc58a7ff",
-    "src/main.cpp": "67a782e55e0b1c658a04ca4a8b7a6539ec344d9be786c5a5da74abc3a2a841e4",
+    "src/main.cpp": "385ed79a6410f3360ec4338b48ff2fe2c92e53f1ea8e868aaeadef4e9a3baea8",
     "src/main_windows.cpp": "df16bae0597ddb53f7a31bf2d99bd50f5768f6174265309d254da9b10bebd6c0",
     "src/processing_guard.cpp": "7357547a751b724be0c1743d94f8318a9f86b5f6b2180911799dc660bd5e74b2",
     "src/processing_guard.h": "3210a47f6da6b8d019710e052785a90b1b4635182497ca8c64549fb3b31a1913",
@@ -2396,5 +2396,5 @@
     "src/windows_route_guardian.cpp": "4f683ce99ad6bafe227e293d94a82487157da269642e2e2298fa148bc3dfbf2d",
     "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42"
   },
-  "reviewStatus": "Expanded Qt display source and composed-expression review retained; graph axes corrected; fresh graph patch package qualification pending."
+  "reviewStatus": "Drawing/input-dialog captions traced; both graph axes corrected; fresh combined graph-patch package qualification pending."
 }

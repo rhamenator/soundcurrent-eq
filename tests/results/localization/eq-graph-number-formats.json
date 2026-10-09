@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-09",
+  "change": "Equalizer graph gain/frequency axis strings use selected QLocale; k abbreviation, coordinates, response calculation and left-to-right frequency direction unchanged.",
+  "sourceSha256": "385ed79a6410f3360ec4338b48ff2fe2c92e53f1ea8e868aaeadef4e9a3baea8",
+  "test": "Actual compiled --localization-ui-test, Arabic language, ar-EG number format, offscreen screenshot capture",
+  "result": "passed",
+  "logSha256": "1e81cc01efb49abc87d418e481c40edce34ffd91e7ea907061eb044d09e82770",
+  "imageSha256": "f77febd35f121cb793c6e0c66eac062cb8bc20136c45840ce597b55f7b1d5f4e",
+  "visualReview": "Displayed numeric axes use localized glyphs; captured top page graph retains low-to-high frequency from left to right. Narrow visual review only: does not verify all Arabic wording, every scroll position or every locale.",
+  "machineFormattingReview": "Remaining QString::number call sites traced to audio config/command arguments, activation IDs and fixture filenames; kept locale invariant.",
+  "inputDialogReview": "Save EQ preset title and Preset name prompt use SC_TR.",
+  "currentPackageQualification": "pending",
+  "nativeReviewed": false
+}

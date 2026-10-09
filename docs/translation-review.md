@@ -457,3 +457,7 @@ Balance position now uses selected-locale digits and the locale percent sign at 
 ### Equipment graph axes and external file descriptions
 
 Equipment graph axis numbers now use the selected format locale; numeric response data and left-to-right frequency geometry are unchanged. Arabic equipment editor interaction fixtures pass locally; no independent raster/OCR or native-speaker proof is claimed. Fresh packages for this patch remain pending. A separate Qt-only MIME probe confirms regular text-file descriptions come from provider comments, with locale-dependent or English fallback behavior. These are provider metadata; generic Folder/Drive/Unknown captions remain mapped through the app catalog. Windows shell-provider behavior was not exercised by this Linux probe. See profile-graph-number-formats.json and file-type-provider-boundary.json.
+
+### Equalizer graph axis follow-up
+
+Expanded drawing inventory exposed three remaining plain-number axis calls in the main EQ graph. They now use the selected format locale. Both compiled Arabic/ar-EG UI fixtures pass; captured top-page graphs were visually inspected for localized digit glyphs and retained low-to-high frequency direction. This narrow visual check is not native-language review or full geometry qualification. Machine audio configuration and command-number serialization remain invariant. Fresh combined graph-patch packages are pending; see eq-graph-number-formats.json.

@@ -251,8 +251,9 @@
   "qualifiedPrecedingHead": "6111c989cdc8ec2c08f6b9ce4cc0a921f2dfb781",
   "audioDisplayNumbers": "tests/results/localization/audio-display-numbers.json",
   "qualifiedCurrentProductionHead": "e4ecd724dc468343ba07fdeb5ad30597063c3248",
-  "currentProductionSourceMatch": "Latest graph axis formatting patch changes src/equipment_profiles.cpp after qualified balance head; fresh graph package qualification pending.",
+  "currentProductionSourceMatch": "Equipment and equalizer graph display formatting change src/equipment_profiles.cpp and src/main.cpp after qualified balance head; combined graph-patch package qualification pending.",
   "balanceNumberFormats": "tests/results/localization/balance-number-formats.json",
   "profileGraphNumberFormats": "tests/results/localization/profile-graph-number-formats.json",
-  "fileTypeProviderBoundary": "tests/results/localization/file-type-provider-boundary.json"
+  "fileTypeProviderBoundary": "tests/results/localization/file-type-provider-boundary.json",
+  "equalizerGraphNumberFormats": "tests/results/localization/eq-graph-number-formats.json"
 }

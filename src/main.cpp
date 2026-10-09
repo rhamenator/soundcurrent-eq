@@ -1465,7 +1465,7 @@ protected:
             painter.drawLine(QPointF(plot.left(), y), QPointF(plot.right(), y));
             painter.setPen(QColor("#8fa2bb"));
             painter.drawText(QRectF(1, y - 9, 33, 18), Qt::AlignRight | Qt::AlignVCenter,
-                             QString::number(gain, 'g', 2));
+                             QLocale().toString(gain, 'g', 2));
             painter.setPen(QPen(QColor("#334862"), 1));
         }
         for (const auto frequency : {100.0, 1000.0, 10000.0}) {
@@ -1473,8 +1473,8 @@ protected:
             painter.drawLine(QPointF(x, plot.top()), QPointF(x, plot.bottom()));
             painter.setPen(QColor("#8fa2bb"));
             painter.drawText(QRectF(x - 22, plot.bottom() + 2, 44, 17), Qt::AlignCenter,
-                             frequency >= 1000 ? QString::number(frequency / 1000, 'g', 2) + "k"
-                                               : QString::number(frequency, 'g', 3));
+                             frequency >= 1000 ? QLocale().toString(frequency / 1000, 'g', 2) + "k"
+                                               : QLocale().toString(frequency, 'g', 3));
             painter.setPen(QPen(QColor("#334862"), 1));
         }
         if (bands_.isEmpty()) return;
