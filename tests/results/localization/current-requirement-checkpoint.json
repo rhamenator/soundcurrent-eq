@@ -46,9 +46,9 @@
     },
     {
       "requirement": "Changed Windows packages and installed language interfaces",
-      "status": "Qualified preceding balance installer; current combined graph-patch Windows run remains in progress",
-      "run": 37899545845,
-      "evidence": "tests/results/localization/windows-balance-installed/verified-artifact.json"
+      "status": "Combined graph-patch installer/executable hashes matched installed lifecycle; 34 installed locales, fr/nn/ar silent install/update/preservation/shortcuts/uninstall passed",
+      "run": 37901182779,
+      "evidence": "tests/results/localization/windows-graph-installed/verified-artifact.json"
     },
     {
       "requirement": "Shared localization infrastructure",
@@ -56,7 +56,7 @@
     },
     {
       "requirement": "Reviewable packages and synchronized commits",
-      "status": "Current Linux graph packages downloaded/hash-verified; Windows balance packages qualified, graph-patch Windows pending; source fixes synced"
+      "status": "Combined graph-patch Linux/Windows artifacts downloaded and hash-verified; source fixes synced; latest artifact evidence being committed"
     },
     {
       "requirement": "Preserve virtual driver and separately owned DAW",
@@ -250,8 +250,8 @@
   "qt612FixedNativeEvidence": "tests/results/localization/qt-file-dialog-qt612-native-success.json",
   "qualifiedPrecedingHead": "6111c989cdc8ec2c08f6b9ce4cc0a921f2dfb781",
   "audioDisplayNumbers": "tests/results/localization/audio-display-numbers.json",
-  "qualifiedCurrentProductionHead": "e4ecd724dc468343ba07fdeb5ad30597063c3248",
-  "currentProductionSourceMatch": "Equipment and equalizer graph display formatting change src/equipment_profiles.cpp and src/main.cpp after qualified balance head; combined graph-patch package qualification pending.",
+  "qualifiedCurrentProductionHead": "6ad34084a77ec83eff6c0d430d8eb1a70ed378dd",
+  "currentProductionSourceMatch": "Current src and packaged resource code match combined graph-patch qualification; later edits add source-review guards/metadata/reports only.",
   "balanceNumberFormats": "tests/results/localization/balance-number-formats.json",
   "profileGraphNumberFormats": "tests/results/localization/profile-graph-number-formats.json",
   "fileTypeProviderBoundary": "tests/results/localization/file-type-provider-boundary.json",

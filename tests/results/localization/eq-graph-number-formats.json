@@ -11,7 +11,7 @@
   "inputDialogReview": "Save EQ preset title and Preset name prompt use SC_TR.",
   "currentPackageQualification": {
     "linux": "linux-graph-installed/verified-artifact.json",
-    "windows": "graph-patch run still in progress"
+    "windows": "windows-graph-installed/verified-artifact.json"
   },
   "nativeReviewed": false
 }

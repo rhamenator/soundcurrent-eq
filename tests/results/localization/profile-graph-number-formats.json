@@ -8,7 +8,7 @@
   "testScope": "Actual profile editor interaction/change/discard/save/import/preservation/apply fixture; not independent raster/OCR proof of each axis glyph or native-speaker review.",
   "currentPackageQualification": {
     "linux": "linux-graph-installed/verified-artifact.json",
-    "windows": "graph-patch run still in progress"
+    "windows": "windows-graph-installed/verified-artifact.json"
   },
   "nativeReviewed": false
 }
