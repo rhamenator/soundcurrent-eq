@@ -3,194 +3,397 @@
   <context>
     <name>SoundCurrent</name>
     <message>
-      <source>
-Apply this correction to the </source>
-      <translation type="unfinished" />
-    </message>
-    <message>
-      <source>
-Import into your library?</source>
-      <translation type="unfinished" />
-    </message>
-    <message>
       <source> (currently selected)</source>
-      <translation type="unfinished" />
+      <translation> (jelenleg kiválasztva)</translation>
+    </message>
+    <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (eredeti modell; nem SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
     </message>
     <message>
       <source> (restored selection)</source>
-      <translation type="unfinished" />
+      <translation> (visszaállított kiválasztás)</translation>
     </message>
     <message>
-      <source> route?</source>
-      <translation type="unfinished" />
+      <source> [custom]</source>
+      <translation> [egyéni]</translation>
+    </message>
+    <message>
+      <source> and </source>
+      <translation> és </translation>
     </message>
     <message>
       <source> · mono</source>
-      <translation type="unfinished" />
+      <translation> · monó</translation>
+    </message>
+    <message>
+      <source> · no USB microphone detected</source>
+      <translation> · nem található USB-mikrofon</translation>
     </message>
     <message>
       <source> · stereo</source>
-      <translation type="unfinished" />
+      <translation> · sztereó</translation>
+    </message>
+    <message>
+      <source>%1
+
+Technical details:
+%2</source>
+      <translation>%1
+
+Műszaki részletek:
+%2</translation>
+    </message>
+    <message>
+      <source>%1
+Directory not found.
+Please verify the correct directory name was given.</source>
+      <translation>%1
+A könyvtár nem található.
+Ellenőrizze, hogy jól adta-e meg a könyvtár nevét.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+File not found.
+Please verify the correct file name was given.</source>
+      <translation>%1
+A fájl nem található.
+Ellenőrizze, hogy jól adta-e meg a fájl nevét.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+The app remains open; your settings have been kept.</source>
+      <translation>%1
+Az alkalmazás nyitva marad; a beállítások megmaradtak.</translation>
     </message>
     <message>
       <source>%1 %2%3 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 %2%3 dB</translation>
+    </message>
+    <message>
+      <source>%1 / %2
+%3
+Apply this correction to the %4 route?</source>
+      <translation>%1 / %2
+%3
+Alkalmazza ezt a korrekciót a(z) %4 útvonalra?</translation>
+    </message>
+    <message>
+      <source>%1 / %2
+%3
+Import into your library?</source>
+      <translation>%1 / %2
+%3
+Importálja a könyvtárba?</translation>
+    </message>
+    <message>
+      <source>%1 Hz: measured %2%3 dB; suggested %4%5 dB</source>
+      <translation>%1 Hz: mért %2%3 dB; javasolt %4%5 dB</translation>
+    </message>
+    <message>
+      <source>%1 Hz: signal %2, background %3</source>
+      <translation>%1 Hz: jel %2, háttér %3</translation>
+      <extracomment>Debug calibration tone amplitude and background noise amplitude. %1 is frequency, %2 signal amplitude, %3 background amplitude. Display only; no change to numerical analysis.</extracomment>
+    </message>
+    <message>
+      <source>%1 Hz: too quiet to measure</source>
+      <translation>%1 Hz: túl halk a méréshez</translation>
+    </message>
+    <message>
+      <source>%1 already exists.
+Do you want to replace it?</source>
+      <translation>%1 már létezik.
+Szeretné lecserélni?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1 disconnected. </source>
+      <translation>%1 leválasztva. </translation>
+    </message>
+    <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>A művelet sikertelen: %1 (0x%2)</translation>
+    </message>
+    <message>
+      <source>%1 is already running or its instance lock is unavailable</source>
+      <translation>A(z) %1 már fut, vagy a példányzárolás nem érhető el</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>%1 is running. Quit it before using SoundCurrent.</source>
+      <translation>A(z) %1 fut. A SoundCurrent használata előtt zárja be.</translation>
+      <extracomment>A recognized competing equalizer process is active. %1 is its opaque executable name; quit that program completely, not merely its window. Preserve SoundCurrent brand and process identity.</extracomment>
+    </message>
+    <message>
+      <source>%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.</source>
+      <translation>A %1 telepítése nem fejeződött be. Maga a %2 alkalmazás telepítve van. Az újrapróbálkozáshoz használja a Start menü %3 parancsát; az okot a telepítés részleteinél találja.</translation>
+      <extracomment>Setup failure dialog after app files/shortcuts copied. %1 = stable driver name; %2 = stable app name; %3 = actual currently English Start-menu shortcut name Audio driver setup (not localized Qt button). Setup failure does not prove existing driver absent. Preserve app installed, Start-menu retry and details for reason. Shortcut display-name localization and upgrade cleanup remain open. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
+      <translation>A %1 telepítése nem fejeződött be. Próbálja újra a Start menü parancsikonjával.</translation>
+      <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>%1%2 dB</source>
-      <translation type="unfinished" />
+      <translation>%1%2 dB</translation>
+    </message>
+    <message>
+      <source>'%1' is write protected.
+Do you want to delete it anyway?</source>
+      <translation>„%1” írásvédett.
+Mindenképp törölni szeretné?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>A private user runtime directory is required</source>
+      <translation>Privát felhasználói futásidejű könyvtár szükséges</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>Abort</source>
+      <translation>Megszakítás</translation>
     </message>
     <message>
       <source>Acoustic</source>
-      <translation type="unfinished" />
+      <translation>Akusztikus</translation>
     </message>
     <message>
       <source>Active / passive / unknown</source>
-      <translation type="unfinished" />
+      <translation>Aktív / passzív / ismeretlen</translation>
     </message>
     <message>
       <source>Add filter</source>
-      <translation type="unfinished" />
+      <translation>Szűrő hozzáadása</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
-      <translation type="unfinished" />
+      <translation>Állítsa a kimenetet -60 és +12 dB között az EQ után. A nagyobb erősítés túlvezérlést okozhat.</translation>
     </message>
     <message>
       <source>Adjust this tone band around the natural voice profile</source>
-      <translation type="unfinished" />
+      <translation>Állítsa ezt a frekvenciasávot a természetes beszédprofil körül</translation>
+    </message>
+    <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>Állítható, rendszerszintű hangszínszabályzó PipeWire-hez</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
-      <translation type="unfinished" />
+      <translation>Speciális hangjavító vezérlők</translation>
     </message>
     <message>
       <source>Air</source>
-      <translation type="unfinished" />
+      <translation>Levegősség</translation>
     </message>
     <message>
       <source>All brands</source>
-      <translation type="unfinished" />
+      <translation>Minden márka</translation>
     </message>
     <message>
       <source>All equipment</source>
-      <translation type="unfinished" />
+      <translation>Minden eszköz</translation>
     </message>
     <message>
       <source>All families</source>
-      <translation type="unfinished" />
+      <translation>Minden termékcsalád</translation>
+    </message>
+    <message>
+      <source>All files (*)</source>
+      <translation>Minden fájl (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>All manufacturers</source>
-      <translation type="unfinished" />
+      <translation>Minden gyártó</translation>
     </message>
     <message>
       <source>All speaker types</source>
-      <translation type="unfinished" />
+      <translation>Minden hangsugárzótípus</translation>
     </message>
     <message>
       <source>All subtypes</source>
-      <translation type="unfinished" />
+      <translation>Minden altípus</translation>
     </message>
     <message>
       <source>Ambience</source>
-      <translation type="unfinished" />
+      <translation>Térérzet</translation>
     </message>
     <message>
       <source>Ambience damping</source>
-      <translation type="unfinished" />
+      <translation>Térérzet csillapítása</translation>
     </message>
     <message>
       <source>Ambience decay</source>
-      <translation type="unfinished" />
+      <translation>Térérzet lecsengési ideje</translation>
     </message>
     <message>
       <source>Amp details</source>
-      <translation type="unfinished" />
+      <translation>Erősítő részletei</translation>
+    </message>
+    <message>
+      <source>Amplifier</source>
+      <translation>Erősítő</translation>
     </message>
     <message>
       <source>Amplifier / receiver</source>
-      <translation type="unfinished" />
+      <translation>Erősítő / rádióerősítő</translation>
     </message>
     <message>
       <source>Amplifier model profile</source>
-      <translation type="unfinished" />
+      <translation>Erősítőmodell profilja</translation>
     </message>
     <message>
       <source>Amplifier profile details</source>
-      <translation type="unfinished" />
+      <translation>Erősítőprofil részletei</translation>
     </message>
     <message>
       <source>Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.</source>
-      <translation type="unfinished" />
+      <translation>Az erősítőprofilokhoz ismert hangsugárzóterheléssel, bemenettel és hangszínbeállításokkal végzett elektromos mérések szükségesek. Importáljon mért korrekciós fájlt; marketingadatokból nem következtetünk erősítőgörbékre.</translation>
     </message>
     <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
-      <translation type="unfinished" />
+      <translation>Alkalmazásfrissítés lett telepítve. Betöltéséhez válassza a Kilépés lehetőséget, majd nyissa meg újra; az ablak bezárása futva hagyja a régi verziót.</translation>
+    </message>
+    <message>
+      <source>Another SoundCurrent EQ sink is already running</source>
+      <translation>Már fut egy másik SoundCurrent EQ virtuális kimenet</translation>
     </message>
     <message>
       <source>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</source>
-      <translation type="unfinished" />
+      <translation>Egy másik SoundCurrent-alkalmazás vagy hangillesztőprogram-beállítás fut. Lépjen ki belőle az alkalmazás megnyitása előtt.</translation>
     </message>
     <message>
       <source>Another SoundCurrent equalizer is running. Quit EQ or Studio before opening the other app.</source>
-      <translation type="unfinished" />
+      <translation>Egy másik SoundCurrent-hangszínszabályzó fut. Lépjen ki az EQ-ból vagy a Studióból a másik alkalmazás megnyitása előtt.</translation>
     </message>
     <message>
-      <source>Another equalizer route is present: </source>
-      <translation type="unfinished" />
+      <source>Another SoundCurrent microphone filter is running</source>
+      <translation>Egy másik SoundCurrent-mikrofonszűrő fut</translation>
+    </message>
+    <message>
+      <source>Another equalizer route is present: %1. Quit it before using SoundCurrent.</source>
+      <translation>Másik hangszínszabályzó-útvonal található: %1. Lépjen ki belőle a SoundCurrent használata előtt.</translation>
     </message>
     <message>
       <source>Application update</source>
-      <translation type="unfinished" />
+      <translation>Alkalmazásfrissítés</translation>
     </message>
     <message>
       <source>Application updates</source>
-      <translation type="unfinished" />
+      <translation>Alkalmazásfrissítések</translation>
+    </message>
+    <message>
+      <source>Apply</source>
+      <translation>Alkalmaz</translation>
+    </message>
+    <message>
+      <source>Apply amplifier correction?</source>
+      <translation>Alkalmazza az erősítő korrekcióját?</translation>
+      <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
     </message>
     <message>
       <source>Apply correction?</source>
-      <translation type="unfinished" />
+      <translation>Alkalmazza a korrekciót?</translation>
+    </message>
+    <message>
+      <source>Apply only if these conditions match your system.</source>
+      <translation>Csak akkor alkalmazza, ha ezek a körülmények megfelelnek a rendszerének.</translation>
+      <extracomment>Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.</extracomment>
+    </message>
+    <message>
+      <source>Apply profile</source>
+      <translation>Profil alkalmazása</translation>
+    </message>
+    <message>
+      <source>Apply suggested EQ</source>
+      <translation>Javasolt EQ alkalmazása</translation>
+    </message>
+    <message>
+      <source>Are you sure you want to delete '%1'?</source>
+      <translation>Biztosan törölni szeretné: „%1”?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Audio bridge did not start</source>
+      <translation>A hanghíd nem indult el</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
-      <translation type="unfinished" />
+      <translation>Hangillesztőprogram beállítása</translation>
+    </message>
+    <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>A hangillesztőprogram beállítása befejeződött. A SoundCurrent használata előtt indítsa újra a Windowst.</translation>
+    </message>
+    <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>A hangillesztőprogram beállítása nem fejeződött be: %1</translation>
     </message>
     <message>
       <source>Audio error: %1</source>
-      <translation type="unfinished" />
+      <translation>Hanghiba: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Hanghelyreállítási segédprogram</translation>
+    </message>
+    <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>A hangútvonal helyreállítását segítő program nem indult el. Javítsa vagy telepítse újra a SoundCurrent alkalmazást.</translation>
     </message>
     <message>
       <source>Audio setup</source>
-      <translation type="unfinished" />
+      <translation>Hangbeállítás</translation>
     </message>
     <message>
       <source>Audio setup could not finish</source>
-      <translation type="unfinished" />
+      <translation>A hangbeállítás nem fejezhető be</translation>
+    </message>
+    <message>
+      <source>Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.</source>
+      <translation>A hangbeállítás sikertelen. Ha most telepítette a VB-CABLE-t, indítsa újra a Windowst, majd próbálja újra.</translation>
+    </message>
+    <message>
+      <source>Audio setup is missing. Repair or reinstall SoundCurrent.</source>
+      <translation>A hangbeállító hiányzik. Javítsa vagy telepítse újra a SoundCurrentet.</translation>
     </message>
     <message>
       <source>Audio setup is running. Processing is paused; the app remains open.</source>
-      <translation type="unfinished" />
+      <translation>A hangbeállítás fut. A feldolgozás szünetel; az alkalmazás nyitva marad.</translation>
     </message>
     <message>
       <source>Auto headroom %1 dB</source>
-      <translation type="unfinished" />
+      <translation>Automatikus szinttartalék %1 dB</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
-      <translation type="unfinished" />
+      <translation>Automatikus (SoundCurrent Microphone)</translation>
     </message>
     <message>
       <source>Automatic (follow connected devices)</source>
-      <translation type="unfinished" />
+      <translation>Automatikus (csatlakoztatott eszközök követése)</translation>
     </message>
     <message>
       <source>Automatic (follow connected microphones)</source>
-      <translation type="unfinished" />
+      <translation>Automatikus (csatlakoztatott mikrofonok követése)</translation>
+    </message>
+    <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Az automatikus hangútválasztás nem érhető el</translation>
     </message>
     <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Csatlakoztatott mikrofon hangjának automatikus formálása; kattintson a mikrofon-EQ megkerüléséhez</translation>
+    </message>
+    <message>
+      <source>Back</source>
+      <translation>Vissza</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Balance</source>
@@ -199,24 +402,24 @@ Import into your library?</source>
     </message>
     <message>
       <source>Balance position</source>
-      <translation type="unfinished" />
+      <translation>Balansz helyzete</translation>
     </message>
     <message>
       <source>Balanced</source>
-      <translation type="unfinished" />
+      <translation>Kiegyensúlyozott</translation>
     </message>
     <message>
       <source>Band %1 gain</source>
-      <translation type="unfinished" />
+      <translation>%1. sáv erősítése</translation>
     </message>
     <message>
       <source>Bands</source>
       <extracomment>Frequency bands in an audio equalizer. Not music groups, belts or radio stations.</extracomment>
-      <translation>Frekvenciasávok</translation>
+      <translation>Sávok</translation>
     </message>
     <message>
       <source>Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.</source>
-      <translation type="unfinished" />
+      <translation>A csúszkák melletti oszlopok az EQ utáni becsült szinteket mutatják. A piros csúcsszintszöveg lehetséges túlvezérlésre figyelmeztet.</translation>
     </message>
     <message>
       <source>Bass Boost</source>
@@ -224,203 +427,503 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bass Cut</source>
-      <translation type="unfinished" />
+      <translation>Basszuscsökkentés</translation>
     </message>
     <message>
       <source>Bass adds low-frequency weight; Clarity adds high-frequency detail; Ambience adds room reflections; Surround widens stereo; Dynamic Boost compresses and raises quieter material with a peak ceiling. Boosting can increase output level.</source>
-      <translation type="unfinished" />
+      <translation>A Basszus súlyt ad az alacsony frekvenciáknak; a Tisztaság részleteket ad a magas frekvenciáknak; a Térérzet szobai visszaverődéseket ad hozzá; a Surround szélesíti a sztereóképet; a Dinamikus erősítés kompresszálja és emeli a halkabb anyagot, csúcsszinthatárral. A kiemelés növelheti a kimeneti szintet.</translation>
     </message>
     <message>
       <source>Bass frequency</source>
-      <translation type="unfinished" />
+      <translation>Basszusfrekvencia</translation>
+    </message>
+    <message>
+      <source>Bookshelf speaker</source>
+      <translation>Polcsugárzó</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Boxiness</source>
-      <translation type="unfinished" />
+      <translation>Dobozhang</translation>
     </message>
     <message>
       <source>Brand</source>
-      <translation type="unfinished" />
+      <translation>Márka</translation>
+    </message>
+    <message>
+      <source>Brand, family and model are required (maximum 120 characters each).</source>
+      <translation>A márka, a termékcsalád és a modell megadása kötelező (egyenként legfeljebb 120 karakter).</translation>
     </message>
     <message>
       <source>Bright</source>
-      <translation type="unfinished" />
+      <translation>Fényes</translation>
     </message>
     <message>
       <source>Browse all equipment profiles / editor</source>
-      <translation type="unfinished" />
+      <translation>Összes eszközprofil böngészése / szerkesztő</translation>
+    </message>
+    <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>A kábelcsomag meghaladja a rögzítési puffer kapacitását</translation>
+    </message>
+    <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>A virtuális kábel felvételi végpontja nem támogatja a 48 kHz-es sztereó lebegőpontos hangot megosztott módban</translation>
     </message>
     <message>
       <source>Calibration test signal</source>
-      <translation type="unfinished" />
+      <translation>Kalibrációs tesztjel</translation>
     </message>
     <message>
       <source>Calibration tone level</source>
-      <translation type="unfinished" />
+      <translation>Kalibrációs hang szintje</translation>
+    </message>
+    <message>
+      <source>Cancel</source>
+      <translation>Mégse</translation>
     </message>
     <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Nem szerezhető meg a közös SoundCurrent-munkamenetzár.</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
-      <translation type="unfinished" />
+      <translation>Nem hozható létre az erősítőprofilok mappája.</translation>
+    </message>
+    <message>
+      <source>Cannot create profile folder.</source>
+      <translation>Nem hozható létre a profilmappa.</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Nem hozható létre a közös SoundCurrent-munkamenetzár.</translation>
+    </message>
+    <message>
+      <source>Cannot create user settings directory</source>
+      <translation>Nem hozható létre a felhasználói beállítások könyvtára</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
     </message>
     <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Nem fejezhető be a futó hangszínszabályzók ellenőrzése; a SoundCurrent nem kapcsolja be a feldolgozást.</translation>
     </message>
     <message>
       <source>Cannot finish saving amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Nem fejezhető be az erősítőprofil mentése.</translation>
+    </message>
+    <message>
+      <source>Cannot finish saving profile library.</source>
+      <translation>Nem fejezhető be a profilkönyvtár mentése.</translation>
     </message>
     <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Nem ellenőrizhetők a futó hangszínszabályzók; a SoundCurrent nem kapcsolja be a feldolgozást.</translation>
+    </message>
+    <message>
+      <source>Cannot read profile library.</source>
+      <translation>Nem olvasható a profilkönyvtár.</translation>
+    </message>
+    <message>
+      <source>Cannot read profile or file exceeds 1 MiB.</source>
+      <translation>A profil nem olvasható, vagy a fájl meghaladja az 1 MiB-ot.</translation>
+    </message>
+    <message>
+      <source>Cannot read response or file exceeds 1 MiB.</source>
+      <translation>A frekvenciamenet nem olvasható, vagy a fájl meghaladja az 1 MiB-ot.</translation>
     </message>
     <message>
       <source>Cannot save amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Nem menthető az erősítőprofil.</translation>
+    </message>
+    <message>
+      <source>Cannot save profile library.</source>
+      <translation>Nem menthető a profilkönyvtár.</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
-      <translation type="unfinished" />
+      <translation>Nem menthető a profil.</translation>
     </message>
     <message>
       <source>Cannot start measurement: %1</source>
-      <translation type="unfinished" />
+      <translation>Nem indítható a mérés: %1</translation>
+    </message>
+    <message>
+      <source>Capture bytes: %1, noise bytes: %2</source>
+      <translation>Rögzített bájtok: %1, zajbájtok: %2</translation>
+      <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
       <source>Center</source>
-      <translation type="unfinished" />
+      <translation>Közép</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Centersugárzó</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Az alapértelmezett hangvégpont módosítása</translation>
+    </message>
+    <message>
+      <source>Change to detail view mode</source>
+      <translation>Váltás részletes nézet módra</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Change to list view mode</source>
+      <translation>Váltás listanézet módra</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Check for updates</source>
       <translation>Frissítések keresése</translation>
     </message>
     <message>
+      <source>Checking %1 Hz</source>
+      <translation>%1 Hz ellenőrzése</translation>
+      <extracomment>Calibration worker progress for a single test frequency. %1 is a locale-formatted frequency; Hz is the physical unit.</extracomment>
+    </message>
+    <message>
       <source>Checking for published updates…</source>
-      <translation type="unfinished" />
+      <translation>Közzétett frissítések keresése…</translation>
     </message>
     <message>
       <source>Checks published releases and downloaded installers. No update is installed automatically.</source>
-      <translation type="unfinished" />
+      <translation>Ellenőrzi a közzétett kiadásokat és a letöltött telepítőket. Egyetlen frissítés sem települ automatikusan.</translation>
+    </message>
+    <message>
+      <source>Choose</source>
+      <translation>Kiválasztás</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Choose a name that is not a built-in preset.</source>
-      <translation type="unfinished" />
+      <translation>Válasszon olyan nevet, amely nem egy beépített előbeállítás neve.</translation>
+    </message>
+    <message>
+      <source>Choose one audio setup action.</source>
+      <translation>Válasszon pontosan egy hangbeállítási műveletet.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
     </message>
     <message>
       <source>Choose update folder…</source>
-      <translation type="unfinished" />
+      <translation>Frissítési mappa kiválasztása…</translation>
+    </message>
+    <message>
+      <source>Cinema speaker</source>
+      <translation>Mozihangsugárzó</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
     </message>
     <message>
       <source>Clarity</source>
-      <translation type="unfinished" />
+      <translation>Tisztaság</translation>
     </message>
     <message>
       <source>Clarity frequency</source>
-      <translation type="unfinished" />
+      <translation>Tisztaság frekvenciája</translation>
     </message>
     <message>
       <source>Classical</source>
-      <translation type="unfinished" />
+      <translation>Klasszikus</translation>
     </message>
     <message>
       <source>Clear Voice</source>
-      <translation type="unfinished" />
+      <translation>Tiszta beszéd</translation>
     </message>
     <message>
       <source>Clear imported equipment corrections</source>
-      <translation type="unfinished" />
+      <translation>Importált eszközkorrekciók törlése</translation>
     </message>
     <message>
       <source>Click to turn the equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Kattintson a hangszínszabályzó be- vagy kikapcsolásához</translation>
     </message>
     <message>
       <source>Clipping risk · estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Túlvezérlés veszélye · becsült csúcs %1 dBFS</translation>
+    </message>
+    <message>
+      <source>Close</source>
+      <translation>Bezárás</translation>
+    </message>
+    <message>
+      <source>Column speaker</source>
+      <translation>Oszlopos hangsugárzó</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
+      <source>Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2</source>
+      <translation>A hangszórók/erősítő/mikrofon/szoba együttes frekvenciamenete; nem egyetlen eszköz külön mérése. %1 / %2</translation>
+      <extracomment>New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.</extracomment>
     </message>
     <message>
       <source>Conditions</source>
-      <translation type="unfinished" />
+      <translation>Körülmények</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
-      <translation type="unfinished" />
+      <translation>Mérés előtt csatlakoztasson kimenetet és mikrofont.</translation>
+    </message>
+    <message>
+      <source>Connect your audio</source>
+      <translation>Hang csatlakoztatása</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>Állandó nyalábszélességű hangsugárzó</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
+    </message>
+    <message>
+      <source>Copy</source>
+      <translation>Másolás</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Correction filters:</source>
+      <translation>Korrekciós szűrők:</translation>
+      <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Korrekciós profil (*.json)</translation>
+    </message>
+    <message>
+      <source>Could not create a private test folder</source>
+      <translation>Nem hozható létre privát tesztmappa</translation>
+    </message>
+    <message>
+      <source>Could not create microphone configuration folder</source>
+      <translation>Nem hozható létre a mikrofon konfigurációs mappája</translation>
     </message>
     <message>
       <source>Could not create preset folder.</source>
-      <translation type="unfinished" />
+      <translation>Nem hozható létre az előbeállítások mappája.</translation>
+    </message>
+    <message>
+      <source>Could not create quiet frequency sweep</source>
+      <translation>Nem hozható létre halk frekvenciasöprés</translation>
+    </message>
+    <message>
+      <source>Could not create temporary audio configuration</source>
+      <translation>Nem hozható létre ideiglenes hangkonfiguráció</translation>
+    </message>
+    <message>
+      <source>Could not create test tone</source>
+      <translation>Nem hozható létre teszthang</translation>
+    </message>
+    <message>
+      <source>Could not create the local activation socket for %1: %2</source>
+      <translation>Nem hozható létre a helyi aktiválási socket a(z) %1 számára: %2</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>Could not delete directory.</source>
+      <translation>Nem sikerült törölni a könyvtárat.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
-      <translation type="unfinished" />
+      <translation>Nem fejezhető be az előbeállítás mentése.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Nem sikerült inicializálni a Windows hang COM rendszerét</translation>
+    </message>
+    <message>
+      <source>Could not open test waveform</source>
+      <translation>Nem nyitható meg a teszthullámforma</translation>
+    </message>
+    <message>
+      <source>Could not play quiet test audio</source>
+      <translation>Nem játszható le halk teszthang</translation>
+    </message>
+    <message>
+      <source>Could not play test audio through the selected output</source>
+      <translation>Nem játszható le teszthang a kiválasztott kimeneten</translation>
+    </message>
+    <message>
+      <source>Could not read output volume</source>
+      <translation>Nem olvasható a kimeneti hangerő</translation>
+    </message>
+    <message>
+      <source>Could not run %1</source>
+      <translation>Nem futtatható: %1</translation>
     </message>
     <message>
       <source>Could not save preset.</source>
-      <translation type="unfinished" />
+      <translation>Nem menthető az előbeállítás.</translation>
+    </message>
+    <message>
+      <source>Could not start PipeWire filter</source>
+      <translation>Nem indítható a PipeWire-szűrő</translation>
+    </message>
+    <message>
+      <source>Could not start audio setup: %1. The app remains open.</source>
+      <translation>Nem indítható a hangbeállítás: %1. Az alkalmazás nyitva marad.</translation>
+    </message>
+    <message>
+      <source>Could not start microphone capture</source>
+      <translation>Nem indítható a mikrofonrögzítés</translation>
+    </message>
+    <message>
+      <source>Could not start microphone filter</source>
+      <translation>Nem indítható a mikrofonszűrő</translation>
+    </message>
+    <message>
+      <source>Could not start output volume safety guard</source>
+      <translation>Nem indítható a kimeneti hangerő biztonsági felügyelete</translation>
     </message>
     <message>
       <source>Could not start the measurement.</source>
-      <translation type="unfinished" />
+      <translation>Nem indítható a mérés.</translation>
+    </message>
+    <message>
+      <source>Could not update startup settings.</source>
+      <translation>Nem frissíthetők az indítási beállítások.</translation>
+    </message>
+    <message>
+      <source>Could not write frequency sweep</source>
+      <translation>Nem írható ki a frekvenciasöprés</translation>
+    </message>
+    <message>
+      <source>Could not write microphone configuration</source>
+      <translation>Nem írható ki a mikrofonkonfiguráció</translation>
+    </message>
+    <message>
+      <source>Could not write temporary audio configuration</source>
+      <translation>Nem írható ki az ideiglenes hangkonfiguráció</translation>
+    </message>
+    <message>
+      <source>Could not write test tone</source>
+      <translation>Nem írható ki a teszthang</translation>
+    </message>
+    <message>
+      <source>Count audio endpoints</source>
+      <translation>A hangvégpontok megszámlálása</translation>
+    </message>
+    <message>
+      <source>Create a New Folder</source>
+      <translation>Egy új mappa létrehozása</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Create new folder</source>
+      <translation>Új mappa létrehozása</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Create profile</source>
+      <translation>Profil létrehozása</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
-      <translation type="unfinished" />
+      <translation>A jelenlegi EQ megmaradt.</translation>
     </message>
     <message>
       <source>Custom</source>
       <translation>Egyéni</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>%1 egyéni másolata</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>Cut</source>
+      <translation>Kivágás</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Dance</source>
-      <translation type="unfinished" />
+      <translation>Dance</translation>
+    </message>
+    <message>
+      <source>Date modified</source>
+      <translation>Módosítás dátuma</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Deep Bass</source>
-      <translation type="unfinished" />
+      <translation>Mély basszus</translation>
+    </message>
+    <message>
+      <source>Delete</source>
+      <translation>Törlés</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Detail view</source>
+      <translation>Részletes nézet</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>Könyvtárak</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>Könyvtár:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Discard</source>
+      <translation>Elvetés</translation>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
-      <translation type="unfinished" />
+      <translation>Húzza a görbe pontjait, vagy állítsa a kiválasztott sávot alább.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>A tesztlejátszás befejezése</translation>
+    </message>
+    <message>
+      <source>Drive</source>
+      <translation>Meghajtó</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Az illesztőprogram beállítása sikertelen (kód: %1). A Windows biztonsági beállításai nem változtak.</translation>
+    </message>
+    <message>
+      <source>Duplicate Studio route</source>
+      <translation>Ismétlődő Studio-audiokapcsolat</translation>
+      <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
     </message>
     <message>
       <source>Dynamic Boost</source>
-      <translation type="unfinished" />
+      <translation>Dinamikus erősítés</translation>
     </message>
     <message>
       <source>Dynamics attack</source>
-      <translation type="unfinished" />
+      <translation>Dinamika felfutási ideje</translation>
     </message>
     <message>
       <source>Dynamics ceiling</source>
-      <translation type="unfinished" />
+      <translation>Dinamika csúcsszinthatára</translation>
     </message>
     <message>
       <source>Dynamics makeup</source>
-      <translation type="unfinished" />
+      <translation>Dinamika kompenzációs erősítése</translation>
     </message>
     <message>
       <source>Dynamics ratio</source>
-      <translation type="unfinished" />
+      <translation>Dinamika kompressziós aránya</translation>
     </message>
     <message>
       <source>Dynamics release</source>
-      <translation type="unfinished" />
+      <translation>Dinamika elengedési ideje</translation>
     </message>
     <message>
       <source>Dynamics threshold</source>
-      <translation type="unfinished" />
+      <translation>Dinamika küszöbe</translation>
+    </message>
+    <message>
+      <source>Edit / save copy</source>
+      <translation>Szerkesztés / másolat mentése</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -428,7 +931,20 @@ Import into your library?</source>
     </message>
     <message>
       <source>Electronic</source>
-      <translation type="unfinished" />
+      <translation>Elektronikus</translation>
+    </message>
+    <message>
+      <source>Enhancements outside supported ranges</source>
+      <translation>A hangjavítások kívül esnek a támogatott tartományokon</translation>
+      <extracomment>Enhancement values fail the supported range validation; not frequency coverage or wireless range.</extracomment>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>A hangeszközök felsorolása</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>A végpontok felsorolása</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -437,127 +953,202 @@ Import into your library?</source>
     </message>
     <message>
       <source>Equalizer and configuration pages</source>
-      <translation type="unfinished" />
+      <translation>Hangszínszabályzó- és konfigurációs oldalak</translation>
+    </message>
+    <message>
+      <source>Equalizer conflict</source>
+      <translation>Ütközés a hangszínszabályozók között</translation>
+      <extracomment>Warning title when another equalizer or processing owner conflicts with this app. It is a software routing/ownership conflict, not clipping or a bad acoustic measurement.</extracomment>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>
-      <translation type="unfinished" />
+      <translation>Hangszínszabályzó-görbe. Válasszon ki vagy húzzon egy pontot a frekvencia és az erősítés állításához.</translation>
     </message>
     <message>
       <source>Equalizer is off. Windows selected the physical output directly.</source>
-      <translation type="unfinished" />
+      <translation>A hangszínszabályzó ki van kapcsolva. A Windows közvetlenül a fizikai kimenetet választotta.</translation>
     </message>
     <message>
       <source>Equalizer is off. Your audio uses its normal output.</source>
-      <translation type="unfinished" />
+      <translation>A hangszínszabályzó ki van kapcsolva. A hang a szokásos kimenetét használja.</translation>
     </message>
     <message>
       <source>Equalizer is still running. Use the tray icon to reopen or quit.</source>
-      <translation type="unfinished" />
+      <translation>A hangszínszabályzó továbbra is fut. A tálcaikon segítségével nyissa meg újra vagy lépjen ki.</translation>
     </message>
     <message>
       <source>Equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Hangszínszabályzó kikapcsolva</translation>
     </message>
     <message>
       <source>Equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Hangszínszabályzó bekapcsolva</translation>
     </message>
     <message>
       <source>Equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Hangszínszabályzó be- vagy kikapcsolva</translation>
+    </message>
+    <message>
+      <source>Equalizer sink disappeared</source>
+      <translation>A hangszínszabályzó virtuális kimenete eltűnt</translation>
     </message>
     <message>
       <source>Equipment brand</source>
-      <translation type="unfinished" />
+      <translation>Eszköz márkája</translation>
     </message>
     <message>
       <source>Equipment family</source>
-      <translation type="unfinished" />
+      <translation>Eszköz termékcsaládja</translation>
+    </message>
+    <message>
+      <source>Equipment kind must be speaker, microphone or amplifier.</source>
+      <translation>Az eszköztípus csak hangsugárzó, mikrofon vagy erősítő lehet.</translation>
     </message>
     <message>
       <source>Equipment profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Eszközprofil (*.json)</translation>
+    </message>
+    <message>
+      <source>Equipment profile editor</source>
+      <translation>Eszközprofil-szerkesztő</translation>
     </message>
     <message>
       <source>Equipment profiles (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Eszközprofilok (*.json)</translation>
     </message>
     <message>
       <source>Equipment profiles by brand family and model</source>
-      <translation type="unfinished" />
+      <translation>Eszközprofilok márka, termékcsalád és modell szerint</translation>
+    </message>
+    <message>
+      <source>Equipment profiles — brand / family / model</source>
+      <translation>Eszközprofilok — márka / termékcsalád / modell</translation>
+    </message>
+    <message>
+      <source>Equipment resource missing.</source>
+      <translation>Az eszközerőforrás hiányzik.</translation>
     </message>
     <message>
       <source>Equipment subtype</source>
-      <translation type="unfinished" />
+      <translation>Eszköz altípusa</translation>
     </message>
     <message>
       <source>Equipment type</source>
-      <translation type="unfinished" />
+      <translation>Eszköz típusa</translation>
     </message>
     <message>
       <source>Estimated output level near band %1</source>
-      <translation type="unfinished" />
+      <translation>Becsült kimeneti szint a(z) %1. sáv közelében</translation>
     </message>
     <message>
       <source>Estimated output near %1: %2 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Becsült kimenet %1 közelében: %2 dBFS</translation>
     </message>
     <message>
       <source>Estimated output peak and clipping risk</source>
-      <translation type="unfinished" />
+      <translation>Becsült kimeneti csúcs és túlvezérlési kockázat</translation>
     </message>
     <message>
       <source>Estimated overall output level</source>
-      <translation type="unfinished" />
+      <translation>Becsült teljes kimeneti szint</translation>
     </message>
     <message>
       <source>Estimated overall output peak: %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Becsült teljes kimeneti csúcs: %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Becsült csúcs %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak: EQ off</source>
-      <translation type="unfinished" />
+      <translation>Becsült csúcs: EQ kikapcsolva</translation>
     </message>
     <message>
       <source>Estimated peak: waiting for audio</source>
-      <translation type="unfinished" />
+      <translation>Becsült csúcs: hangra vár</translation>
     </message>
     <message>
       <source>Estimated post-EQ level near this frequency</source>
-      <translation type="unfinished" />
+      <translation>Becsült EQ utáni szint e frekvencia közelében</translation>
     </message>
     <message>
       <source>Estimated post-EQ output peak, including post gain and balance</source>
-      <translation type="unfinished" />
+      <translation>Becsült EQ utáni kimeneti csúcs, az utóerősítéssel és balansszal együtt</translation>
     </message>
     <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
-      <translation type="unfinished" />
+      <translation>Kilépés a SoundCurrent EQ-ból és a szokásos hang visszaállítása</translation>
     </message>
     <message>
       <source>Expanded test language</source>
-      <translation type="unfinished" />
+      <translation>Kibővített tesztnyelv</translation>
+    </message>
+    <message>
+      <source>Expected a JSON equipment profile. Import response text using the response import button.</source>
+      <translation>JSON-eszközprofil szükséges. A frekvenciamenet szövegét a frekvenciamenet-importáló gombbal importálja.</translation>
+    </message>
+    <message>
+      <source>Expected frequency Hz and relative measured response dB on every data line.</source>
+      <translation>Minden adatsorban frekvencia Hz-ben és relatív mért frekvenciamenet dB-ben szükséges.</translation>
     </message>
     <message>
       <source>Export</source>
-      <translation type="unfinished" />
+      <translation>Exportálás</translation>
+    </message>
+    <message>
+      <source>Export JSON</source>
+      <translation>JSON exportálása</translation>
     </message>
     <message>
       <source>Export profile</source>
-      <translation type="unfinished" />
+      <translation>Profil exportálása</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
-      <translation type="unfinished" />
+      <translation>Lépéshangok FPS-játékokban</translation>
     </message>
     <message>
       <source>Family</source>
-      <translation type="unfinished" />
+      <translation>Termékcsalád</translation>
+    </message>
+    <message>
+      <source>File</source>
+      <translation>Fájl</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>File name:</source>
+      <translation>Fájlnév:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files</source>
+      <translation>Fájlok</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files of type:</source>
+      <translation>Fájlok típusa:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Filter Q</source>
+      <translation>Szűrő jósági tényezője Q</translation>
+      <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
+    </message>
+    <message>
+      <source>Filter values must be numbers.</source>
+      <translation>A szűrőértékeknek számoknak kell lenniük.</translation>
+    </message>
+    <message>
+      <source>Filters exceed frequency, gain or Q limits.</source>
+      <translation>A szűrők túllépik a frekvencia, erősítés vagy Q határait.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>Könyvtár keresése</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
@@ -565,113 +1156,343 @@ Import into your library?</source>
       <translation>Sík</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>Álló hangsugárzó</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Folder</source>
+      <translation>Mappa</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Forward</source>
+      <translation>Előre</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Frekvencia</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
-      <translation type="unfinished" />
+      <translation>Frekvencia Hz</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
-      <translation type="unfinished" />
+      <translation>Elülső B/J-csatornák hangjavítása (monó támogatott); más csatornák megtartják saját Studio-effektjeiket. A nulla érték megkerüli az adott hangjavítást.</translation>
     </message>
     <message>
       <source>Gain</source>
       <extracomment>Audio signal level adjustment in dB, positive or negative. Not financial profit.</extracomment>
-      <translation>Jelerősítés</translation>
+      <translation>Erősítés</translation>
     </message>
     <message>
       <source>Gain dB</source>
-      <translation type="unfinished" />
+      <translation>Erősítés dB</translation>
     </message>
     <message>
       <source>Gaming</source>
-      <translation type="unfinished" />
+      <translation>Játék</translation>
+    </message>
+    <message>
+      <source>Go back</source>
+      <translation>Ugrás vissza</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go forward</source>
+      <translation>Ugrás előre</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go to the parent directory</source>
+      <translation>Ugrás a szülőkönyvtárba</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Headphones</source>
-      <translation type="unfinished" />
+      <translation>Fejhallgató</translation>
+    </message>
+    <message>
+      <source>Help</source>
+      <translation>Súgó</translation>
     </message>
     <message>
       <source>Hide advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Speciális vezérlők elrejtése</translation>
+    </message>
+    <message>
+      <source>High-shelf filter</source>
+      <translation>Magas polcszűrő</translation>
+      <extracomment>Shelving EQ: raise/lower the high-frequency region. Do not translate as high-pass; it is not a cutoff filter.</extracomment>
     </message>
     <message>
       <source>Hip-Hop</source>
-      <translation type="unfinished" />
+      <translation>Hip-Hop</translation>
+    </message>
+    <message>
+      <source>Ignore</source>
+      <translation>Figyelmen kívül hagyás</translation>
     </message>
     <message>
       <source>Import</source>
-      <translation type="unfinished" />
+      <translation>Importálás</translation>
+    </message>
+    <message>
+      <source>Import JSON</source>
+      <translation>JSON importálása</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
-      <translation type="unfinished" />
+      <translation>Eszközprofilok importálása, létrehozása és szerkesztése</translation>
     </message>
     <message>
       <source>Import equipment profile</source>
-      <translation type="unfinished" />
+      <translation>Eszközprofil importálása</translation>
     </message>
     <message>
       <source>Import measured amplifier correction</source>
-      <translation type="unfinished" />
+      <translation>Mért erősítőkorrekció importálása</translation>
     </message>
     <message>
       <source>Import measured profile</source>
-      <translation type="unfinished" />
+      <translation>Mért profil importálása</translation>
     </message>
     <message>
       <source>Import profile?</source>
-      <translation type="unfinished" />
+      <translation>Importálja a profilt?</translation>
     </message>
     <message>
       <source>Import relative measured response</source>
-      <translation type="unfinished" />
+      <translation>Relatív mért frekvenciamenet importálása</translation>
+    </message>
+    <message>
+      <source>Import response text</source>
+      <translation>Frekvenciamenet szövegének importálása</translation>
+    </message>
+    <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>%1 importálva; SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Falba építhető hangsugárzó</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
-      <translation type="unfinished" />
+      <translation>Előzetes kiadások megjelenítése</translation>
+    </message>
+    <message>
+      <source>Initialize audio capture</source>
+      <translation>A hangrögzítés inicializálása</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>A mikrofonfelvétel inicializálása</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>A hangszórókimenet inicializálása</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>A tesztlejátszás inicializálása</translation>
+    </message>
+    <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Telepítse a SoundCurrent Audio összetevőt a hangillesztőprogram beállításával, majd nyissa meg újra az alkalmazást a mikrofon hangútjának engedélyezéséhez.</translation>
+    </message>
+    <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>VB-CABLE telepítése, ha hiányzik (rendszergazdai jóváhagyás)</translation>
     </message>
     <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Telepítse az új csomagokat erre a verzióra — eltávolítás nem szükséges. Az előbeállítások és profilok megmaradnak. Mentse munkáját, válassza a Kilépés lehetőséget (az ablak bezárása futva hagyja), telepítse a frissítést, majd nyissa meg újra.</translation>
     </message>
     <message>
-      <source>Installed version: </source>
-      <translation type="unfinished" />
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>Telepítse vagy frissítse a %1 alkalmazást. Nem szükséges eltávolítani a régebbi verziót. Beállításai, előbeállításai és eszközprofiljai megmaradnak.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>A megosztott SoundCurrent Audio illesztőprogram telepítése vagy frissítése</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Telepítse a Windows hangútját a hangillesztőprogram beállításával, majd nyissa meg újra az alkalmazást.</translation>
+    </message>
+    <message>
+      <source>Installed version: %1</source>
+      <translation>Telepített verzió: %1</translation>
     </message>
     <message>
       <source>Interface language</source>
       <translation>Felület nyelve</translation>
     </message>
     <message>
+      <source>Invalid Studio channel count</source>
+      <translation>Érvénytelen Studio-csatornaszám</translation>
+      <extracomment>Session channel count must be 1..256; audio channels, not stations.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio channel name or filters</source>
+      <translation>Érvénytelen Studio-csatornanév vagy szűrőlista</translation>
+      <extracomment>Saved channel name must be a nonempty string up to 80 characters, and bands must be an array; filter list, not filter-value validation.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio profile channel count</source>
+      <translation>Érvénytelen csatornaszám a Studio-profilban</translation>
+      <extracomment>Saved profile channels array must be nonempty and contain at most 256 channels.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio route</source>
+      <translation>Érvénytelen Studio-audiokapcsolat</translation>
+      <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>Érvénytelen hangbeállítást kérő folyamat.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
+    </message>
+    <message>
+      <source>Invalid calibration audio</source>
+      <translation>Érvénytelen kalibrációs hang</translation>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter count</source>
+      <translation>Érvénytelen hangjavítási paraméterszám</translation>
+      <extracomment>Enhancement array must contain the required number of parameters.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter type</source>
+      <translation>Érvénytelen adattípusú hangjavítási paraméter</translation>
+      <extracomment>Enhancement parameter must be a JSON number; do not reinterpret strings or Boolean values.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Érvénytelen hangjavítások</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Érvénytelen hangszínszabályzó-beállítások</translation>
+    </message>
+    <message>
+      <source>Invalid equipment subtype or power type</source>
+      <translation>Érvénytelen eszközaltípus vagy aktív/passzív típus</translation>
+    </message>
+    <message>
+      <source>Invalid filter type</source>
+      <translation>Érvénytelen szűrőtípus</translation>
+      <extracomment>Filter type numeric identifier must be a whole supported enum value; not a file type.</extracomment>
+    </message>
+    <message>
+      <source>Invalid filter.</source>
+      <translation>Érvénytelen szűrő.</translation>
+    </message>
+    <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
-      <translation type="unfinished" />
+      <translation>Érvénytelen mért erősítőprofil. Modell, HTTPS-mérési forrás, körülmények és 1–16 határokon belüli PK/LS/HS-szűrő szükséges. A profilformátumot lásd a README-ben.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Érvénytelen mikrofonbeállítás</translation>
+    </message>
+    <message>
+      <source>Invalid or unordered measured response.</source>
+      <translation>Érvénytelen vagy rendezetlen mért frekvenciamenet.</translation>
+    </message>
+    <message>
+      <source>Invalid or unordered response data.</source>
+      <translation>Érvénytelen vagy rendezetlen frekvenciamenet-adatok.</translation>
+    </message>
+    <message>
+      <source>Invalid profile library.</source>
+      <translation>Érvénytelen profilkönyvtár.</translation>
+    </message>
+    <message>
+      <source>Invalid response from pactl</source>
+      <translation>Érvénytelen válasz a pactl programtól</translation>
+    </message>
+    <message>
+      <source>Invalid response point.</source>
+      <translation>Érvénytelen frekvenciamenet-pont.</translation>
+    </message>
+    <message>
+      <source>Invalid route indexes or weight</source>
+      <translation>Érvénytelen csatornaindexek vagy keverési együttható</translation>
+      <extracomment>Audio route indices must be whole channel indices in range and mixing coefficient magnitude at most 4; weight means a signed mixing coefficient, not physical mass.</extracomment>
+    </message>
+    <message>
+      <source>Invalid route number</source>
+      <translation>Érvénytelen számérték az audiokapcsolatban</translation>
+      <extracomment>A saved audio routing entry contains a nonnumeric or nonfinite number.</extracomment>
+    </message>
+    <message>
+      <source>Invalid speaker correction filter count</source>
+      <translation>Érvénytelen hangsugárzó-korrekciós szűrőszám</translation>
+    </message>
+    <message>
+      <source>Invalid speaker filter type</source>
+      <translation>Érvénytelen hangsugárzószűrő-típus</translation>
+    </message>
+    <message>
+      <source>Invalid speaker identity</source>
+      <translation>Érvénytelen hangsugárzó-azonosító</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Érvénytelen hangszórókeverési formátum</translation>
     </message>
     <message>
       <source>Jazz</source>
-      <translation type="unfinished" />
+      <translation>Jazz</translation>
+    </message>
+    <message>
+      <source>Keep current EQ</source>
+      <translation>Jelenlegi EQ megtartása</translation>
     </message>
     <message>
       <source>L</source>
-      <translation type="unfinished" />
+      <translation>B</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
-      <translation>Nyelv és terület</translation>
+      <translation>Nyelv és területi beállítások</translation>
     </message>
     <message>
       <source>Left right balance</source>
-      <translation type="unfinished" />
+      <translation>Bal/jobb balansz</translation>
     </message>
     <message>
       <source>Level indicator refresh interval</source>
-      <translation type="unfinished" />
+      <translation>Szintjelzők frissítési időköze</translation>
     </message>
     <message>
       <source>Level refresh</source>
-      <translation type="unfinished" />
+      <translation>Szintfrissítés</translation>
+    </message>
+    <message>
+      <source>Library exceeds 16 MiB.</source>
+      <translation>A könyvtár meghaladja a 16 MiB-ot.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>A hangvégpontok listájának lekérése</translation>
+    </message>
+    <message>
+      <source>List of places and bookmarks</source>
+      <translation>Helyek és könyvjelzők listája</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>List view</source>
+      <translation>Listanézet</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Listening preset</source>
@@ -680,11 +1501,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Live</source>
-      <translation type="unfinished" />
+      <translation>Valós idejű</translation>
     </message>
     <message>
       <source>Lo-Fi</source>
-      <translation type="unfinished" />
+      <translation>Lo-Fi</translation>
     </message>
     <message>
       <source>Lock EQ</source>
@@ -693,55 +1514,94 @@ Import into your library?</source>
     </message>
     <message>
       <source>Lock equalizer settings</source>
-      <translation type="unfinished" />
+      <translation>Hangszínszabályzó-beállítások zárolása</translation>
+    </message>
+    <message>
+      <source>Look in:</source>
+      <translation>Keresés itt:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Loudness</source>
-      <translation type="unfinished" />
+      <translation>Loudness-kompenzáció</translation>
+    </message>
+    <message>
+      <source>Low-shelf filter</source>
+      <translation>Mély polcszűrő</translation>
+      <extracomment>Shelving EQ: raise/lower the low-frequency region. Do not translate as low-pass; it is not a cutoff filter.</extracomment>
     </message>
     <message>
       <source>Manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Gyártó</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
-      <translation type="unfinished" />
+      <translation>Elérte a legfeljebb 32 erősítőprofil határát.</translation>
     </message>
     <message>
       <source>Maximum stereo width</source>
-      <translation type="unfinished" />
+      <translation>Legnagyobb sztereószélesség</translation>
     </message>
     <message>
       <source>Measure</source>
-      <translation type="unfinished" />
+      <translation>Mérés</translation>
     </message>
     <message>
       <source>Measure speaker room and microphone response</source>
-      <translation type="unfinished" />
+      <translation>Hangsugárzó, szoba és mikrofon frekvenciamenetének mérése</translation>
+    </message>
+    <message>
+      <source>Measured listening position</source>
+      <translation>Mért hallgatási pozíció</translation>
+      <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
-      <translation type="unfinished" />
+      <translation>A mért modellkorrekció hozzáadódik a hallgatási EQ-hoz. Továbbra is hozzáadhat basszust vagy módosíthat bármely sávot. Óvatos erősítési korlátokat tartalmaz; a szoba és az erősítő hatásaihoz rendszermérés szükséges.</translation>
+    </message>
+    <message>
+      <source>Measured response</source>
+      <translation>Mért átvitel</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measurement conditions are required.</source>
+      <translation>A mérési körülmények megadása kötelező.</translation>
+    </message>
+    <message>
+      <source>Measurement conditions: %1</source>
+      <translation>Mérési körülmények: %1</translation>
+      <extracomment>Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.</extracomment>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
-      <translation type="unfinished" />
+      <translation>A mérési adatok hiányosak voltak.</translation>
     </message>
     <message>
       <source>Measurement failed. Try a higher test level or move the mic closer.</source>
-      <translation type="unfinished" />
+      <translation>A mérés sikertelen. Próbáljon magasabb tesztszintet, vagy vigye közelebb a mikrofont.</translation>
+    </message>
+    <message>
+      <source>Measurement failed: %1</source>
+      <translation>A mérés sikertelen: %1</translation>
+      <extracomment>Calibration failure prefix. %1 is a translated owned diagnostic or preserved external technical detail; do not modify device identifiers or paths.</extracomment>
     </message>
     <message>
       <source>Measurement stopped.</source>
-      <translation type="unfinished" />
+      <translation>A mérés leállt.</translation>
+    </message>
+    <message>
+      <source>Measurement: %1</source>
+      <translation>Mérés: %1</translation>
+      <extracomment>Label for verbatim published speaker measurement attribution, not a new calibration run.</extracomment>
     </message>
     <message>
       <source>Metal</source>
-      <translation type="unfinished" />
+      <translation>Metal</translation>
     </message>
     <message>
       <source>Mic gain</source>
-      <translation type="unfinished" />
+      <translation>Mikrofonerősítés</translation>
     </message>
     <message>
       <source>Microphone</source>
@@ -749,39 +1609,81 @@ Import into your library?</source>
     </message>
     <message>
       <source>Microphone %1 adjustment</source>
-      <translation type="unfinished" />
+      <translation>%1 mikrofon állítása</translation>
     </message>
     <message>
       <source>Microphone EQ is off.</source>
-      <translation type="unfinished" />
+      <translation>A mikrofon-EQ ki van kapcsolva.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>A mikrofon hanghídja nem indult el</translation>
+    </message>
+    <message>
+      <source>Microphone capture stopped during playback</source>
+      <translation>A mikrofonrögzítés leállt lejátszás közben</translation>
+    </message>
+    <message>
+      <source>Microphone capture stopped during the test</source>
+      <translation>A mikrofonrögzítés leállt a teszt közben</translation>
     </message>
     <message>
       <source>Microphone error: %1</source>
-      <translation type="unfinished" />
+      <translation>Mikrofonhiba: %1</translation>
+    </message>
+    <message>
+      <source>Microphone filter did not appear</source>
+      <translation>A mikrofonszűrő nem jelent meg</translation>
+    </message>
+    <message>
+      <source>Microphone filter disappeared</source>
+      <translation>A mikrofonszűrő eltűnt</translation>
     </message>
     <message>
       <source>Microphone gain adjustment</source>
-      <translation type="unfinished" />
+      <translation>Mikrofonerősítés állítása</translation>
     </message>
     <message>
       <source>Microphone input device</source>
-      <translation type="unfinished" />
+      <translation>Mikrofon bemeneti eszköze</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>A mikrofonfelvétel feldolgozása elakadt</translation>
+    </message>
+    <message>
+      <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
+      <translation>A mikrofonfelvétel túlvezérelt. Csökkentse a mikrofonerősítést vagy a kiemelést, és ismételje meg a mérést.</translation>
     </message>
     <message>
       <source>Microphone route</source>
-      <translation type="unfinished" />
+      <translation>Mikrofonútvonal</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>A mikrofon indítása túllépte az időkorlátot</translation>
     </message>
     <message>
       <source>Model</source>
-      <translation type="unfinished" />
+      <translation>Modell</translation>
     </message>
     <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
-      <translation type="unfinished" />
+      <translation>Tolja B vagy J felé az ellenkező csatorna csökkentéséhez; középen mindkettő teljes szinten marad</translation>
     </message>
     <message>
       <source>Movies</source>
-      <translation type="unfinished" />
+      <translation>Filmek</translation>
+    </message>
+    <message>
+      <source>My equipment</source>
+      <translation>Saját eszközeim</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>Name</source>
+      <translation>Név</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Natural mic EQ</source>
@@ -789,48 +1691,66 @@ Import into your library?</source>
       <translation>Természetes mikrofon-EQ</translation>
     </message>
     <message>
-      <source>Natural mic EQ on · </source>
-      <translation type="unfinished" />
+      <source>Natural mic EQ on · %1</source>
+      <translation>Természetes mikrofon-EQ bekapcsolva · %1</translation>
     </message>
     <message>
       <source>Natural microphone equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Természetes mikrofon-hangszínszabályzó be- vagy kikapcsolva</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>Új mappa</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>Új profil</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
-      <translation type="unfinished" />
+      <translation>Éjszakai hallgatás</translation>
+    </message>
+    <message>
+      <source>No</source>
+      <translation>Nem</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>Nincs kiválasztott importált eszközkorrekció.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>Nincs kiválasztott mért erősítőkorrekció. A marketingben megadott frekvenciatartomány nem elegendő korrekciós görbe meghatározásához.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>Nincs csatlakoztatott mikrofon.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>Nincs kiválasztott modellkorrekció. A hallgatási EQ a szokásos módon működik.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>Nem található újabb közzétett kiadás. A letöltött telepítőket is ellenőrizzük.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>Nincs elérhető kimeneti eszköz.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>Nincs csatlakoztatott kimeneti eszköz.</translation>
+    </message>
+    <message>
+      <source>No to All</source>
+      <translation>Mindegyikre nem</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>Nincs — saját EQ használata</translation>
     </message>
     <message>
       <source>Number and date format</source>
@@ -838,202 +1758,547 @@ Import into your library?</source>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>Hangszínszabályzó sávjainak száma</translation>
+    </message>
+    <message>
+      <source>OK</source>
+      <translation>OK</translation>
+    </message>
+    <message>
+      <source>Omnidirectional speaker</source>
+      <translation>Körsugárzó hangsugárzó</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>Bekapcsolva · Lejátszás ezen: %1</translation>
+    </message>
+    <message>
+      <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
+      <translation>Bejelentkezéskor csak egy SoundCurrent-alkalmazás indul. Bekapcsolása felülírja a másik alkalmazás indítási beállítását. Ha elérhető tálcaikon, a háttérben indul.</translation>
+    </message>
+    <message>
+      <source>Open</source>
+      <translation>Megnyitás</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>A VB-Audio vezérlőpultjának megnyitása a kábel késleltetéséhez és belső mintavételi frekvenciájához. Ezek módosítása működő hang mellett megszakíthatja a lejátszást.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>VB-CABLE vezérlőpult megnyitása</translation>
+    </message>
+    <message>
+      <source>Open audio stream</source>
+      <translation>A hangfolyam megnyitása</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>A virtuális kábel rögzítési adatfolyamának megnyitása</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>A virtuális kábel felvételi végpontjának megnyitása</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>A végpont megnyitása</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>A végpont hangerőszabályzó interfészének megnyitása</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>A mikrofon olvasási interfészének megnyitása</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>Kiadásletöltések megnyitása</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>A hangszóróvégpont megnyitása</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>A hangszórók lejátszási adatfolyamának megnyitása</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>A tesztlejátszás írási interfészének megnyitása</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>Frissítési mappa megnyitása</translation>
+    </message>
+    <message>
+      <source>Opening %1 setup...</source>
+      <translation>A %1 telepítőjének megnyitása...</translation>
+      <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>Narancs: mért frekvenciamenet, ha rendelkezésre áll. Türkiz: korrekció 48 kHz-en. Húzza a türkiz vezérlőpontokat vagy szerkessze a táblázatot. A mentés megőrzi a referenciát és egyéni másolatot hoz létre.</translation>
+    </message>
+    <message>
+      <source>Outdoor speaker</source>
+      <translation>Kültéri hangsugárzó</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
     </message>
     <message>
       <source>Output device</source>
       <translation>Kimeneti eszköz</translation>
     </message>
     <message>
+      <source>Output device is no longer available</source>
+      <translation>A kimeneti eszköz már nem érhető el</translation>
+    </message>
+    <message>
+      <source>Output has no volume channels</source>
+      <translation>A kimenetnek nincs hangerőcsatornája</translation>
+    </message>
+    <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>Teljes kimenet</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>Paneles hangsugárzó</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
+    </message>
+    <message>
+      <source>Parent directory</source>
+      <translation>Szülőkönyvtár</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Paste</source>
+      <translation>Beillesztés</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>A feldolgozás szüneteltetése és a hangbeállítás megnyitása. Az alkalmazás nyitva marad és jelzi az eredményt. Az illesztőprogram telepítése után indítsa újra a Windowst.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>Csúcsjelölők</translation>
+    </message>
+    <message>
+      <source>Peaking filter</source>
+      <translation>Haranggörbe-szűrő</translation>
+      <extracomment>Bell-shaped parametric EQ filter centered at its frequency; this is not a peak/clipping indicator.</extracomment>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>Zongora</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>Halk teszthang lejátszása és a javasolt lejátszási EQ-módosítások előnézete</translation>
     </message>
     <message>
       <source>Playback</source>
       <translation>Lejátszás</translation>
     </message>
     <message>
+      <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
+      <translation>Logaritmikus söprés lejátszása 20 Hz és 25 kHz között</translation>
+      <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>Halk teszthang lejátszása. Állítsa le, ha kellemetlen.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>Csatlakoztassa a mikrofont mikrofonprofil kiválasztásához</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>Podcast</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>Pop</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>Hordozható PA-hangsugárzó</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
       <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
-      <translation>Kimeneti jelerősítés</translation>
+      <translation>Utóerősítés</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>Utóerősítés a hangszínszabályzás után</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>Utóerősítés értéke decibelben</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>Előbeállítás neve:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>Előbeállítások, EQ-sávok, utóerősítés és balansz módosításának megakadályozása</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>Profil</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>Profil részletei</translation>
+    </message>
+    <message>
+      <source>Profile exceeds the 1 MiB limit.</source>
+      <translation>A profil meghaladja az 1 MiB-os korlátot.</translation>
+    </message>
+    <message>
+      <source>Profile library exceeds 16 MiB.</source>
+      <translation>A profilkönyvtár meghaladja a 16 MiB-ot.</translation>
+    </message>
+    <message>
+      <source>Profile metadata is too long.</source>
+      <translation>A profil metaadatai túl hosszúak.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>A profilnak olvashatónak és 64 KiB-nál kisebbnek kell lennie.</translation>
+    </message>
+    <message>
+      <source>Profiles need 1–16 correction filters.</source>
+      <translation>A profilokhoz 1–16 korrekciós szűrő szükséges.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>Közzétett mérési források: &lt;a href="https://www.spinorama.org/"&gt;Hangsugárzómérések / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton-kalibráció sorozatszám alapján&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP-kalibráció sorozatszám alapján&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann-mikrofongörbék&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020-frekvenciamenet&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Erősítőmérések&lt;/a&gt;</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <source>Published profiles need an HTTPS measurement source.</source>
+      <translation>A közzétett profilokhoz HTTPS-mérési forrás szükséges.</translation>
+    </message>
+    <message>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>A közzétett kiadások nem ellenőrizhetők. Használja a Kiadásletöltések megnyitása lehetőséget; a letöltött telepítőket továbbra is helyben észleljük.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>Közzétett frekvenciamenet és szerkeszthető korrekciós görbék</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>Elérhető a(z) %1 közzétett frissítés. Nyissa meg a kiadásletöltéseket, telepítse erre a verzióra, majd nyissa meg újra.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>Ütős basszus</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>Halk logaritmikus söprés</translation>
+    </message>
+    <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>Eltávolítás előtt lépjen ki a %1 alkalmazásból.</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>Frissítés előtt lépjen ki a %1 alkalmazásból. Az ablak bezárása után az alkalmazás tovább fut. Nem szükséges eltávolítani.</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>Kilépés a SoundCurrent EQ-ból</translation>
+    </message>
+    <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>A megosztott illesztőprogram módosítása előtt lépjen ki minden futó SoundCurrent alkalmazásból. Az egyik alkalmazás eltávolításakor az illesztőprogram megmarad, ha a másik még használja.</translation>
+    </message>
+    <message>
+      <source>Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.</source>
+      <translation>Az illesztőprogram telepítése előtt lépjen ki minden futó equalizerből. Az utolsó SoundCurrent alkalmazás eltávolításakor az eltávolítóprogram felajánlja a VB-CABLE eltávolítását. Más szoftvereknek is szükségük lehet a kábelre. A további A/B kábelek nincsenek a csomagban.</translation>
+      <extracomment>Shared virtual cable notice: quit exits the equalizer, not just closes UI. Cable removal is offered when the other SoundCurrent app is absent; user confirmation remains required, silent app removal does not remove cable. A/B refers to separate extra virtual cables, not physical wires. Other software may depend on shared VB-CABLE. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
-      <translation>Kilépés</translation>
+      <translation>Kilépés az alkalmazásból</translation>
+    </message>
+    <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Lépjen ki a futó SoundCurrent alkalmazásokból, és várja meg a hang helyreállítását a közösen használt hangillesztőprogram módosítása előtt.</translation>
+    </message>
+    <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>A VB-CABLE módosítása előtt zárja be a következőket: %1.</translation>
     </message>
     <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>J</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>R&amp;B</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint</source>
+      <translation>A hangvégpont olvasása</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>A hangvégpont azonosítójának olvasása</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>A hangvégpont nevének olvasása</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>A hangvégpont tulajdonságainak olvasása</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>A virtuális kábel hangadatainak olvasása</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>A virtuális kábel rögzítési interfészének lekérése</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>A virtuális kábel csomagméretének olvasása</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Az alapértelmezett kimenet azonosítójának olvasása</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Az alapértelmezett kimeneti végpont olvasása</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>A mikrofon keverési formátumának olvasása</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>A mikrofon csomagméretének olvasása</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>A mikrofon hangmintáinak olvasása</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>A virtuális kábel következő csomagméretének olvasása</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>A következő mikrofoncsomag olvasása</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>A kimeneti puffer telítettségének olvasása</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>A kimeneti szint olvasása</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>A kimenet némítási állapotának olvasása</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>A hangszórószint olvasása</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>A hangszórók keverési formátumának olvasása</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>A hangszórók némítási állapotának olvasása</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>A hangszórók lejátszási interfészének lekérése</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>A hangszórók hangerejének olvasása</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>A tesztlejátszáshoz pufferelt hangkeretek számának olvasása</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>A virtuális kimenet keverési formátumának olvasása</translation>
+    </message>
+    <message>
+      <source>Recent places</source>
+      <translation>Legutóbbi helyek</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Redo</source>
+      <translation>Újra</translation>
+      <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
       <source>Refresh devices</source>
       <translation>Eszközök frissítése</translation>
     </message>
     <message>
+      <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
+
+%1</source>
+      <translation>A relatív mérések tartalmazzák a hangsugárzó, a szoba és a mikrofon frekvenciamenetét. A javasolt módosítások mért frekvenciánként legfeljebb 3 dB-esek.
+
+%1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>A virtuális kábel hangcsomagjának felszabadítása</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>A mikrofoncsomag felszabadítása</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>A hangszórópuffer felszabadítása</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>A tesztlejátszás pufferének felszabadítása</translation>
+    </message>
+    <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>Emlékeztessen elérhető frissítésre vagy szükséges újraindításra</translation>
+    </message>
+    <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Eltávolítja a VB-CABLE-t?</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>Kiválasztott szűrő eltávolítása</translation>
+    </message>
+    <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>Eltávolítja a közösen használt VB-CABLE illesztőprogramot is? Más felhasználóknak, felvevőalkalmazásoknak vagy hangkommunikációs eszközöknek szükségük lehet rá. Erősítse meg a hivatalos eltávolító megnyitását, majd kattintson a Remove Driver gombra. Az elutasítással megtarthatja a kábelt, és csak a SoundCurrentet távolítja el.</translation>
+    </message>
+    <message>
+      <source>Rename</source>
+      <translation>Átnevezés</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Hiányos VB-CABLE-telepítés javítása</translation>
+    </message>
+    <message>
+      <source>Reset</source>
+      <translation>Visszaállítás</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>Hangjavítások visszaállítása</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>Mikrofonhangszín visszaállítása</translation>
     </message>
     <message>
       <source>Reset to flat</source>
       <extracomment>Restore zero gain in all EQ bands. Does not mute playback.</extracomment>
-      <translation>Sík válasz visszaállítása</translation>
+      <translation>Visszaállítás sík frekvenciamenetre</translation>
     </message>
     <message>
       <source>Response data (*.txt *.csv *.frd *.cal)</source>
-      <translation type="unfinished" />
+      <translation>Frekvenciamenet-adatok (*.txt *.csv *.frd *.cal)</translation>
+    </message>
+    <message>
+      <source>Response exceeds 4096 points.</source>
+      <translation>A frekvenciamenet meghaladja a 4096 pontot.</translation>
+    </message>
+    <message>
+      <source>Response frequencies must increase, with finite bounded values.</source>
+      <translation>A frekvenciáknak növekvő sorrendben kell lenniük, véges, határokon belüli értékekkel.</translation>
+    </message>
+    <message>
+      <source>Response has no usable audio range.</source>
+      <translation>A frekvenciamenetnek nincs használható hangtartománya.</translation>
     </message>
     <message>
       <source>Response import</source>
-      <translation type="unfinished" />
+      <translation>Frekvenciamenet importálása</translation>
+    </message>
+    <message>
+      <source>Response needs 2–4096 measured points.</source>
+      <translation>A frekvenciamenethez 2–4096 mért pont szükséges.</translation>
+    </message>
+    <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>A VB-CABLE használata előtt indítsa újra a Windowst. A hang beállítása befejeződött, de az illesztőprogram és a beállításai a rendszer újraindítását igénylik.</translation>
+    </message>
+    <message>
+      <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
+      <translation>A hangszínszabályzó vagy a VB-CABLE-beállítások használata előtt indítsa újra a Windowst. A hangillesztőprogram változásai rendszer-újraindítást igényelnek.</translation>
+    </message>
+    <message>
+      <source>Restore Defaults</source>
+      <translation>Alapértékek visszaállítása</translation>
     </message>
     <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
-      <translation type="unfinished" />
+      <translation>Előző EQ-beállítás visszaállítása (Ctrl+Z)</translation>
+    </message>
+    <message>
+      <source>Retry</source>
+      <translation>Újra</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
-      <translation type="unfinished" />
+      <translation>Jobbról balra írt tesztnyelv</translation>
     </message>
     <message>
       <source>Rock</source>
-      <translation type="unfinished" />
+      <translation>Rock</translation>
+    </message>
+    <message>
+      <source>Save</source>
+      <translation>Mentés</translation>
+    </message>
+    <message>
+      <source>Save All</source>
+      <translation>Összes mentése</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
-      <translation type="unfinished" />
+      <translation>EQ-előbeállítás mentése</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>Mentés másként</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>
-      <translation type="unfinished" />
+      <translation>Menti a módosított profilt?</translation>
     </message>
     <message>
       <source>Save preset</source>
@@ -1041,188 +2306,476 @@ Import into your library?</source>
     </message>
     <message>
       <source>Save profile</source>
-      <translation type="unfinished" />
+      <translation>Profil mentése</translation>
+    </message>
+    <message>
+      <source>Save system response profile</source>
+      <translation>Rendszer-frekvenciamenetprofil mentése</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>A folytatás előtt mentse a munkáját, és lépjen ki a futó alkalmazásból. Az ablak bezárása után az alkalmazás tovább fut a háttérben.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
-      <translation type="unfinished" />
+      <translation>A(z) „%1” előbeállítás mentve.</translation>
     </message>
     <message>
       <source>Search brand, family, model or measurement conditions</source>
-      <translation type="unfinished" />
+      <translation>Márka, termékcsalád, modell vagy mérési körülmények keresése</translation>
     </message>
     <message>
       <source>Second virtual cable for microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Második virtuális kábel a mikrofon-EQ-hoz</translation>
+    </message>
+    <message>
+      <source>Select all</source>
+      <translation>Összes kijelölése</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Select band %1</source>
-      <translation type="unfinished" />
+      <translation>%1. sáv kiválasztása</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
-      <translation type="unfinished" />
+      <translation>Válassza ki ezt a sávot a frekvencia, erősítés és Q szerkesztéséhez</translation>
+    </message>
+    <message>
+      <source>Selected audio device is unavailable</source>
+      <translation>A kiválasztott hangeszköz nem érhető el</translation>
     </message>
     <message>
       <source>Selected band</source>
       <extracomment>Currently selected frequency band in the equalizer.</extracomment>
-      <translation>Kijelölt frekvenciasáv</translation>
+      <translation>Kiválasztott sáv</translation>
     </message>
     <message>
       <source>Selected band filter Q</source>
-      <translation type="unfinished" />
+      <translation>Kiválasztott sáv szűrő-Q-ja</translation>
     </message>
     <message>
       <source>Selected band frequency</source>
-      <translation type="unfinished" />
+      <translation>Kiválasztott sáv frekvenciája</translation>
     </message>
     <message>
       <source>Selected band gain</source>
-      <translation type="unfinished" />
+      <translation>Kiválasztott sáv erősítése</translation>
+    </message>
+    <message>
+      <source>Selected output device is no longer available</source>
+      <translation>A kiválasztott kimeneti eszköz már nem érhető el</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
-      <translation type="unfinished" />
+      <translation>A kiválasztott kimenetet leválasztották. Átváltás automatikus kimenetre.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>A kiválasztott hangszórók nincsenek csatlakoztatva</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
-      <translation type="unfinished" />
+      <translation>Különálló halk hangok</translation>
+    </message>
+    <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>A hangszórószint maximumra állítása a hangszínszabályzóhoz</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>A kimeneti szint beállítása</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>A kimenet némítási állapotának beállítása</translation>
+    </message>
+    <message>
+      <source>Set up %1 for %2.</source>
+      <translation>%1 beállítása a(z) %2 alkalmazáshoz.</translation>
+    </message>
+    <message>
+      <source>Setting up the shared %1 driver...</source>
+      <translation>A megosztott %1 illesztőprogram beállítása...</translation>
+      <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
-      <translation>Beállítások &amp;&amp; kalibrálás</translation>
+      <translation>Beállítások &amp;&amp; kalibráció</translation>
+    </message>
+    <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>A telepítő nem tudta ellenőrizni az illesztőprogramot. Újra próbálkozhat az alkalmazásban vagy a Start menüben található %1 segítségével.</translation>
+    </message>
+    <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>A telepítő megnyitja a VB-Audio digitálisan aláírt telepítőprogramját. Kattintson az Install Driver gombra, majd indítsa újra a Windowst, mielőtt az equalizert vagy a VB-CABLE beállításait használná.</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
+      <translation>A közös EQ és a csatorna EQ-ja meghaladja a 64 szűrőt; távolítson el néhány csatornaszűrőt</translation>
+      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+    </message>
+    <message>
+      <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
+      <translation>A megosztott hangillesztőprogram eltávolítása nem fejeződött be. Ez az alkalmazás megmaradt, hogy újra próbálkozhasson. Lépjen ki minden futó SoundCurrent alkalmazásból, majd próbálja újra az eltávolítást.</translation>
+      <extracomment>Native uninstall nonzero failure (excluding restart code 3010) aborts before app payload deletion so user can retry. Shared audio driver means EQ/Studio ownership, not network. Quit any running SoundCurrent apps, not necessarily both products; fully exit rather than hide UI. SoundCurrent is invariant. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Shortcut</source>
+      <translation>Parancsikon</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
-      <translation type="unfinished" />
+      <translation>Rövidebb időközzel a szintek gyakrabban frissülnek és több CPU-t használnak; a hangellátás korlátozhatja a tényleges ütemet</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
-      <translation type="unfinished" />
+      <translation>Csökkenő csúcstartó vonal megjelenítése minden frekvenciaszinten</translation>
     </message>
     <message>
       <source>Show advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Speciális vezérlők megjelenítése</translation>
+    </message>
+    <message>
+      <source>Show date modified</source>
+      <translation>Módosítás dátumának megjelenítése</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show hidden files</source>
+      <translation>Rejtett fájlok megjelenítése</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>
-      <translation type="unfinished" />
+      <translation>Csúcsjelölők megjelenítése a frekvenciaszinteken</translation>
+    </message>
+    <message>
+      <source>Show size</source>
+      <translation>Méret megjelenítése</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show type</source>
+      <translation>Típus megjelenítése</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Sidebar</source>
+      <translation>Oldalsáv</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>Méret</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>A rögzítési puffer méretének meghatározása</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>A kimeneti puffer méretének meghatározása</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>A tesztlejátszási puffer méretének meghatározása</translation>
     </message>
     <message>
       <source>Small Speakers</source>
-      <translation type="unfinished" />
+      <translation>Kis hangsugárzók</translation>
     </message>
     <message>
       <source>Soft Treble</source>
-      <translation type="unfinished" />
+      <translation>Lágy magasak</translation>
     </message>
     <message>
       <source>Sound enhancements</source>
       <translation>Hangjavítások</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>A SoundCurrent Audio már jelen van. Ha az illesztőprogram beállítása engedélyezve marad, a telepítő regisztrálja ezt az alkalmazást, és a megosztott illesztőprogramot elérhetővé teszi a másik SoundCurrent alkalmazás számára.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>A SoundCurrent Audio készen áll. Nyissa meg az alkalmazást, és válassza ki a hangszórókat vagy a fejhallgatót.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
+      <translation>A SoundCurrent Audio telepítve saját mikrofonútvonalat biztosít. VB-CABLE esetén az egyidejű mikrofon- és hangsugárzó-EQ-hoz külön telepített második kábel (A vagy B) szükséges. Válassza ezt a kábelt a felvevőalkalmazásokban. Az Automatikus mód az elérhető SoundCurrent-útvonalat részesíti előnyben.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>A SoundCurrent Audio az alkalmazáson keresztül irányítja a lejátszást. Válassza ki a fizikai hangszóróit vagy fejhallgatóját az alkalmazásban. A hardveres illesztőprogramjaik megmaradnak.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.</source>
+      <translation>SoundCurrent-mérés frekvenciasöpréssel vagy hangokkal; a mediánhoz viszonyítva; a mikrofon EQ-ja megkerülve. A lejátszási EQ hatása szerepelhet benne.</translation>
+      <extracomment>New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.</extracomment>
+    </message>
+    <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>A SoundCurrent virtuális kimenete 48 kHz-es, lebegőpontos sztereó hangot igényel</translation>
+    </message>
+    <message>
+      <source>Soundbar</source>
+      <translation>Hangprojektor</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
-      <translation type="unfinished" />
+      <translation>Forrás</translation>
+    </message>
+    <message>
+      <source>Source: %1</source>
+      <translation>Forrás: %1</translation>
+      <extracomment>Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.</extracomment>
+    </message>
+    <message>
+      <source>Speaker</source>
+      <translation>Hangsugárzó</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
-      <translation type="unfinished" />
+      <translation>Hangsugárzó- &amp;&amp; szobakalibráció</translation>
     </message>
     <message>
       <source>Speaker + room check</source>
-      <translation type="unfinished" />
+      <translation>Hangsugárzó és szoba ellenőrzése</translation>
+    </message>
+    <message>
+      <source>Speaker and room measurement</source>
+      <translation>Hangsugárzó és szoba mérése</translation>
+    </message>
+    <message>
+      <source>Speaker filter is outside conservative bounds</source>
+      <translation>A hangsugárzószűrő az óvatos határokon kívül van</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Hangsugárzó gyártója</translation>
     </message>
     <message>
       <source>Speaker model correction</source>
-      <translation type="unfinished" />
+      <translation>Hangsugárzómodell korrekciója</translation>
     </message>
     <message>
       <source>Speaker model profile</source>
-      <translation type="unfinished" />
+      <translation>Hangsugárzómodell profilja</translation>
     </message>
     <message>
       <source>Speaker profile details</source>
-      <translation type="unfinished" />
+      <translation>Hangsugárzóprofil részletei</translation>
+    </message>
+    <message>
+      <source>Speaker profile resource is missing</source>
+      <translation>A hangsugárzóprofil erőforrása hiányzik</translation>
     </message>
     <message>
       <source>Speaker type</source>
-      <translation type="unfinished" />
+      <translation>Hangsugárzó típusa</translation>
+    </message>
+    <message>
+      <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
+      <translation>Spinorama AutoEQ: a korrekció erősítése %1 értékre, a Q pedig %2 értékre van korlátozva. A %3 alatti kiemelések kimaradnak. A hallgatási beállítás külön adódik hozzá.</translation>
+      <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
+    </message>
+    <message>
+      <source>Start cable capture</source>
+      <translation>A virtuális kábel hangrögzítésének indítása</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>A mikrofonfelvétel indítása</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>Kezdje halkan. Csak akkor emelje a szintet, ha a mikrofon nem hallja a hangokat.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>A hangszórókimenet indítása</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>A tesztlejátszás indítása</translation>
+    </message>
+    <message>
+      <source>Start when I sign in</source>
+      <translation>Indítás bejelentkezéskor</translation>
+    </message>
+    <message>
+      <source>Startup</source>
+      <translation>Indítás</translation>
+    </message>
+    <message>
+      <source>Step down</source>
+      <translation>Érték csökkentése</translation>
+      <extracomment>Decrease the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Step up</source>
+      <translation>Érték növelése</translation>
+      <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Stop the microphone calibration before changing the audio driver.</source>
+      <translation>A hangillesztőprogram módosítása előtt állítsa le a mikrofonkalibrációt.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>Hangok leállítása</translation>
+    </message>
+    <message>
+      <source>Studio profile has an invalid boolean field</source>
+      <translation>A Studio-profil érvénytelen logikai mezőt tartalmaz</translation>
+      <extracomment>Saved Studio setup requires a JSON true/false field. Wrong type or missing value is rejected; do not confuse this with an audio level or textual yes/no preference.</extracomment>
+    </message>
+    <message>
+      <source>Studio profile has an invalid numeric field</source>
+      <translation>A Studio-profil érvénytelen numerikus mezőt tartalmaz</translation>
+      <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>Javasolt EQ alkalmazva. Megőrzéséhez használja az Előbeállítás mentése lehetőséget.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>Javasolt módosítások a lejátszási EQ-hoz</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>Surround hang</translation>
+    </message>
+    <message>
+      <source>Surround speaker</source>
+      <translation>Surround hangsugárzó</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>A rendszer-frekvenciamenetprofil szerkesztője megnyílt. A mentett profilok az eszközkönyvtárban érhetők el.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>TV-párbeszéd</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>Türkiz: korrekciós EQ. Narancs: mért frekvenciamenet, ha rendelkezésre áll. A függőleges skála relatív dB.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>Tesztszint</translation>
+    </message>
+    <message>
+      <source>Test level is outside the allowed range</source>
+      <translation>A tesztszint a megengedett tartományon kívül van</translation>
+    </message>
+    <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>Hiányzik a VB-CABLE csomag. Javítsa a SoundCurrent telepítését.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>A hangfeldolgozó váratlanul leállt.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Hiányzik a hang készenlétét ellenőrző segédprogram. Javítsa a SoundCurrent telepítését.</translation>
+    </message>
+    <message>
+      <source>The custom library holds up to 256 profiles.</source>
+      <translation>Az egyéni könyvtár legfeljebb 256 profilt tárolhat.</translation>
+    </message>
+    <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>Az illesztőprogram-kezelő nincs aláírva. Telepítse a SoundCurrent aláírt kiadását.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Az illesztőprogram-csomag hiányos, vagy a Windows nem tudja ellenőrizni az aláírását.</translation>
+    </message>
+    <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>A hiányos VB-CABLE-telepítést eltávolították. Indítsa újra a Windowst, nyissa meg újra a %1 lehetőséget, kattintson az Install Driver gombra, majd indítsa újra még egyszer.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>Hiányzik a hangútvonalakat megőrző beállítási segédprogram.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>Hiányzik a közösen használt illesztőprogram-kezelő. Javítsa az alkalmazás telepítését.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>A frissítési válasz érvénytelen volt. Nem nyílt meg telepítő.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>Ez mért FREKVENCIAMENETET importál, nem előre invertált EQ-erősítéseket. Erősítse meg az eszköztípust. Az abszolút hangnyomásszintet importálás előtt normalizálni kell.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>Ez a profil módosult. Ment egyéni másolatot távozás előtt?</translation>
+    </message>
+    <message>
+      <source>Timed out waiting for the equalizer sink: %1</source>
+      <translation>Időtúllépés a hangszínszabályzó virtuális kimenetére várva: %1</translation>
+    </message>
+    <message>
+      <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
+      <translation>Túl kevés teszthang jutott a mikrofonhoz. Vigye közelebb vagy kissé emelje a tesztszintet.</translation>
+    </message>
+    <message>
+      <source>Too many Studio channel filters</source>
+      <translation>Túl sok szűrő egy Studio-csatornán</translation>
+      <extracomment>Per-channel EQ filter count exceeds 64; unchanged processing bound.</extracomment>
+    </message>
+    <message>
+      <source>Too many Studio routes</source>
+      <translation>Túl sok Studio-audiokapcsolat</translation>
+      <extracomment>Saved audio routing edge count exceeds channel-count squared.</extracomment>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>Turnékon használt PA-hangsugárzó</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>Fordítási lefedettség: %1/%2 üzenet. A hiányzó fordítások angolul jelennek meg. A nyelvi csomagok nem ellenőrzöttek, anyanyelvi felülvizsgálatra várnak. A módosítások alkalmazásához lépjen ki és nyissa meg újra.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>Magas részletek</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Hangszínszabályzó kikapcsolása</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Hangszínszabályzó bekapcsolása</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Típus</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Nem besorolt berendezés</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>
@@ -1231,27 +2784,74 @@ Import into your library?</source>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>Utolsó hangszínszabályzó-módosítás visszavonása</translation>
+    </message>
+    <message>
+      <source>Uninstall</source>
+      <translation>Eltávolítás</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
+      <source>Unknown</source>
+      <translation>Ismeretlen</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>EQ feloldása</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>Oldja fel a vezérlőket és fejezze be a mérést profilok szerkesztése előtt.</translation>
+    </message>
+    <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>A hangszórók némításának feloldása a hangszínszabályzóhoz</translation>
+    </message>
+    <message>
+      <source>Unsupported Studio profile schema</source>
+      <translation>Nem támogatott Studio-profilformátum</translation>
+      <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
+    </message>
+    <message>
+      <source>Unsupported equipment profile schema (expected 2).</source>
+      <translation>Nem támogatott eszközprofil-séma (elvárt: 2).</translation>
+    </message>
+    <message>
+      <source>Unsupported filter type.</source>
+      <translation>Nem támogatott szűrőtípus.</translation>
+    </message>
+    <message>
+      <source>Unsupported microphone channel layout</source>
+      <translation>Nem támogatott mikrofoncsatorna-elrendezés</translation>
+    </message>
+    <message>
+      <source>Unsupported recording format</source>
+      <translation>Nem támogatott felvételi formátum</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Nem támogatott hangszóró-csatornaelrendezés vagy mintavételi frekvencia</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Nem támogatott hangszórókeverési mintaformátum</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker profile schema</source>
+      <translation>Nem támogatott hangsugárzóprofil-séma</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>A(z) %1 frissítés letöltve: %2. Lépjen ki, telepítse a meglévő alkalmazásra, majd nyissa meg újra.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>Frissítésletöltési mappa</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>Használjon csendes szobát. Együtt méri a hangsugárzókat, a szobát és a mikrofont; az eredmény tartalmazza a mikrofon frekvenciamenetét.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1260,35 +2860,153 @@ Import into your library?</source>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>A rendszer területi beállításainak használata</translation>
+      <translation>Rendszer területi beállításainak használata</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Felhasználó által importált relatív frekvenciaátvitel; használat előtt adja meg a mikrofon irányát / sorozatszámát vagy a hangsugárzó mérési körülményeit.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>Felhasználó által létrehozott korrekció; adja meg az eszközt és a mérési körülményeket.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>Felhasználó által létrehozott profil</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>A VB-CABLE illesztőprogramként regisztrálva van, de nincsenek használható hangvégpontjai. A telepítő javítást kínál: távolítsa el az illesztőprogramot, indítsa újra a gépet, telepítse újra, majd ismét indítsa újra a gépet.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>A VB-CABLE már telepítve van. Ha most telepítették vagy frissítették, indítsa újra a Windowst a hangszínszabályzó vagy a VB-CABLE beállításainak használata előtt. Ellenkező esetben válassza ki a hangszórókat a SoundCurrentben.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>A VB-CABLE már jelen van, és újra felhasználásra kerül. A SoundCurrent kikapcsoláskor vagy a(z) %1 használatakor visszaállítja a szokásos kimenetet.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>A VB-CABLE nincs telepítve. Nyissa meg a "%1" lehetőséget, majd indítsa újra a Windowst a kábel beállításainak megnyitása előtt.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>A VB-CABLE nincs jelen. Ha erre felszólítást kapott, indítsa újra a Windowst, majd próbálja újra a hang beállítását.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>A VB-CABLE még jelen van. Ha az eltávolítás újraindítást kért, indítsa újra a Windowst, és próbálja újra eltávolítani a SoundCurrentet; ellenkező esetben fejezze be a Remove Driver műveletet a hivatalos telepítőben.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>A VB-CABLE csomag ellenőrzőösszege nem egyezik. Javítsa a telepítést.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE removal did not finish. This app was kept so you can retry.</source>
+      <translation>A VB-CABLE eltávolítása nem fejeződött be. Ez az alkalmazás megmaradt, hogy újra próbálkozhasson.</translation>
+      <extracomment>Cable uninstall nonzero failure excluding restart code 3010 aborts before app payload deletion. App retained for retry. NSIS caller appends newline and actual helper output as $1; never put runtime variables in translations. VB-CABLE invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.</source>
+      <translation>A VB-CABLE az alkalmazáson keresztül vezeti a lejátszást. Válassza ki a hangszórókat a SoundCurrent alkalmazásban. A VB-CABLE a VB-Audio adományokkal támogatott szoftvere: https://vb-cable.com — az adományokat szívesen fogadják.</translation>
+      <extracomment>Cable audio page routing and donation notice. Software routes system playback through SoundCurrent to physical output selected inside app. Donationware means supported by voluntary donations, not mandatory payment. Preserve VB-CABLE twice, SoundCurrent, VB-Audio and exact donation URL. Contextual AI review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>VB-CABLE-beállítások</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>A VB-CABLE beállításait nem sikerült megnyitni. Ha az illesztőprogramot most telepítették vagy frissítették, indítsa újra a Windowst, majd próbálja újra.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>A VB-CABLE beállítása befejeződött. Most indítsa újra a Windowst a hangszínszabályzó vagy a VB-CABLE beállításainak használata előtt. A korábbi alapértelmezett hangeszközök megmaradtak, ahol még elérhetők voltak.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>A VB-CABLE beállításához újra kell indítani a Windowst. Indítsa újra a rendszert a hangszínszabályzó használata vagy a VB-CABLE beállításainak megnyitása előtt.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>A VB-CABLE beállítását megszakították, vagy nem fejeződött be (kód: %1). A SoundCurrent telepítve marad az újrapróbálkozáshoz.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.</source>
+      <translation>A VB-CABLE továbbra sem rendelkezik használható lejátszó- vagy felvevőeszközökkel. Fejezze be a Remove Driver műveletet a hivatalos telepítőben, indítsa újra a Windowst, majd nyissa meg ismét a(z) %1 lehetőséget az illesztőprogram újratelepítéséhez. A Windows hangbeállításaiban engedélyezni kell a CABLE Input és CABLE Output eszközöket.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>A VB-CABLE megmaradt, mert a másik SoundCurrent alkalmazás telepítve van. Az utolsó alkalmazással együtt távolítsa el, ha más szoftvernek nincs szüksége rá.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>Énekhang kiemelése</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>Mikrofonra vár.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>Meleg</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>Melegség</translation>
     </message>
     <message>
-      <source>Width (Q)</source>
-      <translation type="unfinished" />
+      <source>Whole listening system</source>
+      <translation>Teljes hallgatási rendszer</translation>
+      <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>A Windows hang COM rendszere nem érhető el</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>A Windows nem tudta ellenőrizni a VB-Audio futtatható fájl aláírását.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
+    </message>
+    <message>
+      <source>Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.</source>
+      <translation>A Windowsban szerepel a VB-CABLE illesztőprogramja, de a kábelnek nincsenek használható végpontjai. Először ellenőrizze, hogy a CABLE Input és a CABLE Output engedélyezve van-e a Windows hangbeállításaiban. Újratelepítéshez: kattintson a következőként megnyíló hivatalos telepítőben a Remove Driver gombra, indítsa újra a Windowst, majd az alkalmazásban válassza újra a %1 lehetőséget, és kattintson az Install Driver gombra. Még egyszer indítsa újra a gépet, mielőtt hangot játszana le a SoundCurrent alkalmazáson keresztül. A megosztott kábel eltávolítása a kábelt használó más alkalmazásokat is érinti.</translation>
+      <extracomment>Pre-repair modal, before official driver installer is opened. Existing driver record but endpoints unavailable; first check Windows endpoint enablement. Remove Driver and Install Driver are exact English external buttons. %1 is actual localized Audio driver setup button inside app, not English Start-menu shortcut. Preserve removal -&gt; Windows restart -&gt; app setup -&gt; reinstall -&gt; second restart, then audio playback; affects other users of shared cable. No claim removal already happened. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</source>
+      <translation>A Windowsban van VB-CABLE illesztőprogram-bejegyzés, de a lejátszási vagy felvételi végpont nem érhető el. Ha már újraindította, nyissa meg a %1 lehetőséget a javításhoz. Engedélyezze a CABLE Input és CABLE Output eszközöket a Windows hangbeállításaiban, ha le vannak tiltva.</translation>
+    </message>
+    <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>A Windows rendszergazdai jóváhagyást kér az aláírt illesztőprogram-kezelőhöz. A telepítő jelzi, ha újraindítás szükséges.</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Írás a hangszórópufferbe</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>A teszthang írása lejátszáshoz</translation>
+    </message>
+    <message>
+      <source>Yes</source>
+      <translation>Igen</translation>
+    </message>
+    <message>
+      <source>Yes to All</source>
+      <translation>Mindegyikre igen</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>A nulla kikapcsolja az adott effektet. Ezek a hallgatási effektek a hangsugárzó-lejátszásra vonatkoznak, nem a mikrofonkorrekcióra.</translation>
     </message>
   </context>
 </TS>

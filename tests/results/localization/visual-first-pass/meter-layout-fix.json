@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-08",
+  "change": "Refresh and peak-marker controls moved to separate row; peak status wraps",
+  "visualEvidence": "Rebuilt Polish Equalizer page inspected at Xvfb 1280x720: group fits window, no outer horizontal scrollbar; frequency-band strip retains its own scrollbar",
+  "nativeReviewed": false,
+  "processingChange": false,
+  "limitations": [
+    "Only Polish screenshots visually inspected for this change",
+    "Other widths, locales, RTL and Windows/package lifecycle remain pending"
+  ]
+}

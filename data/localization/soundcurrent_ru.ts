@@ -3,194 +3,397 @@
   <context>
     <name>SoundCurrent</name>
     <message>
-      <source>
-Apply this correction to the </source>
-      <translation type="unfinished" />
-    </message>
-    <message>
-      <source>
-Import into your library?</source>
-      <translation type="unfinished" />
-    </message>
-    <message>
       <source> (currently selected)</source>
-      <translation type="unfinished" />
+      <translation> (сейчас выбрано)</translation>
+    </message>
+    <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (исходная модель; не SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
     </message>
     <message>
       <source> (restored selection)</source>
-      <translation type="unfinished" />
+      <translation> (восстановленный выбор)</translation>
     </message>
     <message>
-      <source> route?</source>
-      <translation type="unfinished" />
+      <source> [custom]</source>
+      <translation> [собственный]</translation>
+    </message>
+    <message>
+      <source> and </source>
+      <translation> и </translation>
     </message>
     <message>
       <source> · mono</source>
-      <translation type="unfinished" />
+      <translation> · моно</translation>
+    </message>
+    <message>
+      <source> · no USB microphone detected</source>
+      <translation> · USB-микрофон не обнаружен</translation>
     </message>
     <message>
       <source> · stereo</source>
-      <translation type="unfinished" />
+      <translation> · стерео</translation>
+    </message>
+    <message>
+      <source>%1
+
+Technical details:
+%2</source>
+      <translation>%1
+
+Технические подробности:
+%2</translation>
+    </message>
+    <message>
+      <source>%1
+Directory not found.
+Please verify the correct directory name was given.</source>
+      <translation>%1
+Каталог не найден.
+Проверьте правильность указанного имени каталога.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+File not found.
+Please verify the correct file name was given.</source>
+      <translation>%1
+Файл не найден.
+Проверьте правильность указанного имени файла.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+The app remains open; your settings have been kept.</source>
+      <translation>%1
+Приложение остаётся открытым; ваши настройки сохранены.</translation>
     </message>
     <message>
       <source>%1 %2%3 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 %2%3 dB</translation>
+    </message>
+    <message>
+      <source>%1 / %2
+%3
+Apply this correction to the %4 route?</source>
+      <translation>%1 / %2
+%3
+Применить эту коррекцию к аудиотракту типа %4?</translation>
+    </message>
+    <message>
+      <source>%1 / %2
+%3
+Import into your library?</source>
+      <translation>%1 / %2
+%3
+Импортировать в вашу библиотеку?</translation>
+    </message>
+    <message>
+      <source>%1 Hz: measured %2%3 dB; suggested %4%5 dB</source>
+      <translation>%1 Hz: измерено %2%3 dB; предложено %4%5 dB</translation>
+    </message>
+    <message>
+      <source>%1 Hz: signal %2, background %3</source>
+      <translation>%1 Hz: сигнал %2, фон %3</translation>
+      <extracomment>Debug calibration tone amplitude and background noise amplitude. %1 is frequency, %2 signal amplitude, %3 background amplitude. Display only; no change to numerical analysis.</extracomment>
+    </message>
+    <message>
+      <source>%1 Hz: too quiet to measure</source>
+      <translation>%1 Hz: слишком тихо для измерения</translation>
+    </message>
+    <message>
+      <source>%1 already exists.
+Do you want to replace it?</source>
+      <translation>%1 уже существует.
+Заменить его?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1 disconnected. </source>
+      <translation>%1 отключено. </translation>
+    </message>
+    <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>Ошибка операции: %1 (0x%2)</translation>
+    </message>
+    <message>
+      <source>%1 is already running or its instance lock is unavailable</source>
+      <translation>%1 уже запущен или блокировка его экземпляра недоступна</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>%1 is running. Quit it before using SoundCurrent.</source>
+      <translation>%1 запущен. Закройте его перед использованием SoundCurrent.</translation>
+      <extracomment>A recognized competing equalizer process is active. %1 is its opaque executable name; quit that program completely, not merely its window. Preserve SoundCurrent brand and process identity.</extracomment>
+    </message>
+    <message>
+      <source>%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.</source>
+      <translation>Настройка %1 не завершена. Само приложение %2 установлено. Используйте %3 в меню «Пуск», чтобы повторить попытку; причина указана в подробностях установки.</translation>
+      <extracomment>Setup failure dialog after app files/shortcuts copied. %1 = stable driver name; %2 = stable app name; %3 = actual currently English Start-menu shortcut name Audio driver setup (not localized Qt button). Setup failure does not prove existing driver absent. Preserve app installed, Start-menu retry and details for reason. Shortcut display-name localization and upgrade cleanup remain open. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
+      <translation>Настройка %1 не завершена. Повторите попытку через ярлык в меню «Пуск».</translation>
+      <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>%1%2 dB</source>
-      <translation type="unfinished" />
+      <translation>%1%2 dB</translation>
+    </message>
+    <message>
+      <source>'%1' is write protected.
+Do you want to delete it anyway?</source>
+      <translation>«%1» защищён от записи.
+Действительно удалить?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>A private user runtime directory is required</source>
+      <translation>Требуется закрытый каталог среды выполнения пользователя</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>Abort</source>
+      <translation>Прервать</translation>
     </message>
     <message>
       <source>Acoustic</source>
-      <translation type="unfinished" />
+      <translation>Акустика</translation>
     </message>
     <message>
       <source>Active / passive / unknown</source>
-      <translation type="unfinished" />
+      <translation>Активный / пассивный / неизвестный</translation>
     </message>
     <message>
       <source>Add filter</source>
-      <translation type="unfinished" />
+      <translation>Добавить фильтр</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
-      <translation type="unfinished" />
+      <translation>Настройте выход после эквалайзера в диапазоне от −60 до +12 dB. Большее усиление может вызвать клиппинг.</translation>
     </message>
     <message>
       <source>Adjust this tone band around the natural voice profile</source>
-      <translation type="unfinished" />
+      <translation>Настройте эту частотную полосу относительно профиля естественного голоса</translation>
+    </message>
+    <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>Настраиваемый общесистемный эквалайзер для PipeWire</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
-      <translation type="unfinished" />
+      <translation>Расширенные элементы управления звуковыми эффектами</translation>
     </message>
     <message>
       <source>Air</source>
-      <translation type="unfinished" />
+      <translation>Воздушность</translation>
     </message>
     <message>
       <source>All brands</source>
-      <translation type="unfinished" />
+      <translation>Все бренды</translation>
     </message>
     <message>
       <source>All equipment</source>
-      <translation type="unfinished" />
+      <translation>Всё оборудование</translation>
     </message>
     <message>
       <source>All families</source>
-      <translation type="unfinished" />
+      <translation>Все серии</translation>
+    </message>
+    <message>
+      <source>All files (*)</source>
+      <translation>Все файлы (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>All manufacturers</source>
-      <translation type="unfinished" />
+      <translation>Все производители</translation>
     </message>
     <message>
       <source>All speaker types</source>
-      <translation type="unfinished" />
+      <translation>Все типы акустических систем</translation>
     </message>
     <message>
       <source>All subtypes</source>
-      <translation type="unfinished" />
+      <translation>Все подтипы</translation>
     </message>
     <message>
       <source>Ambience</source>
-      <translation type="unfinished" />
+      <translation>Атмосфера помещения</translation>
     </message>
     <message>
       <source>Ambience damping</source>
-      <translation type="unfinished" />
+      <translation>Затухание высоких частот отражений</translation>
     </message>
     <message>
       <source>Ambience decay</source>
-      <translation type="unfinished" />
+      <translation>Длительность отражений помещения</translation>
     </message>
     <message>
       <source>Amp details</source>
-      <translation type="unfinished" />
+      <translation>Сведения об усилителе</translation>
+    </message>
+    <message>
+      <source>Amplifier</source>
+      <translation>Усилитель</translation>
     </message>
     <message>
       <source>Amplifier / receiver</source>
-      <translation type="unfinished" />
+      <translation>Усилитель / ресивер</translation>
     </message>
     <message>
       <source>Amplifier model profile</source>
-      <translation type="unfinished" />
+      <translation>Профиль модели усилителя</translation>
     </message>
     <message>
       <source>Amplifier profile details</source>
-      <translation type="unfinished" />
+      <translation>Сведения о профиле усилителя</translation>
     </message>
     <message>
       <source>Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.</source>
-      <translation type="unfinished" />
+      <translation>Профили усилителей требуют электрических измерений с известной нагрузкой акустических систем, входом и настройками тембра. Импортируйте файл измеренной коррекции; кривые усилителей не выводятся из маркетинговых характеристик.</translation>
     </message>
     <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
-      <translation type="unfinished" />
+      <translation>Установлено обновление приложения. Воспользуйтесь командой выхода и откройте приложение снова, чтобы загрузить его; закрытие этого окна оставляет прежнюю версию запущенной.</translation>
+    </message>
+    <message>
+      <source>Another SoundCurrent EQ sink is already running</source>
+      <translation>Другой выход SoundCurrent EQ уже работает</translation>
     </message>
     <message>
       <source>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</source>
-      <translation type="unfinished" />
+      <translation>Уже работает другое приложение SoundCurrent или средство установки аудиодрайвера. Завершите его работу перед открытием этого приложения.</translation>
     </message>
     <message>
       <source>Another SoundCurrent equalizer is running. Quit EQ or Studio before opening the other app.</source>
-      <translation type="unfinished" />
+      <translation>Уже работает другой эквалайзер SoundCurrent. Завершите работу EQ или Studio перед открытием другого приложения.</translation>
     </message>
     <message>
-      <source>Another equalizer route is present: </source>
-      <translation type="unfinished" />
+      <source>Another SoundCurrent microphone filter is running</source>
+      <translation>Уже работает другой микрофонный фильтр SoundCurrent</translation>
+    </message>
+    <message>
+      <source>Another equalizer route is present: %1. Quit it before using SoundCurrent.</source>
+      <translation>Обнаружен аудиотракт другого эквалайзера: %1. Завершите его работу перед использованием SoundCurrent.</translation>
     </message>
     <message>
       <source>Application update</source>
-      <translation type="unfinished" />
+      <translation>Обновление приложения</translation>
     </message>
     <message>
       <source>Application updates</source>
-      <translation type="unfinished" />
+      <translation>Обновления приложения</translation>
+    </message>
+    <message>
+      <source>Apply</source>
+      <translation>Применить</translation>
+    </message>
+    <message>
+      <source>Apply amplifier correction?</source>
+      <translation>Применить коррекцию усилителя?</translation>
+      <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
     </message>
     <message>
       <source>Apply correction?</source>
-      <translation type="unfinished" />
+      <translation>Применить коррекцию?</translation>
+    </message>
+    <message>
+      <source>Apply only if these conditions match your system.</source>
+      <translation>Применяйте только если эти условия соответствуют вашей системе.</translation>
+      <extracomment>Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.</extracomment>
+    </message>
+    <message>
+      <source>Apply profile</source>
+      <translation>Применить профиль</translation>
+    </message>
+    <message>
+      <source>Apply suggested EQ</source>
+      <translation>Применить предложенные настройки EQ</translation>
+    </message>
+    <message>
+      <source>Are you sure you want to delete '%1'?</source>
+      <translation>Действительно удалить «%1»?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Audio bridge did not start</source>
+      <translation>Аудиомост не запустился</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
-      <translation type="unfinished" />
+      <translation>Установка аудиодрайвера</translation>
+    </message>
+    <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>Настройка аудиодрайвера завершена. Перезапустите Windows перед использованием SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Настройка аудиодрайвера не завершена: %1</translation>
     </message>
     <message>
       <source>Audio error: %1</source>
-      <translation type="unfinished" />
+      <translation>Ошибка аудио: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Помощник восстановления аудио</translation>
+    </message>
+    <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Не удалось запустить вспомогательную программу восстановления аудиомаршрута. Восстановите или переустановите SoundCurrent.</translation>
     </message>
     <message>
       <source>Audio setup</source>
-      <translation type="unfinished" />
+      <translation>Настройка аудио</translation>
     </message>
     <message>
       <source>Audio setup could not finish</source>
-      <translation type="unfinished" />
+      <translation>Не удалось завершить настройку аудио</translation>
+    </message>
+    <message>
+      <source>Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.</source>
+      <translation>Ошибка настройки аудио. Если VB-CABLE только что установлен, перезапустите Windows и попробуйте снова.</translation>
+    </message>
+    <message>
+      <source>Audio setup is missing. Repair or reinstall SoundCurrent.</source>
+      <translation>Средство настройки аудио отсутствует. Восстановите или повторно установите SoundCurrent.</translation>
     </message>
     <message>
       <source>Audio setup is running. Processing is paused; the app remains open.</source>
-      <translation type="unfinished" />
+      <translation>Выполняется настройка аудио. Обработка приостановлена; приложение остаётся открытым.</translation>
     </message>
     <message>
       <source>Auto headroom %1 dB</source>
-      <translation type="unfinished" />
+      <translation>Автоматический запас %1 dB</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
-      <translation type="unfinished" />
+      <translation>Автоматически (SoundCurrent Microphone)</translation>
     </message>
     <message>
       <source>Automatic (follow connected devices)</source>
-      <translation type="unfinished" />
+      <translation>Автоматически (по подключённым устройствам)</translation>
     </message>
     <message>
       <source>Automatic (follow connected microphones)</source>
-      <translation type="unfinished" />
+      <translation>Автоматически (по подключённым микрофонам)</translation>
+    </message>
+    <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Автоматическая маршрутизация звука недоступна</translation>
     </message>
     <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Автоматически корректировать звук подключённого микрофона; нажмите, чтобы обойти микрофонный EQ</translation>
+    </message>
+    <message>
+      <source>Back</source>
+      <translation>Назад</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Balance</source>
@@ -199,15 +402,15 @@ Import into your library?</source>
     </message>
     <message>
       <source>Balance position</source>
-      <translation type="unfinished" />
+      <translation>Положение баланса</translation>
     </message>
     <message>
       <source>Balanced</source>
-      <translation type="unfinished" />
+      <translation>Сбалансированный</translation>
     </message>
     <message>
       <source>Band %1 gain</source>
-      <translation type="unfinished" />
+      <translation>Усиление полосы %1</translation>
     </message>
     <message>
       <source>Bands</source>
@@ -216,7 +419,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.</source>
-      <translation type="unfinished" />
+      <translation>Индикаторы рядом с ползунками показывают оценочные уровни после EQ. Красный текст пиков предупреждает о возможном клиппинге.</translation>
     </message>
     <message>
       <source>Bass Boost</source>
@@ -224,203 +427,503 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bass Cut</source>
-      <translation type="unfinished" />
+      <translation>Ослабление басов</translation>
     </message>
     <message>
       <source>Bass adds low-frequency weight; Clarity adds high-frequency detail; Ambience adds room reflections; Surround widens stereo; Dynamic Boost compresses and raises quieter material with a peak ceiling. Boosting can increase output level.</source>
-      <translation type="unfinished" />
+      <translation>Басы добавляют вес низким частотам; Чёткость добавляет высокочастотные детали; Атмосфера помещения добавляет отражения; Объёмный звук расширяет стерео; Динамическое усиление сжимает и усиливает более тихий материал с ограничением пиков. Усиление может увеличить выходной уровень.</translation>
     </message>
     <message>
       <source>Bass frequency</source>
-      <translation type="unfinished" />
+      <translation>Частота басов</translation>
+    </message>
+    <message>
+      <source>Bookshelf speaker</source>
+      <translation>Полочная акустическая система</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Boxiness</source>
-      <translation type="unfinished" />
+      <translation>Коробочная окраска</translation>
     </message>
     <message>
       <source>Brand</source>
-      <translation type="unfinished" />
+      <translation>Бренд</translation>
+    </message>
+    <message>
+      <source>Brand, family and model are required (maximum 120 characters each).</source>
+      <translation>Бренд, серия и модель обязательны (не более 120 символов в каждом поле).</translation>
     </message>
     <message>
       <source>Bright</source>
-      <translation type="unfinished" />
+      <translation>Яркий</translation>
     </message>
     <message>
       <source>Browse all equipment profiles / editor</source>
-      <translation type="unfinished" />
+      <translation>Просмотр всех профилей оборудования / редактор</translation>
+    </message>
+    <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Пакет кабеля превышает ёмкость буфера захвата</translation>
+    </message>
+    <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Устройство записи виртуального кабеля не поддерживает стереозвук 48 kHz в формате с плавающей запятой в общем режиме</translation>
     </message>
     <message>
       <source>Calibration test signal</source>
-      <translation type="unfinished" />
+      <translation>Калибровочный тестовый сигнал</translation>
     </message>
     <message>
       <source>Calibration tone level</source>
-      <translation type="unfinished" />
+      <translation>Уровень калибровочного тона</translation>
+    </message>
+    <message>
+      <source>Cancel</source>
+      <translation>Отмена</translation>
     </message>
     <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Не удалось получить блокировку общего сеанса SoundCurrent.</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
-      <translation type="unfinished" />
+      <translation>Не удалось создать папку профилей усилителя.</translation>
+    </message>
+    <message>
+      <source>Cannot create profile folder.</source>
+      <translation>Не удалось создать папку профилей.</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Не удалось создать блокировку общего сеанса SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>Cannot create user settings directory</source>
+      <translation>Не удалось создать каталог настроек пользователя</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
     </message>
     <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Не удалось завершить проверку запущенных эквалайзеров; SoundCurrent не включит обработку.</translation>
     </message>
     <message>
       <source>Cannot finish saving amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Не удалось завершить сохранение профиля усилителя.</translation>
+    </message>
+    <message>
+      <source>Cannot finish saving profile library.</source>
+      <translation>Не удалось завершить сохранение библиотеки профилей.</translation>
     </message>
     <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Не удалось проверить запущенные эквалайзеры; SoundCurrent не включит обработку.</translation>
+    </message>
+    <message>
+      <source>Cannot read profile library.</source>
+      <translation>Не удалось прочитать библиотеку профилей.</translation>
+    </message>
+    <message>
+      <source>Cannot read profile or file exceeds 1 MiB.</source>
+      <translation>Не удалось прочитать профиль или файл превышает 1 MiB.</translation>
+    </message>
+    <message>
+      <source>Cannot read response or file exceeds 1 MiB.</source>
+      <translation>Не удалось прочитать частотную характеристику или файл превышает 1 MiB.</translation>
     </message>
     <message>
       <source>Cannot save amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Не удалось сохранить профиль усилителя.</translation>
+    </message>
+    <message>
+      <source>Cannot save profile library.</source>
+      <translation>Не удалось сохранить библиотеку профилей.</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
-      <translation type="unfinished" />
+      <translation>Не удалось сохранить профиль.</translation>
     </message>
     <message>
       <source>Cannot start measurement: %1</source>
-      <translation type="unfinished" />
+      <translation>Не удалось начать измерение: %1</translation>
+    </message>
+    <message>
+      <source>Capture bytes: %1, noise bytes: %2</source>
+      <translation>Записано байтов: %1, байтов шума: %2</translation>
+      <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
       <source>Center</source>
-      <translation type="unfinished" />
+      <translation>Центр</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Центральная акустическая система</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Изменение звукового устройства по умолчанию</translation>
+    </message>
+    <message>
+      <source>Change to detail view mode</source>
+      <translation>Переключить в подробный режим</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Change to list view mode</source>
+      <translation>Переключить в режим списка</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Check for updates</source>
       <translation>Проверить обновления</translation>
     </message>
     <message>
+      <source>Checking %1 Hz</source>
+      <translation>Проверка %1 Hz</translation>
+      <extracomment>Calibration worker progress for a single test frequency. %1 is a locale-formatted frequency; Hz is the physical unit.</extracomment>
+    </message>
+    <message>
       <source>Checking for published updates…</source>
-      <translation type="unfinished" />
+      <translation>Проверка опубликованных обновлений…</translation>
     </message>
     <message>
       <source>Checks published releases and downloaded installers. No update is installed automatically.</source>
-      <translation type="unfinished" />
+      <translation>Проверяет опубликованные версии и загруженные установщики. Ни одно обновление не устанавливается автоматически.</translation>
+    </message>
+    <message>
+      <source>Choose</source>
+      <translation>Выбрать</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Choose a name that is not a built-in preset.</source>
-      <translation type="unfinished" />
+      <translation>Выберите название, которое не принадлежит встроенному пресету.</translation>
+    </message>
+    <message>
+      <source>Choose one audio setup action.</source>
+      <translation>Выберите только одно действие настройки аудио.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
     </message>
     <message>
       <source>Choose update folder…</source>
-      <translation type="unfinished" />
+      <translation>Выбрать папку обновлений…</translation>
+    </message>
+    <message>
+      <source>Cinema speaker</source>
+      <translation>Акустическая система для кинотеатра</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
     </message>
     <message>
       <source>Clarity</source>
-      <translation type="unfinished" />
+      <translation>Чёткость</translation>
     </message>
     <message>
       <source>Clarity frequency</source>
-      <translation type="unfinished" />
+      <translation>Частота чёткости</translation>
     </message>
     <message>
       <source>Classical</source>
-      <translation type="unfinished" />
+      <translation>Классическая музыка</translation>
     </message>
     <message>
       <source>Clear Voice</source>
-      <translation type="unfinished" />
+      <translation>Чистый голос</translation>
     </message>
     <message>
       <source>Clear imported equipment corrections</source>
-      <translation type="unfinished" />
+      <translation>Очистить импортированные коррекции оборудования</translation>
     </message>
     <message>
       <source>Click to turn the equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Нажмите, чтобы включить или выключить эквалайзер</translation>
     </message>
     <message>
       <source>Clipping risk · estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Риск клиппинга · оценочный пик %1 dBFS</translation>
+    </message>
+    <message>
+      <source>Close</source>
+      <translation>Закрыть</translation>
+    </message>
+    <message>
+      <source>Column speaker</source>
+      <translation>Колонная акустическая система для озвучивания</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
+      <source>Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2</source>
+      <translation>Суммарная характеристика динамиков/усилителя/микрофона/комнаты; это не отдельное измерение оборудования. %1 / %2</translation>
+      <extracomment>New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.</extracomment>
     </message>
     <message>
       <source>Conditions</source>
-      <translation type="unfinished" />
+      <translation>Условия</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
-      <translation type="unfinished" />
+      <translation>Перед измерением подключите выход и микрофон.</translation>
+    </message>
+    <message>
+      <source>Connect your audio</source>
+      <translation>Подключение звука</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>Акустическая система с постоянной шириной луча</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
+    </message>
+    <message>
+      <source>Copy</source>
+      <translation>Копировать</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Correction filters:</source>
+      <translation>Фильтры коррекции:</translation>
+      <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Профиль коррекции (*.json)</translation>
+    </message>
+    <message>
+      <source>Could not create a private test folder</source>
+      <translation>Не удалось создать личную тестовую папку</translation>
+    </message>
+    <message>
+      <source>Could not create microphone configuration folder</source>
+      <translation>Не удалось создать папку настроек микрофона</translation>
     </message>
     <message>
       <source>Could not create preset folder.</source>
-      <translation type="unfinished" />
+      <translation>Не удалось создать папку пресетов.</translation>
+    </message>
+    <message>
+      <source>Could not create quiet frequency sweep</source>
+      <translation>Не удалось создать тихий сигнал с плавным изменением частоты</translation>
+    </message>
+    <message>
+      <source>Could not create temporary audio configuration</source>
+      <translation>Не удалось создать временные настройки аудио</translation>
+    </message>
+    <message>
+      <source>Could not create test tone</source>
+      <translation>Не удалось создать тестовый тон</translation>
+    </message>
+    <message>
+      <source>Could not create the local activation socket for %1: %2</source>
+      <translation>Не удалось создать локальный сокет активации для %1: %2</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>Could not delete directory.</source>
+      <translation>Не удалось удалить каталог.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
-      <translation type="unfinished" />
+      <translation>Не удалось завершить сохранение пресета.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Не удалось инициализировать COM для аудио Windows</translation>
+    </message>
+    <message>
+      <source>Could not open test waveform</source>
+      <translation>Не удалось открыть тестовый звуковой файл</translation>
+    </message>
+    <message>
+      <source>Could not play quiet test audio</source>
+      <translation>Не удалось воспроизвести тихий тестовый звук</translation>
+    </message>
+    <message>
+      <source>Could not play test audio through the selected output</source>
+      <translation>Не удалось воспроизвести тестовый звук через выбранный выход</translation>
+    </message>
+    <message>
+      <source>Could not read output volume</source>
+      <translation>Не удалось прочитать выходную громкость</translation>
+    </message>
+    <message>
+      <source>Could not run %1</source>
+      <translation>Не удалось запустить %1</translation>
     </message>
     <message>
       <source>Could not save preset.</source>
-      <translation type="unfinished" />
+      <translation>Не удалось сохранить пресет.</translation>
+    </message>
+    <message>
+      <source>Could not start PipeWire filter</source>
+      <translation>Не удалось запустить фильтр PipeWire</translation>
+    </message>
+    <message>
+      <source>Could not start audio setup: %1. The app remains open.</source>
+      <translation>Не удалось начать настройку аудио: %1. Приложение остаётся открытым.</translation>
+    </message>
+    <message>
+      <source>Could not start microphone capture</source>
+      <translation>Не удалось начать запись с микрофона</translation>
+    </message>
+    <message>
+      <source>Could not start microphone filter</source>
+      <translation>Не удалось запустить микрофонный фильтр</translation>
+    </message>
+    <message>
+      <source>Could not start output volume safety guard</source>
+      <translation>Не удалось запустить защиту выходной громкости</translation>
     </message>
     <message>
       <source>Could not start the measurement.</source>
-      <translation type="unfinished" />
+      <translation>Не удалось начать измерение.</translation>
+    </message>
+    <message>
+      <source>Could not update startup settings.</source>
+      <translation>Не удалось обновить настройки автозапуска.</translation>
+    </message>
+    <message>
+      <source>Could not write frequency sweep</source>
+      <translation>Не удалось записать сигнал с плавным изменением частоты</translation>
+    </message>
+    <message>
+      <source>Could not write microphone configuration</source>
+      <translation>Не удалось записать настройки микрофона</translation>
+    </message>
+    <message>
+      <source>Could not write temporary audio configuration</source>
+      <translation>Не удалось записать временные настройки аудио</translation>
+    </message>
+    <message>
+      <source>Could not write test tone</source>
+      <translation>Не удалось записать тестовый тон</translation>
+    </message>
+    <message>
+      <source>Count audio endpoints</source>
+      <translation>Подсчёт звуковых устройств</translation>
+    </message>
+    <message>
+      <source>Create a New Folder</source>
+      <translation>Создать новую папку</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Create new folder</source>
+      <translation>Создать папку</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Create profile</source>
+      <translation>Создать профиль</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
-      <translation type="unfinished" />
+      <translation>Текущие настройки EQ сохранены.</translation>
     </message>
     <message>
       <source>Custom</source>
-      <translation>Свой</translation>
+      <translation>Собственный</translation>
+    </message>
+    <message>
+      <source>Custom copy of %1</source>
+      <translation>Пользовательская копия %1</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>Cut</source>
+      <translation>Вырезать</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Dance</source>
-      <translation type="unfinished" />
+      <translation>Танцевальная музыка</translation>
+    </message>
+    <message>
+      <source>Date modified</source>
+      <translation>Дата изменения</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Deep Bass</source>
-      <translation type="unfinished" />
+      <translation>Глубокие басы</translation>
+    </message>
+    <message>
+      <source>Delete</source>
+      <translation>Удалить</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Detail view</source>
+      <translation>Подробный вид</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>Каталоги</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>Каталог:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Discard</source>
+      <translation>Отбросить</translation>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
-      <translation type="unfinished" />
+      <translation>Перетаскивайте точки кривой или настраивайте выбранную полосу ниже.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>Завершение воспроизведения тестового сигнала</translation>
+    </message>
+    <message>
+      <source>Drive</source>
+      <translation>Диск</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Настройка драйвера не удалась (код %1). Параметры безопасности Windows не изменялись.</translation>
+    </message>
+    <message>
+      <source>Duplicate Studio route</source>
+      <translation>Повторяющееся аудиосоединение Studio</translation>
+      <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
     </message>
     <message>
       <source>Dynamic Boost</source>
-      <translation type="unfinished" />
+      <translation>Динамическое усиление</translation>
     </message>
     <message>
       <source>Dynamics attack</source>
-      <translation type="unfinished" />
+      <translation>Время атаки компрессора</translation>
     </message>
     <message>
       <source>Dynamics ceiling</source>
-      <translation type="unfinished" />
+      <translation>Предельный уровень пиков компрессора</translation>
     </message>
     <message>
       <source>Dynamics makeup</source>
-      <translation type="unfinished" />
+      <translation>Компенсационное усиление компрессора</translation>
     </message>
     <message>
       <source>Dynamics ratio</source>
-      <translation type="unfinished" />
+      <translation>Коэффициент компрессии</translation>
     </message>
     <message>
       <source>Dynamics release</source>
-      <translation type="unfinished" />
+      <translation>Время восстановления компрессора</translation>
     </message>
     <message>
       <source>Dynamics threshold</source>
-      <translation type="unfinished" />
+      <translation>Порог компрессора</translation>
+    </message>
+    <message>
+      <source>Edit / save copy</source>
+      <translation>Редактировать / сохранить копию</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -428,7 +931,20 @@ Import into your library?</source>
     </message>
     <message>
       <source>Electronic</source>
-      <translation type="unfinished" />
+      <translation>Электронная музыка</translation>
+    </message>
+    <message>
+      <source>Enhancements outside supported ranges</source>
+      <translation>Параметры улучшения звука вне поддерживаемых диапазонов</translation>
+      <extracomment>Enhancement values fail the supported range validation; not frequency coverage or wireless range.</extracomment>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>Перечисление аудиоустройств</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>Перечисление конечных устройств</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -437,132 +953,222 @@ Import into your library?</source>
     </message>
     <message>
       <source>Equalizer and configuration pages</source>
-      <translation type="unfinished" />
+      <translation>Страницы эквалайзера и настроек</translation>
+    </message>
+    <message>
+      <source>Equalizer conflict</source>
+      <translation>Конфликт между эквалайзерами</translation>
+      <extracomment>Warning title when another equalizer or processing owner conflicts with this app. It is a software routing/ownership conflict, not clipping or a bad acoustic measurement.</extracomment>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>
-      <translation type="unfinished" />
+      <translation>Кривая эквалайзера. Выберите точку или перетащите её, чтобы изменить частоту и усиление.</translation>
     </message>
     <message>
       <source>Equalizer is off. Windows selected the physical output directly.</source>
-      <translation type="unfinished" />
+      <translation>Эквалайзер выключен. Windows выбрала физический выход напрямую.</translation>
     </message>
     <message>
       <source>Equalizer is off. Your audio uses its normal output.</source>
-      <translation type="unfinished" />
+      <translation>Эквалайзер выключен. Аудио использует обычный выход.</translation>
     </message>
     <message>
       <source>Equalizer is still running. Use the tray icon to reopen or quit.</source>
-      <translation type="unfinished" />
+      <translation>Эквалайзер всё ещё работает. Воспользуйтесь значком в системном трее, чтобы открыть его снова или завершить работу.</translation>
     </message>
     <message>
       <source>Equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Эквалайзер выключен</translation>
     </message>
     <message>
       <source>Equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Эквалайзер включён</translation>
     </message>
     <message>
       <source>Equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Включение или выключение эквалайзера</translation>
+    </message>
+    <message>
+      <source>Equalizer sink disappeared</source>
+      <translation>Выход эквалайзера исчез</translation>
     </message>
     <message>
       <source>Equipment brand</source>
-      <translation type="unfinished" />
+      <translation>Бренд оборудования</translation>
     </message>
     <message>
       <source>Equipment family</source>
-      <translation type="unfinished" />
+      <translation>Серия оборудования</translation>
+    </message>
+    <message>
+      <source>Equipment kind must be speaker, microphone or amplifier.</source>
+      <translation>Вид оборудования должен быть акустическая система, микрофон или усилитель.</translation>
     </message>
     <message>
       <source>Equipment profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Профиль оборудования (*.json)</translation>
+    </message>
+    <message>
+      <source>Equipment profile editor</source>
+      <translation>Редактор профилей оборудования</translation>
     </message>
     <message>
       <source>Equipment profiles (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Профили оборудования (*.json)</translation>
     </message>
     <message>
       <source>Equipment profiles by brand family and model</source>
-      <translation type="unfinished" />
+      <translation>Профили оборудования по бренду, серии и модели</translation>
+    </message>
+    <message>
+      <source>Equipment profiles — brand / family / model</source>
+      <translation>Профили оборудования — бренд / серия / модель</translation>
+    </message>
+    <message>
+      <source>Equipment resource missing.</source>
+      <translation>Ресурс оборудования отсутствует.</translation>
     </message>
     <message>
       <source>Equipment subtype</source>
-      <translation type="unfinished" />
+      <translation>Подтип оборудования</translation>
     </message>
     <message>
       <source>Equipment type</source>
-      <translation type="unfinished" />
+      <translation>Тип оборудования</translation>
     </message>
     <message>
       <source>Estimated output level near band %1</source>
-      <translation type="unfinished" />
+      <translation>Оценочный выходной уровень вблизи полосы %1</translation>
     </message>
     <message>
       <source>Estimated output near %1: %2 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Оценочный выход вблизи %1: %2 dBFS</translation>
     </message>
     <message>
       <source>Estimated output peak and clipping risk</source>
-      <translation type="unfinished" />
+      <translation>Оценочный выходной пик и риск клиппинга</translation>
     </message>
     <message>
       <source>Estimated overall output level</source>
-      <translation type="unfinished" />
+      <translation>Оценочный общий выходной уровень</translation>
     </message>
     <message>
       <source>Estimated overall output peak: %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Оценочный общий выходной пик: %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Оценочный пик %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak: EQ off</source>
-      <translation type="unfinished" />
+      <translation>Оценочный пик: EQ выключен</translation>
     </message>
     <message>
       <source>Estimated peak: waiting for audio</source>
-      <translation type="unfinished" />
+      <translation>Оценочный пик: ожидание аудио</translation>
     </message>
     <message>
       <source>Estimated post-EQ level near this frequency</source>
-      <translation type="unfinished" />
+      <translation>Оценочный уровень после EQ вблизи этой частоты</translation>
     </message>
     <message>
       <source>Estimated post-EQ output peak, including post gain and balance</source>
-      <translation type="unfinished" />
+      <translation>Оценочный выходной пик после EQ, с учётом выходного усиления и баланса</translation>
     </message>
     <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
-      <translation type="unfinished" />
+      <translation>Завершить работу SoundCurrent EQ и восстановить обычное аудио</translation>
     </message>
     <message>
       <source>Expanded test language</source>
-      <translation type="unfinished" />
+      <translation>Расширенный тестовый язык</translation>
+    </message>
+    <message>
+      <source>Expected a JSON equipment profile. Import response text using the response import button.</source>
+      <translation>Ожидается профиль оборудования в формате JSON. Импортируйте текст частотной характеристики кнопкой импорта характеристики.</translation>
+    </message>
+    <message>
+      <source>Expected frequency Hz and relative measured response dB on every data line.</source>
+      <translation>В каждой строке данных ожидаются частота в Hz и относительная измеренная характеристика в dB.</translation>
     </message>
     <message>
       <source>Export</source>
-      <translation type="unfinished" />
+      <translation>Экспортировать</translation>
+    </message>
+    <message>
+      <source>Export JSON</source>
+      <translation>Экспортировать JSON</translation>
     </message>
     <message>
       <source>Export profile</source>
-      <translation type="unfinished" />
+      <translation>Экспортировать профиль</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
-      <translation type="unfinished" />
+      <translation>Шаги в играх FPS</translation>
     </message>
     <message>
       <source>Family</source>
-      <translation type="unfinished" />
+      <translation>Серия</translation>
+    </message>
+    <message>
+      <source>File</source>
+      <translation>Файл</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>File name:</source>
+      <translation>Имя файла:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files</source>
+      <translation>Файлы</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files of type:</source>
+      <translation>Типы файлов:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Filter Q</source>
+      <translation>Добротность фильтра Q</translation>
+      <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
+    </message>
+    <message>
+      <source>Filter values must be numbers.</source>
+      <translation>Значения фильтра должны быть числами.</translation>
+    </message>
+    <message>
+      <source>Filters exceed frequency, gain or Q limits.</source>
+      <translation>Фильтры превышают пределы частоты, усиления или Q.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>Найти каталог</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
       <extracomment>Preset with zero equalizer gain at every frequency. Not an apartment; does not imply muted audio.</extracomment>
-      <translation>Ровный</translation>
+      <translation>Ровная характеристика</translation>
+    </message>
+    <message>
+      <source>Floorstanding speaker</source>
+      <translation>Напольная акустическая система</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Folder</source>
+      <translation>Папка</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Forward</source>
+      <translation>Вперёд</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Frequency</source>
@@ -570,11 +1176,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Frequency Hz</source>
-      <translation type="unfinished" />
+      <translation>Частота в Hz</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
-      <translation type="unfinished" />
+      <translation>Эффекты передних каналов L/R (поддерживается моно); другие каналы сохраняют собственные эффекты Studio. Нулевые значения обходят каждый эффект.</translation>
     </message>
     <message>
       <source>Gain</source>
@@ -583,108 +1189,323 @@ Import into your library?</source>
     </message>
     <message>
       <source>Gain dB</source>
-      <translation type="unfinished" />
+      <translation>Усиление в dB</translation>
     </message>
     <message>
       <source>Gaming</source>
-      <translation type="unfinished" />
+      <translation>Игры</translation>
+    </message>
+    <message>
+      <source>Go back</source>
+      <translation>Назад</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go forward</source>
+      <translation>Вперёд</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go to the parent directory</source>
+      <translation>Перейти в родительский каталог</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Headphones</source>
-      <translation type="unfinished" />
+      <translation>Наушники</translation>
+    </message>
+    <message>
+      <source>Help</source>
+      <translation>Справка</translation>
     </message>
     <message>
       <source>Hide advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Скрыть расширенное управление</translation>
+    </message>
+    <message>
+      <source>High-shelf filter</source>
+      <translation>Высокочастотный полочный фильтр</translation>
+      <extracomment>Shelving EQ: raise/lower the high-frequency region. Do not translate as high-pass; it is not a cutoff filter.</extracomment>
     </message>
     <message>
       <source>Hip-Hop</source>
-      <translation type="unfinished" />
+      <translation>Хип-хоп</translation>
+    </message>
+    <message>
+      <source>Ignore</source>
+      <translation>Игнорировать</translation>
     </message>
     <message>
       <source>Import</source>
-      <translation type="unfinished" />
+      <translation>Импортировать</translation>
+    </message>
+    <message>
+      <source>Import JSON</source>
+      <translation>Импортировать JSON</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
-      <translation type="unfinished" />
+      <translation>Импорт, создание и редактирование профилей оборудования</translation>
     </message>
     <message>
       <source>Import equipment profile</source>
-      <translation type="unfinished" />
+      <translation>Импортировать профиль оборудования</translation>
     </message>
     <message>
       <source>Import measured amplifier correction</source>
-      <translation type="unfinished" />
+      <translation>Импортировать измеренную коррекцию усилителя</translation>
     </message>
     <message>
       <source>Import measured profile</source>
-      <translation type="unfinished" />
+      <translation>Импортировать измеренный профиль</translation>
     </message>
     <message>
       <source>Import profile?</source>
-      <translation type="unfinished" />
+      <translation>Импортировать профиль?</translation>
     </message>
     <message>
       <source>Import relative measured response</source>
-      <translation type="unfinished" />
+      <translation>Импортировать относительную измеренную характеристику</translation>
+    </message>
+    <message>
+      <source>Import response text</source>
+      <translation>Импортировать текст характеристики</translation>
+    </message>
+    <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>Импортировано %1; SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Акустическая система для встраивания в стену</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
-      <translation type="unfinished" />
+      <translation>Включать предварительные версии</translation>
+    </message>
+    <message>
+      <source>Initialize audio capture</source>
+      <translation>Инициализация захвата звука</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>Инициализация записи с микрофона</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>Инициализация вывода на динамики</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>Инициализация воспроизведения тестового сигнала</translation>
+    </message>
+    <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Установите SoundCurrent Audio через настройку аудиодрайвера, затем снова откройте приложение, чтобы включить маршрут микрофона.</translation>
+    </message>
+    <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Установить VB-CABLE, если он отсутствует (разрешение администратора)</translation>
     </message>
     <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Устанавливайте новые пакеты поверх этой версии — удаление не требуется. Пресеты и профили сохраняются. Сохраните свою работу, завершите работу приложения (закрытие окна оставляет его запущенным), установите обновление и откройте снова.</translation>
     </message>
     <message>
-      <source>Installed version: </source>
-      <translation type="unfinished" />
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>Установите или обновите %1. Удалять предыдущую версию не требуется. Ваши настройки, пресеты и профили оборудования будут сохранены.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Установить или обновить общий драйвер SoundCurrent Audio</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Установите аудиомаршрут Windows через настройку аудиодрайвера, затем снова откройте приложение.</translation>
+    </message>
+    <message>
+      <source>Installed version: %1</source>
+      <translation>Установленная версия: %1</translation>
     </message>
     <message>
       <source>Interface language</source>
       <translation>Язык интерфейса</translation>
     </message>
     <message>
+      <source>Invalid Studio channel count</source>
+      <translation>Некорректное количество каналов Studio</translation>
+      <extracomment>Session channel count must be 1..256; audio channels, not stations.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio channel name or filters</source>
+      <translation>Некорректное имя канала Studio или список фильтров</translation>
+      <extracomment>Saved channel name must be a nonempty string up to 80 characters, and bands must be an array; filter list, not filter-value validation.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio profile channel count</source>
+      <translation>Некорректное количество каналов в профиле Studio</translation>
+      <extracomment>Saved profile channels array must be nonempty and contain at most 256 channels.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio route</source>
+      <translation>Некорректное аудиосоединение Studio</translation>
+      <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>Недопустимый процесс, запрашивающий настройку аудио.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
+    </message>
+    <message>
+      <source>Invalid calibration audio</source>
+      <translation>Недопустимый калибровочный аудиосигнал</translation>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter count</source>
+      <translation>Некорректное количество параметров улучшения звука</translation>
+      <extracomment>Enhancement array must contain the required number of parameters.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter type</source>
+      <translation>Некорректный тип данных параметра улучшения звука</translation>
+      <extracomment>Enhancement parameter must be a JSON number; do not reinterpret strings or Boolean values.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Недопустимые настройки улучшения звука</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Недопустимые настройки эквалайзера</translation>
+    </message>
+    <message>
+      <source>Invalid equipment subtype or power type</source>
+      <translation>Недопустимый подтип оборудования или тип питания</translation>
+    </message>
+    <message>
+      <source>Invalid filter type</source>
+      <translation>Некорректный тип фильтра</translation>
+      <extracomment>Filter type numeric identifier must be a whole supported enum value; not a file type.</extracomment>
+    </message>
+    <message>
+      <source>Invalid filter.</source>
+      <translation>Недопустимый фильтр.</translation>
+    </message>
+    <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
-      <translation type="unfinished" />
+      <translation>Недопустимый измеренный профиль усилителя. Требуются модель, источник измерения через HTTPS, условия и 1–16 фильтров PK/LS/HS в допустимых пределах. Формат профиля смотрите в README.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Недопустимая настройка микрофона</translation>
+    </message>
+    <message>
+      <source>Invalid or unordered measured response.</source>
+      <translation>Недопустимая или неупорядоченная измеренная характеристика.</translation>
+    </message>
+    <message>
+      <source>Invalid or unordered response data.</source>
+      <translation>Недопустимые или неупорядоченные данные характеристики.</translation>
+    </message>
+    <message>
+      <source>Invalid profile library.</source>
+      <translation>Недопустимая библиотека профилей.</translation>
+    </message>
+    <message>
+      <source>Invalid response from pactl</source>
+      <translation>Недопустимый ответ pactl</translation>
+    </message>
+    <message>
+      <source>Invalid response point.</source>
+      <translation>Недопустимая точка характеристики.</translation>
+    </message>
+    <message>
+      <source>Invalid route indexes or weight</source>
+      <translation>Некорректные индексы каналов или коэффициент смешивания</translation>
+      <extracomment>Audio route indices must be whole channel indices in range and mixing coefficient magnitude at most 4; weight means a signed mixing coefficient, not physical mass.</extracomment>
+    </message>
+    <message>
+      <source>Invalid route number</source>
+      <translation>Некорректное числовое значение аудиосоединения</translation>
+      <extracomment>A saved audio routing entry contains a nonnumeric or nonfinite number.</extracomment>
+    </message>
+    <message>
+      <source>Invalid speaker correction filter count</source>
+      <translation>Недопустимое количество фильтров коррекции акустической системы</translation>
+    </message>
+    <message>
+      <source>Invalid speaker filter type</source>
+      <translation>Недопустимый тип фильтра акустической системы</translation>
+    </message>
+    <message>
+      <source>Invalid speaker identity</source>
+      <translation>Недопустимые идентификационные данные акустической системы</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Недопустимый формат микширования динамиков</translation>
     </message>
     <message>
       <source>Jazz</source>
-      <translation type="unfinished" />
+      <translation>Джаз</translation>
+    </message>
+    <message>
+      <source>Keep current EQ</source>
+      <translation>Сохранить текущие настройки EQ</translation>
     </message>
     <message>
       <source>L</source>
-      <translation type="unfinished" />
+      <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
-      <translation>Язык и регион</translation>
+      <translation>Язык и региональные настройки</translation>
     </message>
     <message>
       <source>Left right balance</source>
-      <translation type="unfinished" />
+      <translation>Баланс слева/справа</translation>
     </message>
     <message>
       <source>Level indicator refresh interval</source>
-      <translation type="unfinished" />
+      <translation>Интервал обновления индикаторов уровня</translation>
     </message>
     <message>
       <source>Level refresh</source>
-      <translation type="unfinished" />
+      <translation>Обновление уровней</translation>
+    </message>
+    <message>
+      <source>Library exceeds 16 MiB.</source>
+      <translation>Библиотека превышает 16 MiB.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>Получение списка звуковых устройств</translation>
+    </message>
+    <message>
+      <source>List of places and bookmarks</source>
+      <translation>Места и закладки</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>List view</source>
+      <translation>Список</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Listening preset</source>
       <extracomment>Saved equalizer settings for playback. Not a listening device.</extracomment>
-      <translation>Настройка прослушивания</translation>
+      <translation>Пресет прослушивания</translation>
     </message>
     <message>
       <source>Live</source>
-      <translation type="unfinished" />
+      <translation>В реальном времени</translation>
     </message>
     <message>
       <source>Lo-Fi</source>
-      <translation type="unfinished" />
+      <translation>Лоу-фай</translation>
     </message>
     <message>
       <source>Lock EQ</source>
@@ -693,55 +1514,94 @@ Import into your library?</source>
     </message>
     <message>
       <source>Lock equalizer settings</source>
-      <translation type="unfinished" />
+      <translation>Заблокировать настройки эквалайзера</translation>
+    </message>
+    <message>
+      <source>Look in:</source>
+      <translation>Перейти к:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Loudness</source>
-      <translation type="unfinished" />
+      <translation>Тонкомпенсация</translation>
+    </message>
+    <message>
+      <source>Low-shelf filter</source>
+      <translation>Низкочастотный полочный фильтр</translation>
+      <extracomment>Shelving EQ: raise/lower the low-frequency region. Do not translate as low-pass; it is not a cutoff filter.</extracomment>
     </message>
     <message>
       <source>Manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Производитель</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
-      <translation type="unfinished" />
+      <translation>Достигнуто максимальное количество профилей усилителей: 32.</translation>
     </message>
     <message>
       <source>Maximum stereo width</source>
-      <translation type="unfinished" />
+      <translation>Максимальная ширина стерео</translation>
     </message>
     <message>
       <source>Measure</source>
-      <translation type="unfinished" />
+      <translation>Измерить</translation>
     </message>
     <message>
       <source>Measure speaker room and microphone response</source>
-      <translation type="unfinished" />
+      <translation>Измерить характеристику акустических систем, помещения и микрофона</translation>
+    </message>
+    <message>
+      <source>Measured listening position</source>
+      <translation>Измеренное место прослушивания</translation>
+      <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
-      <translation type="unfinished" />
+      <translation>Измеренная коррекция модели добавляется к вашему EQ для прослушивания. Вы по-прежнему можете добавить басы или настроить любую полосу. Используются осторожные пределы усиления; влияние помещения и усилителя требует измерения всей системы.</translation>
+    </message>
+    <message>
+      <source>Measured response</source>
+      <translation>Измеренная характеристика</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measurement conditions are required.</source>
+      <translation>Условия измерения обязательны.</translation>
+    </message>
+    <message>
+      <source>Measurement conditions: %1</source>
+      <translation>Условия измерения: %1</translation>
+      <extracomment>Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.</extracomment>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
-      <translation type="unfinished" />
+      <translation>Данные измерения были неполными.</translation>
     </message>
     <message>
       <source>Measurement failed. Try a higher test level or move the mic closer.</source>
-      <translation type="unfinished" />
+      <translation>Измерение не удалось. Попробуйте более высокий тестовый уровень или переместите микрофон ближе.</translation>
+    </message>
+    <message>
+      <source>Measurement failed: %1</source>
+      <translation>Ошибка измерения: %1</translation>
+      <extracomment>Calibration failure prefix. %1 is a translated owned diagnostic or preserved external technical detail; do not modify device identifiers or paths.</extracomment>
     </message>
     <message>
       <source>Measurement stopped.</source>
-      <translation type="unfinished" />
+      <translation>Измерение остановлено.</translation>
+    </message>
+    <message>
+      <source>Measurement: %1</source>
+      <translation>Измерение: %1</translation>
+      <extracomment>Label for verbatim published speaker measurement attribution, not a new calibration run.</extracomment>
     </message>
     <message>
       <source>Metal</source>
-      <translation type="unfinished" />
+      <translation>Метал</translation>
     </message>
     <message>
       <source>Mic gain</source>
-      <translation type="unfinished" />
+      <translation>Усиление микрофона</translation>
     </message>
     <message>
       <source>Microphone</source>
@@ -749,164 +1609,325 @@ Import into your library?</source>
     </message>
     <message>
       <source>Microphone %1 adjustment</source>
-      <translation type="unfinished" />
+      <translation>Настройка микрофона %1</translation>
     </message>
     <message>
       <source>Microphone EQ is off.</source>
-      <translation type="unfinished" />
+      <translation>Микрофонный EQ выключен.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>Аудиомост микрофона не запустился</translation>
+    </message>
+    <message>
+      <source>Microphone capture stopped during playback</source>
+      <translation>Запись с микрофона остановилась во время воспроизведения</translation>
+    </message>
+    <message>
+      <source>Microphone capture stopped during the test</source>
+      <translation>Запись с микрофона остановилась во время теста</translation>
     </message>
     <message>
       <source>Microphone error: %1</source>
-      <translation type="unfinished" />
+      <translation>Ошибка микрофона: %1</translation>
+    </message>
+    <message>
+      <source>Microphone filter did not appear</source>
+      <translation>Микрофонный фильтр не появился</translation>
+    </message>
+    <message>
+      <source>Microphone filter disappeared</source>
+      <translation>Микрофонный фильтр исчез</translation>
     </message>
     <message>
       <source>Microphone gain adjustment</source>
-      <translation type="unfinished" />
+      <translation>Настройка усиления микрофона</translation>
     </message>
     <message>
       <source>Microphone input device</source>
-      <translation type="unfinished" />
+      <translation>Входное устройство микрофона</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Обработка записи микрофона зависла</translation>
+    </message>
+    <message>
+      <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
+      <translation>Запись с микрофона имеет клиппинг. Уменьшите усиление микрофона или дополнительное усиление и повторите измерение.</translation>
     </message>
     <message>
       <source>Microphone route</source>
-      <translation type="unfinished" />
+      <translation>Аудиотракт микрофона</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Превышено время ожидания запуска микрофона</translation>
     </message>
     <message>
       <source>Model</source>
-      <translation type="unfinished" />
+      <translation>Модель</translation>
     </message>
     <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
-      <translation type="unfinished" />
+      <translation>Сдвигайте к L или R, чтобы ослабить противоположный канал; в центре оба сохраняют полный уровень</translation>
     </message>
     <message>
       <source>Movies</source>
-      <translation type="unfinished" />
+      <translation>Фильмы</translation>
+    </message>
+    <message>
+      <source>My equipment</source>
+      <translation>Моё оборудование</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>Name</source>
+      <translation>Имя</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
-      <translation>Естественный EQ микрофона</translation>
+      <translation>EQ естественного голоса</translation>
     </message>
     <message>
-      <source>Natural mic EQ on · </source>
-      <translation type="unfinished" />
+      <source>Natural mic EQ on · %1</source>
+      <translation>EQ естественного голоса включён · %1</translation>
     </message>
     <message>
       <source>Natural microphone equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Включение или выключение микрофонного эквалайзера естественного голоса</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>Новая папка</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>Новый профиль</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
-      <translation type="unfinished" />
+      <translation>Ночное прослушивание</translation>
+    </message>
+    <message>
+      <source>No</source>
+      <translation>Нет</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>Импортированная коррекция оборудования не выбрана.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>Измеренная коррекция усилителя не выбрана. Маркетинговых характеристик частотного диапазона недостаточно для построения кривой коррекции.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>Микрофон не подключён.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>Коррекция модели не выбрана. Ваш EQ для прослушивания работает как обычно.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>Более новая опубликованная версия не найдена. Загруженные установщики также проверяются.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>Нет доступного выходного устройства.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>Выходное устройство не подключено.</translation>
+    </message>
+    <message>
+      <source>No to All</source>
+      <translation>Нет для всех</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>Без коррекции — использовать собственный EQ</translation>
     </message>
     <message>
       <source>Number and date format</source>
-      <translation>Формат чисел и дат</translation>
+      <translation>Формат чисел и даты</translation>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>Количество полос эквалайзера</translation>
+    </message>
+    <message>
+      <source>OK</source>
+      <translation>OK</translation>
+    </message>
+    <message>
+      <source>Omnidirectional speaker</source>
+      <translation>Всенаправленная акустическая система</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>Включено · Воспроизведение через %1</translation>
+    </message>
+    <message>
+      <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
+      <translation>При входе запускается только одно приложение SoundCurrent. Включение этой опции заменяет настройки автозапуска другого приложения. Если доступен значок в системном трее, приложение запускается в фоне.</translation>
+    </message>
+    <message>
+      <source>Open</source>
+      <translation>Открыть</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>Открыть панель управления VB-Audio для настройки задержки кабеля и внутренней частоты дискретизации. Изменения во время работы аудио могут прервать воспроизведение.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>Открыть панель управления VB-CABLE</translation>
+    </message>
+    <message>
+      <source>Open audio stream</source>
+      <translation>Открытие аудиопотока</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>Открытие потока захвата виртуального кабеля</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>Открытие устройства записи виртуального кабеля</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>Открытие конечного устройства</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>Открытие интерфейса громкости конечного устройства</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>Открытие интерфейса чтения микрофона</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>Открыть загрузки версий</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>Открытие устройства динамиков</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>Открытие потока воспроизведения динамиков</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>Открытие интерфейса записи тестового сигнала</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>Открыть папку обновлений</translation>
+    </message>
+    <message>
+      <source>Opening %1 setup...</source>
+      <translation>Открытие установки %1...</translation>
+      <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>Оранжевая: измеренная характеристика, если предоставлена. Бирюзовая: коррекция при 48 kHz. Перетаскивайте бирюзовые точки или редактируйте таблицу. Сохранение оставляет эталонный профиль и создаёт собственную копию.</translation>
+    </message>
+    <message>
+      <source>Outdoor speaker</source>
+      <translation>Акустическая система для улицы</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
     </message>
     <message>
       <source>Output device</source>
-      <translation>Устройство вывода</translation>
+      <translation>Выходное устройство</translation>
+    </message>
+    <message>
+      <source>Output device is no longer available</source>
+      <translation>Выходное устройство больше недоступно</translation>
+    </message>
+    <message>
+      <source>Output has no volume channels</source>
+      <translation>Выход не имеет каналов управления громкостью</translation>
     </message>
     <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>Общий выход</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>Панельная акустическая система</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
+    </message>
+    <message>
+      <source>Parent directory</source>
+      <translation>Родительский каталог</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Paste</source>
+      <translation>Вставить</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>Приостановить обработку и открыть настройки аудио. Приложение остаётся открытым и сообщает результат. Перезапустите Windows после установки драйвера.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>Метки пиков</translation>
+    </message>
+    <message>
+      <source>Peaking filter</source>
+      <translation>Колокольный фильтр</translation>
+      <extracomment>Bell-shaped parametric EQ filter centered at its frequency; this is not a peak/clipping indicator.</extracomment>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>Фортепиано</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>Воспроизвести тихий тестовый звук и просмотреть предложенные изменения EQ для воспроизведения</translation>
     </message>
     <message>
       <source>Playback</source>
       <translation>Воспроизведение</translation>
     </message>
     <message>
+      <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
+      <translation>Воспроизведение логарифмического свипа от 20 Hz до 25 kHz</translation>
+      <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>Воспроизводится тихий тестовый звук. Остановите его, если он неприятен.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>Подключите микрофон, чтобы выбрать его профиль</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>Подкаст</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>Поп</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>Портативная акустическая система для озвучивания</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -915,59 +1936,99 @@ Import into your library?</source>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>Выходное усиление после эквализации</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>Значение выходного усиления в децибелах</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>Название пресета:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>Предотвращать изменения пресетов, полос EQ, выходного усиления и баланса</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>Профиль</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>Сведения о профиле</translation>
+    </message>
+    <message>
+      <source>Profile exceeds the 1 MiB limit.</source>
+      <translation>Профиль превышает предел 1 MiB.</translation>
+    </message>
+    <message>
+      <source>Profile library exceeds 16 MiB.</source>
+      <translation>Библиотека профилей превышает 16 MiB.</translation>
+    </message>
+    <message>
+      <source>Profile metadata is too long.</source>
+      <translation>Метаданные профиля слишком длинные.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>Профиль должен быть читаемым и меньше 64 KiB.</translation>
+    </message>
+    <message>
+      <source>Profiles need 1–16 correction filters.</source>
+      <translation>Профили требуют 1–16 фильтров коррекции.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>Опубликованные источники измерений: &lt;a href="https://www.spinorama.org/"&gt;Измерения акустических систем / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Калибровка Dayton по серийному номеру&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;Калибровка miniDSP по серийному номеру&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Графики микрофонов Neumann&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;График характеристики AT2020&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Измерения усилителей&lt;/a&gt;</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <source>Published profiles need an HTTPS measurement source.</source>
+      <translation>Опубликованные профили требуют источника измерения через HTTPS.</translation>
+    </message>
+    <message>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Не удалось проверить опубликованные версии. Воспользуйтесь командой «Открыть загрузки версий»; загруженные установщики по-прежнему обнаруживаются локально.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>Опубликованная характеристика и редактируемые кривые коррекции</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>Доступно опубликованное обновление %1. Откройте загрузки версий, установите поверх этой версии и откройте приложение снова.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>Ударные басы</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>Тихий логарифмический частотный свип</translation>
+    </message>
+    <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>Выйдите из %1 перед удалением приложения.</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>Выйдите из %1 перед обновлением. При закрытии окна приложение продолжает работать. Удаление не требуется.</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>Выйти из SoundCurrent EQ</translation>
+    </message>
+    <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>Закройте все запущенные приложения SoundCurrent перед изменением общего драйвера. При удалении одного приложения драйвер сохраняется, если другое всё ещё его использует.</translation>
+    </message>
+    <message>
+      <source>Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.</source>
+      <translation>Перед установкой драйвера закройте все работающие эквалайзеры. При удалении последнего приложения SoundCurrent его деинсталлятор предлагает удалить VB-CABLE. Другим программам тоже может понадобиться этот кабель. Дополнительные кабели A/B не входят в комплект.</translation>
+      <extracomment>Shared virtual cable notice: quit exits the equalizer, not just closes UI. Cable removal is offered when the other SoundCurrent app is absent; user confirmation remains required, silent app removal does not remove cable. A/B refers to separate extra virtual cables, not physical wires. Other software may depend on shared VB-CABLE. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Quit app</source>
@@ -975,93 +2036,315 @@ Import into your library?</source>
       <translation>Выйти из приложения</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Закройте запущенные приложения SoundCurrent и дождитесь завершения восстановления аудио перед изменением общего аудиодрайвера.</translation>
+    </message>
+    <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Перед изменением VB-CABLE закройте следующие компоненты: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>R</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>R&amp;B</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint</source>
+      <translation>Чтение звукового устройства</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>Чтение идентификатора звукового устройства</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>Чтение имени звукового устройства</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>Чтение свойств звукового устройства</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>Чтение звука виртуального кабеля</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>Получение интерфейса захвата виртуального кабеля</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>Чтение размера пакета виртуального кабеля</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Чтение идентификатора устройства вывода по умолчанию</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Чтение устройства вывода по умолчанию</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>Чтение формата микширования микрофона</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>Чтение размера пакета микрофона</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>Чтение отсчётов микрофона</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>Чтение размера следующего пакета виртуального кабеля</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>Чтение следующего пакета микрофона</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>Чтение уровня заполнения выходного буфера</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>Чтение уровня вывода</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>Чтение состояния отключения звука на выходе</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>Чтение уровня динамиков</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>Чтение формата микширования динамиков</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>Чтение состояния отключения звука динамиков</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>Получение интерфейса воспроизведения динамиков</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>Чтение громкости динамиков</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>Чтение числа буферизованных кадров тестового сигнала</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>Чтение формата микширования виртуального выхода</translation>
+    </message>
+    <message>
+      <source>Recent places</source>
+      <translation>Недавние документы</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Redo</source>
+      <translation>Повторить</translation>
+      <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
       <source>Refresh devices</source>
-      <translation>Обновить устройства</translation>
+      <translation>Обновить список устройств</translation>
+    </message>
+    <message>
+      <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
+
+%1</source>
+      <translation>Относительные измерения включают характеристики акустических систем, помещения и микрофона. Предложенные изменения ограничены 3 dB для каждой измеренной частоты.
+
+%1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>Освобождение аудиопакета виртуального кабеля</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>Освобождение пакета микрофона</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>Освобождение буфера динамиков</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>Освобождение буфера тестового воспроизведения</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>Напоминать о доступных обновлениях или необходимости перезапуска</translation>
+    </message>
+    <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Удалить VB-CABLE?</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>Удалить выбранный фильтр</translation>
+    </message>
+    <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>Удалить также общий драйвер VB-CABLE? Другим пользователям, приложениям записи или голосовым инструментам он может быть нужен. Подтвердите, чтобы открыть официальную программу удаления, затем нажмите Remove Driver. Откажитесь, чтобы сохранить кабель и удалить только SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>Rename</source>
+      <translation>Переименовать</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Восстановить неполную установку VB-CABLE</translation>
+    </message>
+    <message>
+      <source>Reset</source>
+      <translation>Сбросить</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>Сбросить звуковые эффекты</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>Сбросить тембр микрофона</translation>
     </message>
     <message>
       <source>Reset to flat</source>
       <extracomment>Restore zero gain in all EQ bands. Does not mute playback.</extracomment>
-      <translation>Сбросить до ровной АЧХ</translation>
+      <translation>Сбросить до ровной характеристики</translation>
     </message>
     <message>
       <source>Response data (*.txt *.csv *.frd *.cal)</source>
-      <translation type="unfinished" />
+      <translation>Данные характеристики (*.txt *.csv *.frd *.cal)</translation>
+    </message>
+    <message>
+      <source>Response exceeds 4096 points.</source>
+      <translation>Характеристика превышает 4096 точек.</translation>
+    </message>
+    <message>
+      <source>Response frequencies must increase, with finite bounded values.</source>
+      <translation>Частоты характеристики должны возрастать, а значения должны быть конечными и в допустимых пределах.</translation>
+    </message>
+    <message>
+      <source>Response has no usable audio range.</source>
+      <translation>Характеристика не имеет пригодного звукового диапазона.</translation>
     </message>
     <message>
       <source>Response import</source>
-      <translation type="unfinished" />
+      <translation>Импорт характеристики</translation>
+    </message>
+    <message>
+      <source>Response needs 2–4096 measured points.</source>
+      <translation>Характеристика требует 2–4096 измеренных точек.</translation>
+    </message>
+    <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Перезапустите Windows перед использованием VB-CABLE. Настройка аудио завершена, но драйвер и его параметры требуют перезапуска системы.</translation>
+    </message>
+    <message>
+      <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
+      <translation>Перезапустите Windows перед использованием эквалайзера или настроек VB-CABLE. Изменения аудиодрайвера требуют перезапуска системы.</translation>
+    </message>
+    <message>
+      <source>Restore Defaults</source>
+      <translation>Восстановить настройки по умолчанию</translation>
     </message>
     <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
-      <translation type="unfinished" />
+      <translation>Восстановить предыдущие настройки EQ (Ctrl+Z)</translation>
+    </message>
+    <message>
+      <source>Retry</source>
+      <translation>Повторить</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
-      <translation type="unfinished" />
+      <translation>Тестовый язык справа налево</translation>
     </message>
     <message>
       <source>Rock</source>
-      <translation type="unfinished" />
+      <translation>Рок</translation>
+    </message>
+    <message>
+      <source>Save</source>
+      <translation>Сохранить</translation>
+    </message>
+    <message>
+      <source>Save All</source>
+      <translation>Сохранить всё</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
-      <translation type="unfinished" />
+      <translation>Сохранить пресет EQ</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>Сохранить как</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>
-      <translation type="unfinished" />
+      <translation>Сохранить изменённый профиль?</translation>
     </message>
     <message>
       <source>Save preset</source>
-      <translation>Сохранить настройку</translation>
+      <translation>Сохранить пресет</translation>
     </message>
     <message>
       <source>Save profile</source>
-      <translation type="unfinished" />
+      <translation>Сохранить профиль</translation>
+    </message>
+    <message>
+      <source>Save system response profile</source>
+      <translation>Сохранить профиль характеристики системы</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>Сохраните свою работу и выйдите из работающего приложения перед продолжением. При закрытии его окна приложение продолжает работать в фоновом режиме.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
-      <translation type="unfinished" />
+      <translation>Пресет «%1» сохранён.</translation>
     </message>
     <message>
       <source>Search brand, family, model or measurement conditions</source>
-      <translation type="unfinished" />
+      <translation>Искать бренд, серию, модель или условия измерения</translation>
     </message>
     <message>
       <source>Second virtual cable for microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Второй виртуальный кабель для микрофонного EQ</translation>
+    </message>
+    <message>
+      <source>Select all</source>
+      <translation>Выделить всё</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Select band %1</source>
-      <translation type="unfinished" />
+      <translation>Выбрать полосу %1</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
-      <translation type="unfinished" />
+      <translation>Выберите эту полосу для редактирования частоты, усиления и Q</translation>
+    </message>
+    <message>
+      <source>Selected audio device is unavailable</source>
+      <translation>Выбранное аудиоустройство недоступно</translation>
     </message>
     <message>
       <source>Selected band</source>
@@ -1070,188 +2353,505 @@ Import into your library?</source>
     </message>
     <message>
       <source>Selected band filter Q</source>
-      <translation type="unfinished" />
+      <translation>Добротность Q выбранной полосы</translation>
     </message>
     <message>
       <source>Selected band frequency</source>
-      <translation type="unfinished" />
+      <translation>Частота выбранной полосы</translation>
     </message>
     <message>
       <source>Selected band gain</source>
-      <translation type="unfinished" />
+      <translation>Усиление выбранной полосы</translation>
+    </message>
+    <message>
+      <source>Selected output device is no longer available</source>
+      <translation>Выбранное выходное устройство больше недоступно</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
-      <translation type="unfinished" />
+      <translation>Выбранный выход отключён. Выполнено переключение на автоматический выход.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>Выбранные динамики отключены</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
-      <translation type="unfinished" />
+      <translation>Отдельные тихие тоны</translation>
+    </message>
+    <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>Установка полного уровня динамиков для эквалайзера</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>Установка уровня вывода</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>Установка состояния отключения звука на выходе</translation>
+    </message>
+    <message>
+      <source>Set up %1 for %2.</source>
+      <translation>Настройте %1 для %2.</translation>
+    </message>
+    <message>
+      <source>Setting up the shared %1 driver...</source>
+      <translation>Настройка общего драйвера %1...</translation>
+      <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Настройки &amp;&amp; калибровка</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>Установщик не смог проверить драйвер. Повторите попытку с помощью %1 в приложении или меню «Пуск».</translation>
+    </message>
+    <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>Установщик откроет подписанную программу установки VB-Audio. Нажмите Install Driver, затем перезагрузите Windows перед использованием эквалайзера или настроек VB-CABLE.</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
+      <translation>Общий EQ и EQ канала превышают 64 фильтра; удалите часть фильтров канала</translation>
+      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+    </message>
+    <message>
+      <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
+      <translation>Удаление общего аудиодрайвера не завершено. Это приложение сохранено, чтобы вы могли повторить попытку. Выйдите из всех работающих приложений SoundCurrent и повторите удаление.</translation>
+      <extracomment>Native uninstall nonzero failure (excluding restart code 3010) aborts before app payload deletion so user can retry. Shared audio driver means EQ/Studio ownership, not network. Quit any running SoundCurrent apps, not necessarily both products; fully exit rather than hide UI. SoundCurrent is invariant. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Shortcut</source>
+      <translation>Ярлык</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
-      <translation type="unfinished" />
+      <translation>Более короткие интервалы чаще обновляют уровни и сильнее нагружают CPU; поступление аудио может ограничивать фактическую частоту обновления</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
-      <translation type="unfinished" />
+      <translation>Показывать спадающую линию удержания пика для каждого частотного уровня</translation>
     </message>
     <message>
       <source>Show advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Показать расширенное управление</translation>
+    </message>
+    <message>
+      <source>Show date modified</source>
+      <translation>Показать дату изменения</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show hidden files</source>
+      <translation>Показать скрытые файлы</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>
-      <translation type="unfinished" />
+      <translation>Показывать метки пиков на частотных уровнях</translation>
+    </message>
+    <message>
+      <source>Show size</source>
+      <translation>Показать размер</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show type</source>
+      <translation>Показать тип</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Sidebar</source>
+      <translation>Боковая панель</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>Размер</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>Определение размера буфера захвата</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>Определение размера выходного буфера</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>Определение размера буфера тестового воспроизведения</translation>
     </message>
     <message>
       <source>Small Speakers</source>
-      <translation type="unfinished" />
+      <translation>Малые акустические системы</translation>
     </message>
     <message>
       <source>Soft Treble</source>
-      <translation type="unfinished" />
+      <translation>Мягкие высокие частоты</translation>
     </message>
     <message>
       <source>Sound enhancements</source>
-      <translation>Улучшения звука</translation>
+      <translation>Звуковые эффекты</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio уже присутствует. Если настройка драйвера останется включённой, установщик зарегистрирует это приложение и сохранит общий драйвер доступным для другого приложения SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio готов. Откройте приложение и выберите динамики или наушники.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
+      <translation>SoundCurrent Audio после установки предоставляет собственный микрофонный аудиотракт. С VB-CABLE одновременный микрофонный и акустический EQ требует отдельно установленного второго кабеля (A или B). Выберите этот кабель в программах записи. Автоматический выбор предпочитает аудиотракт SoundCurrent, если он доступен.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio направляет воспроизведение через приложение. Выберите в приложении физические колонки или наушники. Их аппаратные драйверы сохраняются.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.</source>
+      <translation>Измерение SoundCurrent частотной развёрткой или тонами; относительно медианы; эквалайзер микрофона обойдён. Может включать эквалайзер воспроизведения.</translation>
+      <extracomment>New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.</extracomment>
+    </message>
+    <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>Виртуальный выход SoundCurrent требует стереоаудио 48 kHz в формате с плавающей точкой</translation>
+    </message>
+    <message>
+      <source>Soundbar</source>
+      <translation>Саундбар</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
     </message>
     <message>
       <source>Source</source>
-      <translation type="unfinished" />
+      <translation>Источник</translation>
+    </message>
+    <message>
+      <source>Source: %1</source>
+      <translation>Источник: %1</translation>
+      <extracomment>Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.</extracomment>
+    </message>
+    <message>
+      <source>Speaker</source>
+      <translation>Акустическая система</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
-      <translation type="unfinished" />
+      <translation>Калибровка акустических систем &amp;&amp; помещения</translation>
     </message>
     <message>
       <source>Speaker + room check</source>
-      <translation type="unfinished" />
+      <translation>Проверка акустических систем и помещения</translation>
+    </message>
+    <message>
+      <source>Speaker and room measurement</source>
+      <translation>Измерение акустических систем и помещения</translation>
+    </message>
+    <message>
+      <source>Speaker filter is outside conservative bounds</source>
+      <translation>Фильтр акустической системы вне осторожно установленных пределов</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Производитель акустической системы</translation>
     </message>
     <message>
       <source>Speaker model correction</source>
-      <translation type="unfinished" />
+      <translation>Коррекция модели акустической системы</translation>
     </message>
     <message>
       <source>Speaker model profile</source>
-      <translation type="unfinished" />
+      <translation>Профиль модели акустической системы</translation>
     </message>
     <message>
       <source>Speaker profile details</source>
-      <translation type="unfinished" />
+      <translation>Сведения о профиле акустической системы</translation>
+    </message>
+    <message>
+      <source>Speaker profile resource is missing</source>
+      <translation>Ресурс профиля акустической системы отсутствует</translation>
     </message>
     <message>
       <source>Speaker type</source>
-      <translation type="unfinished" />
+      <translation>Тип акустической системы</translation>
+    </message>
+    <message>
+      <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
+      <translation>Spinorama AutoEQ: усиление коррекции ограничено до %1, а Q — до %2. Подъёмы ниже %3 исключены. Ваша настройка прослушивания добавляется отдельно.</translation>
+      <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
+    </message>
+    <message>
+      <source>Start cable capture</source>
+      <translation>Запуск захвата виртуального кабеля</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>Запуск записи с микрофона</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>Начинайте тихо. Повышайте уровень только тогда, когда микрофон не слышит тонов.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>Запуск вывода на динамики</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>Запуск воспроизведения тестового сигнала</translation>
+    </message>
+    <message>
+      <source>Start when I sign in</source>
+      <translation>Запускать при входе</translation>
+    </message>
+    <message>
+      <source>Startup</source>
+      <translation>Автозапуск</translation>
+    </message>
+    <message>
+      <source>Step down</source>
+      <translation>Уменьшить значение</translation>
+      <extracomment>Decrease the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Step up</source>
+      <translation>Увеличить значение</translation>
+      <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Stop the microphone calibration before changing the audio driver.</source>
+      <translation>Остановите калибровку микрофона перед изменением аудиодрайвера.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>Остановить тоны</translation>
+    </message>
+    <message>
+      <source>Studio profile has an invalid boolean field</source>
+      <translation>Профиль Studio содержит некорректное логическое поле</translation>
+      <extracomment>Saved Studio setup requires a JSON true/false field. Wrong type or missing value is rejected; do not confuse this with an audio level or textual yes/no preference.</extracomment>
+    </message>
+    <message>
+      <source>Studio profile has an invalid numeric field</source>
+      <translation>Профиль Studio содержит некорректное числовое поле</translation>
+      <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>Предложенные настройки EQ применены. Воспользуйтесь командой «Сохранить пресет», чтобы сохранить их.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>Предложенные изменения EQ для воспроизведения</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>Объёмный звук</translation>
+    </message>
+    <message>
+      <source>Surround speaker</source>
+      <translation>Акустическая система объёмного звучания</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>Редактор профиля характеристики системы открыт. Сохранённые профили доступны в библиотеке оборудования.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>Телевизионные диалоги</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>Бирюзовая: корректирующий EQ. Оранжевая: измеренная характеристика, если предоставлена. Вертикальная шкала показывает относительные значения в dB.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>Тестовый уровень</translation>
+    </message>
+    <message>
+      <source>Test level is outside the allowed range</source>
+      <translation>Тестовый уровень вне допустимого диапазона</translation>
+    </message>
+    <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>Пакет VB-CABLE отсутствует. Восстановите установку SoundCurrent.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>Аудиопроцессор неожиданно остановился.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Помощник проверки готовности аудио отсутствует. Восстановите установку SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The custom library holds up to 256 profiles.</source>
+      <translation>Собственная библиотека вмещает до 256 профилей.</translation>
+    </message>
+    <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>Диспетчер драйверов не подписан. Установите подписанную версию SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Пакет драйвера неполный или Windows не может проверить его подпись.</translation>
+    </message>
+    <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>Неполная установка VB-CABLE удалена. Перезапустите Windows, снова откройте %1, нажмите Install Driver, затем перезапустите систему ещё раз.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>Отсутствует вспомогательная программа настройки, сохраняющая маршрутизацию аудио.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>Общий диспетчер драйверов отсутствует. Восстановите установку приложения.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>Ответ службы обновлений был недопустимым. Установщик не открывался.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>Импортируется измеренная ХАРАКТЕРИСТИКА, а не уже инвертированные значения усиления EQ. Подтвердите тип оборудования. Абсолютный SPL требует нормализации перед импортом.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>Этот профиль изменён. Сохранить собственную копию перед выходом?</translation>
+    </message>
+    <message>
+      <source>Timed out waiting for the equalizer sink: %1</source>
+      <translation>Время ожидания выхода эквалайзера истекло: %1</translation>
+    </message>
+    <message>
+      <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
+      <translation>До микрофона дошло слишком мало тестового звука. Переместите его ближе или немного повысьте тестовый уровень.</translation>
+    </message>
+    <message>
+      <source>Too many Studio channel filters</source>
+      <translation>Слишком много фильтров в канале Studio</translation>
+      <extracomment>Per-channel EQ filter count exceeds 64; unchanged processing bound.</extracomment>
+    </message>
+    <message>
+      <source>Too many Studio routes</source>
+      <translation>Слишком много аудиосоединений Studio</translation>
+      <extracomment>Saved audio routing edge count exceeds channel-count squared.</extracomment>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>Акустическая система для гастрольного озвучивания</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>Покрытие перевода: %1 из %2 сообщений. Отсутствующие переводы используют английский. Языковые пакеты не проверены и ожидают проверки носителем языка. Завершите работу и откройте приложение снова, чтобы применить изменения.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>Детали высоких частот</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Выключить эквалайзер</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Включить эквалайзер</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Тип</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Неклассифицированное оборудование</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>
       <extracomment>Reverse the previous editable setting change.</extracomment>
-      <translation>Отменить</translation>
+      <translation>Отменить действие</translation>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>Отменить последнее изменение эквалайзера</translation>
+    </message>
+    <message>
+      <source>Uninstall</source>
+      <translation>Удалить</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
+      <source>Unknown</source>
+      <translation>Неизвестно</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>Разблокировать EQ</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>Разблокируйте элементы управления и завершите измерение перед редактированием профилей.</translation>
+    </message>
+    <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>Включение звука динамиков для эквалайзера</translation>
+    </message>
+    <message>
+      <source>Unsupported Studio profile schema</source>
+      <translation>Неподдерживаемый формат профиля Studio</translation>
+      <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
+    </message>
+    <message>
+      <source>Unsupported equipment profile schema (expected 2).</source>
+      <translation>Неподдерживаемая схема профиля оборудования (ожидается 2).</translation>
+    </message>
+    <message>
+      <source>Unsupported filter type.</source>
+      <translation>Неподдерживаемый тип фильтра.</translation>
+    </message>
+    <message>
+      <source>Unsupported microphone channel layout</source>
+      <translation>Неподдерживаемая конфигурация каналов микрофона</translation>
+    </message>
+    <message>
+      <source>Unsupported recording format</source>
+      <translation>Неподдерживаемый формат записи</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Неподдерживаемая конфигурация каналов динамиков или частота дискретизации</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Неподдерживаемый формат отсчётов микширования динамиков</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker profile schema</source>
+      <translation>Неподдерживаемая схема профиля акустической системы</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Обновление %1 загружено: %2. Завершите работу, установите поверх имеющегося приложения и откройте снова.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>Папка загрузки обновлений</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>Используйте тихое помещение. Акустические системы, помещение и микрофон измеряются вместе; результаты включают характеристику микрофона.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1260,35 +2860,153 @@ Import into your library?</source>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>Использовать регион системы</translation>
+      <translation>Использовать региональные настройки системы</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Относительная частотная характеристика, импортированная пользователем; перед использованием укажите ориентацию / серийный номер микрофона или условия измерения громкоговорителя.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>Коррекция, созданная пользователем; укажите оборудование и условия измерения.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>Профиль, созданный пользователем</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>VB-CABLE зарегистрирован как драйвер, но доступных аудиоконечных точек нет. Установщик предлагает восстановление: удалите драйвер, перезагрузите компьютер, установите драйвер заново и ещё раз перезагрузите компьютер.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>VB-CABLE уже установлен. Если он только что установлен или обновлён, перезапустите Windows перед использованием эквалайзера или настроек VB-CABLE. Иначе выберите динамики в SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE уже присутствует и будет использован повторно. SoundCurrent восстанавливает обычный выход после отключения или использования %1.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE не установлен. Откройте "%1", затем перезапустите Windows перед открытием настроек кабеля.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE отсутствует. Перезапустите Windows, если это было предложено, и повторите настройку аудио.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>VB-CABLE всё ещё присутствует. Если удаление потребовало перезапуска, перезапустите Windows и повторите удаление SoundCurrent; иначе завершите Remove Driver в официальной программе установки.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>Контрольная сумма пакета VB-CABLE не совпадает. Восстановите установку.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE removal did not finish. This app was kept so you can retry.</source>
+      <translation>Удаление VB-CABLE не завершено. Это приложение сохранено, чтобы вы могли повторить попытку.</translation>
+      <extracomment>Cable uninstall nonzero failure excluding restart code 3010 aborts before app payload deletion. App retained for retry. NSIS caller appends newline and actual helper output as $1; never put runtime variables in translations. VB-CABLE invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.</source>
+      <translation>VB-CABLE направляет воспроизведение через приложение. Выберите колонки в SoundCurrent. VB-CABLE — программное обеспечение VB-Audio, поддерживаемое пожертвованиями: https://vb-cable.com — пожертвования приветствуются.</translation>
+      <extracomment>Cable audio page routing and donation notice. Software routes system playback through SoundCurrent to physical output selected inside app. Donationware means supported by voluntary donations, not mandatory payment. Preserve VB-CABLE twice, SoundCurrent, VB-Audio and exact donation URL. Contextual AI review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>Настройки VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>Не удалось открыть настройки VB-CABLE. Перезапустите Windows, если драйвер только что установлен или обновлён, и повторите попытку.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>Настройка VB-CABLE завершена. Перезапустите Windows сейчас перед использованием эквалайзера или настроек VB-CABLE. Прежние устройства аудио по умолчанию сохранены, если они оставались доступными.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>Настройка VB-CABLE требует перезапуска Windows. Перезапустите систему перед использованием эквалайзера или открытием настроек VB-CABLE.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>Настройка VB-CABLE отменена или не завершена (код %1). SoundCurrent остаётся установленным для повторной попытки.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.</source>
+      <translation>У VB-CABLE по-прежнему нет пригодных устройств воспроизведения или записи. Завершите Remove Driver в официальном установщике, перезапустите Windows, затем снова откройте %1 для переустановки драйвера. CABLE Input и CABLE Output должны быть включены в параметрах звука Windows.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE сохранён, поскольку другое приложение SoundCurrent установлено. Удалите его вместе с последним приложением, если другому ПО он не нужен.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>Акцент на вокале</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>Ожидание микрофона.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>Тёплый</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>Теплота</translation>
     </message>
     <message>
-      <source>Width (Q)</source>
-      <translation type="unfinished" />
+      <source>Whole listening system</source>
+      <translation>Вся система прослушивания</translation>
+      <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM для аудио Windows недоступен</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Windows не удалось проверить подпись исполняемого файла VB-Audio.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
+    </message>
+    <message>
+      <source>Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.</source>
+      <translation>В Windows есть запись драйвера VB-CABLE, но нет доступных конечных точек кабеля. Сначала проверьте, включены ли CABLE Input и CABLE Output в настройках звука Windows. Для переустановки: нажмите Remove Driver в официальном установщике, который откроется далее, перезагрузите Windows, затем снова откройте %1 в приложении и нажмите Install Driver. Ещё раз перезагрузите компьютер перед воспроизведением звука через SoundCurrent. Удаление этого общего кабеля затронет другие приложения, которые его используют.</translation>
+      <extracomment>Pre-repair modal, before official driver installer is opened. Existing driver record but endpoints unavailable; first check Windows endpoint enablement. Remove Driver and Install Driver are exact English external buttons. %1 is actual localized Audio driver setup button inside app, not English Start-menu shortcut. Preserve removal -&gt; Windows restart -&gt; app setup -&gt; reinstall -&gt; second restart, then audio playback; affects other users of shared cable. No claim removal already happened. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</source>
+      <translation>В Windows есть запись драйвера VB-CABLE, но его конечная точка воспроизведения или записи недоступна. Если вы уже перезапустили систему, откройте %1 для восстановления. Включите CABLE Input и CABLE Output в настройках звука Windows, если они отключены.</translation>
+    </message>
+    <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows запросит разрешение администратора для подписанного менеджера драйверов. Установщик сообщит, требуется ли перезапуск.</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Запись в буфер динамиков</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>Запись тестового сигнала для воспроизведения</translation>
+    </message>
+    <message>
+      <source>Yes</source>
+      <translation>Да</translation>
+    </message>
+    <message>
+      <source>Yes to All</source>
+      <translation>Да для всех</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>Ноль выключает каждый эффект. Эти эффекты прослушивания применяются к воспроизведению через акустические системы, а не к коррекции микрофона.</translation>
     </message>
   </context>
 </TS>

@@ -1,0 +1,34 @@
+{
+  "testedProduct": "Studio",
+  "vm": "soundcurrent-localization-win11-qa",
+  "vmState": "graceful shutdown confirmed off",
+  "reportedResult": "PASS: Studio locale install/update/uninstall and preservation checks",
+  "testedInstallerIdentities": [
+    {
+      "label": "studio-old",
+      "run": 37869448427,
+      "repository": "soundcurrent-studio",
+      "sha256": "8fe5ba9851ca7d2077d0571911ba8c6557dec4df882be46347a7132772c1982c"
+    },
+    {
+      "label": "studio-current",
+      "run": 37875220804,
+      "repository": "soundcurrent-studio",
+      "sha256": "e43fdeef97ed5675db864c2e5c838ff298d59141e265c40d4d9d4ad8cb73602a",
+      "sourceHead": "dcd6dbcab41e7dc6fb8792d6ce0b97bdb33fa1be"
+    }
+  ],
+  "mediaSha256": "4c4ae4502ed5ddf0d85e323f9cfb35022c6c25691cff10af64b2aec7c90b5aca",
+  "harnessSha256": "7c5f351f159d41510418133ecda78a5316aff10a94c59ce743a8bffd41f952bf",
+  "evidenceScope": "Observed real guest console completion after French/Nynorsk/Arabic cable lifecycle sequence; guest JSON/transcript remain to be retrieved and independently inspected",
+  "guestEvidence": "C:\\Users\\copperfin\\AppData\\Local\\SoundCurrentLocalizationQA\\Studio-2fcb9e147d984a729279cbf5d3242efd",
+  "resultTransfer": "attempt did not produce host file; do not claim JSON retrieved",
+  "excluded": [
+    "native driver lifecycle",
+    "all-language installed application UI",
+    "interactive chooser",
+    "original Arabic shortcut activation",
+    "native-speaker verification"
+  ],
+  "nativeReviewed": false
+}

@@ -1,0 +1,41 @@
+{
+  "scope": "Quit before update/uninstall installer dialogs for cable and native routes",
+  "sources": [
+    "Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.",
+    "Quit %1 before uninstalling it."
+  ],
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "sourceMessages": 618,
+  "unfinishedExtractedEntries": 0,
+  "contextualReview": "AI reviewed full process exit vs closing UI, preserved in-place update/no-uninstall guidance and running-app blocker semantics",
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "catalogTests": {
+      "total": 44,
+      "passed": 43,
+      "skipped": 1
+    },
+    "finalExporterTests": {
+      "passed": 2,
+      "scope": "After shared formatter reuse in existing retry and Quit app messages"
+    },
+    "compiledCatalogHashes": "verified",
+    "nsisLiteralCompiler": {
+      "captions": 748,
+      "languageIDs": "English fixture only",
+      "localeActivation": false,
+      "layoutQualified": false
+    },
+    "placeholderMutations": "missing/duplicate/%2/%10/%L1 rejected; inserted name with %1 and $1 preserved literally"
+  },
+  "appNames": "Stable product name substituted after translation; English rendered definitions match installers",
+  "runningAppDetectionAndDSPChanged": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Welcome/progress and remaining errors/helper notice",
+    "Installer locale activation and installed layout",
+    "Current Linux/Windows UI and package lifecycle qualification"
+  ]
+}

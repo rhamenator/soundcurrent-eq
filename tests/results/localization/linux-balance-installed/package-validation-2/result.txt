@@ -1,0 +1,1 @@
+PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall

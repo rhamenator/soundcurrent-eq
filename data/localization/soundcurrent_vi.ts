@@ -3,194 +3,397 @@
   <context>
     <name>SoundCurrent</name>
     <message>
-      <source>
-Apply this correction to the </source>
-      <translation type="unfinished" />
-    </message>
-    <message>
-      <source>
-Import into your library?</source>
-      <translation type="unfinished" />
-    </message>
-    <message>
       <source> (currently selected)</source>
-      <translation type="unfinished" />
+      <translation> (đang được chọn)</translation>
+    </message>
+    <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (mẫu ban đầu; không phải SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
     </message>
     <message>
       <source> (restored selection)</source>
-      <translation type="unfinished" />
+      <translation> (lựa chọn đã khôi phục)</translation>
     </message>
     <message>
-      <source> route?</source>
-      <translation type="unfinished" />
+      <source> [custom]</source>
+      <translation> [tùy chỉnh]</translation>
+    </message>
+    <message>
+      <source> and </source>
+      <translation> và </translation>
     </message>
     <message>
       <source> · mono</source>
-      <translation type="unfinished" />
+      <translation> · mono</translation>
+    </message>
+    <message>
+      <source> · no USB microphone detected</source>
+      <translation> · không phát hiện micrô USB</translation>
     </message>
     <message>
       <source> · stereo</source>
-      <translation type="unfinished" />
+      <translation> · stereo</translation>
+    </message>
+    <message>
+      <source>%1
+
+Technical details:
+%2</source>
+      <translation>%1
+
+Chi tiết kỹ thuật:
+%2</translation>
+    </message>
+    <message>
+      <source>%1
+Directory not found.
+Please verify the correct directory name was given.</source>
+      <translation>%1
+Không tìm thấy thư mục.
+Vui lòng kiểm tra tên thư mục.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+File not found.
+Please verify the correct file name was given.</source>
+      <translation>%1
+Không tìm thấy tệp.
+Vui lòng kiểm tra tên tệp.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+The app remains open; your settings have been kept.</source>
+      <translation>%1
+Ứng dụng vẫn mở; các thiết lập của bạn được giữ nguyên.</translation>
     </message>
     <message>
       <source>%1 %2%3 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 %2%3 dB</translation>
+    </message>
+    <message>
+      <source>%1 / %2
+%3
+Apply this correction to the %4 route?</source>
+      <translation>%1 / %2
+%3
+Áp dụng hiệu chỉnh này cho tuyến %4?</translation>
+    </message>
+    <message>
+      <source>%1 / %2
+%3
+Import into your library?</source>
+      <translation>%1 / %2
+%3
+Nhập vào thư viện của bạn?</translation>
+    </message>
+    <message>
+      <source>%1 Hz: measured %2%3 dB; suggested %4%5 dB</source>
+      <translation>%1 Hz: đo được %2%3 dB; đề xuất %4%5 dB</translation>
+    </message>
+    <message>
+      <source>%1 Hz: signal %2, background %3</source>
+      <translation>%1 Hz: tín hiệu %2, nền %3</translation>
+      <extracomment>Debug calibration tone amplitude and background noise amplitude. %1 is frequency, %2 signal amplitude, %3 background amplitude. Display only; no change to numerical analysis.</extracomment>
+    </message>
+    <message>
+      <source>%1 Hz: too quiet to measure</source>
+      <translation>%1 Hz: âm quá nhỏ để đo</translation>
+    </message>
+    <message>
+      <source>%1 already exists.
+Do you want to replace it?</source>
+      <translation>%1 đã tồn tại.
+Bạn có muốn thay thế không?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1 disconnected. </source>
+      <translation>%1 đã ngắt kết nối. </translation>
+    </message>
+    <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>Thao tác thất bại: %1 (0x%2)</translation>
+    </message>
+    <message>
+      <source>%1 is already running or its instance lock is unavailable</source>
+      <translation>%1 đang chạy hoặc khóa phiên bản của ứng dụng không khả dụng</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>%1 is running. Quit it before using SoundCurrent.</source>
+      <translation>%1 đang chạy. Hãy thoát chương trình đó trước khi dùng SoundCurrent.</translation>
+      <extracomment>A recognized competing equalizer process is active. %1 is its opaque executable name; quit that program completely, not merely its window. Preserve SoundCurrent brand and process identity.</extracomment>
+    </message>
+    <message>
+      <source>%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.</source>
+      <translation>Thiết lập %1 chưa hoàn tất. Bản thân ứng dụng %2 đã được cài đặt. Dùng %3 trong menu Bắt đầu để thử lại; xem chi tiết cài đặt để biết lý do.</translation>
+      <extracomment>Setup failure dialog after app files/shortcuts copied. %1 = stable driver name; %2 = stable app name; %3 = actual currently English Start-menu shortcut name Audio driver setup (not localized Qt button). Setup failure does not prove existing driver absent. Preserve app installed, Start-menu retry and details for reason. Shortcut display-name localization and upgrade cleanup remain open. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
+      <translation>Thiết lập %1 chưa hoàn tất. Thử lại bằng lối tắt trong menu Bắt đầu.</translation>
+      <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>%1%2 dB</source>
-      <translation type="unfinished" />
+      <translation>%1%2 dB</translation>
+    </message>
+    <message>
+      <source>'%1' is write protected.
+Do you want to delete it anyway?</source>
+      <translation>'%1' được bảo vệ chống ghi.
+Bạn vẫn muốn xóa không?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>A private user runtime directory is required</source>
+      <translation>Cần có thư mục thời gian chạy riêng của người dùng</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>Abort</source>
+      <translation>Dừng</translation>
     </message>
     <message>
       <source>Acoustic</source>
-      <translation type="unfinished" />
+      <translation>Acoustic</translation>
     </message>
     <message>
       <source>Active / passive / unknown</source>
-      <translation type="unfinished" />
+      <translation>Chủ động / thụ động / chưa biết</translation>
     </message>
     <message>
       <source>Add filter</source>
-      <translation type="unfinished" />
+      <translation>Thêm bộ lọc</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
-      <translation type="unfinished" />
+      <translation>Điều chỉnh đầu ra từ -60 đến +12 dB sau EQ. Tăng gain có thể gây xén đỉnh tín hiệu.</translation>
     </message>
     <message>
       <source>Adjust this tone band around the natural voice profile</source>
-      <translation type="unfinished" />
+      <translation>Điều chỉnh dải âm này dựa trên cấu hình giọng nói tự nhiên</translation>
+    </message>
+    <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>Bộ cân bằng âm thanh có thể điều chỉnh cho toàn hệ thống với PipeWire</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
-      <translation type="unfinished" />
+      <translation>Điều khiển cải thiện âm thanh nâng cao</translation>
     </message>
     <message>
       <source>Air</source>
-      <translation type="unfinished" />
+      <translation>Độ thoáng</translation>
     </message>
     <message>
       <source>All brands</source>
-      <translation type="unfinished" />
+      <translation>Tất cả thương hiệu</translation>
     </message>
     <message>
       <source>All equipment</source>
-      <translation type="unfinished" />
+      <translation>Tất cả thiết bị</translation>
     </message>
     <message>
       <source>All families</source>
-      <translation type="unfinished" />
+      <translation>Tất cả dòng sản phẩm</translation>
+    </message>
+    <message>
+      <source>All files (*)</source>
+      <translation>Tất cả tệp (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>All manufacturers</source>
-      <translation type="unfinished" />
+      <translation>Tất cả nhà sản xuất</translation>
     </message>
     <message>
       <source>All speaker types</source>
-      <translation type="unfinished" />
+      <translation>Tất cả loại loa</translation>
     </message>
     <message>
       <source>All subtypes</source>
-      <translation type="unfinished" />
+      <translation>Tất cả loại phụ</translation>
     </message>
     <message>
       <source>Ambience</source>
-      <translation type="unfinished" />
+      <translation>Âm vang không gian</translation>
     </message>
     <message>
       <source>Ambience damping</source>
-      <translation type="unfinished" />
+      <translation>Độ giảm chấn âm vang không gian</translation>
     </message>
     <message>
       <source>Ambience decay</source>
-      <translation type="unfinished" />
+      <translation>Thời gian suy giảm âm vang không gian</translation>
     </message>
     <message>
       <source>Amp details</source>
-      <translation type="unfinished" />
+      <translation>Chi tiết ampli</translation>
+    </message>
+    <message>
+      <source>Amplifier</source>
+      <translation>Ampli</translation>
     </message>
     <message>
       <source>Amplifier / receiver</source>
-      <translation type="unfinished" />
+      <translation>Ampli / receiver</translation>
     </message>
     <message>
       <source>Amplifier model profile</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình mẫu ampli</translation>
     </message>
     <message>
       <source>Amplifier profile details</source>
-      <translation type="unfinished" />
+      <translation>Chi tiết cấu hình ampli</translation>
     </message>
     <message>
       <source>Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình ampli cần phép đo điện với tải loa, đầu vào và thiết lập âm sắc đã biết. Nhập tệp hiệu chỉnh từ phép đo; không suy đoán đường đáp tuyến ampli từ thông số quảng cáo.</translation>
     </message>
     <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
-      <translation type="unfinished" />
+      <translation>Bản cập nhật ứng dụng đã được cài đặt. Chọn Thoát rồi mở lại để tải bản mới; chỉ đóng cửa sổ này thì phiên bản cũ vẫn chạy.</translation>
+    </message>
+    <message>
+      <source>Another SoundCurrent EQ sink is already running</source>
+      <translation>Một đầu ra ảo SoundCurrent EQ khác đang chạy</translation>
     </message>
     <message>
       <source>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</source>
-      <translation type="unfinished" />
+      <translation>Một ứng dụng SoundCurrent khác hoặc trình thiết lập driver âm thanh đang chạy. Thoát chương trình đó trước khi mở ứng dụng này.</translation>
     </message>
     <message>
       <source>Another SoundCurrent equalizer is running. Quit EQ or Studio before opening the other app.</source>
-      <translation type="unfinished" />
+      <translation>Một bộ cân bằng âm SoundCurrent khác đang chạy. Thoát EQ hoặc Studio trước khi mở ứng dụng còn lại.</translation>
     </message>
     <message>
-      <source>Another equalizer route is present: </source>
-      <translation type="unfinished" />
+      <source>Another SoundCurrent microphone filter is running</source>
+      <translation>Một bộ lọc micrô SoundCurrent khác đang chạy</translation>
+    </message>
+    <message>
+      <source>Another equalizer route is present: %1. Quit it before using SoundCurrent.</source>
+      <translation>Có tuyến cân bằng âm khác: %1. Thoát chương trình đó trước khi dùng SoundCurrent.</translation>
     </message>
     <message>
       <source>Application update</source>
-      <translation type="unfinished" />
+      <translation>Cập nhật ứng dụng</translation>
     </message>
     <message>
       <source>Application updates</source>
-      <translation type="unfinished" />
+      <translation>Cập nhật ứng dụng</translation>
+    </message>
+    <message>
+      <source>Apply</source>
+      <translation>Áp dụng</translation>
+    </message>
+    <message>
+      <source>Apply amplifier correction?</source>
+      <translation>Áp dụng hiệu chỉnh bộ khuếch đại?</translation>
+      <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
     </message>
     <message>
       <source>Apply correction?</source>
-      <translation type="unfinished" />
+      <translation>Áp dụng hiệu chỉnh?</translation>
+    </message>
+    <message>
+      <source>Apply only if these conditions match your system.</source>
+      <translation>Chỉ áp dụng nếu các điều kiện này phù hợp với hệ thống của bạn.</translation>
+      <extracomment>Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.</extracomment>
+    </message>
+    <message>
+      <source>Apply profile</source>
+      <translation>Áp dụng cấu hình</translation>
+    </message>
+    <message>
+      <source>Apply suggested EQ</source>
+      <translation>Áp dụng EQ đề xuất</translation>
+    </message>
+    <message>
+      <source>Are you sure you want to delete '%1'?</source>
+      <translation>Bạn có chắc muốn xóa '%1' không?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Audio bridge did not start</source>
+      <translation>Cầu nối âm thanh không khởi động được</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
-      <translation type="unfinished" />
+      <translation>Thiết lập driver âm thanh</translation>
+    </message>
+    <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>Thiết lập trình điều khiển âm thanh đã hoàn tất. Khởi động lại Windows trước khi sử dụng SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Thiết lập trình điều khiển âm thanh chưa hoàn tất: %1</translation>
     </message>
     <message>
       <source>Audio error: %1</source>
-      <translation type="unfinished" />
+      <translation>Lỗi âm thanh: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Trợ giúp khôi phục âm thanh</translation>
+    </message>
+    <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Không thể khởi động chương trình hỗ trợ khôi phục đường dẫn âm thanh. Hãy sửa chữa hoặc cài đặt lại SoundCurrent.</translation>
     </message>
     <message>
       <source>Audio setup</source>
-      <translation type="unfinished" />
+      <translation>Thiết lập âm thanh</translation>
     </message>
     <message>
       <source>Audio setup could not finish</source>
-      <translation type="unfinished" />
+      <translation>Không thể hoàn tất thiết lập âm thanh</translation>
+    </message>
+    <message>
+      <source>Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.</source>
+      <translation>Thiết lập âm thanh thất bại. Nếu vừa cài VB-CABLE, hãy khởi động lại Windows rồi thử lại.</translation>
+    </message>
+    <message>
+      <source>Audio setup is missing. Repair or reinstall SoundCurrent.</source>
+      <translation>Không tìm thấy trình thiết lập âm thanh. Hãy sửa chữa hoặc cài lại SoundCurrent.</translation>
     </message>
     <message>
       <source>Audio setup is running. Processing is paused; the app remains open.</source>
-      <translation type="unfinished" />
+      <translation>Trình thiết lập âm thanh đang chạy. Xử lý được tạm dừng; ứng dụng vẫn mở.</translation>
     </message>
     <message>
       <source>Auto headroom %1 dB</source>
-      <translation type="unfinished" />
+      <translation>Khoảng dự phòng tự động %1 dB</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
-      <translation type="unfinished" />
+      <translation>Tự động (SoundCurrent Microphone)</translation>
     </message>
     <message>
       <source>Automatic (follow connected devices)</source>
-      <translation type="unfinished" />
+      <translation>Tự động (theo thiết bị được kết nối)</translation>
     </message>
     <message>
       <source>Automatic (follow connected microphones)</source>
-      <translation type="unfinished" />
+      <translation>Tự động (theo micrô được kết nối)</translation>
+    </message>
+    <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Không thể định tuyến âm thanh tự động</translation>
     </message>
     <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Tự động hiệu chỉnh âm thanh micrô được kết nối; nhấp để bỏ qua EQ micrô</translation>
+    </message>
+    <message>
+      <source>Back</source>
+      <translation>Quay lại</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Balance</source>
@@ -199,15 +402,15 @@ Import into your library?</source>
     </message>
     <message>
       <source>Balance position</source>
-      <translation type="unfinished" />
+      <translation>Vị trí cân bằng</translation>
     </message>
     <message>
       <source>Balanced</source>
-      <translation type="unfinished" />
+      <translation>Cân đối</translation>
     </message>
     <message>
       <source>Band %1 gain</source>
-      <translation type="unfinished" />
+      <translation>Gain dải %1</translation>
     </message>
     <message>
       <source>Bands</source>
@@ -216,7 +419,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.</source>
-      <translation type="unfinished" />
+      <translation>Các thanh cạnh thanh trượt hiển thị mức ước tính sau EQ. Chữ đỉnh màu đỏ cảnh báo nguy cơ xén đỉnh tín hiệu.</translation>
     </message>
     <message>
       <source>Bass Boost</source>
@@ -224,203 +427,503 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bass Cut</source>
-      <translation type="unfinished" />
+      <translation>Giảm âm trầm</translation>
     </message>
     <message>
       <source>Bass adds low-frequency weight; Clarity adds high-frequency detail; Ambience adds room reflections; Surround widens stereo; Dynamic Boost compresses and raises quieter material with a peak ceiling. Boosting can increase output level.</source>
-      <translation type="unfinished" />
+      <translation>Âm trầm tăng độ đầy ở tần số thấp; Độ rõ tăng chi tiết ở tần số cao; Âm vang không gian thêm phản xạ phòng; Surround mở rộng stereo. Tăng cường động nén và nâng âm nhỏ với giới hạn đỉnh. Tăng cường có thể làm tăng mức đầu ra.</translation>
     </message>
     <message>
       <source>Bass frequency</source>
-      <translation type="unfinished" />
+      <translation>Tần số âm trầm</translation>
+    </message>
+    <message>
+      <source>Bookshelf speaker</source>
+      <translation>Loa bookshelf</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Boxiness</source>
-      <translation type="unfinished" />
+      <translation>Âm hộp</translation>
     </message>
     <message>
       <source>Brand</source>
-      <translation type="unfinished" />
+      <translation>Thương hiệu</translation>
+    </message>
+    <message>
+      <source>Brand, family and model are required (maximum 120 characters each).</source>
+      <translation>Cần có thương hiệu, dòng sản phẩm và mẫu (mỗi mục tối đa 120 ký tự).</translation>
     </message>
     <message>
       <source>Bright</source>
-      <translation type="unfinished" />
+      <translation>Âm sáng</translation>
     </message>
     <message>
       <source>Browse all equipment profiles / editor</source>
-      <translation type="unfinished" />
+      <translation>Duyệt tất cả cấu hình thiết bị / trình chỉnh sửa</translation>
+    </message>
+    <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Gói dữ liệu cáp vượt quá dung lượng bộ đệm thu</translation>
+    </message>
+    <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Điểm cuối ghi âm của cáp ảo không hỗ trợ âm thanh stereo dấu phẩy động 48 kHz ở chế độ dùng chung</translation>
     </message>
     <message>
       <source>Calibration test signal</source>
-      <translation type="unfinished" />
+      <translation>Tín hiệu thử hiệu chuẩn</translation>
     </message>
     <message>
       <source>Calibration tone level</source>
-      <translation type="unfinished" />
+      <translation>Mức âm thử hiệu chuẩn</translation>
+    </message>
+    <message>
+      <source>Cancel</source>
+      <translation>Hủy</translation>
     </message>
     <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Không thể lấy khóa bảo vệ phiên dùng chung của SoundCurrent.</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
-      <translation type="unfinished" />
+      <translation>Không thể tạo thư mục cấu hình ampli.</translation>
+    </message>
+    <message>
+      <source>Cannot create profile folder.</source>
+      <translation>Không thể tạo thư mục cấu hình.</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Không thể tạo khóa bảo vệ phiên dùng chung của SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>Cannot create user settings directory</source>
+      <translation>Không thể tạo thư mục cài đặt người dùng</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
     </message>
     <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Không thể hoàn tất kiểm tra các bộ cân bằng âm đang chạy; SoundCurrent sẽ không bật xử lý.</translation>
     </message>
     <message>
       <source>Cannot finish saving amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Không thể hoàn tất lưu cấu hình ampli.</translation>
+    </message>
+    <message>
+      <source>Cannot finish saving profile library.</source>
+      <translation>Không thể hoàn tất lưu thư viện cấu hình.</translation>
     </message>
     <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Không thể kiểm tra các bộ cân bằng âm đang chạy; SoundCurrent sẽ không bật xử lý.</translation>
+    </message>
+    <message>
+      <source>Cannot read profile library.</source>
+      <translation>Không thể đọc thư viện cấu hình.</translation>
+    </message>
+    <message>
+      <source>Cannot read profile or file exceeds 1 MiB.</source>
+      <translation>Không thể đọc cấu hình hoặc tệp vượt quá 1 MiB.</translation>
+    </message>
+    <message>
+      <source>Cannot read response or file exceeds 1 MiB.</source>
+      <translation>Không thể đọc đáp tuyến hoặc tệp vượt quá 1 MiB.</translation>
     </message>
     <message>
       <source>Cannot save amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Không thể lưu cấu hình ampli.</translation>
+    </message>
+    <message>
+      <source>Cannot save profile library.</source>
+      <translation>Không thể lưu thư viện cấu hình.</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
-      <translation type="unfinished" />
+      <translation>Không thể lưu cấu hình.</translation>
     </message>
     <message>
       <source>Cannot start measurement: %1</source>
-      <translation type="unfinished" />
+      <translation>Không thể bắt đầu đo: %1</translation>
+    </message>
+    <message>
+      <source>Capture bytes: %1, noise bytes: %2</source>
+      <translation>Số byte thu được: %1, số byte nhiễu: %2</translation>
+      <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
       <source>Center</source>
-      <translation type="unfinished" />
+      <translation>Giữa</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Loa trung tâm</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Thay đổi điểm cuối âm thanh mặc định</translation>
+    </message>
+    <message>
+      <source>Change to detail view mode</source>
+      <translation>Chuyển sang dạng chi tiết</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Change to list view mode</source>
+      <translation>Chuyển sang dạng danh sách</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Check for updates</source>
       <translation>Kiểm tra cập nhật</translation>
     </message>
     <message>
+      <source>Checking %1 Hz</source>
+      <translation>Đang kiểm tra %1 Hz</translation>
+      <extracomment>Calibration worker progress for a single test frequency. %1 is a locale-formatted frequency; Hz is the physical unit.</extracomment>
+    </message>
+    <message>
       <source>Checking for published updates…</source>
-      <translation type="unfinished" />
+      <translation>Đang kiểm tra các bản cập nhật đã công bố…</translation>
     </message>
     <message>
       <source>Checks published releases and downloaded installers. No update is installed automatically.</source>
-      <translation type="unfinished" />
+      <translation>Kiểm tra các bản phát hành đã công bố và trình cài đặt đã tải xuống. Không tự động cài đặt bản cập nhật.</translation>
+    </message>
+    <message>
+      <source>Choose</source>
+      <translation>Chọn</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Choose a name that is not a built-in preset.</source>
-      <translation type="unfinished" />
+      <translation>Chọn tên khác với tên thiết lập sẵn tích hợp.</translation>
+    </message>
+    <message>
+      <source>Choose one audio setup action.</source>
+      <translation>Chọn đúng một thao tác thiết lập âm thanh.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
     </message>
     <message>
       <source>Choose update folder…</source>
-      <translation type="unfinished" />
+      <translation>Chọn thư mục cập nhật…</translation>
+    </message>
+    <message>
+      <source>Cinema speaker</source>
+      <translation>Loa rạp chiếu phim</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
     </message>
     <message>
       <source>Clarity</source>
-      <translation type="unfinished" />
+      <translation>Độ rõ</translation>
     </message>
     <message>
       <source>Clarity frequency</source>
-      <translation type="unfinished" />
+      <translation>Tần số tăng độ rõ</translation>
     </message>
     <message>
       <source>Classical</source>
-      <translation type="unfinished" />
+      <translation>Nhạc cổ điển</translation>
     </message>
     <message>
       <source>Clear Voice</source>
-      <translation type="unfinished" />
+      <translation>Giọng nói rõ</translation>
     </message>
     <message>
       <source>Clear imported equipment corrections</source>
-      <translation type="unfinished" />
+      <translation>Xóa hiệu chỉnh thiết bị đã nhập</translation>
     </message>
     <message>
       <source>Click to turn the equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Nhấp để bật hoặc tắt bộ cân bằng âm</translation>
     </message>
     <message>
       <source>Clipping risk · estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Nguy cơ xén đỉnh · đỉnh ước tính %1 dBFS</translation>
+    </message>
+    <message>
+      <source>Close</source>
+      <translation>Đóng</translation>
+    </message>
+    <message>
+      <source>Column speaker</source>
+      <translation>Loa cột</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
+      <source>Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2</source>
+      <translation>Đáp tuyến tổng hợp của loa/bộ khuếch đại/micrô/phòng; không phải phép đo riêng một thiết bị. %1 / %2</translation>
+      <extracomment>New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.</extracomment>
     </message>
     <message>
       <source>Conditions</source>
-      <translation type="unfinished" />
+      <translation>Điều kiện</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
-      <translation type="unfinished" />
+      <translation>Kết nối thiết bị đầu ra và micrô trước khi đo.</translation>
+    </message>
+    <message>
+      <source>Connect your audio</source>
+      <translation>Kết nối âm thanh</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>Loa có độ rộng chùm âm không đổi</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
+    </message>
+    <message>
+      <source>Copy</source>
+      <translation>Sao chép</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Correction filters:</source>
+      <translation>Bộ lọc hiệu chỉnh:</translation>
+      <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình hiệu chỉnh (*.json)</translation>
+    </message>
+    <message>
+      <source>Could not create a private test folder</source>
+      <translation>Không thể tạo thư mục thử riêng tư</translation>
+    </message>
+    <message>
+      <source>Could not create microphone configuration folder</source>
+      <translation>Không thể tạo thư mục thiết lập micrô</translation>
     </message>
     <message>
       <source>Could not create preset folder.</source>
-      <translation type="unfinished" />
+      <translation>Không thể tạo thư mục thiết lập sẵn.</translation>
+    </message>
+    <message>
+      <source>Could not create quiet frequency sweep</source>
+      <translation>Không thể tạo tín hiệu quét tần số âm lượng nhỏ</translation>
+    </message>
+    <message>
+      <source>Could not create temporary audio configuration</source>
+      <translation>Không thể tạo thiết lập âm thanh tạm thời</translation>
+    </message>
+    <message>
+      <source>Could not create test tone</source>
+      <translation>Không thể tạo âm thử</translation>
+    </message>
+    <message>
+      <source>Could not create the local activation socket for %1: %2</source>
+      <translation>Không thể tạo socket kích hoạt cục bộ cho %1: %2</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>Could not delete directory.</source>
+      <translation>Không thể xóa thư mục.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
-      <translation type="unfinished" />
+      <translation>Không thể hoàn tất lưu thiết lập sẵn.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Không thể khởi tạo COM âm thanh Windows</translation>
+    </message>
+    <message>
+      <source>Could not open test waveform</source>
+      <translation>Không thể mở dạng sóng thử</translation>
+    </message>
+    <message>
+      <source>Could not play quiet test audio</source>
+      <translation>Không thể phát âm thanh thử âm lượng nhỏ</translation>
+    </message>
+    <message>
+      <source>Could not play test audio through the selected output</source>
+      <translation>Không thể phát âm thanh thử qua đầu ra đã chọn</translation>
+    </message>
+    <message>
+      <source>Could not read output volume</source>
+      <translation>Không thể đọc âm lượng đầu ra</translation>
+    </message>
+    <message>
+      <source>Could not run %1</source>
+      <translation>Không thể chạy %1</translation>
     </message>
     <message>
       <source>Could not save preset.</source>
-      <translation type="unfinished" />
+      <translation>Không thể lưu thiết lập sẵn.</translation>
+    </message>
+    <message>
+      <source>Could not start PipeWire filter</source>
+      <translation>Không thể khởi chạy bộ lọc PipeWire</translation>
+    </message>
+    <message>
+      <source>Could not start audio setup: %1. The app remains open.</source>
+      <translation>Không thể bắt đầu thiết lập âm thanh: %1. Ứng dụng vẫn mở.</translation>
+    </message>
+    <message>
+      <source>Could not start microphone capture</source>
+      <translation>Không thể bắt đầu thu micrô</translation>
+    </message>
+    <message>
+      <source>Could not start microphone filter</source>
+      <translation>Không thể khởi chạy bộ lọc micrô</translation>
+    </message>
+    <message>
+      <source>Could not start output volume safety guard</source>
+      <translation>Không thể khởi chạy bộ bảo vệ âm lượng đầu ra</translation>
     </message>
     <message>
       <source>Could not start the measurement.</source>
-      <translation type="unfinished" />
+      <translation>Không thể bắt đầu đo.</translation>
+    </message>
+    <message>
+      <source>Could not update startup settings.</source>
+      <translation>Không thể cập nhật thiết lập khởi động.</translation>
+    </message>
+    <message>
+      <source>Could not write frequency sweep</source>
+      <translation>Không thể ghi tín hiệu quét tần số</translation>
+    </message>
+    <message>
+      <source>Could not write microphone configuration</source>
+      <translation>Không thể ghi thiết lập micrô</translation>
+    </message>
+    <message>
+      <source>Could not write temporary audio configuration</source>
+      <translation>Không thể ghi thiết lập âm thanh tạm thời</translation>
+    </message>
+    <message>
+      <source>Could not write test tone</source>
+      <translation>Không thể ghi âm thử</translation>
+    </message>
+    <message>
+      <source>Count audio endpoints</source>
+      <translation>Đếm các điểm cuối âm thanh</translation>
+    </message>
+    <message>
+      <source>Create a New Folder</source>
+      <translation>Tạo thư mục mới</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Create new folder</source>
+      <translation>Tạo thư mục mới</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Create profile</source>
+      <translation>Tạo cấu hình</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
-      <translation type="unfinished" />
+      <translation>Giữ nguyên EQ hiện tại.</translation>
     </message>
     <message>
       <source>Custom</source>
       <translation>Tùy chỉnh</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>Bản sao tùy chỉnh của %1</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>Cut</source>
+      <translation>Cắt</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Dance</source>
-      <translation type="unfinished" />
+      <translation>Nhạc dance</translation>
+    </message>
+    <message>
+      <source>Date modified</source>
+      <translation>Ngày sửa đổi</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Deep Bass</source>
-      <translation type="unfinished" />
+      <translation>Âm trầm sâu</translation>
+    </message>
+    <message>
+      <source>Delete</source>
+      <translation>Xóa</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Detail view</source>
+      <translation>Dạng chi tiết</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>Thư mục</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>Thư mục:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Discard</source>
+      <translation>Bỏ thay đổi</translation>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
-      <translation type="unfinished" />
+      <translation>Kéo các điểm trên đường cong hoặc điều chỉnh dải đã chọn bên dưới.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>Hoàn tất phát âm thanh thử nghiệm</translation>
+    </message>
+    <message>
+      <source>Drive</source>
+      <translation>Ổ đĩa</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Thiết lập trình điều khiển thất bại (mã %1). Không có cài đặt bảo mật Windows nào bị thay đổi.</translation>
+    </message>
+    <message>
+      <source>Duplicate Studio route</source>
+      <translation>Kết nối âm thanh Studio bị trùng</translation>
+      <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
     </message>
     <message>
       <source>Dynamic Boost</source>
-      <translation type="unfinished" />
+      <translation>Tăng cường động</translation>
     </message>
     <message>
       <source>Dynamics attack</source>
-      <translation type="unfinished" />
+      <translation>Thời gian attack của xử lý động</translation>
     </message>
     <message>
       <source>Dynamics ceiling</source>
-      <translation type="unfinished" />
+      <translation>Giới hạn đỉnh của xử lý động</translation>
     </message>
     <message>
       <source>Dynamics makeup</source>
-      <translation type="unfinished" />
+      <translation>Gain bù của xử lý động</translation>
     </message>
     <message>
       <source>Dynamics ratio</source>
-      <translation type="unfinished" />
+      <translation>Tỷ lệ nén của xử lý động</translation>
     </message>
     <message>
       <source>Dynamics release</source>
-      <translation type="unfinished" />
+      <translation>Thời gian release của xử lý động</translation>
     </message>
     <message>
       <source>Dynamics threshold</source>
-      <translation type="unfinished" />
+      <translation>Ngưỡng của xử lý động</translation>
+    </message>
+    <message>
+      <source>Edit / save copy</source>
+      <translation>Chỉnh sửa / lưu bản sao</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -428,136 +931,224 @@ Import into your library?</source>
     </message>
     <message>
       <source>Electronic</source>
-      <translation type="unfinished" />
+      <translation>Nhạc điện tử</translation>
+    </message>
+    <message>
+      <source>Enhancements outside supported ranges</source>
+      <translation>Các cải thiện âm thanh nằm ngoài phạm vi được hỗ trợ</translation>
+      <extracomment>Enhancement values fail the supported range validation; not frequency coverage or wireless range.</extracomment>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>Liệt kê thiết bị âm thanh</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>Liệt kê điểm cuối</translation>
     </message>
     <message>
       <source>Equalizer</source>
       <extracomment>Audio frequency-response processor, not social equality.</extracomment>
-      <translation>Bộ cân bằng âm thanh</translation>
+      <translation>Bộ cân bằng âm</translation>
     </message>
     <message>
       <source>Equalizer and configuration pages</source>
-      <translation type="unfinished" />
+      <translation>Các trang cân bằng âm và thiết lập</translation>
+    </message>
+    <message>
+      <source>Equalizer conflict</source>
+      <translation>Xung đột giữa các bộ cân bằng âm thanh</translation>
+      <extracomment>Warning title when another equalizer or processing owner conflicts with this app. It is a software routing/ownership conflict, not clipping or a bad acoustic measurement.</extracomment>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>
-      <translation type="unfinished" />
+      <translation>Đường cong cân bằng âm. Chọn hoặc kéo điểm để điều chỉnh tần số và gain.</translation>
     </message>
     <message>
       <source>Equalizer is off. Windows selected the physical output directly.</source>
-      <translation type="unfinished" />
+      <translation>Bộ cân bằng âm đã tắt. Windows đã chọn trực tiếp đầu ra vật lý.</translation>
     </message>
     <message>
       <source>Equalizer is off. Your audio uses its normal output.</source>
-      <translation type="unfinished" />
+      <translation>Bộ cân bằng âm đã tắt. Âm thanh dùng đầu ra thông thường.</translation>
     </message>
     <message>
       <source>Equalizer is still running. Use the tray icon to reopen or quit.</source>
-      <translation type="unfinished" />
+      <translation>Bộ cân bằng âm vẫn chạy. Dùng biểu tượng khay để mở lại hoặc thoát.</translation>
     </message>
     <message>
       <source>Equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Cân bằng âm tắt</translation>
     </message>
     <message>
       <source>Equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Cân bằng âm bật</translation>
     </message>
     <message>
       <source>Equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Bật hoặc tắt bộ cân bằng âm</translation>
+    </message>
+    <message>
+      <source>Equalizer sink disappeared</source>
+      <translation>Đầu ra ảo của bộ cân bằng âm đã biến mất</translation>
     </message>
     <message>
       <source>Equipment brand</source>
-      <translation type="unfinished" />
+      <translation>Thương hiệu thiết bị</translation>
     </message>
     <message>
       <source>Equipment family</source>
-      <translation type="unfinished" />
+      <translation>Dòng sản phẩm thiết bị</translation>
+    </message>
+    <message>
+      <source>Equipment kind must be speaker, microphone or amplifier.</source>
+      <translation>Loại thiết bị phải là loa, micrô hoặc ampli.</translation>
     </message>
     <message>
       <source>Equipment profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình thiết bị (*.json)</translation>
+    </message>
+    <message>
+      <source>Equipment profile editor</source>
+      <translation>Trình chỉnh sửa cấu hình thiết bị</translation>
     </message>
     <message>
       <source>Equipment profiles (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình thiết bị (*.json)</translation>
     </message>
     <message>
       <source>Equipment profiles by brand family and model</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình thiết bị theo thương hiệu, dòng sản phẩm và mẫu</translation>
+    </message>
+    <message>
+      <source>Equipment profiles — brand / family / model</source>
+      <translation>Cấu hình thiết bị — thương hiệu / dòng sản phẩm / mẫu</translation>
+    </message>
+    <message>
+      <source>Equipment resource missing.</source>
+      <translation>Thiếu tài nguyên thiết bị.</translation>
     </message>
     <message>
       <source>Equipment subtype</source>
-      <translation type="unfinished" />
+      <translation>Loại phụ của thiết bị</translation>
     </message>
     <message>
       <source>Equipment type</source>
-      <translation type="unfinished" />
+      <translation>Loại thiết bị</translation>
     </message>
     <message>
       <source>Estimated output level near band %1</source>
-      <translation type="unfinished" />
+      <translation>Mức đầu ra ước tính gần dải %1</translation>
     </message>
     <message>
       <source>Estimated output near %1: %2 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Đầu ra ước tính gần %1: %2 dBFS</translation>
     </message>
     <message>
       <source>Estimated output peak and clipping risk</source>
-      <translation type="unfinished" />
+      <translation>Đỉnh đầu ra ước tính và nguy cơ xén đỉnh</translation>
     </message>
     <message>
       <source>Estimated overall output level</source>
-      <translation type="unfinished" />
+      <translation>Mức đầu ra tổng thể ước tính</translation>
     </message>
     <message>
       <source>Estimated overall output peak: %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Đỉnh đầu ra tổng thể ước tính: %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Đỉnh ước tính %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak: EQ off</source>
-      <translation type="unfinished" />
+      <translation>Đỉnh ước tính: EQ tắt</translation>
     </message>
     <message>
       <source>Estimated peak: waiting for audio</source>
-      <translation type="unfinished" />
+      <translation>Đỉnh ước tính: chờ âm thanh</translation>
     </message>
     <message>
       <source>Estimated post-EQ level near this frequency</source>
-      <translation type="unfinished" />
+      <translation>Mức ước tính sau EQ gần tần số này</translation>
     </message>
     <message>
       <source>Estimated post-EQ output peak, including post gain and balance</source>
-      <translation type="unfinished" />
+      <translation>Đỉnh đầu ra ước tính sau EQ, bao gồm gain sau EQ và cân bằng</translation>
     </message>
     <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
-      <translation type="unfinished" />
+      <translation>Thoát SoundCurrent EQ và khôi phục âm thanh thông thường</translation>
     </message>
     <message>
       <source>Expanded test language</source>
-      <translation type="unfinished" />
+      <translation>Ngôn ngữ thử với chuỗi mở rộng</translation>
+    </message>
+    <message>
+      <source>Expected a JSON equipment profile. Import response text using the response import button.</source>
+      <translation>Cần cấu hình thiết bị JSON. Nhập văn bản đáp tuyến bằng nút nhập đáp tuyến.</translation>
+    </message>
+    <message>
+      <source>Expected frequency Hz and relative measured response dB on every data line.</source>
+      <translation>Mỗi dòng dữ liệu cần có tần số Hz và đáp tuyến đo tương đối dB.</translation>
     </message>
     <message>
       <source>Export</source>
-      <translation type="unfinished" />
+      <translation>Xuất</translation>
+    </message>
+    <message>
+      <source>Export JSON</source>
+      <translation>Xuất JSON</translation>
     </message>
     <message>
       <source>Export profile</source>
-      <translation type="unfinished" />
+      <translation>Xuất cấu hình</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
-      <translation type="unfinished" />
+      <translation>Tiếng bước chân FPS</translation>
     </message>
     <message>
       <source>Family</source>
-      <translation type="unfinished" />
+      <translation>Dòng sản phẩm</translation>
+    </message>
+    <message>
+      <source>File</source>
+      <translation>Tệp</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>File name:</source>
+      <translation>Tên tệp:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files</source>
+      <translation>Tệp</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files of type:</source>
+      <translation>Loại tệp:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Filter Q</source>
+      <translation>Q của bộ lọc</translation>
+      <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
+    </message>
+    <message>
+      <source>Filter values must be numbers.</source>
+      <translation>Giá trị bộ lọc phải là số.</translation>
+    </message>
+    <message>
+      <source>Filters exceed frequency, gain or Q limits.</source>
+      <translation>Bộ lọc vượt giới hạn tần số, gain hoặc Q.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>Tìm thư mục</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
@@ -565,113 +1156,343 @@ Import into your library?</source>
       <translation>Phẳng</translation>
     </message>
     <message>
+      <source>Floorstanding speaker</source>
+      <translation>Loa đứng sàn</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Folder</source>
+      <translation>Thư mục</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Forward</source>
+      <translation>Tiến tới</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Tần số</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
-      <translation type="unfinished" />
+      <translation>Tần số Hz</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
-      <translation type="unfinished" />
+      <translation>Cải thiện âm thanh L/R phía trước (hỗ trợ mono); các kênh khác giữ hiệu ứng Studio riêng. Đặt mức về 0 để bỏ qua từng cải thiện.</translation>
     </message>
     <message>
       <source>Gain</source>
       <extracomment>Audio signal level adjustment in dB, positive or negative. Not financial profit.</extracomment>
-      <translation>Độ lợi</translation>
+      <translation>Gain</translation>
     </message>
     <message>
       <source>Gain dB</source>
-      <translation type="unfinished" />
+      <translation>Gain dB</translation>
     </message>
     <message>
       <source>Gaming</source>
-      <translation type="unfinished" />
+      <translation>Chơi game</translation>
+    </message>
+    <message>
+      <source>Go back</source>
+      <translation>Quay lại</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go forward</source>
+      <translation>Tiến tới</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go to the parent directory</source>
+      <translation>Đi đến thư mục cha</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Headphones</source>
-      <translation type="unfinished" />
+      <translation>Tai nghe</translation>
+    </message>
+    <message>
+      <source>Help</source>
+      <translation>Trợ giúp</translation>
     </message>
     <message>
       <source>Hide advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Ẩn điều khiển nâng cao</translation>
+    </message>
+    <message>
+      <source>High-shelf filter</source>
+      <translation>Bộ lọc shelving tần số cao</translation>
+      <extracomment>Shelving EQ: raise/lower the high-frequency region. Do not translate as high-pass; it is not a cutoff filter.</extracomment>
     </message>
     <message>
       <source>Hip-Hop</source>
-      <translation type="unfinished" />
+      <translation>Hip-Hop</translation>
+    </message>
+    <message>
+      <source>Ignore</source>
+      <translation>Bỏ qua</translation>
     </message>
     <message>
       <source>Import</source>
-      <translation type="unfinished" />
+      <translation>Nhập</translation>
+    </message>
+    <message>
+      <source>Import JSON</source>
+      <translation>Nhập JSON</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
-      <translation type="unfinished" />
+      <translation>Nhập, tạo và chỉnh sửa cấu hình thiết bị</translation>
     </message>
     <message>
       <source>Import equipment profile</source>
-      <translation type="unfinished" />
+      <translation>Nhập cấu hình thiết bị</translation>
     </message>
     <message>
       <source>Import measured amplifier correction</source>
-      <translation type="unfinished" />
+      <translation>Nhập hiệu chỉnh ampli từ phép đo</translation>
     </message>
     <message>
       <source>Import measured profile</source>
-      <translation type="unfinished" />
+      <translation>Nhập cấu hình từ phép đo</translation>
     </message>
     <message>
       <source>Import profile?</source>
-      <translation type="unfinished" />
+      <translation>Nhập cấu hình?</translation>
     </message>
     <message>
       <source>Import relative measured response</source>
-      <translation type="unfinished" />
+      <translation>Nhập đáp tuyến đo tương đối</translation>
+    </message>
+    <message>
+      <source>Import response text</source>
+      <translation>Nhập văn bản đáp tuyến</translation>
+    </message>
+    <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>Đã nhập %1; SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Loa âm tường</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
-      <translation type="unfinished" />
+      <translation>Bao gồm bản phát hành xem trước</translation>
+    </message>
+    <message>
+      <source>Initialize audio capture</source>
+      <translation>Khởi tạo thu âm thanh</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>Khởi tạo ghi âm micrô</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>Khởi tạo đầu ra loa</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>Khởi tạo phát âm thanh thử nghiệm</translation>
+    </message>
+    <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Cài đặt SoundCurrent Audio bằng chức năng thiết lập trình điều khiển âm thanh, rồi mở lại ứng dụng để bật tuyến micrô.</translation>
+    </message>
+    <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Cài đặt VB-CABLE nếu chưa có (cần quản trị viên chấp thuận)</translation>
     </message>
     <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Cài gói mới đè lên phiên bản này — không cần gỡ cài đặt. Các thiết lập sẵn và cấu hình được giữ nguyên. Lưu công việc, chọn Thoát (chỉ đóng cửa sổ thì ứng dụng vẫn chạy), cài bản cập nhật rồi mở lại.</translation>
     </message>
     <message>
-      <source>Installed version: </source>
-      <translation type="unfinished" />
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>Cài đặt hoặc cập nhật %1. Bạn không cần gỡ cài đặt phiên bản cũ. Các cài đặt, thiết lập sẵn và hồ sơ thiết bị của bạn sẽ được giữ lại.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Cài đặt hoặc cập nhật trình điều khiển SoundCurrent Audio dùng chung</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Cài đặt tuyến âm thanh Windows bằng chức năng thiết lập trình điều khiển âm thanh, rồi mở lại ứng dụng.</translation>
+    </message>
+    <message>
+      <source>Installed version: %1</source>
+      <translation>Phiên bản đã cài: %1</translation>
     </message>
     <message>
       <source>Interface language</source>
       <translation>Ngôn ngữ giao diện</translation>
     </message>
     <message>
+      <source>Invalid Studio channel count</source>
+      <translation>Số kênh Studio không hợp lệ</translation>
+      <extracomment>Session channel count must be 1..256; audio channels, not stations.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio channel name or filters</source>
+      <translation>Tên kênh Studio hoặc danh sách bộ lọc không hợp lệ</translation>
+      <extracomment>Saved channel name must be a nonempty string up to 80 characters, and bands must be an array; filter list, not filter-value validation.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio profile channel count</source>
+      <translation>Số kênh trong hồ sơ Studio không hợp lệ</translation>
+      <extracomment>Saved profile channels array must be nonempty and contain at most 256 channels.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio route</source>
+      <translation>Kết nối âm thanh Studio không hợp lệ</translation>
+      <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>Tiến trình yêu cầu thiết lập âm thanh không hợp lệ.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
+    </message>
+    <message>
+      <source>Invalid calibration audio</source>
+      <translation>Âm thanh hiệu chuẩn không hợp lệ</translation>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter count</source>
+      <translation>Số tham số cải thiện âm thanh không hợp lệ</translation>
+      <extracomment>Enhancement array must contain the required number of parameters.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter type</source>
+      <translation>Kiểu dữ liệu của tham số cải thiện âm thanh không hợp lệ</translation>
+      <extracomment>Enhancement parameter must be a JSON number; do not reinterpret strings or Boolean values.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Thiết lập cải thiện âm thanh không hợp lệ</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Thiết lập bộ cân bằng âm không hợp lệ</translation>
+    </message>
+    <message>
+      <source>Invalid equipment subtype or power type</source>
+      <translation>Loại phụ hoặc kiểu cấp nguồn của thiết bị không hợp lệ</translation>
+    </message>
+    <message>
+      <source>Invalid filter type</source>
+      <translation>Loại bộ lọc không hợp lệ</translation>
+      <extracomment>Filter type numeric identifier must be a whole supported enum value; not a file type.</extracomment>
+    </message>
+    <message>
+      <source>Invalid filter.</source>
+      <translation>Bộ lọc không hợp lệ.</translation>
+    </message>
+    <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình ampli từ phép đo không hợp lệ. Cần có mẫu, nguồn đo HTTPS, điều kiện đo và 1–16 bộ lọc PK/LS/HS trong giới hạn. Xem định dạng cấu hình trong README.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Điều chỉnh micrô không hợp lệ</translation>
+    </message>
+    <message>
+      <source>Invalid or unordered measured response.</source>
+      <translation>Đáp tuyến đo không hợp lệ hoặc không theo thứ tự.</translation>
+    </message>
+    <message>
+      <source>Invalid or unordered response data.</source>
+      <translation>Dữ liệu đáp tuyến không hợp lệ hoặc không theo thứ tự.</translation>
+    </message>
+    <message>
+      <source>Invalid profile library.</source>
+      <translation>Thư viện cấu hình không hợp lệ.</translation>
+    </message>
+    <message>
+      <source>Invalid response from pactl</source>
+      <translation>Phản hồi từ pactl không hợp lệ</translation>
+    </message>
+    <message>
+      <source>Invalid response point.</source>
+      <translation>Điểm đáp tuyến không hợp lệ.</translation>
+    </message>
+    <message>
+      <source>Invalid route indexes or weight</source>
+      <translation>Chỉ số kênh hoặc hệ số trộn không hợp lệ</translation>
+      <extracomment>Audio route indices must be whole channel indices in range and mixing coefficient magnitude at most 4; weight means a signed mixing coefficient, not physical mass.</extracomment>
+    </message>
+    <message>
+      <source>Invalid route number</source>
+      <translation>Giá trị số của kết nối âm thanh không hợp lệ</translation>
+      <extracomment>A saved audio routing entry contains a nonnumeric or nonfinite number.</extracomment>
+    </message>
+    <message>
+      <source>Invalid speaker correction filter count</source>
+      <translation>Số bộ lọc hiệu chỉnh loa không hợp lệ</translation>
+    </message>
+    <message>
+      <source>Invalid speaker filter type</source>
+      <translation>Loại bộ lọc loa không hợp lệ</translation>
+    </message>
+    <message>
+      <source>Invalid speaker identity</source>
+      <translation>Thông tin nhận dạng loa không hợp lệ</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Định dạng trộn âm loa không hợp lệ</translation>
     </message>
     <message>
       <source>Jazz</source>
-      <translation type="unfinished" />
+      <translation>Jazz</translation>
+    </message>
+    <message>
+      <source>Keep current EQ</source>
+      <translation>Giữ EQ hiện tại</translation>
     </message>
     <message>
       <source>L</source>
-      <translation type="unfinished" />
+      <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
-      <translation>Ngôn ngữ và vùng</translation>
+      <translation>Thiết lập ngôn ngữ và vùng</translation>
     </message>
     <message>
       <source>Left right balance</source>
-      <translation type="unfinished" />
+      <translation>Cân bằng trái phải</translation>
     </message>
     <message>
       <source>Level indicator refresh interval</source>
-      <translation type="unfinished" />
+      <translation>Khoảng thời gian cập nhật chỉ báo mức</translation>
     </message>
     <message>
       <source>Level refresh</source>
-      <translation type="unfinished" />
+      <translation>Cập nhật mức</translation>
+    </message>
+    <message>
+      <source>Library exceeds 16 MiB.</source>
+      <translation>Thư viện vượt quá 16 MiB.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>Lấy danh sách điểm cuối âm thanh</translation>
+    </message>
+    <message>
+      <source>List of places and bookmarks</source>
+      <translation>Danh sách vị trí và dấu trang</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>List view</source>
+      <translation>Dạng danh sách</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Listening preset</source>
@@ -680,11 +1501,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Live</source>
-      <translation type="unfinished" />
+      <translation>Trực tiếp</translation>
     </message>
     <message>
       <source>Lo-Fi</source>
-      <translation type="unfinished" />
+      <translation>Lo-Fi</translation>
     </message>
     <message>
       <source>Lock EQ</source>
@@ -693,55 +1514,94 @@ Import into your library?</source>
     </message>
     <message>
       <source>Lock equalizer settings</source>
-      <translation type="unfinished" />
+      <translation>Khóa thiết lập cân bằng âm</translation>
+    </message>
+    <message>
+      <source>Look in:</source>
+      <translation>Tìm trong:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Loudness</source>
-      <translation type="unfinished" />
+      <translation>Bù loudness</translation>
+    </message>
+    <message>
+      <source>Low-shelf filter</source>
+      <translation>Bộ lọc shelving tần số thấp</translation>
+      <extracomment>Shelving EQ: raise/lower the low-frequency region. Do not translate as low-pass; it is not a cutoff filter.</extracomment>
     </message>
     <message>
       <source>Manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Nhà sản xuất</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
-      <translation type="unfinished" />
+      <translation>Đã đạt tối đa 32 cấu hình ampli.</translation>
     </message>
     <message>
       <source>Maximum stereo width</source>
-      <translation type="unfinished" />
+      <translation>Độ rộng stereo tối đa</translation>
     </message>
     <message>
       <source>Measure</source>
-      <translation type="unfinished" />
+      <translation>Đo</translation>
     </message>
     <message>
       <source>Measure speaker room and microphone response</source>
-      <translation type="unfinished" />
+      <translation>Đo đáp tuyến loa, phòng và micrô</translation>
+    </message>
+    <message>
+      <source>Measured listening position</source>
+      <translation>Vị trí nghe đã đo</translation>
+      <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
-      <translation type="unfinished" />
+      <translation>Hiệu chỉnh mẫu từ phép đo được thêm vào EQ nghe của bạn. Bạn vẫn có thể tăng âm trầm hoặc điều chỉnh bất kỳ dải nào. Áp dụng giới hạn gain thận trọng; ảnh hưởng của phòng và ampli cần phép đo toàn hệ thống.</translation>
+    </message>
+    <message>
+      <source>Measured response</source>
+      <translation>Đáp ứng đã đo</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measurement conditions are required.</source>
+      <translation>Cần có điều kiện đo.</translation>
+    </message>
+    <message>
+      <source>Measurement conditions: %1</source>
+      <translation>Điều kiện đo: %1</translation>
+      <extracomment>Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.</extracomment>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
-      <translation type="unfinished" />
+      <translation>Dữ liệu đo không đầy đủ.</translation>
     </message>
     <message>
       <source>Measurement failed. Try a higher test level or move the mic closer.</source>
-      <translation type="unfinished" />
+      <translation>Đo thất bại. Thử tăng mức âm thử hoặc đưa micrô lại gần.</translation>
+    </message>
+    <message>
+      <source>Measurement failed: %1</source>
+      <translation>Đo thất bại: %1</translation>
+      <extracomment>Calibration failure prefix. %1 is a translated owned diagnostic or preserved external technical detail; do not modify device identifiers or paths.</extracomment>
     </message>
     <message>
       <source>Measurement stopped.</source>
-      <translation type="unfinished" />
+      <translation>Đã dừng đo.</translation>
+    </message>
+    <message>
+      <source>Measurement: %1</source>
+      <translation>Phép đo: %1</translation>
+      <extracomment>Label for verbatim published speaker measurement attribution, not a new calibration run.</extracomment>
     </message>
     <message>
       <source>Metal</source>
-      <translation type="unfinished" />
+      <translation>Metal</translation>
     </message>
     <message>
       <source>Mic gain</source>
-      <translation type="unfinished" />
+      <translation>Gain micrô</translation>
     </message>
     <message>
       <source>Microphone</source>
@@ -749,39 +1609,81 @@ Import into your library?</source>
     </message>
     <message>
       <source>Microphone %1 adjustment</source>
-      <translation type="unfinished" />
+      <translation>Điều chỉnh %1 của micrô</translation>
     </message>
     <message>
       <source>Microphone EQ is off.</source>
-      <translation type="unfinished" />
+      <translation>EQ micrô đã tắt.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>Cầu nối âm thanh micrô không khởi động được</translation>
+    </message>
+    <message>
+      <source>Microphone capture stopped during playback</source>
+      <translation>Thu micrô đã dừng trong khi phát</translation>
+    </message>
+    <message>
+      <source>Microphone capture stopped during the test</source>
+      <translation>Thu micrô đã dừng trong khi thử</translation>
     </message>
     <message>
       <source>Microphone error: %1</source>
-      <translation type="unfinished" />
+      <translation>Lỗi micrô: %1</translation>
+    </message>
+    <message>
+      <source>Microphone filter did not appear</source>
+      <translation>Bộ lọc micrô không xuất hiện</translation>
+    </message>
+    <message>
+      <source>Microphone filter disappeared</source>
+      <translation>Bộ lọc micrô đã biến mất</translation>
     </message>
     <message>
       <source>Microphone gain adjustment</source>
-      <translation type="unfinished" />
+      <translation>Điều chỉnh gain micrô</translation>
     </message>
     <message>
       <source>Microphone input device</source>
-      <translation type="unfinished" />
+      <translation>Thiết bị đầu vào micrô</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Quá trình xử lý bản ghi micrô bị đình trệ</translation>
+    </message>
+    <message>
+      <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
+      <translation>Bản thu micrô bị xén đỉnh. Giảm gain hoặc mức tăng cường micrô rồi đo lại.</translation>
     </message>
     <message>
       <source>Microphone route</source>
-      <translation type="unfinished" />
+      <translation>Tuyến micrô</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Đã hết thời gian chờ khởi động micrô</translation>
     </message>
     <message>
       <source>Model</source>
-      <translation type="unfinished" />
+      <translation>Mẫu</translation>
     </message>
     <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
-      <translation type="unfinished" />
+      <translation>Di chuyển về L hoặc R để giảm mức kênh đối diện; ở giữa giữ cả hai kênh ở mức đầy đủ</translation>
     </message>
     <message>
       <source>Movies</source>
-      <translation type="unfinished" />
+      <translation>Phim</translation>
+    </message>
+    <message>
+      <source>My equipment</source>
+      <translation>Thiết bị của tôi</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>Name</source>
+      <translation>Tên</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Natural mic EQ</source>
@@ -789,48 +1691,66 @@ Import into your library?</source>
       <translation>EQ micrô tự nhiên</translation>
     </message>
     <message>
-      <source>Natural mic EQ on · </source>
-      <translation type="unfinished" />
+      <source>Natural mic EQ on · %1</source>
+      <translation>EQ micrô tự nhiên bật · %1</translation>
     </message>
     <message>
       <source>Natural microphone equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Bật hoặc tắt cân bằng âm micrô tự nhiên</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>Thư mục mới</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>Hồ sơ mới</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
-      <translation type="unfinished" />
+      <translation>Nghe ban đêm</translation>
+    </message>
+    <message>
+      <source>No</source>
+      <translation>Không</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>Chưa chọn hiệu chỉnh thiết bị đã nhập.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>Chưa chọn hiệu chỉnh ampli từ phép đo. Thông số dải tần quảng cáo không đủ để suy ra đường cong hiệu chỉnh.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>Không có micrô được kết nối.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>Chưa chọn hiệu chỉnh mẫu. EQ nghe của bạn hoạt động bình thường.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>Không tìm thấy bản phát hành mới hơn đã công bố. Các trình cài đặt đã tải xuống cũng được kiểm tra.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>Không có thiết bị đầu ra khả dụng.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>Không có thiết bị đầu ra được kết nối.</translation>
+    </message>
+    <message>
+      <source>No to All</source>
+      <translation>Không cho tất cả</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>Không — dùng EQ của tôi</translation>
     </message>
     <message>
       <source>Number and date format</source>
@@ -838,136 +1758,277 @@ Import into your library?</source>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>Số dải cân bằng âm</translation>
+    </message>
+    <message>
+      <source>OK</source>
+      <translation>OK</translation>
+    </message>
+    <message>
+      <source>Omnidirectional speaker</source>
+      <translation>Loa đa hướng</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>Bật · Đang phát qua %1</translation>
+    </message>
+    <message>
+      <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
+      <translation>Chỉ một ứng dụng SoundCurrent khởi động khi đăng nhập. Bật tùy chọn này sẽ thay thế thiết lập khởi động của ứng dụng kia. Ứng dụng khởi động ở nền nếu có biểu tượng khay.</translation>
+    </message>
+    <message>
+      <source>Open</source>
+      <translation>Mở</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>Mở bảng điều khiển VB-Audio để chỉnh độ trễ cáp và tần số lấy mẫu nội bộ. Thay đổi khi âm thanh đang chạy có thể làm gián đoạn phát âm thanh.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>Mở bảng điều khiển VB-CABLE</translation>
+    </message>
+    <message>
+      <source>Open audio stream</source>
+      <translation>Mở luồng âm thanh</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>Mở luồng thu âm của cáp ảo</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>Mở điểm cuối ghi âm của cáp ảo</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>Mở điểm cuối</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>Mở giao diện âm lượng của điểm cuối</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>Mở giao diện đọc micrô</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>Mở trang tải bản phát hành</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>Mở điểm cuối loa</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>Mở luồng phát của loa</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>Mở giao diện ghi dữ liệu phát thử nghiệm</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>Mở thư mục cập nhật</translation>
+    </message>
+    <message>
+      <source>Opening %1 setup...</source>
+      <translation>Đang mở trình cài đặt %1...</translation>
+      <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>Cam: đáp tuyến đo nếu có. Xanh ngọc: hiệu chỉnh ở 48 kHz. Kéo các điểm điều khiển xanh ngọc hoặc chỉnh bảng. Khi lưu, dữ liệu tham chiếu được giữ nguyên và một bản sao tùy chỉnh được tạo.</translation>
+    </message>
+    <message>
+      <source>Outdoor speaker</source>
+      <translation>Loa ngoài trời</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
     </message>
     <message>
       <source>Output device</source>
       <translation>Thiết bị đầu ra</translation>
     </message>
     <message>
+      <source>Output device is no longer available</source>
+      <translation>Thiết bị đầu ra không còn khả dụng</translation>
+    </message>
+    <message>
+      <source>Output has no volume channels</source>
+      <translation>Đầu ra không có kênh âm lượng</translation>
+    </message>
+    <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>Đầu ra tổng thể</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>Loa dạng tấm</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
+    </message>
+    <message>
+      <source>Parent directory</source>
+      <translation>Thư mục cha</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Paste</source>
+      <translation>Dán</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>Tạm dừng xử lý và mở thiết lập âm thanh. Ứng dụng vẫn mở và báo kết quả. Khởi động lại Windows sau khi cài driver.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>Dấu đỉnh</translation>
+    </message>
+    <message>
+      <source>Peaking filter</source>
+      <translation>Bộ lọc hình chuông</translation>
+      <extracomment>Bell-shaped parametric EQ filter centered at its frequency; this is not a peak/clipping indicator.</extracomment>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>Piano</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>Phát âm thử nhỏ và xem trước thay đổi EQ phát âm thanh được đề xuất</translation>
     </message>
     <message>
       <source>Playback</source>
-      <translation>Phát lại</translation>
+      <translation>Phát âm thanh</translation>
+    </message>
+    <message>
+      <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
+      <translation>Đang phát quét tần số lôgarit từ 20 Hz đến 25 kHz</translation>
+      <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>Đang phát âm thử nhỏ. Dừng nếu thấy khó chịu.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>Kết nối micrô để chọn cấu hình micrô</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>Podcast</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>Pop</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>Loa PA di động</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
       <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
-      <translation>Độ lợi đầu ra</translation>
+      <translation>Gain sau EQ</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>Gain sau cân bằng âm</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>Giá trị gain sau EQ theo decibel</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>Tên thiết lập sẵn:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>Ngăn thay đổi thiết lập sẵn, dải EQ, gain sau EQ và cân bằng</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>Chi tiết cấu hình</translation>
+    </message>
+    <message>
+      <source>Profile exceeds the 1 MiB limit.</source>
+      <translation>Cấu hình vượt giới hạn 1 MiB.</translation>
+    </message>
+    <message>
+      <source>Profile library exceeds 16 MiB.</source>
+      <translation>Thư viện cấu hình vượt quá 16 MiB.</translation>
+    </message>
+    <message>
+      <source>Profile metadata is too long.</source>
+      <translation>Siêu dữ liệu cấu hình quá dài.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình phải đọc được và nhỏ hơn 64 KiB.</translation>
+    </message>
+    <message>
+      <source>Profiles need 1–16 correction filters.</source>
+      <translation>Cấu hình cần 1–16 bộ lọc hiệu chỉnh.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>Nguồn đo đã công bố: &lt;a href="https://www.spinorama.org/"&gt;Phép đo loa / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Hiệu chuẩn Dayton theo số sê-ri&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;Hiệu chuẩn miniDSP theo số sê-ri&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Đồ thị micrô Neumann&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;Đồ thị đáp tuyến AT2020&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Phép đo ampli&lt;/a&gt;</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <source>Published profiles need an HTTPS measurement source.</source>
+      <translation>Cấu hình công bố cần nguồn đo HTTPS.</translation>
+    </message>
+    <message>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Không thể kiểm tra các bản phát hành đã công bố. Dùng Mở trang tải bản phát hành; trình cài đặt đã tải xuống vẫn được phát hiện trên máy.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>Đáp tuyến công bố và đường cong hiệu chỉnh có thể chỉnh sửa</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>Có bản cập nhật %1 đã công bố. Mở trang tải bản phát hành, cài đè lên phiên bản này rồi mở lại.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>Âm trầm mạnh</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>Quét logarit âm lượng nhỏ</translation>
+    </message>
+    <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>Thoát %1 trước khi gỡ cài đặt.</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>Thoát %1 trước khi cập nhật. Đóng cửa sổ vẫn để ứng dụng chạy. Không cần gỡ cài đặt.</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>Thoát SoundCurrent EQ</translation>
+    </message>
+    <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>Thoát tất cả ứng dụng SoundCurrent đang chạy trước khi thay đổi trình điều khiển dùng chung. Khi gỡ một ứng dụng, trình điều khiển được giữ lại nếu ứng dụng kia vẫn sử dụng nó.</translation>
+    </message>
+    <message>
+      <source>Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.</source>
+      <translation>Thoát mọi bộ cân bằng âm thanh đang chạy trước khi cài đặt trình điều khiển. Khi gỡ ứng dụng SoundCurrent cuối cùng, trình gỡ cài đặt của ứng dụng sẽ đưa ra tùy chọn gỡ VB-CABLE. Phần mềm khác cũng có thể cần cáp này. Cáp A/B bổ sung không được kèm theo.</translation>
+      <extracomment>Shared virtual cable notice: quit exits the equalizer, not just closes UI. Cable removal is offered when the other SoundCurrent app is absent; user confirmation remains required, silent app removal does not remove cable. A/B refers to separate extra virtual cables, not physical wires. Other software may depend on shared VB-CABLE. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Quit app</source>
@@ -975,32 +2036,191 @@ Import into your library?</source>
       <translation>Thoát ứng dụng</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Đóng các ứng dụng SoundCurrent đang chạy và đợi quá trình khôi phục âm thanh hoàn tất trước khi thay đổi trình điều khiển âm thanh dùng chung.</translation>
+    </message>
+    <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Trước khi thay đổi VB-CABLE, hãy đóng các thành phần sau: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>R</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>R&amp;B</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint</source>
+      <translation>Đọc điểm cuối âm thanh</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>Đọc mã định danh điểm cuối âm thanh</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>Đọc tên điểm cuối âm thanh</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>Đọc thuộc tính điểm cuối âm thanh</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>Đọc âm thanh từ cáp ảo</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>Lấy giao diện thu âm của cáp ảo</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>Đọc kích thước gói của cáp ảo</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Đọc mã định danh đầu ra mặc định</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Đọc điểm cuối đầu ra mặc định</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>Đọc định dạng trộn của micrô</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>Đọc kích thước gói micrô</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>Đọc giá trị mẫu micrô</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>Đọc kích thước gói tiếp theo của cáp ảo</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>Đọc gói micrô tiếp theo</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>Đọc mức lấp đầy bộ đệm đầu ra</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>Đọc mức tín hiệu đầu ra</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>Đọc trạng thái tắt tiếng đầu ra</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>Đọc mức tín hiệu loa</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>Đọc định dạng trộn của loa</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>Đọc trạng thái tắt tiếng loa</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>Lấy giao diện phát của loa</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>Đọc âm lượng loa</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>Đọc số khung âm thanh trong bộ đệm phát thử nghiệm</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>Đọc định dạng trộn của đầu ra ảo</translation>
+    </message>
+    <message>
+      <source>Recent places</source>
+      <translation>Vị trí gần đây</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Redo</source>
+      <translation>Làm lại</translation>
+      <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
       <source>Refresh devices</source>
       <translation>Làm mới thiết bị</translation>
     </message>
     <message>
+      <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
+
+%1</source>
+      <translation>Phép đo tương đối bao gồm đáp tuyến loa, phòng và micrô. Thay đổi đề xuất được giới hạn ở 3 dB cho mỗi tần số đã đo.
+
+%1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>Giải phóng gói âm thanh của cáp ảo</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>Giải phóng gói micrô</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>Giải phóng bộ đệm loa</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>Giải phóng bộ đệm phát thử nghiệm</translation>
+    </message>
+    <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>Nhắc tôi khi có cập nhật hoặc cần khởi động lại</translation>
+    </message>
+    <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Gỡ VB-CABLE?</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>Xóa bộ lọc đã chọn</translation>
+    </message>
+    <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>Gỡ cả trình điều khiển VB-CABLE dùng chung? Người dùng khác, ứng dụng ghi âm hoặc công cụ giọng nói có thể cần nó. Xác nhận để mở chương trình gỡ chính thức, rồi nhấp vào Remove Driver. Từ chối để giữ cáp và chỉ gỡ SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>Rename</source>
+      <translation>Đổi tên</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Sửa chữa bản cài đặt VB-CABLE không đầy đủ</translation>
+    </message>
+    <message>
+      <source>Reset</source>
+      <translation>Đặt lại</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>Đặt lại cải thiện âm thanh</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>Đặt lại âm sắc micrô</translation>
     </message>
     <message>
       <source>Reset to flat</source>
@@ -1009,59 +2229,122 @@ Import into your library?</source>
     </message>
     <message>
       <source>Response data (*.txt *.csv *.frd *.cal)</source>
-      <translation type="unfinished" />
+      <translation>Dữ liệu đáp tuyến (*.txt *.csv *.frd *.cal)</translation>
+    </message>
+    <message>
+      <source>Response exceeds 4096 points.</source>
+      <translation>Đáp tuyến vượt quá 4096 điểm.</translation>
+    </message>
+    <message>
+      <source>Response frequencies must increase, with finite bounded values.</source>
+      <translation>Tần số đáp tuyến phải tăng dần, với các giá trị hữu hạn trong giới hạn.</translation>
+    </message>
+    <message>
+      <source>Response has no usable audio range.</source>
+      <translation>Đáp tuyến không có dải âm thanh có thể sử dụng.</translation>
     </message>
     <message>
       <source>Response import</source>
-      <translation type="unfinished" />
+      <translation>Nhập đáp tuyến</translation>
+    </message>
+    <message>
+      <source>Response needs 2–4096 measured points.</source>
+      <translation>Đáp tuyến cần 2–4096 điểm đo.</translation>
+    </message>
+    <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Khởi động lại Windows trước khi sử dụng VB-CABLE. Thiết lập âm thanh đã hoàn tất, nhưng trình điều khiển và các thiết lập của nó yêu cầu khởi động lại hệ thống.</translation>
+    </message>
+    <message>
+      <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
+      <translation>Khởi động lại Windows trước khi sử dụng bộ cân bằng âm hoặc cài đặt VB-CABLE. Thay đổi trình điều khiển âm thanh cần khởi động lại hệ thống.</translation>
+    </message>
+    <message>
+      <source>Restore Defaults</source>
+      <translation>Khôi phục mặc định</translation>
     </message>
     <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
-      <translation type="unfinished" />
+      <translation>Khôi phục thiết lập EQ trước đó (Ctrl+Z)</translation>
+    </message>
+    <message>
+      <source>Retry</source>
+      <translation>Thử lại</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
-      <translation type="unfinished" />
+      <translation>Ngôn ngữ thử nghiệm từ phải sang trái</translation>
     </message>
     <message>
       <source>Rock</source>
-      <translation type="unfinished" />
+      <translation>Rock</translation>
+    </message>
+    <message>
+      <source>Save</source>
+      <translation>Lưu</translation>
+    </message>
+    <message>
+      <source>Save All</source>
+      <translation>Lưu tất cả</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
-      <translation type="unfinished" />
+      <translation>Lưu thiết lập sẵn EQ</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>Lưu thành</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>
-      <translation type="unfinished" />
+      <translation>Lưu cấu hình đã sửa đổi?</translation>
     </message>
     <message>
       <source>Save preset</source>
-      <translation>Lưu cài đặt sẵn</translation>
+      <translation>Lưu thiết lập sẵn</translation>
     </message>
     <message>
       <source>Save profile</source>
-      <translation type="unfinished" />
+      <translation>Lưu cấu hình</translation>
+    </message>
+    <message>
+      <source>Save system response profile</source>
+      <translation>Lưu cấu hình đáp tuyến hệ thống</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>Lưu công việc và thoát ứng dụng đang chạy trước khi tiếp tục. Đóng cửa sổ vẫn để ứng dụng chạy trong nền.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
-      <translation type="unfinished" />
+      <translation>Đã lưu thiết lập sẵn “%1”.</translation>
     </message>
     <message>
       <source>Search brand, family, model or measurement conditions</source>
-      <translation type="unfinished" />
+      <translation>Tìm thương hiệu, dòng sản phẩm, mẫu hoặc điều kiện đo</translation>
     </message>
     <message>
       <source>Second virtual cable for microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Cáp ảo thứ hai cho EQ micrô</translation>
+    </message>
+    <message>
+      <source>Select all</source>
+      <translation>Chọn tất cả</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Select band %1</source>
-      <translation type="unfinished" />
+      <translation>Chọn dải %1</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
-      <translation type="unfinished" />
+      <translation>Chọn dải này để chỉnh tần số, gain và Q</translation>
+    </message>
+    <message>
+      <source>Selected audio device is unavailable</source>
+      <translation>Thiết bị âm thanh đã chọn không khả dụng</translation>
     </message>
     <message>
       <source>Selected band</source>
@@ -1070,159 +2353,429 @@ Import into your library?</source>
     </message>
     <message>
       <source>Selected band filter Q</source>
-      <translation type="unfinished" />
+      <translation>Q của bộ lọc dải đã chọn</translation>
     </message>
     <message>
       <source>Selected band frequency</source>
-      <translation type="unfinished" />
+      <translation>Tần số dải đã chọn</translation>
     </message>
     <message>
       <source>Selected band gain</source>
-      <translation type="unfinished" />
+      <translation>Gain dải đã chọn</translation>
+    </message>
+    <message>
+      <source>Selected output device is no longer available</source>
+      <translation>Thiết bị đầu ra đã chọn không còn khả dụng</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
-      <translation type="unfinished" />
+      <translation>Đầu ra đã chọn đã bị rút. Đã chuyển sang chọn đầu ra tự động.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>Loa đã chọn bị ngắt kết nối</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
-      <translation type="unfinished" />
+      <translation>Các âm thử nhẹ riêng biệt</translation>
+    </message>
+    <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>Đặt mức loa tối đa cho bộ cân bằng âm thanh</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>Đặt mức tín hiệu đầu ra</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>Đặt trạng thái tắt tiếng đầu ra</translation>
+    </message>
+    <message>
+      <source>Set up %1 for %2.</source>
+      <translation>Thiết lập %1 cho %2.</translation>
+    </message>
+    <message>
+      <source>Setting up the shared %1 driver...</source>
+      <translation>Đang thiết lập trình điều khiển %1 dùng chung...</translation>
+      <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Cài đặt &amp;&amp; hiệu chuẩn</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>Trình cài đặt không thể kiểm tra trình điều khiển. Bạn có thể thử lại bằng %1 trong ứng dụng hoặc menu Bắt đầu.</translation>
+    </message>
+    <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>Trình cài đặt mở chương trình cài đặt có chữ ký số của VB-Audio. Nhấp vào Install Driver, rồi khởi động lại Windows trước khi dùng bộ cân bằng âm thanh hoặc cài đặt VB-CABLE.</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
+      <translation>EQ chung và EQ của kênh vượt quá tổng cộng 64 bộ lọc; hãy xóa bớt bộ lọc của kênh</translation>
+      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+    </message>
+    <message>
+      <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
+      <translation>Việc gỡ trình điều khiển âm thanh dùng chung chưa hoàn tất. Ứng dụng này được giữ lại để bạn có thể thử lại. Thoát mọi ứng dụng SoundCurrent đang chạy, rồi thử gỡ cài đặt lại.</translation>
+      <extracomment>Native uninstall nonzero failure (excluding restart code 3010) aborts before app payload deletion so user can retry. Shared audio driver means EQ/Studio ownership, not network. Quit any running SoundCurrent apps, not necessarily both products; fully exit rather than hide UI. SoundCurrent is invariant. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Shortcut</source>
+      <translation>Lối tắt</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
-      <translation type="unfinished" />
+      <translation>Khoảng thời gian ngắn hơn cập nhật mức thường xuyên hơn và dùng nhiều CPU hơn; tốc độ thực tế có thể bị giới hạn bởi việc cung cấp âm thanh</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
-      <translation type="unfinished" />
+      <translation>Hiển thị đường giữ đỉnh giảm dần trên mỗi mức tần số</translation>
     </message>
     <message>
       <source>Show advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Hiển thị điều khiển nâng cao</translation>
+    </message>
+    <message>
+      <source>Show date modified</source>
+      <translation>Hiện ngày sửa đổi</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show hidden files</source>
+      <translation>Hiện tệp ẩn</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>
-      <translation type="unfinished" />
+      <translation>Hiển thị dấu đỉnh trên các mức tần số</translation>
+    </message>
+    <message>
+      <source>Show size</source>
+      <translation>Hiện kích thước</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show type</source>
+      <translation>Hiện loại</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Sidebar</source>
+      <translation>Thanh bên</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>Kích thước</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>Xác định kích thước bộ đệm thu âm</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>Xác định kích thước bộ đệm đầu ra</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>Xác định kích thước bộ đệm phát thử nghiệm</translation>
     </message>
     <message>
       <source>Small Speakers</source>
-      <translation type="unfinished" />
+      <translation>Loa nhỏ</translation>
     </message>
     <message>
       <source>Soft Treble</source>
-      <translation type="unfinished" />
+      <translation>Âm cao dịu</translation>
     </message>
     <message>
       <source>Sound enhancements</source>
       <translation>Cải thiện âm thanh</translation>
     </message>
     <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio đã có sẵn. Nếu thiết lập trình điều khiển vẫn được bật, trình cài đặt sẽ đăng ký ứng dụng này và giữ trình điều khiển dùng chung cho ứng dụng SoundCurrent còn lại.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio đã sẵn sàng. Mở ứng dụng và chọn loa hoặc tai nghe.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
+      <translation>SoundCurrent Audio cung cấp tuyến micrô riêng khi được cài đặt. Với VB-CABLE, EQ micrô và loa đồng thời cần một cáp thứ hai (A hoặc B) được cài đặt riêng. Chọn cáp đó trong ứng dụng ghi âm. Chế độ tự động ưu tiên tuyến SoundCurrent khi có sẵn.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio định tuyến âm thanh phát qua ứng dụng. Chọn loa hoặc tai nghe vật lý của bạn trong ứng dụng. Trình điều khiển phần cứng của chúng được giữ nguyên.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.</source>
+      <translation>Phép đo SoundCurrent bằng quét tần số hoặc âm thử; so với trung vị; bỏ qua EQ micrô. Có thể bao gồm ảnh hưởng của EQ phát lại.</translation>
+      <extracomment>New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.</extracomment>
+    </message>
+    <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>Đầu ra ảo SoundCurrent yêu cầu âm thanh stereo 48 kHz ở định dạng dấu phẩy động</translation>
+    </message>
+    <message>
+      <source>Soundbar</source>
+      <translation>Loa thanh</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
+    </message>
+    <message>
       <source>Source</source>
-      <translation type="unfinished" />
+      <translation>Nguồn</translation>
+    </message>
+    <message>
+      <source>Source: %1</source>
+      <translation>Nguồn: %1</translation>
+      <extracomment>Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.</extracomment>
+    </message>
+    <message>
+      <source>Speaker</source>
+      <translation>Loa</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
-      <translation type="unfinished" />
+      <translation>Hiệu chuẩn loa &amp;&amp; phòng</translation>
     </message>
     <message>
       <source>Speaker + room check</source>
-      <translation type="unfinished" />
+      <translation>Kiểm tra loa + phòng</translation>
+    </message>
+    <message>
+      <source>Speaker and room measurement</source>
+      <translation>Đo loa và phòng</translation>
+    </message>
+    <message>
+      <source>Speaker filter is outside conservative bounds</source>
+      <translation>Bộ lọc loa nằm ngoài giới hạn thận trọng</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Nhà sản xuất loa</translation>
     </message>
     <message>
       <source>Speaker model correction</source>
-      <translation type="unfinished" />
+      <translation>Hiệu chỉnh theo mẫu loa</translation>
     </message>
     <message>
       <source>Speaker model profile</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình mẫu loa</translation>
     </message>
     <message>
       <source>Speaker profile details</source>
-      <translation type="unfinished" />
+      <translation>Chi tiết cấu hình loa</translation>
+    </message>
+    <message>
+      <source>Speaker profile resource is missing</source>
+      <translation>Thiếu tài nguyên cấu hình loa</translation>
     </message>
     <message>
       <source>Speaker type</source>
-      <translation type="unfinished" />
+      <translation>Loại loa</translation>
+    </message>
+    <message>
+      <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
+      <translation>Spinorama AutoEQ: độ lợi hiệu chỉnh được giới hạn ở %1 và Q ở %2. Các mức tăng dưới %3 được bỏ qua. Thiết lập nghe của bạn được cộng riêng.</translation>
+      <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
+    </message>
+    <message>
+      <source>Start cable capture</source>
+      <translation>Bắt đầu thu âm thanh từ cáp ảo</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>Bắt đầu ghi âm micrô</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>Bắt đầu ở mức nhỏ. Chỉ tăng nếu micrô không thu được âm thử.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>Bắt đầu đầu ra loa</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>Bắt đầu phát âm thanh thử nghiệm</translation>
+    </message>
+    <message>
+      <source>Start when I sign in</source>
+      <translation>Khởi động khi tôi đăng nhập</translation>
+    </message>
+    <message>
+      <source>Startup</source>
+      <translation>Khởi động</translation>
+    </message>
+    <message>
+      <source>Step down</source>
+      <translation>Giảm giá trị</translation>
+      <extracomment>Decrease the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Step up</source>
+      <translation>Tăng giá trị</translation>
+      <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Stop the microphone calibration before changing the audio driver.</source>
+      <translation>Dừng hiệu chuẩn micrô trước khi thay đổi trình điều khiển âm thanh.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>Dừng âm thử</translation>
+    </message>
+    <message>
+      <source>Studio profile has an invalid boolean field</source>
+      <translation>Hồ sơ Studio có trường luận lý không hợp lệ</translation>
+      <extracomment>Saved Studio setup requires a JSON true/false field. Wrong type or missing value is rejected; do not confuse this with an audio level or textual yes/no preference.</extracomment>
+    </message>
+    <message>
+      <source>Studio profile has an invalid numeric field</source>
+      <translation>Hồ sơ Studio có trường số không hợp lệ</translation>
+      <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>Đã áp dụng EQ đề xuất. Dùng Lưu thiết lập sẵn để giữ lại.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>Các thay đổi đề xuất cho EQ phát âm thanh</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>Âm thanh vòm</translation>
+    </message>
+    <message>
+      <source>Surround speaker</source>
+      <translation>Loa vòm</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>Đã mở trình sửa cấu hình đáp tuyến hệ thống. Các cấu hình đã lưu có trong thư viện thiết bị.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>Lời thoại TV</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>Xanh ngọc: EQ hiệu chỉnh. Cam: đáp tuyến đo được, nếu có. Thang dọc là dB tương đối.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>Mức thử</translation>
+    </message>
+    <message>
+      <source>Test level is outside the allowed range</source>
+      <translation>Mức thử nằm ngoài phạm vi cho phép</translation>
+    </message>
+    <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>Thiếu gói VB-CABLE. Hãy sửa chữa bản cài đặt SoundCurrent.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>Bộ xử lý âm thanh đã dừng đột ngột.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Thiếu trợ giúp kiểm tra trạng thái sẵn sàng của âm thanh. Hãy sửa chữa bản cài đặt SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The custom library holds up to 256 profiles.</source>
+      <translation>Thư viện tùy chỉnh chứa tối đa 256 cấu hình.</translation>
+    </message>
+    <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>Trình quản lý trình điều khiển chưa được ký. Hãy cài đặt bản phát hành SoundCurrent đã được ký.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Gói trình điều khiển không đầy đủ hoặc Windows không thể xác minh chữ ký của gói.</translation>
+    </message>
+    <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>Bản cài đặt VB-CABLE không đầy đủ đã được gỡ. Khởi động lại Windows, mở lại %1, nhấp vào Install Driver, rồi khởi động lại một lần nữa.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>Thiếu chương trình hỗ trợ thiết lập giữ nguyên định tuyến âm thanh.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>Thiếu trình quản lý trình điều khiển dùng chung. Hãy sửa chữa bản cài đặt ứng dụng.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>Phản hồi cập nhật không hợp lệ. Không có trình cài đặt nào được mở.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>Thao tác này nhập ĐÁP TUYẾN đo được, không phải gain EQ đã đảo ngược. Xác nhận loại thiết bị. SPL tuyệt đối cần được chuẩn hóa trước khi nhập.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>Cấu hình này đã thay đổi. Lưu một bản sao tùy chỉnh trước khi rời đi?</translation>
+    </message>
+    <message>
+      <source>Timed out waiting for the equalizer sink: %1</source>
+      <translation>Đã hết thời gian chờ đầu ra ảo của bộ cân bằng âm: %1</translation>
+    </message>
+    <message>
+      <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
+      <translation>Quá ít âm thử đến được micrô. Di chuyển micrô lại gần hoặc tăng nhẹ mức thử.</translation>
+    </message>
+    <message>
+      <source>Too many Studio channel filters</source>
+      <translation>Quá nhiều bộ lọc trên một kênh Studio</translation>
+      <extracomment>Per-channel EQ filter count exceeds 64; unchanged processing bound.</extracomment>
+    </message>
+    <message>
+      <source>Too many Studio routes</source>
+      <translation>Quá nhiều kết nối âm thanh Studio</translation>
+      <extracomment>Saved audio routing edge count exceeds channel-count squared.</extracomment>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>Loa PA lưu diễn</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>Mức độ bao phủ bản dịch: %1 trên %2 thông điệp. Các bản dịch còn thiếu dùng tiếng Anh. Gói ngôn ngữ chưa được xác minh và đang chờ người bản ngữ rà soát. Dùng Thoát rồi mở lại để áp dụng thay đổi.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>Chi tiết âm cao</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Tắt bộ cân bằng âm</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Bật bộ cân bằng âm</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Loại</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Thiết bị chưa phân loại</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>
@@ -1231,27 +2784,74 @@ Import into your library?</source>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>Hoàn tác thay đổi bộ cân bằng âm gần nhất</translation>
+    </message>
+    <message>
+      <source>Uninstall</source>
+      <translation>Gỡ cài đặt</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
+      <source>Unknown</source>
+      <translation>Không xác định</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>Mở khóa EQ</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>Mở khóa điều khiển và hoàn tất phép đo trước khi sửa cấu hình.</translation>
+    </message>
+    <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>Bật tiếng loa cho bộ cân bằng âm thanh</translation>
+    </message>
+    <message>
+      <source>Unsupported Studio profile schema</source>
+      <translation>Định dạng hồ sơ Studio không được hỗ trợ</translation>
+      <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
+    </message>
+    <message>
+      <source>Unsupported equipment profile schema (expected 2).</source>
+      <translation>Không hỗ trợ phiên bản cấu trúc cấu hình thiết bị (yêu cầu 2).</translation>
+    </message>
+    <message>
+      <source>Unsupported filter type.</source>
+      <translation>Không hỗ trợ loại bộ lọc.</translation>
+    </message>
+    <message>
+      <source>Unsupported microphone channel layout</source>
+      <translation>Không hỗ trợ bố trí kênh micrô</translation>
+    </message>
+    <message>
+      <source>Unsupported recording format</source>
+      <translation>Không hỗ trợ định dạng ghi âm</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Không hỗ trợ bố trí kênh loa hoặc tần số lấy mẫu</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Không hỗ trợ định dạng mẫu trộn âm loa</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker profile schema</source>
+      <translation>Không hỗ trợ phiên bản cấu trúc cấu hình loa</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Đã tải bản cập nhật %1: %2. Thoát, cài đè lên ứng dụng hiện có, rồi mở lại.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>Thư mục tải bản cập nhật</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>Dùng phòng yên tĩnh. Đo loa, phòng và micrô cùng nhau; kết quả bao gồm đáp tuyến micrô.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1260,35 +2860,153 @@ Import into your library?</source>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>Dùng vùng hệ thống</translation>
+      <translation>Dùng thiết lập vùng của hệ thống</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Đáp ứng tần số tương đối do người dùng nhập; hãy ghi hướng / số sê-ri của micrô hoặc điều kiện đo loa trước khi sử dụng.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>Hiệu chỉnh do người dùng tạo; hãy nhập thiết bị và điều kiện đo.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>Hồ sơ do người dùng tạo</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>VB-CABLE có bản ghi trình điều khiển nhưng không có điểm cuối âm thanh dùng được. Trình cài đặt cung cấp tùy chọn sửa chữa: gỡ trình điều khiển, khởi động lại, cài đặt lại rồi khởi động lại lần nữa.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>VB-CABLE đã được cài đặt. Nếu vừa được cài đặt hoặc cập nhật, hãy khởi động lại Windows trước khi sử dụng bộ cân bằng âm thanh hoặc cài đặt VB-CABLE. Nếu không, hãy chọn loa trong SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE đã có sẵn và sẽ được dùng lại. SoundCurrent khôi phục đầu ra thông thường khi bị tắt hoặc khi bạn dùng %1.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE chưa được cài đặt. Mở "%1", rồi khởi động lại Windows trước khi mở cài đặt cáp.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>Không có VB-CABLE. Khởi động lại Windows nếu được yêu cầu, rồi thử thiết lập âm thanh lại.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>VB-CABLE vẫn còn. Nếu quá trình gỡ yêu cầu khởi động lại, hãy khởi động lại Windows và thử gỡ SoundCurrent lần nữa; nếu không, hãy hoàn tất Remove Driver trong chương trình thiết lập chính thức.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>Tổng kiểm tra của gói VB-CABLE không khớp. Hãy sửa chữa bản cài đặt.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE removal did not finish. This app was kept so you can retry.</source>
+      <translation>Việc gỡ VB-CABLE chưa hoàn tất. Ứng dụng này được giữ lại để bạn có thể thử lại.</translation>
+      <extracomment>Cable uninstall nonzero failure excluding restart code 3010 aborts before app payload deletion. App retained for retry. NSIS caller appends newline and actual helper output as $1; never put runtime variables in translations. VB-CABLE invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.</source>
+      <translation>VB-CABLE định tuyến âm thanh phát qua ứng dụng. Chọn loa trong SoundCurrent. VB-CABLE là phần mềm của VB-Audio được hỗ trợ bằng đóng góp tự nguyện: https://vb-cable.com — hoan nghênh các khoản đóng góp.</translation>
+      <extracomment>Cable audio page routing and donation notice. Software routes system playback through SoundCurrent to physical output selected inside app. Donationware means supported by voluntary donations, not mandatory payment. Preserve VB-CABLE twice, SoundCurrent, VB-Audio and exact donation URL. Contextual AI review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>Cài đặt VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>Không thể mở cài đặt VB-CABLE. Khởi động lại Windows nếu trình điều khiển vừa được cài đặt hoặc cập nhật, rồi thử lại.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>Thiết lập VB-CABLE đã hoàn tất. Khởi động lại Windows ngay trước khi sử dụng bộ cân bằng âm thanh hoặc cài đặt VB-CABLE. Các thiết bị âm thanh mặc định trước đó được giữ lại nếu vẫn còn khả dụng.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>Thiết lập VB-CABLE yêu cầu khởi động lại Windows. Hãy khởi động lại trước khi sử dụng bộ cân bằng âm hoặc mở cài đặt VB-CABLE.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>Thiết lập VB-CABLE đã bị hủy hoặc chưa hoàn tất (mã %1). SoundCurrent vẫn được cài đặt để có thể thử lại.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.</source>
+      <translation>VB-CABLE vẫn chưa có thiết bị phát hoặc ghi âm sử dụng được. Hoàn tất Remove Driver trong trình cài đặt chính thức, khởi động lại Windows, rồi mở lại %1 để cài lại trình điều khiển. CABLE Input và CABLE Output phải được bật trong cài đặt âm thanh của Windows.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE được giữ lại vì ứng dụng SoundCurrent còn lại đã được cài đặt. Hãy gỡ nó cùng ứng dụng cuối cùng nếu không có phần mềm nào khác cần nó.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>Nhấn giọng hát</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>Đang chờ micrô.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>Ấm</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>Độ ấm</translation>
     </message>
     <message>
-      <source>Width (Q)</source>
-      <translation type="unfinished" />
+      <source>Whole listening system</source>
+      <translation>Toàn bộ hệ thống nghe</translation>
+      <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM âm thanh Windows không khả dụng</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Windows không thể xác minh chữ ký của tệp thực thi VB-Audio.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
+    </message>
+    <message>
+      <source>Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.</source>
+      <translation>Windows có bản ghi trình điều khiển VB-CABLE nhưng không có điểm cuối của cáp dùng được. Trước hết hãy kiểm tra rằng CABLE Input và CABLE Output đã được bật trong cài đặt âm thanh Windows. Để cài đặt lại: nhấp Remove Driver trong trình cài đặt chính thức sẽ mở tiếp theo, khởi động lại Windows, rồi mở lại %1 trong ứng dụng và nhấp Install Driver. Khởi động lại thêm một lần trước khi phát âm thanh qua SoundCurrent. Gỡ cáp dùng chung này sẽ ảnh hưởng đến các ứng dụng khác đang sử dụng nó.</translation>
+      <extracomment>Pre-repair modal, before official driver installer is opened. Existing driver record but endpoints unavailable; first check Windows endpoint enablement. Remove Driver and Install Driver are exact English external buttons. %1 is actual localized Audio driver setup button inside app, not English Start-menu shortcut. Preserve removal -&gt; Windows restart -&gt; app setup -&gt; reinstall -&gt; second restart, then audio playback; affects other users of shared cable. No claim removal already happened. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</source>
+      <translation>Windows có bản ghi trình điều khiển VB-CABLE, nhưng điểm cuối phát hoặc ghi âm không khả dụng. Nếu đã khởi động lại, hãy mở %1 để sửa chữa. Bật CABLE Input và CABLE Output trong cài đặt âm thanh Windows nếu chúng bị tắt.</translation>
+    </message>
+    <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows sẽ yêu cầu quản trị viên chấp thuận cho trình quản lý trình điều khiển đã ký. Trình cài đặt sẽ cho biết có cần khởi động lại hay không.</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Ghi vào bộ đệm loa</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>Ghi âm thanh thử nghiệm để phát</translation>
+    </message>
+    <message>
+      <source>Yes</source>
+      <translation>Có</translation>
+    </message>
+    <message>
+      <source>Yes to All</source>
+      <translation>Có với tất cả</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>Giá trị 0 tắt từng hiệu ứng. Các hiệu ứng nghe này áp dụng cho âm thanh phát qua loa, không áp dụng cho hiệu chỉnh micrô.</translation>
     </message>
   </context>
 </TS>

@@ -1,0 +1,20 @@
+{
+  "status": "Qt 6.12 compatibility fix implemented; fresh native Windows qualification pending",
+  "failureEvidence": {
+    "repository": "soundcurrent-eq",
+    "run": 37892083899,
+    "head": "d8369a79c95c743f9b74b313364cd4ca751e7a09",
+    "diagnostic": "Qt fallback chooser field stayed outside app catalog",
+    "interpretation": "Qt 6.12 chooser UI declares &Look in: and Files of &type:, unlike installed Linux Qt 6.4. Exact mnemonic aliases were absent. Full native rerun required to prove fix."
+  },
+  "upstreamSources": [
+    "https://github.com/qt/qtbase/blob/6.12/src/widgets/dialogs/qfiledialog.ui",
+    "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.ui"
+  ],
+  "change": "Handle exact Qt 6.12 mnemonic variants in QFileDialog context using existing captions. Add compiled lookup checks for both aliases and actual/expected/language/Qt diagnostics to real-dialog assertions.",
+  "nativeReviewed": false,
+  "sourceSha256": {
+    "src/localization.h": "682d7be0bfeebdcdf99d7fec88b9c92e412b54cf792f04e2a6445170907e4ff9",
+    "tests/localization.cpp": "e3e4d6b2c8295251ecfd30e83168e532c5895419ae9402f3ad7427c1beb39d11"
+  }
+}

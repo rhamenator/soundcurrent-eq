@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-08",
+  "scope": "AcceleratingDoubleSpinBox parsing under Arabic Egypt, Hebrew Israel and Persian Iran regional formats; actual localization Runtime and embedded catalogs",
+  "regionalFormats": [
+    "ar-EG",
+    "he-IL",
+    "fa-IR"
+  ],
+  "checks": [
+    "Selected UI language remains independent of regional number format",
+    "Localized negative fractional gain plus dB suffix parses as -12.5",
+    "Displayed number contains locale-specific digits and decimal separator",
+    "Saved JSON uses locale-independent -12.5 and round-trips numerically",
+    "Persisted Flat preset ID remains invariant",
+    "Arabic UI with German decimal-comma format remains supported"
+  ],
+  "linuxVerification": "Rebuilt soundcurrent-localization-test; localization CTest passed",
+  "windowsVerification": "New tests await Windows CI execution",
+  "nativeReviewed": false,
+  "productionCodeChanged": false,
+  "limitations": [
+    "Synthetic numeric control checks, not visual/native review",
+    "This does not qualify every numeric parameter, Unicode file workflow or package lifecycle"
+  ]
+}

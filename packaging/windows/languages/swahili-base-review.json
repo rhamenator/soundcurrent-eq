@@ -1,0 +1,453 @@
+{
+  "schema": 1,
+  "nativeSpeakerVerified": false,
+  "source": "NSIS English.nlf (local packaged NSIS)",
+  "scope": "Base NSIS NLF strings only; MUI strings and activation remain pending",
+  "messages": [
+    {
+      "id": "^Branding",
+      "source": "Nullsoft Install System %s",
+      "translation": "Nullsoft Install System %s"
+    },
+    {
+      "id": "^SetupCaption",
+      "source": "$(^Name) Setup",
+      "translation": "Usakinishaji wa $(^Name)"
+    },
+    {
+      "id": "^UninstallCaption",
+      "source": "$(^Name) Uninstall",
+      "translation": "Uondoaji wa $(^Name)"
+    },
+    {
+      "id": "^LicenseSubCaption",
+      "source": ": License Agreement",
+      "translation": ": Makubaliano ya leseni"
+    },
+    {
+      "id": "^ComponentsSubCaption",
+      "source": ": Installation Options",
+      "translation": ": Chaguo za usakinishaji"
+    },
+    {
+      "id": "^DirSubCaption",
+      "source": ": Installation Folder",
+      "translation": ": Folda ya usakinishaji"
+    },
+    {
+      "id": "^InstallingSubCaption",
+      "source": ": Installing",
+      "translation": ": Inasakinisha"
+    },
+    {
+      "id": "^CompletedSubCaption",
+      "source": ": Completed",
+      "translation": ": Imekamilika"
+    },
+    {
+      "id": "^UnComponentsSubCaption",
+      "source": ": Uninstallation Options",
+      "translation": ": Chaguo za uondoaji"
+    },
+    {
+      "id": "^UnDirSubCaption",
+      "source": ": Uninstallation Folder",
+      "translation": ": Folda ya uondoaji"
+    },
+    {
+      "id": "^ConfirmSubCaption",
+      "source": ": Confirmation",
+      "translation": ": Uthibitisho"
+    },
+    {
+      "id": "^UninstallingSubCaption",
+      "source": ": Uninstalling",
+      "translation": ": Inaondoa"
+    },
+    {
+      "id": "^UnCompletedSubCaption",
+      "source": ": Completed",
+      "translation": ": Imekamilika"
+    },
+    {
+      "id": "^BackBtn",
+      "source": "< &Back",
+      "translation": "< &Nyuma"
+    },
+    {
+      "id": "^NextBtn",
+      "source": "&Next >",
+      "translation": "&Endelea >"
+    },
+    {
+      "id": "^AgreeBtn",
+      "source": "I &Agree",
+      "translation": "Nina&kubali"
+    },
+    {
+      "id": "^AcceptBtn",
+      "source": "I &accept the terms of the License Agreement",
+      "translation": "Nina&kubali masharti ya makubaliano ya leseni"
+    },
+    {
+      "id": "^DontAcceptBtn",
+      "source": "I &do not accept the terms of the License Agreement",
+      "translation": "Si&kubali masharti ya makubaliano ya leseni"
+    },
+    {
+      "id": "^InstallBtn",
+      "source": "&Install",
+      "translation": "&Sakinisha"
+    },
+    {
+      "id": "^UninstallBtn",
+      "source": "&Uninstall",
+      "translation": "&Ondoa"
+    },
+    {
+      "id": "^CancelBtn",
+      "source": "Cancel",
+      "translation": "Ghairi"
+    },
+    {
+      "id": "^CloseBtn",
+      "source": "&Close",
+      "translation": "&Funga"
+    },
+    {
+      "id": "^BrowseBtn",
+      "source": "B&rowse...",
+      "translation": "&Vinjari..."
+    },
+    {
+      "id": "^ShowDetailsBtn",
+      "source": "Show &details",
+      "translation": "Onyesha &maelezo"
+    },
+    {
+      "id": "^ClickNext",
+      "source": "Click Next to continue.",
+      "translation": "Bofya Endelea ili kuendelea."
+    },
+    {
+      "id": "^ClickInstall",
+      "source": "Click Install to start the installation.",
+      "translation": "Bofya Sakinisha ili kuanza usakinishaji."
+    },
+    {
+      "id": "^ClickUninstall",
+      "source": "Click Uninstall to start the uninstallation.",
+      "translation": "Bofya Ondoa ili kuanza uondoaji."
+    },
+    {
+      "id": "^Name",
+      "source": "Name",
+      "translation": "Jina"
+    },
+    {
+      "id": "^Completed",
+      "source": "Completed",
+      "translation": "Imekamilika"
+    },
+    {
+      "id": "^LicenseText",
+      "source": "Please review the license agreement before installing $(^NameDA). If you accept all terms of the agreement, click I Agree.",
+      "translation": "Soma makubaliano ya leseni kabla ya kusakinisha $(^NameDA). Ukikubali masharti yote, bofya Ninakubali."
+    },
+    {
+      "id": "^LicenseTextCB",
+      "source": "Please review the license agreement before installing $(^NameDA). If you accept all terms of the agreement, click the check box below. $_CLICK",
+      "translation": "Soma makubaliano ya leseni kabla ya kusakinisha $(^NameDA). Ukikubali masharti yote, weka alama kwenye kisanduku hapa chini. $_CLICK"
+    },
+    {
+      "id": "^LicenseTextRB",
+      "source": "Please review the license agreement before installing $(^NameDA). If you accept all terms of the agreement, select the first option below. $_CLICK",
+      "translation": "Soma makubaliano ya leseni kabla ya kusakinisha $(^NameDA). Ukikubali masharti yote, chagua chaguo la kwanza hapa chini. $_CLICK"
+    },
+    {
+      "id": "^UnLicenseText",
+      "source": "Please review the license agreement before uninstalling $(^NameDA). If you accept all terms of the agreement, click I Agree.",
+      "translation": "Soma makubaliano ya leseni kabla ya kuondoa $(^NameDA). Ukikubali masharti yote, bofya Ninakubali."
+    },
+    {
+      "id": "^UnLicenseTextCB",
+      "source": "Please review the license agreement before uninstalling $(^NameDA). If you accept all terms of the agreement, click the check box below. $_CLICK",
+      "translation": "Soma makubaliano ya leseni kabla ya kuondoa $(^NameDA). Ukikubali masharti yote, weka alama kwenye kisanduku hapa chini. $_CLICK"
+    },
+    {
+      "id": "^UnLicenseTextRB",
+      "source": "Please review the license agreement before uninstalling $(^NameDA). If you accept all terms of the agreement, select the first option below. $_CLICK",
+      "translation": "Soma makubaliano ya leseni kabla ya kuondoa $(^NameDA). Ukikubali masharti yote, chagua chaguo la kwanza hapa chini. $_CLICK"
+    },
+    {
+      "id": "^Custom",
+      "source": "Custom",
+      "translation": "Maalum"
+    },
+    {
+      "id": "^ComponentsText",
+      "source": "Check the components you want to install and uncheck the components you don't want to install. $_CLICK",
+      "translation": "Weka alama kwenye vipengele unavyotaka kusakinisha na ondoa alama kwenye vile usivyotaka. $_CLICK"
+    },
+    {
+      "id": "^ComponentsSubText1",
+      "source": "Select the type of install:",
+      "translation": "Chagua aina ya usakinishaji:"
+    },
+    {
+      "id": "^ComponentsSubText2_NoInstTypes",
+      "source": "Select components to install:",
+      "translation": "Chagua vipengele vya kusakinisha:"
+    },
+    {
+      "id": "^ComponentsSubText2",
+      "source": "Or, select the optional components you wish to install:",
+      "translation": "Au chagua vipengele vya hiari unavyotaka kusakinisha:"
+    },
+    {
+      "id": "^UnComponentsText",
+      "source": "Check the components you want to uninstall and uncheck the components you don't want to uninstall. $_CLICK",
+      "translation": "Weka alama kwenye vipengele unavyotaka kuondoa na ondoa alama kwenye vile usivyotaka kuondoa. $_CLICK"
+    },
+    {
+      "id": "^UnComponentsSubText1",
+      "source": "Select the type of uninstall:",
+      "translation": "Chagua aina ya uondoaji:"
+    },
+    {
+      "id": "^UnComponentsSubText2_NoInstTypes",
+      "source": "Select components to uninstall:",
+      "translation": "Chagua vipengele vya kuondoa:"
+    },
+    {
+      "id": "^UnComponentsSubText2",
+      "source": "Or, select the optional components you wish to uninstall:",
+      "translation": "Au chagua vipengele vya hiari unavyotaka kuondoa:"
+    },
+    {
+      "id": "^DirText",
+      "source": "Setup will install $(^NameDA) in the following folder. To install in a different folder, click Browse and select another folder. $_CLICK",
+      "translation": "$(^NameDA) itasakinishwa kwenye folda ifuatayo. Ili kutumia folda nyingine, bofya Vinjari na uchague folda nyingine. $_CLICK"
+    },
+    {
+      "id": "^DirSubText",
+      "source": "Destination Folder",
+      "translation": "Folda lengwa"
+    },
+    {
+      "id": "^DirBrowseText",
+      "source": "Select the folder to install $(^NameDA) in:",
+      "translation": "Chagua folda ya kusakinisha $(^NameDA):"
+    },
+    {
+      "id": "^UnDirText",
+      "source": "Setup will uninstall $(^NameDA) from the following folder. To uninstall from a different folder, click Browse and select another folder. $_CLICK",
+      "translation": "$(^NameDA) itaondolewa kwenye folda ifuatayo. Ili kutumia folda nyingine, bofya Vinjari na uchague folda nyingine. $_CLICK"
+    },
+    {
+      "id": "^UnDirSubText",
+      "source": "\"\"",
+      "translation": "\"\""
+    },
+    {
+      "id": "^UnDirBrowseText",
+      "source": "Select the folder to uninstall $(^NameDA) from:",
+      "translation": "Chagua folda ya kuondoa $(^NameDA):"
+    },
+    {
+      "id": "^SpaceAvailable",
+      "source": "\"Space available: \"",
+      "translation": "\"Nafasi iliyopo: \""
+    },
+    {
+      "id": "^SpaceRequired",
+      "source": "\"Space required: \"",
+      "translation": "\"Nafasi inayohitajika: \""
+    },
+    {
+      "id": "^UninstallingText",
+      "source": "$(^NameDA) will be uninstalled from the following folder. $_CLICK",
+      "translation": "$(^NameDA) itaondolewa kwenye folda ifuatayo. $_CLICK"
+    },
+    {
+      "id": "^UninstallingSubText",
+      "source": "Uninstalling from:",
+      "translation": "Inaondoa kutoka:"
+    },
+    {
+      "id": "^FileError",
+      "source": "Error opening file for writing: \\r\\n\\r\\n$0\\r\\n\\r\\nClick Abort to stop the installation,\\r\\nRetry to try again, or\\r\\nIgnore to skip this file.",
+      "translation": "Hitilafu ya kufungua faili kwa kuandika: \\r\\n\\r\\n$0\\r\\n\\r\\nBofya Abort kusitisha usakinishaji,\\r\\nRetry kujaribu tena, au\\r\\nIgnore kuruka faili hili."
+    },
+    {
+      "id": "^FileError_NoIgnore",
+      "source": "Error opening file for writing: \\r\\n\\r\\n$0\\r\\n\\r\\nClick Retry to try again, or\\r\\nCancel to stop the installation.",
+      "translation": "Hitilafu ya kufungua faili kwa kuandika: \\r\\n\\r\\n$0\\r\\n\\r\\nBofya Retry kujaribu tena, au\\r\\nCancel kusitisha usakinishaji."
+    },
+    {
+      "id": "^CantWrite",
+      "source": "\"Can't write: \"",
+      "translation": "\"Haiwezi kuandika: \""
+    },
+    {
+      "id": "^CopyFailed",
+      "source": "Copy failed",
+      "translation": "Kunakili kumeshindikana"
+    },
+    {
+      "id": "^CopyTo",
+      "source": "\"Copy to \"",
+      "translation": "\"Nakili kwenda \""
+    },
+    {
+      "id": "^Registering",
+      "source": "\"Registering: \"",
+      "translation": "\"Inasajili: \""
+    },
+    {
+      "id": "^Unregistering",
+      "source": "\"Unregistering: \"",
+      "translation": "\"Inaondoa usajili: \""
+    },
+    {
+      "id": "^SymbolNotFound",
+      "source": "\"Could not find symbol: \"",
+      "translation": "\"Alama haikupatikana: \""
+    },
+    {
+      "id": "^CouldNotLoad",
+      "source": "\"Could not load: \"",
+      "translation": "\"Haikuweza kupakia: \""
+    },
+    {
+      "id": "^CreateFolder",
+      "source": "\"Create folder: \"",
+      "translation": "\"Unda folda: \""
+    },
+    {
+      "id": "^CreateShortcut",
+      "source": "\"Create shortcut: \"",
+      "translation": "\"Unda njia ya mkato: \""
+    },
+    {
+      "id": "^CreatedUninstaller",
+      "source": "\"Created uninstaller: \"",
+      "translation": "\"Programu ya uondoaji imeundwa: \""
+    },
+    {
+      "id": "^Delete",
+      "source": "\"Delete file: \"",
+      "translation": "\"Futa faili: \""
+    },
+    {
+      "id": "^DeleteOnReboot",
+      "source": "\"Delete on reboot: \"",
+      "translation": "\"Futa baada ya kuwasha upya: \""
+    },
+    {
+      "id": "^ErrorCreatingShortcut",
+      "source": "\"Error creating shortcut: \"",
+      "translation": "\"Hitilafu ya kuunda njia ya mkato: \""
+    },
+    {
+      "id": "^ErrorCreating",
+      "source": "\"Error creating: \"",
+      "translation": "\"Hitilafu ya kuunda: \""
+    },
+    {
+      "id": "^ErrorDecompressing",
+      "source": "Error decompressing data! Corrupted installer?",
+      "translation": "Hitilafu ya kufungua data iliyobanwa! Je, kisakinishi kimeharibika?"
+    },
+    {
+      "id": "^ErrorRegistering",
+      "source": "Error registering DLL",
+      "translation": "Hitilafu ya kusajili DLL"
+    },
+    {
+      "id": "^ExecShell",
+      "source": "\"ExecShell: \"",
+      "translation": "\"ExecShell: \""
+    },
+    {
+      "id": "^Exec",
+      "source": "\"Execute: \"",
+      "translation": "\"Tekeleza: \""
+    },
+    {
+      "id": "^Extract",
+      "source": "\"Extract: \"",
+      "translation": "\"Toa: \""
+    },
+    {
+      "id": "^ErrorWriting",
+      "source": "\"Extract: error writing to file \"",
+      "translation": "\"Toa: hitilafu ya kuandika kwenye faili \""
+    },
+    {
+      "id": "^InvalidOpcode",
+      "source": "Installer corrupted: invalid opcode",
+      "translation": "Kisakinishi kimeharibika: msimbo wa operesheni si halali"
+    },
+    {
+      "id": "^NoOLE",
+      "source": "\"No OLE for: \"",
+      "translation": "\"Hakuna OLE kwa: \""
+    },
+    {
+      "id": "^OutputFolder",
+      "source": "\"Output folder: \"",
+      "translation": "\"Folda ya matokeo: \""
+    },
+    {
+      "id": "^RemoveFolder",
+      "source": "\"Remove folder: \"",
+      "translation": "\"Ondoa folda: \""
+    },
+    {
+      "id": "^RenameOnReboot",
+      "source": "\"Rename on reboot: \"",
+      "translation": "\"Badili jina baada ya kuwasha upya: \""
+    },
+    {
+      "id": "^Rename",
+      "source": "\"Rename: \"",
+      "translation": "\"Badili jina: \""
+    },
+    {
+      "id": "^Skipped",
+      "source": "\"Skipped: \"",
+      "translation": "\"Imerukwa: \""
+    },
+    {
+      "id": "^CopyDetails",
+      "source": "Copy Details To Clipboard",
+      "translation": "Nakili maelezo kwenye ubao wa kunakili"
+    },
+    {
+      "id": "^LogInstall",
+      "source": "Log install process",
+      "translation": "Rekodi mchakato wa usakinishaji"
+    },
+    {
+      "id": "^Byte",
+      "source": "B",
+      "translation": "B"
+    },
+    {
+      "id": "^Kilo",
+      "source": " K",
+      "translation": " K"
+    },
+    {
+      "id": "^Mega",
+      "source": " M",
+      "translation": " M"
+    },
+    {
+      "id": "^Giga",
+      "source": " G",
+      "translation": " G"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "run": 37886568927,
+  "testedHead": "d9155fbb124e244220cf0dfb59551737afb607da",
+  "catalogMessages": 636,
+  "packages": [
+    {
+      "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-37886568927/package-validation-0/soundcurrent-eq_1.1.0_amd64.deb",
+      "sha256": "58c6a2dc94d634717f6bac99ae602dc3bae66f7da44dec27c24aa742b06507b4",
+      "installedLocales": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-636-installed/package-validation-0"
+    },
+    {
+      "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-37886568927/package-validation-1/soundcurrent-eq-1.1.0-1.fc44.x86_64.rpm",
+      "sha256": "92eac81a5b4f31d50eb5239c967419c6d621e9b58e8e48a6ba0405043b7e9b3d",
+      "installedLocales": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-636-installed/package-validation-1"
+    },
+    {
+      "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-37886568927/package-validation-2/soundcurrent-eq-1.1.0-1.el10.x86_64.rpm",
+      "sha256": "8ff597bd14867f21e166b6f63b6bd4bde3f5e4bdcb97c2e420e958aa4afb0505",
+      "installedLocales": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-636-installed/package-validation-2"
+    }
+  ],
+  "environments": [
+    "Ubuntu 24.04 container",
+    "Fedora 44 container",
+    "AlmaLinux 10 container"
+  ],
+  "scope": "Exact packages, successful CTest, 33 installed language fixtures per distribution, same-package update/uninstall/config-preservation/reinstall. Not an actual RHEL desktop, live audio, native-speaker review, interactive installer or older-version migration.",
+  "nativeReviewed": false
+}

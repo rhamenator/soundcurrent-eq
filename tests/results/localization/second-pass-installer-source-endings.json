@@ -1,0 +1,28 @@
+{
+  "scope": "Preserve installer source line endings across host platforms",
+  "reproducedFailure": "Legacy text I/O changed CRLF fixture bytes to LF on Linux; Windows can also rewrite LF to CRLF",
+  "fix": "UTF-8 byte read/write, explicit optional carriage return matching and preservation",
+  "validation": {
+    "unitTestsPassed": 36,
+    "unitTestsSkipped": 1,
+    "sourceFixtures": "LF, CRLF and mixed endings across both routes and both products; generated current-English bytes equal source",
+    "negativeInputGuards": "product/schema, original overwrite, absent/duplicate definitions and unplanned language activation still rejected"
+  },
+  "nativeSpeakerVerification": "unverified",
+  "catalogsChanged": false,
+  "audioRuntimeChanged": false,
+  "WindowsFixQualified": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Windows CI after newline fix",
+    "Installer language activation and remaining text",
+    "Current installed Linux/Windows UI and lifecycle qualification"
+  ],
+  "evidenceSha256": {
+    "scripts/windows_installer_catalogs.py": "e7c8a6b83749b25afd2c561bbc0203b43e467c00f3e02b1a9c016803e567181c",
+    "tests/translation_catalogs.py": "de3fb3c3230f9c4cad9ab78270ba8d129e7969a8026ad57ee6f669cab63e5022",
+    "tests/results/localization/installer-source-endings-tests.log": "b594710aaab299e7d85c2cadd053d345bc90877d7e7a92dfbed52f8d8dd693c4",
+    "tests/results/localization/installer-source-endings-initial-failure.log": "7d9ef897b0c806f0b18c8461c1ce03a4cf7a379b19834c57d28bede00b418333"
+  }
+}

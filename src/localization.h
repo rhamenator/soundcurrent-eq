@@ -2,6 +2,10 @@
 #pragma once
 #include "localization_text.h"
 #include <QApplication>
+#include <QFileDialog>
+#include <QTreeView>
+#include <QHeaderView>
+#include <QTimer>
 #include <QComboBox>
 #include <QCoreApplication>
 #include <QFile>
@@ -34,24 +38,80 @@ inline QString resolve(const QString &requested) {
     auto tag=normalize(requested);
     if(tag=="qps-ploc" || tag=="qps-rtl") return tag;
     const auto supported=languages();
-    for(const auto &l:supported) if(l.tag.compare(tag,Qt::CaseInsensitive)==0) return l.tag;
-    // Strip only regional subtags, keeping explicit scripts (e.g. sr-Latn).
+    for(const auto &language:supported)
+        if(language.tag.compare(tag,Qt::CaseInsensitive)==0) return language.tag;
+    const QRegularExpression syntax("^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{1,8})*$");
+    if(!syntax.match(tag).hasMatch())return "en";
     auto parts=tag.split('-');
-    while(parts.size()>1) {
-        if(parts.last().size()==4) break;
-        parts.removeLast();const auto base=parts.join('-');
-        for(const auto &l:supported) if(l.tag.compare(base,Qt::CaseInsensitive)==0) return l.tag;
+    // Unicode/private-use extensions affect formatting, not catalog selection.
+    for(int i=1;i<parts.size();++i)if(parts[i].size()==1){parts=parts.mid(0,i);break;}
+    tag=parts.join('-');
+    const QLocale requestedLocale(tag);
+    const auto languageCode=QLocale::languageToCode(requestedLocale.language());
+    if(languageCode.compare(parts.front(),Qt::CaseInsensitive)!=0)return "en";
+    int regionIndex=1;
+    if(parts.size()>1 && parts[1].size()==4){
+        if(QLocale::scriptToCode(requestedLocale.script()).compare(parts[1],Qt::CaseInsensitive)!=0)return "en";
+        regionIndex=2;
     }
-    return "en";
+    QString explicitRegion;
+    if(parts.size()>regionIndex && (parts[regionIndex].size()==2 ||
+       QRegularExpression("^[0-9]{3}$").match(parts[regionIndex]).hasMatch()))explicitRegion=parts[regionIndex];
+    const auto desiredRegion=explicitRegion.isEmpty()?QLocale::territoryToCode(requestedLocale.territory()):explicitRegion;
+    QString regionalMatch;
+    for(const auto &language:supported){
+        if(language.tag.section('-',0,0).compare(languageCode,Qt::CaseInsensitive)!=0)continue;
+        const QLocale candidate(language.tag);
+        if(candidate.script()!=requestedLocale.script())continue;
+        const auto candidateParts=language.tag.split('-');
+        const bool regionSpecific=candidateParts.size()>1 && (candidateParts.last().size()==2 || candidateParts.last().size()==3);
+        // Generic language/script packs cover their regions, retaining script identity.
+        if(!regionSpecific)return language.tag;
+        if(candidateParts.last().compare(desiredRegion,Qt::CaseInsensitive)==0)regionalMatch=language.tag;
+    }
+    return regionalMatch.isEmpty()?QString("en"):regionalMatch;
+}
+// Installer preferences seed only an untouched app language preference.
+// An explicit "system" choice must continue following the operating system.
+inline QString installerSettingsPath(const QString &applicationName) {
+    if(applicationName=="soundcurrent-eq")
+        return QStringLiteral("HKEY_CURRENT_USER\\Software\\SoundCurrent\\SoundCurrent EQ");
+    if(applicationName=="soundcurrent-studio")
+        return QStringLiteral("HKEY_CURRENT_USER\\Software\\SoundCurrent\\SoundCurrent Studio");
+    return {};
+}
+inline QString installerLanguageFallback(const QSettings &applicationSettings,
+                                         const QSettings &installerSettings) {
+    if(applicationSettings.contains("i18n/language")) return {};
+    const auto tag=normalize(installerSettings.value("InstallerLocale").toString());
+    // Accept only a catalog identity, never a guessed region or pseudo locale.
+    for(const auto &language:languages())
+        if(language.tag.compare(tag,Qt::CaseInsensitive)==0) return language.tag;
+    return {};
+}
+inline QString initialInstallerLanguage(const QSettings &settings) {
+#ifdef Q_OS_WIN
+    const auto path=installerSettingsPath(QCoreApplication::applicationName());
+    if(!path.isEmpty()) {
+        const QSettings installer(path,QSettings::NativeFormat);
+        return installerLanguageFallback(settings,installer);
+    }
+#else
+    Q_UNUSED(settings);
+#endif
+    return {};
 }
 inline QString selectedLanguage() {
     const auto args=QCoreApplication::arguments();
     const auto i=args.indexOf("--language");
     if(i>=0 && i+1<args.size()) return args[i+1];
-    const auto saved=QSettings().value("i18n/language","system").toString();
+    const QSettings settings;
+    const auto saved=settings.value("i18n/language","system").toString();
     if(saved!="system") return saved;
     const auto env=qEnvironmentVariable("SOUNDCURRENT_LANGUAGE");
     if(!env.isEmpty()) return env;
+    const auto initial=initialInstallerLanguage(settings);
+    if(!initial.isEmpty()) return initial;
     const auto choices=QLocale::system().uiLanguages();
     for(const auto &choice:choices) if(resolve(choice)!="en" || choice.startsWith("en")) return choice;
     return "en";
@@ -74,11 +134,144 @@ public:
     }
 private: bool rtl_;
 };
+// Translate Qt's standard action captions through the same embedded app catalog.
+// Native operating-system dialogs keep the operating system language.
+class StandardActionTranslator final : public QTranslator {
+public:
+    bool isEmpty() const override { return false; }
+    QString translate(const char *context, const char *source, const char *, int) const override {
+        const QByteArray name(context);
+        const QByteArray action(source);
+        if (name == "QLineEdit" || name == "QWidgetTextControl" || name == "QAbstractSpinBox") {
+            if (action == "&Undo") return text("Undo");
+            if (action == "&Redo") return text("Redo");
+            if (action == "Cu&t") return text("Cut");
+            if (action == "&Copy") return text("Copy");
+            if (action == "&Paste") return text("Paste");
+            if (action == "Delete") return text("Delete");
+            if (action == "Select All" || action == "&Select All") return text("Select all");
+            if (name == "QAbstractSpinBox" && action == "&Step up") return text("Step up");
+            if (name == "QAbstractSpinBox" && action == "Step &down") return text("Step down");
+            return {};
+        }
+        if (name == "QFileSystemModel") {
+            if (action == "Name") return text("Name");
+            if (action == "Size") return text("Size");
+            if (action == "Date Modified") return text("Date modified");
+            if (action == "Type") return text("Type");
+            return {};
+        }
+        if (name == "QAbstractFileIconProvider") {
+            if (action == "Drive") return text("Drive");
+            if (action == "File") return text("File");
+            if (action == "Folder") return text("Folder");
+            if (action == "Shortcut") return text("Shortcut");
+            if (action == "Unknown") return text("Unknown");
+            if (action == "File Folder") return text("Folder");
+            return {};
+        }
+        if (name == "QFileDialog") {
+            if (action == "'%1' is write protected.\nDo you want to delete it anyway?") return text("'%1' is write protected.\nDo you want to delete it anyway?");
+            if (action == "Are you sure you want to delete '%1'?") return text("Are you sure you want to delete '%1'?");
+            if (action == "Could not delete directory.") return text("Could not delete directory.");
+
+            if (action == "Open") return text("Open");
+            if (action == "&Choose") return text("Choose");
+            if (action == "All files (*)" || action == "All Files (*)") return text("All files (*)");
+            if (action == "Directories") return text("Directories");
+            if (action == "Directory:") return text("Directory:");
+            if (action == "Find Directory") return text("Find directory");
+            if (action == "Recent Places") return text("Recent places");
+            if (action == "Save As") return text("Save as");
+
+            if (action == "%1\nDirectory not found.\nPlease verify the correct directory name was given.") return text("%1\nDirectory not found.\nPlease verify the correct directory name was given.");
+            if (action == "%1\nFile not found.\nPlease verify the correct file name was given.") return text("%1\nFile not found.\nPlease verify the correct file name was given.");
+            if (action == "%1 already exists.\nDo you want to replace it?") return text("%1 already exists.\nDo you want to replace it?");
+
+            if (action == "&Rename") return text("Rename");
+            if (action == "New Folder") return text("New folder");
+            if (action == "Show &hidden files") return text("Show hidden files");
+            if (action == "&New Folder") return text("New folder");
+            if (action == "&Delete" || action == "Delete") return text("Delete");
+
+            if (action == "Go back") return text("Go back");
+            if (action == "Go forward") return text("Go forward");
+            if (action == "Go to the parent directory") return text("Go to the parent directory");
+            if (action == "Create a New Folder") return text("Create a New Folder");
+            if (action == "Change to list view mode") return text("Change to list view mode");
+            if (action == "Change to detail view mode") return text("Change to detail view mode");
+            if (action == "Sidebar") return text("Sidebar");
+            if (action == "List of places and bookmarks") return text("List of places and bookmarks");
+            if (action == "Files") return text("Files");
+
+            if (action == "Look in:" || action == "&Look in:") return text("Look in:");
+            if (action == "File &name:") return text("File name:");
+            if (action == "Files of type:" || action == "Files of &type:") return text("Files of type:");
+            if (action == "Back") return text("Back");
+            if (action == "Forward") return text("Forward");
+            if (action == "Parent Directory") return text("Parent directory");
+            if (action == "Create New Folder") return text("Create new folder");
+            if (action == "List View") return text("List view");
+            if (action == "Detail View") return text("Detail view");
+            if (action == "&Open") return text("Open");
+            if (action == "&Save") return text("Save");
+            return {};
+        }
+        if (name != "QPlatformTheme" && name != "QDialogButtonBox" && name != "QGnomeTheme") return {};
+        auto caption=action;caption.replace("&", "");
+        if (caption == "OK") return text("OK");
+        if (caption == "Yes") return text("Yes");
+        if (caption == "No") return text("No");
+        if (caption == "Yes to All") return text("Yes to All");
+        if (caption == "No to All") return text("No to All");
+        if (caption == "Open") return text("Open");
+        if (caption == "Save") return text("Save");
+        if (caption == "Save All") return text("Save All");
+        if (caption == "Close") return text("Close");
+        if (caption == "Cancel") return text("Cancel");
+        if (caption == "Discard" || (name == "QGnomeTheme" && caption == "Close without Saving")) return text("Discard");
+        if (caption == "Apply") return text("Apply");
+        if (caption == "Reset") return text("Reset");
+        if (caption == "Restore Defaults") return text("Restore Defaults");
+        if (caption == "Retry") return text("Retry");
+        if (caption == "Abort") return text("Abort");
+        if (caption == "Ignore") return text("Ignore");
+        if (caption == "Help") return text("Help");
+        return {};
+    }
+};
+class FileDialogCaptionFilter final : public QObject {
+public:
+    static void apply(QFileDialog *dialog) {
+        auto *tree=dialog->findChild<QTreeView*>("treeView");
+        if(!tree || !tree->model() || tree->model()->columnCount()!=4) return;
+        auto *model=tree->model();
+        for(int i=0;i<4;++i) {
+            const char *columns[]={"Name","Size","Type","Date modified"};
+            if(model->headerData(i,Qt::Horizontal).toString()!=text(columns[i])) return;
+        }
+        const auto actions=tree->header()->actions();
+        if(actions.size()!=3) return;
+        actions[0]->setText(text("Show size"));
+        actions[1]->setText(text("Show type"));
+        actions[2]->setText(text("Show date modified"));
+    }
+protected:
+    bool eventFilter(QObject *watched,QEvent *event) override {
+        if(event->type()==QEvent::Show || event->type()==QEvent::LanguageChange) {
+            if(auto *dialog=qobject_cast<QFileDialog*>(watched)) {
+                if(event->type()==QEvent::Show) apply(dialog);
+                else QTimer::singleShot(0,dialog,[dialog]{apply(dialog);});
+            }
+        }
+        return QObject::eventFilter(watched,event);
+    }
+};
 class Runtime {
 public:
-    void initialize(bool englishTest=false) {
-        requested_=englishTest?"en":selectedLanguage();loaded_=resolve(requested_);
-        const auto format=englishTest?QString("en-US"):QSettings().value("i18n/formatLocale","system").toString();
+    void initialize(bool englishTest=false, const QString &languageOverride={}, const QString &formatOverride={}) {
+        requested_=englishTest?"en":languageOverride.isEmpty()?selectedLanguage():languageOverride;loaded_=resolve(requested_);
+        const auto format=englishTest?QString("en-US"):formatOverride.isEmpty()?QSettings().value("i18n/formatLocale","system").toString():formatOverride;
         const auto locale=format=="system"?QLocale::system():QLocale(format);
         QLocale::setDefault(locale);
         if(loaded_.startsWith("qps-")) translator_=std::make_unique<PseudoTranslator>(loaded_=="qps-rtl");
@@ -87,13 +280,16 @@ public:
             if(t->load(":/i18n/soundcurrent_"+loaded_+".qm"))translator_=std::move(t);
             else loaded_="en";
         }
+        QCoreApplication::installTranslator(&standardActions_);
         if(translator_)QCoreApplication::installTranslator(translator_.get());
+        if(qobject_cast<QApplication*>(QCoreApplication::instance())) QCoreApplication::instance()->installEventFilter(&fileDialogCaptions_);
         const auto direction=loaded_=="qps-rtl"?Qt::RightToLeft:QLocale(loaded_).textDirection();
-        QApplication::setLayoutDirection(direction);
+        if(qobject_cast<QApplication*>(QCoreApplication::instance())) QApplication::setLayoutDirection(direction);
+        QCoreApplication::instance()->setProperty("soundcurrentInterfaceLanguage", loaded_);
     }
-    ~Runtime(){if(translator_)QCoreApplication::removeTranslator(translator_.get());}
+    ~Runtime(){QCoreApplication::instance()->removeEventFilter(&fileDialogCaptions_);if(translator_)QCoreApplication::removeTranslator(translator_.get());QCoreApplication::removeTranslator(&standardActions_);}
     QString requested() const{return requested_;} QString loaded() const{return loaded_;}
-private: QString requested_,loaded_;std::unique_ptr<QTranslator> translator_;
+private: FileDialogCaptionFilter fileDialogCaptions_;QString requested_,loaded_;StandardActionTranslator standardActions_;std::unique_ptr<QTranslator> translator_;
 };
 inline QGroupBox *settingsPanel() {
     auto *box=new QGroupBox(text("Language and regional settings"));
@@ -102,7 +298,10 @@ inline QGroupBox *settingsPanel() {
     language->addItem(text("Use system language"),"system");language->addItem("English (en)","en");
     for(const auto &l:languages()) if(l.tag!="en")language->addItem(l.nativeName+" ("+l.tag+")",l.tag);
     language->addItem(text("Expanded test language"),"qps-ploc");language->addItem(text("Right-to-left test language"),"qps-rtl");
-    auto saved=QSettings().value("i18n/language","system").toString();
+    const QSettings settings;
+    auto saved=settings.value("i18n/language","system").toString();
+    const auto initial=initialInstallerLanguage(settings);
+    if(!initial.isEmpty()) saved=initial;
     auto index=language->findData(saved);language->setCurrentIndex(index>=0?index:0);
     form->addRow(text("Interface language"),language);
     auto *format=new QComboBox;
@@ -129,7 +328,7 @@ inline QGroupBox *settingsPanel() {
         auto requested=language->currentData().toString();if(requested=="system")requested=selectedLanguage();
         auto tag=resolve(requested);int done=0,total=0;
         for(const auto &l:languages())if(l.tag==tag){done=l.translated;total=l.total;}
-        help->setText(text("Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.").arg(done).arg(total));
+        help->setText(text("Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.").arg(QLocale().toString(done),QLocale().toString(total)));
     };
     update();
     QObject::connect(language,&QComboBox::currentIndexChanged,box,[language,update]{QSettings().setValue("i18n/language",language->currentData());update();});

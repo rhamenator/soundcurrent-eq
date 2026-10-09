@@ -1,0 +1,30 @@
+{
+  "scope": "Stable speaker and equipment subtype identity before translating taxonomy captions",
+  "changes": [
+    "Dropdown item data retains original equipmentType keys",
+    "Filtering and taxonomy refresh use item data",
+    "Custom profile metadata is not rewritten"
+  ],
+  "tests": {
+    "equipment_ui": {
+      "passed": 34,
+      "failed": 0
+    },
+    "shared_and_localized_ui_catalogs": {
+      "passed": 38,
+      "failed": 0
+    },
+    "platform": "Linux Qt offscreen"
+  },
+  "regressions": [
+    "French/Japanese display caption still selects JBL Bookshelf profiles by original key",
+    "Equipment subtype selection survives kind-filter refresh"
+  ],
+  "coverageComplete": false,
+  "nativeSpeakerVerified": false,
+  "remaining": [
+    "Translate built-in taxonomy captions across all locales",
+    "Translate Sony model qualifier",
+    "Qualify updated Windows builds and packages"
+  ]
+}

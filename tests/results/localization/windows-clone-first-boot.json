@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "cloneName": "soundcurrent-localization-win11-qa",
+  "finalState": "shut off",
+  "booted": true,
+  "bootOutcome": "Initial device preparation completed; Windows lock screen observed",
+  "identityVerified": {
+    "mac": "52:54:00:20:0d:25",
+    "lease": "192.168.122.98",
+    "disk": "/var/lib/libvirt/images/soundcurrent-localization-win11-qa.qcow2"
+  },
+  "sshChecks": [
+    "TCP connection refused during preparation",
+    "TCP connection timed out on second brief check"
+  ],
+  "guestAuthenticationSucceeded": false,
+  "installerExecuted": false,
+  "shutdown": "Graceful libvirt shutdown requested and terminal shut-off state verified",
+  "originalsBootedOrModified": false,
+  "dawModified": false,
+  "stagedPackageIdentities": [
+    {
+      "label": "eq-old",
+      "run": 37869446207,
+      "repository": "soundcurrent-eq",
+      "sha256": "76a8bca37e99a4911acc2b2360b6b23c251a6611260b00b695dd019f3f8b7f74"
+    },
+    {
+      "label": "eq-current",
+      "run": 37869653471,
+      "repository": "soundcurrent-eq",
+      "sha256": "2baebbf459d02d78dbea16aa511ae5591e00d8cde0b20feff15b70a13524e718"
+    }
+  ],
+  "scope": "Clone bootstrap and package staging only; not app, translation, or installer runtime qualification",
+  "nativeSpeakerVerified": false
+}

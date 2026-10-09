@@ -1,0 +1,40 @@
+{
+  "scope": "Unmarked direct and exact Qt-wrapped literal display candidates; dynamic strings, stored/user data, backend and installer strings are not covered",
+  "candidateCount": 1,
+  "candidates": [
+    {
+      "file": "src/localization.h",
+      "call": "addItem",
+      "argument": 0,
+      "literal": "English (en)"
+    }
+  ],
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false,
+  "candidateClassification": [
+    {
+      "file": "src/localization.h",
+      "literal": "English (en)",
+      "classification": "intentional language autonym with stable locale code; not translated into the current interface language"
+    }
+  ],
+  "scopeLimitations": [
+    "Exact wrappers only; formatted/concatenated/dynamic expressions require separate audit",
+    "Stored channel names need provenance-aware display handling",
+    "Backend/helper diagnostics and installer text are outside this scanner"
+  ],
+  "regressionQualification": {
+    "unitTestsPassed": 14,
+    "unitTestsSkipped": 1,
+    "wrapperCasesRejected": 12,
+    "catalogCheck": "passed with --require-complete",
+    "applicationRebuildRequired": false,
+    "reason": "Python source-audit and regression changes only; catalogs and application source unchanged",
+    "WindowsPackageQualification": "pending for accumulated application changes"
+  },
+  "sourceSha256": {
+    "scripts/localization.py": "fc303d125833d25d25080156b6749ac1b4da661113e7be0f25c448387e4377d8",
+    "scripts/ui_string_audit.py": "3c83ea7c05c536fe46db865e51ae45c2614efba4f7586b955bf2c4e44f3423cf",
+    "tests/translation_catalogs.py": "8916fd5f1b80c02d2161cc219353a56839d581d94108fa39197690b9aeb2d238"
+  }
+}

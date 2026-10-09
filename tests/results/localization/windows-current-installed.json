@@ -1,0 +1,31 @@
+{
+  "scope": "Silent per-user app lifecycle on independent clone; no driver installation/removal or visual qualification",
+  "settingsMarkerPreserved": true,
+  "uninstall": "passed",
+  "unknownFilePreserved": true,
+  "installerSha256": "E6E4C5D8386B71C07FD51169522CCEDDD36E28EA3E3F99A4A468DD8EEB61E767",
+  "audioDeviceStateUnchanged": true,
+  "nativeReviewed": false,
+  "product": "EQ",
+  "update": "passed",
+  "date": "2026-10-08",
+  "sourceCommit": "eca144a",
+  "ciRun": 37747394190,
+  "ciWindowsJobStatus": "passed",
+  "installedLocaleFixturesPassed": 33,
+  "installedExeSha256": "7812eb582b2282ffec4662c9791ff97a5bf92379e998801b541123f1fe9d158a",
+  "installedExeIdentityVerified": true,
+  "reinstall": "passed",
+  "regionalFormatting": "Arabic UI / German number format passed after reinstall",
+  "defenderStatus": {
+    "AMServiceEnabled": true,
+    "AntivirusEnabled": true,
+    "RealTimeProtectionEnabled": true,
+    "AntivirusSignatureVersion": "1.459.601.0"
+  },
+  "limitations": [
+    "Automated native-backend fixtures are not native-speaker review",
+    "Silent app lifecycle does not test driver installation/removal",
+    "Interactive installer and desktop sign-in remain unqualified"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-08",
+  "workflow": "Interactive Windows installer and actual desktop sign-in startup",
+  "status": "blocked pending user console sign-in or corrected saved credential",
+  "independentVm": "soundcurrent-win11-dev",
+  "identityVerified": {
+    "disk": "/var/lib/libvirt/images/soundcurrent-win11-dev.qcow2",
+    "mac": "52:54:00:68:2f:6e"
+  },
+  "observations": [
+    "No signed-in user session reported by quser after clone boot",
+    "Console displayed Claude password sign-in",
+    "One saved-credential attempt was rejected; no further login attempts",
+    "Keyring lookup unavailable"
+  ],
+  "credentialsLogged": false,
+  "credentialsChanged": false,
+  "originalVmsModified": false,
+  "qualificationClaim": "Not qualified; prior SSH-launched UI fixtures and silent lifecycle results remain separately valid",
+  "nextAction": "After console sign-in, exercise visible NSIS pages with driver setup and launch-after-install disabled, then qualify sign-in startup on this clone and restore owned test registration",
+  "followupObservation": {
+    "keyringApi": "SecretStorage available; secret-tool executable unavailable",
+    "authorizedAccountMatch": "one unlocked credential for the documented VM account",
+    "credentialComparison": "keyring matches the file credential rejected by the console",
+    "credentialValuesLogged": false,
+    "furtherLoginAttempts": 0,
+    "desktopSession": "quser still reports no signed-in user"
+  },
+  "supersededBy": "windows-utf8-qualified.json",
+  "currentPrecondition": "resolved: actual console sign-ins and desktop observer tests passed; private Login keyring credential validated"
+}

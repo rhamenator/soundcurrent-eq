@@ -205,3 +205,27 @@ The opt-in volume helper supports `--read-volume ID` and
 persists a guest-only fixture change; callers must save and restore its state.
 This proves endpoint control-state behavior, not acoustic gain or own-kernel
 frequency response.
+
+## Localization installer and desktop startup checks
+
+Run these only on an independent Windows clone, in its authenticated desktop
+session. SSH window-handle enumeration cannot establish another session's
+window visibility. `tests/windows_interactive_localization.ps1` walks the
+visible installer pages, clears driver installation and automatic app launch,
+checks Unicode punctuation, and saves UTF-8 results and desktop captures.
+Pass `-Run -Product EQ` (or `Studio`), `-InstallerPath`, and a dedicated
+`-ResultDirectory`. Without `-Run` it makes no changes.
+
+`tests/windows_startup_desktop_observer.ps1` accepts `-Run`, `-Product`, and
+`-ResultDirectory`. Run it from a temporary per-user task triggered at logon,
+with an Interactive principal and Limited privileges. Configure the tested
+app's startup registration before signing out. The observer waits for automatic
+startup, checks that exactly one app is running with `--background` in its own
+desktop session and has no visible main window, reopens the same instance,
+and requests graceful Quit. It does not register startup or change passwords.
+Restore the previous startup registration and remove the owned task afterward.
+
+Current package and actual sign-in evidence is in
+`tests/results/localization/windows-utf8-qualified.json`. Structural catalog
+coverage, contextual AI review and native-speaker verification remain separate.
+Installer translations and other extraction gaps remain second-pass work.

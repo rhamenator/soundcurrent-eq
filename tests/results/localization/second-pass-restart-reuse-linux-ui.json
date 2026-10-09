@@ -1,0 +1,37 @@
+{
+  "scope": "Reuse existing translated restart-required notice and refresh compiled Linux UI qualification",
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "newCatalogSources": 0,
+  "restartSource": "VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.",
+  "contextualReview": "AI confirmed installation exit 3010 requires restart before EQ/cable settings; reuses reviewed caption instead of duplicate source; silent default and reboot flag preserved",
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "focusedRestartTest": 1,
+    "sourceAudit": "passed declared reference/backlog checks",
+    "NSISCompiler": {
+      "captionLiterals": 952,
+      "restartDialogs": 34,
+      "languageIDs": "English fixture only",
+      "localeActivation": false
+    },
+    "linuxUI": {
+      "rebuilt": true,
+      "selectedTests": 40,
+      "passed": 40,
+      "localeUIChecks": 35,
+      "scope": "Offscreen real Qt widgets, regional-format and helper/diagnostic checks; not installed package or visual desktop qualification",
+      "binary": "/home/rich/dev/soundcurrent-eq/build/soundcurrent-eq",
+      "sha256": "81d709a2035434a5a2b37d641e28d7b3e264d3f068585a2db4b69f99bed0b9cc",
+      "evidence": "current-catalog-linux-ui-tests.log"
+    }
+  },
+  "restartAndDSPActionsChanged": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Welcome/setup and long helper notice translations",
+    "Installer locale activation and installed layout",
+    "Current Windows and Linux installed-package lifecycle qualification"
+  ]
+}

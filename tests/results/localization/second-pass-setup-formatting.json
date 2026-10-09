@@ -1,0 +1,35 @@
+{
+  "scope": "Safe numbered placeholder formatting for owned Windows setup templates",
+  "sourceMessagesPerLocale": 574,
+  "nonEnglishLocales": 33,
+  "newTranslationsAuthored": false,
+  "nativeSpeakerVerification": "unverified",
+  "runtimeQualification": {
+    "platform": "Host PowerShell 7.6.6",
+    "requiredHelperLookupsPassed": 238,
+    "formattingFixtures": "passed: reordered and multi-digit placeholders, repeated placeholders, literal inserted values, corrupt translation fallback, unsupported/missing placeholder rejection",
+    "catalogUnitTestsPassed": 16,
+    "catalogUnitTestsSkipped": 1,
+    "quietProductionActionErrorLocales": [
+      "fr",
+      "ar",
+      "nn"
+    ]
+  },
+  "productionDynamicMessagesConverted": false,
+  "WindowsPowerShell51Qualified": false,
+  "newPackagesQualified": false,
+  "VMUsed": false,
+  "driverOrEndpointActionsPerformed": false,
+  "wholeInterfaceCoverageProven": false,
+  "evidenceSha256": {
+    "packaging/windows/setup-localization.ps1": "6dfc53f0d28ccd30ee5e49f32786f0493ddb8dd9b73cc2f2db09470df3187b36",
+    "tests/windows_setup_localization.ps1": "f2301847645232e3e08bd33a300dddf8690e69d7eb01be98c55f929e6e9c90d8",
+    "tests/results/localization/setup-formatting-runtime.log": "58743fe02062e8d35bfe8f49954ce8d735f22668e3ff5feed56b84cd3b44dcd3"
+  },
+  "remainingScope": [
+    "Translate and wire dynamic helper messages",
+    "Other helper bodies and NSIS text",
+    "Actual Windows runtime and changed-package lifecycle qualification"
+  ]
+}

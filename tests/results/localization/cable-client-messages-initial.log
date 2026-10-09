@@ -1,0 +1,18 @@
+Exception: /home/rich/dev/soundcurrent-eq/tests/windows_setup_localization.ps1:91
+Line |
+  91 |              throw ('Cable missing readiness helper mismatch: '+$pack. …
+     |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cable missing readiness helper mismatch: en
+PASS: 34 catalogs, 587 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+Traceback (most recent call last):
+  File "/home/rich/dev/soundcurrent-eq/scripts/test_windows_setup_localization.py", line 15, in <module>
+    subprocess.run(['pwsh', '-NoProfile', '-NonInteractive', '-File',
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    str(root / 'tests/windows_setup_localization.ps1'),
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    '-CatalogPath', str(catalog)], check=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['pwsh', '-NoProfile', '-NonInteractive', '-File', '/home/rich/dev/soundcurrent-eq/tests/windows_setup_localization.ps1', '-CatalogPath', '/tmp/soundcurrent-setup-i18n-8avnaqsi/setup-translations.json']' returned non-zero exit status 1.

@@ -1,9 +1,12 @@
 // SPDX-License-Identifier: GPL-3.0-only
 #include "equipment_profiles.h"
+#include "localization.h"
+#include "equipment_display_text.h"
 #include <QApplication>
 #include <QComboBox>
 #include <QDialogButtonBox>
 #include <QDoubleSpinBox>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QFileDialog>
 #include <QJsonDocument>
@@ -21,11 +24,11 @@ namespace {
 void require(bool ok, const char *message) { if (!ok) qFatal("%s", message); }
 QDialog *dialog(const QString &title) {
     for (auto *w: QApplication::topLevelWidgets())
-        if (w->isVisible() && w->windowTitle()==title) return qobject_cast<QDialog *>(w);
+        if (w->isVisible() && w->windowTitle()==soundcurrent::i18n::text(title.toUtf8().constData())) return qobject_cast<QDialog *>(w);
     return nullptr;
 }
 QPushButton *button(QWidget *w, const QString &text) {
-    for (auto *b:w->findChildren<QPushButton *>()) if(b->text()==text)return b;
+    for (auto *b:w->findChildren<QPushButton *>()) if(b->text()==soundcurrent::i18n::text(text.toUtf8().constData()))return b;
     qFatal("Missing button: %s",qPrintable(text));return nullptr;
 }
 void clickLater(QAbstractButton *b) { require(b,"Missing dialog action"); QTimer::singleShot(0,b,&QAbstractButton::click); }
@@ -41,11 +44,17 @@ int main(int argc,char **argv) {
     QTemporaryDir temp;require(temp.isValid(),"No isolated profile folder");
     app.setOrganizationName("SoundCurrentUITests");app.setApplicationName(QUuid::createUuid().toString(QUuid::WithoutBraces));
     QStandardPaths::setTestModeEnabled(true);
+    soundcurrent::i18n::Runtime localization;
+    localization.initialize(!app.arguments().contains("--language"));
     // A unique application name keeps every read/write away from real profiles.
     const auto path=libraryPath();require(loadLibrary().isEmpty(),"Test library not isolated");
     Profile fixture;fixture.kind="speaker";fixture.brand="UI fixture";fixture.family="Test";fixture.model="Saved profile";
     fixture.source="https://example.invalid/ui-test";fixture.conditions="Synthetic test only";fixture.filters={{1000,0,1}};
     QTimer drive;drive.setInterval(20);int phase=0;bool checkedCancel=false;
+    QElapsedTimer elapsed,progressElapsed;elapsed.start();progressElapsed.start();QTimer phaseTrace;int lastPhase=-1;
+    QObject::connect(&phaseTrace,&QTimer::timeout,&app,[&]{if(phase!=lastPhase){
+        qInfo("Equipment fixture phase %d at %lld ms",phase,static_cast<long long>(elapsed.elapsed()));lastPhase=phase;progressElapsed.restart();}});
+    phaseTrace.start(100);
     QObject::connect(&drive,&QTimer::timeout,&app,[&] {
         if(auto *box=qobject_cast<QMessageBox *>(dialog("Save modified profile?"))) {
             if(phase==1){require(box->button(QMessageBox::Cancel),"No cancel choice");phase=2;clickLater(box->button(QMessageBox::Cancel));}
@@ -53,11 +62,14 @@ int main(int argc,char **argv) {
             return;
         }
         if(auto *editor=dialog("Equipment profile editor")) {
-            if(phase==0){setGain(editor,3);phase=1;closeLater(editor);}
+            if(phase==0){
+                require(editor->findChild<QLineEdit *>("profileSource")->maxLength()==2048,"Translated source label changed its field limit");
+                require(editor->findChild<QLineEdit *>("profileConditions")->maxLength()==2000,"Translated conditions label changed its field limit");
+                setGain(editor,3);phase=1;closeLater(editor);}
             else if(phase==2){checkedCancel=true;phase=3;closeLater(editor);}
         }
     });
-    QTimer::singleShot(20000,&app,[&]{for(auto *w:QApplication::topLevelWidgets())if(w->isVisible()){qWarning("Visible: %s / %s",w->metaObject()->className(),qPrintable(w->windowTitle()));if(auto *f=qobject_cast<QFileDialog *>(w))qWarning("Selected: %s",qPrintable(f->selectedFiles().join(";")));if(auto *b=qobject_cast<QMessageBox *>(w))qWarning("Message: %s",qPrintable(b->text()));w->grab().save(temp.filePath("timeout.png"));}qFatal("Equipment UI test timed out at phase %d",phase);});
+    QTimer watchdog;QObject::connect(&watchdog,&QTimer::timeout,&app,[&]{if(progressElapsed.elapsed()<20000)return;for(auto *w:QApplication::topLevelWidgets())if(w->isVisible()){qWarning("Visible: %s / %s",w->metaObject()->className(),qPrintable(w->windowTitle()));if(auto *f=qobject_cast<QFileDialog *>(w))qWarning("Selected: %s",qPrintable(f->selectedFiles().join(";")));if(auto *b=qobject_cast<QMessageBox *>(w))qWarning("Message: %s",qPrintable(b->text()));w->grab().save(temp.filePath("timeout.png"));}qFatal("Equipment UI test made no phase progress for 20 seconds at phase %d",phase);});watchdog.start(100);
     drive.start();saveNewProfile(nullptr,fixture);drive.stop();
     require(phase==4 && checkedCancel && loadLibrary().isEmpty(),"Cancel/discard modified profile failed");
     phase=0;
@@ -82,14 +94,24 @@ int main(int argc,char **argv) {
                 if(phase==1 || phase==4){const auto name=phase==1?invalid.fileName():valid.fileName();phase=phase==1?2:5;QTimer::singleShot(250,file,[file,name]{auto *input=file->findChild<QLineEdit *>("fileNameEdit");require(input,"No file selection input");input->setText(name);QMetaObject::invokeMethod(file,"accept",Qt::QueuedConnection);});return;}continue;
             }
             if(auto *box=qobject_cast<QMessageBox *>(w)) {
-                if(phase==2){malformedRejected=true;require(loadLibrary().size()==1,"Malformed import changed library");phase=3;QTimer::singleShot(0,box,&QMessageBox::accept);}
+                if(phase==2){malformedRejected=true;require(loadLibrary().size()==1,"Malformed import changed library");phase=3;require(box->button(QMessageBox::Ok),"Malformed import warning has no OK button");clickLater(box->button(QMessageBox::Ok));}
                 else if(phase==5){require(box->button(QMessageBox::Yes),"Import confirmation missing");phase=6;clickLater(box->button(QMessageBox::Yes));}
                 else if(phase==7){phase=8;clickLater(box->button(QMessageBox::Yes));}
                 return;
             }
         }
         auto *library=dialog("Equipment profiles — brand / family / model");if(!library)return;
-        if(phase==0){require(bundledProfiles().size()>1000,"Bundled equipment missing");phase=1;clickLater(button(library,"Import JSON"));}
+        if(phase==0){require(bundledProfiles().size()>1000,"Bundled equipment missing");
+            auto *kind=library->findChild<QComboBox *>("equipmentKindFilter");require(kind,"No equipment kind selector");
+            require(kind->itemData(1).toString()=="speaker" && kind->itemData(2).toString()=="microphone" && kind->itemData(3).toString()=="amplifier","Localized kinds changed profile IDs");
+            auto *subtype=library->findChild<QComboBox *>("equipmentSubtypeFilter");require(subtype,"No stable equipment subtype selector");
+            const int bookshelf=subtype->findData("Bookshelf");require(bookshelf>=0,"Missing bookshelf taxonomy key");
+            require(subtype->itemText(bookshelf)==soundcurrent::i18n::text("Bookshelf speaker"),"Built-in subtype caption is not localized");
+            require(soundcurrent::i18n::equipmentTypeText("Custom %1 / 棚型")=="Custom %1 / 棚型","Custom subtype text was changed");
+            subtype->setItemText(bookshelf,QString::fromUtf8("Bibliothèque / 棚型"));subtype->setCurrentIndex(bookshelf);
+            require(subtype->currentData().toString()=="Bookshelf","Display caption changed subtype identity");
+            kind->setCurrentIndex(1);require(subtype->currentData().toString()=="Bookshelf","Taxonomy refresh lost stable subtype selection");
+            subtype->setCurrentIndex(0);kind->setCurrentIndex(2);kind->setCurrentIndex(0);phase=1;clickLater(button(library,"Import JSON"));}
         else if(phase==3){phase=4;clickLater(button(library,"Import JSON"));}
         else if(phase==6){auto profiles=loadLibrary();require(profiles.size()==2 && profiles[0].id==originalId,"Valid import overwrote existing profile");phase=7;clickLater(button(library,"Apply profile"));}
         else if(phase==8){require(applied,"Apply callback missing");phase=9;closeLater(library);}

@@ -1,0 +1,14 @@
+{
+  "scope": "One known invariant backend diagnostic mapped at desktop view boundary; other diagnostics are not claimed localized.",
+  "mappedSource": "The selected EQ settings are invalid",
+  "catalogSource": "Invalid equalizer settings",
+  "tests": {
+    "platform": "Linux",
+    "passed": 2,
+    "total": 2,
+    "log": "/tmp/soundcurrent-eq-backend-boundary-tests.log",
+    "scope": "Compiled catalogs across non-English locales, exact unknown Unicode preservation and structural catalog regressions"
+  },
+  "nativeReviewed": false,
+  "windows": "Pending runtime qualification"
+}

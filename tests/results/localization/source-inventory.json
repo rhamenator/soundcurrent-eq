@@ -1,0 +1,581 @@
+{
+  "scope": "Literal C++ exceptions and selected view calls across src, NSIS UI candidates, Python script diagnostics. Dynamic/composed strings, shell/PowerShell messages, native dialogs and data-driven names require further review. Not whole-application coverage. Classification is partial: test-only and branding candidates distinguished; remaining helper, DSP and Studio engine reachability still needs review.",
+  "catalogSourceCount": 524,
+  "candidateCount": 82,
+  "candidates": [
+    {
+      "file": "src/dsp.cpp",
+      "call": "invalid_argument",
+      "source": "Unsupported sample rate",
+      "inCatalog": false,
+      "classification": "needs reachability and runtime translation review"
+    },
+    {
+      "file": "src/enhancement.cpp",
+      "call": "invalid_argument",
+      "source": "Unsupported enhancement sample rate",
+      "inCatalog": false,
+      "classification": "needs reachability and runtime translation review"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "runtime_error",
+      "source": "No microphone is connected",
+      "inCatalog": false,
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "runtime_error",
+      "source": "Microphone filter is missing",
+      "inCatalog": false,
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "runtime_error",
+      "source": "Microphone filter did not connect to the selected device",
+      "inCatalog": false,
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "runtime_error",
+      "source": "Original microphone was not restored",
+      "inCatalog": false,
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "runtime_error",
+      "source": "Default band layout is invalid",
+      "inCatalog": false,
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "runtime_error",
+      "source": "Custom preset round trip failed",
+      "inCatalog": false,
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "runtime_error",
+      "source": "Nine-band preset migration failed",
+      "inCatalog": false,
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "runtime_error",
+      "source": "No audio output devices found",
+      "inCatalog": false,
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "runtime_error",
+      "source": "Equalizer chose the wrong system output",
+      "inCatalog": false,
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "runtime_error",
+      "source": "Transparent filter applies a second volume reduction",
+      "inCatalog": false,
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "runtime_error",
+      "source": "Legacy filter still applies a second volume reduction",
+      "inCatalog": false,
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "runtime_error",
+      "source": "Original output was not restored",
+      "inCatalog": false,
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "runtime_error",
+      "source": "Original output volume was not restored",
+      "inCatalog": false,
+      "classification": "Literal exception in built-in test workflows; production reachability requires separate review"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setToolTip",
+      "source": "SoundCurrent EQ",
+      "inCatalog": false,
+      "classification": "Invariant product name; preserve branding"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setWindowTitle",
+      "source": "SoundCurrent EQ",
+      "inCatalog": false,
+      "classification": "Invariant product name; preserve branding"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "call": "runtime_error",
+      "source": "Could not initialize Windows audio COM",
+      "inCatalog": true,
+      "classification": "needs reachability and runtime translation review"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "call": "runtime_error",
+      "source": "Invalid speaker mix format",
+      "inCatalog": true,
+      "classification": "needs reachability and runtime translation review"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "call": "runtime_error",
+      "source": "Unsupported speaker mix sample format",
+      "inCatalog": true,
+      "classification": "needs reachability and runtime translation review"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "call": "runtime_error",
+      "source": "SoundCurrent virtual output requires 48 kHz stereo float audio",
+      "inCatalog": true,
+      "classification": "needs reachability and runtime translation review"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "call": "runtime_error",
+      "source": "Unsupported speaker channel layout or sample rate",
+      "inCatalog": true,
+      "classification": "needs reachability and runtime translation review"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "call": "runtime_error",
+      "source": "The selected EQ settings are invalid",
+      "inCatalog": false,
+      "classification": "Translated at audioErrorText desktop boundary using Invalid equalizer settings"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "call": "runtime_error",
+      "source": "Invalid enhancements",
+      "inCatalog": true,
+      "classification": "needs reachability and runtime translation review"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "call": "runtime_error",
+      "source": "Cable packet exceeds its capture buffer",
+      "inCatalog": true,
+      "classification": "needs reachability and runtime translation review"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "call": "runtime_error",
+      "source": "Windows audio COM unavailable",
+      "inCatalog": true,
+      "classification": "needs reachability and runtime translation review"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "call": "runtime_error",
+      "source": "Unsupported recording format",
+      "inCatalog": true,
+      "classification": "needs reachability and runtime translation review"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "call": "runtime_error",
+      "source": "Microphone recording consumer stalled",
+      "inCatalog": true,
+      "classification": "needs reachability and runtime translation review"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "call": "runtime_error",
+      "source": "Invalid calibration audio",
+      "inCatalog": true,
+      "classification": "needs reachability and runtime translation review"
+    },
+    {
+      "file": "src/windows_live_conflict_test.inc",
+      "call": "runtime_error",
+      "source": "Live processing did not start",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_conflict_test.inc",
+      "call": "runtime_error",
+      "source": "Live app did not acquire all output roles",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_conflict_test.inc",
+      "call": "runtime_error",
+      "source": "Cannot write conflict readiness",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Audio session busy",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "No physical fixture",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Need two physical outputs",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Power control missing",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Output control missing",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Live audio did not start",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Route not acquired",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Cannot select direct physical output",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "UI still claims EQ on after Windows selects direct physical output",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Manual output choice overwritten",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Supply a test status file",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Audio session busy",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Cannot report hotplug test state",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Live controls unavailable",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Need clone USB and onboard fixtures",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "USB processing did not start",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Processing disabled during hotplug",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Unplug did not switch to automatic",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Owned output role missing after completed switch",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Owned output role missing after completed switch",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Hotplug test left owned default",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Another SoundCurrent session is active",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "No physical output fixture",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Fixture already owns default output; preserve it",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "UI output route does not match enabled state",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Output control unavailable",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "UI failed to start audio",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Quit control unavailable",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_live_ui_test.inc",
+      "call": "runtime_error",
+      "source": "Quit event loop failed",
+      "inCatalog": false,
+      "classification": "Test-only failure diagnostic; not production interface text"
+    },
+    {
+      "file": "src/windows_managed_route.h",
+      "call": "runtime_error",
+      "source": "Audio route recovery helper could not start. Repair or reinstall SoundCurrent.",
+      "inCatalog": true,
+      "classification": "Production recovery-helper failure translated at desktop audioErrorText boundary; actual compiled catalogs tested across all non-English locales"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 104,
+      "call": "NSIS candidate",
+      "sourceLine": "Section \"SoundCurrent EQ\" main",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 107,
+      "call": "NSIS candidate",
+      "sourceLine": "MessageBox MB_ICONEXCLAMATION \"Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed.\"",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 148,
+      "call": "NSIS candidate",
+      "sourceLine": "DetailPrint \"Setting up the shared SoundCurrent Audio driver...\"",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 156,
+      "call": "NSIS candidate",
+      "sourceLine": "DetailPrint \"SoundCurrent Audio setup did not finish. Retry using the Start menu shortcut.\"",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 157,
+      "call": "NSIS candidate",
+      "sourceLine": "MessageBox MB_OK|MB_ICONINFORMATION \"SoundCurrent Audio was not installed. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason.\"",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 162,
+      "call": "NSIS candidate",
+      "sourceLine": "Section \"Uninstall\"",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 165,
+      "call": "NSIS candidate",
+      "sourceLine": "MessageBox MB_ICONEXCLAMATION \"Quit SoundCurrent EQ before uninstalling it.\"",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 179,
+      "call": "NSIS candidate",
+      "sourceLine": "MessageBox MB_ICONEXCLAMATION \"Shared audio driver removal did not finish. This app was kept so you can retry. Quit EQ and Studio, then retry uninstalling.\"",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 118,
+      "call": "NSIS candidate",
+      "sourceLine": "Section \"SoundCurrent EQ\" main",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 121,
+      "call": "NSIS candidate",
+      "sourceLine": "MessageBox MB_ICONEXCLAMATION \"Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed.\"",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 155,
+      "call": "NSIS candidate",
+      "sourceLine": "DetailPrint \"Opening VB-CABLE setup...\"",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 162,
+      "call": "NSIS candidate",
+      "sourceLine": "MessageBox MB_OK|MB_ICONINFORMATION \"Restart Windows before using SoundCurrent or VB-CABLE settings. The audio driver installation needs a system restart.\" /SD IDOK",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 164,
+      "call": "NSIS candidate",
+      "sourceLine": "DetailPrint \"VB-CABLE setup did not finish. Retry using the Start menu shortcut.\"",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 165,
+      "call": "NSIS candidate",
+      "sourceLine": "MessageBox MB_OK|MB_ICONINFORMATION \"VB-CABLE setup did not finish. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason.\"",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 170,
+      "call": "NSIS candidate",
+      "sourceLine": "Section \"Uninstall\"",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 173,
+      "call": "NSIS candidate",
+      "sourceLine": "MessageBox MB_ICONEXCLAMATION \"Quit SoundCurrent EQ before uninstalling it.\"",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 190,
+      "call": "NSIS candidate",
+      "sourceLine": "MessageBox MB_ICONEXCLAMATION \"VB-CABLE removal did not finish. This app was kept so you can retry.$\\r$\\n$1\"",
+      "classification": "installer UI, path or identifier; review required"
+    },
+    {
+      "file": "scripts/assemble-release.py",
+      "line": 26,
+      "call": "Python diagnostic candidate",
+      "sourceLine": "print(f'Prepared {name} {version} companions and checksums')",
+      "classification": "helper or developer diagnostic; review required"
+    },
+    {
+      "file": "scripts/collect-equipment-profiles.py",
+      "line": 98,
+      "call": "Python diagnostic candidate",
+      "sourceLine": "if i%100==0:print(f'{i}/{len(paths)}',flush=True)",
+      "classification": "helper or developer diagnostic; review required"
+    },
+    {
+      "file": "scripts/collect-equipment-profiles.py",
+      "line": 102,
+      "call": "Python diagnostic candidate",
+      "sourceLine": "print(f'Collected {len(profiles)} profiles / {len({p[\"brand\"] for p in profiles})} brands; {len(gaps)} gaps',flush=True)",
+      "classification": "helper or developer diagnostic; review required"
+    }
+  ]
+}

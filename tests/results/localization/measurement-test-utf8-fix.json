@@ -1,0 +1,9 @@
+{
+  "scope": "Windows Python source-reading failures in newly added regression tests",
+  "failedWindowsRun": 37918139919,
+  "cause": "Implicit pathlib.read_text decoded UTF-8 C++ with default cp1252 on hosted Windows. Two tests failed before installer qualification.",
+  "fix": "Explicit encoding=utf-8 for new main.cpp and processing_guard.cpp reads; existing inert UTF-8 harness regression preserved.",
+  "productionAudioOrCatalogChanged": false,
+  "freshWindowsQualification": "required",
+  "nativeReviewed": false
+}

@@ -1,0 +1,35 @@
+{
+  "product": "EQ",
+  "vm": "soundcurrent-win11-dev",
+  "date": "2026-10-08",
+  "installedApplicationSource": "eca144a60f81274e15d65b710fa0c09f4a992062",
+  "installerSha256": "E6E4C5D8386B71C07FD51169522CCEDDD36E28EA3E3F99A4A468DD8EEB61E767",
+  "interactiveDesktopSession": 1,
+  "visiblePages": [
+    "welcome",
+    "GPL license",
+    "directory",
+    "audio setup",
+    "finish"
+  ],
+  "installerExitCode": 0,
+  "driverInstallUnchecked": true,
+  "finishRunUnchecked": true,
+  "nativeReviewed": false,
+  "evidenceDirectory": "/home/rich/Downloads/SoundCurrent-localization-qa/windows-interactive-original/sc-interactive-EQ",
+  "harness": "Temporary interactive-session Win32 control harness. EQ required a console Enter on audio page; Studio completed with asynchronous WM_COMMAND controls. A prior harness incorrectly matched the finish checkbox; that run is not qualification evidence. Final EQ rerun did not launch the app.",
+  "finding": "UTF-8 punctuation interpreted as Windows legacy codepage: mojibake observed in both audio setup pages.",
+  "fix": {
+    "source": "a191c625708ba87d2b6c652ed537c9c4258f2ae5",
+    "change": "NSIS /INPUTCHARSET UTF8",
+    "documentation": "https://nsis.sourceforge.io/Docs/Chapter3.html",
+    "ciRun": 37809336754,
+    "qualification": "pending rebuilt installer capture"
+  },
+  "remaining": [
+    "Rebuilt installer visual verification",
+    "Actual Windows sign-in startup invocation"
+  ],
+  "scope": "Interactive in-place per-user update only. Prior silent lifecycle tests cover uninstall/reinstall; no interactive driver removal or native linguistic certification claimed.",
+  "supersededBy": "windows-utf8-qualified.json"
+}

@@ -1,0 +1,49 @@
+{
+  "scope": "Shared installer setup-failure/app-installed notice",
+  "source": "%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.",
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "sourceMessages": 624,
+  "unfinishedExtractedEntries": 0,
+  "contextualReview": {
+    "status": "AI reviewed against copied app payload, shortcuts and nonzero setup branch",
+    "correction": "Setup failure does not prove existing native driver absent",
+    "parameters": {
+      "%1": "stable driver name",
+      "%2": "stable app name",
+      "%3": "actual currently English Start-menu shortcut name Audio driver setup"
+    },
+    "preserved": [
+      "App itself installed",
+      "Start-menu retry",
+      "See setup details for reason"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "catalogTests": {
+      "total": 49,
+      "passed": 48,
+      "skipped": 1
+    },
+    "compiledCatalogHashes": "verified",
+    "nsisLiteralCompiler": {
+      "captions": 1020,
+      "setupFailureDialogs": 68,
+      "languageIDs": "English fixture only",
+      "localeActivation": false,
+      "layoutQualified": false
+    },
+    "parameterGuards": "Exact token multiset; reorder allowed; missing/duplicate/wrong/%L/%n reject; inserted placeholder-like names preserved literally",
+    "messageBoxAudit": "All supported NSIS MessageBox sites use declared LangStrings"
+  },
+  "knownInterfaceGap": "Start-menu shortcut display names remain English; localization requires upgrade/uninstall cleanup preserving identity",
+  "setupActionsAndDSPChanged": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Welcome text and long helper notice",
+    "Installer locale activation and shortcut names/cleanup",
+    "Installed layout and current runtime/package lifecycle checks"
+  ]
+}

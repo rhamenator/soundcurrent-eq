@@ -1,0 +1,337 @@
+{
+  "scope": "Supported NSIS UI text sites; not a full NSIS parser",
+  "wholeInterfaceCoverageProven": false,
+  "languages": {
+    "packaging/windows/soundcurrent-eq-native.nsi": [
+      "English"
+    ],
+    "packaging/windows/soundcurrent-eq.nsi": [
+      "English"
+    ]
+  },
+  "candidates": [
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 45,
+      "kind": "MUI-text",
+      "literal": "$(SCWelcome)",
+      "marked": true,
+      "reviewStatus": "all locale welcome paragraphs prepared; activation and installed layout pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 76,
+      "kind": "page-heading",
+      "literal": "$(SCConnectAudio)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale catalog translations available; installer language activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 76,
+      "kind": "page-heading",
+      "literal": "$(SCSetupAudio)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale template translations available; installer language activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 82,
+      "kind": "control-caption",
+      "literal": "$(SCNativeRouting)",
+      "marked": true,
+      "reviewStatus": "all locale translations exported; language activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 84,
+      "kind": "control-caption",
+      "literal": "$(SCInstallDriver)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale catalog translations available; installer language activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 88,
+      "kind": "control-caption",
+      "literal": "$(SCNativePresent)",
+      "marked": true,
+      "reviewStatus": "checkbox condition explicit; all locale translations exported; language activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 91,
+      "kind": "control-caption",
+      "literal": "$(SCNativeApproval)",
+      "marked": true,
+      "reviewStatus": "all locale translations exported; language activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 93,
+      "kind": "control-caption",
+      "literal": "$(SCDriverCheckFailed)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale template translations available; installer language activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 96,
+      "kind": "control-caption",
+      "literal": "$(SCSharedDriverNotice)",
+      "marked": true,
+      "reviewStatus": "running-app wording corrected; all locale translations exported; language activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 104,
+      "kind": "Section",
+      "literal": "SoundCurrent EQ",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 107,
+      "kind": "MessageBox",
+      "literal": "$(SCQuitBeforeUpdate)",
+      "marked": true,
+      "reviewStatus": "all locale quit/update/uninstall translations prepared; language activation and lifecycle qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 148,
+      "kind": "DetailPrint",
+      "literal": "$(SCNativeSetupProgress)",
+      "marked": true,
+      "reviewStatus": "all locale setup progress/retry translations prepared; activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 156,
+      "kind": "DetailPrint",
+      "literal": "$(SCSetupRetryProgress)",
+      "marked": true,
+      "reviewStatus": "all locale setup progress/retry translations prepared; activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 157,
+      "kind": "MessageBox",
+      "literal": "$(SCSetupFailedAppInstalled)",
+      "marked": true,
+      "reviewStatus": "all locale installed-app/setup-failure translations prepared; activation/lifecycle pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 162,
+      "kind": "Section",
+      "literal": "Uninstall",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 165,
+      "kind": "MessageBox",
+      "literal": "$(SCQuitBeforeUninstall)",
+      "marked": true,
+      "reviewStatus": "all locale quit/update/uninstall translations prepared; language activation and lifecycle qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 179,
+      "kind": "MessageBox",
+      "literal": "$(SCNativeRemovalFailed)",
+      "marked": true,
+      "reviewStatus": "all locale native removal failure translations prepared; activation and lifecycle qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 45,
+      "kind": "MUI-text",
+      "literal": "$(SCWelcome)",
+      "marked": true,
+      "reviewStatus": "all locale welcome paragraphs prepared; activation and installed layout pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 87,
+      "kind": "page-heading",
+      "literal": "$(SCConnectAudio)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale catalog translations available; installer language activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 87,
+      "kind": "page-heading",
+      "literal": "$(SCSetupAudio)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale template translations available; installer language activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 93,
+      "kind": "control-caption",
+      "literal": "$(SCCableRouting)",
+      "marked": true,
+      "reviewStatus": "all locale cable-routing donation translations prepared; activation and installed layout pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 95,
+      "kind": "control-caption",
+      "literal": "$(SCInstallDriver)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale catalog translations available; installer language activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 99,
+      "kind": "control-caption",
+      "literal": "$(SCCablePresent)",
+      "marked": true,
+      "reviewStatus": "all locale translations and translated Quit caption exported; activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 101,
+      "kind": "control-caption",
+      "literal": "$(SCCableRestart)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale translations exported; language activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 104,
+      "kind": "control-caption",
+      "literal": "$(SCCableRepair)",
+      "marked": true,
+      "reviewStatus": "all locale repair translations prepared; activation and installed layout pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 107,
+      "kind": "control-caption",
+      "literal": "$(SCCableSignedInstaller)",
+      "marked": true,
+      "reviewStatus": "all locale signed-installer translations prepared; activation and installed layout pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 109,
+      "kind": "control-caption",
+      "literal": "$(SCDriverCheckFailed)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale template translations available; installer language activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 112,
+      "kind": "control-caption",
+      "literal": "$(SCCableSharedNotice)",
+      "marked": true,
+      "reviewStatus": "all locale shared-cable translations prepared; activation and installed layout pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 120,
+      "kind": "Section",
+      "literal": "SoundCurrent EQ",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 123,
+      "kind": "MessageBox",
+      "literal": "$(SCQuitBeforeUpdate)",
+      "marked": true,
+      "reviewStatus": "all locale quit/update/uninstall translations prepared; language activation and lifecycle qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 157,
+      "kind": "DetailPrint",
+      "literal": "$(SCCableSetupProgress)",
+      "marked": true,
+      "reviewStatus": "all locale setup progress/retry translations prepared; activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 164,
+      "kind": "MessageBox",
+      "literal": "$(SCCableRestart)",
+      "marked": true,
+      "reviewStatus": "reuses reviewed all-locale restart caption; language activation and installed dialog qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 166,
+      "kind": "DetailPrint",
+      "literal": "$(SCSetupRetryProgress)",
+      "marked": true,
+      "reviewStatus": "all locale setup progress/retry translations prepared; activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 167,
+      "kind": "MessageBox",
+      "literal": "$(SCSetupFailedAppInstalled)",
+      "marked": true,
+      "reviewStatus": "all locale installed-app/setup-failure translations prepared; activation/lifecycle pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 172,
+      "kind": "Section",
+      "literal": "Uninstall",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 175,
+      "kind": "MessageBox",
+      "literal": "$(SCQuitBeforeUninstall)",
+      "marked": true,
+      "reviewStatus": "all locale quit/update/uninstall translations prepared; language activation and lifecycle qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 192,
+      "kind": "MessageBox",
+      "literal": "$(SCCableRemovalFailed)$\\r$\\n$1",
+      "marked": true,
+      "reviewStatus": "all locale cable removal translations prepared; helper output suffix preserved; activation/lifecycle pending"
+    }
+  ],
+  "dynamicSites": [
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 152,
+      "kind": "DetailPrint",
+      "expression": "DetailPrint $1"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 175,
+      "kind": "DetailPrint",
+      "expression": "DetailPrint $1"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 161,
+      "kind": "DetailPrint",
+      "expression": "DetailPrint $1"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 188,
+      "kind": "DetailPrint",
+      "expression": "DetailPrint $1"
+    }
+  ],
+  "baselinePolicy": "Raw candidates require translation or invariant-name review; marked references require explicit review. Normal checks never regenerate this backlog. Compiler and installed UI qualification remain required."
+}

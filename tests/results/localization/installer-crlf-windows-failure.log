@@ -1,0 +1,23 @@
+windows	Build, test and package the shared application	2026-10-09T01:13:45.4428881Z PASS: 34 catalogs, 627 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+windows	Build, test and package the shared application	2026-10-09T01:13:45.4430150Z PASS: 34 catalogs, 627 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+windows	Build, test and package the shared application	2026-10-09T01:13:45.4431189Z PASS: 34 catalogs, 627 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+windows	Build, test and package the shared application	2026-10-09T01:13:45.4432209Z PASS: 34 catalogs, 627 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+windows	Build, test and package the shared application	2026-10-09T01:13:45.4434271Z PASS: 2 catalogs, 2 source messages; 1 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+windows	Build, test and package the shared application	2026-10-09T01:13:45.4435346Z PASS: 34 catalogs, 627 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+windows	Build, test and package the shared application	2026-10-09T01:13:47.1061247Z PASS: 34 catalogs, 627 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+windows	Build, test and package the shared application	2026-10-09T01:13:49.1539708Z PASS: 34 catalogs, 627 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+windows	Build, test and package the shared application	2026-10-09T01:13:49.1540936Z Traceback (most recent call last):
+windows	Build, test and package the shared application	2026-10-09T01:13:49.1541818Z   File "D:\a\soundcurrent-eq\soundcurrent-eq\scripts\windows_installer_catalogs.py", line 246, in <module>
+windows	Build, test and package the shared application	2026-10-09T01:13:49.1543177Z     generate_installer(arguments.installer_source, arguments.installer_output, arguments.product, captions, activate=arguments.activate_languages)
+windows	Build, test and package the shared application	2026-10-09T01:13:49.1631956Z   File "D:\a\soundcurrent-eq\soundcurrent-eq\scripts\windows_installer_catalogs.py", line 228, in generate_installer
+windows	Build, test and package the shared application	2026-10-09T01:13:49.1634241Z     text = activate_languages(text, product, captions, route)
+windows	Build, test and package the shared application	2026-10-09T01:13:49.1635167Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+windows	Build, test and package the shared application	2026-10-09T01:13:49.1636038Z   File "D:\a\soundcurrent-eq\soundcurrent-eq\scripts\windows_installer_catalogs.py", line 180, in activate_languages
+windows	Build, test and package the shared application	2026-10-09T01:13:49.1638046Z     raise ValueError('Installer lifecycle language activation requires one owned init')
+windows	Build, test and package the shared application	2026-10-09T01:13:49.1638797Z ValueError: Installer lifecycle language activation requires one owned init
+windows	Build, test and package the shared application	2026-10-09T01:13:49.2706758Z [31;1mException: [0mD:\a\soundcurrent-eq\soundcurrent-eq\scripts\build-windows.ps1:220[0m
+windows	Build, test and package the shared application	2026-10-09T01:13:49.2707439Z [31;1m[0m[36;1mLine |[0m
+windows	Build, test and package the shared application	2026-10-09T01:13:49.2708091Z [31;1m[0m[36;1m[36;1m 220 | [0m … ($LASTEXITCODE -ne 0) { [36;1mthrow 'Installer caption generation failed'[0m }[0m
+windows	Build, test and package the shared application	2026-10-09T01:13:49.2708894Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+windows	Build, test and package the shared application	2026-10-09T01:13:49.2709944Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mInstaller caption generation failed[0m
+windows	Build, test and package the shared application	2026-10-09T01:13:49.2907430Z ##[error]Process completed with exit code 1.

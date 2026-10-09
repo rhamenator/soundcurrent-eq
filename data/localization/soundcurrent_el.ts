@@ -3,194 +3,397 @@
   <context>
     <name>SoundCurrent</name>
     <message>
-      <source>
-Apply this correction to the </source>
-      <translation type="unfinished" />
-    </message>
-    <message>
-      <source>
-Import into your library?</source>
-      <translation type="unfinished" />
-    </message>
-    <message>
       <source> (currently selected)</source>
-      <translation type="unfinished" />
+      <translation> (τρέχουσα επιλογή)</translation>
+    </message>
+    <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (αρχικό μοντέλο· όχι SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
     </message>
     <message>
       <source> (restored selection)</source>
-      <translation type="unfinished" />
+      <translation> (επαναφερμένη επιλογή)</translation>
     </message>
     <message>
-      <source> route?</source>
-      <translation type="unfinished" />
+      <source> [custom]</source>
+      <translation> [προσαρμοσμένο]</translation>
+    </message>
+    <message>
+      <source> and </source>
+      <translation> και </translation>
     </message>
     <message>
       <source> · mono</source>
-      <translation type="unfinished" />
+      <translation> · μονοφωνικό</translation>
+    </message>
+    <message>
+      <source> · no USB microphone detected</source>
+      <translation> · δεν εντοπίστηκε μικρόφωνο USB</translation>
     </message>
     <message>
       <source> · stereo</source>
-      <translation type="unfinished" />
+      <translation> · στερεοφωνικό</translation>
+    </message>
+    <message>
+      <source>%1
+
+Technical details:
+%2</source>
+      <translation>%1
+
+Τεχνικές λεπτομέρειες:
+%2</translation>
+    </message>
+    <message>
+      <source>%1
+Directory not found.
+Please verify the correct directory name was given.</source>
+      <translation>%1
+Ο κατάλογος δεν βρέθηκε.
+Ελέγξτε ότι το όνομα του καταλόγου είναι σωστό.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+File not found.
+Please verify the correct file name was given.</source>
+      <translation>%1
+Το αρχείο δεν βρέθηκε.
+Ελέγξτε ότι το όνομα του αρχείου είναι σωστό.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+The app remains open; your settings have been kept.</source>
+      <translation>%1
+Η εφαρμογή παραμένει ανοιχτή· οι ρυθμίσεις σας διατηρήθηκαν.</translation>
     </message>
     <message>
       <source>%1 %2%3 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 %2%3 dB</translation>
+    </message>
+    <message>
+      <source>%1 / %2
+%3
+Apply this correction to the %4 route?</source>
+      <translation>%1 / %2
+%3
+Να εφαρμοστεί αυτή η διόρθωση στη διαδρομή τύπου %4;</translation>
+    </message>
+    <message>
+      <source>%1 / %2
+%3
+Import into your library?</source>
+      <translation>%1 / %2
+%3
+Εισαγωγή στη βιβλιοθήκη σας;</translation>
+    </message>
+    <message>
+      <source>%1 Hz: measured %2%3 dB; suggested %4%5 dB</source>
+      <translation>%1 Hz: μέτρηση %2%3 dB· πρόταση %4%5 dB</translation>
+    </message>
+    <message>
+      <source>%1 Hz: signal %2, background %3</source>
+      <translation>%1 Hz: σήμα %2, θόρυβος υποβάθρου %3</translation>
+      <extracomment>Debug calibration tone amplitude and background noise amplitude. %1 is frequency, %2 signal amplitude, %3 background amplitude. Display only; no change to numerical analysis.</extracomment>
+    </message>
+    <message>
+      <source>%1 Hz: too quiet to measure</source>
+      <translation>%1 Hz: πολύ χαμηλή στάθμη για μέτρηση</translation>
+    </message>
+    <message>
+      <source>%1 already exists.
+Do you want to replace it?</source>
+      <translation>Το %1 υπάρχει ήδη.
+Θέλετε να το αντικαταστήσετε;</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1 disconnected. </source>
+      <translation>%1 αποσυνδέθηκε. </translation>
+    </message>
+    <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>Αποτυχία λειτουργίας: %1 (0x%2)</translation>
+    </message>
+    <message>
+      <source>%1 is already running or its instance lock is unavailable</source>
+      <translation>Το %1 εκτελείται ήδη ή το κλείδωμα της διεργασίας δεν είναι διαθέσιμο</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>%1 is running. Quit it before using SoundCurrent.</source>
+      <translation>Το %1 εκτελείται. Τερματίστε το πριν χρησιμοποιήσετε το SoundCurrent.</translation>
+      <extracomment>A recognized competing equalizer process is active. %1 is its opaque executable name; quit that program completely, not merely its window. Preserve SoundCurrent brand and process identity.</extracomment>
+    </message>
+    <message>
+      <source>%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.</source>
+      <translation>Η εγκατάσταση του %1 δεν ολοκληρώθηκε. Το ίδιο το %2 έχει εγκατασταθεί. Χρησιμοποιήστε το %3 στο μενού Έναρξη για να δοκιμάσετε ξανά· δείτε τις λεπτομέρειες εγκατάστασης για την αιτία.</translation>
+      <extracomment>Setup failure dialog after app files/shortcuts copied. %1 = stable driver name; %2 = stable app name; %3 = actual currently English Start-menu shortcut name Audio driver setup (not localized Qt button). Setup failure does not prove existing driver absent. Preserve app installed, Start-menu retry and details for reason. Shortcut display-name localization and upgrade cleanup remain open. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
+      <translation>Η εγκατάσταση του %1 δεν ολοκληρώθηκε. Δοκιμάστε ξανά μέσω της συντόμευσης στο μενού Έναρξη.</translation>
+      <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>%1%2 dB</source>
-      <translation type="unfinished" />
+      <translation>%1%2 dB</translation>
+    </message>
+    <message>
+      <source>'%1' is write protected.
+Do you want to delete it anyway?</source>
+      <translation>Το '%1' προστατεύεται από εγγραφή.
+Θέλετε να το διαγράψετε παρ' όλα αυτά;</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>A private user runtime directory is required</source>
+      <translation>Απαιτείται ιδιωτικός κατάλογος εκτέλεσης χρήστη</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>Abort</source>
+      <translation>Διακοπή</translation>
     </message>
     <message>
       <source>Acoustic</source>
-      <translation type="unfinished" />
+      <translation>Ακουστική μουσική</translation>
     </message>
     <message>
       <source>Active / passive / unknown</source>
-      <translation type="unfinished" />
+      <translation>Ενεργό / παθητικό / άγνωστο</translation>
     </message>
     <message>
       <source>Add filter</source>
-      <translation type="unfinished" />
+      <translation>Προσθήκη φίλτρου</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
-      <translation type="unfinished" />
+      <translation>Ρυθμίστε την έξοδο από −60 έως +12 dB μετά τον ισοσταθμιστή. Η μεγαλύτερη ενίσχυση μπορεί να προκαλέσει ψαλιδισμό.</translation>
     </message>
     <message>
       <source>Adjust this tone band around the natural voice profile</source>
-      <translation type="unfinished" />
+      <translation>Ρυθμίστε αυτή τη ζώνη συχνοτήτων σε σχέση με το προφίλ φυσικής φωνής</translation>
+    </message>
+    <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>Ρυθμιζόμενος ισοσταθμιστής για ολόκληρο το σύστημα με PipeWire</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
-      <translation type="unfinished" />
+      <translation>Προχωρημένα χειριστήρια ηχητικών εφέ</translation>
     </message>
     <message>
       <source>Air</source>
-      <translation type="unfinished" />
+      <translation>Αέρινος ήχος</translation>
     </message>
     <message>
       <source>All brands</source>
-      <translation type="unfinished" />
+      <translation>Όλες οι μάρκες</translation>
     </message>
     <message>
       <source>All equipment</source>
-      <translation type="unfinished" />
+      <translation>Όλος ο εξοπλισμός</translation>
     </message>
     <message>
       <source>All families</source>
-      <translation type="unfinished" />
+      <translation>Όλες οι σειρές</translation>
+    </message>
+    <message>
+      <source>All files (*)</source>
+      <translation>Όλα τα αρχεία (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>All manufacturers</source>
-      <translation type="unfinished" />
+      <translation>Όλοι οι κατασκευαστές</translation>
     </message>
     <message>
       <source>All speaker types</source>
-      <translation type="unfinished" />
+      <translation>Όλοι οι τύποι ηχείων</translation>
     </message>
     <message>
       <source>All subtypes</source>
-      <translation type="unfinished" />
+      <translation>Όλοι οι υποτύποι</translation>
     </message>
     <message>
       <source>Ambience</source>
-      <translation type="unfinished" />
+      <translation>Αίσθηση χώρου</translation>
     </message>
     <message>
       <source>Ambience damping</source>
-      <translation type="unfinished" />
+      <translation>Απόσβεση υψηλών συχνοτήτων ανακλάσεων</translation>
     </message>
     <message>
       <source>Ambience decay</source>
-      <translation type="unfinished" />
+      <translation>Διάρκεια ανακλάσεων χώρου</translation>
     </message>
     <message>
       <source>Amp details</source>
-      <translation type="unfinished" />
+      <translation>Λεπτομέρειες ενισχυτή</translation>
+    </message>
+    <message>
+      <source>Amplifier</source>
+      <translation>Ενισχυτής</translation>
     </message>
     <message>
       <source>Amplifier / receiver</source>
-      <translation type="unfinished" />
+      <translation>Ενισχυτής / ραδιοενισχυτής</translation>
     </message>
     <message>
       <source>Amplifier model profile</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ μοντέλου ενισχυτή</translation>
     </message>
     <message>
       <source>Amplifier profile details</source>
-      <translation type="unfinished" />
+      <translation>Λεπτομέρειες προφίλ ενισχυτή</translation>
     </message>
     <message>
       <source>Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.</source>
-      <translation type="unfinished" />
+      <translation>Τα προφίλ ενισχυτών απαιτούν ηλεκτρικές μετρήσεις με γνωστό φορτίο ηχείων, είσοδο και ρυθμίσεις τόνου. Εισαγάγετε ένα αρχείο μετρημένης διόρθωσης· δεν εξάγονται καμπύλες ενισχυτών από διαφημιστικές προδιαγραφές.</translation>
     </message>
     <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
-      <translation type="unfinished" />
+      <translation>Εγκαταστάθηκε ενημέρωση της εφαρμογής. Επιλέξτε έξοδο και ανοίξτε την ξανά για να φορτωθεί· το κλείσιμο αυτού του παραθύρου αφήνει την παλιά έκδοση σε λειτουργία.</translation>
+    </message>
+    <message>
+      <source>Another SoundCurrent EQ sink is already running</source>
+      <translation>Μια άλλη έξοδος SoundCurrent EQ λειτουργεί ήδη</translation>
     </message>
     <message>
       <source>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</source>
-      <translation type="unfinished" />
+      <translation>Μια άλλη εφαρμογή SoundCurrent ή διαδικασία εγκατάστασης οδηγού ήχου εκτελείται. Τερματίστε την πριν ανοίξετε αυτή την εφαρμογή.</translation>
     </message>
     <message>
       <source>Another SoundCurrent equalizer is running. Quit EQ or Studio before opening the other app.</source>
-      <translation type="unfinished" />
+      <translation>Ένας άλλος ισοσταθμιστής SoundCurrent λειτουργεί. Τερματίστε το EQ ή το Studio πριν ανοίξετε την άλλη εφαρμογή.</translation>
     </message>
     <message>
-      <source>Another equalizer route is present: </source>
-      <translation type="unfinished" />
+      <source>Another SoundCurrent microphone filter is running</source>
+      <translation>Ένα άλλο φίλτρο μικροφώνου SoundCurrent λειτουργεί</translation>
+    </message>
+    <message>
+      <source>Another equalizer route is present: %1. Quit it before using SoundCurrent.</source>
+      <translation>Υπάρχει διαδρομή άλλου ισοσταθμιστή: %1. Τερματίστε τον πριν χρησιμοποιήσετε το SoundCurrent.</translation>
     </message>
     <message>
       <source>Application update</source>
-      <translation type="unfinished" />
+      <translation>Ενημέρωση εφαρμογής</translation>
     </message>
     <message>
       <source>Application updates</source>
-      <translation type="unfinished" />
+      <translation>Ενημερώσεις εφαρμογής</translation>
+    </message>
+    <message>
+      <source>Apply</source>
+      <translation>Εφαρμογή</translation>
+    </message>
+    <message>
+      <source>Apply amplifier correction?</source>
+      <translation>Εφαρμογή διόρθωσης ενισχυτή;</translation>
+      <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
     </message>
     <message>
       <source>Apply correction?</source>
-      <translation type="unfinished" />
+      <translation>Εφαρμογή διόρθωσης;</translation>
+    </message>
+    <message>
+      <source>Apply only if these conditions match your system.</source>
+      <translation>Εφαρμόστε μόνο εάν αυτές οι συνθήκες αντιστοιχούν στο σύστημά σας.</translation>
+      <extracomment>Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.</extracomment>
+    </message>
+    <message>
+      <source>Apply profile</source>
+      <translation>Εφαρμογή προφίλ</translation>
+    </message>
+    <message>
+      <source>Apply suggested EQ</source>
+      <translation>Εφαρμογή προτεινόμενης ισοστάθμισης</translation>
+    </message>
+    <message>
+      <source>Are you sure you want to delete '%1'?</source>
+      <translation>Είστε βέβαιοι ότι θέλετε να διαγράψετε το '%1';</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Audio bridge did not start</source>
+      <translation>Η γέφυρα ήχου δεν ξεκίνησε</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
-      <translation type="unfinished" />
+      <translation>Εγκατάσταση οδηγού ήχου</translation>
+    </message>
+    <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>Η ρύθμιση του προγράμματος οδήγησης ήχου ολοκληρώθηκε. Επανεκκινήστε τα Windows πριν χρησιμοποιήσετε το SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Η ρύθμιση του προγράμματος οδήγησης ήχου δεν ολοκληρώθηκε: %1</translation>
     </message>
     <message>
       <source>Audio error: %1</source>
-      <translation type="unfinished" />
+      <translation>Σφάλμα ήχου: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Βοηθός ανάκτησης ήχου</translation>
+    </message>
+    <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Δεν ήταν δυνατή η εκκίνηση του βοηθητικού προγράμματος επαναφοράς της διαδρομής ήχου. Επιδιορθώστε ή επανεγκαταστήστε το SoundCurrent.</translation>
     </message>
     <message>
       <source>Audio setup</source>
-      <translation type="unfinished" />
+      <translation>Ρύθμιση ήχου</translation>
     </message>
     <message>
       <source>Audio setup could not finish</source>
-      <translation type="unfinished" />
+      <translation>Η ρύθμιση ήχου δεν ολοκληρώθηκε</translation>
+    </message>
+    <message>
+      <source>Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.</source>
+      <translation>Η ρύθμιση ήχου απέτυχε. Αν μόλις εγκαταστάθηκε το VB-CABLE, επανεκκινήστε τα Windows και δοκιμάστε ξανά.</translation>
+    </message>
+    <message>
+      <source>Audio setup is missing. Repair or reinstall SoundCurrent.</source>
+      <translation>Το εργαλείο ρύθμισης ήχου λείπει. Επιδιορθώστε ή επανεγκαταστήστε το SoundCurrent.</translation>
     </message>
     <message>
       <source>Audio setup is running. Processing is paused; the app remains open.</source>
-      <translation type="unfinished" />
+      <translation>Η ρύθμιση ήχου εκτελείται. Η επεξεργασία έχει παύσει· η εφαρμογή παραμένει ανοιχτή.</translation>
     </message>
     <message>
       <source>Auto headroom %1 dB</source>
-      <translation type="unfinished" />
+      <translation>Αυτόματο περιθώριο %1 dB</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
-      <translation type="unfinished" />
+      <translation>Αυτόματα (SoundCurrent Microphone)</translation>
     </message>
     <message>
       <source>Automatic (follow connected devices)</source>
-      <translation type="unfinished" />
+      <translation>Αυτόματα (ανάλογα με τις συνδεδεμένες συσκευές)</translation>
     </message>
     <message>
       <source>Automatic (follow connected microphones)</source>
-      <translation type="unfinished" />
+      <translation>Αυτόματα (ανάλογα με τα συνδεδεμένα μικρόφωνα)</translation>
+    </message>
+    <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Η αυτόματη δρομολόγηση ήχου δεν είναι διαθέσιμη</translation>
     </message>
     <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Αυτόματη διόρθωση του συνδεδεμένου μικροφώνου· πατήστε για παράκαμψη του EQ μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Back</source>
+      <translation>Πίσω</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Balance</source>
@@ -199,15 +402,15 @@ Import into your library?</source>
     </message>
     <message>
       <source>Balance position</source>
-      <translation type="unfinished" />
+      <translation>Θέση ισορροπίας</translation>
     </message>
     <message>
       <source>Balanced</source>
-      <translation type="unfinished" />
+      <translation>Ισορροπημένο</translation>
     </message>
     <message>
       <source>Band %1 gain</source>
-      <translation type="unfinished" />
+      <translation>Ενίσχυση ζώνης %1</translation>
     </message>
     <message>
       <source>Bands</source>
@@ -216,7 +419,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.</source>
-      <translation type="unfinished" />
+      <translation>Οι ενδείξεις δίπλα στα ρυθμιστικά δείχνουν εκτιμώμενες στάθμες μετά το EQ. Το κόκκινο κείμενο κορυφών προειδοποιεί για πιθανό ψαλιδισμό.</translation>
     </message>
     <message>
       <source>Bass Boost</source>
@@ -224,203 +427,503 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bass Cut</source>
-      <translation type="unfinished" />
+      <translation>Μείωση μπάσων</translation>
     </message>
     <message>
       <source>Bass adds low-frequency weight; Clarity adds high-frequency detail; Ambience adds room reflections; Surround widens stereo; Dynamic Boost compresses and raises quieter material with a peak ceiling. Boosting can increase output level.</source>
-      <translation type="unfinished" />
+      <translation>Τα Μπάσα προσθέτουν βάρος στις χαμηλές συχνότητες· η Καθαρότητα προσθέτει λεπτομέρειες στις υψηλές· η Αίσθηση χώρου προσθέτει ανακλάσεις· ο Περιβάλλων ήχος διευρύνει το στερεοφωνικό πεδίο· η Δυναμική ενίσχυση συμπιέζει και ενισχύει το πιο ήσυχο υλικό με όριο κορυφών. Η ενίσχυση μπορεί να αυξήσει τη στάθμη εξόδου.</translation>
     </message>
     <message>
       <source>Bass frequency</source>
-      <translation type="unfinished" />
+      <translation>Συχνότητα μπάσων</translation>
+    </message>
+    <message>
+      <source>Bookshelf speaker</source>
+      <translation>Ηχείο βιβλιοθήκης</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Boxiness</source>
-      <translation type="unfinished" />
+      <translation>Χροιά κουτιού</translation>
     </message>
     <message>
       <source>Brand</source>
-      <translation type="unfinished" />
+      <translation>Μάρκα</translation>
+    </message>
+    <message>
+      <source>Brand, family and model are required (maximum 120 characters each).</source>
+      <translation>Η μάρκα, η σειρά και το μοντέλο είναι υποχρεωτικά (έως 120 χαρακτήρες το καθένα).</translation>
     </message>
     <message>
       <source>Bright</source>
-      <translation type="unfinished" />
+      <translation>Φωτεινό</translation>
     </message>
     <message>
       <source>Browse all equipment profiles / editor</source>
-      <translation type="unfinished" />
+      <translation>Περιήγηση σε όλα τα προφίλ εξοπλισμού / επεξεργασία</translation>
+    </message>
+    <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Το πακέτο του καλωδίου υπερβαίνει τη χωρητικότητα της ενδιάμεσης μνήμης καταγραφής</translation>
+    </message>
+    <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Το τελικό σημείο εγγραφής του εικονικού καλωδίου δεν υποστηρίζει στερεοφωνικό ήχο κινητής υποδιαστολής 48 kHz σε κοινόχρηστη λειτουργία</translation>
     </message>
     <message>
       <source>Calibration test signal</source>
-      <translation type="unfinished" />
+      <translation>Δοκιμαστικό σήμα βαθμονόμησης</translation>
     </message>
     <message>
       <source>Calibration tone level</source>
-      <translation type="unfinished" />
+      <translation>Στάθμη τόνου βαθμονόμησης</translation>
+    </message>
+    <message>
+      <source>Cancel</source>
+      <translation>Ακύρωση</translation>
     </message>
     <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η απόκτηση κλειδώματος της κοινής συνεδρίας SoundCurrent.</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η δημιουργία φακέλου προφίλ ενισχυτή.</translation>
+    </message>
+    <message>
+      <source>Cannot create profile folder.</source>
+      <translation>Δεν είναι δυνατή η δημιουργία φακέλου προφίλ.</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η δημιουργία κλειδώματος της κοινής συνεδρίας SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>Cannot create user settings directory</source>
+      <translation>Δεν είναι δυνατή η δημιουργία καταλόγου ρυθμίσεων χρήστη</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
     </message>
     <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η ολοκλήρωση του ελέγχου ενεργών ισοσταθμιστών· το SoundCurrent δεν θα ενεργοποιήσει την επεξεργασία.</translation>
     </message>
     <message>
       <source>Cannot finish saving amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η ολοκλήρωση της αποθήκευσης προφίλ ενισχυτή.</translation>
+    </message>
+    <message>
+      <source>Cannot finish saving profile library.</source>
+      <translation>Δεν είναι δυνατή η ολοκλήρωση της αποθήκευσης βιβλιοθήκης προφίλ.</translation>
     </message>
     <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατός ο έλεγχος ενεργών ισοσταθμιστών· το SoundCurrent δεν θα ενεργοποιήσει την επεξεργασία.</translation>
+    </message>
+    <message>
+      <source>Cannot read profile library.</source>
+      <translation>Δεν είναι δυνατή η ανάγνωση της βιβλιοθήκης προφίλ.</translation>
+    </message>
+    <message>
+      <source>Cannot read profile or file exceeds 1 MiB.</source>
+      <translation>Δεν είναι δυνατή η ανάγνωση του προφίλ ή το αρχείο υπερβαίνει το 1 MiB.</translation>
+    </message>
+    <message>
+      <source>Cannot read response or file exceeds 1 MiB.</source>
+      <translation>Δεν είναι δυνατή η ανάγνωση της απόκρισης ή το αρχείο υπερβαίνει το 1 MiB.</translation>
     </message>
     <message>
       <source>Cannot save amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η αποθήκευση του προφίλ ενισχυτή.</translation>
+    </message>
+    <message>
+      <source>Cannot save profile library.</source>
+      <translation>Δεν είναι δυνατή η αποθήκευση της βιβλιοθήκης προφίλ.</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η αποθήκευση του προφίλ.</translation>
     </message>
     <message>
       <source>Cannot start measurement: %1</source>
-      <translation type="unfinished" />
+      <translation>Δεν είναι δυνατή η έναρξη μέτρησης: %1</translation>
+    </message>
+    <message>
+      <source>Capture bytes: %1, noise bytes: %2</source>
+      <translation>Καταγεγραμμένα byte: %1, byte θορύβου: %2</translation>
+      <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
       <source>Center</source>
-      <translation type="unfinished" />
+      <translation>Κέντρο</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Κεντρικό ηχείο</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Αλλαγή προεπιλεγμένου τελικού σημείου ήχου</translation>
+    </message>
+    <message>
+      <source>Change to detail view mode</source>
+      <translation>Αλλαγή σε λεπτομερή προβολή</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Change to list view mode</source>
+      <translation>Αλλαγή σε προβολή λίστας</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Check for updates</source>
       <translation>Έλεγχος ενημερώσεων</translation>
     </message>
     <message>
+      <source>Checking %1 Hz</source>
+      <translation>Έλεγχος στα %1 Hz</translation>
+      <extracomment>Calibration worker progress for a single test frequency. %1 is a locale-formatted frequency; Hz is the physical unit.</extracomment>
+    </message>
+    <message>
       <source>Checking for published updates…</source>
-      <translation type="unfinished" />
+      <translation>Έλεγχος δημοσιευμένων ενημερώσεων…</translation>
     </message>
     <message>
       <source>Checks published releases and downloaded installers. No update is installed automatically.</source>
-      <translation type="unfinished" />
+      <translation>Ελέγχει δημοσιευμένες εκδόσεις και ληφθέντα προγράμματα εγκατάστασης. Καμία ενημέρωση δεν εγκαθίσταται αυτόματα.</translation>
+    </message>
+    <message>
+      <source>Choose</source>
+      <translation>Επιλογή</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Choose a name that is not a built-in preset.</source>
-      <translation type="unfinished" />
+      <translation>Επιλέξτε όνομα που δεν ανήκει σε ενσωματωμένη προρύθμιση.</translation>
+    </message>
+    <message>
+      <source>Choose one audio setup action.</source>
+      <translation>Επιλέξτε μία μόνο ενέργεια ρύθμισης ήχου.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
     </message>
     <message>
       <source>Choose update folder…</source>
-      <translation type="unfinished" />
+      <translation>Επιλογή φακέλου ενημερώσεων…</translation>
+    </message>
+    <message>
+      <source>Cinema speaker</source>
+      <translation>Ηχείο κινηματογράφου</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
     </message>
     <message>
       <source>Clarity</source>
-      <translation type="unfinished" />
+      <translation>Καθαρότητα</translation>
     </message>
     <message>
       <source>Clarity frequency</source>
-      <translation type="unfinished" />
+      <translation>Συχνότητα καθαρότητας</translation>
     </message>
     <message>
       <source>Classical</source>
-      <translation type="unfinished" />
+      <translation>Κλασική μουσική</translation>
     </message>
     <message>
       <source>Clear Voice</source>
-      <translation type="unfinished" />
+      <translation>Καθαρή φωνή</translation>
     </message>
     <message>
       <source>Clear imported equipment corrections</source>
-      <translation type="unfinished" />
+      <translation>Εκκαθάριση εισαγμένων διορθώσεων εξοπλισμού</translation>
     </message>
     <message>
       <source>Click to turn the equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Πατήστε για ενεργοποίηση ή απενεργοποίηση του ισοσταθμιστή</translation>
     </message>
     <message>
       <source>Clipping risk · estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Κίνδυνος ψαλιδισμού · εκτιμώμενη κορυφή %1 dBFS</translation>
+    </message>
+    <message>
+      <source>Close</source>
+      <translation>Κλείσιμο</translation>
+    </message>
+    <message>
+      <source>Column speaker</source>
+      <translation>Ηχείο στήλης για ηχητική κάλυψη</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
+      <source>Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2</source>
+      <translation>Συνδυασμένη απόκριση ηχείων/ενισχυτή/μικροφώνου/χώρου· δεν είναι μεμονωμένη μέτρηση εξοπλισμού. %1 / %2</translation>
+      <extracomment>New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.</extracomment>
     </message>
     <message>
       <source>Conditions</source>
-      <translation type="unfinished" />
+      <translation>Συνθήκες</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
-      <translation type="unfinished" />
+      <translation>Συνδέστε έξοδο και μικρόφωνο πριν από τη μέτρηση.</translation>
+    </message>
+    <message>
+      <source>Connect your audio</source>
+      <translation>Σύνδεση ήχου</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>Ηχείο σταθερού εύρους δέσμης</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
+    </message>
+    <message>
+      <source>Copy</source>
+      <translation>Αντιγραφή</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Correction filters:</source>
+      <translation>Φίλτρα διόρθωσης:</translation>
+      <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ διόρθωσης (*.json)</translation>
+    </message>
+    <message>
+      <source>Could not create a private test folder</source>
+      <translation>Δεν ήταν δυνατή η δημιουργία ιδιωτικού δοκιμαστικού φακέλου</translation>
+    </message>
+    <message>
+      <source>Could not create microphone configuration folder</source>
+      <translation>Δεν ήταν δυνατή η δημιουργία φακέλου ρυθμίσεων μικροφώνου</translation>
     </message>
     <message>
       <source>Could not create preset folder.</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η δημιουργία φακέλου προρυθμίσεων.</translation>
+    </message>
+    <message>
+      <source>Could not create quiet frequency sweep</source>
+      <translation>Δεν ήταν δυνατή η δημιουργία ήσυχου σήματος με συνεχή μεταβολή συχνότητας</translation>
+    </message>
+    <message>
+      <source>Could not create temporary audio configuration</source>
+      <translation>Δεν ήταν δυνατή η δημιουργία προσωρινών ρυθμίσεων ήχου</translation>
+    </message>
+    <message>
+      <source>Could not create test tone</source>
+      <translation>Δεν ήταν δυνατή η δημιουργία δοκιμαστικού τόνου</translation>
+    </message>
+    <message>
+      <source>Could not create the local activation socket for %1: %2</source>
+      <translation>Δεν ήταν δυνατή η δημιουργία της τοπικής υποδοχής ενεργοποίησης για το %1: %2</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>Could not delete directory.</source>
+      <translation>Δεν ήταν δυνατή η διαγραφή του καταλόγου.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η ολοκλήρωση αποθήκευσης της προρύθμισης.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Δεν ήταν δυνατή η αρχικοποίηση του COM για τον ήχο των Windows</translation>
+    </message>
+    <message>
+      <source>Could not open test waveform</source>
+      <translation>Δεν ήταν δυνατό το άνοιγμα του δοκιμαστικού αρχείου ήχου</translation>
+    </message>
+    <message>
+      <source>Could not play quiet test audio</source>
+      <translation>Δεν ήταν δυνατή η αναπαραγωγή ήσυχου δοκιμαστικού ήχου</translation>
+    </message>
+    <message>
+      <source>Could not play test audio through the selected output</source>
+      <translation>Δεν ήταν δυνατή η αναπαραγωγή δοκιμαστικού ήχου μέσω της επιλεγμένης εξόδου</translation>
+    </message>
+    <message>
+      <source>Could not read output volume</source>
+      <translation>Δεν ήταν δυνατή η ανάγνωση της έντασης εξόδου</translation>
+    </message>
+    <message>
+      <source>Could not run %1</source>
+      <translation>Δεν ήταν δυνατή η εκτέλεση του %1</translation>
     </message>
     <message>
       <source>Could not save preset.</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η αποθήκευση της προρύθμισης.</translation>
+    </message>
+    <message>
+      <source>Could not start PipeWire filter</source>
+      <translation>Δεν ήταν δυνατή η εκκίνηση του φίλτρου PipeWire</translation>
+    </message>
+    <message>
+      <source>Could not start audio setup: %1. The app remains open.</source>
+      <translation>Δεν ήταν δυνατή η έναρξη ρύθμισης ήχου: %1. Η εφαρμογή παραμένει ανοιχτή.</translation>
+    </message>
+    <message>
+      <source>Could not start microphone capture</source>
+      <translation>Δεν ήταν δυνατή η έναρξη εγγραφής μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Could not start microphone filter</source>
+      <translation>Δεν ήταν δυνατή η εκκίνηση του φίλτρου μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Could not start output volume safety guard</source>
+      <translation>Δεν ήταν δυνατή η εκκίνηση της προστασίας έντασης εξόδου</translation>
     </message>
     <message>
       <source>Could not start the measurement.</source>
-      <translation type="unfinished" />
+      <translation>Δεν ήταν δυνατή η έναρξη της μέτρησης.</translation>
+    </message>
+    <message>
+      <source>Could not update startup settings.</source>
+      <translation>Δεν ήταν δυνατή η ενημέρωση ρυθμίσεων αυτόματης εκκίνησης.</translation>
+    </message>
+    <message>
+      <source>Could not write frequency sweep</source>
+      <translation>Δεν ήταν δυνατή η εγγραφή σήματος με συνεχή μεταβολή συχνότητας</translation>
+    </message>
+    <message>
+      <source>Could not write microphone configuration</source>
+      <translation>Δεν ήταν δυνατή η εγγραφή ρυθμίσεων μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Could not write temporary audio configuration</source>
+      <translation>Δεν ήταν δυνατή η εγγραφή προσωρινών ρυθμίσεων ήχου</translation>
+    </message>
+    <message>
+      <source>Could not write test tone</source>
+      <translation>Δεν ήταν δυνατή η εγγραφή δοκιμαστικού τόνου</translation>
+    </message>
+    <message>
+      <source>Count audio endpoints</source>
+      <translation>Καταμέτρηση τελικών σημείων ήχου</translation>
+    </message>
+    <message>
+      <source>Create a New Folder</source>
+      <translation>Δημιουργία νέου φακέλου</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Create new folder</source>
+      <translation>Δημιουργία νέου φακέλου</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Create profile</source>
+      <translation>Δημιουργία προφίλ</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
-      <translation type="unfinished" />
+      <translation>Οι τρέχουσες ρυθμίσεις EQ διατηρήθηκαν.</translation>
     </message>
     <message>
       <source>Custom</source>
       <translation>Προσαρμοσμένο</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>Προσαρμοσμένο αντίγραφο του %1</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>Cut</source>
+      <translation>Αποκοπή</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Dance</source>
-      <translation type="unfinished" />
+      <translation>Χορευτική μουσική</translation>
+    </message>
+    <message>
+      <source>Date modified</source>
+      <translation>Ημερομηνία τροποποίησης</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Deep Bass</source>
-      <translation type="unfinished" />
+      <translation>Βαθιά μπάσα</translation>
+    </message>
+    <message>
+      <source>Delete</source>
+      <translation>Διαγραφή</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Detail view</source>
+      <translation>Λεπτομερής προβολή</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>Κατάλογοι</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>Κατάλογος:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Discard</source>
+      <translation>Απόρριψη</translation>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
-      <translation type="unfinished" />
+      <translation>Σύρετε σημεία της καμπύλης ή ρυθμίστε την επιλεγμένη ζώνη παρακάτω.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>Ολοκλήρωση αναπαραγωγής δοκιμαστικού ήχου</translation>
+    </message>
+    <message>
+      <source>Drive</source>
+      <translation>Μονάδα δίσκου</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Η ρύθμιση του προγράμματος οδήγησης απέτυχε (κωδικός %1). Δεν άλλαξαν ρυθμίσεις ασφαλείας των Windows.</translation>
+    </message>
+    <message>
+      <source>Duplicate Studio route</source>
+      <translation>Διπλότυπη σύνδεση ήχου Studio</translation>
+      <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
     </message>
     <message>
       <source>Dynamic Boost</source>
-      <translation type="unfinished" />
+      <translation>Δυναμική ενίσχυση</translation>
     </message>
     <message>
       <source>Dynamics attack</source>
-      <translation type="unfinished" />
+      <translation>Χρόνος έναρξης συμπιεστή</translation>
     </message>
     <message>
       <source>Dynamics ceiling</source>
-      <translation type="unfinished" />
+      <translation>Όριο κορυφών συμπιεστή</translation>
     </message>
     <message>
       <source>Dynamics makeup</source>
-      <translation type="unfinished" />
+      <translation>Ενίσχυση αντιστάθμισης συμπιεστή</translation>
     </message>
     <message>
       <source>Dynamics ratio</source>
-      <translation type="unfinished" />
+      <translation>Λόγος συμπίεσης</translation>
     </message>
     <message>
       <source>Dynamics release</source>
-      <translation type="unfinished" />
+      <translation>Χρόνος αποδέσμευσης συμπιεστή</translation>
     </message>
     <message>
       <source>Dynamics threshold</source>
-      <translation type="unfinished" />
+      <translation>Κατώφλι συμπιεστή</translation>
+    </message>
+    <message>
+      <source>Edit / save copy</source>
+      <translation>Επεξεργασία / αποθήκευση αντιγράφου</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -428,7 +931,20 @@ Import into your library?</source>
     </message>
     <message>
       <source>Electronic</source>
-      <translation type="unfinished" />
+      <translation>Ηλεκτρονική μουσική</translation>
+    </message>
+    <message>
+      <source>Enhancements outside supported ranges</source>
+      <translation>Βελτιώσεις ήχου εκτός των υποστηριζόμενων περιοχών τιμών</translation>
+      <extracomment>Enhancement values fail the supported range validation; not frequency coverage or wireless range.</extracomment>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>Απαρίθμηση συσκευών ήχου</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>Απαρίθμηση τελικών σημείων</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -437,132 +953,222 @@ Import into your library?</source>
     </message>
     <message>
       <source>Equalizer and configuration pages</source>
-      <translation type="unfinished" />
+      <translation>Σελίδες ισοσταθμιστή και ρυθμίσεων</translation>
+    </message>
+    <message>
+      <source>Equalizer conflict</source>
+      <translation>Διένεξη μεταξύ ισοσταθμιστών</translation>
+      <extracomment>Warning title when another equalizer or processing owner conflicts with this app. It is a software routing/ownership conflict, not clipping or a bad acoustic measurement.</extracomment>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>
-      <translation type="unfinished" />
+      <translation>Καμπύλη ισοσταθμιστή. Επιλέξτε ένα σημείο ή σύρετέ το για να αλλάξετε τη συχνότητα και την ενίσχυση.</translation>
     </message>
     <message>
       <source>Equalizer is off. Windows selected the physical output directly.</source>
-      <translation type="unfinished" />
+      <translation>Ο ισοσταθμιστής είναι ανενεργός. Τα Windows επέλεξαν απευθείας τη φυσική έξοδο.</translation>
     </message>
     <message>
       <source>Equalizer is off. Your audio uses its normal output.</source>
-      <translation type="unfinished" />
+      <translation>Ο ισοσταθμιστής είναι ανενεργός. Ο ήχος χρησιμοποιεί την κανονική του έξοδο.</translation>
     </message>
     <message>
       <source>Equalizer is still running. Use the tray icon to reopen or quit.</source>
-      <translation type="unfinished" />
+      <translation>Ο ισοσταθμιστής λειτουργεί ακόμα. Χρησιμοποιήστε το εικονίδιο στην περιοχή ειδοποιήσεων για να τον ανοίξετε ξανά ή να τερματίσετε τη λειτουργία του.</translation>
     </message>
     <message>
       <source>Equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Ισοσταθμιστής ανενεργός</translation>
     </message>
     <message>
       <source>Equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Ισοσταθμιστής ενεργός</translation>
     </message>
     <message>
       <source>Equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Ενεργοποίηση ή απενεργοποίηση ισοσταθμιστή</translation>
+    </message>
+    <message>
+      <source>Equalizer sink disappeared</source>
+      <translation>Η έξοδος ισοσταθμιστή εξαφανίστηκε</translation>
     </message>
     <message>
       <source>Equipment brand</source>
-      <translation type="unfinished" />
+      <translation>Μάρκα εξοπλισμού</translation>
     </message>
     <message>
       <source>Equipment family</source>
-      <translation type="unfinished" />
+      <translation>Σειρά εξοπλισμού</translation>
+    </message>
+    <message>
+      <source>Equipment kind must be speaker, microphone or amplifier.</source>
+      <translation>Το είδος εξοπλισμού πρέπει να είναι ηχείο, μικρόφωνο ή ενισχυτής.</translation>
     </message>
     <message>
       <source>Equipment profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ εξοπλισμού (*.json)</translation>
+    </message>
+    <message>
+      <source>Equipment profile editor</source>
+      <translation>Επεξεργασία προφίλ εξοπλισμού</translation>
     </message>
     <message>
       <source>Equipment profiles (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ εξοπλισμού (*.json)</translation>
     </message>
     <message>
       <source>Equipment profiles by brand family and model</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ εξοπλισμού ανά μάρκα, σειρά και μοντέλο</translation>
+    </message>
+    <message>
+      <source>Equipment profiles — brand / family / model</source>
+      <translation>Προφίλ εξοπλισμού — μάρκα / σειρά / μοντέλο</translation>
+    </message>
+    <message>
+      <source>Equipment resource missing.</source>
+      <translation>Λείπει ο πόρος εξοπλισμού.</translation>
     </message>
     <message>
       <source>Equipment subtype</source>
-      <translation type="unfinished" />
+      <translation>Υποτύπος εξοπλισμού</translation>
     </message>
     <message>
       <source>Equipment type</source>
-      <translation type="unfinished" />
+      <translation>Τύπος εξοπλισμού</translation>
     </message>
     <message>
       <source>Estimated output level near band %1</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη στάθμη εξόδου κοντά στη ζώνη %1</translation>
     </message>
     <message>
       <source>Estimated output near %1: %2 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη έξοδος κοντά στο %1: %2 dBFS</translation>
     </message>
     <message>
       <source>Estimated output peak and clipping risk</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη κορυφή εξόδου και κίνδυνος ψαλιδισμού</translation>
     </message>
     <message>
       <source>Estimated overall output level</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη συνολική στάθμη εξόδου</translation>
     </message>
     <message>
       <source>Estimated overall output peak: %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη συνολική κορυφή εξόδου: %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη κορυφή %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak: EQ off</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη κορυφή: EQ ανενεργό</translation>
     </message>
     <message>
       <source>Estimated peak: waiting for audio</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη κορυφή: αναμονή ήχου</translation>
     </message>
     <message>
       <source>Estimated post-EQ level near this frequency</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη στάθμη μετά το EQ κοντά σε αυτή τη συχνότητα</translation>
     </message>
     <message>
       <source>Estimated post-EQ output peak, including post gain and balance</source>
-      <translation type="unfinished" />
+      <translation>Εκτιμώμενη κορυφή εξόδου μετά το EQ, με την τελική ενίσχυση και την ισορροπία</translation>
     </message>
     <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
-      <translation type="unfinished" />
+      <translation>Έξοδος από το SoundCurrent EQ και επαναφορά κανονικού ήχου</translation>
     </message>
     <message>
       <source>Expanded test language</source>
-      <translation type="unfinished" />
+      <translation>Εκτεταμένη δοκιμαστική γλώσσα</translation>
+    </message>
+    <message>
+      <source>Expected a JSON equipment profile. Import response text using the response import button.</source>
+      <translation>Αναμένεται προφίλ εξοπλισμού JSON. Εισαγάγετε κείμενο απόκρισης με το κουμπί εισαγωγής απόκρισης.</translation>
+    </message>
+    <message>
+      <source>Expected frequency Hz and relative measured response dB on every data line.</source>
+      <translation>Σε κάθε γραμμή δεδομένων αναμένονται συχνότητα σε Hz και σχετική μετρημένη απόκριση σε dB.</translation>
     </message>
     <message>
       <source>Export</source>
-      <translation type="unfinished" />
+      <translation>Εξαγωγή</translation>
+    </message>
+    <message>
+      <source>Export JSON</source>
+      <translation>Εξαγωγή JSON</translation>
     </message>
     <message>
       <source>Export profile</source>
-      <translation type="unfinished" />
+      <translation>Εξαγωγή προφίλ</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
-      <translation type="unfinished" />
+      <translation>Βήματα σε παιχνίδια FPS</translation>
     </message>
     <message>
       <source>Family</source>
-      <translation type="unfinished" />
+      <translation>Σειρά</translation>
+    </message>
+    <message>
+      <source>File</source>
+      <translation>Αρχείο</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>File name:</source>
+      <translation>Όνομα αρχείου:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files</source>
+      <translation>Αρχεία</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files of type:</source>
+      <translation>Αρχεία τύπου:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Filter Q</source>
+      <translation>Συντελεστής ποιότητας φίλτρου Q</translation>
+      <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
+    </message>
+    <message>
+      <source>Filter values must be numbers.</source>
+      <translation>Οι τιμές φίλτρου πρέπει να είναι αριθμοί.</translation>
+    </message>
+    <message>
+      <source>Filters exceed frequency, gain or Q limits.</source>
+      <translation>Τα φίλτρα υπερβαίνουν τα όρια συχνότητας, ενίσχυσης ή Q.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>Εύρεση καταλόγου</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
       <extracomment>Preset with zero equalizer gain at every frequency. Not an apartment; does not imply muted audio.</extracomment>
-      <translation>Επίπεδο</translation>
+      <translation>Επίπεδη απόκριση</translation>
+    </message>
+    <message>
+      <source>Floorstanding speaker</source>
+      <translation>Ηχείο δαπέδου</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Folder</source>
+      <translation>Φάκελος</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Forward</source>
+      <translation>Μπροστά</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Frequency</source>
@@ -570,108 +1176,323 @@ Import into your library?</source>
     </message>
     <message>
       <source>Frequency Hz</source>
-      <translation type="unfinished" />
+      <translation>Συχνότητα σε Hz</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
-      <translation type="unfinished" />
+      <translation>Εφέ εμπρός καναλιών L/R (υποστηρίζεται μονοφωνικό)· τα άλλα κανάλια διατηρούν τα δικά τους εφέ Studio. Οι μηδενικές τιμές παρακάμπτουν κάθε εφέ.</translation>
     </message>
     <message>
       <source>Gain</source>
       <extracomment>Audio signal level adjustment in dB, positive or negative. Not financial profit.</extracomment>
-      <translation>Κέρδος</translation>
+      <translation>Ενίσχυση</translation>
     </message>
     <message>
       <source>Gain dB</source>
-      <translation type="unfinished" />
+      <translation>Ενίσχυση σε dB</translation>
     </message>
     <message>
       <source>Gaming</source>
-      <translation type="unfinished" />
+      <translation>Παιχνίδια</translation>
+    </message>
+    <message>
+      <source>Go back</source>
+      <translation>Μετάβαση πίσω</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go forward</source>
+      <translation>Μετάβαση μπροστά</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go to the parent directory</source>
+      <translation>Μετάβαση στον γονικό κατάλογο</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Headphones</source>
-      <translation type="unfinished" />
+      <translation>Ακουστικά</translation>
+    </message>
+    <message>
+      <source>Help</source>
+      <translation>Βοήθεια</translation>
     </message>
     <message>
       <source>Hide advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Απόκρυψη προχωρημένων χειριστηρίων</translation>
+    </message>
+    <message>
+      <source>High-shelf filter</source>
+      <translation>Φίλτρο shelving υψηλών συχνοτήτων</translation>
+      <extracomment>Shelving EQ: raise/lower the high-frequency region. Do not translate as high-pass; it is not a cutoff filter.</extracomment>
     </message>
     <message>
       <source>Hip-Hop</source>
-      <translation type="unfinished" />
+      <translation>Χιπ χοπ</translation>
+    </message>
+    <message>
+      <source>Ignore</source>
+      <translation>Παράβλεψη</translation>
     </message>
     <message>
       <source>Import</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή</translation>
+    </message>
+    <message>
+      <source>Import JSON</source>
+      <translation>Εισαγωγή JSON</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή, δημιουργία και επεξεργασία προφίλ εξοπλισμού</translation>
     </message>
     <message>
       <source>Import equipment profile</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή προφίλ εξοπλισμού</translation>
     </message>
     <message>
       <source>Import measured amplifier correction</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή μετρημένης διόρθωσης ενισχυτή</translation>
     </message>
     <message>
       <source>Import measured profile</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή μετρημένου προφίλ</translation>
     </message>
     <message>
       <source>Import profile?</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή προφίλ;</translation>
     </message>
     <message>
       <source>Import relative measured response</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή σχετικής μετρημένης απόκρισης</translation>
+    </message>
+    <message>
+      <source>Import response text</source>
+      <translation>Εισαγωγή κειμένου απόκρισης</translation>
+    </message>
+    <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>Εισήχθη %1· SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Εντοιχιζόμενο ηχείο</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
-      <translation type="unfinished" />
+      <translation>Συμπερίληψη δοκιμαστικών εκδόσεων</translation>
+    </message>
+    <message>
+      <source>Initialize audio capture</source>
+      <translation>Αρχικοποίηση λήψης ήχου</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>Αρχικοποίηση εγγραφής μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>Αρχικοποίηση εξόδου ηχείων</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>Αρχικοποίηση αναπαραγωγής δοκιμαστικού ήχου</translation>
+    </message>
+    <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Εγκαταστήστε το SoundCurrent Audio μέσω της ρύθμισης προγράμματος οδήγησης ήχου και ανοίξτε ξανά την εφαρμογή για να ενεργοποιήσετε τη διαδρομή μικροφώνου.</translation>
+    </message>
+    <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Εγκατάσταση του VB-CABLE αν λείπει (έγκριση διαχειριστή)</translation>
     </message>
     <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Εγκαταστήστε τα νέα πακέτα πάνω από αυτή την έκδοση — δεν χρειάζεται απεγκατάσταση. Οι προρυθμίσεις και τα προφίλ διατηρούνται. Αποθηκεύστε την εργασία σας, τερματίστε την εφαρμογή (το κλείσιμο του παραθύρου την αφήνει σε λειτουργία), εγκαταστήστε την ενημέρωση και ανοίξτε την ξανά.</translation>
     </message>
     <message>
-      <source>Installed version: </source>
-      <translation type="unfinished" />
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>Εγκαταστήστε ή ενημερώστε το %1. Δεν χρειάζεται να απεγκαταστήσετε παλαιότερη έκδοση. Οι ρυθμίσεις, οι προεπιλογές και τα προφίλ εξοπλισμού σας θα διατηρηθούν.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Εγκατάσταση ή ενημέρωση του κοινόχρηστου προγράμματος οδήγησης SoundCurrent Audio</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Εγκαταστήστε τη διαδρομή ήχου των Windows μέσω της ρύθμισης προγράμματος οδήγησης ήχου και ανοίξτε ξανά την εφαρμογή.</translation>
+    </message>
+    <message>
+      <source>Installed version: %1</source>
+      <translation>Εγκατεστημένη έκδοση: %1</translation>
     </message>
     <message>
       <source>Interface language</source>
-      <translation>Γλώσσα περιβάλλοντος</translation>
+      <translation>Γλώσσα διεπαφής</translation>
+    </message>
+    <message>
+      <source>Invalid Studio channel count</source>
+      <translation>Μη έγκυρος αριθμός καναλιών Studio</translation>
+      <extracomment>Session channel count must be 1..256; audio channels, not stations.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio channel name or filters</source>
+      <translation>Μη έγκυρο όνομα καναλιού Studio ή λίστα φίλτρων</translation>
+      <extracomment>Saved channel name must be a nonempty string up to 80 characters, and bands must be an array; filter list, not filter-value validation.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio profile channel count</source>
+      <translation>Μη έγκυρος αριθμός καναλιών στο προφίλ Studio</translation>
+      <extracomment>Saved profile channels array must be nonempty and contain at most 256 channels.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio route</source>
+      <translation>Μη έγκυρη σύνδεση ήχου Studio</translation>
+      <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>Μη έγκυρη διεργασία που ζητά ρύθμιση ήχου.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
+    </message>
+    <message>
+      <source>Invalid calibration audio</source>
+      <translation>Μη έγκυρος ήχος βαθμονόμησης</translation>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter count</source>
+      <translation>Μη έγκυρος αριθμός παραμέτρων βελτίωσης ήχου</translation>
+      <extracomment>Enhancement array must contain the required number of parameters.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter type</source>
+      <translation>Μη έγκυρος τύπος δεδομένων παραμέτρου βελτίωσης ήχου</translation>
+      <extracomment>Enhancement parameter must be a JSON number; do not reinterpret strings or Boolean values.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Μη έγκυρες βελτιώσεις ήχου</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Μη έγκυρες ρυθμίσεις ισοσταθμιστή</translation>
+    </message>
+    <message>
+      <source>Invalid equipment subtype or power type</source>
+      <translation>Μη έγκυρος υποτύπος εξοπλισμού ή τύπος τροφοδοσίας</translation>
+    </message>
+    <message>
+      <source>Invalid filter type</source>
+      <translation>Μη έγκυρος τύπος φίλτρου</translation>
+      <extracomment>Filter type numeric identifier must be a whole supported enum value; not a file type.</extracomment>
+    </message>
+    <message>
+      <source>Invalid filter.</source>
+      <translation>Μη έγκυρο φίλτρο.</translation>
     </message>
     <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
-      <translation type="unfinished" />
+      <translation>Μη έγκυρο μετρημένο προφίλ ενισχυτή. Απαιτούνται μοντέλο, πηγή μέτρησης HTTPS, συνθήκες και 1–16 φίλτρα PK/LS/HS εντός ορίων. Δείτε τη μορφή προφίλ στο README.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Μη έγκυρη ρύθμιση μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Invalid or unordered measured response.</source>
+      <translation>Μη έγκυρη ή μη ταξινομημένη μετρημένη απόκριση.</translation>
+    </message>
+    <message>
+      <source>Invalid or unordered response data.</source>
+      <translation>Μη έγκυρα ή μη ταξινομημένα δεδομένα απόκρισης.</translation>
+    </message>
+    <message>
+      <source>Invalid profile library.</source>
+      <translation>Μη έγκυρη βιβλιοθήκη προφίλ.</translation>
+    </message>
+    <message>
+      <source>Invalid response from pactl</source>
+      <translation>Μη έγκυρη απάντηση από το pactl</translation>
+    </message>
+    <message>
+      <source>Invalid response point.</source>
+      <translation>Μη έγκυρο σημείο απόκρισης.</translation>
+    </message>
+    <message>
+      <source>Invalid route indexes or weight</source>
+      <translation>Μη έγκυροι δείκτες καναλιών ή συντελεστής μίξης</translation>
+      <extracomment>Audio route indices must be whole channel indices in range and mixing coefficient magnitude at most 4; weight means a signed mixing coefficient, not physical mass.</extracomment>
+    </message>
+    <message>
+      <source>Invalid route number</source>
+      <translation>Μη έγκυρη αριθμητική τιμή σύνδεσης ήχου</translation>
+      <extracomment>A saved audio routing entry contains a nonnumeric or nonfinite number.</extracomment>
+    </message>
+    <message>
+      <source>Invalid speaker correction filter count</source>
+      <translation>Μη έγκυρος αριθμός φίλτρων διόρθωσης ηχείου</translation>
+    </message>
+    <message>
+      <source>Invalid speaker filter type</source>
+      <translation>Μη έγκυρος τύπος φίλτρου ηχείου</translation>
+    </message>
+    <message>
+      <source>Invalid speaker identity</source>
+      <translation>Μη έγκυρα στοιχεία ταυτότητας ηχείου</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Μη έγκυρη μορφή μίξης ηχείων</translation>
     </message>
     <message>
       <source>Jazz</source>
-      <translation type="unfinished" />
+      <translation>Τζαζ</translation>
+    </message>
+    <message>
+      <source>Keep current EQ</source>
+      <translation>Διατήρηση τρέχοντος EQ</translation>
     </message>
     <message>
       <source>L</source>
-      <translation type="unfinished" />
+      <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
-      <translation>Γλώσσα και περιοχή</translation>
+      <translation>Γλώσσα και τοπικές ρυθμίσεις</translation>
     </message>
     <message>
       <source>Left right balance</source>
-      <translation type="unfinished" />
+      <translation>Ισορροπία αριστερά/δεξιά</translation>
     </message>
     <message>
       <source>Level indicator refresh interval</source>
-      <translation type="unfinished" />
+      <translation>Διάστημα ανανέωσης ενδείξεων στάθμης</translation>
     </message>
     <message>
       <source>Level refresh</source>
-      <translation type="unfinished" />
+      <translation>Ανανέωση στάθμης</translation>
+    </message>
+    <message>
+      <source>Library exceeds 16 MiB.</source>
+      <translation>Η βιβλιοθήκη υπερβαίνει τα 16 MiB.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>Λήψη λίστας τελικών σημείων ήχου</translation>
+    </message>
+    <message>
+      <source>List of places and bookmarks</source>
+      <translation>Λίστα τοποθεσιών και σελιδοδεικτών</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>List view</source>
+      <translation>Προβολή λίστας</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Listening preset</source>
@@ -680,11 +1501,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Live</source>
-      <translation type="unfinished" />
+      <translation>Σε πραγματικό χρόνο</translation>
     </message>
     <message>
       <source>Lo-Fi</source>
-      <translation type="unfinished" />
+      <translation>Λόου φάι</translation>
     </message>
     <message>
       <source>Lock EQ</source>
@@ -693,55 +1514,94 @@ Import into your library?</source>
     </message>
     <message>
       <source>Lock equalizer settings</source>
-      <translation type="unfinished" />
+      <translation>Κλείδωμα ρυθμίσεων ισοσταθμιστή</translation>
+    </message>
+    <message>
+      <source>Look in:</source>
+      <translation>Αναζήτηση σε:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Loudness</source>
-      <translation type="unfinished" />
+      <translation>Αντιστάθμιση χαμηλής έντασης</translation>
+    </message>
+    <message>
+      <source>Low-shelf filter</source>
+      <translation>Φίλτρο shelving χαμηλών συχνοτήτων</translation>
+      <extracomment>Shelving EQ: raise/lower the low-frequency region. Do not translate as low-pass; it is not a cutoff filter.</extracomment>
     </message>
     <message>
       <source>Manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Κατασκευαστής</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
-      <translation type="unfinished" />
+      <translation>Συμπληρώθηκε το όριο των 32 προφίλ ενισχυτών.</translation>
     </message>
     <message>
       <source>Maximum stereo width</source>
-      <translation type="unfinished" />
+      <translation>Μέγιστο στερεοφωνικό πλάτος</translation>
     </message>
     <message>
       <source>Measure</source>
-      <translation type="unfinished" />
+      <translation>Μέτρηση</translation>
     </message>
     <message>
       <source>Measure speaker room and microphone response</source>
-      <translation type="unfinished" />
+      <translation>Μέτρηση απόκρισης ηχείων, χώρου και μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Measured listening position</source>
+      <translation>Μετρημένη θέση ακρόασης</translation>
+      <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
-      <translation type="unfinished" />
+      <translation>Η μετρημένη διόρθωση μοντέλου προστίθεται στο EQ ακρόασής σας. Μπορείτε ακόμα να προσθέσετε μπάσα ή να ρυθμίσετε οποιαδήποτε ζώνη. Περιλαμβάνει συντηρητικά όρια ενίσχυσης· οι επιδράσεις χώρου και ενισχυτή απαιτούν μέτρηση ολόκληρου του συστήματος.</translation>
+    </message>
+    <message>
+      <source>Measured response</source>
+      <translation>Μετρημένη απόκριση</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measurement conditions are required.</source>
+      <translation>Οι συνθήκες μέτρησης είναι υποχρεωτικές.</translation>
+    </message>
+    <message>
+      <source>Measurement conditions: %1</source>
+      <translation>Συνθήκες μέτρησης: %1</translation>
+      <extracomment>Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.</extracomment>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
-      <translation type="unfinished" />
+      <translation>Τα δεδομένα μέτρησης ήταν ελλιπή.</translation>
     </message>
     <message>
       <source>Measurement failed. Try a higher test level or move the mic closer.</source>
-      <translation type="unfinished" />
+      <translation>Η μέτρηση απέτυχε. Δοκιμάστε υψηλότερη στάθμη δοκιμής ή φέρτε το μικρόφωνο πιο κοντά.</translation>
+    </message>
+    <message>
+      <source>Measurement failed: %1</source>
+      <translation>Η μέτρηση απέτυχε: %1</translation>
+      <extracomment>Calibration failure prefix. %1 is a translated owned diagnostic or preserved external technical detail; do not modify device identifiers or paths.</extracomment>
     </message>
     <message>
       <source>Measurement stopped.</source>
-      <translation type="unfinished" />
+      <translation>Η μέτρηση διακόπηκε.</translation>
+    </message>
+    <message>
+      <source>Measurement: %1</source>
+      <translation>Μέτρηση: %1</translation>
+      <extracomment>Label for verbatim published speaker measurement attribution, not a new calibration run.</extracomment>
     </message>
     <message>
       <source>Metal</source>
-      <translation type="unfinished" />
+      <translation>Μέταλ</translation>
     </message>
     <message>
       <source>Mic gain</source>
-      <translation type="unfinished" />
+      <translation>Ενίσχυση μικροφώνου</translation>
     </message>
     <message>
       <source>Microphone</source>
@@ -749,258 +1609,618 @@ Import into your library?</source>
     </message>
     <message>
       <source>Microphone %1 adjustment</source>
-      <translation type="unfinished" />
+      <translation>Ρύθμιση μικροφώνου %1</translation>
     </message>
     <message>
       <source>Microphone EQ is off.</source>
-      <translation type="unfinished" />
+      <translation>Το EQ μικροφώνου είναι ανενεργό.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>Η γέφυρα ήχου μικροφώνου δεν ξεκίνησε</translation>
+    </message>
+    <message>
+      <source>Microphone capture stopped during playback</source>
+      <translation>Η εγγραφή μικροφώνου διακόπηκε κατά την αναπαραγωγή</translation>
+    </message>
+    <message>
+      <source>Microphone capture stopped during the test</source>
+      <translation>Η εγγραφή μικροφώνου διακόπηκε κατά τη δοκιμή</translation>
     </message>
     <message>
       <source>Microphone error: %1</source>
-      <translation type="unfinished" />
+      <translation>Σφάλμα μικροφώνου: %1</translation>
+    </message>
+    <message>
+      <source>Microphone filter did not appear</source>
+      <translation>Το φίλτρο μικροφώνου δεν εμφανίστηκε</translation>
+    </message>
+    <message>
+      <source>Microphone filter disappeared</source>
+      <translation>Το φίλτρο μικροφώνου εξαφανίστηκε</translation>
     </message>
     <message>
       <source>Microphone gain adjustment</source>
-      <translation type="unfinished" />
+      <translation>Ρύθμιση ενίσχυσης μικροφώνου</translation>
     </message>
     <message>
       <source>Microphone input device</source>
-      <translation type="unfinished" />
+      <translation>Συσκευή εισόδου μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Η επεξεργασία της εγγραφής μικροφώνου έχει κολλήσει</translation>
+    </message>
+    <message>
+      <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
+      <translation>Η εγγραφή μικροφώνου ψαλιδίζεται. Μειώστε την ενίσχυση μικροφώνου ή την πρόσθετη ενίσχυση και επαναλάβετε τη μέτρηση.</translation>
     </message>
     <message>
       <source>Microphone route</source>
-      <translation type="unfinished" />
+      <translation>Διαδρομή μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Έληξε το χρονικό όριο εκκίνησης του μικροφώνου</translation>
     </message>
     <message>
       <source>Model</source>
-      <translation type="unfinished" />
+      <translation>Μοντέλο</translation>
     </message>
     <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
-      <translation type="unfinished" />
+      <translation>Μετακινήστε προς L ή R για να μειώσετε το αντίθετο κανάλι· το κέντρο διατηρεί και τα δύο στην πλήρη στάθμη</translation>
     </message>
     <message>
       <source>Movies</source>
-      <translation type="unfinished" />
+      <translation>Ταινίες</translation>
+    </message>
+    <message>
+      <source>My equipment</source>
+      <translation>Ο εξοπλισμός μου</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>Name</source>
+      <translation>Όνομα</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
-      <translation>Φυσικό EQ μικροφώνου</translation>
+      <translation>EQ φυσικής φωνής</translation>
     </message>
     <message>
-      <source>Natural mic EQ on · </source>
-      <translation type="unfinished" />
+      <source>Natural mic EQ on · %1</source>
+      <translation>EQ φυσικής φωνής ενεργό · %1</translation>
     </message>
     <message>
       <source>Natural microphone equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Ενεργοποίηση ή απενεργοποίηση ισοσταθμιστή φυσικής φωνής μικροφώνου</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>Νέος φάκελος</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>Νέο προφίλ</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
-      <translation type="unfinished" />
+      <translation>Νυχτερινή ακρόαση</translation>
+    </message>
+    <message>
+      <source>No</source>
+      <translation>Όχι</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>Δεν έχει επιλεγεί εισαγμένη διόρθωση εξοπλισμού.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>Δεν έχει επιλεγεί μετρημένη διόρθωση ενισχυτή. Οι διαφημιστικές προδιαγραφές εύρους συχνοτήτων δεν επαρκούν για να εξαχθεί καμπύλη διόρθωσης.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>Δεν υπάρχει συνδεδεμένο μικρόφωνο.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>Δεν έχει επιλεγεί διόρθωση μοντέλου. Το EQ ακρόασής σας λειτουργεί κανονικά.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>Δεν βρέθηκε νεότερη δημοσιευμένη έκδοση. Ελέγχονται επίσης τα ληφθέντα προγράμματα εγκατάστασης.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>Δεν υπάρχει διαθέσιμη συσκευή εξόδου.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>Δεν υπάρχει συνδεδεμένη συσκευή εξόδου.</translation>
+    </message>
+    <message>
+      <source>No to All</source>
+      <translation>Όχι σε όλα</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>Καμία — χρήση του δικού μου EQ</translation>
     </message>
     <message>
       <source>Number and date format</source>
-      <translation>Μορφή αριθμών και ημερομηνιών</translation>
+      <translation>Μορφή αριθμών και ημερομηνίας</translation>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>Αριθμός ζωνών ισοσταθμιστή</translation>
+    </message>
+    <message>
+      <source>OK</source>
+      <translation>OK</translation>
+    </message>
+    <message>
+      <source>Omnidirectional speaker</source>
+      <translation>Πανκατευθυντικό ηχείο</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>Ενεργό · Αναπαραγωγή μέσω %1</translation>
+    </message>
+    <message>
+      <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
+      <translation>Μόνο μία εφαρμογή SoundCurrent εκκινεί κατά τη σύνδεση. Η ενεργοποίηση αυτής της επιλογής αντικαθιστά τη ρύθμιση εκκίνησης της άλλης εφαρμογής. Εκκινεί στο παρασκήνιο όταν υπάρχει εικονίδιο στην περιοχή ειδοποιήσεων.</translation>
+    </message>
+    <message>
+      <source>Open</source>
+      <translation>Άνοιγμα</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>Άνοιγμα του πίνακα ελέγχου VB-Audio για την καθυστέρηση καλωδίου και την εσωτερική συχνότητα δειγματοληψίας. Αλλαγές κατά τη λειτουργία ήχου μπορεί να διακόψουν την αναπαραγωγή.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>Άνοιγμα πίνακα ελέγχου VB-CABLE</translation>
+    </message>
+    <message>
+      <source>Open audio stream</source>
+      <translation>Άνοιγμα ροής ήχου</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>Άνοιγμα ροής λήψης εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>Άνοιγμα τελικού σημείου εγγραφής εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>Άνοιγμα τελικού σημείου</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>Άνοιγμα διεπαφής έντασης τελικού σημείου</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>Άνοιγμα διεπαφής ανάγνωσης μικροφώνου</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>Άνοιγμα λήψεων εκδόσεων</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>Άνοιγμα τελικού σημείου ηχείων</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>Άνοιγμα ροής αναπαραγωγής ηχείων</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>Άνοιγμα διεπαφής εγγραφής δοκιμαστικού ήχου</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>Άνοιγμα φακέλου ενημερώσεων</translation>
+    </message>
+    <message>
+      <source>Opening %1 setup...</source>
+      <translation>Άνοιγμα της εγκατάστασης του %1...</translation>
+      <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>Πορτοκαλί: μετρημένη απόκριση, όταν παρέχεται. Τιρκουάζ: διόρθωση στα 48 kHz. Σύρετε τα τιρκουάζ σημεία ή επεξεργαστείτε τον πίνακα. Η αποθήκευση διατηρεί το προφίλ αναφοράς και δημιουργεί προσαρμοσμένο αντίγραφο.</translation>
+    </message>
+    <message>
+      <source>Outdoor speaker</source>
+      <translation>Ηχείο εξωτερικού χώρου</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
     </message>
     <message>
       <source>Output device</source>
       <translation>Συσκευή εξόδου</translation>
     </message>
     <message>
+      <source>Output device is no longer available</source>
+      <translation>Η συσκευή εξόδου δεν είναι πλέον διαθέσιμη</translation>
+    </message>
+    <message>
+      <source>Output has no volume channels</source>
+      <translation>Η έξοδος δεν έχει κανάλια ρύθμισης έντασης</translation>
+    </message>
+    <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>Συνολική έξοδος</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>Ηχείο πάνελ</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
+    </message>
+    <message>
+      <source>Parent directory</source>
+      <translation>Γονικός κατάλογος</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Paste</source>
+      <translation>Επικόλληση</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>Παύση επεξεργασίας και άνοιγμα ρύθμισης ήχου. Η εφαρμογή παραμένει ανοιχτή και αναφέρει το αποτέλεσμα. Επανεκκινήστε τα Windows μετά την εγκατάσταση του οδηγού.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>Δείκτες κορυφών</translation>
+    </message>
+    <message>
+      <source>Peaking filter</source>
+      <translation>Φίλτρο καμπάνας</translation>
+      <extracomment>Bell-shaped parametric EQ filter centered at its frequency; this is not a peak/clipping indicator.</extracomment>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>Πιάνο</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>Αναπαραγωγή ήσυχου δοκιμαστικού ήχου και προεπισκόπηση προτεινόμενων αλλαγών EQ αναπαραγωγής</translation>
     </message>
     <message>
       <source>Playback</source>
       <translation>Αναπαραγωγή</translation>
     </message>
     <message>
+      <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
+      <translation>Αναπαραγωγή λογαριθμικής σάρωσης από 20 Hz έως 25 kHz</translation>
+      <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>Αναπαράγεται ήσυχος δοκιμαστικός ήχος. Διακόψτε τον αν είναι δυσάρεστος.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>Συνδέστε το μικρόφωνό σας για να επιλέξετε προφίλ μικροφώνου</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>Πόντκαστ</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>Ποπ</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>Φορητό ηχείο PA</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
       <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
-      <translation>Κέρδος εξόδου</translation>
+      <translation>Τελική ενίσχυση</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>Τελική ενίσχυση μετά την ισοστάθμιση</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>Τιμή τελικής ενίσχυσης σε ντεσιμπέλ</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>Όνομα προρύθμισης:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>Αποτροπή αλλαγών σε προρυθμίσεις, ζώνες EQ, τελική ενίσχυση και ισορροπία</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>Λεπτομέρειες προφίλ</translation>
+    </message>
+    <message>
+      <source>Profile exceeds the 1 MiB limit.</source>
+      <translation>Το προφίλ υπερβαίνει το όριο του 1 MiB.</translation>
+    </message>
+    <message>
+      <source>Profile library exceeds 16 MiB.</source>
+      <translation>Η βιβλιοθήκη προφίλ υπερβαίνει τα 16 MiB.</translation>
+    </message>
+    <message>
+      <source>Profile metadata is too long.</source>
+      <translation>Τα μεταδεδομένα προφίλ είναι πολύ μεγάλα.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>Το προφίλ πρέπει να είναι αναγνώσιμο και μικρότερο από 64 KiB.</translation>
+    </message>
+    <message>
+      <source>Profiles need 1–16 correction filters.</source>
+      <translation>Τα προφίλ χρειάζονται 1–16 φίλτρα διόρθωσης.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>Δημοσιευμένες πηγές μετρήσεων: &lt;a href="https://www.spinorama.org/"&gt;Μετρήσεις ηχείων / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Βαθμονόμηση Dayton ανά σειριακό αριθμό&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;Βαθμονόμηση miniDSP ανά σειριακό αριθμό&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Γραφήματα μικροφώνων Neumann&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;Γράφημα απόκρισης AT2020&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Μετρήσεις ενισχυτών&lt;/a&gt;</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <source>Published profiles need an HTTPS measurement source.</source>
+      <translation>Τα δημοσιευμένα προφίλ χρειάζονται πηγή μέτρησης HTTPS.</translation>
+    </message>
+    <message>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Δεν ήταν δυνατός ο έλεγχος δημοσιευμένων εκδόσεων. Χρησιμοποιήστε το Άνοιγμα λήψεων εκδόσεων· τα ληφθέντα προγράμματα εγκατάστασης εξακολουθούν να εντοπίζονται τοπικά.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>Δημοσιευμένη απόκριση και επεξεργάσιμες καμπύλες διόρθωσης</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>Η δημοσιευμένη ενημέρωση %1 είναι διαθέσιμη. Ανοίξτε τις λήψεις εκδόσεων, εγκαταστήστε πάνω από αυτή την έκδοση και ανοίξτε ξανά την εφαρμογή.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>Δυνατά κρουστικά μπάσα</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>Ήσυχη λογαριθμική σάρωση συχνοτήτων</translation>
+    </message>
+    <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>Τερματίστε το %1 πριν από την απεγκατάστασή του.</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>Τερματίστε το %1 πριν από την ενημέρωση. Το κλείσιμο του παραθύρου αφήνει την εφαρμογή σε λειτουργία. Δεν απαιτείται απεγκατάσταση.</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>Έξοδος από το SoundCurrent EQ</translation>
+    </message>
+    <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>Κλείστε κάθε εφαρμογή SoundCurrent που εκτελείται πριν αλλάξετε το κοινόχρηστο πρόγραμμα οδήγησης. Η απεγκατάσταση μιας εφαρμογής διατηρεί το πρόγραμμα οδήγησης αν η άλλη το χρησιμοποιεί ακόμη.</translation>
+    </message>
+    <message>
+      <source>Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.</source>
+      <translation>Κλείστε όλους τους ισοσταθμιστές που εκτελούνται πριν εγκαταστήσετε το πρόγραμμα οδήγησης. Κατά την αφαίρεση της τελευταίας εφαρμογής SoundCurrent, το πρόγραμμα απεγκατάστασής της προσφέρει αφαίρεση του VB-CABLE. Άλλο λογισμικό μπορεί επίσης να χρειάζεται το καλώδιο. Τα πρόσθετα καλώδια A/B δεν περιλαμβάνονται.</translation>
+      <extracomment>Shared virtual cable notice: quit exits the equalizer, not just closes UI. Cable removal is offered when the other SoundCurrent app is absent; user confirmation remains required, silent app removal does not remove cable. A/B refers to separate extra virtual cables, not physical wires. Other software may depend on shared VB-CABLE. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
-      <translation>Έξοδος από την εφαρμογή</translation>
+      <translation>Έξοδος εφαρμογής</translation>
+    </message>
+    <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Κλείστε τις εφαρμογές SoundCurrent που εκτελούνται και περιμένετε να ολοκληρωθεί η ανάκτηση ήχου πριν αλλάξετε το κοινόχρηστο πρόγραμμα οδήγησης ήχου.</translation>
+    </message>
+    <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Πριν αλλάξετε το VB-CABLE, κλείστε τα εξής: %1.</translation>
     </message>
     <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>R</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>R&amp;B</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint</source>
+      <translation>Ανάγνωση τελικού σημείου ήχου</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>Ανάγνωση αναγνωριστικού τελικού σημείου ήχου</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>Ανάγνωση ονόματος τελικού σημείου ήχου</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>Ανάγνωση ιδιοτήτων τελικού σημείου ήχου</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>Ανάγνωση ήχου εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>Λήψη διεπαφής λήψης εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>Ανάγνωση μεγέθους πακέτου εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Ανάγνωση αναγνωριστικού προεπιλεγμένης εξόδου</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Ανάγνωση προεπιλεγμένου τελικού σημείου εξόδου</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>Ανάγνωση μορφής μίξης μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>Ανάγνωση μεγέθους πακέτου μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>Ανάγνωση δειγμάτων μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>Ανάγνωση μεγέθους επόμενου πακέτου εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>Ανάγνωση επόμενου πακέτου μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>Ανάγνωση πληρότητας προσωρινής μνήμης εξόδου</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>Ανάγνωση στάθμης εξόδου</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>Ανάγνωση κατάστασης σίγασης εξόδου</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>Ανάγνωση στάθμης ηχείων</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>Ανάγνωση μορφής μίξης ηχείων</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>Ανάγνωση κατάστασης σίγασης ηχείων</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>Λήψη διεπαφής αναπαραγωγής ηχείων</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>Ανάγνωση έντασης ηχείων</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>Ανάγνωση αριθμού πλαισίων δοκιμαστικού ήχου στην προσωρινή μνήμη</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>Ανάγνωση μορφής μίξης εικονικής εξόδου</translation>
+    </message>
+    <message>
+      <source>Recent places</source>
+      <translation>Πρόσφατες τοποθεσίες</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Redo</source>
+      <translation>Επανάληψη</translation>
+      <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
       <source>Refresh devices</source>
       <translation>Ανανέωση συσκευών</translation>
     </message>
     <message>
+      <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
+
+%1</source>
+      <translation>Οι σχετικές μετρήσεις περιλαμβάνουν την απόκριση ηχείων, χώρου και μικροφώνου. Οι προτεινόμενες αλλαγές περιορίζονται σε 3 dB ανά μετρημένη συχνότητα.
+
+%1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>Αποδέσμευση πακέτου ήχου εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>Αποδέσμευση πακέτου μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>Αποδέσμευση προσωρινής μνήμης ηχείων</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>Αποδέσμευση προσωρινής μνήμης δοκιμαστικής αναπαραγωγής</translation>
+    </message>
+    <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>Υπενθύμιση όταν υπάρχουν ενημερώσεις ή απαιτείται επανεκκίνηση</translation>
+    </message>
+    <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Αφαίρεση του VB-CABLE;</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>Αφαίρεση επιλεγμένου φίλτρου</translation>
+    </message>
+    <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>Να αφαιρεθεί και το κοινόχρηστο πρόγραμμα οδήγησης VB-CABLE; Άλλοι χρήστες, εφαρμογές εγγραφής ή εργαλεία φωνής μπορεί να το χρειάζονται. Επιβεβαιώστε για να ανοίξετε το επίσημο πρόγραμμα αφαίρεσης και κάντε κλικ στο Remove Driver. Αρνηθείτε για να διατηρήσετε το καλώδιο και να απεγκαταστήσετε μόνο το SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>Rename</source>
+      <translation>Μετονομασία</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Επιδιόρθωση ελλιπούς εγκατάστασης του VB-CABLE</translation>
+    </message>
+    <message>
+      <source>Reset</source>
+      <translation>Επαναφορά</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>Επαναφορά ηχητικών εφέ</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>Επαναφορά τόνου μικροφώνου</translation>
     </message>
     <message>
       <source>Reset to flat</source>
@@ -1009,31 +2229,76 @@ Import into your library?</source>
     </message>
     <message>
       <source>Response data (*.txt *.csv *.frd *.cal)</source>
-      <translation type="unfinished" />
+      <translation>Δεδομένα απόκρισης (*.txt *.csv *.frd *.cal)</translation>
+    </message>
+    <message>
+      <source>Response exceeds 4096 points.</source>
+      <translation>Η απόκριση υπερβαίνει τα 4096 σημεία.</translation>
+    </message>
+    <message>
+      <source>Response frequencies must increase, with finite bounded values.</source>
+      <translation>Οι συχνότητες απόκρισης πρέπει να αυξάνονται, με πεπερασμένες τιμές εντός ορίων.</translation>
+    </message>
+    <message>
+      <source>Response has no usable audio range.</source>
+      <translation>Η απόκριση δεν έχει χρήσιμο εύρος ήχου.</translation>
     </message>
     <message>
       <source>Response import</source>
-      <translation type="unfinished" />
+      <translation>Εισαγωγή απόκρισης</translation>
+    </message>
+    <message>
+      <source>Response needs 2–4096 measured points.</source>
+      <translation>Η απόκριση χρειάζεται 2–4096 μετρημένα σημεία.</translation>
+    </message>
+    <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Επανεκκινήστε τα Windows πριν χρησιμοποιήσετε το VB-CABLE. Η ρύθμιση ήχου ολοκληρώθηκε, αλλά το πρόγραμμα οδήγησης και οι ρυθμίσεις του απαιτούν επανεκκίνηση του συστήματος.</translation>
+    </message>
+    <message>
+      <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
+      <translation>Επανεκκινήστε τα Windows πριν χρησιμοποιήσετε τον ισοσταθμιστή ή τις ρυθμίσεις VB-CABLE. Οι αλλαγές οδηγού ήχου χρειάζονται επανεκκίνηση συστήματος.</translation>
+    </message>
+    <message>
+      <source>Restore Defaults</source>
+      <translation>Επαναφορά προεπιλογών</translation>
     </message>
     <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
-      <translation type="unfinished" />
+      <translation>Επαναφορά προηγούμενης ρύθμισης EQ (Ctrl+Z)</translation>
+    </message>
+    <message>
+      <source>Retry</source>
+      <translation>Επανάληψη</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
-      <translation type="unfinished" />
+      <translation>Δοκιμαστική γλώσσα από δεξιά προς αριστερά</translation>
     </message>
     <message>
       <source>Rock</source>
-      <translation type="unfinished" />
+      <translation>Ροκ</translation>
+    </message>
+    <message>
+      <source>Save</source>
+      <translation>Αποθήκευση</translation>
+    </message>
+    <message>
+      <source>Save All</source>
+      <translation>Αποθήκευση όλων</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
-      <translation type="unfinished" />
+      <translation>Αποθήκευση προρύθμισης EQ</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>Αποθήκευση ως</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>
-      <translation type="unfinished" />
+      <translation>Αποθήκευση τροποποιημένου προφίλ;</translation>
     </message>
     <message>
       <source>Save preset</source>
@@ -1041,27 +2306,45 @@ Import into your library?</source>
     </message>
     <message>
       <source>Save profile</source>
-      <translation type="unfinished" />
+      <translation>Αποθήκευση προφίλ</translation>
+    </message>
+    <message>
+      <source>Save system response profile</source>
+      <translation>Αποθήκευση προφίλ απόκρισης συστήματος</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>Αποθηκεύστε την εργασία σας και τερματίστε την εφαρμογή που εκτελείται πριν συνεχίσετε. Το κλείσιμο του παραθύρου της την αφήνει να εκτελείται στο παρασκήνιο.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
-      <translation type="unfinished" />
+      <translation>Αποθηκεύτηκε η προρύθμιση «%1».</translation>
     </message>
     <message>
       <source>Search brand, family, model or measurement conditions</source>
-      <translation type="unfinished" />
+      <translation>Αναζήτηση μάρκας, σειράς, μοντέλου ή συνθηκών μέτρησης</translation>
     </message>
     <message>
       <source>Second virtual cable for microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Δεύτερο εικονικό καλώδιο για EQ μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Select all</source>
+      <translation>Επιλογή όλων</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Select band %1</source>
-      <translation type="unfinished" />
+      <translation>Επιλογή ζώνης %1</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
-      <translation type="unfinished" />
+      <translation>Επιλέξτε αυτή τη ζώνη για επεξεργασία συχνότητας, ενίσχυσης και Q</translation>
+    </message>
+    <message>
+      <source>Selected audio device is unavailable</source>
+      <translation>Η επιλεγμένη συσκευή ήχου δεν είναι διαθέσιμη</translation>
     </message>
     <message>
       <source>Selected band</source>
@@ -1070,159 +2353,429 @@ Import into your library?</source>
     </message>
     <message>
       <source>Selected band filter Q</source>
-      <translation type="unfinished" />
+      <translation>Συντελεστής Q επιλεγμένης ζώνης</translation>
     </message>
     <message>
       <source>Selected band frequency</source>
-      <translation type="unfinished" />
+      <translation>Συχνότητα επιλεγμένης ζώνης</translation>
     </message>
     <message>
       <source>Selected band gain</source>
-      <translation type="unfinished" />
+      <translation>Ενίσχυση επιλεγμένης ζώνης</translation>
+    </message>
+    <message>
+      <source>Selected output device is no longer available</source>
+      <translation>Η επιλεγμένη συσκευή εξόδου δεν είναι πλέον διαθέσιμη</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
-      <translation type="unfinished" />
+      <translation>Η επιλεγμένη έξοδος αποσυνδέθηκε. Έγινε μετάβαση στην αυτόματη έξοδο.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>Τα επιλεγμένα ηχεία έχουν αποσυνδεθεί</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
-      <translation type="unfinished" />
+      <translation>Ξεχωριστοί ήσυχοι τόνοι</translation>
+    </message>
+    <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>Ρύθμιση πλήρους στάθμης ηχείων για τον ισοσταθμιστή</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>Ρύθμιση στάθμης εξόδου</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>Ρύθμιση κατάστασης σίγασης εξόδου</translation>
+    </message>
+    <message>
+      <source>Set up %1 for %2.</source>
+      <translation>Ρυθμίστε το %1 για το %2.</translation>
+    </message>
+    <message>
+      <source>Setting up the shared %1 driver...</source>
+      <translation>Ρύθμιση του κοινόχρηστου προγράμματος οδήγησης %1...</translation>
+      <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Ρυθμίσεις &amp;&amp; βαθμονόμηση</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>Το πρόγραμμα εγκατάστασης δεν μπόρεσε να ελέγξει το πρόγραμμα οδήγησης. Μπορείτε να δοκιμάσετε ξανά με το %1 στην εφαρμογή ή στο μενού Έναρξη.</translation>
+    </message>
+    <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>Η εγκατάσταση ανοίγει το υπογεγραμμένο πρόγραμμα εγκατάστασης της VB-Audio. Κάντε κλικ στο Install Driver και έπειτα επανεκκινήστε τα Windows πριν χρησιμοποιήσετε τον ισοσταθμιστή ή τις ρυθμίσεις του VB-CABLE.</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
+      <translation>Το κοινό EQ και το EQ καναλιού υπερβαίνουν τα 64 φίλτρα· αφαιρέστε μερικά φίλτρα καναλιού</translation>
+      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+    </message>
+    <message>
+      <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
+      <translation>Η αφαίρεση του κοινόχρηστου προγράμματος οδήγησης ήχου δεν ολοκληρώθηκε. Αυτή η εφαρμογή διατηρήθηκε ώστε να μπορείτε να δοκιμάσετε ξανά. Τερματίστε όλες τις εφαρμογές SoundCurrent που εκτελούνται και δοκιμάστε ξανά την απεγκατάσταση.</translation>
+      <extracomment>Native uninstall nonzero failure (excluding restart code 3010) aborts before app payload deletion so user can retry. Shared audio driver means EQ/Studio ownership, not network. Quit any running SoundCurrent apps, not necessarily both products; fully exit rather than hide UI. SoundCurrent is invariant. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Shortcut</source>
+      <translation>Συντόμευση</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
-      <translation type="unfinished" />
+      <translation>Τα μικρότερα διαστήματα ανανεώνουν τις στάθμες συχνότερα και χρησιμοποιούν περισσότερη CPU· η παροχή ήχου μπορεί να περιορίζει τον πραγματικό ρυθμό</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
-      <translation type="unfinished" />
+      <translation>Εμφάνιση γραμμής συγκράτησης κορυφής που πέφτει σε κάθε ένδειξη συχνότητας</translation>
     </message>
     <message>
       <source>Show advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Εμφάνιση προχωρημένων χειριστηρίων</translation>
+    </message>
+    <message>
+      <source>Show date modified</source>
+      <translation>Εμφάνιση ημερομηνίας τροποποίησης</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show hidden files</source>
+      <translation>Εμφάνιση κρυφών αρχείων</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>
-      <translation type="unfinished" />
+      <translation>Εμφάνιση δεικτών κορυφών στις ενδείξεις συχνότητας</translation>
+    </message>
+    <message>
+      <source>Show size</source>
+      <translation>Εμφάνιση μεγέθους</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show type</source>
+      <translation>Εμφάνιση τύπου</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Sidebar</source>
+      <translation>Πλευρική στήλη</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>Μέγεθος</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>Προσδιορισμός μεγέθους προσωρινής μνήμης λήψης</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>Προσδιορισμός μεγέθους προσωρινής μνήμης εξόδου</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>Προσδιορισμός μεγέθους προσωρινής μνήμης δοκιμαστικής αναπαραγωγής</translation>
     </message>
     <message>
       <source>Small Speakers</source>
-      <translation type="unfinished" />
+      <translation>Μικρά ηχεία</translation>
     </message>
     <message>
       <source>Soft Treble</source>
-      <translation type="unfinished" />
+      <translation>Απαλά πρίμα</translation>
     </message>
     <message>
       <source>Sound enhancements</source>
-      <translation>Βελτιώσεις ήχου</translation>
+      <translation>Ηχητικά εφέ</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>Το SoundCurrent Audio υπάρχει ήδη. Αν η ρύθμιση του προγράμματος οδήγησης παραμείνει ενεργοποιημένη, το πρόγραμμα εγκατάστασης θα καταχωρίσει αυτή την εφαρμογή και θα διατηρήσει το κοινόχρηστο πρόγραμμα οδήγησης διαθέσιμο για την άλλη εφαρμογή SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>Το SoundCurrent Audio είναι έτοιμο. Ανοίξτε την εφαρμογή και επιλέξτε τα ηχεία ή τα ακουστικά σας.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
+      <translation>Το SoundCurrent Audio παρέχει τη δική του διαδρομή μικροφώνου όταν εγκατασταθεί. Με το VB-CABLE, ταυτόχρονο EQ μικροφώνου και ηχείων χρειάζεται ξεχωριστά εγκατεστημένο δεύτερο καλώδιο (A ή B). Επιλέξτε αυτό το καλώδιο στις εφαρμογές εγγραφής. Η αυτόματη επιλογή προτιμά τη διαδρομή SoundCurrent όταν είναι διαθέσιμη.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>Το SoundCurrent Audio δρομολογεί την αναπαραγωγή μέσω της εφαρμογής. Επιλέξτε τα φυσικά ηχεία ή ακουστικά σας μέσα στην εφαρμογή. Τα προγράμματα οδήγησης του υλικού τους διατηρούνται.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.</source>
+      <translation>Μέτρηση SoundCurrent με σάρωση ή τόνους· ως προς τη διάμεσο· παρακάμφθηκε η ισοστάθμιση μικροφώνου. Μπορεί να περιλαμβάνεται η ισοστάθμιση αναπαραγωγής.</translation>
+      <extracomment>New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.</extracomment>
+    </message>
+    <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>Η εικονική έξοδος SoundCurrent απαιτεί στερεοφωνικό ήχο 48 kHz κινητής υποδιαστολής</translation>
+    </message>
+    <message>
+      <source>Soundbar</source>
+      <translation>Ηχομπάρα</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
     </message>
     <message>
       <source>Source</source>
-      <translation type="unfinished" />
+      <translation>Πηγή</translation>
+    </message>
+    <message>
+      <source>Source: %1</source>
+      <translation>Πηγή: %1</translation>
+      <extracomment>Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.</extracomment>
+    </message>
+    <message>
+      <source>Speaker</source>
+      <translation>Ηχείο</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
-      <translation type="unfinished" />
+      <translation>Βαθμονόμηση ηχείων &amp;&amp; χώρου</translation>
     </message>
     <message>
       <source>Speaker + room check</source>
-      <translation type="unfinished" />
+      <translation>Έλεγχος ηχείων και χώρου</translation>
+    </message>
+    <message>
+      <source>Speaker and room measurement</source>
+      <translation>Μέτρηση ηχείων και χώρου</translation>
+    </message>
+    <message>
+      <source>Speaker filter is outside conservative bounds</source>
+      <translation>Το φίλτρο ηχείου βρίσκεται εκτός συντηρητικών ορίων</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Κατασκευαστής ηχείου</translation>
     </message>
     <message>
       <source>Speaker model correction</source>
-      <translation type="unfinished" />
+      <translation>Διόρθωση μοντέλου ηχείου</translation>
     </message>
     <message>
       <source>Speaker model profile</source>
-      <translation type="unfinished" />
+      <translation>Προφίλ μοντέλου ηχείου</translation>
     </message>
     <message>
       <source>Speaker profile details</source>
-      <translation type="unfinished" />
+      <translation>Λεπτομέρειες προφίλ ηχείου</translation>
+    </message>
+    <message>
+      <source>Speaker profile resource is missing</source>
+      <translation>Λείπει ο πόρος προφίλ ηχείου</translation>
     </message>
     <message>
       <source>Speaker type</source>
-      <translation type="unfinished" />
+      <translation>Τύπος ηχείου</translation>
+    </message>
+    <message>
+      <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
+      <translation>Spinorama AutoEQ: το κέρδος διόρθωσης περιορίζεται σε %1 και το Q σε %2. Οι ενισχύσεις κάτω από %3 παραλείπονται. Η προεπιλογή ακρόασής σας προστίθεται ξεχωριστά.</translation>
+      <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
+    </message>
+    <message>
+      <source>Start cable capture</source>
+      <translation>Έναρξη λήψης εικονικού καλωδίου</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>Έναρξη εγγραφής μικροφώνου</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>Ξεκινήστε ήσυχα. Αυξήστε μόνο αν το μικρόφωνο δεν ακούει τους τόνους.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>Έναρξη εξόδου ηχείων</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>Έναρξη αναπαραγωγής δοκιμαστικού ήχου</translation>
+    </message>
+    <message>
+      <source>Start when I sign in</source>
+      <translation>Εκκίνηση κατά τη σύνδεση</translation>
+    </message>
+    <message>
+      <source>Startup</source>
+      <translation>Εκκίνηση</translation>
+    </message>
+    <message>
+      <source>Step down</source>
+      <translation>Μείωση τιμής</translation>
+      <extracomment>Decrease the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Step up</source>
+      <translation>Αύξηση τιμής</translation>
+      <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Stop the microphone calibration before changing the audio driver.</source>
+      <translation>Σταματήστε τη βαθμονόμηση μικροφώνου πριν αλλάξετε τον οδηγό ήχου.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>Διακοπή τόνων</translation>
+    </message>
+    <message>
+      <source>Studio profile has an invalid boolean field</source>
+      <translation>Το προφίλ Studio περιέχει μη έγκυρο λογικό πεδίο</translation>
+      <extracomment>Saved Studio setup requires a JSON true/false field. Wrong type or missing value is rejected; do not confuse this with an audio level or textual yes/no preference.</extracomment>
+    </message>
+    <message>
+      <source>Studio profile has an invalid numeric field</source>
+      <translation>Το προφίλ Studio περιέχει μη έγκυρο αριθμητικό πεδίο</translation>
+      <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>Το προτεινόμενο EQ εφαρμόστηκε. Χρησιμοποιήστε την Αποθήκευση προρύθμισης για να το διατηρήσετε.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>Προτεινόμενες αλλαγές στο EQ αναπαραγωγής</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>Περιβάλλων ήχος</translation>
+    </message>
+    <message>
+      <source>Surround speaker</source>
+      <translation>Ηχείο περιφερειακού ήχου</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>Άνοιξε η επεξεργασία προφίλ απόκρισης συστήματος. Τα αποθηκευμένα προφίλ είναι διαθέσιμα στη βιβλιοθήκη εξοπλισμού.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>Τηλεοπτικοί διάλογοι</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>Τιρκουάζ: EQ διόρθωσης. Πορτοκαλί: μετρημένη απόκριση, όταν παρέχεται. Η κατακόρυφη κλίμακα είναι σε σχετικά dB.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>Στάθμη δοκιμής</translation>
+    </message>
+    <message>
+      <source>Test level is outside the allowed range</source>
+      <translation>Η στάθμη δοκιμής βρίσκεται εκτός επιτρεπόμενου εύρους</translation>
+    </message>
+    <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>Λείπει το πακέτο VB-CABLE. Επιδιορθώστε την εγκατάσταση του SoundCurrent.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>Ο επεξεργαστής ήχου σταμάτησε απρόσμενα.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Λείπει ο βοηθός ελέγχου ετοιμότητας ήχου. Επιδιορθώστε την εγκατάσταση του SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The custom library holds up to 256 profiles.</source>
+      <translation>Η προσαρμοσμένη βιβλιοθήκη χωρά έως 256 προφίλ.</translation>
+    </message>
+    <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>Ο διαχειριστής προγραμμάτων οδήγησης δεν είναι υπογεγραμμένος. Εγκαταστήστε μια υπογεγραμμένη έκδοση του SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Το πακέτο του προγράμματος οδήγησης είναι ελλιπές ή τα Windows δεν μπορούν να επαληθεύσουν την υπογραφή του.</translation>
+    </message>
+    <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>Η ελλιπής εγκατάσταση του VB-CABLE αφαιρέθηκε. Επανεκκινήστε τα Windows, ανοίξτε ξανά το %1, κάντε κλικ στο Install Driver και επανεκκινήστε άλλη μία φορά.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>Λείπει το βοηθητικό πρόγραμμα ρύθμισης που διατηρεί τη δρομολόγηση ήχου.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>Λείπει ο κοινόχρηστος διαχειριστής προγραμμάτων οδήγησης. Επιδιορθώστε την εγκατάσταση της εφαρμογής.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>Η απάντηση ενημέρωσης ήταν μη έγκυρη. Δεν άνοιξε πρόγραμμα εγκατάστασης.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>Εισάγεται μετρημένη ΑΠΟΚΡΙΣΗ, όχι ήδη ανεστραμμένες ενισχύσεις EQ. Επιβεβαιώστε τον τύπο εξοπλισμού. Το απόλυτο SPL χρειάζεται κανονικοποίηση πριν από την εισαγωγή.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>Αυτό το προφίλ έχει αλλάξει. Αποθήκευση προσαρμοσμένου αντιγράφου πριν φύγετε;</translation>
+    </message>
+    <message>
+      <source>Timed out waiting for the equalizer sink: %1</source>
+      <translation>Έληξε η αναμονή για την έξοδο ισοσταθμιστή: %1</translation>
+    </message>
+    <message>
+      <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
+      <translation>Πολύ λίγος δοκιμαστικός ήχος έφτασε στο μικρόφωνο. Φέρτε το πιο κοντά ή αυξήστε λίγο τη στάθμη δοκιμής.</translation>
+    </message>
+    <message>
+      <source>Too many Studio channel filters</source>
+      <translation>Υπερβολικά πολλά φίλτρα σε κανάλι Studio</translation>
+      <extracomment>Per-channel EQ filter count exceeds 64; unchanged processing bound.</extracomment>
+    </message>
+    <message>
+      <source>Too many Studio routes</source>
+      <translation>Υπερβολικά πολλές συνδέσεις ήχου Studio</translation>
+      <extracomment>Saved audio routing edge count exceeds channel-count squared.</extracomment>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>Ηχείο PA για περιοδείες</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>Κάλυψη μετάφρασης: %1 από %2 μηνύματα. Οι ελλείπουσες μεταφράσεις χρησιμοποιούν αγγλικά. Τα γλωσσικά πακέτα δεν έχουν επαληθευτεί και αναμένουν έλεγχο από φυσικό ομιλητή. Τερματίστε και ανοίξτε ξανά για να εφαρμοστούν οι αλλαγές.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>Λεπτομέρεια πρίμων</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Απενεργοποίηση ισοσταθμιστή</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Ενεργοποίηση ισοσταθμιστή</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Τύπος</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Μη ταξινομημένος εξοπλισμός</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>
@@ -1231,27 +2784,74 @@ Import into your library?</source>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>Αναίρεση τελευταίας αλλαγής ισοσταθμιστή</translation>
+    </message>
+    <message>
+      <source>Uninstall</source>
+      <translation>Απεγκατάσταση</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
+      <source>Unknown</source>
+      <translation>Άγνωστο</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>Ξεκλείδωμα EQ</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>Ξεκλειδώστε τα χειριστήρια και ολοκληρώστε τη μέτρηση πριν επεξεργαστείτε προφίλ.</translation>
+    </message>
+    <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>Άρση σίγασης ηχείων για τον ισοσταθμιστή</translation>
+    </message>
+    <message>
+      <source>Unsupported Studio profile schema</source>
+      <translation>Μη υποστηριζόμενη μορφή προφίλ Studio</translation>
+      <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
+    </message>
+    <message>
+      <source>Unsupported equipment profile schema (expected 2).</source>
+      <translation>Μη υποστηριζόμενο σχήμα προφίλ εξοπλισμού (αναμένεται 2).</translation>
+    </message>
+    <message>
+      <source>Unsupported filter type.</source>
+      <translation>Μη υποστηριζόμενος τύπος φίλτρου.</translation>
+    </message>
+    <message>
+      <source>Unsupported microphone channel layout</source>
+      <translation>Μη υποστηριζόμενη διάταξη καναλιών μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Unsupported recording format</source>
+      <translation>Μη υποστηριζόμενη μορφή εγγραφής</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Μη υποστηριζόμενη διάταξη καναλιών ηχείων ή συχνότητα δειγματοληψίας</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Μη υποστηριζόμενη μορφή δειγμάτων μίξης ηχείων</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker profile schema</source>
+      <translation>Μη υποστηριζόμενο σχήμα προφίλ ηχείου</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Η ενημέρωση %1 έχει ληφθεί: %2. Τερματίστε, εγκαταστήστε πάνω από την υπάρχουσα εφαρμογή και ανοίξτε ξανά.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>Φάκελος λήψης ενημερώσεων</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>Χρησιμοποιήστε ήσυχο χώρο. Μετρά ηχεία, χώρο και μικρόφωνο μαζί· τα αποτελέσματα περιλαμβάνουν την απόκριση μικροφώνου.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1260,35 +2860,153 @@ Import into your library?</source>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>Χρήση περιοχής συστήματος</translation>
+      <translation>Χρήση τοπικών ρυθμίσεων συστήματος</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Σχετική απόκριση συχνότητας που εισήγαγε ο χρήστης· πριν από τη χρήση δηλώστε τον προσανατολισμό / σειριακό αριθμό του μικροφώνου ή τις συνθήκες μέτρησης του ηχείου.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>Διόρθωση που δημιούργησε ο χρήστης· εισαγάγετε τον εξοπλισμό και τις συνθήκες μέτρησης.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>Προφίλ που δημιούργησε ο χρήστης</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>Το VB-CABLE είναι καταχωρισμένο ως πρόγραμμα οδήγησης, αλλά δεν έχει διαθέσιμα τελικά σημεία ήχου. Το πρόγραμμα εγκατάστασης προσφέρει επιδιόρθωση: αφαιρέστε το πρόγραμμα οδήγησης, επανεκκινήστε, εγκαταστήστε το ξανά και επανεκκινήστε πάλι.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>Το VB-CABLE είναι ήδη εγκατεστημένο. Αν μόλις εγκαταστάθηκε ή ενημερώθηκε, επανεκκινήστε τα Windows πριν χρησιμοποιήσετε τον ισοσταθμιστή ή τις ρυθμίσεις του VB-CABLE. Διαφορετικά, επιλέξτε τα ηχεία σας στο SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>Το VB-CABLE υπάρχει ήδη και θα επαναχρησιμοποιηθεί. Το SoundCurrent επαναφέρει τη συνηθισμένη έξοδο όταν απενεργοποιείται ή όταν χρησιμοποιείτε το %1.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>Το VB-CABLE δεν είναι εγκατεστημένο. Ανοίξτε το "%1" και επανεκκινήστε τα Windows πριν ανοίξετε τις ρυθμίσεις του καλωδίου.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>Το VB-CABLE δεν υπάρχει. Επανεκκινήστε τα Windows αν σας ζητήθηκε και δοκιμάστε ξανά τη ρύθμιση ήχου.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>Το VB-CABLE εξακολουθεί να υπάρχει. Αν η αφαίρεση ζήτησε επανεκκίνηση, επανεκκινήστε τα Windows και δοκιμάστε ξανά την απεγκατάσταση του SoundCurrent· διαφορετικά, ολοκληρώστε το Remove Driver στο επίσημο πρόγραμμα εγκατάστασης.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>Το άθροισμα ελέγχου του πακέτου VB-CABLE δεν συμφωνεί. Επιδιορθώστε την εγκατάσταση.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE removal did not finish. This app was kept so you can retry.</source>
+      <translation>Η αφαίρεση του VB-CABLE δεν ολοκληρώθηκε. Αυτή η εφαρμογή διατηρήθηκε ώστε να μπορείτε να δοκιμάσετε ξανά.</translation>
+      <extracomment>Cable uninstall nonzero failure excluding restart code 3010 aborts before app payload deletion. App retained for retry. NSIS caller appends newline and actual helper output as $1; never put runtime variables in translations. VB-CABLE invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.</source>
+      <translation>Το VB-CABLE δρομολογεί την αναπαραγωγή μέσω της εφαρμογής. Επιλέξτε ηχεία μέσα στο SoundCurrent. Το VB-CABLE είναι λογισμικό της VB-Audio που υποστηρίζεται από δωρεές: https://vb-cable.com — οι δωρεές είναι ευπρόσδεκτες.</translation>
+      <extracomment>Cable audio page routing and donation notice. Software routes system playback through SoundCurrent to physical output selected inside app. Donationware means supported by voluntary donations, not mandatory payment. Preserve VB-CABLE twice, SoundCurrent, VB-Audio and exact donation URL. Contextual AI review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>Ρυθμίσεις VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>Δεν ήταν δυνατό να ανοίξουν οι ρυθμίσεις του VB-CABLE. Επανεκκινήστε τα Windows αν το πρόγραμμα οδήγησης μόλις εγκαταστάθηκε ή ενημερώθηκε και δοκιμάστε ξανά.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>Η ρύθμιση του VB-CABLE ολοκληρώθηκε. Επανεκκινήστε τώρα τα Windows πριν χρησιμοποιήσετε τον ισοσταθμιστή ή τις ρυθμίσεις του VB-CABLE. Οι προηγούμενες προεπιλεγμένες συσκευές ήχου διατηρήθηκαν όπου ήταν ακόμη διαθέσιμες.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>Η εγκατάσταση του VB-CABLE απαιτεί επανεκκίνηση των Windows. Επανεκκινήστε πριν χρησιμοποιήσετε τον ισοσταθμιστή ή ανοίξετε τις ρυθμίσεις του VB-CABLE.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>Η ρύθμιση του VB-CABLE ακυρώθηκε ή δεν ολοκληρώθηκε (κωδικός %1). Το SoundCurrent παραμένει εγκατεστημένο για νέα προσπάθεια.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.</source>
+      <translation>Το VB-CABLE εξακολουθεί να μην έχει διαθέσιμες συσκευές αναπαραγωγής ή εγγραφής. Ολοκληρώστε το Remove Driver στο επίσημο πρόγραμμα εγκατάστασης, επανεκκινήστε τα Windows και ανοίξτε ξανά το %1 για επανεγκατάσταση του προγράμματος οδήγησης. Τα CABLE Input και CABLE Output πρέπει να είναι ενεργοποιημένα στις ρυθμίσεις ήχου των Windows.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>Το VB-CABLE διατηρήθηκε επειδή είναι εγκατεστημένη η άλλη εφαρμογή SoundCurrent. Αφαιρέστε το μαζί με την τελευταία εφαρμογή αν δεν το χρειάζεται άλλο λογισμικό.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>Έμφαση φωνής</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>Αναμονή μικροφώνου.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>Ζεστό</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>Ζεστασιά</translation>
     </message>
     <message>
-      <source>Width (Q)</source>
-      <translation type="unfinished" />
+      <source>Whole listening system</source>
+      <translation>Ολόκληρο το σύστημα ακρόασης</translation>
+      <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>Το COM για τον ήχο των Windows δεν είναι διαθέσιμο</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Τα Windows δεν μπόρεσαν να επαληθεύσουν την υπογραφή του εκτελέσιμου αρχείου VB-Audio.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
+    </message>
+    <message>
+      <source>Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.</source>
+      <translation>Τα Windows έχουν καταχώριση προγράμματος οδήγησης VB-CABLE, αλλά δεν υπάρχουν διαθέσιμα τελικά σημεία του καλωδίου. Ελέγξτε πρώτα ότι τα CABLE Input και CABLE Output είναι ενεργοποιημένα στις ρυθμίσεις ήχου των Windows. Για επανεγκατάσταση: κάντε κλικ στο Remove Driver στο επίσημο πρόγραμμα εγκατάστασης που ανοίγει στη συνέχεια, επανεκκινήστε τα Windows, έπειτα ανοίξτε ξανά το %1 μέσα στην εφαρμογή και κάντε κλικ στο Install Driver. Επανεκκινήστε ακόμη μία φορά πριν αναπαραγάγετε ήχο μέσω του SoundCurrent. Η αφαίρεση αυτού του κοινόχρηστου καλωδίου επηρεάζει άλλες εφαρμογές που το χρησιμοποιούν.</translation>
+      <extracomment>Pre-repair modal, before official driver installer is opened. Existing driver record but endpoints unavailable; first check Windows endpoint enablement. Remove Driver and Install Driver are exact English external buttons. %1 is actual localized Audio driver setup button inside app, not English Start-menu shortcut. Preserve removal -&gt; Windows restart -&gt; app setup -&gt; reinstall -&gt; second restart, then audio playback; affects other users of shared cable. No claim removal already happened. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</source>
+      <translation>Τα Windows έχουν καταχώριση προγράμματος οδήγησης VB-CABLE, αλλά το τελικό σημείο αναπαραγωγής ή εγγραφής δεν είναι διαθέσιμο. Αν έχετε ήδη επανεκκινήσει, ανοίξτε το %1 για επιδιόρθωση. Ενεργοποιήστε τα CABLE Input και CABLE Output στις ρυθμίσεις ήχου των Windows αν είναι απενεργοποιημένα.</translation>
+    </message>
+    <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Τα Windows θα ζητήσουν έγκριση διαχειριστή για τον υπογεγραμμένο διαχειριστή προγραμμάτων οδήγησης. Το πρόγραμμα εγκατάστασης θα σας ενημερώσει αν απαιτείται επανεκκίνηση.</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Εγγραφή στην προσωρινή μνήμη ηχείων</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>Εγγραφή δοκιμαστικού ήχου για αναπαραγωγή</translation>
+    </message>
+    <message>
+      <source>Yes</source>
+      <translation>Ναι</translation>
+    </message>
+    <message>
+      <source>Yes to All</source>
+      <translation>Ναι σε όλα</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>Το μηδέν απενεργοποιεί κάθε εφέ. Αυτά τα εφέ ακρόασης εφαρμόζονται στην αναπαραγωγή ηχείων, όχι στη διόρθωση μικροφώνου.</translation>
     </message>
   </context>
 </TS>

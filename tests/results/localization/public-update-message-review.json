@@ -1,0 +1,269 @@
+{
+  "date": "2026-10-09",
+  "sourceBefore": "Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.",
+  "sourceAfter": "Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.",
+  "repositoryVisibilityEvidence": {
+    "url": "https://github.com/rhamenator/soundcurrent-studio",
+    "isPrivate": false,
+    "readCommand": "gh repo view rhamenator/soundcurrent-studio --json isPrivate,url"
+  },
+  "behavior": "Remove irrelevant private-release access guidance; preserve update failure, release-download action and detection of already downloaded installers. No networking, download, device, settings or numeric behavior changed.",
+  "changes": [
+    {
+      "locale": "ar",
+      "before": "تعذر التحقق من الإصدارات المنشورة. تتطلب إصدارات Studio الخاصة صلاحية الوصول إلى GitHub. استخدم فتح تنزيلات الإصدارات؛ لا يزال اكتشاف برامج التثبيت المنزلة محليًا متاحًا.",
+      "removedObsoleteSentence": "تتطلب إصدارات Studio الخاصة صلاحية الوصول إلى GitHub. ",
+      "after": "تعذر التحقق من الإصدارات المنشورة. استخدم فتح تنزيلات الإصدارات؛ لا يزال اكتشاف برامج التثبيت المنزلة محليًا متاحًا.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "cs",
+      "before": "Vydané verze se nepodařilo zkontrolovat. Soukromé verze Studio vyžadují přístup ke GitHubu. Použijte Otevřít stahování vydaných verzí; stažené instalátory se stále vyhledávají místně.",
+      "removedObsoleteSentence": "Soukromé verze Studio vyžadují přístup ke GitHubu. ",
+      "after": "Vydané verze se nepodařilo zkontrolovat. Použijte Otevřít stahování vydaných verzí; stažené instalátory se stále vyhledávají místně.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "da",
+      "before": "Udgivne versioner kunne ikke kontrolleres. Private Studio-versioner kræver GitHub-adgang. Brug Åbn versionsdownloads; hentede installationsprogrammer findes stadig lokalt.",
+      "removedObsoleteSentence": "Private Studio-versioner kræver GitHub-adgang. ",
+      "after": "Udgivne versioner kunne ikke kontrolleres. Brug Åbn versionsdownloads; hentede installationsprogrammer findes stadig lokalt.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "de",
+      "before": "Veröffentlichte Versionen konnten nicht geprüft werden. Private Studio-Versionen erfordern GitHub-Zugriff. Verwenden Sie „Versionsdownloads öffnen“; heruntergeladene Installationsprogramme werden weiterhin lokal erkannt.",
+      "removedObsoleteSentence": "Private Studio-Versionen erfordern GitHub-Zugriff. ",
+      "after": "Veröffentlichte Versionen konnten nicht geprüft werden. Verwenden Sie „Versionsdownloads öffnen“; heruntergeladene Installationsprogramme werden weiterhin lokal erkannt.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "el",
+      "before": "Δεν ήταν δυνατός ο έλεγχος δημοσιευμένων εκδόσεων. Οι ιδιωτικές εκδόσεις Studio απαιτούν πρόσβαση στο GitHub. Χρησιμοποιήστε το Άνοιγμα λήψεων εκδόσεων· τα ληφθέντα προγράμματα εγκατάστασης εξακολουθούν να εντοπίζονται τοπικά.",
+      "removedObsoleteSentence": "Οι ιδιωτικές εκδόσεις Studio απαιτούν πρόσβαση στο GitHub. ",
+      "after": "Δεν ήταν δυνατός ο έλεγχος δημοσιευμένων εκδόσεων. Χρησιμοποιήστε το Άνοιγμα λήψεων εκδόσεων· τα ληφθέντα προγράμματα εγκατάστασης εξακολουθούν να εντοπίζονται τοπικά.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "en",
+      "before": "Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.",
+      "removedObsoleteSentence": "Private Studio releases require GitHub access. ",
+      "after": "Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "es",
+      "before": "No se han podido comprobar las versiones publicadas. Las versiones privadas de Studio requieren acceso a GitHub. Use Abrir descargas de versiones; los instaladores descargados se siguen detectando localmente.",
+      "removedObsoleteSentence": "Las versiones privadas de Studio requieren acceso a GitHub. ",
+      "after": "No se han podido comprobar las versiones publicadas. Use Abrir descargas de versiones; los instaladores descargados se siguen detectando localmente.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "fa",
+      "before": "بررسی نسخه‌های منتشرشده ممکن نشد. نسخه‌های خصوصی Studio به دسترسی GitHub نیاز دارند. از باز کردن دانلودهای نسخه‌ها استفاده کنید؛ نصب‌کننده‌های دانلودشده همچنان به‌صورت محلی شناسایی می‌شوند.",
+      "removedObsoleteSentence": "نسخه‌های خصوصی Studio به دسترسی GitHub نیاز دارند. ",
+      "after": "بررسی نسخه‌های منتشرشده ممکن نشد. از باز کردن دانلودهای نسخه‌ها استفاده کنید؛ نصب‌کننده‌های دانلودشده همچنان به‌صورت محلی شناسایی می‌شوند.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "fi",
+      "before": "Julkaistuja versioita ei voitu tarkistaa. Yksityiset Studio-versiot edellyttävät GitHub-käyttöoikeutta. Käytä Avaa versiolataukset -toimintoa; ladatut asennusohjelmat tunnistetaan silti paikallisesti.",
+      "removedObsoleteSentence": "Yksityiset Studio-versiot edellyttävät GitHub-käyttöoikeutta. ",
+      "after": "Julkaistuja versioita ei voitu tarkistaa. Käytä Avaa versiolataukset -toimintoa; ladatut asennusohjelmat tunnistetaan silti paikallisesti.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "fr",
+      "before": "Impossible de vérifier les versions publiées. Les versions privées de Studio nécessitent un accès GitHub. Utilisez « Ouvrir les téléchargements de versions » ; les programmes d’installation téléchargés restent détectés localement.",
+      "removedObsoleteSentence": "Les versions privées de Studio nécessitent un accès GitHub. ",
+      "after": "Impossible de vérifier les versions publiées. Utilisez « Ouvrir les téléchargements de versions » ; les programmes d’installation téléchargés restent détectés localement.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "he",
+      "before": "לא ניתן היה לבדוק גרסאות שפורסמו. גרסאות Studio פרטיות דורשות גישה ל־GitHub. יש להשתמש בפתיחת הורדות גרסאות; תוכנות התקנה שהורדו עדיין מזוהות מקומית.",
+      "removedObsoleteSentence": "גרסאות Studio פרטיות דורשות גישה ל־GitHub. ",
+      "after": "לא ניתן היה לבדוק גרסאות שפורסמו. יש להשתמש בפתיחת הורדות גרסאות; תוכנות התקנה שהורדו עדיין מזוהות מקומית.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "hi",
+      "before": "प्रकाशित रिलीज़ की जाँच नहीं हो सकी। निजी Studio रिलीज़ के लिए GitHub तक पहुँच आवश्यक है। रिलीज़ डाउनलोड पृष्ठ खोलें; डाउनलोड किए गए इंस्टॉलर स्थानीय रूप से अब भी पहचाने जाते हैं।",
+      "removedObsoleteSentence": " निजी Studio रिलीज़ के लिए GitHub तक पहुँच आवश्यक है।",
+      "after": "प्रकाशित रिलीज़ की जाँच नहीं हो सकी। रिलीज़ डाउनलोड पृष्ठ खोलें; डाउनलोड किए गए इंस्टॉलर स्थानीय रूप से अब भी पहचाने जाते हैं।",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "hu",
+      "before": "A közzétett kiadások nem ellenőrizhetők. A privát Studio-kiadásokhoz GitHub-hozzáférés szükséges. Használja a Kiadásletöltések megnyitása lehetőséget; a letöltött telepítőket továbbra is helyben észleljük.",
+      "removedObsoleteSentence": "A privát Studio-kiadásokhoz GitHub-hozzáférés szükséges. ",
+      "after": "A közzétett kiadások nem ellenőrizhetők. Használja a Kiadásletöltések megnyitása lehetőséget; a letöltött telepítőket továbbra is helyben észleljük.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "id",
+      "before": "Rilis yang dipublikasikan tidak dapat diperiksa. Rilis Studio privat memerlukan akses GitHub. Gunakan Buka unduhan rilis; penginstal yang diunduh tetap terdeteksi secara lokal.",
+      "removedObsoleteSentence": "Rilis Studio privat memerlukan akses GitHub. ",
+      "after": "Rilis yang dipublikasikan tidak dapat diperiksa. Gunakan Buka unduhan rilis; penginstal yang diunduh tetap terdeteksi secara lokal.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "it",
+      "before": "Impossibile controllare le versioni pubblicate. Le versioni private di Studio richiedono accesso a GitHub. Usa Apri download delle versioni; gli installer scaricati vengono comunque rilevati localmente.",
+      "removedObsoleteSentence": "Le versioni private di Studio richiedono accesso a GitHub. ",
+      "after": "Impossibile controllare le versioni pubblicate. Usa Apri download delle versioni; gli installer scaricati vengono comunque rilevati localmente.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "ja",
+      "before": "公開リリースを確認できませんでした。非公開の Studio リリースには GitHub へのアクセスが必要です。「リリースのダウンロードページを開く」を使用してください。ダウンロード済みのインストーラーは引き続きローカルで検出されます。",
+      "removedObsoleteSentence": "非公開の Studio リリースには GitHub へのアクセスが必要です。",
+      "after": "公開リリースを確認できませんでした。「リリースのダウンロードページを開く」を使用してください。ダウンロード済みのインストーラーは引き続きローカルで検出されます。",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "ko",
+      "before": "공개 릴리스를 확인하지 못했습니다. 비공개 Studio 릴리스에는 GitHub 접근 권한이 필요합니다. 릴리스 다운로드 페이지 열기를 사용하세요. 다운로드한 설치 프로그램은 계속 로컬에서 감지됩니다.",
+      "removedObsoleteSentence": "비공개 Studio 릴리스에는 GitHub 접근 권한이 필요합니다. ",
+      "after": "공개 릴리스를 확인하지 못했습니다. 릴리스 다운로드 페이지 열기를 사용하세요. 다운로드한 설치 프로그램은 계속 로컬에서 감지됩니다.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "nb",
+      "before": "Publiserte utgivelser kunne ikke kontrolleres. Private Studio-utgivelser krever GitHub-tilgang. Bruk Åpne utgivelsesnedlastinger; nedlastede installasjonsprogrammer oppdages fortsatt lokalt.",
+      "removedObsoleteSentence": "Private Studio-utgivelser krever GitHub-tilgang. ",
+      "after": "Publiserte utgivelser kunne ikke kontrolleres. Bruk Åpne utgivelsesnedlastinger; nedlastede installasjonsprogrammer oppdages fortsatt lokalt.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "nl",
+      "before": "Gepubliceerde versies konden niet worden gecontroleerd. Privéversies van Studio vereisen GitHub-toegang. Gebruik Versiedownloads openen; gedownloade installatieprogramma’s worden nog steeds lokaal gedetecteerd.",
+      "removedObsoleteSentence": "Privéversies van Studio vereisen GitHub-toegang. ",
+      "after": "Gepubliceerde versies konden niet worden gecontroleerd. Gebruik Versiedownloads openen; gedownloade installatieprogramma’s worden nog steeds lokaal gedetecteerd.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "nn",
+      "before": "Publiserte utgåver kunne ikkje kontrollerast. Private Studio-utgåver krev GitHub-tilgang. Bruk Opne utgåvenedlastingar; nedlasta installasjonsprogram vert framleis oppdaga lokalt.",
+      "removedObsoleteSentence": "Private Studio-utgåver krev GitHub-tilgang. ",
+      "after": "Publiserte utgåver kunne ikkje kontrollerast. Bruk Opne utgåvenedlastingar; nedlasta installasjonsprogram vert framleis oppdaga lokalt.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "pl",
+      "before": "Nie udało się sprawdzić opublikowanych wersji. Prywatne wersje Studio wymagają dostępu do GitHub. Użyj opcji Otwórz pliki wersji do pobrania; pobrane instalatory nadal są wykrywane lokalnie.",
+      "removedObsoleteSentence": "Prywatne wersje Studio wymagają dostępu do GitHub. ",
+      "after": "Nie udało się sprawdzić opublikowanych wersji. Użyj opcji Otwórz pliki wersji do pobrania; pobrane instalatory nadal są wykrywane lokalnie.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "pt-BR",
+      "before": "Não foi possível verificar as versões publicadas. As versões privadas do Studio requerem acesso ao GitHub. Use Abrir downloads de versões; os instaladores baixados continuam a ser detectados localmente.",
+      "removedObsoleteSentence": "As versões privadas do Studio requerem acesso ao GitHub. ",
+      "after": "Não foi possível verificar as versões publicadas. Use Abrir downloads de versões; os instaladores baixados continuam a ser detectados localmente.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "pt-PT",
+      "before": "Não foi possível verificar as versões publicadas. As versões privadas do Studio requerem acesso ao GitHub. Use Abrir transferências de versões; os instaladores descarregados continuam a ser detetados localmente.",
+      "removedObsoleteSentence": "As versões privadas do Studio requerem acesso ao GitHub. ",
+      "after": "Não foi possível verificar as versões publicadas. Use Abrir transferências de versões; os instaladores descarregados continuam a ser detetados localmente.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "ro",
+      "before": "Versiunile publicate nu au putut fi verificate. Versiunile private Studio necesită acces GitHub. Folosiți Deschideți descărcările versiunilor; programele de instalare descărcate sunt detectate în continuare local.",
+      "removedObsoleteSentence": "Versiunile private Studio necesită acces GitHub. ",
+      "after": "Versiunile publicate nu au putut fi verificate. Folosiți Deschideți descărcările versiunilor; programele de instalare descărcate sunt detectate în continuare local.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "ru",
+      "before": "Не удалось проверить опубликованные версии. Приватные версии Studio требуют доступа к GitHub. Воспользуйтесь командой «Открыть загрузки версий»; загруженные установщики по-прежнему обнаруживаются локально.",
+      "removedObsoleteSentence": "Приватные версии Studio требуют доступа к GitHub. ",
+      "after": "Не удалось проверить опубликованные версии. Воспользуйтесь командой «Открыть загрузки версий»; загруженные установщики по-прежнему обнаруживаются локально.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "sk",
+      "before": "Vydané verzie sa nepodarilo skontrolovať. Súkromné verzie Studio vyžadujú prístup ku GitHubu. Použite Otvoriť sťahovanie vydaných verzií; stiahnuté inštalátory sa stále vyhľadávajú lokálne.",
+      "removedObsoleteSentence": "Súkromné verzie Studio vyžadujú prístup ku GitHubu. ",
+      "after": "Vydané verzie sa nepodarilo skontrolovať. Použite Otvoriť sťahovanie vydaných verzií; stiahnuté inštalátory sa stále vyhľadávajú lokálne.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "sv",
+      "before": "Publicerade versioner kunde inte kontrolleras. Privata Studio-versioner kräver GitHub-åtkomst. Använd Öppna versionshämtningar; hämtade installationsprogram hittas fortfarande lokalt.",
+      "removedObsoleteSentence": "Privata Studio-versioner kräver GitHub-åtkomst. ",
+      "after": "Publicerade versioner kunde inte kontrolleras. Använd Öppna versionshämtningar; hämtade installationsprogram hittas fortfarande lokalt.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "sw",
+      "before": "Matoleo yaliyochapishwa hayakuweza kukaguliwa. Matoleo binafsi ya Studio yanahitaji ufikiaji wa GitHub. Tumia Fungua vipakuliwa vya matoleo; visakinishi vilivyopakuliwa bado hugunduliwa kwenye kifaa.",
+      "removedObsoleteSentence": "Matoleo binafsi ya Studio yanahitaji ufikiaji wa GitHub. ",
+      "after": "Matoleo yaliyochapishwa hayakuweza kukaguliwa. Tumia Fungua vipakuliwa vya matoleo; visakinishi vilivyopakuliwa bado hugunduliwa kwenye kifaa.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "th",
+      "before": "ไม่สามารถตรวจสอบรุ่นที่เผยแพร่ได้ รุ่น Studio แบบส่วนตัวต้องมีสิทธิ์เข้าถึง GitHub ใช้ เปิดหน้าดาวน์โหลดรุ่นที่เผยแพร่ ตัวติดตั้งที่ดาวน์โหลดยังคงตรวจพบในเครื่อง",
+      "removedObsoleteSentence": " รุ่น Studio แบบส่วนตัวต้องมีสิทธิ์เข้าถึง GitHub",
+      "after": "ไม่สามารถตรวจสอบรุ่นที่เผยแพร่ได้ ใช้ เปิดหน้าดาวน์โหลดรุ่นที่เผยแพร่ ตัวติดตั้งที่ดาวน์โหลดยังคงตรวจพบในเครื่อง",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "tr",
+      "before": "Yayımlanan sürümler denetlenemedi. Özel Studio sürümleri GitHub erişimi gerektirir. Sürüm indirmelerini aç seçeneğini kullanın; indirilen yükleyiciler yerel olarak algılanmaya devam eder.",
+      "removedObsoleteSentence": "Özel Studio sürümleri GitHub erişimi gerektirir. ",
+      "after": "Yayımlanan sürümler denetlenemedi. Sürüm indirmelerini aç seçeneğini kullanın; indirilen yükleyiciler yerel olarak algılanmaya devam eder.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "uk",
+      "before": "Не вдалося перевірити опубліковані версії. Приватні версії Studio потребують доступу до GitHub. Скористайтеся командою «Відкрити завантаження версій»; завантажені інсталятори й далі виявляються локально.",
+      "removedObsoleteSentence": "Приватні версії Studio потребують доступу до GitHub. ",
+      "after": "Не вдалося перевірити опубліковані версії. Скористайтеся командою «Відкрити завантаження версій»; завантажені інсталятори й далі виявляються локально.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "vi",
+      "before": "Không thể kiểm tra các bản phát hành đã công bố. Bản phát hành Studio riêng tư cần quyền truy cập GitHub. Dùng Mở trang tải bản phát hành; trình cài đặt đã tải xuống vẫn được phát hiện trên máy.",
+      "removedObsoleteSentence": "Bản phát hành Studio riêng tư cần quyền truy cập GitHub. ",
+      "after": "Không thể kiểm tra các bản phát hành đã công bố. Dùng Mở trang tải bản phát hành; trình cài đặt đã tải xuống vẫn được phát hiện trên máy.",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "zh-Hans",
+      "before": "无法检查已发布的版本。私有 Studio 版本需要 GitHub 访问权限。请使用“打开版本下载页面”；已下载的安装程序仍会在本地检测。",
+      "removedObsoleteSentence": "私有 Studio 版本需要 GitHub 访问权限。",
+      "after": "无法检查已发布的版本。请使用“打开版本下载页面”；已下载的安装程序仍会在本地检测。",
+      "review": "Contextual AI deletion review; native unverified"
+    },
+    {
+      "locale": "zh-Hant",
+      "before": "無法檢查已發布的版本。私人 Studio 版本需要 GitHub 存取權。請使用「開啟版本下載頁面」；已下載的安裝程式仍會在本機偵測。",
+      "removedObsoleteSentence": "私人 Studio 版本需要 GitHub 存取權。",
+      "after": "無法檢查已發布的版本。請使用「開啟版本下載頁面」；已下載的安裝程式仍會在本機偵測。",
+      "review": "Contextual AI deletion review; native unverified"
+    }
+  ],
+  "nativeReviewed": false,
+  "qualification": {
+    "catalogs": "34 complete; structural checks and compiled hashes passed",
+    "localCompiledFixture": "passed",
+    "log": "tests/results/localization/public-update-localization-linux.log",
+    "logSha256": "44f6516dd05e19267375c3bb5b374a53239f6b21238585b7febafc3545d5f67a",
+    "scope": "Compiled catalog/UI localization fixture; actual network-failure branch not driven",
+    "currentPackages": {
+      "linux": "linux-public-update-installed/verified-artifact.json",
+      "windows": "windows-public-update-installed/verified-artifact.json",
+      "testedHead": "16ec67362e4875ab893c3d88ea87cc89fc5ce0ea"
+    }
+  },
+  "sourceSha256": {
+    "src/update_panel.h": "c39b2e267dd634bd49ca63122401cf5c5c2e6cc2735d4f8396eb66a1a52264a3",
+    "data/localization/catalogs.json": "dc5e37183d09d9dabafcc132e25aadd7e8e34c41056c7352d02ac282c98a23e7",
+    "data/localization/translation-context.json": "0a05c461071288207a80f584c4fb6191e5efbdd894fc4469ace230091652e81d"
+  }
+}

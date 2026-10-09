@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-09",
+  "scope": "Shared guard infrastructure for Studio local helpers; EQ has no table/cell helper production callers.",
+  "headerProducers": [
+    "EQ filter Type is translated; Hz/dB/Q are unit symbols",
+    "Route Input channel and Gain / polarity are translated",
+    "Meter Channel and Peak are translated"
+  ],
+  "cellProducers": [
+    "Channel labels use channelNameText, preserving explicit custom names and translating generated roles",
+    "Visible channel ordinal and filter frequency/gain/Q use QLocale",
+    "Route weights use QLocale; input indexes in UserRole retain numerical identity",
+    "Filter type reads translated combo item caption",
+    "Meter silence uses translated \u2212\u221e dBFS, live levels use QLocale plus translated unit suffix"
+  ],
+  "negativeFixture": "Raw helper header and QStringLiteral cell caption rejected; locale-formatted forwarded value remains in provenance inventory.",
+  "methodInventoryReview": "Current source method-name inventory includes no setFormat/appendPlainText/setHtml/setPlainText production display calls. setObjectName, application/organization names, device descriptions, filesystem names and raw HTTP headers retain identifiers/external metadata rather than user prose. This source inventory is finite lexical evidence, not an exhaustive C++ semantic analysis.",
+  "sourceSha256": {
+    "scripts/ui_string_audit.py": "9082c5c1c43564b4e8b39ea76436355586b77fc589158ae03bbe26f3c54ac085",
+    "tests/translation_catalogs.py": "de1a36ff17b1f17abdc256cf438932bd561a5b9a4a6cb21316b818c4e849e1cc"
+  },
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false,
+  "testLog": "tests/results/localization/studio-display-helper-guard-tests.log",
+  "regressionSuite": {
+    "result": "passed",
+    "runSummary": "Ran 64 tests in 27.664s",
+    "logSha256": "7209f5626c789c7b0c13c18eb5a3f926111b34abb5d0e8edae3cbe8b7fd2f336"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "scope": "Diagnose observed Windows Qt/PowerShell UTF-8 fixture failure",
+  "observedFailure": {
+    "repository": "soundcurrent-studio",
+    "runId": 37861749452,
+    "sourceCommit": "098bb8de1d5420dd95ca91e7d387a52471210a33",
+    "stage": "Catalog export passed; UTF-8 process fixture returned failure with no useful diagnostic",
+    "rootCause": "not yet established"
+  },
+  "change": [
+    "Report completion/error/exit status and bounded stdout/stderr hex plus expected bytes",
+    "Return explicit failure instead of unhandled fixture assertion on process failure",
+    "Catch remaining test assertions and print their exception message"
+  ],
+  "validation": {
+    "hostTargetedTestsPassed": 2,
+    "hostPowerShellOutputFixture": "passed",
+    "missingExecutableAndNonzeroChildExit": "both produce diagnostics and exit 1",
+    "driverActionsExecuted": false
+  },
+  "nativeSpeakerVerification": "unverified",
+  "productionRuntimeChanged": false,
+  "WindowsFailureFixed": false,
+  "currentWindowsDiagnosticBuildQualified": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Read fresh Windows diagnostic output and fix actual cause",
+    "Installer activation/remaining translations",
+    "Current installed UI and package lifecycle qualification"
+  ],
+  "evidenceSha256": {
+    "tests/backend_error_text.cpp": "a86f8666f3ab618e61dcf34ee9d00d8f6cb4ce57a3e734f0a7b7a2d302a1df93",
+    "build/soundcurrent-backend-error-text-test": "0e272b715b20c41f8e365132e61c80022db2a6c6bc980ba26504e46187c32d8f",
+    "tests/results/localization/process-output-diagnostic-tests.log": "a057249f5e296af722b6999197dd093b7cbdbd6c522385aa26499b942b79814d",
+    "tests/results/localization/process-output-diagnostic-exit1.log": "23ba669272028d528190a2c9f7c8ab45166b907281f7d38d66761fce5388e889",
+    "tests/results/localization/process-output-diagnostic-missing.log": "8122c20165b8712346c36b1f378ec1f17e7c6f99289814eeabf96dc25eba990f",
+    "tests/results/localization/studio-utf8-process-ci-failure.log": "8b7cc86e4c33195ed259f32523affa37d71e5ec856a52fb0984bb0c991856ac5"
+  }
+}

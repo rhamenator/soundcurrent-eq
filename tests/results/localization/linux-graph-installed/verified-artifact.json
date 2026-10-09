@@ -1,0 +1,35 @@
+{
+  "run": 37901203604,
+  "testedHead": "6ad34084a77ec83eff6c0d430d8eb1a70ed378dd",
+  "result": "passed and artifact hashes verified",
+  "packages": [
+    {
+      "path": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-graph-37901203604/package-validation-0/soundcurrent-eq_1.1.0_amd64.deb",
+      "sha256": "d508f256a1704cbb044bbbc67412960de1b719a530f270979e9dcc10c93b0f98",
+      "localeCompletions": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-graph-installed/package-validation-0"
+    },
+    {
+      "path": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-graph-37901203604/package-validation-1/soundcurrent-eq-1.1.0-1.fc44.x86_64.rpm",
+      "sha256": "f1aa12e26dbe972ed938378cc1b9b52d0f661efc591f3202840b6be8137627ae",
+      "localeCompletions": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-graph-installed/package-validation-1"
+    },
+    {
+      "path": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-graph-37901203604/package-validation-2/soundcurrent-eq-1.1.0-1.el10.x86_64.rpm",
+      "sha256": "f29d01d0d020b207b7de560c035915b0b3ea0670f2636d5adc4e4709fcb446ec",
+      "localeCompletions": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-graph-installed/package-validation-2"
+    }
+  ],
+  "environments": [
+    "Ubuntu 24.04",
+    "Fedora 44",
+    "AlmaLinux 10"
+  ],
+  "scope": "Container full CTest and installed UI fixtures; same-package in-place reinstall, uninstall preservation/cleanup and reinstall. 33 non-English locales per image. No live audio, physical RHEL desktop, older-version migration or native-speaker verification.",
+  "nativeReviewed": false
+}

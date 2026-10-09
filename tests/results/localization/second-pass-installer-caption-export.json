@@ -1,0 +1,30 @@
+{
+  "scope": "Shared catalog exporter for installer heading, subtitle and driver checkbox",
+  "catalogs": 34,
+  "routes": [
+    "cable",
+    "native"
+  ],
+  "captionsGenerated": 204,
+  "validation": {
+    "unitTestsPassed": 28,
+    "unitTestsSkipped": 1,
+    "literalSubstitution": "single pass preserves %1/%2 inside inserted names",
+    "invalidTemplateRejection": "missing, repeated, extra, localized or numerus placeholders rejected",
+    "nsisEscaping": "dollars, quotes, CR/LF/tab and Unicode covered; unsupported controls rejected",
+    "compilerFixture": "all 204 generated captions compiled with English language ID for syntax only"
+  },
+  "nativeSpeakerVerification": "unverified",
+  "wholeInstallerCoverageProven": false,
+  "installerLanguageSelectionImplemented": false,
+  "currentWindowsUiQualified": false,
+  "currentPackagesQualified": false,
+  "buildIntegration": "pending; exporter is not yet invoked by production packaging",
+  "evidenceSha256": {
+    "scripts/windows_installer_catalogs.py": "8f72c300de8d0767d4a7b1ae1a9709f508e57c221ccbd0e5c2444f8d1c854448",
+    "tests/translation_catalogs.py": "346cf8a6a5449711f314359a5a1b7df1210ec1f32cde6d0b30f4b067ddfd1b31",
+    "tests/results/localization/installer-caption-export.json": "0ea8b01c9345b04256bf16ec480f34cd9ec92314e3bcb558049b0b475ec097ac",
+    "tests/results/localization/installer-caption-export-tests.log": "f0f5a81290fd49b9073ca705461f56416f051d8e12bc69abf603152d4238278f",
+    "tests/results/localization/installer-caption-export-compiler.log": "2d62c641fd79419200679a37e172ae0f730898f51ba870a7ef6b6310c74e69fd"
+  }
+}

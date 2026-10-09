@@ -1,0 +1,15 @@
+F
+======================================================================
+FAIL: test_installer_build_copy_generation_and_failures (__main__.CatalogTests.test_installer_build_copy_generation_and_failures)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/rich/dev/soundcurrent-eq/tests/translation_catalogs.py", line 181, in test_installer_build_copy_generation_and_failures
+    self.assertEqual(generated.read_bytes(), expected, 'Preserve LF/CRLF bytes on every host')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'; S[32 chars]only\nUnicode true\n!include "MUI2.nsh"\n!incl[10571 chars]nd\n' != b'; S[32 chars]only\r\nUnicode true\r\n!include "MUI2.nsh"\r\[11005 chars]\r\n' : Preserve LF/CRLF bytes on every host
+
+----------------------------------------------------------------------
+Ran 1 test in 1.649s
+
+FAILED (failures=1)
+PASS: 34 catalogs, 611 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)

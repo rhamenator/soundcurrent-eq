@@ -1,0 +1,6 @@
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+  OpenType support missing for "DejaVu Sans", script 11
+  OpenType support missing for "DejaVu Sans Mono", script 11
+  OpenType support missing for "DejaVu Serif", script 11
+  OpenType support missing for "", script 11
+Localization UI: hu -> hu

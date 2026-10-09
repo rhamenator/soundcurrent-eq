@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-09",
+  "failedNativeRun": 37901516802,
+  "nativeFailure": "Unreviewed display literal reported file src\\localization.h while manifest uses src/localization.h; English (en) autonym was correctly exempted but path identity mismatched.",
+  "fix": "Inventory emits POSIX relative paths and gate normalizes separators at comparison boundary. Display literals and site fields remain exact.",
+  "testCommand": "python3 tests/translation_catalogs.py -k unmarked_owned_display_caption",
+  "localResult": "passed",
+  "seconds": 2.917,
+  "testScope": "Current source accepted, Windows-separator review rows accepted, newly injected unmarked QLabel rejected. Native Windows rerun passed.",
+  "sourceSha256": {
+    "scripts/ui_string_audit.py": "c3b16a407263d8aa7665095e6d0577ab261acf6793d10d27a65d4e1707495275",
+    "tests/translation_catalogs.py": "788c8c1e7401e54ab31382b847049e93d6f47a99a050609da2defbdc7f1d910f"
+  },
+  "productionAppChange": false,
+  "nativeReviewed": false,
+  "nativeQualification": {
+    "run": 37902605739,
+    "head": "cadb3dd51aad8dcacb3435e86016a3abaad63f8d",
+    "status": "completed",
+    "conclusion": "success",
+    "scope": "Native Windows build/test workflow including source translation-maintenance regression gate; predates public-update wording change. No native-speaker verification."
+  }
+}

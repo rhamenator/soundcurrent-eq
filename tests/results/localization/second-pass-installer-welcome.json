@@ -1,0 +1,49 @@
+{
+  "scope": "Installer welcome first/second paragraphs for both driver routes",
+  "sources": [
+    "Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.",
+    "Save your work and quit the running app before continuing. Closing its window keeps it running in the background."
+  ],
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "sourceMessages": 626,
+  "unfinishedExtractedEntries": 0,
+  "contextualReview": {
+    "status": "AI reviewed update without prior uninstall, retained user state and full exit/background distinction",
+    "correction": "Generic quit action instead of guessed Quit button caption",
+    "refinedLocales": [
+      "ar",
+      "ro",
+      "sw"
+    ],
+    "paragraphs": "Two distinct catalog sources joined by CRLF blank line after app-name substitution"
+  },
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "catalogTests": {
+      "total": 50,
+      "passed": 49,
+      "skipped": 1
+    },
+    "compiledCatalogHashes": "verified",
+    "NSISCompiler": {
+      "captionLiterals": 1088,
+      "welcomeTexts": 68,
+      "actualMUIWelcomeMacro": true,
+      "languageIDs": "English fixture only",
+      "localeActivation": false,
+      "visualLayoutQualified": false
+    },
+    "paragraphAndNameGuards": "Two paragraphs, stable app name once, valid placeholder and escaped CRLF checked per locale/route",
+    "supportedOwnedTextAudit": "All non-Section supported NSIS text sites reference declared LangStrings; not a full parser or whole-interface proof"
+  },
+  "installAndDSPActionsChanged": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Long helper repair notice",
+    "Installer language activation including Swahili built-in text support",
+    "Shortcut naming and upgrade/uninstall cleanup",
+    "Installed layout and current Linux/Windows runtime/package lifecycle checks"
+  ]
+}

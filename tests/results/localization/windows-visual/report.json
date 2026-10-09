@@ -1,0 +1,72 @@
+{
+  "scope": "Native Qt Windows widget rendering through SSH-launched test process; synthetic controls, no live audio",
+  "qtPlatform": "windows",
+  "visualInspected": true,
+  "nativeReviewed": false,
+  "product": "EQ",
+  "interactiveDesktopQualification": "pending",
+  "results": [
+    {
+      "screenshots": 3,
+      "locale": "de",
+      "passed": true
+    },
+    {
+      "screenshots": 3,
+      "locale": "pl",
+      "passed": true
+    },
+    {
+      "screenshots": 3,
+      "locale": "ar",
+      "passed": true
+    }
+  ],
+  "date": "2026-10-08",
+  "visualInspectionScope": [
+    "de tab 0",
+    "de tab 1",
+    "pl tab 0",
+    "pl tab 1",
+    "ar tab 0",
+    "ar tab 1"
+  ],
+  "sourceCommit": "3a841b52ba8528273827a0399a7e9c6296c0d176",
+  "reinstallAfterUninstall": "passed before native rendering checks",
+  "findings": [
+    "Inspected Polish Equalizer page fits captured Windows window; headroom fully visible",
+    "German settings coverage/startup/device labels wrap and remain visible"
+  ],
+  "remaining": [
+    "Arabic headroom value/unit mixed-direction order needs correction",
+    "SSH-launched native Qt renderer is not a signed-in interactive desktop workflow",
+    "Lower scrolled sections, remaining locales, HiDPI, Unicode paths and error dialogs not visually qualified",
+    "Native-speaker verification remains unverified"
+  ],
+  "images": [
+    {
+      "file": "de-tab-0.png",
+      "sha256": "a7bfce87c5eeadf5cd097d7408f8995f29002f3c225ca7dd0f28287526ebb393"
+    },
+    {
+      "file": "de-tab-1.png",
+      "sha256": "b8e9be9af7572f7f467d0af8dbc713b1834d90cba164c83e24003b0624dc17ab"
+    },
+    {
+      "file": "pl-tab-0.png",
+      "sha256": "f31e15f9b5b18f5f2184c12d6b90e3359acd86fc14174395fcf8508ce828370e"
+    },
+    {
+      "file": "pl-tab-1.png",
+      "sha256": "ddd2d217a446ec95c043cccf2edae3cc7b04c285e1d0119ed9898a76e6d58296"
+    },
+    {
+      "file": "ar-tab-0.png",
+      "sha256": "7ec808d53fc322e246483f65e7095cae7738603099ddb1327695adeffe5266a9"
+    },
+    {
+      "file": "ar-tab-1.png",
+      "sha256": "4c7ed2323315d0f9f5c0c5659fa9270648f548c4ab2ce00be79d39556e88d885"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+Dependencies resolved.
+================================================================================
+ Package              Arch       Version                Repository         Size
+================================================================================
+Removing:
+ soundcurrent-eq      x86_64     1.1.0-1.el10           @@commandline     4.6 M
+Removing unused dependencies:
+ pipewire-utils       x86_64     1.4.11-1.el10_2.1      @appstream        1.4 M
+ pulseaudio-utils     x86_64     17.0-6.el10            @appstream        219 k
+
+Transaction Summary
+================================================================================
+Remove  3 Packages
+
+Freed space: 6.2 M
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Erasing          : soundcurrent-eq-1.1.0-1.el10.x86_64                    1/3 
+  Erasing          : pipewire-utils-1.4.11-1.el10_2.1.x86_64                2/3 
+  Erasing          : pulseaudio-utils-17.0-6.el10.x86_64                    3/3 
+
+Removed:
+  pipewire-utils-1.4.11-1.el10_2.1.x86_64  pulseaudio-utils-17.0-6.el10.x86_64 
+  soundcurrent-eq-1.1.0-1.el10.x86_64     
+
+Complete!

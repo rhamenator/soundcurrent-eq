@@ -1,0 +1,534 @@
+{
+  "scope": "Supported NSIS UI text sites; not a full NSIS parser",
+  "wholeInterfaceCoverageProven": false,
+  "languages": {
+    "packaging/windows/soundcurrent-eq-native.nsi": [
+      "English"
+    ],
+    "packaging/windows/soundcurrent-eq.nsi": [
+      "English"
+    ]
+  },
+  "candidates": [
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 45,
+      "kind": "MUI-text",
+      "literal": "Install or update SoundCurrent EQ. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.$\\r$\\n$\\r$\\nSave your work and use Quit to exit the running app before continuing. Closing its window keeps it running in the background.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 89,
+      "kind": "page-heading",
+      "literal": "$(SCConnectAudio)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 89,
+      "kind": "page-heading",
+      "literal": "$(SCSetupAudio)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 95,
+      "kind": "control-caption",
+      "literal": "$(SCNativeRouting)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 97,
+      "kind": "control-caption",
+      "literal": "$(SCInstallDriver)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 101,
+      "kind": "control-caption",
+      "literal": "$(SCNativePresent)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 104,
+      "kind": "control-caption",
+      "literal": "$(SCNativeApproval)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 106,
+      "kind": "control-caption",
+      "literal": "$(SCDriverCheckFailed)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 109,
+      "kind": "control-caption",
+      "literal": "$(SCSharedDriverNotice)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 117,
+      "kind": "Section",
+      "literal": "SoundCurrent EQ",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 120,
+      "kind": "MessageBox",
+      "literal": "$(SCQuitBeforeUpdate)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 161,
+      "kind": "DetailPrint",
+      "literal": "$(SCNativeSetupProgress)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 169,
+      "kind": "DetailPrint",
+      "literal": "$(SCSetupRetryProgress)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 170,
+      "kind": "MessageBox",
+      "literal": "SoundCurrent Audio was not installed. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 175,
+      "kind": "Section",
+      "literal": "Uninstall",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 178,
+      "kind": "MessageBox",
+      "literal": "$(SCQuitBeforeUninstall)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 192,
+      "kind": "MessageBox",
+      "literal": "$(SCNativeRemovalFailed)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 45,
+      "kind": "MUI-text",
+      "literal": "Install or update SoundCurrent EQ. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.$\\r$\\n$\\r$\\nSave your work and use Quit to exit the running app before continuing. Closing its window keeps it running in the background.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 102,
+      "kind": "page-heading",
+      "literal": "$(SCConnectAudio)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 102,
+      "kind": "page-heading",
+      "literal": "$(SCSetupAudio)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 108,
+      "kind": "control-caption",
+      "literal": "$(SCCableRouting)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 110,
+      "kind": "control-caption",
+      "literal": "$(SCInstallDriver)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 114,
+      "kind": "control-caption",
+      "literal": "$(SCCablePresent)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 116,
+      "kind": "control-caption",
+      "literal": "$(SCCableRestart)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 119,
+      "kind": "control-caption",
+      "literal": "$(SCCableRepair)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 122,
+      "kind": "control-caption",
+      "literal": "$(SCCableSignedInstaller)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 124,
+      "kind": "control-caption",
+      "literal": "$(SCDriverCheckFailed)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 127,
+      "kind": "control-caption",
+      "literal": "$(SCCableSharedNotice)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 135,
+      "kind": "Section",
+      "literal": "SoundCurrent EQ",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 138,
+      "kind": "MessageBox",
+      "literal": "$(SCQuitBeforeUpdate)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 172,
+      "kind": "DetailPrint",
+      "literal": "$(SCCableSetupProgress)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 179,
+      "kind": "MessageBox",
+      "literal": "$(SCCableRestart)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 181,
+      "kind": "DetailPrint",
+      "literal": "$(SCSetupRetryProgress)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 182,
+      "kind": "MessageBox",
+      "literal": "VB-CABLE setup did not finish. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason.",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 187,
+      "kind": "Section",
+      "literal": "Uninstall",
+      "marked": false,
+      "reviewStatus": "untranslated candidate; contextual review pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 190,
+      "kind": "MessageBox",
+      "literal": "$(SCQuitBeforeUninstall)",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 207,
+      "kind": "MessageBox",
+      "literal": "$(SCCableRemovalFailed)$\\r$\\n$1",
+      "marked": true,
+      "reviewStatus": "language-string reference; qualification pending"
+    }
+  ],
+  "dynamicSites": [
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 165,
+      "kind": "DetailPrint",
+      "expression": "DetailPrint $1"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 188,
+      "kind": "DetailPrint",
+      "expression": "DetailPrint $1"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 176,
+      "kind": "DetailPrint",
+      "expression": "DetailPrint $1"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 203,
+      "kind": "DetailPrint",
+      "expression": "DetailPrint $1"
+    }
+  ],
+  "directLanguageDefinitions": [
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 57,
+      "key": "SCQuitBeforeUpdate",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 58,
+      "key": "SCQuitBeforeUninstall",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Quit SoundCurrent EQ before uninstalling it."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 59,
+      "key": "SCNativeSetupProgress",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Setting up the shared SoundCurrent Audio driver..."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 60,
+      "key": "SCSetupRetryProgress",
+      "language": "${LANG_ENGLISH}",
+      "literal": "SoundCurrent Audio setup did not finish. Retry using the Start menu shortcut."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 61,
+      "key": "SCNativeRemovalFailed",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 62,
+      "key": "SCConnectAudio",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Connect your audio"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 63,
+      "key": "SCNativeRouting",
+      "language": "${LANG_ENGLISH}",
+      "literal": "SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 64,
+      "key": "SCNativePresent",
+      "language": "${LANG_ENGLISH}",
+      "literal": "SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 65,
+      "key": "SCNativeApproval",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 66,
+      "key": "SCSharedDriverNotice",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 67,
+      "key": "SCDriverCheckFailed",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 68,
+      "key": "SCInstallDriver",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Install or update the shared SoundCurrent Audio driver"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 69,
+      "key": "SCSetupAudio",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Set up SoundCurrent Audio for SoundCurrent EQ."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 57,
+      "key": "SCQuitBeforeUpdate",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 58,
+      "key": "SCQuitBeforeUninstall",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Quit SoundCurrent EQ before uninstalling it."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 59,
+      "key": "SCCableSetupProgress",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Opening VB-CABLE setup..."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 60,
+      "key": "SCSetupRetryProgress",
+      "language": "${LANG_ENGLISH}",
+      "literal": "VB-CABLE setup did not finish. Retry using the Start menu shortcut."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 61,
+      "key": "SCCableRemovalFailed",
+      "language": "${LANG_ENGLISH}",
+      "literal": "VB-CABLE removal did not finish. This app was kept so you can retry."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 62,
+      "key": "SCConnectAudio",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Connect your audio"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 63,
+      "key": "SCCableRouting",
+      "language": "${LANG_ENGLISH}",
+      "literal": "VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 64,
+      "key": "SCCableSharedNotice",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 65,
+      "key": "SCCableSignedInstaller",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 66,
+      "key": "SCCableRepair",
+      "language": "${LANG_ENGLISH}",
+      "literal": "VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 67,
+      "key": "SCCablePresent",
+      "language": "${LANG_ENGLISH}",
+      "literal": "VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use Quit app."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 68,
+      "key": "SCCableRestart",
+      "language": "${LANG_ENGLISH}",
+      "literal": "VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 69,
+      "key": "SCDriverCheckFailed",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu."
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 70,
+      "key": "SCInstallDriver",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Install VB-CABLE if missing (administrator approval)"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq.nsi",
+      "line": 71,
+      "key": "SCSetupAudio",
+      "language": "${LANG_ENGLISH}",
+      "literal": "Set up VB-CABLE for SoundCurrent EQ."
+    }
+  ]
+}

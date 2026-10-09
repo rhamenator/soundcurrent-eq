@@ -42,7 +42,7 @@ BrandingText "SoundCurrent EQ • GPL-3.0-only"
 Icon "${SOURCE_ROOT}\data\soundcurrent-eq.ico"
 UninstallIcon "${SOURCE_ROOT}\data\soundcurrent-eq.ico"
 
-!define MUI_WELCOMEPAGE_TEXT "Install or update SoundCurrent EQ. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.$\r$\n$\r$\nSave your work and use Quit to exit the running app before continuing. Closing its window keeps it running in the background."
+!define MUI_WELCOMEPAGE_TEXT "$(SCWelcome)"
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_LICENSE "${SOURCE_ROOT}\LICENSE"
 !insertmacro MUI_PAGE_DIRECTORY
@@ -54,6 +54,21 @@ Page custom AudioPage AudioPageLeave
 !insertmacro MUI_UNPAGE_CONFIRM
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_LANGUAGE "English"
+LangString SCQuitBeforeUpdate ${LANG_ENGLISH} "Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed."
+LangString SCQuitBeforeUninstall ${LANG_ENGLISH} "Quit SoundCurrent EQ before uninstalling it."
+LangString SCNativeSetupProgress ${LANG_ENGLISH} "Setting up the shared SoundCurrent Audio driver..."
+LangString SCSetupRetryProgress ${LANG_ENGLISH} "SoundCurrent Audio setup did not finish. Retry using the Start menu shortcut."
+LangString SCNativeRemovalFailed ${LANG_ENGLISH} "Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling."
+LangString SCSetupFailedAppInstalled ${LANG_ENGLISH} "SoundCurrent Audio setup did not finish. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason."
+LangString SCWelcome ${LANG_ENGLISH} "Install or update SoundCurrent EQ. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.$\r$\n$\r$\nSave your work and quit the running app before continuing. Closing its window keeps it running in the background."
+LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
+LangString SCNativeRouting ${LANG_ENGLISH} "SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved."
+LangString SCNativePresent ${LANG_ENGLISH} "SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app."
+LangString SCNativeApproval ${LANG_ENGLISH} "Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required."
+LangString SCSharedDriverNotice ${LANG_ENGLISH} "Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it."
+LangString SCDriverCheckFailed ${LANG_ENGLISH} "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu."
+LangString SCInstallDriver ${LANG_ENGLISH} "Install or update the shared SoundCurrent Audio driver"
+LangString SCSetupAudio ${LANG_ENGLISH} "Set up SoundCurrent Audio for SoundCurrent EQ."
 
 Function .onInit
   ; Migrate the old install location, including custom folders.
@@ -73,27 +88,27 @@ Function .onInit
 FunctionEnd
 
 Function AudioPage
-  !insertmacro MUI_HEADER_TEXT "Connect your audio" "Set up SoundCurrent Audio for SoundCurrent EQ."
+  !insertmacro MUI_HEADER_TEXT "$(SCConnectAudio)" "$(SCSetupAudio)"
   nsDialogs::Create 1018
   Pop $0
   ${If} $0 == error
     Abort
   ${EndIf}
-  ${NSD_CreateLabel} 0 0 100% 32u "SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved."
+  ${NSD_CreateLabel} 0 0 100% 32u "$(SCNativeRouting)"
   Pop $0
-  ${NSD_CreateCheckbox} 0 38u 100% 18u "Install or update the shared SoundCurrent Audio driver"
+  ${NSD_CreateCheckbox} 0 38u 100% 18u "$(SCInstallDriver)"
   Pop $DriverChoice
   ${If} $DriverCheck == 0
     ${NSD_Check} $DriverChoice
-    ${NSD_CreateLabel} 0 65u 100% 35u "SoundCurrent Audio is already present. Setup will register this app and keep the shared driver available for the other SoundCurrent app."
+    ${NSD_CreateLabel} 0 65u 100% 35u "$(SCNativePresent)"
   ${ElseIf} $DriverCheck == 10
     ${NSD_Check} $DriverChoice
-    ${NSD_CreateLabel} 0 65u 100% 35u "Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required."
+    ${NSD_CreateLabel} 0 65u 100% 35u "$(SCNativeApproval)"
   ${Else}
-    ${NSD_CreateLabel} 0 65u 100% 35u "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu."
+    ${NSD_CreateLabel} 0 65u 100% 35u "$(SCDriverCheckFailed)"
   ${EndIf}
   Pop $0
-  ${NSD_CreateLabel} 0 108u 100% 40u "Quit both EQ and Studio before changing the shared driver. Removing one app keeps the driver if the other app still uses it."
+  ${NSD_CreateLabel} 0 108u 100% 40u "$(SCSharedDriverNotice)"
   Pop $0
   nsDialogs::Show
 FunctionEnd
@@ -104,7 +119,7 @@ FunctionEnd
 Section "SoundCurrent EQ" main
   FindWindow $0 "" "SoundCurrent EQ"
   StrCmp $0 0 +3
-    MessageBox MB_ICONEXCLAMATION "Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed."
+    MessageBox MB_ICONEXCLAMATION "$(SCQuitBeforeUpdate)"
     Abort
   SetOutPath "$INSTDIR"
 !ifdef DLL_DIR
@@ -145,7 +160,7 @@ Section "SoundCurrent EQ" main
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "NoModify" 1
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "NoRepair" 1
   ${If} $InstallDriver == ${BST_CHECKED}
-    DetailPrint "Setting up the shared SoundCurrent Audio driver..."
+    DetailPrint "$(SCNativeSetupProgress)"
     nsExec::ExecToStack '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy RemoteSigned -File "$INSTDIR\audio-setup.ps1" -Install -Quiet'
     Pop $0
     Pop $1
@@ -153,8 +168,8 @@ Section "SoundCurrent EQ" main
     ${If} $0 == 3010
       SetRebootFlag true
     ${ElseIf} $0 != 0
-      DetailPrint "SoundCurrent Audio setup did not finish. Retry using the Start menu shortcut."
-      MessageBox MB_OK|MB_ICONINFORMATION "SoundCurrent Audio was not installed. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason."
+      DetailPrint "$(SCSetupRetryProgress)"
+      MessageBox MB_OK|MB_ICONINFORMATION "$(SCSetupFailedAppInstalled)"
     ${EndIf}
   ${EndIf}
 SectionEnd
@@ -162,8 +177,12 @@ SectionEnd
 Section "Uninstall"
   FindWindow $0 "" "SoundCurrent EQ"
   StrCmp $0 0 +3
-    MessageBox MB_ICONEXCLAMATION "Quit SoundCurrent EQ before uninstalling it."
+    MessageBox MB_ICONEXCLAMATION "$(SCQuitBeforeUninstall)"
     Abort
+  ; Remove only this application's shared per-user login entry.
+  ReadRegStr $1 HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "SoundCurrent"
+  StrCmp $1 '"$INSTDIR\soundcurrent-eq.exe" --background' 0 +2
+    DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "SoundCurrent"
   ; Release shared ownership before deleting the manager or setup script.
   nsExec::ExecToStack '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy RemoteSigned -File "$INSTDIR\audio-setup.ps1" -Remove -Quiet'
   Pop $0
@@ -172,7 +191,7 @@ Section "Uninstall"
   ${If} $0 == 3010
     SetRebootFlag true
   ${ElseIf} $0 != 0
-    MessageBox MB_ICONEXCLAMATION "Shared audio driver removal did not finish. This app was kept so you can retry. Quit EQ and Studio, then retry uninstalling."
+    MessageBox MB_ICONEXCLAMATION "$(SCNativeRemovalFailed)"
     Abort
   ${EndIf}
   Delete "$DESKTOP\SoundCurrent EQ.lnk"

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 // Opt-in regression through actual buttons, helper processes and error dialogs.
 if (app.arguments().contains("--windows-audio-setup-test")) {
-    if (app.arguments().size() != 4) return 2;
+    if (app.arguments().size() != 4 && app.arguments().size() != 6) return 2;
     MainWindow window(false);
     window.show();
     const auto action = app.arguments()[2];
@@ -16,13 +16,13 @@ if (app.arguments().contains("--windows-audio-setup-test")) {
             if (!box || !box->isVisible()) continue;
             const auto text = box->text();
             if (!text.contains(expected, Qt::CaseInsensitive)) {
-                qCritical("Unexpected setup result: %s", qPrintable(text));
+                qCritical("Unexpected setup result: dialog UTF-8=%s; expected UTF-8=%s", text.toUtf8().toHex().constData(), expected.toUtf8().toHex().constData());
                 box->accept(); app.exit(4); return;
             }
             if (!window.isVisible() || !button->isEnabled()) {
                 box->accept(); app.exit(5); return;
             }
-            qInfo("PASS: %s reported %s; app remains open; controls usable", qPrintable(action), qPrintable(expected));
+            qInfo("PASS: action UTF-8=%s; expected UTF-8=%s; dialog UTF-8=%s; app remains open; controls usable", action.toUtf8().toHex().constData(), expected.toUtf8().toHex().constData(), text.toUtf8().toHex().constData());
             watch.stop(); box->accept();
             QTimer::singleShot(0, &app, [&] { app.exit(0); });
             return;

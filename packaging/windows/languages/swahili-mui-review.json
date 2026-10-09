@@ -1,0 +1,317 @@
+{
+  "schema": 1,
+  "nativeSpeakerVerified": false,
+  "source": "NSIS English.nsh (local packaged NSIS)",
+  "messages": [
+    {
+      "id": "MUI_TEXT_WELCOME_INFO_TITLE",
+      "source": "Welcome to $(^NameDA) Setup",
+      "translation": "Karibu kwenye usakinishaji wa $(^NameDA)"
+    },
+    {
+      "id": "MUI_TEXT_WELCOME_INFO_TEXT",
+      "source": "Setup will guide you through the installation of $(^NameDA).$\\r$\\n$\\r$\\nIt is recommended that you close all other applications before starting Setup. This will make it possible to update relevant system files without having to reboot your computer.$\\r$\\n$\\r$\\n$_CLICK",
+      "translation": "Kisakinishi kitakuongoza kusakinisha $(^NameDA).$\\r$\\n$\\r$\\nInapendekezwa kufunga programu nyingine zote kabla ya kuanza. Hii itawezesha kusasisha faili husika za mfumo bila kuwasha kompyuta upya.$\\r$\\n$\\r$\\n$_CLICK"
+    },
+    {
+      "id": "MUI_UNTEXT_WELCOME_INFO_TITLE",
+      "source": "Welcome to $(^NameDA) Uninstall",
+      "translation": "Karibu kwenye uondoaji wa $(^NameDA)"
+    },
+    {
+      "id": "MUI_UNTEXT_WELCOME_INFO_TEXT",
+      "source": "Setup will guide you through the uninstallation of $(^NameDA).$\\r$\\n$\\r$\\nBefore starting the uninstallation, make sure $(^NameDA) is not running.$\\r$\\n$\\r$\\n$_CLICK",
+      "translation": "Programu hii itakuongoza kuondoa $(^NameDA).$\\r$\\n$\\r$\\nKabla ya kuanza, hakikisha $(^NameDA) haifanyi kazi.$\\r$\\n$\\r$\\n$_CLICK"
+    },
+    {
+      "id": "MUI_TEXT_LICENSE_TITLE",
+      "source": "License Agreement",
+      "translation": "Makubaliano ya leseni"
+    },
+    {
+      "id": "MUI_TEXT_LICENSE_SUBTITLE",
+      "source": "Please review the license terms before installing $(^NameDA).",
+      "translation": "Soma masharti ya leseni kabla ya kusakinisha $(^NameDA)."
+    },
+    {
+      "id": "MUI_INNERTEXT_LICENSE_BOTTOM",
+      "source": "If you accept the terms of the agreement, click I Agree to continue. You must accept the agreement to install $(^NameDA).",
+      "translation": "Ukikubali masharti ya makubaliano, bofya Ninakubali ili kuendelea. Lazima ukubali makubaliano ili kusakinisha $(^NameDA)."
+    },
+    {
+      "id": "MUI_INNERTEXT_LICENSE_BOTTOM_CHECKBOX",
+      "source": "If you accept the terms of the agreement, click the check box below. You must accept the agreement to install $(^NameDA). $_CLICK",
+      "translation": "Ukikubali masharti ya makubaliano, weka alama kwenye kisanduku hapa chini. Lazima ukubali makubaliano ili kusakinisha $(^NameDA). $_CLICK"
+    },
+    {
+      "id": "MUI_INNERTEXT_LICENSE_BOTTOM_RADIOBUTTONS",
+      "source": "If you accept the terms of the agreement, select the first option below. You must accept the agreement to install $(^NameDA). $_CLICK",
+      "translation": "Ukikubali masharti ya makubaliano, chagua chaguo la kwanza hapa chini. Lazima ukubali makubaliano ili kusakinisha $(^NameDA). $_CLICK"
+    },
+    {
+      "id": "MUI_UNTEXT_LICENSE_TITLE",
+      "source": "License Agreement",
+      "translation": "Makubaliano ya leseni"
+    },
+    {
+      "id": "MUI_UNTEXT_LICENSE_SUBTITLE",
+      "source": "Please review the license terms before uninstalling $(^NameDA).",
+      "translation": "Soma masharti ya leseni kabla ya kuondoa $(^NameDA)."
+    },
+    {
+      "id": "MUI_UNINNERTEXT_LICENSE_BOTTOM",
+      "source": "If you accept the terms of the agreement, click I Agree to continue. You must accept the agreement to uninstall $(^NameDA).",
+      "translation": "Ukikubali masharti ya makubaliano, bofya Ninakubali ili kuendelea. Lazima ukubali makubaliano ili kuondoa $(^NameDA)."
+    },
+    {
+      "id": "MUI_UNINNERTEXT_LICENSE_BOTTOM_CHECKBOX",
+      "source": "If you accept the terms of the agreement, click the check box below. You must accept the agreement to uninstall $(^NameDA). $_CLICK",
+      "translation": "Ukikubali masharti ya makubaliano, weka alama kwenye kisanduku hapa chini. Lazima ukubali makubaliano ili kuondoa $(^NameDA). $_CLICK"
+    },
+    {
+      "id": "MUI_UNINNERTEXT_LICENSE_BOTTOM_RADIOBUTTONS",
+      "source": "If you accept the terms of the agreement, select the first option below. You must accept the agreement to uninstall $(^NameDA). $_CLICK",
+      "translation": "Ukikubali masharti ya makubaliano, chagua chaguo la kwanza hapa chini. Lazima ukubali makubaliano ili kuondoa $(^NameDA). $_CLICK"
+    },
+    {
+      "id": "MUI_INNERTEXT_LICENSE_TOP",
+      "source": "Press Page Down to see the rest of the agreement.",
+      "translation": "Bonyeza Page Down kuona sehemu iliyobaki ya makubaliano."
+    },
+    {
+      "id": "MUI_TEXT_COMPONENTS_TITLE",
+      "source": "Choose Components",
+      "translation": "Chagua vipengele"
+    },
+    {
+      "id": "MUI_TEXT_COMPONENTS_SUBTITLE",
+      "source": "Choose which features of $(^NameDA) you want to install.",
+      "translation": "Chagua vipengele vya $(^NameDA) unavyotaka kusakinisha."
+    },
+    {
+      "id": "MUI_UNTEXT_COMPONENTS_TITLE",
+      "source": "Choose Components",
+      "translation": "Chagua vipengele"
+    },
+    {
+      "id": "MUI_UNTEXT_COMPONENTS_SUBTITLE",
+      "source": "Choose which features of $(^NameDA) you want to uninstall.",
+      "translation": "Chagua vipengele vya $(^NameDA) unavyotaka kuondoa."
+    },
+    {
+      "id": "MUI_INNERTEXT_COMPONENTS_DESCRIPTION_TITLE",
+      "source": "Description",
+      "translation": "Maelezo"
+    },
+    {
+      "id": "MUI_INNERTEXT_COMPONENTS_DESCRIPTION_INFO",
+      "source": "Position your mouse over a component to see its description.",
+      "translation": "Weka kishale cha kipanya juu ya kipengele ili kuona maelezo yake."
+    },
+    {
+      "id": "MUI_INNERTEXT_COMPONENTS_DESCRIPTION_INFO",
+      "source": "Select a component to see its description.",
+      "translation": "Chagua kipengele ili kuona maelezo yake."
+    },
+    {
+      "id": "MUI_TEXT_DIRECTORY_TITLE",
+      "source": "Choose Install Location",
+      "translation": "Chagua mahali pa kusakinisha"
+    },
+    {
+      "id": "MUI_TEXT_DIRECTORY_SUBTITLE",
+      "source": "Choose the folder in which to install $(^NameDA).",
+      "translation": "Chagua folda ya kusakinisha $(^NameDA)."
+    },
+    {
+      "id": "MUI_UNTEXT_DIRECTORY_TITLE",
+      "source": "Choose Uninstall Location",
+      "translation": "Chagua mahali pa kuondoa"
+    },
+    {
+      "id": "MUI_UNTEXT_DIRECTORY_SUBTITLE",
+      "source": "Choose the folder from which to uninstall $(^NameDA).",
+      "translation": "Chagua folda ya kuondoa $(^NameDA)."
+    },
+    {
+      "id": "MUI_TEXT_INSTALLING_TITLE",
+      "source": "Installing",
+      "translation": "Inasakinisha"
+    },
+    {
+      "id": "MUI_TEXT_INSTALLING_SUBTITLE",
+      "source": "Please wait while $(^NameDA) is being installed.",
+      "translation": "Subiri wakati $(^NameDA) inasakinishwa."
+    },
+    {
+      "id": "MUI_TEXT_FINISH_TITLE",
+      "source": "Installation Complete",
+      "translation": "Usakinishaji umekamilika"
+    },
+    {
+      "id": "MUI_TEXT_FINISH_SUBTITLE",
+      "source": "Setup was completed successfully.",
+      "translation": "Usakinishaji umekamilika kwa mafanikio."
+    },
+    {
+      "id": "MUI_TEXT_ABORT_TITLE",
+      "source": "Installation Aborted",
+      "translation": "Usakinishaji umesitishwa"
+    },
+    {
+      "id": "MUI_TEXT_ABORT_SUBTITLE",
+      "source": "Setup was not completed successfully.",
+      "translation": "Usakinishaji haukukamilika kwa mafanikio."
+    },
+    {
+      "id": "MUI_UNTEXT_UNINSTALLING_TITLE",
+      "source": "Uninstalling",
+      "translation": "Inaondoa"
+    },
+    {
+      "id": "MUI_UNTEXT_UNINSTALLING_SUBTITLE",
+      "source": "Please wait while $(^NameDA) is being uninstalled.",
+      "translation": "Subiri wakati $(^NameDA) inaondolewa."
+    },
+    {
+      "id": "MUI_UNTEXT_FINISH_TITLE",
+      "source": "Uninstallation Complete",
+      "translation": "Uondoaji umekamilika"
+    },
+    {
+      "id": "MUI_UNTEXT_FINISH_SUBTITLE",
+      "source": "Uninstall was completed successfully.",
+      "translation": "Uondoaji umekamilika kwa mafanikio."
+    },
+    {
+      "id": "MUI_UNTEXT_ABORT_TITLE",
+      "source": "Uninstallation Aborted",
+      "translation": "Uondoaji umesitishwa"
+    },
+    {
+      "id": "MUI_UNTEXT_ABORT_SUBTITLE",
+      "source": "Uninstall was not completed successfully.",
+      "translation": "Uondoaji haukukamilika kwa mafanikio."
+    },
+    {
+      "id": "MUI_TEXT_FINISH_INFO_TITLE",
+      "source": "Completing $(^NameDA) Setup",
+      "translation": "Kukamilisha usakinishaji wa $(^NameDA)"
+    },
+    {
+      "id": "MUI_TEXT_FINISH_INFO_TEXT",
+      "source": "$(^NameDA) has been installed on your computer.$\\r$\\n$\\r$\\nClick Finish to close Setup.",
+      "translation": "$(^NameDA) imesakinishwa kwenye kompyuta yako.$\\r$\\n$\\r$\\nBofya Maliza kufunga kisakinishi."
+    },
+    {
+      "id": "MUI_TEXT_FINISH_INFO_REBOOT",
+      "source": "Your computer must be restarted in order to complete the installation of $(^NameDA). Do you want to reboot now?",
+      "translation": "Kompyuta lazima iwashwe upya ili kukamilisha usakinishaji wa $(^NameDA). Unataka kuiwasha upya sasa?"
+    },
+    {
+      "id": "MUI_UNTEXT_FINISH_INFO_TITLE",
+      "source": "Completing $(^NameDA) Uninstall",
+      "translation": "Kukamilisha uondoaji wa $(^NameDA)"
+    },
+    {
+      "id": "MUI_UNTEXT_FINISH_INFO_TEXT",
+      "source": "$(^NameDA) has been uninstalled from your computer.$\\r$\\n$\\r$\\nClick Finish to close Setup.",
+      "translation": "$(^NameDA) imeondolewa kwenye kompyuta yako.$\\r$\\n$\\r$\\nBofya Maliza kufunga programu ya uondoaji."
+    },
+    {
+      "id": "MUI_UNTEXT_FINISH_INFO_REBOOT",
+      "source": "Your computer must be restarted in order to complete the uninstallation of $(^NameDA). Do you want to reboot now?",
+      "translation": "Kompyuta lazima iwashwe upya ili kukamilisha uondoaji wa $(^NameDA). Unataka kuiwasha upya sasa?"
+    },
+    {
+      "id": "MUI_TEXT_FINISH_REBOOTNOW",
+      "source": "Reboot now",
+      "translation": "Washa upya sasa"
+    },
+    {
+      "id": "MUI_TEXT_FINISH_REBOOTLATER",
+      "source": "I want to manually reboot later",
+      "translation": "Nataka kuwasha upya mwenyewe baadaye"
+    },
+    {
+      "id": "MUI_TEXT_FINISH_RUN",
+      "source": "&Run $(^NameDA)",
+      "translation": "&Endesha $(^NameDA)"
+    },
+    {
+      "id": "MUI_TEXT_FINISH_SHOWREADME",
+      "source": "&Show Readme",
+      "translation": "&Onyesha Readme"
+    },
+    {
+      "id": "MUI_BUTTONTEXT_FINISH",
+      "source": "&Finish",
+      "translation": "&Maliza"
+    },
+    {
+      "id": "MUI_TEXT_STARTMENU_TITLE",
+      "source": "Choose Start Menu Folder",
+      "translation": "Chagua folda ya menyu ya Mwanzo"
+    },
+    {
+      "id": "MUI_TEXT_STARTMENU_SUBTITLE",
+      "source": "Choose a Start Menu folder for the $(^NameDA) shortcuts.",
+      "translation": "Chagua folda ya menyu ya Mwanzo kwa njia za mkato za $(^NameDA)."
+    },
+    {
+      "id": "MUI_INNERTEXT_STARTMENU_TOP",
+      "source": "Select the Start Menu folder in which you would like to create the program's shortcuts. You can also enter a name to create a new folder.",
+      "translation": "Chagua folda ya menyu ya Mwanzo ambamo njia za mkato za programu zitaundwa. Unaweza pia kuandika jina ili kuunda folda mpya."
+    },
+    {
+      "id": "MUI_INNERTEXT_STARTMENU_CHECKBOX",
+      "source": "Do not create shortcuts",
+      "translation": "Usiunde njia za mkato"
+    },
+    {
+      "id": "MUI_UNTEXT_CONFIRM_TITLE",
+      "source": "Uninstall $(^NameDA)",
+      "translation": "Ondoa $(^NameDA)"
+    },
+    {
+      "id": "MUI_UNTEXT_CONFIRM_SUBTITLE",
+      "source": "Remove $(^NameDA) from your computer.",
+      "translation": "Ondoa $(^NameDA) kwenye kompyuta yako."
+    },
+    {
+      "id": "MUI_TEXT_ABORTWARNING",
+      "source": "Are you sure you want to quit $(^Name) Setup?",
+      "translation": "Una uhakika unataka kuacha usakinishaji wa $(^Name)?"
+    },
+    {
+      "id": "MUI_UNTEXT_ABORTWARNING",
+      "source": "Are you sure you want to quit $(^Name) Uninstall?",
+      "translation": "Una uhakika unataka kuacha uondoaji wa $(^Name)?"
+    },
+    {
+      "id": "MULTIUSER_TEXT_INSTALLMODE_TITLE",
+      "source": "Choose Users",
+      "translation": "Chagua watumiaji"
+    },
+    {
+      "id": "MULTIUSER_TEXT_INSTALLMODE_SUBTITLE",
+      "source": "Choose for which users you want to install $(^NameDA).",
+      "translation": "Chagua watumiaji ambao unataka kuwasakinishia $(^NameDA)."
+    },
+    {
+      "id": "MULTIUSER_INNERTEXT_INSTALLMODE_TOP",
+      "source": "Select whether you want to install $(^NameDA) only for yourself or for all users of this computer. $(^ClickNext)",
+      "translation": "Chagua kama unataka kusakinisha $(^NameDA) kwa ajili yako tu au kwa watumiaji wote wa kompyuta hii. $(^ClickNext)"
+    },
+    {
+      "id": "MULTIUSER_INNERTEXT_INSTALLMODE_ALLUSERS",
+      "source": "Install for anyone using this computer",
+      "translation": "Sakinisha kwa kila mtu anayetumia kompyuta hii"
+    },
+    {
+      "id": "MULTIUSER_INNERTEXT_INSTALLMODE_CURRENTUSER",
+      "source": "Install just for me",
+      "translation": "Sakinisha kwa ajili yangu tu"
+    }
+  ]
+}

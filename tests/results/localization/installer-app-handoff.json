@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "installerFallbackPolicy": "Use exact installer catalog identity only if app preference key is absent; explicit system and all saved values remain untouched. CLI/environment selection retain existing precedence. No preference writes during fallback.",
+  "policyCatalogIdentitiesChecked": 34,
+  "linuxCompiledTestsPassed": 37,
+  "linuxUiPlatform": "offscreen",
+  "binarySha256": {
+    "soundcurrent-eq": "693242ad760e337eb39a82720e2fc406011ab58846de194c5c18e81903b4bd8d",
+    "soundcurrent-localization-test": "1d678213edeb89d737338eac2e8b38c3eb778837d5d71149888b18b665419b0f"
+  },
+  "windowsNativeRegistryTestAdded": true,
+  "windowsNativeRegistryTestQualified": false,
+  "windowsActualFirstLaunchQualified": false,
+  "nativeSpeakerVerified": false,
+  "vmUsed": false,
+  "remainingQualification": [
+    "Current Windows CI and installed first-launch preference/dropdown behavior",
+    "Installer language selection and reinstall/uninstall lifecycle",
+    "Visual long-caption and RTL installer rendering",
+    "Localized shortcut display names"
+  ]
+}

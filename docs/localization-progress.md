@@ -1,0 +1,655 @@
+# Localization completion work
+
+## Goal and repository scope
+
+The user replaced the Windows virtual-driver implementation goal with localization fixes on 2026-10-07. Driver code is preserved. This work owns EQ and Studio; the DAW is maintained in its separate chat. Published 1.1.0 assets remain unchanged; no new release is authorized by this continuation.
+
+## Baseline and source review
+
+The independent localization-guard handoff reported 30/318 translated strings in EQ and 30/397 in Studio for each of 32 target locales. It checked catalogs, not completeness of source extraction or compiled/live views.
+
+Review found missing equipment dialog titles/actions, validation reasons, microphone connection text, operational error messages and Studio render messages. These now enter the catalogs. Complete messages replace concatenated prompt/conflict/version fragments. Qt standard action captions share the embedded translation catalog. Raw external backend diagnostics and OS-native dialog text may retain their original language.
+
+The review also fixed two functional bugs: source/conditions length limits depended on translated labels, and equipment-kind filtering used display text as a schema value. Limits are now explicit and selectors retain stable speaker/microphone/amplifier data. Brand/family/model names and user-supplied profile content remain literal. SDK/DSP implementation and driver sources were not modified.
+
+## Current checkpoint — 2026-10-09
+
+- All original target locales and added Nynorsk have populated catalogs: 704 messages each, 34 catalogs including English. Native-speaker verification remains unverified.
+- Finite owned-interface source correspondence review is complete, including the equipment-summary, calibration-profile and Studio backend boundaries. IDs, loaded metadata, opaque substitutions and numerical data retain identity.
+- Current Linux/Windows packages and unpublished preview are verified; the final evidence audit records qualification scope.
+- Counts/hashes: `data/localization/catalogs.json`. Scoped evidence and remaining work: `tests/results/localization/current-requirement-checkpoint.json` and `completion-checklist.json`.
+- Catalog completion, contextual AI review and bounded runtime evidence are distinct. No all-locale visual, physical audio or native-speaker certification is claimed. No release was published.
+
+## Completion criteria
+
+Populate all current messages for every existing locale, pass structural and compiled/live UI checks on Linux/Windows, validate changed packages, and record evidence/known limitations. Full populated coverage must never be labeled native-speaker verification without an identified reviewer and catalog-specific evidence. The global --require-complete gate passes for the current catalogs; this does not prove that every application-owned message has been extracted. No arbitrary English copies should be inserted merely to pass coverage.
+
+Next work: second-pass inventory and localization of omitted application-owned messages. French, German, Spanish and Italian are required to stay populated as sources evolve. The Filter Q caption now describes the dimensionless filter quality parameter; saved processing IDs and numeric values are unchanged.
+
+Windows audio setup now translates application-owned failure, repair, calibration and restart instructions. Restart-required results always retain the translated reboot instruction alongside original helper diagnostics. The source guard also rejects unmarked literal messages passed to the setup completion helper.
+
+Spanish: all 437 extracted messages populated. Contextual AI review covers calibration safety, flat gain, low-volume loudness compensation, dry/wet mixing, compressor timing, routing and filter Q. Native-speaker verification remains unverified. Spanish equipment import/edit/save workflows and inert Windows setup-message fixtures are included in the test gates.
+
+Italian: all 437 extracted messages populated. Full Linux CTest passed 51/51, including Italian equipment workflows. Settings/effects tabs inspected with xcb/Xvfb at 1280×720. Contextual AI review remains unverified; Windows qualification for the new catalogs is pending.
+
+Portuguese partial checkpoint: 216/437 messages populated for each regional variant. Linux compiled-catalog and both Portuguese main-window checks passed (3/3). Regional terminology is reviewed separately; the remainder stays unfinished and falls back to English. Native-speaker verification remains unverified.
+
+Portuguese completed checkpoint: all 437 extracted messages populated in both regional catalogs. Full Linux CTest passed 53/53, including both equipment workflows. Regional settings/effects tabs inspected at 1280×720. Structural completeness is required for future updates; all translations remain unverified. Prior Italian commits passed Windows CI.
+
+Dutch: all 437 extracted messages populated. Full Linux CTest passed 54/54 before the meter-help wrapping adjustment. The localized equipment import/edit/save workflow is included. Meter-help text now wraps instead of forcing a wider EQ page. Contextual review remains unverified; current Windows qualification pending.
+
+Layout follow-up: four targeted Dutch/Spanish/pseudo-locale checks passed after wrapping the meter-help label. Inspected Dutch EQ/Studio and Spanish EQ screenshots at 1280×720. The EQ page no longer needs page-wide horizontal scrolling in these samples; the frequency-band strip keeps its own scroll control. Prior Portuguese commits passed Windows CI.
+
+Polish: all 437 extracted messages populated. Full Linux CTest passed 55/55 before one final plot-caption wording correction; focused runtime/UI/equipment tests cover the final catalog separately. Contextual review distinguishes signed gain, filter Q, flat response, low-volume loudness correction and count-independent render summaries. Native-speaker verification remains unverified; current Windows qualification pending.
+
+Polish final catalog: three focused runtime/main-window/equipment checks passed. After curve-instruction wrapping, three Polish/pseudo-locale checks passed. Small-screen inspection still shows Polish EQ horizontal scrolling and partially offscreen headroom; layout qualification remains incomplete. The user also requested optional startup at sign-in for both apps; implement this alongside localization, preserving mutual exclusion and leaving it disabled by default.
+
+Startup option: implemented in Settings for both apps. One shared per-user registration chooses EQ or Studio. Background launch has a visible-window fallback when no tray is available. Linux full tests passed 56/56. Windows build/installer and actual sign-in qualification remain pending. See startup.md.
+
+Czech and Slovak initial batch: cs: 102/441, sk: 102/441. Four focused Linux checks passed in each repository. Includes calibration/profile prompts, gain/headroom and audio setup errors. Both remain incomplete and unverified.
+
+Czech and Slovak second batch: cs: 166/441, sk: 166/441. Four focused Linux checks passed for the compiled catalogs, both main windows and catalog regressions. Error recovery, updates, routing and delay controls are covered; catalogs remain incomplete and unverified.
+
+Czech and Slovak through microphone/measurement batch: cs: 291/441, sk: 291/441. Full Linux CTest passed 56/56. Filters, compressor parameters, equipment editing and calibration limitations were reviewed contextually. Catalogs remain incomplete and unverified. Corrected startup code passed Windows CI; see startup-progress.json for exact tested commits.
+
+Czech and Slovak completed checkpoint: all 441 current extracted messages populated. Full Linux CTest passed 58/58, including both equipment workflows. Czech EQ Settings and Slovak Studio effects were inspected at 1280×720. Render counts use neutral labels instead of fixed plural endings; native review remains unverified. Windows qualification pending for these catalogs.
+
+Ukrainian/Russian initial batches: uk: 166/441, ru: 166/441. Four focused Linux checks passed per repository. Profiles, gain, error recovery, updates and delay controls were reviewed contextually. Both catalogs remain incomplete and unverified.
+
+Ukrainian/Russian through measurement batch: uk: 291/441, ru: 291/441. Four focused Linux checks passed per app. Compressor/filter controls, equipment editing, microphone behavior and model-correction limits reviewed contextually; translations remain incomplete and unverified. Completed Czech/Slovak catalog commits passed Windows CI, with exact source commits recorded in their checkpoint report.
+
+Ukrainian/Russian startup and render batch: uk: 349/441, ru: 349/441. Four focused Linux checks passed in each app. Includes background-startup ownership, hardware setup restart guidance, bounded calibration suggestions, profile copy/reference behavior and neutral render-count labels. Both catalogs remain incomplete and unverified.
+
+Ukrainian/Russian complete extracted catalogs: 441 messages each. Full Linux CTest passed 60/60 including equipment workflows. Ukrainian EQ and Russian Studio effects inspected at 1280×720. Contextual review remains unverified, with no native-speaker claim. Windows qualification pending on these catalogs.
+
+Greek/Turkish initial batch: el: 102/441, tr: 102/441. Four focused Linux checks passed in each app. Gain, headroom, clipping, profile prompts and setup errors reviewed contextually; both catalogs remain incomplete and unverified.
+
+Greek/Turkish recovery and effects batch: el: 166/441, tr: 166/441. Four focused Linux checks passed per app. Error recovery, update reminders and delay contribution reviewed contextually; catalogs remain incomplete and unverified. Studio completed Ukrainian/Russian catalogs passed Windows CI.
+
+Greek/Turkish filter and editor batch: el: 230/441, tr: 230/441. Four focused Linux checks passed per app. Q, compressor timings/makeup, shelving/pass filters, meter estimates and equipment editing reviewed contextually. Both catalogs remain incomplete and unverified. EQ completed Ukrainian/Russian catalogs now also passed Windows CI.
+
+Greek/Turkish microphone and measurement batch: el: 291/441, tr: 291/441. Four focused Linux checks passed per app. Microphone clipping, whole-system measurement, additive model correction, polarity and non-real-time rendering reviewed contextually. Catalogs remain incomplete and unverified.
+
+Greek/Turkish startup and rendering batch: el: 349/441, tr: 349/441. Four focused Linux checks passed per app. Includes shared sign-in registration, restart guidance, profile reference copies, post gain and count-neutral render summaries. Both catalogs remain incomplete and unverified.
+
+Greek/Turkish complete extracted catalogs: 441 messages each. Full Linux CTest passed 62/62 including equipment workflows. Greek EQ and Turkish Studio effects inspected at 1280×720. Contextual review remains unverified, with no native-speaker claim. Windows qualification pending for these catalogs.
+
+Swedish/Danish initial batch: sv: 102/441, da: 102/441. Four focused Linux checks passed per app. Gain/headroom, clipping, amplifier measurement requirements and setup errors reviewed contextually. Catalogs remain incomplete and unverified.
+
+Swedish/Danish recovery and effects batch: sv: 166/441, da: 166/441. Four focused Linux checks passed per app. Error recovery, update checks, delay contribution and frequency-sweep prompts reviewed contextually; catalogs remain incomplete and unverified. Studio completed Greek/Turkish catalog commit passed Windows CI.
+
+Swedish/Danish filter and editor batch: sv: 230/441, da: 230/441. Four focused Linux checks passed per app. Q, shelving/pass filters, compressor controls, equipment editing and estimated meters reviewed contextually; catalogs remain incomplete and unverified. EQ completed Greek/Turkish catalog commit now also passed Windows CI.
+
+Swedish/Danish microphone and measurement batch: sv: 291/441, da: 291/441. Four focused Linux checks passed per app. Whole-system limits, microphone clipping, additive correction, polarity and balance reviewed contextually. Both catalogs remain incomplete and unverified.
+
+Swedish/Danish startup and rendering batch: sv: 349/441, da: 349/441. Four focused Linux checks passed per app. Includes shared startup registration, preserved reference profiles, translated calibration links and neutral render counts. Both catalogs remain incomplete and unverified.
+
+Swedish/Danish import and speaker-profile batch: 398/441 messages each. Four focused Linux checks passed per app. Import constraints, saving, disconnected-device recovery and Windows restart guidance reviewed contextually. Catalogs remain incomplete and unverified.
+
+Swedish/Danish complete extracted catalogs: 441 messages each. Full Linux CTest passed 64/64 including equipment workflows. Swedish EQ and Danish Studio effects inspected at 1280×720. Contextual review remains unverified, with no native-speaker claim. Windows qualification pending for these catalogs.
+
+Norwegian Bokmål/Finnish initial batch: 102/441 messages each. Four focused Linux checks passed per app. Gain, headroom, clipping, amplifier measurements and audio-setup recovery reviewed contextually. Catalogs remain incomplete and unverified.
+
+Norwegian Bokmål/Finnish recovery and effects batch: 166/441 messages each. Four focused Linux checks passed per app. Processing refusal, restart recovery, update checks and delay controls reviewed contextually. Catalogs remain incomplete and unverified.
+
+Norwegian Bokmål/Finnish filter and editor batch: 230/441 messages each. Four focused Linux checks passed per app. Filter Q, compressor parameters, equipment editing and estimated meters reviewed contextually. Catalogs remain incomplete and unverified. Completed Swedish/Danish commits passed Windows CI, with exact runs recorded in their reports.
+
+Norwegian Bokmål/Finnish microphone and measurement batch: 292/441 messages each. Four focused Linux checks passed per app. Additive correction, system measurement limits, clipping, polarity and balance reviewed contextually. Both balance endpoint captions match their instructions. Catalogs remain incomplete and unverified.
+
+Norwegian Bokmål/Finnish startup and rendering batch: 349/441 messages each. Four focused Linux checks passed per app. Shared startup registration, saved-profile reference preservation, calibration links and neutral render counts reviewed contextually. Catalogs remain incomplete and unverified.
+
+Norwegian Bokmål/Finnish import and speaker-profile batch: 398/441 messages each. Four focused Linux checks passed per app. Import constraints, saving, disconnected-device recovery and Windows restart guidance reviewed contextually. Catalogs remain incomplete and unverified.
+
+Norwegian Bokmål/Finnish complete extracted catalogs: 441 messages each. Full Linux CTest passed 66/66 including equipment workflows. Norwegian Bokmål EQ and Finnish Studio effects inspected at 1280×720. Contextual review remains unverified, with no native-speaker claim. Windows qualification pending for these catalogs.
+
+Romanian/Hungarian initial batch: 102/441 messages each. Four focused Linux checks passed per app. Gain, headroom, clipping, amplifier measurements and audio-setup recovery reviewed contextually. Catalogs remain incomplete and unverified.
+
+Romanian/Hungarian recovery and effects batch: 166/441 messages each. Four focused Linux checks passed per app. Processing refusal, restart recovery, updates and delay controls reviewed contextually. Catalogs remain incomplete and unverified.
+
+Additional user requirement: add a separate Nynorsk (nn) catalog and runtime/workflow checks after completing Romanian and Hungarian. This expands the language scope beyond the original 32 target catalogs.
+
+Romanian/Hungarian filter and editor batch: 230/441 messages each. Four focused Linux checks passed per app. Filter Q, compressor parameters, equipment editing and estimated meters reviewed contextually. Catalogs remain incomplete and unverified. Nynorsk remains next after completing these two catalogs.
+
+Romanian/Hungarian microphone and measurement batch: 292/441 messages each. Four focused Linux checks passed per app. Additive correction, system measurement limits, clipping, polarity and balance reviewed contextually. Both balance endpoint captions match their instructions. Catalogs remain incomplete and unverified; Nynorsk follows these catalogs.
+
+Romanian/Hungarian startup and rendering batch: 349/441 messages each. Four focused Linux checks passed per app. Shared startup registration, saved-profile reference preservation, calibration links and neutral render counts reviewed contextually. Catalogs remain incomplete and unverified; Nynorsk follows completion.
+
+Romanian/Hungarian import and speaker-profile batch: 398/441 messages each. Four focused Linux checks passed per app. Import constraints, saving, disconnected-device recovery and Windows restart guidance reviewed contextually. Catalogs remain incomplete and unverified; Nynorsk follows completion.
+
+Romanian/Hungarian complete extracted catalogs: 441 messages each. Full Linux CTest passed 68/68 including equipment workflows. Romanian EQ and Hungarian Studio effects inspected at 1280×720. Contextual review remains unverified, with no native-speaker claim. Windows qualification pending for these catalogs.
+
+Nynorsk added as a separate nn catalog, with 102/441 messages populated. Three focused Linux checks passed per app, including distinct Nynorsk/Bokmål regional selection. It remains incomplete and unverified. The target scope is now 33 non-English locales; 20 original catalogs are populated and 13 catalogs remain incomplete.
+
+Nynorsk recovery and effects batch: 166/441 messages populated. Three focused Linux checks passed per app. Processing refusal, restart recovery, update checks and delay controls reviewed contextually. Catalog remains incomplete and unverified.
+
+Nynorsk filter and editor batch: 230/441 messages populated. Three focused Linux checks passed per app. Filter Q, compressor parameters, equipment editing and estimated meters reviewed contextually. Catalog remains incomplete and unverified.
+
+Nynorsk microphone and measurement batch: 292/441 messages populated. Three focused Linux checks passed per app. Additive correction, system measurement limits, clipping, polarity and balance reviewed contextually. Both balance endpoint captions match their instructions. Catalog remains incomplete and unverified.
+
+Nynorsk startup and rendering batch: 349/441 messages populated. Three focused Linux checks passed per app. Startup registration, reference-profile preservation, calibration links and render counts reviewed contextually. Catalog remains incomplete and unverified.
+
+Nynorsk import and speaker-profile batch: 398/441 messages populated. Three focused Linux checks passed per app. Import constraints, saving, disconnected-device recovery and Windows restart guidance reviewed contextually. Catalog remains incomplete and unverified.
+
+Nynorsk complete extracted catalogs: 441 messages each. Full Linux CTest passed 70/70 including equipment workflows. Nynorsk EQ and Nynorsk Studio effects inspected at 1280×720. Contextual review remains unverified, with no native-speaker claim. Windows qualification pending for these catalogs.
+
+Arabic initial batch: 102/441 messages populated. Three focused Linux checks passed per app. Arabic EQ sample inspected at 1280×720 with RTL text/tabs and LTR frequency/numerical controls. Catalog remains incomplete and unverified; full bidi qualification remains open.
+
+Arabic recovery, calibration and delay batch: 166/441 messages populated. Three focused Linux checks passed. Processing refusal, 1 MiB limits, update behavior and processed delay mix reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Arabic equipment, filters and metering batch: 230/441 messages populated. Three focused Linux checks passed. Estimated levels, filter Q/high-pass/high-shelf, equipment kinds and dynamics makeup gain reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Arabic microphone and measurement batch: 291/441 messages populated. Three focused Linux checks passed. Additive correction, microphone clipping, balance endpoints and signed routing gain reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Coverage correction: explicit SC_TR markers are now discovered across all C++ source/header/adapter files, including future files outside the view list. Six catalog regression tests passed. Windows direct-literal error gaps are recorded in windows-message-gaps.json; this inventory is deliberately partial. Catalog totals still do not represent every user-facing message. Studio Windows channel-layout refusal now uses its existing translation. Full backend/helper/installer coverage remains required.
+
+Arabic startup, output and rendering batch: 349/441 messages populated. Three focused Linux checks passed. Startup registration, reference-preserving edits, calibration links, post gain and render counts reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Arabic saving, speaker profiles and device recovery batch: 398/441 messages populated. Three focused Linux checks passed. Saving, speaker correction bounds, peak hold, device recovery and reverb versus echo reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Arabic current catalogs complete: 441/441 messages populated. Full Linux CTest passed 71/71, including Arabic equipment workflows and RTL assertions. Calibration limits and operational controls reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Hebrew initial audio controls and profile guidance: 102/441 current catalog entries populated. Three focused Linux checks passed. Gain/headroom, clipping and measured amplifier correction requirements reviewed contextually. Catalog remains incomplete and unverified; full bidi qualification remains open.
+
+Hebrew calibration, recovery and delay batch: 166/441 messages populated. Three focused Linux checks passed. Calibration recovery, file limits, cancel versus close and processed delay mix reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Hebrew equipment, filters and metering batch: 230/441 messages populated. Three focused Linux checks passed. Estimated levels, filter Q/high-pass/high-shelf and equipment kinds reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Hebrew microphone and measurement batch: 291/441 messages populated. Three focused Linux checks passed. Additive correction, microphone clipping, balance endpoints and signed routing gain reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Hebrew startup, output and rendering batch: 349/441 messages populated. Three focused Linux checks passed. Startup registration, reference-preserving edits, calibration links, post gain and render counts reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Hebrew saving, speaker profiles and device recovery batch: 398/441 messages populated. Three focused Linux checks passed. Saving, speaker correction bounds, peak hold, device recovery and reverb versus echo reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Hebrew current catalogs complete: 441/441 messages populated. Full Linux CTest passed 72/72, including Hebrew equipment workflows and RTL assertions. Calibration limits and operational controls reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Persian initial audio controls and profile guidance: 102/441 messages populated. Three focused Linux checks passed. Gain/headroom, clipping and measured amplifier correction requirements reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Persian calibration, recovery and delay batch: 166/441 messages populated. Three focused Linux checks passed. Calibration recovery, file limits, cancel versus close and processed delay mix reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Persian equipment, filters and metering batch: 230/441 messages populated. Three focused Linux checks passed. Estimated levels, filter Q/high-pass/high-shelf and equipment kinds reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Persian microphone and measurement batch: 291/441 messages populated. Three focused Linux checks passed. Additive correction, microphone clipping, balance endpoints and signed routing gain reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Persian startup, output and rendering batch: 349/441 messages populated. Three focused Linux checks passed. Startup registration, reference-preserving edits, calibration links, post gain and render counts reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Persian saving, speaker profiles and device recovery batch: 398/441 messages populated. Three focused Linux checks passed. Saving, speaker correction bounds, peak hold, device recovery and reverb versus echo reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Persian current catalogs complete: 441/441 messages populated. Full Linux CTest passed 73/73, including Persian equipment workflows and RTL assertions. Calibration limits and operational controls reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Simplified Chinese initial audio controls and profile guidance: 102/441 messages populated. Three focused Linux checks passed. Gain/headroom, clipping and measured amplifier correction requirements reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Simplified Chinese calibration, recovery and delay batch: 166/441 messages populated. Three focused Linux checks passed. Calibration recovery, file limits, cancel versus close and delay wet mix reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Simplified Chinese equipment, filters and metering batch: 230/441 messages populated. Three focused Linux checks passed. Estimated levels, filter Q/high-pass/high-shelf and equipment kinds reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Simplified Chinese microphone and measurement batch: 291/441 messages populated. Three focused Linux checks passed. Additive correction, microphone clipping, balance endpoints and signed routing gain reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Simplified Chinese startup, output and rendering batch: 349/441 messages populated. Three focused Linux checks passed. Startup registration, reference-preserving edits, calibration links, post gain and render counts reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Simplified Chinese saving, speaker profiles and device recovery batch: 398/441 messages populated. Three focused Linux checks passed. Saving, speaker correction bounds, peak hold, device recovery and reverb versus echo reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Simplified Chinese current catalogs complete: 441/441 messages populated. Full Linux CTest passed 74/74, including equipment workflows and script selection assertions. Calibration limits and operational controls reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Traditional Chinese initial audio controls and profile guidance: 102/441 messages populated. Three focused Linux checks passed. Gain/headroom, clipping and measured amplifier correction requirements reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Traditional Chinese calibration, recovery and delay batch: 166/441 messages populated. Three focused Linux checks passed. Calibration recovery, file limits, cancel versus close and delay wet mix reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Traditional Chinese equipment, filters and metering batch: 230/441 messages populated. Three focused Linux checks passed. Estimated levels, filter Q/high-pass/high-shelf and equipment kinds reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Traditional Chinese microphone and measurement batch: 291/441 messages populated. Three focused Linux checks passed. Additive correction, microphone clipping, balance endpoints and signed routing gain reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Traditional Chinese startup, output and rendering batch: 349/441 messages populated. Three focused Linux checks passed. Startup registration, reference-preserving edits, calibration links, post gain and render counts reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Traditional Chinese saving, speaker profiles and device recovery batch: 398/441 messages populated. Three focused Linux checks passed. Saving, speaker correction bounds, peak hold, device recovery and reverb versus echo reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+Traditional Chinese current catalogs complete: 441/441 messages populated. Full Linux CTest passed 75/75, including equipment workflows and script selection assertions. Calibration limits and operational controls reviewed contextually. Catalog remains incomplete and unverified; mixed-direction formatting remains open.
+
+### Japanese: first existing-catalog batch
+
+Japanese now has 102/441 populated current catalog entries. The first 80 shared sources cover device routing, calibration limitations, enhancement controls and update/quit guidance. Both repositories passed the three focused Linux checks (localization, Japanese MainWindow offscreen, catalog structure). These translations remain unverified; Windows and visual qualification remain pending. Seven languages still have incomplete existing catalogs. Missing source strings remain scheduled for the second pass.
+
+### Japanese: second existing-catalog batch
+
+Japanese now has 166/441 populated current catalog entries. Added equipment-profile errors, calibration failure messages, update guidance, preset actions and delay controls. Both apps passed the three focused Linux checks. Native-speaker, Windows and visual qualification remain pending; translations are unverified. Missing source strings remain scheduled for the second pass.
+
+### Japanese: third existing-catalog batch
+
+Japanese now has 230/441 populated current catalog entries. Added dynamics controls, estimated metering, profile editor guidance and filter validation. Both apps passed the three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Japanese: fourth existing-catalog batch
+
+Japanese now has 291/441 populated current catalog entries. Added import/export guidance, live-channel limits, microphone calibration and balance behavior. Both apps passed the three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Japanese: fifth existing-catalog batch
+
+Japanese now has 349/441 populated current catalog entries. Added output controls, startup guidance, profile source links, sweep cautions and rendering messages. Both apps passed the three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Japanese: sixth existing-catalog batch
+
+Japanese now has 398/441 populated current catalog entries. Added save/reset actions, room measurement, microphone routing and peak-marker guidance. Both apps passed the three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Japanese: current catalogs populated
+
+All current Japanese catalog entries are populated (441 EQ, 527 Studio). Contextual AI review remains unverified; native-speaker and Windows qualification are pending. Six target languages still have incomplete existing catalogs. Omitted source strings remain scheduled for the second pass. The Japanese checkpoint report records Linux test evidence.
+
+### Japanese: completeness and profile-editor gates
+
+Japanese is now required to stay fully populated by the source/catalog validator. Runtime assertions verify its regional fallback, LTR layout and standard Save action. The actual profile editor now runs its import/edit/save/cancel/discard/apply workflow in Japanese; all four focused Linux checks passed in both apps. The preceding full-suite results remain 75/75 EQ and 77/77 Studio before this additional workflow test. Translations remain unverified.
+
+### Korean: first existing-catalog batch
+
+Korean now has 102/441 populated current catalog entries. The first 80 shared sources cover routing, measurement limitations and primary audio controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Korean: second existing-catalog batch
+
+Korean now has 166/441 populated current catalog entries. Added profile-saving errors, calibration failures, update guidance and delay controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Korean: third existing-catalog batch
+
+Korean now has 230/441 populated current catalog entries. Added effects, estimated metering and equipment-profile editing. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Korean: fourth existing-catalog batch
+
+Korean now has 291/441 populated current catalog entries. Added import/export guidance, microphone calibration and balance behavior. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Korean: fifth existing-catalog batch
+
+Korean now has 349/441 populated current catalog entries. Added output controls, source links, startup and rendering guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Korean: sixth existing-catalog batch
+
+Korean now has 398/441 populated current catalog entries. Added save/reset actions, room measurement and microphone-routing guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Korean: current catalogs populated
+
+All current Korean catalog entries are populated (441 EQ, 527 Studio). Both apps passed three focused Linux checks, including the actual MainWindow offscreen. Translations remain unverified; native-speaker, visual and Windows qualification are pending. Five target languages remain incomplete. Omitted source strings remain scheduled for the second pass.
+
+### Korean: completeness and profile-editor gates
+
+Korean is required to stay fully populated by the source/catalog validator. Runtime assertions verify regional fallback, LTR layout and the standard Save action. The profile editor import/edit/save/cancel/discard/apply workflow runs in Korean. All four focused Linux checks passed in both apps. Translations remain unverified; Windows and visual qualification are pending.
+
+### Hindi: first existing-catalog batch
+
+Hindi now has 102/441 populated current catalog entries. The first 80 shared sources cover device routing, calibration limitations and main audio controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Hindi: second existing-catalog batch
+
+Hindi now has 166/441 populated current catalog entries. Added saving errors, calibration failures and delay controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Hindi: third existing-catalog batch
+
+Hindi now has 230/441 populated current catalog entries. Added effects, estimated metering and equipment-profile editing. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Hindi: fourth existing-catalog batch
+
+Hindi now has 291/441 populated current catalog entries. Added import validation, microphone calibration, channel limits and balance guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Hindi: fifth existing-catalog batch
+
+Hindi now has 349/441 populated current catalog entries. Added output controls, startup guidance, profile-source links and rendering messages. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Hindi: sixth existing-catalog batch
+
+Hindi now has 398/441 populated current catalog entries. Added save/reset actions, room measurement and microphone-routing guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Hindi: current catalogs populated
+
+All current Hindi catalog entries are populated (441 EQ, 527 Studio). Both apps passed three focused Linux checks, including the actual MainWindow offscreen. Translations remain unverified; native-speaker, visual and Windows qualification are pending. Four target languages remain incomplete. Omitted source strings remain scheduled for the second pass.
+
+### Hindi: completeness and profile-editor gates
+
+Hindi is required to stay fully populated by the source/catalog validator. Runtime assertions verify regional fallback, LTR layout and the standard Save action. The profile editor import/edit/save/cancel/discard/apply workflow runs in Hindi. All four focused Linux checks passed in both apps. Translations remain unverified; Windows and visual qualification are pending.
+
+### Indonesian: first existing-catalog batch
+
+Indonesian now has 102/441 populated current catalog entries. The first 80 shared sources cover routing, calibration limitations and main audio controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Indonesian: second existing-catalog batch
+
+Indonesian now has 166/441 populated current catalog entries. Added profile-saving errors, calibration failures and delay controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Indonesian: third existing-catalog batch
+
+Indonesian now has 230/441 populated current catalog entries. Added effects, metering and profile-editor controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Indonesian: fourth existing-catalog batch
+
+Indonesian now has 291/441 populated current catalog entries. Added import validation, microphone calibration, channel limits and balance guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Indonesian: fifth existing-catalog batch
+
+Indonesian now has 349/441 populated current catalog entries. Added output controls, startup guidance, profile-source links and rendering messages. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Indonesian: sixth existing-catalog batch
+
+Indonesian now has 398/441 populated current catalog entries. Added save/reset actions, room measurement and microphone-routing guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Indonesian: current catalogs populated
+
+All current Indonesian catalog entries are populated (441 EQ, 527 Studio). Both apps passed three focused Linux checks, including the actual MainWindow offscreen. Translations remain unverified; native-speaker, visual and Windows qualification are pending. Three target languages remain incomplete. Omitted source strings remain scheduled for the second pass.
+
+### Indonesian: completeness and profile-editor gates
+
+Indonesian is required to stay fully populated by the source/catalog validator. Runtime assertions verify regional fallback, LTR layout and the standard Save action. The profile editor import/edit/save/cancel/discard/apply workflow runs in Indonesian. All four focused Linux checks passed in both apps. Translations remain unverified; Windows and visual qualification are pending.
+
+### Vietnamese: first existing-catalog batch
+
+Vietnamese now has 102/441 populated current catalog entries. The first 80 shared sources cover routing, calibration limitations and main audio controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Vietnamese: second existing-catalog batch
+
+Vietnamese now has 166/441 populated current catalog entries. Added profile-saving errors, calibration failures and delay controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Vietnamese: third existing-catalog batch
+
+Vietnamese now has 230/441 populated current catalog entries. Added effects, metering and profile-editor controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Vietnamese: fourth existing-catalog batch
+
+Vietnamese now has 291/441 populated current catalog entries. Added import validation, microphone calibration, channel limits and balance guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Vietnamese: fifth existing-catalog batch
+
+Vietnamese now has 349/441 populated current catalog entries. Added output controls, startup guidance, profile-source links and rendering messages. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Vietnamese: sixth existing-catalog batch
+
+Vietnamese now has 398/441 populated current catalog entries. Added save/reset actions, room measurement and microphone-routing guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Vietnamese existing catalog complete
+
+All 441/441 current Vietnamese catalog entries are populated. Required-complete and regional fallback gates now include Vietnamese. Both apps passed four focused Linux checks, including the profile import/edit/save/cancel/discard/apply workflow. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Thai: first existing-catalog batch
+
+Thai now has 102/441 populated current catalog entries. Added main controls, routing, amplifier-measurement limitations and enhancement guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Thai: second existing-catalog batch
+
+Thai now has 166/441 populated current catalog entries. Added profile errors, calibration messages and delay controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Thai: third existing-catalog batch
+
+Thai now has 230/441 populated current catalog entries. Added effects, level indicators and equipment-profile controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Thai: fourth existing-catalog batch
+
+Thai now has 291/441 populated current catalog entries. Added import validation, microphone calibration, channel limits and balance guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Thai: fifth existing-catalog batch
+
+Thai now has 349/441 populated current catalog entries. Added output controls, startup guidance, profile-source links and rendering messages. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Thai: sixth existing-catalog batch
+
+Thai now has 398/441 populated current catalog entries. Added save/reset actions, room measurement and microphone-routing guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Thai existing catalog complete
+
+All 441/441 current Thai catalog entries are populated. Required-complete and regional fallback gates now include Thai. Both apps passed four focused Linux checks, including the profile import/edit/save/cancel/discard/apply workflow. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Swahili: first existing-catalog batch
+
+Swahili now has 102/441 populated current catalog entries. Added main controls, routing, amplifier-measurement limitations and enhancement guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Swahili: second existing-catalog batch
+
+Swahili now has 166/441 populated current catalog entries. Added profile errors, calibration messages and delay controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Swahili: third existing-catalog batch
+
+Swahili now has 230/441 populated current catalog entries. Added effects, level indicators and equipment-profile controls. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Swahili: fourth existing-catalog batch
+
+Swahili now has 291/441 populated current catalog entries. Added import validation, microphone calibration, channel limits and balance guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Swahili: fifth existing-catalog batch
+
+Swahili now has 349/441 populated current catalog entries. Added output controls, startup guidance, profile-source links and rendering messages. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Swahili: sixth existing-catalog batch
+
+Swahili now has 398/441 populated current catalog entries. Added save/reset actions, room measurement and microphone-routing guidance. Both apps passed three focused Linux checks. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Swahili existing catalog complete
+
+All 441/441 current Swahili catalog entries are populated. Required-complete and regional fallback gates now include Swahili. Full Linux CTest passed 82/82, including profile workflows and all locale MainWindow offscreen checks. The global catalog completeness gate passes. Translations remain unverified; Windows and visual qualification are pending. Omitted source strings remain scheduled for the second pass.
+
+### Second-pass source inventory
+
+Added `scripts/localization_inventory.py` and its generated `tests/results/localization/source-inventory.json`. This read-only discovery aid scans literal C++ exceptions and selected view calls across all source files, NSIS candidates and Python diagnostics. Counts are candidates, not confirmed untranslated user messages. Dynamic/composed strings, shell/PowerShell helpers, native dialogs and data-driven names still require review. Current catalog completeness checks continue to pass.
+
+Confirmed first adapter targets: missing Windows audio-route instructions, disconnected speakers, invalid equalizer/microphone settings; Studio also has live-layout and invalid Studio-setting messages. Translate at the Qt adapter/view boundary while preserving backend identifiers and numeric processing. Installer strings require their own language selection and catalog workflow. The existing full Linux 82/82 (EQ) and 84/84 (Studio) results predate this informational tooling change; no new runtime qualification is claimed.
+
+### Second-pass Windows adapter errors in progress
+
+Qt adapter errors now use translation markers; a regression guard rejects direct untranslated exception literals. Seven new EQ / nine new Studio source messages entered the catalogs, including bridge-start fallback errors. German and French translations have been supplied; other locales remain unfinished and fall back to English. The required-complete gate is intentionally failing until the new translations are filled. Seven catalog-maintenance regressions passed in each repository. No Windows runtime qualification or new full-suite pass is claimed.
+
+Second-pass adapter translation checkpoint: German, French, Spanish, Italian, European/Brazilian Portuguese, Dutch and Polish now populate all newly exposed adapter messages. Structural checks passed for these eight locales; seven catalog-maintenance regression tests passed in each repository. Other locales still need the seven EQ / nine Studio new messages, so the global completeness gate remains failing. Work remains local until that batch is complete; translations remain unverified.
+
+Second-pass adapter translation checkpoint: added Czech, Slovak, Ukrainian, Russian, Greek and Turkish. Fourteen locales now populate all newly exposed adapter messages and pass structural checks. Seven catalog-maintenance regressions passed in each repository. The other nineteen non-English locales still need these messages, so the global completeness gate remains failing. Changes remain local; runtime qualification for this batch is pending and translations are unverified.
+
+Second-pass adapter translation checkpoint: added Swedish, Danish, Norwegian Bokmål/Nynorsk, Finnish, Romanian and Hungarian. Twenty-one locales now populate all newly exposed adapter messages and pass structural checks. Seven catalog-maintenance regressions passed in each repository. Twelve non-English locales still need these messages; the global completeness gate remains failing. Work remains local, translations unverified and runtime qualification pending.
+
+Second-pass adapter translation checkpoint: added Arabic, Hebrew, Persian, Simplified/Traditional Chinese, Japanese and Korean. Twenty-eight locales now populate all newly exposed adapter messages and pass structural checks. Seven catalog-maintenance regressions passed in each repository. Hindi, Indonesian, Vietnamese, Thai and Swahili still need these messages; the global completeness gate remains failing. Work remains local, translations unverified and runtime qualification pending.
+
+### Second-pass Qt Windows adapter messages complete
+
+All 33 non-English locales now cover the new seven EQ / nine Studio messages. Global required-complete and structural checks pass. Both apps rebuilt and passed two focused Linux checks; compiled message loading and Unicode exception round-trip run across non-English locales. The adapter rejects unmarked literal exception messages in source regression checks. Backend diagnostics and installers remain separate second-pass work. Translations are unverified; Windows/device/installer qualification is pending. Earlier in-progress checkpoints describe historical states.
+
+### Backend diagnostic translation boundary
+
+Added a shared Qt desktop-only audio-error mapper. The invariant Windows backend diagnostic “The selected EQ settings are invalid” now displays the existing translated equalizer-settings message. Unknown driver diagnostics retain their exact text and Unicode details. The backend remains Qt-independent and its diagnostics/processing identifiers are unchanged. Both builds passed catalog completeness and two focused Linux checks, including mapping across non-English locales. Other backend diagnostics still require cataloging; Windows runtime and package qualification remain pending.
+
+### Backend literal diagnostics in progress
+
+Extended the Qt desktop boundary to direct literal Windows audio/capture errors, including unsupported formats, buffer overrun and stalled microphone consumption. Each app adds eleven applicable catalog messages; backend diagnostic IDs and DSP code remain unchanged. Microphone and calibration display paths now use the same mapping. German/French translations pass structural checks; seven catalog-maintenance regressions pass. Remaining locales, HRESULT/composed diagnostics and runtime/package qualification remain incomplete. The global completeness gate is failing for the new untranslated entries. Changes remain local and translations unverified.
+
+Backend literal translation checkpoint: added Spanish, Italian, European/Brazilian Portuguese, Dutch and Polish. Eight locales now populate all applicable new backend literal messages; structural checks and seven catalog-maintenance regressions passed. Twenty-five non-English locales remain. Changes remain local; no runtime qualification is claimed and translations remain unverified.
+
+Backend literal translation checkpoint: added Czech, Slovak, Ukrainian, Russian, Greek and Turkish. Fourteen locales now populate the applicable new backend messages. Structural checks and seven catalog-maintenance regressions passed in each repository. Nineteen locales remain. Changes remain local, translations unverified and runtime qualification pending.
+
+Backend literal translation checkpoint: added Swedish, Danish, Norwegian Bokmål/Nynorsk, Finnish, Romanian and Hungarian. Twenty-one locales populate all applicable new backend messages. Structural checks and seven catalog-maintenance regressions passed in each repository. Twelve locales remain; changes are local and translations unverified. Runtime/package qualification remains pending.
+
+Backend literal translation checkpoint: added Arabic, Hebrew, Persian, both Chinese variants, Japanese and Korean. Twenty-eight locales populate the applicable new messages. Structural checks and seven catalog-maintenance regressions passed in each repository. Hindi, Indonesian, Vietnamese, Thai and Swahili remain. Changes are local, translations unverified and runtime/package qualification pending.
+
+### Backend literal diagnostic batch complete
+
+All 33 non-English locales now cover the eleven applicable direct-literal backend messages per app. Global required-complete and structural checks pass. Both apps rebuilt and passed two focused Linux checks, including compiled translations, known diagnostic mapping and preservation of unknown Unicode details. Backend/DSP sources remain unchanged. HRESULT/composed diagnostics, helper and installer messages, visual and Windows/package qualification remain outstanding. Translations remain unverified. Earlier in-progress checkpoints describe historical states.
+
+### Composed Windows operation diagnostics in progress
+
+The desktop mapper recognizes known backend check/checked operation captions and the exact HRESULT failure shape, translating the operation and message template while retaining the code. A compiled Qt fixture passed for both headers with a translated action/template, mixed-case code preservation and unknown/malformed fallback. Added the fixture as a CTest target. New operation captions (61 EQ / 63 Studio) and one failure template require translation; completeness is currently failing. Backend processing sources remain unchanged. Work remains local; no Windows runtime qualification is claimed.
+
+HRESULT operation translation checkpoint: German and French now cover all applicable operation captions and the failure template. Current catalogs passed structural validation. The saved backend-error-text CTest fixture passed in both Linux builds with a synthetic translator; it checks exact error-code preservation and unknown/malformed fallback. Thirty-one locales remain; changes are local and translations unverified.
+
+HRESULT operation translation checkpoint: added Spanish and Italian. Four current locale catalogs are structurally valid and complete; failure templates preserve placeholders and error codes. Spanish uses a neutral failure label that also fits noun-style diagnostics. Seven maintenance regressions and the synthetic-translator backend-error-text fixture passed in each repository. Twenty-nine locales remain; changes are local and translations unverified.
+
+HRESULT operation checkpoint: European/Brazilian Portuguese and Dutch added. Seven current catalogs are structurally valid and complete. Portuguese terminology distinguishes colunas/alto-falantes, controlo/controle and mistura/mixagem. Seven maintenance regressions and the synthetic error-code fixture passed before the Dutch addition; Dutch additionally passed structural validation. Twenty-six locales remain. Changes are local and translations unverified.
+
+HRESULT operation checkpoint: Polish and Czech added. Nine current catalogs are structurally valid and complete, with the neutral failure template preserving placeholder/error-code details. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Twenty-four locales remain. Changes are local and translations unverified.
+
+HRESULT operation checkpoint: Slovak, Ukrainian and Russian added. Twelve current catalogs are structurally valid and complete. Russian distinguishes buffer fill from signal level and captured samples from packets. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Twenty-one locales remain. Changes are local and translations unverified; compiled catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Greek added. Thirteen current catalogs are structurally valid and complete. The playback-padding caption describes buffered frames, while the output-buffer caption describes buffer fill rather than signal amplitude. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Twenty locales remain; translations are unverified and actual compiled-catalog UI/Windows qualification remains pending.
+
+HRESULT operation checkpoint: Turkish added. Fourteen current catalogs are structurally valid and complete. Initialization captions describe preparation, distinct from starting streams; buffer-fill captions remain distinct from audio levels. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Nineteen locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Swedish added. Fifteen current catalogs are structurally valid and complete. Buffer fill, buffered audio frames, sample values and signal level use distinct captions. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Eighteen locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Danish added. Sixteen current catalogs are structurally valid and complete. Buffer fill, buffered audio frames, sample values and signal level use distinct captions. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Seventeen locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Norwegian Bokmål added. Seventeen current catalogs are structurally valid and complete. Mute captions explicitly describe disabled sound rather than attenuation; buffer fill remains distinct from audio level. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Sixteen locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Finnish added. Eighteen current catalogs are structurally valid and complete. Initialization, stream startup, buffer fill, sample values and signal level use distinct captions. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Fifteen locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Romanian added. Nineteen current catalogs are structurally valid and complete. Buffer fill, buffered audio frames, samples and signal level use distinct captions. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Fourteen locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Hungarian added. Twenty current catalogs are structurally valid and complete. Buffer fill, buffered audio frames, samples and signal level use distinct captions. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Thirteen locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Nynorsk added after Romanian and Hungarian. Twenty-one current catalogs are structurally valid and complete. Nynorsk captions use høgtalar, lydstraum, storleik and avspeling; mute status explicitly means disabled sound. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Twelve locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Arabic added. Twenty-two current catalogs are structurally valid and complete. Buffer fill, buffered audio frames, samples and signal level use distinct captions; placeholders and hexadecimal prefix remain unchanged. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Eleven locales remain. Changes are local and translations unverified; mixed-direction rendering, actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Hebrew added. Twenty-three current catalogs are structurally valid and complete. Buffer fill, buffered audio frames, samples and signal level use distinct captions; placeholders and hexadecimal prefix remain unchanged. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Ten locales remain. Changes are local and translations unverified; mixed-direction rendering, actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Persian added. Twenty-four current catalogs are structurally valid and complete. Preparation and startup, buffer fill and signal level use distinct captions; placeholders and hexadecimal prefix remain unchanged. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Nine locales remain. Changes are local and translations unverified; mixed-direction rendering, actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Simplified Chinese added. Twenty-five current catalogs are structurally valid and complete. Buffer fill, buffered audio frames, sample values and signal level use distinct captions. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Eight locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Traditional Chinese added. Twenty-six current catalogs are structurally valid and complete. Regional terminology includes 音訊, 串流, 封包, 喇叭, 位準 and 等化器; buffer fill remains distinct from signal level. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Seven locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Japanese added. Twenty-seven current catalogs are structurally valid and complete. Buffer usage, buffered audio frames, sample values and signal level use distinct captions. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Six locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Korean added. Twenty-eight current catalogs are structurally valid and complete. Buffer usage, buffered audio frames, sample values and signal level use distinct captions. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Five locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Hindi added. Twenty-nine current catalogs are structurally valid and complete. Initialization captions describe preparation, distinct from stream startup; buffer fill remains distinct from signal level. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Four locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Indonesian added. Thirty current catalogs are structurally valid and complete. Buffer fill, buffered audio frames, sample values and signal level use distinct captions. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Three locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Vietnamese added. Thirty-one current catalogs are structurally valid and complete. Buffer fill, buffered audio frames, sample values and signal level use distinct captions. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Two locales remain. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation checkpoint: Thai added. Thirty-two current catalogs are structurally valid and complete. Preparation and startup, buffer usage and signal level use distinct captions. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Swahili remains. Changes are local and translations unverified; actual catalog UI and Windows qualification remain pending.
+
+HRESULT operation catalog batch complete: Swahili added. All 33 non-English locales now cover the known operation captions and failure template. Global required-complete/structural/compiled-hash checks pass: 521 extracted source messages across 34 catalogs. Seven maintenance regressions and the synthetic error-code fixture passed in each repository. Translations remain unverified; rebuilt application tests, actual catalog UI and Windows/package qualification remain pending. Omitted interface messages still require the second-pass audit.
+
+HRESULT batch Linux qualification: rebuilt application and localization test; full CTest suite 83/83 passed. Added actual embedded-catalog tests for four operation captions and composed failures in every non-English locale, preserving mixed-case hexadecimal codes. This does not prove native-speaker accuracy, visual rendering or Windows installation behavior.
+
+Second-pass reachability audit: two additional Windows messages are outside current extracted catalogs: the conditional microphone-start timeout and composed cable-format rejection. Their fixed producer strings and call sites were inspected; desktop mappings/catalog entries are still needed. Backend processing sources remain unchanged. See backend-composed-gaps.json; this is not a complete interface audit.
+
+Second-pass composed diagnostic fix: mapped microphone startup timeout and cable format rejection at the desktop boundary and translated both across all 33 non-English catalogs. Global required-complete and structural checks plus seven maintenance regressions pass. Added these to actual compiled-catalog mapping tests; rebuild/runtime execution remains pending. Backend sources unchanged; translations unverified.
+
+Second-pass composed diagnostic qualification: rebuilt localization-test and passed four focused Linux CTests in each repository. Actual embedded catalogs mapped the two added diagnostics in every non-English locale without English fallback. Visual/UI and Windows/package qualification remain pending; nativeReviewed remains false.
+
+Second-pass inventory refresh: current source counts reflected; test-fixture errors and invariant branding distinguished from production text. A production recovery-helper startup failure in windows_managed_route.h is not yet translated. Studio additionally has PipeWire live-engine errors requiring reachability review. Inventory remains partial and is not proof of whole-interface coverage.
+
+Recovery-helper diagnostic fix: desktop mapping added, translated in all 33 non-English locales and tested using actual compiled catalogs. Three focused Linux CTests passed in each app, including catalog completeness and maintenance regressions. Recovery-helper control flow/backend sources unchanged. Translations remain unverified; visual and Windows/package qualification pending.
+
+First-pass requalification (2026-10-08): all 83 existing Linux CTests passed, including compiled-catalog, maintenance and automated locale UI fixtures. Current extracted catalogs are populated in all 33 non-English locales. Missing interface strings deferred to the requested second pass. This run uses existing build binaries and does not certify full rebuild provenance, visual usability, native linguistic accuracy, Windows or package lifecycle. See first-pass-requalification.json.
+
+First-pass visual evidence (2026-10-08): current application rebuilt and 1280×720 Xvfb screenshots inspected. Polish Equalizer page clips the headroom label and requires outer horizontal scrolling; visual qualification fails for that layout. Studio Arabic text is present, while mixed-direction headroom and scrolling still need review. Screenshots/report saved under tests/results/localization/visual-first-pass. No native review, live audio or Windows/package qualification claimed. Missing interface text remains deferred.
+
+Headroom layout correction (2026-10-08): placed the existing translated label on a separate wrapping row with UI text direction in both apps. Rebuilt and inspected Polish 1280×720 capture: full headroom text visible. Six focused Linux tests passed. Outer page horizontal scrolling persists; broader visual, RTL and Windows/package qualification remain incomplete. No catalog/source strings or DSP/settings changed.
+
+Meter-row layout correction (2026-10-08): separated refresh/peak-marker controls and enabled peak-status wrapping. Both applications rebuilt; inspected Polish 1280×720 screenshots show the Equalizer group fitting the window with no outer horizontal scrollbar. The band strip retains its own independent scrolling. Six focused Linux tests passed per app. Other widths/locales and Windows/package qualification remain pending; DSP/settings unchanged.
+
+Windows layout candidate qualification (2026-10-08): verified installer SHA-256 from CI run 37740883415, upgraded the independent SoundCurrent VM installation, and passed all 33 installed offscreen locale/control fixtures. Silent in-place reinstall and uninstall passed: owned settings marker and unknown user file preserved; executable and uninstall registration removed; audio PnP identities/status unchanged. Reports saved as windows-installed-candidate.json and windows-candidate-lifecycle.json; opt-in lifecycle script shared by both apps. These checks do not establish native/visual review, interactive installer or driver lifecycle. Prior VM installation backups retained.
+
+Native Windows rendering checkpoint (2026-10-08): both candidates successfully reinstalled after lifecycle tests. Qt windows-platform fixtures captured all tabs for German, Polish and Arabic; selected screenshots inspected and saved under tests/results/localization/windows-visual. Polish headroom/layout fits the captured window; German settings wrap; Arabic text and effects render. Arabic headroom number/unit order remains a known mixed-direction issue. SSH-launched widget captures do not establish signed-in interactive desktop, native-language, all-locale or HiDPI qualification. Shared capture harness added; current coverage paragraph corrected.
+
+RTL headroom correction (2026-10-08): shared display helper places a signed numeric headroom value and invariant dB unit inside an LTR isolate, preserving the RTL sentence. Catalogs, stored parameters and DSP remain unchanged. Rebuilt apps/tests; six focused Linux tests passed per app. Actual Qt glyph positions verify sign/number/unit order in Arabic, Hebrew and Persian; inspected screenshots saved under rtl-headroom. Initial caret-position test was replaced because bidi boundary carets are ambiguous. Updated Windows package and other mixed-direction labels remain pending; native review unverified.
+
+RTL regional-number regression checks (2026-10-08): use the actual accelerating numeric control and Runtime with ar-EG, he-IL and fa-IR formatting. Localized negative fractional gain parses as -12.5; displayed regional digits/decimal separator retained; JSON representation and Flat machine ID unchanged. Arabic UI with German decimal-comma format verifies independent selection. Rebuilt localization targets and passed localization CTest in both apps. No production code changed; new Windows execution, visual/native review and broader numeric/file workflows remain pending.
+
+Peak/live-gain formatting correction (2026-10-08): live post-gain label now retains the selected regional decimal format when its slider moves. Peak/clipping captions and overall peak tooltip keep signed value and dBFS together in RTL prose and use QLocale formatting. Seven focused Linux tests passed per app, including actual post-gain movement under Arabic UI/German decimal formatting and rendered glyph checks for four messages across Arabic/Hebrew/Persian catalogs. Only display/test code changed; catalog strings, processing values and settings IDs unchanged. Windows updated-package and remaining mixed-direction fields still pending.
+
+Ubuntu package qualification (2026-10-08): built current DEB preview, saved SHA-256 and tested on independent Ubuntu 26.04.1 QA VM. Upgrade from prior installed version, all 33 installed offscreen locale fixtures and live regional-format slider check passed. Same-version update, apt removal and reinstall preserved owned settings/profile fixtures and an unknown user file; installed UI passed after reinstall. Preview packages and fuller logs retained under Downloads/SoundCurrent-localization-qa/linux-f425218-94aad56; repository report/test scripts added. No host app/audio changes or release publication; RPM/interactive/native qualification pending.
+
+Cross-Qt numeric regression investigation (2026-10-08): newest CI invalidates a broad pass claim. Ubuntu 24.04 fails the localized negative-gain assertion; Studio Windows fails localization without visible Qt error text. Host Qt 6.10.2 passes. Added controlled test diagnostics (Qt version, locale, input codepoints, parsed/control values) and forced stderr capture in Windows test stage. Rebuilt local localization tests pass; supported-version regression remains unresolved. RPM qualification deferred until this is understood; native review unverified.
+
+Qt 6.4 input cause/workaround (2026-10-08): CI run 37743704588 identifies ar-EG formatted U+061C - Arabic digits/decimal; Qt 6.4.2 QLocale parser rejects its own string and numeric control stays at 1.5 rather than -12.5. Shared spin validation/conversion now removes only locale presentation marks U+061C/U+200E/U+200F, preserving sign/digits/separator and caret. Rebuilt applications and passed eight focused Linux tests per app; supported Qt 6.4/Windows confirmation pending. Windows test stderr is now retained/printed on failure. Refreshed localization-guard audit: 33 target catalogs, current counts 524 EQ / 632 Studio, zero structural findings; linguistic/runtime fields remain unknown. No native review or release claim.
+
+### Windows font-backed RTL qualification
+
+The numeric presentation-mark fix passed the EQ Linux CI job on Qt 6.4.2 (run 37744428560). Studio engine CI run 37744429998 passed. Windows run 37744430081 reported an unavailable offscreen font directory before failing glyph-position checks. The Windows localization test now uses the native Windows Qt backend and system fonts; its assertions remain intact. Fresh Windows CI confirmation is pending. Missing interface strings remain deferred to the second pass.
+
+### Current package qualification (88b4337)
+
+Host Linux CTest passed 84/84. Updated Ubuntu 26.04 independent-VM packages passed all 33 installed language fixtures, mixed Arabic/German formatting, update/remove/reinstall and fixture preservation. Package CI run 37745016671 passed Ubuntu 24.04, Fedora 44 and AlmaLinux 10 container lifecycle checks. This does not establish native-speaker review or an actual RHEL desktop test. Windows CI passed; current installed Windows qualification is tracked separately. No release was published.
+
+Current installed Windows EQ launch was blocked by Defender (Trojan:Win32/Bearfoos.A!ml); false-positive status is not established. No exclusions or disabled protection were used. Windows package qualification remains incomplete.
+
+### Nynorsk Windows CI fixture coverage
+
+The installed VM harness already exercised all 33 translated locales, including Nynorsk. The Windows build script omitted nn from its explicit UI fixture list; nn has now been added without changing catalogs or processing. Fresh CI verification is pending.
+
+### Narrow high-scaling layout fix
+
+Selected-band labels now sit above their frequency/gain/Q controls, and the preset selector sits above its action buttons. Arabic at an effective 960×540 display (Xvfb 1920×1080 at 200%) now reports outer horizontal range 0 in both apps. Both first-page screenshots were inspected; four focused UI/regional-format tests passed per app. This does not qualify lower scrolled controls, Windows or rebuilt packages. No processing, IDs, stored settings or catalog strings changed.
+
+### All-locale first-page scaling measurement
+
+At 200% scale on Xvfb 1920×1080 (effective 960×540), all 33 translated locale/control fixtures passed and every first-page outer horizontal scroll maximum was zero. Measurements are recorded in tests/results/localization/hidpi/all-locales.json. This is automated geometry evidence, not visual or native-speaker review, and does not qualify lower scrolled content or Windows display scaling. Current package CI remains pending.
+
+### Scrolled high-scaling interface inspection
+
+The localization fixture can optionally capture middle and bottom scroll positions with SOUNDCURRENT_UI_CAPTURE_SCROLL. Inspected lower-page results are recorded in tests/results/localization/hidpi/scrolled/report.json. Polish Studio settings still show horizontal overflow around calibration/update controls. Default English channel names are recorded for the deferred second pass; no saved names or IDs were modified. This evidence is partial visual inspection, not native review.
+
+### Settings layout qualification
+
+Calibration and update actions now use two rows; amplifier controls are stacked, and microphone tone controls use a two-column grid. All tabs reported horizontal range zero for all 33 translated locales at effective 960×540 (200% scaling). Russian amplifier/microphone and Polish calibration/update viewports were inspected and readable. Seven focused UI, formatting, update-policy and catalog tests passed per app. Tests/results/localization/hidpi/settings-fixed records exact worktree source hashes; Windows and rebuilt packages remain pending. Processing, IDs, state and translated catalogs were unchanged.
+
+### Exact installed preview identity
+
+APT can skip a local preview whose version equals the installed package. The independent-VM localization harness now forces reinstall and compares /usr/bin executables byte-for-byte with their package contents before testing. Both current application builds passed all 33 installed locale fixtures and mixed Arabic/German formatting. Update/remove/reinstall and preservation fixtures passed. These runs supersede earlier equal-version locale checks that did not establish current executable identity; their lifecycle reinstall evidence remains separately scoped. No processing or catalogs changed.
+
+### Current Windows installed qualification
+
+Both current application builds passed all 33 installed native-backend locale fixtures, installer/executable identity checks, update/uninstall/reinstall, fixture preservation, unchanged audio-device state, and Arabic/German formatting. Defender antivirus and real-time protection were enabled. Current Linux package CI passed full suites (84 EQ / 86 Studio) and lifecycle checks on Ubuntu, Fedora and AlmaLinux. A selected native Windows viewport per app was inspected; screenshots and exact source/package hashes are recorded separately. The older EQ detection remains unresolved; no exclusion or disabled protection was introduced. Native review, interactive installer and signed-in startup remain unqualified. No release published.
+
+### Profile defaults and authored provenance
+
+New profile names, relative-response import instructions and newly authored provenance captions now use the selected interface language. Existing saved or published metadata remains verbatim; opening a profile does not rewrite it. Filenames, SHA256 digests, profile IDs and processing data are unchanged. All 33 non-English catalogs contain the eight added captions. Compiled localization and French/Arabic/Nynorsk equipment-dialog fixtures passed locally; source guards passed in both applications. These checks do not prove native-speaker accuracy or every creation field visually. Fresh Windows and installed-package qualification remains pending.
+
+### Confirmed Qt fallback file chooser gap
+
+An isolated real Qt file-dialog probe loaded the actual French app catalog and shared standard-action translator. The fallback chooser still displayed English field labels, navigation tooltips and Open; Cancel was translated. This is an unresolved interface gap, separate from native operating-system dialog language. The exact probe and limitations are recorded in tests/results/localization/qt-file-dialog-gap.json. Next: cover file-dialog/file-model contexts and actual open/save/error workflows without altering paths or filter semantics.
+
+### Basic Qt fallback chooser captions
+
+Nine chooser field/navigation captions and existing Open/Save are now mapped only in QFileDialog context. Catalogs use installed Qt 6.10.2 translations for 24 non-English locales and contextual AI translations for nine locales; all remain native-unverified. Exact provenance is in qt-file-dialog-label-origins.json; upstream copyright and GPL-3.0/Qt-exception notice are retained in docs/licenses/qt-translations-copyright.txt. This addresses basic controls only. Accessibility descriptions, file-model headers, context menus and error dialogs remain pending. Actual fallback chooser tests check fields, tooltips, open/save captions, opaque Unicode filenames and file-filter preservation.
+
+The expanded compiled Linux localization fixture passed in both apps (EQ 20.11 s; Studio 18.60 s). Its 60-second limit covers repeated real Qt chooser construction across 33 locales. It checks constructor/control state, not file acceptance, accessibility descriptions or error workflows. Windows and installed packages remain pending.
+
+### Qt chooser accessibility captions
+
+Nine accessibility captions now use the app catalog in QFileDialog context: navigation descriptions, sidebar name/description and file-view names. Qt upstream translations cover 24 non-English locales; nine locales use contextual AI translations. All remain native-unverified. Navigation refers to directory history and parent folders, not playback. Regional spot review checked pt-BR/pt-PT (Arquivos/Ficheiros, favoritos/marcadores), nb/nn (frem/fram, listevisning/listevising), Romanian/Hungarian and Arabic/Hebrew against these controls. This does not certify all upstream wording. Tests query actual QAccessible interfaces across 33 non-English locales; no screen-reader listening test is claimed. Context menus, model headers and error workflows remain pending.
+
+### Qt 6.12 Windows chooser compatibility
+
+Native Windows run 37892083899 failed the new basic chooser field assertion. Qt 6.12 upstream UI uses &Look in: and Files of &type:, where Linux Qt 6.4 uses the unmarked forms. The shared translator now maps both exact forms to existing captions; compiled tests explicitly check aliases and report actual/expected field values, locale and Qt version on mismatch. Fresh native Windows qualification is required; the preceding Linux pass does not establish it.
+
+### Qt chooser file actions and headers
+
+Exact QFileDialog context mappings now cover Rename, Delete, New Folder and Show Hidden Files. Exact QFileSystemModel mappings cover Name, Size, Type and Date Modified headers. Studio retains its existing Name catalog entries. Names and paths in model rows are opaque data. These captions describe filesystem operations; they do not rename equipment or change audio processing. Added translations retain upstream provenance and native-unverified status. Actual chooser action/header tests run in each non-English locale. Header visibility menu composition, file-type/size values and errors/confirmation workflows remain pending. No rename/delete/new-folder operation is executed by the tests.
+
+### Generic Qt file-type captions and formatting gap
+
+QAbstractFileIconProvider now maps Drive, File, Folder, Shortcut and Unknown in its exact context; Windows File Folder maps to Folder. All five captions use contextual AI translations, native-unverified. Folder refers to a filesystem directory; Shortcut means a filesystem link, not a keyboard shortcut. Actual generic-provider checks cover directory, drive and unknown paths; direct context checks cover the remaining tokens and Windows folder alias. MIME database comments and Windows file-association descriptions are not covered. Qt 6.4 upstream QFileSystemModelPrivate::size/time explicitly use QLocale::system(), so the app's selected format locale is not honored there. This is recorded as an unresolved formatting gap, not waived by the native-dialog exception.
+
+### Selected-format file display adapter feasibility
+
+Shared FileDisplayLocaleProxy now formats file sizes and dates using the selected app default locale. It is a QIdentityProxyModel; edit/path/name roles and model index identity delegate unchanged. A real QFileSystemModel fixture checks German, US English, Arabic and French formats using a 1536-byte Unicode/percent-named temporary file. No application picker uses the adapter yet: integration and actual chooser acceptance/cancel/lifecycle qualification remain required. This is bounded implementation evidence, not a completed formatting fix. Separately, hosted Windows runs for the preceding Qt 6.12 mnemonic fix succeeded at their recorded heads; newer changes remain pending.
+
+### File display adapter connected to application choosers
+
+All application open/save/directory chooser call sites now use shared FileDialogs wrappers. If the selected formatting locale equals the system locale, Qt's existing native/default picker path is retained. Otherwise the wrapper uses a Qt fallback chooser and FileDisplayLocaleProxy, allowing selected-locale sizes/dates while native dialogs keep OS behavior. Tests exercise real modal open/save/directory/cancel using isolated Unicode/percent-named temporary paths, verify the attached proxy, and verify no chooser-created save file or changed input content. This changes the chooser implementation for a differing selected format locale; native picker feature parity and interactive accessibility need further qualification. File-list menus/errors and external MIME descriptors remain separate unfinished coverage.
+
+### Qt missing-path and overwrite messages
+
+Three QFileDialog messages now use the app catalog: missing directory, missing file and overwrite confirmation. Qt upstream translations cover 24 locales and contextual AI translations cover nine; all remain native-unverified. Checks preserve the single filename placeholder, Unicode and literal percent characters. Actual French/Arabic/Nynorsk modal fixtures inspect missing-path warnings and decline overwriting, verifying the existing input remains unchanged. They inspect QMessageBox text, not a screenshot or spoken output. This does not qualify deletion/permission errors, other chooser contexts, external MIME descriptions or composed header menus. A Qt 6.4/6.12 source inventory now lists exact mapped aliases and still-unmapped strings for semantic classification; shortcut tokens/default titles are not automatically missing translations.
+
+### Qt directory/default chooser captions and all-files filter guard
+
+Directory selection and default captions now use exact QFileDialog-context mappings, including Choose, All Files, Directories, Directory, Find Directory, Recent Places, Save As and the non-mnemonic Open alias. Seven new captions have provenance records; Slovak All Files was missing upstream and uses a contextual AI translation. All remain native-unverified. The filter validator now protects (*) as well as extension patterns, and rejects changed wildcards or added filter groups. Actual fixtures inspect the initial default filter before replacing it with the profile filter, then inspect directory-mode label and Choose. Clearing Qt's filter list is not a reset-to-default operation; the initially failing test incorrectly assumed it was. Deletion errors, composed header menu grammar, external MIME descriptions and fresh platform/package qualification remain unfinished.
+
+The corrected actual default-filter check exposed an additional source outside qfiledialog.cpp/ui: QPlatformDialogHelper uses QFileDialog-context All Files (*) with uppercase Files. Both exact forms now map to the same existing caption. This demonstrates why the two-file source inventory was explicitly non-exhaustive. Native/package qualification remains pending.
+
+The expanded EQ fixture exceeded its 60-second limit under local load; Studio passed in 48.18 seconds. The localization-only CTest allowance is now 120 seconds and the hosted Windows launcher allowance is 150 seconds. Individual modal tests retain five-second watchdogs; other executable test timeouts are unchanged. A fresh completed rerun is required, not inferred from progress before timeout.
+
+### Qt deletion captions and real declined-button checks
+
+Write-protection warning, delete confirmation and directory-delete failure captions now use the selected app catalog, preserving opaque filename placeholders. Forbidden embedding/isolate direction controls found in upstream translations were removed; the existing validator and runtime RTL layout remain in force. Actual French/Arabic/Nynorsk fixtures invoke Qt's selected temporary-file Delete action and click the real No button, recording which localized warning appears and checking unchanged contents. The fixture explicitly enables the action because Qt normally enables it when opening the context menu: menu interaction and permission gating are not qualified. Setting QMessageBox::done(No) was an invalid simulation of a No click and deleted only an isolated temporary fixture; using the actual button corrected the harness. Protected-path and directory-delete failure workflows remain unexercised; direct compiled caption checks cover all 33 locales. Composed header captions, MIME descriptors and fresh native/packages remain unfinished.
+
+### Downloaded and verified 688-caption package previews
+
+The preceding directory/default-caption commit 6111c989cdc8ec2c08f6b9ce4cc0a921f2dfb781 passed hosted qualification. Three downloaded Linux packages match their SHA256 files; full CTest and install/update/uninstall/config-preservation/reinstall reports passed on Ubuntu 24.04, Fedora 44 and AlmaLinux 10 with 33 installed locale completions each. The Windows installer and staged executable hashes match the actual installed lifecycle report; 34 installed locale completion logs and French/Arabic/Nynorsk silent maintenance records were checked. Raw fixture logs and exact package paths/hashes are retained in tests/results/localization/linux-688-installed/verified-artifact.json and tests/results/localization/windows-688-installed/verified-artifact.json. These packages predate the latest deletion captions. Same-package maintenance is not older-version migration; no live audio, physical RHEL desktop, interactive installer, native-driver lifecycle or native-speaker verification is claimed. No release published; fresh deletion-patch checks remain running.
+
+### Whole-sentence file-column menu captions
+
+Qt's Show-plus-column concatenation is replaced by complete Show Size, Show Type and Show Date Modified captions across 33 non-English catalogs (contextual AI translations; native-unverified). Japanese/Korean use object-before-verb wording; French includes noun articles; German/Dutch place the verb after the object. The GUI-only runtime event filter targets QFileDialog's standard four-column file model and three header actions; custom header/action captions remain untouched by a focused proxy fixture. Show updates apply when a dialog becomes visible; language-change updates are deferred until Qt has processed its own retranslation. Tests inspect actual shown header action text, toggle and restore column visibility, and preserve an existing Unicode/percent-named selection. Earlier selection-fixture failure used a nonexistent file after showing the chooser; the visible fixture now creates and selects a real temporary file. Core-only worker initialization and current native/package checks require fresh qualification.
+
+### Deferred dialog retranslation and retirement checks
+
+The compiled fixture now sends a real QEvent::LanguageChange to the shown chooser in all 33 non-English locales. It verifies Qt first rebuilds its fragment captions, then processes the queued update and checks all three whole captions, selected paths and filter identity. A French fixture deletes a dialog after queuing its language-change callback and processes events, exercising QObject-bound callback cancellation. This tests retranslation-event ordering under the same active catalog, not live switching of the app setting (which remains restart-based), and is not a screen-reader/visual test.

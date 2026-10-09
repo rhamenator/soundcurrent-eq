@@ -1,0 +1,383 @@
+{
+  "date": "2026-10-09",
+  "scope": "Owned literal action labels supplied to Windows check/checked HRESULT composition helpers; runtime hexadecimal code preserved by exact desktop template.",
+  "sites": 61,
+  "rows": [
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Enumerate endpoints",
+      "translatedTarget": "Enumerate endpoints"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Open endpoint",
+      "translatedTarget": "Open endpoint"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Open endpoint volume",
+      "translatedTarget": "Open endpoint volume"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Read output level",
+      "translatedTarget": "Read output level"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Read output mute",
+      "translatedTarget": "Read output mute"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Set output level",
+      "translatedTarget": "Set output level"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Set output mute",
+      "translatedTarget": "Set output mute"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Automatic audio routing unavailable",
+      "translatedTarget": "Automatic audio routing unavailable"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Change default audio endpoint",
+      "translatedTarget": "Change default audio endpoint"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Open audio stream",
+      "translatedTarget": "Open audio stream"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Initialize microphone recording",
+      "translatedTarget": "Initialize microphone recording"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Open microphone reader",
+      "translatedTarget": "Open microphone reader"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Start microphone recording",
+      "translatedTarget": "Start microphone recording"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Read microphone packet size",
+      "translatedTarget": "Read microphone packet size"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Read microphone samples",
+      "translatedTarget": "Read microphone samples"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Release microphone packet",
+      "translatedTarget": "Release microphone packet"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Read next microphone packet",
+      "translatedTarget": "Read next microphone packet"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Initialize test playback",
+      "translatedTarget": "Initialize test playback"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Open test playback writer",
+      "translatedTarget": "Open test playback writer"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Size test playback buffer",
+      "translatedTarget": "Size test playback buffer"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Start test playback",
+      "translatedTarget": "Start test playback"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Read test playback padding",
+      "translatedTarget": "Read test playback padding"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Write test playback",
+      "translatedTarget": "Write test playback"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Release test playback",
+      "translatedTarget": "Release test playback"
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "helper": "checked",
+      "action": "Drain test playback",
+      "translatedTarget": "Drain test playback"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Enumerate audio devices",
+      "translatedTarget": "Enumerate audio devices"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read speaker volume",
+      "translatedTarget": "Read speaker volume"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read speaker level",
+      "translatedTarget": "Read speaker level"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read speaker mute",
+      "translatedTarget": "Read speaker mute"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Set full speaker level for EQ",
+      "translatedTarget": "Set full speaker level for EQ"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Unmute speaker for EQ",
+      "translatedTarget": "Unmute speaker for EQ"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "List audio endpoints",
+      "translatedTarget": "List audio endpoints"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Count audio endpoints",
+      "translatedTarget": "Count audio endpoints"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read audio endpoint",
+      "translatedTarget": "Read audio endpoint"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read audio endpoint ID",
+      "translatedTarget": "Read audio endpoint ID"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read audio endpoint properties",
+      "translatedTarget": "Read audio endpoint properties"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read audio endpoint name",
+      "translatedTarget": "Read audio endpoint name"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read default output endpoint",
+      "translatedTarget": "Read default output endpoint"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read default output ID",
+      "translatedTarget": "Read default output ID"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Open cable recording endpoint",
+      "translatedTarget": "Open cable recording endpoint"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Open speaker endpoint",
+      "translatedTarget": "Open speaker endpoint"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Open cable capture stream",
+      "translatedTarget": "Open cable capture stream"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Open speaker render stream",
+      "translatedTarget": "Open speaker render stream"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read microphone mix format",
+      "translatedTarget": "Read microphone mix format"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read virtual output mix format",
+      "translatedTarget": "Read virtual output mix format"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read speaker mix format",
+      "translatedTarget": "Read speaker mix format"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Initialize audio capture",
+      "translatedTarget": "Initialize audio capture"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Initialize speaker output",
+      "translatedTarget": "Initialize speaker output"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Size capture buffer",
+      "translatedTarget": "Size capture buffer"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Size output buffer",
+      "translatedTarget": "Size output buffer"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read cable capture interface",
+      "translatedTarget": "Read cable capture interface"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read speaker render interface",
+      "translatedTarget": "Read speaker render interface"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Start speaker output",
+      "translatedTarget": "Start speaker output"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Start cable capture",
+      "translatedTarget": "Start cable capture"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read cable packet size",
+      "translatedTarget": "Read cable packet size"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read cable audio",
+      "translatedTarget": "Read cable audio"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Release cable audio",
+      "translatedTarget": "Release cable audio"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read next cable packet size",
+      "translatedTarget": "Read next cable packet size"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Read output buffer level",
+      "translatedTarget": "Read output buffer level"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Write speaker buffer",
+      "translatedTarget": "Write speaker buffer"
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "helper": "check",
+      "action": "Release speaker buffer",
+      "translatedTarget": "Release speaker buffer"
+    }
+  ],
+  "sourceSha256": {
+    "src/windows_io.cpp": "13362ffd61431d9ea105ebbf5eb55df30b54904adc34a750a4da4bf9bab08ac7",
+    "src/windows_route_guardian.cpp": "4f683ce99ad6bafe227e293d94a82487157da269642e2e2298fa148bc3dfbf2d",
+    "src/windows_cable_setup_guard.cpp": "9f49a3a8590368d49f5258459202fde98991e27fd9bbc97e93488fd677fd9fa5",
+    "src/windows_audio.cpp": "6499a93ccc8429a6a257fc9c1cd52cdfae11f2045c40b6c5a037c4c614b1d0bd"
+  },
+  "tests": "Positive mapping, missing mapping and undeclared target fixtures passed in both projects; complete-catalog checks passed.",
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false,
+  "runtimeScope": "Existing compiled backend error fixtures inspect formatted diagnostic boundary; this source guard does not induce real Windows hardware faults."
+}

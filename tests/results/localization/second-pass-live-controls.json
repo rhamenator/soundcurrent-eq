@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-08",
+  "stage": "second-pass live microphone and existing tray captions",
+  "sourceSha256": "6a00951b7298134f86b6f89a37eb6e7f272c20224800cc95a37f5c1dd6f34cba",
+  "baseHead": "39e3b59ac57c9229237e5688b498321277cef42b",
+  "changes": [
+    "Automatic connected-microphone caption now uses its existing translation",
+    "Microphone tone labels retain translations after moving sliders",
+    "Initial microphone tone values use the selected regional number format",
+    "Tray Quit and initial equalizer-toggle captions use existing translations"
+  ],
+  "regression": "Every localized UI fixture moves all four microphone tone sliders and checks translated labels plus regional gain formatting, then restores fixture values",
+  "linuxTests": {
+    "command": "ctest -R 'localized-ui-|localized-number-format|translation-catalog' --output-on-failure -j 2",
+    "passed": 37,
+    "failed": 0,
+    "scope": "33 non-English locales, two pseudo-locales, regional-format fixture, catalog validation; no native-speaker review"
+  },
+  "catalogs": {
+    "total": 34,
+    "sourceMessages": 524,
+    "unfinished": 0,
+    "newStrings": 0
+  },
+  "nativeReviewed": false,
+  "remaining": [
+    "Uncaptured tray open commands and state tooltips",
+    "Provenance-aware default channel names",
+    "Other unmarked captions and helper/installer diagnostics",
+    "Changed Windows binaries and final package qualification after second pass"
+  ]
+}

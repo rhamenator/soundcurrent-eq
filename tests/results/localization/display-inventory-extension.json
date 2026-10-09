@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-09T01:57:47.034638+00:00",
+  "baseHead": "7c285daf9a765e92c0e86846a3f2541007944b0c",
+  "declaredMessages": 628,
+  "catalogs": 34,
+  "unfinished": 0,
+  "addedInventoryLocations": [
+    "addTab caption",
+    "insertTab caption",
+    "informative text",
+    "status tip",
+    "context help"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "nativeSpeakerVerification": "unverified",
+  "installedCurrentPackages": "pending",
+  "cloneLoginEvidence": "Independent QA clone reached desktop using owner credential; shut down gracefully; no installer executed",
+  "sourceSha256": {
+    "scripts/ui_string_audit.py": "aa6490bb59366d73d95db1f3253dbe07205bbe886ff486b7e4837a6b8115a1a5",
+    "tests/translation_catalogs.py": "577869366a59e527d8cb810e8165c522bbd40c83cb00e09b131f00fea72be019"
+  }
+}

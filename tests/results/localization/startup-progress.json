@@ -1,0 +1,45 @@
+{
+  "feature": "Optional start at desktop sign-in",
+  "linuxFullCTest": {
+    "passed": 56,
+    "failed": 0
+  },
+  "registrationTests": [
+    "enable/disable",
+    "exclusive app selection",
+    "preserve other application entry",
+    "unsafe path rejection"
+  ],
+  "sourceMessages": 441,
+  "translatedLocales": [
+    "fr",
+    "de",
+    "es",
+    "it",
+    "pt-PT",
+    "pt-BR",
+    "nl",
+    "pl"
+  ],
+  "nativeReviewed": false,
+  "pending": [
+    "Actual desktop sign-in test",
+    "Windows install/update/uninstall qualification"
+  ],
+  "catalogIndexSha256": "4b663edfa5bb233c7e58c02a474fdacca0fea405f25a809b856e902fdbd117e9",
+  "windowsCI": {
+    "runId": 37719070693,
+    "conclusion": "success",
+    "sourceCommit": "5cfe16b21976e27b3717a398e3df2f9299dc2593"
+  },
+  "linuxPackageCI": {
+    "runId": 37719078547,
+    "conclusion": "success",
+    "platforms": [
+      "Ubuntu 24.04",
+      "Fedora 44",
+      "AlmaLinux 10"
+    ],
+    "sourceCommit": "5cfe16b21976e27b3717a398e3df2f9299dc2593"
+  }
+}

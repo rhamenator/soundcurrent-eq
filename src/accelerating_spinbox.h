@@ -8,6 +8,7 @@
 #include <QStyleOptionSpinBox>
 #include <cmath>
 #include <algorithm>
+#include <utility>
 namespace soundcurrent {
 // The step-rate curve integrates a half Gaussian: acceleration decays smoothly
 // from its peak, and repeat speed asymptotically reaches 16 normal steps.
@@ -15,10 +16,31 @@ inline double heldSpinMultiplier(double seconds) {
     const double t=std::max(0.0,seconds-.35);
     return 1.0+15.0*std::erf(t/(1.2*std::sqrt(2.0)));
 }
+// Older Qt can emit locale direction marks that its numeric parser rejects.
+// Remove only locale presentation marks while keeping signs/digits/separators.
+inline void normalizeNumericDirectionMarks(QString &text, int *cursor=nullptr) {
+    for (int i=text.size()-1;i>=0;--i) {
+        const auto code=text.at(i).unicode();
+        if(code==0x061c || code==0x200e || code==0x200f) {
+            text.remove(i,1);
+            if(cursor && i<*cursor)--*cursor;
+        }
+    }
+}
 template<class Base> class AcceleratingSpin : public Base {
 public:
     explicit AcceleratingSpin(QWidget *parent=nullptr):Base(parent){this->setAccelerated(false);}
 protected:
+    using NumericValue=decltype(std::declval<Base>().value());
+    QValidator::State validate(QString &text, int &position) const override {
+        normalizeNumericDirectionMarks(text,&position);
+        return Base::validate(text,position);
+    }
+    NumericValue valueFromText(const QString &text) const override {
+        auto normalized=text;
+        normalizeNumericDirectionMarks(normalized);
+        return Base::valueFromText(normalized);
+    }
     void stepBy(int steps) override {
         const int multiplier=held_?std::clamp(int(std::lround(heldSpinMultiplier(clock_.elapsed()/1000.0))),1,16):1;
         Base::stepBy(steps*multiplier);

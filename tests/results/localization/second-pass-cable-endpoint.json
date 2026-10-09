@@ -1,0 +1,59 @@
+{
+  "scope": "Driver record exists but playback/recording endpoint unavailable diagnostic",
+  "sourceMessagesPerLocale": 600,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "notes": [
+      "Driver record distinct from an available playback/capture audio device",
+      "Repair advice remains conditional on an earlier reboot",
+      "Enablement advice remains conditional on disabled devices",
+      "Exact default CABLE Input/Output names preserved",
+      "Setup action inserted from translated caption",
+      "Portuguese endpoint terminology and Romanian/Swahili audio-device wording refined"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "runtimeQualification": {
+    "platform": "Linux Qt offscreen and host PowerShell 7.6.6",
+    "targetedQtTestsPassed": 40,
+    "catalogUnitTestsPassed": 20,
+    "catalogUnitTestsSkipped": 1,
+    "requiredHelperLookupsPassed": 1122,
+    "deviceLabelGuard": "accepted exact names in translated prose; rejected case change, translated names and duplicates",
+    "existingHelperRegressionFixtures": "passed",
+    "actualQuietNoActionAndMissingManagerFaults": "passed fr/ar/nn",
+    "productionEndpointUnavailablePathExecuted": false,
+    "realWindowsDeviceUIExecuted": false
+  },
+  "remainingHelperProseCandidates": {
+    "untranslatedCable": 2,
+    "invariantProductNames": 2,
+    "nativeCandidates": 0,
+    "scope": "AST literal heuristic"
+  },
+  "invariants": [
+    "Presence/readiness predicates unchanged",
+    "Signature, ownership, driver actions and exit codes unchanged",
+    "Saved names/state and numerical processing unchanged"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "WindowsCurrentChangesQualified": false,
+  "newPackagesQualified": false,
+  "VMUsed": false,
+  "remainingScope": [
+    "Cable endpoint repair instructions",
+    "NSIS installer/uninstaller translations",
+    "Windows current runtime and changed-package lifecycle qualification"
+  ],
+  "evidenceSha256": {
+    "packaging/windows/cable-setup.ps1": "a2074536e9c7b8bd0d956a2772de47c13154659647d1d7e211b882cffca0d097",
+    "scripts/localization.py": "dca9e90b8d8901820d0afd38f272363ac2c27dee5b4b35a5ec124225e08201fc",
+    "tests/translation_catalogs.py": "6e732ea2ab973c5eef155687d579364862acdb3fa4d11255dad96516b9ec6ca5",
+    "data/localization/setup-prose-backlog.json": "cb62fad34cbfe125326759018f467f05894c9643ecdc7bd8da148fdd9ae95f5b",
+    "tests/results/localization/cable-endpoint-runtime.log": "ef3323d9c62ae3a4860e6becb1b0bee46df949c156ced117ca690d3b2d2c1cf5",
+    "tests/results/localization/cable-endpoint-qt.log": "7feaefb2513122ff3afe69ceccf3d533c8b357cce9fd9705ad4d48dfa139b71f",
+    "build/soundcurrent-eq": "c945c33fe30a70c7b683a4e4d335a9394f55631641ffc3dcbfaf7df7e401e234"
+  }
+}

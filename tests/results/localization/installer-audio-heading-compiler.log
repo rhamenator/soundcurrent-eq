@@ -1,0 +1,36 @@
+Fixture from soundcurrent-eq-native.nsi
+Processing config: /etc/nsisconf.nsh
+Processing script file: "/tmp/sc-heading-nsis-1i_sdi7s/soundcurrent-eq-native.nsi" (UTF8)
+
+Processed 1 file, writing output (x86-unicode):
+
+Output: "/tmp/sc-heading-nsis-1i_sdi7s/fixture.exe"
+Install: 1 page (64 bytes), 1 section (1 required) (4120 bytes), 43 instructions (1204 bytes), 60 strings (1268 bytes), 1 language table (230 bytes).
+
+Using zlib compression.
+
+EXE header size:              133120 / 120832 bytes
+Install code:                   1026 / 5302 bytes
+Install data:                      0 / 0 bytes
+CRC (0xDCCE86D3):                  4 / 4 bytes
+
+Total size:                   134150 / 126138 bytes (106.3%)
+
+Fixture from soundcurrent-eq.nsi
+Processing config: /etc/nsisconf.nsh
+Processing script file: "/tmp/sc-heading-nsis-1i_sdi7s/soundcurrent-eq.nsi" (UTF8)
+
+Processed 1 file, writing output (x86-unicode):
+
+Output: "/tmp/sc-heading-nsis-1i_sdi7s/fixture.exe"
+Install: 1 page (64 bytes), 1 section (1 required) (4120 bytes), 43 instructions (1204 bytes), 60 strings (1248 bytes), 1 language table (230 bytes).
+
+Using zlib compression.
+
+EXE header size:              133120 / 120832 bytes
+Install code:                   1031 / 5282 bytes
+Install data:                      0 / 0 bytes
+CRC (0x2CA38009):                  4 / 4 bytes
+
+Total size:                   134155 / 126118 bytes (106.3%)
+

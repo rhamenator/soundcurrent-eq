@@ -1,0 +1,45 @@
+{
+  "status": "adapter wired to all application chooser call sites; both apps rebuilt and local modal/format/equipment fixtures passed",
+  "scope": "Selected-format sizes/dates for QFileSystemModel display roles only",
+  "sourceSha256": {
+    "src/file_display_locale_proxy.h": "73bf365758b447200f7170819f8cf998e40b1ba584122cad51ec5de855593435",
+    "src/localized_file_dialog.h": "db8e7403e18efca39f41bcb02238c94297e09cc9b9a1f9870f12276bdc58a7ff",
+    "tests/localization.cpp": "1a85dc5352c817900ab2b17b61f0fd1343617b4fbb25da3b47a527f4ddcc51f0"
+  },
+  "testFormats": [
+    "de-DE",
+    "en-US",
+    "ar-EG",
+    "fr-FR"
+  ],
+  "invariants": "Opaque Unicode/literal-percent file identity, edit/path/name roles, source index mapping unchanged",
+  "remaining": [
+    "Native Windows and fresh installed packages",
+    "Chooser menus/error workflows and external MIME descriptor coverage",
+    "Native OS chooser interactions"
+  ],
+  "nativeReviewed": false,
+  "localFixture": {
+    "result": "passed",
+    "log": "tests/results/localization/file-display-locale-adapter-linux.log",
+    "sha256": "6551597a2751937130c01fd1fba48e949f4a146aa67c2556518f83f9f67f2f41"
+  },
+  "policy": "Existing Qt native/default picker path if selected format locale equals system; otherwise Qt fallback with locale display proxy",
+  "modalFixture": {
+    "result": "passed",
+    "eqSeconds": 31.05,
+    "studioSeconds": 36.66,
+    "scope": "Actual modal shared wrappers with temporary Unicode/percent paths, differing selected/system formats; plus standalone size/date tests in four formats. No native OS dialog test."
+  },
+  "equipmentFixture": {
+    "result": "passed",
+    "locales": [
+      "fr",
+      "ar",
+      "nn"
+    ],
+    "log": "tests/results/localization/file-dialog-integration-equipment-linux.log",
+    "sha256": "a1480acc99173807eaf05c378fa074eac9912812af6225d75b72b31f3dc37adb",
+    "scope": "Actual compiled equipment-dialog fixture; not all main-window chooser interactions"
+  }
+}

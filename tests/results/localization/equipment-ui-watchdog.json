@@ -1,0 +1,61 @@
+{
+  "scope": "Equipment UI fixture timing and warning acknowledgement",
+  "applicationCodeChanged": false,
+  "fixtureChanges": [
+    "Click the actual malformed-import OK button",
+    "Log phase transitions with monotonic elapsed time",
+    "Replace one 20-second whole-fixture deadline with a 20-second no-phase-progress watchdog",
+    "Retain a separate external 120-second CTest cap"
+  ],
+  "watchdogLimitations": [
+    "GUI watchdog cannot execute while its event loop is blocked; external CTest cap bounds that case"
+  ],
+  "observations": [
+    {
+      "process": "EQ equipment UI fixture (Turkish and Finnish)",
+      "state": "D (uninterruptible I/O sleep)",
+      "kernelWait": "jbd2_log_wait_commit"
+    },
+    {
+      "instrumentedOldFixture": "Studio Swedish",
+      "progress": "Phase 3 at 18269 ms; phase 5 at 18364 ms before fixed whole-fixture timeout"
+    },
+    {
+      "instrumentedOldFixture": "Studio Swahili",
+      "progress": "Phase 3 at 17993 ms; phase 5 at 18093 ms before fixed whole-fixture timeout"
+    }
+  ],
+  "earlierFailuresPreserved": "tests/results/localization/second-pass-taxonomy-remaining.json",
+  "qualification": {
+    "platform": "Linux Qt offscreen",
+    "equipmentUI": {
+      "passed": 34,
+      "failed": 0,
+      "serial": true,
+      "elapsedSeconds": 332.04
+    },
+    "catalogAndMainLocalizedUI": "38 tests passed on current application source in preceding taxonomy run",
+    "WindowsAndPackages": "pending"
+  },
+  "nativeSpeakerVerification": "unverified",
+  "newPackagesQualified": false,
+  "retryHistory": [
+    {
+      "fixture": "original",
+      "cases": 12,
+      "passed": 11,
+      "failed": [
+        "equipment-ui-pt-BR"
+      ]
+    },
+    {
+      "fixture": "original",
+      "isolatedHindi": "passed in 9.34 seconds"
+    }
+  ],
+  "evidence": {
+    "log": "tests/results/localization/equipment-ui-watchdog-run.log",
+    "logSha256": "9e9602a1c6116fb76df9d6332b170716012edfeb7df9184b5005354e0088df3f",
+    "applicationBinarySha256": "c3d5750a429dcd91e92ea6a03a6364f7d5ea2793e6298df8139efc3165d32163"
+  }
+}

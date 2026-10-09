@@ -1,0 +1,17 @@
+272 generated captions; syntax-only fixture uses English language ID for every locale string. No real language selection or UI layout qualification.
+Processing config: /etc/nsisconf.nsh
+Processing script file: "/tmp/sc-driver-check-akyckh7p/captions.nsi" (UTF8)
+
+Processed 1 file, writing output (x86-unicode):
+
+Output: "/tmp/sc-driver-check-akyckh7p/captions.exe"
+Install: 1 page (64 bytes), 1 section (1 required) (4120 bytes), 312 instructions (8736 bytes), 258 strings (24462 bytes), 1 language table (1314 bytes).
+
+Using zlib compression.
+
+EXE header size:              133120 / 120832 bytes
+Install code:                   8641 / 37112 bytes
+Install data:                      0 / 0 bytes
+CRC (0x094F2509):                  4 / 4 bytes
+
+Total size:                   141765 / 157948 bytes (89.7%)

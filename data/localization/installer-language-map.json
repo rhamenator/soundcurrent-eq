@@ -1,0 +1,243 @@
+{
+  "schema": 1,
+  "languages": [
+    {
+      "tag": "en",
+      "nsisLanguage": "English",
+      "windowsLanguageId": 1033,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "de",
+      "nsisLanguage": "German",
+      "windowsLanguageId": 1031,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "fr",
+      "nsisLanguage": "French",
+      "windowsLanguageId": 1036,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "es",
+      "nsisLanguage": "Spanish",
+      "windowsLanguageId": 1034,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "it",
+      "nsisLanguage": "Italian",
+      "windowsLanguageId": 1040,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "pt-PT",
+      "nsisLanguage": "Portuguese",
+      "windowsLanguageId": 2070,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "pt-BR",
+      "nsisLanguage": "PortugueseBR",
+      "windowsLanguageId": 1046,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "nl",
+      "nsisLanguage": "Dutch",
+      "windowsLanguageId": 1043,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "pl",
+      "nsisLanguage": "Polish",
+      "windowsLanguageId": 1045,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "cs",
+      "nsisLanguage": "Czech",
+      "windowsLanguageId": 1029,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "sk",
+      "nsisLanguage": "Slovak",
+      "windowsLanguageId": 1051,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "uk",
+      "nsisLanguage": "Ukrainian",
+      "windowsLanguageId": 1058,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "ru",
+      "nsisLanguage": "Russian",
+      "windowsLanguageId": 1049,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "el",
+      "nsisLanguage": "Greek",
+      "windowsLanguageId": 1032,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "tr",
+      "nsisLanguage": "Turkish",
+      "windowsLanguageId": 1055,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "sv",
+      "nsisLanguage": "Swedish",
+      "windowsLanguageId": 1053,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "da",
+      "nsisLanguage": "Danish",
+      "windowsLanguageId": 1030,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "nb",
+      "nsisLanguage": "Norwegian",
+      "windowsLanguageId": 1044,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "fi",
+      "nsisLanguage": "Finnish",
+      "windowsLanguageId": 1035,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "ro",
+      "nsisLanguage": "Romanian",
+      "windowsLanguageId": 1048,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "hu",
+      "nsisLanguage": "Hungarian",
+      "windowsLanguageId": 1038,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "ar",
+      "nsisLanguage": "Arabic",
+      "windowsLanguageId": 1025,
+      "rtl": true,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "he",
+      "nsisLanguage": "Hebrew",
+      "windowsLanguageId": 1037,
+      "rtl": true,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "fa",
+      "nsisLanguage": "Farsi",
+      "windowsLanguageId": 1065,
+      "rtl": true,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "zh-Hans",
+      "nsisLanguage": "SimpChinese",
+      "windowsLanguageId": 2052,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "zh-Hant",
+      "nsisLanguage": "TradChinese",
+      "windowsLanguageId": 1028,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "ja",
+      "nsisLanguage": "Japanese",
+      "windowsLanguageId": 1041,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "ko",
+      "nsisLanguage": "Korean",
+      "windowsLanguageId": 1042,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "hi",
+      "nsisLanguage": "Hindi",
+      "windowsLanguageId": 1081,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "id",
+      "nsisLanguage": "Indonesian",
+      "windowsLanguageId": 1057,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "vi",
+      "nsisLanguage": "Vietnamese",
+      "windowsLanguageId": 1066,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "th",
+      "nsisLanguage": "Thai",
+      "windowsLanguageId": 1054,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    },
+    {
+      "tag": "sw",
+      "nsisLanguage": "Swahili",
+      "windowsLanguageId": 1089,
+      "rtl": false,
+      "builtinAssetsExpected": false
+    },
+    {
+      "tag": "nn",
+      "nsisLanguage": "NorwegianNynorsk",
+      "windowsLanguageId": 2068,
+      "rtl": false,
+      "builtinAssetsExpected": true
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+Installer ou mettre à jour soundcurrent-eq 1.1.0 sur Fedora Linux 44 (Container Image) ? Vos préréglages et profils sont conservés. Le gestionnaire de paquets installe les dépendances et ajoute une icône au menu des applications. Une autorisation administrateur est nécessaire. Un seul égaliseur doit être actif à la fois.
+Continuer ? [y/N] Y
+Updating and loading repositories:
+Repositories loaded.
+Package "soundcurrent-eq-1.1.0-1.fc44.x86_64" is already installed.
+
+Nothing to do.
+soundcurrent-eq 1.1.0 a été installé. Ouvrez-le depuis le menu des applications. Utilisez «Quitter l’application» puis rouvrez l’application après une mise à jour. Aucune désinstallation ni aucun redémarrage du système n’est nécessaire pour mettre à jour l’application.

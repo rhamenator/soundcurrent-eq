@@ -42,7 +42,7 @@ BrandingText "SoundCurrent EQ • GPL-3.0-only"
 Icon "${SOURCE_ROOT}\data\soundcurrent-eq.ico"
 UninstallIcon "${SOURCE_ROOT}\data\soundcurrent-eq.ico"
 
-!define MUI_WELCOMEPAGE_TEXT "Install or update SoundCurrent EQ. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.$\r$\n$\r$\nSave your work and use Quit to exit the running app before continuing. Closing its window keeps it running in the background."
+!define MUI_WELCOMEPAGE_TEXT "$(SCWelcome)"
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_LICENSE "${SOURCE_ROOT}\LICENSE"
 !insertmacro MUI_PAGE_DIRECTORY
@@ -54,6 +54,23 @@ Page custom AudioPage AudioPageLeave
 !insertmacro MUI_UNPAGE_CONFIRM
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_LANGUAGE "English"
+LangString SCQuitBeforeUpdate ${LANG_ENGLISH} "Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed."
+LangString SCQuitBeforeUninstall ${LANG_ENGLISH} "Quit SoundCurrent EQ before uninstalling it."
+LangString SCCableSetupProgress ${LANG_ENGLISH} "Opening VB-CABLE setup..."
+LangString SCSetupRetryProgress ${LANG_ENGLISH} "VB-CABLE setup did not finish. Retry using the Start menu shortcut."
+LangString SCCableRemovalFailed ${LANG_ENGLISH} "VB-CABLE removal did not finish. This app was kept so you can retry."
+LangString SCSetupFailedAppInstalled ${LANG_ENGLISH} "VB-CABLE setup did not finish. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason."
+LangString SCWelcome ${LANG_ENGLISH} "Install or update SoundCurrent EQ. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.$\r$\n$\r$\nSave your work and quit the running app before continuing. Closing its window keeps it running in the background."
+LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
+LangString SCCableRouting ${LANG_ENGLISH} "VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome."
+LangString SCCableSharedNotice ${LANG_ENGLISH} "Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled."
+LangString SCCableSignedInstaller ${LANG_ENGLISH} "Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings."
+LangString SCCableRepair ${LANG_ENGLISH} "VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again."
+LangString SCCablePresent ${LANG_ENGLISH} "VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use Quit app."
+LangString SCCableRestart ${LANG_ENGLISH} "VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings."
+LangString SCDriverCheckFailed ${LANG_ENGLISH} "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu."
+LangString SCInstallDriver ${LANG_ENGLISH} "Install VB-CABLE if missing (administrator approval)"
+LangString SCSetupAudio ${LANG_ENGLISH} "Set up VB-CABLE for SoundCurrent EQ."
 
 Function .onInit
   ; Migrate the old install location, including custom folders.
@@ -67,6 +84,8 @@ Function .onInit
   InitPluginsDir
   SetOutPath "$PLUGINSDIR"
   ; Readiness detection needs the helper and its runtime before installation.
+  File "${DLL_DIR}\setup-localization.ps1"
+  File "${DLL_DIR}\setup-translations.json"
   File "${DLL_DIR}\soundcurrent-cable-setup-guard.exe"
   File "${DLL_DIR}\Qt6Core.dll"
   File "${DLL_DIR}\msvcp140*.dll"
@@ -82,32 +101,32 @@ Function .onInit
 FunctionEnd
 
 Function AudioPage
-  !insertmacro MUI_HEADER_TEXT "Connect your audio" "Set up VB-CABLE for SoundCurrent EQ."
+  !insertmacro MUI_HEADER_TEXT "$(SCConnectAudio)" "$(SCSetupAudio)"
   nsDialogs::Create 1018
   Pop $0
   ${If} $0 == error
     Abort
   ${EndIf}
-  ${NSD_CreateLabel} 0 0 100% 32u "VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome."
+  ${NSD_CreateLabel} 0 0 100% 32u "$(SCCableRouting)"
   Pop $0
-  ${NSD_CreateCheckbox} 0 38u 100% 18u "Install VB-CABLE if missing (administrator approval)"
+  ${NSD_CreateCheckbox} 0 38u 100% 18u "$(SCInstallDriver)"
   Pop $DriverChoice
   ${If} $DriverCheck == 0
     ${NSD_Check} $DriverChoice
-    ${NSD_CreateLabel} 0 65u 100% 35u "VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or Quit."
+    ${NSD_CreateLabel} 0 65u 100% 35u "$(SCCablePresent)"
   ${ElseIf} $DriverCheck == 3010
-    ${NSD_CreateLabel} 0 65u 100% 35u "VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings."
+    ${NSD_CreateLabel} 0 65u 100% 35u "$(SCCableRestart)"
   ${ElseIf} $DriverCheck == 11
     ${NSD_Check} $DriverChoice
-    ${NSD_CreateLabel} 0 65u 100% 35u "VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again."
+    ${NSD_CreateLabel} 0 65u 100% 35u "$(SCCableRepair)"
   ${ElseIf} $DriverCheck == 10
     ${NSD_Check} $DriverChoice
-    ${NSD_CreateLabel} 0 65u 100% 35u "Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings."
+    ${NSD_CreateLabel} 0 65u 100% 35u "$(SCCableSignedInstaller)"
   ${Else}
-    ${NSD_CreateLabel} 0 65u 100% 35u "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu."
+    ${NSD_CreateLabel} 0 65u 100% 35u "$(SCDriverCheckFailed)"
   ${EndIf}
   Pop $0
-  ${NSD_CreateLabel} 0 108u 100% 40u "Quit any running equalizer before driver setup. The last app’s uninstaller offers VB-CABLE removal. Other software may also need it. Extra A/B cables are not bundled."
+  ${NSD_CreateLabel} 0 108u 100% 40u "$(SCCableSharedNotice)"
   Pop $0
   nsDialogs::Show
 FunctionEnd
@@ -118,7 +137,7 @@ FunctionEnd
 Section "SoundCurrent EQ" main
   FindWindow $0 "" "SoundCurrent EQ"
   StrCmp $0 0 +3
-    MessageBox MB_ICONEXCLAMATION "Quit SoundCurrent EQ before updating. Closing the window keeps it running. No uninstall is needed."
+    MessageBox MB_ICONEXCLAMATION "$(SCQuitBeforeUpdate)"
     Abort
   SetOutPath "$INSTDIR"
 !ifdef DLL_DIR
@@ -152,17 +171,17 @@ Section "SoundCurrent EQ" main
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "NoModify" 1
   WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCurrentEQ" "NoRepair" 1
   ${If} $InstallDriver == ${BST_CHECKED}
-    DetailPrint "Opening VB-CABLE setup..."
+    DetailPrint "$(SCCableSetupProgress)"
     nsExec::ExecToStack '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy RemoteSigned -File "$INSTDIR\audio-setup.ps1" -Install -Quiet'
     Pop $0
     Pop $1
     DetailPrint $1
     ${If} $0 == 3010
       SetRebootFlag true
-      MessageBox MB_OK|MB_ICONINFORMATION "Restart Windows before using SoundCurrent or VB-CABLE settings. The audio driver installation needs a system restart." /SD IDOK
+      MessageBox MB_OK|MB_ICONINFORMATION "$(SCCableRestart)" /SD IDOK
     ${ElseIf} $0 != 0
-      DetailPrint "VB-CABLE setup did not finish. Retry using the Start menu shortcut."
-      MessageBox MB_OK|MB_ICONINFORMATION "VB-CABLE setup did not finish. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason."
+      DetailPrint "$(SCSetupRetryProgress)"
+      MessageBox MB_OK|MB_ICONINFORMATION "$(SCSetupFailedAppInstalled)"
     ${EndIf}
   ${EndIf}
 SectionEnd
@@ -170,8 +189,12 @@ SectionEnd
 Section "Uninstall"
   FindWindow $0 "" "SoundCurrent EQ"
   StrCmp $0 0 +3
-    MessageBox MB_ICONEXCLAMATION "Quit SoundCurrent EQ before uninstalling it."
+    MessageBox MB_ICONEXCLAMATION "$(SCQuitBeforeUninstall)"
     Abort
+  ; Remove only this application's shared per-user login entry.
+  ReadRegStr $1 HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "SoundCurrent"
+  StrCmp $1 '"$INSTDIR\soundcurrent-eq.exe" --background' 0 +2
+    DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "SoundCurrent"
   ; Interactive removal offers the official shared cable remover. Silent app
   ; updates/uninstalls keep the cable; they never display UAC or vendor dialogs.
   IfSilent cable_keep cable_remove
@@ -183,7 +206,7 @@ Section "Uninstall"
   ${If} $0 == 3010
     SetRebootFlag true
   ${ElseIf} $0 != 0
-    MessageBox MB_ICONEXCLAMATION "VB-CABLE removal did not finish. This app was kept so you can retry.$\r$\n$1"
+    MessageBox MB_ICONEXCLAMATION "$(SCCableRemovalFailed)$\r$\n$1"
     Abort
   ${EndIf}
   cable_keep:

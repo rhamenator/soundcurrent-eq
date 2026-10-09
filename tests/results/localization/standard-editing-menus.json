@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-09",
+  "sourceMessages": 636,
+  "catalogs": 34,
+  "unfinished": 0,
+  "nativeReviewed": false,
+  "scope": "Qt standard text editing menus and spin-box captions",
+  "addedSources": [
+    "Redo",
+    "Cut",
+    "Copy",
+    "Paste",
+    "Delete",
+    "Select all",
+    "Step up",
+    "Step down"
+  ],
+  "localChecks": {
+    "compiledQtLineEditAndTextEditMenus": "passed for all 33 non-English catalogs",
+    "spinCaptionContextLookup": "passed alongside actual popup selection and exact 0.5 increment in all 33 non-English catalogs",
+    "unrelatedPluginContextUnmodified": "passed",
+    "catalogStructuralAndHashChecks": "passed",
+    "platformThemeButtons": "all 18 captions passed for all 33 catalogs using both offscreen and X11 locally",
+    "gnomeThemeAliases": "Close and discard captions covered by explicit context lookup and actual X11 button fixtures"
+  },
+  "limitations": [
+    "Native linguistic verification pending",
+    "Current revision Windows and package validation pending",
+    "Whole-interface coverage remains under audit",
+    "Automated menu interaction is not a human visual or native-speaker review"
+  ],
+  "localVmStarted": false,
+  "regressionFound": "X11 GNOME theme used QGnomeTheme with &Save, &Close, &Cancel and Close without Saving; fixed with context-restricted aliases"
+}

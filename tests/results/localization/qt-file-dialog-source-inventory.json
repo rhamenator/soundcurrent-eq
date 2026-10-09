@@ -1,0 +1,376 @@
+{
+  "scope": "Qt QFileDialog tr-literal/UI-string inventory for two upstream versions; not exhaustive runtime strings, not an app coverage proof. Keyboard shortcut strings/default titles require separate semantic classification.",
+  "versions": {
+    "6.4": {
+      "upstreamSourceSha256": "9aa7a98688c8da797a19c42314965c2cca56ad179908430b45a4b23be5042219",
+      "upstreamUiSha256": "8128c4c19079455e97ada74c78e096be550a25fe95d5ccfc78df97aa83c68dab",
+      "captionRecords": [
+        {
+          "source": "%1\nDirectory not found.\nPlease verify the correct directory name was given.",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "%1\nFile not found.\nPlease verify the correct file name was given.",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "%1 already exists.\nDo you want to replace it?",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "&Choose",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "&Delete",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "&New Folder",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "&Open",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "&Rename",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "&Save",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "'%1' is write protected.\nDo you want to delete it anyway?",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "All files (*)",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Alt+Left",
+          "status": "key sequence binding literal; preserved rather than translated as caption"
+        },
+        {
+          "source": "Alt+Right",
+          "status": "key sequence binding literal; preserved rather than translated as caption"
+        },
+        {
+          "source": "Alt+Up",
+          "status": "key sequence binding literal; preserved rather than translated as caption"
+        },
+        {
+          "source": "Are you sure you want to delete '%1'?",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Back",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Change to detail view mode",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Change to list view mode",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Could not delete directory.",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Create New Folder",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Create a New Folder",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Delete",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Detail View",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Directories",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Directory:",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "File &name:",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Files",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Files of type:",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Find Directory",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Forward",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Go back",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Go forward",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Go to the parent directory",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "List View",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "List of places and bookmarks",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Look in:",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "New Folder",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Open",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Parent Directory",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Recent Places",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Save As",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Show ",
+          "status": "fragment replaced by whole header-action captions on shown standard dialogs; custom models preserved; see qt-file-dialog-header-captions.json"
+        },
+        {
+          "source": "Show &hidden files",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Sidebar",
+          "status": "exact alias mapped"
+        }
+      ]
+    },
+    "6.12": {
+      "upstreamSourceSha256": "a2971f0f6db6e9859838a5ccb46abe73ee3350344e4899133c1cb6b3430b6dc0",
+      "upstreamUiSha256": "32fb5c818704600694ac386f7e4820b80f951a22e95eddfb7d0b9ecec80a0546",
+      "captionRecords": [
+        {
+          "source": "%1\nDirectory not found.\nPlease verify the correct directory name was given.",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "%1\nFile not found.\nPlease verify the correct file name was given.",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "%1 already exists.\nDo you want to replace it?",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "&Choose",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "&Delete",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "&Look in:",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "&New Folder",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "&Open",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "&Rename",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "&Save",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "'%1' is write protected.\nDo you want to delete it anyway?",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "All files (*)",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Alt+Left",
+          "status": "key sequence binding literal; preserved rather than translated as caption"
+        },
+        {
+          "source": "Alt+Right",
+          "status": "key sequence binding literal; preserved rather than translated as caption"
+        },
+        {
+          "source": "Alt+Up",
+          "status": "key sequence binding literal; preserved rather than translated as caption"
+        },
+        {
+          "source": "Are you sure you want to delete '%1'?",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Back",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Change to detail view mode",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Change to list view mode",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Could not delete directory.",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Create New Folder",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Create a New Folder",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Delete",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Detail View",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Directories",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Directory:",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "File &name:",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Files",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Files of &type:",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Find Directory",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Forward",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Go back",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Go forward",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Go to the parent directory",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "List View",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "List of places and bookmarks",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "New Folder",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Open",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Parent Directory",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Recent Places",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Save As",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Show ",
+          "status": "fragment replaced by whole header-action captions on shown standard dialogs; custom models preserved; see qt-file-dialog-header-captions.json"
+        },
+        {
+          "source": "Show &hidden files",
+          "status": "exact alias mapped"
+        },
+        {
+          "source": "Sidebar",
+          "status": "exact alias mapped"
+        }
+      ]
+    }
+  },
+  "nativeReviewed": false,
+  "additionalPlatformHelper": {
+    "source": "https://github.com/qt/qtbase/blob/6.4/src/gui/kernel/qplatformdialoghelper.cpp",
+    "sha256": "697a82c54a3dcaf990630c63abc66c2cb37022906113c53d73f14b5b99e7107a",
+    "caption": "All Files (*)",
+    "status": "exact alias mapped; discovered by actual default-filter fixture"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "stage": "Czech and Slovak complete extracted catalog checkpoint",
+  "catalogs": [
+    {
+      "tag": "cs",
+      "name": "Čeština",
+      "translated": 441,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "da39ed37ee0f2523774d4bb4debd71e8d5982f807f0f518aaccb51127a3c0217",
+      "qmSha256": "ac315fa6ff07ee74ecbca38e945e8c477a44c6d77b34f46c2bbf229e6c3f491f"
+    },
+    {
+      "tag": "sk",
+      "name": "Slovenčina",
+      "translated": 441,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "2b74cfa6278c989f5aa346110837022526c224d73d75b6e405d38e11b0fa56e1",
+      "qmSha256": "6f2cb2a8b2820432a31e40c0decc92a1d628d6d9617521b4fc175e4056600abb"
+    }
+  ],
+  "linuxTests": {
+    "passed": 58,
+    "total": 58,
+    "scope": "Full CTest including Czech/Slovak equipment import/edit/save workflows and all configured main windows",
+    "log": "/tmp/soundcurrent-eq-cs-sk-complete-tests.log"
+  },
+  "visualInspection": {
+    "platform": "xcb/Xvfb",
+    "display": "1280x720",
+    "sample": "Czech EQ Settings",
+    "screenshots": "/tmp/sc-eq-cs-complete-xcb"
+  },
+  "review": "Contextual AI review, unverified. Render counts use label form to avoid fixed plural endings. HTML links unchanged, measured response differs from inverted correction, wet contribution differs from post gain.",
+  "nativeReviewed": false,
+  "windows": {
+    "runId": 37719842558,
+    "conclusion": "success",
+    "sourceCommit": "625ae9733f2c9dbc53cf6ff1480260ac4c55e2c3",
+    "scope": "Windows build, staged runtime and installer creation; actual desktop sign-in and manual installer lifecycle separate"
+  },
+  "remaining": "22 target locales incomplete; small-screen Polish layout, own backend/installer text and actual Windows lifecycle/sign-in qualification remain open."
+}

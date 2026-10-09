@@ -1,0 +1,19 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  glib-networking glib-networking-common glib-networking-services libasyncns0
+  libflac12t64 libjson-glib-1.0-0 libjson-glib-1.0-common liblua5.4-0
+  libmp3lame0 libmpg123-0t64 libogg0 libopus0 libpipewire-0.3-modules
+  libpolkit-agent-1-0 libpolkit-gobject-1-0 libpulse0 libroc0.3
+  libsnapd-glib-2-1 libsndfile1 libsoup-3.0-0 libsoup-3.0-common libspeexdsp1
+  libvorbis0a libvorbisenc2 libwireplumber-0.4-0 pipewire pipewire-bin
+  pipewire-pulse polkitd pulseaudio-utils rtkit sgml-base wireplumber xml-core
+Use 'apt autoremove' to remove them.
+The following packages will be REMOVED:
+  soundcurrent-eq
+0 upgraded, 0 newly installed, 1 to remove and 2 not upgraded.
+After this operation, 0 B of additional disk space will be used.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 40713 files and directories currently installed.)
+Removing soundcurrent-eq (1.1.0) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...

@@ -1,90 +1,525 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-only
-"""Maintain Qt Linguist catalogs. Runtime/builds use embedded, verified QM files.
---update extracts strings, preserves translator edits and compiles with lrelease.
---check requires no translation tools; it audits inventory, placeholders and hashes.
+"""Maintain embedded Qt catalogs without losing unfinished translator work.
+
+--check is structural validation, not linguistic certification. Numerus messages
+are rejected until language-specific Qt plural rules are explicitly supported.
 """
-import argparse,ast,hashlib,json,re,shutil,subprocess,sys
+import argparse
+import ast
+import copy
+import hashlib
+import json
+import re
+import shutil
+import subprocess
+from collections import Counter
+from html.parser import HTMLParser
 from pathlib import Path
 import xml.etree.ElementTree as ET
-ROOT=Path(__file__).resolve().parents[1]
-DATA=ROOT/'data/localization'
-LITERAL=r'"(?:\\.|[^"\\])*"'
-MESSAGE=re.compile(r'\b(?:SC_TR|text)\(\s*((?:'+LITERAL+r'\s*)+)\)')
-PLACEHOLDER=re.compile(r'%L?\d+|%n')
+
+ROOT = Path(__file__).resolve().parents[1]
+DATA = ROOT / 'data/localization'
+LITERAL = r'"(?:\\.|[^"\\])*"'
+PLACEHOLDER = re.compile(r'%L?[1-9][0-9]?|%Ln|%n')
+
+
+def literal(expression):
+    expression = expression.strip()
+    if not re.fullmatch(r'(?:' + LITERAL + r'\s*)+', expression):
+        return None
+    return ''.join(ast.literal_eval(s) for s in re.findall(LITERAL, expression))
+
+
+def display_literal(expression):
+    """Read a direct UI literal, including exact Qt string wrappers.
+
+    Does not evaluate C++, concatenate dynamic expressions or infer user text.
+    Translation calls are deliberately not wrappers in this list.
+    """
+    value = literal(expression)
+    if value is not None:
+        return value
+    match = re.fullmatch(r'(?:QStringLiteral|QString|QLatin1String|QLatin1StringView)\s*\((.*)\)',
+                         expression.strip(), re.S)
+    return literal(match.group(1)) if match else None
+
+
+def calls(code, name):
+    """Extract call arguments; skip comments/strings and track nested brackets."""
+    tokens = re.compile(r'//[^\n]*|/\*[\s\S]*?\*/|' + LITERAL + r"|'(?:\\.|[^'\\])*'|\b[A-Za-z_]\w*\b|[^\s]")
+    parts = list(tokens.finditer(code))
+    for i, token in enumerate(parts):
+        if token.group() != name or i + 1 >= len(parts) or parts[i + 1].group() != '(':
+            continue
+        depth = 0
+        start = parts[i + 1].end()
+        arguments = []
+        for part in parts[i + 2:]:
+            value = part.group()
+            if value in ('(', '[', '{'):
+                depth += 1
+            elif value in (')', ']', '}'):
+                if depth == 0:
+                    arguments.append(code[start:part.start()].strip())
+                    yield arguments
+                    break
+                depth -= 1
+            elif value == ',' and depth == 0:
+                arguments.append(code[start:part.start()].strip())
+                start = part.end()
+
+
+def marked_sources(directory):
+    """Discover explicit translation markers in every C++ source/header/adapter."""
+    out = set()
+    for path in sorted(directory.rglob('*')):
+        if path.suffix not in ('.cpp', '.h', '.hpp', '.inc'):
+            continue
+        for args in calls(path.read_text(encoding='utf-8'), 'SC_TR'):
+            value = literal(args[0]) if args else None
+            if value is not None:
+                if len(args) > 1 and args[1] != '-1':
+                    raise ValueError('Numerus extraction needs explicit Qt language plural rules')
+                out.add(value)
+    return out
+
+
+def check_platform_errors(code):
+    """Qt adapter errors are user-facing; backend diagnostics are separate."""
+    for args in calls(code, 'runtime_error'):
+        if args and literal(args[0]) is not None:
+            raise ValueError('Unmarked Windows adapter error: ' + literal(args[0]))
+
+
+def setup_sources():
+    """Declared owned helper literals also belong to the catalog source inventory."""
+    values = json.loads((DATA / 'setup-sources.json').read_text(encoding='utf-8'))
+    if (not isinstance(values, list) or
+            any(not isinstance(value, str) or not value.strip() for value in values) or
+            len(values) != len(set(values))):
+        raise ValueError('Invalid setup source inventory: expected unique nonempty strings')
+    return set(values)
+
+
+def desktop_sources():
+    """Launcher descriptions are owned prose; names/commands remain stable identities."""
+    return {line.removeprefix('Comment=') for path in DATA.parent.glob('*.desktop')
+            for line in path.read_text(encoding='utf-8').splitlines() if line.startswith('Comment=')}
+
+
+def desktop_comments(source, tags):
+    comments = []
+    aliases = {'zh-Hans': ('zh_Hans', 'zh_CN', 'zh_SG'),
+               'zh-Hant': ('zh_Hant', 'zh_TW', 'zh_HK', 'zh_MO')}
+    for tag in tags:
+        if tag == 'en':
+            continue
+        message = entries(DATA / f'soundcurrent_{tag}.ts').get(source)
+        if message is None or not finished(message):
+            raise ValueError('Untranslated launcher description: ' + tag)
+        value = message.findtext('translation')
+        if any(c in value for c in ('\n', '\r', '\t')):
+            raise ValueError('Launcher description must remain a single line')
+        value = value.replace('\\', '\\\\')
+        for locale in aliases.get(tag, (tag.replace('-', '_'),)):
+            comments.append(f'Comment[{locale}]={value}')
+    return comments
+
+
+def maintain_desktop_comments(tags, write=False):
+    for path in DATA.parent.glob('*.desktop'):
+        lines = path.read_text(encoding='utf-8').splitlines()
+        source = next(line.removeprefix('Comment=') for line in lines if line.startswith('Comment='))
+        wanted = desktop_comments(source, tags)
+        actual = [line for line in lines if line.startswith('Comment[')]
+        if write:
+            kept = [line for line in lines if not line.startswith('Comment[')]
+            position = kept.index('Comment=' + source) + 1
+            kept[position:position] = wanted
+            path.write_text('\n'.join(kept) + '\n', encoding='utf-8')
+        elif actual != wanted:
+            raise ValueError('Stale launcher translations: ' + str(path))
+
+
+def check_startup_diagnostics(code):
+    """Guard production startup failures; fixture-only logging is outside this block."""
+    start = code.index('    const auto runtime = QStandardPaths::')
+    end = code.index('    soundcurrent::ProcessingGuard processingGuard;', start)
+    for args in calls(code[start:end], 'qCritical'):
+        if len(args) != 2 or literal(args[0]) != '%s' or not list(calls(args[1], 'SC_TR')):
+            raise ValueError('Untranslated production startup diagnostic')
+
+
+def check_renderer_diagnostics(code, declared):
+    """Direct renderer exceptions are translated at the CLI boundary, not in DSP."""
+    aliases = {'Output already exists; choose a new filename': 'Output already exists; select a new filename',
+               'Too many EQ bands for one channel': 'Too many Studio channel filters'}
+    for args in calls(code, 'runtime_error'):
+        value = literal(args[0]) if args else None
+        if value is not None and aliases.get(value, value) not in declared:
+            raise ValueError('Undeclared renderer diagnostic: ' + value)
+
+
+def check_backend_diagnostics(code, mapping_code, declared):
+    """Require exact desktop mappings for direct literal Windows exceptions.
+
+    Composed HRESULT/device diagnostics use separate prefix/template mappings.
+    Backend strings remain invariant; this only guards the display boundary.
+    """
+    mappings = dict(re.findall(
+        r'if\s*\(diagnostic\s*==\s*QStringLiteral\("([^"\n]+)"\)\)\s*'
+        r'return\s+SC_TR\("([^"\n]+)"\)', mapping_code))
+    for args in calls(code, 'runtime_error'):
+        value = literal(args[0]) if args else None
+        if value is not None and (value not in mappings or mappings[value] not in declared):
+            raise ValueError('Unmapped direct Windows backend diagnostic: ' + value)
+    action_mappings = dict(re.findall(
+        r'if\s*\(action\s*==\s*QStringLiteral\("([^"\n]+)"\)\)\s*'
+        r'translatedAction\s*=\s*SC_TR\("([^"\n]+)"\)', mapping_code))
+    for helper in ('check', 'checked'):
+        for args in calls(code, helper):
+            value = literal(args[1]) if len(args) == 2 else None
+            if value is not None and (value not in action_mappings or action_mappings[value] not in declared):
+                raise ValueError('Unmapped Windows HRESULT action: ' + value)
+    for args in calls(code, 'checkFormat'):
+        endpoint = literal(args[2]) if len(args) == 3 else None
+        if endpoint is not None:
+            diagnostic = endpoint + ' does not support shared 48 kHz stereo float audio'
+            if diagnostic not in mappings or mappings[diagnostic] not in declared:
+                raise ValueError('Unmapped Windows format diagnostic: ' + diagnostic)
+
+
 def sources():
-    out=set()
-    for name in ['main.cpp','equipment_profiles.cpp','enhancement_controls.h','update_panel.h','localization.h','processing_guard.cpp','studio_panel.cpp']:
-        p=ROOT/'src'/name
-        if not p.exists():continue
-        code=p.read_text(encoding="utf-8")
-        for m in MESSAGE.finditer(code):out.add(''.join(ast.literal_eval(s) for s in re.findall(LITERAL,m[1])))
-    # Data-driven UI labels are translated at the view boundary, keeping IDs fixed.
-    out.update(json.loads((DATA/'seed-translations.json').read_text(encoding="utf-8"))['sources'])
-    out.update(['Warmth','Boxiness','Clarity','Air'])
-    code=(ROOT/'src/enhancement.h').read_text(encoding="utf-8")
-    out.update(re.findall(r'\{\s*"([^"]+)"\s*,',code))
-    code=(ROOT/'src/main.cpp').read_text(encoding="utf-8")
-    start=code.index('void rebuildPresetList(');end=code.index('void savePreset(',start)
-    for m in re.finditer(r'addGroup\(\{([^}]+)\}',code[start:end]):out.update(re.findall('"([^"]+)"',m[1]))
+    adapter = ROOT / 'src/windows_platform.inc'
+    if adapter.exists():
+        check_platform_errors(adapter.read_text(encoding='utf-8'))
+    out = marked_sources(ROOT / 'src')
+    out.update(desktop_sources())
+    for path in sorted((ROOT / 'src').rglob('*')):
+        if path.suffix not in ('.cpp', '.h', '.hpp', '.inc'):
+            continue
+        name = path.relative_to(ROOT / 'src').as_posix()
+        code = path.read_text(encoding='utf-8')
+        # Obvious view literals must be wrapped; machine names/units are explicit exceptions.
+        for method, argument in [('setWindowTitle', 0), ('setAccessibleName', 0), ('setToolTip', 0),
+                                 ('setPlaceholderText', 0), ('setInformativeText', 0),
+                                 ('setStatusTip', 0), ('setWhatsThis', 0),
+                                 ('finish', 0), ('addButton', 0), ('addAction', 0), ('setItemText', 1), ('addTab', 1), ('insertTab', 2), ('button', 0)]:
+            for args in calls(code, method):
+                if len(args) <= argument:
+                    continue
+                value = display_literal(args[argument])
+                if value is not None and value not in ('', 'Q', 'Hz', 'dB', 'SoundCurrent EQ', 'SoundCurrent Studio'):
+                    raise ValueError(f'Unmarked UI literal in {name}: {method}: {value}')
+        # Named QMessageBox constructors use icon, title, then body.
+        # Explicit titles must be marked; dynamic bodies need separate review.
+        for match in re.finditer(r'^\s*QMessageBox\s+(\w+)\s*\(', code, re.M):
+            for args in calls(code, match.group(1)):
+                value = display_literal(args[1]) if len(args) > 1 else None
+                if value:
+                    raise ValueError(f'Unmarked UI literal in {name}: dialog title: {value}')
+        for method in ('SC_TR', 'text'):
+            for args in calls(code, method):
+                value = literal(args[0]) if args else None
+                if value is not None:
+                    if len(args) > 1 and args[1] != '-1':
+                        raise ValueError('Numerus extraction needs explicit Qt language plural rules')
+                    out.add(value)
+        # The equipment validation helper translates its literal reason at runtime.
+        if name == 'equipment_profiles.cpp':
+            for args in calls(code, 'require'):
+                if len(args) == 2 and (value := literal(args[1])) is not None:
+                    out.add(value)
+    out.update(json.loads((DATA / 'seed-translations.json').read_text(encoding='utf-8'))['sources'])
+    out.update(setup_sources())
+    out.update(['Warmth', 'Boxiness', 'Clarity', 'Air'])
+    code = (ROOT / 'src/enhancement.h').read_text(encoding='utf-8')
+    out.update(re.findall(r'\{\s*"([^"]+)"\s*,', code))
+    code = (ROOT / 'src/main.cpp').read_text(encoding='utf-8')
+    check_startup_diagnostics(code)
+    start = code.index('void rebuildPresetList(')
+    end = code.index('void savePreset(', start)
+    for args in calls(code[start:end], 'addGroup'):
+        out.update(re.findall(r'"([^"]+)"', args[0]))
+    renderer = ROOT / 'src/studio_render.cpp'
+    if renderer.exists():
+        check_renderer_diagnostics(renderer.read_text(encoding='utf-8'), out)
+    mapping = (ROOT / 'src/audio_error_text.h').read_text(encoding='utf-8')
+    for backend in (ROOT / 'src').glob('windows*.cpp'):
+        check_backend_diagnostics(backend.read_text(encoding='utf-8'), mapping, out)
     return sorted(out)
-def read(path):
-    result={}
+
+
+def entries(path):
+    result = {}
     if path.exists():
-        for m in ET.parse(path).findall('./context/message'):
-            source=m.findtext('source');t=m.find('translation')
-            if t is not None and t.get('type')!='unfinished':result[source]=t.text or ''
+        for message in ET.parse(path).findall('./context/message'):
+            source = message.findtext('source')
+            if source in result:
+                raise ValueError(f'Duplicate source key: {path}: {source}')
+            if message.get('numerus') == 'yes' or message.find('./translation/numerusform') is not None:
+                raise ValueError(f'Numerus messages require explicit plural support: {path}: {source}')
+            result[source] = copy.deepcopy(message)
     return result
-def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
-def update():
-    contexts=json.loads((DATA/'translation-context.json').read_text(encoding='utf-8'))
-    strings=sources();seeds=json.loads((DATA/'seed-translations.json').read_text(encoding="utf-8"));meta=[]
-    tool=shutil.which('lrelease6')
-    if not tool and Path('/usr/lib/qt6/bin/lrelease').exists():tool='/usr/lib/qt6/bin/lrelease'
-    if not tool:tool=shutil.which('lrelease')
-    if not tool:raise SystemExit('Qt Linguist lrelease is required for --update')
-    for tag,row in [('en',['English']+seeds['sources'])]+list(seeds['languages'].items()):
-        path=DATA/('soundcurrent_'+tag+'.ts');old=read(path)
-        if tag=='en':old={s:s for s in strings}
+
+
+def finished(message):
+    translation = message.find('translation')
+    return translation is not None and translation.get('type') not in ('unfinished', 'vanished', 'obsolete') and bool((translation.text or '').strip())
+
+
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+class Markup(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.structure = []
+
+    def handle_starttag(self, tag, attrs):
+        self.structure.append(('start', tag, tuple(sorted(attrs))))
+
+    def handle_endtag(self, tag):
+        self.structure.append(('end', tag))
+
+    def handle_startendtag(self, tag, attrs):
+        self.structure.append(('empty', tag, tuple(sorted(attrs))))
+
+
+# Exact labels in third-party installer or device UI are protected only in reviewed
+# instruction sources. SoundCurrent's own button captions remain translatable.
+EXTERNAL_UI_LABELS = {
+    'Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.': ('VB-CABLE', 'CABLE Input', 'CABLE Output', 'Remove Driver', 'Install Driver', 'SoundCurrent'),
+    'VB-CABLE removal did not finish. This app was kept so you can retry.': ('VB-CABLE',),
+    'Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.': ('SoundCurrent',),
+    'VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.': ('VB-CABLE', 'SoundCurrent', 'VB-Audio', 'https://vb-cable.com'),
+    'Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.': ('SoundCurrent', 'VB-CABLE', 'A/B'),
+    'Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.': ('VB-Audio', 'Install Driver', 'Windows', 'VB-CABLE'),
+    'VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.': ('VB-CABLE',),
+    'VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.': ('VB-CABLE', 'SoundCurrent'),
+    'SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.': ('SoundCurrent Audio',),
+    'SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.': ('SoundCurrent Audio', 'SoundCurrent'),
+    'Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.': ('SoundCurrent',),
+    'VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.': ('VB-CABLE',),
+    'Install VB-CABLE if missing (administrator approval)': ('VB-CABLE',),
+    'Install or update the shared SoundCurrent Audio driver': ('SoundCurrent Audio',),
+    'VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.': ('Remove Driver', 'CABLE Input', 'CABLE Output'),
+    'Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.': ('CABLE Input', 'CABLE Output'),
+    'Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.': ('Remove Driver',),
+    'VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.': ('Remove Driver',),
+    'The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.': ('Install Driver',),
+}
+
+
+# File-format contracts from the reviewed owned WAVE diagnostic inventory.
+REVIEWED_FILE_IDENTIFIERS = {
+ 'Imported %1; SHA256 %2': ('SHA256',),'Input: PCM16/24/32 or float32 RIFF/WAVE. Output: float32 extensible WAVE.': ('PCM16/24/32', 'float32', 'RIFF/WAVE', 'WAVE'),
+ 'Cannot create output WAVE file': ('WAVE',),
+ 'Cannot open input WAVE file': ('WAVE',),
+ 'Cannot seek to WAVE audio': ('WAVE',),
+ 'Chunk extends beyond RIFF bounds': ('RIFF',),
+ 'Could not close WAVE output': ('WAVE',),
+ 'Could not flush WAVE output': ('WAVE',),
+ 'Could not write WAVE audio': ('WAVE',),
+ 'Could not write WAVE header': ('WAVE',),
+ 'Excessive number of RIFF chunks': ('RIFF',),
+ 'Incomplete WAVE output': ('WAVE',),
+ 'Input is too short for RIFF/WAVE': ('RIFF/WAVE',),
+ 'Invalid RIFF size': ('RIFF',),
+ 'Invalid WAVE frame alignment or byte rate': ('WAVE',),
+ 'Invalid WAVE read buffer': ('WAVE',),
+ 'Invalid float WAVE format': ('WAVE',),
+ 'Invalid output WAVE format': ('WAVE',),
+ 'Missing RIFF padding byte': ('RIFF',),
+ 'Missing or incomplete WAVE audio': ('WAVE',),
+ 'Missing, duplicate or oversized WAVE format': ('WAVE',),
+ 'Multiple WAVE data chunks are unsupported': ('WAVE',),
+ 'Only PCM16/24/32 or float32 WAVE is supported': ('WAVE', 'PCM16/24/32', 'float32'),
+ 'Only little-endian RIFF/WAVE is supported': ('RIFF/WAVE',),
+ 'Output exceeds the RIFF/WAVE 4 GiB limit': ('RIFF/WAVE', '4 GiB'),
+ 'Truncated WAVE file': ('WAVE',),
+ 'Truncated extensible WAVE format': ('WAVE',),
+ 'Unsupported WAVE rate or channel count': ('WAVE',),
+ 'Unsupported extensible WAVE subtype': ('WAVE',),
+ 'WAVE output exceeds its declared length': ('WAVE',)}
+
+# Reviewed CLI help contracts; signs, limits and identifiers are not prose.
+REVIEWED_CLI_TOKENS = {
+    'Playing a logarithmic sweep from 20 Hz to 25 kHz': ('20', '25', 'Hz', 'kHz'),
+    'Checking %1 Hz': ('Hz',),
+    '%1 Hz: signal %2, background %3': ('Hz',),
+    '1-256 output channels (default: input count)': ('1-256',),
+    'optional channel low-pass (e.g. LFE)': ('LFE',),
+    'output channel trim, -60 to +24 dB': ('-60', '+24', 'dB'),
+    'overall post gain, -84 to +24 dB': ('-84', '+24', 'dB'),
+    '1-2000 ms (default 250)': ('1-2000', 'ms', '250'),
+    '0-0.9 (default .35)': ('0-0.9', '.35'),
+    'wet fraction 0-1 (enables delay)': ('0-1',),
+    '.1-10 seconds (default 1.5)': ('.1-10', '1.5'),
+    '0-.95 (default .4)': ('0-.95', '.4'),
+    'wet fraction 0-1 (enables reverb)': ('0-1',),
+    'append 0-30 seconds to render effect tails': ('0-30',),
+    'disable automatic EQ headroom': ('EQ',),
+    'bypass EQ, effects, gains and mute': ('EQ',),
+}
+
+
+def validate_text(source, translated):
+    for token in REVIEWED_CLI_TOKENS.get(source, ()):
+        # Match numeric endpoints as tokens: -600 must not satisfy -60.
+        if any(c.isdigit() for c in token):
+            pattern = r'(?<![0-9.+-])' + re.escape(token) + r'(?![0-9.])'
         else:
-            assert len(row)==len(seeds['sources'])+1,(tag,len(row))
-            for s,t in zip(seeds['sources'],row[1:]):old.setdefault(s,t)
-        root=ET.Element('TS',version='2.1',language=tag.replace('-','_'),sourcelanguage='en_US')
-        ctx=ET.SubElement(root,'context');ET.SubElement(ctx,'name').text='SoundCurrent'
+            pattern = r'(?<![A-Za-z_])' + re.escape(token) + r'(?![A-Za-z_])'
+        if len(re.findall(pattern, source)) != len(re.findall(pattern, translated)):
+            raise ValueError('CLI invariant changed: ' + token)
+    for identifier in REVIEWED_FILE_IDENTIFIERS.get(source, ()):
+        if translated.count(identifier) != source.count(identifier):
+            raise ValueError('File-format identifier changed: ' + identifier)
+    for label in EXTERNAL_UI_LABELS.get(source, ()):
+        if source.count(label) != translated.count(label):
+            raise ValueError('External installer label changed: ' + label)
+    if not translated.strip():
+        raise ValueError('Blank finished translation')
+    if Counter(PLACEHOLDER.findall(source)) != Counter(PLACEHOLDER.findall(translated)):
+        raise ValueError('Placeholder mismatch')
+    if source.count('&&') != translated.count('&&'):
+        raise ValueError('Literal ampersand mismatch')
+    if any(c in translated for c in '\u202a\u202b\u202c\u202d\u202e\u2066\u2067\u2068\u2069'):
+        raise ValueError('Hidden direction control; use runtime layout')
+    original, target = Markup(), Markup()
+    original.feed(source)
+    target.feed(translated)
+    if original.structure != target.structure:
+        raise ValueError('Rich-text tags, links or attributes changed')
+    # File-dialog filters must preserve extension/glob patterns and filter count.
+    if re.search(r'\(\*(?:\.[^)]*)?\)', source):
+        patterns = lambda text: re.findall(r'\(\*(?:\.[^)]*)?\)', text)
+        if patterns(source) != patterns(translated) or source.count(';;') != translated.count(';;'):
+            raise ValueError('File-dialog filter patterns changed')
+
+
+def update():
+    contexts = json.loads((DATA / 'translation-context.json').read_text(encoding='utf-8'))
+    strings = sources()
+    seeds = json.loads((DATA / 'seed-translations.json').read_text(encoding='utf-8'))
+    metadata = []
+    tool = shutil.which('lrelease6')
+    if not tool and Path('/usr/lib/qt6/bin/lrelease').exists():
+        tool = '/usr/lib/qt6/bin/lrelease'
+    tool = tool or shutil.which('lrelease')
+    if not tool:
+        raise SystemExit('Qt Linguist lrelease is required for --update')
+    rows = [('en', ['English'] + seeds['sources'])] + list(seeds['languages'].items())
+    # Parse all catalogs before writing: unsupported numerus must never be erased.
+    existing = {tag: entries(DATA / f'soundcurrent_{tag}.ts') for tag, _ in rows}
+    for tag, row in rows:
+        if len(row) != len(seeds['sources']) + 1:
+            raise ValueError(f'Seed row length mismatch: {tag}')
+        seed = dict(zip(seeds['sources'], row[1:]))
+        root = ET.Element('TS', version='2.1', language=tag.replace('-', '_'), sourcelanguage='en_US')
+        context = ET.SubElement(root, 'context')
+        ET.SubElement(context, 'name').text = 'SoundCurrent'
+        done = 0
         for source in strings:
-            msg=ET.SubElement(ctx,'message');ET.SubElement(msg,'source').text=source
-            if source in contexts:ET.SubElement(msg,'extracomment').text=contexts[source]
-            t=ET.SubElement(msg,'translation');t.text=old.get(source,'')
-            if not t.text:t.set('type','unfinished')
-        ET.indent(root);ET.ElementTree(root).write(path,encoding='utf-8',xml_declaration=True)
-        qm=path.with_suffix('.qm');subprocess.run([tool,'-silent','-nounfinished',str(path),'-qm',str(qm)],check=True)
-        done=sum(bool(old.get(s)) for s in strings)
-        meta.append({'tag':tag,'name':row[0],'translated':done,'total':len(strings),'status':'source' if tag=='en' else 'unverified','nativeReviewed':False,'tsSha256':digest(path),'qmSha256':digest(qm)})
-    (DATA/'catalogs.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n', encoding='utf-8', newline='\n')
-    r=ET.Element('RCC');q=ET.SubElement(r,'qresource',prefix='/i18n')
-    ET.SubElement(q,'file',alias='catalogs.json').text='catalogs.json'
-    for m in meta:ET.SubElement(q,'file',alias='soundcurrent_'+m['tag']+'.qm').text='soundcurrent_'+m['tag']+'.qm'
-    ET.indent(r);ET.ElementTree(r).write(DATA/'resources.qrc',encoding='utf-8',xml_declaration=True)
-def check():
-    strings=set(sources());meta=json.loads((DATA/'catalogs.json').read_text(encoding="utf-8"))
-    for item in meta:
-        ts=DATA/('soundcurrent_'+item['tag']+'.ts');qm=ts.with_suffix('.qm')
-        assert digest(ts)==item['tsSha256'] and digest(qm)==item['qmSha256'],f'Stale QM/TS: {ts}'
-        tree=ET.parse(ts);messages=tree.findall('./context/message')
-        assert {m.findtext('source') for m in messages}==strings,'Run --update after UI changes'
-        assert len(messages)==len(strings),'Duplicate catalog keys'
-        done=0
-        for m in messages:
-            t=m.find('translation');source=m.findtext('source')
-            if t.get('type')=='unfinished':continue
-            translated=t.text or '';assert translated.strip(),(ts,source)
-            assert sorted(PLACEHOLDER.findall(source))==sorted(PLACEHOLDER.findall(translated)),(ts,source,'placeholder mismatch')
-            assert source.count('&&')==translated.count('&&'),(ts,source,'literal ampersand mismatch')
-            assert not any(c in translated for c in '\u202a\u202b\u202c\u202d\u202e\u2066\u2067\u2068\u2069'),(ts,source,'invisible direction control; use runtime layout')
-            done+=1
-        assert done==item['translated'] and item['total']==len(strings)
-    print(f'PASS: {len(meta)} catalogs, {len(strings)} source messages; placeholders, coverage and compiled catalog hashes')
-if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--update',action='store_true');parser.add_argument('--check',action='store_true');args=parser.parse_args()
-    if args.update:update()
-    check()
+            message = existing[tag].get(source)
+            if message is None:
+                message = ET.Element('message')
+                ET.SubElement(message, 'source').text = source
+                translation = ET.SubElement(message, 'translation')
+                translation.text = source if tag == 'en' else seed.get(source, '')
+                if not translation.text:
+                    translation.set('type', 'unfinished')
+            elif tag == 'en':
+                translation = message.find('translation')
+                if translation is None:
+                    translation = ET.SubElement(message, 'translation')
+                translation.text = source
+                translation.attrib.clear()
+            if source in contexts:
+                note = message.find('extracomment')
+                if note is None:
+                    note = ET.SubElement(message, 'extracomment')
+                note.text = contexts[source]
+            if finished(message):
+                validate_text(source, message.findtext('translation'))
+                done += 1
+            context.append(message)
+        path = DATA / f'soundcurrent_{tag}.ts'
+        ET.indent(root)
+        ET.ElementTree(root).write(path, encoding='utf-8', xml_declaration=True)
+        qm = path.with_suffix('.qm')
+        subprocess.run([tool, '-silent', '-nounfinished', str(path), '-qm', str(qm)], check=True)
+        metadata.append({'tag': tag, 'name': row[0], 'translated': done, 'total': len(strings),
+                         'status': 'source' if tag == 'en' else 'unverified', 'nativeReviewed': False,
+                         'tsSha256': digest(path), 'qmSha256': digest(qm)})
+    (DATA / 'catalogs.json').write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
+    resource = ET.Element('RCC')
+    group = ET.SubElement(resource, 'qresource', prefix='/i18n')
+    ET.SubElement(group, 'file', alias='catalogs.json').text = 'catalogs.json'
+    for item in metadata:
+        name = f"soundcurrent_{item['tag']}.qm"
+        ET.SubElement(group, 'file', alias=name).text = name
+    ET.indent(resource)
+    ET.ElementTree(resource).write(DATA / 'resources.qrc', encoding='utf-8', xml_declaration=True)
+    maintain_desktop_comments([item['tag'] for item in metadata], write=True)
+
+
+def check(require_complete=False):
+    strings = set(sources())
+    metadata = json.loads((DATA / 'catalogs.json').read_text(encoding='utf-8'))
+    seeds = json.loads((DATA / 'seed-translations.json').read_text(encoding='utf-8'))
+    tags = [item['tag'] for item in metadata]
+    if len(tags) != len(set(tags)) or set(tags) != {'en', *seeds['languages']}:
+        raise ValueError('Catalog locale inventory mismatch')
+    resource = ET.parse(DATA / 'resources.qrc')
+    groups = resource.findall('./qresource')
+    if len(groups) != 1 or groups[0].get('prefix') != '/i18n':
+        raise ValueError('Embedded catalog resource prefix mismatch')
+    resource_names = {f.get('alias'): f.text for f in resource.findall('./qresource/file')}
+    expected = {'catalogs.json': 'catalogs.json', **{f'soundcurrent_{tag}.qm': f'soundcurrent_{tag}.qm' for tag in tags}}
+    if resource_names != expected or len(resource.findall('./qresource/file')) != len(expected):
+        raise ValueError('Embedded catalog resources differ from metadata')
+    missing = 0
+    for item in metadata:
+        ts = DATA / f"soundcurrent_{item['tag']}.ts"
+        qm = ts.with_suffix('.qm')
+        if digest(ts) != item['tsSha256'] or digest(qm) != item['qmSha256']:
+            raise ValueError(f'Stale QM/TS: {ts}')
+        tree = ET.parse(ts)
+        if tree.getroot().get('language') != item['tag'].replace('-', '_') or [c.findtext('name') for c in tree.findall('./context')] != ['SoundCurrent']:
+            raise ValueError(f'Wrong locale or context: {ts}')
+        messages = entries(ts)
+        if set(messages) != strings:
+            raise ValueError(f'Run --update after UI changes: {ts}')
+        done = 0
+        for source, message in messages.items():
+            if finished(message):
+                try:
+                    validate_text(source, message.findtext('translation'))
+                except ValueError as error:
+                    raise ValueError(f'{ts}: {source}: {error}') from error
+                done += 1
+            else:
+                missing += 1
+        if item['tag'] in seeds.get('requiredCompleteLocales', []) and done != len(strings):
+            raise ValueError(f"Previously populated locale has new untranslated messages: {item['tag']}")
+        if done != item['translated'] or len(strings) != item['total']:
+            raise ValueError(f'Coverage metadata mismatch: {ts}')
+    maintain_desktop_comments(tags)
+    if require_complete and missing:
+        raise ValueError(f'{missing} unfinished translations remain')
+    print(f'PASS: {len(metadata)} catalogs, {len(strings)} source messages; {missing} unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)')
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--update', action='store_true')
+    parser.add_argument('--check', action='store_true')
+    parser.add_argument('--require-complete', action='store_true')
+    args = parser.parse_args()
+    if args.update:
+        update()
+    check(args.require_complete)

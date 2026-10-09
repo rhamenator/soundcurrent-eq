@@ -1,0 +1,26 @@
+Updating and loading repositories:
+Repositories loaded.
+Package           Arch   Version        Repository        Size
+Installing:
+ soundcurrent-eq  x86_64 0:1.1.0-1.fc44 @commandline   4.4 MiB
+Installing dependencies:
+ pipewire-utils   x86_64 0:1.6.9-1.fc44 updates        1.5 MiB
+ pulseaudio-utils x86_64 0:17.0-9.fc44  fedora       262.4 KiB
+
+Transaction Summary:
+ Installing:         3 packages
+
+Total size of inbound packages is 2 MiB. Need to download 706 KiB.
+After this operation, 6 MiB extra will be used (install 6 MiB, remove 0 B).
+[1/2] pipewire-utils-0:1.6.9-1.fc44.x86 100% |   9.4 MiB/s | 615.4 KiB |  00m00s
+[2/2] pulseaudio-utils-0:17.0-9.fc44.x8 100% | 367.7 KiB/s |  90.8 KiB |  00m00s
+--------------------------------------------------------------------------------
+[2/2] Total                             100% | 378.7 KiB/s | 706.3 KiB |  00m02s
+Running transaction
+[1/5] Verify package files              100% | 600.0   B/s |   3.0   B |  00m00s
+[2/5] Prepare transaction               100% |  69.0   B/s |   3.0   B |  00m00s
+[3/5] Installing pipewire-utils-0:1.6.9 100% |  74.3 MiB/s |   1.6 MiB |  00m00s
+[4/5] Installing pulseaudio-utils-0:17. 100% |  20.2 MiB/s | 268.3 KiB |  00m00s
+[5/5] Installing soundcurrent-eq-0:1.1. 100% |  41.4 MiB/s |   4.4 MiB |  00m00s
+Warning: skipped OpenPGP checks for 1 package from repository: @commandline
+Complete!

@@ -1,0 +1,100 @@
+Start testing: Oct 09 02:29 EDT
+----------------------------------------------------------
+26/90 Testing: equipment-ui-nn
+26/90 Test: equipment-ui-nn
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-equipment-ui-test" "--language" "nn"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"equipment-ui-nn" start time: Oct 09 02:29 EDT
+Output:
+----------------------------------------------------------
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 4 at 104 ms
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 0 at 1130 ms
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 2 at 1257 ms
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 3 at 2309 ms
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 5 at 2414 ms
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 6 at 3316 ms
+Equipment fixture phase 7 at 3639 ms
+This plugin does not support propagateSizeHints()
+PASS: profile editor change, Cancel/Discard prompt, save, malformed/valid JSON import, preservation and Apply
+<end of output>
+Test time =   4.66 sec
+----------------------------------------------------------
+Test Passed.
+"equipment-ui-nn" end time: Oct 09 02:29 EDT
+"equipment-ui-nn" time elapsed: 00:00:04
+----------------------------------------------------------
+
+27/90 Testing: equipment-ui-ar
+27/90 Test: equipment-ui-ar
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-equipment-ui-test" "--language" "ar"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"equipment-ui-ar" start time: Oct 09 02:29 EDT
+Output:
+----------------------------------------------------------
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 4 at 104 ms
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 0 at 1045 ms
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 2 at 1171 ms
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 5 at 1929 ms
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 6 at 2538 ms
+Equipment fixture phase 7 at 3291 ms
+This plugin does not support propagateSizeHints()
+PASS: profile editor change, Cancel/Discard prompt, save, malformed/valid JSON import, preservation and Apply
+<end of output>
+Test time =   3.37 sec
+----------------------------------------------------------
+Test Passed.
+"equipment-ui-ar" end time: Oct 09 02:29 EDT
+"equipment-ui-ar" time elapsed: 00:00:03
+----------------------------------------------------------
+
+44/90 Testing: equipment-ui-fr
+44/90 Test: equipment-ui-fr
+Command: "/home/rich/dev/soundcurrent-eq/build/soundcurrent-equipment-ui-test" "--language" "fr"
+Directory: /home/rich/dev/soundcurrent-eq/build
+"equipment-ui-fr" start time: Oct 09 02:29 EDT
+Output:
+----------------------------------------------------------
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 0 at 96 ms
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 2 at 591 ms
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 3 at 1816 ms
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 5 at 1921 ms
+This plugin does not support propagateSizeHints()
+Equipment fixture phase 6 at 3316 ms
+Equipment fixture phase 7 at 3730 ms
+This plugin does not support propagateSizeHints()
+PASS: profile editor change, Cancel/Discard prompt, save, malformed/valid JSON import, preservation and Apply
+<end of output>
+Test time =   3.81 sec
+----------------------------------------------------------
+Test Passed.
+"equipment-ui-fr" end time: Oct 09 02:29 EDT
+"equipment-ui-fr" time elapsed: 00:00:03
+----------------------------------------------------------
+
+End testing: Oct 09 02:29 EDT

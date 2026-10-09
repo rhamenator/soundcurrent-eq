@@ -1,0 +1,48 @@
+{
+  "scope": "Cable and native driver installation checkbox captions",
+  "sourceMessagesPerLocale": 605,
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "notes": [
+      "Cable installation remains conditional on absence with administrator approval",
+      "Native option covers installation or update of a shared driver",
+      "Exact driver names retained across languages"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "unitTestsPassed": 27,
+    "unitTestsSkipped": 1,
+    "driverNameNegativeFixtures": "changed, lowercased and repeated names rejected across all catalogs",
+    "compiledQtCatalogs": "regenerated; hashes checked",
+    "nsisMinimalControlFixtures": "both variants compiled with actual checkbox and definition lines",
+    "fullInstallersCompiled": false,
+    "currentInstalledUiQualified": false
+  },
+  "installerLanguagesEnabled": [
+    "English"
+  ],
+  "remainingScope": [
+    "Installer language selection and translated definition activation",
+    "Remaining installer/uninstaller text",
+    "One untranslated PowerShell repair notice",
+    "Current package UI and lifecycle qualification"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "newPackagesQualified": false,
+  "invariants": [
+    "Checkbox selection/default behavior unchanged",
+    "Driver installation and update actions unchanged",
+    "Saved state and numerical processing unchanged"
+  ],
+  "evidenceSha256": {
+    "data/localization/catalogs.json": "591cb510dd58ef218b3584de78d8bde02a3f3170efad4dba1d37ab41f2cff25b",
+    "tests/translation_catalogs.py": "db6250d5cbd27f4e97680c0db0d01947ea4d3f193d90523fa75183817b29ba28",
+    "scripts/localization.py": "96e4cde14cf9b81d65f374512be72d9ffe4a0cbc99cf0cdbf2076d6df11c7687",
+    "tests/results/localization/installer-driver-checkbox-tests.log": "aacfc78f3c45fef36e4950566cd51a7a4195065c5f09224fb5e2e42c7c4bb1e0",
+    "tests/results/localization/installer-driver-checkbox-compiler.log": "766ab62e2135c2a267d57d3e3643f02ee22dd82baad32d6fd4d821f4c80b409b"
+  }
+}

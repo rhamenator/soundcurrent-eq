@@ -1,0 +1,54 @@
+{
+  "scope": "Native installer existing-driver registration notice",
+  "sourceMessagesPerLocale": 610,
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "sourceBehavior": "Native driver manager invocation is inside InstallDriver == BST_CHECKED; default checked does not make invocation unconditional",
+    "correction": "Registration advice now conditional on keeping driver setup enabled",
+    "notes": [
+      "Existing driver presence separate from app registration",
+      "Other SoundCurrent app can retain shared driver availability",
+      "Exact product/driver names retained"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "unitTestsPassed": 34,
+    "unitTestsSkipped": 1,
+    "nameMutation": "driver and product name replacements rejected",
+    "compiledQtCatalogs": "regenerated; hashes checked",
+    "generatedEnglishInstallers": "all four variants unit-tested; CLI native copies byte-identical",
+    "allCaptionSyntaxFixture": "408 captions per product compiled with English language IDs only",
+    "currentFullInstallersBuilt": false,
+    "currentInstalledUiQualified": false,
+    "realOwnershipRegistrationExecuted": false
+  },
+  "installerLanguagesEnabled": [
+    "English"
+  ],
+  "remainingScope": [
+    "Installer language activation and selection",
+    "Remaining installer/uninstaller text",
+    "One raw PowerShell repair notice",
+    "Current package/UI/lifecycle qualification"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "newPackagesQualified": false,
+  "invariants": [
+    "Checkbox defaults, driver ownership and invocation conditions unchanged",
+    "Saved state and numerical processing unchanged"
+  ],
+  "evidenceSha256": {
+    "packaging/windows/soundcurrent-eq-native.nsi": "68427229964b73a26fb8daa5e3eb30f639c553885b7566ce23679ee7ffe0f894",
+    "data/localization/catalogs.json": "4c9b3e727b160ea83b466a084e5aded863959aa984273a333863c91631a55501",
+    "scripts/windows_installer_catalogs.py": "c6f4946901067daae4e4e22c5ce7a86e324b8de6a0396fdce449d9eabacbc9c6",
+    "scripts/localization.py": "a9b01b5fbee838c81feeb7164cb2c2c6ea3f0162259cc31717d7cd3213a23e31",
+    "tests/translation_catalogs.py": "2bb819efd75e0efeeba76cd98c851c9018fafa4c328ae7491f5bee7b60b79f7e",
+    "tests/results/localization/installer-native-present-captions.json": "997edfe246941e79a809c4e8d4fb5551b222f84b085c25bc49add03b442918e0",
+    "tests/results/localization/installer-native-present-tests.log": "6ead1de01b402773c55f1cb8bf6aea0e402567e902805723e381d1938564795d",
+    "tests/results/localization/installer-native-present-compiler.log": "3b705604b14fb2bece40ac7626405cd3059ff55bdccb00f4b4690beb8bf8b1d8"
+  }
+}

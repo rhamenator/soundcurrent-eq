@@ -1,0 +1,38 @@
+{
+  "scope": "Signed external cable installer instructions",
+  "source": "Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.",
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "sourceMessages": 614,
+  "unfinishedExtractedEntries": 0,
+  "contextualReview": "AI reviewed signed software meaning, exact external Install Driver action and Windows restart requirement",
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "catalogTests": {
+      "total": 40,
+      "passed": 39,
+      "skipped": 1
+    },
+    "compiledCatalogHashes": "verified by catalog checks",
+    "nsisLiteralCompiler": {
+      "captions": 544,
+      "languageIDs": "English fixture only",
+      "localeActivation": false,
+      "layoutQualified": false
+    }
+  },
+  "externalNameGuards": [
+    "VB-Audio",
+    "Install Driver",
+    "Windows",
+    "VB-CABLE"
+  ],
+  "driverActionsOrDSPChanged": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Other raw installer/helper captions",
+    "Installer locale activation and layout",
+    "Current Linux/Windows installed runtime and package lifecycle checks"
+  ]
+}

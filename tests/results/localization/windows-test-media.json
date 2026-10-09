@@ -1,0 +1,39 @@
+{
+  "vm": "soundcurrent-localization-win11-qa",
+  "vmState": "shut off",
+  "readonlyCdrom": "sdb",
+  "iso": "/var/lib/libvirt/images/soundcurrent-localization-tests.iso",
+  "isoSha256": "0c8e9cbeb2271cf87c39fa55aa7acaa788bc4bb52b389a45905f65f878a1ac3d",
+  "launcher": "tests/windows_media_lifecycle.ps1",
+  "noRunGuard": "passed on host; no lifecycle execution",
+  "installerIdentities": [
+    {
+      "label": "eq-old",
+      "run": 37869446207,
+      "repository": "soundcurrent-eq",
+      "sha256": "76a8bca37e99a4911acc2b2360b6b23c251a6611260b00b695dd019f3f8b7f74"
+    },
+    {
+      "label": "eq-current",
+      "run": 37869653471,
+      "repository": "soundcurrent-eq",
+      "sha256": "2baebbf459d02d78dbea16aa511ae5591e00d8cde0b20feff15b70a13524e718"
+    },
+    {
+      "label": "studio-old",
+      "run": 37869448427,
+      "repository": "soundcurrent-studio",
+      "sha256": "8fe5ba9851ca7d2077d0571911ba8c6557dec4df882be46347a7132772c1982c"
+    },
+    {
+      "label": "studio-current",
+      "run": 37870007872,
+      "repository": "soundcurrent-studio",
+      "sha256": "472d182613e718b81ed62552b6d5234c968d8093ee5b607026ace963b2d69bdb"
+    }
+  ],
+  "installedQualification": false,
+  "scope": "Prepared media for explicit older-preview to preview cable lifecycle; these package hashes do not qualify current source head",
+  "credentialsOnMedia": false,
+  "nativeReviewed": false
+}

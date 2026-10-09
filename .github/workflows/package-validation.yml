@@ -32,12 +32,12 @@ jobs:
               cp /runner-ca.crt /etc/ssl/certs/ca-certificates.crt
               sed -i "s|http://archive.ubuntu.com|https://archive.ubuntu.com|g; s|http://security.ubuntu.com|https://security.ubuntu.com|g" /etc/apt/sources.list.d/ubuntu.sources
               apt-get update
-              apt-get install -y cmake ninja-build g++ qt6-base-dev libpipewire-0.3-dev pkg-config curl procps xvfb xauth
+              apt-get install -y python3 cmake ninja-build g++ qt6-base-dev libpipewire-0.3-dev pkg-config curl procps xvfb xauth
             else
               # Desktop audio needs systemd. The minimal Fedora container ships
               # mutually exclusive standalone tmpfiles; replace only that fixture.
               dnf install -y --allowerasing systemd
-              dnf install -y cmake ninja-build gcc-c++ qt6-qtbase-devel pipewire-devel pkgconf-pkg-config rpm-build tar gzip curl procps-ng
+              dnf install -y python3 cmake ninja-build gcc-c++ qt6-qtbase-devel pipewire-devel pkgconf-pkg-config rpm-build tar gzip curl procps-ng
             fi
             cp -a /input /work
             cd /work
