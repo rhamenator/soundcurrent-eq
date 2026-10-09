@@ -769,6 +769,17 @@ class CatalogTests(unittest.TestCase):
                 'Audio tab', 'Routing tab', 'Diagnostic detail',
                 'Status guidance', 'Help guidance', 'Unmarked body', 'Named title', 'Named body'})
 
+    def test_reviewed_wave_diagnostics_preserve_file_format_identity(self):
+        for source in ('Cannot open input WAVE file', 'Cannot create output WAVE file',
+                       'Truncated WAVE file'):
+            catalog.validate_text(source, 'Erreur du fichier WAVE')
+            for translated in ('Erreur du fichier onde', 'Erreur du fichier Wave',
+                               'Erreur du fichier WAVE WAVE', 'Erreur du fichier'):
+                with self.assertRaisesRegex(ValueError, 'WAVE file-format identifier changed'):
+                    catalog.validate_text(source, translated)
+        # Acoustic waves in ordinary prose are not file-format identifiers.
+        catalog.validate_text('Sound wave', 'Onde sonore')
+
     def test_external_installer_label_is_protected_in_reviewed_instruction(self):
         source = 'The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.'
         catalog.validate_text(source, 'Installation retirée. Ouvrez %1 puis cliquez sur Install Driver.')

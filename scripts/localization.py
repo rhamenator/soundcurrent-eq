@@ -218,6 +218,11 @@ EXTERNAL_UI_LABELS = {
 
 
 def validate_text(source, translated):
+    # Reviewed WAVE diagnostics name the binary file format, not an acoustic wave.
+    wave_sources = {'Cannot open input WAVE file', 'Cannot create output WAVE file',
+                    'Truncated WAVE file'}
+    if source in wave_sources and translated.count('WAVE') != source.count('WAVE'):
+        raise ValueError('WAVE file-format identifier changed')
     for label in EXTERNAL_UI_LABELS.get(source, ()):
         if source.count(label) != translated.count(label):
             raise ValueError('External installer label changed: ' + label)
