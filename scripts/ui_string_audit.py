@@ -83,8 +83,20 @@ def dynamic_inventory(root):
             'expressionCount': len(records), 'expressions': records,
             'nativeReviewed': False, 'wholeInterfaceCoverageProven': False}
 
+def check_reviewed_literals(root, reviewed):
+    """Reject newly unmarked captions; exemptions are exact source-site identities."""
+    key = lambda row: (row['file'], row['call'], row['argument'], row['literal'])
+    allowed = {key(row) for row in reviewed['exceptions']}
+    for row in inventory(root)['candidates']:
+        if key(row) not in allowed:
+            raise ValueError('Unreviewed display literal: ' + str(row))
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dynamic', action='store_true', help='Inventory dynamic display arguments for manual provenance review')
+    parser.add_argument('--check-reviewed', action='store_true', help='Reject unmarked literals outside reviewed exact-site exemptions')
     args = parser.parse_args()
+    if args.check_reviewed:
+        check_reviewed_literals(ROOT, json.loads((ROOT / 'data/localization/ui-literal-exceptions.json').read_text(encoding='utf-8')))
     print(json.dumps(dynamic_inventory(ROOT) if args.dynamic else inventory(ROOT), ensure_ascii=False, indent=2))

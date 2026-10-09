@@ -1,0 +1,41 @@
+{
+  "scope": "Exact source-site exemptions for owned-display literal regression gate; dynamic/composed expressions require separate provenance review.",
+  "nativeReviewed": false,
+  "exceptions": [
+    {
+      "file": "src/localization.h",
+      "call": "addItem",
+      "argument": 0,
+      "literal": "English (en)",
+      "reason": "Language autonym plus stable language tag"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setSuffix",
+      "argument": 0,
+      "literal": " ms",
+      "reason": "Invariant physical unit symbol"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setSuffix",
+      "argument": 0,
+      "literal": " dBFS",
+      "reason": "Invariant physical unit symbol"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setSuffix",
+      "argument": 0,
+      "literal": " Hz",
+      "reason": "Invariant physical unit symbol"
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setSuffix",
+      "argument": 0,
+      "literal": " dB",
+      "reason": "Invariant physical unit symbol"
+    }
+  ]
+}

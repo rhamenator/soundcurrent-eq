@@ -796,6 +796,21 @@ class CatalogTests(unittest.TestCase):
             self.assertIn(marked[0], declared)
         self.assertNotIn('calibrationStatus_->text().startsWith("Measurement failed")', code)
 
+    def test_unmarked_owned_display_caption_is_rejected(self):
+        root = Path(__file__).resolve().parents[1]
+        spec = importlib.util.spec_from_file_location('ui_audit', root / 'scripts/ui_string_audit.py')
+        audit = importlib.util.module_from_spec(spec)
+        with patch.dict('sys.modules', {'localization': catalog}):
+            spec.loader.exec_module(audit)
+        reviewed = json.loads((root / 'data/localization/ui-literal-exceptions.json').read_text(encoding='utf-8'))
+        audit.check_reviewed_literals(root, reviewed)
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = Path(directory)
+            (fixture / 'src').mkdir()
+            (fixture / 'src/new.cpp').write_text('new QLabel("New untranslated caption");', encoding='utf-8')
+            with self.assertRaisesRegex(ValueError, 'Unreviewed display literal'):
+                audit.check_reviewed_literals(fixture, reviewed)
+
     def test_dynamic_display_inventory_does_not_assume_translation_coverage(self):
         spec = importlib.util.spec_from_file_location('ui_audit', Path(__file__).resolve().parents[1] / 'scripts/ui_string_audit.py')
         audit = importlib.util.module_from_spec(spec)

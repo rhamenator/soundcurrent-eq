@@ -461,3 +461,7 @@ Equipment graph axis numbers now use the selected format locale; numeric respons
 ### Equalizer graph axis follow-up
 
 Expanded drawing inventory exposed three remaining plain-number axis calls in the main EQ graph. They now use the selected format locale. Both compiled Arabic/ar-EG UI fixtures pass; captured top-page graphs were visually inspected for localized digit glyphs and retained low-to-high frequency direction. This narrow visual check is not native-language review or full geometry qualification. Machine audio configuration and command-number serialization remain invariant. Fresh combined graph-patch packages are pending; see eq-graph-number-formats.json.
+
+### Unmarked display-caption regression gate
+
+The expanded Qt display inventory now has an exact-site exception list for physical units, the English autonym and synthetic user-name test data. Translation-maintenance tests reject a new unmarked QLabel caption and accept current reviewed source. This strengthens detection of direct owned captions without assuming that a translation call proves every part of a composed expression. Dynamic/backend/installer review remains separate. See display-literal-review-gate.json.
