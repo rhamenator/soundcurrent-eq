@@ -6,14 +6,20 @@ out=${1:?Output directory required}
 mkdir -p "$out"
 product=$(sed -n 's/^project(\([^ ]*\) VERSION.*/\1/p' CMakeLists.txt)
 if [[ $product == soundcurrent-eq ]]; then desktop=io.github.rhamenator.SoundCurrentEQ.desktop; else desktop=io.github.rhamenator.SoundCurrentStudio.desktop; fi
+version=$(sed -n 's/^project([^ ]* VERSION \([0-9.]*\).*/\1/p' CMakeLists.txt)
+[[ -n $version ]]
 if command -v apt-get >/dev/null; then
-    package=$(find "$PWD/dist" -maxdepth 1 -name '*.deb' | head -1)
+    package="$PWD/dist/${product}_${version}_$(dpkg --print-architecture).deb"
+    [[ $(dpkg-deb -f "$package" Package) == "$product" && $(dpkg-deb -f "$package" Version) == "$version" ]]
     install_package(){ apt-get install --yes "$package"; }
     update_package(){ apt-get install --reinstall --yes "$package"; }
     remove_package(){ apt-get remove --yes "$product"; }
     build_dir=build
 else
-    package=$(find "$PWD/dist" -name '*.rpm' | head -1)
+    mapfile -t candidates < <(find "$PWD/dist" -type f -name "${product}-${version}-*.rpm")
+    [[ ${#candidates[@]} == 1 ]] || { echo 'Expected exactly one current-version RPM'; exit 1; }
+    package=${candidates[0]}
+    [[ $(rpm -qp --queryformat '%{NAME}' "$package") == "$product" && $(rpm -qp --queryformat '%{VERSION}' "$package") == "$version" ]]
     install_package(){ dnf install -y "$package"; }
     update_package(){ dnf reinstall -y "$package"; }
     remove_package(){ dnf remove -y "$product"; }
@@ -36,6 +42,10 @@ config="$HOME/.config/SoundCurrent/$product.conf"
 printf '[General]\nreleaseValidationMarker=keep-this-setting\n' > "$config"
 config_hash=$(sha256sum "$config" | cut -d ' ' -f1)
 SOUNDCURRENT_UI_SCREENSHOT_DIR="$out/ui" run_ui > "$out/installed-ui.log" 2>&1
+for locale in de fr es it pt-PT pt-BR nl pl cs sk uk ru el tr sv da nb fi ro hu nn ar he fa zh-Hans zh-Hant ja ko hi id vi th sw; do
+    timeout 60s env QT_QPA_PLATFORM=offscreen "/usr/bin/$product" --localization-ui-test --language "$locale" > "$out/locale-$locale.log" 2>&1
+    grep -F "Localization UI: $locale -> $locale" "$out/locale-$locale.log" >/dev/null
+done
 update_package > "$out/update.log" 2>&1
 [[ $(sha256sum "$config" | cut -d ' ' -f1) == "$config_hash" ]]
 remove_package > "$out/uninstall.log" 2>&1
