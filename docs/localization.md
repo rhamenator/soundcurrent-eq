@@ -184,3 +184,7 @@ The removal failure notice now asks users to quit any running SoundCurrent app, 
 ### Cable removal failure and helper details
 
 The owned cable-removal explanation now has translations in all 33 non-English locales. The caller retains the newline and `$1` helper-output suffix, and the failure still aborts uninstall so users can retry. The NSIS audit accepts only the reviewed suffix after a real LangString; extra prose/variables and missing definitions reject. Catalog tests, 952 caption literals and 34 composite message syntax checks pass. This does not qualify installed-uninstaller behavior or locale activation. See `tests/results/localization/second-pass-installer-cable-removal.json`.
+
+### Restart-dialog reuse and rebuilt Linux UI checks
+
+The installer restart dialog now reuses the existing all-locale restart notice. Exit-code handling, reboot flag and silent default are preserved. Both Linux apps were rebuilt with current catalogs: EQ passed 40 selected checks and Studio passed 43, including all 33 non-English UI locales, two layout-test locales, regional-format and UTF-8 diagnostics. These are offscreen widget assertions, not installed desktop or package lifecycle qualification. The restart reference audit and 34 translated message syntax checks also pass. See `tests/results/localization/second-pass-restart-reuse-linux-ui.json`.

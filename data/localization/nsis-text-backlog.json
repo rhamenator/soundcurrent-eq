@@ -262,9 +262,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 164,
       "kind": "MessageBox",
-      "literal": "Restart Windows before using SoundCurrent or VB-CABLE settings. The audio driver installation needs a system restart.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCCableRestart)",
+      "marked": true,
+      "reviewStatus": "reuses reviewed all-locale restart caption; language activation and installed dialog qualification pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",

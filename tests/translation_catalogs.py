@@ -15,6 +15,22 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_installer_restart_dialog_reuses_reviewed_notice(self):
+        root = Path(__file__).resolve().parents[1]
+        source = 'VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.'
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text(encoding='utf-8')
+            if 'native' in installer.stem:
+                self.assertNotIn('MessageBox MB_OK|MB_ICONINFORMATION "$(SCCableRestart)"', code)
+            else:
+                self.assertIn('MessageBox MB_OK|MB_ICONINFORMATION "$(SCCableRestart)" /SD IDOK', code)
+                self.assertIn('${If} $0 == 3010\n      SetRebootFlag true', code)
+                self.assertEqual(re.findall(r'^LangString SCCableRestart \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
+            message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
+            self.assertTrue(catalog.finished(message), row['tag'])
+            catalog.validate_text(source, message.findtext('translation'))
+
     def test_cable_removal_keeps_reviewed_helper_suffix_and_abort(self):
         root = Path(__file__).resolve().parents[1]
         source = 'VB-CABLE removal did not finish. This app was kept so you can retry.'

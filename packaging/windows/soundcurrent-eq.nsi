@@ -176,7 +176,7 @@ Section "SoundCurrent EQ" main
     DetailPrint $1
     ${If} $0 == 3010
       SetRebootFlag true
-      MessageBox MB_OK|MB_ICONINFORMATION "Restart Windows before using SoundCurrent or VB-CABLE settings. The audio driver installation needs a system restart." /SD IDOK
+      MessageBox MB_OK|MB_ICONINFORMATION "$(SCCableRestart)" /SD IDOK
     ${ElseIf} $0 != 0
       DetailPrint "$(SCSetupRetryProgress)"
       MessageBox MB_OK|MB_ICONINFORMATION "VB-CABLE setup did not finish. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason."
