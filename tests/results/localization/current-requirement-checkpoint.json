@@ -19,7 +19,7 @@
         "tests/results/localization/dynamic-provenance-review.json",
         "tests/results/localization/expanded-display-sinks.json"
       ],
-      "remaining": "Linux easy installer has 26 owned messages with 15 locales populated (including English) and 19 pending. Whole-interface audit remains open."
+      "remaining": "Linux easy installer has 26 owned messages with 21 locales populated (including English) and 13 pending. Whole-interface audit remains open."
     },
     {
       "requirement": "Contextual terminology review",

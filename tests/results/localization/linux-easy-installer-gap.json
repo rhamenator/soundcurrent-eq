@@ -107,8 +107,8 @@
       "source": "message \"Installed $product $version. Open it from the applications menu. Use Quit and reopen after an update. No uninstall or reboot is needed for the app update.\""
     }
   ],
-  "status": "Standalone localization infrastructure implemented; 19 locale translations pending",
-  "nextTask": "Populate all remaining 19 installer locales, review wording against behavior, then qualify actual installer UI and the complete release companion.",
+  "status": "Standalone localization infrastructure implemented; 13 locale translations pending",
+  "nextTask": "Populate all remaining 13 installer locales, review wording against behavior, then qualify actual installer UI and the complete release companion.",
   "nativeReviewed": false,
   "wholeInterfaceCoverageProven": false,
   "originalSourceSha256": "59a55ec160229be983015b49e71ac92164d6dcc727119b12a1b4fe9fec42bb67",
@@ -129,20 +129,26 @@
       "hu",
       "pl",
       "cs",
-      "sk"
+      "sk",
+      "sv",
+      "da",
+      "nb",
+      "fi",
+      "el",
+      "tr"
     ],
-    "pendingLocaleCount": 19,
+    "pendingLocaleCount": 13,
     "selection": "--language TAG, SC_INSTALLER_LANGUAGE, LANGUAGE/LC_ALL/LC_MESSAGES/LANG; explicit supported region aliases and English fallback",
     "standalone": "Shell-quoted catalog embedded in the .run file; no external catalog or translation service required",
     "substitution": "Single-pass literal parameter copying; no eval or re-expansion",
     "verification": "Pinned product/version/release/repository and package hashes unchanged",
     "releaseGate": "assemble-release requires every app locale to have a complete installer catalog",
-    "tests": "Five focused tests passed with all 15 populated locales: text lookup, literal substitutions, help/errors, dialog arguments/cancellation and source/action-caption guards. No actual GTK rendering or installation."
+    "tests": "Five focused tests passed with all 21 populated locales: lookup, literal substitution, help/errors, provider dialog arguments/cancellation and caption guards. No actual GTK rendering or installation."
   },
   "sourceSha256": {
-    "scripts/install-linux.run": "435336465323ad9e1854c028650f04eae8dbd84ec689c536ce21fe32066332c3",
+    "scripts/install-linux.run": "c91949e1c7b38237eccd605ba2274ee6bd3c463a970b7513103a788a336ef155",
     "scripts/linux_installer_catalogs.py": "d3e03fe8521f3d14cda6cef691f4bb3b73f9c3b25b7a400b9344d3ce09673915",
-    "data/localization/linux-installer.json": "2a2b240a6cb4004bd374f4298b254d8dc4b9886bd5b5864163d3731ffda51ab9",
+    "data/localization/linux-installer.json": "15b5631b85b267cceabf3931569e0f47f6f3c150f52763828ac684c9f959c35f",
     "tests/linux_installer_localization.py": "7a853c7e7375198e0a1b1270907f1262f126dd0bd5305ee73b40700e07b17400"
   },
   "catalogRegressionSuite": {
@@ -179,5 +185,20 @@
     "nativeReviewed": false,
     "testLog": "tests/results/localization/linux-installer-central-tests.log",
     "testLogSha256": "983eecb7b6841d0fc7664e9203c734891f95a86487fb719575e3535beac5c222"
+  },
+  "nordicGreekTurkishReview": {
+    "added": [
+      "sv",
+      "da",
+      "nb",
+      "fi",
+      "el",
+      "tr"
+    ],
+    "entriesReviewed": 156,
+    "scope": "Contextual AI review against installer behavior; install/download separation, no-install failures, kept versions/settings, administrator approval and exact Quit app caption references retained. Bokmål stays distinct from Nynorsk. Greek insertion phrases avoid grammatical gender assumptions; Turkish confirmations deliberately reorder placeholders. Version, command and hash identifiers are unchanged.",
+    "nativeReviewed": false,
+    "testLog": "tests/results/localization/linux-installer-nordic-tests.log",
+    "testLogSha256": "7386b3fb4cb6701052f5a227febe7fe24b0f45274d48dda81318f3d77d7f5628"
   }
 }
