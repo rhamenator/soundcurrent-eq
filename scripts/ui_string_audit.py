@@ -20,13 +20,21 @@ METHODS = {'setText':0, 'setToolTip':0, 'setAccessibleName':0,
            'setTitle':0, 'setLabelText':0, 'setButtonText':1, 'setTabText':1,
            'getOpenFileName':1, 'getSaveFileName':1, 'getExistingDirectory':1,
            'showMessage':(0,1), 'setSuffix':0, 'setPrefix':0,
-           'setHorizontalHeaderLabels':0, 'setVerticalHeaderLabels':0,
+           'setHorizontalHeaderLabels':0, 'setVerticalHeaderLabels':0, 'addItems':0,
            'drawText':-1, 'getText':(1,2), 'getInt':(1,2), 'getDouble':(1,2),
            'information':(1,2), 'warning':(1,2), 'critical':(1,2), 'question':(1,2)}
 CONSTRUCTORS = ('QLabel','QPushButton','QCheckBox','QGroupBox','QRadioButton',
                 'QTableWidgetItem','QMenu','QAction')
 # Brand identities and standard unit symbols are intentional display literals.
 IDENTITIES = {'SoundCurrent EQ','SoundCurrent Studio','SoundCurrent','Q','Hz','dB','dBFS'}
+
+def display_entries(expression, method):
+    """Inspect explicit choice lists entry by entry; forwarded lists need provenance review."""
+    expression = expression.strip()
+    if method == 'addItems' and expression.startswith('{') and expression.endswith('}'):
+        return next(catalog.calls('entries(' + expression[1:-1] + ')', 'entries'))
+    return [expression]
+
 
 def inventory(root):
     records = []
@@ -44,11 +52,12 @@ def inventory(root):
             for args in catalog.calls(code,method):
                 if not args or len(args)<=index:
                     continue
-                text = catalog.display_literal(args[index])
-                if text is None or not text.strip() or text in IDENTITIES:
-                    continue
-                records.append({'file':path.relative_to(root).as_posix(),
-                                'call':method,'argument':index,'literal':text})
+                for expression in display_entries(args[index], method):
+                    text = catalog.display_literal(expression)
+                    if text is None or not text.strip() or text in IDENTITIES:
+                        continue
+                    records.append({'file':path.relative_to(root).as_posix(),
+                                    'call':method,'argument':index,'literal':text})
     return {'scope':'Unmarked direct and exact Qt-wrapped literal display candidates; dynamic strings, stored/user data, backend and installer strings are not covered',
             'candidateCount':len(records),'candidates':records,
             'nativeReviewed':False,'wholeInterfaceCoverageProven':False}

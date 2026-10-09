@@ -56,7 +56,7 @@
     },
     {
       "requirement": "Reviewable packages and synchronized commits",
-      "status": "Current production Linux/Windows packages downloaded and hash-verified; source fixes synced; latest artifact evidence being committed"
+      "status": "Current production Linux/Windows packages downloaded and hash-verified; source fixes and artifact evidence synced. Latest guard changes affect maintenance checks, not application binaries."
     },
     {
       "requirement": "Preserve virtual driver and separately owned DAW",
@@ -79,8 +79,8 @@
     "data/localization/catalogs.json": "dc5e37183d09d9dabafcc132e25aadd7e8e34c41056c7352d02ac282c98a23e7",
     "docs/translation-review.md": "7914658562a596ec05a70de73cc6fb618b1ad27c02360b4b282743ddde9c3da8",
     "tests/localization.cpp": "f0ad22384bbeed61639a5035e695c66e462fbbd20332da7a52bef5bd951be5ad",
-    "tests/translation_catalogs.py": "788c8c1e7401e54ab31382b847049e93d6f47a99a050609da2defbdc7f1d910f",
-    "scripts/ui_string_audit.py": "c3b16a407263d8aa7665095e6d0577ab261acf6793d10d27a65d4e1707495275",
+    "tests/translation_catalogs.py": "4913e1f664337d8e69aad576875e3a8ee042c7986d6816b104e493476b4083f7",
+    "scripts/ui_string_audit.py": "681c99092923ff7e1e0587421b7cf163d8901c024617b111732d99b98e683957",
     "tests/results/localization/dynamic-display-inventory.json": "1153b65dc14f876e813c20669dc596b67456daf7643ba401232ffd182edd49bb",
     "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
     "src/main.cpp": "385ed79a6410f3360ec4338b48ff2fe2c92e53f1ea8e868aaeadef4e9a3baea8",
@@ -258,5 +258,6 @@
   "windowsOwnedDiagnosticReview": "tests/results/localization/windows-owned-diagnostic-source-review.json",
   "displayLiteralGate": "tests/results/localization/display-literal-review-gate.json",
   "displayLiteralWindowsPathFix": "tests/results/localization/display-literal-windows-path-fix.json",
-  "publicUpdateMessageReview": "tests/results/localization/public-update-message-review.json"
+  "publicUpdateMessageReview": "tests/results/localization/public-update-message-review.json",
+  "choiceListDisplayGuard": "tests/results/localization/choice-list-display-guard.json"
 }

@@ -36,6 +36,27 @@
       "argument": 0,
       "literal": " dB",
       "reason": "Invariant physical unit symbol"
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItems",
+      "argument": 0,
+      "literal": "PK",
+      "reason": "Stable filter type code; editor saves this code unchanged"
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItems",
+      "argument": 0,
+      "literal": "LS",
+      "reason": "Stable filter type code; editor saves this code unchanged"
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "addItems",
+      "argument": 0,
+      "literal": "HS",
+      "reason": "Stable filter type code; editor saves this code unchanged"
     }
   ]
 }
