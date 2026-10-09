@@ -497,3 +497,7 @@ Swedish, Danish, Norwegian Bokmål, Finnish, Greek and Turkish add 156 populated
 ### Linux installer: Ukrainian, Russian, Hebrew and Persian (2026-10-09)
 
 Added 104 translations across four locales. Contextual AI review preserves installation versus download-only behavior, failure outcomes, command tokens and exact app Quit captions. Five focused tests pass across all 25 populated locales, including literal substitutions and dialog arguments/cancellation. Nine locales remain. Native-speaker verification is unverified; actual RTL rendering and installation were not exercised in this batch. No local VM was started.
+
+### Linux installer: Chinese, Japanese and Korean (2026-10-09)
+
+Added 104 entries for Simplified Chinese, Traditional Chinese, Japanese and Korean. Contextual AI review preserves actual installation/download behavior, failure outcomes, settings retention and exact app Quit captions. The two Chinese catalogs use distinct regional package, profile and equalizer terms. Korean opaque substitutions use optional case particles. Coverage is 29 locales with Hindi, Indonesian, Vietnamese, Thai and Swahili pending. Native-speaker verification remains unverified. Lookup/dialog-argument tests do not establish actual glyph rendering or installation behavior. No local VM was started.

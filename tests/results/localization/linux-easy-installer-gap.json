@@ -107,8 +107,8 @@
       "source": "message \"Installed $product $version. Open it from the applications menu. Use Quit and reopen after an update. No uninstall or reboot is needed for the app update.\""
     }
   ],
-  "status": "Standalone localization infrastructure implemented; 9 locale translations pending",
-  "nextTask": "Populate the remaining nine installer locales, review wording against behavior, then qualify actual installer UI and the complete release companion.",
+  "status": "Standalone localization infrastructure implemented; 5 locale translations pending",
+  "nextTask": "Populate Hindi, Indonesian, Vietnamese, Thai and Swahili installer locales, then qualify actual installer UI and the complete release companion.",
   "nativeReviewed": false,
   "wholeInterfaceCoverageProven": false,
   "originalSourceSha256": "59a55ec160229be983015b49e71ac92164d6dcc727119b12a1b4fe9fec42bb67",
@@ -139,20 +139,24 @@
       "uk",
       "ru",
       "he",
-      "fa"
+      "fa",
+      "zh-Hans",
+      "zh-Hant",
+      "ja",
+      "ko"
     ],
-    "pendingLocaleCount": 9,
+    "pendingLocaleCount": 5,
     "selection": "--language TAG, SC_INSTALLER_LANGUAGE, LANGUAGE/LC_ALL/LC_MESSAGES/LANG; explicit supported region aliases and English fallback",
     "standalone": "Shell-quoted catalog embedded in the .run file; no external catalog or translation service required",
     "substitution": "Single-pass literal parameter copying; no eval or re-expansion",
     "verification": "Pinned product/version/release/repository and package hashes unchanged",
     "releaseGate": "assemble-release requires every app locale to have a complete installer catalog",
-    "tests": "Five focused tests passed with all 25 populated locales: lookup, literal substitution, help/errors, provider dialog arguments/cancellation and caption guards. No actual GTK rendering or installation."
+    "tests": "Five focused tests passed with all 29 populated locales: lookup, literal substitution, help/errors, provider dialog arguments/cancellation and caption guards. No actual GTK rendering or installation."
   },
   "sourceSha256": {
-    "scripts/install-linux.run": "ad9968de420de7336119b8da5939c09ead05afc9e98ab1a95b1dfc9e3d013c70",
+    "scripts/install-linux.run": "d81ae1aa504d221cc87c47608611e7b91afbdc5c4da16e9fd948b649c1a386a3",
     "scripts/linux_installer_catalogs.py": "d3e03fe8521f3d14cda6cef691f4bb3b73f9c3b25b7a400b9344d3ce09673915",
-    "data/localization/linux-installer.json": "67ba900ec39d28f90155494a14869c1eca0be0d6eea62dfc0bf861a755caaa14",
+    "data/localization/linux-installer.json": "d5d8f4cc04ab13b266e4d69316faa0492a914504b65883193beb706c65e66779",
     "tests/linux_installer_localization.py": "7a853c7e7375198e0a1b1270907f1262f126dd0bd5305ee73b40700e07b17400"
   },
   "catalogRegressionSuite": {
@@ -217,5 +221,18 @@
     "nativeReviewed": false,
     "testLog": "tests/results/localization/linux-installer-cyrillic-rtl-tests.log",
     "testLogSha256": "7f01949d24de80a4c78b0453479e9d0024a1dce30ad9cb127db980887c17f3ea"
+  },
+  "eastAsianReview": {
+    "added": [
+      "zh-Hans",
+      "zh-Hant",
+      "ja",
+      "ko"
+    ],
+    "entriesReviewed": 104,
+    "scope": "Contextual AI review preserves install/download separation, no-install outcomes, existing-version retention, settings preservation and exact app Quit captions. Simplified and Traditional Chinese use regional package/profile/equalizer terminology; Japanese uses application and package-manager terminology, Korean uses optional case particles for opaque substitutions. No native-speaker or actual glyph/rendering verification.",
+    "nativeReviewed": false,
+    "testLog": "tests/results/localization/linux-installer-east-asian-tests.log",
+    "testLogSha256": "1808c20c110bfd7207ce8c722d86ba7c486fc28116dcb7947a6eabf54dbcc756"
   }
 }
