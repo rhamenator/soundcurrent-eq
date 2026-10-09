@@ -58,7 +58,11 @@ $uninstallKey="HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\SoundCu
 $preferenceKey="HKCU:\Software\SoundCurrent\$display"
 $settings="HKCU:\Software\SoundCurrent\$name"
 Assert (!(Test-Path $uninstallKey)) 'Requires a clean clone with no installed tested product'
-Assert (!(Test-Path $preferenceKey)) 'Requires a clean clone without installer preferences'
+# QSettings may create an empty native key while reading absent preferences.
+if(Test-Path $preferenceKey){
+ $existingPreference=Get-Item -LiteralPath $preferenceKey
+ Assert (@($existingPreference.Property).Count -eq 0 -and @($existingPreference.GetSubKeyNames()).Count -eq 0) 'Requires a clean clone without installer preference values or child keys'
+}
 Assert (!(Test-Path $settings)) 'Requires a clean clone without app settings'
 Assert (-not (Get-Process $name -ErrorAction SilentlyContinue)) 'Tested app is running'
 $shortcutFolder=Join-Path ([Environment]::GetFolderPath('Programs')) $display
