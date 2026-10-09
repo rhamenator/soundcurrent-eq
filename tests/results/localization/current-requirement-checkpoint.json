@@ -76,7 +76,7 @@
   "evidenceSha256": {
     "data/localization/catalogs.json": "dfa87d833eb2a7a4974ba01e12258ba4976b2533334741a67b72cbed2e649897",
     "docs/translation-review.md": "6408d39734cfb068f023796ac8a924f4d8103f995ff476e76b30d172da5e69af",
-    "tests/localization.cpp": "0842e2301acf9e36df808fdb799664e33d2a231986af9083f28d4a92aa4c18f6",
+    "tests/localization.cpp": "c0d9403fa294731fdb580f9022d08fc5be3ca27da89e87547297566315cde278",
     "tests/translation_catalogs.py": "a31c1dea85d778cbea2834f46d610dbf620e7edb12e41a5ce46b3be625151885",
     "scripts/ui_string_audit.py": "a7cd0132f32a3f103eadffe8798aee877b4c397545f3e53ec1ea4134b133629f",
     "tests/results/localization/dynamic-display-inventory.json": "7a1c81fb71b290032839b312f15f2b0986883bd03c731fbd74588465fb52f138",
@@ -91,7 +91,7 @@
     "tests/results/localization/calibration-worker-native-ci.json": "377d797dfc8478b69a02fb63760577d5a2571393c939e35aa1eecbb270467e35",
     "src/equipment_profiles.cpp": "b41db4ef53c46a0c9e7b6745d0ea106fd0185ba9eb30e90f66d7afda8877779d",
     "tests/results/localization/profile-authored-defaults.json": "2d3aa7687f468de8c9b652c2dafd2afae1f929b3d401ac3390a6f691f08156af",
-    "tests/results/localization/qt-file-dialog-gap.json": "4951c4a5ef4ffacf8404ea1503b1b3acfcdef08d80b634bfa0591b2fe11ac9ef",
+    "tests/results/localization/qt-file-dialog-gap.json": "676b5116c3e234c73f0a9a68b454ab0e51d91553ae720b57809897b2aedee36e",
     "tests/results/localization/linux-688-installed/verified-artifact.json": "435d31a2706acd047f256c13c58b1a084e1160b67d3e7f981ff243a1c5aec32f",
     "tests/results/localization/windows-688-installed/verified-artifact.json": "78a34e382fe1699e047e6d67922c4ab8e061798f76ed0c3f6e4e45c5b3e7cd01"
   },
@@ -173,7 +173,7 @@
     ],
     "sourceSha256": {
       "src/localization.h": "1d82243a04150a1252c4564270f00879474427d32f13f178112c9bd2c467789a",
-      "tests/localization.cpp": "0842e2301acf9e36df808fdb799664e33d2a231986af9083f28d4a92aa4c18f6",
+      "tests/localization.cpp": "c0d9403fa294731fdb580f9022d08fc5be3ca27da89e87547297566315cde278",
       "data/localization/catalogs.json": "dfa87d833eb2a7a4974ba01e12258ba4976b2533334741a67b72cbed2e649897"
     },
     "accessibilityTestScope": "Actual QAccessible Name/Description queries for six navigation buttons, sidebar and list/tree file views, all 33 non-English catalogs. Does not test screen-reader speech.",

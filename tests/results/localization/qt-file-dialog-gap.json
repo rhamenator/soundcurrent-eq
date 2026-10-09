@@ -48,7 +48,7 @@
   ],
   "sourceSha256": {
     "src/localization.h": "1d82243a04150a1252c4564270f00879474427d32f13f178112c9bd2c467789a",
-    "tests/localization.cpp": "0842e2301acf9e36df808fdb799664e33d2a231986af9083f28d4a92aa4c18f6",
+    "tests/localization.cpp": "c0d9403fa294731fdb580f9022d08fc5be3ca27da89e87547297566315cde278",
     "data/localization/catalogs.json": "dfa87d833eb2a7a4974ba01e12258ba4976b2533334741a67b72cbed2e649897"
   },
   "accessibilityTestScope": "Actual QAccessible Name/Description queries for six navigation buttons, sidebar and list/tree file views, all 33 non-English catalogs. Does not test screen-reader speech.",

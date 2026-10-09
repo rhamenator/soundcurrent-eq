@@ -465,6 +465,28 @@ int main(int argc,char **argv){
      action->trigger();require(headerTree->isColumnHidden(headerColumn)==oldHidden,"File-column action did not restore visibility");
      ++headerColumn;
     }
+    const auto selectedBeforeLanguageEvent=chooser.selectedFiles();
+    const auto filtersBeforeLanguageEvent=chooser.nameFilters();
+    QEvent languageEvent(QEvent::LanguageChange);
+    QCoreApplication::sendEvent(&chooser,&languageEvent);
+    bool qtRebuiltFragments=false;
+    int retranslatedColumn=0;
+    for(auto *action:headerTree->header()->actions())
+     qtRebuiltFragments|=action->text()!=text(headerCaptions[retranslatedColumn++]);
+    require(qtRebuiltFragments,"Language-change fixture did not exercise Qt header retranslation");
+    app.processEvents();
+    retranslatedColumn=0;
+    for(auto *action:headerTree->header()->actions())
+     require(action->text()==text(headerCaptions[retranslatedColumn++]),"Deferred header caption update ran before Qt retranslation completed");
+    require(chooser.selectedFiles()==selectedBeforeLanguageEvent && chooser.nameFilters()==filtersBeforeLanguageEvent,"Header retranslation changed selected paths or filter semantics");
+    if(language.tag=="fr") {
+     auto *retired=new QFileDialog;
+     retired->setOption(QFileDialog::DontUseNativeDialog);retired->setDirectory(dir.path());
+     QEvent queuedLanguageEvent(QEvent::LanguageChange);
+     QCoreApplication::sendEvent(retired,&queuedLanguageEvent);
+     delete retired;app.processEvents();
+    }
+
 
     for (const auto &[object, caption]:std::initializer_list<std::pair<const char*,const char*>>{
       {"lookInLabel","Look in:"},{"fileNameLabel","File name:"},{"fileTypeLabel","Files of type:"}}) {
