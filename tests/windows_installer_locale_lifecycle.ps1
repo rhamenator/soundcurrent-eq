@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0-only
 # System-changing: use only on a full independent Windows clone, never an original VM.
 param([switch]$Run,[Parameter(Mandatory=$true)][ValidateSet('EQ','Studio')][string]$Product,
- [Parameter(Mandatory=$true)][string]$InstallerPath,
+ [Parameter(Mandatory=$true)][string]$InstallerPath,[string]$InitialInstallerPath,
  [Parameter(Mandatory=$true)][string]$CatalogPath,
  [Parameter(Mandatory=$true)][string]$LanguageMapPath,
  [Parameter(Mandatory=$true)][string]$ResultDirectory,
@@ -57,7 +57,8 @@ $marker=$null;$shortcutMarker=$null;$steps=@()
 try {
  foreach($expected in $expectations){
   New-ItemProperty $preferenceKey -Name InstallerLanguage -Value ([string]$expected.id) -PropertyType String -Force | Out-Null
-  Execute $InstallerPath '/S'
+  $candidate=if($steps.Count -eq 0 -and $InitialInstallerPath){$InitialInstallerPath}else{$InstallerPath}
+  Execute $candidate '/S'
   Assert (Test-Path $uninstallKey) 'Product registration missing after install/update'
   $directory=Split-Path (Get-ItemProperty $uninstallKey).DisplayIcon -Parent
   $exe=Join-Path $directory "$name.exe"
@@ -89,7 +90,7 @@ try {
   Assert ((Get-Content -LiteralPath $marker) -eq 'preserve-file') 'Update lost unknown user file'
   Assert ((Get-Content -LiteralPath $shortcutMarker) -eq 'preserve-shortcut-folder-file') 'Update lost or changed unrelated shortcut-folder file'
   Assert ((AudioState) -eq $before) 'Install/update changed audio device identities/status'
-  $steps+=@{locale=$expected.tag;languageId=$expected.id;shortcuts='passed';preservation='passed'}
+  $steps+=@{locale=$expected.tag;languageId=$expected.id;installerSha256=(Get-FileHash $candidate).Hash;shortcuts='passed';preservation='passed'}
  }
  Execute (Join-Path $directory 'uninstall.exe') '/S'
  $deadline=[DateTime]::UtcNow.AddSeconds(30)

@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "repository": "soundcurrent-eq",
+  "windowsCiRun": 37869446207,
+  "sourceHead": "96dd9f975d590a396f46dec058a367d4703cc1d1",
+  "runConclusion": "success",
+  "installerPath": "/home/rich/dev/soundcurrent-localization-artifacts/eq-37869446207/dist/SoundCurrent-EQ-1.1.0-windows-x64-setup.exe",
+  "installerSha256": "76a8bca37e99a4911acc2b2360b6b23c251a6611260b00b695dd019f3f8b7f74",
+  "declaredChecksumMatched": true,
+  "scope": "Downloaded successful preview package; current head differs and installed lifecycle not qualified",
+  "nativeSpeakerVerified": false
+}
