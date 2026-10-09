@@ -889,6 +889,15 @@ class CatalogTests(unittest.TestCase):
             self.assertTrue(any(row['expression'] == 'profileBrands'
                                 for row in audit.dynamic_inventory(fixture)['expressions']))
 
+    def test_composed_format_diagnostic_requires_declared_mapping(self):
+        code = 'checkFormat(client, format, "Cable recording endpoint");'
+        diagnostic = 'Cable recording endpoint does not support shared 48 kHz stereo float audio'
+        mapping = 'if (diagnostic == QStringLiteral("' + diagnostic + '")) return SC_TR("Format error label");'
+        catalog.check_backend_diagnostics(code, mapping, {'Format error label'})
+        for broken, declared in (('', {'Format error label'}), (mapping, set())):
+            with self.assertRaisesRegex(ValueError, 'Unmapped Windows format diagnostic'):
+                catalog.check_backend_diagnostics(code, broken, declared)
+
     def test_hresult_action_requires_declared_desktop_mapping(self):
         mapping = 'if (action == QStringLiteral("Read endpoint")) translatedAction = SC_TR("Read endpoint label");'
         for helper in ('check', 'checked'):

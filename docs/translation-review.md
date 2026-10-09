@@ -545,3 +545,7 @@ EQ Fedora 44 and AlmaLinux 10 actual installer main paths passed: French prompt 
 ### Windows HRESULT action labels (2026-10-09)
 
 All literal action arguments supplied to Windows check/checked helpers were compared with the exact desktop action mappings. A source guard now rejects missing mappings or undeclared translation targets. Focused positive and negative fixtures and complete-catalog checks passed. Backend action identifiers and hexadecimal error codes remain invariant. This does not induce hardware faults or establish native-speaker accuracy.
+
+### Composed Windows format diagnostic (2026-10-09)
+
+The checkFormat endpoint label and owned format-error suffix produce a full diagnostic that is translated at the desktop boundary. Current calls were inspected, and a shared guard now rejects a literal endpoint composition lacking a declared mapping. Positive/missing/undeclared-target focused tests and complete-catalog checks passed. Endpoint formats, backend diagnostic identity and processing remain unchanged; no physical device failure was induced. Native-speaker verification remains unverified.

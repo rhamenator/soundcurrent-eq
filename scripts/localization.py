@@ -182,6 +182,12 @@ def check_backend_diagnostics(code, mapping_code, declared):
             value = literal(args[1]) if len(args) == 2 else None
             if value is not None and (value not in action_mappings or action_mappings[value] not in declared):
                 raise ValueError('Unmapped Windows HRESULT action: ' + value)
+    for args in calls(code, 'checkFormat'):
+        endpoint = literal(args[2]) if len(args) == 3 else None
+        if endpoint is not None:
+            diagnostic = endpoint + ' does not support shared 48 kHz stereo float audio'
+            if diagnostic not in mappings or mappings[diagnostic] not in declared:
+                raise ValueError('Unmapped Windows format diagnostic: ' + diagnostic)
 
 
 def sources():
