@@ -161,9 +161,20 @@
       "evidence": [
         "tests/results/localization/launcher-description-localization.json",
         "tests/results/localization/linux-installer-runtime.json",
-        "tests/results/localization/preview-bundle-verification.json"
+        "tests/results/localization/preview-bundle-verification.json",
+        "tests/results/localization/easy-installer-ubuntu/verified-path.json",
+        "tests/results/localization/easy-installer-rpm-1/verified-path.json",
+        "tests/results/localization/easy-installer-rpm-2/verified-path.json"
       ],
-      "auditState": "indexed; final source/evidence correspondence check pending"
+      "auditState": "current source correspondence reviewed; no missing owned installer/launcher text identified",
+      "review": {
+        "installer": "All owned titles, confirmations, help and diagnostics routed through26 stable catalog keys; complete34-language embedded catalog matches generator. Unsupported locale uses English fallback.",
+        "selection": "Explicit --language/SC_INSTALLER_LANGUAGE or locale preference chain; independent from saved app preference. Regional aliases reviewed.",
+        "parameters": "Single-pass literal substitution preserves opaque product/version/path text, flags and commands; no eval. Exact app Quit captions required.",
+        "launcher": "Comment localized with explicit locale aliases. Name/Exec/icon/categories stay stable; installed/updated/reinstalled bytes matched source in package tests.",
+        "qualification": "All34 terminal prompt/cancel/accept fixtures; French/Arabic/Japanese GTK visual samples. Actual French installer main paths invoked apt/dnf on Ubuntu/Fedora/AlmaLinux and retained current package; surrounding direct lifecycle tests reinstall/uninstall/config preservation."
+      },
+      "runtimeLimit": "Provider buttons/package-manager/polkit text follows host locale. No all-locale GTK/KDialog rendering, older-version migration or first-install easy-installer execution proven. App-production package refresh pending for the process-conflict fix."
     }
   ],
   "sourceSha256": {
