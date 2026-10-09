@@ -1,0 +1,39 @@
+{
+  "run": 37874410154,
+  "testedHead": "c89283341ea6944be06e9d6d66adfaaeab670b25",
+  "conclusion": "success",
+  "environments": [
+    "Ubuntu 24.04 container",
+    "Fedora 44 container",
+    "AlmaLinux 10 container"
+  ],
+  "packages": [
+    {
+      "artifact": "package-validation-0",
+      "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-37874410154/package-validation-0/soundcurrent-eq_1.1.0_amd64.deb",
+      "sha256": "852803a3f90f214d0277ae0c6b7b9fb78d7d83af6cc210633392b221fe473b4c",
+      "installedLocaleFixtures": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-current/package-validation-0"
+    },
+    {
+      "artifact": "package-validation-1",
+      "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-37874410154/package-validation-1/soundcurrent-eq-1.1.0-1.fc44.x86_64.rpm",
+      "sha256": "b0fa94b9623ef36ca790eba9bc08842f79b3e9964c4ecff87fef1d1fcae1c195",
+      "installedLocaleFixtures": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-current/package-validation-1"
+    },
+    {
+      "artifact": "package-validation-2",
+      "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-37874410154/package-validation-2/soundcurrent-eq-1.1.0-1.el10.x86_64.rpm",
+      "sha256": "8bdcefee76797463962b86d7ad52d7df36f989eac6d4f84cd1300dd280a64077",
+      "installedLocaleFixtures": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-current/package-validation-2"
+    }
+  ],
+  "scope": "Build, CTest, installed GUI fixture, 33 installed locale fixtures, same-package in-place reinstall, uninstall, config sentinel preservation, reinstall. Not desktop audio, arbitrary older-version migration, actual RHEL desktop, all-string linguistic review or Windows qualification.",
+  "nativeReviewed": false,
+  "PowerShellFixture": "Skipped in Linux containers without PowerShell; actual host/Windows fixture reported separately"
+}

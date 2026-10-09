@@ -252,3 +252,7 @@ The clone has no QEMU guest-agent channel. A small read-only ISO is attached to 
 ### Display inventory and confirmed clone login
 
 The literal display inventory now includes tab captions, informative text, status tips, and context help. Regression fixtures cover plain/wrapped captions and exclusion of translated/dynamic expressions. Fresh catalog checks report 628 declared messages across 34 catalogs, zero unfinished; this does not prove whole-interface coverage or native review. The independent Windows clone reached its desktop using the saved credential after a visible non-secret keyboard probe, then shut down gracefully. No setup script or app installer ran in that check. Current installed package qualification remains pending. Evidence: `tests/results/localization/display-inventory-extension.json`.
+
+### Current Linux package lifecycle qualification
+
+Run 37874410154 passed all three container environments for source c89283341ea6944be06e9d6d66adfaaeab670b25. Downloaded package checksums matched, and all 33 installed locale completion logs were verified per package. Build/CTest, install, same-package update, uninstall, settings sentinel preservation and reinstall passed. Package paths and SHA-256 identities are in `tests/results/localization/linux-current/report.json`. These container fixtures do not qualify actual RHEL desktop audio, arbitrary old-version migration, Windows, or native-speaker review. The Windows Arabic shortcut failure remains open.
