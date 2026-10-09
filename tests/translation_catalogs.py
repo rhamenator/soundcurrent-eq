@@ -771,11 +771,18 @@ class CatalogTests(unittest.TestCase):
 
     def test_reviewed_wave_diagnostics_preserve_file_format_identity(self):
         for source in ('Cannot open input WAVE file', 'Cannot create output WAVE file',
-                       'Truncated WAVE file'):
+                       'Truncated WAVE file', 'Cannot seek to WAVE audio',
+                       'Invalid WAVE read buffer', 'Invalid output WAVE format'):
             catalog.validate_text(source, 'Erreur du fichier WAVE')
             for translated in ('Erreur du fichier onde', 'Erreur du fichier Wave',
                                'Erreur du fichier WAVE WAVE', 'Erreur du fichier'):
                 with self.assertRaisesRegex(ValueError, 'WAVE file-format identifier changed'):
+                    catalog.validate_text(source, translated)
+        for source in ('Invalid RIFF size', 'Chunk extends beyond RIFF bounds'):
+            catalog.validate_text(source, 'Erreur du conteneur RIFF')
+            for translated in ('Erreur du conteneur', 'Erreur du conteneur Riff',
+                               'Erreur du conteneur RIFF RIFF'):
+                with self.assertRaisesRegex(ValueError, 'RIFF container identifier changed'):
                     catalog.validate_text(source, translated)
         # Acoustic waves in ordinary prose are not file-format identifiers.
         catalog.validate_text('Sound wave', 'Onde sonore')
