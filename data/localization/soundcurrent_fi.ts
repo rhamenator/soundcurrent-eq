@@ -1703,6 +1703,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>Sulje kaikki käynnissä olevat SoundCurrent-sovellukset ennen jaetun ajurin muuttamista. Yhden sovelluksen poistaminen säilyttää ajurin, jos toinen sovellus käyttää sitä edelleen.</translation>
     </message>
     <message>
+      <source>Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.</source>
+      <translation>Sulje kaikki käynnissä olevat taajuuskorjaimet ennen ohjaimen asennusta. Kun viimeinen SoundCurrent-sovellus poistetaan, sen poisto-ohjelma tarjoaa VB-CABLE-ohjaimen poistamista. Muutkin ohjelmat saattavat tarvita kaapelia. Ylimääräiset A/B-kaapelit eivät sisälly pakettiin.</translation>
+      <extracomment>Shared virtual cable notice: quit exits the equalizer, not just closes UI. Cable removal is offered when the other SoundCurrent app is absent; user confirmation remains required, silent app removal does not remove cable. A/B refers to separate extra virtual cables, not physical wires. Other software may depend on shared VB-CABLE. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Lopeta sovellus</translation>

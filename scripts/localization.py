@@ -194,6 +194,7 @@ class Markup(HTMLParser):
 # Exact labels in third-party installer or device UI are protected only in reviewed
 # instruction sources. SoundCurrent's own button captions remain translatable.
 EXTERNAL_UI_LABELS = {
+    'Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.': ('SoundCurrent', 'VB-CABLE', 'A/B'),
     'Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.': ('VB-Audio', 'Install Driver', 'Windows', 'VB-CABLE'),
     'VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.': ('VB-CABLE',),
     'VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.': ('VB-CABLE', 'SoundCurrent'),

@@ -1703,6 +1703,11 @@ Importer dans votre bibliothèque ?</translation>
       <translation>Quittez toute application SoundCurrent en cours d’exécution avant de modifier le pilote partagé. La désinstallation d’une application conserve le pilote si l’autre l’utilise encore.</translation>
     </message>
     <message>
+      <source>Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.</source>
+      <translation>Quittez tout égaliseur en cours d’exécution avant l’installation du pilote. Lors de la désinstallation de la dernière application SoundCurrent, son programme de désinstallation propose de supprimer VB-CABLE. D’autres logiciels peuvent aussi avoir besoin du câble. Les câbles A/B supplémentaires ne sont pas inclus.</translation>
+      <extracomment>Shared virtual cable notice: quit exits the equalizer, not just closes UI. Cable removal is offered when the other SoundCurrent app is absent; user confirmation remains required, silent app removal does not remove cable. A/B refers to separate extra virtual cables, not physical wires. Other software may depend on shared VB-CABLE. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Quitter l’application</translation>

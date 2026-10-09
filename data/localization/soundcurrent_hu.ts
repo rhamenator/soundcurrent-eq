@@ -1703,6 +1703,11 @@ Importálja a könyvtárba?</translation>
       <translation>A megosztott illesztőprogram módosítása előtt lépjen ki minden futó SoundCurrent alkalmazásból. Az egyik alkalmazás eltávolításakor az illesztőprogram megmarad, ha a másik még használja.</translation>
     </message>
     <message>
+      <source>Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.</source>
+      <translation>Az illesztőprogram telepítése előtt lépjen ki minden futó equalizerből. Az utolsó SoundCurrent alkalmazás eltávolításakor az eltávolítóprogram felajánlja a VB-CABLE eltávolítását. Más szoftvereknek is szükségük lehet a kábelre. A további A/B kábelek nincsenek a csomagban.</translation>
+      <extracomment>Shared virtual cable notice: quit exits the equalizer, not just closes UI. Cable removal is offered when the other SoundCurrent app is absent; user confirmation remains required, silent app removal does not remove cable. A/B refers to separate extra virtual cables, not physical wires. Other software may depend on shared VB-CABLE. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Kilépés az alkalmazásból</translation>

@@ -1703,6 +1703,11 @@ Import into your library?</source>
       <translation>יש לצאת מכל יישום SoundCurrent שפועל לפני שינוי מנהל ההתקן המשותף. הסרת יישום אחד משאירה את מנהל ההתקן אם היישום האחר עדיין משתמש בו.</translation>
     </message>
     <message>
+      <source>Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.</source>
+      <translation>יש לצאת מכל אקולייזר פועל לפני התקנת מנהל ההתקן. בעת הסרת אפליקציית SoundCurrent האחרונה, תוכנית ההסרה שלה מציעה להסיר את VB-CABLE. ייתכן שגם תוכנות אחרות זקוקות לכבל. כבלי A/B נוספים אינם כלולים.</translation>
+      <extracomment>Shared virtual cable notice: quit exits the equalizer, not just closes UI. Cable removal is offered when the other SoundCurrent app is absent; user confirmation remains required, silent app removal does not remove cable. A/B refers to separate extra virtual cables, not physical wires. Other software may depend on shared VB-CABLE. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>יציאה מהאפליקציה</translation>

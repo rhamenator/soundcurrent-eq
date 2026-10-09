@@ -1703,6 +1703,11 @@ Importér til dit bibliotek?</translation>
       <translation>Afslut alle kørende SoundCurrent-apps, før du ændrer den delte driver. Når én app afinstalleres, bevares driveren, hvis den anden app stadig bruger den.</translation>
     </message>
     <message>
+      <source>Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.</source>
+      <translation>Afslut alle kørende equalizere før driverinstallationen. Når den sidste SoundCurrent-app fjernes, tilbyder dens afinstallationsprogram at fjerne VB-CABLE. Andre programmer kan også have brug for kablet. Ekstra A/B-kabler er ikke inkluderet.</translation>
+      <extracomment>Shared virtual cable notice: quit exits the equalizer, not just closes UI. Cable removal is offered when the other SoundCurrent app is absent; user confirmation remains required, silent app removal does not remove cable. A/B refers to separate extra virtual cables, not physical wires. Other software may depend on shared VB-CABLE. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Afslut appen</translation>

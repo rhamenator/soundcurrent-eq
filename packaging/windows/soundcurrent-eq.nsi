@@ -55,6 +55,7 @@ Page custom AudioPage AudioPageLeave
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_LANGUAGE "English"
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
+LangString SCCableSharedNotice ${LANG_ENGLISH} "Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled."
 LangString SCCableSignedInstaller ${LANG_ENGLISH} "Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings."
 LangString SCCableRepair ${LANG_ENGLISH} "VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again."
 LangString SCCablePresent ${LANG_ENGLISH} "VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use Quit app."
@@ -117,7 +118,7 @@ Function AudioPage
     ${NSD_CreateLabel} 0 65u 100% 35u "$(SCDriverCheckFailed)"
   ${EndIf}
   Pop $0
-  ${NSD_CreateLabel} 0 108u 100% 40u "Quit any running equalizer before driver setup. The last app’s uninstaller offers VB-CABLE removal. Other software may also need it. Extra A/B cables are not bundled."
+  ${NSD_CreateLabel} 0 108u 100% 40u "$(SCCableSharedNotice)"
   Pop $0
   nsDialogs::Show
 FunctionEnd

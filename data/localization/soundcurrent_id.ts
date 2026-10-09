@@ -1703,6 +1703,11 @@ Impor ke pustaka Anda?</translation>
       <translation>Keluar dari semua aplikasi SoundCurrent yang berjalan sebelum mengubah driver bersama. Menghapus satu aplikasi mempertahankan driver jika aplikasi lain masih menggunakannya.</translation>
     </message>
     <message>
+      <source>Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.</source>
+      <translation>Tutup semua equalizer yang berjalan sebelum memasang driver. Saat aplikasi SoundCurrent terakhir dihapus, program penghapusnya menawarkan penghapusan VB-CABLE. Perangkat lunak lain mungkin juga memerlukan kabel tersebut. Kabel A/B tambahan tidak disertakan.</translation>
+      <extracomment>Shared virtual cable notice: quit exits the equalizer, not just closes UI. Cable removal is offered when the other SoundCurrent app is absent; user confirmation remains required, silent app removal does not remove cable. A/B refers to separate extra virtual cables, not physical wires. Other software may depend on shared VB-CABLE. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>Quit app</source>
       <extracomment>Exit the process and unload audio processing; closing the window alone keeps the app running.</extracomment>
       <translation>Keluar dari aplikasi</translation>

@@ -230,9 +230,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 112,
       "kind": "control-caption",
-      "literal": "Quit any running equalizer before driver setup. The last app’s uninstaller offers VB-CABLE removal. Other software may also need it. Extra A/B cables are not bundled.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCCableSharedNotice)",
+      "marked": true,
+      "reviewStatus": "all locale shared-cable translations prepared; activation and installed layout pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",

@@ -160,3 +160,7 @@ All 33 non-English catalogs now contain the signed-installer notice. The exact e
 ### Windows Studio route validation qualification
 
 Windows CI run 37863575451 passed for Studio commit `6a26206`, including 35 localized UI assertions and installer compilation. It predates the newer repair and signed-installer notices and does not test installed-package lifecycle. Test diagnostic logs now preserve exact Unicode as UTF-8 hex; actual dialog assertions remain unchanged. EQ now uses the same relevant PR Windows-check trigger as Studio. See `tests/results/localization/second-pass-windows-route-success.json`.
+
+### Shared cable ownership notice
+
+All 33 non-English catalogs now contain the shared-cable notice. The English caption explicitly identifies the last SoundCurrent app, and contextual review checked optional removal, other software dependencies, extra A/B virtual cables, and quitting background processing. Catalog tests and 578 exported caption literals compile. Native-speaker review, installer language activation, installed layout and current package lifecycle remain unverified. See `tests/results/localization/second-pass-installer-shared-cable.json`.
