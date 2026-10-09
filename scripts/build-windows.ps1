@@ -220,6 +220,8 @@ try {
     $generatedInstallerScript = Join-Path $root 'build-windows-native\localized-installer.nsi'
     & python scripts/windows_installer_catalogs.py --product "SoundCurrent EQ" --output "$root\build-windows-native\installer-translations.json" --installer-source $installerScript --installer-output $generatedInstallerScript --activate-languages
     if ($LASTEXITCODE -ne 0) { throw 'Installer caption generation failed' }
+    & powershell.exe -NoProfile -NonInteractive -File tests/windows_installer_locale_fixture.ps1 -CatalogPath "$root\build-windows-native\installer-translations.json" -LanguageMapPath "$root\data\localization\installer-language-map.json"
+    if ($LASTEXITCODE -ne 0) { throw 'Installer locale lifecycle fixture failed' }
     & $Nsis /INPUTCHARSET UTF8 "/DAPP_EXE=$stage\soundcurrent-eq.exe" "/DDLL_DIR=$stage" "/DAPP_VERSION=$version" "/DOUTPUT=$installer" @audioOptions "/DSOURCE_ROOT=$root" "/DUNINSTALL_PAYLOAD=$root\build-windows-native\uninstall-payload.nsh" $generatedInstallerScript
     if ($LASTEXITCODE -ne 0) { throw 'Windows installer build failed' }
     Copy-Item $sourceArchive dist
