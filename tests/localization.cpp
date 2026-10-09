@@ -11,6 +11,7 @@
 #include <QAccessible>
 #include <QDebug>
 #include <QTreeView>
+#include <QAbstractFileIconProvider>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QJsonDocument>
@@ -432,6 +433,14 @@ int main(int argc,char **argv){
      require(fileTree->model()->headerData(column++,Qt::Horizontal).toString()==text(caption),"Qt file model header stayed outside app catalog");
     }
     require(QCoreApplication::translate("ExternalPlugin","Date Modified")==QStringLiteral("Date Modified"),"Qt file model mapping intercepted plugin header");
+    QAbstractFileIconProvider genericFileTypes;
+    require(genericFileTypes.type(QFileInfo(dir.path()))==text("Folder"),"Qt generic directory type stayed outside app catalog");
+    require(genericFileTypes.type(QFileInfo(QDir::rootPath()))==text("Drive"),"Qt generic drive type stayed outside app catalog");
+    require(genericFileTypes.type(QFileInfo(dir.filePath("not-present")))==text("Unknown"),"Qt generic unknown type stayed outside app catalog");
+    for(const auto *caption:{"File","Folder","Drive","Shortcut","Unknown"})
+     require(QCoreApplication::translate("QAbstractFileIconProvider",caption)==text(caption),"Qt generic type lookup stayed outside app catalog");
+    require(QCoreApplication::translate("QAbstractFileIconProvider","File Folder")==text("Folder"),"Qt generic Windows folder variant stayed outside app catalog");
+    require(QCoreApplication::translate("ExternalPlugin","Folder")==QStringLiteral("Folder"),"Qt generic type mapping intercepted plugin data");
     const auto *buttons=chooser.findChild<QDialogButtonBox*>("buttonBox");
     require(buttons && buttons->button(QDialogButtonBox::Open)->text()==text("Open"),"Qt chooser Open stayed outside app catalog");
     chooser.setAcceptMode(QFileDialog::AcceptSave);

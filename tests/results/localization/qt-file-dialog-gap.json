@@ -1,6 +1,6 @@
 {
   "date": "2026-10-09",
-  "status": "File action/header and previous chooser fixtures passed compiled Linux tests; remaining workflows and native Windows qualification incomplete",
+  "status": "Generic Qt file-type and prior chooser fixtures passed compiled Linux tests; remaining workflows and native Windows qualification incomplete",
   "probeSourceSha256": "b3be9f969d44f0352b65c07ce5b0e22ff63d66e26b95b68c3a1c7874ebdfd08f",
   "probeScope": "Standalone Qt6Widgets QFileDialog using the actual EQ compiled French catalog and shared StandardActionTranslator. Offscreen, DontUseNativeDialog. No file selection, settings writes, audio or VM. Shared implementation matches Studio; Studio full app dialog not separately exercised.",
   "untranslatedObserved": [
@@ -37,7 +37,8 @@
   ],
   "remainingScope": [
     "Header-visibility menu composition",
-    "File-type and size display values",
+    "External MIME/file-association descriptors",
+    "Selected-locale file size/date formatting",
     "Open/save error and confirmation dialogs",
     "Native Windows qualification",
     "Screen-reader listening test"
@@ -48,9 +49,9 @@
     "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.ui"
   ],
   "sourceSha256": {
-    "src/localization.h": "6c554110478ceda5fab0f485a4a73ed807f24bf5771957d42c85f9804e00c7d2",
-    "tests/localization.cpp": "c7538b015c6ad5126cf16b0694e64781a9d7b14e92d7d0bc154f4d5567c2d7f1",
-    "data/localization/catalogs.json": "4650865aef4aecebc7f678fcd761951e47b22b40aff5c90abdca180ca8e8ea44"
+    "src/localization.h": "a9222646f7a3003622f11b68c6cb2a6f687454bcd922f1afd9924bd9ed4a2b35",
+    "tests/localization.cpp": "20a5d78362b08d5c4c657278c2a91b473ebc141379c5715f165be2809dab8b33",
+    "data/localization/catalogs.json": "0d51aa81af88e86e207ee6bafcf0190efe60e8b7c3ed5a2ba6dbe668acfc1087"
   },
   "accessibilityTestScope": "Actual QAccessible Name/Description queries for six navigation buttons, sidebar and list/tree file views, all 33 non-English catalogs. Does not test screen-reader speech.",
   "accessibilityLinuxEvidence": {
@@ -69,5 +70,17 @@
     "result": "passed",
     "catalogs": 33,
     "fileOperationsPerformed": false
+  },
+  "sizeDateFormattingGap": {
+    "status": "unresolved, identified in upstream source; runtime reproduction pending",
+    "source": "https://github.com/qt/qtbase/blob/6.4/src/gui/itemmodels/qfilesystemmodel.cpp",
+    "behavior": "size(qint64) and time(QModelIndex) use QLocale::system() rather than selected app default locale"
+  },
+  "genericTypeLinuxEvidence": {
+    "log": "tests/results/localization/qt-file-dialog-type-linux.log",
+    "sha256": "02535bbb59c9f1e9049dd7a9d4ace311f9e24c36a41da63a5b13d71c7d497259",
+    "result": "passed",
+    "catalogs": 33,
+    "scope": "actual generic-provider directory/drive/unknown; direct File/Shortcut and Windows folder alias; no MIME/provider override or file operations"
   }
 }

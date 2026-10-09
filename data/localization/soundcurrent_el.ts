@@ -783,6 +783,11 @@ Import into your library?</source>
       <translation>Ολοκλήρωση αναπαραγωγής δοκιμαστικού ήχου</translation>
     </message>
     <message>
+      <source>Drive</source>
+      <translation>Μονάδα δίσκου</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
       <translation>Η ρύθμιση του προγράμματος οδήγησης απέτυχε (κωδικός %1). Δεν άλλαξαν ρυθμίσεις ασφαλείας των Windows.</translation>
     </message>
@@ -1011,6 +1016,11 @@ Import into your library?</source>
       <translation>Σειρά</translation>
     </message>
     <message>
+      <source>File</source>
+      <translation>Αρχείο</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>File name:</source>
       <translation>Όνομα αρχείου:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -1047,6 +1057,11 @@ Import into your library?</source>
       <source>Floorstanding speaker</source>
       <translation>Ηχείο δαπέδου</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Folder</source>
+      <translation>Φάκελος</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Forward</source>
@@ -2291,6 +2306,11 @@ Import into your library?</source>
       <extracomment>Native uninstall nonzero failure (excluding restart code 3010) aborts before app payload deletion so user can retry. Shared audio driver means EQ/Studio ownership, not network. Quit any running SoundCurrent apps, not necessarily both products; fully exit rather than hide UI. SoundCurrent is invariant. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
+      <source>Shortcut</source>
+      <translation>Συντόμευση</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>Τα μικρότερα διαστήματα ανανεώνουν τις στάθμες συχνότερα και χρησιμοποιούν περισσότερη CPU· η παροχή ήχου μπορεί να περιορίζει τον πραγματικό ρυθμό</translation>
     </message>
@@ -2632,6 +2652,11 @@ Import into your library?</source>
       <source>Uninstall</source>
       <translation>Απεγκατάσταση</translation>
       <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
+      <source>Unknown</source>
+      <translation>Άγνωστο</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Unlock EQ</source>

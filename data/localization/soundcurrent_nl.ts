@@ -783,6 +783,11 @@ Importeren in uw bibliotheek?</translation>
       <translation>Buffer voor testweergave leegspelen</translation>
     </message>
     <message>
+      <source>Drive</source>
+      <translation>Station</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
       <translation>Het instellen van het stuurprogramma is mislukt (code %1). Er zijn geen Windows-beveiligingsinstellingen gewijzigd.</translation>
     </message>
@@ -1011,6 +1016,11 @@ Importeren in uw bibliotheek?</translation>
       <translation>Serie</translation>
     </message>
     <message>
+      <source>File</source>
+      <translation>Bestand</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>File name:</source>
       <translation>Bestandsnaam:</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -1047,6 +1057,11 @@ Importeren in uw bibliotheek?</translation>
       <source>Floorstanding speaker</source>
       <translation>Vloerstaande luidspreker</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Folder</source>
+      <translation>Map</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Forward</source>
@@ -2291,6 +2306,11 @@ Importeren in uw bibliotheek?</translation>
       <extracomment>Native uninstall nonzero failure (excluding restart code 3010) aborts before app payload deletion so user can retry. Shared audio driver means EQ/Studio ownership, not network. Quit any running SoundCurrent apps, not necessarily both products; fully exit rather than hide UI. SoundCurrent is invariant. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
+      <source>Shortcut</source>
+      <translation>Snelkoppeling</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>Kortere intervallen verversen niveaus vaker en gebruiken meer CPU; de aanvoer van audio kan de werkelijke snelheid beperken</translation>
     </message>
@@ -2632,6 +2652,11 @@ Importeren in uw bibliotheek?</translation>
       <source>Uninstall</source>
       <translation>Verwijderen</translation>
       <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
+      <source>Unknown</source>
+      <translation>Onbekend</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Unlock EQ</source>

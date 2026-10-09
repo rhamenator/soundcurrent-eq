@@ -157,6 +157,15 @@ public:
             if (action == "Type") return text("Type");
             return {};
         }
+        if (name == "QAbstractFileIconProvider") {
+            if (action == "Drive") return text("Drive");
+            if (action == "File") return text("File");
+            if (action == "Folder") return text("Folder");
+            if (action == "Shortcut") return text("Shortcut");
+            if (action == "Unknown") return text("Unknown");
+            if (action == "File Folder") return text("Folder");
+            return {};
+        }
         if (name == "QFileDialog") {
             if (action == "&Rename") return text("Rename");
             if (action == "New Folder") return text("New folder");
