@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-09",
+  "scope": "Finite owned-interface surface inventory for source/evidence consolidation. It indexes prior audits without promoting bounded lexical or runtime tests into whole-interface proof.",
+  "surfaces": [
+    {
+      "id": "main-window",
+      "sources": [
+        "src/main.cpp",
+        "src/enhancement_controls.h",
+        "src/equipment_display_text.h",
+        "src/localization_text.h"
+      ],
+      "boundary": "Main equalizer/settings tabs, presets, gain/balance, devices, calibration, microphone state, tray, numeric plots and accessibility captions.",
+      "evidence": [
+        "tests/results/localization/dynamic-provenance-review.json",
+        "tests/results/localization/choice-list-display-guard.json",
+        "tests/results/localization/eq-graph-number-formats.json",
+        "tests/results/localization/balance-number-formats.json"
+      ],
+      "auditState": "indexed; final source/evidence correspondence check pending"
+    },
+    {
+      "id": "equipment-editor",
+      "sources": [
+        "src/equipment_profiles.cpp",
+        "src/equipment_display_text.h"
+      ],
+      "boundary": "Editor/import/save dialogs, generated defaults and taxonomy; imported/published/user names and provenance retain identity.",
+      "evidence": [
+        "tests/results/localization/dynamic-provenance-review.json",
+        "tests/results/localization/profile-authored-defaults.json",
+        "tests/results/localization/header-list-display-guard.json"
+      ],
+      "auditState": "indexed; final source/evidence correspondence check pending"
+    },
+    {
+      "id": "standard-dialogs",
+      "sources": [
+        "src/localization.h",
+        "src/localized_file_dialog.h",
+        "src/file_display_locale_proxy.h"
+      ],
+      "boundary": "Qt fallback chooser labels, actions, file model headers, menus, errors and selected-locale size/date; external MIME associations remain provider data.",
+      "evidence": [
+        "tests/results/localization/qt-file-dialog-source-inventory.json",
+        "tests/results/localization/standard-editing-menus.json",
+        "tests/results/localization/file-display-locale-adapter.json"
+      ],
+      "auditState": "indexed; final source/evidence correspondence check pending"
+    },
+    {
+      "id": "update-startup",
+      "sources": [
+        "src/update_panel.h",
+        "src/startup_controls.h",
+        "src/startup_registration.h"
+      ],
+      "boundary": "Update reminders/status, startup controls/errors and per-user registration; stable names/commands/versions preserved.",
+      "evidence": [
+        "tests/results/localization/public-update-message-review.json",
+        "tests/results/localization/dynamic-provenance-review.json"
+      ],
+      "auditState": "current source correspondence reviewed; no missing owned string identified",
+      "review": "Update panel constructors/buttons/help and all status branches use SC_TR. remind(message) producers are translated local-download, changed-binary and published-update templates. Inserted version/file paths remain opaque. Startup panel title/toggle/help/warning use SC_TR; startup registration emits identities and platform commands only. Shared sources byte-identical across projects.",
+      "runtimeLimit": "Source correspondence review complements installed language fixtures; does not simulate every network response or actual user-login startup."
+    },
+    {
+      "id": "startup-processing",
+      "sources": [
+        "src/main.cpp",
+        "src/processing_guard.cpp",
+        "src/worker_message_buffer.h"
+      ],
+      "boundary": "Startup logging, exclusive-processing failures and calibration worker text transport.",
+      "evidence": [
+        "tests/results/localization/startup-diagnostic-gap.json",
+        "tests/results/localization/calibration-worker-gap.json"
+      ],
+      "auditState": "indexed; final source/evidence correspondence check pending"
+    },
+    {
+      "id": "windows-audio-boundary",
+      "sources": [
+        "src/windows_platform.inc",
+        "src/audio_error_text.h",
+        "src/windows_audio.cpp",
+        "src/windows_io.cpp"
+      ],
+      "boundary": "Direct and composed backend/adapter errors; display-boundary mapping preserves identifiers and error codes.",
+      "evidence": [
+        "tests/results/localization/windows-owned-diagnostic-source-review.json",
+        "tests/results/localization/windows-hresult-action-review.json",
+        "tests/results/localization/windows-format-diagnostic-review.json"
+      ],
+      "auditState": "indexed; final source/evidence correspondence check pending"
+    },
+    {
+      "id": "windows-setup-installers",
+      "sources": [
+        "scripts/windows_setup_catalogs.py",
+        "scripts/windows_installer_catalogs.py"
+      ],
+      "boundary": "Declared helper/NSIS prose, placeholders, translated shortcut captions and explicit locale/RTL map; actual driver operations distinct from silent app lifecycle.",
+      "evidence": [
+        "tests/results/localization/second-pass-setup-source-inventory.json",
+        "tests/results/localization/installer-language-activation.json"
+      ],
+      "auditState": "indexed; final source/evidence correspondence check pending"
+    },
+    {
+      "id": "linux-launcher-installer",
+      "sources": [
+        "scripts/install-linux.run",
+        "scripts/linux_installer_catalogs.py"
+      ],
+      "boundary": "Launcher descriptions and standalone installer owned text; embedded lookup, opaque parameter copying, actual terminal path and sampled GTK display.",
+      "evidence": [
+        "tests/results/localization/launcher-description-localization.json",
+        "tests/results/localization/linux-installer-runtime.json",
+        "tests/results/localization/preview-bundle-verification.json"
+      ],
+      "auditState": "indexed; final source/evidence correspondence check pending"
+    }
+  ],
+  "sourceSha256": {
+    "src/main.cpp": "27dc3d05c3aef5aa0900dff5f9cdd12bc8aee62d31dccfe72b4e087e3bfa5fc1",
+    "src/enhancement_controls.h": "a5c3e8358fa8235b9625567e152dc3eb73ba54f13fba8b4fba2202a272262b52",
+    "src/equipment_display_text.h": "e3086d524e9b436075ecf9d9b8c143a0058a692685c10919b72298fd97ec44c5",
+    "src/localization_text.h": "d9d06c97d3108e857250a419243138cd0939a72a0d19b535666beb1eedcf776c",
+    "src/equipment_profiles.cpp": "1d4adb32603fc05635a456aaf584ede368ad73fc4ebb27acd696890771686f63",
+    "src/localization.h": "f430613fdec6915b10791010bdf9f1e36838240571accd041b818ba00e3561b9",
+    "src/localized_file_dialog.h": "db8e7403e18efca39f41bcb02238c94297e09cc9b9a1f9870f12276bdc58a7ff",
+    "src/file_display_locale_proxy.h": "73bf365758b447200f7170819f8cf998e40b1ba584122cad51ec5de855593435",
+    "src/update_panel.h": "c39b2e267dd634bd49ca63122401cf5c5c2e6cc2735d4f8396eb66a1a52264a3",
+    "src/startup_controls.h": "94cccaea96412bd21f1949463cee81e06980c6e5f207b55f2b8f7dd058acb5af",
+    "src/startup_registration.h": "f9ee3d7f131e0f958b2f95ff1711e9956d4e17b42fbc1de224c87f3fe63c3e36",
+    "src/processing_guard.cpp": "7357547a751b724be0c1743d94f8318a9f86b5f6b2180911799dc660bd5e74b2",
+    "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42",
+    "src/windows_platform.inc": "211d815bd910f4a06362979b762e919952260ab03cc2e809b482c9dda9f38d51",
+    "src/audio_error_text.h": "45426afb00c16ba5d9f96d19045dab8ffda48946edb6be1395afb156f75c5554",
+    "src/windows_audio.cpp": "6499a93ccc8429a6a257fc9c1cd52cdfae11f2045c40b6c5a037c4c614b1d0bd",
+    "src/windows_io.cpp": "13362ffd61431d9ea105ebbf5eb55df30b54904adc34a750a4da4bf9bab08ac7",
+    "scripts/windows_setup_catalogs.py": "881961b77086c5ad51b80df4ce3edf38f52860655f11bb7c924707b4bcf29d86",
+    "scripts/windows_installer_catalogs.py": "7324d6caf59276a20c763e5f15c05b089687b71519cbab4a75ce724e7275977f",
+    "scripts/install-linux.run": "32ae166e8daf1f989fd4e21c1b679de1e192e5f162193ccc94d94271c988048a",
+    "scripts/linux_installer_catalogs.py": "d3e03fe8521f3d14cda6cef691f4bb3b73f9c3b25b7a400b9344d3ce09673915"
+  },
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false,
+  "nextAction": "Check each indexed surface against current producers/callers and reference scope; record any missing owned string as a concrete gap. Complete only after all surface correspondences are verified."
+}

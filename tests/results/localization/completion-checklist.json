@@ -54,7 +54,7 @@
   "openChecks": [
     {
       "requirement": "Whole owned-interface coverage",
-      "status": "Consolidate finite source-surface audit across main window, equipment editor, standard dialogs, update/startup controls, platform helpers, CLI and both installers; listed lexical guards are bounded evidence, not whole coverage."
+      "status": "Final source/evidence correspondence checks for the explicit surfaces in interface-surface-inventory.json; counts and lexical guards alone remain insufficient."
     },
     {
       "requirement": "Current deliverables",
@@ -74,5 +74,6 @@
     "tests/results/localization/easy-installer-ubuntu/verified-path.json",
     "tests/results/localization/easy-installer-rpm-1/verified-path.json",
     "tests/results/localization/easy-installer-rpm-2/verified-path.json"
-  ]
+  ],
+  "interfaceSurfaceInventory": "tests/results/localization/interface-surface-inventory.json"
 }
