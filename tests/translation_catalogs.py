@@ -889,6 +889,15 @@ class CatalogTests(unittest.TestCase):
             self.assertTrue(any(row['expression'] == 'profileBrands'
                                 for row in audit.dynamic_inventory(fixture)['expressions']))
 
+    def test_hresult_action_requires_declared_desktop_mapping(self):
+        mapping = 'if (action == QStringLiteral("Read endpoint")) translatedAction = SC_TR("Read endpoint label");'
+        for helper in ('check', 'checked'):
+            backend = helper + '(result, "Read endpoint");'
+            catalog.check_backend_diagnostics(backend, mapping, {'Read endpoint label'})
+            for broken, declared in (('', {'Read endpoint label'}), (mapping, set())):
+                with self.assertRaisesRegex(ValueError, 'Unmapped Windows HRESULT action'):
+                    catalog.check_backend_diagnostics(backend, broken, declared)
+
     def test_direct_backend_diagnostic_requires_declared_desktop_mapping(self):
         backend = 'throw std::runtime_error("Stable backend ID");'
         mapping = 'if (diagnostic == QStringLiteral("Stable backend ID")) return SC_TR("Displayed diagnostic");'

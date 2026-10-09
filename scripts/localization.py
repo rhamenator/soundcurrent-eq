@@ -174,6 +174,14 @@ def check_backend_diagnostics(code, mapping_code, declared):
         value = literal(args[0]) if args else None
         if value is not None and (value not in mappings or mappings[value] not in declared):
             raise ValueError('Unmapped direct Windows backend diagnostic: ' + value)
+    action_mappings = dict(re.findall(
+        r'if\s*\(action\s*==\s*QStringLiteral\("([^"\n]+)"\)\)\s*'
+        r'translatedAction\s*=\s*SC_TR\("([^"\n]+)"\)', mapping_code))
+    for helper in ('check', 'checked'):
+        for args in calls(code, helper):
+            value = literal(args[1]) if len(args) == 2 else None
+            if value is not None and (value not in action_mappings or action_mappings[value] not in declared):
+                raise ValueError('Unmapped Windows HRESULT action: ' + value)
 
 
 def sources():

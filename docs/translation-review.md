@@ -541,3 +541,7 @@ Both products passed the French terminal confirmation, local-package hash verifi
 ### Actual easy-installer RPM paths (2026-10-09)
 
 EQ Fedora 44 and AlmaLinux 10 actual installer main paths passed: French prompt accepted, local package digest verified, dnf returned success and kept the already-current version. Direct package lifecycle checks separately passed reinstall/update, uninstall, settings preservation and reinstall. This does not demonstrate older-version migration or a first installation through the easy installer. Raw build/lifecycle/transcript evidence and verified package digests are retained. Native-speaker verification remains unverified.
+
+### Windows HRESULT action labels (2026-10-09)
+
+All literal action arguments supplied to Windows check/checked helpers were compared with the exact desktop action mappings. A source guard now rejects missing mappings or undeclared translation targets. Focused positive and negative fixtures and complete-catalog checks passed. Backend action identifiers and hexadecimal error codes remain invariant. This does not induce hardware faults or establish native-speaker accuracy.
