@@ -529,3 +529,7 @@ The source guard now follows explicit table header and cell helper arguments. Cu
 ### Direct Windows backend diagnostic guard (2026-10-09)
 
 Every direct literal runtime_error in windows*.cpp now requires an exact desktop SC_TR mapping with a declared translation target. Existing diagnostic identity is preserved. Positive/missing/undeclared-target regression fixtures passed; composed external/device diagnostics remain outside this exact guard and use separate reviewed templates. Complete-catalog checks passed in both projects. Native-speaker verification remains unverified.
+
+### Easy-installer update qualification fixture (2026-10-09)
+
+Added a Docker/root-only fixture to the package lifecycle gate. It uses the job-built local package, applies companion-style version/hash substitutions, observes the actual French terminal confirmation, accepts it, and checks the real installer main/package-manager result. The surrounding lifecycle script verifies settings preservation and exact launcher bytes afterward. Syntax checks passed; actual execution awaits hosted disposable-container jobs. No host installation or local VM was used.

@@ -56,6 +56,7 @@ for locale in de fr es it pt-PT pt-BR nl pl cs sk uk ru el tr sv da nb fi ro hu 
     grep -F "Localization UI: $locale -> $locale" "$out/locale-$locale.log" >/dev/null
 done
 update_package > "$out/update.log" 2>&1
+python3 tests/linux_easy_installer_lifecycle.py "$package" "$out"
 check_launcher updated
 [[ $(sha256sum "$config" | cut -d ' ' -f1) == "$config_hash" ]]
 remove_package > "$out/uninstall.log" 2>&1
