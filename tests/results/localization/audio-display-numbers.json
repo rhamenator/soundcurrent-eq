@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-09",
+  "scope": "Selected-locale band tooltip and calibration preview formatting; compiled shared helper assertions in de-DE, fr-FR, en-US, ar-EG; application UI fixture fr/de-DE. UI fixture does not drive live meter samples or perform a sweep.",
+  "logs": {
+    "audio-display-number-linux.log": {
+      "sha256": "f1ddac096f9b48763cd258c5aff30a9cd838b0bfe17e7cc3739ea6c56cfdad5f",
+      "result": "passed"
+    },
+    "audio-display-number-ui-linux.log": {
+      "sha256": "3a0cdf54ba45069449f6e51a59e2464ad23286781d04062074bab7db946cc989",
+      "result": "passed"
+    }
+  },
+  "sourceSha256": {
+    "src/main.cpp": "23a90ba7c9e2d15e739e8cf7eaca81d2fa10c9f3300314fd86b906f9864ec7bf",
+    "src/localization_text.h": "66844e548183ff28867f3b90958f3e67dd22b9d5daa7114f5da8d81778bf53d5",
+    "tests/localization.cpp": "f0ad22384bbeed61639a5035e695c66e462fbbd20332da7a52bef5bd951be5ad"
+  },
+  "nativeReviewed": false,
+  "currentPackageQualification": "pending",
+  "precedingWindowsRun": 37898074109,
+  "precedingWindowsResult": "success; predates number-format changes",
+  "numericProcessingChange": false
+}

@@ -86,6 +86,22 @@ int main(int argc,char **argv){
    require(file.open(QIODevice::ReadOnly) && file.readAll()==QByteArray("{}"),"Chooser changed existing file contents");
    QLocale::setDefault(previous);
   }
+  {
+   const auto previous=QLocale();
+   for(const auto *tag:{"de-DE","fr-FR","en-US","ar-EG"}) {
+    QLocale::setDefault(QLocale(tag));
+    const auto frequency=QString::fromUtf8("opaque %1 / %2 音声");
+    const auto level=estimatedBandLevelText(frequency,-12.5);
+    const auto decimal=QString(tag)=="ar-EG"?QLocale().toString(-12.5,'f',1):QString(tag)=="en-US"?QStringLiteral("-12.5"):QStringLiteral("-12,5");
+    require(level.contains(decimal),"Band level tooltip ignored selected format locale");
+    require(level.contains(frequency),"Band level formatting rescanned opaque placeholder-like text");
+    const auto preview=calibrationBandPreviewText(12500,2.5,-3.5);
+    require(preview.contains(QLocale().toString(12500)) && preview.contains(QLocale().toString(2.5,'f',1)) && preview.contains(QLocale().toString(-3.5,'f',1)),"Calibration preview ignored selected number formats");
+    require(preview.contains("+") && preview.contains("Hz") && preview.contains("dB"),"Calibration display lost sign or physical units");
+    if(QString(tag)=="de-DE") require(preview.contains("12.500") && preview.contains("+2,5") && preview.contains("-3,5"),"German calibration numbers lost grouping or decimal formatting");
+   }
+   QLocale::setDefault(previous);
+  }
   require(languages().size()>=30,"Global language catalogs missing");
   {
    WorkerMessageBuffer buffer;

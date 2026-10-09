@@ -1091,8 +1091,8 @@
       "file": "src/main.cpp",
       "call": "setToolTip",
       "argument": 0,
-      "expression": "QString(SC_TR(\"Estimated output near %1: %2 dBFS\"))\n                                     .arg(frequencyLabel(bands_[i].frequency)).arg(db, 0, 'f', 1)",
-      "containsTranslationCall": true
+      "expression": "soundcurrent::i18n::estimatedBandLevelText(frequencyLabel(bands_[i].frequency),db)",
+      "containsTranslationCall": false
     },
     {
       "file": "src/main.cpp",
@@ -2267,9 +2267,9 @@
     "src/equipment_profiles.h": "34fb124fe9a9177735c3e96b54f947fbdd2881ff175153c29334842c140b9545",
     "src/file_display_locale_proxy.h": "73bf365758b447200f7170819f8cf998e40b1ba584122cad51ec5de855593435",
     "src/localization.h": "1d82243a04150a1252c4564270f00879474427d32f13f178112c9bd2c467789a",
-    "src/localization_text.h": "9cbb9b2c5e49287651cba6bcd273c01e148f8fd5dce4b7e39fdd86594e344cd0",
+    "src/localization_text.h": "66844e548183ff28867f3b90958f3e67dd22b9d5daa7114f5da8d81778bf53d5",
     "src/localized_file_dialog.h": "db8e7403e18efca39f41bcb02238c94297e09cc9b9a1f9870f12276bdc58a7ff",
-    "src/main.cpp": "2d0fed8458fc09d15674f069a53aae542c092bbee2bbc6fa274cdde827fc2383",
+    "src/main.cpp": "23a90ba7c9e2d15e739e8cf7eaca81d2fa10c9f3300314fd86b906f9864ec7bf",
     "src/main_windows.cpp": "df16bae0597ddb53f7a31bf2d99bd50f5768f6174265309d254da9b10bebd6c0",
     "src/processing_guard.cpp": "7357547a751b724be0c1743d94f8318a9f86b5f6b2180911799dc660bd5e74b2",
     "src/processing_guard.h": "3210a47f6da6b8d019710e052785a90b1b4635182497ca8c64549fb3b31a1913",

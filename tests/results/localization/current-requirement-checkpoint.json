@@ -38,13 +38,13 @@
     },
     {
       "requirement": "Changed Linux packages and installed language interfaces",
-      "status": "preceding directory/default-caption packages downloaded and hash-verified with installed fixtures; latest deletion patch pending fresh qualification",
+      "status": "Preceding packages qualified; latest header-caption and display-number changes require fresh artifact qualification",
       "run": 37895441324,
       "evidence": "tests/results/localization/linux-688-installed/verified-artifact.json"
     },
     {
       "requirement": "Changed Windows packages and installed language interfaces",
-      "status": "preceding directory/default-caption installer/executable downloaded and matched installed lifecycle hashes; latest deletion patch pending fresh qualification",
+      "status": "Preceding packages qualified; latest header-caption and display-number changes require fresh artifact qualification",
       "run": 37895446856,
       "evidence": "tests/results/localization/windows-688-installed/verified-artifact.json"
     },
@@ -54,7 +54,7 @@
     },
     {
       "requirement": "Reviewable packages and synchronized commits",
-      "status": "preceding Linux/Windows previews downloaded and verified; latest source synchronized, current patch package checks pending"
+      "status": "Preceding packages qualified; latest header-caption and display-number changes require fresh artifact qualification"
     },
     {
       "requirement": "Preserve virtual driver and separately owned DAW",
@@ -246,5 +246,6 @@
   "qt612CompatibilityEvidence": "tests/results/localization/qt-file-dialog-qt612-compatibility.json",
   "fileDisplayLocaleAdapter": "tests/results/localization/file-display-locale-adapter.json",
   "qt612FixedNativeEvidence": "tests/results/localization/qt-file-dialog-qt612-native-success.json",
-  "qualifiedPrecedingHead": "6111c989cdc8ec2c08f6b9ce4cc0a921f2dfb781"
+  "qualifiedPrecedingHead": "6111c989cdc8ec2c08f6b9ce4cc0a921f2dfb781",
+  "audioDisplayNumbers": "tests/results/localization/audio-display-numbers.json"
 }

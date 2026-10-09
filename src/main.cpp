@@ -1301,10 +1301,7 @@ std::optional<CalibrationSuggestion> calibrationSuggestion(const QJsonObject &re
         const double before = suggestion.bands[nearest].gain;
         suggestion.bands[nearest].gain = std::clamp(before + change, -12.0, 12.0);
         if (std::abs(suggestion.bands[nearest].gain - before) > 0.01) ++suggestion.changed;
-        rows << SC_TR("%1 Hz: measured %2%3 dB; suggested %4%5 dB")
-                    .arg(kCalibrationFrequencies[i])
-                    .arg(relative > 0 ? "+" : "").arg(relative, 0, 'f', 1)
-                    .arg(change > 0 ? "+" : "").arg(change, 0, 'f', 1);
+        rows << soundcurrent::i18n::calibrationBandPreviewText(kCalibrationFrequencies[i],relative,change);
     }
     suggestion.preview = rows.join('\n');
     return suggestion;
@@ -2990,8 +2987,7 @@ private:
             const double db = 20.0 * std::log10(std::max(levels[i], 0.000001));
             if (power_->isChecked()) levelBars_[i]->setLevel(db);
             else levelBars_[i]->reset();
-            levelBars_[i]->setToolTip(QString(SC_TR("Estimated output near %1: %2 dBFS"))
-                                     .arg(frequencyLabel(bands_[i].frequency)).arg(db, 0, 'f', 1));
+            levelBars_[i]->setToolTip(soundcurrent::i18n::estimatedBandLevelText(frequencyLabel(bands_[i].frequency),db));
         }
         if (!power_->isChecked()) {
             overallLevel_->reset();
