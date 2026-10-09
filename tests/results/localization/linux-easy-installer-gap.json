@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-09",
+  "scope": "Owned prose in the distributed Linux easy installer; external package-manager/polkit/Zenity standard buttons are provider text. Current source contains English-only titles, confirmations and diagnostics.",
+  "sourceSha256": "59a55ec160229be983015b49e71ac92164d6dcc727119b12a1b4fe9fec42bb67",
+  "candidates": [
+    {
+      "line": 18,
+      "source": "if ! [[ $major =~ ^[0-9]+$ ]] || ((major < 10)); then echo 'The current enterprise RPM requires RHEL 10 or a compatible version 10 derivative.' >&2; return 1; fi"
+    },
+    {
+      "line": 21,
+      "source": "if ! [[ $major =~ ^[0-9]+$ ]] || ((major < 44)); then echo 'The current Fedora package requires Fedora 44 or newer.' >&2; return 1; fi"
+    },
+    {
+      "line": 23,
+      "source": "*) echo 'This distribution has no reviewed package yet. See the GitHub releases for supported builds.' >&2; return 1 ;;"
+    },
+    {
+      "line": 28,
+      "source": "zenity --info --title='SoundCurrent installer' --text=\"$1\""
+    },
+    {
+      "line": 30,
+      "source": "kdialog --title 'SoundCurrent installer' --msgbox \"$1\""
+    },
+    {
+      "line": 35,
+      "source": "zenity --question --title='Install or update SoundCurrent' --text=\"$1\""
+    },
+    {
+      "line": 37,
+      "source": "kdialog --title 'Install or update SoundCurrent' --yesno \"$1\""
+    },
+    {
+      "line": 39,
+      "source": "[[ -t 0 ]] || { echo 'Run this installer interactively in a terminal.' >&2; return 1; }"
+    },
+    {
+      "line": 40,
+      "source": "printf '%s\\nContinue? [y/N] ' \"$1\"; local answer; read -r answer"
+    },
+    {
+      "line": 50,
+      "source": "[[ $# -ge 2 && -f $2 ]] || { echo 'Provide an existing package after --package-file.' >&2; return 2; }"
+    },
+    {
+      "line": 52,
+      "source": "*) echo 'Unknown option.' >&2; return 2 ;;"
+    },
+    {
+      "line": 56,
+      "source": "echo \"Usage: bash $0 [--dry-run|--download-only] [--package-file PATH]\"; return;; *) echo 'Unknown option.' >&2; return 2;; esac"
+    },
+    {
+      "line": 57,
+      "source": "[[ $(uname -m) == x86_64 ]] || { echo 'These reviewed packages require an x86-64 computer.' >&2; return 1; }"
+    },
+    {
+      "line": 58,
+      "source": "[[ -r /etc/os-release ]] || { echo 'Cannot identify this distribution.' >&2; return 1; }"
+    },
+    {
+      "line": 64,
+      "source": "command -v \"$manager\" >/dev/null || { echo \"This system is missing $manager.\" >&2; return 1; }"
+    },
+    {
+      "line": 73,
+      "source": "message \"A newer $product ($installed) is already installed. It was kept; this Linux installer provides $version.\"; return 0"
+    },
+    {
+      "line": 76,
+      "source": "command -v sha256sum >/dev/null || { echo 'sha256sum is required.' >&2; return 1; }"
+    },
+    {
+      "line": 78,
+      "source": "message 'Use Quit to exit the running SoundCurrent app before updating. Closing its window keeps it running.'; return 1"
+    },
+    {
+      "line": 81,
+      "source": "confirm \"Download and verify $product $version for ${PRETTY_NAME:-$ID}? No installation will be performed.\" || return 0"
+    },
+    {
+      "line": 83,
+      "source": "confirm \"Install or update $product $version on ${PRETTY_NAME:-$ID}? Your presets and profiles are kept. The package manager installs dependencies and adds an app-menu icon. Administrator approval is needed. Only one equalizer should run at a time.\" || return 0"
+    },
+    {
+      "line": 92,
+      "source": "else echo 'Install curl or wget first.' >&2; return 1; fi"
+    },
+    {
+      "line": 93,
+      "source": "printf '%s  %s\\n' \"$expected\" \"$package\" | sha256sum --check --status || { message 'Package verification failed. Nothing was installed.'; return 1; }"
+    },
+    {
+      "line": 97,
+      "source": "[[ ! -e $destination ]] || { echo \"Already exists: $destination\" >&2; return 1; }"
+    },
+    {
+      "line": 98,
+      "source": "cp -- \"$package\" \"$destination\"; message \"Verified package saved to $destination\"; return"
+    },
+    {
+      "line": 108,
+      "source": "message \"This package needs glibc $required or newer; this system has $actual. Nothing was installed.\"; return 1"
+    },
+    {
+      "line": 115,
+      "source": "message \"Installed $product $version. Open it from the applications menu. Use Quit and reopen after an update. No uninstall or reboot is needed for the app update.\""
+    }
+  ],
+  "status": "Unfixed owned localization gap",
+  "nextTask": "Add shared-catalog translations and a standalone data-only locale lookup for the Linux installer, including pre-install dialogs/help/errors. Preserve reviewed package hashes, product/release identifiers, command arguments, verification and privilege boundaries. Test dry-run/confirmation and failure paths without installing or elevating.",
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false
+}

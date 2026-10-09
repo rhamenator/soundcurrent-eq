@@ -46,7 +46,7 @@
     },
     {
       "requirement": "Changed Windows packages and installed language interfaces",
-      "status": "Prior public-update package qualified as documented. Launcher-description catalog change awaits rebuilt package qualification.",
+      "status": "Startup/launcher production installer and executable hashes matched installed lifecycle; 34 locale completions and fr/nn/ar lifecycle passed.",
       "run": 37903335849,
       "evidence": "tests/results/localization/windows-public-update-installed/verified-artifact.json"
     },
@@ -263,5 +263,6 @@
   "launcherDescriptionReview": "tests/results/localization/launcher-description-localization.json",
   "startupDiagnosticReview": "tests/results/localization/startup-diagnostic-gap.json",
   "rendererDirectDiagnosticGuard": "tests/results/localization/renderer-direct-diagnostic-guard.json",
-  "ubuntuStartupPackageEvidence": "tests/results/localization/ubuntu-startup-installed/verified-artifact.json"
+  "ubuntuStartupPackageEvidence": "tests/results/localization/ubuntu-startup-installed/verified-artifact.json",
+  "windowsStartupPackageEvidence": "tests/results/localization/windows-startup-installed/verified-artifact.json"
 }
