@@ -40,13 +40,13 @@
     },
     {
       "requirement": "Changed Linux packages and installed language interfaces",
-      "status": "downloaded packages hash-verified; full CTest and install/update/uninstall/preservation/reinstall plus 33 installed locale fixtures per image passed",
+      "status": "Qualified preceding balance packages; current graph-axis patch requires fresh artifact qualification",
       "run": 37899561440,
       "evidence": "tests/results/localization/linux-balance-installed/verified-artifact.json"
     },
     {
       "requirement": "Changed Windows packages and installed language interfaces",
-      "status": "downloaded installer and executable matched installed lifecycle hashes; 34 installed locales and fr/nn/ar silent lifecycle passed",
+      "status": "Qualified preceding balance packages; current graph-axis patch requires fresh artifact qualification",
       "run": 37899545845,
       "evidence": "tests/results/localization/windows-balance-installed/verified-artifact.json"
     },
@@ -77,21 +77,21 @@
   ],
   "evidenceSha256": {
     "data/localization/catalogs.json": "dfa87d833eb2a7a4974ba01e12258ba4976b2533334741a67b72cbed2e649897",
-    "docs/translation-review.md": "6408d39734cfb068f023796ac8a924f4d8103f995ff476e76b30d172da5e69af",
-    "tests/localization.cpp": "c0d9403fa294731fdb580f9022d08fc5be3ca27da89e87547297566315cde278",
+    "docs/translation-review.md": "60bc50d73df34b7ed41f9a536ea09b3592479023c9c1d0cbb8ee6aca9ef77888",
+    "tests/localization.cpp": "f0ad22384bbeed61639a5035e695c66e462fbbd20332da7a52bef5bd951be5ad",
     "tests/translation_catalogs.py": "a31c1dea85d778cbea2834f46d610dbf620e7edb12e41a5ce46b3be625151885",
-    "scripts/ui_string_audit.py": "a7cd0132f32a3f103eadffe8798aee877b4c397545f3e53ec1ea4134b133629f",
-    "tests/results/localization/dynamic-display-inventory.json": "7a1c81fb71b290032839b312f15f2b0986883bd03c731fbd74588465fb52f138",
+    "scripts/ui_string_audit.py": "f9ccdb8db086a92037e01ed1f78fa775475dd56571b8ceabd19c6484260c6229",
+    "tests/results/localization/dynamic-display-inventory.json": "8cada0dd2a73c3cd9306b81173952de2a63ca7f99ef3e4470ac147e526bf3ce9",
     "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
-    "src/main.cpp": "2d0fed8458fc09d15674f069a53aae542c092bbee2bbc6fa274cdde827fc2383",
-    "src/localization.h": "1d82243a04150a1252c4564270f00879474427d32f13f178112c9bd2c467789a",
-    "src/localization_text.h": "9cbb9b2c5e49287651cba6bcd273c01e148f8fd5dce4b7e39fdd86594e344cd0",
+    "src/main.cpp": "67a782e55e0b1c658a04ca4a8b7a6539ec344d9be786c5a5da74abc3a2a841e4",
+    "src/localization.h": "f430613fdec6915b10791010bdf9f1e36838240571accd041b818ba00e3561b9",
+    "src/localization_text.h": "d9d06c97d3108e857250a419243138cd0939a72a0d19b535666beb1eedcf776c",
     "scripts/localization.py": "4bdd696dcc8eab8075aec9c7d5cd7ceeaef52d3482d28dc50245eac280eab67c",
     "tests/calibration_worker_localization.py": "c6120b78b59ae6d547cd7d0a503d4f39a46f0fa3c03c9c4007b46f8e53db34f8",
     "tests/results/localization/calibration-worker-gap.json": "1d4ef1003d317f52bf79b740686ef055d580d9f7bfcfad9e2b171c57492efba8",
     "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42",
     "tests/results/localization/calibration-worker-native-ci.json": "377d797dfc8478b69a02fb63760577d5a2571393c939e35aa1eecbb270467e35",
-    "src/equipment_profiles.cpp": "b41db4ef53c46a0c9e7b6745d0ea106fd0185ba9eb30e90f66d7afda8877779d",
+    "src/equipment_profiles.cpp": "1d4adb32603fc05635a456aaf584ede368ad73fc4ebb27acd696890771686f63",
     "tests/results/localization/profile-authored-defaults.json": "2d3aa7687f468de8c9b652c2dafd2afae1f929b3d401ac3390a6f691f08156af",
     "tests/results/localization/qt-file-dialog-gap.json": "676b5116c3e234c73f0a9a68b454ab0e51d91553ae720b57809897b2aedee36e",
     "tests/results/localization/linux-688-installed/verified-artifact.json": "435d31a2706acd047f256c13c58b1a084e1160b67d3e7f981ff243a1c5aec32f",
@@ -251,6 +251,8 @@
   "qualifiedPrecedingHead": "6111c989cdc8ec2c08f6b9ce4cc0a921f2dfb781",
   "audioDisplayNumbers": "tests/results/localization/audio-display-numbers.json",
   "qualifiedCurrentProductionHead": "e4ecd724dc468343ba07fdeb5ad30597063c3248",
-  "currentProductionSourceMatch": "No src/data/packaging/CMake differences between qualified head and current checkout; later commits change audit/report documentation only.",
-  "balanceNumberFormats": "tests/results/localization/balance-number-formats.json"
+  "currentProductionSourceMatch": "Latest graph axis formatting patch changes src/equipment_profiles.cpp after qualified balance head; fresh graph package qualification pending.",
+  "balanceNumberFormats": "tests/results/localization/balance-number-formats.json",
+  "profileGraphNumberFormats": "tests/results/localization/profile-graph-number-formats.json",
+  "fileTypeProviderBoundary": "tests/results/localization/file-type-provider-boundary.json"
 }

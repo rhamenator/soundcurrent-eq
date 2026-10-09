@@ -21,6 +21,7 @@ METHODS = {'setText':0, 'setToolTip':0, 'setAccessibleName':0,
            'getOpenFileName':1, 'getSaveFileName':1, 'getExistingDirectory':1,
            'showMessage':(0,1), 'setSuffix':0, 'setPrefix':0,
            'setHorizontalHeaderLabels':0, 'setVerticalHeaderLabels':0,
+           'drawText':-1, 'getText':(1,2), 'getInt':(1,2), 'getDouble':(1,2),
            'information':(1,2), 'warning':(1,2), 'critical':(1,2), 'question':(1,2)}
 CONSTRUCTORS = ('QLabel','QPushButton','QCheckBox','QGroupBox','QRadioButton',
                 'QTableWidgetItem','QMenu','QAction')
@@ -41,7 +42,7 @@ def inventory(root):
         for method,indices in candidates.items():
           for index in (indices if isinstance(indices, tuple) else (indices,)):
             for args in catalog.calls(code,method):
-                if len(args)<=index:
+                if not args or len(args)<=index:
                     continue
                 text = catalog.display_literal(args[index])
                 if text is None or not text.strip() or text in IDENTITIES:
@@ -70,7 +71,7 @@ def dynamic_inventory(root):
         for method, indices in candidates.items():
             for index in (indices if isinstance(indices, tuple) else (indices,)):
                 for args in catalog.calls(code, method):
-                    if len(args) <= index:
+                    if not args or len(args) <= index:
                         continue
                     expression = args[index].strip()
                     if not expression or catalog.display_literal(expression) is not None:

@@ -1,6 +1,6 @@
 {
   "scope": "Dynamic arguments to known Qt display sinks; expressions need manual provenance review. Contains-translation-call is informational and does not prove all fragments are localized.",
-  "expressionCount": 330,
+  "expressionCount": 336,
   "expressions": [
     {
       "file": "src/enhancement_controls.h",
@@ -365,6 +365,20 @@
       "argument": 0,
       "expression": "{SC_TR(\"Type\"), SC_TR(\"Frequency Hz\"), SC_TR(\"Gain dB\"), \"Q\"}",
       "containsTranslationCall": true
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "drawText",
+      "argument": -1,
+      "expression": "QLocale().toString(f,'g',6)",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/equipment_profiles.cpp",
+      "call": "drawText",
+      "argument": -1,
+      "expression": "QLocale().toString(d,'g',6)",
+      "containsTranslationCall": false
     },
     {
       "file": "src/equipment_profiles.cpp",
@@ -1670,6 +1684,34 @@
     },
     {
       "file": "src/main.cpp",
+      "call": "drawText",
+      "argument": -1,
+      "expression": "QString::number(gain, 'g', 2)",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "drawText",
+      "argument": -1,
+      "expression": "frequency >= 1000 ? QString::number(frequency / 1000, 'g', 2) + \"k\"\n                                               : QString::number(frequency, 'g', 3)",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "getText",
+      "argument": 1,
+      "expression": "SC_TR(\"Save EQ preset\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "getText",
+      "argument": 2,
+      "expression": "SC_TR(\"Preset name:\")",
+      "containsTranslationCall": true
+    },
+    {
+      "file": "src/main.cpp",
       "call": "information",
       "argument": 1,
       "expression": "SC_TR(\"Audio setup\")",
@@ -2326,7 +2368,7 @@
     "src/enhancement_controls.h": "a5c3e8358fa8235b9625567e152dc3eb73ba54f13fba8b4fba2202a272262b52",
     "src/enhancement_ladspa.cpp": "ce4d70573e679c61c2cf62044d3d150fc28cca245d8c79f409b69ee8dd4cef2c",
     "src/equipment_display_text.h": "e3086d524e9b436075ecf9d9b8c143a0058a692685c10919b72298fd97ec44c5",
-    "src/equipment_profiles.cpp": "b41db4ef53c46a0c9e7b6745d0ea106fd0185ba9eb30e90f66d7afda8877779d",
+    "src/equipment_profiles.cpp": "1d4adb32603fc05635a456aaf584ede368ad73fc4ebb27acd696890771686f63",
     "src/equipment_profiles.h": "34fb124fe9a9177735c3e96b54f947fbdd2881ff175153c29334842c140b9545",
     "src/file_display_locale_proxy.h": "73bf365758b447200f7170819f8cf998e40b1ba584122cad51ec5de855593435",
     "src/localization.h": "f430613fdec6915b10791010bdf9f1e36838240571accd041b818ba00e3561b9",
@@ -2354,5 +2396,5 @@
     "src/windows_route_guardian.cpp": "4f683ce99ad6bafe227e293d94a82487157da269642e2e2298fa148bc3dfbf2d",
     "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42"
   },
-  "reviewStatus": "Whole-interface provenance review incomplete. Complete file-header action captions implemented; external MIME descriptors, broader permission/failure workflows and current native/package checks remain pending."
+  "reviewStatus": "Expanded Qt display source and composed-expression review retained; graph axes corrected; fresh graph patch package qualification pending."
 }

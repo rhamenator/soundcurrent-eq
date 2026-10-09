@@ -125,11 +125,11 @@ class Plot : public QWidget {
         p.setPen(QColor("#718096"));
         for (double f : {20., 100., 1000., 10000., 20000.}) {
             p.drawLine(QPointF(x(f), area.top()), QPointF(x(f), area.bottom()));
-            p.drawText(QPointF(x(f) - 10, area.bottom() + 17), QString::number(f));
+            p.drawText(QPointF(x(f) - 10, area.bottom() + 17), QLocale().toString(f,'g',6));
         }
         for (double d : {-rangeDb(), -rangeDb() / 2, 0., rangeDb() / 2, rangeDb()}) {
             p.drawLine(QPointF(area.left(), y(d)), QPointF(area.right(), y(d)));
-            p.drawText(QPointF(2, y(d) + 4), QString::number(d));
+            p.drawText(QPointF(2, y(d) + 4), QLocale().toString(d,'g',6));
         }
         auto draw = [&](QColor color, auto db) {
             QPainterPath path;
