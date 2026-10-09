@@ -12,13 +12,13 @@ Review found missing equipment dialog titles/actions, validation reasons, microp
 
 The review also fixed two functional bugs: source/conditions length limits depended on translated labels, and equipment-kind filtering used display text as a schema value. Limits are now explicit and selectors retain stable speaker/microphone/amplifier data. Brand/family/model names and user-supplied profile content remain literal. SDK/DSP implementation and driver sources were not modified.
 
-## Current checkpoint
+## Current checkpoint — 2026-10-09
 
-- Populated catalogs: de, fr, es, it, pt-PT, pt-BR, nl, pl, cs, sk, uk, ru, el, tr, sv, da, nb, fi, ro, hu, nn, ar, he, fa, zh-Hans, zh-Hant, ja, ko, hi, id, vi, th, sw; 459 extracted messages each. These are unverified translations; nativeReviewed remains false.
-- All original target locales and added Nynorsk have populated current catalogs; omitted application messages still require the second pass. Exact counts and compiled hashes are authoritative in data/localization/catalogs.json.
-- Coverage is distinct from contextual AI review, native-speaker verification and runtime qualification. Checkpoint reports in tests/results/localization identify tested catalogs, platforms and scopes.
-- Runtime supports separate UI language and number/date locale selection, regional/script fallback, pseudo localization and RTL. Maintenance preserves unfinished edits/comments and rejects unsupported numerus before rewriting.
-- Shared interface layout now wraps meter guidance; the curve instruction also wraps for longer translated text.
+- All original target locales and added Nynorsk have populated catalogs: 704 messages each, 34 catalogs including English. Native-speaker verification remains unverified.
+- Finite owned-interface source correspondence review is complete, including the equipment-summary, calibration-profile and Studio backend boundaries. IDs, loaded metadata, opaque substitutions and numerical data retain identity.
+- Current EQ Linux/Windows packages and unpublished preview are verified; final overall requirement reconciliation remains.
+- Counts/hashes: `data/localization/catalogs.json`. Scoped evidence and remaining work: `tests/results/localization/current-requirement-checkpoint.json` and `completion-checklist.json`.
+- Catalog completion, contextual AI review and bounded runtime evidence are distinct. No all-locale visual, physical audio or native-speaker certification is claimed. No release was published.
 
 ## Completion criteria
 

@@ -19,7 +19,7 @@
         "tests/results/localization/main-equipment-display-gap.json",
         "tests/results/localization/measured-profile-runtime.log"
       ],
-      "auditState": "current source correspondence reviewed; identified summary and calibration-default gaps fixed; fresh installed qualification pending",
+      "auditState": "current source correspondence reviewed; identified gaps fixed; current installed packages qualified",
       "review": {
         "staticControls": "Owned constructors, actions, help, tooltip/accessibility captions use declared SC_TR or i18n::text; product names, units and filter symbols retain identity.",
         "dynamicControls": "Preset group keys translated at addGroup; custom names preserved. Gain/frequency/curve labels use QLocale; band counts, percent symbols, balance and headroom follow recorded display helpers.",
@@ -28,7 +28,7 @@
         "dialogs": "Calibration/preset/equipment confirmation titles and actions translated at callers; standard actions and file picker have separate exact-context evidence.",
         "boundaries": "Fixture-only synthetic multilingual captions and raw qFatal messages belong to explicit developer tests; QMenu(this) has parent argument. Unknown external diagnostic details and third-party provider descriptions preserved."
       },
-      "runtimeLimit": "Current source review plus prior compiled workflows and new fr/ar/nn measured-profile creation/reopen fixtures. Installed packages pending refreshed qualification. No claim of native-speaker accuracy, every acoustic/device failure, all-locale visual rendering or provider-owned prose."
+      "runtimeLimit": "Source review and compiled fr/ar/nn creation/reopen fixtures supplemented by current installed locale/lifecycle qualification. No native-speaker, physical acoustic/device-fault or all-locale visual certification."
     },
     {
       "id": "equipment-editor",
@@ -230,5 +230,11 @@
   "nativeReviewed": false,
   "wholeInterfaceCoverageProven": false,
   "nextAction": "Verify fresh installed package evidence, reconcile completion requirement reports and refresh previews. Current finite surface source correspondences reviewed; runtime and linguistic verification remain separately scoped.",
-  "sourceCorrespondenceReviewComplete": true
+  "sourceCorrespondenceReviewComplete": true,
+  "packageQualificationEvidence": [
+    "tests/results/localization/linux-measured-qualified-0/verified-artifact.json",
+    "tests/results/localization/linux-measured-qualified-1/verified-artifact.json",
+    "tests/results/localization/linux-measured-qualified-2/verified-artifact.json",
+    "tests/results/localization/windows-measured-qualified/verified-artifact.json"
+  ]
 }
