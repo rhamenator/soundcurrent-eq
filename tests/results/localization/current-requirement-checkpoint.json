@@ -15,9 +15,11 @@
       "status": "declared catalogs complete; whole-interface coverage remains unproven",
       "evidence": [
         "data/localization/catalogs.json",
-        "tests/results/localization/dynamic-display-inventory.json"
+        "tests/results/localization/dynamic-display-inventory.json",
+        "tests/results/localization/dynamic-provenance-review.json",
+        "tests/results/localization/expanded-display-sinks.json"
       ],
-      "remaining": "Review composed display expressions and provenance; investigate any owned untranslated fragments beyond current lexical sink inventory"
+      "remaining": "Expanded sink/provenance review covers declared display expressions; audit remaining interface surfaces and provider/owned boundaries before claiming whole-interface completion"
     },
     {
       "requirement": "Contextual terminology review",
@@ -38,15 +40,15 @@
     },
     {
       "requirement": "Changed Linux packages and installed language interfaces",
-      "status": "Preceding packages qualified; latest header-caption and display-number changes require fresh artifact qualification",
-      "run": 37895441324,
-      "evidence": "tests/results/localization/linux-688-installed/verified-artifact.json"
+      "status": "downloaded packages hash-verified; full CTest and install/update/uninstall/preservation/reinstall plus 33 installed locale fixtures per image passed",
+      "run": 37899561440,
+      "evidence": "tests/results/localization/linux-balance-installed/verified-artifact.json"
     },
     {
       "requirement": "Changed Windows packages and installed language interfaces",
-      "status": "Preceding packages qualified; latest header-caption and display-number changes require fresh artifact qualification",
-      "run": 37895446856,
-      "evidence": "tests/results/localization/windows-688-installed/verified-artifact.json"
+      "status": "downloaded installer and executable matched installed lifecycle hashes; 34 installed locales and fr/nn/ar silent lifecycle passed",
+      "run": 37899545845,
+      "evidence": "tests/results/localization/windows-balance-installed/verified-artifact.json"
     },
     {
       "requirement": "Shared localization infrastructure",
@@ -54,7 +56,7 @@
     },
     {
       "requirement": "Reviewable packages and synchronized commits",
-      "status": "Preceding packages qualified; latest header-caption and display-number changes require fresh artifact qualification"
+      "status": "current production packages downloaded and hash-verified; committed synchronized fixes; report evidence being committed"
     },
     {
       "requirement": "Preserve virtual driver and separately owned DAW",
@@ -247,5 +249,8 @@
   "fileDisplayLocaleAdapter": "tests/results/localization/file-display-locale-adapter.json",
   "qt612FixedNativeEvidence": "tests/results/localization/qt-file-dialog-qt612-native-success.json",
   "qualifiedPrecedingHead": "6111c989cdc8ec2c08f6b9ce4cc0a921f2dfb781",
-  "audioDisplayNumbers": "tests/results/localization/audio-display-numbers.json"
+  "audioDisplayNumbers": "tests/results/localization/audio-display-numbers.json",
+  "qualifiedCurrentProductionHead": "e4ecd724dc468343ba07fdeb5ad30597063c3248",
+  "currentProductionSourceMatch": "No src/data/packaging/CMake differences between qualified head and current checkout; later commits change audit/report documentation only.",
+  "balanceNumberFormats": "tests/results/localization/balance-number-formats.json"
 }

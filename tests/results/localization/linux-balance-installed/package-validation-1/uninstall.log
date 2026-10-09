@@ -1,0 +1,17 @@
+Package           Arch   Version        Repository        Size
+Removing:
+ soundcurrent-eq  x86_64 0:1.1.0-1.fc44 @commandline   4.5 MiB
+Removing unused dependencies:
+ pipewire-utils   x86_64 0:1.6.9-1.fc44 updates        1.5 MiB
+ pulseaudio-utils x86_64 0:17.0-9.fc44  fedora       262.4 KiB
+
+Transaction Summary:
+ Removing:           3 packages
+
+After this operation, 6 MiB will be freed (install 0 B, remove 6 MiB).
+Running transaction
+[1/4] Prepare transaction               100% |  71.0   B/s |   3.0   B |  00m00s
+[2/4] Removing soundcurrent-eq-0:1.1.0- 100% |   1.9 KiB/s |  41.0   B |  00m00s
+[3/4] Removing pipewire-utils-0:1.6.9-1 100% |   3.2 KiB/s |  81.0   B |  00m00s
+[4/4] Removing pulseaudio-utils-0:17.0- 100% | 476.0   B/s |  40.0   B |  00m00s
+Complete!

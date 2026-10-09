@@ -21,5 +21,9 @@
   },
   "catalogsUnchanged": true,
   "nativeReviewed": false,
-  "currentPackageQualification": "pending"
+  "currentPackageQualification": {
+    "linux": "linux-balance-installed/verified-artifact.json",
+    "windows": "windows-balance-installed/verified-artifact.json",
+    "qualifiedHead": "e4ecd724dc468343ba07fdeb5ad30597063c3248"
+  }
 }

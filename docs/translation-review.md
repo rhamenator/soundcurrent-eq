@@ -4,7 +4,7 @@
 
 All 694 currently extracted source messages have populated translations in all 33 non-English catalogs, including Nynorsk. There are 34 catalogs including English. This is catalog coverage, not proof that every user-facing string has been extracted. Native-speaker verification remains unverified for every non-English locale.
 
-The second-pass source audit has expanded to dynamic captions, Qt fallback dialogs, menus, accessibility names, diagnostics and selected-locale number formatting. Current source and runtime evidence is recorded in `tests/results/localization/current-requirement-checkpoint.json`, `dynamic-provenance-review.json`, `expanded-display-sinks.json` and the focused test reports. Compiled local application fixtures pass for Arabic digits and French text with German number formatting. The newest Linux and Windows installed-package checks are still running; qualified preceding artifacts are identified by their exact source hashes in the reports. No release has been published by this work.
+The second-pass source audit has expanded to dynamic captions, Qt fallback dialogs, menus, accessibility names, diagnostics and selected-locale number formatting. Current source and runtime evidence is recorded in `tests/results/localization/current-requirement-checkpoint.json`, `dynamic-provenance-review.json`, `expanded-display-sinks.json` and the focused test reports. Compiled local application fixtures pass for Arabic digits and French text with German number formatting. The current production Linux and Windows packages are downloaded and hash-verified against installed lifecycle and language-fixture reports in `linux-balance-installed/verified-artifact.json` and `windows-balance-installed/verified-artifact.json`. No release has been published by this work.
 
 The dated checkpoints below describe historical states and contextual AI review. Structural checks and successful runtime fixtures do not certify linguistic quality or every device workflow. Current goal completion remains unproven pending the remaining coverage and artifact audit.
 
@@ -448,7 +448,7 @@ Qt's Show-plus-column concatenation is replaced by complete Show Size, Show Type
 
 ### Audio display numbers
 
-Band-level tooltips and calibration suggestion rows now format numeric values with the selected format locale. German/French comma decimals, English decimal points and Arabic Qt locale output are checked in a compiled fixture; German frequency grouping has an independent expected-value assertion. Opaque percent-bearing frequency captions remain intact. Only display composition changed: filter-chain configuration, DSP calculations and persisted numeric values retain their existing code. These tests do not demonstrate live metering, a microphone sweep, or native-speaker verification. Current package qualification is pending.
+Band-level tooltips and calibration suggestion rows now format numeric values with the selected format locale. German/French comma decimals, English decimal points and Arabic Qt locale output are checked in a compiled fixture; German frequency grouping has an independent expected-value assertion. Opaque percent-bearing frequency captions remain intact. Only display composition changed: filter-chain configuration, DSP calculations and persisted numeric values retain their existing code. These tests do not demonstrate live metering, a microphone sweep, or native-speaker verification. Current production package qualification is recorded in the balance-installed artifact reports.
 
 ### Balance and displayed integer counts
 
