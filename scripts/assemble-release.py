@@ -2,6 +2,8 @@
 # SPDX-License-Identifier: GPL-3.0-only
 """Assemble release companions from already-built and tested packages."""
 import hashlib, pathlib, re, subprocess, sys
+import linux_installer_catalogs
+linux_installer_catalogs.maintain(require_complete=True)
 root=pathlib.Path(__file__).resolve().parents[1]
 out=pathlib.Path(sys.argv[1]).resolve()
 project=re.search(r'project\((soundcurrent-[a-z]+) VERSION ([0-9.]+)',(root/'CMakeLists.txt').read_text())

@@ -620,6 +620,11 @@ class CatalogTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             data = Path(directory)
             (data / 'seed-translations.json').write_bytes((catalog.DATA / 'seed-translations.json').read_bytes())
+            # This fixture replaces helper declarations while retaining any
+            # renderer declarations needed to audit the real source tree.
+            cli_sources = catalog.DATA / 'cli-sources.json'
+            if cli_sources.exists():
+                (data / 'cli-sources.json').write_bytes(cli_sources.read_bytes())
             fixture = 'New owned helper diagnostic %1'
             self.assertNotIn(fixture, json.loads((data / 'seed-translations.json').read_text(encoding='utf-8'))['sources'])
             (data / 'setup-sources.json').write_text(json.dumps([fixture]), encoding='utf-8')

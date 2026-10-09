@@ -1,7 +1,6 @@
 {
   "date": "2026-10-09",
   "scope": "Owned prose in the distributed Linux easy installer; external package-manager/polkit/Zenity standard buttons are provider text. Current source contains English-only titles, confirmations and diagnostics.",
-  "sourceSha256": "59a55ec160229be983015b49e71ac92164d6dcc727119b12a1b4fe9fec42bb67",
   "candidates": [
     {
       "line": 18,
@@ -108,8 +107,37 @@
       "source": "message \"Installed $product $version. Open it from the applications menu. Use Quit and reopen after an update. No uninstall or reboot is needed for the app update.\""
     }
   ],
-  "status": "Unfixed owned localization gap",
-  "nextTask": "Add shared-catalog translations and a standalone data-only locale lookup for the Linux installer, including pre-install dialogs/help/errors. Preserve reviewed package hashes, product/release identifiers, command arguments, verification and privilege boundaries. Test dry-run/confirmation and failure paths without installing or elevating.",
+  "status": "Standalone localization infrastructure implemented; 30 locale translations pending",
+  "nextTask": "Populate all remaining 30 installer locales, review wording against behavior, then qualify actual installer UI and the complete release companion.",
   "nativeReviewed": false,
-  "wholeInterfaceCoverageProven": false
+  "wholeInterfaceCoverageProven": false,
+  "originalSourceSha256": "59a55ec160229be983015b49e71ac92164d6dcc727119b12a1b4fe9fec42bb67",
+  "implemented": {
+    "sources": 26,
+    "populatedLocales": [
+      "en",
+      "fr",
+      "ar",
+      "nn"
+    ],
+    "pendingLocaleCount": 30,
+    "selection": "--language TAG, SC_INSTALLER_LANGUAGE, LANGUAGE/LC_ALL/LC_MESSAGES/LANG; explicit supported region aliases and English fallback",
+    "standalone": "Shell-quoted catalog embedded in the .run file; no external catalog or translation service required",
+    "substitution": "Single-pass literal parameter copying; no eval or re-expansion",
+    "verification": "Pinned product/version/release/repository and package hashes unchanged",
+    "releaseGate": "assemble-release requires every app locale to have a complete installer catalog",
+    "tests": "Four focused tests passed in both repositories: all populated text lookups, opaque substitutions, CLI help/errors, provider dialog argument capture and cancel, source caption mutation rejection. Real Zenity dialog rendering and installation not exercised."
+  },
+  "sourceSha256": {
+    "scripts/install-linux.run": "8b556c58afb16a4cb54a5a2ed2263f02712d0b494aa1fa8e8a6daa450c23324f",
+    "scripts/linux_installer_catalogs.py": "d5923eac512082ff567190f6f46a8ce332e006ad33f61121896022571c061570",
+    "data/localization/linux-installer.json": "d44c86ab9ca1b5e35c68e68f948eb3578f0f6da0b026f20ff59c81bd79836f2c",
+    "tests/linux_installer_localization.py": "f2fa127f9b83fd935d04946d47a37441a4244d0dea15bb740acea046b6ff0f17"
+  },
+  "catalogRegressionSuite": {
+    "tests": 62,
+    "skipped": 1,
+    "passed": true
+  },
+  "rendererFixtureIsolationCorrection": "Temporary helper-source fixture now retains renderer declarations, fixing the observed Studio RPM translation-maintenance failure without weakening the renderer guard."
 }
