@@ -493,3 +493,7 @@ Romanian, Hungarian, Polish, Czech and Slovak add 130 populated installer entrie
 ## Linux installer Nordic languages, Greek and Turkish — 2026-10-09
 
 Swedish, Danish, Norwegian Bokmål, Finnish, Greek and Turkish add 156 populated installer entries. Twenty-one locales including English are populated; 13 remain pending. Install/download distinctions and failure/retention behavior were reviewed against the script. Exact app quit captions are preserved; Bokmål and Nynorsk remain distinct. Greek prompts avoid inflecting opaque inserted names, and Turkish uses reordered placeholders. Five inert tests pass with all 21 locales; actual GTK rendering and native-speaker verification remain unverified. Results are retained in linux-installer-nordic-tests.log.
+
+### Linux installer: Ukrainian, Russian, Hebrew and Persian (2026-10-09)
+
+Added 104 translations across four locales. Contextual AI review preserves installation versus download-only behavior, failure outcomes, command tokens and exact app Quit captions. Five focused tests pass across all 25 populated locales, including literal substitutions and dialog arguments/cancellation. Nine locales remain. Native-speaker verification is unverified; actual RTL rendering and installation were not exercised in this batch. No local VM was started.
