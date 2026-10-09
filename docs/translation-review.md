@@ -533,3 +533,7 @@ Every direct literal runtime_error in windows*.cpp now requires an exact desktop
 ### Easy-installer update qualification fixture (2026-10-09)
 
 Added a Docker/root-only fixture to the package lifecycle gate. It uses the job-built local package, applies companion-style version/hash substitutions, observes the actual French terminal confirmation, accepts it, and checks the real installer main/package-manager result. The surrounding lifecycle script verifies settings preservation and exact launcher bytes afterward. Syntax checks passed; actual execution awaits hosted disposable-container jobs. No host installation or local VM was used.
+
+### Actual easy-installer Ubuntu path (2026-10-09)
+
+Both products passed the French terminal confirmation, local-package hash verification and actual apt-get invocation through installer main. Apt retained the already-current package; this invocation did not reinstall or migrate it. The surrounding direct lifecycle independently verifies update/reinstall, uninstall and configuration preservation. Transcript, package digest, CTest and lifecycle logs are retained. Fedora/AlmaLinux results remain pending at this checkpoint. Native-speaker verification remains unverified.
