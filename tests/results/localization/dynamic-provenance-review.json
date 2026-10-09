@@ -43,20 +43,19 @@
   ],
   "sourceSha256": {
     "src/enhancement_controls.h": "a5c3e8358fa8235b9625567e152dc3eb73ba54f13fba8b4fba2202a272262b52",
-    "src/equipment_profiles.cpp": "b41db4ef53c46a0c9e7b6745d0ea106fd0185ba9eb30e90f66d7afda8877779d",
-    "src/localization.h": "1d82243a04150a1252c4564270f00879474427d32f13f178112c9bd2c467789a",
+    "src/equipment_profiles.cpp": "1d4adb32603fc05635a456aaf584ede368ad73fc4ebb27acd696890771686f63",
+    "src/localization.h": "f430613fdec6915b10791010bdf9f1e36838240571accd041b818ba00e3561b9",
     "src/localized_file_dialog.h": "db8e7403e18efca39f41bcb02238c94297e09cc9b9a1f9870f12276bdc58a7ff",
-    "src/update_panel.h": "7637f0a9cd4c6b28a2eb3b185f09f21b36c7f98143e3023338fe2de039f7a68d",
-    "src/main.cpp": "23a90ba7c9e2d15e739e8cf7eaca81d2fa10c9f3300314fd86b906f9864ec7bf",
+    "src/update_panel.h": "c39b2e267dd634bd49ca63122401cf5c5c2e6cc2735d4f8396eb66a1a52264a3",
+    "src/main.cpp": "385ed79a6410f3360ec4338b48ff2fe2c92e53f1ea8e868aaeadef4e9a3baea8",
     "src/processing_guard.cpp": "7357547a751b724be0c1743d94f8318a9f86b5f6b2180911799dc660bd5e74b2",
-    "src/localization_text.h": "66844e548183ff28867f3b90958f3e67dd22b9d5daa7114f5da8d81778bf53d5"
+    "src/localization_text.h": "d9d06c97d3108e857250a419243138cd0939a72a0d19b535666beb1eedcf776c"
   },
   "nativeReviewed": false,
   "wholeInterfaceCoverageProven": false,
   "remaining": [
-    "External MIME/Windows file association descriptions follow provider behavior",
-    "Current artifact qualification still running",
-    "Whole-interface proof also requires checking display sinks outside this lexical inventory"
+    "Whole-interface coverage remains unproven: display sinks outside the lexical inventory require a finite surface audit.",
+    "External MIME/Windows association descriptions remain provider-owned; native-speaker verification remains unverified."
   ],
   "composedCaptionReview": {
     "scope": "Expressions in dynamic inventory containing translation calls plus concatenation/arg composition; manually inspect producers for setup, microphone status, speaker details, numeric labels, accessibility captions and update panel. Source review does not substitute for every live device workflow.",
@@ -70,12 +69,12 @@
       "Installed version is stable version metadata in translated template"
     ],
     "sourceSha256": {
-      "src/main.cpp": "67a782e55e0b1c658a04ca4a8b7a6539ec344d9be786c5a5da74abc3a2a841e4",
+      "src/main.cpp": "385ed79a6410f3360ec4338b48ff2fe2c92e53f1ea8e868aaeadef4e9a3baea8",
       "src/localization.h": "f430613fdec6915b10791010bdf9f1e36838240571accd041b818ba00e3561b9",
       "src/localization_text.h": "d9d06c97d3108e857250a419243138cd0939a72a0d19b535666beb1eedcf776c",
-      "src/update_panel.h": "7637f0a9cd4c6b28a2eb3b185f09f21b36c7f98143e3023338fe2de039f7a68d"
+      "src/update_panel.h": "c39b2e267dd634bd49ca63122401cf5c5c2e6cc2735d4f8396eb66a1a52264a3"
     },
-    "result": "No further owned English prose found in reviewed composed expressions; current runtime/package results still require qualification",
+    "result": "No further owned English prose found in the listed reviewed composed expressions. Current production package qualification is recorded separately in current-requirement-checkpoint.json; it does not prove every interface surface.",
     "nativeReviewed": false
   },
   "expandedSinksReview": {
@@ -84,6 +83,53 @@
     "directoryTitles": "Update download folder caption translated at caller; FileDialogs forwards caller title.",
     "suffixes": "Enhancement metadata contains only standard Hz/s/ms/dB/dBFS, multiplication and ratio symbols, or empty units.",
     "menuConstructor": "QMenu(this) supplies a parent widget, not a visible title.",
-    "qualification": "Source review only; current installed package checks pending."
+    "qualification": "Source review only. Current production Linux and Windows package qualification has completed; scopes and limitations are recorded in current-requirement-checkpoint.json."
+  },
+  "equipmentHelperCallerReview": {
+    "sourceSha256": "1d4adb32603fc05635a456aaf584ede368ad73fc4ebb27acd696890771686f63",
+    "scope": "All current ask, field and button helper callers in equipment_profiles.cpp, plus profile-list name producer. Manual source review; no additional runtime workflow claim.",
+    "ask": {
+      "definitionLine": 45,
+      "callerLines": [
+        299,
+        652,
+        770
+      ],
+      "result": "All three titles and body templates use SC_TR. Import/apply template substitutions preserve brand/model/conditions; apply route type is translated."
+    },
+    "field": {
+      "callerLines": [
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        195
+      ],
+      "result": "All seven owned field captions use SC_TR. Initial field values are editable equipment metadata, preserved verbatim."
+    },
+    "button": {
+      "callerLines": [
+        636,
+        637,
+        638,
+        639,
+        640,
+        641
+      ],
+      "result": "All six owned button captions use SC_TR."
+    },
+    "profileList": {
+      "producerLine": 564,
+      "sinkLine": 571,
+      "result": "Equipment kind and custom suffix use SC_TR; brand/family/model and measurement notes are profile metadata."
+    },
+    "diagnosticBoundary": {
+      "definitionLine": 41,
+      "result": "require translates owned reason through i18n::text before throwing; catch displays translated diagnostic. This does not classify arbitrary system or third-party errors."
+    },
+    "nativeReviewed": false,
+    "wholeInterfaceCoverageProven": false
   }
 }
