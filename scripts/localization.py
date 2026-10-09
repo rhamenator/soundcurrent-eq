@@ -217,16 +217,40 @@ EXTERNAL_UI_LABELS = {
 }
 
 
+# File-format contracts from the reviewed owned WAVE diagnostic inventory.
+REVIEWED_FILE_IDENTIFIERS = {'Cannot create output WAVE file': ('WAVE',),
+ 'Cannot open input WAVE file': ('WAVE',),
+ 'Cannot seek to WAVE audio': ('WAVE',),
+ 'Chunk extends beyond RIFF bounds': ('RIFF',),
+ 'Could not close WAVE output': ('WAVE',),
+ 'Could not flush WAVE output': ('WAVE',),
+ 'Could not write WAVE audio': ('WAVE',),
+ 'Could not write WAVE header': ('WAVE',),
+ 'Excessive number of RIFF chunks': ('RIFF',),
+ 'Incomplete WAVE output': ('WAVE',),
+ 'Input is too short for RIFF/WAVE': ('RIFF/WAVE',),
+ 'Invalid RIFF size': ('RIFF',),
+ 'Invalid WAVE frame alignment or byte rate': ('WAVE',),
+ 'Invalid WAVE read buffer': ('WAVE',),
+ 'Invalid float WAVE format': ('WAVE',),
+ 'Invalid output WAVE format': ('WAVE',),
+ 'Missing RIFF padding byte': ('RIFF',),
+ 'Missing or incomplete WAVE audio': ('WAVE',),
+ 'Missing, duplicate or oversized WAVE format': ('WAVE',),
+ 'Multiple WAVE data chunks are unsupported': ('WAVE',),
+ 'Only PCM16/24/32 or float32 WAVE is supported': ('WAVE', 'PCM16/24/32', 'float32'),
+ 'Only little-endian RIFF/WAVE is supported': ('RIFF/WAVE',),
+ 'Output exceeds the RIFF/WAVE 4 GiB limit': ('RIFF/WAVE', '4 GiB'),
+ 'Truncated WAVE file': ('WAVE',),
+ 'Truncated extensible WAVE format': ('WAVE',),
+ 'Unsupported WAVE rate or channel count': ('WAVE',),
+ 'Unsupported extensible WAVE subtype': ('WAVE',),
+ 'WAVE output exceeds its declared length': ('WAVE',)}
+
 def validate_text(source, translated):
-    # Reviewed WAVE diagnostics name the binary file format, not an acoustic wave.
-    wave_sources = {'Cannot open input WAVE file', 'Cannot create output WAVE file',
-                    'Truncated WAVE file', 'Cannot seek to WAVE audio',
-                    'Invalid WAVE read buffer', 'Invalid output WAVE format'}
-    if source in wave_sources and translated.count('WAVE') != source.count('WAVE'):
-        raise ValueError('WAVE file-format identifier changed')
-    riff_sources = {'Invalid RIFF size', 'Chunk extends beyond RIFF bounds'}
-    if source in riff_sources and translated.count('RIFF') != source.count('RIFF'):
-        raise ValueError('RIFF container identifier changed')
+    for identifier in REVIEWED_FILE_IDENTIFIERS.get(source, ()):
+        if translated.count(identifier) != source.count(identifier):
+            raise ValueError('File-format identifier changed: ' + identifier)
     for label in EXTERNAL_UI_LABELS.get(source, ()):
         if source.count(label) != translated.count(label):
             raise ValueError('External installer label changed: ' + label)
