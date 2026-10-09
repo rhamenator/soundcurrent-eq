@@ -595,3 +595,9 @@ New profile names, relative-response import instructions and newly authored prov
 ### Confirmed Qt fallback file chooser gap
 
 An isolated real Qt file-dialog probe loaded the actual French app catalog and shared standard-action translator. The fallback chooser still displayed English field labels, navigation tooltips and Open; Cancel was translated. This is an unresolved interface gap, separate from native operating-system dialog language. The exact probe and limitations are recorded in tests/results/localization/qt-file-dialog-gap.json. Next: cover file-dialog/file-model contexts and actual open/save/error workflows without altering paths or filter semantics.
+
+### Basic Qt fallback chooser captions
+
+Nine chooser field/navigation captions and existing Open/Save are now mapped only in QFileDialog context. Catalogs use installed Qt 6.10.2 translations for 24 non-English locales and contextual AI translations for nine locales; all remain native-unverified. Exact provenance is in qt-file-dialog-label-origins.json; upstream copyright and GPL-3.0/Qt-exception notice are retained in docs/licenses/qt-translations-copyright.txt. This addresses basic controls only. Accessibility descriptions, file-model headers, context menus and error dialogs remain pending. Actual fallback chooser tests check fields, tooltips, open/save captions, opaque Unicode filenames and file-filter preservation.
+
+The expanded compiled Linux localization fixture passed in both apps (EQ 20.11 s; Studio 18.60 s). Its 60-second limit covers repeated real Qt chooser construction across 33 locales. It checks constructor/control state, not file acceptance, accessibility descriptions or error workflows. Windows and installed packages remain pending.

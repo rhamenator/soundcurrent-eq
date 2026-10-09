@@ -329,6 +329,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Tự động hiệu chỉnh âm thanh micrô được kết nối; nhấp để bỏ qua EQ micrô</translation>
     </message>
     <message>
+      <source>Back</source>
+      <translation>Quay lại</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Balance</source>
       <extracomment>Left/right audio channel balance. Not bank balance or physical equilibrium.</extracomment>
       <translation>Cân bằng</translation>
@@ -701,6 +706,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Đếm các điểm cuối âm thanh</translation>
     </message>
     <message>
+      <source>Create new folder</source>
+      <translation>Tạo thư mục mới</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>Tạo cấu hình</translation>
     </message>
@@ -734,6 +744,11 @@ Nhập vào thư viện của bạn?</translation>
       <source>Delete</source>
       <translation>Xóa</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Detail view</source>
+      <translation>Dạng chi tiết</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Discard</source>
@@ -976,6 +991,16 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Dòng sản phẩm</translation>
     </message>
     <message>
+      <source>File name:</source>
+      <translation>Tên tệp:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files of type:</source>
+      <translation>Loại tệp:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Filter Q</source>
       <translation>Q của bộ lọc</translation>
       <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
@@ -997,6 +1022,11 @@ Nhập vào thư viện của bạn?</translation>
       <source>Floorstanding speaker</source>
       <translation>Loa đứng sàn</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Forward</source>
+      <translation>Tiến tới</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Frequency</source>
@@ -1298,6 +1328,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Lấy danh sách điểm cuối âm thanh</translation>
     </message>
     <message>
+      <source>List view</source>
+      <translation>Dạng danh sách</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Listening preset</source>
       <extracomment>Saved equalizer settings for playback. Not a listening device.</extracomment>
       <translation>Thiết lập sẵn để nghe</translation>
@@ -1318,6 +1353,11 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Lock equalizer settings</source>
       <translation>Khóa thiết lập cân bằng âm</translation>
+    </message>
+    <message>
+      <source>Look in:</source>
+      <translation>Tìm trong:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Loudness</source>
@@ -1650,6 +1690,11 @@ Nhập vào thư viện của bạn?</translation>
       <source>Panel speaker</source>
       <translation>Loa dạng tấm</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
+    </message>
+    <message>
+      <source>Parent directory</source>
+      <translation>Thư mục cha</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Paste</source>

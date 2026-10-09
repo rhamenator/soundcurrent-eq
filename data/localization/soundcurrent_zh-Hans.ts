@@ -329,6 +329,11 @@ Import into your library?</source>
       <translation>自动调整已连接麦克风的音色；点击可旁路麦克风均衡器</translation>
     </message>
     <message>
+      <source>Back</source>
+      <translation>后退</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Balance</source>
       <extracomment>Left/right audio channel balance. Not bank balance or physical equilibrium.</extracomment>
       <translation>平衡</translation>
@@ -701,6 +706,11 @@ Import into your library?</source>
       <translation>统计音频端点数量</translation>
     </message>
     <message>
+      <source>Create new folder</source>
+      <translation>新建文件夹</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>创建配置</translation>
     </message>
@@ -734,6 +744,11 @@ Import into your library?</source>
       <source>Delete</source>
       <translation>删除</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Detail view</source>
+      <translation>详情视图</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Discard</source>
@@ -976,6 +991,16 @@ Import into your library?</source>
       <translation>系列</translation>
     </message>
     <message>
+      <source>File name:</source>
+      <translation>文件名称(N)：</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files of type:</source>
+      <translation>文件类型：</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Filter Q</source>
       <translation>滤波器品质因数 Q</translation>
       <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
@@ -997,6 +1022,11 @@ Import into your library?</source>
       <source>Floorstanding speaker</source>
       <translation>落地音箱</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Forward</source>
+      <translation>前进</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Frequency</source>
@@ -1298,6 +1328,11 @@ Import into your library?</source>
       <translation>获取音频端点列表</translation>
     </message>
     <message>
+      <source>List view</source>
+      <translation>列表视图</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Listening preset</source>
       <extracomment>Saved equalizer settings for playback. Not a listening device.</extracomment>
       <translation>聆听预设</translation>
@@ -1318,6 +1353,11 @@ Import into your library?</source>
     <message>
       <source>Lock equalizer settings</source>
       <translation>锁定均衡器设置</translation>
+    </message>
+    <message>
+      <source>Look in:</source>
+      <translation>查找范围：</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Loudness</source>
@@ -1650,6 +1690,11 @@ Import into your library?</source>
       <source>Panel speaker</source>
       <translation>平板音箱</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
+    </message>
+    <message>
+      <source>Parent directory</source>
+      <translation>父目录</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Paste</source>

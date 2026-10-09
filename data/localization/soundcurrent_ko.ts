@@ -329,6 +329,11 @@ Import into your library?</source>
       <translation>연결된 마이크의 음질을 자동 보정합니다. 클릭하면 마이크 EQ를 바이패스합니다</translation>
     </message>
     <message>
+      <source>Back</source>
+      <translation>뒤로</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Balance</source>
       <extracomment>Left/right audio channel balance. Not bank balance or physical equilibrium.</extracomment>
       <translation>밸런스</translation>
@@ -701,6 +706,11 @@ Import into your library?</source>
       <translation>오디오 엔드포인트 개수 확인</translation>
     </message>
     <message>
+      <source>Create new folder</source>
+      <translation>새 폴더 만들기</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>프로파일 만들기</translation>
     </message>
@@ -734,6 +744,11 @@ Import into your library?</source>
       <source>Delete</source>
       <translation>삭제</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Detail view</source>
+      <translation>자세히 보기</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Discard</source>
@@ -976,6 +991,16 @@ Import into your library?</source>
       <translation>제품군</translation>
     </message>
     <message>
+      <source>File name:</source>
+      <translation>파일 이름(N):</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files of type:</source>
+      <translation>파일 형식:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Filter Q</source>
       <translation>필터 Q</translation>
       <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
@@ -997,6 +1022,11 @@ Import into your library?</source>
       <source>Floorstanding speaker</source>
       <translation>플로어스탠딩 스피커</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Forward</source>
+      <translation>앞으로</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Frequency</source>
@@ -1298,6 +1328,11 @@ Import into your library?</source>
       <translation>오디오 엔드포인트 목록 가져오기</translation>
     </message>
     <message>
+      <source>List view</source>
+      <translation>목록으로 보기</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Listening preset</source>
       <extracomment>Saved equalizer settings for playback. Not a listening device.</extracomment>
       <translation>감상 프리셋</translation>
@@ -1318,6 +1353,11 @@ Import into your library?</source>
     <message>
       <source>Lock equalizer settings</source>
       <translation>이퀄라이저 설정 잠금</translation>
+    </message>
+    <message>
+      <source>Look in:</source>
+      <translation>다음에서 찾기:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Loudness</source>
@@ -1650,6 +1690,11 @@ Import into your library?</source>
       <source>Panel speaker</source>
       <translation>패널 스피커</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
+    </message>
+    <message>
+      <source>Parent directory</source>
+      <translation>부모 디렉터리</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Paste</source>

@@ -5,7 +5,7 @@
   "catalogs": {
     "count": 34,
     "nonEnglish": 33,
-    "messagesPerCatalog": 649,
+    "messagesPerCatalog": 658,
     "check": "scripts/localization.py --check --require-complete passed locally",
     "nativeReviewed": false
   },
@@ -74,15 +74,15 @@
     "Silent same-package updates do not prove older-version migration or interactive chooser behavior"
   ],
   "evidenceSha256": {
-    "data/localization/catalogs.json": "98f213de4bc81a8f3ed1acee8ab1b7dced17e9793d00eb7c06260e83458fdaf1",
+    "data/localization/catalogs.json": "86d5859eca618ffd4437f0a8e3cc659a5b82757a6aee36d0fc5fbeb6c051d0b6",
     "docs/translation-review.md": "cc6c145d3fed310b5b8fda882325b7be28f969f3cf2a935eb24f45dad0140875",
-    "tests/localization.cpp": "27df206581e8a7fdcb0d4e0d3d0d17ce75f920d3d1693b21de0cca78341b3865",
+    "tests/localization.cpp": "92c6ed599978a1d86dc8da038234ee4b0e1b3da19fe86cfff9dfc15a37853e9c",
     "tests/translation_catalogs.py": "443fb29d0b4cb1e848ec443cbf7a8245d54087e682036d5bcdb2c9c618ea524f",
     "scripts/ui_string_audit.py": "a7cd0132f32a3f103eadffe8798aee877b4c397545f3e53ec1ea4134b133629f",
-    "tests/results/localization/dynamic-display-inventory.json": "9d7cd7b9ac691979abe5d94d6dd5da4abb281c40f9f273ef9b170a0989913af6",
+    "tests/results/localization/dynamic-display-inventory.json": "82df20e015eba7e68ada2f97f8a570ddf998b166533928fe11efa83159e3a7f6",
     "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
     "src/main.cpp": "1f8c56b4e82e1b3bfd2d9406694ca9c06f3e007362fc59a60c80728157986ee9",
-    "src/localization.h": "ba4d9f31588317ccea9345a986c2b46057bff067d92a0ae5903909a515a8da85",
+    "src/localization.h": "2f0c81cf6017b97f6c68b20c34113058e5f77c2705737a6f36733c0ce282124f",
     "src/localization_text.h": "9cbb9b2c5e49287651cba6bcd273c01e148f8fd5dce4b7e39fdd86594e344cd0",
     "scripts/localization.py": "a5ac5ebed546faab47f0b4b4dae66f2a1ce1ece2936d2968483191ef5e02d19d",
     "tests/calibration_worker_localization.py": "c6120b78b59ae6d547cd7d0a503d4f39a46f0fa3c03c9c4007b46f8e53db34f8",
@@ -91,7 +91,7 @@
     "tests/results/localization/calibration-worker-native-ci.json": "377d797dfc8478b69a02fb63760577d5a2571393c939e35aa1eecbb270467e35",
     "src/equipment_profiles.cpp": "6853faa29c08f99df84bd12c9ca938657216c57ca39b5d9a5b15e747eb6c78ed",
     "tests/results/localization/profile-authored-defaults.json": "2d3aa7687f468de8c9b652c2dafd2afae1f929b3d401ac3390a6f691f08156af",
-    "tests/results/localization/qt-file-dialog-gap.json": "3773fe6121c219d20746eb29261ce42326aa48db8ea27256628ceba5f7f01957"
+    "tests/results/localization/qt-file-dialog-gap.json": "ce4bc1999c6157f57d3cbd3182b350e6e6ba8b46b40318d33d0e4773a041af1c"
   },
   "auditedBaseHead": "a39082b688e3a0ad21e40c39a966ee11c44e5439",
   "sourceIdentity": "Current inspected source files are identified by SHA-256 below; base commit is historical context, not qualification of pending calibration changes",
@@ -123,7 +123,7 @@
   },
   "currentQtFileDialogGap": {
     "date": "2026-10-09",
-    "status": "confirmed unresolved shared Qt fallback file-dialog localization gap",
+    "status": "basic fields/navigation/Open/Save implemented and actual compiled Linux dialog fixture passed; other chooser paths unresolved",
     "probeSourceSha256": "b3be9f969d44f0352b65c07ce5b0e22ff63d66e26b95b68c3a1c7874ebdfd08f",
     "probeScope": "Standalone Qt6Widgets QFileDialog using the actual EQ compiled French catalog and shared StandardActionTranslator. Offscreen, DontUseNativeDialog. No file selection, settings writes, audio or VM. Shared implementation matches Studio; Studio full app dialog not separately exercised.",
     "untranslatedObserved": [
@@ -144,6 +144,36 @@
     "interpretation": "Owned app captions and standard-button mapping do not cover QFileDialog-specific labels, navigation tooltips or its own Open caption. This is a Qt fallback dialog, not an operating-system-language native dialog exception.",
     "nextTask": "Inventory QFileDialog and its file-model contexts for open/save/error/context-menu workflows; localize all owned Qt fallback captions with exact-context guards and actual dialog tests across catalogs. Preserve filenames, directory paths, filters and extension semantics.",
     "nativeReviewed": false,
-    "wholeInterfaceCoverageProven": false
+    "wholeInterfaceCoverageProven": false,
+    "implementedBasicCaptions": [
+      "Look in:",
+      "File name:",
+      "Files of type:",
+      "Back",
+      "Forward",
+      "Parent directory",
+      "Create new folder",
+      "List view",
+      "Detail view",
+      "Open",
+      "Save"
+    ],
+    "remainingScope": [
+      "Accessibility descriptions",
+      "File-model headers",
+      "Context menus",
+      "Open/save error and confirmation dialogs",
+      "Native Windows qualification"
+    ],
+    "localRuntimeEvidence": "CTest localization passed across all 33 non-English catalogs: actual DontUseNativeDialog controls, Unicode/literal-percent filenames, filter preservation and plugin-context exclusion. Offscreen constructor/control inspection; no acceptance, file creation or errors exercised.",
+    "sources": [
+      "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.cpp",
+      "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.ui"
+    ],
+    "sourceSha256": {
+      "src/localization.h": "2f0c81cf6017b97f6c68b20c34113058e5f77c2705737a6f36733c0ce282124f",
+      "tests/localization.cpp": "92c6ed599978a1d86dc8da038234ee4b0e1b3da19fe86cfff9dfc15a37853e9c",
+      "data/localization/catalogs.json": "86d5859eca618ffd4437f0a8e3cc659a5b82757a6aee36d0fc5fbeb6c051d0b6"
+    }
   }
 }

@@ -329,6 +329,11 @@ Importálja a könyvtárba?</translation>
       <translation>Csatlakoztatott mikrofon hangjának automatikus formálása; kattintson a mikrofon-EQ megkerüléséhez</translation>
     </message>
     <message>
+      <source>Back</source>
+      <translation>Vissza</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Balance</source>
       <extracomment>Left/right audio channel balance. Not bank balance or physical equilibrium.</extracomment>
       <translation>Balansz</translation>
@@ -701,6 +706,11 @@ Importálja a könyvtárba?</translation>
       <translation>A hangvégpontok megszámlálása</translation>
     </message>
     <message>
+      <source>Create new folder</source>
+      <translation>Új mappa létrehozása</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>Profil létrehozása</translation>
     </message>
@@ -734,6 +744,11 @@ Importálja a könyvtárba?</translation>
       <source>Delete</source>
       <translation>Törlés</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Detail view</source>
+      <translation>Részletes nézet</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Discard</source>
@@ -976,6 +991,16 @@ Importálja a könyvtárba?</translation>
       <translation>Termékcsalád</translation>
     </message>
     <message>
+      <source>File name:</source>
+      <translation>Fájlnév:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files of type:</source>
+      <translation>Fájlok típusa:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Filter Q</source>
       <translation>Szűrő jósági tényezője Q</translation>
       <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
@@ -997,6 +1022,11 @@ Importálja a könyvtárba?</translation>
       <source>Floorstanding speaker</source>
       <translation>Álló hangsugárzó</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Forward</source>
+      <translation>Előre</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Frequency</source>
@@ -1298,6 +1328,11 @@ Importálja a könyvtárba?</translation>
       <translation>A hangvégpontok listájának lekérése</translation>
     </message>
     <message>
+      <source>List view</source>
+      <translation>Listanézet</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Listening preset</source>
       <extracomment>Saved equalizer settings for playback. Not a listening device.</extracomment>
       <translation>Hallgatási előbeállítás</translation>
@@ -1318,6 +1353,11 @@ Importálja a könyvtárba?</translation>
     <message>
       <source>Lock equalizer settings</source>
       <translation>Hangszínszabályzó-beállítások zárolása</translation>
+    </message>
+    <message>
+      <source>Look in:</source>
+      <translation>Keresés itt:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Loudness</source>
@@ -1650,6 +1690,11 @@ Importálja a könyvtárba?</translation>
       <source>Panel speaker</source>
       <translation>Paneles hangsugárzó</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
+    </message>
+    <message>
+      <source>Parent directory</source>
+      <translation>Szülőkönyvtár</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Paste</source>

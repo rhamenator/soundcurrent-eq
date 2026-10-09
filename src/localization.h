@@ -150,6 +150,20 @@ public:
             if (name == "QAbstractSpinBox" && action == "Step &down") return text("Step down");
             return {};
         }
+        if (name == "QFileDialog") {
+            if (action == "Look in:") return text("Look in:");
+            if (action == "File &name:") return text("File name:");
+            if (action == "Files of type:") return text("Files of type:");
+            if (action == "Back") return text("Back");
+            if (action == "Forward") return text("Forward");
+            if (action == "Parent Directory") return text("Parent directory");
+            if (action == "Create New Folder") return text("Create new folder");
+            if (action == "List View") return text("List view");
+            if (action == "Detail View") return text("Detail view");
+            if (action == "&Open") return text("Open");
+            if (action == "&Save") return text("Save");
+            return {};
+        }
         if (name != "QPlatformTheme" && name != "QDialogButtonBox" && name != "QGnomeTheme") return {};
         auto caption=action;caption.replace("&", "");
         if (caption == "OK") return text("OK");

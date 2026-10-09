@@ -5,6 +5,9 @@
 #include "audio_error_text.h"
 #include "accelerating_spinbox.h"
 #include <QDoubleSpinBox>
+#include <QFileDialog>
+#include <QLabel>
+#include <QToolButton>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QJsonDocument>
@@ -376,6 +379,33 @@ int main(int argc,char **argv){
    }
    require(QCoreApplication::translate("QGnomeTheme","&Close")==text("Close"),"GNOME Close stayed English");
    require(QCoreApplication::translate("QGnomeTheme","Close without Saving")==text("Discard"),"GNOME discard label stayed English");
+   {
+    QFileDialog chooser(nullptr, text("Import equipment profile"));
+    chooser.setOption(QFileDialog::DontUseNativeDialog);
+    chooser.setOption(QFileDialog::DontUseCustomDirectoryIcons);
+    chooser.setDirectory(dir.path());
+    const auto filter=text("Equipment profile (*.json)");
+    chooser.setNameFilter(filter);
+    chooser.selectFile(QString::fromUtf8("音声 %1 é.json"));
+    for (const auto &[object, caption]:std::initializer_list<std::pair<const char*,const char*>>{
+      {"lookInLabel","Look in:"},{"fileNameLabel","File name:"},{"fileTypeLabel","Files of type:"}}) {
+     const auto *label=chooser.findChild<QLabel*>(object);
+     require(label && label->text()==text(caption),"Qt fallback chooser field stayed outside app catalog");
+    }
+    for (const auto &[object, caption]:std::initializer_list<std::pair<const char*,const char*>>{
+      {"backButton","Back"},{"forwardButton","Forward"},{"toParentButton","Parent directory"},
+      {"newFolderButton","Create new folder"},{"listModeButton","List view"},{"detailModeButton","Detail view"}}) {
+     const auto *button=chooser.findChild<QToolButton*>(object);
+     require(button && button->toolTip()==text(caption),"Qt fallback chooser navigation tooltip stayed outside app catalog");
+    }
+    const auto *buttons=chooser.findChild<QDialogButtonBox*>("buttonBox");
+    require(buttons && buttons->button(QDialogButtonBox::Open)->text()==text("Open"),"Qt chooser Open stayed outside app catalog");
+    chooser.setAcceptMode(QFileDialog::AcceptSave);
+    require(buttons->button(QDialogButtonBox::Save)->text()==text("Save"),"Qt chooser Save stayed outside app catalog");
+    require(chooser.nameFilters()==QStringList{filter},"Qt chooser translation changed a file filter");
+    require(chooser.selectedFiles().size()==1 && chooser.selectedFiles().front().endsWith(QString::fromUtf8("音声 %1 é.json")),"Qt chooser translation changed an opaque filename");
+    require(QCoreApplication::translate("ExternalPlugin","File &name:")==QStringLiteral("File &name:"),"Qt chooser mapping intercepted plugin captions");
+   }
    const auto calibrationFailure=text("Measurement failed: %1").arg(text("Test level is outside the allowed range"));
    const auto failureBytes=(calibrationFailure+QStringLiteral("\r\n")).toUtf8();
    for(qsizetype split=0;split<=failureBytes.size();++split) {

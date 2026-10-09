@@ -1,6 +1,6 @@
 {
   "date": "2026-10-09",
-  "status": "confirmed unresolved shared Qt fallback file-dialog localization gap",
+  "status": "basic fields/navigation/Open/Save implemented and actual compiled Linux dialog fixture passed; other chooser paths unresolved",
   "probeSourceSha256": "b3be9f969d44f0352b65c07ce5b0e22ff63d66e26b95b68c3a1c7874ebdfd08f",
   "probeScope": "Standalone Qt6Widgets QFileDialog using the actual EQ compiled French catalog and shared StandardActionTranslator. Offscreen, DontUseNativeDialog. No file selection, settings writes, audio or VM. Shared implementation matches Studio; Studio full app dialog not separately exercised.",
   "untranslatedObserved": [
@@ -21,5 +21,35 @@
   "interpretation": "Owned app captions and standard-button mapping do not cover QFileDialog-specific labels, navigation tooltips or its own Open caption. This is a Qt fallback dialog, not an operating-system-language native dialog exception.",
   "nextTask": "Inventory QFileDialog and its file-model contexts for open/save/error/context-menu workflows; localize all owned Qt fallback captions with exact-context guards and actual dialog tests across catalogs. Preserve filenames, directory paths, filters and extension semantics.",
   "nativeReviewed": false,
-  "wholeInterfaceCoverageProven": false
+  "wholeInterfaceCoverageProven": false,
+  "implementedBasicCaptions": [
+    "Look in:",
+    "File name:",
+    "Files of type:",
+    "Back",
+    "Forward",
+    "Parent directory",
+    "Create new folder",
+    "List view",
+    "Detail view",
+    "Open",
+    "Save"
+  ],
+  "remainingScope": [
+    "Accessibility descriptions",
+    "File-model headers",
+    "Context menus",
+    "Open/save error and confirmation dialogs",
+    "Native Windows qualification"
+  ],
+  "localRuntimeEvidence": "CTest localization passed across all 33 non-English catalogs: actual DontUseNativeDialog controls, Unicode/literal-percent filenames, filter preservation and plugin-context exclusion. Offscreen constructor/control inspection; no acceptance, file creation or errors exercised.",
+  "sources": [
+    "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.cpp",
+    "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.ui"
+  ],
+  "sourceSha256": {
+    "src/localization.h": "2f0c81cf6017b97f6c68b20c34113058e5f77c2705737a6f36733c0ce282124f",
+    "tests/localization.cpp": "92c6ed599978a1d86dc8da038234ee4b0e1b3da19fe86cfff9dfc15a37853e9c",
+    "data/localization/catalogs.json": "86d5859eca618ffd4437f0a8e3cc659a5b82757a6aee36d0fc5fbeb6c051d0b6"
+  }
 }

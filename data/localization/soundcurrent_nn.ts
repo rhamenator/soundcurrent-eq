@@ -329,6 +329,11 @@ Importere til biblioteket ditt?</translation>
       <translation>Tilpass automatisk lyden frå ein tilkopla mikrofon; klikk for å omgå mikrofon-EQ</translation>
     </message>
     <message>
+      <source>Back</source>
+      <translation>Tilbake</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Balance</source>
       <translation>Balanse</translation>
       <extracomment>Left/right audio channel balance. Not bank balance or physical equilibrium.</extracomment>
@@ -701,6 +706,11 @@ Importere til biblioteket ditt?</translation>
       <translation>Teljing av lydendepunkt</translation>
     </message>
     <message>
+      <source>Create new folder</source>
+      <translation>Lag ny mappe</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>Opprett profil</translation>
     </message>
@@ -734,6 +744,11 @@ Importere til biblioteket ditt?</translation>
       <source>Delete</source>
       <translation>Slett</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Detail view</source>
+      <translation>Detaljert vising</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Discard</source>
@@ -976,6 +991,16 @@ Importere til biblioteket ditt?</translation>
       <translation>Familie</translation>
     </message>
     <message>
+      <source>File name:</source>
+      <translation>Filnamn:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files of type:</source>
+      <translation>Filer av typen:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Filter Q</source>
       <translation>Kvalitetsfaktor Q for filteret</translation>
       <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
@@ -997,6 +1022,11 @@ Importere til biblioteket ditt?</translation>
       <source>Floorstanding speaker</source>
       <translation>Golvståande høgtalar</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Forward</source>
+      <translation>Fram</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Frequency</source>
@@ -1298,6 +1328,11 @@ Importere til biblioteket ditt?</translation>
       <translation>Henting av liste over lydendepunkt</translation>
     </message>
     <message>
+      <source>List view</source>
+      <translation>Listevising</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Listening preset</source>
       <translation>Lytteførehandsinnstilling</translation>
       <extracomment>Saved equalizer settings for playback. Not a listening device.</extracomment>
@@ -1318,6 +1353,11 @@ Importere til biblioteket ditt?</translation>
     <message>
       <source>Lock equalizer settings</source>
       <translation>Lås equalizerinnstillingar</translation>
+    </message>
+    <message>
+      <source>Look in:</source>
+      <translation>Leit i:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Loudness</source>
@@ -1650,6 +1690,11 @@ Importere til biblioteket ditt?</translation>
       <source>Panel speaker</source>
       <translation>Panelhøgtalar</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
+    </message>
+    <message>
+      <source>Parent directory</source>
+      <translation>Foreldermappe</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Paste</source>

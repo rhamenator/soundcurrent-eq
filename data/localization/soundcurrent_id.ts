@@ -329,6 +329,11 @@ Impor ke pustaka Anda?</translation>
       <translation>Sesuaikan suara mikrofon yang terhubung secara otomatis; klik untuk melewati EQ mikrofon</translation>
     </message>
     <message>
+      <source>Back</source>
+      <translation>Kembali</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Balance</source>
       <extracomment>Left/right audio channel balance. Not bank balance or physical equilibrium.</extracomment>
       <translation>Keseimbangan</translation>
@@ -701,6 +706,11 @@ Impor ke pustaka Anda?</translation>
       <translation>Menghitung titik akhir audio</translation>
     </message>
     <message>
+      <source>Create new folder</source>
+      <translation>Buat folder baru</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>Buat profil</translation>
     </message>
@@ -734,6 +744,11 @@ Impor ke pustaka Anda?</translation>
       <source>Delete</source>
       <translation>Hapus</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Detail view</source>
+      <translation>Tampilan detail</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Discard</source>
@@ -976,6 +991,16 @@ Impor ke pustaka Anda?</translation>
       <translation>Keluarga produk</translation>
     </message>
     <message>
+      <source>File name:</source>
+      <translation>Nama berkas:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files of type:</source>
+      <translation>Jenis berkas:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Filter Q</source>
       <translation>Q filter</translation>
       <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
@@ -997,6 +1022,11 @@ Impor ke pustaka Anda?</translation>
       <source>Floorstanding speaker</source>
       <translation>Speaker berdiri di lantai</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Forward</source>
+      <translation>Maju</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Frequency</source>
@@ -1298,6 +1328,11 @@ Impor ke pustaka Anda?</translation>
       <translation>Mengambil daftar titik akhir audio</translation>
     </message>
     <message>
+      <source>List view</source>
+      <translation>Tampilan daftar</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Listening preset</source>
       <extracomment>Saved equalizer settings for playback. Not a listening device.</extracomment>
       <translation>Preset mendengarkan</translation>
@@ -1318,6 +1353,11 @@ Impor ke pustaka Anda?</translation>
     <message>
       <source>Lock equalizer settings</source>
       <translation>Kunci pengaturan equalizer</translation>
+    </message>
+    <message>
+      <source>Look in:</source>
+      <translation>Cari di:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Loudness</source>
@@ -1650,6 +1690,11 @@ Impor ke pustaka Anda?</translation>
       <source>Panel speaker</source>
       <translation>Speaker panel</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
+    </message>
+    <message>
+      <source>Parent directory</source>
+      <translation>Direktori induk</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Paste</source>

@@ -329,6 +329,11 @@ Import into your library?</source>
       <translation>Αυτόματη διόρθωση του συνδεδεμένου μικροφώνου· πατήστε για παράκαμψη του EQ μικροφώνου</translation>
     </message>
     <message>
+      <source>Back</source>
+      <translation>Πίσω</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Balance</source>
       <extracomment>Left/right audio channel balance. Not bank balance or physical equilibrium.</extracomment>
       <translation>Ισορροπία</translation>
@@ -701,6 +706,11 @@ Import into your library?</source>
       <translation>Καταμέτρηση τελικών σημείων ήχου</translation>
     </message>
     <message>
+      <source>Create new folder</source>
+      <translation>Δημιουργία νέου φακέλου</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Create profile</source>
       <translation>Δημιουργία προφίλ</translation>
     </message>
@@ -734,6 +744,11 @@ Import into your library?</source>
       <source>Delete</source>
       <translation>Διαγραφή</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Detail view</source>
+      <translation>Λεπτομερής προβολή</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Discard</source>
@@ -976,6 +991,16 @@ Import into your library?</source>
       <translation>Σειρά</translation>
     </message>
     <message>
+      <source>File name:</source>
+      <translation>Όνομα αρχείου:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files of type:</source>
+      <translation>Αρχεία τύπου:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Filter Q</source>
       <translation>Συντελεστής ποιότητας φίλτρου Q</translation>
       <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
@@ -997,6 +1022,11 @@ Import into your library?</source>
       <source>Floorstanding speaker</source>
       <translation>Ηχείο δαπέδου</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Forward</source>
+      <translation>Μπροστά</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Frequency</source>
@@ -1298,6 +1328,11 @@ Import into your library?</source>
       <translation>Λήψη λίστας τελικών σημείων ήχου</translation>
     </message>
     <message>
+      <source>List view</source>
+      <translation>Προβολή λίστας</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Listening preset</source>
       <extracomment>Saved equalizer settings for playback. Not a listening device.</extracomment>
       <translation>Προρύθμιση ακρόασης</translation>
@@ -1318,6 +1353,11 @@ Import into your library?</source>
     <message>
       <source>Lock equalizer settings</source>
       <translation>Κλείδωμα ρυθμίσεων ισοσταθμιστή</translation>
+    </message>
+    <message>
+      <source>Look in:</source>
+      <translation>Αναζήτηση σε:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Loudness</source>
@@ -1650,6 +1690,11 @@ Import into your library?</source>
       <source>Panel speaker</source>
       <translation>Ηχείο πάνελ</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
+    </message>
+    <message>
+      <source>Parent directory</source>
+      <translation>Γονικός κατάλογος</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Paste</source>
