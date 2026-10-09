@@ -25,6 +25,12 @@ sc_resolve_language() {
                 fr) printf '%s' fr; return;;
                 ar) printf '%s' ar; return;;
                 nn) printf '%s' nn; return;;
+                de) printf '%s' de; return;;
+                es) printf '%s' es; return;;
+                it) printf '%s' it; return;;
+                pt-pt) printf '%s' pt-PT; return;;
+                pt-br) printf '%s' pt-BR; return;;
+                nl) printf '%s' nl; return;;
             esac
         done
     done
@@ -53,7 +59,7 @@ Installer: %6';;
         en:manager) printf '%s' 'This system is missing %1.';;
         en:newer) printf '%s' 'A newer %1 (%2) is already installed. It was kept; this Linux installer provides %3.';;
         en:sha_required) printf '%s' 'sha256sum is required.';;
-        en:quit) printf '%s' 'Use Quit to exit the running SoundCurrent app before updating. Closing its window keeps it running.';;
+        en:quit) printf '%s' 'Use «Quit app» to exit the running SoundCurrent app before updating. Closing its window keeps it running.';;
         en:download_confirm) printf '%s' 'Download and verify %1 %2 for %3? No installation will be performed.';;
         en:install_confirm) printf '%s' 'Install or update %1 %2 on %3? Your presets and profiles are kept. The package manager installs dependencies and adds an app-menu icon. Administrator approval is needed. Only one equalizer should run at a time.';;
         en:download_tool) printf '%s' 'Install curl or wget first.';;
@@ -61,7 +67,7 @@ Installer: %6';;
         en:exists) printf '%s' 'Already exists: %1';;
         en:saved) printf '%s' 'Verified package saved to %1';;
         en:glibc) printf '%s' 'This package needs glibc %1 or newer; this system has %2. Nothing was installed.';;
-        en:installed) printf '%s' 'Installed %1 %2. Open it from the applications menu. Use Quit and reopen after an update. No uninstall or reboot is needed for the app update.';;
+        en:installed) printf '%s' 'Installed %1 %2. Open it from the applications menu. Use «Quit app» and reopen after an update. No uninstall or reboot is needed for the app update.';;
         fr:enterprise) printf '%s' 'Le paquet RPM actuel pour les systèmes d’entreprise nécessite RHEL 10 ou une distribution dérivée compatible en version 10.';;
         fr:fedora) printf '%s' 'Le paquet Fedora actuel nécessite Fedora 44 ou une version ultérieure.';;
         fr:unsupported) printf '%s' 'Cette distribution n’a pas encore de paquet validé. Consultez les versions publiées sur GitHub pour connaître les distributions prises en charge.';;
@@ -83,7 +89,7 @@ Programme d’installation : %6';;
         fr:manager) printf '%s' 'Ce système ne dispose pas de %1.';;
         fr:newer) printf '%s' 'Une version plus récente de %1 (%2) est déjà installée. Elle a été conservée ; ce programme d’installation Linux fournit la version %3.';;
         fr:sha_required) printf '%s' 'sha256sum est nécessaire.';;
-        fr:quit) printf '%s' 'Utilisez Quitter pour fermer l’application SoundCurrent en cours avant la mise à jour. Fermer sa fenêtre la laisse en cours d’exécution.';;
+        fr:quit) printf '%s' 'Utilisez «Quitter l’application» pour fermer l’application SoundCurrent en cours avant la mise à jour. Fermer sa fenêtre la laisse en cours d’exécution.';;
         fr:download_confirm) printf '%s' 'Télécharger et vérifier %1 %2 pour %3 ? Aucune installation ne sera effectuée.';;
         fr:install_confirm) printf '%s' 'Installer ou mettre à jour %1 %2 sur %3 ? Vos préréglages et profils sont conservés. Le gestionnaire de paquets installe les dépendances et ajoute une icône au menu des applications. Une autorisation administrateur est nécessaire. Un seul égaliseur doit être actif à la fois.';;
         fr:download_tool) printf '%s' 'Installez d’abord curl ou wget.';;
@@ -91,7 +97,7 @@ Programme d’installation : %6';;
         fr:exists) printf '%s' 'Existe déjà : %1';;
         fr:saved) printf '%s' 'Paquet vérifié enregistré dans %1';;
         fr:glibc) printf '%s' 'Ce paquet nécessite glibc %1 ou une version ultérieure ; ce système utilise la version %2. Rien n’a été installé.';;
-        fr:installed) printf '%s' '%1 %2 a été installé. Ouvrez-le depuis le menu des applications. Utilisez Quitter puis rouvrez l’application après une mise à jour. Aucune désinstallation ni aucun redémarrage du système n’est nécessaire pour mettre à jour l’application.';;
+        fr:installed) printf '%s' '%1 %2 a été installé. Ouvrez-le depuis le menu des applications. Utilisez «Quitter l’application» puis rouvrez l’application après une mise à jour. Aucune désinstallation ni aucun redémarrage du système n’est nécessaire pour mettre à jour l’application.';;
         ar:enterprise) printf '%s' 'تتطلب حزمة RPM الحالية للمؤسسات نظام RHEL 10 أو توزيعة مشتقة متوافقة بالإصدار 10.';;
         ar:fedora) printf '%s' 'تتطلب حزمة Fedora الحالية نظام Fedora 44 أو إصدارًا أحدث.';;
         ar:unsupported) printf '%s' 'لا توجد حزمة تمت مراجعتها لهذه التوزيعة بعد. راجع إصدارات GitHub لمعرفة الأنظمة المدعومة.';;
@@ -113,7 +119,7 @@ SHA256: %5
         ar:manager) printf '%s' 'يفتقد هذا النظام إلى %1.';;
         ar:newer) printf '%s' 'إصدار أحدث من %1 (%2) مثبت بالفعل. تم الاحتفاظ به؛ يوفر برنامج تثبيت Linux هذا الإصدار %3.';;
         ar:sha_required) printf '%s' 'يلزم توفر sha256sum.';;
-        ar:quit) printf '%s' 'استخدم إنهاء للخروج من تطبيق SoundCurrent الجاري قبل التحديث. إغلاق نافذته يبقيه قيد التشغيل.';;
+        ar:quit) printf '%s' 'استخدم «إنهاء التطبيق» للخروج من تطبيق SoundCurrent الجاري قبل التحديث. إغلاق نافذته يبقيه قيد التشغيل.';;
         ar:download_confirm) printf '%s' 'هل تريد تنزيل %1 %2 لنظام %3 والتحقق منه؟ لن يتم إجراء أي تثبيت.';;
         ar:install_confirm) printf '%s' 'هل تريد تثبيت %1 %2 أو تحديثه على %3؟ سيتم الاحتفاظ بالإعدادات المسبقة والملفات التعريفية. يثبت مدير الحزم الاعتماديات ويضيف أيقونة إلى قائمة التطبيقات. يلزم الحصول على موافقة المسؤول. يجب تشغيل معادل صوت واحد فقط في كل مرة.';;
         ar:download_tool) printf '%s' 'ثبّت curl أو wget أولًا.';;
@@ -121,7 +127,7 @@ SHA256: %5
         ar:exists) printf '%s' 'موجود بالفعل: %1';;
         ar:saved) printf '%s' 'تم حفظ الحزمة التي تم التحقق منها في %1';;
         ar:glibc) printf '%s' 'تحتاج هذه الحزمة إلى glibc %1 أو أحدث؛ يستخدم هذا النظام الإصدار %2. لم يتم تثبيت أي شيء.';;
-        ar:installed) printf '%s' 'تم تثبيت %1 %2. افتحه من قائمة التطبيقات. استخدم إنهاء ثم أعد فتح التطبيق بعد التحديث. لا يلزم إلغاء تثبيت التطبيق أو إعادة تشغيل النظام لتحديثه.';;
+        ar:installed) printf '%s' 'تم تثبيت %1 %2. افتحه من قائمة التطبيقات. استخدم «إنهاء التطبيق» ثم أعد فتح التطبيق بعد التحديث. لا يلزم إلغاء تثبيت التطبيق أو إعادة تشغيل النظام لتحديثه.';;
         nn:enterprise) printf '%s' 'Den gjeldande RPM-pakken for bedriftsdistribusjonar krev RHEL 10 eller ein kompatibel avleidd distribusjon i versjon 10.';;
         nn:fedora) printf '%s' 'Den gjeldande Fedora-pakken krev Fedora 44 eller nyare.';;
         nn:unsupported) printf '%s' 'Denne distribusjonen har ingen gjennomgått pakke enno. Sjå GitHub-utgjevingane for støtta pakkar.';;
@@ -143,7 +149,7 @@ Installasjonsprogram: %6';;
         nn:manager) printf '%s' 'Dette systemet manglar %1.';;
         nn:newer) printf '%s' 'Ein nyare versjon av %1 (%2) er alt installert. Han vart teken vare på; dette Linux-installasjonsprogrammet tilbyr versjon %3.';;
         nn:sha_required) printf '%s' 'sha256sum er påkravd.';;
-        nn:quit) printf '%s' 'Bruk Avslutt for å avslutte SoundCurrent-appen som køyrer, før oppdatering. Å lukke vindauget lèt appen halde fram med å køyre.';;
+        nn:quit) printf '%s' 'Bruk «Avslutt app» for å avslutte SoundCurrent-appen som køyrer, før oppdatering. Å lukke vindauget lèt appen halde fram med å køyre.';;
         nn:download_confirm) printf '%s' 'Laste ned og kontrollere %1 %2 for %3? Ingenting vert installert.';;
         nn:install_confirm) printf '%s' 'Installere eller oppdatere %1 %2 på %3? Førehandsinnstillingane og profilane dine vert tekne vare på. Pakkehandsamaren installerer avhengnader og legg til eit ikon i programmenyen. Administratorgodkjenning er nødvendig. Berre éin equalizer bør køyre om gongen.';;
         nn:download_tool) printf '%s' 'Installer curl eller wget først.';;
@@ -151,7 +157,187 @@ Installasjonsprogram: %6';;
         nn:exists) printf '%s' 'Finst alt: %1';;
         nn:saved) printf '%s' 'Kontrollert pakke lagra i %1';;
         nn:glibc) printf '%s' 'Denne pakken krev glibc %1 eller nyare; dette systemet har %2. Ingenting vart installert.';;
-        nn:installed) printf '%s' '%1 %2 er installert. Opne appen frå programmenyen. Bruk Avslutt og opne appen på nytt etter ei oppdatering. Du treng ikkje avinstallere appen eller starte systemet på nytt for å oppdatere appen.';;
+        nn:installed) printf '%s' '%1 %2 er installert. Opne appen frå programmenyen. Bruk «Avslutt app» og opne appen på nytt etter ei oppdatering. Du treng ikkje avinstallere appen eller starte systemet på nytt for å oppdatere appen.';;
+        de:enterprise) printf '%s' 'Das aktuelle RPM-Paket für Enterprise-Systeme benötigt RHEL 10 oder eine kompatible abgeleitete Distribution in Version 10.';;
+        de:fedora) printf '%s' 'Das aktuelle Fedora-Paket benötigt Fedora 44 oder neuer.';;
+        de:unsupported) printf '%s' 'Für diese Distribution gibt es noch kein geprüftes Paket. Unterstützte Pakete finden Sie in den GitHub-Veröffentlichungen.';;
+        de:installer_title) printf '%s' SoundCurrent-Installationsprogramm;;
+        de:install_title) printf '%s' 'SoundCurrent installieren oder aktualisieren';;
+        de:interactive) printf '%s' 'Führen Sie dieses Installationsprogramm interaktiv in einem Terminal aus.';;
+        de:continue) printf '%s' 'Fortfahren? [y/N] ';;
+        de:package_file) printf '%s' 'Geben Sie nach --package-file ein vorhandenes Paket an.';;
+        de:unknown_option) printf '%s' 'Unbekannte Option.';;
+        de:language_required) printf '%s' 'Geben Sie nach --language einen Sprachcode an.';;
+        de:usage) printf '%s' 'Aufruf: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        de:architecture) printf '%s' 'Diese geprüften Pakete benötigen einen x86-64-Computer.';;
+        de:identify) printf '%s' 'Diese Distribution konnte nicht erkannt werden.';;
+        de:dry_run) printf '%s' 'Produkt: %1 %2
+Distribution: %3
+Paket: %4
+SHA256: %5
+Installationsprogramm: %6';;
+        de:manager) printf '%s' 'Auf diesem System fehlt %1.';;
+        de:newer) printf '%s' 'Eine neuere Version von %1 (%2) ist bereits installiert. Sie wurde beibehalten; dieses Linux-Installationsprogramm liefert Version %3.';;
+        de:sha_required) printf '%s' 'sha256sum wird benötigt.';;
+        de:quit) printf '%s' 'Beenden Sie die laufende SoundCurrent-App vor der Aktualisierung über «App beenden». Das Schließen des Fensters lässt die App weiterlaufen.';;
+        de:download_confirm) printf '%s' '%1 %2 für %3 herunterladen und überprüfen? Es wird nichts installiert.';;
+        de:install_confirm) printf '%s' '%1 %2 auf %3 installieren oder aktualisieren? Ihre Voreinstellungen und Profile bleiben erhalten. Der Paketmanager installiert Abhängigkeiten und fügt ein Symbol im Anwendungsmenü hinzu. Eine Administratorgenehmigung ist erforderlich. Es sollte jeweils nur ein Equalizer laufen.';;
+        de:download_tool) printf '%s' 'Installieren Sie zuerst curl oder wget.';;
+        de:verification) printf '%s' 'Die Paketüberprüfung ist fehlgeschlagen. Es wurde nichts installiert.';;
+        de:exists) printf '%s' 'Bereits vorhanden: %1';;
+        de:saved) printf '%s' 'Geprüftes Paket unter %1 gespeichert';;
+        de:glibc) printf '%s' 'Dieses Paket benötigt glibc %1 oder neuer; dieses System hat Version %2. Es wurde nichts installiert.';;
+        de:installed) printf '%s' '%1 %2 wurde installiert. Öffnen Sie die App über das Anwendungsmenü. Wählen Sie nach einer Aktualisierung «App beenden» und öffnen Sie die App erneut. Für die App-Aktualisierung sind weder eine Deinstallation noch ein Systemneustart erforderlich.';;
+        es:enterprise) printf '%s' 'El paquete RPM actual para sistemas empresariales requiere RHEL 10 o una distribución derivada compatible de la versión 10.';;
+        es:fedora) printf '%s' 'El paquete Fedora actual requiere Fedora 44 o posterior.';;
+        es:unsupported) printf '%s' 'Esta distribución aún no tiene un paquete revisado. Consulte las versiones publicadas en GitHub para conocer los paquetes compatibles.';;
+        es:installer_title) printf '%s' 'Instalador de SoundCurrent';;
+        es:install_title) printf '%s' 'Instalar o actualizar SoundCurrent';;
+        es:interactive) printf '%s' 'Ejecute este instalador de forma interactiva en una terminal.';;
+        es:continue) printf '%s' '¿Continuar? [y/N] ';;
+        es:package_file) printf '%s' 'Indique un paquete existente después de --package-file.';;
+        es:unknown_option) printf '%s' 'Opción desconocida.';;
+        es:language_required) printf '%s' 'Indique una etiqueta de idioma después de --language.';;
+        es:usage) printf '%s' 'Uso: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        es:architecture) printf '%s' 'Estos paquetes revisados requieren un equipo x86-64.';;
+        es:identify) printf '%s' 'No se puede identificar esta distribución.';;
+        es:dry_run) printf '%s' 'Producto: %1 %2
+Distribución: %3
+Paquete: %4
+SHA256: %5
+Instalador: %6';;
+        es:manager) printf '%s' 'Este sistema no dispone de %1.';;
+        es:newer) printf '%s' 'Ya hay instalada una versión más reciente de %1 (%2). Se ha conservado; este instalador de Linux proporciona la versión %3.';;
+        es:sha_required) printf '%s' 'Se requiere sha256sum.';;
+        es:quit) printf '%s' 'Use «Salir de la aplicación» para cerrar la aplicación SoundCurrent en ejecución antes de actualizar. Cerrar su ventana la mantiene en ejecución.';;
+        es:download_confirm) printf '%s' '¿Descargar y verificar %1 %2 para %3? No se realizará ninguna instalación.';;
+        es:install_confirm) printf '%s' '¿Instalar o actualizar %1 %2 en %3? Se conservan sus preajustes y perfiles. El gestor de paquetes instala las dependencias y añade un icono al menú de aplicaciones. Se necesita autorización de administrador. Solo debe ejecutarse un ecualizador a la vez.';;
+        es:download_tool) printf '%s' 'Instale primero curl o wget.';;
+        es:verification) printf '%s' 'La verificación del paquete ha fallado. No se ha instalado nada.';;
+        es:exists) printf '%s' 'Ya existe: %1';;
+        es:saved) printf '%s' 'Paquete verificado guardado en %1';;
+        es:glibc) printf '%s' 'Este paquete necesita glibc %1 o posterior; este sistema tiene la versión %2. No se ha instalado nada.';;
+        es:installed) printf '%s' 'Se ha instalado %1 %2. Abra la aplicación desde el menú de aplicaciones. Use «Salir de la aplicación» y vuelva a abrirla después de una actualización. No es necesario desinstalar ni reiniciar el sistema para actualizar la aplicación.';;
+        it:enterprise) printf '%s' 'Il pacchetto RPM attuale per i sistemi aziendali richiede RHEL 10 o una distribuzione derivata compatibile della versione 10.';;
+        it:fedora) printf '%s' 'Il pacchetto Fedora attuale richiede Fedora 44 o successivo.';;
+        it:unsupported) printf '%s' 'Questa distribuzione non ha ancora un pacchetto verificato. Consultare le versioni pubblicate su GitHub per i pacchetti supportati.';;
+        it:installer_title) printf '%s' 'Programma di installazione di SoundCurrent';;
+        it:install_title) printf '%s' 'Installa o aggiorna SoundCurrent';;
+        it:interactive) printf '%s' 'Eseguire questo programma di installazione in modo interattivo in un terminale.';;
+        it:continue) printf '%s' 'Continuare? [y/N] ';;
+        it:package_file) printf '%s' 'Indicare un pacchetto esistente dopo --package-file.';;
+        it:unknown_option) printf '%s' 'Opzione sconosciuta.';;
+        it:language_required) printf '%s' 'Indicare un codice lingua dopo --language.';;
+        it:usage) printf '%s' 'Uso: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        it:architecture) printf '%s' 'Questi pacchetti verificati richiedono un computer x86-64.';;
+        it:identify) printf '%s' 'Impossibile identificare questa distribuzione.';;
+        it:dry_run) printf '%s' 'Prodotto: %1 %2
+Distribuzione: %3
+Pacchetto: %4
+SHA256: %5
+Programma di installazione: %6';;
+        it:manager) printf '%s' 'In questo sistema manca %1.';;
+        it:newer) printf '%s' 'È già installata una versione più recente di %1 (%2). È stata mantenuta; questo programma di installazione Linux fornisce la versione %3.';;
+        it:sha_required) printf '%s' 'È necessario sha256sum.';;
+        it:quit) printf '%s' 'Usare «Esci dall’app» per terminare l’app SoundCurrent in esecuzione prima dell’aggiornamento. Chiudere la finestra lascia l’app in esecuzione.';;
+        it:download_confirm) printf '%s' 'Scaricare e verificare %1 %2 per %3? Non verrà eseguita alcuna installazione.';;
+        it:install_confirm) printf '%s' 'Installare o aggiornare %1 %2 su %3? Le preimpostazioni e i profili vengono conservati. Il gestore di pacchetti installa le dipendenze e aggiunge un’icona al menu delle applicazioni. È necessaria l’autorizzazione di amministratore. Deve essere in esecuzione un solo equalizzatore alla volta.';;
+        it:download_tool) printf '%s' 'Installare prima curl o wget.';;
+        it:verification) printf '%s' 'La verifica del pacchetto non è riuscita. Non è stato installato nulla.';;
+        it:exists) printf '%s' 'Esiste già: %1';;
+        it:saved) printf '%s' 'Pacchetto verificato salvato in %1';;
+        it:glibc) printf '%s' 'Questo pacchetto richiede glibc %1 o successivo; questo sistema ha la versione %2. Non è stato installato nulla.';;
+        it:installed) printf '%s' '%1 %2 è stato installato. Aprire l’app dal menu delle applicazioni. Usare «Esci dall’app» e riaprire l’app dopo un aggiornamento. Non è necessario disinstallare o riavviare il sistema per aggiornare l’app.';;
+        pt-PT:enterprise) printf '%s' 'O pacote RPM atual para sistemas empresariais requer RHEL 10 ou uma distribuição derivada compatível da versão 10.';;
+        pt-PT:fedora) printf '%s' 'O pacote Fedora atual requer Fedora 44 ou mais recente.';;
+        pt-PT:unsupported) printf '%s' 'Esta distribuição ainda não tem um pacote revisto. Consulte as versões publicadas no GitHub para saber quais os pacotes suportados.';;
+        pt-PT:installer_title) printf '%s' 'Instalador do SoundCurrent';;
+        pt-PT:install_title) printf '%s' 'Instalar ou atualizar o SoundCurrent';;
+        pt-PT:interactive) printf '%s' 'Execute este instalador de forma interativa num terminal.';;
+        pt-PT:continue) printf '%s' 'Continuar? [y/N] ';;
+        pt-PT:package_file) printf '%s' 'Indique um pacote existente após --package-file.';;
+        pt-PT:unknown_option) printf '%s' 'Opção desconhecida.';;
+        pt-PT:language_required) printf '%s' 'Indique um código de idioma após --language.';;
+        pt-PT:usage) printf '%s' 'Utilização: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        pt-PT:architecture) printf '%s' 'Estes pacotes revistos requerem um computador x86-64.';;
+        pt-PT:identify) printf '%s' 'Não é possível identificar esta distribuição.';;
+        pt-PT:dry_run) printf '%s' 'Produto: %1 %2
+Distribuição: %3
+Pacote: %4
+SHA256: %5
+Instalador: %6';;
+        pt-PT:manager) printf '%s' 'Este sistema não tem %1.';;
+        pt-PT:newer) printf '%s' 'Já está instalada uma versão mais recente de %1 (%2). Foi mantida; este instalador para Linux fornece a versão %3.';;
+        pt-PT:sha_required) printf '%s' 'É necessário sha256sum.';;
+        pt-PT:quit) printf '%s' 'Use «Sair da aplicação» para terminar a aplicação SoundCurrent em execução antes de atualizar. Fechar a janela mantém a aplicação em execução.';;
+        pt-PT:download_confirm) printf '%s' 'Transferir e verificar %1 %2 para %3? Não será efetuada qualquer instalação.';;
+        pt-PT:install_confirm) printf '%s' 'Instalar ou atualizar %1 %2 em %3? As suas predefinições e perfis são mantidos. O gestor de pacotes instala as dependências e adiciona um ícone ao menu de aplicações. É necessária autorização de administrador. Apenas um equalizador deve estar em execução de cada vez.';;
+        pt-PT:download_tool) printf '%s' 'Instale primeiro curl ou wget.';;
+        pt-PT:verification) printf '%s' 'A verificação do pacote falhou. Não foi instalado nada.';;
+        pt-PT:exists) printf '%s' 'Já existe: %1';;
+        pt-PT:saved) printf '%s' 'Pacote verificado guardado em %1';;
+        pt-PT:glibc) printf '%s' 'Este pacote precisa de glibc %1 ou mais recente; este sistema tem a versão %2. Não foi instalado nada.';;
+        pt-PT:installed) printf '%s' '%1 %2 foi instalado. Abra a aplicação a partir do menu de aplicações. Use «Sair da aplicação» e volte a abri-la após uma atualização. Não é necessário desinstalar nem reiniciar o sistema para atualizar a aplicação.';;
+        pt-BR:enterprise) printf '%s' 'O pacote RPM atual para sistemas empresariais requer RHEL 10 ou uma distribuição derivada compatível da versão 10.';;
+        pt-BR:fedora) printf '%s' 'O pacote Fedora atual requer Fedora 44 ou mais recente.';;
+        pt-BR:unsupported) printf '%s' 'Esta distribuição ainda não tem um pacote revisado. Consulte as versões publicadas no GitHub para saber quais pacotes são compatíveis.';;
+        pt-BR:installer_title) printf '%s' 'Instalador do SoundCurrent';;
+        pt-BR:install_title) printf '%s' 'Instalar ou atualizar o SoundCurrent';;
+        pt-BR:interactive) printf '%s' 'Execute este instalador de forma interativa em um terminal.';;
+        pt-BR:continue) printf '%s' 'Continuar? [y/N] ';;
+        pt-BR:package_file) printf '%s' 'Informe um pacote existente após --package-file.';;
+        pt-BR:unknown_option) printf '%s' 'Opção desconhecida.';;
+        pt-BR:language_required) printf '%s' 'Informe um código de idioma após --language.';;
+        pt-BR:usage) printf '%s' 'Uso: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        pt-BR:architecture) printf '%s' 'Estes pacotes revisados requerem um computador x86-64.';;
+        pt-BR:identify) printf '%s' 'Não é possível identificar esta distribuição.';;
+        pt-BR:dry_run) printf '%s' 'Produto: %1 %2
+Distribuição: %3
+Pacote: %4
+SHA256: %5
+Instalador: %6';;
+        pt-BR:manager) printf '%s' 'Este sistema não tem %1.';;
+        pt-BR:newer) printf '%s' 'Uma versão mais recente de %1 (%2) já está instalada. Ela foi mantida; este instalador para Linux fornece a versão %3.';;
+        pt-BR:sha_required) printf '%s' 'É necessário sha256sum.';;
+        pt-BR:quit) printf '%s' 'Use «Sair do aplicativo» para encerrar o aplicativo SoundCurrent em execução antes de atualizar. Fechar a janela mantém o aplicativo em execução.';;
+        pt-BR:download_confirm) printf '%s' 'Baixar e verificar %1 %2 para %3? Nenhuma instalação será realizada.';;
+        pt-BR:install_confirm) printf '%s' 'Instalar ou atualizar %1 %2 em %3? Suas predefinições e perfis são mantidos. O gerenciador de pacotes instala as dependências e adiciona um ícone ao menu de aplicativos. É necessária autorização de administrador. Apenas um equalizador deve estar em execução por vez.';;
+        pt-BR:download_tool) printf '%s' 'Instale curl ou wget primeiro.';;
+        pt-BR:verification) printf '%s' 'A verificação do pacote falhou. Nada foi instalado.';;
+        pt-BR:exists) printf '%s' 'Já existe: %1';;
+        pt-BR:saved) printf '%s' 'Pacote verificado salvo em %1';;
+        pt-BR:glibc) printf '%s' 'Este pacote precisa de glibc %1 ou mais recente; este sistema tem a versão %2. Nada foi instalado.';;
+        pt-BR:installed) printf '%s' '%1 %2 foi instalado. Abra o aplicativo pelo menu de aplicativos. Use «Sair do aplicativo» e abra-o novamente após uma atualização. Não é necessário desinstalar nem reiniciar o sistema para atualizar o aplicativo.';;
+        nl:enterprise) printf '%s' 'Het huidige RPM-pakket voor bedrijfssystemen vereist RHEL 10 of een compatibele afgeleide distributie met versie 10.';;
+        nl:fedora) printf '%s' 'Het huidige Fedora-pakket vereist Fedora 44 of nieuwer.';;
+        nl:unsupported) printf '%s' 'Voor deze distributie is nog geen beoordeeld pakket beschikbaar. Zie de GitHub-releases voor ondersteunde pakketten.';;
+        nl:installer_title) printf '%s' SoundCurrent-installatieprogramma;;
+        nl:install_title) printf '%s' 'SoundCurrent installeren of bijwerken';;
+        nl:interactive) printf '%s' 'Voer dit installatieprogramma interactief uit in een terminal.';;
+        nl:continue) printf '%s' 'Doorgaan? [y/N] ';;
+        nl:package_file) printf '%s' 'Geef na --package-file een bestaand pakket op.';;
+        nl:unknown_option) printf '%s' 'Onbekende optie.';;
+        nl:language_required) printf '%s' 'Geef na --language een taalcode op.';;
+        nl:usage) printf '%s' 'Gebruik: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        nl:architecture) printf '%s' 'Deze beoordeelde pakketten vereisen een x86-64-computer.';;
+        nl:identify) printf '%s' 'Kan deze distributie niet herkennen.';;
+        nl:dry_run) printf '%s' 'Product: %1 %2
+Distributie: %3
+Pakket: %4
+SHA256: %5
+Installatieprogramma: %6';;
+        nl:manager) printf '%s' 'Op dit systeem ontbreekt %1.';;
+        nl:newer) printf '%s' 'Er is al een nieuwere versie van %1 (%2) geïnstalleerd. Die is behouden; dit Linux-installatieprogramma levert versie %3.';;
+        nl:sha_required) printf '%s' 'sha256sum is vereist.';;
+        nl:quit) printf '%s' 'Gebruik «App afsluiten» om de actieve SoundCurrent-app te beëindigen voordat u bijwerkt. Als u het venster sluit, blijft de app actief.';;
+        nl:download_confirm) printf '%s' '%1 %2 voor %3 downloaden en controleren? Er wordt niets geïnstalleerd.';;
+        nl:install_confirm) printf '%s' '%1 %2 op %3 installeren of bijwerken? Uw voorinstellingen en profielen blijven behouden. De pakketbeheerder installeert afhankelijkheden en voegt een pictogram aan het toepassingsmenu toe. Beheerdersgoedkeuring is vereist. Er mag maar één equalizer tegelijk actief zijn.';;
+        nl:download_tool) printf '%s' 'Installeer eerst curl of wget.';;
+        nl:verification) printf '%s' 'De pakketcontrole is mislukt. Er is niets geïnstalleerd.';;
+        nl:exists) printf '%s' 'Bestaat al: %1';;
+        nl:saved) printf '%s' 'Gecontroleerd pakket opgeslagen in %1';;
+        nl:glibc) printf '%s' 'Dit pakket vereist glibc %1 of nieuwer; dit systeem heeft versie %2. Er is niets geïnstalleerd.';;
+        nl:installed) printf '%s' '%1 %2 is geïnstalleerd. Open de app vanuit het toepassingsmenu. Gebruik «App afsluiten» en open de app opnieuw na een update. Voor het bijwerken van de app hoeft u de app niet te verwijderen en het systeem niet opnieuw te starten.';;
         *:enterprise) printf '%s' 'The current enterprise RPM requires RHEL 10 or a compatible version 10 derivative.';;
         *:fedora) printf '%s' 'The current Fedora package requires Fedora 44 or newer.';;
         *:unsupported) printf '%s' 'This distribution has no reviewed package yet. See the GitHub releases for supported builds.';;
@@ -173,7 +359,7 @@ Installer: %6';;
         *:manager) printf '%s' 'This system is missing %1.';;
         *:newer) printf '%s' 'A newer %1 (%2) is already installed. It was kept; this Linux installer provides %3.';;
         *:sha_required) printf '%s' 'sha256sum is required.';;
-        *:quit) printf '%s' 'Use Quit to exit the running SoundCurrent app before updating. Closing its window keeps it running.';;
+        *:quit) printf '%s' 'Use «Quit app» to exit the running SoundCurrent app before updating. Closing its window keeps it running.';;
         *:download_confirm) printf '%s' 'Download and verify %1 %2 for %3? No installation will be performed.';;
         *:install_confirm) printf '%s' 'Install or update %1 %2 on %3? Your presets and profiles are kept. The package manager installs dependencies and adds an app-menu icon. Administrator approval is needed. Only one equalizer should run at a time.';;
         *:download_tool) printf '%s' 'Install curl or wget first.';;
@@ -181,7 +367,7 @@ Installer: %6';;
         *:exists) printf '%s' 'Already exists: %1';;
         *:saved) printf '%s' 'Verified package saved to %1';;
         *:glibc) printf '%s' 'This package needs glibc %1 or newer; this system has %2. Nothing was installed.';;
-        *:installed) printf '%s' 'Installed %1 %2. Open it from the applications menu. Use Quit and reopen after an update. No uninstall or reboot is needed for the app update.';;
+        *:installed) printf '%s' 'Installed %1 %2. Open it from the applications menu. Use «Quit app» and reopen after an update. No uninstall or reboot is needed for the app update.';;
         *) return 1;;
     esac
 }

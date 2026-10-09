@@ -38,6 +38,12 @@ def payload(require_complete=False):
                           'sha256sum', 'SHA256', 'curl', 'wget', 'glibc', '[y/N]'):
                 if token in sources[key] and value.count(token) != sources[key].count(token):
                     raise ValueError('Installer command/version token changed: ' + language + ': ' + key + ': ' + token)
+        quit_message = catalog.entries(ROOT / 'data/localization' / f'soundcurrent_{language}.ts').get('Quit app')
+        if quit_message is None or not catalog.finished(quit_message):
+            raise ValueError('Missing app quit caption: ' + language)
+        caption = quit_message.findtext('translation')
+        if any(caption not in entries[key] for key in ('quit', 'installed')):
+            raise ValueError('Installer instruction does not name app quit caption: ' + language)
     missing = sorted(supported - set(data['languages']))
     if require_complete and missing:
         raise ValueError('Installer locales not yet translated: ' + ', '.join(missing))

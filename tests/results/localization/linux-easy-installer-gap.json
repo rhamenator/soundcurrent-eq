@@ -107,8 +107,8 @@
       "source": "message \"Installed $product $version. Open it from the applications menu. Use Quit and reopen after an update. No uninstall or reboot is needed for the app update.\""
     }
   ],
-  "status": "Standalone localization infrastructure implemented; 30 locale translations pending",
-  "nextTask": "Populate all remaining 30 installer locales, review wording against behavior, then qualify actual installer UI and the complete release companion.",
+  "status": "Standalone localization infrastructure implemented; 24 locale translations pending",
+  "nextTask": "Populate all remaining 24 installer locales, review wording against behavior, then qualify actual installer UI and the complete release companion.",
   "nativeReviewed": false,
   "wholeInterfaceCoverageProven": false,
   "originalSourceSha256": "59a55ec160229be983015b49e71ac92164d6dcc727119b12a1b4fe9fec42bb67",
@@ -118,26 +118,47 @@
       "en",
       "fr",
       "ar",
-      "nn"
+      "nn",
+      "de",
+      "es",
+      "it",
+      "pt-PT",
+      "pt-BR",
+      "nl"
     ],
-    "pendingLocaleCount": 30,
+    "pendingLocaleCount": 24,
     "selection": "--language TAG, SC_INSTALLER_LANGUAGE, LANGUAGE/LC_ALL/LC_MESSAGES/LANG; explicit supported region aliases and English fallback",
     "standalone": "Shell-quoted catalog embedded in the .run file; no external catalog or translation service required",
     "substitution": "Single-pass literal parameter copying; no eval or re-expansion",
     "verification": "Pinned product/version/release/repository and package hashes unchanged",
     "releaseGate": "assemble-release requires every app locale to have a complete installer catalog",
-    "tests": "Four focused tests passed in both repositories: all populated text lookups, opaque substitutions, CLI help/errors, provider dialog argument capture and cancel, source caption mutation rejection. Real Zenity dialog rendering and installation not exercised."
+    "tests": "Five focused tests passed: all ten populated catalog lookups, opaque substitutions, CLI help/errors, all ten dialog argument/cancel cases, raw caption mutation and exact app quit-caption correspondence. Real dialog rendering/installation not exercised."
   },
   "sourceSha256": {
-    "scripts/install-linux.run": "8b556c58afb16a4cb54a5a2ed2263f02712d0b494aa1fa8e8a6daa450c23324f",
-    "scripts/linux_installer_catalogs.py": "d5923eac512082ff567190f6f46a8ce332e006ad33f61121896022571c061570",
-    "data/localization/linux-installer.json": "d44c86ab9ca1b5e35c68e68f948eb3578f0f6da0b026f20ff59c81bd79836f2c",
-    "tests/linux_installer_localization.py": "f2fa127f9b83fd935d04946d47a37441a4244d0dea15bb740acea046b6ff0f17"
+    "scripts/install-linux.run": "f920793f1b731841001676897f92085428f15368c6bf4206124b3b5f32b84409",
+    "scripts/linux_installer_catalogs.py": "d3e03fe8521f3d14cda6cef691f4bb3b73f9c3b25b7a400b9344d3ce09673915",
+    "data/localization/linux-installer.json": "993a13a8a0b8bd295e95dff8af861c1360788c0de165a3f2dbb847a913630ee1",
+    "tests/linux_installer_localization.py": "7a853c7e7375198e0a1b1270907f1262f126dd0bd5305ee73b40700e07b17400"
   },
   "catalogRegressionSuite": {
     "tests": 62,
     "skipped": 1,
     "passed": true
   },
-  "rendererFixtureIsolationCorrection": "Temporary helper-source fixture now retains renderer declarations, fixing the observed Studio RPM translation-maintenance failure without weakening the renderer guard."
+  "rendererFixtureIsolationCorrection": "Temporary helper-source fixture now retains renderer declarations, fixing the observed Studio RPM translation-maintenance failure without weakening the renderer guard.",
+  "westernLocaleReview": {
+    "added": [
+      "de",
+      "es",
+      "it",
+      "pt-PT",
+      "pt-BR",
+      "nl"
+    ],
+    "entriesReviewed": 156,
+    "review": "Install versus download-only kept distinct; no-install failures and newer-version retention preserved. Administrator approval and single-equalizer advice retained. Regional Portuguese application/menu terminology differs explicitly. All populated languages now quote the exact Qt app Quit app caption; German sentence verbs were kept separate from the quoted action name.",
+    "nativeReviewed": false,
+    "testLog": "tests/results/localization/linux-installer-western-tests.log",
+    "testLogSha256": "15d347acad9ddbcdd393d8b5b9eeae1b6522a7a031394340ce10f3b2e1e5d2d2"
+  }
 }

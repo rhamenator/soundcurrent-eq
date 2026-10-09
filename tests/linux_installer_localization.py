@@ -42,6 +42,22 @@ class InstallerTests(unittest.TestCase):
             with patch.object(catalogs,'ROOT',root), self.assertRaisesRegex(ValueError,'New untranslated Linux installer caption'):
                 catalogs.maintain()
 
+    def test_quit_instruction_must_name_the_actual_app_caption(self):
+        data, _ = catalogs.payload()
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = Path(directory)
+            target = fixture / 'data/localization'
+            target.mkdir(parents=True)
+            (target / 'catalogs.json').write_bytes((ROOT / 'data/localization/catalogs.json').read_bytes())
+            for language in data['languages']:
+                (target / f'soundcurrent_{language}.ts').symlink_to(ROOT / 'data/localization' / f'soundcurrent_{language}.ts')
+            # Keep intent, placeholders and command tokens; remove only the full
+            # displayed action caption to verify the new correspondence guard.
+            data['languages']['fr']['quit'] = data['languages']['fr']['quit'].replace('«Quitter l’application»', 'Quitter')
+            (target / 'linux-installer.json').write_text(json.dumps(data,ensure_ascii=False),encoding='utf-8')
+            with patch.object(catalogs,'ROOT',fixture), self.assertRaisesRegex(ValueError,'does not name app quit caption'):
+                catalogs.payload()
+
     def test_lookup_and_single_pass_opaque_substitutions(self):
         data, _ = catalogs.payload()
         with tempfile.TemporaryDirectory() as directory:
@@ -83,7 +99,7 @@ class InstallerTests(unittest.TestCase):
             fake.write_text('#!'+sys.executable+'\nimport json,os,sys\nopen(os.environ["SC_CAPTURE_FILE"],"w").write(json.dumps(sys.argv[1:]))\nsys.exit(int(os.environ.get("SC_FAKE_RESULT","0")))\n')
             fake.chmod(0o755)
             capture=Path(directory)/'capture.json'
-            for language in ('fr','ar','nn'):
+            for language in data['languages']:
                 environment={'PATH':directory+os.pathsep+os.environ['PATH'],'DISPLAY':':fixture',
                              'SC_CAPTURE_FILE':str(capture),'SC_INSTALLER_LANGUAGE':language}
                 result=self.run_bash('source "$1"; message "$(sc_text verification)"',environment=environment)
