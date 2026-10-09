@@ -40,9 +40,9 @@
     },
     {
       "requirement": "Changed Linux packages and installed language interfaces",
-      "status": "Qualified preceding graph packages; latest public update-message/caption catalogs require fresh package qualification",
-      "run": 37901203604,
-      "evidence": "tests/results/localization/linux-graph-installed/verified-artifact.json"
+      "status": "Public-update message packages downloaded/hash-verified; full CTest and documented installed locale/lifecycle fixtures passed",
+      "run": 37903361741,
+      "evidence": "tests/results/localization/linux-public-update-installed/verified-artifact.json"
     },
     {
       "requirement": "Changed Windows packages and installed language interfaces",

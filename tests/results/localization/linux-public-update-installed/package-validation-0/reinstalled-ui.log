@@ -1,0 +1,8 @@
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+UI self-test: constructing window
+UI self-test: window constructed
+  OpenType support missing for "DejaVu Sans", script 11
+  OpenType support missing for "DejaVu Sans Mono", script 11
+  OpenType support missing for "DejaVu Serif", script 11
+  OpenType support missing for "", script 11
+UI self-test passed with 34 presets and editable 5–31 band layout
