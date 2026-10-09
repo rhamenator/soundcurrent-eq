@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 #include <QTextLayout>
 #include "localization.h"
+#include "worker_message_buffer.h"
 #include "audio_error_text.h"
 #include "accelerating_spinbox.h"
 #include <QDoubleSpinBox>
@@ -23,6 +24,17 @@ int main(int argc,char **argv){
  QTemporaryDir dir;QSettings::setDefaultFormat(QSettings::IniFormat);QSettings::setPath(QSettings::IniFormat,QSettings::UserScope,dir.path());
  try{
   require(languages().size()>=30,"Global language catalogs missing");
+  {
+   WorkerMessageBuffer buffer;
+   require(buffer.append(QByteArray(WorkerMessageBuffer::MaxLineBytes,'x')).isEmpty(),"Unterminated worker line was published");
+   require(buffer.pendingBytes()==WorkerMessageBuffer::MaxLineBytes,"Worker buffer bound was not enforced");
+   require(buffer.append("y").isEmpty()&&buffer.pendingBytes()==0,"Oversized worker line was retained");
+   require(buffer.append("discarded tail").isEmpty(),"Oversized line tail was published");
+   require(buffer.append(QString::fromUtf8("\nΩ recovered\n").toUtf8())==QStringList{QString::fromUtf8("Ω recovered")},"Worker did not recover after an oversized line");
+   buffer.append(QByteArray(1,char(0xc3)));buffer.reset();
+   require(buffer.append("new capture\n")==QStringList{QStringLiteral("new capture")},"Worker reset retained stale UTF-8 bytes");
+  }
+
   {
    QSettings application(dir.filePath("installer-app.ini"),QSettings::IniFormat);
    QSettings installer(dir.filePath("installer-preference.ini"),QSettings::IniFormat);
@@ -365,6 +377,28 @@ int main(int argc,char **argv){
    require(QCoreApplication::translate("QGnomeTheme","&Close")==text("Close"),"GNOME Close stayed English");
    require(QCoreApplication::translate("QGnomeTheme","Close without Saving")==text("Discard"),"GNOME discard label stayed English");
    const auto calibrationFailure=text("Measurement failed: %1").arg(text("Test level is outside the allowed range"));
+   const auto failureBytes=(calibrationFailure+QStringLiteral("\r\n")).toUtf8();
+   for(qsizetype split=0;split<=failureBytes.size();++split) {
+    WorkerMessageBuffer buffer;
+    auto lines=buffer.append(failureBytes.left(split));
+    lines.append(buffer.append(failureBytes.mid(split),true));
+    require(lines==QStringList{calibrationFailure},"Pipe boundary corrupted a localized UTF-8 failure");
+   }
+   const auto progress=text("Checking %1 Hz").arg(QLocale().toString(1000));
+   const auto detail=QString::fromUtf8("  Ω / 音声 / é / %1 / C:\\media\\音声.wav  ");
+   const auto wire=(progress+QStringLiteral("\r\n")+calibrationFailure+QStringLiteral("\n")+detail).toUtf8();
+   WorkerMessageBuffer bytewise;QStringList lines;
+   for(const auto byte:wire)lines.append(bytewise.append(QByteArray(1,byte)));
+   require(lines==QStringList({progress,calibrationFailure}),"Worker published an incomplete final line");
+   lines.append(bytewise.append({},true));
+   require(lines==QStringList({progress,calibrationFailure,detail}),"Final worker detail lost bytes, whitespace or line order");
+   CalibrationMessageState state;
+   for(const auto byte:wire)state.append(QByteArray(1,byte));
+   require(state.failure()==calibrationFailure,"Incomplete continuation changed retained worker failure");
+   require(state.append({},true)==detail,"Final worker continuation was not displayed");
+   require(state.failure()==calibrationFailure+QStringLiteral("\n")+detail,"Parent presentation state lost the localized multiline failure");
+   state.reset();require(state.failure().isEmpty(),"New calibration inherited an old failure");
+
    require(isCalibrationFailureMessage(calibrationFailure),"Localized calibration detail would be overwritten by generic English-prefix handling");
    require(!isCalibrationFailureMessage(text("Checking %1 Hz").arg(QLocale().toString(1000))),"Calibration progress was mistaken for failure");
    QLineEdit line;line.setText(QStringLiteral("selection"));line.selectAll();

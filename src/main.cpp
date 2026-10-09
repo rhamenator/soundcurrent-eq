@@ -1,4 +1,5 @@
 #include "localization.h"
+#include "worker_message_buffer.h"
 #include "audio_error_text.h"
 #include "audio_setup_arguments.h"
 // SPDX-License-Identifier: GPL-3.0-only
@@ -2389,8 +2390,7 @@ public:
         calibration_.setChildProcessModifier([] { prctl(PR_SET_PDEATHSIG, SIGTERM); });
 #endif
         connect(&calibration_, &QProcess::readyReadStandardError, this, [this] {
-            const auto message = QString::fromUtf8(calibration_.readAllStandardError()).trimmed();
-            if (!message.isEmpty()) calibrationStatus_->setText(message.section('\n', -1));
+            readCalibrationMessages();
         });
         connect(&calibration_, &QProcess::readyReadStandardOutput, this, [this] {
             calibrationOutput_.append(calibration_.readAllStandardOutput());
@@ -2721,6 +2721,7 @@ private:
         calibrating_ = true;
         calibrationCancelled_ = false;
         calibrationOutput_.clear();
+        calibrationMessages_.reset();
         calibrationStart_->setEnabled(false);
         calibrationStop_->setEnabled(true);
         calibrationLevel_->setEnabled(false);
@@ -2753,8 +2754,14 @@ private:
         }
     }
 
+    void readCalibrationMessages(bool final=false) {
+        const auto message=calibrationMessages_.append(calibration_.readAllStandardError(),final);
+        if(!message.isEmpty())calibrationStatus_->setText(message);
+    }
+
     void finishCalibration(int code, QProcess::ExitStatus exitStatus) {
         if (!calibrating_) return;
+        readCalibrationMessages(true);
         calibrationOutput_.append(calibration_.readAllStandardOutput());
         const bool cancelled = calibrationCancelled_;
         calibrating_ = false;
@@ -2768,8 +2775,8 @@ private:
         refreshInputs();
         if (cancelled) { calibrationStatus_->setText(SC_TR("Measurement stopped.")); return; }
         if (exitStatus != QProcess::NormalExit || code != 0) {
-            if (!soundcurrent::i18n::isCalibrationFailureMessage(calibrationStatus_->text()))
-                calibrationStatus_->setText(SC_TR("Measurement failed. Try a higher test level or move the mic closer."));
+            calibrationStatus_->setText(calibrationMessages_.failure().isEmpty()?
+                SC_TR("Measurement failed. Try a higher test level or move the mic closer."):calibrationMessages_.failure());
             return;
         }
         const auto result = QJsonDocument::fromJson(calibrationOutput_).object();
@@ -3469,6 +3476,7 @@ private:
     MicrophoneEngine microphone_;
     QProcess calibration_;
     QByteArray calibrationOutput_;
+    soundcurrent::i18n::CalibrationMessageState calibrationMessages_;
     bool calibrating_ = false;
     bool calibrationCancelled_ = false;
     SpectrumMonitor meter_;

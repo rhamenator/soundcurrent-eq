@@ -76,18 +76,26 @@
   "evidenceSha256": {
     "data/localization/catalogs.json": "c2adcfc863611b86b23111672ec55b88f8d32bdfd74164e8874a57d000d4fab8",
     "docs/translation-review.md": "37e2c40b97cb208c5fbf866965f98e48fbbae0e77a467426f9e1c0072588b731",
-    "tests/localization.cpp": "870f108dfab069c6f5357076c122c98338317c65ea5af384d74841591fc2ea59",
+    "tests/localization.cpp": "1dd311d109fee0afcee496485ca4f685d3ed9c0f6fd791fca6eb39ca837c44de",
     "tests/translation_catalogs.py": "8105e278e20fc992ce7fd327d2749602794a902211975d47f326cd1ac5c66ed5",
     "scripts/ui_string_audit.py": "a7cd0132f32a3f103eadffe8798aee877b4c397545f3e53ec1ea4134b133629f",
-    "tests/results/localization/dynamic-display-inventory.json": "6c3db754057b302b011399d2f6892db3a7399f10a2c28ca9572ec26901cedfb3",
+    "tests/results/localization/dynamic-display-inventory.json": "978be3171e90bab5f22141af66234d79b3dfa7663de5892bf92e07a5bb66343d",
     "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
-    "src/main.cpp": "5f4489aef88064d7ebde055caf0c88e641ca8aba71370b3265e203352fbcf7ff",
+    "src/main.cpp": "1f8c56b4e82e1b3bfd2d9406694ca9c06f3e007362fc59a60c80728157986ee9",
     "src/localization.h": "ba4d9f31588317ccea9345a986c2b46057bff067d92a0ae5903909a515a8da85",
     "src/localization_text.h": "9cbb9b2c5e49287651cba6bcd273c01e148f8fd5dce4b7e39fdd86594e344cd0",
     "scripts/localization.py": "acc44a9a92f8dd0155e534011ea0c4d76ae673e425c87fe7434c9e902826e56b",
     "tests/calibration_worker_localization.py": "c6120b78b59ae6d547cd7d0a503d4f39a46f0fa3c03c9c4007b46f8e53db34f8",
-    "tests/results/localization/calibration-worker-gap.json": "e509ba9b8e57133a0f5656e8cfba4effc4b8a265c711a4154d00259b08d166b1"
+    "tests/results/localization/calibration-worker-gap.json": "1d4ef1003d317f52bf79b740686ef055d580d9f7bfcfad9e2b171c57492efba8",
+    "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42",
+    "tests/results/localization/calibration-worker-native-ci.json": "377d797dfc8478b69a02fb63760577d5a2571393c939e35aa1eecbb270467e35"
   },
   "auditedBaseHead": "a39082b688e3a0ad21e40c39a966ee11c44e5439",
-  "sourceIdentity": "Current inspected source files are identified by SHA-256 below; base commit is historical context, not qualification of pending calibration changes"
+  "sourceIdentity": "Current inspected source files are identified by SHA-256 below; base commit is historical context, not qualification of pending calibration changes",
+  "currentCalibrationFraming": {
+    "localStatus": "offscreen/X11 compiled fixtures and actual worker tests passed",
+    "nativeWindowsStatus": "fresh current framing qualification pending",
+    "priorWorkerNativeEvidence": "tests/results/localization/calibration-worker-native-ci.json",
+    "sourceScope": "presentation buffering only; synthesis/analysis and successful JSON unchanged"
+  }
 }

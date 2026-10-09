@@ -657,13 +657,6 @@
       "file": "src/main.cpp",
       "call": "setText",
       "argument": 0,
-      "expression": "message.section('\\n', -1)",
-      "containsTranslationCall": false
-    },
-    {
-      "file": "src/main.cpp",
-      "call": "setText",
-      "argument": 0,
       "expression": "QString(SC_TR(\"%1%2 dB\")).arg(value > 0 ? \"+\" : \"\")\n                                          .arg(QLocale().toString(value, 'f', 1))",
       "containsTranslationCall": true
     },
@@ -727,6 +720,13 @@
       "file": "src/main.cpp",
       "call": "setText",
       "argument": 0,
+      "expression": "message",
+      "containsTranslationCall": false
+    },
+    {
+      "file": "src/main.cpp",
+      "call": "setText",
+      "argument": 0,
       "expression": "SC_TR(\"Measurement stopped.\")",
       "containsTranslationCall": true
     },
@@ -734,7 +734,7 @@
       "file": "src/main.cpp",
       "call": "setText",
       "argument": 0,
-      "expression": "SC_TR(\"Measurement failed. Try a higher test level or move the mic closer.\")",
+      "expression": "calibrationMessages_.failure().isEmpty()?\n                SC_TR(\"Measurement failed. Try a higher test level or move the mic closer.\"):calibrationMessages_.failure()",
       "containsTranslationCall": true
     },
     {
@@ -2218,7 +2218,7 @@
     "src/equipment_profiles.h": "34fb124fe9a9177735c3e96b54f947fbdd2881ff175153c29334842c140b9545",
     "src/localization.h": "ba4d9f31588317ccea9345a986c2b46057bff067d92a0ae5903909a515a8da85",
     "src/localization_text.h": "9cbb9b2c5e49287651cba6bcd273c01e148f8fd5dce4b7e39fdd86594e344cd0",
-    "src/main.cpp": "5f4489aef88064d7ebde055caf0c88e641ca8aba71370b3265e203352fbcf7ff",
+    "src/main.cpp": "1f8c56b4e82e1b3bfd2d9406694ca9c06f3e007362fc59a60c80728157986ee9",
     "src/main_windows.cpp": "df16bae0597ddb53f7a31bf2d99bd50f5768f6174265309d254da9b10bebd6c0",
     "src/processing_guard.cpp": "7357547a751b724be0c1743d94f8318a9f86b5f6b2180911799dc660bd5e74b2",
     "src/processing_guard.h": "3210a47f6da6b8d019710e052785a90b1b4635182497ca8c64549fb3b31a1913",
@@ -2237,7 +2237,8 @@
     "src/windows_live_ui_test.inc": "9f3df878b1943f118355a2b003d2510e880a00c68518e689b8bc801825265b18",
     "src/windows_managed_route.h": "14518879f006783b89c69024abbb83751ac1f38b3dd5a4e7fe7dff9760f016f1",
     "src/windows_platform.inc": "211d815bd910f4a06362979b762e919952260ab03cc2e809b482c9dda9f38d51",
-    "src/windows_route_guardian.cpp": "4f683ce99ad6bafe227e293d94a82487157da269642e2e2298fa148bc3dfbf2d"
+    "src/windows_route_guardian.cpp": "4f683ce99ad6bafe227e293d94a82487157da269642e2e2298fa148bc3dfbf2d",
+    "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42"
   },
-  "reviewStatus": "provenance review in progress; calibration subprocess gap fixed and covered by separate source/actual-worker tests"
+  "reviewStatus": "provenance review in progress; calibration worker locale and message framing fixed with separate compiled/actual-worker evidence"
 }
