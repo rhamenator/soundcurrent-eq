@@ -1,0 +1,8 @@
+{
+  "failureEvidence": "EQ Fedora job 113636445135 in run 37873437703",
+  "cause": "RPM source tar included scripts/localization.py only and omitted packaging; shared %check localization tests could not load required audit/export helpers and Swahili assets",
+  "change": "Archive scripts and packaging trees, excluding Python bytecode caches; no test removed",
+  "syntax": "bash -n passed both build scripts",
+  "rpmRuntimeQualification": "pending rerun",
+  "nativeReviewed": false
+}
