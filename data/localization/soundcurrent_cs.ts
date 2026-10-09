@@ -163,6 +163,11 @@ Přesto chcete soubor smazat?</translation>
       <translation>Upravte toto frekvenční pásmo vůči profilu přirozeného hlasu</translation>
     </message>
     <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>Nastavitelný ekvalizér pro celý systém s PipeWire</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
       <source>Advanced enhancement controls</source>
       <translation>Pokročilé ovládání zvukových efektů</translation>
     </message>

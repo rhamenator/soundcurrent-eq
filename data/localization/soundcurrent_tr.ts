@@ -163,6 +163,11 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Bu frekans bandını doğal ses profiline göre ayarlayın</translation>
     </message>
     <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>PipeWire için ayarlanabilir sistem geneli ekolayzır</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
       <source>Advanced enhancement controls</source>
       <translation>Gelişmiş ses efekti kontrolleri</translation>
     </message>

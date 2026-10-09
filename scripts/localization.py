@@ -102,11 +102,52 @@ def setup_sources():
     return set(values)
 
 
+def desktop_sources():
+    """Launcher descriptions are owned prose; names/commands remain stable identities."""
+    return {line.removeprefix('Comment=') for path in DATA.parent.glob('*.desktop')
+            for line in path.read_text(encoding='utf-8').splitlines() if line.startswith('Comment=')}
+
+
+def desktop_comments(source, tags):
+    comments = []
+    aliases = {'zh-Hans': ('zh_Hans', 'zh_CN', 'zh_SG'),
+               'zh-Hant': ('zh_Hant', 'zh_TW', 'zh_HK', 'zh_MO')}
+    for tag in tags:
+        if tag == 'en':
+            continue
+        message = entries(DATA / f'soundcurrent_{tag}.ts').get(source)
+        if message is None or not finished(message):
+            raise ValueError('Untranslated launcher description: ' + tag)
+        value = message.findtext('translation')
+        if any(c in value for c in ('\n', '\r', '\t')):
+            raise ValueError('Launcher description must remain a single line')
+        value = value.replace('\\', '\\\\')
+        for locale in aliases.get(tag, (tag.replace('-', '_'),)):
+            comments.append(f'Comment[{locale}]={value}')
+    return comments
+
+
+def maintain_desktop_comments(tags, write=False):
+    for path in DATA.parent.glob('*.desktop'):
+        lines = path.read_text(encoding='utf-8').splitlines()
+        source = next(line.removeprefix('Comment=') for line in lines if line.startswith('Comment='))
+        wanted = desktop_comments(source, tags)
+        actual = [line for line in lines if line.startswith('Comment[')]
+        if write:
+            kept = [line for line in lines if not line.startswith('Comment[')]
+            position = kept.index('Comment=' + source) + 1
+            kept[position:position] = wanted
+            path.write_text('\n'.join(kept) + '\n', encoding='utf-8')
+        elif actual != wanted:
+            raise ValueError('Stale launcher translations: ' + str(path))
+
+
 def sources():
     adapter = ROOT / 'src/windows_platform.inc'
     if adapter.exists():
         check_platform_errors(adapter.read_text(encoding='utf-8'))
     out = marked_sources(ROOT / 'src')
+    out.update(desktop_sources())
     for path in sorted((ROOT / 'src').rglob('*')):
         if path.suffix not in ('.cpp', '.h', '.hpp', '.inc'):
             continue
@@ -368,6 +409,7 @@ def update():
         ET.SubElement(group, 'file', alias=name).text = name
     ET.indent(resource)
     ET.ElementTree(resource).write(DATA / 'resources.qrc', encoding='utf-8', xml_declaration=True)
+    maintain_desktop_comments([item['tag'] for item in metadata], write=True)
 
 
 def check(require_complete=False):
@@ -411,6 +453,7 @@ def check(require_complete=False):
             raise ValueError(f"Previously populated locale has new untranslated messages: {item['tag']}")
         if done != item['translated'] or len(strings) != item['total']:
             raise ValueError(f'Coverage metadata mismatch: {ts}')
+    maintain_desktop_comments(tags)
     if require_complete and missing:
         raise ValueError(f'{missing} unfinished translations remain')
     print(f'PASS: {len(metadata)} catalogs, {len(strings)} source messages; {missing} unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)')

@@ -814,6 +814,37 @@ class CatalogTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Unreviewed display literal'):
                 audit.check_reviewed_literals(fixture, reviewed)
 
+    def test_launcher_translation_preserves_identity_and_rejects_stale_text(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            data = root / 'data/localization'
+            data.mkdir(parents=True)
+            source = 'Launcher description'
+            for tag, value in [('fr', 'Description française'), ('zh-Hans', '简体说明')]:
+                tree = ET.Element('TS')
+                message = ET.SubElement(ET.SubElement(tree, 'context'), 'message')
+                ET.SubElement(message, 'source').text = source
+                ET.SubElement(message, 'translation').text = value
+                ET.ElementTree(tree).write(data / f'soundcurrent_{tag}.ts', encoding='utf-8')
+            path = root / 'data/app.desktop'
+            identity = ['[Desktop Entry]', 'Type=Application', 'Name=SoundCurrent',
+                        'Exec=soundcurrent --background', 'Icon=stable.icon', 'Terminal=false']
+            path.write_text('\n'.join(identity + ['Comment=' + source]) + '\n', encoding='utf-8')
+            with patch.object(catalog, 'ROOT', root), patch.object(catalog, 'DATA', data):
+                self.assertEqual(catalog.desktop_sources(), {source})
+                catalog.maintain_desktop_comments(['en', 'fr', 'zh-Hans'], write=True)
+                catalog.maintain_desktop_comments(['en', 'fr', 'zh-Hans'])
+                lines = path.read_text(encoding='utf-8').splitlines()
+                self.assertEqual([line for line in lines if not line.startswith('Comment')], identity)
+                self.assertIn('Comment[fr]=Description française', lines)
+                self.assertIn('Comment[zh_CN]=简体说明', lines)
+                self.assertIn('Comment[zh_SG]=简体说明', lines)
+                path.write_text(path.read_text(encoding='utf-8').replace('Description française', 'Wrong'), encoding='utf-8')
+                with self.assertRaisesRegex(ValueError, 'Stale launcher translations'):
+                    catalog.maintain_desktop_comments(['en', 'fr', 'zh-Hans'])
+                with self.assertRaisesRegex(ValueError, 'Untranslated launcher description'):
+                    catalog.desktop_comments(source, ['de'])
+
     def test_choice_list_detects_mixed_untranslated_entries(self):
         root = Path(__file__).resolve().parents[1]
         spec = importlib.util.spec_from_file_location('ui_audit', root / 'scripts/ui_string_audit.py')

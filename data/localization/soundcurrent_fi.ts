@@ -163,6 +163,11 @@ Haluatko silti poistaa sen?</translation>
       <translation>Säädä tätä taajuuskaistaa luonnollisen puheprofiilin ympärillä</translation>
     </message>
     <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>Säädettävä koko järjestelmän taajuuskorjain PipeWirelle</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
       <source>Advanced enhancement controls</source>
       <translation>Äänenparannuksen lisäsäätimet</translation>
     </message>

@@ -163,6 +163,11 @@ Vil du likevel sletta ho?</translation>
       <translation>Juster dette frekvensbandet rundt den naturlege røysteprofilen</translation>
     </message>
     <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>Justerbar equalizer for heile systemet med PipeWire</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
       <source>Advanced enhancement controls</source>
       <translation>Avanserte kontrollar for lydforbetring</translation>
     </message>

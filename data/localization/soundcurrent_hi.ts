@@ -163,6 +163,11 @@ Do you want to delete it anyway?</source>
       <translation>स्वाभाविक आवाज़ की प्रोफ़ाइल के आधार पर इस टोन बैंड को समायोजित करें</translation>
     </message>
     <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>PipeWire के लिए पूरे सिस्टम का समायोज्य इक्वलाइज़र</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
       <source>Advanced enhancement controls</source>
       <translation>उन्नत ध्वनि सुधार नियंत्रण</translation>
     </message>

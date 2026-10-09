@@ -163,6 +163,11 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Dieses Klangband ausgehend vom natürlichen Stimmprofil anpassen</translation>
     </message>
     <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>Einstellbarer systemweiter Equalizer für PipeWire</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
       <source>Advanced enhancement controls</source>
       <translation>Erweiterte Klangregler</translation>
     </message>

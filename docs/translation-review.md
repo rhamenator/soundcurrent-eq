@@ -2,7 +2,7 @@
 
 ## Current catalog status — 2026-10-09
 
-All 694 currently extracted source messages have populated translations in all 33 non-English catalogs, including Nynorsk. There are 34 catalogs including English. This is catalog coverage, not proof that every user-facing string has been extracted. Native-speaker verification remains unverified for every non-English locale.
+All 695 currently extracted source messages have populated translations in all 33 non-English catalogs, including Nynorsk. There are 34 catalogs including English. This is catalog coverage, not proof that every user-facing string has been extracted. Native-speaker verification remains unverified for every non-English locale.
 
 The second-pass source audit has expanded to dynamic captions, Qt fallback dialogs, menus, accessibility names, diagnostics and selected-locale number formatting. Current source and runtime evidence is recorded in `tests/results/localization/current-requirement-checkpoint.json`, `dynamic-provenance-review.json`, `expanded-display-sinks.json` and the focused test reports. Compiled local application fixtures pass for Arabic digits and French text with German number formatting. The current production Linux and Windows packages are downloaded and hash-verified against installed lifecycle and language-fixture reports in `linux-balance-installed/verified-artifact.json` and `windows-balance-installed/verified-artifact.json`. No release has been published by this work.
 
@@ -469,3 +469,7 @@ The expanded Qt display inventory now has an exact-site exception list for physi
 ### Public release update-check wording
 
 GitHub confirms soundcurrent-studio is public. The manual update-check failure no longer includes irrelevant private-release/GitHub-access advice. Every catalog removes the reviewed obsolete sentence and retains the release-download action and local installer detection guidance. No networking policy or installer behavior changed. Structural checks and compiled localization fixtures pass; packages for this wording change remain pending. All non-English entries remain native-unverified. See public-update-message-review.json for before/after text and evidence.
+
+## Linux launcher descriptions — 2026-10-09
+
+The owned launcher Comment was English-only. It now uses the shared catalogs for all 33 non-English locales, with explicit simplified/traditional Chinese desktop locale aliases. Names, executable commands, icons and categories are unchanged. This is contextual AI translation, native-unverified. GLib KeyFile locale lookup and desktop-file-validate passed for both launchers; these checks do not establish installed package lifecycle. Rebuilt package qualification is pending.

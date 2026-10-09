@@ -163,6 +163,11 @@ Do you want to delete it anyway?</source>
       <translation>在自然人声配置的基础上调节此音色频段</translation>
     </message>
     <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>适用于 PipeWire 的可调节全系统均衡器</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
       <source>Advanced enhancement controls</source>
       <translation>高级音效增强控制</translation>
     </message>

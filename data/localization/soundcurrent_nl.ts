@@ -163,6 +163,11 @@ Wilt u het toch verwijderen?</translation>
       <translation>Pas deze toonband aan ten opzichte van het natuurlijke stemprofiel</translation>
     </message>
     <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>Instelbare systeembrede equalizer voor PipeWire</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
       <source>Advanced enhancement controls</source>
       <translation>Geavanceerde effectregelaars</translation>
     </message>

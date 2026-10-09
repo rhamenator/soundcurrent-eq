@@ -163,6 +163,11 @@ Do you want to delete it anyway?</translation>
       <translation>Adjust this tone band around the natural voice profile</translation>
     </message>
     <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>Adjustable system-wide equalizer for PipeWire</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
       <source>Advanced enhancement controls</source>
       <translation>Advanced enhancement controls</translation>
     </message>

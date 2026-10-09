@@ -163,6 +163,11 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Rekebisha bendi hii ya toni kulingana na wasifu wa sauti ya asili</translation>
     </message>
     <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>Kisawazisha masafa ya sauti kinachoweza kurekebishwa kwa mfumo mzima kwa PipeWire</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
       <source>Advanced enhancement controls</source>
       <translation>Vidhibiti vya juu vya uboreshaji wa sauti</translation>
     </message>
