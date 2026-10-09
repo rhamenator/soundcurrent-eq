@@ -2,11 +2,13 @@
 
 ## Current catalog status — 2026-10-09
 
-All 699 currently extracted source messages have populated translations in all 33 non-English catalogs, including Nynorsk. There are 34 catalogs including English. This is catalog coverage, not proof that every user-facing string has been extracted. Native-speaker verification remains unverified for every non-English locale.
+All 704 declared source messages have populated translations in all 33 non-English catalogs, including Nynorsk. There are 34 catalogs including English. Catalog coverage, finite source correspondence, contextual AI review, native-speaker verification and runtime qualification remain separate evidence categories. Native-speaker verification remains unverified for every non-English locale.
 
-The second-pass source audit has expanded to dynamic captions, Qt fallback dialogs, menus, accessibility names, diagnostics and selected-locale number formatting. Current source and runtime evidence is recorded in `tests/results/localization/current-requirement-checkpoint.json`, `dynamic-provenance-review.json`, `expanded-display-sinks.json` and the focused test reports. Compiled local application fixtures pass for Arabic digits and French text with German number formatting. The current production Linux and Windows packages are downloaded and hash-verified against installed lifecycle and language-fixture reports in `linux-balance-installed/verified-artifact.json` and `windows-balance-installed/verified-artifact.json`. No release has been published by this work.
+The finite owned-interface surface review is recorded in `tests/results/localization/interface-surface-inventory.json`. It includes dynamic captions, Qt fallback dialogs, menus, accessibility names, platform diagnostics and selected-locale formatting. Its main-window review found and fixed untranslated equipment-summary kind captions and newly created calibration-profile metadata. Compiled French, Arabic and Nynorsk fixtures passed creation, opaque device-name and serialization/reopening checks. Loaded equipment metadata remains unchanged.
 
-The dated checkpoints below describe historical states and contextual AI review. Structural checks and successful runtime fixtures do not certify linguistic quality or every device workflow. Current goal completion remains unproven pending the remaining coverage and artifact audit.
+Fresh Linux and Windows installed-package qualification is in progress for those production changes. Prior package reports are historical and do not qualify the current code. The local previews are marked superseded until refreshed from verified artifacts. Current statuses and evidence hashes are recorded in `tests/results/localization/current-requirement-checkpoint.json` and `completion-checklist.json`. No release has been published by this work.
+
+The dated checkpoints below describe historical states and contextual AI review. Structural checks and runtime fixtures do not certify linguistic quality, every physical device workflow, all-locale visual rendering or native-speaker accuracy. Goal completion remains unproven pending fresh package evidence and preview delivery.
 
 ## Scope and evidence
 
