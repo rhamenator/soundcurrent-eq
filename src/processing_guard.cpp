@@ -103,7 +103,7 @@ QString otherEqualizerConflict(const QString &ownPrefix) {
                 name.compare(ownName, Qt::CaseInsensitive) != 0 &&
                 recognizedEqualizerProcess(name)) {
                 CloseHandle(snapshot);
-                return name + " is running. Quit it before using SoundCurrent.";
+                return SC_TR("%1 is running. Quit it before using SoundCurrent.").arg(name);
             }
         } while (Process32NextW(snapshot, &entry));
     const DWORD enumerationError = GetLastError();
@@ -131,7 +131,7 @@ QString otherEqualizerConflict(const QString &ownPrefix) {
         }
         if (ourHelper) continue;
         if (recognizedEqualizerProcess(path))
-            return QFileInfo(path).fileName() + " is running. Quit it before using SoundCurrent.";
+            return SC_TR("%1 is running. Quit it before using SoundCurrent.").arg(QFileInfo(path).fileName());
     }
     QProcess graph;
     graph.start("pw-dump", {});

@@ -93,9 +93,10 @@
       "boundary": "Startup logging, exclusive-processing failures and calibration worker text transport.",
       "evidence": [
         "tests/results/localization/startup-diagnostic-gap.json",
-        "tests/results/localization/calibration-worker-gap.json"
+        "tests/results/localization/calibration-worker-gap.json",
+        "tests/results/localization/process-conflict-localization-gap.json"
       ],
-      "auditState": "indexed; final source/evidence correspondence check pending"
+      "auditState": "concrete process-conflict gap fixed; fresh installed production qualification pending"
     },
     {
       "id": "windows-audio-boundary",
@@ -153,7 +154,7 @@
     "src/update_panel.h": "c39b2e267dd634bd49ca63122401cf5c5c2e6cc2735d4f8396eb66a1a52264a3",
     "src/startup_controls.h": "94cccaea96412bd21f1949463cee81e06980c6e5f207b55f2b8f7dd058acb5af",
     "src/startup_registration.h": "f9ee3d7f131e0f958b2f95ff1711e9956d4e17b42fbc1de224c87f3fe63c3e36",
-    "src/processing_guard.cpp": "7357547a751b724be0c1743d94f8318a9f86b5f6b2180911799dc660bd5e74b2",
+    "src/processing_guard.cpp": "fb5b27c2aa0b66d8702075461b0a77815cd8dbd9bbc3624dac97a03a2ba4fab0",
     "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42",
     "src/windows_platform.inc": "211d815bd910f4a06362979b762e919952260ab03cc2e809b482c9dda9f38d51",
     "src/audio_error_text.h": "45426afb00c16ba5d9f96d19045dab8ffda48946edb6be1395afb156f75c5554",

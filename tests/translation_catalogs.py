@@ -889,6 +889,14 @@ class CatalogTests(unittest.TestCase):
             self.assertTrue(any(row['expression'] == 'profileBrands'
                                 for row in audit.dynamic_inventory(fixture)['expressions']))
 
+    def test_process_conflict_template_covers_both_platform_branches(self):
+        code = (Path(__file__).resolve().parents[1] / 'src/processing_guard.cpp').read_text()
+        source = '%1 is running. Quit it before using SoundCurrent.'
+        marked = [catalog.literal(args[0]) for args in catalog.calls(code, 'SC_TR') if args]
+        self.assertEqual(marked.count(source), 2)
+        self.assertNotIn('+ " is running. Quit it before using SoundCurrent."', code)
+        self.assertIn(source, catalog.sources())
+
     def test_composed_format_diagnostic_requires_declared_mapping(self):
         code = 'checkFormat(client, format, "Cable recording endpoint");'
         diagnostic = 'Cable recording endpoint does not support shared 48 kHz stereo float audio'

@@ -549,3 +549,7 @@ All literal action arguments supplied to Windows check/checked helpers were comp
 ### Composed Windows format diagnostic (2026-10-09)
 
 The checkFormat endpoint label and owned format-error suffix produce a full diagnostic that is translated at the desktop boundary. Current calls were inspected, and a shared guard now rejects a literal endpoint composition lacking a declared mapping. Positive/missing/undeclared-target focused tests and complete-catalog checks passed. Endpoint formats, backend diagnostic identity and processing remain unchanged; no physical device failure was induced. Native-speaker verification remains unverified.
+
+### Competing process diagnostic gap (2026-10-09)
+
+Source tracing found two English process-conflict return paths reaching the dialog unchanged. Both now use one translated template with an opaque executable-name placeholder. All33 non-English translations received contextual AI review and remain unverified by native speakers. Source regression and compiled processing-guard tests passed; conflict detection and processing values are unchanged. Catalog counts are now700 EQ/885 Studio. Fresh Linux/Windows packages are required before qualifying this production change.
