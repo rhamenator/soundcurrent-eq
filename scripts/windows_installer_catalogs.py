@@ -8,6 +8,7 @@ from pathlib import Path
 import localization as catalog
 
 SOURCES = {
+    'SCCableRemovalFailed': 'VB-CABLE removal did not finish. This app was kept so you can retry.',
     'SCNativeRemovalFailed': 'Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.',
     'SCSetupRetryProgress': '%1 setup did not finish. Retry using the Start menu shortcut.',
     'SCCableSetupProgress': 'Opening %1 setup...',
@@ -82,6 +83,7 @@ def export(destination, product):
                 captions['SCNativeApproval'] = translations['SCNativeApproval']
                 captions['SCSharedDriverNotice'] = translations['SCSharedDriverNotice']
             if route == 'cable':
+                captions['SCCableRemovalFailed'] = translations['SCCableRemovalFailed']
                 captions['SCCableSetupProgress'] = format_value(translations['SCCableSetupProgress'], driver)
                 captions['SCCableRouting'] = translations['SCCableRouting']
                 captions['SCCableSharedNotice'] = translations['SCCableSharedNotice']
@@ -91,7 +93,7 @@ def export(destination, product):
                 captions['SCCableRestart'] = translations['SCCableRestart']
             variants[route] = {'captions': captions, 'nsisEscaped': {key: nsis_escape(text) for key, text in captions.items()}}
         languages[row['tag']] = variants
-    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair and signed-installer and shared-cable and cable-routing donation and quit-before-update/uninstall and setup progress and native removal failure guidance only',
+    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair and signed-installer and shared-cable and cable-routing donation and quit-before-update/uninstall and setup progress and native and cable removal failure guidance only',
               'installerLocaleActivationComplete': False, 'nativeSpeakerVerified': False,
               'sources': SOURCES, 'languages': languages}
     destination.parent.mkdir(parents=True, exist_ok=True)

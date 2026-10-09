@@ -36,6 +36,15 @@ def logical_lines(code):
         yield number, ''.join(out).strip()
 
 
+def language_reference(literal):
+    # Only the reviewed helper-output suffix may accompany a LangString.
+    # Arbitrary prose or additional variables must remain audit candidates.
+    match = re.fullmatch(r'\$\(([A-Za-z_][A-Za-z_0-9]*)\)(.*)', literal)
+    if match and match[2] in ('', r'$\r$\n$1'):
+        return match[1]
+    return None
+
+
 def inventory(root):
     rows, languages, dynamic, definitions = [], {}, [], []
     quoted = re.compile(r'"((?:\$\\"|[^"])*)"')
@@ -67,7 +76,7 @@ def inventory(root):
             if not selected:
                 dynamic.append({'file': relative, 'line': line, 'kind': kind, 'expression': code})
             for literal in selected:
-                marked = bool(re.fullmatch(r'\$\([A-Za-z_][A-Za-z_0-9]*\)', literal))
+                marked = language_reference(literal) is not None
                 rows.append({'file': relative, 'line': line, 'kind': kind, 'literal': literal,
                              'marked': marked, 'reviewStatus': 'language-string reference; qualification pending' if marked else 'untranslated candidate; contextual review pending'})
     return {'scope': 'Supported NSIS UI text sites; not a full NSIS parser',
@@ -87,7 +96,9 @@ def check_backlog(audit, backlog):
     for row in audit['candidates']:
         if not row['marked']:
             continue
-        name = row['literal'][2:-1]
+        name = language_reference(row['literal'])
+        if name is None:
+            raise ValueError('Invalid reviewed installer language reference')
         languages = audit['languages'].get(row['file'], [])
         if not languages:
             raise ValueError('Installer reference has no declared language: ' + name)

@@ -194,6 +194,7 @@ class Markup(HTMLParser):
 # Exact labels in third-party installer or device UI are protected only in reviewed
 # instruction sources. SoundCurrent's own button captions remain translatable.
 EXTERNAL_UI_LABELS = {
+    'VB-CABLE removal did not finish. This app was kept so you can retry.': ('VB-CABLE',),
     'Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.': ('SoundCurrent',),
     'VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.': ('VB-CABLE', 'SoundCurrent', 'VB-Audio', 'https://vb-cable.com'),
     'Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.': ('SoundCurrent', 'VB-CABLE', 'A/B'),

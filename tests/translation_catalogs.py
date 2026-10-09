@@ -15,6 +15,44 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_cable_removal_keeps_reviewed_helper_suffix_and_abort(self):
+        root = Path(__file__).resolve().parents[1]
+        source = 'VB-CABLE removal did not finish. This app was kept so you can retry.'
+        suffix = r'$\r$\n$1'
+        reference = '$(SCCableRemovalFailed)' + suffix
+        spec = importlib.util.spec_from_file_location('removal_suffix_audit', root / 'scripts/nsis_string_audit.py')
+        audit = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(audit)
+        self.assertEqual(audit.language_reference(reference), 'SCCableRemovalFailed')
+        for unsafe in ('$(SCCableRemovalFailed) English prose', reference+' extra', reference+'$2', '$(SCCableRemovalFailed)$1', '$(SCCableRemovalFailed)'+suffix.replace('$1','$2')):
+            self.assertIsNone(audit.language_reference(unsafe))
+        found = audit.inventory(root)
+        audit.check_backlog(found, json.loads((catalog.DATA / 'nsis-text-backlog.json').read_text(encoding='utf-8')))
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text(encoding='utf-8')
+            if 'native' in installer.stem:
+                self.assertNotIn('SCCableRemovalFailed', code)
+            else:
+                self.assertIn('MessageBox MB_ICONEXCLAMATION "'+reference+'"\n    Abort', code)
+                self.assertEqual(re.findall(r'^LangString SCCableRemovalFailed \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
+            message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
+            self.assertTrue(catalog.finished(message), row['tag'])
+            translated = message.findtext('translation')
+            catalog.validate_text(source, translated)
+            self.assertNotIn('$1', translated)
+            with self.assertRaisesRegex(ValueError, 'External installer label changed'):
+                catalog.validate_text(source, translated.replace('VB-CABLE','Another cable'))
+        # A reviewed composite reference still needs a real declaration.
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = Path(directory); folder = fixture / 'packaging/windows'; folder.mkdir(parents=True)
+            file = folder / 'fixture.nsi'
+            file.write_text('!insertmacro MUI_LANGUAGE "English"\nLangString SCCableRemovalFailed ${LANG_ENGLISH} "Failure"\nMessageBox MB_OK "'+reference+'"\n', encoding='utf-8')
+            baseline = audit.inventory(fixture); audit.check_backlog(baseline, baseline)
+            file.write_text('!insertmacro MUI_LANGUAGE "English"\nMessageBox MB_OK "'+reference+'"\n', encoding='utf-8')
+            with self.assertRaisesRegex(ValueError, 'Missing, empty or duplicate'):
+                audit.check_backlog(audit.inventory(fixture), baseline)
+
     def test_native_removal_error_uses_running_apps_and_aborts(self):
         root = Path(__file__).resolve().parents[1]
         source = 'Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.'
@@ -406,7 +444,7 @@ class CatalogTests(unittest.TestCase):
             for variants in result['languages'].values():
                 self.assertEqual(set(variants), {'cable', 'native'})
                 for routeName, route in variants.items():
-                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed', 'SCQuitBeforeUpdate', 'SCQuitBeforeUninstall', 'SCSetupRetryProgress'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller', 'SCCableSharedNotice', 'SCCableRouting', 'SCCableSetupProgress'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting', 'SCNativeSetupProgress', 'SCNativeRemovalFailed'}))
+                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed', 'SCQuitBeforeUpdate', 'SCQuitBeforeUninstall', 'SCSetupRetryProgress'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller', 'SCCableSharedNotice', 'SCCableRouting', 'SCCableSetupProgress', 'SCCableRemovalFailed'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting', 'SCNativeSetupProgress', 'SCNativeRemovalFailed'}))
                     self.assertEqual(set(route['nsisEscaped']), set(route['captions']))
 
     def test_installer_checkbox_catalog_sources_and_names(self):

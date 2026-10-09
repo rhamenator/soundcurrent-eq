@@ -302,9 +302,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 192,
       "kind": "MessageBox",
-      "literal": "VB-CABLE removal did not finish. This app was kept so you can retry.$\\r$\\n$1",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCCableRemovalFailed)$\\r$\\n$1",
+      "marked": true,
+      "reviewStatus": "all locale cable removal translations prepared; helper output suffix preserved; activation/lifecycle pending"
     }
   ],
   "dynamicSites": [

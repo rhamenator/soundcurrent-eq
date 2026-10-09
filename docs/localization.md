@@ -180,3 +180,7 @@ Three shared catalog sources now translate native driver setup progress, cable i
 ### Native driver removal error
 
 The removal failure notice now asks users to quit any running SoundCurrent app, instead of both EQ and Studio unconditionally. All 33 non-English translations are prepared and contextually reviewed; native-speaker review remains unverified. The uninstall failure still aborts before payload deletion and keeps the app for retry. Catalog tests and 918 caption syntax checks pass; native installed-package runtime and locale activation remain unqualified. See `tests/results/localization/second-pass-installer-native-removal.json`.
+
+### Cable removal failure and helper details
+
+The owned cable-removal explanation now has translations in all 33 non-English locales. The caller retains the newline and `$1` helper-output suffix, and the failure still aborts uninstall so users can retry. The NSIS audit accepts only the reviewed suffix after a real LangString; extra prose/variables and missing definitions reject. Catalog tests, 952 caption literals and 34 composite message syntax checks pass. This does not qualify installed-uninstaller behavior or locale activation. See `tests/results/localization/second-pass-installer-cable-removal.json`.

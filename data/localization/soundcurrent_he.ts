@@ -2500,6 +2500,11 @@ Import into your library?</source>
       <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
     </message>
     <message>
+      <source>VB-CABLE removal did not finish. This app was kept so you can retry.</source>
+      <translation>הסרת VB-CABLE לא הושלמה. האפליקציה הזאת נשמרה כדי לאפשר ניסיון נוסף.</translation>
+      <extracomment>Cable uninstall nonzero failure excluding restart code 3010 aborts before app payload deletion. App retained for retry. NSIS caller appends newline and actual helper output as $1; never put runtime variables in translations. VB-CABLE invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.</source>
       <translation>VB-CABLE מנתב את ההשמעה דרך האפליקציה. יש לבחור רמקולים בתוך SoundCurrent. VB-CABLE הוא תוכנה של VB-Audio הנתמכת בתרומות: https://vb-cable.com — תרומות מתקבלות בברכה.</translation>
       <extracomment>Cable audio page routing and donation notice. Software routes system playback through SoundCurrent to physical output selected inside app. Donationware means supported by voluntary donations, not mandatory payment. Preserve VB-CABLE twice, SoundCurrent, VB-Audio and exact donation URL. Contextual AI review only; native review unverified.</extracomment>
