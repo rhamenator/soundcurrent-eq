@@ -37,6 +37,43 @@ SOURCES = {
     'SCInstallNative': 'Install or update the shared SoundCurrent Audio driver',
 }
 
+
+def validate_language_map(nsis_language_directory=None):
+    """Validate explicit locale/Windows identities; never guess from tag spelling."""
+    payload = json.loads((catalog.DATA / 'installer-language-map.json').read_text(encoding='utf-8'))
+    if payload.get('schema') != 1:
+        raise ValueError('Unsupported installer language map schema')
+    rows = payload['languages']
+    tags = [row['tag'] for row in rows]
+    expected = [row['tag'] for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8'))]
+    if len(tags) != len(set(tags)) or set(tags) != set(expected):
+        raise ValueError('Installer map must cover every catalog exactly once')
+    for field in ('nsisLanguage', 'windowsLanguageId'):
+        if len({row[field] for row in rows}) != len(rows):
+            raise ValueError('Duplicate installer language identity: ' + field)
+    missing = []
+    for row in rows:
+        if not isinstance(row['windowsLanguageId'], int) or not 0 < row['windowsLanguageId'] <= 65535:
+            raise ValueError('Invalid Windows language ID')
+        if row['rtl'] != (row['tag'] in ('ar', 'he', 'fa')):
+            raise ValueError('Installer direction mismatch: ' + row['tag'])
+        if nsis_language_directory is None:
+            continue
+        path = Path(nsis_language_directory) / (row['nsisLanguage'] + '.nlf')
+        if not path.exists():
+            missing.append(row['tag'])
+            if row['builtinAssetsExpected']:
+                raise ValueError('Missing expected NSIS language asset: ' + str(path))
+            continue
+        fields = [line for line in path.read_text(encoding='utf-8-sig').splitlines()
+                  if line and not line.startswith('#')]
+        if fields[0] != 'NLF v6' or int(fields[1]) != row['windowsLanguageId'] or (fields[5] == 'RTL') != row['rtl']:
+            raise ValueError('NSIS language asset identity mismatch: ' + row['tag'])
+        if not path.with_suffix('.nsh').exists():
+            raise ValueError('Missing MUI language strings: ' + row['tag'])
+    return {'languages': rows, 'missingBuiltinAssets': missing,
+            'installerLocaleActivationComplete': False}
+
 def format_names(template, driver, product):
     if sorted(catalog.PLACEHOLDER.findall(template)) != ['%1', '%2']:
         raise ValueError('Installer subtitle needs exactly one %1 and %2')
@@ -63,6 +100,7 @@ def export(destination, product):
     if product not in ('SoundCurrent EQ', 'SoundCurrent Studio'):
         raise ValueError('Unknown installer product')
     catalog.check(require_complete=True)
+    validate_language_map()
     languages = {}
     for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
         messages = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))

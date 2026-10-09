@@ -200,3 +200,7 @@ Both welcome paragraphs now have translations in all 33 non-English locales. Rev
 ### Repair-helper notice second pass
 
 The long pre-repair modal is translated in all 33 non-English locales. Its app action uses the localized Audio driver setup caption; external endpoint and installer labels remain exact. The actual modal expression passed inert argument capture in all 34 catalogs, and 1,190 helper lookups plus safe fault and mutation checks passed. No driver actions or VM session were used. This is formatting evidence, not installed dialog layout or native-language qualification. See `tests/results/localization/second-pass-helper-repair.json`.
+
+### Explicit installer locale identities
+
+`installer-language-map.json` covers all 34 catalog tags with unique NSIS names and Windows language IDs. Validation checks catalog coverage, duplicate identities, RTL direction, and actual installed NLF/MUI asset pairs. On the Linux NSIS installation, 33 pairs match; Swahili has no built-in pair and requires owned installer translations. The mapping is validated during caption export and has a CTest regression gate. Installer locale activation remains incomplete; this mapping does not enable language selection or qualify rendered installer pages.
