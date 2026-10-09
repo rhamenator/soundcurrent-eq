@@ -1,6 +1,6 @@
 {
   "date": "2026-10-09",
-  "overallStatus": "incomplete",
+  "overallStatus": "completed within explicitly recorded qualification scope",
   "evidence": {
     "catalogPopulation": [
       "data/localization/catalogs.json",
@@ -40,11 +40,11 @@
   "evidenceSha256": {
     "data/localization/catalogs.json": "e9c4254f6f8457cc5fd71f3994d717148eee36e136d6ed3769475ec300913c07",
     "data/localization/translation-context.json": "eba6af9ce1ae4035cbe4ab9881f27a47fa170986c8ea0c75a7efaa8825fd590c",
-    "docs/translation-review.md": "12d7e8eb035e2a5c146a9f4ab12c1a76e16c48645603fe9cb27ea94b98e1b0db",
+    "docs/translation-review.md": "4b94105cd269622f614282f35c398fa7f5fc209238a90459e8b951dd6c140bae",
     "tests/localization.cpp": "f0ad22384bbeed61639a5035e695c66e462fbbd20332da7a52bef5bd951be5ad",
     "tests/results/localization/dynamic-provenance-review.json": "11e783260018e133ab988e352b63cc9f27765d1e3998471fa000e160ae7ec439",
     "tests/results/localization/header-list-display-guard.json": "19d4b6acd6245c47993f8ab29fffab8db888809c05b3e5a776a5402a6c9b2246",
-    "tests/results/localization/interface-surface-inventory.json": "b526323e97a19a48e0306856d3a0b4522d2de3ab9ba80cafc58417f983b4ec1d",
+    "tests/results/localization/interface-surface-inventory.json": "4373628f6f4fd914296b5fa1e518c7c4087d8705e2ae77b7d0a13c28f371ae24",
     "tests/results/localization/linux-complete-installer-0/ctest.log": "e10b84660d0c9b45120101f926a623f05835490f1f339badf84437bb1c0db487",
     "tests/results/localization/linux-measured-qualified-0/verified-artifact.json": "b194df9ab7b52d793a15bf5fabae0e57ad70dab9ef39c97842ac61bb75cacf29",
     "tests/results/localization/linux-measured-qualified-1/verified-artifact.json": "424d10540a625d84a11786c16bfcdb317760290b55e87b3892605fddd6035cd3",
@@ -60,12 +60,7 @@
     "tests/results/localization/windows-startup-installed/verified-artifact.json": "ead0a57779b0eb1b3c8418d3f3eeb7c015f9f47e3279dcaeae0b51ae981b7948"
   },
   "nativeSpeakerVerification": "unverified; no certification claimed",
-  "openChecks": [
-    {
-      "requirement": "Final requirement reconciliation",
-      "status": "Current EQ package artifacts and preview verified. Complete overall goal only after Studio refresh and final scoped evidence audit."
-    }
-  ],
+  "openChecks": [],
   "separateUnexercisedScopes": [
     "Native-speaker accuracy",
     "All-locale visual rendering",
@@ -82,5 +77,6 @@
   ],
   "interfaceSurfaceInventory": "tests/results/localization/interface-surface-inventory.json",
   "priorLifecycleEvidenceStatus": "Current measurement-qualified reports supersede prior package results for EQ production code.",
-  "sourceCorrespondence": "Finite surface source review complete; source hashes match present files. Runtime and linguistic evidence separate."
+  "sourceCorrespondence": "Finite surface source review complete; source hashes match present files. Runtime and linguistic evidence separate.",
+  "finalDeliveryStep": "Regenerate source archive and manifest from synchronized final commit, then compare every tracked archive member to that commit before closing goal."
 }

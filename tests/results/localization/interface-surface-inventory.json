@@ -229,12 +229,22 @@
   },
   "nativeReviewed": false,
   "wholeInterfaceCoverageProven": false,
-  "nextAction": "Verify fresh installed package evidence, reconcile completion requirement reports and refresh previews. Current finite surface source correspondences reviewed; runtime and linguistic verification remain separately scoped.",
+  "nextAction": "No further identified source gap; use the recorded unverified native-speaker review workflow for external linguistic review.",
   "sourceCorrespondenceReviewComplete": true,
   "packageQualificationEvidence": [
     "tests/results/localization/linux-measured-qualified-0/verified-artifact.json",
     "tests/results/localization/linux-measured-qualified-1/verified-artifact.json",
     "tests/results/localization/linux-measured-qualified-2/verified-artifact.json",
     "tests/results/localization/windows-measured-qualified/verified-artifact.json"
-  ]
+  ],
+  "currentInstalledQualification": {
+    "status": "qualified",
+    "evidence": [
+      "tests/results/localization/linux-measured-qualified-0/verified-artifact.json",
+      "tests/results/localization/linux-measured-qualified-1/verified-artifact.json",
+      "tests/results/localization/linux-measured-qualified-2/verified-artifact.json",
+      "tests/results/localization/windows-measured-qualified/verified-artifact.json"
+    ],
+    "interpretation": "Earlier per-surface pending-package notes describe historical checkpoints. Current binaries match qualified source heads; runtime and linguistic limitations remain."
+  }
 }

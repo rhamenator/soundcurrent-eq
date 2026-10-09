@@ -16,7 +16,7 @@ The review also fixed two functional bugs: source/conditions length limits depen
 
 - All original target locales and added Nynorsk have populated catalogs: 704 messages each, 34 catalogs including English. Native-speaker verification remains unverified.
 - Finite owned-interface source correspondence review is complete, including the equipment-summary, calibration-profile and Studio backend boundaries. IDs, loaded metadata, opaque substitutions and numerical data retain identity.
-- Current EQ Linux/Windows packages and unpublished preview are verified; final overall requirement reconciliation remains.
+- Current Linux/Windows packages and unpublished preview are verified; the final evidence audit records qualification scope.
 - Counts/hashes: `data/localization/catalogs.json`. Scoped evidence and remaining work: `tests/results/localization/current-requirement-checkpoint.json` and `completion-checklist.json`.
 - Catalog completion, contextual AI review and bounded runtime evidence are distinct. No all-locale visual, physical audio or native-speaker certification is claimed. No release was published.
 
