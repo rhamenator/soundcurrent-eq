@@ -19,7 +19,7 @@
         "tests/results/localization/dynamic-provenance-review.json",
         "tests/results/localization/expanded-display-sinks.json"
       ],
-      "remaining": "Linux easy installer now has all 26 owned messages populated in all 34 locales. Actual installer UI/package qualification and whole-interface audit remain open."
+      "remaining": "All 26 standalone installer messages are populated in all 34 locales. Real terminal prompts and sampled GTK dialogs exercised; final package evidence and finite whole-interface audit remain open."
     },
     {
       "requirement": "Contextual terminology review",
@@ -265,5 +265,6 @@
   "rendererDirectDiagnosticGuard": "tests/results/localization/renderer-direct-diagnostic-guard.json",
   "ubuntuStartupPackageEvidence": "tests/results/localization/ubuntu-startup-installed/verified-artifact.json",
   "windowsStartupPackageEvidence": "tests/results/localization/windows-startup-installed/verified-artifact.json",
-  "linuxEasyInstallerReview": "tests/results/localization/linux-easy-installer-gap.json"
+  "linuxEasyInstallerReview": "tests/results/localization/linux-easy-installer-gap.json",
+  "headerListDisplayGuard": "tests/results/localization/header-list-display-guard.json"
 }

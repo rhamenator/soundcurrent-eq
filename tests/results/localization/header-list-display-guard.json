@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-09",
+  "scope": "Explicit brace lists supplied to Qt horizontal/vertical table headers and tree headers; entry-level lexical guard, forwarded list producers still need semantic review.",
+  "guard": "Split list entries using existing balanced C++ argument parser; translated entries do not hide neighboring raw or QStringLiteral captions. Standard Hz/dB/Q symbols remain intentional.",
+  "negativeTests": [
+    "setHorizontalHeaderLabels mixed translated/raw/QStringLiteral list",
+    "setVerticalHeaderLabels mixed translated/raw/QStringLiteral list",
+    "setHeaderLabels mixed translated/raw/QStringLiteral list",
+    "translated text containing comma",
+    "forwardedHeaders retained in dynamic inventory"
+  ],
+  "currentSources": {
+    "equipment_profiles.cpp": "Type, Frequency Hz and Gain dB are SC_TR captions; Q is standard symbol. No newly uncovered untranslated header."
+  },
+  "sourceSha256": {
+    "scripts/ui_string_audit.py": "f9bfef972270b82a37f228ae13c18341ac7d9bea78ba16e2287ffcdb4d967a4b",
+    "tests/translation_catalogs.py": "2212d7ecab1696bbfefdef8906dd767704933d04d1221f57eaa99ceb772d6fbd"
+  },
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false,
+  "testLog": "tests/results/localization/header-list-guard-tests.log",
+  "regressionSuite": {
+    "tests": 63,
+    "skipped": 1,
+    "result": "passed",
+    "logSha256": "e447b4c38be8c1b4d32d3a5053e322b381ec2002d59bb4fa57e9653dabe801a1"
+  }
+}

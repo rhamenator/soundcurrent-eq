@@ -889,6 +889,27 @@ class CatalogTests(unittest.TestCase):
             self.assertTrue(any(row['expression'] == 'profileBrands'
                                 for row in audit.dynamic_inventory(fixture)['expressions']))
 
+    def test_header_lists_detect_mixed_untranslated_entries(self):
+        root = Path(__file__).resolve().parents[1]
+        spec = importlib.util.spec_from_file_location('ui_audit', root / 'scripts/ui_string_audit.py')
+        audit = importlib.util.module_from_spec(spec)
+        with patch.dict('sys.modules', {'localization': catalog}):
+            spec.loader.exec_module(audit)
+        for method in ('setHorizontalHeaderLabels', 'setVerticalHeaderLabels', 'setHeaderLabels'):
+            with tempfile.TemporaryDirectory() as directory:
+                fixture = Path(directory)
+                (fixture / 'src').mkdir()
+                (fixture / 'src/panel.cpp').write_text(
+                    'view->' + method + '({SC_TR("Translated, header"), "Untranslated header", '
+                    'QStringLiteral("Another header"), "Hz", "Q"}); '
+                    'view->' + method + '(forwardedHeaders);', encoding='utf-8')
+                self.assertEqual([row['literal'] for row in audit.inventory(fixture)['candidates']],
+                                 ['Untranslated header', 'Another header'])
+                with self.assertRaisesRegex(ValueError, 'Unreviewed display literal'):
+                    audit.check_reviewed_literals(fixture, {'exceptions': []})
+                self.assertTrue(any(row['expression'] == 'forwardedHeaders'
+                                    for row in audit.dynamic_inventory(fixture)['expressions']))
+
     def test_dynamic_display_inventory_does_not_assume_translation_coverage(self):
         spec = importlib.util.spec_from_file_location('ui_audit', Path(__file__).resolve().parents[1] / 'scripts/ui_string_audit.py')
         audit = importlib.util.module_from_spec(spec)

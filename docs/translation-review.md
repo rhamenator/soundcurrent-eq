@@ -509,3 +509,7 @@ Added 130 entries for Hindi, Indonesian, Vietnamese, Thai and Swahili. All 34 ca
 ### Installer terminal and GTK runtime check (2026-10-09)
 
 Real pseudoterminal tests cover localized prompts and n/Y outcomes in all 34 languages. Actual Zenity dialogs from the shared EQ installer rendered French, Arabic and Japanese titles/messages under Xvfb; captures were inspected and Escape cancellation returned 1. GTK Yes/No captions follow the host locale and remained English. This does not prove all-locale rendering, KDialog, installation or native-speaker review. Fresh Ubuntu/Fedora/AlmaLinux jobs were dispatched for both completed catalog heads.
+
+### Table and tree header source guard (2026-10-09)
+
+Header brace lists are now inspected entry by entry, matching combo-box lists. Mixed translated/raw captions and Qt-wrapped literals cannot hide in a list. Negative fixtures cover horizontal, vertical and tree headers, commas inside translations, standard units and forwarded-list inventory. Current equipment headers and Studio table callers were inspected; no additional owned untranslated header was found. This is a bounded source guard, not a whole-interface proof or native-speaker review.
