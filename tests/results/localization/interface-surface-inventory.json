@@ -55,7 +55,17 @@
         "tests/results/localization/standard-editing-menus.json",
         "tests/results/localization/file-display-locale-adapter.json"
       ],
-      "auditState": "indexed; final source/evidence correspondence check pending"
+      "auditState": "current source correspondence reviewed; no missing owned caption identified in inventoried Qt versions and app chooser paths",
+      "review": {
+        "translatorTargets": 70,
+        "targetsDeclared": true,
+        "contexts": "Exact Qt line edit/text/spin contexts, chooser/file-model/icon-provider contexts and standard-button contexts; no blanket plugin-context substitution.",
+        "upstreamInventory": "Qt6.4/6.12 reviewed captions mapped; Alt key bindings preserved, Show fragment replaced by guarded whole header actions.",
+        "chooserWrappers": "App titles/filter labels supplied through translated callers. Native/default picker if selected locale matches system; otherwise fallback picker with selected-locale proxy.",
+        "proxy": "Only size/date DisplayRole changes; filenames, paths, edit roles, source identity and operations delegate unchanged.",
+        "sourceMatch": "These production files match the already qualified current-app Windows head; Linux package evidence retained separately."
+      },
+      "runtimeLimit": "Compiled tests and installed locale fixtures cover actual captions, modal selection/cancellation, selected errors and accessibility names. Native OS interactions, screen-reader speech and protected-path failures remain separate unexercised scopes; external MIME descriptions are preserved."
     },
     {
       "id": "update-startup",
