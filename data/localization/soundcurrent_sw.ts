@@ -713,6 +713,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Maalumu</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>Nakala maalum ya %1</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Cut</source>
       <translation>Kata</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
@@ -1080,6 +1085,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Ingiza maandishi ya mwitikio</translation>
     </message>
     <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>%1 imeingizwa; SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
       <source>In-wall speaker</source>
       <translation>Spika iliyojengewa ukutani</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
@@ -1343,6 +1353,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Usahihishaji wa modeli uliopimwa huongezwa kwenye EQ yako ya kusikiliza. Bado unaweza kuongeza besi au kurekebisha bendi yoyote. Unajumuisha mipaka ya tahadhari ya gain; athari za chumba na amplifaya zinahitaji kipimo cha mfumo.</translation>
     </message>
     <message>
+      <source>Measured response</source>
+      <translation>Mwitikio uliopimwa</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
       <source>Measurement conditions are required.</source>
       <translation>Masharti ya kipimo yanahitajika.</translation>
     </message>
@@ -1454,6 +1469,11 @@ Uingize kwenye maktaba yako?</translation>
       <translation>Filamu</translation>
     </message>
     <message>
+      <source>My equipment</source>
+      <translation>Vifaa vyangu</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>EQ ya asili ya maikrofoni</translation>
@@ -1465,6 +1485,11 @@ Uingize kwenye maktaba yako?</translation>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Washa au zima kisawazishi cha asili cha maikrofoni</translation>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>Profaili mpya</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
@@ -2553,6 +2578,21 @@ Uingize kwenye maktaba yako?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Tumia mipangilio ya eneo ya mfumo</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Mwitikio wa masafa wa uwiano ulioingizwa na mtumiaji; bainisha mwelekeo / nambari ya mfululizo ya maikrofoni au hali za kipimo cha spika kabla ya kutumia.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>Usahihishaji ulioundwa na mtumiaji; ingiza vifaa na hali za kipimo.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>Profaili iliyoundwa na mtumiaji</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>

@@ -284,7 +284,7 @@ class Editor : public QDialog {
         draft.custom = true;
         draft.provenance =
             originalProvenance.left(1800) +
-            (originalId.isEmpty() ? "\nUser-created profile" : "\nCustom copy of " + originalId);
+            QStringLiteral("\n") + (originalId.isEmpty() ? SC_TR("User-created profile") : SC_TR("Custom copy of %1").arg(originalId));
         draft.id = QUuid::createUuid().toString(QUuid::WithoutBraces);
         if (save(draft)) {
             dirty = false;
@@ -668,16 +668,15 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             Profile p;
             p.id = QUuid::createUuid().toString(QUuid::WithoutBraces);
             p.kind = "microphone";
-            p.brand = "Custom";
-            p.family = "Measured response";
+            p.brand = SC_TR("Custom");
+            p.family = SC_TR("Measured response");
             p.model = QFileInfo(path).completeBaseName().left(120);
             p.custom = true;
-            p.conditions = "User imported relative frequency response; specify microphone orientation / "
-                           "serial, or speaker measurement conditions before use.";
+            p.conditions = SC_TR("User imported relative frequency response; specify microphone orientation / "
+                           "serial, or speaker measurement conditions before use.");
             p.provenance =
-                "Imported " + QFileInfo(path).fileName() + "; SHA256 " +
-                QString::fromLatin1(
-                    QCryptographicHash::hash(f.peek(f.size()), QCryptographicHash::Sha256).toHex());
+                SC_TR("Imported %1; SHA256 %2").arg(QFileInfo(path).fileName(),
+                    QString::fromLatin1(QCryptographicHash::hash(f.peek(f.size()), QCryptographicHash::Sha256).toHex()));
             for (const auto &line : QString::fromUtf8(f.readAll()).split('\n')) {
                 const auto s = line.trimmed();
                 if (s.isEmpty() || s.startsWith('*') || s.startsWith('#') || s.startsWith(';') ||
@@ -721,11 +720,11 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     QObject::connect(create, &QPushButton::clicked, &dialog, [&] {
         Profile p;
         p.kind = "speaker";
-        p.brand = "Custom";
-        p.family = "My equipment";
-        p.model = "New profile";
+        p.brand = SC_TR("Custom");
+        p.family = SC_TR("My equipment");
+        p.model = SC_TR("New profile");
         p.custom = true;
-        p.conditions = "User-created correction; enter equipment and measurement conditions.";
+        p.conditions = SC_TR("User-created correction; enter equipment and measurement conditions.");
         p.filters.append({1000, 0, 1});
         QDialog select(&dialog);
         auto *l = new QVBoxLayout(&select);

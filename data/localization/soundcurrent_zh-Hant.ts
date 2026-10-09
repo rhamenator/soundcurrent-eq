@@ -713,6 +713,11 @@ Import into your library?</source>
       <translation>自訂</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>%1 的自訂副本</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Cut</source>
       <translation>剪下</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
@@ -1080,6 +1085,11 @@ Import into your library?</source>
       <translation>匯入響應文字</translation>
     </message>
     <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>已匯入 %1；SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
       <source>In-wall speaker</source>
       <translation>嵌牆喇叭</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
@@ -1343,6 +1353,11 @@ Import into your library?</source>
       <translation>實測型號校正會疊加至您的聆聽等化設定。您仍可增強低音或調整任意頻段。包含保守的增益限制；房間及擴大機影響需要測量整個系統。</translation>
     </message>
     <message>
+      <source>Measured response</source>
+      <translation>量測的響應</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
       <source>Measurement conditions are required.</source>
       <translation>必須填寫測量條件。</translation>
     </message>
@@ -1454,6 +1469,11 @@ Import into your library?</source>
       <translation>電影</translation>
     </message>
     <message>
+      <source>My equipment</source>
+      <translation>我的設備</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>自然麥克風等化</translation>
@@ -1465,6 +1485,11 @@ Import into your library?</source>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>開啟或關閉自然麥克風等化器</translation>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>新設定檔</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
@@ -2553,6 +2578,21 @@ Import into your library?</source>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>使用系統區域設定</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>使用者匯入的相對頻率響應；使用前請註明麥克風朝向 / 序號或喇叭量測條件。</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>使用者建立的校正；請輸入設備及量測條件。</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>使用者建立的設定檔</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>

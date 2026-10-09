@@ -401,6 +401,15 @@ int main(int argc,char **argv){
 
    require(isCalibrationFailureMessage(calibrationFailure),"Localized calibration detail would be overwritten by generic English-prefix handling");
    require(!isCalibrationFailureMessage(text("Checking %1 Hz").arg(QLocale().toString(1000))),"Calibration progress was mistaken for failure");
+   const auto profileFilename=QString::fromUtf8("response %1 %2 / 音声 é.txt");
+   const auto profileDigest=QString(64,'a');
+   const auto importProvenance=text("Imported %1; SHA256 %2").arg(profileFilename,profileDigest);
+   require(importProvenance.contains(profileFilename)&&importProvenance.contains(profileDigest),"Profile provenance changed opaque filename or hash bytes");
+   require(text("Custom copy of %1").arg(QString(120,'x')).size()+1801<=2000,"Localized saved-copy provenance exceeds profile metadata bound");
+   for(const char *source:{"Measured response","My equipment","New profile","User-created profile",
+       "User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.",
+       "User-created correction; enter equipment and measurement conditions."})
+    require(text(source)!=QString::fromUtf8(source),"New profile default fell back to English");
    QLineEdit line;line.setText(QStringLiteral("selection"));line.selectAll();
    QTextEdit paragraph;paragraph.setPlainText(QStringLiteral("selection"));paragraph.selectAll();
    for(auto *menu:{line.createStandardContextMenu(),paragraph.createStandardContextMenu()}) {

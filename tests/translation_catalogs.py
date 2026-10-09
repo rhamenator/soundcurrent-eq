@@ -760,6 +760,19 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual([row['literal'] for row in result['candidates']], ['Unmarked label'])
             self.assertFalse(result['wholeInterfaceCoverageProven'])
 
+    def test_profile_authored_defaults_are_translated_at_creation(self):
+        root = Path(__file__).resolve().parents[1]
+        code = (root / 'src/equipment_profiles.cpp').read_text(encoding='utf-8')
+        # Literal defaults authored here are human metadata, not imported data.
+        raw = re.findall(r'\bp\.(?:brand|family|model|conditions|provenance)\s*=\s*("(?:\\.|[^"\\])*")', code)
+        self.assertEqual(raw, [], 'Unmarked app-authored profile default')
+        self.assertNotIn('"\\nUser-created profile"', code)
+        self.assertNotIn('"\\nCustom copy of "', code)
+        declared = set(catalog.sources())
+        for source in ('Measured response', 'My equipment', 'New profile',
+                       'User-created profile', 'Custom copy of %1', 'Imported %1; SHA256 %2'):
+            self.assertIn(source, declared)
+
     def test_calibration_worker_display_prose_uses_declared_translations(self):
         root = Path(__file__).resolve().parents[1]
         code = (root / 'src/main.cpp').read_text(encoding='utf-8')

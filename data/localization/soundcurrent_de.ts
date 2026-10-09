@@ -713,6 +713,11 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Benutzerdefiniert</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>Benutzerdefinierte Kopie von %1</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Cut</source>
       <translation>Ausschneiden</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
@@ -1080,6 +1085,11 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Frequenzgangtext importieren</translation>
     </message>
     <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>%1 importiert; SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
       <source>In-wall speaker</source>
       <translation>Wandeinbaulautsprecher</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
@@ -1343,6 +1353,11 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Die gemessene Modellkorrektur wird zu Ihrem Hör-EQ hinzugefügt. Sie können weiterhin Bass hinzufügen oder jedes Band anpassen. Die Verstärkungsgrenzen sind vorsichtig gewählt; Raum- und Verstärkereinflüsse erfordern eine Messung des gesamten Systems.</translation>
     </message>
     <message>
+      <source>Measured response</source>
+      <translation>Gemessener Frequenzgang</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
       <source>Measurement conditions are required.</source>
       <translation>Messbedingungen sind erforderlich.</translation>
     </message>
@@ -1454,6 +1469,11 @@ In Ihre Bibliothek importieren?</translation>
       <translation>Filme</translation>
     </message>
     <message>
+      <source>My equipment</source>
+      <translation>Meine Geräte</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>Natürlicher Mikrofon-EQ</translation>
@@ -1465,6 +1485,11 @@ In Ihre Bibliothek importieren?</translation>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Natürlichen Mikrofon-Equalizer ein- oder ausschalten</translation>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>Neues Profil</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
@@ -2553,6 +2578,21 @@ In Ihre Bibliothek importieren?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Systemregion verwenden</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Vom Benutzer importierter relativer Frequenzgang; vor der Verwendung Mikrofonorientierung / Seriennummer oder Messbedingungen des Lautsprechers angeben.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>Vom Benutzer erstellte Korrektur; Gerät und Messbedingungen eingeben.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>Vom Benutzer erstelltes Profil</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>

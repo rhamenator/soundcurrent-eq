@@ -713,6 +713,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Özel</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>%1 için özel kopya</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Cut</source>
       <translation>Kes</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
@@ -1080,6 +1085,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Yanıt metnini içe aktar</translation>
     </message>
     <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>%1 içe aktarıldı; SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
       <source>In-wall speaker</source>
       <translation>Duvara gömme hoparlör</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
@@ -1343,6 +1353,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Ölçülmüş model düzeltmesi dinleme EQ'nuza eklenir. Yine bas ekleyebilir veya herhangi bir bandı ayarlayabilirsiniz. Temkinli kazanç sınırları içerir; oda ve amplifikatör etkileri tüm sistemin ölçülmesini gerektirir.</translation>
     </message>
     <message>
+      <source>Measured response</source>
+      <translation>Ölçülen yanıt</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
       <source>Measurement conditions are required.</source>
       <translation>Ölçüm koşulları zorunludur.</translation>
     </message>
@@ -1454,6 +1469,11 @@ Kitaplığınıza aktarılsın mı?</translation>
       <translation>Filmler</translation>
     </message>
     <message>
+      <source>My equipment</source>
+      <translation>Ekipmanım</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>Doğal ses EQ'su</translation>
@@ -1465,6 +1485,11 @@ Kitaplığınıza aktarılsın mı?</translation>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Doğal ses mikrofon ekolayzırını aç veya kapat</translation>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>Yeni profil</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
@@ -2553,6 +2578,21 @@ Kitaplığınıza aktarılsın mı?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Sistem yerel ayarını kullan</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Kullanıcının içe aktardığı bağıl frekans yanıtı; kullanmadan önce mikrofon yönelimini / seri numarasını veya hoparlör ölçüm koşullarını belirtin.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>Kullanıcının oluşturduğu düzeltme; ekipmanı ve ölçüm koşullarını girin.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>Kullanıcının oluşturduğu profil</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>

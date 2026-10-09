@@ -1,0 +1,20 @@
+{
+  "scope": "Generated equipment profile defaults and authored provenance, not all metadata or whole-interface coverage",
+  "sourceSha256": "6853faa29c08f99df84bd12c9ca938657216c57ca39b5d9a5b15e747eb6c78ed",
+  "catalogMessages": 649,
+  "nonEnglishCatalogs": 33,
+  "nativeReviewed": false,
+  "behavior": "Translate human defaults at creation/import and new provenance on explicit save-copy; preserve loaded saved/published metadata verbatim. Stable IDs, filenames, digest values, filter codes and JSON keys remain unchanged.",
+  "localEvidence": [
+    "Compiled localization fixture passed",
+    "French, Arabic and Nynorsk equipment-dialog fixtures passed",
+    "Profile authored-default source guard passed",
+    "File-identifier mutation guard passed"
+  ],
+  "limitations": [
+    "No native-speaker verification",
+    "No claim of visual inspection of every new default field",
+    "Fresh Windows and installed-package qualification pending",
+    "Whole-interface dynamic expression review remains incomplete"
+  ]
+}

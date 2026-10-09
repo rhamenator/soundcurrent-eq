@@ -587,3 +587,7 @@ APT can skip a local preview whose version equals the installed package. The ind
 ### Current Windows installed qualification
 
 Both current application builds passed all 33 installed native-backend locale fixtures, installer/executable identity checks, update/uninstall/reinstall, fixture preservation, unchanged audio-device state, and Arabic/German formatting. Defender antivirus and real-time protection were enabled. Current Linux package CI passed full suites (84 EQ / 86 Studio) and lifecycle checks on Ubuntu, Fedora and AlmaLinux. A selected native Windows viewport per app was inspected; screenshots and exact source/package hashes are recorded separately. The older EQ detection remains unresolved; no exclusion or disabled protection was introduced. Native review, interactive installer and signed-in startup remain unqualified. No release published.
+
+### Profile defaults and authored provenance
+
+New profile names, relative-response import instructions and newly authored provenance captions now use the selected interface language. Existing saved or published metadata remains verbatim; opening a profile does not rewrite it. Filenames, SHA256 digests, profile IDs and processing data are unchanged. All 33 non-English catalogs contain the eight added captions. Compiled localization and French/Arabic/Nynorsk equipment-dialog fixtures passed locally; source guards passed in both applications. These checks do not prove native-speaker accuracy or every creation field visually. Fresh Windows and installed-package qualification remains pending.

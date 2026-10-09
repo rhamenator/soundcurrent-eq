@@ -713,6 +713,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>Oma</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>Mukautettu kopio profiilista %1</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Cut</source>
       <translation>Leikkaa</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
@@ -1080,6 +1085,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>Tuo taajuusvasteteksti</translation>
     </message>
     <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>Tuotu %1; SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
       <source>In-wall speaker</source>
       <translation>Seinään upotettava kaiutin</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
@@ -1343,6 +1353,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>Mitattu mallikorjaus lisätään kuuntelun taajuuskorjaukseen. Voit silti lisätä bassoa tai säätää mitä tahansa kaistaa. Sisältää varovaiset vahvistusrajat; huoneen ja vahvistimen vaikutukset edellyttävät järjestelmämittausta.</translation>
     </message>
     <message>
+      <source>Measured response</source>
+      <translation>Mitattu vaste</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
       <source>Measurement conditions are required.</source>
       <translation>Mittausolosuhteet vaaditaan.</translation>
     </message>
@@ -1454,6 +1469,11 @@ Tuodaanko kirjastoon?</translation>
       <translation>Elokuvat</translation>
     </message>
     <message>
+      <source>My equipment</source>
+      <translation>Omat laitteet</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>Luonnollinen mikrofonin taajuuskorjaus</translation>
@@ -1465,6 +1485,11 @@ Tuodaanko kirjastoon?</translation>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Luonnollinen mikrofonin taajuuskorjain päällä tai pois</translation>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>Uusi profiili</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
@@ -2553,6 +2578,21 @@ Tuodaanko kirjastoon?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Käytä järjestelmän alueasetuksia</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Käyttäjän tuoma suhteellinen taajuusvaste; ilmoita mikrofonin suunta / sarjanumero tai kaiuttimen mittausolosuhteet ennen käyttöä.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>Käyttäjän luoma korjaus; anna laitteet ja mittausolosuhteet.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>Käyttäjän luoma profiili</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>

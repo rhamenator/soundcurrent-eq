@@ -5,7 +5,7 @@
   "catalogs": {
     "count": 34,
     "nonEnglish": 33,
-    "messagesPerCatalog": 641,
+    "messagesPerCatalog": 649,
     "check": "scripts/localization.py --check --require-complete passed locally",
     "nativeReviewed": false
   },
@@ -38,13 +38,13 @@
     },
     {
       "requirement": "Changed Linux packages and installed language interfaces",
-      "status": "preceding menu-fix packages verified for recorded hashes; current calibration changes await fresh package qualification",
+      "status": "preceding menu-fix packages verified for recorded hashes; current calibration/profile changes await fresh package qualification",
       "run": 37886568927,
       "evidence": "tests/results/localization/linux-636-installed/verified-artifact.json"
     },
     {
       "requirement": "Changed Windows packages and installed language interfaces",
-      "status": "preceding menu-fix packages verified for recorded hashes; current calibration changes await fresh native Windows/package qualification",
+      "status": "preceding menu-fix packages verified for recorded hashes; current calibration/profile changes await fresh native Windows/package qualification",
       "run": 37886556997,
       "evidence": "tests/results/localization/windows-menu-installed-ci/verified-artifact.json"
     },
@@ -54,7 +54,7 @@
     },
     {
       "requirement": "Reviewable packages and synchronized commits",
-      "status": "preceding Linux/Windows packages downloaded and verified; current calibration source synchronized with this checkpoint; fresh packages pending"
+      "status": "preceding Linux/Windows packages downloaded and verified; current calibration/profile source synchronized with this checkpoint; fresh packages pending"
     },
     {
       "requirement": "Preserve virtual driver and separately owned DAW",
@@ -74,21 +74,23 @@
     "Silent same-package updates do not prove older-version migration or interactive chooser behavior"
   ],
   "evidenceSha256": {
-    "data/localization/catalogs.json": "c2adcfc863611b86b23111672ec55b88f8d32bdfd74164e8874a57d000d4fab8",
-    "docs/translation-review.md": "37e2c40b97cb208c5fbf866965f98e48fbbae0e77a467426f9e1c0072588b731",
-    "tests/localization.cpp": "1dd311d109fee0afcee496485ca4f685d3ed9c0f6fd791fca6eb39ca837c44de",
-    "tests/translation_catalogs.py": "8105e278e20fc992ce7fd327d2749602794a902211975d47f326cd1ac5c66ed5",
+    "data/localization/catalogs.json": "98f213de4bc81a8f3ed1acee8ab1b7dced17e9793d00eb7c06260e83458fdaf1",
+    "docs/translation-review.md": "cc6c145d3fed310b5b8fda882325b7be28f969f3cf2a935eb24f45dad0140875",
+    "tests/localization.cpp": "27df206581e8a7fdcb0d4e0d3d0d17ce75f920d3d1693b21de0cca78341b3865",
+    "tests/translation_catalogs.py": "443fb29d0b4cb1e848ec443cbf7a8245d54087e682036d5bcdb2c9c618ea524f",
     "scripts/ui_string_audit.py": "a7cd0132f32a3f103eadffe8798aee877b4c397545f3e53ec1ea4134b133629f",
-    "tests/results/localization/dynamic-display-inventory.json": "978be3171e90bab5f22141af66234d79b3dfa7663de5892bf92e07a5bb66343d",
+    "tests/results/localization/dynamic-display-inventory.json": "9d7cd7b9ac691979abe5d94d6dd5da4abb281c40f9f273ef9b170a0989913af6",
     "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
     "src/main.cpp": "1f8c56b4e82e1b3bfd2d9406694ca9c06f3e007362fc59a60c80728157986ee9",
     "src/localization.h": "ba4d9f31588317ccea9345a986c2b46057bff067d92a0ae5903909a515a8da85",
     "src/localization_text.h": "9cbb9b2c5e49287651cba6bcd273c01e148f8fd5dce4b7e39fdd86594e344cd0",
-    "scripts/localization.py": "acc44a9a92f8dd0155e534011ea0c4d76ae673e425c87fe7434c9e902826e56b",
+    "scripts/localization.py": "a5ac5ebed546faab47f0b4b4dae66f2a1ce1ece2936d2968483191ef5e02d19d",
     "tests/calibration_worker_localization.py": "c6120b78b59ae6d547cd7d0a503d4f39a46f0fa3c03c9c4007b46f8e53db34f8",
     "tests/results/localization/calibration-worker-gap.json": "1d4ef1003d317f52bf79b740686ef055d580d9f7bfcfad9e2b171c57492efba8",
     "src/worker_message_buffer.h": "1866de25517f49efba63b08ef69d6e6d7dfa4e600c1efd6588226b6fe3327e42",
-    "tests/results/localization/calibration-worker-native-ci.json": "377d797dfc8478b69a02fb63760577d5a2571393c939e35aa1eecbb270467e35"
+    "tests/results/localization/calibration-worker-native-ci.json": "377d797dfc8478b69a02fb63760577d5a2571393c939e35aa1eecbb270467e35",
+    "src/equipment_profiles.cpp": "6853faa29c08f99df84bd12c9ca938657216c57ca39b5d9a5b15e747eb6c78ed",
+    "tests/results/localization/profile-authored-defaults.json": "2d3aa7687f468de8c9b652c2dafd2afae1f929b3d401ac3390a6f691f08156af"
   },
   "auditedBaseHead": "a39082b688e3a0ad21e40c39a966ee11c44e5439",
   "sourceIdentity": "Current inspected source files are identified by SHA-256 below; base commit is historical context, not qualification of pending calibration changes",
@@ -97,5 +99,25 @@
     "nativeWindowsStatus": "fresh current framing qualification pending",
     "priorWorkerNativeEvidence": "tests/results/localization/calibration-worker-native-ci.json",
     "sourceScope": "presentation buffering only; synthesis/analysis and successful JSON unchanged"
+  },
+  "currentProfileDefaults": {
+    "scope": "Generated equipment profile defaults and authored provenance, not all metadata or whole-interface coverage",
+    "sourceSha256": "6853faa29c08f99df84bd12c9ca938657216c57ca39b5d9a5b15e747eb6c78ed",
+    "catalogMessages": 649,
+    "nonEnglishCatalogs": 33,
+    "nativeReviewed": false,
+    "behavior": "Translate human defaults at creation/import and new provenance on explicit save-copy; preserve loaded saved/published metadata verbatim. Stable IDs, filenames, digest values, filter codes and JSON keys remain unchanged.",
+    "localEvidence": [
+      "Compiled localization fixture passed",
+      "French, Arabic and Nynorsk equipment-dialog fixtures passed",
+      "Profile authored-default source guard passed",
+      "File-identifier mutation guard passed"
+    ],
+    "limitations": [
+      "No native-speaker verification",
+      "No claim of visual inspection of every new default field",
+      "Fresh Windows and installed-package qualification pending",
+      "Whole-interface dynamic expression review remains incomplete"
+    ]
   }
 }

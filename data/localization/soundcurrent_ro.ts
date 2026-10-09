@@ -713,6 +713,11 @@ Importați în bibliotecă?</translation>
       <translation>Personalizat</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>Copie personalizată a %1</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Cut</source>
       <translation>Decupează</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
@@ -1080,6 +1085,11 @@ Importați în bibliotecă?</translation>
       <translation>Importați textul răspunsului în frecvență</translation>
     </message>
     <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>S-a importat %1; SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
       <source>In-wall speaker</source>
       <translation>Boxă încastrată în perete</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
@@ -1343,6 +1353,11 @@ Importați în bibliotecă?</translation>
       <translation>Corecția măsurată de model se adaugă EQ-ului de ascultare. Puteți adăuga în continuare bas sau regla orice bandă. Include limite prudente de câștig; efectele camerei și amplificatorului necesită o măsurare a sistemului.</translation>
     </message>
     <message>
+      <source>Measured response</source>
+      <translation>Răspuns măsurat</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
       <source>Measurement conditions are required.</source>
       <translation>Condițiile de măsurare sunt obligatorii.</translation>
     </message>
@@ -1454,6 +1469,11 @@ Importați în bibliotecă?</translation>
       <translation>Filme</translation>
     </message>
     <message>
+      <source>My equipment</source>
+      <translation>Echipamentul meu</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>EQ natural de microfon</translation>
@@ -1465,6 +1485,11 @@ Importați în bibliotecă?</translation>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Egalizator natural de microfon pornit sau oprit</translation>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>Profil nou</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
@@ -2553,6 +2578,21 @@ Importați în bibliotecă?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Folosiți setările regionale ale sistemului</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Răspuns în frecvență relativ importat de utilizator; precizați orientarea / numărul de serie al microfonului sau condițiile de măsurare ale boxei înainte de utilizare.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>Corecție creată de utilizator; introduceți echipamentul și condițiile de măsurare.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>Profil creat de utilizator</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>

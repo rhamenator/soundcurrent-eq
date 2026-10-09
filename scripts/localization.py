@@ -218,7 +218,8 @@ EXTERNAL_UI_LABELS = {
 
 
 # File-format contracts from the reviewed owned WAVE diagnostic inventory.
-REVIEWED_FILE_IDENTIFIERS = {'Input: PCM16/24/32 or float32 RIFF/WAVE. Output: float32 extensible WAVE.': ('PCM16/24/32', 'float32', 'RIFF/WAVE', 'WAVE'),
+REVIEWED_FILE_IDENTIFIERS = {
+ 'Imported %1; SHA256 %2': ('SHA256',),'Input: PCM16/24/32 or float32 RIFF/WAVE. Output: float32 extensible WAVE.': ('PCM16/24/32', 'float32', 'RIFF/WAVE', 'WAVE'),
  'Cannot create output WAVE file': ('WAVE',),
  'Cannot open input WAVE file': ('WAVE',),
  'Cannot seek to WAVE audio': ('WAVE',),

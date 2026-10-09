@@ -713,6 +713,11 @@ Importovat do vaší knihovny?</translation>
       <translation>Vlastní</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>Vlastní kopie %1</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Cut</source>
       <translation>Vyjmout</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
@@ -1080,6 +1085,11 @@ Importovat do vaší knihovny?</translation>
       <translation>Importovat text odezvy</translation>
     </message>
     <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>Importováno %1; SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
       <source>In-wall speaker</source>
       <translation>Reproduktor vestavěný do stěny</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
@@ -1343,6 +1353,11 @@ Importovat do vaší knihovny?</translation>
       <translation>Naměřená korekce modelu se přidá k vašemu poslechovému EQ. Stále můžete přidat basy nebo upravit libovolné pásmo. Používá opatrné limity zesílení; vliv místnosti a zesilovače vyžaduje měření celého systému.</translation>
     </message>
     <message>
+      <source>Measured response</source>
+      <translation>Změřená odezva</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
       <source>Measurement conditions are required.</source>
       <translation>Podmínky měření jsou povinné.</translation>
     </message>
@@ -1454,6 +1469,11 @@ Importovat do vaší knihovny?</translation>
       <translation>Filmy</translation>
     </message>
     <message>
+      <source>My equipment</source>
+      <translation>Moje vybavení</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>EQ pro přirozený hlas</translation>
@@ -1465,6 +1485,11 @@ Importovat do vaší knihovny?</translation>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Zapnutí nebo vypnutí mikrofonního ekvalizéru pro přirozený hlas</translation>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>Nový profil</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
@@ -2553,6 +2578,21 @@ Importovat do vaší knihovny?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Použít místní nastavení systému</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Relativní frekvenční odezva importovaná uživatelem; před použitím uveďte orientaci / sériové číslo mikrofonu nebo podmínky měření reproduktoru.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>Korekce vytvořená uživatelem; zadejte vybavení a podmínky měření.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>Profil vytvořený uživatelem</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>

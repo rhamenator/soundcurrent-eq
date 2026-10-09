@@ -713,6 +713,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Tùy chỉnh</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>Bản sao tùy chỉnh của %1</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Cut</source>
       <translation>Cắt</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
@@ -1080,6 +1085,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Nhập văn bản đáp tuyến</translation>
     </message>
     <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>Đã nhập %1; SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
       <source>In-wall speaker</source>
       <translation>Loa âm tường</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
@@ -1343,6 +1353,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Hiệu chỉnh mẫu từ phép đo được thêm vào EQ nghe của bạn. Bạn vẫn có thể tăng âm trầm hoặc điều chỉnh bất kỳ dải nào. Áp dụng giới hạn gain thận trọng; ảnh hưởng của phòng và ampli cần phép đo toàn hệ thống.</translation>
     </message>
     <message>
+      <source>Measured response</source>
+      <translation>Đáp ứng đã đo</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
       <source>Measurement conditions are required.</source>
       <translation>Cần có điều kiện đo.</translation>
     </message>
@@ -1454,6 +1469,11 @@ Nhập vào thư viện của bạn?</translation>
       <translation>Phim</translation>
     </message>
     <message>
+      <source>My equipment</source>
+      <translation>Thiết bị của tôi</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>EQ micrô tự nhiên</translation>
@@ -1465,6 +1485,11 @@ Nhập vào thư viện của bạn?</translation>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Bật hoặc tắt cân bằng âm micrô tự nhiên</translation>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>Hồ sơ mới</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
@@ -2553,6 +2578,21 @@ Nhập vào thư viện của bạn?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Dùng thiết lập vùng của hệ thống</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Đáp ứng tần số tương đối do người dùng nhập; hãy ghi hướng / số sê-ri của micrô hoặc điều kiện đo loa trước khi sử dụng.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>Hiệu chỉnh do người dùng tạo; hãy nhập thiết bị và điều kiện đo.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>Hồ sơ do người dùng tạo</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>

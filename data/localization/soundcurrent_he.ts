@@ -713,6 +713,11 @@ Import into your library?</source>
       <translation>מותאם אישית</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>עותק מותאם אישית של %1</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Cut</source>
       <translation>גזירה</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
@@ -1080,6 +1085,11 @@ Import into your library?</source>
       <translation>ייבוא טקסט תגובה</translation>
     </message>
     <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>יובא %1; SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
       <source>In-wall speaker</source>
       <translation>רמקול שקוע בקיר</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
@@ -1343,6 +1353,11 @@ Import into your library?</source>
       <translation>תיקון הדגם שנמדד מתווסף לאקולייזר ההאזנה שלך. עדיין ניתן להוסיף בס או לכוונן כל תחום. כולל מגבלות הגבר שמרניות; השפעות החדר והמגבר דורשות מדידת מערכת.</translation>
     </message>
     <message>
+      <source>Measured response</source>
+      <translation>תגובה שנמדדה</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
       <source>Measurement conditions are required.</source>
       <translation>נדרשים תנאי המדידה.</translation>
     </message>
@@ -1454,6 +1469,11 @@ Import into your library?</source>
       <translation>סרטים</translation>
     </message>
     <message>
+      <source>My equipment</source>
+      <translation>הציוד שלי</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>אקולייזר מיקרופון טבעי</translation>
@@ -1465,6 +1485,11 @@ Import into your library?</source>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>הפעלה או כיבוי של אקולייזר המיקרופון הטבעי</translation>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>פרופיל חדש</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
@@ -2553,6 +2578,21 @@ Import into your library?</source>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>שימוש בהגדרות האזוריות של המערכת</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>תגובת תדר יחסית שיובאה על ידי המשתמש; יש לציין את כיוון המיקרופון / המספר הסידורי או את תנאי מדידת הרמקול לפני השימוש.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>תיקון שיצר המשתמש; יש להזין את הציוד ותנאי המדידה.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>פרופיל שיצר המשתמש</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>

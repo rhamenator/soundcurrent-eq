@@ -411,3 +411,7 @@ Required host PowerShell lookups total 1122 across 34 catalogs; existing safe fa
 ### Calibration subprocess captions (2026-10-09)
 
 Contextual AI review covered five new templates across all 33 non-English locales: actual logarithmic sweep bounds (20 Hz–25 kHz), the currently tested tone frequency, recorded/background byte counts, signal/background amplitude diagnostics, and failure details. Byte counts are lengths of PCM buffers; amplitudes are analysis values, not decibel levels. Portuguese uses regional varrimento/varredura terminology. Hz/kHz and placeholders retain their physical/machine identities. Debug display formatting changes do not change JSON, samples or analysis. Native-speaker verification remains unverified.
+
+### Profile defaults and authored provenance
+
+New profile names, relative-response import instructions and newly authored provenance captions now use the selected interface language. Existing saved or published metadata remains verbatim; opening a profile does not rewrite it. Filenames, SHA256 digests, profile IDs and processing data are unchanged. All 33 non-English catalogs contain the eight added captions. Compiled localization and French/Arabic/Nynorsk equipment-dialog fixtures passed locally; source guards passed in both applications. These checks do not prove native-speaker accuracy or every creation field visually. Fresh Windows and installed-package qualification remains pending.

@@ -713,6 +713,11 @@ Import into your library?</source>
       <translation>مخصص</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>نسخة مخصصة من %1</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Cut</source>
       <translation>قص</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
@@ -1080,6 +1085,11 @@ Import into your library?</source>
       <translation>استيراد نص الاستجابة</translation>
     </message>
     <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>تم استيراد %1؛ SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
       <source>In-wall speaker</source>
       <translation>مكبر صوت مدمج في الحائط</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
@@ -1343,6 +1353,11 @@ Import into your library?</source>
       <translation>يُضاف تصحيح الطراز المقاس إلى إعدادات معادل الصوت للاستماع. يمكنك إضافة الجهير أو ضبط أي نطاق. يتضمن حدودًا تحفظية للكسب؛ تتطلب تأثيرات الغرفة ومضخم الصوت قياس النظام.</translation>
     </message>
     <message>
+      <source>Measured response</source>
+      <translation>الاستجابة المقاسة</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
       <source>Measurement conditions are required.</source>
       <translation>ظروف القياس مطلوبة.</translation>
     </message>
@@ -1454,6 +1469,11 @@ Import into your library?</source>
       <translation>أفلام</translation>
     </message>
     <message>
+      <source>My equipment</source>
+      <translation>أجهزتي</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>معادل صوت طبيعي للميكروفون</translation>
@@ -1465,6 +1485,11 @@ Import into your library?</source>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>تشغيل معادل الصوت الطبيعي للميكروفون أو إيقافه</translation>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>ملف تعريف جديد</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
@@ -2553,6 +2578,21 @@ Import into your library?</source>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>استخدام الإعدادات الإقليمية للنظام</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>استجابة ترددية نسبية استوردها المستخدم؛ حدد اتجاه الميكروفون / رقمه التسلسلي أو ظروف قياس مكبر الصوت قبل الاستخدام.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>تصحيح أنشأه المستخدم؛ أدخل بيانات الجهاز وظروف القياس.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>ملف تعريف أنشأه المستخدم</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>

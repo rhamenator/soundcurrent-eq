@@ -713,6 +713,11 @@ Import into your library?</source>
       <translation>Προσαρμοσμένο</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>Προσαρμοσμένο αντίγραφο του %1</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Cut</source>
       <translation>Αποκοπή</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
@@ -1080,6 +1085,11 @@ Import into your library?</source>
       <translation>Εισαγωγή κειμένου απόκρισης</translation>
     </message>
     <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>Εισήχθη %1· SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
       <source>In-wall speaker</source>
       <translation>Εντοιχιζόμενο ηχείο</translation>
       <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
@@ -1343,6 +1353,11 @@ Import into your library?</source>
       <translation>Η μετρημένη διόρθωση μοντέλου προστίθεται στο EQ ακρόασής σας. Μπορείτε ακόμα να προσθέσετε μπάσα ή να ρυθμίσετε οποιαδήποτε ζώνη. Περιλαμβάνει συντηρητικά όρια ενίσχυσης· οι επιδράσεις χώρου και ενισχυτή απαιτούν μέτρηση ολόκληρου του συστήματος.</translation>
     </message>
     <message>
+      <source>Measured response</source>
+      <translation>Μετρημένη απόκριση</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
       <source>Measurement conditions are required.</source>
       <translation>Οι συνθήκες μέτρησης είναι υποχρεωτικές.</translation>
     </message>
@@ -1454,6 +1469,11 @@ Import into your library?</source>
       <translation>Ταινίες</translation>
     </message>
     <message>
+      <source>My equipment</source>
+      <translation>Ο εξοπλισμός μου</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
       <translation>EQ φυσικής φωνής</translation>
@@ -1465,6 +1485,11 @@ Import into your library?</source>
     <message>
       <source>Natural microphone equalizer on or off</source>
       <translation>Ενεργοποίηση ή απενεργοποίηση ισοσταθμιστή φυσικής φωνής μικροφώνου</translation>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>Νέο προφίλ</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
@@ -2553,6 +2578,21 @@ Import into your library?</source>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Χρήση τοπικών ρυθμίσεων συστήματος</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Σχετική απόκριση συχνότητας που εισήγαγε ο χρήστης· πριν από τη χρήση δηλώστε τον προσανατολισμό / σειριακό αριθμό του μικροφώνου ή τις συνθήκες μέτρησης του ηχείου.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>Διόρθωση που δημιούργησε ο χρήστης· εισαγάγετε τον εξοπλισμό και τις συνθήκες μέτρησης.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>Προφίλ που δημιούργησε ο χρήστης</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
