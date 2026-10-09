@@ -126,9 +126,17 @@
       "evidence": [
         "tests/results/localization/windows-owned-diagnostic-source-review.json",
         "tests/results/localization/windows-hresult-action-review.json",
-        "tests/results/localization/windows-format-diagnostic-review.json"
+        "tests/results/localization/windows-format-diagnostic-review.json",
+        "tests/results/localization/windows-backend-diagnostic-guard.json"
       ],
-      "auditState": "indexed; final source/evidence correspondence check pending"
+      "auditState": "current source correspondence reviewed; no missing owned diagnostic identified in guarded current boundaries",
+      "review": {
+        "adapter": "Owned setup/output/microphone/routing errors marked SC_TR. Bridge errors pass through desktop diagnostic mapping; rollback and routing logic preserved.",
+        "backend": "Every current direct literal exception, literal check/checked HRESULT action and literal checkFormat endpoint composition satisfies declared desktop mapping guard.",
+        "formatting": "Invariant English backend action/error identity matched before display. Localized action/template displayed with original hexadecimal code; unknown external detail retained.",
+        "identifiers": "GUIDs, endpoint IDs, device labels, stable sample-format/channel identifiers and driver/helper commands retain identity."
+      },
+      "runtimeLimit": "Compiled boundary fixtures and hosted installer/language tests support their recorded scopes; no new physical endpoint failure, cable repair or driver operation induced in this source audit. Fresh package jobs remain active for changed process-conflict code/catalogs."
     },
     {
       "id": "windows-setup-installers",
