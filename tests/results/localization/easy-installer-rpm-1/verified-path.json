@@ -1,0 +1,9 @@
+{
+  "run": 37914217500,
+  "platform": "Fedora44 disposable container",
+  "packageSha256": "30883dfb61295a178fe94cf30591fd38a16c274e465687321791ef2e753d9e90",
+  "result": "verified",
+  "scope": "Actual French terminal confirmation and local-package hash verification through installer main and dnf install. Already-current package retained. Surrounding direct lifecycle independently tests reinstall, uninstall and config preservation.",
+  "nativeReviewed": false,
+  "logSha256": "f1e6478352886cfd811d583472c86a894711aed6d6bdc2413f80d3edb3dced45"
+}

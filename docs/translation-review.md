@@ -537,3 +537,7 @@ Added a Docker/root-only fixture to the package lifecycle gate. It uses the job-
 ### Actual easy-installer Ubuntu path (2026-10-09)
 
 Both products passed the French terminal confirmation, local-package hash verification and actual apt-get invocation through installer main. Apt retained the already-current package; this invocation did not reinstall or migrate it. The surrounding direct lifecycle independently verifies update/reinstall, uninstall and configuration preservation. Transcript, package digest, CTest and lifecycle logs are retained. Fedora/AlmaLinux results remain pending at this checkpoint. Native-speaker verification remains unverified.
+
+### Actual easy-installer RPM paths (2026-10-09)
+
+EQ Fedora 44 and AlmaLinux 10 actual installer main paths passed: French prompt accepted, local package digest verified, dnf returned success and kept the already-current version. Direct package lifecycle checks separately passed reinstall/update, uninstall, settings preservation and reinstall. This does not demonstrate older-version migration or a first installation through the easy installer. Raw build/lifecycle/transcript evidence and verified package digests are retained. Native-speaker verification remains unverified.

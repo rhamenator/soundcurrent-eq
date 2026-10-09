@@ -53,11 +53,6 @@
   "nativeSpeakerVerification": "unverified; no certification claimed",
   "openChecks": [
     {
-      "requirement": "Actual easy-installer update workflow",
-      "status": "Hosted disposable-container run active; inspect terminal transcript, localized acceptance, checksum and final package-manager outcome before qualifying",
-      "run": 37914217500
-    },
-    {
       "requirement": "Whole owned-interface coverage",
       "status": "Consolidate finite source-surface audit across main window, equipment editor, standard dialogs, update/startup controls, platform helpers, CLI and both installers; listed lexical guards are bounded evidence, not whole coverage."
     },
@@ -74,5 +69,10 @@
     "Older-version migration",
     "Physical Windows audio/device workflows"
   ],
-  "preservation": "No changes to virtual driver or separately owned DAW workspace in this pass; diagnostic IDs and processing remain unchanged."
+  "preservation": "No changes to virtual driver or separately owned DAW workspace in this pass; diagnostic IDs and processing remain unchanged.",
+  "easyInstallerEvidence": [
+    "tests/results/localization/easy-installer-ubuntu/verified-path.json",
+    "tests/results/localization/easy-installer-rpm-1/verified-path.json",
+    "tests/results/localization/easy-installer-rpm-2/verified-path.json"
+  ]
 }
