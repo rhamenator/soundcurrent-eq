@@ -50,6 +50,11 @@ sc_resolve_language() {
                 zh-hant) printf '%s' zh-Hant; return;;
                 ja) printf '%s' ja; return;;
                 ko) printf '%s' ko; return;;
+                hi) printf '%s' hi; return;;
+                id) printf '%s' id; return;;
+                vi) printf '%s' vi; return;;
+                th) printf '%s' th; return;;
+                sw) printf '%s' sw; return;;
             esac
         done
     done
@@ -927,6 +932,156 @@ SHA256: %5
         ko:saved) printf '%s' '검증된 패키지를 %1에 저장했습니다.';;
         ko:glibc) printf '%s' '이 패키지에는 glibc %1 이상이 필요합니다. 이 시스템의 버전은 %2입니다. 아무것도 설치하지 않았습니다.';;
         ko:installed) printf '%s' '%1 %2을(를) 설치했습니다. 앱 메뉴에서 여세요. 업데이트 후에는 «앱 종료»를 사용하여 종료한 뒤 다시 여세요. 앱 업데이트를 위해 제거하거나 시스템을 재부팅할 필요는 없습니다.';;
+        hi:enterprise) printf '%s' 'वर्तमान एंटरप्राइज़ RPM के लिए RHEL 10 या उसका संगत संस्करण 10 आधारित वितरण आवश्यक है।';;
+        hi:fedora) printf '%s' 'वर्तमान Fedora पैकेज के लिए Fedora 44 या नया संस्करण आवश्यक है।';;
+        hi:unsupported) printf '%s' 'इस वितरण के लिए अभी कोई सत्यापित पैकेज नहीं है। समर्थित बिल्ड के लिए GitHub रिलीज़ पृष्ठ देखें।';;
+        hi:installer_title) printf '%s' 'SoundCurrent इंस्टॉलर';;
+        hi:install_title) printf '%s' 'SoundCurrent इंस्टॉल या अपडेट करें';;
+        hi:interactive) printf '%s' 'इस इंस्टॉलर को टर्मिनल में संवादात्मक रूप से चलाएँ।';;
+        hi:continue) printf '%s' 'जारी रखें? [y/N] ';;
+        hi:package_file) printf '%s' '--package-file के बाद किसी मौजूदा पैकेज का पथ दें।';;
+        hi:unknown_option) printf '%s' 'अज्ञात विकल्प।';;
+        hi:language_required) printf '%s' '--language के बाद भाषा टैग दें।';;
+        hi:usage) printf '%s' 'उपयोग: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        hi:architecture) printf '%s' 'इन सत्यापित पैकेजों के लिए x86-64 कंप्यूटर आवश्यक है।';;
+        hi:identify) printf '%s' 'इस वितरण की पहचान नहीं हो सकी।';;
+        hi:dry_run) printf '%s' 'उत्पाद: %1 %2
+वितरण: %3
+पैकेज: %4
+SHA256: %5
+इंस्टॉलर: %6';;
+        hi:manager) printf '%s' 'इस सिस्टम में %1 उपलब्ध नहीं है।';;
+        hi:newer) printf '%s' '%1 का नया संस्करण (%2) पहले से इंस्टॉल है। उसे रखा गया है; यह Linux इंस्टॉलर संस्करण %3 प्रदान करता है।';;
+        hi:sha_required) printf '%s' 'sha256sum आवश्यक है।';;
+        hi:quit) printf '%s' 'अपडेट करने से पहले चल रहे SoundCurrent ऐप को बंद करने के लिए «ऐप से बाहर निकलें» का उपयोग करें। विंडो बंद करने पर ऐप चलता रहता है।';;
+        hi:download_confirm) printf '%s' '%3 के लिए %1 %2 डाउनलोड करके सत्यापित करें? इंस्टॉलेशन नहीं किया जाएगा।';;
+        hi:install_confirm) printf '%s' '%3 पर %1 %2 इंस्टॉल या अपडेट करें? आपके प्रीसेट और प्रोफ़ाइल सुरक्षित रखे जाएँगे। पैकेज प्रबंधक निर्भरताएँ इंस्टॉल करता है और ऐप मेनू में आइकन जोड़ता है। प्रशासक की अनुमति आवश्यक है। एक समय में केवल एक इक्वलाइज़र चलना चाहिए।';;
+        hi:download_tool) printf '%s' 'पहले curl या wget इंस्टॉल करें।';;
+        hi:verification) printf '%s' 'पैकेज का सत्यापन विफल हुआ। कुछ भी इंस्टॉल नहीं किया गया।';;
+        hi:exists) printf '%s' 'पहले से मौजूद है: %1';;
+        hi:saved) printf '%s' 'सत्यापित पैकेज %1 में सहेजा गया।';;
+        hi:glibc) printf '%s' 'इस पैकेज के लिए glibc %1 या नया संस्करण आवश्यक है; इस सिस्टम में संस्करण %2 है। कुछ भी इंस्टॉल नहीं किया गया।';;
+        hi:installed) printf '%s' '%1 %2 इंस्टॉल हो गया। इसे ऐप मेनू से खोलें। अपडेट के बाद «ऐप से बाहर निकलें» का उपयोग करें और फिर ऐप दोबारा खोलें। ऐप अपडेट के लिए अनइंस्टॉल या सिस्टम रीबूट की आवश्यकता नहीं है।';;
+        id:enterprise) printf '%s' 'RPM perusahaan saat ini memerlukan RHEL 10 atau distribusi turunannya yang kompatibel dengan versi 10.';;
+        id:fedora) printf '%s' 'Paket Fedora saat ini memerlukan Fedora 44 atau yang lebih baru.';;
+        id:unsupported) printf '%s' 'Distribusi ini belum memiliki paket yang telah diverifikasi. Lihat halaman rilis GitHub untuk build yang didukung.';;
+        id:installer_title) printf '%s' 'Pemasang SoundCurrent';;
+        id:install_title) printf '%s' 'Pasang atau perbarui SoundCurrent';;
+        id:interactive) printf '%s' 'Jalankan pemasang ini secara interaktif di terminal.';;
+        id:continue) printf '%s' 'Lanjutkan? [y/N] ';;
+        id:package_file) printf '%s' 'Tentukan paket yang sudah ada setelah --package-file.';;
+        id:unknown_option) printf '%s' 'Opsi tidak dikenal.';;
+        id:language_required) printf '%s' 'Tentukan tag bahasa setelah --language.';;
+        id:usage) printf '%s' 'Penggunaan: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        id:architecture) printf '%s' 'Paket yang telah diverifikasi ini memerlukan komputer x86-64.';;
+        id:identify) printf '%s' 'Distribusi ini tidak dapat diidentifikasi.';;
+        id:dry_run) printf '%s' 'Produk: %1 %2
+Distribusi: %3
+Paket: %4
+SHA256: %5
+Pemasang: %6';;
+        id:manager) printf '%s' 'Sistem ini tidak memiliki %1.';;
+        id:newer) printf '%s' 'Versi %1 yang lebih baru (%2) sudah terpasang. Versi tersebut dipertahankan; pemasang Linux ini menyediakan versi %3.';;
+        id:sha_required) printf '%s' 'sha256sum diperlukan.';;
+        id:quit) printf '%s' 'Gunakan «Keluar dari aplikasi» untuk keluar dari aplikasi SoundCurrent yang sedang berjalan sebelum memperbarui. Menutup jendelanya membuat aplikasi tetap berjalan.';;
+        id:download_confirm) printf '%s' 'Unduh dan verifikasi %1 %2 untuk %3? Pemasangan tidak akan dilakukan.';;
+        id:install_confirm) printf '%s' 'Pasang atau perbarui %1 %2 pada %3? Preset dan profil Anda dipertahankan. Pengelola paket memasang dependensi dan menambahkan ikon ke menu aplikasi. Persetujuan administrator diperlukan. Hanya satu ekualiser yang boleh berjalan pada satu waktu.';;
+        id:download_tool) printf '%s' 'Pasang curl atau wget terlebih dahulu.';;
+        id:verification) printf '%s' 'Verifikasi paket gagal. Tidak ada yang dipasang.';;
+        id:exists) printf '%s' 'Sudah ada: %1';;
+        id:saved) printf '%s' 'Paket terverifikasi disimpan ke %1';;
+        id:glibc) printf '%s' 'Paket ini memerlukan glibc %1 atau yang lebih baru; sistem ini memiliki versi %2. Tidak ada yang dipasang.';;
+        id:installed) printf '%s' '%1 %2 telah dipasang. Buka dari menu aplikasi. Gunakan «Keluar dari aplikasi» dan buka kembali setelah memperbarui. Pembaruan aplikasi tidak memerlukan penghapusan instalasi atau mulai ulang sistem.';;
+        vi:enterprise) printf '%s' 'Gói RPM dành cho hệ thống doanh nghiệp hiện tại yêu cầu RHEL 10 hoặc bản phân phối phái sinh tương thích phiên bản 10.';;
+        vi:fedora) printf '%s' 'Gói Fedora hiện tại yêu cầu Fedora 44 trở lên.';;
+        vi:unsupported) printf '%s' 'Bản phân phối này chưa có gói đã được kiểm tra. Xem trang phát hành trên GitHub để biết các bản dựng được hỗ trợ.';;
+        vi:installer_title) printf '%s' 'Trình cài đặt SoundCurrent';;
+        vi:install_title) printf '%s' 'Cài đặt hoặc cập nhật SoundCurrent';;
+        vi:interactive) printf '%s' 'Chạy trình cài đặt này ở chế độ tương tác trong cửa sổ dòng lệnh.';;
+        vi:continue) printf '%s' 'Tiếp tục? [y/N] ';;
+        vi:package_file) printf '%s' 'Chỉ định một gói hiện có sau --package-file.';;
+        vi:unknown_option) printf '%s' 'Tùy chọn không xác định.';;
+        vi:language_required) printf '%s' 'Chỉ định thẻ ngôn ngữ sau --language.';;
+        vi:usage) printf '%s' 'Cách dùng: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        vi:architecture) printf '%s' 'Các gói đã được kiểm tra này yêu cầu máy tính x86-64.';;
+        vi:identify) printf '%s' 'Không thể xác định bản phân phối này.';;
+        vi:dry_run) printf '%s' 'Sản phẩm: %1 %2
+Bản phân phối: %3
+Gói: %4
+SHA256: %5
+Trình cài đặt: %6';;
+        vi:manager) printf '%s' 'Hệ thống này thiếu %1.';;
+        vi:newer) printf '%s' 'Phiên bản mới hơn của %1 (%2) đã được cài đặt. Phiên bản đó được giữ lại; trình cài đặt Linux này cung cấp phiên bản %3.';;
+        vi:sha_required) printf '%s' 'Cần có sha256sum.';;
+        vi:quit) printf '%s' 'Dùng «Thoát ứng dụng» để thoát ứng dụng SoundCurrent đang chạy trước khi cập nhật. Đóng cửa sổ vẫn để ứng dụng tiếp tục chạy.';;
+        vi:download_confirm) printf '%s' 'Tải xuống và xác minh %1 %2 cho %3? Sẽ không thực hiện cài đặt.';;
+        vi:install_confirm) printf '%s' 'Cài đặt hoặc cập nhật %1 %2 trên %3? Các thiết lập sẵn và hồ sơ của bạn được giữ lại. Trình quản lý gói cài đặt các gói phụ thuộc và thêm biểu tượng vào menu ứng dụng. Cần có sự chấp thuận của quản trị viên. Chỉ nên chạy một bộ cân bằng âm thanh tại một thời điểm.';;
+        vi:download_tool) printf '%s' 'Cài đặt curl hoặc wget trước.';;
+        vi:verification) printf '%s' 'Xác minh gói thất bại. Không có gì được cài đặt.';;
+        vi:exists) printf '%s' 'Đã tồn tại: %1';;
+        vi:saved) printf '%s' 'Gói đã xác minh được lưu vào %1';;
+        vi:glibc) printf '%s' 'Gói này cần glibc %1 trở lên; hệ thống này có phiên bản %2. Không có gì được cài đặt.';;
+        vi:installed) printf '%s' 'Đã cài đặt %1 %2. Mở từ menu ứng dụng. Dùng «Thoát ứng dụng» rồi mở lại sau khi cập nhật. Không cần gỡ cài đặt hoặc khởi động lại hệ thống để cập nhật ứng dụng.';;
+        th:enterprise) printf '%s' 'แพ็กเกจ RPM สำหรับระบบองค์กรในปัจจุบันต้องใช้ RHEL 10 หรือดิสทริบิวชันที่พัฒนาต่อยอดและเข้ากันได้กับรุ่น 10';;
+        th:fedora) printf '%s' 'แพ็กเกจ Fedora ในปัจจุบันต้องใช้ Fedora 44 หรือใหม่กว่า';;
+        th:unsupported) printf '%s' 'ดิสทริบิวชันนี้ยังไม่มีแพ็กเกจที่ผ่านการตรวจสอบ ดูหน้ารุ่นที่เผยแพร่บน GitHub สำหรับบิลด์ที่รองรับ';;
+        th:installer_title) printf '%s' 'ตัวติดตั้ง SoundCurrent';;
+        th:install_title) printf '%s' 'ติดตั้งหรืออัปเดต SoundCurrent';;
+        th:interactive) printf '%s' 'เรียกใช้ตัวติดตั้งนี้ในเทอร์มินัลแบบโต้ตอบ';;
+        th:continue) printf '%s' 'ดำเนินการต่อหรือไม่? [y/N] ';;
+        th:package_file) printf '%s' 'ระบุแพ็กเกจที่มีอยู่หลัง --package-file';;
+        th:unknown_option) printf '%s' 'ไม่รู้จักตัวเลือกนี้';;
+        th:language_required) printf '%s' 'ระบุแท็กภาษาหลัง --language';;
+        th:usage) printf '%s' 'วิธีใช้: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        th:architecture) printf '%s' 'แพ็กเกจที่ผ่านการตรวจสอบเหล่านี้ต้องใช้คอมพิวเตอร์ x86-64';;
+        th:identify) printf '%s' 'ไม่สามารถระบุดิสทริบิวชันนี้ได้';;
+        th:dry_run) printf '%s' 'ผลิตภัณฑ์: %1 %2
+ดิสทริบิวชัน: %3
+แพ็กเกจ: %4
+SHA256: %5
+ตัวติดตั้ง: %6';;
+        th:manager) printf '%s' 'ระบบนี้ไม่มี %1';;
+        th:newer) printf '%s' 'ติดตั้ง %1 รุ่นใหม่กว่า (%2) ไว้แล้ว โดยเก็บรุ่นนั้นไว้ ตัวติดตั้ง Linux นี้มีรุ่น %3';;
+        th:sha_required) printf '%s' 'ต้องมี sha256sum';;
+        th:quit) printf '%s' 'ใช้ «ออกจากแอป» เพื่อออกจากแอป SoundCurrent ที่กำลังทำงานก่อนอัปเดต การปิดหน้าต่างจะยังคงให้แอปทำงานต่อ';;
+        th:download_confirm) printf '%s' 'ดาวน์โหลดและตรวจสอบ %1 %2 สำหรับ %3 หรือไม่? จะไม่มีการติดตั้ง';;
+        th:install_confirm) printf '%s' 'ติดตั้งหรืออัปเดต %1 %2 บน %3 หรือไม่? จะเก็บพรีเซ็ตและโปรไฟล์ของคุณไว้ ตัวจัดการแพ็กเกจจะติดตั้งแพ็กเกจที่จำเป็นและเพิ่มไอคอนในเมนูแอป ต้องได้รับอนุมัติจากผู้ดูแลระบบ ควรใช้งานอีควอไลเซอร์เพียงตัวเดียวในแต่ละครั้ง';;
+        th:download_tool) printf '%s' 'ติดตั้ง curl หรือ wget ก่อน';;
+        th:verification) printf '%s' 'การตรวจสอบแพ็กเกจล้มเหลว ไม่มีการติดตั้งใด ๆ';;
+        th:exists) printf '%s' 'มีอยู่แล้ว: %1';;
+        th:saved) printf '%s' 'บันทึกแพ็กเกจที่ผ่านการตรวจสอบไปยัง %1 แล้ว';;
+        th:glibc) printf '%s' 'แพ็กเกจนี้ต้องใช้ glibc %1 หรือใหม่กว่า ระบบนี้มีรุ่น %2 ไม่มีการติดตั้งใด ๆ';;
+        th:installed) printf '%s' 'ติดตั้ง %1 %2 แล้ว เปิดจากเมนูแอป หลังอัปเดตให้ใช้ «ออกจากแอป» แล้วเปิดใหม่ การอัปเดตแอปไม่ต้องถอนการติดตั้งหรือเริ่มระบบใหม่';;
+        sw:enterprise) printf '%s' 'RPM ya sasa ya mifumo ya biashara inahitaji RHEL 10 au usambazaji unaotokana nayo unaooana na toleo la 10.';;
+        sw:fedora) printf '%s' 'Kifurushi cha sasa cha Fedora kinahitaji Fedora 44 au toleo jipya zaidi.';;
+        sw:unsupported) printf '%s' 'Usambazaji huu bado hauna kifurushi kilichohakikiwa. Angalia matoleo ya GitHub kwa matoleo ya programu yanayotumika.';;
+        sw:installer_title) printf '%s' 'Kisakinishi cha SoundCurrent';;
+        sw:install_title) printf '%s' 'Sakinisha au sasisha SoundCurrent';;
+        sw:interactive) printf '%s' 'Endesha kisakinishi hiki kwa mwingiliano katika terminali.';;
+        sw:continue) printf '%s' 'Endelea? [y/N] ';;
+        sw:package_file) printf '%s' 'Taja kifurushi kilichopo baada ya --package-file.';;
+        sw:unknown_option) printf '%s' 'Chaguo halijulikani.';;
+        sw:language_required) printf '%s' 'Taja lebo ya lugha baada ya --language.';;
+        sw:usage) printf '%s' 'Matumizi: bash %1 [--language TAG] [--dry-run|--download-only] [--package-file PATH]';;
+        sw:architecture) printf '%s' 'Vifurushi hivi vilivyohakikiwa vinahitaji kompyuta ya x86-64.';;
+        sw:identify) printf '%s' 'Haiwezekani kutambua usambazaji huu.';;
+        sw:dry_run) printf '%s' 'Bidhaa: %1 %2
+Usambazaji: %3
+Kifurushi: %4
+SHA256: %5
+Kisakinishi: %6';;
+        sw:manager) printf '%s' 'Mfumo huu hauna %1.';;
+        sw:newer) printf '%s' 'Toleo jipya zaidi la %1 (%2) tayari limesakinishwa. Limehifadhiwa; kisakinishi hiki cha Linux hutoa toleo la %3.';;
+        sw:sha_required) printf '%s' 'sha256sum inahitajika.';;
+        sw:quit) printf '%s' 'Tumia «Toka kwenye programu» kuondoka kwenye programu ya SoundCurrent inayoendeshwa kabla ya kusasisha. Kufunga dirisha lake huiacha ikiendelea kuendeshwa.';;
+        sw:download_confirm) printf '%s' 'Pakua na hakiki %1 %2 kwa %3? Hakuna usakinishaji utakaofanywa.';;
+        sw:install_confirm) printf '%s' 'Sakinisha au sasisha %1 %2 kwenye %3? Mipangilio yako iliyowekwa awali na profaili zitahifadhiwa. Kidhibiti vifurushi husakinisha vitegemezi na kuongeza aikoni kwenye menyu ya programu. Idhini ya msimamizi inahitajika. Kiisawazisha sauti kimoja tu kinapaswa kuendeshwa kwa wakati mmoja.';;
+        sw:download_tool) printf '%s' 'Sakinisha curl au wget kwanza.';;
+        sw:verification) printf '%s' 'Uhakiki wa kifurushi umeshindwa. Hakuna kilichosakinishwa.';;
+        sw:exists) printf '%s' 'Tayari ipo: %1';;
+        sw:saved) printf '%s' 'Kifurushi kilichohakikiwa kimehifadhiwa kwenye %1';;
+        sw:glibc) printf '%s' 'Kifurushi hiki kinahitaji glibc %1 au toleo jipya zaidi; mfumo huu una toleo la %2. Hakuna kilichosakinishwa.';;
+        sw:installed) printf '%s' '%1 %2 imesakinishwa. Ifungue kutoka kwenye menyu ya programu. Tumia «Toka kwenye programu» kisha uifungue tena baada ya kusasisha. Hakuna haja ya kuondoa programu au kuwasha upya mfumo ili kusasisha programu.';;
         *:enterprise) printf '%s' 'The current enterprise RPM requires RHEL 10 or a compatible version 10 derivative.';;
         *:fedora) printf '%s' 'The current Fedora package requires Fedora 44 or newer.';;
         *:unsupported) printf '%s' 'This distribution has no reviewed package yet. See the GitHub releases for supported builds.';;

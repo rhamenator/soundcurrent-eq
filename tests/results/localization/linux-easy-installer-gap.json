@@ -107,8 +107,8 @@
       "source": "message \"Installed $product $version. Open it from the applications menu. Use Quit and reopen after an update. No uninstall or reboot is needed for the app update.\""
     }
   ],
-  "status": "Standalone localization infrastructure implemented; 5 locale translations pending",
-  "nextTask": "Populate Hindi, Indonesian, Vietnamese, Thai and Swahili installer locales, then qualify actual installer UI and the complete release companion.",
+  "status": "All 34 installer catalogs populated; actual UI and package qualification pending",
+  "nextTask": "Qualify actual terminal/dialog installer interactions and final release companion packages; finish whole-interface coverage audit.",
   "nativeReviewed": false,
   "wholeInterfaceCoverageProven": false,
   "originalSourceSha256": "59a55ec160229be983015b49e71ac92164d6dcc727119b12a1b4fe9fec42bb67",
@@ -143,21 +143,26 @@
       "zh-Hans",
       "zh-Hant",
       "ja",
-      "ko"
+      "ko",
+      "hi",
+      "id",
+      "vi",
+      "th",
+      "sw"
     ],
-    "pendingLocaleCount": 5,
+    "pendingLocaleCount": 0,
     "selection": "--language TAG, SC_INSTALLER_LANGUAGE, LANGUAGE/LC_ALL/LC_MESSAGES/LANG; explicit supported region aliases and English fallback",
     "standalone": "Shell-quoted catalog embedded in the .run file; no external catalog or translation service required",
     "substitution": "Single-pass literal parameter copying; no eval or re-expansion",
     "verification": "Pinned product/version/release/repository and package hashes unchanged",
     "releaseGate": "assemble-release requires every app locale to have a complete installer catalog",
-    "tests": "Five focused tests passed with all 29 populated locales: lookup, literal substitution, help/errors, provider dialog arguments/cancellation and caption guards. No actual GTK rendering or installation."
+    "tests": "All-locale focused runtime tests plus a removed-locale negative release-gate test. Scope: lookup, literal substitution, help/errors, provider dialog arguments/cancellation and caption guards; no actual GTK rendering or installation."
   },
   "sourceSha256": {
-    "scripts/install-linux.run": "d81ae1aa504d221cc87c47608611e7b91afbdc5c4da16e9fd948b649c1a386a3",
+    "scripts/install-linux.run": "32ae166e8daf1f989fd4e21c1b679de1e192e5f162193ccc94d94271c988048a",
     "scripts/linux_installer_catalogs.py": "d3e03fe8521f3d14cda6cef691f4bb3b73f9c3b25b7a400b9344d3ce09673915",
-    "data/localization/linux-installer.json": "d5d8f4cc04ab13b266e4d69316faa0492a914504b65883193beb706c65e66779",
-    "tests/linux_installer_localization.py": "7a853c7e7375198e0a1b1270907f1262f126dd0bd5305ee73b40700e07b17400"
+    "data/localization/linux-installer.json": "79fcb57a8ab13aaf0e3e9d7fbd38237129a097d612cfbed80a6a511a1e895d67",
+    "tests/linux_installer_localization.py": "76c036b771a0299891ea15dcb2a0008df80867fcf419ec9fe302b8f22a65dfd9"
   },
   "catalogRegressionSuite": {
     "tests": 62,
@@ -234,5 +239,20 @@
     "nativeReviewed": false,
     "testLog": "tests/results/localization/linux-installer-east-asian-tests.log",
     "testLogSha256": "1808c20c110bfd7207ce8c722d86ba7c486fc28116dcb7947a6eabf54dbcc756"
+  },
+  "remainingLocaleReview": {
+    "added": [
+      "hi",
+      "id",
+      "vi",
+      "th",
+      "sw"
+    ],
+    "entriesReviewed": 130,
+    "scope": "Contextual AI review preserves installation/download distinction, no-install failures, retained newer versions and settings, administrator approval, single-equalizer advice and exact app Quit captions. Numeric versions, command flags and opaque substitutions unchanged. Native-speaker verification and actual glyph/rendering verification remain unverified.",
+    "nativeReviewed": false,
+    "testLog": "tests/results/localization/linux-installer-all-locales-tests.log",
+    "testLogSha256": "30d3f69f0d3875a516f96537047a2741391153dc21287080aa0d021c98c99413",
+    "result": "All-locale focused tests and separate removed-locale negative gate passed; exact run counts retained in log"
   }
 }

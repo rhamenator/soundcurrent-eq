@@ -501,3 +501,7 @@ Added 104 translations across four locales. Contextual AI review preserves insta
 ### Linux installer: Chinese, Japanese and Korean (2026-10-09)
 
 Added 104 entries for Simplified Chinese, Traditional Chinese, Japanese and Korean. Contextual AI review preserves actual installation/download behavior, failure outcomes, settings retention and exact app Quit captions. The two Chinese catalogs use distinct regional package, profile and equalizer terms. Korean opaque substitutions use optional case particles. Coverage is 29 locales with Hindi, Indonesian, Vietnamese, Thai and Swahili pending. Native-speaker verification remains unverified. Lookup/dialog-argument tests do not establish actual glyph rendering or installation behavior. No local VM was started.
+
+### Linux installer: remaining five locales (2026-10-09)
+
+Added 130 entries for Hindi, Indonesian, Vietnamese, Thai and Swahili. All 34 catalogs now satisfy the completion gate. Contextual AI review preserves installation versus download-only behavior, retained versions/settings, administrator approval and exact app Quit captions. A removed-locale negative test keeps the release gate effective after completion. Native-speaker verification is unverified. Lookup and dialog-argument tests do not prove actual glyph rendering or installation. Actual UI/package qualification and the whole-interface audit remain open. No local VM was used.

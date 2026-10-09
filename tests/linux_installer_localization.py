@@ -42,6 +42,20 @@ class InstallerTests(unittest.TestCase):
             with patch.object(catalogs,'ROOT',root), self.assertRaisesRegex(ValueError,'New untranslated Linux installer caption'):
                 catalogs.maintain()
 
+    def test_complete_release_gate_rejects_removed_locale(self):
+        data, _ = catalogs.payload()
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = Path(directory)
+            target = fixture / 'data/localization'
+            target.mkdir(parents=True)
+            (target / 'catalogs.json').write_bytes((ROOT / 'data/localization/catalogs.json').read_bytes())
+            del data['languages']['fr']
+            for language in data['languages']:
+                (target / f'soundcurrent_{language}.ts').symlink_to(ROOT / 'data/localization' / f'soundcurrent_{language}.ts')
+            (target / 'linux-installer.json').write_text(json.dumps(data,ensure_ascii=False),encoding='utf-8')
+            with patch.object(catalogs,'ROOT',fixture), self.assertRaisesRegex(ValueError,'Installer locales not yet translated'):
+                catalogs.payload(require_complete=True)
+
     def test_quit_instruction_must_name_the_actual_app_caption(self):
         data, _ = catalogs.payload()
         with tempfile.TemporaryDirectory() as directory:
