@@ -59,6 +59,7 @@ LangString SCQuitBeforeUninstall ${LANG_ENGLISH} "Quit SoundCurrent EQ before un
 LangString SCCableSetupProgress ${LANG_ENGLISH} "Opening VB-CABLE setup..."
 LangString SCSetupRetryProgress ${LANG_ENGLISH} "VB-CABLE setup did not finish. Retry using the Start menu shortcut."
 LangString SCCableRemovalFailed ${LANG_ENGLISH} "VB-CABLE removal did not finish. This app was kept so you can retry."
+LangString SCSetupFailedAppInstalled ${LANG_ENGLISH} "VB-CABLE setup did not finish. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason."
 LangString SCConnectAudio ${LANG_ENGLISH} "Connect your audio"
 LangString SCCableRouting ${LANG_ENGLISH} "VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome."
 LangString SCCableSharedNotice ${LANG_ENGLISH} "Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled."
@@ -179,7 +180,7 @@ Section "SoundCurrent EQ" main
       MessageBox MB_OK|MB_ICONINFORMATION "$(SCCableRestart)" /SD IDOK
     ${ElseIf} $0 != 0
       DetailPrint "$(SCSetupRetryProgress)"
-      MessageBox MB_OK|MB_ICONINFORMATION "VB-CABLE setup did not finish. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason."
+      MessageBox MB_OK|MB_ICONINFORMATION "$(SCSetupFailedAppInstalled)"
     ${EndIf}
   ${EndIf}
 SectionEnd

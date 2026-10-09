@@ -15,6 +15,45 @@ spec.loader.exec_module(catalog)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_setup_failure_keeps_actual_shortcut_and_parameter_roles(self):
+        root = Path(__file__).resolve().parents[1]
+        product = 'SoundCurrent Studio' if (root / 'src/studio_model.cpp').exists() else 'SoundCurrent EQ'
+        source = '%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.'
+        spec = importlib.util.spec_from_file_location('setup_failure_export', root / 'scripts/windows_installer_catalogs.py')
+        exporter = importlib.util.module_from_spec(spec)
+        with patch.dict('sys.modules', {'localization': catalog}):
+            spec.loader.exec_module(exporter)
+        self.assertEqual(exporter.format_values('%3 / %1 / %2', ('Driver %2', 'App $1', 'Action %1')), 'Action %1 / Driver %2 / App $1')
+        for malformed in ('%1 %2', '%1 %2 %2', '%1 %2 %4', '%1 %2 %L3', '%1 %2 %n'):
+            with self.assertRaisesRegex(ValueError, 'parameter mismatch'):
+                exporter.format_values(malformed, ('Driver',product,'Action'))
+        for installer in sorted((root / 'packaging/windows').glob('*.nsi')):
+            code = installer.read_text(encoding='utf-8')
+            driver = 'SoundCurrent Audio' if 'native' in installer.stem else 'VB-CABLE'
+            self.assertIn('MessageBox MB_OK|MB_ICONINFORMATION "$(SCSetupFailedAppInstalled)"', code)
+            self.assertNotIn('SoundCurrent Audio was not installed.', code)
+            expected = exporter.format_values(source, (driver, product, 'Audio driver setup'))
+            self.assertEqual(re.findall(r'^LangString SCSetupFailedAppInstalled \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [expected])
+            self.assertRegex(code, r'CreateShortcut "[^"]+Audio driver setup\.lnk"')
+        for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
+            message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
+            self.assertTrue(catalog.finished(message), row['tag'])
+            translated = message.findtext('translation')
+            catalog.validate_text(source, translated)
+            for driver in ('VB-CABLE','SoundCurrent Audio'):
+                result = exporter.format_values(translated, (driver, product, 'Audio driver setup'))
+                for actualName in (driver, product, 'Audio driver setup'):
+                    self.assertEqual(result.count(actualName), 1)
+            with self.assertRaisesRegex(ValueError, 'Placeholder mismatch'):
+                catalog.validate_text(source, translated.replace('%3','%2'))
+        spec = importlib.util.spec_from_file_location('all_messagebox_audit', root / 'scripts/nsis_string_audit.py')
+        audit = importlib.util.module_from_spec(spec); spec.loader.exec_module(audit)
+        found = audit.inventory(root)
+        dialogs = [row for row in found['candidates'] if row['kind'] == 'MessageBox']
+        self.assertTrue(dialogs)
+        self.assertTrue(all(row['marked'] for row in dialogs), dialogs)
+        audit.check_backlog(found, json.loads((catalog.DATA / 'nsis-text-backlog.json').read_text(encoding='utf-8')))
+
     def test_installer_restart_dialog_reuses_reviewed_notice(self):
         root = Path(__file__).resolve().parents[1]
         source = 'VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.'
@@ -460,7 +499,7 @@ class CatalogTests(unittest.TestCase):
             for variants in result['languages'].values():
                 self.assertEqual(set(variants), {'cable', 'native'})
                 for routeName, route in variants.items():
-                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed', 'SCQuitBeforeUpdate', 'SCQuitBeforeUninstall', 'SCSetupRetryProgress'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller', 'SCCableSharedNotice', 'SCCableRouting', 'SCCableSetupProgress', 'SCCableRemovalFailed'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting', 'SCNativeSetupProgress', 'SCNativeRemovalFailed'}))
+                    self.assertEqual(set(route['captions']), {'SCConnectAudio', 'SCSetupAudio', 'SCInstallDriver', 'SCDriverCheckFailed', 'SCQuitBeforeUpdate', 'SCQuitBeforeUninstall', 'SCSetupRetryProgress', 'SCSetupFailedAppInstalled'} | ({'SCCableRestart', 'SCCablePresent', 'SCCableRepair', 'SCCableSignedInstaller', 'SCCableSharedNotice', 'SCCableRouting', 'SCCableSetupProgress', 'SCCableRemovalFailed'} if routeName == 'cable' else {'SCSharedDriverNotice', 'SCNativeApproval', 'SCNativePresent', 'SCNativeRouting', 'SCNativeSetupProgress', 'SCNativeRemovalFailed'}))
                     self.assertEqual(set(route['nsisEscaped']), set(route['captions']))
 
     def test_installer_checkbox_catalog_sources_and_names(self):

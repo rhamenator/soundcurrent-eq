@@ -8,6 +8,7 @@ from pathlib import Path
 import localization as catalog
 
 SOURCES = {
+    'SCSetupFailedAppInstalled': '%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.',
     'SCCableRemovalFailed': 'VB-CABLE removal did not finish. This app was kept so you can retry.',
     'SCNativeRemovalFailed': 'Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.',
     'SCSetupRetryProgress': '%1 setup did not finish. Retry using the Start menu shortcut.',
@@ -44,6 +45,12 @@ def format_value(template, value):
         raise ValueError('Installer message needs exactly one %1')
     return template.replace('%1', value)
 
+def format_values(template, values):
+    expected = ['%' + str(index + 1) for index in range(len(values))]
+    if sorted(catalog.PLACEHOLDER.findall(template)) != sorted(expected):
+        raise ValueError('Installer message parameter mismatch')
+    return re.sub(r'%([1-9][0-9]*)', lambda match: values[int(match[1]) - 1], template)
+
 def nsis_escape(text):
     # Escape dollar first: inserted NSIS escape sequences must remain active.
     if any(ord(character) < 32 and character not in '\r\n\t' for character in text):
@@ -68,7 +75,8 @@ def export(destination, product):
         variants = {}
         for route, driver, checkbox in [('cable', 'VB-CABLE', 'SCInstallCable'),
                                          ('native', 'SoundCurrent Audio', 'SCInstallNative')]:
-            captions = {'SCSetupRetryProgress': format_value(translations['SCSetupRetryProgress'], driver),
+            captions = {'SCSetupFailedAppInstalled': format_values(translations['SCSetupFailedAppInstalled'], (driver, product, 'Audio driver setup')),
+                        'SCSetupRetryProgress': format_value(translations['SCSetupRetryProgress'], driver),
                         'SCQuitBeforeUpdate': format_value(translations['SCQuitBeforeUpdate'], product),
                         'SCQuitBeforeUninstall': format_value(translations['SCQuitBeforeUninstall'], product),
                         'SCConnectAudio': translations['SCConnectAudio'],
@@ -93,7 +101,7 @@ def export(destination, product):
                 captions['SCCableRestart'] = translations['SCCableRestart']
             variants[route] = {'captions': captions, 'nsisEscaped': {key: nsis_escape(text) for key, text in captions.items()}}
         languages[row['tag']] = variants
-    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair and signed-installer and shared-cable and cable-routing donation and quit-before-update/uninstall and setup progress and native and cable removal failure guidance only',
+    result = {'schema': 1, 'product': product, 'scope': 'Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval and existing-driver and native-routing and existing-cable and incomplete-driver repair and signed-installer and shared-cable and cable-routing donation and quit-before-update/uninstall and setup progress and native and cable removal failure and installed-app setup failure guidance only',
               'installerLocaleActivationComplete': False, 'nativeSpeakerVerified': False,
               'sources': SOURCES, 'languages': languages}
     destination.parent.mkdir(parents=True, exist_ok=True)

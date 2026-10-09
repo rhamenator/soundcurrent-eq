@@ -88,6 +88,11 @@ Import into your library?</source>
       <translation>작업 실패: %1 (0x%2)</translation>
     </message>
     <message>
+      <source>%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.</source>
+      <translation>%1 설치가 완료되지 않았습니다. %2 앱 자체는 설치되어 있습니다. 시작 메뉴의 %3을 사용하여 다시 시도하세요. 이유는 설치 세부 정보를 확인하세요.</translation>
+      <extracomment>Setup failure dialog after app files/shortcuts copied. %1 = stable driver name; %2 = stable app name; %3 = actual currently English Start-menu shortcut name Audio driver setup (not localized Qt button). Setup failure does not prove existing driver absent. Preserve app installed, Start-menu retry and details for reason. Shortcut display-name localization and upgrade cleanup remain open. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
       <translation>%1 설치가 완료되지 않았습니다. 시작 메뉴의 바로 가기로 다시 시도하세요.</translation>
       <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>

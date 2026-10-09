@@ -88,6 +88,11 @@ Import into your library?</source>
       <translation>Operación fallida: %1 (0x%2)</translation>
     </message>
     <message>
+      <source>%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.</source>
+      <translation>La instalación de %1 no se completó. %2 sí está instalado. Use %3 en el menú Inicio para volver a intentarlo; consulte los detalles de la instalación para conocer el motivo.</translation>
+      <extracomment>Setup failure dialog after app files/shortcuts copied. %1 = stable driver name; %2 = stable app name; %3 = actual currently English Start-menu shortcut name Audio driver setup (not localized Qt button). Setup failure does not prove existing driver absent. Preserve app installed, Start-menu retry and details for reason. Shortcut display-name localization and upgrade cleanup remain open. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
       <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
       <translation>La instalación de %1 no se completó. Vuelva a intentarlo desde el acceso directo del menú Inicio.</translation>
       <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>

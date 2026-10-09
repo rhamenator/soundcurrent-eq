@@ -188,3 +188,7 @@ The owned cable-removal explanation now has translations in all 33 non-English l
 ### Restart-dialog reuse and rebuilt Linux UI checks
 
 The installer restart dialog now reuses the existing all-locale restart notice. Exit-code handling, reboot flag and silent default are preserved. Both Linux apps were rebuilt with current catalogs: EQ passed 40 selected checks and Studio passed 43, including all 33 non-English UI locales, two layout-test locales, regional-format and UTF-8 diagnostics. These are offscreen widget assertions, not installed desktop or package lifecycle qualification. The restart reference audit and 34 translated message syntax checks also pass. See `tests/results/localization/second-pass-restart-reuse-linux-ui.json`.
+
+### Setup failure after app installation
+
+The shared dialog now reports setup failure without falsely claiming an existing native driver is absent. All 33 non-English translations preserve the installed app, Start-menu retry and details for the reason. A single-pass formatter validates three distinct parameters. The dialog quotes the actual currently English shortcut name `Audio driver setup`; shortcut localization and migration cleanup remain a known interface gap. All supported NSIS MessageBox sites now reference declared LangStrings. Catalog tests, 1020 caption literals and 68 setup-failure message syntax checks pass. These do not qualify locale activation or installed-package lifecycle. See `tests/results/localization/second-pass-installer-setup-failure.json`.

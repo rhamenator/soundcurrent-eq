@@ -118,9 +118,9 @@
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 157,
       "kind": "MessageBox",
-      "literal": "SoundCurrent Audio was not installed. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCSetupFailedAppInstalled)",
+      "marked": true,
+      "reviewStatus": "all locale installed-app/setup-failure translations prepared; activation/lifecycle pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
@@ -278,9 +278,9 @@
       "file": "packaging/windows/soundcurrent-eq.nsi",
       "line": 167,
       "kind": "MessageBox",
-      "literal": "VB-CABLE setup did not finish. SoundCurrent EQ itself is installed. Use Audio driver setup in the Start menu to retry; see setup details for the reason.",
-      "marked": false,
-      "reviewStatus": "untranslated candidate; contextual review pending"
+      "literal": "$(SCSetupFailedAppInstalled)",
+      "marked": true,
+      "reviewStatus": "all locale installed-app/setup-failure translations prepared; activation/lifecycle pending"
     },
     {
       "file": "packaging/windows/soundcurrent-eq.nsi",
