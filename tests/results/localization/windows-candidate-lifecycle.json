@@ -1,0 +1,19 @@
+{
+  "scope": "Silent per-user app lifecycle on independent clone; no driver installation/removal or visual qualification",
+  "settingsMarkerPreserved": true,
+  "uninstall": "passed",
+  "unknownFilePreserved": true,
+  "installerSha256": "C95304534EB8B2E47114D020CB934E50FCA8DFD456A7097236A80A52BDE826B7",
+  "audioDeviceStateUnchanged": true,
+  "nativeReviewed": false,
+  "product": "EQ",
+  "update": "passed",
+  "date": "2026-10-08",
+  "vm": "soundcurrent-win11-dev, full independent disk with no backing image",
+  "ciRun": 37740883415,
+  "limitations": [
+    "Offscreen synthetic UI fixtures do not establish visual usability or native linguistic accuracy",
+    "Silent app-only lifecycle: interactive installer and driver lifecycle not qualified",
+    "Preservation checks use owned sentinel settings and an unknown-file fixture, not exhaustive comparisons of all user data"
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "date": "2026-10-09",
+  "scope": "Owned prose in the distributed Linux easy installer; external package-manager/polkit/Zenity standard buttons are provider text. Current source contains English-only titles, confirmations and diagnostics.",
+  "candidates": [
+    {
+      "line": 18,
+      "source": "if ! [[ $major =~ ^[0-9]+$ ]] || ((major < 10)); then echo 'The current enterprise RPM requires RHEL 10 or a compatible version 10 derivative.' >&2; return 1; fi"
+    },
+    {
+      "line": 21,
+      "source": "if ! [[ $major =~ ^[0-9]+$ ]] || ((major < 44)); then echo 'The current Fedora package requires Fedora 44 or newer.' >&2; return 1; fi"
+    },
+    {
+      "line": 23,
+      "source": "*) echo 'This distribution has no reviewed package yet. See the GitHub releases for supported builds.' >&2; return 1 ;;"
+    },
+    {
+      "line": 28,
+      "source": "zenity --info --title='SoundCurrent installer' --text=\"$1\""
+    },
+    {
+      "line": 30,
+      "source": "kdialog --title 'SoundCurrent installer' --msgbox \"$1\""
+    },
+    {
+      "line": 35,
+      "source": "zenity --question --title='Install or update SoundCurrent' --text=\"$1\""
+    },
+    {
+      "line": 37,
+      "source": "kdialog --title 'Install or update SoundCurrent' --yesno \"$1\""
+    },
+    {
+      "line": 39,
+      "source": "[[ -t 0 ]] || { echo 'Run this installer interactively in a terminal.' >&2; return 1; }"
+    },
+    {
+      "line": 40,
+      "source": "printf '%s\\nContinue? [y/N] ' \"$1\"; local answer; read -r answer"
+    },
+    {
+      "line": 50,
+      "source": "[[ $# -ge 2 && -f $2 ]] || { echo 'Provide an existing package after --package-file.' >&2; return 2; }"
+    },
+    {
+      "line": 52,
+      "source": "*) echo 'Unknown option.' >&2; return 2 ;;"
+    },
+    {
+      "line": 56,
+      "source": "echo \"Usage: bash $0 [--dry-run|--download-only] [--package-file PATH]\"; return;; *) echo 'Unknown option.' >&2; return 2;; esac"
+    },
+    {
+      "line": 57,
+      "source": "[[ $(uname -m) == x86_64 ]] || { echo 'These reviewed packages require an x86-64 computer.' >&2; return 1; }"
+    },
+    {
+      "line": 58,
+      "source": "[[ -r /etc/os-release ]] || { echo 'Cannot identify this distribution.' >&2; return 1; }"
+    },
+    {
+      "line": 64,
+      "source": "command -v \"$manager\" >/dev/null || { echo \"This system is missing $manager.\" >&2; return 1; }"
+    },
+    {
+      "line": 73,
+      "source": "message \"A newer $product ($installed) is already installed. It was kept; this Linux installer provides $version.\"; return 0"
+    },
+    {
+      "line": 76,
+      "source": "command -v sha256sum >/dev/null || { echo 'sha256sum is required.' >&2; return 1; }"
+    },
+    {
+      "line": 78,
+      "source": "message 'Use Quit to exit the running SoundCurrent app before updating. Closing its window keeps it running.'; return 1"
+    },
+    {
+      "line": 81,
+      "source": "confirm \"Download and verify $product $version for ${PRETTY_NAME:-$ID}? No installation will be performed.\" || return 0"
+    },
+    {
+      "line": 83,
+      "source": "confirm \"Install or update $product $version on ${PRETTY_NAME:-$ID}? Your presets and profiles are kept. The package manager installs dependencies and adds an app-menu icon. Administrator approval is needed. Only one equalizer should run at a time.\" || return 0"
+    },
+    {
+      "line": 92,
+      "source": "else echo 'Install curl or wget first.' >&2; return 1; fi"
+    },
+    {
+      "line": 93,
+      "source": "printf '%s  %s\\n' \"$expected\" \"$package\" | sha256sum --check --status || { message 'Package verification failed. Nothing was installed.'; return 1; }"
+    },
+    {
+      "line": 97,
+      "source": "[[ ! -e $destination ]] || { echo \"Already exists: $destination\" >&2; return 1; }"
+    },
+    {
+      "line": 98,
+      "source": "cp -- \"$package\" \"$destination\"; message \"Verified package saved to $destination\"; return"
+    },
+    {
+      "line": 108,
+      "source": "message \"This package needs glibc $required or newer; this system has $actual. Nothing was installed.\"; return 1"
+    },
+    {
+      "line": 115,
+      "source": "message \"Installed $product $version. Open it from the applications menu. Use Quit and reopen after an update. No uninstall or reboot is needed for the app update.\""
+    }
+  ],
+  "status": "All 34 catalogs complete; terminal/GTK sample and package/preview qualification recorded",
+  "nextTask": "Finish finite whole-interface coverage audit; privileged easy-installer install path remains a separately documented unexercised workflow.",
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false,
+  "originalSourceSha256": "59a55ec160229be983015b49e71ac92164d6dcc727119b12a1b4fe9fec42bb67",
+  "implemented": {
+    "sources": 26,
+    "populatedLocales": [
+      "en",
+      "fr",
+      "ar",
+      "nn",
+      "de",
+      "es",
+      "it",
+      "pt-PT",
+      "pt-BR",
+      "nl",
+      "ro",
+      "hu",
+      "pl",
+      "cs",
+      "sk",
+      "sv",
+      "da",
+      "nb",
+      "fi",
+      "el",
+      "tr",
+      "uk",
+      "ru",
+      "he",
+      "fa",
+      "zh-Hans",
+      "zh-Hant",
+      "ja",
+      "ko",
+      "hi",
+      "id",
+      "vi",
+      "th",
+      "sw"
+    ],
+    "pendingLocaleCount": 0,
+    "selection": "--language TAG, SC_INSTALLER_LANGUAGE, LANGUAGE/LC_ALL/LC_MESSAGES/LANG; explicit supported region aliases and English fallback",
+    "standalone": "Shell-quoted catalog embedded in the .run file; no external catalog or translation service required",
+    "substitution": "Single-pass literal parameter copying; no eval or re-expansion",
+    "verification": "Pinned product/version/release/repository and package hashes unchanged",
+    "releaseGate": "assemble-release requires every app locale to have a complete installer catalog",
+    "tests": "All-locale focused runtime tests plus a removed-locale negative release-gate test. Scope: lookup, literal substitution, help/errors, provider dialog arguments/cancellation and caption guards; no actual GTK rendering or installation."
+  },
+  "sourceSha256": {
+    "scripts/install-linux.run": "32ae166e8daf1f989fd4e21c1b679de1e192e5f162193ccc94d94271c988048a",
+    "scripts/linux_installer_catalogs.py": "d3e03fe8521f3d14cda6cef691f4bb3b73f9c3b25b7a400b9344d3ce09673915",
+    "data/localization/linux-installer.json": "79fcb57a8ab13aaf0e3e9d7fbd38237129a097d612cfbed80a6a511a1e895d67",
+    "tests/linux_installer_localization.py": "bd8cf3ad59c5c7ff768863cd392b54f49eb23301f0f2a3172e4b86e215301b06"
+  },
+  "catalogRegressionSuite": {
+    "tests": 62,
+    "skipped": 1,
+    "passed": true
+  },
+  "rendererFixtureIsolationCorrection": "Temporary helper-source fixture now retains renderer declarations, fixing the observed Studio RPM translation-maintenance failure without weakening the renderer guard.",
+  "westernLocaleReview": {
+    "added": [
+      "de",
+      "es",
+      "it",
+      "pt-PT",
+      "pt-BR",
+      "nl"
+    ],
+    "entriesReviewed": 156,
+    "review": "Install versus download-only kept distinct; no-install failures and newer-version retention preserved. Administrator approval and single-equalizer advice retained. Regional Portuguese application/menu terminology differs explicitly. All populated languages now quote the exact Qt app Quit app caption; German sentence verbs were kept separate from the quoted action name.",
+    "nativeReviewed": false,
+    "testLog": "tests/results/localization/linux-installer-western-tests.log",
+    "testLogSha256": "15d347acad9ddbcdd393d8b5b9eeae1b6522a7a031394340ce10f3b2e1e5d2d2"
+  },
+  "centralLocaleReview": {
+    "added": [
+      "ro",
+      "hu",
+      "pl",
+      "cs",
+      "sk"
+    ],
+    "entriesReviewed": 130,
+    "scope": "Contextual AI review against script behavior: install/download separation, no-install failures, newer-version retention, kept presets/profiles and administrator approval. Exact Quit app captions copied from the Qt catalogs; package/version/CLI tokens remain unchanged. Hungarian articles use neutral a(z) for opaque substitutions. Fedora product name retained with an explicit system noun in Polish/Czech/Slovak for grammar.",
+    "nativeReviewed": false,
+    "testLog": "tests/results/localization/linux-installer-central-tests.log",
+    "testLogSha256": "983eecb7b6841d0fc7664e9203c734891f95a86487fb719575e3535beac5c222"
+  },
+  "nordicGreekTurkishReview": {
+    "added": [
+      "sv",
+      "da",
+      "nb",
+      "fi",
+      "el",
+      "tr"
+    ],
+    "entriesReviewed": 156,
+    "scope": "Contextual AI review against installer behavior; install/download separation, no-install failures, kept versions/settings, administrator approval and exact Quit app caption references retained. Bokmål stays distinct from Nynorsk. Greek insertion phrases avoid grammatical gender assumptions; Turkish confirmations deliberately reorder placeholders. Version, command and hash identifiers are unchanged.",
+    "nativeReviewed": false,
+    "testLog": "tests/results/localization/linux-installer-nordic-tests.log",
+    "testLogSha256": "7386b3fb4cb6701052f5a227febe7fe24b0f45274d48dda81318f3d77d7f5628"
+  },
+  "cyrillicRtlReview": {
+    "added": [
+      "uk",
+      "ru",
+      "he",
+      "fa"
+    ],
+    "entriesReviewed": 104,
+    "scope": "Contextual AI review against installer behavior; exact Qt Quit app captions, install/download distinction, retained settings, administrator approval and no-install errors preserved. Command tokens and opaque substitutions remain literal. Hebrew/Persian lookup and dialog arguments tested; actual RTL rendering not tested.",
+    "nativeReviewed": false,
+    "testLog": "tests/results/localization/linux-installer-cyrillic-rtl-tests.log",
+    "testLogSha256": "7f01949d24de80a4c78b0453479e9d0024a1dce30ad9cb127db980887c17f3ea"
+  },
+  "eastAsianReview": {
+    "added": [
+      "zh-Hans",
+      "zh-Hant",
+      "ja",
+      "ko"
+    ],
+    "entriesReviewed": 104,
+    "scope": "Contextual AI review preserves install/download separation, no-install outcomes, existing-version retention, settings preservation and exact app Quit captions. Simplified and Traditional Chinese use regional package/profile/equalizer terminology; Japanese uses application and package-manager terminology, Korean uses optional case particles for opaque substitutions. No native-speaker or actual glyph/rendering verification.",
+    "nativeReviewed": false,
+    "testLog": "tests/results/localization/linux-installer-east-asian-tests.log",
+    "testLogSha256": "1808c20c110bfd7207ce8c722d86ba7c486fc28116dcb7947a6eabf54dbcc756"
+  },
+  "remainingLocaleReview": {
+    "added": [
+      "hi",
+      "id",
+      "vi",
+      "th",
+      "sw"
+    ],
+    "entriesReviewed": 130,
+    "scope": "Contextual AI review preserves installation/download distinction, no-install failures, retained newer versions and settings, administrator approval, single-equalizer advice and exact app Quit captions. Numeric versions, command flags and opaque substitutions unchanged. Native-speaker verification and actual glyph/rendering verification remain unverified.",
+    "nativeReviewed": false,
+    "testLog": "tests/results/localization/linux-installer-all-locales-tests.log",
+    "testLogSha256": "30d3f69f0d3875a516f96537047a2741391153dc21287080aa0d021c98c99413",
+    "result": "All-locale focused tests and separate removed-locale negative gate passed; exact run counts retained in log"
+  },
+  "runtimeEvidence": "tests/results/localization/linux-installer-runtime.json",
+  "previewEvidence": "tests/results/localization/preview-bundle-verification.json"
+}

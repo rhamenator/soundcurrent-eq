@@ -1,0 +1,50 @@
+{
+  "scope": "Native installer administrator approval and conditional restart notice",
+  "sourceMessagesPerLocale": 609,
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "notes": [
+      "Administrator approval applies to the signed driver-management program",
+      "Setup reports if restart is required, not a universal reboot instruction",
+      "Czech, Slovak, Danish, Hebrew, traditional Chinese and Korean software-role wording refined",
+      "Notice exported only for native route"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "unitTestsPassed": 33,
+    "unitTestsSkipped": 1,
+    "compiledQtCatalogs": "regenerated; hashes checked",
+    "generatedEnglishInstallers": "all four variants unit-tested; CLI native copies byte-identical",
+    "allCaptionSyntaxFixture": "374 captions per product compiled with English language IDs only",
+    "currentFullInstallersBuilt": false,
+    "currentInstalledUiQualified": false,
+    "elevationBehaviorExecuted": false
+  },
+  "installerLanguagesEnabled": [
+    "English"
+  ],
+  "remainingScope": [
+    "Installer language activation and selection",
+    "Remaining installer/uninstaller text",
+    "One raw PowerShell repair notice",
+    "Current package/UI/lifecycle qualification"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "newPackagesQualified": false,
+  "invariants": [
+    "Elevation, signing verification, driver actions and restart conditions unchanged",
+    "Saved state and numerical processing unchanged"
+  ],
+  "evidenceSha256": {
+    "data/localization/catalogs.json": "142d3b49750dd24f2848eb511d8a039db0a7f5d1e2f446879f5eaf6ecfbbb1b2",
+    "scripts/windows_installer_catalogs.py": "34f352d9bcfbbdba3b3195b72d794a1f4ab55ea9682e946094b094beb0f30542",
+    "tests/translation_catalogs.py": "49ef73936b4cf08ae82574c7f48779546098555207697714f70bc439ea3bffac",
+    "tests/results/localization/installer-native-approval-captions.json": "957c7d215d417062324701f7d208c0768b15843fc912551e67ad65fcbf617ae6",
+    "tests/results/localization/installer-native-approval-tests.log": "838c047fb5ec8b3610c2089d177e8ca730eadbd55f3460a70a00840b088d32e8",
+    "tests/results/localization/installer-native-approval-compiler.log": "f308cdf2e961df114222d074a2ad76e33da1980dfae4ddec6e8a725f543e9a71"
+  }
+}

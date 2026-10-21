@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "observedWindowsFailureRun": 37868946180,
+  "observedWindowsFailureHead": "b2e336b44b17e26d0e8cd7cdc15f3d70c766135b",
+  "cause": "Generated multilingual script was read by test with implicit CP1252 instead of UTF-8",
+  "fix": "Explicit UTF-8 reads/writes in installer localization test infrastructure",
+  "activationTestsPassed": 5,
+  "languageMapTestsPassed": 3,
+  "swahiliAssetTestsPassed": 3,
+  "cp1252SimulationPassed": true,
+  "negativeControl": "Omitting explicit UTF-8 reproduces UnicodeDecodeError for the actual generated multilingual script",
+  "windowsCurrentPackageQualified": false,
+  "nativeSpeakerVerified": false,
+  "vmUsed": false
+}

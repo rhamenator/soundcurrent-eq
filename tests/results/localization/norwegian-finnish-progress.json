@@ -1,0 +1,41 @@
+{
+  "stage": "Norwegian Bokmål and Finnish complete extracted catalogs",
+  "catalogs": [
+    {
+      "tag": "nb",
+      "name": "Norsk bokmål",
+      "translated": 441,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "8d770787b1247bc20e7d6612f2a6a63c4aacab6a2457db99e12d2dd8a4c6280e",
+      "qmSha256": "91480feecd3ec6b92c20cfc3448c227f9d44933686442726ba43cbd4d94d5fe5"
+    },
+    {
+      "tag": "fi",
+      "name": "Suomi",
+      "translated": 441,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "f679b24d37b5eee798fad68ce4b4634b6b8a1bf7e9355e3489766ef544a093f8",
+      "qmSha256": "8c74e806692bbcc58e36dd2b35a1e7b32afe320f3a911dcc20ee1ec6351322e8"
+    }
+  ],
+  "linuxTests": {
+    "passed": 66,
+    "total": 66,
+    "scope": "Full CTest including Norwegian Bokmål/Finnish equipment workflows and all configured main windows",
+    "log": "/tmp/soundcurrent-eq-nb-fi-complete-tests.log"
+  },
+  "visualInspection": {
+    "platform": "xcb/Xvfb",
+    "display": "1280x720",
+    "sample": "Norwegian Bokmål EQ equalizer",
+    "screenshots": "/tmp/soundcurrent-eq-nb-complete-xcb"
+  },
+  "review": "Contextual AI review, unverified. Q, gain/headroom, wet mixes, loudness compensation and measured-response limits reviewed. Render counts use neutral labels.",
+  "nativeReviewed": false,
+  "windows": "Pending CI on completed catalogs",
+  "remaining": "14 target catalogs incomplete; backend/installer extraction, small-screen Polish layout and platform lifecycle/sign-in qualification remain open."
+}

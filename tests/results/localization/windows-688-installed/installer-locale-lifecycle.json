@@ -1,0 +1,67 @@
+{
+  "product": "EQ",
+  "steps": [
+    {
+      "preservation": "passed",
+      "locale": "fr",
+      "installerSha256": "F70861F5E22B4B8C79E67DB61FA2E2F2A59B80B0E78A78E3DF956A1BA33A0AFA",
+      "shortcuts": "passed",
+      "languageId": 1036
+    },
+    {
+      "preservation": "passed",
+      "locale": "nn",
+      "installerSha256": "F70861F5E22B4B8C79E67DB61FA2E2F2A59B80B0E78A78E3DF956A1BA33A0AFA",
+      "shortcuts": "passed",
+      "languageId": 2068
+    },
+    {
+      "preservation": "passed",
+      "locale": "ar",
+      "installerSha256": "F70861F5E22B4B8C79E67DB61FA2E2F2A59B80B0E78A78E3DF956A1BA33A0AFA",
+      "shortcuts": "passed",
+      "languageId": 1025
+    }
+  ],
+  "scope": "Silent cable app lifecycle on a disposable Windows VM; installed UI catalog fixtures optional, chooser rendering and native-driver lifecycle excluded",
+  "installedUiLocales": [
+    "en",
+    "de",
+    "fr",
+    "es",
+    "it",
+    "pt-PT",
+    "pt-BR",
+    "nl",
+    "pl",
+    "cs",
+    "sk",
+    "uk",
+    "ru",
+    "el",
+    "tr",
+    "sv",
+    "da",
+    "nb",
+    "fi",
+    "ro",
+    "hu",
+    "ar",
+    "he",
+    "fa",
+    "zh-Hans",
+    "zh-Hant",
+    "ja",
+    "ko",
+    "hi",
+    "id",
+    "vi",
+    "th",
+    "sw",
+    "nn"
+  ],
+  "nativeSpeakerVerified": false,
+  "installedExecutableSha256": "4E777DFD88079B6175954D3F95E65734BF4A761964C838CF2347082BEB6B0EA6",
+  "installerSha256": "F70861F5E22B4B8C79E67DB61FA2E2F2A59B80B0E78A78E3DF956A1BA33A0AFA",
+  "uninstall": "passed"
+}

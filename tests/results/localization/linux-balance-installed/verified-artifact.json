@@ -1,0 +1,35 @@
+{
+  "run": 37899561440,
+  "testedHead": "e4ecd724dc468343ba07fdeb5ad30597063c3248",
+  "catalogMessages": 694,
+  "packages": [
+    {
+      "path": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-balance-37899561440/package-validation-0/soundcurrent-eq_1.1.0_amd64.deb",
+      "sha256": "07659975d887500c7b70849b2aff6b5f7af1e1c0d6677034cc8732d5ce780c2d",
+      "installedLocales": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-balance-installed/package-validation-0"
+    },
+    {
+      "path": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-balance-37899561440/package-validation-1/soundcurrent-eq-1.1.0-1.fc44.x86_64.rpm",
+      "sha256": "0fc1512baef24998c77d4e3654157f40f20cd3d8e9cdf6fee7eb6bc7cdd2ba51",
+      "installedLocales": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-balance-installed/package-validation-1"
+    },
+    {
+      "path": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-balance-37899561440/package-validation-2/soundcurrent-eq-1.1.0-1.el10.x86_64.rpm",
+      "sha256": "4618d8a614ae83ab132f0eabf1057d4c061bcce8b80beefdf67e9a912ca0ec1e",
+      "installedLocales": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-balance-installed/package-validation-2"
+    }
+  ],
+  "environments": [
+    "Ubuntu 24.04 container",
+    "Fedora 44 container",
+    "AlmaLinux 10 container"
+  ],
+  "scope": "Full CTest and package install/menu/installed GUI/same-package in-place reinstall/uninstall/config preservation/reinstall. 33 installed non-English UI fixtures per image. No older-version migration, physical RHEL desktop, live audio or native-speaker review.",
+  "nativeReviewed": false
+}

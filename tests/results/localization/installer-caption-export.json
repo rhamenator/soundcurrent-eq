@@ -1,0 +1,899 @@
+{
+  "schema": 1,
+  "product": "SoundCurrent EQ",
+  "scope": "Reviewed heading, subtitle and driver checkbox captions only",
+  "installerLocaleActivationComplete": false,
+  "nativeSpeakerVerified": false,
+  "sources": {
+    "SCConnectAudio": "Connect your audio",
+    "SCSetupAudio": "Set up %1 for %2.",
+    "SCInstallCable": "Install VB-CABLE if missing (administrator approval)",
+    "SCInstallNative": "Install or update the shared SoundCurrent Audio driver"
+  },
+  "languages": {
+    "en": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Connect your audio",
+          "SCSetupAudio": "Set up VB-CABLE for SoundCurrent EQ.",
+          "SCInstallDriver": "Install VB-CABLE if missing (administrator approval)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Connect your audio",
+          "SCSetupAudio": "Set up VB-CABLE for SoundCurrent EQ.",
+          "SCInstallDriver": "Install VB-CABLE if missing (administrator approval)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Connect your audio",
+          "SCSetupAudio": "Set up SoundCurrent Audio for SoundCurrent EQ.",
+          "SCInstallDriver": "Install or update the shared SoundCurrent Audio driver"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Connect your audio",
+          "SCSetupAudio": "Set up SoundCurrent Audio for SoundCurrent EQ.",
+          "SCInstallDriver": "Install or update the shared SoundCurrent Audio driver"
+        }
+      }
+    },
+    "de": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Audio verbinden",
+          "SCSetupAudio": "VB-CABLE für SoundCurrent EQ einrichten.",
+          "SCInstallDriver": "VB-CABLE installieren, falls es fehlt (Administratorbestätigung)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Audio verbinden",
+          "SCSetupAudio": "VB-CABLE für SoundCurrent EQ einrichten.",
+          "SCInstallDriver": "VB-CABLE installieren, falls es fehlt (Administratorbestätigung)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Audio verbinden",
+          "SCSetupAudio": "SoundCurrent Audio für SoundCurrent EQ einrichten.",
+          "SCInstallDriver": "Den gemeinsam genutzten SoundCurrent Audio-Treiber installieren oder aktualisieren"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Audio verbinden",
+          "SCSetupAudio": "SoundCurrent Audio für SoundCurrent EQ einrichten.",
+          "SCInstallDriver": "Den gemeinsam genutzten SoundCurrent Audio-Treiber installieren oder aktualisieren"
+        }
+      }
+    },
+    "fr": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Connecter votre audio",
+          "SCSetupAudio": "Configurer VB-CABLE pour SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE s’il est absent (autorisation administrateur)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Connecter votre audio",
+          "SCSetupAudio": "Configurer VB-CABLE pour SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE s’il est absent (autorisation administrateur)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Connecter votre audio",
+          "SCSetupAudio": "Configurer SoundCurrent Audio pour SoundCurrent EQ.",
+          "SCInstallDriver": "Installer ou mettre à jour le pilote SoundCurrent Audio partagé"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Connecter votre audio",
+          "SCSetupAudio": "Configurer SoundCurrent Audio pour SoundCurrent EQ.",
+          "SCInstallDriver": "Installer ou mettre à jour le pilote SoundCurrent Audio partagé"
+        }
+      }
+    },
+    "es": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Conectar el audio",
+          "SCSetupAudio": "Configurar VB-CABLE para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar VB-CABLE si falta (aprobación del administrador)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Conectar el audio",
+          "SCSetupAudio": "Configurar VB-CABLE para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar VB-CABLE si falta (aprobación del administrador)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Conectar el audio",
+          "SCSetupAudio": "Configurar SoundCurrent Audio para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar o actualizar el controlador compartido de SoundCurrent Audio"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Conectar el audio",
+          "SCSetupAudio": "Configurar SoundCurrent Audio para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar o actualizar el controlador compartido de SoundCurrent Audio"
+        }
+      }
+    },
+    "it": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Collega l’audio",
+          "SCSetupAudio": "Configura VB-CABLE per SoundCurrent EQ.",
+          "SCInstallDriver": "Installa VB-CABLE se manca (approvazione dell’amministratore)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Collega l’audio",
+          "SCSetupAudio": "Configura VB-CABLE per SoundCurrent EQ.",
+          "SCInstallDriver": "Installa VB-CABLE se manca (approvazione dell’amministratore)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Collega l’audio",
+          "SCSetupAudio": "Configura SoundCurrent Audio per SoundCurrent EQ.",
+          "SCInstallDriver": "Installa o aggiorna il driver condiviso SoundCurrent Audio"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Collega l’audio",
+          "SCSetupAudio": "Configura SoundCurrent Audio per SoundCurrent EQ.",
+          "SCInstallDriver": "Installa o aggiorna il driver condiviso SoundCurrent Audio"
+        }
+      }
+    },
+    "pt-PT": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Ligar o áudio",
+          "SCSetupAudio": "Configurar VB-CABLE para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar o VB-CABLE se estiver em falta (autorização de administrador)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Ligar o áudio",
+          "SCSetupAudio": "Configurar VB-CABLE para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar o VB-CABLE se estiver em falta (autorização de administrador)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Ligar o áudio",
+          "SCSetupAudio": "Configurar SoundCurrent Audio para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar ou atualizar o controlador partilhado SoundCurrent Audio"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Ligar o áudio",
+          "SCSetupAudio": "Configurar SoundCurrent Audio para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar ou atualizar o controlador partilhado SoundCurrent Audio"
+        }
+      }
+    },
+    "pt-BR": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Conectar o áudio",
+          "SCSetupAudio": "Configurar VB-CABLE para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar VB-CABLE se estiver ausente (aprovação do administrador)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Conectar o áudio",
+          "SCSetupAudio": "Configurar VB-CABLE para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar VB-CABLE se estiver ausente (aprovação do administrador)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Conectar o áudio",
+          "SCSetupAudio": "Configurar SoundCurrent Audio para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar ou atualizar o driver compartilhado SoundCurrent Audio"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Conectar o áudio",
+          "SCSetupAudio": "Configurar SoundCurrent Audio para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar ou atualizar o driver compartilhado SoundCurrent Audio"
+        }
+      }
+    },
+    "nl": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Audio aansluiten",
+          "SCSetupAudio": "VB-CABLE instellen voor SoundCurrent EQ.",
+          "SCInstallDriver": "VB-CABLE installeren als het ontbreekt (goedkeuring van beheerder)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Audio aansluiten",
+          "SCSetupAudio": "VB-CABLE instellen voor SoundCurrent EQ.",
+          "SCInstallDriver": "VB-CABLE installeren als het ontbreekt (goedkeuring van beheerder)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Audio aansluiten",
+          "SCSetupAudio": "SoundCurrent Audio instellen voor SoundCurrent EQ.",
+          "SCInstallDriver": "Het gedeelde SoundCurrent Audio-stuurprogramma installeren of bijwerken"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Audio aansluiten",
+          "SCSetupAudio": "SoundCurrent Audio instellen voor SoundCurrent EQ.",
+          "SCInstallDriver": "Het gedeelde SoundCurrent Audio-stuurprogramma installeren of bijwerken"
+        }
+      }
+    },
+    "pl": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Podłącz dźwięk",
+          "SCSetupAudio": "Skonfiguruj VB-CABLE dla SoundCurrent EQ.",
+          "SCInstallDriver": "Zainstaluj VB-CABLE, jeśli go brakuje (zgoda administratora)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Podłącz dźwięk",
+          "SCSetupAudio": "Skonfiguruj VB-CABLE dla SoundCurrent EQ.",
+          "SCInstallDriver": "Zainstaluj VB-CABLE, jeśli go brakuje (zgoda administratora)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Podłącz dźwięk",
+          "SCSetupAudio": "Skonfiguruj SoundCurrent Audio dla SoundCurrent EQ.",
+          "SCInstallDriver": "Zainstaluj lub zaktualizuj współdzielony sterownik SoundCurrent Audio"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Podłącz dźwięk",
+          "SCSetupAudio": "Skonfiguruj SoundCurrent Audio dla SoundCurrent EQ.",
+          "SCInstallDriver": "Zainstaluj lub zaktualizuj współdzielony sterownik SoundCurrent Audio"
+        }
+      }
+    },
+    "cs": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Připojení zvuku",
+          "SCSetupAudio": "Nastavte VB-CABLE pro SoundCurrent EQ.",
+          "SCInstallDriver": "Nainstalovat VB-CABLE, pokud chybí (schválení správce)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Připojení zvuku",
+          "SCSetupAudio": "Nastavte VB-CABLE pro SoundCurrent EQ.",
+          "SCInstallDriver": "Nainstalovat VB-CABLE, pokud chybí (schválení správce)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Připojení zvuku",
+          "SCSetupAudio": "Nastavte SoundCurrent Audio pro SoundCurrent EQ.",
+          "SCInstallDriver": "Nainstalovat nebo aktualizovat sdílený ovladač SoundCurrent Audio"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Připojení zvuku",
+          "SCSetupAudio": "Nastavte SoundCurrent Audio pro SoundCurrent EQ.",
+          "SCInstallDriver": "Nainstalovat nebo aktualizovat sdílený ovladač SoundCurrent Audio"
+        }
+      }
+    },
+    "sk": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Pripojenie zvuku",
+          "SCSetupAudio": "Nastavte VB-CABLE pre SoundCurrent EQ.",
+          "SCInstallDriver": "Nainštalovať VB-CABLE, ak chýba (schválenie správcu)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Pripojenie zvuku",
+          "SCSetupAudio": "Nastavte VB-CABLE pre SoundCurrent EQ.",
+          "SCInstallDriver": "Nainštalovať VB-CABLE, ak chýba (schválenie správcu)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Pripojenie zvuku",
+          "SCSetupAudio": "Nastavte SoundCurrent Audio pre SoundCurrent EQ.",
+          "SCInstallDriver": "Nainštalovať alebo aktualizovať zdieľaný ovládač SoundCurrent Audio"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Pripojenie zvuku",
+          "SCSetupAudio": "Nastavte SoundCurrent Audio pre SoundCurrent EQ.",
+          "SCInstallDriver": "Nainštalovať alebo aktualizovať zdieľaný ovládač SoundCurrent Audio"
+        }
+      }
+    },
+    "uk": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Підключення звуку",
+          "SCSetupAudio": "Налаштуйте VB-CABLE для SoundCurrent EQ.",
+          "SCInstallDriver": "Установити VB-CABLE, якщо він відсутній (дозвіл адміністратора)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Підключення звуку",
+          "SCSetupAudio": "Налаштуйте VB-CABLE для SoundCurrent EQ.",
+          "SCInstallDriver": "Установити VB-CABLE, якщо він відсутній (дозвіл адміністратора)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Підключення звуку",
+          "SCSetupAudio": "Налаштуйте SoundCurrent Audio для SoundCurrent EQ.",
+          "SCInstallDriver": "Установити або оновити спільний драйвер SoundCurrent Audio"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Підключення звуку",
+          "SCSetupAudio": "Налаштуйте SoundCurrent Audio для SoundCurrent EQ.",
+          "SCInstallDriver": "Установити або оновити спільний драйвер SoundCurrent Audio"
+        }
+      }
+    },
+    "ru": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Подключение звука",
+          "SCSetupAudio": "Настройте VB-CABLE для SoundCurrent EQ.",
+          "SCInstallDriver": "Установить VB-CABLE, если он отсутствует (разрешение администратора)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Подключение звука",
+          "SCSetupAudio": "Настройте VB-CABLE для SoundCurrent EQ.",
+          "SCInstallDriver": "Установить VB-CABLE, если он отсутствует (разрешение администратора)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Подключение звука",
+          "SCSetupAudio": "Настройте SoundCurrent Audio для SoundCurrent EQ.",
+          "SCInstallDriver": "Установить или обновить общий драйвер SoundCurrent Audio"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Подключение звука",
+          "SCSetupAudio": "Настройте SoundCurrent Audio для SoundCurrent EQ.",
+          "SCInstallDriver": "Установить или обновить общий драйвер SoundCurrent Audio"
+        }
+      }
+    },
+    "el": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Σύνδεση ήχου",
+          "SCSetupAudio": "Ρυθμίστε το VB-CABLE για το SoundCurrent EQ.",
+          "SCInstallDriver": "Εγκατάσταση του VB-CABLE αν λείπει (έγκριση διαχειριστή)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Σύνδεση ήχου",
+          "SCSetupAudio": "Ρυθμίστε το VB-CABLE για το SoundCurrent EQ.",
+          "SCInstallDriver": "Εγκατάσταση του VB-CABLE αν λείπει (έγκριση διαχειριστή)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Σύνδεση ήχου",
+          "SCSetupAudio": "Ρυθμίστε το SoundCurrent Audio για το SoundCurrent EQ.",
+          "SCInstallDriver": "Εγκατάσταση ή ενημέρωση του κοινόχρηστου προγράμματος οδήγησης SoundCurrent Audio"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Σύνδεση ήχου",
+          "SCSetupAudio": "Ρυθμίστε το SoundCurrent Audio για το SoundCurrent EQ.",
+          "SCInstallDriver": "Εγκατάσταση ή ενημέρωση του κοινόχρηστου προγράμματος οδήγησης SoundCurrent Audio"
+        }
+      }
+    },
+    "tr": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Ses bağlantısını kurun",
+          "SCSetupAudio": "SoundCurrent EQ için VB-CABLE kurulumu.",
+          "SCInstallDriver": "VB-CABLE eksikse yükle (yönetici onayı)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Ses bağlantısını kurun",
+          "SCSetupAudio": "SoundCurrent EQ için VB-CABLE kurulumu.",
+          "SCInstallDriver": "VB-CABLE eksikse yükle (yönetici onayı)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Ses bağlantısını kurun",
+          "SCSetupAudio": "SoundCurrent EQ için SoundCurrent Audio kurulumu.",
+          "SCInstallDriver": "Paylaşılan SoundCurrent Audio sürücüsünü yükle veya güncelle"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Ses bağlantısını kurun",
+          "SCSetupAudio": "SoundCurrent EQ için SoundCurrent Audio kurulumu.",
+          "SCInstallDriver": "Paylaşılan SoundCurrent Audio sürücüsünü yükle veya güncelle"
+        }
+      }
+    },
+    "sv": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Anslut ljudet",
+          "SCSetupAudio": "Konfigurera VB-CABLE för SoundCurrent EQ.",
+          "SCInstallDriver": "Installera VB-CABLE om det saknas (administratörens godkännande)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Anslut ljudet",
+          "SCSetupAudio": "Konfigurera VB-CABLE för SoundCurrent EQ.",
+          "SCInstallDriver": "Installera VB-CABLE om det saknas (administratörens godkännande)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Anslut ljudet",
+          "SCSetupAudio": "Konfigurera SoundCurrent Audio för SoundCurrent EQ.",
+          "SCInstallDriver": "Installera eller uppdatera den delade SoundCurrent Audio-drivrutinen"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Anslut ljudet",
+          "SCSetupAudio": "Konfigurera SoundCurrent Audio för SoundCurrent EQ.",
+          "SCInstallDriver": "Installera eller uppdatera den delade SoundCurrent Audio-drivrutinen"
+        }
+      }
+    },
+    "da": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Tilslut lyd",
+          "SCSetupAudio": "Konfigurer VB-CABLE til SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE, hvis det mangler (administratorgodkendelse)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Tilslut lyd",
+          "SCSetupAudio": "Konfigurer VB-CABLE til SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE, hvis det mangler (administratorgodkendelse)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Tilslut lyd",
+          "SCSetupAudio": "Konfigurer SoundCurrent Audio til SoundCurrent EQ.",
+          "SCInstallDriver": "Installer eller opdater den delte SoundCurrent Audio-driver"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Tilslut lyd",
+          "SCSetupAudio": "Konfigurer SoundCurrent Audio til SoundCurrent EQ.",
+          "SCInstallDriver": "Installer eller opdater den delte SoundCurrent Audio-driver"
+        }
+      }
+    },
+    "nb": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Koble til lyd",
+          "SCSetupAudio": "Sett opp VB-CABLE for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE hvis det mangler (administratorgodkjenning)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Koble til lyd",
+          "SCSetupAudio": "Sett opp VB-CABLE for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE hvis det mangler (administratorgodkjenning)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Koble til lyd",
+          "SCSetupAudio": "Sett opp SoundCurrent Audio for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer eller oppdater den delte SoundCurrent Audio-driveren"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Koble til lyd",
+          "SCSetupAudio": "Sett opp SoundCurrent Audio for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer eller oppdater den delte SoundCurrent Audio-driveren"
+        }
+      }
+    },
+    "fi": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Äänen yhdistäminen",
+          "SCSetupAudio": "Määritä VB-CABLE sovellukselle SoundCurrent EQ.",
+          "SCInstallDriver": "Asenna VB-CABLE, jos se puuttuu (järjestelmänvalvojan hyväksyntä)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Äänen yhdistäminen",
+          "SCSetupAudio": "Määritä VB-CABLE sovellukselle SoundCurrent EQ.",
+          "SCInstallDriver": "Asenna VB-CABLE, jos se puuttuu (järjestelmänvalvojan hyväksyntä)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Äänen yhdistäminen",
+          "SCSetupAudio": "Määritä SoundCurrent Audio sovellukselle SoundCurrent EQ.",
+          "SCInstallDriver": "Asenna tai päivitä jaettu SoundCurrent Audio -ajuri"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Äänen yhdistäminen",
+          "SCSetupAudio": "Määritä SoundCurrent Audio sovellukselle SoundCurrent EQ.",
+          "SCInstallDriver": "Asenna tai päivitä jaettu SoundCurrent Audio -ajuri"
+        }
+      }
+    },
+    "ro": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Conectați sunetul",
+          "SCSetupAudio": "Configurați VB-CABLE pentru SoundCurrent EQ.",
+          "SCInstallDriver": "Instalați VB-CABLE dacă lipsește (aprobare de administrator)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Conectați sunetul",
+          "SCSetupAudio": "Configurați VB-CABLE pentru SoundCurrent EQ.",
+          "SCInstallDriver": "Instalați VB-CABLE dacă lipsește (aprobare de administrator)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Conectați sunetul",
+          "SCSetupAudio": "Configurați SoundCurrent Audio pentru SoundCurrent EQ.",
+          "SCInstallDriver": "Instalați sau actualizați driverul partajat SoundCurrent Audio"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Conectați sunetul",
+          "SCSetupAudio": "Configurați SoundCurrent Audio pentru SoundCurrent EQ.",
+          "SCInstallDriver": "Instalați sau actualizați driverul partajat SoundCurrent Audio"
+        }
+      }
+    },
+    "hu": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Hang csatlakoztatása",
+          "SCSetupAudio": "VB-CABLE beállítása a(z) SoundCurrent EQ alkalmazáshoz.",
+          "SCInstallDriver": "VB-CABLE telepítése, ha hiányzik (rendszergazdai jóváhagyás)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Hang csatlakoztatása",
+          "SCSetupAudio": "VB-CABLE beállítása a(z) SoundCurrent EQ alkalmazáshoz.",
+          "SCInstallDriver": "VB-CABLE telepítése, ha hiányzik (rendszergazdai jóváhagyás)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Hang csatlakoztatása",
+          "SCSetupAudio": "SoundCurrent Audio beállítása a(z) SoundCurrent EQ alkalmazáshoz.",
+          "SCInstallDriver": "A megosztott SoundCurrent Audio illesztőprogram telepítése vagy frissítése"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Hang csatlakoztatása",
+          "SCSetupAudio": "SoundCurrent Audio beállítása a(z) SoundCurrent EQ alkalmazáshoz.",
+          "SCInstallDriver": "A megosztott SoundCurrent Audio illesztőprogram telepítése vagy frissítése"
+        }
+      }
+    },
+    "ar": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "توصيل الصوت",
+          "SCSetupAudio": "إعداد VB-CABLE لاستخدامه مع SoundCurrent EQ.",
+          "SCInstallDriver": "تثبيت VB-CABLE إذا كان غير موجود (موافقة المسؤول)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "توصيل الصوت",
+          "SCSetupAudio": "إعداد VB-CABLE لاستخدامه مع SoundCurrent EQ.",
+          "SCInstallDriver": "تثبيت VB-CABLE إذا كان غير موجود (موافقة المسؤول)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "توصيل الصوت",
+          "SCSetupAudio": "إعداد SoundCurrent Audio لاستخدامه مع SoundCurrent EQ.",
+          "SCInstallDriver": "تثبيت برنامج تشغيل SoundCurrent Audio المشترك أو تحديثه"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "توصيل الصوت",
+          "SCSetupAudio": "إعداد SoundCurrent Audio لاستخدامه مع SoundCurrent EQ.",
+          "SCInstallDriver": "تثبيت برنامج تشغيل SoundCurrent Audio المشترك أو تحديثه"
+        }
+      }
+    },
+    "he": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "חיבור שמע",
+          "SCSetupAudio": "הגדרת VB-CABLE עבור SoundCurrent EQ.",
+          "SCInstallDriver": "התקנת VB-CABLE אם אינו מותקן (אישור מנהל מערכת)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "חיבור שמע",
+          "SCSetupAudio": "הגדרת VB-CABLE עבור SoundCurrent EQ.",
+          "SCInstallDriver": "התקנת VB-CABLE אם אינו מותקן (אישור מנהל מערכת)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "חיבור שמע",
+          "SCSetupAudio": "הגדרת SoundCurrent Audio עבור SoundCurrent EQ.",
+          "SCInstallDriver": "התקנה או עדכון של מנהל ההתקן המשותף SoundCurrent Audio"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "חיבור שמע",
+          "SCSetupAudio": "הגדרת SoundCurrent Audio עבור SoundCurrent EQ.",
+          "SCInstallDriver": "התקנה או עדכון של מנהל ההתקן המשותף SoundCurrent Audio"
+        }
+      }
+    },
+    "fa": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "اتصال صدا",
+          "SCSetupAudio": "راه‌اندازی VB-CABLE برای SoundCurrent EQ.",
+          "SCInstallDriver": "نصب VB-CABLE در صورت نبودن (تأیید مدیر سیستم)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "اتصال صدا",
+          "SCSetupAudio": "راه‌اندازی VB-CABLE برای SoundCurrent EQ.",
+          "SCInstallDriver": "نصب VB-CABLE در صورت نبودن (تأیید مدیر سیستم)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "اتصال صدا",
+          "SCSetupAudio": "راه‌اندازی SoundCurrent Audio برای SoundCurrent EQ.",
+          "SCInstallDriver": "نصب یا به‌روزرسانی درایور مشترک SoundCurrent Audio"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "اتصال صدا",
+          "SCSetupAudio": "راه‌اندازی SoundCurrent Audio برای SoundCurrent EQ.",
+          "SCInstallDriver": "نصب یا به‌روزرسانی درایور مشترک SoundCurrent Audio"
+        }
+      }
+    },
+    "zh-Hans": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "连接音频",
+          "SCSetupAudio": "为 SoundCurrent EQ 设置 VB-CABLE。",
+          "SCInstallDriver": "未安装时安装 VB-CABLE（需要管理员批准）"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "连接音频",
+          "SCSetupAudio": "为 SoundCurrent EQ 设置 VB-CABLE。",
+          "SCInstallDriver": "未安装时安装 VB-CABLE（需要管理员批准）"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "连接音频",
+          "SCSetupAudio": "为 SoundCurrent EQ 设置 SoundCurrent Audio。",
+          "SCInstallDriver": "安装或更新共享的 SoundCurrent Audio 驱动程序"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "连接音频",
+          "SCSetupAudio": "为 SoundCurrent EQ 设置 SoundCurrent Audio。",
+          "SCInstallDriver": "安装或更新共享的 SoundCurrent Audio 驱动程序"
+        }
+      }
+    },
+    "zh-Hant": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "連接音訊",
+          "SCSetupAudio": "為 SoundCurrent EQ 設定 VB-CABLE。",
+          "SCInstallDriver": "未安裝時安裝 VB-CABLE（需要系統管理員核准）"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "連接音訊",
+          "SCSetupAudio": "為 SoundCurrent EQ 設定 VB-CABLE。",
+          "SCInstallDriver": "未安裝時安裝 VB-CABLE（需要系統管理員核准）"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "連接音訊",
+          "SCSetupAudio": "為 SoundCurrent EQ 設定 SoundCurrent Audio。",
+          "SCInstallDriver": "安裝或更新共用的 SoundCurrent Audio 驅動程式"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "連接音訊",
+          "SCSetupAudio": "為 SoundCurrent EQ 設定 SoundCurrent Audio。",
+          "SCInstallDriver": "安裝或更新共用的 SoundCurrent Audio 驅動程式"
+        }
+      }
+    },
+    "ja": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "オーディオを接続",
+          "SCSetupAudio": "SoundCurrent EQ 用に VB-CABLE を設定します。",
+          "SCInstallDriver": "VB-CABLE が未インストールの場合にインストール（管理者の承認が必要）"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "オーディオを接続",
+          "SCSetupAudio": "SoundCurrent EQ 用に VB-CABLE を設定します。",
+          "SCInstallDriver": "VB-CABLE が未インストールの場合にインストール（管理者の承認が必要）"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "オーディオを接続",
+          "SCSetupAudio": "SoundCurrent EQ 用に SoundCurrent Audio を設定します。",
+          "SCInstallDriver": "共有の SoundCurrent Audio ドライバーをインストールまたは更新"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "オーディオを接続",
+          "SCSetupAudio": "SoundCurrent EQ 用に SoundCurrent Audio を設定します。",
+          "SCInstallDriver": "共有の SoundCurrent Audio ドライバーをインストールまたは更新"
+        }
+      }
+    },
+    "ko": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "오디오 연결",
+          "SCSetupAudio": "SoundCurrent EQ용 VB-CABLE을 설정합니다.",
+          "SCInstallDriver": "VB-CABLE이 없으면 설치(관리자 승인 필요)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "오디오 연결",
+          "SCSetupAudio": "SoundCurrent EQ용 VB-CABLE을 설정합니다.",
+          "SCInstallDriver": "VB-CABLE이 없으면 설치(관리자 승인 필요)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "오디오 연결",
+          "SCSetupAudio": "SoundCurrent EQ용 SoundCurrent Audio을 설정합니다.",
+          "SCInstallDriver": "공유 SoundCurrent Audio 드라이버 설치 또는 업데이트"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "오디오 연결",
+          "SCSetupAudio": "SoundCurrent EQ용 SoundCurrent Audio을 설정합니다.",
+          "SCInstallDriver": "공유 SoundCurrent Audio 드라이버 설치 또는 업데이트"
+        }
+      }
+    },
+    "hi": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "ऑडियो कनेक्ट करें",
+          "SCSetupAudio": "SoundCurrent EQ के लिए VB-CABLE सेट अप करें।",
+          "SCInstallDriver": "VB-CABLE न होने पर इंस्टॉल करें (व्यवस्थापक की अनुमति)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "ऑडियो कनेक्ट करें",
+          "SCSetupAudio": "SoundCurrent EQ के लिए VB-CABLE सेट अप करें।",
+          "SCInstallDriver": "VB-CABLE न होने पर इंस्टॉल करें (व्यवस्थापक की अनुमति)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "ऑडियो कनेक्ट करें",
+          "SCSetupAudio": "SoundCurrent EQ के लिए SoundCurrent Audio सेट अप करें।",
+          "SCInstallDriver": "साझा SoundCurrent Audio ड्राइवर इंस्टॉल या अपडेट करें"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "ऑडियो कनेक्ट करें",
+          "SCSetupAudio": "SoundCurrent EQ के लिए SoundCurrent Audio सेट अप करें।",
+          "SCInstallDriver": "साझा SoundCurrent Audio ड्राइवर इंस्टॉल या अपडेट करें"
+        }
+      }
+    },
+    "id": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Hubungkan audio",
+          "SCSetupAudio": "Siapkan VB-CABLE untuk SoundCurrent EQ.",
+          "SCInstallDriver": "Instal VB-CABLE jika belum terpasang (persetujuan administrator)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Hubungkan audio",
+          "SCSetupAudio": "Siapkan VB-CABLE untuk SoundCurrent EQ.",
+          "SCInstallDriver": "Instal VB-CABLE jika belum terpasang (persetujuan administrator)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Hubungkan audio",
+          "SCSetupAudio": "Siapkan SoundCurrent Audio untuk SoundCurrent EQ.",
+          "SCInstallDriver": "Instal atau perbarui driver SoundCurrent Audio bersama"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Hubungkan audio",
+          "SCSetupAudio": "Siapkan SoundCurrent Audio untuk SoundCurrent EQ.",
+          "SCInstallDriver": "Instal atau perbarui driver SoundCurrent Audio bersama"
+        }
+      }
+    },
+    "vi": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Kết nối âm thanh",
+          "SCSetupAudio": "Thiết lập VB-CABLE cho SoundCurrent EQ.",
+          "SCInstallDriver": "Cài đặt VB-CABLE nếu chưa có (cần quản trị viên chấp thuận)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Kết nối âm thanh",
+          "SCSetupAudio": "Thiết lập VB-CABLE cho SoundCurrent EQ.",
+          "SCInstallDriver": "Cài đặt VB-CABLE nếu chưa có (cần quản trị viên chấp thuận)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Kết nối âm thanh",
+          "SCSetupAudio": "Thiết lập SoundCurrent Audio cho SoundCurrent EQ.",
+          "SCInstallDriver": "Cài đặt hoặc cập nhật trình điều khiển SoundCurrent Audio dùng chung"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Kết nối âm thanh",
+          "SCSetupAudio": "Thiết lập SoundCurrent Audio cho SoundCurrent EQ.",
+          "SCInstallDriver": "Cài đặt hoặc cập nhật trình điều khiển SoundCurrent Audio dùng chung"
+        }
+      }
+    },
+    "th": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "เชื่อมต่อเสียง",
+          "SCSetupAudio": "ตั้งค่า VB-CABLE สำหรับ SoundCurrent EQ",
+          "SCInstallDriver": "ติดตั้ง VB-CABLE หากยังไม่มี (ต้องได้รับอนุมัติจากผู้ดูแลระบบ)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "เชื่อมต่อเสียง",
+          "SCSetupAudio": "ตั้งค่า VB-CABLE สำหรับ SoundCurrent EQ",
+          "SCInstallDriver": "ติดตั้ง VB-CABLE หากยังไม่มี (ต้องได้รับอนุมัติจากผู้ดูแลระบบ)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "เชื่อมต่อเสียง",
+          "SCSetupAudio": "ตั้งค่า SoundCurrent Audio สำหรับ SoundCurrent EQ",
+          "SCInstallDriver": "ติดตั้งหรืออัปเดตไดรเวอร์ SoundCurrent Audio ที่ใช้ร่วมกัน"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "เชื่อมต่อเสียง",
+          "SCSetupAudio": "ตั้งค่า SoundCurrent Audio สำหรับ SoundCurrent EQ",
+          "SCInstallDriver": "ติดตั้งหรืออัปเดตไดรเวอร์ SoundCurrent Audio ที่ใช้ร่วมกัน"
+        }
+      }
+    },
+    "sw": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Unganisha sauti",
+          "SCSetupAudio": "Sanidi VB-CABLE kwa ajili ya SoundCurrent EQ.",
+          "SCInstallDriver": "Sakinisha VB-CABLE ikiwa haipo (idhini ya msimamizi)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Unganisha sauti",
+          "SCSetupAudio": "Sanidi VB-CABLE kwa ajili ya SoundCurrent EQ.",
+          "SCInstallDriver": "Sakinisha VB-CABLE ikiwa haipo (idhini ya msimamizi)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Unganisha sauti",
+          "SCSetupAudio": "Sanidi SoundCurrent Audio kwa ajili ya SoundCurrent EQ.",
+          "SCInstallDriver": "Sakinisha au sasisha kiendeshi cha SoundCurrent Audio kinachoshirikiwa"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Unganisha sauti",
+          "SCSetupAudio": "Sanidi SoundCurrent Audio kwa ajili ya SoundCurrent EQ.",
+          "SCInstallDriver": "Sakinisha au sasisha kiendeshi cha SoundCurrent Audio kinachoshirikiwa"
+        }
+      }
+    },
+    "nn": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Kople til lyd",
+          "SCSetupAudio": "Set opp VB-CABLE for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE dersom det manglar (administratorgodkjenning)"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Kople til lyd",
+          "SCSetupAudio": "Set opp VB-CABLE for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE dersom det manglar (administratorgodkjenning)"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Kople til lyd",
+          "SCSetupAudio": "Set opp SoundCurrent Audio for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer eller oppdater den delte SoundCurrent Audio-drivaren"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Kople til lyd",
+          "SCSetupAudio": "Set opp SoundCurrent Audio for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer eller oppdater den delte SoundCurrent Audio-drivaren"
+        }
+      }
+    }
+  }
+}

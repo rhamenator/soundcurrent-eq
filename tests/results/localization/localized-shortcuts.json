@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "catalogs": 34,
+  "sourceMessages": 628,
+  "newSource": "Uninstall",
+  "localizedShortcuts": [
+    "uninstall",
+    "audio driver setup",
+    "VB-CABLE settings in cable variant"
+  ],
+  "stableProductFolderAndDesktopShortcutPreserved": true,
+  "retryGuidanceUsesLocalizedSetupShortcut": true,
+  "cleanup": "Explicit known current and legacy caption filenames inside the product Start-menu folder; no wildcard or recursive folder deletion",
+  "filenameChecks": [
+    "separator and invalid punctuation rejection",
+    "control character rejection",
+    "leading/trailing whitespace and trailing dot rejection",
+    "Windows reserved names",
+    "per-locale caption collision"
+  ],
+  "activationTestsPassed": 4,
+  "routeTemplatesCompiled": [
+    "cable",
+    "native"
+  ],
+  "runtimeShortcutAndUpdateQualification": false,
+  "nativeSpeakerVerified": false,
+  "vmUsed": false
+}

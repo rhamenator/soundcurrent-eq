@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-08",
+  "sourceCommit": "d070791602cd9e5d0f0e45c209e211cd31fadebb",
+  "scope": "Current populated catalogs and existing Linux build tests; missing interface strings deferred to second pass",
+  "sourceMessageCount": 524,
+  "nonEnglishCatalogs": 33,
+  "nativeReviewed": false,
+  "ctest": {
+    "command": "ctest --test-dir build --output-on-failure --parallel 2",
+    "passed": 83,
+    "failed": 0,
+    "lastTestLogSha256": "b24f9c74b41f6ea57c80e7f0d0cc48b8acf05119782400edbeaaf7b3e43491da"
+  },
+  "limitations": [
+    "Existing build tested; this run does not prove that every application executable was rebuilt from current sources",
+    "Automated offscreen UI fixtures do not establish visual usability or native linguistic accuracy",
+    "Windows and package install/update/uninstall qualification pending",
+    "Current extraction does not prove whole-interface coverage"
+  ]
+}

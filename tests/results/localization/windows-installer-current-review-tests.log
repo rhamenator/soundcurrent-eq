@@ -1,0 +1,3 @@
+PASS: lifecycle parser and pure expectation helper across 34 locales; no installation, registry, COM, audio or process mutations
+PASS: 34 catalogs, 700 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+PASS: omitted -Run returns before lifecycle mutations

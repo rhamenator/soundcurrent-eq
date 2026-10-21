@@ -1,0 +1,152 @@
+{
+  "results": [
+    {
+      "locale": "de",
+      "passed": true
+    },
+    {
+      "locale": "fr",
+      "passed": true
+    },
+    {
+      "locale": "es",
+      "passed": true
+    },
+    {
+      "locale": "it",
+      "passed": true
+    },
+    {
+      "locale": "pt-PT",
+      "passed": true
+    },
+    {
+      "locale": "pt-BR",
+      "passed": true
+    },
+    {
+      "locale": "nl",
+      "passed": true
+    },
+    {
+      "locale": "pl",
+      "passed": true
+    },
+    {
+      "locale": "cs",
+      "passed": true
+    },
+    {
+      "locale": "sk",
+      "passed": true
+    },
+    {
+      "locale": "uk",
+      "passed": true
+    },
+    {
+      "locale": "ru",
+      "passed": true
+    },
+    {
+      "locale": "el",
+      "passed": true
+    },
+    {
+      "locale": "tr",
+      "passed": true
+    },
+    {
+      "locale": "sv",
+      "passed": true
+    },
+    {
+      "locale": "da",
+      "passed": true
+    },
+    {
+      "locale": "nb",
+      "passed": true
+    },
+    {
+      "locale": "fi",
+      "passed": true
+    },
+    {
+      "locale": "ro",
+      "passed": true
+    },
+    {
+      "locale": "hu",
+      "passed": true
+    },
+    {
+      "locale": "nn",
+      "passed": true
+    },
+    {
+      "locale": "ar",
+      "passed": true
+    },
+    {
+      "locale": "he",
+      "passed": true
+    },
+    {
+      "locale": "fa",
+      "passed": true
+    },
+    {
+      "locale": "zh-Hans",
+      "passed": true
+    },
+    {
+      "locale": "zh-Hant",
+      "passed": true
+    },
+    {
+      "locale": "ja",
+      "passed": true
+    },
+    {
+      "locale": "ko",
+      "passed": true
+    },
+    {
+      "locale": "hi",
+      "passed": true
+    },
+    {
+      "locale": "id",
+      "passed": true
+    },
+    {
+      "locale": "vi",
+      "passed": true
+    },
+    {
+      "locale": "th",
+      "passed": true
+    },
+    {
+      "locale": "sw",
+      "passed": true
+    }
+  ],
+  "previousVersion": "1.0.0",
+  "uninstall": "passed separately; see windows-candidate-lifecycle.json",
+  "installation": "silent per-user baseline install/update passed",
+  "sourceCommit": "3a841b52ba8528273827a0399a7e9c6296c0d176",
+  "scope": "Installed EQ layout candidate, Windows offscreen synthetic UI; not visual or native verification",
+  "nativeReviewed": false,
+  "installerSha256": "C95304534EB8B2E47114D020CB934E50FCA8DFD456A7097236A80A52BDE826B7",
+  "upgrade": "silent per-user in-place update completed",
+  "date": "2026-10-08",
+  "vm": "soundcurrent-win11-dev, full independent disk with no backing image",
+  "ciRun": 37740883415,
+  "limitations": [
+    "Offscreen synthetic UI fixtures do not establish visual usability or native linguistic accuracy",
+    "Silent app-only lifecycle: interactive installer and driver lifecycle not qualified",
+    "Preservation checks use owned sentinel settings and an unknown-file fixture, not exhaustive comparisons of all user data"
+  ]
+}

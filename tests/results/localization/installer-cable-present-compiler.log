@@ -1,0 +1,17 @@
+476 generated captions; syntax-only fixture uses English language IDs. No locale activation, output restoration or UI layout qualification.
+Processing config: /etc/nsisconf.nsh
+Processing script file: "/tmp/sc-cable-present-k02nqc8d/captions.nsi" (UTF8)
+
+Processed 1 file, writing output (x86-unicode):
+
+Output: "/tmp/sc-cable-present-k02nqc8d/captions.exe"
+Install: 1 page (64 bytes), 1 section (1 required) (4120 bytes), 516 instructions (14448 bytes), 462 strings (84698 bytes), 1 language table (2130 bytes).
+
+Using zlib compression.
+
+EXE header size:              133120 / 120832 bytes
+Install code:                  24720 / 103876 bytes
+Install data:                      0 / 0 bytes
+CRC (0xE8569F3D):                  4 / 4 bytes
+
+Total size:                   157844 / 224712 bytes (70.2%)

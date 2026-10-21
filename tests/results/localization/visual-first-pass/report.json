@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-08",
+  "sourceCommit": "8c3bf505ea701b0fe7ff0a82cfdfeddd02bfa001",
+  "build": "cmake --build build --parallel 2 completed successfully before capture",
+  "environment": "Xvfb 1280x720, QT_QPA_PLATFORM=xcb; application default window size",
+  "workflow": "--localization-ui-test; synthetic controls, no live audio",
+  "screenshotsInspected": true,
+  "nativeReviewed": false,
+  "observations": [
+    {
+      "locale": "pl",
+      "screenshot": "tests/results/localization/visual-first-pass/pl-equalizer-1280x720.png",
+      "sha256": "9cf6cb59a768d0f98a7c0644eff0d30d629aedc62e944ecd50aad1523d83ad49",
+      "finding": "Headroom label clipped at right edge; outer page horizontal scrolling",
+      "qualified": false
+    }
+  ],
+  "pending": [
+    "Correct Polish layout and re-inspect",
+    "Verify mixed-direction signs/units and all pages",
+    "HiDPI and actual Windows interface/package qualification",
+    "Second-pass missing interface string coverage"
+  ]
+}

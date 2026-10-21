@@ -1,0 +1,206 @@
+{
+  "sourceCommit": "b032755523fb68de8ca67160a4a9de484b2cab78",
+  "environment": "Host Linux Xvfb 1920x1080 at 200%, xcb; effective 960x540",
+  "scope": "Automated first-page layout measurements and existing locale/control fixture; not visual or native-speaker review",
+  "nativeReviewed": false,
+  "locales": [
+    {
+      "locale": "de",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "fr",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "es",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "it",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "pt-PT",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "pt-BR",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "nl",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "pl",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "cs",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "sk",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "uk",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "ru",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "el",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "tr",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "sv",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "da",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "nb",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "fi",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "ro",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "hu",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "ar",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "he",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "fa",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "zh-Hans",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "zh-Hant",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "ja",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "ko",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "hi",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "id",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "vi",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "th",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "sw",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    },
+    {
+      "locale": "nn",
+      "fixtureExitCode": 0,
+      "viewport": 898,
+      "outerHorizontalMaximum": 0
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-09",
+  "scope": "Current checkFormat calls with literal endpoint labels and their composed format diagnostics",
+  "rows": [
+    {
+      "file": "src/windows_audio.cpp",
+      "endpoint": "Cable recording endpoint",
+      "diagnostic": "Cable recording endpoint does not support shared 48 kHz stereo float audio"
+    }
+  ],
+  "sourceSha256": {
+    "src/windows_audio.cpp": "6499a93ccc8429a6a257fc9c1cd52cdfae11f2045c40b6c5a037c4c614b1d0bd",
+    "src/audio_error_text.h": "45426afb00c16ba5d9f96d19045dab8ffda48946edb6be1395afb156f75c5554",
+    "scripts/localization.py": "5e4ac4b9490e99b5e2884415e2b537c0c04d9b006c0f4806afdf999cb8bb3601",
+    "tests/translation_catalogs.py": "f98e1d8aaa12ada08a59d24da152b581e05c60cbd4acfdc4d0c6173c60757e7f"
+  },
+  "result": "Current full diagnostics have exact declared desktop mappings; positive/missing/undeclared-target focused fixtures and complete-catalog checks passed.",
+  "nativeReviewed": false,
+  "runtimeLimit": "Source/fixture qualification only; no physical endpoint format failure induced."
+}

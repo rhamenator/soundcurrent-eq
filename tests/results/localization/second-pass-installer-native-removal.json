@@ -1,0 +1,41 @@
+{
+  "scope": "Native shared driver removal failure message",
+  "source": "Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.",
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "sourceMessages": 622,
+  "unfinishedExtractedEntries": 0,
+  "contextualReview": {
+    "status": "AI reviewed native uninstaller nonzero failure branch excluding restart code 3010",
+    "correction": "Quit any running SoundCurrent app rather than instructing both EQ and Studio regardless of running state",
+    "preserved": "App retained for retry and uninstall abort before deleting payload; full exit rather than closing UI",
+    "refinedLocales": [
+      "nn",
+      "sw"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "catalogTests": {
+      "total": 46,
+      "passed": 45,
+      "skipped": 1
+    },
+    "compiledCatalogHashes": "verified",
+    "nsisLiteralCompiler": {
+      "captions": 918,
+      "languageIDs": "English fixture only",
+      "localeActivation": false,
+      "layoutQualified": false
+    },
+    "guards": "SoundCurrent name preserved; error still followed by Abort; native-only route caption"
+  },
+  "uninstallActionsAndDSPChanged": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Welcome and remaining setup/restart/cable removal/helper notices",
+    "Installer locale activation and installed layout",
+    "Current runtime and package install/update/uninstall qualification"
+  ]
+}

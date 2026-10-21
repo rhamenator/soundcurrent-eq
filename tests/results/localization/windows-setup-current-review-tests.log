@@ -1,0 +1,7 @@
+PASS: actual repair modal argument formatting in all 34 catalogs; inert capture, no UI or driver actions
+PASS: 1190 required helper text lookups, locale selection, external fallback, missing data and PowerShell parsing; no driver/endpoint actions
+PASS: helper prose regression guard; 2 existing candidates remain explicitly unresolved
+PASS: 34 catalogs, 700 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+PASS: actual cable/native quiet action-validation errors in fr/ar/nn; no action switches or driver/endpoint checks
+PASS: actual native missing-manager faults in fr/ar/nn; no elevation or driver actions
+PASS: mutation test rejected newly added untranslated helper caption

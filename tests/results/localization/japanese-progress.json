@@ -1,0 +1,32 @@
+{
+  "stage": "Japanese current catalogs populated",
+  "catalogs": [
+    {
+      "tag": "ja",
+      "name": "日本語",
+      "translated": 441,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "a9fee527ed19a37112a7070d2ffdd174285212f81b6fe0ae727be5e31bc5ce8c",
+      "qmSha256": "95c5c0932541a558e84481fc6d7c91a8cfa0e1c0d9e8a08a8ce96ef8ed0cd184"
+    }
+  ],
+  "linuxTests": {
+    "status": "passed",
+    "scope": "Full Linux CTest",
+    "log": "/tmp/soundcurrent-eq-ja-complete-tests.log",
+    "passed": 75,
+    "total": 75
+  },
+  "review": "Contextual AI review across current Japanese catalogs: device routing, calibration limitations, DSP controls, save/quit behavior and neutral rendering counts. Unverified; no native-speaker review.",
+  "nativeReviewed": false,
+  "windows": "Pending CI; no Windows runtime qualification for this batch",
+  "remaining": "Six target catalogs incomplete. Second-pass omitted source strings, visual and Windows lifecycle qualification remain open.",
+  "focusedWorkflowTests": {
+    "passed": 4,
+    "total": 4,
+    "scope": "Japanese profile editor workflow, embedded catalog completeness, standard Save, regional resolution, LTR, MainWindow offscreen and structural checks",
+    "log": "/tmp/soundcurrent-eq-ja-workflows-tests.log"
+  }
+}

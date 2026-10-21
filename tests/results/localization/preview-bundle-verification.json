@@ -1,0 +1,18 @@
+{
+  "previewDirectory": "/home/rich/dev/soundcurrent-localization-previews/soundcurrent-eq",
+  "linuxInstaller": "/home/rich/dev/soundcurrent-localization-previews/soundcurrent-eq/SoundCurrent-EQ-Linux-Installer.run",
+  "linuxInstallerSha256": "71eb71a03af00b32b0da378719dabba935c38b4e35207e74e59c9bfb2302076a",
+  "manifestValidated": true,
+  "embeddedCatalogMatchesCurrentSource": true,
+  "localeDryRuns": 34,
+  "packageHashes": {
+    "soundcurrent-eq_1.1.0_amd64.deb": "f71f4585a2800d9efa7dbb53c053a594a6ef5424bbcc5678f68305849f91a86b",
+    "soundcurrent-eq-1.1.0-1.fc44.x86_64.rpm": "bb2b4fc82dab7025c8d9eedb68f6bf4639324bf1ea166ab3c8fff86d000761b7",
+    "soundcurrent-eq-1.1.0-1.el10.x86_64.rpm": "4e4af4ee334f6cc620380cd296a29f912eea5c926330d85d2b1967edf5d89873"
+  },
+  "windowsQualifiedProductionHead": "35d3605f3b289257d2b9e69e70163c6deda50146",
+  "windowsCurrentAppAndInstallerSourcesMatch": true,
+  "scope": "Local unpublished preview assembly; easy-installer dry runs select current Ubuntu package without download/install. Current Linux container and Windows hosted lifecycle qualifications retained separately, including actual French easy-installer main on a verified local current package. No native-speaker verification or physical Windows audio qualification.",
+  "nativeReviewed": false,
+  "releasePublished": false
+}

@@ -1,0 +1,18 @@
+{
+  "run": 37918553344,
+  "qualifiedProductionHead": "cac01931a91c5cbf0f5285bd5058043731d145ab",
+  "platform": "Fedora 44 disposable container",
+  "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-measured-linux-37918553344/package-validation-1/soundcurrent-eq-1.1.0-1.fc44.x86_64.rpm",
+  "packageSha256": "bb2b4fc82dab7025c8d9eedb68f6bf4639324bf1ea166ab3c8fff86d000761b7",
+  "sha256ManifestMatches": true,
+  "allCTestPassed": true,
+  "standaloneInstallerCatalogCTestPassed": true,
+  "installedLocaleCompletions": 33,
+  "launcherInstallUpdateReinstallMatchesCurrentSource": true,
+  "currentProductionSourcesMatchQualifiedHead": true,
+  "actualFrenchEasyInstallerMainPassed": true,
+  "scope": "Package install, same-package update, uninstall/config preservation and reinstall; installed locale fixtures and exact launcher bytes. Actual French easy-installer main uses verified local package through apt/dnf on an already installed current package. No older-version migration, downloaded package path or first-install easy-installer execution proven.",
+  "nativeReviewed": false,
+  "allLocaleVisualRenderingProven": false,
+  "wholeInterfaceCoverageProven": false
+}

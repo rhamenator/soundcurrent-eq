@@ -1,0 +1,153 @@
+{
+  "date": "2026-10-09",
+  "scope": "Manual provenance review of dynamic display expressions without direct translation calls; follows concrete producers in listed sources. Not an exhaustive review of all composed translated expressions or external provider strings.",
+  "groups": [
+    {
+      "files": [
+        "src/enhancement_controls.h"
+      ],
+      "classification": "Locale-formatted numbers and percent sign; parameter captions through i18n::text; addRow(widget) expressions are widget placement, not untranslated prose."
+    },
+    {
+      "files": [
+        "src/equipment_profiles.cpp"
+      ],
+      "classification": "Profile names, source, conditions and provenance are imported/user metadata. Owned require diagnostics use i18n::text before throwing; displayed std::exception text originates at this boundary. Button/ask helper label/title arguments must be checked at callers, not inferred from parameter names."
+    },
+    {
+      "files": [
+        "src/localization.h"
+      ],
+      "classification": "Language/territory autonyms and BCP47 tags intentionally identify languages; these are not English-owned captions."
+    },
+    {
+      "files": [
+        "src/localized_file_dialog.h"
+      ],
+      "classification": "Title arguments forward caller-translated captions; declaration signatures and native delegation are inventory false positives."
+    },
+    {
+      "files": [
+        "src/update_panel.h"
+      ],
+      "classification": "remind(message) receives translated owned update templates; filenames/version tags remain opaque."
+    },
+    {
+      "files": [
+        "src/main.cpp",
+        "src/processing_guard.cpp",
+        "src/localization_text.h"
+      ],
+      "classification": "Setup finish messages originate from SC_TR or audioSetupOutput mapping. Calibration status comes from localized child worker messages through bounded UTF-8 buffering. Conflict reason originates from translated processing guard. Speaker details use translated display helpers with opaque model/source metadata; device descriptions and custom preset keys retain system/user identity. Numeric gain/frequency captions use QLocale. Synthetic multilingual setItemText belongs only to fixture."
+    }
+  ],
+  "sourceSha256": {
+    "src/enhancement_controls.h": "a5c3e8358fa8235b9625567e152dc3eb73ba54f13fba8b4fba2202a272262b52",
+    "src/equipment_profiles.cpp": "1d4adb32603fc05635a456aaf584ede368ad73fc4ebb27acd696890771686f63",
+    "src/localization.h": "f430613fdec6915b10791010bdf9f1e36838240571accd041b818ba00e3561b9",
+    "src/localized_file_dialog.h": "db8e7403e18efca39f41bcb02238c94297e09cc9b9a1f9870f12276bdc58a7ff",
+    "src/update_panel.h": "c39b2e267dd634bd49ca63122401cf5c5c2e6cc2735d4f8396eb66a1a52264a3",
+    "src/main.cpp": "27dc3d05c3aef5aa0900dff5f9cdd12bc8aee62d31dccfe72b4e087e3bfa5fc1",
+    "src/processing_guard.cpp": "7357547a751b724be0c1743d94f8318a9f86b5f6b2180911799dc660bd5e74b2",
+    "src/localization_text.h": "d9d06c97d3108e857250a419243138cd0939a72a0d19b535666beb1eedcf776c"
+  },
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false,
+  "remaining": [
+    "Whole-interface coverage remains unproven: display sinks outside the lexical inventory require a finite surface audit.",
+    "External MIME/Windows association descriptions remain provider-owned; native-speaker verification remains unverified."
+  ],
+  "composedCaptionReview": {
+    "scope": "Expressions in dynamic inventory containing translation calls plus concatenation/arg composition; manually inspect producers for setup, microphone status, speaker details, numeric labels, accessibility captions and update panel. Source review does not substitute for every live device workflow.",
+    "reviewedBoundaries": [
+      "Microphone disconnect notice and USB hint are translated complete sentences/fragments; device description remains opaque",
+      "Speaker/amplifier metadata remains opaque; profile selection suffixes and filter/detail helpers translate owned captions",
+      "Tray tooltip uses invariant application name plus translated equalizer status",
+      "Translated gain labels use locale numeric strings; band accessibility counts and coverage totals corrected in latest source",
+      "Balance label uses translated Center/L/R with locale digits and percent sign",
+      "Setup errorString is external Qt/system diagnostic inside translated app template",
+      "Installed version is stable version metadata in translated template"
+    ],
+    "sourceSha256": {
+      "src/main.cpp": "27dc3d05c3aef5aa0900dff5f9cdd12bc8aee62d31dccfe72b4e087e3bfa5fc1",
+      "src/localization.h": "f430613fdec6915b10791010bdf9f1e36838240571accd041b818ba00e3561b9",
+      "src/localization_text.h": "d9d06c97d3108e857250a419243138cd0939a72a0d19b535666beb1eedcf776c",
+      "src/update_panel.h": "c39b2e267dd634bd49ca63122401cf5c5c2e6cc2735d4f8396eb66a1a52264a3"
+    },
+    "result": "No further owned English prose found in the listed reviewed composed expressions. Current production package qualification is recorded separately in current-requirement-checkpoint.json; it does not prove every interface surface.",
+    "nativeReviewed": false
+  },
+  "expandedSinksReview": {
+    "tableHeaders": "Equipment headers Type/Frequency Hz/Gain dB translated; Q is standard filter quality-factor symbol. Studio table helper callers translate Type/Input channel/Gain polarity/Channel/Peak; Hz/dB/Q remain unit symbols.",
+    "trayMessages": "Owned title/body translate at call sites; update reminder body traced through update_panel templates.",
+    "directoryTitles": "Update download folder caption translated at caller; FileDialogs forwards caller title.",
+    "suffixes": "Enhancement metadata contains only standard Hz/s/ms/dB/dBFS, multiplication and ratio symbols, or empty units.",
+    "menuConstructor": "QMenu(this) supplies a parent widget, not a visible title.",
+    "qualification": "Source review only. Current production Linux and Windows package qualification has completed; scopes and limitations are recorded in current-requirement-checkpoint.json."
+  },
+  "equipmentHelperCallerReview": {
+    "sourceSha256": "1d4adb32603fc05635a456aaf584ede368ad73fc4ebb27acd696890771686f63",
+    "scope": "All current ask, field and button helper callers in equipment_profiles.cpp, plus profile-list name producer. Manual source review; no additional runtime workflow claim.",
+    "ask": {
+      "definitionLine": 45,
+      "callerLines": [
+        299,
+        652,
+        770
+      ],
+      "result": "All three titles and body templates use SC_TR. Import/apply template substitutions preserve brand/model/conditions; apply route type is translated."
+    },
+    "field": {
+      "callerLines": [
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        195
+      ],
+      "result": "All seven owned field captions use SC_TR. Initial field values are editable equipment metadata, preserved verbatim."
+    },
+    "button": {
+      "callerLines": [
+        636,
+        637,
+        638,
+        639,
+        640,
+        641
+      ],
+      "result": "All six owned button captions use SC_TR."
+    },
+    "profileList": {
+      "producerLine": 564,
+      "sinkLine": 571,
+      "result": "Equipment kind and custom suffix use SC_TR; brand/family/model and measurement notes are profile metadata."
+    },
+    "diagnosticBoundary": {
+      "definitionLine": 41,
+      "result": "require translates owned reason through i18n::text before throwing; catch displays translated diagnostic. This does not classify arbitrary system or third-party errors."
+    },
+    "nativeReviewed": false,
+    "wholeInterfaceCoverageProven": false
+  },
+  "sourceReconciliation": {
+    "base": "16ec67362e4875ab893c3d88ea87cc89fc5ce0ea",
+    "priorMainSha256": "385ed79a6410f3360ec4338b48ff2fe2c92e53f1ea8e868aaeadef4e9a3baea8",
+    "currentMainSha256": "27dc3d05c3aef5aa0900dff5f9cdd12bc8aee62d31dccfe72b4e087e3bfa5fc1",
+    "inspectedDiff": "Four production qCritical startup diagnostics converted to SC_TR UTF-8 display boundaries; no other main.cpp changes.",
+    "evidence": "tests/results/localization/startup-diagnostic-gap.json"
+  },
+  "startupPanelReview": {
+    "files": [
+      "src/startup_controls.h",
+      "src/startup_registration.h"
+    ],
+    "result": "Group title, toggle, behavior guidance and failure dialog all use SC_TR; registration content is product identity, command switches, filesystem/registry keys. No additional owned untranslated caption found.",
+    "sourceSha256": {
+      "src/startup_controls.h": "94cccaea96412bd21f1949463cee81e06980c6e5f207b55f2b8f7dd058acb5af",
+      "src/startup_registration.h": "f9ee3d7f131e0f958b2f95ff1711e9956d4e17b42fbc1de224c87f3fe63c3e36"
+    }
+  }
+}

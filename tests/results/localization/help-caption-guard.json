@@ -1,0 +1,16 @@
+{
+  "change": "Status-tip and context-help literal captions require translation markers, including exact Qt wrappers",
+  "guardRegression": "passed targeted CatalogTests.test_exact_qt_wrapped_captions_cannot_escape_guard",
+  "compiledLinuxFixtures": {
+    "passed": 37,
+    "failed": 0,
+    "scope": "offscreen Qt localization policy, all 33 non-English interfaces, regional formatting and pseudo locales; not installed-package or linguistic review"
+  },
+  "nativeReviewed": false,
+  "sha256": {
+    "scripts/localization.py": "32da7eabb7a73458a99695404500a0cfed31c760de106f4be47fe36e9a96ff97",
+    "tests/translation_catalogs.py": "acbda48ce3377bd5e69eb2085025ebc96c467f614758942a4284e576c5f38b2d",
+    "build/soundcurrent-eq": "f840cee15d74c4d81d18a3910bca24902eb1fe62e1047a23f72e63d4e082b6e9",
+    "tests/results/localization/help-caption-guard-linux-ui.log": "0cb24032199a1ded57d7c1776ec2e66da0834bd96454af697980289f1afd058b"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "catalogTags": 34,
+  "realNsisAssetPairsMatched": 33,
+  "missingBuiltinAssets": [
+    "sw"
+  ],
+  "rtlTags": [
+    "ar",
+    "he",
+    "fa"
+  ],
+  "validationTestsPassed": 3,
+  "installerLocaleActivationComplete": false,
+  "nativeSpeakerVerified": false,
+  "vmUsed": false
+}

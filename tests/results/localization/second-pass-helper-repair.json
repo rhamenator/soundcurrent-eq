@@ -1,0 +1,14 @@
+{
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "sourceMessages": 627,
+  "unfinishedDeclaredEntries": 0,
+  "helperLookupsPassed": 1190,
+  "actualRepairModalArgumentCapturePassed": true,
+  "driverActionsPerformed": false,
+  "vmUsed": false,
+  "nativeSpeakerVerified": false,
+  "installedUiQualified": false,
+  "remainingRawHelperCandidates": 2,
+  "scope": "Translated repair notice with localized app setup action; external driver buttons and endpoints remain exact. Captured actual expression using inert stub, not rendered WinForms."
+}

@@ -1,0 +1,36 @@
+{
+  "scope": "UTF-8 audio helper stdout boundary prerequisite for translated message bodies",
+  "platform": "Linux Qt offscreen and PowerShell 7.6.6",
+  "targetedTestsPassed": 40,
+  "failed": 0,
+  "checks": [
+    "Real inert PowerShell child emits French/Japanese/Arabic/literal-placeholder UTF-8 data; compiled Qt captures and exactly decodes it",
+    "Decoder retains current whitespace trimming and accepts accumulated multibyte output",
+    "Both helper scripts explicitly set console/native-pipeline UTF-8 encoding",
+    "All 34 helper title catalogs and fallback checks still pass",
+    "PowerShell fixture source is ASCII to avoid Windows PowerShell 5.1 source-code-page ambiguity"
+  ],
+  "WindowsBuildGate": "Compiled process fixture now runs explicitly with powershell.exe and process-only RemoteSigned; MSVC diagnostic test source uses /utf-8",
+  "WindowsPowerShell51Qualified": false,
+  "productionDriverHelpersExecuted": false,
+  "noDriverOrEndpointActions": true,
+  "nativeSpeakerVerification": "unverified",
+  "wholeInterfaceCoverageProven": false,
+  "WindowsCurrentChangesQualified": false,
+  "newPackagesQualified": false,
+  "remainingScope": [
+    "Translated setup message bodies and further dialog captions",
+    "NSIS installer/uninstaller text",
+    "Windows registry/dialog/process and install/update/uninstall qualification"
+  ],
+  "evidence": {
+    "log": "tests/results/localization/helper-utf8-runtime.log",
+    "logSha256": "8a6b3488ef4e3a74630cb7e38dfa90fcb9ee7ec11eaf131b0851c7aba43800ec",
+    "applicationBinarySha256": "6d84be7f972997156362759fff6bb7ae4bae664097f6aa2ef611333095834711"
+  },
+  "sourceSha256": {
+    "src/audio_setup_arguments.h": "dbe9b08e198a66d85883f49e6eac0cde0fcea995106224e63b2a949d3b109336",
+    "tests/windows_setup_output_fixture.ps1": "65faa7e8ed6d83151b3d30bd3138ef5360082f9e090501d146db7821dc40eaee",
+    "tests/backend_error_text.cpp": "3c536e2f64d3d430e85702590f40b1ce6d0b94cd84fb96ae1337bc754cb4af88"
+  }
+}

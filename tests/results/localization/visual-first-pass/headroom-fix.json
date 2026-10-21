@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-08",
+  "change": "Headroom label moved to its own word-wrapping row; text direction follows UI locale",
+  "verified": "Rebuilt application; inspected Polish screenshot with full headroom text visible; six focused Linux CTests passed",
+  "tests": [
+    "shared-ui",
+    "localization",
+    "localized-ui-pl",
+    "localized-ui-ar",
+    "translation-maintenance",
+    "translation-catalogs"
+  ],
+  "remaining": "Outer page horizontal scrolling persists; RTL visual and Windows/package qualification pending",
+  "nativeReviewed": false,
+  "processingChange": false
+}

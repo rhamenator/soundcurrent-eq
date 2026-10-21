@@ -1,0 +1,1244 @@
+{
+  "schema": 1,
+  "product": "SoundCurrent EQ",
+  "scope": "Reviewed heading, subtitle, driver checkbox and driver-check guidance and cable restart notice and shared-driver and administrator-approval guidance only",
+  "installerLocaleActivationComplete": false,
+  "nativeSpeakerVerified": false,
+  "sources": {
+    "SCNativeApproval": "Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.",
+    "SCSharedDriverNotice": "Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.",
+    "SCCableRestart": "VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.",
+    "SCDriverCheckFailed": "Setup could not check the driver. You can retry with %1 in the app or Start menu.",
+    "SCSetupAction": "Audio driver setup",
+    "SCConnectAudio": "Connect your audio",
+    "SCSetupAudio": "Set up %1 for %2.",
+    "SCInstallCable": "Install VB-CABLE if missing (administrator approval)",
+    "SCInstallNative": "Install or update the shared SoundCurrent Audio driver"
+  },
+  "languages": {
+    "en": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Connect your audio",
+          "SCSetupAudio": "Set up VB-CABLE for SoundCurrent EQ.",
+          "SCInstallDriver": "Install VB-CABLE if missing (administrator approval)",
+          "SCDriverCheckFailed": "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu.",
+          "SCCableRestart": "VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Connect your audio",
+          "SCSetupAudio": "Set up VB-CABLE for SoundCurrent EQ.",
+          "SCInstallDriver": "Install VB-CABLE if missing (administrator approval)",
+          "SCDriverCheckFailed": "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu.",
+          "SCCableRestart": "VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Connect your audio",
+          "SCSetupAudio": "Set up SoundCurrent Audio for SoundCurrent EQ.",
+          "SCInstallDriver": "Install or update the shared SoundCurrent Audio driver",
+          "SCDriverCheckFailed": "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu.",
+          "SCNativeApproval": "Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.",
+          "SCSharedDriverNotice": "Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Connect your audio",
+          "SCSetupAudio": "Set up SoundCurrent Audio for SoundCurrent EQ.",
+          "SCInstallDriver": "Install or update the shared SoundCurrent Audio driver",
+          "SCDriverCheckFailed": "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu.",
+          "SCNativeApproval": "Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.",
+          "SCSharedDriverNotice": "Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it."
+        }
+      }
+    },
+    "de": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Audio verbinden",
+          "SCSetupAudio": "VB-CABLE für SoundCurrent EQ einrichten.",
+          "SCInstallDriver": "VB-CABLE installieren, falls es fehlt (Administratorbestätigung)",
+          "SCDriverCheckFailed": "Das Installationsprogramm konnte den Treiber nicht prüfen. Sie können es mit Audiotreiber einrichten in der App oder im Startmenü erneut versuchen.",
+          "SCCableRestart": "Die Einrichtung von VB-CABLE erfordert einen Windows-Neustart. Starten Sie neu, bevor Sie den Equalizer verwenden oder die VB-CABLE-Einstellungen öffnen."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Audio verbinden",
+          "SCSetupAudio": "VB-CABLE für SoundCurrent EQ einrichten.",
+          "SCInstallDriver": "VB-CABLE installieren, falls es fehlt (Administratorbestätigung)",
+          "SCDriverCheckFailed": "Das Installationsprogramm konnte den Treiber nicht prüfen. Sie können es mit Audiotreiber einrichten in der App oder im Startmenü erneut versuchen.",
+          "SCCableRestart": "Die Einrichtung von VB-CABLE erfordert einen Windows-Neustart. Starten Sie neu, bevor Sie den Equalizer verwenden oder die VB-CABLE-Einstellungen öffnen."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Audio verbinden",
+          "SCSetupAudio": "SoundCurrent Audio für SoundCurrent EQ einrichten.",
+          "SCInstallDriver": "Den gemeinsam genutzten SoundCurrent Audio-Treiber installieren oder aktualisieren",
+          "SCDriverCheckFailed": "Das Installationsprogramm konnte den Treiber nicht prüfen. Sie können es mit Audiotreiber einrichten in der App oder im Startmenü erneut versuchen.",
+          "SCNativeApproval": "Windows fordert eine Administratorbestätigung für den signierten Treibermanager an. Das Installationsprogramm informiert Sie, falls ein Neustart erforderlich ist.",
+          "SCSharedDriverNotice": "Beenden Sie jede laufende SoundCurrent-App, bevor Sie den gemeinsam genutzten Treiber ändern. Beim Entfernen einer App bleibt der Treiber erhalten, wenn die andere App ihn noch verwendet."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Audio verbinden",
+          "SCSetupAudio": "SoundCurrent Audio für SoundCurrent EQ einrichten.",
+          "SCInstallDriver": "Den gemeinsam genutzten SoundCurrent Audio-Treiber installieren oder aktualisieren",
+          "SCDriverCheckFailed": "Das Installationsprogramm konnte den Treiber nicht prüfen. Sie können es mit Audiotreiber einrichten in der App oder im Startmenü erneut versuchen.",
+          "SCNativeApproval": "Windows fordert eine Administratorbestätigung für den signierten Treibermanager an. Das Installationsprogramm informiert Sie, falls ein Neustart erforderlich ist.",
+          "SCSharedDriverNotice": "Beenden Sie jede laufende SoundCurrent-App, bevor Sie den gemeinsam genutzten Treiber ändern. Beim Entfernen einer App bleibt der Treiber erhalten, wenn die andere App ihn noch verwendet."
+        }
+      }
+    },
+    "fr": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Connecter votre audio",
+          "SCSetupAudio": "Configurer VB-CABLE pour SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE s’il est absent (autorisation administrateur)",
+          "SCDriverCheckFailed": "Le programme d’installation n’a pas pu vérifier le pilote. Vous pouvez réessayer avec Configuration du pilote audio dans l’application ou le menu Démarrer.",
+          "SCCableRestart": "L’installation de VB-CABLE nécessite un redémarrage de Windows. Redémarrez avant d’utiliser l’égaliseur ou d’ouvrir les paramètres de VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Connecter votre audio",
+          "SCSetupAudio": "Configurer VB-CABLE pour SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE s’il est absent (autorisation administrateur)",
+          "SCDriverCheckFailed": "Le programme d’installation n’a pas pu vérifier le pilote. Vous pouvez réessayer avec Configuration du pilote audio dans l’application ou le menu Démarrer.",
+          "SCCableRestart": "L’installation de VB-CABLE nécessite un redémarrage de Windows. Redémarrez avant d’utiliser l’égaliseur ou d’ouvrir les paramètres de VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Connecter votre audio",
+          "SCSetupAudio": "Configurer SoundCurrent Audio pour SoundCurrent EQ.",
+          "SCInstallDriver": "Installer ou mettre à jour le pilote SoundCurrent Audio partagé",
+          "SCDriverCheckFailed": "Le programme d’installation n’a pas pu vérifier le pilote. Vous pouvez réessayer avec Configuration du pilote audio dans l’application ou le menu Démarrer.",
+          "SCNativeApproval": "Windows demandera une autorisation administrateur pour le gestionnaire de pilotes signé. Le programme d’installation vous indiquera si un redémarrage est nécessaire.",
+          "SCSharedDriverNotice": "Quittez toute application SoundCurrent en cours d’exécution avant de modifier le pilote partagé. La désinstallation d’une application conserve le pilote si l’autre l’utilise encore."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Connecter votre audio",
+          "SCSetupAudio": "Configurer SoundCurrent Audio pour SoundCurrent EQ.",
+          "SCInstallDriver": "Installer ou mettre à jour le pilote SoundCurrent Audio partagé",
+          "SCDriverCheckFailed": "Le programme d’installation n’a pas pu vérifier le pilote. Vous pouvez réessayer avec Configuration du pilote audio dans l’application ou le menu Démarrer.",
+          "SCNativeApproval": "Windows demandera une autorisation administrateur pour le gestionnaire de pilotes signé. Le programme d’installation vous indiquera si un redémarrage est nécessaire.",
+          "SCSharedDriverNotice": "Quittez toute application SoundCurrent en cours d’exécution avant de modifier le pilote partagé. La désinstallation d’une application conserve le pilote si l’autre l’utilise encore."
+        }
+      }
+    },
+    "es": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Conectar el audio",
+          "SCSetupAudio": "Configurar VB-CABLE para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar VB-CABLE si falta (aprobación del administrador)",
+          "SCDriverCheckFailed": "El instalador no pudo comprobar el controlador. Puede volver a intentarlo con Configuración del controlador de audio en la aplicación o en el menú Inicio.",
+          "SCCableRestart": "La instalación de VB-CABLE requiere reiniciar Windows. Reinicie antes de usar el ecualizador o abrir la configuración de VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Conectar el audio",
+          "SCSetupAudio": "Configurar VB-CABLE para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar VB-CABLE si falta (aprobación del administrador)",
+          "SCDriverCheckFailed": "El instalador no pudo comprobar el controlador. Puede volver a intentarlo con Configuración del controlador de audio en la aplicación o en el menú Inicio.",
+          "SCCableRestart": "La instalación de VB-CABLE requiere reiniciar Windows. Reinicie antes de usar el ecualizador o abrir la configuración de VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Conectar el audio",
+          "SCSetupAudio": "Configurar SoundCurrent Audio para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar o actualizar el controlador compartido de SoundCurrent Audio",
+          "SCDriverCheckFailed": "El instalador no pudo comprobar el controlador. Puede volver a intentarlo con Configuración del controlador de audio en la aplicación o en el menú Inicio.",
+          "SCNativeApproval": "Windows solicitará la aprobación del administrador para el gestor de controladores firmado. El instalador le indicará si es necesario reiniciar.",
+          "SCSharedDriverNotice": "Salga de cualquier aplicación SoundCurrent en ejecución antes de cambiar el controlador compartido. Al desinstalar una aplicación se conserva el controlador si la otra aún lo utiliza."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Conectar el audio",
+          "SCSetupAudio": "Configurar SoundCurrent Audio para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar o actualizar el controlador compartido de SoundCurrent Audio",
+          "SCDriverCheckFailed": "El instalador no pudo comprobar el controlador. Puede volver a intentarlo con Configuración del controlador de audio en la aplicación o en el menú Inicio.",
+          "SCNativeApproval": "Windows solicitará la aprobación del administrador para el gestor de controladores firmado. El instalador le indicará si es necesario reiniciar.",
+          "SCSharedDriverNotice": "Salga de cualquier aplicación SoundCurrent en ejecución antes de cambiar el controlador compartido. Al desinstalar una aplicación se conserva el controlador si la otra aún lo utiliza."
+        }
+      }
+    },
+    "it": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Collega l’audio",
+          "SCSetupAudio": "Configura VB-CABLE per SoundCurrent EQ.",
+          "SCInstallDriver": "Installa VB-CABLE se manca (approvazione dell’amministratore)",
+          "SCDriverCheckFailed": "Il programma di installazione non ha potuto verificare il driver. Puoi riprovare con Configurazione driver audio nell’app o nel menu Start.",
+          "SCCableRestart": "L’installazione di VB-CABLE richiede il riavvio di Windows. Riavvia prima di usare l’equalizzatore o aprire le impostazioni di VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Collega l’audio",
+          "SCSetupAudio": "Configura VB-CABLE per SoundCurrent EQ.",
+          "SCInstallDriver": "Installa VB-CABLE se manca (approvazione dell’amministratore)",
+          "SCDriverCheckFailed": "Il programma di installazione non ha potuto verificare il driver. Puoi riprovare con Configurazione driver audio nell’app o nel menu Start.",
+          "SCCableRestart": "L’installazione di VB-CABLE richiede il riavvio di Windows. Riavvia prima di usare l’equalizzatore o aprire le impostazioni di VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Collega l’audio",
+          "SCSetupAudio": "Configura SoundCurrent Audio per SoundCurrent EQ.",
+          "SCInstallDriver": "Installa o aggiorna il driver condiviso SoundCurrent Audio",
+          "SCDriverCheckFailed": "Il programma di installazione non ha potuto verificare il driver. Puoi riprovare con Configurazione driver audio nell’app o nel menu Start.",
+          "SCNativeApproval": "Windows richiederà l’approvazione dell’amministratore per il gestore dei driver firmato. Il programma di installazione ti informerà se è necessario un riavvio.",
+          "SCSharedDriverNotice": "Esci da tutte le app SoundCurrent in esecuzione prima di modificare il driver condiviso. La disinstallazione di un’app conserva il driver se l’altra lo usa ancora."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Collega l’audio",
+          "SCSetupAudio": "Configura SoundCurrent Audio per SoundCurrent EQ.",
+          "SCInstallDriver": "Installa o aggiorna il driver condiviso SoundCurrent Audio",
+          "SCDriverCheckFailed": "Il programma di installazione non ha potuto verificare il driver. Puoi riprovare con Configurazione driver audio nell’app o nel menu Start.",
+          "SCNativeApproval": "Windows richiederà l’approvazione dell’amministratore per il gestore dei driver firmato. Il programma di installazione ti informerà se è necessario un riavvio.",
+          "SCSharedDriverNotice": "Esci da tutte le app SoundCurrent in esecuzione prima di modificare il driver condiviso. La disinstallazione di un’app conserva il driver se l’altra lo usa ancora."
+        }
+      }
+    },
+    "pt-PT": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Ligar o áudio",
+          "SCSetupAudio": "Configurar VB-CABLE para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar o VB-CABLE se estiver em falta (autorização de administrador)",
+          "SCDriverCheckFailed": "O instalador não conseguiu verificar o controlador. Pode tentar novamente com Configuração do controlador de áudio na aplicação ou no menu Iniciar.",
+          "SCCableRestart": "A instalação do VB-CABLE exige reiniciar o Windows. Reinicie antes de utilizar o equalizador ou abrir as definições do VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Ligar o áudio",
+          "SCSetupAudio": "Configurar VB-CABLE para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar o VB-CABLE se estiver em falta (autorização de administrador)",
+          "SCDriverCheckFailed": "O instalador não conseguiu verificar o controlador. Pode tentar novamente com Configuração do controlador de áudio na aplicação ou no menu Iniciar.",
+          "SCCableRestart": "A instalação do VB-CABLE exige reiniciar o Windows. Reinicie antes de utilizar o equalizador ou abrir as definições do VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Ligar o áudio",
+          "SCSetupAudio": "Configurar SoundCurrent Audio para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar ou atualizar o controlador partilhado SoundCurrent Audio",
+          "SCDriverCheckFailed": "O instalador não conseguiu verificar o controlador. Pode tentar novamente com Configuração do controlador de áudio na aplicação ou no menu Iniciar.",
+          "SCNativeApproval": "O Windows pedirá autorização de administrador para o gestor de controladores assinado. O instalador indicará se é necessário reiniciar.",
+          "SCSharedDriverNotice": "Saia de qualquer aplicação SoundCurrent em execução antes de alterar o controlador partilhado. Ao desinstalar uma aplicação, o controlador é mantido se a outra ainda o utilizar."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Ligar o áudio",
+          "SCSetupAudio": "Configurar SoundCurrent Audio para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar ou atualizar o controlador partilhado SoundCurrent Audio",
+          "SCDriverCheckFailed": "O instalador não conseguiu verificar o controlador. Pode tentar novamente com Configuração do controlador de áudio na aplicação ou no menu Iniciar.",
+          "SCNativeApproval": "O Windows pedirá autorização de administrador para o gestor de controladores assinado. O instalador indicará se é necessário reiniciar.",
+          "SCSharedDriverNotice": "Saia de qualquer aplicação SoundCurrent em execução antes de alterar o controlador partilhado. Ao desinstalar uma aplicação, o controlador é mantido se a outra ainda o utilizar."
+        }
+      }
+    },
+    "pt-BR": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Conectar o áudio",
+          "SCSetupAudio": "Configurar VB-CABLE para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar VB-CABLE se estiver ausente (aprovação do administrador)",
+          "SCDriverCheckFailed": "O instalador não conseguiu verificar o driver. Você pode tentar novamente com Configuração do driver de áudio no aplicativo ou no menu Iniciar.",
+          "SCCableRestart": "A instalação do VB-CABLE exige reiniciar o Windows. Reinicie antes de usar o equalizador ou abrir as configurações do VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Conectar o áudio",
+          "SCSetupAudio": "Configurar VB-CABLE para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar VB-CABLE se estiver ausente (aprovação do administrador)",
+          "SCDriverCheckFailed": "O instalador não conseguiu verificar o driver. Você pode tentar novamente com Configuração do driver de áudio no aplicativo ou no menu Iniciar.",
+          "SCCableRestart": "A instalação do VB-CABLE exige reiniciar o Windows. Reinicie antes de usar o equalizador ou abrir as configurações do VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Conectar o áudio",
+          "SCSetupAudio": "Configurar SoundCurrent Audio para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar ou atualizar o driver compartilhado SoundCurrent Audio",
+          "SCDriverCheckFailed": "O instalador não conseguiu verificar o driver. Você pode tentar novamente com Configuração do driver de áudio no aplicativo ou no menu Iniciar.",
+          "SCNativeApproval": "O Windows solicitará aprovação do administrador para o gerenciador de drivers assinado. O instalador informará se é necessário reiniciar.",
+          "SCSharedDriverNotice": "Encerre qualquer aplicativo SoundCurrent em execução antes de alterar o driver compartilhado. Ao desinstalar um aplicativo, o driver é mantido se o outro ainda o utilizar."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Conectar o áudio",
+          "SCSetupAudio": "Configurar SoundCurrent Audio para SoundCurrent EQ.",
+          "SCInstallDriver": "Instalar ou atualizar o driver compartilhado SoundCurrent Audio",
+          "SCDriverCheckFailed": "O instalador não conseguiu verificar o driver. Você pode tentar novamente com Configuração do driver de áudio no aplicativo ou no menu Iniciar.",
+          "SCNativeApproval": "O Windows solicitará aprovação do administrador para o gerenciador de drivers assinado. O instalador informará se é necessário reiniciar.",
+          "SCSharedDriverNotice": "Encerre qualquer aplicativo SoundCurrent em execução antes de alterar o driver compartilhado. Ao desinstalar um aplicativo, o driver é mantido se o outro ainda o utilizar."
+        }
+      }
+    },
+    "nl": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Audio aansluiten",
+          "SCSetupAudio": "VB-CABLE instellen voor SoundCurrent EQ.",
+          "SCInstallDriver": "VB-CABLE installeren als het ontbreekt (goedkeuring van beheerder)",
+          "SCDriverCheckFailed": "Het installatieprogramma kon het stuurprogramma niet controleren. U kunt het opnieuw proberen met Audiodriver instellen in de app of het Startmenu.",
+          "SCCableRestart": "Voor het instellen van VB-CABLE moet Windows opnieuw worden opgestart. Start opnieuw op voordat u de equalizer gebruikt of de instellingen van VB-CABLE opent."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Audio aansluiten",
+          "SCSetupAudio": "VB-CABLE instellen voor SoundCurrent EQ.",
+          "SCInstallDriver": "VB-CABLE installeren als het ontbreekt (goedkeuring van beheerder)",
+          "SCDriverCheckFailed": "Het installatieprogramma kon het stuurprogramma niet controleren. U kunt het opnieuw proberen met Audiodriver instellen in de app of het Startmenu.",
+          "SCCableRestart": "Voor het instellen van VB-CABLE moet Windows opnieuw worden opgestart. Start opnieuw op voordat u de equalizer gebruikt of de instellingen van VB-CABLE opent."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Audio aansluiten",
+          "SCSetupAudio": "SoundCurrent Audio instellen voor SoundCurrent EQ.",
+          "SCInstallDriver": "Het gedeelde SoundCurrent Audio-stuurprogramma installeren of bijwerken",
+          "SCDriverCheckFailed": "Het installatieprogramma kon het stuurprogramma niet controleren. U kunt het opnieuw proberen met Audiodriver instellen in de app of het Startmenu.",
+          "SCNativeApproval": "Windows vraagt om goedkeuring van de beheerder voor de ondertekende stuurprogrammabeheerder. Het installatieprogramma meldt of opnieuw opstarten nodig is.",
+          "SCSharedDriverNotice": "Sluit elke actieve SoundCurrent-app af voordat u het gedeelde stuurprogramma wijzigt. Bij het verwijderen van één app blijft het stuurprogramma behouden als de andere app het nog gebruikt."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Audio aansluiten",
+          "SCSetupAudio": "SoundCurrent Audio instellen voor SoundCurrent EQ.",
+          "SCInstallDriver": "Het gedeelde SoundCurrent Audio-stuurprogramma installeren of bijwerken",
+          "SCDriverCheckFailed": "Het installatieprogramma kon het stuurprogramma niet controleren. U kunt het opnieuw proberen met Audiodriver instellen in de app of het Startmenu.",
+          "SCNativeApproval": "Windows vraagt om goedkeuring van de beheerder voor de ondertekende stuurprogrammabeheerder. Het installatieprogramma meldt of opnieuw opstarten nodig is.",
+          "SCSharedDriverNotice": "Sluit elke actieve SoundCurrent-app af voordat u het gedeelde stuurprogramma wijzigt. Bij het verwijderen van één app blijft het stuurprogramma behouden als de andere app het nog gebruikt."
+        }
+      }
+    },
+    "pl": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Podłącz dźwięk",
+          "SCSetupAudio": "Skonfiguruj VB-CABLE dla SoundCurrent EQ.",
+          "SCInstallDriver": "Zainstaluj VB-CABLE, jeśli go brakuje (zgoda administratora)",
+          "SCDriverCheckFailed": "Instalator nie mógł sprawdzić sterownika. Możesz spróbować ponownie za pomocą Konfiguracja sterownika audio w aplikacji lub menu Start.",
+          "SCCableRestart": "Konfiguracja VB-CABLE wymaga ponownego uruchomienia Windows. Uruchom system ponownie przed użyciem korektora lub otwarciem ustawień VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Podłącz dźwięk",
+          "SCSetupAudio": "Skonfiguruj VB-CABLE dla SoundCurrent EQ.",
+          "SCInstallDriver": "Zainstaluj VB-CABLE, jeśli go brakuje (zgoda administratora)",
+          "SCDriverCheckFailed": "Instalator nie mógł sprawdzić sterownika. Możesz spróbować ponownie za pomocą Konfiguracja sterownika audio w aplikacji lub menu Start.",
+          "SCCableRestart": "Konfiguracja VB-CABLE wymaga ponownego uruchomienia Windows. Uruchom system ponownie przed użyciem korektora lub otwarciem ustawień VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Podłącz dźwięk",
+          "SCSetupAudio": "Skonfiguruj SoundCurrent Audio dla SoundCurrent EQ.",
+          "SCInstallDriver": "Zainstaluj lub zaktualizuj współdzielony sterownik SoundCurrent Audio",
+          "SCDriverCheckFailed": "Instalator nie mógł sprawdzić sterownika. Możesz spróbować ponownie za pomocą Konfiguracja sterownika audio w aplikacji lub menu Start.",
+          "SCNativeApproval": "Windows poprosi o zgodę administratora dla podpisanego menedżera sterowników. Instalator poinformuje, czy wymagane jest ponowne uruchomienie.",
+          "SCSharedDriverNotice": "Zamknij wszystkie uruchomione aplikacje SoundCurrent przed zmianą współdzielonego sterownika. Odinstalowanie jednej aplikacji pozostawia sterownik, jeśli druga nadal go używa."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Podłącz dźwięk",
+          "SCSetupAudio": "Skonfiguruj SoundCurrent Audio dla SoundCurrent EQ.",
+          "SCInstallDriver": "Zainstaluj lub zaktualizuj współdzielony sterownik SoundCurrent Audio",
+          "SCDriverCheckFailed": "Instalator nie mógł sprawdzić sterownika. Możesz spróbować ponownie za pomocą Konfiguracja sterownika audio w aplikacji lub menu Start.",
+          "SCNativeApproval": "Windows poprosi o zgodę administratora dla podpisanego menedżera sterowników. Instalator poinformuje, czy wymagane jest ponowne uruchomienie.",
+          "SCSharedDriverNotice": "Zamknij wszystkie uruchomione aplikacje SoundCurrent przed zmianą współdzielonego sterownika. Odinstalowanie jednej aplikacji pozostawia sterownik, jeśli druga nadal go używa."
+        }
+      }
+    },
+    "cs": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Připojení zvuku",
+          "SCSetupAudio": "Nastavte VB-CABLE pro SoundCurrent EQ.",
+          "SCInstallDriver": "Nainstalovat VB-CABLE, pokud chybí (schválení správce)",
+          "SCDriverCheckFailed": "Instalační program nemohl zkontrolovat ovladač. Můžete to zkusit znovu pomocí Instalace zvukového ovladače v aplikaci nebo v nabídce Start.",
+          "SCCableRestart": "Nastavení VB-CABLE vyžaduje restart Windows. Restartujte před použitím ekvalizéru nebo otevřením nastavení VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Připojení zvuku",
+          "SCSetupAudio": "Nastavte VB-CABLE pro SoundCurrent EQ.",
+          "SCInstallDriver": "Nainstalovat VB-CABLE, pokud chybí (schválení správce)",
+          "SCDriverCheckFailed": "Instalační program nemohl zkontrolovat ovladač. Můžete to zkusit znovu pomocí Instalace zvukového ovladače v aplikaci nebo v nabídce Start.",
+          "SCCableRestart": "Nastavení VB-CABLE vyžaduje restart Windows. Restartujte před použitím ekvalizéru nebo otevřením nastavení VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Připojení zvuku",
+          "SCSetupAudio": "Nastavte SoundCurrent Audio pro SoundCurrent EQ.",
+          "SCInstallDriver": "Nainstalovat nebo aktualizovat sdílený ovladač SoundCurrent Audio",
+          "SCDriverCheckFailed": "Instalační program nemohl zkontrolovat ovladač. Můžete to zkusit znovu pomocí Instalace zvukového ovladače v aplikaci nebo v nabídce Start.",
+          "SCNativeApproval": "Windows požádá o schválení správcem pro digitálně podepsaný program pro správu ovladačů. Instalační program oznámí, zda je nutný restart.",
+          "SCSharedDriverNotice": "Před změnou sdíleného ovladače ukončete všechny spuštěné aplikace SoundCurrent. Odinstalování jedné aplikace zachová ovladač, pokud jej druhá stále používá."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Připojení zvuku",
+          "SCSetupAudio": "Nastavte SoundCurrent Audio pro SoundCurrent EQ.",
+          "SCInstallDriver": "Nainstalovat nebo aktualizovat sdílený ovladač SoundCurrent Audio",
+          "SCDriverCheckFailed": "Instalační program nemohl zkontrolovat ovladač. Můžete to zkusit znovu pomocí Instalace zvukového ovladače v aplikaci nebo v nabídce Start.",
+          "SCNativeApproval": "Windows požádá o schválení správcem pro digitálně podepsaný program pro správu ovladačů. Instalační program oznámí, zda je nutný restart.",
+          "SCSharedDriverNotice": "Před změnou sdíleného ovladače ukončete všechny spuštěné aplikace SoundCurrent. Odinstalování jedné aplikace zachová ovladač, pokud jej druhá stále používá."
+        }
+      }
+    },
+    "sk": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Pripojenie zvuku",
+          "SCSetupAudio": "Nastavte VB-CABLE pre SoundCurrent EQ.",
+          "SCInstallDriver": "Nainštalovať VB-CABLE, ak chýba (schválenie správcu)",
+          "SCDriverCheckFailed": "Inštalačný program nemohol skontrolovať ovládač. Môžete to skúsiť znova pomocou Inštalácia zvukového ovládača v aplikácii alebo v ponuke Štart.",
+          "SCCableRestart": "Nastavenie VB-CABLE vyžaduje reštart Windows. Reštartujte pred použitím ekvalizéra alebo otvorením nastavení VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Pripojenie zvuku",
+          "SCSetupAudio": "Nastavte VB-CABLE pre SoundCurrent EQ.",
+          "SCInstallDriver": "Nainštalovať VB-CABLE, ak chýba (schválenie správcu)",
+          "SCDriverCheckFailed": "Inštalačný program nemohol skontrolovať ovládač. Môžete to skúsiť znova pomocou Inštalácia zvukového ovládača v aplikácii alebo v ponuke Štart.",
+          "SCCableRestart": "Nastavenie VB-CABLE vyžaduje reštart Windows. Reštartujte pred použitím ekvalizéra alebo otvorením nastavení VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Pripojenie zvuku",
+          "SCSetupAudio": "Nastavte SoundCurrent Audio pre SoundCurrent EQ.",
+          "SCInstallDriver": "Nainštalovať alebo aktualizovať zdieľaný ovládač SoundCurrent Audio",
+          "SCDriverCheckFailed": "Inštalačný program nemohol skontrolovať ovládač. Môžete to skúsiť znova pomocou Inštalácia zvukového ovládača v aplikácii alebo v ponuke Štart.",
+          "SCNativeApproval": "Windows požiada o schválenie správcom pre digitálne podpísaný program na správu ovládačov. Inštalačný program oznámi, či je potrebný reštart.",
+          "SCSharedDriverNotice": "Pred zmenou zdieľaného ovládača ukončite všetky spustené aplikácie SoundCurrent. Odinštalovanie jednej aplikácie zachová ovládač, ak ho druhá stále používa."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Pripojenie zvuku",
+          "SCSetupAudio": "Nastavte SoundCurrent Audio pre SoundCurrent EQ.",
+          "SCInstallDriver": "Nainštalovať alebo aktualizovať zdieľaný ovládač SoundCurrent Audio",
+          "SCDriverCheckFailed": "Inštalačný program nemohol skontrolovať ovládač. Môžete to skúsiť znova pomocou Inštalácia zvukového ovládača v aplikácii alebo v ponuke Štart.",
+          "SCNativeApproval": "Windows požiada o schválenie správcom pre digitálne podpísaný program na správu ovládačov. Inštalačný program oznámi, či je potrebný reštart.",
+          "SCSharedDriverNotice": "Pred zmenou zdieľaného ovládača ukončite všetky spustené aplikácie SoundCurrent. Odinštalovanie jednej aplikácie zachová ovládač, ak ho druhá stále používa."
+        }
+      }
+    },
+    "uk": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Підключення звуку",
+          "SCSetupAudio": "Налаштуйте VB-CABLE для SoundCurrent EQ.",
+          "SCInstallDriver": "Установити VB-CABLE, якщо він відсутній (дозвіл адміністратора)",
+          "SCDriverCheckFailed": "Інсталятор не зміг перевірити драйвер. Спробуйте ще раз за допомогою Установлення аудіодрайвера у програмі або меню «Пуск».",
+          "SCCableRestart": "Налаштування VB-CABLE вимагає перезапуску Windows. Перезапустіть систему перед використанням еквалайзера або відкриттям налаштувань VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Підключення звуку",
+          "SCSetupAudio": "Налаштуйте VB-CABLE для SoundCurrent EQ.",
+          "SCInstallDriver": "Установити VB-CABLE, якщо він відсутній (дозвіл адміністратора)",
+          "SCDriverCheckFailed": "Інсталятор не зміг перевірити драйвер. Спробуйте ще раз за допомогою Установлення аудіодрайвера у програмі або меню «Пуск».",
+          "SCCableRestart": "Налаштування VB-CABLE вимагає перезапуску Windows. Перезапустіть систему перед використанням еквалайзера або відкриттям налаштувань VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Підключення звуку",
+          "SCSetupAudio": "Налаштуйте SoundCurrent Audio для SoundCurrent EQ.",
+          "SCInstallDriver": "Установити або оновити спільний драйвер SoundCurrent Audio",
+          "SCDriverCheckFailed": "Інсталятор не зміг перевірити драйвер. Спробуйте ще раз за допомогою Установлення аудіодрайвера у програмі або меню «Пуск».",
+          "SCNativeApproval": "Windows попросить дозвіл адміністратора для підписаного менеджера драйверів. Інсталятор повідомить, чи потрібен перезапуск.",
+          "SCSharedDriverNotice": "Закрийте всі запущені програми SoundCurrent перед зміною спільного драйвера. Після видалення однієї програми драйвер залишиться, якщо інша все ще його використовує."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Підключення звуку",
+          "SCSetupAudio": "Налаштуйте SoundCurrent Audio для SoundCurrent EQ.",
+          "SCInstallDriver": "Установити або оновити спільний драйвер SoundCurrent Audio",
+          "SCDriverCheckFailed": "Інсталятор не зміг перевірити драйвер. Спробуйте ще раз за допомогою Установлення аудіодрайвера у програмі або меню «Пуск».",
+          "SCNativeApproval": "Windows попросить дозвіл адміністратора для підписаного менеджера драйверів. Інсталятор повідомить, чи потрібен перезапуск.",
+          "SCSharedDriverNotice": "Закрийте всі запущені програми SoundCurrent перед зміною спільного драйвера. Після видалення однієї програми драйвер залишиться, якщо інша все ще його використовує."
+        }
+      }
+    },
+    "ru": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Подключение звука",
+          "SCSetupAudio": "Настройте VB-CABLE для SoundCurrent EQ.",
+          "SCInstallDriver": "Установить VB-CABLE, если он отсутствует (разрешение администратора)",
+          "SCDriverCheckFailed": "Установщик не смог проверить драйвер. Повторите попытку с помощью Установка аудиодрайвера в приложении или меню «Пуск».",
+          "SCCableRestart": "Настройка VB-CABLE требует перезапуска Windows. Перезапустите систему перед использованием эквалайзера или открытием настроек VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Подключение звука",
+          "SCSetupAudio": "Настройте VB-CABLE для SoundCurrent EQ.",
+          "SCInstallDriver": "Установить VB-CABLE, если он отсутствует (разрешение администратора)",
+          "SCDriverCheckFailed": "Установщик не смог проверить драйвер. Повторите попытку с помощью Установка аудиодрайвера в приложении или меню «Пуск».",
+          "SCCableRestart": "Настройка VB-CABLE требует перезапуска Windows. Перезапустите систему перед использованием эквалайзера или открытием настроек VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Подключение звука",
+          "SCSetupAudio": "Настройте SoundCurrent Audio для SoundCurrent EQ.",
+          "SCInstallDriver": "Установить или обновить общий драйвер SoundCurrent Audio",
+          "SCDriverCheckFailed": "Установщик не смог проверить драйвер. Повторите попытку с помощью Установка аудиодрайвера в приложении или меню «Пуск».",
+          "SCNativeApproval": "Windows запросит разрешение администратора для подписанного менеджера драйверов. Установщик сообщит, требуется ли перезапуск.",
+          "SCSharedDriverNotice": "Закройте все запущенные приложения SoundCurrent перед изменением общего драйвера. При удалении одного приложения драйвер сохраняется, если другое всё ещё его использует."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Подключение звука",
+          "SCSetupAudio": "Настройте SoundCurrent Audio для SoundCurrent EQ.",
+          "SCInstallDriver": "Установить или обновить общий драйвер SoundCurrent Audio",
+          "SCDriverCheckFailed": "Установщик не смог проверить драйвер. Повторите попытку с помощью Установка аудиодрайвера в приложении или меню «Пуск».",
+          "SCNativeApproval": "Windows запросит разрешение администратора для подписанного менеджера драйверов. Установщик сообщит, требуется ли перезапуск.",
+          "SCSharedDriverNotice": "Закройте все запущенные приложения SoundCurrent перед изменением общего драйвера. При удалении одного приложения драйвер сохраняется, если другое всё ещё его использует."
+        }
+      }
+    },
+    "el": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Σύνδεση ήχου",
+          "SCSetupAudio": "Ρυθμίστε το VB-CABLE για το SoundCurrent EQ.",
+          "SCInstallDriver": "Εγκατάσταση του VB-CABLE αν λείπει (έγκριση διαχειριστή)",
+          "SCDriverCheckFailed": "Το πρόγραμμα εγκατάστασης δεν μπόρεσε να ελέγξει το πρόγραμμα οδήγησης. Μπορείτε να δοκιμάσετε ξανά με το Εγκατάσταση οδηγού ήχου στην εφαρμογή ή στο μενού Έναρξη.",
+          "SCCableRestart": "Η εγκατάσταση του VB-CABLE απαιτεί επανεκκίνηση των Windows. Επανεκκινήστε πριν χρησιμοποιήσετε τον ισοσταθμιστή ή ανοίξετε τις ρυθμίσεις του VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Σύνδεση ήχου",
+          "SCSetupAudio": "Ρυθμίστε το VB-CABLE για το SoundCurrent EQ.",
+          "SCInstallDriver": "Εγκατάσταση του VB-CABLE αν λείπει (έγκριση διαχειριστή)",
+          "SCDriverCheckFailed": "Το πρόγραμμα εγκατάστασης δεν μπόρεσε να ελέγξει το πρόγραμμα οδήγησης. Μπορείτε να δοκιμάσετε ξανά με το Εγκατάσταση οδηγού ήχου στην εφαρμογή ή στο μενού Έναρξη.",
+          "SCCableRestart": "Η εγκατάσταση του VB-CABLE απαιτεί επανεκκίνηση των Windows. Επανεκκινήστε πριν χρησιμοποιήσετε τον ισοσταθμιστή ή ανοίξετε τις ρυθμίσεις του VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Σύνδεση ήχου",
+          "SCSetupAudio": "Ρυθμίστε το SoundCurrent Audio για το SoundCurrent EQ.",
+          "SCInstallDriver": "Εγκατάσταση ή ενημέρωση του κοινόχρηστου προγράμματος οδήγησης SoundCurrent Audio",
+          "SCDriverCheckFailed": "Το πρόγραμμα εγκατάστασης δεν μπόρεσε να ελέγξει το πρόγραμμα οδήγησης. Μπορείτε να δοκιμάσετε ξανά με το Εγκατάσταση οδηγού ήχου στην εφαρμογή ή στο μενού Έναρξη.",
+          "SCNativeApproval": "Τα Windows θα ζητήσουν έγκριση διαχειριστή για τον υπογεγραμμένο διαχειριστή προγραμμάτων οδήγησης. Το πρόγραμμα εγκατάστασης θα σας ενημερώσει αν απαιτείται επανεκκίνηση.",
+          "SCSharedDriverNotice": "Κλείστε κάθε εφαρμογή SoundCurrent που εκτελείται πριν αλλάξετε το κοινόχρηστο πρόγραμμα οδήγησης. Η απεγκατάσταση μιας εφαρμογής διατηρεί το πρόγραμμα οδήγησης αν η άλλη το χρησιμοποιεί ακόμη."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Σύνδεση ήχου",
+          "SCSetupAudio": "Ρυθμίστε το SoundCurrent Audio για το SoundCurrent EQ.",
+          "SCInstallDriver": "Εγκατάσταση ή ενημέρωση του κοινόχρηστου προγράμματος οδήγησης SoundCurrent Audio",
+          "SCDriverCheckFailed": "Το πρόγραμμα εγκατάστασης δεν μπόρεσε να ελέγξει το πρόγραμμα οδήγησης. Μπορείτε να δοκιμάσετε ξανά με το Εγκατάσταση οδηγού ήχου στην εφαρμογή ή στο μενού Έναρξη.",
+          "SCNativeApproval": "Τα Windows θα ζητήσουν έγκριση διαχειριστή για τον υπογεγραμμένο διαχειριστή προγραμμάτων οδήγησης. Το πρόγραμμα εγκατάστασης θα σας ενημερώσει αν απαιτείται επανεκκίνηση.",
+          "SCSharedDriverNotice": "Κλείστε κάθε εφαρμογή SoundCurrent που εκτελείται πριν αλλάξετε το κοινόχρηστο πρόγραμμα οδήγησης. Η απεγκατάσταση μιας εφαρμογής διατηρεί το πρόγραμμα οδήγησης αν η άλλη το χρησιμοποιεί ακόμη."
+        }
+      }
+    },
+    "tr": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Ses bağlantısını kurun",
+          "SCSetupAudio": "SoundCurrent EQ için VB-CABLE kurulumu.",
+          "SCInstallDriver": "VB-CABLE eksikse yükle (yönetici onayı)",
+          "SCDriverCheckFailed": "Kurulum programı sürücüyü denetleyemedi. Uygulamadaki veya Başlat menüsündeki Ses sürücüsü kurulumu ile yeniden deneyebilirsiniz.",
+          "SCCableRestart": "VB-CABLE kurulumu Windows’un yeniden başlatılmasını gerektirir. Ekolayzırı kullanmadan veya VB-CABLE ayarlarını açmadan önce yeniden başlatın."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Ses bağlantısını kurun",
+          "SCSetupAudio": "SoundCurrent EQ için VB-CABLE kurulumu.",
+          "SCInstallDriver": "VB-CABLE eksikse yükle (yönetici onayı)",
+          "SCDriverCheckFailed": "Kurulum programı sürücüyü denetleyemedi. Uygulamadaki veya Başlat menüsündeki Ses sürücüsü kurulumu ile yeniden deneyebilirsiniz.",
+          "SCCableRestart": "VB-CABLE kurulumu Windows’un yeniden başlatılmasını gerektirir. Ekolayzırı kullanmadan veya VB-CABLE ayarlarını açmadan önce yeniden başlatın."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Ses bağlantısını kurun",
+          "SCSetupAudio": "SoundCurrent EQ için SoundCurrent Audio kurulumu.",
+          "SCInstallDriver": "Paylaşılan SoundCurrent Audio sürücüsünü yükle veya güncelle",
+          "SCDriverCheckFailed": "Kurulum programı sürücüyü denetleyemedi. Uygulamadaki veya Başlat menüsündeki Ses sürücüsü kurulumu ile yeniden deneyebilirsiniz.",
+          "SCNativeApproval": "Windows, imzalı sürücü yöneticisi için yönetici onayı isteyecektir. Kurulum programı yeniden başlatma gerekip gerekmediğini bildirecektir.",
+          "SCSharedDriverNotice": "Paylaşılan sürücüyü değiştirmeden önce çalışan tüm SoundCurrent uygulamalarından çıkın. Bir uygulama kaldırıldığında, diğer uygulama sürücüyü hâlâ kullanıyorsa sürücü korunur."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Ses bağlantısını kurun",
+          "SCSetupAudio": "SoundCurrent EQ için SoundCurrent Audio kurulumu.",
+          "SCInstallDriver": "Paylaşılan SoundCurrent Audio sürücüsünü yükle veya güncelle",
+          "SCDriverCheckFailed": "Kurulum programı sürücüyü denetleyemedi. Uygulamadaki veya Başlat menüsündeki Ses sürücüsü kurulumu ile yeniden deneyebilirsiniz.",
+          "SCNativeApproval": "Windows, imzalı sürücü yöneticisi için yönetici onayı isteyecektir. Kurulum programı yeniden başlatma gerekip gerekmediğini bildirecektir.",
+          "SCSharedDriverNotice": "Paylaşılan sürücüyü değiştirmeden önce çalışan tüm SoundCurrent uygulamalarından çıkın. Bir uygulama kaldırıldığında, diğer uygulama sürücüyü hâlâ kullanıyorsa sürücü korunur."
+        }
+      }
+    },
+    "sv": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Anslut ljudet",
+          "SCSetupAudio": "Konfigurera VB-CABLE för SoundCurrent EQ.",
+          "SCInstallDriver": "Installera VB-CABLE om det saknas (administratörens godkännande)",
+          "SCDriverCheckFailed": "Installationsprogrammet kunde inte kontrollera drivrutinen. Du kan försöka igen med Installation av ljuddrivrutin i appen eller Start-menyn.",
+          "SCCableRestart": "Installationen av VB-CABLE kräver att Windows startas om. Starta om innan du använder equalizern eller öppnar inställningarna för VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Anslut ljudet",
+          "SCSetupAudio": "Konfigurera VB-CABLE för SoundCurrent EQ.",
+          "SCInstallDriver": "Installera VB-CABLE om det saknas (administratörens godkännande)",
+          "SCDriverCheckFailed": "Installationsprogrammet kunde inte kontrollera drivrutinen. Du kan försöka igen med Installation av ljuddrivrutin i appen eller Start-menyn.",
+          "SCCableRestart": "Installationen av VB-CABLE kräver att Windows startas om. Starta om innan du använder equalizern eller öppnar inställningarna för VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Anslut ljudet",
+          "SCSetupAudio": "Konfigurera SoundCurrent Audio för SoundCurrent EQ.",
+          "SCInstallDriver": "Installera eller uppdatera den delade SoundCurrent Audio-drivrutinen",
+          "SCDriverCheckFailed": "Installationsprogrammet kunde inte kontrollera drivrutinen. Du kan försöka igen med Installation av ljuddrivrutin i appen eller Start-menyn.",
+          "SCNativeApproval": "Windows begär administratörens godkännande för den signerade drivrutinshanteraren. Installationsprogrammet meddelar om en omstart krävs.",
+          "SCSharedDriverNotice": "Avsluta alla SoundCurrent-appar som körs innan du ändrar den delade drivrutinen. När en app avinstalleras behålls drivrutinen om den andra appen fortfarande använder den."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Anslut ljudet",
+          "SCSetupAudio": "Konfigurera SoundCurrent Audio för SoundCurrent EQ.",
+          "SCInstallDriver": "Installera eller uppdatera den delade SoundCurrent Audio-drivrutinen",
+          "SCDriverCheckFailed": "Installationsprogrammet kunde inte kontrollera drivrutinen. Du kan försöka igen med Installation av ljuddrivrutin i appen eller Start-menyn.",
+          "SCNativeApproval": "Windows begär administratörens godkännande för den signerade drivrutinshanteraren. Installationsprogrammet meddelar om en omstart krävs.",
+          "SCSharedDriverNotice": "Avsluta alla SoundCurrent-appar som körs innan du ändrar den delade drivrutinen. När en app avinstalleras behålls drivrutinen om den andra appen fortfarande använder den."
+        }
+      }
+    },
+    "da": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Tilslut lyd",
+          "SCSetupAudio": "Konfigurer VB-CABLE til SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE, hvis det mangler (administratorgodkendelse)",
+          "SCDriverCheckFailed": "Installationsprogrammet kunne ikke kontrollere driveren. Du kan prøve igen med Installation af lyddriver i appen eller menuen Start.",
+          "SCCableRestart": "Opsætning af VB-CABLE kræver en genstart af Windows. Genstart, før du bruger equalizeren eller åbner indstillingerne for VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Tilslut lyd",
+          "SCSetupAudio": "Konfigurer VB-CABLE til SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE, hvis det mangler (administratorgodkendelse)",
+          "SCDriverCheckFailed": "Installationsprogrammet kunne ikke kontrollere driveren. Du kan prøve igen med Installation af lyddriver i appen eller menuen Start.",
+          "SCCableRestart": "Opsætning af VB-CABLE kræver en genstart af Windows. Genstart, før du bruger equalizeren eller åbner indstillingerne for VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Tilslut lyd",
+          "SCSetupAudio": "Konfigurer SoundCurrent Audio til SoundCurrent EQ.",
+          "SCInstallDriver": "Installer eller opdater den delte SoundCurrent Audio-driver",
+          "SCDriverCheckFailed": "Installationsprogrammet kunne ikke kontrollere driveren. Du kan prøve igen med Installation af lyddriver i appen eller menuen Start.",
+          "SCNativeApproval": "Windows vil bede om administratorgodkendelse til det signerede program til administration af drivere. Installationsprogrammet fortæller, om en genstart er nødvendig.",
+          "SCSharedDriverNotice": "Afslut alle kørende SoundCurrent-apps, før du ændrer den delte driver. Når én app afinstalleres, bevares driveren, hvis den anden app stadig bruger den."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Tilslut lyd",
+          "SCSetupAudio": "Konfigurer SoundCurrent Audio til SoundCurrent EQ.",
+          "SCInstallDriver": "Installer eller opdater den delte SoundCurrent Audio-driver",
+          "SCDriverCheckFailed": "Installationsprogrammet kunne ikke kontrollere driveren. Du kan prøve igen med Installation af lyddriver i appen eller menuen Start.",
+          "SCNativeApproval": "Windows vil bede om administratorgodkendelse til det signerede program til administration af drivere. Installationsprogrammet fortæller, om en genstart er nødvendig.",
+          "SCSharedDriverNotice": "Afslut alle kørende SoundCurrent-apps, før du ændrer den delte driver. Når én app afinstalleres, bevares driveren, hvis den anden app stadig bruger den."
+        }
+      }
+    },
+    "nb": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Koble til lyd",
+          "SCSetupAudio": "Sett opp VB-CABLE for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE hvis det mangler (administratorgodkjenning)",
+          "SCDriverCheckFailed": "Installasjonsprogrammet kunne ikke kontrollere driveren. Du kan prøve igjen med Lyddriveroppsett i appen eller Start-menyen.",
+          "SCCableRestart": "Oppsett av VB-CABLE krever en omstart av Windows. Start på nytt før du bruker equalizeren eller åpner innstillingene for VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Koble til lyd",
+          "SCSetupAudio": "Sett opp VB-CABLE for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE hvis det mangler (administratorgodkjenning)",
+          "SCDriverCheckFailed": "Installasjonsprogrammet kunne ikke kontrollere driveren. Du kan prøve igjen med Lyddriveroppsett i appen eller Start-menyen.",
+          "SCCableRestart": "Oppsett av VB-CABLE krever en omstart av Windows. Start på nytt før du bruker equalizeren eller åpner innstillingene for VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Koble til lyd",
+          "SCSetupAudio": "Sett opp SoundCurrent Audio for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer eller oppdater den delte SoundCurrent Audio-driveren",
+          "SCDriverCheckFailed": "Installasjonsprogrammet kunne ikke kontrollere driveren. Du kan prøve igjen med Lyddriveroppsett i appen eller Start-menyen.",
+          "SCNativeApproval": "Windows ber om administratorgodkjenning for den signerte driverbehandleren. Installasjonsprogrammet forteller om en omstart er nødvendig.",
+          "SCSharedDriverNotice": "Avslutt alle SoundCurrent-apper som kjører, før du endrer den delte driveren. Når én app avinstalleres, beholdes driveren hvis den andre appen fortsatt bruker den."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Koble til lyd",
+          "SCSetupAudio": "Sett opp SoundCurrent Audio for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer eller oppdater den delte SoundCurrent Audio-driveren",
+          "SCDriverCheckFailed": "Installasjonsprogrammet kunne ikke kontrollere driveren. Du kan prøve igjen med Lyddriveroppsett i appen eller Start-menyen.",
+          "SCNativeApproval": "Windows ber om administratorgodkjenning for den signerte driverbehandleren. Installasjonsprogrammet forteller om en omstart er nødvendig.",
+          "SCSharedDriverNotice": "Avslutt alle SoundCurrent-apper som kjører, før du endrer den delte driveren. Når én app avinstalleres, beholdes driveren hvis den andre appen fortsatt bruker den."
+        }
+      }
+    },
+    "fi": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Äänen yhdistäminen",
+          "SCSetupAudio": "Määritä VB-CABLE sovellukselle SoundCurrent EQ.",
+          "SCInstallDriver": "Asenna VB-CABLE, jos se puuttuu (järjestelmänvalvojan hyväksyntä)",
+          "SCDriverCheckFailed": "Asennusohjelma ei voinut tarkistaa ajuria. Voit yrittää uudelleen sovelluksen tai Käynnistä-valikon toiminnolla Ääniajurin asennus.",
+          "SCCableRestart": "VB-CABLEn määritys edellyttää Windowsin uudelleenkäynnistystä. Käynnistä uudelleen ennen taajuuskorjaimen käyttöä tai VB-CABLEn asetusten avaamista."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Äänen yhdistäminen",
+          "SCSetupAudio": "Määritä VB-CABLE sovellukselle SoundCurrent EQ.",
+          "SCInstallDriver": "Asenna VB-CABLE, jos se puuttuu (järjestelmänvalvojan hyväksyntä)",
+          "SCDriverCheckFailed": "Asennusohjelma ei voinut tarkistaa ajuria. Voit yrittää uudelleen sovelluksen tai Käynnistä-valikon toiminnolla Ääniajurin asennus.",
+          "SCCableRestart": "VB-CABLEn määritys edellyttää Windowsin uudelleenkäynnistystä. Käynnistä uudelleen ennen taajuuskorjaimen käyttöä tai VB-CABLEn asetusten avaamista."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Äänen yhdistäminen",
+          "SCSetupAudio": "Määritä SoundCurrent Audio sovellukselle SoundCurrent EQ.",
+          "SCInstallDriver": "Asenna tai päivitä jaettu SoundCurrent Audio -ajuri",
+          "SCDriverCheckFailed": "Asennusohjelma ei voinut tarkistaa ajuria. Voit yrittää uudelleen sovelluksen tai Käynnistä-valikon toiminnolla Ääniajurin asennus.",
+          "SCNativeApproval": "Windows pyytää järjestelmänvalvojan hyväksyntää allekirjoitetulle ajurien hallintaohjelmalle. Asennusohjelma ilmoittaa, tarvitaanko uudelleenkäynnistys.",
+          "SCSharedDriverNotice": "Sulje kaikki käynnissä olevat SoundCurrent-sovellukset ennen jaetun ajurin muuttamista. Yhden sovelluksen poistaminen säilyttää ajurin, jos toinen sovellus käyttää sitä edelleen."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Äänen yhdistäminen",
+          "SCSetupAudio": "Määritä SoundCurrent Audio sovellukselle SoundCurrent EQ.",
+          "SCInstallDriver": "Asenna tai päivitä jaettu SoundCurrent Audio -ajuri",
+          "SCDriverCheckFailed": "Asennusohjelma ei voinut tarkistaa ajuria. Voit yrittää uudelleen sovelluksen tai Käynnistä-valikon toiminnolla Ääniajurin asennus.",
+          "SCNativeApproval": "Windows pyytää järjestelmänvalvojan hyväksyntää allekirjoitetulle ajurien hallintaohjelmalle. Asennusohjelma ilmoittaa, tarvitaanko uudelleenkäynnistys.",
+          "SCSharedDriverNotice": "Sulje kaikki käynnissä olevat SoundCurrent-sovellukset ennen jaetun ajurin muuttamista. Yhden sovelluksen poistaminen säilyttää ajurin, jos toinen sovellus käyttää sitä edelleen."
+        }
+      }
+    },
+    "ro": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Conectați sunetul",
+          "SCSetupAudio": "Configurați VB-CABLE pentru SoundCurrent EQ.",
+          "SCInstallDriver": "Instalați VB-CABLE dacă lipsește (aprobare de administrator)",
+          "SCDriverCheckFailed": "Programul de instalare nu a putut verifica driverul. Puteți încerca din nou cu Configurare driver audio în aplicație sau în meniul Start.",
+          "SCCableRestart": "Configurarea VB-CABLE necesită repornirea Windows. Reporniți înainte de a utiliza egalizatorul sau de a deschide setările VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Conectați sunetul",
+          "SCSetupAudio": "Configurați VB-CABLE pentru SoundCurrent EQ.",
+          "SCInstallDriver": "Instalați VB-CABLE dacă lipsește (aprobare de administrator)",
+          "SCDriverCheckFailed": "Programul de instalare nu a putut verifica driverul. Puteți încerca din nou cu Configurare driver audio în aplicație sau în meniul Start.",
+          "SCCableRestart": "Configurarea VB-CABLE necesită repornirea Windows. Reporniți înainte de a utiliza egalizatorul sau de a deschide setările VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Conectați sunetul",
+          "SCSetupAudio": "Configurați SoundCurrent Audio pentru SoundCurrent EQ.",
+          "SCInstallDriver": "Instalați sau actualizați driverul partajat SoundCurrent Audio",
+          "SCDriverCheckFailed": "Programul de instalare nu a putut verifica driverul. Puteți încerca din nou cu Configurare driver audio în aplicație sau în meniul Start.",
+          "SCNativeApproval": "Windows va solicita aprobare de administrator pentru managerul de drivere semnat. Programul de instalare vă va informa dacă este necesară o repornire.",
+          "SCSharedDriverNotice": "Închideți toate aplicațiile SoundCurrent care rulează înainte de a modifica driverul partajat. Dezinstalarea unei aplicații păstrează driverul dacă cealaltă încă îl utilizează."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Conectați sunetul",
+          "SCSetupAudio": "Configurați SoundCurrent Audio pentru SoundCurrent EQ.",
+          "SCInstallDriver": "Instalați sau actualizați driverul partajat SoundCurrent Audio",
+          "SCDriverCheckFailed": "Programul de instalare nu a putut verifica driverul. Puteți încerca din nou cu Configurare driver audio în aplicație sau în meniul Start.",
+          "SCNativeApproval": "Windows va solicita aprobare de administrator pentru managerul de drivere semnat. Programul de instalare vă va informa dacă este necesară o repornire.",
+          "SCSharedDriverNotice": "Închideți toate aplicațiile SoundCurrent care rulează înainte de a modifica driverul partajat. Dezinstalarea unei aplicații păstrează driverul dacă cealaltă încă îl utilizează."
+        }
+      }
+    },
+    "hu": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Hang csatlakoztatása",
+          "SCSetupAudio": "VB-CABLE beállítása a(z) SoundCurrent EQ alkalmazáshoz.",
+          "SCInstallDriver": "VB-CABLE telepítése, ha hiányzik (rendszergazdai jóváhagyás)",
+          "SCDriverCheckFailed": "A telepítő nem tudta ellenőrizni az illesztőprogramot. Újra próbálkozhat az alkalmazásban vagy a Start menüben található Hangillesztőprogram beállítása segítségével.",
+          "SCCableRestart": "A VB-CABLE beállításához újra kell indítani a Windowst. Indítsa újra a rendszert a hangszínszabályzó használata vagy a VB-CABLE beállításainak megnyitása előtt."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Hang csatlakoztatása",
+          "SCSetupAudio": "VB-CABLE beállítása a(z) SoundCurrent EQ alkalmazáshoz.",
+          "SCInstallDriver": "VB-CABLE telepítése, ha hiányzik (rendszergazdai jóváhagyás)",
+          "SCDriverCheckFailed": "A telepítő nem tudta ellenőrizni az illesztőprogramot. Újra próbálkozhat az alkalmazásban vagy a Start menüben található Hangillesztőprogram beállítása segítségével.",
+          "SCCableRestart": "A VB-CABLE beállításához újra kell indítani a Windowst. Indítsa újra a rendszert a hangszínszabályzó használata vagy a VB-CABLE beállításainak megnyitása előtt."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Hang csatlakoztatása",
+          "SCSetupAudio": "SoundCurrent Audio beállítása a(z) SoundCurrent EQ alkalmazáshoz.",
+          "SCInstallDriver": "A megosztott SoundCurrent Audio illesztőprogram telepítése vagy frissítése",
+          "SCDriverCheckFailed": "A telepítő nem tudta ellenőrizni az illesztőprogramot. Újra próbálkozhat az alkalmazásban vagy a Start menüben található Hangillesztőprogram beállítása segítségével.",
+          "SCNativeApproval": "A Windows rendszergazdai jóváhagyást kér az aláírt illesztőprogram-kezelőhöz. A telepítő jelzi, ha újraindítás szükséges.",
+          "SCSharedDriverNotice": "A megosztott illesztőprogram módosítása előtt lépjen ki minden futó SoundCurrent alkalmazásból. Az egyik alkalmazás eltávolításakor az illesztőprogram megmarad, ha a másik még használja."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Hang csatlakoztatása",
+          "SCSetupAudio": "SoundCurrent Audio beállítása a(z) SoundCurrent EQ alkalmazáshoz.",
+          "SCInstallDriver": "A megosztott SoundCurrent Audio illesztőprogram telepítése vagy frissítése",
+          "SCDriverCheckFailed": "A telepítő nem tudta ellenőrizni az illesztőprogramot. Újra próbálkozhat az alkalmazásban vagy a Start menüben található Hangillesztőprogram beállítása segítségével.",
+          "SCNativeApproval": "A Windows rendszergazdai jóváhagyást kér az aláírt illesztőprogram-kezelőhöz. A telepítő jelzi, ha újraindítás szükséges.",
+          "SCSharedDriverNotice": "A megosztott illesztőprogram módosítása előtt lépjen ki minden futó SoundCurrent alkalmazásból. Az egyik alkalmazás eltávolításakor az illesztőprogram megmarad, ha a másik még használja."
+        }
+      }
+    },
+    "ar": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "توصيل الصوت",
+          "SCSetupAudio": "إعداد VB-CABLE لاستخدامه مع SoundCurrent EQ.",
+          "SCInstallDriver": "تثبيت VB-CABLE إذا كان غير موجود (موافقة المسؤول)",
+          "SCDriverCheckFailed": "تعذّر على برنامج التثبيت التحقق من برنامج التشغيل. يمكنك المحاولة مجددًا باستخدام إعداد برنامج تشغيل الصوت في التطبيق أو قائمة ابدأ.",
+          "SCCableRestart": "يتطلب إعداد VB-CABLE إعادة تشغيل Windows. أعد التشغيل قبل استخدام معادل الصوت أو فتح إعدادات VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "توصيل الصوت",
+          "SCSetupAudio": "إعداد VB-CABLE لاستخدامه مع SoundCurrent EQ.",
+          "SCInstallDriver": "تثبيت VB-CABLE إذا كان غير موجود (موافقة المسؤول)",
+          "SCDriverCheckFailed": "تعذّر على برنامج التثبيت التحقق من برنامج التشغيل. يمكنك المحاولة مجددًا باستخدام إعداد برنامج تشغيل الصوت في التطبيق أو قائمة ابدأ.",
+          "SCCableRestart": "يتطلب إعداد VB-CABLE إعادة تشغيل Windows. أعد التشغيل قبل استخدام معادل الصوت أو فتح إعدادات VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "توصيل الصوت",
+          "SCSetupAudio": "إعداد SoundCurrent Audio لاستخدامه مع SoundCurrent EQ.",
+          "SCInstallDriver": "تثبيت برنامج تشغيل SoundCurrent Audio المشترك أو تحديثه",
+          "SCDriverCheckFailed": "تعذّر على برنامج التثبيت التحقق من برنامج التشغيل. يمكنك المحاولة مجددًا باستخدام إعداد برنامج تشغيل الصوت في التطبيق أو قائمة ابدأ.",
+          "SCNativeApproval": "سيطلب Windows موافقة المسؤول لتشغيل مدير برامج التشغيل الموقّع. سيخبرك برنامج التثبيت إذا كانت إعادة التشغيل مطلوبة.",
+          "SCSharedDriverNotice": "أغلق جميع تطبيقات SoundCurrent قيد التشغيل قبل تغيير برنامج التشغيل المشترك. تحتفظ إزالة أحد التطبيقين ببرنامج التشغيل إذا كان التطبيق الآخر لا يزال يستخدمه."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "توصيل الصوت",
+          "SCSetupAudio": "إعداد SoundCurrent Audio لاستخدامه مع SoundCurrent EQ.",
+          "SCInstallDriver": "تثبيت برنامج تشغيل SoundCurrent Audio المشترك أو تحديثه",
+          "SCDriverCheckFailed": "تعذّر على برنامج التثبيت التحقق من برنامج التشغيل. يمكنك المحاولة مجددًا باستخدام إعداد برنامج تشغيل الصوت في التطبيق أو قائمة ابدأ.",
+          "SCNativeApproval": "سيطلب Windows موافقة المسؤول لتشغيل مدير برامج التشغيل الموقّع. سيخبرك برنامج التثبيت إذا كانت إعادة التشغيل مطلوبة.",
+          "SCSharedDriverNotice": "أغلق جميع تطبيقات SoundCurrent قيد التشغيل قبل تغيير برنامج التشغيل المشترك. تحتفظ إزالة أحد التطبيقين ببرنامج التشغيل إذا كان التطبيق الآخر لا يزال يستخدمه."
+        }
+      }
+    },
+    "he": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "חיבור שמע",
+          "SCSetupAudio": "הגדרת VB-CABLE עבור SoundCurrent EQ.",
+          "SCInstallDriver": "התקנת VB-CABLE אם אינו מותקן (אישור מנהל מערכת)",
+          "SCDriverCheckFailed": "תוכנית ההתקנה לא הצליחה לבדוק את מנהל ההתקן. ניתן לנסות שוב באמצעות התקנת מנהל התקן שמע ביישום או בתפריט התחל.",
+          "SCCableRestart": "הגדרת VB-CABLE מחייבת הפעלה מחדש של Windows. יש להפעיל מחדש לפני השימוש באקולייזר או פתיחת הגדרות VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "חיבור שמע",
+          "SCSetupAudio": "הגדרת VB-CABLE עבור SoundCurrent EQ.",
+          "SCInstallDriver": "התקנת VB-CABLE אם אינו מותקן (אישור מנהל מערכת)",
+          "SCDriverCheckFailed": "תוכנית ההתקנה לא הצליחה לבדוק את מנהל ההתקן. ניתן לנסות שוב באמצעות התקנת מנהל התקן שמע ביישום או בתפריט התחל.",
+          "SCCableRestart": "הגדרת VB-CABLE מחייבת הפעלה מחדש של Windows. יש להפעיל מחדש לפני השימוש באקולייזר או פתיחת הגדרות VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "חיבור שמע",
+          "SCSetupAudio": "הגדרת SoundCurrent Audio עבור SoundCurrent EQ.",
+          "SCInstallDriver": "התקנה או עדכון של מנהל ההתקן המשותף SoundCurrent Audio",
+          "SCDriverCheckFailed": "תוכנית ההתקנה לא הצליחה לבדוק את מנהל ההתקן. ניתן לנסות שוב באמצעות התקנת מנהל התקן שמע ביישום או בתפריט התחל.",
+          "SCNativeApproval": "Windows יבקש אישור מנהל מערכת עבור תוכנת ניהול מנהלי ההתקנים החתומה. תוכנית ההתקנה תודיע אם נדרשת הפעלה מחדש.",
+          "SCSharedDriverNotice": "יש לצאת מכל יישום SoundCurrent שפועל לפני שינוי מנהל ההתקן המשותף. הסרת יישום אחד משאירה את מנהל ההתקן אם היישום האחר עדיין משתמש בו."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "חיבור שמע",
+          "SCSetupAudio": "הגדרת SoundCurrent Audio עבור SoundCurrent EQ.",
+          "SCInstallDriver": "התקנה או עדכון של מנהל ההתקן המשותף SoundCurrent Audio",
+          "SCDriverCheckFailed": "תוכנית ההתקנה לא הצליחה לבדוק את מנהל ההתקן. ניתן לנסות שוב באמצעות התקנת מנהל התקן שמע ביישום או בתפריט התחל.",
+          "SCNativeApproval": "Windows יבקש אישור מנהל מערכת עבור תוכנת ניהול מנהלי ההתקנים החתומה. תוכנית ההתקנה תודיע אם נדרשת הפעלה מחדש.",
+          "SCSharedDriverNotice": "יש לצאת מכל יישום SoundCurrent שפועל לפני שינוי מנהל ההתקן המשותף. הסרת יישום אחד משאירה את מנהל ההתקן אם היישום האחר עדיין משתמש בו."
+        }
+      }
+    },
+    "fa": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "اتصال صدا",
+          "SCSetupAudio": "راه‌اندازی VB-CABLE برای SoundCurrent EQ.",
+          "SCInstallDriver": "نصب VB-CABLE در صورت نبودن (تأیید مدیر سیستم)",
+          "SCDriverCheckFailed": "نصب‌کننده نتوانست درایور را بررسی کند. می‌توانید با راه‌اندازی درایور صدا در برنامه یا منوی شروع دوباره تلاش کنید.",
+          "SCCableRestart": "راه‌اندازی VB-CABLE نیازمند راه‌اندازی مجدد Windows است. پیش از استفاده از اکولایزر یا باز کردن تنظیمات VB-CABLE، سیستم را راه‌اندازی مجدد کنید."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "اتصال صدا",
+          "SCSetupAudio": "راه‌اندازی VB-CABLE برای SoundCurrent EQ.",
+          "SCInstallDriver": "نصب VB-CABLE در صورت نبودن (تأیید مدیر سیستم)",
+          "SCDriverCheckFailed": "نصب‌کننده نتوانست درایور را بررسی کند. می‌توانید با راه‌اندازی درایور صدا در برنامه یا منوی شروع دوباره تلاش کنید.",
+          "SCCableRestart": "راه‌اندازی VB-CABLE نیازمند راه‌اندازی مجدد Windows است. پیش از استفاده از اکولایزر یا باز کردن تنظیمات VB-CABLE، سیستم را راه‌اندازی مجدد کنید."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "اتصال صدا",
+          "SCSetupAudio": "راه‌اندازی SoundCurrent Audio برای SoundCurrent EQ.",
+          "SCInstallDriver": "نصب یا به‌روزرسانی درایور مشترک SoundCurrent Audio",
+          "SCDriverCheckFailed": "نصب‌کننده نتوانست درایور را بررسی کند. می‌توانید با راه‌اندازی درایور صدا در برنامه یا منوی شروع دوباره تلاش کنید.",
+          "SCNativeApproval": "Windows برای مدیر درایور دارای امضای دیجیتال تأیید مدیر سیستم را درخواست می‌کند. نصب‌کننده اعلام می‌کند که آیا راه‌اندازی مجدد لازم است.",
+          "SCSharedDriverNotice": "پیش از تغییر درایور مشترک، از همهٔ برنامه‌های SoundCurrent در حال اجرا خارج شوید. با حذف یک برنامه، اگر برنامهٔ دیگر هنوز از درایور استفاده کند، درایور حفظ می‌شود."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "اتصال صدا",
+          "SCSetupAudio": "راه‌اندازی SoundCurrent Audio برای SoundCurrent EQ.",
+          "SCInstallDriver": "نصب یا به‌روزرسانی درایور مشترک SoundCurrent Audio",
+          "SCDriverCheckFailed": "نصب‌کننده نتوانست درایور را بررسی کند. می‌توانید با راه‌اندازی درایور صدا در برنامه یا منوی شروع دوباره تلاش کنید.",
+          "SCNativeApproval": "Windows برای مدیر درایور دارای امضای دیجیتال تأیید مدیر سیستم را درخواست می‌کند. نصب‌کننده اعلام می‌کند که آیا راه‌اندازی مجدد لازم است.",
+          "SCSharedDriverNotice": "پیش از تغییر درایور مشترک، از همهٔ برنامه‌های SoundCurrent در حال اجرا خارج شوید. با حذف یک برنامه، اگر برنامهٔ دیگر هنوز از درایور استفاده کند، درایور حفظ می‌شود."
+        }
+      }
+    },
+    "zh-Hans": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "连接音频",
+          "SCSetupAudio": "为 SoundCurrent EQ 设置 VB-CABLE。",
+          "SCInstallDriver": "未安装时安装 VB-CABLE（需要管理员批准）",
+          "SCDriverCheckFailed": "安装程序无法检查驱动程序。您可以通过应用内或开始菜单中的 音频驱动安装 重试。",
+          "SCCableRestart": "VB-CABLE 设置需要重启 Windows。请在使用均衡器或打开 VB-CABLE 设置之前重启。"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "连接音频",
+          "SCSetupAudio": "为 SoundCurrent EQ 设置 VB-CABLE。",
+          "SCInstallDriver": "未安装时安装 VB-CABLE（需要管理员批准）",
+          "SCDriverCheckFailed": "安装程序无法检查驱动程序。您可以通过应用内或开始菜单中的 音频驱动安装 重试。",
+          "SCCableRestart": "VB-CABLE 设置需要重启 Windows。请在使用均衡器或打开 VB-CABLE 设置之前重启。"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "连接音频",
+          "SCSetupAudio": "为 SoundCurrent EQ 设置 SoundCurrent Audio。",
+          "SCInstallDriver": "安装或更新共享的 SoundCurrent Audio 驱动程序",
+          "SCDriverCheckFailed": "安装程序无法检查驱动程序。您可以通过应用内或开始菜单中的 音频驱动安装 重试。",
+          "SCNativeApproval": "Windows 将为已签名的驱动程序管理器请求管理员批准。安装程序会告知您是否需要重启。",
+          "SCSharedDriverNotice": "更改共享驱动程序前，请退出所有正在运行的 SoundCurrent 应用。卸载一个应用时，如果另一个应用仍在使用该驱动程序，则会保留驱动程序。"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "连接音频",
+          "SCSetupAudio": "为 SoundCurrent EQ 设置 SoundCurrent Audio。",
+          "SCInstallDriver": "安装或更新共享的 SoundCurrent Audio 驱动程序",
+          "SCDriverCheckFailed": "安装程序无法检查驱动程序。您可以通过应用内或开始菜单中的 音频驱动安装 重试。",
+          "SCNativeApproval": "Windows 将为已签名的驱动程序管理器请求管理员批准。安装程序会告知您是否需要重启。",
+          "SCSharedDriverNotice": "更改共享驱动程序前，请退出所有正在运行的 SoundCurrent 应用。卸载一个应用时，如果另一个应用仍在使用该驱动程序，则会保留驱动程序。"
+        }
+      }
+    },
+    "zh-Hant": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "連接音訊",
+          "SCSetupAudio": "為 SoundCurrent EQ 設定 VB-CABLE。",
+          "SCInstallDriver": "未安裝時安裝 VB-CABLE（需要系統管理員核准）",
+          "SCDriverCheckFailed": "安裝程式無法檢查驅動程式。您可以透過應用程式內或開始功能表中的 音訊驅動程式安裝 重試。",
+          "SCCableRestart": "VB-CABLE 設定需要重新啟動 Windows。請在使用等化器或開啟 VB-CABLE 設定之前重新啟動。"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "連接音訊",
+          "SCSetupAudio": "為 SoundCurrent EQ 設定 VB-CABLE。",
+          "SCInstallDriver": "未安裝時安裝 VB-CABLE（需要系統管理員核准）",
+          "SCDriverCheckFailed": "安裝程式無法檢查驅動程式。您可以透過應用程式內或開始功能表中的 音訊驅動程式安裝 重試。",
+          "SCCableRestart": "VB-CABLE 設定需要重新啟動 Windows。請在使用等化器或開啟 VB-CABLE 設定之前重新啟動。"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "連接音訊",
+          "SCSetupAudio": "為 SoundCurrent EQ 設定 SoundCurrent Audio。",
+          "SCInstallDriver": "安裝或更新共用的 SoundCurrent Audio 驅動程式",
+          "SCDriverCheckFailed": "安裝程式無法檢查驅動程式。您可以透過應用程式內或開始功能表中的 音訊驅動程式安裝 重試。",
+          "SCNativeApproval": "Windows 將為已簽署的驅動程式管理工具要求系統管理員核准。安裝程式會告知您是否需要重新啟動。",
+          "SCSharedDriverNotice": "變更共用驅動程式前，請結束所有正在執行的 SoundCurrent 應用程式。解除安裝其中一個應用程式時，若另一個仍在使用該驅動程式，則會保留驅動程式。"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "連接音訊",
+          "SCSetupAudio": "為 SoundCurrent EQ 設定 SoundCurrent Audio。",
+          "SCInstallDriver": "安裝或更新共用的 SoundCurrent Audio 驅動程式",
+          "SCDriverCheckFailed": "安裝程式無法檢查驅動程式。您可以透過應用程式內或開始功能表中的 音訊驅動程式安裝 重試。",
+          "SCNativeApproval": "Windows 將為已簽署的驅動程式管理工具要求系統管理員核准。安裝程式會告知您是否需要重新啟動。",
+          "SCSharedDriverNotice": "變更共用驅動程式前，請結束所有正在執行的 SoundCurrent 應用程式。解除安裝其中一個應用程式時，若另一個仍在使用該驅動程式，則會保留驅動程式。"
+        }
+      }
+    },
+    "ja": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "オーディオを接続",
+          "SCSetupAudio": "SoundCurrent EQ 用に VB-CABLE を設定します。",
+          "SCInstallDriver": "VB-CABLE が未インストールの場合にインストール（管理者の承認が必要）",
+          "SCDriverCheckFailed": "セットアップでドライバーを確認できませんでした。アプリ内またはスタートメニューの オーディオドライバー設定 から再試行できます。",
+          "SCCableRestart": "VB-CABLE のセットアップには Windows の再起動が必要です。イコライザーを使用する前、または VB-CABLE の設定を開く前に再起動してください。"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "オーディオを接続",
+          "SCSetupAudio": "SoundCurrent EQ 用に VB-CABLE を設定します。",
+          "SCInstallDriver": "VB-CABLE が未インストールの場合にインストール（管理者の承認が必要）",
+          "SCDriverCheckFailed": "セットアップでドライバーを確認できませんでした。アプリ内またはスタートメニューの オーディオドライバー設定 から再試行できます。",
+          "SCCableRestart": "VB-CABLE のセットアップには Windows の再起動が必要です。イコライザーを使用する前、または VB-CABLE の設定を開く前に再起動してください。"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "オーディオを接続",
+          "SCSetupAudio": "SoundCurrent EQ 用に SoundCurrent Audio を設定します。",
+          "SCInstallDriver": "共有の SoundCurrent Audio ドライバーをインストールまたは更新",
+          "SCDriverCheckFailed": "セットアップでドライバーを確認できませんでした。アプリ内またはスタートメニューの オーディオドライバー設定 から再試行できます。",
+          "SCNativeApproval": "Windows は署名済みドライバーマネージャーに対する管理者の承認を求めます。再起動が必要な場合はセットアップが通知します。",
+          "SCSharedDriverNotice": "共有ドライバーを変更する前に、実行中のすべての SoundCurrent アプリを終了してください。一方のアプリをアンインストールしても、もう一方がドライバーを使用していればドライバーは保持されます。"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "オーディオを接続",
+          "SCSetupAudio": "SoundCurrent EQ 用に SoundCurrent Audio を設定します。",
+          "SCInstallDriver": "共有の SoundCurrent Audio ドライバーをインストールまたは更新",
+          "SCDriverCheckFailed": "セットアップでドライバーを確認できませんでした。アプリ内またはスタートメニューの オーディオドライバー設定 から再試行できます。",
+          "SCNativeApproval": "Windows は署名済みドライバーマネージャーに対する管理者の承認を求めます。再起動が必要な場合はセットアップが通知します。",
+          "SCSharedDriverNotice": "共有ドライバーを変更する前に、実行中のすべての SoundCurrent アプリを終了してください。一方のアプリをアンインストールしても、もう一方がドライバーを使用していればドライバーは保持されます。"
+        }
+      }
+    },
+    "ko": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "오디오 연결",
+          "SCSetupAudio": "SoundCurrent EQ용 VB-CABLE을 설정합니다.",
+          "SCInstallDriver": "VB-CABLE이 없으면 설치(관리자 승인 필요)",
+          "SCDriverCheckFailed": "설치 프로그램이 드라이버를 확인하지 못했습니다. 앱 또는 시작 메뉴의 오디오 드라이버 설정에서 다시 시도할 수 있습니다.",
+          "SCCableRestart": "VB-CABLE 설정에는 Windows 재시작이 필요합니다. 이퀄라이저를 사용하거나 VB-CABLE 설정을 열기 전에 다시 시작하세요."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "오디오 연결",
+          "SCSetupAudio": "SoundCurrent EQ용 VB-CABLE을 설정합니다.",
+          "SCInstallDriver": "VB-CABLE이 없으면 설치(관리자 승인 필요)",
+          "SCDriverCheckFailed": "설치 프로그램이 드라이버를 확인하지 못했습니다. 앱 또는 시작 메뉴의 오디오 드라이버 설정에서 다시 시도할 수 있습니다.",
+          "SCCableRestart": "VB-CABLE 설정에는 Windows 재시작이 필요합니다. 이퀄라이저를 사용하거나 VB-CABLE 설정을 열기 전에 다시 시작하세요."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "오디오 연결",
+          "SCSetupAudio": "SoundCurrent EQ용 SoundCurrent Audio을 설정합니다.",
+          "SCInstallDriver": "공유 SoundCurrent Audio 드라이버 설치 또는 업데이트",
+          "SCDriverCheckFailed": "설치 프로그램이 드라이버를 확인하지 못했습니다. 앱 또는 시작 메뉴의 오디오 드라이버 설정에서 다시 시도할 수 있습니다.",
+          "SCNativeApproval": "Windows가 서명된 드라이버 관리 프로그램의 실행을 위한 관리자 승인을 요청합니다. 설치 프로그램이 재시작이 필요한지 알려줍니다.",
+          "SCSharedDriverNotice": "공유 드라이버를 변경하기 전에 실행 중인 모든 SoundCurrent 앱을 종료하세요. 한 앱을 제거해도 다른 앱이 드라이버를 계속 사용하면 드라이버는 유지됩니다."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "오디오 연결",
+          "SCSetupAudio": "SoundCurrent EQ용 SoundCurrent Audio을 설정합니다.",
+          "SCInstallDriver": "공유 SoundCurrent Audio 드라이버 설치 또는 업데이트",
+          "SCDriverCheckFailed": "설치 프로그램이 드라이버를 확인하지 못했습니다. 앱 또는 시작 메뉴의 오디오 드라이버 설정에서 다시 시도할 수 있습니다.",
+          "SCNativeApproval": "Windows가 서명된 드라이버 관리 프로그램의 실행을 위한 관리자 승인을 요청합니다. 설치 프로그램이 재시작이 필요한지 알려줍니다.",
+          "SCSharedDriverNotice": "공유 드라이버를 변경하기 전에 실행 중인 모든 SoundCurrent 앱을 종료하세요. 한 앱을 제거해도 다른 앱이 드라이버를 계속 사용하면 드라이버는 유지됩니다."
+        }
+      }
+    },
+    "hi": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "ऑडियो कनेक्ट करें",
+          "SCSetupAudio": "SoundCurrent EQ के लिए VB-CABLE सेट अप करें।",
+          "SCInstallDriver": "VB-CABLE न होने पर इंस्टॉल करें (व्यवस्थापक की अनुमति)",
+          "SCDriverCheckFailed": "इंस्टॉलर ड्राइवर की जाँच नहीं कर सका। आप ऐप या स्टार्ट मेन्यू में ऑडियो ड्राइवर सेटअप से फिर कोशिश कर सकते हैं।",
+          "SCCableRestart": "VB-CABLE सेटअप के लिए Windows को पुनः शुरू करना आवश्यक है। इक्वलाइज़र इस्तेमाल करने या VB-CABLE सेटिंग खोलने से पहले पुनः शुरू करें।"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "ऑडियो कनेक्ट करें",
+          "SCSetupAudio": "SoundCurrent EQ के लिए VB-CABLE सेट अप करें।",
+          "SCInstallDriver": "VB-CABLE न होने पर इंस्टॉल करें (व्यवस्थापक की अनुमति)",
+          "SCDriverCheckFailed": "इंस्टॉलर ड्राइवर की जाँच नहीं कर सका। आप ऐप या स्टार्ट मेन्यू में ऑडियो ड्राइवर सेटअप से फिर कोशिश कर सकते हैं।",
+          "SCCableRestart": "VB-CABLE सेटअप के लिए Windows को पुनः शुरू करना आवश्यक है। इक्वलाइज़र इस्तेमाल करने या VB-CABLE सेटिंग खोलने से पहले पुनः शुरू करें।"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "ऑडियो कनेक्ट करें",
+          "SCSetupAudio": "SoundCurrent EQ के लिए SoundCurrent Audio सेट अप करें।",
+          "SCInstallDriver": "साझा SoundCurrent Audio ड्राइवर इंस्टॉल या अपडेट करें",
+          "SCDriverCheckFailed": "इंस्टॉलर ड्राइवर की जाँच नहीं कर सका। आप ऐप या स्टार्ट मेन्यू में ऑडियो ड्राइवर सेटअप से फिर कोशिश कर सकते हैं।",
+          "SCNativeApproval": "Windows हस्ताक्षरित ड्राइवर प्रबंधक के लिए व्यवस्थापक की अनुमति माँगेगा। इंस्टॉलर बताएगा कि पुनः शुरू करना आवश्यक है या नहीं।",
+          "SCSharedDriverNotice": "साझा ड्राइवर बदलने से पहले चल रहे सभी SoundCurrent ऐप बंद करें। एक ऐप हटाने पर ड्राइवर बना रहता है, अगर दूसरा ऐप अभी भी उसका इस्तेमाल करता है।"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "ऑडियो कनेक्ट करें",
+          "SCSetupAudio": "SoundCurrent EQ के लिए SoundCurrent Audio सेट अप करें।",
+          "SCInstallDriver": "साझा SoundCurrent Audio ड्राइवर इंस्टॉल या अपडेट करें",
+          "SCDriverCheckFailed": "इंस्टॉलर ड्राइवर की जाँच नहीं कर सका। आप ऐप या स्टार्ट मेन्यू में ऑडियो ड्राइवर सेटअप से फिर कोशिश कर सकते हैं।",
+          "SCNativeApproval": "Windows हस्ताक्षरित ड्राइवर प्रबंधक के लिए व्यवस्थापक की अनुमति माँगेगा। इंस्टॉलर बताएगा कि पुनः शुरू करना आवश्यक है या नहीं।",
+          "SCSharedDriverNotice": "साझा ड्राइवर बदलने से पहले चल रहे सभी SoundCurrent ऐप बंद करें। एक ऐप हटाने पर ड्राइवर बना रहता है, अगर दूसरा ऐप अभी भी उसका इस्तेमाल करता है।"
+        }
+      }
+    },
+    "id": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Hubungkan audio",
+          "SCSetupAudio": "Siapkan VB-CABLE untuk SoundCurrent EQ.",
+          "SCInstallDriver": "Instal VB-CABLE jika belum terpasang (persetujuan administrator)",
+          "SCDriverCheckFailed": "Penginstal tidak dapat memeriksa driver. Anda dapat mencoba lagi melalui Penyiapan driver audio di aplikasi atau menu Mulai.",
+          "SCCableRestart": "Penyiapan VB-CABLE memerlukan mulai ulang Windows. Mulai ulang sebelum menggunakan equalizer atau membuka pengaturan VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Hubungkan audio",
+          "SCSetupAudio": "Siapkan VB-CABLE untuk SoundCurrent EQ.",
+          "SCInstallDriver": "Instal VB-CABLE jika belum terpasang (persetujuan administrator)",
+          "SCDriverCheckFailed": "Penginstal tidak dapat memeriksa driver. Anda dapat mencoba lagi melalui Penyiapan driver audio di aplikasi atau menu Mulai.",
+          "SCCableRestart": "Penyiapan VB-CABLE memerlukan mulai ulang Windows. Mulai ulang sebelum menggunakan equalizer atau membuka pengaturan VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Hubungkan audio",
+          "SCSetupAudio": "Siapkan SoundCurrent Audio untuk SoundCurrent EQ.",
+          "SCInstallDriver": "Instal atau perbarui driver SoundCurrent Audio bersama",
+          "SCDriverCheckFailed": "Penginstal tidak dapat memeriksa driver. Anda dapat mencoba lagi melalui Penyiapan driver audio di aplikasi atau menu Mulai.",
+          "SCNativeApproval": "Windows akan meminta persetujuan administrator untuk pengelola driver yang ditandatangani. Penginstal akan memberi tahu jika perlu memulai ulang.",
+          "SCSharedDriverNotice": "Keluar dari semua aplikasi SoundCurrent yang berjalan sebelum mengubah driver bersama. Menghapus satu aplikasi mempertahankan driver jika aplikasi lain masih menggunakannya."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Hubungkan audio",
+          "SCSetupAudio": "Siapkan SoundCurrent Audio untuk SoundCurrent EQ.",
+          "SCInstallDriver": "Instal atau perbarui driver SoundCurrent Audio bersama",
+          "SCDriverCheckFailed": "Penginstal tidak dapat memeriksa driver. Anda dapat mencoba lagi melalui Penyiapan driver audio di aplikasi atau menu Mulai.",
+          "SCNativeApproval": "Windows akan meminta persetujuan administrator untuk pengelola driver yang ditandatangani. Penginstal akan memberi tahu jika perlu memulai ulang.",
+          "SCSharedDriverNotice": "Keluar dari semua aplikasi SoundCurrent yang berjalan sebelum mengubah driver bersama. Menghapus satu aplikasi mempertahankan driver jika aplikasi lain masih menggunakannya."
+        }
+      }
+    },
+    "vi": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Kết nối âm thanh",
+          "SCSetupAudio": "Thiết lập VB-CABLE cho SoundCurrent EQ.",
+          "SCInstallDriver": "Cài đặt VB-CABLE nếu chưa có (cần quản trị viên chấp thuận)",
+          "SCDriverCheckFailed": "Trình cài đặt không thể kiểm tra trình điều khiển. Bạn có thể thử lại bằng Thiết lập driver âm thanh trong ứng dụng hoặc menu Bắt đầu.",
+          "SCCableRestart": "Thiết lập VB-CABLE yêu cầu khởi động lại Windows. Hãy khởi động lại trước khi sử dụng bộ cân bằng âm hoặc mở cài đặt VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Kết nối âm thanh",
+          "SCSetupAudio": "Thiết lập VB-CABLE cho SoundCurrent EQ.",
+          "SCInstallDriver": "Cài đặt VB-CABLE nếu chưa có (cần quản trị viên chấp thuận)",
+          "SCDriverCheckFailed": "Trình cài đặt không thể kiểm tra trình điều khiển. Bạn có thể thử lại bằng Thiết lập driver âm thanh trong ứng dụng hoặc menu Bắt đầu.",
+          "SCCableRestart": "Thiết lập VB-CABLE yêu cầu khởi động lại Windows. Hãy khởi động lại trước khi sử dụng bộ cân bằng âm hoặc mở cài đặt VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Kết nối âm thanh",
+          "SCSetupAudio": "Thiết lập SoundCurrent Audio cho SoundCurrent EQ.",
+          "SCInstallDriver": "Cài đặt hoặc cập nhật trình điều khiển SoundCurrent Audio dùng chung",
+          "SCDriverCheckFailed": "Trình cài đặt không thể kiểm tra trình điều khiển. Bạn có thể thử lại bằng Thiết lập driver âm thanh trong ứng dụng hoặc menu Bắt đầu.",
+          "SCNativeApproval": "Windows sẽ yêu cầu quản trị viên chấp thuận cho trình quản lý trình điều khiển đã ký. Trình cài đặt sẽ cho biết có cần khởi động lại hay không.",
+          "SCSharedDriverNotice": "Thoát tất cả ứng dụng SoundCurrent đang chạy trước khi thay đổi trình điều khiển dùng chung. Khi gỡ một ứng dụng, trình điều khiển được giữ lại nếu ứng dụng kia vẫn sử dụng nó."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Kết nối âm thanh",
+          "SCSetupAudio": "Thiết lập SoundCurrent Audio cho SoundCurrent EQ.",
+          "SCInstallDriver": "Cài đặt hoặc cập nhật trình điều khiển SoundCurrent Audio dùng chung",
+          "SCDriverCheckFailed": "Trình cài đặt không thể kiểm tra trình điều khiển. Bạn có thể thử lại bằng Thiết lập driver âm thanh trong ứng dụng hoặc menu Bắt đầu.",
+          "SCNativeApproval": "Windows sẽ yêu cầu quản trị viên chấp thuận cho trình quản lý trình điều khiển đã ký. Trình cài đặt sẽ cho biết có cần khởi động lại hay không.",
+          "SCSharedDriverNotice": "Thoát tất cả ứng dụng SoundCurrent đang chạy trước khi thay đổi trình điều khiển dùng chung. Khi gỡ một ứng dụng, trình điều khiển được giữ lại nếu ứng dụng kia vẫn sử dụng nó."
+        }
+      }
+    },
+    "th": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "เชื่อมต่อเสียง",
+          "SCSetupAudio": "ตั้งค่า VB-CABLE สำหรับ SoundCurrent EQ",
+          "SCInstallDriver": "ติดตั้ง VB-CABLE หากยังไม่มี (ต้องได้รับอนุมัติจากผู้ดูแลระบบ)",
+          "SCDriverCheckFailed": "โปรแกรมติดตั้งไม่สามารถตรวจสอบไดรเวอร์ได้ คุณสามารถลองอีกครั้งด้วย ตั้งค่าไดรเวอร์เสียง ในแอปหรือเมนูเริ่ม",
+          "SCCableRestart": "การตั้งค่า VB-CABLE ต้องรีสตาร์ต Windows ให้รีสตาร์ตก่อนใช้ตัวปรับแต่งความถี่เสียงหรือเปิดการตั้งค่า VB-CABLE"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "เชื่อมต่อเสียง",
+          "SCSetupAudio": "ตั้งค่า VB-CABLE สำหรับ SoundCurrent EQ",
+          "SCInstallDriver": "ติดตั้ง VB-CABLE หากยังไม่มี (ต้องได้รับอนุมัติจากผู้ดูแลระบบ)",
+          "SCDriverCheckFailed": "โปรแกรมติดตั้งไม่สามารถตรวจสอบไดรเวอร์ได้ คุณสามารถลองอีกครั้งด้วย ตั้งค่าไดรเวอร์เสียง ในแอปหรือเมนูเริ่ม",
+          "SCCableRestart": "การตั้งค่า VB-CABLE ต้องรีสตาร์ต Windows ให้รีสตาร์ตก่อนใช้ตัวปรับแต่งความถี่เสียงหรือเปิดการตั้งค่า VB-CABLE"
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "เชื่อมต่อเสียง",
+          "SCSetupAudio": "ตั้งค่า SoundCurrent Audio สำหรับ SoundCurrent EQ",
+          "SCInstallDriver": "ติดตั้งหรืออัปเดตไดรเวอร์ SoundCurrent Audio ที่ใช้ร่วมกัน",
+          "SCDriverCheckFailed": "โปรแกรมติดตั้งไม่สามารถตรวจสอบไดรเวอร์ได้ คุณสามารถลองอีกครั้งด้วย ตั้งค่าไดรเวอร์เสียง ในแอปหรือเมนูเริ่ม",
+          "SCNativeApproval": "Windows จะขออนุมัติจากผู้ดูแลระบบสำหรับโปรแกรมจัดการไดรเวอร์ที่มีลายเซ็นดิจิทัล โปรแกรมติดตั้งจะแจ้งว่าจำเป็นต้องรีสตาร์ตหรือไม่",
+          "SCSharedDriverNotice": "ออกจากแอป SoundCurrent ทั้งหมดที่กำลังทำงานก่อนเปลี่ยนไดรเวอร์ที่ใช้ร่วมกัน เมื่อถอนการติดตั้งแอปหนึ่ง ไดรเวอร์จะยังคงอยู่หากอีกแอปยังใช้งานไดรเวอร์นั้น"
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "เชื่อมต่อเสียง",
+          "SCSetupAudio": "ตั้งค่า SoundCurrent Audio สำหรับ SoundCurrent EQ",
+          "SCInstallDriver": "ติดตั้งหรืออัปเดตไดรเวอร์ SoundCurrent Audio ที่ใช้ร่วมกัน",
+          "SCDriverCheckFailed": "โปรแกรมติดตั้งไม่สามารถตรวจสอบไดรเวอร์ได้ คุณสามารถลองอีกครั้งด้วย ตั้งค่าไดรเวอร์เสียง ในแอปหรือเมนูเริ่ม",
+          "SCNativeApproval": "Windows จะขออนุมัติจากผู้ดูแลระบบสำหรับโปรแกรมจัดการไดรเวอร์ที่มีลายเซ็นดิจิทัล โปรแกรมติดตั้งจะแจ้งว่าจำเป็นต้องรีสตาร์ตหรือไม่",
+          "SCSharedDriverNotice": "ออกจากแอป SoundCurrent ทั้งหมดที่กำลังทำงานก่อนเปลี่ยนไดรเวอร์ที่ใช้ร่วมกัน เมื่อถอนการติดตั้งแอปหนึ่ง ไดรเวอร์จะยังคงอยู่หากอีกแอปยังใช้งานไดรเวอร์นั้น"
+        }
+      }
+    },
+    "sw": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Unganisha sauti",
+          "SCSetupAudio": "Sanidi VB-CABLE kwa ajili ya SoundCurrent EQ.",
+          "SCInstallDriver": "Sakinisha VB-CABLE ikiwa haipo (idhini ya msimamizi)",
+          "SCDriverCheckFailed": "Kisakinishi hakikuweza kukagua kiendeshi. Unaweza kujaribu tena kwa kutumia Usanidi wa kiendeshi cha sauti katika programu au menyu ya Anza.",
+          "SCCableRestart": "Usanidi wa VB-CABLE unahitaji kuanzisha Windows upya. Anzisha upya kabla ya kutumia kisawazisha sauti au kufungua mipangilio ya VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Unganisha sauti",
+          "SCSetupAudio": "Sanidi VB-CABLE kwa ajili ya SoundCurrent EQ.",
+          "SCInstallDriver": "Sakinisha VB-CABLE ikiwa haipo (idhini ya msimamizi)",
+          "SCDriverCheckFailed": "Kisakinishi hakikuweza kukagua kiendeshi. Unaweza kujaribu tena kwa kutumia Usanidi wa kiendeshi cha sauti katika programu au menyu ya Anza.",
+          "SCCableRestart": "Usanidi wa VB-CABLE unahitaji kuanzisha Windows upya. Anzisha upya kabla ya kutumia kisawazisha sauti au kufungua mipangilio ya VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Unganisha sauti",
+          "SCSetupAudio": "Sanidi SoundCurrent Audio kwa ajili ya SoundCurrent EQ.",
+          "SCInstallDriver": "Sakinisha au sasisha kiendeshi cha SoundCurrent Audio kinachoshirikiwa",
+          "SCDriverCheckFailed": "Kisakinishi hakikuweza kukagua kiendeshi. Unaweza kujaribu tena kwa kutumia Usanidi wa kiendeshi cha sauti katika programu au menyu ya Anza.",
+          "SCNativeApproval": "Windows itaomba idhini ya msimamizi kwa kidhibiti cha viendeshi chenye sahihi ya kidijitali. Kisakinishi kitakujulisha ikiwa kuanzisha upya kunahitajika.",
+          "SCSharedDriverNotice": "Funga programu zote za SoundCurrent zinazoendeshwa kabla ya kubadilisha kiendeshi kinachoshirikiwa. Kuondoa programu moja huhifadhi kiendeshi ikiwa programu nyingine bado inakitumia."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Unganisha sauti",
+          "SCSetupAudio": "Sanidi SoundCurrent Audio kwa ajili ya SoundCurrent EQ.",
+          "SCInstallDriver": "Sakinisha au sasisha kiendeshi cha SoundCurrent Audio kinachoshirikiwa",
+          "SCDriverCheckFailed": "Kisakinishi hakikuweza kukagua kiendeshi. Unaweza kujaribu tena kwa kutumia Usanidi wa kiendeshi cha sauti katika programu au menyu ya Anza.",
+          "SCNativeApproval": "Windows itaomba idhini ya msimamizi kwa kidhibiti cha viendeshi chenye sahihi ya kidijitali. Kisakinishi kitakujulisha ikiwa kuanzisha upya kunahitajika.",
+          "SCSharedDriverNotice": "Funga programu zote za SoundCurrent zinazoendeshwa kabla ya kubadilisha kiendeshi kinachoshirikiwa. Kuondoa programu moja huhifadhi kiendeshi ikiwa programu nyingine bado inakitumia."
+        }
+      }
+    },
+    "nn": {
+      "cable": {
+        "captions": {
+          "SCConnectAudio": "Kople til lyd",
+          "SCSetupAudio": "Set opp VB-CABLE for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE dersom det manglar (administratorgodkjenning)",
+          "SCDriverCheckFailed": "Installasjonsprogrammet kunne ikkje kontrollere drivaren. Du kan prøve igjen med Lyddrivaroppsett i appen eller Start-menyen.",
+          "SCCableRestart": "Oppsett av VB-CABLE krev ein omstart av Windows. Start på nytt før du brukar equalizeren eller opnar innstillingane for VB-CABLE."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Kople til lyd",
+          "SCSetupAudio": "Set opp VB-CABLE for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer VB-CABLE dersom det manglar (administratorgodkjenning)",
+          "SCDriverCheckFailed": "Installasjonsprogrammet kunne ikkje kontrollere drivaren. Du kan prøve igjen med Lyddrivaroppsett i appen eller Start-menyen.",
+          "SCCableRestart": "Oppsett av VB-CABLE krev ein omstart av Windows. Start på nytt før du brukar equalizeren eller opnar innstillingane for VB-CABLE."
+        }
+      },
+      "native": {
+        "captions": {
+          "SCConnectAudio": "Kople til lyd",
+          "SCSetupAudio": "Set opp SoundCurrent Audio for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer eller oppdater den delte SoundCurrent Audio-drivaren",
+          "SCDriverCheckFailed": "Installasjonsprogrammet kunne ikkje kontrollere drivaren. Du kan prøve igjen med Lyddrivaroppsett i appen eller Start-menyen.",
+          "SCNativeApproval": "Windows ber om administratorgodkjenning for den signerte drivarhandsamaren. Installasjonsprogrammet seier frå om ein omstart er nødvendig.",
+          "SCSharedDriverNotice": "Avslutt alle SoundCurrent-appar som køyrer, før du endrar den delte drivaren. Når éin app vert avinstallert, vert drivaren behalden dersom den andre appen framleis brukar han."
+        },
+        "nsisEscaped": {
+          "SCConnectAudio": "Kople til lyd",
+          "SCSetupAudio": "Set opp SoundCurrent Audio for SoundCurrent EQ.",
+          "SCInstallDriver": "Installer eller oppdater den delte SoundCurrent Audio-drivaren",
+          "SCDriverCheckFailed": "Installasjonsprogrammet kunne ikkje kontrollere drivaren. Du kan prøve igjen med Lyddrivaroppsett i appen eller Start-menyen.",
+          "SCNativeApproval": "Windows ber om administratorgodkjenning for den signerte drivarhandsamaren. Installasjonsprogrammet seier frå om ein omstart er nødvendig.",
+          "SCSharedDriverNotice": "Avslutt alle SoundCurrent-appar som køyrer, før du endrar den delte drivaren. Når éin app vert avinstallert, vert drivaren behalden dersom den andre appen framleis brukar han."
+        }
+      }
+    }
+  }
+}

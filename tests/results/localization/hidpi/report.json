@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-08",
+  "sourceCommit": "bc82ae0dfbe0400a1365277803fdd7d4eae7bb22",
+  "locale": "ar",
+  "environment": "Host Linux Xvfb 1920x1080, xcb Qt backend, QT_SCALE_FACTOR=2; effective 960x540",
+  "fixtureExitCode": 0,
+  "inspectedScreenshot": "localized.png",
+  "sha256": "ad027e3e0fdcc76dbe621563e65eada2aa7ff2f35d4c5648becc7c3804961eb1",
+  "finding": "Outer-page horizontal scrollbar visible at effective 960x540; responsive layout requires follow-up",
+  "nativeReviewed": false,
+  "scope": "Single inspected viewport, not all-language or whole-interface visual qualification",
+  "nextAction": "Fix narrow EQ layout and inspect scrolled controls at high scaling"
+}

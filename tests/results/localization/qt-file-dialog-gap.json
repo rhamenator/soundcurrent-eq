@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-09",
+  "status": "whole header captions passed compiled Linux shown-dialog/toggle/custom-model and core-worker tests; current native/packages pending",
+  "probeSourceSha256": "b3be9f969d44f0352b65c07ce5b0e22ff63d66e26b95b68c3a1c7874ebdfd08f",
+  "probeScope": "Standalone Qt6Widgets QFileDialog using the actual EQ compiled French catalog and shared StandardActionTranslator. Offscreen, DontUseNativeDialog. No file selection, settings writes, audio or VM. Shared implementation matches Studio; Studio full app dialog not separately exercised.",
+  "untranslatedObserved": [
+    "Look in:",
+    "File &name:",
+    "Files of type:",
+    "Back",
+    "Forward",
+    "Parent Directory",
+    "Create New Folder",
+    "List View",
+    "Detail View",
+    "&Open"
+  ],
+  "translatedObserved": [
+    "Annuler"
+  ],
+  "interpretation": "Owned app captions and standard-button mapping do not cover QFileDialog-specific labels, navigation tooltips or its own Open caption. This is a Qt fallback dialog, not an operating-system-language native dialog exception.",
+  "nextTask": "Inventory QFileDialog and its file-model contexts for open/save/error/context-menu workflows; localize all owned Qt fallback captions with exact-context guards and actual dialog tests across catalogs. Preserve filenames, directory paths, filters and extension semantics.",
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false,
+  "implementedBasicCaptions": [
+    "Look in:",
+    "File name:",
+    "Files of type:",
+    "Back",
+    "Forward",
+    "Parent directory",
+    "Create new folder",
+    "List view",
+    "Detail view",
+    "Open",
+    "Save"
+  ],
+  "remainingScope": [
+    "External MIME/file-association descriptors",
+    "Context-menu permission gating and protected-path/delete-failure workflows",
+    "Current native Windows/package qualification",
+    "Screen-reader listening test"
+  ],
+  "localRuntimeEvidence": "CTest localization passed across all 33 non-English catalogs: actual DontUseNativeDialog controls, Unicode/literal-percent filenames, filter preservation and plugin-context exclusion. Offscreen constructor/control inspection; no acceptance, file creation or errors exercised.",
+  "sources": [
+    "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.cpp",
+    "https://github.com/qt/qtbase/blob/6.4/src/widgets/dialogs/qfiledialog.ui"
+  ],
+  "sourceSha256": {
+    "src/localization.h": "1d82243a04150a1252c4564270f00879474427d32f13f178112c9bd2c467789a",
+    "tests/localization.cpp": "c0d9403fa294731fdb580f9022d08fc5be3ca27da89e87547297566315cde278",
+    "data/localization/catalogs.json": "dfa87d833eb2a7a4974ba01e12258ba4976b2533334741a67b72cbed2e649897"
+  },
+  "accessibilityTestScope": "Actual QAccessible Name/Description queries for six navigation buttons, sidebar and list/tree file views, all 33 non-English catalogs. Does not test screen-reader speech.",
+  "accessibilityLinuxEvidence": {
+    "log": "tests/results/localization/qt-file-dialog-accessibility-linux.log",
+    "sha256": "9097467c7197c3b31ea7c9460259efc81781a57cfe1334bafb5010b543bb448f",
+    "result": "passed",
+    "platform": "Qt offscreen",
+    "catalogs": 33,
+    "screenReaderSpeechTested": false
+  },
+  "nativeWindowsKnownFailure": "tests/results/localization/qt-file-dialog-qt612-compatibility.json",
+  "actionHeaderScope": "Inspect actual chooser-owned QAction captions and QFileSystemModel headerData across 33 non-English locales; no file mutation or action activation.",
+  "actionHeaderLinuxEvidence": {
+    "log": "tests/results/localization/qt-file-dialog-menu-header-linux.log",
+    "sha256": "59049fece247d18d46694c4b3af303788a8875474be8bdeb5c9c47c9d97e3b87",
+    "result": "passed",
+    "catalogs": 33,
+    "fileOperationsPerformed": false
+  },
+  "sizeDateFormattingGap": {
+    "status": "shared adapter integrated; compiled local formatting and modal acceptance/cancel passed; native/current package qualification pending",
+    "source": "https://github.com/qt/qtbase/blob/6.4/src/gui/itemmodels/qfilesystemmodel.cpp",
+    "behavior": "size(qint64) and time(QModelIndex) use QLocale::system() rather than selected app default locale",
+    "evidence": "tests/results/localization/file-display-locale-adapter.json"
+  },
+  "genericTypeLinuxEvidence": {
+    "log": "tests/results/localization/qt-file-dialog-type-linux.log",
+    "sha256": "02535bbb59c9f1e9049dd7a9d4ace311f9e24c36a41da63a5b13d71c7d497259",
+    "result": "passed",
+    "catalogs": 33,
+    "scope": "actual generic-provider directory/drive/unknown; direct File/Shortcut and Windows folder alias; no MIME/provider override or file operations"
+  },
+  "upstreamInventory": "tests/results/localization/qt-file-dialog-source-inventory.json",
+  "errorLinuxEvidence": {
+    "log": "tests/results/localization/qt-file-dialog-errors-linux.log",
+    "sha256": "6dda61e4d7f574ec4d700e3ef5e86c4f3887438ac00a5bd3728c1e36dc2b9188",
+    "result": "passed",
+    "catalogChecks": 33,
+    "actualModalLocales": [
+      "fr",
+      "ar",
+      "nn"
+    ],
+    "scope": "Missing file/directory and declined overwrite; raw QMessageBox text and unchanged input contents; no deletion/permission or visual/speech checks"
+  },
+  "defaultLinuxEvidence": {
+    "log": "tests/results/localization/qt-file-dialog-defaults-linux.log",
+    "sha256": "df9e92a9a30c65a9d9849b01ee06bca19ba8d6f5a7a7b5c42e0f0e60908311f9",
+    "result": "passed",
+    "catalogs": 33,
+    "scope": "Initial all-files filter, directory label/Choose, direct default caption aliases; general filter mutation guard passed",
+    "nativeReviewed": false
+  },
+  "deleteLinuxEvidence": {
+    "log": "tests/results/localization/qt-file-dialog-delete-linux.log",
+    "sha256": "e67b8552c5a4d8ca6c788e967e1ee4aa2ab58c204164676906092ac8c3b5f5ad",
+    "result": "passed",
+    "captionCatalogs": 33,
+    "actualModalLocales": [
+      "fr",
+      "ar",
+      "nn"
+    ],
+    "observedPrompt": "confirmation",
+    "scope": "Fixture enables selected temporary-file action directly, real No-button click preserves contents; permission gating, protected-path and delete-failure workflows not exercised"
+  },
+  "headerCaptionEvidence": "tests/results/localization/qt-file-dialog-header-captions.json"
+}

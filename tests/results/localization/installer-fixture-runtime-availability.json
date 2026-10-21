@@ -1,0 +1,10 @@
+{
+  "failedRun": 37873095849,
+  "failure": "Windows installer fixture unconditionally spawned pwsh in Linux package containers without PowerShell",
+  "change": "Resolve pwsh or Windows PowerShell; unavailable runtime exits 77 and CTest explicitly marks skipped with 60-second timeout",
+  "hostFixture": "passed actual installed pwsh pure helpers across 34 locales and no-Run guard",
+  "missingRuntimeFixture": "mocked absent executable exits 77 before subprocess call",
+  "WindowsBuildGate": "Direct Windows PowerShell fixture in build-windows.ps1 retained",
+  "qualification": "Linux lifecycle rerun pending; skip never constitutes Windows runtime qualification",
+  "nativeReviewed": false
+}

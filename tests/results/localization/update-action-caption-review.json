@@ -1,0 +1,213 @@
+{
+  "date": "2026-10-09",
+  "scope": "Compare update failure instruction with the actual Open release downloads source action caption in all 34 TS catalogs. Other instructions, network error branch and linguistic certification are outside this check.",
+  "sourceSha256": "c39b2e267dd634bd49ca63122401cf5c5c2e6cc2735d4f8396eb66a1a52264a3",
+  "result": "34/34 action references match",
+  "rows": [
+    {
+      "locale": "ar",
+      "action": "فتح تنزيلات الإصدارات",
+      "notice": "تعذر التحقق من الإصدارات المنشورة. استخدم فتح تنزيلات الإصدارات؛ لا يزال اكتشاف برامج التثبيت المنزلة محليًا متاحًا.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "cs",
+      "action": "Otevřít stahování vydaných verzí",
+      "notice": "Vydané verze se nepodařilo zkontrolovat. Použijte Otevřít stahování vydaných verzí; stažené instalátory se stále vyhledávají místně.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "da",
+      "action": "Åbn versionsdownloads",
+      "notice": "Udgivne versioner kunne ikke kontrolleres. Brug Åbn versionsdownloads; hentede installationsprogrammer findes stadig lokalt.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "de",
+      "action": "Versionsdownloads öffnen",
+      "notice": "Veröffentlichte Versionen konnten nicht geprüft werden. Verwenden Sie „Versionsdownloads öffnen“; heruntergeladene Installationsprogramme werden weiterhin lokal erkannt.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "el",
+      "action": "Άνοιγμα λήψεων εκδόσεων",
+      "notice": "Δεν ήταν δυνατός ο έλεγχος δημοσιευμένων εκδόσεων. Χρησιμοποιήστε το Άνοιγμα λήψεων εκδόσεων· τα ληφθέντα προγράμματα εγκατάστασης εξακολουθούν να εντοπίζονται τοπικά.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "en",
+      "action": "Open release downloads",
+      "notice": "Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "es",
+      "action": "Abrir descargas de versiones",
+      "notice": "No se han podido comprobar las versiones publicadas. Use Abrir descargas de versiones; los instaladores descargados se siguen detectando localmente.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "fa",
+      "action": "باز کردن دانلودهای نسخه‌ها",
+      "notice": "بررسی نسخه‌های منتشرشده ممکن نشد. از باز کردن دانلودهای نسخه‌ها استفاده کنید؛ نصب‌کننده‌های دانلودشده همچنان به‌صورت محلی شناسایی می‌شوند.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "fi",
+      "action": "Avaa versiolataukset",
+      "notice": "Julkaistuja versioita ei voitu tarkistaa. Käytä Avaa versiolataukset -toimintoa; ladatut asennusohjelmat tunnistetaan silti paikallisesti.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "fr",
+      "action": "Ouvrir les téléchargements de versions",
+      "notice": "Impossible de vérifier les versions publiées. Utilisez « Ouvrir les téléchargements de versions » ; les programmes d’installation téléchargés restent détectés localement.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "he",
+      "action": "פתיחת הורדות גרסאות",
+      "notice": "לא ניתן היה לבדוק גרסאות שפורסמו. יש להשתמש בפתיחת הורדות גרסאות; תוכנות התקנה שהורדו עדיין מזוהות מקומית.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "hi",
+      "action": "रिलीज़ डाउनलोड पृष्ठ खोलें",
+      "notice": "प्रकाशित रिलीज़ की जाँच नहीं हो सकी। रिलीज़ डाउनलोड पृष्ठ खोलें; डाउनलोड किए गए इंस्टॉलर स्थानीय रूप से अब भी पहचाने जाते हैं।",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "hu",
+      "action": "Kiadásletöltések megnyitása",
+      "notice": "A közzétett kiadások nem ellenőrizhetők. Használja a Kiadásletöltések megnyitása lehetőséget; a letöltött telepítőket továbbra is helyben észleljük.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "id",
+      "action": "Buka unduhan rilis",
+      "notice": "Rilis yang dipublikasikan tidak dapat diperiksa. Gunakan Buka unduhan rilis; penginstal yang diunduh tetap terdeteksi secara lokal.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "it",
+      "action": "Apri download delle versioni",
+      "notice": "Impossibile controllare le versioni pubblicate. Usa Apri download delle versioni; gli installer scaricati vengono comunque rilevati localmente.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "ja",
+      "action": "リリースのダウンロードページを開く",
+      "notice": "公開リリースを確認できませんでした。「リリースのダウンロードページを開く」を使用してください。ダウンロード済みのインストーラーは引き続きローカルで検出されます。",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "ko",
+      "action": "릴리스 다운로드 페이지 열기",
+      "notice": "공개 릴리스를 확인하지 못했습니다. 릴리스 다운로드 페이지 열기를 사용하세요. 다운로드한 설치 프로그램은 계속 로컬에서 감지됩니다.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "nb",
+      "action": "Åpne utgivelsesnedlastinger",
+      "notice": "Publiserte utgivelser kunne ikke kontrolleres. Bruk Åpne utgivelsesnedlastinger; nedlastede installasjonsprogrammer oppdages fortsatt lokalt.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "nl",
+      "action": "Versiedownloads openen",
+      "notice": "Gepubliceerde versies konden niet worden gecontroleerd. Gebruik Versiedownloads openen; gedownloade installatieprogramma’s worden nog steeds lokaal gedetecteerd.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "nn",
+      "action": "Opne utgåvenedlastingar",
+      "notice": "Publiserte utgåver kunne ikkje kontrollerast. Bruk Opne utgåvenedlastingar; nedlasta installasjonsprogram vert framleis oppdaga lokalt.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "pl",
+      "action": "Otwórz pliki wersji do pobrania",
+      "notice": "Nie udało się sprawdzić opublikowanych wersji. Użyj opcji Otwórz pliki wersji do pobrania; pobrane instalatory nadal są wykrywane lokalnie.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "pt-BR",
+      "action": "Abrir downloads de versões",
+      "notice": "Não foi possível verificar as versões publicadas. Use Abrir downloads de versões; os instaladores baixados continuam a ser detectados localmente.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "pt-PT",
+      "action": "Abrir transferências de versões",
+      "notice": "Não foi possível verificar as versões publicadas. Use Abrir transferências de versões; os instaladores descarregados continuam a ser detetados localmente.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "ro",
+      "action": "Deschideți descărcările versiunilor",
+      "notice": "Versiunile publicate nu au putut fi verificate. Folosiți Deschideți descărcările versiunilor; programele de instalare descărcate sunt detectate în continuare local.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "ru",
+      "action": "Открыть загрузки версий",
+      "notice": "Не удалось проверить опубликованные версии. Воспользуйтесь командой «Открыть загрузки версий»; загруженные установщики по-прежнему обнаруживаются локально.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "sk",
+      "action": "Otvoriť sťahovanie vydaných verzií",
+      "notice": "Vydané verzie sa nepodarilo skontrolovať. Použite Otvoriť sťahovanie vydaných verzií; stiahnuté inštalátory sa stále vyhľadávajú lokálne.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "sv",
+      "action": "Öppna versionshämtningar",
+      "notice": "Publicerade versioner kunde inte kontrolleras. Använd Öppna versionshämtningar; hämtade installationsprogram hittas fortfarande lokalt.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "sw",
+      "action": "Fungua vipakuliwa vya matoleo",
+      "notice": "Matoleo yaliyochapishwa hayakuweza kukaguliwa. Tumia Fungua vipakuliwa vya matoleo; visakinishi vilivyopakuliwa bado hugunduliwa kwenye kifaa.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "th",
+      "action": "เปิดหน้าดาวน์โหลดรุ่นที่เผยแพร่",
+      "notice": "ไม่สามารถตรวจสอบรุ่นที่เผยแพร่ได้ ใช้ เปิดหน้าดาวน์โหลดรุ่นที่เผยแพร่ ตัวติดตั้งที่ดาวน์โหลดยังคงตรวจพบในเครื่อง",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "tr",
+      "action": "Sürüm indirmelerini aç",
+      "notice": "Yayımlanan sürümler denetlenemedi. Sürüm indirmelerini aç seçeneğini kullanın; indirilen yükleyiciler yerel olarak algılanmaya devam eder.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "uk",
+      "action": "Відкрити завантаження версій",
+      "notice": "Не вдалося перевірити опубліковані версії. Скористайтеся командою «Відкрити завантаження версій»; завантажені інсталятори й далі виявляються локально.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "vi",
+      "action": "Mở trang tải bản phát hành",
+      "notice": "Không thể kiểm tra các bản phát hành đã công bố. Dùng Mở trang tải bản phát hành; trình cài đặt đã tải xuống vẫn được phát hiện trên máy.",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "zh-Hans",
+      "action": "打开版本下载页面",
+      "notice": "无法检查已发布的版本。请使用“打开版本下载页面”；已下载的安装程序仍会在本地检测。",
+      "actionCaptionPresentCaseInsensitive": true
+    },
+    {
+      "locale": "zh-Hant",
+      "action": "開啟版本下載頁面",
+      "notice": "無法檢查已發布的版本。請使用「開啟版本下載頁面」；已下載的安裝程式仍會在本機偵測。",
+      "actionCaptionPresentCaseInsensitive": true
+    }
+  ],
+  "nativeReviewed": false
+}

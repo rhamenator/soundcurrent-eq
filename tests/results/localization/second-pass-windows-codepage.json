@@ -1,0 +1,38 @@
+{
+  "scope": "UTF-8 metadata reads in Windows helper catalog exporter and test fixtures",
+  "observedCiFailure": {
+    "repository": "soundcurrent-studio",
+    "runId": 37861227271,
+    "sourceCommit": "8fde16229975501b0def64079577f3235ad3d481",
+    "error": "UnicodeDecodeError: cp1252 cannot decode byte 0x8d while reading catalogs.json",
+    "eqStatus": "Windows job also failed; its detailed log was not returned, so matching cause not independently confirmed"
+  },
+  "fix": [
+    "Explicit UTF-8 for setup-sources/catalog metadata and test runner exported JSON",
+    "Explicit UTF-8 for multilingual catalog test fixture reads/writes"
+  ],
+  "validation": {
+    "unitTestsPassed": 36,
+    "unitTestsSkipped": 1,
+    "legacyMutation": "real exporter without explicit encoding reproduces UnicodeDecodeError under simulated cp1252 and writes no output",
+    "fixedExporter": "exports all 34 locales under simulated cp1252; Arabic caption equals TS value"
+  },
+  "nativeSpeakerVerification": "unverified",
+  "catalogsChanged": false,
+  "runtimeAudioCodeChanged": false,
+  "currentWindowsCiFixQualified": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Fresh Windows CI qualification after this fix",
+    "Installer language activation/selection and remaining text",
+    "Current Linux/Windows installed UI and lifecycle qualification"
+  ],
+  "evidenceSha256": {
+    "scripts/windows_setup_catalogs.py": "881961b77086c5ad51b80df4ce3edf38f52860655f11bb7c924707b4bcf29d86",
+    "scripts/test_windows_setup_localization.py": "878a82a636f8e8c3bf1c2b2ee1cf30d2b918e538b7cdfc37d2fa7ac85afb25af",
+    "tests/translation_catalogs.py": "21df4818b87b79ff95aa806ddd72d892103f28b794fe949c6c698d9136060814",
+    "tests/results/localization/windows-codepage-tests.log": "b5bd38a70f2acfc4d80d28832114218febb45f5225a1945271ee7356c103692f",
+    "tests/results/localization/studio-shared-export-ci-failure.log": "6473ca9e210e91a29378d3ebe10af8e095aad01d062c47eb5dcb1a0daf450e68"
+  }
+}

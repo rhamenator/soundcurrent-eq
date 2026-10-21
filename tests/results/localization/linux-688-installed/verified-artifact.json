@@ -1,0 +1,35 @@
+{
+  "run": 37895441324,
+  "testedHead": "6111c989cdc8ec2c08f6b9ce4cc0a921f2dfb781",
+  "catalogMessages": 688,
+  "packages": [
+    {
+      "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-688-37895441324/package-validation-0/soundcurrent-eq_1.1.0_amd64.deb",
+      "sha256": "a0a8ca9efe6b525ba7e49ea8596407696f0eef73511f340260635c4a0c1c360a",
+      "installedLocales": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-688-installed/package-validation-0"
+    },
+    {
+      "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-688-37895441324/package-validation-1/soundcurrent-eq-1.1.0-1.fc44.x86_64.rpm",
+      "sha256": "839850e87321c297f69023af4cd2db260aea7d30174ff273301dd4579b624096",
+      "installedLocales": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-688-installed/package-validation-1"
+    },
+    {
+      "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-688-37895441324/package-validation-2/soundcurrent-eq-1.1.0-1.el10.x86_64.rpm",
+      "sha256": "49c76b348107925b9ba630510183afa9fccff716728bb690ec702632ff656263",
+      "installedLocales": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-688-installed/package-validation-2"
+    }
+  ],
+  "environments": [
+    "Ubuntu 24.04 container",
+    "Fedora 44 container",
+    "AlmaLinux 10 container"
+  ],
+  "scope": "Exact downloaded packages and passing full CTest/install/update/uninstall/config-preservation/reinstall, 33 installed locale completions per image. Same-package reinstall, not older-version migration; no physical RHEL/live audio/native-speaker review. Predates newer deletion captions.",
+  "nativeReviewed": false
+}

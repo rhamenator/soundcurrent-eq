@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "systemChangingHarnessAdded": true,
+  "intendedScope": "Cable variant on clean independent Windows clone; initial install, seeded saved-language updates, silent uninstall",
+  "defaultLocaleSequence": [
+    "fr",
+    "nn",
+    "ar"
+  ],
+  "preparedChecks": [
+    "Persisted catalog tag",
+    "Current localized action shortcuts and stale-name cleanup",
+    "Helper shortcut locale arguments",
+    "Settings sentinel preservation",
+    "Unknown app file preservation",
+    "Unrelated .lnk file preservation",
+    "PnP media-device identities/status unchanged"
+  ],
+  "pureLocaleExpectationChecksPassed": 34,
+  "noRunGuardPassed": true,
+  "actualInstallerExecuted": false,
+  "chooserRenderingQualified": false,
+  "nativeDriverLifecycleQualified": false,
+  "nativeSpeakerVerified": false,
+  "vmUsed": false
+}

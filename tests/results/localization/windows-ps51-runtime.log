@@ -1,0 +1,10 @@
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+PowerShell version: 5.1.26100.9549
+PASS: 1122 required helper text lookups, locale selection, external fallback, missing data and PowerShell parsing; no driver/endpoint actions
+PASS: helper prose regression guard; 4 existing candidates remain explicitly unresolved
+PASS: eq real quiet no-action helpers fr/ar/nn; no driver checks
+PASS: 1122 required helper text lookups, locale selection, external fallback, missing data and PowerShell parsing; no driver/endpoint actions
+PASS: helper prose regression guard; 4 existing candidates remain explicitly unresolved
+PASS: studio real quiet no-action helpers fr/ar/nn; no driver checks

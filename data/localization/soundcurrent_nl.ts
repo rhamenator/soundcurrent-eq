@@ -3,194 +3,397 @@
   <context>
     <name>SoundCurrent</name>
     <message>
-      <source>
-Apply this correction to the </source>
-      <translation type="unfinished" />
-    </message>
-    <message>
-      <source>
-Import into your library?</source>
-      <translation type="unfinished" />
-    </message>
-    <message>
       <source> (currently selected)</source>
-      <translation type="unfinished" />
+      <translation> (momenteel geselecteerd)</translation>
+    </message>
+    <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (oorspronkelijk model; niet SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
     </message>
     <message>
       <source> (restored selection)</source>
-      <translation type="unfinished" />
+      <translation> (selectie hersteld)</translation>
     </message>
     <message>
-      <source> route?</source>
-      <translation type="unfinished" />
+      <source> [custom]</source>
+      <translation> [aangepast]</translation>
+    </message>
+    <message>
+      <source> and </source>
+      <translation> en </translation>
     </message>
     <message>
       <source> · mono</source>
-      <translation type="unfinished" />
+      <translation> · mono</translation>
+    </message>
+    <message>
+      <source> · no USB microphone detected</source>
+      <translation> · geen USB-microfoon gedetecteerd</translation>
     </message>
     <message>
       <source> · stereo</source>
-      <translation type="unfinished" />
+      <translation> · stereo</translation>
+    </message>
+    <message>
+      <source>%1
+
+Technical details:
+%2</source>
+      <translation>%1
+
+Technische details:
+%2</translation>
+    </message>
+    <message>
+      <source>%1
+Directory not found.
+Please verify the correct directory name was given.</source>
+      <translation>%1
+Map niet gevonden.
+Ga na dat de juiste mapnaam is gegeven.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+File not found.
+Please verify the correct file name was given.</source>
+      <translation>%1
+Bestand niet gevonden.
+Verifieer op juiste bestandsnaam.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+The app remains open; your settings have been kept.</source>
+      <translation>%1
+De app blijft geopend; uw instellingen zijn behouden.</translation>
     </message>
     <message>
       <source>%1 %2%3 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 %2%3 dB</translation>
+    </message>
+    <message>
+      <source>%1 / %2
+%3
+Apply this correction to the %4 route?</source>
+      <translation>%1 / %2
+%3
+Deze correctie toepassen op de route voor %4?</translation>
+    </message>
+    <message>
+      <source>%1 / %2
+%3
+Import into your library?</source>
+      <translation>%1 / %2
+%3
+Importeren in uw bibliotheek?</translation>
+    </message>
+    <message>
+      <source>%1 Hz: measured %2%3 dB; suggested %4%5 dB</source>
+      <translation>%1 Hz: gemeten %2%3 dB; voorgesteld %4%5 dB</translation>
+    </message>
+    <message>
+      <source>%1 Hz: signal %2, background %3</source>
+      <translation>%1 Hz: signaal %2, achtergrond %3</translation>
+      <extracomment>Debug calibration tone amplitude and background noise amplitude. %1 is frequency, %2 signal amplitude, %3 background amplitude. Display only; no change to numerical analysis.</extracomment>
+    </message>
+    <message>
+      <source>%1 Hz: too quiet to measure</source>
+      <translation>%1 Hz: te zacht om te meten</translation>
+    </message>
+    <message>
+      <source>%1 already exists.
+Do you want to replace it?</source>
+      <translation>%1 bestaat al.
+Wilt u het vervangen?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1 disconnected. </source>
+      <translation>%1 losgekoppeld. </translation>
+    </message>
+    <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>Bewerking mislukt: %1 (0x%2)</translation>
+    </message>
+    <message>
+      <source>%1 is already running or its instance lock is unavailable</source>
+      <translation>%1 is al actief of de instantie-vergrendeling is niet beschikbaar</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>%1 is running. Quit it before using SoundCurrent.</source>
+      <translation>%1 wordt uitgevoerd. Sluit het af voordat u SoundCurrent gebruikt.</translation>
+      <extracomment>A recognized competing equalizer process is active. %1 is its opaque executable name; quit that program completely, not merely its window. Preserve SoundCurrent brand and process identity.</extracomment>
+    </message>
+    <message>
+      <source>%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.</source>
+      <translation>De installatie van %1 is niet voltooid. %2 zelf is geïnstalleerd. Gebruik %3 in het Startmenu om het opnieuw te proberen; zie de installatiedetails voor de reden.</translation>
+      <extracomment>Setup failure dialog after app files/shortcuts copied. %1 = stable driver name; %2 = stable app name; %3 = actual currently English Start-menu shortcut name Audio driver setup (not localized Qt button). Setup failure does not prove existing driver absent. Preserve app installed, Start-menu retry and details for reason. Shortcut display-name localization and upgrade cleanup remain open. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
+      <translation>De installatie van %1 is niet voltooid. Probeer het opnieuw via de snelkoppeling in het Startmenu.</translation>
+      <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>%1%2 dB</source>
-      <translation type="unfinished" />
+      <translation>%1%2 dB</translation>
+    </message>
+    <message>
+      <source>'%1' is write protected.
+Do you want to delete it anyway?</source>
+      <translation>'%1' is beveiligd tegen schrijven.
+Wilt u het toch verwijderen?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>A private user runtime directory is required</source>
+      <translation>Een persoonlijke runtime-map voor de gebruiker is vereist</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>Abort</source>
+      <translation>Afbreken</translation>
     </message>
     <message>
       <source>Acoustic</source>
-      <translation type="unfinished" />
+      <translation>Akoestisch</translation>
     </message>
     <message>
       <source>Active / passive / unknown</source>
-      <translation type="unfinished" />
+      <translation>Actief / passief / onbekend</translation>
     </message>
     <message>
       <source>Add filter</source>
-      <translation type="unfinished" />
+      <translation>Filter toevoegen</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
-      <translation type="unfinished" />
+      <translation>Pas de uitgang na de EQ aan van -60 tot +12 dB. Een hogere versterking kan clipping veroorzaken.</translation>
     </message>
     <message>
       <source>Adjust this tone band around the natural voice profile</source>
-      <translation type="unfinished" />
+      <translation>Pas deze toonband aan ten opzichte van het natuurlijke stemprofiel</translation>
+    </message>
+    <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>Instelbare systeembrede equalizer voor PipeWire</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
-      <translation type="unfinished" />
+      <translation>Geavanceerde effectregelaars</translation>
     </message>
     <message>
       <source>Air</source>
-      <translation type="unfinished" />
+      <translation>Luchtigheid</translation>
     </message>
     <message>
       <source>All brands</source>
-      <translation type="unfinished" />
+      <translation>Alle merken</translation>
     </message>
     <message>
       <source>All equipment</source>
-      <translation type="unfinished" />
+      <translation>Alle apparatuur</translation>
     </message>
     <message>
       <source>All families</source>
-      <translation type="unfinished" />
+      <translation>Alle series</translation>
+    </message>
+    <message>
+      <source>All files (*)</source>
+      <translation>Alle bestanden (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>All manufacturers</source>
-      <translation type="unfinished" />
+      <translation>Alle fabrikanten</translation>
     </message>
     <message>
       <source>All speaker types</source>
-      <translation type="unfinished" />
+      <translation>Alle luidsprekertypen</translation>
     </message>
     <message>
       <source>All subtypes</source>
-      <translation type="unfinished" />
+      <translation>Alle subtypen</translation>
     </message>
     <message>
       <source>Ambience</source>
-      <translation type="unfinished" />
+      <translation>Ambiance</translation>
     </message>
     <message>
       <source>Ambience damping</source>
-      <translation type="unfinished" />
+      <translation>Demping van ambiance</translation>
     </message>
     <message>
       <source>Ambience decay</source>
-      <translation type="unfinished" />
+      <translation>Uitklinktijd van ambiance</translation>
     </message>
     <message>
       <source>Amp details</source>
-      <translation type="unfinished" />
+      <translation>Versterkerdetails</translation>
+    </message>
+    <message>
+      <source>Amplifier</source>
+      <translation>Versterker</translation>
     </message>
     <message>
       <source>Amplifier / receiver</source>
-      <translation type="unfinished" />
+      <translation>Versterker / receiver</translation>
     </message>
     <message>
       <source>Amplifier model profile</source>
-      <translation type="unfinished" />
+      <translation>Profiel van versterkermodel</translation>
     </message>
     <message>
       <source>Amplifier profile details</source>
-      <translation type="unfinished" />
+      <translation>Details van versterkerprofiel</translation>
     </message>
     <message>
       <source>Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.</source>
-      <translation type="unfinished" />
+      <translation>Versterkerprofielen vereisen elektrische metingen met bekende luidsprekerbelasting, ingang en tooninstellingen. Importeer een gemeten correctiebestand; versterkercurves worden niet afgeleid uit commerciële specificaties.</translation>
     </message>
     <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
-      <translation type="unfinished" />
+      <translation>Er is een app-update geïnstalleerd. Gebruik Afsluiten en open de app opnieuw om deze te laden; bij het sluiten van dit venster blijft de oude versie actief.</translation>
+    </message>
+    <message>
+      <source>Another SoundCurrent EQ sink is already running</source>
+      <translation>Er is al een ander SoundCurrent EQ-uitgangsapparaat actief</translation>
     </message>
     <message>
       <source>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</source>
-      <translation type="unfinished" />
+      <translation>Er is een andere SoundCurrent-app of audiodriverinstallatie actief. Sluit die af voordat u deze app opent.</translation>
     </message>
     <message>
       <source>Another SoundCurrent equalizer is running. Quit EQ or Studio before opening the other app.</source>
-      <translation type="unfinished" />
+      <translation>Er is een andere SoundCurrent-equalizer actief. Sluit EQ of Studio af voordat u de andere app opent.</translation>
     </message>
     <message>
-      <source>Another equalizer route is present: </source>
-      <translation type="unfinished" />
+      <source>Another SoundCurrent microphone filter is running</source>
+      <translation>Er is een ander SoundCurrent-microfoonfilter actief</translation>
+    </message>
+    <message>
+      <source>Another equalizer route is present: %1. Quit it before using SoundCurrent.</source>
+      <translation>Er is een andere equalizerroute aanwezig: %1. Sluit die af voordat u SoundCurrent gebruikt.</translation>
     </message>
     <message>
       <source>Application update</source>
-      <translation type="unfinished" />
+      <translation>App-update</translation>
     </message>
     <message>
       <source>Application updates</source>
-      <translation type="unfinished" />
+      <translation>App-updates</translation>
+    </message>
+    <message>
+      <source>Apply</source>
+      <translation>Toepassen</translation>
+    </message>
+    <message>
+      <source>Apply amplifier correction?</source>
+      <translation>Versterkercorrectie toepassen?</translation>
+      <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
     </message>
     <message>
       <source>Apply correction?</source>
-      <translation type="unfinished" />
+      <translation>Correctie toepassen?</translation>
+    </message>
+    <message>
+      <source>Apply only if these conditions match your system.</source>
+      <translation>Alleen toepassen als deze omstandigheden overeenkomen met uw systeem.</translation>
+      <extracomment>Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.</extracomment>
+    </message>
+    <message>
+      <source>Apply profile</source>
+      <translation>Profiel toepassen</translation>
+    </message>
+    <message>
+      <source>Apply suggested EQ</source>
+      <translation>Voorgestelde EQ toepassen</translation>
+    </message>
+    <message>
+      <source>Are you sure you want to delete '%1'?</source>
+      <translation>Wilt u '%1' verwijderen?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Audio bridge did not start</source>
+      <translation>De audiobrug is niet gestart</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
-      <translation type="unfinished" />
+      <translation>Audiodriver instellen</translation>
+    </message>
+    <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>Het instellen van het audiostuurprogramma is voltooid. Start Windows opnieuw op voordat u SoundCurrent gebruikt.</translation>
+    </message>
+    <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Het instellen van het audiostuurprogramma is niet voltooid: %1</translation>
     </message>
     <message>
       <source>Audio error: %1</source>
-      <translation type="unfinished" />
+      <translation>Audiofout: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Audioherstelhulp</translation>
+    </message>
+    <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>De hulpapp voor herstel van de audioroute kon niet starten. Herstel SoundCurrent of installeer het opnieuw.</translation>
     </message>
     <message>
       <source>Audio setup</source>
-      <translation type="unfinished" />
+      <translation>Audio-instellingen</translation>
     </message>
     <message>
       <source>Audio setup could not finish</source>
-      <translation type="unfinished" />
+      <translation>Audio-instelling kon niet worden voltooid</translation>
+    </message>
+    <message>
+      <source>Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.</source>
+      <translation>Audio-instelling mislukt. Start Windows opnieuw als VB-CABLE zojuist is geïnstalleerd en probeer het opnieuw.</translation>
+    </message>
+    <message>
+      <source>Audio setup is missing. Repair or reinstall SoundCurrent.</source>
+      <translation>Het audio-installatieprogramma ontbreekt. Herstel of herinstalleer SoundCurrent.</translation>
     </message>
     <message>
       <source>Audio setup is running. Processing is paused; the app remains open.</source>
-      <translation type="unfinished" />
+      <translation>Audio-instelling is actief. Verwerking is gepauzeerd; de app blijft geopend.</translation>
     </message>
     <message>
       <source>Auto headroom %1 dB</source>
-      <translation type="unfinished" />
+      <translation>Automatische headroom %1 dB</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
-      <translation type="unfinished" />
+      <translation>Automatisch (SoundCurrent Microphone)</translation>
     </message>
     <message>
       <source>Automatic (follow connected devices)</source>
-      <translation type="unfinished" />
+      <translation>Automatisch (aangesloten apparaten volgen)</translation>
     </message>
     <message>
       <source>Automatic (follow connected microphones)</source>
-      <translation type="unfinished" />
+      <translation>Automatisch (aangesloten microfoons volgen)</translation>
+    </message>
+    <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Automatische audioroutering niet beschikbaar</translation>
     </message>
     <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Pas het geluid van een aangesloten microfoon automatisch aan; klik om de microfoon-EQ te omzeilen</translation>
+    </message>
+    <message>
+      <source>Back</source>
+      <translation>Terug</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Balance</source>
@@ -199,15 +402,15 @@ Import into your library?</source>
     </message>
     <message>
       <source>Balance position</source>
-      <translation type="unfinished" />
+      <translation>Balanspositie</translation>
     </message>
     <message>
       <source>Balanced</source>
-      <translation type="unfinished" />
+      <translation>Gebalanceerd</translation>
     </message>
     <message>
       <source>Band %1 gain</source>
-      <translation type="unfinished" />
+      <translation>Versterking van band %1</translation>
     </message>
     <message>
       <source>Bands</source>
@@ -216,7 +419,7 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.</source>
-      <translation type="unfinished" />
+      <translation>De balken naast de schuifregelaars tonen geschatte niveaus na de EQ. Rode piekwaarden waarschuwen voor mogelijke clipping.</translation>
     </message>
     <message>
       <source>Bass Boost</source>
@@ -224,203 +427,503 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bass Cut</source>
-      <translation type="unfinished" />
+      <translation>Basvermindering</translation>
     </message>
     <message>
       <source>Bass adds low-frequency weight; Clarity adds high-frequency detail; Ambience adds room reflections; Surround widens stereo; Dynamic Boost compresses and raises quieter material with a peak ceiling. Boosting can increase output level.</source>
-      <translation type="unfinished" />
+      <translation>Bas geeft gewicht aan lage frequenties; Helderheid voegt detail toe aan hoge frequenties; Ambiance voegt kamerreflecties toe; Surround verbreedt het stereobeeld; Dynamische versterking comprimeert en versterkt zachter materiaal met een pieklimiet. Versterking kan het uitgangsniveau verhogen.</translation>
     </message>
     <message>
       <source>Bass frequency</source>
-      <translation type="unfinished" />
+      <translation>Basfrequentie</translation>
+    </message>
+    <message>
+      <source>Bookshelf speaker</source>
+      <translation>Boekenplankluidspreker</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Boxiness</source>
-      <translation type="unfinished" />
+      <translation>Doosachtig geluid</translation>
     </message>
     <message>
       <source>Brand</source>
-      <translation type="unfinished" />
+      <translation>Merk</translation>
+    </message>
+    <message>
+      <source>Brand, family and model are required (maximum 120 characters each).</source>
+      <translation>Merk, serie en model zijn verplicht (maximaal 120 tekens elk).</translation>
     </message>
     <message>
       <source>Bright</source>
-      <translation type="unfinished" />
+      <translation>Helder</translation>
     </message>
     <message>
       <source>Browse all equipment profiles / editor</source>
-      <translation type="unfinished" />
+      <translation>Alle apparatuurprofielen bekijken / bewerken</translation>
+    </message>
+    <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Het kabelpakket overschrijdt de opnamebuffer</translation>
+    </message>
+    <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Het opname-eindpunt van de virtuele kabel ondersteunt geen 48 kHz stereo-audio met zwevendekommagetallen in gedeelde modus</translation>
     </message>
     <message>
       <source>Calibration test signal</source>
-      <translation type="unfinished" />
+      <translation>Kalibratietestsignaal</translation>
     </message>
     <message>
       <source>Calibration tone level</source>
-      <translation type="unfinished" />
+      <translation>Niveau van kalibratietoon</translation>
+    </message>
+    <message>
+      <source>Cancel</source>
+      <translation>Annuleren</translation>
     </message>
     <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Kan de gedeelde SoundCurrent-sessievergrendeling niet verkrijgen.</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
-      <translation type="unfinished" />
+      <translation>Kan de map voor versterkerprofielen niet aanmaken.</translation>
+    </message>
+    <message>
+      <source>Cannot create profile folder.</source>
+      <translation>Kan de profielmap niet aanmaken.</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Kan de gedeelde SoundCurrent-sessievergrendeling niet aanmaken.</translation>
+    </message>
+    <message>
+      <source>Cannot create user settings directory</source>
+      <translation>Kan de map voor gebruikersinstellingen niet maken</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
     </message>
     <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Kan de controle van actieve equalizers niet voltooien; SoundCurrent schakelt verwerking niet in.</translation>
     </message>
     <message>
       <source>Cannot finish saving amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Kan het opslaan van het versterkerprofiel niet voltooien.</translation>
+    </message>
+    <message>
+      <source>Cannot finish saving profile library.</source>
+      <translation>Kan het opslaan van de profielbibliotheek niet voltooien.</translation>
     </message>
     <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Kan actieve equalizers niet controleren; SoundCurrent schakelt verwerking niet in.</translation>
+    </message>
+    <message>
+      <source>Cannot read profile library.</source>
+      <translation>Kan de profielbibliotheek niet lezen.</translation>
+    </message>
+    <message>
+      <source>Cannot read profile or file exceeds 1 MiB.</source>
+      <translation>Kan het profiel niet lezen of het bestand is groter dan 1 MiB.</translation>
+    </message>
+    <message>
+      <source>Cannot read response or file exceeds 1 MiB.</source>
+      <translation>Kan de respons niet lezen of het bestand is groter dan 1 MiB.</translation>
     </message>
     <message>
       <source>Cannot save amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Kan het versterkerprofiel niet opslaan.</translation>
+    </message>
+    <message>
+      <source>Cannot save profile library.</source>
+      <translation>Kan de profielbibliotheek niet opslaan.</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
-      <translation type="unfinished" />
+      <translation>Kan het profiel niet opslaan.</translation>
     </message>
     <message>
       <source>Cannot start measurement: %1</source>
-      <translation type="unfinished" />
+      <translation>Kan de meting niet starten: %1</translation>
+    </message>
+    <message>
+      <source>Capture bytes: %1, noise bytes: %2</source>
+      <translation>Opgenomen bytes: %1, ruisbytes: %2</translation>
+      <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
       <source>Center</source>
-      <translation type="unfinished" />
+      <translation>Midden</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Centerluidspreker</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Standaardaudioapparaat wijzigen</translation>
+    </message>
+    <message>
+      <source>Change to detail view mode</source>
+      <translation>Naar modus detailweergave wijzigen</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Change to list view mode</source>
+      <translation>Naar modus lijstweergave wijzigen</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Check for updates</source>
       <translation>Controleren op updates</translation>
     </message>
     <message>
+      <source>Checking %1 Hz</source>
+      <translation>%1 Hz controleren</translation>
+      <extracomment>Calibration worker progress for a single test frequency. %1 is a locale-formatted frequency; Hz is the physical unit.</extracomment>
+    </message>
+    <message>
       <source>Checking for published updates…</source>
-      <translation type="unfinished" />
+      <translation>Controleren op gepubliceerde updates…</translation>
     </message>
     <message>
       <source>Checks published releases and downloaded installers. No update is installed automatically.</source>
-      <translation type="unfinished" />
+      <translation>Controleert gepubliceerde versies en gedownloade installatieprogramma’s. Updates worden niet automatisch geïnstalleerd.</translation>
+    </message>
+    <message>
+      <source>Choose</source>
+      <translation>Kiezen</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Choose a name that is not a built-in preset.</source>
-      <translation type="unfinished" />
+      <translation>Kies een naam die geen ingebouwde preset is.</translation>
+    </message>
+    <message>
+      <source>Choose one audio setup action.</source>
+      <translation>Kies precies één actie voor audio-instellingen.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
     </message>
     <message>
       <source>Choose update folder…</source>
-      <translation type="unfinished" />
+      <translation>Updatemap kiezen…</translation>
+    </message>
+    <message>
+      <source>Cinema speaker</source>
+      <translation>Bioscoopluidspreker</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
     </message>
     <message>
       <source>Clarity</source>
-      <translation type="unfinished" />
+      <translation>Helderheid</translation>
     </message>
     <message>
       <source>Clarity frequency</source>
-      <translation type="unfinished" />
+      <translation>Frequentie van helderheid</translation>
     </message>
     <message>
       <source>Classical</source>
-      <translation type="unfinished" />
+      <translation>Klassiek</translation>
     </message>
     <message>
       <source>Clear Voice</source>
-      <translation type="unfinished" />
+      <translation>Heldere stem</translation>
     </message>
     <message>
       <source>Clear imported equipment corrections</source>
-      <translation type="unfinished" />
+      <translation>Geïmporteerde apparatuurcorrecties verwijderen</translation>
     </message>
     <message>
       <source>Click to turn the equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Klik om de equalizer in of uit te schakelen</translation>
     </message>
     <message>
       <source>Clipping risk · estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Risico op clipping · geschatte piek %1 dBFS</translation>
+    </message>
+    <message>
+      <source>Close</source>
+      <translation>Sluiten</translation>
+    </message>
+    <message>
+      <source>Column speaker</source>
+      <translation>Kolomluidspreker</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
+      <source>Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2</source>
+      <translation>Gecombineerde respons van luidspreker/versterker/microfoon/ruimte; geen afzonderlijke meting van een apparaat. %1 / %2</translation>
+      <extracomment>New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.</extracomment>
     </message>
     <message>
       <source>Conditions</source>
-      <translation type="unfinished" />
+      <translation>Omstandigheden</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
-      <translation type="unfinished" />
+      <translation>Sluit een uitgang en een microfoon aan voordat u meet.</translation>
+    </message>
+    <message>
+      <source>Connect your audio</source>
+      <translation>Audio aansluiten</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>Luidspreker met constante bundelbreedte</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
+    </message>
+    <message>
+      <source>Copy</source>
+      <translation>Kopiëren</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Correction filters:</source>
+      <translation>Correctiefilters:</translation>
+      <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Correctieprofiel (*.json)</translation>
+    </message>
+    <message>
+      <source>Could not create a private test folder</source>
+      <translation>Kon geen besloten testmap aanmaken</translation>
+    </message>
+    <message>
+      <source>Could not create microphone configuration folder</source>
+      <translation>Kon de microfoonconfiguratiemap niet aanmaken</translation>
     </message>
     <message>
       <source>Could not create preset folder.</source>
-      <translation type="unfinished" />
+      <translation>Kon de presetmap niet aanmaken.</translation>
+    </message>
+    <message>
+      <source>Could not create quiet frequency sweep</source>
+      <translation>Kon geen frequentiesweep op laag volume aanmaken</translation>
+    </message>
+    <message>
+      <source>Could not create temporary audio configuration</source>
+      <translation>Kon geen tijdelijke audioconfiguratie aanmaken</translation>
+    </message>
+    <message>
+      <source>Could not create test tone</source>
+      <translation>Kon geen testtoon aanmaken</translation>
+    </message>
+    <message>
+      <source>Could not create the local activation socket for %1: %2</source>
+      <translation>Kan de lokale activeringssocket voor %1 niet maken: %2</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>Could not delete directory.</source>
+      <translation>Kon map niet verwijderen.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
-      <translation type="unfinished" />
+      <translation>Kon het opslaan van de preset niet voltooien.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Windows-audio-COM kon niet worden geïnitialiseerd</translation>
+    </message>
+    <message>
+      <source>Could not open test waveform</source>
+      <translation>Kon de testgolfvorm niet openen</translation>
+    </message>
+    <message>
+      <source>Could not play quiet test audio</source>
+      <translation>Kon de testaudio op laag volume niet afspelen</translation>
+    </message>
+    <message>
+      <source>Could not play test audio through the selected output</source>
+      <translation>Kon de testaudio niet afspelen via de geselecteerde uitgang</translation>
+    </message>
+    <message>
+      <source>Could not read output volume</source>
+      <translation>Kon het uitgangsvolume niet lezen</translation>
+    </message>
+    <message>
+      <source>Could not run %1</source>
+      <translation>Kon %1 niet uitvoeren</translation>
     </message>
     <message>
       <source>Could not save preset.</source>
-      <translation type="unfinished" />
+      <translation>Kon de preset niet opslaan.</translation>
+    </message>
+    <message>
+      <source>Could not start PipeWire filter</source>
+      <translation>Kon het PipeWire-filter niet starten</translation>
+    </message>
+    <message>
+      <source>Could not start audio setup: %1. The app remains open.</source>
+      <translation>Kon audio-instelling niet starten: %1. De app blijft geopend.</translation>
+    </message>
+    <message>
+      <source>Could not start microphone capture</source>
+      <translation>Kon microfoonopname niet starten</translation>
+    </message>
+    <message>
+      <source>Could not start microphone filter</source>
+      <translation>Kon het microfoonfilter niet starten</translation>
+    </message>
+    <message>
+      <source>Could not start output volume safety guard</source>
+      <translation>Kon de beveiliging van het uitgangsvolume niet starten</translation>
     </message>
     <message>
       <source>Could not start the measurement.</source>
-      <translation type="unfinished" />
+      <translation>Kon de meting niet starten.</translation>
+    </message>
+    <message>
+      <source>Could not update startup settings.</source>
+      <translation>Kon de opstartinstellingen niet bijwerken.</translation>
+    </message>
+    <message>
+      <source>Could not write frequency sweep</source>
+      <translation>Kon de frequentiesweep niet schrijven</translation>
+    </message>
+    <message>
+      <source>Could not write microphone configuration</source>
+      <translation>Kon de microfoonconfiguratie niet schrijven</translation>
+    </message>
+    <message>
+      <source>Could not write temporary audio configuration</source>
+      <translation>Kon de tijdelijke audioconfiguratie niet schrijven</translation>
+    </message>
+    <message>
+      <source>Could not write test tone</source>
+      <translation>Kon de testtoon niet schrijven</translation>
+    </message>
+    <message>
+      <source>Count audio endpoints</source>
+      <translation>Audioapparaten tellen</translation>
+    </message>
+    <message>
+      <source>Create a New Folder</source>
+      <translation>Een nieuwe map aanmaken</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Create new folder</source>
+      <translation>Nieuwe map aanmaken</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Create profile</source>
+      <translation>Profiel aanmaken</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
-      <translation type="unfinished" />
+      <translation>Huidige EQ behouden.</translation>
     </message>
     <message>
       <source>Custom</source>
       <translation>Aangepast</translation>
     </message>
     <message>
+      <source>Custom copy of %1</source>
+      <translation>Aangepaste kopie van %1</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>Cut</source>
+      <translation>Knippen</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
       <source>Dance</source>
-      <translation type="unfinished" />
+      <translation>Dance</translation>
+    </message>
+    <message>
+      <source>Date modified</source>
+      <translation>Datum gewijzigd</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Deep Bass</source>
-      <translation type="unfinished" />
+      <translation>Diepe bas</translation>
+    </message>
+    <message>
+      <source>Delete</source>
+      <translation>Verwijderen</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Detail view</source>
+      <translation>Detailweergave</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>Mappen</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>Map:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Discard</source>
+      <translation>Verwerpen</translation>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
-      <translation type="unfinished" />
+      <translation>Sleep curvepunten of stel de geselecteerde band hieronder af.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>Buffer voor testweergave leegspelen</translation>
+    </message>
+    <message>
+      <source>Drive</source>
+      <translation>Station</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Het instellen van het stuurprogramma is mislukt (code %1). Er zijn geen Windows-beveiligingsinstellingen gewijzigd.</translation>
+    </message>
+    <message>
+      <source>Duplicate Studio route</source>
+      <translation>Dubbele Studio-audioverbinding</translation>
+      <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
     </message>
     <message>
       <source>Dynamic Boost</source>
-      <translation type="unfinished" />
+      <translation>Dynamische versterking</translation>
     </message>
     <message>
       <source>Dynamics attack</source>
-      <translation type="unfinished" />
+      <translation>Aanspreektijd van compressor</translation>
     </message>
     <message>
       <source>Dynamics ceiling</source>
-      <translation type="unfinished" />
+      <translation>Pieklimiet van compressor</translation>
     </message>
     <message>
       <source>Dynamics makeup</source>
-      <translation type="unfinished" />
+      <translation>Compensatieversterking van compressor</translation>
     </message>
     <message>
       <source>Dynamics ratio</source>
-      <translation type="unfinished" />
+      <translation>Compressieverhouding</translation>
     </message>
     <message>
       <source>Dynamics release</source>
-      <translation type="unfinished" />
+      <translation>Hersteltijd van compressor</translation>
     </message>
     <message>
       <source>Dynamics threshold</source>
-      <translation type="unfinished" />
+      <translation>Compressordrempel</translation>
+    </message>
+    <message>
+      <source>Edit / save copy</source>
+      <translation>Bewerken / kopie opslaan</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -428,7 +931,20 @@ Import into your library?</source>
     </message>
     <message>
       <source>Electronic</source>
-      <translation type="unfinished" />
+      <translation>Elektronisch</translation>
+    </message>
+    <message>
+      <source>Enhancements outside supported ranges</source>
+      <translation>Geluidsverbeteringen buiten de ondersteunde bereiken</translation>
+      <extracomment>Enhancement values fail the supported range validation; not frequency coverage or wireless range.</extracomment>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>Audioapparaten opsommen</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>Apparaten opsommen</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -437,132 +953,222 @@ Import into your library?</source>
     </message>
     <message>
       <source>Equalizer and configuration pages</source>
-      <translation type="unfinished" />
+      <translation>Equalizer- en configuratiepagina’s</translation>
+    </message>
+    <message>
+      <source>Equalizer conflict</source>
+      <translation>Conflict tussen equalizers</translation>
+      <extracomment>Warning title when another equalizer or processing owner conflicts with this app. It is a software routing/ownership conflict, not clipping or a bad acoustic measurement.</extracomment>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>
-      <translation type="unfinished" />
+      <translation>Equalizercurve. Selecteer een punt of sleep het om frequentie en versterking aan te passen.</translation>
     </message>
     <message>
       <source>Equalizer is off. Windows selected the physical output directly.</source>
-      <translation type="unfinished" />
+      <translation>De equalizer is uitgeschakeld. Windows heeft de fysieke uitgang rechtstreeks geselecteerd.</translation>
     </message>
     <message>
       <source>Equalizer is off. Your audio uses its normal output.</source>
-      <translation type="unfinished" />
+      <translation>De equalizer is uitgeschakeld. Uw audio gebruikt de normale uitgang.</translation>
     </message>
     <message>
       <source>Equalizer is still running. Use the tray icon to reopen or quit.</source>
-      <translation type="unfinished" />
+      <translation>De equalizer is nog actief. Gebruik het pictogram in het systeemvak om te heropenen of af te sluiten.</translation>
     </message>
     <message>
       <source>Equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Equalizer uit</translation>
     </message>
     <message>
       <source>Equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Equalizer aan</translation>
     </message>
     <message>
       <source>Equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Equalizer aan of uit</translation>
+    </message>
+    <message>
+      <source>Equalizer sink disappeared</source>
+      <translation>Het equalizeruitgangsapparaat is verdwenen</translation>
     </message>
     <message>
       <source>Equipment brand</source>
-      <translation type="unfinished" />
+      <translation>Apparatuurmerk</translation>
     </message>
     <message>
       <source>Equipment family</source>
-      <translation type="unfinished" />
+      <translation>Apparatuurserie</translation>
+    </message>
+    <message>
+      <source>Equipment kind must be speaker, microphone or amplifier.</source>
+      <translation>Het apparatuurtype moet luidspreker, microfoon of versterker zijn.</translation>
     </message>
     <message>
       <source>Equipment profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Apparatuurprofiel (*.json)</translation>
+    </message>
+    <message>
+      <source>Equipment profile editor</source>
+      <translation>Apparatuurprofieleditor</translation>
     </message>
     <message>
       <source>Equipment profiles (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Apparatuurprofielen (*.json)</translation>
     </message>
     <message>
       <source>Equipment profiles by brand family and model</source>
-      <translation type="unfinished" />
+      <translation>Apparatuurprofielen op merk, serie en model</translation>
+    </message>
+    <message>
+      <source>Equipment profiles — brand / family / model</source>
+      <translation>Apparatuurprofielen — merk / serie / model</translation>
+    </message>
+    <message>
+      <source>Equipment resource missing.</source>
+      <translation>Apparatuurbron ontbreekt.</translation>
     </message>
     <message>
       <source>Equipment subtype</source>
-      <translation type="unfinished" />
+      <translation>Apparatuursubtype</translation>
     </message>
     <message>
       <source>Equipment type</source>
-      <translation type="unfinished" />
+      <translation>Apparatuurtype</translation>
     </message>
     <message>
       <source>Estimated output level near band %1</source>
-      <translation type="unfinished" />
+      <translation>Geschat uitgangsniveau bij band %1</translation>
     </message>
     <message>
       <source>Estimated output near %1: %2 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Geschatte uitgang bij %1: %2 dBFS</translation>
     </message>
     <message>
       <source>Estimated output peak and clipping risk</source>
-      <translation type="unfinished" />
+      <translation>Geschatte uitgangspiek en risico op clipping</translation>
     </message>
     <message>
       <source>Estimated overall output level</source>
-      <translation type="unfinished" />
+      <translation>Geschat totaal uitgangsniveau</translation>
     </message>
     <message>
       <source>Estimated overall output peak: %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Geschatte totale uitgangspiek: %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Geschatte piek %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak: EQ off</source>
-      <translation type="unfinished" />
+      <translation>Geschatte piek: EQ uit</translation>
     </message>
     <message>
       <source>Estimated peak: waiting for audio</source>
-      <translation type="unfinished" />
+      <translation>Geschatte piek: wachten op audio</translation>
     </message>
     <message>
       <source>Estimated post-EQ level near this frequency</source>
-      <translation type="unfinished" />
+      <translation>Geschat niveau na de EQ bij deze frequentie</translation>
     </message>
     <message>
       <source>Estimated post-EQ output peak, including post gain and balance</source>
-      <translation type="unfinished" />
+      <translation>Geschatte uitgangspiek na de EQ, inclusief eindversterking en balans</translation>
     </message>
     <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
-      <translation type="unfinished" />
+      <translation>SoundCurrent EQ afsluiten en normale audio herstellen</translation>
     </message>
     <message>
       <source>Expanded test language</source>
-      <translation type="unfinished" />
+      <translation>Testtaal met uitgerekte tekst</translation>
+    </message>
+    <message>
+      <source>Expected a JSON equipment profile. Import response text using the response import button.</source>
+      <translation>Een JSON-apparatuurprofiel werd verwacht. Importeer responstekst met de knop voor responsimport.</translation>
+    </message>
+    <message>
+      <source>Expected frequency Hz and relative measured response dB on every data line.</source>
+      <translation>Op elke gegevensregel werden frequentie in Hz en relatieve gemeten respons in dB verwacht.</translation>
     </message>
     <message>
       <source>Export</source>
-      <translation type="unfinished" />
+      <translation>Exporteren</translation>
+    </message>
+    <message>
+      <source>Export JSON</source>
+      <translation>JSON exporteren</translation>
     </message>
     <message>
       <source>Export profile</source>
-      <translation type="unfinished" />
+      <translation>Profiel exporteren</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
-      <translation type="unfinished" />
+      <translation>Voetstappen in FPS-games</translation>
     </message>
     <message>
       <source>Family</source>
-      <translation type="unfinished" />
+      <translation>Serie</translation>
+    </message>
+    <message>
+      <source>File</source>
+      <translation>Bestand</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>File name:</source>
+      <translation>Bestandsnaam:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files</source>
+      <translation>Bestanden</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files of type:</source>
+      <translation>Bestanden van type:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Filter Q</source>
+      <translation>Filter-Q</translation>
+      <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
+    </message>
+    <message>
+      <source>Filter values must be numbers.</source>
+      <translation>Filterwaarden moeten getallen zijn.</translation>
+    </message>
+    <message>
+      <source>Filters exceed frequency, gain or Q limits.</source>
+      <translation>Filters overschrijden de grenzen voor frequentie, versterking of Q.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>Map zoeken</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
       <extracomment>Preset with zero equalizer gain at every frequency. Not an apartment; does not imply muted audio.</extracomment>
-      <translation>Neutraal</translation>
+      <translation>Vlak</translation>
+    </message>
+    <message>
+      <source>Floorstanding speaker</source>
+      <translation>Vloerstaande luidspreker</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Folder</source>
+      <translation>Map</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Forward</source>
+      <translation>Verder</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Frequency</source>
@@ -570,11 +1176,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Frequency Hz</source>
-      <translation type="unfinished" />
+      <translation>Frequentie Hz</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
-      <translation type="unfinished" />
+      <translation>Effecten voor de voorste L/R-kanalen (mono ondersteund); andere kanalen behouden hun eigen Studio-effecten. Een waarde van nul omzeilt elk effect.</translation>
     </message>
     <message>
       <source>Gain</source>
@@ -583,95 +1189,310 @@ Import into your library?</source>
     </message>
     <message>
       <source>Gain dB</source>
-      <translation type="unfinished" />
+      <translation>Versterking dB</translation>
     </message>
     <message>
       <source>Gaming</source>
-      <translation type="unfinished" />
+      <translation>Gaming</translation>
+    </message>
+    <message>
+      <source>Go back</source>
+      <translation>Ga terug</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go forward</source>
+      <translation>Ga verder</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go to the parent directory</source>
+      <translation>Ga naar de hogere map</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Headphones</source>
-      <translation type="unfinished" />
+      <translation>Hoofdtelefoon</translation>
+    </message>
+    <message>
+      <source>Help</source>
+      <translation>Help</translation>
     </message>
     <message>
       <source>Hide advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Geavanceerde regelaars verbergen</translation>
+    </message>
+    <message>
+      <source>High-shelf filter</source>
+      <translation>High-shelffilter</translation>
+      <extracomment>Shelving EQ: raise/lower the high-frequency region. Do not translate as high-pass; it is not a cutoff filter.</extracomment>
     </message>
     <message>
       <source>Hip-Hop</source>
-      <translation type="unfinished" />
+      <translation>Hip-Hop</translation>
+    </message>
+    <message>
+      <source>Ignore</source>
+      <translation>Negeren</translation>
     </message>
     <message>
       <source>Import</source>
-      <translation type="unfinished" />
+      <translation>Importeren</translation>
+    </message>
+    <message>
+      <source>Import JSON</source>
+      <translation>JSON importeren</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
-      <translation type="unfinished" />
+      <translation>Apparatuurprofielen importeren, maken en bewerken</translation>
     </message>
     <message>
       <source>Import equipment profile</source>
-      <translation type="unfinished" />
+      <translation>Apparatuurprofiel importeren</translation>
     </message>
     <message>
       <source>Import measured amplifier correction</source>
-      <translation type="unfinished" />
+      <translation>Gemeten versterkercorrectie importeren</translation>
     </message>
     <message>
       <source>Import measured profile</source>
-      <translation type="unfinished" />
+      <translation>Gemeten profiel importeren</translation>
     </message>
     <message>
       <source>Import profile?</source>
-      <translation type="unfinished" />
+      <translation>Profiel importeren?</translation>
     </message>
     <message>
       <source>Import relative measured response</source>
-      <translation type="unfinished" />
+      <translation>Relatieve gemeten respons importeren</translation>
+    </message>
+    <message>
+      <source>Import response text</source>
+      <translation>Responstekst importeren</translation>
+    </message>
+    <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>%1 geïmporteerd; SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Wandinbouwluidspreker</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
-      <translation type="unfinished" />
+      <translation>Voorlopige versies meenemen</translation>
+    </message>
+    <message>
+      <source>Initialize audio capture</source>
+      <translation>Audio-opname initialiseren</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>Microfoonopname initialiseren</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>Luidsprekeruitgang initialiseren</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>Testweergave initialiseren</translation>
+    </message>
+    <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Installeer SoundCurrent Audio via de installatie van het audiostuurprogramma en open de app opnieuw om de microfoonroute in te schakelen.</translation>
+    </message>
+    <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>VB-CABLE installeren als het ontbreekt (goedkeuring van beheerder)</translation>
     </message>
     <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Installeer nieuwe pakketten over deze versie; verwijderen is niet nodig. Presets en profielen blijven behouden. Sla uw werk op, gebruik Afsluiten (het sluiten van het venster laat de app actief), installeer de update en open de app opnieuw.</translation>
     </message>
     <message>
-      <source>Installed version: </source>
-      <translation type="unfinished" />
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>Installeer of werk %1 bij. Een oudere versie hoeft niet te worden verwijderd. Uw instellingen, voorinstellingen en apparatuurprofielen blijven behouden.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Het gedeelde SoundCurrent Audio-stuurprogramma installeren of bijwerken</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Installeer de Windows-audioroute via de installatie van het audiostuurprogramma en open de app opnieuw.</translation>
+    </message>
+    <message>
+      <source>Installed version: %1</source>
+      <translation>Geïnstalleerde versie: %1</translation>
     </message>
     <message>
       <source>Interface language</source>
       <translation>Interfacetaal</translation>
     </message>
     <message>
+      <source>Invalid Studio channel count</source>
+      <translation>Ongeldig aantal Studio-kanalen</translation>
+      <extracomment>Session channel count must be 1..256; audio channels, not stations.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio channel name or filters</source>
+      <translation>Ongeldige Studio-kanaalnaam of filterlijst</translation>
+      <extracomment>Saved channel name must be a nonempty string up to 80 characters, and bands must be an array; filter list, not filter-value validation.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio profile channel count</source>
+      <translation>Ongeldig aantal kanalen in het Studio-profiel</translation>
+      <extracomment>Saved profile channels array must be nonempty and contain at most 256 channels.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio route</source>
+      <translation>Ongeldige Studio-audioverbinding</translation>
+      <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>Ongeldig proces dat audio-instellingen aanvraagt.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
+    </message>
+    <message>
+      <source>Invalid calibration audio</source>
+      <translation>Ongeldige kalibratieaudio</translation>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter count</source>
+      <translation>Ongeldig aantal parameters voor geluidsverbetering</translation>
+      <extracomment>Enhancement array must contain the required number of parameters.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter type</source>
+      <translation>Ongeldig gegevenstype van een parameter voor geluidsverbetering</translation>
+      <extracomment>Enhancement parameter must be a JSON number; do not reinterpret strings or Boolean values.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Ongeldige geluidsverbeteringen</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Ongeldige equalizerinstellingen</translation>
+    </message>
+    <message>
+      <source>Invalid equipment subtype or power type</source>
+      <translation>Ongeldig apparaatsubtype of voedingstype</translation>
+    </message>
+    <message>
+      <source>Invalid filter type</source>
+      <translation>Ongeldig filtertype</translation>
+      <extracomment>Filter type numeric identifier must be a whole supported enum value; not a file type.</extracomment>
+    </message>
+    <message>
+      <source>Invalid filter.</source>
+      <translation>Ongeldig filter.</translation>
+    </message>
+    <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
-      <translation type="unfinished" />
+      <translation>Ongeldig gemeten versterkerprofiel. Vereist model, HTTPS-meetbron, omstandigheden en 1–16 PK/LS/HS-filters binnen de grenzen. Zie het profielformaat in de README.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Ongeldige microfoonafstelling</translation>
+    </message>
+    <message>
+      <source>Invalid or unordered measured response.</source>
+      <translation>Ongeldige of ongeordende gemeten respons.</translation>
+    </message>
+    <message>
+      <source>Invalid or unordered response data.</source>
+      <translation>Ongeldige of ongeordende responsgegevens.</translation>
+    </message>
+    <message>
+      <source>Invalid profile library.</source>
+      <translation>Ongeldige profielbibliotheek.</translation>
+    </message>
+    <message>
+      <source>Invalid response from pactl</source>
+      <translation>Ongeldige respons van pactl</translation>
+    </message>
+    <message>
+      <source>Invalid response point.</source>
+      <translation>Ongeldig responspunt.</translation>
+    </message>
+    <message>
+      <source>Invalid route indexes or weight</source>
+      <translation>Ongeldige kanaalindices of mengfactor</translation>
+      <extracomment>Audio route indices must be whole channel indices in range and mixing coefficient magnitude at most 4; weight means a signed mixing coefficient, not physical mass.</extracomment>
+    </message>
+    <message>
+      <source>Invalid route number</source>
+      <translation>Ongeldige numerieke waarde van de audioverbinding</translation>
+      <extracomment>A saved audio routing entry contains a nonnumeric or nonfinite number.</extracomment>
+    </message>
+    <message>
+      <source>Invalid speaker correction filter count</source>
+      <translation>Ongeldig aantal luidsprekercorrectiefilters</translation>
+    </message>
+    <message>
+      <source>Invalid speaker filter type</source>
+      <translation>Ongeldig luidsprekerfiltertype</translation>
+    </message>
+    <message>
+      <source>Invalid speaker identity</source>
+      <translation>Ongeldige luidsprekeridentiteit</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Ongeldig mengformaat voor luidsprekers</translation>
     </message>
     <message>
       <source>Jazz</source>
-      <translation type="unfinished" />
+      <translation>Jazz</translation>
+    </message>
+    <message>
+      <source>Keep current EQ</source>
+      <translation>Huidige EQ behouden</translation>
     </message>
     <message>
       <source>L</source>
-      <translation type="unfinished" />
+      <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
-      <translation>Taal en regio</translation>
+      <translation>Taal en regionale instellingen</translation>
     </message>
     <message>
       <source>Left right balance</source>
-      <translation type="unfinished" />
+      <translation>Links-rechtsbalans</translation>
     </message>
     <message>
       <source>Level indicator refresh interval</source>
-      <translation type="unfinished" />
+      <translation>Verversingsinterval van niveau-indicator</translation>
     </message>
     <message>
       <source>Level refresh</source>
-      <translation type="unfinished" />
+      <translation>Niveaus verversen</translation>
+    </message>
+    <message>
+      <source>Library exceeds 16 MiB.</source>
+      <translation>Bibliotheek is groter dan 16 MiB.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>Audioapparaten weergeven</translation>
+    </message>
+    <message>
+      <source>List of places and bookmarks</source>
+      <translation>Lijst met plaatsen en bladwijzers</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>List view</source>
+      <translation>Lijstweergave</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Listening preset</source>
@@ -680,11 +1501,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Live</source>
-      <translation type="unfinished" />
+      <translation>Live</translation>
     </message>
     <message>
       <source>Lo-Fi</source>
-      <translation type="unfinished" />
+      <translation>Lo-Fi</translation>
     </message>
     <message>
       <source>Lock EQ</source>
@@ -693,55 +1514,94 @@ Import into your library?</source>
     </message>
     <message>
       <source>Lock equalizer settings</source>
-      <translation type="unfinished" />
+      <translation>Equalizerinstellingen vergrendelen</translation>
+    </message>
+    <message>
+      <source>Look in:</source>
+      <translation>Zoeken in:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Loudness</source>
-      <translation type="unfinished" />
+      <translation>Loudnesscompensatie</translation>
+    </message>
+    <message>
+      <source>Low-shelf filter</source>
+      <translation>Low-shelffilter</translation>
+      <extracomment>Shelving EQ: raise/lower the low-frequency region. Do not translate as low-pass; it is not a cutoff filter.</extracomment>
     </message>
     <message>
       <source>Manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Fabrikant</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
-      <translation type="unfinished" />
+      <translation>Maximum van 32 versterkerprofielen bereikt.</translation>
     </message>
     <message>
       <source>Maximum stereo width</source>
-      <translation type="unfinished" />
+      <translation>Maximale stereobreedte</translation>
     </message>
     <message>
       <source>Measure</source>
-      <translation type="unfinished" />
+      <translation>Meten</translation>
     </message>
     <message>
       <source>Measure speaker room and microphone response</source>
-      <translation type="unfinished" />
+      <translation>Respons van luidsprekers, kamer en microfoon meten</translation>
+    </message>
+    <message>
+      <source>Measured listening position</source>
+      <translation>Gemeten luisterpositie</translation>
+      <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
-      <translation type="unfinished" />
+      <translation>Gemeten modelcorrectie wordt toegevoegd aan uw luister-EQ. U kunt nog steeds bas toevoegen of elke band aanpassen. Bevat conservatieve versterkingsgrenzen; effecten van kamer en versterker vereisen een systeemmeting.</translation>
+    </message>
+    <message>
+      <source>Measured response</source>
+      <translation>Gemeten respons</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measurement conditions are required.</source>
+      <translation>Meetomstandigheden zijn verplicht.</translation>
+    </message>
+    <message>
+      <source>Measurement conditions: %1</source>
+      <translation>Meetomstandigheden: %1</translation>
+      <extracomment>Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.</extracomment>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
-      <translation type="unfinished" />
+      <translation>Meetgegevens waren onvolledig.</translation>
     </message>
     <message>
       <source>Measurement failed. Try a higher test level or move the mic closer.</source>
-      <translation type="unfinished" />
+      <translation>Meting mislukt. Probeer een hoger testniveau of plaats de microfoon dichterbij.</translation>
+    </message>
+    <message>
+      <source>Measurement failed: %1</source>
+      <translation>Meting mislukt: %1</translation>
+      <extracomment>Calibration failure prefix. %1 is a translated owned diagnostic or preserved external technical detail; do not modify device identifiers or paths.</extracomment>
     </message>
     <message>
       <source>Measurement stopped.</source>
-      <translation type="unfinished" />
+      <translation>Meting gestopt.</translation>
+    </message>
+    <message>
+      <source>Measurement: %1</source>
+      <translation>Meting: %1</translation>
+      <extracomment>Label for verbatim published speaker measurement attribution, not a new calibration run.</extracomment>
     </message>
     <message>
       <source>Metal</source>
-      <translation type="unfinished" />
+      <translation>Metal</translation>
     </message>
     <message>
       <source>Mic gain</source>
-      <translation type="unfinished" />
+      <translation>Microfoonversterking</translation>
     </message>
     <message>
       <source>Microphone</source>
@@ -749,39 +1609,81 @@ Import into your library?</source>
     </message>
     <message>
       <source>Microphone %1 adjustment</source>
-      <translation type="unfinished" />
+      <translation>Microfoonaanpassing %1</translation>
     </message>
     <message>
       <source>Microphone EQ is off.</source>
-      <translation type="unfinished" />
+      <translation>Microfoon-EQ is uitgeschakeld.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>De audiobrug voor de microfoon is niet gestart</translation>
+    </message>
+    <message>
+      <source>Microphone capture stopped during playback</source>
+      <translation>Microfoonopname stopte tijdens het afspelen</translation>
+    </message>
+    <message>
+      <source>Microphone capture stopped during the test</source>
+      <translation>Microfoonopname stopte tijdens de test</translation>
     </message>
     <message>
       <source>Microphone error: %1</source>
-      <translation type="unfinished" />
+      <translation>Microfoonfout: %1</translation>
+    </message>
+    <message>
+      <source>Microphone filter did not appear</source>
+      <translation>Microfoonfilter verscheen niet</translation>
+    </message>
+    <message>
+      <source>Microphone filter disappeared</source>
+      <translation>Microfoonfilter verdween</translation>
     </message>
     <message>
       <source>Microphone gain adjustment</source>
-      <translation type="unfinished" />
+      <translation>Microfoonversterking aanpassen</translation>
     </message>
     <message>
       <source>Microphone input device</source>
-      <translation type="unfinished" />
+      <translation>Microfooningangsapparaat</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>De verwerking van de microfoonopname is vastgelopen</translation>
+    </message>
+    <message>
+      <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
+      <translation>De microfoonopname clipt. Verlaag de microfoonversterking of boost en herhaal de meting.</translation>
     </message>
     <message>
       <source>Microphone route</source>
-      <translation type="unfinished" />
+      <translation>Microfoonroute</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Time-out bij het starten van de microfoon</translation>
     </message>
     <message>
       <source>Model</source>
-      <translation type="unfinished" />
+      <translation>Model</translation>
     </message>
     <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
-      <translation type="unfinished" />
+      <translation>Beweeg naar L of R om het tegenoverliggende kanaal te verzwakken; in het midden blijven beide op volledig niveau</translation>
     </message>
     <message>
       <source>Movies</source>
-      <translation type="unfinished" />
+      <translation>Films</translation>
+    </message>
+    <message>
+      <source>My equipment</source>
+      <translation>Mijn apparatuur</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>Name</source>
+      <translation>Naam</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Natural mic EQ</source>
@@ -789,48 +1691,66 @@ Import into your library?</source>
       <translation>Natuurlijke microfoon-EQ</translation>
     </message>
     <message>
-      <source>Natural mic EQ on · </source>
-      <translation type="unfinished" />
+      <source>Natural mic EQ on · %1</source>
+      <translation>Natuurlijke microfoon-EQ aan · %1</translation>
     </message>
     <message>
       <source>Natural microphone equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Natuurlijke microfoonequalizer aan of uit</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>Nieuwe map</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>Nieuw profiel</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
-      <translation type="unfinished" />
+      <translation>Nachtelijk luisteren</translation>
+    </message>
+    <message>
+      <source>No</source>
+      <translation>Nee</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>Geen geïmporteerde apparatuurcorrectie geselecteerd.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>Geen gemeten versterkercorrectie geselecteerd. Commerciële frequentiebereikspecificaties zijn onvoldoende om een correctiecurve af te leiden.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>Geen microfoon aangesloten.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>Geen modelcorrectie geselecteerd. Uw luister-EQ werkt normaal.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>Geen nieuwere gepubliceerde versie gevonden. Gedownloade installatieprogramma’s worden ook gecontroleerd.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>Geen uitgangsapparaat beschikbaar.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>Geen uitgangsapparaat aangesloten.</translation>
+    </message>
+    <message>
+      <source>No to All</source>
+      <translation>Nee op alles</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>Geen — mijn eigen EQ gebruiken</translation>
     </message>
     <message>
       <source>Number and date format</source>
@@ -838,136 +1758,277 @@ Import into your library?</source>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>Aantal equalizerbanden</translation>
+    </message>
+    <message>
+      <source>OK</source>
+      <translation>OK</translation>
+    </message>
+    <message>
+      <source>Omnidirectional speaker</source>
+      <translation>Omnidirectionele luidspreker</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>Aan · Afspelen via %1</translation>
+    </message>
+    <message>
+      <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
+      <translation>Er start bij het aanmelden maar één SoundCurrent-app. Inschakelen vervangt de opstartinstelling van de andere app. De app start op de achtergrond als een systeemvakpictogram beschikbaar is.</translation>
+    </message>
+    <message>
+      <source>Open</source>
+      <translation>Openen</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>Open het VB-Audio-configuratiescherm voor kabellatentie en interne samplefrequentie. Wijzigingen tijdens het afspelen kunnen de weergave onderbreken.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>VB-CABLE-configuratiescherm openen</translation>
+    </message>
+    <message>
+      <source>Open audio stream</source>
+      <translation>Audiostream openen</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>Kabelopnamestream openen</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>Kabelopnameapparaat openen</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>Apparaat openen</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>Volumeregeling van apparaat openen</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>Leesinterface voor microfoon openen</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>Versiedownloads openen</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>Luidsprekerapparaat openen</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>Uitgangsstream voor luidsprekers openen</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>Schrijfinterface voor testweergave openen</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>Updatemap openen</translation>
+    </message>
+    <message>
+      <source>Opening %1 setup...</source>
+      <translation>Installatie van %1 wordt geopend...</translation>
+      <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>Oranje: gemeten respons indien aangeleverd. Turkoois: correctie op 48 kHz. Sleep turquoise regelpunten of bewerk de tabel. Opslaan behoudt de referentie en maakt een aangepaste kopie.</translation>
+    </message>
+    <message>
+      <source>Outdoor speaker</source>
+      <translation>Buitenluidspreker</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
     </message>
     <message>
       <source>Output device</source>
-      <translation>Uitvoerapparaat</translation>
+      <translation>Uitgangsapparaat</translation>
+    </message>
+    <message>
+      <source>Output device is no longer available</source>
+      <translation>Uitgangsapparaat is niet meer beschikbaar</translation>
+    </message>
+    <message>
+      <source>Output has no volume channels</source>
+      <translation>Uitgang heeft geen volumekanalen</translation>
     </message>
     <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>Totale uitgang</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>Paneelluidspreker</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
+    </message>
+    <message>
+      <source>Parent directory</source>
+      <translation>Hogere map</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Paste</source>
+      <translation>Plakken</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>Pauzeer verwerking en open de audio-instellingen. De app blijft geopend en meldt het resultaat. Start Windows opnieuw na het installeren van de driver.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>Piekmarkeringen</translation>
+    </message>
+    <message>
+      <source>Peaking filter</source>
+      <translation>Klokfilter</translation>
+      <extracomment>Bell-shaped parametric EQ filter centered at its frequency; this is not a peak/clipping indicator.</extracomment>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>Piano</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>Speel testaudio op laag volume en bekijk voorgestelde wijzigingen aan de weergave-EQ</translation>
     </message>
     <message>
       <source>Playback</source>
-      <translation>Afspelen</translation>
+      <translation>Weergave</translation>
+    </message>
+    <message>
+      <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
+      <translation>Logaritmische sweep van 20 Hz tot 25 kHz wordt afgespeeld</translation>
+      <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>Testaudio op laag volume wordt afgespeeld. Stop als het onaangenaam is.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>Sluit uw microfoon aan om een microfoonprofiel te selecteren</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>Podcast</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>Pop</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>Draagbare PA-luidspreker</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
       <extracomment>Signal level adjustment after EQ processing, in dB; permits attenuation as well as amplification. Not financial profit.</extracomment>
-      <translation>Uitgangsversterking</translation>
+      <translation>Eindversterking</translation>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>Versterking na de equalizer</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>Eindversterkingswaarde in decibel</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>Presetnaam:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>Wijzigingen aan presets, EQ-banden, eindversterking en balans voorkomen</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>Profiel</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>Profieldetails</translation>
+    </message>
+    <message>
+      <source>Profile exceeds the 1 MiB limit.</source>
+      <translation>Profiel overschrijdt de grens van 1 MiB.</translation>
+    </message>
+    <message>
+      <source>Profile library exceeds 16 MiB.</source>
+      <translation>Profielbibliotheek is groter dan 16 MiB.</translation>
+    </message>
+    <message>
+      <source>Profile metadata is too long.</source>
+      <translation>Profielmetadata is te lang.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>Profiel moet leesbaar en kleiner dan 64 KiB zijn.</translation>
+    </message>
+    <message>
+      <source>Profiles need 1–16 correction filters.</source>
+      <translation>Profielen vereisen 1–16 correctiefilters.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>Gepubliceerde meetbronnen: &lt;a href="https://www.spinorama.org/"&gt;Luidsprekermetingen / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton-kalibratie per serienummer&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP-kalibratie per serienummer&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann-microfoongrafieken&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020-responsgrafiek&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Versterkermetingen&lt;/a&gt;</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <source>Published profiles need an HTTPS measurement source.</source>
+      <translation>Gepubliceerde profielen vereisen een HTTPS-meetbron.</translation>
+    </message>
+    <message>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Gepubliceerde versies konden niet worden gecontroleerd. Gebruik Versiedownloads openen; gedownloade installatieprogramma’s worden nog steeds lokaal gedetecteerd.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>Gepubliceerde respons en bewerkbare correctiecurves</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>Gepubliceerde update %1 is beschikbaar. Open de versiedownloads, installeer over deze versie en open de app opnieuw.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>Krachtige bas</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>Logaritmische sweep op laag volume</translation>
+    </message>
+    <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>Sluit %1 volledig af voordat u de app verwijdert.</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>Sluit %1 volledig af voordat u bijwerkt. Na het sluiten van het venster blijft de app actief. Verwijderen is niet nodig.</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>SoundCurrent EQ afsluiten</translation>
+    </message>
+    <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>Sluit elke actieve SoundCurrent-app af voordat u het gedeelde stuurprogramma wijzigt. Bij het verwijderen van één app blijft het stuurprogramma behouden als de andere app het nog gebruikt.</translation>
+    </message>
+    <message>
+      <source>Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.</source>
+      <translation>Sluit alle actieve equalizers af voordat u het stuurprogramma installeert. Bij het verwijderen van de laatste SoundCurrent-app biedt het verwijderprogramma aan om VB-CABLE te verwijderen. Andere software kan de kabel ook nodig hebben. Extra A/B-kabels zijn niet inbegrepen.</translation>
+      <extracomment>Shared virtual cable notice: quit exits the equalizer, not just closes UI. Cable removal is offered when the other SoundCurrent app is absent; user confirmation remains required, silent app removal does not remove cable. A/B refers to separate extra virtual cables, not physical wires. Other software may depend on shared VB-CABLE. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Quit app</source>
@@ -975,65 +2036,269 @@ Import into your library?</source>
       <translation>App afsluiten</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Sluit actieve SoundCurrent-apps en wacht tot het audioherstel is voltooid voordat u het gedeelde audiostuurprogramma wijzigt.</translation>
+    </message>
+    <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Sluit het volgende voordat u VB-CABLE wijzigt: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>R</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>R&amp;B</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint</source>
+      <translation>Audioapparaat lezen</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>Identificatie van audioapparaat lezen</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>Naam van audioapparaat lezen</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>Eigenschappen van audioapparaat lezen</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>Kabelaudio lezen</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>Kabelopname-interface lezen</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>Grootte van kabelpakket lezen</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Identificatie van standaarduitgang lezen</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Standaarduitvoerapparaat lezen</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>Microfoonmengformaat lezen</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>Grootte van microfoonpakket lezen</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>Microfoonsamples lezen</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>Grootte van volgend kabelpakket lezen</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>Volgend microfoonpakket lezen</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>Vulniveau van uitvoerbuffer lezen</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>Uitvoerniveau lezen</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>Dempingsstatus van uitgang lezen</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>Luidsprekerniveau lezen</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>Luidsprekermengformaat lezen</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>Dempingsstatus van luidsprekers lezen</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>Uitgangsinterface van luidsprekers lezen</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>Luidsprekervolume lezen</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>Vulniveau van buffer voor testweergave lezen</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>Mengformaat van virtuele uitgang lezen</translation>
+    </message>
+    <message>
+      <source>Recent places</source>
+      <translation>Recente plaatsen</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Redo</source>
+      <translation>Opnieuw uitvoeren</translation>
+      <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
       <source>Refresh devices</source>
-      <translation>Apparaten vernieuwen</translation>
+      <translation>Apparaten verversen</translation>
+    </message>
+    <message>
+      <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
+
+%1</source>
+      <translation>Relatieve metingen omvatten de respons van luidsprekers, kamer en microfoon. De voorgestelde wijzigingen zijn beperkt tot 3 dB per gemeten frequentie.
+
+%1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>Kabelaudio vrijgeven</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>Microfoonpakket vrijgeven</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>Luidsprekerbuffer vrijgeven</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>Buffer voor testweergave vrijgeven</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>Melden wanneer updates beschikbaar zijn of opnieuw starten nodig is</translation>
+    </message>
+    <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>VB-CABLE verwijderen?</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>Geselecteerd filter verwijderen</translation>
+    </message>
+    <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>Ook het gedeelde VB-CABLE-stuurprogramma verwijderen? Andere gebruikers, opname-apps of spraakprogramma’s hebben het mogelijk nodig. Bevestig om het officiële verwijderprogramma te openen en klik op Remove Driver. Weiger om de kabel te behouden en alleen SoundCurrent te verwijderen.</translation>
+    </message>
+    <message>
+      <source>Rename</source>
+      <translation>Hernoemen</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Onvolledige VB-CABLE-installatie herstellen</translation>
+    </message>
+    <message>
+      <source>Reset</source>
+      <translation>Resetten</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>Effecten resetten</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>Microfoontoon resetten</translation>
     </message>
     <message>
       <source>Reset to flat</source>
       <extracomment>Restore zero gain in all EQ bands. Does not mute playback.</extracomment>
-      <translation>Neutraal herstellen</translation>
+      <translation>Vlakke respons herstellen</translation>
     </message>
     <message>
       <source>Response data (*.txt *.csv *.frd *.cal)</source>
-      <translation type="unfinished" />
+      <translation>Responsgegevens (*.txt *.csv *.frd *.cal)</translation>
+    </message>
+    <message>
+      <source>Response exceeds 4096 points.</source>
+      <translation>Respons heeft meer dan 4096 punten.</translation>
+    </message>
+    <message>
+      <source>Response frequencies must increase, with finite bounded values.</source>
+      <translation>Responsfrequenties moeten oplopen, met eindige waarden binnen de grenzen.</translation>
+    </message>
+    <message>
+      <source>Response has no usable audio range.</source>
+      <translation>Respons heeft geen bruikbaar audiobereik.</translation>
     </message>
     <message>
       <source>Response import</source>
-      <translation type="unfinished" />
+      <translation>Responsimport</translation>
+    </message>
+    <message>
+      <source>Response needs 2–4096 measured points.</source>
+      <translation>Respons vereist 2–4096 gemeten punten.</translation>
+    </message>
+    <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Start Windows opnieuw op voordat u VB-CABLE gebruikt. De audio-instelling is voltooid, maar het stuurprogramma en de instellingen vereisen een herstart van het systeem.</translation>
+    </message>
+    <message>
+      <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
+      <translation>Start Windows opnieuw voordat u de equalizer of VB-CABLE-instellingen gebruikt. Wijzigingen aan de audiodriver vereisen een herstart van het systeem.</translation>
+    </message>
+    <message>
+      <source>Restore Defaults</source>
+      <translation>Standaardinstellingen herstellen</translation>
     </message>
     <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
-      <translation type="unfinished" />
+      <translation>Vorige EQ-instelling herstellen (Ctrl+Z)</translation>
+    </message>
+    <message>
+      <source>Retry</source>
+      <translation>Opnieuw proberen</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
-      <translation type="unfinished" />
+      <translation>Testtaal van rechts naar links</translation>
     </message>
     <message>
       <source>Rock</source>
-      <translation type="unfinished" />
+      <translation>Rock</translation>
+    </message>
+    <message>
+      <source>Save</source>
+      <translation>Opslaan</translation>
+    </message>
+    <message>
+      <source>Save All</source>
+      <translation>Alles opslaan</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
-      <translation type="unfinished" />
+      <translation>EQ-preset opslaan</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>Opslaan als</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>
-      <translation type="unfinished" />
+      <translation>Gewijzigd profiel opslaan?</translation>
     </message>
     <message>
       <source>Save preset</source>
@@ -1041,27 +2306,45 @@ Import into your library?</source>
     </message>
     <message>
       <source>Save profile</source>
-      <translation type="unfinished" />
+      <translation>Profiel opslaan</translation>
+    </message>
+    <message>
+      <source>Save system response profile</source>
+      <translation>Systeemresponsprofiel opslaan</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>Sla uw werk op en sluit de actieve app volledig af voordat u doorgaat. Als u het venster sluit, blijft de app op de achtergrond actief.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
-      <translation type="unfinished" />
+      <translation>Preset ‘%1’ opgeslagen.</translation>
     </message>
     <message>
       <source>Search brand, family, model or measurement conditions</source>
-      <translation type="unfinished" />
+      <translation>Zoeken op merk, serie, model of meetomstandigheden</translation>
     </message>
     <message>
       <source>Second virtual cable for microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Tweede virtuele kabel voor microfoon-EQ</translation>
+    </message>
+    <message>
+      <source>Select all</source>
+      <translation>Alles selecteren</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Select band %1</source>
-      <translation type="unfinished" />
+      <translation>Band %1 selecteren</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
-      <translation type="unfinished" />
+      <translation>Selecteer deze band om frequentie, versterking en Q te bewerken</translation>
+    </message>
+    <message>
+      <source>Selected audio device is unavailable</source>
+      <translation>Geselecteerd audioapparaat is niet beschikbaar</translation>
     </message>
     <message>
       <source>Selected band</source>
@@ -1070,159 +2353,429 @@ Import into your library?</source>
     </message>
     <message>
       <source>Selected band filter Q</source>
-      <translation type="unfinished" />
+      <translation>Filter-Q van geselecteerde band</translation>
     </message>
     <message>
       <source>Selected band frequency</source>
-      <translation type="unfinished" />
+      <translation>Frequentie van geselecteerde band</translation>
     </message>
     <message>
       <source>Selected band gain</source>
-      <translation type="unfinished" />
+      <translation>Versterking van geselecteerde band</translation>
+    </message>
+    <message>
+      <source>Selected output device is no longer available</source>
+      <translation>Geselecteerd uitgangsapparaat is niet meer beschikbaar</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
-      <translation type="unfinished" />
+      <translation>Geselecteerde uitgang is losgekoppeld. Overgeschakeld op automatische uitgang.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>De geselecteerde luidsprekers zijn losgekoppeld</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
-      <translation type="unfinished" />
+      <translation>Afzonderlijke tonen op laag volume</translation>
+    </message>
+    <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>Luidsprekerniveau op maximaal instellen voor EQ</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>Uitvoerniveau instellen</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>Dempingsstatus van uitgang instellen</translation>
+    </message>
+    <message>
+      <source>Set up %1 for %2.</source>
+      <translation>%1 instellen voor %2.</translation>
+    </message>
+    <message>
+      <source>Setting up the shared %1 driver...</source>
+      <translation>Het gedeelde %1-stuurprogramma wordt ingesteld...</translation>
+      <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Instellingen &amp;&amp; kalibratie</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>Het installatieprogramma kon het stuurprogramma niet controleren. U kunt het opnieuw proberen met %1 in de app of het Startmenu.</translation>
+    </message>
+    <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>Het installatieprogramma opent het ondertekende installatieprogramma van VB-Audio. Klik op Install Driver en start Windows opnieuw op voordat u de equalizer of de VB-CABLE-instellingen gebruikt.</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
+      <translation>De gedeelde EQ en kanaal-EQ overschrijden 64 filters; verwijder enkele kanaalfilters</translation>
+      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+    </message>
+    <message>
+      <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
+      <translation>Het verwijderen van het gedeelde audiostuurprogramma is niet voltooid. Deze app is behouden zodat u het opnieuw kunt proberen. Sluit alle actieve SoundCurrent-apps volledig af en probeer opnieuw te verwijderen.</translation>
+      <extracomment>Native uninstall nonzero failure (excluding restart code 3010) aborts before app payload deletion so user can retry. Shared audio driver means EQ/Studio ownership, not network. Quit any running SoundCurrent apps, not necessarily both products; fully exit rather than hide UI. SoundCurrent is invariant. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Shortcut</source>
+      <translation>Snelkoppeling</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
-      <translation type="unfinished" />
+      <translation>Kortere intervallen verversen niveaus vaker en gebruiken meer CPU; de aanvoer van audio kan de werkelijke snelheid beperken</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
-      <translation type="unfinished" />
+      <translation>Toon een dalende piekvasthoudlijn op elk frequentieniveau</translation>
     </message>
     <message>
       <source>Show advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Geavanceerde regelaars tonen</translation>
+    </message>
+    <message>
+      <source>Show date modified</source>
+      <translation>Wijzigingsdatum tonen</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show hidden files</source>
+      <translation>Verborgen bestanden tonen</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>
-      <translation type="unfinished" />
+      <translation>Piekmarkeringen op frequentieniveaus tonen</translation>
+    </message>
+    <message>
+      <source>Show size</source>
+      <translation>Grootte tonen</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show type</source>
+      <translation>Type tonen</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Sidebar</source>
+      <translation>Zijbalk</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>Grootte</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>Grootte van opnamebuffer bepalen</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>Grootte van uitvoerbuffer bepalen</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>Grootte van buffer voor testweergave bepalen</translation>
     </message>
     <message>
       <source>Small Speakers</source>
-      <translation type="unfinished" />
+      <translation>Kleine luidsprekers</translation>
     </message>
     <message>
       <source>Soft Treble</source>
-      <translation type="unfinished" />
+      <translation>Zachte hoge tonen</translation>
     </message>
     <message>
       <source>Sound enhancements</source>
-      <translation>Geluidsverbeteringen</translation>
+      <translation>Geluidseffecten</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio is al aanwezig. Als stuurprogramma-instelling ingeschakeld blijft, registreert het installatieprogramma deze app en houdt het gedeelde stuurprogramma beschikbaar voor de andere SoundCurrent-app.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio is gereed. Open de app en kies uw luidsprekers of hoofdtelefoon.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
+      <translation>SoundCurrent Audio biedt na installatie een eigen microfoonroute. Met VB-CABLE vereist gelijktijdige microfoon- en luidspreker-EQ een afzonderlijk geïnstalleerde tweede kabel (A of B). Selecteer die kabel in opname-apps. Automatisch geeft de voorkeur aan de SoundCurrent-route als deze beschikbaar is.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio leidt de weergave door de app. Kies uw fysieke luidsprekers of hoofdtelefoon in de app. De bijbehorende hardwarestuurprogramma’s blijven behouden.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.</source>
+      <translation>SoundCurrent-meting met sweep of tonen; relatief ten opzichte van de mediaan; microfoon-EQ omzeild. Afspeel-EQ kan inbegrepen zijn.</translation>
+      <extracomment>New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.</extracomment>
+    </message>
+    <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>De virtuele SoundCurrent-uitgang vereist stereo-audio van 48 kHz in drijvendekommaformaat</translation>
+    </message>
+    <message>
+      <source>Soundbar</source>
+      <translation>Soundbar</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
     </message>
     <message>
       <source>Source</source>
-      <translation type="unfinished" />
+      <translation>Bron</translation>
+    </message>
+    <message>
+      <source>Source: %1</source>
+      <translation>Bron: %1</translation>
+      <extracomment>Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.</extracomment>
+    </message>
+    <message>
+      <source>Speaker</source>
+      <translation>Luidspreker</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
-      <translation type="unfinished" />
+      <translation>Luidspreker- &amp;&amp; kamerkalibratie</translation>
     </message>
     <message>
       <source>Speaker + room check</source>
-      <translation type="unfinished" />
+      <translation>Luidspreker- en kamercontrole</translation>
+    </message>
+    <message>
+      <source>Speaker and room measurement</source>
+      <translation>Luidspreker- en kamermeting</translation>
+    </message>
+    <message>
+      <source>Speaker filter is outside conservative bounds</source>
+      <translation>Luidsprekerfilter valt buiten conservatieve grenzen</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Luidsprekerfabrikant</translation>
     </message>
     <message>
       <source>Speaker model correction</source>
-      <translation type="unfinished" />
+      <translation>Luidsprekermodelcorrectie</translation>
     </message>
     <message>
       <source>Speaker model profile</source>
-      <translation type="unfinished" />
+      <translation>Luidsprekermodelprofiel</translation>
     </message>
     <message>
       <source>Speaker profile details</source>
-      <translation type="unfinished" />
+      <translation>Details van luidsprekerprofiel</translation>
+    </message>
+    <message>
+      <source>Speaker profile resource is missing</source>
+      <translation>Luidsprekerprofielbron ontbreekt</translation>
     </message>
     <message>
       <source>Speaker type</source>
-      <translation type="unfinished" />
+      <translation>Luidsprekertype</translation>
+    </message>
+    <message>
+      <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
+      <translation>Spinorama AutoEQ: de correctieversterking is beperkt tot %1 en Q tot %2. Versterkingen onder %3 worden weggelaten. Uw luisterpreset wordt afzonderlijk toegevoegd.</translation>
+      <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
+    </message>
+    <message>
+      <source>Start cable capture</source>
+      <translation>Kabelopname starten</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>Microfoonopname starten</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>Begin zacht. Verhoog alleen als de microfoon de tonen niet kan horen.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>Luidsprekeruitgang starten</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>Testweergave starten</translation>
+    </message>
+    <message>
+      <source>Start when I sign in</source>
+      <translation>Starten wanneer ik me aanmeld</translation>
+    </message>
+    <message>
+      <source>Startup</source>
+      <translation>Opstarten</translation>
+    </message>
+    <message>
+      <source>Step down</source>
+      <translation>Waarde verlagen</translation>
+      <extracomment>Decrease the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Step up</source>
+      <translation>Waarde verhogen</translation>
+      <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Stop the microphone calibration before changing the audio driver.</source>
+      <translation>Stop de microfoonkalibratie voordat u de audiodriver wijzigt.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>Tonen stoppen</translation>
+    </message>
+    <message>
+      <source>Studio profile has an invalid boolean field</source>
+      <translation>Het Studio-profiel bevat een ongeldig booleaans veld</translation>
+      <extracomment>Saved Studio setup requires a JSON true/false field. Wrong type or missing value is rejected; do not confuse this with an audio level or textual yes/no preference.</extracomment>
+    </message>
+    <message>
+      <source>Studio profile has an invalid numeric field</source>
+      <translation>Het Studio-profiel bevat een ongeldig numeriek veld</translation>
+      <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>Voorgestelde EQ toegepast. Gebruik Preset opslaan om deze te bewaren.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>Voorgestelde wijzigingen aan de weergave-EQ</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>Surroundgeluid</translation>
+    </message>
+    <message>
+      <source>Surround speaker</source>
+      <translation>Surroundluidspreker</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>Systeemresponsprofieleditor geopend. Opgeslagen profielen zijn beschikbaar in de apparatuurbibliotheek.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>TV-dialogen</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>Turkoois: correctie-EQ. Oranje: gemeten respons indien aangeleverd. De verticale schaal toont relatieve dB.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>Testniveau</translation>
+    </message>
+    <message>
+      <source>Test level is outside the allowed range</source>
+      <translation>Testniveau valt buiten het toegestane bereik</translation>
+    </message>
+    <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>Het VB-CABLE-pakket ontbreekt. Herstel de SoundCurrent-installatie.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>De audioprocessor is onverwacht gestopt.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>De hulp voor het controleren van de audiogereedheid ontbreekt. Herstel de installatie van SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The custom library holds up to 256 profiles.</source>
+      <translation>De aangepaste bibliotheek bevat maximaal 256 profielen.</translation>
+    </message>
+    <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>De stuurprogrammabeheerder is niet ondertekend. Installeer een ondertekende versie van SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Het stuurprogrammapakket is onvolledig of Windows kan de handtekening niet verifiëren.</translation>
+    </message>
+    <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>De onvolledige VB-CABLE-installatie is verwijderd. Start Windows opnieuw op, open %1 opnieuw, klik op Install Driver en start daarna nogmaals opnieuw op.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>De installatiehulp die audioroutes behoudt ontbreekt.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>De gedeelde stuurprogrammabeheerder ontbreekt. Herstel de installatie van de app.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>De updaterespons was ongeldig. Er is geen installatieprogramma geopend.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>Dit importeert gemeten RESPONS, geen reeds omgekeerde EQ-versterkingen. Bevestig het apparatuurtype. Absolute geluidsdrukniveaus moeten vóór import worden genormaliseerd.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>Dit profiel is gewijzigd. Een aangepaste kopie opslaan voordat u vertrekt?</translation>
+    </message>
+    <message>
+      <source>Timed out waiting for the equalizer sink: %1</source>
+      <translation>Wachttijd voor equalizeruitgangsapparaat verstreken: %1</translation>
+    </message>
+    <message>
+      <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
+      <translation>Te weinig testaudio bereikte de microfoon. Plaats deze dichterbij of verhoog het testniveau iets.</translation>
+    </message>
+    <message>
+      <source>Too many Studio channel filters</source>
+      <translation>Te veel filters op een Studio-kanaal</translation>
+      <extracomment>Per-channel EQ filter count exceeds 64; unchanged processing bound.</extracomment>
+    </message>
+    <message>
+      <source>Too many Studio routes</source>
+      <translation>Te veel Studio-audioverbindingen</translation>
+      <extracomment>Saved audio routing edge count exceeds channel-count squared.</extracomment>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>PA-luidspreker voor tournees</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>Vertaaldekking: %1 van %2 berichten. Ontbrekende vertalingen gebruiken Engels. Taalpakketten zijn niet geverifieerd en wachten op beoordeling door moedertaalsprekers. Gebruik Afsluiten en open de app opnieuw om wijzigingen toe te passen.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>Detail in hoge tonen</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Equalizer uitschakelen</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Equalizer inschakelen</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Type</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Niet-geclassificeerde apparatuur</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>
@@ -1231,27 +2784,74 @@ Import into your library?</source>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>Laatste equalizerwijziging ongedaan maken</translation>
+    </message>
+    <message>
+      <source>Uninstall</source>
+      <translation>Verwijderen</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
+      <source>Unknown</source>
+      <translation>Onbekend</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>EQ ontgrendelen</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>Ontgrendel regelaars en voltooi de meting voordat u profielen bewerkt.</translation>
+    </message>
+    <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>Luidsprekers inschakelen voor EQ</translation>
+    </message>
+    <message>
+      <source>Unsupported Studio profile schema</source>
+      <translation>Niet-ondersteund Studio-profielbestandformaat</translation>
+      <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
+    </message>
+    <message>
+      <source>Unsupported equipment profile schema (expected 2).</source>
+      <translation>Niet-ondersteund apparatuurprofielschema (verwacht 2).</translation>
+    </message>
+    <message>
+      <source>Unsupported filter type.</source>
+      <translation>Niet-ondersteund filtertype.</translation>
+    </message>
+    <message>
+      <source>Unsupported microphone channel layout</source>
+      <translation>Niet-ondersteunde microfoonkanaalindeling</translation>
+    </message>
+    <message>
+      <source>Unsupported recording format</source>
+      <translation>Niet-ondersteund opnameformaat</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Niet-ondersteunde luidsprekerkanaalindeling of samplefrequentie</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Niet-ondersteund sampleformaat voor de luidsprekermix</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker profile schema</source>
+      <translation>Niet-ondersteund luidsprekerprofielschema</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Update %1 is gedownload: %2. Sluit af, installeer over de bestaande app en open deze opnieuw.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>Downloadmap voor updates</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>Gebruik een stille kamer. Meet luidsprekers, kamer en microfoon samen; resultaten omvatten de microfoonrespons.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1260,35 +2860,153 @@ Import into your library?</source>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>Systeemregio gebruiken</translation>
+      <translation>Regionale systeeminstellingen gebruiken</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Door gebruiker geïmporteerde relatieve frequentierespons; geef vóór gebruik de microfoonoriëntatie / het serienummer of de meetomstandigheden van de luidspreker op.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>Door gebruiker gemaakte correctie; voer apparatuur en meetomstandigheden in.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>Door gebruiker gemaakt profiel</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>VB-CABLE is als stuurprogramma geregistreerd, maar heeft geen bruikbare audio-eindpunten. Het installatieprogramma biedt herstel aan: verwijder het stuurprogramma, start opnieuw op, installeer het opnieuw en start nogmaals opnieuw op.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>VB-CABLE is al geïnstalleerd. Start Windows opnieuw op voordat u de equalizer of VB-CABLE-instellingen gebruikt als het zojuist is geïnstalleerd of bijgewerkt. Kies anders uw luidsprekers in SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE is al aanwezig en wordt opnieuw gebruikt. SoundCurrent herstelt uw normale uitvoer wanneer het wordt uitgeschakeld of u %1 gebruikt.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE is niet geïnstalleerd. Open "%1" en start Windows opnieuw op voordat u de kabelinstellingen opent.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE is niet aanwezig. Start Windows opnieuw op als daarom is gevraagd en probeer de audio-instelling opnieuw.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>VB-CABLE is nog aanwezig. Start Windows opnieuw op en probeer SoundCurrent opnieuw te verwijderen als bij het verwijderen om een herstart is gevraagd. Voltooi anders Remove Driver in het officiële installatieprogramma.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>De controlesom van het VB-CABLE-pakket komt niet overeen. Herstel de installatie.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE removal did not finish. This app was kept so you can retry.</source>
+      <translation>Het verwijderen van VB-CABLE is niet voltooid. Deze app is behouden zodat u het opnieuw kunt proberen.</translation>
+      <extracomment>Cable uninstall nonzero failure excluding restart code 3010 aborts before app payload deletion. App retained for retry. NSIS caller appends newline and actual helper output as $1; never put runtime variables in translations. VB-CABLE invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.</source>
+      <translation>VB-CABLE leidt de weergave door de app. Kies de luidsprekers in SoundCurrent. VB-CABLE is software van VB-Audio die met donaties wordt ondersteund: https://vb-cable.com — donaties zijn welkom.</translation>
+      <extracomment>Cable audio page routing and donation notice. Software routes system playback through SoundCurrent to physical output selected inside app. Donationware means supported by voluntary donations, not mandatory payment. Preserve VB-CABLE twice, SoundCurrent, VB-Audio and exact donation URL. Contextual AI review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>VB-CABLE-instellingen</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>De VB-CABLE-instellingen konden niet worden geopend. Start Windows opnieuw op als het stuurprogramma zojuist is geïnstalleerd of bijgewerkt en probeer het opnieuw.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>Het instellen van VB-CABLE is voltooid. Start Windows nu opnieuw op voordat u de equalizer of VB-CABLE-instellingen gebruikt. Uw eerdere standaardaudioapparaten zijn behouden waar ze nog beschikbaar waren.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>Voor het instellen van VB-CABLE moet Windows opnieuw worden opgestart. Start opnieuw op voordat u de equalizer gebruikt of de instellingen van VB-CABLE opent.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>Het instellen van VB-CABLE is geannuleerd of niet voltooid (code %1). SoundCurrent blijft geïnstalleerd zodat u het opnieuw kunt proberen.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.</source>
+      <translation>VB-CABLE heeft nog steeds geen bruikbare afspeel- of opnameapparaten. Voltooi Remove Driver in het officiële installatieprogramma, start Windows opnieuw op en open %1 opnieuw om het stuurprogramma opnieuw te installeren. CABLE Input en CABLE Output moeten in de geluidsinstellingen van Windows zijn ingeschakeld.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE is behouden omdat de andere SoundCurrent-app is geïnstalleerd. Verwijder het met de laatste app als geen andere software het nodig heeft.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>Stemfocus</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>Wachten op een microfoon.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>Warm</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>Warmte</translation>
     </message>
     <message>
-      <source>Width (Q)</source>
-      <translation type="unfinished" />
+      <source>Whole listening system</source>
+      <translation>Volledig luistersysteem</translation>
+      <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>Windows-audio-COM is niet beschikbaar</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Windows kon de handtekening van het uitvoerbare VB-Audio-bestand niet verifiëren.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
+    </message>
+    <message>
+      <source>Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.</source>
+      <translation>Windows heeft een stuurprogrammaregistratie voor VB-CABLE, maar geen bruikbare audio-eindpunten van de kabel. Controleer eerst of CABLE Input en CABLE Output zijn ingeschakeld in de geluidsinstellingen van Windows. Om opnieuw te installeren: klik op Remove Driver in het officiële installatieprogramma dat hierna opent, start Windows opnieuw op, open vervolgens %1 opnieuw in de app en klik op Install Driver. Start nogmaals opnieuw op voordat u audio via SoundCurrent afspeelt. Het verwijderen van deze gedeelde kabel heeft gevolgen voor andere apps die deze gebruiken.</translation>
+      <extracomment>Pre-repair modal, before official driver installer is opened. Existing driver record but endpoints unavailable; first check Windows endpoint enablement. Remove Driver and Install Driver are exact English external buttons. %1 is actual localized Audio driver setup button inside app, not English Start-menu shortcut. Preserve removal -&gt; Windows restart -&gt; app setup -&gt; reinstall -&gt; second restart, then audio playback; affects other users of shared cable. No claim removal already happened. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</source>
+      <translation>Windows heeft een vermelding van het VB-CABLE-stuurprogramma, maar het afspeel- of opname-eindpunt is niet beschikbaar. Open %1 om dit te herstellen als u al opnieuw hebt opgestart. Schakel CABLE Input en CABLE Output in de Windows-geluidsinstellingen in als ze zijn uitgeschakeld.</translation>
+    </message>
+    <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows vraagt om goedkeuring van de beheerder voor de ondertekende stuurprogrammabeheerder. Het installatieprogramma meldt of opnieuw opstarten nodig is.</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Luidsprekerbuffer schrijven</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>Testweergave schrijven</translation>
+    </message>
+    <message>
+      <source>Yes</source>
+      <translation>Ja</translation>
+    </message>
+    <message>
+      <source>Yes to All</source>
+      <translation>Ja op alles</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>Nul schakelt elk effect uit. Deze luistereffecten gelden voor luidsprekerweergave, niet voor microfooncorrectie.</translation>
     </message>
   </context>
 </TS>

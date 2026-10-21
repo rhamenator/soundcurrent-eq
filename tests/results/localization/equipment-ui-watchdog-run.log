@@ -1,0 +1,73 @@
+Test project /home/rich/dev/soundcurrent-eq/build
+      Start 11: equipment-ui
+ 1/34 Test #11: equipment-ui .....................   Passed    9.95 sec
+      Start 12: equipment-ui-pt-PT
+ 2/34 Test #12: equipment-ui-pt-PT ...............   Passed    1.57 sec
+      Start 13: equipment-ui-pt-BR
+ 3/34 Test #13: equipment-ui-pt-BR ...............   Passed    1.34 sec
+      Start 14: equipment-ui-cs
+ 4/34 Test #14: equipment-ui-cs ..................   Passed    1.37 sec
+      Start 15: equipment-ui-sk
+ 5/34 Test #15: equipment-ui-sk ..................   Passed    1.42 sec
+      Start 16: equipment-ui-uk
+ 6/34 Test #16: equipment-ui-uk ..................   Passed   31.77 sec
+      Start 17: equipment-ui-ru
+ 7/34 Test #17: equipment-ui-ru ..................   Passed   16.54 sec
+      Start 18: equipment-ui-el
+ 8/34 Test #18: equipment-ui-el ..................   Passed   11.97 sec
+      Start 19: equipment-ui-tr
+ 9/34 Test #19: equipment-ui-tr ..................   Passed   15.20 sec
+      Start 20: equipment-ui-sv
+10/34 Test #20: equipment-ui-sv ..................   Passed    8.84 sec
+      Start 21: equipment-ui-da
+11/34 Test #21: equipment-ui-da ..................   Passed    1.51 sec
+      Start 22: equipment-ui-nb
+12/34 Test #22: equipment-ui-nb ..................   Passed    1.47 sec
+      Start 23: equipment-ui-fi
+13/34 Test #23: equipment-ui-fi ..................   Passed   16.37 sec
+      Start 24: equipment-ui-ro
+14/34 Test #24: equipment-ui-ro ..................   Passed   17.46 sec
+      Start 25: equipment-ui-hu
+15/34 Test #25: equipment-ui-hu ..................   Passed    4.95 sec
+      Start 26: equipment-ui-nn
+16/34 Test #26: equipment-ui-nn ..................   Passed    1.62 sec
+      Start 27: equipment-ui-ar
+17/34 Test #27: equipment-ui-ar ..................   Passed    1.40 sec
+      Start 28: equipment-ui-he
+18/34 Test #28: equipment-ui-he ..................   Passed    1.56 sec
+      Start 29: equipment-ui-fa
+19/34 Test #29: equipment-ui-fa ..................   Passed    1.47 sec
+      Start 30: equipment-ui-zh-Hans
+20/34 Test #30: equipment-ui-zh-Hans .............   Passed    1.79 sec
+      Start 31: equipment-ui-zh-Hant
+21/34 Test #31: equipment-ui-zh-Hant .............   Passed    1.86 sec
+      Start 32: equipment-ui-ja
+22/34 Test #32: equipment-ui-ja ..................   Passed   32.70 sec
+      Start 33: equipment-ui-ko
+23/34 Test #33: equipment-ui-ko ..................   Passed   14.36 sec
+      Start 34: equipment-ui-hi
+24/34 Test #34: equipment-ui-hi ..................   Passed   12.47 sec
+      Start 35: equipment-ui-id
+25/34 Test #35: equipment-ui-id ..................   Passed   19.52 sec
+      Start 36: equipment-ui-vi
+26/34 Test #36: equipment-ui-vi ..................   Passed    7.44 sec
+      Start 37: equipment-ui-th
+27/34 Test #37: equipment-ui-th ..................   Passed    1.60 sec
+      Start 38: equipment-ui-sw
+28/34 Test #38: equipment-ui-sw ..................   Passed    1.67 sec
+      Start 39: equipment-ui-pl
+29/34 Test #39: equipment-ui-pl ..................   Passed   15.88 sec
+      Start 40: equipment-ui-nl
+30/34 Test #40: equipment-ui-nl ..................   Passed   23.78 sec
+      Start 41: equipment-ui-it
+31/34 Test #41: equipment-ui-it ..................   Passed   13.69 sec
+      Start 42: equipment-ui-es
+32/34 Test #42: equipment-ui-es ..................   Passed   11.52 sec
+      Start 43: equipment-ui-de
+33/34 Test #43: equipment-ui-de ..................   Passed   12.79 sec
+      Start 44: equipment-ui-fr
+34/34 Test #44: equipment-ui-fr ..................   Passed   13.13 sec
+
+100% tests passed, 0 tests failed out of 34
+
+Total Test time (real) = 332.04 sec

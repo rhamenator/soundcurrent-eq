@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "interactiveChooserAlwaysShownGenerated": true,
+  "allLanguagesDisplayedGenerated": true,
+  "languageCount": 34,
+  "chooserCaptionSource": "Interface language",
+  "chooserCaptionCatalogs": 34,
+  "silentBehaviorBasis": "Installed NSIS MUI_LANGDLL_DISPLAY macro wraps the chooser in unless Silent while reading a stored language before that guard",
+  "installerFixtureRoutesCompiled": [
+    "cable",
+    "native"
+  ],
+  "activationTestsPassed": 5,
+  "defaultGenerationPreservationTestPassed": true,
+  "actualChooserRendered": false,
+  "languageChangingUpdateQualified": false,
+  "nativeSpeakerVerified": false,
+  "vmUsed": false
+}

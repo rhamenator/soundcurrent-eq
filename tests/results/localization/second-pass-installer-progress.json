@@ -1,0 +1,38 @@
+{
+  "scope": "Native shared-driver progress, cable setup launch, and common retry progress",
+  "sources": [
+    "Setting up the shared %1 driver...",
+    "Opening %1 setup...",
+    "%1 setup did not finish. Retry using the Start menu shortcut."
+  ],
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "sourceMessages": 621,
+  "unfinishedExtractedEntries": 0,
+  "contextualReview": "AI reviewed route-specific launch/setup actions, shared ownership, nonzero failure excluding restart-required code 3010, and Start-menu retry shortcut",
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "catalogTests": {
+      "total": 45,
+      "passed": 44,
+      "skipped": 1
+    },
+    "compiledCatalogHashes": "verified",
+    "nsisLiteralCompiler": {
+      "captions": 884,
+      "languageIDs": "English fixture only",
+      "localeActivation": false,
+      "layoutQualified": false
+    },
+    "staticProgressGuard": "All supported static DetailPrint sites use declared catalog-backed LangStrings; helper output remains dynamic",
+    "placeholders": "exactly one %1; product/driver names inserted literally"
+  },
+  "driverActionsAndDSPChanged": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Welcome and remaining error/helper translations",
+    "Installer locale activation and installed layout",
+    "Current package/UI and install/update/uninstall checks"
+  ]
+}

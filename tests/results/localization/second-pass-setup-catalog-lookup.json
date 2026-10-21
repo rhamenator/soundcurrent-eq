@@ -1,0 +1,44 @@
+{
+  "scope": "Shared PowerShell catalog lookup and audio setup dialog title only",
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "sourceMessagesPerLocale": 568,
+  "sourceCaptionReused": "Audio driver setup",
+  "contextualAIReview": "Existing audio-driver setup terminology reused; no new translations authored in this batch",
+  "nativeSpeakerVerification": "unverified",
+  "runtimeQualification": {
+    "platform": "Linux host PowerShell 7.6.6",
+    "result": "passed",
+    "checks": [
+      "All 34 explicit title catalog lookups match finished TS exports",
+      "Generic regional and Chinese script/region lookup cases",
+      "Unknown external Unicode/placeholder text retained",
+      "Missing data, invalid JSON, unsupported schema and non-string translation fall back to English",
+      "All packaged PowerShell files parse"
+    ],
+    "noDriverOrEndpointActions": true,
+    "WindowsPowerShell51Qualified": false,
+    "WindowsRegistryPreferenceQualified": false,
+    "WindowsMessageBoxQualified": false
+  },
+  "packagingChanges": [
+    "Windows stage exports catalog data and includes lookup script",
+    "Pre-install cable readiness payload includes lookup data",
+    "Existing exact stage deletion manifest includes new owned files",
+    "Windows build runs inert tests using powershell.exe"
+  ],
+  "remainingScope": [
+    "Audio helper message bodies and additional dialog captions",
+    "NSIS installer/uninstaller pages and messages",
+    "Command-line app language override propagation to helper",
+    "Changed Windows installer/update/uninstall qualification"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "newPackagesQualified": false,
+  "sourceSha256": {
+    "packaging/windows/setup-localization.ps1": "f7de725367168e855d11c6335e2436a52eefbab609b2a452bde8018a17661ada",
+    "scripts/windows_setup_catalogs.py": "5ed3ff7d7fc55af1161a05b9c77069b0a12d441cc899b009a83b315b1a0c5c73",
+    "scripts/test_windows_setup_localization.py": "8da8df6e5562fbef36e6ec7b4ab1e9bd62ae43d89677ea625e7076ae65118a9a",
+    "tests/windows_setup_localization.ps1": "97e168f34a2ed5ed9d17241e0c7cc4996aa33af6274aa41fa1a41b7056f6b566"
+  }
+}

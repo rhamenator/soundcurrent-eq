@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-09",
+  "overallStatus": "completed within explicitly recorded qualification scope",
+  "evidence": {
+    "catalogPopulation": [
+      "data/localization/catalogs.json",
+      "tests/results/localization/linux-complete-installer-0/ctest.log",
+      "tests/results/localization/windows-startup-installed/verified-artifact.json"
+    ],
+    "contextualReview": [
+      "docs/translation-review.md",
+      "data/localization/translation-context.json"
+    ],
+    "idsStateAndNumbers": [
+      "tests/localization.cpp",
+      "tests/results/localization/rtl-regional-numbers.json"
+    ],
+    "ownedDisplayBoundaries": [
+      "tests/results/localization/dynamic-provenance-review.json",
+      "tests/results/localization/header-list-display-guard.json",
+      "tests/results/localization/studio-display-helper-guard.json",
+      "tests/results/localization/windows-backend-diagnostic-guard.json",
+      "tests/results/localization/interface-surface-inventory.json",
+      "tests/results/localization/main-equipment-display-gap.json",
+      "tests/results/localization/measured-profile-runtime.log",
+      "tests/results/localization/measurement-test-utf8-fix.json"
+    ],
+    "linuxLifecycle": [
+      "tests/results/localization/linux-measured-qualified-0/verified-artifact.json",
+      "tests/results/localization/linux-measured-qualified-1/verified-artifact.json",
+      "tests/results/localization/linux-measured-qualified-2/verified-artifact.json"
+    ],
+    "windowsLifecycle": [
+      "tests/results/localization/windows-measured-qualified/verified-artifact.json"
+    ],
+    "previewDelivery": [
+      "tests/results/localization/preview-bundle-verification.json"
+    ]
+  },
+  "evidenceSha256": {
+    "data/localization/catalogs.json": "e9c4254f6f8457cc5fd71f3994d717148eee36e136d6ed3769475ec300913c07",
+    "data/localization/translation-context.json": "eba6af9ce1ae4035cbe4ab9881f27a47fa170986c8ea0c75a7efaa8825fd590c",
+    "docs/translation-review.md": "4b94105cd269622f614282f35c398fa7f5fc209238a90459e8b951dd6c140bae",
+    "tests/localization.cpp": "f0ad22384bbeed61639a5035e695c66e462fbbd20332da7a52bef5bd951be5ad",
+    "tests/results/localization/dynamic-provenance-review.json": "11e783260018e133ab988e352b63cc9f27765d1e3998471fa000e160ae7ec439",
+    "tests/results/localization/header-list-display-guard.json": "19d4b6acd6245c47993f8ab29fffab8db888809c05b3e5a776a5402a6c9b2246",
+    "tests/results/localization/interface-surface-inventory.json": "4373628f6f4fd914296b5fa1e518c7c4087d8705e2ae77b7d0a13c28f371ae24",
+    "tests/results/localization/linux-complete-installer-0/ctest.log": "e10b84660d0c9b45120101f926a623f05835490f1f339badf84437bb1c0db487",
+    "tests/results/localization/linux-measured-qualified-0/verified-artifact.json": "b194df9ab7b52d793a15bf5fabae0e57ad70dab9ef39c97842ac61bb75cacf29",
+    "tests/results/localization/linux-measured-qualified-1/verified-artifact.json": "424d10540a625d84a11786c16bfcdb317760290b55e87b3892605fddd6035cd3",
+    "tests/results/localization/linux-measured-qualified-2/verified-artifact.json": "1f609e5cd8cec194d6af18ae2911feb1152e2e662c1c36a8bbe0bdb629fa9ae1",
+    "tests/results/localization/main-equipment-display-gap.json": "5ac06b40175f5f4dd5ee09c89e52e31aca30e07999416117633ca52c5c991781",
+    "tests/results/localization/measured-profile-runtime.log": "c181ba5d62cc4eaf64a47acc10827b8e83992fa28ed8d693c658d239abbfce75",
+    "tests/results/localization/measurement-test-utf8-fix.json": "c219ff1a50a71cc291339594c61166e1e14e46de5364a38807b92ff89922d0e2",
+    "tests/results/localization/preview-bundle-verification.json": "9dc7517df48d079ed157017d10544be48806728c607d9a140abb302c641bd5af",
+    "tests/results/localization/rtl-regional-numbers.json": "17b7144a8b04fe80f91b1947d15ad44fc20fe9ad9b54887847c3b938040943b9",
+    "tests/results/localization/studio-display-helper-guard.json": "c8f149027b9e5c86fab5d098968c3457ce5e27c7e6ae1a535a8b3f6ea58ab569",
+    "tests/results/localization/windows-backend-diagnostic-guard.json": "c91eec68aa043c589389b0deaa489e8f66836cef10e8c0730f2807808d28a423",
+    "tests/results/localization/windows-measured-qualified/verified-artifact.json": "ff722805bd5da26cb9dc29275c4adf7c2d155526e89d23ba88eaf48fb3ca3bf5",
+    "tests/results/localization/windows-startup-installed/verified-artifact.json": "ead0a57779b0eb1b3c8418d3f3eeb7c015f9f47e3279dcaeae0b51ae981b7948"
+  },
+  "nativeSpeakerVerification": "unverified; no certification claimed",
+  "openChecks": [],
+  "separateUnexercisedScopes": [
+    "Native-speaker accuracy",
+    "All-locale visual rendering",
+    "Screen-reader speech",
+    "Protected-path deletion failures",
+    "Older-version migration",
+    "Physical Windows audio/device workflows"
+  ],
+  "preservation": "No changes to virtual driver or separately owned DAW workspace in this pass; diagnostic IDs and processing remain unchanged.",
+  "easyInstallerEvidence": [
+    "tests/results/localization/easy-installer-ubuntu/verified-path.json",
+    "tests/results/localization/easy-installer-rpm-1/verified-path.json",
+    "tests/results/localization/easy-installer-rpm-2/verified-path.json"
+  ],
+  "interfaceSurfaceInventory": "tests/results/localization/interface-surface-inventory.json",
+  "priorLifecycleEvidenceStatus": "Current measurement-qualified reports supersede prior package results for EQ production code.",
+  "sourceCorrespondence": "Finite surface source review complete; source hashes match present files. Runtime and linguistic evidence separate.",
+  "finalDeliveryStep": "Regenerate source archive and manifest from synchronized final commit, then compare every tracked archive member to that commit before closing goal."
+}

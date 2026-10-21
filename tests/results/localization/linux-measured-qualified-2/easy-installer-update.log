@@ -1,0 +1,8 @@
+Installer ou mettre à jour soundcurrent-eq 1.1.0 sur AlmaLinux 10.2 (Lavender Lion) ? Vos préréglages et profils sont conservés. Le gestionnaire de paquets installe les dépendances et ajoute une icône au menu des applications. Une autorisation administrateur est nécessaire. Un seul égaliseur doit être actif à la fois.
+Continuer ? [y/N] Y
+Last metadata expiration check: 0:03:55 ago on Fri Oct  9 10:35:59 2026.
+Package soundcurrent-eq-1.1.0-1.el10.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+soundcurrent-eq 1.1.0 a été installé. Ouvrez-le depuis le menu des applications. Utilisez «Quitter l’application» puis rouvrez l’application après une mise à jour. Aucune désinstallation ni aucun redémarrage du système n’est nécessaire pour mettre à jour l’application.

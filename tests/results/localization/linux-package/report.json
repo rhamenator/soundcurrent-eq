@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-08",
+  "sourceCommit": "eca144a60f81274e15d65b710fa0c09f4a992062",
+  "packagePath": "/home/rich/Downloads/SoundCurrent-localization-qa/linux-eca144a-9166cfa/soundcurrent-eq_1.1.0_amd64.deb",
+  "sha256": "f41695b37ca0e71357e665e30284fe057cf4d5057dcd8a0d33aa89cf72aea0a7",
+  "distribution": "Ubuntu 26.04.1 LTS",
+  "independentVm": "soundcurrent-ubuntu-qa",
+  "installedBinaryHash": "76f4ab111042c90326a1fa30c845c6d017105d59ceb738421dd855264064fb45",
+  "binaryIdentityVerified": true,
+  "installMode": "apt forced reinstall followed by cmp against package-extracted binary",
+  "installedLocaleFixturesPassed": 33,
+  "regionalFormatting": "Arabic UI / German number format passed",
+  "lifecycleResult": "PASS: soundcurrent-eq update/remove/reinstall, settings/profile fixtures and unknown user file preserved",
+  "nativeReviewed": false,
+  "limitations": [
+    "Owned preservation fixtures only; not exhaustive user-data comparison",
+    "Installed offscreen fixtures are not native-speaker or additional visual qualification",
+    "Interactive installation and current Windows package qualification remain pending"
+  ],
+  "supersedes": "Earlier equal-version installed-fixture evidence without forced replacement; do not use those locale runs to qualify a newer binary"
+}

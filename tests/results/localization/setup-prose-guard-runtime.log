@@ -1,0 +1,5 @@
+PASS: 340 required helper text lookups, locale selection, external fallback, missing data and PowerShell parsing; no driver/endpoint actions
+PASS: helper prose regression guard; 28 existing candidates remain explicitly unresolved
+PASS: 34 catalogs, 577 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+PASS: actual cable/native quiet action-validation errors in fr/ar/nn; no action switches or driver/endpoint checks
+PASS: mutation test rejected newly added untranslated helper caption

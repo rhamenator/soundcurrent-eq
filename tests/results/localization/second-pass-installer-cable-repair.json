@@ -1,0 +1,32 @@
+{
+  "scope": "Incomplete VB-CABLE driver registration caption",
+  "source": "VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.",
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "sourceMessages": 613,
+  "unfinishedExtractedEntries": 0,
+  "contextualReview": "AI reviewed Windows playback/recording endpoint terminology and two-restart repair ordering",
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "catalogTests": {
+      "total": 39,
+      "skipped": 1,
+      "passed": 38
+    },
+    "compiledCatalogHashes": "verified by catalog checks",
+    "nsisLiteralCompiler": {
+      "captions": 510,
+      "languageIDs": "English fixture only",
+      "localeActivation": false,
+      "layoutQualified": false
+    }
+  },
+  "processingAndDriverActionsChanged": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Remaining custom installer/helper prose",
+    "Installer language activation and layout",
+    "Current installed Linux/Windows runtime and package lifecycle qualification"
+  ]
+}

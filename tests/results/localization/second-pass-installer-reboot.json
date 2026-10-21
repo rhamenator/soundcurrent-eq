@@ -1,0 +1,50 @@
+{
+  "scope": "VB-CABLE installer restart notice",
+  "sourceMessagesPerLocale": 607,
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "notes": [
+      "Windows restart is required before equalizer use or opening cable settings",
+      "Notice emitted only for cable installer route",
+      "Exact VB-CABLE name and its two occurrences preserved"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "unitTestsPassed": 31,
+    "unitTestsSkipped": 1,
+    "driverNameMutation": "translation, case change and repeats rejected",
+    "compiledQtCatalogs": "regenerated; hashes checked",
+    "generatedEnglishInstallers": "byte-identical; all four variants unit-tested",
+    "allCaptionSyntaxFixture": "306 captions per product compiled with English language IDs only",
+    "currentFullInstallersBuilt": false,
+    "currentInstalledUiQualified": false
+  },
+  "installerLanguagesEnabled": [
+    "English"
+  ],
+  "remainingScope": [
+    "Installer language activation and selection",
+    "Remaining installer/uninstaller text",
+    "One raw PowerShell repair notice",
+    "Current package/UI/lifecycle qualification"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "newPackagesQualified": false,
+  "invariants": [
+    "Reboot/check conditions and driver actions unchanged",
+    "Saved state and numerical processing unchanged"
+  ],
+  "evidenceSha256": {
+    "data/localization/catalogs.json": "debc993ed38fa4ca87cfdc3c91eaa11dfd3163e7ff576fc269b054be1e782afc",
+    "scripts/windows_installer_catalogs.py": "9e56f4d4268d0b6cf6a7b2cbc52a1fca6d25f5f0cc901c4af85a7c5ee3361f3e",
+    "scripts/localization.py": "113770c25ed4b58ce8976a89804f1565909e82e85be1e1ca2e1561b9be5148f4",
+    "tests/translation_catalogs.py": "e6009f49e9a5f848ef05860b3688d4fb37f20408213de1f75db7d5a2cb7b58c0",
+    "tests/results/localization/installer-reboot-captions.json": "45ba0665e4503f1f33fe3515dac82215256ea648eb4da5eece9c2299b3162be4",
+    "tests/results/localization/installer-reboot-tests.log": "460f19a8e4b8fdc9b37541e035a1841e4325bf6014db831f12e348bf1f6c9783",
+    "tests/results/localization/installer-reboot-compiler.log": "eb64af818d1be1da5613062588638c65365080cfeeb1fc06cedfd8421d82ab87"
+  }
+}

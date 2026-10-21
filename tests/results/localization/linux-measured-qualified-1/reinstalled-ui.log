@@ -1,0 +1,12 @@
+UI self-test: constructing window
+UI self-test: window constructed
+OpenType support missing for "Noto Sans", script 11
+OpenType support missing for "Adwaita Sans", script 11
+OpenType support missing for "Adwaita Mono", script 11
+OpenType support missing for "Cantarell", script 11
+OpenType support missing for "", script 11
+This plugin does not support raise()
+This plugin does not support grabbing the keyboard
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+UI self-test passed with 34 presets and editable 5–31 band layout

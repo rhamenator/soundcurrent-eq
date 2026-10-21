@@ -1,0 +1,113 @@
+{
+  "bundlePath": "/home/rich/Downloads/SoundCurrent-localization-qa/review-bundle-utf8-a191c62-d87b0e8",
+  "release": false,
+  "date": "2026-10-08",
+  "productFiles": [
+    {
+      "path": "ubuntu24/soundcurrent-eq_1.1.0_amd64.deb",
+      "sha256": "bdac804e2ad17014c3b5cf011ebd279b843909258ffe7ee59d5373c7c6125bcd",
+      "kind": "tested Linux package",
+      "product": "soundcurrent-eq",
+      "applicationSourceCommit": "eca144a60f81274e15d65b710fa0c09f4a992062"
+    },
+    {
+      "path": "fedora44/soundcurrent-eq-1.1.0-1.fc44.x86_64.rpm",
+      "sha256": "d881217f65f8386d8f3ca68f4624c9c37370860bb1ed544ba7b721adf82f6ba9",
+      "kind": "tested Linux package",
+      "product": "soundcurrent-eq",
+      "applicationSourceCommit": "eca144a60f81274e15d65b710fa0c09f4a992062"
+    },
+    {
+      "path": "almalinux10/soundcurrent-eq-1.1.0-1.el10.x86_64.rpm",
+      "sha256": "7dc774a0f1e097125b245918099507e288fb1348170db87f8aad17f79f59436f",
+      "kind": "tested Linux package",
+      "product": "soundcurrent-eq",
+      "applicationSourceCommit": "eca144a60f81274e15d65b710fa0c09f4a992062"
+    },
+    {
+      "path": "ubuntu26/soundcurrent-eq_1.1.0_amd64.deb",
+      "sha256": "f41695b37ca0e71357e665e30284fe057cf4d5057dcd8a0d33aa89cf72aea0a7",
+      "kind": "tested Ubuntu 26 package",
+      "product": "soundcurrent-eq",
+      "applicationSourceCommit": "eca144a60f81274e15d65b710fa0c09f4a992062"
+    },
+    {
+      "path": "windows/SoundCurrent-EQ-1.1.0-windows-x64-setup.exe",
+      "sha256": "a23bfb13056fd10b09b1f4cae692364f74495175e9d8930d213be168494fc057",
+      "kind": "Windows installer: Unicode text, interactive update and silent lifecycle qualified",
+      "product": "soundcurrent-eq",
+      "applicationSourceCommit": "a191c625708ba87d2b6c652ed537c9c4258f2ae5"
+    },
+    {
+      "path": "source/soundcurrent-eq-eca144a.tar.gz",
+      "sha256": "d241d55d3fb83627e3db16488b37bc739ae8a8465292d940e2a64179630ac40f",
+      "kind": "application source archive",
+      "product": "soundcurrent-eq",
+      "applicationSourceCommit": "eca144a60f81274e15d65b710fa0c09f4a992062"
+    },
+    {
+      "path": "reports/soundcurrent-eq/linux-package/report.json",
+      "sha256": "1c0153db7b95386bb215bbdd5536aec6c21f023aadd3e7e33698e2eff83b70cf",
+      "kind": "qualification report",
+      "product": "soundcurrent-eq",
+      "applicationSourceCommit": "eca144a60f81274e15d65b710fa0c09f4a992062"
+    },
+    {
+      "path": "reports/soundcurrent-eq/linux-package/current-ci.json",
+      "sha256": "85a81a13d2ff5c660db5aa27c51547ddc79243968c5aa81f6ffcc3ccc0ec199f",
+      "kind": "qualification report",
+      "product": "soundcurrent-eq",
+      "applicationSourceCommit": "eca144a60f81274e15d65b710fa0c09f4a992062"
+    },
+    {
+      "path": "reports/soundcurrent-eq/windows-current-installed.json",
+      "sha256": "7c440d19e096289375f59c93748d8b6f2d7574b31d8a25bb9e71f0723bf8a336",
+      "kind": "qualification report",
+      "product": "soundcurrent-eq",
+      "applicationSourceCommit": "eca144a60f81274e15d65b710fa0c09f4a992062"
+    },
+    {
+      "path": "reports/soundcurrent-eq/requirement-audit.json",
+      "sha256": "6a02a7773a389f2d27c8cc0614cc1c7cfec9da2b91139045157ea15886c69276",
+      "kind": "qualification report",
+      "product": "soundcurrent-eq",
+      "applicationSourceCommit": "eca144a60f81274e15d65b710fa0c09f4a992062"
+    },
+    {
+      "path": "reports/soundcurrent-eq/windows-interactive-precondition.json",
+      "sha256": "b61f345b08f4fa20614f8da518400a7bb9c0a67f44fd4fe2c87313b2aee33662",
+      "kind": "qualification report",
+      "product": "soundcurrent-eq",
+      "applicationSourceCommit": "eca144a60f81274e15d65b710fa0c09f4a992062"
+    },
+    {
+      "path": "source/qtbase-everywhere-src-6.12.0.tar.xz",
+      "sha256": "a951bd163c7b80fc6b8c88d7668fb56abf91c152373e13c10666763238131307",
+      "kind": "bundled Windows Qt corresponding source",
+      "product": "shared",
+      "applicationSourceCommit": null
+    },
+    {
+      "path": "source/soundcurrent-eq-a191c62.tar.gz",
+      "kind": "Exact Windows build source archive",
+      "product": "soundcurrent-eq",
+      "applicationSourceCommit": "a191c625708ba87d2b6c652ed537c9c4258f2ae5",
+      "sha256": "17097a01288609d24024510941a34b502567986d5b81e13f4a6f5ea3d6cd5617"
+    },
+    {
+      "path": "reports/soundcurrent-eq/windows-utf8-qualified.json",
+      "kind": "Windows desktop, source/hash, startup and lifecycle qualification",
+      "product": "soundcurrent-eq",
+      "applicationSourceCommit": "a191c625708ba87d2b6c652ed537c9c4258f2ae5",
+      "sha256": "1abaf6ee3fcfbf21ddfa415c2d94ad5f3daba0f98f09f1c9eca4844a4a1d0085"
+    }
+  ],
+  "nativeReviewed": false,
+  "desktopQualification": "Rebuilt Windows installer text/update and actual sign-in/background/reopen/quit passed; GUI startup-checkbox activation not claimed.",
+  "scope": "Tested preview packages and corresponding sources, not a release or whole-interface qualification",
+  "manifestSha256": "68d02e0313a7a12eef8c5ff2ceecbb373cff0be83417dbc8c5a21c34dfc28363",
+  "checksumsSha256": "69c4462043119ea187f25b2b1ed71fa84e8b340823ba2545666f56d7a421b652",
+  "payloadFileCount": 27,
+  "interactiveQualification": "Rebuilt Windows installer text/update and actual sign-in/background/reopen/quit passed; GUI startup-checkbox activation not claimed.",
+  "releasePublished": false
+}

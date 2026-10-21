@@ -1,0 +1,17 @@
+374 generated captions; syntax-only fixture uses English language IDs. No locale activation, elevation, driver action or UI layout qualification.
+Processing config: /etc/nsisconf.nsh
+Processing script file: "/tmp/sc-native-approval-kcujk6sm/captions.nsi" (UTF8)
+
+Processed 1 file, writing output (x86-unicode):
+
+Output: "/tmp/sc-native-approval-kcujk6sm/captions.exe"
+Install: 1 page (64 bytes), 1 section (1 required) (4120 bytes), 414 instructions (11592 bytes), 360 strings (52790 bytes), 1 language table (1722 bytes).
+
+Using zlib compression.
+
+EXE header size:              133120 / 120832 bytes
+Install code:                  16329 / 68704 bytes
+Install data:                      0 / 0 bytes
+CRC (0xE34ED320):                  4 / 4 bytes
+
+Total size:                   149453 / 189540 bytes (78.8%)

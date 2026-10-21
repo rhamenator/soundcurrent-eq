@@ -1,0 +1,51 @@
+{
+  "scope": "Native helper action-validation reuse and owned failure heading",
+  "sourceMessagesPerLocale": 577,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": "The heading describes incomplete audio driver setup; inserted exception detail remains literal data. Action validation refers to exactly one switch, not device selection.",
+  "nativeSpeakerVerification": "unverified",
+  "runtimeQualification": {
+    "platform": "Linux Qt offscreen and host PowerShell 7.6.6",
+    "targetedQtTestsPassed": 40,
+    "catalogUnitTestsPassed": 16,
+    "catalogUnitTestsSkipped": 1,
+    "requiredHelperLookupsPassed": 340,
+    "realQuietNoActionHelperFaults": {
+      "helpers": [
+        "cable-setup.ps1",
+        "native-audio-setup.ps1"
+      ],
+      "locales": [
+        "fr",
+        "ar",
+        "nn"
+      ],
+      "exitCode": 30,
+      "driverOrEndpointChecksPerformed": false
+    }
+  },
+  "WindowsAttempt": {
+    "status": "VM start failed before boot; current tests not run",
+    "vm": "soundcurrent-win11-dev",
+    "allVMsInitiallyOff": true,
+    "reason": "QEMU could not acquire disk write lock. A paused qemu-img process held the source disk and soundcurrent-daw-capture-win11.qcow2 open.",
+    "existingProcessModified": false,
+    "vmStateAfterAttempt": "shut off"
+  },
+  "WindowsCurrentChangesQualified": false,
+  "newPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Other cable/native helper bodies and captions",
+    "NSIS installer/uninstaller text",
+    "Windows current runtime and package lifecycle qualification"
+  ],
+  "evidenceSha256": {
+    "packaging/windows/native-audio-setup.ps1": "bc0436c1d17ddc0cacaba9eab8cf655c5dee0ebc3155a3646a6bc76b02b4497a",
+    "scripts/test_windows_setup_localization.py": "86688a16c4f9a23b2b1cbf6d51ffb3d9fce7dfacafcf42913f23080dd93ef3b8",
+    "tests/results/localization/setup-failure-heading-runtime.log": "d21baebfe3b1265bf930f60b106200dc164504e307ee0e73bdf9720348aefd5f",
+    "tests/results/localization/setup-failure-heading-qt.log": "0d899145fee8355e3d8799e688bdf22b1e533c1571ff6ff5f8ed304f0963260f",
+    "build/soundcurrent-eq": "86141e3da1d51aa129241e0622eaa8ef5b7ec72c284327d5912e8e35bb4f4a25"
+  }
+}

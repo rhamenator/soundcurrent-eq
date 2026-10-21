@@ -1,0 +1,25 @@
+{
+  "stage": "Thai existing catalog complete",
+  "catalogs": [
+    {
+      "tag": "th",
+      "name": "ไทย",
+      "translated": 441,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "5c7e4bfaf8a352d9e348496d85d06b0a7dfcd65584ebbe7f19e4c39f65b1ba50",
+      "qmSha256": "ab6f938fab8a5c0d4dfc690959a39a3ea693cc1f239294317c872429b7dc62e5"
+    }
+  ],
+  "linuxTests": {
+    "passed": 4,
+    "total": 4,
+    "scope": "Embedded localization assertions, Thai profile import/edit/save/cancel/discard/apply workflow, MainWindow offscreen smoke test and structural catalog checks",
+    "log": "/tmp/soundcurrent-eq-th-final-tests.log"
+  },
+  "review": "Contextual AI review of all current Thai catalog entries: microphone/room measurement limits, channel gain trim, zero-valued effect bypass, save/undo actions and regional fallback. Placeholders, file patterns, hyperlinks and numerical limits preserved. Linguistic accuracy unverified.",
+  "nativeReviewed": false,
+  "windows": "Pending CI; no Windows runtime qualification for this batch",
+  "remaining": "Swahili existing catalog incomplete; omitted source messages reserved for second pass. Windows and visual qualification pending."
+}

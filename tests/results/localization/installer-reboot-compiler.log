@@ -1,0 +1,17 @@
+306 generated captions; syntax-only fixture uses English language IDs. No locale activation or UI layout qualification.
+Processing config: /etc/nsisconf.nsh
+Processing script file: "/tmp/sc-installer-reboot-dphylkg4/captions.nsi" (UTF8)
+
+Processed 1 file, writing output (x86-unicode):
+
+Output: "/tmp/sc-installer-reboot-dphylkg4/captions.exe"
+Install: 1 page (64 bytes), 1 section (1 required) (4120 bytes), 346 instructions (9688 bytes), 292 strings (33006 bytes), 1 language table (1450 bytes).
+
+Using zlib compression.
+
+EXE header size:              133120 / 120832 bytes
+Install code:                  11106 / 46744 bytes
+Install data:                      0 / 0 bytes
+CRC (0x840704F0):                  4 / 4 bytes
+
+Total size:                   144230 / 167580 bytes (86.0%)

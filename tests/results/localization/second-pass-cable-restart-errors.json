@@ -1,0 +1,55 @@
+{
+  "scope": "Cable restart-required notice, settings-open failure and absent-cable error",
+  "sourceMessagesPerLocale": 590,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "notes": [
+      "Windows system restart distinct from reopening app",
+      "Settings-open failure restart advice remains conditional on recent install/update",
+      "Absent-cable restart advice remains conditional on an explicit request",
+      "No guarantee that reboot fixes every fault",
+      "VB-CABLE vendor identifier unchanged"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "runtimeQualification": {
+    "platform": "Linux Qt offscreen and host PowerShell 7.6.6",
+    "targetedQtTestsPassed": 40,
+    "catalogUnitTestsPassed": 16,
+    "catalogUnitTestsSkipped": 1,
+    "requiredHelperLookupsPassed": 782,
+    "existingRegressionFixtures": "template, native success selection, quit process lists, missing readiness helper and raw prose mutation passed",
+    "existingProductionNoActionAndMissingManagerFaults": "both helpers / native missing manager, fr/ar/nn passed",
+    "newProductionRestartSettingsAbsencePathsExecuted": false
+  },
+  "remainingHelperProseCandidates": {
+    "untranslatedCable": 12,
+    "invariantProductNames": 2,
+    "nativeCandidates": 0,
+    "scope": "AST literal heuristic"
+  },
+  "invariants": [
+    "Restart/settings/absence predicates unchanged",
+    "Exit codes and setup actions unchanged",
+    "Ownership, integrity and signature checks unchanged",
+    "Saved state and audio numerical processing unchanged"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "WindowsCurrentChangesQualified": false,
+  "newPackagesQualified": false,
+  "VMUsed": false,
+  "remainingScope": [
+    "Cable repair, removal and completion notices",
+    "NSIS installer/uninstaller text",
+    "Windows current runtime and package lifecycle qualification"
+  ],
+  "evidenceSha256": {
+    "packaging/windows/cable-setup.ps1": "83c4e12c84c9d3974877529b76f197d15f984299b5e76e6552ca4d1a85dea5cb",
+    "data/localization/setup-prose-backlog.json": "b41c5ca424dea5c3b0664109ba8327d4b1f912d6d665b1f4164ff313c794f0b9",
+    "tests/results/localization/cable-restart-errors-runtime.log": "f57501318224b38ca09d1bacb2591cf3dabeacd91ae21b612e839dd177966c02",
+    "tests/results/localization/cable-restart-errors-qt.log": "75fb181da6968c7a796f89f38ef9a134876fab09292128c5a22b33d9be837f84",
+    "build/soundcurrent-eq": "54187b63ac43657ff6e3e4bfb0cf9f49105d9346a3ce0fd29b280fc845b36566"
+  }
+}

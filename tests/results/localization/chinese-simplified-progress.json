@@ -1,0 +1,25 @@
+{
+  "stage": "Simplified Chinese current catalogs complete",
+  "catalogs": [
+    {
+      "tag": "zh-Hans",
+      "name": "简体中文",
+      "translated": 441,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "758ac99938ad714f66b423999da53a322b8248fd0ac45960bfcb8dc1c0332fbf",
+      "qmSha256": "de9525b599a854ab87a6fb06fc788f56a404db3859ce7a1c40143178a49929c2"
+    }
+  ],
+  "linuxTests": {
+    "passed": 74,
+    "total": 74,
+    "scope": "Full Linux CTest including Simplified Chinese equipment workflows, standard actions and script selection assertions",
+    "log": "/tmp/soundcurrent-eq-zh-Hans-complete-tests.log"
+  },
+  "review": "Contextual AI review; unverified. Current catalogs populated; contextual AI review remains unverified. Calibration limitations, microphone versus playback effects, save/quit behavior and neutral render counts reviewed.",
+  "nativeReviewed": false,
+  "windows": "Pending CI",
+  "remaining": "8 original target catalogs incomplete. Second-pass backend/helper/installer coverage, visual and platform lifecycle qualification remain open."
+}

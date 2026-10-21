@@ -1,0 +1,54 @@
+{
+  "scope": "Five common equipment subtype captions and original Sony SS-CS5 qualifier",
+  "translatedSubtypeKeys": [
+    "Bookshelf",
+    "Center",
+    "Floorstanding",
+    "In-wall",
+    "Unclassified"
+  ],
+  "nonEnglishLocales": 33,
+  "sourceMessagesPerLocale": 541,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "notes": [
+      "Bookshelf means compact enclosure category; does not describe a literal shelving object",
+      "Center means center-channel loudspeaker",
+      "Floorstanding differs from column/line-array category",
+      "In-wall means wall-integrated loudspeaker",
+      "Unclassified means unspecified taxonomy",
+      "Sony model qualifier preserves SS-CS5M2 identifier"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "tests": {
+    "LinuxQtOffscreen": {
+      "equipmentUI": 34,
+      "sharedLocalizedUICatalogs": 38,
+      "failed": 0
+    },
+    "catalogExtractionUnitTests": 10,
+    "WindowsCurrentChanges": "not yet qualified"
+  },
+  "preserved": [
+    "equipmentType keys",
+    "profile IDs",
+    "custom subtype text including placeholders and Unicode",
+    "DSP processing and saved schema"
+  ],
+  "remainingSubtypeKeys": [
+    "Cinema",
+    "Column",
+    "Constant beamwidth",
+    "Omnidirectional",
+    "Outdoor",
+    "Panel",
+    "Portable PA",
+    "Soundbar",
+    "Surround",
+    "Touring PA"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "newPackagesQualified": false
+}

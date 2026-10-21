@@ -1,0 +1,20 @@
+{
+  "scope": "Unmarked direct literal Qt display candidates; dynamic strings, stored/user data, backend and installer strings are not covered",
+  "candidateCount": 1,
+  "candidates": [
+    {
+      "file": "src/localization.h",
+      "call": "addItem",
+      "argument": 0,
+      "literal": "English (en)"
+    }
+  ],
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false,
+  "classifiedIntentional": [
+    {
+      "literal": "English (en)",
+      "reason": "The language picker presents native language names and stable locale tags, including the English autonym."
+    }
+  ]
+}

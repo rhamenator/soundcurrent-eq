@@ -1,0 +1,17 @@
+340 generated captions; syntax-only fixture uses English language IDs. No locale activation, driver or UI layout qualification.
+Processing config: /etc/nsisconf.nsh
+Processing script file: "/tmp/sc-shared-driver-hmju1_2o/captions.nsi" (UTF8)
+
+Processed 1 file, writing output (x86-unicode):
+
+Output: "/tmp/sc-shared-driver-hmju1_2o/captions.exe"
+Install: 1 page (64 bytes), 1 section (1 required) (4120 bytes), 380 instructions (10640 bytes), 326 strings (43850 bytes), 1 language table (1586 bytes).
+
+Using zlib compression.
+
+EXE header size:              133120 / 120832 bytes
+Install code:                  14165 / 58676 bytes
+Install data:                      0 / 0 bytes
+CRC (0xCED53895):                  4 / 4 bytes
+
+Total size:                   147289 / 179512 bytes (82.0%)

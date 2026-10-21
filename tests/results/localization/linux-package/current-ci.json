@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-08",
+  "sourceCommit": "eca144a",
+  "ciRun": 37747399036,
+  "status": "passed",
+  "environments": [
+    "Ubuntu 24.04 container",
+    "Fedora 44 container",
+    "AlmaLinux 10 container"
+  ],
+  "artifacts": [
+    {
+      "artifactDirectory": "package-validation-0",
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "package": "soundcurrent-eq_1.1.0_amd64.deb",
+      "sha256": "bdac804e2ad17014c3b5cf011ebd279b843909258ffe7ee59d5373c7c6125bcd",
+      "fullSuitePassed": 84,
+      "evidenceDirectory": "/home/rich/Downloads/SoundCurrent-localization-qa/soundcurrent-eq-linux-ci-eca144a/package-validation-0"
+    },
+    {
+      "artifactDirectory": "package-validation-1",
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "package": "soundcurrent-eq-1.1.0-1.fc44.x86_64.rpm",
+      "sha256": "d881217f65f8386d8f3ca68f4624c9c37370860bb1ed544ba7b721adf82f6ba9",
+      "fullSuitePassed": 84,
+      "evidenceDirectory": "/home/rich/Downloads/SoundCurrent-localization-qa/soundcurrent-eq-linux-ci-eca144a/package-validation-1"
+    },
+    {
+      "artifactDirectory": "package-validation-2",
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "package": "soundcurrent-eq-1.1.0-1.el10.x86_64.rpm",
+      "sha256": "7dc774a0f1e097125b245918099507e288fb1348170db87f8aad17f79f59436f",
+      "fullSuitePassed": 84,
+      "evidenceDirectory": "/home/rich/Downloads/SoundCurrent-localization-qa/soundcurrent-eq-linux-ci-eca144a/package-validation-2"
+    }
+  ],
+  "nativeReviewed": false,
+  "limitations": [
+    "AlmaLinux evidence is not an actual RHEL desktop installation",
+    "Containers test lifecycle and fixtures, not live audio or interactive desktop sign-in",
+    "Source revision is explicit; later test-harness/report commits are not new application code"
+  ]
+}

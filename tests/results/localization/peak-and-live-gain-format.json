@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-08",
+  "changes": [
+    "Live post-gain label uses selected QLocale after slider moves, matching initialization/restoration",
+    "Peak estimate, clipping warning and overall peak tooltip isolate signed number with dBFS unit and use selected QLocale"
+  ],
+  "verification": [
+    "Applications and localization targets rebuilt",
+    "Seven focused Linux CTests passed",
+    "Real UI test moves post-gain slider to +1.5 dB with Arabic UI/German decimal format and checks updated displayed value",
+    "Actual Arabic/Hebrew/Persian catalogs tested with Qt glyph positions for headroom and three peak messages"
+  ],
+  "testEnvironment": "New regional test fixture uses isolated temporary settings; environment override only active under --localization-ui-test",
+  "nativeReviewed": false,
+  "catalogChanges": false,
+  "processingChange": false,
+  "remaining": [
+    "Updated Windows execution and package qualification pending",
+    "Per-band tooltip and microphone-tone live text still need a separate display/coverage pass",
+    "No all-interface or native linguistic certification"
+  ]
+}

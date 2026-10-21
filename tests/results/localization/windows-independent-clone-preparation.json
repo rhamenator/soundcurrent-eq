@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "cloneName": "soundcurrent-localization-win11-qa",
+  "sourceTemplate": "copperfin-clean-win11",
+  "sourceDisk": "/var/lib/libvirt/images/copperfin-clean-win11.clean-pro-ready",
+  "cloneDisk": "/var/lib/libvirt/images/soundcurrent-localization-win11-qa.qcow2",
+  "cloneFirmware": "/var/lib/libvirt/qemu/nvram/soundcurrent-localization-win11-qa_VARS.fd",
+  "backingFile": null,
+  "qemuInfoCorruptFlag": false,
+  "memoryMiB": 4096,
+  "activeVcpus": 2,
+  "state": "shut off",
+  "cloneBooted": false,
+  "copyPriority": "idle I/O, nice 10",
+  "originalsModified": false,
+  "dawWorkspaceModified": false,
+  "installerExecuted": false,
+  "lifecycleHarnessOlderInitialPackageOptionAdded": true,
+  "nativeSpeakerVerified": false
+}

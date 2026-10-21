@@ -1,0 +1,26 @@
+{
+  "run": 37906697525,
+  "qualifiedProductionHead": "6b11bfcd097c4beb0cf48f65bca3a1afd73d23f4",
+  "installer": "/home/rich/dev/soundcurrent-localization-artifacts/eq-windows-startup-37906697525/windows-build/dist/SoundCurrent-EQ-1.1.0-windows-x64-setup.exe",
+  "installerSha256": "3195024b4e34d08c5c0cb96045fbdbb370e5913aab23af65cf0002e12597269d",
+  "installedExecutableSha256": "9c298f7cb7613ce7854c0b6a8940727fb789fbddf3273aec6265e5439219ec95",
+  "installerManifestAndInstalledLifecycleHashMatch": true,
+  "stagedAndInstalledExecutableHashMatch": true,
+  "installedLocaleCompletions": 34,
+  "lifecycleLocales": [
+    "fr",
+    "nn",
+    "ar"
+  ],
+  "uninstallPassed": true,
+  "currentCompiledSourceMatchesQualifiedHead": true,
+  "scope": "Silent cable app lifecycle on a disposable Windows VM; installed UI catalog fixtures optional, chooser rendering and native-driver lifecycle excluded",
+  "limitations": [
+    "No native-speaker verification",
+    "No physical hardware or native-driver lifecycle",
+    "No actual Windows startup error branch exercise",
+    "Same-package update, not older-version migration"
+  ],
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false
+}

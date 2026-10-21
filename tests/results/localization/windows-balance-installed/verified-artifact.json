@@ -1,0 +1,12 @@
+{
+  "run": 37899545845,
+  "testedHead": "e4ecd724dc468343ba07fdeb5ad30597063c3248",
+  "catalogMessages": 694,
+  "installerPath": "/home/rich/dev/soundcurrent-localization-artifacts/eq-windows-balance-37899545845/windows-build/dist/SoundCurrent-EQ-1.1.0-windows-x64-setup.exe",
+  "installerSha256": "ddc48308ed419c3896e3a590153cd8cafef6eb855a31a29459c57ecaabb390aa",
+  "executableSha256": "077e10b46c1fac691b3bde2072c9d04312a5a3b0181dd297dd54e4bbaccb9e2a",
+  "installedLocaleLogCount": 34,
+  "scope": "GitHub-hosted Windows 2022 build and installed UI fixtures; fr/nn/ar silent installer lifecycle, same-installer update, preservation, shortcuts and uninstall. No interactive chooser/installer, older-version migration, live audio, native driver lifecycle or native-speaker review.",
+  "nativeReviewed": false,
+  "evidence": "tests/results/localization/windows-balance-installed"
+}

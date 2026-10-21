@@ -1,0 +1,12 @@
+{
+  "vm": "soundcurrent-localization-win11-qa",
+  "lease": "MAC 52:54:00:20:0d:25 verified at 192.168.122.98",
+  "transportProbe": "timeout before authentication",
+  "elevatedConsoleQuery": "Get-WindowsCapability OpenSSH.Server~~~~0.0.1.0; Get-Service sshd",
+  "observedState": "NotPresent; no sshd service",
+  "setupRetried": false,
+  "applicationInstallersExecuted": false,
+  "shutdown": "graceful; libvirt confirmed shut off",
+  "originalsModified": false,
+  "nextAction": "Prepare bounded guest access or direct read-only test media; no assumption that capability installed"
+}

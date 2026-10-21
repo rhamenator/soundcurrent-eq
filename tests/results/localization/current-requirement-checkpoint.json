@@ -1,0 +1,130 @@
+{
+  "date": "2026-10-09",
+  "overallStatus": "completed within explicitly recorded qualification scope",
+  "catalogs": {
+    "count": 34,
+    "nonEnglish": 33,
+    "messagesPerCatalog": 704,
+    "check": "complete structural/compiled-hash gate passed",
+    "nativeReviewed": false
+  },
+  "requirements": [
+    {
+      "requirement": "Complete missing interface translations",
+      "status": "Declared catalogs complete; finite owned-surface source review complete after concrete summary/calibration fixes. Whole-interface runtime proof not claimed.",
+      "evidence": [
+        "data/localization/catalogs.json",
+        "tests/results/localization/interface-surface-inventory.json",
+        "tests/results/localization/main-equipment-display-gap.json"
+      ],
+      "assessment": "met with the scope and limitations recorded in evidence"
+    },
+    {
+      "requirement": "Contextual terminology review",
+      "status": "Contextual AI review documented; native-speaker verification unverified.",
+      "evidence": [
+        "docs/translation-review.md",
+        "data/localization/translation-context.json"
+      ],
+      "assessment": "met with the scope and limitations recorded in evidence"
+    },
+    {
+      "requirement": "Stable IDs, saved state, placeholders and numerical processing",
+      "status": "Compiled fixtures cover IDs, edited controls, opaque substitutions and measured metadata save/reopen; serialized processing values retained.",
+      "evidence": [
+        "tests/localization.cpp",
+        "tests/results/localization/measured-profile-runtime.log",
+        "tests/results/localization/dynamic-provenance-review.json"
+      ],
+      "assessment": "met with the scope and limitations recorded in evidence"
+    },
+    {
+      "requirement": "Plural, formatting, RTL and fallback validation",
+      "status": "Source/catalog gates and compiled locale/RTL fixtures retained; numerus explicitly rejected until supported, no silent plural loss.",
+      "evidence": [
+        "scripts/localization.py",
+        "tests/translation_catalogs.py",
+        "tests/results/localization/rtl-regional-numbers.json",
+        "tests/results/localization/standard-editing-menus.json"
+      ],
+      "assessment": "met with the scope and limitations recorded in evidence"
+    },
+    {
+      "requirement": "Changed Linux packages and installed language interfaces",
+      "status": "Current Linux production packages verified on all3 distributions; hashes, CTest,33 installed locales, launcher bytes and lifecycle evidence passed.",
+      "run": 37918553344,
+      "evidence": [
+        "tests/results/localization/linux-measured-qualified-0/verified-artifact.json",
+        "tests/results/localization/linux-measured-qualified-1/verified-artifact.json",
+        "tests/results/localization/linux-measured-qualified-2/verified-artifact.json"
+      ],
+      "assessment": "met with the scope and limitations recorded in evidence"
+    },
+    {
+      "requirement": "Changed Windows packages and installed language interfaces",
+      "status": "Current Windows installer verified: manifest/lifecycle hash and staged/installed executable match,34 installed locales and fr/nn/ar lifecycle passed.",
+      "run": 37918763255,
+      "evidence": [
+        "tests/results/localization/windows-measured-qualified/verified-artifact.json"
+      ],
+      "assessment": "met with the scope and limitations recorded in evidence"
+    },
+    {
+      "requirement": "Shared localization infrastructure",
+      "status": "Shared source/catalog and platform boundaries applied to both products; Studio-only renderer/channel evidence separate.",
+      "evidence": [
+        "tests/results/localization/interface-surface-inventory.json"
+      ],
+      "assessment": "met with the scope and limitations recorded in evidence"
+    },
+    {
+      "requirement": "Reviewable packages and synchronized commits",
+      "status": "Current unpublished previews contain qualified binaries and verified installer catalogs; final source archive and manifest are regenerated from synchronized commit.",
+      "evidence": [
+        "tests/results/localization/preview-bundle-verification.json"
+      ],
+      "assessment": "met with the scope and limitations recorded in evidence"
+    },
+    {
+      "requirement": "Preserve virtual driver and separately owned DAW",
+      "status": "Virtual-driver bookmark preserved; this localization pass does not modify DAW or native-driver implementation.",
+      "evidence": [
+        "docs/windows-native-driver-bookmark.md"
+      ],
+      "assessment": "met with the scope and limitations recorded in evidence"
+    },
+    {
+      "requirement": "No unauthorized release",
+      "status": "Previews remain unpublished; no release action performed.",
+      "assessment": "met with the scope and limitations recorded in evidence"
+    }
+  ],
+  "limitations": [
+    "Native-speaker accuracy unverified",
+    "All-locale visual rendering and screen-reader speech not proven",
+    "External provider/OS prose retains provider locale",
+    "Synthetic/container fixtures do not prove physical Windows audio, live sweep or hardware faults",
+    "Same-package lifecycle does not establish older-version migration"
+  ],
+  "evidenceSha256": {
+    "data/localization/catalogs.json": "e9c4254f6f8457cc5fd71f3994d717148eee36e136d6ed3769475ec300913c07",
+    "data/localization/translation-context.json": "eba6af9ce1ae4035cbe4ab9881f27a47fa170986c8ea0c75a7efaa8825fd590c",
+    "docs/translation-review.md": "4b94105cd269622f614282f35c398fa7f5fc209238a90459e8b951dd6c140bae",
+    "docs/windows-native-driver-bookmark.md": "6965c0317650614027364309e09bad4ffe9432969a8617e8a96051e02554a3cd",
+    "scripts/localization.py": "5e4ac4b9490e99b5e2884415e2b537c0c04d9b006c0f4806afdf999cb8bb3601",
+    "tests/localization.cpp": "f0ad22384bbeed61639a5035e695c66e462fbbd20332da7a52bef5bd951be5ad",
+    "tests/results/localization/dynamic-provenance-review.json": "11e783260018e133ab988e352b63cc9f27765d1e3998471fa000e160ae7ec439",
+    "tests/results/localization/interface-surface-inventory.json": "4373628f6f4fd914296b5fa1e518c7c4087d8705e2ae77b7d0a13c28f371ae24",
+    "tests/results/localization/linux-measured-qualified-0/verified-artifact.json": "b194df9ab7b52d793a15bf5fabae0e57ad70dab9ef39c97842ac61bb75cacf29",
+    "tests/results/localization/linux-measured-qualified-1/verified-artifact.json": "424d10540a625d84a11786c16bfcdb317760290b55e87b3892605fddd6035cd3",
+    "tests/results/localization/linux-measured-qualified-2/verified-artifact.json": "1f609e5cd8cec194d6af18ae2911feb1152e2e662c1c36a8bbe0bdb629fa9ae1",
+    "tests/results/localization/main-equipment-display-gap.json": "5ac06b40175f5f4dd5ee09c89e52e31aca30e07999416117633ca52c5c991781",
+    "tests/results/localization/measured-profile-runtime.log": "c181ba5d62cc4eaf64a47acc10827b8e83992fa28ed8d693c658d239abbfce75",
+    "tests/results/localization/preview-bundle-verification.json": "9dc7517df48d079ed157017d10544be48806728c607d9a140abb302c641bd5af",
+    "tests/results/localization/rtl-regional-numbers.json": "17b7144a8b04fe80f91b1947d15ad44fc20fe9ad9b54887847c3b938040943b9",
+    "tests/results/localization/standard-editing-menus.json": "5430ad8c33b9bba56746e0c0871e69b458498796efb7f2dfc0873e4757b994b8",
+    "tests/results/localization/windows-measured-qualified/verified-artifact.json": "ff722805bd5da26cb9dc29275c4adf7c2d155526e89d23ba88eaf48fb3ca3bf5",
+    "tests/translation_catalogs.py": "1174f414c79c3bd6ffdf2c19e251b77ce978e947308237b8fa5ccc05eede88d7"
+  },
+  "historicalCheckpoint": "Prior detailed checkpoint revisions remain in Git history; current statuses above supersede earlier current-source claims."
+}

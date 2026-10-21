@@ -1,0 +1,50 @@
+{
+  "scope": "Native installer running-app and shared-driver retention notice",
+  "sourceMessagesPerLocale": 608,
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "notes": [
+      "Quit all running SoundCurrent apps; does not assume both products are running",
+      "Driver retained after removing one app if other still uses it",
+      "Notice emitted only for native installer route",
+      "SoundCurrent name preserved"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "unitTestsPassed": 32,
+    "unitTestsSkipped": 1,
+    "compiledQtCatalogs": "regenerated; hashes checked",
+    "generatedEnglishInstallers": "all four variants unit-tested; CLI native copies byte-identical",
+    "allCaptionSyntaxFixture": "340 captions per product compiled with English language IDs only",
+    "currentFullInstallersBuilt": false,
+    "currentInstalledUiQualified": false
+  },
+  "installerLanguagesEnabled": [
+    "English"
+  ],
+  "remainingScope": [
+    "Installer language activation and selection",
+    "Remaining installer/uninstaller text",
+    "One raw PowerShell repair notice",
+    "Current package/UI/lifecycle qualification"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "newPackagesQualified": false,
+  "invariants": [
+    "Driver actions, ownership and uninstall conditions unchanged",
+    "Saved state and numerical processing unchanged"
+  ],
+  "evidenceSha256": {
+    "data/localization/catalogs.json": "012ca6a061d6694fe15e8f77ef201e15daae68ca1f83125b1282c4db3650c65c",
+    "scripts/windows_installer_catalogs.py": "1411d0b6b2578075bde5be75674ab385c7bce0db9cd0979786ce7c4adfb159e7",
+    "scripts/localization.py": "f3114a012f069f63401ee7b3410415b17e3e1350ee79d256240bdde809fca37c",
+    "tests/translation_catalogs.py": "f29f166540e515357b518a2e45b07778d4cd38a414777812b47c03788aba61e7",
+    "tests/results/localization/installer-shared-driver-captions.json": "c945835eeb860d7cdf282b660122f733c4c35cf17dac25f0c624655ad4647507",
+    "tests/results/localization/installer-shared-driver-tests.log": "72af11571f67e3c9f117ddcafdfec93a70efffba2cb596d0c06641cf86669185",
+    "tests/results/localization/installer-shared-driver-compiler.log": "d7ae8db975a9d1b9bfd8e7e0363543db20fee5960ea6ead8ab8ba8b282170aad"
+  }
+}

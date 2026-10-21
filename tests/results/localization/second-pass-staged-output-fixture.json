@@ -1,0 +1,35 @@
+{
+  "scope": "Run Windows Qt/PowerShell output fixture with deployed runtime dependencies",
+  "sourceFindings": [
+    "Previous fixture invocation preceded windeployqt and app-local CRT deployment",
+    "Verified SDK installer extracts Qt but does not add Qt bin to PATH",
+    "Fixture linked against Qt Core; build directory has no app-local deployed Qt runtime"
+  ],
+  "rootCauseStatus": "Likely loader/dependency ordering issue; loader exit code not yet observed, so exact Windows cause remains unconfirmed",
+  "change": [
+    "Copy inert fixture executable into package stage after Qt/CRT deployment",
+    "Run from package stage and include numeric exit code on failure",
+    "Remove fixture executable on success before payload packaging"
+  ],
+  "validation": {
+    "hostPowerShellParsing": "both build scripts passed",
+    "WindowsExecution": "pending fresh CI",
+    "driverActionsExecuted": false
+  },
+  "nativeSpeakerVerification": "unverified",
+  "productionAudioRuntimeChanged": false,
+  "currentWindowsFailureQualifiedAsFixed": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Fresh Windows staged-fixture evidence",
+    "Installer activation/remaining translations",
+    "Installed Linux/Windows UI and package lifecycle qualification"
+  ],
+  "evidenceSha256": {
+    "scripts/build-windows.ps1": "7fa28278f080c26570a31b9dea6b6da69a6c64b37ab41a323b54836656a51c0c",
+    "scripts/install-windows-qt.ps1": "640f36a26de9263cbcba6bde56776ced80b5031bf7d13d23d4a72e983255a532",
+    "tests/backend_error_text.cpp": "a86f8666f3ab618e61dcf34ee9d00d8f6cb4ce57a3e734f0a7b7a2d302a1df93",
+    "tests/results/localization/staged-output-fixture-parse.log": "df00561a3dc81e523f4b7d566c01ffcd6bad4d7962fa7d5c822fa2fc8b927c74"
+  }
+}

@@ -1,0 +1,40 @@
+.......E...E..E...................s...
+======================================================================
+ERROR: test_existing_cable_notice_keeps_names_and_quit_placeholder (__main__.CatalogTests.test_existing_cable_notice_keeps_names_and_quit_placeholder)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/rich/dev/soundcurrent-eq/tests/translation_catalogs.py", line 31, in test_existing_cable_notice_keeps_names_and_quit_placeholder
+    self.assertTrue(catalog.finished(messages['Quit']), row['tag'])
+                                     ~~~~~~~~^^^^^^^^
+KeyError: 'Quit'
+
+======================================================================
+ERROR: test_installer_build_copy_generation_and_failures (__main__.CatalogTests.test_installer_build_copy_generation_and_failures)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/rich/dev/soundcurrent-eq/tests/translation_catalogs.py", line 187, in test_installer_build_copy_generation_and_failures
+    captions = exporter.export(folder / 'captions.json', product)
+  File "/home/rich/dev/soundcurrent-eq/scripts/windows_installer_catalogs.py", line 48, in export
+    raise ValueError('Missing finished installer caption: ' + row['tag'] + '/' + key)
+ValueError: Missing finished installer caption: en/SCQuitAction
+
+======================================================================
+ERROR: test_installer_export_preserves_literal_names_and_nsis_escaping (__main__.CatalogTests.test_installer_export_preserves_literal_names_and_nsis_escaping)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/rich/dev/soundcurrent-eq/tests/translation_catalogs.py", line 233, in test_installer_export_preserves_literal_names_and_nsis_escaping
+    exporter.export(output, 'SoundCurrent Studio' if (root / 'src/studio_model.cpp').exists() else 'SoundCurrent EQ')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rich/dev/soundcurrent-eq/scripts/windows_installer_catalogs.py", line 48, in export
+    raise ValueError('Missing finished installer caption: ' + row['tag'] + '/' + key)
+ValueError: Missing finished installer caption: en/SCQuitAction
+
+----------------------------------------------------------------------
+Ran 38 tests in 13.767s
+
+FAILED (errors=3, skipped=1)
+PASS: 34 catalogs, 612 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+PASS: 34 catalogs, 612 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+PASS: 34 catalogs, 612 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+PASS: 34 catalogs, 612 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+PASS: 2 catalogs, 2 source messages; 1 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)

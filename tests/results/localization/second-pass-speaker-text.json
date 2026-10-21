@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-08",
+  "stage": "second-pass speaker details",
+  "nativeReviewed": false,
+  "nonEnglishLocales": 33,
+  "sourceMessagesPerLocale": 535,
+  "unfinished": 0,
+  "contextualAIReview": [
+    "Peaking means a bell-shaped EQ filter, not a clipping/peak indicator.",
+    "Low/high shelf change the low/high frequency region; they are not low/high-pass cutoff filters. Technical shelving loanwords are retained where established terminology is more recognizable than a literal household-shelf translation.",
+    "Correction-only gain/Q/boost limits are distinct from the separately added listening preset."
+  ],
+  "changes": [
+    "Measurement attribution label and correction policy translated",
+    "Three accepted speaker-profile filter types translated",
+    "Frequency, gain and Q rendered with selected regional number formatting and display-only direction isolation",
+    "Attribution and measurement URLs preserved verbatim; source labels translated",
+    "Speaker details explicitly use plain-text rendering"
+  ],
+  "linuxTests": {
+    "passed": 38,
+    "failed": 0,
+    "command": "ctest -R 'shared-ui|localized-ui-|localized-number-format|translation-catalog' --output-on-failure -j 2",
+    "scope": "All 33 locale fixtures plus pseudo-locales, regional/shared UI and catalog checks. Speaker header, negative gain/frequency/Q display, source URLs and correction-policy tokens are checked. Full native dialog visual/glyph qualification is not claimed."
+  },
+  "policySource": "src/main.cpp speakerProfiles validates absolute gain <= 6, Q <= 6, and rejects positive-gain filters below 80 Hz; these loader rules and processing are unchanged.",
+  "remaining": [
+    "Studio default channel names need provenance-aware display handling",
+    "Speaker model qualifiers/type categories and other dynamic captions need review",
+    "Backend/helper/installer diagnostics and localization",
+    "Final changed Linux/Windows package qualification"
+  ],
+  "sourceSha256": {
+    "src/main.cpp": "b091bb33d2bb6de558e4617ccbf5d646ad47da4228ce7dcaf0106d825cd06b9e",
+    "src/equipment_display_text.h": "b31a7820ea9d137728b2ad7234b294d16ea1f879cc5137447ff4075c2564f265"
+  }
+}

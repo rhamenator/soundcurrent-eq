@@ -1,0 +1,18 @@
+{
+  "run": 37916163773,
+  "qualifiedProductionHead": "fcb3e9d6e2a92f6bbb4f5f5dec5ca55f715bc715",
+  "platform": "AlmaLinux 10 disposable container",
+  "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-current-linux-37916163773/package-validation-2/soundcurrent-eq-1.1.0-1.el10.x86_64.rpm",
+  "packageSha256": "a6d351e2792b512069d88e44d7b33c47b31eb290cd7cdf9a556ff405bff99ae2",
+  "sha256ManifestMatches": true,
+  "allCTestPassed": true,
+  "standaloneInstallerCatalogCTestPassed": true,
+  "installedLocaleCompletions": 33,
+  "launcherInstallUpdateReinstallMatchesCurrentSource": true,
+  "currentProductionSourcesMatchQualifiedHead": true,
+  "actualFrenchEasyInstallerMainPassed": true,
+  "scope": "Package install, same-package update, uninstall/config preservation and reinstall; installed locale fixtures and exact launcher bytes. Actual French easy-installer main uses verified local package through apt/dnf on an already installed current package. No older-version migration, downloaded package path or first-install easy-installer execution proven.",
+  "nativeReviewed": false,
+  "allLocaleVisualRenderingProven": false,
+  "wholeInterfaceCoverageProven": false
+}

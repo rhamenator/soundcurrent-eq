@@ -1,0 +1,17 @@
+{
+  "run": 37912691903,
+  "qualifiedProductionHead": "8489a3eed172ba2d1c0098667e3b3202d7ca8049",
+  "platform": "Ubuntu 24.04 disposable container",
+  "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-complete-installer-37912691903/package-validation-0/soundcurrent-eq_1.1.0_amd64.deb",
+  "packageSha256": "d454b16a9bf6b6d0f8140ac48e89c781a8f49555f04f49a4f921c4a5b6a258d4",
+  "sha256ManifestMatches": true,
+  "allCTestPassed": true,
+  "standaloneInstallerCatalogCTestPassed": true,
+  "installedLocaleCompletions": 33,
+  "launcherInstallUpdateReinstallMatchesCurrentSource": true,
+  "currentProductionSourcesMatchQualifiedHead": true,
+  "scope": "Package install, same-package update, uninstall/config preservation and reinstall; actual installed locale fixtures and exact launcher bytes. Installer text tests do not execute its privileged install path. Later source guards and terminal fixtures were separately tested locally.",
+  "nativeReviewed": false,
+  "allLocaleVisualRenderingProven": false,
+  "wholeInterfaceCoverageProven": false
+}

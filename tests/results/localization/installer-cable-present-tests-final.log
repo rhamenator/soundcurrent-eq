@@ -1,0 +1,10 @@
+..................................s...
+----------------------------------------------------------------------
+Ran 38 tests in 14.231s
+
+OK (skipped=1)
+PASS: 34 catalogs, 612 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+PASS: 34 catalogs, 612 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+PASS: 34 catalogs, 612 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+PASS: 34 catalogs, 612 source messages; 0 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)
+PASS: 2 catalogs, 2 source messages; 1 unfinished entries; structural checks and compiled hashes (linguistic accuracy unverified)

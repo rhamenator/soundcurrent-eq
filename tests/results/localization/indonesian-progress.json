@@ -1,0 +1,31 @@
+{
+  "stage": "Indonesian current catalogs populated",
+  "catalogs": [
+    {
+      "tag": "id",
+      "name": "Bahasa Indonesia",
+      "translated": 441,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "e3c1bdfc7c4e6e066adb5befb6ed4fb527deb7629ed10e59f19079fc852b95c7",
+      "qmSha256": "7a044f439f37a28046190ffd6a2b00a876e4c33f212408de7f3cc716f5afe23a"
+    }
+  ],
+  "linuxTests": {
+    "passed": 3,
+    "total": 3,
+    "scope": "Embedded localization assertions, Indonesian MainWindow offscreen smoke test and structural catalog checks",
+    "log": "/tmp/soundcurrent-eq-id-complete-tests.log"
+  },
+  "review": "Contextual AI review across current Indonesian catalogs: DSP controls, calibration limitations, microphone versus speaker paths, save/quit behavior and neutral rendering counts. Linguistic accuracy unverified; no native review.",
+  "nativeReviewed": false,
+  "windows": "Pending CI; no Windows runtime qualification for this batch",
+  "remaining": "Three target catalogs incomplete. Second-pass omitted source strings, visual and Windows lifecycle qualification remain open.",
+  "focusedWorkflowTests": {
+    "passed": 4,
+    "total": 4,
+    "scope": "Indonesian profile editor workflow, embedded catalog completeness, standard Save, regional resolution, LTR, MainWindow offscreen and structural checks",
+    "log": "/tmp/soundcurrent-eq-id-workflows-tests.log"
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "stage": "Backend literal diagnostic mapping complete",
+  "scope": "Direct literal runtime_error messages in windows_audio.cpp and windows_io.cpp mapped at desktop boundary. HRESULT action/suffix and other composed messages need additional work.",
+  "newSourceCount": 11,
+  "translatedLocales": [
+    "ar",
+    "cs",
+    "da",
+    "de",
+    "el",
+    "es",
+    "fa",
+    "fi",
+    "fr",
+    "he",
+    "hi",
+    "hu",
+    "id",
+    "it",
+    "ja",
+    "ko",
+    "nb",
+    "nl",
+    "nn",
+    "pl",
+    "pt_BR",
+    "pt_PT",
+    "ro",
+    "ru",
+    "sk",
+    "sv",
+    "sw",
+    "th",
+    "tr",
+    "uk",
+    "vi",
+    "zh_Hans",
+    "zh_Hant"
+  ],
+  "validation": "Global structural and required-complete checks passed. Two focused Linux CTest tests passed, including compiled locale messages, known backend mappings and preservation of unknown Unicode details.",
+  "nativeReviewed": false,
+  "runtime": "Linux builds and focused compiled-catalog tests passed; Windows device/runtime and package qualification pending.",
+  "build": {
+    "platform": "Linux",
+    "result": "passed",
+    "log": "/tmp/soundcurrent-eq-backend-literal-build.log"
+  },
+  "catalogs": [
+    {
+      "tag": "ar",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "0ffe724f01b665d7a4cee6cd031f1c190950bd55062dfc6c0f2399a59c4b6522",
+      "qmSha256": "c4f5445be0867bc9f80ae65c2f5152be8a2f898a7acf35d7a35f1ab4ebcb9f5c"
+    },
+    {
+      "tag": "cs",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "f66130c42eb53c4ea82682cd1852ff7ab5fb8baa5385ce09d1f3edead7a62f3d",
+      "qmSha256": "12a6b55dff15aad52ded9560591691c7f5af1c9bee6afbe1d5aa69fec746ea22"
+    },
+    {
+      "tag": "da",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "4e0d74f69f48f86387b81b4c26bd3b3c6fc2f2c4959805e37b067b9f8fd9e07e",
+      "qmSha256": "6ea4dd845143a6b76bc912f2d5d25cc34e48eeb96b54e1129b67830883ff148f"
+    },
+    {
+      "tag": "de",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "3f73c2814fc70c44ad74d415b328fbf188c5b4860eba17195af9793a6ef4e3fd",
+      "qmSha256": "6f515778ecda6061d05bac33e3889a67dd040595c5afda43978bf06f4abc9d90"
+    },
+    {
+      "tag": "el",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "a4ab3e70333e32eb3d283297e737f06af980680dab7952ecdbca507ba6758ebb",
+      "qmSha256": "f84e48f4146e5fc992a8d6931685f764fdb59899dea0381331d90a8e428f0036"
+    },
+    {
+      "tag": "en",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "c83e81f225048b1b88700c858e40241493db50e16684dbb3d2955fc2b397e1d5",
+      "qmSha256": "dcc8d84b4954792e764179ae4ea98018713caff6e2e023cd5bcbf8044e60cd84"
+    },
+    {
+      "tag": "es",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "1a10dff16a1577e6dea432d692cb5381d3c8b2f720313b7d2c822e96c1eea8c6",
+      "qmSha256": "6de40ed18c70ac199915314ae20165c26adc38c0975e1c0050a249550e734ead"
+    },
+    {
+      "tag": "fa",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "b145463d7eeeffaef6564576de7fc0b53ad9bc428bd5b8269d04466e69e8f788",
+      "qmSha256": "cc2b3f658f80ec1938f898c15a7fbe4c1c3e5b9b298c56440d1945aeab32a6e3"
+    },
+    {
+      "tag": "fi",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "11f4631fc055964b14d46a1510d62c39c502ad1bc88d5024247a5496ce11a658",
+      "qmSha256": "2de3a209f79444c4a23751c2575700f9e915aede5cbfbabc5b780c3f328fb051"
+    },
+    {
+      "tag": "fr",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "190af7773dd1422a235bb2b1989643e21067b176ab9a2c918e9a71a67285cf89",
+      "qmSha256": "a8322190a91cda790e3c2989b5134ee7c28fef9bf21e68a1c1b8b03fc0686657"
+    },
+    {
+      "tag": "he",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "81ec173f455c7f0a19a9f46747dc918e853cd345436ecb58b67d5846b2c99bf4",
+      "qmSha256": "2e97643d61377441f5f89f4ef9ee23b694948809c3cc21394444fafcc8acec6f"
+    },
+    {
+      "tag": "hi",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "1ae7e706b04aec5c4a402e9e1d31ae5e49e79187db1a9c23ccf1bdb5fad64b86",
+      "qmSha256": "7c67257e1dc49f0605d69d72125565ba6cd651172ce0f69c05fbc880e275ce5f"
+    },
+    {
+      "tag": "hu",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "59492cde87475e30132d01a5acbefebe1cc643425bb598a83106f1d1e94e5381",
+      "qmSha256": "78c5ff5e66c6bda1c8b1c1d9abfed91d9bd923a914285d51ef7260f8d617ffb6"
+    },
+    {
+      "tag": "id",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "4ef934ed86d52ee08675b7e4241244b1954b02a76dfe3b8a9f326d489f942cbc",
+      "qmSha256": "2d6ac19fb48f9e0ca988d49c2083a8a5b8dc7159f8a59673b2b8117958a14d80"
+    },
+    {
+      "tag": "it",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "1028a4054b0591b350aa4e5c82e043394f7efa15cbe05b76b69db15b10e30252",
+      "qmSha256": "4df49f9dcc079f712c1cc7f1d383573f54bd8d16e0c7893d4c40774f9cdab8f1"
+    },
+    {
+      "tag": "ja",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "20e4480ebfdea3bf46cc41b121465658925b8a527f056f7122e1ab9c54ecc43e",
+      "qmSha256": "80215813b87a9c024429a3f1735952e2758624cd1f1f3f27e808e3bf61b3db50"
+    },
+    {
+      "tag": "ko",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "8fab472ecb12fa82cdb7f0f6bc0b07db297ca4571bc2b1c924f71caf2361e3c9",
+      "qmSha256": "a969ca056f2b07bdc628876fb624db896f5320f07aef8ea146a880630c45706f"
+    },
+    {
+      "tag": "nb",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "28e6489f766b0084bdca82854fcc21fde12a32e9ac36ecc7564adc7d33f5a44c",
+      "qmSha256": "0b2913682f832a3aab1551de1526936e9c550aa1d4320d3221de2ca70b416a24"
+    },
+    {
+      "tag": "nl",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "17e1ae00c05551423f79e5e642c3bc1f0393584c320bcaf8e152552d23dd8223",
+      "qmSha256": "e2b846b0728a04a587de9f3f75b111b9ac28245e803dfa27709b0c9561836114"
+    },
+    {
+      "tag": "nn",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "607b8d6e5df3de9d5a3dcd19a72767fe81c6a14289764548946aefcdedd59862",
+      "qmSha256": "3f32fba6e44aa6502aeb7f9774b461dc18bb21d509b75bdabd63cd9c82223943"
+    },
+    {
+      "tag": "pl",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "b14803edb3770ef6e8a390f98a8ad4421a6d9a11694809b49ff2860a6bf13ac7",
+      "qmSha256": "2b1b6cdebeedffc7000cb33025bc94500b3b4fa1aed4f563a1653cd7af0bb635"
+    },
+    {
+      "tag": "pt_BR",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "71264bd4936526b1e1f7445609aea98b02cfc73ad15c10905bdb3326ccee0747",
+      "qmSha256": "9f9ee22f0dfa89c91ac1b35fdab06125f16fa0e41314e85e587f649cc6c8be0e"
+    },
+    {
+      "tag": "pt_PT",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "c48ecbcfaa429ab49bd5bdd902a526fddc9667be929937f4462ac7ca58dd422d",
+      "qmSha256": "c7a34c7fb087f4a0f7ccb17bd6fae52fb21d344ec7506db6b30b99aebddca2f6"
+    },
+    {
+      "tag": "ro",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "cad3411b4c1716ba84909247e94f4bafa9c6de89e10b456b2ed2ddc4bffa6bad",
+      "qmSha256": "0ec96363b2f1ed1530e0153ab2e13b3ef7920db784d54858d5a812a5463b0e73"
+    },
+    {
+      "tag": "ru",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "fb96e4371abd5a088eff08d5cf8f471a48ebdd6a37aef14b7c2801864bc497c5",
+      "qmSha256": "abd10e8f5481cd675a8854e088d35b3f81a0d33c67998123d74c8e002f4d5b5b"
+    },
+    {
+      "tag": "sk",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "324ce726e421880865885a9666e9df5ef6ff6780ae1eea88994ff7fdf6783a98",
+      "qmSha256": "6da802ffec82f229ffc09b5dbe47f1c36c2b2de2a8c0fa2b94540e0699e7d3ba"
+    },
+    {
+      "tag": "sv",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "913093c8d41b5cddf58c47830a9c16690cf11ef341a04339a00b3bf80b6e3a74",
+      "qmSha256": "77bfd306ca2a45da203a4ae22f5ff5ddfe4131551c8b961bbd13f989db6a693b"
+    },
+    {
+      "tag": "sw",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "aa1226bd67c088b15a8e5c26fbb7927acaf191cb05e901b7e270355654992ecd",
+      "qmSha256": "430bb47cd27a19c426d1b5c0f30264ffedd15c219e506a20ad71c989a7f9d3e0"
+    },
+    {
+      "tag": "th",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "31f7ed01bbc3c1d721f9ea1ca853a15d4e560f2e83e5783018ea8c36cc7ba044",
+      "qmSha256": "3a587b4ecece701ed0bc3494f738866a2ed4fcc01b107fcec443d29e33dcbebb"
+    },
+    {
+      "tag": "tr",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "09f25100ee79d87c084635fb1457d804dd8d26732cdac1cd385a4511aef6b066",
+      "qmSha256": "2ff381b2eccfd7f470b142cef689c9216aa51e4e8a7d3cef55411a6d27f639c3"
+    },
+    {
+      "tag": "uk",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "c4419bbb14359585a736aea22b0ff501ee6e9709e564154bae147dcea836fee8",
+      "qmSha256": "448e93e75228bfc28d68997aa4e56e8b2e1a64e6c7504aefddf917f392b12814"
+    },
+    {
+      "tag": "vi",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "17be77308e5098d05bcfbeb1aae6750aeca553b33fe2262350c27c5e856ea32d",
+      "qmSha256": "fc55b534dc9eef45ce494abfd69f9badccafe37415b63cc2b9b93942bb05842c"
+    },
+    {
+      "tag": "zh_Hans",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "28c9a9cec1b9ad686f57e5d3b1b4c5544ba898e6a1261945da93e5b044512a48",
+      "qmSha256": "c2924d1399731831ccf3a203f124625d2a582e886d3c1ed2ebda454d6866784d"
+    },
+    {
+      "tag": "zh_Hant",
+      "total": 459,
+      "unfinished": 0,
+      "tsSha256": "87a80eae8db94814932984389ce67855813025a1cf3858e328cb70a1328cd79d",
+      "qmSha256": "e38046c992ac26c2178fdb5368d1a924f22f55b73eab279bbcc2c9e6e234cea5"
+    }
+  ],
+  "linuxTests": {
+    "passed": 2,
+    "total": 2,
+    "log": "/tmp/soundcurrent-eq-backend-literal-final-tests.log"
+  }
+}

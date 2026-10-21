@@ -1,0 +1,28 @@
+Last metadata expiration check: 0:02:58 ago on Fri Oct  9 06:48:24 2026.
+Dependencies resolved.
+================================================================================
+ Package               Architecture Version            Repository          Size
+================================================================================
+Reinstalling:
+ soundcurrent-eq       x86_64       1.1.0-1.el10       @commandline       1.6 M
+
+Transaction Summary
+================================================================================
+
+Total size: 1.6 M
+Installed size: 4.6 M
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Reinstalling     : soundcurrent-eq-1.1.0-1.el10.x86_64                    1/2 
+  Cleanup          : soundcurrent-eq-1.1.0-1.el10.x86_64                    2/2 
+  Running scriptlet: soundcurrent-eq-1.1.0-1.el10.x86_64                    2/2 
+
+Reinstalled:
+  soundcurrent-eq-1.1.0-1.el10.x86_64                                           
+
+Complete!

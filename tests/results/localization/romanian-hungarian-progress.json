@@ -1,0 +1,41 @@
+{
+  "stage": "Romanian and Hungarian complete extracted catalogs",
+  "catalogs": [
+    {
+      "tag": "ro",
+      "name": "Română",
+      "translated": 441,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "c6293a5cc553fdf0e36df3e5732349b797ead519e7e7737408aee3f9160aae1b",
+      "qmSha256": "603ee944fffda608cfeb49af5c79b31f1f4f526cb752390a0ea19f2c48e47610"
+    },
+    {
+      "tag": "hu",
+      "name": "Magyar",
+      "translated": 441,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "0957b4b4d2d0ad7ba1a3c22fd52a322095e8e0ae72812652f0a598300b741492",
+      "qmSha256": "7645a7b64638e3b4efa09914ba593cdc75b47896d9055006ac5a0b6607ded861"
+    }
+  ],
+  "linuxTests": {
+    "passed": 68,
+    "total": 68,
+    "scope": "Full CTest including Romanian/Hungarian equipment workflows and all configured main windows",
+    "log": "/tmp/soundcurrent-eq-ro-hu-complete-tests.log"
+  },
+  "visualInspection": {
+    "platform": "xcb/Xvfb",
+    "display": "1280x720",
+    "sample": "Romanian EQ equalizer",
+    "screenshots": "/tmp/soundcurrent-eq-ro-complete-xcb"
+  },
+  "review": "Contextual AI review, unverified. Q, gain/headroom, wet mixes, loudness compensation and measured-response limits reviewed. Render counts use neutral labels.",
+  "nativeReviewed": false,
+  "windows": "Pending CI on completed catalogs",
+  "remaining": "12 target catalogs incomplete; backend/installer extraction, small-screen Polish layout and platform lifecycle/sign-in qualification remain open."
+}

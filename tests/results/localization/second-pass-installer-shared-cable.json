@@ -1,0 +1,52 @@
+{
+  "scope": "Shared cable installer ownership/extra-cable notice",
+  "source": "Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.",
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "sourceMessages": 615,
+  "unfinishedExtractedEntries": 0,
+  "contextualReview": {
+    "status": "AI reviewed against cable-setup.ps1 removal branch and NSIS quiet/silent behavior",
+    "details": [
+      "Last app explicitly means last SoundCurrent app",
+      "Quit must exit processing, not just hide UI",
+      "Removal remains optional; other software may need cable",
+      "A/B are separate extra virtual cables, not included"
+    ],
+    "refinedLocales": [
+      "es",
+      "it",
+      "ro",
+      "hi",
+      "sw"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "catalogTests": {
+      "total": 42,
+      "passed": 41,
+      "skipped": 1
+    },
+    "compiledCatalogHashes": "verified",
+    "nsisLiteralCompiler": {
+      "captions": 578,
+      "languageIDs": "English fixture only",
+      "localeActivation": false,
+      "layoutQualified": false
+    }
+  },
+  "externalNameGuards": [
+    "SoundCurrent",
+    "VB-CABLE",
+    "A/B"
+  ],
+  "driverActionsOrDSPChanged": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Remaining raw routing/donation and other installer/helper captions",
+    "Installer locale activation and installed layout",
+    "Current package install/update/uninstall and UI qualification"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "scope": "Loaded app catalog propagation to Windows setup argv and exact helper source matching",
+  "contextualAIReview": "Existing translated title reused; no new linguistic claims",
+  "nativeSpeakerVerification": "unverified",
+  "runtimeQualification": {
+    "platform": "Linux Qt offscreen and PowerShell 7.6.6",
+    "targetedQtTestsPassed": 39,
+    "failed": 0,
+    "checks": [
+      "Actual loaded-language property matches runtime catalog in locale UI fixtures",
+      "Compiled shared argv builder retains path, action, quiet mode and requester ID while passing loaded tag",
+      "Unicode/space-bearing script path preserved as an argv element",
+      "All 34 helper title lookups and fallback cases pass",
+      "Case-different unknown source remains verbatim",
+      "Packaged helper AST accepts explicit Language parameter"
+    ],
+    "WindowsProcessLaunchQualified": false,
+    "WindowsPowerShell51Qualified": false
+  },
+  "encodingGap": "Audio helper output currently uses QString::fromLocal8Bit and has no explicit PowerShell UTF-8 output contract; fix before translating message bodies",
+  "wholeInterfaceCoverageProven": false,
+  "WindowsCurrentChangesQualified": false,
+  "newPackagesQualified": false,
+  "evidence": {
+    "log": "tests/results/localization/helper-language-runtime.log",
+    "logSha256": "d76fa150d3691d06c6f4326a63e2341f8cfbf5fd5cca8e8ec1af0bb26415162f",
+    "applicationBinarySha256": "6d84be7f972997156362759fff6bb7ae4bae664097f6aa2ef611333095834711"
+  },
+  "sourceSha256": {
+    "src/audio_setup_arguments.h": "d94a9a5bc4cbb28eea81802f7676f5e21889e6d75ab1b3e17aeb0f6f17fa9fba",
+    "packaging/windows/setup-localization.ps1": "145c56d2e375a461e27ceab430b063d51119fb1ccf0ab95c548a28be389e3281",
+    "tests/windows_setup_localization.ps1": "3943bfce95340960c85796fcd705ddc4f39531242047356da0500b774345b95b"
+  }
+}

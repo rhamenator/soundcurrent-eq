@@ -1,0 +1,47 @@
+{
+  "scope": "Installer driver-check failure retry guidance in both driver routes",
+  "sourceTemplate": "Setup could not check the driver. You can retry with %1 in the app or Start menu.",
+  "sourceMessagesPerLocale": 606,
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "meaning": "Installer could not determine driver status; retry through the named setup action in app or Start menu",
+    "setupAction": "inserted from independently translated Audio driver setup caption"
+  },
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "unitTestsPassed": 30,
+    "unitTestsSkipped": 1,
+    "placeholderMutation": "wrong index rejected",
+    "compiledQtCatalogs": "regenerated; hashes checked",
+    "generatedEnglishInstallers": "byte-identical to tracked sources; all four variants unit-tested",
+    "allCaptionSyntaxFixture": "272 captions per product compiled; uses English language ID only",
+    "fullCurrentInstallersBuilt": false,
+    "currentInstalledUiQualified": false
+  },
+  "installerLanguagesEnabled": [
+    "English"
+  ],
+  "remainingScope": [
+    "Installer language selection and locale activation",
+    "Remaining installer/uninstaller text",
+    "One untranslated PowerShell repair notice",
+    "Current package UI and lifecycle qualification"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "newPackagesQualified": false,
+  "invariants": [
+    "Driver-check conditions and route behavior unchanged",
+    "Saved state and numerical processing unchanged"
+  ],
+  "evidenceSha256": {
+    "data/localization/catalogs.json": "22b67cedf652e95b8709dc1ac82508b6532b3b4e91b026408730b139db9613df",
+    "scripts/windows_installer_catalogs.py": "cf6a06c88dcaf0bb73e5feabf9b9ef7acb91180ec38e491b25f2a947e14b1cad",
+    "tests/translation_catalogs.py": "7116b0094cdc7b94267ef17586150687eb0d71e9e14bc39e60dbf57fb22fa53b",
+    "tests/results/localization/installer-driver-check-captions.json": "b470274679fa529384efb694d178a914a7d6e6abd575c59a670d795c89b982a3",
+    "tests/results/localization/installer-driver-check-tests.log": "432da467c6c1352e6079ef47e62f788ab3be642745b728f60b06a5571c9a89e4",
+    "tests/results/localization/installer-driver-check-compiler.log": "a4766b9b776cb9f74f10d2e2702e6bafba6522b00a1035233d19f84829b3194f"
+  }
+}

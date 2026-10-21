@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-09",
+  "scope": "Qt 6 installed Linux abstract file icon provider and MIME comment probe, five format locales, one owned temporary UTF-8/percent-named text file. No app audio, VM, Windows shell provider or native-dialog test.",
+  "primarySources": [
+    "https://doc.qt.io/qt-6/qmimetype.html#comment-prop",
+    "https://github.com/qt/qtbase/blob/6.4/src/gui/itemmodels/qabstractfileiconprovider.cpp"
+  ],
+  "sourceSha256": {
+    "localQtProvider": "b9a0a3ee2d3d763cc4ce208f5216f15285d28af251d59237154c29ff38c0a30f",
+    "probe": "50d34a1aa012c33dfdae3c9893a40ed59be891b266511c663ff8c0e3c9a17275"
+  },
+  "observations": [
+    {
+      "formatLocale": "en-US",
+      "mimeComment": "Plain text document",
+      "mimeName": "text/plain",
+      "providerType": "Plain text document",
+      "uiLanguages": [
+        "en-Latn-US",
+        "en-US",
+        "en-Latn",
+        "en"
+      ]
+    },
+    {
+      "formatLocale": "de-DE",
+      "mimeComment": "Einfaches Textdokument",
+      "mimeName": "text/plain",
+      "providerType": "Einfaches Textdokument",
+      "uiLanguages": [
+        "de-Latn-DE",
+        "de-DE",
+        "de-Latn",
+        "de"
+      ]
+    },
+    {
+      "formatLocale": "fr-FR",
+      "mimeComment": "Plain text document",
+      "mimeName": "text/plain",
+      "providerType": "Plain text document",
+      "uiLanguages": [
+        "fr-Latn-FR",
+        "fr-FR",
+        "fr-Latn",
+        "fr"
+      ]
+    },
+    {
+      "formatLocale": "ar-EG",
+      "mimeComment": "Plain text document",
+      "mimeName": "text/plain",
+      "providerType": "Plain text document",
+      "uiLanguages": [
+        "ar-Arab-EG",
+        "ar-EG",
+        "ar-Arab",
+        "ar"
+      ]
+    },
+    {
+      "formatLocale": "nn-NO",
+      "mimeComment": "Plain text document",
+      "mimeName": "text/plain",
+      "providerType": "Plain text document",
+      "uiLanguages": [
+        "nn-Latn-NO",
+        "nn-NO",
+        "nn-Latn",
+        "nn"
+      ]
+    }
+  ],
+  "interpretation": "Provider description equals MIME comment (or MIME name fallback); it is external provider text, may follow format locale and may fall back to English. Not an owned SoundCurrent caption or proof of Windows association behavior. Generic Folder/Drive/Unknown captions use separate translated context mappings.",
+  "nativeReviewed": false
+}

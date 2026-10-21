@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-09",
+  "gap": "Windows and Linux recognized-process conflict branches concatenated an English sentence and displayed it unchanged.",
+  "source": "%1 is running. Quit it before using SoundCurrent.",
+  "change": "Both branches now use a single SC_TR template with the executable name as opaque %1; conflict predicates and shutdown flow unchanged.",
+  "locales": 34,
+  "catalogMessages": 700,
+  "contextualReview": "Quit refers to terminating the competing process. SoundCurrent and executable identity preserved; Hungarian and Korean substitutions use neutral/optional grammatical forms. All33 non-English entries populated.",
+  "nativeReviewed": false,
+  "tests": "Complete-catalog checks, focused both-branch source regression and compiled processing-guard CTest passed in both projects.",
+  "qualification": "Fresh production Linux/Windows packages required; earlier previews superseded for this source change.",
+  "sourceSha256": "fb5b27c2aa0b66d8702075461b0a77815cd8dbd9bbc3624dac97a03a2ba4fab0"
+}

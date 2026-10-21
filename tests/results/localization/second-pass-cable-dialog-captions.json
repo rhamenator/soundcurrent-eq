@@ -1,0 +1,63 @@
+{
+  "scope": "Shared cable retention, removal/repair titles and missing installation diagnostic",
+  "sourceMessagesPerLocale": 594,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "notes": [
+      "Shared virtual driver retained for the other installed SoundCurrent app",
+      "Other software may still require the driver when the last app is removed",
+      "Product/vendor identifiers unchanged",
+      "Missing installation message inserts exact translated app setup caption",
+      "Confirmation enum values and external installer actions unchanged"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "runtimeQualification": {
+    "platform": "Linux Qt offscreen and host PowerShell 7.6.6",
+    "targetedQtTestsPassed": 40,
+    "catalogUnitTestsPassed": 16,
+    "catalogUnitTestsSkipped": 1,
+    "requiredHelperLookupsPassed": 918,
+    "isolatedOwnedMissingCableThrowExpression": {
+      "casesPassed": 34,
+      "oracle": "template with exact corresponding catalog Audio driver setup caption",
+      "devicePredicateExecuted": false,
+      "wrapperExecuted": false
+    },
+    "existingHelperRegressionFixtures": "passed",
+    "actualQuietNoActionAndMissingManagerFaults": "passed fr/ar/nn",
+    "realSharedOwnershipRemovalRepairFlowsExecuted": false,
+    "WindowsFormsDialogsExecuted": false
+  },
+  "remainingHelperProseCandidates": {
+    "untranslatedCable": 8,
+    "invariantProductNames": 2,
+    "nativeCandidates": 0,
+    "scope": "AST literal heuristic"
+  },
+  "invariants": [
+    "Shared ownership and presence predicates unchanged",
+    "MessageBox YesNo and Question enum values unchanged",
+    "Driver mutation and signature checks unchanged",
+    "Numerical processing and saved state unchanged"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "WindowsCurrentChangesQualified": false,
+  "newPackagesQualified": false,
+  "VMUsed": false,
+  "remainingScope": [
+    "Cable confirmation/repair bodies and lifecycle notices",
+    "NSIS installer/uninstaller text",
+    "Windows current runtime and package lifecycle qualification"
+  ],
+  "evidenceSha256": {
+    "packaging/windows/cable-setup.ps1": "fe01bf01a8fe8914b59501331a4f68eed99b3f936bfedfe9aa540ad0d179d69d",
+    "tests/windows_setup_localization.ps1": "ca10aa9b92fae713a687ca96dcf4c6d0d2d4c31daa1eaaa545751a2284f94f85",
+    "data/localization/setup-prose-backlog.json": "c77e2bf3793a3c545605a8b2cd87257e39afd18ae8cb49b76801eb3b49721855",
+    "tests/results/localization/cable-dialog-captions-runtime.log": "eac48013c5d99d46f682b6ad28f612153679edee585967e93a7da782eb6d031c",
+    "tests/results/localization/cable-dialog-captions-qt.log": "59cd02cd3d4341b0d9831613ed21f02e6fd6fa2f568922c9f83a4bcbe94b7d67",
+    "build/soundcurrent-eq": "7db95e1a7e9b446de13117f11ed73acc7b5dc4c9db252c8f72037e7d21e08697"
+  }
+}

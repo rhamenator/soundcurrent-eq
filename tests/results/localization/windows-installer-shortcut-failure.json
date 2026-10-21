@@ -1,0 +1,39 @@
+{
+  "testedProduct": "EQ",
+  "vm": "soundcurrent-localization-win11-qa",
+  "mediaPackageIdentities": [
+    {
+      "label": "eq-old",
+      "run": 37869446207,
+      "repository": "soundcurrent-eq",
+      "sha256": "76a8bca37e99a4911acc2b2360b6b23c251a6611260b00b695dd019f3f8b7f74"
+    },
+    {
+      "label": "eq-current",
+      "run": 37869653471,
+      "repository": "soundcurrent-eq",
+      "sha256": "2baebbf459d02d78dbea16aa511ae5591e00d8cde0b20feff15b70a13524e718"
+    },
+    {
+      "label": "studio-old",
+      "run": 37869448427,
+      "repository": "soundcurrent-studio",
+      "sha256": "8fe5ba9851ca7d2077d0571911ba8c6557dec4df882be46347a7132772c1982c"
+    },
+    {
+      "label": "studio-current",
+      "run": 37870007872,
+      "repository": "soundcurrent-studio",
+      "sha256": "472d182613e718b81ed62552b6d5234c968d8093ee5b607026ace963b2d69bdb"
+    }
+  ],
+  "PowerShellPureFixture": "passed 34 locale expectations on guest",
+  "lifecycle": "failed: Helper shortcut locale argument mismatch",
+  "observedFinalInstalledShortcuts": "Arabic action filenames present; main app shortcut target resolves; WScript.Shell returns empty TargetPath and Arguments for action links",
+  "scope": "Console observations only; transcript and step metadata remain in guest; do not claim individual update stages passed until retrieved",
+  "uninstallQualification": false,
+  "failureStatePreserved": true,
+  "vmState": "graceful shutdown confirmed shut off",
+  "nextAction": "Inspect action-link file sizes/content and exact COM path matching; determine installer defect vs fixture path normalization before retry",
+  "nativeReviewed": false
+}

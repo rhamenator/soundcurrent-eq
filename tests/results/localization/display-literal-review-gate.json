@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-09",
+  "change": "Exact-site allowlist for invariant units, autonym and synthetic user-data fixture literals; new unmarked literal captions fail review gate.",
+  "command": "python3 tests/translation_catalogs.py -k unmarked_owned_display_caption",
+  "result": "passed",
+  "tests": 1,
+  "seconds": 3.169,
+  "testScope": "Actual current source inventory accepted; new source containing unmarked QLabel caption rejected. Existing CMake translation-maintenance suite invokes this regression test.",
+  "sourceSha256": {
+    "scripts/ui_string_audit.py": "1ec1113c0587eb8149652d4ff52d554c562f02ab9048ac639b89a05c4866708b",
+    "tests/translation_catalogs.py": "bba3b489b18ad89b0a1b8eb452b92d8fa5d603f07e0a8374b138ca95ea18cafc",
+    "data/localization/ui-literal-exceptions.json": "1409993cc34ed3e7ebabdc2c44a3ee909dd74275fd4990aa08eafce622d1266e"
+  },
+  "limitations": "Lexical supported-sink guard; dynamic/composed captions, backend and installer prose require separate source/context review. Not linguistic verification.",
+  "nativeReviewed": false
+}

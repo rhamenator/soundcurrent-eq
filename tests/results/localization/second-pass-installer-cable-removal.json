@@ -1,0 +1,37 @@
+{
+  "scope": "Cable removal failure explanation with preserved runtime helper details",
+  "source": "VB-CABLE removal did not finish. This app was kept so you can retry.",
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "sourceMessages": 623,
+  "unfinishedExtractedEntries": 0,
+  "contextualReview": "AI reviewed nonzero removal failure excluding restart-required 3010, retained app and abort for retry, preserved appended helper output",
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "catalogTests": {
+      "total": 47,
+      "passed": 46,
+      "skipped": 1
+    },
+    "compiledCatalogHashes": "verified",
+    "nsisLiteralCompiler": {
+      "captions": 952,
+      "compositeDialogs": 34,
+      "languageIDs": "English fixture only",
+      "localeActivation": false,
+      "layoutQualified": false
+    },
+    "auditMutations": "Arbitrary appended prose, extra/wrong variables and missing LangString definition rejected",
+    "abortAndBrandGuards": true
+  },
+  "technicalOutputSuffix": "$\\r$\\n$1",
+  "ownershipBoundary": "Only owned explanation translated; helper-output variable remains outside catalog and is not escaped as prose",
+  "uninstallActionsAndDSPChanged": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Welcome/setup/restart and long helper notice translations",
+    "Installer locale activation and installed layout",
+    "Current runtime and install/update/uninstall qualification"
+  ]
+}

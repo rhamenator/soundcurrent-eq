@@ -1,0 +1,13 @@
+{
+  "run": 37895446856,
+  "testedHead": "6111c989cdc8ec2c08f6b9ce4cc0a921f2dfb781",
+  "catalogMessages": 688,
+  "conclusion": "success",
+  "installerPath": "/home/rich/dev/soundcurrent-localization-artifacts/eq-windows-688-37895446856/windows-build/dist/SoundCurrent-EQ-1.1.0-windows-x64-setup.exe",
+  "installerSha256": "f70861f5e22b4b8c79e67db61fa2e2f2a59b80b0e78a78e3df956a1ba33a0afa",
+  "executableSha256": "4e777dfd88079b6175954d3f95e65734bf4a761964c838cf2347082beb6b0ea6",
+  "installedLocaleLogCount": 34,
+  "scope": "GitHub-hosted Windows 2022 compiled tests/native Windows backend and installed locale fixtures; French/Arabic/Nynorsk silent lifecycle, same-installer update, shortcuts, settings/user-file preservation, uninstall. No interactive chooser, older-version migration, live audio or native-speaker review. Predates newer deletion captions.",
+  "nativeReviewed": false,
+  "evidence": "tests/results/localization/windows-688-installed"
+}

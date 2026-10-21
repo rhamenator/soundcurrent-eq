@@ -1,0 +1,30 @@
+{
+  "run": 37903361741,
+  "testedHead": "16ec67362e4875ab893c3d88ea87cc89fc5ce0ea",
+  "result": "passed and downloaded hashes verified",
+  "packages": [
+    {
+      "path": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-public-update-37903361741/package-validation-0/soundcurrent-eq_1.1.0_amd64.deb",
+      "sha256": "cbbbb4302e0cf046f3d06112f956c7821fddf9cd87577e25199f881cc010a08a",
+      "localeCompletions": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-public-update-installed/package-validation-0"
+    },
+    {
+      "path": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-public-update-37903361741/package-validation-1/soundcurrent-eq-1.1.0-1.fc44.x86_64.rpm",
+      "sha256": "ec97b65836e3ce7e0522b2a2b456da57af7935a915a7f4ffb740871533bad49c",
+      "localeCompletions": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-public-update-installed/package-validation-1"
+    },
+    {
+      "path": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-public-update-37903361741/package-validation-2/soundcurrent-eq-1.1.0-1.el10.x86_64.rpm",
+      "sha256": "d4f614945fe8c958ef2700441a10bdb133368c6e2abaea356f6413fd0e3a480a",
+      "localeCompletions": 33,
+      "result": "PASS: soundcurrent-eq install, menu icon, installed GUI controls, in-place reinstall, uninstall cleanup, config preservation and reinstall",
+      "evidence": "tests/results/localization/linux-public-update-installed/package-validation-2"
+    }
+  ],
+  "scope": "Ubuntu24.04/Fedora44/AlmaLinux10 container full CTest, installed locale fixtures, same-package update/reinstall, uninstall/config preservation and reinstall; 33 non-English locales per image. No native-speaker verification, live audio, physical RHEL desktop or older-version migration.",
+  "nativeReviewed": false
+}

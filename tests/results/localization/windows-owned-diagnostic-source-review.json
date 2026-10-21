@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-09",
+  "scope": "Direct literal throw std::runtime_error calls in src/windows*.cpp; exact desktop audioErrorText mapping comparison. Conditional/composed diagnostics and Windows platform .inc excluded from this narrow extraction and covered by separate guards/fixtures.",
+  "literalThrowSites": 12,
+  "rows": [
+    {
+      "file": "src/windows_audio.cpp",
+      "diagnostic": "Could not initialize Windows audio COM",
+      "mappedAtDesktopBoundary": true
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "diagnostic": "Invalid speaker mix format",
+      "mappedAtDesktopBoundary": true
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "diagnostic": "Unsupported speaker mix sample format",
+      "mappedAtDesktopBoundary": true
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "diagnostic": "SoundCurrent virtual output requires 48 kHz stereo float audio",
+      "mappedAtDesktopBoundary": true
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "diagnostic": "Unsupported speaker channel layout or sample rate",
+      "mappedAtDesktopBoundary": true
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "diagnostic": "The selected EQ settings are invalid",
+      "mappedAtDesktopBoundary": true
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "diagnostic": "Invalid enhancements",
+      "mappedAtDesktopBoundary": true
+    },
+    {
+      "file": "src/windows_audio.cpp",
+      "diagnostic": "Cable packet exceeds its capture buffer",
+      "mappedAtDesktopBoundary": true
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "diagnostic": "Windows audio COM unavailable",
+      "mappedAtDesktopBoundary": true
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "diagnostic": "Unsupported recording format",
+      "mappedAtDesktopBoundary": true
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "diagnostic": "Microphone recording consumer stalled",
+      "mappedAtDesktopBoundary": true
+    },
+    {
+      "file": "src/windows_io.cpp",
+      "diagnostic": "Invalid calibration audio",
+      "mappedAtDesktopBoundary": true
+    }
+  ],
+  "sourceSha256": {
+    "src/windows_audio.cpp": "6499a93ccc8429a6a257fc9c1cd52cdfae11f2045c40b6c5a037c4c614b1d0bd",
+    "src/windows_cable_setup_guard.cpp": "9f49a3a8590368d49f5258459202fde98991e27fd9bbc97e93488fd677fd9fa5",
+    "src/windows_io.cpp": "13362ffd61431d9ea105ebbf5eb55df30b54904adc34a750a4da4bf9bab08ac7",
+    "src/windows_route_guardian.cpp": "4f683ce99ad6bafe227e293d94a82487157da269642e2e2298fa148bc3dfbf2d",
+    "src/audio_error_text.h": "45426afb00c16ba5d9f96d19045dab8ffda48946edb6be1395afb156f75c5554"
+  },
+  "result": "all inspected direct literal throws mapped",
+  "nativeReviewed": false,
+  "runtimeQualification": "Not implied by this source review; see exact installed package reports and backend_error_text compiled fixture."
+}

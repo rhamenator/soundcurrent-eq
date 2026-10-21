@@ -1,0 +1,12 @@
+{
+  "run": 37878092704,
+  "testedHead": "b4539d2180e809b6d8709a02e81ea8b1a8dfa3f6",
+  "conclusion": "success",
+  "installerPath": "/home/rich/dev/soundcurrent-localization-artifacts/eq-installed-windows-37878092704/dist/SoundCurrent-EQ-1.1.0-windows-x64-setup.exe",
+  "installerSha256": "690068fba35e32e289dd5331f77fec9858bccc855b1213eb1f45067a9028d89c",
+  "executableSha256": "23f415d6869ad949fa9f5cf0117fc9acc3a74e00001884a2941f6caaf2ccadd8",
+  "installedLocaleLogCount": 34,
+  "scope": "Actual installed cable app UI fixtures for all 34 catalogs; French/Nynorsk/Arabic same-installer updates, localized shortcut bytes/arguments, preservation sentinels, silent uninstall and unchanged audio device state. Not older-version migration, interactive chooser, live audio, native driver or native-language review.",
+  "nativeReviewed": false,
+  "currentStudioWaveAdditionsQualified": false
+}

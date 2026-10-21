@@ -1,3 +1,4 @@
+#include "localized_file_dialog.h"
 #include "localization.h"
 // SPDX-License-Identifier: GPL-3.0-only
 #pragma once
@@ -14,7 +15,7 @@
 #include <QCheckBox>
 #include <QDesktopServices>
 #include <QFileDialog>
-#include <QHBoxLayout>
+#include <QGridLayout>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QPushButton>
@@ -63,19 +64,19 @@ class UpdatePanel : public QGroupBox {
 public:
     UpdatePanel(QString repo,QString title,QString version,bool active,QWidget *parent=nullptr)
         :QGroupBox(SC_TR("Application updates"),parent),repo_(std::move(repo)),title_(std::move(title)),version_(std::move(version)),network_(this) {
-        auto *layout=new QVBoxLayout(this);layout->addWidget(new QLabel(SC_TR("Installed version: ")+version_));
+        auto *layout=new QVBoxLayout(this);layout->addWidget(new QLabel(SC_TR("Installed version: %1").arg(version_)));
         auto *help=new QLabel(SC_TR("Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen."));help->setWordWrap(true);layout->addWidget(help);
         enabled_=new QCheckBox(SC_TR("Remind me when updates are available or a restart is needed"));enabled_->setChecked(QSettings().value("updates/reminders",true).toBool());layout->addWidget(enabled_);
         preview_=new QCheckBox(SC_TR("Include preview releases"));preview_->setChecked(QSettings().value("updates/previews",true).toBool());layout->addWidget(preview_);
         status_=new QLabel(SC_TR("Checks published releases and downloaded installers. No update is installed automatically."));status_->setWordWrap(true);status_->setTextFormat(Qt::PlainText);layout->addWidget(status_);
-        auto *row=new QHBoxLayout;auto *check=new QPushButton(SC_TR("Check for updates"));auto *download=new QPushButton(SC_TR("Open release downloads"));auto *folder=new QPushButton(SC_TR("Open update folder"));auto *choose=new QPushButton(SC_TR("Choose update folder…"));row->addWidget(check);row->addWidget(download);row->addWidget(folder);row->addWidget(choose);layout->addLayout(row);
+        auto *row=new QGridLayout;auto *check=new QPushButton(SC_TR("Check for updates"));auto *download=new QPushButton(SC_TR("Open release downloads"));auto *folder=new QPushButton(SC_TR("Open update folder"));auto *choose=new QPushButton(SC_TR("Choose update folder…"));row->addWidget(check,0,0);row->addWidget(download,0,1);row->addWidget(folder,1,0);row->addWidget(choose,1,1);layout->addLayout(row);
         const auto downloads=QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
         const auto suggested=downloads+"/SoundCurrent-Updates";
         folder_=QSettings().value("updates/folder",QFileInfo::exists(suggested)?suggested:downloads).toString();
         connect(check,&QPushButton::clicked,this,[this]{checkUpdates(true);});
         connect(download,&QPushButton::clicked,this,[this]{QDesktopServices::openUrl(QUrl("https://github.com/rhamenator/"+repo_+"/releases"));});
         connect(folder,&QPushButton::clicked,this,[this]{QDesktopServices::openUrl(QUrl::fromLocalFile(folder_));});
-        connect(choose,&QPushButton::clicked,this,[this]{auto path=QFileDialog::getExistingDirectory(this,SC_TR("Update download folder"),folder_);if(path.isEmpty())return;folder_=path;QSettings().setValue("updates/folder",path);checkLocal();});
+        connect(choose,&QPushButton::clicked,this,[this]{auto path=soundcurrent::i18n::FileDialogs::getExistingDirectory(this,SC_TR("Update download folder"),folder_);if(path.isEmpty())return;folder_=path;QSettings().setValue("updates/folder",path);checkLocal();});
         connect(enabled_,&QCheckBox::toggled,this,[](bool on){QSettings().setValue("updates/reminders",on);});
         connect(preview_,&QCheckBox::toggled,this,[](bool on){QSettings().setValue("updates/previews",on);});
         const QFileInfo binary(QCoreApplication::applicationFilePath());size_=binary.size();modified_=binary.lastModified();
@@ -108,7 +109,7 @@ private:
         connect(reply,&QNetworkReply::finished,this,[this,reply,bytes,manual]{
             busy_=false;bytes->append(reply->readAll());
             if(reply->error()!=QNetworkReply::NoError || bytes->size()>1024*1024){
-                if(manual)status_->setText(SC_TR("Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally."));
+                if(manual)status_->setText(SC_TR("Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally."));
                 reply->deleteLater();return;}
             QJsonParseError error;const auto document=QJsonDocument::fromJson(*bytes,&error);
             if(error.error!=QJsonParseError::NoError || !document.isArray()){if(manual)status_->setText(SC_TR("The update response was invalid. No installer was opened."));reply->deleteLater();return;}

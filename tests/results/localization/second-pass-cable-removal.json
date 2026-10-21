@@ -1,0 +1,59 @@
+{
+  "scope": "Shared cable removal confirmation and still-present removal failure",
+  "sourceMessagesPerLocale": 599,
+  "nonEnglishLocales": 33,
+  "unfinishedExtractedEntries": 0,
+  "contextualAIReview": {
+    "status": "reviewed",
+    "notes": [
+      "Confirm/decline semantics avoid assuming Windows Yes/No captions match app language",
+      "Other users and audio software may need the shared virtual driver",
+      "Declining retains cable and removes only SoundCurrent as before",
+      "Conditional restart and retry advice preserved",
+      "Remove Driver stays literal external installer button"
+    ]
+  },
+  "nativeSpeakerVerification": "unverified",
+  "runtimeQualification": {
+    "platform": "Linux Qt offscreen and host PowerShell 7.6.6",
+    "targetedQtTestsPassed": 40,
+    "catalogUnitTestsPassed": 19,
+    "catalogUnitTestsSkipped": 1,
+    "requiredHelperLookupsPassed": 1088,
+    "externalRemoveLabelTests": "accepted exact literal in translated prose; rejected translated, lower-case and duplicated label for both sources",
+    "existingHelperRegressionFixtures": "passed",
+    "actualQuietNoActionAndMissingManagerFaults": "passed fr/ar/nn",
+    "newProductionConfirmationRemovalFailurePathsExecuted": false,
+    "WindowsFormsExecuted": false
+  },
+  "remainingHelperProseCandidates": {
+    "untranslatedCable": 3,
+    "invariantProductNames": 2,
+    "nativeCandidates": 0,
+    "scope": "AST literal heuristic"
+  },
+  "invariants": [
+    "YesNo/Question enum values and non-Yes behavior unchanged",
+    "Driver ownership, presence checks and removal actions unchanged",
+    "Exit statuses unchanged",
+    "Numerical processing and saved state unchanged"
+  ],
+  "wholeInterfaceCoverageProven": false,
+  "WindowsCurrentChangesQualified": false,
+  "newPackagesQualified": false,
+  "VMUsed": false,
+  "remainingScope": [
+    "Cable endpoint readiness and repair bodies",
+    "NSIS installer/uninstaller translations",
+    "Windows current runtime and changed-package lifecycle qualification"
+  ],
+  "evidenceSha256": {
+    "packaging/windows/cable-setup.ps1": "c27d22664882f1c7e3557fc88e374e69ee42360ae7d3b13764e97162cd10a18d",
+    "scripts/localization.py": "3411ec28f72c9586861b9fe596b46de0979e10fda20ae0c63c8cb84c47d870d1",
+    "tests/translation_catalogs.py": "35ca1782dbb23f057957630a67967ec10592ae0b485b23c772380d0e4a788d67",
+    "data/localization/setup-prose-backlog.json": "24b7fddbc6b62b43a8ab47420da129352f1d74e2a17fa0ca1c7e248b8b74ca3f",
+    "tests/results/localization/cable-removal-runtime.log": "f99b917560aba15ae2d65f3d0af58cb5bbb86b82e53847abee143c5d8aa8fc4c",
+    "tests/results/localization/cable-removal-qt.log": "e2f72e35e2993f14515d94f02ff80947100db9f717aed603f20c98c5a075dfa7",
+    "build/soundcurrent-eq": "58dbbdc4ad018064e1c379d019388a1a16505cfd7eeb379406759248d4341107"
+  }
+}

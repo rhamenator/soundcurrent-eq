@@ -1,0 +1,35 @@
+Fixture from soundcurrent-eq-native.nsi
+Processing config: /etc/nsisconf.nsh
+Processing script file: "/tmp/sc-checkbox-nsis-mljvawzp/soundcurrent-eq-native.nsi" (UTF8)
+
+Processed 1 file, writing output (x86-unicode):
+
+Output: "/tmp/sc-checkbox-nsis-mljvawzp/fixture.exe"
+Install: 2 pages (128 bytes), 1 section (1 required) (4120 bytes), 78 instructions (2184 bytes), 84 strings (2410 bytes), 1 language table (242 bytes).
+
+Using zlib compression.
+
+EXE header size:              133120 / 120832 bytes
+Install code:                   1600 / 7500 bytes
+Install data:                   6493 / 14340 bytes
+CRC (0x08332FCD):                  4 / 4 bytes
+
+Total size:                   141217 / 142676 bytes (98.9%)
+
+Fixture from soundcurrent-eq.nsi
+Processing config: /etc/nsisconf.nsh
+Processing script file: "/tmp/sc-checkbox-nsis-mljvawzp/soundcurrent-eq.nsi" (UTF8)
+
+Processed 1 file, writing output (x86-unicode):
+
+Output: "/tmp/sc-checkbox-nsis-mljvawzp/fixture.exe"
+Install: 2 pages (128 bytes), 1 section (1 required) (4120 bytes), 78 instructions (2184 bytes), 84 strings (2406 bytes), 1 language table (242 bytes).
+
+Using zlib compression.
+
+EXE header size:              133120 / 120832 bytes
+Install code:                   1598 / 7496 bytes
+Install data:                   6493 / 14340 bytes
+CRC (0x62716527):                  4 / 4 bytes
+
+Total size:                   141215 / 142672 bytes (98.9%)

@@ -3,194 +3,397 @@
   <context>
     <name>SoundCurrent</name>
     <message>
-      <source>
-Apply this correction to the </source>
-      <translation type="unfinished" />
-    </message>
-    <message>
-      <source>
-Import into your library?</source>
-      <translation type="unfinished" />
-    </message>
-    <message>
       <source> (currently selected)</source>
-      <translation type="unfinished" />
+      <translation> (aktuálne vybrané)</translation>
+    </message>
+    <message>
+      <source> (original; not SS-CS5M2)</source>
+      <translation> (pôvodný model; nie SS-CS5M2)</translation>
+      <extracomment>Display suffix distinguishing the original Sony SS-CS5 from SS-CS5M2. Preserve model identifier literally; it is not a measured response equivalence.</extracomment>
     </message>
     <message>
       <source> (restored selection)</source>
-      <translation type="unfinished" />
+      <translation> (obnovený výber)</translation>
     </message>
     <message>
-      <source> route?</source>
-      <translation type="unfinished" />
+      <source> [custom]</source>
+      <translation> [vlastné]</translation>
+    </message>
+    <message>
+      <source> and </source>
+      <translation> a </translation>
     </message>
     <message>
       <source> · mono</source>
-      <translation type="unfinished" />
+      <translation> · mono</translation>
+    </message>
+    <message>
+      <source> · no USB microphone detected</source>
+      <translation> · nebol zistený žiadny mikrofón USB</translation>
     </message>
     <message>
       <source> · stereo</source>
-      <translation type="unfinished" />
+      <translation> · stereo</translation>
+    </message>
+    <message>
+      <source>%1
+
+Technical details:
+%2</source>
+      <translation>%1
+
+Technické podrobnosti:
+%2</translation>
+    </message>
+    <message>
+      <source>%1
+Directory not found.
+Please verify the correct directory name was given.</source>
+      <translation>%1
+Priečinok nenájdený.
+Prosím overte správnosť zadaného mena priečinku.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+File not found.
+Please verify the correct file name was given.</source>
+      <translation>%1
+Súbor nenájdený.
+Prosím overte správnosť zadaného mena súboru.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1
+The app remains open; your settings have been kept.</source>
+      <translation>%1
+Aplikácia zostáva otvorená; vaše nastavenia boli zachované.</translation>
     </message>
     <message>
       <source>%1 %2%3 dB</source>
-      <translation type="unfinished" />
+      <translation>%1 %2%3 dB</translation>
+    </message>
+    <message>
+      <source>%1 / %2
+%3
+Apply this correction to the %4 route?</source>
+      <translation>%1 / %2
+%3
+Použiť túto korekciu pre signálovú cestu typu %4?</translation>
+    </message>
+    <message>
+      <source>%1 / %2
+%3
+Import into your library?</source>
+      <translation>%1 / %2
+%3
+Importovať do vašej knižnice?</translation>
+    </message>
+    <message>
+      <source>%1 Hz: measured %2%3 dB; suggested %4%5 dB</source>
+      <translation>%1 Hz: namerané %2%3 dB; odporúčané %4%5 dB</translation>
+    </message>
+    <message>
+      <source>%1 Hz: signal %2, background %3</source>
+      <translation>%1 Hz: signál %2, pozadie %3</translation>
+      <extracomment>Debug calibration tone amplitude and background noise amplitude. %1 is frequency, %2 signal amplitude, %3 background amplitude. Display only; no change to numerical analysis.</extracomment>
+    </message>
+    <message>
+      <source>%1 Hz: too quiet to measure</source>
+      <translation>%1 Hz: príliš tiché na meranie</translation>
+    </message>
+    <message>
+      <source>%1 already exists.
+Do you want to replace it?</source>
+      <translation>%1 už existuje.
+Chcete ho nahradiť?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>%1 disconnected. </source>
+      <translation>%1 odpojené. </translation>
+    </message>
+    <message>
+      <source>%1 failed (0x%2)</source>
+      <translation>Operácia zlyhala: %1 (0x%2)</translation>
+    </message>
+    <message>
+      <source>%1 is already running or its instance lock is unavailable</source>
+      <translation>%1 už beží alebo zámok inštancie nie je dostupný</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>%1 is running. Quit it before using SoundCurrent.</source>
+      <translation>%1 je spustený. Pred použitím SoundCurrent ho ukončite.</translation>
+      <extracomment>A recognized competing equalizer process is active. %1 is its opaque executable name; quit that program completely, not merely its window. Preserve SoundCurrent brand and process identity.</extracomment>
+    </message>
+    <message>
+      <source>%1 setup did not finish. %2 itself is installed. Use %3 in the Start menu to retry; see setup details for the reason.</source>
+      <translation>Inštalácia %1 nebola dokončená. Samotná aplikácia %2 je nainštalovaná. Na ďalší pokus použite %3 v ponuke Štart; dôvod nájdete v podrobnostiach inštalácie.</translation>
+      <extracomment>Setup failure dialog after app files/shortcuts copied. %1 = stable driver name; %2 = stable app name; %3 = actual currently English Start-menu shortcut name Audio driver setup (not localized Qt button). Setup failure does not prove existing driver absent. Preserve app installed, Start-menu retry and details for reason. Shortcut display-name localization and upgrade cleanup remain open. AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>%1 setup did not finish. Retry using the Start menu shortcut.</source>
+      <translation>Inštalácia %1 nebola dokončená. Skúste to znova pomocou zástupcu v ponuke Štart.</translation>
+      <extracomment>Nonzero setup exit progress notice, excluding restart-required code 3010. %1 is driver name (SoundCurrent Audio or VB-CABLE). Start-menu shortcut is Audio driver setup. Failure may be installation or update failure; do not imply driver absent. AI review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>%1%2 dB</source>
-      <translation type="unfinished" />
+      <translation>%1%2 dB</translation>
+    </message>
+    <message>
+      <source>'%1' is write protected.
+Do you want to delete it anyway?</source>
+      <translation>'%1' je chránený proti zápisu.
+Chcete ho aj tak zmazať?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>A private user runtime directory is required</source>
+      <translation>Vyžaduje sa súkromný runtime adresár používateľa</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>Abort</source>
+      <translation>Prerušiť</translation>
     </message>
     <message>
       <source>Acoustic</source>
-      <translation type="unfinished" />
+      <translation>Akustický</translation>
     </message>
     <message>
       <source>Active / passive / unknown</source>
-      <translation type="unfinished" />
+      <translation>Aktívny / pasívny / neznámy</translation>
     </message>
     <message>
       <source>Add filter</source>
-      <translation type="unfinished" />
+      <translation>Pridať filter</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
-      <translation type="unfinished" />
+      <translation>Upravte výstup za ekvalizérom v rozsahu −60 až +12 dB. Vyššie zosilnenie môže spôsobiť prebudenie.</translation>
     </message>
     <message>
       <source>Adjust this tone band around the natural voice profile</source>
-      <translation type="unfinished" />
+      <translation>Upravte toto frekvenčné pásmo voči profilu prirodzeného hlasu</translation>
+    </message>
+    <message>
+      <source>Adjustable system-wide equalizer for PipeWire</source>
+      <translation>Nastaviteľný ekvalizér pre celý systém s PipeWire</translation>
+      <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
-      <translation type="unfinished" />
+      <translation>Pokročilé ovládanie zvukových efektov</translation>
     </message>
     <message>
       <source>Air</source>
-      <translation type="unfinished" />
+      <translation>Vzdušnosť</translation>
     </message>
     <message>
       <source>All brands</source>
-      <translation type="unfinished" />
+      <translation>Všetky značky</translation>
     </message>
     <message>
       <source>All equipment</source>
-      <translation type="unfinished" />
+      <translation>Všetky zariadenia</translation>
     </message>
     <message>
       <source>All families</source>
-      <translation type="unfinished" />
+      <translation>Všetky rady</translation>
+    </message>
+    <message>
+      <source>All files (*)</source>
+      <translation>Všetky súbory (*)</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>All manufacturers</source>
-      <translation type="unfinished" />
+      <translation>Všetci výrobcovia</translation>
     </message>
     <message>
       <source>All speaker types</source>
-      <translation type="unfinished" />
+      <translation>Všetky typy reproduktorov</translation>
     </message>
     <message>
       <source>All subtypes</source>
-      <translation type="unfinished" />
+      <translation>Všetky podtypy</translation>
     </message>
     <message>
       <source>Ambience</source>
-      <translation type="unfinished" />
+      <translation>Priestorový dozvuk</translation>
     </message>
     <message>
       <source>Ambience damping</source>
-      <translation type="unfinished" />
+      <translation>Tlmenie priestorového dozvuku</translation>
     </message>
     <message>
       <source>Ambience decay</source>
-      <translation type="unfinished" />
+      <translation>Doba priestorového dozvuku</translation>
     </message>
     <message>
       <source>Amp details</source>
-      <translation type="unfinished" />
+      <translation>Podrobnosti zosilňovača</translation>
+    </message>
+    <message>
+      <source>Amplifier</source>
+      <translation>Zosilňovač</translation>
     </message>
     <message>
       <source>Amplifier / receiver</source>
-      <translation type="unfinished" />
+      <translation>Zosilňovač / receiver</translation>
     </message>
     <message>
       <source>Amplifier model profile</source>
-      <translation type="unfinished" />
+      <translation>Profil modelu zosilňovača</translation>
     </message>
     <message>
       <source>Amplifier profile details</source>
-      <translation type="unfinished" />
+      <translation>Podrobnosti profilu zosilňovača</translation>
     </message>
     <message>
       <source>Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications.</source>
-      <translation type="unfinished" />
+      <translation>Profily zosilňovačov vyžadujú elektrické merania so známou záťažou reproduktorov, vstupom a nastavením tónových korekcií. Importujte súbor s nameranou korekciou; krivky zosilňovačov sa neodvodzujú z marketingových špecifikácií.</translation>
     </message>
     <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
-      <translation type="unfinished" />
+      <translation>Bola nainštalovaná aktualizácia aplikácie. Použite Ukončiť a aplikáciu znovu otvorte, aby sa aktualizácia načítala; zatvorením tohto okna zostane stará verzia spustená.</translation>
+    </message>
+    <message>
+      <source>Another SoundCurrent EQ sink is already running</source>
+      <translation>Iný výstup SoundCurrent EQ je už spustený</translation>
     </message>
     <message>
       <source>Another SoundCurrent app or audio driver setup is running. Quit it before opening this app.</source>
-      <translation type="unfinished" />
+      <translation>Je spustená iná aplikácia SoundCurrent alebo inštalácia zvukového ovládača. Pred otvorením tejto aplikácie ju ukončite.</translation>
     </message>
     <message>
       <source>Another SoundCurrent equalizer is running. Quit EQ or Studio before opening the other app.</source>
-      <translation type="unfinished" />
+      <translation>Je spustený iný ekvalizér SoundCurrent. Pred otvorením druhej aplikácie ukončite EQ alebo Studio.</translation>
     </message>
     <message>
-      <source>Another equalizer route is present: </source>
-      <translation type="unfinished" />
+      <source>Another SoundCurrent microphone filter is running</source>
+      <translation>Je spustený iný mikrofónový filter SoundCurrent</translation>
+    </message>
+    <message>
+      <source>Another equalizer route is present: %1. Quit it before using SoundCurrent.</source>
+      <translation>Je prítomná signálová cesta iného ekvalizéra: %1. Pred použitím SoundCurrent ho ukončite.</translation>
     </message>
     <message>
       <source>Application update</source>
-      <translation type="unfinished" />
+      <translation>Aktualizácia aplikácie</translation>
     </message>
     <message>
       <source>Application updates</source>
-      <translation type="unfinished" />
+      <translation>Aktualizácie aplikácie</translation>
+    </message>
+    <message>
+      <source>Apply</source>
+      <translation>Použiť</translation>
+    </message>
+    <message>
+      <source>Apply amplifier correction?</source>
+      <translation>Použiť korekciu zosilňovača?</translation>
+      <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
     </message>
     <message>
       <source>Apply correction?</source>
-      <translation type="unfinished" />
+      <translation>Použiť korekciu?</translation>
+    </message>
+    <message>
+      <source>Apply only if these conditions match your system.</source>
+      <translation>Použite iba vtedy, ak tieto podmienky zodpovedajú vášmu systému.</translation>
+      <extracomment>Only apply measured amplifier EQ correction if the measurement setup matches the user’s actual equipment. This prevents using a load-dependent curve indiscriminately.</extracomment>
+    </message>
+    <message>
+      <source>Apply profile</source>
+      <translation>Použiť profil</translation>
+    </message>
+    <message>
+      <source>Apply suggested EQ</source>
+      <translation>Použiť odporúčané nastavenie EQ</translation>
+    </message>
+    <message>
+      <source>Are you sure you want to delete '%1'?</source>
+      <translation>Naozaj chcete zmazať '%1'?</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Audio bridge did not start</source>
+      <translation>Zvukový most sa nespustil</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
-      <translation type="unfinished" />
+      <translation>Inštalácia zvukového ovládača</translation>
+    </message>
+    <message>
+      <source>Audio driver setup completed. Restart Windows before using SoundCurrent.</source>
+      <translation>Nastavenie zvukového ovládača je dokončené. Pred použitím SoundCurrent reštartujte systém Windows.</translation>
+    </message>
+    <message>
+      <source>Audio driver setup did not finish: %1</source>
+      <translation>Nastavenie zvukového ovládača nebolo dokončené: %1</translation>
     </message>
     <message>
       <source>Audio error: %1</source>
-      <translation type="unfinished" />
+      <translation>Chyba zvuku: %1</translation>
+    </message>
+    <message>
+      <source>Audio recovery helper</source>
+      <translation>Pomocník obnovy zvuku</translation>
+    </message>
+    <message>
+      <source>Audio route recovery helper could not start. Repair or reinstall SoundCurrent.</source>
+      <translation>Pomocný program na obnovenie zvukovej trasy sa nepodarilo spustiť. Opravte alebo preinštalujte SoundCurrent.</translation>
     </message>
     <message>
       <source>Audio setup</source>
-      <translation type="unfinished" />
+      <translation>Nastavenie zvuku</translation>
     </message>
     <message>
       <source>Audio setup could not finish</source>
-      <translation type="unfinished" />
+      <translation>Nastavenie zvuku sa nepodarilo dokončiť</translation>
+    </message>
+    <message>
+      <source>Audio setup failed. Restart Windows if VB-CABLE was just installed, then try again.</source>
+      <translation>Nastavenie zvuku zlyhalo. Ak bol práve nainštalovaný VB-CABLE, reštartujte Windows a skúste to znovu.</translation>
+    </message>
+    <message>
+      <source>Audio setup is missing. Repair or reinstall SoundCurrent.</source>
+      <translation>Chýba nástroj na nastavenie zvuku. Opravte inštaláciu SoundCurrent alebo ho znovu nainštalujte.</translation>
     </message>
     <message>
       <source>Audio setup is running. Processing is paused; the app remains open.</source>
-      <translation type="unfinished" />
+      <translation>Prebieha nastavenie zvuku. Spracovanie je pozastavené; aplikácia zostáva otvorená.</translation>
     </message>
     <message>
       <source>Auto headroom %1 dB</source>
-      <translation type="unfinished" />
+      <translation>Automatická rezerva %1 dB</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
-      <translation type="unfinished" />
+      <translation>Automaticky (SoundCurrent Microphone)</translation>
     </message>
     <message>
       <source>Automatic (follow connected devices)</source>
-      <translation type="unfinished" />
+      <translation>Automaticky (podľa pripojených zariadení)</translation>
     </message>
     <message>
       <source>Automatic (follow connected microphones)</source>
-      <translation type="unfinished" />
+      <translation>Automaticky (podľa pripojených mikrofónov)</translation>
+    </message>
+    <message>
+      <source>Automatic audio routing unavailable</source>
+      <translation>Automatické smerovanie zvuku nie je dostupné</translation>
     </message>
     <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Automaticky upraviť zvuk pripojeného mikrofónu; kliknutím obídete mikrofónový EQ</translation>
+    </message>
+    <message>
+      <source>Back</source>
+      <translation>Späť</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Balance</source>
@@ -199,15 +402,15 @@ Import into your library?</source>
     </message>
     <message>
       <source>Balance position</source>
-      <translation type="unfinished" />
+      <translation>Poloha vyváženia</translation>
     </message>
     <message>
       <source>Balanced</source>
-      <translation type="unfinished" />
+      <translation>Vyvážený</translation>
     </message>
     <message>
       <source>Band %1 gain</source>
-      <translation type="unfinished" />
+      <translation>Zosilnenie pásma %1</translation>
     </message>
     <message>
       <source>Bands</source>
@@ -216,211 +419,511 @@ Import into your library?</source>
     </message>
     <message>
       <source>Bars beside the sliders show estimated post-EQ levels. Red peak text warns of possible clipping.</source>
-      <translation type="unfinished" />
+      <translation>Ukazovatele vedľa posuvníkov zobrazujú odhadované úrovne za EQ. Červený text špičiek upozorňuje na možné prebudenie.</translation>
     </message>
     <message>
       <source>Bass Boost</source>
-      <translation>Zosilnenie basov</translation>
+      <translation>Zvýraznenie basov</translation>
     </message>
     <message>
       <source>Bass Cut</source>
-      <translation type="unfinished" />
+      <translation>Potlačenie basov</translation>
     </message>
     <message>
       <source>Bass adds low-frequency weight; Clarity adds high-frequency detail; Ambience adds room reflections; Surround widens stereo; Dynamic Boost compresses and raises quieter material with a peak ceiling. Boosting can increase output level.</source>
-      <translation type="unfinished" />
+      <translation>Basy dodávajú váhu nízkym frekvenciám; Zreteľnosť pridáva detaily vo vysokých frekvenciách; Priestorový dozvuk pridáva odrazy miestnosti; Surround rozširuje stereo; Dynamické zosilnenie komprimuje a zosilňuje tichší materiál s obmedzením špičiek. Zosilnenie môže zvýšiť výstupnú úroveň.</translation>
     </message>
     <message>
       <source>Bass frequency</source>
-      <translation type="unfinished" />
+      <translation>Frekvencia basov</translation>
+    </message>
+    <message>
+      <source>Bookshelf speaker</source>
+      <translation>Regálový reproduktor</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Boxiness</source>
-      <translation type="unfinished" />
+      <translation>Krabicový zvuk</translation>
     </message>
     <message>
       <source>Brand</source>
-      <translation type="unfinished" />
+      <translation>Značka</translation>
+    </message>
+    <message>
+      <source>Brand, family and model are required (maximum 120 characters each).</source>
+      <translation>Značka, rad a model sú povinné (každý údaj môže mať najviac 120 znakov).</translation>
     </message>
     <message>
       <source>Bright</source>
-      <translation type="unfinished" />
+      <translation>Jasný</translation>
     </message>
     <message>
       <source>Browse all equipment profiles / editor</source>
-      <translation type="unfinished" />
+      <translation>Prehliadať všetky profily zariadení / editor</translation>
+    </message>
+    <message>
+      <source>Cable packet exceeds its capture buffer</source>
+      <translation>Paket kábla prekračuje kapacitu zachytávacieho buffera</translation>
+    </message>
+    <message>
+      <source>Cable recording endpoint does not support shared 48 kHz stereo float audio</source>
+      <translation>Nahrávací koncový bod virtuálneho kábla nepodporuje stereofónny zvuk 48 kHz vo formáte s pohyblivou rádovou čiarkou v zdieľanom režime</translation>
     </message>
     <message>
       <source>Calibration test signal</source>
-      <translation type="unfinished" />
+      <translation>Kalibračný testovací signál</translation>
     </message>
     <message>
       <source>Calibration tone level</source>
-      <translation type="unfinished" />
+      <translation>Úroveň kalibračného tónu</translation>
+    </message>
+    <message>
+      <source>Cancel</source>
+      <translation>Zrušiť</translation>
     </message>
     <message>
       <source>Cannot acquire the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Nemožno získať zámok zdieľanej relácie SoundCurrent.</translation>
     </message>
     <message>
       <source>Cannot create amplifier profile folder.</source>
-      <translation type="unfinished" />
+      <translation>Nemožno vytvoriť priečinok profilov zosilňovača.</translation>
+    </message>
+    <message>
+      <source>Cannot create profile folder.</source>
+      <translation>Nemožno vytvoriť priečinok profilov.</translation>
     </message>
     <message>
       <source>Cannot create the shared SoundCurrent session guard.</source>
-      <translation type="unfinished" />
+      <translation>Nemožno vytvoriť zámok zdieľanej relácie SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>Cannot create user settings directory</source>
+      <translation>Nemožno vytvoriť adresár používateľských nastavení</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
     </message>
     <message>
       <source>Cannot finish inspecting running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Nemožno dokončiť kontrolu spustených ekvalizérov; SoundCurrent spracovanie nezapne.</translation>
     </message>
     <message>
       <source>Cannot finish saving amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Nemožno dokončiť uloženie profilu zosilňovača.</translation>
+    </message>
+    <message>
+      <source>Cannot finish saving profile library.</source>
+      <translation>Nemožno dokončiť uloženie knižnice profilov.</translation>
     </message>
     <message>
       <source>Cannot inspect running equalizers; SoundCurrent will not enable processing.</source>
-      <translation type="unfinished" />
+      <translation>Nemožno skontrolovať spustené ekvalizéry; SoundCurrent spracovanie nezapne.</translation>
+    </message>
+    <message>
+      <source>Cannot read profile library.</source>
+      <translation>Nemožno prečítať knižnicu profilov.</translation>
+    </message>
+    <message>
+      <source>Cannot read profile or file exceeds 1 MiB.</source>
+      <translation>Nemožno prečítať profil alebo súbor presahuje 1 MiB.</translation>
+    </message>
+    <message>
+      <source>Cannot read response or file exceeds 1 MiB.</source>
+      <translation>Nemožno prečítať frekvenčnú odozvu alebo súbor presahuje 1 MiB.</translation>
     </message>
     <message>
       <source>Cannot save amplifier profile.</source>
-      <translation type="unfinished" />
+      <translation>Nemožno uložiť profil zosilňovača.</translation>
+    </message>
+    <message>
+      <source>Cannot save profile library.</source>
+      <translation>Nemožno uložiť knižnicu profilov.</translation>
     </message>
     <message>
       <source>Cannot save profile.</source>
-      <translation type="unfinished" />
+      <translation>Nemožno uložiť profil.</translation>
     </message>
     <message>
       <source>Cannot start measurement: %1</source>
-      <translation type="unfinished" />
+      <translation>Nemožno spustiť meranie: %1</translation>
+    </message>
+    <message>
+      <source>Capture bytes: %1, noise bytes: %2</source>
+      <translation>Zachytené bajty: %1, bajty šumu: %2</translation>
+      <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
       <source>Center</source>
-      <translation type="unfinished" />
+      <translation>Stred</translation>
+    </message>
+    <message>
+      <source>Center speaker</source>
+      <translation>Centrálny reproduktor</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Change default audio endpoint</source>
+      <translation>Zmeniť predvolené zvukové zariadenie</translation>
+    </message>
+    <message>
+      <source>Change to detail view mode</source>
+      <translation>Zmeniť do režimu zobrazenia detailov</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Change to list view mode</source>
+      <translation>Zmeniť do režimu zobrazenia zoznamu</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Check for updates</source>
-      <translation>Vyhľadať aktualizácie</translation>
+      <translation>Skontrolovať aktualizácie</translation>
+    </message>
+    <message>
+      <source>Checking %1 Hz</source>
+      <translation>Kontrola %1 Hz</translation>
+      <extracomment>Calibration worker progress for a single test frequency. %1 is a locale-formatted frequency; Hz is the physical unit.</extracomment>
     </message>
     <message>
       <source>Checking for published updates…</source>
-      <translation type="unfinished" />
+      <translation>Kontrola vydaných aktualizácií…</translation>
     </message>
     <message>
       <source>Checks published releases and downloaded installers. No update is installed automatically.</source>
-      <translation type="unfinished" />
+      <translation>Kontroluje vydané verzie a stiahnuté inštalátory. Žiadna aktualizácia sa neinštaluje automaticky.</translation>
+    </message>
+    <message>
+      <source>Choose</source>
+      <translation>Vybrať</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Choose a name that is not a built-in preset.</source>
-      <translation type="unfinished" />
+      <translation>Zvoľte názov, ktorý nepatrí vstavanej predvoľbe.</translation>
+    </message>
+    <message>
+      <source>Choose one audio setup action.</source>
+      <translation>Vyberte práve jednu akciu nastavenia zvuku.</translation>
+      <extracomment>Exactly one helper action switch must be selected; this is action validation, not an audio-device choice.</extracomment>
     </message>
     <message>
       <source>Choose update folder…</source>
-      <translation type="unfinished" />
+      <translation>Vybrať priečinok aktualizácií…</translation>
+    </message>
+    <message>
+      <source>Cinema speaker</source>
+      <translation>Kinový reproduktor</translation>
+      <extracomment>Speaker for cinema sound reproduction, not a film file or video player.</extracomment>
     </message>
     <message>
       <source>Clarity</source>
-      <translation type="unfinished" />
+      <translation>Zreteľnosť</translation>
     </message>
     <message>
       <source>Clarity frequency</source>
-      <translation type="unfinished" />
+      <translation>Frekvencia zreteľnosti</translation>
     </message>
     <message>
       <source>Classical</source>
-      <translation type="unfinished" />
+      <translation>Klasická hudba</translation>
     </message>
     <message>
       <source>Clear Voice</source>
-      <translation type="unfinished" />
+      <translation>Čistý hlas</translation>
     </message>
     <message>
       <source>Clear imported equipment corrections</source>
-      <translation type="unfinished" />
+      <translation>Vymazať importované korekcie zariadení</translation>
     </message>
     <message>
       <source>Click to turn the equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Kliknutím zapnete alebo vypnete ekvalizér</translation>
     </message>
     <message>
       <source>Clipping risk · estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Riziko prebudenia · odhadovaná špička %1 dBFS</translation>
+    </message>
+    <message>
+      <source>Close</source>
+      <translation>Zavrieť</translation>
+    </message>
+    <message>
+      <source>Column speaker</source>
+      <translation>Stĺpový reproduktor na ozvučenie</translation>
+      <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
+    </message>
+    <message>
+      <source>Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2</source>
+      <translation>Spoločná odozva reproduktorov/zosilňovača/mikrofónu/miestnosti; nejde o samostatné meranie zariadenia. %1 / %2</translation>
+      <extracomment>New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.</extracomment>
     </message>
     <message>
       <source>Conditions</source>
-      <translation type="unfinished" />
+      <translation>Podmienky</translation>
     </message>
     <message>
       <source>Connect an output and a microphone before measuring.</source>
-      <translation type="unfinished" />
+      <translation>Pred meraním pripojte výstup a mikrofón.</translation>
+    </message>
+    <message>
+      <source>Connect your audio</source>
+      <translation>Pripojenie zvuku</translation>
+    </message>
+    <message>
+      <source>Constant-beamwidth speaker</source>
+      <translation>Reproduktor s konštantnou šírkou vyžarovacieho zväzku</translation>
+      <extracomment>Constant angular acoustic coverage/beam width across frequency; not constant bandwidth or frequency response. CBT examples verified with official JBL documentation.</extracomment>
+    </message>
+    <message>
+      <source>Copy</source>
+      <translation>Kopírovať</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Correction filters:</source>
+      <translation>Korekčné filtre:</translation>
+      <extracomment>Heading for the actual bounded EQ correction filters in the imported profile; JSON identifiers below remain unchanged.</extracomment>
     </message>
     <message>
       <source>Correction profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Profil korekcie (*.json)</translation>
+    </message>
+    <message>
+      <source>Could not create a private test folder</source>
+      <translation>Nepodarilo sa vytvoriť súkromný testovací priečinok</translation>
+    </message>
+    <message>
+      <source>Could not create microphone configuration folder</source>
+      <translation>Nepodarilo sa vytvoriť priečinok konfigurácie mikrofónu</translation>
     </message>
     <message>
       <source>Could not create preset folder.</source>
-      <translation type="unfinished" />
+      <translation>Nepodarilo sa vytvoriť priečinok predvolieb.</translation>
+    </message>
+    <message>
+      <source>Could not create quiet frequency sweep</source>
+      <translation>Nepodarilo sa vytvoriť tichý signál s plynulou zmenou frekvencie</translation>
+    </message>
+    <message>
+      <source>Could not create temporary audio configuration</source>
+      <translation>Nepodarilo sa vytvoriť dočasnú konfiguráciu zvuku</translation>
+    </message>
+    <message>
+      <source>Could not create test tone</source>
+      <translation>Nepodarilo sa vytvoriť testovací tón</translation>
+    </message>
+    <message>
+      <source>Could not create the local activation socket for %1: %2</source>
+      <translation>Nemožno vytvoriť miestny aktivačný socket pre %1: %2</translation>
+      <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
+    </message>
+    <message>
+      <source>Could not delete directory.</source>
+      <translation>Priečinok sa nedá zmazať.</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Could not finish saving preset.</source>
-      <translation type="unfinished" />
+      <translation>Nepodarilo sa dokončiť uloženie predvoľby.</translation>
+    </message>
+    <message>
+      <source>Could not initialize Windows audio COM</source>
+      <translation>Nie je možné inicializovať COM pre zvuk Windows</translation>
+    </message>
+    <message>
+      <source>Could not open test waveform</source>
+      <translation>Nepodarilo sa otvoriť testovací zvukový súbor</translation>
+    </message>
+    <message>
+      <source>Could not play quiet test audio</source>
+      <translation>Nepodarilo sa prehrať tichý testovací zvuk</translation>
+    </message>
+    <message>
+      <source>Could not play test audio through the selected output</source>
+      <translation>Nepodarilo sa prehrať testovací zvuk cez vybraný výstup</translation>
+    </message>
+    <message>
+      <source>Could not read output volume</source>
+      <translation>Nepodarilo sa prečítať výstupnú hlasitosť</translation>
+    </message>
+    <message>
+      <source>Could not run %1</source>
+      <translation>Nepodarilo sa spustiť %1</translation>
     </message>
     <message>
       <source>Could not save preset.</source>
-      <translation type="unfinished" />
+      <translation>Nepodarilo sa uložiť predvoľbu.</translation>
+    </message>
+    <message>
+      <source>Could not start PipeWire filter</source>
+      <translation>Nepodarilo sa spustiť filter PipeWire</translation>
+    </message>
+    <message>
+      <source>Could not start audio setup: %1. The app remains open.</source>
+      <translation>Nepodarilo sa spustiť nastavenie zvuku: %1. Aplikácia zostáva otvorená.</translation>
+    </message>
+    <message>
+      <source>Could not start microphone capture</source>
+      <translation>Nepodarilo sa spustiť záznam z mikrofónu</translation>
+    </message>
+    <message>
+      <source>Could not start microphone filter</source>
+      <translation>Nepodarilo sa spustiť mikrofónový filter</translation>
+    </message>
+    <message>
+      <source>Could not start output volume safety guard</source>
+      <translation>Nepodarilo sa spustiť bezpečnostnú kontrolu výstupnej hlasitosti</translation>
     </message>
     <message>
       <source>Could not start the measurement.</source>
-      <translation type="unfinished" />
+      <translation>Nepodarilo sa spustiť meranie.</translation>
+    </message>
+    <message>
+      <source>Could not update startup settings.</source>
+      <translation>Nepodarilo sa aktualizovať nastavenia spúšťania.</translation>
+    </message>
+    <message>
+      <source>Could not write frequency sweep</source>
+      <translation>Nepodarilo sa zapísať signál s plynulou zmenou frekvencie</translation>
+    </message>
+    <message>
+      <source>Could not write microphone configuration</source>
+      <translation>Nepodarilo sa zapísať konfiguráciu mikrofónu</translation>
+    </message>
+    <message>
+      <source>Could not write temporary audio configuration</source>
+      <translation>Nepodarilo sa zapísať dočasnú konfiguráciu zvuku</translation>
+    </message>
+    <message>
+      <source>Could not write test tone</source>
+      <translation>Nepodarilo sa zapísať testovací tón</translation>
+    </message>
+    <message>
+      <source>Count audio endpoints</source>
+      <translation>Spočítať zvukové zariadenia</translation>
+    </message>
+    <message>
+      <source>Create a New Folder</source>
+      <translation>Vytvoriť nová priečinok</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Create new folder</source>
+      <translation>Vytvoriť nový priečinok</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Create profile</source>
+      <translation>Vytvoriť profil</translation>
     </message>
     <message>
       <source>Current EQ kept.</source>
-      <translation type="unfinished" />
+      <translation>Súčasné nastavenie EQ zachované.</translation>
     </message>
     <message>
       <source>Custom</source>
-      <translation>Vlastný</translation>
+      <translation>Vlastné</translation>
+    </message>
+    <message>
+      <source>Custom copy of %1</source>
+      <translation>Vlastná kópia %1</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>Cut</source>
+      <translation>Vystrihnúť</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Dance</source>
-      <translation type="unfinished" />
+      <translation>Tanečná hudba</translation>
+    </message>
+    <message>
+      <source>Date modified</source>
+      <translation>Dátum úpravy</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Deep Bass</source>
-      <translation type="unfinished" />
+      <translation>Hlboké basy</translation>
+    </message>
+    <message>
+      <source>Delete</source>
+      <translation>Odstrániť</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Detail view</source>
+      <translation>Detaily</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directories</source>
+      <translation>Priečinky</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Directory:</source>
+      <translation>Priečinok:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Discard</source>
+      <translation>Zahodiť</translation>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
-      <translation type="unfinished" />
+      <translation>Presúvajte body krivky alebo dolaďte vybrané pásmo nižšie.</translation>
+    </message>
+    <message>
+      <source>Drain test playback</source>
+      <translation>Vyprázdniť buffer testovacieho prehrávania</translation>
+    </message>
+    <message>
+      <source>Drive</source>
+      <translation>Jednotka</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Driver setup failed (code %1). No Windows security settings were changed.</source>
+      <translation>Nastavenie ovládača zlyhalo (kód %1). Žiadne nastavenia zabezpečenia systému Windows neboli zmenené.</translation>
+    </message>
+    <message>
+      <source>Duplicate Studio route</source>
+      <translation>Duplicitné zvukové prepojenie Studio</translation>
+      <extracomment>Same input/output routing edge appears more than once; not duplicated media or road route.</extracomment>
     </message>
     <message>
       <source>Dynamic Boost</source>
-      <translation type="unfinished" />
+      <translation>Dynamické zosilnenie</translation>
     </message>
     <message>
       <source>Dynamics attack</source>
-      <translation type="unfinished" />
+      <translation>Doba nábehu kompresora</translation>
     </message>
     <message>
       <source>Dynamics ceiling</source>
-      <translation type="unfinished" />
+      <translation>Limit špičiek kompresora</translation>
     </message>
     <message>
       <source>Dynamics makeup</source>
-      <translation type="unfinished" />
+      <translation>Výstupné dorovnanie kompresora</translation>
     </message>
     <message>
       <source>Dynamics ratio</source>
-      <translation type="unfinished" />
+      <translation>Kompresný pomer</translation>
     </message>
     <message>
       <source>Dynamics release</source>
-      <translation type="unfinished" />
+      <translation>Doba návratu kompresora</translation>
     </message>
     <message>
       <source>Dynamics threshold</source>
-      <translation type="unfinished" />
+      <translation>Prah kompresora</translation>
+    </message>
+    <message>
+      <source>Edit / save copy</source>
+      <translation>Upraviť / uložiť kópiu</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -428,7 +931,20 @@ Import into your library?</source>
     </message>
     <message>
       <source>Electronic</source>
-      <translation type="unfinished" />
+      <translation>Elektronická hudba</translation>
+    </message>
+    <message>
+      <source>Enhancements outside supported ranges</source>
+      <translation>Vylepšenia zvuku mimo podporovaných rozsahov</translation>
+      <extracomment>Enhancement values fail the supported range validation; not frequency coverage or wireless range.</extracomment>
+    </message>
+    <message>
+      <source>Enumerate audio devices</source>
+      <translation>Vymenovať zvukové zariadenia</translation>
+    </message>
+    <message>
+      <source>Enumerate endpoints</source>
+      <translation>Vymenovať zariadenia</translation>
     </message>
     <message>
       <source>Equalizer</source>
@@ -437,132 +953,222 @@ Import into your library?</source>
     </message>
     <message>
       <source>Equalizer and configuration pages</source>
-      <translation type="unfinished" />
+      <translation>Stránky ekvalizéra a nastavenia</translation>
+    </message>
+    <message>
+      <source>Equalizer conflict</source>
+      <translation>Konflikt medzi ekvalizérmi</translation>
+      <extracomment>Warning title when another equalizer or processing owner conflicts with this app. It is a software routing/ownership conflict, not clipping or a bad acoustic measurement.</extracomment>
     </message>
     <message>
       <source>Equalizer curve. Select a point or drag it to adjust frequency and gain.</source>
-      <translation type="unfinished" />
+      <translation>Krivka ekvalizéra. Vyberte bod alebo ho presuňte a upravte frekvenciu a zosilnenie.</translation>
     </message>
     <message>
       <source>Equalizer is off. Windows selected the physical output directly.</source>
-      <translation type="unfinished" />
+      <translation>Ekvalizér je vypnutý. Windows vybral priamo fyzický výstup.</translation>
     </message>
     <message>
       <source>Equalizer is off. Your audio uses its normal output.</source>
-      <translation type="unfinished" />
+      <translation>Ekvalizér je vypnutý. Zvuk používa bežný výstup.</translation>
     </message>
     <message>
       <source>Equalizer is still running. Use the tray icon to reopen or quit.</source>
-      <translation type="unfinished" />
+      <translation>Ekvalizér stále beží. Pomocou ikony v oblasti oznámení ho znovu otvorte alebo ukončite.</translation>
     </message>
     <message>
       <source>Equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Ekvalizér vypnutý</translation>
     </message>
     <message>
       <source>Equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Ekvalizér zapnutý</translation>
     </message>
     <message>
       <source>Equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Zapnutie alebo vypnutie ekvalizéra</translation>
+    </message>
+    <message>
+      <source>Equalizer sink disappeared</source>
+      <translation>Výstup ekvalizéra zmizol</translation>
     </message>
     <message>
       <source>Equipment brand</source>
-      <translation type="unfinished" />
+      <translation>Značka zariadenia</translation>
     </message>
     <message>
       <source>Equipment family</source>
-      <translation type="unfinished" />
+      <translation>Rad zariadenia</translation>
+    </message>
+    <message>
+      <source>Equipment kind must be speaker, microphone or amplifier.</source>
+      <translation>Druh zariadenia musí byť reproduktor, mikrofón alebo zosilňovač.</translation>
     </message>
     <message>
       <source>Equipment profile (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Profil zariadenia (*.json)</translation>
+    </message>
+    <message>
+      <source>Equipment profile editor</source>
+      <translation>Editor profilov zariadení</translation>
     </message>
     <message>
       <source>Equipment profiles (*.json)</source>
-      <translation type="unfinished" />
+      <translation>Profily zariadení (*.json)</translation>
     </message>
     <message>
       <source>Equipment profiles by brand family and model</source>
-      <translation type="unfinished" />
+      <translation>Profily zariadení podľa značky, radu a modelu</translation>
+    </message>
+    <message>
+      <source>Equipment profiles — brand / family / model</source>
+      <translation>Profily zariadení — značka / rad / model</translation>
+    </message>
+    <message>
+      <source>Equipment resource missing.</source>
+      <translation>Chýba zdrojový súbor zariadení.</translation>
     </message>
     <message>
       <source>Equipment subtype</source>
-      <translation type="unfinished" />
+      <translation>Podtyp zariadenia</translation>
     </message>
     <message>
       <source>Equipment type</source>
-      <translation type="unfinished" />
+      <translation>Typ zariadenia</translation>
     </message>
     <message>
       <source>Estimated output level near band %1</source>
-      <translation type="unfinished" />
+      <translation>Odhadovaná výstupná úroveň v okolí pásma %1</translation>
     </message>
     <message>
       <source>Estimated output near %1: %2 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Odhadovaný výstup v okolí %1: %2 dBFS</translation>
     </message>
     <message>
       <source>Estimated output peak and clipping risk</source>
-      <translation type="unfinished" />
+      <translation>Odhadovaná výstupná špička a riziko prebudenia</translation>
     </message>
     <message>
       <source>Estimated overall output level</source>
-      <translation type="unfinished" />
+      <translation>Odhadovaná celková výstupná úroveň</translation>
     </message>
     <message>
       <source>Estimated overall output peak: %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Odhadovaná celková výstupná špička: %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak %1 dBFS</source>
-      <translation type="unfinished" />
+      <translation>Odhadovaná špička %1 dBFS</translation>
     </message>
     <message>
       <source>Estimated peak: EQ off</source>
-      <translation type="unfinished" />
+      <translation>Odhadovaná špička: EQ vypnutý</translation>
     </message>
     <message>
       <source>Estimated peak: waiting for audio</source>
-      <translation type="unfinished" />
+      <translation>Odhadovaná špička: čakanie na zvuk</translation>
     </message>
     <message>
       <source>Estimated post-EQ level near this frequency</source>
-      <translation type="unfinished" />
+      <translation>Odhadovaná úroveň za EQ v okolí tejto frekvencie</translation>
     </message>
     <message>
       <source>Estimated post-EQ output peak, including post gain and balance</source>
-      <translation type="unfinished" />
+      <translation>Odhadovaná výstupná špička za EQ vrátane výstupného zosilnenia a vyváženia</translation>
     </message>
     <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
-      <translation type="unfinished" />
+      <translation>Ukončiť SoundCurrent EQ a obnoviť bežný zvuk</translation>
     </message>
     <message>
       <source>Expanded test language</source>
-      <translation type="unfinished" />
+      <translation>Rozšírený testovací jazyk</translation>
+    </message>
+    <message>
+      <source>Expected a JSON equipment profile. Import response text using the response import button.</source>
+      <translation>Očakáva sa profil zariadenia vo formáte JSON. Text frekvenčnej odozvy importujte tlačidlom na import odozvy.</translation>
+    </message>
+    <message>
+      <source>Expected frequency Hz and relative measured response dB on every data line.</source>
+      <translation>Na každom dátovom riadku sa očakáva frekvencia v Hz a relatívna nameraná odozva v dB.</translation>
     </message>
     <message>
       <source>Export</source>
-      <translation type="unfinished" />
+      <translation>Exportovať</translation>
+    </message>
+    <message>
+      <source>Export JSON</source>
+      <translation>Exportovať JSON</translation>
     </message>
     <message>
       <source>Export profile</source>
-      <translation type="unfinished" />
+      <translation>Exportovať profil</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
-      <translation type="unfinished" />
+      <translation>Kroky v hrách FPS</translation>
     </message>
     <message>
       <source>Family</source>
-      <translation type="unfinished" />
+      <translation>Rad</translation>
+    </message>
+    <message>
+      <source>File</source>
+      <translation>Súbor</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>File name:</source>
+      <translation>Názov súboru:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files</source>
+      <translation>Súbory</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Files of type:</source>
+      <translation>Súbory typu:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Filter Q</source>
+      <translation>Činiteľ akosti filtra Q</translation>
+      <extracomment>Dimensionless quality factor controlling filter sharpness: higher Q produces a narrower peak. Not a bandwidth in Hz. Stable processing parameter remains q.</extracomment>
+    </message>
+    <message>
+      <source>Filter values must be numbers.</source>
+      <translation>Hodnoty filtra musia byť čísla.</translation>
+    </message>
+    <message>
+      <source>Filters exceed frequency, gain or Q limits.</source>
+      <translation>Filtre prekračujú povolené rozsahy frekvencie, zosilnenia alebo Q.</translation>
+    </message>
+    <message>
+      <source>Find directory</source>
+      <translation>Nájsť priečinok</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Flat</source>
       <extracomment>Preset with zero equalizer gain at every frequency. Not an apartment; does not imply muted audio.</extracomment>
-      <translation>Rovný</translation>
+      <translation>Rovná charakteristika</translation>
+    </message>
+    <message>
+      <source>Floorstanding speaker</source>
+      <translation>Stĺpový reproduktor</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
+    </message>
+    <message>
+      <source>Folder</source>
+      <translation>Priečinok</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Forward</source>
+      <translation>Vpred</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Frequency</source>
@@ -570,11 +1176,11 @@ Import into your library?</source>
     </message>
     <message>
       <source>Frequency Hz</source>
-      <translation type="unfinished" />
+      <translation>Frekvencia v Hz</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
-      <translation type="unfinished" />
+      <translation>Efekty predných kanálov L/R (podporované aj mono); ostatné kanály si zachovajú vlastné efekty Studio. Nulové hodnoty obchádzajú jednotlivé efekty.</translation>
     </message>
     <message>
       <source>Gain</source>
@@ -583,108 +1189,323 @@ Import into your library?</source>
     </message>
     <message>
       <source>Gain dB</source>
-      <translation type="unfinished" />
+      <translation>Zosilnenie v dB</translation>
     </message>
     <message>
       <source>Gaming</source>
-      <translation type="unfinished" />
+      <translation>Hry</translation>
+    </message>
+    <message>
+      <source>Go back</source>
+      <translation>Ísť späť</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go forward</source>
+      <translation>Ísť vpred</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Go to the parent directory</source>
+      <translation>Ísť do nadradeného priečinka</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Headphones</source>
-      <translation type="unfinished" />
+      <translation>Slúchadlá</translation>
+    </message>
+    <message>
+      <source>Help</source>
+      <translation>Pomocník</translation>
     </message>
     <message>
       <source>Hide advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Skryť pokročilé ovládanie</translation>
+    </message>
+    <message>
+      <source>High-shelf filter</source>
+      <translation>Horný policový filter</translation>
+      <extracomment>Shelving EQ: raise/lower the high-frequency region. Do not translate as high-pass; it is not a cutoff filter.</extracomment>
     </message>
     <message>
       <source>Hip-Hop</source>
-      <translation type="unfinished" />
+      <translation>Hip-Hop</translation>
+    </message>
+    <message>
+      <source>Ignore</source>
+      <translation>Ignorovať</translation>
     </message>
     <message>
       <source>Import</source>
-      <translation type="unfinished" />
+      <translation>Importovať</translation>
+    </message>
+    <message>
+      <source>Import JSON</source>
+      <translation>Importovať JSON</translation>
     </message>
     <message>
       <source>Import create and edit equipment profiles</source>
-      <translation type="unfinished" />
+      <translation>Importovať, vytvárať a upravovať profily zariadení</translation>
     </message>
     <message>
       <source>Import equipment profile</source>
-      <translation type="unfinished" />
+      <translation>Importovať profil zariadenia</translation>
     </message>
     <message>
       <source>Import measured amplifier correction</source>
-      <translation type="unfinished" />
+      <translation>Importovať nameranú korekciu zosilňovača</translation>
     </message>
     <message>
       <source>Import measured profile</source>
-      <translation type="unfinished" />
+      <translation>Importovať nameraný profil</translation>
     </message>
     <message>
       <source>Import profile?</source>
-      <translation type="unfinished" />
+      <translation>Importovať profil?</translation>
     </message>
     <message>
       <source>Import relative measured response</source>
-      <translation type="unfinished" />
+      <translation>Importovať relatívnu nameranú odozvu</translation>
+    </message>
+    <message>
+      <source>Import response text</source>
+      <translation>Importovať text odozvy</translation>
+    </message>
+    <message>
+      <source>Imported %1; SHA256 %2</source>
+      <translation>Importované %1; SHA256 %2</translation>
+      <extracomment>%1 is an exact imported filename, %2 is its raw hexadecimal SHA256 digest. Preserve SHA256 and both placeholders; no identity or file-content changes.</extracomment>
+    </message>
+    <message>
+      <source>In-wall speaker</source>
+      <translation>Reproduktor zabudovaný do steny</translation>
+      <extracomment>Speaker enclosure/installation category in equipment taxonomy. Display label only; original equipmentType key is preserved. Center means center-channel speaker, not a location control.</extracomment>
     </message>
     <message>
       <source>Include preview releases</source>
-      <translation type="unfinished" />
+      <translation>Zahrnúť predbežné verzie</translation>
+    </message>
+    <message>
+      <source>Initialize audio capture</source>
+      <translation>Inicializovať zachytávanie zvuku</translation>
+    </message>
+    <message>
+      <source>Initialize microphone recording</source>
+      <translation>Inicializovať záznam mikrofónu</translation>
+    </message>
+    <message>
+      <source>Initialize speaker output</source>
+      <translation>Inicializovať výstup reproduktorov</translation>
+    </message>
+    <message>
+      <source>Initialize test playback</source>
+      <translation>Inicializovať testovacie prehrávanie</translation>
+    </message>
+    <message>
+      <source>Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.</source>
+      <translation>Nainštalujte SoundCurrent Audio pomocou nastavenia zvukového ovládača a potom aplikáciu znovu otvorte, aby sa aktivovala mikrofónová cesta.</translation>
+    </message>
+    <message>
+      <source>Install VB-CABLE if missing (administrator approval)</source>
+      <translation>Nainštalovať VB-CABLE, ak chýba (schválenie správcu)</translation>
     </message>
     <message>
       <source>Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Nové balíky nainštalujte cez túto verziu — odinštalovanie nie je potrebné. Predvoľby a profily sa zachovajú. Uložte svoju prácu, použite Ukončiť (zatvorením okna aplikácia zostane spustená), nainštalujte aktualizáciu a znovu ju otvorte.</translation>
     </message>
     <message>
-      <source>Installed version: </source>
-      <translation type="unfinished" />
+      <source>Install or update %1. You do not need to uninstall an older version. Your settings, presets and equipment profiles will be kept.</source>
+      <translation>Nainštalujte alebo aktualizujte %1. Staršiu verziu nie je potrebné odinštalovať. Vaše nastavenia, predvoľby a profily zariadení budú zachované.</translation>
+      <extracomment>Installer welcome first paragraph. %1 is stable app name. In-place install/update preserves user settings, listening presets, and equipment response/correction profiles; older app need not be uninstalled first. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Install or update the shared SoundCurrent Audio driver</source>
+      <translation>Nainštalovať alebo aktualizovať zdieľaný ovládač SoundCurrent Audio</translation>
+    </message>
+    <message>
+      <source>Install the Windows audio route using Audio driver setup, then reopen the app.</source>
+      <translation>Nainštalujte zvukovú cestu Windows pomocou nastavenia zvukového ovládača a potom aplikáciu znovu otvorte.</translation>
+    </message>
+    <message>
+      <source>Installed version: %1</source>
+      <translation>Nainštalovaná verzia: %1</translation>
     </message>
     <message>
       <source>Interface language</source>
       <translation>Jazyk rozhrania</translation>
     </message>
     <message>
+      <source>Invalid Studio channel count</source>
+      <translation>Neplatný počet kanálov Studio</translation>
+      <extracomment>Session channel count must be 1..256; audio channels, not stations.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio channel name or filters</source>
+      <translation>Neplatný názov kanála Studio alebo zoznam filtrov</translation>
+      <extracomment>Saved channel name must be a nonempty string up to 80 characters, and bands must be an array; filter list, not filter-value validation.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio profile channel count</source>
+      <translation>Neplatný počet kanálov v profile Studio</translation>
+      <extracomment>Saved profile channels array must be nonempty and contain at most 256 channels.</extracomment>
+    </message>
+    <message>
+      <source>Invalid Studio route</source>
+      <translation>Neplatné zvukové prepojenie Studio</translation>
+      <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid audio setup requester.</source>
+      <translation>Neplatný proces požadujúci nastavenie zvuku.</translation>
+      <extracomment>The requesting Windows process failed expected executable-name or same-session validation. Requester is a process, not the human user.</extracomment>
+    </message>
+    <message>
+      <source>Invalid calibration audio</source>
+      <translation>Neplatný kalibračný zvuk</translation>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter count</source>
+      <translation>Neplatný počet parametrov vylepšenia zvuku</translation>
+      <extracomment>Enhancement array must contain the required number of parameters.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancement parameter type</source>
+      <translation>Neplatný dátový typ parametra vylepšenia zvuku</translation>
+      <extracomment>Enhancement parameter must be a JSON number; do not reinterpret strings or Boolean values.</extracomment>
+    </message>
+    <message>
+      <source>Invalid enhancements</source>
+      <translation>Neplatné vylepšenia zvuku</translation>
+    </message>
+    <message>
+      <source>Invalid equalizer settings</source>
+      <translation>Neplatné nastavenia ekvalizéra</translation>
+    </message>
+    <message>
+      <source>Invalid equipment subtype or power type</source>
+      <translation>Neplatný podtyp zariadenia alebo typ napájania</translation>
+    </message>
+    <message>
+      <source>Invalid filter type</source>
+      <translation>Neplatný typ filtra</translation>
+      <extracomment>Filter type numeric identifier must be a whole supported enum value; not a file type.</extracomment>
+    </message>
+    <message>
+      <source>Invalid filter.</source>
+      <translation>Neplatný filter.</translation>
+    </message>
+    <message>
       <source>Invalid measured amplifier profile. Requires model, HTTPS measurement source, conditions, and 1–16 bounded PK/LS/HS filters. See the profile format in the README.</source>
-      <translation type="unfinished" />
+      <translation>Neplatný nameraný profil zosilňovača. Vyžaduje model, zdroj merania cez HTTPS, podmienky a 1–16 filtrov PK/LS/HS v povolených rozsahoch. Formát profilu je uvedený v README.</translation>
+    </message>
+    <message>
+      <source>Invalid microphone tuning</source>
+      <translation>Neplatné nastavenie mikrofónu</translation>
+    </message>
+    <message>
+      <source>Invalid or unordered measured response.</source>
+      <translation>Neplatná alebo nezoradená nameraná odozva.</translation>
+    </message>
+    <message>
+      <source>Invalid or unordered response data.</source>
+      <translation>Neplatné alebo nezoradené dáta odozvy.</translation>
+    </message>
+    <message>
+      <source>Invalid profile library.</source>
+      <translation>Neplatná knižnica profilov.</translation>
+    </message>
+    <message>
+      <source>Invalid response from pactl</source>
+      <translation>Neplatná odpoveď nástroja pactl</translation>
+    </message>
+    <message>
+      <source>Invalid response point.</source>
+      <translation>Neplatný bod odozvy.</translation>
+    </message>
+    <message>
+      <source>Invalid route indexes or weight</source>
+      <translation>Neplatné indexy kanálov alebo zmiešavací koeficient</translation>
+      <extracomment>Audio route indices must be whole channel indices in range and mixing coefficient magnitude at most 4; weight means a signed mixing coefficient, not physical mass.</extracomment>
+    </message>
+    <message>
+      <source>Invalid route number</source>
+      <translation>Neplatná číselná hodnota zvukového prepojenia</translation>
+      <extracomment>A saved audio routing entry contains a nonnumeric or nonfinite number.</extracomment>
+    </message>
+    <message>
+      <source>Invalid speaker correction filter count</source>
+      <translation>Neplatný počet filtrov korekcie reproduktora</translation>
+    </message>
+    <message>
+      <source>Invalid speaker filter type</source>
+      <translation>Neplatný typ filtra reproduktora</translation>
+    </message>
+    <message>
+      <source>Invalid speaker identity</source>
+      <translation>Neplatné identifikačné údaje reproduktora</translation>
+    </message>
+    <message>
+      <source>Invalid speaker mix format</source>
+      <translation>Neplatný zmiešavací formát reproduktorov</translation>
     </message>
     <message>
       <source>Jazz</source>
-      <translation type="unfinished" />
+      <translation>Jazz</translation>
+    </message>
+    <message>
+      <source>Keep current EQ</source>
+      <translation>Zachovať súčasné nastavenie EQ</translation>
     </message>
     <message>
       <source>L</source>
-      <translation type="unfinished" />
+      <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
-      <translation>Jazyk a oblasť</translation>
+      <translation>Jazyk a miestne nastavenia</translation>
     </message>
     <message>
       <source>Left right balance</source>
-      <translation type="unfinished" />
+      <translation>Vyváženie vľavo a vpravo</translation>
     </message>
     <message>
       <source>Level indicator refresh interval</source>
-      <translation type="unfinished" />
+      <translation>Interval obnovovania ukazovateľov úrovne</translation>
     </message>
     <message>
       <source>Level refresh</source>
-      <translation type="unfinished" />
+      <translation>Obnovovanie úrovní</translation>
+    </message>
+    <message>
+      <source>Library exceeds 16 MiB.</source>
+      <translation>Knižnica presahuje 16 MiB.</translation>
+    </message>
+    <message>
+      <source>List audio endpoints</source>
+      <translation>Vypísať zvukové zariadenia</translation>
+    </message>
+    <message>
+      <source>List of places and bookmarks</source>
+      <translation>Zoznam miest a záložiek</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>List view</source>
+      <translation>Zoznam</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Listening preset</source>
       <extracomment>Saved equalizer settings for playback. Not a listening device.</extracomment>
-      <translation>Predvoľba počúvania</translation>
+      <translation>Posluchová predvoľba</translation>
     </message>
     <message>
       <source>Live</source>
-      <translation type="unfinished" />
+      <translation>Naživo</translation>
     </message>
     <message>
       <source>Lo-Fi</source>
-      <translation type="unfinished" />
+      <translation>Lo-Fi</translation>
     </message>
     <message>
       <source>Lock EQ</source>
@@ -693,55 +1514,94 @@ Import into your library?</source>
     </message>
     <message>
       <source>Lock equalizer settings</source>
-      <translation type="unfinished" />
+      <translation>Zamknúť nastavenia ekvalizéra</translation>
+    </message>
+    <message>
+      <source>Look in:</source>
+      <translation>Hľadať v:</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Loudness</source>
-      <translation type="unfinished" />
+      <translation>Kompenzácia loudness</translation>
+    </message>
+    <message>
+      <source>Low-shelf filter</source>
+      <translation>Dolný policový filter</translation>
+      <extracomment>Shelving EQ: raise/lower the low-frequency region. Do not translate as low-pass; it is not a cutoff filter.</extracomment>
     </message>
     <message>
       <source>Manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Výrobca</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
-      <translation type="unfinished" />
+      <translation>Bol dosiahnutý najvyšší počet 32 profilov zosilňovačov.</translation>
     </message>
     <message>
       <source>Maximum stereo width</source>
-      <translation type="unfinished" />
+      <translation>Maximálna šírka sterea</translation>
     </message>
     <message>
       <source>Measure</source>
-      <translation type="unfinished" />
+      <translation>Zmerať</translation>
     </message>
     <message>
       <source>Measure speaker room and microphone response</source>
-      <translation type="unfinished" />
+      <translation>Zmerať odozvu reproduktorov, miestnosti a mikrofónu</translation>
+    </message>
+    <message>
+      <source>Measured listening position</source>
+      <translation>Zmeraná posluchová pozícia</translation>
+      <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
     </message>
     <message>
       <source>Measured model correction is added to your listening EQ. You can still add bass or adjust any band. Includes conservative gain limits; room and amplifier effects require a system measurement.</source>
-      <translation type="unfinished" />
+      <translation>Nameraná korekcia modelu sa pridá k vášmu posluchovému EQ. Stále môžete pridať basy alebo upraviť ľubovoľné pásmo. Používa opatrné limity zosilnenia; vplyv miestnosti a zosilňovača vyžaduje meranie celého systému.</translation>
+    </message>
+    <message>
+      <source>Measured response</source>
+      <translation>Nameraná odozva</translation>
+      <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measurement conditions are required.</source>
+      <translation>Podmienky merania sú povinné.</translation>
+    </message>
+    <message>
+      <source>Measurement conditions: %1</source>
+      <translation>Podmienky merania: %1</translation>
+      <extracomment>Label for imported amplifier measurement conditions, including electrical load and tone settings. %1 is verbatim supplied data.</extracomment>
     </message>
     <message>
       <source>Measurement data was incomplete.</source>
-      <translation type="unfinished" />
+      <translation>Dáta merania boli neúplné.</translation>
     </message>
     <message>
       <source>Measurement failed. Try a higher test level or move the mic closer.</source>
-      <translation type="unfinished" />
+      <translation>Meranie zlyhalo. Skúste vyššiu testovaciu úroveň alebo presuňte mikrofón bližšie.</translation>
+    </message>
+    <message>
+      <source>Measurement failed: %1</source>
+      <translation>Meranie zlyhalo: %1</translation>
+      <extracomment>Calibration failure prefix. %1 is a translated owned diagnostic or preserved external technical detail; do not modify device identifiers or paths.</extracomment>
     </message>
     <message>
       <source>Measurement stopped.</source>
-      <translation type="unfinished" />
+      <translation>Meranie zastavené.</translation>
+    </message>
+    <message>
+      <source>Measurement: %1</source>
+      <translation>Meranie: %1</translation>
+      <extracomment>Label for verbatim published speaker measurement attribution, not a new calibration run.</extracomment>
     </message>
     <message>
       <source>Metal</source>
-      <translation type="unfinished" />
+      <translation>Metal</translation>
     </message>
     <message>
       <source>Mic gain</source>
-      <translation type="unfinished" />
+      <translation>Zosilnenie mikrofónu</translation>
     </message>
     <message>
       <source>Microphone</source>
@@ -749,88 +1609,148 @@ Import into your library?</source>
     </message>
     <message>
       <source>Microphone %1 adjustment</source>
-      <translation type="unfinished" />
+      <translation>Úprava mikrofónu %1</translation>
     </message>
     <message>
       <source>Microphone EQ is off.</source>
-      <translation type="unfinished" />
+      <translation>Mikrofónový EQ je vypnutý.</translation>
+    </message>
+    <message>
+      <source>Microphone audio bridge did not start</source>
+      <translation>Zvukový most mikrofónu sa nespustil</translation>
+    </message>
+    <message>
+      <source>Microphone capture stopped during playback</source>
+      <translation>Záznam z mikrofónu sa počas prehrávania zastavil</translation>
+    </message>
+    <message>
+      <source>Microphone capture stopped during the test</source>
+      <translation>Záznam z mikrofónu sa počas testu zastavil</translation>
     </message>
     <message>
       <source>Microphone error: %1</source>
-      <translation type="unfinished" />
+      <translation>Chyba mikrofónu: %1</translation>
+    </message>
+    <message>
+      <source>Microphone filter did not appear</source>
+      <translation>Mikrofónový filter sa neobjavil</translation>
+    </message>
+    <message>
+      <source>Microphone filter disappeared</source>
+      <translation>Mikrofónový filter zmizol</translation>
     </message>
     <message>
       <source>Microphone gain adjustment</source>
-      <translation type="unfinished" />
+      <translation>Úprava zosilnenia mikrofónu</translation>
     </message>
     <message>
       <source>Microphone input device</source>
-      <translation type="unfinished" />
+      <translation>Vstupné zariadenie mikrofónu</translation>
+    </message>
+    <message>
+      <source>Microphone recording consumer stalled</source>
+      <translation>Spracovanie záznamu mikrofónu sa zablokovalo</translation>
+    </message>
+    <message>
+      <source>Microphone recording is clipping. Lower microphone gain or boost and repeat the measurement.</source>
+      <translation>Záznam z mikrofónu je prebudený. Znížte zosilnenie mikrofónu alebo jeho dodatočné zosilnenie a zopakujte meranie.</translation>
     </message>
     <message>
       <source>Microphone route</source>
-      <translation type="unfinished" />
+      <translation>Signálová cesta mikrofónu</translation>
+    </message>
+    <message>
+      <source>Microphone start timed out</source>
+      <translation>Vypršal časový limit spustenia mikrofónu</translation>
     </message>
     <message>
       <source>Model</source>
-      <translation type="unfinished" />
+      <translation>Model</translation>
     </message>
     <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
-      <translation type="unfinished" />
+      <translation>Posunom k L alebo R znížite opačný kanál; v strede zostávajú oba na plnej úrovni</translation>
     </message>
     <message>
       <source>Movies</source>
-      <translation type="unfinished" />
+      <translation>Filmy</translation>
+    </message>
+    <message>
+      <source>My equipment</source>
+      <translation>Moje vybavenie</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>Name</source>
+      <translation>Názov</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Natural mic EQ</source>
       <extracomment>Microphone equalization feature intended to produce natural-sounding audio. Not a claim that the microphone has a measured neutral response.</extracomment>
-      <translation>Prirodzený mikrofónny EQ</translation>
+      <translation>EQ pre prirodzený hlas</translation>
     </message>
     <message>
-      <source>Natural mic EQ on · </source>
-      <translation type="unfinished" />
+      <source>Natural mic EQ on · %1</source>
+      <translation>EQ pre prirodzený hlas zapnutý · %1</translation>
     </message>
     <message>
       <source>Natural microphone equalizer on or off</source>
-      <translation type="unfinished" />
+      <translation>Zapnutie alebo vypnutie mikrofónového ekvalizéra pre prirodzený hlas</translation>
+    </message>
+    <message>
+      <source>New folder</source>
+      <translation>Nový priečinok</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>New profile</source>
+      <translation>Nový profil</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
       <source>Night Listening</source>
-      <translation type="unfinished" />
+      <translation>Nočný posluch</translation>
+    </message>
+    <message>
+      <source>No</source>
+      <translation>Nie</translation>
     </message>
     <message>
       <source>No imported equipment correction selected.</source>
-      <translation type="unfinished" />
+      <translation>Nie je vybraná žiadna importovaná korekcia zariadenia.</translation>
     </message>
     <message>
       <source>No measured amplifier correction is selected. Marketing frequency-range specifications are insufficient to derive a correction curve.</source>
-      <translation type="unfinished" />
+      <translation>Nie je vybraná žiadna nameraná korekcia zosilňovača. Marketingové údaje o frekvenčnom rozsahu nestačia na odvodenie korekčnej krivky.</translation>
     </message>
     <message>
       <source>No microphone connected.</source>
-      <translation type="unfinished" />
+      <translation>Nie je pripojený žiadny mikrofón.</translation>
     </message>
     <message>
       <source>No model correction selected. Your listening EQ works normally.</source>
-      <translation type="unfinished" />
+      <translation>Nie je vybraná žiadna korekcia modelu. Vaše posluchové EQ funguje bežným spôsobom.</translation>
     </message>
     <message>
       <source>No newer published release found. Downloaded installers are also checked.</source>
-      <translation type="unfinished" />
+      <translation>Nebola nájdená novšia vydaná verzia. Kontrolujú sa aj stiahnuté inštalátory.</translation>
     </message>
     <message>
       <source>No output device is available.</source>
-      <translation type="unfinished" />
+      <translation>Nie je k dispozícii žiadne výstupné zariadenie.</translation>
     </message>
     <message>
       <source>No output device is connected.</source>
-      <translation type="unfinished" />
+      <translation>Nie je pripojené žiadne výstupné zariadenie.</translation>
+    </message>
+    <message>
+      <source>No to All</source>
+      <translation>Nie pre všetko</translation>
     </message>
     <message>
       <source>None — use my own EQ</source>
-      <translation type="unfinished" />
+      <translation>Žiadna — použiť vlastné EQ</translation>
     </message>
     <message>
       <source>Number and date format</source>
@@ -838,75 +1758,176 @@ Import into your library?</source>
     </message>
     <message>
       <source>Number of equalizer bands</source>
-      <translation type="unfinished" />
+      <translation>Počet pásiem ekvalizéra</translation>
+    </message>
+    <message>
+      <source>OK</source>
+      <translation>OK</translation>
+    </message>
+    <message>
+      <source>Omnidirectional speaker</source>
+      <translation>Všesmerový reproduktor</translation>
+      <extracomment>Speaker radiating in all directions; not a microphone pickup pattern.</extracomment>
     </message>
     <message>
       <source>On · Playing through %1</source>
-      <translation type="unfinished" />
+      <translation>Zapnuté · Prehrávanie cez %1</translation>
+    </message>
+    <message>
+      <source>Only one SoundCurrent app starts at sign-in. Enabling this replaces the other app's startup setting. It starts in the background when a tray icon is available.</source>
+      <translation>Pri prihlásení sa spúšťa iba jedna aplikácia SoundCurrent. Zapnutím tejto voľby nahradíte nastavenie spúšťania druhej aplikácie. Ak je k dispozícii ikona v oblasti oznámení, spustí sa na pozadí.</translation>
+    </message>
+    <message>
+      <source>Open</source>
+      <translation>Otvoriť</translation>
     </message>
     <message>
       <source>Open VB-Audio's control panel for cable latency and internal sample rate. Changing these while audio is running can interrupt playback.</source>
-      <translation type="unfinished" />
+      <translation>Otvoriť ovládací panel VB-Audio pre latenciu kábla a internú vzorkovaciu frekvenciu. Zmeny počas prehrávania zvuku môžu prerušiť prehrávanie.</translation>
     </message>
     <message>
       <source>Open VB-CABLE control panel</source>
-      <translation type="unfinished" />
+      <translation>Otvoriť ovládací panel VB-CABLE</translation>
+    </message>
+    <message>
+      <source>Open audio stream</source>
+      <translation>Otvoriť zvukový stream</translation>
+    </message>
+    <message>
+      <source>Open cable capture stream</source>
+      <translation>Otvoriť zachytávací stream kábla</translation>
+    </message>
+    <message>
+      <source>Open cable recording endpoint</source>
+      <translation>Otvoriť záznamové zariadenie kábla</translation>
+    </message>
+    <message>
+      <source>Open endpoint</source>
+      <translation>Otvoriť zariadenie</translation>
+    </message>
+    <message>
+      <source>Open endpoint volume</source>
+      <translation>Otvoriť ovládanie hlasitosti zariadenia</translation>
+    </message>
+    <message>
+      <source>Open microphone reader</source>
+      <translation>Otvoriť čítacie rozhranie mikrofónu</translation>
     </message>
     <message>
       <source>Open release downloads</source>
-      <translation type="unfinished" />
+      <translation>Otvoriť sťahovanie vydaných verzií</translation>
+    </message>
+    <message>
+      <source>Open speaker endpoint</source>
+      <translation>Otvoriť zariadenie reproduktorov</translation>
+    </message>
+    <message>
+      <source>Open speaker render stream</source>
+      <translation>Otvoriť výstupný stream reproduktorov</translation>
+    </message>
+    <message>
+      <source>Open test playback writer</source>
+      <translation>Otvoriť zapisovacie rozhranie testovacieho prehrávania</translation>
     </message>
     <message>
       <source>Open update folder</source>
-      <translation type="unfinished" />
+      <translation>Otvoriť priečinok aktualizácií</translation>
+    </message>
+    <message>
+      <source>Opening %1 setup...</source>
+      <translation>Otváranie inštalácie %1...</translation>
+      <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
       <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation type="unfinished" />
+      <translation>Oranžová: nameraná odozva, ak je dodaná. Tyrkysová: korekcia pri 48 kHz. Presúvajte tyrkysové body alebo upravujte tabuľku. Uložením zachováte referenčný profil a vytvoríte vlastnú kópiu.</translation>
+    </message>
+    <message>
+      <source>Outdoor speaker</source>
+      <translation>Vonkajší reproduktor</translation>
+      <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
     </message>
     <message>
       <source>Output device</source>
       <translation>Výstupné zariadenie</translation>
     </message>
     <message>
+      <source>Output device is no longer available</source>
+      <translation>Výstupné zariadenie už nie je k dispozícii</translation>
+    </message>
+    <message>
+      <source>Output has no volume channels</source>
+      <translation>Výstup nemá kanály ovládania hlasitosti</translation>
+    </message>
+    <message>
       <source>Overall output</source>
-      <translation type="unfinished" />
+      <translation>Celkový výstup</translation>
+    </message>
+    <message>
+      <source>Panel speaker</source>
+      <translation>Panelový reproduktor</translation>
+      <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
+    </message>
+    <message>
+      <source>Parent directory</source>
+      <translation>Nadradený priečinok</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Paste</source>
+      <translation>Prilepiť</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
-      <translation type="unfinished" />
+      <translation>Pozastaviť spracovanie a otvoriť nastavenie zvuku. Aplikácia zostane otvorená a oznámi výsledok. Po inštalácii ovládača reštartujte Windows.</translation>
     </message>
     <message>
       <source>Peak markers</source>
-      <translation type="unfinished" />
+      <translation>Značky špičiek</translation>
+    </message>
+    <message>
+      <source>Peaking filter</source>
+      <translation>Zvonový filter</translation>
+      <extracomment>Bell-shaped parametric EQ filter centered at its frequency; this is not a peak/clipping indicator.</extracomment>
     </message>
     <message>
       <source>Piano</source>
-      <translation type="unfinished" />
+      <translation>Klavír</translation>
     </message>
     <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
-      <translation type="unfinished" />
+      <translation>Prehrať tichý testovací zvuk a zobraziť náhľad odporúčaných zmien posluchového EQ</translation>
     </message>
     <message>
       <source>Playback</source>
       <translation>Prehrávanie</translation>
     </message>
     <message>
+      <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
+      <translation>Prehrávanie logaritmického prelaďovania od 20 Hz do 25 kHz</translation>
+      <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
-      <translation type="unfinished" />
+      <translation>Prehráva sa tichý testovací zvuk. Ak je nepríjemný, zastavte ho.</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
-      <translation type="unfinished" />
+      <translation>Pripojte mikrofón, aby ste mohli vybrať jeho profil</translation>
     </message>
     <message>
       <source>Podcast</source>
-      <translation type="unfinished" />
+      <translation>Podcast</translation>
     </message>
     <message>
       <source>Pop</source>
-      <translation type="unfinished" />
+      <translation>Pop</translation>
+    </message>
+    <message>
+      <source>Portable PA speaker</source>
+      <translation>Prenosný reproduktor na ozvučenie</translation>
+      <extracomment>Portable public-address/sound-reinforcement speaker; PA is not a country or personal assistant.</extracomment>
     </message>
     <message>
       <source>Post gain</source>
@@ -915,59 +1936,99 @@ Import into your library?</source>
     </message>
     <message>
       <source>Post gain after equalization</source>
-      <translation type="unfinished" />
+      <translation>Výstupné zosilnenie za ekvalizérom</translation>
     </message>
     <message>
       <source>Post gain value in decibels</source>
-      <translation type="unfinished" />
+      <translation>Hodnota výstupného zosilnenia v decibeloch</translation>
     </message>
     <message>
       <source>Preset name:</source>
-      <translation type="unfinished" />
+      <translation>Názov predvoľby:</translation>
     </message>
     <message>
       <source>Prevent changes to presets, EQ bands, post gain, and balance</source>
-      <translation type="unfinished" />
+      <translation>Zabrániť zmenám predvolieb, pásiem EQ, výstupného zosilnenia a vyváženia</translation>
     </message>
     <message>
       <source>Profile</source>
-      <translation type="unfinished" />
+      <translation>Profil</translation>
     </message>
     <message>
       <source>Profile details</source>
-      <translation type="unfinished" />
+      <translation>Podrobnosti profilu</translation>
+    </message>
+    <message>
+      <source>Profile exceeds the 1 MiB limit.</source>
+      <translation>Profil presahuje limit 1 MiB.</translation>
+    </message>
+    <message>
+      <source>Profile library exceeds 16 MiB.</source>
+      <translation>Knižnica profilov presahuje 16 MiB.</translation>
+    </message>
+    <message>
+      <source>Profile metadata is too long.</source>
+      <translation>Metadáta profilu sú príliš dlhé.</translation>
     </message>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
-      <translation type="unfinished" />
+      <translation>Profil musí byť čitateľný a menší než 64 KiB.</translation>
+    </message>
+    <message>
+      <source>Profiles need 1–16 correction filters.</source>
+      <translation>Profily potrebujú 1–16 korekčných filtrov.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
-      <translation type="unfinished" />
+      <translation>Publikované zdroje meraní: &lt;a href="https://www.spinorama.org/"&gt;Merania reproduktorov / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Sériová kalibrácia Dayton&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;Sériová kalibrácia miniDSP&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Grafy mikrofónov Neumann&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;Graf odozvy AT2020&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Merania zosilňovačov&lt;/a&gt;</translation>
     </message>
     <message>
-      <source>Published releases could not be checked. Private Studio releases require GitHub access. Use Open release downloads; downloaded installers are still detected locally.</source>
-      <translation type="unfinished" />
+      <source>Published profiles need an HTTPS measurement source.</source>
+      <translation>Publikované profily potrebujú zdroj merania cez HTTPS.</translation>
+    </message>
+    <message>
+      <source>Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally.</source>
+      <translation>Vydané verzie sa nepodarilo skontrolovať. Použite Otvoriť sťahovanie vydaných verzií; stiahnuté inštalátory sa stále vyhľadávajú lokálne.</translation>
+      <extracomment>Manual update-check failure in the public EQ/Studio repositories. Tell the user to open the release-download page; already-downloaded installers are still detected locally. No claim of private releases, required GitHub login, automatic download or installation.</extracomment>
     </message>
     <message>
       <source>Published response and editable correction curves</source>
-      <translation type="unfinished" />
+      <translation>Publikovaná odozva a upraviteľné korekčné krivky</translation>
     </message>
     <message>
       <source>Published update %1 is available. Open release downloads, then install over this version and reopen.</source>
-      <translation type="unfinished" />
+      <translation>Je k dispozícii vydaná aktualizácia %1. Otvorte sťahovanie vydaných verzií, nainštalujte ju cez túto verziu a aplikáciu znovu otvorte.</translation>
     </message>
     <message>
       <source>Punchy Bass</source>
-      <translation type="unfinished" />
+      <translation>Úderné basy</translation>
     </message>
     <message>
       <source>Quiet logarithmic sweep</source>
-      <translation type="unfinished" />
+      <translation>Tichý logaritmický priebeh frekvencie</translation>
+    </message>
+    <message>
+      <source>Quit %1 before uninstalling it.</source>
+      <translation>Pred odinštalovaním ukončite %1.</translation>
+      <extracomment>Running application blocks uninstall. %1 is stable product name. Quit means fully exit process, not close/hide window. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Quit %1 before updating. Closing the window keeps it running. No uninstall is needed.</source>
+      <translation>Pred aktualizáciou ukončite %1. Zatvorenie okna ponechá aplikáciu spustenú. Odinštalovanie nie je potrebné.</translation>
+      <extracomment>Running application blocks update. %1 is stable SoundCurrent product name. Quit fully exits process; closing UI leaves it running. In-place updates do not require prior uninstall. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
       <source>Quit SoundCurrent EQ</source>
-      <translation type="unfinished" />
+      <translation>Ukončiť SoundCurrent EQ</translation>
+    </message>
+    <message>
+      <source>Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it.</source>
+      <translation>Pred zmenou zdieľaného ovládača ukončite všetky spustené aplikácie SoundCurrent. Odinštalovanie jednej aplikácie zachová ovládač, ak ho druhá stále používa.</translation>
+    </message>
+    <message>
+      <source>Quit any running equalizer before driver setup. When removing the last SoundCurrent app, its uninstaller offers VB-CABLE removal. Other software may also need the cable. Extra A/B cables are not bundled.</source>
+      <translation>Pred inštaláciou ovládača ukončite všetky spustené ekvalizéry. Pri odstraňovaní poslednej aplikácie SoundCurrent jej odinštalačný program ponúkne odstránenie VB-CABLE. Kábel môžu potrebovať aj iné programy. Ďalšie káble A/B nie sú súčasťou balíka.</translation>
+      <extracomment>Shared virtual cable notice: quit exits the equalizer, not just closes UI. Cable removal is offered when the other SoundCurrent app is absent; user confirmation remains required, silent app removal does not remove cable. A/B refers to separate extra virtual cables, not physical wires. Other software may depend on shared VB-CABLE. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Quit app</source>
@@ -975,65 +2036,269 @@ Import into your library?</source>
       <translation>Ukončiť aplikáciu</translation>
     </message>
     <message>
+      <source>Quit running SoundCurrent apps and wait for audio recovery to finish before changing the shared audio driver.</source>
+      <translation>Ukončite spustené aplikácie SoundCurrent a pred zmenou zdieľaného zvukového ovládača počkajte na dokončenie obnovy zvuku.</translation>
+    </message>
+    <message>
+      <source>Quit the following before changing VB-CABLE: %1.</source>
+      <translation>Pred zmenou VB-CABLE ukončite nasledujúce: %1.</translation>
+    </message>
+    <message>
       <source>R</source>
-      <translation type="unfinished" />
+      <translation>R</translation>
     </message>
     <message>
       <source>R&amp;B</source>
-      <translation type="unfinished" />
+      <translation>R&amp;B</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint</source>
+      <translation>Prečítať zvukové zariadenie</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint ID</source>
+      <translation>Prečítať ID zvukového zariadenia</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint name</source>
+      <translation>Prečítať názov zvukového zariadenia</translation>
+    </message>
+    <message>
+      <source>Read audio endpoint properties</source>
+      <translation>Prečítať vlastnosti zvukového zariadenia</translation>
+    </message>
+    <message>
+      <source>Read cable audio</source>
+      <translation>Prečítať zvuk kábla</translation>
+    </message>
+    <message>
+      <source>Read cable capture interface</source>
+      <translation>Prečítať zachytávacie rozhranie kábla</translation>
+    </message>
+    <message>
+      <source>Read cable packet size</source>
+      <translation>Prečítať veľkosť paketu kábla</translation>
+    </message>
+    <message>
+      <source>Read default output ID</source>
+      <translation>Prečítať ID predvoleného výstupu</translation>
+    </message>
+    <message>
+      <source>Read default output endpoint</source>
+      <translation>Prečítať predvolené výstupné zariadenie</translation>
+    </message>
+    <message>
+      <source>Read microphone mix format</source>
+      <translation>Prečítať zmiešavací formát mikrofónu</translation>
+    </message>
+    <message>
+      <source>Read microphone packet size</source>
+      <translation>Prečítať veľkosť paketu mikrofónu</translation>
+    </message>
+    <message>
+      <source>Read microphone samples</source>
+      <translation>Prečítať vzorky mikrofónu</translation>
+    </message>
+    <message>
+      <source>Read next cable packet size</source>
+      <translation>Prečítať veľkosť ďalšieho paketu kábla</translation>
+    </message>
+    <message>
+      <source>Read next microphone packet</source>
+      <translation>Prečítať ďalší paket mikrofónu</translation>
+    </message>
+    <message>
+      <source>Read output buffer level</source>
+      <translation>Prečítať zaplnenie výstupného buffera</translation>
+    </message>
+    <message>
+      <source>Read output level</source>
+      <translation>Prečítať úroveň výstupu</translation>
+    </message>
+    <message>
+      <source>Read output mute</source>
+      <translation>Prečítať stav stlmenia výstupu</translation>
+    </message>
+    <message>
+      <source>Read speaker level</source>
+      <translation>Prečítať úroveň reproduktorov</translation>
+    </message>
+    <message>
+      <source>Read speaker mix format</source>
+      <translation>Prečítať zmiešavací formát reproduktorov</translation>
+    </message>
+    <message>
+      <source>Read speaker mute</source>
+      <translation>Prečítať stav stlmenia reproduktorov</translation>
+    </message>
+    <message>
+      <source>Read speaker render interface</source>
+      <translation>Prečítať výstupné rozhranie reproduktorov</translation>
+    </message>
+    <message>
+      <source>Read speaker volume</source>
+      <translation>Prečítať hlasitosť reproduktorov</translation>
+    </message>
+    <message>
+      <source>Read test playback padding</source>
+      <translation>Prečítať zaplnenie buffera testovacieho prehrávania</translation>
+    </message>
+    <message>
+      <source>Read virtual output mix format</source>
+      <translation>Prečítať zmiešavací formát virtuálneho výstupu</translation>
+    </message>
+    <message>
+      <source>Recent places</source>
+      <translation>Naposledy navštívené</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Redo</source>
+      <translation>Znova</translation>
+      <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
       <source>Refresh devices</source>
-      <translation>Obnoviť zariadenia</translation>
+      <translation>Obnoviť zoznam zariadení</translation>
+    </message>
+    <message>
+      <source>Relative measurements include the speaker, room, and microphone response. The proposed changes are limited to 3 dB per measured frequency.
+
+%1</source>
+      <translation>Relatívne merania zahŕňajú odozvu reproduktorov, miestnosti a mikrofónu. Navrhnuté zmeny sú obmedzené na 3 dB pre každú meranú frekvenciu.
+
+%1</translation>
+    </message>
+    <message>
+      <source>Release cable audio</source>
+      <translation>Uvoľniť zvuk kábla</translation>
+    </message>
+    <message>
+      <source>Release microphone packet</source>
+      <translation>Uvoľniť paket mikrofónu</translation>
+    </message>
+    <message>
+      <source>Release speaker buffer</source>
+      <translation>Uvoľniť buffer reproduktorov</translation>
+    </message>
+    <message>
+      <source>Release test playback</source>
+      <translation>Uvoľniť buffer testovacieho prehrávania</translation>
     </message>
     <message>
       <source>Remind me when updates are available or a restart is needed</source>
-      <translation type="unfinished" />
+      <translation>Upozorniť na dostupné aktualizácie alebo potrebu reštartu</translation>
+    </message>
+    <message>
+      <source>Remove VB-CABLE?</source>
+      <translation>Odstrániť VB-CABLE?</translation>
     </message>
     <message>
       <source>Remove selected filter</source>
-      <translation type="unfinished" />
+      <translation>Odstrániť vybraný filter</translation>
+    </message>
+    <message>
+      <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
+      <translation>Odstrániť aj zdieľaný ovládač VB-CABLE? Ostatní používatelia, nahrávacie aplikácie alebo hlasové nástroje ho môžu potrebovať. Potvrďte otvorenie oficiálneho odinštalačného programu a kliknite na Remove Driver. Odmietnite, ak chcete kábel zachovať a odinštalovať iba SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>Rename</source>
+      <translation>Premenovať</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Repair incomplete VB-CABLE installation</source>
+      <translation>Opraviť neúplnú inštaláciu VB-CABLE</translation>
+    </message>
+    <message>
+      <source>Reset</source>
+      <translation>Obnoviť predvolené</translation>
     </message>
     <message>
       <source>Reset enhancements</source>
-      <translation type="unfinished" />
+      <translation>Obnoviť predvolené zvukové efekty</translation>
     </message>
     <message>
       <source>Reset mic tone</source>
-      <translation type="unfinished" />
+      <translation>Obnoviť predvolený tón mikrofónu</translation>
     </message>
     <message>
       <source>Reset to flat</source>
       <extracomment>Restore zero gain in all EQ bands. Does not mute playback.</extracomment>
-      <translation>Obnoviť rovnú odozvu</translation>
+      <translation>Obnoviť rovnú charakteristiku</translation>
     </message>
     <message>
       <source>Response data (*.txt *.csv *.frd *.cal)</source>
-      <translation type="unfinished" />
+      <translation>Dáta odozvy (*.txt *.csv *.frd *.cal)</translation>
+    </message>
+    <message>
+      <source>Response exceeds 4096 points.</source>
+      <translation>Odozva presahuje 4096 bodov.</translation>
+    </message>
+    <message>
+      <source>Response frequencies must increase, with finite bounded values.</source>
+      <translation>Frekvencie odozvy musia rásť a hodnoty musia byť konečné a v povolených medziach.</translation>
+    </message>
+    <message>
+      <source>Response has no usable audio range.</source>
+      <translation>Odozva neobsahuje použiteľný zvukový rozsah.</translation>
     </message>
     <message>
       <source>Response import</source>
-      <translation type="unfinished" />
+      <translation>Import odozvy</translation>
+    </message>
+    <message>
+      <source>Response needs 2–4096 measured points.</source>
+      <translation>Odozva potrebuje 2–4096 nameraných bodov.</translation>
+    </message>
+    <message>
+      <source>Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.</source>
+      <translation>Pred použitím VB-CABLE reštartujte systém Windows. Nastavenie zvuku je dokončené, ale ovládač a jeho nastavenia vyžadujú reštart systému.</translation>
+    </message>
+    <message>
+      <source>Restart Windows before using the equalizer or VB-CABLE settings. Audio driver changes need a system restart.</source>
+      <translation>Pred použitím ekvalizéra alebo nastavení VB-CABLE reštartujte Windows. Zmeny zvukového ovládača vyžadujú reštart systému.</translation>
+    </message>
+    <message>
+      <source>Restore Defaults</source>
+      <translation>Obnoviť predvolené nastavenia</translation>
     </message>
     <message>
       <source>Restore the previous EQ setting (Ctrl+Z)</source>
-      <translation type="unfinished" />
+      <translation>Obnoviť predchádzajúce nastavenie EQ (Ctrl+Z)</translation>
+    </message>
+    <message>
+      <source>Retry</source>
+      <translation>Skúsiť znovu</translation>
     </message>
     <message>
       <source>Right-to-left test language</source>
-      <translation type="unfinished" />
+      <translation>Testovací jazyk sprava doľava</translation>
     </message>
     <message>
       <source>Rock</source>
-      <translation type="unfinished" />
+      <translation>Rock</translation>
+    </message>
+    <message>
+      <source>Save</source>
+      <translation>Uložiť</translation>
+    </message>
+    <message>
+      <source>Save All</source>
+      <translation>Uložiť všetko</translation>
     </message>
     <message>
       <source>Save EQ preset</source>
-      <translation type="unfinished" />
+      <translation>Uložiť predvoľbu EQ</translation>
+    </message>
+    <message>
+      <source>Save as</source>
+      <translation>Uložiť ako</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Save modified profile?</source>
-      <translation type="unfinished" />
+      <translation>Uložiť upravený profil?</translation>
     </message>
     <message>
       <source>Save preset</source>
@@ -1041,27 +2306,45 @@ Import into your library?</source>
     </message>
     <message>
       <source>Save profile</source>
-      <translation type="unfinished" />
+      <translation>Uložiť profil</translation>
+    </message>
+    <message>
+      <source>Save system response profile</source>
+      <translation>Uložiť profil odozvy systému</translation>
+    </message>
+    <message>
+      <source>Save your work and quit the running app before continuing. Closing its window keeps it running in the background.</source>
+      <translation>Pred pokračovaním uložte svoju prácu a ukončite spustenú aplikáciu. Zatvorenie jej okna ponechá aplikáciu spustenú na pozadí.</translation>
+      <extracomment>Installer welcome second paragraph. Save work and fully quit running app before install/update; closing window hides UI while audio processing keeps running. Generic exit action, not a guessed untranslated Quit button caption. AI contextual review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>Saved preset “%1”.</source>
-      <translation type="unfinished" />
+      <translation>Predvoľba „%1“ uložená.</translation>
     </message>
     <message>
       <source>Search brand, family, model or measurement conditions</source>
-      <translation type="unfinished" />
+      <translation>Hľadať značku, rad, model alebo podmienky merania</translation>
     </message>
     <message>
       <source>Second virtual cable for microphone EQ</source>
-      <translation type="unfinished" />
+      <translation>Druhý virtuálny kábel pre mikrofónový EQ</translation>
+    </message>
+    <message>
+      <source>Select all</source>
+      <translation>Vybrať všetko</translation>
+      <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
       <source>Select band %1</source>
-      <translation type="unfinished" />
+      <translation>Vybrať pásmo %1</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
-      <translation type="unfinished" />
+      <translation>Vyberte toto pásmo na úpravu frekvencie, zosilnenia a Q</translation>
+    </message>
+    <message>
+      <source>Selected audio device is unavailable</source>
+      <translation>Vybrané zvukové zariadenie nie je dostupné</translation>
     </message>
     <message>
       <source>Selected band</source>
@@ -1070,159 +2353,429 @@ Import into your library?</source>
     </message>
     <message>
       <source>Selected band filter Q</source>
-      <translation type="unfinished" />
+      <translation>Činiteľ akosti Q vybraného pásma</translation>
     </message>
     <message>
       <source>Selected band frequency</source>
-      <translation type="unfinished" />
+      <translation>Frekvencia vybraného pásma</translation>
     </message>
     <message>
       <source>Selected band gain</source>
-      <translation type="unfinished" />
+      <translation>Zosilnenie vybraného pásma</translation>
+    </message>
+    <message>
+      <source>Selected output device is no longer available</source>
+      <translation>Vybrané výstupné zariadenie už nie je k dispozícii</translation>
     </message>
     <message>
       <source>Selected output was unplugged. Switched to automatic output.</source>
-      <translation type="unfinished" />
+      <translation>Vybraný výstup bol odpojený. Prepnuté na automatický výstup.</translation>
+    </message>
+    <message>
+      <source>Selected speakers are disconnected</source>
+      <translation>Vybrané reproduktory sú odpojené</translation>
     </message>
     <message>
       <source>Separate quiet tones</source>
-      <translation type="unfinished" />
+      <translation>Samostatné tiché tóny</translation>
+    </message>
+    <message>
+      <source>Set full speaker level for EQ</source>
+      <translation>Nastaviť plnú úroveň reproduktorov pre EQ</translation>
+    </message>
+    <message>
+      <source>Set output level</source>
+      <translation>Nastaviť úroveň výstupu</translation>
+    </message>
+    <message>
+      <source>Set output mute</source>
+      <translation>Nastaviť stlmenie výstupu</translation>
+    </message>
+    <message>
+      <source>Set up %1 for %2.</source>
+      <translation>Nastavte %1 pre %2.</translation>
+    </message>
+    <message>
+      <source>Setting up the shared %1 driver...</source>
+      <translation>Nastavovanie zdieľaného ovládača %1...</translation>
+      <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Nastavenia &amp;&amp; kalibrácia</translation>
     </message>
     <message>
+      <source>Setup could not check the driver. You can retry with %1 in the app or Start menu.</source>
+      <translation>Inštalačný program nemohol skontrolovať ovládač. Môžete to skúsiť znova pomocou %1 v aplikácii alebo v ponuke Štart.</translation>
+    </message>
+    <message>
+      <source>Setup opens VB-Audio’s signed installer. Click Install Driver, then restart Windows before using the equalizer or VB-CABLE settings.</source>
+      <translation>Inštalátor otvorí podpísaný inštalačný program VB-Audio. Kliknite na Install Driver a pred použitím ekvalizéra alebo nastavení VB-CABLE reštartujte Windows.</translation>
+      <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
+      <translation>Spoločný EQ a EQ kanála prekračujú 64 filtrov; odstráňte niektoré filtre kanála</translation>
+      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+    </message>
+    <message>
+      <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
+      <translation>Odstránenie zdieľaného zvukového ovládača nebolo dokončené. Táto aplikácia bola ponechaná, aby ste mohli pokus zopakovať. Ukončite všetky spustené aplikácie SoundCurrent a skúste odinštalovanie znova.</translation>
+      <extracomment>Native uninstall nonzero failure (excluding restart code 3010) aborts before app payload deletion so user can retry. Shared audio driver means EQ/Studio ownership, not network. Quit any running SoundCurrent apps, not necessarily both products; fully exit rather than hide UI. SoundCurrent is invariant. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Shortcut</source>
+      <translation>Odkaz</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
-      <translation type="unfinished" />
+      <translation>Kratšie intervaly obnovujú úrovne častejšie a viac zaťažujú CPU; skutočnú rýchlosť môže obmedzovať dodávanie zvuku</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
-      <translation type="unfinished" />
+      <translation>Zobraziť postupne klesajúcu čiaru podržanej špičky pri každej frekvenčnej úrovni</translation>
     </message>
     <message>
       <source>Show advanced controls</source>
-      <translation type="unfinished" />
+      <translation>Zobraziť pokročilé ovládanie</translation>
+    </message>
+    <message>
+      <source>Show date modified</source>
+      <translation>Zobraziť dátum zmeny</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show hidden files</source>
+      <translation>Zobraziť skryté súbory</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>
-      <translation type="unfinished" />
+      <translation>Zobraziť značky špičiek frekvenčných úrovní</translation>
+    </message>
+    <message>
+      <source>Show size</source>
+      <translation>Zobraziť veľkosť</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Show type</source>
+      <translation>Zobraziť typ</translation>
+      <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
+    </message>
+    <message>
+      <source>Sidebar</source>
+      <translation>Bočný panel</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size</source>
+      <translation>Veľkosť</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Size capture buffer</source>
+      <translation>Zistiť veľkosť zachytávacieho buffera</translation>
+    </message>
+    <message>
+      <source>Size output buffer</source>
+      <translation>Zistiť veľkosť výstupného buffera</translation>
+    </message>
+    <message>
+      <source>Size test playback buffer</source>
+      <translation>Zistiť veľkosť buffera testovacieho prehrávania</translation>
     </message>
     <message>
       <source>Small Speakers</source>
-      <translation type="unfinished" />
+      <translation>Malé reproduktory</translation>
     </message>
     <message>
       <source>Soft Treble</source>
-      <translation type="unfinished" />
+      <translation>Jemné výšky</translation>
     </message>
     <message>
       <source>Sound enhancements</source>
-      <translation>Vylepšenia zvuku</translation>
+      <translation>Zvukové efekty</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is already present. With driver setup enabled, setup will register this app and keep the shared driver available for the other SoundCurrent app.</source>
+      <translation>SoundCurrent Audio je už prítomné. Ak zostane nastavenie ovládača povolené, inštalačný program zaregistruje túto aplikáciu a ponechá zdieľaný ovládač dostupný pre druhú aplikáciu SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio is ready. Open the app and choose your speakers or headphones.</source>
+      <translation>SoundCurrent Audio je pripravený. Otvorte aplikáciu a vyberte reproduktory alebo slúchadlá.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio provides its own microphone route when installed. With VB-CABLE, simultaneous microphone and speaker EQ needs a separately installed second cable (A or B). Select that cable in recording apps. Automatic prefers the SoundCurrent route when available.</source>
+      <translation>SoundCurrent Audio po inštalácii poskytuje vlastnú mikrofónovú signálovú cestu. S VB-CABLE vyžaduje súčasné mikrofónové a reproduktorové EQ samostatne nainštalovaný druhý kábel (A alebo B). Tento kábel vyberte v aplikáciách na záznam. Automatická voľba uprednostňuje signálovú cestu SoundCurrent, ak je dostupná.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent Audio routes playback through the app. Choose your physical speakers or headphones inside the app. Their hardware drivers are preserved.</source>
+      <translation>SoundCurrent Audio smeruje prehrávanie cez aplikáciu. V aplikácii vyberte svoje fyzické reproduktory alebo slúchadlá. Ich hardvérové ovládače zostanú zachované.</translation>
+    </message>
+    <message>
+      <source>SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.</source>
+      <translation>Meranie SoundCurrent frekvenčným prebehom alebo tónmi; vzhľadom na medián; mikrofónový EQ vynechaný. Môže zahŕňať EQ prehrávania.</translation>
+      <extracomment>New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.</extracomment>
+    </message>
+    <message>
+      <source>SoundCurrent virtual output requires 48 kHz stereo float audio</source>
+      <translation>Virtuálny výstup SoundCurrent vyžaduje stereofónny zvuk 48 kHz v pohyblivej rádovej čiarke</translation>
+    </message>
+    <message>
+      <source>Soundbar</source>
+      <translation>Soundbar</translation>
+      <extracomment>Integrated elongated speaker system commonly used with televisions.</extracomment>
     </message>
     <message>
       <source>Source</source>
-      <translation type="unfinished" />
+      <translation>Zdroj</translation>
+    </message>
+    <message>
+      <source>Source: %1</source>
+      <translation>Zdroj: %1</translation>
+      <extracomment>Published measurement source URL. %1 is verbatim source data, not a translated equipment identifier.</extracomment>
+    </message>
+    <message>
+      <source>Speaker</source>
+      <translation>Reproduktor</translation>
     </message>
     <message>
       <source>Speaker &amp;&amp; room calibration</source>
-      <translation type="unfinished" />
+      <translation>Kalibrácia reproduktorov &amp;&amp; miestnosti</translation>
     </message>
     <message>
       <source>Speaker + room check</source>
-      <translation type="unfinished" />
+      <translation>Kontrola reproduktorov a miestnosti</translation>
+    </message>
+    <message>
+      <source>Speaker and room measurement</source>
+      <translation>Meranie reproduktorov a miestnosti</translation>
+    </message>
+    <message>
+      <source>Speaker filter is outside conservative bounds</source>
+      <translation>Filter reproduktora je mimo opatrne stanovených medzí</translation>
     </message>
     <message>
       <source>Speaker manufacturer</source>
-      <translation type="unfinished" />
+      <translation>Výrobca reproduktora</translation>
     </message>
     <message>
       <source>Speaker model correction</source>
-      <translation type="unfinished" />
+      <translation>Korekcia modelu reproduktora</translation>
     </message>
     <message>
       <source>Speaker model profile</source>
-      <translation type="unfinished" />
+      <translation>Profil modelu reproduktora</translation>
     </message>
     <message>
       <source>Speaker profile details</source>
-      <translation type="unfinished" />
+      <translation>Podrobnosti profilu reproduktora</translation>
+    </message>
+    <message>
+      <source>Speaker profile resource is missing</source>
+      <translation>Chýba zdrojový súbor profilov reproduktorov</translation>
     </message>
     <message>
       <source>Speaker type</source>
-      <translation type="unfinished" />
+      <translation>Typ reproduktora</translation>
+    </message>
+    <message>
+      <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
+      <translation>Spinorama AutoEQ: zisk korekcie je obmedzený na %1 a Q na %2. Zosilnenia pod %3 sa vynechávajú. Vaša predvoľba počúvania sa pridáva samostatne.</translation>
+      <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
+    </message>
+    <message>
+      <source>Start cable capture</source>
+      <translation>Spustiť zachytávanie kábla</translation>
+    </message>
+    <message>
+      <source>Start microphone recording</source>
+      <translation>Spustiť záznam mikrofónu</translation>
     </message>
     <message>
       <source>Start quiet. Raise only if the microphone cannot hear the tones.</source>
-      <translation type="unfinished" />
+      <translation>Začnite potichu. Zvyšujte úroveň iba vtedy, keď mikrofón tóny nezachytí.</translation>
+    </message>
+    <message>
+      <source>Start speaker output</source>
+      <translation>Spustiť výstup reproduktorov</translation>
+    </message>
+    <message>
+      <source>Start test playback</source>
+      <translation>Spustiť testovacie prehrávanie</translation>
+    </message>
+    <message>
+      <source>Start when I sign in</source>
+      <translation>Spustiť pri prihlásení</translation>
+    </message>
+    <message>
+      <source>Startup</source>
+      <translation>Spúšťanie</translation>
+    </message>
+    <message>
+      <source>Step down</source>
+      <translation>Znížiť hodnotu</translation>
+      <extracomment>Decrease the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Step up</source>
+      <translation>Zvýšiť hodnotu</translation>
+      <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
+    </message>
+    <message>
+      <source>Stop the microphone calibration before changing the audio driver.</source>
+      <translation>Pred zmenou zvukového ovládača zastavte kalibráciu mikrofónu.</translation>
     </message>
     <message>
       <source>Stop tones</source>
-      <translation type="unfinished" />
+      <translation>Zastaviť tóny</translation>
+    </message>
+    <message>
+      <source>Studio profile has an invalid boolean field</source>
+      <translation>Profil Studio obsahuje neplatné logické pole</translation>
+      <extracomment>Saved Studio setup requires a JSON true/false field. Wrong type or missing value is rejected; do not confuse this with an audio level or textual yes/no preference.</extracomment>
+    </message>
+    <message>
+      <source>Studio profile has an invalid numeric field</source>
+      <translation>Profil Studio obsahuje neplatné číselné pole</translation>
+      <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
-      <translation type="unfinished" />
+      <translation>Odporúčané EQ použité. Ak ho chcete zachovať, použite Uložiť predvoľbu.</translation>
     </message>
     <message>
       <source>Suggested changes to the playback EQ</source>
-      <translation type="unfinished" />
+      <translation>Odporúčané zmeny posluchového EQ</translation>
     </message>
     <message>
       <source>Surround Sound</source>
-      <translation type="unfinished" />
+      <translation>Priestorový zvuk</translation>
+    </message>
+    <message>
+      <source>Surround speaker</source>
+      <translation>Priestorový reproduktor</translation>
+      <extracomment>Speaker used for surround audio channels; not an app surround-mode toggle.</extracomment>
     </message>
     <message>
       <source>System response profile editor opened. Saved profiles are available in the equipment library.</source>
-      <translation type="unfinished" />
+      <translation>Editor profilu odozvy systému otvorený. Uložené profily sú dostupné v knižnici zariadení.</translation>
     </message>
     <message>
       <source>TV Dialogue</source>
-      <translation type="unfinished" />
+      <translation>Televízne dialógy</translation>
     </message>
     <message>
       <source>Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.</source>
-      <translation type="unfinished" />
+      <translation>Tyrkysová: korekčný EQ. Oranžová: nameraná odozva, ak je dodaná. Zvislá stupnica zobrazuje relatívne hodnoty v dB.</translation>
     </message>
     <message>
       <source>Test level</source>
-      <translation type="unfinished" />
+      <translation>Testovacia úroveň</translation>
+    </message>
+    <message>
+      <source>Test level is outside the allowed range</source>
+      <translation>Testovacia úroveň je mimo povoleného rozsahu</translation>
+    </message>
+    <message>
+      <source>The VB-CABLE package is missing. Repair the SoundCurrent installation.</source>
+      <translation>Balík VB-CABLE chýba. Opravte inštaláciu SoundCurrent.</translation>
+      <extracomment>The bundled official VB-CABLE ZIP is absent. Repair the SoundCurrent app installation; do not change speakers or cable hardware.</extracomment>
     </message>
     <message>
       <source>The audio processor stopped unexpectedly.</source>
-      <translation type="unfinished" />
+      <translation>Zvukový procesor sa neočakávane zastavil.</translation>
+    </message>
+    <message>
+      <source>The audio readiness helper is missing. Repair the SoundCurrent installation.</source>
+      <translation>Pomocník kontroly pripravenosti zvuku chýba. Opravte inštaláciu SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The custom library holds up to 256 profiles.</source>
+      <translation>Vlastná knižnica pojme najviac 256 profilov.</translation>
+    </message>
+    <message>
+      <source>The driver manager is not signed. Install a signed SoundCurrent release.</source>
+      <translation>Správca ovládačov nie je podpísaný. Nainštalujte podpísané vydanie SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>The driver package is incomplete or Windows cannot verify its signature.</source>
+      <translation>Balík ovládača je neúplný alebo systém Windows nemôže overiť jeho podpis.</translation>
+    </message>
+    <message>
+      <source>The incomplete VB-CABLE installation was removed. Restart Windows, open %1 again, click Install Driver, then restart once more.</source>
+      <translation>Neúplná inštalácia VB-CABLE bola odstránená. Reštartujte systém Windows, znova otvorte %1, kliknite na Install Driver a potom znova reštartujte.</translation>
+    </message>
+    <message>
+      <source>The route-preserving setup helper is missing.</source>
+      <translation>Chýba pomocný program nastavenia zachovávajúci smerovanie zvuku.</translation>
+      <extracomment>The installed executable that preserves prior default audio routing while launching driver setup is missing. Route refers to audio endpoints, not navigation/network routing.</extracomment>
+    </message>
+    <message>
+      <source>The shared driver manager is missing. Repair the app installation.</source>
+      <translation>Zdieľaný správca ovládačov chýba. Opravte inštaláciu aplikácie.</translation>
     </message>
     <message>
       <source>The update response was invalid. No installer was opened.</source>
-      <translation type="unfinished" />
+      <translation>Odpoveď aktualizačnej služby bola neplatná. Žiadny inštalátor nebol otvorený.</translation>
     </message>
     <message>
       <source>This imports measured RESPONSE, not already-inverted EQ gains. Confirm equipment type. Absolute SPL needs normalization before import.</source>
-      <translation type="unfinished" />
+      <translation>Importuje sa nameraná ODOZVA, nie už invertované zosilnenie EQ. Potvrďte typ zariadenia. Absolútne SPL vyžaduje pred importom normalizáciu.</translation>
     </message>
     <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
-      <translation type="unfinished" />
+      <translation>Tento profil bol zmenený. Uložiť pred odchodom vlastnú kópiu?</translation>
+    </message>
+    <message>
+      <source>Timed out waiting for the equalizer sink: %1</source>
+      <translation>Vypršal čas čakania na výstup ekvalizéra: %1</translation>
+    </message>
+    <message>
+      <source>Too little test audio reached the microphone. Move it closer or raise the test level slightly.</source>
+      <translation>K mikrofónu dorazilo príliš málo testovacieho zvuku. Presuňte ho bližšie alebo mierne zvýšte testovaciu úroveň.</translation>
+    </message>
+    <message>
+      <source>Too many Studio channel filters</source>
+      <translation>Príliš veľa filtrov v kanáli Studio</translation>
+      <extracomment>Per-channel EQ filter count exceeds 64; unchanged processing bound.</extracomment>
+    </message>
+    <message>
+      <source>Too many Studio routes</source>
+      <translation>Príliš veľa zvukových prepojení Studio</translation>
+      <extracomment>Saved audio routing edge count exceeds channel-count squared.</extracomment>
+    </message>
+    <message>
+      <source>Touring PA speaker</source>
+      <translation>Reproduktor na koncertné ozvučenie</translation>
+      <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
-      <translation type="unfinished" />
+      <translation>Pokrytie prekladu: %1 z %2 správ. Chýbajúce preklady používajú angličtinu. Jazykové balíky sú neoverené a čakajú na kontrolu rodeným hovoriacim. Zmeny použijete ukončením a opätovným otvorením aplikácie.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
-      <translation type="unfinished" />
+      <translation>Detaily výšok</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
-      <translation type="unfinished" />
+      <translation>Vypnúť ekvalizér</translation>
     </message>
     <message>
       <source>Turn equalizer on</source>
-      <translation type="unfinished" />
+      <translation>Zapnúť ekvalizér</translation>
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Typ</translation>
+    </message>
+    <message>
+      <source>Unclassified equipment</source>
+      <translation>Nezaradené zariadenie</translation>
+      <extracomment>Equipment taxonomy has no more specific classification; not an error, missing device, or user permission status.</extracomment>
     </message>
     <message>
       <source>Undo</source>
@@ -1231,27 +2784,74 @@ Import into your library?</source>
     </message>
     <message>
       <source>Undo last equalizer change</source>
-      <translation type="unfinished" />
+      <translation>Vrátiť poslednú zmenu ekvalizéra</translation>
+    </message>
+    <message>
+      <source>Uninstall</source>
+      <translation>Odinštalovať</translation>
+      <extracomment>Windows Start-menu shortcut action removing this application. Distinct from Quit or closing the UI. Driver removal remains optional shared-driver policy.</extracomment>
+    </message>
+    <message>
+      <source>Unknown</source>
+      <translation>Neznáme</translation>
+      <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
       <source>Unlock EQ</source>
-      <translation type="unfinished" />
+      <translation>Odomknúť EQ</translation>
     </message>
     <message>
       <source>Unlock controls and finish measurement before editing profiles.</source>
-      <translation type="unfinished" />
+      <translation>Pred úpravou profilov odomknite ovládanie a dokončite meranie.</translation>
+    </message>
+    <message>
+      <source>Unmute speaker for EQ</source>
+      <translation>Zrušiť stlmenie reproduktorov pre EQ</translation>
+    </message>
+    <message>
+      <source>Unsupported Studio profile schema</source>
+      <translation>Nepodporovaný formát profilu Studio</translation>
+      <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
+    </message>
+    <message>
+      <source>Unsupported equipment profile schema (expected 2).</source>
+      <translation>Nepodporovaná schéma profilu zariadenia (očakávané 2).</translation>
+    </message>
+    <message>
+      <source>Unsupported filter type.</source>
+      <translation>Nepodporovaný typ filtra.</translation>
+    </message>
+    <message>
+      <source>Unsupported microphone channel layout</source>
+      <translation>Nepodporované rozloženie kanálov mikrofónu</translation>
+    </message>
+    <message>
+      <source>Unsupported recording format</source>
+      <translation>Nepodporovaný formát záznamu</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker channel layout or sample rate</source>
+      <translation>Nepodporované rozloženie kanálov reproduktorov alebo vzorkovacia frekvencia</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker mix sample format</source>
+      <translation>Nepodporovaný formát vzoriek zmiešavania reproduktorov</translation>
+    </message>
+    <message>
+      <source>Unsupported speaker profile schema</source>
+      <translation>Nepodporovaná schéma profilu reproduktora</translation>
     </message>
     <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
-      <translation type="unfinished" />
+      <translation>Aktualizácia %1 je stiahnutá: %2. Ukončite aplikáciu, nainštalujte ju cez existujúcu aplikáciu a znovu ju otvorte.</translation>
     </message>
     <message>
       <source>Update download folder</source>
-      <translation type="unfinished" />
+      <translation>Priečinok pre stiahnuté aktualizácie</translation>
     </message>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
-      <translation type="unfinished" />
+      <translation>Použite tichú miestnosť. Meria spoločne reproduktory, miestnosť a mikrofón; výsledky zahŕňajú odozvu mikrofónu.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -1260,35 +2860,153 @@ Import into your library?</source>
     <message>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
-      <translation>Použiť oblasť systému</translation>
+      <translation>Použiť miestne nastavenia systému</translation>
+    </message>
+    <message>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Relatívna frekvenčná odozva importovaná používateľom; pred použitím uveďte orientáciu / sériové číslo mikrofónu alebo podmienky merania reproduktora.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created correction; enter equipment and measurement conditions.</source>
+      <translation>Korekcia vytvorená používateľom; zadajte vybavenie a podmienky merania.</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>User-created profile</source>
+      <translation>Profil vytvorený používateľom</translation>
+      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE has a driver record but no usable audio endpoints. Setup offers repair: remove the driver, restart, reinstall, and restart again.</source>
+      <translation>VB-CABLE je zaregistrovaný ako ovládač, ale nemá použiteľné zvukové koncové body. Inštalátor ponúka opravu: odstráňte ovládač, reštartujte počítač, znova ovládač nainštalujte a opäť reštartujte počítač.</translation>
+      <extracomment>Incomplete driver registration notice (check exit 11). Audio endpoints mean Windows playback/recording devices. Preserve two computer restarts and the remove/reinstall order. Not a claim that repair completed. VB-CABLE is invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE is already installed. If it was just installed or updated, restart Windows before using the equalizer or VB-CABLE settings. Otherwise, select your speakers in SoundCurrent.</source>
+      <translation>VB-CABLE je už nainštalovaný. Ak bol práve nainštalovaný alebo aktualizovaný, reštartujte systém Windows pred použitím ekvalizéra alebo nastavení VB-CABLE. Inak vyberte reproduktory v SoundCurrent.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is already present. It will be reused. SoundCurrent restores your normal output when switched off or when you use %1.</source>
+      <translation>VB-CABLE je už prítomné a bude znova použité. SoundCurrent obnoví váš bežný výstup po vypnutí alebo použití %1.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is not installed. Open "%1", then restart Windows before opening the cable settings.</source>
+      <translation>VB-CABLE nie je nainštalovaný. Otvorte "%1" a pred otvorením nastavení kábla reštartujte systém Windows.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is not present. Restart Windows if requested, then retry audio setup.</source>
+      <translation>VB-CABLE nie je prítomný. Ak bol požadovaný reštart, reštartujte systém Windows a skúste nastavenie zvuku znova.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.</source>
+      <translation>VB-CABLE je stále prítomný. Ak odstránenie vyžadovalo reštart, reštartujte systém Windows a skúste znova odinštalovať SoundCurrent; inak dokončite Remove Driver v oficiálnom inštalačnom programe.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE package checksum mismatch. Repair the installation.</source>
+      <translation>Kontrolný súčet balíka VB-CABLE nesúhlasí. Opravte inštaláciu.</translation>
+      <extracomment>The bundled ZIP SHA-256 differs from the pinned official package checksum. It is rejected before extraction/execution. This is file integrity, not audio level or signal quality.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE removal did not finish. This app was kept so you can retry.</source>
+      <translation>Odstránenie VB-CABLE nebolo dokončené. Táto aplikácia bola ponechaná, aby ste mohli pokus zopakovať.</translation>
+      <extracomment>Cable uninstall nonzero failure excluding restart code 3010 aborts before app payload deletion. App retained for retry. NSIS caller appends newline and actual helper output as $1; never put runtime variables in translations. VB-CABLE invariant. Contextual AI review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>VB-CABLE routes playback through the app. Choose speakers inside SoundCurrent. VB-CABLE is VB-Audio donationware: https://vb-cable.com — donations are welcome.</source>
+      <translation>VB-CABLE smeruje prehrávanie cez aplikáciu. Vyberte reproduktory v SoundCurrent. VB-CABLE je softvér od VB-Audio podporovaný darmi: https://vb-cable.com — dary sú vítané.</translation>
+      <extracomment>Cable audio page routing and donation notice. Software routes system playback through SoundCurrent to physical output selected inside app. Donationware means supported by voluntary donations, not mandatory payment. Preserve VB-CABLE twice, SoundCurrent, VB-Audio and exact donation URL. Contextual AI review only; native review unverified.</extracomment>
     </message>
     <message>
       <source>VB-CABLE settings</source>
-      <translation type="unfinished" />
+      <translation>Nastavenia VB-CABLE</translation>
+    </message>
+    <message>
+      <source>VB-CABLE settings could not open. Restart Windows if the driver was just installed or updated, then try again.</source>
+      <translation>Nastavenia VB-CABLE sa nepodarilo otvoriť. Ak bol ovládač práve nainštalovaný alebo aktualizovaný, reštartujte systém Windows a skúste to znova.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.</source>
+      <translation>Nastavenie VB-CABLE je dokončené. Pred použitím ekvalizéra alebo nastavení VB-CABLE teraz reštartujte systém Windows. Predchádzajúce predvolené zvukové zariadenia boli zachované, ak boli stále dostupné.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup requires a Windows restart. Restart before using the equalizer or opening VB-CABLE settings.</source>
+      <translation>Nastavenie VB-CABLE vyžaduje reštart Windows. Reštartujte pred použitím ekvalizéra alebo otvorením nastavení VB-CABLE.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.</source>
+      <translation>Nastavenie VB-CABLE bolo zrušené alebo nebolo dokončené (kód %1). SoundCurrent zostáva nainštalovaný pre ďalší pokus.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.</source>
+      <translation>VB-CABLE stále nemá použiteľné zariadenia na prehrávanie alebo nahrávanie. Dokončite Remove Driver v oficiálnom inštalačnom programe, reštartujte Windows a znova otvorte %1 na preinštalovanie ovládača. CABLE Input a CABLE Output musia byť povolené v nastaveniach zvuku Windows.</translation>
+    </message>
+    <message>
+      <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
+      <translation>VB-CABLE bol zachovaný, pretože je nainštalovaná druhá aplikácia SoundCurrent. Odstráňte ho s poslednou aplikáciou, ak ho nepotrebuje žiadny iný softvér.</translation>
     </message>
     <message>
       <source>Vocal Focus</source>
-      <translation type="unfinished" />
+      <translation>Zameranie na spev</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
-      <translation type="unfinished" />
+      <translation>Čakanie na mikrofón.</translation>
     </message>
     <message>
       <source>Warm</source>
-      <translation type="unfinished" />
+      <translation>Teplý</translation>
     </message>
     <message>
       <source>Warmth</source>
-      <translation type="unfinished" />
+      <translation>Teplý tón</translation>
     </message>
     <message>
-      <source>Width (Q)</source>
-      <translation type="unfinished" />
+      <source>Whole listening system</source>
+      <translation>Celá posluchová sústava</translation>
+      <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Windows audio COM unavailable</source>
+      <translation>COM pre zvuk Windows nie je dostupné</translation>
+    </message>
+    <message>
+      <source>Windows could not verify the VB-Audio executable signature.</source>
+      <translation>Windows nedokázal overiť podpis spustiteľného súboru VB-Audio.</translation>
+      <extracomment>Windows Authenticode did not report a valid signature for the vendor executable. No claim is made about why verification failed; no instruction to bypass verification.</extracomment>
+    </message>
+    <message>
+      <source>Windows has a VB-CABLE driver record but no usable cable endpoints. First check that CABLE Input and CABLE Output are enabled in Windows Sound settings. To reinstall: click Remove Driver in the official setup that opens next, restart Windows, then open %1 in the app again and click Install Driver. Restart once more before playing audio through SoundCurrent. Removing this shared cable affects other apps that use it.</source>
+      <translation>Windows obsahuje záznam ovládača VB-CABLE, ale nemá použiteľné koncové body kábla. Najprv skontrolujte, či sú CABLE Input a CABLE Output povolené v nastaveniach zvuku Windows. Na opätovnú inštaláciu: kliknite na Remove Driver v oficiálnom inštalačnom programe, ktorý sa otvorí ako ďalší, reštartujte Windows, potom v aplikácii znova otvorte %1 a kliknite na Install Driver. Pred prehrávaním zvuku cez SoundCurrent ešte raz reštartujte počítač. Odstránenie tohto zdieľaného kábla ovplyvní ďalšie aplikácie, ktoré ho používajú.</translation>
+      <extracomment>Pre-repair modal, before official driver installer is opened. Existing driver record but endpoints unavailable; first check Windows endpoint enablement. Remove Driver and Install Driver are exact English external buttons. %1 is actual localized Audio driver setup button inside app, not English Start-menu shortcut. Preserve removal -&gt; Windows restart -&gt; app setup -&gt; reinstall -&gt; second restart, then audio playback; affects other users of shared cable. No claim removal already happened. AI contextual review only; native review unverified.</extracomment>
+    </message>
+    <message>
+      <source>Windows has a VB-CABLE driver record, but its playback or recording endpoint is unavailable. If you have already restarted, open %1 to repair it. Enable CABLE Input and CABLE Output in Windows Sound settings if they are disabled.</source>
+      <translation>Windows má záznam ovládača VB-CABLE, ale jeho koncový bod prehrávania alebo nahrávania nie je dostupný. Ak ste už reštartovali, otvorte %1 na opravu. Povoľte CABLE Input a CABLE Output v nastaveniach zvuku systému Windows, ak sú zakázané.</translation>
+    </message>
+    <message>
+      <source>Windows will request administrator approval for the signed driver manager. Setup will tell you if a restart is required.</source>
+      <translation>Windows požiada o schválenie správcom pre digitálne podpísaný program na správu ovládačov. Inštalačný program oznámi, či je potrebný reštart.</translation>
+    </message>
+    <message>
+      <source>Write speaker buffer</source>
+      <translation>Zapísať buffer reproduktorov</translation>
+    </message>
+    <message>
+      <source>Write test playback</source>
+      <translation>Zapísať testovacie prehrávanie</translation>
+    </message>
+    <message>
+      <source>Yes</source>
+      <translation>Áno</translation>
+    </message>
+    <message>
+      <source>Yes to All</source>
+      <translation>Áno pre všetko</translation>
     </message>
     <message>
       <source>Zero turns each effect off. These listening effects apply to speaker playback, not microphone correction.</source>
-      <translation type="unfinished" />
+      <translation>Nula vypína každý efekt. Tieto posluchové efekty sa vzťahujú na prehrávanie cez reproduktory, nie na korekciu mikrofónu.</translation>
     </message>
   </context>
 </TS>

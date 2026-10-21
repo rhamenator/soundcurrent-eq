@@ -1,0 +1,17 @@
+{
+  "run": 37912691903,
+  "qualifiedProductionHead": "8489a3eed172ba2d1c0098667e3b3202d7ca8049",
+  "platform": "Fedora 44 disposable container",
+  "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-complete-installer-37912691903/package-validation-1/soundcurrent-eq-1.1.0-1.fc44.x86_64.rpm",
+  "packageSha256": "cce4398258283a91dc078af0dbb4a92bc6b667d82168086df4280a476037c379",
+  "sha256ManifestMatches": true,
+  "allCTestPassed": true,
+  "standaloneInstallerCatalogCTestPassed": true,
+  "installedLocaleCompletions": 33,
+  "launcherInstallUpdateReinstallMatchesCurrentSource": true,
+  "currentProductionSourcesMatchQualifiedHead": true,
+  "scope": "Package install, same-package update, uninstall/config preservation and reinstall; actual installed locale fixtures and exact launcher bytes. Installer text tests do not execute its privileged install path. Later source guards and terminal fixtures were separately tested locally.",
+  "nativeReviewed": false,
+  "allLocaleVisualRenderingProven": false,
+  "wholeInterfaceCoverageProven": false
+}

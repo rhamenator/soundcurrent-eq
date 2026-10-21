@@ -1,0 +1,7 @@
+UI self-test: constructing window
+UI self-test: window constructed
+This plugin does not support raise()
+This plugin does not support grabbing the keyboard
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+UI self-test passed with 34 presets and editable 5–31 band layout

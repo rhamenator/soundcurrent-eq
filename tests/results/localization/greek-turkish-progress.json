@@ -1,0 +1,46 @@
+{
+  "stage": "Greek and Turkish complete extracted catalogs",
+  "catalogs": [
+    {
+      "tag": "el",
+      "name": "Ελληνικά",
+      "translated": 441,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "25d4b76f8dcb5e44087be8224bc2e53fb8ba7cb75e61e4dfdd0dbe7e52dd4bab",
+      "qmSha256": "7888301ef18383e04786341e216b720d158b02bd01c0f2d9b976ffd08990d338"
+    },
+    {
+      "tag": "tr",
+      "name": "Türkçe",
+      "translated": 441,
+      "total": 441,
+      "status": "unverified",
+      "nativeReviewed": false,
+      "tsSha256": "996a5c19db7c9561216010c02db4a5e3046c65720877c1d395fce4387f46c288",
+      "qmSha256": "074c1f91a5856d76d61ac34c874bf3f1e2e70c2f4a50e4b836aa0766bb9999c0"
+    }
+  ],
+  "linuxTests": {
+    "passed": 62,
+    "total": 62,
+    "scope": "Full CTest including Greek/Turkish equipment workflows and all configured main windows",
+    "log": "/tmp/soundcurrent-eq-el-tr-complete-tests.log"
+  },
+  "visualInspection": {
+    "platform": "xcb/Xvfb",
+    "display": "1280x720",
+    "sample": "Greek EQ equalizer",
+    "screenshots": "/tmp/soundcurrent-eq-el-complete-xcb"
+  },
+  "review": "Contextual AI review, unverified. Q, gain/headroom, wet mixes, loudness compensation and measured-response limits reviewed. Render counts use neutral labels.",
+  "nativeReviewed": false,
+  "windows": {
+    "runId": 37721576713,
+    "conclusion": "success",
+    "sourceCommit": "9fcd76820a66377d88beb4d63badbb3494d29c6a",
+    "scope": "Windows build, staged runtime tests and installer creation; actual installer lifecycle separate"
+  },
+  "remaining": "18 target catalogs incomplete; backend/installer extraction, small-screen Polish layout and platform lifecycle/sign-in qualification remain open."
+}

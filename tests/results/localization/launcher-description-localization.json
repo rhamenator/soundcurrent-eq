@@ -1,0 +1,263 @@
+{
+  "date": "2026-10-09",
+  "scope": "Linux launcher Comment metadata, actual GLib KeyFile locale lookup with KEEP_TRANSLATIONS and desktop-file-validate. Does not launch app or prove installed package lifecycle.",
+  "observations": [
+    {
+      "tag": "en",
+      "desktopLocale": "en",
+      "observedDescription": "Adjustable system-wide equalizer for PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "de",
+      "desktopLocale": "de",
+      "observedDescription": "Einstellbarer systemweiter Equalizer für PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "fr",
+      "desktopLocale": "fr",
+      "observedDescription": "Égaliseur réglable pour tout le système avec PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "es",
+      "desktopLocale": "es",
+      "observedDescription": "Ecualizador ajustable para todo el sistema con PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "it",
+      "desktopLocale": "it",
+      "observedDescription": "Equalizzatore regolabile per tutto il sistema con PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "pt-PT",
+      "desktopLocale": "pt_PT",
+      "observedDescription": "Equalizador ajustável para todo o sistema com PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "pt-BR",
+      "desktopLocale": "pt_BR",
+      "observedDescription": "Equalizador ajustável para todo o sistema com PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "nl",
+      "desktopLocale": "nl",
+      "observedDescription": "Instelbare systeembrede equalizer voor PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "pl",
+      "desktopLocale": "pl",
+      "observedDescription": "Regulowany korektor dźwięku dla całego systemu z PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "cs",
+      "desktopLocale": "cs",
+      "observedDescription": "Nastavitelný ekvalizér pro celý systém s PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "sk",
+      "desktopLocale": "sk",
+      "observedDescription": "Nastaviteľný ekvalizér pre celý systém s PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "uk",
+      "desktopLocale": "uk",
+      "observedDescription": "Налаштовуваний загальносистемний еквалайзер для PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "ru",
+      "desktopLocale": "ru",
+      "observedDescription": "Настраиваемый общесистемный эквалайзер для PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "el",
+      "desktopLocale": "el",
+      "observedDescription": "Ρυθμιζόμενος ισοσταθμιστής για ολόκληρο το σύστημα με PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "tr",
+      "desktopLocale": "tr",
+      "observedDescription": "PipeWire için ayarlanabilir sistem geneli ekolayzır",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "sv",
+      "desktopLocale": "sv",
+      "observedDescription": "Justerbar systemomfattande equalizer för PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "da",
+      "desktopLocale": "da",
+      "observedDescription": "Justerbar equalizer til hele systemet med PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "nb",
+      "desktopLocale": "nb",
+      "observedDescription": "Justerbar equalizer for hele systemet med PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "fi",
+      "desktopLocale": "fi",
+      "observedDescription": "Säädettävä koko järjestelmän taajuuskorjain PipeWirelle",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "ro",
+      "desktopLocale": "ro",
+      "observedDescription": "Egalizator reglabil pentru întregul sistem cu PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "hu",
+      "desktopLocale": "hu",
+      "observedDescription": "Állítható, rendszerszintű hangszínszabályzó PipeWire-hez",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "ar",
+      "desktopLocale": "ar",
+      "observedDescription": "معادل صوت قابل للضبط على مستوى النظام باستخدام PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "he",
+      "desktopLocale": "he",
+      "observedDescription": "אקולייזר מתכוונן לכל המערכת עם PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "fa",
+      "desktopLocale": "fa",
+      "observedDescription": "اکولایزر قابل تنظیم برای کل سیستم با PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "zh-Hans",
+      "desktopLocale": "zh_CN",
+      "observedDescription": "适用于 PipeWire 的可调节全系统均衡器",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "zh-Hant",
+      "desktopLocale": "zh_TW",
+      "observedDescription": "適用於 PipeWire 的可調整全系統等化器",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "ja",
+      "desktopLocale": "ja",
+      "observedDescription": "PipeWire 用の調整可能なシステム全体のイコライザー",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "ko",
+      "desktopLocale": "ko",
+      "observedDescription": "PipeWire용 조절 가능한 시스템 전체 이퀄라이저",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "hi",
+      "desktopLocale": "hi",
+      "observedDescription": "PipeWire के लिए पूरे सिस्टम का समायोज्य इक्वलाइज़र",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "id",
+      "desktopLocale": "id",
+      "observedDescription": "Equalizer yang dapat disesuaikan untuk seluruh sistem dengan PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "vi",
+      "desktopLocale": "vi",
+      "observedDescription": "Bộ cân bằng âm thanh có thể điều chỉnh cho toàn hệ thống với PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "th",
+      "desktopLocale": "th",
+      "observedDescription": "อีควอไลเซอร์ที่ปรับได้สำหรับทั้งระบบด้วย PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "sw",
+      "desktopLocale": "sw",
+      "observedDescription": "Kisawazisha masafa ya sauti kinachoweza kurekebishwa kwa mfumo mzima kwa PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    },
+    {
+      "tag": "nn",
+      "desktopLocale": "nn",
+      "observedDescription": "Justerbar equalizer for heile systemet med PipeWire",
+      "matchesCatalog": true,
+      "desktopAppInfoDescriptionMatches": true
+    }
+  ],
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false,
+  "sourceSha256": {
+    "data/io.github.rhamenator.SoundCurrentEQ.desktop": "f40949f5f076be85655387939a3c49a6e2913e4cd4a54c884d892e0a893a4073",
+    "scripts/localization.py": "ccf5f4e532a8e5d5eb331f9f97d68448d7037b70f0a430d3b904c066bfe54b24",
+    "tests/translation_catalogs.py": "7698fc0a5ee8d25d8bb416fc45fdec0cba2bddd2eca7e888f62d3d0962c8ab31"
+  },
+  "catalogCount": 34,
+  "applicationNameCommandIconCategoriesChanged": false,
+  "packageQualification": "Pending for launcher-description change; prior public-update packages do not contain it.",
+  "probeCorrection": "Initial probe used KeyFileFlags.NONE, which discards non-current translations; corrected to KEEP_TRANSLATIONS for explicit locale lookup.",
+  "testIsolationFix": "Desktop files are resolved relative to the catalog data directory, so mocked temporary catalog tests cannot inspect or overwrite production launchers.",
+  "desktopAppInfoScope": "Actual GioUnix.DesktopAppInfo description lookup in a fresh process with LANGUAGE set to each supported desktop locale, LC_ALL=C.UTF-8; app not launched.",
+  "fullCatalogTests": {
+    "tests": 60,
+    "skipped": 1,
+    "result": "passed",
+    "skipReason": "Studio session model is not part of EQ"
+  }
+}

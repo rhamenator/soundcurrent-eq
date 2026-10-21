@@ -1,0 +1,16 @@
+{
+  "run": 37906717849,
+  "qualifiedProductionHead": "6b11bfcd097c4beb0cf48f65bca3a1afd73d23f4",
+  "platform": "Ubuntu 24.04 disposable container",
+  "package": "/home/rich/dev/soundcurrent-localization-artifacts/eq-linux-startup-37906717849/package-validation-0/soundcurrent-eq_1.1.0_amd64.deb",
+  "packageSha256": "d900d7dd9586986fc16142c7eb60b0f1223da0add59f2c113d2c2cf120494ac4",
+  "sha256ManifestMatches": true,
+  "allCTestPassed": true,
+  "installedLocaleCompletions": 33,
+  "launcherSha256": "f40949f5f076be85655387939a3c49a6e2913e4cd4a54c884d892e0a893a4073",
+  "launcherInstallUpdateReinstallMatchesCurrentSource": true,
+  "currentCompiledSourceMatchesQualifiedHead": true,
+  "scope": "Debian package install, same-package update, uninstall/config preservation and reinstall; actual installed language fixtures plus exact installed launcher bytes. Later source guards/reports differ; compiled src/data/CMake do not. RPM qualification is separate and pending.",
+  "nativeReviewed": false,
+  "wholeInterfaceCoverageProven": false
+}

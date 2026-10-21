@@ -1,0 +1,32 @@
+{
+  "scope": "Cable routing/donation notice; custom audio page caption preparation",
+  "catalogs": 34,
+  "nonEnglishLocales": 33,
+  "sourceMessages": 616,
+  "unfinishedExtractedEntries": 0,
+  "contextualReview": "AI reviewed virtual playback routing, app output selection and voluntary donation meaning; guarded brand occurrence counts and exact URL",
+  "nativeSpeakerVerification": "unverified",
+  "validation": {
+    "catalogTests": {
+      "total": 43,
+      "passed": 42,
+      "skipped": 1
+    },
+    "compiledCatalogHashes": "verified",
+    "nsisLiteralCompiler": {
+      "captions": 612,
+      "languageIDs": "English fixture only",
+      "localeActivation": false,
+      "layoutQualified": false
+    },
+    "customControlCaptionAudit": "All supported NSIS control-caption sites reference declared LangStrings; new raw captions reject"
+  },
+  "driverActionsOrDSPChanged": false,
+  "currentPackagesQualified": false,
+  "wholeInterfaceCoverageProven": false,
+  "remainingScope": [
+    "Welcome/progress/error and helper notice translations",
+    "Installer locale activation and installed layout",
+    "Current Linux/Windows UI and package lifecycle qualification"
+  ]
+}
