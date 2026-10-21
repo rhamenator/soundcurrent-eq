@@ -14,6 +14,7 @@
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QFormLayout>
+#include <QGridLayout>
 #include <QHeaderView>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -492,15 +493,17 @@ void saveNewProfile(QWidget *parent, Profile p) {
     editor.dirty = true;
     editor.exec();
 }
-void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &apply) {
+void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &apply, const QString &initialKind) {
     QDialog dialog(parent);
     dialog.setWindowTitle(SC_TR("Equipment profiles — brand / family / model"));
     dialog.resize(800, 650);
+    dialog.setObjectName("equipmentProfileManager");
     auto *layout = new QVBoxLayout(&dialog);
     auto *search = new QLineEdit;
     search->setPlaceholderText(SC_TR("Search brand, family, model or measurement conditions"));
     layout->addWidget(search);
     auto *list = new QComboBox;
+    list->setObjectName("equipmentProfileList");
     list->setMaxVisibleItems(15);
     list->setAccessibleName(SC_TR("Equipment profiles by brand family and model"));
     layout->addWidget(list);
@@ -513,6 +516,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     auto *plot = new Plot;
     layout->addWidget(plot);
     QVector<Profile> custom = loadLibrary(), profiles = bundledProfiles();
+    const int bundledCount = profiles.size();
     profiles += custom;
     auto *taxonomy = new QHBoxLayout;
     auto *kindFilter = new QComboBox;
@@ -521,6 +525,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     kindFilter->addItem(SC_TR("Speaker"), "speaker");
     kindFilter->addItem(SC_TR("Microphone"), "microphone");
     kindFilter->addItem(SC_TR("Amplifier"), "amplifier");
+    kindFilter->setCurrentIndex(std::max(0, kindFilter->findData(initialKind)));
     kindFilter->setAccessibleName(SC_TR("Equipment type"));
     auto *brandFilter = new QComboBox;
     brandFilter->setAccessibleName(SC_TR("Equipment brand"));
@@ -557,6 +562,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         familyFilter->setCurrentIndex(std::max(0, familyFilter->findText(family)));
     };
     taxonomyRefresh();
+    QPushButton *remove = nullptr;
     auto refresh = [&] {
         list->clear();
         for (int i = 0; i < profiles.size(); ++i) {
@@ -583,6 +589,13 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         plot->profile = p;
         plot->update();
     });
+    auto updateRemove = [&] {
+        if (!remove) return;
+        const int i = list->currentData().toInt();
+        const bool selected = list->currentIndex() >= 0 && i >= 0 && i < profiles.size();
+        remove->setEnabled(selected && i >= bundledCount);
+    };
+    QObject::connect(list, &QComboBox::currentIndexChanged, &dialog, updateRemove);
     QObject::connect(search, &QLineEdit::textChanged, &dialog, [&] { refresh(); });
     QObject::connect(kindFilter, &QComboBox::currentIndexChanged, &dialog, [&] {
         taxonomyRefresh();
@@ -607,7 +620,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             taxonomyRefresh();
             {
                 const QSignalBlocker a(kindFilter), b(brandFilter), c(familyFilter), d(search), st(subtypeFilter);
-                kindFilter->setCurrentIndex(0);
+                kindFilter->setCurrentIndex(std::max(0, kindFilter->findData(p.kind)));
                 brandFilter->setCurrentIndex(0);
                 familyFilter->setCurrentIndex(0);
                 subtypeFilter->setCurrentIndex(0);
@@ -626,11 +639,13 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             return false;
         }
     };
-    auto *row = new QHBoxLayout;
+    auto *row = new QGridLayout;
     layout->addLayout(row);
+    int actionIndex = 0;
     auto button = [&](const QString &label) {
         auto *b = new QPushButton(label);
-        row->addWidget(b);
+        row->addWidget(b, actionIndex / 3, actionIndex % 3);
+        ++actionIndex;
         return b;
     };
     auto *import = button(SC_TR("Import JSON"));
@@ -639,6 +654,25 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     auto *edit = button(SC_TR("Edit / save copy"));
     auto *exportButton = button(SC_TR("Export JSON"));
     auto *use = button(SC_TR("Apply profile"));
+    remove = button(SC_TR("Delete"));
+    remove->setObjectName("deleteEquipmentProfile");
+    QObject::connect(remove, &QPushButton::clicked, &dialog, [&] {
+        if (list->currentIndex() < 0) return;
+        const int userIndex = list->currentData().toInt() - bundledCount;
+        if (userIndex < 0 || userIndex >= custom.size()) return;
+        const auto selected = custom[userIndex];
+        auto proposed = custom;
+        if (ask(&dialog, SC_TR("Delete"), selected.brand + " / " + selected.family + " / " + selected.model,
+                QMessageBox::Yes | QMessageBox::No, QMessageBox::No) != QMessageBox::Yes) return;
+        proposed.removeAt(userIndex);
+        try {
+            saveLibrary(proposed);
+            custom = proposed; profiles = bundledProfiles(); profiles += custom;
+            taxonomyRefresh(); refresh(); updateRemove();
+        } catch (const std::exception &e) {
+            QMessageBox::warning(&dialog, SC_TR("Profile"), QString::fromUtf8(e.what()));
+        }
+    });
     QObject::connect(import, &QPushButton::clicked, &dialog, [&] {
         const auto path = soundcurrent::i18n::FileDialogs::getOpenFileName(&dialog, SC_TR("Import equipment profile"), {},
                                                        SC_TR("Equipment profiles (*.json)"));
@@ -696,13 +730,16 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             }
             p.filters = fitResponse(p.response);
             QDialog kindDialog(&dialog);
+            kindDialog.setWindowTitle(SC_TR("Import response text"));
             auto *kl = new QVBoxLayout(&kindDialog);
             kl->addWidget(new QLabel(SC_TR("This imports measured RESPONSE, not already-inverted EQ gains. Confirm "
                                      "equipment type. Absolute SPL needs normalization before import.")));
             auto *k = new QComboBox;
+            k->setObjectName("equipmentCreationType");
             k->addItem(SC_TR("Microphone"), "microphone");
             k->addItem(SC_TR("Speaker"), "speaker");
             k->addItem(SC_TR("Amplifier"), "amplifier");
+            k->setCurrentIndex(std::max(0, k->findData(kindFilter->currentData())));
             kl->addWidget(k);
             auto *bb = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
             kl->addWidget(bb);
@@ -728,11 +765,14 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         p.conditions = SC_TR("User-created correction; enter equipment and measurement conditions.");
         p.filters.append({1000, 0, 1});
         QDialog select(&dialog);
+        select.setWindowTitle(SC_TR("Create profile"));
         auto *l = new QVBoxLayout(&select);
         auto *k = new QComboBox;
+        k->setObjectName("equipmentCreationType");
         k->addItem(SC_TR("Speaker"), "speaker");
-            k->addItem(SC_TR("Microphone"), "microphone");
-            k->addItem(SC_TR("Amplifier"), "amplifier");
+        k->addItem(SC_TR("Microphone"), "microphone");
+        k->addItem(SC_TR("Amplifier"), "amplifier");
+        k->setCurrentIndex(std::max(0, k->findData(kindFilter->currentData())));
         l->addWidget(k);
         auto *b = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
         l->addWidget(b);
@@ -790,6 +830,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     layout->addWidget(close);
     QObject::connect(close, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
     refresh();
+    updateRemove();
     dialog.exec();
 }
 } // namespace soundcurrent::equipment

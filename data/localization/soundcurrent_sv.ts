@@ -1531,6 +1531,10 @@ Vill du ta bort den ändå?</translation>
       <extracomment>Shelving EQ: raise/lower the low-frequency region. Do not translate as low-pass; it is not a cutoff filter.</extracomment>
     </message>
     <message>
+      <source>Manage profiles</source>
+      <translation>Hantera profiler</translation>
+    </message>
+    <message>
       <source>Manufacturer</source>
       <translation>Tillverkare</translation>
     </message>
