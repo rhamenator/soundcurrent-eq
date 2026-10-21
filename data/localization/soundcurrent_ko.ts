@@ -1531,6 +1531,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Shelving EQ: raise/lower the low-frequency region. Do not translate as low-pass; it is not a cutoff filter.</extracomment>
     </message>
     <message>
+      <source>Manage profiles</source>
+      <translation>프로필 관리</translation>
+    </message>
+    <message>
       <source>Manufacturer</source>
       <translation>제조사</translation>
     </message>

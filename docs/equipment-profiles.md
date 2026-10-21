@@ -145,3 +145,23 @@ Existing shared UI, DSP and premium engine/WAVE tests remain enabled. Tests use 
 settings and no hardware output. Linux is tested locally; the new shared Windows code
 has not yet been built or exercised in a Windows VM. Hardware sweep accuracy and a
 custom profile on a live microphone require separate verification.
+
+## Managing profiles
+
+In Settings & calibration, choose **Manage profiles** in the speaker, microphone,
+or amplifier section. The shared management dialog starts on that equipment type;
+you can also browse other types, manufacturers, families, and models.
+
+Use **Create profile** to enter your own equipment and correction filters, or import
+a measured JSON/response-text file. The editor prompts you to save modified work
+before leaving. Editing a bundled profile saves a custom copy. **Delete** asks for
+confirmation and removes only the selected saved user profile, never a bundled
+measurement. Deleting a library entry does not change corrections already applied;
+use the correction controls to clear or replace those.
+
+A fresh installation starts with Flat listening EQ and no speaker, amplifier, or
+imported equipment correction. Saved choices are retained on subsequent starts.
+The speaker selector uses one canonical Sony SS-CS5 entry from the published
+equipment library; the previous Sony selection is mapped to that entry. Its
+measurement source and conditions remain available; it is not a measured SS-CS5M2
+response.

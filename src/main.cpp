@@ -148,7 +148,7 @@ const QVector<SpeakerProfile> &speakerProfiles() {
             SpeakerProfile profile;
             profile.id = item.value("id").toString();
             profile.name = item.value("name").toString();
-            if (profile.id == "Sony SS-CS5") profile.name += SC_TR(" (original; not SS-CS5M2)");
+            if (profile.id == "Sony SS-CS5") continue; // Canonical measured entry comes from the equipment library.
             if (profile.id.isEmpty() || ids.contains(profile.id)) throw std::runtime_error(SC_TR("Invalid speaker identity").toStdString());
             ids.append(profile.id);
             profile.attribution = item.value("measurement").toString() + " · " + item.value("measurementDate").toString();
@@ -2073,7 +2073,10 @@ public:
         speakerCombo_->setMaxVisibleItems(12);
         speakerCombo_->addItem(SC_TR("None — use my own EQ"), QString());
         for (const auto &profile : speakerProfiles()) speakerCombo_->addItem(profile.name, profile.id);
-        const int savedSpeaker = speakerCombo_->findData(QSettings().value("speakerModelId").toString());
+        auto savedSpeakerId = QSettings().value("speakerModelId").toString();
+        if (savedSpeakerId == "Sony SS-CS5")
+            for (const auto &p : speakerProfiles()) if (p.name == "Sony SS-CS5") { savedSpeakerId = p.id; break; }
+        const int savedSpeaker = speakerCombo_->findData(savedSpeakerId);
         speakerCombo_->setCurrentIndex(std::max(0, savedSpeaker));
         speakerRow->addWidget(speakerCombo_, 1);
         auto *speakerDetails = new QPushButton(SC_TR("Profile details"));
@@ -2090,6 +2093,16 @@ public:
         speakerHelp->setWordWrap(true);
         speakerLayout->addWidget(speakerHelp);
         connect(speakerDetails, &QPushButton::clicked, this, [this] { showSpeakerDetails(); });
+        auto manageProfiles = [this](const QString &kind) {
+            if (lockButton_->isChecked() || calibrating_) { showError(SC_TR("Unlock controls and finish measurement before editing profiles.")); return; }
+            try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }, kind); }
+            catch (const std::exception &e) { showError(QString::fromUtf8(e.what())); }
+        };
+        auto *manageSpeakers = new QPushButton(SC_TR("Manage profiles"));
+        manageSpeakers->setObjectName("manageSpeakerProfiles");
+        manageSpeakers->setAccessibleName(SC_TR("Manage profiles") + " — " + SC_TR("Speaker"));
+        speakerRow->addWidget(manageSpeakers);
+        connect(manageSpeakers, &QPushButton::clicked, this, [manageProfiles] { manageProfiles("speaker"); });
         auto *equipmentButton = new QPushButton(SC_TR("Browse all equipment profiles / editor"));
         equipmentButton->setAccessibleName(SC_TR("Import create and edit equipment profiles"));
         speakerLayout->addWidget(equipmentButton);
@@ -2125,6 +2138,11 @@ public:
         ampRow->addWidget(ampImport_, 2, 0);
         auto *ampDetails = new QPushButton(SC_TR("Amp details"));
         ampRow->addWidget(ampDetails, 2, 1);
+        auto *manageAmplifiers = new QPushButton(SC_TR("Manage profiles"));
+        manageAmplifiers->setObjectName("manageAmplifierProfiles");
+        manageAmplifiers->setAccessibleName(SC_TR("Manage profiles") + " — " + SC_TR("Amplifier"));
+        ampRow->addWidget(manageAmplifiers, 3, 0, 1, 2);
+        connect(manageAmplifiers, &QPushButton::clicked, this, [manageProfiles] { manageProfiles("amplifier"); });
         speakerLayout->addLayout(ampRow);
         auto *ampHelp = new QLabel(SC_TR("Amplifier profiles require electrical measurements with known speaker load, input, and tone settings. Import a measured correction file; no amplifier curves are assumed from marketing specifications."));
         ampHelp->setWordWrap(true);
@@ -2141,6 +2159,11 @@ public:
         inputCombo_->setAccessibleName(SC_TR("Microphone input device"));
         inputCombo_->addItem(SC_TR("Plug in your microphone to select a microphone profile"), QString());
         inputRow->addWidget(inputCombo_, 1);
+        auto *manageMicrophones = new QPushButton(SC_TR("Manage profiles"));
+        manageMicrophones->setObjectName("manageMicrophoneProfiles");
+        manageMicrophones->setAccessibleName(SC_TR("Manage profiles") + " — " + SC_TR("Microphone"));
+        inputRow->addWidget(manageMicrophones);
+        connect(manageMicrophones, &QPushButton::clicked, this, [manageProfiles] { manageProfiles("microphone"); });
         micPower_ = new QCheckBox(SC_TR("Natural mic EQ"));
         micPower_->setAccessibleName(SC_TR("Natural microphone equalizer on or off"));
         micPower_->setToolTip(SC_TR("Automatically shape a connected microphone; click to bypass the microphone EQ"));
@@ -3753,6 +3776,23 @@ int main(int argc, char **argv) {
         qInfo("UI self-test: constructing window");
         MainWindow testWindow(false);
         qInfo("UI self-test: window constructed");
+        for (const auto &entry : {std::pair{"manageSpeakerProfiles", "speaker"},
+                                  std::pair{"manageMicrophoneProfiles", "microphone"},
+                                  std::pair{"manageAmplifierProfiles", "amplifier"}}) {
+            auto *button = testWindow.findChild<QPushButton *>(entry.first);
+            if (!button) qFatal("Missing equipment setup entry point");
+            bool checked = false;
+            QTimer::singleShot(0, &testWindow, [&checked, entry] {
+                auto *dialog = qobject_cast<QDialog *>(QApplication::activeModalWidget());
+                if (!dialog || dialog->objectName() != "equipmentProfileManager") qFatal("Setup entry point did not open profile manager");
+                auto *kind = dialog->findChild<QComboBox *>("equipmentKindFilter");
+                if (!kind || kind->currentData().toString() != entry.second) qFatal("Setup entry point opened wrong equipment type");
+                checked = true; dialog->accept();
+            });
+            button->click();
+            if (!checked) qFatal("Equipment setup dialog was not exercised");
+        }
+
         SpectrumMonitor spectrumTest(true);
         if (spectrumTest.interval() != 16) qFatal("Default level interval is not 16 ms");
         spectrumTest.setInterval(5);
@@ -4196,15 +4236,14 @@ int main(int argc, char **argv) {
             if(row<0 || speakerTaxonomy->itemText(row)!=soundcurrent::i18n::equipmentTypeText(key))
                 qFatal("Localized taxonomy lost caption or stable key");
         }
-        bool originalSonyFound=false;
-        for(const auto &profile:speakerProfiles())if(profile.id=="Sony SS-CS5") {
-            originalSonyFound=true;
-            if(!profile.name.endsWith(SC_TR(" (original; not SS-CS5M2)")))
-                qFatal("Original Sony model qualifier is not localized");
-        }
-        if(!originalSonyFound)qFatal("Original Sony fixture missing");
+        int sonyCount = 0;
+        for (const auto &profile : speakerProfiles()) if (profile.name == "Sony SS-CS5") ++sonyCount;
+        if (sonyCount != 1) qFatal("Expected one canonical Sony SS-CS5 profile");
         auto *preset=window.findChild<QComboBox *>("localizedPresetSelector");
         if(!preset || preset->currentData().toString()!="Flat") qFatal("Localized preset lost its stable ID");
+        for (auto *combo : window.findChildren<QComboBox *>())
+            if (combo->accessibleName() == SC_TR("Speaker model profile") || combo->accessibleName() == SC_TR("Amplifier model profile"))
+                if (!combo->currentData().toString().isEmpty()) qFatal("First startup selected an equipment correction");
         QDoubleSpinBox *selectedGain=nullptr;
         for(auto *spin:window.findChildren<QDoubleSpinBox *>())
             if(spin->accessibleName()==SC_TR("Selected band gain"))selectedGain=spin;

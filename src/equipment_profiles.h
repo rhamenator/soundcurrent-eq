@@ -24,5 +24,5 @@ QVector<Profile> loadLibrary();
 void saveLibrary(const QVector<Profile> &);
 QVector<Profile> bundledProfiles();
 void saveNewProfile(QWidget *, Profile);
-void openLibrary(QWidget *, const std::function<void(const Profile &)> &apply);
+void openLibrary(QWidget *, const std::function<void(const Profile &)> &apply, const QString &initialKind = {});
 } // namespace soundcurrent::equipment

@@ -6,6 +6,7 @@
 #include <QComboBox>
 #include <QDialogButtonBox>
 #include <QDoubleSpinBox>
+#include <QDir>
 #include <QElapsedTimer>
 #include <QFile>
 #include <QFileDialog>
@@ -118,6 +119,84 @@ int main(int argc,char **argv) {
     });
     drive.start();openLibrary(nullptr,[&](const Profile &p){require(p.model=="Imported profile","Applied wrong imported profile");applied=true;});drive.stop();
     require(phase==9 && applied && malformedRejected,"Profile import/apply UI failed");
+    // Dedicated managers start on the requested route; bundled curves are protected.
+    for (const QString kind : {QString("speaker"), QString("microphone"), QString("amplifier")}) {
+        QObject::disconnect(&drive,nullptr,&app,nullptr);
+        bool visited = false;
+        QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+            auto *library=dialog("Equipment profiles — brand / family / model");
+            if(!library || visited)return;
+            visited=true;
+            auto *filter=library->findChild<QComboBox *>("equipmentKindFilter");
+            require(filter && filter->currentData().toString()==kind,"Manager opened on wrong equipment type");
+            const auto screenshots=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
+            if(!screenshots.isEmpty()){QDir().mkpath(screenshots);require(library->grab().save(QDir(screenshots).filePath("manager-"+kind+".png")),"Could not capture manager screenshot");}
+            auto *list=library->findChild<QComboBox *>("equipmentProfileList");
+            auto *remove=library->findChild<QPushButton *>("deleteEquipmentProfile");
+            require(list && remove,"Management controls missing");
+            filter->setCurrentIndex(0);list->setCurrentIndex(0);
+            require(!remove->isEnabled(),"Bundled profile can be deleted");
+            closeLater(library);
+        });
+        drive.start();openLibrary(nullptr,[](const Profile &){},kind);drive.stop();
+        require(visited,"Typed profile manager was not exercised");
+    }
+    // Cancellation is non-destructive; confirmed deletion affects only the chosen saved copy.
+    QObject::disconnect(&drive,nullptr,&app,nullptr);phase=0;
+    const auto deleteId=loadLibrary().front().id;
+    const auto preservedId=loadLibrary().back().id;
+    QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        for(auto *w:QApplication::topLevelWidgets())if(auto *box=qobject_cast<QMessageBox *>(w)) {
+            if(!box->isVisible())continue;
+            if(phase==1){phase=2;clickLater(box->button(QMessageBox::No));return;}
+            if(phase==3){phase=4;clickLater(box->button(QMessageBox::Yes));return;}
+        }
+        auto *library=dialog("Equipment profiles — brand / family / model");
+        if(!library)return;
+        auto *list=library->findChild<QComboBox *>("equipmentProfileList");
+        auto *remove=library->findChild<QPushButton *>("deleteEquipmentProfile");
+        if(phase==0){
+            const auto combined=bundledProfiles()+loadLibrary();
+            for(int i=0;i<list->count();++i)if(combined[list->itemData(i).toInt()].id==deleteId)list->setCurrentIndex(i);
+            require(remove->isEnabled(),"Saved profile deletion unavailable");phase=1;clickLater(remove);
+        }else if(phase==2){require(loadLibrary().size()==2,"Cancelled deletion changed library");phase=3;clickLater(remove);}
+        else if(phase==4){const auto remaining=loadLibrary();require(remaining.size()==1 && remaining.front().id==preservedId,"Deletion affected another saved profile");phase=5;closeLater(library);}
+    });
+    drive.start();openLibrary(nullptr,[](const Profile &) {},"speaker");drive.stop();
+    require(phase==5,"Saved-profile deletion workflow incomplete");
+    for (const QString kind : {QString("speaker"), QString("microphone"), QString("amplifier")}) {
+        const int before=loadLibrary().size();
+        QObject::disconnect(&drive,nullptr,&app,nullptr);phase=0;
+        QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+            if(phase==1)for(auto *w:QApplication::topLevelWidgets()) {
+                auto *selection=qobject_cast<QDialog *>(w);
+                if(!selection || !selection->isVisible())continue;
+                auto *type=selection->findChild<QComboBox *>("equipmentCreationType", Qt::FindDirectChildrenOnly);
+                if(type){require(type->currentData().toString()==kind,"Create profile defaulted to wrong equipment type");phase=2;QTimer::singleShot(0,selection,&QDialog::accept);return;}
+            }
+            if(phase==2)if(auto *editor=dialog("Equipment profile editor")) {
+                setGain(editor,0.5);phase=3;clickLater(editor->findChild<QDialogButtonBox *>()->button(QDialogButtonBox::Save));return;
+            }
+            if(auto *library=dialog("Equipment profiles — brand / family / model")) {
+                if(phase==0){phase=1;clickLater(button(library,"Create profile"));}
+                else if(phase==3){const auto profiles=loadLibrary();require(profiles.size()==before+1 && profiles.back().kind==kind,"Created profile was not saved to requested route");phase=4;closeLater(library);}
+            }
+        });
+        drive.start();openLibrary(nullptr,[](const Profile &) {},kind);drive.stop();
+        require(phase==4,"Creating an equipment profile through manager failed");
+    }
+    // Imported copies may keep a bundled ID: identity collisions must not unlock originals.
+    auto collisionLibrary=loadLibrary();collisionLibrary.append(bundledProfiles().front());saveLibrary(collisionLibrary);
+    QObject::disconnect(&drive,nullptr,&app,nullptr);bool collisionChecked=false;
+    QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        auto *library=dialog("Equipment profiles — brand / family / model");if(!library || collisionChecked)return;
+        auto *list=library->findChild<QComboBox *>("equipmentProfileList");
+        auto *remove=library->findChild<QPushButton *>("deleteEquipmentProfile");
+        list->setCurrentIndex(0);require(!remove->isEnabled(),"Imported ID collision unlocked bundled deletion");
+        list->setCurrentIndex(list->count()-1);require(remove->isEnabled(),"Imported copy cannot be managed");
+        collisionChecked=true;closeLater(library);
+    });
+    drive.start();openLibrary(nullptr,[](const Profile &) {});drive.stop();require(collisionChecked,"Collision protection was not exercised");
     QFile::remove(path);
     std::puts("PASS: profile editor change, Cancel/Discard prompt, save, malformed/valid JSON import, preservation and Apply");
     return 0;
