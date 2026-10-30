@@ -53,3 +53,11 @@ VB-CABLE route uses its vendor-signed driver; the preserved SoundCurrent native
 driver is not a shipped signed replacement. Do not confuse those signing states.
 Native-speaker translation verification and independent human review remain
 unverified unless separately recorded. Do not use missing macOS support as a gate.
+
+## Required PR checks
+
+Required pull-request workflows run for documentation-only changes too. Do not
+filter an entire required PR workflow by changed paths: GitHub may otherwise
+leave its merge gate waiting for a check that never starts. Manually dispatched
+branch checks are useful verification but do not necessarily satisfy the PR
+merge-ref gate. Keep branch protections enabled.
