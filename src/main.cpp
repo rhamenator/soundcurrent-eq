@@ -3510,7 +3510,7 @@ private:
         QString preset = "Flat";
         const auto state = QJsonDocument::fromJson(QSettings().value("listening/state").toByteArray()).object();
         if (state.value("schema").toInt() == 1) {
-            if (const auto restored = parseBands(state.value("bands"))) {
+            if (const auto restored = parseBands(state)) {
                 bands_ = *restored;
                 preset = state.value("preset").toString();
                 const auto expected = builtinShapes().contains(preset)
@@ -4403,6 +4403,19 @@ int main(int argc, char **argv) {
                     custom = combo->currentData().toString() == "Custom";
             if (!custom) qFatal("Edited curve lost Custom identity on reopen");
         }
+        count->setValue(9);
+        presets->setCurrentIndex(presets->findData("Balanced"));
+        {
+            auto reopened = std::make_unique<MainWindow>(false);
+            bool nineBands = false;
+            for (auto *spin : reopened->findChildren<QSpinBox *>())
+                if (spin->accessibleName() == "Number of equalizer bands") nineBands = spin->value() == 9;
+            if (!nineBands) qFatal("Structured nine-band state was mistaken for legacy gains");
+            for (auto *combo : reopened->findChildren<QComboBox *>())
+                if (combo->findData("Balanced") >= 0 && combo->currentData().toString() != "Balanced")
+                    qFatal("Nine-band preset identity did not survive reopen");
+        }
+        count->setValue(kDefaultBands);
         if (applicationLogo().isNull() || applicationLogo().pixmap(22, 22).isNull() ||
             !applicationLogo().name().isEmpty()) qFatal("Embedded tray logo is missing or theme-dependent");
         QSettings().setValue("listening/state", QByteArray("{invalid"));
