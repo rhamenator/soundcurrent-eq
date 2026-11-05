@@ -255,3 +255,14 @@ if(SOUNDCURRENT_POWERSHELL)
   set_tests_properties(helper-utf8-output PROPERTIES TIMEOUT 20)
 endif()
 endif()
+
+# Manual equipment-data preparation; not installed or part of the audio callback.
+add_executable(soundcurrent-profile-compiler EXCLUDE_FROM_ALL tools/profile_compiler.cpp src/equipment_profiles.cpp)
+target_include_directories(soundcurrent-profile-compiler PRIVATE src)
+target_link_libraries(soundcurrent-profile-compiler PRIVATE soundcurrent-dsp Qt6::Widgets)
+if(MSVC)
+  target_compile_options(soundcurrent-profile-compiler PRIVATE /utf-8)
+endif()
+
+add_test(NAME equipment-real-import COMMAND soundcurrent-equipment-ui-test)
+set_tests_properties(equipment-real-import PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen;SOUNDCURRENT_PROFILE_IMPORT_FIXTURE=${CMAKE_CURRENT_SOURCE_DIR}/data/examples/acoustic-research-ar-2ax-experimental.json" TIMEOUT 120)

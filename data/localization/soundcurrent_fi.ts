@@ -76,14 +76,6 @@ Sovellus pysyy auki; asetuksesi on säilytetty.</translation>
     <message>
       <source>%1 / %2
 %3
-Apply this correction to the %4 route?</source>
-      <translation>%1 / %2
-%3
-Käytetäänkö tätä korjausta reitillä %4?</translation>
-    </message>
-    <message>
-      <source>%1 / %2
-%3
 Import into your library?</source>
       <translation>%1 / %2
 %3
@@ -295,10 +287,6 @@ Haluatko silti poistaa sen?</translation>
       <source>Apply amplifier correction?</source>
       <translation>Otetaanko vahvistimen korjaus käyttöön?</translation>
       <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
-    </message>
-    <message>
-      <source>Apply correction?</source>
-      <translation>Käytetäänkö korjausta?</translation>
     </message>
     <message>
       <source>Apply only if these conditions match your system.</source>
@@ -1977,6 +1965,10 @@ Haluatko silti poistaa sen?</translation>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
       <translation>Profiilin on oltava luettavissa ja alle 64 KiB.</translation>
+    </message>
+    <message>
+      <source>Profiles apply immediately when selected.</source>
+      <translation>Profiilit otetaan käyttöön heti valinnan jälkeen.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>

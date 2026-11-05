@@ -76,14 +76,6 @@ Appen held seg open; innstillingane dine er tekne vare på.</translation>
     <message>
       <source>%1 / %2
 %3
-Apply this correction to the %4 route?</source>
-      <translation>%1 / %2
-%3
-Bruke denne korreksjonen på %4-rutinga?</translation>
-    </message>
-    <message>
-      <source>%1 / %2
-%3
 Import into your library?</source>
       <translation>%1 / %2
 %3
@@ -295,10 +287,6 @@ Vil du likevel sletta ho?</translation>
       <source>Apply amplifier correction?</source>
       <translation>Bruke forsterkarkorreksjon?</translation>
       <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
-    </message>
-    <message>
-      <source>Apply correction?</source>
-      <translation>Bruke korreksjon?</translation>
     </message>
     <message>
       <source>Apply only if these conditions match your system.</source>
@@ -1977,6 +1965,10 @@ Vil du likevel sletta ho?</translation>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
       <translation>Profilen må vere lesbar og mindre enn 64 KiB.</translation>
+    </message>
+    <message>
+      <source>Profiles apply immediately when selected.</source>
+      <translation>Profilar vert tekne i bruk straks dei vert valde.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>

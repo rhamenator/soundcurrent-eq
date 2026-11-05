@@ -92,6 +92,25 @@ int main(int argc, char **argv) {
         check(bundle.size() >= 1000, "broad published catalog");
         for (const auto &p : bundle)
             parse(QJsonDocument(serialize(p)).toJson());
+        int microphones=0, amplifiers=0, lavaliers=0;
+        for (const auto &p : bundle) {
+            if (p.kind=="microphone") { ++microphones; if(p.equipmentType=="Lavalier microphone")++lavaliers; }
+            if (p.kind=="amplifier") ++amplifiers;
+            if (!p.id.startsWith("measured-") && !p.id.startsWith("published-graph-"))continue;
+            check(p.response.size()>=2,"Published correction has no measured response");
+            double before=0, after=0;
+            for(const auto &point:p.response) {
+                double correction=0;
+                for(const auto &b:p.filters)correction+=soundcurrent::filterResponseDb(b,48000,point.frequency);
+                before+=point.db*point.db;after+=std::pow(point.db+correction,2);
+            }
+            check(after<before*.85,"Published correction does not improve its stated measurement");
+            for(int i=0;i<=2048;++i) {
+                double db=0;for(const auto &b:p.filters)db+=soundcurrent::filterResponseDb(b,48000,20*std::pow(1000.,i/2048.));
+                check(std::isfinite(db) && std::abs(db)<=6.001,"Composite published correction exceeds gain cap");
+            }
+        }
+        check(microphones>=40 && amplifiers>=15 && lavaliers>=4,"Broad measured microphone/amplifier/lavalier coverage missing");
         saveLibrary({original});
         check(loadLibrary().size() == 1, "atomic save/reopen");
         // Exercise real modal editor: change gain, close, choose Save in dirty prompt.
@@ -100,6 +119,8 @@ int main(int argc, char **argv) {
             check(library != nullptr, "library dialog");
             if (app.arguments().contains("--screenshots"))
                 library->grab().save("/tmp/sc-equipment-library.png");
+            // A profile change is now intentional and immediate; merely opening is not.
+            library->findChild<QComboBox *>("equipmentProfileList")->setCurrentIndex(1);
             for (auto *b : library->findChildren<QPushButton *>())
                 if (b->text() == "Edit / save copy") {
                     QTimer::singleShot(0, [&] {
@@ -124,7 +145,7 @@ int main(int argc, char **argv) {
             library->reject();
         });
         openLibrary(nullptr,
-                    [](const Profile &) { throw std::runtime_error("edit should not implicitly apply"); });
+                    [](const Profile &) {});
         auto saved = loadLibrary();
         check(saved.size() == 2 && saved[0].id == "test-source" && !saved[0].custom && saved[1].custom &&
                   saved[1].id != "test-source" && saved[1].filters[0].gainDb == -1.5,

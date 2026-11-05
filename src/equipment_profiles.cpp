@@ -27,6 +27,9 @@
 #include <QPushButton>
 #include <QRegularExpression>
 #include <QSaveFile>
+#include <QScrollArea>
+#include <QScreen>
+#include <QWheelEvent>
 #include <QSettings>
 #include <QSignalBlocker>
 #include <QStandardPaths>
@@ -63,6 +66,11 @@ double responseAt(const QVector<Point> &points, double f) {
         }
     return points.back().db;
 }
+class ProfileCombo : public QComboBox {
+  protected:
+    // Scroll the dialog or open popup; do not audition equipment by an accidental wheel turn.
+    void wheelEvent(QWheelEvent *event) override { event->ignore(); }
+};
 class Plot : public QWidget {
   public:
     Profile profile;
@@ -132,10 +140,10 @@ class Plot : public QWidget {
             p.drawLine(QPointF(area.left(), y(d)), QPointF(area.right(), y(d)));
             p.drawText(QPointF(2, y(d) + 4), QLocale().toString(d,'g',6));
         }
-        auto draw = [&](QColor color, auto db) {
+        auto draw = [&](QColor color, auto db, double low = 20., double high = 20000.) {
             QPainterPath path;
             for (int i = 0; i <= 400; ++i) {
-                const double f = 20. * std::pow(1000., i / 400.);
+                const double f = low * std::pow(high / low, i / 400.);
                 const QPointF v(x(f), y(db(f)));
                 if (i)
                     path.lineTo(v);
@@ -145,8 +153,11 @@ class Plot : public QWidget {
             p.setPen(QPen(color, 2));
             p.drawPath(path);
         };
-        if (!profile.response.isEmpty())
-            draw(QColor("#f6ad55"), [&](double f) { return responseAt(profile.response, f); });
+        if (!profile.response.isEmpty() && profile.response.back().frequency > 20. &&
+            profile.response.front().frequency < 20000.)
+            draw(QColor("#f6ad55"), [&](double f) { return responseAt(profile.response, f); },
+                 std::max(20., profile.response.front().frequency),
+                 std::min(20000., profile.response.back().frequency));
         draw(QColor("#4fd1c5"), [&](double f) {
             double d = 0;
             for (const auto &b : profile.filters)
@@ -470,7 +481,7 @@ void saveLibrary(const QVector<Profile> &profiles) {
 }
 QVector<Profile> bundledProfiles() {
     QVector<Profile> out;
-    for (const auto &path : {":/equipment/profiles.json", ":/equipment/spinorama.json"}) {
+    for (const auto &path : {":/equipment/profiles.json", ":/equipment/spinorama.json", ":/equipment/published.json"}) {
         QFile f(path);
         require(f.open(QIODevice::ReadOnly), "Equipment resource missing.");
         for (const auto &v : QJsonDocument::fromJson(f.readAll()).array())
@@ -496,13 +507,21 @@ void saveNewProfile(QWidget *parent, Profile p) {
 void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &apply, const QString &initialKind) {
     QDialog dialog(parent);
     dialog.setWindowTitle(SC_TR("Equipment profiles — brand / family / model"));
-    dialog.resize(800, 650);
+    const auto available = dialog.screen()->availableGeometry();
+    dialog.resize(std::max(1,std::min(800,available.width()-40)),
+                  std::max(1,std::min(650,available.height()-40)));
     dialog.setObjectName("equipmentProfileManager");
-    auto *layout = new QVBoxLayout(&dialog);
+    auto *outer = new QVBoxLayout(&dialog);
+    auto *scroll = new QScrollArea;
+    scroll->setWidgetResizable(true);
+    auto *content = new QWidget;
+    auto *layout = new QVBoxLayout(content);
+    scroll->setWidget(content);
+    outer->addWidget(scroll);
     auto *search = new QLineEdit;
     search->setPlaceholderText(SC_TR("Search brand, family, model or measurement conditions"));
     layout->addWidget(search);
-    auto *list = new QComboBox;
+    auto *list = new ProfileCombo;
     list->setObjectName("equipmentProfileList");
     list->setMaxVisibleItems(15);
     list->setAccessibleName(SC_TR("Equipment profiles by brand family and model"));
@@ -510,6 +529,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     auto *details = new QLabel;
     details->setWordWrap(true);
     details->setTextFormat(Qt::PlainText);
+    details->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
     layout->addWidget(details);
     layout->addWidget(new QLabel(
         SC_TR("Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.")));
@@ -563,8 +583,13 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     };
     taxonomyRefresh();
     QPushButton *remove = nullptr;
+    bool refreshing = false;
+    bool noneWasApplied = false;
+    QString lastAppliedId;
     auto refresh = [&] {
+        refreshing = true;
         list->clear();
+        list->addItem(SC_TR("None — use my own EQ"), -1);
         for (int i = 0; i < profiles.size(); ++i) {
             const auto &p = profiles[i];
             const QString name =
@@ -576,17 +601,22 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
                 (name + " " + p.conditions).contains(search->text(), Qt::CaseInsensitive))
                 list->addItem(name, i);
         }
+        list->setCurrentIndex(0);
+        noneWasApplied = false;
+        refreshing = false;
     };
     QObject::connect(list, &QComboBox::currentIndexChanged, &dialog, [&] {
-        if (list->currentIndex() < 0) {
+        if (list->currentIndex() < 0 || list->currentData().toInt() < 0) {
             details->clear();
             plot->profile = {};
+            plot->hide();
             plot->update();
             return;
         }
         const auto &p = profiles[list->currentData().toInt()];
         details->setText(p.source + "\n" + p.conditions + "\n" + p.provenance);
         plot->profile = p;
+        plot->show();
         plot->update();
     });
     auto updateRemove = [&] {
@@ -629,8 +659,10 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             taxonomyRefresh();
             refresh();
             for (int i = 0; i < list->count(); ++i)
-                if (profiles[list->itemData(i).toInt()].id == p.id) {
+                if (list->itemData(i).toInt() >= 0 && profiles[list->itemData(i).toInt()].id == p.id) {
+                    refreshing = true; // Saving is not an audio-selection action.
                     list->setCurrentIndex(i);
+                    refreshing = false;
                     break;
                 }
             return true;
@@ -654,10 +686,15 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     auto *edit = button(SC_TR("Edit / save copy"));
     auto *exportButton = button(SC_TR("Export JSON"));
     auto *use = button(SC_TR("Apply profile"));
+    auto updateSelectionActions = [&] {
+        const bool selected = list->currentIndex() >= 0 && list->currentData().toInt() >= 0;
+        edit->setEnabled(selected); exportButton->setEnabled(selected);
+    };
+    QObject::connect(list, &QComboBox::currentIndexChanged, &dialog, updateSelectionActions);
     remove = button(SC_TR("Delete"));
     remove->setObjectName("deleteEquipmentProfile");
     QObject::connect(remove, &QPushButton::clicked, &dialog, [&] {
-        if (list->currentIndex() < 0) return;
+        if (list->currentIndex() < 0 || list->currentData().toInt() < 0) return;
         const int userIndex = list->currentData().toInt() - bundledCount;
         if (userIndex < 0 || userIndex >= custom.size()) return;
         const auto selected = custom[userIndex];
@@ -786,13 +823,13 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         editor.exec();
     });
     QObject::connect(edit, &QPushButton::clicked, &dialog, [&] {
-        if (list->currentIndex() < 0)
+        if (list->currentIndex() < 0 || list->currentData().toInt() < 0)
             return;
         Editor editor(profiles[list->currentData().toInt()], &dialog, save);
         editor.exec();
     });
     QObject::connect(exportButton, &QPushButton::clicked, &dialog, [&] {
-        if (list->currentIndex() < 0)
+        if (list->currentIndex() < 0 || list->currentData().toInt() < 0)
             return;
         const auto path =
             soundcurrent::i18n::FileDialogs::getSaveFileName(&dialog, SC_TR("Export profile"), {}, SC_TR("Equipment profile (*.json)"));
@@ -803,16 +840,26 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         if (!f.open(QIODevice::WriteOnly) || f.write(bytes) != bytes.size() || !f.commit())
             QMessageBox::warning(&dialog, SC_TR("Export"), SC_TR("Cannot save profile."));
     });
-    QObject::connect(use, &QPushButton::clicked, &dialog, [&] {
-        if (list->currentIndex() < 0)
-            return;
-        const auto p = profiles[list->currentData().toInt()];
-        if (ask(&dialog, SC_TR("Apply correction?"),
-                SC_TR("%1 / %2\n%3\nApply this correction to the %4 route?").arg(p.brand, p.model, p.conditions, p.kind == "speaker" ? SC_TR("Speaker") : p.kind == "microphone" ? SC_TR("Microphone") : SC_TR("Amplifier")),
-                QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
-            apply(p);
+    auto selectProfile = [&] {
+        if (refreshing || list->currentIndex() < 0) return;
+        const int index = list->currentData().toInt();
+        if (index < 0) {
+            Profile cleared; cleared.kind = kindFilter->currentData().toString();
+            apply(cleared); noneWasApplied = true;
+        } else {
+            apply(profiles[index]); noneWasApplied = false; lastAppliedId = profiles[index].id;
         }
+    };
+    QObject::connect(list, &QComboBox::currentIndexChanged, &dialog, selectProfile);
+    // Choosing the initial None row is meaningful even when its index did not change.
+    QObject::connect(list, &QComboBox::activated, &dialog, [&](int index) {
+        if ((index == 0 && !noneWasApplied) ||
+            (index > 0 && profiles[list->itemData(index).toInt()].id != lastAppliedId)) selectProfile();
     });
+    QObject::connect(use, &QPushButton::clicked, &dialog, selectProfile);
+    auto *selectionHint = new QLabel(SC_TR("Profiles apply immediately when selected."));
+    selectionHint->setWordWrap(true);
+    layout->insertWidget(1, selectionHint);
     auto *sources = new QLabel(
         SC_TR("Published measurement sources: <a href=\"https://www.spinorama.org/\">Speaker measurements / EQ</a> "
         "· <a href=\"https://support.daytonaudio.com/microphonecalibrationtool\">Dayton serial "
@@ -827,10 +874,11 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     sources->setOpenExternalLinks(true);
     layout->addWidget(sources);
     auto *close = new QDialogButtonBox(QDialogButtonBox::Close);
-    layout->addWidget(close);
+    outer->addWidget(close);
     QObject::connect(close, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
     refresh();
     updateRemove();
+    updateSelectionActions();
     dialog.exec();
 }
 } // namespace soundcurrent::equipment

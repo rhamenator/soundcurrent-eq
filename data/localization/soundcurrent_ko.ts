@@ -76,14 +76,6 @@ The app remains open; your settings have been kept.</source>
     <message>
       <source>%1 / %2
 %3
-Apply this correction to the %4 route?</source>
-      <translation>%1 / %2
-%3
-이 보정을 %4 경로에 적용하시겠습니까?</translation>
-    </message>
-    <message>
-      <source>%1 / %2
-%3
 Import into your library?</source>
       <translation>%1 / %2
 %3
@@ -295,10 +287,6 @@ Do you want to delete it anyway?</source>
       <source>Apply amplifier correction?</source>
       <translation>앰프 보정을 적용할까요?</translation>
       <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
-    </message>
-    <message>
-      <source>Apply correction?</source>
-      <translation>보정을 적용하시겠습니까?</translation>
     </message>
     <message>
       <source>Apply only if these conditions match your system.</source>
@@ -1977,6 +1965,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
       <translation>프로파일은 읽을 수 있어야 하며 64 KiB보다 작아야 합니다.</translation>
+    </message>
+    <message>
+      <source>Profiles apply immediately when selected.</source>
+      <translation>프로필을 선택하면 즉시 적용됩니다.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>

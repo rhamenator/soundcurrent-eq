@@ -23,14 +23,21 @@ profiles from 255 brands, plus a qualified Pyle PDA29BU electrical reference.
   Discard / Cancel** when closed, including Escape and the window close button.
 - **Save** always creates a custom copy with a new identity and parent provenance;
   reference and imported originals remain intact. **Export JSON** shares the copy.
-- **Apply profile** previews measurement conditions and requires explicit acceptance.
+- **Selecting a profile applies it immediately**, without an Apply confirmation.
+  Opening the manager, changing search/taxonomy filters, importing or saving does
+  not change audio. Scrolling over the closed model selector does not select a
+  profile; open its popup to scroll the list. The manager scrolls within the
+  available screen space and keeps Close accessible. The **Apply profile** button can reapply the displayed saved
+  profile. Choose **None — use my own EQ** to clear the selected equipment type;
+  with **All equipment** selected, None clears all imported equipment corrections
+  and legacy speaker/amplifier model selections. Listening EQ remains in place.
   Applying a speaker or amplifier profile replaces that equipment's previous model
   correction, while listening EQ remains adjustable. A microphone profile replaces
   the generic natural-voice shape, retaining microphone high-pass and user tone/gain
   controls. Speaker processing can continue alongside microphone processing.
 - **Clear imported equipment corrections** restores existing model selection/tone
   behavior. Apply and Clear participate in the main EQ undo history and respect Lock.
-  Profile edits are previews until a saved copy is explicitly applied; no sweep or
+  Profile edits are previews until a saved copy is explicitly selected or reapplied; no sweep or
   signal plays from the editor.
 
 ## Profile your own equipment
@@ -42,7 +49,7 @@ The existing worker checks noise and clipping before admitting a result.
 
 A successful check now offers **Save system response profile**. This opens an editable
 profile with measured relative levels and a proposed bounded correction. Save it,
-then select it in the equipment library and preview before applying. The profile
+then select it in the equipment library to apply it immediately. The profile
 identifies the combined **speakers + amplifier + microphone + room**, including any
 playback EQ in the route. It does not identify the response of each part separately.
 Do not stack a system correction measured through an existing correction as if it were
@@ -159,9 +166,117 @@ confirmation and removes only the selected saved user profile, never a bundled
 measurement. Deleting a library entry does not change corrections already applied;
 use the correction controls to clear or replace those.
 
-A fresh installation starts with Flat listening EQ and no speaker, amplifier, or
-imported equipment correction. Saved choices are retained on subsequent starts.
+A fresh installation starts with Flat listening EQ, microphone EQ off, and no
+speaker, amplifier, or imported equipment correction. Saved choices are retained on subsequent starts.
 The speaker selector uses one canonical Sony SS-CS5 entry from the published
 equipment library; the previous Sony selection is mapped to that entry. Its
 measurement source and conditions remain available; it is not a measured SS-CS5M2
 response.
+
+## Expanded measured microphone and amplifier collection (2026-11-04)
+
+Both applications share `data/equipment/published.json`: **42 microphone corrections
+and 17 amplifier/load-state corrections**, in addition to the existing speaker
+collection and Pyle reference. These are correction curves, not product-directory
+placeholders. Pattern, capsule/grid, load, supply and measured-state variants count
+as separate corrections, not separate physical models. No price or quality ranking
+is implied. Models without admissible curves stay out of the selectable library.
+
+The microphone collection spans dynamic, condenser, ribbon, shotgun, USB and lavalier
+microphones. It includes Shure, AKG, Neumann, Sony, Sennheiser, Schoeps, Coles,
+Electro-Voice, Royer Labs, DPA and RØDE. Lavalier entries include Shure WL93,
+legacy DPA 4060-BM with separately identified grids, and RØDE Lavalier II.
+
+The amplifier collection includes measured states for consumer integrated amplifiers
+and receivers from NAD, Yamaha, Kenwood, Sansui, Onkyo, Marantz, Grundig, TEAC and
+Denon, plus Fosi Audio ZA3 and modified AIYIMA A07 resistive-load variants. These do
+not promise correction for an arbitrary reactive speaker load. In particular, the
+AIYIMA measurements used LM4562 op-amps and a 27 V supply; they are not stock A07,
+A07 MAX or A07 Pro measurements. Some admitted amplifier changes are very small;
+an audible improvement is not promised.
+
+### Sources and adaptation
+
+- [University of Surrey dataset, DOI 10.5281/zenodo.4633508](https://zenodo.org/records/4633508),
+  version 1.0.0, **CC BY 4.0**, by Juan Carlos Franco Hernández, Tim Brookes and
+  Enzo De Sena. The associated paper is Franco Hernández, Bǎcilǎ, Brookes and
+  De Sena, [JAES 70(10), 2022](https://doi.org/10.17743/jaes.2022.0027).
+  SoundCurrent derives on-axis 1.25 m magnitude ratios against the dataset's
+  NTi M2211 reference, smooths by one-third octave and normalizes at 1 kHz.
+  It uses the authors' already-windowed IRs; applying another window would change
+  the measurement. Coverage is deliberately restricted to 100 Hz–16 kHz.
+  Reference calibration uncertainty remains: these are relative specimen responses,
+  not individually certified free-field calibration files for a customer's unit.
+- [Keiang dScope III amplifier archive](https://www.keiang.de/modules.php?name=Content&pid=69):
+  independent numerical readout of gain traces for 1 W/channel into 8 ohms.
+  Channels A/B are normalized and averaged in dB; this does not correct channel
+  balance. Plot-reading uncertainty is approximately 0.03 dB. Input/tone settings
+  are not fully documented, and the source explicitly notes that its analyzer
+  lacks current traceable calibration. A vintage measured specimen can differ
+  from another specimen of the same model. Original plots and article prose
+  are not redistributed.
+- [Erin's Audio Corner ZA3 measurements](https://www.erinsaudiocorner.com/electronics/fosi_za3/)
+  and [Pavel Macura's A07 measurements](https://pmacura.cz/FCT/aiyima_a07_test.htm):
+  independently transcribed resistive-load traces with explicitly named operating
+  conditions. Approximate readout uncertainty is 0.1 dB; no simulated-speaker trace
+  is passed off as the response for every speaker.
+- Published [Shure WL93 manual](https://pubs.shure.com/view/guide/WL93-SM93/en-US.pdf),
+  [DPA 4060-BM sheet](https://im.static-thomann.de/pics/atg/atgdata/document/specs/4060_bm.pdf),
+  [RØDE Lavalier II sheet](https://edge.rode.com/pdf/page/232/modules/4935/LavalierII_Datasheet_V6%20%281%29.pdf)
+  and [RØDE NT-USB Mini sheet](https://edge.rode.com/pdf/products/96/NT-USB_Mini_ds_V06.pdf):
+  independent numerical graph readings; the Lavalier II uses its original Bezier
+  response path. These are typical responses, not per-unit calibration. Lavalier
+  clothing/body effects and optional USB DSP are not inferred from a model curve.
+  Only the 100 Hz–16 kHz part of the USB Mini curve is inverted; its intentional
+  steep bass rolloff is not inverted. Original PDFs/artwork are not bundled.
+
+Source hashes, graph calibration coordinates, adaptation notes and exclusions are
+in `data/equipment/published-collection-report.json`. Numerical inputs are in
+`published-response-inputs.json`; these arrays are development inputs, not importable
+correction profiles. The Mic Archive index helped locate source documents; its
+unlicensed aggregate response library was not copied. Individual serial files for
+UMIK, Dayton and similar mics remain user imports; another unit's file is not a
+model-wide calibration.
+
+### Admission and reproduction
+
+The compiler uses the same bounded inverse fitter as the profile importer, checks
+at least a 15% reduction in sampled squared residual, and limits the **combined**
+correction to ±6 dB at 48 kHz. A per-filter cap alone would not bound overlapping
+filters. This verifies a fit to supplied data, not listening quality or accuracy
+on a different physical unit. No positive filter is centered below 80 Hz. Missing
+curves, ambiguous capsules, failed fits and near-flat traces remain explicit gaps.
+Graphs show measured response only within the supplied frequency coverage.
+
+Build and reproduce without network access or audio hardware:
+
+```sh
+cmake --build build --target soundcurrent-profile-compiler
+python3 scripts/prepare-published-equipment.py --check
+# Optional source re-extraction (NumPy, SciPy and Pillow; development only):
+python3 scripts/verify-equipment-sources.py --surrey --amplifiers --fetch
+```
+
+Data attribution stays attached to every profile and its custom copies. Surrey
+measurement derivatives retain CC BY 4.0 attribution; SoundCurrent's software and
+its own correction-generation implementation use GPL-3.0-only. The measurement
+license does not relicense proprietary source artwork. Catalog updates are manual
+maintenance operations; the applications do not scrape websites at runtime.
+
+### Acoustic Research AR-2ax custom import
+
+`data/examples/acoustic-research-ar-2ax-experimental.json` is deliberately **not**
+bundled as a selectable recommendation. It is a custom import experiment derived
+from the **acoustic-power** graph on printed page 18 (PDF page 11) of the
+[historical AR brochure](https://retronik.silicium.org/DOCUMENTS/Audiovideo/Acoustic-Research/Acoustic-Research-AR-2AX-AR-3A-AR-4XA-AR-5-AR-6-AR-7-AR-LST-AR-LST-2-Brochure.pdf).
+It covers only 500 Hz–20 kHz, with approximately 1 dB readout uncertainty.
+It is not an on-axis, room, or current-unit measurement, and does not reconstruct
+phase or sum the separate driver curves. Original attenuator settings and exact
+revision are not established. Age, restoration and replacement drivers matter.
+The factory drawing archive is another reference, but its scan was too poor for
+confident response digitization. AR-2a and AR-2x data are not substituted.
+
+Import that JSON through **Manage profiles → Import JSON**, then explicitly select
+the saved entry to audition it. Importing/saving alone does not change audio. The
+real JSON import is exercised by the `equipment-real-import` UI test in isolated
+settings. Nothing is applied to the owner's listening setup by that test.

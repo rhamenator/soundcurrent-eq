@@ -76,14 +76,6 @@ Uygulama açık kalır; ayarlarınız korunmuştur.</translation>
     <message>
       <source>%1 / %2
 %3
-Apply this correction to the %4 route?</source>
-      <translation>%1 / %2
-%3
-Bu düzeltme %4 türündeki ses yoluna uygulansın mı?</translation>
-    </message>
-    <message>
-      <source>%1 / %2
-%3
 Import into your library?</source>
       <translation>%1 / %2
 %3
@@ -295,10 +287,6 @@ Yine de silmek istiyor musunuz?</translation>
       <source>Apply amplifier correction?</source>
       <translation>Amplifikatör düzeltmesi uygulansın mı?</translation>
       <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
-    </message>
-    <message>
-      <source>Apply correction?</source>
-      <translation>Düzeltme uygulansın mı?</translation>
     </message>
     <message>
       <source>Apply only if these conditions match your system.</source>
@@ -1977,6 +1965,10 @@ Yine de silmek istiyor musunuz?</translation>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
       <translation>Profil okunabilir ve 64 KiB'den küçük olmalıdır.</translation>
+    </message>
+    <message>
+      <source>Profiles apply immediately when selected.</source>
+      <translation>Profiller seçildikleri anda uygulanır.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>

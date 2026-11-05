@@ -76,14 +76,6 @@ O aplicativo permanece aberto; suas configurações foram mantidas.</translation
     <message>
       <source>%1 / %2
 %3
-Apply this correction to the %4 route?</source>
-      <translation>%1 / %2
-%3
-Aplicar esta correção à rota %4?</translation>
-    </message>
-    <message>
-      <source>%1 / %2
-%3
 Import into your library?</source>
       <translation>%1 / %2
 %3
@@ -295,10 +287,6 @@ Deseja excluí-lo mesmo assim?</translation>
       <source>Apply amplifier correction?</source>
       <translation>Aplicar a correção do amplificador?</translation>
       <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
-    </message>
-    <message>
-      <source>Apply correction?</source>
-      <translation>Aplicar a correção?</translation>
     </message>
     <message>
       <source>Apply only if these conditions match your system.</source>
@@ -1977,6 +1965,10 @@ Deseja excluí-lo mesmo assim?</translation>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
       <translation>O perfil deve ser legível e inferior a 64 KiB.</translation>
+    </message>
+    <message>
+      <source>Profiles apply immediately when selected.</source>
+      <translation>Os perfis são aplicados imediatamente ao serem selecionados.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>
