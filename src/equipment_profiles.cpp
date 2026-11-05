@@ -656,6 +656,8 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             custom = proposed;
             profiles = bundledProfiles();
             profiles += custom;
+            // A reimport can retain the ID while changing the curve. Allow explicit reactivation.
+            lastAppliedId.clear();
             taxonomyRefresh();
             {
                 const QSignalBlocker a(kindFilter), b(brandFilter), c(familyFilter), d(search), st(subtypeFilter);
