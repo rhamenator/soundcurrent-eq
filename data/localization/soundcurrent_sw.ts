@@ -158,8 +158,12 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Yenye amplifaya / bila amplifaya / haijulikani</translation>
     </message>
     <message>
-      <source>Add filter</source>
-      <translation>Ongeza kichujio</translation>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Ongeza wasifu wa JSON kwenye maktaba iliyohifadhiwa.</translation>
+    </message>
+    <message>
+      <source>Add point</source>
+      <translation>Ongeza nukta</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
@@ -173,6 +177,10 @@ Unataka kuifuta hata hivyo?</translation>
       <source>Adjustable system-wide equalizer for PipeWire</source>
       <translation>Kisawazisha masafa ya sauti kinachoweza kurekebishwa kwa mfumo mzima kwa PipeWire</translation>
       <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>Ya kina</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
@@ -280,6 +288,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Masasisho ya programu</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Imetumika</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Tumia</translation>
     </message>
@@ -307,8 +319,16 @@ Unataka kuifuta hata hivyo?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Arrow keys adjust the selected point; Delete removes it.</source>
+      <translation>Vitufe vya mishale hurekebisha nukta iliyochaguliwa; Delete huiondoa.</translation>
+    </message>
+    <message>
       <source>Audio bridge did not start</source>
       <translation>Daraja la sauti halikuanza</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Uhifadhi wa muda wa sauti</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -357,6 +377,10 @@ Unataka kuifuta hata hivyo?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Nafasi ya akiba ya kiotomatiki %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Otomatiki</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -636,6 +660,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Funga</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Funga kidirisha; hifadhi marekebisho yaliyotumika.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Spika ya safu wima</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +824,10 @@ Unataka kuifuta hata hivyo?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Unda wasifu mpya wa marekebisho.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Unda folda mpya</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -841,6 +873,10 @@ Unataka kuifuta hata hivyo?</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Futa wasifu huu maalumu uliohifadhiwa.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>Mwonekano wa maelezo</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -864,8 +900,16 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Buruta nukta za mkunjo au rekebisha bendi iliyochaguliwa hapa chini.</translation>
     </message>
     <message>
+      <source>Drag points to shape the correction. Double-click to add a point.</source>
+      <translation>Buruta nukta kuunda marekebisho. Bofya mara mbili kuongeza nukta.</translation>
+    </message>
+    <message>
       <source>Drain test playback</source>
       <translation>Kukamilisha uchezaji wa majaribio</translation>
+    </message>
+    <message>
+      <source>Drawn corrections are listening adjustments, not equipment measurements.</source>
+      <translation>Marekebisho yaliyochorwa ni mipangilio ya kusikiliza, si vipimo vya vifaa.</translation>
     </message>
     <message>
       <source>Drive</source>
@@ -912,6 +956,10 @@ Unataka kuifuta hata hivyo?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Hariri / hifadhi nakala</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Hariri nakala; acha asili bila mabadiliko.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1139,10 @@ Unataka kuifuta hata hivyo?</translation>
     <message>
       <source>Export profile</source>
       <translation>Hamisha wasifu</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Hamisha wasifu uliochaguliwa kwenye faili la JSON.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1660,6 +1712,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Modeli</translation>
     </message>
     <message>
+      <source>Move right for a broader adjustment.</source>
+      <translation>Sogeza kulia ili kupanua eneo la marekebisho.</translation>
+    </message>
+    <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
       <translation>Sogeza kuelekea L au R kupunguza chaneli ya upande mwingine; katikati huweka zote mbili katika kiwango kamili</translation>
     </message>
@@ -1831,10 +1887,6 @@ Unataka kuifuta hata hivyo?</translation>
       <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
-      <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation>Rangi ya machungwa: mwitikio uliopimwa ikiwa umetolewa. Kijani kibichi cha samawati: usahihishaji katika 48 kHz. Buruta nukta za rangi hiyo au hariri jedwali. Kuhifadhi huweka rejeleo na kuunda nakala maalumu.</translation>
-    </message>
-    <message>
       <source>Outdoor speaker</source>
       <translation>Spika ya nje</translation>
       <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
@@ -1943,6 +1995,14 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Zuia mabadiliko ya mipangilio iliyowekwa tayari, bendi za EQ, gain ya baada ya EQ na usawa</translation>
     </message>
     <message>
+      <source>Preview</source>
+      <translation>Sikiliza mfano</translation>
+    </message>
+    <message>
+      <source>Preview is temporary. Closing the editor restores the previous correction.</source>
+      <translation>Usikilizaji wa mfano ni wa muda. Kufunga kihariri kunarudisha marekebisho ya awali.</translation>
+    </message>
+    <message>
       <source>Profile</source>
       <translation>Wasifu</translation>
     </message>
@@ -1971,8 +2031,8 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Wasifu hutumika mara tu unapochaguliwa.</translation>
     </message>
     <message>
-      <source>Profiles need 1–16 correction filters.</source>
-      <translation>Wasifu unahitaji vichujio 1–16 vya usahihishaji.</translation>
+      <source>Profiles need 1–32 correction filters.</source>
+      <translation>Wasifu unahitaji vichujio 1–32 vya usahihishaji.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
@@ -2190,8 +2250,8 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Ondoa VB-CABLE?</translation>
     </message>
     <message>
-      <source>Remove selected filter</source>
-      <translation>Ondoa kichujio kilichochaguliwa</translation>
+      <source>Remove point</source>
+      <translation>Ondoa nukta</translation>
     </message>
     <message>
       <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
@@ -2291,6 +2351,10 @@ Unataka kuifuta hata hivyo?</translation>
       <source>Save as</source>
       <translation>Hifadhi kama</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Save copy</source>
+      <translation>Hifadhi nakala</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
@@ -2410,9 +2474,8 @@ Unataka kuifuta hata hivyo?</translation>
       <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
-      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
-      <translation>EQ ya pamoja na EQ ya chaneli zinazidi vichujio 64; ondoa baadhi ya vichujio vya chaneli</translation>
-      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+      <source>Shared and channel EQ exceed 96 filters; remove some channel filters</source>
+      <translation>EQ ya pamoja na EQ ya chaneli zinazidi vichujio 96; ondoa baadhi ya vichujio vya chaneli</translation>
     </message>
     <message>
       <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
@@ -2451,6 +2514,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Onyesha alama za kilele kwenye viwango vya masafa</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Onyesha wasifu maalumu uliohifadhiwa pekee.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Onyesha ukubwa</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2485,6 +2552,10 @@ Unataka kuifuta hata hivyo?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Spika ndogo</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Bafa ndogo hupunguza ucheleweshaji lakini zinaweza kusababisha sauti za kupasuka. Otomatiki huhifadhi chaguo-msingi za Linux na kuomba ms 40 kwenye Windows. Vifaa vinaweza kurekebisha ombi. Tumia huanzisha upya sauti inayotumika kwa muda mfupi.</translation>
     </message>
     <message>
       <source>Soft Treble</source>
@@ -2765,6 +2836,14 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Washa kisawazishi</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Badilisha data ya mwitikio iliyopimwa kuwa mkunjo wa marekebisho.</translation>
+    </message>
+    <message>
+      <source>Turn on the equalizer or microphone EQ before previewing.</source>
+      <translation>Washa ekwaliza au EQ ya maikrofoni kabla ya kusikiliza mfano.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Aina</translation>
     </message>
@@ -2810,8 +2889,8 @@ Unataka kuifuta hata hivyo?</translation>
       <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
-      <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation>Muundo wa wasifu wa kifaa hautumiki (unatarajiwa 2).</translation>
+      <source>Unsupported equipment profile schema (expected 2/3).</source>
+      <translation>Muundo wa wasifu wa kifaa hautumiki (unatarajiwa 2/3).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
@@ -2859,13 +2938,12 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Tumia mipangilio ya eneo ya mfumo</translation>
     </message>
     <message>
-      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
-      <translation>Mwitikio wa masafa wa uwiano ulioingizwa na mtumiaji; bainisha mwelekeo / nambari ya mfululizo ya maikrofoni au hali za kipimo cha spika kabla ya kutumia.</translation>
-      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Tumia wasifu uliochaguliwa kwa kifaa hiki.</translation>
     </message>
     <message>
-      <source>User-created correction; enter equipment and measurement conditions.</source>
-      <translation>Usahihishaji ulioundwa na mtumiaji; ingiza vifaa na hali za kipimo.</translation>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Mwitikio wa masafa wa uwiano ulioingizwa na mtumiaji; bainisha mwelekeo / nambari ya mfululizo ya maikrofoni au hali za kipimo cha spika kabla ya kutumia.</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
@@ -2961,6 +3039,10 @@ Unataka kuifuta hata hivyo?</translation>
       <source>Whole listening system</source>
       <translation>Mfumo mzima wa usikilizaji</translation>
       <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>Upana</translation>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

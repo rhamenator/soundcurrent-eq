@@ -57,6 +57,12 @@ int main() {
     combined.push_back({12246, -1.48, 0.29}); // published JBL correction Q
     combined.push_back({1000, -3, 1});
     if (!eq.setProfile(combined, 0, 0)) return 13;
+    // 31 listening bands + 32 speaker + 32 amplifier filters. The final
+    // correction must be audible, proving the full chain is not truncated.
+    combined.assign(95, {1000, 0, 1});
+    combined.back().gainDb = -6;
+    if (!eq.setProfile(combined, 0, 0, true, false)) return 23;
+    if (std::abs(20 * std::log10(measure(eq, 1000) / flat) + 6) > 0.1) return 24;
     combined.resize(soundcurrent::kMaxProcessingBands + 1, {1000, 0, 1});
     if (eq.setProfile(combined, 0, 0)) return 14;
     if(!eq.setProfile({},0,0))return 15;

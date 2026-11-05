@@ -1,6 +1,6 @@
 # Equipment profiles
 
-Development builds add **Settings & calibration → Equipment profile library / editor**.
+Open **Settings & calibration → Equipment profile library / editor**.
 The library filters by equipment type, brand and family, then displays individual models.
 Search also matches measurement conditions. There are 1,092 adapted published speaker EQ
 profiles from 255 brands, plus a qualified Pyle PDA29BU electrical reference.
@@ -9,7 +9,7 @@ profiles from 255 brands, plus a qualified Pyle PDA29BU electrical reference.
 
 - **Create profile** starts a speaker, microphone or amplifier correction. Enter your
   brand, family, model and conditions. A manually authored curve is not a measurement.
-- **Import JSON** accepts the version 2 format below. The existing amplifier import
+- **Import JSON** accepts the version 2 format below and version 3 for larger corrections. The existing amplifier import
   button still accepts its earlier format.
 - **Import response text** accepts TXT, CSV, FRD and CAL data containing frequency in Hz
   and **relative measured response** in dB. A third phase column is ignored. Comment
@@ -18,8 +18,8 @@ profiles from 255 brands, plus a qualified Pyle PDA29BU electrical reference.
   This path inverts a measured response: do not import already-inverted correction
   gains here. Use JSON filters for already-designed EQ.
 - **Edit / save copy** shows the correction and any measured response supplied. Drag
-  correction control points, or edit type, frequency, gain and Q in the table. Keyboard
-  editing is supported. Add/remove filters up to 16. A changed editor prompts **Save /
+  correction control points, or expand Advanced to edit type, frequency, gain and Q in the table. Keyboard
+  editing is supported. Add/remove filters up to 32. A changed editor prompts **Save /
   Discard / Cancel** when closed, including Escape and the window close button.
 - **Save** always creates a custom copy with a new identity and parent provenance;
   reference and imported originals remain intact. **Export JSON** shares the copy.
@@ -282,3 +282,79 @@ Import that JSON through **Manage profiles → Import JSON**, then explicitly se
 the saved entry to audition it. Importing/saving alone does not change audio. The
 real JSON import is exercised by the `equipment-real-import` UI test in isolated
 settings. Nothing is applied to the owner's listening setup by that test.
+
+## Switching and managing saved profiles
+
+Import JSON once, then click Apply profile. Saved custom speaker and amplifier
+profiles remain in the main model dropdown after selecting another model.
+Applying a speaker profile resets the main Manufacturer and Type filters to All.
+
+In Manage profiles, select Custom to show a list of your saved profiles. Click a
+list entry to use it; Edit / save copy, Export JSON and Delete act on that entry.
+Delete removes the library entry, with confirmation; an already-applied correction
+remains active until you select another profile or None.
+
+Apply profile and Close stay outside the scrolling content. Close keeps the
+applied correction. The editor similarly keeps Save/Cancel outside its scroll area.
+Hover over a button for help; the descriptions also support keyboard focus,
+screen readers and Qt's context help. Existing detailed tips are retained; other
+buttons receive context from their section. New profile tips have translations
+in every supported catalog, with linguistic accuracy still unverified.
+
+| Button | Purpose |
+| --- | --- |
+| Import JSON | Add an existing correction profile to your saved library. |
+| Import response text | Read measured response data (TXT/CSV/FRD/CAL), then prepare a correction curve. This is not an already-designed EQ file. |
+| Create profile | Build a correction profile manually. |
+| Edit / save copy | Adjust a copy without overwriting the original. |
+| Export JSON | Write the selected profile to a file for sharing or backup. |
+| Apply profile | Use the displayed profile for its equipment type. |
+| Delete | Remove a saved custom entry; bundled profiles are protected. |
+
+The AR-2ax example uses a historical acoustic-power measurement from about
+500 Hz to 20 kHz. Its relatively modest correction does not establish flat bass,
+flat on-axis response, or the response of an aged individual pair in a room.
+
+## Graphical correction editor
+
+Drag a point to change its frequency and gain, double-click to add a point, and
+use Width for broad or narrow corrections. Advanced numerical controls and
+profile metadata can be expanded when needed. Undo reverses an entire drag.
+New profiles can be built from a few points; the maximum is 32 actual filters.
+The orange measured response is preserved: drawing a correction does not create
+or change a measurement.
+
+Enable the relevant equalizer before using Preview. Preview auditions existing
+audio temporarily; turning it off or closing the editor restores the previous
+correction. Save copy creates a named custom profile; select/apply that saved
+profile to keep using it. Cancel discards edits after confirmation.
+
+Profiles with up to 16 filters retain schema 2 compatibility. Profiles with
+17–32 filters use schema 3 and require an updated app; older apps reject them.
+The processing budget is 96 filters, accommodating 31 listening EQ bands plus
+32 speaker and 32 amplifier filters. Microphone correction supports 32 filters.
+Linux PipeWire graphs reserve those slots, so the larger limit increases their
+fixed processing cost. The C++ processor visits only the active filters.
+
+## Edit an imported profile
+
+Select the imported equipment in the main window, then open **Manage profiles**.
+The active imported profile is selected on opening, and **Edit / save copy** opens
+its correction graph. Drag points or use the frequency, gain and width controls;
+Preview can audition the changes while the corresponding EQ is enabled.
+Choose **Save copy**, then **Apply profile** to use the edited correction. Both the
+original and the new copy remain available in the saved library. Measurement data
+and source attribution are retained. Closing without saving offers Save, Discard
+and Cancel. Opening the manager alone never changes audio or saves a profile.
+An active imported correction from an older app can also be edited even if it is
+not yet present in the saved library.
+
+**Delete** removes imported profiles and saved copies after confirmation. Deleting
+the active imported correction also clears that equipment's selection; deleting
+an inactive entry leaves the current correction alone. Bundled references cannot
+be deleted. Reimporting the same JSON selects the existing saved profile rather
+than adding another row. Duplicate matching ignores export IDs and provenance
+wrappers, but retains distinctions in equipment identity, curves, measurement
+source and conditions. Changed curves with a reused ID receive a separate identity;
+existing entries are never overwritten. Deliberately saving an edited copy remains
+available independently of import deduplication.

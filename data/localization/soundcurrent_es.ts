@@ -158,8 +158,12 @@ Do you want to delete it anyway?</source>
       <translation>Activo / pasivo / desconocido</translation>
     </message>
     <message>
-      <source>Add filter</source>
-      <translation>Añadir filtro</translation>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Añadir un perfil JSON a la biblioteca guardada.</translation>
+    </message>
+    <message>
+      <source>Add point</source>
+      <translation>Añadir punto</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
@@ -173,6 +177,10 @@ Do you want to delete it anyway?</source>
       <source>Adjustable system-wide equalizer for PipeWire</source>
       <translation>Ecualizador ajustable para todo el sistema con PipeWire</translation>
       <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>Avanzado</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
@@ -280,6 +288,10 @@ Do you want to delete it anyway?</source>
       <translation>Actualizaciones de la aplicación</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Aplicado</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Aplicar</translation>
     </message>
@@ -307,8 +319,16 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Arrow keys adjust the selected point; Delete removes it.</source>
+      <translation>Las flechas ajustan el punto seleccionado; Supr lo elimina.</translation>
+    </message>
+    <message>
       <source>Audio bridge did not start</source>
       <translation>El puente de audio no se inició</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Almacenamiento de audio en búfer</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -357,6 +377,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Margen automático de %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Automático</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -636,6 +660,10 @@ Do you want to delete it anyway?</source>
       <translation>Cerrar</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Cerrar el diálogo y mantener la corrección aplicada.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Altavoz de columna de sonorización</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +824,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Crear un nuevo perfil de corrección.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Crear nueva carpeta</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -841,6 +873,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Eliminar este perfil personalizado guardado.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>Vista detallada</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -864,8 +900,16 @@ Do you want to delete it anyway?</source>
       <translation>Arrastre los puntos de la curva o ajuste la banda seleccionada abajo.</translation>
     </message>
     <message>
+      <source>Drag points to shape the correction. Double-click to add a point.</source>
+      <translation>Arrastre los puntos para dar forma a la corrección. Haga doble clic para añadir un punto.</translation>
+    </message>
+    <message>
       <source>Drain test playback</source>
       <translation>Vaciar el búfer de reproducción de prueba</translation>
+    </message>
+    <message>
+      <source>Drawn corrections are listening adjustments, not equipment measurements.</source>
+      <translation>Las correcciones dibujadas son ajustes de escucha, no mediciones del equipo.</translation>
     </message>
     <message>
       <source>Drive</source>
@@ -912,6 +956,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Edit / save copy</source>
       <translation>Editar / guardar copia</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Editar una copia sin cambiar el original.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1139,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Export profile</source>
       <translation>Exportar perfil</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Exportar el perfil seleccionado a un archivo JSON.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1660,6 +1712,10 @@ Do you want to delete it anyway?</source>
       <translation>Modelo</translation>
     </message>
     <message>
+      <source>Move right for a broader adjustment.</source>
+      <translation>Mueva a la derecha para ampliar el ajuste.</translation>
+    </message>
+    <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
       <translation>Mueva hacia I o D para reducir el canal opuesto; el centro mantiene ambos a su nivel máximo</translation>
     </message>
@@ -1831,10 +1887,6 @@ Do you want to delete it anyway?</source>
       <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
-      <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation>Naranja: respuesta medida, si se proporciona. Turquesa: corrección a 48 kHz. Arrastre los puntos de control turquesa o edite la tabla. Al guardar se conserva la referencia y se crea una copia personalizada.</translation>
-    </message>
-    <message>
       <source>Outdoor speaker</source>
       <translation>Altavoz para exteriores</translation>
       <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
@@ -1943,6 +1995,14 @@ Do you want to delete it anyway?</source>
       <translation>Impedir cambios en los preajustes, las bandas del ecualizador, la ganancia posterior y el balance</translation>
     </message>
     <message>
+      <source>Preview</source>
+      <translation>Vista previa</translation>
+    </message>
+    <message>
+      <source>Preview is temporary. Closing the editor restores the previous correction.</source>
+      <translation>La vista previa es temporal. Al cerrar el editor se restaura la corrección anterior.</translation>
+    </message>
+    <message>
       <source>Profile</source>
       <translation>Perfil</translation>
     </message>
@@ -1971,8 +2031,8 @@ Do you want to delete it anyway?</source>
       <translation>Los perfiles se aplican inmediatamente al seleccionarlos.</translation>
     </message>
     <message>
-      <source>Profiles need 1–16 correction filters.</source>
-      <translation>Los perfiles necesitan entre 1 y 16 filtros de corrección.</translation>
+      <source>Profiles need 1–32 correction filters.</source>
+      <translation>Los perfiles necesitan entre 1 y 32 filtros de corrección.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
@@ -2190,8 +2250,8 @@ Do you want to delete it anyway?</source>
       <translation>¿Eliminar VB-CABLE?</translation>
     </message>
     <message>
-      <source>Remove selected filter</source>
-      <translation>Eliminar filtro seleccionado</translation>
+      <source>Remove point</source>
+      <translation>Quitar punto</translation>
     </message>
     <message>
       <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
@@ -2291,6 +2351,10 @@ Do you want to delete it anyway?</source>
       <source>Save as</source>
       <translation>Guardar como</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Save copy</source>
+      <translation>Guardar copia</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
@@ -2410,9 +2474,8 @@ Do you want to delete it anyway?</source>
       <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
-      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
-      <translation>El EQ compartido y el EQ del canal superan 64 filtros; elimine algunos filtros del canal</translation>
-      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+      <source>Shared and channel EQ exceed 96 filters; remove some channel filters</source>
+      <translation>El EQ compartido y el EQ del canal superan 96 filtros; elimine algunos filtros del canal</translation>
     </message>
     <message>
       <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
@@ -2451,6 +2514,10 @@ Do you want to delete it anyway?</source>
       <translation>Mostrar marcadores de pico en los niveles de frecuencia</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Mostrar solo los perfiles personalizados guardados.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Mostrar tamaño</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2485,6 +2552,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Small Speakers</source>
       <translation>Altavoces pequeños</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Los búferes pequeños reducen el retardo, pero pueden causar chasquidos. Automático conserva los valores de Linux y solicita 40 ms en Windows. Los dispositivos pueden ajustar la solicitud. Aplicar reinicia brevemente el audio activo.</translation>
     </message>
     <message>
       <source>Soft Treble</source>
@@ -2765,6 +2836,14 @@ Do you want to delete it anyway?</source>
       <translation>Activar ecualizador</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Convertir los datos de respuesta medidos en una curva de corrección.</translation>
+    </message>
+    <message>
+      <source>Turn on the equalizer or microphone EQ before previewing.</source>
+      <translation>Active el ecualizador o el EQ del micrófono antes de la vista previa.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Tipo</translation>
     </message>
@@ -2810,8 +2889,8 @@ Do you want to delete it anyway?</source>
       <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
-      <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation>Esquema de perfil de equipo no compatible (se esperaba 2).</translation>
+      <source>Unsupported equipment profile schema (expected 2/3).</source>
+      <translation>Esquema de perfil de equipo no compatible (se esperaba 2/3).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
@@ -2859,13 +2938,12 @@ Do you want to delete it anyway?</source>
       <translation>Usar configuración regional del sistema</translation>
     </message>
     <message>
-      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
-      <translation>Respuesta de frecuencia relativa importada por el usuario; indique la orientación / el número de serie del micrófono o las condiciones de medición del altavoz antes de usarla.</translation>
-      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Usar el perfil seleccionado para este equipo.</translation>
     </message>
     <message>
-      <source>User-created correction; enter equipment and measurement conditions.</source>
-      <translation>Corrección creada por el usuario; indique el equipo y las condiciones de medición.</translation>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Respuesta de frecuencia relativa importada por el usuario; indique la orientación / el número de serie del micrófono o las condiciones de medición del altavoz antes de usarla.</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
@@ -2961,6 +3039,10 @@ Do you want to delete it anyway?</source>
       <source>Whole listening system</source>
       <translation>Sistema de escucha completo</translation>
       <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>Anchura</translation>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

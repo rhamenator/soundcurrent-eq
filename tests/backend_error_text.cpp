@@ -78,7 +78,7 @@ int main(int argc,char **argv) try {
  require(audioErrorText("Invalid route number") == "OWNED_DIAGNOSTIC");
  require(audioErrorText("Too many Studio routes") == "OWNED_DIAGNOSTIC");
  require(audioErrorText("Invalid filter type") == "OWNED_DIAGNOSTIC");
- require(audioErrorText("Shared and channel EQ exceed 64 filters; remove some channel filters") == "OWNED_DIAGNOSTIC");
+ require(audioErrorText("Shared and channel EQ exceed 96 filters; remove some channel filters") == "OWNED_DIAGNOSTIC");
  require(audioErrorText("Invalid enhancement parameter count") == "OWNED_DIAGNOSTIC");
  require(audioErrorText("Invalid enhancement parameter type") == "OWNED_DIAGNOSTIC");
  require(audioErrorText("Enhancements outside supported ranges") == "OWNED_DIAGNOSTIC");

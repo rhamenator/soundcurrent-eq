@@ -158,8 +158,12 @@ Vil du slette den likevel?</translation>
       <translation>Aktiv / passiv / ukjent</translation>
     </message>
     <message>
-      <source>Add filter</source>
-      <translation>Legg til filter</translation>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Legg til en JSON-profil i det lagrede biblioteket.</translation>
+    </message>
+    <message>
+      <source>Add point</source>
+      <translation>Legg til punkt</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
@@ -173,6 +177,10 @@ Vil du slette den likevel?</translation>
       <source>Adjustable system-wide equalizer for PipeWire</source>
       <translation>Justerbar equalizer for hele systemet med PipeWire</translation>
       <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>Avansert</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
@@ -280,6 +288,10 @@ Vil du slette den likevel?</translation>
       <translation>Appoppdateringer</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Brukt</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Bruk</translation>
     </message>
@@ -307,8 +319,16 @@ Vil du slette den likevel?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Arrow keys adjust the selected point; Delete removes it.</source>
+      <translation>Piltaster justerer valgt punkt; Delete fjerner det.</translation>
+    </message>
+    <message>
       <source>Audio bridge did not start</source>
       <translation>Lydbroen startet ikke</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Lydbufring</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -357,6 +377,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Automatisk nivåmargin %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Automatisk</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -636,6 +660,10 @@ Vil du slette den likevel?</translation>
       <translation>Lukk</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Lukk dialogen; behold den brukte korreksjonen.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Søylehøyttaler</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +824,10 @@ Vil du slette den likevel?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Opprett en ny korreksjonsprofil.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Opprett ny mappe</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -841,6 +873,10 @@ Vil du slette den likevel?</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Slett denne lagrede egendefinerte profilen.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>Detaljvisning</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -864,8 +900,16 @@ Vil du slette den likevel?</translation>
       <translation>Dra punktene på kurven eller juster det valgte båndet nedenfor.</translation>
     </message>
     <message>
+      <source>Drag points to shape the correction. Double-click to add a point.</source>
+      <translation>Dra punkter for å forme korreksjonen. Dobbeltklikk for å legge til et punkt.</translation>
+    </message>
+    <message>
       <source>Drain test playback</source>
       <translation>Fullføring av testavspilling</translation>
+    </message>
+    <message>
+      <source>Drawn corrections are listening adjustments, not equipment measurements.</source>
+      <translation>Tegnede korreksjoner er lytteinnstillinger, ikke målinger av utstyret.</translation>
     </message>
     <message>
       <source>Drive</source>
@@ -912,6 +956,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Rediger / lagre kopi</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Rediger en kopi; behold originalen uendret.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1139,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Export profile</source>
       <translation>Eksporter profil</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Eksporter den valgte profilen til en JSON-fil.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1660,6 +1712,10 @@ Vil du slette den likevel?</translation>
       <translation>Modell</translation>
     </message>
     <message>
+      <source>Move right for a broader adjustment.</source>
+      <translation>Flytt mot høyre for en bredere justering.</translation>
+    </message>
+    <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
       <translation>Flytt mot V eller H for å redusere den motsatte kanalen; midten beholder fullt nivå i begge</translation>
     </message>
@@ -1831,10 +1887,6 @@ Vil du slette den likevel?</translation>
       <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
-      <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation>Oransje: målt frekvensrespons når tilgjengelig. Turkis: korreksjon ved 48 kHz. Dra turkise kontrollpunkter eller rediger tabellen. Lagring bevarer referansen og oppretter en egendefinert kopi.</translation>
-    </message>
-    <message>
       <source>Outdoor speaker</source>
       <translation>Utendørshøyttaler</translation>
       <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
@@ -1943,6 +1995,14 @@ Vil du slette den likevel?</translation>
       <translation>Hindre endringer i forhåndsinnstillinger, EQ-bånd, etterforsterkning og balanse</translation>
     </message>
     <message>
+      <source>Preview</source>
+      <translation>Forhåndslytt</translation>
+    </message>
+    <message>
+      <source>Preview is temporary. Closing the editor restores the previous correction.</source>
+      <translation>Forhåndslytting er midlertidig. Når redigereren lukkes, gjenopprettes forrige korreksjon.</translation>
+    </message>
+    <message>
       <source>Profile</source>
       <translation>Profil</translation>
     </message>
@@ -1971,8 +2031,8 @@ Vil du slette den likevel?</translation>
       <translation>Profiler tas i bruk straks de velges.</translation>
     </message>
     <message>
-      <source>Profiles need 1–16 correction filters.</source>
-      <translation>Profiler trenger 1–16 korreksjonsfiltre.</translation>
+      <source>Profiles need 1–32 correction filters.</source>
+      <translation>Profiler trenger 1–32 korreksjonsfiltre.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
@@ -2190,8 +2250,8 @@ Vil du slette den likevel?</translation>
       <translation>Fjerne VB-CABLE?</translation>
     </message>
     <message>
-      <source>Remove selected filter</source>
-      <translation>Fjern valgt filter</translation>
+      <source>Remove point</source>
+      <translation>Fjern punkt</translation>
     </message>
     <message>
       <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
@@ -2291,6 +2351,10 @@ Vil du slette den likevel?</translation>
       <source>Save as</source>
       <translation>Lagre som</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Save copy</source>
+      <translation>Lagre kopi</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
@@ -2410,9 +2474,8 @@ Vil du slette den likevel?</translation>
       <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
-      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
-      <translation>Felles EQ og kanal-EQ overskrider 64 filtre; fjern noen kanalfiltre</translation>
-      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+      <source>Shared and channel EQ exceed 96 filters; remove some channel filters</source>
+      <translation>Felles EQ og kanal-EQ overskrider 96 filtre; fjern noen kanalfiltre</translation>
     </message>
     <message>
       <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
@@ -2451,6 +2514,10 @@ Vil du slette den likevel?</translation>
       <translation>Vis toppmarkører på frekvensnivåene</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Vis bare lagrede egendefinerte profiler.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Vis størrelse</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2485,6 +2552,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Små høyttalere</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Mindre buffere reduserer forsinkelsen, men kan gi knitring. Automatisk beholder Linux-standardene og ber om 40 ms i Windows. Enheter kan tilpasse forespørselen. Bruk starter aktiv lyd kort på nytt.</translation>
     </message>
     <message>
       <source>Soft Treble</source>
@@ -2765,6 +2836,14 @@ Vil du slette den likevel?</translation>
       <translation>Slå equalizeren på</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Gjør målte responsdata om til en korreksjonskurve.</translation>
+    </message>
+    <message>
+      <source>Turn on the equalizer or microphone EQ before previewing.</source>
+      <translation>Slå på equalizeren eller mikrofon-EQ før forhåndslytting.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Type</translation>
     </message>
@@ -2810,8 +2889,8 @@ Vil du slette den likevel?</translation>
       <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
-      <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation>Utstyrsprofilens skjema støttes ikke (forventet: 2).</translation>
+      <source>Unsupported equipment profile schema (expected 2/3).</source>
+      <translation>Utstyrsprofilens skjema støttes ikke (forventet: 2/3).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
@@ -2859,13 +2938,12 @@ Vil du slette den likevel?</translation>
       <translation>Bruk systemets regionale innstillinger</translation>
     </message>
     <message>
-      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
-      <translation>Brukerimportert relativ frekvensrespons; oppgi mikrofonens retning / serienummer eller høyttalerens måleforhold før bruk.</translation>
-      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Bruk den valgte profilen for dette utstyret.</translation>
     </message>
     <message>
-      <source>User-created correction; enter equipment and measurement conditions.</source>
-      <translation>Brukeropprettet korreksjon; oppgi utstyr og måleforhold.</translation>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Brukerimportert relativ frekvensrespons; oppgi mikrofonens retning / serienummer eller høyttalerens måleforhold før bruk.</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
@@ -2961,6 +3039,10 @@ Vil du slette den likevel?</translation>
       <source>Whole listening system</source>
       <translation>Hele lyttesystemet</translation>
       <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>Bredde</translation>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

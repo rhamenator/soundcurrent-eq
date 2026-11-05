@@ -18,7 +18,7 @@ struct EqBand {
 };
 
 inline constexpr double kMinPostGainDb = -60.0;
-inline constexpr std::size_t kMaxProcessingBands = 64;
+inline constexpr std::size_t kMaxProcessingBands = 96;
 struct FilterCoefficients { double b0, b1, b2, a1, a2; };
 FilterCoefficients filterCoefficients(const EqBand &band, int sampleRate);
 double filterResponseDb(const EqBand &band, int sampleRate, double frequency);

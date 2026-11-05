@@ -27,8 +27,8 @@ inline QString audioErrorText(const QString &diagnostic) {
         return SC_TR("Too many Studio routes");
     if (diagnostic == QStringLiteral("Invalid filter type"))
         return SC_TR("Invalid filter type");
-    if (diagnostic == QStringLiteral("Shared and channel EQ exceed 64 filters; remove some channel filters"))
-        return SC_TR("Shared and channel EQ exceed 64 filters; remove some channel filters");
+    if (diagnostic == QStringLiteral("Shared and channel EQ exceed 96 filters; remove some channel filters"))
+        return SC_TR("Shared and channel EQ exceed 96 filters; remove some channel filters");
     if (diagnostic == QStringLiteral("Invalid enhancement parameter count"))
         return SC_TR("Invalid enhancement parameter count");
     if (diagnostic == QStringLiteral("Invalid enhancement parameter type"))

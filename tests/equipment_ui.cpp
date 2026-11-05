@@ -13,6 +13,8 @@
 #include <QJsonDocument>
 #include <QLineEdit>
 #include <QLabel>
+#include <QCheckBox>
+#include <QListWidget>
 #include <QScrollArea>
 #include <QScrollBar>
 #include <QMessageBox>
@@ -22,8 +24,14 @@
 #include <QTemporaryDir>
 #include <QTimer>
 #include <QWheelEvent>
+#include <QMouseEvent>
+#include <QKeyEvent>
+#include <QSlider>
+#include <QGroupBox>
+#include <QScreen>
 #include <QUuid>
 #include <cstdio>
+#include <cmath>
 using namespace soundcurrent::equipment;
 namespace {
 void require(bool ok, const char *message) { if (!ok) qFatal("%s", message); }
@@ -56,6 +64,7 @@ int main(int argc,char **argv) {
     Profile fixture;fixture.kind="speaker";fixture.brand="UI fixture";fixture.family="Test";fixture.model="Saved profile";
     fixture.source="https://example.invalid/ui-test";fixture.conditions="Synthetic test only";fixture.filters={{1000,0,1}};
     QTimer drive;drive.setInterval(20);int phase=0;bool checkedCancel=false;
+    std::optional<Profile> previewed;int previewRestores=0;bool failPreview=true;
     QElapsedTimer elapsed,progressElapsed;elapsed.start();progressElapsed.start();QTimer phaseTrace;int lastPhase=-1;
     QObject::connect(&phaseTrace,&QTimer::timeout,&app,[&]{if(phase!=lastPhase){
         qInfo("Equipment fixture phase %d at %lld ms",phase,static_cast<long long>(elapsed.elapsed()));lastPhase=phase;progressElapsed.restart();}});
@@ -70,12 +79,56 @@ int main(int argc,char **argv) {
             if(phase==0){
                 require(editor->findChild<QLineEdit *>("profileSource")->maxLength()==2048,"Translated source label changed its field limit");
                 require(editor->findChild<QLineEdit *>("profileConditions")->maxLength()==2000,"Translated conditions label changed its field limit");
-                setGain(editor,3);phase=1;closeLater(editor);}
-            else if(phase==2){checkedCancel=true;phase=3;closeLater(editor);}
+                auto *graph=editor->findChild<QWidget *>("profileCorrectionGraph");
+                auto *advanced=editor->findChild<QGroupBox *>("profileAdvanced");
+                auto *table=editor->findChild<QTableWidget *>();
+                auto *preview=editor->findChild<QPushButton *>("previewProfile");
+                require(graph && advanced && !advanced->isChecked() && table && !table->isVisible(),"Graph editor did not start in simple mode");
+                require(editor->height()<=editor->screen()->availableGeometry().height(),"Editor exceeded display height");
+                auto *box=editor->findChild<QDialogButtonBox *>();
+                for(auto role:{QDialogButtonBox::Save,QDialogButtonBox::Cancel}){
+                    auto *action=box->button(role);require(action->isVisible() && editor->rect().contains(QRect(action->mapTo(editor,QPoint()),action->size())),"Editor footer requires scrolling");}
+                require(preview && preview->isEnabled(),"Editor cannot audition through preview callback");
+                require(!previewed,"Opening editor changed preview");
+                button(editor,"Add point")->click();require(table->rowCount()==2,"Add point failed");
+                editor->findChild<QSlider *>("profilePointGain")->setValue(30);
+                const auto oldFrequency=qobject_cast<QDoubleSpinBox *>(table->cellWidget(1,1))->value();
+                preview->click();require(!preview->isChecked() && !previewed && previewRestores==1,"Failed preview left a temporary correction active");
+                preview->click();require(previewed && previewed->filters.size()==2 && previewed->filters[1].gainDb==3,"Preview did not use drawn correction");
+                const QRectF area(45,15,graph->width()-90,graph->height()-40);
+                auto point=[&](double f,double gain){return QPointF(area.left()+std::log(f/20.)/std::log(1000.)*area.width(),area.center().y()-gain/24.*area.height());};
+                auto send=[&](QEvent::Type type,QPointF position,Qt::MouseButton pressed,Qt::MouseButtons held){QMouseEvent event(type,position,graph->mapToGlobal(position.toPoint()),pressed,held,Qt::NoModifier);QCoreApplication::sendEvent(graph,&event);};
+                send(QEvent::MouseButtonPress,point(oldFrequency,3),Qt::LeftButton,Qt::LeftButton);
+                send(QEvent::MouseMove,point(2000,2),Qt::NoButton,Qt::LeftButton);
+                send(QEvent::MouseButtonRelease,point(2000,2),Qt::LeftButton,Qt::NoButton);
+                require(previewed && std::abs(previewed->filters[1].frequency-2000)<.01 && std::abs(previewed->filters[1].gainDb-2)<.01,"Graph drag did not update preview immediately");
+                button(editor,"Undo")->click();require(std::abs(previewed->filters[1].frequency-oldFrequency)<.0001 && previewed->filters[1].gainDb==3,"One drag did not undo as one action");
+                const auto beforeKey=previewed->filters[1].gainDb;
+                QKeyEvent key(QEvent::KeyPress,Qt::Key_Down,Qt::NoModifier);QCoreApplication::sendEvent(graph,&key);
+                require(previewed->filters[1].gainDb<beforeKey,"Keyboard graph edit did not update preview");button(editor,"Undo")->click();
+                send(QEvent::MouseButtonDblClick,point(5000,1),Qt::LeftButton,Qt::LeftButton);
+                require(table->rowCount()==3 && previewed->filters.size()==3,"Double-click did not add a curve point");
+                QKeyEvent erase(QEvent::KeyPress,Qt::Key_Delete,Qt::NoModifier);QCoreApplication::sendEvent(graph,&erase);
+                require(table->rowCount()==2,"Keyboard Delete did not remove a point");
+                while(table->rowCount()<32)button(editor,"Add point")->click();
+                require(!button(editor,"Add point")->isEnabled(),"Editor exceeds the 32-point bound");
+                while(table->rowCount()>1)button(editor,"Remove point")->click();
+                require(!button(editor,"Remove point")->isEnabled(),"Editor allowed an empty correction");
+                advanced->setChecked(true);require(table->isVisible(),"Advanced filter controls are inaccessible");advanced->setChecked(false);
+                const auto beforeWheel=editor->findChild<QSlider *>("profilePointGain")->value();
+                QWheelEvent wheel(QPointF(5,5),QPointF(5,5),QPoint(),QPoint(0,-120),Qt::NoButton,Qt::NoModifier,Qt::NoScrollPhase,false);
+                QCoreApplication::sendEvent(editor->findChild<QSlider *>("profilePointGain"),&wheel);
+                require(editor->findChild<QSlider *>("profilePointGain")->value()==beforeWheel,"Scrolling changed profile slider");
+                preview->click();require(!previewed && previewRestores==2,"Turning preview off did not restore baseline");preview->click();
+                const auto captures=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
+                if(!captures.isEmpty()){QDir().mkpath(captures);editor->grab().save(QDir(captures).filePath("graph-editor.png"));}
+                phase=1;closeLater(editor);}
+            else if(phase==2){require(bool(previewed),"Canceling close prompt stopped an ongoing preview");checkedCancel=true;phase=3;closeLater(editor);}
         }
     });
     QTimer watchdog;QObject::connect(&watchdog,&QTimer::timeout,&app,[&]{if(progressElapsed.elapsed()<20000)return;for(auto *w:QApplication::topLevelWidgets())if(w->isVisible()){qWarning("Visible: %s / %s",w->metaObject()->className(),qPrintable(w->windowTitle()));if(auto *f=qobject_cast<QFileDialog *>(w))qWarning("Selected: %s",qPrintable(f->selectedFiles().join(";")));if(auto *b=qobject_cast<QMessageBox *>(w))qWarning("Message: %s",qPrintable(b->text()));w->grab().save(temp.filePath("timeout.png"));}qFatal("Equipment UI test made no phase progress for 20 seconds at phase %d",phase);});watchdog.start(100);
-    drive.start();saveNewProfile(nullptr,fixture);drive.stop();
+    drive.start();saveNewProfile(nullptr,fixture,[&](const std::optional<Profile> &p){previewed=p;if(!p)++previewRestores;if(p && failPreview){failPreview=false;return false;}return true;});drive.stop();
+    require(!previewed && previewRestores==3,"Discarding editor did not restore previous correction");
     require(phase==4 && checkedCancel && loadLibrary().isEmpty(),"Cancel/discard modified profile failed");
     phase=0;
     QObject::disconnect(&drive,nullptr,&app,nullptr);
@@ -122,9 +175,13 @@ int main(int argc,char **argv) {
             require(subtype->currentData().toString()=="Bookshelf","Display caption changed subtype identity");
             kind->setCurrentIndex(1);require(subtype->currentData().toString()=="Bookshelf","Taxonomy refresh lost stable subtype selection");
             subtype->setCurrentIndex(0);kind->setCurrentIndex(2);kind->setCurrentIndex(0);phase=1;clickLater(button(library,"Import JSON"));}
-        else if(phase==3){phase=4;clickLater(button(library,"Import JSON"));}
-        else if(phase==6){require(!applied,"Importing or saving implicitly changed audio");auto profiles=loadLibrary();require(profiles.size()==2 && profiles[0].id==originalId,"Valid import overwrote existing profile");phase=8;clickLater(button(library,"Apply profile"));}
-        else if(phase==8){require(applied,"Apply callback missing");phase=9;}
+        else if(phase==3){library->findChild<QCheckBox *>("customProfilesOnly")->setChecked(true);phase=4;clickLater(button(library,"Import JSON"));}
+        else if(phase==6){require(!applied,"Importing or saving implicitly changed audio");auto profiles=loadLibrary();require(profiles.size()==2 && profiles[0].id==originalId,"Valid import overwrote existing profile");
+            auto *saved=library->findChild<QListWidget *>("savedCustomProfiles");
+            require(saved && saved->currentItem(),"Imported custom profile is not visibly selected");
+            phase=7;QTimer::singleShot(0,saved,[saved]{QMetaObject::invokeMethod(saved,"itemClicked",Qt::DirectConnection,Q_ARG(QListWidgetItem *,saved->currentItem()));});}
+        else if(phase==7){if(!applied)return;applied=false;phase=8;clickLater(button(library,"Apply profile"));}
+        else if(phase==8){if(!applied)return;phase=9;}
         else if(phase==9){
             auto *feedback=library->findChild<QLabel *>("appliedEquipmentProfile");
             require(feedback && feedback->text().contains(expectedImportedModel),"Applied import has no visible confirmation");
@@ -142,6 +199,10 @@ int main(int argc,char **argv) {
             require(body && body->horizontalScrollBar()->maximum()==0,"Profile manager clips content horizontally");
             auto *closeBox=library->findChild<QDialogButtonBox *>();
             auto *closeButton=closeBox ? closeBox->button(QDialogButtonBox::Close) : nullptr;
+            auto *applyButton=button(library,"Apply profile");
+            require(applyButton && applyButton->isVisible() && library->rect().contains(QRect(applyButton->mapTo(library,QPoint()),applyButton->size())),
+                    "Apply button requires scrolling or is clipped");
+            require(!applyButton->toolTip().isEmpty(),"Apply has no explanatory tooltip");
             require(closeButton && closeButton->isVisible() &&
                     library->rect().contains(QRect(closeButton->mapTo(library,QPoint()),closeButton->size())),
                     "Close button requires scrolling or is clipped");
@@ -185,6 +246,28 @@ int main(int argc,char **argv) {
         drive.start();openLibrary(nullptr,[](const Profile &){},kind);drive.stop();
         require(visited,"Typed profile manager was not exercised");
     }
+    // Saved custom equipment has a visible, selectable management list.
+    QObject::disconnect(&drive,nullptr,&app,nullptr);bool customChecked=false;
+    QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        auto *manager=dialog("Equipment profiles — brand / family / model");if(!manager || customChecked)return;
+        auto *only=manager->findChild<QCheckBox *>("customProfilesOnly");
+        auto *saved=manager->findChild<QListWidget *>("savedCustomProfiles");
+        require(only && saved,"Missing custom profile management list");only->setChecked(true);
+        require(saved->count()==loadLibrary().size() && saved->isVisible(),"Saved profiles not available in custom list");
+        saved->setCurrentRow(saved->count()-1);
+        require(manager->findChild<QComboBox *>("equipmentProfileList")->currentIndex()>0,"Custom list did not select profile");
+        auto *choices=manager->findChild<QComboBox *>("equipmentProfileList");
+        choices->setCurrentIndex(saved->item(0)->data(Qt::UserRole).toInt());
+        require(saved->currentRow()==0,"Dropdown changed action target without updating highlighted custom entry");
+        saved->setCurrentRow(saved->count()-1);
+        require(choices->currentIndex()==saved->currentItem()->data(Qt::UserRole).toInt(),"Custom selection failed to restore action target");
+        require(manager->findChild<QPushButton *>("deleteEquipmentProfile")->isEnabled(),"Custom list cannot manage saved profile");
+        customChecked=true;
+        const auto captures=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
+        if(!captures.isEmpty()){QCoreApplication::processEvents();require(manager->grab().save(QDir(captures).filePath("custom-library.png")),"Could not capture custom library");}
+        closeLater(manager);
+    });
+    drive.start();openLibrary(nullptr,[](const Profile &) {},"speaker");drive.stop();require(customChecked,"Custom profile list not tested");
     // Cancellation is non-destructive; confirmed deletion affects only the chosen saved copy.
     QObject::disconnect(&drive,nullptr,&app,nullptr);phase=0;
     const auto deleteId=loadLibrary().front().id;
@@ -270,6 +353,109 @@ int main(int argc,char **argv) {
         if(notifications==1 || notifications==3)require(p.id.isEmpty() && p.kind=="amplifier","None cleared wrong equipment route");
         else require(!p.id.isEmpty() && !p.filters.isEmpty(),"Correction selection had no filters");
     },"amplifier");drive.stop();require(immediateChecked,"Immediate profile selection workflow incomplete");
+    // Edit a real imported correction, keep its measurement/source immutable,
+    // apply the edited copy and reopen it without importing the file again.
+    const auto imported = parse(importBytes);
+    const auto originalJson = serialize(imported);
+    saveLibrary({imported});
+    phase=0;int editApplications=0;Profile edited;
+    QObject::disconnect(&drive,nullptr,&app,nullptr);
+    QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        if(auto *editor=dialog("Equipment profile editor")) {
+            if(phase==1) {
+                auto *gain=editor->findChild<QSlider *>("profilePointGain");
+                require(gain,"Imported profile has no graph gain slider");
+                gain->setValue(gain->value()==20 ? -20 : 20);
+                editor->findChild<QLineEdit *>("profileModel")->setText(imported.model+" edited");
+                const auto captures=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
+                if(!captures.isEmpty())editor->grab().save(QDir(captures).filePath("imported-profile-editor.png"));
+                phase=2;clickLater(editor->findChild<QDialogButtonBox *>()->button(QDialogButtonBox::Save));
+            }
+            return;
+        }
+        auto *library=dialog("Equipment profiles — brand / family / model");if(!library)return;
+        if(phase==0) {
+            require(editApplications==0 && loadLibrary().size()==1,"Opening an imported selection changed audio or library");
+            auto *list=library->findChild<QComboBox *>("equipmentProfileList");
+            require(list->currentText().contains(imported.model) && button(library,"Edit / save copy")->isEnabled(),"Active import is not selected for editing");
+            phase=1;clickLater(button(library,"Edit / save copy"));
+        } else if(phase==2) {
+            const auto saved=loadLibrary();require(saved.size()==2 && serialize(saved.front())==originalJson,"Editing overwrote the imported original");
+            edited=saved.back();
+            require(edited.id!=imported.id && edited.custom && edited.model==imported.model+" edited","Edited copy identity/name not saved");
+            require(edited.filters.front().gainDb!=imported.filters.front().gainDb,"Edited import did not save its changed curve");
+            auto before=originalJson,after=serialize(edited);
+            require(before["response"]==after["response"] && edited.source==imported.source && edited.conditions==imported.conditions,"Editing changed imported measurements or attribution");
+            require(editApplications==0,"Saving implicitly applied edited profile");
+            phase=3;clickLater(button(library,"Apply profile"));
+        } else if(phase==3 && editApplications==1) {phase=4;closeLater(library);}
+    });
+    drive.start();openLibrary(nullptr,[&](const Profile &p){require(p.id==edited.id && p.filters.front().gainDb==edited.filters.front().gainDb,"Apply did not select edited imported correction");++editApplications;},imported.kind,{},imported);drive.stop();
+    require(phase==4 && editApplications==1,"Imported profile editing workflow incomplete");
+    QObject::disconnect(&drive,nullptr,&app,nullptr);
+    bool editedReopened=false;
+    QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        auto *library=dialog("Equipment profiles — brand / family / model");if(!library)return;
+        require(library->findChild<QComboBox *>("equipmentProfileList")->currentText().contains(edited.model),"Saved edited import not selected after reopen");
+        require(button(library,"Edit / save copy")->isEnabled(),"Reopened edited profile cannot be edited");
+        editedReopened=true;closeLater(library);
+    });
+    drive.start();openLibrary(nullptr,[](const Profile &){qFatal("Reopening edited profile changed audio");},edited.kind,{},edited);drive.stop();require(editedReopened,"Edited import reopening not exercised");
+    // Older active imports without a library entry remain editable, without
+    // writing a new entry merely because the manager was opened.
+    saveLibrary({});QObject::disconnect(&drive,nullptr,&app,nullptr);bool orphanChecked=false,orphanCleared=false;phase=0;
+    QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        if(auto *box=qobject_cast<QMessageBox *>(dialog("Delete"))){if(phase==1){phase=2;clickLater(box->button(QMessageBox::Yes));}return;}
+        auto *library=dialog("Equipment profiles — brand / family / model");if(!library)return;
+        if(phase==0){
+            require(loadLibrary().isEmpty() && library->findChild<QComboBox *>("equipmentProfileList")->currentText().contains(imported.model),"Legacy active import was lost or persisted implicitly");
+            require(button(library,"Edit / save copy")->isEnabled() && library->findChild<QPushButton *>("deleteEquipmentProfile")->isEnabled(),"Unsaved active import actions invalid");
+            require(!orphanCleared,"Opening legacy import changed audio");
+            orphanChecked=true;phase=1;clickLater(button(library,"Delete"));
+        }else if(phase==2){require(orphanCleared && loadLibrary().isEmpty(),"Deleting legacy import left its correction active");phase=3;closeLater(library);}
+    });
+    drive.start();openLibrary(nullptr,[&](const Profile &p){require(p.id.isEmpty() && p.kind==imported.kind,"Legacy deletion cleared wrong route");orphanCleared=true;},imported.kind,{},imported);drive.stop();require(orphanChecked && phase==3,"Legacy import editing/deletion entry point not tested");
+
+    // Reimport selects the existing original without applying it; inactive
+    // deletion preserves audio, and active deletion clears only that route.
+    saveLibrary({imported,edited});
+    std::optional<Profile> activeEquipment=edited;int removedCount=0,selectedCount=0;phase=0;
+    QObject::disconnect(&drive,nullptr,&app,nullptr);
+    QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        for(auto *w:QApplication::topLevelWidgets()) {
+            if(!w->isVisible())continue;
+            if(auto *file=qobject_cast<QFileDialog *>(w)) {
+                if(phase==1){phase=2;const auto filename=valid.fileName();QTimer::singleShot(250,file,[file,filename]{file->findChild<QLineEdit *>("fileNameEdit")->setText(filename);QMetaObject::invokeMethod(file,"accept",Qt::QueuedConnection);});}return;
+            }
+            if(auto *box=qobject_cast<QMessageBox *>(w)) {
+                if(phase==2){phase=3;clickLater(box->button(QMessageBox::Yes));}
+                else if(phase==4){phase=5;clickLater(box->button(QMessageBox::No));}
+                else if(phase==6){phase=7;clickLater(box->button(QMessageBox::Yes));}
+                else if(phase==9){phase=10;clickLater(box->button(QMessageBox::Yes));}
+                return;
+            }
+        }
+        auto *manager=dialog("Equipment profiles — brand / family / model");if(!manager)return;
+        if(phase==0){phase=1;clickLater(button(manager,"Import JSON"));}
+        else if(phase==3){
+            require(loadLibrary().size()==2 && selectedCount==0,"Reimport duplicated a profile or changed audio");
+            require(manager->findChild<QComboBox *>("equipmentProfileList")->currentText().contains(imported.model),"Duplicate import did not select existing entry");
+            require(button(manager,"Delete")->isEnabled(),"Imported reference cannot be deleted");
+            phase=4;clickLater(button(manager,"Delete"));
+        }else if(phase==5){
+            require(loadLibrary().size()==2 && removedCount==0,"Canceling deletion changed saved profiles");
+            phase=6;clickLater(button(manager,"Delete"));
+        }else if(phase==7){
+            require(loadLibrary().size()==1 && loadLibrary().front().id==edited.id && activeEquipment && activeEquipment->id==edited.id && removedCount==1,"Deleting inactive import changed active correction");
+            auto *list=manager->findChild<QComboBox *>("equipmentProfileList");
+            for(int row=1;row<list->count();++row)if(list->itemText(row).contains(edited.model)){list->setCurrentIndex(row);break;}
+            phase=8;
+        }else if(phase==8){require(selectedCount==1,"Edited copy could not be reselected after deleting original");phase=9;clickLater(button(manager,"Delete"));}
+        else if(phase==10){require(loadLibrary().isEmpty() && !activeEquipment && removedCount==2,"Deleting active import left its correction selected");phase=11;closeLater(manager);}
+    });
+    drive.start();openLibrary(nullptr,[&](const Profile &p){++selectedCount;activeEquipment=p;},imported.kind,{},edited,[&](const Profile &p){++removedCount;if(activeEquipment && serialize(*activeEquipment)==serialize(p)){activeEquipment.reset();return true;}return false;});drive.stop();
+    require(phase==11,"Duplicate import / delete workflow incomplete");
+
     QFile::remove(path);
     std::puts("PASS: profile editor change, Cancel/Discard prompt, save, malformed/valid JSON import, preservation and Apply");
     return 0;

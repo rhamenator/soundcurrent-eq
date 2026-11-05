@@ -158,8 +158,12 @@ Do you want to delete it anyway?</source>
       <translation>액티브 / 패시브 / 알 수 없음</translation>
     </message>
     <message>
-      <source>Add filter</source>
-      <translation>필터 추가</translation>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>JSON 프로필을 저장된 라이브러리에 추가합니다.</translation>
+    </message>
+    <message>
+      <source>Add point</source>
+      <translation>지점 추가</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
@@ -173,6 +177,10 @@ Do you want to delete it anyway?</source>
       <source>Adjustable system-wide equalizer for PipeWire</source>
       <translation>PipeWire용 조절 가능한 시스템 전체 이퀄라이저</translation>
       <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>고급</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
@@ -280,6 +288,10 @@ Do you want to delete it anyway?</source>
       <translation>앱 업데이트</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>적용됨</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>적용</translation>
     </message>
@@ -307,8 +319,16 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Arrow keys adjust the selected point; Delete removes it.</source>
+      <translation>화살표 키로 선택한 지점을 조정하고 Delete로 제거합니다.</translation>
+    </message>
+    <message>
       <source>Audio bridge did not start</source>
       <translation>오디오 브리지를 시작하지 못했습니다</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>오디오 버퍼링</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -357,6 +377,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>자동 헤드룸 %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>자동</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -636,6 +660,10 @@ Do you want to delete it anyway?</source>
       <translation>닫기</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>적용된 보정을 유지하고 대화 상자를 닫습니다.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>컬럼 스피커</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +824,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>새 보정 프로필을 만듭니다.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>새 폴더 만들기</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -841,6 +873,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>이 저장된 사용자 지정 프로필을 삭제합니다.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>자세히 보기</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -864,8 +900,16 @@ Do you want to delete it anyway?</source>
       <translation>곡선의 점을 드래그하거나 아래에서 선택한 밴드를 조절하세요.</translation>
     </message>
     <message>
+      <source>Drag points to shape the correction. Double-click to add a point.</source>
+      <translation>지점을 끌어 보정 곡선을 조정하세요. 두 번 클릭하면 지점이 추가됩니다.</translation>
+    </message>
+    <message>
       <source>Drain test playback</source>
       <translation>테스트 재생 완료 대기</translation>
+    </message>
+    <message>
+      <source>Drawn corrections are listening adjustments, not equipment measurements.</source>
+      <translation>직접 그린 보정은 청취 조정이며 장비 측정값이 아닙니다.</translation>
     </message>
     <message>
       <source>Drive</source>
@@ -912,6 +956,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Edit / save copy</source>
       <translation>편집 / 사본 저장</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>원본을 변경하지 않고 복사본을 편집합니다.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1139,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Export profile</source>
       <translation>프로파일 내보내기</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>선택한 프로필을 JSON 파일로 내보냅니다.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1660,6 +1712,10 @@ Do you want to delete it anyway?</source>
       <translation>모델</translation>
     </message>
     <message>
+      <source>Move right for a broader adjustment.</source>
+      <translation>오른쪽으로 이동하면 조정 범위가 넓어집니다.</translation>
+    </message>
+    <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
       <translation>L 또는 R 쪽으로 이동하면 반대쪽 채널의 레벨이 줄어듭니다. 중앙에서는 두 채널 모두 원래 레벨을 유지합니다</translation>
     </message>
@@ -1831,10 +1887,6 @@ Do you want to delete it anyway?</source>
       <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
-      <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation>주황색: 제공된 측정 응답. 청록색: 48 kHz에서의 보정. 청록색 제어점을 드래그하거나 표를 편집하세요. 저장하면 참조 데이터를 유지한 채 사용자 지정 사본을 만듭니다.</translation>
-    </message>
-    <message>
       <source>Outdoor speaker</source>
       <translation>실외용 스피커</translation>
       <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
@@ -1943,6 +1995,14 @@ Do you want to delete it anyway?</source>
       <translation>프리셋, EQ 밴드, 포스트 게인 및 밸런스 변경 방지</translation>
     </message>
     <message>
+      <source>Preview</source>
+      <translation>미리 듣기</translation>
+    </message>
+    <message>
+      <source>Preview is temporary. Closing the editor restores the previous correction.</source>
+      <translation>미리 듣기는 임시입니다. 편집기를 닫으면 이전 보정으로 돌아갑니다.</translation>
+    </message>
+    <message>
       <source>Profile</source>
       <translation>프로파일</translation>
     </message>
@@ -1971,8 +2031,8 @@ Do you want to delete it anyway?</source>
       <translation>프로필을 선택하면 즉시 적용됩니다.</translation>
     </message>
     <message>
-      <source>Profiles need 1–16 correction filters.</source>
-      <translation>프로파일에는 보정 필터 1~16개가 필요합니다.</translation>
+      <source>Profiles need 1–32 correction filters.</source>
+      <translation>프로파일에는 보정 필터 1~32개가 필요합니다.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
@@ -2190,8 +2250,8 @@ Do you want to delete it anyway?</source>
       <translation>VB-CABLE을 제거할까요?</translation>
     </message>
     <message>
-      <source>Remove selected filter</source>
-      <translation>선택한 필터 제거</translation>
+      <source>Remove point</source>
+      <translation>지점 제거</translation>
     </message>
     <message>
       <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
@@ -2291,6 +2351,10 @@ Do you want to delete it anyway?</source>
       <source>Save as</source>
       <translation>다른 이름으로 저장</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Save copy</source>
+      <translation>복사본 저장</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
@@ -2410,9 +2474,8 @@ Do you want to delete it anyway?</source>
       <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
-      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
-      <translation>공통 EQ와 채널 EQ의 필터 합계가 64개를 초과합니다. 일부 채널 필터를 제거하세요</translation>
-      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+      <source>Shared and channel EQ exceed 96 filters; remove some channel filters</source>
+      <translation>공통 EQ와 채널 EQ의 필터 합계가 96개를 초과합니다. 일부 채널 필터를 제거하세요</translation>
     </message>
     <message>
       <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
@@ -2451,6 +2514,10 @@ Do you want to delete it anyway?</source>
       <translation>주파수 레벨에 피크 마커 표시</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>저장된 사용자 지정 프로필만 표시합니다.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>크기 표시</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2485,6 +2552,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Small Speakers</source>
       <translation>소형 스피커</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>버퍼가 작으면 지연이 줄지만 잡음이 생길 수 있습니다. 자동은 Linux 기본값을 유지하고 Windows에서 40ms를 요청합니다. 장치가 요청을 조정할 수 있습니다. 적용하면 실행 중인 오디오가 잠시 다시 시작됩니다.</translation>
     </message>
     <message>
       <source>Soft Treble</source>
@@ -2765,6 +2836,14 @@ Do you want to delete it anyway?</source>
       <translation>이퀄라이저 켜기</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>측정한 응답 데이터를 보정 곡선으로 변환합니다.</translation>
+    </message>
+    <message>
+      <source>Turn on the equalizer or microphone EQ before previewing.</source>
+      <translation>미리 듣기 전에 이퀄라이저 또는 마이크 EQ를 켜세요.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>유형</translation>
     </message>
@@ -2810,8 +2889,8 @@ Do you want to delete it anyway?</source>
       <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
-      <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation>지원하지 않는 장비 프로파일 스키마입니다 (필요한 버전: 2).</translation>
+      <source>Unsupported equipment profile schema (expected 2/3).</source>
+      <translation>지원하지 않는 장비 프로파일 스키마입니다 (필요한 버전: 2/3).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
@@ -2859,13 +2938,12 @@ Do you want to delete it anyway?</source>
       <translation>시스템 지역 설정 사용</translation>
     </message>
     <message>
-      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
-      <translation>사용자가 가져온 상대 주파수 응답입니다. 사용하기 전에 마이크 방향 / 일련번호 또는 스피커 측정 조건을 지정하세요.</translation>
-      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>이 장비에 선택한 프로필을 사용합니다.</translation>
     </message>
     <message>
-      <source>User-created correction; enter equipment and measurement conditions.</source>
-      <translation>사용자가 만든 보정입니다. 장비와 측정 조건을 입력하세요.</translation>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>사용자가 가져온 상대 주파수 응답입니다. 사용하기 전에 마이크 방향 / 일련번호 또는 스피커 측정 조건을 지정하세요.</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
@@ -2961,6 +3039,10 @@ Do you want to delete it anyway?</source>
       <source>Whole listening system</source>
       <translation>전체 청취 시스템</translation>
       <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>폭</translation>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

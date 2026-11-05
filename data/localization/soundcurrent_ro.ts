@@ -158,8 +158,12 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Activ / pasiv / necunoscut</translation>
     </message>
     <message>
-      <source>Add filter</source>
-      <translation>Adăugați filtru</translation>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Adaugă un profil JSON în biblioteca salvată.</translation>
+    </message>
+    <message>
+      <source>Add point</source>
+      <translation>Adaugă punct</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
@@ -173,6 +177,10 @@ Doriți să îl ștergeți totuși?</translation>
       <source>Adjustable system-wide equalizer for PipeWire</source>
       <translation>Egalizator reglabil pentru întregul sistem cu PipeWire</translation>
       <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>Avansat</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
@@ -280,6 +288,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Actualizări aplicație</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Aplicat</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Aplicați</translation>
     </message>
@@ -307,8 +319,16 @@ Doriți să îl ștergeți totuși?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Arrow keys adjust the selected point; Delete removes it.</source>
+      <translation>Săgețile ajustează punctul selectat; Delete îl elimină.</translation>
+    </message>
+    <message>
       <source>Audio bridge did not start</source>
       <translation>Puntea audio nu a pornit</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Memorie tampon audio</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -357,6 +377,10 @@ Doriți să îl ștergeți totuși?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Rezervă automată de nivel %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Automat</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -636,6 +660,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Închideți</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Închide dialogul, păstrând corecția aplicată.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Boxă coloană pentru sonorizare</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +824,10 @@ Doriți să îl ștergeți totuși?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Creează un profil de corecție nou.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Creează un dosar nou</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -841,6 +873,10 @@ Doriți să îl ștergeți totuși?</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Șterge acest profil personalizat salvat.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>Vizualizare detaliată</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -864,8 +900,16 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Trageți punctele curbei sau reglați banda selectată mai jos.</translation>
     </message>
     <message>
+      <source>Drag points to shape the correction. Double-click to add a point.</source>
+      <translation>Trage punctele pentru a modela corecția. Dublu clic adaugă un punct.</translation>
+    </message>
+    <message>
       <source>Drain test playback</source>
       <translation>Finalizarea redării de test</translation>
+    </message>
+    <message>
+      <source>Drawn corrections are listening adjustments, not equipment measurements.</source>
+      <translation>Corecțiile desenate sunt ajustări de ascultare, nu măsurători ale echipamentului.</translation>
     </message>
     <message>
       <source>Drive</source>
@@ -912,6 +956,10 @@ Doriți să îl ștergeți totuși?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Editați / salvați copie</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Editează o copie, păstrând originalul neschimbat.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1139,10 @@ Doriți să îl ștergeți totuși?</translation>
     <message>
       <source>Export profile</source>
       <translation>Exportați profil</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Exportă profilul selectat într-un fișier JSON.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1660,6 +1712,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Model</translation>
     </message>
     <message>
+      <source>Move right for a broader adjustment.</source>
+      <translation>Deplasează spre dreapta pentru o ajustare mai largă.</translation>
+    </message>
+    <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
       <translation>Deplasați spre S sau D pentru a reduce canalul opus; centrul păstrează ambele la nivel maxim</translation>
     </message>
@@ -1831,10 +1887,6 @@ Doriți să îl ștergeți totuși?</translation>
       <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
-      <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation>Portocaliu: răspuns măsurat, dacă este furnizat. Turcoaz: corecție la 48 kHz. Trageți punctele de control turcoaz sau editați tabelul. Salvarea păstrează referința și creează o copie personalizată.</translation>
-    </message>
-    <message>
       <source>Outdoor speaker</source>
       <translation>Boxă de exterior</translation>
       <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
@@ -1943,6 +1995,14 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Preveniți modificarea presetărilor, benzilor EQ, câștigului final și balansului</translation>
     </message>
     <message>
+      <source>Preview</source>
+      <translation>Previzualizare</translation>
+    </message>
+    <message>
+      <source>Preview is temporary. Closing the editor restores the previous correction.</source>
+      <translation>Previzualizarea este temporară. Închiderea editorului restaurează corecția anterioară.</translation>
+    </message>
+    <message>
       <source>Profile</source>
       <translation>Profil</translation>
     </message>
@@ -1971,8 +2031,8 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Profilurile se aplică imediat după selectare.</translation>
     </message>
     <message>
-      <source>Profiles need 1–16 correction filters.</source>
-      <translation>Profilurile necesită 1–16 filtre de corecție.</translation>
+      <source>Profiles need 1–32 correction filters.</source>
+      <translation>Profilurile necesită 1–32 filtre de corecție.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
@@ -2190,8 +2250,8 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Eliminați VB-CABLE?</translation>
     </message>
     <message>
-      <source>Remove selected filter</source>
-      <translation>Eliminați filtrul selectat</translation>
+      <source>Remove point</source>
+      <translation>Elimină punctul</translation>
     </message>
     <message>
       <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
@@ -2291,6 +2351,10 @@ Doriți să îl ștergeți totuși?</translation>
       <source>Save as</source>
       <translation>Salvează ca</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Save copy</source>
+      <translation>Salvează o copie</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
@@ -2410,9 +2474,8 @@ Doriți să îl ștergeți totuși?</translation>
       <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
-      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
-      <translation>EQ-ul comun și EQ-ul canalului depășesc 64 de filtre; eliminați unele filtre ale canalului</translation>
-      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+      <source>Shared and channel EQ exceed 96 filters; remove some channel filters</source>
+      <translation>EQ-ul comun și EQ-ul canalului depășesc 96 de filtre; eliminați unele filtre ale canalului</translation>
     </message>
     <message>
       <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
@@ -2451,6 +2514,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Afișați marcajele de vârf pe nivelurile de frecvență</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Afișează doar profilurile personalizate salvate.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Arată dimensiunea</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2485,6 +2552,10 @@ Doriți să îl ștergeți totuși?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Boxe mici</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Memoriile tampon mai mici reduc întârzierea, dar pot provoca pocnituri. Automat păstrează valorile Linux și solicită 40 ms în Windows. Dispozitivele pot adapta cererea. Aplică repornește pentru scurt timp sunetul activ.</translation>
     </message>
     <message>
       <source>Soft Treble</source>
@@ -2765,6 +2836,14 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Porniți egalizatorul</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Transformă datele de răspuns măsurate într-o curbă de corecție.</translation>
+    </message>
+    <message>
+      <source>Turn on the equalizer or microphone EQ before previewing.</source>
+      <translation>Activează egalizatorul sau EQ-ul microfonului înainte de previzualizare.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Tip</translation>
     </message>
@@ -2810,8 +2889,8 @@ Doriți să îl ștergeți totuși?</translation>
       <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
-      <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation>Schemă de profil de echipament neacceptată (se aștepta 2).</translation>
+      <source>Unsupported equipment profile schema (expected 2/3).</source>
+      <translation>Schemă de profil de echipament neacceptată (se aștepta 2/3).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
@@ -2859,13 +2938,12 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Folosiți setările regionale ale sistemului</translation>
     </message>
     <message>
-      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
-      <translation>Răspuns în frecvență relativ importat de utilizator; precizați orientarea / numărul de serie al microfonului sau condițiile de măsurare ale boxei înainte de utilizare.</translation>
-      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Folosește profilul selectat pentru acest echipament.</translation>
     </message>
     <message>
-      <source>User-created correction; enter equipment and measurement conditions.</source>
-      <translation>Corecție creată de utilizator; introduceți echipamentul și condițiile de măsurare.</translation>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Răspuns în frecvență relativ importat de utilizator; precizați orientarea / numărul de serie al microfonului sau condițiile de măsurare ale boxei înainte de utilizare.</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
@@ -2961,6 +3039,10 @@ Doriți să îl ștergeți totuși?</translation>
       <source>Whole listening system</source>
       <translation>Întregul sistem de audiție</translation>
       <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>Lățime</translation>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

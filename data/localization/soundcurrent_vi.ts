@@ -158,8 +158,12 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Chủ động / thụ động / chưa biết</translation>
     </message>
     <message>
-      <source>Add filter</source>
-      <translation>Thêm bộ lọc</translation>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Thêm hồ sơ JSON vào thư viện đã lưu.</translation>
+    </message>
+    <message>
+      <source>Add point</source>
+      <translation>Thêm điểm</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
@@ -173,6 +177,10 @@ Bạn vẫn muốn xóa không?</translation>
       <source>Adjustable system-wide equalizer for PipeWire</source>
       <translation>Bộ cân bằng âm thanh có thể điều chỉnh cho toàn hệ thống với PipeWire</translation>
       <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>Nâng cao</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
@@ -280,6 +288,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Cập nhật ứng dụng</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Đã áp dụng</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Áp dụng</translation>
     </message>
@@ -307,8 +319,16 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Arrow keys adjust the selected point; Delete removes it.</source>
+      <translation>Phím mũi tên điều chỉnh điểm đã chọn; Delete xóa điểm đó.</translation>
+    </message>
+    <message>
       <source>Audio bridge did not start</source>
       <translation>Cầu nối âm thanh không khởi động được</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Bộ đệm âm thanh</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -357,6 +377,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Khoảng dự phòng tự động %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Tự động</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -636,6 +660,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Đóng</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Đóng hộp thoại, giữ hiệu chỉnh đã áp dụng.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Loa cột</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +824,10 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Tạo hồ sơ hiệu chỉnh mới.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Tạo thư mục mới</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -841,6 +873,10 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Xóa hồ sơ tùy chỉnh đã lưu này.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>Dạng chi tiết</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -864,8 +900,16 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Kéo các điểm trên đường cong hoặc điều chỉnh dải đã chọn bên dưới.</translation>
     </message>
     <message>
+      <source>Drag points to shape the correction. Double-click to add a point.</source>
+      <translation>Kéo các điểm để tạo đường hiệu chỉnh. Nhấp đúp để thêm điểm.</translation>
+    </message>
+    <message>
       <source>Drain test playback</source>
       <translation>Hoàn tất phát âm thanh thử nghiệm</translation>
+    </message>
+    <message>
+      <source>Drawn corrections are listening adjustments, not equipment measurements.</source>
+      <translation>Hiệu chỉnh được vẽ là điều chỉnh nghe, không phải phép đo thiết bị.</translation>
     </message>
     <message>
       <source>Drive</source>
@@ -912,6 +956,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Chỉnh sửa / lưu bản sao</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Chỉnh sửa bản sao, giữ nguyên bản gốc.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1139,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Export profile</source>
       <translation>Xuất cấu hình</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Xuất hồ sơ đã chọn thành tệp JSON.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1660,6 +1712,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Mẫu</translation>
     </message>
     <message>
+      <source>Move right for a broader adjustment.</source>
+      <translation>Di chuyển sang phải để mở rộng vùng điều chỉnh.</translation>
+    </message>
+    <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
       <translation>Di chuyển về L hoặc R để giảm mức kênh đối diện; ở giữa giữ cả hai kênh ở mức đầy đủ</translation>
     </message>
@@ -1831,10 +1887,6 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
-      <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation>Cam: đáp tuyến đo nếu có. Xanh ngọc: hiệu chỉnh ở 48 kHz. Kéo các điểm điều khiển xanh ngọc hoặc chỉnh bảng. Khi lưu, dữ liệu tham chiếu được giữ nguyên và một bản sao tùy chỉnh được tạo.</translation>
-    </message>
-    <message>
       <source>Outdoor speaker</source>
       <translation>Loa ngoài trời</translation>
       <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
@@ -1943,6 +1995,14 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Ngăn thay đổi thiết lập sẵn, dải EQ, gain sau EQ và cân bằng</translation>
     </message>
     <message>
+      <source>Preview</source>
+      <translation>Nghe thử</translation>
+    </message>
+    <message>
+      <source>Preview is temporary. Closing the editor restores the previous correction.</source>
+      <translation>Nghe thử chỉ là tạm thời. Đóng trình chỉnh sửa sẽ khôi phục hiệu chỉnh trước đó.</translation>
+    </message>
+    <message>
       <source>Profile</source>
       <translation>Cấu hình</translation>
     </message>
@@ -1971,8 +2031,8 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Hồ sơ được áp dụng ngay khi chọn.</translation>
     </message>
     <message>
-      <source>Profiles need 1–16 correction filters.</source>
-      <translation>Cấu hình cần 1–16 bộ lọc hiệu chỉnh.</translation>
+      <source>Profiles need 1–32 correction filters.</source>
+      <translation>Cấu hình cần 1–32 bộ lọc hiệu chỉnh.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
@@ -2190,8 +2250,8 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Gỡ VB-CABLE?</translation>
     </message>
     <message>
-      <source>Remove selected filter</source>
-      <translation>Xóa bộ lọc đã chọn</translation>
+      <source>Remove point</source>
+      <translation>Xóa điểm</translation>
     </message>
     <message>
       <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
@@ -2291,6 +2351,10 @@ Bạn vẫn muốn xóa không?</translation>
       <source>Save as</source>
       <translation>Lưu thành</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Save copy</source>
+      <translation>Lưu bản sao</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
@@ -2410,9 +2474,8 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
-      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
-      <translation>EQ chung và EQ của kênh vượt quá tổng cộng 64 bộ lọc; hãy xóa bớt bộ lọc của kênh</translation>
-      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+      <source>Shared and channel EQ exceed 96 filters; remove some channel filters</source>
+      <translation>EQ chung và EQ của kênh vượt quá tổng cộng 96 bộ lọc; hãy xóa bớt bộ lọc của kênh</translation>
     </message>
     <message>
       <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
@@ -2451,6 +2514,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Hiển thị dấu đỉnh trên các mức tần số</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Chỉ hiển thị hồ sơ tùy chỉnh đã lưu.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Hiện kích thước</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2485,6 +2552,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Loa nhỏ</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Bộ đệm nhỏ hơn giảm độ trễ nhưng có thể gây tiếng lách tách. Tự động giữ mặc định Linux và yêu cầu 40 ms trên Windows. Thiết bị có thể điều chỉnh yêu cầu. Áp dụng khởi động lại âm thanh đang hoạt động trong chốc lát.</translation>
     </message>
     <message>
       <source>Soft Treble</source>
@@ -2765,6 +2836,14 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Bật bộ cân bằng âm</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Chuyển dữ liệu đáp ứng đo được thành đường cong hiệu chỉnh.</translation>
+    </message>
+    <message>
+      <source>Turn on the equalizer or microphone EQ before previewing.</source>
+      <translation>Bật bộ cân bằng hoặc EQ micro trước khi nghe thử.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Loại</translation>
     </message>
@@ -2810,8 +2889,8 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
-      <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation>Không hỗ trợ phiên bản cấu trúc cấu hình thiết bị (yêu cầu 2).</translation>
+      <source>Unsupported equipment profile schema (expected 2/3).</source>
+      <translation>Không hỗ trợ phiên bản cấu trúc cấu hình thiết bị (yêu cầu 2/3).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
@@ -2859,13 +2938,12 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Dùng thiết lập vùng của hệ thống</translation>
     </message>
     <message>
-      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
-      <translation>Đáp ứng tần số tương đối do người dùng nhập; hãy ghi hướng / số sê-ri của micrô hoặc điều kiện đo loa trước khi sử dụng.</translation>
-      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Dùng hồ sơ đã chọn cho thiết bị này.</translation>
     </message>
     <message>
-      <source>User-created correction; enter equipment and measurement conditions.</source>
-      <translation>Hiệu chỉnh do người dùng tạo; hãy nhập thiết bị và điều kiện đo.</translation>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Đáp ứng tần số tương đối do người dùng nhập; hãy ghi hướng / số sê-ri của micrô hoặc điều kiện đo loa trước khi sử dụng.</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
@@ -2961,6 +3039,10 @@ Bạn vẫn muốn xóa không?</translation>
       <source>Whole listening system</source>
       <translation>Toàn bộ hệ thống nghe</translation>
       <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>Độ rộng</translation>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

@@ -158,8 +158,12 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Aktif / pasif / tidak diketahui</translation>
     </message>
     <message>
-      <source>Add filter</source>
-      <translation>Tambah filter</translation>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Tambahkan profil JSON ke pustaka tersimpan.</translation>
+    </message>
+    <message>
+      <source>Add point</source>
+      <translation>Tambah titik</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
@@ -173,6 +177,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <source>Adjustable system-wide equalizer for PipeWire</source>
       <translation>Equalizer yang dapat disesuaikan untuk seluruh sistem dengan PipeWire</translation>
       <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>Lanjutan</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
@@ -280,6 +288,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Pembaruan aplikasi</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Diterapkan</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Terapkan</translation>
     </message>
@@ -307,8 +319,16 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Arrow keys adjust the selected point; Delete removes it.</source>
+      <translation>Tombol panah mengatur titik yang dipilih; Delete menghapusnya.</translation>
+    </message>
+    <message>
       <source>Audio bridge did not start</source>
       <translation>Jembatan audio tidak berhasil dimulai</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Penyanggaan audio</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -357,6 +377,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Headroom otomatis %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Otomatis</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -636,6 +660,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Tutup</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Tutup dialog; pertahankan koreksi yang diterapkan.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Speaker kolom</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +824,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Buat profil koreksi baru.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Buat folder baru</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -841,6 +873,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Hapus profil kustom tersimpan ini.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>Tampilan detail</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -864,8 +900,16 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Seret titik kurva atau sesuaikan pita yang dipilih di bawah.</translation>
     </message>
     <message>
+      <source>Drag points to shape the correction. Double-click to add a point.</source>
+      <translation>Seret titik untuk membentuk koreksi. Klik dua kali untuk menambahkan titik.</translation>
+    </message>
+    <message>
       <source>Drain test playback</source>
       <translation>Menyelesaikan pemutaran uji</translation>
+    </message>
+    <message>
+      <source>Drawn corrections are listening adjustments, not equipment measurements.</source>
+      <translation>Koreksi yang digambar adalah penyesuaian pendengaran, bukan pengukuran perangkat.</translation>
     </message>
     <message>
       <source>Drive</source>
@@ -912,6 +956,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Edit / simpan salinan</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Edit salinan; biarkan aslinya tetap utuh.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1139,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
     <message>
       <source>Export profile</source>
       <translation>Ekspor profil</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Ekspor profil yang dipilih ke berkas JSON.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1660,6 +1712,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Model</translation>
     </message>
     <message>
+      <source>Move right for a broader adjustment.</source>
+      <translation>Geser ke kanan untuk penyesuaian yang lebih lebar.</translation>
+    </message>
+    <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
       <translation>Geser ke L atau R untuk mengurangi level kanal sebaliknya; posisi tengah mempertahankan keduanya pada level penuh</translation>
     </message>
@@ -1831,10 +1887,6 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
-      <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation>Oranye: respons hasil pengukuran jika tersedia. Hijau kebiruan: koreksi pada 48 kHz. Seret titik kontrol hijau kebiruan atau edit tabel. Penyimpanan mempertahankan referensi dan membuat salinan kustom.</translation>
-    </message>
-    <message>
       <source>Outdoor speaker</source>
       <translation>Speaker luar ruangan</translation>
       <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
@@ -1943,6 +1995,14 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Cegah perubahan pada preset, pita EQ, gain pasca-EQ, dan keseimbangan</translation>
     </message>
     <message>
+      <source>Preview</source>
+      <translation>Pratinjau</translation>
+    </message>
+    <message>
+      <source>Preview is temporary. Closing the editor restores the previous correction.</source>
+      <translation>Pratinjau bersifat sementara. Menutup editor mengembalikan koreksi sebelumnya.</translation>
+    </message>
+    <message>
       <source>Profile</source>
       <translation>Profil</translation>
     </message>
@@ -1971,8 +2031,8 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Profil langsung diterapkan saat dipilih.</translation>
     </message>
     <message>
-      <source>Profiles need 1–16 correction filters.</source>
-      <translation>Profil memerlukan 1–16 filter koreksi.</translation>
+      <source>Profiles need 1–32 correction filters.</source>
+      <translation>Profil memerlukan 1–32 filter koreksi.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
@@ -2190,8 +2250,8 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Hapus VB-CABLE?</translation>
     </message>
     <message>
-      <source>Remove selected filter</source>
-      <translation>Hapus filter yang dipilih</translation>
+      <source>Remove point</source>
+      <translation>Hapus titik</translation>
     </message>
     <message>
       <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
@@ -2291,6 +2351,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <source>Save as</source>
       <translation>Simpan sebagai</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Save copy</source>
+      <translation>Simpan salinan</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
@@ -2410,9 +2474,8 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
-      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
-      <translation>EQ bersama dan EQ kanal melebihi 64 filter; hapus beberapa filter kanal</translation>
-      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+      <source>Shared and channel EQ exceed 96 filters; remove some channel filters</source>
+      <translation>EQ bersama dan EQ kanal melebihi 96 filter; hapus beberapa filter kanal</translation>
     </message>
     <message>
       <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
@@ -2451,6 +2514,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Tampilkan penanda puncak pada level frekuensi</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Tampilkan hanya profil kustom tersimpan.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Tampilkan ukuran</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2485,6 +2552,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Speaker kecil</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Penyangga yang lebih kecil mengurangi jeda tetapi dapat menimbulkan bunyi berderak. Otomatis mempertahankan bawaan Linux dan meminta 40 ms di Windows. Perangkat dapat menyesuaikan permintaan. Terapkan memulai ulang audio aktif sebentar.</translation>
     </message>
     <message>
       <source>Soft Treble</source>
@@ -2765,6 +2836,14 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Aktifkan equalizer</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Ubah data respons terukur menjadi kurva koreksi.</translation>
+    </message>
+    <message>
+      <source>Turn on the equalizer or microphone EQ before previewing.</source>
+      <translation>Aktifkan equalizer atau EQ mikrofon sebelum pratinjau.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Jenis</translation>
     </message>
@@ -2810,8 +2889,8 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
-      <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation>Skema profil peralatan tidak didukung (diperlukan 2).</translation>
+      <source>Unsupported equipment profile schema (expected 2/3).</source>
+      <translation>Skema profil peralatan tidak didukung (diperlukan 2/3).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
@@ -2859,13 +2938,12 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Gunakan pengaturan wilayah sistem</translation>
     </message>
     <message>
-      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
-      <translation>Respons frekuensi relatif yang diimpor pengguna; tentukan arah / nomor seri mikrofon atau kondisi pengukuran speaker sebelum digunakan.</translation>
-      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Gunakan profil yang dipilih untuk perangkat ini.</translation>
     </message>
     <message>
-      <source>User-created correction; enter equipment and measurement conditions.</source>
-      <translation>Koreksi buatan pengguna; masukkan peralatan dan kondisi pengukuran.</translation>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Respons frekuensi relatif yang diimpor pengguna; tentukan arah / nomor seri mikrofon atau kondisi pengukuran speaker sebelum digunakan.</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
@@ -2961,6 +3039,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <source>Whole listening system</source>
       <translation>Seluruh sistem dengar</translation>
       <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>Lebar</translation>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

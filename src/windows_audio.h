@@ -2,6 +2,7 @@
 #pragma once
 
 #include "dsp.h"
+#include "audio_buffering.h"
 
 #include <array>
 #include <cstdint>
@@ -80,7 +81,7 @@ public:
     WindowsBridge(const WindowsBridge &) = delete;
     WindowsBridge &operator=(const WindowsBridge &) = delete;
 
-    bool start(std::wstring captureId, std::wstring outputId, bool microphone = false, bool renderLoopback = false);
+    bool start(std::wstring captureId, std::wstring outputId, bool microphone = false, bool renderLoopback = false, int bufferMs = 0);
     std::vector<std::int16_t> takeMeterPcm();
     std::string error() const;
     void stop();
@@ -101,7 +102,7 @@ private:
         EnhancementSettings effects;
     };
 
-    void run(std::wstring captureId, std::wstring outputId, bool microphone, bool renderLoopback);
+    void run(std::wstring captureId, std::wstring outputId, bool microphone, bool renderLoopback, int bufferMs);
     std::atomic<bool> stopRequested_{false};
     std::atomic<bool> running_{false};
     std::atomic<float> peak_{0.0f};

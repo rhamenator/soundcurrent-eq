@@ -241,7 +241,7 @@ std::vector<std::int16_t> WindowsBridge::takeMeterPcm() {
 
 WindowsBridge::~WindowsBridge() { stop(); }
 
-bool WindowsBridge::start(std::wstring captureId, std::wstring outputId, bool microphone, bool renderLoopback) {
+bool WindowsBridge::start(std::wstring captureId, std::wstring outputId, bool microphone, bool renderLoopback, int bufferMs) {
     if (captureId.empty() || outputId.empty() || worker_.joinable()) return false;
     // Capturing the destination's mix would feed processed audio back into itself.
     if ((renderLoopback && microphone) || captureId == outputId) {
@@ -253,8 +253,8 @@ bool WindowsBridge::start(std::wstring captureId, std::wstring outputId, bool mi
     stopRequested_ = false;
     running_ = false;
     worker_ = std::thread([this, captureId = std::move(captureId),
-                           outputId = std::move(outputId), microphone, renderLoopback]() mutable {
-        run(std::move(captureId), std::move(outputId), microphone, renderLoopback);
+                           outputId = std::move(outputId), microphone, renderLoopback, bufferMs]() mutable {
+        run(std::move(captureId), std::move(outputId), microphone, renderLoopback, bufferMs);
     });
     std::unique_lock lock(stateMutex_);
     const bool ready = initialized_.wait_for(lock, std::chrono::seconds(5), [this] {
@@ -292,7 +292,7 @@ bool WindowsBridge::setProfile(std::span<const EqBand> bands, double postGainDb,
     return true;
 }
 
-void WindowsBridge::run(std::wstring captureId, std::wstring outputId, bool microphone, bool renderLoopback) {
+void WindowsBridge::run(std::wstring captureId, std::wstring outputId, bool microphone, bool renderLoopback, int bufferMs) {
     try {
         Apartment apartment;
         const auto devices = enumerator();
@@ -339,7 +339,7 @@ void WindowsBridge::run(std::wstring captureId, std::wstring outputId, bool micr
             throw std::runtime_error("Unsupported speaker channel layout or sample rate");
         const auto sampleType = outputSampleType(outputFormat.get());
         OutputVolumeLease volume(outputDevice.Get());
-        constexpr REFERENCE_TIME bufferTime = 2000000; // 200 ms, in 100 ns units
+        const REFERENCE_TIME bufferTime = buffering::windowsDuration(bufferMs);
         check(captureAudio->Initialize(AUDCLNT_SHAREMODE_SHARED,
                                         renderLoopback ? AUDCLNT_STREAMFLAGS_LOOPBACK :
                                         (microphone ? AUDCLNT_STREAMFLAGS_AUTOCONVERTPCM | AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY : 0),
@@ -457,7 +457,7 @@ void WindowsBridge::run(std::wstring captureId, std::wstring outputId, bool micr
                 }
                 check(writer->ReleaseBuffer(writable, 0), "Release speaker buffer");
             }
-            Sleep(5);
+            Sleep(buffering::pollMs(bufferMs));
         }
         captureAudio->Stop();
         outputAudio->Stop();

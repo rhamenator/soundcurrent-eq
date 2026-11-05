@@ -158,8 +158,12 @@ Přesto chcete soubor smazat?</translation>
       <translation>Aktivní / pasivní / neznámý</translation>
     </message>
     <message>
-      <source>Add filter</source>
-      <translation>Přidat filtr</translation>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Přidat profil JSON do uložené knihovny.</translation>
+    </message>
+    <message>
+      <source>Add point</source>
+      <translation>Přidat bod</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
@@ -173,6 +177,10 @@ Přesto chcete soubor smazat?</translation>
       <source>Adjustable system-wide equalizer for PipeWire</source>
       <translation>Nastavitelný ekvalizér pro celý systém s PipeWire</translation>
       <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>Pokročilé</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
@@ -280,6 +288,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Aktualizace aplikace</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Použito</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Použít</translation>
     </message>
@@ -307,8 +319,16 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Arrow keys adjust the selected point; Delete removes it.</source>
+      <translation>Šipky upravují vybraný bod; Delete jej odstraní.</translation>
+    </message>
+    <message>
       <source>Audio bridge did not start</source>
       <translation>Zvukový most se nespustil</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Vyrovnávací paměť zvuku</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -357,6 +377,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Automatická rezerva %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Automaticky</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -636,6 +660,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Zavřít</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Zavřít dialog a zachovat použitou korekci.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Sloupový reproduktor pro ozvučení</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +824,10 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Vytvořit nový korekční profil.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Vytvořit novou složku</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -841,6 +873,10 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
     </message>
     <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Smazat tento uložený vlastní profil.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>Podrobný pohled</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -864,8 +900,16 @@ Přesto chcete soubor smazat?</translation>
       <translation>Přetahujte body křivky nebo dolaďte vybrané pásmo níže.</translation>
     </message>
     <message>
+      <source>Drag points to shape the correction. Double-click to add a point.</source>
+      <translation>Tažením bodů tvarujte korekci. Dvojklikem přidáte bod.</translation>
+    </message>
+    <message>
       <source>Drain test playback</source>
       <translation>Vyprázdnit buffer testovacího přehrávání</translation>
+    </message>
+    <message>
+      <source>Drawn corrections are listening adjustments, not equipment measurements.</source>
+      <translation>Nakreslené korekce jsou poslechové úpravy, nikoli měření zařízení.</translation>
     </message>
     <message>
       <source>Drive</source>
@@ -912,6 +956,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Upravit / uložit kopii</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Upravit kopii a ponechat originál beze změny.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1139,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Export profile</source>
       <translation>Exportovat profil</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Exportovat vybraný profil do souboru JSON.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1660,6 +1712,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Model</translation>
     </message>
     <message>
+      <source>Move right for a broader adjustment.</source>
+      <translation>Posunutím doprava rozšíříte úpravu.</translation>
+    </message>
+    <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
       <translation>Posunem k L nebo R snížíte protější kanál; ve středu zůstávají oba na plné úrovni</translation>
     </message>
@@ -1831,10 +1887,6 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
-      <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation>Oranžová: naměřená odezva, pokud je dodána. Tyrkysová: korekce při 48 kHz. Přetahujte tyrkysové body nebo upravujte tabulku. Uložením zachováte referenční profil a vytvoříte vlastní kopii.</translation>
-    </message>
-    <message>
       <source>Outdoor speaker</source>
       <translation>Venkovní reproduktor</translation>
       <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
@@ -1943,6 +1995,14 @@ Přesto chcete soubor smazat?</translation>
       <translation>Zabránit změnám předvoleb, pásem EQ, výstupního zesílení a vyvážení</translation>
     </message>
     <message>
+      <source>Preview</source>
+      <translation>Náhled</translation>
+    </message>
+    <message>
+      <source>Preview is temporary. Closing the editor restores the previous correction.</source>
+      <translation>Náhled je dočasný. Zavřením editoru se obnoví předchozí korekce.</translation>
+    </message>
+    <message>
       <source>Profile</source>
       <translation>Profil</translation>
     </message>
@@ -1971,8 +2031,8 @@ Přesto chcete soubor smazat?</translation>
       <translation>Profily se použijí ihned po výběru.</translation>
     </message>
     <message>
-      <source>Profiles need 1–16 correction filters.</source>
-      <translation>Profily potřebují 1–16 korekčních filtrů.</translation>
+      <source>Profiles need 1–32 correction filters.</source>
+      <translation>Profily potřebují 1–32 korekčních filtrů.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
@@ -2190,8 +2250,8 @@ Přesto chcete soubor smazat?</translation>
       <translation>Odstranit VB-CABLE?</translation>
     </message>
     <message>
-      <source>Remove selected filter</source>
-      <translation>Odstranit vybraný filtr</translation>
+      <source>Remove point</source>
+      <translation>Odebrat bod</translation>
     </message>
     <message>
       <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
@@ -2291,6 +2351,10 @@ Přesto chcete soubor smazat?</translation>
       <source>Save as</source>
       <translation>Uložit jako</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Save copy</source>
+      <translation>Uložit kopii</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
@@ -2410,9 +2474,8 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
-      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
-      <translation>Společný EQ a EQ kanálu překračují 64 filtrů; odeberte některé filtry kanálu</translation>
-      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+      <source>Shared and channel EQ exceed 96 filters; remove some channel filters</source>
+      <translation>Společný EQ a EQ kanálu překračují 96 filtrů; odeberte některé filtry kanálu</translation>
     </message>
     <message>
       <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
@@ -2451,6 +2514,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Zobrazit značky špiček frekvenčních úrovní</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Zobrazit pouze uložené vlastní profily.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Zobrazit velikost</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2485,6 +2552,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Malé reproduktory</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Menší paměti snižují zpoždění, ale mohou způsobit praskání. Automaticky zachová výchozí nastavení Linuxu a požádá o 40 ms ve Windows. Zařízení mohou požadavek upravit. Použít krátce restartuje aktivní zvuk.</translation>
     </message>
     <message>
       <source>Soft Treble</source>
@@ -2765,6 +2836,14 @@ Přesto chcete soubor smazat?</translation>
       <translation>Zapnout ekvalizér</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Převést naměřenou odezvu na korekční křivku.</translation>
+    </message>
+    <message>
+      <source>Turn on the equalizer or microphone EQ before previewing.</source>
+      <translation>Před náhledem zapněte ekvalizér nebo mikrofonní EQ.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Typ</translation>
     </message>
@@ -2810,8 +2889,8 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
-      <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation>Nepodporované schéma profilu zařízení (očekáváno 2).</translation>
+      <source>Unsupported equipment profile schema (expected 2/3).</source>
+      <translation>Nepodporované schéma profilu zařízení (očekáváno 2/3).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
@@ -2859,13 +2938,12 @@ Přesto chcete soubor smazat?</translation>
       <translation>Použít místní nastavení systému</translation>
     </message>
     <message>
-      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
-      <translation>Relativní frekvenční odezva importovaná uživatelem; před použitím uveďte orientaci / sériové číslo mikrofonu nebo podmínky měření reproduktoru.</translation>
-      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Použít vybraný profil pro toto zařízení.</translation>
     </message>
     <message>
-      <source>User-created correction; enter equipment and measurement conditions.</source>
-      <translation>Korekce vytvořená uživatelem; zadejte vybavení a podmínky měření.</translation>
+      <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
+      <translation>Relativní frekvenční odezva importovaná uživatelem; před použitím uveďte orientaci / sériové číslo mikrofonu nebo podmínky měření reproduktoru.</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
@@ -2961,6 +3039,10 @@ Přesto chcete soubor smazat?</translation>
       <source>Whole listening system</source>
       <translation>Celá poslechová soustava</translation>
       <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>Šířka</translation>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>
