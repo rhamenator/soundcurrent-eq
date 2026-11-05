@@ -138,6 +138,9 @@ int main(int argc, char **argv) {
         check(different.id != original.id && loadLibrary().size() == 2, "Changed correction overwrote an existing identity");
         auto otherModel = original; otherModel.model += " other";
         check(importProfile(otherModel).model == otherModel.model && loadLibrary().size() == 3, "Distinct equipment collapsed just because its curve matched");
+        auto namedCopy = original; namedCopy.id = "manual-copy"; namedCopy.custom = true;
+        saveLibrary({original,namedCopy});
+        check(importProfile(namedCopy).id == namedCopy.id && loadLibrary().size() == 2, "Reimport selected another identical saved copy");
         saveLibrary({original});
 
         // Exercise real modal editor: change gain, close, choose Save in dirty prompt.

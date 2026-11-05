@@ -895,6 +895,8 @@ Profile importProfile(Profile p) {
     };
     const auto importedContent = content(p);
     for (const auto &existing : known)
+        if (existing.id == p.id && content(existing) == importedContent) return existing;
+    for (const auto &existing : known)
         if (existing.kind == p.kind && existing.brand == p.brand && existing.model == p.model && content(existing) == importedContent) return existing;
     if (p.id.isEmpty() || std::any_of(known.begin(), known.end(), [&](const Profile &existing) { return existing.id == p.id; }))
         p.id = QUuid::createUuid().toString(QUuid::WithoutBraces);
@@ -925,7 +927,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
                   std::max(1,std::min(650,available.height()-40)));
     dialog.setObjectName("equipmentProfileManager");
     auto *outer = new QVBoxLayout(&dialog);
-    auto *appliedProfile = new QLabel;
+    auto *appliedProfile = new QLabel(&dialog);
     auto activeSelection = initialProfile;
     auto *scroll = new QScrollArea;
     scroll->setWidgetResizable(true);
@@ -1079,7 +1081,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         if (!remove) return;
         const int i = list->currentData().toInt();
         const bool selected = list->currentIndex() >= 0 && i >= 0 && i < profiles.size();
-        remove->setEnabled(selected && i >= bundledCount && i < bundledCount + custom.size());
+        remove->setEnabled(selected && i >= bundledCount);
     };
     QObject::connect(list, &QComboBox::currentIndexChanged, &dialog, updateRemove);
     QObject::connect(customOnly, &QCheckBox::toggled, &dialog, [&](bool on) {
@@ -1161,12 +1163,12 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     QObject::connect(remove, &QPushButton::clicked, &dialog, [&] {
         if (list->currentIndex() < 0 || list->currentData().toInt() < 0) return;
         const int userIndex = list->currentData().toInt() - bundledCount;
-        if (userIndex < 0 || userIndex >= custom.size()) return;
-        const auto selected = custom[userIndex];
+        if (userIndex < 0 || list->currentData().toInt() >= profiles.size()) return;
+        const auto selected = profiles[list->currentData().toInt()];
         auto proposed = custom;
         if (ask(&dialog, SC_TR("Delete"), selected.brand + " / " + selected.family + " / " + selected.model,
                 QMessageBox::Yes | QMessageBox::No, QMessageBox::No) != QMessageBox::Yes) return;
-        proposed.removeAt(userIndex);
+        if (userIndex < proposed.size()) proposed.removeAt(userIndex);
         try {
             saveLibrary(proposed);
             custom = proposed; profiles = bundledProfiles(); profiles += custom;

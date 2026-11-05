@@ -403,14 +403,18 @@ int main(int argc,char **argv) {
     drive.start();openLibrary(nullptr,[](const Profile &){qFatal("Reopening edited profile changed audio");},edited.kind,{},edited);drive.stop();require(editedReopened,"Edited import reopening not exercised");
     // Older active imports without a library entry remain editable, without
     // writing a new entry merely because the manager was opened.
-    saveLibrary({});QObject::disconnect(&drive,nullptr,&app,nullptr);bool orphanChecked=false;
+    saveLibrary({});QObject::disconnect(&drive,nullptr,&app,nullptr);bool orphanChecked=false,orphanCleared=false;phase=0;
     QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        if(auto *box=qobject_cast<QMessageBox *>(dialog("Delete"))){if(phase==1){phase=2;clickLater(box->button(QMessageBox::Yes));}return;}
         auto *library=dialog("Equipment profiles — brand / family / model");if(!library)return;
-        require(loadLibrary().isEmpty() && library->findChild<QComboBox *>("equipmentProfileList")->currentText().contains(imported.model),"Legacy active import was lost or persisted implicitly");
-        require(button(library,"Edit / save copy")->isEnabled() && !library->findChild<QPushButton *>("deleteEquipmentProfile")->isEnabled(),"Unsaved active import actions invalid");
-        orphanChecked=true;closeLater(library);
+        if(phase==0){
+            require(loadLibrary().isEmpty() && library->findChild<QComboBox *>("equipmentProfileList")->currentText().contains(imported.model),"Legacy active import was lost or persisted implicitly");
+            require(button(library,"Edit / save copy")->isEnabled() && library->findChild<QPushButton *>("deleteEquipmentProfile")->isEnabled(),"Unsaved active import actions invalid");
+            require(!orphanCleared,"Opening legacy import changed audio");
+            orphanChecked=true;phase=1;clickLater(button(library,"Delete"));
+        }else if(phase==2){require(orphanCleared && loadLibrary().isEmpty(),"Deleting legacy import left its correction active");phase=3;closeLater(library);}
     });
-    drive.start();openLibrary(nullptr,[](const Profile &){qFatal("Opening legacy import changed audio");},imported.kind,{},imported);drive.stop();require(orphanChecked,"Legacy import editing entry point not tested");
+    drive.start();openLibrary(nullptr,[&](const Profile &p){require(p.id.isEmpty() && p.kind==imported.kind,"Legacy deletion cleared wrong route");orphanCleared=true;},imported.kind,{},imported);drive.stop();require(orphanChecked && phase==3,"Legacy import editing/deletion entry point not tested");
 
     // Reimport selects the existing original without applying it; inactive
     // deletion preserves audio, and active deletion clears only that route.
