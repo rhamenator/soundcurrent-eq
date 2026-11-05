@@ -288,6 +288,10 @@ Do you want to delete it anyway?</source>
       <translation>應用程式更新</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>已套用</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>套用</translation>
     </message>
@@ -321,6 +325,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Audio bridge did not start</source>
       <translation>音訊橋接未能啟動</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>音訊緩衝</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>自動餘裕 %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>自動</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Small Speakers</source>
       <translation>小型喇叭</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>較小的緩衝可減少延遲，但可能產生爆音。自動模式保留 Linux 預設設定，並在 Windows 上要求 40 毫秒。裝置可能調整要求。套用設定會短暫重新啟動使用中的音訊。</translation>
     </message>
     <message>
       <source>Soft Treble</source>

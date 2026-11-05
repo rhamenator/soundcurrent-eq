@@ -288,6 +288,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Aktualizacje aplikacji</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Zastosowano</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Zastosuj</translation>
     </message>
@@ -321,6 +325,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Audio bridge did not start</source>
       <translation>Most audio nie został uruchomiony</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Buforowanie dźwięku</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Automatyczny zapas %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Automatycznie</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Małe głośniki</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Mniejsze bufory zmniejszają opóźnienie, ale mogą powodować trzaski. Automatycznie zachowuje ustawienia Linuksa i żąda 40 ms w Windows. Urządzenia mogą dostosować żądanie. Zastosuj na krótko uruchamia ponownie aktywny dźwięk.</translation>
     </message>
     <message>
       <source>Soft Treble</source>

@@ -68,6 +68,11 @@ try {
     & "$stage\soundcurrent-backend-error-text-test.exe" --powershell-output-fixture powershell.exe "$root\tests\windows_setup_output_fixture.ps1"
     if ($LASTEXITCODE -ne 0) { throw "Audio helper UTF-8 process output regression failed (exit $LASTEXITCODE)" }
     Remove-Item "$stage\soundcurrent-backend-error-text-test.exe"
+    Copy-Item build-windows-native\Release\soundcurrent-buffering-test.exe $stage
+    & "$stage\soundcurrent-buffering-test.exe"
+    if ($LASTEXITCODE -ne 0) { throw "Audio buffering settings regression failed (exit $LASTEXITCODE)" }
+    Remove-Item "$stage\soundcurrent-buffering-test.exe"
+
     @('[Paths]', 'Prefix=.', 'Plugins=.') | Set-Content -Encoding ascii "$stage\qt.conf"
     New-Item -ItemType Directory -Force "$stage\licenses" | Out-Null
     $sourceArchive = Join-Path $root '.cache\qtbase-everywhere-src-6.12.0.tar.xz'

@@ -288,6 +288,10 @@ Do you want to delete it anyway?</source>
       <translation>تحديثات التطبيق</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>تم التطبيق</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>تطبيق</translation>
     </message>
@@ -321,6 +325,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Audio bridge did not start</source>
       <translation>لم يبدأ جسر الصوت</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>التخزين المؤقت للصوت</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>هامش مستوى تلقائي %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>تلقائي</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Small Speakers</source>
       <translation>مكبرات صوت صغيرة</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>تقلل المخازن الأصغر التأخير ولكن قد تسبب طقطقة. يحافظ الوضع التلقائي على إعدادات Linux الافتراضية ويطلب 40 مللي ثانية في Windows. قد تعدّل الأجهزة الطلب. يعيد زر تطبيق تشغيل الصوت النشط لفترة وجيزة.</translation>
     </message>
     <message>
       <source>Soft Treble</source>

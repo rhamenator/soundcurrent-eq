@@ -288,6 +288,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Sovelluspäivitykset</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Otettu käyttöön</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Käytä</translation>
     </message>
@@ -321,6 +325,10 @@ Haluatko silti poistaa sen?</translation>
     <message>
       <source>Audio bridge did not start</source>
       <translation>Äänisilta ei käynnistynyt</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Äänen puskurointi</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Haluatko silti poistaa sen?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Automaattinen tasovara %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Automaattinen</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Haluatko silti poistaa sen?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Pienet kaiuttimet</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Pienemmät puskurit vähentävät viivettä mutta voivat aiheuttaa rätinää. Automaattinen säilyttää Linuxin oletukset ja pyytää Windowsissa 40 ms. Laitteet voivat muuttaa pyyntöä. Käytä käynnistää aktiivisen äänen hetkeksi uudelleen.</translation>
     </message>
     <message>
       <source>Soft Treble</source>

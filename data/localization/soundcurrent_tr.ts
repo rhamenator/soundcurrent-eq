@@ -288,6 +288,10 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Uygulama güncellemeleri</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Uygulandı</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Uygula</translation>
     </message>
@@ -321,6 +325,10 @@ Yine de silmek istiyor musunuz?</translation>
     <message>
       <source>Audio bridge did not start</source>
       <translation>Ses köprüsü başlatılamadı</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Ses arabelleği</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Yine de silmek istiyor musunuz?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Otomatik seviye payı %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Otomatik</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Yine de silmek istiyor musunuz?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Küçük hoparlörler</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Küçük arabellekler gecikmeyi azaltır ancak çıtırtıya neden olabilir. Otomatik, Linux varsayılanlarını korur ve Windows’ta 40 ms ister. Aygıtlar isteği uyarlayabilir. Uygula, etkin sesi kısa süreliğine yeniden başlatır.</translation>
     </message>
     <message>
       <source>Soft Treble</source>

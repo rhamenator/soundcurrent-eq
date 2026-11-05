@@ -288,6 +288,10 @@ Do you want to delete it anyway?</source>
       <translation>ऐप अपडेट</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>लागू किया गया</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>लागू करें</translation>
     </message>
@@ -321,6 +325,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Audio bridge did not start</source>
       <translation>ऑडियो ब्रिज शुरू नहीं हुआ</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>ऑडियो बफ़रिंग</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>स्वचालित हेडरूम %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>स्वचालित</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Small Speakers</source>
       <translation>छोटे स्पीकर</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>छोटे बफ़र देरी घटाते हैं, लेकिन चटखने की आवाज़ आ सकती है। स्वचालित विकल्प Linux के डिफ़ॉल्ट रखता है और Windows पर 40 मिलीसेकंड का अनुरोध करता है। उपकरण अनुरोध बदल सकते हैं। लागू करें से चालू ऑडियो थोड़ी देर के लिए फिर शुरू होता है।</translation>
     </message>
     <message>
       <source>Soft Treble</source>

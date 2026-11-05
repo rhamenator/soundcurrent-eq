@@ -288,6 +288,10 @@ Vuoi eliminarlo comunque?</translation>
       <translation>Aggiornamenti dell’app</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Applicato</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Applica</translation>
     </message>
@@ -321,6 +325,10 @@ Vuoi eliminarlo comunque?</translation>
     <message>
       <source>Audio bridge did not start</source>
       <translation>Il ponte audio non si è avviato</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Buffer audio</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Vuoi eliminarlo comunque?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Margine automatico %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Automatico</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Vuoi eliminarlo comunque?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Diffusori piccoli</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Buffer più piccoli riducono il ritardo ma possono causare crepitii. Automatico mantiene i valori Linux e richiede 40 ms su Windows. I dispositivi possono adattare la richiesta. Applica riavvia brevemente l’audio attivo.</translation>
     </message>
     <message>
       <source>Soft Treble</source>

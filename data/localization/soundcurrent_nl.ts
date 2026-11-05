@@ -288,6 +288,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>App-updates</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Toegepast</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Toepassen</translation>
     </message>
@@ -321,6 +325,10 @@ Wilt u het toch verwijderen?</translation>
     <message>
       <source>Audio bridge did not start</source>
       <translation>De audiobrug is niet gestart</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Audiobuffering</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Wilt u het toch verwijderen?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Automatische headroom %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Automatisch</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Wilt u het toch verwijderen?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Kleine luidsprekers</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Kleinere buffers verminderen vertraging maar kunnen gekraak veroorzaken. Automatisch behoudt de Linux-standaarden en vraagt 40 ms op Windows. Apparaten kunnen dit verzoek aanpassen. Toepassen herstart actieve audio kort.</translation>
     </message>
     <message>
       <source>Soft Treble</source>

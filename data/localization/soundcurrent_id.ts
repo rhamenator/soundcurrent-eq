@@ -288,6 +288,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Pembaruan aplikasi</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Diterapkan</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Terapkan</translation>
     </message>
@@ -321,6 +325,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
     <message>
       <source>Audio bridge did not start</source>
       <translation>Jembatan audio tidak berhasil dimulai</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Penyanggaan audio</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Headroom otomatis %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Otomatis</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Speaker kecil</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Penyangga yang lebih kecil mengurangi jeda tetapi dapat menimbulkan bunyi berderak. Otomatis mempertahankan bawaan Linux dan meminta 40 ms di Windows. Perangkat dapat menyesuaikan permintaan. Terapkan memulai ulang audio aktif sebentar.</translation>
     </message>
     <message>
       <source>Soft Treble</source>

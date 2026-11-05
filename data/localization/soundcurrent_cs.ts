@@ -288,6 +288,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Aktualizace aplikace</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Použito</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Použít</translation>
     </message>
@@ -321,6 +325,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Audio bridge did not start</source>
       <translation>Zvukový most se nespustil</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Vyrovnávací paměť zvuku</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Automatická rezerva %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Automaticky</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Malé reproduktory</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Menší paměti snižují zpoždění, ale mohou způsobit praskání. Automaticky zachová výchozí nastavení Linuxu a požádá o 40 ms ve Windows. Zařízení mohou požadavek upravit. Použít krátce restartuje aktivní zvuk.</translation>
     </message>
     <message>
       <source>Soft Treble</source>

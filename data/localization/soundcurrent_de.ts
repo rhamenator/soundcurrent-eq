@@ -288,6 +288,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Anwendungsupdates</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Angewendet</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Anwenden</translation>
     </message>
@@ -321,6 +325,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
     <message>
       <source>Audio bridge did not start</source>
       <translation>Die Audiobrücke wurde nicht gestartet</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Audiopufferung</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Automatische Pegelreserve: %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Automatisch</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Kleine Lautsprecher</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Kleinere Puffer reduzieren die Verzögerung, können aber Knistern verursachen. Automatisch behält die Linux-Vorgaben bei und fordert unter Windows 40 ms an. Geräte können die Anforderung anpassen. Anwenden startet die aktive Audiowiedergabe kurz neu.</translation>
     </message>
     <message>
       <source>Soft Treble</source>

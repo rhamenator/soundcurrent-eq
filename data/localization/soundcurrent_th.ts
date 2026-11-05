@@ -288,6 +288,10 @@ Do you want to delete it anyway?</source>
       <translation>การอัปเดตแอป</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>นำไปใช้แล้ว</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>นำไปใช้</translation>
     </message>
@@ -321,6 +325,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Audio bridge did not start</source>
       <translation>ไม่สามารถเริ่มสะพานเสียงได้</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>การบัฟเฟอร์เสียง</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>เฮดรูมอัตโนมัติ %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>อัตโนมัติ</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Small Speakers</source>
       <translation>ลำโพงขนาดเล็ก</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>บัฟเฟอร์ที่เล็กลงช่วยลดความหน่วง แต่อาจมีเสียงแตก โหมดอัตโนมัติคงค่าเริ่มต้นของ Linux และร้องขอ 40 มิลลิวินาทีบน Windows อุปกรณ์อาจปรับค่าที่ร้องขอ การนำไปใช้จะเริ่มเสียงที่ทำงานอยู่ใหม่ชั่วครู่</translation>
     </message>
     <message>
       <source>Soft Treble</source>

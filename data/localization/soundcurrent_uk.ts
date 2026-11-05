@@ -288,6 +288,10 @@ Do you want to delete it anyway?</source>
       <translation>Оновлення програми</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Застосовано</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Застосувати</translation>
     </message>
@@ -321,6 +325,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Audio bridge did not start</source>
       <translation>Аудіоміст не запустився</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Буферизація звуку</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Автоматичний запас %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Автоматично</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Small Speakers</source>
       <translation>Малі акустичні системи</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Менші буфери зменшують затримку, але можуть спричиняти потріскування. Автоматично зберігає типові налаштування Linux і запитує 40 мс у Windows. Пристрої можуть змінити запит. Застосувати ненадовго перезапускає активний звук.</translation>
     </message>
     <message>
       <source>Soft Treble</source>

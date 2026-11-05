@@ -161,7 +161,11 @@
     "Arrow keys adjust the selected point; Delete removes it.",
     "Move right for a broader adjustment.",
     "Profiles need 1–32 correction filters.",
-    "Unsupported equipment profile schema (expected 2/3)."
+    "Unsupported equipment profile schema (expected 2/3).",
+    "Audio buffering",
+    "Automatic",
+    "Applied",
+    "Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio."
   ],
   "languages": {
     "de": [
@@ -327,7 +331,11 @@
       "Pfeiltasten ändern den ausgewählten Punkt; Entf entfernt ihn.",
       "Nach rechts wird die Anpassung breiter.",
       "Profile benötigen 1–32 Korrekturfilter.",
-      "Nicht unterstützte Geräteprofilversion (Version 2/3 erwartet)."
+      "Nicht unterstützte Geräteprofilversion (Version 2/3 erwartet).",
+      "Audiopufferung",
+      "Automatisch",
+      "Angewendet",
+      "Kleinere Puffer reduzieren die Verzögerung, können aber Knistern verursachen. Automatisch behält die Linux-Vorgaben bei und fordert unter Windows 40 ms an. Geräte können die Anforderung anpassen. Anwenden startet die aktive Audiowiedergabe kurz neu."
     ],
     "fr": [
       "Français",
@@ -492,7 +500,11 @@
       "Les flèches ajustent le point sélectionné ; Suppr le retire.",
       "Déplacez vers la droite pour élargir le réglage.",
       "Les profils doivent contenir de 1 à 32 filtres de correction.",
-      "Version du format de profil d’équipement non prise en charge (version 2/3 attendue)."
+      "Version du format de profil d’équipement non prise en charge (version 2/3 attendue).",
+      "Mise en mémoire tampon audio",
+      "Automatique",
+      "Appliqué",
+      "Les petits tampons réduisent le retard mais peuvent provoquer des craquements. Automatique conserve les valeurs Linux et demande 40 ms sous Windows. Les appareils peuvent adapter la demande. Appliquer redémarre brièvement le traitement audio actif."
     ],
     "es": [
       "Español",
@@ -657,7 +669,11 @@
       "Las flechas ajustan el punto seleccionado; Supr lo elimina.",
       "Mueva a la derecha para ampliar el ajuste.",
       "Los perfiles necesitan entre 1 y 32 filtros de corrección.",
-      "Esquema de perfil de equipo no compatible (se esperaba 2/3)."
+      "Esquema de perfil de equipo no compatible (se esperaba 2/3).",
+      "Almacenamiento de audio en búfer",
+      "Automático",
+      "Aplicado",
+      "Los búferes pequeños reducen el retardo, pero pueden causar chasquidos. Automático conserva los valores de Linux y solicita 40 ms en Windows. Los dispositivos pueden ajustar la solicitud. Aplicar reinicia brevemente el audio activo."
     ],
     "it": [
       "Italiano",
@@ -822,7 +838,11 @@
       "Le frecce regolano il punto selezionato; Canc lo rimuove.",
       "Sposta a destra per ampliare la regolazione.",
       "I profili richiedono 1–32 filtri di correzione.",
-      "Schema del profilo apparecchiatura non supportato (previsto 2/3)."
+      "Schema del profilo apparecchiatura non supportato (previsto 2/3).",
+      "Buffer audio",
+      "Automatico",
+      "Applicato",
+      "Buffer più piccoli riducono il ritardo ma possono causare crepitii. Automatico mantiene i valori Linux e richiede 40 ms su Windows. I dispositivi possono adattare la richiesta. Applica riavvia brevemente l’audio attivo."
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -987,7 +1007,11 @@
       "As setas ajustam o ponto selecionado; Delete remove-o.",
       "Mova para a direita para alargar o ajuste.",
       "Os perfis precisam de 1–32 filtros de correção.",
-      "Esquema de perfil de equipamento não suportado (esperado 2/3)."
+      "Esquema de perfil de equipamento não suportado (esperado 2/3).",
+      "Armazenamento de áudio em memória intermédia",
+      "Automático",
+      "Aplicado",
+      "Memórias intermédias menores reduzem o atraso, mas podem causar estalidos. Automático mantém os valores de Linux e pede 40 ms no Windows. Os dispositivos podem ajustar o pedido. Aplicar reinicia brevemente o áudio ativo."
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -1152,7 +1176,11 @@
       "As setas ajustam o ponto selecionado; Delete o remove.",
       "Mova para a direita para ampliar o ajuste.",
       "Os perfis precisam de 1–32 filtros de correção.",
-      "Esquema de perfil de equipamento não suportado (esperado 2/3)."
+      "Esquema de perfil de equipamento não suportado (esperado 2/3).",
+      "Buffer de áudio",
+      "Automático",
+      "Aplicado",
+      "Buffers menores reduzem o atraso, mas podem causar estalos. Automático mantém os padrões do Linux e solicita 40 ms no Windows. Os dispositivos podem ajustar a solicitação. Aplicar reinicia brevemente o áudio ativo."
     ],
     "nl": [
       "Nederlands",
@@ -1317,7 +1345,11 @@
       "Pijltjestoetsen wijzigen het geselecteerde punt; Delete verwijdert het.",
       "Verplaats naar rechts voor een bredere aanpassing.",
       "Profielen vereisen 1–32 correctiefilters.",
-      "Niet-ondersteund apparatuurprofielschema (verwacht 2/3)."
+      "Niet-ondersteund apparatuurprofielschema (verwacht 2/3).",
+      "Audiobuffering",
+      "Automatisch",
+      "Toegepast",
+      "Kleinere buffers verminderen vertraging maar kunnen gekraak veroorzaken. Automatisch behoudt de Linux-standaarden en vraagt 40 ms op Windows. Apparaten kunnen dit verzoek aanpassen. Toepassen herstart actieve audio kort."
     ],
     "pl": [
       "Polski",
@@ -1482,7 +1514,11 @@
       "Strzałki zmieniają wybrany punkt; Delete go usuwa.",
       "Przesuń w prawo, aby poszerzyć regulację.",
       "Profile wymagają 1–32 filtrów korekcji.",
-      "Nieobsługiwany schemat profilu sprzętu (oczekiwano 2/3)."
+      "Nieobsługiwany schemat profilu sprzętu (oczekiwano 2/3).",
+      "Buforowanie dźwięku",
+      "Automatycznie",
+      "Zastosowano",
+      "Mniejsze bufory zmniejszają opóźnienie, ale mogą powodować trzaski. Automatycznie zachowuje ustawienia Linuksa i żąda 40 ms w Windows. Urządzenia mogą dostosować żądanie. Zastosuj na krótko uruchamia ponownie aktywny dźwięk."
     ],
     "cs": [
       "Čeština",
@@ -1647,7 +1683,11 @@
       "Šipky upravují vybraný bod; Delete jej odstraní.",
       "Posunutím doprava rozšíříte úpravu.",
       "Profily potřebují 1–32 korekčních filtrů.",
-      "Nepodporované schéma profilu zařízení (očekáváno 2/3)."
+      "Nepodporované schéma profilu zařízení (očekáváno 2/3).",
+      "Vyrovnávací paměť zvuku",
+      "Automaticky",
+      "Použito",
+      "Menší paměti snižují zpoždění, ale mohou způsobit praskání. Automaticky zachová výchozí nastavení Linuxu a požádá o 40 ms ve Windows. Zařízení mohou požadavek upravit. Použít krátce restartuje aktivní zvuk."
     ],
     "sk": [
       "Slovenčina",
@@ -1812,7 +1852,11 @@
       "Šípky upravujú vybraný bod; Delete ho odstráni.",
       "Posunutím doprava rozšírite úpravu.",
       "Profily potrebujú 1–32 korekčných filtrov.",
-      "Nepodporovaná schéma profilu zariadenia (očakávané 2/3)."
+      "Nepodporovaná schéma profilu zariadenia (očakávané 2/3).",
+      "Vyrovnávacia pamäť zvuku",
+      "Automaticky",
+      "Použité",
+      "Menšie pamäte znižujú oneskorenie, ale môžu spôsobiť praskanie. Automaticky zachová predvolené nastavenia Linuxu a požiada o 40 ms vo Windows. Zariadenia môžu požiadavku upraviť. Použiť krátko reštartuje aktívny zvuk."
     ],
     "uk": [
       "Українська",
@@ -1977,7 +2021,11 @@
       "Стрілки змінюють вибрану точку; Delete видаляє її.",
       "Перемістіть праворуч, щоб розширити регулювання.",
       "Профілі потребують 1–32 фільтрів корекції.",
-      "Непідтримувана схема профілю обладнання (очікується 2/3)."
+      "Непідтримувана схема профілю обладнання (очікується 2/3).",
+      "Буферизація звуку",
+      "Автоматично",
+      "Застосовано",
+      "Менші буфери зменшують затримку, але можуть спричиняти потріскування. Автоматично зберігає типові налаштування Linux і запитує 40 мс у Windows. Пристрої можуть змінити запит. Застосувати ненадовго перезапускає активний звук."
     ],
     "ru": [
       "Русский",
@@ -2142,7 +2190,11 @@
       "Стрелки изменяют выбранную точку; Delete удаляет её.",
       "Переместите вправо, чтобы расширить регулировку.",
       "Профили требуют 1–32 фильтров коррекции.",
-      "Неподдерживаемая схема профиля оборудования (ожидается 2/3)."
+      "Неподдерживаемая схема профиля оборудования (ожидается 2/3).",
+      "Буферизация звука",
+      "Автоматически",
+      "Применено",
+      "Меньшие буферы уменьшают задержку, но могут вызывать потрескивание. Автоматически сохраняет настройки Linux и запрашивает 40 мс в Windows. Устройства могут скорректировать запрос. Применить ненадолго перезапускает активный звук."
     ],
     "el": [
       "Ελληνικά",
@@ -2307,7 +2359,11 @@
       "Τα βέλη ρυθμίζουν το επιλεγμένο σημείο· το Delete το αφαιρεί.",
       "Μετακινήστε δεξιά για ευρύτερη ρύθμιση.",
       "Τα προφίλ χρειάζονται 1–32 φίλτρα διόρθωσης.",
-      "Μη υποστηριζόμενο σχήμα προφίλ εξοπλισμού (αναμένεται 2/3)."
+      "Μη υποστηριζόμενο σχήμα προφίλ εξοπλισμού (αναμένεται 2/3).",
+      "Προσωρινή αποθήκευση ήχου",
+      "Αυτόματα",
+      "Εφαρμόστηκε",
+      "Μικρότερα buffer μειώνουν την καθυστέρηση αλλά μπορεί να προκαλέσουν τριξίματα. Η αυτόματη ρύθμιση διατηρεί τις προεπιλογές Linux και ζητά 40 ms στα Windows. Οι συσκευές μπορεί να προσαρμόσουν το αίτημα. Η εφαρμογή επανεκκινεί για λίγο τον ενεργό ήχο."
     ],
     "tr": [
       "Türkçe",
@@ -2472,7 +2528,11 @@
       "Ok tuşları seçili noktayı ayarlar; Delete onu kaldırır.",
       "Daha geniş ayarlama için sağa kaydırın.",
       "Profiller 1–32 düzeltme filtresi gerektirir.",
-      "Desteklenmeyen ekipman profili şeması (beklenen 2/3)."
+      "Desteklenmeyen ekipman profili şeması (beklenen 2/3).",
+      "Ses arabelleği",
+      "Otomatik",
+      "Uygulandı",
+      "Küçük arabellekler gecikmeyi azaltır ancak çıtırtıya neden olabilir. Otomatik, Linux varsayılanlarını korur ve Windows’ta 40 ms ister. Aygıtlar isteği uyarlayabilir. Uygula, etkin sesi kısa süreliğine yeniden başlatır."
     ],
     "sv": [
       "Svenska",
@@ -2637,7 +2697,11 @@
       "Piltangenterna ändrar vald punkt; Delete tar bort den.",
       "Flytta åt höger för en bredare justering.",
       "Profiler behöver 1–32 korrigeringsfilter.",
-      "Utrustningsprofilens schema stöds inte (förväntat: 2/3)."
+      "Utrustningsprofilens schema stöds inte (förväntat: 2/3).",
+      "Ljudbuffring",
+      "Automatiskt",
+      "Tillämpat",
+      "Mindre buffertar minskar fördröjningen men kan orsaka knaster. Automatiskt behåller Linux standardvärden och begär 40 ms i Windows. Enheter kan justera begäran. Tillämpa startar kort om aktivt ljud."
     ],
     "da": [
       "Dansk",
@@ -2802,7 +2866,11 @@
       "Piletaster justerer det valgte punkt; Delete fjerner det.",
       "Flyt mod højre for en bredere justering.",
       "Profiler kræver 1–32 korrektionsfiltre.",
-      "Udstyrsprofilens skema understøttes ikke (forventet: 2/3)."
+      "Udstyrsprofilens skema understøttes ikke (forventet: 2/3).",
+      "Lydbuffering",
+      "Automatisk",
+      "Anvendt",
+      "Mindre buffere reducerer forsinkelsen, men kan give knitren. Automatisk bevarer Linux-standarder og anmoder om 40 ms i Windows. Enheder kan tilpasse anmodningen. Anvend genstarter kort den aktive lyd."
     ],
     "nb": [
       "Norsk bokmål",
@@ -2967,7 +3035,11 @@
       "Piltaster justerer valgt punkt; Delete fjerner det.",
       "Flytt mot høyre for en bredere justering.",
       "Profiler trenger 1–32 korreksjonsfiltre.",
-      "Utstyrsprofilens skjema støttes ikke (forventet: 2/3)."
+      "Utstyrsprofilens skjema støttes ikke (forventet: 2/3).",
+      "Lydbufring",
+      "Automatisk",
+      "Brukt",
+      "Mindre buffere reduserer forsinkelsen, men kan gi knitring. Automatisk beholder Linux-standardene og ber om 40 ms i Windows. Enheter kan tilpasse forespørselen. Bruk starter aktiv lyd kort på nytt."
     ],
     "fi": [
       "Suomi",
@@ -3132,7 +3204,11 @@
       "Nuolinäppäimet säätävät valittua pistettä; Delete poistaa sen.",
       "Siirrä oikealle leventääksesi säätöä.",
       "Profiilit tarvitsevat 1–32 korjaussuodatinta.",
-      "Laiteprofiilin skeemaa ei tueta (odotettu: 2/3)."
+      "Laiteprofiilin skeemaa ei tueta (odotettu: 2/3).",
+      "Äänen puskurointi",
+      "Automaattinen",
+      "Otettu käyttöön",
+      "Pienemmät puskurit vähentävät viivettä mutta voivat aiheuttaa rätinää. Automaattinen säilyttää Linuxin oletukset ja pyytää Windowsissa 40 ms. Laitteet voivat muuttaa pyyntöä. Käytä käynnistää aktiivisen äänen hetkeksi uudelleen."
     ],
     "ro": [
       "Română",
@@ -3297,7 +3373,11 @@
       "Săgețile ajustează punctul selectat; Delete îl elimină.",
       "Deplasează spre dreapta pentru o ajustare mai largă.",
       "Profilurile necesită 1–32 filtre de corecție.",
-      "Schemă de profil de echipament neacceptată (se aștepta 2/3)."
+      "Schemă de profil de echipament neacceptată (se aștepta 2/3).",
+      "Memorie tampon audio",
+      "Automat",
+      "Aplicat",
+      "Memoriile tampon mai mici reduc întârzierea, dar pot provoca pocnituri. Automat păstrează valorile Linux și solicită 40 ms în Windows. Dispozitivele pot adapta cererea. Aplică repornește pentru scurt timp sunetul activ."
     ],
     "hu": [
       "Magyar",
@@ -3462,7 +3542,11 @@
       "A nyílbillentyűk a kijelölt pontot állítják; a Delete eltávolítja.",
       "Szélesebb beállításhoz mozgassa jobbra.",
       "A profilokhoz 1–32 korrekciós szűrő szükséges.",
-      "Nem támogatott eszközprofil-séma (elvárt: 2/3)."
+      "Nem támogatott eszközprofil-séma (elvárt: 2/3).",
+      "Hangpufferelés",
+      "Automatikus",
+      "Alkalmazva",
+      "A kisebb pufferek csökkentik a késést, de recsegést okozhatnak. Az Automatikus megtartja a Linux alapértékeit, Windows alatt pedig 40 ms-ot kér. Az eszközök módosíthatják a kérést. Az Alkalmaz röviden újraindítja az aktív hangot."
     ],
     "ar": [
       "العربية",
@@ -3627,7 +3711,11 @@
       "تعدّل مفاتيح الأسهم النقطة المحددة؛ ويحذفها مفتاح Delete.",
       "حرّك إلى اليمين لتوسيع نطاق التعديل.",
       "تتطلب ملفات التعريف 1–32 مرشح تصحيح.",
-      "مخطط ملف تعريف المعدات غير مدعوم (المتوقع 2/3)."
+      "مخطط ملف تعريف المعدات غير مدعوم (المتوقع 2/3).",
+      "التخزين المؤقت للصوت",
+      "تلقائي",
+      "تم التطبيق",
+      "تقلل المخازن الأصغر التأخير ولكن قد تسبب طقطقة. يحافظ الوضع التلقائي على إعدادات Linux الافتراضية ويطلب 40 مللي ثانية في Windows. قد تعدّل الأجهزة الطلب. يعيد زر تطبيق تشغيل الصوت النشط لفترة وجيزة."
     ],
     "he": [
       "עברית",
@@ -3792,7 +3880,11 @@
       "מקשי החצים משנים את הנקודה שנבחרה; Delete מסיר אותה.",
       "הזז ימינה להתאמה רחבה יותר.",
       "פרופילים דורשים 1–32 מסנני תיקון.",
-      "סכמת פרופיל ציוד אינה נתמכת (נדרשת 2/3)."
+      "סכמת פרופיל ציוד אינה נתמכת (נדרשת 2/3).",
+      "אגירת שמע",
+      "אוטומטי",
+      "הוחל",
+      "מאגרים קטנים יותר מפחיתים השהיה אך עלולים לגרום לפצפוצים. המצב האוטומטי שומר על ברירות המחדל של Linux ומבקש 40 אלפיות שנייה ב־Windows. התקנים עשויים להתאים את הבקשה. החלה מפעילה מחדש לזמן קצר את השמע הפעיל."
     ],
     "fa": [
       "فارسی",
@@ -3957,7 +4049,11 @@
       "کلیدهای جهت نقطهٔ انتخاب‌شده را تنظیم می‌کنند؛ Delete آن را حذف می‌کند.",
       "برای تنظیم گسترده‌تر به راست ببرید.",
       "پروفایل‌ها به 1–32 فیلتر اصلاح نیاز دارند.",
-      "طرح ساختار پروفایل تجهیزات پشتیبانی نمی‌شود (نسخه مورد انتظار 2/3)."
+      "طرح ساختار پروفایل تجهیزات پشتیبانی نمی‌شود (نسخه مورد انتظار 2/3).",
+      "بافر صوتی",
+      "خودکار",
+      "اعمال شد",
+      "بافرهای کوچک‌تر تأخیر را کم می‌کنند اما ممکن است خش‌خش ایجاد کنند. حالت خودکار پیش‌فرض‌های Linux را حفظ می‌کند و در Windows مقدار ۴۰ میلی‌ثانیه درخواست می‌کند. دستگاه‌ها ممکن است درخواست را تنظیم کنند. اعمال، صدای فعال را برای لحظه‌ای دوباره راه‌اندازی می‌کند."
     ],
     "zh-Hans": [
       "简体中文",
@@ -4122,7 +4218,11 @@
       "方向键调整选中的点；Delete 键将其移除。",
       "向右移动可扩大调整范围。",
       "配置需要 1–32 个校正滤波器。",
-      "不支持的设备配置格式版本（应为 2/3）。"
+      "不支持的设备配置格式版本（应为 2/3）。",
+      "音频缓冲",
+      "自动",
+      "已应用",
+      "较小的缓冲可减少延迟，但可能产生爆音。自动模式保留 Linux 默认设置，并在 Windows 上请求 40 毫秒。设备可能调整请求。应用设置会短暂重启正在运行的音频。"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -4287,7 +4387,11 @@
       "方向鍵調整選取的點；Delete 鍵將其移除。",
       "向右移動可擴大調整範圍。",
       "設定檔需要 1–32 個校正濾波器。",
-      "不支援的設備設定檔格式版本（應為 2/3）。"
+      "不支援的設備設定檔格式版本（應為 2/3）。",
+      "音訊緩衝",
+      "自動",
+      "已套用",
+      "較小的緩衝可減少延遲，但可能產生爆音。自動模式保留 Linux 預設設定，並在 Windows 上要求 40 毫秒。裝置可能調整要求。套用設定會短暫重新啟動使用中的音訊。"
     ],
     "ja": [
       "日本語",
@@ -4452,7 +4556,11 @@
       "矢印キーで選択した点を調整し、Deleteキーで削除します。",
       "右へ動かすと調整の幅が広がります。",
       "プロファイルには補正フィルターが 1～32 個必要です。",
-      "対応していない機器プロファイルのスキーマです（必要なバージョンは 2/3）。"
+      "対応していない機器プロファイルのスキーマです（必要なバージョンは 2/3）。",
+      "オーディオバッファー",
+      "自動",
+      "適用済み",
+      "バッファーを小さくすると遅延は減りますが、音割れが発生する場合があります。自動では Linux の既定値を維持し、Windows では 40 ms を要求します。デバイスが要求を調整する場合があります。適用すると動作中の音声が一時的に再起動します。"
     ],
     "ko": [
       "한국어",
@@ -4617,7 +4725,11 @@
       "화살표 키로 선택한 지점을 조정하고 Delete로 제거합니다.",
       "오른쪽으로 이동하면 조정 범위가 넓어집니다.",
       "프로파일에는 보정 필터 1~32개가 필요합니다.",
-      "지원하지 않는 장비 프로파일 스키마입니다 (필요한 버전: 2/3)."
+      "지원하지 않는 장비 프로파일 스키마입니다 (필요한 버전: 2/3).",
+      "오디오 버퍼링",
+      "자동",
+      "적용됨",
+      "버퍼가 작으면 지연이 줄지만 잡음이 생길 수 있습니다. 자동은 Linux 기본값을 유지하고 Windows에서 40ms를 요청합니다. 장치가 요청을 조정할 수 있습니다. 적용하면 실행 중인 오디오가 잠시 다시 시작됩니다."
     ],
     "hi": [
       "हिन्दी",
@@ -4782,7 +4894,11 @@
       "तीर कुंजियाँ चुने गए बिंदु को समायोजित करती हैं; Delete उसे हटाता है।",
       "समायोजन को चौड़ा करने के लिए दाईं ओर ले जाएँ।",
       "प्रोफ़ाइल में 1–32 सुधार फ़िल्टर आवश्यक हैं।",
-      "असमर्थित उपकरण प्रोफ़ाइल स्कीमा (अपेक्षित संस्करण 2/3)।"
+      "असमर्थित उपकरण प्रोफ़ाइल स्कीमा (अपेक्षित संस्करण 2/3)।",
+      "ऑडियो बफ़रिंग",
+      "स्वचालित",
+      "लागू किया गया",
+      "छोटे बफ़र देरी घटाते हैं, लेकिन चटखने की आवाज़ आ सकती है। स्वचालित विकल्प Linux के डिफ़ॉल्ट रखता है और Windows पर 40 मिलीसेकंड का अनुरोध करता है। उपकरण अनुरोध बदल सकते हैं। लागू करें से चालू ऑडियो थोड़ी देर के लिए फिर शुरू होता है।"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -4947,7 +5063,11 @@
       "Tombol panah mengatur titik yang dipilih; Delete menghapusnya.",
       "Geser ke kanan untuk penyesuaian yang lebih lebar.",
       "Profil memerlukan 1–32 filter koreksi.",
-      "Skema profil peralatan tidak didukung (diperlukan 2/3)."
+      "Skema profil peralatan tidak didukung (diperlukan 2/3).",
+      "Penyanggaan audio",
+      "Otomatis",
+      "Diterapkan",
+      "Penyangga yang lebih kecil mengurangi jeda tetapi dapat menimbulkan bunyi berderak. Otomatis mempertahankan bawaan Linux dan meminta 40 ms di Windows. Perangkat dapat menyesuaikan permintaan. Terapkan memulai ulang audio aktif sebentar."
     ],
     "vi": [
       "Tiếng Việt",
@@ -5112,7 +5232,11 @@
       "Phím mũi tên điều chỉnh điểm đã chọn; Delete xóa điểm đó.",
       "Di chuyển sang phải để mở rộng vùng điều chỉnh.",
       "Cấu hình cần 1–32 bộ lọc hiệu chỉnh.",
-      "Không hỗ trợ phiên bản cấu trúc cấu hình thiết bị (yêu cầu 2/3)."
+      "Không hỗ trợ phiên bản cấu trúc cấu hình thiết bị (yêu cầu 2/3).",
+      "Bộ đệm âm thanh",
+      "Tự động",
+      "Đã áp dụng",
+      "Bộ đệm nhỏ hơn giảm độ trễ nhưng có thể gây tiếng lách tách. Tự động giữ mặc định Linux và yêu cầu 40 ms trên Windows. Thiết bị có thể điều chỉnh yêu cầu. Áp dụng khởi động lại âm thanh đang hoạt động trong chốc lát."
     ],
     "th": [
       "ไทย",
@@ -5277,7 +5401,11 @@
       "ปุ่มลูกศรปรับจุดที่เลือก และปุ่ม Delete ลบจุดนั้น",
       "เลื่อนไปทางขวาเพื่อขยายช่วงการปรับ",
       "โปรไฟล์ต้องมีฟิลเตอร์ชดเชย 1–32 ตัว",
-      "ไม่รองรับรุ่นโครงสร้างโปรไฟล์อุปกรณ์ (ต้องเป็น 2/3)"
+      "ไม่รองรับรุ่นโครงสร้างโปรไฟล์อุปกรณ์ (ต้องเป็น 2/3)",
+      "การบัฟเฟอร์เสียง",
+      "อัตโนมัติ",
+      "นำไปใช้แล้ว",
+      "บัฟเฟอร์ที่เล็กลงช่วยลดความหน่วง แต่อาจมีเสียงแตก โหมดอัตโนมัติคงค่าเริ่มต้นของ Linux และร้องขอ 40 มิลลิวินาทีบน Windows อุปกรณ์อาจปรับค่าที่ร้องขอ การนำไปใช้จะเริ่มเสียงที่ทำงานอยู่ใหม่ชั่วครู่"
     ],
     "sw": [
       "Kiswahili",
@@ -5442,7 +5570,11 @@
       "Vitufe vya mishale hurekebisha nukta iliyochaguliwa; Delete huiondoa.",
       "Sogeza kulia ili kupanua eneo la marekebisho.",
       "Wasifu unahitaji vichujio 1–32 vya usahihishaji.",
-      "Muundo wa wasifu wa kifaa hautumiki (unatarajiwa 2/3)."
+      "Muundo wa wasifu wa kifaa hautumiki (unatarajiwa 2/3).",
+      "Uhifadhi wa muda wa sauti",
+      "Otomatiki",
+      "Imetumika",
+      "Bafa ndogo hupunguza ucheleweshaji lakini zinaweza kusababisha sauti za kupasuka. Otomatiki huhifadhi chaguo-msingi za Linux na kuomba ms 40 kwenye Windows. Vifaa vinaweza kurekebisha ombi. Tumia huanzisha upya sauti inayotumika kwa muda mfupi."
     ],
     "nn": [
       "Norsk nynorsk",
@@ -5607,7 +5739,11 @@
       "Piltastar justerer valt punkt; Delete fjernar det.",
       "Flytt mot høgre for ei breiare justering.",
       "Profilar treng 1–32 korreksjonsfilter.",
-      "Skjemaet for utstyrsprofilen er ikkje støtta (venta: 2/3)."
+      "Skjemaet for utstyrsprofilen er ikkje støtta (venta: 2/3).",
+      "Lydbufring",
+      "Automatisk",
+      "Brukt",
+      "Mindre bufferar reduserer forseinkinga, men kan gje knitring. Automatisk held på Linux-standardane og ber om 40 ms i Windows. Einingar kan tilpasse førespurnaden. Bruk startar aktiv lyd kort på nytt."
     ]
   },
   "requiredCompleteLocales": [

@@ -288,6 +288,10 @@ Do you want to delete it anyway?</source>
       <translation>アプリの更新</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>適用済み</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>適用</translation>
     </message>
@@ -321,6 +325,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Audio bridge did not start</source>
       <translation>オーディオブリッジを開始できませんでした</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>オーディオバッファー</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>自動ヘッドルーム %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>自動</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Small Speakers</source>
       <translation>小型スピーカー</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>バッファーを小さくすると遅延は減りますが、音割れが発生する場合があります。自動では Linux の既定値を維持し、Windows では 40 ms を要求します。デバイスが要求を調整する場合があります。適用すると動作中の音声が一時的に再起動します。</translation>
     </message>
     <message>
       <source>Soft Treble</source>

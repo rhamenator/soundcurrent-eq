@@ -11,6 +11,7 @@
 #include "dsp.h"
 #include "update_panel.h"
 #include "startup_controls.h"
+#include "audio_buffering_panel.h"
 #include "equipment_display_text.h"
 #include "enhancement_controls.h"
 #ifndef SOUNDCURRENT_EFFECTS_DIR
@@ -494,8 +495,8 @@ context.modules = [
         inputs = [ "left_preamp:In" "right_preamp:In" ]
         outputs = [ "left_output_gain:Out" "right_output_gain:Out" ]
       }
-      capture.props = { node.name = "%3" media.class = Audio/Sink %6 }
-      playback.props = {
+      capture.props = { %BUFFER_HINT% node.name = "%3" media.class = Audio/Sink %6 }
+      playback.props = { %BUFFER_HINT%
         node.name = "%4"
         target.object = %5
         node.passive = true
@@ -505,7 +506,7 @@ context.modules = [
     }
   }
 ]
-)").arg(nodes.join('\n'), links.join('\n'), kSink, kOutput, quote(target), smartProperties);
+)").arg(nodes.join('\n'), links.join('\n'), kSink, kOutput, quote(target), smartProperties).replace("%BUFFER_HINT%", soundcurrent::buffering::filterHint());
 }
 
 struct MicTuning : std::array<double, 4> {
@@ -596,14 +597,14 @@ context.modules = [
         inputs = [ %5 ]
         outputs = [ %6 ]
       }
-      capture.props = {
+      capture.props = { %BUFFER_HINT%
         node.name = "%7"
         audio.channels = %1
         audio.position = %2
         target.object = %9
         node.passive = true
       }
-      playback.props = {
+      playback.props = { %BUFFER_HINT%
         node.name = "%8"
         media.class = Audio/Source
         audio.channels = %1
@@ -616,7 +617,7 @@ context.modules = [
   }
 ]
 )").arg(QString::number(channels), positions, nodes.join('\n'), links.join('\n'),
-           inputs.join(' '), outputs.join(' '), kMicInput, kMicSource, quote(target), smartProperties);
+           inputs.join(' '), outputs.join(' '), kMicInput, kMicSource, quote(target), smartProperties).replace("%BUFFER_HINT%", soundcurrent::buffering::filterHint());
 }
 
 #ifndef Q_OS_WIN
@@ -1894,6 +1895,7 @@ public:
         tabs_->setCurrentIndex(0);
         settingsRoot->addWidget(soundcurrent::i18n::settingsPanel());
         settingsRoot->addWidget(soundcurrent::startupPanel());
+        settingsRoot->addWidget(soundcurrent::buffering::panel([this] { restartBufferedAudio(); }));
 
         auto *deviceBox = new QGroupBox(SC_TR("Output device"));
         auto *deviceLayout = new QVBoxLayout(deviceBox);
@@ -2802,6 +2804,7 @@ private:
 
     void updateControlsLock() {
         const bool editable = !lockButton_->isChecked();
+        if (auto *buffering = findChild<QWidget *>("audioBufferingPanel")) buffering->setEnabled(editable && !calibrating_);
         lockButton_->setText(editable ? SC_TR("Lock EQ") : SC_TR("Unlock EQ"));
         enhancements_->setEnabled(editable);
         outputGain_->setEnabled(editable);
@@ -2868,6 +2871,7 @@ private:
             return;
         }
         calibrating_ = true;
+        updateControlsLock();
         calibrationCancelled_ = false;
         calibrationOutput_.clear();
         calibrationMessages_.reset();
@@ -2891,6 +2895,7 @@ private:
         calibration_.start();
         if (!calibration_.waitForStarted(2000)) {
             calibrating_ = false;
+            updateControlsLock();
             calibrationStart_->setEnabled(!lockButton_->isChecked());
             calibrationStop_->setEnabled(false);
             calibrationLevel_->setEnabled(true);
@@ -2914,6 +2919,7 @@ private:
         calibrationOutput_.append(calibration_.readAllStandardOutput());
         const bool cancelled = calibrationCancelled_;
         calibrating_ = false;
+        updateControlsLock();
         calibrationStart_->setEnabled(!lockButton_->isChecked());
         calibrationStop_->setEnabled(false);
         calibrationLevel_->setEnabled(true);
@@ -3705,6 +3711,47 @@ private:
         } catch (const std::exception &error) { showError(error.what()); }
     }
 
+    void restartBufferedAudio() {
+        if (qApp->arguments().contains("--ui-self-test"))
+            return;
+        if (lockButton_->isChecked() || calibrating_)
+            throw std::runtime_error(
+                SC_TR("Unlock controls and finish measurement before editing profiles.").toStdString());
+        const bool playback = power_->isChecked();
+        const bool mic = micPower_->isChecked() && !inputs_.isEmpty();
+        auto output = selectedDevice();
+        if (outputCombo_->currentData().toString().isEmpty())
+            for (const auto &device : devices_)
+                if (device.name == audio_.target())
+                    output = device;
+        InputDevice input;
+        const auto manual = inputCombo_->currentData().toString();
+        const auto preferred = manual.isEmpty() ? microphone_.target() : manual;
+        for (const auto &device : inputs_)
+            if (device.name == preferred)
+                input = device;
+        if (input.name.isEmpty() && !inputs_.isEmpty())
+            input = inputs_.first();
+        meter_.stop();
+        audio_.stop();
+        microphone_.stop();
+        try {
+            if (playback) {
+                audio_.start(output, processingBands(), outputGainDb(), balance_->value());
+                if (isVisible())
+                    meter_.start();
+                showPlaybackStatus(output);
+            }
+            if (mic)
+                microphone_.start(input, micAdjustments(), micGain_->value() / 2.0);
+        } catch (...) {
+            meter_.stop();
+            audio_.stop();
+            microphone_.stop();
+            throw;
+        }
+    }
+
     void outputChanged() {
         if (!power_->isChecked()) return;
         const auto desired = selectedDevice();
@@ -4061,6 +4108,12 @@ int main(int argc, char **argv) {
         if (!config.contains("inputs = [ \"left_preamp:In\" \"right_preamp:In\" ]") ||
             !config.contains("outputs = [ \"left_output_gain:Out\" \"right_output_gain:Out\" ]"))
             qFatal("Filter graph channels are not mapped separately");
+        QSettings().setValue("audio/bufferMs", 20);
+        const auto requestedGraph = filterConfig("test_output", defaultBands(kDefaultBands));
+        const auto requestedMicGraph = micConfig("test_microphone", 1, {}, 0.0, false);
+        if (requestedGraph.count("node.latency = 960/48000") != 2 || requestedMicGraph.count("node.latency = 960/48000") != 2)
+            qFatal("Audio buffer request did not reach both PipeWire graph streams");
+        QSettings().remove("audio/bufferMs");
         const auto micMono = micConfig("test_microphone", 1, {}, 0.0, true);
         const auto micStereo = micConfig("test_microphone", 2, {}, 0.0, true);
         if (!micMono.contains("audio.position = [ MONO ]") ||

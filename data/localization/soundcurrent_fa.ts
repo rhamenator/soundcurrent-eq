@@ -288,6 +288,10 @@ Do you want to delete it anyway?</source>
       <translation>به‌روزرسانی‌های برنامه</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>اعمال شد</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>اعمال</translation>
     </message>
@@ -321,6 +325,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Audio bridge did not start</source>
       <translation>پل صوتی شروع به کار نکرد</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>بافر صوتی</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>حاشیه خودکار تا سقف سیگنال %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>خودکار</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Small Speakers</source>
       <translation>بلندگوهای کوچک</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>بافرهای کوچک‌تر تأخیر را کم می‌کنند اما ممکن است خش‌خش ایجاد کنند. حالت خودکار پیش‌فرض‌های Linux را حفظ می‌کند و در Windows مقدار ۴۰ میلی‌ثانیه درخواست می‌کند. دستگاه‌ها ممکن است درخواست را تنظیم کنند. اعمال، صدای فعال را برای لحظه‌ای دوباره راه‌اندازی می‌کند.</translation>
     </message>
     <message>
       <source>Soft Treble</source>

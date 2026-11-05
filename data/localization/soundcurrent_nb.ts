@@ -288,6 +288,10 @@ Vil du slette den likevel?</translation>
       <translation>Appoppdateringer</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Brukt</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Bruk</translation>
     </message>
@@ -321,6 +325,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Audio bridge did not start</source>
       <translation>Lydbroen startet ikke</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Lydbufring</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Automatisk nivåmargin %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Automatisk</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Små høyttalere</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Mindre buffere reduserer forsinkelsen, men kan gi knitring. Automatisk beholder Linux-standardene og ber om 40 ms i Windows. Enheter kan tilpasse forespørselen. Bruk starter aktiv lyd kort på nytt.</translation>
     </message>
     <message>
       <source>Soft Treble</source>

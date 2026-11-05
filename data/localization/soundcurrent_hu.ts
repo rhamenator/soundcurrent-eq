@@ -288,6 +288,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Alkalmazásfrissítések</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Alkalmazva</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Alkalmaz</translation>
     </message>
@@ -321,6 +325,10 @@ Mindenképp törölni szeretné?</translation>
     <message>
       <source>Audio bridge did not start</source>
       <translation>A hanghíd nem indult el</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Hangpufferelés</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Mindenképp törölni szeretné?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Automatikus szinttartalék %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Automatikus</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Mindenképp törölni szeretné?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Kis hangsugárzók</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>A kisebb pufferek csökkentik a késést, de recsegést okozhatnak. Az Automatikus megtartja a Linux alapértékeit, Windows alatt pedig 40 ms-ot kér. Az eszközök módosíthatják a kérést. Az Alkalmaz röviden újraindítja az aktív hangot.</translation>
     </message>
     <message>
       <source>Soft Treble</source>

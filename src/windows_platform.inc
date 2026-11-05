@@ -83,7 +83,7 @@ public:
         try {
             route_ = std::make_unique<ManagedWindowsRoute>(false, render.toStdWString(),
                                                                        device.name.toStdWString(), true, [this] { bridge_.stop(); });
-            if (!bridge_.start(capture.toStdWString(), device.name.toStdWString(), false, loopback))
+            if (!bridge_.start(capture.toStdWString(), device.name.toStdWString(), false, loopback, soundcurrent::buffering::requestedMs()))
                 throw std::runtime_error(bridge_.error().empty() ? SC_TR("Audio bridge did not start").toStdString() : bridge_.error());
             target_ = device;
             playbackMeterSource = &bridge_;
@@ -155,7 +155,7 @@ public:
         if (selected.render.isEmpty())
             throw std::runtime_error(SC_TR("Install SoundCurrent Audio using Audio driver setup, then reopen the app to enable the microphone route.").toStdString());
         update(adjustments, gain);
-        if (!bridge_.start(device.name.toStdWString(), selected.render.toStdWString(), true))
+        if (!bridge_.start(device.name.toStdWString(), selected.render.toStdWString(), true, false, soundcurrent::buffering::requestedMs()))
             throw std::runtime_error(bridge_.error().empty() ? SC_TR("Microphone audio bridge did not start").toStdString() : bridge_.error());
         try {
             route_ = std::make_unique<ManagedWindowsRoute>(true, selected.capture.toStdWString(),

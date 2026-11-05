@@ -490,3 +490,5 @@ includes update-available and Quit/reopen reminders. See
 Interface language and regional number/date formatting are independent settings. The current development catalogs cover 33 non-English locales plus English, including Nynorsk, with explicit coverage and English fallback. All declared messages are populated; native-speaker verification remains unverified. Source coverage, contextual AI review and runtime qualification are reported separately. See [localization and contributor instructions](docs/localization.md). Version 1.1.0 introduces this support.
 
 Current localization completion work is described in [the progress record](docs/localization-progress.md). Published 1.1.0 packages are unchanged by these development commits.
+
+[Audio buffering](docs/audio-buffering.md) explains the shared Linux/Windows setting, latency trade-offs, and Apply/recovery behavior.

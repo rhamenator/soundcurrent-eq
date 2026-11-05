@@ -288,6 +288,10 @@ Voulez-vous quand même le supprimer ?</translation>
       <translation>Mises à jour de l’application</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Appliqué</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Appliquer</translation>
     </message>
@@ -321,6 +325,10 @@ Voulez-vous quand même le supprimer ?</translation>
     <message>
       <source>Audio bridge did not start</source>
       <translation>Le pont audio n’a pas démarré</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Mise en mémoire tampon audio</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Voulez-vous quand même le supprimer ?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Marge automatique : %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Automatique</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Voulez-vous quand même le supprimer ?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Petites enceintes</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Les petits tampons réduisent le retard mais peuvent provoquer des craquements. Automatique conserve les valeurs Linux et demande 40 ms sous Windows. Les appareils peuvent adapter la demande. Appliquer redémarre brièvement le traitement audio actif.</translation>
     </message>
     <message>
       <source>Soft Treble</source>

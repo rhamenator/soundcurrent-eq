@@ -288,6 +288,10 @@ Vill du ta bort den ändå?</translation>
       <translation>Appuppdateringar</translation>
     </message>
     <message>
+      <source>Applied</source>
+      <translation>Tillämpat</translation>
+    </message>
+    <message>
       <source>Apply</source>
       <translation>Tillämpa</translation>
     </message>
@@ -321,6 +325,10 @@ Vill du ta bort den ändå?</translation>
     <message>
       <source>Audio bridge did not start</source>
       <translation>Ljudbryggan startade inte</translation>
+    </message>
+    <message>
+      <source>Audio buffering</source>
+      <translation>Ljudbuffring</translation>
     </message>
     <message>
       <source>Audio driver setup</source>
@@ -369,6 +377,10 @@ Vill du ta bort den ändå?</translation>
     <message>
       <source>Auto headroom %1 dB</source>
       <translation>Automatisk nivåmarginal %1 dB</translation>
+    </message>
+    <message>
+      <source>Automatic</source>
+      <translation>Automatiskt</translation>
     </message>
     <message>
       <source>Automatic (SoundCurrent Microphone)</source>
@@ -2540,6 +2552,10 @@ Vill du ta bort den ändå?</translation>
     <message>
       <source>Small Speakers</source>
       <translation>Små högtalare</translation>
+    </message>
+    <message>
+      <source>Smaller buffers reduce delay but may cause crackling. Automatic preserves Linux defaults and requests 40 ms on Windows. Devices may adjust the request. Apply briefly restarts active audio.</source>
+      <translation>Mindre buffertar minskar fördröjningen men kan orsaka knaster. Automatiskt behåller Linux standardvärden och begär 40 ms i Windows. Enheter kan justera begäran. Tillämpa startar kort om aktivt ljud.</translation>
     </message>
     <message>
       <source>Soft Treble</source>
