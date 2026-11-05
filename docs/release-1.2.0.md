@@ -1,0 +1,15 @@
+# SoundCurrent EQ 1.2.0
+
+- Graphical equipment-profile editor with up to 32 correction points, draggable curves, frequency/gain/width controls, Advanced numerical editing, grouped undo, and temporary audio preview. Save copy preserves the original measurements and source attribution.
+- Manage profiles opens on the active imported correction. Imported profiles and edited copies can be deleted after confirmation, including active imports retained from older app versions. Deleting an active profile clears only that equipment correction; deleting an inactive profile preserves current audio.
+- Duplicate JSON imports reuse an existing profile. Export IDs and provenance wrappers do not create duplicates; different equipment, measurement conditions and changed curves remain distinct. Reused IDs never overwrite another saved curve.
+- Saved custom/imported speaker and amplifier profiles remain selectable after switching equipment. Selection, custom-list highlighting, manufacturer/type filters and application feedback remain synchronized. Apply/Close and editor Save/Cancel stay accessible while scrolling; application-wide button help explains controls.
+- Shared Linux/Windows Audio buffering settings offer Automatic and 5–200 ms requests. Apply briefly restarts enabled audio; a failed restart restores the previous request and attempts recovery. Linux Automatic preserves previous behavior. Windows Automatic requests 40 ms instead of the former fixed 200 ms; actual latency depends on routing and hardware.
+- Expanded processing capacity accommodates 31 listening EQ bands plus 32 speaker and 32 amplifier filters without truncation; microphone corrections support 32 filters. Existing profiles with at most 16 filters retain schema 2; larger profiles use schema 3 and require an updated app.
+- All 34 interface catalogs are structurally complete. Translation accuracy remains unverified. Small-screen Arabic and scaled French UI workflows, real AR-2ax import/edit/save/reopen/delete, duplicate handling, virtual-output audio response and native Windows installer lifecycle checks were exercised.
+
+Install over the existing application after using **Quit app**; closing its window can leave it running in the background. Saved settings and profiles are retained. Only one equalizer should process audio at a time.
+
+Linux downloads include the easy `.run` installer, Ubuntu/Debian DEB, Fedora 44 RPM, and RHEL 10-compatible RPM (including compatible Rocky/AlmaLinux systems). Windows includes an x64 installer and retains the interim VB-CABLE route, reboot/setup and manual recovery guidance. The application/installer remains unsigned; the future native-driver code is preserved. See the accompanying Linux installation and Windows audio-driver help guides.
+
+Windows host A/V synchronization and physical arbitrary-channel audio still require hardware verification. The development host has stereo output; virtual-output multichannel tests do not certify physical theater hardware. Typical/relative equipment profiles are not individual-unit measurement certification.

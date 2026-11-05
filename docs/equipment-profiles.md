@@ -1,6 +1,6 @@
 # Equipment profiles
 
-Development builds add **Settings & calibration → Equipment profile library / editor**.
+Open **Settings & calibration → Equipment profile library / editor**.
 The library filters by equipment type, brand and family, then displays individual models.
 Search also matches measurement conditions. There are 1,092 adapted published speaker EQ
 profiles from 255 brands, plus a qualified Pyle PDA29BU electrical reference.
