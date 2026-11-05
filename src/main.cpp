@@ -2069,6 +2069,7 @@ public:
         auto *speakerLayout = new QVBoxLayout(speakerBox);
         auto *speakerRow = new QHBoxLayout;
         speakerCombo_ = new PresetComboBox;
+        speakerCombo_->setObjectName("activeSpeakerProfile");
         speakerCombo_->setAccessibleName(SC_TR("Speaker model profile"));
         speakerCombo_->setMaxVisibleItems(12);
         speakerCombo_->addItem(SC_TR("None — use my own EQ"), QString());
@@ -2117,17 +2118,14 @@ public:
             catch (const std::exception &e) { showError(QString::fromUtf8(e.what())); }
         });
         connect(clearEquipment, &QPushButton::clicked, this, [this] {
-            if (lockButton_->isChecked() || calibrating_) return;
-            recordChange(equipmentStatus_);
-            for (const auto &kind : {"speaker", "amplifier", "microphone"}) QSettings().remove(QString("equipment/") + kind);
-            refreshEquipmentStatus(); syncBandControls(); applyChanges(); commitChange();
-            try { microphone_.update(micAdjustments(), micGain_->value() / 2.0); } catch (const std::exception &e) { showError(e.what()); }
+            setEquipment({});
         });
         refreshEquipmentStatus();
         settingsRoot->addWidget(speakerBox);
         auto *ampRow = new QGridLayout;
         ampRow->addWidget(new QLabel(SC_TR("Amplifier / receiver")), 0, 0, 1, 2);
         ampCombo_ = new PresetComboBox;
+        ampCombo_->setObjectName("activeAmplifierProfile");
         ampCombo_->setAccessibleName(SC_TR("Amplifier model profile"));
         ampCombo_->addItem(SC_TR("None — use my own EQ"), QString());
         loadAmplifierProfiles();
@@ -2149,6 +2147,7 @@ public:
         speakerLayout->addWidget(ampHelp);
         connect(ampImport_, &QPushButton::clicked, this, [this] { importAmplifierProfile(); });
         connect(ampDetails, &QPushButton::clicked, this, [this] { showAmplifierDetails(); });
+        refreshEquipmentStatus();
 
 
 
@@ -2428,14 +2427,18 @@ public:
         connect(presetCombo_, &QComboBox::currentIndexChanged, this, [this] { presetChanged(); });
         connect(speakerCombo_, &QComboBox::currentIndexChanged, this, [this] {
             recordChange(speakerCombo_);
-            QSettings().remove("equipment/speaker"); refreshEquipmentStatus();
-            QSettings().setValue("speakerModelId", speakerCombo_->currentData());
+            const auto selectedId = speakerCombo_->currentData();
+            QSettings().remove("equipment/speaker");
+            QSettings().setValue("speakerModelId", selectedId);
+            refreshEquipmentStatus();
             syncBandControls(); applyChanges(); commitChange();
         });
         connect(ampCombo_, &QComboBox::currentIndexChanged, this, [this] {
             recordChange(ampCombo_);
-            QSettings().remove("equipment/amplifier"); refreshEquipmentStatus();
-            QSettings().setValue("amplifierModelId", ampCombo_->currentData());
+            const auto selectedId = ampCombo_->currentData();
+            QSettings().remove("equipment/amplifier");
+            QSettings().setValue("amplifierModelId", selectedId);
+            refreshEquipmentStatus();
             syncBandControls(); applyChanges(); commitChange();
         });
         connect(save, &QPushButton::clicked, this, [this] { savePreset(); });
@@ -2599,6 +2602,67 @@ protected:
             return;
         }
         QMainWindow::closeEvent(event);
+    }
+
+
+public:
+    void testEquipmentSelection() {
+        using namespace soundcurrent::equipment;
+        // A real correction shape exercises the main-window routing, independently of file dialogs.
+        Profile imported; imported.id = "ui-imported-speaker"; imported.kind = "speaker";
+        imported.brand = "Acoustic Research"; imported.family = "AR classic";
+        imported.model = "AR-2ax test"; imported.source = "https://example.invalid/test";
+        imported.conditions = "UI routing fixture"; imported.filters = {{1000, -2.0, 1.0}};
+        const auto fixturePath = qEnvironmentVariable("SOUNDCURRENT_PROFILE_IMPORT_FIXTURE");
+        if (!fixturePath.isEmpty()) {
+            QFile file(fixturePath);
+            if (!file.open(QIODevice::ReadOnly)) qFatal("Cannot read main-window profile import fixture");
+            imported = parse(file.readAll());
+        }
+        if (speakerCombo_->count() < 2) qFatal("No legacy speaker choice for displacement test");
+        speakerCombo_->setCurrentIndex(1);
+        const auto oldId = speakerCombo_->currentData().toString();
+        const auto oldName = speakerCombo_->currentText();
+        setEquipment(imported);
+        auto check = [&] {
+            if (speakerCombo_->currentData().toString() != imported.id ||
+                !speakerCombo_->currentText().contains(imported.model) ||
+                !equipmentStatus_->text().contains(imported.model)) qFatal("Imported speaker is not visibly selected");
+            const auto correction = speakerCorrection();
+            if (correction.size() != imported.filters.size()) qFatal("Imported speaker retained previous filters");
+            for (int i = 0; i < correction.size(); ++i)
+                if (correction[i].frequency != imported.filters[i].frequency || correction[i].gain != imported.filters[i].gainDb ||
+                    correction[i].q != imported.filters[i].q || correction[i].type != imported.filters[i].type)
+                    qFatal("Imported speaker did not replace previous correction");
+        };
+        check(); filterSpeakers(); check();
+        {
+            // Windows' default thread stack cannot hold a second full audio engine.
+            const auto reopened = std::make_unique<MainWindow>(false);
+            if (reopened->speakerCombo_->currentData().toString() != imported.id ||
+                reopened->speakerCorrection().size() != imported.filters.size() ||
+                reopened->speakerCorrection()[0].gain != imported.filters[0].gainDb)
+                qFatal("Reopening lost imported speaker selection or correction");
+        }
+        if (QSettings().value("speakerModelId").toString() != imported.id) qFatal("Imported selection not persisted");
+        speakerCombo_->setCurrentIndex(speakerCombo_->findData(oldId));
+        if (equipmentProfile("speaker")) qFatal("Legacy selection retained hidden imported correction");
+        undoChange(); check();
+        Profile none; none.kind = "speaker"; setEquipment(none);
+        if (speakerCombo_->currentIndex() != 0 || !speakerCorrection().isEmpty()) qFatal("None did not clear speaker correction");
+        undoChange(); check();
+        imported.kind = "amplifier"; imported.id = "ui-imported-amplifier";
+        setEquipment(imported);
+        if (ampCombo_->currentData().toString() != imported.id) qFatal("Imported amplifier is not selected");
+        Profile clear; setEquipment(clear);
+        if (!speakerCorrection().isEmpty() || speakerCombo_->currentIndex() != 0 || ampCombo_->currentIndex() != 0)
+            qFatal("Clear all left an active correction");
+        imported.kind = "speaker"; imported.id = oldId; imported.model = "Edited copy";
+        setEquipment(imported);
+        if (!speakerCombo_->currentText().contains(imported.model)) qFatal("ID collision hid custom copy");
+        setEquipment(clear);
+        if (speakerCombo_->itemText(speakerCombo_->findData(oldId)) != oldName)
+            qFatal("Custom copy renamed bundled speaker choice");
     }
 
 private:
@@ -3093,14 +3157,34 @@ private:
         if (const auto p = equipmentProfile(kind)) for (const auto &b : p->filters) result.append({b.frequency,b.gainDb,b.q,b.type});
         return result;
     }
+    // Imported corrections are the selected model, not a hidden layer beneath it.
+    void syncEquipmentChoice(QComboBox *combo, const QString &kind, const QString &key) {
+        if (!combo) return; // The speaker section is built before the amplifier section.
+        const auto selected = combo->currentData().toString();
+        const QSignalBlocker block(combo);
+        for (int i = combo->count() - 1; i > 0; --i)
+            if (combo->itemData(i, Qt::UserRole + 1).toBool()) combo->removeItem(i);
+        int index = combo->findData(selected);
+        if (const auto profile = equipmentProfile(kind)) {
+            // A custom copy may retain a bundled ID; never rename the bundled row.
+            combo->addItem(profile->brand + " / " + profile->model, profile->id);
+            index = combo->count() - 1;
+            combo->setItemData(index, true, Qt::UserRole + 1);
+        }
+        combo->setCurrentIndex(std::max(0, index));
+        QSettings().setValue(key, combo->currentData());
+    }
     void refreshEquipmentStatus() {
+        syncEquipmentChoice(speakerCombo_, "speaker", "speakerModelId");
+        syncEquipmentChoice(ampCombo_, "amplifier", "amplifierModelId");
         QStringList names;
         for (const auto &kind : {"speaker","amplifier","microphone"}) if (const auto p = equipmentProfile(kind)) names << (QString(kind) == "speaker" ? SC_TR("Speaker") : QString(kind) == "amplifier" ? SC_TR("Amplifier") : SC_TR("Microphone")) + ": " + p->brand + " / " + p->family + " / " + p->model;
         equipmentStatus_->setText(names.isEmpty() ? SC_TR("No imported equipment correction selected.") : names.join("\n"));
     }
     void setEquipment(const soundcurrent::equipment::Profile &profile) {
         if (lockButton_->isChecked() || calibrating_) return;
-        recordChange(equipmentStatus_);
+        // Each profile selection is a discrete, undoable action.
+        recordChange(speakerCombo_);
         if (profile.id.isEmpty()) {
             for (const QString kind : {QString("speaker"), QString("amplifier"), QString("microphone")}) {
                 if (!profile.kind.isEmpty() && profile.kind != kind) continue;
@@ -3171,6 +3255,12 @@ private:
         ampCombo_->setCurrentIndex(index);
     }
     void showAmplifierDetails() {
+        if (const auto profile = equipmentProfile("amplifier")) {
+            QMessageBox details(QMessageBox::Information, SC_TR("Amplifier profile details"),
+                profile->brand + " / " + profile->model + "\n" + profile->source + "\n" + profile->conditions + "\n" + profile->provenance,
+                QMessageBox::Ok, this);
+            details.setTextFormat(Qt::PlainText); details.exec(); return;
+        }
         const auto id = ampCombo_->currentData().toString();
         for (const auto &p : amplifierProfiles_) if (p.id == id) {
             QMessageBox details(QMessageBox::Information, SC_TR("Amplifier profile details"),
@@ -3198,8 +3288,15 @@ private:
             if(matches || p.id==selected)speakerCombo_->addItem(p.name+(matches?QString():SC_TR(" (currently selected)")),p.id);
         }
         speakerCombo_->setCurrentIndex(std::max(0,speakerCombo_->findData(selected)));
+        syncEquipmentChoice(speakerCombo_, "speaker", "speakerModelId");
     }
     void showSpeakerDetails() {
+        if (const auto profile = equipmentProfile("speaker")) {
+            QMessageBox details(QMessageBox::Information, SC_TR("Speaker profile details"),
+                profile->brand + " / " + profile->model + "\n" + profile->source + "\n" + profile->conditions + "\n" + profile->provenance,
+                QMessageBox::Ok, this);
+            details.setTextFormat(Qt::PlainText); details.exec(); return;
+        }
         const auto id = speakerCombo_->currentData().toString();
         for (const auto &p : speakerProfiles()) if (p.id == id) {
             QString text = soundcurrent::i18n::speakerDetailsHeader(p.name, p.attribution);
@@ -3785,6 +3882,7 @@ int main(int argc, char **argv) {
         qInfo("UI self-test: constructing window");
         MainWindow testWindow(false);
         qInfo("UI self-test: window constructed");
+        testWindow.testEquipmentSelection();
         for (const auto &entry : {std::pair{"manageSpeakerProfiles", "speaker"},
                                   std::pair{"manageMicrophoneProfiles", "microphone"},
                                   std::pair{"manageAmplifierProfiles", "amplifier"}}) {

@@ -28,15 +28,17 @@ profiles from 255 brands, plus a qualified Pyle PDA29BU electrical reference.
   not change audio. Scrolling over the closed model selector does not select a
   profile; open its popup to scroll the list. The manager scrolls within the
   available screen space and keeps Close accessible. The **Apply profile** button can reapply the displayed saved
-  profile. Choose **None — use my own EQ** to clear the selected equipment type;
+  profile. A checkmark and model name confirm the applied choice. The main speaker
+  or amplifier selector and its details show the imported correction, including after
+  reopening the app; manufacturer/type filters preserve it. Choose **None — use my own EQ** to clear the selected equipment type;
   with **All equipment** selected, None clears all imported equipment corrections
   and legacy speaker/amplifier model selections. Listening EQ remains in place.
   Applying a speaker or amplifier profile replaces that equipment's previous model
   correction, while listening EQ remains adjustable. A microphone profile replaces
   the generic natural-voice shape, retaining microphone high-pass and user tone/gain
   controls. Speaker processing can continue alongside microphone processing.
-- **Clear imported equipment corrections** restores existing model selection/tone
-  behavior. Apply and Clear participate in the main EQ undo history and respect Lock.
+- **Clear imported equipment corrections** clears equipment corrections and selects
+  None for speakers and amplifiers, preserving your listening EQ. Apply and Clear participate in the main EQ undo history and respect Lock.
   Profile edits are previews until a saved copy is explicitly selected or reapplied; no sweep or
   signal plays from the editor.
 
@@ -149,9 +151,9 @@ Profiles are treated as data, not commands; no profile can run code or download 
 quality, the complete bundled catalog, atomic save/reopen, and a real modal editor test
 that changes gain, closes, chooses Save and checks preservation of the original.
 Existing shared UI, DSP and premium engine/WAVE tests remain enabled. Tests use isolated
-settings and no hardware output. Linux is tested locally; the new shared Windows code
-has not yet been built or exercised in a Windows VM. Hardware sweep accuracy and a
-custom profile on a live microphone require separate verification.
+settings and no hardware output. Linux is tested locally; shared Windows UI, installer and installed-locale checks
+run in GitHub Actions. Physical Windows audio devices, hardware sweep accuracy and
+a custom profile on a live microphone require separate verification.
 
 ## Managing profiles
 
