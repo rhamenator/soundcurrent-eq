@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
         auto *widget = panel([&] {
             ++calls;
             if (requestedMs() == 80)
-                throw std::runtime_error("Synthetic unavailable buffer");
+                throw std::runtime_error("The selected EQ settings are invalid");
         });
         widget->resize(550, 220);
         widget->show();
@@ -50,7 +50,7 @@ int main(int argc, char **argv) {
               "Failed restart did not roll back");
         check(widget->findChild<QLabel *>("audioBufferingStatus")
                   ->text()
-                  .contains("Synthetic unavailable buffer"),
+                  .contains(soundcurrent::i18n::audioErrorText("The selected EQ settings are invalid")),
               "Failure was hidden");
         delete widget;
         QSettings().setValue("audio/bufferMs", 13);

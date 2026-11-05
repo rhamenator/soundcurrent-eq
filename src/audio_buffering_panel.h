@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 #pragma once
 #include "audio_buffering.h"
+#include "audio_error_text.h"
 #include "localization.h"
 #include <QComboBox>
 #include <QGroupBox>
@@ -68,11 +69,11 @@ inline QWidget *panel(const std::function<void()> &restart) {
                 settings.setValue("audio/bufferMs", old);
             else
                 settings.remove("audio/bufferMs");
-            QString message = QString::fromUtf8(error.what());
+            QString message = soundcurrent::i18n::audioErrorText(QString::fromUtf8(error.what()));
             try {
                 restart();
             } catch (const std::exception &restore) {
-                message += "\n" + QString::fromUtf8(restore.what());
+                message += "\n" + soundcurrent::i18n::audioErrorText(QString::fromUtf8(restore.what()));
             }
             status->setText(SC_TR("Audio error: %1").arg(message));
             const QSignalBlocker block(choice);
