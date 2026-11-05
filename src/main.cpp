@@ -1394,7 +1394,7 @@ std::optional<Bands> parseBands(const QJsonValue &value) {
 // Use embedded pixels rather than a desktop-theme name: tray hosts may resolve
 // an unavailable/cached theme name to a generic information icon.
 QIcon applicationLogo() {
-    const QIcon source(":/app.ico");
+    const QIcon source(":/app-logo.png");
     QIcon result;
     for (const int size : {16, 22, 24, 32, 48, 64, 128, 256})
         result.addPixmap(source.pixmap(size, size));
@@ -3939,6 +3939,8 @@ int main(int argc, char **argv) {
     }
 #endif
     QApplication app(argc, argv);
+    if (app.arguments().contains("--ui-self-test") || app.arguments().contains("--localization-ui-test"))
+        qInfo("UI test application initialized");
     QCoreApplication::setOrganizationName("SoundCurrent");
     QCoreApplication::setApplicationName("soundcurrent-eq");
     QTemporaryDir testSettings;
