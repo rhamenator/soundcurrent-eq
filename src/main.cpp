@@ -3909,7 +3909,7 @@ private:
 
 int main(int argc, char **argv) {
     for (int i = 1; i < argc; ++i) {
-        if (std::strcmp(argv[i], "--windows-audio-setup-test") == 0 || std::strcmp(argv[i], "--ui-self-test") == 0 || std::strcmp(argv[i], "--windows-live-manual-route-test") == 0 || std::strcmp(argv[i], "--windows-live-conflict-test") == 0) {
+        if (std::strcmp(argv[i], "--windows-audio-setup-test") == 0 || std::strcmp(argv[i], "--ui-self-test") == 0 || std::strcmp(argv[i], "--localization-ui-test") == 0 || std::strcmp(argv[i], "--windows-live-manual-route-test") == 0 || std::strcmp(argv[i], "--windows-live-conflict-test") == 0) {
             qInstallMessageHandler([](QtMsgType, const QMessageLogContext &, const QString &message) {
                 const auto utf8 = message.toUtf8();
                 std::fprintf(stderr, "%s\n", utf8.constData());
