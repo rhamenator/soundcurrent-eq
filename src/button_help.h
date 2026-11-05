@@ -10,6 +10,10 @@
 namespace soundcurrent::ui {
 inline void describeButton(QAbstractButton *button) {
     if (!button) return;
+    if (button->property("soundcurrentHelpReady").toBool() &&
+        button->property("soundcurrentHelpCaption").toString() == button->text() &&
+        button->property("soundcurrentHelpTip").toString() == button->toolTip() &&
+        !button->accessibleDescription().isEmpty() && !button->whatsThis().isEmpty()) return;
     const bool generated = button->property("soundcurrentGeneratedHelp").toBool();
     const bool keepGenerated = generated && button->toolTip() == button->property("soundcurrentLastHelp").toString();
     QString description = keepGenerated ? QString() : button->toolTip();
@@ -41,6 +45,9 @@ inline void describeButton(QAbstractButton *button) {
     }
     if (generated || button->accessibleDescription().isEmpty()) button->setAccessibleDescription(accessible);
     if (generated || button->whatsThis().isEmpty()) button->setWhatsThis(button->toolTip());
+    button->setProperty("soundcurrentHelpReady", true);
+    button->setProperty("soundcurrentHelpCaption", button->text());
+    button->setProperty("soundcurrentHelpTip", button->toolTip());
     if (!button->property("soundcurrentHelpConnected").toBool()) {
         button->setProperty("soundcurrentHelpConnected", true);
         QObject::connect(button, &QAbstractButton::clicked, button, [button] { describeButton(button); });

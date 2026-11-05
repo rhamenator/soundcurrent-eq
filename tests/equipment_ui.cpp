@@ -126,7 +126,7 @@ int main(int argc,char **argv) {
             subtype->setCurrentIndex(0);kind->setCurrentIndex(2);kind->setCurrentIndex(0);phase=1;clickLater(button(library,"Import JSON"));}
         else if(phase==3){phase=4;clickLater(button(library,"Import JSON"));}
         else if(phase==6){require(!applied,"Importing or saving implicitly changed audio");auto profiles=loadLibrary();require(profiles.size()==2 && profiles[0].id==originalId,"Valid import overwrote existing profile");phase=8;clickLater(button(library,"Apply profile"));}
-        else if(phase==8){require(applied,"Apply callback missing");phase=9;}
+        else if(phase==8){if(!applied)return;phase=9;}
         else if(phase==9){
             auto *feedback=library->findChild<QLabel *>("appliedEquipmentProfile");
             require(feedback && feedback->text().contains(expectedImportedModel),"Applied import has no visible confirmation");

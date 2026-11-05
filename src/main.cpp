@@ -2685,6 +2685,11 @@ public:
             soundcurrent::ui::describeButton(button);
             if (button->toolTip().isEmpty() || button->accessibleDescription().isEmpty()) qFatal("Button has no hover/accessibility help");
         }
+        QPushButton toggleHelp(SC_TR("Show advanced controls"));
+        soundcurrent::ui::describeButton(&toggleHelp);
+        toggleHelp.setText(SC_TR("Hide advanced controls"));
+        soundcurrent::ui::describeButton(&toggleHelp);
+        if (!toggleHelp.accessibleDescription().contains(SC_TR("Hide advanced controls"))) qFatal("Cached help retained stale toggle caption");
     }
 
 private:
