@@ -158,6 +158,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Actief / passief / onbekend</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Voeg een JSON-profiel toe aan de opgeslagen bibliotheek.</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>Filter toevoegen</translation>
     </message>
@@ -636,6 +640,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Sluiten</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Sluit het venster; de toegepaste correctie blijft actief.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Kolomluidspreker</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Wilt u het toch verwijderen?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Maak een nieuw correctieprofiel.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Nieuwe map aanmaken</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Wilt u het toch verwijderen?</translation>
       <source>Delete</source>
       <translation>Verwijderen</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Verwijder dit opgeslagen aangepaste profiel.</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Wilt u het toch verwijderen?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Bewerken / kopie opslaan</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Bewerk een kopie; het origineel blijft ongewijzigd.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Wilt u het toch verwijderen?</translation>
     <message>
       <source>Export profile</source>
       <translation>Profiel exporteren</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Exporteer het geselecteerde profiel naar een JSON-bestand.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Piekmarkeringen op frequentieniveaus tonen</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Toon alleen opgeslagen aangepaste profielen.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Grootte tonen</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Equalizer inschakelen</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Zet gemeten responsgegevens om in een correctiecurve.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Type</translation>
     </message>
@@ -2857,6 +2889,10 @@ Wilt u het toch verwijderen?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Regionale systeeminstellingen gebruiken</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Gebruik het geselecteerde profiel voor dit apparaat.</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

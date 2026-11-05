@@ -158,6 +158,10 @@ Do you want to delete it anyway?</source>
       <translation>اکتیو / پسیو / نامشخص</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>یک نمایه JSON به کتابخانهٔ ذخیره‌شده اضافه کنید.</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>افزودن فیلتر</translation>
     </message>
@@ -636,6 +640,10 @@ Do you want to delete it anyway?</source>
       <translation>بستن</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>پنجره را ببندید؛ اصلاح اعمال‌شده را نگه دارید.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>بلندگوی ستونی</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>یک نمایهٔ اصلاح جدید بسازید.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>ایجاد پوشهٔ جدید</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Do you want to delete it anyway?</source>
       <source>Delete</source>
       <translation>حذف</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>این نمایهٔ سفارشی ذخیره‌شده را حذف کنید.</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Edit / save copy</source>
       <translation>ویرایش / ذخیره نسخه</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>یک کپی را ویرایش کنید؛ اصل را بدون تغییر نگه دارید.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Export profile</source>
       <translation>صدور پروفایل</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>نمایهٔ انتخاب‌شده را در یک فایل JSON صادر کنید.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Do you want to delete it anyway?</source>
       <translation>نمایش نشانگرهای قله در سطح‌های فرکانس</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>فقط نمایه‌های سفارشی ذخیره‌شده را نشان دهید.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>نمایش اندازه</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Do you want to delete it anyway?</source>
       <translation>روشن کردن اکولایزر</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>داده‌های پاسخ اندازه‌گیری‌شده را به منحنی اصلاح تبدیل کنید.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>نوع</translation>
     </message>
@@ -2857,6 +2889,10 @@ Do you want to delete it anyway?</source>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>استفاده از تنظیمات منطقه‌ای سیستم</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>از نمایهٔ انتخاب‌شده برای این تجهیزات استفاده کنید.</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

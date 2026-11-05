@@ -158,6 +158,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Aktív / passzív / ismeretlen</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>JSON-profil hozzáadása a mentett könyvtárhoz.</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>Szűrő hozzáadása</translation>
     </message>
@@ -636,6 +640,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Bezárás</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Az ablak bezárása az alkalmazott korrekció megtartásával.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Oszlopos hangsugárzó</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Mindenképp törölni szeretné?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Új korrekciós profil létrehozása.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Új mappa létrehozása</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Mindenképp törölni szeretné?</translation>
       <source>Delete</source>
       <translation>Törlés</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>A mentett egyéni profil törlése.</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Mindenképp törölni szeretné?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Szerkesztés / másolat mentése</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Másolat szerkesztése az eredeti módosítása nélkül.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Mindenképp törölni szeretné?</translation>
     <message>
       <source>Export profile</source>
       <translation>Profil exportálása</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>A kijelölt profil exportálása JSON-fájlba.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Csúcsjelölők megjelenítése a frekvenciaszinteken</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Csak a mentett egyéni profilok megjelenítése.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Méret megjelenítése</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Hangszínszabályzó bekapcsolása</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Mért átviteli adatok átalakítása korrekciós görbévé.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Típus</translation>
     </message>
@@ -2857,6 +2889,10 @@ Mindenképp törölni szeretné?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Rendszer területi beállításainak használata</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>A kijelölt profil használata ehhez az eszközhöz.</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

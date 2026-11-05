@@ -158,6 +158,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Aktiv / passiv / unbekannt</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Ein JSON-Profil zur gespeicherten Bibliothek hinzufügen.</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>Filter hinzufügen</translation>
     </message>
@@ -636,6 +640,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Schließen</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Dialog schließen; die angewendete Korrektur bleibt aktiv.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Säulenlautsprecher</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Ein neues Korrekturprofil erstellen.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Neuen Ordner erstellen</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <source>Delete</source>
       <translation>Löschen</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Dieses gespeicherte benutzerdefinierte Profil löschen.</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Bearbeiten / Kopie speichern</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Eine Kopie bearbeiten; das Original bleibt unverändert.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
     <message>
       <source>Export profile</source>
       <translation>Profil exportieren</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Das ausgewählte Profil als JSON-Datei exportieren.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Spitzenmarkierungen auf den Frequenzpegelanzeigen zeigen</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Nur gespeicherte benutzerdefinierte Profile anzeigen.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Größe anzeigen</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Equalizer einschalten</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Gemessene Frequenzgangdaten in eine Korrekturkurve umwandeln.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Typ</translation>
     </message>
@@ -2857,6 +2889,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Systemregion verwenden</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Das ausgewählte Profil für dieses Gerät verwenden.</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

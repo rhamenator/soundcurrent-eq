@@ -158,6 +158,10 @@ Do you want to delete it anyway?</source>
       <translation>אקטיבי / פסיבי / לא ידוע</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>הוסף פרופיל JSON לספרייה השמורה.</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>הוספת מסנן</translation>
     </message>
@@ -636,6 +640,10 @@ Do you want to delete it anyway?</source>
       <translation>סגירה</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>סגור את החלון והשאר את התיקון שהוחל.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>רמקול עמוד</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>צור פרופיל תיקון חדש.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>צור תיקייה חדשה</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Do you want to delete it anyway?</source>
       <source>Delete</source>
       <translation>מחיקה</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>מחק פרופיל מותאם אישית שמור זה.</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Edit / save copy</source>
       <translation>עריכה / שמירת עותק</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>ערוך עותק והשאר את המקור ללא שינוי.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Export profile</source>
       <translation>ייצוא פרופיל</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>ייצא את הפרופיל שנבחר לקובץ JSON.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Do you want to delete it anyway?</source>
       <translation>הצגת סמני שיא ברמות התדרים</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>הצג רק פרופילים מותאמים אישית שנשמרו.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>הצגת גודל</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Do you want to delete it anyway?</source>
       <translation>הפעלת האקולייזר</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>המר נתוני תגובה שנמדדו לעקומת תיקון.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>סוג</translation>
     </message>
@@ -2857,6 +2889,10 @@ Do you want to delete it anyway?</source>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>שימוש בהגדרות האזוריות של המערכת</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>השתמש בפרופיל שנבחר עבור ציוד זה.</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

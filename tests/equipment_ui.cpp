@@ -13,6 +13,8 @@
 #include <QJsonDocument>
 #include <QLineEdit>
 #include <QLabel>
+#include <QCheckBox>
+#include <QListWidget>
 #include <QScrollArea>
 #include <QScrollBar>
 #include <QMessageBox>
@@ -142,6 +144,10 @@ int main(int argc,char **argv) {
             require(body && body->horizontalScrollBar()->maximum()==0,"Profile manager clips content horizontally");
             auto *closeBox=library->findChild<QDialogButtonBox *>();
             auto *closeButton=closeBox ? closeBox->button(QDialogButtonBox::Close) : nullptr;
+            auto *applyButton=button(library,"Apply profile");
+            require(applyButton && applyButton->isVisible() && library->rect().contains(QRect(applyButton->mapTo(library,QPoint()),applyButton->size())),
+                    "Apply button requires scrolling or is clipped");
+            require(!applyButton->toolTip().isEmpty(),"Apply has no explanatory tooltip");
             require(closeButton && closeButton->isVisible() &&
                     library->rect().contains(QRect(closeButton->mapTo(library,QPoint()),closeButton->size())),
                     "Close button requires scrolling or is clipped");
@@ -185,6 +191,23 @@ int main(int argc,char **argv) {
         drive.start();openLibrary(nullptr,[](const Profile &){},kind);drive.stop();
         require(visited,"Typed profile manager was not exercised");
     }
+    // Saved custom equipment has a visible, selectable management list.
+    QObject::disconnect(&drive,nullptr,&app,nullptr);bool customChecked=false;
+    QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        auto *manager=dialog("Equipment profiles — brand / family / model");if(!manager || customChecked)return;
+        auto *only=manager->findChild<QCheckBox *>("customProfilesOnly");
+        auto *saved=manager->findChild<QListWidget *>("savedCustomProfiles");
+        require(only && saved,"Missing custom profile management list");only->setChecked(true);
+        require(saved->count()==loadLibrary().size() && saved->isVisible(),"Saved profiles not available in custom list");
+        saved->setCurrentRow(saved->count()-1);
+        require(manager->findChild<QComboBox *>("equipmentProfileList")->currentIndex()>0,"Custom list did not select profile");
+        require(manager->findChild<QPushButton *>("deleteEquipmentProfile")->isEnabled(),"Custom list cannot manage saved profile");
+        customChecked=true;
+        const auto captures=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
+        if(!captures.isEmpty()){QCoreApplication::processEvents();require(manager->grab().save(QDir(captures).filePath("custom-library.png")),"Could not capture custom library");}
+        closeLater(manager);
+    });
+    drive.start();openLibrary(nullptr,[](const Profile &) {},"speaker");drive.stop();require(customChecked,"Custom profile list not tested");
     // Cancellation is non-destructive; confirmed deletion affects only the chosen saved copy.
     QObject::disconnect(&drive,nullptr,&app,nullptr);phase=0;
     const auto deleteId=loadLibrary().front().id;

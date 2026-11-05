@@ -158,6 +158,10 @@ Do you want to delete it anyway?</source>
       <translation>Активный / пассивный / неизвестный</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Добавить профиль JSON в сохранённую библиотеку.</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>Добавить фильтр</translation>
     </message>
@@ -636,6 +640,10 @@ Do you want to delete it anyway?</source>
       <translation>Закрыть</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Закрыть диалог, сохранив применённую коррекцию.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Колонная акустическая система для озвучивания</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Создать новый профиль коррекции.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Создать папку</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Do you want to delete it anyway?</source>
       <source>Delete</source>
       <translation>Удалить</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Удалить этот сохранённый пользовательский профиль.</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Edit / save copy</source>
       <translation>Редактировать / сохранить копию</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Редактировать копию, не изменяя оригинал.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Export profile</source>
       <translation>Экспортировать профиль</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Экспортировать выбранный профиль в файл JSON.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Do you want to delete it anyway?</source>
       <translation>Показывать метки пиков на частотных уровнях</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Показать только сохранённые пользовательские профили.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Показать размер</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Do you want to delete it anyway?</source>
       <translation>Включить эквалайзер</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Преобразовать измеренную характеристику в кривую коррекции.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Тип</translation>
     </message>
@@ -2857,6 +2889,10 @@ Do you want to delete it anyway?</source>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Использовать региональные настройки системы</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Использовать выбранный профиль для этого оборудования.</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

@@ -158,6 +158,10 @@ Pretende eliminá-lo mesmo assim?</translation>
       <translation>Ativo / passivo / desconhecido</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Adicionar um perfil JSON à biblioteca guardada.</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>Adicionar filtro</translation>
     </message>
@@ -636,6 +640,10 @@ Pretende eliminá-lo mesmo assim?</translation>
       <translation>Fechar</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Fechar a janela e manter a correção aplicada.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Coluna de sonorização em coluna</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Pretende eliminá-lo mesmo assim?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Criar um novo perfil de correção.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Criar nova pasta</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Pretende eliminá-lo mesmo assim?</translation>
       <source>Delete</source>
       <translation>Eliminar</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Eliminar este perfil personalizado guardado.</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Pretende eliminá-lo mesmo assim?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Editar / guardar cópia</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Editar uma cópia sem alterar o original.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Pretende eliminá-lo mesmo assim?</translation>
     <message>
       <source>Export profile</source>
       <translation>Exportar perfil</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Exportar o perfil selecionado para um ficheiro JSON.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Pretende eliminá-lo mesmo assim?</translation>
       <translation>Mostrar marcadores de pico nos níveis de frequência</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Mostrar apenas perfis personalizados guardados.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Mostrar tamanho</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Pretende eliminá-lo mesmo assim?</translation>
       <translation>Ativar equalizador</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Converter os dados de resposta medidos numa curva de correção.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Tipo</translation>
     </message>
@@ -2857,6 +2889,10 @@ Pretende eliminá-lo mesmo assim?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Usar definições regionais do sistema</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Utilizar o perfil selecionado para este equipamento.</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

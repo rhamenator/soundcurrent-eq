@@ -282,3 +282,35 @@ Import that JSON through **Manage profiles → Import JSON**, then explicitly se
 the saved entry to audition it. Importing/saving alone does not change audio. The
 real JSON import is exercised by the `equipment-real-import` UI test in isolated
 settings. Nothing is applied to the owner's listening setup by that test.
+
+## Switching and managing saved profiles
+
+Import JSON once, then click Apply profile. Saved custom speaker and amplifier
+profiles remain in the main model dropdown after selecting another model.
+Applying a speaker profile resets the main Manufacturer and Type filters to All.
+
+In Manage profiles, select Custom to show a list of your saved profiles. Click a
+list entry to use it; Edit / save copy, Export JSON and Delete act on that entry.
+Delete removes the library entry, with confirmation; an already-applied correction
+remains active until you select another profile or None.
+
+Apply profile and Close stay outside the scrolling content. Close keeps the
+applied correction. The editor similarly keeps Save/Cancel outside its scroll area.
+Hover over a button for help; the descriptions also support keyboard focus,
+screen readers and Qt's context help. Existing detailed tips are retained; other
+buttons receive context from their section. New profile tips have translations
+in every supported catalog, with linguistic accuracy still unverified.
+
+| Button | Purpose |
+| --- | --- |
+| Import JSON | Add an existing correction profile to your saved library. |
+| Import response text | Read measured response data (TXT/CSV/FRD/CAL), then prepare a correction curve. This is not an already-designed EQ file. |
+| Create profile | Build a correction profile manually. |
+| Edit / save copy | Adjust a copy without overwriting the original. |
+| Export JSON | Write the selected profile to a file for sharing or backup. |
+| Apply profile | Use the displayed profile for its equipment type. |
+| Delete | Remove a saved custom entry; bundled profiles are protected. |
+
+The AR-2ax example uses a historical acoustic-power measurement from about
+500 Hz to 20 kHz. Its relatively modest correction does not establish flat bass,
+flat on-axis response, or the response of an aged individual pair in a room.

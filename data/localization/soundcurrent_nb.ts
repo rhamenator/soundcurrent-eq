@@ -158,6 +158,10 @@ Vil du slette den likevel?</translation>
       <translation>Aktiv / passiv / ukjent</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Legg til en JSON-profil i det lagrede biblioteket.</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>Legg til filter</translation>
     </message>
@@ -636,6 +640,10 @@ Vil du slette den likevel?</translation>
       <translation>Lukk</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Lukk dialogen; behold den brukte korreksjonen.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Søylehøyttaler</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Vil du slette den likevel?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Opprett en ny korreksjonsprofil.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Opprett ny mappe</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Vil du slette den likevel?</translation>
       <source>Delete</source>
       <translation>Slett</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Slett denne lagrede egendefinerte profilen.</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Rediger / lagre kopi</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Rediger en kopi; behold originalen uendret.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Export profile</source>
       <translation>Eksporter profil</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Eksporter den valgte profilen til en JSON-fil.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Vil du slette den likevel?</translation>
       <translation>Vis toppmarkører på frekvensnivåene</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Vis bare lagrede egendefinerte profiler.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Vis størrelse</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Vil du slette den likevel?</translation>
       <translation>Slå equalizeren på</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Gjør målte responsdata om til en korreksjonskurve.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Type</translation>
     </message>
@@ -2857,6 +2889,10 @@ Vil du slette den likevel?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Bruk systemets regionale innstillinger</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Bruk den valgte profilen for dette utstyret.</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

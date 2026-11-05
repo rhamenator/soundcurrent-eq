@@ -138,7 +138,16 @@
     "Whole listening system",
     "Measured listening position",
     "Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2",
-    "SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included."
+    "SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.",
+    "Add a JSON profile to your saved library.",
+    "Turn measured response data into a correction curve.",
+    "Create a new correction profile.",
+    "Edit a copy; keep the original unchanged.",
+    "Export the selected profile to a JSON file.",
+    "Use the selected profile for this equipment.",
+    "Delete this saved custom profile.",
+    "Show saved custom profiles only.",
+    "Close the dialog; keep the applied correction."
   ],
   "languages": {
     "de": [
@@ -281,7 +290,16 @@
       "Gesamtes Hörsystem",
       "Gemessene Hörposition",
       "Gemeinsamer Frequenzgang von Lautsprecher/Verstärker/Mikrofon/Raum; keine Einzelmessung eines Geräts. %1 / %2",
-      "SoundCurrent-Messung mit Sweep oder Tönen; relativ zum Median; Mikrofon-EQ umgangen. Wiedergabe-EQ kann enthalten sein."
+      "SoundCurrent-Messung mit Sweep oder Tönen; relativ zum Median; Mikrofon-EQ umgangen. Wiedergabe-EQ kann enthalten sein.",
+      "Ein JSON-Profil zur gespeicherten Bibliothek hinzufügen.",
+      "Gemessene Frequenzgangdaten in eine Korrekturkurve umwandeln.",
+      "Ein neues Korrekturprofil erstellen.",
+      "Eine Kopie bearbeiten; das Original bleibt unverändert.",
+      "Das ausgewählte Profil als JSON-Datei exportieren.",
+      "Das ausgewählte Profil für dieses Gerät verwenden.",
+      "Dieses gespeicherte benutzerdefinierte Profil löschen.",
+      "Nur gespeicherte benutzerdefinierte Profile anzeigen.",
+      "Dialog schließen; die angewendete Korrektur bleibt aktiv."
     ],
     "fr": [
       "Français",
@@ -423,7 +441,16 @@
       "Système d’écoute complet",
       "Position d’écoute mesurée",
       "Réponse combinée des enceintes, de l’amplificateur, du microphone et de la pièce ; ce n’est pas une mesure isolée d’un équipement. %1 / %2",
-      "Mesure SoundCurrent par balayage ou sons ; relative à la médiane ; égalisation du microphone contournée. L’égalisation de lecture peut être incluse."
+      "Mesure SoundCurrent par balayage ou sons ; relative à la médiane ; égalisation du microphone contournée. L’égalisation de lecture peut être incluse.",
+      "Ajouter un profil JSON à la bibliothèque enregistrée.",
+      "Convertir les mesures de réponse en courbe de correction.",
+      "Créer un nouveau profil de correction.",
+      "Modifier une copie sans changer l’original.",
+      "Exporter le profil sélectionné dans un fichier JSON.",
+      "Utiliser le profil sélectionné pour cet équipement.",
+      "Supprimer ce profil personnalisé enregistré.",
+      "Afficher uniquement les profils personnalisés enregistrés.",
+      "Fermer la fenêtre en conservant la correction appliquée."
     ],
     "es": [
       "Español",
@@ -565,7 +592,16 @@
       "Sistema de escucha completo",
       "Posición de escucha medida",
       "Respuesta combinada de altavoces/amplificador/micrófono/sala; no es una medición aislada de un equipo. %1 / %2",
-      "Medición SoundCurrent con barrido o tonos; relativa a la mediana; ecualización del micrófono omitida. Puede incluir la ecualización de reproducción."
+      "Medición SoundCurrent con barrido o tonos; relativa a la mediana; ecualización del micrófono omitida. Puede incluir la ecualización de reproducción.",
+      "Añadir un perfil JSON a la biblioteca guardada.",
+      "Convertir los datos de respuesta medidos en una curva de corrección.",
+      "Crear un nuevo perfil de corrección.",
+      "Editar una copia sin cambiar el original.",
+      "Exportar el perfil seleccionado a un archivo JSON.",
+      "Usar el perfil seleccionado para este equipo.",
+      "Eliminar este perfil personalizado guardado.",
+      "Mostrar solo los perfiles personalizados guardados.",
+      "Cerrar el diálogo y mantener la corrección aplicada."
     ],
     "it": [
       "Italiano",
@@ -707,7 +743,16 @@
       "Intero sistema d’ascolto",
       "Posizione d’ascolto misurata",
       "Risposta combinata di diffusori/amplificatore/microfono/ambiente; non è una misura isolata di un dispositivo. %1 / %2",
-      "Misura SoundCurrent con scansione o toni; relativa alla mediana; EQ del microfono esclusa. Può includere l’EQ di riproduzione."
+      "Misura SoundCurrent con scansione o toni; relativa alla mediana; EQ del microfono esclusa. Può includere l’EQ di riproduzione.",
+      "Aggiungi un profilo JSON alla libreria salvata.",
+      "Converti i dati di risposta misurati in una curva di correzione.",
+      "Crea un nuovo profilo di correzione.",
+      "Modifica una copia senza cambiare l’originale.",
+      "Esporta il profilo selezionato in un file JSON.",
+      "Usa il profilo selezionato per questa apparecchiatura.",
+      "Elimina questo profilo personalizzato salvato.",
+      "Mostra solo i profili personalizzati salvati.",
+      "Chiudi la finestra mantenendo la correzione applicata."
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -849,7 +894,16 @@
       "Sistema de audição completo",
       "Posição de audição medida",
       "Resposta combinada de colunas/amplificador/microfone/sala; não é uma medição isolada de um equipamento. %1 / %2",
-      "Medição SoundCurrent com varrimento ou tons; relativa à mediana; equalização do microfone ignorada. Pode incluir a equalização de reprodução."
+      "Medição SoundCurrent com varrimento ou tons; relativa à mediana; equalização do microfone ignorada. Pode incluir a equalização de reprodução.",
+      "Adicionar um perfil JSON à biblioteca guardada.",
+      "Converter os dados de resposta medidos numa curva de correção.",
+      "Criar um novo perfil de correção.",
+      "Editar uma cópia sem alterar o original.",
+      "Exportar o perfil selecionado para um ficheiro JSON.",
+      "Utilizar o perfil selecionado para este equipamento.",
+      "Eliminar este perfil personalizado guardado.",
+      "Mostrar apenas perfis personalizados guardados.",
+      "Fechar a janela e manter a correção aplicada."
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -991,7 +1045,16 @@
       "Sistema de escuta completo",
       "Posição de escuta medida",
       "Resposta combinada de caixas de som/amplificador/microfone/ambiente; não é uma medição isolada de um equipamento. %1 / %2",
-      "Medição SoundCurrent com varredura ou tons; relativa à mediana; equalização do microfone ignorada. Pode incluir a equalização de reprodução."
+      "Medição SoundCurrent com varredura ou tons; relativa à mediana; equalização do microfone ignorada. Pode incluir a equalização de reprodução.",
+      "Adicionar um perfil JSON à biblioteca salva.",
+      "Converter os dados de resposta medidos em uma curva de correção.",
+      "Criar um novo perfil de correção.",
+      "Editar uma cópia sem alterar o original.",
+      "Exportar o perfil selecionado para um arquivo JSON.",
+      "Usar o perfil selecionado para este equipamento.",
+      "Excluir este perfil personalizado salvo.",
+      "Mostrar apenas perfis personalizados salvos.",
+      "Fechar a janela e manter a correção aplicada."
     ],
     "nl": [
       "Nederlands",
@@ -1133,7 +1196,16 @@
       "Volledig luistersysteem",
       "Gemeten luisterpositie",
       "Gecombineerde respons van luidspreker/versterker/microfoon/ruimte; geen afzonderlijke meting van een apparaat. %1 / %2",
-      "SoundCurrent-meting met sweep of tonen; relatief ten opzichte van de mediaan; microfoon-EQ omzeild. Afspeel-EQ kan inbegrepen zijn."
+      "SoundCurrent-meting met sweep of tonen; relatief ten opzichte van de mediaan; microfoon-EQ omzeild. Afspeel-EQ kan inbegrepen zijn.",
+      "Voeg een JSON-profiel toe aan de opgeslagen bibliotheek.",
+      "Zet gemeten responsgegevens om in een correctiecurve.",
+      "Maak een nieuw correctieprofiel.",
+      "Bewerk een kopie; het origineel blijft ongewijzigd.",
+      "Exporteer het geselecteerde profiel naar een JSON-bestand.",
+      "Gebruik het geselecteerde profiel voor dit apparaat.",
+      "Verwijder dit opgeslagen aangepaste profiel.",
+      "Toon alleen opgeslagen aangepaste profielen.",
+      "Sluit het venster; de toegepaste correctie blijft actief."
     ],
     "pl": [
       "Polski",
@@ -1275,7 +1347,16 @@
       "Cały system odsłuchowy",
       "Zmierzona pozycja odsłuchowa",
       "Łączna charakterystyka głośników/wzmacniacza/mikrofonu/pomieszczenia; nie jest to oddzielny pomiar urządzenia. %1 / %2",
-      "Pomiar SoundCurrent z przemiataniem częstotliwości lub tonami; względem mediany; korekcja mikrofonu pominięta. Może obejmować korekcję odtwarzania."
+      "Pomiar SoundCurrent z przemiataniem częstotliwości lub tonami; względem mediany; korekcja mikrofonu pominięta. Może obejmować korekcję odtwarzania.",
+      "Dodaj profil JSON do zapisanej biblioteki.",
+      "Przekształć zmierzoną charakterystykę w krzywą korekcji.",
+      "Utwórz nowy profil korekcji.",
+      "Edytuj kopię, zachowując oryginał bez zmian.",
+      "Eksportuj wybrany profil do pliku JSON.",
+      "Użyj wybranego profilu dla tego urządzenia.",
+      "Usuń ten zapisany profil własny.",
+      "Pokaż tylko zapisane profile własne.",
+      "Zamknij okno, zachowując zastosowaną korekcję."
     ],
     "cs": [
       "Čeština",
@@ -1417,7 +1498,16 @@
       "Celá poslechová soustava",
       "Změřená poslechová pozice",
       "Společná odezva reproduktorů/zesilovače/mikrofonu/místnosti; nejde o samostatné měření zařízení. %1 / %2",
-      "Měření SoundCurrent frekvenčním přeběhem nebo tóny; vzhledem k mediánu; mikrofonní EQ vynechán. Může zahrnovat EQ přehrávání."
+      "Měření SoundCurrent frekvenčním přeběhem nebo tóny; vzhledem k mediánu; mikrofonní EQ vynechán. Může zahrnovat EQ přehrávání.",
+      "Přidat profil JSON do uložené knihovny.",
+      "Převést naměřenou odezvu na korekční křivku.",
+      "Vytvořit nový korekční profil.",
+      "Upravit kopii a ponechat originál beze změny.",
+      "Exportovat vybraný profil do souboru JSON.",
+      "Použít vybraný profil pro toto zařízení.",
+      "Smazat tento uložený vlastní profil.",
+      "Zobrazit pouze uložené vlastní profily.",
+      "Zavřít dialog a zachovat použitou korekci."
     ],
     "sk": [
       "Slovenčina",
@@ -1559,7 +1649,16 @@
       "Celá posluchová sústava",
       "Zmeraná posluchová pozícia",
       "Spoločná odozva reproduktorov/zosilňovača/mikrofónu/miestnosti; nejde o samostatné meranie zariadenia. %1 / %2",
-      "Meranie SoundCurrent frekvenčným prebehom alebo tónmi; vzhľadom na medián; mikrofónový EQ vynechaný. Môže zahŕňať EQ prehrávania."
+      "Meranie SoundCurrent frekvenčným prebehom alebo tónmi; vzhľadom na medián; mikrofónový EQ vynechaný. Môže zahŕňať EQ prehrávania.",
+      "Pridať profil JSON do uloženej knižnice.",
+      "Previesť nameranú odozvu na korekčnú krivku.",
+      "Vytvoriť nový korekčný profil.",
+      "Upraviť kópiu a ponechať originál bez zmeny.",
+      "Exportovať vybraný profil do súboru JSON.",
+      "Použiť vybraný profil pre toto zariadenie.",
+      "Odstrániť tento uložený vlastný profil.",
+      "Zobraziť iba uložené vlastné profily.",
+      "Zavrieť dialóg a zachovať použitú korekciu."
     ],
     "uk": [
       "Українська",
@@ -1701,7 +1800,16 @@
       "Уся система прослуховування",
       "Виміряне місце прослуховування",
       "Сумарна характеристика динаміків/підсилювача/мікрофона/кімнати; це не окреме вимірювання обладнання. %1 / %2",
-      "Вимірювання SoundCurrent частотним розгортанням або тонами; відносно медіани; еквалайзер мікрофона обійдено. Може включати еквалайзер відтворення."
+      "Вимірювання SoundCurrent частотним розгортанням або тонами; відносно медіани; еквалайзер мікрофона обійдено. Може включати еквалайзер відтворення.",
+      "Додати профіль JSON до збереженої бібліотеки.",
+      "Перетворити виміряну характеристику на криву корекції.",
+      "Створити новий профіль корекції.",
+      "Редагувати копію, не змінюючи оригінал.",
+      "Експортувати вибраний профіль у файл JSON.",
+      "Використати вибраний профіль для цього обладнання.",
+      "Видалити цей збережений власний профіль.",
+      "Показати лише збережені власні профілі.",
+      "Закрити діалог, зберігши застосовану корекцію."
     ],
     "ru": [
       "Русский",
@@ -1843,7 +1951,16 @@
       "Вся система прослушивания",
       "Измеренное место прослушивания",
       "Суммарная характеристика динамиков/усилителя/микрофона/комнаты; это не отдельное измерение оборудования. %1 / %2",
-      "Измерение SoundCurrent частотной развёрткой или тонами; относительно медианы; эквалайзер микрофона обойдён. Может включать эквалайзер воспроизведения."
+      "Измерение SoundCurrent частотной развёрткой или тонами; относительно медианы; эквалайзер микрофона обойдён. Может включать эквалайзер воспроизведения.",
+      "Добавить профиль JSON в сохранённую библиотеку.",
+      "Преобразовать измеренную характеристику в кривую коррекции.",
+      "Создать новый профиль коррекции.",
+      "Редактировать копию, не изменяя оригинал.",
+      "Экспортировать выбранный профиль в файл JSON.",
+      "Использовать выбранный профиль для этого оборудования.",
+      "Удалить этот сохранённый пользовательский профиль.",
+      "Показать только сохранённые пользовательские профили.",
+      "Закрыть диалог, сохранив применённую коррекцию."
     ],
     "el": [
       "Ελληνικά",
@@ -1985,7 +2102,16 @@
       "Ολόκληρο το σύστημα ακρόασης",
       "Μετρημένη θέση ακρόασης",
       "Συνδυασμένη απόκριση ηχείων/ενισχυτή/μικροφώνου/χώρου· δεν είναι μεμονωμένη μέτρηση εξοπλισμού. %1 / %2",
-      "Μέτρηση SoundCurrent με σάρωση ή τόνους· ως προς τη διάμεσο· παρακάμφθηκε η ισοστάθμιση μικροφώνου. Μπορεί να περιλαμβάνεται η ισοστάθμιση αναπαραγωγής."
+      "Μέτρηση SoundCurrent με σάρωση ή τόνους· ως προς τη διάμεσο· παρακάμφθηκε η ισοστάθμιση μικροφώνου. Μπορεί να περιλαμβάνεται η ισοστάθμιση αναπαραγωγής.",
+      "Προσθήκη προφίλ JSON στην αποθηκευμένη βιβλιοθήκη.",
+      "Μετατροπή μετρημένης απόκρισης σε καμπύλη διόρθωσης.",
+      "Δημιουργία νέου προφίλ διόρθωσης.",
+      "Επεξεργασία αντιγράφου χωρίς αλλαγή του πρωτοτύπου.",
+      "Εξαγωγή του επιλεγμένου προφίλ σε αρχείο JSON.",
+      "Χρήση του επιλεγμένου προφίλ για αυτόν τον εξοπλισμό.",
+      "Διαγραφή αυτού του αποθηκευμένου προσαρμοσμένου προφίλ.",
+      "Εμφάνιση μόνο αποθηκευμένων προσαρμοσμένων προφίλ.",
+      "Κλείσιμο του διαλόγου με διατήρηση της εφαρμοσμένης διόρθωσης."
     ],
     "tr": [
       "Türkçe",
@@ -2127,7 +2253,16 @@
       "Tüm dinleme sistemi",
       "Ölçülen dinleme konumu",
       "Hoparlör/amplifikatör/mikrofon/oda birleşik yanıtı; tek bir ekipmanın bağımsız ölçümü değildir. %1 / %2",
-      "SoundCurrent tarama veya ton ölçümü; medyana göre; mikrofon EQ’su atlandı. Oynatma EQ’su dahil olabilir."
+      "SoundCurrent tarama veya ton ölçümü; medyana göre; mikrofon EQ’su atlandı. Oynatma EQ’su dahil olabilir.",
+      "Kayıtlı kitaplığa bir JSON profili ekleyin.",
+      "Ölçülen tepki verilerini bir düzeltme eğrisine dönüştürün.",
+      "Yeni bir düzeltme profili oluşturun.",
+      "Bir kopyayı düzenleyin; özgün dosya değişmesin.",
+      "Seçili profili bir JSON dosyasına aktarın.",
+      "Seçili profili bu ekipman için kullanın.",
+      "Bu kayıtlı özel profili silin.",
+      "Yalnızca kayıtlı özel profilleri gösterin.",
+      "İletişim kutusunu kapatın; uygulanan düzeltme korunsun."
     ],
     "sv": [
       "Svenska",
@@ -2269,7 +2404,16 @@
       "Hela lyssningssystemet",
       "Uppmätt lyssningsposition",
       "Samlad respons från högtalare/förstärkare/mikrofon/rum; ingen separat mätning av en enhet. %1 / %2",
-      "SoundCurrent-mätning med svep eller toner; relativt medianen; mikrofon-EQ förbikopplad. Uppspelnings-EQ kan ingå."
+      "SoundCurrent-mätning med svep eller toner; relativt medianen; mikrofon-EQ förbikopplad. Uppspelnings-EQ kan ingå.",
+      "Lägg till en JSON-profil i det sparade biblioteket.",
+      "Omvandla uppmätt frekvensgång till en korrigeringskurva.",
+      "Skapa en ny korrigeringsprofil.",
+      "Redigera en kopia och lämna originalet oförändrat.",
+      "Exportera den valda profilen till en JSON-fil.",
+      "Använd den valda profilen för den här utrustningen.",
+      "Ta bort den här sparade anpassade profilen.",
+      "Visa endast sparade anpassade profiler.",
+      "Stäng dialogrutan och behåll den tillämpade korrigeringen."
     ],
     "da": [
       "Dansk",
@@ -2411,7 +2555,16 @@
       "Hele lyttesystemet",
       "Målt lytteposition",
       "Samlet respons fra højttalere/forstærker/mikrofon/rum; ikke en isoleret måling af en enhed. %1 / %2",
-      "SoundCurrent-måling med sweep eller toner; relativt til medianen; mikrofon-EQ omgået. Afspilnings-EQ kan indgå."
+      "SoundCurrent-måling med sweep eller toner; relativt til medianen; mikrofon-EQ omgået. Afspilnings-EQ kan indgå.",
+      "Føj en JSON-profil til det gemte bibliotek.",
+      "Omdan målte responsdata til en korrektionskurve.",
+      "Opret en ny korrektionsprofil.",
+      "Rediger en kopi, og bevar originalen uændret.",
+      "Eksportér den valgte profil til en JSON-fil.",
+      "Brug den valgte profil til dette udstyr.",
+      "Slet denne gemte brugerdefinerede profil.",
+      "Vis kun gemte brugerdefinerede profiler.",
+      "Luk dialogen, og bevar den anvendte korrektion."
     ],
     "nb": [
       "Norsk bokmål",
@@ -2553,7 +2706,16 @@
       "Hele lyttesystemet",
       "Målt lytteposisjon",
       "Samlet respons fra høyttalere/forsterker/mikrofon/rom; ikke en isolert måling av en enhet. %1 / %2",
-      "SoundCurrent-måling med frekvenssveip eller toner; relativt til medianen; mikrofon-EQ forbigått. Avspillings-EQ kan være inkludert."
+      "SoundCurrent-måling med frekvenssveip eller toner; relativt til medianen; mikrofon-EQ forbigått. Avspillings-EQ kan være inkludert.",
+      "Legg til en JSON-profil i det lagrede biblioteket.",
+      "Gjør målte responsdata om til en korreksjonskurve.",
+      "Opprett en ny korreksjonsprofil.",
+      "Rediger en kopi; behold originalen uendret.",
+      "Eksporter den valgte profilen til en JSON-fil.",
+      "Bruk den valgte profilen for dette utstyret.",
+      "Slett denne lagrede egendefinerte profilen.",
+      "Vis bare lagrede egendefinerte profiler.",
+      "Lukk dialogen; behold den brukte korreksjonen."
     ],
     "fi": [
       "Suomi",
@@ -2695,7 +2857,16 @@
       "Koko kuuntelujärjestelmä",
       "Mitattu kuuntelupaikka",
       "Kaiuttimien/vahvistimen/mikrofonin/huoneen yhteisvaste; ei yksittäisen laitteen erillinen mittaus. %1 / %2",
-      "SoundCurrent-mittaus taajuuspyyhkäisyllä tai sävelillä; suhteessa mediaaniin; mikrofonin EQ ohitettu. Toiston EQ voi sisältyä mittaukseen."
+      "SoundCurrent-mittaus taajuuspyyhkäisyllä tai sävelillä; suhteessa mediaaniin; mikrofonin EQ ohitettu. Toiston EQ voi sisältyä mittaukseen.",
+      "Lisää JSON-profiili tallennettuun kirjastoon.",
+      "Muunna mitattu vastedata korjauskäyräksi.",
+      "Luo uusi korjausprofiili.",
+      "Muokkaa kopiota; säilytä alkuperäinen ennallaan.",
+      "Vie valittu profiili JSON-tiedostoon.",
+      "Käytä valittua profiilia tälle laitteelle.",
+      "Poista tämä tallennettu mukautettu profiili.",
+      "Näytä vain tallennetut mukautetut profiilit.",
+      "Sulje valintaikkuna; säilytä käytössä oleva korjaus."
     ],
     "ro": [
       "Română",
@@ -2837,7 +3008,16 @@
       "Întregul sistem de audiție",
       "Poziția de audiție măsurată",
       "Răspuns combinat al boxelor/amplificatorului/microfonului/camerei; nu este o măsurare izolată a unui echipament. %1 / %2",
-      "Măsurare SoundCurrent prin baleiaj sau tonuri; relativă la mediană; egalizarea microfonului ocolită. Poate include egalizarea redării."
+      "Măsurare SoundCurrent prin baleiaj sau tonuri; relativă la mediană; egalizarea microfonului ocolită. Poate include egalizarea redării.",
+      "Adaugă un profil JSON în biblioteca salvată.",
+      "Transformă datele de răspuns măsurate într-o curbă de corecție.",
+      "Creează un profil de corecție nou.",
+      "Editează o copie, păstrând originalul neschimbat.",
+      "Exportă profilul selectat într-un fișier JSON.",
+      "Folosește profilul selectat pentru acest echipament.",
+      "Șterge acest profil personalizat salvat.",
+      "Afișează doar profilurile personalizate salvate.",
+      "Închide dialogul, păstrând corecția aplicată."
     ],
     "hu": [
       "Magyar",
@@ -2979,7 +3159,16 @@
       "Teljes hallgatási rendszer",
       "Mért hallgatási pozíció",
       "A hangszórók/erősítő/mikrofon/szoba együttes frekvenciamenete; nem egyetlen eszköz külön mérése. %1 / %2",
-      "SoundCurrent-mérés frekvenciasöpréssel vagy hangokkal; a mediánhoz viszonyítva; a mikrofon EQ-ja megkerülve. A lejátszási EQ hatása szerepelhet benne."
+      "SoundCurrent-mérés frekvenciasöpréssel vagy hangokkal; a mediánhoz viszonyítva; a mikrofon EQ-ja megkerülve. A lejátszási EQ hatása szerepelhet benne.",
+      "JSON-profil hozzáadása a mentett könyvtárhoz.",
+      "Mért átviteli adatok átalakítása korrekciós görbévé.",
+      "Új korrekciós profil létrehozása.",
+      "Másolat szerkesztése az eredeti módosítása nélkül.",
+      "A kijelölt profil exportálása JSON-fájlba.",
+      "A kijelölt profil használata ehhez az eszközhöz.",
+      "A mentett egyéni profil törlése.",
+      "Csak a mentett egyéni profilok megjelenítése.",
+      "Az ablak bezárása az alkalmazott korrekció megtartásával."
     ],
     "ar": [
       "العربية",
@@ -3121,7 +3310,16 @@
       "نظام الاستماع بالكامل",
       "موضع الاستماع المقاس",
       "استجابة مشتركة للسماعات ومضخم الصوت والميكروفون والغرفة؛ ليست قياسًا منفصلًا لجهاز واحد. %1 / %2",
-      "قياس SoundCurrent بمسح ترددي أو نغمات؛ بالنسبة إلى الوسيط؛ تم تجاوز معادل الميكروفون. قد يتضمن معادل التشغيل."
+      "قياس SoundCurrent بمسح ترددي أو نغمات؛ بالنسبة إلى الوسيط؛ تم تجاوز معادل الميكروفون. قد يتضمن معادل التشغيل.",
+      "أضف ملف تعريف JSON إلى مكتبتك المحفوظة.",
+      "حوّل بيانات الاستجابة المقاسة إلى منحنى تصحيح.",
+      "أنشئ ملف تعريف تصحيح جديدًا.",
+      "حرّر نسخة مع إبقاء الأصل دون تغيير.",
+      "صدّر ملف التعريف المحدد إلى ملف JSON.",
+      "استخدم ملف التعريف المحدد لهذا الجهاز.",
+      "احذف ملف التعريف المخصص المحفوظ هذا.",
+      "اعرض ملفات التعريف المخصصة المحفوظة فقط.",
+      "أغلق مربع الحوار مع إبقاء التصحيح المطبق."
     ],
     "he": [
       "עברית",
@@ -3263,7 +3461,16 @@
       "מערכת ההאזנה כולה",
       "מיקום ההאזנה שנמדד",
       "תגובה משולבת של הרמקולים/המגבר/המיקרופון/החדר; זו אינה מדידה נפרדת של ציוד יחיד. %1 / %2",
-      "מדידת SoundCurrent באמצעות סריקת תדרים או צלילים; ביחס לחציון; אקולייזר המיקרופון נעקף. ייתכן שאקולייזר ההשמעה נכלל."
+      "מדידת SoundCurrent באמצעות סריקת תדרים או צלילים; ביחס לחציון; אקולייזר המיקרופון נעקף. ייתכן שאקולייזר ההשמעה נכלל.",
+      "הוסף פרופיל JSON לספרייה השמורה.",
+      "המר נתוני תגובה שנמדדו לעקומת תיקון.",
+      "צור פרופיל תיקון חדש.",
+      "ערוך עותק והשאר את המקור ללא שינוי.",
+      "ייצא את הפרופיל שנבחר לקובץ JSON.",
+      "השתמש בפרופיל שנבחר עבור ציוד זה.",
+      "מחק פרופיל מותאם אישית שמור זה.",
+      "הצג רק פרופילים מותאמים אישית שנשמרו.",
+      "סגור את החלון והשאר את התיקון שהוחל."
     ],
     "fa": [
       "فارسی",
@@ -3405,7 +3612,16 @@
       "کل سامانهٔ شنیدن",
       "موقعیت شنیدن اندازه‌گیری‌شده",
       "پاسخ ترکیبی بلندگو/تقویت‌کننده/میکروفون/اتاق؛ اندازه‌گیری جداگانهٔ یک دستگاه نیست. %1 / %2",
-      "اندازه‌گیری SoundCurrent با جاروب فرکانسی یا نواها؛ نسبت به میانه؛ اکولایزر میکروفون دور زده شده است. ممکن است اکولایزر پخش را شامل شود."
+      "اندازه‌گیری SoundCurrent با جاروب فرکانسی یا نواها؛ نسبت به میانه؛ اکولایزر میکروفون دور زده شده است. ممکن است اکولایزر پخش را شامل شود.",
+      "یک نمایه JSON به کتابخانهٔ ذخیره‌شده اضافه کنید.",
+      "داده‌های پاسخ اندازه‌گیری‌شده را به منحنی اصلاح تبدیل کنید.",
+      "یک نمایهٔ اصلاح جدید بسازید.",
+      "یک کپی را ویرایش کنید؛ اصل را بدون تغییر نگه دارید.",
+      "نمایهٔ انتخاب‌شده را در یک فایل JSON صادر کنید.",
+      "از نمایهٔ انتخاب‌شده برای این تجهیزات استفاده کنید.",
+      "این نمایهٔ سفارشی ذخیره‌شده را حذف کنید.",
+      "فقط نمایه‌های سفارشی ذخیره‌شده را نشان دهید.",
+      "پنجره را ببندید؛ اصلاح اعمال‌شده را نگه دارید."
     ],
     "zh-Hans": [
       "简体中文",
@@ -3547,7 +3763,16 @@
       "完整聆听系统",
       "已测量的聆听位置",
       "扬声器、功放、麦克风和房间的综合响应；不是单个设备的独立测量。%1 / %2",
-      "SoundCurrent 扫频或音调测量；相对于中位数；已绕过麦克风均衡。可能包含播放均衡的影响。"
+      "SoundCurrent 扫频或音调测量；相对于中位数；已绕过麦克风均衡。可能包含播放均衡的影响。",
+      "将 JSON 配置文件添加到已保存的资料库。",
+      "将测得的响应数据转换为校正曲线。",
+      "创建新的校正配置。",
+      "编辑副本，保留原件不变。",
+      "将选中的配置导出为 JSON 文件。",
+      "为此设备使用选中的配置。",
+      "删除此已保存的自定义配置。",
+      "仅显示已保存的自定义配置。",
+      "关闭对话框，保留已应用的校正。"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -3689,7 +3914,16 @@
       "完整聆聽系統",
       "已量測的聆聽位置",
       "喇叭、擴大機、麥克風和房間的綜合響應；不是單一設備的獨立量測。%1 / %2",
-      "SoundCurrent 掃頻或音調量測；相對於中位數；已繞過麥克風等化。可能包含播放等化的影響。"
+      "SoundCurrent 掃頻或音調量測；相對於中位數；已繞過麥克風等化。可能包含播放等化的影響。",
+      "將 JSON 設定檔加入已儲存的資料庫。",
+      "將量測的響應資料轉換為校正曲線。",
+      "建立新的校正設定檔。",
+      "編輯副本，保留原始檔不變。",
+      "將選取的設定檔匯出為 JSON 檔案。",
+      "為此設備使用選取的設定檔。",
+      "刪除此已儲存的自訂設定檔。",
+      "僅顯示已儲存的自訂設定檔。",
+      "關閉對話框，保留已套用的校正。"
     ],
     "ja": [
       "日本語",
@@ -3831,7 +4065,16 @@
       "リスニングシステム全体",
       "測定したリスニング位置",
       "スピーカー／アンプ／マイク／部屋の総合応答。個別機器の独立した測定ではありません。%1 / %2",
-      "SoundCurrent のスイープまたはトーンによる測定。中央値を基準とし、マイク EQ はバイパスしています。再生 EQ の影響が含まれる場合があります。"
+      "SoundCurrent のスイープまたはトーンによる測定。中央値を基準とし、マイク EQ はバイパスしています。再生 EQ の影響が含まれる場合があります。",
+      "JSONプロファイルを保存済みライブラリに追加します。",
+      "測定した応答データから補正カーブを作成します。",
+      "新しい補正プロファイルを作成します。",
+      "元の内容を変えずにコピーを編集します。",
+      "選択したプロファイルをJSONファイルに書き出します。",
+      "この機器に選択したプロファイルを使用します。",
+      "この保存済みカスタムプロファイルを削除します。",
+      "保存済みのカスタムプロファイルだけを表示します。",
+      "適用した補正を維持してダイアログを閉じます。"
     ],
     "ko": [
       "한국어",
@@ -3973,7 +4216,16 @@
       "전체 청취 시스템",
       "측정한 청취 위치",
       "스피커/앰프/마이크/방의 종합 응답이며, 개별 장비를 따로 측정한 결과가 아닙니다. %1 / %2",
-      "SoundCurrent 스윕 또는 톤 측정; 중앙값 기준; 마이크 EQ 우회됨. 재생 EQ의 영향이 포함될 수 있습니다."
+      "SoundCurrent 스윕 또는 톤 측정; 중앙값 기준; 마이크 EQ 우회됨. 재생 EQ의 영향이 포함될 수 있습니다.",
+      "JSON 프로필을 저장된 라이브러리에 추가합니다.",
+      "측정한 응답 데이터를 보정 곡선으로 변환합니다.",
+      "새 보정 프로필을 만듭니다.",
+      "원본을 변경하지 않고 복사본을 편집합니다.",
+      "선택한 프로필을 JSON 파일로 내보냅니다.",
+      "이 장비에 선택한 프로필을 사용합니다.",
+      "이 저장된 사용자 지정 프로필을 삭제합니다.",
+      "저장된 사용자 지정 프로필만 표시합니다.",
+      "적용된 보정을 유지하고 대화 상자를 닫습니다."
     ],
     "hi": [
       "हिन्दी",
@@ -4115,7 +4367,16 @@
       "संपूर्ण श्रवण प्रणाली",
       "मापी गई सुनने की स्थिति",
       "स्पीकर/एम्प्लीफायर/माइक्रोफ़ोन/कमरे की संयुक्त प्रतिक्रिया; यह किसी एक उपकरण का अलग मापन नहीं है। %1 / %2",
-      "SoundCurrent स्वीप या टोन मापन; माध्यिका के सापेक्ष; माइक्रोफ़ोन EQ बायपास किया गया। प्लेबैक EQ शामिल हो सकता है।"
+      "SoundCurrent स्वीप या टोन मापन; माध्यिका के सापेक्ष; माइक्रोफ़ोन EQ बायपास किया गया। प्लेबैक EQ शामिल हो सकता है।",
+      "सहेजी गई लाइब्रेरी में JSON प्रोफ़ाइल जोड़ें।",
+      "मापे गए प्रतिक्रिया डेटा से सुधार वक्र बनाएँ।",
+      "नई सुधार प्रोफ़ाइल बनाएँ।",
+      "प्रतिलिपि संपादित करें; मूल को अपरिवर्तित रखें।",
+      "चुनी गई प्रोफ़ाइल को JSON फ़ाइल में निर्यात करें।",
+      "इस उपकरण के लिए चुनी गई प्रोफ़ाइल का उपयोग करें।",
+      "इस सहेजी गई कस्टम प्रोफ़ाइल को हटाएँ।",
+      "केवल सहेजी गई कस्टम प्रोफ़ाइल दिखाएँ।",
+      "संवाद बंद करें; लागू सुधार बनाए रखें।"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -4257,7 +4518,16 @@
       "Seluruh sistem dengar",
       "Posisi dengar yang diukur",
       "Respons gabungan speaker/penguat/mikrofon/ruangan; bukan pengukuran terpisah satu perangkat. %1 / %2",
-      "Pengukuran SoundCurrent dengan sapuan frekuensi atau nada; relatif terhadap median; EQ mikrofon dilewati. EQ pemutaran mungkin disertakan."
+      "Pengukuran SoundCurrent dengan sapuan frekuensi atau nada; relatif terhadap median; EQ mikrofon dilewati. EQ pemutaran mungkin disertakan.",
+      "Tambahkan profil JSON ke pustaka tersimpan.",
+      "Ubah data respons terukur menjadi kurva koreksi.",
+      "Buat profil koreksi baru.",
+      "Edit salinan; biarkan aslinya tetap utuh.",
+      "Ekspor profil yang dipilih ke berkas JSON.",
+      "Gunakan profil yang dipilih untuk perangkat ini.",
+      "Hapus profil kustom tersimpan ini.",
+      "Tampilkan hanya profil kustom tersimpan.",
+      "Tutup dialog; pertahankan koreksi yang diterapkan."
     ],
     "vi": [
       "Tiếng Việt",
@@ -4399,7 +4669,16 @@
       "Toàn bộ hệ thống nghe",
       "Vị trí nghe đã đo",
       "Đáp tuyến tổng hợp của loa/bộ khuếch đại/micrô/phòng; không phải phép đo riêng một thiết bị. %1 / %2",
-      "Phép đo SoundCurrent bằng quét tần số hoặc âm thử; so với trung vị; bỏ qua EQ micrô. Có thể bao gồm ảnh hưởng của EQ phát lại."
+      "Phép đo SoundCurrent bằng quét tần số hoặc âm thử; so với trung vị; bỏ qua EQ micrô. Có thể bao gồm ảnh hưởng của EQ phát lại.",
+      "Thêm hồ sơ JSON vào thư viện đã lưu.",
+      "Chuyển dữ liệu đáp ứng đo được thành đường cong hiệu chỉnh.",
+      "Tạo hồ sơ hiệu chỉnh mới.",
+      "Chỉnh sửa bản sao, giữ nguyên bản gốc.",
+      "Xuất hồ sơ đã chọn thành tệp JSON.",
+      "Dùng hồ sơ đã chọn cho thiết bị này.",
+      "Xóa hồ sơ tùy chỉnh đã lưu này.",
+      "Chỉ hiển thị hồ sơ tùy chỉnh đã lưu.",
+      "Đóng hộp thoại, giữ hiệu chỉnh đã áp dụng."
     ],
     "th": [
       "ไทย",
@@ -4541,7 +4820,16 @@
       "ระบบการฟังทั้งหมด",
       "ตำแหน่งฟังที่วัดแล้ว",
       "การตอบสนองรวมของลำโพง/เครื่องขยายเสียง/ไมโครโฟน/ห้อง ไม่ใช่การวัดอุปกรณ์ชิ้นเดียวแยกต่างหาก %1 / %2",
-      "การวัด SoundCurrent ด้วยการกวาดความถี่หรือโทนเสียง โดยเทียบกับมัธยฐานและข้าม EQ ไมโครโฟน อาจรวมผลของ EQ การเล่นเสียงด้วย"
+      "การวัด SoundCurrent ด้วยการกวาดความถี่หรือโทนเสียง โดยเทียบกับมัธยฐานและข้าม EQ ไมโครโฟน อาจรวมผลของ EQ การเล่นเสียงด้วย",
+      "เพิ่มโปรไฟล์ JSON ลงในคลังที่บันทึกไว้",
+      "แปลงข้อมูลการตอบสนองที่วัดได้เป็นเส้นโค้งแก้ไข",
+      "สร้างโปรไฟล์การแก้ไขใหม่",
+      "แก้ไขสำเนาโดยคงต้นฉบับไว้",
+      "ส่งออกโปรไฟล์ที่เลือกเป็นไฟล์ JSON",
+      "ใช้โปรไฟล์ที่เลือกกับอุปกรณ์นี้",
+      "ลบโปรไฟล์กำหนดเองที่บันทึกไว้นี้",
+      "แสดงเฉพาะโปรไฟล์กำหนดเองที่บันทึกไว้",
+      "ปิดกล่องโต้ตอบโดยคงการแก้ไขที่ใช้อยู่"
     ],
     "sw": [
       "Kiswahili",
@@ -4683,7 +4971,16 @@
       "Mfumo mzima wa usikilizaji",
       "Nafasi ya kusikiliza iliyopimwa",
       "Mwitikio wa pamoja wa spika/amplifaya/maikrofoni/chumba; si kipimo cha kifaa kimoja pekee. %1 / %2",
-      "Kipimo cha SoundCurrent kwa kufagia masafa au toni; kulingana na thamani ya kati; EQ ya maikrofoni imepitwa. EQ ya uchezaji inaweza kujumuishwa."
+      "Kipimo cha SoundCurrent kwa kufagia masafa au toni; kulingana na thamani ya kati; EQ ya maikrofoni imepitwa. EQ ya uchezaji inaweza kujumuishwa.",
+      "Ongeza wasifu wa JSON kwenye maktaba iliyohifadhiwa.",
+      "Badilisha data ya mwitikio iliyopimwa kuwa mkunjo wa marekebisho.",
+      "Unda wasifu mpya wa marekebisho.",
+      "Hariri nakala; acha asili bila mabadiliko.",
+      "Hamisha wasifu uliochaguliwa kwenye faili la JSON.",
+      "Tumia wasifu uliochaguliwa kwa kifaa hiki.",
+      "Futa wasifu huu maalumu uliohifadhiwa.",
+      "Onyesha wasifu maalumu uliohifadhiwa pekee.",
+      "Funga kidirisha; hifadhi marekebisho yaliyotumika."
     ],
     "nn": [
       "Norsk nynorsk",
@@ -4825,7 +5122,16 @@
       "Heile lyttesystemet",
       "Målt lytteposisjon",
       "Samla respons frå høgtalarar/forsterkar/mikrofon/rom; ikkje ei isolert måling av ei eining. %1 / %2",
-      "SoundCurrent-måling med frekvenssveip eller tonar; relativt til medianen; mikrofon-EQ forbigått. Avspelings-EQ kan vere inkludert."
+      "SoundCurrent-måling med frekvenssveip eller tonar; relativt til medianen; mikrofon-EQ forbigått. Avspelings-EQ kan vere inkludert.",
+      "Legg til ein JSON-profil i det lagra biblioteket.",
+      "Gjer målte responsdata om til ei korreksjonskurve.",
+      "Opprett ein ny korreksjonsprofil.",
+      "Rediger ein kopi; lat originalen vere uendra.",
+      "Eksporter den valde profilen til ei JSON-fil.",
+      "Bruk den valde profilen for dette utstyret.",
+      "Slett denne lagra eigendefinerte profilen.",
+      "Vis berre lagra eigendefinerte profilar.",
+      "Lukk dialogen; behald korreksjonen som er teken i bruk."
     ]
   },
   "requiredCompleteLocales": [

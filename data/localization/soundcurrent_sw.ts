@@ -158,6 +158,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Yenye amplifaya / bila amplifaya / haijulikani</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Ongeza wasifu wa JSON kwenye maktaba iliyohifadhiwa.</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>Ongeza kichujio</translation>
     </message>
@@ -636,6 +640,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Funga</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Funga kidirisha; hifadhi marekebisho yaliyotumika.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Spika ya safu wima</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Unataka kuifuta hata hivyo?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Unda wasifu mpya wa marekebisho.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Unda folda mpya</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Unataka kuifuta hata hivyo?</translation>
       <source>Delete</source>
       <translation>Futa</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Futa wasifu huu maalumu uliohifadhiwa.</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Unataka kuifuta hata hivyo?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Hariri / hifadhi nakala</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Hariri nakala; acha asili bila mabadiliko.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Unataka kuifuta hata hivyo?</translation>
     <message>
       <source>Export profile</source>
       <translation>Hamisha wasifu</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Hamisha wasifu uliochaguliwa kwenye faili la JSON.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Onyesha alama za kilele kwenye viwango vya masafa</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Onyesha wasifu maalumu uliohifadhiwa pekee.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Onyesha ukubwa</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Washa kisawazishi</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Badilisha data ya mwitikio iliyopimwa kuwa mkunjo wa marekebisho.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Aina</translation>
     </message>
@@ -2857,6 +2889,10 @@ Unataka kuifuta hata hivyo?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Tumia mipangilio ya eneo ya mfumo</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Tumia wasifu uliochaguliwa kwa kifaa hiki.</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

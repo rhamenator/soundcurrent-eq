@@ -158,6 +158,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Aktif / pasif / tidak diketahui</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Tambahkan profil JSON ke pustaka tersimpan.</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>Tambah filter</translation>
     </message>
@@ -636,6 +640,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Tutup</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Tutup dialog; pertahankan koreksi yang diterapkan.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Speaker kolom</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Buat profil koreksi baru.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Buat folder baru</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <source>Delete</source>
       <translation>Hapus</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Hapus profil kustom tersimpan ini.</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Edit / simpan salinan</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Edit salinan; biarkan aslinya tetap utuh.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
     <message>
       <source>Export profile</source>
       <translation>Ekspor profil</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Ekspor profil yang dipilih ke berkas JSON.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Tampilkan penanda puncak pada level frekuensi</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Tampilkan hanya profil kustom tersimpan.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Tampilkan ukuran</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Aktifkan equalizer</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Ubah data respons terukur menjadi kurva koreksi.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Jenis</translation>
     </message>
@@ -2857,6 +2889,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Gunakan pengaturan wilayah sistem</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Gunakan profil yang dipilih untuk perangkat ini.</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

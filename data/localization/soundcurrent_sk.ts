@@ -158,6 +158,10 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Aktívny / pasívny / neznámy</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Pridať profil JSON do uloženej knižnice.</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>Pridať filter</translation>
     </message>
@@ -636,6 +640,10 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Zavrieť</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Zavrieť dialóg a zachovať použitú korekciu.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Stĺpový reproduktor na ozvučenie</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Chcete ho aj tak zmazať?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Vytvoriť nový korekčný profil.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Vytvoriť nový priečinok</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Chcete ho aj tak zmazať?</translation>
       <source>Delete</source>
       <translation>Odstrániť</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Odstrániť tento uložený vlastný profil.</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Chcete ho aj tak zmazať?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Upraviť / uložiť kópiu</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Upraviť kópiu a ponechať originál bez zmeny.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Chcete ho aj tak zmazať?</translation>
     <message>
       <source>Export profile</source>
       <translation>Exportovať profil</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Exportovať vybraný profil do súboru JSON.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Zobraziť značky špičiek frekvenčných úrovní</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Zobraziť iba uložené vlastné profily.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Zobraziť veľkosť</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Zapnúť ekvalizér</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Previesť nameranú odozvu na korekčnú krivku.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Typ</translation>
     </message>
@@ -2857,6 +2889,10 @@ Chcete ho aj tak zmazať?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Použiť miestne nastavenia systému</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Použiť vybraný profil pre toto zariadenie.</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

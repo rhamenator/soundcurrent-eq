@@ -1,3 +1,4 @@
+#include "button_help.h"
 #include "localized_file_dialog.h"
 #include "localization.h"
 #include "equipment_display_text.h"
@@ -20,6 +21,8 @@
 #include <QJsonDocument>
 #include <QLabel>
 #include <QLineEdit>
+#include <QCheckBox>
+#include <QListWidget>
 #include <QMessageBox>
 #include <QMouseEvent>
 #include <QPainter>
@@ -186,8 +189,15 @@ class Editor : public QDialog {
         originalId = draft.id;
         originalProvenance = draft.provenance;
         setWindowTitle(SC_TR("Equipment profile editor"));
-        resize(760, 650);
-        auto *layout = new QVBoxLayout(this);
+        soundcurrent::ui::installButtonHelp();
+        const auto available = screen()->availableGeometry();
+        resize(std::min(760, available.width()-40), std::min(650, available.height()-40));
+        auto *outer = new QVBoxLayout(this);
+        auto *scroll = new QScrollArea;
+        scroll->setWidgetResizable(true);
+        auto *content = new QWidget;
+        auto *layout = new QVBoxLayout(content);
+        scroll->setWidget(content); outer->addWidget(scroll);
         auto *form = new QFormLayout;
         auto field = [&](const QString &label, const QString &value, int maximumLength = 120) {
             auto *e = new QLineEdit(value);
@@ -248,7 +258,7 @@ class Editor : public QDialog {
             }
         });
         auto *buttons = new QDialogButtonBox(QDialogButtonBox::Save | QDialogButtonBox::Cancel);
-        layout->addWidget(buttons);
+        outer->addWidget(buttons);
         QObject::connect(buttons, &QDialogButtonBox::accepted, this, [this] {
             if (persist())
                 accept();
@@ -506,6 +516,7 @@ void saveNewProfile(QWidget *parent, Profile p) {
 }
 void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &apply, const QString &initialKind) {
     QDialog dialog(parent);
+    soundcurrent::ui::installButtonHelp();
     dialog.setWindowTitle(SC_TR("Equipment profiles — brand / family / model"));
     const auto available = dialog.screen()->availableGeometry();
     dialog.resize(std::max(1,std::min(800,available.width()-40)),
@@ -537,6 +548,16 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     layout->addWidget(legend);
     auto *plot = new Plot;
     layout->addWidget(plot);
+    auto *customOnly = new QCheckBox(SC_TR("Custom"));
+    customOnly->setObjectName("customProfilesOnly");
+    customOnly->setToolTip(SC_TR("Show saved custom profiles only."));
+    layout->insertWidget(0, customOnly);
+    auto *customList = new QListWidget;
+    customList->setObjectName("savedCustomProfiles");
+    customList->setAccessibleName(SC_TR("Custom"));
+    customList->setMaximumHeight(125);
+    customList->hide();
+    layout->insertWidget(layout->indexOf(details), customList);
     QVector<Profile> custom = loadLibrary(), profiles = bundledProfiles();
     const int bundledCount = profiles.size();
     profiles += custom;
@@ -598,17 +619,25 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     auto refresh = [&] {
         refreshing = true;
         list->clear();
+        customList->clear();
         list->addItem(SC_TR("None — use my own EQ"), -1);
         for (int i = 0; i < profiles.size(); ++i) {
             const auto &p = profiles[i];
             const QString name =
                 (p.kind == "speaker" ? SC_TR("Speaker") : p.kind == "microphone" ? SC_TR("Microphone") : SC_TR("Amplifier")) + " / " + p.brand + " / " + p.family + " / " + p.model + (p.custom ? SC_TR(" [custom]") : QString());
-            if ((kindFilter->currentIndex() == 0 || p.kind == kindFilter->currentData().toString()) &&
+            if ((!customOnly->isChecked() || i >= bundledCount) && (kindFilter->currentIndex() == 0 || p.kind == kindFilter->currentData().toString()) &&
                 (brandFilter->currentIndex() == 0 || p.brand == brandFilter->currentText()) &&
                 (familyFilter->currentIndex() == 0 || p.family == familyFilter->currentText()) &&
                 (subtypeFilter->currentIndex()==0 || p.equipmentType==subtypeFilter->currentData().toString()) &&
                 (name + " " + p.conditions).contains(search->text(), Qt::CaseInsensitive))
+            {
                 list->addItem(name, i);
+                if (i >= bundledCount) {
+                    auto *item = new QListWidgetItem(name, customList);
+                    item->setData(Qt::UserRole, list->count() - 1);
+                    item->setToolTip(name);
+                }
+            }
         }
         list->setCurrentIndex(0);
         noneWasApplied = false;
@@ -635,6 +664,14 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         remove->setEnabled(selected && i >= bundledCount);
     };
     QObject::connect(list, &QComboBox::currentIndexChanged, &dialog, updateRemove);
+    QObject::connect(customOnly, &QCheckBox::toggled, &dialog, [&](bool on) {
+        if (on) { const QSignalBlocker a(brandFilter), b(familyFilter), c(subtypeFilter);
+            brandFilter->setCurrentIndex(0); familyFilter->setCurrentIndex(0); subtypeFilter->setCurrentIndex(0); }
+        customList->setVisible(on); taxonomyRefresh(); refresh();
+    });
+    QObject::connect(customList, &QListWidget::currentItemChanged, &dialog, [&](QListWidgetItem *item) {
+        if (!refreshing && item) list->setCurrentIndex(item->data(Qt::UserRole).toInt());
+    });
     QObject::connect(search, &QLineEdit::textChanged, &dialog, [&] { refresh(); });
     QObject::connect(kindFilter, &QComboBox::currentIndexChanged, &dialog, [&] {
         taxonomyRefresh();
@@ -683,7 +720,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         }
     };
     auto *row = new QGridLayout;
-    layout->addLayout(row);
+    layout->insertLayout(layout->indexOf(details), row);
     QVector<QPushButton *> actions;
     auto button = [&](const QString &label) {
         auto *b = new QPushButton(label);
@@ -695,7 +732,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     auto *create = button(SC_TR("Create profile"));
     auto *edit = button(SC_TR("Edit / save copy"));
     auto *exportButton = button(SC_TR("Export JSON"));
-    auto *use = button(SC_TR("Apply profile"));
+    auto *use = new QPushButton(SC_TR("Apply profile"));
     auto updateSelectionActions = [&] {
         const bool selected = list->currentIndex() >= 0 && list->currentData().toInt() >= 0;
         edit->setEnabled(selected); exportButton->setEnabled(selected);
@@ -895,8 +932,19 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     for (auto *action : actions) actionWidth = std::max(actionWidth, action->sizeHint().width());
     const int columns = std::clamp((dialog.width() - 64) / (actionWidth + std::max(6, row->spacing())), 1, 3);
     for (int i = 0; i < actions.size(); ++i) row->addWidget(actions[i], i / columns, i % columns);
+    import->setToolTip(SC_TR("Add a JSON profile to your saved library."));
+    text->setToolTip(SC_TR("Turn measured response data into a correction curve."));
+    create->setToolTip(SC_TR("Create a new correction profile."));
+    edit->setToolTip(SC_TR("Edit a copy; keep the original unchanged."));
+    exportButton->setToolTip(SC_TR("Export the selected profile to a JSON file."));
+    use->setToolTip(SC_TR("Use the selected profile for this equipment."));
+    remove->setToolTip(SC_TR("Delete this saved custom profile."));
+    auto *primary = new QHBoxLayout;
+    primary->addWidget(use); primary->addStretch();
+    outer->addLayout(primary);
     auto *close = new QDialogButtonBox(QDialogButtonBox::Close);
-    outer->addWidget(close);
+    primary->addWidget(close);
+    close->button(QDialogButtonBox::Close)->setToolTip(SC_TR("Close the dialog; keep the applied correction."));
     QObject::connect(close, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
     refresh();
     updateRemove();

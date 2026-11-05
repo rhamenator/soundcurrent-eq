@@ -158,6 +158,10 @@ Do you want to delete it anyway?</source>
       <translation>アクティブ / パッシブ / 不明</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>JSONプロファイルを保存済みライブラリに追加します。</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>フィルターを追加</translation>
     </message>
@@ -636,6 +640,10 @@ Do you want to delete it anyway?</source>
       <translation>閉じる</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>適用した補正を維持してダイアログを閉じます。</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>コラム型スピーカー</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>新しい補正プロファイルを作成します。</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>新しいフォルダの作成</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Do you want to delete it anyway?</source>
       <source>Delete</source>
       <translation>削除</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>この保存済みカスタムプロファイルを削除します。</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Edit / save copy</source>
       <translation>編集 / コピーを保存</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>元の内容を変えずにコピーを編集します。</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Export profile</source>
       <translation>プロファイルをエクスポート</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>選択したプロファイルをJSONファイルに書き出します。</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Do you want to delete it anyway?</source>
       <translation>周波数ごとのレベルにピークマーカーを表示</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>保存済みのカスタムプロファイルだけを表示します。</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>サイズを表示</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Do you want to delete it anyway?</source>
       <translation>イコライザーをオン</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>測定した応答データから補正カーブを作成します。</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>種類</translation>
     </message>
@@ -2857,6 +2889,10 @@ Do you want to delete it anyway?</source>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>システムの地域設定を使用</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>この機器に選択したプロファイルを使用します。</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

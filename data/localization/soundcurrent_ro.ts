@@ -158,6 +158,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Activ / pasiv / necunoscut</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Adaugă un profil JSON în biblioteca salvată.</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>Adăugați filtru</translation>
     </message>
@@ -636,6 +640,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Închideți</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Închide dialogul, păstrând corecția aplicată.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Boxă coloană pentru sonorizare</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Doriți să îl ștergeți totuși?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Creează un profil de corecție nou.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Creează un dosar nou</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Doriți să îl ștergeți totuși?</translation>
       <source>Delete</source>
       <translation>Șterge</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Șterge acest profil personalizat salvat.</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Doriți să îl ștergeți totuși?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Editați / salvați copie</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Editează o copie, păstrând originalul neschimbat.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Doriți să îl ștergeți totuși?</translation>
     <message>
       <source>Export profile</source>
       <translation>Exportați profil</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Exportă profilul selectat într-un fișier JSON.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Afișați marcajele de vârf pe nivelurile de frecvență</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Afișează doar profilurile personalizate salvate.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Arată dimensiunea</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Porniți egalizatorul</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Transformă datele de răspuns măsurate într-o curbă de corecție.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Tip</translation>
     </message>
@@ -2857,6 +2889,10 @@ Doriți să îl ștergeți totuși?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Folosiți setările regionale ale sistemului</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Folosește profilul selectat pentru acest echipament.</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

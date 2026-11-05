@@ -158,6 +158,10 @@ Do you want to delete it anyway?</source>
       <translation>액티브 / 패시브 / 알 수 없음</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>JSON 프로필을 저장된 라이브러리에 추가합니다.</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>필터 추가</translation>
     </message>
@@ -636,6 +640,10 @@ Do you want to delete it anyway?</source>
       <translation>닫기</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>적용된 보정을 유지하고 대화 상자를 닫습니다.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>컬럼 스피커</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>새 보정 프로필을 만듭니다.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>새 폴더 만들기</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Do you want to delete it anyway?</source>
       <source>Delete</source>
       <translation>삭제</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>이 저장된 사용자 지정 프로필을 삭제합니다.</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Edit / save copy</source>
       <translation>편집 / 사본 저장</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>원본을 변경하지 않고 복사본을 편집합니다.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Export profile</source>
       <translation>프로파일 내보내기</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>선택한 프로필을 JSON 파일로 내보냅니다.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Do you want to delete it anyway?</source>
       <translation>주파수 레벨에 피크 마커 표시</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>저장된 사용자 지정 프로필만 표시합니다.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>크기 표시</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Do you want to delete it anyway?</source>
       <translation>이퀄라이저 켜기</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>측정한 응답 데이터를 보정 곡선으로 변환합니다.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>유형</translation>
     </message>
@@ -2857,6 +2889,10 @@ Do you want to delete it anyway?</source>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>시스템 지역 설정 사용</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>이 장비에 선택한 프로필을 사용합니다.</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

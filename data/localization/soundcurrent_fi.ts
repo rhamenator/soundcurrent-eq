@@ -158,6 +158,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Aktiivinen / passiivinen / tuntematon</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>Lisää JSON-profiili tallennettuun kirjastoon.</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>Lisää suodatin</translation>
     </message>
@@ -636,6 +640,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Sulje</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>Sulje valintaikkuna; säilytä käytössä oleva korjaus.</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>Pylväskaiutin</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Haluatko silti poistaa sen?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>Luo uusi korjausprofiili.</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>Uusi kansio</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Haluatko silti poistaa sen?</translation>
       <source>Delete</source>
       <translation>Poista</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>Poista tämä tallennettu mukautettu profiili.</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Haluatko silti poistaa sen?</translation>
     <message>
       <source>Edit / save copy</source>
       <translation>Muokkaa / tallenna kopio</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>Muokkaa kopiota; säilytä alkuperäinen ennallaan.</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Haluatko silti poistaa sen?</translation>
     <message>
       <source>Export profile</source>
       <translation>Vie profiili</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>Vie valittu profiili JSON-tiedostoon.</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Näytä huippumerkit taajuustasoilla</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>Näytä vain tallennetut mukautetut profiilit.</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>Näytä koko</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Ota taajuuskorjain käyttöön</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>Muunna mitattu vastedata korjauskäyräksi.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Tyyppi</translation>
     </message>
@@ -2857,6 +2889,10 @@ Haluatko silti poistaa sen?</translation>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>Käytä järjestelmän alueasetuksia</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>Käytä valittua profiilia tälle laitteelle.</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

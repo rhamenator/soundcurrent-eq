@@ -158,6 +158,10 @@ Do you want to delete it anyway?</source>
       <translation>ऐक्टिव / पैसिव / अज्ञात</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>सहेजी गई लाइब्रेरी में JSON प्रोफ़ाइल जोड़ें।</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>फ़िल्टर जोड़ें</translation>
     </message>
@@ -636,6 +640,10 @@ Do you want to delete it anyway?</source>
       <translation>बंद करें</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>संवाद बंद करें; लागू सुधार बनाए रखें।</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>कॉलम स्पीकर</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>नई सुधार प्रोफ़ाइल बनाएँ।</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>नया फ़ोल्डर बनाएँ</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Do you want to delete it anyway?</source>
       <source>Delete</source>
       <translation>हटाएँ</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>इस सहेजी गई कस्टम प्रोफ़ाइल को हटाएँ।</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Edit / save copy</source>
       <translation>संपादित करें / कॉपी सहेजें</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>प्रतिलिपि संपादित करें; मूल को अपरिवर्तित रखें।</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Export profile</source>
       <translation>प्रोफ़ाइल निर्यात करें</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>चुनी गई प्रोफ़ाइल को JSON फ़ाइल में निर्यात करें।</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Do you want to delete it anyway?</source>
       <translation>आवृत्ति स्तरों पर पीक चिह्न दिखाएँ</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>केवल सहेजी गई कस्टम प्रोफ़ाइल दिखाएँ।</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>आकार दिखाएँ</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Do you want to delete it anyway?</source>
       <translation>इक्वलाइज़र चालू करें</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>मापे गए प्रतिक्रिया डेटा से सुधार वक्र बनाएँ।</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>प्रकार</translation>
     </message>
@@ -2857,6 +2889,10 @@ Do you want to delete it anyway?</source>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>सिस्टम की क्षेत्रीय सेटिंग इस्तेमाल करें</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>इस उपकरण के लिए चुनी गई प्रोफ़ाइल का उपयोग करें।</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>

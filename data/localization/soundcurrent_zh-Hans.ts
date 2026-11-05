@@ -158,6 +158,10 @@ Do you want to delete it anyway?</source>
       <translation>有源 / 无源 / 未知</translation>
     </message>
     <message>
+      <source>Add a JSON profile to your saved library.</source>
+      <translation>将 JSON 配置文件添加到已保存的资料库。</translation>
+    </message>
+    <message>
       <source>Add filter</source>
       <translation>添加滤波器</translation>
     </message>
@@ -636,6 +640,10 @@ Do you want to delete it anyway?</source>
       <translation>关闭</translation>
     </message>
     <message>
+      <source>Close the dialog; keep the applied correction.</source>
+      <translation>关闭对话框，保留已应用的校正。</translation>
+    </message>
+    <message>
       <source>Column speaker</source>
       <translation>声柱音箱</translation>
       <extracomment>Column-format speaker for sound reinforcement, distinct from the floorstanding home speaker category.</extracomment>
@@ -796,6 +804,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Create a new correction profile.</source>
+      <translation>创建新的校正配置。</translation>
+    </message>
+    <message>
       <source>Create new folder</source>
       <translation>新建文件夹</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -839,6 +851,10 @@ Do you want to delete it anyway?</source>
       <source>Delete</source>
       <translation>删除</translation>
       <extracomment>Qt text-editing context-menu action; operates on text selection and clipboard, not files or audio processing.</extracomment>
+    </message>
+    <message>
+      <source>Delete this saved custom profile.</source>
+      <translation>删除此已保存的自定义配置。</translation>
     </message>
     <message>
       <source>Detail view</source>
@@ -912,6 +928,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Edit / save copy</source>
       <translation>编辑 / 保存副本</translation>
+    </message>
+    <message>
+      <source>Edit a copy; keep the original unchanged.</source>
+      <translation>编辑副本，保留原件不变。</translation>
     </message>
     <message>
       <source>Effects</source>
@@ -1091,6 +1111,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Export profile</source>
       <translation>导出配置</translation>
+    </message>
+    <message>
+      <source>Export the selected profile to a JSON file.</source>
+      <translation>将选中的配置导出为 JSON 文件。</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -2451,6 +2475,10 @@ Do you want to delete it anyway?</source>
       <translation>在频率电平上显示峰值标记</translation>
     </message>
     <message>
+      <source>Show saved custom profiles only.</source>
+      <translation>仅显示已保存的自定义配置。</translation>
+    </message>
+    <message>
       <source>Show size</source>
       <translation>显示大小</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2765,6 +2793,10 @@ Do you want to delete it anyway?</source>
       <translation>开启均衡器</translation>
     </message>
     <message>
+      <source>Turn measured response data into a correction curve.</source>
+      <translation>将测得的响应数据转换为校正曲线。</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>类型</translation>
     </message>
@@ -2857,6 +2889,10 @@ Do you want to delete it anyway?</source>
       <source>Use system locale</source>
       <extracomment>Use the operating system regional number/date formatting settings; independent of interface language.</extracomment>
       <translation>使用系统区域设置</translation>
+    </message>
+    <message>
+      <source>Use the selected profile for this equipment.</source>
+      <translation>为此设备使用选中的配置。</translation>
     </message>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
