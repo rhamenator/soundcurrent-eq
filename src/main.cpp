@@ -2637,10 +2637,11 @@ public:
         };
         check(); filterSpeakers(); check();
         {
-            MainWindow reopened(false);
-            if (reopened.speakerCombo_->currentData().toString() != imported.id ||
-                reopened.speakerCorrection().size() != imported.filters.size() ||
-                reopened.speakerCorrection()[0].gain != imported.filters[0].gainDb)
+            // Windows' default thread stack cannot hold a second full audio engine.
+            const auto reopened = std::make_unique<MainWindow>(false);
+            if (reopened->speakerCombo_->currentData().toString() != imported.id ||
+                reopened->speakerCorrection().size() != imported.filters.size() ||
+                reopened->speakerCorrection()[0].gain != imported.filters[0].gainDb)
                 qFatal("Reopening lost imported speaker selection or correction");
         }
         if (QSettings().value("speakerModelId").toString() != imported.id) qFatal("Imported selection not persisted");
