@@ -124,8 +124,12 @@ int main(int argc,char **argv) {
             require(subtype->currentData().toString()=="Bookshelf","Display caption changed subtype identity");
             kind->setCurrentIndex(1);require(subtype->currentData().toString()=="Bookshelf","Taxonomy refresh lost stable subtype selection");
             subtype->setCurrentIndex(0);kind->setCurrentIndex(2);kind->setCurrentIndex(0);phase=1;clickLater(button(library,"Import JSON"));}
-        else if(phase==3){phase=4;clickLater(button(library,"Import JSON"));}
-        else if(phase==6){require(!applied,"Importing or saving implicitly changed audio");auto profiles=loadLibrary();require(profiles.size()==2 && profiles[0].id==originalId,"Valid import overwrote existing profile");phase=8;clickLater(button(library,"Apply profile"));}
+        else if(phase==3){library->findChild<QCheckBox *>("customProfilesOnly")->setChecked(true);phase=4;clickLater(button(library,"Import JSON"));}
+        else if(phase==6){require(!applied,"Importing or saving implicitly changed audio");auto profiles=loadLibrary();require(profiles.size()==2 && profiles[0].id==originalId,"Valid import overwrote existing profile");
+            auto *saved=library->findChild<QListWidget *>("savedCustomProfiles");
+            require(saved && saved->currentItem(),"Imported custom profile is not visibly selected");
+            phase=7;QTimer::singleShot(0,saved,[saved]{QMetaObject::invokeMethod(saved,"itemClicked",Qt::DirectConnection,Q_ARG(QListWidgetItem *,saved->currentItem()));});}
+        else if(phase==7){if(!applied)return;applied=false;phase=8;clickLater(button(library,"Apply profile"));}
         else if(phase==8){if(!applied)return;phase=9;}
         else if(phase==9){
             auto *feedback=library->findChild<QLabel *>("appliedEquipmentProfile");

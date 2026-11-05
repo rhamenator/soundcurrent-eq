@@ -678,9 +678,15 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     QObject::connect(customList, &QListWidget::currentItemChanged, &dialog, [&](QListWidgetItem *item) {
         if (!refreshing && item) list->setCurrentIndex(item->data(Qt::UserRole).toInt());
     });
-    QObject::connect(customList, &QListWidget::itemClicked, &dialog, [&](QListWidgetItem *item) {
-        if (!refreshing && item) list->setCurrentIndex(item->data(Qt::UserRole).toInt());
-    });
+    auto activateCustom = [&](QListWidgetItem *item) {
+        if (refreshing || !item) return;
+        const int row = item->data(Qt::UserRole).toInt();
+        list->setCurrentIndex(row);
+        // Import selects a displayed row without applying it. An explicit click/Enter still applies.
+        QMetaObject::invokeMethod(list, "activated", Qt::DirectConnection, Q_ARG(int, row));
+    };
+    QObject::connect(customList, &QListWidget::itemClicked, &dialog, activateCustom);
+    QObject::connect(customList, &QListWidget::itemActivated, &dialog, activateCustom);
     QObject::connect(search, &QLineEdit::textChanged, &dialog, [&] { refresh(); });
     QObject::connect(kindFilter, &QComboBox::currentIndexChanged, &dialog, [&] {
         taxonomyRefresh();
