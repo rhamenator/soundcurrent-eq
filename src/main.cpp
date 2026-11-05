@@ -2690,6 +2690,10 @@ public:
         toggleHelp.setText(SC_TR("Hide advanced controls"));
         soundcurrent::ui::describeButton(&toggleHelp);
         if (!toggleHelp.accessibleDescription().contains(SC_TR("Hide advanced controls"))) qFatal("Cached help retained stale toggle caption");
+        QPushButton literalHelp(QStringLiteral("Literal <b>name</b>"));
+        soundcurrent::ui::describeButton(&literalHelp);
+        if (literalHelp.accessibleDescription() != literalHelp.text() || !literalHelp.toolTip().contains("&lt;b&gt;"))
+            qFatal("Contextual help interpreted literal button text as markup");
     }
 
 private:

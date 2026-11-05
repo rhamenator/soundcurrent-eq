@@ -8,6 +8,11 @@
 #include <QLabel>
 #include <QTextDocument>
 namespace soundcurrent::ui {
+// Help must never fetch images or files while converting existing rich labels.
+class HelpTextDocument final : public QTextDocument {
+protected:
+    QVariant loadResource(int, const QUrl &) override { return {}; }
+};
 inline void describeButton(QAbstractButton *button) {
     if (!button) return;
     if (button->property("soundcurrentHelpReady").toBool() &&
@@ -31,13 +36,19 @@ inline void describeButton(QAbstractButton *button) {
         if (context) for (auto *label : context->findChildren<QLabel *>()) {
             const auto text = label->text();
             if (label->wordWrap() && text.size() >= 80 && text.size() <= 500) {
-                QTextDocument plain; plain.setHtml(text);
-                description += "\n\n" + plain.toPlainText(); break;
+                QString contextText = text;
+                if (label->textFormat() == Qt::RichText ||
+                    (label->textFormat() == Qt::AutoText && Qt::mightBeRichText(text))) {
+                    HelpTextDocument plain; plain.setHtml(text); contextText = plain.toPlainText();
+                }
+                description += "\n\n" + contextText; break;
             }
         }
     }
-    QTextDocument plain; plain.setHtml(description);
-    const auto accessible = plain.toPlainText();
+    QString accessible = description;
+    if (!contextual && Qt::mightBeRichText(description)) {
+        HelpTextDocument plain; plain.setHtml(description); accessible = plain.toPlainText();
+    }
     if (contextual) {
         button->setProperty("soundcurrentGeneratedHelp", true);
         const auto tip = Qt::convertFromPlainText(description);
