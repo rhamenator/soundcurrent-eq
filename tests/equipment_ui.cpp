@@ -353,6 +353,105 @@ int main(int argc,char **argv) {
         if(notifications==1 || notifications==3)require(p.id.isEmpty() && p.kind=="amplifier","None cleared wrong equipment route");
         else require(!p.id.isEmpty() && !p.filters.isEmpty(),"Correction selection had no filters");
     },"amplifier");drive.stop();require(immediateChecked,"Immediate profile selection workflow incomplete");
+    // Edit a real imported correction, keep its measurement/source immutable,
+    // apply the edited copy and reopen it without importing the file again.
+    const auto imported = parse(importBytes);
+    const auto originalJson = serialize(imported);
+    saveLibrary({imported});
+    phase=0;int editApplications=0;Profile edited;
+    QObject::disconnect(&drive,nullptr,&app,nullptr);
+    QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        if(auto *editor=dialog("Equipment profile editor")) {
+            if(phase==1) {
+                auto *gain=editor->findChild<QSlider *>("profilePointGain");
+                require(gain,"Imported profile has no graph gain slider");
+                gain->setValue(gain->value()==20 ? -20 : 20);
+                editor->findChild<QLineEdit *>("profileModel")->setText(imported.model+" edited");
+                const auto captures=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
+                if(!captures.isEmpty())editor->grab().save(QDir(captures).filePath("imported-profile-editor.png"));
+                phase=2;clickLater(editor->findChild<QDialogButtonBox *>()->button(QDialogButtonBox::Save));
+            }
+            return;
+        }
+        auto *library=dialog("Equipment profiles — brand / family / model");if(!library)return;
+        if(phase==0) {
+            require(editApplications==0 && loadLibrary().size()==1,"Opening an imported selection changed audio or library");
+            auto *list=library->findChild<QComboBox *>("equipmentProfileList");
+            require(list->currentText().contains(imported.model) && button(library,"Edit / save copy")->isEnabled(),"Active import is not selected for editing");
+            phase=1;clickLater(button(library,"Edit / save copy"));
+        } else if(phase==2) {
+            const auto saved=loadLibrary();require(saved.size()==2 && serialize(saved.front())==originalJson,"Editing overwrote the imported original");
+            edited=saved.back();
+            require(edited.id!=imported.id && edited.custom && edited.model==imported.model+" edited","Edited copy identity/name not saved");
+            require(edited.filters.front().gainDb!=imported.filters.front().gainDb,"Edited import did not save its changed curve");
+            auto before=originalJson,after=serialize(edited);
+            require(before["response"]==after["response"] && edited.source==imported.source && edited.conditions==imported.conditions,"Editing changed imported measurements or attribution");
+            require(editApplications==0,"Saving implicitly applied edited profile");
+            phase=3;clickLater(button(library,"Apply profile"));
+        } else if(phase==3 && editApplications==1) {phase=4;closeLater(library);}
+    });
+    drive.start();openLibrary(nullptr,[&](const Profile &p){require(p.id==edited.id && p.filters.front().gainDb==edited.filters.front().gainDb,"Apply did not select edited imported correction");++editApplications;},imported.kind,{},imported);drive.stop();
+    require(phase==4 && editApplications==1,"Imported profile editing workflow incomplete");
+    QObject::disconnect(&drive,nullptr,&app,nullptr);
+    bool editedReopened=false;
+    QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        auto *library=dialog("Equipment profiles — brand / family / model");if(!library)return;
+        require(library->findChild<QComboBox *>("equipmentProfileList")->currentText().contains(edited.model),"Saved edited import not selected after reopen");
+        require(button(library,"Edit / save copy")->isEnabled(),"Reopened edited profile cannot be edited");
+        editedReopened=true;closeLater(library);
+    });
+    drive.start();openLibrary(nullptr,[](const Profile &){qFatal("Reopening edited profile changed audio");},edited.kind,{},edited);drive.stop();require(editedReopened,"Edited import reopening not exercised");
+    // Older active imports without a library entry remain editable, without
+    // writing a new entry merely because the manager was opened.
+    saveLibrary({});QObject::disconnect(&drive,nullptr,&app,nullptr);bool orphanChecked=false;
+    QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        auto *library=dialog("Equipment profiles — brand / family / model");if(!library)return;
+        require(loadLibrary().isEmpty() && library->findChild<QComboBox *>("equipmentProfileList")->currentText().contains(imported.model),"Legacy active import was lost or persisted implicitly");
+        require(button(library,"Edit / save copy")->isEnabled() && !library->findChild<QPushButton *>("deleteEquipmentProfile")->isEnabled(),"Unsaved active import actions invalid");
+        orphanChecked=true;closeLater(library);
+    });
+    drive.start();openLibrary(nullptr,[](const Profile &){qFatal("Opening legacy import changed audio");},imported.kind,{},imported);drive.stop();require(orphanChecked,"Legacy import editing entry point not tested");
+
+    // Reimport selects the existing original without applying it; inactive
+    // deletion preserves audio, and active deletion clears only that route.
+    saveLibrary({imported,edited});
+    std::optional<Profile> activeEquipment=edited;int removedCount=0,selectedCount=0;phase=0;
+    QObject::disconnect(&drive,nullptr,&app,nullptr);
+    QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        for(auto *w:QApplication::topLevelWidgets()) {
+            if(!w->isVisible())continue;
+            if(auto *file=qobject_cast<QFileDialog *>(w)) {
+                if(phase==1){phase=2;const auto filename=valid.fileName();QTimer::singleShot(250,file,[file,filename]{file->findChild<QLineEdit *>("fileNameEdit")->setText(filename);QMetaObject::invokeMethod(file,"accept",Qt::QueuedConnection);});}return;
+            }
+            if(auto *box=qobject_cast<QMessageBox *>(w)) {
+                if(phase==2){phase=3;clickLater(box->button(QMessageBox::Yes));}
+                else if(phase==4){phase=5;clickLater(box->button(QMessageBox::No));}
+                else if(phase==6){phase=7;clickLater(box->button(QMessageBox::Yes));}
+                else if(phase==9){phase=10;clickLater(box->button(QMessageBox::Yes));}
+                return;
+            }
+        }
+        auto *manager=dialog("Equipment profiles — brand / family / model");if(!manager)return;
+        if(phase==0){phase=1;clickLater(button(manager,"Import JSON"));}
+        else if(phase==3){
+            require(loadLibrary().size()==2 && selectedCount==0,"Reimport duplicated a profile or changed audio");
+            require(manager->findChild<QComboBox *>("equipmentProfileList")->currentText().contains(imported.model),"Duplicate import did not select existing entry");
+            require(button(manager,"Delete")->isEnabled(),"Imported reference cannot be deleted");
+            phase=4;clickLater(button(manager,"Delete"));
+        }else if(phase==5){
+            require(loadLibrary().size()==2 && removedCount==0,"Canceling deletion changed saved profiles");
+            phase=6;clickLater(button(manager,"Delete"));
+        }else if(phase==7){
+            require(loadLibrary().size()==1 && loadLibrary().front().id==edited.id && activeEquipment && activeEquipment->id==edited.id && removedCount==1,"Deleting inactive import changed active correction");
+            auto *list=manager->findChild<QComboBox *>("equipmentProfileList");
+            for(int row=1;row<list->count();++row)if(list->itemText(row).contains(edited.model)){list->setCurrentIndex(row);break;}
+            phase=8;
+        }else if(phase==8){require(selectedCount==1,"Edited copy could not be reselected after deleting original");phase=9;clickLater(button(manager,"Delete"));}
+        else if(phase==10){require(loadLibrary().isEmpty() && !activeEquipment && removedCount==2,"Deleting active import left its correction selected");phase=11;closeLater(manager);}
+    });
+    drive.start();openLibrary(nullptr,[&](const Profile &p){++selectedCount;activeEquipment=p;},imported.kind,{},edited,[&](const Profile &p){++removedCount;if(activeEquipment && serialize(*activeEquipment)==serialize(p)){activeEquipment.reset();return true;}return false;});drive.stop();
+    require(phase==11,"Duplicate import / delete workflow incomplete");
+
     QFile::remove(path);
     std::puts("PASS: profile editor change, Cancel/Discard prompt, save, malformed/valid JSON import, preservation and Apply");
     return 0;

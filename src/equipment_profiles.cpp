@@ -884,6 +884,23 @@ QVector<Profile> bundledProfiles() {
     }
     return out;
 }
+Profile importProfile(Profile p) {
+    p = parse(QJsonDocument(serialize(p)).toJson());
+    auto saved = loadLibrary();
+    auto known = saved; known += bundledProfiles();
+    auto content = [](const Profile &profile) {
+        auto json = serialize(profile);
+        for (const auto *key : {"id", "custom", "provenance"}) json.remove(key);
+        return json;
+    };
+    const auto importedContent = content(p);
+    for (const auto &existing : known)
+        if (existing.kind == p.kind && existing.brand == p.brand && existing.model == p.model && content(existing) == importedContent) return existing;
+    if (p.id.isEmpty() || std::any_of(known.begin(), known.end(), [&](const Profile &existing) { return existing.id == p.id; }))
+        p.id = QUuid::createUuid().toString(QUuid::WithoutBraces);
+    saved.append(p); saveLibrary(saved);
+    return p;
+}
 void saveNewProfile(QWidget *parent, Profile p, const Preview &preview) {
     Editor editor(p, parent, [parent](Profile draft) {
         try {
@@ -899,7 +916,7 @@ void saveNewProfile(QWidget *parent, Profile p, const Preview &preview) {
     editor.dirty = true;
     editor.exec();
 }
-void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &apply, const QString &initialKind, const Preview &preview) {
+void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &apply, const QString &initialKind, const Preview &preview, const std::optional<Profile> &initialProfile, const Removed &removed) {
     QDialog dialog(parent);
     soundcurrent::ui::installButtonHelp();
     dialog.setWindowTitle(SC_TR("Equipment profiles — brand / family / model"));
@@ -908,6 +925,8 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
                   std::max(1,std::min(650,available.height()-40)));
     dialog.setObjectName("equipmentProfileManager");
     auto *outer = new QVBoxLayout(&dialog);
+    auto *appliedProfile = new QLabel;
+    auto activeSelection = initialProfile;
     auto *scroll = new QScrollArea;
     scroll->setWidgetResizable(true);
     auto *content = new QWidget;
@@ -947,6 +966,13 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     QVector<Profile> custom = loadLibrary(), profiles = bundledProfiles();
     const int bundledCount = profiles.size();
     profiles += custom;
+    // An active imported correction may predate the saved library. Offer it
+    // for editing without silently persisting it or changing the audio route.
+    if (initialProfile && !initialProfile->id.isEmpty() &&
+        std::none_of(profiles.begin(), profiles.end(), [&](const Profile &p) {
+            return p.id == initialProfile->id && serialize(p) == serialize(*initialProfile);
+        })) profiles.append(*initialProfile);
+
     auto *taxonomy = new QGridLayout;
     auto *kindFilter = new QComboBox;
     kindFilter->setObjectName("equipmentKindFilter");
@@ -1053,7 +1079,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         if (!remove) return;
         const int i = list->currentData().toInt();
         const bool selected = list->currentIndex() >= 0 && i >= 0 && i < profiles.size();
-        remove->setEnabled(selected && i >= bundledCount);
+        remove->setEnabled(selected && i >= bundledCount && i < bundledCount + custom.size());
     };
     QObject::connect(list, &QComboBox::currentIndexChanged, &dialog, updateRemove);
     QObject::connect(customOnly, &QCheckBox::toggled, &dialog, [&](bool on) {
@@ -1084,40 +1110,31 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     });
     QObject::connect(familyFilter, &QComboBox::currentIndexChanged, &dialog, [&] { refresh(); });
     QObject::connect(subtypeFilter,&QComboBox::currentIndexChanged,&dialog,[&]{refresh();});
+    auto selectStored = [&](const Profile &p) {
+        custom = loadLibrary(); profiles = bundledProfiles(); profiles += custom;
+        for (int index = 0; index < bundledCount; ++index)
+            if (profiles[index].id == p.id && serialize(profiles[index]) == serialize(p)) {
+                const QSignalBlocker block(customOnly); customOnly->setChecked(false); customList->hide(); break;
+            }
+        lastAppliedId.clear();
+        {
+            const QSignalBlocker a(kindFilter), b(brandFilter), c(familyFilter), d(search), st(subtypeFilter);
+            kindFilter->setCurrentIndex(std::max(0, kindFilter->findData(p.kind)));
+            brandFilter->setCurrentIndex(0); familyFilter->setCurrentIndex(0); subtypeFilter->setCurrentIndex(0); search->clear();
+        }
+        taxonomyRefresh(); refresh();
+        refreshing = true;
+        for (int i = 1; i < list->count(); ++i)
+            if (profiles[list->itemData(i).toInt()].id == p.id && serialize(profiles[list->itemData(i).toInt()]) == serialize(p)) { list->setCurrentIndex(i); break; }
+        refreshing = false;
+    };
     auto save = [&](Profile p) {
         try {
-            const auto bytes = QJsonDocument(serialize(p)).toJson();
-            p = parse(bytes);
-            auto proposed = custom;
-            proposed.append(p);
-            saveLibrary(proposed);
-            custom = proposed;
-            profiles = bundledProfiles();
-            profiles += custom;
-            // A reimport can retain the ID while changing the curve. Allow explicit reactivation.
-            lastAppliedId.clear();
-            taxonomyRefresh();
-            {
-                const QSignalBlocker a(kindFilter), b(brandFilter), c(familyFilter), d(search), st(subtypeFilter);
-                kindFilter->setCurrentIndex(std::max(0, kindFilter->findData(p.kind)));
-                brandFilter->setCurrentIndex(0);
-                familyFilter->setCurrentIndex(0);
-                subtypeFilter->setCurrentIndex(0);
-                search->clear();
-            }
-            taxonomyRefresh();
-            refresh();
-            for (int i = 0; i < list->count(); ++i)
-                if (list->itemData(i).toInt() >= 0 && profiles[list->itemData(i).toInt()].id == p.id) {
-                    refreshing = true; // Saving is not an audio-selection action.
-                    list->setCurrentIndex(i);
-                    refreshing = false;
-                    break;
-                }
-            return true;
+            p = parse(QJsonDocument(serialize(p)).toJson());
+            auto proposed = custom; proposed.append(p); saveLibrary(proposed);
+            selectStored(p); return true;
         } catch (const std::exception &e) {
-            QMessageBox::warning(&dialog, SC_TR("Profile"), QString::fromUtf8(e.what()));
-            return false;
+            QMessageBox::warning(&dialog, SC_TR("Profile"), QString::fromUtf8(e.what())); return false;
         }
     };
     auto *row = new QGridLayout;
@@ -1154,6 +1171,15 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             saveLibrary(proposed);
             custom = proposed; profiles = bundledProfiles(); profiles += custom;
             taxonomyRefresh(); refresh(); updateRemove();
+            bool cleared = false;
+            if (removed) cleared = removed(selected);
+            else if (activeSelection && serialize(*activeSelection) == serialize(selected)) {
+                Profile none; none.kind = selected.kind; apply(none); cleared = true;
+            }
+            if (cleared) {
+                activeSelection.reset(); lastAppliedId.clear();
+                appliedProfile->setText(QString::fromUtf8("✓ ") + SC_TR("None — use my own EQ"));
+            }
         } catch (const std::exception &e) {
             QMessageBox::warning(&dialog, SC_TR("Profile"), QString::fromUtf8(e.what()));
         }
@@ -1171,7 +1197,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             if (ask(&dialog, SC_TR("Import profile?"),
                     SC_TR("%1 / %2\n%3\nImport into your library?").arg(p.brand, p.model, p.conditions),
                     QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes)
-                save(p);
+                selectStored(importProfile(p));
         } catch (const std::exception &e) {
             QMessageBox::warning(&dialog, SC_TR("Import"), e.what());
         }
@@ -1288,7 +1314,6 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         if (!f.open(QIODevice::WriteOnly) || f.write(bytes) != bytes.size() || !f.commit())
             QMessageBox::warning(&dialog, SC_TR("Export"), SC_TR("Cannot save profile."));
     });
-    auto *appliedProfile = new QLabel;
     appliedProfile->setObjectName("appliedEquipmentProfile");
     appliedProfile->setWordWrap(true);
     appliedProfile->setTextFormat(Qt::PlainText);
@@ -1298,10 +1323,10 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         const int index = list->currentData().toInt();
         if (index < 0) {
             Profile cleared; cleared.kind = kindFilter->currentData().toString();
-            apply(cleared); noneWasApplied = true;
+            apply(cleared); activeSelection.reset(); noneWasApplied = true;
             appliedProfile->setText(QString::fromUtf8("✓ ") + SC_TR("None — use my own EQ"));
         } else {
-            apply(profiles[index]); noneWasApplied = false; lastAppliedId = profiles[index].id;
+            apply(profiles[index]); activeSelection = profiles[index]; noneWasApplied = false; lastAppliedId = profiles[index].id;
             appliedProfile->setText(QString::fromUtf8("✓ ") + profiles[index].brand + " / " + profiles[index].model);
         }
     };
@@ -1348,6 +1373,16 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     close->button(QDialogButtonBox::Close)->setToolTip(SC_TR("Close the dialog; keep the applied correction."));
     QObject::connect(close, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
     refresh();
+    if (initialProfile && !initialProfile->id.isEmpty()) {
+        refreshing = true;
+        for (int row = 1; row < list->count(); ++row)
+            if (profiles[list->itemData(row).toInt()].id == initialProfile->id && serialize(profiles[list->itemData(row).toInt()]) == serialize(*initialProfile)) {
+                list->setCurrentIndex(row);
+                lastAppliedId = initialProfile->id;
+                break;
+            }
+        refreshing = false;
+    }
     updateRemove();
     updateSelectionActions();
     dialog.exec();

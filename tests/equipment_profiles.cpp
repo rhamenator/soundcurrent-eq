@@ -129,6 +129,17 @@ int main(int argc, char **argv) {
         check(microphones>=40 && amplifiers>=15 && lavaliers>=4,"Broad measured microphone/amplifier/lavalier coverage missing");
         saveLibrary({original});
         check(loadLibrary().size() == 1, "atomic save/reopen");
+        const auto firstImport = importProfile(original);
+        check(loadLibrary().size() == 1 && firstImport.id == original.id, "Exact duplicate import added a row");
+        auto duplicate = original; duplicate.id = "different-export-id"; duplicate.custom = true; duplicate.provenance = "Different export wrapper";
+        check(importProfile(duplicate).id == original.id && loadLibrary().size() == 1, "Equivalent export imported twice");
+        auto changed = original; changed.filters[0].gainDb -= 1;
+        const auto different = importProfile(changed);
+        check(different.id != original.id && loadLibrary().size() == 2, "Changed correction overwrote an existing identity");
+        auto otherModel = original; otherModel.model += " other";
+        check(importProfile(otherModel).model == otherModel.model && loadLibrary().size() == 3, "Distinct equipment collapsed just because its curve matched");
+        saveLibrary({original});
+
         // Exercise real modal editor: change gain, close, choose Save in dirty prompt.
         QTimer::singleShot(0, [&] {
             auto *library = qobject_cast<QDialog *>(QApplication::activeModalWidget());

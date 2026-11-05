@@ -2099,7 +2099,7 @@ public:
         connect(speakerDetails, &QPushButton::clicked, this, [this] { showSpeakerDetails(); });
         auto manageProfiles = [this](const QString &kind) {
             if (lockButton_->isChecked() || calibrating_) { showError(SC_TR("Unlock controls and finish measurement before editing profiles.")); return; }
-            try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }, kind, [this](const auto &p) { return previewEquipment(p); }); refreshEquipmentStatus(); }
+            try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }, kind, [this](const auto &p) { return previewEquipment(p); }, selectedEquipmentForLibrary(kind), [this](const auto &p) { return removeEquipmentProfile(p); }); refreshEquipmentStatus(); }
             catch (const std::exception &e) { showError(QString::fromUtf8(e.what())); }
         };
         auto *manageSpeakers = new QPushButton(SC_TR("Manage profiles"));
@@ -2118,7 +2118,7 @@ public:
         speakerLayout->addWidget(clearEquipment);
         connect(equipmentButton, &QPushButton::clicked, this, [this] {
             if (lockButton_->isChecked() || calibrating_) { showError(SC_TR("Unlock controls and finish measurement before editing profiles.")); return; }
-            try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }, {}, [this](const auto &p) { return previewEquipment(p); }); refreshEquipmentStatus(); }
+            try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }, {}, [this](const auto &p) { return previewEquipment(p); }, selectedEquipmentForLibrary(), [this](const auto &p) { return removeEquipmentProfile(p); }); refreshEquipmentStatus(); }
             catch (const std::exception &e) { showError(QString::fromUtf8(e.what())); }
         });
         connect(clearEquipment, &QPushButton::clicked, this, [this] {
@@ -3263,6 +3263,18 @@ private:
                 qWarning("Could not restore profile preview: %s", error.what());
             return !profile && restored;
         }
+    }
+    bool removeEquipmentProfile(const soundcurrent::equipment::Profile &profile) {
+        const auto active = equipmentProfile(profile.kind);
+        if (!active || soundcurrent::equipment::serialize(*active) != soundcurrent::equipment::serialize(profile)) return false;
+        soundcurrent::equipment::Profile none; none.kind = profile.kind;
+        setEquipment(none); return true;
+    }
+    std::optional<soundcurrent::equipment::Profile> selectedEquipmentForLibrary(const QString &kind = {}) const {
+        if (!kind.isEmpty()) return equipmentProfile(kind);
+        for (const auto &route : {QString("speaker"), QString("microphone"), QString("amplifier")})
+            if (const auto profile = equipmentProfile(route)) return profile;
+        return {};
     }
     std::optional<soundcurrent::equipment::Profile> equipmentProfile(const QString &kind) const {
         if (equipmentPreview_ && equipmentPreview_->kind == kind) return equipmentPreview_;

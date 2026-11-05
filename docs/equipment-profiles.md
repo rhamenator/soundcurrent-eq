@@ -335,3 +335,26 @@ The processing budget is 96 filters, accommodating 31 listening EQ bands plus
 32 speaker and 32 amplifier filters. Microphone correction supports 32 filters.
 Linux PipeWire graphs reserve those slots, so the larger limit increases their
 fixed processing cost. The C++ processor visits only the active filters.
+
+## Edit an imported profile
+
+Select the imported equipment in the main window, then open **Manage profiles**.
+The active imported profile is selected on opening, and **Edit / save copy** opens
+its correction graph. Drag points or use the frequency, gain and width controls;
+Preview can audition the changes while the corresponding EQ is enabled.
+Choose **Save copy**, then **Apply profile** to use the edited correction. Both the
+original and the new copy remain available in the saved library. Measurement data
+and source attribution are retained. Closing without saving offers Save, Discard
+and Cancel. Opening the manager alone never changes audio or saves a profile.
+An active imported correction from an older app can also be edited even if it is
+not yet present in the saved library.
+
+**Delete** removes imported profiles and saved copies after confirmation. Deleting
+the active imported correction also clears that equipment's selection; deleting
+an inactive entry leaves the current correction alone. Bundled references cannot
+be deleted. Reimporting the same JSON selects the existing saved profile rather
+than adding another row. Duplicate matching ignores export IDs and provenance
+wrappers, but retains distinctions in equipment identity, curves, measurement
+source and conditions. Changed curves with a reused ID receive a separate identity;
+existing entries are never overwritten. Deliberately saving an edited copy remains
+available independently of import deduplication.
