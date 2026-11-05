@@ -20,6 +20,11 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QLabel>
+#include <QGroupBox>
+#include <QSlider>
+#include <QKeyEvent>
+#include <QShortcut>
+#include <QKeySequence>
 #include <QLineEdit>
 #include <QCheckBox>
 #include <QListWidget>
@@ -74,12 +79,57 @@ class ProfileCombo : public QComboBox {
     // Scroll the dialog or open popup; do not audition equipment by an accidental wheel turn.
     void wheelEvent(QWheelEvent *event) override { event->ignore(); }
 };
+class ProfileSlider : public QSlider {
+  public:
+    ProfileSlider() : QSlider(Qt::Horizontal) {
+        setLayoutDirection(Qt::LeftToRight);
+    }
+
+  protected:
+    void wheelEvent(QWheelEvent *event) override {
+        event->ignore();
+    }
+};
 class Plot : public QWidget {
   public:
     Profile profile;
     std::function<void(int, double, double)> onDrag;
-    int dragging = -1;
+    int dragging = -1, selected = 0;
+    std::function<void(int)> onSelect;
+    std::function<void(double, double)> onAdd;
+    std::function<void()> onBegin, onEnd, onRemove;
+    QRectF graphArea() const {
+        return QRectF(45, 15, std::max(1, width() - 90), std::max(1, height() - 40));
+    }
+    int hit(const QPointF &position) const {
+        const auto area = graphArea();
+        int result = -1;
+        double best = 20;
+        for (int i = 0; i < profile.filters.size(); ++i) {
+            const auto &b = profile.filters[i];
+            const QPointF point(area.left() + std::log(b.frequency / 20.) / std::log(1000.) * area.width(),
+                                area.center().y() - b.gainDb / (2 * rangeDb()) * area.height());
+            const auto delta = point - position;
+            const double d = std::hypot(delta.x(), delta.y());
+            if (d < best || (i == selected && d <= best)) {
+                best = d;
+                result = i;
+            }
+        }
+        return result;
+    }
+    std::pair<double, double> values(const QPointF &position) const {
+        const auto area = graphArea();
+        return {20. * std::pow(1000., std::clamp((position.x() - area.left()) / area.width(), 0., 1.)),
+                std::clamp((area.center().y() - position.y()) / area.height() * (2 * rangeDb()), -6., 6.)};
+    }
     double rangeDb() const {
+        if (onDrag) { // Measured data is immutable; filter edits never move the scale under the pointer.
+            double peak = 12.;
+            for (const auto &point : profile.response)
+                peak = std::max(peak, std::abs(point.db));
+            return std::min(24., std::ceil(peak / 6.) * 6.);
+        }
         double peak = 6;
         for (const auto &pt : profile.response)
             peak = std::max(peak, std::abs(pt.db));
@@ -94,42 +144,90 @@ class Plot : public QWidget {
     }
     Plot() {
         setMinimumHeight(180);
+        setFocusPolicy(Qt::StrongFocus);
         setAccessibleName(SC_TR("Published response and editable correction curves"));
     }
     void mousePressEvent(QMouseEvent *e) override {
         if (!onDrag || e->button() != Qt::LeftButton)
             return;
-        const QRectF area(45, 15, width() - 90, height() - 40);
-        double best = 20;
-        for (int i = 0; i < profile.filters.size(); ++i) {
-            const auto &b = profile.filters[i];
-            const QPointF point(area.left() + std::log(b.frequency / 20.) / std::log(1000.) * area.width(),
-                                area.center().y() - b.gainDb / (2 * rangeDb()) * area.height());
-            const auto delta = point - e->position();
-            const double distance = std::hypot(delta.x(), delta.y());
-            if (distance < best) {
-                best = distance;
-                dragging = i;
-            }
+        setFocus();
+        dragging = hit(e->position());
+        if (dragging >= 0) {
+            selected = dragging;
+            if (onSelect)
+                onSelect(selected);
+            if (onBegin)
+                onBegin();
+            update();
         }
     }
     void mouseMoveEvent(QMouseEvent *e) override {
-        if (!onDrag || dragging < 0)
+        if (!onDrag || dragging < 0 || !(e->buttons() & Qt::LeftButton))
             return;
-        const QRectF area(45, 15, width() - 90, height() - 40);
-        const double f =
-            20. * std::pow(1000., std::clamp((e->position().x() - area.left()) / area.width(), 0., 1.));
-        const double gain =
-            std::clamp((area.center().y() - e->position().y()) / area.height() * (2 * rangeDb()), -6., 6.);
-        onDrag(dragging, f, gain);
+        const auto [f, g] = values(e->position());
+        onDrag(dragging, f, g);
     }
-    void mouseReleaseEvent(QMouseEvent *) override { dragging = -1; }
+    void mouseReleaseEvent(QMouseEvent *) override {
+        if (dragging >= 0 && onEnd)
+            onEnd();
+        dragging = -1;
+    }
+    void mouseDoubleClickEvent(QMouseEvent *e) override {
+        if (!onAdd || e->button() != Qt::LeftButton || hit(e->position()) >= 0 ||
+            !graphArea().contains(e->position()))
+            return;
+        const auto [f, g] = values(e->position());
+        onAdd(f, g);
+    }
+    void keyPressEvent(QKeyEvent *event) override {
+        if (!onDrag || profile.filters.isEmpty()) {
+            QWidget::keyPressEvent(event);
+            return;
+        }
+        selected = std::clamp(selected, 0, int(profile.filters.size()) - 1);
+        auto band = profile.filters[selected];
+        bool edited = true;
+        switch (event->key()) {
+        case Qt::Key_Left:
+            band.frequency = std::max(20., band.frequency / std::pow(2., 1. / 12));
+            break;
+        case Qt::Key_Right:
+            band.frequency = std::min(20000., band.frequency * std::pow(2., 1. / 12));
+            break;
+        case Qt::Key_Up:
+            band.gainDb = std::min(6., band.gainDb + .1);
+            break;
+        case Qt::Key_Down:
+            band.gainDb = std::max(-6., band.gainDb - .1);
+            break;
+        case Qt::Key_Delete:
+            if (onRemove)
+                onRemove();
+            return;
+        case Qt::Key_Insert:
+            if (onAdd)
+                onAdd(1000, 0);
+            return;
+        default:
+            edited = false;
+            break;
+        }
+        if (edited) {
+            if (onBegin)
+                onBegin();
+            onDrag(selected, band.frequency, band.gainDb);
+            if (onEnd)
+                onEnd();
+            event->accept();
+        } else
+            QWidget::keyPressEvent(event);
+    }
     void paintEvent(QPaintEvent *) override {
         QPainter p(this);
         p.setLayoutDirection(Qt::LeftToRight);
         p.setRenderHint(QPainter::Antialiasing);
         p.fillRect(rect(), QColor("#172337"));
-        const QRectF area(45, 15, width() - 90, height() - 40);
+        const auto area = graphArea();
         auto x = [&](double f) { return area.left() + std::log(f / 20.) / std::log(1000.) * area.width(); };
         auto y = [&](double d) {
             return area.center().y() - std::clamp(d, -rangeDb(), rangeDb()) / (2 * rangeDb()) * area.height();
@@ -137,11 +235,11 @@ class Plot : public QWidget {
         p.setPen(QColor("#718096"));
         for (double f : {20., 100., 1000., 10000., 20000.}) {
             p.drawLine(QPointF(x(f), area.top()), QPointF(x(f), area.bottom()));
-            p.drawText(QPointF(x(f) - 10, area.bottom() + 17), QLocale().toString(f,'g',6));
+            p.drawText(QPointF(x(f) - 10, area.bottom() + 17), QLocale().toString(f, 'g', 6));
         }
         for (double d : {-rangeDb(), -rangeDb() / 2, 0., rangeDb() / 2, rangeDb()}) {
             p.drawLine(QPointF(area.left(), y(d)), QPointF(area.right(), y(d)));
-            p.drawText(QPointF(2, y(d) + 4), QLocale().toString(d,'g',6));
+            p.drawText(QPointF(2, y(d) + 4), QLocale().toString(d, 'g', 6));
         }
         auto draw = [&](QColor color, auto db, double low = 20., double high = 20000.) {
             QPainterPath path;
@@ -158,9 +256,10 @@ class Plot : public QWidget {
         };
         if (!profile.response.isEmpty() && profile.response.back().frequency > 20. &&
             profile.response.front().frequency < 20000.)
-            draw(QColor("#f6ad55"), [&](double f) { return responseAt(profile.response, f); },
-                 std::max(20., profile.response.front().frequency),
-                 std::min(20000., profile.response.back().frequency));
+            draw(
+                QColor("#f6ad55"), [&](double f) { return responseAt(profile.response, f); },
+                std::max(20., profile.response.front().frequency),
+                std::min(20000., profile.response.back().frequency));
         draw(QColor("#4fd1c5"), [&](double f) {
             double d = 0;
             for (const auto &b : profile.filters)
@@ -170,131 +269,415 @@ class Plot : public QWidget {
         if (onDrag) {
             p.setPen(QColor("#4fd1c5"));
             p.setBrush(QColor("#4fd1c5"));
-            for (const auto &b : profile.filters)
-                p.drawEllipse(QPointF(x(b.frequency), y(b.gainDb)), 4, 4);
+            for (int i = 0; i < profile.filters.size(); ++i) {
+                const auto &b = profile.filters[i];
+                const auto point = QPointF(x(b.frequency), y(b.gainDb));
+                p.setBrush(i == selected ? QColor("#ffffff") : QColor("#4fd1c5"));
+                p.drawEllipse(point, i == selected ? 6 : 4, i == selected ? 6 : 4);
+                p.drawText(point + QPointF(7, -7), QLocale().toString(i + 1));
+            }
+        }
+        if (onDrag && hasFocus()) {
+            p.setPen(QPen(QColor("#ffffff"), 1, Qt::DashLine));
+            p.setBrush(Qt::NoBrush);
+            p.drawRect(rect().adjusted(2, 2, -3, -3));
         }
     }
 };
 class Editor : public QDialog {
   public:
     Profile draft;
-    bool dirty = false;
+    bool dirty = false, restoring = false, gesture = false, gestureRecorded = false;
     QString originalId, originalProvenance;
-    QTableWidget *table;
-    Plot *plot;
+    QTableWidget *table = nullptr;
+    Plot *plot = nullptr;
     QLineEdit *brand, *family, *model, *source, *conditions, *equipmentType, *powerType;
+    QComboBox *selection = nullptr;
+    QSlider *frequency = nullptr, *gain = nullptr, *bandwidth = nullptr;
+    QLabel *value = nullptr;
+    QPushButton *undo = nullptr, *add = nullptr, *remove = nullptr, *previewButton = nullptr;
+    QVector<QVector<EqBand>> history;
     std::function<bool(Profile)> save;
-    Editor(Profile profile, QWidget *parent, std::function<bool(Profile)> writer)
-        : QDialog(parent), draft(std::move(profile)), save(std::move(writer)) {
+    Preview preview;
+    Editor(Profile profile, QWidget *parent, std::function<bool(Profile)> writer,
+           const Preview &audition = {})
+        : QDialog(parent), draft(std::move(profile)), save(std::move(writer)), preview(audition) {
         originalId = draft.id;
         originalProvenance = draft.provenance;
         setWindowTitle(SC_TR("Equipment profile editor"));
+        setObjectName("graphProfileEditor");
         soundcurrent::ui::installButtonHelp();
         const auto available = screen()->availableGeometry();
-        resize(std::min(760, available.width()-40), std::min(650, available.height()-40));
+        resize(std::min(800, available.width() - 40), std::min(720, available.height() - 40));
         auto *outer = new QVBoxLayout(this);
         auto *scroll = new QScrollArea;
         scroll->setWidgetResizable(true);
         auto *content = new QWidget;
         auto *layout = new QVBoxLayout(content);
-        scroll->setWidget(content); outer->addWidget(scroll);
-        auto *form = new QFormLayout;
-        auto field = [&](const QString &label, const QString &value, int maximumLength = 120) {
-            auto *e = new QLineEdit(value);
-            e->setMaxLength(maximumLength);
+        scroll->setWidget(content);
+        outer->addWidget(scroll);
+        auto *nameRow = new QFormLayout;
+        model = new QLineEdit(draft.model);
+        model->setObjectName("profileModel");
+        model->setMaxLength(120);
+        nameRow->addRow(SC_TR("Model"), model);
+        layout->addLayout(nameRow);
+        connect(model, &QLineEdit::textEdited, this, [this] { dirty = true; });
+        auto *help = new QLabel(SC_TR("Drag points to shape the correction. Double-click to add a point."));
+        help->setWordWrap(true);
+        layout->addWidget(help);
+        plot = new Plot;
+        plot->setObjectName("profileCorrectionGraph");
+        plot->profile = draft;
+        plot->setToolTip(SC_TR("Drag points to shape the correction. Double-click to add a point.") + "\n" +
+                         SC_TR("Arrow keys adjust the selected point; Delete removes it."));
+        plot->setAccessibleDescription(plot->toolTip());
+        layout->addWidget(plot);
+        auto *legend = new QLabel(SC_TR(
+            "Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB."));
+        legend->setWordWrap(true);
+        layout->addWidget(legend);
+        auto *notice =
+            new QLabel(SC_TR("Drawn corrections are listening adjustments, not equipment measurements."));
+        notice->setWordWrap(true);
+        layout->addWidget(notice);
+        auto *simple = new QFormLayout;
+        selection = new QComboBox;
+        selection->setObjectName("profileSelectedPoint");
+        simple->addRow(SC_TR("Selected band"), selection);
+        frequency = new ProfileSlider;
+        frequency->setRange(0, 1000);
+        frequency->setObjectName("profilePointFrequency");
+        frequency->setAccessibleName(SC_TR("Frequency Hz"));
+        simple->addRow(SC_TR("Frequency Hz"), frequency);
+        gain = new ProfileSlider;
+        gain->setRange(-60, 60);
+        gain->setObjectName("profilePointGain");
+        gain->setAccessibleName(SC_TR("Gain dB"));
+        simple->addRow(SC_TR("Gain dB"), gain);
+        bandwidth = new ProfileSlider;
+        bandwidth->setRange(0, 100);
+        bandwidth->setObjectName("profilePointWidth");
+        bandwidth->setAccessibleName(SC_TR("Width"));
+        bandwidth->setToolTip(SC_TR("Move right for a broader adjustment."));
+        simple->addRow(SC_TR("Width"), bandwidth);
+        value = new QLabel;
+        value->setTextFormat(Qt::PlainText);
+        value->setWordWrap(true);
+        simple->addRow(value);
+        layout->addLayout(simple);
+        auto *tools = new QGridLayout;
+        add = new QPushButton(SC_TR("Add point"));
+        remove = new QPushButton(SC_TR("Remove point"));
+        undo = new QPushButton(SC_TR("Undo"));
+        auto *flat = new QPushButton(SC_TR("Reset to flat"));
+        const QVector<QPushButton *> actions{add, remove, undo, flat};
+        int actionWidth = 1;
+        for (auto *action : actions)
+            actionWidth = std::max(actionWidth, action->sizeHint().width());
+        const int columns = std::clamp((this->width() - 64) / (actionWidth + 6), 1, 4);
+        for (int i = 0; i < actions.size(); ++i)
+            tools->addWidget(actions[i], i / columns, i % columns);
+        layout->addLayout(tools);
+        undo->setToolTip(SC_TR("Restore the previous EQ setting (Ctrl+Z)"));
+        auto *advanced = new QGroupBox(SC_TR("Advanced"));
+        advanced->setCheckable(true);
+        advanced->setChecked(false);
+        advanced->setObjectName("profileAdvanced");
+        advanced->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
+        auto *advancedLayout = new QVBoxLayout(advanced);
+        table = new QTableWidget(0, 4);
+        table->setObjectName("profileFilterTable");
+        table->setHorizontalHeaderLabels({SC_TR("Type"), SC_TR("Frequency Hz"), SC_TR("Gain dB"), "Q"});
+        table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        advancedLayout->addWidget(table);
+        table->hide();
+        const int collapsedHeight = advanced->fontMetrics().height() + 20;
+        advanced->setMaximumHeight(collapsedHeight);
+        connect(advanced, &QGroupBox::toggled, this, [advanced, this, collapsedHeight](bool expanded) {
+            table->setVisible(expanded);
+            advanced->setMaximumHeight(expanded ? QWIDGETSIZE_MAX : collapsedHeight);
+        });
+        layout->addWidget(advanced);
+        auto *details = new QGroupBox(SC_TR("Profile details"));
+        details->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
+        details->setCheckable(true);
+        details->setChecked(false);
+        auto *detailsOuter = new QVBoxLayout(details);
+        auto *fields = new QWidget;
+        auto *form = new QFormLayout(fields);
+        auto field = [&](const QString &label, const QString &text, int limit = 120) {
+            auto *e = new QLineEdit(text);
+            e->setMaxLength(limit);
             e->setCursorPosition(0);
             form->addRow(label, e);
-            QObject::connect(e, &QLineEdit::textEdited, this, [this] { dirty = true; });
+            connect(e, &QLineEdit::textEdited, this, [this] { dirty = true; });
             return e;
         };
         brand = field(SC_TR("Brand"), draft.brand);
         family = field(SC_TR("Family"), draft.family);
         equipmentType = field(SC_TR("Equipment subtype"), draft.equipmentType);
         powerType = field(SC_TR("Active / passive / unknown"), draft.powerType);
-        model = field(SC_TR("Model"), draft.model);
         source = field(SC_TR("Source"), draft.source, 2048);
         source->setObjectName("profileSource");
         conditions = field(SC_TR("Conditions"), draft.conditions, 2000);
         conditions->setObjectName("profileConditions");
-        layout->addLayout(form);
-        auto *legend = new QLabel(
-            SC_TR("Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points "
-            "or edit the table. Saving preserves the reference and creates a custom copy."));
-        legend->setWordWrap(true);
-        layout->addWidget(legend);
-        plot = new Plot;
-        plot->profile = draft;
-        layout->addWidget(plot);
-        table = new QTableWidget(draft.filters.size(), 4);
-        table->setHorizontalHeaderLabels({SC_TR("Type"), SC_TR("Frequency Hz"), SC_TR("Gain dB"), "Q"});
-        table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-        layout->addWidget(table);
-        for (int i = 0; i < draft.filters.size(); ++i)
-            addRow(i, draft.filters[i]);
-        plot->onDrag = [this](int r, double f, double g) {
-            if (r >= table->rowCount())
-                return;
-            qobject_cast<QDoubleSpinBox *>(table->cellWidget(r, 1))->setValue(f);
-            qobject_cast<QDoubleSpinBox *>(table->cellWidget(r, 2))->setValue(g);
-        };
-        auto *row = new QHBoxLayout;
-        auto *add = new QPushButton(SC_TR("Add filter"));
-        auto *remove = new QPushButton(SC_TR("Remove selected filter"));
-        row->addWidget(add);
-        row->addWidget(remove);
-        layout->addLayout(row);
-        QObject::connect(add, &QPushButton::clicked, this, [this] {
-            if (table->rowCount() >= 16)
-                return;
-            const int r = table->rowCount();
-            table->insertRow(r);
-            addRow(r, {1000, 0, 1});
-            changed();
+        detailsOuter->addWidget(fields);
+        fields->hide();
+        details->setMaximumHeight(collapsedHeight);
+        connect(details, &QGroupBox::toggled, this, [details, fields, collapsedHeight](bool expanded) {
+            fields->setVisible(expanded);
+            details->setMaximumHeight(expanded ? QWIDGETSIZE_MAX : collapsedHeight);
         });
-        QObject::connect(remove, &QPushButton::clicked, this, [this] {
-            if (table->currentRow() >= 0 && table->rowCount() > 1) {
-                table->removeRow(table->currentRow());
-                changed();
-            }
-        });
+        layout->addWidget(details);
+        layout->addStretch();
+        auto *bar = new QHBoxLayout;
+        previewButton = new QPushButton(SC_TR("Preview"));
+        previewButton->setObjectName("previewProfile");
+        previewButton->setCheckable(true);
+        previewButton->setEnabled(bool(preview));
+        previewButton->setToolTip(
+            SC_TR("Preview is temporary. Closing the editor restores the previous correction."));
+        bar->addWidget(previewButton);
+        bar->addStretch();
         auto *buttons = new QDialogButtonBox(QDialogButtonBox::Save | QDialogButtonBox::Cancel);
-        outer->addWidget(buttons);
-        QObject::connect(buttons, &QDialogButtonBox::accepted, this, [this] {
+        buttons->button(QDialogButtonBox::Save)->setText(SC_TR("Save copy"));
+        bar->addWidget(buttons);
+        outer->addLayout(bar);
+        connect(buttons, &QDialogButtonBox::accepted, this, [this] {
             if (persist())
                 accept();
         });
-        QObject::connect(buttons, &QDialogButtonBox::rejected, this, &Editor::reject);
+        connect(buttons, &QDialogButtonBox::rejected, this, &Editor::reject);
+        connect(previewButton, &QPushButton::toggled, this, [this](bool on) {
+            if (!preview)
+                return;
+            if (!preview(on ? std::optional<Profile>(auditionProfile()) : std::nullopt)) {
+                QSignalBlocker block(previewButton);
+                previewButton->setChecked(false);
+                if (on)
+                    preview(std::nullopt);
+            }
+        });
+        connect(selection, &QComboBox::currentIndexChanged, this, [this](int row) {
+            if (restoring || row < 0)
+                return;
+            plot->selected = row;
+            table->setCurrentCell(row, 0);
+            syncSimple();
+            plot->update();
+        });
+        auto sliderGesture = [this](QSlider *slider) {
+            connect(slider, &QSlider::sliderPressed, this, [this] { beginGesture(); });
+            connect(slider, &QSlider::sliderReleased, this, [this] { gesture = false; });
+        };
+        sliderGesture(frequency);
+        sliderGesture(gain);
+        sliderGesture(bandwidth);
+        connect(frequency, &QSlider::valueChanged, this,
+                [this](int v) { editSimple(1, 20 * std::pow(1000., v / 1000.)); });
+        connect(gain, &QSlider::valueChanged, this, [this](int v) { editSimple(2, v / 10.); });
+        connect(bandwidth, &QSlider::valueChanged, this,
+                [this](int v) { editSimple(3, 6 * std::pow(.1 / 6., v / 100.)); });
+        connect(table, &QTableWidget::currentCellChanged, this, [this](int row) {
+            if (restoring || row < 0)
+                return;
+            selection->setCurrentIndex(row);
+        });
+        connect(add, &QPushButton::clicked, this, [this] { addPoint(freeFrequency(), 0); });
+        connect(remove, &QPushButton::clicked, this, [this] { removePoint(); });
+        connect(undo, &QPushButton::clicked, this, [this] {
+            if (history.isEmpty())
+                return;
+            gesture = false;
+            plot->dragging = -1;
+            draft.filters = history.takeLast();
+            dirty = true;
+            rebuild();
+            notifyPreview();
+        });
+        auto *undoKey = new QShortcut(QKeySequence::Undo, this);
+        connect(undoKey, &QShortcut::activated, undo, &QPushButton::click);
+        connect(flat, &QPushButton::clicked, this, [this] {
+            remember();
+            for (auto &b : draft.filters)
+                b.gainDb = 0;
+            dirty = true;
+            rebuild();
+            notifyPreview();
+        });
+        plot->onSelect = [this](int row) { selection->setCurrentIndex(row); };
+        plot->onBegin = [this] { beginGesture(); };
+        plot->onEnd = [this] { gesture = false; };
+        plot->onAdd = [this](double f, double g) { addPoint(f, g); };
+        plot->onRemove = [this] { removePoint(); };
+        plot->onDrag = [this](int row, double f, double g) {
+            if (row < 0 || row >= table->rowCount())
+                return;
+            restoring = true;
+            qobject_cast<QDoubleSpinBox *>(table->cellWidget(row, 1))->setValue(f);
+            qobject_cast<QDoubleSpinBox *>(table->cellWidget(row, 2))->setValue(g);
+            restoring = false;
+            changed(row, -1);
+        };
+        rebuild();
     }
-    void addRow(int r, const EqBand &b) {
-        auto *type = new QComboBox;
-        type->addItems({"PK", "LS", "HS"});
-        type->setCurrentText(typeName(b.type));
-        table->setCellWidget(r, 0, type);
-        QObject::connect(type, &QComboBox::currentIndexChanged, this, [this] { changed(); });
-        for (int c = 1; c < 4; ++c) {
-            auto *spin = new soundcurrent::AcceleratingDoubleSpinBox;
-            spin->setDecimals(c == 1 ? 1 : 2);
-            spin->setRange(c == 1 ? 20 : c == 2 ? -6 : .1, c == 1 ? 20000 : c == 2 ? 6 : 6);
-            spin->setValue(c == 1 ? b.frequency : c == 2 ? b.gainDb : b.q);
-            spin->setAccessibleName(table->horizontalHeaderItem(c)->text());
-            table->setCellWidget(r, c, spin);
-            QObject::connect(spin, &QDoubleSpinBox::valueChanged, this, [this] { changed(); });
+    ~Editor() override {
+        if (preview && previewButton->isChecked()) {
+            try {
+                preview(std::nullopt);
+            } catch (...) {
+            }
         }
     }
-    void changed() {
+    Profile auditionProfile() const {
+        auto p = draft;
+        p.custom = true;
+        p.model = model->text().trimmed();
+        return p;
+    }
+    void notifyPreview() {
+        if (preview && previewButton->isChecked() && !preview(auditionProfile())) {
+            QSignalBlocker block(previewButton);
+            previewButton->setChecked(false);
+            preview(std::nullopt);
+        }
+    }
+    void remember() {
+        history.append(draft.filters);
+        if (history.size() > 50)
+            history.removeFirst();
+        undo->setEnabled(true);
+    }
+    void beginGesture() {
+        gesture = true;
+        gestureRecorded = false;
+    }
+    double freeFrequency() const {
+        QVector<double> frequencies{20, 20000};
+        for (const auto &b : draft.filters)
+            frequencies.append(b.frequency);
+        std::sort(frequencies.begin(), frequencies.end());
+        double best = 0, result = 1000;
+        for (int i = 1; i < frequencies.size(); ++i) {
+            const auto gap = std::log(frequencies[i] / frequencies[i - 1]);
+            if (gap > best) {
+                best = gap;
+                result = std::sqrt(frequencies[i] * frequencies[i - 1]);
+            }
+        }
+        return result;
+    }
+    void addPoint(double f, double g) {
+        if (draft.filters.size() >= 32)
+            return;
+        remember();
+        draft.filters.append({f, g, 1});
+        plot->selected = draft.filters.size() - 1;
         dirty = true;
-        draft.filters.clear();
-        for (int r = 0; r < table->rowCount(); ++r) {
-            const auto t = qobject_cast<QComboBox *>(table->cellWidget(r, 0))->currentText();
-            draft.filters.append({qobject_cast<QDoubleSpinBox *>(table->cellWidget(r, 1))->value(),
-                                  qobject_cast<QDoubleSpinBox *>(table->cellWidget(r, 2))->value(),
-                                  qobject_cast<QDoubleSpinBox *>(table->cellWidget(r, 3))->value(),
-                                  t == "LS"   ? FilterType::LowShelf
-                                  : t == "HS" ? FilterType::HighShelf
-                                              : FilterType::Peaking});
+        rebuild();
+        notifyPreview();
+    }
+    void removePoint() {
+        if (draft.filters.size() <= 1)
+            return;
+        remember();
+        draft.filters.removeAt(std::clamp(plot->selected, 0, int(draft.filters.size()) - 1));
+        dirty = true;
+        rebuild();
+        notifyPreview();
+    }
+    void editSimple(int column, double v) {
+        if (restoring)
+            return;
+        const int row = selection->currentIndex();
+        if (row < 0)
+            return;
+        qobject_cast<QDoubleSpinBox *>(table->cellWidget(row, column))->setValue(v);
+    }
+    void syncSimple() {
+        if (draft.filters.isEmpty())
+            return;
+        const QSignalBlocker a(frequency), b(gain), c(bandwidth);
+        const auto &p = draft.filters[std::clamp(plot->selected, 0, int(draft.filters.size()) - 1)];
+        frequency->setValue(int(std::lround(std::log(p.frequency / 20.) / std::log(1000.) * 1000)));
+        gain->setValue(int(std::lround(p.gainDb * 10)));
+        bandwidth->setValue(int(std::lround(std::log(p.q / 6.) / std::log(.1 / 6.) * 100)));
+        value->setText(QLocale().toString(p.frequency, 'f', 1) + " Hz · " +
+                       QLocale().toString(p.gainDb, 'f', 1) + " dB · " + SC_TR("Width") + " " +
+                       QLocale().toString(bandwidth->value()) + QLocale().percent());
+        frequency->setAccessibleDescription(QLocale().toString(p.frequency, 'f', 1) + " Hz");
+        gain->setAccessibleDescription(QLocale().toString(p.gainDb, 'f', 1) + " dB");
+        bandwidth->setAccessibleDescription(QLocale().toString(bandwidth->value()) + QLocale().percent());
+        plot->setAccessibleDescription(plot->toolTip() + "\n" + value->text());
+    }
+    void rebuild() {
+        restoring = true;
+        table->setRowCount(0);
+        selection->clear();
+        for (int row = 0; row < draft.filters.size(); ++row) {
+            table->insertRow(row);
+            addRow(row, draft.filters[row]);
+            selection->addItem(QLocale().toString(row + 1));
         }
+        plot->selected = std::clamp(plot->selected, 0, int(draft.filters.size()) - 1);
+        selection->setCurrentIndex(plot->selected);
+        table->setCurrentCell(plot->selected, 0);
+        restoring = false;
         plot->profile = draft;
         plot->update();
+        syncSimple();
+        add->setEnabled(draft.filters.size() < 32);
+        remove->setEnabled(draft.filters.size() > 1);
+        undo->setEnabled(!history.isEmpty());
+    }
+    void addRow(int row, const EqBand &band) {
+        auto *type = new QComboBox;
+        type->addItems({"PK", "LS", "HS"});
+        type->setCurrentText(typeName(band.type));
+        table->setCellWidget(row, 0, type);
+        connect(type, &QComboBox::currentIndexChanged, this, [this, row] { changed(row, 0); });
+        for (int column = 1; column < 4; ++column) {
+            auto *spin = new soundcurrent::AcceleratingDoubleSpinBox;
+            spin->setDecimals(8);
+            spin->setRange(column == 1 ? 20 : column == 2 ? -6 : .1, column == 1 ? 20000 : 6);
+            spin->setValue(column == 1 ? band.frequency : column == 2 ? band.gainDb : band.q);
+            spin->setAccessibleName(table->horizontalHeaderItem(column)->text());
+            table->setCellWidget(row, column, spin);
+            connect(spin, &QDoubleSpinBox::valueChanged, this, [this, row, column] { changed(row, column); });
+        }
+    }
+    void changed(int row, int column) {
+        if (restoring || row < 0 || row >= draft.filters.size())
+            return;
+        auto next = draft.filters[row];
+        if (column == 0) {
+            const auto type = qobject_cast<QComboBox *>(table->cellWidget(row, 0))->currentText();
+            next.type = type == "LS"   ? FilterType::LowShelf
+                        : type == "HS" ? FilterType::HighShelf
+                                       : FilterType::Peaking;
+        }
+        if (column == 1 || column == -1)
+            next.frequency = qobject_cast<QDoubleSpinBox *>(table->cellWidget(row, 1))->value();
+        if (column == 2 || column == -1)
+            next.gainDb = qobject_cast<QDoubleSpinBox *>(table->cellWidget(row, 2))->value();
+        if (column == 3)
+            next.q = qobject_cast<QDoubleSpinBox *>(table->cellWidget(row, 3))->value();
+        const auto &old = draft.filters[row];
+        if (next.frequency == old.frequency && next.gainDb == old.gainDb && next.q == old.q &&
+            next.type == old.type)
+            return;
+        if (!gesture || !gestureRecorded) {
+            remember();
+            if (gesture)
+                gestureRecorded = true;
+        }
+        draft.filters[row] = next;
+        dirty = true;
+        plot->profile = draft;
+        plot->update();
+        syncSimple();
+        notifyPreview();
     }
     bool persist() {
         draft.brand = brand->text().trimmed();
@@ -305,9 +688,9 @@ class Editor : public QDialog {
         draft.source = source->text();
         draft.conditions = conditions->text();
         draft.custom = true;
-        draft.provenance =
-            originalProvenance.left(1800) +
-            QStringLiteral("\n") + (originalId.isEmpty() ? SC_TR("User-created profile") : SC_TR("Custom copy of %1").arg(originalId));
+        draft.provenance = originalProvenance.left(1800) + "\n" +
+                           (originalId.isEmpty() ? SC_TR("User-created profile")
+                                                 : SC_TR("Custom copy of %1").arg(originalId));
         draft.id = QUuid::createUuid().toString(QUuid::WithoutBraces);
         if (save(draft)) {
             dirty = false;
@@ -329,6 +712,7 @@ class Editor : public QDialog {
         QDialog::reject();
     }
 };
+
 } // namespace
 QJsonObject serialize(const Profile &p) {
     QJsonArray filters, response;
@@ -337,7 +721,7 @@ QJsonObject serialize(const Profile &p) {
             {"type", typeName(b.type)}, {"frequency", b.frequency}, {"gain", b.gainDb}, {"q", b.q}});
     for (const auto &v : p.response)
         response.append(QJsonArray{v.frequency, v.db});
-    return {{"schema", 2},
+    return {{"schema", p.filters.size() > 16 ? 3 : 2},
             {"id", p.id},
             {"kind", p.kind},
             {"brand", p.brand},
@@ -357,7 +741,8 @@ Profile parse(const QByteArray &bytes) {
     require(document.isObject(),
             "Expected a JSON equipment profile. Import response text using the response import button.");
     const auto o = document.object();
-    require(o.value("schema").toInt() == 2, "Unsupported equipment profile schema (expected 2).");
+    const int schema = o.value("schema").toInt();
+    require(schema == 2 || schema == 3, "Unsupported equipment profile schema (expected 2/3).");
     Profile p;
     p.id = o.value("id").toString();
     p.kind = o.value("kind").toString();
@@ -384,7 +769,7 @@ Profile parse(const QByteArray &bytes) {
     require(p.custom || (url.isValid() && url.scheme() == "https" && !url.host().isEmpty()),
             "Published profiles need an HTTPS measurement source.");
     const auto filters = o.value("filters").toArray();
-    require(filters.size() >= 1 && filters.size() <= 16, "Profiles need 1–16 correction filters.");
+    require(filters.size() >= 1 && filters.size() <= (schema == 3 ? 32 : 16), "Profiles need 1–32 correction filters.");
     for (const auto &value : filters) {
         require(value.isObject(), "Invalid filter.");
         const auto f = value.toObject();
@@ -499,7 +884,7 @@ QVector<Profile> bundledProfiles() {
     }
     return out;
 }
-void saveNewProfile(QWidget *parent, Profile p) {
+void saveNewProfile(QWidget *parent, Profile p, const Preview &preview) {
     Editor editor(p, parent, [parent](Profile draft) {
         try {
             auto profiles = loadLibrary();
@@ -510,11 +895,11 @@ void saveNewProfile(QWidget *parent, Profile p) {
             QMessageBox::warning(parent, SC_TR("Save profile"), e.what());
             return false;
         }
-    });
+    }, preview);
     editor.dirty = true;
     editor.exec();
 }
-void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &apply, const QString &initialKind) {
+void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &apply, const QString &initialKind, const Preview &preview) {
     QDialog dialog(parent);
     soundcurrent::ui::installButtonHelp();
     dialog.setWindowTitle(SC_TR("Equipment profiles — brand / family / model"));
@@ -543,6 +928,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     details->setTextFormat(Qt::PlainText);
     details->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
     layout->addWidget(details);
+        layout->addStretch();
     auto *legend = new QLabel(SC_TR("Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB."));
     legend->setWordWrap(true);
     layout->addWidget(legend);
@@ -847,7 +1233,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             if (kindDialog.exec() != QDialog::Accepted)
                 return;
             p.kind = k->currentData().toString();
-            Editor editor(p, &dialog, save);
+            Editor editor(p, &dialog, save, preview);
             editor.dirty = true;
             editor.exec();
         } catch (const std::exception &e) {
@@ -861,7 +1247,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         p.family = SC_TR("My equipment");
         p.model = SC_TR("New profile");
         p.custom = true;
-        p.conditions = SC_TR("User-created correction; enter equipment and measurement conditions.");
+        p.conditions = SC_TR("User-created profile");
         p.filters.append({1000, 0, 1});
         QDialog select(&dialog);
         select.setWindowTitle(SC_TR("Create profile"));
@@ -880,14 +1266,14 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         if (select.exec() != QDialog::Accepted)
             return;
         p.kind = k->currentData().toString();
-        Editor editor(p, &dialog, save);
+        Editor editor(p, &dialog, save, preview);
         editor.dirty = true;
         editor.exec();
     });
     QObject::connect(edit, &QPushButton::clicked, &dialog, [&] {
         if (list->currentIndex() < 0 || list->currentData().toInt() < 0)
             return;
-        Editor editor(profiles[list->currentData().toInt()], &dialog, save);
+        Editor editor(profiles[list->currentData().toInt()], &dialog, save, preview);
         editor.exec();
     });
     QObject::connect(exportButton, &QPushButton::clicked, &dialog, [&] {

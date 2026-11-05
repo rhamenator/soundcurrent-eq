@@ -162,8 +162,8 @@ Do you want to delete it anyway?</source>
       <translation>सहेजी गई लाइब्रेरी में JSON प्रोफ़ाइल जोड़ें।</translation>
     </message>
     <message>
-      <source>Add filter</source>
-      <translation>फ़िल्टर जोड़ें</translation>
+      <source>Add point</source>
+      <translation>बिंदु जोड़ें</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
@@ -177,6 +177,10 @@ Do you want to delete it anyway?</source>
       <source>Adjustable system-wide equalizer for PipeWire</source>
       <translation>PipeWire के लिए पूरे सिस्टम का समायोज्य इक्वलाइज़र</translation>
       <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>उन्नत</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
@@ -309,6 +313,10 @@ Do you want to delete it anyway?</source>
       <source>Are you sure you want to delete '%1'?</source>
       <translation>क्या आप वाकई '%1' को मिटाना चाहते हैं?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Arrow keys adjust the selected point; Delete removes it.</source>
+      <translation>तीर कुंजियाँ चुने गए बिंदु को समायोजित करती हैं; Delete उसे हटाता है।</translation>
     </message>
     <message>
       <source>Audio bridge did not start</source>
@@ -880,8 +888,16 @@ Do you want to delete it anyway?</source>
       <translation>वक्र के बिंदु खींचें या नीचे चयनित बैंड समायोजित करें।</translation>
     </message>
     <message>
+      <source>Drag points to shape the correction. Double-click to add a point.</source>
+      <translation>सुधार को आकार देने के लिए बिंदु खींचें। बिंदु जोड़ने के लिए दो बार क्लिक करें।</translation>
+    </message>
+    <message>
       <source>Drain test playback</source>
       <translation>परीक्षण प्लेबैक पूरा करना</translation>
+    </message>
+    <message>
+      <source>Drawn corrections are listening adjustments, not equipment measurements.</source>
+      <translation>बनाए गए सुधार सुनने के समायोजन हैं, उपकरण के माप नहीं।</translation>
     </message>
     <message>
       <source>Drive</source>
@@ -1684,6 +1700,10 @@ Do you want to delete it anyway?</source>
       <translation>मॉडल</translation>
     </message>
     <message>
+      <source>Move right for a broader adjustment.</source>
+      <translation>समायोजन को चौड़ा करने के लिए दाईं ओर ले जाएँ।</translation>
+    </message>
+    <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
       <translation>L या R की ओर खिसकाने से दूसरे चैनल का स्तर घटता है; मध्य में दोनों का पूरा स्तर बना रहता है</translation>
     </message>
@@ -1855,10 +1875,6 @@ Do you want to delete it anyway?</source>
       <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
-      <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation>नारंगी: उपलब्ध होने पर मापी गई प्रतिक्रिया। नीला-हरा: 48 kHz पर सुधार। नीले-हरे नियंत्रण बिंदु खींचें या तालिका संपादित करें। सहेजने पर संदर्भ सुरक्षित रहता है और एक कस्टम कॉपी बनती है।</translation>
-    </message>
-    <message>
       <source>Outdoor speaker</source>
       <translation>बाहरी उपयोग का स्पीकर</translation>
       <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
@@ -1967,6 +1983,14 @@ Do you want to delete it anyway?</source>
       <translation>प्रीसेट, EQ बैंड, पोस्ट गेन और बैलेंस में बदलाव रोकें</translation>
     </message>
     <message>
+      <source>Preview</source>
+      <translation>पूर्वावलोकन</translation>
+    </message>
+    <message>
+      <source>Preview is temporary. Closing the editor restores the previous correction.</source>
+      <translation>पूर्वावलोकन अस्थायी है। संपादक बंद करने पर पिछला सुधार लौट आता है।</translation>
+    </message>
+    <message>
       <source>Profile</source>
       <translation>प्रोफ़ाइल</translation>
     </message>
@@ -1995,8 +2019,8 @@ Do you want to delete it anyway?</source>
       <translation>प्रोफ़ाइल चुनते ही लागू हो जाती हैं।</translation>
     </message>
     <message>
-      <source>Profiles need 1–16 correction filters.</source>
-      <translation>प्रोफ़ाइल में 1–16 सुधार फ़िल्टर आवश्यक हैं।</translation>
+      <source>Profiles need 1–32 correction filters.</source>
+      <translation>प्रोफ़ाइल में 1–32 सुधार फ़िल्टर आवश्यक हैं।</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
@@ -2214,8 +2238,8 @@ Do you want to delete it anyway?</source>
       <translation>VB-CABLE हटाएँ?</translation>
     </message>
     <message>
-      <source>Remove selected filter</source>
-      <translation>चयनित फ़िल्टर हटाएँ</translation>
+      <source>Remove point</source>
+      <translation>बिंदु हटाएँ</translation>
     </message>
     <message>
       <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
@@ -2315,6 +2339,10 @@ Do you want to delete it anyway?</source>
       <source>Save as</source>
       <translation>इस रूप में सहेजें</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Save copy</source>
+      <translation>प्रतिलिपि सहेजें</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
@@ -2434,9 +2462,8 @@ Do you want to delete it anyway?</source>
       <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
-      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
-      <translation>साझा EQ और चैनल EQ में कुल 64 से अधिक फ़िल्टर हैं; कुछ चैनल फ़िल्टर हटाएँ</translation>
-      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+      <source>Shared and channel EQ exceed 96 filters; remove some channel filters</source>
+      <translation>साझा EQ और चैनल EQ में कुल 96 से अधिक फ़िल्टर हैं; कुछ चैनल फ़िल्टर हटाएँ</translation>
     </message>
     <message>
       <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
@@ -2797,6 +2824,10 @@ Do you want to delete it anyway?</source>
       <translation>मापे गए प्रतिक्रिया डेटा से सुधार वक्र बनाएँ।</translation>
     </message>
     <message>
+      <source>Turn on the equalizer or microphone EQ before previewing.</source>
+      <translation>पूर्वावलोकन से पहले इक्वलाइज़र या माइक्रोफ़ोन EQ चालू करें।</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>प्रकार</translation>
     </message>
@@ -2842,8 +2873,8 @@ Do you want to delete it anyway?</source>
       <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
-      <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation>असमर्थित उपकरण प्रोफ़ाइल स्कीमा (अपेक्षित संस्करण 2)।</translation>
+      <source>Unsupported equipment profile schema (expected 2/3).</source>
+      <translation>असमर्थित उपकरण प्रोफ़ाइल स्कीमा (अपेक्षित संस्करण 2/3)।</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
@@ -2897,11 +2928,6 @@ Do you want to delete it anyway?</source>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
       <translation>उपयोगकर्ता द्वारा आयात की गई सापेक्ष आवृत्ति प्रतिक्रिया; उपयोग से पहले माइक्रोफ़ोन की दिशा / क्रमांक या स्पीकर मापन की स्थितियाँ दर्ज करें।</translation>
-      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
-    </message>
-    <message>
-      <source>User-created correction; enter equipment and measurement conditions.</source>
-      <translation>उपयोगकर्ता द्वारा बनाया गया सुधार; उपकरण और मापन की स्थितियाँ दर्ज करें।</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
@@ -2997,6 +3023,10 @@ Do you want to delete it anyway?</source>
       <source>Whole listening system</source>
       <translation>संपूर्ण श्रवण प्रणाली</translation>
       <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>चौड़ाई</translation>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

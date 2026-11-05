@@ -523,7 +523,7 @@ QString micControls(const MicTuning &adjustments, double gainDb, int channels) {
         for (int band = 0; band < 4; ++band)
             controls << QString("\"%1_mic_%2:Gain\" %3").arg(prefix).arg(band + 1)
                             .arg((adjustments.correction.isEmpty() ? kNaturalMic[band] : 0.0) + adjustments[band], 0, 'f', 2);
-        for (int i = 0; i < 16; ++i) {
+        for (int i = 0; i < 32; ++i) {
             const auto band = i < adjustments.correction.size() ? adjustments.correction[i] : Band{};
             const auto c = soundcurrent::filterCoefficients({band.frequency, band.gain, band.q, band.type}, 48000);
             const auto name = prefix + QString("_profile_%1:").arg(i);
@@ -558,7 +558,7 @@ QString micConfig(const QString &target, int channels, const MicTuning &adjustme
         nodes << QString("{ type = builtin name = %1_mic_gain label = linear control = { \"Mult\" = %2 \"Add\" = 0.0 } }")
                      .arg(prefix).arg(std::pow(10.0, gainDb / 20.0), 0, 'f', 8);
         QString previous = prefix + "_mic_4";
-        for (int i = 0; i < 16; ++i) {
+        for (int i = 0; i < 32; ++i) {
             const auto band = i < adjustments.correction.size() ? adjustments.correction[i] : Band{};
             const auto c = soundcurrent::filterCoefficients({band.frequency, band.gain, band.q, band.type}, 48000);
             const auto name = prefix + QString("_profile_%1").arg(i);
@@ -2097,7 +2097,7 @@ public:
         connect(speakerDetails, &QPushButton::clicked, this, [this] { showSpeakerDetails(); });
         auto manageProfiles = [this](const QString &kind) {
             if (lockButton_->isChecked() || calibrating_) { showError(SC_TR("Unlock controls and finish measurement before editing profiles.")); return; }
-            try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }, kind); refreshEquipmentStatus(); }
+            try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }, kind, [this](const auto &p) { return previewEquipment(p); }); refreshEquipmentStatus(); }
             catch (const std::exception &e) { showError(QString::fromUtf8(e.what())); }
         };
         auto *manageSpeakers = new QPushButton(SC_TR("Manage profiles"));
@@ -2116,7 +2116,7 @@ public:
         speakerLayout->addWidget(clearEquipment);
         connect(equipmentButton, &QPushButton::clicked, this, [this] {
             if (lockButton_->isChecked() || calibrating_) { showError(SC_TR("Unlock controls and finish measurement before editing profiles.")); return; }
-            try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }); refreshEquipmentStatus(); }
+            try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }, {}, [this](const auto &p) { return previewEquipment(p); }); refreshEquipmentStatus(); }
             catch (const std::exception &e) { showError(QString::fromUtf8(e.what())); }
         });
         connect(clearEquipment, &QPushButton::clicked, this, [this] {
@@ -2647,6 +2647,15 @@ public:
                     qFatal("Imported speaker did not replace previous correction");
         };
         check(); filterSpeakers(); check();
+        const auto settingsBeforePreview = QSettings().value("equipment/speaker").toByteArray();
+        const auto undoBeforePreview = undoStack_.size();
+        auto temporary = imported; temporary.filters[0].gainDb = imported.filters[0].gainDb == 0 ? 1 : 0;
+        if (!previewEquipment(temporary) || speakerCorrection()[0].gain != temporary.filters[0].gainDb)
+            qFatal("Profile preview did not reach processing filters");
+        if (QSettings().value("equipment/speaker").toByteArray()!=settingsBeforePreview || undoStack_.size()!=undoBeforePreview)
+            qFatal("Temporary preview changed saved selection or undo history");
+        if (!previewEquipment(std::nullopt)) qFatal("Preview restore failed");
+        check();
         {
             // Windows' default thread stack cannot hold a second full audio engine.
             const auto reopened = std::make_unique<MainWindow>(false);
@@ -2937,7 +2946,7 @@ private:
             for (const auto &v : levels) if (v.isDouble() && v.toDouble() > 0) db.append(20 * std::log10(v.toDouble()));
             std::sort(db.begin(),db.end()); const double reference = db[db.size()/2];
             for (int i=0;i<levels.size();++i) if (levels[i].isDouble() && levels[i].toDouble()>0) p.response.append({double(kCalibrationFrequencies[i]),20*std::log10(levels[i].toDouble())-reference});
-            try { p.filters = soundcurrent::equipment::fitResponse(p.response); soundcurrent::equipment::saveNewProfile(this,p); calibrationStatus_->setText(SC_TR("System response profile editor opened. Saved profiles are available in the equipment library.")); }
+            try { p.filters = soundcurrent::equipment::fitResponse(p.response); soundcurrent::equipment::saveNewProfile(this,p,[this](const auto &draft) { return previewEquipment(draft); }); calibrationStatus_->setText(SC_TR("System response profile editor opened. Saved profiles are available in the equipment library.")); }
             catch (const std::exception &e) { showError(e.what()); }
             return;
         }
@@ -3199,7 +3208,58 @@ private:
 #endif
     }
     QLabel *equipmentStatus_ = nullptr;
+    std::optional<soundcurrent::equipment::Profile> equipmentPreview_;
+    bool previewEquipment(const std::optional<soundcurrent::equipment::Profile> &profile) {
+        if (!profile && !equipmentPreview_)
+            return true;
+        const bool inert = qApp->arguments().contains("--ui-self-test");
+        if (profile && (lockButton_->isChecked() || calibrating_)) {
+            showError(SC_TR("Unlock controls and finish measurement before editing profiles."));
+            return false;
+        }
+        if (profile && !inert && (profile->kind == "microphone" ? !microphone_.active() : !audio_.active())) {
+            showError(SC_TR("Turn on the equalizer or microphone EQ before previewing."));
+            return false;
+        }
+        const auto kind = profile ? profile->kind : equipmentPreview_ ? equipmentPreview_->kind : QString();
+        equipmentPreview_ = profile;
+        auto update = [&] {
+            if (kind == "microphone")
+                microphone_.update(micAdjustments(), micGain_->value() / 2.0);
+            else {
+                meter_.setProfile(bands_, outputGainDb(), balance_->value(), speakerCorrection());
+                curve_->setCorrection(speakerCorrection());
+                audio_.update(processingBands(), outputGainDb(), balance_->value());
+            }
+        };
+        try {
+            update();
+            return true;
+        } catch (const std::exception &error) {
+            equipmentPreview_.reset();
+            bool restored = true;
+            try {
+                update();
+            } catch (...) {
+                restored = false;
+                // An unavailable device must not leave the temporary correction running.
+                try {
+                    if (kind == "microphone")
+                        microphone_.stop();
+                    else
+                        audio_.stop();
+                } catch (...) {
+                }
+            }
+            if (profile)
+                showError(QString::fromUtf8(error.what()));
+            else if (!restored)
+                qWarning("Could not restore profile preview: %s", error.what());
+            return !profile && restored;
+        }
+    }
     std::optional<soundcurrent::equipment::Profile> equipmentProfile(const QString &kind) const {
+        if (equipmentPreview_ && equipmentPreview_->kind == kind) return equipmentPreview_;
         const auto bytes = QSettings().value("equipment/" + kind).toByteArray();
         if (bytes.isEmpty()) return {};
         try { return soundcurrent::equipment::parse(bytes); } catch (const std::exception &) { return {}; }
@@ -4009,6 +4069,19 @@ int main(int argc, char **argv) {
             !micStereo.contains("audio.position = [ FL FR ]") ||
             !micStereo.contains("right_mic_4:Out"))
             qFatal("Microphone filter layouts are invalid");
+        Bands maximumCombined(95, Band{1000, 0, 1});
+        maximumCombined.last().gain = -6;
+        const auto combinedGraph = filterConfig("test_output", maximumCombined);
+        const auto combinedControls = filterControls(maximumCombined);
+        if (!combinedGraph.contains("right_band_95") || !combinedControls.contains("right_band_95:b0"))
+            qFatal("Combined equipment correction graph was truncated");
+        MicTuning detailedMic;
+        detailedMic.correction = Bands(32, Band{1000, 0, 1});
+        detailedMic.correction.last().gain = -6;
+        const auto detailedMicGraph = micConfig("test_microphone", 2, detailedMic, 0, false);
+        const auto detailedMicControls = micControls(detailedMic, 0, 2);
+        if (!detailedMicGraph.contains("right_profile_31") || !detailedMicControls.contains("right_profile_31:b0"))
+            qFatal("Microphone correction graph was truncated");
         QByteArray calibrationPcm(kCalibrationRate / 4 * 2, '\0');
         for (int i = 0; i < kCalibrationRate / 4; ++i) {
             const auto sample = int16_t(std::lround(3000.0 *
@@ -4413,7 +4486,7 @@ int main(int argc, char **argv) {
         auto &window=*ownedWindow;
         if(QCoreApplication::instance()->property("soundcurrentInterfaceLanguage").toString()!=localization.loaded())
             qFatal("Audio helper language does not follow the loaded interface catalog");
-        for(const auto &reason:QStringList{"Unsupported Studio profile schema","Studio profile has an invalid numeric field","Studio profile has an invalid boolean field","Invalid Studio channel count","Invalid Studio profile channel count","Invalid Studio channel name or filters","Too many Studio channel filters","Invalid Studio route","Duplicate Studio route","Invalid route indexes or weight","Invalid route number","Too many Studio routes","Invalid filter type","Shared and channel EQ exceed 64 filters; remove some channel filters","Invalid enhancement parameter count","Invalid enhancement parameter type","Enhancements outside supported ranges"})
+        for(const auto &reason:QStringList{"Unsupported Studio profile schema","Studio profile has an invalid numeric field","Studio profile has an invalid boolean field","Invalid Studio channel count","Invalid Studio profile channel count","Invalid Studio channel name or filters","Too many Studio channel filters","Invalid Studio route","Duplicate Studio route","Invalid route indexes or weight","Invalid route number","Too many Studio routes","Invalid filter type","Shared and channel EQ exceed 96 filters; remove some channel filters","Invalid enhancement parameter count","Invalid enhancement parameter type","Enhancements outside supported ranges"})
             if(soundcurrent::i18n::audioErrorText(reason)!=soundcurrent::i18n::text(reason.toUtf8().constData()))
                 qFatal("Studio validation diagnostic missed the localized display boundary");
         QComboBox *speakerTaxonomy=nullptr;

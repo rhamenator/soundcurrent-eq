@@ -162,8 +162,8 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Thêm hồ sơ JSON vào thư viện đã lưu.</translation>
     </message>
     <message>
-      <source>Add filter</source>
-      <translation>Thêm bộ lọc</translation>
+      <source>Add point</source>
+      <translation>Thêm điểm</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
@@ -177,6 +177,10 @@ Bạn vẫn muốn xóa không?</translation>
       <source>Adjustable system-wide equalizer for PipeWire</source>
       <translation>Bộ cân bằng âm thanh có thể điều chỉnh cho toàn hệ thống với PipeWire</translation>
       <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>Nâng cao</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
@@ -309,6 +313,10 @@ Bạn vẫn muốn xóa không?</translation>
       <source>Are you sure you want to delete '%1'?</source>
       <translation>Bạn có chắc muốn xóa '%1' không?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Arrow keys adjust the selected point; Delete removes it.</source>
+      <translation>Phím mũi tên điều chỉnh điểm đã chọn; Delete xóa điểm đó.</translation>
     </message>
     <message>
       <source>Audio bridge did not start</source>
@@ -880,8 +888,16 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Kéo các điểm trên đường cong hoặc điều chỉnh dải đã chọn bên dưới.</translation>
     </message>
     <message>
+      <source>Drag points to shape the correction. Double-click to add a point.</source>
+      <translation>Kéo các điểm để tạo đường hiệu chỉnh. Nhấp đúp để thêm điểm.</translation>
+    </message>
+    <message>
       <source>Drain test playback</source>
       <translation>Hoàn tất phát âm thanh thử nghiệm</translation>
+    </message>
+    <message>
+      <source>Drawn corrections are listening adjustments, not equipment measurements.</source>
+      <translation>Hiệu chỉnh được vẽ là điều chỉnh nghe, không phải phép đo thiết bị.</translation>
     </message>
     <message>
       <source>Drive</source>
@@ -1684,6 +1700,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Mẫu</translation>
     </message>
     <message>
+      <source>Move right for a broader adjustment.</source>
+      <translation>Di chuyển sang phải để mở rộng vùng điều chỉnh.</translation>
+    </message>
+    <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
       <translation>Di chuyển về L hoặc R để giảm mức kênh đối diện; ở giữa giữ cả hai kênh ở mức đầy đủ</translation>
     </message>
@@ -1855,10 +1875,6 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
-      <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation>Cam: đáp tuyến đo nếu có. Xanh ngọc: hiệu chỉnh ở 48 kHz. Kéo các điểm điều khiển xanh ngọc hoặc chỉnh bảng. Khi lưu, dữ liệu tham chiếu được giữ nguyên và một bản sao tùy chỉnh được tạo.</translation>
-    </message>
-    <message>
       <source>Outdoor speaker</source>
       <translation>Loa ngoài trời</translation>
       <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
@@ -1967,6 +1983,14 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Ngăn thay đổi thiết lập sẵn, dải EQ, gain sau EQ và cân bằng</translation>
     </message>
     <message>
+      <source>Preview</source>
+      <translation>Nghe thử</translation>
+    </message>
+    <message>
+      <source>Preview is temporary. Closing the editor restores the previous correction.</source>
+      <translation>Nghe thử chỉ là tạm thời. Đóng trình chỉnh sửa sẽ khôi phục hiệu chỉnh trước đó.</translation>
+    </message>
+    <message>
       <source>Profile</source>
       <translation>Cấu hình</translation>
     </message>
@@ -1995,8 +2019,8 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Hồ sơ được áp dụng ngay khi chọn.</translation>
     </message>
     <message>
-      <source>Profiles need 1–16 correction filters.</source>
-      <translation>Cấu hình cần 1–16 bộ lọc hiệu chỉnh.</translation>
+      <source>Profiles need 1–32 correction filters.</source>
+      <translation>Cấu hình cần 1–32 bộ lọc hiệu chỉnh.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
@@ -2214,8 +2238,8 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Gỡ VB-CABLE?</translation>
     </message>
     <message>
-      <source>Remove selected filter</source>
-      <translation>Xóa bộ lọc đã chọn</translation>
+      <source>Remove point</source>
+      <translation>Xóa điểm</translation>
     </message>
     <message>
       <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
@@ -2315,6 +2339,10 @@ Bạn vẫn muốn xóa không?</translation>
       <source>Save as</source>
       <translation>Lưu thành</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Save copy</source>
+      <translation>Lưu bản sao</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
@@ -2434,9 +2462,8 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
-      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
-      <translation>EQ chung và EQ của kênh vượt quá tổng cộng 64 bộ lọc; hãy xóa bớt bộ lọc của kênh</translation>
-      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+      <source>Shared and channel EQ exceed 96 filters; remove some channel filters</source>
+      <translation>EQ chung và EQ của kênh vượt quá tổng cộng 96 bộ lọc; hãy xóa bớt bộ lọc của kênh</translation>
     </message>
     <message>
       <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
@@ -2797,6 +2824,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Chuyển dữ liệu đáp ứng đo được thành đường cong hiệu chỉnh.</translation>
     </message>
     <message>
+      <source>Turn on the equalizer or microphone EQ before previewing.</source>
+      <translation>Bật bộ cân bằng hoặc EQ micro trước khi nghe thử.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Loại</translation>
     </message>
@@ -2842,8 +2873,8 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
-      <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation>Không hỗ trợ phiên bản cấu trúc cấu hình thiết bị (yêu cầu 2).</translation>
+      <source>Unsupported equipment profile schema (expected 2/3).</source>
+      <translation>Không hỗ trợ phiên bản cấu trúc cấu hình thiết bị (yêu cầu 2/3).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
@@ -2897,11 +2928,6 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
       <translation>Đáp ứng tần số tương đối do người dùng nhập; hãy ghi hướng / số sê-ri của micrô hoặc điều kiện đo loa trước khi sử dụng.</translation>
-      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
-    </message>
-    <message>
-      <source>User-created correction; enter equipment and measurement conditions.</source>
-      <translation>Hiệu chỉnh do người dùng tạo; hãy nhập thiết bị và điều kiện đo.</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
@@ -2997,6 +3023,10 @@ Bạn vẫn muốn xóa không?</translation>
       <source>Whole listening system</source>
       <translation>Toàn bộ hệ thống nghe</translation>
       <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>Độ rộng</translation>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

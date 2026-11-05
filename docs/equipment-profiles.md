@@ -9,7 +9,7 @@ profiles from 255 brands, plus a qualified Pyle PDA29BU electrical reference.
 
 - **Create profile** starts a speaker, microphone or amplifier correction. Enter your
   brand, family, model and conditions. A manually authored curve is not a measurement.
-- **Import JSON** accepts the version 2 format below. The existing amplifier import
+- **Import JSON** accepts the version 2 format below and version 3 for larger corrections. The existing amplifier import
   button still accepts its earlier format.
 - **Import response text** accepts TXT, CSV, FRD and CAL data containing frequency in Hz
   and **relative measured response** in dB. A third phase column is ignored. Comment
@@ -18,8 +18,8 @@ profiles from 255 brands, plus a qualified Pyle PDA29BU electrical reference.
   This path inverts a measured response: do not import already-inverted correction
   gains here. Use JSON filters for already-designed EQ.
 - **Edit / save copy** shows the correction and any measured response supplied. Drag
-  correction control points, or edit type, frequency, gain and Q in the table. Keyboard
-  editing is supported. Add/remove filters up to 16. A changed editor prompts **Save /
+  correction control points, or expand Advanced to edit type, frequency, gain and Q in the table. Keyboard
+  editing is supported. Add/remove filters up to 32. A changed editor prompts **Save /
   Discard / Cancel** when closed, including Escape and the window close button.
 - **Save** always creates a custom copy with a new identity and parent provenance;
   reference and imported originals remain intact. **Export JSON** shares the copy.
@@ -314,3 +314,24 @@ in every supported catalog, with linguistic accuracy still unverified.
 The AR-2ax example uses a historical acoustic-power measurement from about
 500 Hz to 20 kHz. Its relatively modest correction does not establish flat bass,
 flat on-axis response, or the response of an aged individual pair in a room.
+
+## Graphical correction editor
+
+Drag a point to change its frequency and gain, double-click to add a point, and
+use Width for broad or narrow corrections. Advanced numerical controls and
+profile metadata can be expanded when needed. Undo reverses an entire drag.
+New profiles can be built from a few points; the maximum is 32 actual filters.
+The orange measured response is preserved: drawing a correction does not create
+or change a measurement.
+
+Enable the relevant equalizer before using Preview. Preview auditions existing
+audio temporarily; turning it off or closing the editor restores the previous
+correction. Save copy creates a named custom profile; select/apply that saved
+profile to keep using it. Cancel discards edits after confirmation.
+
+Profiles with up to 16 filters retain schema 2 compatibility. Profiles with
+17–32 filters use schema 3 and require an updated app; older apps reject them.
+The processing budget is 96 filters, accommodating 31 listening EQ bands plus
+32 speaker and 32 amplifier filters. Microphone correction supports 32 filters.
+Linux PipeWire graphs reserve those slots, so the larger limit increases their
+fixed processing cost. The C++ processor visits only the active filters.

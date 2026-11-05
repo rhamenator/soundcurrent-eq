@@ -39,6 +39,22 @@ int main(int argc, char **argv) {
         auto bytes = QJsonDocument(serialize(original)).toJson();
         auto round = parse(bytes);
         check(round.filters.size() == 1 && round.kind == "microphone", "round trip");
+        auto detailed = original;
+        detailed.filters.fill(original.filters.front(), 32);
+        auto detailedJson = serialize(detailed);
+        check(detailedJson.value("schema").toInt() == 3, "extended schema");
+        check(parse(QJsonDocument(detailedJson).toJson()).filters.size() == 32, "32-filter round trip");
+        auto oldSchema = detailedJson;
+        oldSchema["schema"] = 2;
+        bool incompatible = false;
+        try { parse(QJsonDocument(oldSchema).toJson()); }
+        catch (const std::exception &) { incompatible = true; }
+        check(incompatible, "schema 2 must retain its 16-filter limit");
+        detailed.filters.append(original.filters.front());
+        bool tooMany = false;
+        try { parse(QJsonDocument(serialize(detailed)).toJson()); }
+        catch (const std::exception &) { tooMany = true; }
+        check(tooMany, "33 filters rejected");
         int rejected = 0;
         auto reject = [&](QJsonObject o) {
             try {

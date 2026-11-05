@@ -24,8 +24,14 @@
 #include <QTemporaryDir>
 #include <QTimer>
 #include <QWheelEvent>
+#include <QMouseEvent>
+#include <QKeyEvent>
+#include <QSlider>
+#include <QGroupBox>
+#include <QScreen>
 #include <QUuid>
 #include <cstdio>
+#include <cmath>
 using namespace soundcurrent::equipment;
 namespace {
 void require(bool ok, const char *message) { if (!ok) qFatal("%s", message); }
@@ -58,6 +64,7 @@ int main(int argc,char **argv) {
     Profile fixture;fixture.kind="speaker";fixture.brand="UI fixture";fixture.family="Test";fixture.model="Saved profile";
     fixture.source="https://example.invalid/ui-test";fixture.conditions="Synthetic test only";fixture.filters={{1000,0,1}};
     QTimer drive;drive.setInterval(20);int phase=0;bool checkedCancel=false;
+    std::optional<Profile> previewed;int previewRestores=0;bool failPreview=true;
     QElapsedTimer elapsed,progressElapsed;elapsed.start();progressElapsed.start();QTimer phaseTrace;int lastPhase=-1;
     QObject::connect(&phaseTrace,&QTimer::timeout,&app,[&]{if(phase!=lastPhase){
         qInfo("Equipment fixture phase %d at %lld ms",phase,static_cast<long long>(elapsed.elapsed()));lastPhase=phase;progressElapsed.restart();}});
@@ -72,12 +79,56 @@ int main(int argc,char **argv) {
             if(phase==0){
                 require(editor->findChild<QLineEdit *>("profileSource")->maxLength()==2048,"Translated source label changed its field limit");
                 require(editor->findChild<QLineEdit *>("profileConditions")->maxLength()==2000,"Translated conditions label changed its field limit");
-                setGain(editor,3);phase=1;closeLater(editor);}
-            else if(phase==2){checkedCancel=true;phase=3;closeLater(editor);}
+                auto *graph=editor->findChild<QWidget *>("profileCorrectionGraph");
+                auto *advanced=editor->findChild<QGroupBox *>("profileAdvanced");
+                auto *table=editor->findChild<QTableWidget *>();
+                auto *preview=editor->findChild<QPushButton *>("previewProfile");
+                require(graph && advanced && !advanced->isChecked() && table && !table->isVisible(),"Graph editor did not start in simple mode");
+                require(editor->height()<=editor->screen()->availableGeometry().height(),"Editor exceeded display height");
+                auto *box=editor->findChild<QDialogButtonBox *>();
+                for(auto role:{QDialogButtonBox::Save,QDialogButtonBox::Cancel}){
+                    auto *action=box->button(role);require(action->isVisible() && editor->rect().contains(QRect(action->mapTo(editor,QPoint()),action->size())),"Editor footer requires scrolling");}
+                require(preview && preview->isEnabled(),"Editor cannot audition through preview callback");
+                require(!previewed,"Opening editor changed preview");
+                button(editor,"Add point")->click();require(table->rowCount()==2,"Add point failed");
+                editor->findChild<QSlider *>("profilePointGain")->setValue(30);
+                const auto oldFrequency=qobject_cast<QDoubleSpinBox *>(table->cellWidget(1,1))->value();
+                preview->click();require(!preview->isChecked() && !previewed && previewRestores==1,"Failed preview left a temporary correction active");
+                preview->click();require(previewed && previewed->filters.size()==2 && previewed->filters[1].gainDb==3,"Preview did not use drawn correction");
+                const QRectF area(45,15,graph->width()-90,graph->height()-40);
+                auto point=[&](double f,double gain){return QPointF(area.left()+std::log(f/20.)/std::log(1000.)*area.width(),area.center().y()-gain/24.*area.height());};
+                auto send=[&](QEvent::Type type,QPointF position,Qt::MouseButton pressed,Qt::MouseButtons held){QMouseEvent event(type,position,graph->mapToGlobal(position.toPoint()),pressed,held,Qt::NoModifier);QCoreApplication::sendEvent(graph,&event);};
+                send(QEvent::MouseButtonPress,point(oldFrequency,3),Qt::LeftButton,Qt::LeftButton);
+                send(QEvent::MouseMove,point(2000,2),Qt::NoButton,Qt::LeftButton);
+                send(QEvent::MouseButtonRelease,point(2000,2),Qt::LeftButton,Qt::NoButton);
+                require(previewed && std::abs(previewed->filters[1].frequency-2000)<.01 && std::abs(previewed->filters[1].gainDb-2)<.01,"Graph drag did not update preview immediately");
+                button(editor,"Undo")->click();require(std::abs(previewed->filters[1].frequency-oldFrequency)<.0001 && previewed->filters[1].gainDb==3,"One drag did not undo as one action");
+                const auto beforeKey=previewed->filters[1].gainDb;
+                QKeyEvent key(QEvent::KeyPress,Qt::Key_Down,Qt::NoModifier);QCoreApplication::sendEvent(graph,&key);
+                require(previewed->filters[1].gainDb<beforeKey,"Keyboard graph edit did not update preview");button(editor,"Undo")->click();
+                send(QEvent::MouseButtonDblClick,point(5000,1),Qt::LeftButton,Qt::LeftButton);
+                require(table->rowCount()==3 && previewed->filters.size()==3,"Double-click did not add a curve point");
+                QKeyEvent erase(QEvent::KeyPress,Qt::Key_Delete,Qt::NoModifier);QCoreApplication::sendEvent(graph,&erase);
+                require(table->rowCount()==2,"Keyboard Delete did not remove a point");
+                while(table->rowCount()<32)button(editor,"Add point")->click();
+                require(!button(editor,"Add point")->isEnabled(),"Editor exceeds the 32-point bound");
+                while(table->rowCount()>1)button(editor,"Remove point")->click();
+                require(!button(editor,"Remove point")->isEnabled(),"Editor allowed an empty correction");
+                advanced->setChecked(true);require(table->isVisible(),"Advanced filter controls are inaccessible");advanced->setChecked(false);
+                const auto beforeWheel=editor->findChild<QSlider *>("profilePointGain")->value();
+                QWheelEvent wheel(QPointF(5,5),QPointF(5,5),QPoint(),QPoint(0,-120),Qt::NoButton,Qt::NoModifier,Qt::NoScrollPhase,false);
+                QCoreApplication::sendEvent(editor->findChild<QSlider *>("profilePointGain"),&wheel);
+                require(editor->findChild<QSlider *>("profilePointGain")->value()==beforeWheel,"Scrolling changed profile slider");
+                preview->click();require(!previewed && previewRestores==2,"Turning preview off did not restore baseline");preview->click();
+                const auto captures=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
+                if(!captures.isEmpty()){QDir().mkpath(captures);editor->grab().save(QDir(captures).filePath("graph-editor.png"));}
+                phase=1;closeLater(editor);}
+            else if(phase==2){require(bool(previewed),"Canceling close prompt stopped an ongoing preview");checkedCancel=true;phase=3;closeLater(editor);}
         }
     });
     QTimer watchdog;QObject::connect(&watchdog,&QTimer::timeout,&app,[&]{if(progressElapsed.elapsed()<20000)return;for(auto *w:QApplication::topLevelWidgets())if(w->isVisible()){qWarning("Visible: %s / %s",w->metaObject()->className(),qPrintable(w->windowTitle()));if(auto *f=qobject_cast<QFileDialog *>(w))qWarning("Selected: %s",qPrintable(f->selectedFiles().join(";")));if(auto *b=qobject_cast<QMessageBox *>(w))qWarning("Message: %s",qPrintable(b->text()));w->grab().save(temp.filePath("timeout.png"));}qFatal("Equipment UI test made no phase progress for 20 seconds at phase %d",phase);});watchdog.start(100);
-    drive.start();saveNewProfile(nullptr,fixture);drive.stop();
+    drive.start();saveNewProfile(nullptr,fixture,[&](const std::optional<Profile> &p){previewed=p;if(!p)++previewRestores;if(p && failPreview){failPreview=false;return false;}return true;});drive.stop();
+    require(!previewed && previewRestores==3,"Discarding editor did not restore previous correction");
     require(phase==4 && checkedCancel && loadLibrary().isEmpty(),"Cancel/discard modified profile failed");
     phase=0;
     QObject::disconnect(&drive,nullptr,&app,nullptr);

@@ -162,8 +162,8 @@ Wilt u het toch verwijderen?</translation>
       <translation>Voeg een JSON-profiel toe aan de opgeslagen bibliotheek.</translation>
     </message>
     <message>
-      <source>Add filter</source>
-      <translation>Filter toevoegen</translation>
+      <source>Add point</source>
+      <translation>Punt toevoegen</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
@@ -177,6 +177,10 @@ Wilt u het toch verwijderen?</translation>
       <source>Adjustable system-wide equalizer for PipeWire</source>
       <translation>Instelbare systeembrede equalizer voor PipeWire</translation>
       <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>Geavanceerd</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
@@ -309,6 +313,10 @@ Wilt u het toch verwijderen?</translation>
       <source>Are you sure you want to delete '%1'?</source>
       <translation>Wilt u '%1' verwijderen?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Arrow keys adjust the selected point; Delete removes it.</source>
+      <translation>Pijltjestoetsen wijzigen het geselecteerde punt; Delete verwijdert het.</translation>
     </message>
     <message>
       <source>Audio bridge did not start</source>
@@ -880,8 +888,16 @@ Wilt u het toch verwijderen?</translation>
       <translation>Sleep curvepunten of stel de geselecteerde band hieronder af.</translation>
     </message>
     <message>
+      <source>Drag points to shape the correction. Double-click to add a point.</source>
+      <translation>Versleep punten om de correctie te vormen. Dubbelklik om een punt toe te voegen.</translation>
+    </message>
+    <message>
       <source>Drain test playback</source>
       <translation>Buffer voor testweergave leegspelen</translation>
+    </message>
+    <message>
+      <source>Drawn corrections are listening adjustments, not equipment measurements.</source>
+      <translation>Getekende correcties zijn luisterinstellingen, geen apparatuurmetingen.</translation>
     </message>
     <message>
       <source>Drive</source>
@@ -1684,6 +1700,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Model</translation>
     </message>
     <message>
+      <source>Move right for a broader adjustment.</source>
+      <translation>Verplaats naar rechts voor een bredere aanpassing.</translation>
+    </message>
+    <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
       <translation>Beweeg naar L of R om het tegenoverliggende kanaal te verzwakken; in het midden blijven beide op volledig niveau</translation>
     </message>
@@ -1855,10 +1875,6 @@ Wilt u het toch verwijderen?</translation>
       <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
-      <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation>Oranje: gemeten respons indien aangeleverd. Turkoois: correctie op 48 kHz. Sleep turquoise regelpunten of bewerk de tabel. Opslaan behoudt de referentie en maakt een aangepaste kopie.</translation>
-    </message>
-    <message>
       <source>Outdoor speaker</source>
       <translation>Buitenluidspreker</translation>
       <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
@@ -1967,6 +1983,14 @@ Wilt u het toch verwijderen?</translation>
       <translation>Wijzigingen aan presets, EQ-banden, eindversterking en balans voorkomen</translation>
     </message>
     <message>
+      <source>Preview</source>
+      <translation>Voorbeeld</translation>
+    </message>
+    <message>
+      <source>Preview is temporary. Closing the editor restores the previous correction.</source>
+      <translation>Het voorbeeld is tijdelijk. Sluiten van de editor herstelt de vorige correctie.</translation>
+    </message>
+    <message>
       <source>Profile</source>
       <translation>Profiel</translation>
     </message>
@@ -1995,8 +2019,8 @@ Wilt u het toch verwijderen?</translation>
       <translation>Profielen worden onmiddellijk toegepast zodra u ze selecteert.</translation>
     </message>
     <message>
-      <source>Profiles need 1–16 correction filters.</source>
-      <translation>Profielen vereisen 1–16 correctiefilters.</translation>
+      <source>Profiles need 1–32 correction filters.</source>
+      <translation>Profielen vereisen 1–32 correctiefilters.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
@@ -2214,8 +2238,8 @@ Wilt u het toch verwijderen?</translation>
       <translation>VB-CABLE verwijderen?</translation>
     </message>
     <message>
-      <source>Remove selected filter</source>
-      <translation>Geselecteerd filter verwijderen</translation>
+      <source>Remove point</source>
+      <translation>Punt verwijderen</translation>
     </message>
     <message>
       <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
@@ -2315,6 +2339,10 @@ Wilt u het toch verwijderen?</translation>
       <source>Save as</source>
       <translation>Opslaan als</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Save copy</source>
+      <translation>Kopie opslaan</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
@@ -2434,9 +2462,8 @@ Wilt u het toch verwijderen?</translation>
       <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
-      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
-      <translation>De gedeelde EQ en kanaal-EQ overschrijden 64 filters; verwijder enkele kanaalfilters</translation>
-      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+      <source>Shared and channel EQ exceed 96 filters; remove some channel filters</source>
+      <translation>De gedeelde EQ en kanaal-EQ overschrijden 96 filters; verwijder enkele kanaalfilters</translation>
     </message>
     <message>
       <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
@@ -2797,6 +2824,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Zet gemeten responsgegevens om in een correctiecurve.</translation>
     </message>
     <message>
+      <source>Turn on the equalizer or microphone EQ before previewing.</source>
+      <translation>Schakel de equalizer of microfoon-EQ in voor het voorbeeld.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Type</translation>
     </message>
@@ -2842,8 +2873,8 @@ Wilt u het toch verwijderen?</translation>
       <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
-      <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation>Niet-ondersteund apparatuurprofielschema (verwacht 2).</translation>
+      <source>Unsupported equipment profile schema (expected 2/3).</source>
+      <translation>Niet-ondersteund apparatuurprofielschema (verwacht 2/3).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
@@ -2897,11 +2928,6 @@ Wilt u het toch verwijderen?</translation>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
       <translation>Door gebruiker geïmporteerde relatieve frequentierespons; geef vóór gebruik de microfoonoriëntatie / het serienummer of de meetomstandigheden van de luidspreker op.</translation>
-      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
-    </message>
-    <message>
-      <source>User-created correction; enter equipment and measurement conditions.</source>
-      <translation>Door gebruiker gemaakte correctie; voer apparatuur en meetomstandigheden in.</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
@@ -2997,6 +3023,10 @@ Wilt u het toch verwijderen?</translation>
       <source>Whole listening system</source>
       <translation>Volledig luistersysteem</translation>
       <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>Breedte</translation>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

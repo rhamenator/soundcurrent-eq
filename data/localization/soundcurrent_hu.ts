@@ -162,8 +162,8 @@ Mindenképp törölni szeretné?</translation>
       <translation>JSON-profil hozzáadása a mentett könyvtárhoz.</translation>
     </message>
     <message>
-      <source>Add filter</source>
-      <translation>Szűrő hozzáadása</translation>
+      <source>Add point</source>
+      <translation>Pont hozzáadása</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
@@ -177,6 +177,10 @@ Mindenképp törölni szeretné?</translation>
       <source>Adjustable system-wide equalizer for PipeWire</source>
       <translation>Állítható, rendszerszintű hangszínszabályzó PipeWire-hez</translation>
       <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>Haladó</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
@@ -309,6 +313,10 @@ Mindenképp törölni szeretné?</translation>
       <source>Are you sure you want to delete '%1'?</source>
       <translation>Biztosan törölni szeretné: „%1”?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Arrow keys adjust the selected point; Delete removes it.</source>
+      <translation>A nyílbillentyűk a kijelölt pontot állítják; a Delete eltávolítja.</translation>
     </message>
     <message>
       <source>Audio bridge did not start</source>
@@ -880,8 +888,16 @@ Mindenképp törölni szeretné?</translation>
       <translation>Húzza a görbe pontjait, vagy állítsa a kiválasztott sávot alább.</translation>
     </message>
     <message>
+      <source>Drag points to shape the correction. Double-click to add a point.</source>
+      <translation>A korrekció alakításához húzza a pontokat. Dupla kattintással új pontot adhat hozzá.</translation>
+    </message>
+    <message>
       <source>Drain test playback</source>
       <translation>A tesztlejátszás befejezése</translation>
+    </message>
+    <message>
+      <source>Drawn corrections are listening adjustments, not equipment measurements.</source>
+      <translation>A rajzolt korrekciók hallgatási beállítások, nem eszközmérések.</translation>
     </message>
     <message>
       <source>Drive</source>
@@ -1684,6 +1700,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Modell</translation>
     </message>
     <message>
+      <source>Move right for a broader adjustment.</source>
+      <translation>Szélesebb beállításhoz mozgassa jobbra.</translation>
+    </message>
+    <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
       <translation>Tolja B vagy J felé az ellenkező csatorna csökkentéséhez; középen mindkettő teljes szinten marad</translation>
     </message>
@@ -1855,10 +1875,6 @@ Mindenképp törölni szeretné?</translation>
       <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
-      <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation>Narancs: mért frekvenciamenet, ha rendelkezésre áll. Türkiz: korrekció 48 kHz-en. Húzza a türkiz vezérlőpontokat vagy szerkessze a táblázatot. A mentés megőrzi a referenciát és egyéni másolatot hoz létre.</translation>
-    </message>
-    <message>
       <source>Outdoor speaker</source>
       <translation>Kültéri hangsugárzó</translation>
       <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
@@ -1967,6 +1983,14 @@ Mindenképp törölni szeretné?</translation>
       <translation>Előbeállítások, EQ-sávok, utóerősítés és balansz módosításának megakadályozása</translation>
     </message>
     <message>
+      <source>Preview</source>
+      <translation>Előhallgatás</translation>
+    </message>
+    <message>
+      <source>Preview is temporary. Closing the editor restores the previous correction.</source>
+      <translation>Az előhallgatás ideiglenes. A szerkesztő bezárása visszaállítja az előző korrekciót.</translation>
+    </message>
+    <message>
       <source>Profile</source>
       <translation>Profil</translation>
     </message>
@@ -1995,8 +2019,8 @@ Mindenképp törölni szeretné?</translation>
       <translation>A profilok a kiválasztáskor azonnal érvénybe lépnek.</translation>
     </message>
     <message>
-      <source>Profiles need 1–16 correction filters.</source>
-      <translation>A profilokhoz 1–16 korrekciós szűrő szükséges.</translation>
+      <source>Profiles need 1–32 correction filters.</source>
+      <translation>A profilokhoz 1–32 korrekciós szűrő szükséges.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
@@ -2214,8 +2238,8 @@ Mindenképp törölni szeretné?</translation>
       <translation>Eltávolítja a VB-CABLE-t?</translation>
     </message>
     <message>
-      <source>Remove selected filter</source>
-      <translation>Kiválasztott szűrő eltávolítása</translation>
+      <source>Remove point</source>
+      <translation>Pont eltávolítása</translation>
     </message>
     <message>
       <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
@@ -2315,6 +2339,10 @@ Mindenképp törölni szeretné?</translation>
       <source>Save as</source>
       <translation>Mentés másként</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Save copy</source>
+      <translation>Másolat mentése</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
@@ -2434,9 +2462,8 @@ Mindenképp törölni szeretné?</translation>
       <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
-      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
-      <translation>A közös EQ és a csatorna EQ-ja meghaladja a 64 szűrőt; távolítson el néhány csatornaszűrőt</translation>
-      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+      <source>Shared and channel EQ exceed 96 filters; remove some channel filters</source>
+      <translation>A közös EQ és a csatorna EQ-ja meghaladja a 96 szűrőt; távolítson el néhány csatornaszűrőt</translation>
     </message>
     <message>
       <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
@@ -2797,6 +2824,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Mért átviteli adatok átalakítása korrekciós görbévé.</translation>
     </message>
     <message>
+      <source>Turn on the equalizer or microphone EQ before previewing.</source>
+      <translation>Előhallgatás előtt kapcsolja be a hangszínszabályzót vagy a mikrofon EQ-ját.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Típus</translation>
     </message>
@@ -2842,8 +2873,8 @@ Mindenképp törölni szeretné?</translation>
       <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
-      <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation>Nem támogatott eszközprofil-séma (elvárt: 2).</translation>
+      <source>Unsupported equipment profile schema (expected 2/3).</source>
+      <translation>Nem támogatott eszközprofil-séma (elvárt: 2/3).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
@@ -2897,11 +2928,6 @@ Mindenképp törölni szeretné?</translation>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
       <translation>Felhasználó által importált relatív frekvenciaátvitel; használat előtt adja meg a mikrofon irányát / sorozatszámát vagy a hangsugárzó mérési körülményeit.</translation>
-      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
-    </message>
-    <message>
-      <source>User-created correction; enter equipment and measurement conditions.</source>
-      <translation>Felhasználó által létrehozott korrekció; adja meg az eszközt és a mérési körülményeket.</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
@@ -2997,6 +3023,10 @@ Mindenképp törölni szeretné?</translation>
       <source>Whole listening system</source>
       <translation>Teljes hallgatási rendszer</translation>
       <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>Szélesség</translation>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

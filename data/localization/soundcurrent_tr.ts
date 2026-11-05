@@ -162,8 +162,8 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Kayıtlı kitaplığa bir JSON profili ekleyin.</translation>
     </message>
     <message>
-      <source>Add filter</source>
-      <translation>Filtre ekle</translation>
+      <source>Add point</source>
+      <translation>Nokta ekle</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
@@ -177,6 +177,10 @@ Yine de silmek istiyor musunuz?</translation>
       <source>Adjustable system-wide equalizer for PipeWire</source>
       <translation>PipeWire için ayarlanabilir sistem geneli ekolayzır</translation>
       <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>Gelişmiş</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
@@ -309,6 +313,10 @@ Yine de silmek istiyor musunuz?</translation>
       <source>Are you sure you want to delete '%1'?</source>
       <translation>“%1” silinecek, emin misiniz?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Arrow keys adjust the selected point; Delete removes it.</source>
+      <translation>Ok tuşları seçili noktayı ayarlar; Delete onu kaldırır.</translation>
     </message>
     <message>
       <source>Audio bridge did not start</source>
@@ -880,8 +888,16 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Eğri noktalarını sürükleyin veya seçili bandı aşağıda ayarlayın.</translation>
     </message>
     <message>
+      <source>Drag points to shape the correction. Double-click to add a point.</source>
+      <translation>Düzeltmeyi şekillendirmek için noktaları sürükleyin. Nokta eklemek için çift tıklayın.</translation>
+    </message>
+    <message>
       <source>Drain test playback</source>
       <translation>Test sesi oynatımını tamamlama</translation>
+    </message>
+    <message>
+      <source>Drawn corrections are listening adjustments, not equipment measurements.</source>
+      <translation>Çizilen düzeltmeler dinleme ayarlarıdır, ekipman ölçümü değildir.</translation>
     </message>
     <message>
       <source>Drive</source>
@@ -1684,6 +1700,10 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Model</translation>
     </message>
     <message>
+      <source>Move right for a broader adjustment.</source>
+      <translation>Daha geniş ayarlama için sağa kaydırın.</translation>
+    </message>
+    <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
       <translation>Karşı kanalı azaltmak için L veya R yönüne kaydırın; orta konum ikisini de tam seviyede tutar</translation>
     </message>
@@ -1855,10 +1875,6 @@ Yine de silmek istiyor musunuz?</translation>
       <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
-      <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation>Turuncu: sağlanmışsa ölçülmüş yanıt. Turkuaz: 48 kHz'deki düzeltme. Turkuaz noktaları sürükleyin veya tabloyu düzenleyin. Kaydetmek referansı korur ve özel bir kopya oluşturur.</translation>
-    </message>
-    <message>
       <source>Outdoor speaker</source>
       <translation>Dış mekan hoparlörü</translation>
       <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
@@ -1967,6 +1983,14 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Hazır ayarlar, EQ bantları, çıkış kazancı ve dengede değişiklikleri önle</translation>
     </message>
     <message>
+      <source>Preview</source>
+      <translation>Önizleme</translation>
+    </message>
+    <message>
+      <source>Preview is temporary. Closing the editor restores the previous correction.</source>
+      <translation>Önizleme geçicidir. Düzenleyiciyi kapatmak önceki düzeltmeyi geri yükler.</translation>
+    </message>
+    <message>
       <source>Profile</source>
       <translation>Profil</translation>
     </message>
@@ -1995,8 +2019,8 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Profiller seçildikleri anda uygulanır.</translation>
     </message>
     <message>
-      <source>Profiles need 1–16 correction filters.</source>
-      <translation>Profiller 1–16 düzeltme filtresi gerektirir.</translation>
+      <source>Profiles need 1–32 correction filters.</source>
+      <translation>Profiller 1–32 düzeltme filtresi gerektirir.</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
@@ -2214,8 +2238,8 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>VB-CABLE kaldırılsın mı?</translation>
     </message>
     <message>
-      <source>Remove selected filter</source>
-      <translation>Seçili filtreyi kaldır</translation>
+      <source>Remove point</source>
+      <translation>Noktayı kaldır</translation>
     </message>
     <message>
       <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
@@ -2315,6 +2339,10 @@ Yine de silmek istiyor musunuz?</translation>
       <source>Save as</source>
       <translation>Farklı Kaydet</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Save copy</source>
+      <translation>Kopyayı kaydet</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
@@ -2434,9 +2462,8 @@ Yine de silmek istiyor musunuz?</translation>
       <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
-      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
-      <translation>Ortak EQ ve kanal EQ’su 64 filtreyi aşıyor; bazı kanal filtrelerini kaldırın</translation>
-      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+      <source>Shared and channel EQ exceed 96 filters; remove some channel filters</source>
+      <translation>Ortak EQ ve kanal EQ’su 96 filtreyi aşıyor; bazı kanal filtrelerini kaldırın</translation>
     </message>
     <message>
       <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
@@ -2797,6 +2824,10 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Ölçülen tepki verilerini bir düzeltme eğrisine dönüştürün.</translation>
     </message>
     <message>
+      <source>Turn on the equalizer or microphone EQ before previewing.</source>
+      <translation>Önizlemeden önce ekolayzırı veya mikrofon EQ’sunu açın.</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>Tür</translation>
     </message>
@@ -2842,8 +2873,8 @@ Yine de silmek istiyor musunuz?</translation>
       <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
-      <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation>Desteklenmeyen ekipman profili şeması (beklenen 2).</translation>
+      <source>Unsupported equipment profile schema (expected 2/3).</source>
+      <translation>Desteklenmeyen ekipman profili şeması (beklenen 2/3).</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
@@ -2897,11 +2928,6 @@ Yine de silmek istiyor musunuz?</translation>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
       <translation>Kullanıcının içe aktardığı bağıl frekans yanıtı; kullanmadan önce mikrofon yönelimini / seri numarasını veya hoparlör ölçüm koşullarını belirtin.</translation>
-      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
-    </message>
-    <message>
-      <source>User-created correction; enter equipment and measurement conditions.</source>
-      <translation>Kullanıcının oluşturduğu düzeltme; ekipmanı ve ölçüm koşullarını girin.</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
@@ -2997,6 +3023,10 @@ Yine de silmek istiyor musunuz?</translation>
       <source>Whole listening system</source>
       <translation>Tüm dinleme sistemi</translation>
       <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>Genişlik</translation>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>

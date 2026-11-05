@@ -162,8 +162,8 @@ Do you want to delete it anyway?</source>
       <translation>将 JSON 配置文件添加到已保存的资料库。</translation>
     </message>
     <message>
-      <source>Add filter</source>
-      <translation>添加滤波器</translation>
+      <source>Add point</source>
+      <translation>添加点</translation>
     </message>
     <message>
       <source>Adjust the output from -60 to +12 dB after the EQ. Higher gain can cause clipping.</source>
@@ -177,6 +177,10 @@ Do you want to delete it anyway?</source>
       <source>Adjustable system-wide equalizer for PipeWire</source>
       <translation>适用于 PipeWire 的可调节全系统均衡器</translation>
       <extracomment>Linux launcher description. Adjustable EQ applies across system playback using PipeWire; not a claim of a new driver or automatic room correction. Preserve PipeWire product identity. Application name and launch command stay unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>高级</translation>
     </message>
     <message>
       <source>Advanced enhancement controls</source>
@@ -309,6 +313,10 @@ Do you want to delete it anyway?</source>
       <source>Are you sure you want to delete '%1'?</source>
       <translation>您确定要删除“%1”吗？</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Arrow keys adjust the selected point; Delete removes it.</source>
+      <translation>方向键调整选中的点；Delete 键将其移除。</translation>
     </message>
     <message>
       <source>Audio bridge did not start</source>
@@ -880,8 +888,16 @@ Do you want to delete it anyway?</source>
       <translation>拖动曲线上的点，或在下方调整所选频段。</translation>
     </message>
     <message>
+      <source>Drag points to shape the correction. Double-click to add a point.</source>
+      <translation>拖动控制点调整校正曲线。双击可添加控制点。</translation>
+    </message>
+    <message>
       <source>Drain test playback</source>
       <translation>完成测试音频播放</translation>
+    </message>
+    <message>
+      <source>Drawn corrections are listening adjustments, not equipment measurements.</source>
+      <translation>绘制的校正是听音调整，不是设备测量结果。</translation>
     </message>
     <message>
       <source>Drive</source>
@@ -1684,6 +1700,10 @@ Do you want to delete it anyway?</source>
       <translation>型号</translation>
     </message>
     <message>
+      <source>Move right for a broader adjustment.</source>
+      <translation>向右移动可扩大调整范围。</translation>
+    </message>
+    <message>
       <source>Move toward L or R to reduce the opposite channel; center keeps both at full level</source>
       <translation>向 L 或 R 移动可降低另一声道的电平；居中时两声道保持完整电平</translation>
     </message>
@@ -1855,10 +1875,6 @@ Do you want to delete it anyway?</source>
       <extracomment>Cable setup launch progress. %1 is stable VB-CABLE name. Opening installer, not claim of successful installation.</extracomment>
     </message>
     <message>
-      <source>Orange: measured response where supplied. Teal: correction at 48 kHz. Drag teal control points or edit the table. Saving preserves the reference and creates a custom copy.</source>
-      <translation>橙色：实测响应（如有）。青绿色：48 kHz 下的校正。拖动青绿色控制点或编辑表格。保存会保留参考数据并创建自定义副本。</translation>
-    </message>
-    <message>
       <source>Outdoor speaker</source>
       <translation>户外音箱</translation>
       <extracomment>Speaker designed for outdoor use; not an output device selector.</extracomment>
@@ -1967,6 +1983,14 @@ Do you want to delete it anyway?</source>
       <translation>防止更改预设、均衡器频段、后级增益和平衡</translation>
     </message>
     <message>
+      <source>Preview</source>
+      <translation>试听</translation>
+    </message>
+    <message>
+      <source>Preview is temporary. Closing the editor restores the previous correction.</source>
+      <translation>试听是临时的。关闭编辑器会恢复之前的校正。</translation>
+    </message>
+    <message>
       <source>Profile</source>
       <translation>配置</translation>
     </message>
@@ -1995,8 +2019,8 @@ Do you want to delete it anyway?</source>
       <translation>选择配置文件后立即应用。</translation>
     </message>
     <message>
-      <source>Profiles need 1–16 correction filters.</source>
-      <translation>配置需要 1–16 个校正滤波器。</translation>
+      <source>Profiles need 1–32 correction filters.</source>
+      <translation>配置需要 1–32 个校正滤波器。</translation>
     </message>
     <message>
       <source>Published measurement sources: &lt;a href="https://www.spinorama.org/"&gt;Speaker measurements / EQ&lt;/a&gt; · &lt;a href="https://support.daytonaudio.com/microphonecalibrationtool"&gt;Dayton serial calibration&lt;/a&gt; · &lt;a href="https://www.minidsp.com/products/acoustic-measurement/umik-1"&gt;miniDSP serial calibration&lt;/a&gt; · &lt;a href="https://www.neumann.com/de-de/downloads/"&gt;Neumann microphone graphs&lt;/a&gt; · &lt;a href="https://docs.audio-technica.com/us/at2020_english.pdf"&gt;AT2020 response graph&lt;/a&gt; · &lt;a href="https://www.soundstagenetwork.com/index.php?Itemid=154&amp;amp;id=97&amp;amp;option=com_content&amp;amp;view=category"&gt;Amplifier measurements&lt;/a&gt;</source>
@@ -2214,8 +2238,8 @@ Do you want to delete it anyway?</source>
       <translation>移除 VB-CABLE？</translation>
     </message>
     <message>
-      <source>Remove selected filter</source>
-      <translation>移除所选滤波器</translation>
+      <source>Remove point</source>
+      <translation>移除点</translation>
     </message>
     <message>
       <source>Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.</source>
@@ -2315,6 +2339,10 @@ Do you want to delete it anyway?</source>
       <source>Save as</source>
       <translation>另存为</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Save copy</source>
+      <translation>保存副本</translation>
     </message>
     <message>
       <source>Save modified profile?</source>
@@ -2434,9 +2462,8 @@ Do you want to delete it anyway?</source>
       <extracomment>Missing-driver installer notice (check exit 10). Signed means digitally signed installer software. Install Driver is the exact external button caption and remains English. Restart Windows before using EQ or cable settings. AI contextual review; native review unverified.</extracomment>
     </message>
     <message>
-      <source>Shared and channel EQ exceed 64 filters; remove some channel filters</source>
-      <translation>共享均衡器和通道均衡器的滤波器总数超过 64；请删除一些通道滤波器</translation>
-      <extracomment>Sum of shared EQ and channel EQ must not exceed 64 filters. Remove channel filters, not speaker profiles. Keep the limit 64.</extracomment>
+      <source>Shared and channel EQ exceed 96 filters; remove some channel filters</source>
+      <translation>共享均衡器和通道均衡器的滤波器总数超过 96；请删除一些通道滤波器</translation>
     </message>
     <message>
       <source>Shared audio driver removal did not finish. This app was kept so you can retry. Quit any running SoundCurrent app, then retry uninstalling.</source>
@@ -2797,6 +2824,10 @@ Do you want to delete it anyway?</source>
       <translation>将测得的响应数据转换为校正曲线。</translation>
     </message>
     <message>
+      <source>Turn on the equalizer or microphone EQ before previewing.</source>
+      <translation>试听前，请先开启均衡器或麦克风均衡。</translation>
+    </message>
+    <message>
       <source>Type</source>
       <translation>类型</translation>
     </message>
@@ -2842,8 +2873,8 @@ Do you want to delete it anyway?</source>
       <extracomment>Saved Studio setup schema/version or required top-level structure is unsupported. This is a file format, not a visual theme or room calibration profile.</extracomment>
     </message>
     <message>
-      <source>Unsupported equipment profile schema (expected 2).</source>
-      <translation>不支持的设备配置格式版本（应为 2）。</translation>
+      <source>Unsupported equipment profile schema (expected 2/3).</source>
+      <translation>不支持的设备配置格式版本（应为 2/3）。</translation>
     </message>
     <message>
       <source>Unsupported filter type.</source>
@@ -2897,11 +2928,6 @@ Do you want to delete it anyway?</source>
     <message>
       <source>User imported relative frequency response; specify microphone orientation / serial, or speaker measurement conditions before use.</source>
       <translation>用户导入的相对频率响应；使用前请注明麦克风朝向 / 序列号或扬声器测量条件。</translation>
-      <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
-    </message>
-    <message>
-      <source>User-created correction; enter equipment and measurement conditions.</source>
-      <translation>用户创建的校正；请输入设备及测量条件。</translation>
       <extracomment>App-authored editable defaults or provenance for a newly created/imported profile or explicitly saved copy. Existing saved/imported metadata remains verbatim. Never translate filenames, hashes or source IDs substituted for placeholders.</extracomment>
     </message>
     <message>
@@ -2997,6 +3023,10 @@ Do you want to delete it anyway?</source>
       <source>Whole listening system</source>
       <translation>完整聆听系统</translation>
       <extracomment>New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.</extracomment>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>宽度</translation>
     </message>
     <message>
       <source>Windows audio COM unavailable</source>
