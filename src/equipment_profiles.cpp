@@ -528,6 +528,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     layout->addWidget(list);
     auto *details = new QLabel;
     details->setWordWrap(true);
+    details->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
     details->setTextFormat(Qt::PlainText);
     details->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
     layout->addWidget(details);
@@ -539,7 +540,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     QVector<Profile> custom = loadLibrary(), profiles = bundledProfiles();
     const int bundledCount = profiles.size();
     profiles += custom;
-    auto *taxonomy = new QHBoxLayout;
+    auto *taxonomy = new QGridLayout;
     auto *kindFilter = new QComboBox;
     kindFilter->setObjectName("equipmentKindFilter");
     kindFilter->addItem(SC_TR("All equipment"), QString());
@@ -552,15 +553,17 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     brandFilter->setAccessibleName(SC_TR("Equipment brand"));
     auto *familyFilter = new QComboBox;
     familyFilter->setAccessibleName(SC_TR("Equipment family"));
-    taxonomy->addWidget(kindFilter);
-    taxonomy->addWidget(brandFilter);
-    taxonomy->addWidget(familyFilter);
-    auto *subtypeFilter=new QComboBox;subtypeFilter->setObjectName("equipmentSubtypeFilter");subtypeFilter->setAccessibleName(SC_TR("Equipment subtype"));taxonomy->addWidget(subtypeFilter);
+    auto *subtypeFilter=new QComboBox;subtypeFilter->setObjectName("equipmentSubtypeFilter");subtypeFilter->setAccessibleName(SC_TR("Equipment subtype"));
     for (auto *combo : {static_cast<QComboBox *>(list), kindFilter, brandFilter, familyFilter, subtypeFilter}) {
         combo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
         combo->setMinimumContentsLength(8);
         combo->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     }
+    int taxonomyWidth = 1;
+    const QVector<QComboBox *> taxonomyChoices{kindFilter, brandFilter, familyFilter, subtypeFilter};
+    for (auto *combo : taxonomyChoices) taxonomyWidth = std::max(taxonomyWidth, combo->minimumSizeHint().width());
+    const int taxonomyColumns = std::clamp((dialog.width() - 64) / (taxonomyWidth + std::max(6, taxonomy->spacing())), 1, 4);
+    for (int i = 0; i < taxonomyChoices.size(); ++i) taxonomy->addWidget(taxonomyChoices[i], i / taxonomyColumns, i % taxonomyColumns);
     layout->insertLayout(0, taxonomy);
     auto taxonomyRefresh = [&] {
         const QSignalBlocker b(brandFilter), f(familyFilter), st(subtypeFilter);
@@ -679,11 +682,10 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     };
     auto *row = new QGridLayout;
     layout->addLayout(row);
-    int actionIndex = 0;
+    QVector<QPushButton *> actions;
     auto button = [&](const QString &label) {
         auto *b = new QPushButton(label);
-        row->addWidget(b, actionIndex / 3, actionIndex % 3);
-        ++actionIndex;
+        actions.append(b);
         return b;
     };
     auto *import = button(SC_TR("Import JSON"));
@@ -886,6 +888,11 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     sources->setWordWrap(true);
     sources->setOpenExternalLinks(true);
     layout->addWidget(sources);
+    // Fit translated button labels using this platform's actual font metrics.
+    int actionWidth = 1;
+    for (auto *action : actions) actionWidth = std::max(actionWidth, action->sizeHint().width());
+    const int columns = std::clamp((dialog.width() - 64) / (actionWidth + std::max(6, row->spacing())), 1, 3);
+    for (int i = 0; i < actions.size(); ++i) row->addWidget(actions[i], i / columns, i % columns);
     auto *close = new QDialogButtonBox(QDialogButtonBox::Close);
     outer->addWidget(close);
     QObject::connect(close, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);

@@ -132,6 +132,13 @@ int main(int argc,char **argv) {
             require(feedback->isVisible() && library->rect().contains(QRect(feedback->mapTo(library,QPoint()),feedback->size())),
                     "Applied confirmation requires scrolling or is clipped");
             auto *body=library->findChild<QScrollArea *>();
+            if(body && body->horizontalScrollBar()->maximum()>0) {
+                qWarning("Profile viewport width %d; content width %d",body->viewport()->width(),body->widget()->width());
+                for(auto *child:body->widget()->findChildren<QWidget *>())
+                    if(child->minimumSizeHint().width()>80) qWarning("%s: minimum %d, width %d",child->metaObject()->className(),child->minimumSizeHint().width(),child->width());
+                const auto debugCaptures=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
+                if(!debugCaptures.isEmpty()){QDir().mkpath(debugCaptures);library->grab().save(QDir(debugCaptures).filePath("horizontal-overflow.png"));}
+            }
             require(body && body->horizontalScrollBar()->maximum()==0,"Profile manager clips content horizontally");
             auto *closeBox=library->findChild<QDialogButtonBox *>();
             auto *closeButton=closeBox ? closeBox->button(QDialogButtonBox::Close) : nullptr;
