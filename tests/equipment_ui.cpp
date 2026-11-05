@@ -201,6 +201,11 @@ int main(int argc,char **argv) {
         require(saved->count()==loadLibrary().size() && saved->isVisible(),"Saved profiles not available in custom list");
         saved->setCurrentRow(saved->count()-1);
         require(manager->findChild<QComboBox *>("equipmentProfileList")->currentIndex()>0,"Custom list did not select profile");
+        auto *choices=manager->findChild<QComboBox *>("equipmentProfileList");
+        choices->setCurrentIndex(saved->item(0)->data(Qt::UserRole).toInt());
+        require(saved->currentRow()==0,"Dropdown changed action target without updating highlighted custom entry");
+        saved->setCurrentRow(saved->count()-1);
+        require(choices->currentIndex()==saved->currentItem()->data(Qt::UserRole).toInt(),"Custom selection failed to restore action target");
         require(manager->findChild<QPushButton *>("deleteEquipmentProfile")->isEnabled(),"Custom list cannot manage saved profile");
         customChecked=true;
         const auto captures=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");

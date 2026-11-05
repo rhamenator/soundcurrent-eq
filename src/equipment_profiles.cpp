@@ -644,6 +644,12 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         refreshing = false;
     };
     QObject::connect(list, &QComboBox::currentIndexChanged, &dialog, [&] {
+        const QSignalBlocker block(customList);
+        customList->setCurrentRow(-1); customList->clearSelection();
+        for (int row = 0; row < customList->count(); ++row)
+            if (customList->item(row)->data(Qt::UserRole).toInt() == list->currentIndex()) {
+                customList->setCurrentRow(row); break;
+            }
         if (list->currentIndex() < 0 || list->currentData().toInt() < 0) {
             details->clear();
             plot->profile = {};
@@ -670,6 +676,9 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         customList->setVisible(on); taxonomyRefresh(); refresh();
     });
     QObject::connect(customList, &QListWidget::currentItemChanged, &dialog, [&](QListWidgetItem *item) {
+        if (!refreshing && item) list->setCurrentIndex(item->data(Qt::UserRole).toInt());
+    });
+    QObject::connect(customList, &QListWidget::itemClicked, &dialog, [&](QListWidgetItem *item) {
         if (!refreshing && item) list->setCurrentIndex(item->data(Qt::UserRole).toInt());
     });
     QObject::connect(search, &QLineEdit::textChanged, &dialog, [&] { refresh(); });

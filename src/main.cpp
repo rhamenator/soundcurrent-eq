@@ -2097,7 +2097,7 @@ public:
         connect(speakerDetails, &QPushButton::clicked, this, [this] { showSpeakerDetails(); });
         auto manageProfiles = [this](const QString &kind) {
             if (lockButton_->isChecked() || calibrating_) { showError(SC_TR("Unlock controls and finish measurement before editing profiles.")); return; }
-            try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }, kind); }
+            try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }, kind); refreshEquipmentStatus(); }
             catch (const std::exception &e) { showError(QString::fromUtf8(e.what())); }
         };
         auto *manageSpeakers = new QPushButton(SC_TR("Manage profiles"));
@@ -2106,6 +2106,7 @@ public:
         speakerRow->addWidget(manageSpeakers);
         connect(manageSpeakers, &QPushButton::clicked, this, [manageProfiles] { manageProfiles("speaker"); });
         auto *equipmentButton = new QPushButton(SC_TR("Browse all equipment profiles / editor"));
+        equipmentButton->setObjectName("manageAllEquipmentProfiles");
         equipmentButton->setAccessibleName(SC_TR("Import create and edit equipment profiles"));
         speakerLayout->addWidget(equipmentButton);
         equipmentStatus_ = new QLabel;
@@ -2115,7 +2116,7 @@ public:
         speakerLayout->addWidget(clearEquipment);
         connect(equipmentButton, &QPushButton::clicked, this, [this] {
             if (lockButton_->isChecked() || calibrating_) { showError(SC_TR("Unlock controls and finish measurement before editing profiles.")); return; }
-            try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }); }
+            try { soundcurrent::equipment::openLibrary(this, [this](const auto &profile) { setEquipment(profile); }); refreshEquipmentStatus(); }
             catch (const std::exception &e) { showError(QString::fromUtf8(e.what())); }
         });
         connect(clearEquipment, &QPushButton::clicked, this, [this] {
@@ -2680,6 +2681,26 @@ public:
         if (speakerCombo_->itemText(speakerCombo_->findData(oldId)) != oldName)
             qFatal("Custom copy renamed bundled speaker choice");
         saveLibrary(savedLibrary);
+        for (const auto name : {"manageSpeakerProfiles", "manageAllEquipmentProfiles"}) {
+            auto *entry = findChild<QPushButton *>(name);
+            if (!entry) qFatal("Missing library management entry point");
+            Profile created = imported; created.id = "ui-library-only"; created.model = "Library only";
+            QTimer::singleShot(0, this, [&, created] {
+                auto *manager = qobject_cast<QDialog *>(QApplication::activeModalWidget());
+                if (!manager || manager->objectName() != "equipmentProfileManager") qFatal("Missing library modal");
+                auto changed = savedLibrary; changed.append(created); saveLibrary(changed); manager->accept();
+            });
+            entry->click();
+            if (speakerCombo_->findData(created.id) < 0 || speakerCombo_->currentIndex() != 0 || equipmentProfile("speaker"))
+                qFatal("Closing manager failed to add saved choice without applying it");
+            QTimer::singleShot(0, this, [&] {
+                auto *manager = qobject_cast<QDialog *>(QApplication::activeModalWidget());
+                if (!manager || manager->objectName() != "equipmentProfileManager") qFatal("Missing deletion modal");
+                saveLibrary(savedLibrary); manager->accept();
+            });
+            entry->click();
+            if (speakerCombo_->findData(created.id) >= 0) qFatal("Deleted inactive profile remained selectable");
+        }
         for (auto *button : findChildren<QAbstractButton *>()) {
             if (button->text().isEmpty() && button->accessibleName().isEmpty()) continue;
             soundcurrent::ui::describeButton(button);
