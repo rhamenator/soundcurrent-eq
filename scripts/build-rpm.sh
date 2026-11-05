@@ -15,7 +15,7 @@ tar -C "$project_dir" \
     --exclude='__pycache__' --exclude='*.pyc' \
     --transform="s,^,soundcurrent-eq-$version/," \
     -czf "$topdir/SOURCES/soundcurrent-eq-$version.tar.gz" \
-    CMakeLists.txt COPYRIGHT LICENSE README.md THIRD-PARTY-NOTICES.md src data tests docs scripts packaging native/windows/virtual-driver/vendor/sysvad/soundcurrent_mic_transport.h native/windows/virtual-driver/vendor/LICENSE-MS-PL.txt
+    CMakeLists.txt COPYRIGHT LICENSE README.md THIRD-PARTY-NOTICES.md src data tests docs scripts tools packaging native/windows/virtual-driver/vendor/sysvad/soundcurrent_mic_transport.h native/windows/virtual-driver/vendor/LICENSE-MS-PL.txt
 
 rpmbuild -bb "$@" --define "_topdir $topdir" \
     --define "_rpmdir $project_dir/dist" \

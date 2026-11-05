@@ -149,9 +149,9 @@ Profiles are treated as data, not commands; no profile can run code or download 
 quality, the complete bundled catalog, atomic save/reopen, and a real modal editor test
 that changes gain, closes, chooses Save and checks preservation of the original.
 Existing shared UI, DSP and premium engine/WAVE tests remain enabled. Tests use isolated
-settings and no hardware output. Linux is tested locally; the new shared Windows code
-has not yet been built or exercised in a Windows VM. Hardware sweep accuracy and a
-custom profile on a live microphone require separate verification.
+settings and no hardware output. Linux is tested locally; shared Windows UI, installer and installed-locale checks
+run in GitHub Actions. Physical Windows audio devices, hardware sweep accuracy and
+a custom profile on a live microphone require separate verification.
 
 ## Managing profiles
 
