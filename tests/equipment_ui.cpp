@@ -12,6 +12,9 @@
 #include <QFileDialog>
 #include <QJsonDocument>
 #include <QLineEdit>
+#include <QLabel>
+#include <QScrollArea>
+#include <QScrollBar>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QStandardPaths>
@@ -121,10 +124,29 @@ int main(int argc,char **argv) {
             subtype->setCurrentIndex(0);kind->setCurrentIndex(2);kind->setCurrentIndex(0);phase=1;clickLater(button(library,"Import JSON"));}
         else if(phase==3){phase=4;clickLater(button(library,"Import JSON"));}
         else if(phase==6){require(!applied,"Importing or saving implicitly changed audio");auto profiles=loadLibrary();require(profiles.size()==2 && profiles[0].id==originalId,"Valid import overwrote existing profile");phase=8;clickLater(button(library,"Apply profile"));}
-        else if(phase==8){require(applied,"Apply callback missing");phase=9;closeLater(library);}
+        else if(phase==8){require(applied,"Apply callback missing");phase=9;}
+        else if(phase==9){
+            auto *feedback=library->findChild<QLabel *>("appliedEquipmentProfile");
+            require(feedback && feedback->text().contains(expectedImportedModel),"Applied import has no visible confirmation");
+
+            require(feedback->isVisible() && library->rect().contains(QRect(feedback->mapTo(library,QPoint()),feedback->size())),
+                    "Applied confirmation requires scrolling or is clipped");
+            auto *body=library->findChild<QScrollArea *>();
+            require(body && body->horizontalScrollBar()->maximum()==0,"Profile manager clips content horizontally");
+            auto *closeBox=library->findChild<QDialogButtonBox *>();
+            auto *closeButton=closeBox ? closeBox->button(QDialogButtonBox::Close) : nullptr;
+            require(closeButton && closeButton->isVisible() &&
+                    library->rect().contains(QRect(closeButton->mapTo(library,QPoint()),closeButton->size())),
+                    "Close button requires scrolling or is clipped");
+            const auto captures=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
+            if(!captures.isEmpty()){
+                QDir().mkpath(captures);
+                require(library->grab().save(QDir(captures).filePath("import-applied.png")),"Could not capture imported profile confirmation");
+            }
+            phase=10;closeLater(library);}
     });
     drive.start();openLibrary(nullptr,[&](const Profile &p){require(p.model==expectedImportedModel,"Applied wrong imported profile");applied=true;});drive.stop();
-    require(phase==9 && applied && malformedRejected,"Profile import/apply UI failed");
+    require(phase==10 && applied && malformedRejected,"Profile import/apply UI failed");
     // Dedicated managers start on the requested route; bundled curves are protected.
     for (const QString kind : {QString("speaker"), QString("microphone"), QString("amplifier")}) {
         QObject::disconnect(&drive,nullptr,&app,nullptr);

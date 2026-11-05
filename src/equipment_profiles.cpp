@@ -531,8 +531,9 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     details->setTextFormat(Qt::PlainText);
     details->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
     layout->addWidget(details);
-    layout->addWidget(new QLabel(
-        SC_TR("Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.")));
+    auto *legend = new QLabel(SC_TR("Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB."));
+    legend->setWordWrap(true);
+    layout->addWidget(legend);
     auto *plot = new Plot;
     layout->addWidget(plot);
     QVector<Profile> custom = loadLibrary(), profiles = bundledProfiles();
@@ -555,6 +556,11 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     taxonomy->addWidget(brandFilter);
     taxonomy->addWidget(familyFilter);
     auto *subtypeFilter=new QComboBox;subtypeFilter->setObjectName("equipmentSubtypeFilter");subtypeFilter->setAccessibleName(SC_TR("Equipment subtype"));taxonomy->addWidget(subtypeFilter);
+    for (auto *combo : {static_cast<QComboBox *>(list), kindFilter, brandFilter, familyFilter, subtypeFilter}) {
+        combo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
+        combo->setMinimumContentsLength(8);
+        combo->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+    }
     layout->insertLayout(0, taxonomy);
     auto taxonomyRefresh = [&] {
         const QSignalBlocker b(brandFilter), f(familyFilter), st(subtypeFilter);
@@ -840,14 +846,21 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         if (!f.open(QIODevice::WriteOnly) || f.write(bytes) != bytes.size() || !f.commit())
             QMessageBox::warning(&dialog, SC_TR("Export"), SC_TR("Cannot save profile."));
     });
+    auto *appliedProfile = new QLabel;
+    appliedProfile->setObjectName("appliedEquipmentProfile");
+    appliedProfile->setWordWrap(true);
+    appliedProfile->setTextFormat(Qt::PlainText);
+    outer->addWidget(appliedProfile); // Keep application feedback visible while the body scrolls.
     auto selectProfile = [&] {
         if (refreshing || list->currentIndex() < 0) return;
         const int index = list->currentData().toInt();
         if (index < 0) {
             Profile cleared; cleared.kind = kindFilter->currentData().toString();
             apply(cleared); noneWasApplied = true;
+            appliedProfile->setText(QString::fromUtf8("✓ ") + SC_TR("None — use my own EQ"));
         } else {
             apply(profiles[index]); noneWasApplied = false; lastAppliedId = profiles[index].id;
+            appliedProfile->setText(QString::fromUtf8("✓ ") + profiles[index].brand + " / " + profiles[index].model);
         }
     };
     QObject::connect(list, &QComboBox::currentIndexChanged, &dialog, selectProfile);

@@ -1,6 +1,7 @@
 # SoundCurrent EQ 1.1.2
 
 - Adds 59 correction profiles shared by EQ and Studio: 42 microphone curves (including lavaliers and USB) and 17 amplifier/load-state curves. Model variants and measurement conditions remain explicit; models without correction curves are excluded.
+- Imported profiles visibly replace the previous model in the main selector and Profile details, persist across reopening, and show an applied checkmark in the manager. Clear selects None; each selection is individually undoable.
 - Selecting a usable equipment profile applies it immediately. None clears the selected equipment route. Fresh installations start with no equipment correction and microphone EQ off; saved choices are retained on upgrades.
 - The equipment manager scrolls within the display and keeps Close accessible. Accidental wheel movements over the closed profile selector do not change audio. Importing, saving, opening or filtering the library does not apply a correction.
 - Includes source attribution, measurement uncertainty, source hashes, reproducible correction admission, and an experimental AR-2ax acoustic-power custom import in the source examples. Typical/relative profiles are not individual-unit certification.
