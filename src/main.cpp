@@ -2167,7 +2167,7 @@ public:
         micPower_ = new QCheckBox(SC_TR("Natural mic EQ"));
         micPower_->setAccessibleName(SC_TR("Natural microphone equalizer on or off"));
         micPower_->setToolTip(SC_TR("Automatically shape a connected microphone; click to bypass the microphone EQ"));
-        micPower_->setChecked(QSettings().value("microphoneEnabled", true).toBool());
+        micPower_->setChecked(QSettings().value("microphoneEnabled", false).toBool());
         inputRow->addWidget(micPower_);
         inputLayout->addLayout(inputRow);
         auto *toneRow = new QGridLayout;
@@ -3101,7 +3101,16 @@ private:
     void setEquipment(const soundcurrent::equipment::Profile &profile) {
         if (lockButton_->isChecked() || calibrating_) return;
         recordChange(equipmentStatus_);
-        QSettings().setValue("equipment/" + profile.kind, QJsonDocument(soundcurrent::equipment::serialize(profile)).toJson(QJsonDocument::Compact));
+        if (profile.id.isEmpty()) {
+            for (const QString kind : {QString("speaker"), QString("amplifier"), QString("microphone")}) {
+                if (!profile.kind.isEmpty() && profile.kind != kind) continue;
+                QSettings().remove("equipment/" + kind);
+                if (kind == "speaker") { const QSignalBlocker b(speakerCombo_); speakerCombo_->setCurrentIndex(0); QSettings().remove("speakerModelId"); }
+                if (kind == "amplifier") { const QSignalBlocker b(ampCombo_); ampCombo_->setCurrentIndex(0); QSettings().remove("amplifierModelId"); }
+            }
+        } else {
+            QSettings().setValue("equipment/" + profile.kind, QJsonDocument(soundcurrent::equipment::serialize(profile)).toJson(QJsonDocument::Compact));
+        }
         refreshEquipmentStatus(); syncBandControls(); applyChanges(); commitChange();
         try { microphone_.update(micAdjustments(), micGain_->value() / 2.0); } catch (const std::exception &e) { showError(e.what()); }
     }

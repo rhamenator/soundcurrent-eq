@@ -1,0 +1,188 @@
+{
+  "brand": "Acoustic Research",
+  "conditions": "CUSTOM EXPERIMENT: 500 Hz–20 kHz historical acoustic-power curve, not on-axis response or a measurement of your speakers. Source brochure printed p.18, AR-2ax center-left column, acoustic-power plot only. Broad numerical readout approx ±1 dB, normalized at 1 kHz. Original attenuator settings/revision not established; age, restoration and replacement drivers can change response. No low-frequency data or bass correction. Do not treat this as verified room calibration.",
+  "custom": true,
+  "equipmentType": "Bookshelf",
+  "family": "AR classic",
+  "filters": [
+    {
+      "frequency": 561.0923907536056,
+      "gain": -0.09012172343040574,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 706.5829091922384,
+      "gain": -0.23406982539798207,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 889.7989275741372,
+      "gain": -0.396809101050814,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 1120.5226183820378,
+      "gain": -0.08255694940391313,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 1411.072658548608,
+      "gain": 0.7608717477365721,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 1776.9619417218848,
+      "gain": 0.7705062852514591,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 2237.7258344554903,
+      "gain": 0.02036544460507379,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 2817.965198138858,
+      "gain": 0.052421686250480534,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 3548.6598651411878,
+      "gain": 0.7475186014392534,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 4468.822697590796,
+      "gain": 0.8655570420168415,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 5627.582541418952,
+      "gain": 0.3805047831782122,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 7086.807287645794,
+      "gain": 0.48469625457275106,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 8924.407090005334,
+      "gain": 0.5197102227856366,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 11238.494102553084,
+      "gain": 0.15542929139426812,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 14152.620831760485,
+      "gain": 0.5156417923387934,
+      "q": 1.4,
+      "type": "PK"
+    },
+    {
+      "frequency": 17822.37678641294,
+      "gain": 4.078811189439418,
+      "q": 1.4,
+      "type": "PK"
+    }
+  ],
+  "fitMetrics": {
+    "afterRmsDb": 0.7441069998975873,
+    "beforeRmsDb": 1.7776388834631178,
+    "maximumCorrectionDb": 4.287773811615511,
+    "sampleRate": 48000
+  },
+  "id": "custom-ar-2ax-historical-power-response",
+  "kind": "speaker",
+  "measurementSource": "https://retronik.silicium.org/DOCUMENTS/Audiovideo/Acoustic-Research/Acoustic-Research-AR-2AX-AR-3A-AR-4XA-AR-5-AR-6-AR-7-AR-LST-AR-LST-2-Brochure.pdf",
+  "model": "AR-2ax — historical acoustic-power experiment",
+  "powerType": "passive",
+  "provenance": "Acoustic Research brochure, printed pp.18–19 (PDF page11). Independent approximate numerical transcription by SoundCurrent, 2026-11-04. Source PDF SHA256 883f7f3c885a1efef8254139cf6e642dc0c4c9d6c078d1c8ca188b83121c3eba. Original plot is not bundled. Intentionally a custom import, not a bundled recommendation.",
+  "response": [
+    [
+      500,
+      0.2
+    ],
+    [
+      630,
+      0.3
+    ],
+    [
+      800,
+      0.1
+    ],
+    [
+      1000,
+      0
+    ],
+    [
+      1250,
+      -0.5
+    ],
+    [
+      1600,
+      -1.6
+    ],
+    [
+      2000,
+      -1.5
+    ],
+    [
+      2500,
+      -1.2
+    ],
+    [
+      3150,
+      -1.5
+    ],
+    [
+      4000,
+      -2.2
+    ],
+    [
+      5000,
+      -2.1
+    ],
+    [
+      6300,
+      -1.5
+    ],
+    [
+      8000,
+      -1.7
+    ],
+    [
+      10000,
+      -1.3
+    ],
+    [
+      12500,
+      -1.5
+    ],
+    [
+      16000,
+      -2.5
+    ],
+    [
+      20000,
+      -4.5
+    ]
+  ],
+  "schema": 2
+}

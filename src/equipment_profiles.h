@@ -24,5 +24,7 @@ QVector<Profile> loadLibrary();
 void saveLibrary(const QVector<Profile> &);
 QVector<Profile> bundledProfiles();
 void saveNewProfile(QWidget *, Profile);
+// Selection callbacks apply immediately; an empty ID clears kind (empty kind clears all).
+// Opening/filtering/importing/saving alone never invokes the selection callback.
 void openLibrary(QWidget *, const std::function<void(const Profile &)> &apply, const QString &initialKind = {});
 } // namespace soundcurrent::equipment

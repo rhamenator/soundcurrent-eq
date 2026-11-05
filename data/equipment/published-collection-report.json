@@ -1,0 +1,1413 @@
+{
+  "schema": 1,
+  "researchDate": "2026-11-04",
+  "admission": "Correction curves only; no metadata-only selectable models. At least 15% reduction in sampled squared residual and composite correction within ±6 dB at 48 kHz. No positive filters centered below 80 Hz.",
+  "candidateResponses": 70,
+  "accepted": 59,
+  "microphoneCorrections": 42,
+  "amplifierCorrections": 17,
+  "referenceDataset": {
+    "doi": "10.5281/zenodo.4633508",
+    "version": "1.0.0",
+    "file": "Microphone_Impulse_Responses.zip",
+    "archiveMd5": "c66c4f46be850aa25022145431b93caa",
+    "archiveSize": 1485159533,
+    "license": "CC-BY-4.0",
+    "note": "Only selected members retrieved via verified HTTP byte ranges; ZIP CRC checked and individual SHA256 recorded. Full archive MD5 is the publisher value, not a claimed full-download verification."
+  },
+  "rejected": [
+    {
+      "id": "measured-85ecc95f9e08b3f23df2c6c7",
+      "reason": "Correction fails residual improvement / composite gain admission"
+    },
+    {
+      "id": "measured-13c00d381f1a78a967216602",
+      "reason": "Correction fails residual improvement / composite gain admission"
+    },
+    {
+      "id": "measured-ef100a4c863c1d45df11aee9",
+      "reason": "Correction fails residual improvement / composite gain admission"
+    },
+    {
+      "id": "measured-3bfa41f02cdc25db64cfc21b",
+      "reason": "Correction fails residual improvement / composite gain admission"
+    },
+    {
+      "id": "measured-be18bc6263c66fb2ce5caef4",
+      "reason": "Correction fails residual improvement / composite gain admission"
+    },
+    {
+      "id": "measured-097df81c2185585e08c2fa84",
+      "reason": "Correction fails residual improvement / composite gain admission"
+    },
+    {
+      "id": "measured-f13fcbc824f78305ba5c8405",
+      "reason": "Correction fails residual improvement / composite gain admission"
+    },
+    {
+      "id": "measured-f1945fa2cb3714c73b9cec4c",
+      "reason": "Correction fails residual improvement / composite gain admission"
+    },
+    {
+      "id": "measured-9fa43120b310d18fd988d226",
+      "reason": "Correction fails residual improvement / composite gain admission"
+    },
+    {
+      "id": "measured-d2c4864e628989bcc1c7b315",
+      "reason": "Correction fails residual improvement / composite gain admission"
+    },
+    {
+      "id": "measured-13e7145a61c30b546b36509b",
+      "reason": "Correction fails residual improvement / composite gain admission"
+    }
+  ],
+  "sourceAudit": [
+    {
+      "id": "measured-efefa2b4d93d31b9c6c699c2",
+      "model": "C414 B-XLS — figure-eight",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "7eae62a92c5a45bc740529d9e34b3906817f8391cd7b6c7b5ecbb2d694f3c611",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-c8209db7f2914b95090daf64",
+      "model": "C414 B-XLS — cardioid",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "72b046840fdb4d11cf952f739013e42f9187f5e04fd2673297770fc5dc7fe000",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-7c765c8361e4bcfb42884e9e",
+      "model": "C414 B-XLS — hypercardioid",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "68bf984f74e73944628670fe02350a3f0dfd1db35fc43c99160352d9141a3326",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-38dae5428ac876f2b5001c4d",
+      "model": "C414 B-XLS — omni",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "e3d47018cbc80be8d7875d4c7114519e970e9a8ba04975279e630e47c96b18e0",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-31e2313019d72526a8095e26",
+      "model": "C451 / CK 1 — cardioid",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "56f0b21ada73e2259c53c80c20b44dec3b413d5bf6f6fa2b4930cce4b621717a",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-6553073d0fa7d4c7710e4e60",
+      "model": "C451 / CK 2 — omni",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "04608b583a3900d9ab21dad2914c01e787769b1f2d353538eccafc0cd6b72b9a",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-eb6b264e0c361a3faae94a53",
+      "model": "D112 — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "0f5964519cfa7ff6fed0482ecca666f8a86611bce44c5d6d14e5a95918dbadb2",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-f5fbae7dd84e9c79d93a6fa3",
+      "model": "D12 — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "4e847837400766468d9dfb9222cffca6dfbc6901c5b511ec2e46f0b2949a8b18",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-615d3216307aaf846f278ccf",
+      "model": "4038 — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "96ff944348cb4ffdf304e45b2c9f0c13e392e1bfde08a48fbc39aff63d4c2263",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-f5e3730b1ca3eb9c2c08f47d",
+      "model": "4006-TL — omni",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "acdc5aa07ed7fe9160dfd867eef0f369e001d491f60d4a968bdba36b597214ea",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-4e6d54ac372aa413a655504d",
+      "model": "RE20 — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "830f6a2361565f8d3a8b369d59a80e51f27caa74c362a2c2d93104135ef484ca",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-2e5417a77e427b2edf15560c",
+      "model": "U 47 FET — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "8e70d3052d7d3f906d51fca5c1014039276edcac1d616d9292ca37d68a71765a",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-90d6bfbcadd4ea15772722c5",
+      "model": "U 87 Ai — figure-eight",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "64c11b48ff9c169436ca7f57b1c7dd8e8b07f24f9643d5222751d98bf97786e5",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-7720ad5236cc72c6873163d9",
+      "model": "U 87 Ai — cardioid",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "3f09482434c223e387e354f31b8ed36d6c20f8211a0d239f70caaa0aaaacac7b",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-0e5032b3ce835c573b6f8e16",
+      "model": "U 87 Ai — omni",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "c612380f195e78d5f4dc3073f8b779d2f24102fa1c7eb73a5cf989934d083685",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-4ad979e091b097a4224f80cb",
+      "model": "K2 — figure-eight",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "ff9ae12f1797c0b1dd52ec53bd87a1e9b058c6e552d54dde77b844b6bba135f1",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-e256a5c07efa35f607811fe3",
+      "model": "K2 — cardioid",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "8ffd716688804b2af8ed19ca224fc7fffa0ca54d1bb5d433d866fa49c74b92fb",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-fd7197a7ac584aae73c9beb0",
+      "model": "K2 — omni",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "608668773a11c6da81cc2775f55890a68fea7629b578be0802f942a86632bc99",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-158452e12f6d8f0b3e561e8b",
+      "model": "NT2-A — figure-eight",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "f8deada93703d5b40df2523b245645533397f37818ca6efeccbd43e6a348fe69",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-dbc3debabee5932fe4079183",
+      "model": "NT2-A — cardioid",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "65410615fb1da8dbee9a720e8460154e46f703ed792288d679c524e78c49ddb6",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-bbf8f4fda5a74e4f3d788602",
+      "model": "NT2-A — omni",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "d3ee79612bf4b85339ec4b80d3b520de888a395c77cc582f4ad5fc3212352a59",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-43e1f40304299849593451aa",
+      "model": "NTG8 — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "5f573cf7408d4145260d5eb91e7f649e384fac5494be76ff8f60cadb750af452",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-b57209f0826e94121e2aa0ae",
+      "model": "NTR — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "b82576d50342726899afee75d76522e507ceb2f47837f09fcd6bcb6904e85799",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-e14954e386945512cde31ca4",
+      "model": "Reporter — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "32fe058922d66a6685c4356489b01afbaf508757597017f1d881159789cf5b8e",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-1da011ff2cb5f8b9e90e4779",
+      "model": "R-121 — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "27f09edffc20a86290256caab4e95ca0bd54faac9248f9086d87ed16af33a58b",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "model": "SchoepsCMC5UBidirect",
+      "status": "excluded",
+      "reason": "Undocumented CMC 5U bidirectional capsule: paper lists MK4/MK2 only."
+    },
+    {
+      "id": "measured-f14b67d86b6dd928213dd4ab",
+      "model": "CMC 5U / MK 4 — cardioid",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "e2128d6e334f636a901d55ea86d2241e47c936cf3f7a6d21e895225cc7318c4f",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-36a9fa39dd8c3575659e2daf",
+      "model": "CMC 5U / MK 2 — omni",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "ce9eb2ad6c7c59cd2f5d82b79d322f94ede8e89683d1dd26d3dfeda4e43d15a4",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-acff1b074a37f51aed29d888",
+      "model": "CMC 6 / MK 2H — omni",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "632430dc066de4297c77f0275206e3fdab5c08a379aa8765f32c5963e64615fe",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-fc3d9d2b95fe161b1e59871c",
+      "model": "CMC 6 / MK 2H + KA 40 sphere — omni",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "ec7b026b65c5cab145e9cb3543fb23424a94932b84a339655b08e2108fc1e918",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-c83b5386655f34736abdc025",
+      "model": "CMIT 5U — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "42907c728f882bc78a5e5af751327fe5b128e871bcf5801c4effcffa1e1537fe",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-eebb03639eda30cd9848efba",
+      "model": "MD 441 — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "6b60fca2a441a1500ba707d4c83e953000c1f4298375149b34e14864173da148",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-7ea5d15767df3ff8061f3c6f",
+      "model": "Beta 52A — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "b015de7aa4f566dfca64f478fe928b3941781d7e71dc67677d3c1998605e74d4",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-4b3e1e6978dc41d863a16bfc",
+      "model": "SM57 — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "f1ae37da0385a362010b537e5e3a6412ae79c87fbe472847f23f797557b5eb83",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-150f992cec85987ea2952bd4",
+      "model": "SM58 — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "cd96ced9805cd32c0bc1acdef8b3cd577d79a02521f5b40b573adc83d97123af",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-5fc6ae8a311f198f717b4031",
+      "model": "C800 — cardioid",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "9585a5ebb1c0f3df9b0bfa5b8830765f4ff139d38d9c35492a37e308f3fef389",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-1e9e364179f01798ddb64b5a",
+      "model": "C800 — omni",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "bde82d7eb04bc7b2ee41f86ffab33949b130e288a213ea9a0610c7d7ce265aea",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-95fd9bc3b37dea2a52056031",
+      "model": "ECM-670 — fixed pattern",
+      "source": "https://zenodo.org/records/4633508",
+      "sha256": "5c859303c1ce930256f0025da105025091030f5787c88c34cd905e2025696186",
+      "referenceSha256": "425c60faaea5538c6bd540995d6deabcd02018b9bed038377eaece288374a683",
+      "license": "CC-BY-4.0",
+      "method": "Already-windowed IR magnitude ratio, same angle/distance reference, 1/3-octave mean in dB; 1kHz normalization; no phase inverse."
+    },
+    {
+      "id": "measured-85ecc95f9e08b3f23df2c6c7",
+      "model": "NAD C 720BEE",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/nad_c_720bee/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/nad_c_720bee/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "398749c26b9051b5b87ec3efa61c3c53d58a013c8ddb6474767967429733dbcf",
+        "791a68b372e06107ae14e0f1a613b3fe27a173ba1b2c4ef2685d6bb1eb79ada4"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.023183925811437404,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-e924559a0322940b1b12588c",
+      "model": "NAD C315BEE",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/nad_c315bee/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/nad_c315bee/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "77df477bfc754bac64bb226ff1b881a7ab620cf7abcca24a47972185e2ba9281",
+        "fe89a22967110b9d01687d8b291f73857099487da353890ddbf9853d9f49aa0b"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.023183925811437404,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-13c00d381f1a78a967216602",
+      "model": "Cambridge Audio Azur 640A",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/cambride_audio_azur_640a/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/cambride_audio_azur_640a/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "a11f2c8c3e2cd6263e623bafccfd002791fb0cbaf979329972ae8e1ef15fd29f",
+        "4f662f2872242fc7284f39db4f5cfb69cf5b46b2d7e17b55ab950c8f4a862ee2"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.023183925811437404,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-15a605389d73379ba9f8820a",
+      "model": "Yamaha RX-797",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/yamaha_rx_797/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/yamaha_rx_797/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "403b0207f6ec3c5937b127672ca17d37f8209653cbecf8987f4f23bfba079a96",
+        "8e62048cc34bf0fc804bae30c101308397e100041bcc92978c458882c50d6eba"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.015455950540958267,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-145ef68e5cb728bd53b3f3ca",
+      "model": "Yamaha AX-1050",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/yamaha_ax_1050/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/yamaha_ax_1050/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "725448fe40bb39d3c068101ed1d641fda7d9499c99c0ec3474b8700f2a8e6f74",
+        "85cb3980800b43de8327043326300e422d4396f8417b710d2af62ffb0fbc22f0"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.030911901081916535,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-9098bea994d97b055550f9fa",
+      "model": "Kenwood KA-1030",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/kenwood_ka_1030/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/kenwood_ka_1030/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "bcd92a595ea29f6369deb96c25bb54bd6c0253be3ce60360f8317a868a1ab611",
+        "b219107bb714f8e8259653b87a888b316437b13b6ed3c4d70817e3a01b9ae828"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.023183925811437404,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-ef100a4c863c1d45df11aee9",
+      "model": "NAD C 326BEE",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/nad_c_326bee/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/nad_c_326bee/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "eccd4383bc61f14c1bb91ac46e3644298aca1710ba8429ccc98999a7f096e01d",
+        "b54ca0128fe76c6df646e2ed6289480c877be4adfcbb78a27594599d6137ca0a"
+      ],
+      "plotCalibration": [
+        {
+          "left": 81,
+          "right": 1509,
+          "top": 107,
+          "bottom": 759,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9943977591036415
+        },
+        {
+          "left": 81,
+          "right": 1509,
+          "top": 107,
+          "bottom": 759,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957983193277311
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.06134969325153375,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-3bfa41f02cdc25db64cfc21b",
+      "model": "NAD C 356BEE",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/nad_c_356bee/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/nad_c_356bee/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "bc72a1433f66a61dfba30eb0286071bc7cdd3362c862c1ad134f2c2fe78ac813",
+        "1cbbaf1b26fd4c4c97ea338c3b77740c574551f5586e9f7ca29885a5dd8fca92"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.029573934834543306,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-26e861f195ad090b728648f0",
+      "model": "Sansui AU-X201i",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/sansui_au_x201i/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/sansui_au_x201i/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "834744e39256efa8b3810f326f9a8549d18afbc795902f16b0415eeed0db64d7",
+        "a1dbc52ecd1670f37d383857120778b27ad2e561b7f12bb1ebd7b516a0f38eb9"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.12521769100238056,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-be18bc6263c66fb2ce5caef4",
+      "model": "Sony TA-FB720R",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/sony_ta_fb720r/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/sony_ta_fb720r/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "e082ba75899ebc219b4714878ee521f652ac6f28b960aa6038fa9af33bae027a",
+        "ee23502a473417cda24fee70617892dd1efa79e52f99080be3e11ec7adb30a97"
+      ],
+      "plotCalibration": [
+        {
+          "left": 81,
+          "right": 1509,
+          "top": 107,
+          "bottom": 759,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9943977591036415
+        },
+        {
+          "left": 81,
+          "right": 1509,
+          "top": 107,
+          "bottom": 759,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957983193277311
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.020396655857251405,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-f086c9e7182f899e797e1ca4",
+      "model": "Onkyo A-9155",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/onkyo_a_9155/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/onkyo_a_9155/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "e024d7b21540ed68a603f752c6eca48dee6f729cfc06d64c374ec21420f8c0be",
+        "e858773023d4f34f3d5118c8aa4f463ed34e92013e1688aa131b5d730c171c59"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.02318392581143741,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-35e48f83f3759380ebbc14eb",
+      "model": "Marantz 74SR50-60B",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/marantz_74sr50_60b/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/marantz_74sr50_60b/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "7fc24e6f5692eb1c6563e6150981659b1dac04274fdad627d36da6cfd6708250",
+        "ed58037d5a4982c6780cf1944a33a6d17b0c401e950bcd7fb3a811f57e164bf6"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.10218934403358126,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-097df81c2185585e08c2fa84",
+      "model": "Advance Acoustic MAP-102",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/advance_acoustic_map_102/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/advance_acoustic_map_102/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "fe315ef2be7b0b522f61c89bbe94c94960fd51329fcaa6e43bf99f38ad71b5cf",
+        "489376d351970ca198b378d1dd711ab62c5f1cf1e8fc1864e06a0fd3083ad7f0"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.023183925811437404,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-1991110472aac1b8d9afb0c5",
+      "model": "Grundig A-903",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/grundig_a_903/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/grundig_a_903/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "0675e6b4107a8ddc5ae7fcd7031a4dd05ebe8aca83b93c99381c47a1281fa816",
+        "aecf76702a50001cd3890246298d64f9581ddf4bde5f787bf93aba3171f9638c"
+      ],
+      "plotCalibration": [
+        {
+          "left": 84,
+          "right": 2703,
+          "top": 107,
+          "bottom": 1042,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.997709049255441
+        },
+        {
+          "left": 84,
+          "right": 2703,
+          "top": 107,
+          "bottom": 1042,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.997709049255441
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.021390374331550804,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-f13fcbc824f78305ba5c8405",
+      "model": "NAD C 725BEE",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/nad_c_725bee/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/nad_c_725bee/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "b0d05bf8475f404098fb4d0621d78c2a6022933eab47e882f205154d8562f4e8",
+        "ec2c3c1010069794e756ef416e59f58211b4f798d052d953d1038a0615fc3f4b"
+      ],
+      "plotCalibration": [
+        {
+          "left": 87,
+          "right": 1611,
+          "top": 107,
+          "bottom": 587,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9980314960629921
+        },
+        {
+          "left": 87,
+          "right": 1611,
+          "top": 107,
+          "bottom": 587,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9980314960629921
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.03125,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-23ad5fea4992fae62269620b",
+      "model": "Teac CR-H225",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/teac_cr_h225/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/teac_cr_h225/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "96f8562f4a05a4329080fd08e794232ea0722c75ef5278fba35d864ce18c5e06",
+        "ad5f66622e0e7946a138c236d7bd21e44b97d84972715926529f7cb7f5d1433c"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.023183925811437404,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "model": "Yamaha R-840",
+      "status": "excluded",
+      "reason": "Response within plot-reading uncertainty; no useful correction."
+    },
+    {
+      "id": "measured-f1945fa2cb3714c73b9cec4c",
+      "model": "Rotel RA-1060",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/rotel_ra_1060/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/rotel_ra_1060/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "50ecea9ac48d4d63847846d04e1bd6d0df2a33cb88f628ff9eeeea83a042f375",
+        "5f67924105784ad797a7fbddeedc7829053b18d8d9ef4bf2149d98944e9fb95f"
+      ],
+      "plotCalibration": [
+        {
+          "left": 81,
+          "right": 1509,
+          "top": 107,
+          "bottom": 759,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9943977591036415
+        },
+        {
+          "left": 81,
+          "right": 1509,
+          "top": 107,
+          "bottom": 759,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957983193277311
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.01945553689642273,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-9fa43120b310d18fd988d226",
+      "model": "Denon PMA-500AE",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/denon_pma_500ae/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/denon_pma_500ae/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "d06f223e53d09a1637dd6953a9cdcb9527a8e35f98a95770c6764dce30cfd091",
+        "75fc7451a962b8d3fc34526a5b7fb655459f4a23b9ff6ffd93111b495577a23c"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.015455950540958274,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-d5b35fe6634d1af4b1dff1b3",
+      "model": "Denon DRA-F101",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/denon_dra_f101/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/denon_dra_f101/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "c1a8bb143a82f379095c4b1c27fdc4112c469f184d5dac6397285a0a639b2a97",
+        "5833a418efc547552cdbf9381e0d81fedd0202d33e9cd1642bf5dee3d74e20b7"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.037301910105021374,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-594fac729ca34940fa1d3581",
+      "model": "Yamaha RX-396",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/yamaha_rx_396/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/yamaha_rx_396/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "9a405591be804d3061d90ab1313b5e27aa330b50fa4d176f152e03ef7ddda418",
+        "4b032d2da5dee4a9c408c2731baf7a918797d8e7cdce2218d2094a1e4b9fb3be"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.18547140649149924,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-d2c4864e628989bcc1c7b315",
+      "model": "Pioneer SX-20",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/pioneer_sx_20/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/pioneer_sx_20/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "a1fa03845bf6af35ecf44fe4b1f77774d67807f5e0243b8d7c3e7646852f7904",
+        "b5e4e9d70946a22226527d1d7730801a353a21ab7525d37bb7b919d72593d603"
+      ],
+      "plotCalibration": [
+        {
+          "left": 81,
+          "right": 1509,
+          "top": 107,
+          "bottom": 759,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9950980392156863
+        },
+        {
+          "left": 81,
+          "right": 1509,
+          "top": 107,
+          "bottom": 759,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9950980392156863
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.023006134969325152,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-6061438c510a7460dd1a0e98",
+      "model": "Onkyo A-5VL",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/onkyo_a_5vl/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/onkyo_a_5vl/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "3dafa248a98ab50af86969f70405e622beb8cec9edae3ae1a81731b4b331eb6e",
+        "70022460ec293647d6f2e072e9adbe993c67f546a7c6774b7d457fded1e12c17"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.03863987635239563,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "measured-13e7145a61c30b546b36509b",
+      "model": "TEAC CR-H100",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/teac_cr_h100/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/teac_cr_h100/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "4ed7d7381908c220da6a57b63a92a143b21189d69acddef0495880b7d9fa4326",
+        "7e280caae54142d5614197ef2b9f4f1c40ad3dd16cede5ebe3514cb174c51f40"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9859747545582047
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9866760168302945
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.03091190108191655,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "model": "Yamaha RX-E810",
+      "status": "excluded",
+      "reason": "Response within plot-reading uncertainty; no useful correction."
+    },
+    {
+      "model": "Yamaha R-N602",
+      "status": "excluded",
+      "reason": "Response within plot-reading uncertainty; no useful correction."
+    },
+    {
+      "id": "measured-dd8d16b0aa6f991351b965f8",
+      "model": "Onkyo A-9377",
+      "source": "https://www.keiang.de/modules.php?name=Content&pid=69",
+      "traceUrls": [
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/onkyo_a_9377/gain_vs_frequency_ch_a.jpeg",
+        "https://www.keiang.de/media/images/Audio_THD_DSCOPE3/amplifier_measurements/onkyo_a_9377/gain_vs_frequency_ch_b.jpeg"
+      ],
+      "traceSha256": [
+        "40242b17f653e2bd5367a6acaee49bb476f3a0c61a631095c41347b19f9c8508",
+        "bc135c1837f4db1c5520ee6c7331276e4a7251c4ff3332e90f8808efd365be77"
+      ],
+      "plotCalibration": [
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        },
+        {
+          "left": 83,
+          "right": 1509,
+          "top": 107,
+          "bottom": 754,
+          "xMinHz": 10,
+          "xMaxHz": 40000,
+          "yMinDb": -5,
+          "yMaxDb": 5,
+          "coverage": 0.9957924263674615
+        }
+      ],
+      "maxChannelResponseDifferenceDb": 0.019198837509017193,
+      "method": "Independent numerical trace readout, averaged A/B, normalized 1kHz; original plots not redistributed."
+    },
+    {
+      "id": "published-graph-e44eafa01a03384577ea1c53",
+      "source": "https://pubs.shure.com/view/guide/WL93-SM93/en-US.pdf",
+      "page": 9,
+      "sha256": "cb6e1ebb209efba4bb9de833a9a1a2cedaaef497b8760951092e1a955432deb3",
+      "method": "Independent manual numerical readout of published on-axis curve; uncertainty about ±0.5 dB; no source artwork redistributed."
+    },
+    {
+      "id": "published-graph-65ea09607ff0733ec3dff9ad",
+      "source": "https://im.static-thomann.de/pics/atg/atgdata/document/specs/4060_bm.pdf",
+      "page": 2,
+      "sha256": "b27dca2acce7f9cbb19e5158726dc2d0fa24ae91392e1d5ba3e6e1a9a338cedc",
+      "method": "Independent manual numerical readout of published on-axis curve; uncertainty about ±0.5 dB; no source artwork redistributed."
+    },
+    {
+      "id": "published-graph-b38d8e97600337866a99d993",
+      "source": "https://im.static-thomann.de/pics/atg/atgdata/document/specs/4060_bm.pdf",
+      "page": 2,
+      "sha256": "b27dca2acce7f9cbb19e5158726dc2d0fa24ae91392e1d5ba3e6e1a9a338cedc",
+      "method": "Independent manual numerical readout of published on-axis curve; uncertainty about ±0.5 dB; no source artwork redistributed."
+    },
+    {
+      "id": "published-graph-676152cf6871b8cb667597c6",
+      "source": "https://edge.rode.com/pdf/page/232/modules/4935/LavalierII_Datasheet_V6%20%281%29.pdf",
+      "page": 1,
+      "sha256": "415647482d6deeca4c9423d4d4178eb0550a911d6e8c161485e4dc05137a1592",
+      "method": "Independent cubic-Bezier path extraction from primary PDF; graph coordinates X183.0533..360.2453=20..20000Hz; Y678.7421..742.7371=+15..-20dB. Normalized at 1kHz."
+    },
+    {
+      "id": "measured-3f7bebd59443116b1c6c6fab",
+      "source": "https://www.erinsaudiocorner.com/electronics/fosi_za3/",
+      "sha256": "5c845f0792fbb8a54f4b7a3a3019834ff93add1bac5ad5b4b5d10a45277bd47d",
+      "method": "Erin’s Audio Corner, published 2024-03-16, frequency response graph. Read static-load trace only, normalized at 1 kHz."
+    },
+    {
+      "id": "measured-60ff91e4e312bd1da3b3fc2b",
+      "source": "https://www.erinsaudiocorner.com/electronics/fosi_za3/",
+      "sha256": "5c845f0792fbb8a54f4b7a3a3019834ff93add1bac5ad5b4b5d10a45277bd47d",
+      "method": "Erin’s Audio Corner, published 2024-03-16, frequency response graph. Read static-load trace only, normalized at 1 kHz."
+    },
+    {
+      "id": "measured-af627ecddada8b75bf397747",
+      "source": "https://pmacura.cz/FCT/aiyima_a07_test.htm",
+      "sha256": "e2bc7dee4c7b84a339ec4e898cb752cb264ce7606bb4b702b92476e41e27d01b",
+      "method": "Pavel Macura, 2024-11-23, frequency response figure; static-load trace normalized at 1 kHz."
+    },
+    {
+      "id": "measured-d4ee02307c54dc22cc5e2f07",
+      "source": "https://pmacura.cz/FCT/aiyima_a07_test.htm",
+      "sha256": "e2bc7dee4c7b84a339ec4e898cb752cb264ce7606bb4b702b92476e41e27d01b",
+      "method": "Pavel Macura, 2024-11-23, frequency response figure; static-load trace normalized at 1 kHz."
+    },
+    {
+      "id": "measured-62d11663508939b2cd6500ae",
+      "source": "https://edge.rode.com/pdf/products/96/NT-USB_Mini_ds_V06.pdf",
+      "sha256": "5a90ec74a81f33760fb86a0f5fc51ec32c20ab78f445f410f528772475b9222e",
+      "method": "PDF page 2, red frequency-response trace, rasterized at 4x; grid calibrated X266.5..542.5 pt=20..20000Hz, Y524.3..610pt=+20..-30dB."
+    }
+  ]
+}

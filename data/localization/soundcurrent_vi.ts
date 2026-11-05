@@ -76,14 +76,6 @@ The app remains open; your settings have been kept.</source>
     <message>
       <source>%1 / %2
 %3
-Apply this correction to the %4 route?</source>
-      <translation>%1 / %2
-%3
-Áp dụng hiệu chỉnh này cho tuyến %4?</translation>
-    </message>
-    <message>
-      <source>%1 / %2
-%3
 Import into your library?</source>
       <translation>%1 / %2
 %3
@@ -295,10 +287,6 @@ Bạn vẫn muốn xóa không?</translation>
       <source>Apply amplifier correction?</source>
       <translation>Áp dụng hiệu chỉnh bộ khuếch đại?</translation>
       <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
-    </message>
-    <message>
-      <source>Apply correction?</source>
-      <translation>Áp dụng hiệu chỉnh?</translation>
     </message>
     <message>
       <source>Apply only if these conditions match your system.</source>
@@ -1977,6 +1965,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
       <translation>Cấu hình phải đọc được và nhỏ hơn 64 KiB.</translation>
+    </message>
+    <message>
+      <source>Profiles apply immediately when selected.</source>
+      <translation>Hồ sơ được áp dụng ngay khi chọn.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>

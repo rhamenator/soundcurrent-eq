@@ -76,14 +76,6 @@ Az alkalmazás nyitva marad; a beállítások megmaradtak.</translation>
     <message>
       <source>%1 / %2
 %3
-Apply this correction to the %4 route?</source>
-      <translation>%1 / %2
-%3
-Alkalmazza ezt a korrekciót a(z) %4 útvonalra?</translation>
-    </message>
-    <message>
-      <source>%1 / %2
-%3
 Import into your library?</source>
       <translation>%1 / %2
 %3
@@ -295,10 +287,6 @@ Mindenképp törölni szeretné?</translation>
       <source>Apply amplifier correction?</source>
       <translation>Alkalmazza az erősítő korrekcióját?</translation>
       <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
-    </message>
-    <message>
-      <source>Apply correction?</source>
-      <translation>Alkalmazza a korrekciót?</translation>
     </message>
     <message>
       <source>Apply only if these conditions match your system.</source>
@@ -1977,6 +1965,10 @@ Mindenképp törölni szeretné?</translation>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
       <translation>A profilnak olvashatónak és 64 KiB-nál kisebbnek kell lennie.</translation>
+    </message>
+    <message>
+      <source>Profiles apply immediately when selected.</source>
+      <translation>A profilok a kiválasztáskor azonnal érvénybe lépnek.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>

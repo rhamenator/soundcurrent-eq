@@ -76,14 +76,6 @@ Aplikace zůstává otevřená; vaše nastavení byla zachována.</translation>
     <message>
       <source>%1 / %2
 %3
-Apply this correction to the %4 route?</source>
-      <translation>%1 / %2
-%3
-Použít tuto korekci pro signálovou cestu typu %4?</translation>
-    </message>
-    <message>
-      <source>%1 / %2
-%3
 Import into your library?</source>
       <translation>%1 / %2
 %3
@@ -295,10 +287,6 @@ Přesto chcete soubor smazat?</translation>
       <source>Apply amplifier correction?</source>
       <translation>Použít korekci zesilovače?</translation>
       <extracomment>Confirmation title before applying a measured amplifier frequency-response correction. Correction changes EQ, not hardware gain or firmware.</extracomment>
-    </message>
-    <message>
-      <source>Apply correction?</source>
-      <translation>Použít korekci?</translation>
     </message>
     <message>
       <source>Apply only if these conditions match your system.</source>
@@ -1977,6 +1965,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Profile must be readable and smaller than 64 KiB.</source>
       <translation>Profil musí být čitelný a menší než 64 KiB.</translation>
+    </message>
+    <message>
+      <source>Profiles apply immediately when selected.</source>
+      <translation>Profily se použijí ihned po výběru.</translation>
     </message>
     <message>
       <source>Profiles need 1–16 correction filters.</source>

@@ -18,6 +18,7 @@
 #include <QTableWidget>
 #include <QTemporaryDir>
 #include <QTimer>
+#include <QWheelEvent>
 #include <QUuid>
 #include <cstdio>
 using namespace soundcurrent::equipment;
@@ -85,7 +86,12 @@ int main(int argc,char **argv) {
     const auto originalId=saved[0].id;
     QFile invalid(temp.filePath("invalid.json"));require(invalid.open(QIODevice::WriteOnly),"No malformed import fixture");invalid.write("{ broken");invalid.close();
     QFile valid(temp.filePath("valid.json"));require(valid.open(QIODevice::WriteOnly),"No valid import fixture");
-    fixture.model="Imported profile";fixture.id="ui-import-fixture";valid.write(QJsonDocument(serialize(fixture)).toJson());valid.close();
+    fixture.model="Imported profile";fixture.id="ui-import-fixture";
+    QByteArray importBytes=QJsonDocument(serialize(fixture)).toJson();
+    const auto realFixture=qEnvironmentVariable("SOUNDCURRENT_PROFILE_IMPORT_FIXTURE");
+    if(!realFixture.isEmpty()){QFile real(realFixture);require(real.open(QIODevice::ReadOnly),"Cannot read real published import fixture");importBytes=real.readAll();}
+    const auto expectedImportedModel=parse(importBytes).model;
+    valid.write(importBytes);valid.close();
     phase=0;bool applied=false,malformedRejected=false;
     QObject::disconnect(&drive,nullptr,&app,nullptr);
     QObject::connect(&drive,&QTimer::timeout,&app,[&] {
@@ -114,10 +120,10 @@ int main(int argc,char **argv) {
             kind->setCurrentIndex(1);require(subtype->currentData().toString()=="Bookshelf","Taxonomy refresh lost stable subtype selection");
             subtype->setCurrentIndex(0);kind->setCurrentIndex(2);kind->setCurrentIndex(0);phase=1;clickLater(button(library,"Import JSON"));}
         else if(phase==3){phase=4;clickLater(button(library,"Import JSON"));}
-        else if(phase==6){auto profiles=loadLibrary();require(profiles.size()==2 && profiles[0].id==originalId,"Valid import overwrote existing profile");phase=7;clickLater(button(library,"Apply profile"));}
+        else if(phase==6){require(!applied,"Importing or saving implicitly changed audio");auto profiles=loadLibrary();require(profiles.size()==2 && profiles[0].id==originalId,"Valid import overwrote existing profile");phase=8;clickLater(button(library,"Apply profile"));}
         else if(phase==8){require(applied,"Apply callback missing");phase=9;closeLater(library);}
     });
-    drive.start();openLibrary(nullptr,[&](const Profile &p){require(p.model=="Imported profile","Applied wrong imported profile");applied=true;});drive.stop();
+    drive.start();openLibrary(nullptr,[&](const Profile &p){require(p.model==expectedImportedModel,"Applied wrong imported profile");applied=true;});drive.stop();
     require(phase==9 && applied && malformedRejected,"Profile import/apply UI failed");
     // Dedicated managers start on the requested route; bundled curves are protected.
     for (const QString kind : {QString("speaker"), QString("microphone"), QString("amplifier")}) {
@@ -130,7 +136,16 @@ int main(int argc,char **argv) {
             auto *filter=library->findChild<QComboBox *>("equipmentKindFilter");
             require(filter && filter->currentData().toString()==kind,"Manager opened on wrong equipment type");
             const auto screenshots=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
-            if(!screenshots.isEmpty()){QDir().mkpath(screenshots);require(library->grab().save(QDir(screenshots).filePath("manager-"+kind+".png")),"Could not capture manager screenshot");}
+            if(!screenshots.isEmpty()){
+                QDir().mkpath(screenshots);
+                auto *choices=library->findChild<QComboBox *>("equipmentProfileList");const auto combined=bundledProfiles()+loadLibrary();
+                for(int row=1;row<choices->count();++row){const auto &profile=combined[choices->itemData(row).toInt()];
+                    if((kind=="microphone" && profile.brand=="Shure" && profile.equipmentType=="Lavalier microphone") ||
+                       (kind=="amplifier" && profile.brand=="Fosi Audio") ||
+                       (kind=="speaker" && profile.brand=="Sony")){choices->setCurrentIndex(row);break;}}
+                QCoreApplication::processEvents();
+                require(library->grab().save(QDir(screenshots).filePath("manager-"+kind+".png")),"Could not capture manager screenshot");
+            }
             auto *list=library->findChild<QComboBox *>("equipmentProfileList");
             auto *remove=library->findChild<QPushButton *>("deleteEquipmentProfile");
             require(list && remove,"Management controls missing");
@@ -157,7 +172,7 @@ int main(int argc,char **argv) {
         auto *remove=library->findChild<QPushButton *>("deleteEquipmentProfile");
         if(phase==0){
             const auto combined=bundledProfiles()+loadLibrary();
-            for(int i=0;i<list->count();++i)if(combined[list->itemData(i).toInt()].id==deleteId)list->setCurrentIndex(i);
+            for(int i=0;i<list->count();++i)if(list->itemData(i).toInt()>=0 && combined[list->itemData(i).toInt()].id==deleteId)list->setCurrentIndex(i);
             require(remove->isEnabled(),"Saved profile deletion unavailable");phase=1;clickLater(remove);
         }else if(phase==2){require(loadLibrary().size()==2,"Cancelled deletion changed library");phase=3;clickLater(remove);}
         else if(phase==4){const auto remaining=loadLibrary();require(remaining.size()==1 && remaining.front().id==preservedId,"Deletion affected another saved profile");phase=5;closeLater(library);}
@@ -192,11 +207,40 @@ int main(int argc,char **argv) {
         auto *library=dialog("Equipment profiles — brand / family / model");if(!library || collisionChecked)return;
         auto *list=library->findChild<QComboBox *>("equipmentProfileList");
         auto *remove=library->findChild<QPushButton *>("deleteEquipmentProfile");
-        list->setCurrentIndex(0);require(!remove->isEnabled(),"Imported ID collision unlocked bundled deletion");
+        list->setCurrentIndex(1);require(!remove->isEnabled(),"Imported ID collision unlocked bundled deletion");
         list->setCurrentIndex(list->count()-1);require(remove->isEnabled(),"Imported copy cannot be managed");
         collisionChecked=true;closeLater(library);
     });
     drive.start();openLibrary(nullptr,[](const Profile &) {});drive.stop();require(collisionChecked,"Collision protection was not exercised");
+    // Immediate selection, route-specific None and refresh safety are an audio contract.
+    QObject::disconnect(&drive,nullptr,&app,nullptr);
+    int notifications=0; bool immediateChecked=false;
+    QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        auto *library=dialog("Equipment profiles — brand / family / model");
+        if(!library || immediateChecked)return;
+        auto *list=library->findChild<QComboBox *>("equipmentProfileList");
+        auto *kind=library->findChild<QComboBox *>("equipmentKindFilter");
+        require(notifications==0 && list->currentData().toInt()==-1,"Opening manager changed audio or chose equipment by default");
+        QWheelEvent wheel(QPointF(5,5),QPointF(5,5),QPoint(),QPoint(0,-120),Qt::NoButton,Qt::NoModifier,Qt::NoScrollPhase,false);
+        QCoreApplication::sendEvent(list,&wheel);
+        require(list->currentIndex()==0 && notifications==0,"Scrolling accidentally selected and applied an equipment profile");
+        // Choosing the already displayed None row still clears an existing route.
+        QMetaObject::invokeMethod(list,"activated",Qt::DirectConnection,Q_ARG(int,0));
+        require(notifications==1,"Initial None activation did not clear route");
+        kind->setCurrentIndex(kind->findData("microphone"));
+        kind->setCurrentIndex(kind->findData("amplifier"));
+        require(notifications==1,"Taxonomy refresh changed audio");
+        list->setCurrentIndex(1);
+        require(notifications==2 && !QApplication::activeModalWidget()->inherits("QMessageBox"),"Profile did not apply immediately without confirmation");
+        list->setCurrentIndex(0);
+        require(notifications==3,"None did not immediately clear selected equipment route");
+        immediateChecked=true;closeLater(library);
+    });
+    drive.start();openLibrary(nullptr,[&](const Profile &p) {
+        ++notifications;
+        if(notifications==1 || notifications==3)require(p.id.isEmpty() && p.kind=="amplifier","None cleared wrong equipment route");
+        else require(!p.id.isEmpty() && !p.filters.isEmpty(),"Correction selection had no filters");
+    },"amplifier");drive.stop();require(immediateChecked,"Immediate profile selection workflow incomplete");
     QFile::remove(path);
     std::puts("PASS: profile editor change, Cancel/Discard prompt, save, malformed/valid JSON import, preservation and Apply");
     return 0;
