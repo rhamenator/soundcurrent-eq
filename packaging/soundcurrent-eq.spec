@@ -1,6 +1,6 @@
 Name:           soundcurrent-eq
 %global debug_package %{nil}
-Version:        1.2.0
+Version:        1.2.1
 Release:        1%{?dist}
 Summary:        Adjustable desktop equalizer for PipeWire
 License:        GPL-3.0-only
@@ -49,6 +49,9 @@ DESTDIR=%{buildroot} cmake --install build
 %{_datadir}/doc/soundcurrent-eq/audio-buffering.md
 
 %changelog
+* Thu Nov 05 2026 rhamenator <rhamenator@gmail.com> - 1.2.1-1
+- Restore listening presets, embed tray logo pixels, and allow DAW routes.
+
 * Thu Nov 05 2026 rhamenator <rhamenator@gmail.com> - 1.2.0-1
 - Graphical 32-point equipment profile editing, import deduplication and safe deletion
 - Adjustable audio buffering and accessible persistent profile controls
