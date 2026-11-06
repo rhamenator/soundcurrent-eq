@@ -77,8 +77,10 @@ QString equalizerNodeConflict(const QByteArray &dump, const QString &ownPrefix) 
              (name == "soundcurrent_mic" || name == "soundcurrent_mic_input")))
             continue;
         const auto app = props.value("application.name").toString().toLower();
-        if (name.startsWith("soundcurrent_") || name.contains("easyeffects") ||
-            name.contains("pulseeffects") || name.contains("equalizer") || app.contains("easyeffects") ||
+        if ((name == "soundcurrent_eq" || name.startsWith("soundcurrent_eq_") ||
+             name == "soundcurrent_studio" || name.startsWith("soundcurrent_studio_") ||
+             name == "soundcurrent_mic" || name.startsWith("soundcurrent_mic_")) || name.contains("easyeffects") ||
+            name.contains("pulseeffects") || app.contains("easyeffects") ||
             app.contains("pulseeffects"))
             return SC_TR("Another equalizer route is present: %1. Quit it before using SoundCurrent.").arg(props.value("node.description").toString(name));
     }

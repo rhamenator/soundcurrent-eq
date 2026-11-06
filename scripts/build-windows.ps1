@@ -155,13 +155,14 @@ try {
     }
     $ui.Refresh()
     Get-Content $uiLog -ErrorAction SilentlyContinue
+    if ($null -eq $ui.ExitCode -or $ui.ExitCode -ne 0) { throw "Shared UI test failed: $($ui.ExitCode)" }
     foreach ($locale in @('de','fr','es','it','pt-PT','pt-BR','nl','pl','cs','sk','uk','ru','el','tr','sv','da','nb','fi','ro','hu','nn','ar','he','fa','zh-Hans','zh-Hant','ja','ko','hi','id','vi','th','sw','qps-ploc','qps-rtl')) {
         $localizedLog = Join-Path $root "build-windows-native\localized-$locale.log"
         $localized = Start-Process "$stage\soundcurrent-eq.exe" -ArgumentList @('--localization-ui-test','--language',$locale) -PassThru -RedirectStandardError $localizedLog
         $null = $localized.Handle
         if (!$localized.WaitForExit(60000)) { Stop-Process -Id $localized.Id -Force; throw "Localized UI timed out: $locale" }
         $localized.Refresh()
-        if ($localized.ExitCode -ne 0) { Get-Content $localizedLog; throw "Localized UI failed: $locale" }
+        if ($localized.ExitCode -ne 0) { Get-Content $localizedLog; throw "Localized UI failed: $locale (exit $($localized.ExitCode))" }
     }
     Copy-Item 'build-windows-native\Release\soundcurrent-equipment-ui-test.exe' $stage
     foreach ($locale in @('en','fr','de','es','it','pt-PT','pt-BR','nl','pl')) {

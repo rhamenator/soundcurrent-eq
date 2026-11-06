@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/">
+    <file>app-logo.png</file>
     <file alias="app.ico">soundcurrent-eq.ico</file>
     <file alias="speakers/profiles.json">speakers/profiles.json</file>
     <file alias="equipment/published.json">equipment/published.json</file>

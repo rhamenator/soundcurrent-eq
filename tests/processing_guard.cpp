@@ -60,6 +60,10 @@ int main(int argc, char **argv) {
         check(equalizerNodeConflict(graph("soundcurrent_eq_output"), "soundcurrent_eq").isEmpty() &&
                   equalizerNodeConflict(graph("alsa_output.usb"), "soundcurrent_eq").isEmpty(),
               "own / hardware routes allowed");
+        check(!recognizedEqualizerProcess("soundcurrent-daw.exe"), "DAW is not a system equalizer");
+        for (const auto &name : {"soundcurrent_daw_monitor", "sc-daw-native-capture-123", "track_equalizer"})
+            check(equalizerNodeConflict(graph(name), "soundcurrent_eq").isEmpty(),
+                  "DAW track and monitor processing must not shut down system EQ");
         QTemporaryDir directory;
         check(directory.isValid(), "test runtime");
         QProcess owner;
