@@ -27,3 +27,22 @@ VB-CABLE remains proprietary donationware, separate from GPL SoundCurrent. Its n
 A retained VB-CABLE PnP driver record does not prove that playback and recording work. Setup checks for active CABLE Input and CABLE Output endpoints. A driver record with missing endpoints is reported as incomplete, not already installed.
 
 Check that both endpoints are enabled in Windows Sound settings. If they remain missing after restarting, Audio driver setup opens the signed official installer with repair instructions: Remove Driver, restart Windows, run Audio driver setup and Install Driver, then restart again. Removing the shared cable affects other applications that use it. SoundCurrent does not remove it silently. The settings button reports the missing endpoints and keeps the app open.
+
+## Windows volume and live controls
+
+If Windows volume/media keys move the fader without changing loudness, open
+**VB-CABLE settings** and enable **Windows Volume Control** in the official
+control panel. VB-Audio documents this as an optional driver feature; without it,
+the playback endpoint's volume control can have no effect. See the
+[official manual, page 13](https://vb-audio.com/Cable/VBCABLE_ReferenceManual.pdf#page=13).
+SoundCurrent does not toggle undocumented driver settings or add a second
+software gain stage to compensate for an unknown cable configuration.
+
+Run the Windows installer to upgrade an installed app. Updating a Git checkout
+only updates source files. Quit the old app first and launch the installed app
+normally afterward: `--preview` intentionally disables live audio processing.
+In Studio, uncheck **Offline editing** (or use **Apply settings**) when you want
+changes to affect playback. A setup opened for review remains offline until
+explicitly applied; unsupported live channel layouts also require a compatible
+output device. Ordinary playback should be enabled and Studio bypass should be
+off when testing audible effects.
