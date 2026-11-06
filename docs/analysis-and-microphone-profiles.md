@@ -110,7 +110,7 @@ as an isolated equipment measurement. For acoustic room calibration use the sepa
 
 ## Implementation and validation boundaries
 
-The FFT planning, frequency mapping and palette renderer are reused unchanged
+The FFT planning and palette renderer are reused unchanged
 from GPL-3.0 [Audio Spectrogram](https://github.com/rhamenator/audio-spectrogram),
 commit `f6084d95f6f0b7db8b0bed73797439a3ee335841`. Its repository is not modified.
 The Qt UI, bounded capture snapshots, resampling and reference workflow are local
@@ -174,3 +174,24 @@ Estimated profiles use equipment JSON schema **4**, while existing schema 2/3 fi
 remain supported. Older app versions reject schema 4 rather than silently present
 an estimate as a directly measured profile; keep both equalizers updated when
 sharing these files. Linguistic accuracy of the new translations remains unverified.
+
+### Spectrogram display detail and units
+
+The rolling spectrogram uses the plot's physical pixel dimensions, including
+high-DPI display scaling, rather than stretching a fixed 600 × 256 bitmap.
+Resizing preserves the visible history. Storage is bounded at 2048 × 2048 pixels
+(16 MiB for the history image), and smooth scaling handles larger displays.
+Frequency rows interpolate between FFT bins when enlarged and preserve narrow
+peaks when several bins share a row. Time columns blend adjacent analyzed frames;
+this improves drawing quality without claiming additional measured time detail.
+
+Frequency axes use readable tick positions and explicit units: **500 Hz**,
+**1 kHz**, **12.5 kHz**, with localized decimal separators and no scientific
+notation. The spectrum, tuner, cursor readouts and analysis-rate selector use the
+same convention. Numeric frequency-entry fields retain explicit Hz units so their
+editable values and step sizes stay consistent.
+
+The image resolution does not change the underlying FFT resolution. For closer
+frequency separation, increase **FFT size** in Settings (up to 8192, subject to the
+250 ms window limit), or narrow the displayed frequency range. Audio processing,
+the analysis cadence and the inactive-tab shutdown behavior are unchanged.

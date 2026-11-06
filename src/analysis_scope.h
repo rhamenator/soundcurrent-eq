@@ -3,6 +3,7 @@
 #include "spectrogram/spectrogram_core.h"
 #include <QByteArray>
 #include <QJsonObject>
+#include <QLocale>
 #include <QVector>
 #include <array>
 #include <algorithm>
@@ -22,6 +23,9 @@ struct Settings {
     static std::optional<Settings> parse(const QJsonObject &);
     static std::optional<Settings> parsePreset(const QByteArray &);
 };
+QString displayNumber(double value, int decimals=3, const QLocale &locale=QLocale());
+QString formatFrequency(double hz, const QLocale &locale=QLocale());
+std::vector<double> spectrogramColumn(const std::vector<double> &bins, const Settings &, int rows);
 struct Pitch { double hz=0, cents=0, confidence=0; int midi=-1; };
 class Engine {
 public:

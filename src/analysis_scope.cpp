@@ -10,6 +10,40 @@
 #include <QSet>
 #include <QStringList>
 namespace soundcurrent::analysis {
+QString displayNumber(double value, int decimals, const QLocale &locale) {
+    if(!std::isfinite(value)) return QString(QChar(0x2014));
+    decimals=std::clamp(decimals,0,6);
+    if(value!=0 && std::abs(value)<1)decimals=std::max(decimals,std::min(6,int(std::ceil(-std::log10(std::abs(value))))+2));
+    if(std::abs(value)<.5*std::pow(10.,-decimals))value=0;
+    auto text=locale.toString(value,'f',decimals);
+    if(text.contains(locale.decimalPoint())) {
+        while(text.endsWith(locale.zeroDigit())) text.chop(locale.zeroDigit().size());
+        if(text.endsWith(locale.decimalPoint())) text.chop(locale.decimalPoint().size());
+    }
+    return text;
+}
+QString formatFrequency(double hz,const QLocale &locale) {
+    if(!std::isfinite(hz) || hz<0) return QString(QChar(0x2014));
+    return displayNumber(hz>=1000?hz/1000:hz,3,locale)+(hz>=1000?" kHz":" Hz");
+}
+std::vector<double> spectrogramColumn(const std::vector<double> &bins,const Settings &s,int rows) {
+    rows=std::clamp(rows,1,2048);
+    std::vector<double> column(rows,-240.);
+    if(bins.empty() || !s.valid()) return column;
+    auto frequency=[&](double r){return s.scale==0?s.low+r*(s.upper()-s.low):
+        std::max(1.,s.low)*std::pow(s.upper()/std::max(1.,s.low),r);};
+    auto binAt=[&](double r){return std::clamp(frequency(std::clamp(r,0.,1.))*s.fft/s.rate,0.,double(bins.size()-1));};
+    for(int y=0;y<rows;++y) {
+        const double r=rows==1?.5:double(rows-1-y)/(rows-1);
+        const double a=binAt(r-.5/rows),b=binAt(r+.5/rows),center=binAt(r);
+        const int first=int(center),next=std::min(first+1,int(bins.size())-1);
+        double value=bins[first]+(bins[next]-bins[first])*(center-first);
+        // Retain narrow FFT peaks when several bins must share a display row.
+        if(b-a>1.)for(int i=int(std::ceil(a));i<=int(std::floor(b));++i)value=std::max(value,bins[i]);
+        column[y]=value;
+    }
+    return column;
+}
 bool Settings::valid() const {
     const auto finite=[](double x){return std::isfinite(x);};
     return view>=0 && view<=6 && (rate==16000 || rate==22050 || rate==24000 || rate==32000 || rate==44100 || rate==48000 || rate==88200 || rate==96000)

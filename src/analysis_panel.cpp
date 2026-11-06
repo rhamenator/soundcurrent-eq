@@ -55,7 +55,8 @@ public:
     std::function<void()> onFrame;
     double displayCeiling=0;
     void resetClock(){clock.invalidate();}
-    void clearImage(){image=gram::make_image(600,256);gram::clear_image(image,0xff000000);credit=0;clock.invalidate();update();}
+    QSize historyPixelSize() const {return {image.width,image.height};}
+    void clearImage(){image={};ensureImageSize();previousColumn.clear();credit=0;clock.invalidate();update();}
     bool push(const QByteArray &pcm) {
         if(!isVisible() || frozen)return false;
         const auto &s=data->settings;const double interval=(mode==View::Waveform || mode==View::Vectorscope)?40:std::max(40.,250.*s.fft/s.rate);
@@ -69,11 +70,19 @@ public:
             displayCeiling=std::abs(target-displayCeiling)>=6?target:displayCeiling;
         } else displayCeiling=s.ceiling;
         if(mode==View::Waterfall){
-            auto settings=gramSettings();auto column=gram::render_column(data->db,s.rate,settings);
+            ensureImageSize();
+            auto settings=gramSettings();auto column=spectrogramColumn(data->db,s,image.height);
             credit+=elapsed*image.width*s.speed/s.history;const int columns=std::min(image.width,int(credit));credit-=columns;
             if(columns>0)for(int y=0;y<image.height;++y){auto *row=image.pixels.data()+y*image.width;std::memmove(row,row+columns,std::size_t(image.width-columns)*sizeof(*row));}
-            if(s.layout==2 && s.channel==0){auto lane=settings;lane.image_height=image.height/2;column=gram::render_column(data->dbLeft,s.rate,lane);auto right=gram::render_column(data->dbRight,s.rate,lane);column.insert(column.end(),right.begin(),right.end());}
-            for(int x=image.width-std::max(1,columns);x<image.width;++x){gram::set_image_column(image,x,column,settings);for(int y=0;y<image.height;++y)image.pixels[y*image.width+x]|=0xff000000;}
+            if(s.layout==2 && s.channel==0){column=spectrogramColumn(data->dbLeft,s,image.height/2);auto right=spectrogramColumn(data->dbRight,s,image.height-image.height/2);column.insert(column.end(),right.begin(),right.end());}
+            const int count=std::max(1,columns);std::vector<double> blended(column.size());
+            for(int x=image.width-count;x<image.width;++x){
+                const double blend=double(x-(image.width-count)+1)/count;
+                for(int y=0;y<image.height;++y)blended[y]=previousColumn.size()==column.size()?previousColumn[y]+blend*(column[y]-previousColumn[y]):column[y];
+                gram::set_image_column(image,x,blended,settings);
+                for(int y=0;y<image.height;++y)image.pixels[y*image.width+x]|=0xff000000;
+            }
+            previousColumn=std::move(column);
         }
         if(onFrame)onFrame();
         update();return true;
@@ -91,10 +100,10 @@ protected:
         const double ratio=std::clamp((event->position().x()-plot.left())/plot.width(),0.,1.);
         const double vertical=(event->position().y()-plot.top())/plot.height();
         if(mode==View::Waveform){setToolTip(QLocale().toString(ratio*data->settings.fft*1000./data->settings.rate,'f',2)+" ms / "+QLocale().toString((1-2*vertical)*waveLimit_,'f',3));return;}
-        if(mode==View::Waterfall){const int lanes=data->settings.layout==2 && data->settings.channel==0?2:1;const double lanePosition=vertical*lanes-std::floor(vertical*lanes);setToolTip(QLocale().toString(-(1-ratio)*data->settings.history/data->settings.speed,'f',2)+" s / "+QLocale().toString(frequency(1-lanePosition),'f',1)+" Hz");return;}
+        if(mode==View::Waterfall){const int lanes=data->settings.layout==2 && data->settings.channel==0?2:1;const double lanePosition=vertical*lanes-std::floor(vertical*lanes);setToolTip(QLocale().toString(-(1-ratio)*data->settings.history/data->settings.speed,'f',2)+" s / "+formatFrequency(frequency(1-lanePosition)));return;}
         if(mode==View::Vectorscope || mode==View::Tuner)return;
         const double hz=frequency(ratio),level=data->settings.amplitude && !relativeAxis_?axisTop_+20*std::log10(std::max(1e-12,1-vertical)):axisTop_-vertical*axisSpan_;
-        setToolTip(QLocale().toString(hz,'f',1)+" Hz / "+QLocale().toString(level,'f',1)+(relativeAxis_?" dB":" dBFS"));
+        setToolTip(formatFrequency(hz)+" / "+QLocale().toString(level,'f',1)+(relativeAxis_?" dB":" dBFS"));
     }
     void paintEvent(QPaintEvent *) override {
         QPainter p(this);p.setLayoutDirection(Qt::LeftToRight);p.setRenderHint(QPainter::Antialiasing);p.fillRect(rect(),QColor("#111827"));
@@ -114,39 +123,51 @@ protected:
         }
 
         if(mode==View::Waterfall){
+            ensureImageSize();
             QImage q(reinterpret_cast<const uchar *>(image.pixels.data()),image.width,image.height,image.width*4,QImage::Format_RGB32);
-            p.drawImage(plot,q);
+            p.setRenderHint(QPainter::SmoothPixmapTransform);p.drawImage(plot,q);
         }
         p.setPen(QColor("#9bacc2"));
         if(mode!=View::Tuner && mode!=View::Vectorscope){
-            const QString unit=mode==View::Waterfall?QString("Hz"):mode==View::Waveform?QString():comparison?QString("dB"):s.amplitude?QString("×"):QString("dBFS");
+            const QString unit=mode==View::Waterfall?QString():mode==View::Waveform?QString():comparison?QString("dB"):s.amplitude?QString("×"):QString("dBFS");
             p.drawText(QRectF(2,0,52,17),Qt::AlignRight,unit);
             if(s.amplitude && !comparison && mode!=View::Waveform && mode!=View::Waterfall)
-                p.drawText(QRectF(plot.left(),0,plot.width(),17),Qt::AlignRight,"1 = "+QLocale().toString(top,'g',3)+" dBFS");
+                p.drawText(QRectF(plot.left(),0,plot.width(),17),Qt::AlignRight,"1 = "+displayNumber(top)+" dBFS");
         }
         if(mode==View::Waterfall) {
             const int lanes=s.layout==2 && s.channel==0?2:1;
             for(int lane=0;lane<lanes;++lane){const double laneTop=plot.top()+lane*plot.height()/lanes,laneBottom=laneTop+plot.height()/lanes;
-                for(double r:{0.,.25,.5,.75,1.}){double y=laneBottom-r*plot.height()/lanes;const auto hz=frequency(r);
-                    p.drawText(QRectF(0,y-9,55,18),Qt::AlignRight,QLocale().toString(hz,'g',3));
-                    p.drawText(QRectF(plot.right()+3,y-9,55,18),Qt::AlignLeft,QLocale().toString(hz,'g',3));}
-                if(s.grid){p.setPen(QColor("#475569"));for(double r:{.25,.5,.75}){const double y=laneBottom-r*plot.height()/lanes;p.drawLine(QPointF(plot.left(),y),QPointF(plot.right(),y));}}
+                for(double hz:frequencyTicks(plot.height()/lanes,28.)){
+                    const double y=laneBottom-ratio(hz)*plot.height()/lanes;
+                    p.setPen(QColor("#9bacc2"));
+                    p.drawText(QRectF(0,y-9,plot.left()-8,18),Qt::AlignRight,formatFrequency(hz));
+                    p.drawText(QRectF(plot.right()+5,y-9,width()-plot.right()-7,18),Qt::AlignLeft,formatFrequency(hz));
+                    if(s.grid){p.setPen(QColor("#475569"));p.drawLine(QPointF(plot.left(),y),QPointF(plot.right(),y));}
+                }
                 if(lanes==2)p.drawText(QPointF(plot.left()+5,laneTop+15),lane==0?SC_TR("L"):SC_TR("R"));
             }
-            p.drawText(QRectF(plot.left(),plot.bottom()+3,plot.width(),18),Qt::AlignCenter,QLocale().toString(-s.history/s.speed,'g',3)+" s                                      0 s");
-            p.drawText(QRectF(plot.left(),plot.bottom()+20,plot.width(),18),Qt::AlignLeft,QLocale().toString(displayCeiling-s.sensitivity,'g',3)+" … "+QLocale().toString(displayCeiling,'g',3)+" dBFS");
+            p.setPen(QColor("#9bacc2"));
+            for(double r:{0.,.25,.5,.75,1.})p.drawText(QRectF(plot.left()+r*plot.width()-45,plot.bottom()+3,90,18),Qt::AlignCenter,displayNumber(-(1-r)*s.history/s.speed)+" s");
+            p.drawText(QRectF(plot.left(),plot.bottom()+20,plot.width(),18),Qt::AlignLeft,displayNumber(displayCeiling-s.sensitivity)+" … "+displayNumber(displayCeiling)+" dBFS");
         } else if(mode!=View::Tuner && mode!=View::Vectorscope){
             for(double r:{0.,.25,.5,.75,1.}) {
                 const double y=plot.bottom()-r*plot.height();
                 const double value=mode==View::Waveform?(2*r-1)*waveLimit_:(s.amplitude && !comparison)?r:top-span*(1-r);
-                p.drawText(QRectF(0,y-9,55,18),Qt::AlignRight,QLocale().toString(value,'g',3));
+                p.drawText(QRectF(0,y-9,plot.left()-8,18),Qt::AlignRight,displayNumber(value));
                 if(s.grid){p.setPen(QColor("#334155"));p.drawLine(QPointF(plot.left(),y),QPointF(plot.right(),y));p.setPen(QColor("#9bacc2"));}
-                const double x=plot.left()+r*plot.width();
-                const double label=mode==View::Waveform?1000.*s.fft/s.rate*r:frequency(r);
-                p.drawText(QRectF(x-27,plot.bottom()+3,54,18),Qt::AlignCenter,QLocale().toString(label,'g',3));
-                if(s.grid){p.setPen(QColor("#334155"));p.drawLine(QPointF(x,plot.top()),QPointF(x,plot.bottom()));p.setPen(QColor("#9bacc2"));}
+                if(mode==View::Waveform){
+                    const double x=plot.left()+r*plot.width();
+                    p.drawText(QRectF(x-45,plot.bottom()+3,90,18),Qt::AlignCenter,displayNumber(1000.*s.fft/s.rate*r));
+                    if(s.grid){p.setPen(QColor("#334155"));p.drawLine(QPointF(x,plot.top()),QPointF(x,plot.bottom()));p.setPen(QColor("#9bacc2"));}
+                }
             }
-            p.drawText(QRectF(plot.left(),plot.bottom()+20,plot.width(),18),Qt::AlignCenter,mode==View::Waveform?"ms":"Hz");
+            if(mode!=View::Waveform)for(double hz:frequencyTicks(plot.width(),92.)){
+                const double x=plot.left()+ratio(hz)*plot.width();
+                p.setPen(QColor("#9bacc2"));p.drawText(QRectF(x-45,plot.bottom()+3,90,18),Qt::AlignCenter,formatFrequency(hz));
+                if(s.grid){p.setPen(QColor("#334155"));p.drawLine(QPointF(x,plot.top()),QPointF(x,plot.bottom()));}
+            }
+            p.setPen(QColor("#9bacc2"));
+            p.drawText(QRectF(plot.left(),plot.bottom()+20,plot.width(),18),Qt::AlignCenter,mode==View::Waveform?"ms":"");
         }
         p.save();p.setClipRect(plot.adjusted(-1,-1,1,1));
         if(mode==View::Waveform) {
@@ -164,7 +185,7 @@ protected:
             p.drawText(plot.adjusted(0,0,0,-4),Qt::AlignBottom|Qt::AlignHCenter,QString::fromUtf8("ρ ")+QLocale().toString(data->correlation,'f',2));
         } else if(mode==View::Tuner){
             const auto pitch=data->pitch;p.setPen(QColor("#55d7c3"));auto font=p.font();font.setPointSizeF(30);p.setFont(font);p.drawText(plot,Qt::AlignCenter,noteName(pitch.midi));
-            font.setPointSizeF(11);p.setFont(font);p.drawText(plot.adjusted(0,0,0,-10),Qt::AlignBottom|Qt::AlignHCenter,QLocale().toString(pitch.hz,'f',2)+" Hz / "+QLocale().toString(pitch.cents,'f',1)+" ¢");
+            font.setPointSizeF(11);p.setFont(font);p.drawText(plot.adjusted(0,0,0,-10),Qt::AlignBottom|Qt::AlignHCenter,formatFrequency(pitch.hz)+" / "+QLocale().toString(pitch.cents,'f',1)+" ¢");
             const double x=plot.center().x()+std::clamp(pitch.cents,-50.,50.)/50.*plot.width()*.4;p.drawLine(QPointF(x,plot.top()+12),QPointF(x,plot.top()+60));
             static const QStringList tunings={"", "E2 A2 D3 G3 B3 E4","E1 A1 D2 G2","G4 C4 E4 A4","G3 D4 A4 E5","C3 G3 D4 A4","C2 G2 D3 A3","G3 D4 A4 E5"};
             p.drawText(plot.adjusted(0,0,0,-36),Qt::AlignBottom|Qt::AlignHCenter,tunings[s.instrument]);
@@ -190,10 +211,33 @@ protected:
     }
 private:
     gram::Image image;
+    std::vector<double> previousColumn;
+    void ensureImageSize() {
+        const auto plot=plotRect();const double dpr=devicePixelRatioF();
+        const int w=std::clamp(int(std::ceil(plot.width()*dpr)),1,2048),h=std::clamp(int(std::ceil(plot.height()*dpr)),2,2048);
+        if(image.width==w && image.height==h)return;
+        auto replacement=gram::make_image(w,h);gram::clear_image(replacement,0xff000000);
+        if(!image.pixels.empty()) {
+            QImage old(reinterpret_cast<const uchar *>(image.pixels.data()),image.width,image.height,image.width*4,QImage::Format_RGB32);
+            const auto scaled=old.scaled(w,h,Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
+            for(int y=0;y<h;++y)std::memcpy(replacement.pixels.data()+y*w,scaled.constScanLine(y),std::size_t(w)*4);
+        }
+        image=std::move(replacement);previousColumn.clear();credit=0;
+    }
     QElapsedTimer clock;
     double credit=0,axisTop_=0,axisSpan_=90,waveLimit_=1;
     bool relativeAxis_=false;
-    QRectF plotRect() const{return QRectF(58,18,std::max(1,width()-116),std::max(1,height()-62));}
+    QRectF plotRect() const {const int margin=std::max(70,fontMetrics().horizontalAdvance(formatFrequency(999.999))+12);return QRectF(margin,18,std::max(1,width()-2*margin),std::max(1,height()-62));}
+    std::vector<double> frequencyTicks(double pixels,double spacing) const {
+        std::vector<double> ticks{frequency(0)};double last=0;
+        for(int exponent=-3;exponent<=5;++exponent)for(double multiplier:{1.,2.,5.}){
+            const double hz=multiplier*std::pow(10.,exponent);
+            if(hz<=frequency(0) || hz>=frequency(1))continue;
+            const double position=ratio(hz)*pixels;
+            if(position-last>=spacing && pixels-position>=spacing){ticks.push_back(hz);last=position;}
+        }
+        ticks.push_back(frequency(1));return ticks;
+    }
     double frequency(double r) const {const auto &s=data->settings;return s.scale==0?s.low+r*(s.upper()-s.low):std::max(1.,s.low)*std::pow(s.upper()/std::max(1.,s.low),r);}
     double ratio(double hz) const {const auto &s=data->settings;return s.scale==0?(hz-s.low)/(s.upper()-s.low):std::log(hz/std::max(1.,s.low))/std::log(s.upper()/std::max(1.,s.low));}
 };
@@ -227,6 +271,7 @@ Panel::~Panel(){canvas_->onVisibility={};canvas_->onFrame={};onActivity={};}
 bool Panel::active() const{return canvas_->isVisible() && sourceReady_ && !captureFailed_ && !suspended_;}
 QString Panel::source() const{return source_->currentData().toString();}
 Engine &Panel::engine(){return *canvas_->data;}
+QSize Panel::historyPixelSize() const{return canvas_->historyPixelSize();}
 View Panel::view() const{return canvas_->mode;}
 void Panel::setView(View mode){view_->setCurrentIndex(int(mode));canvas_->mode=mode;canvas_->data->settings.view=int(mode);}
 void Panel::pushPcm(const QByteArray &bytes){if(sourceReady_ && !captureFailed_ && !suspended_)canvas_->push(bytes);}
@@ -274,7 +319,7 @@ std::optional<equipment::Profile> Panel::microphoneProfile() const {
 }
 void Panel::availability(){
     const auto &e=engine();const bool microphone=view()==View::Microphone;help_->setVisible(microphone);reference_->setEnabled(e.frames>=25);reference_->setVisible(view()==View::Average || microphone);profile_->setVisible(microphone);profile_->setEnabled(microphone && !source().isEmpty() && e.frames>=25 && e.hasReference());
-    readout_->setText(SC_TR("Frames: %1 · FFT: %2 ms · Resolution: %3 Hz · Window: %4 ms").arg(QLocale().toString(e.waveFrames),QLocale().toString(e.fftMs,'f',2),QLocale().toString(double(e.settings.rate)/e.settings.fft,'f',2),QLocale().toString(e.settings.fft*1000./e.settings.rate,'f',1)));
+    readout_->setText(SC_TR("Frames: %1 · FFT: %2 ms · Resolution: %3 · Window: %4 ms").arg(QLocale().toString(e.waveFrames),QLocale().toString(e.fftMs,'f',2),formatFrequency(double(e.settings.rate)/e.settings.fft),QLocale().toString(e.settings.fft*1000./e.settings.rate,'f',1)));
 }
 void Panel::suspendForDialog(bool suspended){suspended_=suspended;canvas_->resetClock();if(onActivity)onActivity(source(),active());}
 void Panel::settingsDialog(){
@@ -285,7 +330,7 @@ void Panel::settingsDialog(){
     auto combo=[&](const QString &label,const QString &name,const QStringList &items,int selected){auto *c=new QComboBox;c->setObjectName(name);c->setAccessibleName(label);c->addItems(items);c->setCurrentIndex(selected);form->addRow(label,c);return c;};
     QStringList viewText;for(int i=0;i<view_->count();++i)viewText<<view_->itemText(i);
     auto *stagedView=combo(SC_TR("View"),"analysisSettingsView",viewText,current.view);
-    const QList<int> rates={16000,22050,24000,32000,44100,48000,88200,96000},sizes={512,1024,2048,4096,8192};QStringList rateText,fftText;for(int x:rates)rateText<<QLocale().toString(x)+" Hz";for(int x:sizes)fftText<<QLocale().toString(x);
+    const QList<int> rates={16000,22050,24000,32000,44100,48000,88200,96000},sizes={512,1024,2048,4096,8192};QStringList rateText,fftText;for(int x:rates)rateText<<formatFrequency(x);for(int x:sizes)fftText<<QLocale().toString(x);
     auto *rate=combo(SC_TR("Analysis sample rate"),"analysisRate",rateText,rates.indexOf(current.rate));auto *fft=combo(SC_TR("FFT size"),"analysisFft",fftText,sizes.indexOf(current.fft));
     auto *palette=combo(SC_TR("Palette"),"analysisPalette",{SC_TR("Spectrum"),SC_TR("Gray"),SC_TR("Blue"),SC_TR("Green"),SC_TR("Amber"),SC_TR("Ice")},current.palette);
     auto *scale=combo(SC_TR("Frequency scale"),"analysisScale",{SC_TR("Linear"),SC_TR("Logarithmic"),SC_TR("Octave")},current.scale);

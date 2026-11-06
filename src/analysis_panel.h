@@ -22,6 +22,7 @@ public:
     bool active() const;
     QString source() const;
     Engine &engine();
+    QSize historyPixelSize() const;
     void setView(View);
     View view() const;
     bool applySettings(const Settings &);

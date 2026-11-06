@@ -1213,6 +1213,7 @@ Vil du slette den alligevel?</translation>
     <message>
       <source>Estimated profile</source>
       <translation>Estimeret profil</translation>
+      <extracomment>A derived frequency-response estimate, not a certified direct measurement. Keep the distinction from a measured response and from the editable inverse EQ correction.</extracomment>
     </message>
     <message>
       <source>Estimated profile status is required for schema 4.</source>
@@ -1333,8 +1334,8 @@ Vil du slette den alligevel?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
-      <source>Frames: %1 · FFT: %2 ms · Resolution: %3 Hz · Window: %4 ms</source>
-      <translation>Rammer: %1 · FFT: %2 ms · Opløsning: %3 Hz · Vindue: %4 ms</translation>
+      <source>Frames: %1 · FFT: %2 ms · Resolution: %3 · Window: %4 ms</source>
+      <translation>Rammer: %1 · FFT: %2 ms · Opløsning: %3 · Vindue: %4 ms</translation>
     </message>
     <message>
       <source>Freeze display</source>
@@ -1804,6 +1805,7 @@ Vil du slette den alligevel?</translation>
     <message>
       <source>Measured chain</source>
       <translation>Målt kæde</translation>
+      <extracomment>Measured response of the complete audio signal path, not a hardware model or a correction filter.</extracomment>
     </message>
     <message>
       <source>Measured listening position</source>
