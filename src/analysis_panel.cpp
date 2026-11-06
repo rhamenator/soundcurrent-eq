@@ -249,14 +249,14 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     const auto saved=Settings::parse(QJsonDocument::fromJson(QSettings().value("analysis/settings").toByteArray()).object());if(saved)canvas_->data->configure(*saved);
     canvas_->onVisibility=[this](bool visible){if(visible){captureFailed_=false;refreshSources();}if(onActivity)onActivity(source(),visible && active());};
     canvas_->onFrame=[this]{availability();};
-    connect(view_,&QComboBox::currentIndexChanged,this,[this](int index){canvas_->data->resetAverage();canvas_->mode=View(index);canvas_->data->settings.view=index;canvas_->clearImage();canvas_->setAccessibleName(view_->currentText());QSettings().setValue("analysis/view",index);availability();});
+    connect(view_,&QComboBox::currentIndexChanged,this,[this](int index){canvas_->data->resetAverage();setView(View(index));canvas_->clearImage();canvas_->setAccessibleName(view_->currentText());availability();});
     connect(source_,&QComboBox::currentIndexChanged,this,[this]{sourceReady_=true;captureFailed_=false;reset();QSettings().setValue("analysis/source",source());QSettings().setValue("analysis/sourceName",source_->currentText());if(onActivity)onActivity(source(),active());});
     connect(freeze_,&QCheckBox::toggled,this,[this](bool on){canvas_->frozen=on;});
     connect(settings,&QPushButton::clicked,this,&Panel::settingsDialog);
     connect(resetButton,&QPushButton::clicked,this,&Panel::reset);
     connect(reference_,&QPushButton::clicked,this,[this]{captureReference();});
     connect(profile_,&QPushButton::clicked,this,[this]{if(auto p=microphoneProfile()){suspendForDialog(true);if(onProfile)onProfile(*p);suspendForDialog(false);}else QMessageBox::information(this,SC_TR("Microphone response"),SC_TR("Not enough broadband reference data."));});
-    setView(View(saved?saved->view:std::clamp(QSettings().value("analysis/view",0).toInt(),0,6)));canvas_->setAccessibleName(view_->currentText());availability();
+    setView(View(std::clamp(QSettings().value("analysis/view",saved?saved->view:0).toInt(),0,6)));canvas_->setAccessibleName(view_->currentText());availability();
 }
 Panel::~Panel(){canvas_->onVisibility={};canvas_->onFrame={};onActivity={};}
 bool Panel::active() const{return canvas_->isVisible() && sourceReady_ && !captureFailed_ && !suspended_;}
@@ -264,7 +264,13 @@ QString Panel::source() const{return source_->currentData().toString();}
 Engine &Panel::engine(){return *canvas_->data;}
 QSize Panel::historyPixelSize() const{return canvas_->historyPixelSize();}
 View Panel::view() const{return canvas_->mode;}
-void Panel::setView(View mode){view_->setCurrentIndex(int(mode));canvas_->mode=mode;canvas_->data->settings.view=int(mode);}
+void Panel::setView(View mode){
+    const int index=int(mode);if(index<0 || index>=view_->count())return;
+    if(view_->currentIndex()!=index){view_->setCurrentIndex(index);return;}
+    canvas_->mode=mode;canvas_->data->settings.view=index;
+    QSettings settings;settings.setValue("analysis/view",index);
+    settings.setValue("analysis/settings",QJsonDocument(canvas_->data->settings.json()).toJson(QJsonDocument::Compact));
+}
 void Panel::pushPcm(const QByteArray &bytes){if(sourceReady_ && !captureFailed_ && !suspended_)canvas_->push(bytes);}
 void Panel::captureError(const QString &error){captureFailed_=true;readout_->setText(error);if(onActivity)onActivity(source(),false);}
 void Panel::refreshSources(){
@@ -292,18 +298,26 @@ std::optional<equipment::Profile> Panel::microphoneProfile() const {
     const auto &e=*canvas_->data;if(source().isEmpty() || view()!=View::Microphone || e.frames<25 || e.reference.size()!=e.averaged.size())return {};
     const auto relative=e.relativeDb();
     if(std::max(20.,e.settings.low)>=std::min(20000.,e.settings.upper()))return {};
+    int first=-1,last=-1,excited=0;
+    const double low=std::max(20.,e.settings.low),high=std::min(20000.,e.settings.upper());
+    for(int bin=1;bin<int(relative.size());++bin)if(e.frequencyAt(bin)>=low && e.frequencyAt(bin)<=high && std::isfinite(relative[bin])){
+        if(first<0)first=bin;last=bin;++excited;
+    }
+    if(excited<6 || e.frequencyAt(last)<4*e.frequencyAt(first))return {};
     equipment::Profile p;p.kind="microphone";p.custom=true;p.brand=SC_TR("Custom");p.family=SC_TR("Microphone");p.model=source_->currentText();
     p.source=referenceSource_;p.conditions=SC_TR("Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement.");p.provenance=p.conditions;p.estimated=true;
     p.estimation={{"method","relative-microphone-reference-db-v1"},{"createdUtc",QDateTime::currentDateTimeUtc().toString(Qt::ISODate)},{"limitations",p.conditions},
         {"referenceSource",referenceSource_},{"targetSource",source_->currentText()},
         {"interpretation","combined-residual"},{"sampleRate",e.settings.rate},{"fftSize",e.settings.fft},
-        {"averagedFrames",double(e.frames)}};
+        {"averagedFrames",double(e.frames)},{"distinctExcitedBins",excited},
+        {"lowHz",e.frequencyAt(first)},{"highHz",e.frequencyAt(last)}};
 
-    for(int i=0;i<96;++i){double hz=std::max(20.,e.settings.low)*std::pow(std::min(20000.,e.settings.upper())/std::max(20.,e.settings.low),i/95.);
-        int bin=std::clamp(int(std::lround(hz*e.settings.fft/e.settings.rate)),1,int(e.averaged.size())-1);
-        if(!p.response.isEmpty() && hz<=p.response.back().frequency)continue;
-        if(!std::isfinite(relative[bin]))continue;
-        p.response.append({hz,relative[bin]});
+    int previous=-1;
+    for(int i=0;i<96;++i){
+        const double hz=e.frequencyAt(first)*std::pow(e.frequencyAt(last)/e.frequencyAt(first),i/95.);
+        const int bin=std::clamp(int(std::lround(hz*e.settings.fft/e.settings.rate)),first,last);
+        if(bin==previous || !std::isfinite(relative[bin]))continue;
+        previous=bin;p.response.append({e.frequencyAt(bin),relative[bin]});
     }
     if(p.response.size()<6 || p.response.back().frequency/p.response.front().frequency<4)return {};
     p.filters=equipment::fitResponse(p.response);return p;

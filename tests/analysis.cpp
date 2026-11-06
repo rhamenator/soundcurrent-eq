@@ -93,6 +93,21 @@ int main(int argc,char **argv){QApplication app(argc,argv);QTemporaryDir tempora
  for(int rate:{16000,22050,24000,32000,44100,48000,88200,96000}){auto s=Settings{};s.rate=rate;s.high=0;s.fft=2048;engine.configure(s);check(engine.push(tone(1000),View::Spectrum),"analysis rate failed");auto i=std::max_element(engine.db.begin(),engine.db.end())-engine.db.begin();check(std::abs(engine.frequencyAt(i)-1000)<double(rate)/s.fft,"resampled tone frequency incorrect");}
  Settings tuner;engine.configure(tuner);check(engine.push(tone(440),View::Tuner),"tuner rejected audio");check(engine.pitch.midi==69 && std::abs(engine.pitch.cents)<8,"tuner A4 inaccurate");tuner.instrument=1;engine.configure(tuner);engine.push(tone(110),View::Tuner);check(engine.pitch.midi==45 && std::abs(engine.pitch.cents)<8,"instrument tuning not applied");
  Settings cumulative;engine.configure(cumulative);engine.resetAverage();engine.push(signal,View::Microphone);engine.push(tone(937.5,.25),View::Microphone);const double expected=10*std::log10((.25+.0625)/2);check(std::abs(engine.averaged[80]-expected)<.05,"cumulative power average incorrect");
+ // The toolbar selection supersedes the last settings application, including legacy split preferences.
+ {Panel first;Settings selected;selected.view=int(View::Spectrum);check(first.applySettings(selected),"persisted settings rejected");
+  first.findChild<QComboBox *>("analysisView")->setCurrentIndex(int(View::Waveform));
+  Panel reopened;check(reopened.view()==View::Waveform,"toolbar view lost on restart after applying settings");
+  check(Settings::parse(QJsonDocument::fromJson(QSettings().value("analysis/settings").toByteArray()).object())->view==int(View::Waveform),"serialized and toolbar view preferences disagree");}
+ {Settings legacyView;legacyView.view=int(View::Spectrum);QSettings().setValue("analysis/settings",QJsonDocument(legacyView.json()).toJson());QSettings().setValue("analysis/view",int(View::Tuner));
+  Panel migrated;check(migrated.view()==View::Tuner,"newer legacy toolbar view was ignored");}
+ QSettings().remove("analysis");
+ // Real narrow-tone captures at coarse FFT resolution must not fabricate broadband coverage.
+ {Panel narrow;narrow.resize(800,600);narrow.microphoneSources=[] {return QVector<QPair<QString,QString>>{{"ref","Reference"},{"mic","Microphone"}};};
+  narrow.show();events();Settings coarse;coarse.fft=512;coarse.view=int(View::Microphone);check(narrow.applySettings(coarse),"coarse FFT setting rejected");
+  auto *mic=narrow.findChild<QComboBox *>("analysisSource");mic->setCurrentIndex(1);
+  for(int i=0;i<25;++i){events(45);narrow.pushPcm(tone(93.75));}check(narrow.captureReference(),"narrow reference capture failed");mic->setCurrentIndex(2);
+  for(int i=0;i<25;++i){events(45);narrow.pushPcm(tone(93.75));}check(!narrow.microphoneProfile(),"single tone fabricated a broadband microphone profile");narrow.hide();}
+ QSettings().remove("analysis");
  Panel panel;panel.resize(800,600);int activity=0;bool active=false;panel.onActivity=[&](const QString &,bool on){++activity;active=on;};bool connected=true;panel.microphoneSources=[&connected] {return connected?QVector<QPair<QString,QString>>{{"reference","Reference mic"},{"target","Target mic"}}:QVector<QPair<QString,QString>>{};};
  const auto inactive=panel.engine().fftCalls;panel.pushPcm(signal);check(panel.engine().fftCalls==inactive && !active,"hidden canvas analyzed audio");panel.show();events();check(active,"visible canvas not activated");panel.setView(View::Spectrum);panel.pushPcm(signal);check(panel.engine().fftCalls>inactive,"visible spectrum did not analyze");
  panel.setView(View::Waterfall);panel.resize(1100,850);events();panel.grab();
@@ -104,7 +119,10 @@ int main(int argc,char **argv){QApplication app(argc,argv);QTemporaryDir tempora
  auto *source=panel.findChild<QComboBox *>("analysisSource");check(source && source->count()==3,"microphone source list missing");source->setCurrentIndex(1);panel.setView(View::Microphone);
  for(int i=0;i<25;++i){events(45);panel.pushPcm(noise());}check(panel.captureReference(),"reference capture failed");source->setCurrentIndex(2);for(int i=0;i<25;++i){events(45);panel.pushPcm(noise(true));}
  auto profile=panel.microphoneProfile();check(profile && profile->kind=="microphone" && profile->response.size()>=6 && !profile->filters.isEmpty(),"relative microphone profile not proposed");
- for(const auto &point:profile->response){const int bin=int(std::lround(point.frequency*panel.engine().settings.fft/panel.engine().settings.rate));check(std::abs(point.db-panel.engine().relativeDb()[bin])<1e-10,"saved microphone curve differs from the scope curve");}
+ int previousProfileBin=-1;
+ for(const auto &point:profile->response){const int bin=int(std::lround(point.frequency*panel.engine().settings.fft/panel.engine().settings.rate));
+     check(bin>previousProfileBin && std::abs(point.frequency-panel.engine().frequencyAt(bin))<1e-9,"profile invents or duplicates FFT frequency samples");previousProfileBin=bin;
+     check(std::abs(point.db-panel.engine().relativeDb()[bin])<1e-10,"saved microphone curve differs from the scope curve");}
  check(profile->response.front().db-profile->response.back().db>6,"reference comparison lost target frequency shaping");auto parsed=soundcurrent::equipment::parse(QJsonDocument(soundcurrent::equipment::serialize(*profile)).toJson());check(parsed.response.size()==profile->response.size(),"proposed profile does not round-trip through profile editor format");
  connected=false;panel.refreshSources();check(!panel.active(),"disconnected microphone remained active");const auto disconnectedCalls=panel.engine().fftCalls;panel.pushPcm(signal);check(panel.engine().fftCalls==disconnectedCalls,"disconnected capture still analyzed");connected=true;panel.refreshSources();check(panel.active(),"reconnected microphone did not reactivate");
  panel.captureError("synthetic capture failure");check(!panel.active(),"capture failure did not stop activity");panel.hide();panel.show();events();check(panel.active(),"tab reopen did not permit capture retry");

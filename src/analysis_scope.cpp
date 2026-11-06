@@ -164,7 +164,9 @@ std::vector<double> Engine::relativeDb() const {
     std::vector<double> result(averaged.size(),std::numeric_limits<double>::quiet_NaN());
     for(std::size_t i=0;i<result.size();++i)if(frequencyAt(i)>=settings.low && frequencyAt(i)<=settings.upper() && reference[i]>=std::max(-80.,refTop-50) && averaged[i]>=std::max(-80.,targetTop-50))result[i]=averaged[i]-reference[i];
     const double low=std::max(20.,settings.low),high=std::min(20000.,settings.upper());std::vector<double> anchors;
-    if(high>low)for(int i=0;i<96;++i){const double hz=low*std::pow(high/low,i/95.);const int bin=std::clamp(int(std::lround(hz*settings.fft/settings.rate)),1,int(result.size())-1);if(std::isfinite(result[bin]))anchors.push_back(result[bin]);}
+    int previous=-1;
+    if(high>low)for(int i=0;i<96;++i){const double hz=low*std::pow(high/low,i/95.);const int bin=std::clamp(int(std::lround(hz*settings.fft/settings.rate)),1,int(result.size())-1);
+        if(bin!=previous && frequencyAt(bin)>=low && frequencyAt(bin)<=high && std::isfinite(result[bin])){anchors.push_back(result[bin]);previous=bin;}}
     if(!anchors.empty()){std::sort(anchors.begin(),anchors.end());const double median=anchors[anchors.size()/2];for(auto &value:result)if(std::isfinite(value))value-=median;}
     return result;
 }

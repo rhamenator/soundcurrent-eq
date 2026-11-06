@@ -7,6 +7,8 @@
 - Check for updates automatically at startup and show an Update shortcut left of Quit when a newer release or downloaded installer is available. Existing configuration update buttons remain. The shortcut opens official downloads rather than executing an unverified local installer.
 - Make the listening response graph taller, automatically scale its vertical range, and allow hiding it. Split equipment, microphone and speaker/room setup into focused dialogs with pinned Close controls.
 
+- Preserve the latest analyzer view after restart. Validate microphone reference coverage using distinct excited FFT bins and their actual frequencies, rejecting narrow tones instead of inventing broadband profile points.
+
 ## Upgrade
 
 Use **Quit app**, then install over the existing app. Closing the window can leave background processing active. Settings and custom profiles are retained. Linux downloads include the easy `.run` installer, Ubuntu/Debian DEB, Fedora 44 RPM and RHEL 10-compatible RPM; Windows includes an x64 installer. Updating a source checkout alone does not upgrade an installed Windows application.
