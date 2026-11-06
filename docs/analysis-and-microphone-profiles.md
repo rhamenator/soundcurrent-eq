@@ -195,3 +195,11 @@ The image resolution does not change the underlying FFT resolution. For closer
 frequency separation, increase **FFT size** in Settings (up to 8192, subject to the
 250 ms window limit), or narrow the displayed frequency range. Audio processing,
 the analysis cadence and the inactive-tab shutdown behavior are unchanged.
+
+Axis labels follow the selected frequency scale in every frequency-based view:
+**Linear** uses equal Hz intervals; **Logarithmic** uses multiplicative frequency
+positions with readable 1/2/5 ticks; **Octave** uses equal octave steps anchored
+at 1 kHz (for example 125 Hz, 250 Hz, 500 Hz, 1 kHz, 2 kHz). Crowded octave axes
+skip whole octaves. Linear and octave axes omit non-aligned endpoint ticks so
+those endpoints cannot suggest an irregular interval. Hz/kHz formatting is the
+same in every mode and does not change the selected scale.

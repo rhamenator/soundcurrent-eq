@@ -228,16 +228,7 @@ private:
     double credit=0,axisTop_=0,axisSpan_=90,waveLimit_=1;
     bool relativeAxis_=false;
     QRectF plotRect() const {const int margin=std::max(70,fontMetrics().horizontalAdvance(formatFrequency(999.999))+12);return QRectF(margin,18,std::max(1,width()-2*margin),std::max(1,height()-62));}
-    std::vector<double> frequencyTicks(double pixels,double spacing) const {
-        std::vector<double> ticks{frequency(0)};double last=0;
-        for(int exponent=-3;exponent<=5;++exponent)for(double multiplier:{1.,2.,5.}){
-            const double hz=multiplier*std::pow(10.,exponent);
-            if(hz<=frequency(0) || hz>=frequency(1))continue;
-            const double position=ratio(hz)*pixels;
-            if(position-last>=spacing && pixels-position>=spacing){ticks.push_back(hz);last=position;}
-        }
-        ticks.push_back(frequency(1));return ticks;
-    }
+    std::vector<double> frequencyTicks(double pixels,double spacing) const {return frequencyAxisTicks(data->settings,pixels,spacing);}
     double frequency(double r) const {const auto &s=data->settings;return s.scale==0?s.low+r*(s.upper()-s.low):std::max(1.,s.low)*std::pow(s.upper()/std::max(1.,s.low),r);}
     double ratio(double hz) const {const auto &s=data->settings;return s.scale==0?(hz-s.low)/(s.upper()-s.low):std::log(hz/std::max(1.,s.low))/std::log(s.upper()/std::max(1.,s.low));}
 };

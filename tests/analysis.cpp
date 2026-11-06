@@ -73,6 +73,13 @@ int main(int argc,char **argv){QApplication app(argc,argv);QTemporaryDir tempora
  check(formatFrequency(1500,QLocale("de_DE"))=="1,5 kHz" && formatFrequency(.125,QLocale::c())=="0.125 Hz","localized frequency decimals");
  for(const auto &locale:{QLocale::c(),QLocale("ar_EG"),QLocale("fr_FR")})for(double hz:{.001,20.,999.,1000.,20000.,96000.}){
      const auto text=formatFrequency(hz,locale);check(!text.contains("e+",Qt::CaseInsensitive) && !text.contains("e-",Qt::CaseInsensitive),"scientific notation returned to frequency labels");}
+ Settings axis;axis.scale=0;axis.low=0;axis.high=20000;
+ const auto linearTicks=frequencyAxisTicks(axis,600,70);check(linearTicks.size()>=3,"linear axis has too few labels");
+ const double delta=linearTicks[1]-linearTicks[0];for(std::size_t i=2;i<linearTicks.size();++i)check(std::abs((linearTicks[i]-linearTicks[i-1])-delta)<1e-8,"linear labels use nonlinear intervals");
+ axis.low=20;axis.scale=2;const auto octaveTicks=frequencyAxisTicks(axis,900,28);
+ check(octaveTicks.size()>=5,"octave labels missing");for(std::size_t i=1;i<octaveTicks.size();++i)check(std::abs(octaveTicks[i]/octaveTicks[i-1]-2)<1e-9,"octave labels are not octave steps");
+ axis.scale=1;const auto logTicks=frequencyAxisTicks(axis,900,28);check(logTicks.front()==20 && logTicks.back()==20000,"log axis bounds changed");
+ check(std::find(logTicks.begin(),logTicks.end(),1000.)!=logTicks.end(),"log scale lost readable decade labels");
  Settings rasterSettings;rasterSettings.low=0;rasterSettings.high=24000;rasterSettings.scale=0;
  std::vector<double> bins(2049,-120.);bins[853]=-3.;
  const auto compressed=spectrogramColumn(bins,rasterSettings,200);
@@ -102,6 +109,12 @@ int main(int argc,char **argv){QApplication app(argc,argv);QTemporaryDir tempora
  connected=false;panel.refreshSources();check(!panel.active(),"disconnected microphone remained active");const auto disconnectedCalls=panel.engine().fftCalls;panel.pushPcm(signal);check(panel.engine().fftCalls==disconnectedCalls,"disconnected capture still analyzed");connected=true;panel.refreshSources();check(panel.active(),"reconnected microphone did not reactivate");
  panel.captureError("synthetic capture failure");check(!panel.active(),"capture failure did not stop activity");panel.hide();panel.show();events();check(panel.active(),"tab reopen did not permit capture retry");
  for(View view:{View::Waterfall,View::Spectrum,View::Waveform,View::Tuner,View::Vectorscope,View::Average,View::Microphone}){panel.setView(view);events(45);if(view==View::Microphone){for(int n=0;n<25;++n){events(45);panel.pushPcm(noise(true));}}else if(view==View::Waterfall){for(int n=0;n<35;++n){events(45);panel.pushPcm(tone(600.+n*120));}}else panel.pushPcm(signal);events();auto image=panel.grab().toImage();check(!image.isNull(),"analysis view failed to render");const auto directory=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");if(!directory.isEmpty()){QDir().mkpath(directory);check(image.save(directory+"/analysis-"+QString::number(int(view))+".png"),"could not save visual QA");}}
+ if(const auto directory=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");!directory.isEmpty()){
+     const auto before=panel.engine().settings;
+     for(int scale=0;scale<3;++scale){auto axisSettings=before;axisSettings.view=0;axisSettings.scale=scale;check(panel.applySettings(axisSettings),"axis visual settings rejected");events(45);panel.pushPcm(signal);events();
+         check(panel.grab().save(directory+"/analysis-axis-"+QString::number(scale)+".png"),"axis visual render failed");}
+     panel.applySettings(before);
+ }
  // Fundamental analysis settings are staged; cancel leaves the running analyzer untouched.
  QTimer::singleShot(0,&panel,[&]{auto *dialog=panel.findChild<QDialog *>("analysisSettingsDialog");check(dialog,"missing settings dialog");auto *low=dialog->findChild<QDoubleSpinBox *>("analysisLow");check(low,"frequency setting missing");low->setValue(100);dialog->reject();});const auto old=panel.engine().settings.json();panel.settingsDialog();check(panel.engine().settings.json()==old,"cancel applied staged settings");
  QTimer::singleShot(0,&panel,[&]{auto *dialog=panel.findChild<QDialog *>("analysisSettingsDialog");auto *low=dialog->findChild<QDoubleSpinBox *>("analysisLow");auto *high=dialog->findChild<QDoubleSpinBox *>("analysisHigh");auto *apply=dialog->findChild<QPushButton *>("analysisApply");check(low && high && apply,"staged settings actions missing");low->setValue(10000);high->setValue(1000);apply->click();check(panel.engine().settings.json()==old && !dialog->findChild<QLabel *>("analysisFeedback")->text().isEmpty(),"invalid settings changed analyzer or failed silently");low->setValue(100);high->setValue(16000);apply->click();check(panel.engine().settings.low==100 && panel.engine().settings.high==16000 && apply->isVisible(),"Apply did not take effect or disappeared");const auto directory=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");if(!directory.isEmpty())dialog->grab().save(directory+"/analysis-settings.png");dialog->reject();});panel.settingsDialog();

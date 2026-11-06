@@ -10,6 +10,36 @@
 #include <QSet>
 #include <QStringList>
 namespace soundcurrent::analysis {
+std::vector<double> frequencyAxisTicks(const Settings &s,double pixels,double spacing) {
+    std::vector<double> ticks;
+    if(!s.valid() || !std::isfinite(pixels) || !std::isfinite(spacing) || pixels<=0 || spacing<=0)return ticks;
+    const double low=s.scale==0?s.low:std::max(1.,s.low),high=s.upper();
+    if(high<=low)return ticks;
+    const int intervals=int(std::clamp(std::floor(pixels/spacing),1.,40.));
+    if(s.scale==0) {
+        const double desired=(high-low)/intervals;
+        if(desired<=0)return ticks;
+        const double power=std::pow(10.,std::floor(std::log10(desired)));
+        if(power<=0)return ticks;
+        double step=10*power;for(double factor:{1.,2.,2.5,5.,10.})if(factor*power>=desired){step=factor*power;break;}
+        const double first=std::ceil(low/step-1e-10)*step;
+        for(int i=0;i<=40;++i){const double hz=first+i*step;if(hz>high+step*1e-10)break;if(hz>=low-step*1e-10)ticks.push_back(std::max(0.,hz));}
+    }else if(s.scale==2) {
+        const int stride=std::max(1,int(std::ceil(std::log2(high/low)/intervals)));
+        const int first=int(std::ceil(std::log2(low/1000.)/stride))*stride;
+        for(int i=0;i<=40;++i){const double hz=1000.*std::exp2(first+i*stride);if(hz>high*(1+1e-10))break;ticks.push_back(hz);}
+    }else {
+        ticks.push_back(low);double last=0;
+        for(int exponent=-3;exponent<=5;++exponent)for(double multiplier:{1.,2.,5.}){
+            const double hz=multiplier*std::pow(10.,exponent);
+            if(hz<=low || hz>=high)continue;
+            const double position=std::log(hz/low)/std::log(high/low)*pixels;
+            if(position-last>=spacing && pixels-position>=spacing){ticks.push_back(hz);last=position;}
+        }
+        ticks.push_back(high);
+    }
+    return ticks;
+}
 QString displayNumber(double value, int decimals, const QLocale &locale) {
     if(!std::isfinite(value)) return QString(QChar(0x2014));
     decimals=std::clamp(decimals,0,6);
