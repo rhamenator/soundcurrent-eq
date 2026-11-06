@@ -141,6 +141,18 @@ Czy na pewno chcesz go usunąć?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>A component cannot be subtracted twice or from itself.</source>
+      <translation>Nie można odjąć elementu dwukrotnie ani od niego samego.</translation>
+    </message>
+    <message>
+      <source>A measured chain response is required; correction filters cannot be subtracted.</source>
+      <translation>Wymagana jest zmierzona charakterystyka toru; filtrów korekcyjnych nie można odejmować.</translation>
+    </message>
+    <message>
+      <source>A measured component response is required; correction filters cannot be subtracted.</source>
+      <translation>Wymagana jest zmierzona charakterystyka elementu; filtrów korekcyjnych nie można odejmować.</translation>
+    </message>
+    <message>
       <source>A private user runtime directory is required</source>
       <translation>Wymagany jest prywatny katalog uruchomieniowy użytkownika</translation>
       <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
@@ -220,6 +232,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Wszystkie podtypy</translation>
     </message>
     <message>
+      <source>Amber</source>
+      <translation>Bursztynowy</translation>
+    </message>
+    <message>
       <source>Ambience</source>
       <translation>Przestrzeń</translation>
     </message>
@@ -256,8 +272,16 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Profile wzmacniaczy wymagają pomiarów elektrycznych przy znanym obciążeniu głośnikowym, wejściu i ustawieniach barwy. Zaimportuj plik zmierzonej korekcji; krzywe wzmacniacza nie są wyznaczane na podstawie specyfikacji marketingowych.</translation>
     </message>
     <message>
+      <source>Amplitude</source>
+      <translation>Amplituda</translation>
+    </message>
+    <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
       <translation>Zainstalowano aktualizację aplikacji. Wybierz Zakończ i otwórz aplikację ponownie, aby ją wczytać; zamknięcie tego okna pozostawia starą wersję uruchomioną.</translation>
+    </message>
+    <message>
+      <source>Analysis sample rate</source>
+      <translation>Częstotliwość próbkowania analizy</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
@@ -399,8 +423,21 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Automatyczne kierowanie dźwięku niedostępne</translation>
     </message>
     <message>
+      <source>Automatic range</source>
+      <translation>Zakres automatyczny</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Automatycznie kształtuj brzmienie podłączonego mikrofonu; kliknij, aby pominąć korekcję mikrofonu</translation>
+    </message>
+    <message>
+      <source>Average</source>
+      <translation>Średnia</translation>
+    </message>
+    <message>
+      <source>Averaged spectrum</source>
+      <translation>Uśrednione widmo</translation>
+      <extracomment>A time-smoothed digital frequency spectrum, not a measured room response.</extracomment>
     </message>
     <message>
       <source>Back</source>
@@ -448,6 +485,15 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Bass frequency</source>
       <translation>Częstotliwość basu</translation>
+    </message>
+    <message>
+      <source>Bass guitar</source>
+      <translation>Gitara basowa</translation>
+      <extracomment>Instrument tuner preset for standard bass-guitar strings.</extracomment>
+    </message>
+    <message>
+      <source>Blue</source>
+      <translation>Niebieski</translation>
     </message>
     <message>
       <source>Bookshelf speaker</source>
@@ -565,6 +611,15 @@ Czy na pewno chcesz go usunąć?</translation>
       <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
+      <source>Capture reference</source>
+      <translation>Zarejestruj odniesienie</translation>
+      <extracomment>Snapshot the accumulated spectrum as a reference and reset the running average for the comparison measurement.</extracomment>
+    </message>
+    <message>
+      <source>Cello</source>
+      <translation>Wiolonczela</translation>
+    </message>
+    <message>
       <source>Center</source>
       <translation>Środek</translation>
     </message>
@@ -586,6 +641,14 @@ Czy na pewno chcesz go usunąć?</translation>
       <source>Change to list view mode</source>
       <translation>Pokaż listę</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Channel</source>
+      <translation>Kanał</translation>
+    </message>
+    <message>
+      <source>Channels</source>
+      <translation>Kanały</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -621,6 +684,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Choose update folder…</source>
       <translation>Wybierz folder aktualizacji…</translation>
+    </message>
+    <message>
+      <source>Chromatic</source>
+      <translation>Chromatyczny</translation>
     </message>
     <message>
       <source>Cinema speaker</source>
@@ -791,6 +858,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Nie udało się uruchomić zabezpieczenia głośności wyjściowej</translation>
     </message>
     <message>
+      <source>Could not start playback monitoring</source>
+      <translation>Nie można uruchomić monitorowania odtwarzania</translation>
+    </message>
+    <message>
       <source>Could not start the measurement.</source>
       <translation>Nie udało się rozpocząć pomiaru.</translation>
     </message>
@@ -826,6 +897,11 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Create a new correction profile.</source>
       <translation>Utwórz nowy profil korekcji.</translation>
+    </message>
+    <message>
+      <source>Create microphone profile</source>
+      <translation>Utwórz profil mikrofonu</translation>
+      <extracomment>Propose relative correction filters for review in the profile editor. Saving does not apply them automatically.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -877,6 +953,14 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Usuń ten zapisany profil własny.</translation>
     </message>
     <message>
+      <source>Derivation metadata exceeds 32 KiB.</source>
+      <translation>Metadane wyznaczenia przekraczają 32 KiB.</translation>
+    </message>
+    <message>
+      <source>Derivation metadata requires an estimated profile.</source>
+      <translation>Metadane wyznaczenia wymagają profilu szacowanego.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>Szczegóły</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -894,6 +978,16 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Discard</source>
       <translation>Odrzuć</translation>
+    </message>
+    <message>
+      <source>Display ceiling</source>
+      <translation>Górna granica wykresu</translation>
+      <extracomment>Upper vertical-axis limit in dBFS. Changes visualization only; never a limiter or audio gain.</extracomment>
+    </message>
+    <message>
+      <source>Display sensitivity</source>
+      <translation>Czułość wyświetlania</translation>
+      <extracomment>Displayed dynamic range in dB. Does not change hardware microphone gain.</extracomment>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
@@ -1073,6 +1167,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Typ sprzętu</translation>
     </message>
     <message>
+      <source>Estimate profile</source>
+      <translation>Oszacuj profil</translation>
+    </message>
+    <message>
       <source>Estimated output level near band %1</source>
       <translation>Szacowany poziom wyjściowy w pobliżu pasma %1</translation>
     </message>
@@ -1113,6 +1211,27 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Szacowany szczyt wyjściowy po korekcji, z uwzględnieniem wzmocnienia końcowego i balansu</translation>
     </message>
     <message>
+      <source>Estimated profile</source>
+      <translation>Profil szacowany</translation>
+      <extracomment>A derived frequency-response estimate, not a certified direct measurement. Keep the distinction from a measured response and from the editable inverse EQ correction.</extracomment>
+    </message>
+    <message>
+      <source>Estimated profile status is required for schema 4.</source>
+      <translation>Schemat 4 wymaga statusu profilu szacowanego.</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require derivation metadata.</source>
+      <translation>Profile szacowane wymagają metadanych wyznaczenia.</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require method and limitations.</source>
+      <translation>Profile szacowane wymagają metody i ograniczeń.</translation>
+    </message>
+    <message>
+      <source>Estimated response exceeds the supported range.</source>
+      <translation>Szacowana charakterystyka przekracza obsługiwany zakres.</translation>
+    </message>
+    <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
       <translation>Zakończ SoundCurrent EQ i przywróć normalny dźwięk</translation>
     </message>
@@ -1143,6 +1262,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Export the selected profile to a JSON file.</source>
       <translation>Eksportuj wybrany profil do pliku JSON.</translation>
+    </message>
+    <message>
+      <source>FFT size</source>
+      <translation>Rozmiar FFT</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1211,12 +1334,25 @@ Czy na pewno chcesz go usunąć?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Frames: %1 · FFT: %2 ms · Resolution: %3 · Window: %4 ms</source>
+      <translation>Ramki: %1 · FFT: %2 ms · Rozdzielczość: %3 · Okno: %4 ms</translation>
+    </message>
+    <message>
+      <source>Freeze display</source>
+      <translation>Zamroź obraz</translation>
+      <extracomment>Hold the current analyzer picture; capture can continue, but visualization FFT work stops.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Częstotliwość</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
       <translation>Częstotliwość Hz</translation>
+    </message>
+    <message>
+      <source>Frequency scale</source>
+      <translation>Skala częstotliwości</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
@@ -1251,6 +1387,22 @@ Czy na pewno chcesz go usunąć?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Gray</source>
+      <translation>Szary</translation>
+    </message>
+    <message>
+      <source>Green</source>
+      <translation>Zielony</translation>
+    </message>
+    <message>
+      <source>Grid</source>
+      <translation>Siatka</translation>
+    </message>
+    <message>
+      <source>Guitar</source>
+      <translation>Gitara</translation>
+    </message>
+    <message>
       <source>Headphones</source>
       <translation>Słuchawki</translation>
     </message>
@@ -1270,6 +1422,18 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Hip-Hop</source>
       <translation>Hip-Hop</translation>
+    </message>
+    <message>
+      <source>History length</source>
+      <translation>Długość historii</translation>
+    </message>
+    <message>
+      <source>I understand that unknown room, microphone, clothing and placement effects remain in this estimate.</source>
+      <translation>Rozumiem, że nieznane wpływy pomieszczenia, mikrofonu, odzieży i ustawienia pozostają w tym oszacowaniu.</translation>
+    </message>
+    <message>
+      <source>Ice</source>
+      <translation>Lód</translation>
     </message>
     <message>
       <source>Ignore</source>
@@ -1371,6 +1535,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Zainstalowana wersja: %1</translation>
     </message>
     <message>
+      <source>Instrument</source>
+      <translation>Instrument</translation>
+    </message>
+    <message>
       <source>Interface language</source>
       <translation>Język interfejsu</translation>
     </message>
@@ -1393,6 +1561,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <source>Invalid Studio route</source>
       <translation>Nieprawidłowe połączenie audio Studio</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth.</source>
+      <translation>Nieprawidłowe ustawienia analizy. Okno FFT nie może przekraczać 250 ms, a częstotliwości muszą mieścić się w przechwyconym paśmie audio.</translation>
     </message>
     <message>
       <source>Invalid audio setup requester.</source>
@@ -1424,6 +1596,14 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>Nieprawidłowy podtyp sprzętu lub typ zasilania</translation>
+    </message>
+    <message>
+      <source>Invalid estimated equipment kind.</source>
+      <translation>Nieprawidłowy typ szacowanego sprzętu.</translation>
+    </message>
+    <message>
+      <source>Invalid estimated profile status.</source>
+      <translation>Nieprawidłowy status profilu szacowanego.</translation>
     </message>
     <message>
       <source>Invalid filter type</source>
@@ -1497,12 +1677,20 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Zachowaj bieżącą korekcję</translation>
     </message>
     <message>
+      <source>Known component responses</source>
+      <translation>Znane charakterystyki elementów</translation>
+    </message>
+    <message>
       <source>L</source>
       <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
       <translation>Język i ustawienia regionalne</translation>
+    </message>
+    <message>
+      <source>Left</source>
+      <translation>Lewy</translation>
     </message>
     <message>
       <source>Left right balance</source>
@@ -1519,6 +1707,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>Biblioteka przekracza 16 MiB.</translation>
+    </message>
+    <message>
+      <source>Linear</source>
+      <translation>Liniowa</translation>
     </message>
     <message>
       <source>List audio endpoints</source>
@@ -1548,6 +1740,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Lo-Fi</translation>
     </message>
     <message>
+      <source>Load preset</source>
+      <translation>Wczytaj ustawienie</translation>
+    </message>
+    <message>
       <source>Lock EQ</source>
       <extracomment>Prevent accidental editing of EQ controls; not encryption or a security lock.</extracomment>
       <translation>Zablokuj korektor</translation>
@@ -1555,6 +1751,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Lock equalizer settings</source>
       <translation>Zablokuj ustawienia korektora</translation>
+    </message>
+    <message>
+      <source>Logarithmic</source>
+      <translation>Logarytmiczna</translation>
     </message>
     <message>
       <source>Look in:</source>
@@ -1575,8 +1775,16 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Zarządzaj profilami</translation>
     </message>
     <message>
+      <source>Mandolin</source>
+      <translation>Mandolina</translation>
+    </message>
+    <message>
       <source>Manufacturer</source>
       <translation>Producent</translation>
+    </message>
+    <message>
+      <source>Maximum frequency</source>
+      <translation>Maksymalna częstotliwość</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
@@ -1595,6 +1803,11 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Zmierz odpowiedź głośników, pomieszczenia i mikrofonu</translation>
     </message>
     <message>
+      <source>Measured chain</source>
+      <translation>Zmierzony tor</translation>
+      <extracomment>Measured response of the complete audio signal path, not a hardware model or a correction filter.</extracomment>
+    </message>
+    <message>
       <source>Measured listening position</source>
       <translation>Zmierzona pozycja odsłuchowa</translation>
       <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
@@ -1607,6 +1820,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <source>Measured response</source>
       <translation>Zmierzona charakterystyka</translation>
       <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measured responses must overlap by at least two octaves.</source>
+      <translation>Zmierzone charakterystyki muszą pokrywać się na co najmniej dwóch oktawach.</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
@@ -1700,6 +1917,11 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Nagranie z mikrofonu jest przesterowane. Zmniejsz wzmocnienie lub podbicie mikrofonu i powtórz pomiar.</translation>
     </message>
     <message>
+      <source>Microphone response</source>
+      <translation>Charakterystyka mikrofonu</translation>
+      <extracomment>A relative spectrum comparison against a captured reference. Includes source and room; not certified isolated microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Microphone route</source>
       <translation>Tor mikrofonu</translation>
     </message>
@@ -1708,8 +1930,20 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Przekroczono czas oczekiwania na uruchomienie mikrofonu</translation>
     </message>
     <message>
+      <source>Minimum frequency</source>
+      <translation>Minimalna częstotliwość</translation>
+    </message>
+    <message>
+      <source>Mix</source>
+      <translation>Miks</translation>
+    </message>
+    <message>
       <source>Model</source>
       <translation>Model</translation>
+    </message>
+    <message>
+      <source>Mono</source>
+      <translation>Mono</translation>
     </message>
     <message>
       <source>Move right for a broader adjustment.</source>
@@ -1722,6 +1956,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Movies</source>
       <translation>Filmy</translation>
+    </message>
+    <message>
+      <source>Music mode</source>
+      <translation>Tryb muzyczny</translation>
     </message>
     <message>
       <source>My equipment</source>
@@ -1801,6 +2039,14 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Brak — użyj własnej korekcji</translation>
     </message>
     <message>
+      <source>Not enough broadband reference data.</source>
+      <translation>Za mało szerokopasmowych danych odniesienia.</translation>
+    </message>
+    <message>
+      <source>Note grid</source>
+      <translation>Siatka nut</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Format liczb i dat</translation>
     </message>
@@ -1811,6 +2057,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>OK</source>
       <translation>OK</translation>
+    </message>
+    <message>
+      <source>Octave</source>
+      <translation>Oktawowa</translation>
     </message>
     <message>
       <source>Omnidirectional speaker</source>
@@ -1878,6 +2128,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Otworzyć interfejs zapisu odtwarzania testowego</translation>
     </message>
     <message>
+      <source>Open the estimated response and correction in the editor. Nothing is saved or applied yet.</source>
+      <translation>Otwórz oszacowaną charakterystykę i korekcję w edytorze. Nic nie jest jeszcze zapisywane ani stosowane.</translation>
+    </message>
+    <message>
       <source>Open update folder</source>
       <translation>Otwórz folder aktualizacji</translation>
     </message>
@@ -1908,6 +2162,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Ogólny poziom wyjściowy</translation>
     </message>
     <message>
+      <source>Palette</source>
+      <translation>Paleta</translation>
+    </message>
+    <message>
       <source>Panel speaker</source>
       <translation>Głośnik panelowy</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
@@ -1925,6 +2183,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>Wstrzymaj przetwarzanie i otwórz konfigurację audio. Aplikacja pozostaje otwarta i informuje o wyniku. Uruchom ponownie Windows po zainstalowaniu sterownika.</translation>
+    </message>
+    <message>
+      <source>Peak hold</source>
+      <translation>Podtrzymanie szczytów</translation>
     </message>
     <message>
       <source>Peak markers</source>
@@ -1946,6 +2208,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Playback</source>
       <translation>Odtwarzanie</translation>
+    </message>
+    <message>
+      <source>Playback monitor</source>
+      <translation>Monitor odtwarzania</translation>
     </message>
     <message>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
@@ -2214,6 +2480,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
+      <source>Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement.</source>
+      <translation>Porównania z odniesieniem obejmują źródło dźwięku, pomieszczenie i mikrofon referencyjny. Nie są izolowanym ani certyfikowanym pomiarem mikrofonu.</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Odśwież urządzenia</translation>
     </message>
@@ -2328,6 +2598,14 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Ponów próbę</translation>
     </message>
     <message>
+      <source>Review estimated profile</source>
+      <translation>Przejrzyj szacowany profil</translation>
+    </message>
+    <message>
+      <source>Right</source>
+      <translation>Prawy</translation>
+    </message>
+    <message>
       <source>Right-to-left test language</source>
       <translation>Język testowy od prawej do lewej</translation>
     </message>
@@ -2382,6 +2660,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Zapisano ustawienie „%1”.</translation>
     </message>
     <message>
+      <source>Scroll speed</source>
+      <translation>Prędkość przewijania</translation>
+    </message>
+    <message>
       <source>Search brand, family, model or measurement conditions</source>
       <translation>Szukaj marki, serii, modelu lub warunków pomiaru</translation>
     </message>
@@ -2397,6 +2679,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Select band %1</source>
       <translation>Wybierz pasmo %1</translation>
+    </message>
+    <message>
+      <source>Select between one and eight known component responses.</source>
+      <translation>Wybierz od jednej do ośmiu znanych charakterystyk elementów.</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
@@ -2461,6 +2747,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
+      <source>Settings</source>
+      <translation>Ustawienia</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Ustawienia &amp;&amp; kalibracja</translation>
     </message>
@@ -2490,6 +2780,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>Krótsze interwały częściej aktualizują poziomy i zużywają więcej CPU; dostarczanie audio może ograniczać rzeczywistą częstotliwość</translation>
+    </message>
+    <message>
+      <source>Show EQ response graph</source>
+      <translation>Pokaż charakterystykę EQ</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
@@ -2649,6 +2943,14 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Typ głośnika</translation>
     </message>
     <message>
+      <source>Spectrogram</source>
+      <translation>Spektrogram</translation>
+    </message>
+    <message>
+      <source>Spectrum</source>
+      <translation>Widmo</translation>
+    </message>
+    <message>
       <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
       <translation>Spinorama AutoEQ: wzmocnienie korekcji jest ograniczone do %1, a Q do %2. Podbicia poniżej %3 są pomijane. Ustawienie odsłuchu jest dodawane osobno.</translation>
       <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
@@ -2692,6 +2994,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
+      <source>Stereo</source>
+      <translation>Stereo</translation>
+    </message>
+    <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
       <translation>Zatrzymaj kalibrację mikrofonu przed zmianą sterownika audio.</translation>
     </message>
@@ -2708,6 +3014,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <source>Studio profile has an invalid numeric field</source>
       <translation>Profil Studio zawiera nieprawidłowe pole liczbowe</translation>
       <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
+    </message>
+    <message>
+      <source>Subtract known measured responses from a measured chain response, then review the estimated correction.</source>
+      <translation>Odejmij znane zmierzone charakterystyki od charakterystyki toru, a następnie przejrzyj oszacowaną korekcję.</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
@@ -2793,6 +3103,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Importowana jest zmierzona ODPOWIEDŹ, a nie już odwrócone wzmocnienia korektora. Potwierdź typ sprzętu. Bezwzględny poziom ciśnienia akustycznego wymaga normalizacji przed importem.</translation>
     </message>
     <message>
+      <source>This is an estimated residual, not a certified equipment measurement. Any unknown room, microphone, clothing, placement or interface response remains included. Published curves may not match your setup. Do not correct deep nulls or unmeasured frequencies.</source>
+      <translation>To szacowana charakterystyka resztkowa, a nie certyfikowany pomiar sprzętu. Zawiera nieznane wpływy pomieszczenia, mikrofonu, odzieży, ustawienia i interfejsu. Opublikowane krzywe mogą nie pasować do konfiguracji. Nie koryguj głębokich wygaszeń ani niezmierzonych częstotliwości.</translation>
+    </message>
+    <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
       <translation>Ten profil został zmieniony. Zapisać niestandardową kopię przed wyjściem?</translation>
     </message>
@@ -2820,12 +3134,20 @@ Czy na pewno chcesz go usunąć?</translation>
       <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
+      <source>Transient markers</source>
+      <translation>Znaczniki transjentów</translation>
+    </message>
+    <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
       <translation>Kompletność tłumaczenia: %1 z %2 komunikatów. Brakujące tłumaczenia są wyświetlane po angielsku. Pakiety językowe są niezweryfikowane i oczekują na przegląd przez rodzimych użytkowników języka. Wybierz Zakończ i otwórz ponownie, aby zastosować zmiany.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
       <translation>Szczegółowe wysokie tony</translation>
+    </message>
+    <message>
+      <source>Tuner</source>
+      <translation>Stroik</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
@@ -2846,6 +3168,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Type</source>
       <translation>Typ</translation>
+    </message>
+    <message>
+      <source>Ukulele</source>
+      <translation>Ukulele</translation>
     </message>
     <message>
       <source>Unclassified equipment</source>
@@ -2893,6 +3219,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Nieobsługiwany schemat profilu sprzętu (oczekiwano 2/3).</translation>
     </message>
     <message>
+      <source>Unsupported equipment profile schema (expected 2/3/4).</source>
+      <translation>Nieobsługiwany schemat profilu sprzętu (oczekiwano 2/3/4).</translation>
+    </message>
+    <message>
       <source>Unsupported filter type.</source>
       <translation>Nieobsługiwany typ filtra.</translation>
     </message>
@@ -2917,6 +3247,11 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Nieobsługiwany schemat profilu głośnika</translation>
     </message>
     <message>
+      <source>Update</source>
+      <translation>Aktualizuj</translation>
+      <extracomment>Button opening the official software-release downloads. Does not refresh audio data or install automatically.</extracomment>
+    </message>
+    <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
       <translation>Pobrano aktualizację %1: %2. Zakończ aplikację, zainstaluj na istniejącej wersji i otwórz ponownie.</translation>
     </message>
@@ -2927,6 +3262,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
       <translation>Użyj cichego pomieszczenia. Mierzy łącznie głośniki, pomieszczenie i mikrofon; wyniki obejmują odpowiedź mikrofonu.</translation>
+    </message>
+    <message>
+      <source>Use an imported measurement of the complete chain. Select only measured component responses that were part of that chain. Correction EQ filters are never subtracted.</source>
+      <translation>Użyj zaimportowanego pomiaru całego toru. Wybierz tylko zmierzone charakterystyki jego elementów. Filtry korekcyjne nigdy nie są odejmowane.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -3020,6 +3359,22 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Zachowano VB-CABLE, ponieważ druga aplikacja SoundCurrent jest zainstalowana. Usuń go wraz z ostatnią aplikacją, jeśli żadne inne oprogramowanie go nie potrzebuje.</translation>
     </message>
     <message>
+      <source>Vectorscope</source>
+      <translation>Wektorskop</translation>
+    </message>
+    <message>
+      <source>View</source>
+      <translation>Widok</translation>
+    </message>
+    <message>
+      <source>Viola</source>
+      <translation>Altówka</translation>
+    </message>
+    <message>
+      <source>Violin</source>
+      <translation>Skrzypce</translation>
+    </message>
+    <message>
       <source>Vocal Focus</source>
       <translation>Wyeksponowany wokal</translation>
     </message>
@@ -3034,6 +3389,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Warmth</source>
       <translation>Ciepło</translation>
+    </message>
+    <message>
+      <source>Waveform</source>
+      <translation>Przebieg fali</translation>
     </message>
     <message>
       <source>Whole listening system</source>

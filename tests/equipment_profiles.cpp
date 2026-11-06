@@ -104,6 +104,33 @@ int main(int argc, char **argv) {
             after += d * d;
         }
         check(after < before * .2, "correction sign / fit quality");
+        Profile chain = original, component = original;
+        chain.id="chain";component.id="component";chain.response.clear();component.response.clear();
+        for(int i=0;i<96;++i){double hz=20*std::pow(1000.,i/95.);double known=std::log2(hz/1000.);
+            component.response.append({hz,known});chain.response.append({hz,known+3});}
+        // Intentionally unrelated correction filters: inference must use measured response only.
+        component.filters={{1000,-6,1}};
+        auto estimated=estimateProfile(chain,{component},"microphone","Synthetic colocated chain; room cancels");
+        check(estimated.estimated && estimated.custom && estimated.response.size()==96,"estimated residual generated");
+        for(const auto &pt:estimated.response)check(std::abs(pt.db-3)<1e-9,"correct dB subtraction sign");
+        auto estimatedJson=serialize(estimated);
+        check(estimatedJson.value("schema").toInt()==4,"estimated schema must reject unsafe older readers");
+        auto estimatedRound=parse(QJsonDocument(estimatedJson).toJson());
+        check(estimatedRound.estimated && estimatedRound.estimation==estimated.estimation &&
+            estimatedRound.response.size()==96 && profileLabel(estimatedRound).contains("Estimated"),"estimated status and provenance survive round trip");
+        auto tampered=estimatedJson;tampered.remove("estimation");reject(tampered);
+        tampered=estimatedJson;tampered["estimated"]=false;reject(tampered);
+        auto mustRejectEstimate=[&](const Profile &measurement,const QVector<Profile> &known){
+            bool failed=false;try{estimateProfile(measurement,known,"speaker","Synthetic test");}catch(const std::exception &){failed=true;}
+            check(failed,"unsafe estimation accepted");};
+        mustRejectEstimate(chain,{});mustRejectEstimate(chain,{component,component});mustRejectEstimate(chain,{chain});
+        auto noResponse=component;noResponse.response.clear();mustRejectEstimate(chain,{noResponse});
+        auto narrow=component;narrow.response={{1000,0},{1100,0},{1200,0},{1300,0},{1400,0},{1500,0}};
+        mustRejectEstimate(chain,{narrow});
+        auto partial=component;partial.response.removeFirst();partial.response.removeLast();
+        auto overlap=estimateProfile(chain,{partial},"amplifier","Synthetic overlap");
+        check(overlap.response.front().frequency>=partial.response.front().frequency &&
+            overlap.response.back().frequency<=partial.response.back().frequency+1e-8,"no response extrapolation");
         auto bundle = bundledProfiles();
         check(bundle.size() >= 1000, "broad published catalog");
         for (const auto &p : bundle)

@@ -16,9 +16,14 @@ struct Profile {
     QVector<EqBand> filters;
     QVector<Point> response;
     bool custom = false;
+    bool estimated = false;
+    QJsonObject estimation; // Immutable derivation provenance, distinct from editable correction filters.
 };
 QJsonObject serialize(const Profile &);
 Profile parse(const QByteArray &); // throws with a user-readable reason; bounded JSON or response text
+QString profileLabel(const Profile &);
+Profile estimateProfile(const Profile &chain, const QVector<Profile> &known,
+                        const QString &targetKind, const QString &conditions);
 QVector<EqBand> fitResponse(const QVector<Point> &);
 QString libraryPath();
 QVector<Profile> loadLibrary();

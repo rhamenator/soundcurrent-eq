@@ -141,6 +141,18 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>A component cannot be subtracted twice or from itself.</source>
+      <translation>אי אפשר להחסיר רכיב פעמיים או מעצמו.</translation>
+    </message>
+    <message>
+      <source>A measured chain response is required; correction filters cannot be subtracted.</source>
+      <translation>נדרשת תגובה מדודה של השרשרת; אי אפשר להחסיר מסנני תיקון.</translation>
+    </message>
+    <message>
+      <source>A measured component response is required; correction filters cannot be subtracted.</source>
+      <translation>נדרשת תגובה מדודה של הרכיב; אי אפשר להחסיר מסנני תיקון.</translation>
+    </message>
+    <message>
       <source>A private user runtime directory is required</source>
       <translation>נדרשת תיקיית זמן ריצה פרטית למשתמש</translation>
       <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
@@ -220,6 +232,10 @@ Do you want to delete it anyway?</source>
       <translation>כל תתי־הסוגים</translation>
     </message>
     <message>
+      <source>Amber</source>
+      <translation>ענבר</translation>
+    </message>
+    <message>
       <source>Ambience</source>
       <translation>אווירה אקוסטית</translation>
     </message>
@@ -256,8 +272,16 @@ Do you want to delete it anyway?</source>
       <translation>פרופילי מגברים דורשים מדידות חשמליות עם עומס רמקול, קלט והגדרות צליל ידועים. יש לייבא קובץ תיקון שנמדד; אין הסקת עקומות מגבר ממפרטים שיווקיים.</translation>
     </message>
     <message>
+      <source>Amplitude</source>
+      <translation>משרעת</translation>
+    </message>
+    <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
       <translation>הותקן עדכון לאפליקציה. יש לבחור יציאה ולפתוח מחדש כדי לטעון אותו; סגירת חלון זה משאירה את הגרסה הישנה פועלת.</translation>
+    </message>
+    <message>
+      <source>Analysis sample rate</source>
+      <translation>קצב דגימת הניתוח</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
@@ -399,8 +423,21 @@ Do you want to delete it anyway?</source>
       <translation>ניתוב שמע אוטומטי אינו זמין</translation>
     </message>
     <message>
+      <source>Automatic range</source>
+      <translation>טווח אוטומטי</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>עיצוב אוטומטי של צליל מיקרופון מחובר; לחיצה עוקפת את אקולייזר המיקרופון</translation>
+    </message>
+    <message>
+      <source>Average</source>
+      <translation>ממוצע</translation>
+    </message>
+    <message>
+      <source>Averaged spectrum</source>
+      <translation>ספקטרום ממוצע</translation>
+      <extracomment>A time-smoothed digital frequency spectrum, not a measured room response.</extracomment>
     </message>
     <message>
       <source>Back</source>
@@ -448,6 +485,15 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Bass frequency</source>
       <translation>תדר הבס</translation>
+    </message>
+    <message>
+      <source>Bass guitar</source>
+      <translation>גיטרת בס</translation>
+      <extracomment>Instrument tuner preset for standard bass-guitar strings.</extracomment>
+    </message>
+    <message>
+      <source>Blue</source>
+      <translation>כחול</translation>
     </message>
     <message>
       <source>Bookshelf speaker</source>
@@ -565,6 +611,15 @@ Do you want to delete it anyway?</source>
       <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
+      <source>Capture reference</source>
+      <translation>לכידת ייחוס</translation>
+      <extracomment>Snapshot the accumulated spectrum as a reference and reset the running average for the comparison measurement.</extracomment>
+    </message>
+    <message>
+      <source>Cello</source>
+      <translation>צ׳לו</translation>
+    </message>
+    <message>
       <source>Center</source>
       <translation>מרכז</translation>
     </message>
@@ -586,6 +641,14 @@ Do you want to delete it anyway?</source>
       <source>Change to list view mode</source>
       <translation>החלף למצב תצוגת רשימה</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Channel</source>
+      <translation>ערוץ</translation>
+    </message>
+    <message>
+      <source>Channels</source>
+      <translation>ערוצים</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -621,6 +684,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Choose update folder…</source>
       <translation>בחירת תיקיית עדכונים…</translation>
+    </message>
+    <message>
+      <source>Chromatic</source>
+      <translation>כרומטי</translation>
     </message>
     <message>
       <source>Cinema speaker</source>
@@ -791,6 +858,10 @@ Do you want to delete it anyway?</source>
       <translation>לא ניתן להפעיל את הגנת הבטיחות לעוצמת היציאה</translation>
     </message>
     <message>
+      <source>Could not start playback monitoring</source>
+      <translation>לא ניתן להפעיל ניטור השמעה</translation>
+    </message>
+    <message>
       <source>Could not start the measurement.</source>
       <translation>לא ניתן להתחיל את המדידה.</translation>
     </message>
@@ -826,6 +897,11 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Create a new correction profile.</source>
       <translation>צור פרופיל תיקון חדש.</translation>
+    </message>
+    <message>
+      <source>Create microphone profile</source>
+      <translation>יצירת פרופיל מיקרופון</translation>
+      <extracomment>Propose relative correction filters for review in the profile editor. Saving does not apply them automatically.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -877,6 +953,14 @@ Do you want to delete it anyway?</source>
       <translation>מחק פרופיל מותאם אישית שמור זה.</translation>
     </message>
     <message>
+      <source>Derivation metadata exceeds 32 KiB.</source>
+      <translation>מטא־נתוני הגזירה חורגים מ־32 KiB.</translation>
+    </message>
+    <message>
+      <source>Derivation metadata requires an estimated profile.</source>
+      <translation>מטא־נתוני הגזירה מחייבים פרופיל מוערך.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>תצוגת פרטים</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -894,6 +978,16 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Discard</source>
       <translation>ביטול השינויים</translation>
+    </message>
+    <message>
+      <source>Display ceiling</source>
+      <translation>גבול תצוגה עליון</translation>
+      <extracomment>Upper vertical-axis limit in dBFS. Changes visualization only; never a limiter or audio gain.</extracomment>
+    </message>
+    <message>
+      <source>Display sensitivity</source>
+      <translation>רגישות תצוגה</translation>
+      <extracomment>Displayed dynamic range in dB. Does not change hardware microphone gain.</extracomment>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
@@ -1073,6 +1167,10 @@ Do you want to delete it anyway?</source>
       <translation>סוג הציוד</translation>
     </message>
     <message>
+      <source>Estimate profile</source>
+      <translation>אמידת פרופיל</translation>
+    </message>
+    <message>
       <source>Estimated output level near band %1</source>
       <translation>רמת יציאה משוערת ליד תחום %1</translation>
     </message>
@@ -1113,6 +1211,27 @@ Do you want to delete it anyway?</source>
       <translation>שיא יציאה משוער לאחר האקולייזר, כולל הגבר לאחר העיבוד ואיזון</translation>
     </message>
     <message>
+      <source>Estimated profile</source>
+      <translation>פרופיל מוערך</translation>
+      <extracomment>A derived frequency-response estimate, not a certified direct measurement. Keep the distinction from a measured response and from the editable inverse EQ correction.</extracomment>
+    </message>
+    <message>
+      <source>Estimated profile status is required for schema 4.</source>
+      <translation>סכמה 4 מחייבת מצב פרופיל מוערך.</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require derivation metadata.</source>
+      <translation>פרופילים מוערכים מחייבים מטא־נתוני גזירה.</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require method and limitations.</source>
+      <translation>פרופילים מוערכים מחייבים שיטה ומגבלות.</translation>
+    </message>
+    <message>
+      <source>Estimated response exceeds the supported range.</source>
+      <translation>התגובה המוערכת חורגת מהטווח הנתמך.</translation>
+    </message>
+    <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
       <translation>יציאה מ־SoundCurrent EQ ושחזור השמע הרגיל</translation>
     </message>
@@ -1143,6 +1262,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Export the selected profile to a JSON file.</source>
       <translation>ייצא את הפרופיל שנבחר לקובץ JSON.</translation>
+    </message>
+    <message>
+      <source>FFT size</source>
+      <translation>גודל FFT</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1211,12 +1334,25 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Frames: %1 · FFT: %2 ms · Resolution: %3 · Window: %4 ms</source>
+      <translation>מסגרות: %1 · FFT: %2 ms · רזולוציה: %3 · חלון: %4 ms</translation>
+    </message>
+    <message>
+      <source>Freeze display</source>
+      <translation>הקפאת תצוגה</translation>
+      <extracomment>Hold the current analyzer picture; capture can continue, but visualization FFT work stops.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>תדר</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
       <translation>תדר Hz</translation>
+    </message>
+    <message>
+      <source>Frequency scale</source>
+      <translation>סולם תדרים</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
@@ -1251,6 +1387,22 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Gray</source>
+      <translation>אפור</translation>
+    </message>
+    <message>
+      <source>Green</source>
+      <translation>ירוק</translation>
+    </message>
+    <message>
+      <source>Grid</source>
+      <translation>רשת</translation>
+    </message>
+    <message>
+      <source>Guitar</source>
+      <translation>גיטרה</translation>
+    </message>
+    <message>
       <source>Headphones</source>
       <translation>אוזניות</translation>
     </message>
@@ -1270,6 +1422,18 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Hip-Hop</source>
       <translation>היפ הופ</translation>
+    </message>
+    <message>
+      <source>History length</source>
+      <translation>משך היסטוריה</translation>
+    </message>
+    <message>
+      <source>I understand that unknown room, microphone, clothing and placement effects remain in this estimate.</source>
+      <translation>ברור לי שההשפעות הלא ידועות של החדר, המיקרופון, הבגדים והמיקום נשארות באומדן.</translation>
+    </message>
+    <message>
+      <source>Ice</source>
+      <translation>קרח</translation>
     </message>
     <message>
       <source>Ignore</source>
@@ -1371,6 +1535,10 @@ Do you want to delete it anyway?</source>
       <translation>הגרסה המותקנת: %1</translation>
     </message>
     <message>
+      <source>Instrument</source>
+      <translation>כלי נגינה</translation>
+    </message>
+    <message>
       <source>Interface language</source>
       <translation>שפת הממשק</translation>
     </message>
@@ -1393,6 +1561,10 @@ Do you want to delete it anyway?</source>
       <source>Invalid Studio route</source>
       <translation>חיבור שמע Studio לא תקין</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth.</source>
+      <translation>הגדרות הניתוח אינן תקינות. חלון FFT חייב להיות באורך של עד 250 ms והתדרים חייבים להיות בתחום תדרי השמע שנקלט.</translation>
     </message>
     <message>
       <source>Invalid audio setup requester.</source>
@@ -1424,6 +1596,14 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>תת־סוג הציוד או סוג ההזנה החשמלית אינו תקין</translation>
+    </message>
+    <message>
+      <source>Invalid estimated equipment kind.</source>
+      <translation>סוג הציוד המוערך אינו תקין.</translation>
+    </message>
+    <message>
+      <source>Invalid estimated profile status.</source>
+      <translation>מצב הפרופיל המוערך אינו תקין.</translation>
     </message>
     <message>
       <source>Invalid filter type</source>
@@ -1497,12 +1677,20 @@ Do you want to delete it anyway?</source>
       <translation>שמירת הגדרות האקולייזר הנוכחיות</translation>
     </message>
     <message>
+      <source>Known component responses</source>
+      <translation>תגובות רכיבים ידועות</translation>
+    </message>
+    <message>
       <source>L</source>
       <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
       <translation>שפה והגדרות אזוריות</translation>
+    </message>
+    <message>
+      <source>Left</source>
+      <translation>שמאל</translation>
     </message>
     <message>
       <source>Left right balance</source>
@@ -1519,6 +1707,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>הספרייה גדולה מ־16 MiB.</translation>
+    </message>
+    <message>
+      <source>Linear</source>
+      <translation>ליניארי</translation>
     </message>
     <message>
       <source>List audio endpoints</source>
@@ -1548,6 +1740,10 @@ Do you want to delete it anyway?</source>
       <translation>לו־פיי</translation>
     </message>
     <message>
+      <source>Load preset</source>
+      <translation>טעינת הגדרה קבועה</translation>
+    </message>
+    <message>
       <source>Lock EQ</source>
       <extracomment>Prevent accidental editing of EQ controls; not encryption or a security lock.</extracomment>
       <translation>נעילת האקולייזר</translation>
@@ -1555,6 +1751,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Lock equalizer settings</source>
       <translation>נעילת הגדרות האקולייזר</translation>
+    </message>
+    <message>
+      <source>Logarithmic</source>
+      <translation>לוגריתמי</translation>
     </message>
     <message>
       <source>Look in:</source>
@@ -1575,8 +1775,16 @@ Do you want to delete it anyway?</source>
       <translation>ניהול פרופילים</translation>
     </message>
     <message>
+      <source>Mandolin</source>
+      <translation>מנדולינה</translation>
+    </message>
+    <message>
       <source>Manufacturer</source>
       <translation>יצרן</translation>
+    </message>
+    <message>
+      <source>Maximum frequency</source>
+      <translation>תדר מרבי</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
@@ -1595,6 +1803,11 @@ Do you want to delete it anyway?</source>
       <translation>מדידת תגובת הרמקולים, החדר והמיקרופון</translation>
     </message>
     <message>
+      <source>Measured chain</source>
+      <translation>שרשרת שנמדדה</translation>
+      <extracomment>Measured response of the complete audio signal path, not a hardware model or a correction filter.</extracomment>
+    </message>
+    <message>
       <source>Measured listening position</source>
       <translation>מיקום ההאזנה שנמדד</translation>
       <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
@@ -1607,6 +1820,10 @@ Do you want to delete it anyway?</source>
       <source>Measured response</source>
       <translation>תגובה שנמדדה</translation>
       <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measured responses must overlap by at least two octaves.</source>
+      <translation>התגובות המדודות חייבות לחפוף בשתי אוקטבות לפחות.</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
@@ -1700,6 +1917,11 @@ Do you want to delete it anyway?</source>
       <translation>הקלטת המיקרופון נקטמת. יש להפחית את הגבר המיקרופון או את ההגברה הנוספת ולחזור על המדידה.</translation>
     </message>
     <message>
+      <source>Microphone response</source>
+      <translation>תגובת מיקרופון</translation>
+      <extracomment>A relative spectrum comparison against a captured reference. Includes source and room; not certified isolated microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Microphone route</source>
       <translation>נתיב המיקרופון</translation>
     </message>
@@ -1708,8 +1930,20 @@ Do you want to delete it anyway?</source>
       <translation>תם הזמן הקצוב להפעלת המיקרופון</translation>
     </message>
     <message>
+      <source>Minimum frequency</source>
+      <translation>תדר מינימלי</translation>
+    </message>
+    <message>
+      <source>Mix</source>
+      <translation>מיקס</translation>
+    </message>
+    <message>
       <source>Model</source>
       <translation>דגם</translation>
+    </message>
+    <message>
+      <source>Mono</source>
+      <translation>מונו</translation>
     </message>
     <message>
       <source>Move right for a broader adjustment.</source>
@@ -1722,6 +1956,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Movies</source>
       <translation>סרטים</translation>
+    </message>
+    <message>
+      <source>Music mode</source>
+      <translation>מצב מוזיקה</translation>
     </message>
     <message>
       <source>My equipment</source>
@@ -1801,6 +2039,14 @@ Do you want to delete it anyway?</source>
       <translation>ללא — שימוש באקולייזר שלי</translation>
     </message>
     <message>
+      <source>Not enough broadband reference data.</source>
+      <translation>אין די נתוני ייחוס רחבי פס.</translation>
+    </message>
+    <message>
+      <source>Note grid</source>
+      <translation>רשת תווים</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>פורמט מספרים ותאריכים</translation>
     </message>
@@ -1811,6 +2057,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>OK</source>
       <translation>אישור</translation>
+    </message>
+    <message>
+      <source>Octave</source>
+      <translation>אוקטבה</translation>
     </message>
     <message>
       <source>Omnidirectional speaker</source>
@@ -1878,6 +2128,10 @@ Do you want to delete it anyway?</source>
       <translation>פתיחת ממשק הכתיבה לניגון הבדיקה</translation>
     </message>
     <message>
+      <source>Open the estimated response and correction in the editor. Nothing is saved or applied yet.</source>
+      <translation>פתיחת התגובה המוערכת והתיקון בעורך. דבר אינו נשמר או מוחל עדיין.</translation>
+    </message>
+    <message>
       <source>Open update folder</source>
       <translation>פתיחת תיקיית העדכונים</translation>
     </message>
@@ -1908,6 +2162,10 @@ Do you want to delete it anyway?</source>
       <translation>יציאה כוללת</translation>
     </message>
     <message>
+      <source>Palette</source>
+      <translation>לוח צבעים</translation>
+    </message>
+    <message>
       <source>Panel speaker</source>
       <translation>רמקול פאנל</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
@@ -1925,6 +2183,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>השהיית העיבוד ופתיחת הגדרת השמע. האפליקציה נשארת פתוחה ומדווחת על התוצאה. יש להפעיל מחדש את Windows לאחר התקנת מנהל ההתקן.</translation>
+    </message>
+    <message>
+      <source>Peak hold</source>
+      <translation>החזקת שיאים</translation>
     </message>
     <message>
       <source>Peak markers</source>
@@ -1946,6 +2208,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Playback</source>
       <translation>השמעה</translation>
+    </message>
+    <message>
+      <source>Playback monitor</source>
+      <translation>ניטור השמעה</translation>
     </message>
     <message>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
@@ -2214,6 +2480,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
+      <source>Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement.</source>
+      <translation>השוואות הייחוס כוללות את מקור הקול, החדר ומיקרופון הייחוס. הן אינן מדידה מבודדת או מוסמכת של המיקרופון.</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>רענון מכשירים</translation>
     </message>
@@ -2328,6 +2598,14 @@ Do you want to delete it anyway?</source>
       <translation>ניסיון חוזר</translation>
     </message>
     <message>
+      <source>Review estimated profile</source>
+      <translation>סקירת הפרופיל המוערך</translation>
+    </message>
+    <message>
+      <source>Right</source>
+      <translation>ימין</translation>
+    </message>
+    <message>
       <source>Right-to-left test language</source>
       <translation>שפת בדיקה מימין לשמאל</translation>
     </message>
@@ -2382,6 +2660,10 @@ Do you want to delete it anyway?</source>
       <translation>הקביעה המוגדרת מראש ״%1״ נשמרה.</translation>
     </message>
     <message>
+      <source>Scroll speed</source>
+      <translation>מהירות גלילה</translation>
+    </message>
+    <message>
       <source>Search brand, family, model or measurement conditions</source>
       <translation>חיפוש לפי מותג, משפחה, דגם או תנאי מדידה</translation>
     </message>
@@ -2397,6 +2679,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Select band %1</source>
       <translation>בחירת תחום %1</translation>
+    </message>
+    <message>
+      <source>Select between one and eight known component responses.</source>
+      <translation>יש לבחור תגובה ידועה אחת עד שמונה של רכיבים.</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
@@ -2461,6 +2747,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
+      <source>Settings</source>
+      <translation>הגדרות</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>הגדרות &amp;&amp; כיול</translation>
     </message>
@@ -2490,6 +2780,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>מרווחים קצרים יותר מרעננים רמות לעיתים קרובות יותר וצורכים יותר מעבד; אספקת השמע עשויה להגביל את הקצב בפועל</translation>
+    </message>
+    <message>
+      <source>Show EQ response graph</source>
+      <translation>הצגת עקומת תגובת EQ</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
@@ -2649,6 +2943,14 @@ Do you want to delete it anyway?</source>
       <translation>סוג הרמקול</translation>
     </message>
     <message>
+      <source>Spectrogram</source>
+      <translation>ספקטרוגרמה</translation>
+    </message>
+    <message>
+      <source>Spectrum</source>
+      <translation>ספקטרום</translation>
+    </message>
+    <message>
       <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
       <translation>Spinorama AutoEQ: הגבר התיקון מוגבל ל־%1 ו־Q ל־%2. הגברות מתחת ל־%3 מושמטות. הגדרת ההאזנה שלך מתווספת בנפרד.</translation>
       <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
@@ -2692,6 +2994,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
+      <source>Stereo</source>
+      <translation>סטריאו</translation>
+    </message>
+    <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
       <translation>יש לעצור את כיול המיקרופון לפני שינוי מנהל התקן השמע.</translation>
     </message>
@@ -2708,6 +3014,10 @@ Do you want to delete it anyway?</source>
       <source>Studio profile has an invalid numeric field</source>
       <translation>פרופיל Studio מכיל שדה מספרי לא תקין</translation>
       <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
+    </message>
+    <message>
+      <source>Subtract known measured responses from a measured chain response, then review the estimated correction.</source>
+      <translation>החסרת תגובות מדודות ידועות מתגובת השרשרת וסקירת התיקון המוערך.</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
@@ -2793,6 +3103,10 @@ Do you want to delete it anyway?</source>
       <translation>פעולה זו מייבאת תגובה שנמדדה, ולא ערכי הגבר אקולייזר שכבר הומרו לתיקון הפוך. יש לאשר את סוג הציוד. SPL מוחלט דורש נרמול לפני הייבוא.</translation>
     </message>
     <message>
+      <source>This is an estimated residual, not a certified equipment measurement. Any unknown room, microphone, clothing, placement or interface response remains included. Published curves may not match your setup. Do not correct deep nulls or unmeasured frequencies.</source>
+      <translation>זוהי תגובה שיורית מוערכת, לא מדידה מוסמכת של הציוד. השפעות לא ידועות של החדר, המיקרופון, הבגדים, המיקום או הממשק נשארות כלולות. העקומות שפורסמו עשויות לא להתאים למערכת. אין לתקן ביטולים עמוקים או תדרים שלא נמדדו.</translation>
+    </message>
+    <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
       <translation>פרופיל זה השתנה. לשמור עותק מותאם אישית לפני היציאה?</translation>
     </message>
@@ -2820,12 +3134,20 @@ Do you want to delete it anyway?</source>
       <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
+      <source>Transient markers</source>
+      <translation>סמני מעברים</translation>
+    </message>
+    <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
       <translation>כיסוי התרגום: %1 מתוך %2 הודעות. הודעות ללא תרגום משתמשות באנגלית. חבילות השפה לא אומתו וממתינות לבדיקת דוברי שפת אם. יש לבחור יציאה ולפתוח מחדש כדי להחיל שינויים.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
       <translation>פירוט תדרים גבוהים</translation>
+    </message>
+    <message>
+      <source>Tuner</source>
+      <translation>מכוון כלי נגינה</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
@@ -2846,6 +3168,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Type</source>
       <translation>סוג</translation>
+    </message>
+    <message>
+      <source>Ukulele</source>
+      <translation>יוקולילי</translation>
     </message>
     <message>
       <source>Unclassified equipment</source>
@@ -2893,6 +3219,10 @@ Do you want to delete it anyway?</source>
       <translation>סכמת פרופיל ציוד אינה נתמכת (נדרשת 2/3).</translation>
     </message>
     <message>
+      <source>Unsupported equipment profile schema (expected 2/3/4).</source>
+      <translation>סכמת פרופיל ציוד אינה נתמכת (נדרשת 2/3/4).</translation>
+    </message>
+    <message>
       <source>Unsupported filter type.</source>
       <translation>סוג המסנן אינו נתמך.</translation>
     </message>
@@ -2917,6 +3247,11 @@ Do you want to delete it anyway?</source>
       <translation>סכמת פרופיל הרמקול אינה נתמכת</translation>
     </message>
     <message>
+      <source>Update</source>
+      <translation>עדכון</translation>
+      <extracomment>Button opening the official software-release downloads. Does not refresh audio data or install automatically.</extracomment>
+    </message>
+    <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
       <translation>עדכון %1 הורד: %2. יש לצאת, להתקין על האפליקציה הקיימת ולפתוח מחדש.</translation>
     </message>
@@ -2927,6 +3262,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
       <translation>יש להשתמש בחדר שקט. המדידה כוללת יחד את הרמקולים, החדר והמיקרופון; התוצאות כוללות את תגובת המיקרופון.</translation>
+    </message>
+    <message>
+      <source>Use an imported measurement of the complete chain. Select only measured component responses that were part of that chain. Correction EQ filters are never subtracted.</source>
+      <translation>יש להשתמש במדידה מיובאת של השרשרת כולה. יש לבחור רק תגובות מדודות של רכיבים באותה שרשרת. מסנני תיקון אינם מוחסרים לעולם.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -3020,6 +3359,22 @@ Do you want to delete it anyway?</source>
       <translation>VB-CABLE נשמר משום שאפליקציית SoundCurrent האחרת מותקנת. הסירו אותו עם האפליקציה האחרונה אם תוכנות אחרות אינן זקוקות לו.</translation>
     </message>
     <message>
+      <source>Vectorscope</source>
+      <translation>וקטורסקופ</translation>
+    </message>
+    <message>
+      <source>View</source>
+      <translation>תצוגה</translation>
+    </message>
+    <message>
+      <source>Viola</source>
+      <translation>ויולה</translation>
+    </message>
+    <message>
+      <source>Violin</source>
+      <translation>כינור</translation>
+    </message>
+    <message>
       <source>Vocal Focus</source>
       <translation>מיקוד בקול</translation>
     </message>
@@ -3034,6 +3389,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Warmth</source>
       <translation>חמימות</translation>
+    </message>
+    <message>
+      <source>Waveform</source>
+      <translation>צורת גל</translation>
     </message>
     <message>
       <source>Whole listening system</source>

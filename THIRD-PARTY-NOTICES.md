@@ -73,3 +73,11 @@ modifications within that directory, retains the Microsoft Public License
 It is not linked into the GPL application binary. No demonstration Microsoft
 APOs or proprietary FxSound processing code are bundled by this work.
 SDK/WDK tools are build dependencies and are not application payloads.
+
+## Audio Spectrogram C++ core
+
+The unchanged `src/spectrogram/spectrogram_core.h` and `.cpp` are reused from
+[Audio Spectrogram](https://github.com/rhamenator/audio-spectrogram), commit
+`f6084d95f6f0b7db8b0bed73797439a3ee335841`, under GPL-3.0.
+The upstream license is preserved at `src/spectrogram/LICENSE`. The Qt analysis
+panel and integration are implemented here; the upstream project is unchanged.

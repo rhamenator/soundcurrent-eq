@@ -54,6 +54,7 @@ inline void describeButton(QAbstractButton *button) {
         const auto tip = Qt::convertFromPlainText(description);
         button->setProperty("soundcurrentLastHelp", tip); button->setToolTip(tip);
     }
+    if (button->toolTip().isEmpty()) button->setToolTip(Qt::convertFromPlainText(accessible));
     if (generated || button->accessibleDescription().isEmpty()) button->setAccessibleDescription(accessible);
     if (generated || button->whatsThis().isEmpty()) button->setWhatsThis(button->toolTip());
     button->setProperty("soundcurrentHelpReady", true);

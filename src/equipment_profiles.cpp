@@ -6,6 +6,7 @@
 #include "accelerating_spinbox.h"
 #include "equipment_profiles.h"
 #include <QApplication>
+#include <QDateTime>
 #include <QComboBox>
 #include <QCryptographicHash>
 #include <QDialogButtonBox>
@@ -284,6 +285,11 @@ class Plot : public QWidget {
         }
     }
 };
+QString curveLegend(const Profile &p) {
+    if(p.estimated) return "<span style='color:#4fd1c5'>●</span> " + SC_TR("Correction filters:").toHtmlEscaped() +
+        " &nbsp; <span style='color:#f6ad55'>●</span> " + SC_TR("Estimated profile").toHtmlEscaped() + " · dB";
+    return SC_TR("Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB.");
+}
 class Editor : public QDialog {
   public:
     Profile draft;
@@ -316,6 +322,13 @@ class Editor : public QDialog {
         auto *layout = new QVBoxLayout(content);
         scroll->setWidget(content);
         outer->addWidget(scroll);
+        if (draft.estimated) {
+            auto *estimateNotice = new QLabel(SC_TR("Estimated profile") + "\n" + draft.estimation.value("limitations").toString());
+            estimateNotice->setObjectName("estimatedProfileNotice");
+            estimateNotice->setWordWrap(true);
+            estimateNotice->setTextFormat(Qt::PlainText);
+            layout->addWidget(estimateNotice);
+        }
         auto *nameRow = new QFormLayout;
         model = new QLineEdit(draft.model);
         model->setObjectName("profileModel");
@@ -329,12 +342,12 @@ class Editor : public QDialog {
         plot = new Plot;
         plot->setObjectName("profileCorrectionGraph");
         plot->profile = draft;
+        if(draft.estimated) plot->setAccessibleName(SC_TR("Estimated profile"));
         plot->setToolTip(SC_TR("Drag points to shape the correction. Double-click to add a point.") + "\n" +
                          SC_TR("Arrow keys adjust the selected point; Delete removes it."));
         plot->setAccessibleDescription(plot->toolTip());
         layout->addWidget(plot);
-        auto *legend = new QLabel(SC_TR(
-            "Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB."));
+        auto *legend = new QLabel(curveLegend(draft));
         legend->setWordWrap(true);
         layout->addWidget(legend);
         auto *notice =
@@ -714,6 +727,62 @@ class Editor : public QDialog {
 };
 
 } // namespace
+QString profileLabel(const Profile &p) {
+    return p.model + (p.estimated ? " [" + SC_TR("Estimated profile") + "]" : QString());
+}
+Profile estimateProfile(const Profile &chain, const QVector<Profile> &known,
+                        const QString &targetKind, const QString &conditions) {
+    require(QStringList{"speaker", "microphone", "amplifier"}.contains(targetKind), "Invalid estimated equipment kind.");
+    require(!conditions.trimmed().isEmpty() && conditions.size() <= 2000, "Measurement conditions are required.");
+    require(!known.isEmpty() && known.size() <= 8, "Select between one and eight known component responses.");
+    // Validate public API inputs as strictly as imported files before any interpolation.
+    const auto measured = parse(QJsonDocument(serialize(chain)).toJson());
+    require(measured.response.size() >= 6, "A measured chain response is required; correction filters cannot be subtracted.");
+    double low = std::max(20., measured.response.front().frequency);
+    double high = std::min(20000., measured.response.back().frequency);
+    QVector<Profile> inputs;
+    QJsonArray sources;
+    auto provenance = [](const Profile &p) {
+        return QJsonObject{{"id",p.id},{"label",p.brand + " / " + p.model},
+            {"source",p.source},{"conditions",p.conditions},{"estimated",p.estimated},
+            {"sha256",QString::fromLatin1(QCryptographicHash::hash(QJsonDocument(serialize(p)).toJson(QJsonDocument::Compact),QCryptographicHash::Sha256).toHex())}};
+    };
+    QStringList identities;
+    for (const auto &input : known) {
+        auto p = parse(QJsonDocument(serialize(input)).toJson());
+        require(p.response.size() >= 6, "A measured component response is required; correction filters cannot be subtracted.");
+        const auto identity = provenance(p).value("sha256").toString();
+        require(identity != provenance(measured).value("sha256").toString() && !identities.contains(identity), "A component cannot be subtracted twice or from itself.");
+        identities.append(identity);
+        low = std::max(low, p.response.front().frequency);
+        high = std::min(high, p.response.back().frequency);
+        sources.append(provenance(p)); inputs.append(p);
+    }
+    require(high >= low * 4., "Measured responses must overlap by at least two octaves.");
+    Profile result;
+    result.kind=targetKind; result.custom=true; result.estimated=true;
+    result.brand=SC_TR("Custom"); result.family=SC_TR("Estimated profile"); result.model=SC_TR("Estimated profile");
+    result.source=measured.source; result.conditions=conditions.trimmed();
+    const QString limitations=SC_TR("This is an estimated residual, not a certified equipment measurement. Any unknown room, microphone, clothing, placement or interface response remains included. Published curves may not match your setup. Do not correct deep nulls or unmeasured frequencies.");
+    result.estimation={{"method","chain-minus-known-responses-db-v1"},{"createdUtc",QDateTime::currentDateTimeUtc().toString(Qt::ISODate)},
+        {"measurement",provenance(measured)},{"knownComponents",sources},{"targetKind",targetKind},
+        {"interpretation","combined-residual"},{"limitations",limitations},{"lowHz",low},{"highHz",high}};
+    QStringList componentNames;
+    for(const auto &p:inputs) componentNames.append((p.brand+" / "+profileLabel(p)).left(100));
+    result.provenance=SC_TR("Estimated profile") + "\n" + limitations + "\n" +
+        SC_TR("Measured chain") + ": " + (measured.brand+" / "+profileLabel(measured)).left(100) + "\n" +
+        SC_TR("Known component responses") + ": " + componentNames.join("; ");
+    for(int i=0;i<96;++i) {
+        const double hz=low*std::pow(high/low,i/95.);
+        double db=responseAt(measured.response,hz);
+        for(const auto &p:inputs) db-=responseAt(p.response,hz);
+        require(std::isfinite(db) && std::abs(db)<=120., "Estimated response exceeds the supported range.");
+        result.response.append({hz,db});
+    }
+    result.filters=fitResponse(result.response);
+    parse(QJsonDocument(serialize(result)).toJson()); // Reject oversize provenance before opening the editor.
+    return result;
+}
 QJsonObject serialize(const Profile &p) {
     QJsonArray filters, response;
     for (const auto &b : p.filters)
@@ -721,7 +790,8 @@ QJsonObject serialize(const Profile &p) {
             {"type", typeName(b.type)}, {"frequency", b.frequency}, {"gain", b.gainDb}, {"q", b.q}});
     for (const auto &v : p.response)
         response.append(QJsonArray{v.frequency, v.db});
-    return {{"schema", p.filters.size() > 16 ? 3 : 2},
+    return {{"schema", p.estimated ? 4 : p.filters.size() > 16 ? 3 : 2},
+            {"estimated", p.estimated}, {"estimation", p.estimation},
             {"id", p.id},
             {"kind", p.kind},
             {"brand", p.brand},
@@ -742,7 +812,7 @@ Profile parse(const QByteArray &bytes) {
             "Expected a JSON equipment profile. Import response text using the response import button.");
     const auto o = document.object();
     const int schema = o.value("schema").toInt();
-    require(schema == 2 || schema == 3, "Unsupported equipment profile schema (expected 2/3).");
+    require(schema == 2 || schema == 3 || schema == 4, "Unsupported equipment profile schema (expected 2/3/4).");
     Profile p;
     p.id = o.value("id").toString();
     p.kind = o.value("kind").toString();
@@ -756,6 +826,16 @@ Profile parse(const QByteArray &bytes) {
     p.conditions = o.value("conditions").toString();
     p.provenance = o.value("provenance").toString();
     p.custom = o.value("custom").toBool();
+    require(!o.contains("estimated") || o.value("estimated").isBool(), "Invalid estimated profile status.");
+    p.estimated = o.value("estimated").toBool();
+    require(schema != 4 || p.estimated, "Estimated profile status is required for schema 4.");
+    require(!p.estimated || (schema == 4 && o.value("estimation").isObject()), "Estimated profiles require derivation metadata.");
+    require(!o.contains("estimation") || o.value("estimation").isObject(), "Estimated profiles require derivation metadata.");
+    p.estimation = o.value("estimation").toObject();
+    require(p.estimation.isEmpty() || p.estimated, "Derivation metadata requires an estimated profile.");
+    require(QJsonDocument(p.estimation).toJson(QJsonDocument::Compact).size() <= 32768, "Derivation metadata exceeds 32 KiB.");
+    require(!p.estimated || (p.estimation.value("method").isString() && !p.estimation.value("method").toString().isEmpty() &&
+                p.estimation.value("limitations").isString() && !p.estimation.value("limitations").toString().isEmpty()), "Estimated profiles require method and limitations.");
     require(QStringList{"speaker", "microphone", "amplifier"}.contains(p.kind),
             "Equipment kind must be speaker, microphone or amplifier.");
     require(!p.brand.isEmpty() && !p.family.isEmpty() && !p.model.isEmpty() && p.brand.size() <= 120 &&
@@ -769,7 +849,7 @@ Profile parse(const QByteArray &bytes) {
     require(p.custom || (url.isValid() && url.scheme() == "https" && !url.host().isEmpty()),
             "Published profiles need an HTTPS measurement source.");
     const auto filters = o.value("filters").toArray();
-    require(filters.size() >= 1 && filters.size() <= (schema == 3 ? 32 : 16), "Profiles need 1–32 correction filters.");
+    require(filters.size() >= 1 && filters.size() <= (schema >= 3 ? 32 : 16), "Profiles need 1–32 correction filters.");
     for (const auto &value : filters) {
         require(value.isObject(), "Invalid filter.");
         const auto f = value.toObject();
@@ -950,7 +1030,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     details->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
     layout->addWidget(details);
         layout->addStretch();
-    auto *legend = new QLabel(SC_TR("Teal: correction EQ. Orange: measured response, when supplied. Vertical scale is relative dB."));
+    auto *legend = new QLabel(curveLegend({}));
     legend->setWordWrap(true);
     layout->addWidget(legend);
     auto *plot = new Plot;
@@ -1038,7 +1118,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         for (int i = 0; i < profiles.size(); ++i) {
             const auto &p = profiles[i];
             const QString name =
-                (p.kind == "speaker" ? SC_TR("Speaker") : p.kind == "microphone" ? SC_TR("Microphone") : SC_TR("Amplifier")) + " / " + p.brand + " / " + p.family + " / " + p.model + (p.custom ? SC_TR(" [custom]") : QString());
+                (p.kind == "speaker" ? SC_TR("Speaker") : p.kind == "microphone" ? SC_TR("Microphone") : SC_TR("Amplifier")) + " / " + p.brand + " / " + p.family + " / " + profileLabel(p) + (p.custom ? SC_TR(" [custom]") : QString());
             if ((!customOnly->isChecked() || i >= bundledCount) && (kindFilter->currentIndex() == 0 || p.kind == kindFilter->currentData().toString()) &&
                 (brandFilter->currentIndex() == 0 || p.brand == brandFilter->currentText()) &&
                 (familyFilter->currentIndex() == 0 || p.family == familyFilter->currentText()) &&
@@ -1072,8 +1152,10 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             return;
         }
         const auto &p = profiles[list->currentData().toInt()];
-        details->setText(p.source + "\n" + p.conditions + "\n" + p.provenance);
+        details->setText((p.estimated ? SC_TR("Estimated profile") + "\n" : QString()) + p.source + "\n" + p.conditions + "\n" + p.provenance + (p.estimated ? "\n" + p.estimation.value("limitations").toString() : QString()));
         plot->profile = p;
+        legend->setText(curveLegend(p));
+        plot->setAccessibleName(p.estimated ? SC_TR("Estimated profile") : SC_TR("Published response and editable correction curves"));
         plot->show();
         plot->update();
     });
@@ -1151,11 +1233,15 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
     auto *text = button(SC_TR("Import response text"));
     auto *create = button(SC_TR("Create profile"));
     auto *edit = button(SC_TR("Edit / save copy"));
+    auto *estimate = button(SC_TR("Estimate profile"));
+    estimate->setObjectName("estimateEquipmentProfile");
+    estimate->setToolTip(SC_TR("Subtract known measured responses from a measured chain response, then review the estimated correction."));
     auto *exportButton = button(SC_TR("Export JSON"));
     auto *use = new QPushButton(SC_TR("Apply profile"));
     auto updateSelectionActions = [&] {
         const bool selected = list->currentIndex() >= 0 && list->currentData().toInt() >= 0;
         edit->setEnabled(selected); exportButton->setEnabled(selected);
+        estimate->setEnabled(selected && profiles[list->currentData().toInt()].response.size() >= 6);
     };
     QObject::connect(list, &QComboBox::currentIndexChanged, &dialog, updateSelectionActions);
     remove = button(SC_TR("Delete"));
@@ -1298,6 +1384,78 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
         editor.dirty = true;
         editor.exec();
     });
+    QObject::connect(estimate, &QPushButton::clicked, &dialog, [&] {
+        if (list->currentIndex()<0 || list->currentData().toInt()<0) return;
+        const Profile chain=profiles[list->currentData().toInt()];
+        QDialog setup(&dialog);
+        setup.setObjectName("estimateProfileDialog");
+        setup.setWindowTitle(SC_TR("Estimate profile")); setup.setWindowModality(Qt::ApplicationModal);
+        const auto screenSize=setup.screen()->availableGeometry();
+        setup.resize(std::min(680,screenSize.width()-40),std::min(640,screenSize.height()-40));
+        auto *outer=new QVBoxLayout(&setup);
+        auto *scroll=new QScrollArea; scroll->setWidgetResizable(true);
+        auto *content=new QWidget; auto *body=new QVBoxLayout(content);scroll->setWidget(content);outer->addWidget(scroll);
+        auto *intro=new QLabel(SC_TR("Use an imported measurement of the complete chain. Select only measured component responses that were part of that chain. Correction EQ filters are never subtracted."));
+        intro->setWordWrap(true); body->addWidget(intro);
+        auto *measurement=new QLabel(SC_TR("Measured chain") + ": " + chain.brand + " / " + profileLabel(chain));
+        measurement->setTextFormat(Qt::PlainText);measurement->setWordWrap(true);body->addWidget(measurement);
+        auto *form=new QFormLayout;auto *kind=new ProfileCombo;
+        kind->setObjectName("estimatedEquipmentKind");
+        kind->addItem(SC_TR("Microphone"),"microphone");kind->addItem(SC_TR("Speaker"),"speaker");kind->addItem(SC_TR("Amplifier"),"amplifier");
+        form->addRow(SC_TR("Type"),kind);
+        auto *conditions=new QLineEdit;conditions->setMaxLength(1200);conditions->setObjectName("estimationConditions");
+        form->addRow(SC_TR("Conditions"),conditions);body->addLayout(form);
+        body->addWidget(new QLabel(SC_TR("Known component responses")));
+        auto *filters=new QHBoxLayout;auto *componentKind=new ProfileCombo;auto *componentBrand=new ProfileCombo;
+        componentKind->setObjectName("estimationKindFilter");componentBrand->setObjectName("estimationBrandFilter");
+        componentKind->addItem(SC_TR("All equipment"),"");componentKind->addItem(SC_TR("Microphone"),"microphone");
+        componentKind->addItem(SC_TR("Speaker"),"speaker");componentKind->addItem(SC_TR("Amplifier"),"amplifier");
+        componentBrand->addItem(SC_TR("All manufacturers"),"");QStringList brands;
+        for(const auto &p:profiles)if(p.response.size()>=6 && !brands.contains(p.brand))brands.append(p.brand);
+        brands.sort(Qt::CaseInsensitive);for(const auto &brand:brands)componentBrand->addItem(brand,brand);
+        filters->addWidget(componentKind);filters->addWidget(componentBrand,1);body->addLayout(filters);
+        auto *search=new QLineEdit;search->setObjectName("estimationSearch");search->setPlaceholderText(SC_TR("Search brand, family, model or measurement conditions"));body->addWidget(search);
+        auto *components=new QListWidget;components->setObjectName("estimationComponents");components->setMinimumHeight(180);
+        for(int i=0;i<profiles.size();++i) {
+            if(i==list->currentData().toInt() || profiles[i].response.size()<6)continue;
+            const auto &p=profiles[i];
+            auto *item=new QListWidgetItem(p.brand + " / " + profileLabel(p),components);
+            item->setData(Qt::UserRole,i);item->setFlags(item->flags()|Qt::ItemIsUserCheckable);item->setCheckState(Qt::Unchecked);
+            item->setToolTip(p.kind + "\n" + p.source + "\n" + p.conditions);
+        }
+        body->addWidget(components);
+        auto filterComponents=[&]{for(int i=0;i<components->count();++i){auto *item=components->item(i);const auto &p=profiles[item->data(Qt::UserRole).toInt()];
+            item->setHidden((!componentKind->currentData().toString().isEmpty() && p.kind!=componentKind->currentData().toString()) ||
+                (!componentBrand->currentData().toString().isEmpty() && p.brand!=componentBrand->currentData().toString()) ||
+                !(p.brand+" "+p.family+" "+p.model+" "+p.conditions).contains(search->text(),Qt::CaseInsensitive));}};
+        QObject::connect(componentKind,&QComboBox::currentIndexChanged,&setup,filterComponents);
+        QObject::connect(componentBrand,&QComboBox::currentIndexChanged,&setup,filterComponents);
+        QObject::connect(search,&QLineEdit::textChanged,&setup,filterComponents);
+        auto *checkedSummary=new QLabel;checkedSummary->setObjectName("estimationSelectedComponents");checkedSummary->setWordWrap(true);checkedSummary->setTextFormat(Qt::PlainText);body->addWidget(checkedSummary);
+        auto *ack=new QCheckBox;
+        const QString acknowledgment=SC_TR("I understand that unknown room, microphone, clothing and placement effects remain in this estimate.");
+        ack->setAccessibleName(acknowledgment);ack->setObjectName("estimationAcknowledged");
+        auto *ackText=new QLabel(acknowledgment);ackText->setWordWrap(true);ackText->setBuddy(ack);
+        auto *ackRow=new QHBoxLayout;ackRow->addWidget(ack);ackRow->addWidget(ackText,1);body->addLayout(ackRow);
+        auto *feedback=new QLabel;feedback->setObjectName("estimationFeedback");feedback->setWordWrap(true);feedback->setTextFormat(Qt::PlainText);body->addWidget(feedback);
+        auto *buttons=new QDialogButtonBox(QDialogButtonBox::Cancel);auto *review=buttons->addButton(SC_TR("Review estimated profile"),QDialogButtonBox::AcceptRole);
+        review->setObjectName("reviewEstimatedProfile");review->setEnabled(false);outer->addWidget(buttons);
+        review->setToolTip(SC_TR("Open the estimated response and correction in the editor. Nothing is saved or applied yet."));
+        auto enable=[&]{QStringList names;for(int i=0;i<components->count();++i)if(components->item(i)->checkState()==Qt::Checked)names.append(components->item(i)->text());
+            checkedSummary->setText(SC_TR("Known component responses") + ": " + names.join("; "));
+            review->setEnabled(ack->isChecked() && !conditions->text().trimmed().isEmpty() && !names.isEmpty() && names.size()<=8);};
+        QObject::connect(ack,&QCheckBox::toggled,&setup,enable);QObject::connect(conditions,&QLineEdit::textChanged,&setup,enable);
+        QObject::connect(components,&QListWidget::itemChanged,&setup,enable);
+        std::optional<Profile> proposal;
+        QObject::connect(buttons,&QDialogButtonBox::rejected,&setup,&QDialog::reject);
+        QObject::connect(review,&QPushButton::clicked,&setup,[&]{
+            try {QVector<Profile> known;for(int i=0;i<components->count();++i)if(components->item(i)->checkState()==Qt::Checked)known.append(profiles[components->item(i)->data(Qt::UserRole).toInt()]);
+                proposal=estimateProfile(chain,known,kind->currentData().toString(),conditions->text());setup.accept();
+            }catch(const std::exception &e){feedback->setText(QString::fromUtf8(e.what()));}
+        });
+        if(setup.exec()!=QDialog::Accepted || !proposal)return;
+        Editor editor(*proposal,&dialog,save,preview);editor.dirty=true;editor.exec();
+    });
     QObject::connect(edit, &QPushButton::clicked, &dialog, [&] {
         if (list->currentIndex() < 0 || list->currentData().toInt() < 0)
             return;
@@ -1329,7 +1487,7 @@ void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &ap
             appliedProfile->setText(QString::fromUtf8("✓ ") + SC_TR("None — use my own EQ"));
         } else {
             apply(profiles[index]); activeSelection = profiles[index]; noneWasApplied = false; lastAppliedId = profiles[index].id;
-            appliedProfile->setText(QString::fromUtf8("✓ ") + profiles[index].brand + " / " + profiles[index].model);
+            appliedProfile->setText(QString::fromUtf8("✓ ") + profiles[index].brand + " / " + profileLabel(profiles[index]));
         }
     };
     QObject::connect(list, &QComboBox::currentIndexChanged, &dialog, selectProfile);

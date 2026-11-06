@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(soundcurrent-eq VERSION 1.2.1 LANGUAGES CXX)
+project(soundcurrent-eq VERSION 1.3.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -124,7 +124,7 @@ if(MSVC)
   target_compile_options(soundcurrent-equipment-test PRIVATE /utf-8)
 endif()
 
-install(FILES docs/equipment-profiles.md docs/audio-buffering.md DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/soundcurrent-eq)
+install(FILES docs/equipment-profiles.md docs/audio-buffering.md docs/analysis-and-microphone-profiles.md DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/soundcurrent-eq)
 
 add_executable(soundcurrent-processing-guard-test tests/processing_guard.cpp src/processing_guard.cpp)
 target_include_directories(soundcurrent-processing-guard-test PRIVATE src)
@@ -278,3 +278,21 @@ if(MSVC)
 endif()
 add_test(NAME audio-buffering COMMAND soundcurrent-buffering-test)
 set_tests_properties(audio-buffering PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen" TIMEOUT 20)
+
+# Shared analysis UI; all processing runs on the GUI/analysis side, never the audio callback.
+target_sources(soundcurrent-eq PRIVATE src/analysis_scope.cpp src/analysis_panel.cpp src/spectrogram/spectrogram_core.cpp)
+
+add_executable(soundcurrent-analysis-test tests/analysis.cpp src/analysis_scope.cpp src/analysis_panel.cpp src/spectrogram/spectrogram_core.cpp src/equipment_profiles.cpp data/localization/resources.qrc)
+target_include_directories(soundcurrent-analysis-test PRIVATE src)
+target_link_libraries(soundcurrent-analysis-test PRIVATE soundcurrent-dsp Qt6::Widgets Qt6::Network)
+if(MSVC)
+  target_compile_options(soundcurrent-analysis-test PRIVATE /utf-8)
+endif()
+add_test(NAME analysis-views COMMAND soundcurrent-analysis-test)
+set_tests_properties(analysis-views PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen" TIMEOUT 60)
+
+install(FILES src/spectrogram/LICENSE DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/soundcurrent-eq RENAME AudioSpectrogram-LICENSE)
+
+add_test(NAME analysis-views-fr COMMAND soundcurrent-analysis-test --language fr)
+add_test(NAME analysis-views-ar COMMAND soundcurrent-analysis-test --language ar)
+set_tests_properties(analysis-views-fr analysis-views-ar PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen" TIMEOUT 60)

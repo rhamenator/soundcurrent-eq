@@ -145,17 +145,18 @@ struct WindowsRecorder::Impl {
 };
 WindowsRecorder::WindowsRecorder() : impl_(std::make_unique<Impl>()) {}
 WindowsRecorder::~WindowsRecorder() { stop(); }
-void WindowsRecorder::start(const std::wstring &id, int rate, int channels) {
+void WindowsRecorder::start(const std::wstring &id, int rate, int channels, bool loopback) {
     stop();
     if (rate < 8000 || rate > 192000 || channels < 1 || channels > 2)
         throw std::runtime_error("Unsupported recording format");
     impl_->stop = false;
     { std::lock_guard lock(impl_->mutex); impl_->failure.clear(); impl_->pcm.clear(); }
-    impl_->worker = std::thread([this, id, rate, channels] {
+    impl_->worker = std::thread([this, id, rate, channels, loopback] {
         try {
             Apartment apartment; auto audio = stream(id); auto format = floatFormat(rate, channels);
             checked(audio->Initialize(AUDCLNT_SHAREMODE_SHARED,
-                AUDCLNT_STREAMFLAGS_AUTOCONVERTPCM | AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY,
+                AUDCLNT_STREAMFLAGS_AUTOCONVERTPCM | AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY |
+                (loopback ? AUDCLNT_STREAMFLAGS_LOOPBACK : 0),
                 1000000, 0, &format, nullptr), "Initialize microphone recording");
             ComPtr<IAudioCaptureClient> reader;
             checked(audio->GetService(IID_PPV_ARGS(reader.GetAddressOf())), "Open microphone reader");

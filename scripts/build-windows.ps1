@@ -113,6 +113,7 @@ try {
         Copy-Item $_.FullName $dest
     }
     Copy-Item THIRD-PARTY-NOTICES.md "$stage\licenses"
+    Copy-Item src\spectrogram\LICENSE "$stage\licenses\AudioSpectrogram-LICENSE.txt"
     # Tests use the same private DLLs and Qt plugins shipped to users.
     Copy-Item build-windows-native\Release\soundcurrent-dsp-test.exe $stage
     Write-Output 'Checking shared DSP and Qt controls'
@@ -123,7 +124,7 @@ try {
     if ($null -eq $dsp.ExitCode -or $dsp.ExitCode -ne 0) { throw "DSP test failed: $($dsp.ExitCode)" }
     $env:QT_QPA_PLATFORM = 'offscreen'
     $env:QT_FORCE_STDERR_LOGGING = '1' # Capture Qt test failures from GUI-linked processes.
-    foreach ($testName in @('soundcurrent-equipment-test', 'soundcurrent-processing-guard-test', 'soundcurrent-enhancement-test', 'soundcurrent-update-test','soundcurrent-spin-test','soundcurrent-localization-test','soundcurrent-startup-test')) {
+    foreach ($testName in @('soundcurrent-equipment-test', 'soundcurrent-processing-guard-test', 'soundcurrent-enhancement-test', 'soundcurrent-update-test','soundcurrent-analysis-test','soundcurrent-spin-test','soundcurrent-localization-test','soundcurrent-startup-test')) {
         # Text shaping needs system fonts. Qt's Windows offscreen plugin
         # searches an unbundled lib/fonts directory instead of native fonts.
         $env:QT_QPA_PLATFORM = if ($testName -eq 'soundcurrent-localization-test') { 'windows' } else { 'offscreen' }

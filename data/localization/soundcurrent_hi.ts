@@ -141,6 +141,18 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>A component cannot be subtracted twice or from itself.</source>
+      <translation>किसी घटक को दो बार या उसी में से नहीं घटाया जा सकता।</translation>
+    </message>
+    <message>
+      <source>A measured chain response is required; correction filters cannot be subtracted.</source>
+      <translation>पूरी शृंखला की मापी गई प्रतिक्रिया चाहिए; सुधार फ़िल्टर नहीं घटा सकते।</translation>
+    </message>
+    <message>
+      <source>A measured component response is required; correction filters cannot be subtracted.</source>
+      <translation>घटक की मापी गई प्रतिक्रिया चाहिए; सुधार फ़िल्टर नहीं घटा सकते।</translation>
+    </message>
+    <message>
       <source>A private user runtime directory is required</source>
       <translation>उपयोगकर्ता के लिए निजी रनटाइम निर्देशिका आवश्यक है</translation>
       <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
@@ -220,6 +232,10 @@ Do you want to delete it anyway?</source>
       <translation>सभी उपप्रकार</translation>
     </message>
     <message>
+      <source>Amber</source>
+      <translation>अंबर</translation>
+    </message>
+    <message>
       <source>Ambience</source>
       <translation>ऐम्बियंस</translation>
     </message>
@@ -256,8 +272,16 @@ Do you want to delete it anyway?</source>
       <translation>ऐम्प्लिफ़ायर प्रोफ़ाइल के लिए ज्ञात स्पीकर लोड, इनपुट और टोन सेटिंग के साथ विद्युत माप आवश्यक हैं। मापी गई सुधार फ़ाइल आयात करें; प्रचार संबंधी विनिर्देशों से ऐम्प्लिफ़ायर की प्रतिक्रिया वक्र का अनुमान नहीं लगाया जाता।</translation>
     </message>
     <message>
+      <source>Amplitude</source>
+      <translation>आयाम</translation>
+    </message>
+    <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
       <translation>ऐप अपडेट इंस्टॉल हो गया है। उसे लोड करने के लिए ऐप से बाहर निकलें और दोबारा खोलें; केवल यह विंडो बंद करने से पुराना संस्करण चलता रहता है।</translation>
+    </message>
+    <message>
+      <source>Analysis sample rate</source>
+      <translation>विश्लेषण सैंपल दर</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
@@ -399,8 +423,21 @@ Do you want to delete it anyway?</source>
       <translation>स्वचालित ऑडियो रूटिंग उपलब्ध नहीं है</translation>
     </message>
     <message>
+      <source>Automatic range</source>
+      <translation>स्वचालित सीमा</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>कनेक्ट किए गए माइक्रोफ़ोन की ध्वनि को अपने आप सुधारें; माइक्रोफ़ोन EQ को बायपास करने के लिए क्लिक करें</translation>
+    </message>
+    <message>
+      <source>Average</source>
+      <translation>औसत</translation>
+    </message>
+    <message>
+      <source>Averaged spectrum</source>
+      <translation>औसत स्पेक्ट्रम</translation>
+      <extracomment>A time-smoothed digital frequency spectrum, not a measured room response.</extracomment>
     </message>
     <message>
       <source>Back</source>
@@ -448,6 +485,15 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Bass frequency</source>
       <translation>बास आवृत्ति</translation>
+    </message>
+    <message>
+      <source>Bass guitar</source>
+      <translation>बास गिटार</translation>
+      <extracomment>Instrument tuner preset for standard bass-guitar strings.</extracomment>
+    </message>
+    <message>
+      <source>Blue</source>
+      <translation>नीला</translation>
     </message>
     <message>
       <source>Bookshelf speaker</source>
@@ -565,6 +611,15 @@ Do you want to delete it anyway?</source>
       <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
+      <source>Capture reference</source>
+      <translation>संदर्भ कैप्चर करें</translation>
+      <extracomment>Snapshot the accumulated spectrum as a reference and reset the running average for the comparison measurement.</extracomment>
+    </message>
+    <message>
+      <source>Cello</source>
+      <translation>चेलो</translation>
+    </message>
+    <message>
       <source>Center</source>
       <translation>मध्य</translation>
     </message>
@@ -586,6 +641,14 @@ Do you want to delete it anyway?</source>
       <source>Change to list view mode</source>
       <translation>सूची दृश्य में बदलें</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Channel</source>
+      <translation>चैनल</translation>
+    </message>
+    <message>
+      <source>Channels</source>
+      <translation>चैनल</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -621,6 +684,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Choose update folder…</source>
       <translation>अपडेट फ़ोल्डर चुनें…</translation>
+    </message>
+    <message>
+      <source>Chromatic</source>
+      <translation>क्रोमैटिक</translation>
     </message>
     <message>
       <source>Cinema speaker</source>
@@ -791,6 +858,10 @@ Do you want to delete it anyway?</source>
       <translation>आउटपुट वॉल्यूम सुरक्षा गार्ड शुरू नहीं किया जा सका</translation>
     </message>
     <message>
+      <source>Could not start playback monitoring</source>
+      <translation>प्लेबैक मॉनिटरिंग शुरू नहीं हो सकी</translation>
+    </message>
+    <message>
       <source>Could not start the measurement.</source>
       <translation>माप शुरू नहीं किया जा सका।</translation>
     </message>
@@ -826,6 +897,11 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Create a new correction profile.</source>
       <translation>नई सुधार प्रोफ़ाइल बनाएँ।</translation>
+    </message>
+    <message>
+      <source>Create microphone profile</source>
+      <translation>माइक्रोफ़ोन प्रोफ़ाइल बनाएँ</translation>
+      <extracomment>Propose relative correction filters for review in the profile editor. Saving does not apply them automatically.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -877,6 +953,14 @@ Do you want to delete it anyway?</source>
       <translation>इस सहेजी गई कस्टम प्रोफ़ाइल को हटाएँ।</translation>
     </message>
     <message>
+      <source>Derivation metadata exceeds 32 KiB.</source>
+      <translation>व्युत्पत्ति मेटाडेटा 32 KiB से अधिक है।</translation>
+    </message>
+    <message>
+      <source>Derivation metadata requires an estimated profile.</source>
+      <translation>व्युत्पत्ति मेटाडेटा के लिए अनुमानित प्रोफ़ाइल चाहिए।</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>विस्तृत दृश्य</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -894,6 +978,16 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Discard</source>
       <translation>बदलाव छोड़ें</translation>
+    </message>
+    <message>
+      <source>Display ceiling</source>
+      <translation>दृश्य की ऊपरी सीमा</translation>
+      <extracomment>Upper vertical-axis limit in dBFS. Changes visualization only; never a limiter or audio gain.</extracomment>
+    </message>
+    <message>
+      <source>Display sensitivity</source>
+      <translation>दृश्य संवेदनशीलता</translation>
+      <extracomment>Displayed dynamic range in dB. Does not change hardware microphone gain.</extracomment>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
@@ -1073,6 +1167,10 @@ Do you want to delete it anyway?</source>
       <translation>उपकरण का प्रकार</translation>
     </message>
     <message>
+      <source>Estimate profile</source>
+      <translation>प्रोफ़ाइल का अनुमान लगाएँ</translation>
+    </message>
+    <message>
       <source>Estimated output level near band %1</source>
       <translation>बैंड %1 के पास अनुमानित आउटपुट स्तर</translation>
     </message>
@@ -1113,6 +1211,27 @@ Do you want to delete it anyway?</source>
       <translation>पोस्ट गेन और बैलेंस सहित EQ के बाद का अनुमानित आउटपुट पीक</translation>
     </message>
     <message>
+      <source>Estimated profile</source>
+      <translation>अनुमानित प्रोफ़ाइल</translation>
+      <extracomment>A derived frequency-response estimate, not a certified direct measurement. Keep the distinction from a measured response and from the editable inverse EQ correction.</extracomment>
+    </message>
+    <message>
+      <source>Estimated profile status is required for schema 4.</source>
+      <translation>स्कीमा 4 के लिए अनुमानित प्रोफ़ाइल स्थिति चाहिए।</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require derivation metadata.</source>
+      <translation>अनुमानित प्रोफ़ाइल के लिए व्युत्पत्ति मेटाडेटा चाहिए।</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require method and limitations.</source>
+      <translation>अनुमानित प्रोफ़ाइल के लिए विधि और सीमाएँ चाहिए।</translation>
+    </message>
+    <message>
+      <source>Estimated response exceeds the supported range.</source>
+      <translation>अनुमानित प्रतिक्रिया समर्थित सीमा से बाहर है।</translation>
+    </message>
+    <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
       <translation>SoundCurrent EQ से बाहर निकलें और सामान्य ऑडियो बहाल करें</translation>
     </message>
@@ -1143,6 +1262,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Export the selected profile to a JSON file.</source>
       <translation>चुनी गई प्रोफ़ाइल को JSON फ़ाइल में निर्यात करें।</translation>
+    </message>
+    <message>
+      <source>FFT size</source>
+      <translation>FFT आकार</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1211,12 +1334,25 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Frames: %1 · FFT: %2 ms · Resolution: %3 · Window: %4 ms</source>
+      <translation>फ़्रेम: %1 · FFT: %2 ms · रिज़ॉल्यूशन: %3 · विंडो: %4 ms</translation>
+    </message>
+    <message>
+      <source>Freeze display</source>
+      <translation>दृश्य स्थिर करें</translation>
+      <extracomment>Hold the current analyzer picture; capture can continue, but visualization FFT work stops.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>आवृत्ति</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
       <translation>आवृत्ति (Hz)</translation>
+    </message>
+    <message>
+      <source>Frequency scale</source>
+      <translation>आवृत्ति पैमाना</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
@@ -1251,6 +1387,22 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Gray</source>
+      <translation>धूसर</translation>
+    </message>
+    <message>
+      <source>Green</source>
+      <translation>हरा</translation>
+    </message>
+    <message>
+      <source>Grid</source>
+      <translation>ग्रिड</translation>
+    </message>
+    <message>
+      <source>Guitar</source>
+      <translation>गिटार</translation>
+    </message>
+    <message>
       <source>Headphones</source>
       <translation>हेडफ़ोन</translation>
     </message>
@@ -1270,6 +1422,18 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Hip-Hop</source>
       <translation>हिप-हॉप</translation>
+    </message>
+    <message>
+      <source>History length</source>
+      <translation>इतिहास अवधि</translation>
+    </message>
+    <message>
+      <source>I understand that unknown room, microphone, clothing and placement effects remain in this estimate.</source>
+      <translation>मैं समझता हूँ कि कमरे, माइक्रोफ़ोन, कपड़ों और स्थान के अज्ञात प्रभाव इस अनुमान में शामिल रहते हैं।</translation>
+    </message>
+    <message>
+      <source>Ice</source>
+      <translation>बर्फ़ीला</translation>
     </message>
     <message>
       <source>Ignore</source>
@@ -1371,6 +1535,10 @@ Do you want to delete it anyway?</source>
       <translation>इंस्टॉल किया गया संस्करण: %1</translation>
     </message>
     <message>
+      <source>Instrument</source>
+      <translation>वाद्य</translation>
+    </message>
+    <message>
       <source>Interface language</source>
       <translation>इंटरफ़ेस की भाषा</translation>
     </message>
@@ -1393,6 +1561,10 @@ Do you want to delete it anyway?</source>
       <source>Invalid Studio route</source>
       <translation>Studio ऑडियो कनेक्शन अमान्य है</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth.</source>
+      <translation>विश्लेषण सेटिंग्स अमान्य हैं। FFT विंडो 250 ms से अधिक न रखें और आवृत्तियाँ कैप्चर किए गए ऑडियो बैंड के भीतर रखें।</translation>
     </message>
     <message>
       <source>Invalid audio setup requester.</source>
@@ -1424,6 +1596,14 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>उपकरण का उपप्रकार या पावर प्रकार अमान्य है</translation>
+    </message>
+    <message>
+      <source>Invalid estimated equipment kind.</source>
+      <translation>अनुमानित उपकरण का प्रकार अमान्य है।</translation>
+    </message>
+    <message>
+      <source>Invalid estimated profile status.</source>
+      <translation>अनुमानित प्रोफ़ाइल की स्थिति अमान्य है।</translation>
     </message>
     <message>
       <source>Invalid filter type</source>
@@ -1497,12 +1677,20 @@ Do you want to delete it anyway?</source>
       <translation>वर्तमान EQ बनाए रखें</translation>
     </message>
     <message>
+      <source>Known component responses</source>
+      <translation>घटकों की ज्ञात प्रतिक्रियाएँ</translation>
+    </message>
+    <message>
       <source>L</source>
       <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
       <translation>भाषा और क्षेत्रीय सेटिंग</translation>
+    </message>
+    <message>
+      <source>Left</source>
+      <translation>बायाँ</translation>
     </message>
     <message>
       <source>Left right balance</source>
@@ -1519,6 +1707,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>लाइब्रेरी 16 MiB से बड़ी है।</translation>
+    </message>
+    <message>
+      <source>Linear</source>
+      <translation>रैखिक</translation>
     </message>
     <message>
       <source>List audio endpoints</source>
@@ -1548,6 +1740,10 @@ Do you want to delete it anyway?</source>
       <translation>लो-फ़ाई</translation>
     </message>
     <message>
+      <source>Load preset</source>
+      <translation>प्रीसेट लोड करें</translation>
+    </message>
+    <message>
       <source>Lock EQ</source>
       <extracomment>Prevent accidental editing of EQ controls; not encryption or a security lock.</extracomment>
       <translation>EQ लॉक करें</translation>
@@ -1555,6 +1751,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Lock equalizer settings</source>
       <translation>इक्वलाइज़र सेटिंग लॉक करें</translation>
+    </message>
+    <message>
+      <source>Logarithmic</source>
+      <translation>लघुगणकीय</translation>
     </message>
     <message>
       <source>Look in:</source>
@@ -1575,8 +1775,16 @@ Do you want to delete it anyway?</source>
       <translation>प्रोफ़ाइल प्रबंधित करें</translation>
     </message>
     <message>
+      <source>Mandolin</source>
+      <translation>मैंडोलिन</translation>
+    </message>
+    <message>
       <source>Manufacturer</source>
       <translation>निर्माता</translation>
+    </message>
+    <message>
+      <source>Maximum frequency</source>
+      <translation>अधिकतम आवृत्ति</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
@@ -1595,6 +1803,11 @@ Do you want to delete it anyway?</source>
       <translation>स्पीकर, कमरे और माइक्रोफ़ोन की प्रतिक्रिया मापें</translation>
     </message>
     <message>
+      <source>Measured chain</source>
+      <translation>मापी गई पूरी शृंखला</translation>
+      <extracomment>Measured response of the complete audio signal path, not a hardware model or a correction filter.</extracomment>
+    </message>
+    <message>
       <source>Measured listening position</source>
       <translation>मापी गई सुनने की स्थिति</translation>
       <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
@@ -1607,6 +1820,10 @@ Do you want to delete it anyway?</source>
       <source>Measured response</source>
       <translation>मापी गई प्रतिक्रिया</translation>
       <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measured responses must overlap by at least two octaves.</source>
+      <translation>मापी गई प्रतिक्रियाएँ कम से कम दो सप्तक तक मिलनी चाहिए।</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
@@ -1700,6 +1917,11 @@ Do you want to delete it anyway?</source>
       <translation>माइक्रोफ़ोन रिकॉर्डिंग में क्लिपिंग हो रही है। माइक्रोफ़ोन गेन या बूस्ट घटाकर दोबारा मापें।</translation>
     </message>
     <message>
+      <source>Microphone response</source>
+      <translation>माइक्रोफ़ोन प्रतिक्रिया</translation>
+      <extracomment>A relative spectrum comparison against a captured reference. Includes source and room; not certified isolated microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Microphone route</source>
       <translation>माइक्रोफ़ोन रूट</translation>
     </message>
@@ -1708,8 +1930,20 @@ Do you want to delete it anyway?</source>
       <translation>माइक्रोफ़ोन शुरू करने का समय समाप्त हो गया</translation>
     </message>
     <message>
+      <source>Minimum frequency</source>
+      <translation>न्यूनतम आवृत्ति</translation>
+    </message>
+    <message>
+      <source>Mix</source>
+      <translation>मिश्रण</translation>
+    </message>
+    <message>
       <source>Model</source>
       <translation>मॉडल</translation>
+    </message>
+    <message>
+      <source>Mono</source>
+      <translation>मोनो</translation>
     </message>
     <message>
       <source>Move right for a broader adjustment.</source>
@@ -1722,6 +1956,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Movies</source>
       <translation>फ़िल्में</translation>
+    </message>
+    <message>
+      <source>Music mode</source>
+      <translation>संगीत मोड</translation>
     </message>
     <message>
       <source>My equipment</source>
@@ -1801,6 +2039,14 @@ Do you want to delete it anyway?</source>
       <translation>कोई नहीं — अपना EQ इस्तेमाल करें</translation>
     </message>
     <message>
+      <source>Not enough broadband reference data.</source>
+      <translation>पर्याप्त ब्रॉडबैंड संदर्भ डेटा नहीं है।</translation>
+    </message>
+    <message>
+      <source>Note grid</source>
+      <translation>स्वर ग्रिड</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>संख्या और तारीख का प्रारूप</translation>
     </message>
@@ -1811,6 +2057,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>OK</source>
       <translation>ठीक है</translation>
+    </message>
+    <message>
+      <source>Octave</source>
+      <translation>सप्तक</translation>
     </message>
     <message>
       <source>Omnidirectional speaker</source>
@@ -1878,6 +2128,10 @@ Do you want to delete it anyway?</source>
       <translation>परीक्षण प्लेबैक का राइट इंटरफ़ेस खोलना</translation>
     </message>
     <message>
+      <source>Open the estimated response and correction in the editor. Nothing is saved or applied yet.</source>
+      <translation>अनुमानित प्रतिक्रिया और सुधार को संपादक में खोलें। अभी कुछ सहेजा या लागू नहीं किया जाता।</translation>
+    </message>
+    <message>
       <source>Open update folder</source>
       <translation>अपडेट फ़ोल्डर खोलें</translation>
     </message>
@@ -1908,6 +2162,10 @@ Do you want to delete it anyway?</source>
       <translation>कुल आउटपुट</translation>
     </message>
     <message>
+      <source>Palette</source>
+      <translation>रंग-पट्टी</translation>
+    </message>
+    <message>
       <source>Panel speaker</source>
       <translation>पैनल स्पीकर</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
@@ -1925,6 +2183,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>प्रोसेसिंग रोककर ऑडियो सेटअप खोलें। ऐप खुला रहता है और परिणाम दिखाता है। ड्राइवर इंस्टॉल करने के बाद Windows पुनः प्रारंभ करें।</translation>
+    </message>
+    <message>
+      <source>Peak hold</source>
+      <translation>पीक होल्ड</translation>
     </message>
     <message>
       <source>Peak markers</source>
@@ -1946,6 +2208,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Playback</source>
       <translation>प्लेबैक</translation>
+    </message>
+    <message>
+      <source>Playback monitor</source>
+      <translation>प्लेबैक मॉनिटर</translation>
     </message>
     <message>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
@@ -2214,6 +2480,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
+      <source>Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement.</source>
+      <translation>संदर्भ तुलना में ध्वनि स्रोत, कमरा और संदर्भ माइक्रोफ़ोन शामिल होते हैं। यह केवल माइक्रोफ़ोन का अलग या प्रमाणित मापन नहीं है।</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>उपकरण सूची अपडेट करें</translation>
     </message>
@@ -2328,6 +2598,14 @@ Do you want to delete it anyway?</source>
       <translation>दोबारा कोशिश करें</translation>
     </message>
     <message>
+      <source>Review estimated profile</source>
+      <translation>अनुमानित प्रोफ़ाइल की समीक्षा करें</translation>
+    </message>
+    <message>
+      <source>Right</source>
+      <translation>दायाँ</translation>
+    </message>
+    <message>
       <source>Right-to-left test language</source>
       <translation>दाएँ से बाएँ परीक्षण भाषा</translation>
     </message>
@@ -2382,6 +2660,10 @@ Do you want to delete it anyway?</source>
       <translation>प्रीसेट “%1” सहेजा गया।</translation>
     </message>
     <message>
+      <source>Scroll speed</source>
+      <translation>स्क्रॉल गति</translation>
+    </message>
+    <message>
       <source>Search brand, family, model or measurement conditions</source>
       <translation>ब्रांड, उत्पाद परिवार, मॉडल या माप की स्थितियाँ खोजें</translation>
     </message>
@@ -2397,6 +2679,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Select band %1</source>
       <translation>बैंड %1 चुनें</translation>
+    </message>
+    <message>
+      <source>Select between one and eight known component responses.</source>
+      <translation>घटकों की एक से आठ ज्ञात प्रतिक्रियाएँ चुनें।</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
@@ -2461,6 +2747,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
+      <source>Settings</source>
+      <translation>सेटिंग्स</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>सेटिंग &amp;&amp; कैलिब्रेशन</translation>
     </message>
@@ -2490,6 +2780,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>छोटे अंतराल पर स्तर अधिक बार अपडेट होते हैं और CPU का उपयोग बढ़ता है; ऑडियो डेटा की आपूर्ति वास्तविक दर को सीमित कर सकती है</translation>
+    </message>
+    <message>
+      <source>Show EQ response graph</source>
+      <translation>EQ प्रतिक्रिया वक्र दिखाएँ</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
@@ -2649,6 +2943,14 @@ Do you want to delete it anyway?</source>
       <translation>स्पीकर प्रकार</translation>
     </message>
     <message>
+      <source>Spectrogram</source>
+      <translation>स्पेक्ट्रोग्राम</translation>
+    </message>
+    <message>
+      <source>Spectrum</source>
+      <translation>स्पेक्ट्रम</translation>
+    </message>
+    <message>
       <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
       <translation>Spinorama AutoEQ: सुधार का गेन %1 और Q %2 तक सीमित है। %3 से नीचे के बूस्ट हटाए जाते हैं। आपका सुनने का प्रीसेट अलग से जोड़ा जाता है।</translation>
       <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
@@ -2692,6 +2994,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
+      <source>Stereo</source>
+      <translation>स्टीरियो</translation>
+    </message>
+    <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
       <translation>ऑडियो ड्राइवर बदलने से पहले माइक्रोफ़ोन कैलिब्रेशन रोकें।</translation>
     </message>
@@ -2708,6 +3014,10 @@ Do you want to delete it anyway?</source>
       <source>Studio profile has an invalid numeric field</source>
       <translation>Studio प्रोफ़ाइल में अमान्य संख्यात्मक फ़ील्ड है</translation>
       <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
+    </message>
+    <message>
+      <source>Subtract known measured responses from a measured chain response, then review the estimated correction.</source>
+      <translation>पूरी शृंखला की प्रतिक्रिया से ज्ञात मापी गई प्रतिक्रियाएँ घटाएँ, फिर अनुमानित सुधार की समीक्षा करें।</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
@@ -2793,6 +3103,10 @@ Do you want to delete it anyway?</source>
       <translation>यह मापी गई प्रतिक्रिया आयात करता है, पहले से उलटे गए EQ गेन नहीं। उपकरण का प्रकार सुनिश्चित करें। पूर्ण SPL मानों को आयात से पहले सामान्यीकृत करना आवश्यक है।</translation>
     </message>
     <message>
+      <source>This is an estimated residual, not a certified equipment measurement. Any unknown room, microphone, clothing, placement or interface response remains included. Published curves may not match your setup. Do not correct deep nulls or unmeasured frequencies.</source>
+      <translation>यह अनुमानित अवशिष्ट प्रतिक्रिया है, उपकरण का प्रमाणित माप नहीं। कमरे, माइक्रोफ़ोन, कपड़ों, स्थान या इंटरफ़ेस के अज्ञात प्रभाव शामिल रहते हैं। प्रकाशित वक्र आपके सेटअप से अलग हो सकते हैं। गहरे निरस्तीकरण या बिना मापी आवृत्तियों को ठीक न करें।</translation>
+    </message>
+    <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
       <translation>इस प्रोफ़ाइल में बदलाव हुआ है। बाहर जाने से पहले कस्टम कॉपी सहेजें?</translation>
     </message>
@@ -2820,12 +3134,20 @@ Do you want to delete it anyway?</source>
       <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
+      <source>Transient markers</source>
+      <translation>ट्रांज़िएंट चिह्न</translation>
+    </message>
+    <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
       <translation>अनुवाद कवरेज: %2 में से %1 संदेश। अनुपलब्ध अनुवाद के स्थान पर अंग्रेज़ी दिखाई जाती है। भाषा पैक असत्यापित हैं और मातृभाषी समीक्षा की प्रतीक्षा में हैं। बदलाव लागू करने के लिए ऐप से बाहर निकलें और दोबारा खोलें।</translation>
     </message>
     <message>
       <source>Treble Detail</source>
       <translation>ऊँची आवृत्तियों का बारीक विवरण</translation>
+    </message>
+    <message>
+      <source>Tuner</source>
+      <translation>ट्यूनर</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
@@ -2846,6 +3168,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Type</source>
       <translation>प्रकार</translation>
+    </message>
+    <message>
+      <source>Ukulele</source>
+      <translation>यूकुलेले</translation>
     </message>
     <message>
       <source>Unclassified equipment</source>
@@ -2893,6 +3219,10 @@ Do you want to delete it anyway?</source>
       <translation>असमर्थित उपकरण प्रोफ़ाइल स्कीमा (अपेक्षित संस्करण 2/3)।</translation>
     </message>
     <message>
+      <source>Unsupported equipment profile schema (expected 2/3/4).</source>
+      <translation>उपकरण प्रोफ़ाइल स्कीमा समर्थित नहीं है (2/3/4 अपेक्षित)।</translation>
+    </message>
+    <message>
       <source>Unsupported filter type.</source>
       <translation>असमर्थित फ़िल्टर प्रकार।</translation>
     </message>
@@ -2917,6 +3247,11 @@ Do you want to delete it anyway?</source>
       <translation>असमर्थित स्पीकर प्रोफ़ाइल स्कीमा</translation>
     </message>
     <message>
+      <source>Update</source>
+      <translation>अपडेट करें</translation>
+      <extracomment>Button opening the official software-release downloads. Does not refresh audio data or install automatically.</extracomment>
+    </message>
+    <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
       <translation>अपडेट %1 डाउनलोड हो गया है: %2। ऐप से बाहर निकलें, मौजूदा ऐप के ऊपर इंस्टॉल करें और दोबारा खोलें।</translation>
     </message>
@@ -2927,6 +3262,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
       <translation>शांत कमरे का उपयोग करें। स्पीकर, कमरा और माइक्रोफ़ोन एक साथ मापे जाते हैं; परिणाम में माइक्रोफ़ोन की प्रतिक्रिया शामिल होती है।</translation>
+    </message>
+    <message>
+      <source>Use an imported measurement of the complete chain. Select only measured component responses that were part of that chain. Correction EQ filters are never subtracted.</source>
+      <translation>पूरी शृंखला का आयातित माप इस्तेमाल करें। केवल उसी शृंखला के घटकों की मापी गई प्रतिक्रियाएँ चुनें। सुधार फ़िल्टर कभी नहीं घटाए जाते।</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -3020,6 +3359,22 @@ Do you want to delete it anyway?</source>
       <translation>VB-CABLE को रखा गया क्योंकि दूसरा SoundCurrent ऐप स्थापित है। यदि किसी अन्य सॉफ़्टवेयर को इसकी आवश्यकता नहीं है, तो इसे अंतिम ऐप के साथ हटा दें।</translation>
     </message>
     <message>
+      <source>Vectorscope</source>
+      <translation>वेक्टरस्कोप</translation>
+    </message>
+    <message>
+      <source>View</source>
+      <translation>दृश्य</translation>
+    </message>
+    <message>
+      <source>Viola</source>
+      <translation>वायोला</translation>
+    </message>
+    <message>
+      <source>Violin</source>
+      <translation>वायलिन</translation>
+    </message>
+    <message>
       <source>Vocal Focus</source>
       <translation>गायन पर ज़ोर</translation>
     </message>
@@ -3034,6 +3389,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Warmth</source>
       <translation>गर्माहट</translation>
+    </message>
+    <message>
+      <source>Waveform</source>
+      <translation>तरंगरूप</translation>
     </message>
     <message>
       <source>Whole listening system</source>

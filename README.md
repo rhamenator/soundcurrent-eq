@@ -19,7 +19,7 @@ See [release qualification and remaining gaps](docs/release-readiness.md).
 
 ## Easy Linux installer
 
-[Download the Linux installer](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.2.1/SoundCurrent-EQ-Linux-Installer.run). Save it, then run:
+[Download the Linux installer](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.3.0/SoundCurrent-EQ-Linux-Installer.run). Save it, then run:
 
 ```bash
 bash ~/Downloads/SoundCurrent-EQ-Linux-Installer.run
@@ -27,7 +27,7 @@ bash ~/Downloads/SoundCurrent-EQ-Linux-Installer.run
 
 It identifies your distribution, verifies the selected package against a pinned SHA-256, and installs or updates through APT or DNF with administrator approval. Presets and profiles are retained; an application-menu icon is included. Use Quit before updating. GTK/KDE confirmation dialogs are used when Zenity or KDialog is available.
 
-The installer installs EQ 1.2.1, including the current profile library and editor. It supports Debian/Ubuntu derivatives with compatible Qt 6.4+ and glibc, Fedora 44+, and RHEL 10-compatible systems including Rocky/AlmaLinux 10. Dependency availability still depends on enabled distribution repositories. Unsupported distributions or architectures are reported; Arch and openSUSE packages are not provided yet. Use `--dry-run` to see its selection, or `--download-only` to save a verified package.
+The installer installs EQ 1.3.0, including the current profile library and editor. It supports Debian/Ubuntu derivatives with compatible Qt 6.4+ and glibc, Fedora 44+, and RHEL 10-compatible systems including Rocky/AlmaLinux 10. Dependency availability still depends on enabled distribution repositories. Unsupported distributions or architectures are reported; Arch and openSUSE packages are not provided yet. Use `--dry-run` to see its selection, or `--download-only` to save a verified package.
 
 
 For an offline installation, download the matching DEB or RPM from the same release and run:
@@ -40,10 +40,10 @@ The local package must match the same pinned SHA-256 as the online package. Depe
 
 To uninstall, Quit the app and remove its package with `sudo apt remove soundcurrent-eq` or `sudo dnf remove soundcurrent-eq`. Your personal presets and profiles are retained for reinstallation.
 
-## Download for Windows — 1.2.1
+## Download for Windows — 1.3.0
 
-- [Windows x64 installer](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.2.1/SoundCurrent-EQ-1.2.1-windows-x64-setup.exe)
-- [Release notes, checksums and corresponding source](https://github.com/rhamenator/soundcurrent-eq/releases/tag/v1.2.1)
+- [Windows x64 installer](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.3.0/SoundCurrent-EQ-1.3.0-windows-x64-setup.exe)
+- [Release notes, checksums and corresponding source](https://github.com/rhamenator/soundcurrent-eq/releases/tag/v1.3.0)
 
 This Windows release uses the signed VB-CABLE route. The SoundCurrent app/installer remain unsigned; Windows security policies may warn or block them. Quit the running app before updating. Our native-driver code remains preserved for later signing.
 
@@ -61,13 +61,13 @@ If setup says the cable is installed but Windows has no usable cable devices, or
 If the devices are still missing after both restarts, save the vendor setup error and contact [VB-Audio support](https://vb-audio.com/Cable/) rather than repeatedly reinstalling SoundCurrent. The standard cable and optional A/B cables are separate installations. Avoid manually deleting driver files or unrelated audio devices.
 
 
-## Linux packages — 1.2.1
+## Linux packages — 1.3.0
 
-[Release notes and all downloads](https://github.com/rhamenator/soundcurrent-eq/releases/tag/v1.2.1)
+[Release notes and all downloads](https://github.com/rhamenator/soundcurrent-eq/releases/tag/v1.3.0)
 
-- [Ubuntu / Debian package (64-bit)](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.2.1/soundcurrent-eq_1.2.1_amd64.deb)
-- [Fedora 44 RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.2.1/soundcurrent-eq-1.2.1-1.fc44.x86_64.rpm)
-- [RHEL 10 compatible RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.2.1/soundcurrent-eq-1.2.1-1.el10.x86_64.rpm)
+- [Ubuntu / Debian package (64-bit)](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.3.0/soundcurrent-eq_1.3.0_amd64.deb)
+- [Fedora 44 RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.3.0/soundcurrent-eq-1.3.0-1.fc44.x86_64.rpm)
+- [RHEL 10 compatible RPM](https://github.com/rhamenator/soundcurrent-eq/releases/download/v1.3.0/soundcurrent-eq-1.3.0-1.el10.x86_64.rpm)
 
 These are testing previews. Use the explicit preview links above.
 
@@ -492,3 +492,26 @@ Interface language and regional number/date formatting are independent settings.
 Current localization completion work is described in [the progress record](docs/localization-progress.md). Published 1.1.0 packages are unchanged by these development commits.
 
 [Audio buffering](docs/audio-buffering.md) explains the shared Linux/Windows setting, latency trade-offs, and Apply/recovery behavior.
+
+## Analysis tools
+
+The analysis tab offers spectrogram, connected spectrum, waveform, tuner,
+vectorscope, averaged spectrum and cumulative microphone-reference views. Its
+capture and analysis run only while the tab is selected. Settings include the
+C++ spectrogram app's analysis/display controls and legacy preset import.
+Proposed relative microphone corrections open in the profile editor for review.
+See [analysis and microphone profiles](docs/analysis-and-microphone-profiles.md)
+for controls, calibration assumptions and hardware limits.
+
+The listening response graph is taller, automatically scales its vertical range,
+and can be hidden. Equipment, microphone and speaker/room setup have focused
+modal dialogs. Startup checks for updates show an Update shortcut left of Quit
+when a newer release or downloaded installer is detected; the existing update
+controls remain on the configuration tab. The shortcut opens official release
+downloads; it does not execute unverified downloaded files automatically.
+
+The equipment manager can estimate a missing component response from an imported
+chain measurement and known measured component curves. Results stay visibly
+**Estimated profile**, retain their derivation sources, and open in the graph
+editor before saving. See the workflow and its measurement limits in the
+[analysis guide](docs/analysis-and-microphone-profiles.md#estimate-a-missing-equipment-response).

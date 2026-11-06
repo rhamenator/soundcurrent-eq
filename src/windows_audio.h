@@ -54,13 +54,13 @@ private:
     std::array<std::wstring, 3> originals_;
 };
 
-// A fixed-format capture stream; Windows converts a physical microphone's mix
+// A fixed-format capture stream; Windows converts a microphone/output endpoint mix
 // format. Captured PCM remains in a bounded buffer and is never persisted.
 class WindowsRecorder {
 public:
     WindowsRecorder();
     ~WindowsRecorder();
-    void start(const std::wstring &endpoint, int sampleRate = 96000, int channels = 1);
+    void start(const std::wstring &endpoint, int sampleRate = 96000, int channels = 1, bool loopback = false);
     void stop();
     std::vector<std::int16_t> take();
     bool running() const;
