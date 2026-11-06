@@ -21,7 +21,7 @@ class CatalogTests(unittest.TestCase):
         for caption in ('Speaker', 'Amplifier', 'Microphone'):
             self.assertIn('SC_TR("' + caption + '")', body)
         self.assertNotIn('names << QString(kind)', body)
-        self.assertIn('p->brand + " / " + p->family + " / " + p->model', body)
+        self.assertIn('p->brand + " / " + p->family + " / " + soundcurrent::equipment::profileLabel(*p)', body)
 
     def test_all_files_filter_preserves_wildcard_and_filter_count(self):
         source='All files (*)'

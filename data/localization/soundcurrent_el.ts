@@ -141,6 +141,18 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>A component cannot be subtracted twice or from itself.</source>
+      <translation>Ένα εξάρτημα δεν μπορεί να αφαιρεθεί δύο φορές ή από τον εαυτό του.</translation>
+    </message>
+    <message>
+      <source>A measured chain response is required; correction filters cannot be subtracted.</source>
+      <translation>Απαιτείται μετρημένη απόκριση αλυσίδας· τα φίλτρα διόρθωσης δεν αφαιρούνται.</translation>
+    </message>
+    <message>
+      <source>A measured component response is required; correction filters cannot be subtracted.</source>
+      <translation>Απαιτείται μετρημένη απόκριση εξαρτήματος· τα φίλτρα διόρθωσης δεν αφαιρούνται.</translation>
+    </message>
+    <message>
       <source>A private user runtime directory is required</source>
       <translation>Απαιτείται ιδιωτικός κατάλογος εκτέλεσης χρήστη</translation>
       <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
@@ -220,6 +232,10 @@ Do you want to delete it anyway?</source>
       <translation>Όλοι οι υποτύποι</translation>
     </message>
     <message>
+      <source>Amber</source>
+      <translation>Κεχριμπάρι</translation>
+    </message>
+    <message>
       <source>Ambience</source>
       <translation>Αίσθηση χώρου</translation>
     </message>
@@ -256,8 +272,16 @@ Do you want to delete it anyway?</source>
       <translation>Τα προφίλ ενισχυτών απαιτούν ηλεκτρικές μετρήσεις με γνωστό φορτίο ηχείων, είσοδο και ρυθμίσεις τόνου. Εισαγάγετε ένα αρχείο μετρημένης διόρθωσης· δεν εξάγονται καμπύλες ενισχυτών από διαφημιστικές προδιαγραφές.</translation>
     </message>
     <message>
+      <source>Amplitude</source>
+      <translation>Πλάτος</translation>
+    </message>
+    <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
       <translation>Εγκαταστάθηκε ενημέρωση της εφαρμογής. Επιλέξτε έξοδο και ανοίξτε την ξανά για να φορτωθεί· το κλείσιμο αυτού του παραθύρου αφήνει την παλιά έκδοση σε λειτουργία.</translation>
+    </message>
+    <message>
+      <source>Analysis sample rate</source>
+      <translation>Ρυθμός δειγματοληψίας ανάλυσης</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
@@ -399,8 +423,21 @@ Do you want to delete it anyway?</source>
       <translation>Η αυτόματη δρομολόγηση ήχου δεν είναι διαθέσιμη</translation>
     </message>
     <message>
+      <source>Automatic range</source>
+      <translation>Αυτόματο εύρος</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Αυτόματη διόρθωση του συνδεδεμένου μικροφώνου· πατήστε για παράκαμψη του EQ μικροφώνου</translation>
+    </message>
+    <message>
+      <source>Average</source>
+      <translation>Μέσος όρος</translation>
+    </message>
+    <message>
+      <source>Averaged spectrum</source>
+      <translation>Μέσο φάσμα</translation>
+      <extracomment>A time-smoothed digital frequency spectrum, not a measured room response.</extracomment>
     </message>
     <message>
       <source>Back</source>
@@ -448,6 +485,15 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Bass frequency</source>
       <translation>Συχνότητα μπάσων</translation>
+    </message>
+    <message>
+      <source>Bass guitar</source>
+      <translation>Ηλεκτρικό μπάσο</translation>
+      <extracomment>Instrument tuner preset for standard bass-guitar strings.</extracomment>
+    </message>
+    <message>
+      <source>Blue</source>
+      <translation>Μπλε</translation>
     </message>
     <message>
       <source>Bookshelf speaker</source>
@@ -565,6 +611,15 @@ Do you want to delete it anyway?</source>
       <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
+      <source>Capture reference</source>
+      <translation>Καταγραφή αναφοράς</translation>
+      <extracomment>Snapshot the accumulated spectrum as a reference and reset the running average for the comparison measurement.</extracomment>
+    </message>
+    <message>
+      <source>Cello</source>
+      <translation>Βιολοντσέλο</translation>
+    </message>
+    <message>
       <source>Center</source>
       <translation>Κέντρο</translation>
     </message>
@@ -586,6 +641,14 @@ Do you want to delete it anyway?</source>
       <source>Change to list view mode</source>
       <translation>Αλλαγή σε προβολή λίστας</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Channel</source>
+      <translation>Κανάλι</translation>
+    </message>
+    <message>
+      <source>Channels</source>
+      <translation>Κανάλια</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -621,6 +684,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Choose update folder…</source>
       <translation>Επιλογή φακέλου ενημερώσεων…</translation>
+    </message>
+    <message>
+      <source>Chromatic</source>
+      <translation>Χρωματικό</translation>
     </message>
     <message>
       <source>Cinema speaker</source>
@@ -791,6 +858,10 @@ Do you want to delete it anyway?</source>
       <translation>Δεν ήταν δυνατή η εκκίνηση της προστασίας έντασης εξόδου</translation>
     </message>
     <message>
+      <source>Could not start playback monitoring</source>
+      <translation>Δεν ήταν δυνατή η έναρξη παρακολούθησης αναπαραγωγής</translation>
+    </message>
+    <message>
       <source>Could not start the measurement.</source>
       <translation>Δεν ήταν δυνατή η έναρξη της μέτρησης.</translation>
     </message>
@@ -826,6 +897,11 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Create a new correction profile.</source>
       <translation>Δημιουργία νέου προφίλ διόρθωσης.</translation>
+    </message>
+    <message>
+      <source>Create microphone profile</source>
+      <translation>Δημιουργία προφίλ μικροφώνου</translation>
+      <extracomment>Propose relative correction filters for review in the profile editor. Saving does not apply them automatically.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -877,6 +953,14 @@ Do you want to delete it anyway?</source>
       <translation>Διαγραφή αυτού του αποθηκευμένου προσαρμοσμένου προφίλ.</translation>
     </message>
     <message>
+      <source>Derivation metadata exceeds 32 KiB.</source>
+      <translation>Τα μεταδεδομένα εξαγωγής υπερβαίνουν τα 32 KiB.</translation>
+    </message>
+    <message>
+      <source>Derivation metadata requires an estimated profile.</source>
+      <translation>Τα μεταδεδομένα εξαγωγής απαιτούν εκτιμώμενο προφίλ.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>Λεπτομερής προβολή</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -894,6 +978,16 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Discard</source>
       <translation>Απόρριψη</translation>
+    </message>
+    <message>
+      <source>Display ceiling</source>
+      <translation>Άνω όριο προβολής</translation>
+      <extracomment>Upper vertical-axis limit in dBFS. Changes visualization only; never a limiter or audio gain.</extracomment>
+    </message>
+    <message>
+      <source>Display sensitivity</source>
+      <translation>Ευαισθησία προβολής</translation>
+      <extracomment>Displayed dynamic range in dB. Does not change hardware microphone gain.</extracomment>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
@@ -1073,6 +1167,10 @@ Do you want to delete it anyway?</source>
       <translation>Τύπος εξοπλισμού</translation>
     </message>
     <message>
+      <source>Estimate profile</source>
+      <translation>Εκτίμηση προφίλ</translation>
+    </message>
+    <message>
       <source>Estimated output level near band %1</source>
       <translation>Εκτιμώμενη στάθμη εξόδου κοντά στη ζώνη %1</translation>
     </message>
@@ -1113,6 +1211,26 @@ Do you want to delete it anyway?</source>
       <translation>Εκτιμώμενη κορυφή εξόδου μετά το EQ, με την τελική ενίσχυση και την ισορροπία</translation>
     </message>
     <message>
+      <source>Estimated profile</source>
+      <translation>Εκτιμώμενο προφίλ</translation>
+    </message>
+    <message>
+      <source>Estimated profile status is required for schema 4.</source>
+      <translation>Το σχήμα 4 απαιτεί κατάσταση εκτιμώμενου προφίλ.</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require derivation metadata.</source>
+      <translation>Τα εκτιμώμενα προφίλ απαιτούν μεταδεδομένα εξαγωγής.</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require method and limitations.</source>
+      <translation>Τα εκτιμώμενα προφίλ απαιτούν μέθοδο και περιορισμούς.</translation>
+    </message>
+    <message>
+      <source>Estimated response exceeds the supported range.</source>
+      <translation>Η εκτιμώμενη απόκριση υπερβαίνει το υποστηριζόμενο εύρος.</translation>
+    </message>
+    <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
       <translation>Έξοδος από το SoundCurrent EQ και επαναφορά κανονικού ήχου</translation>
     </message>
@@ -1143,6 +1261,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Export the selected profile to a JSON file.</source>
       <translation>Εξαγωγή του επιλεγμένου προφίλ σε αρχείο JSON.</translation>
+    </message>
+    <message>
+      <source>FFT size</source>
+      <translation>Μέγεθος FFT</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1211,12 +1333,25 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Frames: %1 · FFT: %2 ms · Resolution: %3 Hz · Window: %4 ms</source>
+      <translation>Πλαίσια: %1 · FFT: %2 ms · Ανάλυση: %3 Hz · Παράθυρο: %4 ms</translation>
+    </message>
+    <message>
+      <source>Freeze display</source>
+      <translation>Πάγωμα προβολής</translation>
+      <extracomment>Hold the current analyzer picture; capture can continue, but visualization FFT work stops.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Συχνότητα</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
       <translation>Συχνότητα σε Hz</translation>
+    </message>
+    <message>
+      <source>Frequency scale</source>
+      <translation>Κλίμακα συχνοτήτων</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
@@ -1251,6 +1386,22 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Gray</source>
+      <translation>Γκρι</translation>
+    </message>
+    <message>
+      <source>Green</source>
+      <translation>Πράσινο</translation>
+    </message>
+    <message>
+      <source>Grid</source>
+      <translation>Πλέγμα</translation>
+    </message>
+    <message>
+      <source>Guitar</source>
+      <translation>Κιθάρα</translation>
+    </message>
+    <message>
       <source>Headphones</source>
       <translation>Ακουστικά</translation>
     </message>
@@ -1270,6 +1421,18 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Hip-Hop</source>
       <translation>Χιπ χοπ</translation>
+    </message>
+    <message>
+      <source>History length</source>
+      <translation>Διάρκεια ιστορικού</translation>
+    </message>
+    <message>
+      <source>I understand that unknown room, microphone, clothing and placement effects remain in this estimate.</source>
+      <translation>Κατανοώ ότι οι άγνωστες επιδράσεις χώρου, μικροφώνου, ρουχισμού και τοποθέτησης παραμένουν στην εκτίμηση.</translation>
+    </message>
+    <message>
+      <source>Ice</source>
+      <translation>Πάγος</translation>
     </message>
     <message>
       <source>Ignore</source>
@@ -1371,6 +1534,10 @@ Do you want to delete it anyway?</source>
       <translation>Εγκατεστημένη έκδοση: %1</translation>
     </message>
     <message>
+      <source>Instrument</source>
+      <translation>Όργανο</translation>
+    </message>
+    <message>
       <source>Interface language</source>
       <translation>Γλώσσα διεπαφής</translation>
     </message>
@@ -1393,6 +1560,10 @@ Do you want to delete it anyway?</source>
       <source>Invalid Studio route</source>
       <translation>Μη έγκυρη σύνδεση ήχου Studio</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth.</source>
+      <translation>Μη έγκυρες ρυθμίσεις ανάλυσης. Το παράθυρο FFT δεν πρέπει να ξεπερνά τα 250 ms και οι συχνότητες πρέπει να βρίσκονται μέσα στη συλλαμβανόμενη ζώνη ήχου.</translation>
     </message>
     <message>
       <source>Invalid audio setup requester.</source>
@@ -1424,6 +1595,14 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>Μη έγκυρος υποτύπος εξοπλισμού ή τύπος τροφοδοσίας</translation>
+    </message>
+    <message>
+      <source>Invalid estimated equipment kind.</source>
+      <translation>Μη έγκυρος τύπος εκτιμώμενου εξοπλισμού.</translation>
+    </message>
+    <message>
+      <source>Invalid estimated profile status.</source>
+      <translation>Μη έγκυρη κατάσταση εκτιμώμενου προφίλ.</translation>
     </message>
     <message>
       <source>Invalid filter type</source>
@@ -1497,12 +1676,20 @@ Do you want to delete it anyway?</source>
       <translation>Διατήρηση τρέχοντος EQ</translation>
     </message>
     <message>
+      <source>Known component responses</source>
+      <translation>Γνωστές αποκρίσεις εξαρτημάτων</translation>
+    </message>
+    <message>
       <source>L</source>
       <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
       <translation>Γλώσσα και τοπικές ρυθμίσεις</translation>
+    </message>
+    <message>
+      <source>Left</source>
+      <translation>Αριστερά</translation>
     </message>
     <message>
       <source>Left right balance</source>
@@ -1519,6 +1706,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>Η βιβλιοθήκη υπερβαίνει τα 16 MiB.</translation>
+    </message>
+    <message>
+      <source>Linear</source>
+      <translation>Γραμμική</translation>
     </message>
     <message>
       <source>List audio endpoints</source>
@@ -1548,6 +1739,10 @@ Do you want to delete it anyway?</source>
       <translation>Λόου φάι</translation>
     </message>
     <message>
+      <source>Load preset</source>
+      <translation>Φόρτωση προρύθμισης</translation>
+    </message>
+    <message>
       <source>Lock EQ</source>
       <extracomment>Prevent accidental editing of EQ controls; not encryption or a security lock.</extracomment>
       <translation>Κλείδωμα EQ</translation>
@@ -1555,6 +1750,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Lock equalizer settings</source>
       <translation>Κλείδωμα ρυθμίσεων ισοσταθμιστή</translation>
+    </message>
+    <message>
+      <source>Logarithmic</source>
+      <translation>Λογαριθμική</translation>
     </message>
     <message>
       <source>Look in:</source>
@@ -1575,8 +1774,16 @@ Do you want to delete it anyway?</source>
       <translation>Διαχείριση προφίλ</translation>
     </message>
     <message>
+      <source>Mandolin</source>
+      <translation>Μαντολίνο</translation>
+    </message>
+    <message>
       <source>Manufacturer</source>
       <translation>Κατασκευαστής</translation>
+    </message>
+    <message>
+      <source>Maximum frequency</source>
+      <translation>Μέγιστη συχνότητα</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
@@ -1595,6 +1802,10 @@ Do you want to delete it anyway?</source>
       <translation>Μέτρηση απόκρισης ηχείων, χώρου και μικροφώνου</translation>
     </message>
     <message>
+      <source>Measured chain</source>
+      <translation>Μετρημένη αλυσίδα</translation>
+    </message>
+    <message>
       <source>Measured listening position</source>
       <translation>Μετρημένη θέση ακρόασης</translation>
       <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
@@ -1607,6 +1818,10 @@ Do you want to delete it anyway?</source>
       <source>Measured response</source>
       <translation>Μετρημένη απόκριση</translation>
       <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measured responses must overlap by at least two octaves.</source>
+      <translation>Οι μετρημένες αποκρίσεις πρέπει να επικαλύπτονται τουλάχιστον δύο οκτάβες.</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
@@ -1700,6 +1915,11 @@ Do you want to delete it anyway?</source>
       <translation>Η εγγραφή μικροφώνου ψαλιδίζεται. Μειώστε την ενίσχυση μικροφώνου ή την πρόσθετη ενίσχυση και επαναλάβετε τη μέτρηση.</translation>
     </message>
     <message>
+      <source>Microphone response</source>
+      <translation>Απόκριση μικροφώνου</translation>
+      <extracomment>A relative spectrum comparison against a captured reference. Includes source and room; not certified isolated microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Microphone route</source>
       <translation>Διαδρομή μικροφώνου</translation>
     </message>
@@ -1708,8 +1928,20 @@ Do you want to delete it anyway?</source>
       <translation>Έληξε το χρονικό όριο εκκίνησης του μικροφώνου</translation>
     </message>
     <message>
+      <source>Minimum frequency</source>
+      <translation>Ελάχιστη συχνότητα</translation>
+    </message>
+    <message>
+      <source>Mix</source>
+      <translation>Μίξη</translation>
+    </message>
+    <message>
       <source>Model</source>
       <translation>Μοντέλο</translation>
+    </message>
+    <message>
+      <source>Mono</source>
+      <translation>Μονοφωνικό</translation>
     </message>
     <message>
       <source>Move right for a broader adjustment.</source>
@@ -1722,6 +1954,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Movies</source>
       <translation>Ταινίες</translation>
+    </message>
+    <message>
+      <source>Music mode</source>
+      <translation>Μουσική λειτουργία</translation>
     </message>
     <message>
       <source>My equipment</source>
@@ -1801,6 +2037,14 @@ Do you want to delete it anyway?</source>
       <translation>Καμία — χρήση του δικού μου EQ</translation>
     </message>
     <message>
+      <source>Not enough broadband reference data.</source>
+      <translation>Ανεπαρκή ευρυζωνικά δεδομένα αναφοράς.</translation>
+    </message>
+    <message>
+      <source>Note grid</source>
+      <translation>Πλέγμα νοτών</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Μορφή αριθμών και ημερομηνίας</translation>
     </message>
@@ -1811,6 +2055,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>OK</source>
       <translation>OK</translation>
+    </message>
+    <message>
+      <source>Octave</source>
+      <translation>Οκτάβα</translation>
     </message>
     <message>
       <source>Omnidirectional speaker</source>
@@ -1878,6 +2126,10 @@ Do you want to delete it anyway?</source>
       <translation>Άνοιγμα διεπαφής εγγραφής δοκιμαστικού ήχου</translation>
     </message>
     <message>
+      <source>Open the estimated response and correction in the editor. Nothing is saved or applied yet.</source>
+      <translation>Άνοιγμα της εκτιμώμενης απόκρισης και διόρθωσης στον επεξεργαστή. Τίποτα δεν αποθηκεύεται ή εφαρμόζεται ακόμη.</translation>
+    </message>
+    <message>
       <source>Open update folder</source>
       <translation>Άνοιγμα φακέλου ενημερώσεων</translation>
     </message>
@@ -1908,6 +2160,10 @@ Do you want to delete it anyway?</source>
       <translation>Συνολική έξοδος</translation>
     </message>
     <message>
+      <source>Palette</source>
+      <translation>Παλέτα</translation>
+    </message>
+    <message>
       <source>Panel speaker</source>
       <translation>Ηχείο πάνελ</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
@@ -1925,6 +2181,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>Παύση επεξεργασίας και άνοιγμα ρύθμισης ήχου. Η εφαρμογή παραμένει ανοιχτή και αναφέρει το αποτέλεσμα. Επανεκκινήστε τα Windows μετά την εγκατάσταση του οδηγού.</translation>
+    </message>
+    <message>
+      <source>Peak hold</source>
+      <translation>Διατήρηση κορυφών</translation>
     </message>
     <message>
       <source>Peak markers</source>
@@ -1946,6 +2206,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Playback</source>
       <translation>Αναπαραγωγή</translation>
+    </message>
+    <message>
+      <source>Playback monitor</source>
+      <translation>Παρακολούθηση αναπαραγωγής</translation>
     </message>
     <message>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
@@ -2214,6 +2478,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
+      <source>Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement.</source>
+      <translation>Οι συγκρίσεις αναφοράς περιλαμβάνουν την πηγή ήχου, τον χώρο και το μικρόφωνο αναφοράς. Δεν αποτελούν απομονωμένη ή πιστοποιημένη μέτρηση μικροφώνου.</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Ανανέωση συσκευών</translation>
     </message>
@@ -2328,6 +2596,14 @@ Do you want to delete it anyway?</source>
       <translation>Επανάληψη</translation>
     </message>
     <message>
+      <source>Review estimated profile</source>
+      <translation>Έλεγχος εκτιμώμενου προφίλ</translation>
+    </message>
+    <message>
+      <source>Right</source>
+      <translation>Δεξιά</translation>
+    </message>
+    <message>
       <source>Right-to-left test language</source>
       <translation>Δοκιμαστική γλώσσα από δεξιά προς αριστερά</translation>
     </message>
@@ -2382,6 +2658,10 @@ Do you want to delete it anyway?</source>
       <translation>Αποθηκεύτηκε η προρύθμιση «%1».</translation>
     </message>
     <message>
+      <source>Scroll speed</source>
+      <translation>Ταχύτητα κύλισης</translation>
+    </message>
+    <message>
       <source>Search brand, family, model or measurement conditions</source>
       <translation>Αναζήτηση μάρκας, σειράς, μοντέλου ή συνθηκών μέτρησης</translation>
     </message>
@@ -2397,6 +2677,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Select band %1</source>
       <translation>Επιλογή ζώνης %1</translation>
+    </message>
+    <message>
+      <source>Select between one and eight known component responses.</source>
+      <translation>Επιλέξτε μία έως οκτώ γνωστές αποκρίσεις εξαρτημάτων.</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
@@ -2461,6 +2745,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
+      <source>Settings</source>
+      <translation>Ρυθμίσεις</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Ρυθμίσεις &amp;&amp; βαθμονόμηση</translation>
     </message>
@@ -2490,6 +2778,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>Τα μικρότερα διαστήματα ανανεώνουν τις στάθμες συχνότερα και χρησιμοποιούν περισσότερη CPU· η παροχή ήχου μπορεί να περιορίζει τον πραγματικό ρυθμό</translation>
+    </message>
+    <message>
+      <source>Show EQ response graph</source>
+      <translation>Εμφάνιση καμπύλης απόκρισης EQ</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
@@ -2649,6 +2941,14 @@ Do you want to delete it anyway?</source>
       <translation>Τύπος ηχείου</translation>
     </message>
     <message>
+      <source>Spectrogram</source>
+      <translation>Φασματογράφημα</translation>
+    </message>
+    <message>
+      <source>Spectrum</source>
+      <translation>Φάσμα</translation>
+    </message>
+    <message>
       <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
       <translation>Spinorama AutoEQ: το κέρδος διόρθωσης περιορίζεται σε %1 και το Q σε %2. Οι ενισχύσεις κάτω από %3 παραλείπονται. Η προεπιλογή ακρόασής σας προστίθεται ξεχωριστά.</translation>
       <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
@@ -2692,6 +2992,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
+      <source>Stereo</source>
+      <translation>Στερεοφωνικό</translation>
+    </message>
+    <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
       <translation>Σταματήστε τη βαθμονόμηση μικροφώνου πριν αλλάξετε τον οδηγό ήχου.</translation>
     </message>
@@ -2708,6 +3012,10 @@ Do you want to delete it anyway?</source>
       <source>Studio profile has an invalid numeric field</source>
       <translation>Το προφίλ Studio περιέχει μη έγκυρο αριθμητικό πεδίο</translation>
       <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
+    </message>
+    <message>
+      <source>Subtract known measured responses from a measured chain response, then review the estimated correction.</source>
+      <translation>Αφαίρεση γνωστών μετρημένων αποκρίσεων από την απόκριση της αλυσίδας και έλεγχος της εκτιμώμενης διόρθωσης.</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
@@ -2793,6 +3101,10 @@ Do you want to delete it anyway?</source>
       <translation>Εισάγεται μετρημένη ΑΠΟΚΡΙΣΗ, όχι ήδη ανεστραμμένες ενισχύσεις EQ. Επιβεβαιώστε τον τύπο εξοπλισμού. Το απόλυτο SPL χρειάζεται κανονικοποίηση πριν από την εισαγωγή.</translation>
     </message>
     <message>
+      <source>This is an estimated residual, not a certified equipment measurement. Any unknown room, microphone, clothing, placement or interface response remains included. Published curves may not match your setup. Do not correct deep nulls or unmeasured frequencies.</source>
+      <translation>Πρόκειται για εκτιμώμενη υπολειπόμενη απόκριση, όχι πιστοποιημένη μέτρηση εξοπλισμού. Παραμένουν άγνωστες επιδράσεις χώρου, μικροφώνου, ρουχισμού, τοποθέτησης ή διεπαφής. Οι δημοσιευμένες καμπύλες μπορεί να διαφέρουν από τη διάταξή σας. Μη διορθώνετε βαθιές ακυρώσεις ή μη μετρημένες συχνότητες.</translation>
+    </message>
+    <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
       <translation>Αυτό το προφίλ έχει αλλάξει. Αποθήκευση προσαρμοσμένου αντιγράφου πριν φύγετε;</translation>
     </message>
@@ -2820,12 +3132,20 @@ Do you want to delete it anyway?</source>
       <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
+      <source>Transient markers</source>
+      <translation>Δείκτες μεταβατικών</translation>
+    </message>
+    <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
       <translation>Κάλυψη μετάφρασης: %1 από %2 μηνύματα. Οι ελλείπουσες μεταφράσεις χρησιμοποιούν αγγλικά. Τα γλωσσικά πακέτα δεν έχουν επαληθευτεί και αναμένουν έλεγχο από φυσικό ομιλητή. Τερματίστε και ανοίξτε ξανά για να εφαρμοστούν οι αλλαγές.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
       <translation>Λεπτομέρεια πρίμων</translation>
+    </message>
+    <message>
+      <source>Tuner</source>
+      <translation>Κουρδιστήρι</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
@@ -2846,6 +3166,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Type</source>
       <translation>Τύπος</translation>
+    </message>
+    <message>
+      <source>Ukulele</source>
+      <translation>Γιουκαλίλι</translation>
     </message>
     <message>
       <source>Unclassified equipment</source>
@@ -2893,6 +3217,10 @@ Do you want to delete it anyway?</source>
       <translation>Μη υποστηριζόμενο σχήμα προφίλ εξοπλισμού (αναμένεται 2/3).</translation>
     </message>
     <message>
+      <source>Unsupported equipment profile schema (expected 2/3/4).</source>
+      <translation>Μη υποστηριζόμενο σχήμα προφίλ εξοπλισμού (αναμένεται 2/3/4).</translation>
+    </message>
+    <message>
       <source>Unsupported filter type.</source>
       <translation>Μη υποστηριζόμενος τύπος φίλτρου.</translation>
     </message>
@@ -2917,6 +3245,11 @@ Do you want to delete it anyway?</source>
       <translation>Μη υποστηριζόμενο σχήμα προφίλ ηχείου</translation>
     </message>
     <message>
+      <source>Update</source>
+      <translation>Ενημέρωση</translation>
+      <extracomment>Button opening the official software-release downloads. Does not refresh audio data or install automatically.</extracomment>
+    </message>
+    <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
       <translation>Η ενημέρωση %1 έχει ληφθεί: %2. Τερματίστε, εγκαταστήστε πάνω από την υπάρχουσα εφαρμογή και ανοίξτε ξανά.</translation>
     </message>
@@ -2927,6 +3260,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
       <translation>Χρησιμοποιήστε ήσυχο χώρο. Μετρά ηχεία, χώρο και μικρόφωνο μαζί· τα αποτελέσματα περιλαμβάνουν την απόκριση μικροφώνου.</translation>
+    </message>
+    <message>
+      <source>Use an imported measurement of the complete chain. Select only measured component responses that were part of that chain. Correction EQ filters are never subtracted.</source>
+      <translation>Χρησιμοποιήστε εισαγόμενη μέτρηση ολόκληρης της αλυσίδας. Επιλέξτε μόνο μετρημένες αποκρίσεις εξαρτημάτων αυτής της αλυσίδας. Τα φίλτρα διόρθωσης δεν αφαιρούνται ποτέ.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -3020,6 +3357,22 @@ Do you want to delete it anyway?</source>
       <translation>Το VB-CABLE διατηρήθηκε επειδή είναι εγκατεστημένη η άλλη εφαρμογή SoundCurrent. Αφαιρέστε το μαζί με την τελευταία εφαρμογή αν δεν το χρειάζεται άλλο λογισμικό.</translation>
     </message>
     <message>
+      <source>Vectorscope</source>
+      <translation>Διανυσματοσκόπιο</translation>
+    </message>
+    <message>
+      <source>View</source>
+      <translation>Προβολή</translation>
+    </message>
+    <message>
+      <source>Viola</source>
+      <translation>Βιόλα</translation>
+    </message>
+    <message>
+      <source>Violin</source>
+      <translation>Βιολί</translation>
+    </message>
+    <message>
       <source>Vocal Focus</source>
       <translation>Έμφαση φωνής</translation>
     </message>
@@ -3034,6 +3387,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Warmth</source>
       <translation>Ζεστασιά</translation>
+    </message>
+    <message>
+      <source>Waveform</source>
+      <translation>Κυματομορφή</translation>
     </message>
     <message>
       <source>Whole listening system</source>

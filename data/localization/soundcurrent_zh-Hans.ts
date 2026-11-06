@@ -141,6 +141,18 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>A component cannot be subtracted twice or from itself.</source>
+      <translation>不能重复减去同一组件，也不能从组件自身减去自身。</translation>
+    </message>
+    <message>
+      <source>A measured chain response is required; correction filters cannot be subtracted.</source>
+      <translation>需要完整链路的实测响应；不能减去校正滤波器。</translation>
+    </message>
+    <message>
+      <source>A measured component response is required; correction filters cannot be subtracted.</source>
+      <translation>需要组件的实测响应；不能减去校正滤波器。</translation>
+    </message>
+    <message>
       <source>A private user runtime directory is required</source>
       <translation>需要用户专用的运行时目录</translation>
       <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
@@ -220,6 +232,10 @@ Do you want to delete it anyway?</source>
       <translation>所有子类型</translation>
     </message>
     <message>
+      <source>Amber</source>
+      <translation>琥珀色</translation>
+    </message>
+    <message>
       <source>Ambience</source>
       <translation>空间感</translation>
     </message>
@@ -256,8 +272,16 @@ Do you want to delete it anyway?</source>
       <translation>功放配置需要在已知扬声器负载、输入和音调设置下进行电气测量。请导入测量得到的校正文件；不会根据宣传规格推定功放曲线。</translation>
     </message>
     <message>
+      <source>Amplitude</source>
+      <translation>幅度</translation>
+    </message>
+    <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
       <translation>已安装应用更新。请使用“退出”并重新打开以加载更新；关闭此窗口会让旧版本继续运行。</translation>
+    </message>
+    <message>
+      <source>Analysis sample rate</source>
+      <translation>分析采样率</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
@@ -399,8 +423,21 @@ Do you want to delete it anyway?</source>
       <translation>自动音频路由不可用</translation>
     </message>
     <message>
+      <source>Automatic range</source>
+      <translation>自动范围</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>自动调整已连接麦克风的音色；点击可旁路麦克风均衡器</translation>
+    </message>
+    <message>
+      <source>Average</source>
+      <translation>平均</translation>
+    </message>
+    <message>
+      <source>Averaged spectrum</source>
+      <translation>平均频谱</translation>
+      <extracomment>A time-smoothed digital frequency spectrum, not a measured room response.</extracomment>
     </message>
     <message>
       <source>Back</source>
@@ -448,6 +485,15 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Bass frequency</source>
       <translation>低音频率</translation>
+    </message>
+    <message>
+      <source>Bass guitar</source>
+      <translation>贝斯</translation>
+      <extracomment>Instrument tuner preset for standard bass-guitar strings.</extracomment>
+    </message>
+    <message>
+      <source>Blue</source>
+      <translation>蓝色</translation>
     </message>
     <message>
       <source>Bookshelf speaker</source>
@@ -565,6 +611,15 @@ Do you want to delete it anyway?</source>
       <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
+      <source>Capture reference</source>
+      <translation>采集参考</translation>
+      <extracomment>Snapshot the accumulated spectrum as a reference and reset the running average for the comparison measurement.</extracomment>
+    </message>
+    <message>
+      <source>Cello</source>
+      <translation>大提琴</translation>
+    </message>
+    <message>
       <source>Center</source>
       <translation>居中</translation>
     </message>
@@ -586,6 +641,14 @@ Do you want to delete it anyway?</source>
       <source>Change to list view mode</source>
       <translation>更改为列表视图模式</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Channel</source>
+      <translation>声道</translation>
+    </message>
+    <message>
+      <source>Channels</source>
+      <translation>声道</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -621,6 +684,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Choose update folder…</source>
       <translation>选择更新文件夹…</translation>
+    </message>
+    <message>
+      <source>Chromatic</source>
+      <translation>半音阶</translation>
     </message>
     <message>
       <source>Cinema speaker</source>
@@ -791,6 +858,10 @@ Do you want to delete it anyway?</source>
       <translation>无法启动输出音量安全保护</translation>
     </message>
     <message>
+      <source>Could not start playback monitoring</source>
+      <translation>无法启动播放监听</translation>
+    </message>
+    <message>
       <source>Could not start the measurement.</source>
       <translation>无法开始测量。</translation>
     </message>
@@ -826,6 +897,11 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Create a new correction profile.</source>
       <translation>创建新的校正配置。</translation>
+    </message>
+    <message>
+      <source>Create microphone profile</source>
+      <translation>创建麦克风配置文件</translation>
+      <extracomment>Propose relative correction filters for review in the profile editor. Saving does not apply them automatically.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -877,6 +953,14 @@ Do you want to delete it anyway?</source>
       <translation>删除此已保存的自定义配置。</translation>
     </message>
     <message>
+      <source>Derivation metadata exceeds 32 KiB.</source>
+      <translation>推导元数据超过 32 KiB。</translation>
+    </message>
+    <message>
+      <source>Derivation metadata requires an estimated profile.</source>
+      <translation>推导元数据需要估算配置。</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>详情视图</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -894,6 +978,16 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Discard</source>
       <translation>放弃更改</translation>
+    </message>
+    <message>
+      <source>Display ceiling</source>
+      <translation>显示上限</translation>
+      <extracomment>Upper vertical-axis limit in dBFS. Changes visualization only; never a limiter or audio gain.</extracomment>
+    </message>
+    <message>
+      <source>Display sensitivity</source>
+      <translation>显示灵敏度</translation>
+      <extracomment>Displayed dynamic range in dB. Does not change hardware microphone gain.</extracomment>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
@@ -1073,6 +1167,10 @@ Do you want to delete it anyway?</source>
       <translation>设备类型</translation>
     </message>
     <message>
+      <source>Estimate profile</source>
+      <translation>估算配置</translation>
+    </message>
+    <message>
       <source>Estimated output level near band %1</source>
       <translation>频段 %1 附近的估计输出电平</translation>
     </message>
@@ -1113,6 +1211,26 @@ Do you want to delete it anyway?</source>
       <translation>均衡处理后的估计输出峰值，包括后级增益和平衡</translation>
     </message>
     <message>
+      <source>Estimated profile</source>
+      <translation>估算配置</translation>
+    </message>
+    <message>
+      <source>Estimated profile status is required for schema 4.</source>
+      <translation>架构 4 需要估算配置状态。</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require derivation metadata.</source>
+      <translation>估算配置需要推导元数据。</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require method and limitations.</source>
+      <translation>估算配置需要方法和局限说明。</translation>
+    </message>
+    <message>
+      <source>Estimated response exceeds the supported range.</source>
+      <translation>估算响应超出支持范围。</translation>
+    </message>
+    <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
       <translation>退出 SoundCurrent EQ 并恢复正常音频</translation>
     </message>
@@ -1143,6 +1261,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Export the selected profile to a JSON file.</source>
       <translation>将选中的配置导出为 JSON 文件。</translation>
+    </message>
+    <message>
+      <source>FFT size</source>
+      <translation>FFT 大小</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1211,12 +1333,25 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Frames: %1 · FFT: %2 ms · Resolution: %3 Hz · Window: %4 ms</source>
+      <translation>帧数：%1 · FFT：%2 ms · 分辨率：%3 Hz · 窗长：%4 ms</translation>
+    </message>
+    <message>
+      <source>Freeze display</source>
+      <translation>冻结显示</translation>
+      <extracomment>Hold the current analyzer picture; capture can continue, but visualization FFT work stops.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>频率</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
       <translation>频率 Hz</translation>
+    </message>
+    <message>
+      <source>Frequency scale</source>
+      <translation>频率刻度</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
@@ -1251,6 +1386,22 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Gray</source>
+      <translation>灰色</translation>
+    </message>
+    <message>
+      <source>Green</source>
+      <translation>绿色</translation>
+    </message>
+    <message>
+      <source>Grid</source>
+      <translation>网格</translation>
+    </message>
+    <message>
+      <source>Guitar</source>
+      <translation>吉他</translation>
+    </message>
+    <message>
       <source>Headphones</source>
       <translation>耳机</translation>
     </message>
@@ -1270,6 +1421,18 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Hip-Hop</source>
       <translation>嘻哈</translation>
+    </message>
+    <message>
+      <source>History length</source>
+      <translation>历史时长</translation>
+    </message>
+    <message>
+      <source>I understand that unknown room, microphone, clothing and placement effects remain in this estimate.</source>
+      <translation>我理解房间、麦克风、衣物和摆放位置的未知影响仍包含在此估算中。</translation>
+    </message>
+    <message>
+      <source>Ice</source>
+      <translation>冰蓝色</translation>
     </message>
     <message>
       <source>Ignore</source>
@@ -1371,6 +1534,10 @@ Do you want to delete it anyway?</source>
       <translation>已安装版本：%1</translation>
     </message>
     <message>
+      <source>Instrument</source>
+      <translation>乐器</translation>
+    </message>
+    <message>
       <source>Interface language</source>
       <translation>界面语言</translation>
     </message>
@@ -1393,6 +1560,10 @@ Do you want to delete it anyway?</source>
       <source>Invalid Studio route</source>
       <translation>Studio 音频连接无效</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth.</source>
+      <translation>分析设置无效。FFT 窗长不得超过 250 ms，频率必须位于采集到的音频带宽内。</translation>
     </message>
     <message>
       <source>Invalid audio setup requester.</source>
@@ -1424,6 +1595,14 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>设备子类型或供电类型无效</translation>
+    </message>
+    <message>
+      <source>Invalid estimated equipment kind.</source>
+      <translation>估算设备类型无效。</translation>
+    </message>
+    <message>
+      <source>Invalid estimated profile status.</source>
+      <translation>估算配置状态无效。</translation>
     </message>
     <message>
       <source>Invalid filter type</source>
@@ -1497,12 +1676,20 @@ Do you want to delete it anyway?</source>
       <translation>保留当前均衡设置</translation>
     </message>
     <message>
+      <source>Known component responses</source>
+      <translation>已知组件响应</translation>
+    </message>
+    <message>
       <source>L</source>
       <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
       <translation>语言与区域设置</translation>
+    </message>
+    <message>
+      <source>Left</source>
+      <translation>左</translation>
     </message>
     <message>
       <source>Left right balance</source>
@@ -1519,6 +1706,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>资料库大小超过 16 MiB。</translation>
+    </message>
+    <message>
+      <source>Linear</source>
+      <translation>线性</translation>
     </message>
     <message>
       <source>List audio endpoints</source>
@@ -1548,6 +1739,10 @@ Do you want to delete it anyway?</source>
       <translation>低保真</translation>
     </message>
     <message>
+      <source>Load preset</source>
+      <translation>加载预设</translation>
+    </message>
+    <message>
       <source>Lock EQ</source>
       <extracomment>Prevent accidental editing of EQ controls; not encryption or a security lock.</extracomment>
       <translation>锁定均衡器</translation>
@@ -1555,6 +1750,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Lock equalizer settings</source>
       <translation>锁定均衡器设置</translation>
+    </message>
+    <message>
+      <source>Logarithmic</source>
+      <translation>对数</translation>
     </message>
     <message>
       <source>Look in:</source>
@@ -1575,8 +1774,16 @@ Do you want to delete it anyway?</source>
       <translation>管理配置文件</translation>
     </message>
     <message>
+      <source>Mandolin</source>
+      <translation>曼陀林</translation>
+    </message>
+    <message>
       <source>Manufacturer</source>
       <translation>制造商</translation>
+    </message>
+    <message>
+      <source>Maximum frequency</source>
+      <translation>最高频率</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
@@ -1595,6 +1802,10 @@ Do you want to delete it anyway?</source>
       <translation>测量扬声器、房间和麦克风的响应</translation>
     </message>
     <message>
+      <source>Measured chain</source>
+      <translation>已测量的完整链路</translation>
+    </message>
+    <message>
       <source>Measured listening position</source>
       <translation>已测量的聆听位置</translation>
       <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
@@ -1607,6 +1818,10 @@ Do you want to delete it anyway?</source>
       <source>Measured response</source>
       <translation>测得的响应</translation>
       <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measured responses must overlap by at least two octaves.</source>
+      <translation>实测响应必须至少重叠两个八度。</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
@@ -1700,6 +1915,11 @@ Do you want to delete it anyway?</source>
       <translation>麦克风录音发生削波。请降低麦克风增益或增强量，然后重新测量。</translation>
     </message>
     <message>
+      <source>Microphone response</source>
+      <translation>麦克风响应</translation>
+      <extracomment>A relative spectrum comparison against a captured reference. Includes source and room; not certified isolated microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Microphone route</source>
       <translation>麦克风路由</translation>
     </message>
@@ -1708,8 +1928,20 @@ Do you want to delete it anyway?</source>
       <translation>麦克风启动超时</translation>
     </message>
     <message>
+      <source>Minimum frequency</source>
+      <translation>最低频率</translation>
+    </message>
+    <message>
+      <source>Mix</source>
+      <translation>混合</translation>
+    </message>
+    <message>
       <source>Model</source>
       <translation>型号</translation>
+    </message>
+    <message>
+      <source>Mono</source>
+      <translation>单声道</translation>
     </message>
     <message>
       <source>Move right for a broader adjustment.</source>
@@ -1722,6 +1954,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Movies</source>
       <translation>电影</translation>
+    </message>
+    <message>
+      <source>Music mode</source>
+      <translation>音乐模式</translation>
     </message>
     <message>
       <source>My equipment</source>
@@ -1801,6 +2037,14 @@ Do you want to delete it anyway?</source>
       <translation>无 — 使用我的均衡设置</translation>
     </message>
     <message>
+      <source>Not enough broadband reference data.</source>
+      <translation>宽带参考数据不足。</translation>
+    </message>
+    <message>
+      <source>Note grid</source>
+      <translation>音符网格</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>数字和日期格式</translation>
     </message>
@@ -1811,6 +2055,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>OK</source>
       <translation>确定</translation>
+    </message>
+    <message>
+      <source>Octave</source>
+      <translation>倍频程</translation>
     </message>
     <message>
       <source>Omnidirectional speaker</source>
@@ -1878,6 +2126,10 @@ Do you want to delete it anyway?</source>
       <translation>打开测试音频写入接口</translation>
     </message>
     <message>
+      <source>Open the estimated response and correction in the editor. Nothing is saved or applied yet.</source>
+      <translation>在编辑器中打开估算响应和校正。目前不会保存或应用任何内容。</translation>
+    </message>
+    <message>
       <source>Open update folder</source>
       <translation>打开更新文件夹</translation>
     </message>
@@ -1908,6 +2160,10 @@ Do you want to delete it anyway?</source>
       <translation>总体输出</translation>
     </message>
     <message>
+      <source>Palette</source>
+      <translation>调色板</translation>
+    </message>
+    <message>
       <source>Panel speaker</source>
       <translation>平板音箱</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
@@ -1925,6 +2181,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>暂停处理并打开音频设置。应用保持打开并报告结果。安装驱动后请重启 Windows。</translation>
+    </message>
+    <message>
+      <source>Peak hold</source>
+      <translation>峰值保持</translation>
     </message>
     <message>
       <source>Peak markers</source>
@@ -1946,6 +2206,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Playback</source>
       <translation>播放</translation>
+    </message>
+    <message>
+      <source>Playback monitor</source>
+      <translation>播放监听</translation>
     </message>
     <message>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
@@ -2214,6 +2478,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
+      <source>Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement.</source>
+      <translation>参考比较包含声源、房间和参考麦克风的影响，并非对麦克风单独进行的测量或经认证的测量。</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>刷新设备</translation>
     </message>
@@ -2328,6 +2596,14 @@ Do you want to delete it anyway?</source>
       <translation>重试</translation>
     </message>
     <message>
+      <source>Review estimated profile</source>
+      <translation>检查估算配置</translation>
+    </message>
+    <message>
+      <source>Right</source>
+      <translation>右</translation>
+    </message>
+    <message>
       <source>Right-to-left test language</source>
       <translation>从右到左测试语言</translation>
     </message>
@@ -2382,6 +2658,10 @@ Do you want to delete it anyway?</source>
       <translation>已保存预设“%1”。</translation>
     </message>
     <message>
+      <source>Scroll speed</source>
+      <translation>滚动速度</translation>
+    </message>
+    <message>
       <source>Search brand, family, model or measurement conditions</source>
       <translation>搜索品牌、系列、型号或测量条件</translation>
     </message>
@@ -2397,6 +2677,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Select band %1</source>
       <translation>选择频段 %1</translation>
+    </message>
+    <message>
+      <source>Select between one and eight known component responses.</source>
+      <translation>请选择一至八个已知组件响应。</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
@@ -2461,6 +2745,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
+      <source>Settings</source>
+      <translation>设置</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>设置 &amp;&amp; 校准</translation>
     </message>
@@ -2490,6 +2778,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>较短的间隔会更频繁地更新电平，并消耗更多 CPU；音频传输可能限制实际更新速率</translation>
+    </message>
+    <message>
+      <source>Show EQ response graph</source>
+      <translation>显示 EQ 响应曲线</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
@@ -2649,6 +2941,14 @@ Do you want to delete it anyway?</source>
       <translation>扬声器类型</translation>
     </message>
     <message>
+      <source>Spectrogram</source>
+      <translation>时频谱图</translation>
+    </message>
+    <message>
+      <source>Spectrum</source>
+      <translation>频谱</translation>
+    </message>
+    <message>
       <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
       <translation>Spinorama AutoEQ：校正增益限制为 %1，Q 限制为 %2。低于 %3 的提升被省略。您的聆听预设单独叠加。</translation>
       <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
@@ -2692,6 +2992,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
+      <source>Stereo</source>
+      <translation>立体声</translation>
+    </message>
+    <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
       <translation>更改音频驱动前请停止麦克风校准。</translation>
     </message>
@@ -2708,6 +3012,10 @@ Do you want to delete it anyway?</source>
       <source>Studio profile has an invalid numeric field</source>
       <translation>Studio 配置文件包含无效的数值字段</translation>
       <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
+    </message>
+    <message>
+      <source>Subtract known measured responses from a measured chain response, then review the estimated correction.</source>
+      <translation>从完整链路响应中减去已知的实测响应，然后检查估算校正。</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
@@ -2793,6 +3101,10 @@ Do you want to delete it anyway?</source>
       <translation>这里导入的是实测响应，而不是已经反向转换的均衡器增益。请确认设备类型。绝对声压级 SPL 需要在导入前归一化。</translation>
     </message>
     <message>
+      <source>This is an estimated residual, not a certified equipment measurement. Any unknown room, microphone, clothing, placement or interface response remains included. Published curves may not match your setup. Do not correct deep nulls or unmeasured frequencies.</source>
+      <translation>这是估算的剩余响应，并非经过认证的设备测量。房间、麦克风、衣物、位置或接口的未知影响仍然包含在内。公开曲线可能与您的系统不符。请勿校正深度抵消或未经测量的频率。</translation>
+    </message>
+    <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
       <translation>此配置已更改。离开前保存自定义副本？</translation>
     </message>
@@ -2820,12 +3132,20 @@ Do you want to delete it anyway?</source>
       <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
+      <source>Transient markers</source>
+      <translation>瞬态标记</translation>
+    </message>
+    <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
       <translation>翻译覆盖率：%1 / %2 条消息。缺少翻译的消息使用英语。语言包未经验证，等待母语使用者审阅。请退出并重新打开以应用更改。</translation>
     </message>
     <message>
       <source>Treble Detail</source>
       <translation>高音细节</translation>
+    </message>
+    <message>
+      <source>Tuner</source>
+      <translation>调音器</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
@@ -2846,6 +3166,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Type</source>
       <translation>类型</translation>
+    </message>
+    <message>
+      <source>Ukulele</source>
+      <translation>尤克里里</translation>
     </message>
     <message>
       <source>Unclassified equipment</source>
@@ -2893,6 +3217,10 @@ Do you want to delete it anyway?</source>
       <translation>不支持的设备配置格式版本（应为 2/3）。</translation>
     </message>
     <message>
+      <source>Unsupported equipment profile schema (expected 2/3/4).</source>
+      <translation>不支持的设备配置架构（应为 2/3/4）。</translation>
+    </message>
+    <message>
       <source>Unsupported filter type.</source>
       <translation>不支持的滤波器类型。</translation>
     </message>
@@ -2917,6 +3245,11 @@ Do you want to delete it anyway?</source>
       <translation>不支持的扬声器配置格式版本</translation>
     </message>
     <message>
+      <source>Update</source>
+      <translation>更新</translation>
+      <extracomment>Button opening the official software-release downloads. Does not refresh audio data or install automatically.</extracomment>
+    </message>
+    <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
       <translation>更新 %1 已下载：%2。请退出，在现有应用上直接安装，然后重新打开。</translation>
     </message>
@@ -2927,6 +3260,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
       <translation>请使用安静的房间。同时测量扬声器、房间和麦克风；结果包含麦克风响应。</translation>
+    </message>
+    <message>
+      <source>Use an imported measurement of the complete chain. Select only measured component responses that were part of that chain. Correction EQ filters are never subtracted.</source>
+      <translation>使用导入的完整链路测量。仅选择该链路中组件的实测响应。绝不会减去校正滤波器。</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -3020,6 +3357,22 @@ Do you want to delete it anyway?</source>
       <translation>由于另一个 SoundCurrent 应用仍已安装，VB-CABLE 已保留。如果其他软件不需要它，请在卸载最后一个应用时移除它。</translation>
     </message>
     <message>
+      <source>Vectorscope</source>
+      <translation>矢量示波器</translation>
+    </message>
+    <message>
+      <source>View</source>
+      <translation>视图</translation>
+    </message>
+    <message>
+      <source>Viola</source>
+      <translation>中提琴</translation>
+    </message>
+    <message>
+      <source>Violin</source>
+      <translation>小提琴</translation>
+    </message>
+    <message>
       <source>Vocal Focus</source>
       <translation>人声突出</translation>
     </message>
@@ -3034,6 +3387,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Warmth</source>
       <translation>温暖感</translation>
+    </message>
+    <message>
+      <source>Waveform</source>
+      <translation>波形</translation>
     </message>
     <message>
       <source>Whole listening system</source>

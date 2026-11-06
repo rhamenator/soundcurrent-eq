@@ -141,6 +141,18 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>A component cannot be subtracted twice or from itself.</source>
+      <translation>Součást nelze odečíst dvakrát ani od sebe samé.</translation>
+    </message>
+    <message>
+      <source>A measured chain response is required; correction filters cannot be subtracted.</source>
+      <translation>Je nutná změřená charakteristika řetězce; korekční filtry nelze odečítat.</translation>
+    </message>
+    <message>
+      <source>A measured component response is required; correction filters cannot be subtracted.</source>
+      <translation>Je nutná změřená charakteristika součásti; korekční filtry nelze odečítat.</translation>
+    </message>
+    <message>
       <source>A private user runtime directory is required</source>
       <translation>Je vyžadován soukromý běhový adresář uživatele</translation>
       <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
@@ -220,6 +232,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Všechny podtypy</translation>
     </message>
     <message>
+      <source>Amber</source>
+      <translation>Jantarová</translation>
+    </message>
+    <message>
       <source>Ambience</source>
       <translation>Prostorový dozvuk</translation>
     </message>
@@ -256,8 +272,16 @@ Přesto chcete soubor smazat?</translation>
       <translation>Profily zesilovačů vyžadují elektrická měření se známou zátěží reproduktorů, vstupem a nastavením tónových korekcí. Importujte soubor s naměřenou korekcí; křivky zesilovačů se neodvozují z marketingových specifikací.</translation>
     </message>
     <message>
+      <source>Amplitude</source>
+      <translation>Amplituda</translation>
+    </message>
+    <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
       <translation>Byla nainstalována aktualizace aplikace. Použijte Ukončit a aplikaci znovu otevřete, aby se aktualizace načetla; zavřením tohoto okna zůstane stará verze spuštěná.</translation>
+    </message>
+    <message>
+      <source>Analysis sample rate</source>
+      <translation>Vzorkovací frekvence analýzy</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
@@ -399,8 +423,21 @@ Přesto chcete soubor smazat?</translation>
       <translation>Automatické směrování zvuku není dostupné</translation>
     </message>
     <message>
+      <source>Automatic range</source>
+      <translation>Automatický rozsah</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Automaticky upravit zvuk připojeného mikrofonu; kliknutím obejdete mikrofonní EQ</translation>
+    </message>
+    <message>
+      <source>Average</source>
+      <translation>Průměr</translation>
+    </message>
+    <message>
+      <source>Averaged spectrum</source>
+      <translation>Průměrované spektrum</translation>
+      <extracomment>A time-smoothed digital frequency spectrum, not a measured room response.</extracomment>
     </message>
     <message>
       <source>Back</source>
@@ -448,6 +485,15 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Bass frequency</source>
       <translation>Frekvence basů</translation>
+    </message>
+    <message>
+      <source>Bass guitar</source>
+      <translation>Baskytara</translation>
+      <extracomment>Instrument tuner preset for standard bass-guitar strings.</extracomment>
+    </message>
+    <message>
+      <source>Blue</source>
+      <translation>Modrá</translation>
     </message>
     <message>
       <source>Bookshelf speaker</source>
@@ -565,6 +611,15 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
+      <source>Capture reference</source>
+      <translation>Zachytit referenci</translation>
+      <extracomment>Snapshot the accumulated spectrum as a reference and reset the running average for the comparison measurement.</extracomment>
+    </message>
+    <message>
+      <source>Cello</source>
+      <translation>Violoncello</translation>
+    </message>
+    <message>
       <source>Center</source>
       <translation>Střed</translation>
     </message>
@@ -586,6 +641,14 @@ Přesto chcete soubor smazat?</translation>
       <source>Change to list view mode</source>
       <translation>Změnit na režim pohledu se seznamem</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Channel</source>
+      <translation>Kanál</translation>
+    </message>
+    <message>
+      <source>Channels</source>
+      <translation>Kanály</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -621,6 +684,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Choose update folder…</source>
       <translation>Vybrat složku aktualizací…</translation>
+    </message>
+    <message>
+      <source>Chromatic</source>
+      <translation>Chromatická</translation>
     </message>
     <message>
       <source>Cinema speaker</source>
@@ -791,6 +858,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Nepodařilo se spustit bezpečnostní kontrolu výstupní hlasitosti</translation>
     </message>
     <message>
+      <source>Could not start playback monitoring</source>
+      <translation>Nelze spustit monitorování přehrávání</translation>
+    </message>
+    <message>
       <source>Could not start the measurement.</source>
       <translation>Nepodařilo se spustit měření.</translation>
     </message>
@@ -826,6 +897,11 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Create a new correction profile.</source>
       <translation>Vytvořit nový korekční profil.</translation>
+    </message>
+    <message>
+      <source>Create microphone profile</source>
+      <translation>Vytvořit profil mikrofonu</translation>
+      <extracomment>Propose relative correction filters for review in the profile editor. Saving does not apply them automatically.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -877,6 +953,14 @@ Přesto chcete soubor smazat?</translation>
       <translation>Smazat tento uložený vlastní profil.</translation>
     </message>
     <message>
+      <source>Derivation metadata exceeds 32 KiB.</source>
+      <translation>Metadata odvození přesahují 32 KiB.</translation>
+    </message>
+    <message>
+      <source>Derivation metadata requires an estimated profile.</source>
+      <translation>Metadata odvození vyžadují odhadovaný profil.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>Podrobný pohled</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -894,6 +978,16 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Discard</source>
       <translation>Zahodit</translation>
+    </message>
+    <message>
+      <source>Display ceiling</source>
+      <translation>Horní mez zobrazení</translation>
+      <extracomment>Upper vertical-axis limit in dBFS. Changes visualization only; never a limiter or audio gain.</extracomment>
+    </message>
+    <message>
+      <source>Display sensitivity</source>
+      <translation>Citlivost zobrazení</translation>
+      <extracomment>Displayed dynamic range in dB. Does not change hardware microphone gain.</extracomment>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
@@ -1073,6 +1167,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Typ zařízení</translation>
     </message>
     <message>
+      <source>Estimate profile</source>
+      <translation>Odhadnout profil</translation>
+    </message>
+    <message>
       <source>Estimated output level near band %1</source>
       <translation>Odhadovaná výstupní úroveň v okolí pásma %1</translation>
     </message>
@@ -1113,6 +1211,26 @@ Přesto chcete soubor smazat?</translation>
       <translation>Odhadovaná výstupní špička za EQ včetně výstupního zesílení a vyvážení</translation>
     </message>
     <message>
+      <source>Estimated profile</source>
+      <translation>Odhadovaný profil</translation>
+    </message>
+    <message>
+      <source>Estimated profile status is required for schema 4.</source>
+      <translation>Schéma 4 vyžaduje stav odhadovaného profilu.</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require derivation metadata.</source>
+      <translation>Odhadované profily vyžadují metadata odvození.</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require method and limitations.</source>
+      <translation>Odhadované profily vyžadují metodu a omezení.</translation>
+    </message>
+    <message>
+      <source>Estimated response exceeds the supported range.</source>
+      <translation>Odhadovaná charakteristika překračuje podporovaný rozsah.</translation>
+    </message>
+    <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
       <translation>Ukončit SoundCurrent EQ a obnovit běžný zvuk</translation>
     </message>
@@ -1143,6 +1261,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Export the selected profile to a JSON file.</source>
       <translation>Exportovat vybraný profil do souboru JSON.</translation>
+    </message>
+    <message>
+      <source>FFT size</source>
+      <translation>Velikost FFT</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1211,12 +1333,25 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Frames: %1 · FFT: %2 ms · Resolution: %3 Hz · Window: %4 ms</source>
+      <translation>Snímky: %1 · FFT: %2 ms · Rozlišení: %3 Hz · Okno: %4 ms</translation>
+    </message>
+    <message>
+      <source>Freeze display</source>
+      <translation>Zmrazit zobrazení</translation>
+      <extracomment>Hold the current analyzer picture; capture can continue, but visualization FFT work stops.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Frekvence</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
       <translation>Frekvence v Hz</translation>
+    </message>
+    <message>
+      <source>Frequency scale</source>
+      <translation>Frekvenční stupnice</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
@@ -1251,6 +1386,22 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Gray</source>
+      <translation>Šedá</translation>
+    </message>
+    <message>
+      <source>Green</source>
+      <translation>Zelená</translation>
+    </message>
+    <message>
+      <source>Grid</source>
+      <translation>Mřížka</translation>
+    </message>
+    <message>
+      <source>Guitar</source>
+      <translation>Kytara</translation>
+    </message>
+    <message>
       <source>Headphones</source>
       <translation>Sluchátka</translation>
     </message>
@@ -1270,6 +1421,18 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Hip-Hop</source>
       <translation>Hip-Hop</translation>
+    </message>
+    <message>
+      <source>History length</source>
+      <translation>Délka historie</translation>
+    </message>
+    <message>
+      <source>I understand that unknown room, microphone, clothing and placement effects remain in this estimate.</source>
+      <translation>Rozumím, že neznámé vlivy místnosti, mikrofonu, oblečení a umístění zůstávají součástí odhadu.</translation>
+    </message>
+    <message>
+      <source>Ice</source>
+      <translation>Led</translation>
     </message>
     <message>
       <source>Ignore</source>
@@ -1371,6 +1534,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Nainstalovaná verze: %1</translation>
     </message>
     <message>
+      <source>Instrument</source>
+      <translation>Nástroj</translation>
+    </message>
+    <message>
       <source>Interface language</source>
       <translation>Jazyk rozhraní</translation>
     </message>
@@ -1393,6 +1560,10 @@ Přesto chcete soubor smazat?</translation>
       <source>Invalid Studio route</source>
       <translation>Neplatné zvukové propojení Studio</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth.</source>
+      <translation>Neplatné nastavení analýzy. Okno FFT smí mít nejvýše 250 ms a frekvence musí zůstat v zachyceném zvukovém pásmu.</translation>
     </message>
     <message>
       <source>Invalid audio setup requester.</source>
@@ -1424,6 +1595,14 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>Neplatný podtyp zařízení nebo typ napájení</translation>
+    </message>
+    <message>
+      <source>Invalid estimated equipment kind.</source>
+      <translation>Neplatný typ odhadovaného zařízení.</translation>
+    </message>
+    <message>
+      <source>Invalid estimated profile status.</source>
+      <translation>Neplatný stav odhadovaného profilu.</translation>
     </message>
     <message>
       <source>Invalid filter type</source>
@@ -1497,12 +1676,20 @@ Přesto chcete soubor smazat?</translation>
       <translation>Zachovat současné nastavení EQ</translation>
     </message>
     <message>
+      <source>Known component responses</source>
+      <translation>Známé charakteristiky součástí</translation>
+    </message>
+    <message>
       <source>L</source>
       <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
       <translation>Jazyk a místní nastavení</translation>
+    </message>
+    <message>
+      <source>Left</source>
+      <translation>Levý</translation>
     </message>
     <message>
       <source>Left right balance</source>
@@ -1519,6 +1706,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>Knihovna přesahuje 16 MiB.</translation>
+    </message>
+    <message>
+      <source>Linear</source>
+      <translation>Lineární</translation>
     </message>
     <message>
       <source>List audio endpoints</source>
@@ -1548,6 +1739,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Lo-Fi</translation>
     </message>
     <message>
+      <source>Load preset</source>
+      <translation>Načíst předvolbu</translation>
+    </message>
+    <message>
       <source>Lock EQ</source>
       <extracomment>Prevent accidental editing of EQ controls; not encryption or a security lock.</extracomment>
       <translation>Zamknout EQ</translation>
@@ -1555,6 +1750,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Lock equalizer settings</source>
       <translation>Zamknout nastavení ekvalizéru</translation>
+    </message>
+    <message>
+      <source>Logarithmic</source>
+      <translation>Logaritmická</translation>
     </message>
     <message>
       <source>Look in:</source>
@@ -1575,8 +1774,16 @@ Přesto chcete soubor smazat?</translation>
       <translation>Spravovat profily</translation>
     </message>
     <message>
+      <source>Mandolin</source>
+      <translation>Mandolína</translation>
+    </message>
+    <message>
       <source>Manufacturer</source>
       <translation>Výrobce</translation>
+    </message>
+    <message>
+      <source>Maximum frequency</source>
+      <translation>Maximální frekvence</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
@@ -1595,6 +1802,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Změřit odezvu reproduktorů, místnosti a mikrofonu</translation>
     </message>
     <message>
+      <source>Measured chain</source>
+      <translation>Změřený řetězec</translation>
+    </message>
+    <message>
       <source>Measured listening position</source>
       <translation>Změřená poslechová pozice</translation>
       <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
@@ -1607,6 +1818,10 @@ Přesto chcete soubor smazat?</translation>
       <source>Measured response</source>
       <translation>Změřená odezva</translation>
       <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measured responses must overlap by at least two octaves.</source>
+      <translation>Změřené charakteristiky se musí překrývat alespoň o dvě oktávy.</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
@@ -1700,6 +1915,11 @@ Přesto chcete soubor smazat?</translation>
       <translation>Záznam z mikrofonu je přebuzený. Snižte zesílení mikrofonu nebo jeho dodatečné zesílení a opakujte měření.</translation>
     </message>
     <message>
+      <source>Microphone response</source>
+      <translation>Odezva mikrofonu</translation>
+      <extracomment>A relative spectrum comparison against a captured reference. Includes source and room; not certified isolated microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Microphone route</source>
       <translation>Signálová cesta mikrofonu</translation>
     </message>
@@ -1708,8 +1928,20 @@ Přesto chcete soubor smazat?</translation>
       <translation>Vypršel časový limit spuštění mikrofonu</translation>
     </message>
     <message>
+      <source>Minimum frequency</source>
+      <translation>Minimální frekvence</translation>
+    </message>
+    <message>
+      <source>Mix</source>
+      <translation>Mix</translation>
+    </message>
+    <message>
       <source>Model</source>
       <translation>Model</translation>
+    </message>
+    <message>
+      <source>Mono</source>
+      <translation>Mono</translation>
     </message>
     <message>
       <source>Move right for a broader adjustment.</source>
@@ -1722,6 +1954,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Movies</source>
       <translation>Filmy</translation>
+    </message>
+    <message>
+      <source>Music mode</source>
+      <translation>Hudební režim</translation>
     </message>
     <message>
       <source>My equipment</source>
@@ -1801,6 +2037,14 @@ Přesto chcete soubor smazat?</translation>
       <translation>Žádná — použít vlastní EQ</translation>
     </message>
     <message>
+      <source>Not enough broadband reference data.</source>
+      <translation>Nedostatek širokopásmových referenčních dat.</translation>
+    </message>
+    <message>
+      <source>Note grid</source>
+      <translation>Notová mřížka</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Formát čísel a data</translation>
     </message>
@@ -1811,6 +2055,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>OK</source>
       <translation>OK</translation>
+    </message>
+    <message>
+      <source>Octave</source>
+      <translation>Oktávová</translation>
     </message>
     <message>
       <source>Omnidirectional speaker</source>
@@ -1878,6 +2126,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Otevřít zapisovací rozhraní testovacího přehrávání</translation>
     </message>
     <message>
+      <source>Open the estimated response and correction in the editor. Nothing is saved or applied yet.</source>
+      <translation>Otevřít odhadovanou charakteristiku a korekci v editoru. Zatím se nic neukládá ani nepoužívá.</translation>
+    </message>
+    <message>
       <source>Open update folder</source>
       <translation>Otevřít složku aktualizací</translation>
     </message>
@@ -1908,6 +2160,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Celkový výstup</translation>
     </message>
     <message>
+      <source>Palette</source>
+      <translation>Paleta</translation>
+    </message>
+    <message>
       <source>Panel speaker</source>
       <translation>Panelový reproduktor</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
@@ -1925,6 +2181,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>Pozastavit zpracování a otevřít nastavení zvuku. Aplikace zůstane otevřená a oznámí výsledek. Po instalaci ovladače restartujte Windows.</translation>
+    </message>
+    <message>
+      <source>Peak hold</source>
+      <translation>Podržení špiček</translation>
     </message>
     <message>
       <source>Peak markers</source>
@@ -1946,6 +2206,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Playback</source>
       <translation>Přehrávání</translation>
+    </message>
+    <message>
+      <source>Playback monitor</source>
+      <translation>Monitor přehrávání</translation>
     </message>
     <message>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
@@ -2214,6 +2478,10 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
+      <source>Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement.</source>
+      <translation>Referenční porovnání zahrnuje zdroj zvuku, místnost a referenční mikrofon. Nejde o izolované ani certifikované měření mikrofonu.</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Obnovit seznam zařízení</translation>
     </message>
@@ -2328,6 +2596,14 @@ Přesto chcete soubor smazat?</translation>
       <translation>Zkusit znovu</translation>
     </message>
     <message>
+      <source>Review estimated profile</source>
+      <translation>Zkontrolovat odhadovaný profil</translation>
+    </message>
+    <message>
+      <source>Right</source>
+      <translation>Pravý</translation>
+    </message>
+    <message>
       <source>Right-to-left test language</source>
       <translation>Testovací jazyk zprava doleva</translation>
     </message>
@@ -2382,6 +2658,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Předvolba „%1“ uložena.</translation>
     </message>
     <message>
+      <source>Scroll speed</source>
+      <translation>Rychlost posouvání</translation>
+    </message>
+    <message>
       <source>Search brand, family, model or measurement conditions</source>
       <translation>Hledat značku, řadu, model nebo podmínky měření</translation>
     </message>
@@ -2397,6 +2677,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Select band %1</source>
       <translation>Vybrat pásmo %1</translation>
+    </message>
+    <message>
+      <source>Select between one and eight known component responses.</source>
+      <translation>Vyberte jednu až osm známých charakteristik součástí.</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
@@ -2461,6 +2745,10 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
+      <source>Settings</source>
+      <translation>Nastavení</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Nastavení &amp;&amp; kalibrace</translation>
     </message>
@@ -2490,6 +2778,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>Kratší intervaly obnovují úrovně častěji a více zatěžují CPU; skutečnou rychlost může omezovat dodávání zvuku</translation>
+    </message>
+    <message>
+      <source>Show EQ response graph</source>
+      <translation>Zobrazit křivku odezvy EQ</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
@@ -2649,6 +2941,14 @@ Přesto chcete soubor smazat?</translation>
       <translation>Typ reproduktoru</translation>
     </message>
     <message>
+      <source>Spectrogram</source>
+      <translation>Spektrogram</translation>
+    </message>
+    <message>
+      <source>Spectrum</source>
+      <translation>Spektrum</translation>
+    </message>
+    <message>
       <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
       <translation>Spinorama AutoEQ: zisk korekce je omezen na %1 a Q na %2. Zesílení pod %3 se vynechává. Vaše poslechová předvolba se přidává samostatně.</translation>
       <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
@@ -2692,6 +2992,10 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
+      <source>Stereo</source>
+      <translation>Stereo</translation>
+    </message>
+    <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
       <translation>Před změnou zvukového ovladače zastavte kalibraci mikrofonu.</translation>
     </message>
@@ -2708,6 +3012,10 @@ Přesto chcete soubor smazat?</translation>
       <source>Studio profile has an invalid numeric field</source>
       <translation>Profil Studio obsahuje neplatné číselné pole</translation>
       <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
+    </message>
+    <message>
+      <source>Subtract known measured responses from a measured chain response, then review the estimated correction.</source>
+      <translation>Odečíst známé změřené charakteristiky od charakteristiky řetězce a zkontrolovat odhadovanou korekci.</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
@@ -2793,6 +3101,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Importuje se naměřená ODEZVA, nikoli již invertované zesílení EQ. Potvrďte typ zařízení. Absolutní SPL vyžaduje před importem normalizaci.</translation>
     </message>
     <message>
+      <source>This is an estimated residual, not a certified equipment measurement. Any unknown room, microphone, clothing, placement or interface response remains included. Published curves may not match your setup. Do not correct deep nulls or unmeasured frequencies.</source>
+      <translation>Jde o odhadovanou zbytkovou charakteristiku, nikoli certifikované měření zařízení. Neznámé vlivy místnosti, mikrofonu, oblečení, umístění nebo rozhraní zůstávají zahrnuty. Publikované křivky nemusí odpovídat sestavě. Nekorigujte hluboké propady ani nezměřené frekvence.</translation>
+    </message>
+    <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
       <translation>Tento profil byl změněn. Uložit před odchodem vlastní kopii?</translation>
     </message>
@@ -2820,12 +3132,20 @@ Přesto chcete soubor smazat?</translation>
       <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
+      <source>Transient markers</source>
+      <translation>Značky přechodových jevů</translation>
+    </message>
+    <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
       <translation>Pokrytí překladu: %1 z %2 zpráv. Chybějící překlady používají angličtinu. Jazykové balíčky jsou neověřené a čekají na kontrolu rodilým mluvčím. Změny použijete ukončením a opětovným otevřením aplikace.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
       <translation>Detaily výšek</translation>
+    </message>
+    <message>
+      <source>Tuner</source>
+      <translation>Ladička</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
@@ -2846,6 +3166,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Type</source>
       <translation>Typ</translation>
+    </message>
+    <message>
+      <source>Ukulele</source>
+      <translation>Ukulele</translation>
     </message>
     <message>
       <source>Unclassified equipment</source>
@@ -2893,6 +3217,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Nepodporované schéma profilu zařízení (očekáváno 2/3).</translation>
     </message>
     <message>
+      <source>Unsupported equipment profile schema (expected 2/3/4).</source>
+      <translation>Nepodporované schéma profilu zařízení (očekáváno 2/3/4).</translation>
+    </message>
+    <message>
       <source>Unsupported filter type.</source>
       <translation>Nepodporovaný typ filtru.</translation>
     </message>
@@ -2917,6 +3245,11 @@ Přesto chcete soubor smazat?</translation>
       <translation>Nepodporované schéma profilu reproduktoru</translation>
     </message>
     <message>
+      <source>Update</source>
+      <translation>Aktualizovat</translation>
+      <extracomment>Button opening the official software-release downloads. Does not refresh audio data or install automatically.</extracomment>
+    </message>
+    <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
       <translation>Aktualizace %1 je stažena: %2. Ukončete aplikaci, nainstalujte ji přes stávající aplikaci a znovu ji otevřete.</translation>
     </message>
@@ -2927,6 +3260,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
       <translation>Použijte tichou místnost. Měří společně reproduktory, místnost a mikrofon; výsledky zahrnují odezvu mikrofonu.</translation>
+    </message>
+    <message>
+      <source>Use an imported measurement of the complete chain. Select only measured component responses that were part of that chain. Correction EQ filters are never subtracted.</source>
+      <translation>Použijte importované měření celého řetězce. Vyberte pouze změřené charakteristiky součástí tohoto řetězce. Korekční filtry se nikdy neodečítají.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -3020,6 +3357,22 @@ Přesto chcete soubor smazat?</translation>
       <translation>VB-CABLE byl zachován, protože je nainstalována druhá aplikace SoundCurrent. Odstraňte jej s poslední aplikací, pokud jej nepotřebuje žádný jiný software.</translation>
     </message>
     <message>
+      <source>Vectorscope</source>
+      <translation>Vektorskop</translation>
+    </message>
+    <message>
+      <source>View</source>
+      <translation>Zobrazení</translation>
+    </message>
+    <message>
+      <source>Viola</source>
+      <translation>Viola</translation>
+    </message>
+    <message>
+      <source>Violin</source>
+      <translation>Housle</translation>
+    </message>
+    <message>
       <source>Vocal Focus</source>
       <translation>Zaměření na zpěv</translation>
     </message>
@@ -3034,6 +3387,10 @@ Přesto chcete soubor smazat?</translation>
     <message>
       <source>Warmth</source>
       <translation>Teplý tón</translation>
+    </message>
+    <message>
+      <source>Waveform</source>
+      <translation>Průběh vlny</translation>
     </message>
     <message>
       <source>Whole listening system</source>

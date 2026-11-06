@@ -141,6 +141,18 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>A component cannot be subtracted twice or from itself.</source>
+      <translation>Компонент не можна відняти двічі або від нього самого.</translation>
+    </message>
+    <message>
+      <source>A measured chain response is required; correction filters cannot be subtracted.</source>
+      <translation>Потрібна виміряна характеристика тракту; коригувальні фільтри віднімати не можна.</translation>
+    </message>
+    <message>
+      <source>A measured component response is required; correction filters cannot be subtracted.</source>
+      <translation>Потрібна виміряна характеристика компонента; коригувальні фільтри віднімати не можна.</translation>
+    </message>
+    <message>
       <source>A private user runtime directory is required</source>
       <translation>Потрібен приватний каталог середовища виконання користувача</translation>
       <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
@@ -220,6 +232,10 @@ Do you want to delete it anyway?</source>
       <translation>Усі підтипи</translation>
     </message>
     <message>
+      <source>Amber</source>
+      <translation>Бурштиновий</translation>
+    </message>
+    <message>
       <source>Ambience</source>
       <translation>Атмосфера приміщення</translation>
     </message>
@@ -256,8 +272,16 @@ Do you want to delete it anyway?</source>
       <translation>Профілі підсилювачів потребують електричних вимірювань із відомим навантаженням акустичних систем, входом і налаштуваннями тембру. Імпортуйте файл виміряної корекції; криві підсилювачів не виводяться з маркетингових характеристик.</translation>
     </message>
     <message>
+      <source>Amplitude</source>
+      <translation>Амплітуда</translation>
+    </message>
+    <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
       <translation>Установлено оновлення програми. Скористайтеся командою виходу та відкрийте програму знову, щоб завантажити його; закриття цього вікна залишає попередню версію запущеною.</translation>
+    </message>
+    <message>
+      <source>Analysis sample rate</source>
+      <translation>Частота дискретизації аналізу</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
@@ -399,8 +423,21 @@ Do you want to delete it anyway?</source>
       <translation>Автоматична маршрутизація аудіо недоступна</translation>
     </message>
     <message>
+      <source>Automatic range</source>
+      <translation>Автоматичний діапазон</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Автоматично коригувати звук під’єднаного мікрофона; натисніть, щоб обійти мікрофонний EQ</translation>
+    </message>
+    <message>
+      <source>Average</source>
+      <translation>Середнє</translation>
+    </message>
+    <message>
+      <source>Averaged spectrum</source>
+      <translation>Усереднений спектр</translation>
+      <extracomment>A time-smoothed digital frequency spectrum, not a measured room response.</extracomment>
     </message>
     <message>
       <source>Back</source>
@@ -448,6 +485,15 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Bass frequency</source>
       <translation>Частота басів</translation>
+    </message>
+    <message>
+      <source>Bass guitar</source>
+      <translation>Бас-гітара</translation>
+      <extracomment>Instrument tuner preset for standard bass-guitar strings.</extracomment>
+    </message>
+    <message>
+      <source>Blue</source>
+      <translation>Синій</translation>
     </message>
     <message>
       <source>Bookshelf speaker</source>
@@ -565,6 +611,15 @@ Do you want to delete it anyway?</source>
       <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
+      <source>Capture reference</source>
+      <translation>Записати еталон</translation>
+      <extracomment>Snapshot the accumulated spectrum as a reference and reset the running average for the comparison measurement.</extracomment>
+    </message>
+    <message>
+      <source>Cello</source>
+      <translation>Віолончель</translation>
+    </message>
+    <message>
       <source>Center</source>
       <translation>Центр</translation>
     </message>
@@ -586,6 +641,14 @@ Do you want to delete it anyway?</source>
       <source>Change to list view mode</source>
       <translation>Перейти до перегляду списком</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Channel</source>
+      <translation>Канал</translation>
+    </message>
+    <message>
+      <source>Channels</source>
+      <translation>Канали</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -621,6 +684,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Choose update folder…</source>
       <translation>Вибрати папку оновлень…</translation>
+    </message>
+    <message>
+      <source>Chromatic</source>
+      <translation>Хроматичний</translation>
     </message>
     <message>
       <source>Cinema speaker</source>
@@ -791,6 +858,10 @@ Do you want to delete it anyway?</source>
       <translation>Не вдалося запустити захист вихідної гучності</translation>
     </message>
     <message>
+      <source>Could not start playback monitoring</source>
+      <translation>Не вдалося запустити моніторинг відтворення</translation>
+    </message>
+    <message>
       <source>Could not start the measurement.</source>
       <translation>Не вдалося почати вимірювання.</translation>
     </message>
@@ -826,6 +897,11 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Create a new correction profile.</source>
       <translation>Створити новий профіль корекції.</translation>
+    </message>
+    <message>
+      <source>Create microphone profile</source>
+      <translation>Створити профіль мікрофона</translation>
+      <extracomment>Propose relative correction filters for review in the profile editor. Saving does not apply them automatically.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -877,6 +953,14 @@ Do you want to delete it anyway?</source>
       <translation>Видалити цей збережений власний профіль.</translation>
     </message>
     <message>
+      <source>Derivation metadata exceeds 32 KiB.</source>
+      <translation>Метадані виведення перевищують 32 KiB.</translation>
+    </message>
+    <message>
+      <source>Derivation metadata requires an estimated profile.</source>
+      <translation>Метадані виведення потребують оціненого профілю.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>Детально</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -894,6 +978,16 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Discard</source>
       <translation>Відкинути</translation>
+    </message>
+    <message>
+      <source>Display ceiling</source>
+      <translation>Верхня межа відображення</translation>
+      <extracomment>Upper vertical-axis limit in dBFS. Changes visualization only; never a limiter or audio gain.</extracomment>
+    </message>
+    <message>
+      <source>Display sensitivity</source>
+      <translation>Чутливість відображення</translation>
+      <extracomment>Displayed dynamic range in dB. Does not change hardware microphone gain.</extracomment>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
@@ -1073,6 +1167,10 @@ Do you want to delete it anyway?</source>
       <translation>Тип обладнання</translation>
     </message>
     <message>
+      <source>Estimate profile</source>
+      <translation>Оцінити профіль</translation>
+    </message>
+    <message>
       <source>Estimated output level near band %1</source>
       <translation>Оцінений вихідний рівень поблизу смуги %1</translation>
     </message>
@@ -1113,6 +1211,26 @@ Do you want to delete it anyway?</source>
       <translation>Оцінений вихідний пік після EQ, з урахуванням вихідного підсилення та балансу</translation>
     </message>
     <message>
+      <source>Estimated profile</source>
+      <translation>Оцінений профіль</translation>
+    </message>
+    <message>
+      <source>Estimated profile status is required for schema 4.</source>
+      <translation>Схема 4 потребує статусу оціненого профілю.</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require derivation metadata.</source>
+      <translation>Оцінені профілі потребують метаданих виведення.</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require method and limitations.</source>
+      <translation>Оцінені профілі потребують методу й обмежень.</translation>
+    </message>
+    <message>
+      <source>Estimated response exceeds the supported range.</source>
+      <translation>Оцінена характеристика виходить за підтримуваний діапазон.</translation>
+    </message>
+    <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
       <translation>Завершити роботу SoundCurrent EQ і відновити звичайне аудіо</translation>
     </message>
@@ -1143,6 +1261,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Export the selected profile to a JSON file.</source>
       <translation>Експортувати вибраний профіль у файл JSON.</translation>
+    </message>
+    <message>
+      <source>FFT size</source>
+      <translation>Розмір FFT</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1211,12 +1333,25 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Frames: %1 · FFT: %2 ms · Resolution: %3 Hz · Window: %4 ms</source>
+      <translation>Кадри: %1 · FFT: %2 ms · Роздільність: %3 Hz · Вікно: %4 ms</translation>
+    </message>
+    <message>
+      <source>Freeze display</source>
+      <translation>Зупинити зображення</translation>
+      <extracomment>Hold the current analyzer picture; capture can continue, but visualization FFT work stops.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Частота</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
       <translation>Частота в Hz</translation>
+    </message>
+    <message>
+      <source>Frequency scale</source>
+      <translation>Частотна шкала</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
@@ -1251,6 +1386,22 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Gray</source>
+      <translation>Сірий</translation>
+    </message>
+    <message>
+      <source>Green</source>
+      <translation>Зелений</translation>
+    </message>
+    <message>
+      <source>Grid</source>
+      <translation>Сітка</translation>
+    </message>
+    <message>
+      <source>Guitar</source>
+      <translation>Гітара</translation>
+    </message>
+    <message>
       <source>Headphones</source>
       <translation>Навушники</translation>
     </message>
@@ -1270,6 +1421,18 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Hip-Hop</source>
       <translation>Хіп-хоп</translation>
+    </message>
+    <message>
+      <source>History length</source>
+      <translation>Тривалість історії</translation>
+    </message>
+    <message>
+      <source>I understand that unknown room, microphone, clothing and placement effects remain in this estimate.</source>
+      <translation>Я розумію, що невідомі впливи кімнати, мікрофона, одягу та розташування залишаються в цій оцінці.</translation>
+    </message>
+    <message>
+      <source>Ice</source>
+      <translation>Лід</translation>
     </message>
     <message>
       <source>Ignore</source>
@@ -1371,6 +1534,10 @@ Do you want to delete it anyway?</source>
       <translation>Установлена версія: %1</translation>
     </message>
     <message>
+      <source>Instrument</source>
+      <translation>Інструмент</translation>
+    </message>
+    <message>
       <source>Interface language</source>
       <translation>Мова інтерфейсу</translation>
     </message>
@@ -1393,6 +1560,10 @@ Do you want to delete it anyway?</source>
       <source>Invalid Studio route</source>
       <translation>Некоректне аудіоз’єднання Studio</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth.</source>
+      <translation>Некоректні налаштування аналізу. Вікно FFT не має перевищувати 250 ms, а частоти мають бути в межах захопленої звукової смуги.</translation>
     </message>
     <message>
       <source>Invalid audio setup requester.</source>
@@ -1424,6 +1595,14 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>Неприпустимий підтип обладнання або тип живлення</translation>
+    </message>
+    <message>
+      <source>Invalid estimated equipment kind.</source>
+      <translation>Некоректний тип оцінюваного обладнання.</translation>
+    </message>
+    <message>
+      <source>Invalid estimated profile status.</source>
+      <translation>Некоректний статус оціненого профілю.</translation>
     </message>
     <message>
       <source>Invalid filter type</source>
@@ -1497,12 +1676,20 @@ Do you want to delete it anyway?</source>
       <translation>Зберегти поточні налаштування EQ</translation>
     </message>
     <message>
+      <source>Known component responses</source>
+      <translation>Відомі характеристики компонентів</translation>
+    </message>
+    <message>
       <source>L</source>
       <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
       <translation>Мова та регіональні налаштування</translation>
+    </message>
+    <message>
+      <source>Left</source>
+      <translation>Лівий</translation>
     </message>
     <message>
       <source>Left right balance</source>
@@ -1519,6 +1706,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>Бібліотека перевищує 16 MiB.</translation>
+    </message>
+    <message>
+      <source>Linear</source>
+      <translation>Лінійна</translation>
     </message>
     <message>
       <source>List audio endpoints</source>
@@ -1548,6 +1739,10 @@ Do you want to delete it anyway?</source>
       <translation>Лоу-фай</translation>
     </message>
     <message>
+      <source>Load preset</source>
+      <translation>Завантажити пресет</translation>
+    </message>
+    <message>
       <source>Lock EQ</source>
       <extracomment>Prevent accidental editing of EQ controls; not encryption or a security lock.</extracomment>
       <translation>Заблокувати EQ</translation>
@@ -1555,6 +1750,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Lock equalizer settings</source>
       <translation>Заблокувати налаштування еквалайзера</translation>
+    </message>
+    <message>
+      <source>Logarithmic</source>
+      <translation>Логарифмічна</translation>
     </message>
     <message>
       <source>Look in:</source>
@@ -1575,8 +1774,16 @@ Do you want to delete it anyway?</source>
       <translation>Керування профілями</translation>
     </message>
     <message>
+      <source>Mandolin</source>
+      <translation>Мандоліна</translation>
+    </message>
+    <message>
       <source>Manufacturer</source>
       <translation>Виробник</translation>
+    </message>
+    <message>
+      <source>Maximum frequency</source>
+      <translation>Максимальна частота</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
@@ -1595,6 +1802,10 @@ Do you want to delete it anyway?</source>
       <translation>Виміряти характеристику акустичних систем, приміщення та мікрофона</translation>
     </message>
     <message>
+      <source>Measured chain</source>
+      <translation>Виміряний тракт</translation>
+    </message>
+    <message>
       <source>Measured listening position</source>
       <translation>Виміряне місце прослуховування</translation>
       <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
@@ -1607,6 +1818,10 @@ Do you want to delete it anyway?</source>
       <source>Measured response</source>
       <translation>Виміряна характеристика</translation>
       <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measured responses must overlap by at least two octaves.</source>
+      <translation>Виміряні характеристики мають перекриватися щонайменше на дві октави.</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
@@ -1700,6 +1915,11 @@ Do you want to delete it anyway?</source>
       <translation>Запис із мікрофона має кліпінг. Зменште підсилення мікрофона або додаткове підсилення та повторіть вимірювання.</translation>
     </message>
     <message>
+      <source>Microphone response</source>
+      <translation>АЧХ мікрофона</translation>
+      <extracomment>A relative spectrum comparison against a captured reference. Includes source and room; not certified isolated microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Microphone route</source>
       <translation>Аудіотракт мікрофона</translation>
     </message>
@@ -1708,8 +1928,20 @@ Do you want to delete it anyway?</source>
       <translation>Перевищено час очікування запуску мікрофона</translation>
     </message>
     <message>
+      <source>Minimum frequency</source>
+      <translation>Мінімальна частота</translation>
+    </message>
+    <message>
+      <source>Mix</source>
+      <translation>Суміш</translation>
+    </message>
+    <message>
       <source>Model</source>
       <translation>Модель</translation>
+    </message>
+    <message>
+      <source>Mono</source>
+      <translation>Моно</translation>
     </message>
     <message>
       <source>Move right for a broader adjustment.</source>
@@ -1722,6 +1954,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Movies</source>
       <translation>Фільми</translation>
+    </message>
+    <message>
+      <source>Music mode</source>
+      <translation>Музичний режим</translation>
     </message>
     <message>
       <source>My equipment</source>
@@ -1801,6 +2037,14 @@ Do you want to delete it anyway?</source>
       <translation>Без корекції — використовувати власний EQ</translation>
     </message>
     <message>
+      <source>Not enough broadband reference data.</source>
+      <translation>Недостатньо широкосмугових еталонних даних.</translation>
+    </message>
+    <message>
+      <source>Note grid</source>
+      <translation>Нотна сітка</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Формат чисел і дати</translation>
     </message>
@@ -1811,6 +2055,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>OK</source>
       <translation>OK</translation>
+    </message>
+    <message>
+      <source>Octave</source>
+      <translation>Октавна</translation>
     </message>
     <message>
       <source>Omnidirectional speaker</source>
@@ -1878,6 +2126,10 @@ Do you want to delete it anyway?</source>
       <translation>Відкрити інтерфейс запису тестового відтворення</translation>
     </message>
     <message>
+      <source>Open the estimated response and correction in the editor. Nothing is saved or applied yet.</source>
+      <translation>Відкрити оцінену характеристику та корекцію в редакторі. Нічого ще не збережено й не застосовано.</translation>
+    </message>
+    <message>
       <source>Open update folder</source>
       <translation>Відкрити папку оновлень</translation>
     </message>
@@ -1908,6 +2160,10 @@ Do you want to delete it anyway?</source>
       <translation>Загальний вихід</translation>
     </message>
     <message>
+      <source>Palette</source>
+      <translation>Палітра</translation>
+    </message>
+    <message>
       <source>Panel speaker</source>
       <translation>Панельна акустична система</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
@@ -1925,6 +2181,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>Призупинити обробку та відкрити налаштування аудіо. Програма залишається відкритою та повідомляє результат. Перезапустіть Windows після встановлення драйвера.</translation>
+    </message>
+    <message>
+      <source>Peak hold</source>
+      <translation>Утримання піків</translation>
     </message>
     <message>
       <source>Peak markers</source>
@@ -1946,6 +2206,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Playback</source>
       <translation>Відтворення</translation>
+    </message>
+    <message>
+      <source>Playback monitor</source>
+      <translation>Монітор відтворення</translation>
     </message>
     <message>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
@@ -2214,6 +2478,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
+      <source>Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement.</source>
+      <translation>Порівняння з еталоном охоплює джерело звуку, кімнату та еталонний мікрофон. Це не ізольоване чи сертифіковане вимірювання мікрофона.</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Оновити список пристроїв</translation>
     </message>
@@ -2328,6 +2596,14 @@ Do you want to delete it anyway?</source>
       <translation>Спробувати знову</translation>
     </message>
     <message>
+      <source>Review estimated profile</source>
+      <translation>Переглянути оцінений профіль</translation>
+    </message>
+    <message>
+      <source>Right</source>
+      <translation>Правий</translation>
+    </message>
+    <message>
       <source>Right-to-left test language</source>
       <translation>Тестова мова справа наліво</translation>
     </message>
@@ -2382,6 +2658,10 @@ Do you want to delete it anyway?</source>
       <translation>Пресет «%1» збережено.</translation>
     </message>
     <message>
+      <source>Scroll speed</source>
+      <translation>Швидкість прокручування</translation>
+    </message>
+    <message>
       <source>Search brand, family, model or measurement conditions</source>
       <translation>Шукати бренд, серію, модель або умови вимірювання</translation>
     </message>
@@ -2397,6 +2677,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Select band %1</source>
       <translation>Вибрати смугу %1</translation>
+    </message>
+    <message>
+      <source>Select between one and eight known component responses.</source>
+      <translation>Виберіть від однієї до восьми відомих характеристик компонентів.</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
@@ -2461,6 +2745,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
+      <source>Settings</source>
+      <translation>Налаштування</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Налаштування &amp;&amp; калібрування</translation>
     </message>
@@ -2490,6 +2778,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>Коротші інтервали частіше оновлюють рівні й більше навантажують CPU; надходження аудіо може обмежувати фактичну частоту оновлення</translation>
+    </message>
+    <message>
+      <source>Show EQ response graph</source>
+      <translation>Показати криву АЧХ EQ</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
@@ -2649,6 +2941,14 @@ Do you want to delete it anyway?</source>
       <translation>Тип акустичної системи</translation>
     </message>
     <message>
+      <source>Spectrogram</source>
+      <translation>Спектрограма</translation>
+    </message>
+    <message>
+      <source>Spectrum</source>
+      <translation>Спектр</translation>
+    </message>
+    <message>
       <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
       <translation>Spinorama AutoEQ: підсилення корекції обмежене до %1, а Q — до %2. Підсилення нижче %3 пропускаються. Вашу слухацьку передустановку додано окремо.</translation>
       <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
@@ -2692,6 +2992,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
+      <source>Stereo</source>
+      <translation>Стерео</translation>
+    </message>
+    <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
       <translation>Зупиніть калібрування мікрофона перед зміною аудіодрайвера.</translation>
     </message>
@@ -2708,6 +3012,10 @@ Do you want to delete it anyway?</source>
       <source>Studio profile has an invalid numeric field</source>
       <translation>Профіль Studio містить некоректне числове поле</translation>
       <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
+    </message>
+    <message>
+      <source>Subtract known measured responses from a measured chain response, then review the estimated correction.</source>
+      <translation>Відняти відомі виміряні характеристики від характеристики тракту та переглянути оцінену корекцію.</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
@@ -2793,6 +3101,10 @@ Do you want to delete it anyway?</source>
       <translation>Імпортується виміряна ХАРАКТЕРИСТИКА, а не вже інвертовані значення підсилення EQ. Підтвердьте тип обладнання. Абсолютний SPL потребує нормалізації перед імпортом.</translation>
     </message>
     <message>
+      <source>This is an estimated residual, not a certified equipment measurement. Any unknown room, microphone, clothing, placement or interface response remains included. Published curves may not match your setup. Do not correct deep nulls or unmeasured frequencies.</source>
+      <translation>Це оцінена залишкова характеристика, а не сертифіковане вимірювання обладнання. Невідомі впливи кімнати, мікрофона, одягу, розташування чи інтерфейсу залишаються врахованими. Опубліковані криві можуть не відповідати вашій системі. Не коригуйте глибокі провали чи невиміряні частоти.</translation>
+    </message>
+    <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
       <translation>Цей профіль змінено. Зберегти власну копію перед виходом?</translation>
     </message>
@@ -2820,12 +3132,20 @@ Do you want to delete it anyway?</source>
       <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
+      <source>Transient markers</source>
+      <translation>Позначки перехідних процесів</translation>
+    </message>
+    <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
       <translation>Покриття перекладу: %1 із %2 повідомлень. Відсутні переклади використовують англійську. Мовні пакунки неперевірені й очікують перевірки носієм мови. Завершіть роботу та відкрийте програму знову, щоб застосувати зміни.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
       <translation>Деталі високих частот</translation>
+    </message>
+    <message>
+      <source>Tuner</source>
+      <translation>Тюнер</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
@@ -2846,6 +3166,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Type</source>
       <translation>Тип</translation>
+    </message>
+    <message>
+      <source>Ukulele</source>
+      <translation>Укулеле</translation>
     </message>
     <message>
       <source>Unclassified equipment</source>
@@ -2893,6 +3217,10 @@ Do you want to delete it anyway?</source>
       <translation>Непідтримувана схема профілю обладнання (очікується 2/3).</translation>
     </message>
     <message>
+      <source>Unsupported equipment profile schema (expected 2/3/4).</source>
+      <translation>Непідтримувана схема профілю обладнання (очікується 2/3/4).</translation>
+    </message>
+    <message>
       <source>Unsupported filter type.</source>
       <translation>Непідтримуваний тип фільтра.</translation>
     </message>
@@ -2917,6 +3245,11 @@ Do you want to delete it anyway?</source>
       <translation>Непідтримувана схема профілю акустичної системи</translation>
     </message>
     <message>
+      <source>Update</source>
+      <translation>Оновити</translation>
+      <extracomment>Button opening the official software-release downloads. Does not refresh audio data or install automatically.</extracomment>
+    </message>
+    <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
       <translation>Оновлення %1 завантажено: %2. Завершіть роботу, установіть поверх наявної програми та відкрийте знову.</translation>
     </message>
@@ -2927,6 +3260,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
       <translation>Використовуйте тихе приміщення. Акустичні системи, приміщення та мікрофон вимірюються разом; результати включають характеристику мікрофона.</translation>
+    </message>
+    <message>
+      <source>Use an imported measurement of the complete chain. Select only measured component responses that were part of that chain. Correction EQ filters are never subtracted.</source>
+      <translation>Використайте імпортоване вимірювання всього тракту. Виберіть лише виміряні характеристики компонентів цього тракту. Коригувальні фільтри ніколи не віднімаються.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -3020,6 +3357,22 @@ Do you want to delete it anyway?</source>
       <translation>VB-CABLE збережено, оскільки інший застосунок SoundCurrent установлено. Видаліть його разом з останнім застосунком, якщо інше програмне забезпечення його не потребує.</translation>
     </message>
     <message>
+      <source>Vectorscope</source>
+      <translation>Вектороскоп</translation>
+    </message>
+    <message>
+      <source>View</source>
+      <translation>Вигляд</translation>
+    </message>
+    <message>
+      <source>Viola</source>
+      <translation>Альт</translation>
+    </message>
+    <message>
+      <source>Violin</source>
+      <translation>Скрипка</translation>
+    </message>
+    <message>
       <source>Vocal Focus</source>
       <translation>Акцент на вокалі</translation>
     </message>
@@ -3034,6 +3387,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Warmth</source>
       <translation>Теплота</translation>
+    </message>
+    <message>
+      <source>Waveform</source>
+      <translation>Форма хвилі</translation>
     </message>
     <message>
       <source>Whole listening system</source>

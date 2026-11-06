@@ -492,3 +492,26 @@ Interface language and regional number/date formatting are independent settings.
 Current localization completion work is described in [the progress record](docs/localization-progress.md). Published 1.1.0 packages are unchanged by these development commits.
 
 [Audio buffering](docs/audio-buffering.md) explains the shared Linux/Windows setting, latency trade-offs, and Apply/recovery behavior.
+
+## Analysis tools (development)
+
+The analysis tab offers spectrogram, connected spectrum, waveform, tuner,
+vectorscope, averaged spectrum and cumulative microphone-reference views. Its
+capture and analysis run only while the tab is selected. Settings include the
+C++ spectrogram app's analysis/display controls and legacy preset import.
+Proposed relative microphone corrections open in the profile editor for review.
+See [analysis and microphone profiles](docs/analysis-and-microphone-profiles.md)
+for controls, calibration assumptions and hardware limits.
+
+The listening response graph is taller, automatically scales its vertical range,
+and can be hidden. Equipment, microphone and speaker/room setup have focused
+modal dialogs. Startup checks for updates show an Update shortcut left of Quit
+when a newer release or downloaded installer is detected; the existing update
+controls remain on the configuration tab. The shortcut opens official release
+downloads; it does not execute unverified downloaded files automatically.
+
+The equipment manager can estimate a missing component response from an imported
+chain measurement and known measured component curves. Results stay visibly
+**Estimated profile**, retain their derivation sources, and open in the graph
+editor before saving. See the workflow and its measurement limits in the
+[analysis guide](docs/analysis-and-microphone-profiles.md#estimate-a-missing-equipment-response).

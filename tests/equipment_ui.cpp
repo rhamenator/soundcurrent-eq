@@ -412,7 +412,7 @@ int main(int argc,char **argv) {
             require(button(library,"Edit / save copy")->isEnabled() && library->findChild<QPushButton *>("deleteEquipmentProfile")->isEnabled(),"Unsaved active import actions invalid");
             require(!orphanCleared,"Opening legacy import changed audio");
             orphanChecked=true;phase=1;clickLater(button(library,"Delete"));
-        }else if(phase==2){require(orphanCleared && loadLibrary().isEmpty(),"Deleting legacy import left its correction active");phase=3;closeLater(library);}
+        }else if(phase==2 && orphanCleared){require(loadLibrary().isEmpty(),"Deleting legacy import left its correction active");phase=3;closeLater(library);}
     });
     drive.start();openLibrary(nullptr,[&](const Profile &p){require(p.id.isEmpty() && p.kind==imported.kind,"Legacy deletion cleared wrong route");orphanCleared=true;},imported.kind,{},imported);drive.stop();require(orphanChecked && phase==3,"Legacy import editing/deletion entry point not tested");
 
@@ -455,6 +455,64 @@ int main(int argc,char **argv) {
     });
     drive.start();openLibrary(nullptr,[&](const Profile &p){++selectedCount;activeEquipment=p;},imported.kind,{},edited,[&](const Profile &p){++removedCount;if(activeEquipment && serialize(*activeEquipment)==serialize(p)){activeEquipment.reset();return true;}return false;});drive.stop();
     require(phase==11,"Duplicate import / delete workflow incomplete");
+
+    // Derivation is a review-only operation until an explicit Save copy.
+    QObject::disconnect(&drive,nullptr,&app,nullptr);phase=0;
+    Profile chain=fixture,known=fixture;chain.id="synthetic-chain";known.id="synthetic-known";
+    chain.model="Synthetic measured chain";known.model="Synthetic known component";
+    for(int i=0;i<96;++i){double hz=20*std::pow(1000.,i/95.);chain.response.append({hz,3});known.response.append({hz,1});}
+    saveLibrary({chain,known});int implicitApplications=0;
+    QObject::connect(&drive,&QTimer::timeout,&app,[&] {
+        if(auto *setup=dialog("Estimate profile")) {
+            if(phase==1){
+                require(loadLibrary().size()==2,"Opening estimator saved a profile");
+                auto *review=setup->findChild<QPushButton *>("reviewEstimatedProfile");require(review && !review->isEnabled(),"Estimator bypasses acknowledgment and conditions");
+                phase=2;closeLater(setup);
+            }else if(phase==3){
+                auto *review=setup->findChild<QPushButton *>("reviewEstimatedProfile");
+                auto *components=setup->findChild<QListWidget *>("estimationComponents");
+                bool found=false;for(int i=0;i<components->count();++i)if(components->item(i)->text().contains(known.model)){components->item(i)->setCheckState(Qt::Checked);found=true;break;}
+                require(found,"Known measured component missing");
+                auto *search=setup->findChild<QLineEdit *>("estimationSearch");require(search,"Estimator search missing");
+                search->setText("no matching equipment");
+                require(setup->findChild<QLabel *>("estimationSelectedComponents")->text().contains(known.model),"Filtering lost selected component summary");
+                setup->findChild<QComboBox *>("estimationKindFilter")->setCurrentIndex(1);
+                setup->findChild<QComboBox *>("estimationBrandFilter")->setCurrentIndex(1);
+                search->clear();setup->findChild<QComboBox *>("estimationKindFilter")->setCurrentIndex(0);
+                setup->findChild<QComboBox *>("estimationBrandFilter")->setCurrentIndex(0);
+                search->setText(known.model);
+                setup->findChild<QLineEdit *>("estimationConditions")->setText("Synthetic measurement, same placement");
+                require(!review->isEnabled(),"Estimator bypasses acknowledgment");
+                setup->findChild<QCheckBox *>("estimationAcknowledged")->setChecked(true);
+                require(review->isEnabled(),"Valid estimator cannot be reviewed");
+                if(const auto screenshots=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");!screenshots.isEmpty()){QDir().mkpath(screenshots);setup->grab().save(screenshots+"/estimate-profile.png");}
+                phase=4;clickLater(review);
+            }return;
+        }
+        if(auto *editor=dialog("Equipment profile editor")) {
+            if(phase==4){
+                require(loadLibrary().size()==2 && implicitApplications==0,"Review implicitly saved/applied a profile");
+                auto *notice=editor->findChild<QLabel *>("estimatedProfileNotice");require(notice && notice->isVisible(),"Estimate warning missing from editor");
+                editor->findChild<QLineEdit *>("profileModel")->setText("Edited estimated microphone");setGain(editor,-1.5);
+                if(const auto screenshots=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");!screenshots.isEmpty())editor->grab().save(screenshots+"/estimated-profile-review.png");
+                phase=5;clickLater(editor->findChild<QDialogButtonBox *>()->button(QDialogButtonBox::Save));
+            }return;
+        }
+        auto *manager=dialog("Equipment profiles — brand / family / model");if(!manager)return;
+        if(phase==0 || phase==2){
+            require(loadLibrary().size()==2 && implicitApplications==0,"Canceling estimator changed state");
+            auto *estimate=manager->findChild<QPushButton *>("estimateEquipmentProfile");require(estimate && estimate->isEnabled(),"Estimator not offered for measured chain");
+            phase=phase==0?1:3;clickLater(estimate);
+        }else if(phase==5){
+            const auto saved=loadLibrary();require(saved.size()==3 && implicitApplications==0,"Saving estimate changed audio or lost sources");
+            require(saved.back().estimated && saved.back().response.size()==96 && !saved.back().estimation.isEmpty() && saved.back().filters.front().gainDb==-1.5,"Editor lost estimate status, measurement or correction edits");
+            require(saved[0].id==chain.id && saved[1].id==known.id,"Estimation overwrote source profiles");
+            require(manager->findChild<QComboBox *>("equipmentProfileList")->currentText().contains(soundcurrent::i18n::text("Estimated profile")),"Saved estimate not visibly labeled");
+            phase=6;closeLater(manager);
+        }
+    });
+    drive.start();openLibrary(nullptr,[&](const Profile &){++implicitApplications;},chain.kind,{},chain);drive.stop();
+    require(phase==6,"Estimated profile cancel/review/edit/save workflow incomplete");
 
     QFile::remove(path);
     std::puts("PASS: profile editor change, Cancel/Discard prompt, save, malformed/valid JSON import, preservation and Apply");

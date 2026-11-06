@@ -141,6 +141,18 @@ Vil du slette den likevel?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>A component cannot be subtracted twice or from itself.</source>
+      <translation>En komponent kan ikke trekkes fra to ganger eller fra seg selv.</translation>
+    </message>
+    <message>
+      <source>A measured chain response is required; correction filters cannot be subtracted.</source>
+      <translation>En målt kjederespons kreves; korreksjonsfiltre kan ikke trekkes fra.</translation>
+    </message>
+    <message>
+      <source>A measured component response is required; correction filters cannot be subtracted.</source>
+      <translation>En målt komponentrespons kreves; korreksjonsfiltre kan ikke trekkes fra.</translation>
+    </message>
+    <message>
       <source>A private user runtime directory is required</source>
       <translation>En privat kjøretidsmappe for brukeren kreves</translation>
       <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
@@ -220,6 +232,10 @@ Vil du slette den likevel?</translation>
       <translation>Alle undertyper</translation>
     </message>
     <message>
+      <source>Amber</source>
+      <translation>Rav</translation>
+    </message>
+    <message>
       <source>Ambience</source>
       <translation>Romfølelse</translation>
     </message>
@@ -256,8 +272,16 @@ Vil du slette den likevel?</translation>
       <translation>Forsterkerprofiler krever elektriske målinger med kjent høyttalerlast, inngang og toneinnstillinger. Importer en målt korreksjonsfil; ingen forsterkerkurver antas ut fra markedsføringsspesifikasjoner.</translation>
     </message>
     <message>
+      <source>Amplitude</source>
+      <translation>Amplitude</translation>
+    </message>
+    <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
       <translation>En appoppdatering er installert. Bruk Avslutt og åpne igjen for å laste den; lukking av dette vinduet lar den gamle versjonen fortsette å kjøre.</translation>
+    </message>
+    <message>
+      <source>Analysis sample rate</source>
+      <translation>Samplingsfrekvens for analyse</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
@@ -399,8 +423,21 @@ Vil du slette den likevel?</translation>
       <translation>Automatisk lydruting er ikke tilgjengelig</translation>
     </message>
     <message>
+      <source>Automatic range</source>
+      <translation>Automatisk område</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Tilpass automatisk lyden fra en tilkoblet mikrofon; klikk for å omgå mikrofon-EQ</translation>
+    </message>
+    <message>
+      <source>Average</source>
+      <translation>Gjennomsnitt</translation>
+    </message>
+    <message>
+      <source>Averaged spectrum</source>
+      <translation>Gjennomsnittsspekter</translation>
+      <extracomment>A time-smoothed digital frequency spectrum, not a measured room response.</extracomment>
     </message>
     <message>
       <source>Back</source>
@@ -448,6 +485,15 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Bass frequency</source>
       <translation>Bassfrekvens</translation>
+    </message>
+    <message>
+      <source>Bass guitar</source>
+      <translation>Bassgitar</translation>
+      <extracomment>Instrument tuner preset for standard bass-guitar strings.</extracomment>
+    </message>
+    <message>
+      <source>Blue</source>
+      <translation>Blå</translation>
     </message>
     <message>
       <source>Bookshelf speaker</source>
@@ -565,6 +611,15 @@ Vil du slette den likevel?</translation>
       <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
+      <source>Capture reference</source>
+      <translation>Ta opp referanse</translation>
+      <extracomment>Snapshot the accumulated spectrum as a reference and reset the running average for the comparison measurement.</extracomment>
+    </message>
+    <message>
+      <source>Cello</source>
+      <translation>Cello</translation>
+    </message>
+    <message>
       <source>Center</source>
       <translation>Midten</translation>
     </message>
@@ -586,6 +641,14 @@ Vil du slette den likevel?</translation>
       <source>Change to list view mode</source>
       <translation>Bytt til listevisning</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Channel</source>
+      <translation>Kanal</translation>
+    </message>
+    <message>
+      <source>Channels</source>
+      <translation>Kanaler</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -621,6 +684,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Choose update folder…</source>
       <translation>Velg oppdateringsmappe…</translation>
+    </message>
+    <message>
+      <source>Chromatic</source>
+      <translation>Kromatisk</translation>
     </message>
     <message>
       <source>Cinema speaker</source>
@@ -791,6 +858,10 @@ Vil du slette den likevel?</translation>
       <translation>Kunne ikke starte sikkerhetskontrollen for utgangsvolum</translation>
     </message>
     <message>
+      <source>Could not start playback monitoring</source>
+      <translation>Kunne ikke starte avspillingsovervåking</translation>
+    </message>
+    <message>
       <source>Could not start the measurement.</source>
       <translation>Kunne ikke starte målingen.</translation>
     </message>
@@ -826,6 +897,11 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Create a new correction profile.</source>
       <translation>Opprett en ny korreksjonsprofil.</translation>
+    </message>
+    <message>
+      <source>Create microphone profile</source>
+      <translation>Opprett mikrofonprofil</translation>
+      <extracomment>Propose relative correction filters for review in the profile editor. Saving does not apply them automatically.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -877,6 +953,14 @@ Vil du slette den likevel?</translation>
       <translation>Slett denne lagrede egendefinerte profilen.</translation>
     </message>
     <message>
+      <source>Derivation metadata exceeds 32 KiB.</source>
+      <translation>Avledningsmetadata overstiger 32 KiB.</translation>
+    </message>
+    <message>
+      <source>Derivation metadata requires an estimated profile.</source>
+      <translation>Avledningsmetadata krever en estimert profil.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>Detaljvisning</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -894,6 +978,16 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Discard</source>
       <translation>Forkast</translation>
+    </message>
+    <message>
+      <source>Display ceiling</source>
+      <translation>Øvre visningsgrense</translation>
+      <extracomment>Upper vertical-axis limit in dBFS. Changes visualization only; never a limiter or audio gain.</extracomment>
+    </message>
+    <message>
+      <source>Display sensitivity</source>
+      <translation>Visningsfølsomhet</translation>
+      <extracomment>Displayed dynamic range in dB. Does not change hardware microphone gain.</extracomment>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
@@ -1073,6 +1167,10 @@ Vil du slette den likevel?</translation>
       <translation>Utstyrstype</translation>
     </message>
     <message>
+      <source>Estimate profile</source>
+      <translation>Estimer profil</translation>
+    </message>
+    <message>
       <source>Estimated output level near band %1</source>
       <translation>Anslått utgangsnivå nær bånd %1</translation>
     </message>
@@ -1113,6 +1211,26 @@ Vil du slette den likevel?</translation>
       <translation>Anslått utgangstopp etter EQ, inkludert etterforsterkning og balanse</translation>
     </message>
     <message>
+      <source>Estimated profile</source>
+      <translation>Estimert profil</translation>
+    </message>
+    <message>
+      <source>Estimated profile status is required for schema 4.</source>
+      <translation>Skjema 4 krever status som estimert profil.</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require derivation metadata.</source>
+      <translation>Estimerte profiler krever avledningsmetadata.</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require method and limitations.</source>
+      <translation>Estimerte profiler krever metode og begrensninger.</translation>
+    </message>
+    <message>
+      <source>Estimated response exceeds the supported range.</source>
+      <translation>Estimert respons overskrider støttet område.</translation>
+    </message>
+    <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
       <translation>Avslutt SoundCurrent EQ og gjenopprett vanlig lyd</translation>
     </message>
@@ -1143,6 +1261,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Export the selected profile to a JSON file.</source>
       <translation>Eksporter den valgte profilen til en JSON-fil.</translation>
+    </message>
+    <message>
+      <source>FFT size</source>
+      <translation>FFT-størrelse</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1211,12 +1333,25 @@ Vil du slette den likevel?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Frames: %1 · FFT: %2 ms · Resolution: %3 Hz · Window: %4 ms</source>
+      <translation>Rammer: %1 · FFT: %2 ms · Oppløsning: %3 Hz · Vindu: %4 ms</translation>
+    </message>
+    <message>
+      <source>Freeze display</source>
+      <translation>Frys visningen</translation>
+      <extracomment>Hold the current analyzer picture; capture can continue, but visualization FFT work stops.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Frekvens</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
       <translation>Frekvens Hz</translation>
+    </message>
+    <message>
+      <source>Frequency scale</source>
+      <translation>Frekvensskala</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
@@ -1251,6 +1386,22 @@ Vil du slette den likevel?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Gray</source>
+      <translation>Grå</translation>
+    </message>
+    <message>
+      <source>Green</source>
+      <translation>Grønn</translation>
+    </message>
+    <message>
+      <source>Grid</source>
+      <translation>Rutenett</translation>
+    </message>
+    <message>
+      <source>Guitar</source>
+      <translation>Gitar</translation>
+    </message>
+    <message>
       <source>Headphones</source>
       <translation>Hodetelefoner</translation>
     </message>
@@ -1270,6 +1421,18 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Hip-Hop</source>
       <translation>Hip-Hop</translation>
+    </message>
+    <message>
+      <source>History length</source>
+      <translation>Historikklengde</translation>
+    </message>
+    <message>
+      <source>I understand that unknown room, microphone, clothing and placement effects remain in this estimate.</source>
+      <translation>Jeg forstår at ukjente påvirkninger fra rom, mikrofon, klær og plassering forblir i estimatet.</translation>
+    </message>
+    <message>
+      <source>Ice</source>
+      <translation>Is</translation>
     </message>
     <message>
       <source>Ignore</source>
@@ -1371,6 +1534,10 @@ Vil du slette den likevel?</translation>
       <translation>Installert versjon: %1</translation>
     </message>
     <message>
+      <source>Instrument</source>
+      <translation>Instrument</translation>
+    </message>
+    <message>
       <source>Interface language</source>
       <translation>Grensesnittspråk</translation>
     </message>
@@ -1393,6 +1560,10 @@ Vil du slette den likevel?</translation>
       <source>Invalid Studio route</source>
       <translation>Ugyldig Studio-lydforbindelse</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth.</source>
+      <translation>Ugyldige analyseinnstillinger. FFT-vinduet må være høyst 250 ms, og frekvensene må ligge innenfor det innsamlede lydbåndet.</translation>
     </message>
     <message>
       <source>Invalid audio setup requester.</source>
@@ -1424,6 +1595,14 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>Ugyldig utstyrsundertype eller aktiv/passiv-type</translation>
+    </message>
+    <message>
+      <source>Invalid estimated equipment kind.</source>
+      <translation>Ugyldig estimert utstyrstype.</translation>
+    </message>
+    <message>
+      <source>Invalid estimated profile status.</source>
+      <translation>Ugyldig status for estimert profil.</translation>
     </message>
     <message>
       <source>Invalid filter type</source>
@@ -1497,12 +1676,20 @@ Vil du slette den likevel?</translation>
       <translation>Behold gjeldende EQ</translation>
     </message>
     <message>
+      <source>Known component responses</source>
+      <translation>Kjente komponentresponser</translation>
+    </message>
+    <message>
       <source>L</source>
       <translation>V</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
       <translation>Språk og regionale innstillinger</translation>
+    </message>
+    <message>
+      <source>Left</source>
+      <translation>Venstre</translation>
     </message>
     <message>
       <source>Left right balance</source>
@@ -1519,6 +1706,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>Biblioteket er større enn 16 MiB.</translation>
+    </message>
+    <message>
+      <source>Linear</source>
+      <translation>Lineær</translation>
     </message>
     <message>
       <source>List audio endpoints</source>
@@ -1548,6 +1739,10 @@ Vil du slette den likevel?</translation>
       <translation>Lo-Fi</translation>
     </message>
     <message>
+      <source>Load preset</source>
+      <translation>Last inn forhåndsinnstilling</translation>
+    </message>
+    <message>
       <source>Lock EQ</source>
       <extracomment>Prevent accidental editing of EQ controls; not encryption or a security lock.</extracomment>
       <translation>Lås EQ</translation>
@@ -1555,6 +1750,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Lock equalizer settings</source>
       <translation>Lås equalizerinnstillinger</translation>
+    </message>
+    <message>
+      <source>Logarithmic</source>
+      <translation>Logaritmisk</translation>
     </message>
     <message>
       <source>Look in:</source>
@@ -1575,8 +1774,16 @@ Vil du slette den likevel?</translation>
       <translation>Administrer profiler</translation>
     </message>
     <message>
+      <source>Mandolin</source>
+      <translation>Mandolin</translation>
+    </message>
+    <message>
       <source>Manufacturer</source>
       <translation>Produsent</translation>
+    </message>
+    <message>
+      <source>Maximum frequency</source>
+      <translation>Høyeste frekvens</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
@@ -1595,6 +1802,10 @@ Vil du slette den likevel?</translation>
       <translation>Mål frekvensresponsen til høyttaler, rom og mikrofon</translation>
     </message>
     <message>
+      <source>Measured chain</source>
+      <translation>Målt kjede</translation>
+    </message>
+    <message>
       <source>Measured listening position</source>
       <translation>Målt lytteposisjon</translation>
       <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
@@ -1607,6 +1818,10 @@ Vil du slette den likevel?</translation>
       <source>Measured response</source>
       <translation>Målt respons</translation>
       <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measured responses must overlap by at least two octaves.</source>
+      <translation>Målte responser må overlappe minst to oktaver.</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
@@ -1700,6 +1915,11 @@ Vil du slette den likevel?</translation>
       <translation>Mikrofonopptaket klipper. Reduser mikrofonforsterkningen eller boost og gjenta målingen.</translation>
     </message>
     <message>
+      <source>Microphone response</source>
+      <translation>Mikrofonrespons</translation>
+      <extracomment>A relative spectrum comparison against a captured reference. Includes source and room; not certified isolated microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Microphone route</source>
       <translation>Mikrofonruting</translation>
     </message>
@@ -1708,8 +1928,20 @@ Vil du slette den likevel?</translation>
       <translation>Tidsavbrudd ved start av mikrofonen</translation>
     </message>
     <message>
+      <source>Minimum frequency</source>
+      <translation>Laveste frekvens</translation>
+    </message>
+    <message>
+      <source>Mix</source>
+      <translation>Miks</translation>
+    </message>
+    <message>
       <source>Model</source>
       <translation>Modell</translation>
+    </message>
+    <message>
+      <source>Mono</source>
+      <translation>Mono</translation>
     </message>
     <message>
       <source>Move right for a broader adjustment.</source>
@@ -1722,6 +1954,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Movies</source>
       <translation>Film</translation>
+    </message>
+    <message>
+      <source>Music mode</source>
+      <translation>Musikkmodus</translation>
     </message>
     <message>
       <source>My equipment</source>
@@ -1801,6 +2037,14 @@ Vil du slette den likevel?</translation>
       <translation>Ingen — bruk min egen EQ</translation>
     </message>
     <message>
+      <source>Not enough broadband reference data.</source>
+      <translation>For lite bredbåndsreferansedata.</translation>
+    </message>
+    <message>
+      <source>Note grid</source>
+      <translation>Noterutenett</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Tall- og datoformat</translation>
     </message>
@@ -1811,6 +2055,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>OK</source>
       <translation>OK</translation>
+    </message>
+    <message>
+      <source>Octave</source>
+      <translation>Oktav</translation>
     </message>
     <message>
       <source>Omnidirectional speaker</source>
@@ -1878,6 +2126,10 @@ Vil du slette den likevel?</translation>
       <translation>Åpning av testavspillingens skrivegrensesnitt</translation>
     </message>
     <message>
+      <source>Open the estimated response and correction in the editor. Nothing is saved or applied yet.</source>
+      <translation>Åpne estimert respons og korreksjon i redigeringsvinduet. Ingenting lagres eller tas i bruk ennå.</translation>
+    </message>
+    <message>
       <source>Open update folder</source>
       <translation>Åpne oppdateringsmappe</translation>
     </message>
@@ -1908,6 +2160,10 @@ Vil du slette den likevel?</translation>
       <translation>Samlet utgang</translation>
     </message>
     <message>
+      <source>Palette</source>
+      <translation>Palett</translation>
+    </message>
+    <message>
       <source>Panel speaker</source>
       <translation>Panelhøyttaler</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
@@ -1925,6 +2181,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>Sett behandlingen på pause og åpne lydoppsettet. Appen forblir åpen og viser resultatet. Start Windows på nytt etter at driveren er installert.</translation>
+    </message>
+    <message>
+      <source>Peak hold</source>
+      <translation>Hold toppverdi</translation>
     </message>
     <message>
       <source>Peak markers</source>
@@ -1946,6 +2206,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Playback</source>
       <translation>Avspilling</translation>
+    </message>
+    <message>
+      <source>Playback monitor</source>
+      <translation>Avspillingsmonitor</translation>
     </message>
     <message>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
@@ -2214,6 +2478,10 @@ Vil du slette den likevel?</translation>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
+      <source>Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement.</source>
+      <translation>Referansesammenligninger omfatter lydkilden, rommet og referansemikrofonen. De er ikke en isolert eller sertifisert mikrofonmåling.</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Oppdater enheter</translation>
     </message>
@@ -2328,6 +2596,14 @@ Vil du slette den likevel?</translation>
       <translation>Prøv igjen</translation>
     </message>
     <message>
+      <source>Review estimated profile</source>
+      <translation>Se gjennom estimert profil</translation>
+    </message>
+    <message>
+      <source>Right</source>
+      <translation>Høyre</translation>
+    </message>
+    <message>
       <source>Right-to-left test language</source>
       <translation>Testspråk med høyre-til-venstre-retning</translation>
     </message>
@@ -2382,6 +2658,10 @@ Vil du slette den likevel?</translation>
       <translation>Forhåndsinnstillingen «%1» er lagret.</translation>
     </message>
     <message>
+      <source>Scroll speed</source>
+      <translation>Rullehastighet</translation>
+    </message>
+    <message>
       <source>Search brand, family, model or measurement conditions</source>
       <translation>Søk etter merke, familie, modell eller målebetingelser</translation>
     </message>
@@ -2397,6 +2677,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Select band %1</source>
       <translation>Velg bånd %1</translation>
+    </message>
+    <message>
+      <source>Select between one and eight known component responses.</source>
+      <translation>Velg én til åtte kjente komponentresponser.</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
@@ -2461,6 +2745,10 @@ Vil du slette den likevel?</translation>
       <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
+      <source>Settings</source>
+      <translation>Innstillinger</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Innstillinger &amp;&amp; kalibrering</translation>
     </message>
@@ -2490,6 +2778,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>Kortere intervaller oppdaterer nivåene oftere og bruker mer CPU; lydleveringen kan begrense den faktiske oppdateringstakten</translation>
+    </message>
+    <message>
+      <source>Show EQ response graph</source>
+      <translation>Vis EQ-responskurve</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
@@ -2649,6 +2941,14 @@ Vil du slette den likevel?</translation>
       <translation>Høyttalertype</translation>
     </message>
     <message>
+      <source>Spectrogram</source>
+      <translation>Spektrogram</translation>
+    </message>
+    <message>
+      <source>Spectrum</source>
+      <translation>Spektrum</translation>
+    </message>
+    <message>
       <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
       <translation>Spinorama AutoEQ: korreksjonsforsterkningen begrenses til %1 og Q til %2. Forsterkninger under %3 utelates. Lytteforhåndsinnstillingen din legges til separat.</translation>
       <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
@@ -2692,6 +2992,10 @@ Vil du slette den likevel?</translation>
       <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
+      <source>Stereo</source>
+      <translation>Stereo</translation>
+    </message>
+    <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
       <translation>Stopp mikrofonkalibreringen før du bytter lyddriver.</translation>
     </message>
@@ -2708,6 +3012,10 @@ Vil du slette den likevel?</translation>
       <source>Studio profile has an invalid numeric field</source>
       <translation>Studio-profilen inneholder et ugyldig tallfelt</translation>
       <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
+    </message>
+    <message>
+      <source>Subtract known measured responses from a measured chain response, then review the estimated correction.</source>
+      <translation>Trekk kjente målte responser fra kjedens respons, og se gjennom estimert korreksjon.</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
@@ -2793,6 +3101,10 @@ Vil du slette den likevel?</translation>
       <translation>Dette importerer målt FREKVENSRESPONS, ikke allerede inverterte EQ-forsterkninger. Bekreft utstyrstypen. Absolutt lydtrykknivå må normaliseres før import.</translation>
     </message>
     <message>
+      <source>This is an estimated residual, not a certified equipment measurement. Any unknown room, microphone, clothing, placement or interface response remains included. Published curves may not match your setup. Do not correct deep nulls or unmeasured frequencies.</source>
+      <translation>Dette er en estimert restrespons, ikke en sertifisert utstyrsmåling. Ukjente påvirkninger fra rom, mikrofon, klær, plassering eller lydgrensesnitt er fortsatt med. Publiserte kurver passer kanskje ikke til oppsettet. Ikke korriger dype kanselleringer eller umålte frekvenser.</translation>
+    </message>
+    <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
       <translation>Denne profilen er endret. Lagre en egendefinert kopi før du går videre?</translation>
     </message>
@@ -2820,12 +3132,20 @@ Vil du slette den likevel?</translation>
       <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
+      <source>Transient markers</source>
+      <translation>Transientmarkører</translation>
+    </message>
+    <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
       <translation>Oversettelsesdekning: %1 av %2 meldinger. Manglende oversettelser bruker engelsk. Språkpakker er ubekreftet og venter på gjennomgang av morsmålsbrukere. Bruk Avslutt og åpne igjen for å ta i bruk endringer.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
       <translation>Diskantdetaljer</translation>
+    </message>
+    <message>
+      <source>Tuner</source>
+      <translation>Stemmeapparat</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
@@ -2846,6 +3166,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Type</source>
       <translation>Type</translation>
+    </message>
+    <message>
+      <source>Ukulele</source>
+      <translation>Ukulele</translation>
     </message>
     <message>
       <source>Unclassified equipment</source>
@@ -2893,6 +3217,10 @@ Vil du slette den likevel?</translation>
       <translation>Utstyrsprofilens skjema støttes ikke (forventet: 2/3).</translation>
     </message>
     <message>
+      <source>Unsupported equipment profile schema (expected 2/3/4).</source>
+      <translation>Utstyrsprofilskjema støttes ikke (forventer 2/3/4).</translation>
+    </message>
+    <message>
       <source>Unsupported filter type.</source>
       <translation>Filtertypen støttes ikke.</translation>
     </message>
@@ -2917,6 +3245,11 @@ Vil du slette den likevel?</translation>
       <translation>Høyttalerprofilens skjema støttes ikke</translation>
     </message>
     <message>
+      <source>Update</source>
+      <translation>Oppdater</translation>
+      <extracomment>Button opening the official software-release downloads. Does not refresh audio data or install automatically.</extracomment>
+    </message>
+    <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
       <translation>Oppdatering %1 er lastet ned: %2. Avslutt, installer over den eksisterende appen og åpne igjen.</translation>
     </message>
@@ -2927,6 +3260,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
       <translation>Bruk et stille rom. Måler høyttalere, rom og mikrofon sammen; resultatene inkluderer mikrofonens frekvensrespons.</translation>
+    </message>
+    <message>
+      <source>Use an imported measurement of the complete chain. Select only measured component responses that were part of that chain. Correction EQ filters are never subtracted.</source>
+      <translation>Bruk en importert måling av hele kjeden. Velg bare målte responser fra komponenter i denne kjeden. Korreksjonsfiltre trekkes aldri fra.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -3020,6 +3357,22 @@ Vil du slette den likevel?</translation>
       <translation>VB-CABLE ble beholdt fordi den andre SoundCurrent-appen er installert. Fjern det sammen med den siste appen hvis ingen annen programvare trenger det.</translation>
     </message>
     <message>
+      <source>Vectorscope</source>
+      <translation>Vektorskop</translation>
+    </message>
+    <message>
+      <source>View</source>
+      <translation>Visning</translation>
+    </message>
+    <message>
+      <source>Viola</source>
+      <translation>Bratsj</translation>
+    </message>
+    <message>
+      <source>Violin</source>
+      <translation>Fiolin</translation>
+    </message>
+    <message>
       <source>Vocal Focus</source>
       <translation>Vokalfokus</translation>
     </message>
@@ -3034,6 +3387,10 @@ Vil du slette den likevel?</translation>
     <message>
       <source>Warmth</source>
       <translation>Varme</translation>
+    </message>
+    <message>
+      <source>Waveform</source>
+      <translation>Bølgeform</translation>
     </message>
     <message>
       <source>Whole listening system</source>

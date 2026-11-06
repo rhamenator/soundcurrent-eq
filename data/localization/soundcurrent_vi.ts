@@ -141,6 +141,18 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>A component cannot be subtracted twice or from itself.</source>
+      <translation>Không thể trừ một thành phần hai lần hoặc khỏi chính nó.</translation>
+    </message>
+    <message>
+      <source>A measured chain response is required; correction filters cannot be subtracted.</source>
+      <translation>Cần đáp ứng đo của toàn chuỗi; không thể trừ bộ lọc hiệu chỉnh.</translation>
+    </message>
+    <message>
+      <source>A measured component response is required; correction filters cannot be subtracted.</source>
+      <translation>Cần đáp ứng đo của thành phần; không thể trừ bộ lọc hiệu chỉnh.</translation>
+    </message>
+    <message>
       <source>A private user runtime directory is required</source>
       <translation>Cần có thư mục thời gian chạy riêng của người dùng</translation>
       <extracomment>Production startup failure reported to stderr; process exits with code 1. Instance lock means a per-user single-application process lock, not an audio control lock. Activation socket enables a second launch to show the existing window. %1 is the unchanged product name, %2 is opaque Qt/system diagnostic text. Do not imply the app is safe to run twice or remove a lock.</extracomment>
@@ -220,6 +232,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Tất cả loại phụ</translation>
     </message>
     <message>
+      <source>Amber</source>
+      <translation>Hổ phách</translation>
+    </message>
+    <message>
       <source>Ambience</source>
       <translation>Âm vang không gian</translation>
     </message>
@@ -256,8 +272,16 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Cấu hình ampli cần phép đo điện với tải loa, đầu vào và thiết lập âm sắc đã biết. Nhập tệp hiệu chỉnh từ phép đo; không suy đoán đường đáp tuyến ampli từ thông số quảng cáo.</translation>
     </message>
     <message>
+      <source>Amplitude</source>
+      <translation>Biên độ</translation>
+    </message>
+    <message>
       <source>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</source>
       <translation>Bản cập nhật ứng dụng đã được cài đặt. Chọn Thoát rồi mở lại để tải bản mới; chỉ đóng cửa sổ này thì phiên bản cũ vẫn chạy.</translation>
+    </message>
+    <message>
+      <source>Analysis sample rate</source>
+      <translation>Tần số lấy mẫu phân tích</translation>
     </message>
     <message>
       <source>Another SoundCurrent EQ sink is already running</source>
@@ -399,8 +423,21 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Không thể định tuyến âm thanh tự động</translation>
     </message>
     <message>
+      <source>Automatic range</source>
+      <translation>Dải tự động</translation>
+    </message>
+    <message>
       <source>Automatically shape a connected microphone; click to bypass the microphone EQ</source>
       <translation>Tự động hiệu chỉnh âm thanh micrô được kết nối; nhấp để bỏ qua EQ micrô</translation>
+    </message>
+    <message>
+      <source>Average</source>
+      <translation>Trung bình</translation>
+    </message>
+    <message>
+      <source>Averaged spectrum</source>
+      <translation>Phổ trung bình</translation>
+      <extracomment>A time-smoothed digital frequency spectrum, not a measured room response.</extracomment>
     </message>
     <message>
       <source>Back</source>
@@ -448,6 +485,15 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Bass frequency</source>
       <translation>Tần số âm trầm</translation>
+    </message>
+    <message>
+      <source>Bass guitar</source>
+      <translation>Ghi-ta bass</translation>
+      <extracomment>Instrument tuner preset for standard bass-guitar strings.</extracomment>
+    </message>
+    <message>
+      <source>Blue</source>
+      <translation>Xanh dương</translation>
     </message>
     <message>
       <source>Bookshelf speaker</source>
@@ -565,6 +611,15 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Debug calibration counts: %1 captured audio bytes, %2 background-noise audio bytes. Counts are byte lengths, not loudness, frequency or monetary amounts.</extracomment>
     </message>
     <message>
+      <source>Capture reference</source>
+      <translation>Thu tham chiếu</translation>
+      <extracomment>Snapshot the accumulated spectrum as a reference and reset the running average for the comparison measurement.</extracomment>
+    </message>
+    <message>
+      <source>Cello</source>
+      <translation>Cello</translation>
+    </message>
+    <message>
       <source>Center</source>
       <translation>Giữa</translation>
     </message>
@@ -586,6 +641,14 @@ Bạn vẫn muốn xóa không?</translation>
       <source>Change to list view mode</source>
       <translation>Chuyển sang dạng danh sách</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Channel</source>
+      <translation>Kênh</translation>
+    </message>
+    <message>
+      <source>Channels</source>
+      <translation>Các kênh</translation>
     </message>
     <message>
       <source>Check for updates</source>
@@ -621,6 +684,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Choose update folder…</source>
       <translation>Chọn thư mục cập nhật…</translation>
+    </message>
+    <message>
+      <source>Chromatic</source>
+      <translation>Bán âm</translation>
     </message>
     <message>
       <source>Cinema speaker</source>
@@ -791,6 +858,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Không thể khởi chạy bộ bảo vệ âm lượng đầu ra</translation>
     </message>
     <message>
+      <source>Could not start playback monitoring</source>
+      <translation>Không thể bắt đầu giám sát phát lại</translation>
+    </message>
+    <message>
       <source>Could not start the measurement.</source>
       <translation>Không thể bắt đầu đo.</translation>
     </message>
@@ -826,6 +897,11 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Create a new correction profile.</source>
       <translation>Tạo hồ sơ hiệu chỉnh mới.</translation>
+    </message>
+    <message>
+      <source>Create microphone profile</source>
+      <translation>Tạo hồ sơ micrô</translation>
+      <extracomment>Propose relative correction filters for review in the profile editor. Saving does not apply them automatically.</extracomment>
     </message>
     <message>
       <source>Create new folder</source>
@@ -877,6 +953,14 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Xóa hồ sơ tùy chỉnh đã lưu này.</translation>
     </message>
     <message>
+      <source>Derivation metadata exceeds 32 KiB.</source>
+      <translation>Siêu dữ liệu suy ra vượt quá 32 KiB.</translation>
+    </message>
+    <message>
+      <source>Derivation metadata requires an estimated profile.</source>
+      <translation>Siêu dữ liệu suy ra yêu cầu cấu hình ước tính.</translation>
+    </message>
+    <message>
       <source>Detail view</source>
       <translation>Dạng chi tiết</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
@@ -894,6 +978,16 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Discard</source>
       <translation>Bỏ thay đổi</translation>
+    </message>
+    <message>
+      <source>Display ceiling</source>
+      <translation>Giới hạn trên hiển thị</translation>
+      <extracomment>Upper vertical-axis limit in dBFS. Changes visualization only; never a limiter or audio gain.</extracomment>
+    </message>
+    <message>
+      <source>Display sensitivity</source>
+      <translation>Độ nhạy hiển thị</translation>
+      <extracomment>Displayed dynamic range in dB. Does not change hardware microphone gain.</extracomment>
     </message>
     <message>
       <source>Drag curve points or tune the selected band below.</source>
@@ -1073,6 +1167,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Loại thiết bị</translation>
     </message>
     <message>
+      <source>Estimate profile</source>
+      <translation>Ước tính cấu hình</translation>
+    </message>
+    <message>
       <source>Estimated output level near band %1</source>
       <translation>Mức đầu ra ước tính gần dải %1</translation>
     </message>
@@ -1113,6 +1211,26 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Đỉnh đầu ra ước tính sau EQ, bao gồm gain sau EQ và cân bằng</translation>
     </message>
     <message>
+      <source>Estimated profile</source>
+      <translation>Cấu hình ước tính</translation>
+    </message>
+    <message>
+      <source>Estimated profile status is required for schema 4.</source>
+      <translation>Lược đồ 4 yêu cầu trạng thái cấu hình ước tính.</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require derivation metadata.</source>
+      <translation>Cấu hình ước tính yêu cầu siêu dữ liệu suy ra.</translation>
+    </message>
+    <message>
+      <source>Estimated profiles require method and limitations.</source>
+      <translation>Cấu hình ước tính yêu cầu phương pháp và giới hạn.</translation>
+    </message>
+    <message>
+      <source>Estimated response exceeds the supported range.</source>
+      <translation>Đáp ứng ước tính vượt phạm vi hỗ trợ.</translation>
+    </message>
+    <message>
       <source>Exit SoundCurrent EQ and restore normal audio</source>
       <translation>Thoát SoundCurrent EQ và khôi phục âm thanh thông thường</translation>
     </message>
@@ -1143,6 +1261,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Export the selected profile to a JSON file.</source>
       <translation>Xuất hồ sơ đã chọn thành tệp JSON.</translation>
+    </message>
+    <message>
+      <source>FFT size</source>
+      <translation>Kích thước FFT</translation>
     </message>
     <message>
       <source>FPS Footsteps</source>
@@ -1211,12 +1333,25 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Frames: %1 · FFT: %2 ms · Resolution: %3 Hz · Window: %4 ms</source>
+      <translation>Khung: %1 · FFT: %2 ms · Độ phân giải: %3 Hz · Cửa sổ: %4 ms</translation>
+    </message>
+    <message>
+      <source>Freeze display</source>
+      <translation>Đóng băng hiển thị</translation>
+      <extracomment>Hold the current analyzer picture; capture can continue, but visualization FFT work stops.</extracomment>
+    </message>
+    <message>
       <source>Frequency</source>
       <translation>Tần số</translation>
     </message>
     <message>
       <source>Frequency Hz</source>
       <translation>Tần số Hz</translation>
+    </message>
+    <message>
+      <source>Frequency scale</source>
+      <translation>Thang tần số</translation>
     </message>
     <message>
       <source>Front L/R enhancements (mono supported); other channels keep their own Studio effects. Zero amounts bypass each enhancement.</source>
@@ -1251,6 +1386,22 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Gray</source>
+      <translation>Xám</translation>
+    </message>
+    <message>
+      <source>Green</source>
+      <translation>Xanh lá</translation>
+    </message>
+    <message>
+      <source>Grid</source>
+      <translation>Lưới</translation>
+    </message>
+    <message>
+      <source>Guitar</source>
+      <translation>Ghi-ta</translation>
+    </message>
+    <message>
       <source>Headphones</source>
       <translation>Tai nghe</translation>
     </message>
@@ -1270,6 +1421,18 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Hip-Hop</source>
       <translation>Hip-Hop</translation>
+    </message>
+    <message>
+      <source>History length</source>
+      <translation>Độ dài lịch sử</translation>
+    </message>
+    <message>
+      <source>I understand that unknown room, microphone, clothing and placement effects remain in this estimate.</source>
+      <translation>Tôi hiểu rằng các ảnh hưởng chưa biết của phòng, micrô, quần áo và vị trí vẫn nằm trong ước tính này.</translation>
+    </message>
+    <message>
+      <source>Ice</source>
+      <translation>Băng</translation>
     </message>
     <message>
       <source>Ignore</source>
@@ -1371,6 +1534,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Phiên bản đã cài: %1</translation>
     </message>
     <message>
+      <source>Instrument</source>
+      <translation>Nhạc cụ</translation>
+    </message>
+    <message>
       <source>Interface language</source>
       <translation>Ngôn ngữ giao diện</translation>
     </message>
@@ -1393,6 +1560,10 @@ Bạn vẫn muốn xóa không?</translation>
       <source>Invalid Studio route</source>
       <translation>Kết nối âm thanh Studio không hợp lệ</translation>
       <extracomment>Saved audio routing edge must contain exactly three entries: output index, input index, mixing coefficient.</extracomment>
+    </message>
+    <message>
+      <source>Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth.</source>
+      <translation>Cài đặt phân tích không hợp lệ. Cửa sổ FFT không được quá 250 ms và tần số phải nằm trong dải âm thanh thu được.</translation>
     </message>
     <message>
       <source>Invalid audio setup requester.</source>
@@ -1424,6 +1595,14 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Invalid equipment subtype or power type</source>
       <translation>Loại phụ hoặc kiểu cấp nguồn của thiết bị không hợp lệ</translation>
+    </message>
+    <message>
+      <source>Invalid estimated equipment kind.</source>
+      <translation>Loại thiết bị ước tính không hợp lệ.</translation>
+    </message>
+    <message>
+      <source>Invalid estimated profile status.</source>
+      <translation>Trạng thái cấu hình ước tính không hợp lệ.</translation>
     </message>
     <message>
       <source>Invalid filter type</source>
@@ -1497,12 +1676,20 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Giữ EQ hiện tại</translation>
     </message>
     <message>
+      <source>Known component responses</source>
+      <translation>Đáp ứng thành phần đã biết</translation>
+    </message>
+    <message>
       <source>L</source>
       <translation>L</translation>
     </message>
     <message>
       <source>Language and regional settings</source>
       <translation>Thiết lập ngôn ngữ và vùng</translation>
+    </message>
+    <message>
+      <source>Left</source>
+      <translation>Trái</translation>
     </message>
     <message>
       <source>Left right balance</source>
@@ -1519,6 +1706,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Library exceeds 16 MiB.</source>
       <translation>Thư viện vượt quá 16 MiB.</translation>
+    </message>
+    <message>
+      <source>Linear</source>
+      <translation>Tuyến tính</translation>
     </message>
     <message>
       <source>List audio endpoints</source>
@@ -1548,6 +1739,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Lo-Fi</translation>
     </message>
     <message>
+      <source>Load preset</source>
+      <translation>Tải thiết lập sẵn</translation>
+    </message>
+    <message>
       <source>Lock EQ</source>
       <extracomment>Prevent accidental editing of EQ controls; not encryption or a security lock.</extracomment>
       <translation>Khóa EQ</translation>
@@ -1555,6 +1750,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Lock equalizer settings</source>
       <translation>Khóa thiết lập cân bằng âm</translation>
+    </message>
+    <message>
+      <source>Logarithmic</source>
+      <translation>Lôgarit</translation>
     </message>
     <message>
       <source>Look in:</source>
@@ -1575,8 +1774,16 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Quản lý hồ sơ</translation>
     </message>
     <message>
+      <source>Mandolin</source>
+      <translation>Mandolin</translation>
+    </message>
+    <message>
       <source>Manufacturer</source>
       <translation>Nhà sản xuất</translation>
+    </message>
+    <message>
+      <source>Maximum frequency</source>
+      <translation>Tần số tối đa</translation>
     </message>
     <message>
       <source>Maximum of 32 amplifier profiles reached.</source>
@@ -1595,6 +1802,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Đo đáp tuyến loa, phòng và micrô</translation>
     </message>
     <message>
+      <source>Measured chain</source>
+      <translation>Chuỗi đã đo</translation>
+    </message>
+    <message>
       <source>Measured listening position</source>
       <translation>Vị trí nghe đã đo</translation>
       <extracomment>New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.</extracomment>
@@ -1607,6 +1818,10 @@ Bạn vẫn muốn xóa không?</translation>
       <source>Measured response</source>
       <translation>Đáp ứng đã đo</translation>
       <extracomment>Editable family default for imported relative frequency-response measurements; not the already-inverted correction EQ.</extracomment>
+    </message>
+    <message>
+      <source>Measured responses must overlap by at least two octaves.</source>
+      <translation>Các đáp ứng đo phải chồng lấp ít nhất hai quãng tám.</translation>
     </message>
     <message>
       <source>Measurement conditions are required.</source>
@@ -1700,6 +1915,11 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Bản thu micrô bị xén đỉnh. Giảm gain hoặc mức tăng cường micrô rồi đo lại.</translation>
     </message>
     <message>
+      <source>Microphone response</source>
+      <translation>Đáp ứng micrô</translation>
+      <extracomment>A relative spectrum comparison against a captured reference. Includes source and room; not certified isolated microphone calibration.</extracomment>
+    </message>
+    <message>
       <source>Microphone route</source>
       <translation>Tuyến micrô</translation>
     </message>
@@ -1708,8 +1928,20 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Đã hết thời gian chờ khởi động micrô</translation>
     </message>
     <message>
+      <source>Minimum frequency</source>
+      <translation>Tần số tối thiểu</translation>
+    </message>
+    <message>
+      <source>Mix</source>
+      <translation>Trộn</translation>
+    </message>
+    <message>
       <source>Model</source>
       <translation>Mẫu</translation>
+    </message>
+    <message>
+      <source>Mono</source>
+      <translation>Đơn âm</translation>
     </message>
     <message>
       <source>Move right for a broader adjustment.</source>
@@ -1722,6 +1954,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Movies</source>
       <translation>Phim</translation>
+    </message>
+    <message>
+      <source>Music mode</source>
+      <translation>Chế độ âm nhạc</translation>
     </message>
     <message>
       <source>My equipment</source>
@@ -1801,6 +2037,14 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Không — dùng EQ của tôi</translation>
     </message>
     <message>
+      <source>Not enough broadband reference data.</source>
+      <translation>Không đủ dữ liệu tham chiếu băng rộng.</translation>
+    </message>
+    <message>
+      <source>Note grid</source>
+      <translation>Lưới nốt nhạc</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Định dạng số và ngày</translation>
     </message>
@@ -1811,6 +2055,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>OK</source>
       <translation>OK</translation>
+    </message>
+    <message>
+      <source>Octave</source>
+      <translation>Quãng tám</translation>
     </message>
     <message>
       <source>Omnidirectional speaker</source>
@@ -1878,6 +2126,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Mở giao diện ghi dữ liệu phát thử nghiệm</translation>
     </message>
     <message>
+      <source>Open the estimated response and correction in the editor. Nothing is saved or applied yet.</source>
+      <translation>Mở đáp ứng ước tính và hiệu chỉnh trong trình biên tập. Chưa lưu hay áp dụng gì.</translation>
+    </message>
+    <message>
       <source>Open update folder</source>
       <translation>Mở thư mục cập nhật</translation>
     </message>
@@ -1908,6 +2160,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Đầu ra tổng thể</translation>
     </message>
     <message>
+      <source>Palette</source>
+      <translation>Bảng màu</translation>
+    </message>
+    <message>
       <source>Panel speaker</source>
       <translation>Loa dạng tấm</translation>
       <extracomment>Panel-format speaker category, including planar/electrostatic models; not an application UI panel.</extracomment>
@@ -1925,6 +2181,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Pause processing and open audio setup. The app stays open and reports the result. Restart Windows after installing the driver.</source>
       <translation>Tạm dừng xử lý và mở thiết lập âm thanh. Ứng dụng vẫn mở và báo kết quả. Khởi động lại Windows sau khi cài driver.</translation>
+    </message>
+    <message>
+      <source>Peak hold</source>
+      <translation>Giữ đỉnh</translation>
     </message>
     <message>
       <source>Peak markers</source>
@@ -1946,6 +2206,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Playback</source>
       <translation>Phát âm thanh</translation>
+    </message>
+    <message>
+      <source>Playback monitor</source>
+      <translation>Giám sát phát lại</translation>
     </message>
     <message>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
@@ -2214,6 +2478,10 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Reapply the last undone text edit; does not reset the audio profile.</extracomment>
     </message>
     <message>
+      <source>Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement.</source>
+      <translation>So sánh tham chiếu bao gồm ảnh hưởng của nguồn âm, căn phòng và micrô tham chiếu. Đây không phải phép đo riêng biệt hay được chứng nhận của micrô.</translation>
+    </message>
+    <message>
       <source>Refresh devices</source>
       <translation>Làm mới thiết bị</translation>
     </message>
@@ -2328,6 +2596,14 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Thử lại</translation>
     </message>
     <message>
+      <source>Review estimated profile</source>
+      <translation>Xem lại cấu hình ước tính</translation>
+    </message>
+    <message>
+      <source>Right</source>
+      <translation>Phải</translation>
+    </message>
+    <message>
       <source>Right-to-left test language</source>
       <translation>Ngôn ngữ thử nghiệm từ phải sang trái</translation>
     </message>
@@ -2382,6 +2658,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Đã lưu thiết lập sẵn “%1”.</translation>
     </message>
     <message>
+      <source>Scroll speed</source>
+      <translation>Tốc độ cuộn</translation>
+    </message>
+    <message>
       <source>Search brand, family, model or measurement conditions</source>
       <translation>Tìm thương hiệu, dòng sản phẩm, mẫu hoặc điều kiện đo</translation>
     </message>
@@ -2397,6 +2677,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Select band %1</source>
       <translation>Chọn dải %1</translation>
+    </message>
+    <message>
+      <source>Select between one and eight known component responses.</source>
+      <translation>Chọn từ một đến tám đáp ứng thành phần đã biết.</translation>
     </message>
     <message>
       <source>Select this band to edit frequency, gain, and Q</source>
@@ -2461,6 +2745,10 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Native driver setup progress. %1 is stable SoundCurrent Audio name; shared means EQ and Studio share driver ownership, not network sharing. Not completion.</extracomment>
     </message>
     <message>
+      <source>Settings</source>
+      <translation>Cài đặt</translation>
+    </message>
+    <message>
       <source>Settings &amp;&amp; calibration</source>
       <translation>Cài đặt &amp;&amp; hiệu chuẩn</translation>
     </message>
@@ -2490,6 +2778,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Shorter intervals update levels more often and use more CPU; audio delivery may limit the actual rate</source>
       <translation>Khoảng thời gian ngắn hơn cập nhật mức thường xuyên hơn và dùng nhiều CPU hơn; tốc độ thực tế có thể bị giới hạn bởi việc cung cấp âm thanh</translation>
+    </message>
+    <message>
+      <source>Show EQ response graph</source>
+      <translation>Hiện đường đáp ứng EQ</translation>
     </message>
     <message>
       <source>Show a falling peak hold line on each frequency level</source>
@@ -2649,6 +2941,14 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Loại loa</translation>
     </message>
     <message>
+      <source>Spectrogram</source>
+      <translation>Ảnh phổ thời gian</translation>
+    </message>
+    <message>
+      <source>Spectrum</source>
+      <translation>Phổ</translation>
+    </message>
+    <message>
       <source>Spinorama AutoEQ: correction gain is limited to %1 and Q to %2. Boosts below %3 are omitted. Your listening preset is added separately.</source>
       <translation>Spinorama AutoEQ: độ lợi hiệu chỉnh được giới hạn ở %1 và Q ở %2. Các mức tăng dưới %3 được bỏ qua. Thiết lập nghe của bạn được cộng riêng.</translation>
       <extracomment>Speaker correction safety policy. %1 is the signed gain limit including dB, %2 is the dimensionless Q limit, %3 is the minimum boost frequency including Hz. Listening preset EQ is summed separately and can exceed these correction-only bounds. Spinorama AutoEQ is a name.</extracomment>
@@ -2692,6 +2992,10 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Increase the numeric spin-box value by one step; not physical movement.</extracomment>
     </message>
     <message>
+      <source>Stereo</source>
+      <translation>Âm thanh nổi</translation>
+    </message>
+    <message>
       <source>Stop the microphone calibration before changing the audio driver.</source>
       <translation>Dừng hiệu chuẩn micrô trước khi thay đổi trình điều khiển âm thanh.</translation>
     </message>
@@ -2708,6 +3012,10 @@ Bạn vẫn muốn xóa không?</translation>
       <source>Studio profile has an invalid numeric field</source>
       <translation>Hồ sơ Studio có trường số không hợp lệ</translation>
       <extracomment>Saved Studio setup numeric field is wrong type, nonfinite or outside its supported range. JSON numbers use invariant syntax; do not reinterpret them according to the interface locale.</extracomment>
+    </message>
+    <message>
+      <source>Subtract known measured responses from a measured chain response, then review the estimated correction.</source>
+      <translation>Trừ các đáp ứng đo đã biết khỏi đáp ứng chuỗi, rồi xem lại hiệu chỉnh ước tính.</translation>
     </message>
     <message>
       <source>Suggested EQ applied. Use Save preset to keep it.</source>
@@ -2793,6 +3101,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Thao tác này nhập ĐÁP TUYẾN đo được, không phải gain EQ đã đảo ngược. Xác nhận loại thiết bị. SPL tuyệt đối cần được chuẩn hóa trước khi nhập.</translation>
     </message>
     <message>
+      <source>This is an estimated residual, not a certified equipment measurement. Any unknown room, microphone, clothing, placement or interface response remains included. Published curves may not match your setup. Do not correct deep nulls or unmeasured frequencies.</source>
+      <translation>Đây là đáp ứng dư ước tính, không phải phép đo thiết bị được chứng nhận. Các ảnh hưởng chưa biết của phòng, micrô, quần áo, vị trí hoặc giao diện vẫn được tính vào. Đường cong công bố có thể không khớp hệ thống. Không hiệu chỉnh các điểm triệt tiêu sâu hoặc tần số chưa đo.</translation>
+    </message>
+    <message>
       <source>This profile has changed. Save a custom copy before leaving?</source>
       <translation>Cấu hình này đã thay đổi. Lưu một bản sao tùy chỉnh trước khi rời đi?</translation>
     </message>
@@ -2820,12 +3132,20 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Professional sound-reinforcement speaker for touring/live events, distinct from portable PA.</extracomment>
     </message>
     <message>
+      <source>Transient markers</source>
+      <translation>Dấu quá độ</translation>
+    </message>
+    <message>
       <source>Translation coverage: %1 of %2 messages. Missing translations use English. Language packs are unverified and await native-speaker review. Use Quit and reopen to apply changes.</source>
       <translation>Mức độ bao phủ bản dịch: %1 trên %2 thông điệp. Các bản dịch còn thiếu dùng tiếng Anh. Gói ngôn ngữ chưa được xác minh và đang chờ người bản ngữ rà soát. Dùng Thoát rồi mở lại để áp dụng thay đổi.</translation>
     </message>
     <message>
       <source>Treble Detail</source>
       <translation>Chi tiết âm cao</translation>
+    </message>
+    <message>
+      <source>Tuner</source>
+      <translation>Bộ chỉnh dây</translation>
     </message>
     <message>
       <source>Turn equalizer off</source>
@@ -2846,6 +3166,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Type</source>
       <translation>Loại</translation>
+    </message>
+    <message>
+      <source>Ukulele</source>
+      <translation>Ukulele</translation>
     </message>
     <message>
       <source>Unclassified equipment</source>
@@ -2893,6 +3217,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Không hỗ trợ phiên bản cấu trúc cấu hình thiết bị (yêu cầu 2/3).</translation>
     </message>
     <message>
+      <source>Unsupported equipment profile schema (expected 2/3/4).</source>
+      <translation>Lược đồ cấu hình thiết bị không được hỗ trợ (cần 2/3/4).</translation>
+    </message>
+    <message>
       <source>Unsupported filter type.</source>
       <translation>Không hỗ trợ loại bộ lọc.</translation>
     </message>
@@ -2917,6 +3245,11 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Không hỗ trợ phiên bản cấu trúc cấu hình loa</translation>
     </message>
     <message>
+      <source>Update</source>
+      <translation>Cập nhật</translation>
+      <extracomment>Button opening the official software-release downloads. Does not refresh audio data or install automatically.</extracomment>
+    </message>
+    <message>
       <source>Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.</source>
       <translation>Đã tải bản cập nhật %1: %2. Thoát, cài đè lên ứng dụng hiện có, rồi mở lại.</translation>
     </message>
@@ -2927,6 +3260,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Use a quiet room. Measures speakers, room, and microphone together; results include the mic response.</source>
       <translation>Dùng phòng yên tĩnh. Đo loa, phòng và micrô cùng nhau; kết quả bao gồm đáp tuyến micrô.</translation>
+    </message>
+    <message>
+      <source>Use an imported measurement of the complete chain. Select only measured component responses that were part of that chain. Correction EQ filters are never subtracted.</source>
+      <translation>Dùng phép đo được nhập của toàn bộ chuỗi. Chỉ chọn đáp ứng đo của các thành phần trong chuỗi đó. Không bao giờ trừ bộ lọc hiệu chỉnh.</translation>
     </message>
     <message>
       <source>Use system language</source>
@@ -3020,6 +3357,22 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>VB-CABLE được giữ lại vì ứng dụng SoundCurrent còn lại đã được cài đặt. Hãy gỡ nó cùng ứng dụng cuối cùng nếu không có phần mềm nào khác cần nó.</translation>
     </message>
     <message>
+      <source>Vectorscope</source>
+      <translation>Máy hiện véc-tơ</translation>
+    </message>
+    <message>
+      <source>View</source>
+      <translation>Chế độ xem</translation>
+    </message>
+    <message>
+      <source>Viola</source>
+      <translation>Viola</translation>
+    </message>
+    <message>
+      <source>Violin</source>
+      <translation>Vi-ô-lông</translation>
+    </message>
+    <message>
       <source>Vocal Focus</source>
       <translation>Nhấn giọng hát</translation>
     </message>
@@ -3034,6 +3387,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Warmth</source>
       <translation>Độ ấm</translation>
+    </message>
+    <message>
+      <source>Waveform</source>
+      <translation>Dạng sóng</translation>
     </message>
     <message>
       <source>Whole listening system</source>

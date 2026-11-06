@@ -156,5 +156,16 @@
   "Whole listening system": "New editable calibration profile family; combined speaker, amplifier, microphone and room, not isolated speaker response. Translate only on creation, preserve loaded metadata.",
   "Measured listening position": "New editable calibration profile model caption: location where the user listens and microphone measured. Not a microphone model.",
   "Combined speaker/amplifier/microphone/room response; not an isolated equipment measurement. %1 / %2": "New authored measurement condition note. %1 and %2 preserve input/output device captions. Does not claim independent speaker or microphone calibration.",
-  "SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.": "New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity."
+  "SoundCurrent sweep or tone measurement; relative to median; microphone EQ bypassed. Playback EQ may be included.": "New authored provenance note. Measurement is relative to median response; microphone equalization bypassed; speaker playback equalization may be included. Preserve uncertainty and SoundCurrent identity.",
+  "Microphone response": "A relative spectrum comparison against a captured reference. Includes source and room; not certified isolated microphone calibration.",
+  "Averaged spectrum": "A time-smoothed digital frequency spectrum, not a measured room response.",
+  "Display ceiling": "Upper vertical-axis limit in dBFS. Changes visualization only; never a limiter or audio gain.",
+  "Display sensitivity": "Displayed dynamic range in dB. Does not change hardware microphone gain.",
+  "Freeze display": "Hold the current analyzer picture; capture can continue, but visualization FFT work stops.",
+  "Update": "Button opening the official software-release downloads. Does not refresh audio data or install automatically.",
+  "Bass guitar": "Instrument tuner preset for standard bass-guitar strings.",
+  "Capture reference": "Snapshot the accumulated spectrum as a reference and reset the running average for the comparison measurement.",
+  "Create microphone profile": "Propose relative correction filters for review in the profile editor. Saving does not apply them automatically.",
+  "Estimated profile": "A derived frequency-response estimate, not a certified direct measurement. Keep the distinction from a measured response and from the editable inverse EQ correction.",
+  "Measured chain": "Measured response of the complete audio signal path, not a hardware model or a correction filter."
 }
