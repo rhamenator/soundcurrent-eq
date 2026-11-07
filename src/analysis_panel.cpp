@@ -1,3 +1,5 @@
+#include "microphone_access.h"
+#include "responsive_ui.h"
 // SPDX-License-Identifier: GPL-3.0-only
 #include "analysis_panel.h"
 #include "localization.h"
@@ -259,7 +261,7 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     setView(View(std::clamp(QSettings().value("analysis/view",saved?saved->view:0).toInt(),0,6)));canvas_->setAccessibleName(view_->currentText());availability();
 }
 Panel::~Panel(){canvas_->onVisibility={};canvas_->onFrame={};onActivity={};}
-bool Panel::active() const{return canvas_->isVisible() && sourceReady_ && !captureFailed_ && !suspended_;}
+bool Panel::active() const{return (source().isEmpty() || soundcurrent::microphone::allowed()) && canvas_->isVisible() && sourceReady_ && !captureFailed_ && !suspended_;}
 QString Panel::source() const{return source_->currentData().toString();}
 Engine &Panel::engine(){return *canvas_->data;}
 QSize Panel::historyPixelSize() const{return canvas_->historyPixelSize();}
@@ -286,16 +288,21 @@ void Panel::refreshSources(){
         source_->setCurrentIndex(std::max(0,source_->findData(wanted)));
         if(!ready)if(auto *model=qobject_cast<QStandardItemModel *>(source_->model()))model->item(source_->currentIndex())->setEnabled(false);
     }
+    const bool access=soundcurrent::microphone::allowed();
+    if(auto *model=qobject_cast<QStandardItemModel *>(source_->model()))
+        for(int i=1;i<source_->count();++i)model->item(i)->setEnabled(access && (source_->itemData(i).toString()!=wanted || ready));
+    ready=ready && (wanted.isEmpty() || access);
     if(ready!=sourceReady_ || oldSource!=source()){
         sourceReady_=ready;captureFailed_=false;reset();if(onActivity)onActivity(source(),active());
     }
-    if(!ready)readout_->setText(SC_TR("No microphone connected."));
+    if(!ready)readout_->setText(access?SC_TR("No microphone connected."):SC_TR("Microphone access is disabled."));
+    availability();
 }
 bool Panel::applySettings(const Settings &s){if(!s.valid())return false;canvas_->data->configure(s);setView(View(s.view));canvas_->clearImage();QSettings().setValue("analysis/settings",QJsonDocument(s.json()).toJson(QJsonDocument::Compact));availability();return true;}
 void Panel::reset(){const bool retry=captureFailed_;captureFailed_=false;engine().resetAverage();canvas_->clearImage();availability();if(retry && onActivity)onActivity(source(),active());}
-bool Panel::captureReference(){if(engine().frames<25 || engine().averaged.empty())return false;referenceSource_=source_->currentText();engine().captureReference();canvas_->clearImage();availability();return true;}
+bool Panel::captureReference(){if(!source().isEmpty() && !soundcurrent::microphone::allowed())return false;if(engine().frames<25 || engine().averaged.empty())return false;referenceSource_=source_->currentText();engine().captureReference();canvas_->clearImage();availability();return true;}
 std::optional<equipment::Profile> Panel::microphoneProfile() const {
-    const auto &e=*canvas_->data;if(source().isEmpty() || view()!=View::Microphone || e.frames<25 || e.reference.size()!=e.averaged.size())return {};
+    const auto &e=*canvas_->data;if(!soundcurrent::microphone::allowed() || source().isEmpty() || view()!=View::Microphone || e.frames<25 || e.reference.size()!=e.averaged.size())return {};
     const auto relative=e.relativeDb();
     if(std::max(20.,e.settings.low)>=std::min(20000.,e.settings.upper()))return {};
     int first=-1,last=-1,excited=0;
@@ -323,11 +330,16 @@ std::optional<equipment::Profile> Panel::microphoneProfile() const {
     p.filters=equipment::fitResponse(p.response);return p;
 }
 void Panel::availability(){
+    if(!source().isEmpty() && !soundcurrent::microphone::allowed()){
+        reference_->setEnabled(false);profile_->setEnabled(false);
+        readout_->setText(SC_TR("Microphone access is disabled."));return;
+    }
     const auto &e=engine();const bool microphone=view()==View::Microphone;help_->setVisible(microphone);reference_->setEnabled(e.frames>=25);reference_->setVisible(view()==View::Average || microphone);profile_->setVisible(microphone);profile_->setEnabled(microphone && !source().isEmpty() && e.frames>=25 && e.hasReference());
     readout_->setText(SC_TR("Frames: %1 · FFT: %2 ms · Resolution: %3 · Window: %4 ms").arg(QLocale().toString(e.waveFrames),QLocale().toString(e.fftMs,'f',2),formatFrequency(double(e.settings.rate)/e.settings.fft),QLocale().toString(e.settings.fft*1000./e.settings.rate,'f',1)));
 }
 void Panel::suspendForDialog(bool suspended){suspended_=suspended;canvas_->resetClock();if(onActivity)onActivity(source(),active());}
 void Panel::settingsDialog(){
+    soundcurrent::ui::installResponsiveDialogs();
     suspendForDialog(true);
     QDialog dialog(this);dialog.setWindowTitle(SC_TR("Settings"));dialog.setWindowModality(Qt::ApplicationModal);dialog.setObjectName("analysisSettingsDialog");
     auto *outer=new QVBoxLayout(&dialog);auto *scroll=new QScrollArea;scroll->setWidgetResizable(true);auto *body=new QWidget;auto *form=new QFormLayout(body);scroll->setWidget(body);outer->addWidget(scroll,1);

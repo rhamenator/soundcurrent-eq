@@ -252,7 +252,10 @@
     "Invalid estimated profile status.",
     "Measured responses must overlap by at least two octaves.",
     "Select between one and eight known component responses.",
-    "Unsupported equipment profile schema (expected 2/3/4)."
+    "Unsupported equipment profile schema (expected 2/3/4).",
+    "Disable microphone access",
+    "Microphone access is disabled.",
+    "Quit"
   ],
   "languages": {
     "de": [
@@ -509,7 +512,10 @@
       "Ungültiger Schätzstatus des Profils.",
       "Gemessene Antworten müssen sich um mindestens zwei Oktaven überlappen.",
       "Wählen Sie eine bis acht bekannte Komponentenantworten.",
-      "Nicht unterstütztes Geräteprofilschema (erwartet 2/3/4)."
+      "Nicht unterstütztes Geräteprofilschema (erwartet 2/3/4).",
+      "Mikrofonzugriff deaktivieren",
+      "Der Mikrofonzugriff ist deaktiviert.",
+      "Beenden"
     ],
     "fr": [
       "Français",
@@ -765,7 +771,10 @@
       "Statut de profil estimé non valide.",
       "Les réponses mesurées doivent se chevaucher sur au moins deux octaves.",
       "Sélectionnez entre une et huit réponses connues de composants.",
-      "Schéma de profil d’équipement non pris en charge (2/3/4 attendu)."
+      "Schéma de profil d’équipement non pris en charge (2/3/4 attendu).",
+      "Désactiver l’accès au microphone",
+      "L’accès au microphone est désactivé.",
+      "Quitter"
     ],
     "es": [
       "Español",
@@ -1021,7 +1030,10 @@
       "Estado de perfil estimado no válido.",
       "Las respuestas medidas deben solaparse al menos dos octavas.",
       "Seleccione entre una y ocho respuestas conocidas de componentes.",
-      "Esquema de perfil de equipo no compatible (se esperaba 2/3/4)."
+      "Esquema de perfil de equipo no compatible (se esperaba 2/3/4).",
+      "Desactivar el acceso al micrófono",
+      "El acceso al micrófono está desactivado.",
+      "Salir"
     ],
     "it": [
       "Italiano",
@@ -1277,7 +1289,10 @@
       "Stato del profilo stimato non valido.",
       "Le risposte misurate devono sovrapporsi per almeno due ottave.",
       "Seleziona da una a otto risposte note dei componenti.",
-      "Schema del profilo non supportato (previsto 2/3/4)."
+      "Schema del profilo non supportato (previsto 2/3/4).",
+      "Disattiva accesso al microfono",
+      "L’accesso al microfono è disattivato.",
+      "Esci"
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -1533,7 +1548,10 @@
       "Estado de perfil estimado inválido.",
       "As respostas medidas têm de se sobrepor em pelo menos duas oitavas.",
       "Selecione entre uma e oito respostas conhecidas de componentes.",
-      "Esquema de perfil não suportado (esperado 2/3/4)."
+      "Esquema de perfil não suportado (esperado 2/3/4).",
+      "Desativar acesso ao microfone",
+      "O acesso ao microfone está desativado.",
+      "Sair"
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -1789,7 +1807,10 @@
       "Estado de perfil estimado inválido.",
       "As respostas medidas devem se sobrepor em pelo menos duas oitavas.",
       "Selecione entre uma e oito respostas conhecidas de componentes.",
-      "Esquema de perfil não suportado (esperado 2/3/4)."
+      "Esquema de perfil não suportado (esperado 2/3/4).",
+      "Desativar acesso ao microfone",
+      "O acesso ao microfone está desativado.",
+      "Sair"
     ],
     "nl": [
       "Nederlands",
@@ -2045,7 +2066,10 @@
       "Ongeldige schattingsstatus van profiel.",
       "Gemeten responsen moeten minstens twee octaven overlappen.",
       "Selecteer één tot acht bekende componentresponsen.",
-      "Niet-ondersteund apparatuurschema (2/3/4 verwacht)."
+      "Niet-ondersteund apparatuurschema (2/3/4 verwacht).",
+      "Microfoontoegang uitschakelen",
+      "Microfoontoegang is uitgeschakeld.",
+      "Afsluiten"
     ],
     "pl": [
       "Polski",
@@ -2301,7 +2325,10 @@
       "Nieprawidłowy status profilu szacowanego.",
       "Zmierzone charakterystyki muszą pokrywać się na co najmniej dwóch oktawach.",
       "Wybierz od jednej do ośmiu znanych charakterystyk elementów.",
-      "Nieobsługiwany schemat profilu sprzętu (oczekiwano 2/3/4)."
+      "Nieobsługiwany schemat profilu sprzętu (oczekiwano 2/3/4).",
+      "Wyłącz dostęp do mikrofonu",
+      "Dostęp do mikrofonu jest wyłączony.",
+      "Zakończ"
     ],
     "cs": [
       "Čeština",
@@ -2557,7 +2584,10 @@
       "Neplatný stav odhadovaného profilu.",
       "Změřené charakteristiky se musí překrývat alespoň o dvě oktávy.",
       "Vyberte jednu až osm známých charakteristik součástí.",
-      "Nepodporované schéma profilu zařízení (očekáváno 2/3/4)."
+      "Nepodporované schéma profilu zařízení (očekáváno 2/3/4).",
+      "Zakázat přístup k mikrofonu",
+      "Přístup k mikrofonu je zakázán.",
+      "Ukončit"
     ],
     "sk": [
       "Slovenčina",
@@ -2813,7 +2843,10 @@
       "Neplatný stav odhadovaného profilu.",
       "Zmerané charakteristiky sa musia prekrývať aspoň o dve oktávy.",
       "Vyberte jednu až osem známych charakteristík súčastí.",
-      "Nepodporovaná schéma profilu zariadenia (očakávané 2/3/4)."
+      "Nepodporovaná schéma profilu zariadenia (očakávané 2/3/4).",
+      "Zakázať prístup k mikrofónu",
+      "Prístup k mikrofónu je zakázaný.",
+      "Ukončiť"
     ],
     "uk": [
       "Українська",
@@ -3069,7 +3102,10 @@
       "Некоректний статус оціненого профілю.",
       "Виміряні характеристики мають перекриватися щонайменше на дві октави.",
       "Виберіть від однієї до восьми відомих характеристик компонентів.",
-      "Непідтримувана схема профілю обладнання (очікується 2/3/4)."
+      "Непідтримувана схема профілю обладнання (очікується 2/3/4).",
+      "Вимкнути доступ до мікрофона",
+      "Доступ до мікрофона вимкнено.",
+      "Вийти"
     ],
     "ru": [
       "Русский",
@@ -3325,7 +3361,10 @@
       "Некорректный статус оценочного профиля.",
       "Измеренные характеристики должны перекрываться минимум на две октавы.",
       "Выберите от одной до восьми известных характеристик компонентов.",
-      "Неподдерживаемая схема профиля оборудования (ожидается 2/3/4)."
+      "Неподдерживаемая схема профиля оборудования (ожидается 2/3/4).",
+      "Отключить доступ к микрофону",
+      "Доступ к микрофону отключён.",
+      "Выйти"
     ],
     "el": [
       "Ελληνικά",
@@ -3581,7 +3620,10 @@
       "Μη έγκυρη κατάσταση εκτιμώμενου προφίλ.",
       "Οι μετρημένες αποκρίσεις πρέπει να επικαλύπτονται τουλάχιστον δύο οκτάβες.",
       "Επιλέξτε μία έως οκτώ γνωστές αποκρίσεις εξαρτημάτων.",
-      "Μη υποστηριζόμενο σχήμα προφίλ εξοπλισμού (αναμένεται 2/3/4)."
+      "Μη υποστηριζόμενο σχήμα προφίλ εξοπλισμού (αναμένεται 2/3/4).",
+      "Απενεργοποίηση πρόσβασης στο μικρόφωνο",
+      "Η πρόσβαση στο μικρόφωνο είναι απενεργοποιημένη.",
+      "Έξοδος"
     ],
     "tr": [
       "Türkçe",
@@ -3837,7 +3879,10 @@
       "Geçersiz tahmini profil durumu.",
       "Ölçülmüş yanıtlar en az iki oktav örtüşmelidir.",
       "Bir ile sekiz arasında bilinen bileşen yanıtı seçin.",
-      "Desteklenmeyen ekipman profil şeması (2/3/4 bekleniyor)."
+      "Desteklenmeyen ekipman profil şeması (2/3/4 bekleniyor).",
+      "Mikrofon erişimini devre dışı bırak",
+      "Mikrofon erişimi devre dışı.",
+      "Çık"
     ],
     "sv": [
       "Svenska",
@@ -4093,7 +4138,10 @@
       "Ogiltig status för uppskattad profil.",
       "Uppmätta responser måste överlappa minst två oktaver.",
       "Välj en till åtta kända komponentresponser.",
-      "Utrustningsprofilens schema stöds inte (2/3/4 förväntas)."
+      "Utrustningsprofilens schema stöds inte (2/3/4 förväntas).",
+      "Inaktivera mikrofonåtkomst",
+      "Mikrofonåtkomst är inaktiverad.",
+      "Avsluta"
     ],
     "da": [
       "Dansk",
@@ -4349,7 +4397,10 @@
       "Ugyldig status for estimeret profil.",
       "Målte responser skal overlappe mindst to oktaver.",
       "Vælg mellem én og otte kendte komponentresponser.",
-      "Udstyrsprofilens skema understøttes ikke (2/3/4 forventes)."
+      "Udstyrsprofilens skema understøttes ikke (2/3/4 forventes).",
+      "Deaktiver mikrofonadgang",
+      "Mikrofonadgang er deaktiveret.",
+      "Afslut"
     ],
     "nb": [
       "Norsk bokmål",
@@ -4605,7 +4656,10 @@
       "Ugyldig status for estimert profil.",
       "Målte responser må overlappe minst to oktaver.",
       "Velg én til åtte kjente komponentresponser.",
-      "Utstyrsprofilskjema støttes ikke (forventer 2/3/4)."
+      "Utstyrsprofilskjema støttes ikke (forventer 2/3/4).",
+      "Deaktiver mikrofontilgang",
+      "Mikrofontilgang er deaktivert.",
+      "Avslutt"
     ],
     "fi": [
       "Suomi",
@@ -4861,7 +4915,10 @@
       "Virheellinen arvioidun profiilin tila.",
       "Mitattujen vasteiden on oltava päällekkäisiä vähintään kaksi oktaavia.",
       "Valitse yhdestä kahdeksaan tunnettua komponenttivastetta.",
-      "Laitteen profiiliskeemaa ei tueta (odotettu 2/3/4)."
+      "Laitteen profiiliskeemaa ei tueta (odotettu 2/3/4).",
+      "Poista mikrofonin käyttö käytöstä",
+      "Mikrofonin käyttö on poistettu käytöstä.",
+      "Lopeta"
     ],
     "ro": [
       "Română",
@@ -5117,7 +5174,10 @@
       "Stare de profil estimat nevalidă.",
       "Răspunsurile măsurate trebuie să se suprapună cu cel puțin două octave.",
       "Selectează între unul și opt răspunsuri cunoscute ale componentelor.",
-      "Schemă de profil neacceptată (se așteaptă 2/3/4)."
+      "Schemă de profil neacceptată (se așteaptă 2/3/4).",
+      "Dezactivează accesul la microfon",
+      "Accesul la microfon este dezactivat.",
+      "Ieșire"
     ],
     "hu": [
       "Magyar",
@@ -5373,7 +5433,10 @@
       "Érvénytelen becsült profilállapot.",
       "A mért átviteleknek legalább két oktávon át kell fedniük egymást.",
       "Válasszon egy–nyolc ismert komponensátvitelt.",
-      "Nem támogatott berendezésprofilséma (várt: 2/3/4)."
+      "Nem támogatott berendezésprofilséma (várt: 2/3/4).",
+      "Mikrofon-hozzáférés letiltása",
+      "A mikrofon-hozzáférés le van tiltva.",
+      "Kilépés"
     ],
     "ar": [
       "العربية",
@@ -5629,7 +5692,10 @@
       "حالة ملف التعريف التقديري غير صالحة.",
       "يجب أن تتداخل الاستجابات المقاسة بمقدار أوكتافين على الأقل.",
       "اختر من استجابة واحدة إلى ثماني استجابات معروفة للمكونات.",
-      "مخطط ملف المعدات غير مدعوم (المتوقع 2/3/4)."
+      "مخطط ملف المعدات غير مدعوم (المتوقع 2/3/4).",
+      "تعطيل الوصول إلى الميكروفون",
+      "الوصول إلى الميكروفون معطّل.",
+      "إنهاء"
     ],
     "he": [
       "עברית",
@@ -5885,7 +5951,10 @@
       "מצב הפרופיל המוערך אינו תקין.",
       "התגובות המדודות חייבות לחפוף בשתי אוקטבות לפחות.",
       "יש לבחור תגובה ידועה אחת עד שמונה של רכיבים.",
-      "סכמת פרופיל ציוד אינה נתמכת (נדרשת 2/3/4)."
+      "סכמת פרופיל ציוד אינה נתמכת (נדרשת 2/3/4).",
+      "השבתת הגישה למיקרופון",
+      "הגישה למיקרופון מושבתת.",
+      "יציאה"
     ],
     "fa": [
       "فارسی",
@@ -6141,7 +6210,10 @@
       "وضعیت نمایهٔ برآوردی نامعتبر است.",
       "پاسخ‌های اندازه‌گیری‌شده باید دست‌کم دو اکتاو هم‌پوشانی داشته باشند.",
       "بین یک تا هشت پاسخ شناخته‌شدهٔ اجزا را انتخاب کنید.",
-      "طرح نمایهٔ تجهیزات پشتیبانی نمی‌شود (مورد انتظار 2/3/4)."
+      "طرح نمایهٔ تجهیزات پشتیبانی نمی‌شود (مورد انتظار 2/3/4).",
+      "غیرفعال کردن دسترسی به میکروفون",
+      "دسترسی به میکروفون غیرفعال است.",
+      "خروج"
     ],
     "zh-Hans": [
       "简体中文",
@@ -6397,7 +6469,10 @@
       "估算配置状态无效。",
       "实测响应必须至少重叠两个八度。",
       "请选择一至八个已知组件响应。",
-      "不支持的设备配置架构（应为 2/3/4）。"
+      "不支持的设备配置架构（应为 2/3/4）。",
+      "禁用麦克风访问",
+      "麦克风访问已禁用。",
+      "退出"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -6653,7 +6728,10 @@
       "估算設定檔狀態無效。",
       "實測響應必須至少重疊兩個八度。",
       "請選取一至八個已知元件響應。",
-      "不支援的設備設定檔結構描述（應為 2/3/4）。"
+      "不支援的設備設定檔結構描述（應為 2/3/4）。",
+      "停用麥克風存取",
+      "麥克風存取已停用。",
+      "結束"
     ],
     "ja": [
       "日本語",
@@ -6909,7 +6987,10 @@
       "推定プロファイル状態が無効です。",
       "実測応答は最低 2 オクターブ重なる必要があります。",
       "既知の構成機器の応答を 1～8 個選択してください。",
-      "未対応の機器プロファイルスキーマです（2/3/4 が必要）。"
+      "未対応の機器プロファイルスキーマです（2/3/4 が必要）。",
+      "マイクへのアクセスを無効にする",
+      "マイクへのアクセスは無効です。",
+      "終了"
     ],
     "ko": [
       "한국어",
@@ -7165,7 +7246,10 @@
       "추정 프로필 상태가 잘못되었습니다.",
       "실측 응답은 최소 두 옥타브 겹쳐야 합니다.",
       "알려진 구성 요소 응답을 1~8개 선택하십시오.",
-      "지원하지 않는 장비 프로필 스키마입니다(2/3/4 필요)."
+      "지원하지 않는 장비 프로필 스키마입니다(2/3/4 필요).",
+      "마이크 접근 비활성화",
+      "마이크 접근이 비활성화되어 있습니다.",
+      "종료"
     ],
     "hi": [
       "हिन्दी",
@@ -7421,7 +7505,10 @@
       "अनुमानित प्रोफ़ाइल की स्थिति अमान्य है।",
       "मापी गई प्रतिक्रियाएँ कम से कम दो सप्तक तक मिलनी चाहिए।",
       "घटकों की एक से आठ ज्ञात प्रतिक्रियाएँ चुनें।",
-      "उपकरण प्रोफ़ाइल स्कीमा समर्थित नहीं है (2/3/4 अपेक्षित)।"
+      "उपकरण प्रोफ़ाइल स्कीमा समर्थित नहीं है (2/3/4 अपेक्षित)।",
+      "माइक्रोफ़ोन का ऐक्सेस बंद करें",
+      "माइक्रोफ़ोन का ऐक्सेस बंद है।",
+      "बाहर निकलें"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -7677,7 +7764,10 @@
       "Status profil perkiraan tidak valid.",
       "Respons terukur harus bertumpang tindih setidaknya dua oktaf.",
       "Pilih satu hingga delapan respons komponen yang diketahui.",
-      "Skema profil peralatan tidak didukung (diharapkan 2/3/4)."
+      "Skema profil peralatan tidak didukung (diharapkan 2/3/4).",
+      "Nonaktifkan akses mikrofon",
+      "Akses mikrofon dinonaktifkan.",
+      "Keluar"
     ],
     "vi": [
       "Tiếng Việt",
@@ -7933,7 +8023,10 @@
       "Trạng thái cấu hình ước tính không hợp lệ.",
       "Các đáp ứng đo phải chồng lấp ít nhất hai quãng tám.",
       "Chọn từ một đến tám đáp ứng thành phần đã biết.",
-      "Lược đồ cấu hình thiết bị không được hỗ trợ (cần 2/3/4)."
+      "Lược đồ cấu hình thiết bị không được hỗ trợ (cần 2/3/4).",
+      "Tắt quyền truy cập micrô",
+      "Quyền truy cập micrô đã bị tắt.",
+      "Thoát"
     ],
     "th": [
       "ไทย",
@@ -8189,7 +8282,10 @@
       "สถานะโปรไฟล์โดยประมาณไม่ถูกต้อง",
       "การตอบสนองที่วัดต้องทับซ้อนกันอย่างน้อยสองอ็อกเทฟ",
       "เลือกการตอบสนองของส่วนประกอบที่ทราบหนึ่งถึงแปดรายการ",
-      "ไม่รองรับสคีมาโปรไฟล์อุปกรณ์ (ต้องเป็น 2/3/4)"
+      "ไม่รองรับสคีมาโปรไฟล์อุปกรณ์ (ต้องเป็น 2/3/4)",
+      "ปิดการเข้าถึงไมโครโฟน",
+      "ปิดการเข้าถึงไมโครโฟนอยู่",
+      "ออก"
     ],
     "sw": [
       "Kiswahili",
@@ -8445,7 +8541,10 @@
       "Hali ya wasifu uliokadiriwa si sahihi.",
       "Miitikio iliyopimwa lazima ipishane kwa angalau oktava mbili.",
       "Chagua mwitikio mmoja hadi minane inayojulikana ya vipengele.",
-      "Muundo wa wasifu wa vifaa haukubaliki (2/3/4 inatarajiwa)."
+      "Muundo wa wasifu wa vifaa haukubaliki (2/3/4 inatarajiwa).",
+      "Zima ufikiaji wa maikrofoni",
+      "Ufikiaji wa maikrofoni umezimwa.",
+      "Toka"
     ],
     "nn": [
       "Norsk nynorsk",
@@ -8701,7 +8800,10 @@
       "Ugyldig status for estimert profil.",
       "Målte responsar må overlappe minst to oktavar.",
       "Vel éin til åtte kjende komponentresponsar.",
-      "Utstyrsprofilskjema er ikkje støtta (ventar 2/3/4)."
+      "Utstyrsprofilskjema er ikkje støtta (ventar 2/3/4).",
+      "Slå av mikrofontilgang",
+      "Mikrofontilgang er slått av.",
+      "Avslutt"
     ]
   },
   "requiredCompleteLocales": [

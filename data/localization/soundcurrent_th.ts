@@ -976,6 +976,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Disable microphone access</source>
+      <translation>ปิดการเข้าถึงไมโครโฟน</translation>
+    </message>
+    <message>
       <source>Discard</source>
       <translation>ละทิ้ง</translation>
     </message>
@@ -1877,6 +1881,10 @@ Do you want to delete it anyway?</source>
       <translation>EQ ไมโครโฟนปิดอยู่</translation>
     </message>
     <message>
+      <source>Microphone access is disabled.</source>
+      <translation>ปิดการเข้าถึงไมโครโฟนอยู่</translation>
+    </message>
+    <message>
       <source>Microphone audio bridge did not start</source>
       <translation>ไม่สามารถเริ่มสะพานเสียงไมโครโฟนได้</translation>
     </message>
@@ -2328,6 +2336,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Quiet logarithmic sweep</source>
       <translation>สัญญาณกวาดลอการิทึมระดับเบา</translation>
+    </message>
+    <message>
+      <source>Quit</source>
+      <translation>ออก</translation>
     </message>
     <message>
       <source>Quit %1 before uninstalling it.</source>

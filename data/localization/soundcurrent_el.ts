@@ -976,6 +976,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Disable microphone access</source>
+      <translation>Απενεργοποίηση πρόσβασης στο μικρόφωνο</translation>
+    </message>
+    <message>
       <source>Discard</source>
       <translation>Απόρριψη</translation>
     </message>
@@ -1877,6 +1881,10 @@ Do you want to delete it anyway?</source>
       <translation>Το EQ μικροφώνου είναι ανενεργό.</translation>
     </message>
     <message>
+      <source>Microphone access is disabled.</source>
+      <translation>Η πρόσβαση στο μικρόφωνο είναι απενεργοποιημένη.</translation>
+    </message>
+    <message>
       <source>Microphone audio bridge did not start</source>
       <translation>Η γέφυρα ήχου μικροφώνου δεν ξεκίνησε</translation>
     </message>
@@ -2328,6 +2336,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Quiet logarithmic sweep</source>
       <translation>Ήσυχη λογαριθμική σάρωση συχνοτήτων</translation>
+    </message>
+    <message>
+      <source>Quit</source>
+      <translation>Έξοδος</translation>
     </message>
     <message>
       <source>Quit %1 before uninstalling it.</source>

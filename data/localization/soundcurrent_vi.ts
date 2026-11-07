@@ -976,6 +976,10 @@ Bạn vẫn muốn xóa không?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Disable microphone access</source>
+      <translation>Tắt quyền truy cập micrô</translation>
+    </message>
+    <message>
       <source>Discard</source>
       <translation>Bỏ thay đổi</translation>
     </message>
@@ -1877,6 +1881,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>EQ micrô đã tắt.</translation>
     </message>
     <message>
+      <source>Microphone access is disabled.</source>
+      <translation>Quyền truy cập micrô đã bị tắt.</translation>
+    </message>
+    <message>
       <source>Microphone audio bridge did not start</source>
       <translation>Cầu nối âm thanh micrô không khởi động được</translation>
     </message>
@@ -2328,6 +2336,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Quiet logarithmic sweep</source>
       <translation>Quét logarit âm lượng nhỏ</translation>
+    </message>
+    <message>
+      <source>Quit</source>
+      <translation>Thoát</translation>
     </message>
     <message>
       <source>Quit %1 before uninstalling it.</source>

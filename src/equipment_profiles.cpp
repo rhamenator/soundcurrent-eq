@@ -1,3 +1,4 @@
+#include "responsive_ui.h"
 #include "button_help.h"
 #include "localized_file_dialog.h"
 #include "localization.h"
@@ -312,7 +313,7 @@ class Editor : public QDialog {
         originalProvenance = draft.provenance;
         setWindowTitle(SC_TR("Equipment profile editor"));
         setObjectName("graphProfileEditor");
-        soundcurrent::ui::installButtonHelp();
+        soundcurrent::ui::installButtonHelp();soundcurrent::ui::installResponsiveDialogs();
         const auto available = screen()->availableGeometry();
         resize(std::min(800, available.width() - 40), std::min(720, available.height() - 40));
         auto *outer = new QVBoxLayout(this);
@@ -444,7 +445,7 @@ class Editor : public QDialog {
         });
         layout->addWidget(details);
         layout->addStretch();
-        auto *bar = new QHBoxLayout;
+        auto *bar = new soundcurrent::ui::ResponsiveRow;
         previewButton = new QPushButton(SC_TR("Preview"));
         previewButton->setObjectName("previewProfile");
         previewButton->setCheckable(true);
@@ -456,7 +457,7 @@ class Editor : public QDialog {
         auto *buttons = new QDialogButtonBox(QDialogButtonBox::Save | QDialogButtonBox::Cancel);
         buttons->button(QDialogButtonBox::Save)->setText(SC_TR("Save copy"));
         bar->addWidget(buttons);
-        outer->addLayout(bar);
+        outer->addWidget(bar);
         connect(buttons, &QDialogButtonBox::accepted, this, [this] {
             if (persist())
                 accept();
@@ -1000,7 +1001,7 @@ void saveNewProfile(QWidget *parent, Profile p, const Preview &preview) {
 }
 void openLibrary(QWidget *parent, const std::function<void(const Profile &)> &apply, const QString &initialKind, const Preview &preview, const std::optional<Profile> &initialProfile, const Removed &removed) {
     QDialog dialog(parent);
-    soundcurrent::ui::installButtonHelp();
+    soundcurrent::ui::installButtonHelp();soundcurrent::ui::installResponsiveDialogs();
     dialog.setWindowTitle(SC_TR("Equipment profiles — brand / family / model"));
     const auto available = dialog.screen()->availableGeometry();
     dialog.resize(std::max(1,std::min(800,available.width()-40)),

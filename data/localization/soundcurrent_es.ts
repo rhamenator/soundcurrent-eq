@@ -976,6 +976,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Disable microphone access</source>
+      <translation>Desactivar el acceso al micrófono</translation>
+    </message>
+    <message>
       <source>Discard</source>
       <translation>Descartar</translation>
     </message>
@@ -1877,6 +1881,10 @@ Do you want to delete it anyway?</source>
       <translation>La ecualización del micrófono está desactivada.</translation>
     </message>
     <message>
+      <source>Microphone access is disabled.</source>
+      <translation>El acceso al micrófono está desactivado.</translation>
+    </message>
+    <message>
       <source>Microphone audio bridge did not start</source>
       <translation>El puente de audio del micrófono no se inició</translation>
     </message>
@@ -2328,6 +2336,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Quiet logarithmic sweep</source>
       <translation>Barrido logarítmico de bajo volumen</translation>
+    </message>
+    <message>
+      <source>Quit</source>
+      <translation>Salir</translation>
     </message>
     <message>
       <source>Quit %1 before uninstalling it.</source>

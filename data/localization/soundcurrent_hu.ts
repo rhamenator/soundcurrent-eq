@@ -976,6 +976,10 @@ Mindenképp törölni szeretné?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Disable microphone access</source>
+      <translation>Mikrofon-hozzáférés letiltása</translation>
+    </message>
+    <message>
       <source>Discard</source>
       <translation>Elvetés</translation>
     </message>
@@ -1877,6 +1881,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>A mikrofon-EQ ki van kapcsolva.</translation>
     </message>
     <message>
+      <source>Microphone access is disabled.</source>
+      <translation>A mikrofon-hozzáférés le van tiltva.</translation>
+    </message>
+    <message>
       <source>Microphone audio bridge did not start</source>
       <translation>A mikrofon hanghídja nem indult el</translation>
     </message>
@@ -2328,6 +2336,10 @@ Mindenképp törölni szeretné?</translation>
     <message>
       <source>Quiet logarithmic sweep</source>
       <translation>Halk logaritmikus söprés</translation>
+    </message>
+    <message>
+      <source>Quit</source>
+      <translation>Kilépés</translation>
     </message>
     <message>
       <source>Quit %1 before uninstalling it.</source>

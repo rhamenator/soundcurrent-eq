@@ -1,3 +1,4 @@
+#include "microphone_access.h"
 // SPDX-License-Identifier: GPL-3.0-only
 #include "analysis_panel.h"
 #ifndef Q_OS_WIN
@@ -10,6 +11,7 @@
 #include <QDoubleSpinBox>
 #include <QPushButton>
 #include <QTemporaryDir>
+#include <QFile>
 #include <QThread>
 #include <QNetworkReply>
 #include <QDialog>
@@ -39,7 +41,23 @@ protected:
  qint64 readData(char *out,qint64 max) override {auto n=std::min(max,qint64(payload_.size()-offset_));if(n<=0)return -1;std::memcpy(out,payload_.constData()+offset_,std::size_t(n));offset_+=n;return n;}
 private:QByteArray payload_;qint64 offset_=0;
 };
-int main(int argc,char **argv){QApplication app(argc,argv);QTemporaryDir temporary;app.setOrganizationName("SoundCurrentAnalysisTests");app.setApplicationName("isolated");QSettings::setDefaultFormat(QSettings::IniFormat);QSettings::setPath(QSettings::IniFormat,QSettings::UserScope,temporary.path());soundcurrent::i18n::Runtime language;language.initialize(!app.arguments().contains("--language"),{},qEnvironmentVariable("SOUNDCURRENT_TEST_FORMAT_LOCALE"));if(qEnvironmentVariableIsSet("SOUNDCURRENT_TEST_UI_SCALE")){auto font=app.font();font.setPointSizeF(font.pointSizeF()*qEnvironmentVariable("SOUNDCURRENT_TEST_UI_SCALE").toDouble());app.setFont(font);}try{
+int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplication app(argc,argv);QTemporaryDir temporary;app.setOrganizationName("SoundCurrentAnalysisTests");app.setApplicationName("isolated");QSettings::setDefaultFormat(QSettings::IniFormat);QSettings::setPath(QSettings::IniFormat,QSettings::UserScope,temporary.path());soundcurrent::i18n::Runtime language;language.initialize(!app.arguments().contains("--language"),{},qEnvironmentVariable("SOUNDCURRENT_TEST_FORMAT_LOCALE"));if(qEnvironmentVariableIsSet("SOUNDCURRENT_TEST_UI_SCALE")){auto font=app.font();font.setPointSizeF(font.pointSizeF()*qEnvironmentVariable("SOUNDCURRENT_TEST_UI_SCALE").toDouble());app.setFont(font);}try{
+
+#ifndef Q_OS_WIN
+ {
+  soundcurrent::microphone::permit(false);Capture blocked;bool denied=false;
+  blocked.onError=[&](const QString&){denied=true;};blocked.start("synthetic-only");
+  check(denied && !blocked.running(),"Disabled microphone capture started");
+  const auto oldPath=qgetenv("PATH");QTemporaryDir fixture;
+  QFile shim(fixture.filePath("parec"));check(shim.open(QIODevice::WriteOnly),"Capture shim unavailable");
+  shim.write("#!/bin/sh\nexec /usr/bin/sleep 60\n");shim.close();shim.setPermissions(QFile::ReadOwner|QFile::WriteOwner|QFile::ExeOwner);
+  qputenv("PATH",fixture.path().toUtf8()+":"+oldPath);
+  soundcurrent::microphone::permit(true);Capture revocable;revocable.start("synthetic-only");events(30);
+  check(revocable.running(),"Synthetic capture did not start");soundcurrent::microphone::permit(false);events(100);
+  check(!revocable.running(),"Revocation left microphone capture running");qputenv("PATH",oldPath);
+  soundcurrent::microphone::permit(true);
+ }
+#endif
 #ifndef Q_OS_WIN
  if(app.arguments().contains("--live-loopback")){
      auto command=[](const QString &program,const QStringList &args){QProcess p;p.start(program,args);check(p.waitForStarted(3000) && p.waitForFinished(5000) && p.exitCode()==0,"loopback fixture command failed");return QString::fromUtf8(p.readAllStandardOutput()).trimmed();};
@@ -124,6 +142,12 @@ int main(int argc,char **argv){QApplication app(argc,argv);QTemporaryDir tempora
      check(bin>previousProfileBin && std::abs(point.frequency-panel.engine().frequencyAt(bin))<1e-9,"profile invents or duplicates FFT frequency samples");previousProfileBin=bin;
      check(std::abs(point.db-panel.engine().relativeDb()[bin])<1e-10,"saved microphone curve differs from the scope curve");}
  check(profile->response.front().db-profile->response.back().db>6,"reference comparison lost target frequency shaping");auto parsed=soundcurrent::equipment::parse(QJsonDocument(soundcurrent::equipment::serialize(*profile)).toJson());check(parsed.response.size()==profile->response.size(),"proposed profile does not round-trip through profile editor format");
+ soundcurrent::microphone::permit(false);panel.refreshSources();
+ check(!panel.active() && !panel.captureReference() && !panel.microphoneProfile(),"Microphone privacy left analysis/profile actions active");
+ check(!(source->model()->flags(source->model()->index(source->currentIndex(),0)) & Qt::ItemIsEnabled),"Denied microphone remains selectable");
+ source->setCurrentIndex(0);check(panel.active(),"Microphone opt-out disabled playback monitoring");
+ soundcurrent::microphone::permit(true);panel.refreshSources();source->setCurrentIndex(source->findData("target"));
+ check(panel.active(),"Permitted microphone could not be reselected");
  connected=false;panel.refreshSources();check(!panel.active(),"disconnected microphone remained active");const auto disconnectedCalls=panel.engine().fftCalls;panel.pushPcm(signal);check(panel.engine().fftCalls==disconnectedCalls,"disconnected capture still analyzed");connected=true;panel.refreshSources();check(panel.active(),"reconnected microphone did not reactivate");
  panel.captureError("synthetic capture failure");check(!panel.active(),"capture failure did not stop activity");panel.hide();panel.show();events();check(panel.active(),"tab reopen did not permit capture retry");
  for(View view:{View::Waterfall,View::Spectrum,View::Waveform,View::Tuner,View::Vectorscope,View::Average,View::Microphone}){panel.setView(view);events(45);if(view==View::Microphone){for(int n=0;n<25;++n){events(45);panel.pushPcm(noise(true));}}else if(view==View::Waterfall){for(int n=0;n<35;++n){events(45);panel.pushPcm(tone(600.+n*120));}}else panel.pushPcm(signal);events();auto image=panel.grab().toImage();check(!image.isNull(),"analysis view failed to render");const auto directory=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");if(!directory.isEmpty()){QDir().mkpath(directory);check(image.save(directory+"/analysis-"+QString::number(int(view))+".png"),"could not save visual QA");}}
