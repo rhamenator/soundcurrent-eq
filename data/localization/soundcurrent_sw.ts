@@ -976,6 +976,10 @@ Unataka kuifuta hata hivyo?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Disable microphone access</source>
+      <translation>Zima ufikiaji wa maikrofoni</translation>
+    </message>
+    <message>
       <source>Discard</source>
       <translation>Tupa mabadiliko</translation>
     </message>
@@ -1877,6 +1881,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>EQ ya maikrofoni imezimwa.</translation>
     </message>
     <message>
+      <source>Microphone access is disabled.</source>
+      <translation>Ufikiaji wa maikrofoni umezimwa.</translation>
+    </message>
+    <message>
       <source>Microphone audio bridge did not start</source>
       <translation>Daraja la sauti ya maikrofoni halikuanza</translation>
     </message>
@@ -2328,6 +2336,10 @@ Unataka kuifuta hata hivyo?</translation>
     <message>
       <source>Quiet logarithmic sweep</source>
       <translation>Ishara hafifu ya kufagia masafa kilogarithimu</translation>
+    </message>
+    <message>
+      <source>Quit</source>
+      <translation>Toka</translation>
     </message>
     <message>
       <source>Quit %1 before uninstalling it.</source>

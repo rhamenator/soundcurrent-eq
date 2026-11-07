@@ -1,3 +1,11 @@
+#include "responsive_ui.h"
+#ifdef Q_OS_WIN
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
+#include <windows.h>
+#endif
+#include "microphone_access.h"
 #include "button_help.h"
 #include "analysis_panel.h"
 #include "analysis_capture.h"
@@ -864,6 +872,7 @@ public:
 
     void start(const InputDevice &device, const MicTuning &adjustments, double gainDb) {
         stop();
+        soundcurrent::microphone::requireAccess();
         if (device.name.isEmpty() || device.channels < 1 || device.channels > 2)
             throw std::runtime_error(SC_TR("Unsupported microphone channel layout").toStdString());
         if (nodeId(kMicSource) >= 0) throw std::runtime_error(SC_TR("Another SoundCurrent microphone filter is running").toStdString());
@@ -1130,6 +1139,13 @@ QJsonArray analyzeSweep(const QByteArray &pcm, const QByteArray &noise,
 int runCalibration(const QString &output, const QString &input, int levelDb, bool sweep) {
     try {
         if (levelDb < -54 || levelDb > -5) throw std::runtime_error(SC_TR("Test level is outside the allowed range").toStdString());
+        soundcurrent::microphone::AccessPolicy permission;
+        { QSettings settings; if(settings.contains("disableMicrophoneAccess"))
+            permission=soundcurrent::microphone::AccessPolicy(settings.value("disableMicrophoneAccess").toBool()); }
+        try { permission.observe(!inputDevices().isEmpty()); } catch(...) { permission.observe(false); }
+        soundcurrent::microphone::permit(permission.allowed());
+        if(!permission.allowed())throw std::runtime_error(SC_TR("Microphone access is disabled.").toStdString());
+
         bool outputFound = false, inputFound = false;
         for (const auto &device : devices()) if (device.name == output) outputFound = true;
 #ifndef Q_OS_WIN
@@ -1892,6 +1908,8 @@ static soundcurrent::equipment::Profile measuredSystemProfile(const QString &inp
 class MainWindow : public QMainWindow {
 public:
     explicit MainWindow(bool startEnabled = true) : bands_(builtinProfile("Flat", kDefaultBands)) {
+        soundcurrent::ui::installResponsiveDialogs();
+        captureStartsEnabled_=startEnabled;
         setWindowTitle("SoundCurrent EQ");
         setWindowIcon(applicationLogo());
         setMinimumSize(480, 320);
@@ -1905,9 +1923,13 @@ public:
         scroll_->setLayoutDirection(Qt::LeftToRight);
         scroll_->setWidgetResizable(true);
         tabs_ = new QTabWidget;
+        tabs_->setUsesScrollButtons(true);
+        tabs_->setElideMode(Qt::ElideRight);
         tabs_->setAccessibleName(SC_TR("Equalizer and configuration pages"));
         tabs_->addTab(scroll_, SC_TR("Equalizer"));
-        setCentralWidget(tabs_);
+        auto *shell=new QWidget;auto *shellLayout=new QVBoxLayout(shell);
+        shellLayout->setContentsMargins(0,0,0,0);shellLayout->setSpacing(0);
+        shellLayout->addWidget(tabs_,1);setCentralWidget(shell);
         auto *container = new QWidget;
         auto *root = new QVBoxLayout(container);
         root->setContentsMargins(26, 22, 26, 24);
@@ -1950,15 +1972,17 @@ public:
         updateNow->setObjectName("availableUpdate");
         updateNow->setToolTip(SC_TR("Open release downloads"));
         updateNow->hide();
-        auto *quit = new QPushButton(SC_TR("Quit app"));
+        auto *quit = new QPushButton(SC_TR("Quit"));
+        quit->setObjectName("persistentQuit");
         quit->setAccessibleName(SC_TR("Quit SoundCurrent EQ"));
         quit->setToolTip(SC_TR("Exit SoundCurrent EQ and restore normal audio"));
         auto *appActions = new QWidget;
         appActions->setLayoutDirection(Qt::LeftToRight);
         auto *actionLayout = new QHBoxLayout(appActions);
-        actionLayout->setContentsMargins(0,0,0,0);
+        actionLayout->setContentsMargins(12,6,12,6);
+        actionLayout->addStretch();
         actionLayout->addWidget(updateNow);actionLayout->addWidget(quit);
-        outputRow->addWidget(appActions);
+        shellLayout->insertWidget(0,appActions);
         outputLayout->addLayout(outputRow);
         outputCombo_->setLayoutDirection(Qt::LeftToRight);
         auto *gainRow = new QHBoxLayout;
@@ -2195,6 +2219,18 @@ public:
 
         auto *inputBox = new QGroupBox(SC_TR("Microphone"));
         auto *inputLayout = new QVBoxLayout(inputBox);
+        disableMicrophone_ = new QCheckBox(SC_TR("Disable microphone access"));
+        disableMicrophone_->setObjectName("disableMicrophoneAccess");
+        disableMicrophone_->setChecked(true);
+        inputLayout->addWidget(disableMicrophone_);
+        { QSettings settings; if(settings.contains("disableMicrophoneAccess"))
+            microphoneAccess_ = soundcurrent::microphone::AccessPolicy(settings.value("disableMicrophoneAccess").toBool()); }
+        connect(disableMicrophone_, &QCheckBox::toggled, this, [this](bool disabled){
+            microphoneAccess_.chooseDisabled(disabled);
+            QSettings().setValue("disableMicrophoneAccess",disabled);
+            applyMicrophoneAccess();
+            refreshInputs();
+        });
         auto *inputRow = new QVBoxLayout;
         inputCombo_ = new QComboBox;
         inputCombo_->setAccessibleName(SC_TR("Microphone input device"));
@@ -2242,6 +2278,7 @@ public:
                                    .arg(QLocale().toString(micGain_->value() / 2.0, 'f', 1)));
         micGainRow->addWidget(micGainValue_);
         auto *micReset = new QPushButton(SC_TR("Reset mic tone"));
+        micReset->setObjectName("resetMicrophoneTone");
         micGainRow->addWidget(micReset);
         inputLayout->addLayout(micGainRow);
         micStatus_ = new QLabel(SC_TR("Waiting for a microphone."));
@@ -2312,7 +2349,7 @@ public:
             return result;
         };
         analysis_->onActivity = [this,startEnabled](const QString &source,bool active) {
-            if(!active || !startEnabled){analysisCapture_->stop();return;}
+            if(!active || !startEnabled || (!source.isEmpty() && !soundcurrent::microphone::allowed())){analysisCapture_->stop();return;}
             QString endpoint=source;
             try {
                 if(source.isEmpty()) {
@@ -2585,6 +2622,8 @@ public:
         meter_.onLevels = [this](const QVector<double> &levels, double peak) { showLevels(levels, peak); };
         meter_.setProfile(bands_, outputGainDb(), balance_->value(), speakerCorrection());
         meter_.setInterval(levelRefresh_->value());
+        inputHotplug_.setSingleShot(true);inputHotplug_.setInterval(150);
+        connect(&inputHotplug_,&QTimer::timeout,this,[this]{refreshInputs();});
         monitor_.setInterval(1500);
         connect(&monitor_, &QTimer::timeout, this, [this] { refreshDevices(); refreshInputs(); if(analysis_->isVisible()){analysis_->refreshSources();if(analysis_->active() && analysis_->onActivity)analysis_->onActivity(analysis_->source(),true);} });
         monitor_.start();
@@ -2599,6 +2638,7 @@ public:
             while ((newline = volumeEventBuffer_.indexOf('\n')) >= 0) {
                 const auto event = volumeEventBuffer_.left(newline);
                 volumeEventBuffer_.remove(0, newline + 1);
+                if(event.contains("on source ") || event.contains("on card "))inputHotplug_.start();
                 if (event.contains("on server") && power_->isChecked() && audio_.legacyVolumeManaged()) {
                     try { if (defaultSink() != kSink) power_->setChecked(false); }
                     catch (const std::exception &) {}
@@ -2610,6 +2650,8 @@ public:
         for (auto *widget : findChildren<QWidget *>())
             if (qobject_cast<QComboBox *>(widget) || qobject_cast<QAbstractSpinBox *>(widget) ||
                 qobject_cast<QSlider *>(widget)) widget->installEventFilter(this);
+        try{microphoneAccess_.observe(!inputDevices().isEmpty());}catch(...){microphoneAccess_.observe(false);}
+        applyMicrophoneAccess();
         currentSnapshot_ = snapshot();
         snapshotReady_ = true;
         if (startEnabled) setupTray();
@@ -2620,7 +2662,26 @@ public:
         });
     }
 
+    void selfTestMicrophonePrivacy() {
+        QSettings settings;const bool existed=settings.contains("disableMicrophoneAccess");
+        const auto saved=settings.value("disableMicrophoneAccess");
+        microphoneAccess_.observe(true);microphoneAccess_.chooseDisabled(false);applyMicrophoneAccess();
+        if(disableMicrophone_->isChecked() || !disableMicrophone_->isEnabled())qFatal("Available microphone consent UI did not initialize");
+        disableMicrophone_->click();
+        if(!QSettings().value("disableMicrophoneAccess").toBool() || soundcurrent::microphone::allowed() || microphone_.active() || calibrationStart_->isEnabled() || inputCombo_->isEnabled())qFatal("Microphone opt-out did not close capture/UI");
+        {MainWindow reopened(false);if(!reopened.disableMicrophone_->isChecked() || reopened.microphone_.active() || reopened.inputCombo_->isEnabled())qFatal("Microphone opt-out did not survive reopening");}
+        microphoneAccess_.observe(true);microphoneAccess_.chooseDisabled(true);applyMicrophoneAccess();
+        disableMicrophone_->click();
+        if(QSettings().value("disableMicrophoneAccess").toBool())qFatal("Manual microphone permission was not saved");
+        microphoneAccess_.observe(false);applyMicrophoneAccess();
+        if(!disableMicrophone_->isChecked() || disableMicrophone_->isEnabled() || QSettings().value("disableMicrophoneAccess").toBool() || soundcurrent::microphone::allowed())qFatal("Disconnect overwrote consent or allowed capture");
+        if(existed)settings.setValue("disableMicrophoneAccess",saved);else settings.remove("disableMicrophoneAccess");settings.sync();
+        microphoneAccess_=existed?soundcurrent::microphone::AccessPolicy(saved.toBool()):soundcurrent::microphone::AccessPolicy();
+        try{microphoneAccess_.observe(!inputDevices().isEmpty());}catch(...){microphoneAccess_.observe(false);}applyMicrophoneAccess();
+    }
+
     ~MainWindow() override {
+        soundcurrent::microphone::permit(false);
         if(analysis_){analysis_->onActivity={};analysis_->onProfile={};}
         if(analysisCapture_)analysisCapture_->stop();
 
@@ -2676,6 +2737,25 @@ protected:
             fitToDisplay();
             if (isVisible() && power_->isChecked() && !meter_.active()) meter_.start();
         });
+    }
+
+#ifdef Q_OS_WIN
+    bool nativeEvent(const QByteArray &type,void *message,qintptr *result) override {
+        if(static_cast<MSG*>(message)->message==WM_DEVICECHANGE)inputHotplug_.start();
+        return QMainWindow::nativeEvent(type,message,result);
+    }
+#endif
+
+    bool event(QEvent *event) override {
+        const auto type=event->type();
+        if(type==QEvent::ScreenChangeInternal || type==QEvent::FontChange || type==QEvent::ApplicationFontChange)
+            QTimer::singleShot(0,this,[this]{fitToDisplay();});
+        return QMainWindow::event(event);
+    }
+
+    void resizeEvent(QResizeEvent *event) override {
+        QMainWindow::resizeEvent(event);
+        QTimer::singleShot(0,this,[this]{fitToDisplay();});
     }
 
     void closeEvent(QCloseEvent *event) override {
@@ -2910,14 +2990,15 @@ private:
         gainBox_->setEnabled(editable);
         qBox_->setEnabled(editable);
         curve_->setLocked(!editable);
-        if (!calibrating_) calibrationStart_->setEnabled(editable);
+        if (!calibrating_) calibrationStart_->setEnabled(editable && soundcurrent::microphone::allowed());
         for (auto *slider : sliders_) slider->setEnabled(editable);
     }
 
     void fitToDisplay() {
+        fitBandControls();
         auto *display = screen() ? screen() : QGuiApplication::primaryScreen();
         if (!display) return;
-        const auto area = display->availableGeometry().adjusted(24, 24, -24, -24);
+        const auto area = display->availableGeometry().adjusted(12, 12, -12, -12);
         if (!area.isValid()) return;
         const auto frame = frameGeometry().size() - geometry().size();
         const auto clientWidth = std::max(1, area.width() - std::max(0, frame.width()));
@@ -2943,13 +3024,15 @@ private:
     }
 
     void startCalibration() {
+        if (!soundcurrent::microphone::allowed()) { calibrationStatus_->setText(SC_TR("Microphone access is disabled.")); return; }
         if (calibrating_) return;
         QString output, input;
         bool found = false;
         try {
             output = audio_.active() ? (audio_.smart() ? audio_.target() : QString(kSink))
                                      : selectedDevice().name;
-            input = microphone_.active() ? microphone_.target() : defaultSource();
+            input = inputCombo_->currentData().toString();
+            if(input.isEmpty())input = microphone_.active() ? microphone_.target() : defaultSource();
             for (const auto &device : inputDevices()) if (device.name == input) found = true;
         } catch (const std::exception &error) {
             calibrationStatus_->setText(SC_TR("Cannot start measurement: %1").arg(soundcurrent::i18n::audioErrorText(QString::fromUtf8(error.what()))));
@@ -2959,6 +3042,7 @@ private:
             calibrationStatus_->setText(SC_TR("Connect an output and a microphone before measuring."));
             return;
         }
+        calibrationInput_=input;
         calibrating_ = true;
         updateControlsLock();
         calibrationCancelled_ = false;
@@ -3056,13 +3140,48 @@ private:
         } else calibrationStatus_->setText(SC_TR("Current EQ kept."));
     }
 
+    void updateMicrophoneUi() {
+        if(!disableMicrophone_)return;
+        const QSignalBlocker blocker(disableMicrophone_);
+        disableMicrophone_->setChecked(!microphoneAccess_.allowed());
+        disableMicrophone_->setEnabled(microphoneAccess_.connected());
+        const bool enabled=microphoneAccess_.allowed() && !calibrating_;
+        inputCombo_->setEnabled(enabled);micPower_->setEnabled(enabled);
+        for(auto *slider:micSliders_)slider->setEnabled(enabled);
+        micGain_->setEnabled(enabled);
+        if(auto *reset=findChild<QPushButton*>("resetMicrophoneTone"))reset->setEnabled(enabled);
+        calibrationMode_->setEnabled(enabled);calibrationLevel_->setEnabled(enabled);
+#ifdef Q_OS_WIN
+        if(micCableCombo_)micCableCombo_->setEnabled(enabled);
+#endif
+        calibrationStart_->setEnabled(enabled && !lockButton_->isChecked());
+        if(!microphoneAccess_.allowed())micStatus_->setText(microphoneAccess_.connected()?SC_TR("Microphone access is disabled."):SC_TR("No microphone connected."));
+        else if(!micPower_->isChecked())micStatus_->setText(SC_TR("Microphone EQ is off."));
+    }
+    void applyMicrophoneAccess() {
+        soundcurrent::microphone::permit(captureStartsEnabled_ && microphoneAccess_.allowed());
+        if(!microphoneAccess_.allowed()){
+            microphone_.stop();
+            if(analysisCapture_ && analysis_ && !analysis_->source().isEmpty())analysisCapture_->stop();
+            if(calibrating_){calibrationCancelled_=true;calibration_.kill();calibration_.waitForFinished(2000);}
+        }
+        updateMicrophoneUi();
+        if(analysis_)analysis_->refreshSources();
+    }
+
     void refreshInputs() {
-        if (calibrating_) return;
 #ifdef Q_OS_WIN
         refreshMicCables();
 #endif
         try {
             const auto latest = inputDevices();
+            microphoneAccess_.observe(!latest.isEmpty());
+            applyMicrophoneAccess();
+            if(calibrating_){
+                const bool present=std::any_of(latest.begin(),latest.end(),[this](const auto&device){return device.name==calibrationInput_;});
+                if(!present){calibrationCancelled_=true;calibration_.kill();calibration_.waitForFinished(2000);}
+                return;
+            }
             const auto manual = inputCombo_->currentData().toString();
             const auto previousTarget = microphone_.target();
             QString disconnected;
@@ -3090,14 +3209,19 @@ private:
                                                      : SC_TR("Automatic (follow connected microphones)"), QString());
                 for (const auto &device : inputs_)
                     inputCombo_->addItem(device.description + (device.channels == 1 ? SC_TR(" · mono") : SC_TR(" · stereo")), device.name);
-                const int index = inputCombo_->findData(manual);
+                int index = inputCombo_->findData(manual);
+                if(index<0 && !manual.isEmpty()){
+                    inputCombo_->addItem(SC_TR("No microphone connected."),manual);
+                    index=inputCombo_->count()-1;
+                }
                 inputCombo_->setCurrentIndex(index < 0 ? 0 : index);
                 inputCombo_->blockSignals(false);
             }
-            micPower_->setEnabled(!inputs_.isEmpty());
+            updateMicrophoneUi();
+            if(!captureStartsEnabled_ || !microphoneAccess_.allowed())return;
             if (!disconnected.isEmpty()) micDisconnectNotice_ = SC_TR("%1 disconnected. ").arg(disconnected);
             if (!micPower_->isChecked()) {
-                if (!micDisconnectNotice_.isEmpty()) micStatus_->setText(micDisconnectNotice_ + SC_TR("Microphone EQ is off."));
+                micStatus_->setText(micDisconnectNotice_ + SC_TR("Microphone EQ is off."));
                 return;
             }
             if (inputs_.isEmpty()) {
@@ -3109,6 +3233,9 @@ private:
             InputDevice desired;
             if (!manual.isEmpty())
                 for (const auto &device : inputs_) if (device.name == manual) desired = device;
+            if(!manual.isEmpty() && desired.name.isEmpty()){
+                microphone_.stop();micStatus_->setText(SC_TR("No microphone connected."));return;
+            }
             if (desired.name.isEmpty() && !added.isEmpty())
                 desired = *std::max_element(added.begin(), added.end(), [](const InputDevice &a, const InputDevice &b) {
                     return a.priority < b.priority;
@@ -3131,7 +3258,7 @@ private:
             });
             micStatus_->setText(micDisconnectNotice_ + SC_TR("Natural mic EQ on · %1").arg(desired.description) +
                                 (!usbConnected ? usbMicrophoneHint() : ""));
-        } catch (const std::exception &error) { micStatus_->setText(SC_TR("Microphone error: %1").arg(soundcurrent::i18n::audioErrorText(QString::fromUtf8(error.what())))); }
+        } catch (const std::exception &error) { microphoneAccess_.observe(false);applyMicrophoneAccess();micStatus_->setText(SC_TR("Microphone error: %1").arg(soundcurrent::i18n::audioErrorText(QString::fromUtf8(error.what())))); }
     }
 
     void showPlaybackStatus(const Device &device) {
@@ -3217,7 +3344,7 @@ private:
             });
             connect(frequency, &QPushButton::clicked, this, [this, i] { selectBand(int(i)); });
         }
-        container->setFixedWidth(std::max(760, int(bands_.size()) * 63));
+        container->resize(std::max(760, int(bands_.size()) * 63),210);
         container->setMinimumHeight(210);
         bandScroll_->setWidget(container);
         lastChangeSource_ = nullptr;
@@ -3256,6 +3383,14 @@ private:
         }
     }
 
+    void fitBandControls() {
+        if(!bandScroll_ || !bandScroll_->widget())return;
+        auto *body=bandScroll_->widget();body->layout()->invalidate();
+        const auto hint=body->sizeHint().expandedTo(body->minimumSizeHint());
+        body->setFixedSize(std::max(760,hint.width()),std::max(210,hint.height()));
+        bandScroll_->setFixedHeight(body->height()+bandScroll_->horizontalScrollBar()->sizeHint().height()+2*bandScroll_->frameWidth());
+    }
+
     void syncBandControls() {
         changing_ = true;
         for (qsizetype i = 0; i < bands_.size(); ++i) {
@@ -3280,6 +3415,7 @@ private:
             QLocale().toString(headroom(processingBands()), 'f', 1), QStringLiteral("dB")));
         curve_->setBands(bands_, selected_);
         curve_->setCorrection(speakerCorrection());
+        fitBandControls();
     }
 
     void selectBand(int index) {
@@ -3845,7 +3981,7 @@ private:
             throw std::runtime_error(
                 SC_TR("Unlock controls and finish measurement before editing profiles.").toStdString());
         const bool playback = power_->isChecked();
-        const bool mic = micPower_->isChecked() && !inputs_.isEmpty();
+        const bool mic = soundcurrent::microphone::allowed() && micPower_->isChecked() && !inputs_.isEmpty();
         auto output = selectedDevice();
         if (outputCombo_->currentData().toString().isEmpty())
             for (const auto &device : devices_)
@@ -3931,6 +4067,11 @@ private:
     QTabWidget *tabs_ = nullptr;
     QScrollArea *scroll_ = nullptr;
     QComboBox *outputCombo_ = nullptr;
+    QTimer inputHotplug_;
+    QString calibrationInput_;
+    bool captureStartsEnabled_=false;
+    soundcurrent::microphone::AccessPolicy microphoneAccess_;
+    QCheckBox *disableMicrophone_ = nullptr;
     QComboBox *inputCombo_ = nullptr;
     QCheckBox *micPower_ = nullptr;
     std::array<QSlider *, 4> micSliders_{};
@@ -4022,6 +4163,11 @@ int main(int argc, char **argv) {
     }
 #endif
     QApplication app(argc, argv);
+    if(app.arguments().contains("--ui-self-test") || app.arguments().contains("--localization-ui-test")){
+        bool okay=false;const double scale=qEnvironmentVariable("SOUNDCURRENT_TEST_FONT_SCALE").toDouble(&okay);
+        if(okay && scale>=0.5 && scale<=3.0){auto font=app.font();font.setPointSizeF(font.pointSizeF()*scale);app.setFont(font);}
+    }
+
     if (app.arguments().contains("--ui-self-test") || app.arguments().contains("--localization-ui-test"))
         qInfo("UI test application initialized");
     QCoreApplication::setOrganizationName("SoundCurrent");
@@ -4202,6 +4348,7 @@ int main(int argc, char **argv) {
         if (parseAmplifierProfile(ampTest)) qFatal("Empty amplifier profile accepted");
         qInfo("UI self-test: constructing window");
         MainWindow testWindow(false);
+        testWindow.selfTestMicrophonePrivacy();
         qInfo("UI self-test: window constructed");
         testWindow.testEquipmentSelection();
         for (const auto &entry : {std::pair{"manageSpeakerProfiles", "speaker"},
@@ -4660,7 +4807,7 @@ int main(int argc, char **argv) {
         if (!firstBandSlider()->isEnabled()) qFatal("Unlock did not restore editing");
         testWindow.show();
         app.processEvents();
-        auto *tabs = qobject_cast<QTabWidget *>(testWindow.centralWidget());
+        auto *tabs = testWindow.findChild<QTabWidget *>();
         if (!tabs || tabs->count() != 3 || tabs->currentIndex() != 0 || tabs->tabText(0) != "Equalizer")
             qFatal("Equalizer must be the first and initially selected tab");
         auto *updateShortcut=testWindow.findChild<QPushButton *>("availableUpdate");

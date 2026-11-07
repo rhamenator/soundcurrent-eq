@@ -976,6 +976,10 @@ Wilt u het toch verwijderen?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Disable microphone access</source>
+      <translation>Microfoontoegang uitschakelen</translation>
+    </message>
+    <message>
       <source>Discard</source>
       <translation>Verwerpen</translation>
     </message>
@@ -1877,6 +1881,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Microfoon-EQ is uitgeschakeld.</translation>
     </message>
     <message>
+      <source>Microphone access is disabled.</source>
+      <translation>Microfoontoegang is uitgeschakeld.</translation>
+    </message>
+    <message>
       <source>Microphone audio bridge did not start</source>
       <translation>De audiobrug voor de microfoon is niet gestart</translation>
     </message>
@@ -2328,6 +2336,10 @@ Wilt u het toch verwijderen?</translation>
     <message>
       <source>Quiet logarithmic sweep</source>
       <translation>Logaritmische sweep op laag volume</translation>
+    </message>
+    <message>
+      <source>Quit</source>
+      <translation>Afsluiten</translation>
     </message>
     <message>
       <source>Quit %1 before uninstalling it.</source>

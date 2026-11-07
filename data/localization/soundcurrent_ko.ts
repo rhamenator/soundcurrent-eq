@@ -976,6 +976,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Disable microphone access</source>
+      <translation>마이크 접근 비활성화</translation>
+    </message>
+    <message>
       <source>Discard</source>
       <translation>변경 내용 버리기</translation>
     </message>
@@ -1877,6 +1881,10 @@ Do you want to delete it anyway?</source>
       <translation>마이크 EQ가 꺼져 있습니다.</translation>
     </message>
     <message>
+      <source>Microphone access is disabled.</source>
+      <translation>마이크 접근이 비활성화되어 있습니다.</translation>
+    </message>
+    <message>
       <source>Microphone audio bridge did not start</source>
       <translation>마이크 오디오 브리지를 시작하지 못했습니다</translation>
     </message>
@@ -2328,6 +2336,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Quiet logarithmic sweep</source>
       <translation>낮은 음량의 로그 스윕</translation>
+    </message>
+    <message>
+      <source>Quit</source>
+      <translation>종료</translation>
     </message>
     <message>
       <source>Quit %1 before uninstalling it.</source>

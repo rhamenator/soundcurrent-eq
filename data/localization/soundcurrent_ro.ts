@@ -976,6 +976,10 @@ Doriți să îl ștergeți totuși?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Disable microphone access</source>
+      <translation>Dezactivează accesul la microfon</translation>
+    </message>
+    <message>
       <source>Discard</source>
       <translation>Renunțați la modificări</translation>
     </message>
@@ -1877,6 +1881,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>EQ-ul microfonului este oprit.</translation>
     </message>
     <message>
+      <source>Microphone access is disabled.</source>
+      <translation>Accesul la microfon este dezactivat.</translation>
+    </message>
+    <message>
       <source>Microphone audio bridge did not start</source>
       <translation>Puntea audio a microfonului nu a pornit</translation>
     </message>
@@ -2328,6 +2336,10 @@ Doriți să îl ștergeți totuși?</translation>
     <message>
       <source>Quiet logarithmic sweep</source>
       <translation>Baleiere logaritmică silențioasă</translation>
+    </message>
+    <message>
+      <source>Quit</source>
+      <translation>Ieșire</translation>
     </message>
     <message>
       <source>Quit %1 before uninstalling it.</source>

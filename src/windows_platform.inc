@@ -148,6 +148,7 @@ public:
     void setCable(const QString &id) { if (requested_ != id) { stop(); requested_ = id; } }
     void start(const InputDevice &device, const MicTuning &adjustments, double gain) {
         stop();
+        soundcurrent::microphone::requireAccess();
         const auto cables = microphoneCables();
         MicCable selected;
         if (requested_.isEmpty() && !cables.isEmpty()) selected = cables.first();

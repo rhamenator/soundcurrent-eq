@@ -36,5 +36,7 @@ jobs:
         run: ctest --test-dir build --output-on-failure
       - name: Check actual X11 editing menus and platform-theme buttons
         run: QT_QPA_PLATFORM=xcb xvfb-run -a timeout 30s ./build/soundcurrent-localization-test
+      - name: Check small X11 desktop with larger fonts
+        run: QT_QPA_PLATFORM=xcb SOUNDCURRENT_TEST_FONT_SCALE=1.5 xvfb-run -a -s '-screen 0 800x600x24' timeout 60s ./build/soundcurrent-eq --ui-self-test
   windows:
     uses: ./.github/workflows/windows-check.yml

@@ -976,6 +976,10 @@ Chcete ho aj tak zmazať?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Disable microphone access</source>
+      <translation>Zakázať prístup k mikrofónu</translation>
+    </message>
+    <message>
       <source>Discard</source>
       <translation>Zahodiť</translation>
     </message>
@@ -1877,6 +1881,10 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Mikrofónový EQ je vypnutý.</translation>
     </message>
     <message>
+      <source>Microphone access is disabled.</source>
+      <translation>Prístup k mikrofónu je zakázaný.</translation>
+    </message>
+    <message>
       <source>Microphone audio bridge did not start</source>
       <translation>Zvukový most mikrofónu sa nespustil</translation>
     </message>
@@ -2328,6 +2336,10 @@ Chcete ho aj tak zmazať?</translation>
     <message>
       <source>Quiet logarithmic sweep</source>
       <translation>Tichý logaritmický priebeh frekvencie</translation>
+    </message>
+    <message>
+      <source>Quit</source>
+      <translation>Ukončiť</translation>
     </message>
     <message>
       <source>Quit %1 before uninstalling it.</source>

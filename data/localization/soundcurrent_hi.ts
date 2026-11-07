@@ -976,6 +976,10 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Disable microphone access</source>
+      <translation>माइक्रोफ़ोन का ऐक्सेस बंद करें</translation>
+    </message>
+    <message>
       <source>Discard</source>
       <translation>बदलाव छोड़ें</translation>
     </message>
@@ -1877,6 +1881,10 @@ Do you want to delete it anyway?</source>
       <translation>माइक्रोफ़ोन EQ बंद है।</translation>
     </message>
     <message>
+      <source>Microphone access is disabled.</source>
+      <translation>माइक्रोफ़ोन का ऐक्सेस बंद है।</translation>
+    </message>
+    <message>
       <source>Microphone audio bridge did not start</source>
       <translation>माइक्रोफ़ोन ऑडियो ब्रिज शुरू नहीं हुआ</translation>
     </message>
@@ -2328,6 +2336,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Quiet logarithmic sweep</source>
       <translation>धीमी आवाज़ वाला लॉगरिदमिक स्वीप</translation>
+    </message>
+    <message>
+      <source>Quit</source>
+      <translation>बाहर निकलें</translation>
     </message>
     <message>
       <source>Quit %1 before uninstalling it.</source>

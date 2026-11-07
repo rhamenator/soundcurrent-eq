@@ -976,6 +976,10 @@ Haluatko silti poistaa sen?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Disable microphone access</source>
+      <translation>Poista mikrofonin käyttö käytöstä</translation>
+    </message>
+    <message>
       <source>Discard</source>
       <translation>Hylkää</translation>
     </message>
@@ -1877,6 +1881,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Mikrofonin taajuuskorjaus on pois käytöstä.</translation>
     </message>
     <message>
+      <source>Microphone access is disabled.</source>
+      <translation>Mikrofonin käyttö on poistettu käytöstä.</translation>
+    </message>
+    <message>
       <source>Microphone audio bridge did not start</source>
       <translation>Mikrofonin äänisilta ei käynnistynyt</translation>
     </message>
@@ -2328,6 +2336,10 @@ Haluatko silti poistaa sen?</translation>
     <message>
       <source>Quiet logarithmic sweep</source>
       <translation>Hiljainen logaritminen pyyhkäisy</translation>
+    </message>
+    <message>
+      <source>Quit</source>
+      <translation>Lopeta</translation>
     </message>
     <message>
       <source>Quit %1 before uninstalling it.</source>

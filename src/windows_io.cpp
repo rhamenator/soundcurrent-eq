@@ -1,3 +1,4 @@
+#include "microphone_access.h"
 // SPDX-License-Identifier: GPL-3.0-only
 #ifdef _WIN32
 #define NOMINMAX
@@ -147,6 +148,7 @@ WindowsRecorder::WindowsRecorder() : impl_(std::make_unique<Impl>()) {}
 WindowsRecorder::~WindowsRecorder() { stop(); }
 void WindowsRecorder::start(const std::wstring &id, int rate, int channels, bool loopback) {
     stop();
+    if(!loopback)soundcurrent::microphone::requireAccess();
     if (rate < 8000 || rate > 192000 || channels < 1 || channels > 2)
         throw std::runtime_error("Unsupported recording format");
     impl_->stop = false;
@@ -162,7 +164,7 @@ void WindowsRecorder::start(const std::wstring &id, int rate, int channels, bool
             checked(audio->GetService(IID_PPV_ARGS(reader.GetAddressOf())), "Open microphone reader");
             checked(audio->Start(), "Start microphone recording");
             impl_->running = true; impl_->initialized.notify_all();
-            while (!impl_->stop) {
+            while (!impl_->stop && (loopback || soundcurrent::microphone::allowed())) {
                 UINT32 frames = 0;
                 checked(reader->GetNextPacketSize(&frames), "Read microphone packet size");
                 while (frames) {

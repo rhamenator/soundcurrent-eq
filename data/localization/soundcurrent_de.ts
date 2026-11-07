@@ -976,6 +976,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Disable microphone access</source>
+      <translation>Mikrofonzugriff deaktivieren</translation>
+    </message>
+    <message>
       <source>Discard</source>
       <translation>Änderungen verwerfen</translation>
     </message>
@@ -1877,6 +1881,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Der Mikrofon-EQ ist aus.</translation>
     </message>
     <message>
+      <source>Microphone access is disabled.</source>
+      <translation>Der Mikrofonzugriff ist deaktiviert.</translation>
+    </message>
+    <message>
       <source>Microphone audio bridge did not start</source>
       <translation>Die Mikrofon-Audiobrücke wurde nicht gestartet</translation>
     </message>
@@ -2328,6 +2336,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
     <message>
       <source>Quiet logarithmic sweep</source>
       <translation>Leiser logarithmischer Sweep</translation>
+    </message>
+    <message>
+      <source>Quit</source>
+      <translation>Beenden</translation>
     </message>
     <message>
       <source>Quit %1 before uninstalling it.</source>

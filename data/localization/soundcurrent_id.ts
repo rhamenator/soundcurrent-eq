@@ -976,6 +976,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Disable microphone access</source>
+      <translation>Nonaktifkan akses mikrofon</translation>
+    </message>
+    <message>
       <source>Discard</source>
       <translation>Buang perubahan</translation>
     </message>
@@ -1877,6 +1881,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>EQ mikrofon nonaktif.</translation>
     </message>
     <message>
+      <source>Microphone access is disabled.</source>
+      <translation>Akses mikrofon dinonaktifkan.</translation>
+    </message>
+    <message>
       <source>Microphone audio bridge did not start</source>
       <translation>Jembatan audio mikrofon tidak berhasil dimulai</translation>
     </message>
@@ -2328,6 +2336,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
     <message>
       <source>Quiet logarithmic sweep</source>
       <translation>Sapuan logaritmik berlevel rendah</translation>
+    </message>
+    <message>
+      <source>Quit</source>
+      <translation>Keluar</translation>
     </message>
     <message>
       <source>Quit %1 before uninstalling it.</source>
