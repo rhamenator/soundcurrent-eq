@@ -43,5 +43,8 @@ jobs:
             dist/qtbase*.tar.xz
             build-windows-native/package/**
             build-windows-native/Release/*smoke.exe
+            build-windows-native/Release/soundcurrent-microphone-access-test.exe
+            build-windows-native/Release/soundcurrent-responsive-ui-test.exe
+            build-windows-native/Release/soundcurrent-windows-microphone-privacy-test.exe
             build-windows-native/ui-self-test.log
             build-windows-native/installed-runtime/**
