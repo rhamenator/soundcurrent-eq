@@ -8,6 +8,8 @@
 void require(bool ok,const char *why){if(!ok)throw std::runtime_error(why);}
 int main(int argc,char **argv){QApplication app(argc,argv);try{
  using namespace soundcurrent;
+ require(!updateNetworkRuntimeQualified("6.10.2") && !updateNetworkRuntimeQualified("6.11.2") && !updateNetworkRuntimeQualified("6.8.9") && !updateNetworkRuntimeQualified("invalid"),"unqualified network runtime accepted");
+ require(updateNetworkRuntimeQualified("6.8.10") && updateNetworkRuntimeQualified("6.11.3") && updateNetworkRuntimeQualified("6.12.0"),"patched network runtime rejected");
  require(newerUpdate("parity-preview-0.7.5","0.7.4")&&newerUpdate("v1.0.0","0.9.9"),"version ordering");
  require(!newerUpdate("0.7.3","0.7.4")&&!newerUpdate("invalid","0.7.4")&&!newerUpdate("999999999.1.0","0.7.4"),"invalid/downgrade version");
  QTemporaryDir folder;require(folder.isValid(),"temp folder");

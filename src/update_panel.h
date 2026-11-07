@@ -28,6 +28,14 @@
 #include <QVersionNumber>
 #include <functional>
 namespace soundcurrent {
+// Conservative remote-check baseline for Cache-Control/NTLM/HTTP2 advisories.
+// Older distro versions may carry backports, but must be qualified separately;
+// their version number alone is not evidence of a patched parser.
+inline bool updateNetworkRuntimeQualified(const QString &version) {
+    const auto v=QVersionNumber::fromString(version);
+    return v.segmentCount()>=3 && (v>=QVersionNumber(6,11,3) ||
+        (v.majorVersion()==6 && v.minorVersion()==8 && v.microVersion()>=10));
+}
 inline QVersionNumber updateVersion(const QString &tag) {
     const auto match=QRegularExpression("(?:^|[-v])(\\d{1,6}\\.\\d{1,6}\\.\\d{1,6})(?:$|[-+])").match(tag);
     return match.hasMatch()?QVersionNumber::fromString(match.captured(1)):QVersionNumber();
@@ -107,7 +115,13 @@ private:
     }
     void checkUpdates(bool manual){
         if(busy_)return;
-        busy_=true;checkLocal();
+        checkLocal();
+        // Injected test replies never touch a network parser.
+        if(!requestSender && !updateNetworkRuntimeQualified(QString::fromLatin1(qVersion()))){
+            if(manual)status_->setText(SC_TR("Published releases could not be checked. Use Open release downloads; downloaded installers are still detected locally."));
+            return;
+        }
+        busy_=true;
         if(manual)status_->setText(SC_TR("Checking for published updates…"));
         QSettings().setValue("updates/lastCheck",QDateTime::currentDateTimeUtc());
         QNetworkRequest request(QUrl("https://api.github.com/repos/rhamenator/"+repo_+"/releases?per_page=20"));
