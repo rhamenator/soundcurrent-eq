@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-only
 param([switch]$Check, [switch]$Install, [switch]$Remove, [switch]$Settings,
-      [switch]$Quiet, [switch]$Silent, [int]$RequestingProcessId = 0,
+      [switch]$Quiet, [switch]$Silent, [switch]$ConfigureVolume, [int]$RequestingProcessId = 0,
       [ValidateSet('eq','studio')][string]$App = 'eq', [string]$Language = '')
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
@@ -19,7 +19,7 @@ else {
 }
 function Notice([string]$Text) {
     Write-Output $Text
-    if (!$Quiet) {
+    if (!$Quiet -and !$Silent) {
         Add-Type -AssemblyName System.Windows.Forms
         [void][System.Windows.Forms.MessageBox]::Show($Text,(Get-SCSetupText 'Audio driver setup' -Language $Language -Application ('soundcurrent-' + $App)))
     }
@@ -36,11 +36,31 @@ function Ready {
     & $probe --check-ready
     return $LASTEXITCODE -eq 0
 }
+# Fixed-purpose native helper owns the 64-bit machine write and elevation.
+# A silent operation never requests UAC or starts the vendor installer.
+function Configure-CableVolume {
+    $guard = Join-Path $PSScriptRoot 'soundcurrent-cable-setup-guard.exe'
+    if (!(Test-Path -LiteralPath $guard)) { throw (Get-SCSetupText 'The audio readiness helper is missing. Repair the SoundCurrent installation.' -Language $Language -Application ('soundcurrent-' + $App)) }
+    & $guard $(if ($Silent) { '--configure-volume-unattended' } else { '--configure-volume' })
+    $code = $LASTEXITCODE
+    if ($code -eq 0) { return 0 }
+    if ($code -eq 3010) {
+        Notice (Get-SCSetupText 'Audio driver setup completed. Restart Windows before using SoundCurrent.' -Language $Language -Application ('soundcurrent-' + $App)) | Out-Host
+        return 3010
+    }
+    Notice (Format-SCSetupText 'VB-CABLE volume configuration is incomplete (code %1). SoundCurrent remains installed. Open Audio driver setup with administrator approval, then restart Windows.' -Values @([string]$code) -Language $Language -Application ('soundcurrent-' + $App)) | Out-Host
+    return $code
+}
 # A shared per-user boot marker prevents either app from treating newly
 # installed cable endpoints as ready before the required Windows restart.
 $rebootKey = 'HKCU:\Software\SoundCurrent\VBCable'
 function BootStamp { return (Get-CimInstance Win32_OperatingSystem).LastBootUpTime.ToUniversalTime().Ticks.ToString() }
 function NeedsReboot {
+    $guard = Join-Path $PSScriptRoot 'soundcurrent-cable-setup-guard.exe'
+    if (Test-Path -LiteralPath $guard) {
+        & $guard --check-volume
+        if ($LASTEXITCODE -eq 3010) { return $true }
+    }
     $stamp = (Get-ItemProperty -LiteralPath $rebootKey -Name InstalledDuringBoot -ErrorAction SilentlyContinue).InstalledDuringBoot
     if (!$stamp) { return $false }
     if ($stamp -eq (BootStamp)) { return $true }
@@ -65,8 +85,16 @@ function QuitMessage($Clients) {
     return (Format-SCSetupText 'Quit the following before changing VB-CABLE: %1.' -Values @(($names -join $joiner)) -Language $Language -Application ('soundcurrent-' + $App))
 }
 try {
-    if (@($Check,$Install,$Remove,$Settings).Where({$_}).Count -ne 1) { throw (Get-SCSetupText 'Choose one audio setup action.' -Language $Language -Application ('soundcurrent-' + $App)) }
+    if (@($Check,$Install,$Remove,$Settings,$ConfigureVolume).Where({$_}).Count -ne 1) { throw (Get-SCSetupText 'Choose one audio setup action.' -Language $Language -Application ('soundcurrent-' + $App)) }
+    if ($ConfigureVolume) {
+        if (!(Present)) { exit 0 } # App-only install with no cable: no machine changes.
+        exit (Configure-CableVolume)
+    }
     if ($Check) { if (NeedsReboot) { exit 3010 }; if (Present) { if (Ready) { exit 0 }; exit 11 }; exit 10 }
+    if ($Install -and (Present)) {
+        $volumeResult = Configure-CableVolume
+        if ($volumeResult -ne 0) { exit $volumeResult }
+    }
     if (!$Remove -and (NeedsReboot)) { Notice (Get-SCSetupText 'Restart Windows before using VB-CABLE. Audio setup has completed, but the driver and its settings require a system restart.' -Language $Language -Application ('soundcurrent-' + $App)); exit 3010 }
     if ($Silent -and ($Install -or $Remove)) { exit 0 } # No unattended third-party changes.
     if ($Remove) {
@@ -136,6 +164,10 @@ try {
             }
             if ($Install -and !(Present)) { throw (Get-SCSetupText 'VB-CABLE is not present. Restart Windows if requested, then retry audio setup.' -Language $Language -Application ('soundcurrent-' + $App)) }
             if ($repair -and !(Ready)) { throw (Format-SCSetupText 'VB-CABLE still has no usable playback/recording endpoints. Complete Remove Driver in the official setup, restart Windows, then open %1 again to reinstall. Windows Sound settings must have CABLE Input and CABLE Output enabled.' -Values @((Get-SCSetupText 'Audio driver setup' -Language $Language -Application ('soundcurrent-' + $App))) -Language $Language -Application ('soundcurrent-' + $App)) }
+            if ($Install -and (Present)) {
+                $volumeResult = Configure-CableVolume
+                if ($volumeResult -ne 0 -and $volumeResult -ne 3010) { exit $volumeResult }
+            }
             MarkReboot
             Notice (Get-SCSetupText 'VB-CABLE setup finished. Restart Windows now before using the equalizer or VB-CABLE settings. Your prior audio defaults were preserved where still available.' -Language $Language -Application ('soundcurrent-' + $App))
             exit 3010
