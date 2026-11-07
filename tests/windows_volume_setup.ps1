@@ -13,7 +13,7 @@ function Test-Path { return $true }
 function InertNativeGuard { $script:action=$args[0]; $global:LASTEXITCODE=$script:fixtureCode }
 function Get-SCSetupText {param($Source,$Language,$Application) return $Source}
 function Format-SCSetupText {param($Source,$Values,$Language,$Application) return $Source.Replace('%1',$Values[0])}
-function Notice {param($Text) $script:notice=$Text}
+function Notice {param($Text) $script:notice=$Text; Write-Output $Text}
 $App='studio';$Language='en';$PSScriptRoot='inert'
 foreach($silentMode in @($true,$false)){
  $Silent=$silentMode
@@ -27,4 +27,11 @@ foreach($silentMode in @($true,$false)){
   if($result -ne 0 -and !$script:notice){throw 'Missing repair/restart message'}
  }
 }
+# A missing output drain must be detectable: otherwise notices turn exit codes
+# into arrays and setup can fail or report the wrong result.
+$mutant=$definition[0].Extent.Text.Replace('function Configure-CableVolume','function InertMutantConfiguration').Replace(' | Out-Host','')
+Invoke-Expression $mutant
+$script:fixtureCode=3010
+$mutantResult=InertMutantConfiguration
+if($mutantResult -isnot [array]){throw 'Mutation test did not detect polluted exit status'}
 Write-Output 'PASS: actual configuration function preserves status, distinguishes restart/failure, and never requests interactive elevation in silent mode'
