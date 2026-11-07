@@ -5,10 +5,17 @@
 #include <windows.h>
 #include <shellapi.h>
 #include <array>
+#include "windows_cable_volume.h"
 
 int main(int argc, char **argv) {
     QCoreApplication app(argc, argv);
     const auto args = app.arguments();
+    if (args.size() == 2) {
+        if (args[1] == "--check-volume") return cableVolumeStatus();
+        if (args[1] == "--configure-volume") return configureCableVolume(true);
+        if (args[1] == "--configure-volume-unattended" || args[1] == "--configure-volume-elevated")
+            return configureCableVolume(false);
+    }
     if (args.size() == 2 && args[1] == "--check-ready") {
         try {
             bool render = false, capture = false;

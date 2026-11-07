@@ -3355,6 +3355,10 @@ Do you want to delete it anyway?</source>
       <translation>VB-CABLE에 아직 사용 가능한 재생 또는 녹음 장치가 없습니다. 공식 설치 프로그램에서 Remove Driver를 완료하고 Windows를 다시 시작한 뒤 %1을 다시 열어 드라이버를 재설치하세요. Windows 소리 설정에서 CABLE Input과 CABLE Output을 활성화해야 합니다.</translation>
     </message>
     <message>
+      <source>VB-CABLE volume configuration is incomplete (code %1). SoundCurrent remains installed. Open Audio driver setup with administrator approval, then restart Windows.</source>
+      <translation>VB-CABLE 볼륨 구성이 완료되지 않았습니다(코드 %1). SoundCurrent는 설치된 상태로 유지됩니다. 관리자 승인을 받아 오디오 드라이버 설정을 연 다음 Windows를 다시 시작하세요.</translation>
+    </message>
+    <message>
       <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
       <translation>다른 SoundCurrent 앱이 설치되어 있어 VB-CABLE이 유지되었습니다. 다른 소프트웨어에서 필요하지 않다면 마지막 앱과 함께 제거하세요.</translation>
     </message>

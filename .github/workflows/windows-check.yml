@@ -26,6 +26,12 @@ jobs:
       - name: Build, test and package the shared application
         shell: pwsh
         run: ./scripts/build-windows.ps1 -QtPrefix 'C:\Qt\6.12.0\msvc2022_64'
+      - name: Check cable volume setup policy without device changes
+        shell: pwsh
+        run: |
+          ./tests/windows_volume_setup.ps1
+          & ./build-windows-native/Release/soundcurrent-cable-volume-test.exe
+          if ($LASTEXITCODE -ne 0) { throw 'Cable volume configuration API fixture failed' }
       - name: Qualify installed locale interfaces and app lifecycle
         shell: pwsh
         run: |
