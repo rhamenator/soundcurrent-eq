@@ -3355,6 +3355,10 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>VB-CABLE hâlâ kullanılabilir oynatma veya kayıt aygıtlarına sahip değil. Resmî kurulum programında Remove Driver işlemini tamamlayın, Windows’u yeniden başlatın ve sürücüyü yeniden yüklemek için %1 öğesini tekrar açın. Windows ses ayarlarında CABLE Input ve CABLE Output etkin olmalıdır.</translation>
     </message>
     <message>
+      <source>VB-CABLE volume configuration is incomplete (code %1). SoundCurrent remains installed. Open Audio driver setup with administrator approval, then restart Windows.</source>
+      <translation>VB-CABLE ses düzeyi yapılandırması tamamlanmadı (kod %1). SoundCurrent yüklü kalır. Ses sürücüsü kurulumunu yönetici onayıyla açın, ardından Windows’u yeniden başlatın.</translation>
+    </message>
+    <message>
       <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
       <translation>Diğer SoundCurrent uygulaması yüklü olduğu için VB-CABLE korundu. Başka bir yazılım gerektirmiyorsa son uygulamayla birlikte kaldırın.</translation>
     </message>

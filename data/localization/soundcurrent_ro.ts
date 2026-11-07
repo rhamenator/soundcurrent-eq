@@ -3355,6 +3355,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>VB-CABLE încă nu are dispozitive de redare sau înregistrare utilizabile. Finalizați Remove Driver în programul oficial de instalare, reporniți Windows, apoi deschideți din nou %1 pentru a reinstala driverul. CABLE Input și CABLE Output trebuie să fie activate în setările de sunet Windows.</translation>
     </message>
     <message>
+      <source>VB-CABLE volume configuration is incomplete (code %1). SoundCurrent remains installed. Open Audio driver setup with administrator approval, then restart Windows.</source>
+      <translation>Configurarea volumului VB-CABLE este incompletă (cod %1). SoundCurrent rămâne instalat. Deschideți configurarea driverului audio cu aprobarea administratorului, apoi reporniți Windows.</translation>
+    </message>
+    <message>
       <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
       <translation>VB-CABLE a fost păstrat deoarece cealaltă aplicație SoundCurrent este instalată. Eliminați-l odată cu ultima aplicație dacă niciun alt program nu are nevoie de el.</translation>
     </message>

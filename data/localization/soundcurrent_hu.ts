@@ -3355,6 +3355,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>A VB-CABLE továbbra sem rendelkezik használható lejátszó- vagy felvevőeszközökkel. Fejezze be a Remove Driver műveletet a hivatalos telepítőben, indítsa újra a Windowst, majd nyissa meg ismét a(z) %1 lehetőséget az illesztőprogram újratelepítéséhez. A Windows hangbeállításaiban engedélyezni kell a CABLE Input és CABLE Output eszközöket.</translation>
     </message>
     <message>
+      <source>VB-CABLE volume configuration is incomplete (code %1). SoundCurrent remains installed. Open Audio driver setup with administrator approval, then restart Windows.</source>
+      <translation>A VB-CABLE hangerő-beállítása nem fejeződött be (kód: %1). A SoundCurrent telepítve marad. Nyissa meg a hangillesztőprogram beállítását rendszergazdai jóváhagyással, majd indítsa újra a Windowst.</translation>
+    </message>
+    <message>
       <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
       <translation>A VB-CABLE megmaradt, mert a másik SoundCurrent alkalmazás telepítve van. Az utolsó alkalmazással együtt távolítsa el, ha más szoftvernek nincs szüksége rá.</translation>
     </message>

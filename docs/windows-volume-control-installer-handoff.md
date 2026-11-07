@@ -1,6 +1,8 @@
 # Handoff: persist VB-CABLE Windows Volume Control during setup
 
-Status: implementation requested; this draft PR contains the handoff only.
+Status: implementation added on this PR branch. Original Windows-host evidence
+below is preserved. Native audible and post-reboot acceptance remain pending;
+controlled fixtures do not certify those behaviors.
 
 Base reviewed: `d83759045621c0dc795e97b384d1d820c8ca66a7` (`origin/main`).
 Apply the same behavior to `rhamenator/soundcurrent-studio`; keep both PRs aligned.
@@ -100,3 +102,22 @@ Windows Volume Control section, page 13.
 
 Do implementation and heavy builds on the development machine/CI. This Windows
 machine was used for source inspection and the targeted configuration repair.
+
+## Implementation evidence and outstanding acceptance
+
+- Fixed-purpose native helper uses explicit 64-bit registry access, fixed DWORD
+  and primary hardware identity; no caller-controlled write paths or values.
+- Both NSIS installers configure existing cables on app-only updates and keep
+  observable status for silent updates. Silent operations never request UAC.
+- Native API fixture tests missing/zero/one/wrong-type settings, access denial,
+  readback/flush failure, cancelled elevation, no silent UAC, idempotence, and
+  the shared pending/reboot boundary without touching actual Windows settings.
+- PowerShell tests extract and run the actual configuration function with an
+  inert helper, checking exit codes remain numeric and quiet notices do not
+  pollute them. New messages follow the existing 34-catalog path; translations
+  remain linguistically unverified.
+- Still required before release: fresh-driver and existing-driver installer
+  exercises on native Windows, an app-only update with disabled volume control,
+  audible volume/mute verification for both apps, an actual reboot and repeat
+  verification, and coexistence/uninstall checks. CI without an installed cable
+  cannot certify these. No physical-host result is claimed here.
