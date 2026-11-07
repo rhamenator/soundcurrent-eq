@@ -202,7 +202,7 @@ Section "SoundCurrent EQ" main
     MessageBox MB_OK|MB_ICONINFORMATION "$(SCCableRestart)" /SD IDOK
   ${ElseIf} $0 != 0
     DetailPrint "$(SCSetupRetryProgress)"
-    MessageBox MB_OK|MB_ICONINFORMATION "$(SCSetupFailedAppInstalled)$\r$\n$1" /SD IDOK
+    MessageBox MB_OK|MB_ICONINFORMATION "$(SCSetupFailedAppInstalled)" /SD IDOK
   ${EndIf}
 SectionEnd
 

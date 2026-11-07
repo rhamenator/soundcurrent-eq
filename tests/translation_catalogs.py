@@ -135,7 +135,7 @@ class CatalogTests(unittest.TestCase):
                 self.assertNotIn('MessageBox MB_OK|MB_ICONINFORMATION "$(SCCableRestart)"', code)
             else:
                 self.assertIn('MessageBox MB_OK|MB_ICONINFORMATION "$(SCCableRestart)" /SD IDOK', code)
-                self.assertIn('${If} $0 == 3010\n      SetRebootFlag true', code)
+                self.assertRegex(code, r'\$\{If\} \$0 == 3010\s+SetRebootFlag true')
                 self.assertEqual(re.findall(r'^LangString SCCableRestart \$\{LANG_ENGLISH\} "([^"]+)"$', code, re.M), [source])
         for row in json.loads((catalog.DATA / 'catalogs.json').read_text(encoding='utf-8')):
             message = catalog.entries(catalog.DATA / ('soundcurrent_' + row['tag'] + '.ts'))[source]
