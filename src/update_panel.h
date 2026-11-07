@@ -112,6 +112,9 @@ private:
         QSettings().setValue("updates/lastCheck",QDateTime::currentDateTimeUtc());
         QNetworkRequest request(QUrl("https://api.github.com/repos/rhamenator/"+repo_+"/releases?per_page=20"));
         request.setRawHeader("User-Agent","SoundCurrent-update-check");request.setRawHeader("Accept","application/vnd.github+json");request.setTransferTimeout(10000);
+        // Small JSON checks need no HTTP/2; avoid the affected Qt HTTP/2 path
+        // on distribution runtimes pending their CVE-2026-95620 backport.
+        request.setAttribute(QNetworkRequest::Http2AllowedAttribute,false);
         auto *reply=requestSender?requestSender(request):network_.get(request);auto bytes=std::make_shared<QByteArray>();
         connect(reply,&QNetworkReply::readyRead,this,[reply,bytes]{if(reply->bytesAvailable()+bytes->size()>1024*1024){reply->abort();return;}bytes->append(reply->readAll());});
         connect(reply,&QNetworkReply::finished,this,[this,reply,bytes,manual]{
