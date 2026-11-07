@@ -2669,7 +2669,7 @@ public:
         if(disableMicrophone_->isChecked() || !disableMicrophone_->isEnabled())qFatal("Available microphone consent UI did not initialize");
         disableMicrophone_->click();
         if(!QSettings().value("disableMicrophoneAccess").toBool() || soundcurrent::microphone::allowed() || microphone_.active() || calibrationStart_->isEnabled() || inputCombo_->isEnabled())qFatal("Microphone opt-out did not close capture/UI");
-        {MainWindow reopened(false);if(!reopened.disableMicrophone_->isChecked() || reopened.microphone_.active() || reopened.inputCombo_->isEnabled())qFatal("Microphone opt-out did not survive reopening");}
+        {const auto reopened=std::make_unique<MainWindow>(false);if(!reopened->disableMicrophone_->isChecked() || reopened->microphone_.active() || reopened->inputCombo_->isEnabled())qFatal("Microphone opt-out did not survive reopening");}
         microphoneAccess_.observe(true);microphoneAccess_.chooseDisabled(true);applyMicrophoneAccess();
         disableMicrophone_->click();
         if(QSettings().value("disableMicrophoneAccess").toBool())qFatal("Manual microphone permission was not saved");
@@ -4348,8 +4348,9 @@ int main(int argc, char **argv) {
         if (parseAmplifierProfile(ampTest)) qFatal("Empty amplifier profile accepted");
         qInfo("UI self-test: constructing window");
         MainWindow testWindow(false);
-        testWindow.selfTestMicrophonePrivacy();
         qInfo("UI self-test: window constructed");
+        testWindow.selfTestMicrophonePrivacy();
+        qInfo("UI self-test: microphone privacy and saved choice checks passed");
         testWindow.testEquipmentSelection();
         for (const auto &entry : {std::pair{"manageSpeakerProfiles", "speaker"},
                                   std::pair{"manageMicrophoneProfiles", "microphone"},
