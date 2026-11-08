@@ -58,6 +58,12 @@ for contract in ("windows-x64$installerSuffix-setup.exe", "variantManifest", "co
 if "installerSuffix = if ($AudioRoute -eq 'Native') { '-native' }" not in build:
     fail("native and cable installers must have distinct filenames")
 text("scripts/verify-windows-variant-parity.py")
+if "dist/*-manifest.json" not in text(".github/workflows/windows-check.yml"):
+    fail("Windows variant manifests must be retained as CI artifacts")
+if "*-manifest.json" not in text(".github/workflows/release.yml"):
+    fail("Windows variant manifests must be published with releases")
+if "-manifest.json" not in text("scripts/assemble-release.py"):
+    fail("Windows variant manifests must be covered by release checksums")
 
 wrapper = text("packaging/windows/native-audio-setup.ps1")
 for contract in ("& $helper --verify $package", "Get-AuthenticodeSignature", ".Status -ne 'Valid'", "-Verb RunAs"):
