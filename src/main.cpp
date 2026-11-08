@@ -1912,6 +1912,13 @@ public:
         hint.setWidth(0);
         return hint;
     }
+
+protected:
+    QSize viewportSizeHint() const override {
+        auto hint = QScrollArea::viewportSizeHint();
+        hint.setWidth(0);
+        return hint;
+    }
 };
 
 static soundcurrent::equipment::Profile measuredSystemProfile(const QString &input, const QString &output) {
