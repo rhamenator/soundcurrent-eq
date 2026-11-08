@@ -5158,8 +5158,16 @@ int main(int argc, char **argv) {
                     QApplication::processEvents();
                     QCoreApplication::sendPostedEvents(nullptr,QEvent::LayoutRequest);
                     QApplication::processEvents();
-                    if(auto *scroll=qobject_cast<QScrollArea *>(tabs->widget(page));scroll && scroll->horizontalScrollBar()->maximum()>0)
+                    // Some platform plugins deliver the responsive row's resize
+                    // after the first layout request. Test the settled geometry,
+                    // not that transient intermediate size.
+                    QEventLoop settled;QTimer::singleShot(40,&settled,&QEventLoop::quit);settled.exec();
+                    if(auto *scroll=qobject_cast<QScrollArea *>(tabs->widget(page));scroll && scroll->horizontalScrollBar()->maximum()>0){
+                        qWarning("Localized tab %d retained horizontal range %d after settling",page,scroll->horizontalScrollBar()->maximum());
+                        for(auto *widget:scroll->widget()->findChildren<QWidget *>())if(widget->minimumSizeHint().width()>scroll->viewport()->width()-40)
+                            qWarning("Wide widget %s minimum %d object %s",widget->metaObject()->className(),widget->minimumSizeHint().width(),qPrintable(widget->objectName()));
                         qFatal("Localized tab %d requires horizontal page scrolling",page);
+                    }
                 }
                 tabs->setCurrentIndex(original);
             }
