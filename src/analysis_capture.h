@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 #pragma once
+#include "linux_child_lifetime.h"
 #include "localization_text.h"
 #include "microphone_access.h"
 #include <QByteArray>
@@ -44,7 +45,7 @@ public:
         try{recorder_.start(source.toStdWString(),48000,2,playback);timer_.start();}catch(...){running_=false;if(onError)onError(captureError());}
 #else
         process_.setProgram("parec");process_.setArguments({"--raw","-d",playback?source+".monitor":source,"--format=s16le","--rate=48000","--channels=2","--latency-msec=20"});
-        process_.setChildProcessModifier([]{prctl(PR_SET_PDEATHSIG,SIGTERM);});process_.start();timer_.start();
+        process_.setChildProcessModifier(soundcurrent::terminateWithParent());process_.start();timer_.start();
 #endif
     }
     void stop(){running_=false;timer_.stop();
