@@ -3440,7 +3440,10 @@ private:
         if(!bandScroll_ || !bandScroll_->widget())return;
         auto *body=bandScroll_->widget();body->layout()->invalidate();
         const auto hint=body->sizeHint().expandedTo(body->minimumSizeHint());
-        body->setFixedSize(std::max({760,int(bands_.size())*63,hint.width()}),std::max(210,hint.height()));
+        // Keep one deterministic horizontal allocation per band. Platform font
+        // metrics must not make the strip jump when a sixteenth band is added;
+        // compact frequency captions fit inside the 63-pixel columns.
+        body->setFixedSize(std::max(760,int(bands_.size())*63),std::max(210,hint.height()));
         bandScroll_->setFixedHeight(body->height()+bandScroll_->horizontalScrollBar()->sizeHint().height()+2*bandScroll_->frameWidth());
     }
 
