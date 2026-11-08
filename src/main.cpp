@@ -2372,18 +2372,19 @@ public:
 
 
         auto *presetBox = new QGroupBox(SC_TR("Listening preset"));
-        auto *presetRow = new QGridLayout(presetBox);
+        auto *presetLayout = new QVBoxLayout(presetBox);
         presetCombo_ = new PresetComboBox;
         presetCombo_->setObjectName("localizedPresetSelector");
         presetCombo_->setAccessibleName(SC_TR("Listening preset"));
         presetCombo_->setView(new QListView(presetCombo_));
         presetCombo_->setMaxVisibleItems(12);
         presetCombo_->view()->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-        presetRow->addWidget(presetCombo_, 0, 0, 1, 4);
+        presetLayout->addWidget(presetCombo_);
+        auto *presetRow = new soundcurrent::ui::ResponsiveRow;
         auto *save = new QPushButton(SC_TR("Save preset"));
-        presetRow->addWidget(save, 1, 0);
+        presetRow->addWidget(save);
         auto *reset = new QPushButton(SC_TR("Reset to flat"));
-        presetRow->addWidget(reset, 1, 1);
+        presetRow->addWidget(reset);
         savePresetButton_ = save;
         resetButton_ = reset;
         lockButton_ = new QPushButton(SC_TR("Lock EQ"));
@@ -2391,12 +2392,13 @@ public:
         lockButton_->setChecked(startEnabled && QSettings().value("eqLocked", false).toBool());
         lockButton_->setAccessibleName(SC_TR("Lock equalizer settings"));
         lockButton_->setToolTip(SC_TR("Prevent changes to presets, EQ bands, post gain, and balance"));
-        presetRow->addWidget(lockButton_, 1, 2);
+        presetRow->addWidget(lockButton_);
         undoButton_ = new QPushButton(SC_TR("Undo"));
         undoButton_->setAccessibleName(SC_TR("Undo last equalizer change"));
         undoButton_->setToolTip(SC_TR("Restore the previous EQ setting (Ctrl+Z)"));
         undoButton_->setEnabled(false);
-        presetRow->addWidget(undoButton_, 1, 3);
+        presetRow->addWidget(undoButton_);
+        presetLayout->addWidget(presetRow);
         root->addWidget(presetBox);
 
         auto *eqBox = new QGroupBox(SC_TR("Equalizer"));
