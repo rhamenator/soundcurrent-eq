@@ -1,0 +1,93 @@
+{
+    "success":  true,
+    "failure":  null,
+    "tests":  [
+                  {
+                      "name":  "eq-install",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "eq-ui",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "eq-soundcurrent-microphone-access-test",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "eq-soundcurrent-windows-microphone-privacy-test",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "eq-soundcurrent-responsive-ui-test",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "eq-ar",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "eq-uninstall",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "eq-reinstall",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "eq-update",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "eq-final-uninstall",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "studio-install",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "studio-ui",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "studio-soundcurrent-microphone-access-test",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "studio-soundcurrent-windows-microphone-privacy-test",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "studio-soundcurrent-responsive-ui-test",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "studio-ar",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "studio-uninstall",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "studio-reinstall",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "studio-update",
+                      "exit":  0
+                  },
+                  {
+                      "name":  "studio-final-uninstall",
+                      "exit":  0
+                  }
+              ],
+    "started":  "\/Date(1794109453283)\/",
+    "finished":  {
+                     "value":  "\/Date(1794109542109)\/",
+                     "DisplayHint":  2,
+                     "DateTime":  "Saturday, November 7, 2026 7:45:42 PM"
+                 },
+    "limitations":  "No VB-CABLE/native driver installation, real microphone capture, or hardware audio latency tested. UI font scaling is not physical mixed-DPI coverage."
+}

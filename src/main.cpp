@@ -72,6 +72,7 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
+#include <QEventLoop>
 #include <QProcess>
 #include <QProcessEnvironment>
 #include <QPushButton>
@@ -2780,6 +2781,18 @@ protected:
 
 
 public:
+    void selfTestQuitVisibility() const {
+        const auto *quit=findChild<QPushButton*>("persistentQuit");
+        if(!quit || !quit->isVisible() ||
+           !quit->visibleRegion().boundingRect().contains(quit->rect()))
+            qFatal("Quit is clipped by its parent layout");
+        for(auto *ancestor=quit->parentWidget();ancestor;ancestor=ancestor->parentWidget()){
+            const QRect mapped(quit->mapTo(ancestor,QPoint()),quit->size());
+            if(!ancestor->rect().contains(mapped))
+                qFatal("Quit extends outside an ancestor widget");
+            if(ancestor==this)break;
+        }
+    }
     void testEquipmentSelection() {
         using namespace soundcurrent::equipment;
         // A real correction shape exercises the main-window routing, independently of file dialogs.
@@ -4837,15 +4850,20 @@ int main(int argc, char **argv) {
                 qFatal("Device or sweep configuration is outside the settings tab");
         }
         const auto screenshotDirectory = qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");
+        auto settleUi=[&]{
+            // Native window/layout messages can arrive after processEvents returns.
+            QEventLoop loop;QTimer::singleShot(50,&loop,&QEventLoop::quit);loop.exec();
+            testWindow.selfTestQuitVisibility();
+        };
         if (!screenshotDirectory.isEmpty()) {
             testWindow.resize(1050, 920);
-            app.processEvents();
+            settleUi();
             if (!QDir().mkpath(screenshotDirectory) ||
                 !testWindow.grab().save(QDir(screenshotDirectory).filePath("equalizer.png")))
                 qFatal("Cannot save equalizer UI test screenshot");
         }
         tabs->setCurrentIndex(1);
-        app.processEvents();
+        settleUi();
         if (!screenshotDirectory.isEmpty() &&
             !testWindow.grab().save(QDir(screenshotDirectory).filePath("settings.png")))
             qFatal("Cannot save settings UI test screenshot");

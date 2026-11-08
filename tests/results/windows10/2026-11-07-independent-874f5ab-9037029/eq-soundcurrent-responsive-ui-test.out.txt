@@ -1,0 +1,1 @@
+PASS: responsive rows, font scaling, dialog fit, pinned actions and scroll reachability

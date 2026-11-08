@@ -1,6 +1,6 @@
 # Security review — 7 November 2026
 
-Status: bounded source/package review, not a certification. Draft changes are not installed or released. Windows 10 qualification is still pending.
+Status: bounded source/package review, not a certification. Draft changes are not installed or released. [Windows 10 app/install/UI verification is recorded separately](windows10-independent-app-audit-2026-11-07.md); native-driver/audio qualification remains pending.
 
 ## Application findings
 

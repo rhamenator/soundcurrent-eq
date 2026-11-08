@@ -1,0 +1,17 @@
+{
+    "success":  false,
+    "failure":  "Failed: eq-install (see logs)",
+    "tests":  [
+                  {
+                      "name":  "eq-install",
+                      "exit":  null
+                  }
+              ],
+    "started":  "\/Date(1794109167793)\/",
+    "finished":  {
+                     "value":  "\/Date(1794109178136)\/",
+                     "DisplayHint":  2,
+                     "DateTime":  "Saturday, November 7, 2026 7:39:38 PM"
+                 },
+    "limitations":  "No VB-CABLE/native driver installation, real microphone capture, or hardware audio latency tested. UI font scaling is not physical mixed-DPI coverage."
+}
