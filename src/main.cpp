@@ -1966,6 +1966,7 @@ public:
         settingsScroll->setWidgetResizable(true);
         auto *settingsContainer = new QWidget;
         auto *settingsRoot = new QVBoxLayout(settingsContainer);
+        settingsRoot->setSizeConstraint(QLayout::SetNoConstraint);
         settingsRoot->setContentsMargins(14, 22, 14, 24);
         settingsRoot->setSpacing(16);
         settingsScroll->setWidget(settingsContainer);
