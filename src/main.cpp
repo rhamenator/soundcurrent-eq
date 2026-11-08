@@ -1899,6 +1899,43 @@ protected:
     }
 };
 
+class BandScrollArea : public QScrollArea {
+public:
+    QSize minimumSizeHint() const override {
+        auto hint = QScrollArea::minimumSizeHint();
+        hint.setWidth(0);
+        return hint;
+    }
+
+    QSize sizeHint() const override {
+        auto hint = QScrollArea::sizeHint();
+        hint.setWidth(0);
+        return hint;
+    }
+
+protected:
+    QSize viewportSizeHint() const override {
+        auto hint = QScrollArea::viewportSizeHint();
+        hint.setWidth(0);
+        return hint;
+    }
+};
+
+class ScrollPage : public QWidget {
+public:
+    QSize minimumSizeHint() const override {
+        auto hint = QWidget::minimumSizeHint();
+        hint.setWidth(0);
+        return hint;
+    }
+
+    QSize sizeHint() const override {
+        auto hint = QWidget::sizeHint();
+        hint.setWidth(0);
+        return hint;
+    }
+};
+
 static soundcurrent::equipment::Profile measuredSystemProfile(const QString &input, const QString &output) {
     soundcurrent::equipment::Profile p;
     p.kind = "speaker"; p.brand = SC_TR("Custom"); p.family = SC_TR("Whole listening system"); p.model = SC_TR("Measured listening position"); p.custom = true;
@@ -1932,16 +1969,20 @@ public:
         auto *shell=new QWidget;auto *shellLayout=new QVBoxLayout(shell);
         shellLayout->setContentsMargins(0,0,0,0);shellLayout->setSpacing(0);
         shellLayout->addWidget(tabs_,1);setCentralWidget(shell);
-        auto *container = new QWidget;
+        auto *container = new ScrollPage;
         auto *root = new QVBoxLayout(container);
-        root->setContentsMargins(26, 22, 26, 24);
+        // This page is resized to the outer viewport. Wide children provide
+        // their own scrolling and must not create a second page-level bar.
+        root->setSizeConstraint(QLayout::SetNoConstraint);
+        root->setContentsMargins(14, 22, 14, 24);
         root->setSpacing(16);
         scroll_->setWidget(container);
         auto *settingsScroll = new QScrollArea;
         settingsScroll->setWidgetResizable(true);
-        auto *settingsContainer = new QWidget;
+        auto *settingsContainer = new ScrollPage;
         auto *settingsRoot = new QVBoxLayout(settingsContainer);
-        settingsRoot->setContentsMargins(26, 22, 26, 24);
+        settingsRoot->setSizeConstraint(QLayout::SetNoConstraint);
+        settingsRoot->setContentsMargins(14, 22, 14, 24);
         settingsRoot->setSpacing(16);
         settingsScroll->setWidget(settingsContainer);
         tabs_->addTab(settingsScroll, SC_TR("Settings && calibration"));
@@ -1959,11 +2000,11 @@ public:
         outputCombo_ = new QComboBox;
         outputCombo_->setAccessibleName(SC_TR("Output device"));
         outputCombo_->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-        auto *deviceRow = new QHBoxLayout;
+        auto *deviceRow = new soundcurrent::ui::ResponsiveRow;
         deviceRow->addWidget(outputCombo_, 1);
         auto *refresh = new QPushButton(SC_TR("Refresh devices"));
         deviceRow->addWidget(refresh);
-        deviceLayout->addLayout(deviceRow);
+        deviceLayout->addWidget(deviceRow);
         power_ = new QCheckBox(SC_TR("Equalizer off"));
         power_->setObjectName("powerToggle");
         power_->setAccessibleName(SC_TR("Equalizer on or off"));
@@ -2372,18 +2413,19 @@ public:
 
 
         auto *presetBox = new QGroupBox(SC_TR("Listening preset"));
-        auto *presetRow = new QGridLayout(presetBox);
+        auto *presetLayout = new QVBoxLayout(presetBox);
         presetCombo_ = new PresetComboBox;
         presetCombo_->setObjectName("localizedPresetSelector");
         presetCombo_->setAccessibleName(SC_TR("Listening preset"));
         presetCombo_->setView(new QListView(presetCombo_));
         presetCombo_->setMaxVisibleItems(12);
         presetCombo_->view()->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-        presetRow->addWidget(presetCombo_, 0, 0, 1, 4);
+        presetLayout->addWidget(presetCombo_);
+        auto *presetRow = new soundcurrent::ui::ResponsiveRow;
         auto *save = new QPushButton(SC_TR("Save preset"));
-        presetRow->addWidget(save, 1, 0);
+        presetRow->addWidget(save);
         auto *reset = new QPushButton(SC_TR("Reset to flat"));
-        presetRow->addWidget(reset, 1, 1);
+        presetRow->addWidget(reset);
         savePresetButton_ = save;
         resetButton_ = reset;
         lockButton_ = new QPushButton(SC_TR("Lock EQ"));
@@ -2391,12 +2433,13 @@ public:
         lockButton_->setChecked(startEnabled && QSettings().value("eqLocked", false).toBool());
         lockButton_->setAccessibleName(SC_TR("Lock equalizer settings"));
         lockButton_->setToolTip(SC_TR("Prevent changes to presets, EQ bands, post gain, and balance"));
-        presetRow->addWidget(lockButton_, 1, 2);
+        presetRow->addWidget(lockButton_);
         undoButton_ = new QPushButton(SC_TR("Undo"));
         undoButton_->setAccessibleName(SC_TR("Undo last equalizer change"));
         undoButton_->setToolTip(SC_TR("Restore the previous EQ setting (Ctrl+Z)"));
         undoButton_->setEnabled(false);
-        presetRow->addWidget(undoButton_, 1, 3);
+        presetRow->addWidget(undoButton_);
+        presetLayout->addWidget(presetRow);
         root->addWidget(presetBox);
 
         auto *eqBox = new QGroupBox(SC_TR("Equalizer"));
@@ -2420,35 +2463,49 @@ public:
         eqLayout->addWidget(headroom_);
 
         auto *details = new QWidget;
-        auto *detailsRow = new QGridLayout(details);
-        detailsRow->setContentsMargins(0, 2, 0, 2);
-        detailsRow->addWidget(new QLabel(SC_TR("Selected band")), 0, 0, 1, 3);
-        detailsRow->addWidget(new QLabel(SC_TR("Frequency")), 1, 0);
+        auto *detailsLayout = new QVBoxLayout(details);
+        detailsLayout->setContentsMargins(0, 2, 0, 2);
+        detailsLayout->addWidget(new QLabel(SC_TR("Selected band")));
+        auto *detailsRow = new soundcurrent::ui::ResponsiveRow;
+        auto *frequencyField = new QWidget;
+        auto *frequencyLayout = new QVBoxLayout(frequencyField);
+        frequencyLayout->setContentsMargins(0, 0, 0, 0);
+        frequencyLayout->addWidget(new QLabel(SC_TR("Frequency")));
         frequencyBox_ = new soundcurrent::AcceleratingDoubleSpinBox;
         frequencyBox_->setRange(20, 20000);
         frequencyBox_->setDecimals(0);
         frequencyBox_->setSingleStep(1);
         frequencyBox_->setSuffix(" Hz");
         frequencyBox_->setAccessibleName(SC_TR("Selected band frequency"));
-        detailsRow->addWidget(frequencyBox_, 2, 0);
-        detailsRow->setColumnStretch(0, 1);
-        detailsRow->addWidget(new QLabel(SC_TR("Gain")), 1, 1);
+        frequencyBox_->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
+        frequencyLayout->addWidget(frequencyBox_);
+        detailsRow->addWidget(frequencyField,1);
+        auto *gainField = new QWidget;
+        auto *gainLayout = new QVBoxLayout(gainField);
+        gainLayout->setContentsMargins(0, 0, 0, 0);
+        gainLayout->addWidget(new QLabel(SC_TR("Gain")));
         gainBox_ = new soundcurrent::AcceleratingDoubleSpinBox;
         gainBox_->setRange(-12, 12);
         gainBox_->setDecimals(1);
         gainBox_->setSingleStep(0.5);
         gainBox_->setSuffix(" dB");
         gainBox_->setAccessibleName(SC_TR("Selected band gain"));
-        detailsRow->addWidget(gainBox_, 2, 1);
-        detailsRow->setColumnStretch(1, 1);
-        detailsRow->addWidget(new QLabel(SC_TR("Filter Q")), 1, 2);
+        gainBox_->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
+        gainLayout->addWidget(gainBox_);
+        detailsRow->addWidget(gainField,1);
+        auto *qField = new QWidget;
+        auto *qLayout = new QVBoxLayout(qField);
+        qLayout->setContentsMargins(0, 0, 0, 0);
+        qLayout->addWidget(new QLabel(SC_TR("Filter Q")));
         qBox_ = new soundcurrent::AcceleratingDoubleSpinBox;
         qBox_->setRange(0.3, 10.0);
         qBox_->setDecimals(2);
         qBox_->setSingleStep(0.1);
         qBox_->setAccessibleName(SC_TR("Selected band filter Q"));
-        detailsRow->addWidget(qBox_, 2, 2);
-        detailsRow->setColumnStretch(2, 1);
+        qBox_->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
+        qLayout->addWidget(qBox_);
+        detailsRow->addWidget(qField,1);
+        detailsLayout->addWidget(detailsRow);
         eqLayout->addWidget(details);
 
         auto *showCurve = new QCheckBox(SC_TR("Show EQ response graph"));
@@ -2464,9 +2521,13 @@ public:
         });
         eqLayout->addWidget(curve_);
 
-        bandScroll_ = new QScrollArea;
+        bandScroll_ = new BandScrollArea;
         bandScroll_->setLayoutDirection(Qt::LeftToRight);
         bandScroll_->setWidgetResizable(false);
+        // The fixed-width band strip scrolls inside this viewport.  Do not let
+        // its width become the minimum width of the entire Equalizer page.
+        bandScroll_->setMinimumWidth(0);
+        bandScroll_->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Fixed);
         bandScroll_->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         bandScroll_->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         bandScroll_->setFixedHeight(235);
@@ -2781,6 +2842,28 @@ protected:
 
 
 public:
+    void selfTestBandScaling() {
+        const int original=countBox_->value();
+        const QRect curveGeometry=curve_->geometry();
+        const QRect outputGeometry=outputGain_->geometry();
+        countBox_->setValue(15);QCoreApplication::processEvents();
+        if(sliders_.size()!=15 || frequencyButtons_.size()!=15)qFatal("Fifteen-band controls are incomplete");
+        const int width15=bandScroll_->widget()->width();
+        const QSize slider15=sliders_.front()->size();
+        for(int i=0;i<sliders_.size();++i){
+            if(sliders_[i]->size()!=slider15 || sliders_[i]->height()<140)qFatal("Fifteen-band sliders scaled unevenly");
+            if(i && sliders_[i-1]->geometry().right()>=sliders_[i]->geometry().left())qFatal("Fifteen-band sliders overlap");
+        }
+        countBox_->setValue(16);QCoreApplication::processEvents();
+        if(sliders_.size()!=16 || frequencyButtons_.size()!=16)qFatal("Sixteenth band was not added");
+        if(bandScroll_->widget()->width()-width15!=63){qWarning()<<"Band widths"<<width15<<bandScroll_->widget()->width()<<"minimum"<<bandScroll_->widget()->minimumWidth()<<"sliders"<<sliders_.size();qFatal("15-to-16 band scaling changed by an unexpected amount");}
+        for(auto *slider:sliders_)if(slider->size()!=slider15 || slider->height()<140)qFatal("Adding band 16 resized existing sliders");
+        auto *bar=bandScroll_->horizontalScrollBar();bar->setValue(bar->maximum());QCoreApplication::processEvents();
+        const QRect last(frequencyButtons_.back()->mapTo(bandScroll_->viewport(),QPoint()),frequencyButtons_.back()->size());
+        if(!bandScroll_->viewport()->rect().intersects(last))qFatal("Band 16 cannot be reached by scrolling");
+        if(curve_->geometry()!=curveGeometry || outputGain_->geometry()!=outputGeometry)qFatal("Band-count change moved unrelated controls");
+        bar->setValue(0);countBox_->setValue(original);QCoreApplication::processEvents();
+    }
     void selfTestQuitVisibility() const {
         const auto *quit=findChild<QPushButton*>("persistentQuit");
         if(!quit || !quit->isVisible() ||
@@ -3316,6 +3399,7 @@ private:
         auto *row = new QHBoxLayout(container);
         row->setContentsMargins(8, 4, 8, 8);
         row->setSpacing(4);
+        row->setSizeConstraint(QLayout::SetNoConstraint);
         for (qsizetype i = 0; i < bands_.size(); ++i) {
             auto *column = new QVBoxLayout;
             auto *value = new QLabel;
@@ -3358,9 +3442,11 @@ private:
             });
             connect(frequency, &QPushButton::clicked, this, [this, i] { selectBand(int(i)); });
         }
-        container->resize(std::max(760, int(bands_.size()) * 63),210);
+        const int bandStripWidth=std::max(760,int(bands_.size())*63);
         container->setMinimumHeight(210);
         bandScroll_->setWidget(container);
+        container->setFixedWidth(bandStripWidth);
+        container->resize(bandStripWidth,210);
         lastChangeSource_ = nullptr;
         if (lockButton_->isChecked()) updateControlsLock();
     }
@@ -3401,7 +3487,10 @@ private:
         if(!bandScroll_ || !bandScroll_->widget())return;
         auto *body=bandScroll_->widget();body->layout()->invalidate();
         const auto hint=body->sizeHint().expandedTo(body->minimumSizeHint());
-        body->setFixedSize(std::max(760,hint.width()),std::max(210,hint.height()));
+        // Keep one deterministic horizontal allocation per band. Platform font
+        // metrics must not make the strip jump when a sixteenth band is added;
+        // compact frequency captions fit inside the 63-pixel columns.
+        body->setFixedSize(std::max(760,int(bands_.size())*63),std::max(210,hint.height()));
         bandScroll_->setFixedHeight(body->height()+bandScroll_->horizontalScrollBar()->sizeHint().height()+2*bandScroll_->frameWidth());
     }
 
@@ -4698,6 +4787,7 @@ int main(int argc, char **argv) {
         presets->setCurrentText("Flat");
         testWindow.show();
         app.processEvents();
+        testWindow.selfTestBandScaling();
         if (auto *display = testWindow.screen()) {
             const auto available = display->availableGeometry();
             if (testWindow.width() > available.width() || testWindow.height() > available.height())
@@ -5067,8 +5157,17 @@ int main(int argc, char **argv) {
                 auto *tabs=window.findChild<QTabWidget *>();
                 for(int page=0;page<tabs->count();++page) {
                     tabs->setCurrentIndex(page);QApplication::processEvents();
-                    if(auto *scroll=qobject_cast<QScrollArea *>(tabs->widget(page)))
+                    if(auto *scroll=qobject_cast<QScrollArea *>(tabs->widget(page))){
                         qInfo("Layout tab %d viewport %d; horizontal range %d",page,scroll->viewport()->width(),scroll->horizontalScrollBar()->maximum());
+                        for(auto *widget:scroll->widget()->findChildren<QWidget *>())if(widget->minimumSizeHint().width()>scroll->viewport()->width()-40) {
+                            QString detail=widget->accessibleName();
+                            if(auto *group=qobject_cast<QGroupBox *>(widget))detail=group->title();
+                            else if(auto *button=qobject_cast<QAbstractButton *>(widget))detail=button->text();
+                            else if(auto *label=qobject_cast<QLabel *>(widget))detail=label->text();
+                            detail=detail.simplified().left(160);
+                            qInfo("Wide tab %d widget %s: minimum %d; object %s; text %s",page,widget->metaObject()->className(),widget->minimumSizeHint().width(),qPrintable(widget->objectName()),qPrintable(detail));
+                        }
+                    }
                 }
                 tabs->setCurrentIndex(0);QApplication::processEvents();
                 for(auto *widget:outer->widget()->findChildren<QWidget *>())
@@ -5095,6 +5194,27 @@ int main(int argc, char **argv) {
                         }
                     }
                 }
+            }
+            if(auto *tabs=window.findChild<QTabWidget *>()){
+                const int original=tabs->currentIndex();
+                for(int page=0;page<tabs->count();++page){
+                    tabs->setCurrentIndex(page);
+                    QCoreApplication::sendPostedEvents(nullptr,QEvent::LayoutRequest);
+                    QApplication::processEvents();
+                    QCoreApplication::sendPostedEvents(nullptr,QEvent::LayoutRequest);
+                    QApplication::processEvents();
+                    // Some platform plugins deliver the responsive row's resize
+                    // after the first layout request. Test the settled geometry,
+                    // not that transient intermediate size.
+                    QEventLoop settled;QTimer::singleShot(40,&settled,&QEventLoop::quit);settled.exec();
+                    if(auto *scroll=qobject_cast<QScrollArea *>(tabs->widget(page));scroll && scroll->horizontalScrollBar()->maximum()>0){
+                        qWarning("Localized tab %d retained horizontal range %d after settling",page,scroll->horizontalScrollBar()->maximum());
+                        for(auto *widget:scroll->widget()->findChildren<QWidget *>())if(widget->minimumSizeHint().width()>scroll->viewport()->width()-40)
+                            qWarning("Wide widget %s minimum %d object %s",widget->metaObject()->className(),widget->minimumSizeHint().width(),qPrintable(widget->objectName()));
+                        qFatal("Localized tab %d requires horizontal page scrolling",page);
+                    }
+                }
+                tabs->setCurrentIndex(original);
             }
             // Test completion is a protocol result, independent of Qt logging filters.
             QTextStream(stdout) << "Localization UI: " << localization.requested()

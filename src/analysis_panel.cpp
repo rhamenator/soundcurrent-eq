@@ -236,18 +236,18 @@ private:
 };
 Panel::Panel(QWidget *parent):QWidget(parent) {
     setObjectName("analysisPanel");auto *root=new QVBoxLayout(this);root->setContentsMargins(12,8,12,8);
-    auto *top=new QGridLayout;view_=new QComboBox;view_->setObjectName("analysisView");view_->setAccessibleName(SC_TR("View"));
+    auto *top=new soundcurrent::ui::ResponsiveRow;view_=new QComboBox;view_->setObjectName("analysisView");view_->setAccessibleName(SC_TR("View"));
     const QStringList views={SC_TR("Spectrogram"),SC_TR("Spectrum"),SC_TR("Waveform"),SC_TR("Tuner"),SC_TR("Vectorscope"),SC_TR("Averaged spectrum"),SC_TR("Microphone response")};
     for(int i=0;i<views.size();++i)view_->addItem(views[i],i);
     source_=new QComboBox;source_->setObjectName("analysisSource");source_->setAccessibleName(SC_TR("Microphone"));source_->addItem(SC_TR("Playback monitor"),QString());
     for(auto *combo:{view_,source_}){combo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);combo->setMinimumContentsLength(8);combo->setMinimumWidth(0);combo->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);}
     freeze_=new QCheckBox(SC_TR("Freeze display"));freeze_->setObjectName("analysisFreeze");auto *settings=new QPushButton(SC_TR("Settings"));settings->setObjectName("analysisSettings");
-    top->addWidget(view_,0,0);top->addWidget(source_,0,1);top->addWidget(freeze_,0,2);top->addWidget(settings,0,3);top->setColumnStretch(0,1);top->setColumnStretch(1,1);root->addLayout(top);
+    top->addWidget(view_,1);top->addWidget(source_,1);top->addWidget(freeze_);top->addWidget(settings);root->addWidget(top);
     canvas_=new ScopeCanvas(this);root->addWidget(canvas_,1);readout_=new QLabel;readout_->setTextFormat(Qt::PlainText);readout_->setWordWrap(true);readout_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);readout_->setFixedHeight(2*fontMetrics().lineSpacing());root->addWidget(readout_);
     help_=new QLabel(SC_TR("Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement."));help_->setWordWrap(true);root->addWidget(help_);
-    auto *actions=new QGridLayout;auto *resetButton=new QPushButton(SC_TR("Reset"));reference_=new QPushButton(SC_TR("Capture reference"));profile_=new QPushButton(SC_TR("Create microphone profile"));
+    auto *actions=new soundcurrent::ui::ResponsiveRow;auto *resetButton=new QPushButton(SC_TR("Reset"));reference_=new QPushButton(SC_TR("Capture reference"));profile_=new QPushButton(SC_TR("Create microphone profile"));
     resetButton->setObjectName("analysisReset");reference_->setObjectName("analysisReference");profile_->setObjectName("analysisCreateProfile");
-    actions->addWidget(resetButton,0,0);actions->addWidget(reference_,0,1);actions->addWidget(profile_,1,0,1,2);root->addLayout(actions);
+    actions->addWidget(resetButton);actions->addWidget(reference_);actions->addWidget(profile_);root->addWidget(actions);
     const auto saved=Settings::parse(QJsonDocument::fromJson(QSettings().value("analysis/settings").toByteArray()).object());if(saved)canvas_->data->configure(*saved);
     canvas_->onVisibility=[this](bool visible){if(visible){captureFailed_=false;refreshSources();}if(onActivity)onActivity(source(),visible && active());};
     canvas_->onFrame=[this]{availability();};

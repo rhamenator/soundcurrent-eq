@@ -75,7 +75,12 @@ public:
         :QGroupBox(SC_TR("Application updates"),parent),repo_(std::move(repo)),title_(std::move(title)),version_(std::move(version)),network_(this) {
         auto *layout=new QVBoxLayout(this);layout->addWidget(new QLabel(SC_TR("Installed version: %1").arg(version_)));
         auto *help=new QLabel(SC_TR("Install new packages over this version — no uninstall needed. Presets and profiles are kept. Save your work, use Quit (closing the window keeps it running), install the update, then reopen."));help->setWordWrap(true);layout->addWidget(help);
-        enabled_=new QCheckBox(SC_TR("Remind me when updates are available or a restart is needed"));enabled_->setChecked(QSettings().value("updates/reminders",true).toBool());layout->addWidget(enabled_);
+        auto reminderText=SC_TR("Remind me when updates are available or a restart is needed");
+        const int middle=reminderText.size()/2;
+        int split=reminderText.indexOf(' ',middle);
+        if(split<0)split=reminderText.lastIndexOf(' ',middle);
+        if(split>0)reminderText[split]='\n';
+        enabled_=new QCheckBox(reminderText);enabled_->setAccessibleName(SC_TR("Remind me when updates are available or a restart is needed"));enabled_->setChecked(QSettings().value("updates/reminders",true).toBool());layout->addWidget(enabled_);
         preview_=new QCheckBox(SC_TR("Include preview releases"));preview_->setChecked(QSettings().value("updates/previews",true).toBool());layout->addWidget(preview_);
         status_=new QLabel(SC_TR("Checks published releases and downloaded installers. No update is installed automatically."));status_->setWordWrap(true);status_->setTextFormat(Qt::PlainText);layout->addWidget(status_);
         auto *row=new QGridLayout;auto *check=new QPushButton(SC_TR("Check for updates"));auto *download=new QPushButton(SC_TR("Open release downloads"));auto *folder=new QPushButton(SC_TR("Open update folder"));auto *choose=new QPushButton(SC_TR("Choose update folder…"));row->addWidget(check,0,0);row->addWidget(download,0,1);row->addWidget(folder,1,0);row->addWidget(choose,1,1);layout->addLayout(row);
