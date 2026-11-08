@@ -10,7 +10,7 @@ import re
 
 def load(path: pathlib.Path) -> dict:
     value = json.loads(path.read_text(encoding="utf-8-sig"))
-    required = {"schema", "product", "version", "audioRoute", "sourceCommit", "installer", "installerSha256", "commonPayload"}
+    required = {"schema", "product", "version", "audioRoute", "sourceCommit", "installer", "installerSha256", "commonPayload", "routePayload"}
     if set(value) != required:
         raise SystemExit(f"{path}: manifest keys differ from the closed schema")
     if value["schema"] != 1 or not re.fullmatch(r"[0-9a-f]{40}", value["sourceCommit"]):
@@ -19,7 +19,9 @@ def load(path: pathlib.Path) -> dict:
         raise SystemExit(f"{path}: invalid installer hash")
     if not isinstance(value["commonPayload"], dict) or not value["commonPayload"]:
         raise SystemExit(f"{path}: common payload is empty")
-    for name, digest in value["commonPayload"].items():
+    if not isinstance(value["routePayload"], dict) or not value["routePayload"]:
+        raise SystemExit(f"{path}: route payload is empty")
+    for name, digest in {**value["commonPayload"], **value["routePayload"]}.items():
         if pathlib.PurePosixPath(name).is_absolute() or ".." in pathlib.PurePosixPath(name).parts:
             raise SystemExit(f"{path}: unsafe payload path {name!r}")
         if not re.fullmatch(r"[0-9a-f]{64}", digest):
@@ -41,6 +43,7 @@ def verify(cable: dict, native: dict) -> dict:
         "cable": {"installer": cable["installer"], "sha256": cable["installerSha256"]},
         "native": {"installer": native["installer"], "sha256": native["installerSha256"]},
         "commonPayloadFiles": len(cable["commonPayload"]),
+        "routePayloadFiles": {"Cable": len(cable["routePayload"]), "Native": len(native["routePayload"])},
     }
 
 
