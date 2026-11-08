@@ -43,12 +43,13 @@ inline QVersionNumber updateVersion(const QString &tag) {
 inline bool newerUpdate(const QString &candidate,const QString &current) {
     const auto a=updateVersion(candidate),b=updateVersion(current);return !a.isNull()&&!b.isNull()&&QVersionNumber::compare(a,b)>0;
 }
-inline QPair<QString,QString> downloadedUpdate(const QString &repo,const QString &current,const QString &folder) {
+inline QPair<QString,QString> downloadedUpdate(const QString &repo,const QString &current,const QString &folder,bool nativeRoute=false) {
     QString newest=current,file;
 #ifdef Q_OS_WIN
     const QString prefix="SoundCurrent-"+(repo=="soundcurrent-eq"?QString("EQ"):QString("Studio"))+"-";
-    const QRegularExpression pattern("^"+prefix+"(\\d+\\.\\d+\\.\\d+)-windows-x64-setup\\.exe$");
-    const QStringList glob{prefix+"*-windows-x64-setup.exe"};
+    const QString suffix=nativeRoute?"-windows-x64-native-setup.exe":"-windows-x64-setup.exe";
+    const QRegularExpression pattern("^"+prefix+"(\\d+\\.\\d+\\.\\d+)"+QRegularExpression::escape(suffix)+"$");
+    const QStringList glob{prefix+"*"+suffix};
 #else
     const QRegularExpression pattern("^"+repo+"_(\\d+\\.\\d+\\.\\d+)_amd64\\.deb$");
     const QStringList glob{repo+"_*_amd64.deb"};
@@ -88,6 +89,9 @@ public:
         connect(enabled_,&QCheckBox::toggled,this,[](bool on){QSettings().setValue("updates/reminders",on);});
         connect(preview_,&QCheckBox::toggled,this,[](bool on){QSettings().setValue("updates/previews",on);});
         const QFileInfo binary(QCoreApplication::applicationFilePath());size_=binary.size();modified_=binary.lastModified();
+#ifdef Q_OS_WIN
+        nativeRoute_=QFileInfo::exists(binary.dir().filePath("soundcurrent-driver-manager.exe")) && QDir(binary.dir().filePath("audio-driver")).exists();
+#endif
         if(active){connect(&timer_,&QTimer::timeout,this,[this]{tick();});timer_.start(30000);QTimer::singleShot(1500,this,[this]{checkUpdates(false);tick();});}
     }
     std::function<void(const QString &)> onReminder;
@@ -101,7 +105,7 @@ public:
 private:
     void remind(const QString &message){status_->setText(message);if(enabled_->isChecked() && message!=lastReminder_){lastReminder_=message;if(onReminder)onReminder(message);}}
     void checkLocal(){
-        const auto candidate=downloadedUpdate(repo_,version_,folder_);const auto newest=candidate.first,file=candidate.second;
+        const auto candidate=downloadedUpdate(repo_,version_,folder_,nativeRoute_);const auto newest=candidate.first,file=candidate.second;
         localVersion_ = file.isEmpty() ? version_ : newest; refreshAvailability();
         if(!file.isEmpty())remind(SC_TR("Update %1 is downloaded: %2. Quit, install over the existing app, then reopen.").arg(newest,file));
     }
@@ -144,6 +148,6 @@ private:
             else if(manual){status_->setText(SC_TR("No newer published release found. Downloaded installers are also checked."));checkLocal();}
             reply->deleteLater();});
     }
-    QString repo_,title_,version_,folder_,lastReminder_,localVersion_,publishedVersion_;QNetworkAccessManager network_;QTimer timer_;QLabel *status_;QCheckBox *enabled_,*preview_;qint64 size_=0;QDateTime modified_;bool busy_=false;
+    QString repo_,title_,version_,folder_,lastReminder_,localVersion_,publishedVersion_;QNetworkAccessManager network_;QTimer timer_;QLabel *status_;QCheckBox *enabled_,*preview_;qint64 size_=0;QDateTime modified_;bool busy_=false,nativeRoute_=false;
 };
 }
