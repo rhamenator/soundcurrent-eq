@@ -10,7 +10,7 @@ Status: bounded source/package review, not a certification. Draft changes are no
 
 ## Capture-helper lifetime fix
 
-Linux helpers previously set PR_SET_PDEATHSIG without checking whether the parent had already exited between fork and installing the signal. That race could leave a recorder/player helper alive after calibration-worker termination. All Linux QProcess child modifiers now capture the expected parent PID before fork, install the death signal and exit immediately if the parent has already changed (or installing the signal fails). The child callback uses system calls only. The regression fixture exercises both orderings across 40 test-owned process trees without opening an audio device.
+Linux helpers previously set PR_SET_PDEATHSIG without checking whether the parent had already exited between fork and installing the signal. That race could leave a recorder/player helper alive after calibration-worker termination. All Linux QProcess child modifiers now capture the expected parent PID before fork, install an uncatchable death signal and exit immediately if the parent has already changed (or installing the signal fails). The child callback uses system calls only. The regression fixture exercises both orderings across 40 test-owned process trees without opening an audio device.
 
 ## Boundaries inspected
 

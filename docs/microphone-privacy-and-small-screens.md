@@ -72,3 +72,5 @@ Physical hotplug/OS-denied microphone indicator observations and actual movement
 between monitors with different DPI need hardware qualification. Do not treat
 synthetic source tests or offscreen rendering as those observations. Driver
 signing/Windows 10 native compatibility remain separate from these UI changes.
+
+Availability is based on the operating system’s capture-device and jack metadata, without opening a microphone to probe it. Some USB/analog adapters cannot detect whether a microphone capsule is plugged into their jack; an available adapter is not proof of physical capsule presence. The explicit Disable microphone access setting remains the reliable way to prevent app capture in that case.
