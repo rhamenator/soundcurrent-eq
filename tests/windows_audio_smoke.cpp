@@ -53,6 +53,10 @@ public:
             check(unmute, "Unmute test source");
         }
     }
+    void set(float level, BOOL mute) {
+        check(volume_->SetMasterVolumeLevelScalar(level, nullptr), "Set test source volume");
+        check(volume_->SetMute(mute, nullptr), "Set test source mute");
+    }
     ~TestSourceVolume() { if(volume_) { volume_->SetMasterVolumeLevelScalar(level_, nullptr); volume_->SetMute(mute_, nullptr); } }
 };
 struct Measurement { double left = 0, right = 0; std::size_t frames = 0; };
@@ -208,6 +212,18 @@ int main(int argc, char **argv) {
         if (!bridge.running() || flat.left < 0.0001 || flat.right < 0.0001)
             throw std::runtime_error("Flat route is silent");
         std::printf("Flat RMS: L %.6f, R %.6f\n", flat.left, flat.right);
+        sourceVolume.set(0.5f, FALSE);
+        const auto halfVolume = probe.measure(1000);
+        const double halfVolumeDb = decibels(halfVolume.left, flat.left);
+        std::printf("VB-CABLE 50%% endpoint volume: %.2f dB (expected about -6)\n", halfVolumeDb);
+        if (std::abs(halfVolumeDb + 6.02) > 1.0)
+            throw std::runtime_error("VB-CABLE Windows Volume Control did not attenuate the signal");
+        sourceVolume.set(1.0f, TRUE);
+        const auto mutedVolume = probe.measure(1000);
+        std::printf("VB-CABLE muted RMS: L %.6f, R %.6f\n", mutedVolume.left, mutedVolume.right);
+        if (mutedVolume.left > flat.left * 0.01 || mutedVolume.right > flat.right * 0.01)
+            throw std::runtime_error("VB-CABLE Windows mute did not silence the signal");
+        sourceVolume.set(1.0f, FALSE);
         bridge.setProfile({}, 6, 0, true);
         const auto gain = probe.measure(1000);
         const double gainDb = decibels(gain.left, flat.left);
