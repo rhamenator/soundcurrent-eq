@@ -1,6 +1,6 @@
 Name:           soundcurrent-eq
 %global debug_package %{nil}
-Version:        1.3.1
+Version:        1.3.2
 Release:        1%{?dist}
 Summary:        Adjustable desktop equalizer for PipeWire
 License:        GPL-3.0-only
@@ -51,6 +51,9 @@ DESTDIR=%{buildroot} cmake --install build
 %{_datadir}/doc/soundcurrent-eq/AudioSpectrogram-LICENSE
 
 %changelog
+* Sun Nov 08 2026 rhamenator <rhamenator@gmail.com> - 1.3.2-1
+- Improve small-screen, high-scaling, localized, and variable-band UI layouts
+
 * Sun Nov 08 2026 rhamenator <rhamenator@gmail.com> - 1.3.1-1
 - Apply VB-CABLE Windows volume and mute control live during install and repair
 
