@@ -11,6 +11,9 @@
 // keys, values, commands, or DLLs are accepted by these actions.
 namespace {
 constexpr wchar_t volumeKey[] = L"SOFTWARE\\VB-Audio\\Cable";
+// Match the vendor control panel: the driver also reads this SYSTEM fallback
+// when its Software hive setting is unavailable during startup.
+constexpr wchar_t volumeBootKey[] = L"SYSTEM\\CurrentControlSet\\Services\\VB-Cable";
 constexpr wchar_t volumeValue[] = L"VBAudioCableWDM_VolCtl";
 // Volatile machine marker disappears at reboot and is shared by both apps/users.
 constexpr wchar_t volumePendingKey[] = L"SOFTWARE\\SoundCurrent\\VBCableVolumePending";
@@ -67,9 +70,9 @@ bool primaryCablePresent() {
     return found;
 }
 // 0: saved, 12: absent/disabled/wrong type, 31: read failure.
-int savedCableVolumeStatus() {
+int savedCableVolumeAt(const wchar_t *path) {
     RegistryKey key;
-    auto result = RegOpenKeyExW(HKEY_LOCAL_MACHINE, volumeKey, 0, KEY_QUERY_VALUE | KEY_WOW64_64KEY, &key.key);
+    auto result = RegOpenKeyExW(HKEY_LOCAL_MACHINE, path, 0, KEY_QUERY_VALUE | KEY_WOW64_64KEY, &key.key);
     if (result == ERROR_FILE_NOT_FOUND || result == ERROR_PATH_NOT_FOUND) return 12;
     if (result != ERROR_SUCCESS) return 31;
     DWORD type = 0, value = 0, bytes = sizeof(value);
@@ -77,6 +80,10 @@ int savedCableVolumeStatus() {
     if (result == ERROR_FILE_NOT_FOUND || result == ERROR_MORE_DATA) return 12;
     if (result != ERROR_SUCCESS) return 31;
     return type == REG_DWORD && bytes == sizeof(DWORD) && value == 1 ? 0 : 12;
+}
+int savedCableVolumeStatus() {
+    const int saved = savedCableVolumeAt(volumeKey);
+    return saved ? saved : savedCableVolumeAt(volumeBootKey);
 }
 NativeHandle openPrimaryCableControl() {
     NativeHandle result;
@@ -178,13 +185,16 @@ int configureCableVolume(bool allowElevation) {
     const int current = savedCableVolumeStatus();
     if (current != 0 && current != 12) return current;
     if (current == 12) {
-        RegistryKey key;
-        if (RegCreateKeyExW(HKEY_LOCAL_MACHINE, volumeKey, 0, nullptr, REG_OPTION_NON_VOLATILE,
-                KEY_QUERY_VALUE | KEY_SET_VALUE | KEY_WOW64_64KEY, nullptr, &key.key, nullptr) != ERROR_SUCCESS) return 31;
-        const DWORD enabled = 1;
-        if (RegSetValueExW(key.key, volumeValue, 0, REG_DWORD,
-                reinterpret_cast<const BYTE *>(&enabled), sizeof(enabled)) != ERROR_SUCCESS) return 31;
-        if (RegFlushKey(key.key) != ERROR_SUCCESS || savedCableVolumeStatus() != 0) return 31;
+        for (const auto *path : {volumeKey, volumeBootKey}) {
+            RegistryKey key;
+            if (RegCreateKeyExW(HKEY_LOCAL_MACHINE, path, 0, nullptr, REG_OPTION_NON_VOLATILE,
+                    KEY_QUERY_VALUE | KEY_SET_VALUE | KEY_WOW64_64KEY, nullptr, &key.key, nullptr) != ERROR_SUCCESS) return 31;
+            const DWORD enabled = 1;
+            if (RegSetValueExW(key.key, volumeValue, 0, REG_DWORD,
+                    reinterpret_cast<const BYTE *>(&enabled), sizeof(enabled)) != ERROR_SUCCESS) return 31;
+            if (RegFlushKey(key.key) != ERROR_SUCCESS) return 31;
+        }
+        if (savedCableVolumeStatus() != 0) return 31;
     }
     // Registry persistence alone does not change a running VB-CABLE driver.
     // Apply and verify its fixed control IOCTL; fall back to a reboot boundary

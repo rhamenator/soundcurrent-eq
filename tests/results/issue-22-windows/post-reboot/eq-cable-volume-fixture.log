@@ -1,0 +1,1 @@
+PASS: dual-location 64-bit persistence plus live VB-CABLE driver apply, faults, cancel, reboot fallback, idempotence

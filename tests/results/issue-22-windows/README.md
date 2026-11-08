@@ -18,3 +18,5 @@ Based on EQ main df7364bde393983f3134cb1d507fdbb6d63cd305. Local VS2026/MSVC 19.
 Reproduce with windows-cable-volume-configuration and shared UI checks, then explicitly run `soundcurrent-windows-audio-smoke --run` and `soundcurrent-eq --windows-live-ui-test` with QT_FORCE_STDERR_LOGGING=1, other media paused, both apps quit and active signed-in cable/physical endpoints. Quiet tones are generated and routing/levels are restored. Loopback measurements establish digital transport, not acoustic output. Windows boot persistence and Linux runtime were not retested.
 
 Installed local patched EQ SHA256: 550E80EA0D9C1945E0FE98C80F23D9A2FFC23935F2B81B2DF3FB0C2ED29AABE3. Original published installation and rollback files remain preserved. No new release was published.
+
+**Post-reboot update:** the initial volume persistence failed a Windows reboot. See [the correction and current results](post-reboot/README.md). Revised second-reboot validation remains pending.

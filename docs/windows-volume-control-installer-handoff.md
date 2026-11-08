@@ -34,9 +34,10 @@ Value: 1
 The value name also occurs in the bundled vendor control-panel executable.
 This is evidence for the pinned driver version, not a supported API guarantee
 for all future versions. Verify its behavior against the shipped vendor package.
-A post-write reboot has not yet been observed in this chat; do not claim reboot
-persistence has been tested. Saving the registry value alone may not enable an
-already running driver until its supported reload/restart boundary.
+The first subsequent reboot retained this Software value but lost live volume
+control. See the post-reboot correction below: saving this location alone was
+insufficient. Both vendor persistence locations must be saved and verified,
+and a running driver also needs its live configuration applied.
 
 Vendor reference: <https://vb-audio.com/Cable/VBCABLE_ReferenceManual.pdf>,
 Windows Volume Control section, page 13.
@@ -121,3 +122,18 @@ machine was used for source inspection and the targeted configuration repair.
   audible volume/mute verification for both apps, an actual reboot and repeat
   verification, and coexistence/uninstall checks. CI without an installed cable
   cannot certify these. No physical-host result is claimed here.
+
+
+## Post-reboot correction (2026-11-08)
+
+The first real reboot retained the Software DWORD but reset the live volume
+flag: 50% Windows volume measured 0.00 dB attenuation instead of -10.51 dB.
+The signed Pack45 control panel writes the same DWORD to both the Software
+location above and `HKLM\SYSTEM\CurrentControlSet\Services\VB-Cable`.
+Static inspection of the installed signed 3.3.1.7 driver confirms that it
+queries the Software location and then this SYSTEM fallback. The helper now
+saves and verifies both fixed locations, migrating existing Software-only
+configurations with explicit administrator approval, then applies the live
+setting. Readiness requires both values and the live flag. This corrects the
+previous incomplete persistence implementation; another full Windows reboot
+is still required to verify the revised dual-location save on this PC.

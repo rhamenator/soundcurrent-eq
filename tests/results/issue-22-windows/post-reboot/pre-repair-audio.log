@@ -1,0 +1,19 @@
+Render: Speakers / Headphones (Realtek Audio)
+  id={0.0.0.00000000}.{0251edad-ca47-4384-8b82-7e4f649dfa8b} playback=0 feed=0 microphone=0
+Render: CABLE In 16ch (VB-Audio Virtual Cable)
+  id={0.0.0.00000000}.{2ce43ffc-bf79-4b3b-9b3d-b7224fabd93b} playback=0 feed=0 microphone=0
+Render: CABLE Input (VB-Audio Virtual Cable)
+  id={0.0.0.00000000}.{43e8ff42-5297-48f9-b325-4d5a91865431} playback=0 feed=0 microphone=0
+Render: FxSound Speakers (FxSound Audio Enhancer)
+  id={0.0.0.00000000}.{f7373c9e-fb11-4c24-8ca2-eaeaf5e9af8c} playback=0 feed=0 microphone=0
+Capture: CABLE Output (VB-Audio Virtual Cable)
+  id={0.0.1.00000000}.{552625b7-5f10-48b7-8ad2-e3a768959dc9} playback=0 feed=0 microphone=0
+Test source original volume 0.220, mute 0
+Bridge: Processing audio through the selected output
+Tone mix: 48000 Hz, 2 channels; loopback: 48000 Hz, 2 channels
+Captured meter samples: 6720
+Flat frames: 48480, bridge peak: 0.020000, RMS: 0.014142 / 0.014142
+Flat RMS: L 0.014142, R 0.014142
+VB-CABLE 50% endpoint volume: 0.00 dB (endpoint reports -10.51)
+Bridge: Equalizer stopped; normal output is available
+FAIL: VB-CABLE Windows Volume Control did not attenuate the signal

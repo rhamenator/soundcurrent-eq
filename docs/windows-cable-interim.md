@@ -33,7 +33,10 @@ Check that both endpoints are enabled in Windows Sound settings. If they remain 
 Windows setup reconciles the standard cable's optional Windows Volume Control
 setting on fresh install, repair, and every app update, including app-only updates.
 It saves DWORD `VBAudioCableWDM_VolCtl=1` in the explicit 64-bit view of
-`HKLM\SOFTWARE\VB-Audio\Cable` and reads it back. This integration is based on
+`HKLM\SOFTWARE\VB-Audio\Cable` and
+`HKLM\SYSTEM\CurrentControlSet\Services\VB-Cable`, and reads both back.
+The second location matches the vendor control panel and is the driver's
+startup fallback; the Software value alone failed a real Windows reboot test. This integration is based on
 the pinned Pack45 driver and the Windows-host diagnostic evidence recorded in
 [the handoff](windows-volume-control-installer-handoff.md); the registry value is
 not a vendor API promise for future driver packages. The fixed-purpose helper
