@@ -293,7 +293,9 @@ private: FileDialogCaptionFilter fileDialogCaptions_;QString requested_,loaded_;
 };
 inline QGroupBox *settingsPanel() {
     auto *box=new QGroupBox(text("Language and regional settings"));
-    auto *form=new QFormLayout(box);auto *language=new QComboBox;language->setObjectName("uiLanguage");
+    auto *form=new QFormLayout(box);form->setRowWrapPolicy(QFormLayout::WrapLongRows);
+    form->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
+    auto *language=new QComboBox;language->setObjectName("uiLanguage");
     language->setAccessibleName(text("Interface language"));
     language->addItem(text("Use system language"),"system");language->addItem("English (en)","en");
     for(const auto &l:languages()) if(l.tag!="en")language->addItem(l.nativeName+" ("+l.tag+")",l.tag);
@@ -303,7 +305,8 @@ inline QGroupBox *settingsPanel() {
     const auto initial=initialInstallerLanguage(settings);
     if(!initial.isEmpty()) saved=initial;
     auto index=language->findData(saved);language->setCurrentIndex(index>=0?index:0);
-    form->addRow(text("Interface language"),language);
+    auto *languageLabel=new QLabel(text("Interface language"));languageLabel->setWordWrap(true);
+    form->addRow(languageLabel,language);
     auto *format=new QComboBox;
     format->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
     format->setMinimumContentsLength(24);format->setMaxVisibleItems(12);
@@ -322,7 +325,8 @@ inline QGroupBox *settingsPanel() {
         format->addItem(locale.nativeLanguageName()+" — "+locale.nativeTerritoryName()+" ("+tag+")",tag);
     }
     index=format->findData(QSettings().value("i18n/formatLocale","system").toString());format->setCurrentIndex(index>=0?index:0);
-    form->addRow(text("Number and date format"),format);
+    auto *formatLabel=new QLabel(text("Number and date format"));formatLabel->setWordWrap(true);
+    form->addRow(formatLabel,format);
     auto *help=new QLabel;help->setWordWrap(true);help->setTextFormat(Qt::PlainText);form->addRow(help);
     auto update=[language,help]{
         auto requested=language->currentData().toString();if(requested=="system")requested=selectedLanguage();
