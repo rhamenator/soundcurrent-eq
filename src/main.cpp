@@ -2483,6 +2483,10 @@ public:
         bandScroll_ = new QScrollArea;
         bandScroll_->setLayoutDirection(Qt::LeftToRight);
         bandScroll_->setWidgetResizable(false);
+        // The fixed-width band strip scrolls inside this viewport.  Do not let
+        // its width become the minimum width of the entire Equalizer page.
+        bandScroll_->setMinimumWidth(0);
+        bandScroll_->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Fixed);
         bandScroll_->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         bandScroll_->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         bandScroll_->setFixedHeight(235);
