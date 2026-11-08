@@ -40,6 +40,7 @@ jobs:
           path: |
             dist/*.exe
             dist/*.sha256
+            dist/*-manifest.json
             dist/qtbase*.tar.xz
             build-windows-native/package/**
             build-windows-native/Release/*smoke.exe
