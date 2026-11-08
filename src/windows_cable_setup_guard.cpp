@@ -23,7 +23,8 @@ int main(int argc, char **argv) {
                 render |= d.virtualCable && d.name.rfind(L"CABLE Input (", 0) == 0;
             for (const auto &d : soundcurrent::windowsAudioEndpoints(true))
                 capture |= d.virtualCable && d.name.rfind(L"CABLE Output (", 0) == 0;
-            return render && capture ? 0 : 10;
+            // Present endpoints alone do not prove usable Windows volume/mute.
+            return render && capture ? cableVolumeStatus() : 10;
         } catch (...) { return 10; }
     }
     if (args.size() != 3 || (args[1] != "--install" && args[1] != "--remove")) return 2;

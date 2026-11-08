@@ -147,13 +147,44 @@ if (app.arguments().contains("--windows-live-ui-test")) {
             power->setChecked(true);
             if (!power->isChecked()) throw std::runtime_error("UI failed to start audio");
             verify(true);
+            // Real enhancement widgets -> production callback -> VB-CABLE ->
+            // physical loopback. Different L/R tones exercise stereo widening.
+            auto measure=[&] {
+                std::vector<std::int16_t> tone(48000*3*2);
+                for(std::size_t f=0;f<tone.size()/2;++f){
+                    tone[2*f]=std::int16_t(655*std::sin(2*std::numbers::pi*80*f/48000));
+                    tone[2*f+1]=std::int16_t(655*std::sin(2*std::numbers::pi*8000*f/48000));
+                }
+                soundcurrent::WindowsRecorder recorder;recorder.start(before[1],48000,2,true);
+                auto play=std::async(std::launch::async,[&]{soundcurrent::windowsPlayPcm(owned,tone,48000,2);});
+                QElapsedTimer elapsed;elapsed.start();double left=0,right=0;std::size_t frames=0;
+                while(play.wait_for(std::chrono::milliseconds(0))!=std::future_status::ready){
+                    QCoreApplication::processEvents();QThread::msleep(10);const auto pcm=recorder.take();
+                    if(elapsed.elapsed()<1400)continue;
+                    for(std::size_t i=0;i+1<pcm.size();i+=2){left+=double(pcm[i])*pcm[i];right+=double(pcm[i+1])*pcm[i+1];++frames;}
+                }
+                play.get();recorder.stop();if(!frames)throw std::runtime_error("No EQ UI loopback frames");
+                return std::array<double,2>{std::sqrt(left/frames)/32768,std::sqrt(right/frames)/32768};
+            };
+            const auto dry=measure();
+            if(dry[0]<.0001||dry[1]<.0001)throw std::runtime_error("EQ UI route is silent");
+            for(int effect=0;effect<5;++effect){
+                auto *slider=window.findChild<QSlider *>(QString("enhancementAmount%1").arg(effect));
+                if(!slider||!slider->isEnabled())throw std::runtime_error("EQ enhancement slider unavailable");
+                slider->setValue(100);const auto wet=measure();
+                const double left=20*std::log10(wet[0]/dry[0]),right=20*std::log10(wet[1]/dry[1]);
+                if(std::max(std::abs(left),std::abs(right))<.1)
+                    throw std::runtime_error((QString("EQ UI enhancement did not change playback: %1").arg(effect)).toStdString());
+                slider->setValue(0);const auto reset=measure();
+                if(std::abs(20*std::log10(reset[0]/dry[0]))>.6||std::abs(20*std::log10(reset[1]/dry[1]))>.6)
+                    throw std::runtime_error("EQ enhancement reset did not restore dry playback");
+                QTextStream(stdout)<<"PASS: EQ UI enhancement "<<effect<<" change "<<left<<" / "<<right<<" dB; reset passed"<<Qt::endl;
+            }
             power->setChecked(false);
             verify(false);
             power->setChecked(true);
             verify(true);
-            QPushButton *quit=nullptr;
-            for (auto *button:window.findChildren<QPushButton *>())
-                if (button->text()=="Quit app") {quit=button;break;}
+            auto *quit=window.findChild<QPushButton *>("persistentQuit");
             if (!quit) throw std::runtime_error("Quit control unavailable");
             QTimer::singleShot(0,quit,&QPushButton::click);
             if (app.exec()!=0) throw std::runtime_error("Quit event loop failed");

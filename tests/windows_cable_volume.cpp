@@ -91,6 +91,10 @@ BOOL exitCode(HANDLE,DWORD* code){*code=childExit;return TRUE;}
 #include "windows_cable_volume.h"
 int main(){
  using namespace fixture;
+ reset();saved=0;assert(cableVolumeStatus()==12); // Saved enabled, live disabled is not ready.
+ live=0;assert(cableVolumeStatus()==0);
+ live=12;pending=1;assert(cableVolumeStatus()==3010);
+ pending=0;control=false;assert(cableVolumeStatus()==31);
  reset();assert(configureCableVolume(false)==0&&writes==1&&value==1&&live==0); // persist and apply
  assert(configureCableVolume(true)==0&&writes==1&&launches==0); // live idempotence
  reset();saved=0;value=0;assert(configureCableVolume(false)==0&&writes==1&&live==0);

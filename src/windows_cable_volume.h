@@ -132,7 +132,6 @@ int cableVolumeStatus() {
     const auto result = RegOpenKeyExW(HKEY_LOCAL_MACHINE, volumePendingKey, 0,
                                      KEY_QUERY_VALUE | KEY_WOW64_64KEY, &pending.key);
     if (result == ERROR_SUCCESS) return 3010;
-    if (result == ERROR_SUCCESS) return 3010;
     return result == ERROR_FILE_NOT_FOUND || result == ERROR_PATH_NOT_FOUND ? live : 31;
 }
 bool elevatedProcess() {
