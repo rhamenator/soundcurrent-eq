@@ -25,7 +25,7 @@ Unicode true
 !endif
 
 !ifndef APP_VERSION
-  !define APP_VERSION "1.3.0"
+  !define APP_VERSION "1.3.1"
 !endif
 
 Var DriverCheck
@@ -176,13 +176,33 @@ Section "SoundCurrent EQ" main
     Pop $0
     Pop $1
     DetailPrint $1
-    ${If} $0 == 3010
-      SetRebootFlag true
-      MessageBox MB_OK|MB_ICONINFORMATION "$(SCCableRestart)" /SD IDOK
-    ${ElseIf} $0 != 0
-      DetailPrint "$(SCSetupRetryProgress)"
-      MessageBox MB_OK|MB_ICONINFORMATION "$(SCSetupFailedAppInstalled)"
-    ${EndIf}
+    Goto volume_status
+  ${EndIf}
+  ; Reconcile shared volume configuration on EVERY app install/update, even
+  ; when the driver checkbox is unchecked or the installer runs silently.
+  IfSilent volume_silent volume_interactive
+  volume_silent:
+    nsExec::ExecToStack '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy RemoteSigned -File "$INSTDIR\audio-setup.ps1" -ConfigureVolume -Quiet -Silent'
+    Goto volume_result
+  volume_interactive:
+    nsExec::ExecToStack '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy RemoteSigned -File "$INSTDIR\audio-setup.ps1" -ConfigureVolume -Quiet'
+  volume_result:
+  Pop $0
+  Pop $1
+  DetailPrint $1
+  volume_status:
+  ${If} $0 == "error"
+  ${OrIf} $0 == "timeout"
+    StrCpy $0 31
+  ${EndIf}
+  ; Persistent result is available even for unattended app-only updates.
+  WriteRegDWORD HKCU "Software\SoundCurrent\VBCable" "VolumeConfigurationResult" $0
+  ${If} $0 == 3010
+    SetRebootFlag true
+    MessageBox MB_OK|MB_ICONINFORMATION "$(SCCableRestart)" /SD IDOK
+  ${ElseIf} $0 != 0
+    DetailPrint "$(SCSetupRetryProgress)"
+    MessageBox MB_OK|MB_ICONINFORMATION "$(SCSetupFailedAppInstalled)" /SD IDOK
   ${EndIf}
 SectionEnd
 

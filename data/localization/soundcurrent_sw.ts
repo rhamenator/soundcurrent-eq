@@ -3367,6 +3367,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>VB-CABLE bado haina vifaa vya kucheza au kurekodi sauti vinavyoweza kutumika. Kamilisha Remove Driver katika kisakinishi rasmi, anzisha Windows upya, kisha fungua %1 tena ili kusakinisha kiendeshi upya. CABLE Input na CABLE Output lazima viwezeshwe katika mipangilio ya sauti ya Windows.</translation>
     </message>
     <message>
+      <source>VB-CABLE volume configuration is incomplete (code %1). SoundCurrent remains installed. Open Audio driver setup with administrator approval, then restart Windows.</source>
+      <translation>Usanidi wa sauti wa VB-CABLE haujakamilika (msimbo %1). SoundCurrent inabaki imesakinishwa. Fungua usanidi wa kiendeshi cha sauti kwa idhini ya msimamizi, kisha anzisha Windows upya.</translation>
+    </message>
+    <message>
       <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
       <translation>VB-CABLE imehifadhiwa kwa sababu programu nyingine ya SoundCurrent imesakinishwa. Iondoe pamoja na programu ya mwisho ikiwa hakuna programu nyingine inayoihitaji.</translation>
     </message>

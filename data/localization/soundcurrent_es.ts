@@ -3367,6 +3367,10 @@ Do you want to delete it anyway?</source>
       <translation>VB-CABLE sigue sin tener dispositivos de reproducción o grabación utilizables. Complete Remove Driver en el instalador oficial, reinicie Windows y vuelva a abrir %1 para reinstalarlo. CABLE Input y CABLE Output deben estar habilitados en la configuración de sonido de Windows.</translation>
     </message>
     <message>
+      <source>VB-CABLE volume configuration is incomplete (code %1). SoundCurrent remains installed. Open Audio driver setup with administrator approval, then restart Windows.</source>
+      <translation>La configuración del volumen de VB-CABLE está incompleta (código %1). SoundCurrent sigue instalado. Abra la configuración del controlador de audio con aprobación de administrador y reinicie Windows.</translation>
+    </message>
+    <message>
       <source>VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.</source>
       <translation>Se conservó VB-CABLE porque la otra aplicación SoundCurrent está instalada. Elimínelo con la última aplicación si ningún otro programa lo necesita.</translation>
     </message>

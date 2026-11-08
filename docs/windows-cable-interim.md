@@ -30,13 +30,37 @@ Check that both endpoints are enabled in Windows Sound settings. If they remain 
 
 ## Windows volume and live controls
 
-If Windows volume/media keys move the fader without changing loudness, open
-**VB-CABLE settings** and enable **Windows Volume Control** in the official
-control panel. VB-Audio documents this as an optional driver feature; without it,
-the playback endpoint's volume control can have no effect. See the
+Windows setup reconciles the standard cable's optional Windows Volume Control
+setting on fresh install, repair, and every app update, including app-only updates.
+It saves DWORD `VBAudioCableWDM_VolCtl=1` in the explicit 64-bit view of
+`HKLM\SOFTWARE\VB-Audio\Cable` and reads it back. This integration is based on
+the pinned Pack45 driver and the Windows-host diagnostic evidence recorded in
+[the handoff](windows-volume-control-installer-handoff.md); the registry value is
+not a vendor API promise for future driver packages. The fixed-purpose helper
+checks the primary cable hardware ID and cannot accept arbitrary registry keys,
+values or commands. Other cable products and settings are preserved.
+
+Interactive setup requests administrator approval only when a write is needed.
+Already-enabled settings need no write or elevation. Silent setup never shows
+UAC or the vendor installer: elevated setup writes directly; unelevated setup
+leaves the app installed and records deferred configuration. Setup saves the
+result under `HKCU\Software\SoundCurrent\VBCable\VolumeConfigurationResult`:
+`0` saved/already enabled, `3010` restart required, `740` administrator approval
+required, `1223` approval cancelled, `31` configuration/readback failed. `10`
+means the helper no longer sees the primary cable. An app-only install with no
+cable performs no configuration and reports `0`.
+
+For deferred or failed configuration, open **Audio driver setup** interactively,
+approve elevation, and restart Windows. Do not reinstall the cable just to
+configure volume. A volatile machine-wide pending marker shared by both apps
+keeps the restart requirement until Windows reboots. The helper does not restart
+devices, interrupt active streams, or claim that a saved setting has changed the
+running driver. Uninstalling either app leaves the shared setting enabled.
+
+The vendor panel's **Options → Enable Windows Volume Control** remains a manual
+repair route; run it with administrator approval to persist the change. See the
 [official manual, page 13](https://vb-audio.com/Cable/VBCABLE_ReferenceManual.pdf#page=13).
-SoundCurrent does not toggle undocumented driver settings or add a second
-software gain stage to compensate for an unknown cable configuration.
+No second software gain stage is added.
 
 Run the Windows installer to upgrade an installed app. Updating a Git checkout
 only updates source files. Quit the old app first and launch the installed app
