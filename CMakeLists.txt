@@ -314,3 +314,13 @@ add_executable(soundcurrent-windows-microphone-privacy-test tests/windows_microp
 target_link_libraries(soundcurrent-windows-microphone-privacy-test PRIVATE soundcurrent-windows-audio)
 add_test(NAME windows-microphone-privacy COMMAND soundcurrent-windows-microphone-privacy-test)
 endif()
+
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+  find_package(Threads REQUIRED)
+  add_executable(soundcurrent-linux-child-lifetime-test tests/linux_child_lifetime.cpp)
+  set_target_properties(soundcurrent-linux-child-lifetime-test PROPERTIES AUTOMOC OFF)
+  target_include_directories(soundcurrent-linux-child-lifetime-test PRIVATE src)
+  target_link_libraries(soundcurrent-linux-child-lifetime-test PRIVATE Threads::Threads)
+  add_test(NAME linux-child-lifetime COMMAND soundcurrent-linux-child-lifetime-test)
+  set_tests_properties(linux-child-lifetime PROPERTIES TIMEOUT 15)
+endif()
