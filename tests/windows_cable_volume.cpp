@@ -7,12 +7,12 @@
 #include <cstring>
 #include <iostream>
 namespace fixture {
-int saved=12, pending=0, writes=0, launches=0, live=12, liveWrites=0;
+int saved=12, pending=0, writes=0, launches=0, live=12, liveWrites=0, childExit=0;
 bool admin=true, present=true, control=true, cancelled=false, badReadback=false, liveWriteFails=false;
 LONG readError=0, writeError=0, flushError=0;
 DWORD type=REG_DWORD, value=1;
 HKEY config=reinterpret_cast<HKEY>(1), marker=reinterpret_cast<HKEY>(2);
-void reset(){saved=12;pending=writes=launches=liveWrites=0;live=12;admin=present=control=true;cancelled=badReadback=liveWriteFails=false;readError=writeError=flushError=0;type=REG_DWORD;value=1;}
+void reset(){saved=12;pending=writes=launches=liveWrites=childExit=0;live=12;admin=present=control=true;cancelled=badReadback=liveWriteFails=false;readError=writeError=flushError=0;type=REG_DWORD;value=1;}
 LONG open(HKEY,const wchar_t* path,DWORD,REGSAM access,HKEY* out){
  assert(access&KEY_WOW64_64KEY);
  if(wcsstr(path,L"VolumePending")){if(!pending)return ERROR_FILE_NOT_FOUND;*out=marker;return 0;}
@@ -48,8 +48,12 @@ BOOL property(HDEVINFO,SP_DEVINFO_DATA*,DWORD,DWORD* t,BYTE* data,DWORD bytes,DW
  if(!data||bytes<sizeof(id))return FALSE;std::memcpy(data,id,sizeof(id));return TRUE;
 }
 BOOL destroy(HDEVINFO){return TRUE;}
-HANDLE file(const wchar_t*,DWORD,DWORD,SECURITY_ATTRIBUTES*,DWORD,DWORD,HANDLE){return control?reinterpret_cast<HANDLE>(6):INVALID_HANDLE_VALUE;}
+HANDLE file(const wchar_t*,DWORD access,DWORD share,SECURITY_ATTRIBUTES*,DWORD creation,DWORD flags,HANDLE){
+ assert(access==(GENERIC_READ|GENERIC_WRITE)&&share==FILE_SHARE_READ&&creation==OPEN_EXISTING&&flags==0x800);
+ return control?reinterpret_cast<HANDLE>(6):INVALID_HANDLE_VALUE;
+}
 BOOL ioctl(HANDLE,DWORD code,void*,DWORD,void* output,DWORD outputBytes,DWORD* returned,OVERLAPPED*){
+ if(!admin)return FALSE;
  if(code==0x222058){++liveWrites;if(liveWriteFails)return FALSE;live=0;if(output&&outputBytes>=sizeof(DWORD))*static_cast<DWORD*>(output)=0;if(returned)*returned=sizeof(DWORD);return TRUE;}
  assert(code==0x222024);if(!control)return FALSE;std::memset(output,0,outputBytes);if(live==0&&outputBytes>0x174)static_cast<BYTE*>(output)[0x174]=2;if(returned)*returned=outputBytes;return TRUE;
 }
@@ -60,7 +64,7 @@ DWORD module(HMODULE,wchar_t* path,DWORD){wcscpy(path,L"C:\\fixture\\guard.exe")
 BOOL launch(SHELLEXECUTEINFOW* e){++launches;assert(wcscmp(e->lpParameters,L"--configure-volume-elevated")==0);if(cancelled)return FALSE;e->hProcess=reinterpret_cast<HANDLE>(5);return TRUE;}
 DWORD error(){return ERROR_CANCELLED;}
 DWORD wait(HANDLE,DWORD){return WAIT_OBJECT_0;}
-BOOL exitCode(HANDLE,DWORD* code){*code=3010;return TRUE;}
+BOOL exitCode(HANDLE,DWORD* code){*code=childExit;return TRUE;}
 }
 #define RegOpenKeyExW fixture::open
 #define RegQueryValueExW fixture::query
@@ -91,11 +95,11 @@ int main(){
  assert(configureCableVolume(true)==0&&writes==1&&launches==0); // live idempotence
  reset();saved=0;value=0;assert(configureCableVolume(false)==0&&writes==1&&live==0);
  reset();saved=0;type=REG_SZ;assert(configureCableVolume(false)==0&&writes==1&&live==0);
- reset();saved=0;admin=false;assert(configureCableVolume(true)==0&&launches==0&&writes==0&&live==0);
+ reset();saved=0;admin=false;assert(configureCableVolume(true)==0&&launches==1&&writes==0);
  reset();readError=ERROR_ACCESS_DENIED;assert(configureCableVolume(true)==31&&writes==0&&launches==0);
  reset();admin=false;assert(configureCableVolume(false)==740&&launches==0&&writes==0);
  cancelled=true;assert(configureCableVolume(true)==1223&&launches==1&&writes==0);
- cancelled=false;assert(configureCableVolume(true)==3010&&launches==2);
+ cancelled=false;assert(configureCableVolume(true)==0&&launches==2);
  reset();present=false;assert(configureCableVolume(true)==10&&writes==0&&launches==0);
  reset();writeError=ERROR_ACCESS_DENIED;assert(configureCableVolume(false)==31);
  reset();badReadback=true;assert(configureCableVolume(false)==31);

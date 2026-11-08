@@ -96,8 +96,11 @@ NativeHandle openPrimaryCableControl() {
     detail->cbSize = sizeof(*detail);
     if (!SetupDiGetDeviceInterfaceDetailW(devices.value, &interfaceData, detail, required, nullptr, nullptr))
         return result;
+    // Match VB-Audio's signed control panel exactly. Its control interface is
+    // opened with the 0x800 device attribute rather than FILE_ATTRIBUTE_NORMAL.
+    constexpr DWORD cableControlOpenFlags = 0x800;
     result.value = CreateFileW(detail->DevicePath, GENERIC_READ | GENERIC_WRITE,
-                               FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+        FILE_SHARE_READ, nullptr, OPEN_EXISTING, cableControlOpenFlags, nullptr);
     return result;
 }
 int liveCableVolumeStatus() {
@@ -147,10 +150,8 @@ int configureCableVolume(bool allowElevation) {
     if (saved != 0 && saved != 12) return saved;
     const int live = liveCableVolumeStatus();
     if (live == 0 && saved == 0) return 0;
-    // VB-Audio's live driver action does not require a registry write. Try it
-    // before UAC so an already-persistent installation repairs quietly.
-    const int applied = live == 0 ? 0 : applyLiveCableVolume();
-    if (saved == 0) return applied == 0 ? 0 : 3010;
+    // VB-Audio restricts its control interface to an elevated process. A
+    // persisted value alone is not proof that the running driver was updated.
     if (!elevatedProcess()) {
         if (!allowElevation) return ERROR_ELEVATION_REQUIRED;
         std::vector<wchar_t> self(32768);
@@ -176,21 +177,24 @@ int configureCableVolume(bool allowElevation) {
     // Do not restart the device or disturb active streams.
     if (!primaryCablePresent()) return 10;
     const int current = savedCableVolumeStatus();
-    if (current != 12) return current;
-    RegistryKey pending, key;
-    DWORD disposition = 0;
-    if (RegCreateKeyExW(HKEY_LOCAL_MACHINE, volumePendingKey, 0, nullptr, REG_OPTION_VOLATILE,
-            KEY_READ | KEY_WRITE | KEY_WOW64_64KEY, nullptr, &pending.key, &disposition) != ERROR_SUCCESS) return 31;
-    if (RegCreateKeyExW(HKEY_LOCAL_MACHINE, volumeKey, 0, nullptr, REG_OPTION_NON_VOLATILE,
-            KEY_QUERY_VALUE | KEY_SET_VALUE | KEY_WOW64_64KEY, nullptr, &key.key, nullptr) != ERROR_SUCCESS) return 31;
-    const DWORD enabled = 1;
-    if (RegSetValueExW(key.key, volumeValue, 0, REG_DWORD,
-            reinterpret_cast<const BYTE *>(&enabled), sizeof(enabled)) != ERROR_SUCCESS) return 31;
-    if (RegFlushKey(key.key) != ERROR_SUCCESS || savedCableVolumeStatus() != 0) return 31;
+    if (current != 0 && current != 12) return current;
+    if (current == 12) {
+        RegistryKey key;
+        if (RegCreateKeyExW(HKEY_LOCAL_MACHINE, volumeKey, 0, nullptr, REG_OPTION_NON_VOLATILE,
+                KEY_QUERY_VALUE | KEY_SET_VALUE | KEY_WOW64_64KEY, nullptr, &key.key, nullptr) != ERROR_SUCCESS) return 31;
+        const DWORD enabled = 1;
+        if (RegSetValueExW(key.key, volumeValue, 0, REG_DWORD,
+                reinterpret_cast<const BYTE *>(&enabled), sizeof(enabled)) != ERROR_SUCCESS) return 31;
+        if (RegFlushKey(key.key) != ERROR_SUCCESS || savedCableVolumeStatus() != 0) return 31;
+    }
     // Registry persistence alone does not change a running VB-CABLE driver.
     // Apply and verify its fixed control IOCTL; fall back to a reboot boundary
     // only when a newly installed driver cannot yet expose the control handle.
     if (applyLiveCableVolume() == 0) return 0;
+    RegistryKey pending;
+    DWORD disposition = 0;
+    if (RegCreateKeyExW(HKEY_LOCAL_MACHINE, volumePendingKey, 0, nullptr, REG_OPTION_VOLATILE,
+            KEY_READ | KEY_WRITE | KEY_WOW64_64KEY, nullptr, &pending.key, &disposition) != ERROR_SUCCESS) return 31;
     return 3010;
 }
 } // namespace
