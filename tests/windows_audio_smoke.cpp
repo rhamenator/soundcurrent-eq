@@ -34,7 +34,7 @@ void check(HRESULT result, const char *action) {
 // loopback correctly report silence; restore the source after the test.
 class TestSourceVolume {
     ComPtr<IAudioEndpointVolume> volume_;
-    float level_ = 1; BOOL mute_ = FALSE;
+    float level_ = 1, testReferenceDb_ = 0; BOOL mute_ = FALSE;
 public:
     explicit TestSourceVolume(const std::wstring &id) {
         ComPtr<IMMDeviceEnumerator> devices; ComPtr<IMMDevice> device;
@@ -47,6 +47,7 @@ public:
         check(volume_->GetMute(&mute_), "Read source mute");
         std::printf("Test source original volume %.3f, mute %d\n", level_, int(mute_));
         check(volume_->SetMasterVolumeLevelScalar(1, nullptr), "Set test source volume");
+        check(volume_->GetMasterVolumeLevel(&testReferenceDb_), "Read test source dB");
         const auto unmute = volume_->SetMute(FALSE, nullptr);
         if (FAILED(unmute)) {
             volume_->SetMasterVolumeLevelScalar(level_, nullptr);
@@ -56,6 +57,11 @@ public:
     void set(float level, BOOL mute) {
         check(volume_->SetMasterVolumeLevelScalar(level, nullptr), "Set test source volume");
         check(volume_->SetMute(mute, nullptr), "Set test source mute");
+    }
+    double relativeDecibels() const {
+        float current = 0;
+        check(volume_->GetMasterVolumeLevel(&current), "Read current source dB");
+        return current - testReferenceDb_;
     }
     ~TestSourceVolume() { if(volume_) { volume_->SetMasterVolumeLevelScalar(level_, nullptr); volume_->SetMute(mute_, nullptr); } }
 };
@@ -213,10 +219,12 @@ int main(int argc, char **argv) {
             throw std::runtime_error("Flat route is silent");
         std::printf("Flat RMS: L %.6f, R %.6f\n", flat.left, flat.right);
         sourceVolume.set(0.5f, FALSE);
+        const double expectedHalfVolumeDb = sourceVolume.relativeDecibels();
         const auto halfVolume = probe.measure(1000);
         const double halfVolumeDb = decibels(halfVolume.left, flat.left);
-        std::printf("VB-CABLE 50%% endpoint volume: %.2f dB (expected about -6)\n", halfVolumeDb);
-        if (std::abs(halfVolumeDb + 6.02) > 1.0)
+        std::printf("VB-CABLE 50%% endpoint volume: %.2f dB (endpoint reports %.2f)\n",
+                    halfVolumeDb, expectedHalfVolumeDb);
+        if (std::abs(halfVolumeDb - expectedHalfVolumeDb) > 1.0)
             throw std::runtime_error("VB-CABLE Windows Volume Control did not attenuate the signal");
         sourceVolume.set(1.0f, TRUE);
         const auto mutedVolume = probe.measure(1000);
