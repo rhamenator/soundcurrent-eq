@@ -247,10 +247,19 @@ try {
     }
     $sourceCommit = (& git rev-parse HEAD).Trim()
     if ($LASTEXITCODE -ne 0 -or $sourceCommit -notmatch '^[0-9a-f]{40}$') { throw 'Cannot record the exact release source commit' }
+    $routePayload = [ordered]@{}
+    if ($AudioRoute -eq 'Native') {
+        $routePayload['soundcurrent-driver-manager.exe'] = (Get-FileHash -LiteralPath $SignedDriverManager -Algorithm SHA256).Hash.ToLowerInvariant()
+        foreach ($member in @('soundcurrentvad.inf','soundcurrentvad.sys','soundcurrentvad.cat')) {
+            $routePayload["audio-driver/$member"] = (Get-FileHash -LiteralPath (Join-Path $SignedDriverPackage $member) -Algorithm SHA256).Hash.ToLowerInvariant()
+        }
+    } else {
+        $routePayload['VBCABLE_Driver_Pack45.zip'] = (Get-FileHash -LiteralPath $CablePackage -Algorithm SHA256).Hash.ToLowerInvariant()
+    }
     $variantManifest = [ordered]@{
         schema = 1; product = 'SoundCurrent EQ'; version = $version; audioRoute = $AudioRoute
         sourceCommit = $sourceCommit; installer = (Split-Path $installer -Leaf); installerSha256 = $hash
-        commonPayload = $commonPayload
+        commonPayload = $commonPayload; routePayload = $routePayload
     }
     $manifestPath = Join-Path $root "dist\SoundCurrent-EQ-$version-windows-x64-$($AudioRoute.ToLowerInvariant())-manifest.json"
     $variantManifest | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $manifestPath -Encoding UTF8

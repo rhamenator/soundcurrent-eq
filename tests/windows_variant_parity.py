@@ -12,8 +12,8 @@ spec.loader.exec_module(module)
 
 common = {"soundcurrent.exe": "1" * 64, "Qt6Core.dll": "2" * 64}
 base = {"schema": 1, "product": "SoundCurrent", "version": "1.3.0", "sourceCommit": "a" * 40, "commonPayload": common}
-cable = {**base, "audioRoute": "Cable", "installer": "cable.exe", "installerSha256": "3" * 64}
-native = {**base, "audioRoute": "Native", "installer": "native.exe", "installerSha256": "4" * 64}
+cable = {**base, "audioRoute": "Cable", "installer": "cable.exe", "installerSha256": "3" * 64, "routePayload": {"cable.zip": "5" * 64}}
+native = {**base, "audioRoute": "Native", "installer": "native.exe", "installerSha256": "4" * 64, "routePayload": {"driver.sys": "6" * 64}}
 assert module.verify(cable, native)["commonPayloadFiles"] == 2
 
 for field in ("version", "sourceCommit", "commonPayload"):
