@@ -46,7 +46,7 @@ void exercise(bool parentExitsFirst){
         pid_t done=0;
         do{done=::waitpid(grandchild,&status,WNOHANG);if(done!=0)break;std::this_thread::sleep_for(std::chrono::milliseconds(5));}while(std::chrono::steady_clock::now()<deadline);
         require(done==grandchild,"orphan helper survived parent exit");grandchild=-1;
-        require(parentExitsFirst?(WIFEXITED(status) && WEXITSTATUS(status)==127):(WIFSIGNALED(status) && WTERMSIG(status)==SIGTERM),"wrong child termination");
+        require(parentExitsFirst?(WIFEXITED(status) && WEXITSTATUS(status)==127):(WIFSIGNALED(status) && WTERMSIG(status)==SIGKILL),"wrong child termination");
     }catch(...){
         // Only PIDs obtained from our own forks/pipes are eligible for cleanup.
         int status;if(!parentReaped){::kill(parent,SIGKILL);::waitpid(parent,&status,0);}
