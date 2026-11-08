@@ -52,6 +52,12 @@ for contract in (
 ):
     if contract not in build:
         fail(f"Windows build lost variant/signing contract: {contract}")
+for contract in ("windows-x64$installerSuffix-setup.exe", "variantManifest", "commonPayload", "sourceCommit"):
+    if contract not in build:
+        fail(f"Windows build lost same-source variant manifest contract: {contract}")
+if "installerSuffix = if ($AudioRoute -eq 'Native') { '-native' }" not in build:
+    fail("native and cable installers must have distinct filenames")
+text("scripts/verify-windows-variant-parity.py")
 
 wrapper = text("packaging/windows/native-audio-setup.ps1")
 for contract in ("& $helper --verify $package", "Get-AuthenticodeSignature", ".Status -ne 'Valid'", "-Verb RunAs"):
