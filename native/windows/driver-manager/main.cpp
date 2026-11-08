@@ -9,6 +9,7 @@
 #include <shlobj.h>
 #include <wintrust.h>
 #include <softpub.h>
+#include <mscat.h>
 #include <tlhelp32.h>
 #include <filesystem>
 #include <iostream>
@@ -163,6 +164,33 @@ void verifyPackageIdentity(const fs::path& directory) {
  SetupCloseInfFile(inf);
  require(ours,"Driver package identity does not match SoundCurrent Audio");
 }
+// Validate each exact file against this package's trusted catalog, rather than
+// accepting an embedded SYS signature or a matching INF alone.
+void verifyCatalogMember(const fs::path& catalog,const fs::path& member){
+ struct CatalogHash {
+  HCATADMIN admin=nullptr;
+  HANDLE file=INVALID_HANDLE_VALUE;
+  ~CatalogHash(){if(file!=INVALID_HANDLE_VALUE)CloseHandle(file);if(admin)CryptCATAdminReleaseContext(admin,0);}
+ } hash;
+ require(CryptCATAdminAcquireContext2(&hash.admin,nullptr,L"SHA256",nullptr,0),"Cannot initialize catalog hash verification");
+ hash.file=CreateFileW(member.c_str(),GENERIC_READ,FILE_SHARE_READ,nullptr,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,nullptr);
+ require(hash.file!=INVALID_HANDLE_VALUE,"Cannot open driver package member");
+ DWORD size=0;
+ require(CryptCATAdminCalcHashFromFileHandle2(hash.admin,hash.file,&size,nullptr,0)&&size>0&&size<=64,"Cannot size catalog member hash");
+ std::vector<BYTE> bytes(size);
+ require(CryptCATAdminCalcHashFromFileHandle2(hash.admin,hash.file,&size,bytes.data(),0),"Cannot hash driver package member");
+ std::wstring tag;constexpr wchar_t digits[]=L"0123456789ABCDEF";
+ for(DWORD i=0;i<size;++i){tag+=digits[bytes[i]>>4];tag+=digits[bytes[i]&15];}
+ WINTRUST_CATALOG_INFO info{};info.cbStruct=sizeof(info);info.pcwszCatalogFilePath=catalog.c_str();
+ info.pcwszMemberTag=tag.c_str();info.pcwszMemberFilePath=member.c_str();info.hMemberFile=hash.file;
+ info.pbCalculatedFileHash=bytes.data();info.cbCalculatedFileHash=size;info.hCatAdmin=hash.admin;
+ WINTRUST_DATA data{};data.cbStruct=sizeof(data);data.dwUIChoice=WTD_UI_NONE;data.fdwRevocationChecks=WTD_REVOKE_WHOLECHAIN;
+ data.dwUnionChoice=WTD_CHOICE_CATALOG;data.pCatalog=&info;data.dwStateAction=WTD_STATEACTION_VERIFY;
+ GUID action=WINTRUST_ACTION_GENERIC_VERIFY_V2;
+ LONG status=WinVerifyTrust(nullptr,&action,&data);
+ data.dwStateAction=WTD_STATEACTION_CLOSE;WinVerifyTrust(nullptr,&action,&data);
+ require(status==ERROR_SUCCESS,"Driver package member does not match its trusted catalog");
+}
 void verify(const fs::path& directory){
  for(auto file:{L"soundcurrentvad.inf",L"soundcurrentvad.sys",L"soundcurrentvad.cat"})require(fs::is_regular_file(directory/file),"Signed driver package is incomplete");
  verifyPackageIdentity(directory);
@@ -172,7 +200,11 @@ void verify(const fs::path& directory){
  GUID action=WINTRUST_ACTION_GENERIC_VERIFY_V2;LONG status=WinVerifyTrust(nullptr,&action,&data);data.dwStateAction=WTD_STATEACTION_CLOSE;WinVerifyTrust(nullptr,&action,&data);
  require(status==ERROR_SUCCESS,"Driver catalog is unsigned or Windows cannot verify its trust");
  SP_INF_SIGNER_INFO_W signer{};signer.cbSize=sizeof(signer);
- require(SetupVerifyInfFileW((directory/L"soundcurrentvad.inf").c_str(),nullptr,&signer),"INF catalog binding/signature validation failed");
+ const BOOL whql=SetupVerifyInfFileW((directory/L"soundcurrentvad.inf").c_str(),nullptr,&signer);
+ const DWORD infStatus=whql?ERROR_SUCCESS:GetLastError();
+ require(whql||infStatus==ERROR_AUTHENTICODE_TRUSTED_PUBLISHER,"INF catalog binding/signature validation failed");
+ require(fs::equivalent(fs::path(signer.CatalogFile),directory/L"soundcurrentvad.cat"),"INF resolved to a different driver catalog");
+ for(auto member:{L"soundcurrentvad.inf",L"soundcurrentvad.sys"})verifyCatalogMember(directory/L"soundcurrentvad.cat",directory/member);
 }
 // One import intent suffices because all setup actions hold the global mutex.
 // Its files are retained until the imported OEM identity has been durably saved.
