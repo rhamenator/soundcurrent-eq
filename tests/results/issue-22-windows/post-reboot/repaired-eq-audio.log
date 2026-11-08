@@ -1,0 +1,24 @@
+Render: Speakers / Headphones (Realtek Audio)
+Render: CABLE In 16ch (VB-Audio Virtual Cable)
+Render: CABLE Input (VB-Audio Virtual Cable)
+Render: FxSound Speakers (FxSound Audio Enhancer)
+Capture: CABLE Output (VB-Audio Virtual Cable)
+Test source original volume 0.220, mute 0
+Bridge: Processing audio through the selected output
+Tone mix: 48000 Hz, 2 channels; loopback: 48000 Hz, 2 channels
+Captured meter samples: 4800
+Flat frames: 48000, bridge peak: 0.020000, RMS: 0.014142 / 0.014142
+Flat RMS: L 0.014142, R 0.014142
+VB-CABLE 50% endpoint volume: -10.10 dB (endpoint reports -10.51)
+VB-CABLE muted RMS: L 0.000000, R 0.000000
+EQ media volume-down -1.01 dB (expected -1.60); mute RMS 0.00000000 / 0.00000000; unmute passed.
+Live post gain: 6.00 dB (expected +6)
+Live 1 kHz EQ cut: -12.00 dB (expected -12)
+Bypass: 0.00 dB relative to Flat (expected 0)
+Full-left balance RMS: L 0.014142, R 0.000000
+Bridge: Equalizer stopped; normal output is available
+Bridge: Processing audio through the selected output
+EQ live enhancement: Bass Boost 6.89 dB at 80 Hz; Clarity 4.80 dB at 8 kHz; reset passed.
+Bridge: Equalizer stopped; normal output is available
+Stereo calibration duration: 1.015 seconds (expected 1)
+PASS: live route, post gain, EQ, bypass, balance, and restart

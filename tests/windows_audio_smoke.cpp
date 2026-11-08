@@ -236,6 +236,33 @@ int main(int argc, char **argv) {
             throw std::runtime_error("VB-CABLE Windows mute did not silence the signal");
         sourceVolume.set(1.0f, FALSE);
         bridge.setProfile({}, 6, 0, true);
+        if (!loopback) {
+            soundcurrent::WindowsRouteLease route(false, cableInput, speakers, true);
+            for(int role=0;role<3;++role)
+                if(soundcurrent::windowsDefaultEndpointId(false,role)!=cableInput)
+                    throw std::runtime_error("EQ media endpoint roles diverged");
+            auto mediaKey=[](WORD key) {
+                INPUT input[2]{};input[0].type=input[1].type=INPUT_KEYBOARD;
+                input[0].ki.wVk=input[1].ki.wVk=key;input[1].ki.dwFlags=KEYEVENTF_KEYUP;
+                if(SendInput(2,input,sizeof(INPUT))!=2)throw std::runtime_error("Could not send Windows media key");
+                Sleep(350);
+            };
+            bridge.setProfile({},0,0,true);
+            for(int i=0;i<5;++i)mediaKey(VK_VOLUME_DOWN);
+            const auto down=probe.measure(1000);
+            const auto expected=sourceVolume.relativeDecibels();
+            const auto actual=decibels(down.left,flat.left);
+            if(expected>=0||std::abs(actual-expected)>1)
+                throw std::runtime_error("EQ media volume-down did not attenuate playback");
+            mediaKey(VK_VOLUME_MUTE);const auto muted=probe.measure(1000);
+            if(muted.left>flat.left*.01||muted.right>flat.right*.01)
+                throw std::runtime_error("EQ Windows media mute did not silence playback");
+            mediaKey(VK_VOLUME_MUTE);const auto unmuted=probe.measure(1000);
+            if(std::abs(decibels(unmuted.left,down.left))>.5)
+                throw std::runtime_error("EQ media unmute failed");
+            sourceVolume.set(1.0f,FALSE);bridge.setProfile({},6,0,true);
+            std::printf("EQ media volume-down %.2f dB (expected %.2f); mute RMS %.8f / %.8f; unmute passed.\n",actual,expected,muted.left,muted.right);
+        }
         const auto gain = probe.measure(1000);
         const double gainDb = decibels(gain.left, flat.left);
         std::printf("Live post gain: %.2f dB (expected +6)\n", gainDb);
@@ -262,6 +289,21 @@ int main(int argc, char **argv) {
         const auto restarted = probe.measure(1000);
         if (!bridge.running() || std::abs(decibels(restarted.left, flat.left)) > 0.5)
             throw std::runtime_error("Restarted audio is silent or changed level");
+        const auto dryBass=probe.measure(80);
+        soundcurrent::EnhancementSettings effects;
+        effects.values[soundcurrent::BassBoost]=1;
+        if(!bridge.setProfile({},0,0,true,true,effects))throw std::runtime_error("Bass enhancement rejected");
+        const auto bass=probe.measure(80);
+        bridge.setProfile({},0,0,true);
+        const auto dryClarity=probe.measure(8000);
+        effects.values[soundcurrent::BassBoost]=0;effects.values[soundcurrent::Clarity]=1;
+        if(!bridge.setProfile({},0,0,true,true,effects))throw std::runtime_error("Clarity enhancement rejected");
+        const auto clarity=probe.measure(8000);
+        bridge.setProfile({},0,0,true);const auto dryAgain=probe.measure(8000);
+        const auto bassDb=decibels(bass.left,dryBass.left),clarityDb=decibels(clarity.left,dryClarity.left);
+        if(bassDb<1||clarityDb<1||std::abs(decibels(dryAgain.left,dryClarity.left))>.5)
+            throw std::runtime_error("Live EQ enhancement or reset did not affect output");
+        std::printf("EQ live enhancement: Bass Boost %.2f dB at 80 Hz; Clarity %.2f dB at 8 kHz; reset passed.\n",bassDb,clarityDb);
         bridge.stop();
         constexpr int calibrationRate = 96000;
         std::vector<std::int16_t> stereo(calibrationRate * 2);

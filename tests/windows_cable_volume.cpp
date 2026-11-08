@@ -7,33 +7,35 @@
 #include <cstring>
 #include <iostream>
 namespace fixture {
-int saved=12, pending=0, writes=0, launches=0, live=12, liveWrites=0, childExit=0;
+int saved=12, bootSaved=12, pending=0, writes=0, launches=0, live=12, liveWrites=0, childExit=0;
 bool admin=true, present=true, control=true, cancelled=false, badReadback=false, liveWriteFails=false;
-LONG readError=0, writeError=0, flushError=0;
-DWORD type=REG_DWORD, value=1;
-HKEY config=reinterpret_cast<HKEY>(1), marker=reinterpret_cast<HKEY>(2);
-void reset(){saved=12;pending=writes=launches=liveWrites=childExit=0;live=12;admin=present=control=true;cancelled=badReadback=liveWriteFails=false;readError=writeError=flushError=0;type=REG_DWORD;value=1;}
+LONG readError=0, writeError=0, bootWriteError=0, flushError=0;
+DWORD type=REG_DWORD, value=1, bootValue=1;
+HKEY config=reinterpret_cast<HKEY>(1), marker=reinterpret_cast<HKEY>(2), bootConfig=reinterpret_cast<HKEY>(7);
+void reset(){saved=bootSaved=12;bootValue=1;bootWriteError=0;pending=writes=launches=liveWrites=childExit=0;live=12;admin=present=control=true;cancelled=badReadback=liveWriteFails=false;readError=writeError=flushError=0;type=REG_DWORD;value=1;}
 LONG open(HKEY,const wchar_t* path,DWORD,REGSAM access,HKEY* out){
  assert(access&KEY_WOW64_64KEY);
  if(wcsstr(path,L"VolumePending")){if(!pending)return ERROR_FILE_NOT_FOUND;*out=marker;return 0;}
  if(readError)return readError;
- if(saved==12)return ERROR_FILE_NOT_FOUND;
- *out=config;return 0;
+ const bool boot=wcsstr(path,L"SYSTEM\\CurrentControlSet\\Services\\VB-Cable")!=nullptr;
+ if((boot?bootSaved:saved)==12)return ERROR_FILE_NOT_FOUND;
+ *out=boot?bootConfig:config;return 0;
 }
-LONG query(HKEY,const wchar_t*,DWORD*,DWORD* t,BYTE* data,DWORD* bytes){
- *t=type;*bytes=sizeof(DWORD);std::memcpy(data,&value,sizeof(value));return 0;
+LONG query(HKEY key,const wchar_t*,DWORD*,DWORD* t,BYTE* data,DWORD* bytes){
+ *t=type;*bytes=sizeof(DWORD);const DWORD stored=key==bootConfig?bootValue:value;std::memcpy(data,&stored,sizeof(stored));return 0;
 }
 LONG close(HKEY){return 0;}
 LONG create(HKEY,const wchar_t* path,DWORD,wchar_t*,DWORD options,REGSAM access,SECURITY_ATTRIBUTES*,HKEY* out,DWORD*){
  assert(access&KEY_WOW64_64KEY);
  if(wcsstr(path,L"VolumePending")){assert(options==REG_OPTION_VOLATILE);pending=1;*out=marker;}
- else {*out=config;}
+ else {*out=wcsstr(path,L"SYSTEM\\CurrentControlSet\\Services\\VB-Cable")?bootConfig:config;}
  return 0;
 }
-LONG set(HKEY,const wchar_t* name,DWORD,DWORD t,const BYTE* data,DWORD bytes){
+LONG set(HKEY key,const wchar_t* name,DWORD,DWORD t,const BYTE* data,DWORD bytes){
  assert(wcscmp(name,L"VBAudioCableWDM_VolCtl")==0&&t==REG_DWORD&&bytes==sizeof(DWORD));
- ++writes;if(writeError)return writeError;
- saved=0;type=REG_DWORD;std::memcpy(&value,data,bytes);if(badReadback)value=0;return 0;
+ ++writes;if(writeError)return writeError;if(key==bootConfig&&bootWriteError)return bootWriteError;
+ type=REG_DWORD;if(key==bootConfig){bootSaved=0;std::memcpy(&bootValue,data,bytes);if(badReadback)bootValue=0;}
+ else {saved=0;std::memcpy(&value,data,bytes);if(badReadback)value=0;}return 0;
 }
 LONG flush(HKEY){return flushError;}
 HDEVINFO devices(const GUID*,const wchar_t*,HWND,DWORD){return reinterpret_cast<HDEVINFO>(3);}
@@ -91,11 +93,20 @@ BOOL exitCode(HANDLE,DWORD* code){*code=childExit;return TRUE;}
 #include "windows_cable_volume.h"
 int main(){
  using namespace fixture;
- reset();assert(configureCableVolume(false)==0&&writes==1&&value==1&&live==0); // persist and apply
- assert(configureCableVolume(true)==0&&writes==1&&launches==0); // live idempotence
- reset();saved=0;value=0;assert(configureCableVolume(false)==0&&writes==1&&live==0);
- reset();saved=0;type=REG_SZ;assert(configureCableVolume(false)==0&&writes==1&&live==0);
- reset();saved=0;admin=false;assert(configureCableVolume(true)==0&&launches==1&&writes==0);
+ reset();saved=0;bootSaved=0;assert(cableVolumeStatus()==12); // Saved enabled, live disabled is not ready.
+ live=0;assert(cableVolumeStatus()==0);
+ admin=false;live=12;assert(cableVolumeStatus()==0); // Ordinary readiness probes cannot inspect the elevated-only IOCTL.
+ admin=true;
+ live=12;pending=1;assert(cableVolumeStatus()==3010);
+ pending=0;control=false;assert(cableVolumeStatus()==31);
+ reset();assert(configureCableVolume(false)==0&&writes==2&&value==1&&live==0); // persist and apply
+ assert(configureCableVolume(true)==0&&writes==2&&launches==0); // live idempotence
+ reset();saved=0;bootSaved=0;value=0;assert(configureCableVolume(false)==0&&writes==2&&live==0);
+ reset();saved=0;bootSaved=0;type=REG_SZ;assert(configureCableVolume(false)==0&&writes==2&&live==0);
+ reset();saved=0;bootSaved=0;admin=false;assert(configureCableVolume(true)==0&&launches==1&&writes==0);
+ reset();saved=0;live=0;assert(savedCableVolumeStatus()==12);assert(configureCableVolume(false)==0&&bootSaved==0&&bootValue==1&&writes==2); // legacy Software-only migration
+ reset();saved=bootSaved=0;bootValue=0;assert(savedCableVolumeStatus()==12);assert(configureCableVolume(false)==0&&bootValue==1&&writes==2); // disabled SYSTEM fallback
+ reset();bootWriteError=ERROR_ACCESS_DENIED;assert(configureCableVolume(false)==31&&liveWrites==0);
  reset();readError=ERROR_ACCESS_DENIED;assert(configureCableVolume(true)==31&&writes==0&&launches==0);
  reset();admin=false;assert(configureCableVolume(false)==740&&launches==0&&writes==0);
  cancelled=true;assert(configureCableVolume(true)==1223&&launches==1&&writes==0);
@@ -104,7 +115,7 @@ int main(){
  reset();writeError=ERROR_ACCESS_DENIED;assert(configureCableVolume(false)==31);
  reset();badReadback=true;assert(configureCableVolume(false)==31);
  reset();flushError=ERROR_ACCESS_DENIED;assert(configureCableVolume(false)==31);
- reset();control=false;assert(configureCableVolume(false)==3010&&writes==1); // fresh driver needs reboot
- reset();saved=0;liveWriteFails=true;assert(configureCableVolume(false)==3010&&writes==0);
- std::cout<<"PASS: fixed 64-bit persistence plus live VB-CABLE driver apply, faults, cancel, reboot fallback, idempotence\n";
+ reset();control=false;assert(configureCableVolume(false)==3010&&writes==2); // fresh driver needs reboot
+ reset();saved=0;bootSaved=0;liveWriteFails=true;assert(configureCableVolume(false)==3010&&writes==0);
+ std::cout<<"PASS: dual-location 64-bit persistence plus live VB-CABLE driver apply, faults, cancel, reboot fallback, idempotence\n";
 }
