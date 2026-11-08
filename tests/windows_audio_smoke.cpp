@@ -105,7 +105,7 @@ public:
         check(render_->Start(), "Start tone");
     }
     ~Probe() { if (render_) render_->Stop(); if (capture_) capture_->Stop(); }
-    Measurement measure(double frequency, unsigned durationMs = 1600) {
+    Measurement measure(double frequency, unsigned durationMs = 2400) {
         Measurement result;
         const auto begin = GetTickCount64();
         while (GetTickCount64() - begin < durationMs) {
@@ -132,7 +132,10 @@ public:
                 BYTE *raw = nullptr;
                 DWORD flags = 0;
                 check(reader_->GetBuffer(&raw, &frames, &flags, nullptr, nullptr), "Loopback read");
-                if (GetTickCount64() - begin >= 800) {
+                // The bridge intentionally buffers audio. Exclude enough of
+                // the preceding state that a live control change is measured
+                // on its own rather than averaged with queued samples.
+                if (GetTickCount64() - begin >= 1400) {
                     if (!(flags & AUDCLNT_BUFFERFLAGS_SILENT)) {
                         const auto *samples = reinterpret_cast<const float *>(raw);
                         for (UINT32 frame = 0; frame < frames; ++frame) {
