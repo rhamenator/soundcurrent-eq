@@ -130,9 +130,26 @@ int applyLiveCableVolume() {
                          &driverResult, sizeof(driverResult), &returned, nullptr)) return 31;
     return liveCableVolumeStatus();
 }
+int processElevationStatus() {
+    HANDLE token = nullptr;
+    if (!OpenProcessToken(GetCurrentProcess(), TOKEN_QUERY, &token)) return -1;
+    TOKEN_ELEVATION elevation{}; DWORD size = 0;
+    const bool known = GetTokenInformation(token, TokenElevation, &elevation, sizeof(elevation), &size);
+    CloseHandle(token);
+    return known ? (elevation.TokenIsElevated ? 1 : 0) : -1;
+}
+bool elevatedProcess() { return processElevationStatus() == 1; }
 int cableVolumeStatus() {
     const int saved = savedCableVolumeStatus();
     if (saved) return saved;
+    // VB-Audio denies its control IOCTL to ordinary users. The elevated
+    // configuration action verifies the live value before returning success;
+    // an unelevated readiness probe can therefore verify only the persisted
+    // value (the caller separately verifies that both endpoints are active).
+    // Do not turn that expected access restriction into a false repair loop.
+    const int elevation = processElevationStatus();
+    if (elevation < 0) return 31;
+    if (elevation == 0) return 0;
     const int live = liveCableVolumeStatus();
     if (live == 0) return 0;
     RegistryKey pending;
@@ -140,15 +157,6 @@ int cableVolumeStatus() {
                                      KEY_QUERY_VALUE | KEY_WOW64_64KEY, &pending.key);
     if (result == ERROR_SUCCESS) return 3010;
     return result == ERROR_FILE_NOT_FOUND || result == ERROR_PATH_NOT_FOUND ? live : 31;
-}
-bool elevatedProcess() {
-    HANDLE token = nullptr;
-    if (!OpenProcessToken(GetCurrentProcess(), TOKEN_QUERY, &token)) return false;
-    TOKEN_ELEVATION elevation{}; DWORD size = 0;
-    const bool elevated = GetTokenInformation(token, TokenElevation, &elevation, sizeof(elevation), &size)
-                          && elevation.TokenIsElevated;
-    CloseHandle(token);
-    return elevated;
 }
 int configureCableVolume(bool allowElevation) {
     if (!primaryCablePresent()) return 10;

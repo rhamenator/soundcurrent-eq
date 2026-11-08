@@ -95,6 +95,8 @@ int main(){
  using namespace fixture;
  reset();saved=0;bootSaved=0;assert(cableVolumeStatus()==12); // Saved enabled, live disabled is not ready.
  live=0;assert(cableVolumeStatus()==0);
+ admin=false;live=12;assert(cableVolumeStatus()==0); // Ordinary readiness probes cannot inspect the elevated-only IOCTL.
+ admin=true;
  live=12;pending=1;assert(cableVolumeStatus()==3010);
  pending=0;control=false;assert(cableVolumeStatus()==31);
  reset();assert(configureCableVolume(false)==0&&writes==2&&value==1&&live==0); // persist and apply
