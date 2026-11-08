@@ -20,6 +20,11 @@ int main(int argc,char **argv){QApplication app(argc,argv);try{
 #endif
  for(const QString version:{QString("0.7.3"),QString("0.7.6"),QString("0.7.5")}){QFile f(folder.filePath(prefix+version+suffix));require(f.open(QIODevice::WriteOnly),"test file");f.write("fixture");}
  require(downloadedUpdate("soundcurrent-eq","0.7.4",folder.path()).first=="0.7.6","newest local update selection");
+#ifdef Q_OS_WIN
+ QFile native(folder.filePath("SoundCurrent-EQ-0.7.8-windows-x64-native-setup.exe"));require(native.open(QIODevice::WriteOnly),"native test file");native.write("fixture");native.close();
+ require(downloadedUpdate("soundcurrent-eq","0.7.4",folder.path(),true).first=="0.7.8","native update selection");
+ require(downloadedUpdate("soundcurrent-eq","0.7.4",folder.path()).first=="0.7.6","cable route accepted native installer");
+#endif
  require(downloadedUpdate("soundcurrent-studio","0.8.3",folder.path()).second.isEmpty(),"other app installer suggested");
  auto release=[](const QString &tag,const QString &url,bool preview=false,bool draft=false){return QJsonObject{{"tag_name",tag},{"html_url",url},{"prerelease",preview},{"draft",draft}};};
  QJsonArray releases{release("0.7.5","https://github.com/rhamenator/soundcurrent-eq/releases/tag/0.7.5"),release("0.7.8","https://example.org/",false),release("0.7.9","https://github.com/rhamenator/soundcurrent-studio/releases/tag/0.7.9"),release("preview-0.7.7","https://github.com/rhamenator/soundcurrent-eq/releases/tag/preview-0.7.7",true),release("0.7.10","https://github.com/rhamenator/soundcurrent-eq/releases/tag/0.7.10",false,true)};
