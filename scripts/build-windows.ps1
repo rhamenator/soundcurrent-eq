@@ -222,7 +222,8 @@ try {
     }
     $delete | Set-Content -Encoding utf8 build-windows-native\uninstall-payload.nsh
     New-Item -ItemType Directory -Force dist | Out-Null
-    $installer = Join-Path $root "dist\SoundCurrent-EQ-$version-windows-x64-setup.exe"
+    $installerSuffix = if ($AudioRoute -eq 'Native') { '-native' } else { '' }
+    $installer = Join-Path $root "dist\SoundCurrent-EQ-$version-windows-x64$installerSuffix-setup.exe"
     [string[]]$audioOptions = if ($AudioRoute -eq 'Native') { @("/DDRIVER_DIR=$SignedDriverPackage") } else { @("/DCABLE_ZIP=$CablePackage") }
     $installerScript = if ($AudioRoute -eq 'Native') { 'packaging\windows\soundcurrent-eq-native.nsi' } else { 'packaging\windows\soundcurrent-eq.nsi' }
     & python tests/installer_language_activation.py
@@ -239,5 +240,19 @@ try {
     "$sourceHash  $(Split-Path $sourceArchive -Leaf)" | Set-Content -Encoding ascii "dist\$(Split-Path $sourceArchive -Leaf).sha256"
     $hash = (Get-FileHash $installer).Hash.ToLowerInvariant()
     "$hash  $(Split-Path $installer -Leaf)" | Set-Content -Encoding ascii "$installer.sha256"
+    $commonPayload = [ordered]@{}
+    Get-ChildItem $stage -Recurse -File | Where-Object Name -ne 'soundcurrent-driver-manager.exe' | Sort-Object FullName | ForEach-Object {
+        $relative = $_.FullName.Substring($stage.Length + 1).Replace('\','/')
+        $commonPayload[$relative] = (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+    }
+    $sourceCommit = (& git rev-parse HEAD).Trim()
+    if ($LASTEXITCODE -ne 0 -or $sourceCommit -notmatch '^[0-9a-f]{40}$') { throw 'Cannot record the exact release source commit' }
+    $variantManifest = [ordered]@{
+        schema = 1; product = 'SoundCurrent EQ'; version = $version; audioRoute = $AudioRoute
+        sourceCommit = $sourceCommit; installer = (Split-Path $installer -Leaf); installerSha256 = $hash
+        commonPayload = $commonPayload
+    }
+    $manifestPath = Join-Path $root "dist\SoundCurrent-EQ-$version-windows-x64-$($AudioRoute.ToLowerInvariant())-manifest.json"
+    $variantManifest | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $manifestPath -Encoding UTF8
     Write-Output $installer
 } finally { Pop-Location }

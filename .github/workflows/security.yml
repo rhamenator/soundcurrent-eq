@@ -21,7 +21,9 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Enforce release and privileged-driver security contracts
-        run: python3 tests/security_policy.py
+        run: |
+          python3 tests/security_policy.py
+          python3 tests/windows_variant_parity.py
       - name: Scan Git history for credentials
         uses: trufflesecurity/trufflehog@f8221ca52ac51bf66228d6ec3691f3ea0782ae15 # main at 2026-11-07
         with:
