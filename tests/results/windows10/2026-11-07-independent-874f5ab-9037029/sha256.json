@@ -1,0 +1,111 @@
+{
+  "passedOriginalZipSha256": "f5be0f85a7d0183922cd36289de13da2ab5a9a035bc3528aa636a6d2704987ed",
+  "screenshotOriginalZipSha256": "a6d3c72a8d7d6c03ac8bdb9f28e43e29fb19c988e7bcd19ec8b93f67096f89a0",
+  "textNormalization": "UTF-16/BOM decoded where needed; UTF-8, LF; no text summaries substituted for non-empty logs",
+  "files": [
+    {
+      "path": "eq-ar.err.txt",
+      "sha256": "93e66158a4ad6adcffe84213dc809132586cc504003ad6c7219e7ce2068e0a48"
+    },
+    {
+      "path": "eq-ar.out.txt",
+      "sha256": "1e81cc01efb49abc87d418e481c40edce34ffd91e7ea907061eb044d09e82770"
+    },
+    {
+      "path": "eq-provenance.json",
+      "sha256": "664b2fa3bb115550f6bf963ab680d3197e7dcfa2d1873f819806c52a948c817e"
+    },
+    {
+      "path": "eq-soundcurrent-microphone-access-test.out.txt",
+      "sha256": "1e36a87c397fcd05e7a7acac6431e809e8893eb26e6a91a0c6eb2f429991f05c"
+    },
+    {
+      "path": "eq-soundcurrent-responsive-ui-test.out.txt",
+      "sha256": "4cf00578175f0c934e0d66c94d255ee040dc32940d026fcc5e0ef5548cb86b72"
+    },
+    {
+      "path": "eq-soundcurrent-windows-microphone-privacy-test.out.txt",
+      "sha256": "62a82444c1b984832bdde796c734942a4dd306df45772bdddb617da891eff5c5"
+    },
+    {
+      "path": "eq-ui.err.txt",
+      "sha256": "0cfcdf4334a9f3bb40340816db946f37cb784039dd9027b8591787efa36c81f3"
+    },
+    {
+      "path": "initial-harness-run/os.json",
+      "sha256": "a7a4f6e198ef1e7a92bec71a4b1b748099bc386c106458687a42ce3f1a53afec"
+    },
+    {
+      "path": "initial-harness-run/result.json",
+      "sha256": "badf98eb41c040cadc70f8e218ab7e43dff514609e88a01b59db853fcd774106"
+    },
+    {
+      "path": "os.json",
+      "sha256": "a7a4f6e198ef1e7a92bec71a4b1b748099bc386c106458687a42ce3f1a53afec"
+    },
+    {
+      "path": "result.json",
+      "sha256": "6e49f5afb7073ccc47cf0e4aac1b5013e729647bd1fd0df245b2ca9a0b89ba53"
+    },
+    {
+      "path": "runner-executed.ps1",
+      "sha256": "c69d105fb30eea5f0b94a7d086f9606a3c26ca3d592154b0a399a1e64be30391"
+    },
+    {
+      "path": "screenshots/eq-equalizer.png",
+      "sha256": "824234c2d575854f124ca04dfb18b29cef2df86dd708d6f2cdab27f95b604229"
+    },
+    {
+      "path": "screenshots/studio-equalizer.png",
+      "sha256": "9c89f15c4d4f5bc121bc6dd13261d8156488ac17b1c8a411002988f4d43cb4e5"
+    },
+    {
+      "path": "screenshots/studio-localized-tab-0.png",
+      "sha256": "bb73ad415cab8c8ea455f125a468247548fd0a26ada817fedba0b1ea09947034"
+    },
+    {
+      "path": "screenshots/studio-studio.png",
+      "sha256": "692fa6e8a669bbfda04fb095aee3a56893abe9ccfedfa729a0975e25f098b252"
+    },
+    {
+      "path": "signing-extras/native/windows/virtual-driver/driver-inputs.ps1",
+      "sha256": "9bca557583988b2469ba673799377f9c9eede947de901751781e22606d8b8038"
+    },
+    {
+      "path": "signing-extras/tests/windows_driver_signing_inputs.ps1",
+      "sha256": "9995d50510e18b1b22effb1d05d96ff2cd4631f11df7be49349e8ea46ab3be14"
+    },
+    {
+      "path": "signing-inputs.txt",
+      "sha256": "f392b2e3cca03392ed53b259ac1bbee87a20768d7966f28d8dabc7ce435c4826"
+    },
+    {
+      "path": "studio-ar.err.txt",
+      "sha256": "93e66158a4ad6adcffe84213dc809132586cc504003ad6c7219e7ce2068e0a48"
+    },
+    {
+      "path": "studio-ar.out.txt",
+      "sha256": "1e81cc01efb49abc87d418e481c40edce34ffd91e7ea907061eb044d09e82770"
+    },
+    {
+      "path": "studio-provenance.json",
+      "sha256": "edfbb0d7a7c9c019c00ee7ceef15e3fc8eb6d6521d3f7c8c61a0b35467550965"
+    },
+    {
+      "path": "studio-soundcurrent-microphone-access-test.out.txt",
+      "sha256": "1e36a87c397fcd05e7a7acac6431e809e8893eb26e6a91a0c6eb2f429991f05c"
+    },
+    {
+      "path": "studio-soundcurrent-responsive-ui-test.out.txt",
+      "sha256": "4cf00578175f0c934e0d66c94d255ee040dc32940d026fcc5e0ef5548cb86b72"
+    },
+    {
+      "path": "studio-soundcurrent-windows-microphone-privacy-test.out.txt",
+      "sha256": "62a82444c1b984832bdde796c734942a4dd306df45772bdddb617da891eff5c5"
+    },
+    {
+      "path": "studio-ui.err.txt",
+      "sha256": "0cfcdf4334a9f3bb40340816db946f37cb784039dd9027b8591787efa36c81f3"
+    }
+  ]
+}

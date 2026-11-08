@@ -1,0 +1,1 @@
+PASS: exact manifest coverage, case-alias rejection, malformed hashes/paths/types and verified non-overwriting signing snapshot; no key/signing actions

@@ -1,0 +1,1 @@
+PASS: fail-closed startup, inverse default, sticky choices, hotplug and capture gate

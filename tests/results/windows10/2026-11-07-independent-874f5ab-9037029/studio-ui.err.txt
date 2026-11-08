@@ -1,0 +1,6 @@
+UI test application initialized
+UI self-test: constructing window
+UI self-test: window constructed
+UI self-test: microphone privacy and saved choice checks passed
+QWindowsWindow::setGeometry: Unable to set geometry 1050x920+12+43 (frame: 1066x959+4+12) on QWidgetWindow/"QMainWindowClassWindow" on "\\.\DISPLAY1". Resulting geometry: 1050x781+12+43 (frame: 1066x820+4+12) margins: 8, 31, 8, 8 minimum size: 480x320 MINMAXINFO(maxSize=POINT(x=0, y=0), maxpos=POINT(x=0, y=0), maxtrack=POINT(x=0, y=0), mintrack=POINT(x=496, y=359)))
+UI self-test passed with 34 presets and editable 5–31 band layout

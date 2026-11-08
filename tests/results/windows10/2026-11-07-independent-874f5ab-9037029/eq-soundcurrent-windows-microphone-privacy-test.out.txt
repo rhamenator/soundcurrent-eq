@@ -1,0 +1,1 @@
+PASS: Windows microphone backends reject before endpoint activation, without hardware
