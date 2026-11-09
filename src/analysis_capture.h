@@ -19,13 +19,14 @@ namespace soundcurrent::analysis {
 class Capture : public QObject {
 public:
     explicit Capture(QObject *parent=nullptr):QObject(parent){
-        timer_.setInterval(40);
+        timer_.setInterval(50);
         connect(&timer_,&QTimer::timeout,this,[this]{
             if(running_ && !playback_ && !soundcurrent::microphone::allowed()){stop();if(onError)onError(SC_TR("Microphone access is disabled."));return;}
 #ifdef Q_OS_WIN
             if(!recorder_.running()){stop();if(onError)onError(captureError());return;}
             auto samples=recorder_.take();if(!samples.empty())append(QByteArray(reinterpret_cast<const char *>(samples.data()),int(samples.size()*2)));
 #endif
+            flush();
         });
 #ifndef Q_OS_WIN
         connect(&process_,&QProcess::readyReadStandardOutput,this,[this]{append(process_.readAllStandardOutput());});
@@ -54,7 +55,7 @@ public:
 #else
         if(process_.state()!=QProcess::NotRunning){process_.terminate();if(!process_.waitForFinished(300)){process_.kill();process_.waitForFinished(300);}}
 #endif
-        pcm_.clear();
+        pcm_.clear();dirty_=false;
     }
 private:
     QString captureError() const{return playback_?SC_TR("Could not start playback monitoring"):SC_TR("Could not start microphone capture");}
@@ -63,9 +64,10 @@ private:
         if(!playback_ && !soundcurrent::microphone::allowed()){stop();return;}
         // Keep framing intact even when a pipe read ends between stereo frames.
         pcm_.append(bytes);if(pcm_.size()>131072+3){const auto excess=pcm_.size()-131072;pcm_.remove(0,(excess+3)&~qsizetype(3));}
-        const auto aligned=pcm_.size()&~qsizetype(3);if(aligned && onPcm)onPcm(pcm_.left(aligned));
+        dirty_=true;
     }
-    QProcess process_;QTimer timer_;QByteArray pcm_;QString source_;bool running_=false,playback_=false;
+    void flush(){const auto aligned=pcm_.size()&~qsizetype(3);if(dirty_&&aligned&&onPcm){dirty_=false;onPcm(pcm_.left(aligned));}}
+    QProcess process_;QTimer timer_;QByteArray pcm_;QString source_;bool running_=false,playback_=false,dirty_=false;
 #ifdef Q_OS_WIN
     WindowsRecorder recorder_;
 #endif

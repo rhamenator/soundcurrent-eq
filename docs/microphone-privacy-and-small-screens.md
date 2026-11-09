@@ -6,6 +6,10 @@ The Microphone setup dialog has a **Disable microphone access** checkbox.
 Checked means that the app cannot capture a microphone. Speaker playback and
 playback-monitor analysis continue working.
 
+The selected rolling spectrogram advances through silent periods. Analyzer
+capture is batched and display work is bounded independently of playback; the
+analyzer remains inactive while its tab is hidden.
+
 Before any manual privacy choice, access follows microphone availability: no
 connected microphone means disabled; plugging one in makes it available without
 needing to restart or press Refresh. A built-in microphone counts as connected.

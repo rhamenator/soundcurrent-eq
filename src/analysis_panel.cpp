@@ -34,6 +34,7 @@
 #include <QSettings>
 #include <QShowEvent>
 #include <QSlider>
+#include <QTimer>
 #include <QVBoxLayout>
 #include <algorithm>
 #include <cmath>
@@ -59,9 +60,19 @@ public:
     void resetClock(){clock.invalidate();}
     QSize historyPixelSize() const {return {image.width,image.height};}
     void clearImage(){image={};ensureImageSize();previousColumn.clear();credit=0;clock.invalidate();update();}
+    bool advanceIdle() {
+        if(!isVisible()||frozen||mode!=View::Waterfall)return false;
+        constexpr double interval=60.;
+        if(clock.isValid()&&clock.elapsed()<interval)return false;
+        const double elapsed=clock.isValid()?clock.elapsed()/1000.:interval/1000.;clock.restart();ensureImageSize();
+        const auto &s=data->settings;credit+=elapsed*image.width*s.speed/s.history;const int columns=std::min(image.width,int(credit));credit-=columns;
+        if(columns<=0)return false;
+        for(int y=0;y<image.height;++y){auto *row=image.pixels.data()+y*image.width;std::memmove(row,row+columns,std::size_t(image.width-columns)*sizeof(*row));std::fill(row+image.width-columns,row+image.width,0xff000000);}
+        previousColumn.assign(std::size_t(image.height),-240.);setProperty("idleFrames",property("idleFrames").toInt()+1);if(onFrame)onFrame();update();return true;
+    }
     bool push(const QByteArray &pcm) {
         if(!isVisible() || frozen)return false;
-        const auto &s=data->settings;const double interval=(mode==View::Waveform || mode==View::Vectorscope)?40:std::max(40.,250.*s.fft/s.rate);
+        const auto &s=data->settings;const double interval=(mode==View::Microphone || mode==View::Average)?40:(mode==View::Waveform || mode==View::Vectorscope)?50:std::max(60.,250.*s.fft/s.rate);
         if(clock.isValid() && clock.elapsed()<interval)return false;
         const double elapsed=clock.isValid()?clock.elapsed()/1000.:interval/1000.;
         if(!data->push(pcm,mode))return false;
@@ -216,7 +227,7 @@ private:
     std::vector<double> previousColumn;
     void ensureImageSize() {
         const auto plot=plotRect();const double dpr=devicePixelRatioF();
-        const int w=std::clamp(int(std::ceil(plot.width()*dpr)),1,2048),h=std::clamp(int(std::ceil(plot.height()*dpr)),2,2048);
+        const int w=std::clamp(int(std::ceil(plot.width()*dpr)),1,1280),h=std::clamp(int(std::ceil(plot.height()*dpr)),2,1280);
         if(image.width==w && image.height==h)return;
         auto replacement=gram::make_image(w,h);gram::clear_image(replacement,0xff000000);
         if(!image.pixels.empty()) {
@@ -251,6 +262,7 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     const auto saved=Settings::parse(QJsonDocument::fromJson(QSettings().value("analysis/settings").toByteArray()).object());if(saved)canvas_->data->configure(*saved);
     canvas_->onVisibility=[this](bool visible){if(visible){captureFailed_=false;refreshSources();}if(onActivity)onActivity(source(),visible && active());};
     canvas_->onFrame=[this]{availability();};
+    auto *displayHeartbeat=new QTimer(this);displayHeartbeat->setInterval(50);displayHeartbeat->setTimerType(Qt::CoarseTimer);connect(displayHeartbeat,&QTimer::timeout,canvas_,[this]{canvas_->advanceIdle();});displayHeartbeat->start();
     connect(view_,&QComboBox::currentIndexChanged,this,[this](int index){canvas_->data->resetAverage();setView(View(index));canvas_->clearImage();canvas_->setAccessibleName(view_->currentText());availability();});
     connect(source_,&QComboBox::currentIndexChanged,this,[this]{sourceReady_=true;captureFailed_=false;reset();QSettings().setValue("analysis/source",source());QSettings().setValue("analysis/sourceName",source_->currentText());if(onActivity)onActivity(source(),active());});
     connect(freeze_,&QCheckBox::toggled,this,[this](bool on){canvas_->frozen=on;});

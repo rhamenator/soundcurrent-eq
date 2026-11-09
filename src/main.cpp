@@ -2865,6 +2865,11 @@ public:
         if(curve_->geometry()!=curveGeometry || outputGain_->geometry()!=outputGeometry)qFatal("Band-count change moved unrelated controls");
         bar->setValue(0);countBox_->setValue(original);QCoreApplication::processEvents();
     }
+    void selfTestAnalysisIdle() {
+        int analysisPage=-1;for(int i=0;i<tabs_->count();++i)if(tabs_->widget(i)->isAncestorOf(analysis_)){analysisPage=i;break;}if(analysisPage<0)qFatal("Spectrogram page is missing");
+        const int page=tabs_->currentIndex();tabs_->setCurrentIndex(analysisPage);QCoreApplication::processEvents();auto *canvas=findChild<QWidget *>("analysisCanvas");if(!canvas)qFatal("Analysis canvas is missing");
+        const int before=canvas->property("idleFrames").toInt();QElapsedTimer wait;wait.start();while(wait.elapsed()<220){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}if(canvas->property("idleFrames").toInt()<=before)qFatal("Selected spectrogram stopped while playback was silent");tabs_->setCurrentIndex(page);QCoreApplication::processEvents();
+    }
     void selfTestQuitVisibility() const {
         const auto *quit=findChild<QPushButton*>("persistentQuit");
         if(!quit || !quit->isVisible() ||
@@ -4789,6 +4794,7 @@ int main(int argc, char **argv) {
         testWindow.show();
         app.processEvents();
         testWindow.selfTestBandScaling();
+        testWindow.selfTestAnalysisIdle();
         if (auto *display = testWindow.screen()) {
             const auto available = display->availableGeometry();
             if (testWindow.width() > available.width() || testWindow.height() > available.height())
