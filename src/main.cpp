@@ -2467,6 +2467,7 @@ public:
         detailsLayout->setContentsMargins(0, 2, 0, 2);
         detailsLayout->addWidget(new QLabel(SC_TR("Selected band")));
         auto *detailsRow = new soundcurrent::ui::ResponsiveRow;
+        detailsRow->setObjectName("selectedBandEditor");
         auto *frequencyField = new QWidget;
         auto *frequencyLayout = new QVBoxLayout(frequencyField);
         frequencyLayout->setContentsMargins(0, 0, 0, 0);
@@ -2863,6 +2864,11 @@ public:
         if(!bandScroll_->viewport()->rect().intersects(last))qFatal("Band 16 cannot be reached by scrolling");
         if(curve_->geometry()!=curveGeometry || outputGain_->geometry()!=outputGeometry)qFatal("Band-count change moved unrelated controls");
         bar->setValue(0);countBox_->setValue(original);QCoreApplication::processEvents();
+    }
+    void selfTestAnalysisIdle() {
+        int analysisPage=-1;for(int i=0;i<tabs_->count();++i)if(tabs_->widget(i)->isAncestorOf(analysis_)){analysisPage=i;break;}if(analysisPage<0)qFatal("Spectrogram page is missing");
+        const int page=tabs_->currentIndex();tabs_->setCurrentIndex(analysisPage);QCoreApplication::processEvents();auto *canvas=findChild<QWidget *>("analysisCanvas");if(!canvas)qFatal("Analysis canvas is missing");
+        const int before=canvas->property("idleFrames").toInt();QElapsedTimer wait;wait.start();while(wait.elapsed()<220){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}if(canvas->property("idleFrames").toInt()<=before)qFatal("Selected spectrogram stopped while playback was silent");tabs_->setCurrentIndex(page);QCoreApplication::processEvents();
     }
     void selfTestQuitVisibility() const {
         const auto *quit=findChild<QPushButton*>("persistentQuit");
@@ -4788,6 +4794,7 @@ int main(int argc, char **argv) {
         testWindow.show();
         app.processEvents();
         testWindow.selfTestBandScaling();
+        testWindow.selfTestAnalysisIdle();
         if (auto *display = testWindow.screen()) {
             const auto available = display->availableGeometry();
             if (testWindow.width() > available.width() || testWindow.height() > available.height())
@@ -4945,9 +4952,21 @@ int main(int argc, char **argv) {
             QEventLoop loop;QTimer::singleShot(50,&loop,&QEventLoop::quit);loop.exec();
             testWindow.selfTestQuitVisibility();
         };
+        auto checkSelectedBandEditor=[&]{
+            auto *editor=testWindow.findChild<QWidget *>("selectedBandEditor");
+            if(!editor || editor->height()<editor->minimumSizeHint().height() ||
+               !frequency->isVisible() || !gain->isVisible() || !q->isVisible() ||
+               frequency->height()<frequency->sizeHint().height() || gain->height()<gain->sizeHint().height() ||
+               q->height()<q->sizeHint().height())
+                qFatal("Selected-band editor collapsed: row %d/%d; frequency %d/%d visible %d; gain %d/%d visible %d; Q %d/%d visible %d",
+                       editor?editor->height():-1,editor?editor->minimumSizeHint().height():-1,
+                       frequency->height(),frequency->sizeHint().height(),frequency->isVisible(),
+                       gain->height(),gain->sizeHint().height(),gain->isVisible(),q->height(),q->sizeHint().height(),q->isVisible());
+        };
+        settleUi();checkSelectedBandEditor();
         if (!screenshotDirectory.isEmpty()) {
             testWindow.resize(1050, 920);
-            settleUi();
+            settleUi();checkSelectedBandEditor();
             if (!QDir().mkpath(screenshotDirectory) ||
                 !testWindow.grab().save(QDir(screenshotDirectory).filePath("equalizer.png")))
                 qFatal("Cannot save equalizer UI test screenshot");
