@@ -2467,6 +2467,7 @@ public:
         detailsLayout->setContentsMargins(0, 2, 0, 2);
         detailsLayout->addWidget(new QLabel(SC_TR("Selected band")));
         auto *detailsRow = new soundcurrent::ui::ResponsiveRow;
+        detailsRow->setObjectName("selectedBandEditor");
         auto *frequencyField = new QWidget;
         auto *frequencyLayout = new QVBoxLayout(frequencyField);
         frequencyLayout->setContentsMargins(0, 0, 0, 0);
@@ -4945,9 +4946,21 @@ int main(int argc, char **argv) {
             QEventLoop loop;QTimer::singleShot(50,&loop,&QEventLoop::quit);loop.exec();
             testWindow.selfTestQuitVisibility();
         };
+        auto checkSelectedBandEditor=[&]{
+            auto *editor=testWindow.findChild<QWidget *>("selectedBandEditor");
+            if(!editor || editor->height()<editor->minimumSizeHint().height() ||
+               !frequency->isVisible() || !gain->isVisible() || !q->isVisible() ||
+               frequency->height()<frequency->sizeHint().height() || gain->height()<gain->sizeHint().height() ||
+               q->height()<q->sizeHint().height())
+                qFatal("Selected-band editor collapsed: row %d/%d; frequency %d/%d visible %d; gain %d/%d visible %d; Q %d/%d visible %d",
+                       editor?editor->height():-1,editor?editor->minimumSizeHint().height():-1,
+                       frequency->height(),frequency->sizeHint().height(),frequency->isVisible(),
+                       gain->height(),gain->sizeHint().height(),gain->isVisible(),q->height(),q->sizeHint().height(),q->isVisible());
+        };
+        settleUi();checkSelectedBandEditor();
         if (!screenshotDirectory.isEmpty()) {
             testWindow.resize(1050, 920);
-            settleUi();
+            settleUi();checkSelectedBandEditor();
             if (!QDir().mkpath(screenshotDirectory) ||
                 !testWindow.grab().save(QDir(screenshotDirectory).filePath("equalizer.png")))
                 qFatal("Cannot save equalizer UI test screenshot");
