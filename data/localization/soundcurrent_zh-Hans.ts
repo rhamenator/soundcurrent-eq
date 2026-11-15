@@ -280,6 +280,10 @@ Do you want to delete it anyway?</source>
       <translation>已安装应用更新。请使用“退出”并重新打开以加载更新；关闭此窗口会让旧版本继续运行。</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>分析</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>分析采样率</translation>
     </message>
@@ -1803,6 +1807,10 @@ Do you want to delete it anyway?</source>
       <translation>测量</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>使用麦克风测量扬声器和房间如何改变声音，然后预览建议的播放 EQ 校正。</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>测量扬声器、房间和麦克风的响应</translation>
     </message>
@@ -2935,10 +2943,6 @@ Do you want to delete it anyway?</source>
       <translation>扬声器制造商</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>扬声器型号校正</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>扬声器型号配置</translation>
     </message>
@@ -2953,6 +2957,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Speaker type</source>
       <translation>扬声器类型</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>扬声器/功放型号校正</translation>
     </message>
     <message>
       <source>Spectrogram</source>

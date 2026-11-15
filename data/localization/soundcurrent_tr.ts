@@ -280,6 +280,10 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Bir uygulama güncellemesi yüklendi. Yüklemek için uygulamadan çıkıp yeniden açın; bu pencereyi kapatmak eski sürümü çalışır durumda bırakır.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Analiz</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Analiz örnekleme hızı</translation>
     </message>
@@ -1803,6 +1807,10 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Ölç</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Hoparlörlerinizin ve odanın sesi nasıl değiştirdiğini mikrofonla ölçün, ardından önerilen oynatma EQ düzeltmelerini önizleyin.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Hoparlör, oda ve mikrofon yanıtını ölç</translation>
     </message>
@@ -2935,10 +2943,6 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Hoparlör üreticisi</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Hoparlör modeli düzeltmesi</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Hoparlör modeli profili</translation>
     </message>
@@ -2953,6 +2957,10 @@ Yine de silmek istiyor musunuz?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Hoparlör türü</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Hoparlör/amfi model düzeltmesi</translation>
     </message>
     <message>
       <source>Spectrogram</source>

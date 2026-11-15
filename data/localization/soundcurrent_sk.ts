@@ -280,6 +280,10 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Bola nainštalovaná aktualizácia aplikácie. Použite Ukončiť a aplikáciu znovu otvorte, aby sa aktualizácia načítala; zatvorením tohto okna zostane stará verzia spustená.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Analýza</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Vzorkovacia frekvencia analýzy</translation>
     </message>
@@ -1803,6 +1807,10 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Zmerať</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Pomocou mikrofónu zmerajte, ako reproduktory a miestnosť menia zvuk, a zobrazte ukážku navrhovaných korekcií ekvalizéra prehrávania.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Zmerať odozvu reproduktorov, miestnosti a mikrofónu</translation>
     </message>
@@ -2935,10 +2943,6 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Výrobca reproduktora</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Korekcia modelu reproduktora</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Profil modelu reproduktora</translation>
     </message>
@@ -2953,6 +2957,10 @@ Chcete ho aj tak zmazať?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Typ reproduktora</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Korekcia modelu reproduktora/zosilňovača</translation>
     </message>
     <message>
       <source>Spectrogram</source>

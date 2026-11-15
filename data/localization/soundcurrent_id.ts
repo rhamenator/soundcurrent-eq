@@ -280,6 +280,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Pembaruan aplikasi telah diinstal. Gunakan Keluar lalu buka kembali untuk memuatnya; menutup jendela ini membuat versi lama tetap berjalan.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Analisis</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Laju sampel analisis</translation>
     </message>
@@ -1803,6 +1807,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Ukur</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Ukur dengan mikrofon bagaimana speaker dan ruangan mengubah suara, lalu pratinjau saran koreksi EQ pemutaran.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Ukur respons speaker, ruangan, dan mikrofon</translation>
     </message>
@@ -2935,10 +2943,6 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Produsen speaker</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Koreksi model speaker</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Profil model speaker</translation>
     </message>
@@ -2953,6 +2957,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Jenis speaker</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Koreksi model speaker/amplifier</translation>
     </message>
     <message>
       <source>Spectrogram</source>

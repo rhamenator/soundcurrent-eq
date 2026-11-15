@@ -280,6 +280,10 @@ Deseja excluí-lo mesmo assim?</translation>
       <translation>Foi instalada uma atualização do aplicativo. Use Sair e abra-o novamente para carregá-la; fechar esta janela mantém a versão anterior em execução.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Análise</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Taxa de amostragem da análise</translation>
     </message>
@@ -1803,6 +1807,10 @@ Deseja excluí-lo mesmo assim?</translation>
       <translation>Medir</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Meça com um microfone como as caixas de som e a sala alteram o som e visualize as correções de EQ de reprodução sugeridas.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Medir a resposta de alto-falantes, sala e microfone</translation>
     </message>
@@ -2935,10 +2943,6 @@ Deseja excluí-lo mesmo assim?</translation>
       <translation>Fabricante do alto-falante</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Correção do modelo de alto-falante</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Perfil do modelo de alto-falante</translation>
     </message>
@@ -2953,6 +2957,10 @@ Deseja excluí-lo mesmo assim?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Tipo de alto-falante</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Correção do modelo de caixa de som/amplificador</translation>
     </message>
     <message>
       <source>Spectrogram</source>

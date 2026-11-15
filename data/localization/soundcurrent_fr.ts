@@ -280,6 +280,10 @@ Voulez-vous quand même le supprimer ?</translation>
       <translation>Une mise à jour de l’application a été installée. Quittez puis relancez l’application pour la charger ; fermer cette fenêtre laisse l’ancienne version en cours d’exécution.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Analyse</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Fréquence d’échantillonnage d’analyse</translation>
     </message>
@@ -1803,6 +1807,10 @@ Voulez-vous quand même le supprimer ?</translation>
       <translation>Mesurer</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Mesurez avec un microphone comment vos enceintes et la pièce modifient le son, puis prévisualisez les corrections d’égaliseur de lecture suggérées.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Mesurer la réponse des enceintes, de la pièce et du microphone</translation>
     </message>
@@ -2935,10 +2943,6 @@ Voulez-vous quand même le supprimer ?</translation>
       <translation>Fabricant d’enceintes</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Correction du modèle d’enceinte</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Profil du modèle d’enceinte</translation>
     </message>
@@ -2953,6 +2957,10 @@ Voulez-vous quand même le supprimer ?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Type d’enceinte</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Correction du modèle d’enceinte/amplificateur</translation>
     </message>
     <message>
       <source>Spectrogram</source>

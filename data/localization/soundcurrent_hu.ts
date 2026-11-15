@@ -280,6 +280,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Alkalmazásfrissítés lett telepítve. Betöltéséhez válassza a Kilépés lehetőséget, majd nyissa meg újra; az ablak bezárása futva hagyja a régi verziót.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Elemzés</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Elemzés mintavételi frekvenciája</translation>
     </message>
@@ -1803,6 +1807,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Mérés</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Mikrofonnal mérje meg, hogyan változtatja meg a hangot a hangfal és a helyiség, majd tekintse meg a javasolt lejátszási EQ-korrekciók előnézetét.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Hangsugárzó, szoba és mikrofon frekvenciamenetének mérése</translation>
     </message>
@@ -2935,10 +2943,6 @@ Mindenképp törölni szeretné?</translation>
       <translation>Hangsugárzó gyártója</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Hangsugárzómodell korrekciója</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Hangsugárzómodell profilja</translation>
     </message>
@@ -2953,6 +2957,10 @@ Mindenképp törölni szeretné?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Hangsugárzó típusa</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Hangfal-/erősítőmodell korrekciója</translation>
     </message>
     <message>
       <source>Spectrogram</source>

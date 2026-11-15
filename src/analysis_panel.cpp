@@ -270,7 +270,7 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     connect(resetButton,&QPushButton::clicked,this,&Panel::reset);
     connect(reference_,&QPushButton::clicked,this,[this]{captureReference();});
     connect(profile_,&QPushButton::clicked,this,[this]{if(auto p=microphoneProfile()){suspendForDialog(true);if(onProfile)onProfile(*p);suspendForDialog(false);}else QMessageBox::information(this,SC_TR("Microphone response"),SC_TR("Not enough broadband reference data."));});
-    setView(View(std::clamp(QSettings().value("analysis/view",saved?saved->view:0).toInt(),0,6)));canvas_->setAccessibleName(view_->currentText());availability();
+    setView(View(std::clamp(QSettings().value("analysis/view",saved?saved->view:1).toInt(),0,6)));canvas_->setAccessibleName(view_->currentText());availability();
 }
 Panel::~Panel(){canvas_->onVisibility={};canvas_->onFrame={};onActivity={};}
 bool Panel::active() const{return (source().isEmpty() || soundcurrent::microphone::allowed()) && canvas_->isVisible() && sourceReady_ && !captureFailed_ && !suspended_;}

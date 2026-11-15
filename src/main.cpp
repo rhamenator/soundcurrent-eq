@@ -2173,7 +2173,7 @@ public:
         connect(driverSetup, &QPushButton::clicked, this, [launch] { launch(true); });
         connect(cableSettings, &QPushButton::clicked, this, [launch] { launch(false); });
 #endif
-        auto *speakerBox = new QGroupBox(SC_TR("Speaker model correction"));
+        auto *speakerBox = new QGroupBox(SC_TR("Speaker/amplifier model correction"));
         auto *speakerLayout = new QVBoxLayout(speakerBox);
         auto *speakerRow = new QHBoxLayout;
         speakerCombo_ = new PresetComboBox;
@@ -2348,6 +2348,7 @@ public:
 
         soundcurrent::ui::settingsSection(settingsRoot, inputBox, this, "microphoneSetup");
         auto *calibrationBox = new QGroupBox(SC_TR("Speaker && room calibration"));
+        calibrationBox->setToolTip(SC_TR("Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections."));
         auto *calibrationLayout = new QVBoxLayout(calibrationBox);
         auto *calibrationRow = new QGridLayout;
         calibrationRow->addWidget(new QLabel(SC_TR("Speaker + room check")), 0, 0);
@@ -2384,7 +2385,7 @@ public:
         settingsRoot->addStretch();
         analysis_ = new soundcurrent::analysis::Panel;
         auto *analysisScroll=new QScrollArea;analysisScroll->setWidgetResizable(true);analysisScroll->setWidget(analysis_);
-        tabs_->addTab(analysisScroll, SC_TR("Spectrogram"));
+        tabs_->addTab(analysisScroll, SC_TR("Analysis"));
         analysisCapture_ = new soundcurrent::analysis::Capture(this);
         analysis_->microphoneSources = [] {
             QVector<QPair<QString,QString>> result;
@@ -2867,8 +2868,8 @@ public:
     }
     void selfTestAnalysisIdle() {
         int analysisPage=-1;for(int i=0;i<tabs_->count();++i)if(tabs_->widget(i)->isAncestorOf(analysis_)){analysisPage=i;break;}if(analysisPage<0)qFatal("Spectrogram page is missing");
-        const int page=tabs_->currentIndex();tabs_->setCurrentIndex(analysisPage);QCoreApplication::processEvents();auto *canvas=findChild<QWidget *>("analysisCanvas");if(!canvas)qFatal("Analysis canvas is missing");
-        const int before=canvas->property("idleFrames").toInt();QElapsedTimer wait;wait.start();while(wait.elapsed()<220){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}if(canvas->property("idleFrames").toInt()<=before)qFatal("Selected spectrogram stopped while playback was silent");tabs_->setCurrentIndex(page);QCoreApplication::processEvents();
+        const int page=tabs_->currentIndex();tabs_->setCurrentIndex(analysisPage);QCoreApplication::processEvents();auto *viewBox=findChild<QComboBox *>("analysisView");const int savedView=viewBox?viewBox->currentIndex():0;if(viewBox)viewBox->setCurrentIndex(0);QCoreApplication::processEvents();auto *canvas=findChild<QWidget *>("analysisCanvas");if(!canvas)qFatal("Analysis canvas is missing");
+        const int before=canvas->property("idleFrames").toInt();QElapsedTimer wait;wait.start();while(wait.elapsed()<220){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}if(canvas->property("idleFrames").toInt()<=before)qFatal("Selected spectrogram stopped while playback was silent");if(viewBox)viewBox->setCurrentIndex(savedView);tabs_->setCurrentIndex(page);QCoreApplication::processEvents();
     }
     void selfTestQuitVisibility() const {
         const auto *quit=findChild<QPushButton*>("persistentQuit");

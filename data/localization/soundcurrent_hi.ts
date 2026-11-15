@@ -280,6 +280,10 @@ Do you want to delete it anyway?</source>
       <translation>ऐप अपडेट इंस्टॉल हो गया है। उसे लोड करने के लिए ऐप से बाहर निकलें और दोबारा खोलें; केवल यह विंडो बंद करने से पुराना संस्करण चलता रहता है।</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>विश्लेषण</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>विश्लेषण सैंपल दर</translation>
     </message>
@@ -1803,6 +1807,10 @@ Do you want to delete it anyway?</source>
       <translation>मापें</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>माइक्रोफ़ोन से मापें कि आपके स्पीकर और कमरा ध्वनि को कैसे बदलते हैं, फिर सुझाए गए प्लेबैक EQ सुधारों का पूर्वावलोकन देखें।</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>स्पीकर, कमरे और माइक्रोफ़ोन की प्रतिक्रिया मापें</translation>
     </message>
@@ -2935,10 +2943,6 @@ Do you want to delete it anyway?</source>
       <translation>स्पीकर निर्माता</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>स्पीकर मॉडल सुधार</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>स्पीकर मॉडल प्रोफ़ाइल</translation>
     </message>
@@ -2953,6 +2957,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Speaker type</source>
       <translation>स्पीकर प्रकार</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>स्पीकर/एम्पलीफ़ायर मॉडल सुधार</translation>
     </message>
     <message>
       <source>Spectrogram</source>

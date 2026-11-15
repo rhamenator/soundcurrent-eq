@@ -280,6 +280,10 @@ Vill du ta bort den ändå?</translation>
       <translation>En appuppdatering har installerats. Använd Avsluta och öppna appen igen för att läsa in den; om du stänger detta fönster fortsätter den gamla versionen att köras.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Analys</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Samplingsfrekvens för analys</translation>
     </message>
@@ -1803,6 +1807,10 @@ Vill du ta bort den ändå?</translation>
       <translation>Mät</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Mät med en mikrofon hur högtalarna och rummet förändrar ljudet och förhandsgranska föreslagna EQ-korrigeringar för uppspelning.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Mät högtalarnas, rummets och mikrofonens frekvensgång</translation>
     </message>
@@ -2935,10 +2943,6 @@ Vill du ta bort den ändå?</translation>
       <translation>Högtalartillverkare</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Korrigering för högtalarmodell</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Profil för högtalarmodell</translation>
     </message>
@@ -2953,6 +2957,10 @@ Vill du ta bort den ändå?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Högtalartyp</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Modellkorrigering för högtalare/förstärkare</translation>
     </message>
     <message>
       <source>Spectrogram</source>

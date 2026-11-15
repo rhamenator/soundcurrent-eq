@@ -14,7 +14,7 @@
 namespace soundcurrent::analysis {
 enum class View { Waterfall, Spectrum, Waveform, Tuner, Vectorscope, Average, Microphone };
 struct Settings {
-    int view=0, rate=48000, fft=4096, palette=0, scale=1, layout=0, channel=0, amplitude=0, instrument=0;
+    int view=1, rate=48000, fft=4096, palette=0, scale=1, layout=0, channel=0, amplitude=0, instrument=0;
     double low=20, high=20000, sensitivity=90, history=15, speed=1, ceiling=0;
     bool grid=true, peaks=false, average=false, autoRange=true, notes=false, transients=false, music=false;
     double upper() const { return high==0?std::min(rate,48000)/2.:high; }
