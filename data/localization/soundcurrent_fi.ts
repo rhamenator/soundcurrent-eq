@@ -280,6 +280,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Sovelluspäivitys on asennettu. Ota se käyttöön valitsemalla Lopeta ja avaamalla sovellus uudelleen; tämän ikkunan sulkeminen jättää vanhan version käyntiin.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Analyysi</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Analyysin näytteenottotaajuus</translation>
     </message>
@@ -1803,6 +1807,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Mittaa</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Mittaa mikrofonilla, miten kaiuttimet ja huone muuttavat ääntä, ja esikatsele ehdotetut toiston EQ-korjaukset.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Mittaa kaiuttimen, huoneen ja mikrofonin taajuusvaste</translation>
     </message>
@@ -2935,10 +2943,6 @@ Haluatko silti poistaa sen?</translation>
       <translation>Kaiutinvalmistaja</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Kaiutinmallin korjaus</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Kaiutinmallin profiili</translation>
     </message>
@@ -2953,6 +2957,10 @@ Haluatko silti poistaa sen?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Kaiutintyyppi</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Kaiuttimen/vahvistimen mallikorjaus</translation>
     </message>
     <message>
       <source>Spectrogram</source>

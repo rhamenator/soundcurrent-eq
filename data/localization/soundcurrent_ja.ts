@@ -280,6 +280,10 @@ Do you want to delete it anyway?</source>
       <translation>アプリの更新がインストールされました。「終了」を選択してから開き直すと更新が反映されます。このウィンドウを閉じるだけでは、古いバージョンが動作し続けます。</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>分析</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>解析サンプルレート</translation>
     </message>
@@ -1803,6 +1807,10 @@ Do you want to delete it anyway?</source>
       <translation>測定</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>マイクを使ってスピーカーと部屋が音をどう変えるかを測定し、提案された再生EQの補正をプレビューします。</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>スピーカー、部屋、マイクの周波数特性を測定</translation>
     </message>
@@ -2935,10 +2943,6 @@ Do you want to delete it anyway?</source>
       <translation>スピーカーのメーカー</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>スピーカーモデルの補正</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>スピーカーモデルのプロファイル</translation>
     </message>
@@ -2953,6 +2957,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Speaker type</source>
       <translation>スピーカーの種類</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>スピーカー/アンプのモデル補正</translation>
     </message>
     <message>
       <source>Spectrogram</source>

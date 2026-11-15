@@ -280,6 +280,10 @@ Do you want to delete it anyway?</source>
       <translation>Установлено оновлення програми. Скористайтеся командою виходу та відкрийте програму знову, щоб завантажити його; закриття цього вікна залишає попередню версію запущеною.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Аналіз</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Частота дискретизації аналізу</translation>
     </message>
@@ -1803,6 +1807,10 @@ Do you want to delete it anyway?</source>
       <translation>Виміряти</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Виміряйте мікрофоном, як колонки та приміщення змінюють звук, і перегляньте запропоновані поправки еквалайзера відтворення.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Виміряти характеристику акустичних систем, приміщення та мікрофона</translation>
     </message>
@@ -2935,10 +2943,6 @@ Do you want to delete it anyway?</source>
       <translation>Виробник акустичної системи</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Корекція моделі акустичної системи</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Профіль моделі акустичної системи</translation>
     </message>
@@ -2953,6 +2957,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Speaker type</source>
       <translation>Тип акустичної системи</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Корекція моделі колонок/підсилювача</translation>
     </message>
     <message>
       <source>Spectrogram</source>

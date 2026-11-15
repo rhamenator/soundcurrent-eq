@@ -280,6 +280,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Bản cập nhật ứng dụng đã được cài đặt. Chọn Thoát rồi mở lại để tải bản mới; chỉ đóng cửa sổ này thì phiên bản cũ vẫn chạy.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Phân tích</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Tần số lấy mẫu phân tích</translation>
     </message>
@@ -1803,6 +1807,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Đo</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Dùng micro đo cách loa và căn phòng làm thay đổi âm thanh, rồi xem trước các hiệu chỉnh EQ phát lại được đề xuất.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Đo đáp tuyến loa, phòng và micrô</translation>
     </message>
@@ -2935,10 +2943,6 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Nhà sản xuất loa</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Hiệu chỉnh theo mẫu loa</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Cấu hình mẫu loa</translation>
     </message>
@@ -2953,6 +2957,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Loại loa</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Hiệu chỉnh theo kiểu loa/ampli</translation>
     </message>
     <message>
       <source>Spectrogram</source>

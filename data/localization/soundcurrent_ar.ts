@@ -280,6 +280,10 @@ Do you want to delete it anyway?</source>
       <translation>تم تثبيت تحديث للتطبيق. استخدم إنهاء ثم أعد فتحه لتحميل التحديث؛ إغلاق هذه النافذة يبقي الإصدار القديم قيد التشغيل.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>التحليل</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>معدل أخذ عينات التحليل</translation>
     </message>
@@ -1803,6 +1807,10 @@ Do you want to delete it anyway?</source>
       <translation>قياس</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>قِس باستخدام ميكروفون كيف تغيّر مكبرات الصوت والغرفة الصوت، ثم عاين تصحيحات معادل التشغيل المقترحة.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>قياس استجابة مكبر الصوت والغرفة والميكروفون</translation>
     </message>
@@ -2935,10 +2943,6 @@ Do you want to delete it anyway?</source>
       <translation>الشركة المصنعة لمكبر الصوت</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>تصحيح طراز مكبر الصوت</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>ملف تعريف طراز مكبر الصوت</translation>
     </message>
@@ -2953,6 +2957,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Speaker type</source>
       <translation>نوع مكبر الصوت</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>تصحيح طراز مكبر الصوت/المضخم</translation>
     </message>
     <message>
       <source>Spectrogram</source>

@@ -280,6 +280,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Ein Anwendungsupdate wurde installiert. Beenden Sie die App und öffnen Sie sie erneut, um das Update zu laden. Beim Schließen dieses Fensters läuft die alte Version weiter.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Analyse</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Analyse-Abtastrate</translation>
     </message>
@@ -1803,6 +1807,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Messen</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Messen Sie mit einem Mikrofon, wie Lautsprecher und Raum den Klang verändern, und sehen Sie eine Vorschau der vorgeschlagenen Wiedergabe-EQ-Korrekturen.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Frequenzgang von Lautsprechern, Raum und Mikrofon messen</translation>
     </message>
@@ -2935,10 +2943,6 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Lautsprecherhersteller</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Lautsprechermodellkorrektur</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Profil des Lautsprechermodells</translation>
     </message>
@@ -2953,6 +2957,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Lautsprechertyp</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Modellkorrektur für Lautsprecher/Verstärker</translation>
     </message>
     <message>
       <source>Spectrogram</source>

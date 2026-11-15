@@ -280,6 +280,10 @@ Pretende eliminá-lo mesmo assim?</translation>
       <translation>Foi instalada uma atualização da aplicação. Use Sair e volte a abri-la para a carregar; fechar esta janela mantém a versão anterior em execução.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Análise</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Taxa de amostragem da análise</translation>
     </message>
@@ -1803,6 +1807,10 @@ Pretende eliminá-lo mesmo assim?</translation>
       <translation>Medir</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Meça com um microfone como as colunas e a sala alteram o som e pré-visualize as correções de EQ de reprodução sugeridas.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Medir a resposta de colunas, sala e microfone</translation>
     </message>
@@ -2935,10 +2943,6 @@ Pretende eliminá-lo mesmo assim?</translation>
       <translation>Fabricante da coluna</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Correção do modelo de coluna</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Perfil do modelo de coluna</translation>
     </message>
@@ -2953,6 +2957,10 @@ Pretende eliminá-lo mesmo assim?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Tipo de coluna</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Correção do modelo de coluna/amplificador</translation>
     </message>
     <message>
       <source>Spectrogram</source>

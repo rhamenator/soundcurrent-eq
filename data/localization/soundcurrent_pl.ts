@@ -280,6 +280,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Zainstalowano aktualizację aplikacji. Wybierz Zakończ i otwórz aplikację ponownie, aby ją wczytać; zamknięcie tego okna pozostawia starą wersję uruchomioną.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Analiza</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Częstotliwość próbkowania analizy</translation>
     </message>
@@ -1803,6 +1807,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Zmierz</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Zmierz mikrofonem, jak głośniki i pomieszczenie zmieniają dźwięk, a następnie wyświetl podgląd sugerowanych korekt EQ odtwarzania.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Zmierz odpowiedź głośników, pomieszczenia i mikrofonu</translation>
     </message>
@@ -2935,10 +2943,6 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Producent głośnika</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Korekcja modelu głośnika</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Profil modelu głośnika</translation>
     </message>
@@ -2953,6 +2957,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Typ głośnika</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Korekcja modelu głośnika/wzmacniacza</translation>
     </message>
     <message>
       <source>Spectrogram</source>

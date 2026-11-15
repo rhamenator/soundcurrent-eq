@@ -280,6 +280,10 @@ Do you want to delete it anyway?</translation>
       <translation>An application update was installed. Use Quit and reopen to load it; closing this window keeps the old version running.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Analysis</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Analysis sample rate</translation>
     </message>
@@ -1803,6 +1807,10 @@ Do you want to delete it anyway?</translation>
       <translation>Measure</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Measure speaker room and microphone response</translation>
     </message>
@@ -2935,10 +2943,6 @@ Do you want to delete it anyway?</translation>
       <translation>Speaker manufacturer</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Speaker model correction</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Speaker model profile</translation>
     </message>
@@ -2953,6 +2957,10 @@ Do you want to delete it anyway?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Speaker type</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Speaker/amplifier model correction</translation>
     </message>
     <message>
       <source>Spectrogram</source>

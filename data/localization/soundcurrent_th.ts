@@ -280,6 +280,10 @@ Do you want to delete it anyway?</source>
       <translation>ติดตั้งอัปเดตแอปแล้ว ใช้ ออกจากแอป แล้วเปิดใหม่เพื่อโหลดอัปเดต การปิดหน้าต่างนี้จะทำให้เวอร์ชันเก่ายังคงทำงานอยู่</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>การวิเคราะห์</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>อัตราสุ่มตัวอย่างการวิเคราะห์</translation>
     </message>
@@ -1803,6 +1807,10 @@ Do you want to delete it anyway?</source>
       <translation>วัด</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>วัดด้วยไมโครโฟนว่าลำโพงและห้องเปลี่ยนเสียงอย่างไร แล้วดูตัวอย่างการแก้ไข EQ การเล่นที่แนะนำ</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>วัดการตอบสนองของลำโพง ห้อง และไมโครโฟน</translation>
     </message>
@@ -2935,10 +2943,6 @@ Do you want to delete it anyway?</source>
       <translation>ผู้ผลิตลำโพง</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>การชดเชยรุ่นลำโพง</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>โปรไฟล์รุ่นลำโพง</translation>
     </message>
@@ -2953,6 +2957,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Speaker type</source>
       <translation>ประเภทลำโพง</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>การแก้ไขตามรุ่นลำโพง/แอมป์</translation>
     </message>
     <message>
       <source>Spectrogram</source>

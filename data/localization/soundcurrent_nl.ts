@@ -280,6 +280,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Er is een app-update geïnstalleerd. Gebruik Afsluiten en open de app opnieuw om deze te laden; bij het sluiten van dit venster blijft de oude versie actief.</translation>
     </message>
     <message>
+      <source>Analysis</source>
+      <translation>Analyse</translation>
+    </message>
+    <message>
       <source>Analysis sample rate</source>
       <translation>Samplefrequentie voor analyse</translation>
     </message>
@@ -1803,6 +1807,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Meten</translation>
     </message>
     <message>
+      <source>Measure how your speakers and room change the sound with a microphone, then preview suggested playback EQ corrections.</source>
+      <translation>Meet met een microfoon hoe uw luidsprekers en de ruimte het geluid veranderen en bekijk een voorbeeld van de voorgestelde EQ-correcties voor weergave.</translation>
+    </message>
+    <message>
       <source>Measure speaker room and microphone response</source>
       <translation>Respons van luidsprekers, kamer en microfoon meten</translation>
     </message>
@@ -2935,10 +2943,6 @@ Wilt u het toch verwijderen?</translation>
       <translation>Luidsprekerfabrikant</translation>
     </message>
     <message>
-      <source>Speaker model correction</source>
-      <translation>Luidsprekermodelcorrectie</translation>
-    </message>
-    <message>
       <source>Speaker model profile</source>
       <translation>Luidsprekermodelprofiel</translation>
     </message>
@@ -2953,6 +2957,10 @@ Wilt u het toch verwijderen?</translation>
     <message>
       <source>Speaker type</source>
       <translation>Luidsprekertype</translation>
+    </message>
+    <message>
+      <source>Speaker/amplifier model correction</source>
+      <translation>Modelcorrectie voor luidspreker/versterker</translation>
     </message>
     <message>
       <source>Spectrogram</source>
