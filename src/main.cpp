@@ -2868,8 +2868,8 @@ public:
     }
     void selfTestAnalysisIdle() {
         int analysisPage=-1;for(int i=0;i<tabs_->count();++i)if(tabs_->widget(i)->isAncestorOf(analysis_)){analysisPage=i;break;}if(analysisPage<0)qFatal("Spectrogram page is missing");
-        const int page=tabs_->currentIndex();tabs_->setCurrentIndex(analysisPage);QCoreApplication::processEvents();auto *canvas=findChild<QWidget *>("analysisCanvas");if(!canvas)qFatal("Analysis canvas is missing");
-        const int before=canvas->property("idleFrames").toInt();QElapsedTimer wait;wait.start();while(wait.elapsed()<220){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}if(canvas->property("idleFrames").toInt()<=before)qFatal("Selected spectrogram stopped while playback was silent");tabs_->setCurrentIndex(page);QCoreApplication::processEvents();
+        const int page=tabs_->currentIndex();tabs_->setCurrentIndex(analysisPage);QCoreApplication::processEvents();auto *viewBox=findChild<QComboBox *>("analysisView");const int savedView=viewBox?viewBox->currentIndex():0;if(viewBox)viewBox->setCurrentIndex(0);QCoreApplication::processEvents();auto *canvas=findChild<QWidget *>("analysisCanvas");if(!canvas)qFatal("Analysis canvas is missing");
+        const int before=canvas->property("idleFrames").toInt();QElapsedTimer wait;wait.start();while(wait.elapsed()<220){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}if(canvas->property("idleFrames").toInt()<=before)qFatal("Selected spectrogram stopped while playback was silent");if(viewBox)viewBox->setCurrentIndex(savedView);tabs_->setCurrentIndex(page);QCoreApplication::processEvents();
     }
     void selfTestQuitVisibility() const {
         const auto *quit=findChild<QPushButton*>("persistentQuit");
