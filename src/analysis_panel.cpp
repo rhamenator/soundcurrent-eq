@@ -69,7 +69,7 @@ public:
     QSize historyPixelSize() const {return {image.width,image.height};}
     void clearImage(){image={};ensureImageSize();previousColumn.clear();credit=0;heldColumns_=0;sinceFrame_.invalidate();latest_.clear();clock.invalidate();carryMs_=0;update();}
     bool advanceIdle() {
-        if(!isVisible()||frozen||mode!=View::Waterfall)return false;
+        if(!isVisible()||frozen||(mode!=View::Waterfall&&mode!=View::Waveform))return false;
         const double interval=paceMs(60.);
         if(clock.isValid()&&sinceLastMs()+kTickSlackMs<interval)return false; // slack: a 16 ms tick must not alias against a ~17 ms interval
         // Jitter buffer: the spectrogram is rendered kDelaySamples behind the newest audio and the render position
@@ -78,6 +78,7 @@ public:
             const int trim=kDelaySamples-int(sinceArrival_.elapsed()*48);
             if(trim>=0&&render(latest_,trim)){setProperty("pumpFrames",property("pumpFrames").toInt()+1);return true;}
         }
+        if(mode==View::Waveform)return false; // the waveform has no scrolling history to bridge
         const double elapsed=clock.isValid()?sinceLastMs()/1000.:interval/1000.;clock.restart();carryMs_=0;ensureImageSize();
         const auto &s=data->settings;credit+=elapsed*image.width*s.speed/s.history;const int columns=std::min(image.width,int(credit));credit-=columns;
         if(columns<=0)return false;
@@ -90,10 +91,10 @@ public:
         setProperty("idleFrames",property("idleFrames").toInt()+1);setProperty("idleHeldColumns",heldColumns_);if(onFrame)onFrame();update();return true;
     }
     // Audio arrival only refills the buffer. The Spectrogram is then paced and rendered by the display timer
-    // (advanceIdle); the other views render immediately as before.
+    // (advanceIdle); the Waveform uses the same jitter buffer so its trace scrolls evenly; the other views render immediately.
     bool push(const QByteArray &pcm) {
         latest_=pcm;sinceArrival_.restart();
-        if(mode==View::Waterfall)return false;
+        if(mode==View::Waterfall||mode==View::Waveform)return false;
         return render(pcm,0);
     }
     bool render(const QByteArray &source,int trimSamples) {
