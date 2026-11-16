@@ -203,7 +203,8 @@ Section "SoundCurrent EQ" main
     ${EndIf}
   ${EndIf}
   ; Optional: hand VB-CABLE removal to VB-Audio's own signed remover (same flow as
-  ; the VB-CABLE installer's uninstall). Skipped for silent installs.
+  ; the VB-CABLE installer's uninstall). Skipped for silent installs. Not -Quiet: the user ticked
+  ; the box, so its notices (kept because the other app is installed, restart needed) must show.
   ${If} $RemoveCable == ${BST_CHECKED}
     SetOutPath "$INSTDIR\vb-cable-removal"
     File "/oname=cable-setup.ps1" "${SOURCE_ROOT}\packaging\windows\cable-setup.ps1"
@@ -211,7 +212,7 @@ Section "SoundCurrent EQ" main
     File "/oname=soundcurrent-cable-setup-guard.exe" "${DLL_DIR}\soundcurrent-cable-setup-guard.exe"
     File "/oname=VBCABLE_Driver_Pack45.zip" "${CABLE_ZIP}"
     File "/oname=VB-CABLE-NOTICE.txt" "${SOURCE_ROOT}\packaging\windows\VB-CABLE-NOTICE.txt"
-    nsExec::ExecToStack '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy RemoteSigned -File "$INSTDIR\vb-cable-removal\cable-setup.ps1" -Remove -SilentRemoval -Quiet'
+    nsExec::ExecToStack '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy RemoteSigned -File "$INSTDIR\vb-cable-removal\cable-setup.ps1" -Remove -SilentRemoval'
     Pop $0
     Pop $1
     DetailPrint $1
