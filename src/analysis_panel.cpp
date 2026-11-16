@@ -37,6 +37,7 @@
 #include <QTimer>
 #include <QVBoxLayout>
 #include <algorithm>
+#include <deque>
 #include <cmath>
 #include <cstring>
 #include <limits>
@@ -67,19 +68,51 @@ public:
     // fighting the audio threads; an idle one gets a smooth display.
     double paceMs(double slowest) const {return std::clamp(3.*(computeMs_+paintMs_),16.,std::max(16.,slowest));}
     QSize historyPixelSize() const {return {image.width,image.height};}
-    void clearImage(){image={};ensureImageSize();credit=0;started_=false;silenceClock_.invalidate();sinceFrame_.invalidate();latest_.clear();clock.invalidate();carryMs_=0;update();}
+    void clearImage(){image={};ensureImageSize();credit=0;started_=false;waveCols_.clear();waveCap_=0;silenceClock_.invalidate();sinceFrame_.invalidate();latest_.clear();clock.invalidate();carryMs_=0;update();}
     bool advanceIdle() {
         if(!isVisible()||frozen||(mode!=View::Waterfall&&mode!=View::Waveform))return false;
         if(mode==View::Waterfall)return advanceWaterfall();
-        // Waveform: jitter buffer. The window ends kDelaySamples behind the newest audio and advances with the wall clock between arrivals, so a late chunk does not shift the trace.
-        const double interval=paceMs(60.);
-        if(clock.isValid()&&sinceLastMs()+kTickSlackMs<interval)return false; // slack: a 16 ms tick must not alias against a ~17 ms interval
-        if(!latest_.isEmpty()&&sinceArrival_.isValid()&&sinceArrival_.elapsed()<kStallMs){
-            const int trim=kDelaySamples-int(sinceArrival_.elapsed()*48);
-            if(trim>=0&&render(latest_,trim)){setProperty("pumpFrames",property("pumpFrames").toInt()+1);return true;}
-        }
-        return false;
+        return advanceWave();
     }
+    // Scrolling waveform on the SAMPLE clock, like the spectrogram: each pixel column is the min/max envelope of the audio between two exact sample positions (history/width seconds apart); late frames catch up by computing the missing columns. Painting is a handful of vertical lines, so it costs almost nothing.
+    bool advanceWave() {
+        const auto &s=data->settings;
+        const int cap=std::clamp(int(plotRect().width()),1,1280);
+        if(cap!=waveCap_){waveCap_=cap;waveCols_.clear();started_=false;}
+        const double columnsPerSecond=cap*s.speed/s.history;setProperty("columnsPerSecond",columnsPerSecond);
+        const bool live=!latest_.isEmpty()&&sinceArrival_.isValid()&&sinceArrival_.elapsed()<kStallMs;
+        if(!live){
+            if(started_){started_=false;silenceClock_.restart();credit=kStallMs/1000.*columnsPerSecond;}
+            if(!silenceClock_.isValid())silenceClock_.restart();
+            credit+=silenceClock_.nsecsElapsed()/1e9*columnsPerSecond;silenceClock_.restart();
+            const int columns=std::min(cap,int(credit));credit-=columns;
+            if(columns<=0)return false;
+            for(int i=0;i<columns;++i)pushWaveColumn(WaveColumn{});
+            setProperty("idleFrames",property("idleFrames").toInt()+1);update();return true;
+        }
+        silenceClock_.invalidate();
+        const double step=48000./columnsPerSecond;
+        const qint64 frames=latest_.size()/4;
+        if(!started_){started_=true;nextEnd_=double(latestEnd_);}
+        QElapsedTimer budget;budget.start();bool drew=false;
+        while(nextEnd_<=double(latestEnd_)&&budget.elapsed()<8){
+            const qint64 end=frames-(latestEnd_-qint64(nextEnd_)),begin=end-qint64(std::max(1.,step));
+            if(begin<0){nextEnd_=double(latestEnd_);break;} // no longer buffered (far behind): jump to now
+            WaveColumn column;const auto *pcm=reinterpret_cast<const int16_t *>(latest_.constData());
+            for(int c=0;c<3;++c){column.lo[c]=1.f;column.hi[c]=-1.f;}
+            for(qint64 i=begin;i<end;++i){
+                const float l=pcm[2*i]/32768.f,r=pcm[2*i+1]/32768.f,m=.5f*(l+r),v[3]={l,r,m};
+                for(int c=0;c<3;++c){column.lo[c]=std::min(column.lo[c],v[c]);column.hi[c]=std::max(column.hi[c],v[c]);}
+            }
+            pushWaveColumn(column);setProperty("columns",property("columns").toInt()+1);
+            nextEnd_+=step;drew=true;
+        }
+        if(nextEnd_+48000.<double(latestEnd_))nextEnd_=double(latestEnd_)-step; // hopelessly behind: resume from now
+        if(!drew)return false;
+        setProperty("pumpFrames",property("pumpFrames").toInt()+1);update();return true;
+    }
+    struct WaveColumn{float lo[3]={0,0,0},hi[3]={0,0,0};}; // 0 = left, 1 = right, 2 = mix
+    void pushWaveColumn(const WaveColumn &column){waveCols_.push_back(column);while(int(waveCols_.size())>std::max(1,waveCap_))waveCols_.pop_front();}
     // Spectrogram on the SAMPLE clock: every pixel column is the FFT of the window that ends at an exact audio sample, columns are exactly history/width seconds apart, and a late frame is caught up by computing the missing columns (never blended or stretched). The picture therefore depends only on the audio, not on display timing. Real silence (no audio arriving) scrolls black in real time.
     bool advanceWaterfall() {
         ensureImageSize();
@@ -173,7 +206,7 @@ protected:
         const auto plot=plotRect();if(!plot.contains(event->position()))return;
         const double ratio=std::clamp((event->position().x()-plot.left())/plot.width(),0.,1.);
         const double vertical=(event->position().y()-plot.top())/plot.height();
-        if(mode==View::Waveform){setToolTip(QLocale().toString(ratio*data->settings.fft*1000./data->settings.rate,'f',2)+" ms / "+QLocale().toString((1-2*vertical)*waveLimit_,'f',3));return;}
+        if(mode==View::Waveform){setToolTip(QLocale().toString(-(1-ratio)*data->settings.history/data->settings.speed,'f',2)+" s / "+QLocale().toString((1-2*vertical)*waveLimit_,'f',3));return;}
         if(mode==View::Waterfall){const int lanes=data->settings.layout==2 && data->settings.channel==0?2:1;const double lanePosition=vertical*lanes-std::floor(vertical*lanes);setToolTip(QLocale().toString(-(1-ratio)*data->settings.history/data->settings.speed,'f',2)+" s / "+formatFrequency(frequency(1-lanePosition)));return;}
         if(mode==View::Vectorscope || mode==View::Tuner)return;
         const double hz=frequency(ratio),level=data->settings.amplitude && !relativeAxis_?axisTop_+20*std::log10(std::max(1e-12,1-vertical)):axisTop_-vertical*axisSpan_;
@@ -194,7 +227,14 @@ protected:
         }
         axisTop_=top;axisSpan_=span;relativeAxis_=comparison;
         waveLimit_=std::pow(10.,s.ceiling/20.);
-        if(s.autoRange && (mode==View::Waveform || mode==View::Vectorscope)){
+        if(s.autoRange && mode==View::Waveform){
+            // Quantized to half-octave steps with hysteresis, so the vertical scale changes rarely instead of flickering with every window.
+            const int channel=s.layout==1?(s.channel==1?0:s.channel==2?1:2):-1;double extent=0;
+            for(const auto &column:waveCols_)for(int c=0;c<3;++c)if(channel<0?c<2:c==channel)extent=std::max({extent,double(std::abs(column.lo[c])),double(std::abs(column.hi[c]))});
+            const double target=std::pow(2.,std::ceil(std::log2(std::max(.001,extent*1.1))*2)/2);
+            if(target>waveLimit_||target<waveLimit_/1.5)waveLimitHeld_=target;
+            waveLimit_=waveLimitHeld_;
+        } else if(s.autoRange && mode==View::Vectorscope){
             double extent=0;for(double value:data->left)extent=std::max(extent,std::abs(value));for(double value:data->right)extent=std::max(extent,std::abs(value));waveLimit_=std::max(.001,extent*1.1);
         }
 
@@ -233,7 +273,7 @@ protected:
                 if(s.grid){p.setPen(QColor("#334155"));p.drawLine(QPointF(plot.left(),y),QPointF(plot.right(),y));p.setPen(QColor("#9bacc2"));}
                 if(mode==View::Waveform){
                     const double x=plot.left()+r*plot.width();
-                    p.drawText(QRectF(x-45,plot.bottom()+3,90,18),Qt::AlignCenter,displayNumber(1000.*s.fft/s.rate*r));
+                    p.drawText(QRectF(x-45,plot.bottom()+3,90,18),Qt::AlignCenter,displayNumber(-(1-r)*s.history/s.speed)+" s");
                     if(s.grid){p.setPen(QColor("#334155"));p.drawLine(QPointF(x,plot.top()),QPointF(x,plot.bottom()));p.setPen(QColor("#9bacc2"));}
                 }
             }
@@ -243,18 +283,19 @@ protected:
                 if(s.grid){p.setPen(QColor("#334155"));p.drawLine(QPointF(x,plot.top()),QPointF(x,plot.bottom()));}
             }
             p.setPen(QColor("#9bacc2"));
-            p.drawText(QRectF(plot.left(),plot.bottom()+20,plot.width(),18),Qt::AlignCenter,mode==View::Waveform?"ms":"");
+            p.drawText(QRectF(plot.left(),plot.bottom()+20,plot.width(),18),Qt::AlignCenter,QString());
         }
         p.save();p.setClipRect(plot.adjusted(-1,-1,1,1));
         if(mode==View::Waveform) {
-            auto trace=[&](const std::vector<double> &values,const QColor &color){if(values.empty())return;QPainterPath path;
-                // Per-pixel extrema preserve narrow transients when many samples share a pixel.
-                for(int x=0;x<int(plot.width());++x){int first=x*values.size()/int(plot.width()),last=std::max(first+1,int((x+1)*values.size()/int(plot.width())));last=std::min(last,int(values.size()));
-                    auto limits=std::minmax_element(values.begin()+first,values.begin()+last);const double y1=plot.center().y()-*limits.first*plot.height()/(2*waveLimit_),y2=plot.center().y()-*limits.second*plot.height()/(2*waveLimit_);
-                    if(x==0)path.moveTo(plot.left()+x,y1);else path.lineTo(plot.left()+x,y1);path.lineTo(plot.left()+x,y2);}
-                p.setPen(QPen(color,1.3));p.drawPath(path);};
-            if(s.layout==1){std::vector<double> mono=data->left;for(std::size_t i=0;i<mono.size();++i)mono[i]=s.channel==1?data->left[i]:s.channel==2?data->right[i]:.5*(data->left[i]+data->right[i]);trace(mono,QColor("#55d7c3"));}
-            else {trace(data->left,QColor("#55d7c3"));trace(data->right,QColor("#e6b450"));}
+            // Envelope columns right-aligned on the plot; non-antialiased vertical lines (the old antialiased path cost ~430 ms per frame).
+            p.setRenderHint(QPainter::Antialiasing,false);
+            const int n=int(waveCols_.size());const double columnWidth=plot.width()/std::max(1,waveCap_),center=plot.center().y(),scale=plot.height()/(2*waveLimit_);
+            auto envelope=[&](int channel,const QColor &color){
+                p.setPen(QPen(color,std::max(1.,columnWidth),Qt::SolidLine,Qt::FlatCap));
+                for(int j=0;j<n;++j){const auto &column=waveCols_[std::size_t(j)];const double x=plot.right()-(n-1-j+.5)*columnWidth;
+                    const double y1=center-column.hi[channel]*scale,y2=center-column.lo[channel]*scale;p.drawLine(QPointF(x,y1),QPointF(x,std::max(y2,y1+1.)));}};
+            if(s.layout==1)envelope(s.channel==1?0:s.channel==2?1:2,QColor("#55d7c3"));
+            else {envelope(0,QColor("#55d7c3"));envelope(1,QColor("#e6b450"));}
         } else if(mode==View::Vectorscope){
             const double radius=std::min(plot.width(),plot.height())*.45;const QPointF c=plot.center();p.setPen(QColor("#475569"));p.drawEllipse(c,radius,radius);p.drawLine(QPointF(c.x()-radius,c.y()),QPointF(c.x()+radius,c.y()));p.drawLine(QPointF(c.x(),c.y()-radius),QPointF(c.x(),c.y()+radius));
             p.setPen(QPen(QColor("#55d7c3"),1));QPainterPath path;for(std::size_t i=0;i<data->left.size();++i){QPointF point(c.x()+(data->left[i]-data->right[i])*.5*radius/waveLimit_,c.y()-(data->left[i]+data->right[i])*.5*radius/waveLimit_);if(i==0)path.moveTo(point);else path.lineTo(point);}p.drawPath(path);
@@ -305,8 +346,8 @@ private:
     QByteArray latest_;qint64 latestEnd_=0;double nextEnd_=0;bool started_=false;QElapsedTimer sinceFrame_,sinceArrival_,silenceClock_;
     static constexpr qint64 kStallMs=250; // no audio for this long = silence: the spectrogram keeps scrolling (black) in real time
     static constexpr double kTickSlackMs=4.;
-    static constexpr int kDelaySamples=1920; // 40 ms at 48 kHz
-    double credit=0,axisTop_=0,axisSpan_=90,waveLimit_=1;
+    std::deque<WaveColumn> waveCols_;int waveCap_=0;
+    double credit=0,axisTop_=0,axisSpan_=90,waveLimit_=1,waveLimitHeld_=1;
     bool relativeAxis_=false;
     QRectF plotRect() const {const int margin=std::max(70,fontMetrics().horizontalAdvance(formatFrequency(999.999))+12);return QRectF(margin,18,std::max(1,width()-2*margin),std::max(1,height()-62));}
     std::vector<double> frequencyTicks(double pixels,double spacing) const {return frequencyAxisTicks(data->settings,pixels,spacing);}
