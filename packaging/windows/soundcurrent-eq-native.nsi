@@ -75,7 +75,7 @@ LangString SCNativeApproval ${LANG_ENGLISH} "Windows will request administrator 
 LangString SCSharedDriverNotice ${LANG_ENGLISH} "Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it."
 LangString SCDriverCheckFailed ${LANG_ENGLISH} "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu."
 LangString SCInstallDriver ${LANG_ENGLISH} "Install or update the shared SoundCurrent Audio driver"
-LangString SCRemoveCable ${LANG_ENGLISH} "Also remove VB-CABLE (opens its official remover; restart needed)"
+LangString SCRemoveCable ${LANG_ENGLISH} "Also remove VB-CABLE (uses its official remover; restart needed)"
 LangString SCSetupAudio ${LANG_ENGLISH} "Set up SoundCurrent Audio for SoundCurrent EQ."
 
 Function .onInit
@@ -211,7 +211,7 @@ Section "SoundCurrent EQ" main
     File "/oname=soundcurrent-cable-setup-guard.exe" "${DLL_DIR}\soundcurrent-cable-setup-guard.exe"
     File "/oname=VBCABLE_Driver_Pack45.zip" "${CABLE_ZIP}"
     File "/oname=VB-CABLE-NOTICE.txt" "${SOURCE_ROOT}\packaging\windows\VB-CABLE-NOTICE.txt"
-    nsExec::ExecToStack '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy RemoteSigned -File "$INSTDIR\vb-cable-removal\cable-setup.ps1" -Remove -Quiet'
+    nsExec::ExecToStack '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy RemoteSigned -File "$INSTDIR\vb-cable-removal\cable-setup.ps1" -Remove -SilentRemoval -Quiet'
     Pop $0
     Pop $1
     DetailPrint $1

@@ -232,8 +232,8 @@ Vil du likevel sletta ho?</translation>
       <translation>Alle undertypar</translation>
     </message>
     <message>
-      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
-      <translation>Fjern også VB-CABLE (opnar det offisielle fjerningsverktøyet; omstart trengst)</translation>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>Fjern også VB-CABLE (brukar det offisielle fjerningsverktøyet; omstart trengst)</translation>
     </message>
     <message>
       <source>Amber</source>

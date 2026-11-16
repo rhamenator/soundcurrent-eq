@@ -256,7 +256,7 @@
     "Disable microphone access",
     "Microphone access is disabled.",
     "Quit",
-    "Also remove VB-CABLE (opens its official remover; restart needed)"
+    "Also remove VB-CABLE (uses its official remover; restart needed)"
   ],
   "languages": {
     "de": [
@@ -517,7 +517,7 @@
       "Mikrofonzugriff deaktivieren",
       "Der Mikrofonzugriff ist deaktiviert.",
       "Beenden",
-      "VB-CABLE ebenfalls entfernen (öffnet das offizielle Entfernungsprogramm; Neustart erforderlich)"
+      "VB-CABLE ebenfalls entfernen (verwendet das offizielle Entfernungsprogramm; Neustart erforderlich)"
     ],
     "fr": [
       "Français",
@@ -777,7 +777,7 @@
       "Désactiver l’accès au microphone",
       "L’accès au microphone est désactivé.",
       "Quitter",
-      "Supprimer aussi VB-CABLE (ouvre son outil de suppression officiel ; redémarrage nécessaire)"
+      "Supprimer aussi VB-CABLE (utilise son outil de suppression officiel ; redémarrage nécessaire)"
     ],
     "es": [
       "Español",
@@ -1037,7 +1037,7 @@
       "Desactivar el acceso al micrófono",
       "El acceso al micrófono está desactivado.",
       "Salir",
-      "Quitar también VB-CABLE (abre su desinstalador oficial; requiere reiniciar)"
+      "Quitar también VB-CABLE (usa su desinstalador oficial; requiere reiniciar)"
     ],
     "it": [
       "Italiano",
@@ -1297,7 +1297,7 @@
       "Disattiva accesso al microfono",
       "L’accesso al microfono è disattivato.",
       "Esci",
-      "Rimuovi anche VB-CABLE (apre il suo programma di rimozione ufficiale; è necessario riavviare)"
+      "Rimuovi anche VB-CABLE (usa il suo programma di rimozione ufficiale; è necessario riavviare)"
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -1557,7 +1557,7 @@
       "Desativar acesso ao microfone",
       "O acesso ao microfone está desativado.",
       "Sair",
-      "Remover também o VB-CABLE (abre o removedor oficial; é necessário reiniciar)"
+      "Remover também o VB-CABLE (usa o removedor oficial; é necessário reiniciar)"
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -1817,7 +1817,7 @@
       "Desativar acesso ao microfone",
       "O acesso ao microfone está desativado.",
       "Sair",
-      "Remover também o VB-CABLE (abre o removedor oficial; é preciso reiniciar)"
+      "Remover também o VB-CABLE (usa o removedor oficial; é preciso reiniciar)"
     ],
     "nl": [
       "Nederlands",
@@ -2077,7 +2077,7 @@
       "Microfoontoegang uitschakelen",
       "Microfoontoegang is uitgeschakeld.",
       "Afsluiten",
-      "VB-CABLE ook verwijderen (opent het officiële verwijderprogramma; opnieuw opstarten vereist)"
+      "VB-CABLE ook verwijderen (gebruikt het officiële verwijderprogramma; opnieuw opstarten vereist)"
     ],
     "pl": [
       "Polski",
@@ -2337,7 +2337,7 @@
       "Wyłącz dostęp do mikrofonu",
       "Dostęp do mikrofonu jest wyłączony.",
       "Zakończ",
-      "Usuń także VB-CABLE (otwiera oficjalne narzędzie usuwania; wymagane ponowne uruchomienie)"
+      "Usuń także VB-CABLE (używa oficjalnego narzędzia usuwania; wymagane ponowne uruchomienie)"
     ],
     "cs": [
       "Čeština",
@@ -2597,7 +2597,7 @@
       "Zakázat přístup k mikrofonu",
       "Přístup k mikrofonu je zakázán.",
       "Ukončit",
-      "Odebrat také VB-CABLE (otevře oficiální odinstalátor; je nutný restart)"
+      "Odebrat také VB-CABLE (použije oficiální odinstalátor; je nutný restart)"
     ],
     "sk": [
       "Slovenčina",
@@ -2857,7 +2857,7 @@
       "Zakázať prístup k mikrofónu",
       "Prístup k mikrofónu je zakázaný.",
       "Ukončiť",
-      "Odstrániť aj VB-CABLE (otvorí oficiálny odinštalátor; je potrebný reštart)"
+      "Odstrániť aj VB-CABLE (použije oficiálny odinštalátor; je potrebný reštart)"
     ],
     "uk": [
       "Українська",
@@ -3117,7 +3117,7 @@
       "Вимкнути доступ до мікрофона",
       "Доступ до мікрофона вимкнено.",
       "Вийти",
-      "Також видалити VB-CABLE (відкриється офіційний засіб видалення; потрібне перезавантаження)"
+      "Також видалити VB-CABLE (використовується офіційний засіб видалення; потрібне перезавантаження)"
     ],
     "ru": [
       "Русский",
@@ -3377,7 +3377,7 @@
       "Отключить доступ к микрофону",
       "Доступ к микрофону отключён.",
       "Выйти",
-      "Также удалить VB-CABLE (откроется официальное средство удаления; потребуется перезагрузка)"
+      "Также удалить VB-CABLE (используется официальное средство удаления; потребуется перезагрузка)"
     ],
     "el": [
       "Ελληνικά",
@@ -3637,7 +3637,7 @@
       "Απενεργοποίηση πρόσβασης στο μικρόφωνο",
       "Η πρόσβαση στο μικρόφωνο είναι απενεργοποιημένη.",
       "Έξοδος",
-      "Κατάργηση και του VB-CABLE (ανοίγει το επίσημο πρόγραμμα κατάργησης· απαιτείται επανεκκίνηση)"
+      "Κατάργηση και του VB-CABLE (χρησιμοποιεί το επίσημο πρόγραμμα κατάργησης· απαιτείται επανεκκίνηση)"
     ],
     "tr": [
       "Türkçe",
@@ -3897,7 +3897,7 @@
       "Mikrofon erişimini devre dışı bırak",
       "Mikrofon erişimi devre dışı.",
       "Çık",
-      "VB-CABLE'ı da kaldır (resmî kaldırıcısını açar; yeniden başlatma gerekir)"
+      "VB-CABLE'ı da kaldır (resmî kaldırıcısını kullanır; yeniden başlatma gerekir)"
     ],
     "sv": [
       "Svenska",
@@ -4157,7 +4157,7 @@
       "Inaktivera mikrofonåtkomst",
       "Mikrofonåtkomst är inaktiverad.",
       "Avsluta",
-      "Ta även bort VB-CABLE (öppnar dess officiella borttagningsverktyg; omstart krävs)"
+      "Ta även bort VB-CABLE (använder dess officiella borttagningsverktyg; omstart krävs)"
     ],
     "da": [
       "Dansk",
@@ -4417,7 +4417,7 @@
       "Deaktiver mikrofonadgang",
       "Mikrofonadgang er deaktiveret.",
       "Afslut",
-      "Fjern også VB-CABLE (åbner dens officielle fjernelsesværktøj; genstart kræves)"
+      "Fjern også VB-CABLE (bruger dens officielle fjernelsesværktøj; genstart kræves)"
     ],
     "nb": [
       "Norsk bokmål",
@@ -4677,7 +4677,7 @@
       "Deaktiver mikrofontilgang",
       "Mikrofontilgang er deaktivert.",
       "Avslutt",
-      "Fjern også VB-CABLE (åpner det offisielle fjerningsverktøyet; omstart kreves)"
+      "Fjern også VB-CABLE (bruker det offisielle fjerningsverktøyet; omstart kreves)"
     ],
     "fi": [
       "Suomi",
@@ -4937,7 +4937,7 @@
       "Poista mikrofonin käyttö käytöstä",
       "Mikrofonin käyttö on poistettu käytöstä.",
       "Lopeta",
-      "Poista myös VB-CABLE (avaa sen virallisen poistotyökalun; vaatii uudelleenkäynnistyksen)"
+      "Poista myös VB-CABLE (käyttää sen virallista poistotyökalua; vaatii uudelleenkäynnistyksen)"
     ],
     "ro": [
       "Română",
@@ -5197,7 +5197,7 @@
       "Dezactivează accesul la microfon",
       "Accesul la microfon este dezactivat.",
       "Ieșire",
-      "Elimină și VB-CABLE (deschide programul oficial de eliminare; este necesară repornirea)"
+      "Elimină și VB-CABLE (folosește programul oficial de eliminare; este necesară repornirea)"
     ],
     "hu": [
       "Magyar",
@@ -5457,7 +5457,7 @@
       "Mikrofon-hozzáférés letiltása",
       "A mikrofon-hozzáférés le van tiltva.",
       "Kilépés",
-      "A VB-CABLE eltávolítása is (megnyitja a hivatalos eltávolítót; újraindítás szükséges)"
+      "A VB-CABLE eltávolítása is (a hivatalos eltávolítót használja; újraindítás szükséges)"
     ],
     "ar": [
       "العربية",
@@ -5717,7 +5717,7 @@
       "تعطيل الوصول إلى الميكروفون",
       "الوصول إلى الميكروفون معطّل.",
       "إنهاء",
-      "إزالة VB-CABLE أيضًا (تفتح أداة الإزالة الرسمية؛ يلزم إعادة التشغيل)"
+      "إزالة VB-CABLE أيضًا (باستخدام أداة الإزالة الرسمية؛ يلزم إعادة التشغيل)"
     ],
     "he": [
       "עברית",
@@ -5977,7 +5977,7 @@
       "השבתת הגישה למיקרופון",
       "הגישה למיקרופון מושבתת.",
       "יציאה",
-      "הסר גם את VB-CABLE (נפתחת כלי ההסרה הרשמי שלו; נדרשת הפעלה מחדש)"
+      "הסר גם את VB-CABLE (באמצעות כלי ההסרה הרשמי שלו; נדרשת הפעלה מחדש)"
     ],
     "fa": [
       "فارسی",
@@ -6237,7 +6237,7 @@
       "غیرفعال کردن دسترسی به میکروفون",
       "دسترسی به میکروفون غیرفعال است.",
       "خروج",
-      "VB-CABLE هم حذف شود (ابزار رسمی حذف آن باز می‌شود؛ راه‌اندازی مجدد لازم است)"
+      "VB-CABLE هم حذف شود (از ابزار رسمی حذف آن استفاده می‌شود؛ راه‌اندازی مجدد لازم است)"
     ],
     "zh-Hans": [
       "简体中文",
@@ -6497,7 +6497,7 @@
       "禁用麦克风访问",
       "麦克风访问已禁用。",
       "退出",
-      "同时移除 VB-CABLE（将打开其官方移除工具；需要重启）"
+      "同时移除 VB-CABLE（使用其官方移除工具；需要重启）"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -6757,7 +6757,7 @@
       "停用麥克風存取",
       "麥克風存取已停用。",
       "結束",
-      "一併移除 VB-CABLE（將開啟其官方移除工具；需要重新啟動）"
+      "一併移除 VB-CABLE（使用其官方移除工具；需要重新啟動）"
     ],
     "ja": [
       "日本語",
@@ -7017,7 +7017,7 @@
       "マイクへのアクセスを無効にする",
       "マイクへのアクセスは無効です。",
       "終了",
-      "VB-CABLE も削除する（公式の削除ツールを開きます。再起動が必要です）"
+      "VB-CABLE も削除する（公式の削除ツールを使用します。再起動が必要です）"
     ],
     "ko": [
       "한국어",
@@ -7277,7 +7277,7 @@
       "마이크 접근 비활성화",
       "마이크 접근이 비활성화되어 있습니다.",
       "종료",
-      "VB-CABLE도 제거(공식 제거 도구를 엽니다. 다시 시작 필요)"
+      "VB-CABLE도 제거(공식 제거 도구를 사용합니다. 다시 시작 필요)"
     ],
     "hi": [
       "हिन्दी",
@@ -7537,7 +7537,7 @@
       "माइक्रोफ़ोन का ऐक्सेस बंद करें",
       "माइक्रोफ़ोन का ऐक्सेस बंद है।",
       "बाहर निकलें",
-      "VB-CABLE भी हटाएँ (इसका आधिकारिक रिमूवर खुलेगा; पुनः आरंभ आवश्यक है)"
+      "VB-CABLE भी हटाएँ (इसके आधिकारिक रिमूवर का उपयोग करता है; पुनः आरंभ आवश्यक है)"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -7797,7 +7797,7 @@
       "Nonaktifkan akses mikrofon",
       "Akses mikrofon dinonaktifkan.",
       "Keluar",
-      "Hapus juga VB-CABLE (membuka penghapus resminya; perlu mulai ulang)"
+      "Hapus juga VB-CABLE (memakai penghapus resminya; perlu mulai ulang)"
     ],
     "vi": [
       "Tiếng Việt",
@@ -8057,7 +8057,7 @@
       "Tắt quyền truy cập micrô",
       "Quyền truy cập micrô đã bị tắt.",
       "Thoát",
-      "Gỡ cả VB-CABLE (mở trình gỡ chính thức của nó; cần khởi động lại)"
+      "Gỡ cả VB-CABLE (dùng trình gỡ chính thức của nó; cần khởi động lại)"
     ],
     "th": [
       "ไทย",
@@ -8317,7 +8317,7 @@
       "ปิดการเข้าถึงไมโครโฟน",
       "ปิดการเข้าถึงไมโครโฟนอยู่",
       "ออก",
-      "ลบ VB-CABLE ด้วย (เปิดตัวถอนการติดตั้งอย่างเป็นทางการ; ต้องรีสตาร์ท)"
+      "ลบ VB-CABLE ด้วย (ใช้ตัวถอนการติดตั้งอย่างเป็นทางการ; ต้องรีสตาร์ท)"
     ],
     "sw": [
       "Kiswahili",
@@ -8577,7 +8577,7 @@
       "Zima ufikiaji wa maikrofoni",
       "Ufikiaji wa maikrofoni umezimwa.",
       "Toka",
-      "Ondoa pia VB-CABLE (hufungua kiondoa rasmi chake; inahitaji kuwasha upya)"
+      "Ondoa pia VB-CABLE (hutumia kiondoa rasmi chake; inahitaji kuwasha upya)"
     ],
     "nn": [
       "Norsk nynorsk",
@@ -8837,7 +8837,7 @@
       "Slå av mikrofontilgang",
       "Mikrofontilgang er slått av.",
       "Avslutt",
-      "Fjern også VB-CABLE (opnar det offisielle fjerningsverktøyet; omstart trengst)"
+      "Fjern også VB-CABLE (brukar det offisielle fjerningsverktøyet; omstart trengst)"
     ]
   },
   "requiredCompleteLocales": [

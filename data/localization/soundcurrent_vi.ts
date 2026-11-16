@@ -232,8 +232,8 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Tất cả loại phụ</translation>
     </message>
     <message>
-      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
-      <translation>Gỡ cả VB-CABLE (mở trình gỡ chính thức của nó; cần khởi động lại)</translation>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>Gỡ cả VB-CABLE (dùng trình gỡ chính thức của nó; cần khởi động lại)</translation>
     </message>
     <message>
       <source>Amber</source>

@@ -232,8 +232,8 @@ Do you want to delete it anyway?</source>
       <translation>所有子类型</translation>
     </message>
     <message>
-      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
-      <translation>同时移除 VB-CABLE（将打开其官方移除工具；需要重启）</translation>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>同时移除 VB-CABLE（使用其官方移除工具；需要重启）</translation>
     </message>
     <message>
       <source>Amber</source>

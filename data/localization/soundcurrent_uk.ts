@@ -232,8 +232,8 @@ Do you want to delete it anyway?</source>
       <translation>Усі підтипи</translation>
     </message>
     <message>
-      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
-      <translation>Також видалити VB-CABLE (відкриється офіційний засіб видалення; потрібне перезавантаження)</translation>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>Також видалити VB-CABLE (використовується офіційний засіб видалення; потрібне перезавантаження)</translation>
     </message>
     <message>
       <source>Amber</source>

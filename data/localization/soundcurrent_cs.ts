@@ -232,8 +232,8 @@ Přesto chcete soubor smazat?</translation>
       <translation>Všechny podtypy</translation>
     </message>
     <message>
-      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
-      <translation>Odebrat také VB-CABLE (otevře oficiální odinstalátor; je nutný restart)</translation>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>Odebrat také VB-CABLE (použije oficiální odinstalátor; je nutný restart)</translation>
     </message>
     <message>
       <source>Amber</source>

@@ -232,8 +232,8 @@ Do you want to delete it anyway?</source>
       <translation>כל תתי־הסוגים</translation>
     </message>
     <message>
-      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
-      <translation>הסר גם את VB-CABLE (נפתחת כלי ההסרה הרשמי שלו; נדרשת הפעלה מחדש)</translation>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>הסר גם את VB-CABLE (באמצעות כלי ההסרה הרשמי שלו; נדרשת הפעלה מחדש)</translation>
     </message>
     <message>
       <source>Amber</source>

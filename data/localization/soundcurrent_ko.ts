@@ -232,8 +232,8 @@ Do you want to delete it anyway?</source>
       <translation>모든 하위 유형</translation>
     </message>
     <message>
-      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
-      <translation>VB-CABLE도 제거(공식 제거 도구를 엽니다. 다시 시작 필요)</translation>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>VB-CABLE도 제거(공식 제거 도구를 사용합니다. 다시 시작 필요)</translation>
     </message>
     <message>
       <source>Amber</source>

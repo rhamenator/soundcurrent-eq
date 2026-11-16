@@ -232,8 +232,8 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Toate subtipurile</translation>
     </message>
     <message>
-      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
-      <translation>Elimină și VB-CABLE (deschide programul oficial de eliminare; este necesară repornirea)</translation>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>Elimină și VB-CABLE (folosește programul oficial de eliminare; este necesară repornirea)</translation>
     </message>
     <message>
       <source>Amber</source>

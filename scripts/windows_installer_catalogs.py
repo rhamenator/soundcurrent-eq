@@ -39,7 +39,7 @@ SOURCES = {
     'SCSetupAudio': 'Set up %1 for %2.',
     'SCInstallCable': 'Install VB-CABLE if missing (administrator approval)',
     'SCInstallNative': 'Install or update the shared SoundCurrent Audio driver',
-    'SCRemoveCable': 'Also remove VB-CABLE (opens its official remover; restart needed)',
+    'SCRemoveCable': 'Also remove VB-CABLE (uses its official remover; restart needed)',
 }
 
 
