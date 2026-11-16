@@ -18,7 +18,8 @@ public:
     std::function<void(const QString &,bool)> onActivity;
     std::function<QVector<QPair<QString,QString>>()> microphoneSources;
     std::function<void(equipment::Profile)> onProfile;
-    void pushPcm(const QByteArray &);
+    // endFrame: absolute frame index of the end of `pcm` in the capture's sample counter (-1 if the source has none).
+    void pushPcm(const QByteArray &,qint64 endFrame=-1);
     bool active() const;
     QString source() const;
     Engine &engine();
