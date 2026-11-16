@@ -41,6 +41,8 @@ public:
     Settings settings;
     std::vector<double> left,right,dbLeft,dbRight,db,averaged,peak,reference;
     std::uint64_t frames=0, fftCalls=0, waveFrames=0;
+    // Wall-clock seconds since the previous frame; the caller sets it so time constants do not depend on the frame rate.
+    double frameSeconds=.05;
     double correlation=0, rms=0, fftMs=0;
     bool transient=false;
     Pitch pitch;

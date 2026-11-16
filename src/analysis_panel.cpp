@@ -82,6 +82,7 @@ public:
         if(clock.isValid() && clock.elapsed()<interval)return false;
         QElapsedTimer work;work.start();
         const double elapsed=clock.isValid()?clock.elapsed()/1000.:interval/1000.;
+        data->frameSeconds=elapsed;
         if(!data->push(pcm,mode))return false;
         clock.restart();
         if(s.autoRange && mode!=View::Waveform && mode!=View::Vectorscope && !data->db.empty()) {
