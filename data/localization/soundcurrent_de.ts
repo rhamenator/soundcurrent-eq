@@ -232,6 +232,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Alle Untertypen</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>VB-CABLE ebenfalls entfernen (verwendet das offizielle Entfernungsprogramm; Neustart erforderlich)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Bernstein</translation>
     </message>

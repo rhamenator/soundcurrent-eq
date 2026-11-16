@@ -232,6 +232,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Kaikki alatyypit</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>Poista myös VB-CABLE (käyttää sen virallista poistotyökalua; vaatii uudelleenkäynnistyksen)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Meripihka</translation>
     </message>

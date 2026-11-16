@@ -232,6 +232,10 @@ Do you want to delete it anyway?</source>
       <translation>Все подтипы</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>Также удалить VB-CABLE (используется официальное средство удаления; потребуется перезагрузка)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Янтарный</translation>
     </message>

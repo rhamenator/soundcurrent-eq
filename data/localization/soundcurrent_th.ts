@@ -232,6 +232,10 @@ Do you want to delete it anyway?</source>
       <translation>ทุกประเภทย่อย</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>ลบ VB-CABLE ด้วย (ใช้ตัวถอนการติดตั้งอย่างเป็นทางการ; ต้องรีสตาร์ท)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>อำพัน</translation>
     </message>

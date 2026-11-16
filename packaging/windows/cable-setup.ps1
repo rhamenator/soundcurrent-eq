@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-only
-param([switch]$Check, [switch]$Install, [switch]$Remove, [switch]$Settings,
+param([switch]$Check, [switch]$Install, [switch]$Remove, [switch]$SilentRemoval, [switch]$Settings,
       [switch]$Quiet, [switch]$Silent, [switch]$ConfigureVolume, [int]$RequestingProcessId = 0,
       [ValidateSet('eq','studio')][string]$App = 'eq', [string]$Language = '')
 $ErrorActionPreference = 'Stop'
@@ -104,11 +104,14 @@ try {
             Notice (Get-SCSetupText 'VB-CABLE was kept because the other SoundCurrent app is installed. Remove it with the last app if no other software needs it.' -Language $Language -Application ('soundcurrent-' + $App))
             exit 0
         }
+        # The installer's explicit checkbox is the consent; the other-app rule above still applies.
+        if (!$SilentRemoval) {
         Add-Type -AssemblyName System.Windows.Forms
         $answer = [System.Windows.Forms.MessageBox]::Show(
             (Get-SCSetupText 'Remove the shared VB-CABLE driver too? Other users, recording apps, or voice tools may need it. Confirm to open the official remover, then click Remove Driver. Decline to keep the cable and uninstall only SoundCurrent.' -Language $Language -Application ('soundcurrent-' + $App)),
             (Get-SCSetupText 'Remove VB-CABLE?' -Language $Language -Application ('soundcurrent-' + $App)), 'YesNo', 'Question')
         if ($answer -ne 'Yes') { exit 0 }
+        }
     }
     if ($RequestingProcessId) {
         $requester = Get-Process -Id $RequestingProcessId -ErrorAction Stop
@@ -154,7 +157,7 @@ try {
                     (Get-SCSetupText 'Repair incomplete VB-CABLE installation' -Language $Language -Application ('soundcurrent-' + $App)))
             }
             if ($Install) { MarkReboot } # Persist before mutation, even if the UI closes.
-            & $guard $(if ($Install) { '--install' } else { '--remove' }) $exe
+            & $guard $(if ($Install) { '--install' } elseif ($SilentRemoval) { '--remove-silent' } else { '--remove' }) $exe
             if ($LASTEXITCODE -ne 0) { throw (Format-SCSetupText 'VB-CABLE setup was cancelled or did not finish (code %1). SoundCurrent was retained for retry.' -Values @([string]$LASTEXITCODE) -Language $Language -Application ('soundcurrent-' + $App)) }
             if ($Remove -and (Present)) { throw (Get-SCSetupText 'VB-CABLE is still present. If removal requested a restart, restart Windows and retry SoundCurrent uninstall; otherwise finish Remove Driver in the official setup.' -Language $Language -Application ('soundcurrent-' + $App)) }
             if ($repair -and !(Present)) {

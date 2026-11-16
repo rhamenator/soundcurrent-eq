@@ -27,8 +27,10 @@ int main(int argc, char **argv) {
             return render && capture ? cableVolumeStatus() : 10;
         } catch (...) { return 10; }
     }
-    if (args.size() != 3 || (args[1] != "--install" && args[1] != "--remove")) return 2;
+    if (args.size() != 3 || (args[1] != "--install" && args[1] != "--remove" && args[1] != "--remove-silent")) return 2;
     const bool install = args[1] == "--install";
+    // --remove-silent: VB-Audio's documented hidden uninstall (-u -h) for the installer's explicit opt-in checkbox.
+    const bool silentRemoval = args[1] == "--remove-silent";
     std::array<std::wstring, 3> output, input;
     try {
         for (int role = 0; role < 3; ++role) {
@@ -41,7 +43,8 @@ int main(int argc, char **argv) {
         execute.fMask = SEE_MASK_NOCLOSEPROCESS;
         execute.lpVerb = L"runas";
         execute.lpFile = path.c_str();
-        execute.nShow = SW_SHOWNORMAL;
+        execute.lpParameters = silentRemoval ? L"-u -h" : nullptr;
+        execute.nShow = silentRemoval ? SW_HIDE : SW_SHOWNORMAL;
         if (!ShellExecuteExW(&execute) || !execute.hProcess) return 3;
         const DWORD wait = WaitForSingleObject(execute.hProcess, INFINITE);
         DWORD code = 1;

@@ -18,7 +18,8 @@ try {
     }
     & $SignedDriverManager --verify $SignedDriverPackage
     if ($LASTEXITCODE -ne 0) { throw 'The driver package is incomplete or its signature cannot be verified.' }
-    } else {
+    }
+    if ($AudioRoute -ne 'Native') {
         if (!$CablePackage) { $CablePackage = Join-Path $root '.cache\windows-package\VBCABLE_Driver_Pack45.zip' }
         if (!(Test-Path -LiteralPath $CablePackage)) {
             New-Item -ItemType Directory -Force (Split-Path $CablePackage -Parent) | Out-Null

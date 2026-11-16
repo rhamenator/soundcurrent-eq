@@ -232,6 +232,10 @@ Voulez-vous quand même le supprimer ?</translation>
       <translation>Tous les sous-types</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>Supprimer aussi VB-CABLE (utilise son outil de suppression officiel ; redémarrage nécessaire)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Ambre</translation>
     </message>

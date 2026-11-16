@@ -232,6 +232,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Alle subtypen</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>VB-CABLE ook verwijderen (gebruikt het officiële verwijderprogramma; opnieuw opstarten vereist)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Amber</translation>
     </message>

@@ -232,6 +232,10 @@ Do you want to delete it anyway?</source>
       <translation>所有子類型</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>一併移除 VB-CABLE（使用其官方移除工具；需要重新啟動）</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>琥珀色</translation>
     </message>

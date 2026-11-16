@@ -232,6 +232,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Wszystkie podtypy</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>Usuń także VB-CABLE (używa oficjalnego narzędzia usuwania; wymagane ponowne uruchomienie)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Bursztynowy</translation>
     </message>

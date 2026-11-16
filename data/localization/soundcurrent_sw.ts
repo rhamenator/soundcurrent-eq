@@ -232,6 +232,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Aina ndogo zote</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (uses its official remover; restart needed)</source>
+      <translation>Ondoa pia VB-CABLE (hutumia kiondoa rasmi chake; inahitaji kuwasha upya)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Kaharabu</translation>
     </message>

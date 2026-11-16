@@ -52,6 +52,14 @@
     },
     {
       "file": "packaging/windows/soundcurrent-eq-native.nsi",
+      "line": 135,
+      "kind": "control-caption",
+      "literal": "$(SCRemoveCable)",
+      "marked": true,
+      "reviewStatus": "direct English definition wired; all locale catalog translations available; installer language activation pending"
+    },
+    {
+      "file": "packaging/windows/soundcurrent-eq-native.nsi",
       "line": 88,
       "kind": "control-caption",
       "literal": "$(SCNativePresent)",
