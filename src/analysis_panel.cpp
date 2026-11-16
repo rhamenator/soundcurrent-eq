@@ -57,25 +57,28 @@ public:
     std::function<void(bool)> onVisibility;
     std::function<void()> onFrame;
     double displayCeiling=0;
-    void resetClock(){clock.invalidate();}
+    void resetClock(){clock.invalidate();carryMs_=0;}
+    // Time since the previous frame STARTED: the clock restarts after the frame's FFT, so that compute time is
+    // carried over; without it every frame lost its compute time and the display scrolled ~15% slower than real time.
+    double sinceLastMs() const {return clock.isValid()?clock.nsecsElapsed()/1e6+carryMs_:1e9;}
     // Frames are paced by what the machine can actually deliver: about three times the measured
     // cost of computing + painting one frame, never faster than ~60 fps and never slower than the
     // view's classic cadence `slowest`. A busy system therefore degrades gracefully instead of
     // fighting the audio threads; an idle one gets a smooth display.
     double paceMs(double slowest) const {return std::clamp(3.*(computeMs_+paintMs_),16.,std::max(16.,slowest));}
     QSize historyPixelSize() const {return {image.width,image.height};}
-    void clearImage(){image={};ensureImageSize();previousColumn.clear();credit=0;heldColumns_=0;sinceFrame_.invalidate();latest_.clear();clock.invalidate();update();}
+    void clearImage(){image={};ensureImageSize();previousColumn.clear();credit=0;heldColumns_=0;sinceFrame_.invalidate();latest_.clear();clock.invalidate();carryMs_=0;update();}
     bool advanceIdle() {
         if(!isVisible()||frozen||mode!=View::Waterfall)return false;
         const double interval=paceMs(60.);
-        if(clock.isValid()&&clock.elapsed()+kTickSlackMs<interval)return false; // slack: a 16 ms tick must not alias against a ~17 ms interval
+        if(clock.isValid()&&sinceLastMs()+kTickSlackMs<interval)return false; // slack: a 16 ms tick must not alias against a ~17 ms interval
         // Jitter buffer: the spectrogram is rendered kDelaySamples behind the newest audio and the render position
         // advances with the wall clock between arrivals, so a chunk that arrives a little late does not leave a gap.
         if(!latest_.isEmpty()&&sinceArrival_.isValid()&&sinceArrival_.elapsed()<kBridgeMs){
             const int trim=kDelaySamples-int(sinceArrival_.elapsed()*48);
             if(trim>=0&&render(latest_,trim)){setProperty("pumpFrames",property("pumpFrames").toInt()+1);return true;}
         }
-        const double elapsed=clock.isValid()?clock.elapsed()/1000.:interval/1000.;clock.restart();ensureImageSize();
+        const double elapsed=clock.isValid()?sinceLastMs()/1000.:interval/1000.;clock.restart();carryMs_=0;ensureImageSize();
         const auto &s=data->settings;credit+=elapsed*image.width*s.speed/s.history;const int columns=std::min(image.width,int(credit));credit-=columns;
         if(columns<=0)return false;
         // A short gap (a frame running a little late) is bridged by holding the last real column; the next real
@@ -97,15 +100,15 @@ public:
         if(!isVisible() || frozen)return false;
         const auto &s=data->settings;const double slowest=(mode==View::Microphone || mode==View::Average)?40:(mode==View::Waveform || mode==View::Vectorscope)?50:std::max(60.,250.*s.fft/s.rate);
         const double interval=paceMs(slowest);
-        if(clock.isValid() && clock.elapsed()+kTickSlackMs<interval)return false;
+        if(clock.isValid() && sinceLastMs()+kTickSlackMs<interval)return false;
         QElapsedTimer work;work.start();
-        const double elapsed=clock.isValid()?clock.elapsed()/1000.:interval/1000.;
+        const double elapsed=clock.isValid()?sinceLastMs()/1000.:interval/1000.;
         data->frameSeconds=elapsed;
         QByteArray pcm=source;
         if(trimSamples>0){const int frames=int(source.size()/4),needed=int(std::ceil((s.fft-1)*48000./s.rate))+65;
             const int trim=std::min(trimSamples,std::max(0,frames-needed));pcm=source.left(source.size()-qsizetype(trim)*4);}
         if(!data->push(pcm,mode))return false;
-        clock.restart();
+        clock.restart();carryMs_=work.nsecsElapsed()/1e6;
         if(s.autoRange && mode!=View::Waveform && mode!=View::Vectorscope && !data->db.empty()) {
             const double top=*std::max_element(data->db.begin(),data->db.end());
             const double target=std::clamp(std::ceil((top+6)/6)*6,-120.,24.);
@@ -138,8 +141,8 @@ public:
         g.frequency_scale=gram::FrequencyScale(s.scale);g.palette_mode=gram::PaletteMode(s.palette);return g;
     }
 protected:
-    void showEvent(QShowEvent *event) override {QWidget::showEvent(event);clock.invalidate();if(onVisibility)onVisibility(true);}
-    void hideEvent(QHideEvent *event) override {clock.invalidate();if(onVisibility)onVisibility(false);QWidget::hideEvent(event);}
+    void showEvent(QShowEvent *event) override {QWidget::showEvent(event);clock.invalidate();carryMs_=0;if(onVisibility)onVisibility(true);}
+    void hideEvent(QHideEvent *event) override {clock.invalidate();carryMs_=0;if(onVisibility)onVisibility(false);QWidget::hideEvent(event);}
     void mouseMoveEvent(QMouseEvent *event) override {
         const auto plot=plotRect();if(!plot.contains(event->position()))return;
         const double ratio=std::clamp((event->position().x()-plot.left())/plot.width(),0.,1.);
@@ -273,6 +276,7 @@ private:
     }
     QElapsedTimer clock;
     double computeMs_=4,paintMs_=4;
+    double carryMs_=0;
     int heldColumns_=0;QByteArray latest_;QElapsedTimer sinceFrame_,sinceArrival_;
     static constexpr qint64 kBridgeMs=250;
     static constexpr double kTickSlackMs=4.;
