@@ -67,33 +67,75 @@ public:
     // fighting the audio threads; an idle one gets a smooth display.
     double paceMs(double slowest) const {return std::clamp(3.*(computeMs_+paintMs_),16.,std::max(16.,slowest));}
     QSize historyPixelSize() const {return {image.width,image.height};}
-    void clearImage(){image={};ensureImageSize();previousColumn.clear();credit=0;heldColumns_=0;sinceFrame_.invalidate();latest_.clear();clock.invalidate();carryMs_=0;update();}
+    void clearImage(){image={};ensureImageSize();credit=0;started_=false;silenceClock_.invalidate();sinceFrame_.invalidate();latest_.clear();clock.invalidate();carryMs_=0;update();}
     bool advanceIdle() {
         if(!isVisible()||frozen||(mode!=View::Waterfall&&mode!=View::Waveform))return false;
+        if(mode==View::Waterfall)return advanceWaterfall();
+        // Waveform: jitter buffer. The window ends kDelaySamples behind the newest audio and advances with the wall clock between arrivals, so a late chunk does not shift the trace.
         const double interval=paceMs(60.);
         if(clock.isValid()&&sinceLastMs()+kTickSlackMs<interval)return false; // slack: a 16 ms tick must not alias against a ~17 ms interval
-        // Jitter buffer: the spectrogram is rendered kDelaySamples behind the newest audio and the render position
-        // advances with the wall clock between arrivals, so a chunk that arrives a little late does not leave a gap.
-        if(!latest_.isEmpty()&&sinceArrival_.isValid()&&sinceArrival_.elapsed()<kBridgeMs){
+        if(!latest_.isEmpty()&&sinceArrival_.isValid()&&sinceArrival_.elapsed()<kStallMs){
             const int trim=kDelaySamples-int(sinceArrival_.elapsed()*48);
             if(trim>=0&&render(latest_,trim)){setProperty("pumpFrames",property("pumpFrames").toInt()+1);return true;}
         }
-        if(mode==View::Waveform)return false; // the waveform has no scrolling history to bridge
-        const double elapsed=clock.isValid()?sinceLastMs()/1000.:interval/1000.;clock.restart();carryMs_=0;ensureImageSize();
-        const auto &s=data->settings;credit+=elapsed*image.width*s.speed/s.history;const int columns=std::min(image.width,int(credit));credit-=columns;
-        if(columns<=0)return false;
-        // A short gap (a frame running a little late) is bridged by holding the last real column; the next real
-        // frame re-interpolates across the held columns. Only a real silence/stall scrolls in black.
-        const bool bridge=sinceFrame_.isValid()&&sinceFrame_.elapsed()<kBridgeMs&&previousColumn.size()==std::size_t(image.height);
-        for(int y=0;y<image.height;++y){auto *row=image.pixels.data()+y*image.width;const auto last=row[image.width-1];std::memmove(row,row+columns,std::size_t(image.width-columns)*sizeof(*row));std::fill(row+image.width-columns,row+image.width,bridge?last:0xff000000);}
-        if(bridge)heldColumns_=std::min(image.width,heldColumns_+columns);
-        else{heldColumns_=0;previousColumn.assign(std::size_t(image.height),-240.);}
-        setProperty("idleFrames",property("idleFrames").toInt()+1);setProperty("idleHeldColumns",heldColumns_);if(onFrame)onFrame();update();return true;
+        return false;
+    }
+    // Spectrogram on the SAMPLE clock: every pixel column is the FFT of the window that ends at an exact audio sample, columns are exactly history/width seconds apart, and a late frame is caught up by computing the missing columns (never blended or stretched). The picture therefore depends only on the audio, not on display timing. Real silence (no audio arriving) scrolls black in real time.
+    bool advanceWaterfall() {
+        ensureImageSize();
+        const auto &s=data->settings;
+        const double columnsPerSecond=image.width*s.speed/s.history;setProperty("columnsPerSecond",columnsPerSecond);
+        const bool live=!latest_.isEmpty()&&sinceArrival_.isValid()&&sinceArrival_.elapsed()<kStallMs;
+        if(!live){
+            if(started_){started_=false;silenceClock_.restart();credit=kStallMs/1000.*columnsPerSecond;} // the stall-detection delay is time that already passed
+            if(!silenceClock_.isValid())silenceClock_.restart();
+            credit+=silenceClock_.nsecsElapsed()/1e9*columnsPerSecond;silenceClock_.restart();
+            const int columns=std::min(image.width,int(credit));credit-=columns;
+            if(columns<=0)return false;
+            for(int y=0;y<image.height;++y){auto *row=image.pixels.data()+y*image.width;std::memmove(row,row+columns,std::size_t(image.width-columns)*sizeof(*row));std::fill(row+image.width-columns,row+image.width,0xff000000);}
+            setProperty("idleFrames",property("idleFrames").toInt()+1);if(onFrame)onFrame();update();return true;
+        }
+        silenceClock_.invalidate();
+        const double step=48000./columnsPerSecond; // capture frames between two columns
+        const int frames=int(latest_.size()/4),needed=int(std::ceil((s.fft-1)*48000./s.rate))+65;
+        if(!started_){started_=true;nextEnd_=double(latestEnd_);}
+        QElapsedTimer budget;budget.start();bool drew=false;
+        // A time budget keeps the UI responsive when the machine cannot keep up: the rest is caught up on the next tick.
+        while(nextEnd_<=double(latestEnd_)&&budget.elapsed()<8){
+            const qint64 trim=latestEnd_-qint64(nextEnd_);
+            if(trim>frames-needed){nextEnd_=double(latestEnd_);break;} // no longer buffered (far behind): jump to now
+            if(!renderColumn(int(trim),step))break;
+            nextEnd_+=step;drew=true;
+        }
+        if(nextEnd_+48000.<double(latestEnd_))nextEnd_=double(latestEnd_)-step; // hopelessly behind: resume from now
+        if(!drew)return false;
+        setProperty("pumpFrames",property("pumpFrames").toInt()+1);if(onFrame)onFrame();update();return true;
+    }
+    // One spectrogram column for the window that ends `trim` frames before the newest buffered sample.
+    bool renderColumn(int trim,double step) {
+        QElapsedTimer work;work.start();
+        const auto &s=data->settings;
+        data->frameSeconds=std::clamp(step/48000.,.005,1.);
+        if(!data->push(latest_.left(latest_.size()-qsizetype(trim)*4),View::Waterfall))return false;
+        if(s.autoRange&&!data->db.empty()){
+            const double top=*std::max_element(data->db.begin(),data->db.end());
+            const double target=std::clamp(std::ceil((top+6)/6)*6,-120.,24.);
+            displayCeiling=std::abs(target-displayCeiling)>=6?target:displayCeiling;
+        } else displayCeiling=s.ceiling;
+        auto settings=gramSettings();auto column=spectrogramColumn(data->db,s,image.height);
+        if(s.layout==2&&s.channel==0){column=spectrogramColumn(data->dbLeft,s,image.height/2);auto right=spectrogramColumn(data->dbRight,s,image.height-image.height/2);column.insert(column.end(),right.begin(),right.end());}
+        for(int y=0;y<image.height;++y){auto *row=image.pixels.data()+y*image.width;std::memmove(row,row+1,std::size_t(image.width-1)*sizeof(*row));}
+        gram::set_image_column(image,image.width-1,column,settings);
+        for(int y=0;y<image.height;++y)image.pixels[y*image.width+image.width-1]|=0xff000000;
+        setProperty("columns",property("columns").toInt()+1);computeMs_=.8*computeMs_+.2*work.nsecsElapsed()/1e6;sinceFrame_.restart();
+        return true;
     }
     // Audio arrival only refills the buffer. The Spectrogram is then paced and rendered by the display timer
     // (advanceIdle); the Waveform uses the same jitter buffer so its trace scrolls evenly; the other views render immediately.
-    bool push(const QByteArray &pcm) {
-        latest_=pcm;sinceArrival_.restart();
+    bool push(const QByteArray &pcm,qint64 endFrame=-1) {
+        // A source without a sample counter (tests, other callers): estimate the end from the wall clock.
+        if(endFrame<0)endFrame=sinceArrival_.isValid()?latestEnd_+qint64(sinceArrival_.nsecsElapsed()*48/1000000):qint64(pcm.size()/4);
+        latest_=pcm;latestEnd_=endFrame;sinceArrival_.restart();
         if(mode==View::Waterfall||mode==View::Waveform)return false;
         return render(pcm,0);
     }
@@ -115,23 +157,6 @@ public:
             const double target=std::clamp(std::ceil((top+6)/6)*6,-120.,24.);
             displayCeiling=std::abs(target-displayCeiling)>=6?target:displayCeiling;
         } else displayCeiling=s.ceiling;
-        if(mode==View::Waterfall){
-            ensureImageSize();
-            auto settings=gramSettings();auto column=spectrogramColumn(data->db,s,image.height);
-            credit+=elapsed*image.width*s.speed/s.history;const int columns=std::min(image.width,int(credit));credit-=columns;
-            if(columns>0)for(int y=0;y<image.height;++y){auto *row=image.pixels.data()+y*image.width;std::memmove(row,row+columns,std::size_t(image.width-columns)*sizeof(*row));}
-            if(s.layout==2 && s.channel==0){column=spectrogramColumn(data->dbLeft,s,image.height/2);auto right=spectrogramColumn(data->dbRight,s,image.height-image.height/2);column.insert(column.end(),right.begin(),right.end());}
-            // Columns bridged while this frame was late are re-rendered too, so the gap is a smooth ramp from the
-            // last real column to this one instead of a hold followed by a jump.
-            const int count=std::min(image.width,std::max(1,columns)+heldColumns_);std::vector<double> blended(column.size());heldColumns_=0;setProperty("idleHeldColumns",0);
-            for(int x=image.width-count;x<image.width;++x){
-                const double blend=double(x-(image.width-count)+1)/count;
-                for(int y=0;y<image.height;++y)blended[y]=previousColumn.size()==column.size()?previousColumn[y]+blend*(column[y]-previousColumn[y]):column[y];
-                gram::set_image_column(image,x,blended,settings);
-                for(int y=0;y<image.height;++y)image.pixels[y*image.width+x]|=0xff000000;
-            }
-            previousColumn=std::move(column);
-        }
         computeMs_=.8*computeMs_+.2*work.nsecsElapsed()/1e6;sinceFrame_.restart();
         if(onFrame)onFrame();
         update();return true;
@@ -262,7 +287,6 @@ protected:
     }
 private:
     gram::Image image;
-    std::vector<double> previousColumn;
     void ensureImageSize() {
         const auto plot=plotRect();const double dpr=devicePixelRatioF();
         const int w=std::clamp(int(std::ceil(plot.width()*dpr)),1,1280),h=std::clamp(int(std::ceil(plot.height()*dpr)),2,1280);
@@ -273,13 +297,13 @@ private:
             const auto scaled=old.scaled(w,h,Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
             for(int y=0;y<h;++y)std::memcpy(replacement.pixels.data()+y*w,scaled.constScanLine(y),std::size_t(w)*4);
         }
-        image=std::move(replacement);previousColumn.clear();credit=0;heldColumns_=0;
+        image=std::move(replacement);
     }
     QElapsedTimer clock;
     double computeMs_=4,paintMs_=4;
     double carryMs_=0;
-    int heldColumns_=0;QByteArray latest_;QElapsedTimer sinceFrame_,sinceArrival_;
-    static constexpr qint64 kBridgeMs=250;
+    QByteArray latest_;qint64 latestEnd_=0;double nextEnd_=0;bool started_=false;QElapsedTimer sinceFrame_,sinceArrival_,silenceClock_;
+    static constexpr qint64 kStallMs=250; // no audio for this long = silence: the spectrogram keeps scrolling (black) in real time
     static constexpr double kTickSlackMs=4.;
     static constexpr int kDelaySamples=1920; // 40 ms at 48 kHz
     double credit=0,axisTop_=0,axisSpan_=90,waveLimit_=1;
@@ -331,7 +355,7 @@ void Panel::setView(View mode){
     QSettings settings;settings.setValue("analysis/view",index);
     settings.setValue("analysis/settings",QJsonDocument(canvas_->data->settings.json()).toJson(QJsonDocument::Compact));
 }
-void Panel::pushPcm(const QByteArray &bytes){if(sourceReady_ && !captureFailed_ && !suspended_)canvas_->push(bytes);}
+void Panel::pushPcm(const QByteArray &bytes,qint64 endFrame){if(sourceReady_ && !captureFailed_ && !suspended_)canvas_->push(bytes,endFrame);}
 void Panel::captureError(const QString &error){captureFailed_=true;readout_->setText(error);if(onActivity)onActivity(source(),false);}
 void Panel::refreshSources(){
     if(!microphoneSources)return;

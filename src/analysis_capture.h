@@ -40,6 +40,8 @@ public:
     std::function<void(const QByteArray &)> onPcm;
     std::function<void(const QString &)> onError;
     bool running() const {return running_;}
+    // Absolute index (frames since this object was created, never reset) of the end of the last buffer handed to onPcm; lets the display place every spectrogram column at an exact moment of the audio.
+    qint64 endFrame() const {return (totalBytes_-(pcm_.size()&3))/4;}
     void start(const QString &source,bool playback=false){
         if(!playback && !soundcurrent::microphone::allowed()){stop();if(onError)onError(SC_TR("Microphone access is disabled."));return;}
         if(running_ && source==source_ && playback==playback_)return;
@@ -65,11 +67,11 @@ private:
         if(!running_)return;
         if(!playback_ && !soundcurrent::microphone::allowed()){stop();return;}
         // Keep framing intact even when a pipe read ends between stereo frames.
-        pcm_.append(bytes);if(pcm_.size()>131072+3){const auto excess=pcm_.size()-131072;pcm_.remove(0,(excess+3)&~qsizetype(3));}
+        totalBytes_+=bytes.size();pcm_.append(bytes);if(pcm_.size()>131072+3){const auto excess=pcm_.size()-131072;pcm_.remove(0,(excess+3)&~qsizetype(3));}
         dirty_=true;
     }
     void flush(){const auto aligned=pcm_.size()&~qsizetype(3);if(dirty_&&aligned&&onPcm){dirty_=false;onPcm(pcm_.left(aligned));}}
-    QProcess process_;QTimer timer_;QByteArray pcm_;QString source_;bool running_=false,playback_=false,dirty_=false;
+    QProcess process_;QTimer timer_;QByteArray pcm_;qint64 totalBytes_=0;QString source_;bool running_=false,playback_=false,dirty_=false;
 #ifdef Q_OS_WIN
     WindowsRecorder recorder_;
 #endif
