@@ -68,7 +68,7 @@ public:
     bool advanceIdle() {
         if(!isVisible()||frozen||mode!=View::Waterfall)return false;
         const double interval=paceMs(60.);
-        if(clock.isValid()&&clock.elapsed()<interval)return false;
+        if(clock.isValid()&&clock.elapsed()+kTickSlackMs<interval)return false; // slack: a 16 ms tick must not alias against a ~17 ms interval
         // Jitter buffer: the spectrogram is rendered kDelaySamples behind the newest audio and the render position
         // advances with the wall clock between arrivals, so a chunk that arrives a little late does not leave a gap.
         if(!latest_.isEmpty()&&sinceArrival_.isValid()&&sinceArrival_.elapsed()<kBridgeMs){
@@ -97,7 +97,7 @@ public:
         if(!isVisible() || frozen)return false;
         const auto &s=data->settings;const double slowest=(mode==View::Microphone || mode==View::Average)?40:(mode==View::Waveform || mode==View::Vectorscope)?50:std::max(60.,250.*s.fft/s.rate);
         const double interval=paceMs(slowest);
-        if(clock.isValid() && clock.elapsed()<interval)return false;
+        if(clock.isValid() && clock.elapsed()+kTickSlackMs<interval)return false;
         QElapsedTimer work;work.start();
         const double elapsed=clock.isValid()?clock.elapsed()/1000.:interval/1000.;
         data->frameSeconds=elapsed;
@@ -275,6 +275,7 @@ private:
     double computeMs_=4,paintMs_=4;
     int heldColumns_=0;QByteArray latest_;QElapsedTimer sinceFrame_,sinceArrival_;
     static constexpr qint64 kBridgeMs=250;
+    static constexpr double kTickSlackMs=4.;
     static constexpr int kDelaySamples=1920; // 40 ms at 48 kHz
     double credit=0,axisTop_=0,axisSpan_=90,waveLimit_=1;
     bool relativeAxis_=false;
