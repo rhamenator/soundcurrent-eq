@@ -64,18 +64,36 @@ public:
     // fighting the audio threads; an idle one gets a smooth display.
     double paceMs(double slowest) const {return std::clamp(3.*(computeMs_+paintMs_),16.,std::max(16.,slowest));}
     QSize historyPixelSize() const {return {image.width,image.height};}
-    void clearImage(){image={};ensureImageSize();previousColumn.clear();credit=0;clock.invalidate();update();}
+    void clearImage(){image={};ensureImageSize();previousColumn.clear();credit=0;heldColumns_=0;sinceFrame_.invalidate();latest_.clear();clock.invalidate();update();}
     bool advanceIdle() {
         if(!isVisible()||frozen||mode!=View::Waterfall)return false;
         const double interval=paceMs(60.);
         if(clock.isValid()&&clock.elapsed()<interval)return false;
+        // Jitter buffer: the spectrogram is rendered kDelaySamples behind the newest audio and the render position
+        // advances with the wall clock between arrivals, so a chunk that arrives a little late does not leave a gap.
+        if(!latest_.isEmpty()&&sinceArrival_.isValid()&&sinceArrival_.elapsed()<kBridgeMs){
+            const int trim=kDelaySamples-int(sinceArrival_.elapsed()*48);
+            if(trim>=0&&render(latest_,trim)){setProperty("pumpFrames",property("pumpFrames").toInt()+1);return true;}
+        }
         const double elapsed=clock.isValid()?clock.elapsed()/1000.:interval/1000.;clock.restart();ensureImageSize();
         const auto &s=data->settings;credit+=elapsed*image.width*s.speed/s.history;const int columns=std::min(image.width,int(credit));credit-=columns;
         if(columns<=0)return false;
-        for(int y=0;y<image.height;++y){auto *row=image.pixels.data()+y*image.width;std::memmove(row,row+columns,std::size_t(image.width-columns)*sizeof(*row));std::fill(row+image.width-columns,row+image.width,0xff000000);}
-        previousColumn.assign(std::size_t(image.height),-240.);setProperty("idleFrames",property("idleFrames").toInt()+1);if(onFrame)onFrame();update();return true;
+        // A short gap (a frame running a little late) is bridged by holding the last real column; the next real
+        // frame re-interpolates across the held columns. Only a real silence/stall scrolls in black.
+        const bool bridge=sinceFrame_.isValid()&&sinceFrame_.elapsed()<kBridgeMs&&previousColumn.size()==std::size_t(image.height);
+        for(int y=0;y<image.height;++y){auto *row=image.pixels.data()+y*image.width;const auto last=row[image.width-1];std::memmove(row,row+columns,std::size_t(image.width-columns)*sizeof(*row));std::fill(row+image.width-columns,row+image.width,bridge?last:0xff000000);}
+        if(bridge)heldColumns_=std::min(image.width,heldColumns_+columns);
+        else{heldColumns_=0;previousColumn.assign(std::size_t(image.height),-240.);}
+        setProperty("idleFrames",property("idleFrames").toInt()+1);setProperty("idleHeldColumns",heldColumns_);if(onFrame)onFrame();update();return true;
     }
+    // Audio arrival only refills the buffer. The Spectrogram is then paced and rendered by the display timer
+    // (advanceIdle); the other views render immediately as before.
     bool push(const QByteArray &pcm) {
+        latest_=pcm;sinceArrival_.restart();
+        if(mode==View::Waterfall)return false;
+        return render(pcm,0);
+    }
+    bool render(const QByteArray &source,int trimSamples) {
         if(!isVisible() || frozen)return false;
         const auto &s=data->settings;const double slowest=(mode==View::Microphone || mode==View::Average)?40:(mode==View::Waveform || mode==View::Vectorscope)?50:std::max(60.,250.*s.fft/s.rate);
         const double interval=paceMs(slowest);
@@ -83,6 +101,9 @@ public:
         QElapsedTimer work;work.start();
         const double elapsed=clock.isValid()?clock.elapsed()/1000.:interval/1000.;
         data->frameSeconds=elapsed;
+        QByteArray pcm=source;
+        if(trimSamples>0){const int frames=int(source.size()/4),needed=int(std::ceil((s.fft-1)*48000./s.rate))+65;
+            const int trim=std::min(trimSamples,std::max(0,frames-needed));pcm=source.left(source.size()-qsizetype(trim)*4);}
         if(!data->push(pcm,mode))return false;
         clock.restart();
         if(s.autoRange && mode!=View::Waveform && mode!=View::Vectorscope && !data->db.empty()) {
@@ -96,7 +117,9 @@ public:
             credit+=elapsed*image.width*s.speed/s.history;const int columns=std::min(image.width,int(credit));credit-=columns;
             if(columns>0)for(int y=0;y<image.height;++y){auto *row=image.pixels.data()+y*image.width;std::memmove(row,row+columns,std::size_t(image.width-columns)*sizeof(*row));}
             if(s.layout==2 && s.channel==0){column=spectrogramColumn(data->dbLeft,s,image.height/2);auto right=spectrogramColumn(data->dbRight,s,image.height-image.height/2);column.insert(column.end(),right.begin(),right.end());}
-            const int count=std::max(1,columns);std::vector<double> blended(column.size());
+            // Columns bridged while this frame was late are re-rendered too, so the gap is a smooth ramp from the
+            // last real column to this one instead of a hold followed by a jump.
+            const int count=std::min(image.width,std::max(1,columns)+heldColumns_);std::vector<double> blended(column.size());heldColumns_=0;setProperty("idleHeldColumns",0);
             for(int x=image.width-count;x<image.width;++x){
                 const double blend=double(x-(image.width-count)+1)/count;
                 for(int y=0;y<image.height;++y)blended[y]=previousColumn.size()==column.size()?previousColumn[y]+blend*(column[y]-previousColumn[y]):column[y];
@@ -105,7 +128,7 @@ public:
             }
             previousColumn=std::move(column);
         }
-        computeMs_=.8*computeMs_+.2*work.nsecsElapsed()/1e6;
+        computeMs_=.8*computeMs_+.2*work.nsecsElapsed()/1e6;sinceFrame_.restart();
         if(onFrame)onFrame();
         update();return true;
     }
@@ -246,10 +269,13 @@ private:
             const auto scaled=old.scaled(w,h,Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
             for(int y=0;y<h;++y)std::memcpy(replacement.pixels.data()+y*w,scaled.constScanLine(y),std::size_t(w)*4);
         }
-        image=std::move(replacement);previousColumn.clear();credit=0;
+        image=std::move(replacement);previousColumn.clear();credit=0;heldColumns_=0;
     }
     QElapsedTimer clock;
     double computeMs_=4,paintMs_=4;
+    int heldColumns_=0;QByteArray latest_;QElapsedTimer sinceFrame_,sinceArrival_;
+    static constexpr qint64 kBridgeMs=250;
+    static constexpr int kDelaySamples=1920; // 40 ms at 48 kHz
     double credit=0,axisTop_=0,axisSpan_=90,waveLimit_=1;
     bool relativeAxis_=false;
     QRectF plotRect() const {const int margin=std::max(70,fontMetrics().horizontalAdvance(formatFrequency(999.999))+12);return QRectF(margin,18,std::max(1,width()-2*margin),std::max(1,height()-62));}

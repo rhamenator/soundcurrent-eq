@@ -2879,7 +2879,21 @@ public:
     void selfTestAnalysisIdle() {
         int analysisPage=-1;for(int i=0;i<tabs_->count();++i)if(tabs_->widget(i)->isAncestorOf(analysis_)){analysisPage=i;break;}if(analysisPage<0)qFatal("Spectrogram page is missing");
         const int page=tabs_->currentIndex();tabs_->setCurrentIndex(analysisPage);QCoreApplication::processEvents();auto *viewBox=findChild<QComboBox *>("analysisView");const int savedView=viewBox?viewBox->currentIndex():0;if(viewBox)viewBox->setCurrentIndex(0);QCoreApplication::processEvents();auto *canvas=findChild<QWidget *>("analysisCanvas");if(!canvas)qFatal("Analysis canvas is missing");
-        const int before=canvas->property("idleFrames").toInt();QElapsedTimer wait;wait.start();while(wait.elapsed()<220){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}if(canvas->property("idleFrames").toInt()<=before)qFatal("Selected spectrogram stopped while playback was silent");if(viewBox)viewBox->setCurrentIndex(savedView);tabs_->setCurrentIndex(page);QCoreApplication::processEvents();
+        const int before=canvas->property("idleFrames").toInt();QElapsedTimer wait;wait.start();while(wait.elapsed()<220){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}if(canvas->property("idleFrames").toInt()<=before)qFatal("Selected spectrogram stopped while playback was silent");
+        // The spectrogram renders from a short jitter buffer; a stall longer than the buffer is bridged (last column held,
+        // later re-interpolated) instead of punched black, and a real silence still scrolls black.
+        QByteArray gapTone(8192*4,'\0');for(int i=0;i<8192;++i){const auto v=int16_t(std::lround(8000.*std::sin(2.*std::numbers::pi*1000.*i/48000.)));for(int c=0;c<2;++c){gapTone[i*4+c*2]=char(uint16_t(v)&0xff);gapTone[i*4+c*2+1]=char(uint16_t(v)>>8);}}
+        QElapsedTimer settle;settle.start();while(settle.elapsed()<120){QCoreApplication::processEvents(QEventLoop::AllEvents,10);QThread::msleep(5);} // let the silence fill expire first
+        const int pumpBefore=canvas->property("pumpFrames").toInt();
+        analysis_->pushPcm(gapTone);
+        QElapsedTimer gap;gap.start();while(gap.elapsed()<90){QCoreApplication::processEvents(QEventLoop::AllEvents,10);QThread::msleep(5);}
+        if(canvas->property("pumpFrames").toInt()<=pumpBefore)qFatal("The spectrogram did not render from the buffered audio");
+        if(canvas->property("idleHeldColumns").toInt()<=0)qFatal("A stall longer than the buffer was not bridged");
+        analysis_->pushPcm(gapTone);gap.restart();while(gap.elapsed()<600&&canvas->property("idleHeldColumns").toInt()!=0){QCoreApplication::processEvents(QEventLoop::AllEvents,10);QThread::msleep(5);} // frame spacing adapts to load
+        if(canvas->property("idleHeldColumns").toInt()!=0)qFatal("Held spectrogram columns were not re-interpolated by the next frame");
+        QElapsedTimer silence;silence.start();while(silence.elapsed()<420){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}
+        if(canvas->property("idleHeldColumns").toInt()!=0)qFatal("A long gap kept bridging instead of scrolling silence");
+        if(viewBox)viewBox->setCurrentIndex(savedView);tabs_->setCurrentIndex(page);QCoreApplication::processEvents();
     }
     void selfTestQuitVisibility() const {
         const auto *quit=findChild<QPushButton*>("persistentQuit");
