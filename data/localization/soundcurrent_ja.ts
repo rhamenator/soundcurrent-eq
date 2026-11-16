@@ -232,6 +232,10 @@ Do you want to delete it anyway?</source>
       <translation>すべてのサブタイプ</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
+      <translation>VB-CABLE も削除する（公式の削除ツールを開きます。再起動が必要です）</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>アンバー</translation>
     </message>

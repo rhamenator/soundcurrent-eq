@@ -232,6 +232,10 @@ Pretende eliminá-lo mesmo assim?</translation>
       <translation>Todos os subtipos</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
+      <translation>Remover também o VB-CABLE (abre o removedor oficial; é necessário reiniciar)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Âmbar</translation>
     </message>

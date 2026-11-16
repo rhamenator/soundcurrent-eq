@@ -232,6 +232,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Minden altípus</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
+      <translation>A VB-CABLE eltávolítása is (megnyitja a hivatalos eltávolítót; újraindítás szükséges)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Borostyán</translation>
     </message>

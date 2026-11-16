@@ -18,7 +18,10 @@ try {
     }
     & $SignedDriverManager --verify $SignedDriverPackage
     if ($LASTEXITCODE -ne 0) { throw 'The driver package is incomplete or its signature cannot be verified.' }
-    } else {
+    }
+    # The VB-CABLE package is bundled by the cable route and used by the native
+    # route only for its optional VB-CABLE removal.
+    if ($true) {
         if (!$CablePackage) { $CablePackage = Join-Path $root '.cache\windows-package\VBCABLE_Driver_Pack45.zip' }
         if (!(Test-Path -LiteralPath $CablePackage)) {
             New-Item -ItemType Directory -Force (Split-Path $CablePackage -Parent) | Out-Null
@@ -224,7 +227,7 @@ try {
     New-Item -ItemType Directory -Force dist | Out-Null
     $installerSuffix = if ($AudioRoute -eq 'Native') { '-native' } else { '' }
     $installer = Join-Path $root "dist\SoundCurrent-EQ-$version-windows-x64$installerSuffix-setup.exe"
-    [string[]]$audioOptions = if ($AudioRoute -eq 'Native') { @("/DDRIVER_DIR=$SignedDriverPackage") } else { @("/DCABLE_ZIP=$CablePackage") }
+    [string[]]$audioOptions = if ($AudioRoute -eq 'Native') { @("/DDRIVER_DIR=$SignedDriverPackage", "/DCABLE_ZIP=$CablePackage") } else { @("/DCABLE_ZIP=$CablePackage") }
     $installerScript = if ($AudioRoute -eq 'Native') { 'packaging\windows\soundcurrent-eq-native.nsi' } else { 'packaging\windows\soundcurrent-eq.nsi' }
     & python tests/installer_language_activation.py
     if ($LASTEXITCODE -ne 0) { throw 'Installer language activation regression failed' }

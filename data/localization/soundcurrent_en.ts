@@ -232,6 +232,10 @@ Do you want to delete it anyway?</translation>
       <translation>All subtypes</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
+      <translation>Also remove VB-CABLE (opens its official remover; restart needed)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Amber</translation>
     </message>

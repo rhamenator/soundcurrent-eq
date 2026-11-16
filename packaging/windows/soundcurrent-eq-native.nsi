@@ -24,6 +24,10 @@ Unicode true
   !error "Pass /DDRIVER_DIR=path-to-SoundCurrent-INF-SYS-CAT-package"
 !endif
 
+!ifndef CABLE_ZIP
+  !error "Pass /DCABLE_ZIP=path-to-original-VBCABLE_Driver_Pack45.zip (used only by the optional VB-CABLE removal)"
+!endif
+
 !ifndef APP_VERSION
   !define APP_VERSION "1.3.3"
 !endif
@@ -31,6 +35,9 @@ Unicode true
 Var DriverCheck
 Var DriverChoice
 Var InstallDriver
+Var CablePresent
+Var RemoveCableChoice
+Var RemoveCable
 
 Name "SoundCurrent EQ"
 OutFile "${OUTPUT}"
@@ -68,6 +75,7 @@ LangString SCNativeApproval ${LANG_ENGLISH} "Windows will request administrator 
 LangString SCSharedDriverNotice ${LANG_ENGLISH} "Quit any running SoundCurrent app before changing the shared driver. Removing one app keeps the driver if the other app still uses it."
 LangString SCDriverCheckFailed ${LANG_ENGLISH} "Setup could not check the driver. You can retry with Audio driver setup in the app or Start menu."
 LangString SCInstallDriver ${LANG_ENGLISH} "Install or update the shared SoundCurrent Audio driver"
+LangString SCRemoveCable ${LANG_ENGLISH} "Also remove VB-CABLE (opens its official remover; restart needed)"
 LangString SCSetupAudio ${LANG_ENGLISH} "Set up SoundCurrent Audio for SoundCurrent EQ."
 
 Function .onInit
@@ -85,6 +93,12 @@ Function .onInit
   nsExec::ExecToStack /TIMEOUT=20000 '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -NonInteractive -ExecutionPolicy RemoteSigned -File "$PLUGINSDIR\audio-setup.ps1" -Check'
   Pop $DriverCheck
   Pop $0
+  ; Optional VB-CABLE removal is offered only when the driver is actually present.
+  StrCpy $RemoveCable 0
+  File "/oname=detect-vbcable.ps1" "${SOURCE_ROOT}\packaging\windows\native-detect-vbcable.ps1"
+  nsExec::ExecToStack /TIMEOUT=20000 '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -NonInteractive -ExecutionPolicy RemoteSigned -File "$PLUGINSDIR\detect-vbcable.ps1"'
+  Pop $CablePresent
+  Pop $0
 FunctionEnd
 
 Function AudioPage
@@ -98,22 +112,38 @@ Function AudioPage
   Pop $0
   ${NSD_CreateCheckbox} 0 38u 100% 18u "$(SCInstallDriver)"
   Pop $DriverChoice
+  ; Keep the original layout unless the optional VB-CABLE removal row is needed.
+  StrCpy $R1 65u
+  StrCpy $R2 35u
+  StrCpy $R3 108u
+  ${If} $CablePresent == 0
+    StrCpy $R1 56u
+    StrCpy $R2 28u
+    StrCpy $R3 98u
+  ${EndIf}
   ${If} $DriverCheck == 0
     ${NSD_Check} $DriverChoice
-    ${NSD_CreateLabel} 0 65u 100% 35u "$(SCNativePresent)"
+    ${NSD_CreateLabel} 0 $R1 100% $R2 "$(SCNativePresent)"
   ${ElseIf} $DriverCheck == 10
     ${NSD_Check} $DriverChoice
-    ${NSD_CreateLabel} 0 65u 100% 35u "$(SCNativeApproval)"
+    ${NSD_CreateLabel} 0 $R1 100% $R2 "$(SCNativeApproval)"
   ${Else}
-    ${NSD_CreateLabel} 0 65u 100% 35u "$(SCDriverCheckFailed)"
+    ${NSD_CreateLabel} 0 $R1 100% $R2 "$(SCDriverCheckFailed)"
   ${EndIf}
   Pop $0
-  ${NSD_CreateLabel} 0 108u 100% 40u "$(SCSharedDriverNotice)"
+  ${If} $CablePresent == 0
+    ${NSD_CreateCheckbox} 0 85u 100% 12u "$(SCRemoveCable)"
+    Pop $RemoveCableChoice
+  ${EndIf}
+  ${NSD_CreateLabel} 0 $R3 100% 36u "$(SCSharedDriverNotice)"
   Pop $0
   nsDialogs::Show
 FunctionEnd
 Function AudioPageLeave
   ${NSD_GetState} $DriverChoice $InstallDriver
+  ${If} $CablePresent == 0
+    ${NSD_GetState} $RemoveCableChoice $RemoveCable
+  ${EndIf}
 FunctionEnd
 
 Section "SoundCurrent EQ" main
@@ -171,6 +201,30 @@ Section "SoundCurrent EQ" main
       DetailPrint "$(SCSetupRetryProgress)"
       MessageBox MB_OK|MB_ICONINFORMATION "$(SCSetupFailedAppInstalled)"
     ${EndIf}
+  ${EndIf}
+  ; Optional: hand VB-CABLE removal to VB-Audio's own signed remover (same flow as
+  ; the VB-CABLE installer's uninstall). Skipped for silent installs.
+  ${If} $RemoveCable == ${BST_CHECKED}
+    SetOutPath "$INSTDIR\vb-cable-removal"
+    File "/oname=cable-setup.ps1" "${SOURCE_ROOT}\packaging\windows\cable-setup.ps1"
+    File "/oname=setup-localization.ps1" "${DLL_DIR}\setup-localization.ps1"
+    File "/oname=soundcurrent-cable-setup-guard.exe" "${DLL_DIR}\soundcurrent-cable-setup-guard.exe"
+    File "/oname=VBCABLE_Driver_Pack45.zip" "${CABLE_ZIP}"
+    File "/oname=VB-CABLE-NOTICE.txt" "${SOURCE_ROOT}\packaging\windows\VB-CABLE-NOTICE.txt"
+    nsExec::ExecToStack '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy RemoteSigned -File "$INSTDIR\vb-cable-removal\cable-setup.ps1" -Remove -Quiet'
+    Pop $0
+    Pop $1
+    DetailPrint $1
+    ${If} $0 == 3010
+      SetRebootFlag true
+    ${EndIf}
+    SetOutPath "$INSTDIR"
+    Delete "$INSTDIR\vb-cable-removal\cable-setup.ps1"
+    Delete "$INSTDIR\vb-cable-removal\setup-localization.ps1"
+    Delete "$INSTDIR\vb-cable-removal\soundcurrent-cable-setup-guard.exe"
+    Delete "$INSTDIR\vb-cable-removal\VBCABLE_Driver_Pack45.zip"
+    Delete "$INSTDIR\vb-cable-removal\VB-CABLE-NOTICE.txt"
+    RMDir "$INSTDIR\vb-cable-removal"
   ${EndIf}
 SectionEnd
 

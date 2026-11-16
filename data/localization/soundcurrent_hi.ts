@@ -232,6 +232,10 @@ Do you want to delete it anyway?</source>
       <translation>सभी उपप्रकार</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
+      <translation>VB-CABLE भी हटाएँ (इसका आधिकारिक रिमूवर खुलेगा; पुनः आरंभ आवश्यक है)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>अंबर</translation>
     </message>

@@ -232,6 +232,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Semua subjenis</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
+      <translation>Hapus juga VB-CABLE (membuka penghapus resminya; perlu mulai ulang)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Ambar</translation>
     </message>

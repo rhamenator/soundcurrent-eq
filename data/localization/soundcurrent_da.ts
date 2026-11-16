@@ -232,6 +232,10 @@ Vil du slette den alligevel?</translation>
       <translation>Alle undertyper</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
+      <translation>Fjern også VB-CABLE (åbner dens officielle fjernelsesværktøj; genstart kræves)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Rav</translation>
     </message>

@@ -39,6 +39,7 @@ SOURCES = {
     'SCSetupAudio': 'Set up %1 for %2.',
     'SCInstallCable': 'Install VB-CABLE if missing (administrator approval)',
     'SCInstallNative': 'Install or update the shared SoundCurrent Audio driver',
+    'SCRemoveCable': 'Also remove VB-CABLE (opens its official remover; restart needed)',
 }
 
 
@@ -135,6 +136,7 @@ def export(destination, product):
                 captions['SCNativeSetupProgress'] = format_value(translations['SCNativeSetupProgress'], driver)
                 captions['SCNativeRouting'] = translations['SCNativeRouting']
                 captions['SCNativePresent'] = translations['SCNativePresent']
+                captions['SCRemoveCable'] = translations['SCRemoveCable']
                 captions['SCNativeApproval'] = translations['SCNativeApproval']
                 captions['SCSharedDriverNotice'] = translations['SCSharedDriverNotice']
             if route == 'cable':

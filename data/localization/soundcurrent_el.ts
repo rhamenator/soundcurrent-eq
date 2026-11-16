@@ -232,6 +232,10 @@ Do you want to delete it anyway?</source>
       <translation>Όλοι οι υποτύποι</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
+      <translation>Κατάργηση και του VB-CABLE (ανοίγει το επίσημο πρόγραμμα κατάργησης· απαιτείται επανεκκίνηση)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Κεχριμπάρι</translation>
     </message>

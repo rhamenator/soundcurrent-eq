@@ -232,6 +232,10 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Tüm alt türler</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
+      <translation>VB-CABLE'ı da kaldır (resmî kaldırıcısını açar; yeniden başlatma gerekir)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Kehribar</translation>
     </message>

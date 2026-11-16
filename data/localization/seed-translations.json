@@ -255,7 +255,8 @@
     "Unsupported equipment profile schema (expected 2/3/4).",
     "Disable microphone access",
     "Microphone access is disabled.",
-    "Quit"
+    "Quit",
+    "Also remove VB-CABLE (opens its official remover; restart needed)"
   ],
   "languages": {
     "de": [
@@ -515,7 +516,8 @@
       "Nicht unterstütztes Geräteprofilschema (erwartet 2/3/4).",
       "Mikrofonzugriff deaktivieren",
       "Der Mikrofonzugriff ist deaktiviert.",
-      "Beenden"
+      "Beenden",
+      "VB-CABLE ebenfalls entfernen (öffnet das offizielle Entfernungsprogramm; Neustart erforderlich)"
     ],
     "fr": [
       "Français",
@@ -774,7 +776,8 @@
       "Schéma de profil d’équipement non pris en charge (2/3/4 attendu).",
       "Désactiver l’accès au microphone",
       "L’accès au microphone est désactivé.",
-      "Quitter"
+      "Quitter",
+      "Supprimer aussi VB-CABLE (ouvre son outil de suppression officiel ; redémarrage nécessaire)"
     ],
     "es": [
       "Español",
@@ -1033,7 +1036,8 @@
       "Esquema de perfil de equipo no compatible (se esperaba 2/3/4).",
       "Desactivar el acceso al micrófono",
       "El acceso al micrófono está desactivado.",
-      "Salir"
+      "Salir",
+      "Quitar también VB-CABLE (abre su desinstalador oficial; requiere reiniciar)"
     ],
     "it": [
       "Italiano",
@@ -1292,7 +1296,8 @@
       "Schema del profilo non supportato (previsto 2/3/4).",
       "Disattiva accesso al microfono",
       "L’accesso al microfono è disattivato.",
-      "Esci"
+      "Esci",
+      "Rimuovi anche VB-CABLE (apre il suo programma di rimozione ufficiale; è necessario riavviare)"
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -1551,7 +1556,8 @@
       "Esquema de perfil não suportado (esperado 2/3/4).",
       "Desativar acesso ao microfone",
       "O acesso ao microfone está desativado.",
-      "Sair"
+      "Sair",
+      "Remover também o VB-CABLE (abre o removedor oficial; é necessário reiniciar)"
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -1810,7 +1816,8 @@
       "Esquema de perfil não suportado (esperado 2/3/4).",
       "Desativar acesso ao microfone",
       "O acesso ao microfone está desativado.",
-      "Sair"
+      "Sair",
+      "Remover também o VB-CABLE (abre o removedor oficial; é preciso reiniciar)"
     ],
     "nl": [
       "Nederlands",
@@ -2069,7 +2076,8 @@
       "Niet-ondersteund apparatuurschema (2/3/4 verwacht).",
       "Microfoontoegang uitschakelen",
       "Microfoontoegang is uitgeschakeld.",
-      "Afsluiten"
+      "Afsluiten",
+      "VB-CABLE ook verwijderen (opent het officiële verwijderprogramma; opnieuw opstarten vereist)"
     ],
     "pl": [
       "Polski",
@@ -2328,7 +2336,8 @@
       "Nieobsługiwany schemat profilu sprzętu (oczekiwano 2/3/4).",
       "Wyłącz dostęp do mikrofonu",
       "Dostęp do mikrofonu jest wyłączony.",
-      "Zakończ"
+      "Zakończ",
+      "Usuń także VB-CABLE (otwiera oficjalne narzędzie usuwania; wymagane ponowne uruchomienie)"
     ],
     "cs": [
       "Čeština",
@@ -2587,7 +2596,8 @@
       "Nepodporované schéma profilu zařízení (očekáváno 2/3/4).",
       "Zakázat přístup k mikrofonu",
       "Přístup k mikrofonu je zakázán.",
-      "Ukončit"
+      "Ukončit",
+      "Odebrat také VB-CABLE (otevře oficiální odinstalátor; je nutný restart)"
     ],
     "sk": [
       "Slovenčina",
@@ -2846,7 +2856,8 @@
       "Nepodporovaná schéma profilu zariadenia (očakávané 2/3/4).",
       "Zakázať prístup k mikrofónu",
       "Prístup k mikrofónu je zakázaný.",
-      "Ukončiť"
+      "Ukončiť",
+      "Odstrániť aj VB-CABLE (otvorí oficiálny odinštalátor; je potrebný reštart)"
     ],
     "uk": [
       "Українська",
@@ -3105,7 +3116,8 @@
       "Непідтримувана схема профілю обладнання (очікується 2/3/4).",
       "Вимкнути доступ до мікрофона",
       "Доступ до мікрофона вимкнено.",
-      "Вийти"
+      "Вийти",
+      "Також видалити VB-CABLE (відкриється офіційний засіб видалення; потрібне перезавантаження)"
     ],
     "ru": [
       "Русский",
@@ -3364,7 +3376,8 @@
       "Неподдерживаемая схема профиля оборудования (ожидается 2/3/4).",
       "Отключить доступ к микрофону",
       "Доступ к микрофону отключён.",
-      "Выйти"
+      "Выйти",
+      "Также удалить VB-CABLE (откроется официальное средство удаления; потребуется перезагрузка)"
     ],
     "el": [
       "Ελληνικά",
@@ -3623,7 +3636,8 @@
       "Μη υποστηριζόμενο σχήμα προφίλ εξοπλισμού (αναμένεται 2/3/4).",
       "Απενεργοποίηση πρόσβασης στο μικρόφωνο",
       "Η πρόσβαση στο μικρόφωνο είναι απενεργοποιημένη.",
-      "Έξοδος"
+      "Έξοδος",
+      "Κατάργηση και του VB-CABLE (ανοίγει το επίσημο πρόγραμμα κατάργησης· απαιτείται επανεκκίνηση)"
     ],
     "tr": [
       "Türkçe",
@@ -3882,7 +3896,8 @@
       "Desteklenmeyen ekipman profil şeması (2/3/4 bekleniyor).",
       "Mikrofon erişimini devre dışı bırak",
       "Mikrofon erişimi devre dışı.",
-      "Çık"
+      "Çık",
+      "VB-CABLE'ı da kaldır (resmî kaldırıcısını açar; yeniden başlatma gerekir)"
     ],
     "sv": [
       "Svenska",
@@ -4141,7 +4156,8 @@
       "Utrustningsprofilens schema stöds inte (2/3/4 förväntas).",
       "Inaktivera mikrofonåtkomst",
       "Mikrofonåtkomst är inaktiverad.",
-      "Avsluta"
+      "Avsluta",
+      "Ta även bort VB-CABLE (öppnar dess officiella borttagningsverktyg; omstart krävs)"
     ],
     "da": [
       "Dansk",
@@ -4400,7 +4416,8 @@
       "Udstyrsprofilens skema understøttes ikke (2/3/4 forventes).",
       "Deaktiver mikrofonadgang",
       "Mikrofonadgang er deaktiveret.",
-      "Afslut"
+      "Afslut",
+      "Fjern også VB-CABLE (åbner dens officielle fjernelsesværktøj; genstart kræves)"
     ],
     "nb": [
       "Norsk bokmål",
@@ -4659,7 +4676,8 @@
       "Utstyrsprofilskjema støttes ikke (forventer 2/3/4).",
       "Deaktiver mikrofontilgang",
       "Mikrofontilgang er deaktivert.",
-      "Avslutt"
+      "Avslutt",
+      "Fjern også VB-CABLE (åpner det offisielle fjerningsverktøyet; omstart kreves)"
     ],
     "fi": [
       "Suomi",
@@ -4918,7 +4936,8 @@
       "Laitteen profiiliskeemaa ei tueta (odotettu 2/3/4).",
       "Poista mikrofonin käyttö käytöstä",
       "Mikrofonin käyttö on poistettu käytöstä.",
-      "Lopeta"
+      "Lopeta",
+      "Poista myös VB-CABLE (avaa sen virallisen poistotyökalun; vaatii uudelleenkäynnistyksen)"
     ],
     "ro": [
       "Română",
@@ -5177,7 +5196,8 @@
       "Schemă de profil neacceptată (se așteaptă 2/3/4).",
       "Dezactivează accesul la microfon",
       "Accesul la microfon este dezactivat.",
-      "Ieșire"
+      "Ieșire",
+      "Elimină și VB-CABLE (deschide programul oficial de eliminare; este necesară repornirea)"
     ],
     "hu": [
       "Magyar",
@@ -5436,7 +5456,8 @@
       "Nem támogatott berendezésprofilséma (várt: 2/3/4).",
       "Mikrofon-hozzáférés letiltása",
       "A mikrofon-hozzáférés le van tiltva.",
-      "Kilépés"
+      "Kilépés",
+      "A VB-CABLE eltávolítása is (megnyitja a hivatalos eltávolítót; újraindítás szükséges)"
     ],
     "ar": [
       "العربية",
@@ -5695,7 +5716,8 @@
       "مخطط ملف المعدات غير مدعوم (المتوقع 2/3/4).",
       "تعطيل الوصول إلى الميكروفون",
       "الوصول إلى الميكروفون معطّل.",
-      "إنهاء"
+      "إنهاء",
+      "إزالة VB-CABLE أيضًا (تفتح أداة الإزالة الرسمية؛ يلزم إعادة التشغيل)"
     ],
     "he": [
       "עברית",
@@ -5954,7 +5976,8 @@
       "סכמת פרופיל ציוד אינה נתמכת (נדרשת 2/3/4).",
       "השבתת הגישה למיקרופון",
       "הגישה למיקרופון מושבתת.",
-      "יציאה"
+      "יציאה",
+      "הסר גם את VB-CABLE (נפתחת כלי ההסרה הרשמי שלו; נדרשת הפעלה מחדש)"
     ],
     "fa": [
       "فارسی",
@@ -6213,7 +6236,8 @@
       "طرح نمایهٔ تجهیزات پشتیبانی نمی‌شود (مورد انتظار 2/3/4).",
       "غیرفعال کردن دسترسی به میکروفون",
       "دسترسی به میکروفون غیرفعال است.",
-      "خروج"
+      "خروج",
+      "VB-CABLE هم حذف شود (ابزار رسمی حذف آن باز می‌شود؛ راه‌اندازی مجدد لازم است)"
     ],
     "zh-Hans": [
       "简体中文",
@@ -6472,7 +6496,8 @@
       "不支持的设备配置架构（应为 2/3/4）。",
       "禁用麦克风访问",
       "麦克风访问已禁用。",
-      "退出"
+      "退出",
+      "同时移除 VB-CABLE（将打开其官方移除工具；需要重启）"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -6731,7 +6756,8 @@
       "不支援的設備設定檔結構描述（應為 2/3/4）。",
       "停用麥克風存取",
       "麥克風存取已停用。",
-      "結束"
+      "結束",
+      "一併移除 VB-CABLE（將開啟其官方移除工具；需要重新啟動）"
     ],
     "ja": [
       "日本語",
@@ -6990,7 +7016,8 @@
       "未対応の機器プロファイルスキーマです（2/3/4 が必要）。",
       "マイクへのアクセスを無効にする",
       "マイクへのアクセスは無効です。",
-      "終了"
+      "終了",
+      "VB-CABLE も削除する（公式の削除ツールを開きます。再起動が必要です）"
     ],
     "ko": [
       "한국어",
@@ -7249,7 +7276,8 @@
       "지원하지 않는 장비 프로필 스키마입니다(2/3/4 필요).",
       "마이크 접근 비활성화",
       "마이크 접근이 비활성화되어 있습니다.",
-      "종료"
+      "종료",
+      "VB-CABLE도 제거(공식 제거 도구를 엽니다. 다시 시작 필요)"
     ],
     "hi": [
       "हिन्दी",
@@ -7508,7 +7536,8 @@
       "उपकरण प्रोफ़ाइल स्कीमा समर्थित नहीं है (2/3/4 अपेक्षित)।",
       "माइक्रोफ़ोन का ऐक्सेस बंद करें",
       "माइक्रोफ़ोन का ऐक्सेस बंद है।",
-      "बाहर निकलें"
+      "बाहर निकलें",
+      "VB-CABLE भी हटाएँ (इसका आधिकारिक रिमूवर खुलेगा; पुनः आरंभ आवश्यक है)"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -7767,7 +7796,8 @@
       "Skema profil peralatan tidak didukung (diharapkan 2/3/4).",
       "Nonaktifkan akses mikrofon",
       "Akses mikrofon dinonaktifkan.",
-      "Keluar"
+      "Keluar",
+      "Hapus juga VB-CABLE (membuka penghapus resminya; perlu mulai ulang)"
     ],
     "vi": [
       "Tiếng Việt",
@@ -8026,7 +8056,8 @@
       "Lược đồ cấu hình thiết bị không được hỗ trợ (cần 2/3/4).",
       "Tắt quyền truy cập micrô",
       "Quyền truy cập micrô đã bị tắt.",
-      "Thoát"
+      "Thoát",
+      "Gỡ cả VB-CABLE (mở trình gỡ chính thức của nó; cần khởi động lại)"
     ],
     "th": [
       "ไทย",
@@ -8285,7 +8316,8 @@
       "ไม่รองรับสคีมาโปรไฟล์อุปกรณ์ (ต้องเป็น 2/3/4)",
       "ปิดการเข้าถึงไมโครโฟน",
       "ปิดการเข้าถึงไมโครโฟนอยู่",
-      "ออก"
+      "ออก",
+      "ลบ VB-CABLE ด้วย (เปิดตัวถอนการติดตั้งอย่างเป็นทางการ; ต้องรีสตาร์ท)"
     ],
     "sw": [
       "Kiswahili",
@@ -8544,7 +8576,8 @@
       "Muundo wa wasifu wa vifaa haukubaliki (2/3/4 inatarajiwa).",
       "Zima ufikiaji wa maikrofoni",
       "Ufikiaji wa maikrofoni umezimwa.",
-      "Toka"
+      "Toka",
+      "Ondoa pia VB-CABLE (hufungua kiondoa rasmi chake; inahitaji kuwasha upya)"
     ],
     "nn": [
       "Norsk nynorsk",
@@ -8803,7 +8836,8 @@
       "Utstyrsprofilskjema er ikkje støtta (ventar 2/3/4).",
       "Slå av mikrofontilgang",
       "Mikrofontilgang er slått av.",
-      "Avslutt"
+      "Avslutt",
+      "Fjern også VB-CABLE (opnar det offisielle fjerningsverktøyet; omstart trengst)"
     ]
   },
   "requiredCompleteLocales": [

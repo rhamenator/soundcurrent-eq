@@ -232,6 +232,10 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Všetky podtypy</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
+      <translation>Odstrániť aj VB-CABLE (otvorí oficiálny odinštalátor; je potrebný reštart)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>Jantárová</translation>
     </message>

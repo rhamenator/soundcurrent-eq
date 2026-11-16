@@ -232,6 +232,10 @@ Do you want to delete it anyway?</source>
       <translation>كل الأنواع الفرعية</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
+      <translation>إزالة VB-CABLE أيضًا (تفتح أداة الإزالة الرسمية؛ يلزم إعادة التشغيل)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>كهرماني</translation>
     </message>

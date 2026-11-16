@@ -232,6 +232,10 @@ Do you want to delete it anyway?</source>
       <translation>همه زیرنوع‌ها</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
+      <translation>VB-CABLE هم حذف شود (ابزار رسمی حذف آن باز می‌شود؛ راه‌اندازی مجدد لازم است)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>کهربایی</translation>
     </message>

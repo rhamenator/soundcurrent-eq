@@ -232,6 +232,10 @@ Do you want to delete it anyway?</source>
       <translation>모든 하위 유형</translation>
     </message>
     <message>
+      <source>Also remove VB-CABLE (opens its official remover; restart needed)</source>
+      <translation>VB-CABLE도 제거(공식 제거 도구를 엽니다. 다시 시작 필요)</translation>
+    </message>
+    <message>
       <source>Amber</source>
       <translation>호박색</translation>
     </message>
