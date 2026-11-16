@@ -2893,6 +2893,10 @@ public:
         if(canvas->property("idleHeldColumns").toInt()!=0)qFatal("Held spectrogram columns were not re-interpolated by the next frame");
         QElapsedTimer silence;silence.start();while(silence.elapsed()<420){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}
         if(canvas->property("idleHeldColumns").toInt()!=0)qFatal("A long gap kept bridging instead of scrolling silence");
+        // The Waveform must also be rendered by the display timer (jitter-buffered), not on each audio arrival, or its trace jumps by whatever the arrival jitter was. pumpFrames only counts timer-driven renders.
+        if(viewBox){viewBox->setCurrentIndex(2);QElapsedTimer switched;switched.start();while(switched.elapsed()<1200){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}const int waveBefore=canvas->property("pumpFrames").toInt();QElapsedTimer wave;wave.start();
+            while(wave.elapsed()<600){analysis_->pushPcm(gapTone);QElapsedTimer chunk;chunk.start();while(chunk.elapsed()<16){QCoreApplication::processEvents(QEventLoop::AllEvents,4);QThread::msleep(2);}}
+            if(canvas->property("pumpFrames").toInt()-waveBefore<1)qFatal("The waveform was not rendered by the display timer (%d frames)",canvas->property("pumpFrames").toInt()-waveBefore);}
         if(viewBox)viewBox->setCurrentIndex(savedView);tabs_->setCurrentIndex(page);QCoreApplication::processEvents();
     }
     void selfTestQuitVisibility() const {
