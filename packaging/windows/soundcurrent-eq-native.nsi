@@ -24,10 +24,6 @@ Unicode true
   !error "Pass /DDRIVER_DIR=path-to-SoundCurrent-INF-SYS-CAT-package"
 !endif
 
-!ifndef CABLE_ZIP
-  !error "Pass /DCABLE_ZIP=path-to-original-VBCABLE_Driver_Pack45.zip (used only by the optional VB-CABLE removal)"
-!endif
-
 !ifndef APP_VERSION
   !define APP_VERSION "1.3.3"
 !endif
@@ -210,7 +206,13 @@ Section "SoundCurrent EQ" main
     File "/oname=cable-setup.ps1" "${SOURCE_ROOT}\packaging\windows\cable-setup.ps1"
     File "/oname=setup-localization.ps1" "${DLL_DIR}\setup-localization.ps1"
     File "/oname=soundcurrent-cable-setup-guard.exe" "${DLL_DIR}\soundcurrent-cable-setup-guard.exe"
-    File "/oname=VBCABLE_Driver_Pack45.zip" "${CABLE_ZIP}"
+    ; The VB-CABLE package is not carried inside this installer: it is fetched from VB-Audio only now, and kept
+    ; only if its SHA-256 matches the pinned release. If it is not available, cable-setup.ps1 reports the missing
+    ; package (existing localized message) and nothing is removed.
+    File "/oname=native-fetch-vbcable.ps1" "${SOURCE_ROOT}\packaging\windows\native-fetch-vbcable.ps1"
+    nsExec::ExecToStack /TIMEOUT=120000 '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -NonInteractive -ExecutionPolicy RemoteSigned -File "$INSTDIR\vb-cable-removal\native-fetch-vbcable.ps1" -Destination "$INSTDIR\vb-cable-removal\VBCABLE_Driver_Pack45.zip"'
+    Pop $0
+    Pop $1
     File "/oname=VB-CABLE-NOTICE.txt" "${SOURCE_ROOT}\packaging\windows\VB-CABLE-NOTICE.txt"
     nsExec::ExecToStack '"$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy RemoteSigned -File "$INSTDIR\vb-cable-removal\cable-setup.ps1" -Remove -SilentRemoval'
     Pop $0
@@ -224,6 +226,8 @@ Section "SoundCurrent EQ" main
     Delete "$INSTDIR\vb-cable-removal\setup-localization.ps1"
     Delete "$INSTDIR\vb-cable-removal\soundcurrent-cable-setup-guard.exe"
     Delete "$INSTDIR\vb-cable-removal\VBCABLE_Driver_Pack45.zip"
+    Delete "$INSTDIR\vb-cable-removal\VBCABLE_Driver_Pack45.zip.download"
+    Delete "$INSTDIR\vb-cable-removal\native-fetch-vbcable.ps1"
     Delete "$INSTDIR\vb-cable-removal\VB-CABLE-NOTICE.txt"
     RMDir "$INSTDIR\vb-cable-removal"
   ${EndIf}
