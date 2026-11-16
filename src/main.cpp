@@ -1850,11 +1850,21 @@ private:
         QVector<double> levels(bands_.size(), 0.0);
         if (!bands_.isEmpty()) {
             int band = 0;
+            QVector<bool> hasBin(bands_.size(), false);
             for (int bin = 1; bin < n / 2; ++bin) {
                 const auto frequency = 48000.0 * bin / n;
                 while (band < bandEdges_.size() && frequency > bandEdges_[band])
                     ++band;
                 levels[band] = std::max(levels[band], std::abs(spectrum[bin]) * 4.0 / n);
+                hasBin[band] = true;
+            }
+            // Narrow low bands (e.g. 40 Hz in a 28-31 band layout) can fall between two FFT
+            // bins (11.7 Hz wide) and would otherwise read silence forever: use the bin
+            // nearest the band's centre instead.
+            for (qsizetype i = 0; i < bands_.size(); ++i) {
+                if (hasBin[i]) continue;
+                const int bin = std::clamp(int(std::lround(bands_[i].frequency * n / 48000.0)), 1, n / 2 - 1);
+                levels[i] = std::abs(spectrum[bin]) * 4.0 / n;
             }
             for (qsizetype i = 0; i < bands_.size(); ++i) levels[i] *= bandGains_[i];
         }
@@ -4596,6 +4606,24 @@ int main(int argc, char **argv) {
         spectrumTest.analyzePcmForTest(tone.left(2048 * 4));
         if (std::abs(testPeak - 0.5) > 0.03 || testLevels[3] < 0.3)
             qFatal("Output gain was not reflected in the level estimate");
+        // Regression: in a 28-31 band layout the 40 Hz band holds no FFT bin and its meter stayed dead.
+        QByteArray lowTone(4096 * 4, '\0');
+        for (int i = 0; i < 4096; ++i) {
+            const auto sample = int16_t(std::lround(8192.0 * std::sin(2.0 * std::numbers::pi * 40.0 * i / 48000.0)));
+            for (int channel = 0; channel < 2; ++channel) {
+                lowTone[i * 4 + channel * 2] = char(uint16_t(sample) & 0xff);
+                lowTone[i * 4 + channel * 2 + 1] = char(uint16_t(sample) >> 8);
+            }
+        }
+        for (const int count : {28, 29, 30, 31}) {
+            spectrumTest.setProfile(defaultBands(count), 0.0);
+            spectrumTest.analyzePcmForTest(lowTone);
+            qsizetype fortyHz = -1;
+            for (qsizetype i = 0; i < defaultBands(count).size(); ++i) if (defaultBands(count)[i].frequency == 40.0) fortyHz = i;
+            if (fortyHz < 0 || testLevels.size() != count || testLevels[fortyHz] < 0.1)
+                qFatal("The 40 Hz band meter stays silent for a 40 Hz tone");
+        }
+        spectrumTest.setProfile(defaultBands(kDefaultBands), 0.0);
         QByteArray leftOnly = tone;
         for (int i = 0; i < 4096; ++i) {
             leftOnly[i * 4 + 2] = '\0';
