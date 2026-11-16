@@ -238,7 +238,9 @@ bool Engine::push(const QByteArray &bytes,View view) {
     ++waveFrames;double ll=0,rr=0,lr=0;
     for(int i=0;i<settings.fft;++i){ll+=left[i]*left[i];rr+=right[i]*right[i];lr+=left[i]*right[i];}
     rms=std::sqrt((ll+rr)/(2*settings.fft));correlation=ll*rr>1e-20?lr/std::sqrt(ll*rr):0;
-    transient=rms>std::max(.02,lastRms_*2);lastRms_=.9*lastRms_+.1*rms;
+    // Smoothing is defined in time (not per frame): ~0.95 s and ~0.98 s constants match the old 10-20 frames/s behaviour.
+    const double dt=std::clamp(frameSeconds,.005,1.),rmsAlpha=1-std::exp(-dt/.95),averageAlpha=1-std::exp(-dt/.975);
+    transient=rms>std::max(.02,lastRms_*2);lastRms_=(1-rmsAlpha)*lastRms_+rmsAlpha*rms;
     if(view==View::Tuner || settings.music)analyzePitch(bytes);
     if(!frequency){fftMs=0;return true;}
     if(!plan_)plan_=std::make_unique<gram::FftPlan>(settings.fft);
@@ -252,7 +254,7 @@ bool Engine::push(const QByteArray &bytes,View view) {
         const double p=settings.channel==1?l:settings.channel==2?r:(l+r)/2;
         db[i]=10*std::log10(std::max(p,1e-24));
         meanPower_[i]+=(p-meanPower_[i])/double(frames);
-        averagePower_[i]=frames==1?p:.95*averagePower_[i]+.05*p;
+        averagePower_[i]=frames==1?p:(1-averageAlpha)*averagePower_[i]+averageAlpha*p;
         averaged[i]=10*std::log10(std::max((view==View::Microphone?meanPower_[i]:averagePower_[i]),1e-24));
         peak[i]=std::max(peak[i],db[i]);
     }

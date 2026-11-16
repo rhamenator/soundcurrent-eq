@@ -19,7 +19,9 @@ namespace soundcurrent::analysis {
 class Capture : public QObject {
 public:
     explicit Capture(QObject *parent=nullptr):QObject(parent){
-        timer_.setInterval(50);
+        // Hand audio to the display at ~60 Hz: the old 50 ms tick plus the display's own pacing
+        // gave only ~10 updates per second. The display still throttles itself to what it can paint.
+        timer_.setInterval(16);timer_.setTimerType(Qt::PreciseTimer);
         connect(&timer_,&QTimer::timeout,this,[this]{
             if(running_ && !playback_ && !soundcurrent::microphone::allowed()){stop();if(onError)onError(SC_TR("Microphone access is disabled."));return;}
 #ifdef Q_OS_WIN

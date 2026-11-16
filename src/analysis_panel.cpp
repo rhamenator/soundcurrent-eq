@@ -58,11 +58,16 @@ public:
     std::function<void()> onFrame;
     double displayCeiling=0;
     void resetClock(){clock.invalidate();}
+    // Frames are paced by what the machine can actually deliver: about three times the measured
+    // cost of computing + painting one frame, never faster than ~60 fps and never slower than the
+    // view's classic cadence `slowest`. A busy system therefore degrades gracefully instead of
+    // fighting the audio threads; an idle one gets a smooth display.
+    double paceMs(double slowest) const {return std::clamp(3.*(computeMs_+paintMs_),16.,std::max(16.,slowest));}
     QSize historyPixelSize() const {return {image.width,image.height};}
     void clearImage(){image={};ensureImageSize();previousColumn.clear();credit=0;clock.invalidate();update();}
     bool advanceIdle() {
         if(!isVisible()||frozen||mode!=View::Waterfall)return false;
-        constexpr double interval=60.;
+        const double interval=paceMs(60.);
         if(clock.isValid()&&clock.elapsed()<interval)return false;
         const double elapsed=clock.isValid()?clock.elapsed()/1000.:interval/1000.;clock.restart();ensureImageSize();
         const auto &s=data->settings;credit+=elapsed*image.width*s.speed/s.history;const int columns=std::min(image.width,int(credit));credit-=columns;
@@ -72,9 +77,12 @@ public:
     }
     bool push(const QByteArray &pcm) {
         if(!isVisible() || frozen)return false;
-        const auto &s=data->settings;const double interval=(mode==View::Microphone || mode==View::Average)?40:(mode==View::Waveform || mode==View::Vectorscope)?50:std::max(60.,250.*s.fft/s.rate);
+        const auto &s=data->settings;const double slowest=(mode==View::Microphone || mode==View::Average)?40:(mode==View::Waveform || mode==View::Vectorscope)?50:std::max(60.,250.*s.fft/s.rate);
+        const double interval=paceMs(slowest);
         if(clock.isValid() && clock.elapsed()<interval)return false;
+        QElapsedTimer work;work.start();
         const double elapsed=clock.isValid()?clock.elapsed()/1000.:interval/1000.;
+        data->frameSeconds=elapsed;
         if(!data->push(pcm,mode))return false;
         clock.restart();
         if(s.autoRange && mode!=View::Waveform && mode!=View::Vectorscope && !data->db.empty()) {
@@ -97,6 +105,7 @@ public:
             }
             previousColumn=std::move(column);
         }
+        computeMs_=.8*computeMs_+.2*work.nsecsElapsed()/1e6;
         if(onFrame)onFrame();
         update();return true;
     }
@@ -119,6 +128,8 @@ protected:
         setToolTip(formatFrequency(hz)+" / "+QLocale().toString(level,'f',1)+(relativeAxis_?" dB":" dBFS"));
     }
     void paintEvent(QPaintEvent *) override {
+        struct PaintTimer {ScopeCanvas *canvas;QElapsedTimer timer;explicit PaintTimer(ScopeCanvas *c):canvas(c){timer.start();}
+            ~PaintTimer(){canvas->paintMs_=.8*canvas->paintMs_+.2*timer.nsecsElapsed()/1e6;}} paintTimer(this);
         QPainter p(this);p.setLayoutDirection(Qt::LeftToRight);p.setRenderHint(QPainter::Antialiasing);p.fillRect(rect(),QColor("#111827"));
         const auto plot=plotRect();const auto &s=data->settings;
         const auto relative=data->relativeDb();
@@ -238,6 +249,7 @@ private:
         image=std::move(replacement);previousColumn.clear();credit=0;
     }
     QElapsedTimer clock;
+    double computeMs_=4,paintMs_=4;
     double credit=0,axisTop_=0,axisSpan_=90,waveLimit_=1;
     bool relativeAxis_=false;
     QRectF plotRect() const {const int margin=std::max(70,fontMetrics().horizontalAdvance(formatFrequency(999.999))+12);return QRectF(margin,18,std::max(1,width()-2*margin),std::max(1,height()-62));}
@@ -260,9 +272,11 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     resetButton->setObjectName("analysisReset");reference_->setObjectName("analysisReference");profile_->setObjectName("analysisCreateProfile");
     actions->addWidget(resetButton);actions->addWidget(reference_);actions->addWidget(profile_);root->addWidget(actions);
     const auto saved=Settings::parse(QJsonDocument::fromJson(QSettings().value("analysis/settings").toByteArray()).object());if(saved)canvas_->data->configure(*saved);
-    canvas_->onVisibility=[this](bool visible){if(visible){captureFailed_=false;refreshSources();}if(onActivity)onActivity(source(),visible && active());};
+    // The ~60 Hz heartbeat only runs while the analysis view is actually showing (no idle wake-ups otherwise).
+    auto *displayHeartbeat=new QTimer(this);displayHeartbeat->setInterval(16);displayHeartbeat->setTimerType(Qt::PreciseTimer);connect(displayHeartbeat,&QTimer::timeout,canvas_,[this]{canvas_->advanceIdle();});
+    canvas_->onVisibility=[this,displayHeartbeat](bool visible){if(visible){captureFailed_=false;refreshSources();displayHeartbeat->start();}else displayHeartbeat->stop();if(onActivity)onActivity(source(),visible && active());};
     canvas_->onFrame=[this]{availability();};
-    auto *displayHeartbeat=new QTimer(this);displayHeartbeat->setInterval(50);displayHeartbeat->setTimerType(Qt::CoarseTimer);connect(displayHeartbeat,&QTimer::timeout,canvas_,[this]{canvas_->advanceIdle();});displayHeartbeat->start();
+    if(canvas_->isVisible())displayHeartbeat->start();
     connect(view_,&QComboBox::currentIndexChanged,this,[this](int index){canvas_->data->resetAverage();setView(View(index));canvas_->clearImage();canvas_->setAccessibleName(view_->currentText());availability();});
     connect(source_,&QComboBox::currentIndexChanged,this,[this]{sourceReady_=true;captureFailed_=false;reset();QSettings().setValue("analysis/source",source());QSettings().setValue("analysis/sourceName",source_->currentText());if(onActivity)onActivity(source(),active());});
     connect(freeze_,&QCheckBox::toggled,this,[this](bool on){canvas_->frozen=on;});
