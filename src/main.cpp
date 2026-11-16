@@ -2928,10 +2928,15 @@ public:
         if(columnsPerSecond<=0||made<=0||made>columnsPerSecond*1.05+3)qFatal("Spectrogram columns are not spaced by the sample clock (%g columns in 1 s, expected at most %g)",made,columnsPerSecond);
         QElapsedTimer silence;silence.start();const int silentBefore=canvas->property("idleFrames").toInt();while(silence.elapsed()<420){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}
         if(canvas->property("idleFrames").toInt()<=silentBefore)qFatal("A stall in the audio did not keep scrolling silence");
-        // The Waveform must also be rendered by the display timer (jitter-buffered), not on each audio arrival, or its trace jumps by whatever the arrival jitter was. pumpFrames only counts timer-driven renders.
-        if(viewBox){viewBox->setCurrentIndex(2);QElapsedTimer switched;switched.start();while(switched.elapsed()<1200){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}const int waveBefore=canvas->property("pumpFrames").toInt();QElapsedTimer wave;wave.start();
-            while(wave.elapsed()<600){analysis_->pushPcm(gapTone);QElapsedTimer chunk;chunk.start();while(chunk.elapsed()<16){QCoreApplication::processEvents(QEventLoop::AllEvents,4);QThread::msleep(2);}}
-            if(canvas->property("pumpFrames").toInt()-waveBefore<1)qFatal("The waveform was not rendered by the display timer (%d frames)",canvas->property("pumpFrames").toInt()-waveBefore);}
+        // The Waveform scrolls on the sample clock like the spectrogram: columns come from the audio's sample positions, never faster than real time, and a stall keeps scrolling silence.
+        if(viewBox){viewBox->setCurrentIndex(2);QElapsedTimer switched;switched.start();while(switched.elapsed()<1200){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}
+            const int waveBefore=canvas->property("pumpFrames").toInt(),waveColumnsBefore=canvas->property("columns").toInt();QElapsedTimer wave;wave.start();const qint64 waveBase=3000000;
+            while(wave.elapsed()<1000){analysis_->pushPcm(gapTone,waveBase+wave.elapsed()*48);QCoreApplication::processEvents(QEventLoop::AllEvents,4);QThread::msleep(8);}
+            const double waveRate=canvas->property("columnsPerSecond").toDouble(),waveMade=canvas->property("columns").toInt()-waveColumnsBefore;
+            if(canvas->property("pumpFrames").toInt()-waveBefore<1)qFatal("The waveform was not rendered by the display timer");
+            if(waveRate<=0||waveMade<=0||waveMade>waveRate*1.05+3)qFatal("Waveform columns are not spaced by the sample clock (%g columns in 1 s, expected at most %g)",waveMade,waveRate);
+            const int waveSilent=canvas->property("idleFrames").toInt();QElapsedTimer waveStall;waveStall.start();while(waveStall.elapsed()<420){QCoreApplication::processEvents(QEventLoop::AllEvents,20);QThread::msleep(5);}
+            if(canvas->property("idleFrames").toInt()<=waveSilent)qFatal("A stall in the audio did not keep the waveform scrolling");}
         if(viewBox)viewBox->setCurrentIndex(savedView);tabs_->setCurrentIndex(page);QCoreApplication::processEvents();
     }
     void selfTestQuitVisibility() const {
