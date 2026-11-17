@@ -6,6 +6,8 @@
 #endif
 #include "update_panel.h"
 #include <QApplication>
+#include <QWheelEvent>
+#include <QMouseEvent>
 #include <QCheckBox>
 #include <QComboBox>
 #include <QDoubleSpinBox>
@@ -110,6 +112,11 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
  Settings down;down.rate=16000;down.high=0;down.fft=2048;engine.configure(down);check(engine.push(tone(12000),View::Spectrum),"resampling failed");check(*std::max_element(engine.db.begin(),engine.db.end())<-45,"downsampling aliases above Nyquist");
  for(int rate:{16000,22050,24000,32000,44100,48000,88200,96000}){auto s=Settings{};s.rate=rate;s.high=0;s.fft=2048;engine.configure(s);check(engine.push(tone(1000),View::Spectrum),"analysis rate failed");auto i=std::max_element(engine.db.begin(),engine.db.end())-engine.db.begin();check(std::abs(engine.frequencyAt(i)-1000)<double(rate)/s.fft,"resampled tone frequency incorrect");}
  Settings tuner;engine.configure(tuner);check(engine.push(tone(440),View::Tuner),"tuner rejected audio");check(engine.pitch.midi==69 && std::abs(engine.pitch.cents)<8,"tuner A4 inaccurate");tuner.instrument=1;engine.configure(tuner);engine.push(tone(110),View::Tuner);check(engine.pitch.midi==45 && std::abs(engine.pitch.cents)<8,"instrument tuning not applied");
+ {auto chordTone=[&](std::initializer_list<double> hz){QByteArray pcm(16384*4,0);auto *out=reinterpret_cast<std::int16_t *>(pcm.data());for(int i=0;i<16384;++i){double v=0;for(double f:hz)v+=std::sin(2*std::numbers::pi*f*i/48000.);const auto s=std::int16_t(std::lround(32767*.15*v));out[2*i]=s;out[2*i+1]=s;}return pcm;};
+  Engine chords;Settings cs;chords.configure(cs);
+  const auto cMajor=chordTone({261.63,329.63,392.});for(int n=0;n<60;++n)chords.push(cMajor,View::Tuner);check(chords.chord.root==0 && chords.chord.quality==0,"C major chord not detected");
+  chords.chord={};const auto aMinor=chordTone({220.,261.63,329.63});for(int n=0;n<80;++n)chords.push(aMinor,View::Tuner);check(chords.chord.root==9 && chords.chord.quality==1,"A minor chord not detected");
+  const auto single=tone(440);for(int n=0;n<80;++n)chords.push(single,View::Tuner);check(chords.chord.root<0,"single note reported as a chord");}
  Settings cumulative;engine.configure(cumulative);engine.resetAverage();engine.push(signal,View::Microphone);engine.push(tone(937.5,.25),View::Microphone);const double expected=10*std::log10((.25+.0625)/2);check(std::abs(engine.averaged[80]-expected)<.05,"cumulative power average incorrect");
  // The toolbar selection supersedes the last settings application, including legacy split preferences.
  {Panel first;Settings selected;selected.view=int(View::Spectrum);check(first.applySettings(selected),"persisted settings rejected");
@@ -157,9 +164,26 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
          check(panel.grab().save(directory+"/analysis-axis-"+QString::number(scale)+".png"),"axis visual render failed");}
      panel.applySettings(before);
  }
- // Fundamental analysis settings are staged; cancel leaves the running analyzer untouched.
- QTimer::singleShot(0,&panel,[&]{auto *dialog=panel.findChild<QDialog *>("analysisSettingsDialog");check(dialog,"missing settings dialog");auto *low=dialog->findChild<QDoubleSpinBox *>("analysisLow");check(low,"frequency setting missing");low->setValue(100);dialog->reject();});const auto old=panel.engine().settings.json();panel.settingsDialog();check(panel.engine().settings.json()==old,"cancel applied staged settings");
- QTimer::singleShot(0,&panel,[&]{auto *dialog=panel.findChild<QDialog *>("analysisSettingsDialog");auto *low=dialog->findChild<QDoubleSpinBox *>("analysisLow");auto *high=dialog->findChild<QDoubleSpinBox *>("analysisHigh");auto *apply=dialog->findChild<QPushButton *>("analysisApply");check(low && high && apply,"staged settings actions missing");low->setValue(10000);high->setValue(1000);apply->click();check(panel.engine().settings.json()==old && !dialog->findChild<QLabel *>("analysisFeedback")->text().isEmpty(),"invalid settings changed analyzer or failed silently");low->setValue(100);high->setValue(16000);apply->click();check(panel.engine().settings.low==100 && panel.engine().settings.high==16000 && apply->isVisible(),"Apply did not take effect or disappeared");const auto directory=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");if(!directory.isEmpty())dialog->grab().save(directory+"/analysis-settings.png");dialog->reject();});panel.settingsDialog();
+// Settings live on the tab and apply as they change; invalid combinations are reported and keep the running analysis.
+ {auto *low=panel.findChild<QDoubleSpinBox *>("analysisLow");auto *high=panel.findChild<QDoubleSpinBox *>("analysisHigh");auto *feedback=panel.findChild<QLabel *>("analysisFeedback");check(low && high && feedback,"settings controls missing");
+  panel.toggleSettings();check(panel.settingsVisible(),"settings panel did not open");
+  const auto old=panel.engine().settings.json();low->setValue(10000);high->setValue(1000);events(400);check(panel.engine().settings.json()==old && !feedback->text().isEmpty(),"invalid settings changed analyzer or failed silently");
+  low->setValue(100);high->setValue(16000);events(400);check(panel.engine().settings.low==100 && panel.engine().settings.high==16000 && feedback->text().isEmpty(),"settings did not apply live");
+  auto *scale=panel.findChild<QComboBox *>("analysisScale");scale->setCurrentIndex(2);events(400);check(panel.engine().settings.scale==2,"quick control did not apply live");
+  auto restored=panel.engine().settings;restored.low=20;restored.high=20000;restored.scale=1;panel.applySettings(restored);check(low->value()==20 && scale->currentIndex()==1,"controls did not follow applied settings");
+  const auto directory=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");if(!directory.isEmpty())panel.grab().save(directory+"/analysis-settings.png");
+  {panel.setView(View::Spectrum);auto reset=panel.engine().settings;reset.low=20;reset.high=20000;reset.scale=1;panel.applySettings(reset);events(60);
+   auto *target=panel.findChild<QWidget *>("analysisCanvas");check(target,"no display widget");
+   if(target){const QPointF where(target->width()/2.,target->height()/2.);
+    QWheelEvent zoom(where,target->mapToGlobal(where),QPoint(),QPoint(0,120),Qt::NoButton,Qt::NoModifier,Qt::NoScrollPhase,false);QApplication::sendEvent(target,&zoom);
+    const auto zoomed=panel.engine().settings;check(zoomed.low>20 && zoomed.high<20000 && zoomed.valid(),"wheel did not zoom the frequency axis");
+    QMouseEvent press(QEvent::MouseButtonPress,where,target->mapToGlobal(where),Qt::LeftButton,Qt::LeftButton,Qt::NoModifier);QApplication::sendEvent(target,&press);
+    const QPointF moved=where-QPointF(120,0);QMouseEvent drag(QEvent::MouseMove,moved,target->mapToGlobal(moved),Qt::NoButton,Qt::LeftButton,Qt::NoModifier);QApplication::sendEvent(target,&drag);
+    QMouseEvent release(QEvent::MouseButtonRelease,moved,target->mapToGlobal(moved),Qt::LeftButton,Qt::NoButton,Qt::NoModifier);QApplication::sendEvent(target,&release);
+    check(panel.engine().settings.low>zoomed.low,"dragging left did not pan toward higher frequencies");
+    QMouseEvent twice(QEvent::MouseButtonDblClick,where,target->mapToGlobal(where),Qt::LeftButton,Qt::LeftButton,Qt::NoModifier);QApplication::sendEvent(target,&twice);
+    check(panel.engine().settings.low==20 && panel.engine().settings.high==20000,"double click did not reset the zoom");}}
+  panel.toggleSettings();check(!panel.settingsVisible(),"settings panel did not close");}
  {QTabWidget tabs;auto *scope=new Panel;tabs.addTab(new QWidget,"Other");tabs.addTab(scope,"Analysis");tabs.resize(800,600);tabs.show();events();scope->pushPcm(signal);check(scope->engine().fftCalls==0,"unselected tab ran FFT");tabs.setCurrentIndex(1);events();scope->pushPcm(signal);check(scope->engine().fftCalls>0,"selected tab did not run FFT");const auto calls=scope->engine().fftCalls;tabs.setCurrentIndex(0);events(50);scope->pushPcm(signal);check(scope->engine().fftCalls==calls,"tab switch did not deactivate FFT");}
  panel.hide();
  QSettings().setValue("updates/reminders",false);QSettings().setValue("updates/lastCheck",QDateTime::currentDateTimeUtc());

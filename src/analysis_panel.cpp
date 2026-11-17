@@ -32,7 +32,9 @@
 #include <QScreen>
 #include <QScrollArea>
 #include <QSettings>
+#include <QShortcut>
 #include <QShowEvent>
+#include <QWheelEvent>
 #include <QSlider>
 #include <QTimer>
 #include <QVBoxLayout>
@@ -56,7 +58,7 @@ public:
     View mode=View::Waterfall;
     bool frozen=false;
     std::function<void(bool)> onVisibility;
-    std::function<void()> onFrame;
+    std::function<void(const Settings &)> onZoom;std::function<void()> onFrame;
     double displayCeiling=0;
     void resetClock(){clock.invalidate();carryMs_=0;}
     // Time since the previous frame STARTED: the clock restarts after the frame's FFT, so that compute time is
@@ -153,7 +155,7 @@ public:
         if(s.autoRange&&!data->db.empty()){
             const double top=*std::max_element(data->db.begin(),data->db.end());
             const double target=std::clamp(std::ceil((top+6)/6)*6,-120.,24.);
-            displayCeiling=std::abs(target-displayCeiling)>=6?target:displayCeiling;
+            displayCeiling=holdRange(displayCeiling,target,ceilingSince_);
         } else displayCeiling=s.ceiling;
         auto settings=gramSettings();auto column=spectrogramColumn(data->db,s,image.height);
         if(s.layout==2&&s.channel==0){column=spectrogramColumn(data->dbLeft,s,image.height/2);auto right=spectrogramColumn(data->dbRight,s,image.height-image.height/2);column.insert(column.end(),right.begin(),right.end());}
@@ -188,7 +190,7 @@ public:
         if(s.autoRange && mode!=View::Waveform && mode!=View::Vectorscope && !data->db.empty()) {
             const double top=*std::max_element(data->db.begin(),data->db.end());
             const double target=std::clamp(std::ceil((top+6)/6)*6,-120.,24.);
-            displayCeiling=std::abs(target-displayCeiling)>=6?target:displayCeiling;
+            displayCeiling=holdRange(displayCeiling,target,ceilingSince_);
         } else displayCeiling=s.ceiling;
         computeMs_=.8*computeMs_+.2*work.nsecsElapsed()/1e6;sinceFrame_.restart();
         if(onFrame)onFrame();
@@ -202,7 +204,59 @@ public:
 protected:
     void showEvent(QShowEvent *event) override {QWidget::showEvent(event);clock.invalidate();carryMs_=0;if(onVisibility)onVisibility(true);}
     void hideEvent(QHideEvent *event) override {clock.invalidate();carryMs_=0;if(onVisibility)onVisibility(false);QWidget::hideEvent(event);}
+    // Zoom and pan: the wheel zooms the frequency axis around the pointer (or the waveform amplitude), dragging pans the
+    // frequency axis, and a double click restores the full range. They edit the ordinary range settings, so the controls follow.
+    bool frequencyAxisView() const {return mode==View::Waterfall || mode==View::Spectrum || mode==View::Average || mode==View::Microphone;}
+    bool verticalFrequency() const {return mode==View::Waterfall;}
+    double axisRatio(QPointF position) const {const auto plot=plotRect();return verticalFrequency()?1-std::clamp((position.y()-plot.top())/plot.height(),0.,1.):std::clamp((position.x()-plot.left())/plot.width(),0.,1.);}
+    static void clampRange(Settings &s){
+        const double maxHz=std::min(s.rate,48000)/2.,minLow=s.scale==0?0.:1.;
+        double low=std::max(minLow,s.low),high=std::min(maxHz,s.upper());
+        const double width=high-low;
+        if(low<minLow){high+=minLow-low;low=minLow;}
+        if(high>maxHz){low-=high-maxHz;high=maxHz;}
+        low=std::max(minLow,low);
+        s.low=std::round(low*10)/10;s.high=std::round(high*10)/10;
+    }
+    void wheelEvent(QWheelEvent *event) override {
+        const auto plot=plotRect();if(!plot.contains(event->position()) || !onZoom){event->ignore();return;}
+        const double steps=event->angleDelta().y()/120.;if(steps==0){event->ignore();return;}
+        auto s=data->settings;
+        if(mode==View::Waveform){s.autoRange=false;s.ceiling=std::clamp(20*std::log10(waveLimit_)-3*steps,-120.,24.);onZoom(s);event->accept();return;}
+        if(!frequencyAxisView()){event->ignore();return;}
+        const double z=std::pow(1.2,steps),f0=frequency(axisRatio(event->position())),low=s.low,upper=s.upper();
+        if(s.scale==0){s.low=f0+(low-f0)/z;s.high=f0+(upper-f0)/z;}
+        else{const double f=std::max(1.,f0);s.low=f*std::pow(std::max(1.,low)/f,1/z);s.high=f*std::pow(upper/f,1/z);}
+        const double minimum=s.scale==0?100.:s.low*1.2-s.low;
+        if(s.high-s.low<minimum)return;
+        clampRange(s);onZoom(s);event->accept();
+    }
+    void mousePressEvent(QMouseEvent *event) override {
+        if(event->button()==Qt::LeftButton && plotRect().contains(event->position()) && frequencyAxisView()){dragging_=true;dragStart_=event->position();dragSettings_=data->settings;setCursor(Qt::ClosedHandCursor);}
+        QWidget::mousePressEvent(event);
+    }
+    void mouseReleaseEvent(QMouseEvent *event) override {if(dragging_){dragging_=false;unsetCursor();}QWidget::mouseReleaseEvent(event);}
+    void mouseDoubleClickEvent(QMouseEvent *event) override {
+        if(!onZoom || !plotRect().contains(event->position())){QWidget::mouseDoubleClickEvent(event);return;}
+        auto s=data->settings;
+        if(mode==View::Waveform)s.autoRange=true;else if(frequencyAxisView()){s.low=20;s.high=20000;}else return;
+        onZoom(s);
+    }
+    void dragPan(QPointF position){
+        const auto plot=plotRect();auto s=dragSettings_;
+        const double shift=verticalFrequency()?(position.y()-dragStart_.y())/plot.height():-(position.x()-dragStart_.x())/plot.width();
+        const double low=s.low,upper=s.upper();
+        if(s.scale==0){const double width=upper-low;s.low=low+shift*width;s.high=upper+shift*width;}
+        else{const double ratioSpan=upper/std::max(1.,low);s.low=std::max(1.,low)*std::pow(ratioSpan,shift);s.high=upper*std::pow(ratioSpan,shift);}
+        const double width=s.high-s.low,maxHz=std::min(s.rate,48000)/2.;
+        if(s.scale==0){if(s.low<0){s.high-=s.low;s.low=0;}if(s.high>maxHz){s.low-=s.high-maxHz;s.high=maxHz;}}
+        else{const double factor=s.high/s.low;if(s.low<1){s.low=1;s.high=factor;}if(s.high>maxHz){s.high=maxHz;s.low=maxHz/factor;}}
+        (void)width;clampRange(s);
+        if(std::abs(s.low-data->settings.low)<.05 && std::abs(s.high-data->settings.high)<.05)return;
+        if(dragClock_.isValid() && dragClock_.elapsed()<33)return;dragClock_.start();onZoom(s);
+    }
     void mouseMoveEvent(QMouseEvent *event) override {
+        if(dragging_ && (event->buttons()&Qt::LeftButton) && onZoom){dragPan(event->position());return;}
         const auto plot=plotRect();if(!plot.contains(event->position()))return;
         const double ratio=std::clamp((event->position().x()-plot.left())/plot.width(),0.,1.);
         const double vertical=(event->position().y()-plot.top())/plot.height();
@@ -222,7 +276,7 @@ protected:
         double span=s.sensitivity,top=displayCeiling;
         if(comparison){
             double extent=0;for(double value:relative)if(std::isfinite(value))extent=std::max(extent,std::abs(value));
-            if(s.autoRange)span=2*std::max(12.,std::ceil((extent+2)/3)*3);
+            if(s.autoRange){spanHeld_=holdRange(spanHeld_,2*std::max(12.,std::ceil((extent+2)/3)*3),spanSince_);span=spanHeld_;}
             top=span/2;
         }
         axisTop_=top;axisSpan_=span;relativeAxis_=comparison;
@@ -304,6 +358,10 @@ protected:
             const auto pitch=data->pitch;p.setPen(QColor("#55d7c3"));auto font=p.font();font.setPointSizeF(30);p.setFont(font);p.drawText(plot,Qt::AlignCenter,noteName(pitch.midi));
             font.setPointSizeF(11);p.setFont(font);p.drawText(plot.adjusted(0,0,0,-10),Qt::AlignBottom|Qt::AlignHCenter,formatFrequency(pitch.hz)+" / "+QLocale().toString(pitch.cents,'f',1)+" ¢");
             const double x=plot.center().x()+std::clamp(pitch.cents,-50.,50.)/50.*plot.width()*.4;p.drawLine(QPointF(x,plot.top()+12),QPointF(x,plot.top()+60));
+            {const auto chord=data->chord;static const char *names[]={"C","C♯","D","D♯","E","F","F♯","G","G♯","A","A♯","B"};
+             const double peak=std::max(1e-9,*std::max_element(data->chroma.begin(),data->chroma.end())),barWidth=std::min(28.,plot.width()/16.),left=plot.center().x()-6*barWidth;
+             for(int k=0;k<12;++k){const double h=40*data->chroma[std::size_t(k)]/peak;const bool member=chord.root>=0;QColor color(member?"#55d7c3":"#4b5d73");p.fillRect(QRectF(left+k*barWidth+2,plot.top()+112-h,barWidth-4,h),color);p.setPen(QColor("#9fb0c3"));p.drawText(QRectF(left+k*barWidth,plot.top()+114,barWidth,16),Qt::AlignCenter,QString::fromUtf8(names[k]));}
+             if(chord.root>=0){p.setPen(QColor("#e6b450"));auto big=p.font();big.setPointSizeF(20);p.setFont(big);p.drawText(QRectF(plot.left(),plot.top()+134,plot.width(),34),Qt::AlignCenter,QString::fromUtf8(names[chord.root])+QString::fromLatin1(chordQualitySuffix(chord.quality)));p.setPen(QColor("#55d7c3"));}}
             static const QStringList tunings={"", "E2 A2 D3 G3 B3 E4","E1 A1 D2 G2","G4 C4 E4 A4","G3 D4 A4 E5","C3 G3 D4 A4","C2 G2 D3 A3","G3 D4 A4 E5"};
             p.drawText(plot.adjusted(0,0,0,-36),Qt::AlignBottom|Qt::AlignHCenter,tunings[s.instrument]);
         } else if(mode!=View::Waterfall){
@@ -347,6 +405,14 @@ private:
     static constexpr qint64 kStallMs=250; // no audio for this long = silence: the spectrogram keeps scrolling (black) in real time
     static constexpr double kTickSlackMs=4.;
     std::deque<WaveColumn> waveCols_;int waveCap_=0;
+    // Auto range grows at once (so nothing clips) but only shrinks after the signal has stayed lower for a while, so it cannot bounce.
+    static double holdRange(double current,double target,QElapsedTimer &lowerSince){
+        if(target>current || current-target<3){lowerSince.invalidate();return target>current?target:current;}
+        if(!lowerSince.isValid()){lowerSince.start();return current;}
+        if(lowerSince.elapsed()<3000)return current;
+        lowerSince.invalidate();return target;}
+    bool dragging_=false;QPointF dragStart_;Settings dragSettings_;QElapsedTimer dragClock_;
+    QElapsedTimer ceilingSince_,spanSince_;double spanHeld_=24;
     double credit=0,axisTop_=0,axisSpan_=90,waveLimit_=1,waveLimitHeld_=1;
     bool relativeAxis_=false;
     QRectF plotRect() const {const int margin=std::max(70,fontMetrics().horizontalAdvance(formatFrequency(999.999))+12);return QRectF(margin,18,std::max(1,width()-2*margin),std::max(1,height()-62));}
@@ -361,9 +427,10 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     for(int i=0;i<views.size();++i)view_->addItem(views[i],i);
     source_=new QComboBox;source_->setObjectName("analysisSource");source_->setAccessibleName(SC_TR("Microphone"));source_->addItem(SC_TR("Playback monitor"),QString());
     for(auto *combo:{view_,source_}){combo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);combo->setMinimumContentsLength(8);combo->setMinimumWidth(0);combo->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);}
-    freeze_=new QCheckBox(SC_TR("Freeze display"));freeze_->setObjectName("analysisFreeze");auto *settings=new QPushButton(SC_TR("Settings"));settings->setObjectName("analysisSettings");
+    freeze_=new QCheckBox(SC_TR("Freeze display"));freeze_->setObjectName("analysisFreeze");settingsButton_=new QPushButton(SC_TR("Settings"));settingsButton_->setObjectName("analysisSettings");settingsButton_->setCheckable(true);auto *settings=settingsButton_;
     top->addWidget(view_,1);top->addWidget(source_,1);top->addWidget(freeze_);top->addWidget(settings);root->addWidget(top);
-    canvas_=new ScopeCanvas(this);root->addWidget(canvas_,1);readout_=new QLabel;readout_->setTextFormat(Qt::PlainText);readout_->setWordWrap(true);readout_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);readout_->setFixedHeight(2*fontMetrics().lineSpacing());root->addWidget(readout_);
+    buildSettings(root);
+    canvas_=new ScopeCanvas(this);canvas_->setObjectName("analysisCanvas");root->addWidget(canvas_,1);readout_=new QLabel;readout_->setTextFormat(Qt::PlainText);readout_->setWordWrap(true);readout_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);readout_->setFixedHeight(2*fontMetrics().lineSpacing());root->addWidget(readout_);
     help_=new QLabel(SC_TR("Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement."));help_->setWordWrap(true);root->addWidget(help_);
     auto *actions=new soundcurrent::ui::ResponsiveRow;auto *resetButton=new QPushButton(SC_TR("Reset"));reference_=new QPushButton(SC_TR("Capture reference"));profile_=new QPushButton(SC_TR("Create microphone profile"));
     resetButton->setObjectName("analysisReset");reference_->setObjectName("analysisReference");profile_->setObjectName("analysisCreateProfile");
@@ -373,15 +440,17 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     auto *displayHeartbeat=new QTimer(this);displayHeartbeat->setInterval(16);displayHeartbeat->setTimerType(Qt::PreciseTimer);connect(displayHeartbeat,&QTimer::timeout,canvas_,[this]{canvas_->advanceIdle();});
     canvas_->onVisibility=[this,displayHeartbeat](bool visible){if(visible){captureFailed_=false;refreshSources();displayHeartbeat->start();}else displayHeartbeat->stop();if(onActivity)onActivity(source(),visible && active());};
     canvas_->onFrame=[this]{availability();};
+    canvas_->onZoom=[this](const Settings &s){if(applySettings(s))feedback_->clear();};
     if(canvas_->isVisible())displayHeartbeat->start();
     connect(view_,&QComboBox::currentIndexChanged,this,[this](int index){canvas_->data->resetAverage();setView(View(index));canvas_->clearImage();canvas_->setAccessibleName(view_->currentText());availability();});
     connect(source_,&QComboBox::currentIndexChanged,this,[this]{sourceReady_=true;captureFailed_=false;reset();QSettings().setValue("analysis/source",source());QSettings().setValue("analysis/sourceName",source_->currentText());if(onActivity)onActivity(source(),active());});
     connect(freeze_,&QCheckBox::toggled,this,[this](bool on){canvas_->frozen=on;});
-    connect(settings,&QPushButton::clicked,this,&Panel::settingsDialog);
+    connect(settings,&QPushButton::toggled,this,[this](bool on){if(settingsPanel_)settingsPanel_->setVisible(on);});
     connect(resetButton,&QPushButton::clicked,this,&Panel::reset);
     connect(reference_,&QPushButton::clicked,this,[this]{captureReference();});
     connect(profile_,&QPushButton::clicked,this,[this]{if(auto p=microphoneProfile()){suspendForDialog(true);if(onProfile)onProfile(*p);suspendForDialog(false);}else QMessageBox::information(this,SC_TR("Microphone response"),SC_TR("Not enough broadband reference data."));});
     setView(View(std::clamp(QSettings().value("analysis/view",saved?saved->view:1).toInt(),0,6)));canvas_->setAccessibleName(view_->currentText());availability();
+    if(writeControls_)writeControls_(canvas_->data->settings);
 }
 Panel::~Panel(){canvas_->onVisibility={};canvas_->onFrame={};onActivity={};}
 bool Panel::active() const{return (source().isEmpty() || soundcurrent::microphone::allowed()) && canvas_->isVisible() && sourceReady_ && !captureFailed_ && !suspended_;}
@@ -421,7 +490,7 @@ void Panel::refreshSources(){
     if(!ready)readout_->setText(access?SC_TR("No microphone connected."):SC_TR("Microphone access is disabled."));
     availability();
 }
-bool Panel::applySettings(const Settings &s){if(!s.valid())return false;canvas_->data->configure(s);setView(View(s.view));canvas_->clearImage();QSettings().setValue("analysis/settings",QJsonDocument(s.json()).toJson(QJsonDocument::Compact));availability();return true;}
+bool Panel::applySettings(const Settings &s){if(!s.valid())return false;canvas_->data->configure(s);setView(View(s.view));canvas_->clearImage();QSettings().setValue("analysis/settings",QJsonDocument(s.json()).toJson(QJsonDocument::Compact));if(writeControls_)writeControls_(s);availability();return true;}
 void Panel::reset(){const bool retry=captureFailed_;captureFailed_=false;engine().resetAverage();canvas_->clearImage();availability();if(retry && onActivity)onActivity(source(),active());}
 bool Panel::captureReference(){if(!source().isEmpty() && !soundcurrent::microphone::allowed())return false;if(engine().frames<25 || engine().averaged.empty())return false;referenceSource_=source_->currentText();engine().captureReference();canvas_->clearImage();availability();return true;}
 std::optional<equipment::Profile> Panel::microphoneProfile() const {
@@ -461,21 +530,26 @@ void Panel::availability(){
     readout_->setText(SC_TR("Frames: %1 · FFT: %2 ms · Resolution: %3 · Window: %4 ms").arg(QLocale().toString(e.waveFrames),QLocale().toString(e.fftMs,'f',2),formatFrequency(double(e.settings.rate)/e.settings.fft),QLocale().toString(e.settings.fft*1000./e.settings.rate,'f',1)));
 }
 void Panel::suspendForDialog(bool suspended){suspended_=suspended;canvas_->resetClock();if(onActivity)onActivity(source(),active());}
-void Panel::settingsDialog(){
-    soundcurrent::ui::installResponsiveDialogs();
-    suspendForDialog(true);
-    QDialog dialog(this);dialog.setWindowTitle(SC_TR("Settings"));dialog.setWindowModality(Qt::ApplicationModal);dialog.setObjectName("analysisSettingsDialog");
-    auto *outer=new QVBoxLayout(&dialog);auto *scroll=new QScrollArea;scroll->setWidgetResizable(true);auto *body=new QWidget;auto *form=new QFormLayout(body);scroll->setWidget(body);outer->addWidget(scroll,1);
-    const auto current=engine().settings;
+void Panel::toggleSettings(){settingsButton_->setChecked(!settingsButton_->isChecked());}
+bool Panel::settingsVisible() const{return settingsPanel_ && settingsPanel_->isVisibleTo(const_cast<Panel *>(this));}
+// Everyday controls sit in a row on the tab; the rest live in a collapsible, scrollable panel. Every control applies live
+// (debounced), so the effect is visible without closing anything. Invalid combinations are reported and not applied.
+void Panel::buildSettings(QVBoxLayout *root){
+    const Settings current=canvas_?canvas_->data->settings:Settings();
+    auto *quick=new soundcurrent::ui::ResponsiveRow;
+    auto quickCombo=[&](const QString &label,const QString &name,const QStringList &items,int selected){auto *c=new QComboBox;c->setObjectName(name);c->setAccessibleName(label);c->setToolTip(label);c->addItems(items);c->setCurrentIndex(selected);c->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);c->setMinimumContentsLength(6);c->setMinimumWidth(0);c->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);quick->addWidget(c,1);return c;};
+    auto *channel=quickCombo(SC_TR("Channel"),"analysisChannel",{SC_TR("Mix"),SC_TR("Left"),SC_TR("Right")},current.channel);
+    auto *palette=quickCombo(SC_TR("Palette"),"analysisPalette",{SC_TR("Spectrum"),SC_TR("Gray"),SC_TR("Blue"),SC_TR("Green"),SC_TR("Amber"),SC_TR("Ice")},current.palette);
+    auto *scale=quickCombo(SC_TR("Frequency scale"),"analysisScale",{SC_TR("Linear"),SC_TR("Logarithmic"),SC_TR("Octave")},current.scale);
+    auto *automatic=new QCheckBox(SC_TR("Automatic range"));automatic->setObjectName("analysisAutoRange");automatic->setChecked(current.autoRange);quick->addWidget(automatic);
+    root->addWidget(quick);
+
+    settingsPanel_=new QWidget;settingsPanel_->setObjectName("analysisSettingsPanel");auto *outer=new QVBoxLayout(settingsPanel_);outer->setContentsMargins(0,0,0,0);
+    auto *scroll=new QScrollArea;scroll->setWidgetResizable(true);scroll->setFrameShape(QFrame::NoFrame);auto *body=new QWidget;auto *form=new QFormLayout(body);scroll->setWidget(body);outer->addWidget(scroll,1);
     auto combo=[&](const QString &label,const QString &name,const QStringList &items,int selected){auto *c=new QComboBox;c->setObjectName(name);c->setAccessibleName(label);c->addItems(items);c->setCurrentIndex(selected);form->addRow(label,c);return c;};
-    QStringList viewText;for(int i=0;i<view_->count();++i)viewText<<view_->itemText(i);
-    auto *stagedView=combo(SC_TR("View"),"analysisSettingsView",viewText,current.view);
     const QList<int> rates={16000,22050,24000,32000,44100,48000,88200,96000},sizes={512,1024,2048,4096,8192};QStringList rateText,fftText;for(int x:rates)rateText<<formatFrequency(x);for(int x:sizes)fftText<<QLocale().toString(x);
     auto *rate=combo(SC_TR("Analysis sample rate"),"analysisRate",rateText,rates.indexOf(current.rate));auto *fft=combo(SC_TR("FFT size"),"analysisFft",fftText,sizes.indexOf(current.fft));
-    auto *palette=combo(SC_TR("Palette"),"analysisPalette",{SC_TR("Spectrum"),SC_TR("Gray"),SC_TR("Blue"),SC_TR("Green"),SC_TR("Amber"),SC_TR("Ice")},current.palette);
-    auto *scale=combo(SC_TR("Frequency scale"),"analysisScale",{SC_TR("Linear"),SC_TR("Logarithmic"),SC_TR("Octave")},current.scale);
     auto *layout=combo(SC_TR("Channels"),"analysisLayout",{SC_TR("Automatic"),SC_TR("Mono"),SC_TR("Stereo")},current.layout);
-    auto *channel=combo(SC_TR("Channel"),"analysisChannel",{SC_TR("Mix"),SC_TR("Left"),SC_TR("Right")},current.channel);
     auto *amplitude=combo(SC_TR("Amplitude"),"analysisAmplitude",{"dBFS",SC_TR("Linear")},current.amplitude);
     auto *instrument=combo(SC_TR("Instrument"),"analysisInstrument",{SC_TR("Chromatic"),SC_TR("Guitar"),SC_TR("Bass guitar"),SC_TR("Ukulele"),SC_TR("Violin"),SC_TR("Viola"),SC_TR("Cello"),SC_TR("Mandolin")},current.instrument);
     auto spin=[&](const QString &label,const QString &name,double value,double min,double max,const QString &unit){auto *w=new soundcurrent::AcceleratingDoubleSpinBox;w->setObjectName(name);w->setAccessibleName(label);w->setRange(min,max);w->setDecimals(1);w->setValue(value);w->setSuffix(unit);form->addRow(label,w);return w;};
@@ -484,19 +558,27 @@ void Panel::settingsDialog(){
     auto *ceiling=spin(SC_TR("Display ceiling"),"analysisCeiling",current.ceiling,-120,24," dBFS");
     auto *sensitivity=spin(SC_TR("Display sensitivity"),"analysisSensitivity",current.sensitivity,24,180," dB");auto *history=spin(SC_TR("History length"),"analysisHistory",current.history,5,60," s");auto *speed=spin(SC_TR("Scroll speed"),"analysisSpeed",current.speed,.5,4," ×");
     auto check=[&](const QString &label,const QString &name,bool selected){auto *c=new QCheckBox(label);c->setObjectName(name);c->setChecked(selected);form->addRow(c);return c;};
-    auto *grid=check(SC_TR("Grid"),"analysisGrid",current.grid);auto *peaks=check(SC_TR("Peak hold"),"analysisPeaks",current.peaks);auto *average=check(SC_TR("Average"),"analysisAverage",current.average);auto *automatic=check(SC_TR("Automatic range"),"analysisAutoRange",current.autoRange);auto *notes=check(SC_TR("Note grid"),"analysisNotes",current.notes);auto *transients=check(SC_TR("Transient markers"),"analysisTransients",current.transients);auto *music=check(SC_TR("Music mode"),"analysisMusic",current.music);
+    auto *grid=check(SC_TR("Grid"),"analysisGrid",current.grid);auto *peaks=check(SC_TR("Peak hold"),"analysisPeaks",current.peaks);auto *average=check(SC_TR("Average"),"analysisAverage",current.average);auto *notes=check(SC_TR("Note grid"),"analysisNotes",current.notes);auto *transients=check(SC_TR("Transient markers"),"analysisTransients",current.transients);auto *music=check(SC_TR("Music mode"),"analysisMusic",current.music);
     ceiling->setEnabled(!current.autoRange);connect(automatic,&QCheckBox::toggled,ceiling,&QWidget::setDisabled);
-    palette->setEnabled(view()==View::Waterfall);
-    auto *feedback=new QLabel;feedback->setObjectName("analysisFeedback");feedback->setWordWrap(true);outer->addWidget(feedback);
+    palette->setVisible(current.view==int(View::Waterfall));
     speed->setSingleStep(.5);
-    auto *buttons=new QDialogButtonBox;auto *apply=buttons->addButton(SC_TR("Apply"),QDialogButtonBox::ApplyRole);auto *save=buttons->addButton(SC_TR("Save preset"),QDialogButtonBox::ActionRole);auto *load=buttons->addButton(SC_TR("Load preset"),QDialogButtonBox::ActionRole);auto *close=buttons->addButton(SC_TR("Close"),QDialogButtonBox::RejectRole);outer->addWidget(buttons);apply->setObjectName("analysisApply");close->setObjectName("analysisClose");
-    auto read=[&]{Settings s;s.view=stagedView->currentIndex();s.rate=rates[rate->currentIndex()];s.fft=sizes[fft->currentIndex()];s.palette=palette->currentIndex();s.scale=scale->currentIndex();s.layout=layout->currentIndex();s.channel=channel->currentIndex();s.amplitude=amplitude->currentIndex();s.instrument=instrument->currentIndex();s.low=low->value();s.high=high->value();s.ceiling=ceiling->value();s.sensitivity=sensitivity->value();s.history=history->value();s.speed=speed->value();s.grid=grid->isChecked();s.peaks=peaks->isChecked();s.average=average->isChecked();s.autoRange=automatic->isChecked();s.notes=notes->isChecked();s.transients=transients->isChecked();s.music=music->isChecked();return s;};
-    auto write=[&](const Settings &s){stagedView->setCurrentIndex(s.view);rate->setCurrentIndex(rates.indexOf(s.rate));fft->setCurrentIndex(sizes.indexOf(s.fft));palette->setCurrentIndex(s.palette);scale->setCurrentIndex(s.scale);layout->setCurrentIndex(s.layout);channel->setCurrentIndex(s.channel);amplitude->setCurrentIndex(s.amplitude);instrument->setCurrentIndex(s.instrument);low->setValue(s.low);high->setValue(s.high);ceiling->setValue(s.ceiling);sensitivity->setValue(s.sensitivity);history->setValue(s.history);speed->setValue(s.speed);grid->setChecked(s.grid);peaks->setChecked(s.peaks);average->setChecked(s.average);automatic->setChecked(s.autoRange);notes->setChecked(s.notes);transients->setChecked(s.transients);music->setChecked(s.music);};
-    auto perform=[&]{const auto s=read();if(!applySettings(s)){feedback->setText(SC_TR("Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth."));return false;}feedback->clear();return true;};
-    connect(apply,&QPushButton::clicked,&dialog,[&]{perform();});connect(close,&QPushButton::clicked,&dialog,&QDialog::reject);
-    connect(save,&QPushButton::clicked,&dialog,[&]{const auto s=read();if(!s.valid()){perform();return;}const auto path=i18n::FileDialogs::getSaveFileName(&dialog,SC_TR("Save preset"),{},"JSON (*.json)");if(path.isEmpty())return;QSaveFile file(path);if(!file.open(QIODevice::WriteOnly)){feedback->setText(SC_TR("Could not save preset."));return;}file.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner);file.write(QJsonDocument(s.json()).toJson());if(!file.commit())feedback->setText(SC_TR("Could not finish saving preset."));});
-    connect(load,&QPushButton::clicked,&dialog,[&]{const auto path=i18n::FileDialogs::getOpenFileName(&dialog,SC_TR("Load preset"),{},"JSON / PRESET / TXT (*.json *.preset *.txt)");if(path.isEmpty())return;QFile file(path);if(!file.open(QIODevice::ReadOnly) || file.size()>65536)return;auto settings=Settings::parsePreset(file.readAll());if(!settings){feedback->setText(SC_TR("Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth."));return;}write(*settings);});
-    ui::protectScrollControls(scroll);
-    dialog.resize(std::min(620,screen()->availableGeometry().width()-30),std::min(650,screen()->availableGeometry().height()-40));ui::describeButton(apply);ui::describeButton(save);ui::describeButton(load);dialog.exec();suspendForDialog(false);
+    feedback_=new QLabel;feedback_->setObjectName("analysisFeedback");feedback_->setWordWrap(true);outer->addWidget(feedback_);
+    auto *buttons=new soundcurrent::ui::ResponsiveRow;auto *save=new QPushButton(SC_TR("Save preset"));auto *load=new QPushButton(SC_TR("Load preset"));save->setObjectName("analysisSavePreset");load->setObjectName("analysisLoadPreset");buttons->addWidget(save);buttons->addWidget(load);outer->addWidget(buttons);
+    ui::protectScrollControls(scroll);ui::describeButton(save);ui::describeButton(load);
+    settingsPanel_->setMaximumHeight(240);settingsPanel_->setVisible(false);root->addWidget(settingsPanel_);
+
+    readControls_=[=]{Settings s;s.view=view_->currentIndex();s.rate=rates[std::max(0,rate->currentIndex())];s.fft=sizes[std::max(0,fft->currentIndex())];s.palette=palette->currentIndex();s.scale=scale->currentIndex();s.layout=layout->currentIndex();s.channel=channel->currentIndex();s.amplitude=amplitude->currentIndex();s.instrument=instrument->currentIndex();s.low=low->value();s.high=high->value();s.ceiling=ceiling->value();s.sensitivity=sensitivity->value();s.history=history->value();s.speed=speed->value();s.grid=grid->isChecked();s.peaks=peaks->isChecked();s.average=average->isChecked();s.autoRange=automatic->isChecked();s.notes=notes->isChecked();s.transients=transients->isChecked();s.music=music->isChecked();return s;};
+    writeControls_=[=](const Settings &s){loading_=true;rate->setCurrentIndex(rates.indexOf(s.rate));fft->setCurrentIndex(sizes.indexOf(s.fft));palette->setCurrentIndex(s.palette);scale->setCurrentIndex(s.scale);layout->setCurrentIndex(s.layout);channel->setCurrentIndex(s.channel);amplitude->setCurrentIndex(s.amplitude);instrument->setCurrentIndex(s.instrument);low->setValue(s.low);high->setValue(s.high);ceiling->setValue(s.ceiling);sensitivity->setValue(s.sensitivity);history->setValue(s.history);speed->setValue(s.speed);grid->setChecked(s.grid);peaks->setChecked(s.peaks);average->setChecked(s.average);automatic->setChecked(s.autoRange);notes->setChecked(s.notes);transients->setChecked(s.transients);music->setChecked(s.music);palette->setVisible(s.view==int(View::Waterfall));loading_=false;};
+    commit_=new QTimer(this);commit_->setSingleShot(true);commit_->setInterval(250);
+    connect(commit_,&QTimer::timeout,this,[this]{if(loading_)return;const auto s=readControls_();if(applySettings(s))feedback_->clear();else feedback_->setText(SC_TR("Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth."));});
+    auto schedule=[this]{if(!loading_)commit_->start();};
+    for(auto *w:{rate,fft,palette,scale,layout,channel,amplitude,instrument})connect(w,&QComboBox::currentIndexChanged,this,schedule);
+    for(auto *w:{low,high,ceiling,sensitivity,history,speed})connect(w,&QDoubleSpinBox::valueChanged,this,schedule);
+    for(auto *w:{grid,peaks,average,automatic,notes,transients,music})connect(w,&QCheckBox::toggled,this,schedule);
+    connect(view_,&QComboBox::currentIndexChanged,this,[this]{if(writeControls_)writeControls_(readControls_());});
+    connect(save,&QPushButton::clicked,this,[=]{const auto s=readControls_();if(!s.valid()){feedback_->setText(SC_TR("Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth."));return;}const auto path=i18n::FileDialogs::getSaveFileName(this,SC_TR("Save preset"),{},"JSON (*.json)");if(path.isEmpty())return;QSaveFile file(path);if(!file.open(QIODevice::WriteOnly)){feedback_->setText(SC_TR("Could not save preset."));return;}file.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner);file.write(QJsonDocument(s.json()).toJson());if(!file.commit())feedback_->setText(SC_TR("Could not finish saving preset."));});
+    connect(load,&QPushButton::clicked,this,[=]{const auto path=i18n::FileDialogs::getOpenFileName(this,SC_TR("Load preset"),{},"JSON / PRESET / TXT (*.json *.preset *.txt)");if(path.isEmpty())return;QFile file(path);if(!file.open(QIODevice::ReadOnly) || file.size()>65536)return;auto settings=Settings::parsePreset(file.readAll());if(!settings || !applySettings(*settings)){feedback_->setText(SC_TR("Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth."));return;}feedback_->clear();});
+    auto *saveKey=new QShortcut(QKeySequence::Save,settingsPanel_);connect(saveKey,&QShortcut::activated,save,&QPushButton::click);
+    auto *openKey=new QShortcut(QKeySequence::Open,settingsPanel_);connect(openKey,&QShortcut::activated,load,&QPushButton::click);
 }
 }
