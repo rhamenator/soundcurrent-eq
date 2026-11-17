@@ -2222,6 +2222,10 @@ Do you want to delete it anyway?</source>
       <translation>פסנתר</translation>
     </message>
     <message>
+      <source>Pink noise</source>
+      <translation>רעש ורוד</translation>
+    </message>
+    <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
       <translation>השמעת שמע בדיקה שקט ותצוגה מקדימה של שינויים מוצעים באקולייזר ההשמעה</translation>
     </message>
@@ -2239,8 +2243,16 @@ Do you want to delete it anyway?</source>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
+      <source>Playing pink noise for about %1 seconds</source>
+      <translation>מנגן רעש ורוד במשך כ-%1 שניות</translation>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
       <translation>מושמע שמע בדיקה שקט. יש להפסיק אם הוא אינו נעים.</translation>
+    </message>
+    <message>
+      <source>Playing white noise for about %1 seconds</source>
+      <translation>מנגן רעש לבן במשך כ-%1 שניות</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
@@ -3421,6 +3433,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Waveform</source>
       <translation>צורת גל</translation>
+    </message>
+    <message>
+      <source>White noise</source>
+      <translation>רעש לבן</translation>
     </message>
     <message>
       <source>Whole listening system</source>

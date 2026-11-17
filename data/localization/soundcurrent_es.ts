@@ -2222,6 +2222,10 @@ Do you want to delete it anyway?</source>
       <translation>Piano</translation>
     </message>
     <message>
+      <source>Pink noise</source>
+      <translation>Ruido rosa</translation>
+    </message>
+    <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
       <translation>Reproducir audio de prueba de bajo volumen y previsualizar los cambios sugeridos de ecualización de reproducción</translation>
     </message>
@@ -2239,8 +2243,16 @@ Do you want to delete it anyway?</source>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
+      <source>Playing pink noise for about %1 seconds</source>
+      <translation>Reproduciendo ruido rosa durante unos %1 segundos</translation>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
       <translation>Reproduciendo audio de prueba de bajo volumen. Deténgalo si resulta incómodo.</translation>
+    </message>
+    <message>
+      <source>Playing white noise for about %1 seconds</source>
+      <translation>Reproduciendo ruido blanco durante unos %1 segundos</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
@@ -3421,6 +3433,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Waveform</source>
       <translation>Forma de onda</translation>
+    </message>
+    <message>
+      <source>White noise</source>
+      <translation>Ruido blanco</translation>
     </message>
     <message>
       <source>Whole listening system</source>

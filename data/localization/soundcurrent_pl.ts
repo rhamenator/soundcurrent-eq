@@ -2222,6 +2222,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Fortepian</translation>
     </message>
     <message>
+      <source>Pink noise</source>
+      <translation>Szum różowy</translation>
+    </message>
+    <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
       <translation>Odtwórz cichy dźwięk testowy i przejrzyj proponowane zmiany korekcji odtwarzania</translation>
     </message>
@@ -2239,8 +2243,16 @@ Czy na pewno chcesz go usunąć?</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
+      <source>Playing pink noise for about %1 seconds</source>
+      <translation>Odtwarzanie szumu różowego przez około %1 s</translation>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
       <translation>Odtwarzanie cichego dźwięku testowego. Zatrzymaj, jeśli jest nieprzyjemny.</translation>
+    </message>
+    <message>
+      <source>Playing white noise for about %1 seconds</source>
+      <translation>Odtwarzanie szumu białego przez około %1 s</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
@@ -3421,6 +3433,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Waveform</source>
       <translation>Przebieg fali</translation>
+    </message>
+    <message>
+      <source>White noise</source>
+      <translation>Szum biały</translation>
     </message>
     <message>
       <source>Whole listening system</source>

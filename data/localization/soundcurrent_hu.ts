@@ -2222,6 +2222,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Zongora</translation>
     </message>
     <message>
+      <source>Pink noise</source>
+      <translation>Rózsaszín zaj</translation>
+    </message>
+    <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
       <translation>Halk teszthang lejátszása és a javasolt lejátszási EQ-módosítások előnézete</translation>
     </message>
@@ -2239,8 +2243,16 @@ Mindenképp törölni szeretné?</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
+      <source>Playing pink noise for about %1 seconds</source>
+      <translation>Rózsaszín zaj lejátszása körülbelül %1 másodpercig</translation>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
       <translation>Halk teszthang lejátszása. Állítsa le, ha kellemetlen.</translation>
+    </message>
+    <message>
+      <source>Playing white noise for about %1 seconds</source>
+      <translation>Fehér zaj lejátszása körülbelül %1 másodpercig</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
@@ -3421,6 +3433,10 @@ Mindenképp törölni szeretné?</translation>
     <message>
       <source>Waveform</source>
       <translation>Hullámforma</translation>
+    </message>
+    <message>
+      <source>White noise</source>
+      <translation>Fehér zaj</translation>
     </message>
     <message>
       <source>Whole listening system</source>

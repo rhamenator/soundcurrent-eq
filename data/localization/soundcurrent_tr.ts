@@ -2222,6 +2222,10 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Piyano</translation>
     </message>
     <message>
+      <source>Pink noise</source>
+      <translation>Pembe gürültü</translation>
+    </message>
+    <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
       <translation>Düşük seviyeli test sesi çal ve önerilen oynatma EQ değişikliklerini önizle</translation>
     </message>
@@ -2239,8 +2243,16 @@ Yine de silmek istiyor musunuz?</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
+      <source>Playing pink noise for about %1 seconds</source>
+      <translation>Yaklaşık %1 saniye boyunca pembe gürültü çalınıyor</translation>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
       <translation>Düşük seviyeli test sesi çalınıyor. Rahatsız ediyorsa durdurun.</translation>
+    </message>
+    <message>
+      <source>Playing white noise for about %1 seconds</source>
+      <translation>Yaklaşık %1 saniye boyunca beyaz gürültü çalınıyor</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
@@ -3421,6 +3433,10 @@ Yine de silmek istiyor musunuz?</translation>
     <message>
       <source>Waveform</source>
       <translation>Dalga biçimi</translation>
+    </message>
+    <message>
+      <source>White noise</source>
+      <translation>Beyaz gürültü</translation>
     </message>
     <message>
       <source>Whole listening system</source>

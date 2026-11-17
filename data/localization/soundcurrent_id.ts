@@ -2222,6 +2222,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Piano</translation>
     </message>
     <message>
+      <source>Pink noise</source>
+      <translation>Derau merah muda</translation>
+    </message>
+    <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
       <translation>Putar audio uji berlevel rendah dan tinjau perubahan EQ pemutaran yang disarankan</translation>
     </message>
@@ -2239,8 +2243,16 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
+      <source>Playing pink noise for about %1 seconds</source>
+      <translation>Memutar derau merah muda selama sekitar %1 detik</translation>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
       <translation>Memutar audio uji berlevel rendah. Hentikan jika terasa tidak nyaman.</translation>
+    </message>
+    <message>
+      <source>Playing white noise for about %1 seconds</source>
+      <translation>Memutar derau putih selama sekitar %1 detik</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
@@ -3421,6 +3433,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
     <message>
       <source>Waveform</source>
       <translation>Bentuk gelombang</translation>
+    </message>
+    <message>
+      <source>White noise</source>
+      <translation>Derau putih</translation>
     </message>
     <message>
       <source>Whole listening system</source>
