@@ -9,6 +9,8 @@ class QComboBox;
 class QPushButton;
 class QLabel;
 class QCheckBox;
+class QVBoxLayout;
+class QTimer;
 namespace soundcurrent::analysis {
 class ScopeCanvas;
 class Panel : public QWidget {
@@ -30,17 +32,22 @@ public:
     bool captureReference();
     std::optional<equipment::Profile> microphoneProfile() const;
     void reset();
-    void settingsDialog();
+    void toggleSettings();
+    bool settingsVisible() const;
     void refreshSources();
     void captureError(const QString &);
 private:
-    ScopeCanvas *canvas_;
+    ScopeCanvas *canvas_=nullptr;
     QComboBox *view_,*source_;
     QCheckBox *freeze_;
     QLabel *readout_,*help_;
     QPushButton *reference_,*profile_;
     QString referenceSource_;
     bool sourceReady_=true,captureFailed_=false,suspended_=false;
+    QWidget *settingsPanel_=nullptr;QPushButton *settingsButton_=nullptr;QLabel *feedback_=nullptr;QTimer *commit_=nullptr;
+    std::function<Settings()> readControls_;std::function<void(const Settings &)> writeControls_;std::function<void()> controlsEnabled_;
+    bool loading_=false;
+    void buildSettings(QVBoxLayout *root);
     void availability();
     void suspendForDialog(bool);
 };

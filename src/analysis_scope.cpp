@@ -219,12 +219,47 @@ void Engine::analyzePitch(const QByteArray &bytes) {
     if(settings.instrument>0){const auto &notes=strings[settings.instrument];target=*std::min_element(notes.begin(),notes.end(),[midi](int a,int b){return std::abs(a-midi)<std::abs(b-midi);});}
     pitch={hz,100*(midi-target),1-b,target};
 }
+static const std::vector<std::vector<int>> &chordTemplates(){
+    // Order matches chordQualitySuffix(): major, minor, diminished, augmented, sus2, sus4, dominant 7, major 7, minor 7.
+    static const std::vector<std::vector<int>> t={{0,4,7},{0,3,7},{0,3,6},{0,4,8},{0,2,7},{0,5,7},{0,4,7,10},{0,4,7,11},{0,3,7,10}};
+    return t;
+}
+const char *chordQualitySuffix(int quality){static const char *names[]={"","m","dim","aug","sus2","sus4","7","maj7","m7"};return quality>=0 && quality<9?names[quality]:"";}
+void Engine::analyzeChord() {
+    // Pitch classes from spectral peaks between A2 and B6 (lower notes are not resolved by the FFT), smoothed over ~0.4 s.
+    std::array<double,12> now{};
+    const double lowHz=110,highHz=2000;double strongest=-240;
+    for(std::size_t i=2;i+1<db.size();++i){const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;strongest=std::max(strongest,db[i]);}
+    if(strongest>-75){
+        for(std::size_t i=2;i+1<db.size();++i){
+            const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;
+            if(!(db[i]>db[i-1] && db[i]>=db[i+1]) || db[i]<strongest-28)continue;
+            const double a=db[i-1],b=db[i],c=db[i+1],den=a-2*b+c,shift=std::abs(den)>1e-12?std::clamp(.5*(a-c)/den,-.5,.5):0;
+            const double peakHz=frequencyAt(int(i))+shift*settings.rate/settings.fft,midi=69+12*std::log2(peakHz/440.);
+            now[std::size_t(((int(std::lround(midi))%12)+12)%12)]+=std::pow(10.,b/20.);
+        }
+    }
+    const double alpha=1-std::exp(-std::clamp(frameSeconds,.005,1.)/.4);
+    for(int k=0;k<12;++k)chroma[std::size_t(k)]+=(now[std::size_t(k)]-chroma[std::size_t(k)])*alpha;
+    chord={};
+    const double peak=*std::max_element(chroma.begin(),chroma.end());if(peak<=1e-6 || strongest<=-75)return;
+    int present=0;for(double v:chroma)if(v>.25*peak)++present;if(present<3)return;
+    double best=0;
+    for(int root=0;root<12;++root)for(std::size_t q=0;q<chordTemplates().size();++q){
+        const auto &notes=chordTemplates()[q];double dot=0,norm=0;
+        for(int k=0;k<12;++k)norm+=chroma[std::size_t(k)]*chroma[std::size_t(k)];
+        for(int n:notes)dot+=chroma[std::size_t((root+n)%12)];
+        const double score=dot/(std::sqrt(norm)*std::sqrt(double(notes.size())));
+        if(score>best){best=score;chord={root,int(q),score};}
+    }
+    if(best<.85)chord={};
+}
 bool Engine::push(const QByteArray &bytes,View view) {
     if(bytes.size()%4)return false;
     const int available=bytes.size()/4;
     const int needed=int(std::ceil((settings.fft-1)*48000./settings.rate))+65;
     if(available<needed)return false;
-    const bool frequency=view==View::Waterfall || view==View::Spectrum || view==View::Average || view==View::Microphone;
+    const bool frequency=view==View::Waterfall || view==View::Spectrum || view==View::Average || view==View::Microphone || view==View::Tuner;
 
     left.resize(settings.fft);right.resize(settings.fft);
     if(settings.rate==48000){for(int i=0;i<settings.fft;++i){left[i]=pcm(bytes,available-settings.fft+i,0);right[i]=pcm(bytes,available-settings.fft+i,1);}}
@@ -258,6 +293,7 @@ bool Engine::push(const QByteArray &bytes,View view) {
         averaged[i]=10*std::log10(std::max((view==View::Microphone?meanPower_[i]:averagePower_[i]),1e-24));
         peak[i]=std::max(peak[i],db[i]);
     }
+    if(view==View::Tuner)analyzeChord();else chord={};
     const double frameFftMs=timing.average_fft_ms*2;
     fftMs=fftCalls==2?frameFftMs:.9*fftMs+.1*frameFftMs;return true;
 }

@@ -28,6 +28,9 @@ QString displayNumber(double value, int decimals=3, const QLocale &locale=QLocal
 QString formatFrequency(double hz, const QLocale &locale=QLocale());
 std::vector<double> spectrogramColumn(const std::vector<double> &bins, const Settings &, int rows);
 struct Pitch { double hz=0, cents=0, confidence=0; int midi=-1; };
+// Chord estimated from the pitch-class energy of spectral peaks. quality indexes chordQualitySuffix().
+struct Chord { int root=-1, quality=-1; double confidence=0; };
+const char *chordQualitySuffix(int quality);
 class Engine {
 public:
     explicit Engine(Settings settings={});
@@ -46,7 +49,10 @@ public:
     double correlation=0, rms=0, fftMs=0;
     bool transient=false;
     Pitch pitch;
+    Chord chord;
+    std::array<double,12> chroma{};
 private:
+    void analyzeChord();
     std::unique_ptr<gram::FftPlan> plan_;
     std::array<std::array<double,65>,256> kernel_{};
     bool kernelReady_=false;
