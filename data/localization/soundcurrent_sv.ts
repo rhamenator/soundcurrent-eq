@@ -2222,6 +2222,10 @@ Vill du ta bort den ändå?</translation>
       <translation>Piano</translation>
     </message>
     <message>
+      <source>Pink noise</source>
+      <translation>Rosa brus</translation>
+    </message>
+    <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
       <translation>Spela svagt testljud och förhandsgranska föreslagna ändringar i uppspelnings-EQ</translation>
     </message>
@@ -2239,8 +2243,16 @@ Vill du ta bort den ändå?</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
+      <source>Playing pink noise for about %1 seconds</source>
+      <translation>Spelar rosa brus i cirka %1 sekunder</translation>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
       <translation>Spelar svagt testljud. Stoppa om det är obehagligt.</translation>
+    </message>
+    <message>
+      <source>Playing white noise for about %1 seconds</source>
+      <translation>Spelar vitt brus i cirka %1 sekunder</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
@@ -3421,6 +3433,10 @@ Vill du ta bort den ändå?</translation>
     <message>
       <source>Waveform</source>
       <translation>Vågform</translation>
+    </message>
+    <message>
+      <source>White noise</source>
+      <translation>Vitt brus</translation>
     </message>
     <message>
       <source>Whole listening system</source>

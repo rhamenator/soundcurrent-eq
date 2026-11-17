@@ -2222,6 +2222,10 @@ Do you want to delete it anyway?</source>
       <translation>Фортепіано</translation>
     </message>
     <message>
+      <source>Pink noise</source>
+      <translation>Рожевий шум</translation>
+    </message>
+    <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
       <translation>Відтворити тихий тестовий звук і переглянути запропоновані зміни EQ для відтворення</translation>
     </message>
@@ -2239,8 +2243,16 @@ Do you want to delete it anyway?</source>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
+      <source>Playing pink noise for about %1 seconds</source>
+      <translation>Відтворення рожевого шуму приблизно %1 с</translation>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
       <translation>Відтворюється тихий тестовий звук. Зупиніть його, якщо він неприємний.</translation>
+    </message>
+    <message>
+      <source>Playing white noise for about %1 seconds</source>
+      <translation>Відтворення білого шуму приблизно %1 с</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
@@ -3421,6 +3433,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Waveform</source>
       <translation>Форма хвилі</translation>
+    </message>
+    <message>
+      <source>White noise</source>
+      <translation>Білий шум</translation>
     </message>
     <message>
       <source>Whole listening system</source>

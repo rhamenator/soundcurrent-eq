@@ -2222,6 +2222,10 @@ Vil du likevel sletta ho?</translation>
       <translation>Piano</translation>
     </message>
     <message>
+      <source>Pink noise</source>
+      <translation>Rosa støy</translation>
+    </message>
+    <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
       <translation>Spel av stille testlyd og førehandsvis føreslåtte endringar i avspelings-EQ</translation>
     </message>
@@ -2239,8 +2243,16 @@ Vil du likevel sletta ho?</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
+      <source>Playing pink noise for about %1 seconds</source>
+      <translation>Speler rosa støy i omtrent %1 sekund</translation>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
       <translation>Spelar av stille testlyd. Stopp dersom det er ubehageleg.</translation>
+    </message>
+    <message>
+      <source>Playing white noise for about %1 seconds</source>
+      <translation>Speler kvit støy i omtrent %1 sekund</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
@@ -3421,6 +3433,10 @@ Vil du likevel sletta ho?</translation>
     <message>
       <source>Waveform</source>
       <translation>Bølgjeform</translation>
+    </message>
+    <message>
+      <source>White noise</source>
+      <translation>Kvit støy</translation>
     </message>
     <message>
       <source>Whole listening system</source>

@@ -2222,6 +2222,10 @@ Do you want to delete it anyway?</source>
       <translation>ピアノ</translation>
     </message>
     <message>
+      <source>Pink noise</source>
+      <translation>ピンクノイズ</translation>
+    </message>
+    <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
       <translation>低音量のテスト音声を再生し、推奨される再生 EQ の変更をプレビュー</translation>
     </message>
@@ -2239,8 +2243,16 @@ Do you want to delete it anyway?</source>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
+      <source>Playing pink noise for about %1 seconds</source>
+      <translation>ピンクノイズを約 %1 秒間再生しています</translation>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
       <translation>低音量のテスト音声を再生中です。不快に感じたら停止してください。</translation>
+    </message>
+    <message>
+      <source>Playing white noise for about %1 seconds</source>
+      <translation>ホワイトノイズを約 %1 秒間再生しています</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
@@ -3421,6 +3433,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Waveform</source>
       <translation>波形</translation>
+    </message>
+    <message>
+      <source>White noise</source>
+      <translation>ホワイトノイズ</translation>
     </message>
     <message>
       <source>Whole listening system</source>

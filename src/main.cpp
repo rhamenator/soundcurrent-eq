@@ -112,6 +112,7 @@
 #include <functional>
 #include <limits>
 #include <numbers>
+#include <random>
 #include <optional>
 #include <stdexcept>
 #include <csignal>
@@ -1170,7 +1171,105 @@ QJsonArray analyzeSweep(const QByteArray &pcm, const QByteArray &noise,
     return levels;
 }
 
-int runCalibration(const QString &output, const QString &input, int levelDb, bool sweep) {
+// Broadband calibration noise. Pink noise (equal energy per octave) is the default because white noise puts most of its
+// energy into the treble, which is much harder on tweeters at the same loudness; white is played 6 dB lower still.
+constexpr double kNoiseSeconds = 12.0;
+constexpr double kNoiseCrestFactor = 3.5;
+QVector<int16_t> writeCalibrationNoise(const QString &path, int levelDb, bool pink) {
+    constexpr int rate = kCalibrationRate;
+    constexpr int frames = int(rate * kNoiseSeconds);
+    std::mt19937 generator(0x5C0DE);
+    std::normal_distribution<double> gauss(0.0, 1.0);
+    std::vector<double> signal(frames);
+    double b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+    double sumSquares = 0.0;
+    for (int i = 0; i < frames; ++i) {
+        const double white = gauss(generator);
+        double value = white;
+        if (pink) { // Paul Kellet's economy pink filter; the exact slope is not needed, the analysis divides by the played signal.
+            b0 = 0.99886 * b0 + white * 0.0555179; b1 = 0.99332 * b1 + white * 0.0750759;
+            b2 = 0.96900 * b2 + white * 0.1538520; b3 = 0.86650 * b3 + white * 0.3104856;
+            b4 = 0.55000 * b4 + white * 0.5329522; b5 = -0.7616 * b5 - white * 0.0168980;
+            value = b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362; b6 = white * 0.115926;
+        }
+        signal[i] = value;
+        if (i >= rate) sumSquares += value * value; // skip the filter start-up
+    }
+    const double sigma = std::sqrt(sumSquares / std::max(1, frames - rate));
+    const double peak = 32767.0 * std::pow(10.0, (levelDb - (pink ? 0 : 6)) / 20.0);
+    const double scale = peak / (kNoiseCrestFactor * std::max(1e-9, sigma));
+    QFile file(path);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate))
+        throw std::runtime_error(SC_TR("Could not create quiet frequency sweep").toStdString());
+    QDataStream out(&file);
+    out.setByteOrder(QDataStream::LittleEndian);
+    out.writeRawData("RIFF", 4);
+    out << quint32(36 + frames * 4);
+    out.writeRawData("WAVEfmt ", 8);
+    out << quint32(16) << quint16(1) << quint16(2) << quint32(rate)
+        << quint32(rate * 4) << quint16(4) << quint16(16);
+    out.writeRawData("data", 4);
+    out << quint32(frames * 4);
+    QVector<int16_t> reference;
+    reference.reserve(frames);
+    for (int i = 0; i < frames; ++i) {
+        const double envelope = std::min({1.0, i / double(rate / 2), (frames - i - 1) / double(rate / 2)});
+        const auto value = int16_t(std::lround(std::clamp(signal[i] * scale * envelope, -peak, peak)));
+        reference.append(value);
+        out << qint16(value) << qint16(value);
+    }
+    if (out.status() != QDataStream::Ok) throw std::runtime_error(SC_TR("Could not write frequency sweep").toStdString());
+    return reference;
+}
+
+// Mean squared amplitude of the signal in a narrow band around `frequency` (three Goertzel bins spread over a third of
+// an octave), averaged over consecutive windows of samples[first, last).
+double noiseBandPower(const QVector<int16_t> &samples, int frequency, int first, int last) {
+    const int window = std::clamp(kCalibrationRate * 10 / frequency, kCalibrationRate / 100, kCalibrationRate * 8 / 100);
+    first = std::max(0, first);
+    last = std::min<int>(last, samples.size());
+    double total = 0.0;
+    int count = 0;
+    for (const double ratio : {std::pow(2.0, -1.0 / 6.0), 1.0, std::pow(2.0, 1.0 / 6.0)}) {
+        const double hz = std::min(frequency * ratio, kCalibrationRate / 2.0 - 100.0);
+        const double coefficient = 2.0 * std::cos(2.0 * std::numbers::pi * hz / kCalibrationRate);
+        for (int start = first; start + window <= last; start += window) {
+            double previous = 0.0, beforePrevious = 0.0;
+            for (int i = 0; i < window; ++i) {
+                const double current = samples[start + i] + coefficient * previous - beforePrevious;
+                beforePrevious = previous;
+                previous = current;
+            }
+            const double power = previous * previous + beforePrevious * beforePrevious - coefficient * previous * beforePrevious;
+            const double amplitude = 2.0 * std::sqrt(std::max(0.0, power)) / window;
+            total += amplitude * amplitude;
+            ++count;
+        }
+    }
+    return count ? total / count : 0.0;
+}
+
+QJsonArray analyzeNoise(const QByteArray &pcm, const QByteArray &noise, const QVector<int16_t> &reference) {
+    const auto recorded = pcmSamples(pcm);
+    const auto backgroundSamples = pcmSamples(noise);
+    constexpr int margin = int(kCalibrationRate * 1.5); // the start of the recording precedes playback by an unknown delay
+    if (recorded.size() < 4 * margin) throw std::runtime_error(SC_TR("Too little test audio reached the microphone. Move it closer or raise the test level slightly.").toStdString());
+    QJsonArray levels;
+    for (const int frequency : kCalibrationFrequencies) {
+        const double heard = noiseBandPower(recorded, frequency, margin, recorded.size() - margin);
+        const double background = noiseBandPower(backgroundSamples, frequency, 0, backgroundSamples.size());
+        const double expected = noiseBandPower(reference, frequency, margin, reference.size() - margin);
+        if (qEnvironmentVariableIsSet("SOUNDCURRENT_CALIBRATION_DEBUG"))
+            QTextStream(stderr) << frequency << " Hz: signal " << heard << ", background " << background << Qt::endl;
+        if (heard >= std::max(0.003, background * 10.24) && expected > 0.0) // 0.003: well above 16-bit quantization noise in a band
+            levels.append(std::sqrt(std::max(0.0, heard - background) / expected));
+        else levels.append(QJsonValue::Null);
+    }
+    return levels;
+}
+
+int runCalibration(const QString &output, const QString &input, int levelDb, const QString &mode) {
+    const bool sweep = mode == "sweep", noiseMode = mode == "pink" || mode == "white";
     try {
         if (levelDb < -54 || levelDb > -5) throw std::runtime_error(SC_TR("Test level is outside the allowed range").toStdString());
         soundcurrent::microphone::AccessPolicy permission;
@@ -1282,6 +1381,16 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
                 QTextStream(stderr) << SC_TR("Capture bytes: %1, noise bytes: %2").arg(QLocale().toString(recorded.size()),QLocale().toString(noise.size())) << Qt::endl;
             levels = analyzeSweep(recorded, noise, reference);
             for (const auto &value : levels) if (value.isDouble()) ++valid;
+        } else if (noiseMode) {
+            if (mode == "pink") QTextStream(stderr) << SC_TR("Playing pink noise for about %1 seconds").arg(QLocale().toString(int(kNoiseSeconds))) << Qt::endl;
+            else QTextStream(stderr) << SC_TR("Playing white noise for about %1 seconds").arg(QLocale().toString(int(kNoiseSeconds))) << Qt::endl;
+            const auto noise = collect(1500);
+            const auto path = directory.filePath("quiet-noise.wav");
+            const auto reference = writeCalibrationNoise(path, levelDb, mode == "pink");
+            const auto recorded = playAndRecord(path);
+            checkCalibrationClipping(recorded);
+            levels = analyzeNoise(recorded, noise, reference);
+            for (const auto &value : levels) if (value.isDouble()) ++valid;
         } else {
             for (const auto frequency : kCalibrationFrequencies) {
                 QTextStream(stderr) << SC_TR("Checking %1 Hz").arg(QLocale().toString(frequency)) << Qt::endl;
@@ -1310,7 +1419,7 @@ int runCalibration(const QString &output, const QString &input, int levelDb, boo
 #endif
         if (valid < 4) throw std::runtime_error(SC_TR("Too little test audio reached the microphone. Move it closer or raise the test level slightly.").toStdString());
         QJsonObject result{{"levels", levels}, {"testLevelDb", levelDb},
-                           {"mode", sweep ? "sweep" : "tones"}};
+                           {"mode", mode}};
         QTextStream(stdout) << QJsonDocument(result).toJson(QJsonDocument::Compact) << Qt::endl;
         return 0;
     } catch (const std::exception &error) {
@@ -2029,13 +2138,14 @@ public:
         settingsScroll->setWidget(settingsContainer);
         tabs_->addTab(settingsScroll, SC_TR("Settings && calibration"));
         tabs_->setCurrentIndex(0);
-        settingsRoot->addWidget(soundcurrent::i18n::settingsPanel());
-        settingsRoot->addWidget(soundcurrent::startupPanel());
-        settingsRoot->addWidget(soundcurrent::buffering::panel([this] { restartBufferedAudio(); }));
+        // Most-used sections first: devices and calibration; set-once preferences (language, startup) last.
+        auto *languagePanel = soundcurrent::i18n::settingsPanel();
+        auto *startupPanel = soundcurrent::startupPanel();
 
         auto *deviceBox = new QGroupBox(SC_TR("Output device"));
         auto *deviceLayout = new QVBoxLayout(deviceBox);
         settingsRoot->addWidget(deviceBox);
+        settingsRoot->addWidget(soundcurrent::buffering::panel([this] { restartBufferedAudio(); }));
         auto *outputBox = new QGroupBox(SC_TR("Playback"));
         auto *outputLayout = new QVBoxLayout(outputBox);
         auto *outputRow = new QHBoxLayout;
@@ -2397,6 +2507,8 @@ public:
         calibrationMode_ = new QComboBox;
         calibrationMode_->addItem(SC_TR("Quiet logarithmic sweep"), "sweep");
         calibrationMode_->addItem(SC_TR("Separate quiet tones"), "tones");
+        calibrationMode_->addItem(SC_TR("Pink noise"), "pink");
+        calibrationMode_->addItem(SC_TR("White noise"), "white");
         calibrationMode_->setAccessibleName(SC_TR("Calibration test signal"));
         calibrationRow->addWidget(calibrationMode_, 0, 1, 1, 3);
         calibrationStart_ = new QPushButton(SC_TR("Measure"));
@@ -2423,6 +2535,8 @@ public:
         updates->onReminder=[this](const QString &message){if(tray_)tray_->showMessage(SC_TR("Application update"),message,QSystemTrayIcon::Information,10000);};
         updates->onAvailabilityChanged = [updateNow](bool available) { updateNow->setVisible(available); };
         connect(updateNow, &QPushButton::clicked, updates, &soundcurrent::UpdatePanel::openDownloads);
+        settingsRoot->addWidget(languagePanel);
+        settingsRoot->addWidget(startupPanel);
         settingsRoot->addWidget(updates);
         settingsRoot->addStretch();
         analysis_ = new soundcurrent::analysis::Panel;
@@ -4329,9 +4443,8 @@ int main(int argc, char **argv) {
         bool valid = false;
         const int level = QString::fromLocal8Bit(argv[4]).toInt(&valid);
         const auto mode = QString::fromLocal8Bit(argv[5]);
-        if (!valid || (mode != "sweep" && mode != "tones")) return 2;
-        return runCalibration(QString::fromLocal8Bit(argv[2]), QString::fromLocal8Bit(argv[3]), level,
-                              mode == "sweep");
+        if (!valid || (mode != "sweep" && mode != "tones" && mode != "pink" && mode != "white")) return 2;
+        return runCalibration(QString::fromLocal8Bit(argv[2]), QString::fromLocal8Bit(argv[3]), level, mode);
     }
 #ifndef Q_OS_WIN
     if (argc == 5 && QString::fromLocal8Bit(argv[1]) == "--volume-guardian") {
@@ -4629,6 +4742,24 @@ int main(int argc, char **argv) {
         const auto rejectedLevels = analyzeSweep(sweepRecording, sweepRecording, sweepReference);
         for (const auto &level : rejectedLevels)
             if (!level.isNull()) qFatal("Background noise was mistaken for a calibration signal");
+        for (const bool pink : {true, false}) {
+            const auto noiseReference = writeCalibrationNoise(sweepTestDir.filePath("noise.wav"), -48, pink);
+            QByteArray noiseRecording((noiseReference.size() + kCalibrationRate / 3) * 2, '\0');
+            for (int i = 0; i < noiseReference.size(); ++i) {
+                const auto sample = int16_t(std::lround(noiseReference[i] * 0.5));
+                noiseRecording[2 * (i + kCalibrationRate / 3)] = char(uint16_t(sample) & 0xff);
+                noiseRecording[2 * (i + kCalibrationRate / 3) + 1] = char(uint16_t(sample) >> 8);
+            }
+            const auto noiseLevels = analyzeNoise(noiseRecording, QByteArray(24000, '\0'), noiseReference);
+            if (noiseLevels.size() != int(kCalibrationFrequencies.size())) qFatal("Noise analysis returned the wrong band count");
+            for (const auto &level : noiseLevels)
+                if (!level.isDouble() || std::abs(level.toDouble() - 0.5) > 0.08) {
+                    qWarning("Unexpected synthetic noise level: %s", qPrintable(QString::fromUtf8(QJsonDocument(noiseLevels).toJson(QJsonDocument::Compact))));
+                    qFatal("Noise analysis did not recover a delayed attenuated signal");
+                }
+            for (const auto &level : analyzeNoise(noiseRecording, noiseRecording, noiseReference))
+                if (!level.isNull()) qFatal("Background noise was mistaken for a calibration noise signal");
+        }
         QJsonArray trialLevels{50.0, 80.0, 100.0, 150.0, 200.0, 300.0, 400.0, 500.0,
                                600.0, 700.0, 800.0, 900.0};
         auto trialSuggestion = calibrationSuggestion(QJsonObject{{"levels", trialLevels}}, defaultBands(15));

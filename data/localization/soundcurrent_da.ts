@@ -2222,6 +2222,10 @@ Vil du slette den alligevel?</translation>
       <translation>Klaver</translation>
     </message>
     <message>
+      <source>Pink noise</source>
+      <translation>Lyserød støj</translation>
+    </message>
+    <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
       <translation>Afspil svag testlyd, og få vist foreslåede ændringer i afspilnings-EQ</translation>
     </message>
@@ -2239,8 +2243,16 @@ Vil du slette den alligevel?</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
+      <source>Playing pink noise for about %1 seconds</source>
+      <translation>Afspiller lyserød støj i cirka %1 sekunder</translation>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
       <translation>Afspiller svag testlyd. Stop, hvis det er ubehageligt.</translation>
+    </message>
+    <message>
+      <source>Playing white noise for about %1 seconds</source>
+      <translation>Afspiller hvid støj i cirka %1 sekunder</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
@@ -3421,6 +3433,10 @@ Vil du slette den alligevel?</translation>
     <message>
       <source>Waveform</source>
       <translation>Bølgeform</translation>
+    </message>
+    <message>
+      <source>White noise</source>
+      <translation>Hvid støj</translation>
     </message>
     <message>
       <source>Whole listening system</source>

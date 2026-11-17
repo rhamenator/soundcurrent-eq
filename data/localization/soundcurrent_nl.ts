@@ -2222,6 +2222,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Piano</translation>
     </message>
     <message>
+      <source>Pink noise</source>
+      <translation>Roze ruis</translation>
+    </message>
+    <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
       <translation>Speel testaudio op laag volume en bekijk voorgestelde wijzigingen aan de weergave-EQ</translation>
     </message>
@@ -2239,8 +2243,16 @@ Wilt u het toch verwijderen?</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
+      <source>Playing pink noise for about %1 seconds</source>
+      <translation>Roze ruis afspelen gedurende ongeveer %1 seconden</translation>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
       <translation>Testaudio op laag volume wordt afgespeeld. Stop als het onaangenaam is.</translation>
+    </message>
+    <message>
+      <source>Playing white noise for about %1 seconds</source>
+      <translation>Witte ruis afspelen gedurende ongeveer %1 seconden</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
@@ -3421,6 +3433,10 @@ Wilt u het toch verwijderen?</translation>
     <message>
       <source>Waveform</source>
       <translation>Golfvorm</translation>
+    </message>
+    <message>
+      <source>White noise</source>
+      <translation>Witte ruis</translation>
     </message>
     <message>
       <source>Whole listening system</source>

@@ -2222,6 +2222,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Piano</translation>
     </message>
     <message>
+      <source>Pink noise</source>
+      <translation>Vaaleanpunainen kohina</translation>
+    </message>
+    <message>
       <source>Play quiet test audio and preview suggested playback EQ changes</source>
       <translation>Toista hiljaista testiääntä ja esikatsele ehdotettuja toiston taajuuskorjausmuutoksia</translation>
     </message>
@@ -2239,8 +2243,16 @@ Haluatko silti poistaa sen?</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
     </message>
     <message>
+      <source>Playing pink noise for about %1 seconds</source>
+      <translation>Toistetaan vaaleanpunaista kohinaa noin %1 sekuntia</translation>
+    </message>
+    <message>
       <source>Playing quiet test audio. Stop if it is uncomfortable.</source>
       <translation>Toistetaan hiljaista testiääntä. Pysäytä, jos ääni tuntuu epämukavalta.</translation>
+    </message>
+    <message>
+      <source>Playing white noise for about %1 seconds</source>
+      <translation>Toistetaan valkoista kohinaa noin %1 sekuntia</translation>
     </message>
     <message>
       <source>Plug in your microphone to select a microphone profile</source>
@@ -3421,6 +3433,10 @@ Haluatko silti poistaa sen?</translation>
     <message>
       <source>Waveform</source>
       <translation>Aaltomuoto</translation>
+    </message>
+    <message>
+      <source>White noise</source>
+      <translation>Valkoinen kohina</translation>
     </message>
     <message>
       <source>Whole listening system</source>
