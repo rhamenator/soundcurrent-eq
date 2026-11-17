@@ -373,13 +373,21 @@ protected:
             p.setPen(QPen(QColor("#55d7c3"),1));QPainterPath path;for(std::size_t i=0;i<data->left.size();++i){QPointF point(c.x()+(data->left[i]-data->right[i])*.5*radius/waveLimit_,c.y()-(data->left[i]+data->right[i])*.5*radius/waveLimit_);if(i==0)path.moveTo(point);else path.lineTo(point);}p.drawPath(path);
             p.drawText(plot.adjusted(0,0,0,-4),Qt::AlignBottom|Qt::AlignHCenter,QString::fromUtf8("ρ ")+QLocale().toString(data->correlation,'f',2));
         } else if(mode==View::Tuner){
-            const auto pitch=data->pitch;p.setPen(QColor("#55d7c3"));auto font=p.font();font.setPointSizeF(30);p.setFont(font);p.drawText(plot,Qt::AlignCenter,noteName(pitch.midi));
-            font.setPointSizeF(11);p.setFont(font);p.drawText(plot.adjusted(0,0,0,-10),Qt::AlignBottom|Qt::AlignHCenter,formatFrequency(pitch.hz)+" / "+QLocale().toString(pitch.cents,'f',1)+" ¢");
-            const double x=plot.center().x()+std::clamp(pitch.cents,-50.,50.)/50.*plot.width()*.4;p.drawLine(QPointF(x,plot.top()+12),QPointF(x,plot.top()+60));
-            {const auto chord=data->chord;static const char *names[]={"C","C♯","D","D♯","E","F","F♯","G","G♯","A","A♯","B"};
-             const double peak=std::max(1e-9,*std::max_element(data->chroma.begin(),data->chroma.end())),barWidth=std::min(28.,plot.width()/16.),left=plot.center().x()-6*barWidth;
-             for(int k=0;k<12;++k){const double h=40*data->chroma[std::size_t(k)]/peak;const bool member=chord.root>=0;QColor color(member?"#55d7c3":"#4b5d73");p.fillRect(QRectF(left+k*barWidth+2,plot.top()+112-h,barWidth-4,h),color);p.setPen(QColor("#9fb0c3"));p.drawText(QRectF(left+k*barWidth,plot.top()+114,barWidth,16),Qt::AlignCenter,QString::fromUtf8(names[k]));}
-             if(chord.root>=0){p.setPen(QColor("#e6b450"));auto big=p.font();big.setPointSizeF(20);p.setFont(big);p.drawText(QRectF(plot.left(),plot.top()+134,plot.width(),34),Qt::AlignCenter,QString::fromUtf8(names[chord.root])+QString::fromLatin1(chordQualitySuffix(chord.quality)));p.setPen(QColor("#55d7c3"));}}
+            // Top: 12 pitch-class bars. Middle: the chord when one is detected, otherwise the single note. Bottom: gauge, frequency, tuning.
+            const auto pitch=data->pitch;const auto chord=data->chord;const bool isChord=chord.root>=0;
+            static const char *names[]={"C","C♯","D","D♯","E","F","F♯","G","G♯","A","A♯","B"};
+            const double peak=std::max(1e-9,*std::max_element(data->chroma.begin(),data->chroma.end())),barWidth=std::min(28.,plot.width()/16.),left=plot.center().x()-6*barWidth;
+            for(int k=0;k<12;++k){const double h=36*data->chroma[std::size_t(k)]/peak;p.fillRect(QRectF(left+k*barWidth+2,plot.top()+46-h,barWidth-4,h),QColor(isChord?"#55d7c3":"#4b5d73"));p.setPen(QColor("#9fb0c3"));p.drawText(QRectF(left+k*barWidth,plot.top()+48,barWidth,16),Qt::AlignCenter,QString::fromUtf8(names[k]));}
+            auto font=p.font();font.setPointSizeF(30);p.setFont(font);
+            if(isChord){p.setPen(QColor("#e6b450"));p.drawText(plot,Qt::AlignCenter,QString::fromUtf8(names[chord.root])+QString::fromLatin1(chordQualitySuffix(chord.quality)));}
+            else{p.setPen(QColor("#55d7c3"));p.drawText(plot,Qt::AlignCenter,noteName(pitch.midi));}
+            font.setPointSizeF(11);p.setFont(font);p.setPen(QColor("#55d7c3"));
+            if(!isChord){
+                p.drawText(plot.adjusted(0,0,0,-10),Qt::AlignBottom|Qt::AlignHCenter,formatFrequency(pitch.hz)+" / "+QLocale().toString(pitch.cents,'f',1)+" ¢");
+                const double gaugeY=plot.bottom()-62,x=plot.center().x()+std::clamp(pitch.cents,-50.,50.)/50.*plot.width()*.4;
+                p.setPen(QColor("#30445b"));p.drawLine(QPointF(plot.center().x()-plot.width()*.4,gaugeY),QPointF(plot.center().x()+plot.width()*.4,gaugeY));
+                p.setPen(QPen(QColor("#55d7c3"),2));p.drawLine(QPointF(x,gaugeY-14),QPointF(x,gaugeY+14));p.setPen(QColor("#55d7c3"));
+            }
             static const QStringList tunings={"", "E2 A2 D3 G3 B3 E4","E1 A1 D2 G2","G4 C4 E4 A4","G3 D4 A4 E5","C3 G3 D4 A4","C2 G2 D3 A3","G3 D4 A4 E5"};
             p.drawText(plot.adjusted(0,0,0,-36),Qt::AlignBottom|Qt::AlignHCenter,tunings[s.instrument]);
         } else if(mode!=View::Waterfall){
