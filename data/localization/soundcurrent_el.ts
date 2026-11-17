@@ -525,6 +525,10 @@ Do you want to delete it anyway?</source>
       <translation>Φωτεινό</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>Καφέ θόρυβος</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>Περιήγηση σε όλα τα προφίλ εξοπλισμού / επεξεργασία</translation>
     </message>
@@ -2241,6 +2245,10 @@ Do you want to delete it anyway?</source>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>Αναπαραγωγή λογαριθμικής σάρωσης από 20 Hz έως 25 kHz</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>Αναπαραγωγή καφέ θορύβου για περίπου %1 δευτερόλεπτα</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>

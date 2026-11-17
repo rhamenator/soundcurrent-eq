@@ -525,6 +525,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Strălucitor</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>Zgomot maro</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>Răsfoiți toate profilurile de echipament / editor</translation>
     </message>
@@ -2241,6 +2245,10 @@ Doriți să îl ștergeți totuși?</translation>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>Se redă o baleiere logaritmică de la 20 Hz la 25 kHz</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>Se redă zgomot maro timp de aproximativ %1 secunde</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>

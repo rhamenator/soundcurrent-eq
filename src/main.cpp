@@ -1172,15 +1172,19 @@ QJsonArray analyzeSweep(const QByteArray &pcm, const QByteArray &noise,
 }
 
 // Broadband calibration noise. Pink noise (equal energy per octave) is the default because white noise puts most of its
-// energy into the treble, which is much harder on tweeters at the same loudness; white is played 6 dB lower still.
+// energy into the treble, which is much harder on tweeters at the same loudness; white is played 6 dB lower still. Brown noise
+// (-6 dB/octave) is mostly bass, which is hard on small woofers, so it is also played 6 dB lower.
 constexpr double kNoiseSeconds = 12.0;
 constexpr double kNoiseCrestFactor = 3.5;
-QVector<int16_t> writeCalibrationNoise(const QString &path, int levelDb, bool pink) {
+enum class NoiseColor { White, Pink, Brown };
+QVector<int16_t> writeCalibrationNoise(const QString &path, int levelDb, NoiseColor color) {
+    const bool pink = color == NoiseColor::Pink;
     constexpr int rate = kCalibrationRate;
     constexpr int frames = int(rate * kNoiseSeconds);
     std::mt19937 generator(0x5C0DE);
     std::normal_distribution<double> gauss(0.0, 1.0);
     std::vector<double> signal(frames);
+    double brown = 0;
     double b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
     double sumSquares = 0.0;
     for (int i = 0; i < frames; ++i) {
@@ -1192,6 +1196,7 @@ QVector<int16_t> writeCalibrationNoise(const QString &path, int levelDb, bool pi
             b4 = 0.55000 * b4 + white * 0.5329522; b5 = -0.7616 * b5 - white * 0.0168980;
             value = b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362; b6 = white * 0.115926;
         }
+        if (color == NoiseColor::Brown) { brown = 0.9998 * brown + white * 0.02; value = brown; } // leaky integrator: -6 dB/octave above ~3 Hz
         signal[i] = value;
         if (i >= rate) sumSquares += value * value; // skip the filter start-up
     }
@@ -1269,7 +1274,7 @@ QJsonArray analyzeNoise(const QByteArray &pcm, const QByteArray &noise, const QV
 }
 
 int runCalibration(const QString &output, const QString &input, int levelDb, const QString &mode) {
-    const bool sweep = mode == "sweep", noiseMode = mode == "pink" || mode == "white";
+    const bool sweep = mode == "sweep", noiseMode = mode == "pink" || mode == "white" || mode == "brown";
     try {
         if (levelDb < -54 || levelDb > -5) throw std::runtime_error(SC_TR("Test level is outside the allowed range").toStdString());
         soundcurrent::microphone::AccessPolicy permission;
@@ -1383,10 +1388,11 @@ int runCalibration(const QString &output, const QString &input, int levelDb, con
             for (const auto &value : levels) if (value.isDouble()) ++valid;
         } else if (noiseMode) {
             if (mode == "pink") QTextStream(stderr) << SC_TR("Playing pink noise for about %1 seconds").arg(QLocale().toString(int(kNoiseSeconds))) << Qt::endl;
+            else if (mode == "brown") QTextStream(stderr) << SC_TR("Playing brown noise for about %1 seconds").arg(QLocale().toString(int(kNoiseSeconds))) << Qt::endl;
             else QTextStream(stderr) << SC_TR("Playing white noise for about %1 seconds").arg(QLocale().toString(int(kNoiseSeconds))) << Qt::endl;
             const auto noise = collect(1500);
             const auto path = directory.filePath("quiet-noise.wav");
-            const auto reference = writeCalibrationNoise(path, levelDb, mode == "pink");
+            const auto reference = writeCalibrationNoise(path, levelDb, mode == "pink" ? NoiseColor::Pink : mode == "brown" ? NoiseColor::Brown : NoiseColor::White);
             const auto recorded = playAndRecord(path);
             checkCalibrationClipping(recorded);
             levels = analyzeNoise(recorded, noise, reference);
@@ -2509,6 +2515,7 @@ public:
         calibrationMode_->addItem(SC_TR("Separate quiet tones"), "tones");
         calibrationMode_->addItem(SC_TR("Pink noise"), "pink");
         calibrationMode_->addItem(SC_TR("White noise"), "white");
+        calibrationMode_->addItem(SC_TR("Brown noise"), "brown");
         calibrationMode_->setAccessibleName(SC_TR("Calibration test signal"));
         calibrationRow->addWidget(calibrationMode_, 0, 1, 1, 3);
         calibrationStart_ = new QPushButton(SC_TR("Measure"));
@@ -4443,7 +4450,7 @@ int main(int argc, char **argv) {
         bool valid = false;
         const int level = QString::fromLocal8Bit(argv[4]).toInt(&valid);
         const auto mode = QString::fromLocal8Bit(argv[5]);
-        if (!valid || (mode != "sweep" && mode != "tones" && mode != "pink" && mode != "white")) return 2;
+        if (!valid || (mode != "sweep" && mode != "tones" && mode != "pink" && mode != "white" && mode != "brown")) return 2;
         return runCalibration(QString::fromLocal8Bit(argv[2]), QString::fromLocal8Bit(argv[3]), level, mode);
     }
 #ifndef Q_OS_WIN
@@ -4742,8 +4749,8 @@ int main(int argc, char **argv) {
         const auto rejectedLevels = analyzeSweep(sweepRecording, sweepRecording, sweepReference);
         for (const auto &level : rejectedLevels)
             if (!level.isNull()) qFatal("Background noise was mistaken for a calibration signal");
-        for (const bool pink : {true, false}) {
-            const auto noiseReference = writeCalibrationNoise(sweepTestDir.filePath("noise.wav"), -48, pink);
+        for (const auto color : {NoiseColor::Pink, NoiseColor::White, NoiseColor::Brown}) {
+            const auto noiseReference = writeCalibrationNoise(sweepTestDir.filePath("noise.wav"), -48, color);
             QByteArray noiseRecording((noiseReference.size() + kCalibrationRate / 3) * 2, '\0');
             for (int i = 0; i < noiseReference.size(); ++i) {
                 const auto sample = int16_t(std::lround(noiseReference[i] * 0.5));
@@ -4752,11 +4759,16 @@ int main(int argc, char **argv) {
             }
             const auto noiseLevels = analyzeNoise(noiseRecording, QByteArray(24000, '\0'), noiseReference);
             if (noiseLevels.size() != int(kCalibrationFrequencies.size())) qFatal("Noise analysis returned the wrong band count");
-            for (const auto &level : noiseLevels)
+            int valid = 0;
+            for (const auto &level : noiseLevels) {
+                if (level.isNull() && color == NoiseColor::Brown) continue; // brown noise has almost no treble to measure
+                if (level.isDouble()) ++valid;
                 if (!level.isDouble() || std::abs(level.toDouble() - 0.5) > 0.08) {
                     qWarning("Unexpected synthetic noise level: %s", qPrintable(QString::fromUtf8(QJsonDocument(noiseLevels).toJson(QJsonDocument::Compact))));
                     qFatal("Noise analysis did not recover a delayed attenuated signal");
                 }
+            }
+            if (valid < 6) qFatal("Noise analysis measured too few bands");
             for (const auto &level : analyzeNoise(noiseRecording, noiseRecording, noiseReference))
                 if (!level.isNull()) qFatal("Background noise was mistaken for a calibration noise signal");
         }

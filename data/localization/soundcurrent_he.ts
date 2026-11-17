@@ -525,6 +525,10 @@ Do you want to delete it anyway?</source>
       <translation>בהיר</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>רעש חום</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>עיון בכל פרופילי הציוד / עורך</translation>
     </message>
@@ -2241,6 +2245,10 @@ Do you want to delete it anyway?</source>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>השמעת סריקה לוגריתמית מ־20 Hz עד 25 kHz</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>מנגן רעש חום במשך כ-%1 שניות</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>

@@ -525,6 +525,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Jasný</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>Hnědý šum</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>Procházet všechny profily zařízení / editor</translation>
     </message>
@@ -2241,6 +2245,10 @@ Přesto chcete soubor smazat?</translation>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>Přehrávání logaritmického přelaďování od 20 Hz do 25 kHz</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>Přehrává se hnědý šum po dobu asi %1 s</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>

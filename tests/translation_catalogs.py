@@ -810,7 +810,7 @@ class CatalogTests(unittest.TestCase):
         code = (root / 'src/main.cpp').read_text(encoding='utf-8')
         block = code[code.index('int runCalibration('):code.index('struct CalibrationSuggestion')]
         statements = re.findall(r'QTextStream\(stderr\)([^;]*);', block)
-        self.assertEqual(len(statements), 8)
+        self.assertEqual(len(statements), 9)
         declared = set(catalog.sources())
         for statement in statements:
             marked = [catalog.literal(args[0]) for args in catalog.calls(statement, 'SC_TR')]

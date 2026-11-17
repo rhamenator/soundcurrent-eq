@@ -525,6 +525,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Helder</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>Bruine ruis</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>Alle apparatuurprofielen bekijken / bewerken</translation>
     </message>
@@ -2241,6 +2245,10 @@ Wilt u het toch verwijderen?</translation>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>Logaritmische sweep van 20 Hz tot 25 kHz wordt afgespeeld</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>Bruine ruis afspelen gedurende ongeveer %1 seconden</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>

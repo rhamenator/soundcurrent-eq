@@ -525,6 +525,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Jasne brzmienie</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>Szum brązowy</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>Przeglądaj wszystkie profile sprzętu / edytor</translation>
     </message>
@@ -2241,6 +2245,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>Odtwarzanie przemiatania logarytmicznego od 20 Hz do 25 kHz</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>Odtwarzanie szumu brązowego przez około %1 s</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>

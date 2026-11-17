@@ -525,6 +525,10 @@ Do you want to delete it anyway?</source>
       <translation>밝은 음색</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>브라운 노이즈</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>모든 장비 프로파일 탐색 / 편집</translation>
     </message>
@@ -2241,6 +2245,10 @@ Do you want to delete it anyway?</source>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>20 Hz에서 25 kHz까지 로그 스윕 재생 중</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>브라운 노이즈를 약 %1초 동안 재생 중</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>

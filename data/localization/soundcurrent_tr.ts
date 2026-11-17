@@ -525,6 +525,10 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Parlak</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>Kahverengi gürültü</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>Tüm ekipman profillerine göz at / düzenleyici</translation>
     </message>
@@ -2241,6 +2245,10 @@ Yine de silmek istiyor musunuz?</translation>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>20 Hz ile 25 kHz arasında logaritmik tarama çalınıyor</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>Yaklaşık %1 saniye boyunca kahverengi gürültü çalınıyor</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>
