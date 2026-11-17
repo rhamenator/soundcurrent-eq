@@ -2671,6 +2671,10 @@ Do you want to delete it anyway?</source>
       <translation>บันทึกสำเนา</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>บันทึกภาพ</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>บันทึกโปรไฟล์ที่แก้ไขหรือไม่?</translation>
     </message>

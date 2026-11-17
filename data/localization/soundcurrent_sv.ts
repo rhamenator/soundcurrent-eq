@@ -2671,6 +2671,10 @@ Vill du ta bort den ändå?</translation>
       <translation>Spara kopia</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Spara bild</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Spara ändrad profil?</translation>
     </message>

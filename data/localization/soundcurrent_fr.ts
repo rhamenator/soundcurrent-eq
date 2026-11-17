@@ -2671,6 +2671,10 @@ Voulez-vous quand même le supprimer ?</translation>
       <translation>Enregistrer une copie</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Enregistrer l’image</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Enregistrer le profil modifié ?</translation>
     </message>

@@ -2671,6 +2671,10 @@ Do you want to delete it anyway?</source>
       <translation>コピーを保存</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>画像を保存</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>変更したプロファイルを保存しますか？</translation>
     </message>

@@ -2671,6 +2671,10 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Uložiť kópiu</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Uložiť obrázok</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Uložiť upravený profil?</translation>
     </message>

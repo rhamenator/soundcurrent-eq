@@ -2671,6 +2671,10 @@ Vuoi eliminarlo comunque?</translation>
       <translation>Salva copia</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Salva immagine</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Salvare il profilo modificato?</translation>
     </message>

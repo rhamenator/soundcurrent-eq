@@ -183,6 +183,22 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
     check(panel.engine().settings.low>zoomed.low,"dragging left did not pan toward higher frequencies");
     QMouseEvent twice(QEvent::MouseButtonDblClick,where,target->mapToGlobal(where),Qt::LeftButton,Qt::LeftButton,Qt::NoModifier);QApplication::sendEvent(target,&twice);
     check(panel.engine().settings.low==20 && panel.engine().settings.high==20000,"double click did not reset the zoom");}}
+  {auto fast=panel.engine().settings;fast.view=0;fast.history=5;fast.speed=4;fast.scale=1;fast.low=20;fast.high=20000;check(panel.applySettings(fast),"fast history settings rejected");panel.setView(View::Waterfall);
+   for(int n=0;n<70;++n){panel.pushPcm(signal);events(45);}
+   auto *target=panel.findChild<QWidget *>("analysisCanvas");auto *freeze=panel.findChild<QCheckBox *>("analysisFreeze");
+   if(target && freeze){const QPointF where(target->width()/2.,target->height()/2.);
+    QWheelEvent back(where,target->mapToGlobal(where),QPoint(),QPoint(0,120),Qt::NoButton,Qt::ShiftModifier,Qt::NoScrollPhase,false);QApplication::sendEvent(target,&back);
+    check(target->property("scrollBack").toInt()>0 && freeze->isChecked(),"scrolling back did not freeze and move in time");
+    const auto shifted=panel.grab();check(!shifted.isNull(),"scrolled-back display did not render");
+    QMouseEvent twice(QEvent::MouseButtonDblClick,where,target->mapToGlobal(where),Qt::LeftButton,Qt::LeftButton,Qt::NoModifier);QApplication::sendEvent(target,&twice);
+    check(target->property("scrollBack").toInt()==0 && !freeze->isChecked(),"double click did not return to live");}
+   panel.setView(View::Waveform);for(int n=0;n<70;++n){panel.pushPcm(signal);events(45);}
+   if(target && freeze){const QPointF where(target->width()/2.,target->height()/2.);
+    QWheelEvent back(where,target->mapToGlobal(where),QPoint(),QPoint(0,120),Qt::NoButton,Qt::ShiftModifier,Qt::NoScrollPhase,false);QApplication::sendEvent(target,&back);
+    check(target->property("scrollBack").toInt()>0,"waveform did not scroll back");
+    check(!panel.grab().isNull(),"scrolled-back waveform did not render");freeze->setChecked(false);check(target->property("scrollBack").toInt()==0,"unfreezing did not return to live");}
+   panel.setView(View::Spectrum);}
+  {QTemporaryDir shots;const auto image=shots.filePath("display.png");check(panel.saveImage(image) && QImage(image).width()>10,"display image was not saved");}
   panel.toggleSettings();check(!panel.settingsVisible(),"settings panel did not close");}
  {QTabWidget tabs;auto *scope=new Panel;tabs.addTab(new QWidget,"Other");tabs.addTab(scope,"Analysis");tabs.resize(800,600);tabs.show();events();scope->pushPcm(signal);check(scope->engine().fftCalls==0,"unselected tab ran FFT");tabs.setCurrentIndex(1);events();scope->pushPcm(signal);check(scope->engine().fftCalls>0,"selected tab did not run FFT");const auto calls=scope->engine().fftCalls;tabs.setCurrentIndex(0);events(50);scope->pushPcm(signal);check(scope->engine().fftCalls==calls,"tab switch did not deactivate FFT");}
  panel.hide();

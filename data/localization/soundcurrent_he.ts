@@ -2671,6 +2671,10 @@ Do you want to delete it anyway?</source>
       <translation>שמור עותק</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>שמירת תמונה</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>לשמור את הפרופיל ששונה?</translation>
     </message>

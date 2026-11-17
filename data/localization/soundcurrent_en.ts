@@ -2671,6 +2671,10 @@ Do you want to delete it anyway?</translation>
       <translation>Save copy</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Save image</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Save modified profile?</translation>
     </message>

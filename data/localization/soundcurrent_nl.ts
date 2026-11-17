@@ -2671,6 +2671,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Kopie opslaan</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Afbeelding opslaan</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Gewijzigd profiel opslaan?</translation>
     </message>

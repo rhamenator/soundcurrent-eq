@@ -2671,6 +2671,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Tallenna kopio</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Tallenna kuva</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Tallennetaanko muutettu profiili?</translation>
     </message>

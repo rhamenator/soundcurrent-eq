@@ -2671,6 +2671,10 @@ Do you want to delete it anyway?</source>
       <translation>保存副本</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>保存图像</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>保存修改后的配置？</translation>
     </message>
