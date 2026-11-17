@@ -1,6 +1,6 @@
 Name:           soundcurrent-eq
 %global debug_package %{nil}
-Version:        1.3.3
+Version:        1.3.4
 Release:        1%{?dist}
 Summary:        Adjustable desktop equalizer for PipeWire
 License:        GPL-3.0-only
@@ -51,6 +51,9 @@ DESTDIR=%{buildroot} cmake --install build
 %{_datadir}/doc/soundcurrent-eq/AudioSpectrogram-LICENSE
 
 %changelog
+* Mon Nov 16 2026 rhamenator <rhamenator@gmail.com> - 1.3.4-1
+- Live analysis settings on the tab, zoom and pan, chord detection, steadier auto range, pink and white noise calibration.
+
 * Mon Nov 09 2026 rhamenator <rhamenator@gmail.com> - 1.3.3-1
 - Improve responsive controls and keep selected analysis views active through silence.
 
