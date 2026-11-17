@@ -525,6 +525,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Kirkas</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>Ruskea kohina</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>Selaa kaikkia laiteprofiileja / muokkaa</translation>
     </message>
@@ -2241,6 +2245,10 @@ Haluatko silti poistaa sen?</translation>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>Toistetaan logaritminen pyyhkäisy 20 Hz:stä 25 kHz:iin</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>Toistetaan ruskeaa kohinaa noin %1 sekuntia</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>

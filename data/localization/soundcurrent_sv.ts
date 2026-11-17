@@ -525,6 +525,10 @@ Vill du ta bort den ändå?</translation>
       <translation>Ljust</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>Brunt brus</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>Bläddra bland alla utrustningsprofiler / redigera</translation>
     </message>
@@ -2241,6 +2245,10 @@ Vill du ta bort den ändå?</translation>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>Spelar en logaritmisk svepning från 20 Hz till 25 kHz</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>Spelar brunt brus i cirka %1 sekunder</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>

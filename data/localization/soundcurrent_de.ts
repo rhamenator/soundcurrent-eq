@@ -525,6 +525,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Brillant</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>Braunes Rauschen</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>Alle Geräteprofile durchsuchen / bearbeiten</translation>
     </message>
@@ -2241,6 +2245,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>Logarithmischer Sweep von 20 Hz bis 25 kHz wird abgespielt</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>Braunes Rauschen wird etwa %1 Sekunden lang abgespielt</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>

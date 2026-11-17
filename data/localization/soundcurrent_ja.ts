@@ -525,6 +525,10 @@ Do you want to delete it anyway?</source>
       <translation>明るい音</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>ブラウンノイズ</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>すべての機器プロファイルを参照 / 編集</translation>
     </message>
@@ -2241,6 +2245,10 @@ Do you want to delete it anyway?</source>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>20 Hz から 25 kHz までの対数スイープを再生中</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>ブラウンノイズを約 %1 秒間再生しています</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>

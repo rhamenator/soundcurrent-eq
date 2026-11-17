@@ -525,6 +525,10 @@ Do you want to delete it anyway?</source>
       <translation>明亮</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>布朗雜訊</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>瀏覽所有設備設定檔 / 編輯器</translation>
     </message>
@@ -2241,6 +2245,10 @@ Do you want to delete it anyway?</source>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>正在播放從 20 Hz 到 25 kHz 的對數掃頻</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>正在播放布朗雜訊，約 %1 秒</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>

@@ -525,6 +525,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Angavu</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>Kelele ya kahawia</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>Vinjari wasifu wote wa vifaa / kihariri</translation>
     </message>
@@ -2241,6 +2245,10 @@ Unataka kuifuta hata hivyo?</translation>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>Inacheza mfululizo wa masafa wa kilogarithimu kutoka 20 Hz hadi 25 kHz</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>Inacheza kelele ya kahawia kwa takriban sekunde %1</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>

@@ -525,6 +525,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Âm sáng</translation>
     </message>
     <message>
+      <source>Brown noise</source>
+      <translation>Nhiễu nâu</translation>
+    </message>
+    <message>
       <source>Browse all equipment profiles / editor</source>
       <translation>Duyệt tất cả cấu hình thiết bị / trình chỉnh sửa</translation>
     </message>
@@ -2241,6 +2245,10 @@ Bạn vẫn muốn xóa không?</translation>
       <source>Playing a logarithmic sweep from 20 Hz to 25 kHz</source>
       <translation>Đang phát quét tần số lôgarit từ 20 Hz đến 25 kHz</translation>
       <extracomment>Calibration worker progress while playing a logarithmic frequency sweep. Preserve the physical 20 Hz and 25 kHz bounds; do not change synthesis or sample rate.</extracomment>
+    </message>
+    <message>
+      <source>Playing brown noise for about %1 seconds</source>
+      <translation>Đang phát nhiễu nâu trong khoảng %1 giây</translation>
     </message>
     <message>
       <source>Playing pink noise for about %1 seconds</source>
