@@ -176,7 +176,8 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
    auto *target=panel.findChild<QWidget *>("analysisCanvas");check(target,"no display widget");
    if(target){const QPointF where(target->width()/2.,target->height()/2.);
     QWheelEvent zoom(where,target->mapToGlobal(where),QPoint(),QPoint(0,120),Qt::NoButton,Qt::NoModifier,Qt::NoScrollPhase,false);QApplication::sendEvent(target,&zoom);
-    const auto zoomed=panel.engine().settings;check(zoomed.low>20 && zoomed.high<20000 && zoomed.valid(),"wheel did not zoom the frequency axis");
+    {const auto d=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");if(!d.isEmpty())panel.grab().save(d+"/analysis-zoomed-before.png");}
+    const auto zoomed=panel.engine().settings;{const auto d=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");if(!d.isEmpty())panel.grab().save(d+"/analysis-zoomed.png");}check(zoomed.low>20 && zoomed.high<20000 && zoomed.valid(),"wheel did not zoom the frequency axis");
     QMouseEvent press(QEvent::MouseButtonPress,where,target->mapToGlobal(where),Qt::LeftButton,Qt::LeftButton,Qt::NoModifier);QApplication::sendEvent(target,&press);
     const QPointF moved=where-QPointF(120,0);QMouseEvent drag(QEvent::MouseMove,moved,target->mapToGlobal(moved),Qt::NoButton,Qt::LeftButton,Qt::NoModifier);QApplication::sendEvent(target,&drag);
     QMouseEvent release(QEvent::MouseButtonRelease,moved,target->mapToGlobal(moved),Qt::LeftButton,Qt::NoButton,Qt::NoModifier);QApplication::sendEvent(target,&release);
@@ -189,7 +190,7 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
    if(target && freeze){const QPointF where(target->width()/2.,target->height()/2.);
     QWheelEvent back(where,target->mapToGlobal(where),QPoint(),QPoint(0,120),Qt::NoButton,Qt::ShiftModifier,Qt::NoScrollPhase,false);QApplication::sendEvent(target,&back);
     check(target->property("scrollBack").toInt()>0 && freeze->isChecked(),"scrolling back did not freeze and move in time");
-    const auto shifted=panel.grab();check(!shifted.isNull(),"scrolled-back display did not render");
+    const auto shifted=panel.grab();{const auto d=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");if(!d.isEmpty())shifted.save(d+"/analysis-scrollback.png");}check(!shifted.isNull(),"scrolled-back display did not render");
     QMouseEvent twice(QEvent::MouseButtonDblClick,where,target->mapToGlobal(where),Qt::LeftButton,Qt::LeftButton,Qt::NoModifier);QApplication::sendEvent(target,&twice);
     check(target->property("scrollBack").toInt()==0 && !freeze->isChecked(),"double click did not return to live");}
    panel.setView(View::Waveform);for(int n=0;n<70;++n){panel.pushPcm(signal);events(45);}
@@ -197,6 +198,8 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
     QWheelEvent back(where,target->mapToGlobal(where),QPoint(),QPoint(0,120),Qt::NoButton,Qt::ShiftModifier,Qt::NoScrollPhase,false);QApplication::sendEvent(target,&back);
     check(target->property("scrollBack").toInt()>0,"waveform did not scroll back");
     check(!panel.grab().isNull(),"scrolled-back waveform did not render");freeze->setChecked(false);check(target->property("scrollBack").toInt()==0,"unfreezing did not return to live");}
+   panel.setView(View::Tuner);{QByteArray chord(16384*4,0);auto *out=reinterpret_cast<std::int16_t *>(chord.data());for(int i=0;i<16384;++i){double v=0;for(double f:{261.63,329.63,392.})v+=std::sin(2*std::numbers::pi*f*i/48000.);const auto q=std::int16_t(std::lround(32767*.15*v));out[2*i]=q;out[2*i+1]=q;}
+    for(int n=0;n<80;++n){panel.pushPcm(chord);events(30);}const auto d=qEnvironmentVariable("SOUNDCURRENT_UI_SCREENSHOT_DIR");if(!d.isEmpty())panel.grab().save(d+"/analysis-tuner-chord.png");}
    panel.setView(View::Spectrum);}
   {QTemporaryDir shots;const auto image=shots.filePath("display.png");check(panel.saveImage(image) && QImage(image).width()>10,"display image was not saved");}
   panel.toggleSettings();check(!panel.settingsVisible(),"settings panel did not close");}
