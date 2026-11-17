@@ -2671,6 +2671,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Kopie speichern</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Bild speichern</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Geändertes Profil speichern?</translation>
     </message>

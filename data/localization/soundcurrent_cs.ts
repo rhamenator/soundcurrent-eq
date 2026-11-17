@@ -2671,6 +2671,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Uložit kopii</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Uložit obrázek</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Uložit upravený profil?</translation>
     </message>

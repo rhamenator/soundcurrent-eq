@@ -2671,6 +2671,10 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Kopyayı kaydet</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Görüntüyü kaydet</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Değiştirilen profil kaydedilsin mi?</translation>
     </message>

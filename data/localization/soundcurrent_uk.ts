@@ -2671,6 +2671,10 @@ Do you want to delete it anyway?</source>
       <translation>Зберегти копію</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Зберегти зображення</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Зберегти змінений профіль?</translation>
     </message>

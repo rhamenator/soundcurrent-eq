@@ -32,6 +32,7 @@ public:
     bool captureReference();
     std::optional<equipment::Profile> microphoneProfile() const;
     void reset();
+    bool saveImage(const QString &path);
     void toggleSettings();
     bool settingsVisible() const;
     void refreshSources();

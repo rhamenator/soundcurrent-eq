@@ -2671,6 +2671,10 @@ Deseja excluí-lo mesmo assim?</translation>
       <translation>Salvar cópia</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Salvar imagem</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Salvar o perfil modificado?</translation>
     </message>

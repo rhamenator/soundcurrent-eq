@@ -2671,6 +2671,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Simpan salinan</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Simpan gambar</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Simpan profil yang diubah?</translation>
     </message>

@@ -2671,6 +2671,10 @@ Do you want to delete it anyway?</source>
       <translation>복사본 저장</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>이미지 저장</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>수정한 프로파일을 저장하시겠습니까?</translation>
     </message>

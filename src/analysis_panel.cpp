@@ -58,7 +58,7 @@ public:
     View mode=View::Waterfall;
     bool frozen=false;
     std::function<void(bool)> onVisibility;
-    std::function<void(const Settings &)> onZoom;std::function<void()> onFrame;
+    std::function<void(const Settings &)> onZoom;std::function<void(bool)> onScroll;void resumeLive(){scrollBack_=0;setProperty("scrollBack",0);update();}std::function<void()> onFrame;
     double displayCeiling=0;
     void resetClock(){clock.invalidate();carryMs_=0;}
     // Time since the previous frame STARTED: the clock restarts after the frame's FFT, so that compute time is
@@ -70,7 +70,7 @@ public:
     // fighting the audio threads; an idle one gets a smooth display.
     double paceMs(double slowest) const {return std::clamp(3.*(computeMs_+paintMs_),16.,std::max(16.,slowest));}
     QSize historyPixelSize() const {return {image.width,image.height};}
-    void clearImage(){image={};ensureImageSize();credit=0;started_=false;waveCols_.clear();waveCap_=0;silenceClock_.invalidate();sinceFrame_.invalidate();latest_.clear();clock.invalidate();carryMs_=0;update();}
+    void clearImage(){image={};archive_.clear();scrollBack_=0;ensureImageSize();credit=0;started_=false;waveCols_.clear();waveCap_=0;silenceClock_.invalidate();sinceFrame_.invalidate();latest_.clear();clock.invalidate();carryMs_=0;update();}
     bool advanceIdle() {
         if(!isVisible()||frozen||(mode!=View::Waterfall&&mode!=View::Waveform))return false;
         if(mode==View::Waterfall)return advanceWaterfall();
@@ -114,7 +114,7 @@ public:
         setProperty("pumpFrames",property("pumpFrames").toInt()+1);update();return true;
     }
     struct WaveColumn{float lo[3]={0,0,0},hi[3]={0,0,0};}; // 0 = left, 1 = right, 2 = mix
-    void pushWaveColumn(const WaveColumn &column){waveCols_.push_back(column);while(int(waveCols_.size())>std::max(1,waveCap_))waveCols_.pop_front();}
+    void pushWaveColumn(const WaveColumn &column){waveCols_.push_back(column);while(int(waveCols_.size())>std::max(1,waveCap_)*kKeepScreens)waveCols_.pop_front();}
     // Spectrogram on the SAMPLE clock: every pixel column is the FFT of the window that ends at an exact audio sample, columns are exactly history/width seconds apart, and a late frame is caught up by computing the missing columns (never blended or stretched). The picture therefore depends only on the audio, not on display timing. Real silence (no audio arriving) scrolls black in real time.
     bool advanceWaterfall() {
         ensureImageSize();
@@ -127,6 +127,7 @@ public:
             credit+=silenceClock_.nsecsElapsed()/1e9*columnsPerSecond;silenceClock_.restart();
             const int columns=std::min(image.width,int(credit));credit-=columns;
             if(columns<=0)return false;
+            archiveColumns(columns);
             for(int y=0;y<image.height;++y){auto *row=image.pixels.data()+y*image.width;std::memmove(row,row+columns,std::size_t(image.width-columns)*sizeof(*row));std::fill(row+image.width-columns,row+image.width,0xff000000);}
             setProperty("idleFrames",property("idleFrames").toInt()+1);if(onFrame)onFrame();update();return true;
         }
@@ -159,6 +160,7 @@ public:
         } else displayCeiling=s.ceiling;
         auto settings=gramSettings();auto column=spectrogramColumn(data->db,s,image.height);
         if(s.layout==2&&s.channel==0){column=spectrogramColumn(data->dbLeft,s,image.height/2);auto right=spectrogramColumn(data->dbRight,s,image.height-image.height/2);column.insert(column.end(),right.begin(),right.end());}
+        archiveColumns(1);
         for(int y=0;y<image.height;++y){auto *row=image.pixels.data()+y*image.width;std::memmove(row,row+1,std::size_t(image.width-1)*sizeof(*row));}
         gram::set_image_column(image,image.width-1,column,settings);
         for(int y=0;y<image.height;++y)image.pixels[y*image.width+image.width-1]|=0xff000000;
@@ -220,6 +222,10 @@ protected:
     }
     void wheelEvent(QWheelEvent *event) override {
         const auto plot=plotRect();if(!plot.contains(event->position()) || !onZoom){event->ignore();return;}
+        if((mode==View::Waterfall || mode==View::Waveform) && (event->angleDelta().x()!=0 || (event->modifiers()&Qt::ShiftModifier))){
+            const int delta=event->angleDelta().x()!=0?event->angleDelta().x():event->angleDelta().y();
+            setScrollBack(scrollBack_+int(delta/120.*std::max(10.,plot.width()*.1)));event->accept();return;
+        }
         const double steps=event->angleDelta().y()/120.;if(steps==0){event->ignore();return;}
         auto s=data->settings;
         if(mode==View::Waveform){s.autoRange=false;s.ceiling=std::clamp(20*std::log10(waveLimit_)-3*steps,-120.,24.);onZoom(s);event->accept();return;}
@@ -232,12 +238,14 @@ protected:
         clampRange(s);onZoom(s);event->accept();
     }
     void mousePressEvent(QMouseEvent *event) override {
-        if(event->button()==Qt::LeftButton && plotRect().contains(event->position()) && frequencyAxisView()){dragging_=true;dragStart_=event->position();dragSettings_=data->settings;setCursor(Qt::ClosedHandCursor);}
+        if(event->button()==Qt::LeftButton && plotRect().contains(event->position()) && (mode==View::Waveform || (mode==View::Waterfall && (event->modifiers()&Qt::ShiftModifier)))){timeDragging_=true;dragStart_=event->position();dragBack_=scrollBack_;setCursor(Qt::ClosedHandCursor);}
+        else if(event->button()==Qt::LeftButton && plotRect().contains(event->position()) && frequencyAxisView()){dragging_=true;dragStart_=event->position();dragSettings_=data->settings;setCursor(Qt::ClosedHandCursor);}
         QWidget::mousePressEvent(event);
     }
-    void mouseReleaseEvent(QMouseEvent *event) override {if(dragging_){dragging_=false;unsetCursor();}QWidget::mouseReleaseEvent(event);}
+    void mouseReleaseEvent(QMouseEvent *event) override {if(dragging_ || timeDragging_){dragging_=false;timeDragging_=false;unsetCursor();}QWidget::mouseReleaseEvent(event);}
     void mouseDoubleClickEvent(QMouseEvent *event) override {
         if(!onZoom || !plotRect().contains(event->position())){QWidget::mouseDoubleClickEvent(event);return;}
+        if(scrollBack_>0){resumeLive();if(onScroll)onScroll(false);return;}
         auto s=data->settings;
         if(mode==View::Waveform)s.autoRange=true;else if(frequencyAxisView()){s.low=20;s.high=20000;}else return;
         onZoom(s);
@@ -256,12 +264,16 @@ protected:
         if(dragClock_.isValid() && dragClock_.elapsed()<33)return;dragClock_.start();onZoom(s);
     }
     void mouseMoveEvent(QMouseEvent *event) override {
+        if(timeDragging_ && (event->buttons()&Qt::LeftButton)){
+            const auto area=plotRect();const double columnsPerPixel=(mode==View::Waveform?waveCap_:image.width)/std::max(1.,area.width());
+            setScrollBack(dragBack_+int(std::lround((event->position().x()-dragStart_.x())*columnsPerPixel)));return;
+        }
         if(dragging_ && (event->buttons()&Qt::LeftButton) && onZoom){dragPan(event->position());return;}
         const auto plot=plotRect();if(!plot.contains(event->position()))return;
         const double ratio=std::clamp((event->position().x()-plot.left())/plot.width(),0.,1.);
         const double vertical=(event->position().y()-plot.top())/plot.height();
-        if(mode==View::Waveform){setToolTip(QLocale().toString(-(1-ratio)*data->settings.history/data->settings.speed,'f',2)+" s / "+QLocale().toString((1-2*vertical)*waveLimit_,'f',3));return;}
-        if(mode==View::Waterfall){const int lanes=data->settings.layout==2 && data->settings.channel==0?2:1;const double lanePosition=vertical*lanes-std::floor(vertical*lanes);setToolTip(QLocale().toString(-(1-ratio)*data->settings.history/data->settings.speed,'f',2)+" s / "+formatFrequency(frequency(1-lanePosition)));return;}
+        if(mode==View::Waveform){setToolTip(QLocale().toString(timeAt(ratio),'f',2)+" s / "+QLocale().toString((1-2*vertical)*waveLimit_,'f',3));return;}
+        if(mode==View::Waterfall){const int lanes=data->settings.layout==2 && data->settings.channel==0?2:1;const double lanePosition=vertical*lanes-std::floor(vertical*lanes);setToolTip(QLocale().toString(timeAt(ratio),'f',2)+" s / "+formatFrequency(frequency(1-lanePosition)));return;}
         if(mode==View::Vectorscope || mode==View::Tuner)return;
         const double hz=frequency(ratio),level=data->settings.amplitude && !relativeAxis_?axisTop_+20*std::log10(std::max(1e-12,1-vertical)):axisTop_-vertical*axisSpan_;
         setToolTip(formatFrequency(hz)+" / "+QLocale().toString(level,'f',1)+(relativeAxis_?" dB":" dBFS"));
@@ -284,7 +296,7 @@ protected:
         if(s.autoRange && mode==View::Waveform){
             // Quantized to half-octave steps with hysteresis, so the vertical scale changes rarely instead of flickering with every window.
             const int channel=s.layout==1?(s.channel==1?0:s.channel==2?1:2):-1;double extent=0;
-            for(const auto &column:waveCols_)for(int c=0;c<3;++c)if(channel<0?c<2:c==channel)extent=std::max({extent,double(std::abs(column.lo[c])),double(std::abs(column.hi[c]))});
+            for(int j=std::max(0,int(waveCols_.size())-scrollBack_-waveCap_);j<int(waveCols_.size())-scrollBack_;++j){const auto &column=waveCols_[std::size_t(j)];for(int c=0;c<3;++c)if(channel<0?c<2:c==channel)extent=std::max({extent,double(std::abs(column.lo[c])),double(std::abs(column.hi[c]))});}
             const double target=std::pow(2.,std::ceil(std::log2(std::max(.001,extent*1.1))*2)/2);
             if(target>waveLimit_||target<waveLimit_/1.5)waveLimitHeld_=target;
             waveLimit_=waveLimitHeld_;
@@ -295,6 +307,12 @@ protected:
         if(mode==View::Waterfall){
             ensureImageSize();
             QImage q(reinterpret_cast<const uchar *>(image.pixels.data()),image.width,image.height,image.width*4,QImage::Format_RGB32);
+            if(scrollBack_>0){ // compose archive + live image shifted back in time
+                QImage composed(image.width,image.height,QImage::Format_RGB32);const int archived=int(archive_.size());
+                for(int x=0;x<image.width;++x){const int index=archived+x-scrollBack_;
+                    for(int y=0;y<image.height;++y)reinterpret_cast<std::uint32_t *>(composed.scanLine(y))[x]=index<0?0xff000000u:index<archived?archive_[std::size_t(index)][std::size_t(y)]:image.pixels[std::size_t(y*image.width+(index-archived))];}
+                q=composed;
+            }
             p.setRenderHint(QPainter::SmoothPixmapTransform);p.drawImage(plot,q);
         }
         p.setPen(QColor("#9bacc2"));
@@ -317,7 +335,7 @@ protected:
                 if(lanes==2)p.drawText(QPointF(plot.left()+5,laneTop+15),lane==0?SC_TR("L"):SC_TR("R"));
             }
             p.setPen(QColor("#9bacc2"));
-            for(double r:{0.,.25,.5,.75,1.})p.drawText(QRectF(plot.left()+r*plot.width()-45,plot.bottom()+3,90,18),Qt::AlignCenter,displayNumber(-(1-r)*s.history/s.speed)+" s");
+            for(double r:{0.,.25,.5,.75,1.})p.drawText(QRectF(plot.left()+r*plot.width()-45,plot.bottom()+3,90,18),Qt::AlignCenter,displayNumber(timeAt(r))+" s");
             p.drawText(QRectF(plot.left(),plot.bottom()+20,plot.width(),18),Qt::AlignLeft,displayNumber(displayCeiling-s.sensitivity)+" … "+displayNumber(displayCeiling)+" dBFS");
         } else if(mode!=View::Tuner && mode!=View::Vectorscope){
             for(double r:{0.,.25,.5,.75,1.}) {
@@ -327,7 +345,7 @@ protected:
                 if(s.grid){p.setPen(QColor("#334155"));p.drawLine(QPointF(plot.left(),y),QPointF(plot.right(),y));p.setPen(QColor("#9bacc2"));}
                 if(mode==View::Waveform){
                     const double x=plot.left()+r*plot.width();
-                    p.drawText(QRectF(x-45,plot.bottom()+3,90,18),Qt::AlignCenter,displayNumber(-(1-r)*s.history/s.speed)+" s");
+                    p.drawText(QRectF(x-45,plot.bottom()+3,90,18),Qt::AlignCenter,displayNumber(timeAt(r))+" s");
                     if(s.grid){p.setPen(QColor("#334155"));p.drawLine(QPointF(x,plot.top()),QPointF(x,plot.bottom()));p.setPen(QColor("#9bacc2"));}
                 }
             }
@@ -343,10 +361,10 @@ protected:
         if(mode==View::Waveform) {
             // Envelope columns right-aligned on the plot; non-antialiased vertical lines (the old antialiased path cost ~430 ms per frame).
             p.setRenderHint(QPainter::Antialiasing,false);
-            const int n=int(waveCols_.size());const double columnWidth=plot.width()/std::max(1,waveCap_),center=plot.center().y(),scale=plot.height()/(2*waveLimit_);
+            const int n=int(waveCols_.size())-scrollBack_,firstColumn=std::max(0,n-waveCap_);const double columnWidth=plot.width()/std::max(1,waveCap_),center=plot.center().y(),scale=plot.height()/(2*waveLimit_);
             auto envelope=[&](int channel,const QColor &color){
                 p.setPen(QPen(color,std::max(1.,columnWidth),Qt::SolidLine,Qt::FlatCap));
-                for(int j=0;j<n;++j){const auto &column=waveCols_[std::size_t(j)];const double x=plot.right()-(n-1-j+.5)*columnWidth;
+                for(int j=firstColumn;j<n;++j){const auto &column=waveCols_[std::size_t(j)];const double x=plot.right()-(n-1-j+.5)*columnWidth;
                     const double y1=center-column.hi[channel]*scale,y2=center-column.lo[channel]*scale;p.drawLine(QPointF(x,y1),QPointF(x,std::max(y2,y1+1.)));}};
             if(s.layout==1)envelope(s.channel==1?0:s.channel==2?1:2,QColor("#55d7c3"));
             else {envelope(0,QColor("#55d7c3"));envelope(1,QColor("#e6b450"));}
@@ -390,6 +408,7 @@ private:
         const auto plot=plotRect();const double dpr=devicePixelRatioF();
         const int w=std::clamp(int(std::ceil(plot.width()*dpr)),1,1280),h=std::clamp(int(std::ceil(plot.height()*dpr)),2,1280);
         if(image.width==w && image.height==h)return;
+        archive_.clear();scrollBack_=0;
         auto replacement=gram::make_image(w,h);gram::clear_image(replacement,0xff000000);
         if(!image.pixels.empty()) {
             QImage old(reinterpret_cast<const uchar *>(image.pixels.data()),image.width,image.height,image.width*4,QImage::Format_RGB32);
@@ -411,6 +430,23 @@ private:
         if(!lowerSince.isValid()){lowerSince.start();return current;}
         if(lowerSince.elapsed()<3000)return current;
         lowerSince.invalidate();return target;}
+    // History kept beyond the visible window so a frozen display can be scrolled back in time.
+    static constexpr int kKeepScreens=4;
+    std::deque<std::vector<std::uint32_t>> archive_;int scrollBack_=0;bool timeDragging_=false;int dragBack_=0;
+    void archiveColumns(int count){
+        count=std::min(count,image.width);
+        for(int c=0;c<count;++c){std::vector<std::uint32_t> column(std::size_t(image.height));for(int y=0;y<image.height;++y)column[std::size_t(y)]=image.pixels[std::size_t(y*image.width+c)];archive_.push_back(std::move(column));}
+        while(int(archive_.size())>image.width*(kKeepScreens-1))archive_.pop_front();
+    }
+    int maxScrollBack() const {return mode==View::Waterfall?int(archive_.size()):mode==View::Waveform?std::max(0,int(waveCols_.size())-waveCap_):0;}
+    double columnsPerSecondNow() const {return std::max(1e-9,property("columnsPerSecond").toDouble());}
+    // Seconds (negative = past) at horizontal position r of the plot, including any scroll-back.
+    double timeAt(double r) const {const auto &s=data->settings;return -(1-r)*s.history/s.speed-(scrollBack_>0?scrollBack_/columnsPerSecondNow():0.);}
+    void setScrollBack(int columns){
+        const int clamped=std::clamp(columns,0,maxScrollBack());
+        if(clamped==scrollBack_)return;
+        const bool wasLive=scrollBack_==0;scrollBack_=clamped;setProperty("scrollBack",scrollBack_);if(wasLive && clamped>0 && onScroll)onScroll(true);update();
+    }
     bool dragging_=false;QPointF dragStart_;Settings dragSettings_;QElapsedTimer dragClock_;
     QElapsedTimer ceilingSince_,spanSince_;double spanHeld_=24;
     double credit=0,axisTop_=0,axisSpan_=90,waveLimit_=1,waveLimitHeld_=1;
@@ -432,9 +468,9 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     buildSettings(root);
     canvas_=new ScopeCanvas(this);canvas_->setObjectName("analysisCanvas");root->addWidget(canvas_,1);readout_=new QLabel;readout_->setTextFormat(Qt::PlainText);readout_->setWordWrap(true);readout_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);readout_->setFixedHeight(2*fontMetrics().lineSpacing());root->addWidget(readout_);
     help_=new QLabel(SC_TR("Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement."));help_->setWordWrap(true);root->addWidget(help_);
-    auto *actions=new soundcurrent::ui::ResponsiveRow;auto *resetButton=new QPushButton(SC_TR("Reset"));reference_=new QPushButton(SC_TR("Capture reference"));profile_=new QPushButton(SC_TR("Create microphone profile"));
+    auto *actions=new soundcurrent::ui::ResponsiveRow;auto *resetButton=new QPushButton(SC_TR("Reset"));auto *saveImageButton=new QPushButton(SC_TR("Save image"));saveImageButton->setObjectName("analysisSaveImage");reference_=new QPushButton(SC_TR("Capture reference"));profile_=new QPushButton(SC_TR("Create microphone profile"));
     resetButton->setObjectName("analysisReset");reference_->setObjectName("analysisReference");profile_->setObjectName("analysisCreateProfile");
-    actions->addWidget(resetButton);actions->addWidget(reference_);actions->addWidget(profile_);root->addWidget(actions);
+    actions->addWidget(resetButton);actions->addWidget(saveImageButton);actions->addWidget(reference_);actions->addWidget(profile_);root->addWidget(actions);
     const auto saved=Settings::parse(QJsonDocument::fromJson(QSettings().value("analysis/settings").toByteArray()).object());if(saved)canvas_->data->configure(*saved);
     // The ~60 Hz heartbeat only runs while the analysis view is actually showing (no idle wake-ups otherwise).
     auto *displayHeartbeat=new QTimer(this);displayHeartbeat->setInterval(16);displayHeartbeat->setTimerType(Qt::PreciseTimer);connect(displayHeartbeat,&QTimer::timeout,canvas_,[this]{canvas_->advanceIdle();});
@@ -444,9 +480,11 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     if(canvas_->isVisible())displayHeartbeat->start();
     connect(view_,&QComboBox::currentIndexChanged,this,[this](int index){canvas_->data->resetAverage();setView(View(index));canvas_->clearImage();canvas_->setAccessibleName(view_->currentText());availability();});
     connect(source_,&QComboBox::currentIndexChanged,this,[this]{sourceReady_=true;captureFailed_=false;reset();QSettings().setValue("analysis/source",source());QSettings().setValue("analysis/sourceName",source_->currentText());if(onActivity)onActivity(source(),active());});
-    connect(freeze_,&QCheckBox::toggled,this,[this](bool on){canvas_->frozen=on;});
+    connect(freeze_,&QCheckBox::toggled,this,[this](bool on){canvas_->frozen=on;if(!on)canvas_->resumeLive();});
+    canvas_->onScroll=[this](bool back){if(back)freeze_->setChecked(true);else freeze_->setChecked(false);};
     connect(settings,&QPushButton::toggled,this,[this](bool on){if(settingsPanel_)settingsPanel_->setVisible(on);});
     connect(resetButton,&QPushButton::clicked,this,&Panel::reset);
+    connect(saveImageButton,&QPushButton::clicked,this,[this]{const auto path=i18n::FileDialogs::getSaveFileName(this,SC_TR("Save image"),{},"PNG (*.png)");if(!path.isEmpty())saveImage(path.endsWith(".png",Qt::CaseInsensitive)?path:path+".png");});
     connect(reference_,&QPushButton::clicked,this,[this]{captureReference();});
     connect(profile_,&QPushButton::clicked,this,[this]{if(auto p=microphoneProfile()){suspendForDialog(true);if(onProfile)onProfile(*p);suspendForDialog(false);}else QMessageBox::information(this,SC_TR("Microphone response"),SC_TR("Not enough broadband reference data."));});
     setView(View(std::clamp(QSettings().value("analysis/view",saved?saved->view:1).toInt(),0,6)));canvas_->setAccessibleName(view_->currentText());availability();
@@ -491,6 +529,7 @@ void Panel::refreshSources(){
     availability();
 }
 bool Panel::applySettings(const Settings &s){if(!s.valid())return false;canvas_->data->configure(s);setView(View(s.view));canvas_->clearImage();QSettings().setValue("analysis/settings",QJsonDocument(s.json()).toJson(QJsonDocument::Compact));if(writeControls_)writeControls_(s);availability();return true;}
+bool Panel::saveImage(const QString &path){return canvas_->grab().save(path,"PNG");}
 void Panel::reset(){const bool retry=captureFailed_;captureFailed_=false;engine().resetAverage();canvas_->clearImage();availability();if(retry && onActivity)onActivity(source(),active());}
 bool Panel::captureReference(){if(!source().isEmpty() && !soundcurrent::microphone::allowed())return false;if(engine().frames<25 || engine().averaged.empty())return false;referenceSource_=source_->currentText();engine().captureReference();canvas_->clearImage();availability();return true;}
 std::optional<equipment::Profile> Panel::microphoneProfile() const {

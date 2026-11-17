@@ -2671,6 +2671,10 @@ Do you want to delete it anyway?</source>
       <translation>ذخیرهٔ کپی</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>ذخیره تصویر</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>پروفایل تغییرکرده ذخیره شود؟</translation>
     </message>

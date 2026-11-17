@@ -2671,6 +2671,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Salvează o copie</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Salvează imaginea</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Salvați profilul modificat?</translation>
     </message>

@@ -2671,6 +2671,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Lưu bản sao</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Lưu hình ảnh</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Lưu cấu hình đã sửa đổi?</translation>
     </message>

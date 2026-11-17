@@ -2671,6 +2671,10 @@ Vil du slette den likevel?</translation>
       <translation>Lagre kopi</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Lagre bilde</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Lagre endret profil?</translation>
     </message>

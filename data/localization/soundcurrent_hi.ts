@@ -2671,6 +2671,10 @@ Do you want to delete it anyway?</source>
       <translation>प्रतिलिपि सहेजें</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>छवि सहेजें</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>बदली गई प्रोफ़ाइल सहेजें?</translation>
     </message>

@@ -2671,6 +2671,10 @@ Do you want to delete it anyway?</source>
       <translation>حفظ نسخة</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>حفظ الصورة</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>حفظ ملف التعريف المعدّل؟</translation>
     </message>

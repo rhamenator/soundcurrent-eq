@@ -2671,6 +2671,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Hifadhi nakala</translation>
     </message>
     <message>
+      <source>Save image</source>
+      <translation>Hifadhi picha</translation>
+    </message>
+    <message>
       <source>Save modified profile?</source>
       <translation>Uhifadhi wasifu uliobadilishwa?</translation>
     </message>
