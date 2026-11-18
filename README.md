@@ -414,6 +414,12 @@ compatible, and Windows x64 packages for each `v*` tag.
 
 ## Verify the interface and audio routing
 
+`soundcurrent-eq --help` and `--version` print and exit without opening the window.
+`--preview` starts an isolated session (temporary settings, processing off, no routing
+changes). In a preview session `SOUNDCURRENT_RECORDING_MONITOR=<output name>` lets the
+Analysis page read that output's monitor (read-only), which is how documentation videos
+are recorded. Without the variable `--preview` only keeps processing off.
+
 ```bash
 ./build/soundcurrent-eq --self-test
 QT_QPA_PLATFORM=offscreen ./build/soundcurrent-eq --ui-self-test
