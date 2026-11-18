@@ -732,6 +732,9 @@ QString gainControls(double outputGainDb, int balancePercent) {
 }
 
 #ifndef Q_OS_WIN
+// A --preview session never starts processing or changes audio routing; enforced here, where playback and microphone processing begin.
+inline bool previewSession() { return QCoreApplication::arguments().contains("--preview"); }
+
 class AudioEngine {
 public:
     void setEnhancements(const soundcurrent::EnhancementSettings &s) { effects_=s; }
@@ -742,6 +745,7 @@ public:
 
     void start(const Device &device, const Bands &bands, double outputGainDb = 0.0,
                int balancePercent = 0) {
+        if (previewSession()) throw std::runtime_error("Processing is switched off in a preview session; no audio routing is changed.");
         stop();
         const auto previousDefault = defaultSink();
         bool found = false;
@@ -906,6 +910,7 @@ public:
     QString target() const { return target_.name; }
 
     void start(const InputDevice &device, const MicTuning &adjustments, double gainDb) {
+        if (previewSession()) throw std::runtime_error("Processing is switched off in a preview session; no audio routing is changed.");
         stop();
         soundcurrent::microphone::requireAccess();
         if (device.name.isEmpty() || device.channels < 1 || device.channels > 2)
@@ -2556,10 +2561,14 @@ public:
             return result;
         };
         analysis_->onActivity = [this,startEnabled](const QString &source,bool active) {
-            if(!active || !startEnabled || (!source.isEmpty() && !soundcurrent::microphone::allowed())){analysisCapture_->stop();return;}
+            // Recording mode (documentation videos): with --preview, SOUNDCURRENT_RECORDING_MONITOR names an output whose monitor feeds the Analysis page. Capture only reads audio; no routing, volume or default-device change is made.
+            const QString recordingMonitor=qApp->arguments().contains("--preview")?qEnvironmentVariable("SOUNDCURRENT_RECORDING_MONITOR"):QString();
+            const bool recording=!startEnabled && !recordingMonitor.isEmpty();
+            if(!active || (!startEnabled && !recording) || (!source.isEmpty() && !soundcurrent::microphone::allowed())){analysisCapture_->stop();return;}
             QString endpoint=source;
             try {
-                if(source.isEmpty()) {
+                if(source.isEmpty() && recording) endpoint=recordingMonitor;
+                else if(source.isEmpty()) {
                     endpoint=audio_.active()?audio_.target():defaultSink();
                     if(endpoint==kSink || endpoint.isEmpty())endpoint=selectedDevice().name;
                 }
@@ -4430,7 +4439,34 @@ private:
 
 } // namespace
 
+// Printed before any Qt or audio start-up, so `soundcurrent-eq --help` works from a terminal without a display and never launches the window.
+static int printCommandLineHelp(bool versionOnly) {
+    if (versionOnly) { std::printf("SoundCurrent EQ %s\n", SOUNDCURRENT_VERSION); return 0; }
+    std::printf(
+        "SoundCurrent EQ %s\n"
+        "Equalizer and analysis for your system audio.\n\n"
+        "Usage: soundcurrent-eq [options]\n\n"
+        "Options:\n"
+        "  -h, --help          Show this help and exit.\n"
+        "  --version           Show the version and exit.\n"
+        "  --background        Start hidden in the tray when a tray is available.\n"
+        "  --quit              Ask a running SoundCurrent EQ to quit, restoring normal audio.\n"
+        "  --preview           Isolated session: temporary settings, processing off, no change to\n"
+        "                      playback or microphone routing.\n\n"
+        "Environment (with --preview):\n"
+        "  SOUNDCURRENT_RECORDING_MONITOR=NAME  Let the Analysis page read the monitor of output NAME\n"
+        "                      (read-only; used to record documentation videos).\n\n"
+        "Developer tests: --ui-self-test and --localization-ui-test (no audio devices are changed);\n"
+        "--self-test and --mic-self-test briefly create audio devices.\n",
+        SOUNDCURRENT_VERSION);
+    return 0;
+}
+
 int main(int argc, char **argv) {
+    for (int i = 1; i < argc; ++i) {
+        if (std::strcmp(argv[i], "--help") == 0 || std::strcmp(argv[i], "-h") == 0) return printCommandLineHelp(false);
+        if (std::strcmp(argv[i], "--version") == 0) return printCommandLineHelp(true);
+    }
     for (int i = 1; i < argc; ++i) {
         if (std::strcmp(argv[i], "--windows-audio-setup-test") == 0 || std::strcmp(argv[i], "--ui-self-test") == 0 || std::strcmp(argv[i], "--localization-ui-test") == 0 || std::strcmp(argv[i], "--windows-live-manual-route-test") == 0 || std::strcmp(argv[i], "--windows-live-conflict-test") == 0) {
             qInstallMessageHandler([](QtMsgType, const QMessageLogContext &, const QString &message) {
@@ -4471,7 +4507,7 @@ int main(int argc, char **argv) {
     QCoreApplication::setOrganizationName("SoundCurrent");
     QCoreApplication::setApplicationName("soundcurrent-eq");
     QTemporaryDir testSettings;
-    if (app.arguments().contains("--windows-audio-setup-test") || app.arguments().contains("--windows-live-conflict-test") || app.arguments().contains("--windows-live-manual-route-test") || app.arguments().contains("--windows-live-hotplug-test") || app.arguments().contains("--windows-live-ui-test") || app.arguments().contains("--ui-self-test") || app.arguments().contains("--localization-ui-test")) {
+    if (app.arguments().contains("--windows-audio-setup-test") || app.arguments().contains("--windows-live-conflict-test") || app.arguments().contains("--windows-live-manual-route-test") || app.arguments().contains("--windows-live-hotplug-test") || app.arguments().contains("--windows-live-ui-test") || app.arguments().contains("--ui-self-test") || app.arguments().contains("--localization-ui-test") || app.arguments().contains("--preview")) {
 #ifndef Q_OS_WIN
         const QJsonArray unpluggedPorts{QJsonObject{{"name", "rear-mic"}, {"availability", "not available"}}};
         if (inputPortAvailable(QJsonObject{{"active_port", "rear-mic"}, {"ports", unpluggedPorts}}))
@@ -5482,12 +5518,14 @@ int main(int argc, char **argv) {
         qCritical("%s", qUtf8Printable(SC_TR("A private user runtime directory is required")));
         return 1;
     }
+    // A preview session has its own instance lock and socket, so it never activates (or is mistaken for) the normal running application.
+    const bool previewInstance = app.arguments().contains("--preview");
     #ifdef Q_OS_WIN
-    const auto socketPath = QString("SoundCurrentEQ-%1").arg(QString::number(qHash(runtime), 16));
+    const auto socketPath = QString(previewInstance ? "SoundCurrentEQ-Preview-%1" : "SoundCurrentEQ-%1").arg(QString::number(qHash(runtime), 16));
 #else
-    const auto socketPath = QDir(runtime).filePath("soundcurrent-eq.sock");
+    const auto socketPath = QDir(runtime).filePath(previewInstance ? "soundcurrent-eq-preview.sock" : "soundcurrent-eq.sock");
 #endif
-    QLockFile instanceLock(QDir(runtime).filePath("soundcurrent-eq.lock"));
+    QLockFile instanceLock(QDir(runtime).filePath(previewInstance ? "soundcurrent-eq-preview.lock" : "soundcurrent-eq.lock"));
     instanceLock.setStaleLockTime(0);
     if (!instanceLock.tryLock(200)) {
         if (instanceLock.error() == QLockFile::LockFailedError) {
@@ -5543,10 +5581,10 @@ int main(int argc, char **argv) {
 #endif
         box.exec();
     };
-    if (!processingGuard.acquire(soundcurrent::processingGuardDirectory())) { showConflict(processingGuard.error()); return 1; }
-    const auto conflict=soundcurrent::otherEqualizerConflict(kSink);
+    if (!previewInstance && !processingGuard.acquire(soundcurrent::processingGuardDirectory())) { showConflict(processingGuard.error()); return 1; }
+    const auto conflict = previewInstance ? QString() : soundcurrent::otherEqualizerConflict(kSink);
     if (!conflict.isEmpty()) { showConflict(conflict); return 1; }
-    MainWindow window;
+    MainWindow window(!app.arguments().contains("--preview"));
 #ifdef Q_OS_WIN
 #include "windows_live_conflict_test.inc"
 #endif
@@ -5566,7 +5604,7 @@ int main(int argc, char **argv) {
         QObject::connect(conflictThread,&QThread::finished,conflictThread,&QObject::deleteLater);
         conflictThread->start();
     });
-    conflictMonitor.start();
+    if (!previewInstance) conflictMonitor.start();   // a preview session never processes audio, so it has nothing to conflict with
     QObject::connect(&instanceServer, &QLocalServer::newConnection, &window, [&] {
         while (instanceServer.hasPendingConnections()) {
             auto *client = instanceServer.nextPendingConnection();
