@@ -2071,6 +2071,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Notová mřížka</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Právě hraje: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Formát čísel a data</translation>
     </message>
@@ -2850,6 +2854,10 @@ Přesto chcete soubor smazat?</translation>
       <source>Show hidden files</source>
       <translation>Ukázat skryté soubory</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>Zobrazit, co hraje</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

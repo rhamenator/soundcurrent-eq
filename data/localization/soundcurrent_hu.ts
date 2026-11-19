@@ -2071,6 +2071,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Hangrács</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Most szól: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Szám- és dátumformátum</translation>
     </message>
@@ -2850,6 +2854,10 @@ Mindenképp törölni szeretné?</translation>
       <source>Show hidden files</source>
       <translation>Rejtett fájlok megjelenítése</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>A szóló zene megjelenítése</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

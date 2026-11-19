@@ -2071,6 +2071,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Siatka nut</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Odtwarzanie: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Format liczb i dat</translation>
     </message>
@@ -2850,6 +2854,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <source>Show hidden files</source>
       <translation>Pokaż ukryte pliki</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>Pokaż, co jest odtwarzane</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

@@ -2071,6 +2071,10 @@ Deseja excluí-lo mesmo assim?</translation>
       <translation>Grade de notas</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Tocando agora: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Formato de números e datas</translation>
     </message>
@@ -2850,6 +2854,10 @@ Deseja excluí-lo mesmo assim?</translation>
       <source>Show hidden files</source>
       <translation>Mostrar arquivos ocultos</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>Mostrar o que está tocando</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

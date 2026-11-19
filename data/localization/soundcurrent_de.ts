@@ -2071,6 +2071,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Notenraster</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Aktuelle Wiedergabe: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Zahlen- und Datumsformat</translation>
     </message>
@@ -2850,6 +2854,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <source>Show hidden files</source>
       <translation>Versteckte Dateien anzeigen</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>Aktuelle Wiedergabe anzeigen</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

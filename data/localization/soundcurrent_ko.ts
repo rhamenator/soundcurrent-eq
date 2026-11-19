@@ -2071,6 +2071,10 @@ Do you want to delete it anyway?</source>
       <translation>음표 격자</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>재생 중: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>숫자 및 날짜 형식</translation>
     </message>
@@ -2850,6 +2854,10 @@ Do you want to delete it anyway?</source>
       <source>Show hidden files</source>
       <translation>숨김 파일 표시(H)</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>재생 중인 항목 표시</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

@@ -2071,6 +2071,10 @@ Vil du slette den likevel?</translation>
       <translation>Noterutenett</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Spilles nå: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Tall- og datoformat</translation>
     </message>
@@ -2850,6 +2854,10 @@ Vil du slette den likevel?</translation>
       <source>Show hidden files</source>
       <translation>Vis skjulte filer</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>Vis hva som spilles</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

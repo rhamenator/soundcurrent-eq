@@ -2071,6 +2071,10 @@ Voulez-vous quand même le supprimer ?</translation>
       <translation>Grille des notes</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>En cours de lecture : %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Format des nombres et des dates</translation>
     </message>
@@ -2850,6 +2854,10 @@ Voulez-vous quand même le supprimer ?</translation>
       <source>Show hidden files</source>
       <translation>Afficher les fichiers cachés</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>Afficher la lecture en cours</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

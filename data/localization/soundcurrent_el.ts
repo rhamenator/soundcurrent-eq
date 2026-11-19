@@ -2071,6 +2071,10 @@ Do you want to delete it anyway?</source>
       <translation>Πλέγμα νοτών</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Αναπαράγεται: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Μορφή αριθμών και ημερομηνίας</translation>
     </message>
@@ -2850,6 +2854,10 @@ Do you want to delete it anyway?</source>
       <source>Show hidden files</source>
       <translation>Εμφάνιση κρυφών αρχείων</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>Εμφάνιση του τρέχοντος κομματιού</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

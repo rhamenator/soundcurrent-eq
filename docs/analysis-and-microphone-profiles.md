@@ -204,3 +204,7 @@ at 1 kHz (for example 125 Hz, 250 Hz, 500 Hz, 1 kHz, 2 kHz). Crowded octave axes
 skip whole octaves. Linear and octave axes omit non-aligned endpoint ticks so
 those endpoints cannot suggest an irregular interval. Hz/kHz formatting is the
 same in every mode and does not change the selected scale.
+
+## Now playing (Linux)
+
+Analysis → Settings → **Show now playing** (off by default) shows the artist and title of what the desktop media player reports as playing, for example a browser playing YouTube. It reads the standard media-player interface (MPRIS) on the session bus, read-only, every two seconds while the Analysis tab is visible. Nothing is sent anywhere. Windows has no Now playing line yet.

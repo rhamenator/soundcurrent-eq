@@ -2071,6 +2071,10 @@ Do you want to delete it anyway?</source>
       <translation>شبکهٔ نت‌ها</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>در حال پخش: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>قالب اعداد و تاریخ</translation>
     </message>
@@ -2850,6 +2854,10 @@ Do you want to delete it anyway?</source>
       <source>Show hidden files</source>
       <translation>نمایش پرونده‌های مخفی</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>نمایش آنچه پخش می‌شود</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

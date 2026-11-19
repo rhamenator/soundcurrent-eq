@@ -2071,6 +2071,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Nuottiruudukko</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Nyt soi: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Lukujen ja päivämäärien muoto</translation>
     </message>
@@ -2850,6 +2854,10 @@ Haluatko silti poistaa sen?</translation>
       <source>Show hidden files</source>
       <translation>Näytä piilotiedostot</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>Näytä, mitä soi</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

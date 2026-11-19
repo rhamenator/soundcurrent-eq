@@ -2071,6 +2071,10 @@ Do you want to delete it anyway?</source>
       <translation>Cuadrícula de notas</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Reproduciendo: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Formato de números y fechas</translation>
     </message>
@@ -2850,6 +2854,10 @@ Do you want to delete it anyway?</source>
       <source>Show hidden files</source>
       <translation>Mostrar los ficheros ocultos</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>Mostrar lo que se reproduce</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

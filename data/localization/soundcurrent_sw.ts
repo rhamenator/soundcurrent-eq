@@ -2071,6 +2071,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Gridi ya noti</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Inacheza sasa: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Muundo wa namba na tarehe</translation>
     </message>
@@ -2850,6 +2854,10 @@ Unataka kuifuta hata hivyo?</translation>
       <source>Show hidden files</source>
       <translation>Onyesha faili zilizofichwa</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>Onyesha kinachochezwa</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

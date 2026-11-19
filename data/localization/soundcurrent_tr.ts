@@ -2071,6 +2071,10 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Nota ızgarası</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Şimdi çalıyor: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Sayı ve tarih biçimi</translation>
     </message>
@@ -2850,6 +2854,10 @@ Yine de silmek istiyor musunuz?</translation>
       <source>Show hidden files</source>
       <translation>Gizli dosyaları göster</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>Çalanı göster</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

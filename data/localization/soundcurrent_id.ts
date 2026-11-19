@@ -2071,6 +2071,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Kisi nada</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Sedang diputar: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Format angka dan tanggal</translation>
     </message>
@@ -2850,6 +2854,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <source>Show hidden files</source>
       <translation>Tampilkan berkas tersembunyi</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>Tampilkan yang sedang diputar</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

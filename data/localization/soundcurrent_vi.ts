@@ -2071,6 +2071,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Lưới nốt nhạc</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Đang phát: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Định dạng số và ngày</translation>
     </message>
@@ -2850,6 +2854,10 @@ Bạn vẫn muốn xóa không?</translation>
       <source>Show hidden files</source>
       <translation>Hiện tệp ẩn</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>Hiển thị nội dung đang phát</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

@@ -2071,6 +2071,10 @@ Do you want to delete it anyway?</source>
       <translation>स्वर ग्रिड</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>अभी चल रहा है: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>संख्या और तारीख का प्रारूप</translation>
     </message>
@@ -2850,6 +2854,10 @@ Do you want to delete it anyway?</source>
       <source>Show hidden files</source>
       <translation>छिपी हुई फ़ाइलें दिखाएँ</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>जो चल रहा है उसे दिखाएँ</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

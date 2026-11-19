@@ -2071,6 +2071,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Notenraster</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Nu afspelend: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Getal- en datumnotatie</translation>
     </message>
@@ -2850,6 +2854,10 @@ Wilt u het toch verwijderen?</translation>
       <source>Show hidden files</source>
       <translation>Verborgen bestanden tonen</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
+    </message>
+    <message>
+      <source>Show now playing</source>
+      <translation>Toon wat er wordt afgespeeld</translation>
     </message>
     <message>
       <source>Show peak markers on frequency levels</source>

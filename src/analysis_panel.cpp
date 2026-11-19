@@ -1,3 +1,4 @@
+#include "now_playing.h"
 #include "microphone_access.h"
 #include "responsive_ui.h"
 // SPDX-License-Identifier: GPL-3.0-only
@@ -475,6 +476,9 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     freeze_=new QCheckBox(SC_TR("Freeze display"));freeze_->setObjectName("analysisFreeze");settingsButton_=new QPushButton(SC_TR("Settings"));settingsButton_->setObjectName("analysisSettings");settingsButton_->setCheckable(true);auto *settings=settingsButton_;
     top->addWidget(view_,1);top->addWidget(source_,1);top->addWidget(freeze_);top->addWidget(settings);root->addWidget(top);
     buildSettings(root);
+    nowPlaying_=new QLabel;nowPlaying_->setObjectName("analysisNowPlaying");nowPlaying_->setTextFormat(Qt::PlainText);nowPlaying_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);nowPlaying_->setVisible(false);root->addWidget(nowPlaying_);
+    nowPlayingTimer_=new QTimer(this);nowPlayingTimer_->setInterval(2000);connect(nowPlayingTimer_,&QTimer::timeout,this,&Panel::updateNowPlaying);
+    showNowPlaying_=QSettings().value("analysis/nowPlaying",false).toBool();
     canvas_=new ScopeCanvas(this);canvas_->setObjectName("analysisCanvas");root->addWidget(canvas_,1);readout_=new QLabel;readout_->setTextFormat(Qt::PlainText);readout_->setWordWrap(true);readout_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);readout_->setFixedHeight(2*fontMetrics().lineSpacing());root->addWidget(readout_);
     help_=new QLabel(SC_TR("Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement."));help_->setWordWrap(true);root->addWidget(help_);
     auto *actions=new soundcurrent::ui::ResponsiveRow;auto *resetButton=new QPushButton(SC_TR("Reset"));auto *saveImageButton=new QPushButton(SC_TR("Save image"));saveImageButton->setObjectName("analysisSaveImage");reference_=new QPushButton(SC_TR("Capture reference"));profile_=new QPushButton(SC_TR("Create microphone profile"));
@@ -483,7 +487,7 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     const auto saved=Settings::parse(QJsonDocument::fromJson(QSettings().value("analysis/settings").toByteArray()).object());if(saved)canvas_->data->configure(*saved);
     // The ~60 Hz heartbeat only runs while the analysis view is actually showing (no idle wake-ups otherwise).
     auto *displayHeartbeat=new QTimer(this);displayHeartbeat->setInterval(16);displayHeartbeat->setTimerType(Qt::PreciseTimer);connect(displayHeartbeat,&QTimer::timeout,canvas_,[this]{canvas_->advanceIdle();});
-    canvas_->onVisibility=[this,displayHeartbeat](bool visible){if(visible){captureFailed_=false;refreshSources();displayHeartbeat->start();}else displayHeartbeat->stop();if(onActivity)onActivity(source(),visible && active());};
+    canvas_->onVisibility=[this,displayHeartbeat](bool visible){if(visible){captureFailed_=false;refreshSources();displayHeartbeat->start();}else displayHeartbeat->stop();if(visible && showNowPlaying_){updateNowPlaying();nowPlayingTimer_->start();}else nowPlayingTimer_->stop();if(onActivity)onActivity(source(),visible && active());};
     canvas_->onFrame=[this]{availability();};
     canvas_->onZoom=[this](const Settings &s){if(applySettings(s))feedback_->clear();};
     if(canvas_->isVisible())displayHeartbeat->start();
@@ -578,6 +582,11 @@ void Panel::availability(){
     readout_->setText(SC_TR("Frames: %1 · FFT: %2 ms · Resolution: %3 · Window: %4 ms").arg(QLocale().toString(e.waveFrames),QLocale().toString(e.fftMs,'f',2),formatFrequency(double(e.settings.rate)/e.settings.fft),QLocale().toString(e.settings.fft*1000./e.settings.rate,'f',1)));
 }
 void Panel::suspendForDialog(bool suspended){suspended_=suspended;canvas_->resetClock();if(onActivity)onActivity(source(),active());}
+void Panel::updateNowPlaying(){
+    // Off by default: titles are personal, and the Analysis tab may be screenshotted or recorded.
+    const QString text=showNowPlaying_?soundcurrent::nowPlayingText():QString();
+    nowPlaying_->setText(text.isEmpty()?QString():SC_TR("Now playing: %1").arg(text));nowPlaying_->setToolTip(text);nowPlaying_->setVisible(!text.isEmpty());
+}
 void Panel::toggleSettings(){settingsButton_->setChecked(!settingsButton_->isChecked());}
 bool Panel::settingsVisible() const{return settingsPanel_ && settingsPanel_->isVisibleTo(const_cast<Panel *>(this));}
 // Everyday controls sit in a row on the tab; the rest live in a collapsible, scrollable panel. Every control applies live
@@ -612,6 +621,8 @@ void Panel::buildSettings(QVBoxLayout *root){
     auto *sensitivity=spin(SC_TR("Display sensitivity"),"analysisSensitivity",current.sensitivity,24,180," dB");auto *history=spin(SC_TR("History length"),"analysisHistory",current.history,5,60," s");auto *speed=spin(SC_TR("Scroll speed"),"analysisSpeed",current.speed,.5,4," ×");
     auto check=[&](const QString &label,const QString &name,bool selected){auto *c=new QCheckBox(label);c->setObjectName(name);c->setChecked(selected);form->addRow(c);return c;};
     auto *grid=check(SC_TR("Grid"),"analysisGrid",current.grid);auto *peaks=check(SC_TR("Peak hold"),"analysisPeaks",current.peaks);auto *average=check(SC_TR("Average"),"analysisAverage",current.average);auto *notes=check(SC_TR("Note grid"),"analysisNotes",current.notes);auto *transients=check(SC_TR("Transient markers"),"analysisTransients",current.transients);auto *music=check(SC_TR("Music mode"),"analysisMusic",current.music);
+    auto *nowPlayingCheck=check(SC_TR("Show now playing"),"analysisShowNowPlaying",showNowPlaying_);
+    connect(nowPlayingCheck,&QCheckBox::toggled,this,[this](bool on){showNowPlaying_=on;QSettings().setValue("analysis/nowPlaying",on);if(on && canvas_->isVisible()){updateNowPlaying();nowPlayingTimer_->start();}else{nowPlayingTimer_->stop();updateNowPlaying();}});
     ceiling->setEnabled(!current.autoRange);connect(automatic,&QCheckBox::toggled,ceiling,&QWidget::setDisabled);
     palette->setVisible(current.view==int(View::Waterfall));
     speed->setSingleStep(.5);
