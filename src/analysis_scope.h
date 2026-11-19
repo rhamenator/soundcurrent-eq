@@ -57,6 +57,7 @@ public:
     Pitch pitch;
     Chord chord;
     std::array<double,12> chroma{};
+    std::array<double,12> chromaSlow{};   // ~1.6 s memory, so a chord played as an arpeggio can still be named
     TunerState tunerState=TunerState::Silent;
     bool held=false;   // the note or chord shown is the last reading, kept briefly after it disappeared
     std::deque<NoteFrame> noteHistory;   // newest at the back; about a minute is kept

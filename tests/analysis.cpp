@@ -136,7 +136,10 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
    QByteArray weighted(16384*4,0);auto *wp=reinterpret_cast<std::int16_t *>(weighted.data());for(int i=0;i<16384;++i){double v=0;for(int k=1;k<=4;++k)v+=std::sin(2*std::numbers::pi*220.*k*i/48000.)/k;const auto q=std::int16_t(std::lround(32767*.25*v));wp[2*i]=q;wp[2*i+1]=q;}(void)rich;
    for(int n=0;n<10;++n)harmonics.push(weighted,View::Tuner);
    check(has(harmonics.noteHistory.back(),57) && !has(harmonics.noteHistory.back(),69) && !has(harmonics.noteHistory.back(),76),"harmonics shown as separate notes");
-   check(roll.noteHistory.size()<=1300,"note history not bounded");}}
+   check(roll.noteHistory.size()<=1300,"note history not bounded");
+   {Engine arp;arp.configure(rs);const int notes[]={261,329,392,329};   // C major arpeggio, one note every 0.2 s
+    for(int round=0;round<3;++round)for(int f:notes){const auto one=chordTone({double(f)});for(int n=0;n<4;++n)arp.push(one,View::Tuner);}
+    check(arp.chord.root==0 && arp.chord.quality==0,"arpeggiated C major was not recognized");}}}
  Settings cumulative;engine.configure(cumulative);engine.resetAverage();engine.push(signal,View::Microphone);engine.push(tone(937.5,.25),View::Microphone);const double expected=10*std::log10((.25+.0625)/2);check(std::abs(engine.averaged[80]-expected)<.05,"cumulative power average incorrect");
  // The toolbar selection supersedes the last settings application, including legacy split preferences.
  {Panel first;Settings selected;selected.view=int(View::Spectrum);check(first.applySettings(selected),"persisted settings rejected");

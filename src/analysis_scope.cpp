@@ -250,21 +250,27 @@ void Engine::analyzeChord() {
             now[std::size_t(((int(std::lround(midi))%12)+12)%12)]+=std::pow(10.,b/20.);
         }
     }
-    const double alpha=1-std::exp(-std::clamp(frameSeconds,.005,1.)/.4);
-    for(int k=0;k<12;++k)chroma[std::size_t(k)]+=(now[std::size_t(k)]-chroma[std::size_t(k)])*alpha;
+    const double dt=std::clamp(frameSeconds,.005,1.),alpha=1-std::exp(-dt/.4),slowAlpha=1-std::exp(-dt/1.6);
+    for(int k=0;k<12;++k){chroma[std::size_t(k)]+=(now[std::size_t(k)]-chroma[std::size_t(k)])*alpha;chromaSlow[std::size_t(k)]+=(now[std::size_t(k)]-chromaSlow[std::size_t(k)])*slowAlpha;}
     chord={};
-    const double peak=*std::max_element(chroma.begin(),chroma.end());if(peak<=1e-6 || strongest<=-75)return;
+    if(strongest<=-75)return;
     if(settings.instrument>0 && instrumentRange(settings.instrument).first<100)return;   // bass and cello play single notes; the FFT cannot resolve their low chords
-    int present=0;for(double v:chroma)if(v>.25*peak)++present;if(present<3)return;
-    double best=0;
-    for(int root=0;root<12;++root)for(std::size_t q=0;q<chordTemplates().size();++q){
-        const auto &notes=chordTemplates()[q];double dot=0,norm=0;
-        for(int k=0;k<12;++k)norm+=chroma[std::size_t(k)]*chroma[std::size_t(k)];
-        for(int n:notes)dot+=chroma[std::size_t((root+n)%12)];
-        const double score=dot/(std::sqrt(norm)*std::sqrt(double(notes.size())));
-        if(score>best){best=score;chord={root,int(q),score};}
-    }
-    if(best<.85)chord={};
+    auto detect=[&](const std::array<double,12> &c,double minScore){
+        Chord found;const double peak=*std::max_element(c.begin(),c.end());if(peak<=1e-6)return found;
+        int present=0;for(double v:c)if(v>.25*peak)++present;if(present<3)return found;
+        double norm=0;for(double v:c)norm+=v*v;
+        double best=0;
+        for(int root=0;root<12;++root)for(std::size_t q=0;q<chordTemplates().size();++q){
+            const auto &notes=chordTemplates()[q];double dot=0;
+            for(int n:notes)dot+=c[std::size_t((root+n)%12)];
+            const double score=dot/(std::sqrt(norm)*std::sqrt(double(notes.size())));
+            if(score>best){best=score;found={root,int(q),score};}
+        }
+        if(best<minScore)found={};
+        return found;
+    };
+    chord=detect(chroma,.85);
+    if(chord.root<0)chord=detect(chromaSlow,.9);   // arpeggios: the notes of a chord played one after another
 }
 void Engine::collectNotes() {
     // Notes for the scrolling display: spectral peaks between about C2 and C6, with harmonics of lower notes removed,

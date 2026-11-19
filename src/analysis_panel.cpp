@@ -1,4 +1,5 @@
 #include "now_playing.h"
+#include <QScrollBar>
 #include "microphone_access.h"
 #include "responsive_ui.h"
 // SPDX-License-Identifier: GPL-3.0-only
@@ -54,6 +55,8 @@ public:
     explicit ScopeCanvas(QWidget *parent):QWidget(parent),data(std::make_unique<Engine>()) {
         setObjectName("analysisCanvas");setMinimumSize(220,230);setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);setMouseTracking(true);
         clearImage();
+        rollBar=new QScrollBar(Qt::Vertical,this);rollBar->setObjectName("analysisNoteScroll");rollBar->setAccessibleName(QStringLiteral("Notes"));rollBar->hide();
+        connect(rollBar,&QScrollBar::valueChanged,this,[this](int value){rollLowManual=std::clamp(85-rollSpan-value,36,85-rollSpan);update();});
     }
     std::unique_ptr<Engine> data;
     View mode=View::Waterfall;
@@ -62,6 +65,18 @@ public:
     // Scrolling note display window: low note (C-aligned), span in semitones (12..48), manual low note or -1 for automatic follow.
     int rollSpan=24,rollLowAuto=48,rollLowManual=-1;
     int rollLowNow() const {return rollLowManual>=0?rollLowManual:rollLowAuto;}
+    // The Tuner uses the whole canvas (it has no axes): note display, then chord, note and gauge.
+    QRectF tunerArea() const {return QRectF(rect()).adjusted(6,2,-6,-2);}
+    QRectF tunerRoll() const {const auto a=tunerArea();const double keys=34,gutter=44,bar=18;return QRectF(a.left()+keys,a.top()+2,std::max(40.,a.width()-keys-gutter-bar-4),std::clamp(a.height()-104,64.,a.height()*.85));}
+    QScrollBar *rollBar=nullptr;
+    // Positions the scroll bar beside the note display and mirrors the window position (top = highest notes).
+    void syncRollBar(){
+        if(!rollBar)return;const bool show=mode==View::Tuner;rollBar->setVisible(show);if(!show)return;
+        const auto r=tunerRoll(),a=tunerArea();rollBar->setGeometry(int(a.right()-18),int(r.top()),18,int(r.height()));
+        const QSignalBlocker block(rollBar);const int range=std::max(0,49-rollSpan);rollBar->setRange(0,range);rollBar->setPageStep(rollSpan);rollBar->setSingleStep(3);
+        rollBar->setValue(std::clamp(85-rollSpan-rollLowNow(),0,range));
+    }
+    void resizeEvent(QResizeEvent *event) override {QWidget::resizeEvent(event);syncRollBar();}
     std::function<void(bool)> onVisibility;
     std::function<void(const Settings &)> onZoom;std::function<void(bool)> onScroll;void resumeLive(){scrollBack_=0;setProperty("scrollBack",0);update();}std::function<void()> onFrame;
     double displayCeiling=0;
@@ -226,13 +241,13 @@ protected:
         s.low=std::round(low*10)/10;s.high=std::round(high*10)/10;
     }
     void wheelEvent(QWheelEvent *event) override {
-        const auto plot=plotRect();if(!plot.contains(event->position()) || !onZoom){event->ignore();return;}
-        if(mode==View::Tuner){   // wheel scrolls the note display; Ctrl+wheel zooms its octave range
+        if(mode==View::Tuner){if(!tunerArea().contains(event->position())){event->ignore();return;}   // wheel scrolls the note display; Ctrl+wheel zooms its octave range
             const int steps=event->angleDelta().y()>0?1:event->angleDelta().y()<0?-1:0;if(!steps){event->ignore();return;}
             if(event->modifiers()&Qt::ControlModifier){const int low=rollLowNow();rollSpan=std::clamp(rollSpan-12*steps,12,48);rollLowManual=std::clamp(low,36,85-rollSpan);}
             else rollLowManual=std::clamp(rollLowNow()+3*steps,36,85-rollSpan);
-            update();event->accept();return;
+            syncRollBar();update();event->accept();return;
         }
+        const auto plot=plotRect();if(!plot.contains(event->position()) || !onZoom){event->ignore();return;}
         if((mode==View::Waterfall || mode==View::Waveform) && (event->angleDelta().x()!=0 || (event->modifiers()&Qt::ShiftModifier))){
             const int delta=event->angleDelta().x()!=0?event->angleDelta().x():event->angleDelta().y();
             setScrollBack(scrollBack_+int(delta/120.*std::max(10.,plot.width()*.1)));event->accept();return;
@@ -255,8 +270,8 @@ protected:
     }
     void mouseReleaseEvent(QMouseEvent *event) override {if(dragging_ || timeDragging_){dragging_=false;timeDragging_=false;unsetCursor();}QWidget::mouseReleaseEvent(event);}
     void mouseDoubleClickEvent(QMouseEvent *event) override {
+        if(mode==View::Tuner){if(tunerArea().contains(event->position())){rollLowManual=-1;rollSpan=24;syncRollBar();update();}return;}   // back to following the music
         if(!onZoom || !plotRect().contains(event->position())){QWidget::mouseDoubleClickEvent(event);return;}
-        if(mode==View::Tuner){rollLowManual=-1;rollSpan=24;update();return;}   // back to following the music
         if(scrollBack_>0){resumeLive();if(onScroll)onScroll(false);return;}
         auto s=data->settings;
         if(mode==View::Waveform)s.autoRange=true;else if(frequencyAxisView()){s.low=20;s.high=20000;}else return;
@@ -385,27 +400,30 @@ protected:
             p.setPen(QPen(QColor("#55d7c3"),1));QPainterPath path;for(std::size_t i=0;i<data->left.size();++i){QPointF point(c.x()+(data->left[i]-data->right[i])*.5*radius/waveLimit_,c.y()-(data->left[i]+data->right[i])*.5*radius/waveLimit_);if(i==0)path.moveTo(point);else path.lineTo(point);}p.drawPath(path);
             p.drawText(plot.adjusted(0,0,0,-4),Qt::AlignBottom|Qt::AlignHCenter,QString::fromUtf8("ρ ")+QLocale().toString(data->correlation,'f',2));
         } else if(mode==View::Tuner){
-            // Top: a scrolling note display (time runs left to right, newest at the right, C2 to C6).
-            // Below it: the chord (optional), then the single detected note and the tuning gauge.
+            // Scrolling note display on top (time runs left to right, newest at the right), then the chord (optional),
+            // the detected note and the tuning gauge. Uses the whole canvas.
+            p.setClipping(false);
+            const auto area=tunerArea();
             const auto pitch=data->pitch;const auto chord=data->chord;
             const bool hasPitch=pitch.midi>=0 && pitch.hz>0;   // the loudest note, shown even while a chord is named
-            const double keysWidth=34,gutterWidth=44,rollHeight=std::clamp(plot.height()-132,64.,plot.height()*.8);
-            const QRectF roll(plot.left()+keysWidth,plot.top()+4,std::max(40.,plot.width()-keysWidth-gutterWidth-4),rollHeight);
+            const double keysWidth=34,gutterWidth=44;
+            const QRectF roll=tunerRoll();
             const int rows=rollSpan;
-            if(rollLowManual<0){   // follow the music: keep the window while the recent notes fit, else re-centre on them (C-aligned)
+            if(rollLowManual<0){   // follow the music: keep the window while the recent notes sit inside it, else re-centre (C-aligned)
                 std::array<double,128> weight{};double total=0;for(const auto &frame:data->noteHistory)if(data->noteClock-frame.time<3)for(const auto &n:frame.notes){weight[std::size_t(n.midi)]+=n.level;total+=n.level;}
                 const int current=std::clamp(rollLowAuto,36,85-rows);rollLowAuto=current;
-                if(total>0){   // level-weighted median of the recent notes, so stray blips cannot drag the window
+                if(total>0){   // level-weighted median, so stray blips cannot drag the window
                     double run=0;int median=current+rows/2;for(int m=0;m<128;++m){run+=weight[std::size_t(m)];if(run>=total/2){median=m;break;}}
                     if(median<current+2 || median>=current+rows-2)rollLowAuto=std::clamp((median-rows/2)/12*12,36,85-rows);
                 }
             }
             const int lowMidi=std::clamp(rollLowNow(),36,85-rows);const double rowHeight=roll.height()/rows;
+            if(rollBar)QMetaObject::invokeMethod(rollBar,[bar=rollBar,rows,lowMidi]{if(!bar->isVisible())return;const QSignalBlocker block(bar);const int range=std::max(0,49-rows);bar->setRange(0,range);bar->setPageStep(rows);bar->setValue(std::clamp(85-rows-lowMidi,0,range));},Qt::QueuedConnection);
             static const bool black[12]={false,true,false,true,false,false,true,false,true,false,true,false};
             p.fillRect(roll,QColor("#0f1722"));
             for(int m=lowMidi;m<lowMidi+rows;++m){const double y=roll.bottom()-(m-lowMidi+1)*rowHeight;if(black[m%12])p.fillRect(QRectF(roll.left(),y,roll.width(),rowHeight),QColor("#16202d"));
                 if(m%12==0){p.setPen(QColor("#30445b"));p.drawLine(QPointF(roll.left(),y+rowHeight),QPointF(roll.right(),y+rowHeight));}
-                if(m%12==0 || rowHeight>=11){p.setPen(QColor(m%12==0?"#cbd5e1":"#9fb0c3"));p.drawText(QRectF(plot.left(),y+rowHeight/2-8,keysWidth-4,16),Qt::AlignRight|Qt::AlignVCenter,noteName(m));}}
+                if(m%12==0 || rowHeight>=11){p.setPen(QColor(m%12==0?"#cbd5e1":"#9fb0c3"));p.drawText(QRectF(area.left(),y+rowHeight/2-8,keysWidth-4,16),Qt::AlignRight|Qt::AlignVCenter,noteName(m));}}
             const double seconds=std::clamp(s.history,5.,10.);const double now=data->noteClock;
             double previous=-1;
             for(const auto &frame:data->noteHistory){
@@ -417,24 +435,24 @@ protected:
             if(!data->noteHistory.empty()){   // names of the notes sounding now, beside the newest column
                 p.setPen(QColor("#e6b450"));for(const auto &n:data->noteHistory.back().notes){if(n.midi<lowMidi || n.midi>=lowMidi+rows)continue;const double y=roll.bottom()-(n.midi-lowMidi+1)*rowHeight;p.drawText(QRectF(roll.right()+4,y+rowHeight/2-8,gutterWidth-4,16),Qt::AlignLeft|Qt::AlignVCenter,noteName(n.midi));}
             }
-            auto font=p.font();font.setPointSizeF(16);p.setFont(font);
-            const QRectF chordRow(plot.left(),roll.bottom()+2,plot.width(),26);
+            auto font=p.font();font.setPointSizeF(15);p.setFont(font);
+            const QRectF chordRow(area.left(),roll.bottom()+2,area.width(),24);
             if(showChords && chord.root>=0){static const char *names[]={"C","C♯","D","D♯","E","F","F♯","G","G♯","A","A♯","B"};p.setPen(QColor("#e6b450"));p.drawText(chordRow,Qt::AlignCenter,QString::fromUtf8(names[chord.root])+QString::fromLatin1(chordQualitySuffix(chord.quality)));}
-            const QRectF noteArea(plot.left(),chordRow.bottom(),plot.width(),std::max(34.,plot.bottom()-chordRow.bottom()-66));
-            font.setPointSizeF(26);p.setFont(font);
+            const QRectF noteArea(area.left(),chordRow.bottom(),area.width(),std::max(24.,area.bottom()-chordRow.bottom()-56));
+            font.setPointSizeF(18);p.setFont(font);
             const QColor noteColor(data->held?"#6b7f95":"#55d7c3");   // dimmed while the last reading is being held
             if(hasPitch){p.setPen(noteColor);p.drawText(noteArea,Qt::AlignCenter,noteName(pitch.midi));}
             else{p.setPen(QColor("#6b7f95"));p.drawText(noteArea,Qt::AlignCenter,QString::fromUtf8("—"));}
             font.setPointSizeF(11);p.setFont(font);p.setPen(noteColor);
-            const double gaugeY=plot.bottom()-52;   // the gauge line is always drawn so the layout never jumps
-            p.setPen(QColor("#30445b"));p.drawLine(QPointF(plot.center().x()-plot.width()*.4,gaugeY),QPointF(plot.center().x()+plot.width()*.4,gaugeY));p.drawLine(QPointF(plot.center().x(),gaugeY-8),QPointF(plot.center().x(),gaugeY+8));p.setPen(noteColor);
+            const double gaugeY=area.bottom()-42;   // the gauge line is always drawn so the layout never jumps
+            p.setPen(QColor("#30445b"));p.drawLine(QPointF(area.center().x()-area.width()*.4,gaugeY),QPointF(area.center().x()+area.width()*.4,gaugeY));p.drawLine(QPointF(area.center().x(),gaugeY-8),QPointF(area.center().x(),gaugeY+8));p.setPen(noteColor);
             if(hasPitch){
-                p.drawText(plot.adjusted(0,0,0,-4),Qt::AlignBottom|Qt::AlignHCenter,formatFrequency(pitch.hz)+" / "+QLocale().toString(pitch.cents,'f',1)+" ¢");
-                const double x=plot.center().x()+std::clamp(pitch.cents,-50.,50.)/50.*plot.width()*.4;
+                p.drawText(area.adjusted(0,0,0,-2),Qt::AlignBottom|Qt::AlignHCenter,formatFrequency(pitch.hz)+" / "+QLocale().toString(pitch.cents,'f',1)+" ¢");
+                const double x=area.center().x()+std::clamp(pitch.cents,-50.,50.)/50.*area.width()*.4;
                 p.setPen(QPen(noteColor,2));p.drawLine(QPointF(x,gaugeY-14),QPointF(x,gaugeY+14));p.setPen(noteColor);
             }
             static const QStringList tunings={"", "E2 A2 D3 G3 B3 E4","E1 A1 D2 G2","G4 C4 E4 A4","G3 D4 A4 E5","C3 G3 D4 A4","C2 G2 D3 A3","G3 D4 A4 E5",""};
-            p.setPen(QColor("#6b7f95"));p.drawText(plot.adjusted(0,0,0,-26),Qt::AlignBottom|Qt::AlignHCenter,tunings[s.instrument]);
+            p.setPen(QColor("#6b7f95"));p.drawText(area.adjusted(0,0,0,-22),Qt::AlignBottom|Qt::AlignHCenter,tunings[s.instrument]);
         } else if(mode!=View::Waterfall){
             auto trace=[&](const std::vector<double> &values,const QColor &color,Qt::PenStyle style=Qt::SolidLine){if(values.empty())return;QPainterPath path;bool connected=false;
                 for(int x=0;x<=int(plot.width());++x){const double hz=frequency(double(x)/plot.width());const double bin=hz*s.fft/s.rate;const int i=std::clamp(int(bin),0,int(values.size())-1),j=std::min(i+1,int(values.size())-1);const double db=values[i]+(values[j]-values[i])*(bin-i);
@@ -555,7 +573,7 @@ View Panel::view() const{return canvas_->mode;}
 void Panel::setView(View mode){
     const int index=int(mode);if(index<0 || index>=view_->count())return;
     if(view_->currentIndex()!=index){view_->setCurrentIndex(index);return;}
-    canvas_->mode=mode;canvas_->data->settings.view=index;
+    canvas_->mode=mode;canvas_->data->settings.view=index;canvas_->syncRollBar();
     QSettings settings;settings.setValue("analysis/view",index);
     settings.setValue("analysis/settings",QJsonDocument(canvas_->data->settings.json()).toJson(QJsonDocument::Compact));
 }
