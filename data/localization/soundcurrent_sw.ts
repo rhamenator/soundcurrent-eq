@@ -2071,6 +2071,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Gridi ya noti</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Inacheza sasa: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Muundo wa namba na tarehe</translation>
     </message>
@@ -2842,6 +2846,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Onyesha vidhibiti vya juu</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Onyesha chodi</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Onyesha tarehe ya kubadilishwa</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2852,8 +2860,16 @@ Unataka kuifuta hata hivyo?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Show now playing</source>
+      <translation>Onyesha kinachochezwa</translation>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Onyesha alama za kilele kwenye viwango vya masafa</translation>
+    </message>
+    <message>
+      <source>Show quiet notes</source>
+      <translation>Onyesha noti hafifu</translation>
     </message>
     <message>
       <source>Show saved custom profiles only.</source>
@@ -3429,6 +3445,10 @@ Unataka kuifuta hata hivyo?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Lenga sauti ya mwimbaji</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Sauti</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

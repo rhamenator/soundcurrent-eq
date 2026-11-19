@@ -2071,6 +2071,10 @@ Deseja excluí-lo mesmo assim?</translation>
       <translation>Grade de notas</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Tocando agora: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Formato de números e datas</translation>
     </message>
@@ -2842,6 +2846,10 @@ Deseja excluí-lo mesmo assim?</translation>
       <translation>Mostrar controles avançados</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Mostrar acordes</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Mostrar data de modificação</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2852,8 +2860,16 @@ Deseja excluí-lo mesmo assim?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Show now playing</source>
+      <translation>Mostrar o que está tocando</translation>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Mostrar marcadores de pico nos níveis de frequência</translation>
+    </message>
+    <message>
+      <source>Show quiet notes</source>
+      <translation>Mostrar notas fracas</translation>
     </message>
     <message>
       <source>Show saved custom profiles only.</source>
@@ -3429,6 +3445,10 @@ Deseja excluí-lo mesmo assim?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Vozes em destaque</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Voz</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

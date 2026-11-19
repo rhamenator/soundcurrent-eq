@@ -2071,6 +2071,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Grilă de note</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Se redă acum: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Formatul numerelor și datelor</translation>
     </message>
@@ -2842,6 +2846,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Afișați controalele avansate</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Afișează acordurile</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Arată data modificării</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2852,8 +2860,16 @@ Doriți să îl ștergeți totuși?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Show now playing</source>
+      <translation>Afișează ce se redă</translation>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Afișați marcajele de vârf pe nivelurile de frecvență</translation>
+    </message>
+    <message>
+      <source>Show quiet notes</source>
+      <translation>Afișează notele slabe</translation>
     </message>
     <message>
       <source>Show saved custom profiles only.</source>
@@ -3429,6 +3445,10 @@ Doriți să îl ștergeți totuși?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Accent pe voce</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Voce</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

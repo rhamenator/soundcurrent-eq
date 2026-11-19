@@ -2071,6 +2071,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Hangrács</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Most szól: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Szám- és dátumformátum</translation>
     </message>
@@ -2842,6 +2846,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Speciális vezérlők megjelenítése</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Akkordok megjelenítése</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Módosítás dátumának megjelenítése</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2852,8 +2860,16 @@ Mindenképp törölni szeretné?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Show now playing</source>
+      <translation>A szóló zene megjelenítése</translation>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Csúcsjelölők megjelenítése a frekvenciaszinteken</translation>
+    </message>
+    <message>
+      <source>Show quiet notes</source>
+      <translation>Halk hangok megjelenítése</translation>
     </message>
     <message>
       <source>Show saved custom profiles only.</source>
@@ -3429,6 +3445,10 @@ Mindenképp törölni szeretné?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Énekhang kiemelése</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Hang</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

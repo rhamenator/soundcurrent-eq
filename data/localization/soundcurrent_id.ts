@@ -2071,6 +2071,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Kisi nada</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Sedang diputar: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Format angka dan tanggal</translation>
     </message>
@@ -2842,6 +2846,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Tampilkan kontrol lanjutan</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Tampilkan kord</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Tampilkan tanggal diubah</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2852,8 +2860,16 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Show now playing</source>
+      <translation>Tampilkan yang sedang diputar</translation>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Tampilkan penanda puncak pada level frekuensi</translation>
+    </message>
+    <message>
+      <source>Show quiet notes</source>
+      <translation>Tampilkan nada pelan</translation>
     </message>
     <message>
       <source>Show saved custom profiles only.</source>
@@ -3429,6 +3445,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Fokus vokal</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Suara</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

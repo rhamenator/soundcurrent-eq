@@ -6,6 +6,7 @@
 #include <QLocale>
 #include <QVector>
 #include <array>
+#include <deque>
 #include <algorithm>
 #include <functional>
 #include <memory>
@@ -29,8 +30,14 @@ QString formatFrequency(double hz, const QLocale &locale=QLocale());
 std::vector<double> spectrogramColumn(const std::vector<double> &bins, const Settings &, int rows);
 struct Pitch { double hz=0, cents=0, confidence=0; int midi=-1; };
 // Chord estimated from the pitch-class energy of spectral peaks. quality indexes chordQualitySuffix().
-struct Chord { int root=-1, quality=-1; double confidence=0; };
+struct Chord { int root=-1, quality=-1; double confidence=0; int bass=-1; };   // bass: pitch class of the lowest strong note, -1 if unknown
 const char *chordQualitySuffix(int quality);
+// What the Tuner can say: a note, a chord, sound without a clear pitch (music, noise), or nothing.
+enum class TunerState { Silent, Note, Chord, Unclear };
+// Notes heard in one analysis frame, for the scrolling note display. level is 0..1.
+// side: 0 = centre (similar level in both channels, usually the lead), -1 = mostly left, 1 = mostly right (backing).
+struct NoteEvent { int midi=0; float level=0; int side=0; };
+struct NoteFrame { double time=0; std::vector<NoteEvent> notes; };
 class Engine {
 public:
     explicit Engine(Settings settings={});
@@ -51,8 +58,19 @@ public:
     Pitch pitch;
     Chord chord;
     std::array<double,12> chroma{};
+    std::array<double,12> chromaSlow{};   // ~1.6 s memory, so a chord played as an arpeggio can still be named
+    TunerState tunerState=TunerState::Silent;
+    double noteRangeDb=22;   // notes weaker than the strongest by more than this are ignored (30 with "Show quiet notes")
+    bool held=false;   // the note or chord shown is the last reading, kept briefly after it disappeared
+    std::deque<NoteFrame> noteHistory;   // newest at the back; about a minute is kept
+    double noteClock=0;
 private:
     void analyzeChord();
+    void updateTunerState();
+    void collectNotes();
+    Pitch heldPitch_;Chord heldChord_;double holdSeconds_=0;
+    std::array<double,12> bassChroma_{};   // pitch class of the lowest strong note, smoothed (~0.6 s)
+    std::vector<int> previousNotes_;   // notes seen in the previous frame; a note must appear in two frames in a row to be shown
     std::unique_ptr<gram::FftPlan> plan_;
     std::array<std::array<double,65>,256> kernel_{};
     bool kernelReady_=false;

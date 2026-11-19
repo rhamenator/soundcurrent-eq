@@ -2071,6 +2071,10 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Notová mriežka</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Teraz hrá: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Formát čísel a dátumu</translation>
     </message>
@@ -2842,6 +2846,10 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Zobraziť pokročilé ovládanie</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Zobraziť akordy</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Zobraziť dátum zmeny</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2852,8 +2860,16 @@ Chcete ho aj tak zmazať?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Show now playing</source>
+      <translation>Zobraziť, čo hrá</translation>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Zobraziť značky špičiek frekvenčných úrovní</translation>
+    </message>
+    <message>
+      <source>Show quiet notes</source>
+      <translation>Zobraziť tiché tóny</translation>
     </message>
     <message>
       <source>Show saved custom profiles only.</source>
@@ -3429,6 +3445,10 @@ Chcete ho aj tak zmazať?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Zameranie na spev</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Hlas</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

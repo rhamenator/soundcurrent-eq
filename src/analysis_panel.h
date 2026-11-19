@@ -42,6 +42,8 @@ private:
     QComboBox *view_,*source_;
     QCheckBox *freeze_;
     QLabel *readout_,*help_;
+    QLabel *nowPlaying_=nullptr;QTimer *nowPlayingTimer_=nullptr;bool showNowPlaying_=false;
+    void updateNowPlaying();
     QPushButton *reference_,*profile_;
     QString referenceSource_;
     bool sourceReady_=true,captureFailed_=false,suspended_=false;

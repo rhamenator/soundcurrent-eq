@@ -2071,6 +2071,10 @@ Voulez-vous quand même le supprimer ?</translation>
       <translation>Grille des notes</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>En cours de lecture : %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Format des nombres et des dates</translation>
     </message>
@@ -2842,6 +2846,10 @@ Voulez-vous quand même le supprimer ?</translation>
       <translation>Afficher les réglages avancés</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Afficher les accords</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Afficher la date de modification</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2852,8 +2860,16 @@ Voulez-vous quand même le supprimer ?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Show now playing</source>
+      <translation>Afficher la lecture en cours</translation>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Afficher les repères de crête sur les niveaux de fréquence</translation>
+    </message>
+    <message>
+      <source>Show quiet notes</source>
+      <translation>Afficher les notes faibles</translation>
     </message>
     <message>
       <source>Show saved custom profiles only.</source>
@@ -3429,6 +3445,10 @@ Voulez-vous quand même le supprimer ?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Mise en avant de la voix</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Voix</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

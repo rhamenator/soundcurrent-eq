@@ -1,3 +1,5 @@
+#include "now_playing.h"
+#include <QScrollBar>
 #include "microphone_access.h"
 #include "responsive_ui.h"
 // SPDX-License-Identifier: GPL-3.0-only
@@ -53,10 +55,28 @@ public:
     explicit ScopeCanvas(QWidget *parent):QWidget(parent),data(std::make_unique<Engine>()) {
         setObjectName("analysisCanvas");setMinimumSize(220,230);setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);setMouseTracking(true);
         clearImage();
+        rollBar=new QScrollBar(Qt::Vertical,this);rollBar->setObjectName("analysisNoteScroll");rollBar->setAccessibleName(SC_TR("Tuner"));rollBar->hide();
+        connect(rollBar,&QScrollBar::valueChanged,this,[this](int value){rollLowManual=std::clamp(85-rollSpan-value,24,85-rollSpan);update();});
     }
     std::unique_ptr<Engine> data;
     View mode=View::Waterfall;
     bool frozen=false;
+    bool showChords=true;
+    // Scrolling note display window: low note (C-aligned), span in semitones (12..48), manual low note or -1 for automatic follow.
+    int rollSpan=24,rollLowAuto=48,rollLowManual=-1;
+    int rollLowNow() const {return rollLowManual>=0?rollLowManual:rollLowAuto;}
+    // The Tuner uses the whole canvas (it has no axes): note display, then chord, note and gauge.
+    QRectF tunerArea() const {return QRectF(rect()).adjusted(6,2,-6,-2);}
+    QRectF tunerRoll() const {const auto a=tunerArea();const double keys=34,gutter=44,bar=18;return QRectF(a.left()+keys,a.top()+2,std::max(40.,a.width()-keys-gutter-bar-4),std::clamp(a.height()-104,64.,a.height()*.85));}
+    QScrollBar *rollBar=nullptr;
+    // Positions the scroll bar beside the note display and mirrors the window position (top = highest notes).
+    void syncRollBar(){
+        if(!rollBar)return;const bool show=mode==View::Tuner;rollBar->setVisible(show);if(!show)return;
+        const auto r=tunerRoll(),a=tunerArea();rollBar->setGeometry(int(a.right()-18),int(r.top()),18,int(r.height()));
+        const QSignalBlocker block(rollBar);const int range=std::max(0,61-rollSpan);rollBar->setRange(0,range);rollBar->setPageStep(rollSpan);rollBar->setSingleStep(3);
+        rollBar->setValue(std::clamp(85-rollSpan-rollLowNow(),0,range));
+    }
+    void resizeEvent(QResizeEvent *event) override {QWidget::resizeEvent(event);syncRollBar();}
     std::function<void(bool)> onVisibility;
     std::function<void(const Settings &)> onZoom;std::function<void(bool)> onScroll;void resumeLive(){scrollBack_=0;setProperty("scrollBack",0);update();}std::function<void()> onFrame;
     double displayCeiling=0;
@@ -221,6 +241,12 @@ protected:
         s.low=std::round(low*10)/10;s.high=std::round(high*10)/10;
     }
     void wheelEvent(QWheelEvent *event) override {
+        if(mode==View::Tuner){if(!tunerArea().contains(event->position())){event->ignore();return;}   // wheel scrolls the note display; Ctrl+wheel zooms its octave range
+            const int steps=event->angleDelta().y()>0?1:event->angleDelta().y()<0?-1:0;if(!steps){event->ignore();return;}
+            if(event->modifiers()&Qt::ControlModifier){const int low=rollLowNow();rollSpan=std::clamp(rollSpan-12*steps,12,48);rollLowManual=std::clamp(low,24,85-rollSpan);}
+            else rollLowManual=std::clamp(rollLowNow()+3*steps,24,85-rollSpan);
+            syncRollBar();update();event->accept();return;
+        }
         const auto plot=plotRect();if(!plot.contains(event->position()) || !onZoom){event->ignore();return;}
         if((mode==View::Waterfall || mode==View::Waveform) && (event->angleDelta().x()!=0 || (event->modifiers()&Qt::ShiftModifier))){
             const int delta=event->angleDelta().x()!=0?event->angleDelta().x():event->angleDelta().y();
@@ -244,6 +270,7 @@ protected:
     }
     void mouseReleaseEvent(QMouseEvent *event) override {if(dragging_ || timeDragging_){dragging_=false;timeDragging_=false;unsetCursor();}QWidget::mouseReleaseEvent(event);}
     void mouseDoubleClickEvent(QMouseEvent *event) override {
+        if(mode==View::Tuner){if(tunerArea().contains(event->position())){rollLowManual=-1;rollSpan=24;syncRollBar();update();}return;}   // back to following the music
         if(!onZoom || !plotRect().contains(event->position())){QWidget::mouseDoubleClickEvent(event);return;}
         if(scrollBack_>0){resumeLive();if(onScroll)onScroll(false);return;}
         auto s=data->settings;
@@ -373,23 +400,60 @@ protected:
             p.setPen(QPen(QColor("#55d7c3"),1));QPainterPath path;for(std::size_t i=0;i<data->left.size();++i){QPointF point(c.x()+(data->left[i]-data->right[i])*.5*radius/waveLimit_,c.y()-(data->left[i]+data->right[i])*.5*radius/waveLimit_);if(i==0)path.moveTo(point);else path.lineTo(point);}p.drawPath(path);
             p.drawText(plot.adjusted(0,0,0,-4),Qt::AlignBottom|Qt::AlignHCenter,QString::fromUtf8("ρ ")+QLocale().toString(data->correlation,'f',2));
         } else if(mode==View::Tuner){
-            // Top: 12 pitch-class bars. Middle: the chord when one is detected, otherwise the single note. Bottom: gauge, frequency, tuning.
-            const auto pitch=data->pitch;const auto chord=data->chord;const bool isChord=chord.root>=0;
-            static const char *names[]={"C","C♯","D","D♯","E","F","F♯","G","G♯","A","A♯","B"};
-            const double peak=std::max(1e-9,*std::max_element(data->chroma.begin(),data->chroma.end())),barWidth=std::min(28.,plot.width()/16.),left=plot.center().x()-6*barWidth;
-            for(int k=0;k<12;++k){const double h=36*data->chroma[std::size_t(k)]/peak;p.fillRect(QRectF(left+k*barWidth+2,plot.top()+46-h,barWidth-4,h),QColor(isChord?"#55d7c3":"#4b5d73"));p.setPen(QColor("#9fb0c3"));p.drawText(QRectF(left+k*barWidth,plot.top()+48,barWidth,16),Qt::AlignCenter,QString::fromUtf8(names[k]));}
-            auto font=p.font();font.setPointSizeF(30);p.setFont(font);
-            if(isChord){p.setPen(QColor("#e6b450"));p.drawText(plot,Qt::AlignCenter,QString::fromUtf8(names[chord.root])+QString::fromLatin1(chordQualitySuffix(chord.quality)));}
-            else{p.setPen(QColor("#55d7c3"));p.drawText(plot,Qt::AlignCenter,noteName(pitch.midi));}
-            font.setPointSizeF(11);p.setFont(font);p.setPen(QColor("#55d7c3"));
-            if(!isChord){
-                p.drawText(plot.adjusted(0,0,0,-10),Qt::AlignBottom|Qt::AlignHCenter,formatFrequency(pitch.hz)+" / "+QLocale().toString(pitch.cents,'f',1)+" ¢");
-                const double gaugeY=plot.bottom()-62,x=plot.center().x()+std::clamp(pitch.cents,-50.,50.)/50.*plot.width()*.4;
-                p.setPen(QColor("#30445b"));p.drawLine(QPointF(plot.center().x()-plot.width()*.4,gaugeY),QPointF(plot.center().x()+plot.width()*.4,gaugeY));
-                p.setPen(QPen(QColor("#55d7c3"),2));p.drawLine(QPointF(x,gaugeY-14),QPointF(x,gaugeY+14));p.setPen(QColor("#55d7c3"));
+            // Scrolling note display on top (time runs left to right, newest at the right), then the chord (optional),
+            // the detected note and the tuning gauge. Uses the whole canvas.
+            p.setClipping(false);
+            const auto area=tunerArea();
+            const auto pitch=data->pitch;const auto chord=data->chord;
+            const bool hasPitch=pitch.midi>=0 && pitch.hz>0;   // the loudest note, shown even while a chord is named
+            const double keysWidth=34,gutterWidth=44;
+            const QRectF roll=tunerRoll();
+            const int rows=rollSpan;
+            if(rollLowManual<0){   // follow the music: keep the window while the recent notes sit inside it, else re-centre (C-aligned)
+                std::array<double,128> weight{};double total=0;for(const auto &frame:data->noteHistory)if(data->noteClock-frame.time<3)for(const auto &n:frame.notes){weight[std::size_t(n.midi)]+=n.level;total+=n.level;}
+                const int current=std::clamp(rollLowAuto,24,85-rows);rollLowAuto=current;
+                if(total>0){   // level-weighted median, so stray blips cannot drag the window
+                    double run=0;int median=current+rows/2;for(int m=0;m<128;++m){run+=weight[std::size_t(m)];if(run>=total/2){median=m;break;}}
+                    if(median<current+2 || median>=current+rows-2)rollLowAuto=std::clamp((median-rows/2)/12*12,24,85-rows);
+                }
             }
-            static const QStringList tunings={"", "E2 A2 D3 G3 B3 E4","E1 A1 D2 G2","G4 C4 E4 A4","G3 D4 A4 E5","C3 G3 D4 A4","C2 G2 D3 A3","G3 D4 A4 E5"};
-            p.drawText(plot.adjusted(0,0,0,-36),Qt::AlignBottom|Qt::AlignHCenter,tunings[s.instrument]);
+            const int lowMidi=std::clamp(rollLowNow(),24,85-rows);const double rowHeight=roll.height()/rows;
+            if(rollBar)QMetaObject::invokeMethod(rollBar,[bar=rollBar,rows,lowMidi]{if(!bar->isVisible())return;const QSignalBlocker block(bar);const int range=std::max(0,61-rows);bar->setRange(0,range);bar->setPageStep(rows);bar->setValue(std::clamp(85-rows-lowMidi,0,range));},Qt::QueuedConnection);
+            static const bool black[12]={false,true,false,true,false,false,true,false,true,false,true,false};
+            p.fillRect(roll,QColor("#0f1722"));
+            for(int m=lowMidi;m<lowMidi+rows;++m){const double y=roll.bottom()-(m-lowMidi+1)*rowHeight;if(black[m%12])p.fillRect(QRectF(roll.left(),y,roll.width(),rowHeight),QColor("#16202d"));
+                if(m%12==0){p.setPen(QColor("#30445b"));p.drawLine(QPointF(roll.left(),y+rowHeight),QPointF(roll.right(),y+rowHeight));}
+                if(m%12==0 || rowHeight>=11){p.setPen(QColor(m%12==0?"#cbd5e1":"#9fb0c3"));p.drawText(QRectF(area.left(),y+rowHeight/2-8,keysWidth-4,16),Qt::AlignRight|Qt::AlignVCenter,noteName(m));}}
+            const double seconds=std::clamp(s.history,5.,10.);const double now=data->noteClock;
+            double previous=-1;
+            for(const auto &frame:data->noteHistory){
+                const double age=now-frame.time;if(age>seconds){previous=frame.time;continue;}
+                const double x=roll.right()-age/seconds*roll.width();const double width=std::max(2.,((previous<0?.05:frame.time-previous)/seconds)*roll.width()+1);previous=frame.time;
+                for(const auto &n:frame.notes){if(n.midi<lowMidi || n.midi>=lowMidi+rows)continue;QColor color(n.side==0?"#55d7c3":n.side<0?"#72a7ff":"#e6b450");color.setAlpha(int((90+165*n.level)*(n.side==0?1.:.8)));   // centre teal (lead), left blue, right amber (backing), as in the spectrum view
+const double y=roll.bottom()-(n.midi-lowMidi+1)*rowHeight;p.fillRect(QRectF(x-width,y+1,width,std::max(2.,rowHeight-2)),color);}
+            }
+            p.setPen(QColor("#30445b"));p.drawRect(roll);
+            if(!data->noteHistory.empty()){   // names of the notes sounding now, beside the newest column
+                for(const auto &n:data->noteHistory.back().notes){if(n.midi<lowMidi || n.midi>=lowMidi+rows)continue;p.setPen(QColor(n.side==0?"#e5e7eb":n.side<0?"#72a7ff":"#e6b450"));const double y=roll.bottom()-(n.midi-lowMidi+1)*rowHeight;p.drawText(QRectF(roll.right()+4,y+rowHeight/2-8,gutterWidth-4,16),Qt::AlignLeft|Qt::AlignVCenter,noteName(n.midi));}
+            }
+            auto font=p.font();font.setPointSizeF(15);p.setFont(font);
+            const QRectF chordRow(area.left(),roll.bottom()+2,area.width(),24);
+            if(showChords && chord.root>=0){static const char *names[]={"C","C♯","D","D♯","E","F","F♯","G","G♯","A","A♯","B"};p.setPen(QColor("#e6b450"));p.drawText(chordRow,Qt::AlignCenter,QString::fromUtf8(names[chord.root])+QString::fromUtf8(chordQualitySuffix(chord.quality))+(chord.bass>=0 && chord.bass!=chord.root?QString::fromUtf8("/")+QString::fromUtf8(names[chord.bass]):QString()));}
+            const QRectF noteArea(area.left(),chordRow.bottom(),area.width(),std::max(24.,area.bottom()-chordRow.bottom()-56));
+            font.setPointSizeF(18);p.setFont(font);
+            const QColor noteColor(data->held?"#6b7f95":"#55d7c3");   // dimmed while the last reading is being held
+            if(hasPitch){p.setPen(noteColor);p.drawText(noteArea,Qt::AlignCenter,noteName(pitch.midi));}
+            else{p.setPen(QColor("#6b7f95"));p.drawText(noteArea,Qt::AlignCenter,QString::fromUtf8("—"));}
+            font.setPointSizeF(11);p.setFont(font);p.setPen(noteColor);
+            const double gaugeY=area.bottom()-42;   // the gauge line is always drawn so the layout never jumps
+            p.setPen(QColor("#30445b"));p.drawLine(QPointF(area.center().x()-area.width()*.4,gaugeY),QPointF(area.center().x()+area.width()*.4,gaugeY));p.drawLine(QPointF(area.center().x(),gaugeY-8),QPointF(area.center().x(),gaugeY+8));p.setPen(noteColor);
+            if(hasPitch){
+                p.drawText(area.adjusted(0,0,0,-2),Qt::AlignBottom|Qt::AlignHCenter,formatFrequency(pitch.hz)+" / "+QLocale().toString(pitch.cents,'f',1)+" ¢");
+                const double x=area.center().x()+std::clamp(pitch.cents,-50.,50.)/50.*area.width()*.4;
+                p.setPen(QPen(noteColor,2));p.drawLine(QPointF(x,gaugeY-14),QPointF(x,gaugeY+14));p.setPen(noteColor);
+            }
+            static const QStringList tunings={"", "E2 A2 D3 G3 B3 E4","E1 A1 D2 G2","G4 C4 E4 A4","G3 D4 A4 E5","C3 G3 D4 A4","C2 G2 D3 A3","G3 D4 A4 E5",""};
+            p.setPen(QColor("#6b7f95"));p.drawText(area.adjusted(0,0,0,-22),Qt::AlignBottom|Qt::AlignHCenter,tunings[s.instrument]);
         } else if(mode!=View::Waterfall){
             auto trace=[&](const std::vector<double> &values,const QColor &color,Qt::PenStyle style=Qt::SolidLine){if(values.empty())return;QPainterPath path;bool connected=false;
                 for(int x=0;x<=int(plot.width());++x){const double hz=frequency(double(x)/plot.width());const double bin=hz*s.fft/s.rate;const int i=std::clamp(int(bin),0,int(values.size())-1),j=std::min(i+1,int(values.size())-1);const double db=values[i]+(values[j]-values[i])*(bin-i);
@@ -473,8 +537,12 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     for(auto *combo:{view_,source_}){combo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);combo->setMinimumContentsLength(8);combo->setMinimumWidth(0);combo->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);}
     freeze_=new QCheckBox(SC_TR("Freeze display"));freeze_->setObjectName("analysisFreeze");settingsButton_=new QPushButton(SC_TR("Settings"));settingsButton_->setObjectName("analysisSettings");settingsButton_->setCheckable(true);auto *settings=settingsButton_;
     top->addWidget(view_,1);top->addWidget(source_,1);top->addWidget(freeze_);top->addWidget(settings);root->addWidget(top);
+    showNowPlaying_=QSettings().value("analysis/nowPlaying",false).toBool();   // before the settings controls are built, so the checkbox shows the saved state
     buildSettings(root);
-    canvas_=new ScopeCanvas(this);canvas_->setObjectName("analysisCanvas");root->addWidget(canvas_,1);readout_=new QLabel;readout_->setTextFormat(Qt::PlainText);readout_->setWordWrap(true);readout_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);readout_->setFixedHeight(2*fontMetrics().lineSpacing());root->addWidget(readout_);
+    nowPlaying_=new QLabel;nowPlaying_->setObjectName("analysisNowPlaying");nowPlaying_->setTextFormat(Qt::PlainText);nowPlaying_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);nowPlaying_->setVisible(false);root->addWidget(nowPlaying_);
+    nowPlayingTimer_=new QTimer(this);nowPlayingTimer_->setInterval(2000);connect(nowPlayingTimer_,&QTimer::timeout,this,&Panel::updateNowPlaying);
+    showNowPlaying_=QSettings().value("analysis/nowPlaying",false).toBool();
+    canvas_=new ScopeCanvas(this);canvas_->setObjectName("analysisCanvas");canvas_->showChords=QSettings().value("analysis/showChords",true).toBool();canvas_->data->noteRangeDb=QSettings().value("analysis/quietNotes",false).toBool()?30:22;root->addWidget(canvas_,1);readout_=new QLabel;readout_->setTextFormat(Qt::PlainText);readout_->setWordWrap(true);readout_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);readout_->setFixedHeight(2*fontMetrics().lineSpacing());root->addWidget(readout_);
     help_=new QLabel(SC_TR("Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement."));help_->setWordWrap(true);root->addWidget(help_);
     auto *actions=new soundcurrent::ui::ResponsiveRow;auto *resetButton=new QPushButton(SC_TR("Reset"));auto *saveImageButton=new QPushButton(SC_TR("Save image"));saveImageButton->setObjectName("analysisSaveImage");reference_=new QPushButton(SC_TR("Capture reference"));profile_=new QPushButton(SC_TR("Create microphone profile"));
     resetButton->setObjectName("analysisReset");reference_->setObjectName("analysisReference");profile_->setObjectName("analysisCreateProfile");
@@ -482,7 +550,7 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     const auto saved=Settings::parse(QJsonDocument::fromJson(QSettings().value("analysis/settings").toByteArray()).object());if(saved)canvas_->data->configure(*saved);
     // The ~60 Hz heartbeat only runs while the analysis view is actually showing (no idle wake-ups otherwise).
     auto *displayHeartbeat=new QTimer(this);displayHeartbeat->setInterval(16);displayHeartbeat->setTimerType(Qt::PreciseTimer);connect(displayHeartbeat,&QTimer::timeout,canvas_,[this]{canvas_->advanceIdle();});
-    canvas_->onVisibility=[this,displayHeartbeat](bool visible){if(visible){captureFailed_=false;refreshSources();displayHeartbeat->start();}else displayHeartbeat->stop();if(onActivity)onActivity(source(),visible && active());};
+    canvas_->onVisibility=[this,displayHeartbeat](bool visible){if(visible){captureFailed_=false;refreshSources();displayHeartbeat->start();}else displayHeartbeat->stop();if(visible && showNowPlaying_){updateNowPlaying();nowPlayingTimer_->start();}else nowPlayingTimer_->stop();if(onActivity)onActivity(source(),visible && active());};
     canvas_->onFrame=[this]{availability();};
     canvas_->onZoom=[this](const Settings &s){if(applySettings(s))feedback_->clear();};
     if(canvas_->isVisible())displayHeartbeat->start();
@@ -507,7 +575,7 @@ View Panel::view() const{return canvas_->mode;}
 void Panel::setView(View mode){
     const int index=int(mode);if(index<0 || index>=view_->count())return;
     if(view_->currentIndex()!=index){view_->setCurrentIndex(index);return;}
-    canvas_->mode=mode;canvas_->data->settings.view=index;
+    canvas_->mode=mode;canvas_->data->settings.view=index;canvas_->syncRollBar();
     QSettings settings;settings.setValue("analysis/view",index);
     settings.setValue("analysis/settings",QJsonDocument(canvas_->data->settings.json()).toJson(QJsonDocument::Compact));
 }
@@ -577,6 +645,11 @@ void Panel::availability(){
     readout_->setText(SC_TR("Frames: %1 · FFT: %2 ms · Resolution: %3 · Window: %4 ms").arg(QLocale().toString(e.waveFrames),QLocale().toString(e.fftMs,'f',2),formatFrequency(double(e.settings.rate)/e.settings.fft),QLocale().toString(e.settings.fft*1000./e.settings.rate,'f',1)));
 }
 void Panel::suspendForDialog(bool suspended){suspended_=suspended;canvas_->resetClock();if(onActivity)onActivity(source(),active());}
+void Panel::updateNowPlaying(){
+    // Off by default: titles are personal, and the Analysis tab may be screenshotted or recorded.
+    const QString text=showNowPlaying_?soundcurrent::nowPlayingText():QString();
+    nowPlaying_->setText(text.isEmpty()?QString():SC_TR("Now playing: %1").arg(text));nowPlaying_->setToolTip(text);nowPlaying_->setVisible(!text.isEmpty());
+}
 void Panel::toggleSettings(){settingsButton_->setChecked(!settingsButton_->isChecked());}
 bool Panel::settingsVisible() const{return settingsPanel_ && settingsPanel_->isVisibleTo(const_cast<Panel *>(this));}
 // Everyday controls sit in a row on the tab; the rest live in a collapsible, scrollable panel. Every control applies live
@@ -588,6 +661,13 @@ void Panel::buildSettings(QVBoxLayout *root){
     auto *channel=quickCombo(SC_TR("Channel"),"analysisChannel",{SC_TR("Mix"),SC_TR("Left"),SC_TR("Right")},current.channel);
     auto *palette=quickCombo(SC_TR("Palette"),"analysisPalette",{SC_TR("Spectrum"),SC_TR("Gray"),SC_TR("Blue"),SC_TR("Green"),SC_TR("Amber"),SC_TR("Ice")},current.palette);
     auto *scale=quickCombo(SC_TR("Frequency scale"),"analysisScale",{SC_TR("Linear"),SC_TR("Logarithmic"),SC_TR("Octave")},current.scale);
+    // The Tuner view also offers the Instrument choice here (the same setting as Instrument in the Settings panel).
+    const QStringList instrumentNames={SC_TR("Chromatic"),SC_TR("Guitar"),SC_TR("Bass guitar"),SC_TR("Ukulele"),SC_TR("Violin"),SC_TR("Viola"),SC_TR("Cello"),SC_TR("Mandolin"),SC_TR("Voice")};
+    auto *instrumentQuick=quickCombo(SC_TR("Instrument"),"analysisInstrumentQuick",instrumentNames,current.instrument);
+    auto *chordsQuick=new QCheckBox(SC_TR("Show chords"));chordsQuick->setObjectName("analysisShowChords");chordsQuick->setChecked(QSettings().value("analysis/showChords",true).toBool());quick->addWidget(chordsQuick);
+    auto *quietQuick=new QCheckBox(SC_TR("Show quiet notes"));quietQuick->setObjectName("analysisShowQuietNotes");quietQuick->setChecked(QSettings().value("analysis/quietNotes",false).toBool());quick->addWidget(quietQuick);
+    connect(quietQuick,&QCheckBox::toggled,this,[this](bool on){canvas_->data->noteRangeDb=on?30:22;QSettings().setValue("analysis/quietNotes",on);canvas_->update();});
+    connect(chordsQuick,&QCheckBox::toggled,this,[this](bool on){canvas_->showChords=on;QSettings().setValue("analysis/showChords",on);canvas_->update();});
     auto *automatic=new QCheckBox(SC_TR("Automatic range"));automatic->setObjectName("analysisAutoRange");automatic->setChecked(current.autoRange);quick->addWidget(automatic);
     root->addWidget(quick);
 
@@ -598,7 +678,9 @@ void Panel::buildSettings(QVBoxLayout *root){
     auto *rate=combo(SC_TR("Analysis sample rate"),"analysisRate",rateText,rates.indexOf(current.rate));auto *fft=combo(SC_TR("FFT size"),"analysisFft",fftText,sizes.indexOf(current.fft));
     auto *layout=combo(SC_TR("Channels"),"analysisLayout",{SC_TR("Automatic"),SC_TR("Mono"),SC_TR("Stereo")},current.layout);
     auto *amplitude=combo(SC_TR("Amplitude"),"analysisAmplitude",{"dBFS",SC_TR("Linear")},current.amplitude);
-    auto *instrument=combo(SC_TR("Instrument"),"analysisInstrument",{SC_TR("Chromatic"),SC_TR("Guitar"),SC_TR("Bass guitar"),SC_TR("Ukulele"),SC_TR("Violin"),SC_TR("Viola"),SC_TR("Cello"),SC_TR("Mandolin")},current.instrument);
+    auto *instrument=combo(SC_TR("Instrument"),"analysisInstrument",instrumentNames,current.instrument);
+    connect(instrumentQuick,&QComboBox::currentIndexChanged,instrument,&QComboBox::setCurrentIndex);   // the Settings combo applies the change
+    connect(instrument,&QComboBox::currentIndexChanged,instrumentQuick,[instrumentQuick](int index){QSignalBlocker block(instrumentQuick);instrumentQuick->setCurrentIndex(index);});
     auto spin=[&](const QString &label,const QString &name,double value,double min,double max,const QString &unit){auto *w=new soundcurrent::AcceleratingDoubleSpinBox;w->setObjectName(name);w->setAccessibleName(label);w->setRange(min,max);w->setDecimals(1);w->setValue(value);w->setSuffix(unit);form->addRow(label,w);return w;};
     auto *low=spin(SC_TR("Minimum frequency"),"analysisLow",current.low,0,23999," Hz");auto *high=spin(SC_TR("Maximum frequency"),"analysisHigh",current.high,0,24000," Hz");
     high->setSpecialValueText(SC_TR("Automatic"));
@@ -606,6 +688,8 @@ void Panel::buildSettings(QVBoxLayout *root){
     auto *sensitivity=spin(SC_TR("Display sensitivity"),"analysisSensitivity",current.sensitivity,24,180," dB");auto *history=spin(SC_TR("History length"),"analysisHistory",current.history,5,60," s");auto *speed=spin(SC_TR("Scroll speed"),"analysisSpeed",current.speed,.5,4," ×");
     auto check=[&](const QString &label,const QString &name,bool selected){auto *c=new QCheckBox(label);c->setObjectName(name);c->setChecked(selected);form->addRow(c);return c;};
     auto *grid=check(SC_TR("Grid"),"analysisGrid",current.grid);auto *peaks=check(SC_TR("Peak hold"),"analysisPeaks",current.peaks);auto *average=check(SC_TR("Average"),"analysisAverage",current.average);auto *notes=check(SC_TR("Note grid"),"analysisNotes",current.notes);auto *transients=check(SC_TR("Transient markers"),"analysisTransients",current.transients);auto *music=check(SC_TR("Music mode"),"analysisMusic",current.music);
+    auto *nowPlayingCheck=check(SC_TR("Show now playing"),"analysisShowNowPlaying",showNowPlaying_);
+    connect(nowPlayingCheck,&QCheckBox::toggled,this,[this](bool on){showNowPlaying_=on;QSettings().setValue("analysis/nowPlaying",on);if(on && canvas_->isVisible()){updateNowPlaying();nowPlayingTimer_->start();}else{nowPlayingTimer_->stop();updateNowPlaying();}});
     ceiling->setEnabled(!current.autoRange);connect(automatic,&QCheckBox::toggled,ceiling,&QWidget::setDisabled);
     palette->setVisible(current.view==int(View::Waterfall));
     speed->setSingleStep(.5);
@@ -615,7 +699,7 @@ void Panel::buildSettings(QVBoxLayout *root){
     settingsPanel_->setMaximumHeight(240);settingsPanel_->setVisible(false);root->addWidget(settingsPanel_);
 
     readControls_=[=]{Settings s;s.view=view_->currentIndex();s.rate=rates[std::max(0,rate->currentIndex())];s.fft=sizes[std::max(0,fft->currentIndex())];s.palette=palette->currentIndex();s.scale=scale->currentIndex();s.layout=layout->currentIndex();s.channel=channel->currentIndex();s.amplitude=amplitude->currentIndex();s.instrument=instrument->currentIndex();s.low=low->value();s.high=high->value();s.ceiling=ceiling->value();s.sensitivity=sensitivity->value();s.history=history->value();s.speed=speed->value();s.grid=grid->isChecked();s.peaks=peaks->isChecked();s.average=average->isChecked();s.autoRange=automatic->isChecked();s.notes=notes->isChecked();s.transients=transients->isChecked();s.music=music->isChecked();return s;};
-    writeControls_=[=](const Settings &s){loading_=true;rate->setCurrentIndex(rates.indexOf(s.rate));fft->setCurrentIndex(sizes.indexOf(s.fft));palette->setCurrentIndex(s.palette);scale->setCurrentIndex(s.scale);layout->setCurrentIndex(s.layout);channel->setCurrentIndex(s.channel);amplitude->setCurrentIndex(s.amplitude);instrument->setCurrentIndex(s.instrument);low->setValue(s.low);high->setValue(s.high);ceiling->setValue(s.ceiling);sensitivity->setValue(s.sensitivity);history->setValue(s.history);speed->setValue(s.speed);grid->setChecked(s.grid);peaks->setChecked(s.peaks);average->setChecked(s.average);automatic->setChecked(s.autoRange);notes->setChecked(s.notes);transients->setChecked(s.transients);music->setChecked(s.music);palette->setVisible(s.view==int(View::Waterfall));loading_=false;};
+    writeControls_=[=](const Settings &s){loading_=true;rate->setCurrentIndex(rates.indexOf(s.rate));fft->setCurrentIndex(sizes.indexOf(s.fft));palette->setCurrentIndex(s.palette);scale->setCurrentIndex(s.scale);layout->setCurrentIndex(s.layout);channel->setCurrentIndex(s.channel);amplitude->setCurrentIndex(s.amplitude);instrument->setCurrentIndex(s.instrument);low->setValue(s.low);high->setValue(s.high);ceiling->setValue(s.ceiling);sensitivity->setValue(s.sensitivity);history->setValue(s.history);speed->setValue(s.speed);grid->setChecked(s.grid);peaks->setChecked(s.peaks);average->setChecked(s.average);automatic->setChecked(s.autoRange);notes->setChecked(s.notes);transients->setChecked(s.transients);music->setChecked(s.music);palette->setVisible(s.view==int(View::Waterfall));instrumentQuick->setVisible(s.view==int(View::Tuner));chordsQuick->setVisible(s.view==int(View::Tuner));quietQuick->setVisible(s.view==int(View::Tuner));loading_=false;};
     commit_=new QTimer(this);commit_->setSingleShot(true);commit_->setInterval(250);
     connect(commit_,&QTimer::timeout,this,[this]{if(loading_)return;const auto s=readControls_();if(applySettings(s))feedback_->clear();else feedback_->setText(SC_TR("Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth."));});
     auto schedule=[this]{if(!loading_)commit_->start();};

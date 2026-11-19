@@ -2071,6 +2071,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Siatka nut</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Odtwarzanie: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Format liczb i dat</translation>
     </message>
@@ -2842,6 +2846,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Pokaż zaawansowane ustawienia</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Pokaż akordy</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Pokaż datę modyfikacji</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2852,8 +2860,16 @@ Czy na pewno chcesz go usunąć?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Show now playing</source>
+      <translation>Pokaż, co jest odtwarzane</translation>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Pokaż znaczniki szczytów na poziomach częstotliwości</translation>
+    </message>
+    <message>
+      <source>Show quiet notes</source>
+      <translation>Pokaż ciche nuty</translation>
     </message>
     <message>
       <source>Show saved custom profiles only.</source>
@@ -3429,6 +3445,10 @@ Czy na pewno chcesz go usunąć?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Wyeksponowany wokal</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Głos</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

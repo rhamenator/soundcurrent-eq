@@ -2071,6 +2071,10 @@ Vill du ta bort den ändå?</translation>
       <translation>Notrutnät</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Spelas nu: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Tal- och datumformat</translation>
     </message>
@@ -2842,6 +2846,10 @@ Vill du ta bort den ändå?</translation>
       <translation>Visa avancerade reglage</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Visa ackord</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Visa ändringsdatum</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2852,8 +2860,16 @@ Vill du ta bort den ändå?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Show now playing</source>
+      <translation>Visa vad som spelas</translation>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Visa toppmarkörer på frekvensnivåerna</translation>
+    </message>
+    <message>
+      <source>Show quiet notes</source>
+      <translation>Visa svaga toner</translation>
     </message>
     <message>
       <source>Show saved custom profiles only.</source>
@@ -3429,6 +3445,10 @@ Vill du ta bort den ändå?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Sångfokus</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Röst</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

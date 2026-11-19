@@ -2071,6 +2071,10 @@ Do you want to delete it anyway?</source>
       <translation>音符网格</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>正在播放：%1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>数字和日期格式</translation>
     </message>
@@ -2842,6 +2846,10 @@ Do you want to delete it anyway?</source>
       <translation>显示高级控制</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>显示和弦</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>显示修改日期</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2852,8 +2860,16 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Show now playing</source>
+      <translation>显示正在播放的内容</translation>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>在频率电平上显示峰值标记</translation>
+    </message>
+    <message>
+      <source>Show quiet notes</source>
+      <translation>显示较弱的音符</translation>
     </message>
     <message>
       <source>Show saved custom profiles only.</source>
@@ -3429,6 +3445,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Vocal Focus</source>
       <translation>人声突出</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>人声</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

@@ -2071,6 +2071,10 @@ Do you want to delete it anyway?</source>
       <translation>شبكة النغمات</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>قيد التشغيل: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>تنسيق الأرقام والتواريخ</translation>
     </message>
@@ -2842,6 +2846,10 @@ Do you want to delete it anyway?</source>
       <translation>إظهار عناصر التحكم المتقدمة</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>إظهار الأوتار</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>إظهار تاريخ التعديل</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2852,8 +2860,16 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Show now playing</source>
+      <translation>إظهار ما يتم تشغيله</translation>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>إظهار علامات القمم على مؤشرات مستويات الترددات</translation>
+    </message>
+    <message>
+      <source>Show quiet notes</source>
+      <translation>إظهار النغمات الهادئة</translation>
     </message>
     <message>
       <source>Show saved custom profiles only.</source>
@@ -3429,6 +3445,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Vocal Focus</source>
       <translation>تركيز على الصوت البشري</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>صوت</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

@@ -2071,6 +2071,10 @@ Do you want to delete it anyway?</source>
       <translation>Нотная сетка</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Сейчас играет: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Формат чисел и даты</translation>
     </message>
@@ -2842,6 +2846,10 @@ Do you want to delete it anyway?</source>
       <translation>Показать расширенное управление</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Показывать аккорды</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Показать дату изменения</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2852,8 +2860,16 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Show now playing</source>
+      <translation>Показывать, что играет</translation>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Показывать метки пиков на частотных уровнях</translation>
+    </message>
+    <message>
+      <source>Show quiet notes</source>
+      <translation>Показывать тихие ноты</translation>
     </message>
     <message>
       <source>Show saved custom profiles only.</source>
@@ -3429,6 +3445,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Vocal Focus</source>
       <translation>Акцент на вокале</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Голос</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

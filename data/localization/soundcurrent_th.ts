@@ -2071,6 +2071,10 @@ Do you want to delete it anyway?</source>
       <translation>ตารางโน้ต</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>กำลังเล่น: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>รูปแบบตัวเลขและวันที่</translation>
     </message>
@@ -2842,6 +2846,10 @@ Do you want to delete it anyway?</source>
       <translation>แสดงตัวควบคุมขั้นสูง</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>แสดงคอร์ด</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>แสดงวันที่แก้ไข</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2852,8 +2860,16 @@ Do you want to delete it anyway?</source>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Show now playing</source>
+      <translation>แสดงสิ่งที่กำลังเล่น</translation>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>แสดงเครื่องหมายพีกบนระดับความถี่</translation>
+    </message>
+    <message>
+      <source>Show quiet notes</source>
+      <translation>แสดงโน้ตเบา</translation>
     </message>
     <message>
       <source>Show saved custom profiles only.</source>
@@ -3429,6 +3445,10 @@ Do you want to delete it anyway?</source>
     <message>
       <source>Vocal Focus</source>
       <translation>เน้นเสียงร้อง</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>เสียงร้อง</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

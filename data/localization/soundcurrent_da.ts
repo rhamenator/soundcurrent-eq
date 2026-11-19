@@ -2071,6 +2071,10 @@ Vil du slette den alligevel?</translation>
       <translation>Nodegitter</translation>
     </message>
     <message>
+      <source>Now playing: %1</source>
+      <translation>Afspiller nu: %1</translation>
+    </message>
+    <message>
       <source>Number and date format</source>
       <translation>Tal- og datoformat</translation>
     </message>
@@ -2842,6 +2846,10 @@ Vil du slette den alligevel?</translation>
       <translation>Vis avancerede kontroller</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Vis akkorder</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Vis ændringsdato</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -2852,8 +2860,16 @@ Vil du slette den alligevel?</translation>
       <extracomment>Qt fallback file chooser caption. Navigation refers to folders/files, never audio playback or signal routing. User filenames and paths must remain unchanged.</extracomment>
     </message>
     <message>
+      <source>Show now playing</source>
+      <translation>Vis hvad der afspilles</translation>
+    </message>
+    <message>
       <source>Show peak markers on frequency levels</source>
       <translation>Vis spidsmarkører på frekvensniveauerne</translation>
+    </message>
+    <message>
+      <source>Show quiet notes</source>
+      <translation>Vis svage toner</translation>
     </message>
     <message>
       <source>Show saved custom profiles only.</source>
@@ -3429,6 +3445,10 @@ Vil du slette den alligevel?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Vokalfokus</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Stemme</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>
