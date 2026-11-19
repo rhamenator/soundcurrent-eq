@@ -186,16 +186,27 @@ static double pcm(const QByteArray &bytes,int frame,int channel) {
     const auto *p=reinterpret_cast<const unsigned char *>(bytes.constData())+frame*4+channel*2;
     return std::int16_t(std::uint16_t(p[0]) | (std::uint16_t(p[1])<<8))/32768.;
 }
+// Playable range (Hz) of the selected instrument. Choosing an instrument also focuses the Tuner on that range so other
+// instruments in a mix are ignored as far as possible. Chromatic (0) keeps the full range.
+static std::pair<double,double> instrumentRange(int instrument){
+    static const std::pair<double,double> ranges[]={{27,2000},{75,1400},{38,400},{240,1200},{190,2700},{125,1500},{62,1000},{190,2700}};
+    return ranges[std::clamp(instrument,0,7)];
+}
 void Engine::analyzePitch(const QByteArray &bytes) {
     // Bounded 4 kHz YIN-like normalized-difference estimator; no work on the audio callback.
     const int count=std::min(1024,int(bytes.size()/4)/12);pitch={};if(count<256)return;
     std::vector<double> x(count);const int start=bytes.size()/4-count*12;double energy=0;
-    for(int i=0;i<count;++i){double value=0;for(int j=0;j<12;++j){int k=start+i*12+j;value+=settings.channel==1?pcm(bytes,k,0):settings.channel==2?pcm(bytes,k,1):.5*(pcm(bytes,k,0)+pcm(bytes,k,1));}x[i]=value/12.;energy+=x[i]*x[i];}
+    for(int i=0;i<count;++i){double value=0;for(int j=0;j<12;++j){int k=start+i*12+j;value+=settings.channel==1?pcm(bytes,k,0):settings.channel==2?pcm(bytes,k,1):.5*(pcm(bytes,k,0)+pcm(bytes,k,1));}x[i]=value/12.;}
+    {const auto [rangeLow,rangeHigh]=instrumentRange(settings.instrument);const int taps=settings.instrument>0?std::clamp(int(4000/(2*rangeHigh)),1,8):1;
+     if(taps>1){std::vector<double> y(count);for(int i=0;i<count;++i){double sum=0;int n=0;for(int k=std::max(0,i-taps+1);k<=i;++k){sum+=x[k];++n;}y[i]=sum/n;}x=y;}(void)rangeLow;}
+    for(int i=0;i<count;++i)energy+=x[i]*x[i];
     if(energy/count<1e-7)return;
     const int maxLag=std::min(146,count/2),minLag=2;std::vector<double> d(maxLag+1);double sum=0;
     for(int lag=1;lag<=maxLag;++lag){double v=0;for(int i=0;i<count-maxLag;++i){const double delta=x[i]-x[i+lag];v+=delta*delta;}sum+=v;d[lag]=sum>1e-20?v*lag/sum:1;}
     int best=0;
-    for(int lag=minLag;lag<maxLag;++lag)if(d[lag]<.15 && d[lag]<=d[lag-1] && d[lag]<d[lag+1]){best=lag;break;}
+    const auto [focusLow,focusHigh]=instrumentRange(settings.instrument);
+    const int searchMin=std::max(minLag,int(std::floor(4000/focusHigh))),searchMax=std::min(maxLag-1,int(std::ceil(4000/focusLow))+1);
+    for(int lag=searchMin;lag<=searchMax;++lag)if(d[lag]<.15 && d[lag]<=d[lag-1] && d[lag]<d[lag+1]){best=lag;break;}
     if(!best)return;
     const double a=d[best-1],b=d[best],c=d[best+1],den=a-2*b+c;
     const double refined=best+(std::abs(den)>1e-15?std::clamp(.5*(a-c)/den,-.5,.5):0);
@@ -228,7 +239,8 @@ const char *chordQualitySuffix(int quality){static const char *names[]={"","m","
 void Engine::analyzeChord() {
     // Pitch classes from spectral peaks between A2 and B6 (lower notes are not resolved by the FFT), smoothed over ~0.4 s.
     std::array<double,12> now{};
-    const double lowHz=110,highHz=2000;double strongest=-240;
+    const auto [focusLow,focusHigh]=instrumentRange(settings.instrument);
+    const double lowHz=settings.instrument>0?std::max(focusLow,55.):110,highHz=settings.instrument>0?std::min(focusHigh,2000.):2000;double strongest=-240;
     for(std::size_t i=2;i+1<db.size();++i){const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;strongest=std::max(strongest,db[i]);}
     if(strongest>-75){
         for(std::size_t i=2;i+1<db.size();++i){
@@ -243,6 +255,7 @@ void Engine::analyzeChord() {
     for(int k=0;k<12;++k)chroma[std::size_t(k)]+=(now[std::size_t(k)]-chroma[std::size_t(k)])*alpha;
     chord={};
     const double peak=*std::max_element(chroma.begin(),chroma.end());if(peak<=1e-6 || strongest<=-75)return;
+    if(settings.instrument>0 && instrumentRange(settings.instrument).first<100)return;   // bass and cello play single notes; the FFT cannot resolve their low chords
     int present=0;for(double v:chroma)if(v>.25*peak)++present;if(present<3)return;
     double best=0;
     for(int root=0;root<12;++root)for(std::size_t q=0;q<chordTemplates().size();++q){
@@ -253,6 +266,14 @@ void Engine::analyzeChord() {
         if(score>best){best=score;chord={root,int(q),score};}
     }
     if(best<.85)chord={};
+}
+void Engine::updateTunerState() {
+    // A reading is held for 0.5 s after it disappears so the display does not flicker between a note, a chord and nothing.
+    const double dt=std::clamp(frameSeconds,.005,1.);
+    const bool haveChord=chord.root>=0,havePitch=pitch.midi>=0 && pitch.hz>0;
+    if(haveChord||havePitch){heldPitch_=pitch;heldChord_=chord;holdSeconds_=.5;tunerState=haveChord?TunerState::Chord:TunerState::Note;return;}
+    if(holdSeconds_>0){holdSeconds_-=dt;pitch=heldPitch_;chord=heldChord_;tunerState=heldChord_.root>=0?TunerState::Chord:TunerState::Note;return;}
+    heldPitch_={};heldChord_={};tunerState=rms>.001?TunerState::Unclear:TunerState::Silent;
 }
 bool Engine::push(const QByteArray &bytes,View view) {
     if(bytes.size()%4)return false;
@@ -293,7 +314,7 @@ bool Engine::push(const QByteArray &bytes,View view) {
         averaged[i]=10*std::log10(std::max((view==View::Microphone?meanPower_[i]:averagePower_[i]),1e-24));
         peak[i]=std::max(peak[i],db[i]);
     }
-    if(view==View::Tuner)analyzeChord();else chord={};
+    if(view==View::Tuner){analyzeChord();updateTunerState();}else{chord={};tunerState=TunerState::Silent;holdSeconds_=0;}
     const double frameFftMs=timing.average_fft_ms*2;
     fftMs=fftCalls==2?frameFftMs:.9*fftMs+.1*frameFftMs;return true;
 }

@@ -374,15 +374,16 @@ protected:
             p.drawText(plot.adjusted(0,0,0,-4),Qt::AlignBottom|Qt::AlignHCenter,QString::fromUtf8("ρ ")+QLocale().toString(data->correlation,'f',2));
         } else if(mode==View::Tuner){
             // Top: 12 pitch-class bars. Middle: the chord when one is detected, otherwise the single note. Bottom: gauge, frequency, tuning.
-            const auto pitch=data->pitch;const auto chord=data->chord;const bool isChord=chord.root>=0;
+            const auto pitch=data->pitch;const auto chord=data->chord;const bool isChord=chord.root>=0,unclear=data->tunerState==soundcurrent::analysis::TunerState::Unclear;
             static const char *names[]={"C","C♯","D","D♯","E","F","F♯","G","G♯","A","A♯","B"};
             const double peak=std::max(1e-9,*std::max_element(data->chroma.begin(),data->chroma.end())),barWidth=std::min(28.,plot.width()/16.),left=plot.center().x()-6*barWidth;
             for(int k=0;k<12;++k){const double h=36*data->chroma[std::size_t(k)]/peak;p.fillRect(QRectF(left+k*barWidth+2,plot.top()+46-h,barWidth-4,h),QColor(isChord?"#55d7c3":"#4b5d73"));p.setPen(QColor("#9fb0c3"));p.drawText(QRectF(left+k*barWidth,plot.top()+48,barWidth,16),Qt::AlignCenter,QString::fromUtf8(names[k]));}
             auto font=p.font();font.setPointSizeF(30);p.setFont(font);
             if(isChord){p.setPen(QColor("#e6b450"));p.drawText(plot,Qt::AlignCenter,QString::fromUtf8(names[chord.root])+QString::fromLatin1(chordQualitySuffix(chord.quality)));}
+            else if(unclear){p.setPen(QColor("#6b7f95"));p.drawText(plot,Qt::AlignCenter,QString::fromUtf8("—"));}
             else{p.setPen(QColor("#55d7c3"));p.drawText(plot,Qt::AlignCenter,noteName(pitch.midi));}
             font.setPointSizeF(11);p.setFont(font);p.setPen(QColor("#55d7c3"));
-            if(!isChord){
+            if(!isChord && !unclear){
                 p.drawText(plot.adjusted(0,0,0,-10),Qt::AlignBottom|Qt::AlignHCenter,formatFrequency(pitch.hz)+" / "+QLocale().toString(pitch.cents,'f',1)+" ¢");
                 const double gaugeY=plot.bottom()-62,x=plot.center().x()+std::clamp(pitch.cents,-50.,50.)/50.*plot.width()*.4;
                 p.setPen(QColor("#30445b"));p.drawLine(QPointF(plot.center().x()-plot.width()*.4,gaugeY),QPointF(plot.center().x()+plot.width()*.4,gaugeY));

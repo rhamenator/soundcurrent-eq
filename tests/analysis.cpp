@@ -116,7 +116,16 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
   Engine chords;Settings cs;chords.configure(cs);
   const auto cMajor=chordTone({261.63,329.63,392.});for(int n=0;n<60;++n)chords.push(cMajor,View::Tuner);check(chords.chord.root==0 && chords.chord.quality==0,"C major chord not detected");
   chords.chord={};const auto aMinor=chordTone({220.,261.63,329.63});for(int n=0;n<80;++n)chords.push(aMinor,View::Tuner);check(chords.chord.root==9 && chords.chord.quality==1,"A minor chord not detected");
-  const auto single=tone(440);for(int n=0;n<80;++n)chords.push(single,View::Tuner);check(chords.chord.root<0,"single note reported as a chord");}
+  const auto single=tone(440);for(int n=0;n<80;++n)chords.push(single,View::Tuner);check(chords.chord.root<0,"single note reported as a chord");
+  {Engine music;Settings ms;music.configure(ms);const auto cmaj=chordTone({261.63,329.63,392.});for(int n=0;n<60;++n)music.push(cmaj,View::Tuner);
+   check(music.tunerState==TunerState::Chord,"chord state not reported");
+   QByteArray noiseBytes(16384*4,0);auto *np=reinterpret_cast<std::int16_t *>(noiseBytes.data());unsigned seed=12345;for(int i=0;i<16384;++i){seed=seed*1664525u+1013904223u;const auto s=std::int16_t(int(seed>>16)%6000-3000);np[2*i]=s;np[2*i+1]=s;}
+   music.frameSeconds=.05;music.push(noiseBytes,View::Tuner);check(music.tunerState==TunerState::Chord,"chord not held briefly after it disappears");
+   for(int n=0;n<80;++n)music.push(noiseBytes,View::Tuner);check(music.tunerState==TunerState::Unclear && music.chord.root<0,"noise not reported as no clear pitch");
+   QByteArray silence(16384*4,0);for(int n=0;n<20;++n)music.push(silence,View::Tuner);check(music.tunerState==TunerState::Silent,"silence not reported");}
+  {Engine focus;Settings fs;fs.instrument=2;focus.configure(fs);   // bass guitar: ignore non-bass instruments in the mix
+   QByteArray mix(16384*4,0);auto *mp=reinterpret_cast<std::int16_t *>(mix.data());for(int i=0;i<16384;++i){const double v=.3*std::sin(2*std::numbers::pi*55.*i/48000.)+.1*std::sin(2*std::numbers::pi*1000.*i/48000.)+.1*std::sin(2*std::numbers::pi*1317.*i/48000.);const auto q=std::int16_t(std::lround(32767*v));mp[2*i]=q;mp[2*i+1]=q;}
+   for(int n=0;n<30;++n)focus.push(mix,View::Tuner);check(focus.pitch.midi==33 && std::abs(focus.pitch.cents)<15,"bass focus did not find the bass note in a mix");check(focus.chord.root<0,"bass focus reported a chord");}}
  Settings cumulative;engine.configure(cumulative);engine.resetAverage();engine.push(signal,View::Microphone);engine.push(tone(937.5,.25),View::Microphone);const double expected=10*std::log10((.25+.0625)/2);check(std::abs(engine.averaged[80]-expected)<.05,"cumulative power average incorrect");
  // The toolbar selection supersedes the last settings application, including legacy split preferences.
  {Panel first;Settings selected;selected.view=int(View::Spectrum);check(first.applySettings(selected),"persisted settings rejected");

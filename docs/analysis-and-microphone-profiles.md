@@ -16,6 +16,7 @@ rate, FFT size or channel selection. Nothing records audio to disk.
 - **Waveform:** amplitude against time, including narrow peaks when many samples
   share a display pixel. This view does not run an FFT.
 - **Tuner:** pitch, note, cents offset and standard instrument tuning targets.
+  Choosing an instrument also focuses the Tuner on that instrument's playable range, so other instruments in a mix matter less (best for bass and low parts). Without an instrument (Chromatic) the full range is used. When sound has no single clear pitch, as in most music, the Tuner shows a dash instead of a flickering note, and a reading is held for half a second after it disappears.
   It does not require an FFT. This is intended for a dominant monophonic tone, not polyphonic transcription.
 - **Vectorscope:** stereo relationship and correlation. This view does not run an
   FFT; an in-phase mono signal is vertical and opposite-polarity stereo is horizontal.

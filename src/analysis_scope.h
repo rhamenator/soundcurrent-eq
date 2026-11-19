@@ -31,6 +31,8 @@ struct Pitch { double hz=0, cents=0, confidence=0; int midi=-1; };
 // Chord estimated from the pitch-class energy of spectral peaks. quality indexes chordQualitySuffix().
 struct Chord { int root=-1, quality=-1; double confidence=0; };
 const char *chordQualitySuffix(int quality);
+// What the Tuner can say: a note, a chord, sound without a clear pitch (music, noise), or nothing.
+enum class TunerState { Silent, Note, Chord, Unclear };
 class Engine {
 public:
     explicit Engine(Settings settings={});
@@ -51,8 +53,11 @@ public:
     Pitch pitch;
     Chord chord;
     std::array<double,12> chroma{};
+    TunerState tunerState=TunerState::Silent;
 private:
     void analyzeChord();
+    void updateTunerState();
+    Pitch heldPitch_;Chord heldChord_;double holdSeconds_=0;
     std::unique_ptr<gram::FftPlan> plan_;
     std::array<std::array<double,65>,256> kernel_{};
     bool kernelReady_=false;
