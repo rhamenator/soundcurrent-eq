@@ -589,6 +589,9 @@ void Panel::buildSettings(QVBoxLayout *root){
     auto *channel=quickCombo(SC_TR("Channel"),"analysisChannel",{SC_TR("Mix"),SC_TR("Left"),SC_TR("Right")},current.channel);
     auto *palette=quickCombo(SC_TR("Palette"),"analysisPalette",{SC_TR("Spectrum"),SC_TR("Gray"),SC_TR("Blue"),SC_TR("Green"),SC_TR("Amber"),SC_TR("Ice")},current.palette);
     auto *scale=quickCombo(SC_TR("Frequency scale"),"analysisScale",{SC_TR("Linear"),SC_TR("Logarithmic"),SC_TR("Octave")},current.scale);
+    // The Tuner view also offers the Instrument choice here (the same setting as Instrument in the Settings panel).
+    const QStringList instrumentNames={SC_TR("Chromatic"),SC_TR("Guitar"),SC_TR("Bass guitar"),SC_TR("Ukulele"),SC_TR("Violin"),SC_TR("Viola"),SC_TR("Cello"),SC_TR("Mandolin")};
+    auto *instrumentQuick=quickCombo(SC_TR("Instrument"),"analysisInstrumentQuick",instrumentNames,current.instrument);
     auto *automatic=new QCheckBox(SC_TR("Automatic range"));automatic->setObjectName("analysisAutoRange");automatic->setChecked(current.autoRange);quick->addWidget(automatic);
     root->addWidget(quick);
 
@@ -599,7 +602,9 @@ void Panel::buildSettings(QVBoxLayout *root){
     auto *rate=combo(SC_TR("Analysis sample rate"),"analysisRate",rateText,rates.indexOf(current.rate));auto *fft=combo(SC_TR("FFT size"),"analysisFft",fftText,sizes.indexOf(current.fft));
     auto *layout=combo(SC_TR("Channels"),"analysisLayout",{SC_TR("Automatic"),SC_TR("Mono"),SC_TR("Stereo")},current.layout);
     auto *amplitude=combo(SC_TR("Amplitude"),"analysisAmplitude",{"dBFS",SC_TR("Linear")},current.amplitude);
-    auto *instrument=combo(SC_TR("Instrument"),"analysisInstrument",{SC_TR("Chromatic"),SC_TR("Guitar"),SC_TR("Bass guitar"),SC_TR("Ukulele"),SC_TR("Violin"),SC_TR("Viola"),SC_TR("Cello"),SC_TR("Mandolin")},current.instrument);
+    auto *instrument=combo(SC_TR("Instrument"),"analysisInstrument",instrumentNames,current.instrument);
+    connect(instrumentQuick,&QComboBox::currentIndexChanged,instrument,&QComboBox::setCurrentIndex);   // the Settings combo applies the change
+    connect(instrument,&QComboBox::currentIndexChanged,instrumentQuick,[instrumentQuick](int index){QSignalBlocker block(instrumentQuick);instrumentQuick->setCurrentIndex(index);});
     auto spin=[&](const QString &label,const QString &name,double value,double min,double max,const QString &unit){auto *w=new soundcurrent::AcceleratingDoubleSpinBox;w->setObjectName(name);w->setAccessibleName(label);w->setRange(min,max);w->setDecimals(1);w->setValue(value);w->setSuffix(unit);form->addRow(label,w);return w;};
     auto *low=spin(SC_TR("Minimum frequency"),"analysisLow",current.low,0,23999," Hz");auto *high=spin(SC_TR("Maximum frequency"),"analysisHigh",current.high,0,24000," Hz");
     high->setSpecialValueText(SC_TR("Automatic"));
@@ -616,7 +621,7 @@ void Panel::buildSettings(QVBoxLayout *root){
     settingsPanel_->setMaximumHeight(240);settingsPanel_->setVisible(false);root->addWidget(settingsPanel_);
 
     readControls_=[=]{Settings s;s.view=view_->currentIndex();s.rate=rates[std::max(0,rate->currentIndex())];s.fft=sizes[std::max(0,fft->currentIndex())];s.palette=palette->currentIndex();s.scale=scale->currentIndex();s.layout=layout->currentIndex();s.channel=channel->currentIndex();s.amplitude=amplitude->currentIndex();s.instrument=instrument->currentIndex();s.low=low->value();s.high=high->value();s.ceiling=ceiling->value();s.sensitivity=sensitivity->value();s.history=history->value();s.speed=speed->value();s.grid=grid->isChecked();s.peaks=peaks->isChecked();s.average=average->isChecked();s.autoRange=automatic->isChecked();s.notes=notes->isChecked();s.transients=transients->isChecked();s.music=music->isChecked();return s;};
-    writeControls_=[=](const Settings &s){loading_=true;rate->setCurrentIndex(rates.indexOf(s.rate));fft->setCurrentIndex(sizes.indexOf(s.fft));palette->setCurrentIndex(s.palette);scale->setCurrentIndex(s.scale);layout->setCurrentIndex(s.layout);channel->setCurrentIndex(s.channel);amplitude->setCurrentIndex(s.amplitude);instrument->setCurrentIndex(s.instrument);low->setValue(s.low);high->setValue(s.high);ceiling->setValue(s.ceiling);sensitivity->setValue(s.sensitivity);history->setValue(s.history);speed->setValue(s.speed);grid->setChecked(s.grid);peaks->setChecked(s.peaks);average->setChecked(s.average);automatic->setChecked(s.autoRange);notes->setChecked(s.notes);transients->setChecked(s.transients);music->setChecked(s.music);palette->setVisible(s.view==int(View::Waterfall));loading_=false;};
+    writeControls_=[=](const Settings &s){loading_=true;rate->setCurrentIndex(rates.indexOf(s.rate));fft->setCurrentIndex(sizes.indexOf(s.fft));palette->setCurrentIndex(s.palette);scale->setCurrentIndex(s.scale);layout->setCurrentIndex(s.layout);channel->setCurrentIndex(s.channel);amplitude->setCurrentIndex(s.amplitude);instrument->setCurrentIndex(s.instrument);low->setValue(s.low);high->setValue(s.high);ceiling->setValue(s.ceiling);sensitivity->setValue(s.sensitivity);history->setValue(s.history);speed->setValue(s.speed);grid->setChecked(s.grid);peaks->setChecked(s.peaks);average->setChecked(s.average);automatic->setChecked(s.autoRange);notes->setChecked(s.notes);transients->setChecked(s.transients);music->setChecked(s.music);palette->setVisible(s.view==int(View::Waterfall));instrumentQuick->setVisible(s.view==int(View::Tuner));loading_=false;};
     commit_=new QTimer(this);commit_->setSingleShot(true);commit_->setInterval(250);
     connect(commit_,&QTimer::timeout,this,[this]{if(loading_)return;const auto s=readControls_();if(applySettings(s))feedback_->clear();else feedback_->setText(SC_TR("Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth."));});
     auto schedule=[this]{if(!loading_)commit_->start();};
