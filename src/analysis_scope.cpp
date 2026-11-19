@@ -156,7 +156,7 @@ void Engine::configure(const Settings &s) {
     if(pipeline){plan_.reset();kernelReady_=false;reference.clear();}
     if(pipeline || channelChanged){reference.clear();resetAverage();}
 }
-void Engine::resetAverage(){meanPower_.clear();averagePower_.clear();averaged.clear();peak.clear();frames=0;waveFrames=0;fftMs=0;lastRms_=0;pitch={};}
+void Engine::resetAverage(){meanPower_.clear();averagePower_.clear();averaged.clear();peak.clear();frames=0;waveFrames=0;fftMs=0;lastRms_=0;pitch={};chord={};chroma={};chromaSlow={};noteHistory.clear();heldPitch_={};heldChord_={};holdSeconds_=0;held=false;tunerState=TunerState::Silent;}
 void Engine::captureReference(){reference=averaged;resetAverage();}
 std::vector<double> Engine::relativeDb() const {
     if(reference.empty() || reference.size()!=averaged.size())return {};
@@ -254,7 +254,7 @@ void Engine::analyzeChord() {
     for(int k=0;k<12;++k){chroma[std::size_t(k)]+=(now[std::size_t(k)]-chroma[std::size_t(k)])*alpha;chromaSlow[std::size_t(k)]+=(now[std::size_t(k)]-chromaSlow[std::size_t(k)])*slowAlpha;}
     chord={};
     if(strongest<=-75)return;
-    if(settings.instrument>0 && instrumentRange(settings.instrument).first<100)return;   // bass and cello play single notes; the FFT cannot resolve their low chords
+    if(settings.instrument==2 || settings.instrument==6 || settings.instrument==8)return;   // bass, cello and voice play single lines (and the FFT cannot resolve low chords)
     auto detect=[&](const std::array<double,12> &c,double minScore){
         Chord found;const double peak=*std::max_element(c.begin(),c.end());if(peak<=1e-6)return found;
         int present=0;for(double v:c)if(v>.25*peak)++present;if(present<3)return found;

@@ -55,7 +55,7 @@ public:
     explicit ScopeCanvas(QWidget *parent):QWidget(parent),data(std::make_unique<Engine>()) {
         setObjectName("analysisCanvas");setMinimumSize(220,230);setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);setMouseTracking(true);
         clearImage();
-        rollBar=new QScrollBar(Qt::Vertical,this);rollBar->setObjectName("analysisNoteScroll");rollBar->setAccessibleName(QStringLiteral("Notes"));rollBar->hide();
+        rollBar=new QScrollBar(Qt::Vertical,this);rollBar->setObjectName("analysisNoteScroll");rollBar->setAccessibleName(SC_TR("Tuner"));rollBar->hide();
         connect(rollBar,&QScrollBar::valueChanged,this,[this](int value){rollLowManual=std::clamp(85-rollSpan-value,24,85-rollSpan);update();});
     }
     std::unique_ptr<Engine> data;
@@ -537,6 +537,7 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     for(auto *combo:{view_,source_}){combo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);combo->setMinimumContentsLength(8);combo->setMinimumWidth(0);combo->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);}
     freeze_=new QCheckBox(SC_TR("Freeze display"));freeze_->setObjectName("analysisFreeze");settingsButton_=new QPushButton(SC_TR("Settings"));settingsButton_->setObjectName("analysisSettings");settingsButton_->setCheckable(true);auto *settings=settingsButton_;
     top->addWidget(view_,1);top->addWidget(source_,1);top->addWidget(freeze_);top->addWidget(settings);root->addWidget(top);
+    showNowPlaying_=QSettings().value("analysis/nowPlaying",false).toBool();   // before the settings controls are built, so the checkbox shows the saved state
     buildSettings(root);
     nowPlaying_=new QLabel;nowPlaying_->setObjectName("analysisNowPlaying");nowPlaying_->setTextFormat(Qt::PlainText);nowPlaying_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);nowPlaying_->setVisible(false);root->addWidget(nowPlaying_);
     nowPlayingTimer_=new QTimer(this);nowPlayingTimer_->setInterval(2000);connect(nowPlayingTimer_,&QTimer::timeout,this,&Panel::updateNowPlaying);

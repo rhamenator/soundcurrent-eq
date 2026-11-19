@@ -149,7 +149,9 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
     for(int n=0;n<12;++n)stereo.push(two,View::Tuner);
     const auto &last=stereo.noteHistory.back();bool leftBacking=false,centreLead=false;for(const auto &n:last.notes){if(n.midi==64 && n.side<0)leftBacking=true;if(n.midi==57 && n.side==0)centreLead=true;}
     check(leftBacking && centreLead,"left-only note was not marked as backing, or the centre note was not marked as lead");
-    check(stereo.pitch.midi==57,"main note was not the centre note");}}}
+    check(stereo.pitch.midi==57,"main note was not the centre note");}
+   {Engine guitar;Settings gs;gs.instrument=1;guitar.configure(gs);const auto gc=chordTone({261.63,329.63,392.});for(int n=0;n<40;++n)guitar.push(gc,View::Tuner);check(guitar.chord.root==0 && guitar.chord.quality==0,"guitar chord not detected with Guitar selected");}
+   roll.resetAverage();check(roll.noteHistory.empty() && !roll.held && roll.chord.root<0 && roll.tunerState==TunerState::Silent,"reset did not clear the note display and held reading");}}
  Settings cumulative;engine.configure(cumulative);engine.resetAverage();engine.push(signal,View::Microphone);engine.push(tone(937.5,.25),View::Microphone);const double expected=10*std::log10((.25+.0625)/2);check(std::abs(engine.averaged[80]-expected)<.05,"cumulative power average incorrect");
  // The toolbar selection supersedes the last settings application, including legacy split preferences.
  {Panel first;Settings selected;selected.view=int(View::Spectrum);check(first.applySettings(selected),"persisted settings rejected");
@@ -158,6 +160,7 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
   check(Settings::parse(QJsonDocument::fromJson(QSettings().value("analysis/settings").toByteArray()).object())->view==int(View::Waveform),"serialized and toolbar view preferences disagree");}
  {Settings legacyView;legacyView.view=int(View::Spectrum);QSettings().setValue("analysis/settings",QJsonDocument(legacyView.json()).toJson());QSettings().setValue("analysis/view",int(View::Tuner));
   Panel migrated;check(migrated.view()==View::Tuner,"newer legacy toolbar view was ignored");}
+ {QSettings().setValue("analysis/nowPlaying",true);Panel restored;auto *saved=restored.findChild<QCheckBox *>("analysisShowNowPlaying");check(saved && saved->isChecked(),"saved Show now playing preference not restored in its checkbox");QSettings().setValue("analysis/nowPlaying",false);}
  QSettings().remove("analysis");
  // Real narrow-tone captures at coarse FFT resolution must not fabricate broadband coverage.
  {Panel narrow;narrow.resize(800,600);narrow.microphoneSources=[] {return QVector<QPair<QString,QString>>{{"ref","Reference"},{"mic","Microphone"}};};
