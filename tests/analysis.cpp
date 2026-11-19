@@ -141,6 +141,8 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
    for(int n=0;n<10;++n)harmonics.push(weighted,View::Tuner);
    check(has(harmonics.noteHistory.back(),57) && !has(harmonics.noteHistory.back(),69) && !has(harmonics.noteHistory.back(),76),"harmonics shown as separate notes");
    check(roll.noteHistory.size()<=1300,"note history not bounded");
+   {Engine blip;blip.configure(rs);for(int n=0;n<10;++n)blip.push(cmaj2,View::Tuner);const auto flash=chordTone({880.});blip.push(flash,View::Tuner);
+    check(!has(blip.noteHistory.back(),81),"a one-frame blip was shown as a note");for(int n=0;n<4;++n)blip.push(flash,View::Tuner);check(has(blip.noteHistory.back(),81),"a sustained note was not shown");}
    {Engine arp;arp.configure(rs);const int notes[]={261,329,392,329};   // C major arpeggio, one note every 0.2 s
     for(int round=0;round<3;++round)for(int f:notes){const auto one=chordTone({double(f)});for(int n=0;n<4;++n)arp.push(one,View::Tuner);}
     check(arp.chord.root==0 && arp.chord.quality==0,"arpeggiated C major was not recognized");}

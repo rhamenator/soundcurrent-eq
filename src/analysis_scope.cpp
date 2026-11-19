@@ -156,7 +156,7 @@ void Engine::configure(const Settings &s) {
     if(pipeline){plan_.reset();kernelReady_=false;reference.clear();}
     if(pipeline || channelChanged){reference.clear();resetAverage();}
 }
-void Engine::resetAverage(){meanPower_.clear();averagePower_.clear();averaged.clear();peak.clear();frames=0;waveFrames=0;fftMs=0;lastRms_=0;pitch={};chord={};chroma={};chromaSlow={};noteHistory.clear();heldPitch_={};heldChord_={};holdSeconds_=0;held=false;tunerState=TunerState::Silent;}
+void Engine::resetAverage(){meanPower_.clear();averagePower_.clear();averaged.clear();peak.clear();frames=0;waveFrames=0;fftMs=0;lastRms_=0;pitch={};chord={};chroma={};chromaSlow={};noteHistory.clear();previousNotes_.clear();heldPitch_={};heldChord_={};holdSeconds_=0;held=false;tunerState=TunerState::Silent;}
 void Engine::captureReference(){reference=averaged;resetAverage();}
 std::vector<double> Engine::relativeDb() const {
     if(reference.empty() || reference.size()!=averaged.size())return {};
@@ -308,11 +308,13 @@ void Engine::collectNotes() {
         const bool stereo=settings.channel==0 && dbLeft.size()==db.size() && dbRight.size()==db.size();
         for(std::size_t i=2;i+1<db.size();++i){
             const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;
-            if(!(db[i]>db[i-1] && db[i]>=db[i+1]) || db[i]<strongest-30)continue;
+            if(!(db[i]>db[i-1] && db[i]>=db[i+1]) || db[i]<strongest-22)continue;   // 22 dB: weaker peaks are mostly harmonics, reverb and rumble
             const double a=db[i-1],b=db[i],c=db[i+1],den=a-2*b+c,shift=std::abs(den)>1e-12?std::clamp(.5*(a-c)/den,-.5,.5):0;
             const Peak peakNow{refine(hz+shift*settings.rate/settings.fft),b};
             bool harmonic=false;
             for(const auto &lower:accepted)for(int k=2;k<=6;++k)if(std::abs(12*std::log2(peakNow.hz/(lower.hz*k)))<.6 && peakNow.db<=lower.db+3)harmonic=true;
+            // A low note without any harmonic is rumble or noise rather than a played note, unless it is among the loudest.
+            if(!harmonic && peakNow.hz<200 && peakNow.db<strongest-6){bool support=false;for(int k=2;k<=4;++k)for(const auto &r:raw)if(std::abs(r.hz-k*peakNow.hz)<=std::max(.06*k*peakNow.hz,1.5*binHz))support=true;if(!support)harmonic=true;}
             if(harmonic)continue;
             accepted.push_back(peakNow);
             // Centre = about the same level in both channels (the lead); a clear difference marks left or right (backing).
@@ -335,6 +337,11 @@ void Engine::collectNotes() {
         if(!periodOk)pitch={loudestHz,100*(midi-target),1,target};
     }
     if(pitch.midi>=0 && pitch.hz>0)add(pitch.midi,1.f);
+    {   // A note must appear in two frames in a row; one-frame blips are noise.
+        std::vector<int> seen;for(const auto &n:frame.notes)seen.push_back(n.midi);
+        std::vector<NoteEvent> kept;for(const auto &n:frame.notes)if(std::find(previousNotes_.begin(),previousNotes_.end(),n.midi)!=previousNotes_.end())kept.push_back(n);
+        previousNotes_=std::move(seen);frame.notes=std::move(kept);
+    }
     noteHistory.push_back(std::move(frame));
     while(!noteHistory.empty() && noteClock-noteHistory.front().time>60)noteHistory.pop_front();
 }

@@ -68,6 +68,7 @@ private:
     void updateTunerState();
     void collectNotes();
     Pitch heldPitch_;Chord heldChord_;double holdSeconds_=0;
+    std::vector<int> previousNotes_;   // notes seen in the previous frame; a note must appear in two frames in a row to be shown
     std::unique_ptr<gram::FftPlan> plan_;
     std::array<std::array<double,65>,256> kernel_{};
     bool kernelReady_=false;
