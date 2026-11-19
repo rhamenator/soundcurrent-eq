@@ -56,7 +56,7 @@ public:
         setObjectName("analysisCanvas");setMinimumSize(220,230);setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);setMouseTracking(true);
         clearImage();
         rollBar=new QScrollBar(Qt::Vertical,this);rollBar->setObjectName("analysisNoteScroll");rollBar->setAccessibleName(QStringLiteral("Notes"));rollBar->hide();
-        connect(rollBar,&QScrollBar::valueChanged,this,[this](int value){rollLowManual=std::clamp(85-rollSpan-value,36,85-rollSpan);update();});
+        connect(rollBar,&QScrollBar::valueChanged,this,[this](int value){rollLowManual=std::clamp(85-rollSpan-value,24,85-rollSpan);update();});
     }
     std::unique_ptr<Engine> data;
     View mode=View::Waterfall;
@@ -73,7 +73,7 @@ public:
     void syncRollBar(){
         if(!rollBar)return;const bool show=mode==View::Tuner;rollBar->setVisible(show);if(!show)return;
         const auto r=tunerRoll(),a=tunerArea();rollBar->setGeometry(int(a.right()-18),int(r.top()),18,int(r.height()));
-        const QSignalBlocker block(rollBar);const int range=std::max(0,49-rollSpan);rollBar->setRange(0,range);rollBar->setPageStep(rollSpan);rollBar->setSingleStep(3);
+        const QSignalBlocker block(rollBar);const int range=std::max(0,61-rollSpan);rollBar->setRange(0,range);rollBar->setPageStep(rollSpan);rollBar->setSingleStep(3);
         rollBar->setValue(std::clamp(85-rollSpan-rollLowNow(),0,range));
     }
     void resizeEvent(QResizeEvent *event) override {QWidget::resizeEvent(event);syncRollBar();}
@@ -243,8 +243,8 @@ protected:
     void wheelEvent(QWheelEvent *event) override {
         if(mode==View::Tuner){if(!tunerArea().contains(event->position())){event->ignore();return;}   // wheel scrolls the note display; Ctrl+wheel zooms its octave range
             const int steps=event->angleDelta().y()>0?1:event->angleDelta().y()<0?-1:0;if(!steps){event->ignore();return;}
-            if(event->modifiers()&Qt::ControlModifier){const int low=rollLowNow();rollSpan=std::clamp(rollSpan-12*steps,12,48);rollLowManual=std::clamp(low,36,85-rollSpan);}
-            else rollLowManual=std::clamp(rollLowNow()+3*steps,36,85-rollSpan);
+            if(event->modifiers()&Qt::ControlModifier){const int low=rollLowNow();rollSpan=std::clamp(rollSpan-12*steps,12,48);rollLowManual=std::clamp(low,24,85-rollSpan);}
+            else rollLowManual=std::clamp(rollLowNow()+3*steps,24,85-rollSpan);
             syncRollBar();update();event->accept();return;
         }
         const auto plot=plotRect();if(!plot.contains(event->position()) || !onZoom){event->ignore();return;}
@@ -411,14 +411,14 @@ protected:
             const int rows=rollSpan;
             if(rollLowManual<0){   // follow the music: keep the window while the recent notes sit inside it, else re-centre (C-aligned)
                 std::array<double,128> weight{};double total=0;for(const auto &frame:data->noteHistory)if(data->noteClock-frame.time<3)for(const auto &n:frame.notes){weight[std::size_t(n.midi)]+=n.level;total+=n.level;}
-                const int current=std::clamp(rollLowAuto,36,85-rows);rollLowAuto=current;
+                const int current=std::clamp(rollLowAuto,24,85-rows);rollLowAuto=current;
                 if(total>0){   // level-weighted median, so stray blips cannot drag the window
                     double run=0;int median=current+rows/2;for(int m=0;m<128;++m){run+=weight[std::size_t(m)];if(run>=total/2){median=m;break;}}
-                    if(median<current+2 || median>=current+rows-2)rollLowAuto=std::clamp((median-rows/2)/12*12,36,85-rows);
+                    if(median<current+2 || median>=current+rows-2)rollLowAuto=std::clamp((median-rows/2)/12*12,24,85-rows);
                 }
             }
-            const int lowMidi=std::clamp(rollLowNow(),36,85-rows);const double rowHeight=roll.height()/rows;
-            if(rollBar)QMetaObject::invokeMethod(rollBar,[bar=rollBar,rows,lowMidi]{if(!bar->isVisible())return;const QSignalBlocker block(bar);const int range=std::max(0,49-rows);bar->setRange(0,range);bar->setPageStep(rows);bar->setValue(std::clamp(85-rows-lowMidi,0,range));},Qt::QueuedConnection);
+            const int lowMidi=std::clamp(rollLowNow(),24,85-rows);const double rowHeight=roll.height()/rows;
+            if(rollBar)QMetaObject::invokeMethod(rollBar,[bar=rollBar,rows,lowMidi]{if(!bar->isVisible())return;const QSignalBlocker block(bar);const int range=std::max(0,61-rows);bar->setRange(0,range);bar->setPageStep(rows);bar->setValue(std::clamp(85-rows-lowMidi,0,range));},Qt::QueuedConnection);
             static const bool black[12]={false,true,false,true,false,false,true,false,true,false,true,false};
             p.fillRect(roll,QColor("#0f1722"));
             for(int m=lowMidi;m<lowMidi+rows;++m){const double y=roll.bottom()-(m-lowMidi+1)*rowHeight;if(black[m%12])p.fillRect(QRectF(roll.left(),y,roll.width(),rowHeight),QColor("#16202d"));

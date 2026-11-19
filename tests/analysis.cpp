@@ -126,6 +126,10 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
   {Engine focus;Settings fs;fs.instrument=2;focus.configure(fs);   // bass guitar: ignore non-bass instruments in the mix
    QByteArray mix(16384*4,0);auto *mp=reinterpret_cast<std::int16_t *>(mix.data());for(int i=0;i<16384;++i){const double v=.3*std::sin(2*std::numbers::pi*55.*i/48000.)+.1*std::sin(2*std::numbers::pi*1000.*i/48000.)+.1*std::sin(2*std::numbers::pi*1317.*i/48000.);const auto q=std::int16_t(std::lround(32767*v));mp[2*i]=q;mp[2*i+1]=q;}
    for(int n=0;n<30;++n)focus.push(mix,View::Tuner);check(focus.pitch.midi==33 && std::abs(focus.pitch.cents)<15,"bass focus did not find the bass note in a mix");check(focus.chord.root<0,"bass focus reported a chord");}
+  {Engine lowBass;Settings lb;lowBass.configure(lb);QByteArray lowNote(16384*4,0);auto *lp=reinterpret_cast<std::int16_t *>(lowNote.data());   // E1 (41.2 Hz) with harmonics
+   for(int i=0;i<16384;++i){double v=0;for(int k=1;k<=6;++k)v+=std::sin(2*std::numbers::pi*41.2*k*i/48000.)*(k==1?1.:.8/k);const auto q=std::int16_t(std::lround(32767*.2*v));lp[2*i]=q;lp[2*i+1]=q;}
+   for(int n=0;n<20;++n)lowBass.push(lowNote,View::Tuner);bool lowHas=false;for(const auto &n:lowBass.noteHistory.back().notes)if(n.midi==28)lowHas=true;
+   check(lowHas,"low E1 bass note was not found on the note display");check(lowBass.pitch.midi==28 && std::abs(lowBass.pitch.cents)<35,"low E1 bass note not identified accurately");}
   {Engine fretted;Settings fr;fr.instrument=2;fretted.configure(fr);QByteArray note(16384*4,0);auto *fp=reinterpret_cast<std::int16_t *>(note.data());for(int i=0;i<16384;++i){const auto q=std::int16_t(std::lround(32767*.4*std::sin(2*std::numbers::pi*92.5*i/48000.)));fp[2*i]=q;fp[2*i+1]=q;}
    for(int n=0;n<20;++n)fretted.push(note,View::Tuner);check(fretted.pitch.midi==42 && std::abs(fretted.pitch.cents)<15,"fretted bass note was snapped to an open string");}
   {auto has=[](const NoteFrame &f,int midi){for(const auto &n:f.notes)if(n.midi==midi)return true;return false;};

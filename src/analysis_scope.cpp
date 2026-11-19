@@ -277,18 +277,40 @@ void Engine::collectNotes() {
     // plus the single detected pitch. Low notes are only roughly resolved by the FFT.
     noteClock+=std::clamp(frameSeconds,.005,1.);
     NoteFrame frame{noteClock,{}};
-    const double lowHz=60,highHz=1100;double strongest=-240;
+    const double lowHz=30,highHz=1100;double strongest=-240;
     for(std::size_t i=2;i+1<db.size();++i){const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;strongest=std::max(strongest,db[i]);}
-    auto add=[&](int midi,float level,int side=0){if(midi<36||midi>84)return;for(auto &n:frame.notes)if(n.midi==midi){if(level>n.level){n.level=level;n.side=side;}return;}frame.notes.push_back({midi,level,side});};
+    auto add=[&](int midi,float level,int side=0){if(midi<24||midi>84)return;for(auto &n:frame.notes)if(n.midi==midi){if(level>n.level){n.level=level;n.side=side;}return;}frame.notes.push_back({midi,level,side});};
     double loudestHz=0;
     if(strongest>-75){
-        struct Peak{double hz,db;};std::vector<Peak> accepted;Peak loudest{0,-240},loudestCenter{0,-240};const auto [focusLow,focusHigh]=instrumentRange(settings.instrument);
+        struct Peak{double hz,db;};std::vector<Peak> accepted;
+        // All local maxima up to 2.2 kHz with interpolated frequency; used to measure low notes from their harmonics.
+        std::vector<Peak> raw;
+        for(std::size_t i=2;i+1<db.size();++i){
+            const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>2200)break;
+            if(!(db[i]>db[i-1] && db[i]>=db[i+1]) || db[i]<strongest-35)continue;
+            const double a=db[i-1],b=db[i],c=db[i+1],den=a-2*b+c,shift=std::abs(den)>1e-12?std::clamp(.5*(a-c)/den,-.5,.5):0;
+            raw.push_back({hz+shift*settings.rate/settings.fft,b});
+        }
+        // The FFT bin width (about 12 Hz) is coarse for low notes. A low note's own peak is blurred, but its k-th harmonic carries the
+        // same pitch with k times better relative precision: estimate f0 from the harmonics that are present.
+        const double binHz=double(settings.rate)/settings.fft;
+        auto refine=[&](double f0){
+            if(f0>250)return f0;
+            double sum=f0,weight=1,estimate=f0;
+            for(int k=2;k<=8;++k){
+                const double target=k*estimate;const Peak *best=nullptr;double bestDistance=1e9;
+                for(const auto &r:raw){const double d=std::abs(r.hz-target);if(d<bestDistance && d<=std::max(.06*target,1.5*binHz)){bestDistance=d;best=&r;}}
+                if(!best)break;
+                sum+=k*(best->hz/k);weight+=k;estimate=sum/weight;
+            }
+            return std::abs(estimate-f0)<=.25*f0?estimate:f0;
+        };Peak loudest{0,-240},loudestCenter{0,-240};const auto [focusLow,focusHigh]=instrumentRange(settings.instrument);
         const bool stereo=settings.channel==0 && dbLeft.size()==db.size() && dbRight.size()==db.size();
         for(std::size_t i=2;i+1<db.size();++i){
             const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;
             if(!(db[i]>db[i-1] && db[i]>=db[i+1]) || db[i]<strongest-30)continue;
             const double a=db[i-1],b=db[i],c=db[i+1],den=a-2*b+c,shift=std::abs(den)>1e-12?std::clamp(.5*(a-c)/den,-.5,.5):0;
-            const Peak peakNow{hz+shift*settings.rate/settings.fft,b};
+            const Peak peakNow{refine(hz+shift*settings.rate/settings.fft),b};
             bool harmonic=false;
             for(const auto &lower:accepted)for(int k=2;k<=6;++k)if(std::abs(12*std::log2(peakNow.hz/(lower.hz*k)))<.6 && peakNow.db<=lower.db+3)harmonic=true;
             if(harmonic)continue;
