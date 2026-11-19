@@ -59,6 +59,9 @@ public:
     View mode=View::Waterfall;
     bool frozen=false;
     bool showChords=true;
+    // Scrolling note display window: low note (C-aligned), span in semitones (12..48), manual low note or -1 for automatic follow.
+    int rollSpan=24,rollLowAuto=48,rollLowManual=-1;
+    int rollLowNow() const {return rollLowManual>=0?rollLowManual:rollLowAuto;}
     std::function<void(bool)> onVisibility;
     std::function<void(const Settings &)> onZoom;std::function<void(bool)> onScroll;void resumeLive(){scrollBack_=0;setProperty("scrollBack",0);update();}std::function<void()> onFrame;
     double displayCeiling=0;
@@ -224,6 +227,12 @@ protected:
     }
     void wheelEvent(QWheelEvent *event) override {
         const auto plot=plotRect();if(!plot.contains(event->position()) || !onZoom){event->ignore();return;}
+        if(mode==View::Tuner){   // wheel scrolls the note display; Ctrl+wheel zooms its octave range
+            const int steps=event->angleDelta().y()>0?1:event->angleDelta().y()<0?-1:0;if(!steps){event->ignore();return;}
+            if(event->modifiers()&Qt::ControlModifier){const int low=rollLowNow();rollSpan=std::clamp(rollSpan-12*steps,12,48);rollLowManual=std::clamp(low,36,85-rollSpan);}
+            else rollLowManual=std::clamp(rollLowNow()+3*steps,36,85-rollSpan);
+            update();event->accept();return;
+        }
         if((mode==View::Waterfall || mode==View::Waveform) && (event->angleDelta().x()!=0 || (event->modifiers()&Qt::ShiftModifier))){
             const int delta=event->angleDelta().x()!=0?event->angleDelta().x():event->angleDelta().y();
             setScrollBack(scrollBack_+int(delta/120.*std::max(10.,plot.width()*.1)));event->accept();return;
@@ -247,6 +256,7 @@ protected:
     void mouseReleaseEvent(QMouseEvent *event) override {if(dragging_ || timeDragging_){dragging_=false;timeDragging_=false;unsetCursor();}QWidget::mouseReleaseEvent(event);}
     void mouseDoubleClickEvent(QMouseEvent *event) override {
         if(!onZoom || !plotRect().contains(event->position())){QWidget::mouseDoubleClickEvent(event);return;}
+        if(mode==View::Tuner){rollLowManual=-1;rollSpan=24;update();return;}   // back to following the music
         if(scrollBack_>0){resumeLive();if(onScroll)onScroll(false);return;}
         auto s=data->settings;
         if(mode==View::Waveform)s.autoRange=true;else if(frequencyAxisView()){s.low=20;s.high=20000;}else return;
@@ -379,21 +389,34 @@ protected:
             // Below it: the chord (optional), then the single detected note and the tuning gauge.
             const auto pitch=data->pitch;const auto chord=data->chord;
             const bool hasPitch=pitch.midi>=0 && pitch.hz>0 && chord.root<0;   // a chord's common period is not a note
-            const double keysWidth=34,rollHeight=std::clamp(plot.height()-170,64.,plot.height()*.6);
-            const QRectF roll(plot.left()+keysWidth,plot.top()+4,std::max(40.,plot.width()-keysWidth-4),rollHeight);
-            const int lowMidi=36,highMidi=84,rows=highMidi-lowMidi+1;const double rowHeight=roll.height()/rows;
+            const double keysWidth=34,gutterWidth=44,rollHeight=std::clamp(plot.height()-150,64.,plot.height()*.72);
+            const QRectF roll(plot.left()+keysWidth,plot.top()+4,std::max(40.,plot.width()-keysWidth-gutterWidth-4),rollHeight);
+            const int rows=rollSpan;
+            if(rollLowManual<0){   // follow the music: keep the window while the recent notes fit, else re-centre on them (C-aligned)
+                std::array<double,128> weight{};double total=0;for(const auto &frame:data->noteHistory)if(data->noteClock-frame.time<3)for(const auto &n:frame.notes){weight[std::size_t(n.midi)]+=n.level;total+=n.level;}
+                const int current=std::clamp(rollLowAuto,36,85-rows);rollLowAuto=current;
+                if(total>0){   // level-weighted median of the recent notes, so stray blips cannot drag the window
+                    double run=0;int median=current+rows/2;for(int m=0;m<128;++m){run+=weight[std::size_t(m)];if(run>=total/2){median=m;break;}}
+                    if(median<current+2 || median>=current+rows-2)rollLowAuto=std::clamp((median-rows/2)/12*12,36,85-rows);
+                }
+            }
+            const int lowMidi=std::clamp(rollLowNow(),36,85-rows);const double rowHeight=roll.height()/rows;
             static const bool black[12]={false,true,false,true,false,false,true,false,true,false,true,false};
             p.fillRect(roll,QColor("#0f1722"));
-            for(int m=lowMidi;m<=highMidi;++m){const double y=roll.bottom()-(m-lowMidi+1)*rowHeight;if(black[m%12])p.fillRect(QRectF(roll.left(),y,roll.width(),rowHeight),QColor("#16202d"));
-                if(m%12==0){p.setPen(QColor("#30445b"));p.drawLine(QPointF(roll.left(),y+rowHeight),QPointF(roll.right(),y+rowHeight));p.setPen(QColor("#9fb0c3"));p.drawText(QRectF(plot.left(),y+rowHeight/2-8,keysWidth-4,16),Qt::AlignRight|Qt::AlignVCenter,noteName(m));}}
+            for(int m=lowMidi;m<lowMidi+rows;++m){const double y=roll.bottom()-(m-lowMidi+1)*rowHeight;if(black[m%12])p.fillRect(QRectF(roll.left(),y,roll.width(),rowHeight),QColor("#16202d"));
+                if(m%12==0){p.setPen(QColor("#30445b"));p.drawLine(QPointF(roll.left(),y+rowHeight),QPointF(roll.right(),y+rowHeight));}
+                if(m%12==0 || rowHeight>=11){p.setPen(QColor(m%12==0?"#cbd5e1":"#9fb0c3"));p.drawText(QRectF(plot.left(),y+rowHeight/2-8,keysWidth-4,16),Qt::AlignRight|Qt::AlignVCenter,noteName(m));}}
             const double seconds=std::clamp(s.history,5.,10.);const double now=data->noteClock;
             double previous=-1;
             for(const auto &frame:data->noteHistory){
                 const double age=now-frame.time;if(age>seconds){previous=frame.time;continue;}
                 const double x=roll.right()-age/seconds*roll.width();const double width=std::max(2.,((previous<0?.05:frame.time-previous)/seconds)*roll.width()+1);previous=frame.time;
-                for(const auto &n:frame.notes){QColor color("#55d7c3");color.setAlpha(int(90+165*n.level));const double y=roll.bottom()-(n.midi-lowMidi+1)*rowHeight;p.fillRect(QRectF(x-width,y+1,width,std::max(2.,rowHeight-2)),color);}
+                for(const auto &n:frame.notes){if(n.midi<lowMidi || n.midi>=lowMidi+rows)continue;QColor color("#55d7c3");color.setAlpha(int(90+165*n.level));const double y=roll.bottom()-(n.midi-lowMidi+1)*rowHeight;p.fillRect(QRectF(x-width,y+1,width,std::max(2.,rowHeight-2)),color);}
             }
             p.setPen(QColor("#30445b"));p.drawRect(roll);
+            if(!data->noteHistory.empty()){   // names of the notes sounding now, beside the newest column
+                p.setPen(QColor("#e6b450"));for(const auto &n:data->noteHistory.back().notes){if(n.midi<lowMidi || n.midi>=lowMidi+rows)continue;const double y=roll.bottom()-(n.midi-lowMidi+1)*rowHeight;p.drawText(QRectF(roll.right()+4,y+rowHeight/2-8,gutterWidth-4,16),Qt::AlignLeft|Qt::AlignVCenter,noteName(n.midi));}
+            }
             auto font=p.font();font.setPointSizeF(16);p.setFont(font);
             const QRectF chordRow(plot.left(),roll.bottom()+4,plot.width(),30);
             if(showChords && chord.root>=0){static const char *names[]={"C","C♯","D","D♯","E","F","F♯","G","G♯","A","A♯","B"};p.setPen(QColor("#e6b450"));p.drawText(chordRow,Qt::AlignCenter,QString::fromUtf8(names[chord.root])+QString::fromLatin1(chordQualitySuffix(chord.quality)));}
