@@ -2846,6 +2846,10 @@ Vil du likevel sletta ho?</translation>
       <translation>Vis avanserte kontrollar</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Vis akkordar</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Vis endringsdato</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -3437,6 +3441,10 @@ Vil du likevel sletta ho?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Vokalfokus</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Stemme</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

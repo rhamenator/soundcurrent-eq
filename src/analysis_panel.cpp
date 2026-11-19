@@ -58,6 +58,7 @@ public:
     std::unique_ptr<Engine> data;
     View mode=View::Waterfall;
     bool frozen=false;
+    bool showChords=true;
     std::function<void(bool)> onVisibility;
     std::function<void(const Settings &)> onZoom;std::function<void(bool)> onScroll;void resumeLive(){scrollBack_=0;setProperty("scrollBack",0);update();}std::function<void()> onFrame;
     double displayCeiling=0;
@@ -374,23 +375,40 @@ protected:
             p.setPen(QPen(QColor("#55d7c3"),1));QPainterPath path;for(std::size_t i=0;i<data->left.size();++i){QPointF point(c.x()+(data->left[i]-data->right[i])*.5*radius/waveLimit_,c.y()-(data->left[i]+data->right[i])*.5*radius/waveLimit_);if(i==0)path.moveTo(point);else path.lineTo(point);}p.drawPath(path);
             p.drawText(plot.adjusted(0,0,0,-4),Qt::AlignBottom|Qt::AlignHCenter,QString::fromUtf8("ρ ")+QLocale().toString(data->correlation,'f',2));
         } else if(mode==View::Tuner){
-            // Top: 12 pitch-class bars. Middle: the chord when one is detected, otherwise the single note. Bottom: gauge, frequency, tuning.
-            const auto pitch=data->pitch;const auto chord=data->chord;const bool isChord=chord.root>=0,unclear=data->tunerState==soundcurrent::analysis::TunerState::Unclear;
-            static const char *names[]={"C","C♯","D","D♯","E","F","F♯","G","G♯","A","A♯","B"};
-            const double peak=std::max(1e-9,*std::max_element(data->chroma.begin(),data->chroma.end())),barWidth=std::min(28.,plot.width()/16.),left=plot.center().x()-6*barWidth;
-            for(int k=0;k<12;++k){const double h=36*data->chroma[std::size_t(k)]/peak;p.fillRect(QRectF(left+k*barWidth+2,plot.top()+46-h,barWidth-4,h),QColor(isChord?"#55d7c3":"#4b5d73"));p.setPen(QColor("#9fb0c3"));p.drawText(QRectF(left+k*barWidth,plot.top()+48,barWidth,16),Qt::AlignCenter,QString::fromUtf8(names[k]));}
-            auto font=p.font();font.setPointSizeF(30);p.setFont(font);
-            if(isChord){p.setPen(QColor("#e6b450"));p.drawText(plot,Qt::AlignCenter,QString::fromUtf8(names[chord.root])+QString::fromLatin1(chordQualitySuffix(chord.quality)));}
-            else if(unclear){p.setPen(QColor("#6b7f95"));p.drawText(plot,Qt::AlignCenter,QString::fromUtf8("—"));}
-            else{p.setPen(QColor("#55d7c3"));p.drawText(plot,Qt::AlignCenter,noteName(pitch.midi));}
+            // Top: a scrolling note display (time runs left to right, newest at the right, C2 to C6).
+            // Below it: the chord (optional), then the single detected note and the tuning gauge.
+            const auto pitch=data->pitch;const auto chord=data->chord;
+            const bool hasPitch=pitch.midi>=0 && pitch.hz>0 && chord.root<0;   // a chord's common period is not a note
+            const double keysWidth=34,rollHeight=std::clamp(plot.height()-170,64.,plot.height()*.6);
+            const QRectF roll(plot.left()+keysWidth,plot.top()+4,std::max(40.,plot.width()-keysWidth-4),rollHeight);
+            const int lowMidi=36,highMidi=84,rows=highMidi-lowMidi+1;const double rowHeight=roll.height()/rows;
+            static const bool black[12]={false,true,false,true,false,false,true,false,true,false,true,false};
+            p.fillRect(roll,QColor("#0f1722"));
+            for(int m=lowMidi;m<=highMidi;++m){const double y=roll.bottom()-(m-lowMidi+1)*rowHeight;if(black[m%12])p.fillRect(QRectF(roll.left(),y,roll.width(),rowHeight),QColor("#16202d"));
+                if(m%12==0){p.setPen(QColor("#30445b"));p.drawLine(QPointF(roll.left(),y+rowHeight),QPointF(roll.right(),y+rowHeight));p.setPen(QColor("#9fb0c3"));p.drawText(QRectF(plot.left(),y+rowHeight/2-8,keysWidth-4,16),Qt::AlignRight|Qt::AlignVCenter,noteName(m));}}
+            const double seconds=std::clamp(s.history,5.,10.);const double now=data->noteClock;
+            double previous=-1;
+            for(const auto &frame:data->noteHistory){
+                const double age=now-frame.time;if(age>seconds){previous=frame.time;continue;}
+                const double x=roll.right()-age/seconds*roll.width();const double width=std::max(2.,((previous<0?.05:frame.time-previous)/seconds)*roll.width()+1);previous=frame.time;
+                for(const auto &n:frame.notes){QColor color("#55d7c3");color.setAlpha(int(90+165*n.level));const double y=roll.bottom()-(n.midi-lowMidi+1)*rowHeight;p.fillRect(QRectF(x-width,y+1,width,std::max(2.,rowHeight-2)),color);}
+            }
+            p.setPen(QColor("#30445b"));p.drawRect(roll);
+            auto font=p.font();font.setPointSizeF(16);p.setFont(font);
+            const QRectF chordRow(plot.left(),roll.bottom()+4,plot.width(),30);
+            if(showChords && chord.root>=0){static const char *names[]={"C","C♯","D","D♯","E","F","F♯","G","G♯","A","A♯","B"};p.setPen(QColor("#e6b450"));p.drawText(chordRow,Qt::AlignCenter,QString::fromUtf8(names[chord.root])+QString::fromLatin1(chordQualitySuffix(chord.quality)));}
+            const QRectF noteArea(plot.left(),chordRow.bottom(),plot.width(),std::max(36.,plot.bottom()-chordRow.bottom()-72));
+            font.setPointSizeF(30);p.setFont(font);
+            if(hasPitch){p.setPen(QColor("#55d7c3"));p.drawText(noteArea,Qt::AlignCenter,noteName(pitch.midi));}
+            else{p.setPen(QColor("#6b7f95"));p.drawText(noteArea,Qt::AlignCenter,QString::fromUtf8("—"));}
             font.setPointSizeF(11);p.setFont(font);p.setPen(QColor("#55d7c3"));
-            if(!isChord && !unclear){
+            if(hasPitch){
                 p.drawText(plot.adjusted(0,0,0,-10),Qt::AlignBottom|Qt::AlignHCenter,formatFrequency(pitch.hz)+" / "+QLocale().toString(pitch.cents,'f',1)+" ¢");
                 const double gaugeY=plot.bottom()-62,x=plot.center().x()+std::clamp(pitch.cents,-50.,50.)/50.*plot.width()*.4;
                 p.setPen(QColor("#30445b"));p.drawLine(QPointF(plot.center().x()-plot.width()*.4,gaugeY),QPointF(plot.center().x()+plot.width()*.4,gaugeY));
                 p.setPen(QPen(QColor("#55d7c3"),2));p.drawLine(QPointF(x,gaugeY-14),QPointF(x,gaugeY+14));p.setPen(QColor("#55d7c3"));
             }
-            static const QStringList tunings={"", "E2 A2 D3 G3 B3 E4","E1 A1 D2 G2","G4 C4 E4 A4","G3 D4 A4 E5","C3 G3 D4 A4","C2 G2 D3 A3","G3 D4 A4 E5"};
+            static const QStringList tunings={"", "E2 A2 D3 G3 B3 E4","E1 A1 D2 G2","G4 C4 E4 A4","G3 D4 A4 E5","C3 G3 D4 A4","C2 G2 D3 A3","G3 D4 A4 E5",""};
             p.drawText(plot.adjusted(0,0,0,-36),Qt::AlignBottom|Qt::AlignHCenter,tunings[s.instrument]);
         } else if(mode!=View::Waterfall){
             auto trace=[&](const std::vector<double> &values,const QColor &color,Qt::PenStyle style=Qt::SolidLine){if(values.empty())return;QPainterPath path;bool connected=false;
@@ -479,7 +497,7 @@ Panel::Panel(QWidget *parent):QWidget(parent) {
     nowPlaying_=new QLabel;nowPlaying_->setObjectName("analysisNowPlaying");nowPlaying_->setTextFormat(Qt::PlainText);nowPlaying_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);nowPlaying_->setVisible(false);root->addWidget(nowPlaying_);
     nowPlayingTimer_=new QTimer(this);nowPlayingTimer_->setInterval(2000);connect(nowPlayingTimer_,&QTimer::timeout,this,&Panel::updateNowPlaying);
     showNowPlaying_=QSettings().value("analysis/nowPlaying",false).toBool();
-    canvas_=new ScopeCanvas(this);canvas_->setObjectName("analysisCanvas");root->addWidget(canvas_,1);readout_=new QLabel;readout_->setTextFormat(Qt::PlainText);readout_->setWordWrap(true);readout_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);readout_->setFixedHeight(2*fontMetrics().lineSpacing());root->addWidget(readout_);
+    canvas_=new ScopeCanvas(this);canvas_->setObjectName("analysisCanvas");canvas_->showChords=QSettings().value("analysis/showChords",true).toBool();root->addWidget(canvas_,1);readout_=new QLabel;readout_->setTextFormat(Qt::PlainText);readout_->setWordWrap(true);readout_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);readout_->setFixedHeight(2*fontMetrics().lineSpacing());root->addWidget(readout_);
     help_=new QLabel(SC_TR("Reference comparisons include the source, room and reference microphone. They are not an isolated or certified microphone measurement."));help_->setWordWrap(true);root->addWidget(help_);
     auto *actions=new soundcurrent::ui::ResponsiveRow;auto *resetButton=new QPushButton(SC_TR("Reset"));auto *saveImageButton=new QPushButton(SC_TR("Save image"));saveImageButton->setObjectName("analysisSaveImage");reference_=new QPushButton(SC_TR("Capture reference"));profile_=new QPushButton(SC_TR("Create microphone profile"));
     resetButton->setObjectName("analysisReset");reference_->setObjectName("analysisReference");profile_->setObjectName("analysisCreateProfile");
@@ -599,8 +617,10 @@ void Panel::buildSettings(QVBoxLayout *root){
     auto *palette=quickCombo(SC_TR("Palette"),"analysisPalette",{SC_TR("Spectrum"),SC_TR("Gray"),SC_TR("Blue"),SC_TR("Green"),SC_TR("Amber"),SC_TR("Ice")},current.palette);
     auto *scale=quickCombo(SC_TR("Frequency scale"),"analysisScale",{SC_TR("Linear"),SC_TR("Logarithmic"),SC_TR("Octave")},current.scale);
     // The Tuner view also offers the Instrument choice here (the same setting as Instrument in the Settings panel).
-    const QStringList instrumentNames={SC_TR("Chromatic"),SC_TR("Guitar"),SC_TR("Bass guitar"),SC_TR("Ukulele"),SC_TR("Violin"),SC_TR("Viola"),SC_TR("Cello"),SC_TR("Mandolin")};
+    const QStringList instrumentNames={SC_TR("Chromatic"),SC_TR("Guitar"),SC_TR("Bass guitar"),SC_TR("Ukulele"),SC_TR("Violin"),SC_TR("Viola"),SC_TR("Cello"),SC_TR("Mandolin"),SC_TR("Voice")};
     auto *instrumentQuick=quickCombo(SC_TR("Instrument"),"analysisInstrumentQuick",instrumentNames,current.instrument);
+    auto *chordsQuick=new QCheckBox(SC_TR("Show chords"));chordsQuick->setObjectName("analysisShowChords");chordsQuick->setChecked(QSettings().value("analysis/showChords",true).toBool());quick->addWidget(chordsQuick);
+    connect(chordsQuick,&QCheckBox::toggled,this,[this](bool on){canvas_->showChords=on;QSettings().setValue("analysis/showChords",on);canvas_->update();});
     auto *automatic=new QCheckBox(SC_TR("Automatic range"));automatic->setObjectName("analysisAutoRange");automatic->setChecked(current.autoRange);quick->addWidget(automatic);
     root->addWidget(quick);
 
@@ -632,7 +652,7 @@ void Panel::buildSettings(QVBoxLayout *root){
     settingsPanel_->setMaximumHeight(240);settingsPanel_->setVisible(false);root->addWidget(settingsPanel_);
 
     readControls_=[=]{Settings s;s.view=view_->currentIndex();s.rate=rates[std::max(0,rate->currentIndex())];s.fft=sizes[std::max(0,fft->currentIndex())];s.palette=palette->currentIndex();s.scale=scale->currentIndex();s.layout=layout->currentIndex();s.channel=channel->currentIndex();s.amplitude=amplitude->currentIndex();s.instrument=instrument->currentIndex();s.low=low->value();s.high=high->value();s.ceiling=ceiling->value();s.sensitivity=sensitivity->value();s.history=history->value();s.speed=speed->value();s.grid=grid->isChecked();s.peaks=peaks->isChecked();s.average=average->isChecked();s.autoRange=automatic->isChecked();s.notes=notes->isChecked();s.transients=transients->isChecked();s.music=music->isChecked();return s;};
-    writeControls_=[=](const Settings &s){loading_=true;rate->setCurrentIndex(rates.indexOf(s.rate));fft->setCurrentIndex(sizes.indexOf(s.fft));palette->setCurrentIndex(s.palette);scale->setCurrentIndex(s.scale);layout->setCurrentIndex(s.layout);channel->setCurrentIndex(s.channel);amplitude->setCurrentIndex(s.amplitude);instrument->setCurrentIndex(s.instrument);low->setValue(s.low);high->setValue(s.high);ceiling->setValue(s.ceiling);sensitivity->setValue(s.sensitivity);history->setValue(s.history);speed->setValue(s.speed);grid->setChecked(s.grid);peaks->setChecked(s.peaks);average->setChecked(s.average);automatic->setChecked(s.autoRange);notes->setChecked(s.notes);transients->setChecked(s.transients);music->setChecked(s.music);palette->setVisible(s.view==int(View::Waterfall));instrumentQuick->setVisible(s.view==int(View::Tuner));loading_=false;};
+    writeControls_=[=](const Settings &s){loading_=true;rate->setCurrentIndex(rates.indexOf(s.rate));fft->setCurrentIndex(sizes.indexOf(s.fft));palette->setCurrentIndex(s.palette);scale->setCurrentIndex(s.scale);layout->setCurrentIndex(s.layout);channel->setCurrentIndex(s.channel);amplitude->setCurrentIndex(s.amplitude);instrument->setCurrentIndex(s.instrument);low->setValue(s.low);high->setValue(s.high);ceiling->setValue(s.ceiling);sensitivity->setValue(s.sensitivity);history->setValue(s.history);speed->setValue(s.speed);grid->setChecked(s.grid);peaks->setChecked(s.peaks);average->setChecked(s.average);automatic->setChecked(s.autoRange);notes->setChecked(s.notes);transients->setChecked(s.transients);music->setChecked(s.music);palette->setVisible(s.view==int(View::Waterfall));instrumentQuick->setVisible(s.view==int(View::Tuner));chordsQuick->setVisible(s.view==int(View::Tuner));loading_=false;};
     commit_=new QTimer(this);commit_->setSingleShot(true);commit_->setInterval(250);
     connect(commit_,&QTimer::timeout,this,[this]{if(loading_)return;const auto s=readControls_();if(applySettings(s))feedback_->clear();else feedback_->setText(SC_TR("Invalid analysis settings. Keep the FFT window at or below 250 ms and frequencies within the captured bandwidth."));});
     auto schedule=[this]{if(!loading_)commit_->start();};

@@ -2846,6 +2846,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Onyesha vidhibiti vya juu</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Onyesha chodi</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Onyesha tarehe ya kubadilishwa</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -3437,6 +3441,10 @@ Unataka kuifuta hata hivyo?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Lenga sauti ya mwimbaji</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Sauti</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

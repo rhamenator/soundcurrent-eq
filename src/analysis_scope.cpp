@@ -78,7 +78,7 @@ bool Settings::valid() const {
     const auto finite=[](double x){return std::isfinite(x);};
     return view>=0 && view<=6 && (rate==16000 || rate==22050 || rate==24000 || rate==32000 || rate==44100 || rate==48000 || rate==88200 || rate==96000)
         && (fft==512 || fft==1024 || fft==2048 || fft==4096 || fft==8192) && double(fft)/rate<=.25
-        && palette>=0 && palette<=5 && scale>=0 && scale<=2 && layout>=0 && layout<=2 && channel>=0 && channel<=2 && amplitude>=0 && amplitude<=1 && instrument>=0 && instrument<=7
+        && palette>=0 && palette<=5 && scale>=0 && scale<=2 && layout>=0 && layout<=2 && channel>=0 && channel<=2 && amplitude>=0 && amplitude<=1 && instrument>=0 && instrument<=8
         && finite(low) && finite(high) && low>=0 && upper()>low && high>=0 && high<=std::min(rate,48000)/2.
         && finite(sensitivity) && sensitivity>=24 && sensitivity<=180 && finite(ceiling) && ceiling>=-120 && ceiling<=24
         && finite(history) && history>=5 && history<=60 && finite(speed) && speed>=.5 && speed<=4;
@@ -129,7 +129,7 @@ std::optional<Settings> Settings::parsePreset(const QByteArray &bytes) {
         else if(key=="display"){if(!choice({"spectrogram","spectrum","waveform","tuner","vectorscope","room","microphone"},s.view))return {};}
         else if(key=="amplitude"){if(!choice({"db","linear"},s.amplitude))return {};}
         else if(key=="mono_channel"){if(value=="stereo"){s.channel=0;s.layout=2;}else if(!choice({"mix","left","right"},s.channel))return {};}
-        else if(key=="instrument"){if(!choice({"chromatic","guitar","bass","ukulele","violin","viola","cello","mandolin"},s.instrument))return {};}
+        else if(key=="instrument"){if(!choice({"chromatic","guitar","bass","ukulele","violin","viola","cello","mandolin","voice"},s.instrument))return {};}
         else if(key=="min_freq"){if(!number(s.low))return {};}
         else if(key=="max_freq"){if(value=="auto")s.high=0;else if(!number(s.high))return {};}
         else if(key=="history"){if(!number(s.history))return {};}
@@ -189,8 +189,8 @@ static double pcm(const QByteArray &bytes,int frame,int channel) {
 // Playable range (Hz) of the selected instrument. Choosing an instrument also focuses the Tuner on that range so other
 // instruments in a mix are ignored as far as possible. Chromatic (0) keeps the full range.
 static std::pair<double,double> instrumentRange(int instrument){
-    static const std::pair<double,double> ranges[]={{27,2000},{75,1400},{38,400},{240,1200},{190,2700},{125,1500},{62,1000},{190,2700}};
-    return ranges[std::clamp(instrument,0,7)];
+    static const std::pair<double,double> ranges[]={{27,2000},{75,1400},{38,400},{240,1200},{190,2700},{125,1500},{62,1000},{190,2700},{80,1100}};
+    return ranges[std::clamp(instrument,0,8)];
 }
 void Engine::analyzePitch(const QByteArray &bytes) {
     // Bounded 4 kHz YIN-like normalized-difference estimator; no work on the audio callback.
@@ -225,9 +225,8 @@ void Engine::analyzePitch(const QByteArray &bytes) {
         hz=48000/fine;
     }
     const double midi=69+12*std::log2(hz/440.);
-    int target=int(std::lround(midi));
-    static const std::vector<std::vector<int>> strings={{},{40,45,50,55,59,64},{28,33,38,43},{67,60,64,69},{55,62,69,76},{48,55,62,69},{36,43,50,57},{55,62,69,76}};
-    if(settings.instrument>0){const auto &notes=strings[settings.instrument];target=*std::min_element(notes.begin(),notes.end(),[midi](int a,int b){return std::abs(a-midi)<std::abs(b-midi);});}
+    // Always the actual nearest note: the instrument choice focuses the range, but a fretted or fingered note must show as itself.
+    const int target=int(std::lround(midi));
     pitch={hz,100*(midi-target),1-b,target};
 }
 static const std::vector<std::vector<int>> &chordTemplates(){
@@ -266,6 +265,32 @@ void Engine::analyzeChord() {
         if(score>best){best=score;chord={root,int(q),score};}
     }
     if(best<.85)chord={};
+}
+void Engine::collectNotes() {
+    // Notes for the scrolling display: spectral peaks between about C2 and C6, with harmonics of lower notes removed,
+    // plus the single detected pitch. Low notes are only roughly resolved by the FFT.
+    noteClock+=std::clamp(frameSeconds,.005,1.);
+    NoteFrame frame{noteClock,{}};
+    const double lowHz=60,highHz=1100;double strongest=-240;
+    for(std::size_t i=2;i+1<db.size();++i){const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;strongest=std::max(strongest,db[i]);}
+    auto add=[&](int midi,float level){if(midi<36||midi>84)return;for(auto &n:frame.notes)if(n.midi==midi){n.level=std::max(n.level,level);return;}frame.notes.push_back({midi,level});};
+    if(strongest>-75){
+        struct Peak{double hz,db;};std::vector<Peak> accepted;
+        for(std::size_t i=2;i+1<db.size();++i){
+            const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;
+            if(!(db[i]>db[i-1] && db[i]>=db[i+1]) || db[i]<strongest-30)continue;
+            const double a=db[i-1],b=db[i],c=db[i+1],den=a-2*b+c,shift=std::abs(den)>1e-12?std::clamp(.5*(a-c)/den,-.5,.5):0;
+            const Peak peakNow{hz+shift*settings.rate/settings.fft,b};
+            bool harmonic=false;
+            for(const auto &lower:accepted)for(int k=2;k<=6;++k)if(std::abs(12*std::log2(peakNow.hz/(lower.hz*k)))<.6 && peakNow.db<=lower.db+3)harmonic=true;
+            if(harmonic)continue;
+            accepted.push_back(peakNow);
+            add(int(std::lround(69+12*std::log2(peakNow.hz/440.))),float(std::clamp((b-(strongest-30))/30,.15,1.)));
+        }
+    }
+    if(pitch.midi>=0 && pitch.hz>0 && chord.root<0)add(pitch.midi,1.f);
+    noteHistory.push_back(std::move(frame));
+    while(!noteHistory.empty() && noteClock-noteHistory.front().time>60)noteHistory.pop_front();
 }
 void Engine::updateTunerState() {
     // A reading is held for 0.5 s after it disappears so the display does not flicker between a note, a chord and nothing.
@@ -314,7 +339,7 @@ bool Engine::push(const QByteArray &bytes,View view) {
         averaged[i]=10*std::log10(std::max((view==View::Microphone?meanPower_[i]:averagePower_[i]),1e-24));
         peak[i]=std::max(peak[i],db[i]);
     }
-    if(view==View::Tuner){analyzeChord();updateTunerState();}else{chord={};tunerState=TunerState::Silent;holdSeconds_=0;}
+    if(view==View::Tuner){analyzeChord();collectNotes();updateTunerState();}else{chord={};tunerState=TunerState::Silent;holdSeconds_=0;noteHistory.clear();}
     const double frameFftMs=timing.average_fft_ms*2;
     fftMs=fftCalls==2?frameFftMs:.9*fftMs+.1*frameFftMs;return true;
 }

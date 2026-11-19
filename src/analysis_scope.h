@@ -6,6 +6,7 @@
 #include <QLocale>
 #include <QVector>
 #include <array>
+#include <deque>
 #include <algorithm>
 #include <functional>
 #include <memory>
@@ -33,6 +34,9 @@ struct Chord { int root=-1, quality=-1; double confidence=0; };
 const char *chordQualitySuffix(int quality);
 // What the Tuner can say: a note, a chord, sound without a clear pitch (music, noise), or nothing.
 enum class TunerState { Silent, Note, Chord, Unclear };
+// Notes heard in one analysis frame, for the scrolling note display. level is 0..1.
+struct NoteEvent { int midi=0; float level=0; };
+struct NoteFrame { double time=0; std::vector<NoteEvent> notes; };
 class Engine {
 public:
     explicit Engine(Settings settings={});
@@ -54,9 +58,12 @@ public:
     Chord chord;
     std::array<double,12> chroma{};
     TunerState tunerState=TunerState::Silent;
+    std::deque<NoteFrame> noteHistory;   // newest at the back; about a minute is kept
+    double noteClock=0;
 private:
     void analyzeChord();
     void updateTunerState();
+    void collectNotes();
     Pitch heldPitch_;Chord heldChord_;double holdSeconds_=0;
     std::unique_ptr<gram::FftPlan> plan_;
     std::array<std::array<double,65>,256> kernel_{};

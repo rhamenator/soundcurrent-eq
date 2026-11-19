@@ -2846,6 +2846,10 @@ Vill du ta bort den ändå?</translation>
       <translation>Visa avancerade reglage</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Visa ackord</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Visa ändringsdatum</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -3437,6 +3441,10 @@ Vill du ta bort den ändå?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Sångfokus</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Röst</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

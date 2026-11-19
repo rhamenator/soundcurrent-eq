@@ -2846,6 +2846,10 @@ Do you want to delete it anyway?</translation>
       <translation>Show advanced controls</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Show chords</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Show date modified</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -3437,6 +3441,10 @@ Do you want to delete it anyway?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Vocal Focus</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Voice</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

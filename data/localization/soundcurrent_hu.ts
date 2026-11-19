@@ -2846,6 +2846,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Speciális vezérlők megjelenítése</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Akkordok megjelenítése</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Módosítás dátumának megjelenítése</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -3437,6 +3441,10 @@ Mindenképp törölni szeretné?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Énekhang kiemelése</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Hang</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

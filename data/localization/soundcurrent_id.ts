@@ -2846,6 +2846,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
       <translation>Tampilkan kontrol lanjutan</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Tampilkan kord</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Tampilkan tanggal diubah</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -3437,6 +3441,10 @@ Apakah Anda tetap ingin menghapusnya?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Fokus vokal</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Suara</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

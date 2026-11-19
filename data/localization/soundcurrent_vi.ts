@@ -2846,6 +2846,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Hiển thị điều khiển nâng cao</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Hiển thị hợp âm</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Hiện ngày sửa đổi</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -3437,6 +3441,10 @@ Bạn vẫn muốn xóa không?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Nhấn giọng hát</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Giọng hát</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

@@ -2846,6 +2846,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Näytä lisäsäätimet</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Näytä soinnut</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Näytä muokkauspäivä</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -3437,6 +3441,10 @@ Haluatko silti poistaa sen?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Laulupainotus</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Ääni</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

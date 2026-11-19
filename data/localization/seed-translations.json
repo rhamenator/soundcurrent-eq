@@ -258,7 +258,9 @@
     "Quit",
     "Also remove VB-CABLE (uses its official remover; restart needed)",
     "Now playing: %1",
-    "Show now playing"
+    "Show now playing",
+    "Show chords",
+    "Voice"
   ],
   "languages": {
     "de": [
@@ -521,7 +523,9 @@
       "Beenden",
       "VB-CABLE ebenfalls entfernen (verwendet das offizielle Entfernungsprogramm; Neustart erforderlich)",
       "Aktuelle Wiedergabe: %1",
-      "Aktuelle Wiedergabe anzeigen"
+      "Aktuelle Wiedergabe anzeigen",
+      "Akkorde anzeigen",
+      "Stimme"
     ],
     "fr": [
       "Français",
@@ -783,7 +787,9 @@
       "Quitter",
       "Supprimer aussi VB-CABLE (utilise son outil de suppression officiel ; redémarrage nécessaire)",
       "En cours de lecture : %1",
-      "Afficher la lecture en cours"
+      "Afficher la lecture en cours",
+      "Afficher les accords",
+      "Voix"
     ],
     "es": [
       "Español",
@@ -1045,7 +1051,9 @@
       "Salir",
       "Quitar también VB-CABLE (usa su desinstalador oficial; requiere reiniciar)",
       "Reproduciendo: %1",
-      "Mostrar lo que se reproduce"
+      "Mostrar lo que se reproduce",
+      "Mostrar acordes",
+      "Voz"
     ],
     "it": [
       "Italiano",
@@ -1307,7 +1315,9 @@
       "Esci",
       "Rimuovi anche VB-CABLE (usa il suo programma di rimozione ufficiale; è necessario riavviare)",
       "In riproduzione: %1",
-      "Mostra la riproduzione in corso"
+      "Mostra la riproduzione in corso",
+      "Mostra gli accordi",
+      "Voce"
     ],
     "pt-PT": [
       "Português (Portugal)",
@@ -1569,7 +1579,9 @@
       "Sair",
       "Remover também o VB-CABLE (usa o removedor oficial; é necessário reiniciar)",
       "A reproduzir: %1",
-      "Mostrar o que está a reproduzir"
+      "Mostrar o que está a reproduzir",
+      "Mostrar acordes",
+      "Voz"
     ],
     "pt-BR": [
       "Português (Brasil)",
@@ -1831,7 +1843,9 @@
       "Sair",
       "Remover também o VB-CABLE (usa o removedor oficial; é preciso reiniciar)",
       "Tocando agora: %1",
-      "Mostrar o que está tocando"
+      "Mostrar o que está tocando",
+      "Mostrar acordes",
+      "Voz"
     ],
     "nl": [
       "Nederlands",
@@ -2093,7 +2107,9 @@
       "Afsluiten",
       "VB-CABLE ook verwijderen (gebruikt het officiële verwijderprogramma; opnieuw opstarten vereist)",
       "Nu afspelend: %1",
-      "Toon wat er wordt afgespeeld"
+      "Toon wat er wordt afgespeeld",
+      "Akkoorden tonen",
+      "Stem"
     ],
     "pl": [
       "Polski",
@@ -2355,7 +2371,9 @@
       "Zakończ",
       "Usuń także VB-CABLE (używa oficjalnego narzędzia usuwania; wymagane ponowne uruchomienie)",
       "Odtwarzanie: %1",
-      "Pokaż, co jest odtwarzane"
+      "Pokaż, co jest odtwarzane",
+      "Pokaż akordy",
+      "Głos"
     ],
     "cs": [
       "Čeština",
@@ -2617,7 +2635,9 @@
       "Ukončit",
       "Odebrat také VB-CABLE (použije oficiální odinstalátor; je nutný restart)",
       "Právě hraje: %1",
-      "Zobrazit, co hraje"
+      "Zobrazit, co hraje",
+      "Zobrazit akordy",
+      "Hlas"
     ],
     "sk": [
       "Slovenčina",
@@ -2879,7 +2899,9 @@
       "Ukončiť",
       "Odstrániť aj VB-CABLE (použije oficiálny odinštalátor; je potrebný reštart)",
       "Teraz hrá: %1",
-      "Zobraziť, čo hrá"
+      "Zobraziť, čo hrá",
+      "Zobraziť akordy",
+      "Hlas"
     ],
     "uk": [
       "Українська",
@@ -3141,7 +3163,9 @@
       "Вийти",
       "Також видалити VB-CABLE (використовується офіційний засіб видалення; потрібне перезавантаження)",
       "Зараз грає: %1",
-      "Показувати, що грає"
+      "Показувати, що грає",
+      "Показувати акорди",
+      "Голос"
     ],
     "ru": [
       "Русский",
@@ -3403,7 +3427,9 @@
       "Выйти",
       "Также удалить VB-CABLE (используется официальное средство удаления; потребуется перезагрузка)",
       "Сейчас играет: %1",
-      "Показывать, что играет"
+      "Показывать, что играет",
+      "Показывать аккорды",
+      "Голос"
     ],
     "el": [
       "Ελληνικά",
@@ -3665,7 +3691,9 @@
       "Έξοδος",
       "Κατάργηση και του VB-CABLE (χρησιμοποιεί το επίσημο πρόγραμμα κατάργησης· απαιτείται επανεκκίνηση)",
       "Αναπαράγεται: %1",
-      "Εμφάνιση του τρέχοντος κομματιού"
+      "Εμφάνιση του τρέχοντος κομματιού",
+      "Εμφάνιση συγχορδιών",
+      "Φωνή"
     ],
     "tr": [
       "Türkçe",
@@ -3927,7 +3955,9 @@
       "Çık",
       "VB-CABLE'ı da kaldır (resmî kaldırıcısını kullanır; yeniden başlatma gerekir)",
       "Şimdi çalıyor: %1",
-      "Çalanı göster"
+      "Çalanı göster",
+      "Akorları göster",
+      "Ses"
     ],
     "sv": [
       "Svenska",
@@ -4189,7 +4219,9 @@
       "Avsluta",
       "Ta även bort VB-CABLE (använder dess officiella borttagningsverktyg; omstart krävs)",
       "Spelas nu: %1",
-      "Visa vad som spelas"
+      "Visa vad som spelas",
+      "Visa ackord",
+      "Röst"
     ],
     "da": [
       "Dansk",
@@ -4451,7 +4483,9 @@
       "Afslut",
       "Fjern også VB-CABLE (bruger dens officielle fjernelsesværktøj; genstart kræves)",
       "Afspiller nu: %1",
-      "Vis hvad der afspilles"
+      "Vis hvad der afspilles",
+      "Vis akkorder",
+      "Stemme"
     ],
     "nb": [
       "Norsk bokmål",
@@ -4713,7 +4747,9 @@
       "Avslutt",
       "Fjern også VB-CABLE (bruker det offisielle fjerningsverktøyet; omstart kreves)",
       "Spilles nå: %1",
-      "Vis hva som spilles"
+      "Vis hva som spilles",
+      "Vis akkorder",
+      "Stemme"
     ],
     "fi": [
       "Suomi",
@@ -4975,7 +5011,9 @@
       "Lopeta",
       "Poista myös VB-CABLE (käyttää sen virallista poistotyökalua; vaatii uudelleenkäynnistyksen)",
       "Nyt soi: %1",
-      "Näytä, mitä soi"
+      "Näytä, mitä soi",
+      "Näytä soinnut",
+      "Ääni"
     ],
     "ro": [
       "Română",
@@ -5237,7 +5275,9 @@
       "Ieșire",
       "Elimină și VB-CABLE (folosește programul oficial de eliminare; este necesară repornirea)",
       "Se redă acum: %1",
-      "Afișează ce se redă"
+      "Afișează ce se redă",
+      "Afișează acordurile",
+      "Voce"
     ],
     "hu": [
       "Magyar",
@@ -5499,7 +5539,9 @@
       "Kilépés",
       "A VB-CABLE eltávolítása is (a hivatalos eltávolítót használja; újraindítás szükséges)",
       "Most szól: %1",
-      "A szóló zene megjelenítése"
+      "A szóló zene megjelenítése",
+      "Akkordok megjelenítése",
+      "Hang"
     ],
     "ar": [
       "العربية",
@@ -5761,7 +5803,9 @@
       "إنهاء",
       "إزالة VB-CABLE أيضًا (باستخدام أداة الإزالة الرسمية؛ يلزم إعادة التشغيل)",
       "قيد التشغيل: %1",
-      "إظهار ما يتم تشغيله"
+      "إظهار ما يتم تشغيله",
+      "إظهار الأوتار",
+      "صوت"
     ],
     "he": [
       "עברית",
@@ -6023,7 +6067,9 @@
       "יציאה",
       "הסר גם את VB-CABLE (באמצעות כלי ההסרה הרשמי שלו; נדרשת הפעלה מחדש)",
       "מתנגן כעת: %1",
-      "הצג מה מתנגן"
+      "הצג מה מתנגן",
+      "הצג אקורדים",
+      "קול"
     ],
     "fa": [
       "فارسی",
@@ -6285,7 +6331,9 @@
       "خروج",
       "VB-CABLE هم حذف شود (از ابزار رسمی حذف آن استفاده می‌شود؛ راه‌اندازی مجدد لازم است)",
       "در حال پخش: %1",
-      "نمایش آنچه پخش می‌شود"
+      "نمایش آنچه پخش می‌شود",
+      "نمایش آکوردها",
+      "صدا"
     ],
     "zh-Hans": [
       "简体中文",
@@ -6547,7 +6595,9 @@
       "退出",
       "同时移除 VB-CABLE（使用其官方移除工具；需要重启）",
       "正在播放：%1",
-      "显示正在播放的内容"
+      "显示正在播放的内容",
+      "显示和弦",
+      "人声"
     ],
     "zh-Hant": [
       "繁體中文",
@@ -6809,7 +6859,9 @@
       "結束",
       "一併移除 VB-CABLE（使用其官方移除工具；需要重新啟動）",
       "正在播放：%1",
-      "顯示正在播放的內容"
+      "顯示正在播放的內容",
+      "顯示和弦",
+      "人聲"
     ],
     "ja": [
       "日本語",
@@ -7071,7 +7123,9 @@
       "終了",
       "VB-CABLE も削除する（公式の削除ツールを使用します。再起動が必要です）",
       "再生中: %1",
-      "再生中の曲を表示"
+      "再生中の曲を表示",
+      "コードを表示",
+      "ボーカル"
     ],
     "ko": [
       "한국어",
@@ -7333,7 +7387,9 @@
       "종료",
       "VB-CABLE도 제거(공식 제거 도구를 사용합니다. 다시 시작 필요)",
       "재생 중: %1",
-      "재생 중인 항목 표시"
+      "재생 중인 항목 표시",
+      "코드 표시",
+      "보컬"
     ],
     "hi": [
       "हिन्दी",
@@ -7595,7 +7651,9 @@
       "बाहर निकलें",
       "VB-CABLE भी हटाएँ (इसके आधिकारिक रिमूवर का उपयोग करता है; पुनः आरंभ आवश्यक है)",
       "अभी चल रहा है: %1",
-      "जो चल रहा है उसे दिखाएँ"
+      "जो चल रहा है उसे दिखाएँ",
+      "कॉर्ड दिखाएँ",
+      "आवाज़"
     ],
     "id": [
       "Bahasa Indonesia",
@@ -7857,7 +7915,9 @@
       "Keluar",
       "Hapus juga VB-CABLE (memakai penghapus resminya; perlu mulai ulang)",
       "Sedang diputar: %1",
-      "Tampilkan yang sedang diputar"
+      "Tampilkan yang sedang diputar",
+      "Tampilkan kord",
+      "Suara"
     ],
     "vi": [
       "Tiếng Việt",
@@ -8119,7 +8179,9 @@
       "Thoát",
       "Gỡ cả VB-CABLE (dùng trình gỡ chính thức của nó; cần khởi động lại)",
       "Đang phát: %1",
-      "Hiển thị nội dung đang phát"
+      "Hiển thị nội dung đang phát",
+      "Hiển thị hợp âm",
+      "Giọng hát"
     ],
     "th": [
       "ไทย",
@@ -8381,7 +8443,9 @@
       "ออก",
       "ลบ VB-CABLE ด้วย (ใช้ตัวถอนการติดตั้งอย่างเป็นทางการ; ต้องรีสตาร์ท)",
       "กำลังเล่น: %1",
-      "แสดงสิ่งที่กำลังเล่น"
+      "แสดงสิ่งที่กำลังเล่น",
+      "แสดงคอร์ด",
+      "เสียงร้อง"
     ],
     "sw": [
       "Kiswahili",
@@ -8643,7 +8707,9 @@
       "Toka",
       "Ondoa pia VB-CABLE (hutumia kiondoa rasmi chake; inahitaji kuwasha upya)",
       "Inacheza sasa: %1",
-      "Onyesha kinachochezwa"
+      "Onyesha kinachochezwa",
+      "Onyesha chodi",
+      "Sauti"
     ],
     "nn": [
       "Norsk nynorsk",
@@ -8905,7 +8971,9 @@
       "Avslutt",
       "Fjern også VB-CABLE (brukar det offisielle fjerningsverktøyet; omstart trengst)",
       "Spelast no: %1",
-      "Vis kva som spelast"
+      "Vis kva som spelast",
+      "Vis akkordar",
+      "Stemme"
     ]
   },
   "requiredCompleteLocales": [

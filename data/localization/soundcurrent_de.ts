@@ -2846,6 +2846,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
       <translation>Erweiterte Regler anzeigen</translation>
     </message>
     <message>
+      <source>Show chords</source>
+      <translation>Akkorde anzeigen</translation>
+    </message>
+    <message>
       <source>Show date modified</source>
       <translation>Änderungsdatum anzeigen</translation>
       <extracomment>Whole file-list column visibility action. Show a filesystem size/type/modification-date column; not audio waveform size, effect type, or a date filter. Preserve full sentence grammar rather than joining Show to a noun.</extracomment>
@@ -3437,6 +3441,10 @@ Möchten Sie die Datei trotzdem löschen?</translation>
     <message>
       <source>Vocal Focus</source>
       <translation>Stimmenfokus</translation>
+    </message>
+    <message>
+      <source>Voice</source>
+      <translation>Stimme</translation>
     </message>
     <message>
       <source>Waiting for a microphone.</source>

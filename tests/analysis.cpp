@@ -125,7 +125,17 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
    QByteArray silence(16384*4,0);for(int n=0;n<20;++n)music.push(silence,View::Tuner);check(music.tunerState==TunerState::Silent,"silence not reported");}
   {Engine focus;Settings fs;fs.instrument=2;focus.configure(fs);   // bass guitar: ignore non-bass instruments in the mix
    QByteArray mix(16384*4,0);auto *mp=reinterpret_cast<std::int16_t *>(mix.data());for(int i=0;i<16384;++i){const double v=.3*std::sin(2*std::numbers::pi*55.*i/48000.)+.1*std::sin(2*std::numbers::pi*1000.*i/48000.)+.1*std::sin(2*std::numbers::pi*1317.*i/48000.);const auto q=std::int16_t(std::lround(32767*v));mp[2*i]=q;mp[2*i+1]=q;}
-   for(int n=0;n<30;++n)focus.push(mix,View::Tuner);check(focus.pitch.midi==33 && std::abs(focus.pitch.cents)<15,"bass focus did not find the bass note in a mix");check(focus.chord.root<0,"bass focus reported a chord");}}
+   for(int n=0;n<30;++n)focus.push(mix,View::Tuner);check(focus.pitch.midi==33 && std::abs(focus.pitch.cents)<15,"bass focus did not find the bass note in a mix");check(focus.chord.root<0,"bass focus reported a chord");}
+  {Engine fretted;Settings fr;fr.instrument=2;fretted.configure(fr);QByteArray note(16384*4,0);auto *fp=reinterpret_cast<std::int16_t *>(note.data());for(int i=0;i<16384;++i){const auto q=std::int16_t(std::lround(32767*.4*std::sin(2*std::numbers::pi*92.5*i/48000.)));fp[2*i]=q;fp[2*i+1]=q;}
+   for(int n=0;n<20;++n)fretted.push(note,View::Tuner);check(fretted.pitch.midi==42 && std::abs(fretted.pitch.cents)<15,"fretted bass note was snapped to an open string");}
+  {auto has=[](const NoteFrame &f,int midi){for(const auto &n:f.notes)if(n.midi==midi)return true;return false;};
+   Engine roll;Settings rs;roll.configure(rs);const auto cmaj2=chordTone({261.63,329.63,392.});for(int n=0;n<10;++n)roll.push(cmaj2,View::Tuner);
+   check(!roll.noteHistory.empty() && has(roll.noteHistory.back(),60) && has(roll.noteHistory.back(),64) && has(roll.noteHistory.back(),67),"note display missed the C major notes");
+   Engine harmonics;harmonics.configure(rs);const auto rich=chordTone({220.,440.,660.,880.});
+   QByteArray weighted(16384*4,0);auto *wp=reinterpret_cast<std::int16_t *>(weighted.data());for(int i=0;i<16384;++i){double v=0;for(int k=1;k<=4;++k)v+=std::sin(2*std::numbers::pi*220.*k*i/48000.)/k;const auto q=std::int16_t(std::lround(32767*.25*v));wp[2*i]=q;wp[2*i+1]=q;}(void)rich;
+   for(int n=0;n<10;++n)harmonics.push(weighted,View::Tuner);
+   check(has(harmonics.noteHistory.back(),57) && !has(harmonics.noteHistory.back(),69) && !has(harmonics.noteHistory.back(),76),"harmonics shown as separate notes");
+   check(roll.noteHistory.size()<=1300,"note history not bounded");}}
  Settings cumulative;engine.configure(cumulative);engine.resetAverage();engine.push(signal,View::Microphone);engine.push(tone(937.5,.25),View::Microphone);const double expected=10*std::log10((.25+.0625)/2);check(std::abs(engine.averaged[80]-expected)<.05,"cumulative power average incorrect");
  // The toolbar selection supersedes the last settings application, including legacy split preferences.
  {Panel first;Settings selected;selected.view=int(View::Spectrum);check(first.applySettings(selected),"persisted settings rejected");
@@ -181,6 +191,7 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
   auto *scale=panel.findChild<QComboBox *>("analysisScale");scale->setCurrentIndex(2);events(400);check(panel.engine().settings.scale==2,"quick control did not apply live");
   {auto *quickInstrument=panel.findChild<QComboBox *>("analysisInstrumentQuick");check(quickInstrument,"quick instrument control missing");panel.setView(View::Tuner);events(100);check(!quickInstrument->isHidden(),"quick instrument hidden in the Tuner view");quickInstrument->setCurrentIndex(2);events(400);check(panel.engine().settings.instrument==2,"quick instrument did not apply live");
   {auto *nowPlayingCheck=panel.findChild<QCheckBox *>("analysisShowNowPlaying");auto *nowPlayingLabel=panel.findChild<QLabel *>("analysisNowPlaying");check(nowPlayingCheck && nowPlayingLabel,"now playing controls missing");
+   {auto *chordsCheck=panel.findChild<QCheckBox *>("analysisShowChords");check(chordsCheck && chordsCheck->isChecked(),"show chords control missing or off by default");chordsCheck->setChecked(false);events(50);chordsCheck->setChecked(true);events(50);}
    check(!nowPlayingCheck->isChecked() && nowPlayingLabel->isHidden(),"now playing must be off by default");
    nowPlayingCheck->setChecked(true);events(100);check(nowPlayingLabel->isHidden()==nowPlayingLabel->text().isEmpty(),"now playing label visibility does not match its text");
    nowPlayingCheck->setChecked(false);events(100);check(nowPlayingLabel->isHidden() && nowPlayingLabel->text().isEmpty(),"now playing not cleared when turned off");}check(panel.findChild<QComboBox *>("analysisInstrument")->currentIndex()==2,"settings instrument not synchronized");panel.setView(View::Spectrum);events(100);check(quickInstrument->isHidden(),"quick instrument shown outside the Tuner view");quickInstrument->setCurrentIndex(0);events(400);}
