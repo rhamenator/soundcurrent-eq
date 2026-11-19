@@ -388,8 +388,8 @@ protected:
             // Top: a scrolling note display (time runs left to right, newest at the right, C2 to C6).
             // Below it: the chord (optional), then the single detected note and the tuning gauge.
             const auto pitch=data->pitch;const auto chord=data->chord;
-            const bool hasPitch=pitch.midi>=0 && pitch.hz>0 && chord.root<0;   // a chord's common period is not a note
-            const double keysWidth=34,gutterWidth=44,rollHeight=std::clamp(plot.height()-150,64.,plot.height()*.72);
+            const bool hasPitch=pitch.midi>=0 && pitch.hz>0;   // the loudest note, shown even while a chord is named
+            const double keysWidth=34,gutterWidth=44,rollHeight=std::clamp(plot.height()-132,64.,plot.height()*.8);
             const QRectF roll(plot.left()+keysWidth,plot.top()+4,std::max(40.,plot.width()-keysWidth-gutterWidth-4),rollHeight);
             const int rows=rollSpan;
             if(rollLowManual<0){   // follow the music: keep the window while the recent notes fit, else re-centre on them (C-aligned)
@@ -418,21 +418,23 @@ protected:
                 p.setPen(QColor("#e6b450"));for(const auto &n:data->noteHistory.back().notes){if(n.midi<lowMidi || n.midi>=lowMidi+rows)continue;const double y=roll.bottom()-(n.midi-lowMidi+1)*rowHeight;p.drawText(QRectF(roll.right()+4,y+rowHeight/2-8,gutterWidth-4,16),Qt::AlignLeft|Qt::AlignVCenter,noteName(n.midi));}
             }
             auto font=p.font();font.setPointSizeF(16);p.setFont(font);
-            const QRectF chordRow(plot.left(),roll.bottom()+4,plot.width(),30);
+            const QRectF chordRow(plot.left(),roll.bottom()+2,plot.width(),26);
             if(showChords && chord.root>=0){static const char *names[]={"C","C♯","D","D♯","E","F","F♯","G","G♯","A","A♯","B"};p.setPen(QColor("#e6b450"));p.drawText(chordRow,Qt::AlignCenter,QString::fromUtf8(names[chord.root])+QString::fromLatin1(chordQualitySuffix(chord.quality)));}
-            const QRectF noteArea(plot.left(),chordRow.bottom(),plot.width(),std::max(36.,plot.bottom()-chordRow.bottom()-72));
-            font.setPointSizeF(30);p.setFont(font);
-            if(hasPitch){p.setPen(QColor("#55d7c3"));p.drawText(noteArea,Qt::AlignCenter,noteName(pitch.midi));}
+            const QRectF noteArea(plot.left(),chordRow.bottom(),plot.width(),std::max(34.,plot.bottom()-chordRow.bottom()-66));
+            font.setPointSizeF(26);p.setFont(font);
+            const QColor noteColor(data->held?"#6b7f95":"#55d7c3");   // dimmed while the last reading is being held
+            if(hasPitch){p.setPen(noteColor);p.drawText(noteArea,Qt::AlignCenter,noteName(pitch.midi));}
             else{p.setPen(QColor("#6b7f95"));p.drawText(noteArea,Qt::AlignCenter,QString::fromUtf8("—"));}
-            font.setPointSizeF(11);p.setFont(font);p.setPen(QColor("#55d7c3"));
+            font.setPointSizeF(11);p.setFont(font);p.setPen(noteColor);
+            const double gaugeY=plot.bottom()-52;   // the gauge line is always drawn so the layout never jumps
+            p.setPen(QColor("#30445b"));p.drawLine(QPointF(plot.center().x()-plot.width()*.4,gaugeY),QPointF(plot.center().x()+plot.width()*.4,gaugeY));p.drawLine(QPointF(plot.center().x(),gaugeY-8),QPointF(plot.center().x(),gaugeY+8));p.setPen(noteColor);
             if(hasPitch){
-                p.drawText(plot.adjusted(0,0,0,-10),Qt::AlignBottom|Qt::AlignHCenter,formatFrequency(pitch.hz)+" / "+QLocale().toString(pitch.cents,'f',1)+" ¢");
-                const double gaugeY=plot.bottom()-62,x=plot.center().x()+std::clamp(pitch.cents,-50.,50.)/50.*plot.width()*.4;
-                p.setPen(QColor("#30445b"));p.drawLine(QPointF(plot.center().x()-plot.width()*.4,gaugeY),QPointF(plot.center().x()+plot.width()*.4,gaugeY));
-                p.setPen(QPen(QColor("#55d7c3"),2));p.drawLine(QPointF(x,gaugeY-14),QPointF(x,gaugeY+14));p.setPen(QColor("#55d7c3"));
+                p.drawText(plot.adjusted(0,0,0,-4),Qt::AlignBottom|Qt::AlignHCenter,formatFrequency(pitch.hz)+" / "+QLocale().toString(pitch.cents,'f',1)+" ¢");
+                const double x=plot.center().x()+std::clamp(pitch.cents,-50.,50.)/50.*plot.width()*.4;
+                p.setPen(QPen(noteColor,2));p.drawLine(QPointF(x,gaugeY-14),QPointF(x,gaugeY+14));p.setPen(noteColor);
             }
             static const QStringList tunings={"", "E2 A2 D3 G3 B3 E4","E1 A1 D2 G2","G4 C4 E4 A4","G3 D4 A4 E5","C3 G3 D4 A4","C2 G2 D3 A3","G3 D4 A4 E5",""};
-            p.drawText(plot.adjusted(0,0,0,-36),Qt::AlignBottom|Qt::AlignHCenter,tunings[s.instrument]);
+            p.setPen(QColor("#6b7f95"));p.drawText(plot.adjusted(0,0,0,-26),Qt::AlignBottom|Qt::AlignHCenter,tunings[s.instrument]);
         } else if(mode!=View::Waterfall){
             auto trace=[&](const std::vector<double> &values,const QColor &color,Qt::PenStyle style=Qt::SolidLine){if(values.empty())return;QPainterPath path;bool connected=false;
                 for(int x=0;x<=int(plot.width());++x){const double hz=frequency(double(x)/plot.width());const double bin=hz*s.fft/s.rate;const int i=std::clamp(int(bin),0,int(values.size())-1),j=std::min(i+1,int(values.size())-1);const double db=values[i]+(values[j]-values[i])*(bin-i);

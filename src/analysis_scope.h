@@ -58,6 +58,7 @@ public:
     Chord chord;
     std::array<double,12> chroma{};
     TunerState tunerState=TunerState::Silent;
+    bool held=false;   // the note or chord shown is the last reading, kept briefly after it disappeared
     std::deque<NoteFrame> noteHistory;   // newest at the back; about a minute is kept
     double noteClock=0;
 private:

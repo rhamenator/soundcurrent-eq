@@ -274,8 +274,9 @@ void Engine::collectNotes() {
     const double lowHz=60,highHz=1100;double strongest=-240;
     for(std::size_t i=2;i+1<db.size();++i){const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;strongest=std::max(strongest,db[i]);}
     auto add=[&](int midi,float level){if(midi<36||midi>84)return;for(auto &n:frame.notes)if(n.midi==midi){n.level=std::max(n.level,level);return;}frame.notes.push_back({midi,level});};
+    double loudestHz=0;
     if(strongest>-75){
-        struct Peak{double hz,db;};std::vector<Peak> accepted;
+        struct Peak{double hz,db;};std::vector<Peak> accepted;Peak loudest{0,-240};const auto [focusLow,focusHigh]=instrumentRange(settings.instrument);
         for(std::size_t i=2;i+1<db.size();++i){
             const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;
             if(!(db[i]>db[i-1] && db[i]>=db[i+1]) || db[i]<strongest-30)continue;
@@ -285,19 +286,32 @@ void Engine::collectNotes() {
             for(const auto &lower:accepted)for(int k=2;k<=6;++k)if(std::abs(12*std::log2(peakNow.hz/(lower.hz*k)))<.6 && peakNow.db<=lower.db+3)harmonic=true;
             if(harmonic)continue;
             accepted.push_back(peakNow);
+            if(peakNow.hz>=focusLow && peakNow.hz<=focusHigh && peakNow.db>loudest.db)loudest=peakNow;
             add(int(std::lround(69+12*std::log2(peakNow.hz/440.))),float(std::clamp((b-(strongest-30))/30,.15,1.)));
         }
+        // Noise has a loudest bin too; only a peak well above the typical level counts as a note.
+        std::vector<double> band;for(std::size_t i=2;i+1<db.size();++i){const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;band.push_back(db[i]);}
+        double typical=-240;if(!band.empty()){std::nth_element(band.begin(),band.begin()+band.size()/2,band.end());typical=band[band.size()/2];}
+        if(loudest.db>=typical+15)loudestHz=loudest.hz;
     }
-    if(pitch.midi>=0 && pitch.hz>0 && chord.root<0)add(pitch.midi,1.f);
+    // The displayed note is the loudest note in the spectrum (this works in music, where one repeating period does not exist).
+    // The period detector only refines the cents when it agrees, or when an instrument range was chosen (which makes it reliable).
+    if(loudestHz>0){
+        const double midi=69+12*std::log2(loudestHz/440.);const int target=int(std::lround(midi));
+        const bool periodOk=pitch.midi>=0 && pitch.hz>0 && (std::abs(pitch.midi-target)<=1 || settings.instrument>0);
+        if(!periodOk)pitch={loudestHz,100*(midi-target),1,target};
+    }
+    if(pitch.midi>=0 && pitch.hz>0)add(pitch.midi,1.f);
     noteHistory.push_back(std::move(frame));
     while(!noteHistory.empty() && noteClock-noteHistory.front().time>60)noteHistory.pop_front();
 }
 void Engine::updateTunerState() {
-    // A reading is held for 0.5 s after it disappears so the display does not flicker between a note, a chord and nothing.
+    // A reading is held for about 1.2 s after it disappears so the display does not flicker between a note, a chord and nothing.
     const double dt=std::clamp(frameSeconds,.005,1.);
     const bool haveChord=chord.root>=0,havePitch=pitch.midi>=0 && pitch.hz>0;
-    if(haveChord||havePitch){heldPitch_=pitch;heldChord_=chord;holdSeconds_=.5;tunerState=haveChord?TunerState::Chord:TunerState::Note;return;}
-    if(holdSeconds_>0){holdSeconds_-=dt;pitch=heldPitch_;chord=heldChord_;tunerState=heldChord_.root>=0?TunerState::Chord:TunerState::Note;return;}
+    held=false;
+    if(haveChord||havePitch){heldPitch_=pitch;heldChord_=chord;holdSeconds_=1.2;tunerState=haveChord?TunerState::Chord:TunerState::Note;return;}
+    if(holdSeconds_>0){holdSeconds_-=dt;pitch=heldPitch_;chord=heldChord_;held=true;tunerState=heldChord_.root>=0?TunerState::Chord:TunerState::Note;return;}
     heldPitch_={};heldChord_={};tunerState=rms>.001?TunerState::Unclear:TunerState::Silent;
 }
 bool Engine::push(const QByteArray &bytes,View view) {

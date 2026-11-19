@@ -130,6 +130,7 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
    for(int n=0;n<20;++n)fretted.push(note,View::Tuner);check(fretted.pitch.midi==42 && std::abs(fretted.pitch.cents)<15,"fretted bass note was snapped to an open string");}
   {auto has=[](const NoteFrame &f,int midi){for(const auto &n:f.notes)if(n.midi==midi)return true;return false;};
    Engine roll;Settings rs;roll.configure(rs);const auto cmaj2=chordTone({261.63,329.63,392.});for(int n=0;n<10;++n)roll.push(cmaj2,View::Tuner);
+   check(roll.pitch.midi==60 || roll.pitch.midi==64 || roll.pitch.midi==67,"loudest note of a chord was not one of its notes");
    check(!roll.noteHistory.empty() && has(roll.noteHistory.back(),60) && has(roll.noteHistory.back(),64) && has(roll.noteHistory.back(),67),"note display missed the C major notes");
    Engine harmonics;harmonics.configure(rs);const auto rich=chordTone({220.,440.,660.,880.});
    QByteArray weighted(16384*4,0);auto *wp=reinterpret_cast<std::int16_t *>(weighted.data());for(int i=0;i<16384;++i){double v=0;for(int k=1;k<=4;++k)v+=std::sin(2*std::numbers::pi*220.*k*i/48000.)/k;const auto q=std::int16_t(std::lround(32767*.25*v));wp[2*i]=q;wp[2*i+1]=q;}(void)rich;
