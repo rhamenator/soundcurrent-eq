@@ -35,7 +35,8 @@ const char *chordQualitySuffix(int quality);
 // What the Tuner can say: a note, a chord, sound without a clear pitch (music, noise), or nothing.
 enum class TunerState { Silent, Note, Chord, Unclear };
 // Notes heard in one analysis frame, for the scrolling note display. level is 0..1.
-struct NoteEvent { int midi=0; float level=0; };
+// side: 0 = centre (similar level in both channels, usually the lead), -1 = mostly left, 1 = mostly right (backing).
+struct NoteEvent { int midi=0; float level=0; int side=0; };
 struct NoteFrame { double time=0; std::vector<NoteEvent> notes; };
 class Engine {
 public:

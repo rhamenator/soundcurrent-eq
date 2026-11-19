@@ -429,11 +429,12 @@ protected:
             for(const auto &frame:data->noteHistory){
                 const double age=now-frame.time;if(age>seconds){previous=frame.time;continue;}
                 const double x=roll.right()-age/seconds*roll.width();const double width=std::max(2.,((previous<0?.05:frame.time-previous)/seconds)*roll.width()+1);previous=frame.time;
-                for(const auto &n:frame.notes){if(n.midi<lowMidi || n.midi>=lowMidi+rows)continue;QColor color("#55d7c3");color.setAlpha(int(90+165*n.level));const double y=roll.bottom()-(n.midi-lowMidi+1)*rowHeight;p.fillRect(QRectF(x-width,y+1,width,std::max(2.,rowHeight-2)),color);}
+                for(const auto &n:frame.notes){if(n.midi<lowMidi || n.midi>=lowMidi+rows)continue;QColor color(n.side==0?"#55d7c3":n.side<0?"#72a7ff":"#e6b450");color.setAlpha(int((90+165*n.level)*(n.side==0?1.:.8)));   // centre teal (lead), left blue, right amber (backing), as in the spectrum view
+const double y=roll.bottom()-(n.midi-lowMidi+1)*rowHeight;p.fillRect(QRectF(x-width,y+1,width,std::max(2.,rowHeight-2)),color);}
             }
             p.setPen(QColor("#30445b"));p.drawRect(roll);
             if(!data->noteHistory.empty()){   // names of the notes sounding now, beside the newest column
-                p.setPen(QColor("#e6b450"));for(const auto &n:data->noteHistory.back().notes){if(n.midi<lowMidi || n.midi>=lowMidi+rows)continue;const double y=roll.bottom()-(n.midi-lowMidi+1)*rowHeight;p.drawText(QRectF(roll.right()+4,y+rowHeight/2-8,gutterWidth-4,16),Qt::AlignLeft|Qt::AlignVCenter,noteName(n.midi));}
+                for(const auto &n:data->noteHistory.back().notes){if(n.midi<lowMidi || n.midi>=lowMidi+rows)continue;p.setPen(QColor(n.side==0?"#e5e7eb":n.side<0?"#72a7ff":"#e6b450"));const double y=roll.bottom()-(n.midi-lowMidi+1)*rowHeight;p.drawText(QRectF(roll.right()+4,y+rowHeight/2-8,gutterWidth-4,16),Qt::AlignLeft|Qt::AlignVCenter,noteName(n.midi));}
             }
             auto font=p.font();font.setPointSizeF(15);p.setFont(font);
             const QRectF chordRow(area.left(),roll.bottom()+2,area.width(),24);

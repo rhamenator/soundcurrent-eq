@@ -139,7 +139,13 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
    check(roll.noteHistory.size()<=1300,"note history not bounded");
    {Engine arp;arp.configure(rs);const int notes[]={261,329,392,329};   // C major arpeggio, one note every 0.2 s
     for(int round=0;round<3;++round)for(int f:notes){const auto one=chordTone({double(f)});for(int n=0;n<4;++n)arp.push(one,View::Tuner);}
-    check(arp.chord.root==0 && arp.chord.quality==0,"arpeggiated C major was not recognized");}}}
+    check(arp.chord.root==0 && arp.chord.quality==0,"arpeggiated C major was not recognized");}
+   {Engine stereo;Settings ss;stereo.configure(ss);   // 220 Hz in both channels (lead), a louder 330 Hz only in the left channel (backing)
+    QByteArray two(16384*4,0);auto *tp=reinterpret_cast<std::int16_t *>(two.data());for(int i=0;i<16384;++i){const double centre=.25*std::sin(2*std::numbers::pi*220.*i/48000.),left=.35*std::sin(2*std::numbers::pi*330.*i/48000.);tp[2*i]=std::int16_t(std::lround(32767*(centre+left)));tp[2*i+1]=std::int16_t(std::lround(32767*centre));}
+    for(int n=0;n<12;++n)stereo.push(two,View::Tuner);
+    const auto &last=stereo.noteHistory.back();bool leftBacking=false,centreLead=false;for(const auto &n:last.notes){if(n.midi==64 && n.side<0)leftBacking=true;if(n.midi==57 && n.side==0)centreLead=true;}
+    check(leftBacking && centreLead,"left-only note was not marked as backing, or the centre note was not marked as lead");
+    check(stereo.pitch.midi==57,"main note was not the centre note");}}}
  Settings cumulative;engine.configure(cumulative);engine.resetAverage();engine.push(signal,View::Microphone);engine.push(tone(937.5,.25),View::Microphone);const double expected=10*std::log10((.25+.0625)/2);check(std::abs(engine.averaged[80]-expected)<.05,"cumulative power average incorrect");
  // The toolbar selection supersedes the last settings application, including legacy split preferences.
  {Panel first;Settings selected;selected.view=int(View::Spectrum);check(first.applySettings(selected),"persisted settings rejected");

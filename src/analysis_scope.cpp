@@ -279,10 +279,11 @@ void Engine::collectNotes() {
     NoteFrame frame{noteClock,{}};
     const double lowHz=60,highHz=1100;double strongest=-240;
     for(std::size_t i=2;i+1<db.size();++i){const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;strongest=std::max(strongest,db[i]);}
-    auto add=[&](int midi,float level){if(midi<36||midi>84)return;for(auto &n:frame.notes)if(n.midi==midi){n.level=std::max(n.level,level);return;}frame.notes.push_back({midi,level});};
+    auto add=[&](int midi,float level,int side=0){if(midi<36||midi>84)return;for(auto &n:frame.notes)if(n.midi==midi){if(level>n.level){n.level=level;n.side=side;}return;}frame.notes.push_back({midi,level,side});};
     double loudestHz=0;
     if(strongest>-75){
-        struct Peak{double hz,db;};std::vector<Peak> accepted;Peak loudest{0,-240};const auto [focusLow,focusHigh]=instrumentRange(settings.instrument);
+        struct Peak{double hz,db;};std::vector<Peak> accepted;Peak loudest{0,-240},loudestCenter{0,-240};const auto [focusLow,focusHigh]=instrumentRange(settings.instrument);
+        const bool stereo=settings.channel==0 && dbLeft.size()==db.size() && dbRight.size()==db.size();
         for(std::size_t i=2;i+1<db.size();++i){
             const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;
             if(!(db[i]>db[i-1] && db[i]>=db[i+1]) || db[i]<strongest-30)continue;
@@ -292,13 +293,17 @@ void Engine::collectNotes() {
             for(const auto &lower:accepted)for(int k=2;k<=6;++k)if(std::abs(12*std::log2(peakNow.hz/(lower.hz*k)))<.6 && peakNow.db<=lower.db+3)harmonic=true;
             if(harmonic)continue;
             accepted.push_back(peakNow);
-            if(peakNow.hz>=focusLow && peakNow.hz<=focusHigh && peakNow.db>loudest.db)loudest=peakNow;
-            add(int(std::lround(69+12*std::log2(peakNow.hz/440.))),float(std::clamp((b-(strongest-30))/30,.15,1.)));
+            // Centre = about the same level in both channels (the lead); a clear difference marks left or right (backing).
+            const double balance=stereo?dbLeft[i]-dbRight[i]:0;const int side=balance>4?-1:balance<-4?1:0;
+            if(peakNow.hz>=focusLow && peakNow.hz<=focusHigh){if(peakNow.db>loudest.db)loudest=peakNow;if(side==0 && peakNow.db>loudestCenter.db)loudestCenter=peakNow;}
+            add(int(std::lround(69+12*std::log2(peakNow.hz/440.))),float(std::clamp((b-(strongest-30))/30,.15,1.)),side);
         }
         // Noise has a loudest bin too; only a peak well above the typical level counts as a note.
         std::vector<double> band;for(std::size_t i=2;i+1<db.size();++i){const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;band.push_back(db[i]);}
         double typical=-240;if(!band.empty()){std::nth_element(band.begin(),band.begin()+band.size()/2,band.end());typical=band[band.size()/2];}
-        if(loudest.db>=typical+15)loudestHz=loudest.hz;
+        // The main note is the loudest centre note, unless it is much quieter than something panned to one side (then the lead may be hard-panned).
+        if(loudestCenter.db>=typical+15 && loudestCenter.db>=loudest.db-12)loudestHz=loudestCenter.hz;
+        else if(loudest.db>=typical+15)loudestHz=loudest.hz;
     }
     // The displayed note is the loudest note in the spectrum (this works in music, where one repeating period does not exist).
     // The period detector only refines the cents when it agrees, or when an instrument range was chosen (which makes it reliable).
