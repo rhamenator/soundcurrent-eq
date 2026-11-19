@@ -329,7 +329,7 @@ void Engine::collectNotes() {
             add(int(std::lround(69+12*std::log2(peakNow.hz/440.))),float(std::clamp((b-(strongest-30))/30,.15,1.)),side);
         }
         // The lowest strong note is the bass; it helps name chords (see analyzeChord).
-        for(const auto &a:accepted)if(a.hz<=350 && a.db>=strongest-18 && (bassHz==0 || a.hz<bassHz))bassHz=a.hz;
+        for(const auto &a:accepted)if(a.hz<=350 && a.db>=strongest-(noteRangeDb-4) && (bassHz==0 || a.hz<bassHz))bassHz=a.hz;
         // Noise has a loudest bin too; only a peak well above the typical level counts as a note.
         std::vector<double> band;for(std::size_t i=2;i+1<db.size();++i){const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;band.push_back(db[i]);}
         double typical=-240;if(!band.empty()){std::nth_element(band.begin(),band.begin()+band.size()/2,band.end());typical=band[band.size()/2];}
