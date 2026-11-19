@@ -2868,6 +2868,10 @@ Doriți să îl ștergeți totuși?</translation>
       <translation>Afișați marcajele de vârf pe nivelurile de frecvență</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Afișează notele slabe</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Afișează doar profilurile personalizate salvate.</translation>
     </message>

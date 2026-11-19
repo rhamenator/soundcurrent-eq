@@ -30,7 +30,7 @@ QString formatFrequency(double hz, const QLocale &locale=QLocale());
 std::vector<double> spectrogramColumn(const std::vector<double> &bins, const Settings &, int rows);
 struct Pitch { double hz=0, cents=0, confidence=0; int midi=-1; };
 // Chord estimated from the pitch-class energy of spectral peaks. quality indexes chordQualitySuffix().
-struct Chord { int root=-1, quality=-1; double confidence=0; };
+struct Chord { int root=-1, quality=-1; double confidence=0; int bass=-1; };   // bass: pitch class of the lowest strong note, -1 if unknown
 const char *chordQualitySuffix(int quality);
 // What the Tuner can say: a note, a chord, sound without a clear pitch (music, noise), or nothing.
 enum class TunerState { Silent, Note, Chord, Unclear };
@@ -60,6 +60,7 @@ public:
     std::array<double,12> chroma{};
     std::array<double,12> chromaSlow{};   // ~1.6 s memory, so a chord played as an arpeggio can still be named
     TunerState tunerState=TunerState::Silent;
+    double noteRangeDb=22;   // notes weaker than the strongest by more than this are ignored (30 with "Show quiet notes")
     bool held=false;   // the note or chord shown is the last reading, kept briefly after it disappeared
     std::deque<NoteFrame> noteHistory;   // newest at the back; about a minute is kept
     double noteClock=0;
@@ -68,6 +69,7 @@ private:
     void updateTunerState();
     void collectNotes();
     Pitch heldPitch_;Chord heldChord_;double holdSeconds_=0;
+    std::array<double,12> bassChroma_{};   // pitch class of the lowest strong note, smoothed (~0.6 s)
     std::vector<int> previousNotes_;   // notes seen in the previous frame; a note must appear in two frames in a row to be shown
     std::unique_ptr<gram::FftPlan> plan_;
     std::array<std::array<double,65>,256> kernel_{};

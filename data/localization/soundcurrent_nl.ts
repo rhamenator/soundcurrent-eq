@@ -2868,6 +2868,10 @@ Wilt u het toch verwijderen?</translation>
       <translation>Piekmarkeringen op frequentieniveaus tonen</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Zachte noten tonen</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Toon alleen opgeslagen aangepaste profielen.</translation>
     </message>

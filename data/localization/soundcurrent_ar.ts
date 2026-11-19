@@ -2868,6 +2868,10 @@ Do you want to delete it anyway?</source>
       <translation>إظهار علامات القمم على مؤشرات مستويات الترددات</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>إظهار النغمات الهادئة</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>اعرض ملفات التعريف المخصصة المحفوظة فقط.</translation>
     </message>

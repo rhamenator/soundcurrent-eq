@@ -2868,6 +2868,10 @@ Haluatko silti poistaa sen?</translation>
       <translation>Näytä huippumerkit taajuustasoilla</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Näytä hiljaiset sävelet</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Näytä vain tallennetut mukautetut profiilit.</translation>
     </message>

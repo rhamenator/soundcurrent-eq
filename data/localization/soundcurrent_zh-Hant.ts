@@ -2868,6 +2868,10 @@ Do you want to delete it anyway?</source>
       <translation>在頻率位準上顯示峰值標記</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>顯示較弱的音符</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>僅顯示已儲存的自訂設定檔。</translation>
     </message>

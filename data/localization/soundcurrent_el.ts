@@ -2868,6 +2868,10 @@ Do you want to delete it anyway?</source>
       <translation>Εμφάνιση δεικτών κορυφών στις ενδείξεις συχνότητας</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Εμφάνιση σιγανών νότων</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Εμφάνιση μόνο αποθηκευμένων προσαρμοσμένων προφίλ.</translation>
     </message>

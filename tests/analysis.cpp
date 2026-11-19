@@ -113,46 +113,57 @@ int main(int argc,char **argv){soundcurrent::microphone::permit(true);QApplicati
  for(int rate:{16000,22050,24000,32000,44100,48000,88200,96000}){auto s=Settings{};s.rate=rate;s.high=0;s.fft=2048;engine.configure(s);check(engine.push(tone(1000),View::Spectrum),"analysis rate failed");auto i=std::max_element(engine.db.begin(),engine.db.end())-engine.db.begin();check(std::abs(engine.frequencyAt(i)-1000)<double(rate)/s.fft,"resampled tone frequency incorrect");}
  Settings tuner;engine.configure(tuner);check(engine.push(tone(440),View::Tuner),"tuner rejected audio");check(engine.pitch.midi==69 && std::abs(engine.pitch.cents)<8,"tuner A4 inaccurate");tuner.instrument=1;engine.configure(tuner);engine.push(tone(110),View::Tuner);check(engine.pitch.midi==45 && std::abs(engine.pitch.cents)<8,"instrument tuning not applied");
  {auto chordTone=[&](std::initializer_list<double> hz){QByteArray pcm(16384*4,0);auto *out=reinterpret_cast<std::int16_t *>(pcm.data());for(int i=0;i<16384;++i){double v=0;for(double f:hz)v+=std::sin(2*std::numbers::pi*f*i/48000.);const auto s=std::int16_t(std::lround(32767*.15*v));out[2*i]=s;out[2*i+1]=s;}return pcm;};
-  Engine chords;Settings cs;chords.configure(cs);
+  auto chords_heap=std::make_unique<Engine>();Engine &chords=*chords_heap;Settings cs;chords.configure(cs);
   const auto cMajor=chordTone({261.63,329.63,392.});for(int n=0;n<60;++n)chords.push(cMajor,View::Tuner);check(chords.chord.root==0 && chords.chord.quality==0,"C major chord not detected");
   chords.chord={};const auto aMinor=chordTone({220.,261.63,329.63});for(int n=0;n<80;++n)chords.push(aMinor,View::Tuner);check(chords.chord.root==9 && chords.chord.quality==1,"A minor chord not detected");
   const auto single=tone(440);for(int n=0;n<80;++n)chords.push(single,View::Tuner);check(chords.chord.root<0,"single note reported as a chord");
-  {Engine music;Settings ms;music.configure(ms);const auto cmaj=chordTone({261.63,329.63,392.});for(int n=0;n<60;++n)music.push(cmaj,View::Tuner);
+  {auto music_heap=std::make_unique<Engine>();Engine &music=*music_heap;Settings ms;music.configure(ms);const auto cmaj=chordTone({261.63,329.63,392.});for(int n=0;n<60;++n)music.push(cmaj,View::Tuner);
    check(music.tunerState==TunerState::Chord,"chord state not reported");
    QByteArray noiseBytes(16384*4,0);auto *np=reinterpret_cast<std::int16_t *>(noiseBytes.data());unsigned seed=12345;for(int i=0;i<16384;++i){seed=seed*1664525u+1013904223u;const auto s=std::int16_t(int(seed>>16)%6000-3000);np[2*i]=s;np[2*i+1]=s;}
    music.frameSeconds=.05;music.push(noiseBytes,View::Tuner);check(music.tunerState==TunerState::Chord,"chord not held briefly after it disappears");
    for(int n=0;n<80;++n)music.push(noiseBytes,View::Tuner);check(music.tunerState==TunerState::Unclear && music.chord.root<0,"noise not reported as no clear pitch");
    QByteArray silence(16384*4,0);for(int n=0;n<20;++n)music.push(silence,View::Tuner);check(music.tunerState==TunerState::Silent,"silence not reported");}
-  {Engine focus;Settings fs;fs.instrument=2;focus.configure(fs);   // bass guitar: ignore non-bass instruments in the mix
+  {auto focus_heap=std::make_unique<Engine>();Engine &focus=*focus_heap;Settings fs;fs.instrument=2;focus.configure(fs);   // bass guitar: ignore non-bass instruments in the mix
    QByteArray mix(16384*4,0);auto *mp=reinterpret_cast<std::int16_t *>(mix.data());for(int i=0;i<16384;++i){const double v=.3*std::sin(2*std::numbers::pi*55.*i/48000.)+.1*std::sin(2*std::numbers::pi*1000.*i/48000.)+.1*std::sin(2*std::numbers::pi*1317.*i/48000.);const auto q=std::int16_t(std::lround(32767*v));mp[2*i]=q;mp[2*i+1]=q;}
    for(int n=0;n<30;++n)focus.push(mix,View::Tuner);check(focus.pitch.midi==33 && std::abs(focus.pitch.cents)<15,"bass focus did not find the bass note in a mix");check(focus.chord.root<0,"bass focus reported a chord");}
-  {Engine lowBass;Settings lb;lowBass.configure(lb);QByteArray lowNote(16384*4,0);auto *lp=reinterpret_cast<std::int16_t *>(lowNote.data());   // E1 (41.2 Hz) with harmonics
+  {auto lowBass_heap=std::make_unique<Engine>();Engine &lowBass=*lowBass_heap;Settings lb;lowBass.configure(lb);QByteArray lowNote(16384*4,0);auto *lp=reinterpret_cast<std::int16_t *>(lowNote.data());   // E1 (41.2 Hz) with harmonics
    for(int i=0;i<16384;++i){double v=0;for(int k=1;k<=6;++k)v+=std::sin(2*std::numbers::pi*41.2*k*i/48000.)*(k==1?1.:.8/k);const auto q=std::int16_t(std::lround(32767*.2*v));lp[2*i]=q;lp[2*i+1]=q;}
    for(int n=0;n<20;++n)lowBass.push(lowNote,View::Tuner);bool lowHas=false;for(const auto &n:lowBass.noteHistory.back().notes)if(n.midi==28)lowHas=true;
    check(lowHas,"low E1 bass note was not found on the note display");check(lowBass.pitch.midi==28 && std::abs(lowBass.pitch.cents)<35,"low E1 bass note not identified accurately");}
-  {Engine fretted;Settings fr;fr.instrument=2;fretted.configure(fr);QByteArray note(16384*4,0);auto *fp=reinterpret_cast<std::int16_t *>(note.data());for(int i=0;i<16384;++i){const auto q=std::int16_t(std::lround(32767*.4*std::sin(2*std::numbers::pi*92.5*i/48000.)));fp[2*i]=q;fp[2*i+1]=q;}
+  {auto fretted_heap=std::make_unique<Engine>();Engine &fretted=*fretted_heap;Settings fr;fr.instrument=2;fretted.configure(fr);QByteArray note(16384*4,0);auto *fp=reinterpret_cast<std::int16_t *>(note.data());for(int i=0;i<16384;++i){const auto q=std::int16_t(std::lround(32767*.4*std::sin(2*std::numbers::pi*92.5*i/48000.)));fp[2*i]=q;fp[2*i+1]=q;}
    for(int n=0;n<20;++n)fretted.push(note,View::Tuner);check(fretted.pitch.midi==42 && std::abs(fretted.pitch.cents)<15,"fretted bass note was snapped to an open string");}
   {auto has=[](const NoteFrame &f,int midi){for(const auto &n:f.notes)if(n.midi==midi)return true;return false;};
-   Engine roll;Settings rs;roll.configure(rs);const auto cmaj2=chordTone({261.63,329.63,392.});for(int n=0;n<10;++n)roll.push(cmaj2,View::Tuner);
+   auto roll_heap=std::make_unique<Engine>();Engine &roll=*roll_heap;Settings rs;roll.configure(rs);const auto cmaj2=chordTone({261.63,329.63,392.});for(int n=0;n<10;++n)roll.push(cmaj2,View::Tuner);
    check(roll.pitch.midi==60 || roll.pitch.midi==64 || roll.pitch.midi==67,"loudest note of a chord was not one of its notes");
    check(!roll.noteHistory.empty() && has(roll.noteHistory.back(),60) && has(roll.noteHistory.back(),64) && has(roll.noteHistory.back(),67),"note display missed the C major notes");
-   Engine harmonics;harmonics.configure(rs);const auto rich=chordTone({220.,440.,660.,880.});
+   auto harmonics_heap=std::make_unique<Engine>();Engine &harmonics=*harmonics_heap;harmonics.configure(rs);const auto rich=chordTone({220.,440.,660.,880.});
    QByteArray weighted(16384*4,0);auto *wp=reinterpret_cast<std::int16_t *>(weighted.data());for(int i=0;i<16384;++i){double v=0;for(int k=1;k<=4;++k)v+=std::sin(2*std::numbers::pi*220.*k*i/48000.)/k;const auto q=std::int16_t(std::lround(32767*.25*v));wp[2*i]=q;wp[2*i+1]=q;}(void)rich;
    for(int n=0;n<10;++n)harmonics.push(weighted,View::Tuner);
    check(has(harmonics.noteHistory.back(),57) && !has(harmonics.noteHistory.back(),69) && !has(harmonics.noteHistory.back(),76),"harmonics shown as separate notes");
    check(roll.noteHistory.size()<=1300,"note history not bounded");
-   {Engine blip;blip.configure(rs);for(int n=0;n<10;++n)blip.push(cmaj2,View::Tuner);const auto flash=chordTone({880.});blip.push(flash,View::Tuner);
+   {auto blip_heap=std::make_unique<Engine>();Engine &blip=*blip_heap;blip.configure(rs);for(int n=0;n<10;++n)blip.push(cmaj2,View::Tuner);const auto flash=chordTone({880.});blip.push(flash,View::Tuner);
     check(!has(blip.noteHistory.back(),81),"a one-frame blip was shown as a note");for(int n=0;n<4;++n)blip.push(flash,View::Tuner);check(has(blip.noteHistory.back(),81),"a sustained note was not shown");}
-   {Engine arp;arp.configure(rs);const int notes[]={261,329,392,329};   // C major arpeggio, one note every 0.2 s
+   {auto arp_heap=std::make_unique<Engine>();Engine &arp=*arp_heap;arp.configure(rs);const int notes[]={261,329,392,329};   // C major arpeggio, one note every 0.2 s
     for(int round=0;round<3;++round)for(int f:notes){const auto one=chordTone({double(f)});for(int n=0;n<4;++n)arp.push(one,View::Tuner);}
     check(arp.chord.root==0 && arp.chord.quality==0,"arpeggiated C major was not recognized");}
-   {Engine stereo;Settings ss;stereo.configure(ss);   // 220 Hz in both channels (lead), a louder 330 Hz only in the left channel (backing)
+   {auto stereo_heap=std::make_unique<Engine>();Engine &stereo=*stereo_heap;Settings ss;stereo.configure(ss);   // 220 Hz in both channels (lead), a louder 330 Hz only in the left channel (backing)
     QByteArray two(16384*4,0);auto *tp=reinterpret_cast<std::int16_t *>(two.data());for(int i=0;i<16384;++i){const double centre=.25*std::sin(2*std::numbers::pi*220.*i/48000.),left=.35*std::sin(2*std::numbers::pi*330.*i/48000.);tp[2*i]=std::int16_t(std::lround(32767*(centre+left)));tp[2*i+1]=std::int16_t(std::lround(32767*centre));}
     for(int n=0;n<12;++n)stereo.push(two,View::Tuner);
     const auto &last=stereo.noteHistory.back();bool leftBacking=false,centreLead=false;for(const auto &n:last.notes){if(n.midi==64 && n.side<0)leftBacking=true;if(n.midi==57 && n.side==0)centreLead=true;}
     check(leftBacking && centreLead,"left-only note was not marked as backing, or the centre note was not marked as lead");
     check(stereo.pitch.midi==57,"main note was not the centre note");}
-   {Engine guitar;Settings gs;gs.instrument=1;guitar.configure(gs);const auto gc=chordTone({261.63,329.63,392.});for(int n=0;n<40;++n)guitar.push(gc,View::Tuner);check(guitar.chord.root==0 && guitar.chord.quality==0,"guitar chord not detected with Guitar selected");}
+   {auto guitar_heap=std::make_unique<Engine>();Engine &guitar=*guitar_heap;Settings gs;gs.instrument=1;guitar.configure(gs);const auto gc=chordTone({261.63,329.63,392.});for(int n=0;n<40;++n)guitar.push(gc,View::Tuner);check(guitar.chord.root==0 && guitar.chord.quality==0,"guitar chord not detected with Guitar selected");}
+   {auto mix=[](std::initializer_list<std::pair<double,double>> parts){QByteArray b(16384*4,0);auto *o=reinterpret_cast<std::int16_t *>(b.data());for(int i=0;i<16384;++i){double v=0;for(const auto &pr:parts)v+=pr.second*std::sin(2*std::numbers::pi*pr.first*i/48000.);const auto q=std::int16_t(std::lround(32767*v));o[2*i]=q;o[2*i+1]=q;}return b;};
+    auto suffixIs=[](const Chord &c,const char *name){return std::strcmp(chordQualitySuffix(c.quality),name)==0;};
+    auto run=[&](const QByteArray &audio,int frames=40){auto e=std::make_unique<Engine>();Settings st;e->configure(st);for(int n=0;n<frames;++n)e->push(audio,View::Tuner);return e;};
+    {auto e=run(mix({{130.81,.15},{196.,.15},{246.94,.15},{293.66,.15},{329.63,.15}}));check(e->chord.root==0 && suffixIs(e->chord,"maj9"),"Cmaj9 was not named");}
+    {auto e=run(mix({{130.81,.15},{220.,.15},{293.66,.15},{329.63,.15},{392.,.15}}));check(e->chord.root==0 && suffixIs(e->chord,"6/9"),"C6/9 was not named");}
+    {auto e=run(mix({{246.94,.15},{293.66,.15},{349.23,.15},{415.30,.15}}));check(suffixIs(e->chord,"dim7"),"diminished seventh was not named");}
+    {auto e=run(mix({{130.81,.04},{261.63,.012},{392.,.2},{329.63,.2},{493.88,.2}}));check(e->chord.root==0 && suffixIs(e->chord,"maj7"),"quiet bass C did not turn Em into Cmaj7");}
+    {auto e=run(mix({{98.,.1},{196.,.03},{294.,.02},{349.23,.2},{440.,.2},{523.25,.2}}));check(e->chord.root==5 && e->chord.bass==7,"F over G bass was not recognized");}
+    {auto loud_heap=std::make_unique<Engine>();Engine &loud=*loud_heap;Settings st;loud.configure(st);auto quiet_heap=std::make_unique<Engine>();Engine &quiet=*quiet_heap;quiet.configure(st);quiet.noteRangeDb=30;const auto audio=mix({{261.63,.2},{329.63,.2},{392.,.2},{493.88,.01}});
+     for(int n=0;n<12;++n){loud.push(audio,View::Tuner);quiet.push(audio,View::Tuner);}
+     check(!has(loud.noteHistory.back(),71) && has(quiet.noteHistory.back(),71),"Show quiet notes did not reveal the weak note");}}
    roll.resetAverage();check(roll.noteHistory.empty() && !roll.held && roll.chord.root<0 && roll.tunerState==TunerState::Silent,"reset did not clear the note display and held reading");}}
  Settings cumulative;engine.configure(cumulative);engine.resetAverage();engine.push(signal,View::Microphone);engine.push(tone(937.5,.25),View::Microphone);const double expected=10*std::log10((.25+.0625)/2);check(std::abs(engine.averaged[80]-expected)<.05,"cumulative power average incorrect");
  // The toolbar selection supersedes the last settings application, including legacy split preferences.

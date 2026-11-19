@@ -2868,6 +2868,10 @@ Bạn vẫn muốn xóa không?</translation>
       <translation>Hiển thị dấu đỉnh trên các mức tần số</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Hiển thị nốt nhỏ</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Chỉ hiển thị hồ sơ tùy chỉnh đã lưu.</translation>
     </message>

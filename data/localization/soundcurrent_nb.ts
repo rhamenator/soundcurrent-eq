@@ -2868,6 +2868,10 @@ Vil du slette den likevel?</translation>
       <translation>Vis toppmarkører på frekvensnivåene</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Vis svake toner</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Vis bare lagrede egendefinerte profiler.</translation>
     </message>

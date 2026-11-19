@@ -2868,6 +2868,10 @@ Do you want to delete it anyway?</source>
       <translation>نمایش نشانگرهای قله در سطح‌های فرکانس</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>نمایش نت‌های ضعیف</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>فقط نمایه‌های سفارشی ذخیره‌شده را نشان دهید.</translation>
     </message>

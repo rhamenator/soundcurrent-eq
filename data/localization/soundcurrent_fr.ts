@@ -2868,6 +2868,10 @@ Voulez-vous quand même le supprimer ?</translation>
       <translation>Afficher les repères de crête sur les niveaux de fréquence</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Afficher les notes faibles</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Afficher uniquement les profils personnalisés enregistrés.</translation>
     </message>

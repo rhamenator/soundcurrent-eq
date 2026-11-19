@@ -2868,6 +2868,10 @@ Unataka kuifuta hata hivyo?</translation>
       <translation>Onyesha alama za kilele kwenye viwango vya masafa</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Onyesha noti hafifu</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Onyesha wasifu maalumu uliohifadhiwa pekee.</translation>
     </message>

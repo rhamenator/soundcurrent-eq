@@ -2868,6 +2868,10 @@ Do you want to delete it anyway?</source>
       <translation>แสดงเครื่องหมายพีกบนระดับความถี่</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>แสดงโน้ตเบา</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>แสดงเฉพาะโปรไฟล์กำหนดเองที่บันทึกไว้</translation>
     </message>

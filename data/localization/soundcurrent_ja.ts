@@ -2868,6 +2868,10 @@ Do you want to delete it anyway?</source>
       <translation>周波数ごとのレベルにピークマーカーを表示</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>小さい音も表示</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>保存済みのカスタムプロファイルだけを表示します。</translation>
     </message>

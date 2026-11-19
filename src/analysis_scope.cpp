@@ -156,7 +156,7 @@ void Engine::configure(const Settings &s) {
     if(pipeline){plan_.reset();kernelReady_=false;reference.clear();}
     if(pipeline || channelChanged){reference.clear();resetAverage();}
 }
-void Engine::resetAverage(){meanPower_.clear();averagePower_.clear();averaged.clear();peak.clear();frames=0;waveFrames=0;fftMs=0;lastRms_=0;pitch={};chord={};chroma={};chromaSlow={};noteHistory.clear();previousNotes_.clear();heldPitch_={};heldChord_={};holdSeconds_=0;held=false;tunerState=TunerState::Silent;}
+void Engine::resetAverage(){meanPower_.clear();averagePower_.clear();averaged.clear();peak.clear();frames=0;waveFrames=0;fftMs=0;lastRms_=0;pitch={};chord={};chroma={};chromaSlow={};noteHistory.clear();previousNotes_.clear();bassChroma_={};heldPitch_={};heldChord_={};holdSeconds_=0;held=false;tunerState=TunerState::Silent;}
 void Engine::captureReference(){reference=averaged;resetAverage();}
 std::vector<double> Engine::relativeDb() const {
     if(reference.empty() || reference.size()!=averaged.size())return {};
@@ -230,11 +230,13 @@ void Engine::analyzePitch(const QByteArray &bytes) {
     pitch={hz,100*(midi-target),1-b,target};
 }
 static const std::vector<std::vector<int>> &chordTemplates(){
-    // Order matches chordQualitySuffix(): major, minor, diminished, augmented, sus2, sus4, dominant 7, major 7, minor 7.
-    static const std::vector<std::vector<int>> t={{0,4,7},{0,3,7},{0,3,6},{0,4,8},{0,2,7},{0,5,7},{0,4,7,10},{0,4,7,11},{0,3,7,10}};
+    // Order matches chordQualitySuffix(): major, minor, diminished, augmented, sus2, sus4, 7, maj7, m7, then 6, m6, add9, 6/9, maj9, m9, 9,
+    // m7b5, dim7, 7sus4, m(maj7), 13, maj7#11, m11.
+    static const std::vector<std::vector<int>> t={{0,4,7},{0,3,7},{0,3,6},{0,4,8},{0,2,7},{0,5,7},{0,4,7,10},{0,4,7,11},{0,3,7,10},
+        {0,4,7,9},{0,3,7,9},{0,2,4,7},{0,2,4,7,9},{0,2,4,7,11},{0,2,3,7,10},{0,2,4,7,10},{0,3,6,10},{0,3,6,9},{0,5,7,10},{0,3,7,11},{0,2,4,7,9,10},{0,4,6,7,11},{0,2,3,5,7,10}};
     return t;
 }
-const char *chordQualitySuffix(int quality){static const char *names[]={"","m","dim","aug","sus2","sus4","7","maj7","m7"};return quality>=0 && quality<9?names[quality]:"";}
+const char *chordQualitySuffix(int quality){static const char *names[]={"","m","dim","aug","sus2","sus4","7","maj7","m7","6","m6","add9","6/9","maj9","m9","9","m7♭5","dim7","7sus4","m(maj7)","13","maj7♯11","m11"};return quality>=0 && quality<23?names[quality]:"";}   // UTF-8
 void Engine::analyzeChord() {
     // Pitch classes from spectral peaks between A2 and B6 (lower notes are not resolved by the FFT), smoothed over ~0.4 s.
     std::array<double,12> now{};
@@ -257,14 +259,18 @@ void Engine::analyzeChord() {
     if(settings.instrument==2 || settings.instrument==6 || settings.instrument==8)return;   // bass, cello and voice play single lines (and the FFT cannot resolve low chords)
     auto detect=[&](const std::array<double,12> &c,double minScore){
         Chord found;const double peak=*std::max_element(c.begin(),c.end());if(peak<=1e-6)return found;
-        int present=0;for(double v:c)if(v>.25*peak)++present;if(present<3)return found;
-        double norm=0;for(double v:c)norm+=v*v;
+        // The lowest strong note counts as present even when quiet (a quiet bass is often what tells Cmaj7 from Em) and favours chords rooted on it.
+        int bass=-1;{double strongestBass=0;for(int k=0;k<12;++k)if(bassChroma_[std::size_t(k)]>strongestBass){strongestBass=bassChroma_[std::size_t(k)];bass=k;}if(strongestBass<.5)bass=-1;}
+        auto cc=c;if(bass>=0)cc[std::size_t(bass)]=std::max(cc[std::size_t(bass)],.6*peak);
+        int present=0;for(double v:cc)if(v>.25*peak)++present;if(present<3)return found;
+        double norm=0;for(double v:cc)norm+=v*v;
         double best=0;
         for(int root=0;root<12;++root)for(std::size_t q=0;q<chordTemplates().size();++q){
             const auto &notes=chordTemplates()[q];double dot=0;
-            for(int n:notes)dot+=c[std::size_t((root+n)%12)];
-            const double score=dot/(std::sqrt(norm)*std::sqrt(double(notes.size())));
-            if(score>best){best=score;found={root,int(q),score};}
+            for(int n:notes)dot+=cc[std::size_t((root+n)%12)];
+            // Larger chords must earn their extra notes (a small penalty), and a chord rooted on the bass is slightly preferred.
+            const double score=dot/(std::sqrt(norm)*std::sqrt(double(notes.size())))-.015*(double(notes.size())-3)+(root==bass?.04:0);
+            if(score>best){best=score;found={root,int(q),score,bass};}
         }
         if(best<minScore)found={};
         return found;
@@ -280,14 +286,14 @@ void Engine::collectNotes() {
     const double lowHz=30,highHz=1100;double strongest=-240;
     for(std::size_t i=2;i+1<db.size();++i){const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;strongest=std::max(strongest,db[i]);}
     auto add=[&](int midi,float level,int side=0){if(midi<24||midi>84)return;for(auto &n:frame.notes)if(n.midi==midi){if(level>n.level){n.level=level;n.side=side;}return;}frame.notes.push_back({midi,level,side});};
-    double loudestHz=0;
+    double loudestHz=0,bassHz=0;
     if(strongest>-75){
         struct Peak{double hz,db;};std::vector<Peak> accepted;
         // All local maxima up to 2.2 kHz with interpolated frequency; used to measure low notes from their harmonics.
         std::vector<Peak> raw;
         for(std::size_t i=2;i+1<db.size();++i){
             const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>2200)break;
-            if(!(db[i]>db[i-1] && db[i]>=db[i+1]) || db[i]<strongest-35)continue;
+            if(!(db[i]>db[i-1] && db[i]>=db[i+1]) || db[i]<strongest-std::max(35.,noteRangeDb+5))continue;
             const double a=db[i-1],b=db[i],c=db[i+1],den=a-2*b+c,shift=std::abs(den)>1e-12?std::clamp(.5*(a-c)/den,-.5,.5):0;
             raw.push_back({hz+shift*settings.rate/settings.fft,b});
         }
@@ -308,7 +314,7 @@ void Engine::collectNotes() {
         const bool stereo=settings.channel==0 && dbLeft.size()==db.size() && dbRight.size()==db.size();
         for(std::size_t i=2;i+1<db.size();++i){
             const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;
-            if(!(db[i]>db[i-1] && db[i]>=db[i+1]) || db[i]<strongest-22)continue;   // 22 dB: weaker peaks are mostly harmonics, reverb and rumble
+            if(!(db[i]>db[i-1] && db[i]>=db[i+1]) || db[i]<strongest-noteRangeDb)continue;   // 22 dB: weaker peaks are mostly harmonics, reverb and rumble
             const double a=db[i-1],b=db[i],c=db[i+1],den=a-2*b+c,shift=std::abs(den)>1e-12?std::clamp(.5*(a-c)/den,-.5,.5):0;
             const Peak peakNow{refine(hz+shift*settings.rate/settings.fft),b};
             bool harmonic=false;
@@ -322,6 +328,8 @@ void Engine::collectNotes() {
             if(peakNow.hz>=focusLow && peakNow.hz<=focusHigh){if(peakNow.db>loudest.db)loudest=peakNow;if(side==0 && peakNow.db>loudestCenter.db)loudestCenter=peakNow;}
             add(int(std::lround(69+12*std::log2(peakNow.hz/440.))),float(std::clamp((b-(strongest-30))/30,.15,1.)),side);
         }
+        // The lowest strong note is the bass; it helps name chords (see analyzeChord).
+        for(const auto &a:accepted)if(a.hz<=350 && a.db>=strongest-18 && (bassHz==0 || a.hz<bassHz))bassHz=a.hz;
         // Noise has a loudest bin too; only a peak well above the typical level counts as a note.
         std::vector<double> band;for(std::size_t i=2;i+1<db.size();++i){const double hz=frequencyAt(int(i));if(hz<lowHz)continue;if(hz>highHz)break;band.push_back(db[i]);}
         double typical=-240;if(!band.empty()){std::nth_element(band.begin(),band.begin()+band.size()/2,band.end());typical=band[band.size()/2];}
@@ -329,6 +337,8 @@ void Engine::collectNotes() {
         if(loudestCenter.db>=typical+15 && loudestCenter.db>=loudest.db-12)loudestHz=loudestCenter.hz;
         else if(loudest.db>=typical+15)loudestHz=loudest.hz;
     }
+    {const double dt=std::clamp(frameSeconds,.005,1.),keep=std::exp(-dt/.6);for(auto &v:bassChroma_)v*=keep;
+     if(bassHz>0){const int pcBass=((int(std::lround(69+12*std::log2(bassHz/440.)))%12)+12)%12;bassChroma_[std::size_t(pcBass)]+=1-keep;}}
     // The displayed note is the loudest note in the spectrum (this works in music, where one repeating period does not exist).
     // The period detector only refines the cents when it agrees, or when an instrument range was chosen (which makes it reliable).
     if(loudestHz>0){
@@ -393,7 +403,7 @@ bool Engine::push(const QByteArray &bytes,View view) {
         averaged[i]=10*std::log10(std::max((view==View::Microphone?meanPower_[i]:averagePower_[i]),1e-24));
         peak[i]=std::max(peak[i],db[i]);
     }
-    if(view==View::Tuner){analyzeChord();collectNotes();updateTunerState();}else{chord={};tunerState=TunerState::Silent;holdSeconds_=0;noteHistory.clear();}
+    if(view==View::Tuner){collectNotes();analyzeChord();updateTunerState();}else{chord={};tunerState=TunerState::Silent;holdSeconds_=0;noteHistory.clear();}
     const double frameFftMs=timing.average_fft_ms*2;
     fftMs=fftCalls==2?frameFftMs:.9*fftMs+.1*frameFftMs;return true;
 }

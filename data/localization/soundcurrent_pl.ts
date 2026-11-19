@@ -2868,6 +2868,10 @@ Czy na pewno chcesz go usunąć?</translation>
       <translation>Pokaż znaczniki szczytów na poziomach częstotliwości</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Pokaż ciche nuty</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Pokaż tylko zapisane profile własne.</translation>
     </message>

@@ -2868,6 +2868,10 @@ Vuoi eliminarlo comunque?</translation>
       <translation>Mostra indicatori di picco sui livelli di frequenza</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Mostra le note deboli</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Mostra solo i profili personalizzati salvati.</translation>
     </message>

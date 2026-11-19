@@ -2868,6 +2868,10 @@ Do you want to delete it anyway?</source>
       <translation>주파수 레벨에 피크 마커 표시</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>작은 음 표시</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>저장된 사용자 지정 프로필만 표시합니다.</translation>
     </message>

@@ -2868,6 +2868,10 @@ Přesto chcete soubor smazat?</translation>
       <translation>Zobrazit značky špiček frekvenčních úrovní</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Zobrazit tiché tóny</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Zobrazit pouze uložené vlastní profily.</translation>
     </message>

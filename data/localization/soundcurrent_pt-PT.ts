@@ -2868,6 +2868,10 @@ Pretende eliminá-lo mesmo assim?</translation>
       <translation>Mostrar marcadores de pico nos níveis de frequência</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Mostrar notas baixas</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Mostrar apenas perfis personalizados guardados.</translation>
     </message>

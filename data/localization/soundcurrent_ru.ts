@@ -2868,6 +2868,10 @@ Do you want to delete it anyway?</source>
       <translation>Показывать метки пиков на частотных уровнях</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Показывать тихие ноты</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Показать только сохранённые пользовательские профили.</translation>
     </message>

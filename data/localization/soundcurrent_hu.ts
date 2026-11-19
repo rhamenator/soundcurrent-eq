@@ -2868,6 +2868,10 @@ Mindenképp törölni szeretné?</translation>
       <translation>Csúcsjelölők megjelenítése a frekvenciaszinteken</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Halk hangok megjelenítése</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Csak a mentett egyéni profilok megjelenítése.</translation>
     </message>

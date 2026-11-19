@@ -2868,6 +2868,10 @@ Chcete ho aj tak zmazať?</translation>
       <translation>Zobraziť značky špičiek frekvenčných úrovní</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Zobraziť tiché tóny</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Zobraziť iba uložené vlastné profily.</translation>
     </message>

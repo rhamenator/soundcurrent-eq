@@ -2868,6 +2868,10 @@ Yine de silmek istiyor musunuz?</translation>
       <translation>Frekans seviyelerinde tepe işaretlerini göster</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Sessiz notaları göster</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Yalnızca kayıtlı özel profilleri gösterin.</translation>
     </message>

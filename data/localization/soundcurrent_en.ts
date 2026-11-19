@@ -2868,6 +2868,10 @@ Do you want to delete it anyway?</translation>
       <translation>Show peak markers on frequency levels</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>Show quiet notes</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>Show saved custom profiles only.</translation>
     </message>

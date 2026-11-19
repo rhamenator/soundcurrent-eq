@@ -2868,6 +2868,10 @@ Do you want to delete it anyway?</source>
       <translation>आवृत्ति स्तरों पर पीक चिह्न दिखाएँ</translation>
     </message>
     <message>
+      <source>Show quiet notes</source>
+      <translation>धीमे स्वर दिखाएँ</translation>
+    </message>
+    <message>
       <source>Show saved custom profiles only.</source>
       <translation>केवल सहेजी गई कस्टम प्रोफ़ाइल दिखाएँ।</translation>
     </message>
