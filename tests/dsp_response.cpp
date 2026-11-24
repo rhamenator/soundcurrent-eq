@@ -9,16 +9,19 @@
 
 namespace {
 double measure(soundcurrent::StereoEqualizer &eq, double frequency) {
-    constexpr int rate = 48000;
+    constexpr std::size_t rate = 48000;
     std::vector<float> samples(rate * 2);
-    for (int i = 0; i < rate; ++i)
+    for (std::size_t i = 0; i < rate; ++i)
         samples[i * 2] = samples[i * 2 + 1] =
-            static_cast<float>(0.1 * std::sin(2.0 * std::numbers::pi * frequency * i / rate));
+            static_cast<float>(0.1 * std::sin(2.0 * std::numbers::pi * frequency * static_cast<double>(i) / static_cast<double>(rate)));
     eq.reset();
     eq.process(samples.data(), rate);
     double sum = 0.0;
-    for (int i = rate / 2; i < rate; ++i) sum += samples[i * 2] * samples[i * 2];
-    return std::sqrt(sum / (rate / 2));
+    for (std::size_t i = rate / 2; i < rate; ++i) {
+        const double sample = samples[i * 2];
+        sum += sample * sample;
+    }
+    return std::sqrt(sum / static_cast<double>(rate / 2));
 }
 }
 
