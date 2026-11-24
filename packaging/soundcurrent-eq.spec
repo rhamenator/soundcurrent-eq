@@ -1,6 +1,6 @@
 Name:           soundcurrent-eq
 %global debug_package %{nil}
-Version:        1.3.7
+Version:        1.3.8
 Release:        1%{?dist}
 Summary:        Adjustable desktop equalizer for PipeWire
 License:        GPL-3.0-only
