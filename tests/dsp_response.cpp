@@ -17,7 +17,10 @@ double measure(soundcurrent::StereoEqualizer &eq, double frequency) {
     eq.reset();
     eq.process(samples.data(), rate);
     double sum = 0.0;
-    for (std::size_t i = rate / 2; i < rate; ++i) sum += samples[i * 2] * samples[i * 2];
+    for (std::size_t i = rate / 2; i < rate; ++i) {
+        const double sample = samples[i * 2];
+        sum += sample * sample;
+    }
     return std::sqrt(sum / static_cast<double>(rate / 2));
 }
 }
